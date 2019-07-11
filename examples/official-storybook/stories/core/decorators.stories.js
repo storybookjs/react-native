@@ -27,13 +27,15 @@ export default {
 };
 
 export const all = () => <p>Story</p>;
-all.parameters = {
-  decorators: [
-    s => (
-      <>
-        <p>Local Decorator</p>
-        {s()}
-      </>
-    ),
-  ],
+all.story = {
+  parameters: {
+    decorators: [
+      s => (
+        <>
+          <p>Local Decorator</p>
+          {s()}
+        </>
+      ),
+    ],
+  },
 };

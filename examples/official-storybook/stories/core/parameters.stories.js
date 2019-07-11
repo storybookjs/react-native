@@ -19,5 +19,7 @@ export const passed = ({
   // eslint-disable-next-line react/prop-types
   parameters: { options, ...parameters },
 }) => <pre>Parameters are {JSON.stringify(parameters, null, 2)}</pre>;
-passed.title = 'passed to story';
-passed.parameters = { storyParameter: 'storyParameter' };
+passed.story = {
+  name: 'passed to story',
+  parameters: { storyParameter: 'storyParameter' },
+};

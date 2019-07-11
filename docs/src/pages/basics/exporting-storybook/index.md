@@ -33,6 +33,6 @@ npx http-server .out
 
 ## Deploying to GitHub Pages
 
-Additionally, you can deploy Storybook directly into GitHub pages with our [storybook-deployer](https://github.com/storybooks/storybook-deployer) tool.
+Additionally, you can deploy Storybook directly into GitHub pages with our [storybook-deployer](https://github.com/storybookjs/storybook-deployer) tool.
 
 Or, you can simply export your storybook into the docs directory and use it as the root for GitHub pages. Have a look at [this guide](https://github.com/blog/2233-publish-your-project-documentation-with-github-pages) for more information.

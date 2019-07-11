@@ -15,7 +15,7 @@ const Indicator = styled.div<IndicatorProps>(
   ({ color, size }) => ({
     boxSizing: 'border-box',
     padding: `0 ${size / 2}px`,
-    minWidth: size,
+    width: `fit-content`,
     minHeight: size,
     fontSize: size / 1.4,
     lineHeight: `${size}px`,

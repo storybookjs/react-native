@@ -14,7 +14,7 @@ module.exports = async ({ config }) => ({
             options: {
               cacheDirectory: `.cache/storybook`,
               presets: [
-                ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: 2 }],
+                ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: 3 }],
                 '@babel/preset-typescript',
                 ['babel-preset-minify', { builtIns: false, mangle: false }],
                 '@babel/preset-react',
@@ -39,8 +39,8 @@ module.exports = async ({ config }) => ({
         exclude: [/node_modules/, /dist/],
       },
       {
-        test: /\.stories\.jsx?$/,
-        use: require.resolve('@storybook/addon-storysource/loader'),
+        test: /\.stories\.[tj]sx?$/,
+        loader: require.resolve('@storybook/source-loader'),
         include: [
           path.resolve(__dirname, './stories'),
           path.resolve(__dirname, '../../lib/ui/src'),

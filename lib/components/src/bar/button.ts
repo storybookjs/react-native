@@ -1,6 +1,6 @@
 import { styled } from '@storybook/theming';
 
-interface TabButtonProps {
+export interface TabButtonProps {
   active?: boolean;
 }
 
@@ -51,7 +51,7 @@ export const TabButton = styled.button<TabButtonProps>(
 );
 TabButton.displayName = 'TabButton';
 
-interface IconButtonProps {
+export interface IconButtonProps {
   active?: boolean;
 }
 

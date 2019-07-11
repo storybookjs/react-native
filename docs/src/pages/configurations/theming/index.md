@@ -11,7 +11,7 @@ It's really easy to theme Storybook globally.
 
 We've created two basic themes that look good of the box: "normal" (a light theme) and "dark" (a dark theme).
 
-As the simplest example example, you can tell Storybook to use the "dark" theme by modifyig `.storybook/config.js`:
+As the simplest example, you can tell Storybook to use the "dark" theme by modifying `.storybook/config.js`:
 
 ```js
 import { addParameters } from '@storybook/react';
@@ -25,7 +25,7 @@ addParameters({
 });
 ```
 
-When setting a theme, set a full theme object. The theme is replaced not combined.
+When setting a theme, set a full theme object. The theme is replaced, not combined.
 
 ## Dynamic theming
 
@@ -123,7 +123,7 @@ export default create({
 
 ## Addons and theme creation
 
-Some addons require specific theme variables that a Storybook user must add. If you share your theme with the community make sure to support the official and other popular addons so your users have a consistent experience.
+Some addons require specific theme variables that a Storybook user must add. If you share your theme with the community, make sure to support the official and other popular addons so your users have a consistent experience.
 
 For example, the popular Actions addon uses [react-inspector](https://github.com/xyc/react-inspector/blob/master/src/styles/themes/chromeLight.js) which has themes of its own. Supply additional theme variables to style it like so:
 

@@ -10,7 +10,7 @@ export const metadata = {
   description: `Storybook is an open source tool for developing UI components in isolation for React, Vue, and Angular`,
   ogImage: '/images/social/open-graph.png',
   googleSiteVerification: '',
-  latestVersion: 'v5.0',
+  latestVersion: 'v5.1',
 };
 
 export const url = {
@@ -46,6 +46,7 @@ export const url = {
     home: `${docsUrl}/basics/introduction/`,
     addonInstruction: `${docsUrl}/addons/writing-addons/`,
   },
+  tutorials: `https://www.learnstorybook.com/`,
   addons: `${homepageUrl}/addons/`,
   community: `${homepageUrl}/community/`,
   useCases: `${homepageUrl}/use-cases/`,

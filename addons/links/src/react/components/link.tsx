@@ -29,7 +29,7 @@ interface State {
 }
 
 export default class LinkTo extends PureComponent<Props, State> {
-  defaultProps: Props = {
+  static defaultProps: Props = {
     kind: null,
     story: null,
     children: undefined,

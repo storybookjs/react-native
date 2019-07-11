@@ -1,4 +1,4 @@
-import { configure, addParameters, addDecorator } from '@storybook/react';
+import { load, addParameters, addDecorator } from '@storybook/react';
 import { create } from '@storybook/theming';
 import { withA11y } from '@storybook/addon-a11y';
 
@@ -9,26 +9,17 @@ addParameters({
     showAddonsPanel: true,
     showSearchBox: false,
     panelPosition: 'right',
-    sortStoriesByKind: false,
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\|/,
     enableShortcuts: true,
     theme: create({
       base: 'light',
       brandTitle: 'CRA Kitchen Sink',
-      brandUrl: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
+      brandUrl: 'https://github.com/storybookjs/storybook/tree/master/examples/cra-kitchen-sink',
       gridCellSize: 12,
     }),
+    storySort: (a, b) => a[1].id.localeCompare(b[1].id),
   },
 });
 
-function loadStories() {
-  // put welcome screen at the top of the list so it's the first one displayed
-  require('../src/stories/welcome');
-
-  // automatically import all story js files that end with *.stories.js
-  const req = require.context('../src/stories', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
-}
-
-configure(loadStories, module);
+load(require.context('../src/stories', true, /\.stories\.js$/), module);

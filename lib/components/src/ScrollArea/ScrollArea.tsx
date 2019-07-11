@@ -13,7 +13,9 @@ export interface ScrollProps {
   [key: string]: any;
 }
 
-const Scroll = styled(({ vertical, horizontal, ...rest }: ScrollProps) => <SimpleBar {...rest} />)(
+const Scroll = styled(({ vertical, horizontal, ...rest }: ScrollProps) => <SimpleBar {...rest} />)<
+  ScrollProps
+>(
   ({ vertical }) =>
     !vertical
       ? {
@@ -21,6 +23,7 @@ const Scroll = styled(({ vertical, horizontal, ...rest }: ScrollProps) => <Simpl
         }
       : {
           overflowY: 'auto',
+          height: '100%',
         },
   ({ horizontal }) =>
     !horizontal
@@ -29,6 +32,7 @@ const Scroll = styled(({ vertical, horizontal, ...rest }: ScrollProps) => <Simpl
         }
       : {
           overflowX: 'auto',
+          width: '100%',
         }
 );
 

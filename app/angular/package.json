@@ -1,22 +1,22 @@
 {
   "name": "@storybook/angular",
-  "version": "5.1.0-alpha.39",
+  "version": "5.2.0-alpha.41",
   "description": "Storybook for Angular: Develop Angular Components in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/angular",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/angular",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "app/angular"
   },
   "license": "MIT",
   "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -26,22 +26,25 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.1.0-alpha.39",
-    "@storybook/node-logger": "5.1.0-alpha.39",
+    "@storybook/addons": "5.2.0-alpha.41",
+    "@storybook/core": "5.2.0-alpha.41",
+    "@storybook/node-logger": "5.2.0-alpha.41",
     "angular2-template-loader": "^0.6.2",
-    "core-js": "^2.6.5",
-    "fork-ts-checker-webpack-plugin": "^0.5.2",
+    "core-js": "^3.0.1",
+    "fork-ts-checker-webpack-plugin": "^1.3.4",
     "global": "^4.3.2",
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
-    "ts-loader": "^5.3.3",
-    "tsconfig-paths-webpack-plugin": "^3.2.0",
-    "webpack": "^4.28.0"
+    "ts-loader": "^6.0.1",
+    "tsconfig-paths-webpack-plugin": "^3.2.0"
   },
   "devDependencies": {
-    "zone.js": "^0.8.29"
+    "@types/autoprefixer": "^9.4.0",
+    "@types/webpack-env": "^1.13.9",
+    "webpack": "^4.33.0"
   },
   "peerDependencies": {
+    "@angular-devkit/build-angular": ">=6.0.0",
     "@angular-devkit/core": "^0.6.1 || >=7.0.0",
     "@angular/common": ">=6.0.0",
     "@angular/compiler": ">=6.0.0",
@@ -52,7 +55,12 @@
     "autoprefixer": "^8.1.0",
     "babel-loader": "^7.0.0 || ^8.0.0",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.29"
+    "typescript": "^3.4.0",
+    "webpack": "^4.32.2",
+    "zone.js": "^0.8.29 || ^0.9.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   },
   "publishConfig": {
     "access": "public"

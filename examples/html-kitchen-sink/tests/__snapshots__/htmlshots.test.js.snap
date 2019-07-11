@@ -1,0 +1,339 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Decorated actions 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Hello World 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple actions, selector 1`] = `
+
+        
+`;
+
+exports[`Storyshots Addons|Backgrounds story 1 1`] = `
+<span
+  style="color: white"
+>
+  You should be able to switch backgrounds for this story
+</span>
+`;
+
+exports[`Storyshots Addons|Backgrounds story 2 1`] = `
+<span
+  style="color: white"
+>
+  This one too!
+</span>
+`;
+
+exports[`Storyshots Addons|Centered button in center 1`] = `
+<div
+  id="sb-addon-centered-wrapper"
+  style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
+>
+  <div
+    id="sb-addon-centered-inner"
+    style="margin: auto; max-height: 100%;"
+  >
+    <button>
+      I am a Button !
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addons|Events Logger 1`] = `
+
+    
+`;
+
+exports[`Storyshots Addons|Jest withTests 1`] = `This story shows test results`;
+
+exports[`Storyshots Addons|Knobs All knobs 1`] = `
+<div
+  style="border: 2px dotted deeppink; padding: 8px 22px; border-radius: 8px"
+>
+  
+        
+  <h1>
+    My name is Jane,
+  </h1>
+  
+        
+  <h3>
+    today is January 20, 2017
+  </h3>
+  
+        
+  <p>
+    I have a stock of 20 apples, costing $2.25 each.
+  </p>
+  
+        
+  <p>
+    Also, I have:
+  </p>
+  
+        
+  <ul>
+    <li>
+      Laptop
+    </li>
+    <li>
+      Book
+    </li>
+    <li>
+      Whiskey
+    </li>
+  </ul>
+  
+        
+  <p>
+    Nice to meet you!
+  </p>
+  
+      
+</div>
+`;
+
+exports[`Storyshots Addons|Knobs CSS transitions 1`] = `
+<p
+  style="transition: color 0.5s ease-out; color: orangered;"
+>
+  John Doe
+</p>
+`;
+
+exports[`Storyshots Addons|Knobs DOM 1`] = `
+<p>
+  John Doe
+</p>
+`;
+
+exports[`Storyshots Addons|Knobs Simple 1`] = `
+<div>
+  I am John Doe and I'm 44 years old.
+</div>
+`;
+
+exports[`Storyshots Addons|Knobs XSS safety 1`] = `&lt;img src=x onerror="alert('XSS Attack')" &gt;`;
+
+exports[`Storyshots Addons|Notes Simple note 1`] = `
+<p>
+  
+      
+  <strong>
+    
+        This is a fragment of HTML
+      
+  </strong>
+  
+    
+</p>
+`;
+
+exports[`Storyshots Addons|a11y Default 1`] = `<button />`;
+
+exports[`Storyshots Addons|a11y Delayed render 1`] = `<div />`;
+
+exports[`Storyshots Addons|a11y Disabled 1`] = `
+<button
+  disabled=""
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|a11y Invalid contrast 1`] = `
+<button
+  style="color: black; background-color: brown;"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|a11y Label 1`] = `
+<button>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Demo button 1`] = `
+<button>
+  Hello Button
+</button>
+`;
+
+exports[`Storyshots Demo heading 1`] = `
+<h1>
+  Hello World
+</h1>
+`;
+
+exports[`Storyshots Demo headings 1`] = `
+<section>
+  <h1>
+    Hello World
+  </h1>
+  <h2>
+    Hello World
+  </h2>
+  <h3>
+    Hello World
+  </h3>
+  <h4>
+    Hello World
+  </h4>
+</section>
+`;
+
+exports[`Storyshots Welcome Welcome 1`] = `
+<div
+  class="main"
+>
+  
+  
+  <h1>
+    Welcome to Storybook for HTML
+  </h1>
+  
+  
+  <p>
+    This is a UI component dev environment for your plain HTML snippets.
+  </p>
+  
+  
+  <p>
+    
+    We've added some basic stories inside the 
+    <code
+      class="code"
+    >
+      stories
+    </code>
+     directory.
+    
+    <br />
+    
+    A story is a single state of one or more UI components. You can have as many stories as you want.
+    
+    <br />
+    
+    (Basically a story is like a visual test case.)
+  
+  </p>
+  
+  
+  <p>
+    
+    See these sample 
+    <a
+      class="link"
+      data-sb-kind="Demo"
+      data-sb-story="button"
+      href="#"
+    >
+      stories
+    </a>
+    
+  
+  </p>
+  
+  
+  <p>
+    <img
+      class="logo"
+      src="logo.svg"
+    />
+  </p>
+  
+  
+  <p>
+    
+    Just like that, you can add your own snippets as stories.
+    
+    <br />
+    
+    You can also edit those snippets and see changes right away.
+    
+    <br />
+    
+  
+  </p>
+  
+  
+  <p>
+    
+    Usually we create stories with smaller UI components in the app.
+    <br />
+    
+    Have a look at the
+    
+    <a
+      class="link"
+      href="https://storybook.js.org/basics/writing-stories"
+      target="_blank"
+    >
+      
+      Writing Stories
+    
+    </a>
+    
+    section in our documentation.
+  
+  </p>
+  
+
+</div>
+`;

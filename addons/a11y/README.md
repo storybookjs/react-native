@@ -2,9 +2,9 @@
 
 This storybook addon can be helpful to make your UI components more accessible.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/a11y/docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/a11y/docs/screenshot.png)
 
 ## Getting started
 

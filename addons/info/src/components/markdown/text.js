@@ -5,35 +5,21 @@ const defaultProps = { children: null };
 const propTypes = { children: PropTypes.node };
 
 export function P({ children }) {
-  const style = {
-    fontSize: '15px',
-  };
-
-  // <P> is oftentimes used as a parent element of
-  // <a> and <pre> elements, which is why <div>
-  // is used as the outputted element when parsing
-  // marksy content rather than <p>.
-  return <div style={style}>{children}</div>;
+  return <p>{children}</p>;
 }
 
 P.defaultProps = defaultProps;
 P.propTypes = propTypes;
 
 export function LI({ children }) {
-  const style = {
-    fontSize: '15px',
-  };
-  return <li style={style}>{children}</li>;
+  return <li>{children}</li>;
 }
 
 LI.defaultProps = defaultProps;
 LI.propTypes = propTypes;
 
 export function UL({ children }) {
-  const style = {
-    fontSize: '15px',
-  };
-  return <ul style={style}>{children}</ul>;
+  return <ul>{children}</ul>;
 }
 
 UL.defaultProps = defaultProps;

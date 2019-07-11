@@ -2,16 +2,17 @@ import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
 
-const Container = styled.div(({ theme }) => ({
+const Container = styled.div<{}>(({ theme }) => ({
   position: 'absolute',
   bottom: 0,
   right: 0,
   maxWidth: '100%',
   display: 'flex',
   background: theme.background.content,
+  zIndex: 1,
 }));
 
-export const ActionButton = styled.button(({ theme }) => ({
+export const ActionButton = styled.button<{}>(({ theme }) => ({
   border: '0 none',
   padding: '4px 10px',
   cursor: 'pointer',

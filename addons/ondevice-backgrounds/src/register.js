@@ -1,7 +1,7 @@
 import React from 'react';
 import addons from '@storybook/addons';
 
-import { ADDON_ID, PANEL_ID } from './constants';
+import { ADDON_ID, PANEL_ID, PARAM_KEY } from './constants';
 import BackgroundPanel from './BackgroundPanel';
 
 addons.register(ADDON_ID, api => {
@@ -10,5 +10,6 @@ addons.register(ADDON_ID, api => {
     title: 'Backgrounds',
     // eslint-disable-next-line react/prop-types
     render: ({ active }) => <BackgroundPanel channel={channel} api={api} active={active} />,
+    paramKey: PARAM_KEY,
   });
 });

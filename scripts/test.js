@@ -99,12 +99,6 @@ const tasks = {
     option: '--update',
     extraParam: '-u --updateSnapshot',
   }),
-  teamcity: createOption({
-    name: `Use TeamCity reporter`,
-    defaultValue: false,
-    option: '--teamcity',
-    extraParam: '-t --testResultsProcessor=jest-teamcity-reporter',
-  }),
 };
 
 const getProjects = list => list.filter(key => key.projectLocation);
@@ -180,7 +174,10 @@ selection
           ? ''
           : `--projects ${jestProjects.join(' ')}`;
 
-        spawn(`node --max_old_space_size=4096 ${jest} ${projectsParam} ${extraParams}`);
+        const cmd = `node --max_old_space_size=4096 ${jest} ${projectsParam} ${extraParams}`;
+
+        console.log(cmd);
+        spawn(cmd);
       }
 
       nonJestProjects.forEach(key =>

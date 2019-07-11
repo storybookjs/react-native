@@ -7,7 +7,7 @@ import Content from '../Content';
 import './style.css';
 
 const getEditUrl = (selectedSectionId, selectedItemId) => {
-  const gitHubRepoUrl = 'https://github.com/storybooks/storybook';
+  const gitHubRepoUrl = 'https://github.com/storybookjs/storybook';
   const docPath = `${selectedSectionId}/${selectedItemId}`;
 
   return `${gitHubRepoUrl}/blob/master/docs/src/pages/${docPath}/index.md`;

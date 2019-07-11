@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome render correctly 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        "Welcome to storybook for Rax",
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "block",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "fontSize": 40,
+        "fontWeight": "bold",
+        "lineHeight": 50,
+        "position": "relative",
+        "whiteSpace": "pre-wrap",
+      },
+      "tagName": "SPAN",
+    },
+    Object {
+      "attributes": Object {
+        "fallbackSource": Object {
+          "uri": "https://user-images.githubusercontent.com/677114/49848760-999e7d00-fe11-11e8-978f-264ea31f6739.png",
+        },
+        "resizeMode": "cover",
+        "src": "./rax-logo.png",
+      },
+      "eventListeners": Object {
+        "error": [Function],
+        "load": [Function],
+      },
+      "style": Object {
+        "display": "flex",
+        "height": 100,
+        "margin": "0 auto",
+        "objectFit": "cover",
+        "width": 100,
+      },
+      "tagName": "IMG",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            "This is a UI component dev environment for your Rax app.",
+          ],
+          "style": Object {
+            "alignContent": "flex-start",
+            "border": "0 solid black",
+            "boxSizing": "border-box",
+            "display": "block",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "fontSize": 12,
+            "position": "relative",
+            "whiteSpace": "pre-wrap",
+          },
+          "tagName": "SPAN",
+        },
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "marginBottom": 10,
+        "position": "relative",
+      },
+      "tagName": "DIV",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            "We&#x27;ve added some basic stories inside the &#x27;src/stories&#x27; directory. A story is a single state of one or more UI components. You can have as many stories as you want. (Basically a story is like a visual test case.)",
+          ],
+          "style": Object {
+            "alignContent": "flex-start",
+            "border": "0 solid black",
+            "boxSizing": "border-box",
+            "display": "block",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "fontSize": 12,
+            "position": "relative",
+            "whiteSpace": "pre-wrap",
+          },
+          "tagName": "SPAN",
+        },
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "marginBottom": 10,
+        "position": "relative",
+      },
+      "tagName": "DIV",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            "See these sample",
+          ],
+          "style": Object {
+            "alignContent": "flex-start",
+            "border": "0 solid black",
+            "boxSizing": "border-box",
+            "display": "block",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "fontSize": 12,
+            "position": "relative",
+            "whiteSpace": "pre-wrap",
+          },
+          "tagName": "SPAN",
+        },
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "marginBottom": 10,
+        "position": "relative",
+      },
+      "tagName": "DIV",
+    },
+    Object {
+      "attributes": Object {
+        "role": "button",
+      },
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                "Button",
+              ],
+              "style": Object {
+                "alignContent": "flex-start",
+                "border": "0 solid black",
+                "boxSizing": "border-box",
+                "display": "block",
+                "flexDirection": "column",
+                "flexShrink": 0,
+                "fontSize": 12,
+                "position": "relative",
+                "whiteSpace": "pre-wrap",
+              },
+              "tagName": "SPAN",
+            },
+          ],
+          "style": Object {
+            "alignContent": "flex-start",
+            "border": "0 solid black",
+            "boxSizing": "border-box",
+            "display": "flex",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "marginBottom": 10,
+            "position": "relative",
+          },
+          "tagName": "DIV",
+        },
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "cursor": "pointer",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "position": "relative",
+      },
+      "tagName": "DIV",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            "for a component called &#x27;Button&#x27;.",
+          ],
+          "style": Object {
+            "alignContent": "flex-start",
+            "border": "0 solid black",
+            "boxSizing": "border-box",
+            "display": "block",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "fontSize": 12,
+            "position": "relative",
+            "whiteSpace": "pre-wrap",
+          },
+          "tagName": "SPAN",
+        },
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "marginBottom": 10,
+        "position": "relative",
+      },
+      "tagName": "DIV",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            "Just like that, you can add your own components as stories. You can also edit those components and see changes right away. (Try editing the &#x27;Button&#x27; stories located at &#x27;src/stories/index.js&#x27; .)",
+          ],
+          "style": Object {
+            "alignContent": "flex-start",
+            "border": "0 solid black",
+            "boxSizing": "border-box",
+            "display": "block",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "fontSize": 12,
+            "position": "relative",
+            "whiteSpace": "pre-wrap",
+          },
+          "tagName": "SPAN",
+        },
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "marginBottom": 10,
+        "position": "relative",
+      },
+      "tagName": "DIV",
+    },
+  ],
+  "style": Object {
+    "alignContent": "flex-start",
+    "border": "0 solid black",
+    "boxSizing": "border-box",
+    "display": "flex",
+    "flexDirection": "column",
+    "flexShrink": 0,
+    "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
+    "margin": 15,
+    "position": "relative",
+  },
+  "tagName": "DIV",
+}
+`;

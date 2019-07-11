@@ -1,0 +1,1 @@
+This is a [Create React App](https://github.com/facebookincubator/create-react-app) that uses an old version of CRA and an old version of React (15.4.x). It's not meant to be exhaustive but rather to make sure we don't break legacy support.

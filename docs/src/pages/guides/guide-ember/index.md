@@ -78,7 +78,7 @@ That'll load stories in `../stories/index.js`.
 
 Now you can write some stories inside the `../stories/index.js` file, like this:
 
-> It is import that you import the `hbs` function that is provided by a babel plugin in `@storybook/ember`
+> It is important that you import the `hbs` function that is provided by a babel plugin in `@storybook/ember`
 
 ```js
 import hbs from 'htmlbars-inline-precompile';

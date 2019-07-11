@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import capitalize from 'lodash/capitalize';
@@ -90,6 +91,7 @@ export const pageQuery = graphql`
           configurations
           testing
           addons
+          presets
         }
       }
     }

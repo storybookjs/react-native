@@ -37,7 +37,7 @@ type Patch = Partial<State>;
 type InputFnPatch = (s: State) => Patch;
 type InputPatch = Patch | InputFnPatch;
 
-interface Options {
+export interface Options {
   persistence: 'none' | 'session' | string;
 }
 type CallBack = (s: State) => void;

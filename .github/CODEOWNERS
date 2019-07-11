@@ -1,5 +1,4 @@
 .circleci/ @ndelangen
-.teamcity/ @hypnosphi
 .github/ @danielduan
 
 /addons/a11y/ @jbovenschen @codebyalex

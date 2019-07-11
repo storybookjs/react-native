@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { Children, FunctionComponent, ReactElement, ReactNode } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithTooltip } from './WithTooltip';
 
 import { TooltipLinkList } from './TooltipLinkList';
-import StoryLinkWrapper from '../StoryLinkWrapper';
+
+const onLinkClick = action('onLinkClick');
+
+interface StoryLinkWrapperProps {
+  href: string;
+  passHref?: boolean;
+}
+
+const StoryLinkWrapper: FunctionComponent<StoryLinkWrapperProps> = ({
+  href,
+  passHref,
+  children,
+}) => {
+  const child = Children.only(children) as ReactElement;
+
+  return React.cloneElement(child, {
+    href: passHref && href,
+    onClick: (e: React.MouseEvent) => {
+      e.preventDefault();
+      onLinkClick(href);
+    },
+  });
+};
+
+StoryLinkWrapper.defaultProps = {
+  passHref: false,
+};
 
 export const links = [
   { id: '1', title: 'Link', href: 'http://google.com' },

@@ -3,19 +3,76 @@
   "name": "monorepo",
   "public": true,
   "builds": [
-    { "src": "examples/angular-cli/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/cra-kitchen-sink/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/cra-ts-kitchen-sink/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/ember-cli/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/html-kitchen-sink/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/marko-cli/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/mithril-kitchen-sink/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/official-storybook/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/polymer-cli/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/preact-kitchen-sink/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/riot-kitchen-sink/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/svelte-kitchen-sink/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } },
-    { "src": "examples/vue-kitchen-sink/package.json", "use": "@now/static-build", "config": { "distDir": "storybook-static" } }
+    {
+      "src": "examples/angular-cli/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/cra-kitchen-sink/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/cra-ts-kitchen-sink/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/ember-cli/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/html-kitchen-sink/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/marko-cli/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/mithril-kitchen-sink/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/official-storybook/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/polymer-cli/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/preact-kitchen-sink/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/riot-kitchen-sink/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/svelte-kitchen-sink/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/vue-kitchen-sink/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    },
+    {
+      "src": "examples/cra-react15/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "storybook-static" }
+    }
   ],
   "routes": [
     { "src": "/docs", "dest": "https://storybook.js.org" },

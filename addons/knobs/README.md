@@ -3,7 +3,7 @@
 Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
 You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
 This is how Knobs look like:
 
@@ -409,6 +409,9 @@ const groupId = 'GROUP-ID1';
 
 button(label, handler, groupId);
 ```
+
+Button knobs cause the story to re-render after the handler fires, you can prevent
+this by having the handler return false.
 
 ### withKnobs options
 

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render correctly 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            "Welcome to Rax",
+          ],
+          "style": Object {
+            "alignContent": "flex-start",
+            "border": "0 solid black",
+            "boxSizing": "border-box",
+            "display": "block",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "fontSize": 32,
+            "position": "relative",
+            "whiteSpace": "pre-wrap",
+          },
+          "tagName": "SPAN",
+        },
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "position": "relative",
+      },
+      "tagName": "DIV",
+    },
+    Object {
+      "children": Array [
+        "To get started, edit src/components/App.js and save to reload.",
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "block",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "fontSize": 32,
+        "position": "relative",
+        "whiteSpace": "pre-wrap",
+      },
+      "tagName": "SPAN",
+    },
+  ],
+  "style": Object {
+    "alignContent": "flex-start",
+    "border": "0 solid black",
+    "boxSizing": "border-box",
+    "display": "flex",
+    "flexDirection": "column",
+    "flexShrink": 0,
+    "position": "relative",
+  },
+  "tagName": "DIV",
+}
+`;

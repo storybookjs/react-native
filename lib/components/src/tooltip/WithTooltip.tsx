@@ -18,7 +18,7 @@ const TargetSvgContainer = styled.g<{ mode: string }>`
   cursor: ${props => (props.mode === 'hover' ? 'default' : 'pointer')};
 `;
 
-interface WithTooltipPureProps {
+export interface WithTooltipPureProps {
   svg?: boolean;
   trigger?: 'none' | 'hover' | 'click' | 'right-click';
   closeOnClick?: boolean;

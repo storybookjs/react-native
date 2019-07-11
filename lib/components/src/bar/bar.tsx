@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 
 import { ScrollArea } from '../ScrollArea/ScrollArea';
 
-interface SideProps {
+export interface SideProps {
   left?: boolean;
   right?: boolean;
 }
@@ -66,7 +66,7 @@ const BarInner = styled.div({
   height: 40,
 });
 
-interface FlexBarProps {
+export interface FlexBarProps {
   border?: boolean;
 }
 

@@ -11,4 +11,4 @@ const channel = createChannel({ url: 'ws://localhost:9001' });
 
 * * *
 
-For more information visit: [storybook.js.org](https://storybooks.js.org)
+For more information visit: [storybook.js.org](https://storybook.js.org)

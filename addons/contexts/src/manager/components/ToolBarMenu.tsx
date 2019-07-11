@@ -1,10 +1,10 @@
 import React, { ComponentProps } from 'react';
-import { Icons, IconButton, WithTooltip } from '@storybook/components';
+import { Icons, IconButton, WithTooltip, TabButton } from '@storybook/components';
 import { ToolBarMenuOptions } from './ToolBarMenuOptions';
 import { ContextNode, FCNoChildren } from '../../shared/types.d';
 
 type ToolBarMenu = FCNoChildren<{
-  icon: ComponentProps<typeof Icons>['icon'];
+  icon?: ComponentProps<typeof Icons>['icon'] | '' | void;
   title: ContextNode['title'];
   active: boolean;
   expanded: boolean;
@@ -28,8 +28,12 @@ export const ToolBarMenu: ToolBarMenu = ({
     onVisibilityChange={setExpanded}
     tooltip={<ToolBarMenuOptions {...optionsProps} />}
   >
-    <IconButton active={active} title={title}>
-      <Icons icon={icon} />
-    </IconButton>
+    {icon ? (
+      <IconButton active={active} title={title}>
+        <Icons icon={icon} />
+      </IconButton>
+    ) : (
+      <TabButton active={active}>{title}</TabButton>
+    )}
   </WithTooltip>
 );
