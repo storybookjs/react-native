@@ -35,7 +35,12 @@ module.exports = {
   settings: {
     'import/core-modules': ['enzyme'],
     'import/ignore': ['node_modules\\/(?!@storybook)'],
-    'import/resolver': { node: { extensions: ['.js', '.ts', '.tsx', '.mjs'] } },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts', '.tsx', '.mjs', '.d.ts'],
+        paths: ['node_modules/', 'node_modules/@types/'],
+      },
+    },
     'html/html-extensions': ['.html'],
   },
   rules: {
