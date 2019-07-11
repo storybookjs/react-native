@@ -2,7 +2,7 @@ import addons, { makeDecorator } from '@storybook/addons';
 
 import { SET_OPTIONS } from './shared';
 import { manager, registerKnobs } from './registerKnobs';
-import { Knob, KnobType } from './KnobStore';
+import { Knob, KnobType } from './type-defs';
 import {
   NumberTypeKnobOptions,
   ButtonTypeOnClickProp,

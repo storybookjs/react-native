@@ -6,7 +6,8 @@ import { getQueryParams } from '@storybook/client-api';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Channel } from '@storybook/channels';
 
-import KnobStore, { Knob, KnobStoreKnob, KnobType } from './KnobStore';
+import KnobStore, { KnobStoreKnob } from './KnobStore';
+import { Knob, KnobType } from './type-defs';
 import { SET } from './shared';
 
 import { deserializers } from './converters';
