@@ -1,4 +1,5 @@
+declare module '@storybook/core/*';
 declare module 'global';
-declare module '*.json';
-declare module '@storybook/core/client';
-declare module '@storybook/core/server';
+
+// will be provided by the webpack define plugin
+declare var NODE_ENV: string | undefined;
