@@ -35,7 +35,7 @@
     "global": "^4.4.0",
     "html-react-parser": "^0.8.1",
     "is-builtin-module": "^3.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "marked": "^0.7.0",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",

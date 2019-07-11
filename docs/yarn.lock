@@ -261,20 +261,21 @@
   dependencies:
     "@ndhoule/map" "^2.0.1"
 
-"@storybook/client-logger@5.2.0-alpha.37":
-  version "5.2.0-alpha.37"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.2.0-alpha.37.tgz#b0e845f5dd3e2630ba431bea3ba03cca4376f40f"
-  integrity sha512-AkiOL/aCr1t2gOKwqsdspAyUyuO67MzBLL/28KxYDYS66DrsWrk/iMaozuGyk4JLDdc/xCJC3NJcGZfliyb40w==
+"@storybook/client-logger@5.2.0-alpha.40":
+  version "5.2.0-alpha.40"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.2.0-alpha.40.tgz#b922a7d2a114728b9b07ffa9dc5ebf9421cf898c"
+  integrity sha512-3Z69LoAhUcM3XupVM0Ej2uE2fPJl0l0rIeYfEAP0oWyazaVSBDJNhFGZ6Zj6+CpzWvT3d08kX9apj/4YAFhXBw==
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/components@5.2.0-alpha.37":
-  version "5.2.0-alpha.37"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.2.0-alpha.37.tgz#e3274ae7030d700cf5443e7b8e83280d0922f332"
-  integrity sha512-gsroM+KBWT4nKluvRrEcAVqEaIzYVFeUGUQou3Cst9iOnkHuxB6Enljg5gNrDIjcPpzRLkouYJdZhZEkGAlUPA==
+"@storybook/components@5.2.0-alpha.40":
+  version "5.2.0-alpha.40"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.2.0-alpha.40.tgz#306b29fcc464916372a672d71704c45b0e910137"
+  integrity sha512-BXw6wNudzijGpeQoMGhqUfcC0wlLnfMJVnBJqPYODgVBIBgv/Yz+m2akzV0sJkI2+nx99sAdkPAkMyrXi7bv3Q==
   dependencies:
-    "@storybook/client-logger" "5.2.0-alpha.37"
-    "@storybook/theming" "5.2.0-alpha.37"
+    "@storybook/client-logger" "5.2.0-alpha.40"
+    "@storybook/theming" "5.2.0-alpha.40"
+    "@types/react-syntax-highlighter" "10.1.0"
     core-js "^3.0.1"
     global "^4.3.2"
     markdown-to-jsx "^6.9.1"
@@ -292,14 +293,14 @@
     recompose "^0.30.0"
     simplebar-react "^1.0.0-alpha.6"
 
-"@storybook/theming@5.2.0-alpha.37":
-  version "5.2.0-alpha.37"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.2.0-alpha.37.tgz#9bdc0992f01516c8aa333517150393637a5a539e"
-  integrity sha512-NgpxIOikDrtnVYX9N70Gq75O/y4Wvbfq+qWn7wmazQzNsSG41un6VVR/yb7rJMxh/KxlfMP8cyB2l7S8lglxuw==
+"@storybook/theming@5.2.0-alpha.40":
+  version "5.2.0-alpha.40"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.2.0-alpha.40.tgz#ec80469d96cf291f34e14db0f843b827bce53294"
+  integrity sha512-Z5jUxLconKPTbCHCeyv6MlI0IHPpIJt3RSA311XxA/mninxI3TlH98LgC4cwkFvNeTVG0kcbr4bZ1AcWYQQxdA==
   dependencies:
     "@emotion/core" "^10.0.9"
     "@emotion/styled" "^10.0.7"
-    "@storybook/client-logger" "5.2.0-alpha.37"
+    "@storybook/client-logger" "5.2.0-alpha.40"
     common-tags "^1.8.0"
     core-js "^3.0.1"
     deep-object-diff "^1.1.0"
@@ -394,6 +395,13 @@
   integrity sha512-12+VOu1+xiC8RPc9yrgHCyLI79VswjtuqeS2gPrMcywH6tkc8rGIUhs4LaL3AJPqo5d+RPnfRpNKiJ7MK2Qhcg==
   dependencies:
     "@types/history" "*"
+    "@types/react" "*"
+
+"@types/react-syntax-highlighter@10.1.0":
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-10.1.0.tgz#9c534e29bbe05dba9beae1234f3ae944836685d4"
+  integrity sha512-dF49hC4FZp1dIKyzacOrHvqMUe8U2IXyQCQXOcT1e6n64gLBp+xM6qGtPsThIT9XjiIHSg2W5Jc2V5IqekBfnA==
+  dependencies:
     "@types/react" "*"
 
 "@types/react@*":
@@ -7064,9 +7072,9 @@ locate-path@^2.0.0:
     path-exists "^3.0.0"
 
 lodash-es@^4.2.1:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.11.tgz#145ab4a7ac5c5e52a3531fb4f310255a152b4be0"
-  integrity sha512-DHb1ub+rMjjrxqlB3H56/6MXtm1lSksDp2rA2cNWjG8mlDUYFhUj3Di2Zn5IwSU87xLv8tNIQ7sSwE/YOX/D/Q==
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.14.tgz#12a95a963cc5955683cee3b74e85458954f37ecc"
+  integrity sha512-7zchRrGa8UZXjD/4ivUWP1867jDkhzTG2c/uj739utSd7O/pFFdxspCemIFKEEjErbcqRzn8nKnGsi7mvTgRPA==
 
 lodash-id@^0.14.0:
   version "0.14.0"
@@ -7257,14 +7265,14 @@ lodash.memoize@^4.1.2:
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
 
 lodash.merge@^4.4.0:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
-  integrity sha512-AOYza4+Hf5z1/0Hztxpm2/xiPZgi/cjMqdnKTUWTBSKchJlxXXuUSxCCl8rJlf4g6yww/j6mA8nC8Hw/EZWxKQ==
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
 lodash.mergewith@^4.6.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
-  integrity sha512-eWw5r+PYICtEBgrBE5hhlT6aAa75f411bgDz/ZL2KZqYV03USvucsxcHUIlGTDTECs1eunpI7HOV7U+WLDvNdQ==
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
+  integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
 
 lodash.pad@^4.1.0:
   version "4.5.1"
@@ -7369,10 +7377,10 @@ lodash@3.10.1:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
   integrity sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y=
 
-lodash@4, lodash@^4.1.0, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+lodash@4, lodash@^4.1.0, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
+  integrity sha512-vm3/XWXfWtRua0FkUyEHBZy8kCPjErNBT9fJx8Zvs+U6zjqPbTUOpkaoum3O5uiA8sm+yNMHXfYkTUHFoMxFNA==
 
 lodash@4.11.1:
   version "4.11.1"
