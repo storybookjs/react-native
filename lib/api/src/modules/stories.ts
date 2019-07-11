@@ -189,7 +189,7 @@ const initStoriesApi = ({
         hierarchySeparator: groupSeparator,
       } = (parameters && parameters.options) || {
         hierarchyRootSeparator: '|',
-        hierarchySeparator: '/',
+        hierarchySeparator: /\/|\./,
       };
 
       const { root, groups } = parseKind(kind, { rootSeparator, groupSeparator });

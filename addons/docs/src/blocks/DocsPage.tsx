@@ -100,7 +100,7 @@ const getDocsPageProps = (context: DocsContextProps): DocsPageProps => {
     hierarchySeparator: groupSeparator,
   } = (parameters && parameters.options) || {
     hierarchyRootSeparator: '|',
-    hierarchySeparator: '/',
+    hierarchySeparator: /\/|\./,
   };
 
   const { groups } = parseKind(selectedKind, { rootSeparator, groupSeparator });
