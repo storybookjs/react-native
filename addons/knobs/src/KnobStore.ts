@@ -15,21 +15,35 @@ import Types, {
 
 type Callback = () => any;
 
-type KnobPlus<T extends keyof typeof Types, K> = K & { type: T; groupId?: string };
+export type KnobType = keyof typeof Types;
 
-export type Knob =
-  | KnobPlus<'text', Pick<TextTypeKnob, 'value'>>
-  | KnobPlus<'boolean', Pick<BooleanTypeKnob, 'value'>>
-  | KnobPlus<'number', Pick<NumberTypeKnob, 'value' | 'range' | 'min' | 'max' | 'step'>>
-  | KnobPlus<'color', Pick<ColorTypeKnob, 'value'>>
-  | KnobPlus<'object', Pick<ObjectTypeKnob<any>, 'value'>>
-  | KnobPlus<'select', Pick<SelectTypeKnob, 'value' | 'options'> & { selectV2: true }>
-  | KnobPlus<'radios', Pick<RadiosTypeKnob, 'value' | 'options'>>
-  | KnobPlus<'array', Pick<ArrayTypeKnob, 'value' | 'separator'>>
-  | KnobPlus<'date', Pick<DateTypeKnob, 'value'>>
-  | KnobPlus<'files', Pick<FileTypeKnob, 'value' | 'accept'>>
-  | KnobPlus<'button', { value?: unknown; callback: ButtonTypeOnClickProp; hideLabel: true }>
-  | KnobPlus<'options', Pick<OptionsTypeKnob<any>, 'options' | 'value' | 'optionsObj'>>;
+type KnobPlus<T extends KnobType, K> = K & { type: T; groupId?: string };
+
+export type Knob<T extends KnobType = any> = T extends 'text'
+  ? KnobPlus<T, Pick<TextTypeKnob, 'value'>>
+  : T extends 'boolean'
+  ? KnobPlus<T, Pick<BooleanTypeKnob, 'value'>>
+  : T extends 'number'
+  ? KnobPlus<T, Pick<NumberTypeKnob, 'value' | 'range' | 'min' | 'max' | 'step'>>
+  : T extends 'color'
+  ? KnobPlus<T, Pick<ColorTypeKnob, 'value'>>
+  : T extends 'object'
+  ? KnobPlus<T, Pick<ObjectTypeKnob<any>, 'value'>>
+  : T extends 'select'
+  ? KnobPlus<T, Pick<SelectTypeKnob, 'value' | 'options'> & { selectV2: true }>
+  : T extends 'radios'
+  ? KnobPlus<T, Pick<RadiosTypeKnob, 'value' | 'options'>>
+  : T extends 'array'
+  ? KnobPlus<T, Pick<ArrayTypeKnob, 'value' | 'separator'>>
+  : T extends 'date'
+  ? KnobPlus<T, Pick<DateTypeKnob, 'value'>>
+  : T extends 'files'
+  ? KnobPlus<T, Pick<FileTypeKnob, 'value' | 'accept'>>
+  : T extends 'button'
+  ? KnobPlus<T, { value?: never; callback: ButtonTypeOnClickProp; hideLabel: true }>
+  : T extends 'options'
+  ? KnobPlus<T, Pick<OptionsTypeKnob<any>, 'options' | 'value' | 'optionsObj'>>
+  : never;
 
 export type KnobStoreKnob = Knob & {
   name: string;
