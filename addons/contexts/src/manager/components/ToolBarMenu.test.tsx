@@ -23,7 +23,7 @@ describe('Tests on addon-contexts component: ToolBarMenu', () => {
 
     // then
     expect(result).toMatchInlineSnapshot(`
-      <lifecycle(WithTooltipPure)
+      <WithToolTipState
         closeOnClick={true}
         onVisibilityChange={[Function]}
         placement="top"
@@ -50,7 +50,7 @@ describe('Tests on addon-contexts component: ToolBarMenu', () => {
             icon="globe"
           />
         </IconButton>
-      </lifecycle(WithTooltipPure)>
+      </WithToolTipState>
     `);
   });
 
@@ -73,7 +73,7 @@ describe('Tests on addon-contexts component: ToolBarMenu', () => {
 
     // then
     expect(result).toMatchInlineSnapshot(`
-      <lifecycle(WithTooltipPure)
+      <WithToolTipState
         closeOnClick={true}
         onVisibilityChange={[Function]}
         placement="top"
@@ -97,7 +97,7 @@ describe('Tests on addon-contexts component: ToolBarMenu', () => {
         >
           Some Context
         </TabButton>
-      </lifecycle(WithTooltipPure)>
+      </WithToolTipState>
     `);
   });
 });
