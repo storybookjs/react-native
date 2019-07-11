@@ -25,7 +25,7 @@ const styles = ({ theme }: { theme: Theme }): CSSObject => ({
   color: theme.input.color || 'inherit',
   background: theme.input.background,
   boxShadow: `${theme.input.border} 0 0 0 1px inset`,
-  borderRadius: `${theme.input.borderRadius}`,
+  borderRadius: theme.input.borderRadius,
   fontSize: theme.typography.size.s2 - 1,
   lineHeight: '20px',
   padding: '.42em 1em', // 32
