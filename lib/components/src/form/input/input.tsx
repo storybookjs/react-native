@@ -1,11 +1,11 @@
-import React from 'react';
-import { styled, Theme } from '@storybook/theming';
+import React, { FunctionComponent } from 'react';
+import { styled, Theme, CSSObject } from '@storybook/theming';
 
 import TextareaAutoResize from 'react-textarea-autosize';
 
 import { Button as StyledButton } from '../../Button/Button';
 
-const styleResets = {
+const styleResets: CSSObject = {
   // resets
   appearance: 'none',
   border: '0',
@@ -18,14 +18,14 @@ const styleResets = {
   position: 'relative',
 };
 
-const styles = ({ theme }: Theme) => ({
+const styles = ({ theme }: { theme: Theme }): CSSObject => ({
   ...styleResets,
 
   transition: 'all 200ms ease-out',
   color: theme.input.color || 'inherit',
   background: theme.input.background,
   boxShadow: `${theme.input.border} 0 0 0 1px inset`,
-  borderRadius: theme.input.borderRadius,
+  borderRadius: `${theme.input.borderRadius}`,
   fontSize: theme.typography.size.s2 - 1,
   lineHeight: '20px',
   padding: '.42em 1em', // 32
@@ -43,7 +43,17 @@ const styles = ({ theme }: Theme) => ({
   },
 });
 
-const sizes = ({ size }: { size?: string | number }) => {
+type Sizes = '100%' | 'flex' | 'auto';
+type Alignments = 'end' | 'center' | 'start';
+type ValidationStates = 'valid' | 'error' | 'warn';
+
+export interface InputStyleProps {
+  size?: Sizes;
+  align?: Alignments;
+  validation?: ValidationStates;
+}
+
+const sizes = ({ size }: { size?: Sizes }): CSSObject => {
   switch (size) {
     case '100%': {
       return { width: '100%' };
@@ -57,7 +67,7 @@ const sizes = ({ size }: { size?: string | number }) => {
     }
   }
 };
-const alignment = ({ align }: { align: string }) => {
+const alignment = ({ align }: InputStyleProps): CSSObject => {
   switch (align) {
     case 'end': {
       return { textAlign: 'right' };
@@ -71,7 +81,7 @@ const alignment = ({ align }: { align: string }) => {
     }
   }
 };
-const validation = ({ valid, theme }: { valid: string; theme: Theme }) => {
+const validation = ({ valid, theme }: { valid: ValidationStates; theme: Theme }): CSSObject => {
   switch (valid) {
     case 'valid': {
       return { boxShadow: `${theme.color.positive} 0 0 0 1px inset !important` };
@@ -92,34 +102,36 @@ const validation = ({ valid, theme }: { valid: string; theme: Theme }) => {
   }
 };
 
-export const Input = styled.input<any>(styles as any, sizes, alignment as any, validation, {
+export const Input = styled(({ size, valid, align, ...props }) => <input {...props} />)<
+  InputStyleProps
+>({} as any, styles, sizes, alignment, validation, {
   minHeight: 32,
 });
-(Input as any).styles = { ...styleResets, ...styles };
-(Input as any).sizes = sizes;
-(Input as any).alignment = alignment;
+// (Input).styles = { ...styleResets, ...styles };
+// (Input).sizes = sizes;
+// (Input).alignment = alignment;
 Input.displayName = 'Input';
 
-export const Select = styled.select(styles as any, sizes, validation, {
+export const Select = styled(({ size, valid, align, ...props }) => <select {...props} />)<
+  InputStyleProps
+>(styles, sizes, validation, {
   height: 32,
   userSelect: 'none',
   paddingRight: 20,
   appearance: 'menulist',
-} as any) as any;
+});
 Select.displayName = 'Select';
 
-export const Textarea = styled(TextareaAutoResize)(
-  styles as any,
-  sizes,
-  alignment as any,
-  validation,
-  {
-    overflow: 'visible',
-  }
-) as any;
+export const Textarea = styled(({ size, valid, align, ...props }) => (
+  <TextareaAutoResize {...props} />
+))<InputStyleProps>(styles, sizes, alignment, validation, {
+  overflow: 'visible',
+});
 Textarea.displayName = 'Textarea';
 
-const ButtonStyled = styled(StyledButton)(sizes, validation, {
+const ButtonStyled = styled(({ size, valid, align, ...props }) => <StyledButton {...props} />)<
+  InputStyleProps
+>(sizes, validation, {
   // Custom styling for color widget nested in buttons
   userSelect: 'none',
   overflow: 'visible',
@@ -131,7 +143,7 @@ const ButtonStyled = styled(StyledButton)(sizes, validation, {
   },
 });
 
-export const Button = (props: JSX.IntrinsicAttributes) => (
+export const Button: FunctionComponent<any> = props => (
   <ButtonStyled {...props} {...{ tertiary: true, small: true, inForm: true }} />
 );
 Button.displayName = 'Button';
