@@ -37,7 +37,7 @@
     "qs": "^6.6.0",
     "react-color": "^2.17.0",
     "react-lifecycles-compat": "^3.0.4",
-    "react-select": "^2.2.0"
+    "react-select": "^3.0.0"
   },
   "peerDependencies": {
     "react": "*"
