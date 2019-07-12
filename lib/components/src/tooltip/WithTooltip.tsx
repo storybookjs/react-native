@@ -18,6 +18,10 @@ const TargetSvgContainer = styled.g<{ mode: string }>`
   cursor: ${props => (props.mode === 'hover' ? 'default' : 'pointer')};
 `;
 
+interface WithHideFn {
+  onHide: () => void;
+}
+
 export interface WithTooltipPureProps {
   svg?: boolean;
   trigger?: 'none' | 'hover' | 'click' | 'right-click';
@@ -25,7 +29,7 @@ export interface WithTooltipPureProps {
   placement?: Placement;
   modifiers?: Modifiers;
   hasChrome?: boolean;
-  tooltip: ReactNode;
+  tooltip: ReactNode | ((p: WithHideFn) => ReactNode);
   children: ReactNode;
   tooltipShown?: boolean;
   onVisibilityChange?: (visibility: boolean) => void;
