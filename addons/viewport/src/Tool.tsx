@@ -8,7 +8,7 @@ import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/comp
 
 import { useParameter, useAddonState } from '@storybook/api';
 import { PARAM_KEY, ADDON_ID } from './constants';
-import { ViewportAddonParameter, ViewportMap, ViewportStyles, Viewport, Styles } from './models';
+import { ViewportAddonParameter, ViewportMap, ViewportStyles, Styles } from './models';
 
 interface ViewportItem {
   id: string;
@@ -141,9 +141,7 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
 
     const ref = useRef<ViewportStyles>();
 
-    const styles = item
-      ? getStyles(ref.current, item.styles, isRotated)
-      : (responsiveViewport.styles as ViewportStyles);
+    const styles = getStyles(ref.current, item.styles, isRotated);
 
     useEffect(() => {
       ref.current = styles;
