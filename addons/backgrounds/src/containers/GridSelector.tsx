@@ -4,12 +4,12 @@ import { useAddonState } from '@storybook/api';
 import { Global } from '@storybook/theming';
 import { Icons, IconButton } from '@storybook/components';
 
-import { GRID } from '../constants';
+import { ADDON_ID } from '../constants';
 
 const iframeId = 'storybook-preview-iframe';
 
 export const GridSelector: FunctionComponent = () => {
-  const [state, setState] = useAddonState<boolean>(GRID);
+  const [state, setState] = useAddonState<boolean>(`${ADDON_ID}/grid`);
 
   return (
     <IconButton
@@ -32,7 +32,6 @@ export const GridSelector: FunctionComponent = () => {
                 'linear-gradient(rgba(130, 130, 130, 0.25) 1px,transparent 1px)',
                 'linear-gradient(90deg,rgba(130, 130, 130, 0.25) 1px,transparent 1px)',
               ].join(','),
-              // `linear-gradient(black 1px, transparent 1px), linear-gradient(90deg, black 1px, transparent 1px), linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px)`,
             },
           }}
         />
