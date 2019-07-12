@@ -1,3 +1,4 @@
+/* eslint-disable no-fallthrough */
 import React, { Fragment, ReactNode, useEffect, useRef, FunctionComponent } from 'react';
 import memoize from 'memoizerific';
 
@@ -40,7 +41,6 @@ const toLinks = memoize(50)((list: ViewportItem[], active: LinkBase, set, state,
             return null;
           }
         }
-        // eslint-disable-next-line no-fallthrough
         default: {
           return {
             ...i,
@@ -148,10 +148,6 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
     useEffect(() => {
       ref.current = styles;
     }, [item]);
-
-    if (styles === null) {
-      // debugger;
-    }
 
     if (disable || Object.entries(viewports).length === 0) {
       return null;

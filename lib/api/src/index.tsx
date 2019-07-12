@@ -325,7 +325,6 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
 
   if (typeof existingState === 'undefined' && typeof state !== 'undefined') {
     if (!ref.current[addonId]) {
-      // debugger;
       api.setAddonState<S>(addonId, state);
       ref.current[addonId] = true;
     }

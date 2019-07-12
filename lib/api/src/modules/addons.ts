@@ -127,7 +127,6 @@ export default ({ provider, store }: Module) => {
         .then(() => api.getAddonState(addonId));
     },
     getAddonState: addonId => {
-      // debugger;
       return store.getState().addons[addonId];
     },
   };
