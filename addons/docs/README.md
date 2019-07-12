@@ -17,8 +17,8 @@ features as well. This chart captures the current state of support
 | Legacy stories |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
 | Source \*      |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
 | Notes / Info   |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
-| Props table    |   +   |  #  |    #    |         |         |      |       |        |      |       |        |
-| Docgen         |   +   |  #  |    #    |         |         |      |       |        |      |       |        |
+| Props table    |   +   |  +  |    #    |         |         |      |       |        |      |       |        |
+| Docgen         |   +   |  +  |    #    |         |         |      |       |        |      |       |        |
 | Inline stories |   +   |  #  |         |         |         |      |       |        |      |       |        |
 
 **Notes:**
