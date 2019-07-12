@@ -2,6 +2,12 @@ import React, { Component, Fragment } from 'react';
 import { styled } from '@storybook/theming';
 
 const patterns = [/^\x08+/, /^\x1b\[[012]?K/, /^\x1b\[?[\d;]{0,3}/];
+const positiveType = 'positive';
+const negativeType = 'negative';
+const endToken = '[39m';
+const failStartToken = '[31m';
+const passStartToken = '[32m';
+const stackTraceStartToken = 'at';
 
 const StackTrace = styled.pre({
   background: '#f2f2f2',
@@ -50,10 +56,6 @@ const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
 
   if (!msg) return elementArray;
 
-  const endToken = '[39m';
-  const failStartToken = '[31m';
-  const passStartToken = '[32m';
-
   const splitDescription = msg
     .split(/\[2m/)
     .join('')
@@ -66,12 +68,12 @@ const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
         element.indexOf(failStartToken) > -1 &&
         element.indexOf(failStartToken) < element.indexOf(endToken)
       ) {
-        elementArray = elementArray.concat(colorizeText(element, 'negative'));
+        elementArray = elementArray.concat(colorizeText(element, negativeType));
       } else if (
         element.indexOf(passStartToken) > -1 &&
         element.indexOf(passStartToken) < element.indexOf(endToken)
       ) {
-        elementArray = elementArray.concat(colorizeText(element, 'positive'));
+        elementArray = elementArray.concat(colorizeText(element, positiveType));
       } else {
         elementArray = elementArray.concat(element);
       }
@@ -82,16 +84,17 @@ const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
 
 const colorizeText: (msg: string, type: string) => MsgElement[] = (msg: string, type: string) => {
   let elementArray: MsgElement[];
-  if (type === 'positive') {
-    elementArray = msg
+  if (type === positiveType) {
+    return msg
       .split(/\[32m(.*?)\[39m/)
       .map((i, index) => (index % 2 ? <Positive key={`p_${i}`}>{i}</Positive> : i));
-  } else {
-    elementArray = msg
+  }
+  if (type === negativeType) {
+    return msg
       .split(/\[31m(.*?)\[39m/)
       .map((i, index) => (index % 2 ? <Negative key={`n_${i}`}>{i}</Negative> : i));
   }
-  return elementArray;
+  return [msg];
 };
 
 const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
@@ -106,24 +109,34 @@ const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
   testDetail.result = [];
 
   for (let index = 1; index < lines.length; index++) {
+    const current = lines[index];
+    const next = lines[index + 1];
+
     if (
-      lines[index]
+      current
         .trim()
         .toLowerCase()
-        .indexOf('at') === 0
+        .indexOf(stackTraceStartToken) === 0
     ) {
-      testDetail.stackTrace += `${lines[index].trim()}\n`;
-    } else if (lines[index].trim().length === lines[index].trim().indexOf(':') + 1) {
-      testDetail.result = [
-        testDetail.result,
-        getConvertedText(lines[index]),
-        ' ',
-        getConvertedText(lines[index + 1]),
-        <br key={index} />,
-      ];
-      index++;
+      testDetail.stackTrace += `${current.trim()}\n`;
+    } else if (current.trim().indexOf(':') > -1) {
+      let title = null;
+      let value = null;
+
+      if (current.trim().indexOf(':') === current.length - 1) {
+        // there are breaks in the middle of result
+        title = current.trim();
+        value = getConvertedText(next);
+        index++;
+      } else {
+        // results come in one line
+        title = current.substring(0, current.indexOf(':')).trim();
+        value = getConvertedText(current.substring(current.indexOf(':'), current.length));
+      }
+      testDetail.result = [testDetail.result, title, ' ', value, <br key={index} />];
     } else {
-      testDetail.result = [testDetail.result, ' ', getConvertedText(lines[index])];
+      // results come in unexpected format
+      testDetail.result = [testDetail.result, ' ', getConvertedText(current)];
     }
   }
 
