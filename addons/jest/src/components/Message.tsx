@@ -1,13 +1,25 @@
 import React, { Component, Fragment } from 'react';
 import { styled } from '@storybook/theming';
 
-const patterns = [/^\x08+/, /^\x1b\[[012]?K/, /^\x1b\[?[\d;]{0,3}/];
+const positiveConsoleRegex = /\[32m(.*?)\[39m/;
+const negativeConsoleRegex = /\[31m(.*?)\[39m/;
 const positiveType = 'positive';
 const negativeType = 'negative';
 const endToken = '[39m';
 const failStartToken = '[31m';
 const passStartToken = '[32m';
 const stackTraceStartToken = 'at';
+const titleEndToken = ':';
+
+type MsgElement = string | JSX.Element;
+
+class TestDetail {
+  description: MsgElement[];
+
+  result: MsgElement[];
+
+  stackTrace: string;
+}
 
 const StackTrace = styled.pre({
   background: '#f2f2f2',
@@ -35,33 +47,44 @@ const Description = styled.div({
   overflowWrap: 'break-word',
 });
 
-const Positive = styled.strong({
-  color: '#66BF3C',
+const StatusColor = styled.strong(({ status, theme }) => ({
+  color: status === positiveType ? theme.color.positive : theme.color.negative,
   fontWeight: 500,
-});
-
-const Negative = styled.strong({
-  color: '#FF4400',
-  fontWeight: 500,
-});
+}));
 
 const Main = styled(({ msg, className }) => <section className={className}>{msg}</section>)({
   padding: 5,
 });
 
-type MsgElement = string | JSX.Element;
+const colorizeText: (msg: string, type: string) => MsgElement[] = (msg: string, type: string) => {
+  let elementArray: MsgElement[];
+  if (type) {
+    return msg
+      .split(type === positiveType ? positiveConsoleRegex : negativeConsoleRegex)
+      .map((i, index) =>
+        index % 2 ? (
+          <StatusColor key={`${type}_${i}`} status={type}>
+            {i}
+          </StatusColor>
+        ) : (
+          i
+        )
+      );
+  }
+  return [msg];
+};
 
 const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
   let elementArray: MsgElement[] = [];
 
   if (!msg) return elementArray;
 
-  const splitDescription = msg
+  const splitText = msg
     .split(/\[2m/)
     .join('')
     .split(/\[22m/);
 
-  splitDescription.forEach(element => {
+  splitText.forEach(element => {
     const modifiedElement: any = null;
     if (element && element.trim()) {
       if (
@@ -82,33 +105,15 @@ const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
   return elementArray;
 };
 
-const colorizeText: (msg: string, type: string) => MsgElement[] = (msg: string, type: string) => {
-  let elementArray: MsgElement[];
-  if (type === positiveType) {
-    return msg
-      .split(/\[32m(.*?)\[39m/)
-      .map((i, index) => (index % 2 ? <Positive key={`p_${i}`}>{i}</Positive> : i));
-  }
-  if (type === negativeType) {
-    return msg
-      .split(/\[31m(.*?)\[39m/)
-      .map((i, index) => (index % 2 ? <Negative key={`n_${i}`}>{i}</Negative> : i));
-  }
-  return [msg];
-};
-
 const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
-  const lines = patterns
-    .reduce((acc, regex) => acc.replace(regex, ''), msg)
-    .split('\n')
-    .filter(Boolean);
+  const lines = msg.split('\n').filter(Boolean);
 
   const testDetail: TestDetail = new TestDetail();
   testDetail.description = getConvertedText(lines[0]);
   testDetail.stackTrace = '';
   testDetail.result = [];
 
-  for (let index = 1; index < lines.length; index++) {
+  for (let index = 1; index < lines.length; index += 1) {
     const current = lines[index];
     const next = lines[index + 1];
 
@@ -119,23 +124,22 @@ const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
         .indexOf(stackTraceStartToken) === 0
     ) {
       testDetail.stackTrace += `${current.trim()}\n`;
-    } else if (current.trim().indexOf(':') > -1) {
-      let title = null;
+    } else if (current.trim().indexOf(titleEndToken) > -1) {
+      let title;
       let value = null;
-
-      if (current.trim().indexOf(':') === current.length - 1) {
+      if (current.trim().indexOf(titleEndToken) === current.length - 1) {
         // there are breaks in the middle of result
         title = current.trim();
         value = getConvertedText(next);
-        index++;
+        index += 1;
       } else {
-        // results come in one line
-        title = current.substring(0, current.indexOf(':')).trim();
-        value = getConvertedText(current.substring(current.indexOf(':'), current.length));
+        // results come in a single line
+        title = current.substring(0, current.indexOf(titleEndToken)).trim();
+        value = getConvertedText(current.substring(current.indexOf(titleEndToken), current.length));
       }
       testDetail.result = [testDetail.result, title, ' ', value, <br key={index} />];
     } else {
-      // results come in unexpected format
+      // results come in an unexpected format
       testDetail.result = [testDetail.result, ' ', getConvertedText(current)];
     }
   }
@@ -147,27 +151,17 @@ interface MessageProps {
   msg: string;
 }
 
-class TestDetail {
-  description: MsgElement[];
+export const Message = props => {
+  const { msg } = props;
 
-  result: MsgElement[];
-
-  stackTrace: string;
-}
-
-export class Message extends Component<MessageProps, {}> {
-  render() {
-    const { msg } = this.props;
-    const detail: TestDetail = getTestDetail(msg);
-
-    return (
-      <Fragment>
-        {detail.description ? <Description>{detail.description}</Description> : null}
-        <Results>{detail.result ? <div>{detail.result}</div> : null}</Results>
-        <StackTrace>{detail.stackTrace}</StackTrace>
-      </Fragment>
-    );
-  }
-}
+  const detail: TestDetail = getTestDetail(msg);
+  return (
+    <Fragment>
+      {detail.description ? <Description>{detail.description}</Description> : null}
+      {detail.result ? <Results>{detail.result}</Results> : null}
+      {detail.stackTrace ? <StackTrace>{detail.stackTrace}</StackTrace> : null}
+    </Fragment>
+  );
+};
 
 export default Message;
