@@ -1,3 +1,28 @@
+## 5.2.0-alpha.42 (July 12, 2019)
+
+### Breaking Changes
+
+* Addon-docs: Remove primary parameter ([#7383](https://github.com/storybookjs/storybook/pull/7383))
+
+### Bug Fixes
+
+* Addon-docs: Fix default separator inconsistency ([#7382](https://github.com/storybookjs/storybook/pull/7382))
+* UI: Fix placement of notificationistList on docs page ([#7290](https://github.com/storybookjs/storybook/pull/7290))
+
+### Maintenance
+
+* Typescript: Migrate @storybook/html ([#7338](https://github.com/storybookjs/storybook/pull/7338))
+
+### Dependency Upgrades
+
+* Bump lodash from 4.17.13 to 4.17.14 ([#7384](https://github.com/storybookjs/storybook/pull/7384))
+* [Security] Bump lodash.defaultsdeep from 4.6.0 to 4.6.1 ([#7370](https://github.com/storybookjs/storybook/pull/7370))
+* [Security] Bump lodash from 4.17.11 to 4.17.13 ([#7374](https://github.com/storybookjs/storybook/pull/7374))
+* [Security] Bump lodash.mergewith from 4.6.1 to 4.6.2 ([#7372](https://github.com/storybookjs/storybook/pull/7372))
+* [Security] Bump lodash.merge from 4.6.1 to 4.6.2 ([#7373](https://github.com/storybookjs/storybook/pull/7373))
+* [Security] Bump lodash-es from 4.17.11 to 4.17.14 ([#7371](https://github.com/storybookjs/storybook/pull/7371))
+* Upgrade react-select dependency to version 3 for addon-knobs ([#7336](https://github.com/storybookjs/storybook/pull/7336))
+
 ## 5.2.0-alpha.41 (July 11, 2019)
 
 ### Features
