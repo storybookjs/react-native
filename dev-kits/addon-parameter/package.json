@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-parameter",
-  "version": "5.2.0-alpha.42",
+  "version": "5.2.0-alpha.43",
   "description": "parameter addon for storybook",
   "keywords": [
     "devkit",
@@ -24,12 +24,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.42",
-    "@storybook/api": "5.2.0-alpha.42",
-    "@storybook/client-logger": "5.2.0-alpha.42",
-    "@storybook/components": "5.2.0-alpha.42",
-    "@storybook/core-events": "5.2.0-alpha.42",
-    "@storybook/theming": "5.2.0-alpha.42",
+    "@storybook/addons": "5.2.0-alpha.43",
+    "@storybook/api": "5.2.0-alpha.43",
+    "@storybook/client-logger": "5.2.0-alpha.43",
+    "@storybook/components": "5.2.0-alpha.43",
+    "@storybook/core-events": "5.2.0-alpha.43",
+    "@storybook/theming": "5.2.0-alpha.43",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
