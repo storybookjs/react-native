@@ -12,15 +12,20 @@ export interface Version {
   [key: string]: any;
 }
 
-export interface SubState {
-  versions: {
-    [key: string]: {
-      [key: string]: any;
-    };
-    latest?: Version;
-    next?: Version;
-    current?: Version;
+export interface UnknownEntries {
+  [key: string]: {
+    [key: string]: any;
   };
+}
+
+export interface Versions {
+  latest?: Version;
+  next?: Version;
+  current?: Version;
+}
+
+export interface SubState {
+  versions: Versions & UnknownEntries;
   lastVersionCheck: number;
   dismissedVersionNotification: undefined | string;
 }

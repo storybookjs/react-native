@@ -8,7 +8,7 @@ type Direction = -1 | 1;
 type StoryId = string;
 type ParameterName = string;
 
-type ViewMode = 'story' | 'info' | undefined;
+type ViewMode = 'story' | 'info' | 'settings' | undefined;
 
 export interface SubState {
   storiesHash: StoriesHash;
@@ -189,7 +189,7 @@ const initStoriesApi = ({
         hierarchySeparator: groupSeparator,
       } = (parameters && parameters.options) || {
         hierarchyRootSeparator: '|',
-        hierarchySeparator: '/',
+        hierarchySeparator: /\/|\./,
       };
 
       const { root, groups } = parseKind(kind, { rootSeparator, groupSeparator });
@@ -262,7 +262,7 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
 
     // Now create storiesHash by reordering the above by group
     const storiesHash: StoriesHash = Object.values(storiesHashOutOfOrder).reduce(addItem, {});
-
+    const settingsPageList = ['about', 'shortcuts'];
     const { storyId, viewMode } = store.getState();
 
     if (storyId && storyId.match(/--\*$/)) {
@@ -279,7 +279,11 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       // we pick the first leaf and navigate
       const firstLeaf = Object.values(storiesHash).find((s: Story | Group) => !s.children);
 
-      if (viewMode && firstLeaf) {
+      if (viewMode === 'settings' && settingsPageList.includes(storyId)) {
+        navigate(`/${viewMode}/${storyId}`);
+      } else if (viewMode === 'settings' && !settingsPageList.includes(storyId)) {
+        navigate(`/story/${firstLeaf.id}`);
+      } else if (viewMode && firstLeaf) {
         navigate(`/${viewMode}/${firstLeaf.id}`);
       }
     }

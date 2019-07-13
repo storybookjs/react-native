@@ -62,6 +62,10 @@ NumberType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.number,
+    step: PropTypes.number,
+    min: PropTypes.number,
+    max: PropTypes.number,
+    range: PropTypes.bool,
   }),
   onChange: PropTypes.func,
 };
