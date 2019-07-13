@@ -1,11 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 import { opacify, transparentize } from 'polished';
-
 import { Icons } from '@storybook/components';
 
-const Expander = styled.span(
+export type ExpanderProps = React.ComponentProps<'span'> & {
+  isExpanded?: boolean;
+  isExpandable?: boolean;
+};
+
+const Expander = styled.span<ExpanderProps>(
   ({ theme }) => ({
     display: 'block',
     width: 0,
@@ -17,17 +20,23 @@ const Expander = styled.span(
     transition: 'transform .1s ease-out',
   }),
 
-  ({ isExpandable }) => (!isExpandable ? { borderLeftColor: 'transparent' } : {}),
+  ({ isExpandable = false }) => (!isExpandable ? { borderLeftColor: 'transparent' } : {}),
 
-  ({ isExpanded = false }) =>
-    isExpanded
+  ({ isExpanded = false }) => {
+    return isExpanded
       ? {
           transform: 'rotateZ(90deg)',
         }
-      : {}
+      : {};
+  }
 );
 
-const Icon = styled(Icons)(
+export type IconProps = React.ComponentProps<typeof Icons> & {
+  className: string; // FIXME: Icons should extended its typing from the native <svg>
+  isSelected?: boolean;
+};
+
+const Icon = styled(Icons)<IconProps>(
   {
     flex: 'none',
     width: 10,
@@ -46,7 +55,7 @@ const Icon = styled(Icons)(
     }
     return {};
   },
-  ({ isSelected }) => (isSelected ? { color: 'inherit' } : {})
+  ({ isSelected = false }) => (isSelected ? { color: 'inherit' } : {})
 );
 
 export const Item = styled(({ className, children, id }) => (
@@ -96,15 +105,22 @@ export const Item = styled(({ className, children, id }) => (
     }
 );
 
-export default function SidebarItem({
-  name,
-  isComponent,
-  isLeaf,
-  isExpanded,
-  isSelected,
+type SidebarItemProps = React.ComponentProps<typeof Item> & {
+  isComponent?: boolean;
+  isLeaf?: boolean;
+  isExpanded?: boolean;
+  isSelected?: boolean;
+};
+
+const SidebarItem = ({
+  name = 'loading story',
+  isComponent = false,
+  isLeaf = false,
+  isExpanded = false,
+  isSelected = false,
   ...props
-}) {
-  let iconName;
+}: SidebarItemProps) => {
+  let iconName: React.ComponentProps<typeof Icons>['icon'];
   if (isLeaf) {
     iconName = 'bookmarkhollow';
   } else if (isComponent) {
@@ -119,33 +135,11 @@ export default function SidebarItem({
       {...props}
       className={isSelected ? 'sidebar-item selected' : 'sidebar-item'}
     >
-      <Expander
-        className="sidebar-expander"
-        isExpandable={!isLeaf}
-        isExpanded={isExpanded ? true : undefined}
-      />
+      <Expander className="sidebar-expander" isExpandable={!isLeaf} isExpanded={isExpanded} />
       <Icon className="sidebar-svg-icon" icon={iconName} isSelected={isSelected} />
       <span>{name}</span>
     </Item>
   );
-}
-
-SidebarItem.propTypes = {
-  name: PropTypes.node,
-  depth: PropTypes.number,
-  isComponent: PropTypes.bool,
-  isLeaf: PropTypes.bool,
-  isExpanded: PropTypes.bool,
-  isSelected: PropTypes.bool,
-  loading: PropTypes.bool,
 };
 
-SidebarItem.defaultProps = {
-  name: 'loading story',
-  depth: 0,
-  isComponent: false,
-  isLeaf: false,
-  isExpanded: false,
-  isSelected: false,
-  loading: false,
-};
+export default SidebarItem;

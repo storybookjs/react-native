@@ -1,10 +1,5 @@
-// For use in tandem with TooltipLinkList
-// Refer to container/nav.js for usage
-
 import React from 'react';
-import PropTypes from 'prop-types';
 import { styled, css } from '@storybook/theming';
-
 import { Icons } from '@storybook/components';
 
 const sharedStyles = css`
@@ -28,7 +23,12 @@ const Placeholder = styled.div`
   ${sharedStyles};
 `;
 
-export default function ListItemIcon({ icon, imgSrc }) {
+export interface ListItemIconProps {
+  icon?: React.ComponentProps<typeof Icons>['icon'];
+  imgSrc?: string;
+}
+
+const ListItemIcon = ({ icon, imgSrc }: ListItemIconProps) => {
   if (icon) {
     return <Icon icon={icon} />;
   }
@@ -36,14 +36,6 @@ export default function ListItemIcon({ icon, imgSrc }) {
     return <Img src={imgSrc} alt="image" />;
   }
   return <Placeholder />;
-}
-
-ListItemIcon.propTypes = {
-  icon: PropTypes.string,
-  imgSrc: PropTypes.string,
 };
 
-ListItemIcon.defaultProps = {
-  icon: null,
-  imgSrc: null,
-};
+export default ListItemIcon;

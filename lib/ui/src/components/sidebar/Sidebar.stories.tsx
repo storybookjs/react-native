@@ -2,6 +2,7 @@ import React from 'react';
 
 import Sidebar from './Sidebar';
 import { standardData as standardHeaderData } from './SidebarHeading.stories';
+// @ts-ignore
 import { withRootData } from './SidebarStories.stories';
 
 export default {

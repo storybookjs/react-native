@@ -6,7 +6,7 @@ export default {
   Component: SidebarItem,
   title: 'UI|Sidebar/SidebarItem',
   decorators: [
-    storyFn => (
+    (storyFn: any) => (
       <div style={{ width: '240px', margin: '1rem', border: '1px dotted #ccc' }}>{storyFn()}</div>
     ),
   ],

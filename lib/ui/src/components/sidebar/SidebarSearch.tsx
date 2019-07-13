@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 import { opacify } from 'polished';
-
 import { Icons } from '@storybook/components';
 
 const FilterField = styled.input(({ theme }) => ({
@@ -30,7 +28,9 @@ const FilterField = styled.input(({ theme }) => ({
   },
 }));
 
-const CancelButton = styled.button(({ theme }) => ({
+export type CancelButtonProps = React.ComponentProps<'button'>;
+
+const CancelButton = styled.button<CancelButtonProps>(({ theme }) => ({
   border: 0,
   margin: 0,
   padding: 4,
@@ -60,44 +60,55 @@ const CancelButton = styled.button(({ theme }) => ({
   },
 }));
 
-const FilterForm = styled.form(({ theme, focussed }) => ({
-  transition: 'all 150ms ease-out',
-  borderBottom: '1px solid transparent',
-  borderBottomColor: focussed
-    ? opacify(0.3, theme.appBorderColor)
-    : opacify(0.1, theme.appBorderColor),
-  outline: 0,
-  position: 'relative',
+export type FilterFormProps = React.ComponentProps<'form'> & {
+  focussed: boolean;
+};
 
-  input: {
-    color: theme.input.color,
-    fontSize: theme.typography.size.s2 - 1,
-    lineHeight: '20px',
-    paddingTop: '2px',
-    paddingBottom: '2px',
-    paddingLeft: '20px',
-  },
-
-  '> svg': {
-    transition: 'all 150ms ease-out',
-    position: 'absolute',
-    top: '50%',
-    height: '12px',
-    width: '12px',
-    transform: 'translateY(-50%)',
-    zIndex: '1',
-
-    background: 'transparent',
-
-    path: {
+const FilterForm = styled.form<FilterFormProps>(
+  ({ theme, focussed }) =>
+    ({
       transition: 'all 150ms ease-out',
-      fill: 'currentColor',
-      opacity: focussed ? 1 : 0.3,
-    },
-  },
-}));
+      borderBottom: '1px solid transparent',
+      borderBottomColor: focussed
+        ? opacify(0.3, theme.appBorderColor)
+        : opacify(0.1, theme.appBorderColor),
+      outline: 0,
+      position: 'relative',
 
-export const PureSidebarSearch = ({ className, onChange, ...props }) => {
+      input: {
+        color: theme.input.color,
+        fontSize: theme.typography.size.s2 - 1,
+        lineHeight: '20px',
+        paddingTop: '2px',
+        paddingBottom: '2px',
+        paddingLeft: '20px',
+      },
+
+      '> svg': {
+        transition: 'all 150ms ease-out',
+        position: 'absolute',
+        top: '50%',
+        height: '12px',
+        width: '12px',
+        transform: 'translateY(-50%)',
+        zIndex: '1',
+
+        background: 'transparent',
+
+        path: {
+          transition: 'all 150ms ease-out',
+          fill: 'currentColor',
+          opacity: focussed ? 1 : 0.3,
+        },
+      },
+    } as any) // FIXME: emotion have hard time to provide '> svg' typing
+);
+
+export type PureSidebarSearchProps = React.ComponentProps<typeof FilterField> & {
+  onChange: (arg: string) => void;
+};
+
+export const PureSidebarSearch = ({ className, onChange, ...props }: PureSidebarSearchProps) => {
   const [focussed, onSetFocussed] = useState(false);
   return (
     <FilterForm
@@ -108,7 +119,6 @@ export const PureSidebarSearch = ({ className, onChange, ...props }) => {
     >
       <FilterField
         type="text"
-        autocomplete="off"
         id="storybook-explorer-searchfield"
         onFocus={() => onSetFocussed(true)}
         onBlur={() => onSetFocussed(false)}
@@ -123,15 +133,6 @@ export const PureSidebarSearch = ({ className, onChange, ...props }) => {
       </CancelButton>
     </FilterForm>
   );
-};
-
-PureSidebarSearch.propTypes = {
-  className: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
-};
-
-PureSidebarSearch.defaultProps = {
-  className: null,
 };
 
 export default PureSidebarSearch;

@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
-
 import { ScrollArea } from '@storybook/components';
 
 import SidebarHeading from './SidebarHeading';
@@ -30,7 +28,21 @@ const CustomScrollArea = styled(ScrollArea)({
   },
 });
 
-const Sidebar = ({ storyId, stories, menu, menuHighlighted, loading }) => (
+export interface SidebarProps {
+  stories: unknown;
+  menu: unknown[];
+  storyId?: string;
+  menuHighlighted?: boolean;
+  loading?: boolean;
+}
+
+const Sidebar = ({
+  storyId,
+  stories,
+  menu,
+  menuHighlighted = false,
+  loading = false,
+}: SidebarProps) => (
   <Container className="container sidebar-container">
     <CustomScrollArea vertical>
       <Heading className="sidebar-header" menuHighlighted={menuHighlighted} menu={menu} />
@@ -38,19 +50,5 @@ const Sidebar = ({ storyId, stories, menu, menuHighlighted, loading }) => (
     </CustomScrollArea>
   </Container>
 );
-
-Sidebar.propTypes = {
-  stories: PropTypes.shape({}).isRequired,
-  storyId: PropTypes.string,
-  menu: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  menuHighlighted: PropTypes.bool,
-  loading: PropTypes.bool,
-};
-Sidebar.defaultProps = {
-  storyId: undefined,
-  menuHighlighted: false,
-  loading: false,
-};
-Sidebar.displayName = 'Sidebar';
 
 export default Sidebar;
