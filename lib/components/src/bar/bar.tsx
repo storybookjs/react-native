@@ -57,7 +57,7 @@ export const Bar = styled(({ children, className }) => (
 );
 Bar.displayName = 'Bar';
 
-const BarInner = styled.div(({ bgColor }) => ({
+const BarInner = styled.div((bgColor: any) => ({
   display: 'flex',
   justifyContent: 'space-between',
   position: 'relative',
@@ -69,6 +69,8 @@ const BarInner = styled.div(({ bgColor }) => ({
 
 export interface FlexBarProps {
   border?: boolean;
+  children?: any;
+  backgroundColor?: string;
 }
 
 export const FlexBar: FunctionComponent<FlexBarProps> = ({
