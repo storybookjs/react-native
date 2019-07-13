@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { styled } from '@storybook/theming';
 
 const positiveConsoleRegex = /\[32m(.*?)\[39m/;
@@ -57,7 +57,6 @@ const Main = styled(({ msg, className }) => <section className={className}>{msg}
 });
 
 const colorizeText: (msg: string, type: string) => MsgElement[] = (msg: string, type: string) => {
-  let elementArray: MsgElement[];
   if (type) {
     return msg
       .split(type === positiveType ? positiveConsoleRegex : negativeConsoleRegex)
@@ -85,7 +84,6 @@ const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
     .split(/\[22m/);
 
   splitText.forEach(element => {
-    const modifiedElement: any = null;
     if (element && element.trim()) {
       if (
         element.indexOf(failStartToken) > -1 &&

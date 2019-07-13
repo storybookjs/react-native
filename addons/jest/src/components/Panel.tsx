@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, css } from '@storybook/theming';
+import { styled } from '@storybook/theming';
 import { ScrollArea, TabsState } from '@storybook/components';
 import Result from './Result';
 import provideJestResult, { Test } from '../hoc/provideJestResult';
@@ -24,13 +24,6 @@ const NoTests = styled.div({
 const ProgressWrapper = styled.div({
   position: 'relative',
   height: '10px',
-});
-
-const FileTitle = styled.h2({
-  marginRight: '6px',
-  marginBottom: '3px',
-  fontWeight: 500,
-  fontSize: 18,
 });
 
 const SuiteHead = styled.div({
@@ -89,11 +82,6 @@ const SuiteProgress = styled(({ successNumber, result, className }) => (
   },
 }));
 
-const PassingRate = styled.div({
-  fontWeight: 500,
-  fontSize: '10px',
-});
-
 interface ContentProps {
   tests: Test[];
   className?: string;
@@ -122,26 +110,22 @@ const Content = styled(({ tests, className }: ContentProps) => (
             <div id="failing-tests" title={`${failedNumber} Failed`} textColor="#FF4400">
               <List>
                 {result.assertionResults.map(res => {
-                  if (res.status === 'failed') {
-                    return (
-                      <Item key={res.fullName || res.title}>
-                        <Result {...res} />
-                      </Item>
-                    );
-                  }
+                  return res.status === 'failed' ? (
+                    <Item key={res.fullName || res.title}>
+                      <Result {...res} />
+                    </Item>
+                  ) : null;
                 })}
               </List>
             </div>
             <div id="passing-tests" title={`${successNumber} Passed`} textColor="#66BF3C">
               <List>
                 {result.assertionResults.map(res => {
-                  if (res.status === 'passed') {
-                    return (
-                      <Item key={res.fullName || res.title}>
-                        <Result {...res} />
-                      </Item>
-                    );
-                  }
+                  return res.status === 'passed' ? (
+                    <Item key={res.fullName || res.title}>
+                      <Result {...res} />
+                    </Item>
+                  ) : null;
                 })}
               </List>
             </div>
