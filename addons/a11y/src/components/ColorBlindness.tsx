@@ -1,5 +1,5 @@
 import { document } from 'global';
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import memoize from 'memoizerific';
 import { styled } from '@storybook/theming';
 
@@ -38,86 +38,90 @@ const ColorIcon = styled.span(
 interface ColorBlindnessProps {}
 
 interface ColorBlindnessState {
-  expanded: boolean;
-  filter: string | null;
+  active: string | null;
 }
+
+const baseList = [
+  'protanopia',
+  'protanomaly',
+  'deuteranopia',
+  'deuteranomaly',
+  'tritanopia',
+  'tritanomaly',
+  'achromatopsia',
+  'achromatomaly',
+  'mono',
+];
+
+export interface Link {
+  id: string;
+  title: ReactNode;
+  right?: ReactNode;
+  active: boolean;
+  onClick: () => void;
+}
+
+const getColorList = (active: string | null, set: (i: string | null) => void): Link[] => [
+  ...(active !== null
+    ? [
+        {
+          id: 'reset',
+          title: 'Reset color filter',
+          onClick: () => {
+            set(null);
+          },
+          right: undefined,
+          active: false,
+        },
+      ]
+    : []),
+  ...baseList.map(i => ({
+    id: i,
+    title: i.charAt(0).toUpperCase() + i.slice(1),
+    onClick: () => {
+      set(i);
+    },
+    right: <ColorIcon filter={i} />,
+    active: active === i,
+  })),
+];
 
 export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnessState> {
   state: ColorBlindnessState = {
-    expanded: false,
-    filter: null,
+    active: null,
   };
 
-  setFilter = (filter: string | null) => {
+  setActive = (active: string | null) => {
     const iframe = getIframe();
 
     if (iframe) {
-      iframe.style.filter = getFilter(filter);
+      iframe.style.filter = getFilter(active);
       this.setState({
-        expanded: false,
-        filter,
+        active,
       });
     } else {
       logger.error('Cannot find Storybook iframe');
     }
   };
 
-  onVisibilityChange = (s: boolean) => {
-    const { expanded } = this.state;
-    if (expanded !== s) {
-      this.setState({ expanded: s });
-    }
-  };
-
   render() {
-    const { filter, expanded } = this.state;
-
-    let colorList = [
-      'protanopia',
-      'protanomaly',
-      'deuteranopia',
-      'deuteranomaly',
-      'tritanopia',
-      'tritanomaly',
-      'achromatopsia',
-      'achromatomaly',
-      'mono',
-    ].map(i => ({
-      id: i,
-      title: i.charAt(0).toUpperCase() + i.slice(1),
-      onClick: () => {
-        this.setFilter(i);
-      },
-      right: <ColorIcon filter={i} />,
-      active: filter === i,
-    }));
-
-    if (filter !== null) {
-      colorList = [
-        {
-          id: 'reset',
-          title: 'Reset color filter',
-          onClick: () => {
-            this.setFilter(null);
-          },
-          right: undefined,
-          active: false,
-        },
-        ...colorList,
-      ];
-    }
+    const { active } = this.state;
 
     return (
       <WithTooltip
         placement="top"
         trigger="click"
-        tooltipShown={expanded}
-        onVisibilityChange={this.onVisibilityChange}
-        tooltip={<TooltipLinkList links={colorList} />}
+        tooltip={({ onHide }) => {
+          const colorList = getColorList(active, i => {
+            this.setActive(i);
+            onHide();
+          });
+          return <TooltipLinkList links={colorList} />;
+        }}
         closeOnClick
-        onDoubleClick={() => this.setFilter(null)}
+        onDoubleClick={() => this.setActive(null)}
       >
-        <IconButton key="filter" active={!!filter} title="Color Blindness Emulation">
+        <IconButton key="filter" active={!!active} title="Color Blindness Emulation">
           <Icons icon="mirror" />
         </IconButton>
       </WithTooltip>
