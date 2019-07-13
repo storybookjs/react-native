@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment, ComponentType } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -16,7 +16,7 @@ import {
 } from '@storybook/components';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
-import Types from './types';
+import { getKnobControl } from './types';
 import PropForm from './PropForm';
 import { KnobStoreKnob } from '../KnobStore';
 
@@ -57,11 +57,6 @@ interface KnobPanelState {
 interface KnobPanelOptions {
   timestamps?: boolean;
 }
-
-type KnobControlType = ComponentType<any> & {
-  serialize: (v: any) => any;
-  deserialize: (v: any) => any;
-};
 
 export default class KnobPanel extends PureComponent<KnobPanelProps> {
   static propTypes = {
@@ -133,9 +128,9 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
           // If the knob value present in url
           if (urlValue !== undefined) {
-            const value = (Types[knob.type] as KnobControlType).deserialize(urlValue);
+            const value = getKnobControl(knob.type).deserialize(urlValue);
             knob.value = value;
-            queryParams[`knob-${name}`] = (Types[knob.type] as KnobControlType).serialize(value);
+            queryParams[`knob-${name}`] = getKnobControl(knob.type).serialize(value);
 
             api.emit(CHANGE, knob);
           }
@@ -161,7 +156,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
     const { knobs } = this.state;
 
     Object.entries(knobs).forEach(([name, knob]) => {
-      query[`knob-${name}`] = (Types[knob.type] as KnobControlType).serialize(knob.value);
+      query[`knob-${name}`] = getKnobControl(knob.type).serialize(knob.value);
     });
 
     copy(`${location.origin + location.pathname}?${qs.stringify(query, { encode: false })}`);
@@ -193,7 +188,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
       Object.keys(newKnobs).forEach(n => {
         const knob = newKnobs[n];
-        queryParams[`knob-${n}`] = (Types[knob.type] as KnobControlType).serialize(knob.value);
+        queryParams[`knob-${n}`] = getKnobControl(knob.type).serialize(knob.value);
       });
 
       api.setQueryParams(queryParams);

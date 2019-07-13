@@ -2,7 +2,7 @@ import React, { Component, WeakValidationMap, ComponentType, Requireable } from 
 import PropTypes from 'prop-types';
 
 import { Form } from '@storybook/components';
-import TypeMap from './types';
+import { getKnobControl } from './types';
 import { KnobStoreKnob } from '../KnobStore';
 
 interface PropFormProps {
@@ -48,7 +48,7 @@ export default class PropForm extends Component<PropFormProps> {
       <Form>
         {knobs.map(knob => {
           const changeHandler = this.makeChangeHandler(knob.name, knob.type);
-          const InputType: ComponentType<any> = TypeMap[knob.type] || InvalidType;
+          const InputType: ComponentType<any> = getKnobControl(knob.type) || InvalidType;
 
           return (
             <Form.Field key={knob.name} label={!knob.hideLabel && `${knob.label || knob.name}`}>
