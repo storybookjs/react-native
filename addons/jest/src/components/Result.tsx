@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 import { Icons } from '@storybook/components';
 import Message from './Message';
 
-const Wrapper = styled.div(({ theme, status }) => ({
+const Wrapper = styled.div<{ status: string }>(({ theme, status }) => ({
   display: 'flex',
   width: '100%',
   borderTop: `1px solid ${theme.appBorderColor}`,
@@ -12,7 +12,7 @@ const Wrapper = styled.div(({ theme, status }) => ({
   },
 }));
 
-const HeaderBar = styled.div(({ theme, status }) => ({
+const HeaderBar = styled.div<{ status: string }>(({ theme, status }) => ({
   padding: theme.layoutMargin,
   paddingLeft: theme.layoutMargin - 3,
   background: 'none',

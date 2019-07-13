@@ -98,6 +98,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
         .length;
       const failedNumber = result.assertionResults.length - successNumber;
       const passingRate = ((successNumber / result.assertionResults.length) * 100).toFixed(2);
+
       return (
         <section key={name}>
           <SuiteHead>

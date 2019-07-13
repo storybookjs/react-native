@@ -47,7 +47,7 @@ const Description = styled.div({
   overflowWrap: 'break-word',
 });
 
-const StatusColor = styled.strong(({ status, theme }) => ({
+const StatusColor = styled.strong<{ status: string }>(({ status, theme }) => ({
   color: status === positiveType ? theme.color.positive : theme.color.negative,
   fontWeight: 500,
 }));
@@ -135,10 +135,10 @@ const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
         title = current.substring(0, current.indexOf(titleEndToken)).trim();
         value = getConvertedText(current.substring(current.indexOf(titleEndToken), current.length));
       }
-      testDetail.result = [testDetail.result, title, ' ', value, <br key={index} />];
+      testDetail.result = [...testDetail.result, title, ' ', ...value, <br key={index} />];
     } else {
       // results come in an unexpected format
-      testDetail.result = [testDetail.result, ' ', getConvertedText(current)];
+      testDetail.result = [...testDetail.result, ' ', ...getConvertedText(current)];
     }
   }
 
@@ -149,7 +149,7 @@ interface MessageProps {
   msg: string;
 }
 
-export const Message = props => {
+export const Message = (props: any) => {
   const { msg } = props;
 
   const detail: TestDetail = getTestDetail(msg);
