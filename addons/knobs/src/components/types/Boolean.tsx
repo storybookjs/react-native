@@ -2,18 +2,14 @@ import PropTypes from 'prop-types';
 import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 type BooleanTypeKnobValue = boolean;
 
-export interface BooleanTypeKnob {
-  name: string;
-  value: BooleanTypeKnobValue;
-  separator: string;
-}
+export type BooleanTypeKnob = KnobControlConfig<BooleanTypeKnobValue>;
 
-export interface BooleanTypeProps {
+export interface BooleanTypeProps extends KnobControlProps<BooleanTypeKnobValue> {
   knob: BooleanTypeKnob;
-  onChange: (value: BooleanTypeKnobValue) => BooleanTypeKnobValue;
 }
 
 const Input = styled.input({
