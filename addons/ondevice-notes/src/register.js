@@ -49,5 +49,6 @@ addons.register('storybook/notes', api => {
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
     render: ({ active, key }) => <Notes key={key} channel={channel} api={api} active={active} />,
+    paramKey: PARAM_KEY,
   });
 });

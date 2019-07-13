@@ -2,7 +2,7 @@ import React from 'react';
 
 import { addons, types } from '@storybook/addons';
 import { AddonPanel } from '@storybook/components';
-import { ADDON_ID, PANEL_ID } from './constants';
+import { ADDON_ID, PANEL_ID, PARAM_KEY } from './constants';
 import { Panel } from './panel';
 
 addons.register(ADDON_ID, () => {
@@ -14,5 +14,6 @@ addons.register(ADDON_ID, () => {
         <Panel />
       </AddonPanel>
     ),
+    paramKey: PARAM_KEY,
   });
 });

@@ -361,15 +361,13 @@ exports[`Storyshots Welcome Welcome 1`] = `
     <h1>
       Welcome to Storybook for Svelte
     </h1>
-    
-			  
+     
     <p>
       
 			    This is a UI component dev environment for your svelte app.
 			  
     </p>
-    
-			  
+     
     <p>
       
 			    We've added some basic stories inside the 
@@ -388,17 +386,13 @@ exports[`Storyshots Welcome Welcome 1`] = `
 			    You can have as many stories as you want.
 			  
     </p>
-    
-
-			  
+     
     <h1
       class="logo svelte-5n9a95"
     >
       Svelte
     </h1>
-    
-
-			  
+     
     <p>
       
 			    Just like that, you can add your own components as stories.
@@ -422,8 +416,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
       .)
 			  
     </p>
-    
-			  
+     
     <p>
       
 			    Usually we create stories with smaller UI components in the app.
@@ -442,16 +435,14 @@ exports[`Storyshots Welcome Welcome 1`] = `
 			    section in our documentation.
 			  
     </p>
-    
-			  
+     
     <p
       class="note svelte-5n9a95"
     >
       <b>
         NOTE:
       </b>
-      
-			    
+       
       <br />
       
 			    Have a look at the

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Events from '@storybook/core-events';
 import Swatch from './Swatch';
-import Constants from './constants';
+import BackgroundEvents, { PARAM_KEY } from './constants';
 
 const codeSample = `
 import { storiesOf } from '@storybook/react-native';
@@ -46,7 +46,7 @@ export default class BackgroundPanel extends Component {
   }
 
   setBackgroundFromSwatch = background => {
-    this.props.channel.emit(Constants.UPDATE_BACKGROUND, background);
+    this.props.channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
   };
 
   onStorySelected = selection => {
@@ -63,7 +63,7 @@ export default class BackgroundPanel extends Component {
     const story = api
       .store()
       .getStoryAndParameters(this.state.selection.kind, this.state.selection.story);
-    const backgrounds = story.parameters[Constants.PARAM_KEY];
+    const backgrounds = story.parameters[PARAM_KEY];
 
     return (
       <View>

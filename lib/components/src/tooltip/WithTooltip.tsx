@@ -1,7 +1,7 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent, ReactNode, useState, useEffect } from 'react';
 import { styled } from '@storybook/theming';
 import { logger } from '@storybook/client-logger';
-import { withState, lifecycle } from 'recompose';
+// import { withState, lifecycle } from 'recompose';
 import { document } from 'global';
 
 import TooltipTrigger from 'react-popper-tooltip';
@@ -18,6 +18,10 @@ const TargetSvgContainer = styled.g<{ mode: string }>`
   cursor: ${props => (props.mode === 'hover' ? 'default' : 'pointer')};
 `;
 
+interface WithHideFn {
+  onHide: () => void;
+}
+
 export interface WithTooltipPureProps {
   svg?: boolean;
   trigger?: 'none' | 'hover' | 'click' | 'right-click';
@@ -25,7 +29,7 @@ export interface WithTooltipPureProps {
   placement?: Placement;
   modifiers?: Modifiers;
   hasChrome?: boolean;
-  tooltip: ReactNode;
+  tooltip: ReactNode | ((p: WithHideFn) => ReactNode);
   children: ReactNode;
   tooltipShown?: boolean;
   onVisibilityChange?: (visibility: boolean) => void;
@@ -96,9 +100,14 @@ WithTooltipPure.defaultProps = {
   tooltipShown: false,
 };
 
-export const WithTooltip = lifecycle<WithTooltipPureProps, {}>({
-  componentDidMount() {
-    const { onVisibilityChange } = this.props;
+const WithToolTipState: FunctionComponent<
+  WithTooltipPureProps & {
+    startOpen?: boolean;
+  }
+> = ({ startOpen, ...rest }) => {
+  const [tooltipShown, onVisibilityChange] = useState(startOpen || false);
+
+  useEffect(() => {
     const hide = () => onVisibilityChange(false);
     document.addEventListener('keydown', hide, false);
 
@@ -130,24 +139,21 @@ export const WithTooltip = lifecycle<WithTooltipPureProps, {}>({
       });
     });
 
-    (this as any).unbind = () => {
+    return () => {
       document.removeEventListener('keydown', hide);
       unbinders.forEach(unbind => {
         unbind();
       });
     };
-  },
-  componentWillUnmount() {
-    if ((this as any).unbind) {
-      (this as any).unbind();
-    }
-  },
-})(WithTooltipPure);
+  });
 
-const WithToolTipState: any = withState(
-  'tooltipShown',
-  'onVisibilityChange',
-  ({ startOpen }) => startOpen
-)(WithTooltip as any);
+  return (
+    <WithTooltipPure
+      {...rest}
+      tooltipShown={tooltipShown}
+      onVisibilityChange={onVisibilityChange}
+    />
+  );
+};
 
-export { WithTooltipPure, WithToolTipState };
+export { WithTooltipPure, WithToolTipState, WithToolTipState as WithTooltip };
