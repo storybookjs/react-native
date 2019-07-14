@@ -110,13 +110,13 @@ export const panelProps = {
 
 const childrenToList = (children: any, selected: string) =>
   Children.toArray(children).map(
-    ({ props: { title, id, textColor, children: childrenOfChild } }, index) => {
+    ({ props: { title, id, color, children: childrenOfChild } }, index) => {
       const content = Array.isArray(childrenOfChild) ? childrenOfChild[0] : childrenOfChild;
       return {
         active: selected ? id === selected : index === 0,
         title,
         id,
-        textColor,
+        color,
         render:
           typeof content === 'function'
             ? content
@@ -159,12 +159,12 @@ export const Tabs = React.memo<TabsProps>(
       <Wrapper absolute={absolute} bordered={bordered} id={htmlId}>
         <FlexBar border backgroundColor={backgroundColor}>
           <TabBar role="tablist">
-            {list.map(({ title, id, active, textColor }) => (
+            {list.map(({ title, id, active, color }) => (
               <TabButton
                 type="button"
                 key={id}
                 active={active}
-                textColor={textColor}
+                textColor={color}
                 onClick={(e: MouseEvent) => {
                   e.preventDefault();
                   actions.onSelect(id);

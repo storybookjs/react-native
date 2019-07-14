@@ -87,6 +87,7 @@ interface ContentProps {
   className?: string;
 }
 
+// @ts-ignore
 const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
@@ -98,7 +99,6 @@ const Content = styled(({ tests, className }: ContentProps) => (
         .length;
       const failedNumber = result.assertionResults.length - successNumber;
       const passingRate = ((successNumber / result.assertionResults.length) * 100).toFixed(2);
-
       return (
         <section key={name}>
           <SuiteHead>
@@ -108,7 +108,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
             </ProgressWrapper>
           </SuiteHead>
           <TabsState initial="failing-tests" backgroundColor="rgba(0,0,0,.05)">
-            <div id="failing-tests" title={`${failedNumber} Failed`} textColor="#FF4400">
+            <div id="failing-tests" title={`${failedNumber} Failed`} color="#FF4400">
               <List>
                 {result.assertionResults.map(res => {
                   return res.status === 'failed' ? (
@@ -119,7 +119,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
                 })}
               </List>
             </div>
-            <div id="passing-tests" title={`${successNumber} Passed`} textColor="#66BF3C">
+            <div id="passing-tests" title={`${successNumber} Passed`} color="#66BF3C">
               <List>
                 {result.assertionResults.map(res => {
                   return res.status === 'passed' ? (
