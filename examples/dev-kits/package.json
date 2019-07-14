@@ -1,6 +1,6 @@
 {
   "name": "@storybook/example-devkits",
-  "version": "5.2.0-alpha.42",
+  "version": "5.2.0-alpha.43",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -c ./ -s built-storybooks",
@@ -8,15 +8,15 @@
     "storybook": "start-storybook -p 9011 -c ./"
   },
   "devDependencies": {
-    "@storybook/addon-decorator": "5.2.0-alpha.42",
-    "@storybook/addon-parameter": "5.2.0-alpha.42",
-    "@storybook/addon-roundtrip": "5.2.0-alpha.42",
-    "@storybook/addons": "5.2.0-alpha.42",
-    "@storybook/components": "5.2.0-alpha.42",
-    "@storybook/core-events": "5.2.0-alpha.42",
-    "@storybook/node-logger": "5.2.0-alpha.42",
-    "@storybook/react": "5.2.0-alpha.42",
-    "@storybook/theming": "5.2.0-alpha.42",
+    "@storybook/addon-decorator": "5.2.0-alpha.43",
+    "@storybook/addon-parameter": "5.2.0-alpha.43",
+    "@storybook/addon-roundtrip": "5.2.0-alpha.43",
+    "@storybook/addons": "5.2.0-alpha.43",
+    "@storybook/components": "5.2.0-alpha.43",
+    "@storybook/core-events": "5.2.0-alpha.43",
+    "@storybook/node-logger": "5.2.0-alpha.43",
+    "@storybook/react": "5.2.0-alpha.43",
+    "@storybook/theming": "5.2.0-alpha.43",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "enzyme-to-json": "^3.3.5",

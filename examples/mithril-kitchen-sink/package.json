@@ -1,6 +1,6 @@
 {
   "name": "mithril-example",
-  "version": "5.2.0-alpha.42",
+  "version": "5.2.0-alpha.43",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook",
@@ -11,20 +11,20 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.2.0-alpha.42",
-    "@storybook/addon-actions": "5.2.0-alpha.42",
-    "@storybook/addon-backgrounds": "5.2.0-alpha.42",
-    "@storybook/addon-centered": "5.2.0-alpha.42",
-    "@storybook/addon-knobs": "5.2.0-alpha.42",
-    "@storybook/addon-links": "5.2.0-alpha.42",
-    "@storybook/addon-notes": "5.2.0-alpha.42",
-    "@storybook/addon-options": "5.2.0-alpha.42",
-    "@storybook/addon-storyshots": "5.2.0-alpha.42",
-    "@storybook/addon-storysource": "5.2.0-alpha.42",
-    "@storybook/addon-viewport": "5.2.0-alpha.42",
-    "@storybook/addons": "5.2.0-alpha.42",
-    "@storybook/mithril": "5.2.0-alpha.42",
-    "@storybook/source-loader": "5.2.0-alpha.42",
+    "@storybook/addon-a11y": "5.2.0-alpha.43",
+    "@storybook/addon-actions": "5.2.0-alpha.43",
+    "@storybook/addon-backgrounds": "5.2.0-alpha.43",
+    "@storybook/addon-centered": "5.2.0-alpha.43",
+    "@storybook/addon-knobs": "5.2.0-alpha.43",
+    "@storybook/addon-links": "5.2.0-alpha.43",
+    "@storybook/addon-notes": "5.2.0-alpha.43",
+    "@storybook/addon-options": "5.2.0-alpha.43",
+    "@storybook/addon-storyshots": "5.2.0-alpha.43",
+    "@storybook/addon-storysource": "5.2.0-alpha.43",
+    "@storybook/addon-viewport": "5.2.0-alpha.43",
+    "@storybook/addons": "5.2.0-alpha.43",
+    "@storybook/mithril": "5.2.0-alpha.43",
+    "@storybook/source-loader": "5.2.0-alpha.43",
     "webpack": "^4.33.0"
   }
 }

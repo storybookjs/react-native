@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Component, WeakValidationMap } from 'react';
+import React, { ChangeEvent, Component, WeakValidationMap } from 'react';
 
 import { Form } from '@storybook/components';
 
@@ -55,7 +55,7 @@ export default class ArrayType extends Component<ArrayTypeProps> {
     return nextProps.knob.value !== knob.value;
   }
 
-  handleChange = (e: Event) => {
+  handleChange = (e: ChangeEvent<HTMLTextAreaElement>): void => {
     const { knob, onChange } = this.props;
     const { value } = e.target as HTMLTextAreaElement;
     const newVal = formatArray(value, knob.separator);

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, forwardRef, Ref } from 'react';
 import { styled, Theme, CSSObject } from '@storybook/theming';
 
-import TextareaAutoResize from 'react-textarea-autosize';
+import TextareaAutoResize, { TextareaAutosizeProps } from 'react-textarea-autosize';
 
 import { Button as StyledButton } from '../../Button/Button';
 
@@ -102,9 +102,10 @@ const validation = ({ valid, theme }: { valid: ValidationStates; theme: Theme })
   }
 };
 
+type InputProps = Omit<React.HTMLProps<HTMLInputElement>, keyof InputStyleProps> & InputStyleProps;
 export const Input = Object.assign(
   styled(
-    forwardRef<any, InputStyleProps>(({ size, valid, align, ...props }, ref) => (
+    forwardRef<any, InputProps>(({ size, valid, align, ...props }, ref) => (
       <input {...props} ref={ref} />
     ))
   )<InputStyleProps>(styles, sizes, alignment, validation, {
@@ -119,12 +120,14 @@ export const Input = Object.assign(
 // (Input).sizes = sizes;
 // (Input).alignment = alignment;
 
+type SelectProps = Omit<React.SelectHTMLAttributes<HTMLSelectElement>, keyof InputStyleProps> &
+  InputStyleProps;
 export const Select = Object.assign(
   styled(
-    forwardRef<any, InputStyleProps>(({ size, valid, align, ...props }, ref) => (
+    forwardRef<any, SelectProps>(({ size, valid, align, ...props }, ref) => (
       <select {...props} ref={ref} />
     ))
-  )<InputStyleProps>(styles, sizes, validation, {
+  )<SelectProps>(styles, sizes, validation, {
     height: 32,
     userSelect: 'none',
     paddingRight: 20,
@@ -135,12 +138,13 @@ export const Select = Object.assign(
   }
 );
 
+type TextareaProps = Omit<TextareaAutosizeProps, keyof InputStyleProps> & InputStyleProps;
 export const Textarea = Object.assign(
   styled(
-    forwardRef<any, InputStyleProps>(({ size, valid, align, ...props }, ref) => (
+    forwardRef<any, TextareaProps>(({ size, valid, align, ...props }, ref) => (
       <TextareaAutoResize {...props} ref={ref} />
     ))
-  )<InputStyleProps>(styles, sizes, alignment, validation, {
+  )<TextareaProps>(styles, sizes, alignment, validation, {
     overflow: 'visible',
   }),
   {

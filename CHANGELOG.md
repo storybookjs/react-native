@@ -1,3 +1,17 @@
+## 5.2.0-alpha.43 (July 13, 2019)
+
+### Bug Fixes
+
+* Addon-analytics: Fix API signature ([#7410](https://github.com/storybookjs/storybook/pull/7410))
+* Addon-knobs: fix knobs function return types ([#7391](https://github.com/storybookjs/storybook/pull/7391))
+* UI: Fix proptype for isToolshown ([#7405](https://github.com/storybookjs/storybook/pull/7405))
+* UI: Fix propType warnings ([#7408](https://github.com/storybookjs/storybook/pull/7408))
+
+### Maintenance
+
+* Addon-actions: Use v4 UUID instead of v1 for action IDs ([#7397](https://github.com/storybookjs/storybook/pull/7397))
+* UI: Remove recompose ([#7385](https://github.com/storybookjs/storybook/pull/7385))
+
 ## 5.2.0-alpha.42 (July 12, 2019)
 
 ### Breaking Changes

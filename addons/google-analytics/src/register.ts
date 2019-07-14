@@ -17,7 +17,7 @@ addons.register('storybook/google-analytics', api => {
       fatal: true,
     });
   });
-  api.on(STORY_MISSING, ({ id }: { id: string }) => {
+  api.on(STORY_MISSING, (id: string) => {
     ReactGA.exception({
       description: `attempted to render ${id}, but it is missing`,
       fatal: false,
