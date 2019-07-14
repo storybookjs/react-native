@@ -3,7 +3,25 @@
 Storybook Codemods is a collection of codemod scripts written with JSCodeshift.
 It will help you migrate breaking changes & deprecations.
 
+## CLI Integration
+
+The preferred way to run these codemods is via the CLI's `migrate` command.
+
+To get a list of available codemods:
+
+```
+npx -p @storybook/cli sb migrate --list
+```
+
+To run a codemod:
+
+```
+npx -p @storybook/cli sb migrate name-of-codemod --glob "**/*.stories.js"
+```
+
 ## Installation
+
+If you want to run these codemods by hand:
 
 ```sh
 yarn add jscodeshift @storybook/codemod --dev
