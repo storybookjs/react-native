@@ -35,7 +35,7 @@ function fibonacci(num: number, memo?: FibonacciMap): number {
 interface Panels {
   [key: string]: {
     title: string;
-    textColor: string;
+    color: string;
     render: ({ active, key }: { active: boolean; key: Key }) => JSX.Element;
   };
 }
@@ -141,12 +141,12 @@ storiesOf('Basics|Tabs', module)
   .add('stateful - static with set button text colors', () => (
     <div>
       <TabsState initial="test2">
-        <div id="test1" title="With a function" textColor="red">
+        <div id="test1" title="With a function" color="red">
           {({ active, selected }: { active: boolean; selected: string }) =>
             active ? <div>{selected} is selected</div> : null
           }
         </div>
-        <div id="test2" title="With markup" textColor="green">
+        <div id="test2" title="With markup" color="green">
           <div>test2 is always active (but visually hidden)</div>
         </div>
       </TabsState>
@@ -155,12 +155,12 @@ storiesOf('Basics|Tabs', module)
   .add('stateful - static with set backgroundColor', () => (
     <div>
       <TabsState initial="test2" backgroundColor="rgba(0,0,0,.05)">
-        <div id="test1" title="With a function" textColor="red">
+        <div id="test1" title="With a function" color="red">
           {({ active, selected }: { active: boolean; selected: string }) =>
             active ? <div>{selected} is selected</div> : null
           }
         </div>
-        <div id="test2" title="With markup" textColor="green">
+        <div id="test2" title="With markup" color="green">
           <div>test2 is always active (but visually hidden)</div>
         </div>
       </TabsState>
