@@ -23,6 +23,8 @@
   "dependencies": {
     "@storybook/node-logger": "5.2.0-alpha.42",
     "core-js": "^3.0.1",
+    "cross-spawn": "^6.0.5",
+    "globby": "^10.0.1",
     "jscodeshift": "^0.6.3",
     "lodash": "^4.17.11",
     "prettier": "^1.16.4",
