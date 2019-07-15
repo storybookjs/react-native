@@ -321,29 +321,6 @@ jobs:
       - run:
           name: Upload coverage
           command: yarn coverage
-  cli-test:
-    <<: *defaults
-    environment:
-      BASH_ENV: ~/.bashrc
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: Test
-          command: yarn test --cli
-          no_output_timeout: 1800
-  cli-test-latest-cra:
-    <<: *defaults
-    environment:
-      BASH_ENV: ~/.bashrc
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: Test CLI with latest CR(N)A
-          command: yarn test-latest-cra
 workflows:
   version: 2
   build_test_deploy:
@@ -373,12 +350,6 @@ workflows:
       - coverage:
           requires:
             - test
-      - cli-test:
-          requires:
-            - build
-      - cli-test-latest-cra:
-          requires:
-            - build
       - chromatic:
           requires:
             - examples

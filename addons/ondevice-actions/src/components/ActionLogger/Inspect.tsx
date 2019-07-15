@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 
@@ -22,6 +24,7 @@ const theme = {
 
 class Inspect extends React.Component<{ name?: string; value: any }, { expanded: boolean }> {
   state = { expanded: false };
+
   render() {
     const { name, value } = this.props;
     const { expanded } = this.state;
@@ -52,7 +55,7 @@ class Inspect extends React.Component<{ name?: string; value: any }, { expanded:
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               {toggle}
               {nameComponent}
-              <Text>{': ' + (value.length === 0 ? '[]' : expanded ? '[' : '[...]')}</Text>
+              <Text>{`: ${value.length === 0 ? '[]' : expanded ? '[' : '[...]'}`}</Text>
             </View>
             {expanded ? (
               <View style={{ marginLeft: 40 }}>
@@ -62,7 +65,7 @@ class Inspect extends React.Component<{ name?: string; value: any }, { expanded:
                   </View>
                 ))}
                 <View style={{ marginLeft: 20 }}>
-                  <Text>{']'}</Text>
+                  <Text>]</Text>
                 </View>
               </View>
             ) : null}
@@ -71,13 +74,13 @@ class Inspect extends React.Component<{ name?: string; value: any }, { expanded:
       }
       return (
         <View>
-          <Text>{'['}</Text>
+          <Text>[</Text>
           {value.map((v, i) => (
             <View key={i} style={{ marginLeft: 20 }}>
               <Inspect value={v} />
             </View>
           ))}
-          <Text>{']'}</Text>
+          <Text>]</Text>
         </View>
       );
     }
@@ -89,7 +92,7 @@ class Inspect extends React.Component<{ name?: string; value: any }, { expanded:
               {toggle}
               {nameComponent}
               <Text>
-                {': ' + (Object.keys(value).length === 0 ? '{}' : expanded ? '{' : '{...}')}
+                {`: ${Object.keys(value).length === 0 ? '{}' : expanded ? '{' : '{...}'}`}
               </Text>
             </View>
             {expanded ? (
@@ -124,7 +127,7 @@ class Inspect extends React.Component<{ name?: string; value: any }, { expanded:
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           {toggle}
           {nameComponent}
-          <Text>{': '}</Text>
+          <Text>: </Text>
           <Value value={value} />
         </View>
       );
@@ -147,7 +150,7 @@ function Value({ value }: { value: any }) {
   if (value instanceof RegExp) {
     return (
       <Text style={{ color: theme.OBJECT_VALUE_REGEXP_COLOR }}>
-        {'/' + value.source + '/' + value.flags}
+        {`/${value.source}/${value.flags}`}
       </Text>
     );
   }
@@ -166,8 +169,9 @@ function Value({ value }: { value: any }) {
       );
     case 'function':
       return <Text style={{ color: theme.OBJECT_VALUE_FUNCTION_PREFIX_COLOR }}>[Function]</Text>;
+    default:
+      return <Text>{JSON.stringify(value)}</Text>;
   }
-  return <Text>{JSON.stringify(value)}</Text>;
 }
 
 export default Inspect;

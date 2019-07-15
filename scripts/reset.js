@@ -3,6 +3,8 @@ import { spawn, exec } from 'child_process';
 import trash from 'trash';
 import del from 'del';
 
+const logger = console;
+
 fs.writeFileSync('reset.log', '');
 
 // let results = [];
@@ -30,15 +32,15 @@ cleaningProcess.stdout.on('data', data => {
             uri.match(/dll/)
           ) {
             del(uri).then(() => {
-              console.log(`deleted ${uri}`);
+              logger.log(`deleted ${uri}`);
             });
           } else {
             trash(uri)
               .then(() => {
-                console.log(`trashed ${uri}`);
+                logger.log(`trashed ${uri}`);
               })
               .catch(e => {
-                console.log('failed to trash, will try permanent delete');
+                logger.log('failed to trash, will try permanent delete');
                 trash(uri);
               });
           }
@@ -53,8 +55,8 @@ cleaningProcess.stdout.on('data', data => {
 });
 cleaningProcess.on('exit', code => {
   if (code === 0) {
-    console.log('all went well, files are being trashed now');
+    logger.log('all went well, files are being trashed now');
   } else {
-    console.error(code);
+    logger.error(code);
   }
 });

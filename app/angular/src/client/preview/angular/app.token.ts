@@ -1,4 +1,4 @@
 import { InjectionToken } from '@angular/core';
-import { NgStory } from './types';
+import { StoryFnAngularReturnType } from '../types';
 
-export const STORY = new InjectionToken<NgStory>('story');
+export const STORY = new InjectionToken<StoryFnAngularReturnType>('story');

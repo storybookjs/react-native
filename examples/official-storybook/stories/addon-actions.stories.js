@@ -139,8 +139,10 @@ export const allTypes = () => {
       <Button onClick={() => action('Boolean')(false)}>Boolean</Button>
       <Button onClick={() => action('Empty Object')({})}>Empty Object</Button>
       <Button onClick={() => action('File')(file)}>File</Button>
-      <Button onClick={() => action('Function')(A)}>Function A</Button>
-      <Button onClick={() => action('Function (bound)')(bound)}>Bound Function B</Button>
+      <Button onClick={() => action('Function', { allowFunction: true })(A)}>Function A</Button>
+      <Button onClick={() => action('Function (bound)', { allowFunction: true })(bound)}>
+        Bound Function B
+      </Button>
       <Button onClick={() => action('Infinity')(Infinity)}>Infinity</Button>
       <Button onClick={() => action('-Infinity')(-Infinity)}>-Infinity</Button>
       <Button onClick={() => action('NaN')(NaN)}>NaN</Button>

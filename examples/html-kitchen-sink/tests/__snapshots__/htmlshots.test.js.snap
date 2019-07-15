@@ -95,7 +95,7 @@ exports[`Storyshots Addons|Centered button in center 1`] = `
 
 exports[`Storyshots Addons|Events Logger 1`] = `
 
-  
+    
 `;
 
 exports[`Storyshots Addons|Jest withTests 1`] = `This story shows test results`;

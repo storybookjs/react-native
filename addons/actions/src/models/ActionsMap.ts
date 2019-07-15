@@ -1,5 +1,3 @@
 import { HandlerFunction } from './HandlerFunction';
 
-export interface ActionsMap {
-  [key: string]: HandlerFunction;
-}
+export type ActionsMap<T extends string = string> = Record<T, HandlerFunction>;

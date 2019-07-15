@@ -50,16 +50,15 @@ export const Panel = () => {
   const [selected, setSelected] = useAddonState<Selected>(ADDON_ID, 0);
   const { storyId } = useStorybookState();
 
-  if (results.length === 0) {
-    return null;
-  }
-
-  if (results.length && !results[selected]) {
-    setSelected(0);
-    return null;
-  }
-
   return useMemo(() => {
+    if (results.length === 0) {
+      return null;
+    }
+
+    if (results.length && !results[selected]) {
+      setSelected(0);
+      return null;
+    }
     const url = getUrl(results[selected]).replace('{id}', storyId);
     return (
       <Fragment>

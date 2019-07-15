@@ -26,7 +26,7 @@ Use this hook to a custom webpack.config. This will generate a decorator call in
 module.exports = function({ config }) {
   config.module.rules.push({
     test: /\.stories\.jsx?$/,
-    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    loaders: [require.resolve('@storybook/source-loader')],
     enforce: 'pre',
   });
 
@@ -56,7 +56,7 @@ module.exports = function({ config }) {
     test: /\.stories\.jsx?$/,
     loaders: [
       {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
+        loader: require.resolve('@storybook/source-loader'),
         options: { parser: 'typescript' },
       },
     ],
@@ -91,7 +91,7 @@ module.exports = function({ config }) {
     test: /\.stories\.jsx?$/,
     loaders: [
       {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
+        loader: require.resolve('@storybook/source-loader'),
         options: {
           prettierConfig: {
             printWidth: 100,
@@ -125,7 +125,7 @@ module.exports = function({ config }) {
     test: /\.stories\.jsx?$/,
     loaders: [
       {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
+        loader: require.resolve('@storybook/source-loader'),
         options: {
           uglyCommentsRegex: [/^eslint-.*/, /^global.*/],
         },
@@ -140,7 +140,7 @@ module.exports = function({ config }) {
 
 ### injectDecorator
 
-Tell storysource whether you need inject decorator.If false, you need to add the decorator by yourself;
+Tell storysource whether you need inject decorator. If false, you need to add the decorator by yourself;
 
 Defaults: true
 
@@ -152,7 +152,7 @@ module.exports = function({ config }) {
     test: /\.stories\.jsx?$/,
     loaders: [
       {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
+        loader: require.resolve('@storybook/source-loader'),
         options: { injectDecorator: false },
       },
     ],

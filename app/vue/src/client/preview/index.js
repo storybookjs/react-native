@@ -46,13 +46,18 @@ function decorateStory(getStory, decorators) {
 
       const decoratedStory = decorator((p = {}) => {
         story = decorated(
-          Object.assign(
-            context,
-            p,
-            { parameters: Object.assign(context.parameters || {}, p.parameters) },
-            { options: Object.assign(context.options || {}, p.options) }
-          )
+          p
+            ? {
+                ...context,
+                ...p,
+                parameters: {
+                  ...context.parameters,
+                  ...p.parameters,
+                },
+              }
+            : context
         );
+
         return story;
       }, context);
 
