@@ -3,7 +3,9 @@ import { styled } from '@storybook/theming';
 import { opacify } from 'polished';
 import { Icons } from '@storybook/components';
 
-const FilterField = styled.input(({ theme }) => ({
+export type FilterFieldProps = React.ComponentProps<'input'>;
+
+const FilterField = styled.input<FilterFieldProps>(({ theme }) => ({
   // resets
   appearance: 'none',
   border: 'none',
@@ -104,7 +106,7 @@ const FilterForm = styled.form<FilterFormProps>(
     } as any) // FIXME: emotion have hard time to provide '> svg' typing
 );
 
-export type PureSidebarSearchProps = React.ComponentProps<typeof FilterField> & {
+export type PureSidebarSearchProps = FilterFieldProps & {
   onChange: (arg: string) => void;
 };
 

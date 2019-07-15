@@ -2,10 +2,10 @@ import React from 'react';
 import { styled } from '@storybook/theming';
 import { ScrollArea } from '@storybook/components';
 
-import SidebarHeading from './SidebarHeading';
+import SidebarHeading, { SidebarHeadingProps } from './SidebarHeading';
 import SidebarStories from './SidebarStories';
 
-const Heading = styled(SidebarHeading)({
+const Heading = styled(SidebarHeading)<SidebarHeadingProps>({
   padding: '20px 20px 12px',
 });
 
@@ -30,7 +30,7 @@ const CustomScrollArea = styled(ScrollArea)({
 
 export interface SidebarProps {
   stories: unknown;
-  menu: unknown[];
+  menu: any[];
   storyId?: string;
   menuHighlighted?: boolean;
   loading?: boolean;

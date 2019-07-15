@@ -108,6 +108,7 @@ const Brand = withTheme(({ theme: { brand: { title = 'Storybook', url = './', im
 export interface SidebarHeadingProps {
   menuHighlighted?: boolean;
   menu: React.ComponentProps<typeof TooltipLinkList>['links'];
+  className?: string;
 }
 
 const SidebarHeading = ({ menuHighlighted = false, menu, ...props }: SidebarHeadingProps) => (
