@@ -1,7 +1,7 @@
 import React from 'react';
 import { addons, types } from '@storybook/addons';
 
-import { ADDON_ID, PANEL_ID } from './constants';
+import { ADDON_ID, PANEL_ID, PARAM_KEY } from './constants';
 import { CssResourcePanel } from './css-resource-panel';
 
 addons.register(ADDON_ID, api => {
@@ -10,5 +10,6 @@ addons.register(ADDON_ID, api => {
     type: types.PANEL,
     title: 'CSS resources',
     render: ({ active }) => <CssResourcePanel key={PANEL_ID} api={api} active={active} />,
+    paramKey: PARAM_KEY,
   });
 });

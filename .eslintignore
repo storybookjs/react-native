@@ -11,6 +11,7 @@ lib/codemod/src/transforms/__testfixtures__
 scripts/storage
 *.bundle.js
 *.js.map
+*.d.ts
 
 !.remarkrc.js
 !.babelrc.js
@@ -19,7 +20,3 @@ scripts/storage
 !.jest.config.js
 !.storybook
 
-REACT_NATIVE
-examples-native
-react-native
-ondevice-*

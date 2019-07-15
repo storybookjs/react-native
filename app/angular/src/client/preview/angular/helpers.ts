@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReplaySubject } from 'rxjs';
+import { StoryFn } from '@storybook/addons';
 import { AppComponent } from './components/app.component';
 import { STORY } from './app.token';
-import { NgModuleMetadata, IStoryFn, NgStory } from './types';
+import { NgModuleMetadata, StoryFnAngularReturnType } from '../types';
 
 declare global {
   interface Window {
@@ -29,7 +30,7 @@ const getModule = (
   declarations: (Type<any> | any[])[],
   entryComponents: (Type<any> | any[])[],
   bootstrap: (Type<any> | any[])[],
-  data: NgStory,
+  data: StoryFnAngularReturnType,
   moduleMetadata: NgModuleMetadata
 ) => {
   storyData.next(data);
@@ -100,7 +101,7 @@ const getExistenceOfComponentInModules = (
   });
 };
 
-const initModule = (storyFn: IStoryFn) => {
+const initModule = (storyFn: StoryFn<StoryFnAngularReturnType>) => {
   const storyObj = storyFn();
   const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
@@ -167,7 +168,7 @@ const draw = (newModule: DynamicComponentType): void => {
   }
 };
 
-export const renderNgApp = (storyFn: IStoryFn, forced: boolean) => {
+export const renderNgApp = (storyFn: StoryFn<StoryFnAngularReturnType>, forced: boolean) => {
   if (!forced) {
     draw(initModule(storyFn));
   } else {

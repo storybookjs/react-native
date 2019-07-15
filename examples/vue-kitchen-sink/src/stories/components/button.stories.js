@@ -1,5 +1,10 @@
+import Button from '../Button.vue';
+
 export default {
   title: 'Button',
+  parameters: {
+    component: Button,
+  },
 };
 
 export const rounded = () => ({

@@ -65,6 +65,29 @@ Then you'll be able to see those notes when you are viewing the story.
 
 ![Stories with notes](../static/stories-with-notes.png)
 
+## Disable the addon
+
+You can disable an addon panel for a story by adding a `disabled` parameter.
+
+```js
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+
+import Button from './Button';
+
+storiesOf('Button', module).add(
+  'with some emoji',
+  () => (
+    <Button onClick={action('clicked')}>
+      <span role="img" aria-label="so cool">
+        😀 😎 👍 💯
+      </span>
+    </Button>
+  ),
+  { notes: { disabled: true } }
+);
+```
+
 ## Global Configuration
 
 Sometimes you might want to configure an addon globally, as in the case of collocating stories with components, or just simply to keep your stories file cleaner. To do that, you can add your decorators to a config file, typically in `.storybook/config.js`. Here's an example of how you might do that.

@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 import Preview from './preview';
 
 const preview = new Preview();
