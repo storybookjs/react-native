@@ -16,7 +16,7 @@ export { Button } from './Button/Button';
 export { Form } from './form/index';
 
 // Tooltips
-export { WithTooltip } from './tooltip/WithTooltip';
+export { WithTooltip, WithTooltipPure } from './tooltip/WithTooltip';
 export { TooltipMessage } from './tooltip/TooltipMessage';
 export { TooltipNote } from './tooltip/TooltipNote';
 export { TooltipLinkList } from './tooltip/TooltipLinkList';

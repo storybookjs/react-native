@@ -2,6 +2,7 @@ import addons, { makeDecorator } from '@storybook/addons';
 
 import { SET_OPTIONS } from './shared';
 import { manager, registerKnobs } from './registerKnobs';
+import { Knob, KnobType } from './type-defs';
 import {
   NumberTypeKnobOptions,
   ButtonTypeOnClickProp,
@@ -12,8 +13,8 @@ import {
   OptionsKnobOptions,
 } from './components/types';
 
-export function knob(name: string, optionsParam: any) {
-  return manager.knob(name, optionsParam);
+export function knob<T extends KnobType>(name: string, options: Knob<T>) {
+  return manager.knob(name, options);
 }
 
 export function text(name: string, value: string, groupId?: string) {
@@ -57,7 +58,7 @@ export function color(name: string, value: string, groupId?: string) {
   return manager.knob(name, { type: 'color', value, groupId });
 }
 
-export function object<T>(name: string, value: T, groupId?: string) {
+export function object<T>(name: string, value: T, groupId?: string): T {
   return manager.knob(name, { type: 'object', value, groupId });
 }
 
@@ -99,10 +100,10 @@ export function files(name: string, accept: string, value: string[] = [], groupI
 export function optionsKnob<T>(
   name: string,
   valuesObj: OptionsTypeOptionsProp<T>,
-  value: string,
+  value: T,
   optionsObj: OptionsKnobOptions,
   groupId?: string
-) {
+): T {
   return manager.knob(name, { type: 'options', options: valuesObj, value, optionsObj, groupId });
 }
 

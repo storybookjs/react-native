@@ -1,4 +1,5 @@
-import packageJson from '../../package.json';
+// tslint:disable-next-line: no-var-requires
+const packageJson = require('../../package.json');
 
 export default {
   packageJson,

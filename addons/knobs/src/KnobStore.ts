@@ -1,35 +1,6 @@
-import Types, {
-  TextTypeKnob,
-  NumberTypeKnob,
-  ColorTypeKnob,
-  BooleanTypeKnob,
-  ObjectTypeKnob,
-  SelectTypeKnob,
-  RadiosTypeKnob,
-  ArrayTypeKnob,
-  DateTypeKnob,
-  ButtonTypeOnClickProp,
-  FileTypeKnob,
-  OptionsTypeKnob,
-} from './components/types';
+import { Knob } from './type-defs';
 
 type Callback = () => any;
-
-type KnobPlus<T extends keyof typeof Types, K> = K & { type: T; groupId?: string };
-
-export type Knob =
-  | KnobPlus<'text', Pick<TextTypeKnob, 'value'>>
-  | KnobPlus<'boolean', Pick<BooleanTypeKnob, 'value'>>
-  | KnobPlus<'number', Pick<NumberTypeKnob, 'value' | 'range' | 'min' | 'max' | 'step'>>
-  | KnobPlus<'color', Pick<ColorTypeKnob, 'value'>>
-  | KnobPlus<'object', Pick<ObjectTypeKnob<any>, 'value'>>
-  | KnobPlus<'select', Pick<SelectTypeKnob, 'value' | 'options'> & { selectV2: true }>
-  | KnobPlus<'radios', Pick<RadiosTypeKnob, 'value' | 'options'>>
-  | KnobPlus<'array', Pick<ArrayTypeKnob, 'value' | 'separator'>>
-  | KnobPlus<'date', Pick<DateTypeKnob, 'value'>>
-  | KnobPlus<'files', Pick<FileTypeKnob, 'value' | 'accept'>>
-  | KnobPlus<'button', { value?: unknown; callback: ButtonTypeOnClickProp; hideLabel: true }>
-  | KnobPlus<'options', Pick<OptionsTypeKnob<any>, 'options' | 'value' | 'optionsObj'>>;
 
 export type KnobStoreKnob = Knob & {
   name: string;

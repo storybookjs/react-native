@@ -6,7 +6,8 @@ import { getQueryParams } from '@storybook/client-api';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Channel } from '@storybook/channels';
 
-import KnobStore, { Knob } from './KnobStore';
+import KnobStore, { KnobStoreKnob } from './KnobStore';
+import { Knob, KnobType } from './type-defs';
 import { SET } from './shared';
 
 import { deserializers } from './converters';
@@ -71,7 +72,7 @@ export default class KnobManager {
     return this.options.escapeHTML ? escapeStrings(value) : value;
   }
 
-  knob(name: string, options: Knob) {
+  knob<T extends KnobType = any>(name: string, options: Knob<T>): Knob<T>['value'] {
     this._mayCallChannel();
 
     const knobName = options.groupId ? `${name}_${options.groupId}` : name;
@@ -93,7 +94,7 @@ export default class KnobManager {
       return this.getKnobValue(existingKnob);
     }
 
-    const knobInfo: Knob & { name: string; label: string; defaultValue?: any } = {
+    const knobInfo: Knob<T> & { name: string; label: string; defaultValue?: any } = {
       ...options,
       name: knobName,
       label: name,
@@ -110,7 +111,7 @@ export default class KnobManager {
       knobInfo.defaultValue = options.value;
     }
 
-    knobStore.set(knobName, knobInfo);
+    knobStore.set(knobName, knobInfo as KnobStoreKnob);
     return this.getKnobValue(knobStore.get(knobName));
   }
 
@@ -119,6 +120,11 @@ export default class KnobManager {
     // Some knobs may go unused. So we need to update the panel accordingly. For example remove the
     // unused knobs from the panel. This function sends the `setKnobs` message to the channel
     // triggering a panel re-render.
+
+    if (!this.channel) {
+      // to prevent call to undefined channel and therefore throwing TypeError
+      return;
+    }
 
     if (this.calling) {
       // If a call to channel has already registered ignore this call.

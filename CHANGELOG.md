@@ -1,3 +1,60 @@
+## 5.2.0-alpha.43 (July 13, 2019)
+
+### Bug Fixes
+
+* Addon-analytics: Fix API signature ([#7410](https://github.com/storybookjs/storybook/pull/7410))
+* Addon-knobs: fix knobs function return types ([#7391](https://github.com/storybookjs/storybook/pull/7391))
+* UI: Fix proptype for isToolshown ([#7405](https://github.com/storybookjs/storybook/pull/7405))
+* UI: Fix propType warnings ([#7408](https://github.com/storybookjs/storybook/pull/7408))
+
+### Maintenance
+
+* Addon-actions: Use v4 UUID instead of v1 for action IDs ([#7397](https://github.com/storybookjs/storybook/pull/7397))
+* UI: Remove recompose ([#7385](https://github.com/storybookjs/storybook/pull/7385))
+
+## 5.2.0-alpha.42 (July 12, 2019)
+
+### Breaking Changes
+
+* Addon-docs: Remove primary parameter ([#7383](https://github.com/storybookjs/storybook/pull/7383))
+
+### Bug Fixes
+
+* Addon-docs: Fix default separator inconsistency ([#7382](https://github.com/storybookjs/storybook/pull/7382))
+* UI: Fix placement of notificationistList on docs page ([#7290](https://github.com/storybookjs/storybook/pull/7290))
+
+### Maintenance
+
+* Typescript: Migrate @storybook/html ([#7338](https://github.com/storybookjs/storybook/pull/7338))
+
+### Dependency Upgrades
+
+* Bump lodash from 4.17.13 to 4.17.14 ([#7384](https://github.com/storybookjs/storybook/pull/7384))
+* [Security] Bump lodash.defaultsdeep from 4.6.0 to 4.6.1 ([#7370](https://github.com/storybookjs/storybook/pull/7370))
+* [Security] Bump lodash from 4.17.11 to 4.17.13 ([#7374](https://github.com/storybookjs/storybook/pull/7374))
+* [Security] Bump lodash.mergewith from 4.6.1 to 4.6.2 ([#7372](https://github.com/storybookjs/storybook/pull/7372))
+* [Security] Bump lodash.merge from 4.6.1 to 4.6.2 ([#7373](https://github.com/storybookjs/storybook/pull/7373))
+* [Security] Bump lodash-es from 4.17.11 to 4.17.14 ([#7371](https://github.com/storybookjs/storybook/pull/7371))
+* Upgrade react-select dependency to version 3 for addon-knobs ([#7336](https://github.com/storybookjs/storybook/pull/7336))
+
+## 5.2.0-alpha.41 (July 11, 2019)
+
+### Features
+
+* API: Preview hooks ([#6916](https://github.com/storybookjs/storybook/pull/6916))
+* Core: Custom webpack option for standalone storybook ([#6886](https://github.com/storybookjs/storybook/pull/6886))
+
+### Bug Fixes
+
+* Addon-knobs: Fix TypeError on KnobManager channel ([#7341](https://github.com/storybookjs/storybook/pull/7341))
+* React-native: Explicitly depend on emotion core and theming ([#7362](https://github.com/storybookjs/storybook/pull/7362))
+
+### Dependency Upgrades
+
+* Bump @babel/preset-env from 7.5.0 to 7.5.4 ([#7364](https://github.com/storybookjs/storybook/pull/7364))
+* Update react-test-renderer requirement from 16.5.1 to 16.8.6 in /examples-native/crna-kitchen-sink ([#6372](https://github.com/storybookjs/storybook/pull/6372))
+* Bump rax-text from 0.6.5 to 1.0.0 ([#7346](https://github.com/storybookjs/storybook/pull/7346))
+
 ## 5.2.0-alpha.40 (July 10, 2019)
 
 ### Bug Fixes

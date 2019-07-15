@@ -19,7 +19,7 @@ export interface StoreData {
 
 export interface ClientApiParams {
   storyStore: StoryStore;
-  decorateStory: (storyFn: any, decorators: any) => any;
+  decorateStory?: (storyFn: any, decorators: any) => any;
 }
 
 export type ClientApiReturnFn<TApi> = (...args: any[]) => StoryApi<TApi>;

@@ -1,6 +1,1 @@
-{
-  "version": "5.2.0-alpha.39",
-  "info": {
-    "plain": "### Bug Fixes\n\n* UI: Fix Sidebar input refresh on 'Enter' ([#7342](https://github.com/storybookjs/storybook/pull/7342))\n* Addon-knobs: Fix select options types to allow string[] and null ([#7356](https://github.com/storybookjs/storybook/pull/7356))\n\n### Maintenance\n\n* Typescript: Migrate @storybook/react ([#7054](https://github.com/storybookjs/storybook/pull/7054))\n* Build: delete tests & snapshots from dist ([#7358](https://github.com/storybookjs/storybook/pull/7358))"
-  }
-}
+{"version":"5.2.0-alpha.43","info":{"plain":"### Bug Fixes\n\n* Addon-analytics: Fix API signature ([#7410](https://github.com/storybookjs/storybook/pull/7410))\n* Addon-knobs: fix knobs function return types ([#7391](https://github.com/storybookjs/storybook/pull/7391))\n* UI: Fix proptype for isToolshown ([#7405](https://github.com/storybookjs/storybook/pull/7405))\n* UI: Fix propType warnings ([#7408](https://github.com/storybookjs/storybook/pull/7408))\n\n### Maintenance\n\n* Addon-actions: Use v4 UUID instead of v1 for action IDs ([#7397](https://github.com/storybookjs/storybook/pull/7397))\n* UI: Remove recompose ([#7385](https://github.com/storybookjs/storybook/pull/7385))"}}

@@ -15,16 +15,15 @@ features as well. This chart captures the current state of support
 | MDX stories    |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
 | Module stories |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
 | Legacy stories |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
-| Source \*      |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
+| Source         |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
 | Notes / Info   |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
-| Props table    |   +   |  #  |    #    |         |         |      |       |        |      |       |        |
-| Docgen         |   +   |  #  |    #    |         |         |      |       |        |      |       |        |
+| Props table    |   +   |  +  |    #    |         |         |      |       |        |      |       |        |
+| Docgen         |   +   |  +  |    #    |         |         |      |       |        |      |       |        |
 | Inline stories |   +   |  #  |         |         |         |      |       |        |      |       |        |
 
 **Notes:**
 
 - `#` denotes planned/WIP support
-- \* Source supports legacy `JS storiesOf` and `MDX` stories. `Typescript` and new `module format` support is WIP
 
 ## Installation
 

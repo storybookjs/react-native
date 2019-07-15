@@ -1,11 +1,11 @@
-import { styled, Theme } from '@storybook/theming';
-import { withProps } from 'recompose';
+import React, { FunctionComponent, forwardRef, Ref } from 'react';
+import { styled, Theme, CSSObject } from '@storybook/theming';
 
-import TextareaAutoResize from 'react-textarea-autosize';
+import TextareaAutoResize, { TextareaAutosizeProps } from 'react-textarea-autosize';
 
 import { Button as StyledButton } from '../../Button/Button';
 
-const styleResets = {
+const styleResets: CSSObject = {
   // resets
   appearance: 'none',
   border: '0',
@@ -18,7 +18,7 @@ const styleResets = {
   position: 'relative',
 };
 
-const styles = ({ theme }: Theme) => ({
+const styles = ({ theme }: { theme: Theme }): CSSObject => ({
   ...styleResets,
 
   transition: 'all 200ms ease-out',
@@ -43,7 +43,17 @@ const styles = ({ theme }: Theme) => ({
   },
 });
 
-const sizes = ({ size }: { size?: string | number }) => {
+type Sizes = '100%' | 'flex' | 'auto';
+type Alignments = 'end' | 'center' | 'start';
+type ValidationStates = 'valid' | 'error' | 'warn';
+
+export interface InputStyleProps {
+  size?: Sizes;
+  align?: Alignments;
+  valid?: ValidationStates;
+}
+
+const sizes = ({ size }: { size?: Sizes }): CSSObject => {
   switch (size) {
     case '100%': {
       return { width: '100%' };
@@ -57,7 +67,7 @@ const sizes = ({ size }: { size?: string | number }) => {
     }
   }
 };
-const alignment = ({ align }: { align: string }) => {
+const alignment = ({ align }: InputStyleProps): CSSObject => {
   switch (align) {
     case 'end': {
       return { textAlign: 'right' };
@@ -71,7 +81,7 @@ const alignment = ({ align }: { align: string }) => {
     }
   }
 };
-const validation = ({ valid, theme }: { valid: string; theme: Theme }) => {
+const validation = ({ valid, theme }: { valid: ValidationStates; theme: Theme }): CSSObject => {
   switch (valid) {
     case 'valid': {
       return { boxShadow: `${theme.color.positive} 0 0 0 1px inset !important` };
@@ -92,44 +102,77 @@ const validation = ({ valid, theme }: { valid: string; theme: Theme }) => {
   }
 };
 
-export const Input = styled.input<any>(styles as any, sizes, alignment as any, validation, {
-  minHeight: 32,
-});
-(Input as any).styles = { ...styleResets, ...styles };
-(Input as any).sizes = sizes;
-(Input as any).alignment = alignment;
-Input.displayName = 'Input';
-
-export const Select = styled.select(styles as any, sizes, validation, {
-  height: 32,
-  userSelect: 'none',
-  paddingRight: 20,
-  appearance: 'menulist',
-} as any) as any;
-Select.displayName = 'Select';
-
-export const Textarea = styled(TextareaAutoResize)(
-  styles as any,
-  sizes,
-  alignment as any,
-  validation,
+type InputProps = Omit<React.HTMLProps<HTMLInputElement>, keyof InputStyleProps> & InputStyleProps;
+export const Input = Object.assign(
+  styled(
+    forwardRef<any, InputProps>(({ size, valid, align, ...props }, ref) => (
+      <input {...props} ref={ref} />
+    ))
+  )<InputStyleProps>(styles, sizes, alignment, validation, {
+    minHeight: 32,
+  }),
   {
-    overflow: 'visible',
+    displayName: 'Input',
   }
-) as any;
-Textarea.displayName = 'Textarea';
+);
 
-export const Button = withProps({ tertiary: true, small: true, inForm: true })(
-  styled(StyledButton)(sizes as any, validation as any, {
-    // Custom styling for color widget nested in buttons
+// (Input).styles = { ...styleResets, ...styles };
+// (Input).sizes = sizes;
+// (Input).alignment = alignment;
+
+type SelectProps = Omit<React.SelectHTMLAttributes<HTMLSelectElement>, keyof InputStyleProps> &
+  InputStyleProps;
+export const Select = Object.assign(
+  styled(
+    forwardRef<any, SelectProps>(({ size, valid, align, ...props }, ref) => (
+      <select {...props} ref={ref} />
+    ))
+  )<SelectProps>(styles, sizes, validation, {
+    height: 32,
     userSelect: 'none',
-    overflow: 'visible',
-    zIndex: 2,
+    paddingRight: 20,
+    appearance: 'menulist',
+  }),
+  {
+    displayName: 'Select',
+  }
+);
 
-    // overrides the default hover from Button
-    '&:hover': {
-      transform: 'none',
-    },
-  })
-) as any;
-Button.displayName = 'Button';
+type TextareaProps = Omit<TextareaAutosizeProps, keyof InputStyleProps> & InputStyleProps;
+export const Textarea = Object.assign(
+  styled(
+    forwardRef<any, TextareaProps>(({ size, valid, align, ...props }, ref) => (
+      <TextareaAutoResize {...props} ref={ref} />
+    ))
+  )<TextareaProps>(styles, sizes, alignment, validation, {
+    overflow: 'visible',
+  }),
+  {
+    displayName: 'Textarea',
+  }
+);
+
+const ButtonStyled = styled(
+  forwardRef<any, InputStyleProps>(({ size, valid, align, ...props }, ref) => (
+    <StyledButton {...props} ref={ref} />
+  ))
+)<InputStyleProps>(sizes, validation, {
+  // Custom styling for color widget nested in buttons
+  userSelect: 'none',
+  overflow: 'visible',
+  zIndex: 2,
+
+  // overrides the default hover from Button
+  '&:hover': {
+    transform: 'none',
+  },
+});
+
+export const Button: FunctionComponent<any> = Object.assign(
+  forwardRef<{}, {}>((props, ref) => (
+    <ButtonStyled {...props} {...{ tertiary: true, small: true, inForm: true }} ref={ref} />
+  )),
+  {
+    displayName: 'Button',
+  }
+);

@@ -5,6 +5,8 @@ const childProcess = require('child_process');
 const { lstatSync, readdirSync } = require('fs');
 const { join } = require('path');
 
+const logger = console;
+
 let cooldown = 0;
 
 try {
@@ -13,7 +15,7 @@ try {
   require('chalk');
   require('npmlog');
 } catch (e) {
-  console.log('🕘 running bootstrap on a clean repo, we have to install dependencies');
+  logger.log('🕘 running bootstrap on a clean repo, we have to install dependencies');
   childProcess.spawnSync('yarn', ['install', '--ignore-optional'], {
     stdio: ['inherit', 'inherit', 'inherit'],
   });

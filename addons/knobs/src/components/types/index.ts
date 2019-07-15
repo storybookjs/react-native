@@ -1,3 +1,5 @@
+import { ComponentType } from 'react';
+
 import TextType from './Text';
 import NumberType from './Number';
 import ColorType from './Color';
@@ -11,7 +13,7 @@ import ButtonType from './Button';
 import FilesType from './Files';
 import OptionsType from './Options';
 
-export default {
+const KnobControls = {
   text: TextType,
   number: NumberType,
   color: ColorType,
@@ -25,6 +27,17 @@ export default {
   files: FilesType,
   options: OptionsType,
 };
+export default KnobControls;
+
+export type KnobType = keyof typeof KnobControls;
+
+export type KnobControlType = ComponentType<any> & {
+  serialize: (v: any) => any;
+  deserialize: (v: any) => any;
+};
+
+// Note: this is a utility function that helps in resolving types more orderly
+export const getKnobControl = (type: KnobType): KnobControlType => KnobControls[type];
 
 export { TextTypeKnob } from './Text';
 export { NumberTypeKnob, NumberTypeKnobOptions } from './Number';
