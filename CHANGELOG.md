@@ -1,3 +1,17 @@
+## 5.2.0-alpha.44 (July 15, 2019)
+
+### Features
+
+* CLI: Add migrate command ([#7414](https://github.com/storybookjs/storybook/pull/7414))
+
+### Bug Fixes
+
+* UI: Fix Panel rendered wrong at Docs-page ([#7327](https://github.com/storybookjs/storybook/pull/7327))
+
+### Maintenance
+
+* Typescript: Fix types of client-api & storystore ([#7337](https://github.com/storybookjs/storybook/pull/7337))
+
 ## 5.2.0-alpha.43 (July 13, 2019)
 
 ### Bug Fixes
