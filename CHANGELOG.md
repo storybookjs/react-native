@@ -1,3 +1,9 @@
+## 5.2.0-beta.0 (July 15, 2019)
+
+### Features
+
+* Codemod: Convert module format to MDX ([#7418](https://github.com/storybookjs/storybook/pull/7418))
+
 ## 5.2.0-alpha.44 (July 15, 2019)
 
 ### Features
