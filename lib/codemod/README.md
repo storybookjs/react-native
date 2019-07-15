@@ -155,6 +155,8 @@ Heuristics:
 
 This converts all of your "old-style" `storiesOf` stories into component module format, which uses standard ES6 modules.
 
+> NOTE: The output of this transformation may require manual editing after running the transformation. `storiesOf` format allows multiple "kinds" (components) to be declared per file, but module format only allows a single component per file. Therefore, if you use this feature in your input stories, you will need to split up the resulting outputs by hand. You'll see a warning at the console if you need to hand edit.
+
 ```sh
 ./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/convert-storiesof-to-module.js . --ignore-pattern "node_modules|dist"
 ```
@@ -202,6 +204,8 @@ Heuristics:
 ### convert-module-to-mdx
 
 This converts all of your component module stories into MDX format, which integrates story examples and long-form documentation.
+
+> NOTE: The output of this transformation may require manual editing after running the transformation. MDX is finnicky about the top-level statements it allows. For example, [variables should be defined with exports](https://mdxjs.com/getting-started/#defining-variables-with-exports), meaning `const foo = 5;` should be rewritten as `export const foo = 5;`. We don't do this transformation automatically, since you may prefer to refactor your stories.
 
 ```sh
 ./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/convert-to-module-format.js . --ignore-pattern "node_modules|dist"
