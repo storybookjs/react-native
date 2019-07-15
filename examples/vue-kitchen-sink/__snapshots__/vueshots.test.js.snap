@@ -327,6 +327,38 @@ exports[`Storyshots Custom|Decorator for Vue template 1`] = `
 </div>
 `;
 
+exports[`Storyshots Custom|Decorator for Vue withData 1`] = `
+<div
+  style="border: medium solid blue;"
+>
+  <div
+    style="border: medium solid red;"
+  >
+    <pre>
+      {
+  "id": "custom-decorator-for-vue--withdata",
+  "kind": "Custom|Decorator for Vue",
+  "name": "withData",
+  "story": "withData",
+  "customContext": 52,
+  "parameters": {
+    "options": {
+      "hierarchyRootSeparator": {},
+      "hierarchySeparator": {},
+      "docs": {
+        "iframeHeight": "60px"
+      }
+    },
+    "globalParameter": "globalParameter",
+    "framework": "vue",
+    "customParameter": 42
+  }
+}
+    </pre>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Custom|Method for rendering Vue JSX 1`] = `
 <button
   class="button"
