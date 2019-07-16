@@ -56,7 +56,7 @@ export default class BackgroundPanel extends Component {
   render() {
     const { active, api } = this.props;
 
-    if (!active) {
+    if (!active || !this.state) {
       return null;
     }
 
