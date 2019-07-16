@@ -38,7 +38,7 @@ const SuiteHead = styled.div({
 
 const SuiteTotals = styled(({ successNumber, failedNumber, result, className, width }) => (
   <div className={className}>
-    {width > 380 ? (
+    {width > 400 ? (
       <Fragment>
         <div>
           {result.assertionResults.length} {result.assertionResults.length > 1 ? `tests` : `test`}
