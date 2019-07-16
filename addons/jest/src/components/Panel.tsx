@@ -49,9 +49,9 @@ const SuiteTotals = styled(({ successNumber, failedNumber, result, className }) 
 ))({
   display: 'flex',
   alignItems: 'center',
-  color: '#333333',
-  fontSize: '13px',
-
+  color: '#666666',
+  fontSize: '14px',
+  marginTop: '-2px',
   '& > *': {
     marginRight: 10,
   },
@@ -70,7 +70,6 @@ const SuiteProgress = styled(({ successNumber, result, className }) => (
   left: 0,
   overflow: 'hidden',
   appearance: 'none',
-  marginTop: '1px',
 
   '& > span': {
     backgroundColor: '#66BF3C',
