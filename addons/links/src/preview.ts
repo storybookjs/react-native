@@ -1,7 +1,7 @@
 import { document, HTMLElement } from 'global';
 import qs from 'qs';
 import addons from '@storybook/addons';
-import { SELECT_STORY, STORY_CHANGED, SET_CURRENT_STORY } from '@storybook/core-events';
+import { STORY_CHANGED, SET_CURRENT_STORY } from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
 
 interface Params {
