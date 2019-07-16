@@ -1,15 +1,14 @@
 import { document, HTMLElement } from 'global';
 import qs from 'qs';
 import addons from '@storybook/addons';
-import { SELECT_STORY, STORY_CHANGED } from '@storybook/core-events';
+import { SELECT_STORY, STORY_CHANGED, SET_CURRENT_STORY } from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
 
 interface Params {
-  kind: string;
-  story: string;
+  storyId: string;
 }
 
-export const navigate = (params: Params) => addons.getChannel().emit(SELECT_STORY, params);
+export const navigate = (params: Params) => addons.getChannel().emit(SET_CURRENT_STORY, params);
 
 const generateUrl = (id: string) => {
   const { location } = document;
@@ -25,9 +24,9 @@ const valueOrCall = (args: string[]) => (value: string | ((...args: string[]) =>
 
 export const linkTo = (kind: string, story?: string) => (...args: string[]) => {
   const resolver = valueOrCall(args);
+
   navigate({
-    kind: resolver(kind),
-    story: resolver(story),
+    storyId: toId(resolver(kind), resolver(story)),
   });
 };
 
