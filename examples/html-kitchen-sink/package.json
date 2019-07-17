@@ -19,6 +19,7 @@
     "@storybook/addon-backgrounds": "5.2.0-beta.0",
     "@storybook/addon-centered": "5.2.0-beta.0",
     "@storybook/addon-events": "5.2.0-beta.0",
+    "@storybook/addon-docs": "5.2.0-beta.0",
     "@storybook/addon-jest": "5.2.0-beta.0",
     "@storybook/addon-knobs": "5.2.0-beta.0",
     "@storybook/addon-links": "5.2.0-beta.0",
