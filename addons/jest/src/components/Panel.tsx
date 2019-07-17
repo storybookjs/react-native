@@ -32,61 +32,57 @@ const SuiteHead = styled.div({
   alignItems: 'baseline',
   position: 'absolute',
   zIndex: 2,
-  right: '60px',
+  right: '50px',
   marginTop: '15px',
 });
 
 const SuiteTotals = styled(({ successNumber, failedNumber, result, className, width }) => (
   <div className={className}>
-    {width > 400 ? (
-      <Fragment>
+    <Fragment>
+      {width > 325 ? (
         <div>
           {result.assertionResults.length} {result.assertionResults.length > 1 ? `tests` : `test`}
         </div>
+      ) : null}
+      {width > 280 ? (
         <div>
           {result.endTime - result.startTime}
           ms
         </div>
-      </Fragment>
-    ) : null}
-    {width > 280 ? (
-      <Fragment>
-        <div>{((successNumber / (failedNumber + successNumber)) * 100).toFixed(2)}%</div>
-      </Fragment>
-    ) : null}
+      ) : null}
+    </Fragment>
   </div>
-))({
+))(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  color: '#666666',
+  color: theme.color.dark,
   fontSize: '14px',
   marginTop: '-5px',
   '& > *': {
     marginRight: 10,
   },
-});
+}));
 
 const SuiteProgress = styled(({ successNumber, result, className }) => (
   <div className={className} role="progressbar">
     <span style={{ width: `${(successNumber / result.assertionResults.length) * 100}%` }} />
   </div>
-))(() => ({
-  width: '50px',
-  backgroundColor: '#FF4400',
-  height: '10px',
-  top: 0,
+))(({ theme }) => ({
+  width: '40px',
+  backgroundColor: theme.color.negative,
+  height: '6px',
+  top: '3px',
   position: 'absolute',
   left: 0,
   overflow: 'hidden',
   appearance: 'none',
 
   '& > span': {
-    backgroundColor: '#66BF3C',
+    backgroundColor: theme.color.positive,
     bottom: 0,
     position: 'absolute',
     left: 0,
     top: 0,
-    boxShadow: '1px 0 0 white',
   },
 }));
 
@@ -95,7 +91,6 @@ interface ContentProps {
   className?: string;
 }
 
-// @ts-ignore
 const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {

@@ -21,8 +21,8 @@ class TestDetail {
   stackTrace: string;
 }
 
-const StackTrace = styled.pre({
-  background: '#f2f2f2',
+const StackTrace = styled.pre(({ theme }) => ({
+  background: theme.color.lighter,
   paddingTop: '4px',
   paddingBottom: '4px',
   paddingLeft: '6px',
@@ -30,7 +30,7 @@ const StackTrace = styled.pre({
   overflow: 'auto',
   margin: '10px 30px 10px 30px',
   whiteSpace: 'pre',
-});
+}));
 
 const Results = styled.div({
   paddingTop: '10px',
@@ -38,14 +38,14 @@ const Results = styled.div({
   marginRight: '30px',
 });
 
-const Description = styled.div({
+const Description = styled.div(({ theme }) => ({
   paddingBottom: '10px',
   paddingTop: '10px',
-  borderBottom: '1px solid rgb(226, 226, 226)',
+  borderBottom: theme.appBorderColor,
   marginLeft: '31px',
   marginRight: '30px',
   overflowWrap: 'break-word',
-});
+}));
 
 const StatusColor = styled.strong<{ status: string }>(({ status, theme }) => ({
   color: status === positiveType ? theme.color.positive : theme.color.negative,
