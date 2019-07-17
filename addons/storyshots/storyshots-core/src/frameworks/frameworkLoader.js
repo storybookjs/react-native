@@ -23,7 +23,7 @@ function loadFramework(options) {
 
   if (!loader) {
     throw new Error(
-      "Couldn't find an appropriate framework loader -- do you need to set the `frameowrk` option?"
+      "Couldn't find an appropriate framework loader -- do you need to set the `framework` option?"
     );
   }
 
