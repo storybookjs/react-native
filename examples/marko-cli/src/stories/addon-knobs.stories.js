@@ -5,12 +5,12 @@ export default {
   title: 'Addons|Knobs/Hello',
   decorators: [withKnobs],
   parameters: {
+    template: Hello,
     options: { panelPosition: 'right' },
   },
 };
 
 export const Simple = () => ({
-  template: Hello,
   input: {
     name: text('Name', 'John Doe'),
     age: number('Age', 44),

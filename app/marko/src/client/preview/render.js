@@ -11,11 +11,12 @@ export default function renderMain({
   selectedStory,
   showMain,
   showError,
+  parameters,
   // forceRender,
 }) {
   const config = storyFn();
 
-  if (!config || !(config.appendTo || config.template)) {
+  if (!config || !(config.appendTo || config.template || parameters.template)) {
     showError({
       title: `Expecting an object with a template property to be returned from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
@@ -37,20 +38,24 @@ export default function renderMain({
     }
 
     activeComponent = config.appendTo(rootEl).getComponent();
-  } else if (activeTemplate === config.template) {
-    // When rendering the same template with new input, we reuse the same instance.
-    activeComponent.input = config.input;
-    activeComponent.update();
   } else {
-    if (activeComponent) {
-      activeComponent.destroy();
-    }
+    const template = config.template || parameters.template;
 
-    activeTemplate = config.template;
-    activeComponent = activeTemplate
-      .renderSync(config.input)
-      .appendTo(rootEl)
-      .getComponent();
+    if (activeTemplate === template) {
+      // When rendering the same template with new input, we reuse the same instance.
+      activeComponent.input = config.input;
+      activeComponent.update();
+    } else {
+      if (activeComponent) {
+        activeComponent.destroy();
+      }
+
+      activeTemplate = template;
+      activeComponent = activeTemplate
+        .renderSync(config.input)
+        .appendTo(rootEl)
+        .getComponent();
+    }
   }
 
   showMain();
