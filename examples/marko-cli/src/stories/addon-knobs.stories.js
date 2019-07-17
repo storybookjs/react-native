@@ -5,16 +5,14 @@ export default {
   title: 'Addons|Knobs/Hello',
   decorators: [withKnobs],
   parameters: {
-    component: Hello,
     options: { panelPosition: 'right' },
   },
 };
 
-export const Simple = () => {
-  const name = text('Name', 'John Doe');
-  const age = number('Age', 44);
-  return Hello.renderSync({
-    name,
-    age,
-  });
-};
+export const Simple = () => ({
+  template: Hello,
+  input: {
+    name: text('Name', 'John Doe'),
+    age: number('Age', 44),
+  },
+});

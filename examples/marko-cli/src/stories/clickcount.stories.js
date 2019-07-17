@@ -2,10 +2,6 @@ import ClickCount from '../components/click-count/index.marko';
 
 export default {
   title: 'Main|ClickCount',
-
-  parameters: {
-    component: ClickCount,
-  },
 };
 
-export const Simple = () => ClickCount.renderSync({});
+export const Simple = () => ({ template: ClickCount });
