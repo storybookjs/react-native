@@ -64,6 +64,10 @@
 
 ## From version 5.1.x to 5.2.x
 
+### Grid toolbar-feature
+
+The grid feature in the toolbar has been relocated to [addon-background](https://github.com/storybookjs/storybook/tree/next/addons/backgrounds), follow the setup intructions on that addon to get the feature again.
+
 ### Docs mode docgen
 
 This isn't a breaking change per se, because `addon-docs` is a new feature. However it's intended to replace `addon-info`, so if you're migrating from `addon-info` there are a few things you should know:
