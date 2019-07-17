@@ -95,7 +95,6 @@ interface ContentProps {
   className?: string;
 }
 
-// @ts-ignore
 const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
