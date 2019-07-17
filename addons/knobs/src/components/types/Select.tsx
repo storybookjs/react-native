@@ -8,6 +8,7 @@ export type SelectTypeKnobValue = string | number | null | undefined;
 
 export type SelectTypeOptionsProp<T extends SelectTypeKnobValue = SelectTypeKnobValue> =
   | Record<string, T>
+  | Record<T, T[keyof T]>
   | T[]
   | readonly T[];
 

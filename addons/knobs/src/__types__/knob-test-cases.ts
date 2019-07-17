@@ -86,6 +86,10 @@ enum SomeEnum {
   Type1 = 1,
   Type2,
 }
+enum ButtonVariant {
+  primary = 'primary',
+  secondary = 'secondary',
+}
 const stringLiteralArray: ('Apple' | 'Banana' | 'Grapes')[] = ['Apple', 'Banana', 'Grapes'];
 
 expectKnobOfType<string>(
@@ -101,13 +105,14 @@ expectKnobOfType<string>(
   select('select with string array', ['yes', 'no'], 'yes'),
   select('select with string literal array', stringLiteralArray, stringLiteralArray[0]),
   select('select with readonly array', ['red', 'blue'] as const, 'red'),
+  select<ButtonVariant>('select with string enum options', ButtonVariant, ButtonVariant.primary),
   select('select with null option', { a: 'Option', b: null }, null, groupId)
 );
 
 expectKnobOfType<number>(
   select('select with number options', { 'type a': 1, 'type b': 2 }, 1),
   select<SomeEnum>(
-    'select with enum options',
+    'select with numeric enum options',
     { 'type a': SomeEnum.Type1, 'type b': SomeEnum.Type2 },
     SomeEnum.Type2
   ),
