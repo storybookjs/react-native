@@ -3212,6 +3212,17 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@marko/webpack@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/@marko/webpack/-/webpack-1.2.0.tgz#8678f2770b97edb2c0b2fa1357e2785601ef6835"
+  integrity sha512-iK+ANfVIkNUylLHJLPNXVJF9yBKYsxwm8d3SpcplLTDFYNOrSgpnfX0TedMXAEstQV8aLZA/nDBr4aCwYMlI3Q==
+  dependencies:
+    base-x "^3.0.5"
+    lasso-modules-client "^2.0.5"
+    loader-utils "^1.2.3"
+    sort-keys "^2.0.0"
+    webpack-virtual-modules "^0.1.10"
+
 "@mdx-js/loader@^1.0.0":
   version "1.0.21"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.0.21.tgz#72fa5422ead35ac68aa452a032a84dd4f49e845b"
@@ -7144,6 +7155,13 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
+base-x@^3.0.5:
+  version "3.0.6"
+  resolved "https://registry.npmjs.org/base-x/-/base-x-3.0.6.tgz#de047ec95f5f7b99ae63d830a2a894c96538b2cd"
+  integrity sha512-4PaF8u2+AlViJxRVjurkLTxpp7CaFRD/jo5rPT9ONnKxyhQ8f59yzamEvq7EkriG56yn5On4ONyaG75HLqr46w==
+  dependencies:
+    safe-buffer "^5.0.1"
+
 base32.js@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/base32.js/-/base32.js-0.1.0.tgz#b582dec693c2f11e893cf064ee6ac5b6131a2202"
@@ -10380,7 +10398,7 @@ debug@3.1.0, debug@~3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@^3.0.1, debug@^3.1.0, debug@^3.2.5, debug@^3.2.6:
+debug@^3.0.0, debug@^3.0.1, debug@^3.1.0, debug@^3.2.5, debug@^3.2.6:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   integrity sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
@@ -18436,7 +18454,7 @@ loader-runner@^2.3.0:
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"
   integrity sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw==
 
-loader-utils@1.2.3, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.0.3, loader-utils@^1.1.0, loader-utils@^1.2.2, loader-utils@^1.2.3:
+loader-utils@1.2.3, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.2, loader-utils@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.2.3.tgz#1ff5dc6911c9f0a062531a4c04b609406108c2c7"
   integrity sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==
@@ -19396,13 +19414,6 @@ marked@^0.6.2:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.6.3.tgz#79babad78af638ba4d522a9e715cdfdd2429e946"
   integrity sha512-Fqa7eq+UaxfMriqzYLayfqAE40WN03jf+zHjT18/uXNuzjq3TY0XTbrAoPeqSJrAmPz11VuUA+kBPYOhHt9oOQ==
-
-marko-loader@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/marko-loader/-/marko-loader-1.5.0.tgz#bc09ee3a1b03f7258f3edf957f82746bf0746859"
-  integrity sha512-1j5KfsD2WjBWDHimDq/VoCt9B/Ia9U5CRNsRg5isx3br2D9ORqYmdPlatVYAG74V8mMqSosxN/3f4YGtaTBwsw==
-  dependencies:
-    loader-utils "^1.0.3"
 
 marko-starter-generic-server@^1.0.0:
   version "1.0.5"
@@ -30902,6 +30913,13 @@ webpack-subresource-integrity@1.1.0-rc.6:
   integrity sha512-Az7y8xTniNhaA0620AV1KPwWOqawurVVDzQSpPAeR5RwNbL91GoBSJAAo9cfd+GiFHwsS5bbHepBw1e6Hzxy4w==
   dependencies:
     webpack-core "^0.6.8"
+
+webpack-virtual-modules@^0.1.10:
+  version "0.1.10"
+  resolved "https://registry.npmjs.org/webpack-virtual-modules/-/webpack-virtual-modules-0.1.10.tgz#2039529cbf1007e19f6e897c8d35721cc2c41f68"
+  integrity sha1-IDlSnL8QB+Gfbol8jTVyHMLEH2g=
+  dependencies:
+    debug "^3.0.0"
 
 webpack@4.24.0:
   version "4.24.0"
