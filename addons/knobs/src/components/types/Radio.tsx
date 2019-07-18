@@ -1,24 +1,18 @@
 import React, { Component, WeakValidationMap } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
+import { KnobControlConfig, KnobControlProps } from './types';
 
-type RadiosTypeKnobValue = string;
+export type RadiosTypeKnobValue = string | number | null | undefined;
 
-export interface RadiosTypeKnob {
-  name: string;
-  value: RadiosTypeKnobValue;
-  defaultValue: RadiosTypeKnobValue;
-  options: RadiosTypeOptionsProp;
+export type RadiosTypeOptionsProp<T extends RadiosTypeKnobValue> = Record<string | number, T>;
+
+export interface RadiosTypeKnob extends KnobControlConfig<RadiosTypeKnobValue> {
+  options: RadiosTypeOptionsProp<RadiosTypeKnobValue>;
 }
 
-export interface RadiosTypeOptionsProp {
-  [key: string]: RadiosTypeKnobValue;
-}
-
-interface RadiosTypeProps {
+interface RadiosTypeProps extends KnobControlProps<RadiosTypeKnobValue>, RadiosWrapperProps {
   knob: RadiosTypeKnob;
-  isInline: boolean;
-  onChange: (value: RadiosTypeKnobValue) => RadiosTypeKnobValue;
 }
 
 interface RadiosWrapperProps {

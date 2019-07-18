@@ -25,6 +25,16 @@ export default class StoryView extends Component<Props> {
     channel.on(Events.FORCE_RE_RENDER, this.forceReRender);
   }
 
+  componentDidUpdate() {
+    const channel = addons.getChannel();
+    const { stories } = this.props;
+    const { storyId } = stories.getSelection();
+
+    if (storyId) {
+      channel.emit(Events.STORY_RENDERED);
+    }
+  }
+
   componentWillUnmount() {
     const channel = addons.getChannel();
     channel.removeListener(Events.STORY_RENDER, this.forceReRender);

@@ -2,19 +2,26 @@ import addons, { makeDecorator } from '@storybook/addons';
 
 import { SET_OPTIONS } from './shared';
 import { manager, registerKnobs } from './registerKnobs';
-import { Knob, KnobType } from './type-defs';
+import { Knob, KnobType, Mutable } from './type-defs';
 import {
   NumberTypeKnobOptions,
   ButtonTypeOnClickProp,
   RadiosTypeOptionsProp,
   SelectTypeOptionsProp,
   SelectTypeKnobValue,
+  OptionsTypeKnobValue,
   OptionsTypeOptionsProp,
+  OptionsTypeKnobSingleValue,
   OptionsKnobOptions,
+  RadiosTypeKnobValue,
+  ArrayTypeKnobValue,
 } from './components/types';
 
-export function knob<T extends KnobType>(name: string, options: Knob<T>) {
-  return manager.knob(name, options);
+export function knob<T extends KnobType, V = Mutable<Knob<T>['value']>>(
+  name: string,
+  options: Knob<T>
+): V {
+  return manager.knob(name, options) as V;
 }
 
 export function text(name: string, value: string, groupId?: string) {
@@ -62,25 +69,31 @@ export function object<T>(name: string, value: T, groupId?: string): T {
   return manager.knob(name, { type: 'object', value, groupId });
 }
 
-export function select(
+export function select<T extends SelectTypeKnobValue>(
   name: string,
-  options: SelectTypeOptionsProp,
-  value: SelectTypeKnobValue,
+  options: SelectTypeOptionsProp<T>,
+  value: T,
   groupId?: string
-) {
-  return manager.knob(name, { type: 'select', selectV2: true, options, value, groupId });
+): T {
+  return manager.knob(name, {
+    type: 'select',
+    selectV2: true,
+    options: options as SelectTypeOptionsProp,
+    value,
+    groupId,
+  }) as T;
 }
 
-export function radios(
+export function radios<T extends RadiosTypeKnobValue>(
   name: string,
-  options: RadiosTypeOptionsProp,
-  value: string,
+  options: RadiosTypeOptionsProp<T>,
+  value: T,
   groupId?: string
-) {
-  return manager.knob(name, { type: 'radios', options, value, groupId });
+): T {
+  return manager.knob(name, { type: 'radios', options, value, groupId }) as T;
 }
 
-export function array(name: string, value: string[], separator = ',', groupId?: string) {
+export function array(name: string, value: ArrayTypeKnobValue, separator = ',', groupId?: string) {
   return manager.knob(name, { type: 'array', value, separator, groupId });
 }
 
@@ -97,10 +110,10 @@ export function files(name: string, accept: string, value: string[] = [], groupI
   return manager.knob(name, { type: 'files', accept, value, groupId });
 }
 
-export function optionsKnob<T>(
+export function optionsKnob<T extends OptionsTypeKnobSingleValue>(
   name: string,
   valuesObj: OptionsTypeOptionsProp<T>,
-  value: T,
+  value: OptionsTypeKnobValue<T>,
   optionsObj: OptionsKnobOptions,
   groupId?: string
 ): T {
