@@ -31,7 +31,7 @@ export default class StoryView extends Component<Props> {
     const { storyId } = stories.getSelection();
 
     if (storyId) {
-      channel.emit(Events.STORY_RENDERED);
+      channel.emit(Events.STORY_RENDERED, { storyId });
     }
   }
 
