@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useState } from 'react';
 import { styled } from '@storybook/theming';
 import { Icons } from '@storybook/components';
 import Message from './Message';
@@ -54,51 +54,41 @@ interface ResultProps {
   status: string;
 }
 
-interface ResultState {
-  open: boolean;
-}
+export function Result(props: ResultProps) {
+  const [isOpen, setIsOpen] = useState(false);
 
-export class Result extends Component<ResultProps, ResultState> {
-  state = {
-    open: false,
+  const onToggle = () => {
+    setIsOpen(!isOpen);
   };
 
-  onToggle = () =>
-    this.setState(prevState => ({
-      open: !prevState.open,
-    }));
-
-  render() {
-    const { fullName, title, failureMessages, status } = this.props;
-    const { open } = this.state;
-    return (
-      <Fragment>
-        <Wrapper status={status}>
-          <HeaderBar onClick={this.onToggle} role="button" status={status}>
-            {status === `failed` ? (
-              <Icon
-                icon="chevrondown"
-                size={10}
-                color="#9DA5AB"
-                style={{
-                  transform: `rotate(${open ? 0 : -90}deg)`,
-                }}
-              />
-            ) : null}
-            <div>{capitalizeFirstLetter(fullName) || capitalizeFirstLetter(title)}</div>
-          </HeaderBar>
-        </Wrapper>
-        {open ? (
-          <Fragment>
-            {failureMessages.map((msg: string, i: number) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <Message msg={msg} key={i} />
-            ))}
-          </Fragment>
-        ) : null}
-      </Fragment>
-    );
-  }
+  const { fullName, title, failureMessages, status } = props;
+  return (
+    <Fragment>
+      <Wrapper status={status}>
+        <HeaderBar onClick={onToggle} role="button" status={status}>
+          {status === `failed` ? (
+            <Icon
+              icon="chevrondown"
+              size={10}
+              color="#9DA5AB"
+              style={{
+                transform: `rotate(${isOpen ? 0 : -90}deg)`,
+              }}
+            />
+          ) : null}
+          <div>{capitalizeFirstLetter(fullName) || capitalizeFirstLetter(title)}</div>
+        </HeaderBar>
+      </Wrapper>
+      {isOpen ? (
+        <Fragment>
+          {failureMessages.map((msg: string, i: number) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <Message msg={msg} key={i} />
+          ))}
+        </Fragment>
+      ) : null}
+    </Fragment>
+  );
 }
 
 export default Result;

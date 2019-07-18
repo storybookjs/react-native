@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { styled } from '@storybook/theming';
+import { styled, withTheme } from '@storybook/theming';
 import { ScrollArea, TabsState } from '@storybook/components';
 import { SizeMe } from 'react-sizeme';
 import Result from './Result';
@@ -68,7 +68,7 @@ const SuiteProgress = styled(({ successNumber, result, className }) => (
     <span style={{ width: `${(successNumber / result.assertionResults.length) * 100}%` }} />
   </div>
 ))(({ theme }) => ({
-  width: '40px',
+  width: '30px',
   backgroundColor: theme.color.negative,
   height: '6px',
   top: '3px',
@@ -152,13 +152,19 @@ const Content = styled(({ tests, className }: ContentProps) => (
   flex: '1 1 0%',
 });
 
+const ContentWithTheme = withTheme(Content);
+
 interface PanelProps {
   tests: null | Test[];
 }
 
 const Panel = ({ tests }: PanelProps) => (
   <ScrollArea vertical>
-    {tests ? <Content tests={tests} /> : <NoTests>This story has no tests configured</NoTests>}
+    {tests ? (
+      <ContentWithTheme tests={tests} />
+    ) : (
+      <NoTests>This story has no tests configured</NoTests>
+    )}
   </ScrollArea>
 );
 
