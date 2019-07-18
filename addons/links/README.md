@@ -9,7 +9,7 @@ The Storybook Links addon can be used to create links that navigate between stor
 Install this addon by adding the `@storybook/addon-links` dependency:
 
 ```sh
-yarn add @storybook/addon-links
+yarn add -D @storybook/addon-links
 ```
 
 First configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
