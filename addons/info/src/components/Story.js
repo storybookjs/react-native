@@ -319,7 +319,7 @@ class Story extends Component {
       return null;
     }
 
-    if (Array.isArray(propTables)) {
+    if (propTables) {
       propTables.forEach(type => {
         types.set(type, true);
       });
