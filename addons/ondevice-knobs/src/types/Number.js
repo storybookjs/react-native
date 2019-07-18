@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { TextInput, View, Slider } from 'react-native';
 
+const replaceComma = x => x.replace(',', '.');
+
 class NumberType extends React.Component {
   constructor(props) {
     super(props);
@@ -9,8 +11,28 @@ class NumberType extends React.Component {
     this.renderRange = this.renderRange.bind(this);
   }
 
+  numberTransformer = initial => {
+    const x = replaceComma(initial);
+
+    if (Number.isNaN(Number(x))) {
+      return x.substr(0, x.length - 1);
+    }
+
+    return x;
+  };
+
+  onChangeNormal = val => {
+    const { onChange } = this.props;
+
+    const value = replaceComma(val);
+
+    if (!Number.isNaN(value)) {
+      onChange(value);
+    }
+  };
+
   renderNormal() {
-    const { knob, onChange } = this.props;
+    const { knob } = this.props;
 
     return (
       <TextInput
@@ -22,10 +44,12 @@ class NumberType extends React.Component {
           padding: 5,
           color: '#555',
         }}
+        autoCapitalize="none"
         underlineColorAndroid="transparent"
-        value={knob.value.toString()}
+        value={(knob.value || '').toString()}
+        transformer={this.numberTransformer}
         keyboardType="numeric"
-        onChangeText={val => onChange(parseFloat(val))}
+        onChangeText={this.onChangeNormal}
       />
     );
   }
@@ -61,7 +85,7 @@ NumberType.defaultProps = {
 NumberType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.number,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     step: PropTypes.number,
     min: PropTypes.number,
     max: PropTypes.number,

@@ -40,6 +40,7 @@ class SelectType extends React.Component {
             }}
             editable={false}
             value={selected}
+            autoCapitalize="none"
             underlineColorAndroid="transparent"
           />
         </ModalPicker>
