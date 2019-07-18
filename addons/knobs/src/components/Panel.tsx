@@ -14,6 +14,7 @@ import {
   Link,
   ScrollArea,
 } from '@storybook/components';
+import { API } from '@storybook/api';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import { getKnobControl } from './types';
@@ -41,13 +42,7 @@ interface PanelKnobGroups {
 interface KnobPanelProps {
   active: boolean;
   onReset?: object;
-  api: {
-    on: (action: string, fn: Function) => any;
-    off: (action: string, fn: Function) => any;
-    emit: (action: string, fn?: KnobStoreKnob) => any;
-    getQueryParam: (param: string) => any;
-    setQueryParams: (param: Record<string, KnobStoreKnob>) => any;
-  };
+  api: Pick<API, 'on' | 'off' | 'emit' | 'getQueryParam' | 'setQueryParams'>;
 }
 
 interface KnobPanelState {
@@ -68,16 +63,16 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
       emit: PropTypes.func,
       getQueryParam: PropTypes.func,
       setQueryParams: PropTypes.func,
-    }).isRequired as Validator<Partial<KnobPanelProps['api']>>,
+    }).isRequired as Validator<KnobPanelProps['api']>,
   };
 
   static defaultProps: KnobPanelProps = {
     active: true,
     api: {
-      on: () => {},
+      on: () => () => {},
       off: () => {},
       emit: () => {},
-      getQueryParam: () => {},
+      getQueryParam: () => undefined,
       setQueryParams: () => {},
     },
   };
