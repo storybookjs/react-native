@@ -1,3 +1,14 @@
+## 5.2.0-beta.1 (July 18, 2019)
+
+### Features
+
+* React native: Emit event when story is rendered ([#7449](https://github.com/storybookjs/storybook/pull/7449))
+
+### Bug Fixes
+
+* Addon-knobs: improve types via generics and readonlyarray ([#7411](https://github.com/storybookjs/storybook/pull/7411))
+* Ondevice-backgrounds: use same param key as addon-backgrounds ([#7437](https://github.com/storybookjs/storybook/pull/7437))
+
 ## 5.2.0-beta.0 (July 15, 2019)
 
 ### Features
@@ -31,6 +42,11 @@
 
 * Addon-actions: Use v4 UUID instead of v1 for action IDs ([#7397](https://github.com/storybookjs/storybook/pull/7397))
 * UI: Remove recompose ([#7385](https://github.com/storybookjs/storybook/pull/7385))
+* UI: FIX & IMPROVE styling interop of addon-background & addon-viewport ([#7385](https://github.com/storybookjs/storybook/pull/7385))
+
+### Breaking Changes
+
+* Move grid toolbar feature to background-addon ([#7385](https://github.com/storybookjs/storybook/pull/7385))
 
 ## 5.2.0-alpha.42 (July 12, 2019)
 

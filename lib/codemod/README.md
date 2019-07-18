@@ -13,10 +13,10 @@ To get a list of available codemods:
 npx -p @storybook/cli sb migrate --list
 ```
 
-To run a codemod:
+To run a codemod `<name-of-codemod>`:
 
 ```
-npx -p @storybook/cli sb migrate name-of-codemod --glob "**/*.stories.js"
+npx -p @storybook/cli sb migrate <name-of-codemod> --glob "**/*.stories.js"
 ```
 
 ## Installation
