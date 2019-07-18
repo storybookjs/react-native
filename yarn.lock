@@ -3221,7 +3221,7 @@
     "@mdx-js/react" "^1.0.27"
     loader-utils "^1.1.0"
 
-"@mdx-js/mdx@^1.1.0":
+"@mdx-js/mdx@^1.0.0", "@mdx-js/mdx@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.1.0.tgz#9a7138e31e4933d53afca59e0460ab33771af5fe"
   integrity sha512-WHWVPLStet4zc25nEDePNt7YUcCOgEa8q0F0QuE8Ddv5QphuXA7SNtRl2o+xMCm5r7Q5A1RrsG7lipMU4Pviqw==
