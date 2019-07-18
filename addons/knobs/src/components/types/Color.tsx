@@ -1,6 +1,6 @@
 import { document } from 'global';
 import PropTypes from 'prop-types';
-import React, { Component, WeakValidationMap } from 'react';
+import React, { Component, Validator } from 'react';
 import { SketchPicker, ColorResult } from 'react-color';
 
 import { styled } from '@storybook/theming';
@@ -46,13 +46,12 @@ const Popover = styled.div({
 });
 
 export default class ColorType extends Component<ColorTypeProps, ColorTypeState> {
-  static propTypes: WeakValidationMap<ColorTypeProps> = {
-    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+  static propTypes = {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.string,
-    }) as any,
-    onChange: PropTypes.func,
+    }) as Validator<ColorTypeProps['knob']>,
+    onChange: PropTypes.func as Validator<ColorTypeProps['onChange']>,
   };
 
   static defaultProps: ColorTypeProps = {

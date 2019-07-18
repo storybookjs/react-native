@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent, Fragment, Validator } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -42,11 +42,11 @@ interface KnobPanelProps {
   active: boolean;
   onReset?: object;
   api: {
-    on: Function;
-    off: Function;
-    emit: Function;
-    getQueryParam: Function;
-    setQueryParams: Function;
+    on: (action: string, fn: Function) => any;
+    off: (action: string, fn: Function) => any;
+    emit: (action: string, fn?: KnobStoreKnob) => any;
+    getQueryParam: (param: string) => any;
+    setQueryParams: (param: Record<string, KnobStoreKnob>) => any;
   };
 }
 
@@ -60,13 +60,26 @@ interface KnobPanelOptions {
 
 export default class KnobPanel extends PureComponent<KnobPanelProps> {
   static propTypes = {
-    active: PropTypes.bool.isRequired,
-    onReset: PropTypes.object, // eslint-disable-line
+    active: PropTypes.bool.isRequired as Validator<KnobPanelProps['active']>,
+    onReset: PropTypes.object as Validator<KnobPanelProps['onReset']>, // eslint-disable-line
     api: PropTypes.shape({
       on: PropTypes.func,
+      off: PropTypes.func,
+      emit: PropTypes.func,
       getQueryParam: PropTypes.func,
       setQueryParams: PropTypes.func,
-    }).isRequired,
+    }).isRequired as Validator<Partial<KnobPanelProps['api']>>,
+  };
+
+  static defaultProps: KnobPanelProps = {
+    active: true,
+    api: {
+      on: () => {},
+      off: () => {},
+      emit: () => {},
+      getQueryParam: () => {},
+      setQueryParams: () => {},
+    },
   };
 
   state: KnobPanelState = {

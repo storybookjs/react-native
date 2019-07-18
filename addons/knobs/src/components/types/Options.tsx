@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, Validator } from 'react';
 import PropTypes from 'prop-types';
 import ReactSelect from 'react-select';
 import { ValueType } from 'react-select/lib/types';
@@ -114,12 +114,11 @@ OptionsType.defaultProps = {
 };
 
 OptionsType.propTypes = {
-  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
     options: PropTypes.object,
-  }) as any,
+  }) as Validator<OptionsTypeProps<any>['knob']>,
   display: PropTypes.oneOf<OptionsKnobOptionsDisplay>([
     'radio',
     'inline-radio',
@@ -127,8 +126,8 @@ OptionsType.propTypes = {
     'inline-check',
     'select',
     'multi-select',
-  ]),
-  onChange: PropTypes.func,
+  ]) as Validator<OptionsTypeProps<any>['display']>,
+  onChange: PropTypes.func as Validator<OptionsTypeProps<any>['onChange']>,
 };
 
 OptionsType.serialize = serialize;

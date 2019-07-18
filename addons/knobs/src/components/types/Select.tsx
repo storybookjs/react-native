@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ChangeEvent } from 'react';
+import React, { FunctionComponent, ChangeEvent, Validator } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form } from '@storybook/components';
@@ -63,13 +63,12 @@ SelectType.defaultProps = {
 };
 
 SelectType.propTypes = {
-  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.any,
     options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  }) as any,
-  onChange: PropTypes.func,
+  }) as Validator<SelectTypeProps['knob']>,
+  onChange: PropTypes.func as Validator<SelectTypeProps['onChange']>,
 };
 
 SelectType.serialize = serialize;

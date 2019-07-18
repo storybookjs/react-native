@@ -1,4 +1,4 @@
-import React, { Component, ChangeEvent } from 'react';
+import React, { Component, ChangeEvent, Validator } from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
 import { polyfill } from 'react-lifecycles-compat';
@@ -19,8 +19,13 @@ class ObjectType<T> extends Component<ObjectTypeProps<T>> {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-    }).isRequired,
-    onChange: PropTypes.func.isRequired,
+    }).isRequired as Validator<ObjectTypeProps<any>['knob']>,
+    onChange: PropTypes.func.isRequired as Validator<ObjectTypeProps<any>['onChange']>,
+  };
+
+  static defaultProps: ObjectTypeProps<any> = {
+    knob: {} as any,
+    onChange: value => value,
   };
 
   static serialize: { <T>(object: T): string } = object => JSON.stringify(object);
