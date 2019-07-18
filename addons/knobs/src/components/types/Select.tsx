@@ -2,22 +2,24 @@ import React, { FunctionComponent, ChangeEvent } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 export type SelectTypeKnobValue = string | number | null | undefined;
 
-export interface SelectTypeKnob {
-  name: string;
-  value: SelectTypeKnobValue;
-  options: SelectTypeOptionsProp;
+export type SelectTypeOptionsProp<T extends SelectTypeKnobValue = SelectTypeKnobValue> =
+  | Record<string, T>
+  | Record<T, T[keyof T]>
+  | T[]
+  | readonly T[];
+
+export interface SelectTypeKnob<T extends SelectTypeKnobValue = SelectTypeKnobValue>
+  extends KnobControlConfig<T> {
+  options: SelectTypeOptionsProp<T>;
 }
 
-export type SelectTypeOptionsProp =
-  | Record<string, SelectTypeKnobValue>
-  | NonNullable<SelectTypeKnobValue>[];
-
-export interface SelectTypeProps {
-  knob: SelectTypeKnob;
-  onChange: (value: SelectTypeKnobValue) => SelectTypeKnobValue;
+export interface SelectTypeProps<T extends SelectTypeKnobValue = SelectTypeKnobValue>
+  extends KnobControlProps<T> {
+  knob: SelectTypeKnob<T>;
 }
 
 const serialize = (value: SelectTypeKnobValue) => value;
@@ -29,8 +31,11 @@ const SelectType: FunctionComponent<SelectTypeProps> & {
 } = ({ knob, onChange }) => {
   const { options } = knob;
   const entries = Array.isArray(options)
-    ? options.reduce((acc, k) => Object.assign(acc, { [k]: k }), {})
-    : options;
+    ? options.reduce<Record<number, SelectTypeKnobValue>>(
+        (acc, k) => Object.assign(acc, { [k]: k }),
+        {}
+      )
+    : (options as Record<string, SelectTypeKnobValue>);
 
   const selectedKey = Object.keys(entries).find(k => entries[k] === knob.value);
 

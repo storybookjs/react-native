@@ -2,18 +2,16 @@ import PropTypes from 'prop-types';
 import React, { FunctionComponent, Validator } from 'react';
 
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
-export interface ButtonTypeKnob {
-  name: string;
-  value: unknown;
-}
+export type ButtonTypeKnob = KnobControlConfig<never>;
 
-export type ButtonTypeOnClickProp = (knob: ButtonTypeKnob) => any;
-
-export interface ButtonTypeProps {
+export interface ButtonTypeProps extends KnobControlProps<never> {
   knob: ButtonTypeKnob;
   onClick: ButtonTypeOnClickProp;
 }
+
+export type ButtonTypeOnClickProp = (knob: ButtonTypeKnob) => any;
 
 const serialize = (): undefined => undefined;
 const deserialize = (): undefined => undefined;

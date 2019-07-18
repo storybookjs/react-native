@@ -3,6 +3,7 @@ import React, { Component, ChangeEvent } from 'react';
 
 import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 type NumberTypeKnobValue = number;
 
@@ -13,14 +14,14 @@ export interface NumberTypeKnobOptions {
   step?: number;
 }
 
-export interface NumberTypeKnob extends NumberTypeKnobOptions {
-  name: string;
-  value: number;
+export interface NumberTypeKnob
+  extends KnobControlConfig<NumberTypeKnobValue>,
+    NumberTypeKnobOptions {
+  value: NumberTypeKnobValue;
 }
 
-interface NumberTypeProps {
+interface NumberTypeProps extends KnobControlProps<NumberTypeKnobValue> {
   knob: NumberTypeKnob;
-  onChange: (value: NumberTypeKnobValue) => NumberTypeKnobValue;
 }
 
 const RangeInput = styled.input(

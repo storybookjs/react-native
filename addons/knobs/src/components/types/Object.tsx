@@ -3,16 +3,10 @@ import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
 import { polyfill } from 'react-lifecycles-compat';
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
-export interface ObjectTypeKnob<T> {
-  name: string;
-  value: T;
-}
-
-interface ObjectTypeProps<T> {
-  knob: ObjectTypeKnob<T>;
-  onChange: (value: T) => T;
-}
+export type ObjectTypeKnob<T> = KnobControlConfig<T>;
+type ObjectTypeProps<T> = KnobControlProps<T>;
 
 interface ObjectTypeState<T> {
   value: string;
