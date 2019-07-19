@@ -14,6 +14,7 @@ class GroupTabs extends Component {
     return (
       <TouchableOpacity
         style={{
+          marginTop: 5,
           marginRight: 15,
           paddingBottom: 10,
         }}

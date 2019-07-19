@@ -2,18 +2,11 @@ import React, { Component, ChangeEvent, WeakValidationMap } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 type DateTypeKnobValue = number;
-
-export interface DateTypeKnob {
-  name: string;
-  value: DateTypeKnobValue;
-}
-
-interface DateTypeProps {
-  knob: DateTypeKnob;
-  onChange: (value: DateTypeKnobValue) => DateTypeKnobValue;
-}
+export type DateTypeKnob = KnobControlConfig<DateTypeKnobValue>;
+type DateTypeProps = KnobControlProps<DateTypeKnobValue>;
 
 interface DateTypeState {
   valid: boolean | undefined;

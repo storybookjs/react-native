@@ -1,3 +1,51 @@
+## 5.2.0-beta.2 (July 18, 2019)
+
+### Features
+
+* CLI: convert mdx to module format ([#7419](https://github.com/storybookjs/storybook/pull/7419))
+* CLI: sb migrate npm & typescript support ([#7463](https://github.com/storybookjs/storybook/pull/7463))
+* Addon-Docs: HTML support & example ([#7454](https://github.com/storybookjs/storybook/pull/7454))
+
+### Bug Fixes
+
+* Convert-storiesof-to-module: user exports, collisions, reserved keywords ([#7471](https://github.com/storybookjs/storybook/pull/7471))
+* React-native: On-device knobs fixes ([#7470](https://github.com/storybookjs/storybook/pull/7470))
+
+### Dependency Upgrades
+
+* Addon-docs: Upgrade MDX to 1.1 ([#7476](https://github.com/storybookjs/storybook/pull/7476))
+
+## 5.2.0-beta.1 (July 18, 2019)
+
+### Features
+
+* React native: Emit event when story is rendered ([#7449](https://github.com/storybookjs/storybook/pull/7449))
+
+### Bug Fixes
+
+* Addon-knobs: improve types via generics and readonlyarray ([#7411](https://github.com/storybookjs/storybook/pull/7411))
+* Ondevice-backgrounds: use same param key as addon-backgrounds ([#7437](https://github.com/storybookjs/storybook/pull/7437))
+
+## 5.2.0-beta.0 (July 15, 2019)
+
+### Features
+
+* Codemod: Convert module format to MDX ([#7418](https://github.com/storybookjs/storybook/pull/7418))
+
+## 5.2.0-alpha.44 (July 15, 2019)
+
+### Features
+
+* CLI: Add migrate command ([#7414](https://github.com/storybookjs/storybook/pull/7414))
+
+### Bug Fixes
+
+* UI: Fix Panel rendered wrong at Docs-page ([#7327](https://github.com/storybookjs/storybook/pull/7327))
+
+### Maintenance
+
+* Typescript: Fix types of client-api & storystore ([#7337](https://github.com/storybookjs/storybook/pull/7337))
+
 ## 5.2.0-alpha.43 (July 13, 2019)
 
 ### Bug Fixes
@@ -11,6 +59,11 @@
 
 * Addon-actions: Use v4 UUID instead of v1 for action IDs ([#7397](https://github.com/storybookjs/storybook/pull/7397))
 * UI: Remove recompose ([#7385](https://github.com/storybookjs/storybook/pull/7385))
+* UI: FIX & IMPROVE styling interop of addon-background & addon-viewport ([#7385](https://github.com/storybookjs/storybook/pull/7385))
+
+### Breaking Changes
+
+* Move grid toolbar feature to background-addon ([#7385](https://github.com/storybookjs/storybook/pull/7385))
 
 ## 5.2.0-alpha.42 (July 12, 2019)
 
