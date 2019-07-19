@@ -82,7 +82,12 @@ function genStoryExport(ast, counter) {
     statements.push(`${storyKey}.story.parameters = { mdxSource: ${source} };`);
   }
 
-  // console.log(statements);
+  let decorators = getAttr(ast.openingElement, 'decorators');
+  decorators = decorators && decorators.expression;
+  if (decorators) {
+    const { code: decos } = generate(decorators, {});
+    statements.push(`${storyKey}.story.decorators = ${decos};`);
+  }
 
   return {
     [storyKey]: statements.join('\n'),

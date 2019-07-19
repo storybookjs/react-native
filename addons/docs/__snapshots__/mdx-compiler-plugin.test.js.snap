@@ -80,7 +80,11 @@ function MDXContent({ components, ...props }) {
         mdxType=\\"Meta\\"
       />
       <h1>{\`Decorated story\`}</h1>
-      <Story name=\\"one\\" mdxType=\\"Story\\">
+      <Story
+        name=\\"one\\"
+        decorators={[storyFn => <div className=\\"local\\">{storyFn()}</div>]}
+        mdxType=\\"Story\\"
+      >
         <Button mdxType=\\"Button\\">One</Button>
       </Story>
     </MDXLayout>
@@ -92,6 +96,7 @@ MDXContent.isMDXComponent = true;
 export const one = () => <Button>One</Button>;
 one.story = {};
 one.story.parameters = { mdxSource: \`<Button>One</Button>\` };
+one.story.decorators = [storyFn => <div className=\\"local\\">{storyFn()}</div>];
 
 const componentMeta = {
   title: 'Button',

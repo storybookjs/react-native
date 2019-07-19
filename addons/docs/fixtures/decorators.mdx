@@ -8,6 +8,6 @@ import { Story, Meta } from '@storybook/addon-docs/blocks';
 
 # Decorated story
 
-<Story name="one">
+<Story name="one" decorators={[storyFn => <div className="local">{storyFn()}</div>]}>
   <Button>One</Button>
 </Story>
