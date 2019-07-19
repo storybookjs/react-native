@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { TextInput, View, Slider } from 'react-native';
 
-const replaceComma = x => x.replace(',', '.');
-
 class NumberType extends React.Component {
   constructor(props) {
     super(props);
@@ -11,9 +9,7 @@ class NumberType extends React.Component {
     this.renderRange = this.renderRange.bind(this);
   }
 
-  numberTransformer = initial => {
-    const x = replaceComma(initial);
-
+  numberTransformer = x => {
     if (Number.isNaN(Number(x))) {
       return x.substr(0, x.length - 1);
     }
@@ -21,10 +17,8 @@ class NumberType extends React.Component {
     return x;
   };
 
-  onChangeNormal = val => {
+  onChangeNormal = value => {
     const { onChange } = this.props;
-
-    const value = replaceComma(val);
 
     if (!Number.isNaN(value)) {
       onChange(value);
