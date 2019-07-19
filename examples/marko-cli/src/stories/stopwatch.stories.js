@@ -7,4 +7,4 @@ export default {
   },
 };
 
-export const Simple = () => StopWatch.renderSync({});
+export const Simple = () => ({ component: StopWatch });
