@@ -79,7 +79,14 @@ export default class Panel extends React.Component {
 
     this.setState({ knobs: newKnobs });
 
-    this.setState({ knobs: newKnobs }, this.emitChange(changedKnob));
+    this.setState(
+      { knobs: newKnobs },
+      this.emitChange(
+        changedKnob.type === 'number'
+          ? { ...changedKnob, value: parseFloat(changedKnob.value) }
+          : changedKnob
+      )
+    );
   }
 
   handleClick(knob) {
