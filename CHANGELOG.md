@@ -1,3 +1,14 @@
+## 5.2.0-beta.3 (July 19, 2019)
+
+### Features
+
+* React-native: Add storyId as testID ([#7482](https://github.com/storybookjs/storybook/pull/7482))
+
+### Bug Fixes
+
+* React-native: On-device knobs input fixes ([#7475](https://github.com/storybookjs/storybook/pull/7475))
+* React-native: Fix crna-kitchen-sink ([#7200](https://github.com/storybookjs/storybook/pull/7200))
+
 ## 5.2.0-beta.2 (July 18, 2019)
 
 ### Features
