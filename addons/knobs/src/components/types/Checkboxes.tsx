@@ -1,30 +1,26 @@
 import React, { Component, ChangeEvent, WeakValidationMap } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 type CheckboxesTypeKnobValue = string[];
 
-interface CheckboxesWrapperProps {
-  isInline: boolean;
+export interface CheckboxesTypeKnob extends KnobControlConfig<CheckboxesTypeKnobValue> {
+  options: Record<string, string>;
 }
 
-export interface CheckboxesTypeKnob {
-  name: string;
-  value: CheckboxesTypeKnobValue;
-  defaultValue: CheckboxesTypeKnobValue;
-  options: {
-    [key: string]: string;
-  };
-}
-
-interface CheckboxesTypeProps {
+interface CheckboxesTypeProps
+  extends KnobControlProps<CheckboxesTypeKnobValue>,
+    CheckboxesWrapperProps {
   knob: CheckboxesTypeKnob;
-  isInline: boolean;
-  onChange: (value: CheckboxesTypeKnobValue) => CheckboxesTypeKnobValue;
 }
 
 interface CheckboxesTypeState {
   values: CheckboxesTypeKnobValue;
+}
+
+interface CheckboxesWrapperProps {
+  isInline: boolean;
 }
 
 const CheckboxesWrapper = styled.div(({ isInline }: CheckboxesWrapperProps) =>

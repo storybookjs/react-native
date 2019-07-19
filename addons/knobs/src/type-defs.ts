@@ -14,6 +14,10 @@ import {
   KnobType,
 } from './components/types';
 
+export type Mutable<T> = {
+  -readonly [P in keyof T]: T[P] extends readonly (infer U)[] ? U[] : T[P];
+};
+
 type KnobPlus<T extends KnobType, K> = K & { type: T; groupId?: string };
 
 export type Knob<T extends KnobType = any> = T extends 'text'

@@ -23,3 +23,4 @@ addParameters({
 });
 
 load(require.context('../src/stories', true, /\.stories\.js$/), module);
+load(require.context('../src/stories', true, /\.stories\.mdx$/), module);

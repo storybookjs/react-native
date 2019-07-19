@@ -45,9 +45,15 @@ export { ColorTypeKnob } from './Color';
 export { BooleanTypeKnob } from './Boolean';
 export { ObjectTypeKnob } from './Object';
 export { SelectTypeKnob, SelectTypeOptionsProp, SelectTypeKnobValue } from './Select';
-export { RadiosTypeKnob, RadiosTypeOptionsProp } from './Radio';
-export { ArrayTypeKnob } from './Array';
+export { RadiosTypeKnob, RadiosTypeOptionsProp, RadiosTypeKnobValue } from './Radio';
+export { ArrayTypeKnob, ArrayTypeKnobValue } from './Array';
 export { DateTypeKnob } from './Date';
 export { ButtonTypeKnob, ButtonTypeOnClickProp } from './Button';
 export { FileTypeKnob } from './Files';
-export { OptionsTypeKnob, OptionsTypeOptionsProp, OptionsKnobOptions } from './Options';
+export {
+  OptionsTypeKnob,
+  OptionsKnobOptions,
+  OptionsTypeOptionsProp,
+  OptionsTypeKnobSingleValue,
+  OptionsTypeKnobValue,
+} from './Options';

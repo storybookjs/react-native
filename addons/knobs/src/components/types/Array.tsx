@@ -2,18 +2,16 @@ import PropTypes from 'prop-types';
 import React, { ChangeEvent, Component, WeakValidationMap } from 'react';
 
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
-type ArrayTypeKnobValue = string[];
+export type ArrayTypeKnobValue = string[] | readonly string[];
 
-export interface ArrayTypeKnob {
-  name: string;
-  value: ArrayTypeKnobValue;
+export interface ArrayTypeKnob extends KnobControlConfig<ArrayTypeKnobValue> {
   separator: string;
 }
 
-interface ArrayTypeProps {
+interface ArrayTypeProps extends KnobControlProps<ArrayTypeKnobValue> {
   knob: ArrayTypeKnob;
-  onChange: (value: ArrayTypeKnobValue) => ArrayTypeKnobValue;
 }
 
 function formatArray(value: string, separator: string) {
@@ -41,7 +39,7 @@ export default class ArrayType extends Component<ArrayTypeProps> {
 
   static serialize = (value: ArrayTypeKnobValue) => value;
 
-  static deserialize = (value: ArrayTypeKnobValue) => {
+  static deserialize = (value: string[]) => {
     if (Array.isArray(value)) return value;
 
     return Object.keys(value)
