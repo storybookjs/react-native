@@ -5,18 +5,11 @@ import { SketchPicker, ColorResult } from 'react-color';
 
 import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 type ColorTypeKnobValue = string;
-
-export interface ColorTypeKnob {
-  name: string;
-  value: ColorTypeKnobValue;
-}
-
-interface ColorTypeProps {
-  knob: ColorTypeKnob;
-  onChange: (value: ColorTypeKnobValue) => ColorTypeKnobValue;
-}
+export type ColorTypeKnob = KnobControlConfig<ColorTypeKnobValue>;
+type ColorTypeProps = KnobControlProps<ColorTypeKnobValue>;
 
 interface ColorTypeState {
   displayColorPicker: boolean;

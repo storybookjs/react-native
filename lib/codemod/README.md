@@ -211,6 +211,8 @@ This converts all of your component module stories into MDX format, which integr
 ./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/convert-to-module-format.js . --ignore-pattern "node_modules|dist"
 ```
 
+For example:
+
 ```js
 export default {
   title: 'Button',
@@ -236,4 +238,40 @@ import { Meta, Story } from '@storybook/addon-docs/blocks';
 <Story name='second story'>
   <Button label="Story 2" onClick={action('click')} />
 </Story>
+```
+
+### convert-mdx-to-module
+
+This converts all your MDX stories into module format.
+
+```sh
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/convert-to-module-format.js . --ignore-pattern "node_modules|dist" --extensions=mdx
+```
+
+For example:
+
+```js
+import React from 'react';
+import Button from './Button';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title='Button' />
+
+<Story name='basic stories'><Button label='The Button' /></Story>
+```
+
+Becomes:
+
+```
+import React from 'react';
+import Button from './Button';
+
+export default {
+  title: 'Button',
+};
+
+export const basicStory = () => <Button label="The Button" />;
+basicStory.story = {
+  name: 'basic stories',
+};
 ```
