@@ -21,7 +21,7 @@
   "dependencies": {
     "@storybook/addons": "5.2.0-beta.3",
     "@storybook/core-events": "5.2.0-beta.3",
-    "core-js": "^2.5.7",
+    "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {
