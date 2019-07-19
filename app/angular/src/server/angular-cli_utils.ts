@@ -68,7 +68,7 @@ export function getAngularCliParts(cliWebpackConfigOptions: any) {
     logger.warn(
       'Failed to get Angular Cli config, it will be ignored, please check the following error stack:'
     );
-    logger.trace(e);
+    logger.warn(e);
     return null;
   }
 }
