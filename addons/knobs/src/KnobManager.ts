@@ -7,7 +7,7 @@ import { getQueryParams } from '@storybook/client-api';
 import { Channel } from '@storybook/channels';
 
 import KnobStore, { KnobStoreKnob } from './KnobStore';
-import { Knob, KnobType } from './type-defs';
+import { Knob, KnobType, Mutable } from './type-defs';
 import { SET } from './shared';
 
 import { deserializers } from './converters';
@@ -72,7 +72,7 @@ export default class KnobManager {
     return this.options.escapeHTML ? escapeStrings(value) : value;
   }
 
-  knob<T extends KnobType = any>(name: string, options: Knob<T>): Knob<T>['value'] {
+  knob<T extends KnobType = any>(name: string, options: Knob<T>): Mutable<Knob<T>['value']> {
     this._mayCallChannel();
 
     const knobName = options.groupId ? `${name}_${options.groupId}` : name;

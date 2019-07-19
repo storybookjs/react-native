@@ -4,7 +4,14 @@ const mdx = require('@mdx-js/mdx');
 const prettier = require('prettier');
 const plugin = require('./mdx-compiler-plugin');
 
-function format(code) {
+async function generate(filePath) {
+  const content = await fs.readFile(filePath, 'utf8');
+
+  const code = mdx.sync(content, {
+    filepath: filePath,
+    compilers: [plugin({})],
+  });
+
   return prettier.format(code, {
     parser: 'babel',
     printWidth: 100,
@@ -13,17 +20,6 @@ function format(code) {
     trailingComma: 'es5',
     singleQuote: true,
   });
-}
-
-async function generate(filePath) {
-  const content = await fs.readFile(filePath, 'utf8');
-
-  const result = mdx.sync(content, {
-    filepath: filePath,
-    compilers: [plugin({})],
-  });
-
-  return format(result);
 }
 
 describe('docs-mdx-compiler-plugin', () => {

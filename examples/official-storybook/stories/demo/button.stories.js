@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
 
@@ -21,7 +21,17 @@ export const withSomeEmoji = () => (
     </span>
   </Button>
 );
-
 withSomeEmoji.story = {
   name: 'with some emoji',
+};
+
+export const withCounter = () =>
+  React.createElement(() => {
+    const [counter, setCounter] = useState(0);
+    const label = `Testing: ${counter}`;
+    return <Button onClick={() => setCounter(counter + 1)}>{label}</Button>;
+  });
+
+withCounter.story = {
+  name: 'with coumter',
 };

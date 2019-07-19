@@ -1,3 +1,31 @@
+## 5.2.0-beta.2 (July 18, 2019)
+
+### Features
+
+* CLI: convert mdx to module format ([#7419](https://github.com/storybookjs/storybook/pull/7419))
+* CLI: sb migrate npm & typescript support ([#7463](https://github.com/storybookjs/storybook/pull/7463))
+* Addon-Docs: HTML support & example ([#7454](https://github.com/storybookjs/storybook/pull/7454))
+
+### Bug Fixes
+
+* Convert-storiesof-to-module: user exports, collisions, reserved keywords ([#7471](https://github.com/storybookjs/storybook/pull/7471))
+* React-native: On-device knobs fixes ([#7470](https://github.com/storybookjs/storybook/pull/7470))
+
+### Dependency Upgrades
+
+* Addon-docs: Upgrade MDX to 1.1 ([#7476](https://github.com/storybookjs/storybook/pull/7476))
+
+## 5.2.0-beta.1 (July 18, 2019)
+
+### Features
+
+* React native: Emit event when story is rendered ([#7449](https://github.com/storybookjs/storybook/pull/7449))
+
+### Bug Fixes
+
+* Addon-knobs: improve types via generics and readonlyarray ([#7411](https://github.com/storybookjs/storybook/pull/7411))
+* Ondevice-backgrounds: use same param key as addon-backgrounds ([#7437](https://github.com/storybookjs/storybook/pull/7437))
+
 ## 5.2.0-beta.0 (July 15, 2019)
 
 ### Features
