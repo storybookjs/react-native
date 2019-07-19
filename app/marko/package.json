@@ -34,6 +34,7 @@
     "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {
+    "babel-loader": "^7.0.0 || ^8.0.0",
     "marko": "^4.15.2"
   },
   "engines": {
