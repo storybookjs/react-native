@@ -5,7 +5,7 @@ export default {
   title: 'Addons|Knobs/Hello',
   decorators: [withKnobs],
   parameters: {
-    template: Hello,
+    component: Hello,
     options: { panelPosition: 'right' },
   },
 };

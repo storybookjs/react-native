@@ -93,11 +93,11 @@ import Button from '../components/button/index.marko';
 
 storiesOf('Button', module)
   .add('with text', () => ({
-    template: Button,
+    component: Button,
     input: { text 'some text' }
   }))
   .add('with emoji', () => ({
-    template: Button,
+    component: Button,
     input: { text '😀 😎 👍 💯' }
   }));
 ```

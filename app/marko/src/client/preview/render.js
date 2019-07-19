@@ -16,12 +16,12 @@ export default function renderMain({
 }) {
   const config = storyFn();
 
-  if (!config || !(config.appendTo || config.template || parameters.template)) {
+  if (!config || !(config.appendTo || config.component || parameters.component)) {
     showError({
-      title: `Expecting an object with a template property to be returned from the story: "${selectedStory}" of "${selectedKind}".`,
+      title: `Expecting an object with a component property to be returned from the story: "${selectedStory}" of "${selectedKind}".`,
       description: stripIndents`
-        Did you forget to return the template from the story?
-        Use "() => ({ template: MyTemplate, input: { hello: 'world' } })" when defining the story.
+        Did you forget to return the component from the story?
+        Use "() => ({ component: MyComponent, input: { hello: 'world' } })" when defining the story.
       `,
     });
 
@@ -29,7 +29,7 @@ export default function renderMain({
   }
   if (config.appendTo) {
     console.warn(
-      '@storybook/marko: returning a rendered component for a story is deprecated, return an object with `{ template, input }` instead.'
+      '@storybook/marko: returning a rendered component for a story is deprecated, return an object with `{ component, input }` instead.'
     );
 
     // The deprecated API always destroys the previous component instance.
@@ -39,7 +39,7 @@ export default function renderMain({
 
     activeComponent = config.appendTo(rootEl).getComponent();
   } else {
-    const template = config.template || parameters.template;
+    const template = config.component || parameters.component;
 
     if (activeTemplate === template) {
       // When rendering the same template with new input, we reuse the same instance.
