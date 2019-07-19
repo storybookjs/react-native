@@ -14,6 +14,7 @@ const ArrayType = ({ knob, onChange }) => (
   <TextInput
     id={knob.name}
     underlineColorAndroid="transparent"
+    autoCapitalize="none"
     style={{
       borderWidth: 1,
       borderColor: '#f7f4f4',
