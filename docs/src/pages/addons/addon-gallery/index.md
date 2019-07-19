@@ -165,6 +165,10 @@ Create stories with AngularJS(1.x) components.
 
 JSS theme selection.
 
+### [Themes](https://github.com/tonai/storybook-addon-themes)
+
+Allows you to change the theme based on the css class name and adds a theme selection control to storybook panel.
+
 ### [React live edit](https://github.com/vertexbz/storybook-addon-react-live-edit)
 
 Provides live react story editing and preview.
