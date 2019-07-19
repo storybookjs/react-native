@@ -28,11 +28,23 @@ export default {
 
 export const all = () => <p>Story</p>;
 all.story = {
+  decorators: [
+    s => (
+      <>
+        <p>Local Decorator</p>
+        {s()}
+      </>
+    ),
+  ],
+};
+
+export const deprecated = () => <p>Story</p>;
+deprecated.story = {
   parameters: {
     decorators: [
       s => (
         <>
-          <p>Local Decorator</p>
+          <p>Deprecated Local Decorator</p>
           {s()}
         </>
       ),
