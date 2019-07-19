@@ -15,10 +15,10 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^32.0.6",
+    "expo": "^33.0.7",
     "prop-types": "^15.6.2",
     "react": "16.8.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
