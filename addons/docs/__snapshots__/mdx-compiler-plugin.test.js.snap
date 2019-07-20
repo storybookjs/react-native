@@ -95,7 +95,7 @@ MDXContent.isMDXComponent = true;
 
 export const one = () => <Button>One</Button>;
 one.story = {};
-one.story.parameters = { mdxSource: \`<Button>One</Button>\` };
+one.story.parameters = { mdxSource: '<Button>One</Button>' };
 one.story.decorators = [storyFn => <div className=\\"local\\">{storyFn()}</div>];
 
 const componentMeta = {
@@ -166,12 +166,12 @@ MDXContent.isMDXComponent = true;
 
 export const one = () => <Button>One</Button>;
 one.story = {};
-one.story.parameters = { mdxSource: \`<Button>One</Button>\` };
+one.story.parameters = { mdxSource: '<Button>One</Button>' };
 
 export const helloStory = () => <Button>Hello button</Button>;
 helloStory.story = {};
 helloStory.story.name = 'hello story';
-helloStory.story.parameters = { mdxSource: \`<Button>Hello button</Button>\` };
+helloStory.story.parameters = { mdxSource: '<Button>Hello button</Button>' };
 
 const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory'] };
 
@@ -240,15 +240,8 @@ export const toStorybook = () => ({
 toStorybook.story = {};
 toStorybook.story.name = 'to storybook';
 toStorybook.story.parameters = {
-  mdxSource: \`{
-  template: \\\\\`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\\\\\`,
-  props: {
-    showApp: linkTo('Button')
-  },
-  moduleMetadata: {
-    declarations: [Welcome]
-  }
-}\`,
+  mdxSource:
+    '{\\\\n  template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,\\\\n  props: {\\\\n    showApp: linkTo(\\\\'Button\\\\')\\\\n  },\\\\n  moduleMetadata: {\\\\n    declarations: [Welcome]\\\\n  }\\\\n}',
 };
 
 const componentMeta = { title: 'MDX|Welcome', includeStories: ['toStorybook'] };
@@ -315,13 +308,13 @@ MDXContent.isMDXComponent = true;
 export const componentNotes = () => <Button>Component notes</Button>;
 componentNotes.story = {};
 componentNotes.story.name = 'component notes';
-componentNotes.story.parameters = { mdxSource: \`<Button>Component notes</Button>\` };
+componentNotes.story.parameters = { mdxSource: '<Button>Component notes</Button>' };
 
 export const storyNotes = () => <Button>Story notes</Button>;
 storyNotes.story = {};
 storyNotes.story.name = 'story notes';
 storyNotes.story.parameters = {
-  mdxSource: \`<Button>Story notes</Button>\`,
+  mdxSource: '<Button>Story notes</Button>',
   ...{
     notes: 'story notes',
   },
@@ -398,11 +391,11 @@ MDXContent.isMDXComponent = true;
 export const helloButton = () => <Button>Hello button</Button>;
 helloButton.story = {};
 helloButton.story.name = 'hello button';
-helloButton.story.parameters = { mdxSource: \`<Button>Hello button</Button>\` };
+helloButton.story.parameters = { mdxSource: '<Button>Hello button</Button>' };
 
 export const two = () => <Button>Two</Button>;
 two.story = {};
-two.story.parameters = { mdxSource: \`<Button>Two</Button>\` };
+two.story.parameters = { mdxSource: '<Button>Two</Button>' };
 
 const componentMeta = {
   title: 'Button',
@@ -462,12 +455,12 @@ MDXContent.isMDXComponent = true;
 
 export const one = () => <Button>One</Button>;
 one.story = {};
-one.story.parameters = { mdxSource: \`<Button>One</Button>\` };
+one.story.parameters = { mdxSource: '<Button>One</Button>' };
 
 export const helloStory = () => <Button>Hello button</Button>;
 helloStory.story = {};
 helloStory.story.name = 'hello story';
-helloStory.story.parameters = { mdxSource: \`<Button>Hello button</Button>\` };
+helloStory.story.parameters = { mdxSource: '<Button>Hello button</Button>' };
 
 const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory'] };
 
@@ -558,7 +551,7 @@ MDXContent.isMDXComponent = true;
 
 export const text = () => 'Plain text';
 text.story = {};
-text.story.parameters = { mdxSource: \`'Plain text'\` };
+text.story.parameters = { mdxSource: \\"'Plain text'\\" };
 
 const componentMeta = { title: 'Text', includeStories: ['text'] };
 
