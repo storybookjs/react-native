@@ -89,6 +89,7 @@ export const pageQuery = graphql`
           basics
           guides
           configurations
+          formats
           testing
           addons
           presets

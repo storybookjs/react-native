@@ -39,6 +39,11 @@ module.exports = {
         '/configurations/cli-options/',
         '/configurations/standalone-options/',
       ],
+      formats: [
+        '/formats/module-story-format/',
+        '/formats/storiesof-story-format/',
+        '/formats/mdx-story-format/',
+      ],
       testing: [
         '/testing/react-ui-testing/',
         '/testing/structural-testing/',
