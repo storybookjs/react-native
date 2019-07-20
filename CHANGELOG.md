@@ -1,3 +1,23 @@
+## 5.2.0-beta.4 (July 20, 2019)
+
+### Breaking Changes
+
+* Core: Module format story decorators ([#7490](https://github.com/storybookjs/storybook/pull/7490))
+
+### Features
+
+* Addon-jest: UI Redesign ([#7424](https://github.com/storybookjs/storybook/pull/7424))
+* Marko: support rerendering ([#7460](https://github.com/storybookjs/storybook/pull/7460))
+
+### Bug Fixes
+
+* Addon-docs: Fix MDX source string escaping ([#7497](https://github.com/storybookjs/storybook/pull/7497))
+
+### Dependency Upgrades
+
+* Marko: Upgrade loader & config ([#7459](https://github.com/storybookjs/storybook/pull/7459))
+* Update core-js in addon-ondevice-actions package.json ([#7491](https://github.com/storybookjs/storybook/pull/7491))
+
 ## 5.2.0-beta.3 (July 19, 2019)
 
 ### Features
