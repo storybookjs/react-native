@@ -145,13 +145,13 @@ Decorators are not just for story formatting, they are generally useful for any 
 
 - Theming libraries require a theme to be passed in through context. Rather than redefining this in every story, just add a decorator.
 - Likewise, state management libraries like Redux provide a global data store through context.
-- Finally, Storybook [addons](../../addons/introduction) heavily use decorators. For example, the Storybook's [Knobs addon](FIXME) uses decorators to modify the input properties of the story based on a UI.
+- Finally, Storybook [addons](../../addons/introduction) heavily use decorators. For example, the Storybook's [Knobs addon](https://github.com/storybookjs/storybook/tree/next/addons/knobs) uses decorators to modify the input properties of the story based on a UI.
 
 ## Parameters
 
 Parameters are custom metadata for a story. Like decorators, they can also be hierarchically applied: globally, at the component level, or locally at the story level.
 
-Here's an example where we are annotating our stories with [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) notes using parameters, to be displayed in the [Notes addon](FIXME).
+Here's an example where we are annotating our stories with [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) notes using parameters, to be displayed in the [Notes addon](https://github.com/storybookjs/storybook/tree/next/addons/notes).
 
 We first apply some notes globally in the Storybook config.
 
