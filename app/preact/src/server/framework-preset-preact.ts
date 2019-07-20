@@ -1,4 +1,4 @@
-export function babelDefault(config) {
+export function babelDefault(config: any) {
   return {
     ...config,
     plugins: [

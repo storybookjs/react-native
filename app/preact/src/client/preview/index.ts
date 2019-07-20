@@ -15,8 +15,9 @@ export const {
 } = clientApi;
 
 const framework = 'preact';
-export const storiesOf = (...args) => clientApi.storiesOf(...args).addParameters({ framework });
-export const load = (...args) => coreLoad(...args, framework);
+export const storiesOf = (...args: any) =>
+  clientApi.storiesOf(...args).addParameters({ framework });
+export const load = (...args: any) => coreLoad(...args, framework);
 
 export const { configure } = configApi;
 export { forceReRender };
