@@ -35,6 +35,7 @@
     "@storybook/theming": "5.2.0-beta.3",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
+    "js-string-escape": "^1.0.1",
     "lodash": "^4.17.11",
     "prop-types": "^15.7.2"
   },
