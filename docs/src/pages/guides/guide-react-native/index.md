@@ -193,7 +193,7 @@ Then:
 {
   "scripts": {
     ...
-    "storybook": "start-storybook -p 6006"
+    "storybook": "adb reverse tcp:7007 tcp:7007 && start-storybook"
   }
 }
 ```
