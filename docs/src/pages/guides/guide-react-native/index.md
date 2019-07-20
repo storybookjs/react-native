@@ -204,6 +204,9 @@ Finally:
 npm run storybook
 ```
 
+### Start App
+To see your Storybook stories on the device, you should start your mobile app for the <platform> of your choice (typically ios or android). (Note that due to an implementation detail, your stories will only show up in the left pane of your browser window after your device has connected to this storybook server.)
+
 ### Historical notes
 
 Some context may be useful if you've used older versions of Storybook for RN and find these instructions confusing.
