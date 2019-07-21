@@ -1,3 +1,14 @@
+## 5.2.0-beta.5 (July 21, 2019)
+
+### Features
+
+* CLI: update `sb init` to module format for Vue ([#7501](https://github.com/storybookjs/storybook/pull/7501))
+* CLI: update `sb init` to module format for HTML/Polymer ([#7503](https://github.com/storybookjs/storybook/pull/7503))
+
+### Bug Fixes
+
+* Source-loader: Separate server and client code for IE support ([#7510](https://github.com/storybookjs/storybook/pull/7510))
+
 ## 5.2.0-beta.4 (July 20, 2019)
 
 ### Breaking Changes
