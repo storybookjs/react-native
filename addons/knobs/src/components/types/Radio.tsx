@@ -19,7 +19,7 @@ interface RadiosWrapperProps {
   isInline: boolean;
 }
 
-const RadiosWrapper = styled.div(({ isInline }: RadiosWrapperProps) =>
+const RadiosWrapper = styled.div<RadiosWrapperProps>(({ isInline }) =>
   isInline
     ? {
         display: 'flex',

@@ -23,7 +23,7 @@ interface CheckboxesWrapperProps {
   isInline: boolean;
 }
 
-const CheckboxesWrapper = styled.div(({ isInline }: CheckboxesWrapperProps) =>
+const CheckboxesWrapper = styled.div<CheckboxesWrapperProps>(({ isInline }) =>
   isInline
     ? {
         display: 'flex',

@@ -36,7 +36,7 @@ const Swatch = styled.div<{}>(({ theme }) => ({
   borderRadius: '1rem',
 }));
 
-const ColorButton = styled(Button)(({ active }: ColorButtonProps) => ({
+const ColorButton = styled(Button)<ColorButtonProps>(({ active }) => ({
   zIndex: active ? 3 : 'unset',
 }));
 
