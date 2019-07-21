@@ -67,9 +67,9 @@ export default class DateType extends Component<DateTypeProps, DateTypeState> {
     valid: undefined,
   };
 
-  dateInput: HTMLInputElement;
+  dateInput!: HTMLInputElement;
 
-  timeInput: HTMLInputElement;
+  timeInput!: HTMLInputElement;
 
   componentDidUpdate() {
     const { knob } = this.props;

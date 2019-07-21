@@ -89,7 +89,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
   mounted = false;
 
-  stopListeningOnStory: Function;
+  stopListeningOnStory!: Function;
 
   componentDidMount() {
     this.mounted = true;

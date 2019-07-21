@@ -67,7 +67,7 @@ export default class ColorType extends Component<ColorTypeProps, ColorTypeState>
     displayColorPicker: false,
   };
 
-  popover: HTMLDivElement;
+  popover!: HTMLDivElement;
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleWindowMouseDown);

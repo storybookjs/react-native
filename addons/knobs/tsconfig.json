@@ -4,7 +4,6 @@
     "rootDir": "./src",
     "types": ["webpack-env"],
     "strict": true,
-    "strictPropertyInitialization": false,
     "noUnusedLocals": true
   },
   "include": ["src/**/*"],

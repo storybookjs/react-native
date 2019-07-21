@@ -19,7 +19,7 @@ export default class KnobStore {
 
   callbacks: Callback[] = [];
 
-  timer: number;
+  timer: number | undefined;
 
   has(key: string) {
     return this.store[key] !== undefined;
