@@ -57,8 +57,8 @@ expectKnobOfType<number>(
 
 /** Radios knob */
 
-expectKnobOfType(
-  radios<string>(
+expectKnobOfType<string>(
+  radios(
     'radio with string values',
     {
       1100: '1100',
@@ -66,8 +66,12 @@ expectKnobOfType(
       3300: '3300',
     },
     '2200'
-  ),
-  radios<number>('radio with number values', { 3: 3, 7: 7, 23: 23 }, 3),
+  )
+);
+
+expectKnobOfType<number>(radios('radio with number values', { 3: 3, 7: 7, 23: 23 }, 3));
+
+expectKnobOfType<string | number | null>(
   radios(
     'radio with mixed value',
     {
@@ -121,6 +125,10 @@ expectKnobOfType<number>(
   ),
   select('select with number array', [1, 2, 3, 4], 1),
   select('select with readonly number array', [1, 2] as const, 1)
+);
+
+expectKnobOfType<number | null>(
+  select('select with null option', { a: 1, b: null }, null, groupId)
 );
 
 /** Object knob */
