@@ -78,7 +78,7 @@ class RadiosType extends Component<RadiosTypeProps> {
           type="radio"
           id={id}
           name={name}
-          value={opts.value}
+          value={opts.value || undefined}
           onChange={e => onChange(e.target.value)}
           checked={value === knob.value}
         />

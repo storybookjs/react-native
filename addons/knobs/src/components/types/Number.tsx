@@ -20,7 +20,7 @@ export interface NumberTypeKnob
   value: NumberTypeKnobValue;
 }
 
-interface NumberTypeProps extends KnobControlProps<NumberTypeKnobValue> {
+interface NumberTypeProps extends KnobControlProps<NumberTypeKnobValue | null> {
   knob: NumberTypeKnob;
 }
 
@@ -87,7 +87,7 @@ export default class NumberType extends Component<NumberTypeProps> {
     const { onChange } = this.props;
     const { value } = event.target;
 
-    let parsedValue = Number(value);
+    let parsedValue: number | null = Number(value);
 
     if (Number.isNaN(parsedValue) || value === '') {
       parsedValue = null;

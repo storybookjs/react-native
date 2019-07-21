@@ -1,7 +1,6 @@
 import React, { FunctionComponent, Validator } from 'react';
 import PropTypes from 'prop-types';
 import ReactSelect from 'react-select';
-import { ValueType } from 'react-select/lib/types';
 import { styled } from '@storybook/theming';
 import { KnobControlConfig, KnobControlProps } from './types';
 
@@ -42,16 +41,15 @@ export interface OptionsTypeProps<T extends OptionsTypeKnobValue> extends KnobCo
   display: OptionsKnobOptionsDisplay;
 }
 
-// : React.ComponentType<ReactSelectProps>
 const OptionsSelect = styled(ReactSelect)({
   width: '100%',
   maxWidth: '300px',
   color: 'black',
 });
 
-type ReactSelectOnChangeFn<OptionType = OptionsSelectValueItem> = (
-  value: ValueType<OptionType>
-) => void;
+type ReactSelectOnChangeFn =
+  | { (v: OptionsSelectValueItem): void }
+  | { (v: OptionsSelectValueItem[]): void };
 
 interface OptionsSelectValueItem {
   value: any;

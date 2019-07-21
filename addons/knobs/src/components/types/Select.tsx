@@ -7,10 +7,10 @@ import { KnobControlConfig, KnobControlProps } from './types';
 export type SelectTypeKnobValue = string | number | null | undefined;
 
 export type SelectTypeOptionsProp<T extends SelectTypeKnobValue = SelectTypeKnobValue> =
-  | Record<string, T>
-  | Record<T, T[keyof T]>
-  | T[]
-  | readonly T[];
+  | Record<string | number, T>
+  | Record<Exclude<T, null | undefined>, T[keyof T]>
+  | Exclude<T, null | undefined>[]
+  | readonly Exclude<T, null | undefined>[];
 
 export interface SelectTypeKnob<T extends SelectTypeKnobValue = SelectTypeKnobValue>
   extends KnobControlConfig<T> {
@@ -31,10 +31,7 @@ const SelectType: FunctionComponent<SelectTypeProps> & {
 } = ({ knob, onChange }) => {
   const { options } = knob;
   const entries = Array.isArray(options)
-    ? options.reduce<Record<number, SelectTypeKnobValue>>(
-        (acc, k) => Object.assign(acc, { [k]: k }),
-        {}
-      )
+    ? options.reduce<Record<string, SelectTypeKnobValue>>((acc, k) => ({ ...acc, [k]: k }), {})
     : (options as Record<string, SelectTypeKnobValue>);
 
   const selectedKey = Object.keys(entries).find(k => entries[k] === knob.value);

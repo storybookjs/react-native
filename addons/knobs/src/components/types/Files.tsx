@@ -39,9 +39,11 @@ const FilesType: FunctionComponent<FilesTypeProps> & {
     type="file"
     name={knob.name}
     multiple
-    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-      Promise.all(Array.from(e.target.files).map(fileReaderPromise)).then(onChange)
-    }
+    onChange={(e: ChangeEvent<HTMLInputElement>) => {
+      if (e.target.files) {
+        Promise.all(Array.from(e.target.files).map(fileReaderPromise)).then(onChange);
+      }
+    }}
     accept={knob.accept}
     size="flex"
   />

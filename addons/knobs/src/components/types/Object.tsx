@@ -35,7 +35,7 @@ class ObjectType<T> extends Component<ObjectTypeProps<T>> {
   static getDerivedStateFromProps<T>(
     props: ObjectTypeProps<T>,
     state: ObjectTypeState<T>
-  ): ObjectTypeState<T> {
+  ): ObjectTypeState<T> | null {
     if (!deepEqual(props.knob.value, state.json)) {
       try {
         return {
@@ -86,7 +86,7 @@ class ObjectType<T> extends Component<ObjectTypeProps<T>> {
     return (
       <Form.Textarea
         name={knob.name}
-        valid={failed ? 'error' : null}
+        valid={failed ? 'error' : undefined}
         value={value}
         onChange={this.handleChange}
         size="flex"
@@ -95,6 +95,6 @@ class ObjectType<T> extends Component<ObjectTypeProps<T>> {
   }
 }
 
-polyfill(ObjectType);
+polyfill(ObjectType as any);
 
 export default ObjectType;

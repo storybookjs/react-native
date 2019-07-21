@@ -130,7 +130,7 @@ export default class ColorType extends Component<ColorTypeProps, ColorTypeState>
         {displayColorPicker ? (
           <Popover
             ref={e => {
-              this.popover = e;
+              if (e) this.popover = e;
             }}
           >
             <SketchPicker color={knob.value} onChange={this.handleChange} />

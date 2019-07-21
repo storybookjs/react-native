@@ -105,7 +105,10 @@ expectKnobOfType<string>(
   select('select with string array', ['yes', 'no'], 'yes'),
   select('select with string literal array', stringLiteralArray, stringLiteralArray[0]),
   select('select with readonly array', ['red', 'blue'] as const, 'red'),
-  select<ButtonVariant>('select with string enum options', ButtonVariant, ButtonVariant.primary),
+  select<ButtonVariant>('select with string enum options', ButtonVariant, ButtonVariant.primary)
+);
+
+expectKnobOfType<string | null>(
   select('select with null option', { a: 'Option', b: null }, null, groupId)
 );
 
