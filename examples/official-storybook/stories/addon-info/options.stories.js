@@ -143,8 +143,8 @@ useInfoAsStoryDecorator.story = {
   decorators: [withInfo('Info can take options via the global or local decorator as well.')],
 };
 
-export const usingParamatersAcrossAllStories = () => <BaseButton label="Button" />;
-usingParamatersAcrossAllStories.story = {
+export const usingParametersAcrossAllStories = () => <BaseButton label="Button" />;
+usingParametersAcrossAllStories.story = {
   name: 'Using parameters across all stories',
 };
 
