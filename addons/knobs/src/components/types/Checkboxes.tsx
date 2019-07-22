@@ -1,4 +1,4 @@
-import React, { Component, ChangeEvent, WeakValidationMap } from 'react';
+import React, { Component, ChangeEvent, Validator } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 import { KnobControlConfig, KnobControlProps } from './types';
@@ -23,7 +23,7 @@ interface CheckboxesWrapperProps {
   isInline: boolean;
 }
 
-const CheckboxesWrapper = styled.div(({ isInline }: CheckboxesWrapperProps) =>
+const CheckboxesWrapper = styled.div<CheckboxesWrapperProps>(({ isInline }) =>
   isInline
     ? {
         display: 'flex',
@@ -55,15 +55,14 @@ export default class CheckboxesType extends Component<CheckboxesTypeProps, Check
     isInline: false,
   };
 
-  static propTypes: WeakValidationMap<CheckboxesTypeProps> = {
-    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+  static propTypes = {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.array,
       options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-    }) as any,
-    onChange: PropTypes.func,
-    isInline: PropTypes.bool,
+    }) as Validator<CheckboxesTypeProps['knob']>,
+    onChange: PropTypes.func as Validator<CheckboxesTypeProps['onChange']>,
+    isInline: PropTypes.bool as Validator<CheckboxesTypeProps['isInline']>,
   };
 
   static serialize = (value: CheckboxesTypeKnobValue) => value;

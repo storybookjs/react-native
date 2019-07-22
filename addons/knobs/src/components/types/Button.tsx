@@ -27,14 +27,14 @@ const ButtonType: FunctionComponent<ButtonTypeProps> & {
 
 ButtonType.defaultProps = {
   knob: {} as any,
+  onClick: () => {},
 };
 
 ButtonType.propTypes = {
-  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
-  }).isRequired as Validator<any>,
-  onClick: PropTypes.func.isRequired,
+  }).isRequired as Validator<ButtonTypeProps['knob']>,
+  onClick: PropTypes.func.isRequired as Validator<ButtonTypeProps['onClick']>,
 };
 
 ButtonType.serialize = serialize;

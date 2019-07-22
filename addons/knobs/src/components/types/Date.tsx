@@ -1,4 +1,4 @@
-import React, { Component, ChangeEvent, WeakValidationMap } from 'react';
+import React, { Component, ChangeEvent, Validator } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
@@ -45,13 +45,12 @@ export default class DateType extends Component<DateTypeProps, DateTypeState> {
     onChange: value => value,
   };
 
-  static propTypes: WeakValidationMap<DateTypeProps> = {
-    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+  static propTypes = {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.number,
-    }) as any,
-    onChange: PropTypes.func,
+    }) as Validator<DateTypeProps['knob']>,
+    onChange: PropTypes.func as Validator<DateTypeProps['onChange']>,
   };
 
   static serialize = (value: DateTypeKnobValue) =>
@@ -68,9 +67,9 @@ export default class DateType extends Component<DateTypeProps, DateTypeState> {
     valid: undefined,
   };
 
-  dateInput: HTMLInputElement;
+  dateInput!: HTMLInputElement;
 
-  timeInput: HTMLInputElement;
+  timeInput!: HTMLInputElement;
 
   componentDidUpdate() {
     const { knob } = this.props;

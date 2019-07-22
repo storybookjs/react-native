@@ -37,7 +37,7 @@ export type KnobControlType = ComponentType<any> & {
 };
 
 // Note: this is a utility function that helps in resolving types more orderly
-export const getKnobControl = (type: KnobType): KnobControlType => KnobControls[type];
+export const getKnobControl = (type: KnobType) => KnobControls[type] as KnobControlType;
 
 export { TextTypeKnob } from './Text';
 export { NumberTypeKnob, NumberTypeKnobOptions } from './Number';
