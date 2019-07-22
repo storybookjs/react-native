@@ -128,8 +128,8 @@ fullControlOverStylesUsingAFunction.story = {
 export const useACustomComponentForTheTable = () => <BaseButton label="Button" />;
 useACustomComponentForTheTable.story = {
   name: 'Use a custom component for the table',
+  component: TableComponent,
   parameters: {
-    component: TableComponent,
     info: {
       TableComponent,
     },

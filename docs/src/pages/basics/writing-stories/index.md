@@ -16,7 +16,10 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import Button from './Button';
 
-export default { title: 'Button' };
+export default {
+  component: Button,
+  title: 'Button',
+};
 
 export const withText = () => <Button onClick={action('clicked')}>Hello Button</Button>;
 
@@ -33,7 +36,7 @@ This is what you'll see in Storybook:
 
 ![Basic stories](../static/basic-stories.png)
 
-The named exports define the Button's stories, and the `default` export defines metadata that applies to the group. In this case, the title determines the title of the group in Storybook's left-hand navigation panel.
+The named exports define the Button's stories, and the `default` export defines metadata that applies to the group. In this case, the `component` is `Button`. The title determines the title of the group in Storybook's left-hand navigation panel. In this case it's located at the top level, but typically it's [positioned within the story hierarchy](#story-hierarchy).
 
 This example is written in Storybook's [Module format](../../formats/module-story-format/). Storybook also supports:
 

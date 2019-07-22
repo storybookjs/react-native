@@ -4,9 +4,7 @@ import { Button } from '@storybook/react/demo';
 
 export default {
   title: 'Other|Demo/Button',
-  parameters: {
-    component: Button,
-  },
+  component: Button,
 };
 
 export const withText = () => <Button onClick={action('clicked')}>Hello Button</Button>;

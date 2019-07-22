@@ -281,8 +281,8 @@ function MDXContent({ components, ...props }) {
     <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
       <Meta
         title=\\"Button\\"
+        component={Button}
         parameters={{
-          component: Button,
           notes: 'component notes',
         }}
         mdxType=\\"Meta\\"
@@ -323,7 +323,6 @@ storyNotes.story.parameters = {
 const componentMeta = {
   title: 'Button',
   parameters: {
-    component: Button,
     notes: 'component notes',
   },
   includeStories: ['componentNotes', 'storyNotes'],
@@ -364,8 +363,8 @@ function MDXContent({ components, ...props }) {
     <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
       <Meta
         title=\\"Button\\"
+        component={Button}
         parameters={{
-          component: Button,
           notes: 'component notes',
         }}
         mdxType=\\"Meta\\"
@@ -400,7 +399,6 @@ two.story.parameters = { mdxSource: '<Button>Two</Button>' };
 const componentMeta = {
   title: 'Button',
   parameters: {
-    component: Button,
     notes: 'component notes',
   },
   includeStories: ['helloButton', 'two'],
