@@ -20,7 +20,7 @@
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "enzyme-to-json": "^3.3.5",
-    "eventemitter3": "^3.1.0",
+    "eventemitter3": "^4.0.0",
     "express": "^4.16.4",
     "express-graphql": "^0.8.0",
     "format-json": "^1.0.3",
