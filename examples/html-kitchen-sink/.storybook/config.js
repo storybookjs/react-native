@@ -21,5 +21,4 @@ addParameters({
   docs: DocsPage,
 });
 
-load(require.context('../stories', true, /\.stories\.js$/), module);
-load(require.context('../stories', true, /\.stories\.mdx$/), module);
+load(require.context('../stories', true, /\.stories\.(js|mdx)$/), module);
