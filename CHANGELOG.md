@@ -1,3 +1,22 @@
+## 5.2.0-beta.6 (July 23, 2019)
+
+## Breaking Changes
+
+It is now recommended to only use ONE `load` call in your app and it will warn you if you call it more than once. The examples and docs have been updated to reflect this. Technically this is not a breaking change since the old API is supported, but it's a change in usage from previous versions.
+
+### Features
+
+* Core: Top-level components in MDX/Module formats ([#7524](https://github.com/storybookjs/storybook/pull/7524))
+* Core: Module format `load` accept loader function  ([#7518](https://github.com/storybookjs/storybook/pull/7518))
+
+### Bug Fixes
+
+* Addon-centered: Fix component disappearing on zoom ([#7400](https://github.com/storybookjs/storybook/pull/7400))
+
+### Maintenance
+
+* Addon-knobs: enable Typescript `strict` flag ([#7515](https://github.com/storybookjs/storybook/pull/7515))
+
 ## 5.2.0-beta.5 (July 21, 2019)
 
 ### Features
