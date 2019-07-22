@@ -334,6 +334,7 @@ export default class StoryStore extends EventEmitter {
         }
         return acc;
       }, {});
+      this.pushToManager();
     }
   }
 
