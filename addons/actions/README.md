@@ -78,7 +78,7 @@ storiesOf('Button', module).add('default view', () => (
 
 ## Configuration
 
-Arguments which are passed to the action call will have to be serialized while be "transfered"
+Arguments which are passed to the action call will have to be serialized while be "transferred"
 over the channel.
 
 This is not very optimal and can cause lag when large objects are being logged, for this reason it is possible 
@@ -111,7 +111,7 @@ action('my-action', {
 
 |Name|Type|Description|Default|
 |---|---|---|---|
-|`depth`|Number|Configures the transfered depth of any logged objects.|`10`|
+|`depth`|Number|Configures the transferred depth of any logged objects.|`10`|
 |`clearOnStoryChange`|Boolean|Flag whether to clear the action logger when switching away from the current story.|`true`|
 |`limit`|Number|Limits the number of items logged in the action logger|`50`|
 

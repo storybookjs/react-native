@@ -4,7 +4,7 @@ const path = require('path');
 const shell = require('shelljs');
 
 function getCommand(watch) {
-  // Compile anuglar with tsc
+  // Compile angular with tsc
   if (process.cwd().includes(path.join('app', 'angular'))) {
     return '';
   }

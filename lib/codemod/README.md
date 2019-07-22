@@ -199,7 +199,7 @@ story3.story = { name: 'complex story' };
 Heuristics:
 
 - If a file has any default export, it will be skipped
-- If a file has multiple `storiesOf` declarations, it will convert each one seperately. This generates invalid ES6, but you can edit the file by hand to split it into multiple files (or whatever is appropriate).
+- If a file has multiple `storiesOf` declarations, it will convert each one separately. This generates invalid ES6, but you can edit the file by hand to split it into multiple files (or whatever is appropriate).
 
 ### convert-module-to-mdx
 
