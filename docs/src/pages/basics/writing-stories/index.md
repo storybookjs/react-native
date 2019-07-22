@@ -40,7 +40,7 @@ This example is written in Storybook's [Module format](../../formats/module-stor
 - a classic [storiesOf format](../../formats/storiesof-story-format/), which adds stories through Storybook's API.
 - an experimental [MDX format](../../formats/mdx-story-format/), which mixes longform Markdown docs and JSX stories.
 
-Since Module format is a new addition to Storybook, most Storybook examples you'll find in the wild are written in the legacy [storiesOf format](../stories-of-format/).
+Since Module format is a new addition to Storybook, most Storybook examples you'll find in the wild are written in the legacy [storiesOf format](../../formats/stories-of-format/).
 
 Furthermore, Storybook for React Native currently only supports the `storiesOf` format. React Native will get Module and MDX support in a future release.
 
@@ -134,7 +134,7 @@ load(loaderFn, module);
 
 Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use `require.context`.
 
-The `load` function is available since Storybook 5.2 and is the recommended way to load stories. It replaces the [configure function](../storiesof-format#legacy-loading), which is still in use in most Storybook examples, and is the only way to currently load stories in React Native.
+The `load` function is available since Storybook 5.2 and is the recommended way to load stories. It replaces the [configure function](../../formats/storiesof-story-format/#legacy-loading), which is still in use in most Storybook examples, and is the only way to currently load stories in React Native.
 
 ## Decorators
 
