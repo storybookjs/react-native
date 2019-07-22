@@ -64,7 +64,7 @@ load(
   [
     require.context('../../lib/ui/src', true, /\.stories\.(js|tsx?|mdx)$/),
     require.context('../../lib/components/src', true, /\.stories\.(js|tsx?|mdx)$/),
-    require.context('./stories', true, /\.stories\.(js|ts|tsx?|mdx)$/),
+    require.context('./stories', true, /\.stories\.(js|tsx?|mdx)$/),
   ],
   module
 );
