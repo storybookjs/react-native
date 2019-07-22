@@ -37,6 +37,7 @@
     "preact": "^8.4.2"
   },
   "peerDependencies": {
+    "@babel/core": "7.0.1",
     "babel-loader": "^7.0.0 || ^8.0.0",
     "preact": "^8.4.2"
   },

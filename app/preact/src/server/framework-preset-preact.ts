@@ -1,4 +1,6 @@
-export function babelDefault(config: any) {
+import { TransformOptions } from '@babel/core';
+
+export function babelDefault(config: TransformOptions) {
   return {
     ...config,
     plugins: [
