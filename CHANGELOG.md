@@ -1,6 +1,6 @@
 ## 5.2.0-beta.6 (July 23, 2019)
 
-## Breaking Changes
+### Breaking Changes
 
 It is now recommended to only use ONE `load` call in your app and it will warn you if you call it more than once. The examples and docs have been updated to reflect this. Technically this is not a breaking change since the old API is supported, but it's a change in usage from previous versions.
 
