@@ -11,11 +11,14 @@ The module format is supported in all frameworks except React Native, where you 
 
 ## Default export
 
-The default export defines metadata about your component, including its `title` (where it will show up in the Storybook navigation UI), [decorators](../../basics/writing-stories/#decorators) and [parameters](../../writing-stories/#parameters).
+The default export defines metadata about your component, including the `component` itself, its `title` (where it will show up in the [navigation UI story hierarchy](../../basics/writing-stories/#story-hierarchy)), [decorators](../../basics/writing-stories/#decorators), and [parameters](../../basics/writing-stories/#parameters).
 
 ```js
+import MyComponent from './MyComponent';
+
 export default {
-  title: 'Path|To/Some/Component',
+  title: 'Path|To/MyComponent',
+  component: MyComponent,
   decorators: [ ... ],
   parameters: { ... }
 }
@@ -27,7 +30,7 @@ For more examples, see [writing stories](../../basics/writing-stories/)
 
 By default every named export in the file represents a story function.
 
-Story functions can be annotated with a `story` object to define story-level [decorators](../../basics/writing-stories/#decorators) and [parameters](../../writing-stories/#parameters), and also to define the `name` of the story.
+Story functions can be annotated with a `story` object to define story-level [decorators](../../basics/writing-stories/#decorators) and [parameters](../../basics/writing-stories/#parameters), and also to define the `name` of the story.
 
 The `name` is useful if you want to use names with spaces, names that correspond to restricted keywords in Javascript, or names that collide with other variables in the file. If it's not specified, the export name will be used instead.
 
@@ -55,6 +58,7 @@ import someData from './data.json';
 
 export default {
   title: 'MyComponent',
+  component: MyComponent,
   includeStories: ['simpleStory', 'complexStory']
 }
 export const simpleData = { foo: 1, bar: 'baz' };
@@ -71,7 +75,3 @@ For this specific example the equivalent result can be achieved in a few ways de
 - `includeStories: /.*Story$/`
 - `excludeStories: ['simpleData', 'complexData']`
 - `excludeStories: /.*Data$/`
-
-```
-
-```
