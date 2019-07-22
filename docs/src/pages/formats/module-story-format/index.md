@@ -3,11 +3,11 @@ id: 'module-story-format'
 title: 'Module Story Format'
 ---
 
-Module story format is the recommended way to [write stories](../../basics/writing-stories/) since Storybook 5.2.
+Storybook's module story format is the recommended way to [write stories](../../basics/writing-stories/) since Storybook 5.2.
 
-It's called "module" format because the stories and component metadata are defined as ES6 modules. Every Module story file consists of a required default export and one or more named exports.
+It's called "module" format because the stories and component metadata are defined as ES6 modules. Every module story file consists of a required default export and one or more named exports.
 
-Module format is supported in all frameworks except React Native, where you should use the [storiesOf format](../storiesof-story-format) instead.
+The module format is supported in all frameworks except React Native, where you should use the [storiesOf format](../storiesof-story-format) instead.
 
 ## Default export
 

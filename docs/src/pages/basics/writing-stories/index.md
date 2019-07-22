@@ -40,7 +40,7 @@ This example is written in Storybook's [Module format](../../formats/module-stor
 - a classic [storiesOf format](../../formats/storiesof-story-format/), which adds stories through Storybook's API.
 - an experimental [MDX format](../../formats/mdx-story-format/), which mixes longform Markdown docs and JSX stories.
 
-Since Module format is a new additon to Storybook, most Storybook examples you'll find in the wild are written in the legacy [storiesOf format](../stories-of-format/).
+Since Module format is a new addition to Storybook, most Storybook examples you'll find in the wild are written in the legacy [storiesOf format](../stories-of-format/).
 
 Furthermore, Storybook for React Native currently only supports the `storiesOf` format. React Native will get Module and MDX support in a future release.
 
@@ -92,7 +92,7 @@ It's up to you to find a naming/placing scheme that works for your project/team.
 
 Stories are loaded in the `.storybook/config.js` file.
 
-The most convenient way to load stories is by filename. For example, if you stories files are located in the `src/components` directory, you can use the following snippet.
+The most convenient way to load stories is by filename. For example, if you stories files are located in the `src/components` directory, you can use the following snippet:
 
 ```js
 import { load } from '@storybook/react';
@@ -100,7 +100,37 @@ import { load } from '@storybook/react';
 load(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-The `load` function may be called multiple times to load stories from different locations.
+The `load` function accepts:
+
+- A single `require.context` "`req`"
+- An array of `req`s to load from multiple locations
+- A loader function that should return void or an array of module exports
+
+If you want to load from multiple locations, you could use an array:
+
+```js
+import { load } from '@storybook/react';
+
+load([
+  require.context('../src/components', true, /\.stories\.js$/)
+  require.context('../lib', true, /\.stories\.js$/)
+], module);
+```
+
+Or if you want to do some custom loading logic, you can use a loader function. Just remember to return an array of module exports if you want to use the module story format:
+
+```js
+import { load } from '@storybook/react';
+
+const loaderFn = () => {
+  const allExports = [require('./welcome.stories.js')];
+  const req = require.context('../src/components', true, /\.stories\.js$/);
+  req.keys().forEach(fname => allExports.push(req(fname)));
+  return allExports;
+};
+
+load(loaderFn, module);
+```
 
 Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use `require.context`.
 

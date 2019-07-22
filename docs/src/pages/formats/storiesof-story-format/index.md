@@ -11,7 +11,7 @@ That said, the `storiesOf` format is not deprecated. For the time being most exi
 
 ## storiesOf API
 
-A Storybook is a collection of stories. Each story represents a single visual state of a component. For an overview of storybook story concepts, see ["Writing Stories"](../writing-stories).
+A Storybook is a collection of stories. Each story represents a single visual state of a component. For an overview of storybook story concepts, see ["Writing Stories"](../../basics/writing-stories/).
 
 Here's a basic story file in `storiesOf` format:
 
@@ -32,13 +32,13 @@ storiesOf('Button', module)
   ));
 ```
 
-The string argument to `storiesOF` is the component title. IF you pass a string like `'Widgets|Button/Button'` it can also be used to position your component's story within [Storybook's story hierarchy](../../writing-stories/#story-hierarchy).
+The string argument to `storiesOf` is the component title. If you pass a string like `'Widgets|Button/Button'` it can also be used to position your component's story within [Storybook's story hierarchy](../../basics/writing-stories/#story-hierarchy).
 
 Each `.add` call takes a story name, a story function that returns a renderable object (JSX in the case of React), and optionally some parameters, which are described below.
 
 ## Decorators and parameters
 
-[Decorators](../../writing-stories/#decorators) and [parameters](../../writing-stories/#parameters) can be specified globally, at the component level, or locally at the story level.
+[Decorators](../../basics/writing-stories/#decorators) and [parameters](../../basics/writing-stories/#parameters) can be specified globally, at the component level, or locally at the story level.
 
 Global decorators are parameters are specified in the Storybook config:
 
@@ -85,6 +85,8 @@ import { load } from '@storybook/react';
 load(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
+The `load` API can also take an array of `require.context` `req`s, or a loader function. For more information see ["Loading stories"](../../basics/writing-stories/#loading-stories)
+
 Prior to 5.2, we used an API called `configure` instead:
 
 ```js
@@ -104,14 +106,14 @@ This example uses Webpack's [require.context](https://webpack.js.org/guides/depe
 Additionally, because `storiesOf` is simply an API, you can require individual files inside the configuration function, which allows you to precisely control which files are loaded and the specific load order.
 
 ```js
-import { configure } from '@storybook/react';
+import { load } from '@storybook/react';
 
 function loadStories() {
   require('../stories/Foo.stories.js');
   require('../stories/Bar.stories.js');
 }
 
-configure(loadStories, module);
+load(loadStories, module);
 ```
 
 The **React Native** packager resolves all imports at build-time, so it's not possible to load modules dynamically. There is a third party loader [react-native-storybook-loader](https://github.com/elderfo/react-native-storybook-loader) to automatically generate the import statements for all stories.
