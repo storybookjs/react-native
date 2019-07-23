@@ -16,6 +16,7 @@ const TextType = ({ knob, onChange }) => (
     id={knob.name}
     value={knob.value}
     onChangeText={onChange}
+    autoCapitalize="none"
     underlineColorAndroid="transparent"
   />
 );

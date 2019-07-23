@@ -1,18 +1,15 @@
 import { createElement } from 'rax';
-import { storiesOf } from '@storybook/rax';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import Button from 'rax-button';
 import Text from 'rax-text';
 
-const stories = storiesOf('Addon|addon-knobs', module);
+export default {
+  title: 'Addon|addon-knobs',
+  decorators: [withKnobs],
+};
 
-// Add the `withKnobs` decorator to add knobs support to your stories.
-// You can also configure `withKnobs` as a global decorator.
-stories.addDecorator(withKnobs);
-
-// Knobs for Rax props
-stories.add('with a button', () => {
+export const withAButton = () => {
   const disabled = boolean('Disabled', false);
   const hasStyle = boolean('Has Style', false);
   const style = hasStyle
@@ -36,13 +33,20 @@ stories.add('with a button', () => {
       <Text style={textStyle}>{text('Label', 'Hello Storybook')}</Text>
     </Button>
   );
-});
+};
 
-// Knobs as dynamic variables.
-stories.add('as dynamic variables', () => {
+withAButton.story = {
+  name: 'with a button',
+};
+
+export const asDynamicVariables = () => {
   const name = text('Name', 'Benjamin Button');
   const age = number('Age', 89);
 
   const content = `I am ${name} and I'm ${age} years old.`;
   return <Text>{content}</Text>;
-});
+};
+
+asDynamicVariables.story = {
+  name: 'as dynamic variables',
+};

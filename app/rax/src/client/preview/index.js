@@ -3,10 +3,9 @@ import { start } from '@storybook/core/client';
 import './globals';
 import render from './render';
 
-const { clientApi, configApi, forceReRender } = start(render);
+const { load: coreLoad, clientApi, configApi, forceReRender } = start(render);
 
 export const {
-  storiesOf,
   setAddon,
   addDecorator,
   addParameters,
@@ -14,6 +13,10 @@ export const {
   getStorybook,
   raw,
 } = clientApi;
+
+const framework = 'rax';
+export const storiesOf = (...args) => clientApi.storiesOf(...args).addParameters({ framework });
+export const load = (...args) => coreLoad(...args, framework);
 
 export const { configure } = configApi;
 export { forceReRender };

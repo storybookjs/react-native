@@ -7,10 +7,10 @@ exports[`Storyshots Addon|Links button with link to another story 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-button-component
-    _nghost-a-c7=""
+    _nghost-a-c4=""
   >
     <button
-      _ngcontent-a-c7=""
+      _ngcontent-a-c4=""
     >
       Go to Welcome Story
     </button>

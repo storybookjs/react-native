@@ -14,6 +14,7 @@ const ArrayType = ({ knob, onChange }) => (
   <TextInput
     id={knob.name}
     underlineColorAndroid="transparent"
+    autoCapitalize="none"
     style={{
       borderWidth: 1,
       borderColor: '#f7f4f4',
@@ -37,6 +38,7 @@ ArrayType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.array,
+    separator: PropTypes.string,
   }),
   onChange: PropTypes.func,
 };

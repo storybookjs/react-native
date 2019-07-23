@@ -1,5 +1,4 @@
 import { createElement } from 'rax';
-import { storiesOf } from '@storybook/rax';
 import withEvents from '@storybook/addon-events';
 import ee from 'event-emitter';
 import Logger, { EVENTS } from '../components/Logger';
@@ -30,6 +29,13 @@ const decorator = withEvents({
   ],
 });
 
-storiesOf('Addon|addon-events', module)
-  .addDecorator(decorator)
-  .add('Events Logger', () => <Logger emitter={emitter} />);
+export default {
+  title: 'Addon|addon-events',
+  decorators: [decorator],
+};
+
+export const eventsLogger = () => <Logger emitter={emitter} />;
+
+eventsLogger.story = {
+  name: 'Events Logger',
+};

@@ -64,8 +64,6 @@ const ListItem: React.FunctionComponent<ListItemProps> = ({ kind, title, selecte
 
 interface Props {
   stories: any;
-  selectedKind?: string;
-  selectedStory?: string;
 }
 
 interface State {
@@ -90,28 +88,35 @@ export default class StoryListView extends Component<Props, State> {
   componentDidMount() {
     const channel = addons.getChannel();
     channel.on(Events.STORY_ADDED, this.handleStoryAdded);
+    channel.on(Events.SELECT_STORY, this.forceReRender);
     this.handleStoryAdded();
   }
 
   componentWillUnmount() {
     const channel = addons.getChannel();
     channel.removeListener(Events.STORY_ADDED, this.handleStoryAdded);
+    channel.removeListener(Events.SELECT_STORY, this.forceReRender);
   }
+
+  forceReRender = () => {
+    this.forceUpdate();
+  };
 
   handleStoryAdded = () => {
     const { stories } = this.props;
 
     if (stories) {
-      const data = stories.dumpStoryBook().map(
-        (section: any) => ({
-          title: section.kind,
-          data: section.stories.map((story: any) => ({
-            key: story,
-            name: story,
-            kind: section.kind,
-          })),
-        }),
-        {}
+      const data = Object.values(
+        stories
+          .raw()
+          .reduce((acc: { [kind: string]: { title: string; data: any[] } }, story: any) => {
+            acc[story.kind] = {
+              title: story.kind,
+              data: (acc[story.kind] ? acc[story.kind].data : []).concat(story),
+            };
+
+            return acc;
+          }, {})
       );
 
       this.setState({ data, originalData: data });
@@ -146,13 +151,15 @@ export default class StoryListView extends Component<Props, State> {
     this.setState({ data: filteredData });
   };
 
-  changeStory(kind: string, story: string) {
+  changeStory(storyId: string) {
     const channel = addons.getChannel();
-    channel.emit(Events.SET_CURRENT_STORY, { kind, story });
+    channel.emit(Events.SET_CURRENT_STORY, { storyId });
   }
 
   render() {
-    const { selectedKind, selectedStory } = this.props;
+    const { stories } = this.props;
+    const { storyId } = stories.getSelection();
+    const selectedStory = stories.fromId(storyId);
     const { data } = this.state;
 
     return (
@@ -171,12 +178,12 @@ export default class StoryListView extends Component<Props, State> {
             <ListItem
               title={item.name}
               kind={item.kind}
-              selected={item.kind === selectedKind && item.name === selectedStory}
-              onPress={() => this.changeStory(item.kind, item.name)}
+              selected={selectedStory && item.id === selectedStory.id}
+              onPress={() => this.changeStory(item.id)}
             />
           )}
           renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader title={title} selected={title === selectedKind} />
+            <SectionHeader title={title} selected={selectedStory && title === selectedStory.kind} />
           )}
           keyExtractor={(item, index) => item + index}
           sections={data}

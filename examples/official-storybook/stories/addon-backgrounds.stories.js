@@ -1,10 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import BaseButton from '../components/BaseButton';
 
-storiesOf('Addons|Backgrounds', module)
-  .addParameters({
+export default {
+  title: 'Addons|Backgrounds',
+
+  parameters: {
     backgrounds: [
       { name: 'white', value: '#ffffff' },
       { name: 'light', value: '#eeeeee' },
@@ -12,24 +13,52 @@ storiesOf('Addons|Backgrounds', module)
       { name: 'dark', value: '#222222', default: true },
       { name: 'black', value: '#000000' },
     ],
-  })
-  .add('story 1', () => (
-    <BaseButton label="You should be able to switch backgrounds for this story" />
-  ))
-  .add('story 2', () => <BaseButton label="This one too!" />)
-  .add('overriden', () => <BaseButton label="This one should have different backgrounds" />, {
+  },
+};
+
+export const story1 = () => (
+  <BaseButton label="You should be able to switch backgrounds for this story" />
+);
+
+story1.story = {
+  name: 'story 1',
+};
+
+export const story2 = () => <BaseButton label="This one too!" />;
+
+story2.story = {
+  name: 'story 2',
+};
+
+export const overridden = () => <BaseButton label="This one should have different backgrounds" />;
+
+overridden.story = {
+  parameters: {
     backgrounds: [
       { name: 'pink', value: 'hotpink' },
       { name: 'blue', value: 'deepskyblue', default: true },
     ],
-  })
-  .add('disabled via []', () => <BaseButton label="This one should not use backgrounds" />, {
+  },
+};
+
+export const disabledVia = () => <BaseButton label="This one should not use backgrounds" />;
+
+disabledVia.story = {
+  name: 'disabled via []',
+
+  parameters: {
     backgrounds: [],
-  })
-  .add(
-    'skipped via disable:true',
-    () => <BaseButton label="This one should not use backgrounds either" />,
-    {
-      backgrounds: { disable: true },
-    }
-  );
+  },
+};
+
+export const skippedViaDisableTrue = () => (
+  <BaseButton label="This one should not use backgrounds either" />
+);
+
+skippedViaDisableTrue.story = {
+  name: 'skipped via disable:true',
+
+  parameters: {
+    backgrounds: { disable: true },
+  },
+};

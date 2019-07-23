@@ -89,6 +89,7 @@ addons.register(ADDON_ID, api => {
     type: types.PANEL,
     title,
     render,
+    paramKey: PARAM_KEY,
   });
 });
 ```
@@ -245,6 +246,34 @@ storiesOf('Button', module)
     },
   });
 ```
+
+### Disabling an addon panel
+
+It's possible to disable an addon panel for a particular story.
+ 
+To offer that capability, you need to pass the paramKey when you register the panel
+```js
+addons.register(ADDON_ID, () => {
+  addons.add(PANEL_ID, {
+    type: types.PANEL,
+    title: 'My Addon',
+    render: () => <div>Addon tab content</div>,
+    paramKey: 'myAddon',
+  });
+});
+```
+
+While adding a story, you can then pass a `disabled` parameter.
+
+```js
+storiesOf('Button', module)
+  .add('with text', () => <Button>Hello Button</Button>, {
+    myAddon: {
+      disabled: true,
+    },
+  });
+```
+
 
 ## Styling your addon
 

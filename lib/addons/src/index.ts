@@ -3,8 +3,8 @@ import global from 'global';
 import { ReactElement } from 'react';
 import { Channel } from '@storybook/channels';
 import { API } from '@storybook/api';
-import logger from '@storybook/client-logger';
-import { types, Types, isSupportedType } from './types';
+import { logger } from '@storybook/client-logger';
+import { types, Types } from './types';
 
 export interface RenderOptions {
   active: boolean;
@@ -24,11 +24,10 @@ export interface Addon {
   route?: (routeOptions: RouteOptions) => string;
   match?: (matchOptions: MatchOptions) => boolean;
   render: (renderOptions: RenderOptions) => ReactElement<any>;
+  paramKey?: string;
 }
 
 export type Loader = (api: API) => void;
-
-export { types, Types, isSupportedType };
 
 interface Loaders {
   [key: string]: Loader;

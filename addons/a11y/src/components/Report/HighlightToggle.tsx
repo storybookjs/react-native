@@ -31,7 +31,7 @@ enum CheckBoxStates {
   INDETERMINATE,
 }
 
-const Checkbox = styled.input(({ disabled }) => ({
+const Checkbox = styled.input<{ disabled: boolean }>(({ disabled }) => ({
   cursor: disabled ? 'not-allowed' : 'pointer',
 }));
 

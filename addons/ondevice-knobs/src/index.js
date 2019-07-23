@@ -9,6 +9,7 @@ export function register() {
       title: 'Knobs',
       // eslint-disable-next-line react/prop-types
       render: ({ active, key }) => <Panel key={key} channel={channel} active={active} />,
+      paramKey: 'knobs',
     });
   });
 }

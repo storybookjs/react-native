@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots Core|Parameters passed to story 1`] = `
-<div>
-  Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"globalParameter":"globalParameter","framework":"vue","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
-</div>
-`;

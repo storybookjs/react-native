@@ -1,7 +1,9 @@
+export type Styles = ViewportStyles | ((s: ViewportStyles) => ViewportStyles) | null;
+
 export interface Viewport {
   name: string;
-  styles: ViewportStyles;
-  type: 'desktop' | 'mobile' | 'tablet';
+  styles: Styles;
+  type: 'desktop' | 'mobile' | 'tablet' | 'other';
   /*
    * @deprecated
    * Deprecated option?

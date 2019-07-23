@@ -40,12 +40,7 @@ module.exports = async ({ config }) => ({
       },
       {
         test: /\.stories\.[tj]sx?$/,
-        use: [
-          {
-            loader: require.resolve('@storybook/source-loader'),
-            options: { injectParameters: true },
-          },
-        ],
+        loader: require.resolve('@storybook/source-loader'),
         include: [
           path.resolve(__dirname, './stories'),
           path.resolve(__dirname, '../../lib/ui/src'),

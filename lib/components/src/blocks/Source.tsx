@@ -4,7 +4,7 @@ import { EmptyBlock } from './EmptyBlock';
 
 import { SyntaxHighlighter } from '../syntaxhighlighter/syntaxhighlighter';
 
-const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }) => ({
+const StyledSyntaxHighlighter = styled(SyntaxHighlighter)<{}>(({ theme }) => ({
   // DocBlocks-specific styling and overrides
   margin: '25px 0 40px',
   boxShadow:
