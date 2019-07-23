@@ -61,11 +61,15 @@ function genStoryExport(ast, counter) {
     const { code } = generate(body, {});
     storyCode = code;
   }
-  statements.push(
-    `export const ${storyKey} = () => (
-      ${storyCode}
-    );`
-  );
+  if (storyCode.trim().startsWith('() =>')) {
+    statements.push(`export const ${storyKey} = ${storyCode}`);
+  } else {
+    statements.push(
+      `export const ${storyKey} = () => (
+        ${storyCode}
+      );`
+    );
+  }
   statements.push(`${storyKey}.story = {};`);
 
   if (storyName !== storyKey) {
