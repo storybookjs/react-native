@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-actions",
-  "version": "5.2.0-beta.6",
+  "version": "5.2.0-beta.7",
   "description": "Action Logger addon for storybook",
   "keywords": [
     "storybook"
@@ -21,12 +21,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.6",
-    "@storybook/api": "5.2.0-beta.6",
-    "@storybook/client-api": "5.2.0-beta.6",
-    "@storybook/components": "5.2.0-beta.6",
-    "@storybook/core-events": "5.2.0-beta.6",
-    "@storybook/theming": "5.2.0-beta.6",
+    "@storybook/addons": "5.2.0-beta.7",
+    "@storybook/api": "5.2.0-beta.7",
+    "@storybook/client-api": "5.2.0-beta.7",
+    "@storybook/components": "5.2.0-beta.7",
+    "@storybook/core-events": "5.2.0-beta.7",
+    "@storybook/theming": "5.2.0-beta.7",
     "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
