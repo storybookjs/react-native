@@ -63,6 +63,10 @@ describe('docs-mdx-compiler-plugin', () => {
     const code = await generate(path.resolve(__dirname, './fixtures/non-story-exports.mdx'));
     expect(code).toMatchSnapshot();
   });
+  it('supports function stories', async () => {
+    const code = await generate(path.resolve(__dirname, './fixtures/story-function.mdx'));
+    expect(code).toMatchSnapshot();
+  });
   it('errors on missing story props', async () => {
     await expect(
       generate(path.resolve(__dirname, './fixtures/story-missing-props.mdx'))
