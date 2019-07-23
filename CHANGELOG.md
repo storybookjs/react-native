@@ -1,3 +1,20 @@
+## 5.2.0-beta.7 (July 23, 2019)
+
+### Features
+
+* Addon-docs: MDX function stories ([#7529](https://github.com/storybookjs/storybook/pull/7529))
+* CLI: update `sb init` to module format for Ember/Marko/Mithril/Rax/Riot/Svelte ([#7504](https://github.com/storybookjs/storybook/pull/7504))
+* CLI: update `sb init` to module format for Angular ([#7502](https://github.com/storybookjs/storybook/pull/7502))
+* CLI: update `sb init` to module format for React ([#7500](https://github.com/storybookjs/storybook/pull/7500))
+
+### Bug Fixes
+
+* Ondevice-knobs: Graceful fail on missing default ([#7533](https://github.com/storybookjs/storybook/pull/7533))
+
+### Maintenance
+
+* Build: Attempt to fix travis timeouts ([#7531](https://github.com/storybookjs/storybook/pull/7531))
+
 ## 5.2.0-beta.6 (July 23, 2019)
 
 ### Breaking Changes
