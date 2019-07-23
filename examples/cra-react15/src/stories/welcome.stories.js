@@ -1,13 +1,10 @@
 import React from 'react';
+import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 import { Welcome } from '@storybook/react/demo';
 
-export default {
-  title: 'Welcome',
-  parameters: {
+storiesOf('Welcome', module)
+  .addParameters({
     component: Welcome,
-  },
-};
-
-export const story1 = () => <Welcome showApp={linkTo('Button')} />;
-story1.story = { name: 'to Storybook' };
+  })
+  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);

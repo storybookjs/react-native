@@ -7,10 +7,7 @@ import Button from '../Button';
 
 export default {
   title: 'Button',
-
-  parameters: {
-    component: Button,
-  },
+  component: Button,
 };
 
 export const withText = () => <Button onclick={action('clicked')}>Hello Button</Button>;

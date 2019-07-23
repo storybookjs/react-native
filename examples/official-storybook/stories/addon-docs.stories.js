@@ -5,9 +5,7 @@ import DocgenButton from '../components/DocgenButton';
 
 export default {
   title: 'Addons|Docs/stories',
-  parameters: {
-    component: DocgenButton,
-  },
+  component: DocgenButton,
 };
 
 export const basic = () => <div>Click docs tab to see basic docs</div>;

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ChangeEvent } from 'react';
+import React, { FunctionComponent, ChangeEvent, Validator } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form } from '@storybook/components';
@@ -7,10 +7,10 @@ import { KnobControlConfig, KnobControlProps } from './types';
 export type SelectTypeKnobValue = string | number | null | undefined;
 
 export type SelectTypeOptionsProp<T extends SelectTypeKnobValue = SelectTypeKnobValue> =
-  | Record<string, T>
-  | Record<T, T[keyof T]>
-  | T[]
-  | readonly T[];
+  | Record<string | number, T>
+  | Record<Exclude<T, null | undefined>, T[keyof T]>
+  | Exclude<T, null | undefined>[]
+  | readonly Exclude<T, null | undefined>[];
 
 export interface SelectTypeKnob<T extends SelectTypeKnobValue = SelectTypeKnobValue>
   extends KnobControlConfig<T> {
@@ -31,10 +31,7 @@ const SelectType: FunctionComponent<SelectTypeProps> & {
 } = ({ knob, onChange }) => {
   const { options } = knob;
   const entries = Array.isArray(options)
-    ? options.reduce<Record<number, SelectTypeKnobValue>>(
-        (acc, k) => Object.assign(acc, { [k]: k }),
-        {}
-      )
+    ? options.reduce<Record<string, SelectTypeKnobValue>>((acc, k) => ({ ...acc, [k]: k }), {})
     : (options as Record<string, SelectTypeKnobValue>);
 
   const selectedKey = Object.keys(entries).find(k => entries[k] === knob.value);
@@ -63,13 +60,12 @@ SelectType.defaultProps = {
 };
 
 SelectType.propTypes = {
-  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.any,
     options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  }) as any,
-  onChange: PropTypes.func,
+  }) as Validator<SelectTypeProps['knob']>,
+  onChange: PropTypes.func as Validator<SelectTypeProps['onChange']>,
 };
 
 SelectType.serialize = serialize;

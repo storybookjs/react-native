@@ -1,5 +1,5 @@
 import { FileReader } from 'global';
-import PropTypes from 'prop-types';
+import PropTypes, { Validator } from 'prop-types';
 import React, { ChangeEvent, FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 
@@ -39,9 +39,11 @@ const FilesType: FunctionComponent<FilesTypeProps> & {
     type="file"
     name={knob.name}
     multiple
-    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-      Promise.all(Array.from(e.target.files).map(fileReaderPromise)).then(onChange)
-    }
+    onChange={(e: ChangeEvent<HTMLInputElement>) => {
+      if (e.target.files) {
+        Promise.all(Array.from(e.target.files).map(fileReaderPromise)).then(onChange);
+      }
+    }}
     accept={knob.accept}
     size="flex"
   />
@@ -53,11 +55,10 @@ FilesType.defaultProps = {
 };
 
 FilesType.propTypes = {
-  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
-  }) as any,
-  onChange: PropTypes.func,
+  }) as Validator<FilesTypeProps['knob']>,
+  onChange: PropTypes.func as Validator<FilesTypeProps['onChange']>,
 };
 
 FilesType.serialize = serialize;

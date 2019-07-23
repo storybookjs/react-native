@@ -4,9 +4,7 @@ import Welcome from '../Welcome';
 
 export default {
   title: 'Welcome',
-  parameters: {
-    component: Welcome,
-  },
+  component: Welcome,
 };
 
 export const story1 = () => ({

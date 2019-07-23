@@ -43,10 +43,6 @@ let injectedIsLoading = false;
 export default {
   title: 'Addons|Knobs.withKnobs',
   decorators: [withKnobs],
-
-  parameters: {
-    component: withKnobs,
-  },
 };
 
 export const tweaksStaticValues = () => {

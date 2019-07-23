@@ -16,5 +16,4 @@ addParameters({
   docs: DocsPage,
 });
 
-load(require.context('../src/stories', true, /\.stories\.ts$/), module);
-load(require.context('../src/stories', true, /\.stories\.mdx$/), module);
+load(require.context('../src/stories', true, /\.stories\.(ts|mdx)$/), module);

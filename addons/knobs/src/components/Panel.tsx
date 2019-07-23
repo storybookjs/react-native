@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent, Fragment, Validator } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -14,6 +14,7 @@ import {
   Link,
   ScrollArea,
 } from '@storybook/components';
+import { API } from '@storybook/api';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
 import { getKnobControl } from './types';
@@ -41,13 +42,7 @@ interface PanelKnobGroups {
 interface KnobPanelProps {
   active: boolean;
   onReset?: object;
-  api: {
-    on: Function;
-    off: Function;
-    emit: Function;
-    getQueryParam: Function;
-    setQueryParams: Function;
-  };
+  api: Pick<API, 'on' | 'off' | 'emit' | 'getQueryParam' | 'setQueryParams'>;
 }
 
 interface KnobPanelState {
@@ -60,13 +55,26 @@ interface KnobPanelOptions {
 
 export default class KnobPanel extends PureComponent<KnobPanelProps> {
   static propTypes = {
-    active: PropTypes.bool.isRequired,
-    onReset: PropTypes.object, // eslint-disable-line
+    active: PropTypes.bool.isRequired as Validator<KnobPanelProps['active']>,
+    onReset: PropTypes.object as Validator<KnobPanelProps['onReset']>, // eslint-disable-line
     api: PropTypes.shape({
       on: PropTypes.func,
+      off: PropTypes.func,
+      emit: PropTypes.func,
       getQueryParam: PropTypes.func,
       setQueryParams: PropTypes.func,
-    }).isRequired,
+    }).isRequired as Validator<KnobPanelProps['api']>,
+  };
+
+  static defaultProps: KnobPanelProps = {
+    active: true,
+    api: {
+      on: () => () => {},
+      off: () => {},
+      emit: () => {},
+      getQueryParam: () => undefined,
+      setQueryParams: () => {},
+    },
   };
 
   state: KnobPanelState = {
@@ -81,7 +89,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
   mounted = false;
 
-  stopListeningOnStory: Function;
+  stopListeningOnStory!: Function;
 
   componentDidMount() {
     this.mounted = true;

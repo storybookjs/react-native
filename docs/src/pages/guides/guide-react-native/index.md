@@ -169,7 +169,7 @@ Because on device addons are inside the app, they are also rerendered on every c
 
 ## Storybook server
 
-Storybook RN server, `@storybook/react-native-server` is a seperate package that provides a standalone server that the Storybook ondevice client can connect to.
+Storybook RN server, `@storybook/react-native-server` is a separate package that provides a standalone server that the Storybook ondevice client can connect to.
 
 Running storybook server gives a few advantages over simply running on-device:
 
