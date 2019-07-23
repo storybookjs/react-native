@@ -15,7 +15,7 @@ interface Additions {
 
 // Initialize the state based on the URL.
 // NOTE:
-//   Although we don't change the URL when you change the state, we do support setting inital state
+//   Although we don't change the URL when you change the state, we do support setting initial state
 //   via the following URL parameters:
 //     - full: 0/1 -- show fullscreen
 //     - panel: bottom/right/0 -- set addons panel position (or hide)

@@ -7,4 +7,4 @@ export default {
   },
 };
 
-export const welcome = () => Welcome.renderSync({});
+export const welcome = () => ({ component: Welcome });

@@ -7,7 +7,7 @@ import { getQueryParams } from '@storybook/client-api';
 import { Channel } from '@storybook/channels';
 
 import KnobStore, { KnobStoreKnob } from './KnobStore';
-import { Knob, KnobType } from './type-defs';
+import { Knob, KnobType, Mutable } from './type-defs';
 import { SET } from './shared';
 
 import { deserializers } from './converters';
@@ -54,11 +54,11 @@ interface KnobManagerOptions {
 export default class KnobManager {
   knobStore = new KnobStore();
 
-  channel: Channel;
+  channel: Channel | undefined;
 
   options: KnobManagerOptions = {};
 
-  calling: boolean;
+  calling: boolean = false;
 
   setChannel(channel: Channel) {
     this.channel = channel;
@@ -72,7 +72,7 @@ export default class KnobManager {
     return this.options.escapeHTML ? escapeStrings(value) : value;
   }
 
-  knob<T extends KnobType = any>(name: string, options: Knob<T>): Knob<T>['value'] {
+  knob<T extends KnobType = any>(name: string, options: Knob<T>): Mutable<Knob<T>['value']> {
     this._mayCallChannel();
 
     const knobName = options.groupId ? `${name}_${options.groupId}` : name;
@@ -139,7 +139,7 @@ export default class KnobManager {
     setTimeout(() => {
       this.calling = false;
       // emit to the channel and trigger a panel re-render
-      this.channel.emit(SET, { knobs: this.knobStore.getAll(), timestamp });
+      if (this.channel) this.channel.emit(SET, { knobs: this.knobStore.getAll(), timestamp });
     }, PANEL_UPDATE_INTERVAL);
   }
 }

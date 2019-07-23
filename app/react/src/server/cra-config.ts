@@ -47,7 +47,7 @@ export function getReactScriptsPath({ noCache }: { noCache?: boolean } = {}) {
       }
     }
   } catch (e) {
-    logger.warn(`Error occured during react-scripts package path resolving: ${e}`);
+    logger.warn(`Error occurred during react-scripts package path resolving: ${e}`);
   }
 
   reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
@@ -96,7 +96,7 @@ const getStyleRules = getRules(cssExtensions.concat(cssModuleExtensions));
 
 export const getTypeScriptRules = (webpackConfigRules: RuleSetRule[], configDir: string) => {
   const rules = getRules(typeScriptExtensions)(webpackConfigRules);
-  // We know CRA only has one rule targetting TS for now, which is the first rule.
+  // We know CRA only has one rule targeting TS for now, which is the first rule.
   const babelRule = rules[0];
   // Resolves an issue where this config is parsed twice (#4903).
   if (typeof babelRule.include !== 'string') return rules;

@@ -1,19 +1,15 @@
 import PropTypes from 'prop-types';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, Validator } from 'react';
 
 import { styled } from '@storybook/theming';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 type BooleanTypeKnobValue = boolean;
 
-export interface BooleanTypeKnob {
-  name: string;
-  value: BooleanTypeKnobValue;
-  separator: string;
-}
+export type BooleanTypeKnob = KnobControlConfig<BooleanTypeKnobValue>;
 
-export interface BooleanTypeProps {
+export interface BooleanTypeProps extends KnobControlProps<BooleanTypeKnobValue> {
   knob: BooleanTypeKnob;
-  onChange: (value: BooleanTypeKnobValue) => BooleanTypeKnobValue;
 }
 
 const Input = styled.input({
@@ -49,12 +45,11 @@ BooleanType.defaultProps = {
 };
 
 BooleanType.propTypes = {
-  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.bool,
-  }) as any,
-  onChange: PropTypes.func,
+  }) as Validator<BooleanTypeProps['knob']>,
+  onChange: PropTypes.func as Validator<BooleanTypeProps['onChange']>,
 };
 
 BooleanType.serialize = serialize;

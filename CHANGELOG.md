@@ -1,3 +1,129 @@
+## 5.2.0-beta.7 (July 23, 2019)
+
+### Features
+
+* Addon-docs: MDX function stories ([#7529](https://github.com/storybookjs/storybook/pull/7529))
+* CLI: update `sb init` to module format for Ember/Marko/Mithril/Rax/Riot/Svelte ([#7504](https://github.com/storybookjs/storybook/pull/7504))
+* CLI: update `sb init` to module format for Angular ([#7502](https://github.com/storybookjs/storybook/pull/7502))
+* CLI: update `sb init` to module format for React ([#7500](https://github.com/storybookjs/storybook/pull/7500))
+
+### Bug Fixes
+
+* Ondevice-knobs: Graceful fail on missing default ([#7533](https://github.com/storybookjs/storybook/pull/7533))
+
+### Maintenance
+
+* Build: Attempt to fix travis timeouts ([#7531](https://github.com/storybookjs/storybook/pull/7531))
+
+## 5.2.0-beta.6 (July 23, 2019)
+
+### Breaking Changes
+
+It is now recommended to only use ONE `load` call in your app and it will warn you if you call it more than once. The examples and docs have been updated to reflect this. Technically this is not a breaking change since the old API is supported, but it's a change in usage from previous versions.
+
+### Features
+
+* Core: Top-level components in MDX/Module formats ([#7524](https://github.com/storybookjs/storybook/pull/7524))
+* Core: Module format `load` accept loader function  ([#7518](https://github.com/storybookjs/storybook/pull/7518))
+
+### Bug Fixes
+
+* Addon-centered: Fix component disappearing on zoom ([#7400](https://github.com/storybookjs/storybook/pull/7400))
+
+### Maintenance
+
+* Addon-knobs: enable Typescript `strict` flag ([#7515](https://github.com/storybookjs/storybook/pull/7515))
+
+## 5.2.0-beta.5 (July 21, 2019)
+
+### Features
+
+* CLI: update `sb init` to module format for Vue ([#7501](https://github.com/storybookjs/storybook/pull/7501))
+* CLI: update `sb init` to module format for HTML/Polymer ([#7503](https://github.com/storybookjs/storybook/pull/7503))
+
+### Bug Fixes
+
+* Source-loader: Separate server and client code for IE support ([#7510](https://github.com/storybookjs/storybook/pull/7510))
+
+## 5.2.0-beta.4 (July 20, 2019)
+
+### Breaking Changes
+
+* Core: Module format story decorators ([#7490](https://github.com/storybookjs/storybook/pull/7490))
+
+### Features
+
+* Addon-jest: UI Redesign ([#7424](https://github.com/storybookjs/storybook/pull/7424))
+* Marko: support rerendering ([#7460](https://github.com/storybookjs/storybook/pull/7460))
+
+### Bug Fixes
+
+* Addon-docs: Fix MDX source string escaping ([#7497](https://github.com/storybookjs/storybook/pull/7497))
+
+### Dependency Upgrades
+
+* Marko: Upgrade loader & config ([#7459](https://github.com/storybookjs/storybook/pull/7459))
+* Update core-js in addon-ondevice-actions package.json ([#7491](https://github.com/storybookjs/storybook/pull/7491))
+
+## 5.2.0-beta.3 (July 19, 2019)
+
+### Features
+
+* React-native: Add storyId as testID ([#7482](https://github.com/storybookjs/storybook/pull/7482))
+
+### Bug Fixes
+
+* React-native: On-device knobs input fixes ([#7475](https://github.com/storybookjs/storybook/pull/7475))
+* React-native: Fix crna-kitchen-sink ([#7200](https://github.com/storybookjs/storybook/pull/7200))
+
+## 5.2.0-beta.2 (July 18, 2019)
+
+### Features
+
+* CLI: convert mdx to module format ([#7419](https://github.com/storybookjs/storybook/pull/7419))
+* CLI: sb migrate npm & typescript support ([#7463](https://github.com/storybookjs/storybook/pull/7463))
+* Addon-Docs: HTML support & example ([#7454](https://github.com/storybookjs/storybook/pull/7454))
+
+### Bug Fixes
+
+* Convert-storiesof-to-module: user exports, collisions, reserved keywords ([#7471](https://github.com/storybookjs/storybook/pull/7471))
+* React-native: On-device knobs fixes ([#7470](https://github.com/storybookjs/storybook/pull/7470))
+
+### Dependency Upgrades
+
+* Addon-docs: Upgrade MDX to 1.1 ([#7476](https://github.com/storybookjs/storybook/pull/7476))
+
+## 5.2.0-beta.1 (July 18, 2019)
+
+### Features
+
+* React native: Emit event when story is rendered ([#7449](https://github.com/storybookjs/storybook/pull/7449))
+
+### Bug Fixes
+
+* Addon-knobs: improve types via generics and readonlyarray ([#7411](https://github.com/storybookjs/storybook/pull/7411))
+* Ondevice-backgrounds: use same param key as addon-backgrounds ([#7437](https://github.com/storybookjs/storybook/pull/7437))
+
+## 5.2.0-beta.0 (July 15, 2019)
+
+### Features
+
+* Codemod: Convert module format to MDX ([#7418](https://github.com/storybookjs/storybook/pull/7418))
+
+## 5.2.0-alpha.44 (July 15, 2019)
+
+### Features
+
+* CLI: Add migrate command ([#7414](https://github.com/storybookjs/storybook/pull/7414))
+
+### Bug Fixes
+
+* UI: Fix Panel rendered wrong at Docs-page ([#7327](https://github.com/storybookjs/storybook/pull/7327))
+
+### Maintenance
+
+* Typescript: Fix types of client-api & storystore ([#7337](https://github.com/storybookjs/storybook/pull/7337))
+
 ## 5.2.0-alpha.43 (July 13, 2019)
 
 ### Bug Fixes
@@ -11,6 +137,11 @@
 
 * Addon-actions: Use v4 UUID instead of v1 for action IDs ([#7397](https://github.com/storybookjs/storybook/pull/7397))
 * UI: Remove recompose ([#7385](https://github.com/storybookjs/storybook/pull/7385))
+* UI: FIX & IMPROVE styling interop of addon-background & addon-viewport ([#7385](https://github.com/storybookjs/storybook/pull/7385))
+
+### Breaking Changes
+
+* Move grid toolbar feature to background-addon ([#7385](https://github.com/storybookjs/storybook/pull/7385))
 
 ## 5.2.0-alpha.42 (July 12, 2019)
 
