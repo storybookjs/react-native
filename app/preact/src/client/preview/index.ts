@@ -14,11 +14,16 @@ export const storiesOf: ClientApi['storiesOf'] = (kind, m) => {
   });
 };
 export const load: ClientApi['load'] = (...args: any) => coreLoad(...args, framework);
-export const addDecorator: ClientApi['addDecorator'] = clientApi.addDecorator;
-export const addParameters: ClientApi['addParameters'] = clientApi.addParameters;
-export const clearDecorators: ClientApi['clearDecorators'] = clientApi.clearDecorators;
-export const setAddon: ClientApi['setAddon'] = clientApi.setAddon;
-export const configure: ClientApi['configure'] = configApi.configure;
-export const forceReRender: ClientApi['forceReRender'] = api.forceReRender;
-export const getStorybook: ClientApi['getStorybook'] = clientApi.getStorybook;
-export const raw: ClientApi['raw'] = clientApi.raw;
+export const {
+  addDecorator,
+  addParameters,
+  clearDecorators,
+  setAddon,
+  getStorybook,
+  raw,
+}: Pick<
+  ClientApi,
+  'addDecorator' | 'addParameters' | 'clearDecorators' | 'setAddon' | 'getStorybook' | 'raw'
+> = clientApi;
+export const { configure }: Pick<ClientApi, 'configure'> = configApi;
+export const { forceReRender }: Pick<ClientApi, 'forceReRender'> = api;
