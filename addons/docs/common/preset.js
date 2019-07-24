@@ -18,7 +18,16 @@ function webpack(webpackConfig = {}, options = {}) {
   const { module = {} } = webpackConfig;
   // it will reuse babel options that are already in use in storybook
   // also, these babel options are chained with other presets.
-  const { babelOptions, configureJSX } = options;
+  const { babelOptions, configureJSX, sourceInclude } = options;
+
+  const sourceLoader = sourceInclude && [
+    {
+      test: /\.(stories|story)\.[tj]sx?$/,
+      loader: require.resolve('@storybook/source-loader'),
+      include: sourceInclude,
+      enforce: 'pre',
+    },
+  ];
 
   return {
     ...webpackConfig,
@@ -54,6 +63,7 @@ function webpack(webpackConfig = {}, options = {}) {
             },
           ],
         },
+        ...sourceLoader,
       ],
     },
   };

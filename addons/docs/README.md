@@ -33,10 +33,19 @@ First add the package. Make sure that the versions for your `@storybook/*` packa
 yarn add -D @storybook/addon-docs
 ```
 
-The add the following line to your `.storybook/presets.js` file:
+The add the following to your `.storybook/presets.js` exports, where `sourceInclude` is an array of paths or regexes to the location of your story files, or `null` if you don't need to generate `.[tj]sx?` story source for your docs:
 
 ```js
-module.exports = ['@storybook/addon-docs/react/preset'];
+const path = require('path');
+
+module.exports = [
+  {
+    name: '@storybook/addon-docs/react/preset',
+    options: {
+      sourceInclude: [path.resolve(__dirname, '../src')],
+    },
+  },
+];
 ```
 
 Finally, import your stories and MDX files in `.storybook/config.js`:
@@ -48,8 +57,7 @@ import { load } from '@storybook/react';
 // ...
 
 // wherever your story files are located
-load(require.context('../src', true, /\.stories\.js$/), module);
-load(require.context('../src', true, /\.stories\.mdx$/), module);
+load(require.context('../src', true, /\.stories\.(js|mdx)$/), module);
 ```
 
 ## Manual configuration
