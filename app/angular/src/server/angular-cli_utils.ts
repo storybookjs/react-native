@@ -66,7 +66,7 @@ export function getAngularCliParts(cliWebpackConfigOptions: any) {
     };
   } catch (e) {
     logger.warn(
-      'Failed to get Angular Cli config, it will be ignored, please check the following error stack:'
+      'Failed to load the Angular CLI config. Using the Storybook default config instead.'
     );
     logger.warn(e);
     return null;
