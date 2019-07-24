@@ -4,6 +4,7 @@ import {
   getCommonConfig,
   getStylesConfig,
 } from '@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs';
+import { logger } from '@storybook/node-logger';
 
 import { RuleSetRule, Configuration } from 'webpack';
 
@@ -64,6 +65,10 @@ export function getAngularCliParts(cliWebpackConfigOptions: any) {
       cliStyleConfig: getStylesConfig(cliWebpackConfigOptions),
     };
   } catch (e) {
+    logger.warn(
+      'Failed to load the Angular CLI config. Using Storybook\'s default config instead.'
+    );
+    logger.warn(e);
     return null;
   }
 }
