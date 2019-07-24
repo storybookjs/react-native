@@ -8,7 +8,7 @@ export interface TitleProps {
   loading?: boolean;
   disabled?: boolean;
 }
-const Title = styled(({ loading, disabled, active, ...rest }: TitleProps) => (
+const Title = styled(({ active, loading, disabled, ...rest }: TitleProps) => (
   <span {...rest}></span>
 ))<{ active: boolean; loading: boolean; disabled: boolean }>(
   ({ theme }) => ({
