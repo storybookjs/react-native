@@ -31,5 +31,5 @@ export const withCounter = () =>
   });
 
 withCounter.story = {
-  name: 'with coumter',
+  name: 'with counter',
 };

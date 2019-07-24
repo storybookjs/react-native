@@ -36,7 +36,7 @@ This is what you'll see in Storybook:
 
 ![Basic stories](../static/basic-stories.png)
 
-The named exports define the Button's stories, and the `default` export defines metadata that applies to the group. In this case, the `component` is `Button`. The title determines the title of the group in Storybook's left-hand navigation panel. In this case it's located at the top level, but typically it's [positioned within the story hierarchy](#story-hierarchy).
+The named exports define the Button's stories, and the `default` export defines metadata that applies to the group. In this case, the `component` is `Button`. The `title` determines the title of the group in Storybook's left-hand navigation panel and should be unique, i.e. not re-used across files. In this case it's located at the top level, but typically it's [positioned within the story hierarchy](#story-hierarchy).
 
 This example is written in Storybook's [Module format](../../formats/module-story-format/). Storybook also supports:
 
