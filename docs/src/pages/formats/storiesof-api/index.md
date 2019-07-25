@@ -1,19 +1,19 @@
 ---
-id: 'storiesof-story-format'
-title: 'StoriesOf Story Format'
+id: 'storiesof-api'
+title: 'StoriesOf API'
 ---
 
-`storiesOf` is Storybook's API for adding stories. Up until Storybook 5.2 has been the primary way to create stories in Storybook.
+`storiesOf` is Storybook's API for adding stories. Up until Storybook 5.2, it has been the primary way to create stories in Storybook.
 
-In Storybook 5.2 we introduced a simpler and more portable [Module format](../module-story-format/), and all future tools and infrastructure will be oriented towards this format. Therefore, we recommend migrating your stories out of `storiesOf` format, and even provide [automated tools to do this](#module-format-migration).
+In Storybook 5.2 we introduced a simpler and more portable [Component Story Format](../component-story-format/), and all future tools and infrastructure will be oriented towards CSF. Therefore, we recommend migrating your stories out of `storiesOf` API, and even provide [automated tools to do this](#component-story-format-migration).
 
-That said, the `storiesOf` format is not deprecated. For the time being most existing Storybooks use `storiesOf` format, and therefore we plan to support it for the foreseeable future. Furthermore, `storiesOf` is a Storybook API, so even once we've deprecated the file format, the API will likely live on.
+That said, the `storiesOf` API is not deprecated. For the time being most existing Storybooks use the `storiesOf` API, and therefore we plan to support it for the foreseeable future.
 
 ## storiesOf API
 
 A Storybook is a collection of stories. Each story represents a single visual state of a component. For an overview of storybook story concepts, see ["Writing Stories"](../../basics/writing-stories/).
 
-Here's a basic story file in `storiesOf` format:
+Here's a basic story file in the `storiesOf` API:
 
 ```js
 import React from 'react';
@@ -77,7 +77,7 @@ storiesOf('Button', module).add(
 
 ## Legacy loading
 
-With the module format, we introduced a `load` API. To load the all `.stories.js` files, including `storiesOf` files, simply run the following in your Storybook config file:
+With the Component Story Format (CSF), we introduced a `load` API. To load the all `.stories.js` files, including `storiesOf` files, simply run the following in your Storybook config file:
 
 ```js
 import { load } from '@storybook/react';
@@ -118,12 +118,12 @@ load(loadStories, module);
 
 The **React Native** packager resolves all imports at build-time, so it's not possible to load modules dynamically. There is a third party loader [react-native-storybook-loader](https://github.com/elderfo/react-native-storybook-loader) to automatically generate the import statements for all stories.
 
-## Module format migration
+## Component Story Format migration
 
-To make it easier to adopt the new [Module format](../module-story-format/), we've created an automatic migration tool to transform `storiesOf` format to Module format.
+To make it easier to adopt the new [Component Story Format (CSF)](../component-story-format/), we've created an automatic migration tool to transform `storiesOf` API to Module format.
 
 ```sh
-sb migrate storiesof-to-module --glob src/**/*.stories.js
+sb migrate storiesof-to-csf --glob src/**/*.stories.js
 ```
 
 For more information, see the CLI's [Codemod README](https://github.com/storybookjs/storybook/tree/next/lib/codemod).
