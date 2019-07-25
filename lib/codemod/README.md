@@ -151,14 +151,14 @@ Heuristics:
 - The storiesOf "kind" name must be Button
 - Button must be imported in the file
 
-### convert-storiesof-to-module
+### storiesof-to-csf
 
-This converts all of your "old-style" `storiesOf` stories into component module format, which uses standard ES6 modules.
+This converts all of your "old-style" `storiesOf` stories into Component Story Format (CSF), which uses standard ES6 modules.
 
-> NOTE: The output of this transformation may require manual editing after running the transformation. `storiesOf` format allows multiple "kinds" (components) to be declared per file, but module format only allows a single component per file. Therefore, if you use this feature in your input stories, you will need to split up the resulting outputs by hand. You'll see a warning at the console if you need to hand edit.
+> NOTE: The output of this transformation may require manual editing after running the transformation. `storiesOf` API allows multiple "kinds" (components) to be declared per file, but CSF only allows a single component per file. Therefore, if you use this feature in your input stories, you will need to split up the resulting outputs by hand. You'll see a warning at the console if you need to hand edit.
 
 ```sh
-./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/convert-storiesof-to-module.js . --ignore-pattern "node_modules|dist"
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/storiesof-to-csf.js . --ignore-pattern "node_modules|dist"
 ```
 
 For example:
@@ -201,14 +201,14 @@ Heuristics:
 - If a file has any default export, it will be skipped
 - If a file has multiple `storiesOf` declarations, it will convert each one separately. This generates invalid ES6, but you can edit the file by hand to split it into multiple files (or whatever is appropriate).
 
-### convert-module-to-mdx
+### csf-to-mdx
 
-This converts all of your component module stories into MDX format, which integrates story examples and long-form documentation.
+This converts all of your CSF Component Stories into MDX syntax, which integrates story examples and long-form documentation.
 
 > NOTE: The output of this transformation may require manual editing after running the transformation. MDX is finnicky about the top-level statements it allows. For example, [variables should be defined with exports](https://mdxjs.com/getting-started/#defining-variables-with-exports), meaning `const foo = 5;` should be rewritten as `export const foo = 5;`. We don't do this transformation automatically, since you may prefer to refactor your stories.
 
 ```sh
-./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/convert-to-module-format.js . --ignore-pattern "node_modules|dist"
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/csf-to-mdxt.js . --ignore-pattern "node_modules|dist"
 ```
 
 For example:
@@ -240,12 +240,12 @@ import { Meta, Story } from '@storybook/addon-docs/blocks';
 </Story>
 ```
 
-### convert-mdx-to-module
+### mdx-to-csf
 
-This converts all your MDX stories into module format.
+This converts all your MDX stories into Component Story Format.
 
 ```sh
-./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/convert-to-module-format.js . --ignore-pattern "node_modules|dist" --extensions=mdx
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/mdx-to-csf.js . --ignore-pattern "node_modules|dist" --extensions=mdx
 ```
 
 For example:
@@ -262,7 +262,7 @@ import { Meta, Story } from '@storybook/addon-docs/blocks';
 
 Becomes:
 
-```
+```js
 import React from 'react';
 import Button from './Button';
 

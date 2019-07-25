@@ -77,7 +77,7 @@ storiesOf('Button', module).add(
 
 ## Legacy loading
 
-With the module format, we introduced a `load` API. To load the all `.stories.js` files, including `storiesOf` files, simply run the following in your Storybook config file:
+With the Component Story Format (CSF), we introduced a `load` API. To load the all `.stories.js` files, including `storiesOf` files, simply run the following in your Storybook config file:
 
 ```js
 import { load } from '@storybook/react';
