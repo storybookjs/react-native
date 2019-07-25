@@ -1,7 +1,7 @@
 {
   "name": "@storybook/addon-storyshots-puppeteer",
   "version": "5.1.9",
-  "description": "Image snappshots addition to StoryShots base on puppeteer",
+  "description": "Image snapshots addition to StoryShots based on puppeteer",
   "keywords": [
     "addon",
     "storybook"
