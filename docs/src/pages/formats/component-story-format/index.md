@@ -3,7 +3,7 @@ id: 'component-story-format'
 title: 'Component Story Format (CSF)'
 ---
 
-Storybook's Component Story Format (CSF) is the recommended way to [write stories](../../basics/writing-stories/) since Storybook 5.2.
+Storybook's Component Story Format (CSF) is the recommended way to [write stories](../../basics/writing-stories/) since Storybook 5.2. [Read the announcement](https://medium.com/storybookjs/component-story-format-66f4c32366df) to learn more about why you should use it.
 
 In CSF, stories and component metadata are defined as ES6 modules. Every Component story file consists of a required default export and one or more named exports.
 
