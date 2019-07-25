@@ -38,14 +38,14 @@ This is what you'll see in Storybook:
 
 The named exports define the Button's stories, and the `default` export defines metadata that applies to the group. In this case, the `component` is `Button`. The `title` determines the title of the group in Storybook's left-hand navigation panel and should be unique, i.e. not re-used across files. In this case it's located at the top level, but typically it's [positioned within the story hierarchy](#story-hierarchy).
 
-This example is written in Storybook's [Module format](../../formats/module-story-format/). Storybook also supports:
+This example is written in Storybook's [Component Story Format (CSF)](../../formats/component-story-format/). Storybook also supports:
 
-- a classic [storiesOf format](../../formats/storiesof-story-format/), which adds stories through Storybook's API.
-- an experimental [MDX format](../../formats/mdx-story-format/), which mixes longform Markdown docs and JSX stories.
+- a classic [storiesOf API](../../formats/storiesof-api/), which adds stories through Storybook's API.
+- an experimental [MDX syntax](../../formats/mdx-syntax/), which mixes longform Markdown docs and JSX stories.
 
-Since Module format is a new addition to Storybook, most Storybook examples you'll find in the wild are written in the legacy [storiesOf format](../../formats/stories-of-format/).
+Since CSF is a new addition to Storybook, most Storybook examples you'll find in the wild are written to the [storiesOf API](../../formats/storiesof-api/).
 
-Furthermore, Storybook for React Native currently only supports the `storiesOf` format. React Native will get Module and MDX support in a future release.
+Furthermore, Storybook for React Native currently only supports the `storiesOf` format. React Native will get CSF and MDX support in a future release.
 
 ## Story file location
 
@@ -137,7 +137,7 @@ load(loaderFn, module);
 
 Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use `require.context`.
 
-The `load` function is available since Storybook 5.2 and is the recommended way to load stories. It replaces the [configure function](../../formats/storiesof-story-format/#legacy-loading), which is still in use in most Storybook examples, and is the only way to currently load stories in React Native.
+The `load` function is available since Storybook 5.2 and is the recommended way to load stories. It replaces the [configure function](../../formats/storiesof-api/#legacy-loading), which is still in use in most Storybook examples, and is the only way to currently load stories in React Native.
 
 ## Decorators
 
