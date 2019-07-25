@@ -33,49 +33,63 @@ First add the package. Make sure that the versions for your `@storybook/*` packa
 yarn add -D @storybook/addon-docs
 ```
 
-The add the following to your `.storybook/presets.js` exports, where `sourceInclude` is an array of paths or regexes to the location of your story files, or `null` if you don't need to generate `.[tj]sx?` story source for your docs:
+The add the following to your `.storybook/presets.js` exports:
 
 ```js
-const path = require('path');
+module.exports = ['@storybook/addon-docs/react/preset'];
+```
 
+> NOTE: Replace `react` with the name of the framework you're using, e.g. `vue`, `angular`, `html`, `svelte`, etc. This should match `@storybook/<framework>` package you're using.
+
+Finally, update your Storybook configuration `.storybook/config.js`. Add `DocsPage` to auto-generate docs for your existing stories, and load MDX files.
+
+```js
+import { load, addDecorator } from '@storybook/react';
+import { DocsPage } from '@storybook/addon-docs/blocks';
+
+addDecorator({ docs: DocsPage });
+
+// wherever your story files are located
+load(require.context('../src', true, /\.stories\.(js|ts|tsx|mdx)$/), module);
+```
+
+## Preset options
+
+The `addon-docs` preset has a few configuration options that can be used to configure its babel/webpack loading behavior. Here's an example of how to use the preset with options:
+
+```js
 module.exports = [
   {
     name: '@storybook/addon-docs/react/preset',
     options: {
-      sourceInclude: [path.resolve(__dirname, '../src')],
+      configureJSX: true,
+      babelOptions: {},
+      sourceLoaderOptions: null,
     },
   },
 ];
 ```
 
-Finally, import your stories and MDX files in `.storybook/config.js`:
+The `configureJsx` option is useful when you're writing your docs in MDX and your project's babel config isn't already set up to handle JSX files. `babelOptions` is a way to further configure the babel processor when you're using `configureJSX`.
 
-```js
-import { load } from '@storybook/react';
-
-// standard configuration here
-// ...
-
-// wherever your story files are located
-load(require.context('../src', true, /\.stories\.(js|mdx)$/), module);
-```
+`sourceLoaderOptions` is an object for configuring `@storybook/source-loader`. When set to `null` it tells docs not to run the `source-loader` at all, which can be used as an optimization, or if you're already using `source-loader` in your `webpack.config.js`.
 
 ## Manual configuration
 
-Docs uses Storybook presets as a configuration shortcut. To configure "the long way", first register the addon in `.storybook/addons.js`:
+If you don't want to use the preset, and prefer to configure "the long way", first register the addon in `.storybook/addons.js`:
 
 ```js
 import '@storybook/addon-docs/register';
 ```
 
-Then configure Storybook's webpack loader to understand MDX files in `.storybook/webpack.config.js`:
+Then configure Storybook's webpack loader in `.storybook/webpack.config.js` to understand MDX story files and annotate TS/JS story files with source code using `source-loader`:
 
 ```js
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = async ({ config }) => {
   config.module.rules.push({
-    test: /\.mdx$/,
+    test: /\.(stories|story)\.mdx$/,
     use: [
       {
         loader: 'babel-loader',
@@ -89,6 +103,12 @@ module.exports = async ({ config }) => {
         },
       },
     ],
+  });
+  config.module.rules.push({
+    test: /\.(stories|story)\.[tj]sx?$/,
+    loader: require.resolve('@storybook/source-loader'),
+    exclude: [/node_modules/],
+    enforce: 'pre',
   });
   return config;
 };
