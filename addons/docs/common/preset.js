@@ -5,12 +5,13 @@ function createBabelOptions({ babelOptions, configureJSX }) {
     return babelOptions;
   }
 
+  const babelPlugins = (babelOptions && babelOptions.plugins) || [];
   return {
     ...babelOptions,
     // for frameworks that are not working with react, we need to configure
     // the jsx to transpile mdx, for now there will be a flag for that
     // for more complex solutions we can find alone that we need to add '@babel/plugin-transform-react-jsx'
-    plugins: [...babelOptions.plugins, '@babel/plugin-transform-react-jsx'],
+    plugins: [...babelPlugins, '@babel/plugin-transform-react-jsx'],
   };
 }
 
@@ -21,14 +22,16 @@ function webpack(webpackConfig = {}, options = {}) {
   const { babelOptions, configureJSX, sourceLoaderOptions = {} } = options;
 
   // set `sourceLoaderOptions` to `null` to disable for manual configuration
-  const sourceLoader = sourceLoaderOptions && [
-    {
-      test: /\.(stories|story)\.[tj]sx?$/,
-      loader: require.resolve('@storybook/source-loader'),
-      options: sourceLoaderOptions,
-      enforce: 'pre',
-    },
-  ];
+  const sourceLoader = sourceLoaderOptions
+    ? [
+        {
+          test: /\.(stories|story)\.[tj]sx?$/,
+          loader: require.resolve('@storybook/source-loader'),
+          options: sourceLoaderOptions,
+          enforce: 'pre',
+        },
+      ]
+    : [];
 
   return {
     ...webpackConfig,
