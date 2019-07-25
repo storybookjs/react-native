@@ -37,7 +37,7 @@ import '@storybook/addon-ondevice-notes/register';
 This step is done automatically when you install Storybook for the first time and also described in [Manual Setup](https://github.com/storybookjs/storybook/blob/master/app/react-native/docs/manual-setup.md)
 
 ## Compatibility
-Addon compatibilty can be found [here](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
+Addon compatibility can be found [here](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ## Performance of on device addons
 Because on device addons are inside the app, they are also rerendered on every change. This can reduce performance a lot.

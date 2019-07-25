@@ -1,6 +1,5 @@
 import EventEmitter from 'eventemitter3';
-import addons from '@storybook/addons';
-import CoreEvents from '@storybook/core-events';
+import { useEffect, useState } from '@storybook/client-api';
 import json from 'format-json';
 
 import withEvents from '@storybook/addon-events';
@@ -16,20 +15,6 @@ const TEST_EVENTS = {
 
 const emitter = new EventEmitter();
 const emit = emitter.emit.bind(emitter);
-
-const events = [];
-const eventHandlers = Object.values(TEST_EVENTS).map(name => ({
-  name,
-  handler: payload => {
-    events.push({ name, payload });
-    addons.getChannel().emit(CoreEvents.FORCE_RE_RENDER);
-  },
-}));
-
-const subscription = () => {
-  eventHandlers.forEach(({ name, handler }) => emitter.on(name, handler));
-  return () => eventHandlers.forEach(({ name, handler }) => emitter.removeListener(name, handler));
-};
 
 export default {
   title: 'Addons|Events',
@@ -84,31 +69,42 @@ export default {
         },
       ],
     }),
-    storyFn => {
-      addons.getChannel().emit(CoreEvents.REGISTER_SUBSCRIPTION, subscription);
-      return storyFn();
-    },
   ],
 };
 
-export const Logger = () => `
-  <div class="wrapper">
-    <h1 class="title">Logger</h1>
-    <dl>
-      ${events
-        .map(
-          ({ name, payload }) => `
-            <div class="item">
-              <dt>
-                <b>Event name:</b> ${name}
-              </dt>
-              <dd>
-                <b>Event payload:</b> ${json.plain(payload)}
-              </dd>
-            </div>
-          `
-        )
-        .join('')}
-    </dl>
-  </div>
-`;
+export const Logger = () => {
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    const eventHandlers = Object.values(TEST_EVENTS).map(name => ({
+      name,
+      handler: payload => {
+        setEvents(prevEvents => [...prevEvents, { name, payload }]);
+      },
+    }));
+    eventHandlers.forEach(({ name, handler }) => emitter.on(name, handler));
+    return () =>
+      eventHandlers.forEach(({ name, handler }) => emitter.removeListener(name, handler));
+  }, []);
+
+  return `
+    <div class="wrapper">
+      <h1 class="title">Logger</h1>
+      <dl>
+        ${events
+          .map(
+            ({ name, payload }) => `
+              <div class="item">
+                <dt>
+                  <b>Event name:</b> ${name}
+                </dt>
+                <dd>
+                  <b>Event payload:</b> ${json.plain(payload)}
+                </dd>
+              </div>
+            `
+          )
+          .join('')}
+      </dl>
+    </div>
+  `;
+};

@@ -4,7 +4,14 @@ const mdx = require('@mdx-js/mdx');
 const prettier = require('prettier');
 const plugin = require('./mdx-compiler-plugin');
 
-function format(code) {
+async function generate(filePath) {
+  const content = await fs.readFile(filePath, 'utf8');
+
+  const code = mdx.sync(content, {
+    filepath: filePath,
+    compilers: [plugin({})],
+  });
+
   return prettier.format(code, {
     parser: 'babel',
     printWidth: 100,
@@ -13,17 +20,6 @@ function format(code) {
     trailingComma: 'es5',
     singleQuote: true,
   });
-}
-
-async function generate(filePath) {
-  const content = await fs.readFile(filePath, 'utf8');
-
-  const result = mdx.sync(content, {
-    filepath: filePath,
-    compilers: [plugin({})],
-  });
-
-  return format(result);
 }
 
 describe('docs-mdx-compiler-plugin', () => {
@@ -65,6 +61,10 @@ describe('docs-mdx-compiler-plugin', () => {
   });
   it('supports non-story exports', async () => {
     const code = await generate(path.resolve(__dirname, './fixtures/non-story-exports.mdx'));
+    expect(code).toMatchSnapshot();
+  });
+  it('supports function stories', async () => {
+    const code = await generate(path.resolve(__dirname, './fixtures/story-function.mdx'));
     expect(code).toMatchSnapshot();
   });
   it('errors on missing story props', async () => {

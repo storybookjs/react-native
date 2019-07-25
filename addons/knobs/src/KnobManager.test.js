@@ -56,6 +56,7 @@ describe('KnobManager', () => {
 
         const newKnob = {
           ...defaultKnob,
+          label: 'foo',
           defaultValue: defaultKnob.value,
         };
 
@@ -86,6 +87,7 @@ describe('KnobManager', () => {
 
         const newKnob = {
           ...defaultKnob,
+          label: 'foo',
           defaultValue: defaultKnob.value,
         };
 

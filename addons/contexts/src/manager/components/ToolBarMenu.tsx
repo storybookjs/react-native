@@ -1,5 +1,5 @@
 import React, { ComponentProps } from 'react';
-import { Icons, IconButton, WithTooltip, TabButton } from '@storybook/components';
+import { Icons, IconButton, WithTooltipPure, TabButton } from '@storybook/components';
 import { ToolBarMenuOptions } from './ToolBarMenuOptions';
 import { ContextNode, FCNoChildren } from '../../shared/types.d';
 
@@ -20,7 +20,7 @@ export const ToolBarMenu: ToolBarMenu = ({
   setExpanded,
   optionsProps,
 }) => (
-  <WithTooltip
+  <WithTooltipPure
     closeOnClick
     trigger="click"
     placement="top"
@@ -35,5 +35,5 @@ export const ToolBarMenu: ToolBarMenu = ({
     ) : (
       <TabButton active={active}>{title}</TabButton>
     )}
-  </WithTooltip>
+  </WithTooltipPure>
 );

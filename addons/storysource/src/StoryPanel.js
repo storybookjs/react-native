@@ -66,9 +66,8 @@ export default class StoryPanel extends Component {
     this.selectedStoryRef = ref;
   };
 
-  listener = ({ source, currentLocation, locationsMap }) => {
+  listener = ({ edition: { source }, location: { currentLocation, locationsMap } }) => {
     const locationsKeys = getLocationKeys(locationsMap);
-
     this.setState({
       source,
       currentLocation,
@@ -142,7 +141,7 @@ export default class StoryPanel extends Component {
     const { locationsMap, locationsKeys } = this.state;
 
     // because of the usage of lineRenderer, all lines will be wrapped in a span
-    // these spans will recieve all classes on them for some reason
+    // these spans will receive all classes on them for some reason
     // which makes colours casecade incorrectly
     // this removed that list of classnames
     const myrows = rows.map(({ properties, ...rest }) => ({

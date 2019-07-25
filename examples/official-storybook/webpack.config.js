@@ -38,21 +38,6 @@ module.exports = async ({ config }) => ({
         ],
         exclude: [/node_modules/, /dist/],
       },
-      {
-        test: /\.stories\.jsx?$/,
-        loader: require.resolve('@storybook/source-loader'),
-        options: {
-          injectParameters: true,
-          inspectLocalDependencies: false,
-          inspectDependencies: false,
-        },
-        include: [
-          path.resolve(__dirname, './stories'),
-          path.resolve(__dirname, '../../lib/ui/src'),
-          path.resolve(__dirname, '../../lib/components/src'),
-        ],
-        enforce: 'pre',
-      },
     ],
   },
   resolve: {

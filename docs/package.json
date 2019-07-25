@@ -15,10 +15,10 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@storybook/components": "5.2.0-alpha.23",
-    "@storybook/theming": "5.2.0-alpha.23",
+    "@storybook/components": "5.2.0-beta.7",
+    "@storybook/theming": "5.2.0-beta.7",
     "babel-loader": "^6.4.1",
-    "babel-plugin-styled-components": "^1.10.1",
+    "babel-plugin-styled-components": "^1.10.6",
     "bootstrap": "^4.3.1",
     "common-tags": "^1.8.0",
     "gatsby": "^1.9.279",
@@ -33,10 +33,10 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "global": "^4.4.0",
-    "html-react-parser": "^0.8.0",
+    "html-react-parser": "^0.9.1",
     "is-builtin-module": "^3.0.0",
-    "lodash": "^4.17.11",
-    "marked": "^0.6.2",
+    "lodash": "^4.17.15",
+    "marked": "^0.7.0",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -47,7 +47,7 @@
     "react-router": "^4.3.1",
     "react-stack-grid": "^0.7.1",
     "recompose": "^0.30.0",
-    "sitemap": "^2.2.0",
+    "sitemap": "^3.2.2",
     "styled-components": "^4.3.2",
     "validatorjs": "^3.15.1"
   }

@@ -4,10 +4,8 @@ import MyButton from './Button.vue';
 
 export default {
   title: 'Addon|Centered',
+  component: MyButton,
   decorators: [Centered],
-  parameters: {
-    component: Centered,
-  },
 };
 
 export const rounded = () => ({

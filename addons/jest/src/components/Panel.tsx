@@ -1,22 +1,19 @@
-import React from 'react';
-import { styled } from '@storybook/theming';
-import { ScrollArea } from '@storybook/components';
-
-import Indicator from './Indicator';
-import Result, { FailedResult } from './Result';
+import React, { Fragment } from 'react';
+import { styled, withTheme } from '@storybook/theming';
+import { ScrollArea, TabsState } from '@storybook/components';
+import { SizeMe } from 'react-sizeme';
+import Result from './Result';
 import provideJestResult, { Test } from '../hoc/provideJestResult';
-import colors from '../colors';
 
 const List = styled.ul({
   listStyle: 'none',
   fontSize: 14,
   padding: 0,
-  margin: '10px 0',
+  margin: 0,
 });
 
 const Item = styled.li({
   display: 'block',
-  margin: '10px 0',
   padding: 0,
 });
 
@@ -25,79 +22,69 @@ const NoTests = styled.div({
   flex: 1,
 });
 
-const FileTitle = styled.h2({
-  marginRight: '6px',
-  marginBottom: '3px',
-  fontWeight: 500,
-  fontSize: 18,
+const ProgressWrapper = styled.div({
+  position: 'relative',
+  height: '10px',
 });
 
 const SuiteHead = styled.div({
   display: 'flex',
   alignItems: 'baseline',
-  justifyContent: 'space-between',
-  position: 'relative',
-  paddingTop: 10,
+  position: 'absolute',
+  zIndex: 2,
+  right: '50px',
+  marginTop: '15px',
 });
 
-const SuiteTotals = styled(({ successNumber, failedNumber, result, className }) => (
+const SuiteTotals = styled(({ successNumber, failedNumber, result, className, width }) => (
   <div className={className}>
-    {successNumber > 0 && <div style={{ color: colors.success }}>{successNumber} passed</div>}
-    {failedNumber > 0 && <div style={{ color: colors.error }}>{failedNumber} failed</div>}
-    <div>{result.assertionResults.length} total</div>
-    <div>
-      <strong>
-        {result.endTime - result.startTime}
-        ms
-      </strong>
-    </div>
+    <Fragment>
+      {width > 325 ? (
+        <div>
+          {result.assertionResults.length} {result.assertionResults.length > 1 ? `tests` : `test`}
+        </div>
+      ) : null}
+      {width > 280 ? (
+        <div>
+          {result.endTime - result.startTime}
+          ms
+        </div>
+      ) : null}
+    </Fragment>
   </div>
-))({
+))(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  color: colors.grey,
-  fontSize: '10px',
-
+  color: theme.color.dark,
+  fontSize: '14px',
+  marginTop: '-5px',
   '& > *': {
-    marginLeft: 10,
+    marginRight: 10,
   },
-});
+}));
 
 const SuiteProgress = styled(({ successNumber, result, className }) => (
   <div className={className} role="progressbar">
     <span style={{ width: `${(successNumber / result.assertionResults.length) * 100}%` }} />
   </div>
-))(() => ({
-  width: '100%',
-  backgroundColor: colors.error,
-  height: 4,
-  top: 0,
+))(({ theme }) => ({
+  width: '30px',
+  backgroundColor: theme.color.negative,
+  height: '6px',
+  top: '3px',
   position: 'absolute',
   left: 0,
-  borderRadius: 3,
   overflow: 'hidden',
   appearance: 'none',
 
   '& > span': {
-    backgroundColor: colors.success,
+    backgroundColor: theme.color.positive,
     bottom: 0,
     position: 'absolute',
     left: 0,
     top: 0,
-    boxShadow: '4px 0 0 white',
   },
 }));
-
-const SuiteTitle = styled.div({
-  display: 'flex',
-  alignItems: 'center',
-  marginBottom: '3px',
-});
-
-const PassingRate = styled.div({
-  fontWeight: 500,
-  fontSize: '10px',
-});
 
 interface ContentProps {
   tests: Test[];
@@ -107,56 +94,65 @@ interface ContentProps {
 const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
-      const title = name || 'Result status';
-
       if (!result) {
-        return (
-          <NoTests key={title}>This story has tests configured, but no file was found</NoTests>
-        );
+        return <NoTests key={name}>This story has tests configured, but no file was found</NoTests>;
       }
 
       const successNumber = result.assertionResults.filter(({ status }) => status === 'passed')
         .length;
       const failedNumber = result.assertionResults.length - successNumber;
+      const passingRate = ((successNumber / result.assertionResults.length) * 100).toFixed(2);
+
       return (
-        <section key={title}>
-          <SuiteTitle>
-            <FileTitle>{`${title}:`}</FileTitle>
-            <Indicator
-              color={result.status === 'passed' ? colors.success : colors.error}
-              size={16}
-              styles={{ marginRight: 5 }}
-            >
-              {result.status}
-            </Indicator>
-          </SuiteTitle>
-          <SuiteHead>
-            <PassingRate>{`Passing rate: ${(
-              (successNumber / result.assertionResults.length) *
-              100
-            ).toFixed(2)}%`}</PassingRate>
-            <SuiteProgress {...{ successNumber, failedNumber, result }} />
-            <SuiteTotals {...{ successNumber, failedNumber, result }} />
-          </SuiteHead>
-          <List>
-            {result.assertionResults.map(res => (
-              <Item key={res.fullName || res.title}>
-                {res.failureMessages && res.failureMessages.length ? (
-                  <FailedResult {...res} />
-                ) : (
-                  <Result {...res} />
-                )}
-              </Item>
-            ))}
-          </List>
-        </section>
+        <SizeMe refreshMode="debounce">
+          {({ size }: { size: any }) => {
+            const { width } = size;
+            return (
+              <section key={name}>
+                <SuiteHead>
+                  <SuiteTotals {...{ successNumber, failedNumber, result, passingRate, width }} />
+                  {width > 240 ? (
+                    <ProgressWrapper>
+                      <SuiteProgress {...{ successNumber, failedNumber, result }} />
+                    </ProgressWrapper>
+                  ) : null}
+                </SuiteHead>
+                <TabsState initial="failing-tests" backgroundColor="rgba(0,0,0,.05)">
+                  <div id="failing-tests" title={`${failedNumber} Failed`} color="#FF4400">
+                    <List>
+                      {result.assertionResults.map(res => {
+                        return res.status === 'failed' ? (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ) : null;
+                      })}
+                    </List>
+                  </div>
+                  <div id="passing-tests" title={`${successNumber} Passed`} color="#66BF3C">
+                    <List>
+                      {result.assertionResults.map(res => {
+                        return res.status === 'passed' ? (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ) : null;
+                      })}
+                    </List>
+                  </div>
+                </TabsState>
+              </section>
+            );
+          }}
+        </SizeMe>
       );
     })}
   </div>
 ))({
-  padding: '10px 20px',
   flex: '1 1 0%',
 });
+
+const ContentWithTheme = withTheme(Content);
 
 interface PanelProps {
   tests: null | Test[];
@@ -164,7 +160,11 @@ interface PanelProps {
 
 const Panel = ({ tests }: PanelProps) => (
   <ScrollArea vertical>
-    {tests ? <Content tests={tests} /> : <NoTests>This story has no tests configured</NoTests>}
+    {tests ? (
+      <ContentWithTheme tests={tests} />
+    ) : (
+      <NoTests>This story has no tests configured</NoTests>
+    )}
   </ScrollArea>
 );
 

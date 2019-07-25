@@ -11,7 +11,6 @@ interface SeparatorOptions {
   groupSeparator: string | RegExp;
 }
 
-export const knownNonViewModesRegex = /(settings)/;
 const splitPathRegex = /\/([^/]+)\/([^/]+)?/;
 
 // Remove punctuation https://gist.github.com/davidjrice/9d2af51100e41c6c4b4a
@@ -47,7 +46,7 @@ export const parsePath: (path?: string) => StoryData = memoize(1000)(
 
     if (path) {
       const [, viewMode, storyId] = path.match(splitPathRegex) || [undefined, undefined, undefined];
-      if (viewMode && !viewMode.match(knownNonViewModesRegex)) {
+      if (viewMode) {
         Object.assign(result, {
           viewMode,
           storyId,

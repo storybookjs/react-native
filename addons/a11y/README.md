@@ -78,7 +78,7 @@ storiesOf('button', module)
 
 ## Roadmap
 
-* Make UI accessibile
+* Make UI accessible
 * Show in story where violations are.
 * Add more example tests
 * Add tests

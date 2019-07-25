@@ -3,10 +3,6 @@ import React from 'react';
 import BaseButton from '../components/BaseButton';
 import markdownNotes from './notes/notes.md';
 
-const baseStory = () => (
-  <BaseButton label="Button with notes - check the notes panel for details" />
-);
-
 const markdownString = `
 # Documentation
 
@@ -75,52 +71,57 @@ export default {
   title: 'Addons|Notes',
 };
 
-export const addonNotes = baseStory;
+export const addonNotes = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
 
 addonNotes.story = {
   name: 'addon notes',
-
   parameters: {
     notes:
       'This is the notes for a button. This is helpful for adding details about a story in a separate panel.',
   },
 };
 
-export const addonNotesRenderingImportedMarkdown = baseStory;
+export const addonNotesRenderingImportedMarkdown = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
 
 addonNotesRenderingImportedMarkdown.story = {
   name: 'addon notes rendering imported markdown',
-
   parameters: {
     notes: { markdown: markdownNotes },
   },
 };
 
-export const addonNotesRenderingInlineGithubFlavoredMarkdown = baseStory;
+export const addonNotesRenderingInlineGithubFlavoredMarkdown = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
 
 addonNotesRenderingInlineGithubFlavoredMarkdown.story = {
   name: 'addon notes rendering inline, github-flavored markdown',
-
   parameters: {
     notes: { markdown: markdownString },
   },
 };
 
-export const withAMarkdownTable = baseStory;
+export const withAMarkdownTable = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
 
 withAMarkdownTable.story = {
   name: 'with a markdown table',
-
   parameters: {
     notes: { markdown: markdownTable },
   },
 };
 
-export const withAMarkdownGiphy = baseStory;
+export const withAMarkdownGiphy = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
 
 withAMarkdownGiphy.story = {
   name: 'with a markdown giphy',
-
   parameters: {
     notes: { markdown: giphyMarkdown },
   },

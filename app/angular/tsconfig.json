@@ -1,18 +1,10 @@
 {
   "extends": "../../tsconfig.json",
-  "include": [
-    "src/**/*.ts"
-  ],
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "dist",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "declaration": true,
+    "types": ["webpack-env"],
     "rootDir": "./src",
-    "lib": [
-      "es2017",
-      "dom"
-    ]
+    "resolveJsonModule": true
   }
 }

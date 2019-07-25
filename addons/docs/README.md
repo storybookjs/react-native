@@ -15,16 +15,15 @@ features as well. This chart captures the current state of support
 | MDX stories    |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
 | Module stories |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
 | Legacy stories |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
-| Source \*      |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
+| Source         |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
 | Notes / Info   |   +   |  +  |    +    |    +    |    +    |  +   |   +   |   +    |  +   |   +   |   +    |
-| Props table    |   +   |  #  |    #    |         |         |      |       |        |      |       |        |
-| Docgen         |   +   |  #  |    #    |         |         |      |       |        |      |       |        |
+| Props table    |   +   |  +  |    #    |         |         |      |       |        |      |       |        |
+| Docgen         |   +   |  +  |    #    |         |         |      |       |        |      |       |        |
 | Inline stories |   +   |  #  |         |         |         |      |       |        |      |       |        |
 
 **Notes:**
 
 - `#` denotes planned/WIP support
-- \* Source supports legacy `JS storiesOf` and `MDX` stories. `Typescript` and new `module format` support is WIP
 
 ## Installation
 
@@ -34,41 +33,61 @@ First add the package. Make sure that the versions for your `@storybook/*` packa
 yarn add -D @storybook/addon-docs
 ```
 
-The add the following line to your `.storybook/presets.js` file:
+The add the following to your `.storybook/presets.js` exports:
 
 ```js
-module.exports = ['@storybook/addon-docs/react/preset'];
+module.exports = ['@storybook/addon-docs/common/preset'];
 ```
 
-Finally, import your stories and MDX files in `.storybook/config.js`:
+Finally, update your Storybook configuration `.storybook/config.js`. Add `DocsPage` to auto-generate docs for your existing stories, and load MDX files.
 
 ```js
-import { load } from '@storybook/react';
+import { load, addDecorator } from '@storybook/react';
+import { DocsPage } from '@storybook/addon-docs/blocks';
 
-// standard configuration here
-// ...
+addDecorator({ docs: DocsPage });
 
 // wherever your story files are located
-load(require.context('../src', true, /\.stories\.js$/), module);
-load(require.context('../src', true, /\.stories\.mdx$/), module);
+load(require.context('../src', true, /\.stories\.(js|ts|tsx|mdx)$/), module);
 ```
+
+## Preset options
+
+The `addon-docs` preset has a few configuration options that can be used to configure its babel/webpack loading behavior. Here's an example of how to use the preset with options:
+
+```js
+module.exports = [
+  {
+    name: '@storybook/addon-docs/common/preset',
+    options: {
+      configureJSX: true,
+      babelOptions: {},
+      sourceLoaderOptions: null,
+    },
+  },
+];
+```
+
+The `configureJsx` option is useful when you're writing your docs in MDX and your project's babel config isn't already set up to handle JSX files. `babelOptions` is a way to further configure the babel processor when you're using `configureJSX`.
+
+`sourceLoaderOptions` is an object for configuring `@storybook/source-loader`. When set to `null` it tells docs not to run the `source-loader` at all, which can be used as an optimization, or if you're already using `source-loader` in your `webpack.config.js`.
 
 ## Manual configuration
 
-Docs uses Storybook presets as a configuration shortcut. To configure "the long way", first register the addon in `.storybook/addons.js`:
+If you don't want to use the preset, and prefer to configure "the long way", first register the addon in `.storybook/addons.js`:
 
 ```js
 import '@storybook/addon-docs/register';
 ```
 
-Then configure Storybook's webpack loader to understand MDX files in `.storybook/webpack.config.js`:
+Then configure Storybook's webpack loader in `.storybook/webpack.config.js` to understand MDX story files and annotate TS/JS story files with source code using `source-loader`:
 
 ```js
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = async ({ config }) => {
   config.module.rules.push({
-    test: /\.mdx$/,
+    test: /\.(stories|story)\.mdx$/,
     use: [
       {
         loader: 'babel-loader',
@@ -82,6 +101,12 @@ module.exports = async ({ config }) => {
         },
       },
     ],
+  });
+  config.module.rules.push({
+    test: /\.(stories|story)\.[tj]sx?$/,
+    loader: require.resolve('@storybook/source-loader'),
+    exclude: [/node_modules/],
+    enforce: 'pre',
   });
   return config;
 };
