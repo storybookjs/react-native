@@ -83,18 +83,16 @@ exit $ret`
 
   describe('when used with TypeScript', () => {
     it('should return the correct config', () => {
-      // Normalise the return, as we know our new rules object will be an array, whereas a string is expected.
       const rules = getTypeScriptRules(mockRules, './.storybook');
-      const rulesObject = { ...rules[0], include: rules[0].include[0] };
-      expect(rulesObject).toMatchObject(mockRules[2].oneOf[1]);
+      expect(rules.length).toBe(2);
     });
 
     // Allows using TypeScript in the `.storybook` (or config) folder.
-    it('should add the Storybook config directory to `include`', () => {
+    it('should add the Storybook config directory to `include` for all TS related rules', () => {
       const rules = getTypeScriptRules(mockRules, './.storybook');
-      expect(rules[0].include.findIndex((string: string) => string.includes('.storybook'))).toEqual(
-        1
-      );
+      expect(
+        rules.every(rule => rule.include.find(filePath => filePath.includes('.storybook')))
+      ).toBe(true);
     });
 
     it('should get the baseUrl from a tsconfig.json', () => {
