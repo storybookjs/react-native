@@ -193,7 +193,7 @@ Then:
 {
   "scripts": {
     ...
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook"
   }
 }
 ```
