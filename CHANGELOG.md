@@ -1,3 +1,19 @@
+## 5.2.0-beta.10 (July 26, 2019)
+
+This is a breaking release that undoes an unintentional breaking change introduced in 5.1.0 (and will also be released as a 5.1.x patch)
+
+### Breaking Changes
+
+* Core: Remove project root `babel.config.js` loading ([#7573](https://github.com/storybookjs/storybook/pull/7573))
+
+### Features
+
+* React: Add hooks support to stories ([#7571](https://github.com/storybookjs/storybook/pull/7571))
+
+### Bug Fixes
+
+* UI: Fix attribute warning on shortcut button click ([#7548](https://github.com/storybookjs/storybook/pull/7548))
+
 ## 5.2.0-beta.9 (July 26, 2019)
 
 ### Bug Fixes
