@@ -21,9 +21,9 @@ export default {
   title: 'Button',
 };
 
-export const withText = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+export const text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
 
-export const withEmoji = () => (
+export const emoji = () => (
   <Button onClick={action('clicked')}>
     <span role="img" aria-label="so cool">
       😀 😎 👍 💯
@@ -213,7 +213,7 @@ export const small = () => <MyComponent text="small" />;
 export const medium = () => <MyComponent text="medium" />;
 export const special = () => <MyComponent text="The Boss" />;
 special.story = {
-  notes: specialNotes,
+  parameters: { notes: specialNotes },
 };
 ```
 
@@ -224,15 +224,10 @@ In this example, the `small` and `medium` stories get the compoonent notes docum
 By default, search results will show up based on the file name of your stories. As of storybook 5, you can extend this with `notes` to have certain stories show up when the search input contains matches. For example, if you built a `Callout` component that you want to be found by searching for `popover` or `tooltip` as well, you could use `notes` like this:
 
 ```jsx
-.add(
-  "Callout",
-  () => (
-    <Callout>Some children</Callout>
-  ),
-  {
-    notes: "popover tooltip"
-  }
-)
+export const callout = () => <Callout>Some children</Callout>;
+callout.story = {
+  parameters: { notes: 'popover tooltip' },
+};
 ```
 
 ## Story hierarchy
@@ -276,14 +271,13 @@ One example would be to use `base` from [`paths.macro`](https://github.com/story
 ```js
 import React from 'react';
 import base from 'paths.macro';
-
-import { storiesOf } from '@storybook/react';
-
 import BaseButton from '../components/BaseButton';
 
-storiesOf(`Other|${base}/Dirname Example`, module)
-  .add('story 1', () => <BaseButton label="Story 1" />)
-  .add('story 2', () => <BaseButton label="Story 2" />);
+export default {
+  title: `Other|${base}/Dirname Example`,
+};
+export const story1 = () => <BaseButton label="Story 1" />;
+export const story2 = () => <BaseButton label="Story 2" />;
 ```
 
 _This uses [babel-plugin-macros](https://github.com/kentcdodds/babel-plugin-macros)_.
