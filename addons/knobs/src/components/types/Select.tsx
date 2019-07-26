@@ -34,7 +34,12 @@ const SelectType: FunctionComponent<SelectTypeProps> & {
     ? options.reduce<Record<string, SelectTypeKnobValue>>((acc, k) => ({ ...acc, [k]: k }), {})
     : (options as Record<string, SelectTypeKnobValue>);
 
-  const selectedKey = Object.keys(entries).find(k => entries[k] === knob.value);
+  const selectedKey = Object.keys(entries).find(k => {
+    if (Array.isArray(knob.value)) {
+      return JSON.stringify(entries[k]) === JSON.stringify(knob.value);
+    }
+    return entries[k] === knob.value;
+  });
 
   return (
     <Form.Select
