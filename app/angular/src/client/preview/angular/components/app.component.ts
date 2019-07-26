@@ -86,7 +86,11 @@ export class AppComponent implements OnInit, OnDestroy {
           const previousValue = this.previousValues[key];
 
           if (previousValue !== value) {
-            changes[key] = new SimpleChange(previousValue, value, !this.previousValues.hasOwnProperty(key));
+            changes[key] = new SimpleChange(
+              previousValue,
+              value,
+              !Object.prototype.hasOwnProperty.call(this.previousValues, key)
+            );
             this.previousValues[key] = value;
           }
         }
