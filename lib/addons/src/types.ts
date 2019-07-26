@@ -81,15 +81,18 @@ export interface StoryApi<StoryFnReturnType> {
     storyFn: StoryFn<StoryFnReturnType>,
     parameters?: Parameters
   ) => StoryApi<StoryFnReturnType>;
-  addDecorator: (decorator: DecoratorFunction) => StoryApi<StoryFnReturnType>;
+  addDecorator: (decorator: DecoratorFunction<StoryFnReturnType>) => StoryApi<StoryFnReturnType>;
   addParameters: (parameters: Parameters) => StoryApi<StoryFnReturnType>;
   [k: string]: string | ClientApiReturnFn<StoryFnReturnType>;
 }
 
-export type DecoratorFunction = (fn: StoryFn, c: StoryContext) => ReturnType<StoryFn>;
+export type DecoratorFunction<StoryFnReturnType = unknown> = (
+  fn: StoryFn<StoryFnReturnType>,
+  c: StoryContext
+) => ReturnType<StoryFn<StoryFnReturnType>>;
 
 export interface ClientStoryApi<TApi> {
   storiesOf(kind: string, module: NodeModule): StoryApi<TApi>;
-  addDecorator(decorator: DecoratorFunction): StoryApi<TApi>;
+  addDecorator(decorator: DecoratorFunction<TApi>): StoryApi<TApi>;
   addParameters(parameter: Parameters): StoryApi<TApi>;
 }
