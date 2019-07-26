@@ -1,5 +1,6 @@
 import { stripIndents } from 'common-tags';
 import Vue from 'vue';
+import { RenderMainArgs } from './types';
 
 export const COMPONENT = 'STORYBOOK_COMPONENT';
 export const VALUES = 'STORYBOOK_VALUES';
@@ -25,7 +26,7 @@ export default function render({
   showError,
   showException,
   forceRender,
-}) {
+}: RenderMainArgs) {
   Vue.config.errorHandler = showException;
 
   const element = storyFn();

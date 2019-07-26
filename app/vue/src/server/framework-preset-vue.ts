@@ -1,6 +1,7 @@
 import VueLoaderPlugin from 'vue-loader/lib/plugin';
+import { Configuration } from 'webpack';
 
-export function webpack(config) {
+export function webpack(config: Configuration) {
   return {
     ...config,
     plugins: [...config.plugins, new VueLoaderPlugin()],
@@ -26,7 +27,7 @@ export function webpack(config) {
   };
 }
 
-export function babelDefault(config) {
+export function babelDefault(config: any) {
   return {
     ...config,
     presets: [...config.presets, require.resolve('babel-preset-vue')],

@@ -11,9 +11,11 @@ export interface RenderMainArgs {
   selectedStory: string;
   showMain: () => void;
   showError: (args: ShowErrorArgs) => void;
+  showException: (...args: any[]) => void;
   forceRender: boolean;
 }
 
+// TODO: some vue expert needs to look at this
 export type StoryFnVueReturnType = any;
 
 export interface ICollection {

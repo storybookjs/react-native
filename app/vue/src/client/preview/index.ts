@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 import Vue from 'vue';
 import { start } from '@storybook/core/client';
-import { ClientStoryApi, StoryFn, DecoratorFunction } from '@storybook/addons';
+import { ClientStoryApi, StoryFn, DecoratorFunction, StoryContext } from '@storybook/addons';
 
 import './globals';
 import { IStorybookSection, StoryFnVueReturnType } from './types';
@@ -11,7 +11,7 @@ import { extractProps } from './util';
 
 export const WRAPS = 'STORYBOOK_WRAPS';
 
-function prepare(rawStory, innerStory) {
+function prepare(rawStory: any, innerStory?: any): StoryFnVueReturnType {
   let story = rawStory;
   // eslint-disable-next-line no-underscore-dangle
   if (!story._isVue) {
@@ -27,6 +27,7 @@ function prepare(rawStory, innerStory) {
   }
 
   return Vue.extend({
+    // @ts-ignore // some Vue expert needs to look at this
     [WRAPS]: story,
     [VALUES]: { ...(innerStory ? innerStory.options[VALUES] : {}), ...extractProps(story) },
     functional: true,
@@ -35,6 +36,7 @@ function prepare(rawStory, innerStory) {
         story,
         {
           ...data,
+          // @ts-ignore // some Vue expert needs to look at this
           props: { ...(data.props || {}), ...parent.$root[VALUES] },
         },
         children
@@ -43,16 +45,23 @@ function prepare(rawStory, innerStory) {
   });
 }
 
+const defaultContext: StoryContext = {
+  id: 'unspecified',
+  name: 'unspecified',
+  kind: 'unspecified',
+  parameters: {},
+};
+
 // (storyFn: StoryFn, decorators: DecoratorFunction[])
 function decorateStory(
   storyFn: StoryFn<StoryFnVueReturnType>,
   decorators: DecoratorFunction<StoryFnVueReturnType>[]
-) {
+): StoryFn<StoryFnVueReturnType> {
   return decorators.reduce(
-    (decorated, decorator) => (context = {}) => {
-      let story;
+    (decorated, decorator) => (context: StoryContext = defaultContext) => {
+      let story: StoryFn<StoryFnVueReturnType>;
 
-      const decoratedStory = decorator((p = {}) => {
+      const decoratedStory = decorator(p => {
         story = decorated(
           p
             ? {
@@ -79,7 +88,7 @@ function decorateStory(
 
       return prepare(decoratedStory, story);
     },
-    context => prepare(getStory(context))
+    (context => prepare(storyFn(context))) as StoryFn<StoryFnVueReturnType>
   );
 }
 const framework = 'vue';
