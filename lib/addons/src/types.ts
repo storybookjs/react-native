@@ -57,24 +57,24 @@ export type StoryWrapper = (
 
 export type MakeDecoratorResult = (...args: any) => any;
 
-export interface AddStoryArgs<ReturnType = unknown> {
+export interface AddStoryArgs<StoryFnReturnType = unknown> {
   id: string;
   kind: string;
   name: string;
-  storyFn: StoryFn<ReturnType>;
+  storyFn: StoryFn<StoryFnReturnType>;
   parameters: Parameters;
 }
 
-export interface ClientApiAddon<TApi = unknown> extends Addon {
-  apply: (a: StoryApi<TApi>, b: any[]) => any;
+export interface ClientApiAddon<StoryFnReturnType = unknown> extends Addon {
+  apply: (a: StoryApi<StoryFnReturnType>, b: any[]) => any;
 }
-export interface ClientApiAddons<TApi> {
-  [key: string]: ClientApiAddon<TApi>;
+export interface ClientApiAddons<StoryFnReturnType> {
+  [key: string]: ClientApiAddon<StoryFnReturnType>;
 }
 
-export type ClientApiReturnFn<TApi> = (...args: any[]) => StoryApi<TApi>;
+export type ClientApiReturnFn<StoryFnReturnType> = (...args: any[]) => StoryApi<StoryFnReturnType>;
 
-export interface StoryApi<StoryFnReturnType> {
+export interface StoryApi<StoryFnReturnType = unknown> {
   kind: string;
   add: (
     storyName: string,
@@ -91,8 +91,8 @@ export type DecoratorFunction<StoryFnReturnType = unknown> = (
   c: StoryContext
 ) => ReturnType<StoryFn<StoryFnReturnType>>;
 
-export interface ClientStoryApi<TApi> {
-  storiesOf(kind: string, module: NodeModule): StoryApi<TApi>;
-  addDecorator(decorator: DecoratorFunction<TApi>): StoryApi<TApi>;
-  addParameters(parameter: Parameters): StoryApi<TApi>;
+export interface ClientStoryApi<StoryFnReturnType = unknown> {
+  storiesOf(kind: string, module: NodeModule): StoryApi<StoryFnReturnType>;
+  addDecorator(decorator: DecoratorFunction<StoryFnReturnType>): StoryApi<StoryFnReturnType>;
+  addParameters(parameter: Parameters): StoryApi<StoryFnReturnType>;
 }
