@@ -1,1 +1,1 @@
-module.exports = require('../common/preset');
+module.exports = require('../common/makePreset')('vue');
