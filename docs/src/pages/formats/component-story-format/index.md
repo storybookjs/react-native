@@ -1,17 +1,17 @@
 ---
-id: 'module-story-format'
-title: 'Module Story Format'
+id: 'component-story-format'
+title: 'Component Story Format (CSF)'
 ---
 
-Storybook's module story format is the recommended way to [write stories](../../basics/writing-stories/) since Storybook 5.2.
+Storybook's Component Story Format (CSF) is the recommended way to [write stories](../../basics/writing-stories/) since Storybook 5.2. [Read the announcement](https://medium.com/storybookjs/component-story-format-66f4c32366df) to learn more about how it came to be.
 
-It's called "module" format because the stories and component metadata are defined as ES6 modules. Every module story file consists of a required default export and one or more named exports.
+In CSF, stories and component metadata are defined as ES6 modules. Every Component story file consists of a required default export and one or more named exports.
 
-The module format is supported in all frameworks except React Native, where you should use the [storiesOf format](../storiesof-story-format) instead.
+CSF is supported in all frameworks except React Native, where you should use the [storiesOf API](../storiesof-api/) instead.
 
 ## Default export
 
-The default export defines metadata about your component, including the `component` itself, its `title` (where it will show up in the [navigation UI story hierarchy](../../basics/writing-stories/#story-hierarchy)), [decorators](../../basics/writing-stories/#decorators), and [parameters](../../basics/writing-stories/#parameters).
+The default export defines metadata about your component, including the `component` itself, its `title` (where it will show up in the [navigation UI story hierarchy](../../basics/writing-stories/#story-hierarchy)), [decorators](../../basics/writing-stories/#decorators), and [parameters](../../basics/writing-stories/#parameters). `title` should be unique, i.e. not re-used across files.
 
 ```js
 import MyComponent from './MyComponent';
@@ -63,7 +63,7 @@ export default {
 }
 export const simpleData = { foo: 1, bar: 'baz' };
 export const complexData = { foo: 1, { bar: 'baz', baz: someData }};
-export const simpleStory = () => <MyComponent data={sompleData} />;
+export const simpleStory = () => <MyComponent data={simpleData} />;
 export const complexStory = () => <MyComponent data={complexData} />;
 ```
 

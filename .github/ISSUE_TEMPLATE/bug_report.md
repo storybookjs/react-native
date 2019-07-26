@@ -24,12 +24,7 @@ If applicable, add screenshots to help explain your problem.
 If applicable, add code samples to help explain your problem.
 
 **System:**
- - OS: [e.g. iOS, Windows10, MacOS]
- - Device: [e.g. iPhoneX, Macbook Pro 2018]
- - Browser: [e.g. chrome, safari]
- - Framework: [e.g. react, vue, angular]
- - Addons: [if relevant]
- - Version: [e.g. 4.0.0]
+Please paste the results of `npx -p @storybook/cli@next sb info` here.
 
 **Additional context**
 Add any other context about the problem here.

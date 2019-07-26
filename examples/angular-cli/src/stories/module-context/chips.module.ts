@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChipComponent } from './chip.component';
 import { ChipsGroupComponent } from './chips-group.component';
@@ -16,4 +16,16 @@ import { CHIP_COLOR } from './chip-color.token';
     },
   ],
 })
-export class ChipsModule {}
+export class ChipsModule {
+  public static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: ChipsModule,
+      providers: [
+        {
+          provide: CHIP_COLOR,
+          useValue: '#eeeeee',
+        },
+      ],
+    };
+  }
+}

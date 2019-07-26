@@ -1,3 +1,47 @@
+## 5.2.0-beta.10 (July 26, 2019)
+
+This is a breaking release that undoes an unintentional breaking change introduced in 5.1.0 (and will also be released as a 5.1.x patch)
+
+### Breaking Changes
+
+* Core: Remove project root `babel.config.js` loading ([#7573](https://github.com/storybookjs/storybook/pull/7573))
+
+### Features
+
+* React: Add hooks support to stories ([#7571](https://github.com/storybookjs/storybook/pull/7571))
+
+### Bug Fixes
+
+* UI: Fix attribute warning on shortcut button click ([#7548](https://github.com/storybookjs/storybook/pull/7548))
+
+## 5.2.0-beta.9 (July 26, 2019)
+
+### Bug Fixes
+
+* Angular: Fix automatic module metadata extraction for forRoot imports ([#7224](https://github.com/storybookjs/storybook/pull/7224))
+
+### Maintenance
+
+* Rename "Module" to Component Story Format ([#7564](https://github.com/storybookjs/storybook/pull/7564))
+
+## 5.2.0-beta.8 (July 25, 2019)
+
+### Breaking Changes
+
+`source-loader` is now part of `addon-docs` preset. If you're using both the `addon-docs` preset and `source-loader` in your project, you need to update. You can remove `source-loader` and let the preset take care of it. Alternatively, you can disable `source-loader` in the preset by setting `sourceLoaderOptions` to `null`.
+
+* Addon-docs: Add source-loader to preset ([#7547](https://github.com/storybookjs/storybook/pull/7547))
+* Core: Don't allow duplicate titles ([#7542](https://github.com/storybookjs/storybook/pull/7542))
+
+### Bug Fixes
+
+* Addon-storysource: Add source-loader dep to avoid breaking change ([#7554](https://github.com/storybookjs/storybook/pull/7554))
+* Addon-contexts: Ensure nodes is Array ([#7393](https://github.com/storybookjs/storybook/pull/7393))
+
+### Maintenance
+
+* Angular: Log angular cli config errors ([#7484](https://github.com/storybookjs/storybook/pull/7484))
+
 ## 5.2.0-beta.7 (July 23, 2019)
 
 ### Features
