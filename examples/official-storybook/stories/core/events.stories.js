@@ -14,4 +14,4 @@ export default {
 };
 
 export const force = () => <Button onClick={increment}>Clicked: {timesClicked}</Button>;
-force.title = 'Force re-render';
+force.story = { name: 'Force re-render' };

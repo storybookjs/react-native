@@ -15,7 +15,10 @@ export const twoChildren = () => (
   <Placeholder>
     <Fragment key="title">This has two children, the first bold</Fragment>
     <Fragment key="desc">
-      The second normal weight. Here's a <Link href="https://storybook.js.org">link</Link>
+      The second normal weight. Here's a{' '}
+      <Link href="https://storybook.js.org" secondary cancel={false}>
+        link
+      </Link>
     </Fragment>
   </Placeholder>
 );

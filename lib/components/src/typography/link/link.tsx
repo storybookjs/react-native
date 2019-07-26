@@ -17,7 +17,7 @@ const cancelled = (e: React.MouseEvent, cb: (_e: React.MouseEvent) => void) => {
   }
 };
 
-interface LinkStylesProps {
+export interface LinkStylesProps {
   secondary?: boolean;
   tertiary?: boolean;
   nochrome?: boolean;
@@ -147,7 +147,7 @@ const linkStyles = (props: LinkStylesProps & { theme: Theme }) => css`
     `};
 `;
 
-interface LinkInnerProps {
+export interface LinkInnerProps {
   withArrow?: boolean;
   containsIcon?: boolean;
 }
@@ -186,7 +186,7 @@ const A = styled.a<AProps>`
   ${linkStyles};
 `;
 
-interface LinkProps extends LinkInnerProps, LinkStylesProps {
+export interface LinkProps extends LinkInnerProps, LinkStylesProps {
   cancel?: boolean;
   className?: string;
   style?: object;

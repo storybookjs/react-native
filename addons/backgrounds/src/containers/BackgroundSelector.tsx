@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, ReactElement } from 'react';
 import memoize from 'memoizerific';
 
 import { Combo, Consumer, API } from '@storybook/api';
@@ -14,7 +14,7 @@ interface Item {
   title: string;
   onClick: () => void;
   value: string;
-  right?: any;
+  right?: ReactElement;
 }
 
 interface Input {
@@ -23,7 +23,7 @@ interface Input {
   default?: boolean;
 }
 
-const iframeId = 'storybook-preview-background';
+const iframeId = 'storybook-preview-iframe';
 
 const createBackgroundSelectorItem = memoize(1000)(
   (
@@ -63,66 +63,64 @@ const getSelectedBackgroundColor = (list: Input[], currentSelectedValue: string)
   return 'transparent';
 };
 
-const mapper = ({ api, state }: Combo): { items: Input[] } => {
+const mapper = ({ api, state }: Combo): { items: Input[]; selected: string | null } => {
   const story = state.storiesHash[state.storyId];
   const list = story ? api.getParameters(story.id, PARAM_KEY) : [];
+  const selected = state.addons[PARAM_KEY] || null;
 
-  return { items: list || [] };
+  return { items: list || [], selected };
 };
 
-const getDisplayedItems = memoize(10)((list: Input[], selected: State['selected'], change) => {
-  let availableBackgroundSelectorItems: Item[] = [];
+const getDisplayedItems = memoize(10)(
+  (
+    list: Input[],
+    selected: string | null,
+    change: (arg: { selected: string; name: string }) => void
+  ) => {
+    let availableBackgroundSelectorItems: Item[] = [];
 
-  if (selected !== 'transparent') {
-    availableBackgroundSelectorItems.push(
-      createBackgroundSelectorItem('reset', 'Clear background', 'transparent', null, change)
-    );
+    if (selected !== 'transparent') {
+      availableBackgroundSelectorItems.push(
+        createBackgroundSelectorItem('reset', 'Clear background', 'transparent', null, change)
+      );
+    }
+
+    if (list.length) {
+      availableBackgroundSelectorItems = [
+        ...availableBackgroundSelectorItems,
+        ...list.map(({ name, value }) =>
+          createBackgroundSelectorItem(null, name, value, true, change)
+        ),
+      ];
+    }
+
+    return availableBackgroundSelectorItems;
   }
+);
 
-  if (list.length) {
-    availableBackgroundSelectorItems = [
-      ...availableBackgroundSelectorItems,
-      ...list.map(({ name, value }) =>
-        createBackgroundSelectorItem(null, name, value, true, change)
-      ),
-    ];
-  }
-
-  return availableBackgroundSelectorItems;
-});
-
-interface State {
-  selected: string;
-  expanded: boolean;
+interface GlobalState {
+  name: string | undefined;
+  selected: string | undefined;
 }
 
-export class BackgroundSelector extends Component<{ api: API }, State> {
-  state: State = {
-    selected: null,
-    expanded: false,
-  };
+interface Props {
+  api: API;
+}
 
-  change = ({ selected, name }: { selected: string; name: string }) => {
+export class BackgroundSelector extends Component<Props> {
+  change = ({ selected, name }: GlobalState) => {
     const { api } = this.props;
-    api.emit(EVENTS.UPDATE, { selected, name });
-    this.setState({ selected, expanded: false });
-  };
-
-  onVisibilityChange = (s: boolean) => {
-    const { expanded } = this.state;
-    if (expanded !== s) {
-      this.setState({ expanded: s });
+    if (typeof selected === 'string') {
+      api.setAddonState<string>(PARAM_KEY, selected);
     }
+    api.emit(EVENTS.UPDATE, { selected, name });
   };
 
   render() {
-    const { expanded, selected } = this.state;
-
     return (
       <Consumer filter={mapper}>
-        {({ items }: { items: Input[] }) => {
+        {({ items, selected }: ReturnType<typeof mapper>) => {
           const selectedBackgroundColor = getSelectedBackgroundColor(items, selected);
-          const links = getDisplayedItems(items, selectedBackgroundColor, this.change);
 
           return items.length ? (
             <Fragment>
@@ -141,9 +139,14 @@ export class BackgroundSelector extends Component<{ api: API }, State> {
               <WithTooltip
                 placement="top"
                 trigger="click"
-                tooltipShown={expanded}
-                onVisibilityChange={this.onVisibilityChange}
-                tooltip={<TooltipLinkList links={links} />}
+                tooltip={({ onHide }) => (
+                  <TooltipLinkList
+                    links={getDisplayedItems(items, selectedBackgroundColor, i => {
+                      this.change(i);
+                      onHide();
+                    })}
+                  />
+                )}
                 closeOnClick
               >
                 <IconButton

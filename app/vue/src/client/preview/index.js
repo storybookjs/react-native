@@ -46,13 +46,18 @@ function decorateStory(getStory, decorators) {
 
       const decoratedStory = decorator((p = {}) => {
         story = decorated(
-          Object.assign(
-            context,
-            p,
-            { parameters: Object.assign(context.parameters || {}, p.parameters) },
-            { options: Object.assign(context.options || {}, p.options) }
-          )
+          p
+            ? {
+                ...context,
+                ...p,
+                parameters: {
+                  ...context.parameters,
+                  ...p.parameters,
+                },
+              }
+            : context
         );
+
         return story;
       }, context);
 
@@ -70,10 +75,9 @@ function decorateStory(getStory, decorators) {
   );
 }
 
-const { clientApi, configApi, forceReRender } = start(render, { decorateStory });
+const { load: coreLoad, clientApi, configApi, forceReRender } = start(render, { decorateStory });
 
 export const {
-  storiesOf,
   setAddon,
   addDecorator,
   addParameters,
@@ -81,6 +85,10 @@ export const {
   getStorybook,
   raw,
 } = clientApi;
+
+const framework = 'vue';
+export const storiesOf = (...args) => clientApi.storiesOf(...args).addParameters({ framework });
+export const load = (...args) => coreLoad(...args, framework);
 
 export const { configure } = configApi;
 export { forceReRender };

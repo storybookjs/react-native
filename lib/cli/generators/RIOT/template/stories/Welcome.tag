@@ -31,7 +31,7 @@
       This is just one thing you can do with Storybook.
       <br /> Have a look at the
       <br />
-      <a class="link" href="https://github.com/storybooks/storybook" target="_blank" rel="noopener noreferrer">
+      <a class="link" href="https://github.com/storybookjs/storybook" target="_blank" rel="noopener noreferrer">
         Storybook
       </a>
       <br /> repo for more information.

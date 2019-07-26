@@ -1,0 +1,14 @@
+{
+  "name": "standalone-preview",
+  "version": "5.2.0-beta.10",
+  "private": true,
+  "scripts": {
+    "storybook": "parcel ./storybook.html --port 1337"
+  },
+  "devDependencies": {
+    "@storybook/react": "5.1.0-alpha.32",
+    "parcel": "^1.12.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}

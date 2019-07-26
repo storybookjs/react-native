@@ -1,8 +1,17 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-storiesOf('Addons|Cssresources', module)
-  .addParameters({
+export default {
+  title: 'Addons|Cssresources',
+};
+
+export const primaryLargeButton = () => (
+  <button type="button" className="btn btn-lg btn-primary">
+    Primary Large Button
+  </button>
+);
+primaryLargeButton.story = {
+  name: 'Primary Large Button',
+  parameters: {
     cssresources: [
       {
         id: `bootstrap v4.1.3`,
@@ -18,15 +27,13 @@ storiesOf('Addons|Cssresources', module)
     options: {
       selectedPanel: 'storybook/cssresources/panel',
     },
-  })
-  .add('Primary Large Button', () => (
-    <button type="button" className="btn btn-lg btn-primary">
-      Primary Large Button
-    </button>
-  ));
+  },
+};
 
-storiesOf('Addons|Cssresources', module)
-  .addParameters({
+export const cameraIcon = () => <i className="fa fa-camera-retro"> Camera Icon</i>;
+cameraIcon.story = {
+  name: 'Camera Icon',
+  parameters: {
     cssresources: [
       {
         id: `fontawesome`,
@@ -42,6 +49,5 @@ storiesOf('Addons|Cssresources', module)
     options: {
       selectedPanel: 'storybook/cssresources/panel',
     },
-  })
-
-  .add('Camera Icon', () => <i className="fa fa-camera-retro"> Camera Icon</i>);
+  },
+};

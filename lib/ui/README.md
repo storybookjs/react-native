@@ -76,7 +76,7 @@ class ReactProvider extends Provider {
   handleAPI(api) {
     api.setOptions({
       // see available options in
-      // https://github.com/storybooks/storybook/tree/master/addons/options#getting-started
+      // https://github.com/storybookjs/storybook/tree/master/addons/options#getting-started
     });
   }
 };
@@ -174,3 +174,14 @@ The above action(or the `handleShortcut` method) accepts events as a constant de
 ### URL Changes
 
 TODO: state we use reach/router customized to query params
+
+### Story Order
+
+Stories are sorted in the order in which they were imported. This can be overridden by adding storySort to the Parameters for the stories in `.storybook/config.js`:
+```js
+addParameters({
+  options: {
+    storySort: (a, b) => a[1].id.localeCompare(b[1].id),
+  },
+});
+```

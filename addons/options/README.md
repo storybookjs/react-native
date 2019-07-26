@@ -11,9 +11,9 @@ See the [migration docs](../../MIGRATION.md#options-addon-deprecated) for what's
 
 The Options addon can be used to (re-)configure the [Storybook](https://storybook.js.org) UI at runtime.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/options/docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/options/docs/screenshot.png)
 
 ## Getting Started
 

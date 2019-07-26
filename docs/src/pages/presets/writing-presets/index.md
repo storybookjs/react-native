@@ -105,7 +105,7 @@ Entries are the place to register entry points for the preview. For example it c
 
 The presets API is also more powerful than the [standard configuration options](../custom-webpack-config/) available in Storybook, so it's also possible to use presets for more advanced configuration without actually publishing a preset yourself.
 
-For example, some users want to configure the webpack for Storybook's UI and addons ([issue](https://github.com/storybooks/storybook/issues/4995)), but this is not possible using [standard webpack configuration](../custom-webpack-config/) (it used to be possible before SB4.1). However, you can achieve this with a private preset.
+For example, some users want to configure the webpack for Storybook's UI and addons ([issue](https://github.com/storybookjs/storybook/issues/4995)), but this is not possible using [standard webpack configuration](../custom-webpack-config/) (it used to be possible before SB4.1). However, you can achieve this with a private preset.
 
 First, create a file `my-preset.js` in your storybook folder:
 

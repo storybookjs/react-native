@@ -9,7 +9,7 @@ const Wrapper = styled.div({
   margin: '12px 0',
 });
 
-const Item = styled.div(({ theme }) => ({
+const Item = styled.div<{}>(({ theme }) => ({
   margin: '0 6px',
   padding: '5px',
   border: `1px solid ${theme.appBorderColor}`,

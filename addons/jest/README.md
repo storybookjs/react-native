@@ -2,9 +2,9 @@
 
 Brings Jest results in storybook.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-[![Storybook Jest Addon Demo](https://raw.githubusercontent.com/storybooks/storybook-addon-jest/master/storybook-addon-jest.gif)](http://storybooks-official.netlify.com/?selectedKind=Addons%7Cjest&selectedStory=withTests&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Ftests%2Fpanel)
+[![Storybook Jest Addon Demo](https://raw.githubusercontent.com/storybookjs/storybook-addon-jest/master/storybook-addon-jest.gif)](http://storybooks-official.netlify.com/?selectedKind=Addons%7Cjest&selectedStory=withTests&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Ftests%2Fpanel)
 
 > Checkout the above [Live Storybook](http://storybooks-official.netlify.com/?selectedKind=Addons%7Cjest&selectedStory=withTests&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Ftests%2Fpanel).
 
@@ -12,7 +12,7 @@ Brings Jest results in storybook.
 
 ### Install
 
-`yarn add --save-dev @storybook/addon-jest --dev`
+`npm install --save-dev @storybook/addon-jest`
 
 or
 
@@ -180,7 +180,7 @@ storiesOf('MyComponent', module)
   );
 ```
 
-##### Example [here](https://github.com/storybooks/storybook/tree/master/examples/angular-cli)
+##### Example [here](https://github.com/storybookjs/storybook/tree/master/examples/angular-cli)
 
 ## TODO
 

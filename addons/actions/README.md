@@ -2,9 +2,9 @@
 
 Storybook Addon Actions can be used to display data received by event handlers in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/actions/docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/actions/docs/screenshot.png)
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ import '@storybook/addon-actions/register';
 
 Import the `action` function and use it to create actions handlers. When creating action handlers, provide a **name** to make it easier to identify.
 
-> _Note: Make sure NOT to use reserved words as function names. [issues#29](https://github.com/storybooks/storybook-addon-actions/issues/29#issuecomment-288274794)_
+> _Note: Make sure NOT to use reserved words as function names. [issues#29](https://github.com/storybookjs/storybook-addon-actions/issues/29#issuecomment-288274794)_
 
 ```js
 import { storiesOf } from '@storybook/react';
@@ -78,7 +78,7 @@ storiesOf('Button', module).add('default view', () => (
 
 ## Configuration
 
-Arguments which are passed to the action call will have to be serialized while be "transfered"
+Arguments which are passed to the action call will have to be serialized while be "transferred"
 over the channel.
 
 This is not very optimal and can cause lag when large objects are being logged, for this reason it is possible 
@@ -111,7 +111,7 @@ action('my-action', {
 
 |Name|Type|Description|Default|
 |---|---|---|---|
-|`depth`|Number|Configures the transfered depth of any logged objects.|`10`|
+|`depth`|Number|Configures the transferred depth of any logged objects.|`10`|
 |`clearOnStoryChange`|Boolean|Flag whether to clear the action logger when switching away from the current story.|`true`|
 |`limit`|Number|Limits the number of items logged in the action logger|`50`|
 

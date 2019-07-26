@@ -34,15 +34,17 @@ Another issue is that these tests are often slow compared to more lightweight un
 
 There are many libraries and services that have Storybook integrations out-of-box, with varying levels of sophistication. Some even use complex Machine Learning instead of 1:1 pixel comparison.
 
+Storybook uses [Chromatic](https://www.chromaticqa.com), a visual testing service made by Storybook maintainers, to prevent UI bugs in our [application](https://www.chromaticqa.com/library?appId=5a375b97f4b14f0020b0cda3), [design system](https://www.chromaticqa.com/library?appId=5ccbc373887ca40020446347), and [website](https://www.chromaticqa.com/library?appId=5be26744d2f6250024a9117d).
+
 Here are some in alphabetical order:
 
 - [Applitools](https://applitools.com/storybook)
-- [Chromatic](https://www.chromaticqa.com)
+- [Chromatic](https://www.chromaticqa.com) made by Storybook maintainers
 - [Happo](https://happo.io)
 - [Loki](https://loki.js.org/)
 - [Percy](https://docs.percy.io/docs/storybook-for-react)
 - [Screener](https://screener.io/v2/docs)
-- [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) with its [seamless integration](https://github.com/storybooks/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
+- [StoryShots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) with its [seamless integration](https://github.com/storybookjs/storybook/tree/master/addons/storyshots#configure-storyshots-for-image-snapshots) with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
 
 ## Custom Solutions
 

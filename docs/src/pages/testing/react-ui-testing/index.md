@@ -60,9 +60,8 @@ If we are using inline styles all the way, we can use JEST snapshot testing.
 But to get even better results, we should consider using tools such as:
 
 -   [BackstopJS](https://github.com/garris/BackstopJS)
--   [PhantomCSS](https://github.com/Huddle/PhantomCSS)
 -   [Gemini](https://github.com/gemini-testing/gemini)
--   [Happo](https://github.com/Galooshi/happo)
+-   [Happo](https://github.com/happo/happo.io)
 
 ### 4. Manual Testing
 

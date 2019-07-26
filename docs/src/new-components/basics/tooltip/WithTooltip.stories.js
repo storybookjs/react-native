@@ -46,6 +46,9 @@ Tooltip.defaultProps = {
 };
 
 storiesOf('basics/tooltip/WithTooltip', module)
+  .addParameters({
+    component: WithTooltip,
+  })
   .addDecorator(storyFn => (
     <ViewPort>
       <BackgroundBox>

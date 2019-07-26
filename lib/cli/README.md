@@ -1,8 +1,6 @@
 # Storybook CLI
 
-Storybook CLI (_Command Line Interface_) is the easiest way to add [Storybook](https://github.com/storybooks/storybook) to your project.
-
-In the future it will also add other useful generators and migration tooling.
+Storybook CLI (_Command Line Interface_) is the easiest way to add [Storybook](https://github.com/storybookjs/storybook) to your project.
 
 ![Screenshot](docs/getstorybook.png)
 
@@ -13,7 +11,13 @@ cd my-app
 npx -p @storybook/cli sb init
 ```
 
-That's all you've to do.
+In addition to `init`, the CLI also has other commands:
+
+- `add` - add an addon and register it
+- `info` - print out system information for bug reports
+- `migrate` - run codemods to migrate your code
+
+See the command-line help with `-h` for details.
 
 ---
 
@@ -49,4 +53,4 @@ If the CLI cannot detect your project type, it will ask you. You can also force 
 npx -p @storybook/cli sb init --type <type>
 ```
 
-Where type is one of the project types defined in [project_types.js](https://github.com/storybooks/storybook/blob/master/lib/cli/lib/project_types.js)
+Where type is one of the project types defined in [project_types.js](https://github.com/storybookjs/storybook/blob/master/lib/cli/lib/project_types.js)

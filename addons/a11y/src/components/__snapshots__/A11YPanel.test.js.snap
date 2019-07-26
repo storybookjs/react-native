@@ -120,6 +120,7 @@ exports[`A11YPanel should render report 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #FFFFFF;
+  z-index: 1;
 }
 
 .emotion-3 {
@@ -215,6 +216,7 @@ exports[`A11YPanel should render report 1`] = `
               "inserted": Object {
                 "0": true,
                 "110qmus": true,
+                "11xgcgt": true,
                 "1551xjo": true,
                 "15paq49": true,
                 "1977chw": true,
@@ -222,7 +224,6 @@ exports[`A11YPanel should render report 1`] = `
                 "1ez3l8h": true,
                 "1kbt4a0": true,
                 "1l7fvsg": true,
-                "1myfomu": true,
                 "1vwgrhn": true,
                 "4ryd4s": true,
                 "6hqipu": true,
@@ -490,7 +491,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-4{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
+                    .emotion-4{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;z-index:1;}
                   </style>
                   <style
                     data-emotion="css"
@@ -716,7 +717,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-4{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;}
+                    .emotion-4{position:absolute;bottom:0;right:0;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#FFFFFF;z-index:1;}
                   </style>,
                   <style
                     data-emotion="css"

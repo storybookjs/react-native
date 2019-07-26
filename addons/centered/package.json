@@ -1,18 +1,18 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "5.1.0-rc.1",
+  "version": "5.2.0-beta.10",
   "description": "Storybook decorator to center components",
   "keywords": [
     "addon",
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/addons/centered",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/centered",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/centered"
   },
   "license": "MIT",
@@ -23,14 +23,18 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@storybook/addons": "5.2.0-beta.10",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/mithril": "^1.1.16"
+    "@types/mithril": "^1.1.16",
+    "mithril": "*",
+    "preact": "*",
+    "react": "*"
   },
-  "optionalDependencies": {
+  "peerDependencies": {
     "mithril": "*",
     "preact": "*",
     "react": "*"

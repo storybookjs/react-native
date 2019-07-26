@@ -2,9 +2,9 @@
 
 Storybook Viewport Addon allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org). This helps build responsive components inside of Storybook.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](https://github.com/storybooks/storybook/blob/master/addons/viewport/docs/viewport.png)
+![Screenshot](https://github.com/storybookjs/storybook/blob/master/addons/viewport/docs/viewport.png)
 
 ## Installation
 
@@ -126,7 +126,7 @@ addParameters({
 
 ### Add New Device
 
-This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is acheived by making use of the exported [`INITIAL_VIEWPORTS`](src/defaults.js) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
+This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is achieved by making use of the exported [`INITIAL_VIEWPORTS`](src/defaults.js) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
 
 ```js
 import { addParameters } from '@storybook/react';

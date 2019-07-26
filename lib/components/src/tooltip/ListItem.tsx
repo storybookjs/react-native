@@ -3,13 +3,14 @@ import { styled } from '@storybook/theming';
 import memoize from 'memoizerific';
 import { transparentize } from 'polished';
 
-interface TitleProps {
+export interface TitleProps {
   active?: boolean;
   loading?: boolean;
   disabled?: boolean;
 }
-
-const Title = styled.span<TitleProps>(
+const Title = styled(({ active, loading, disabled, ...rest }: TitleProps) => (
+  <span {...rest}></span>
+))<{ active: boolean; loading: boolean; disabled: boolean }>(
   ({ theme }) => ({
     color: theme.color.defaultText,
     // Previously was theme.typography.weight.normal but this weight does not exists in Theme
@@ -38,7 +39,7 @@ const Title = styled.span<TitleProps>(
       : {}
 );
 
-interface RightProps {
+export interface RightProps {
   active?: boolean;
 }
 
@@ -79,7 +80,7 @@ const Center = styled.span({
   },
 });
 
-interface CenterTextProps {
+export interface CenterTextProps {
   active?: boolean;
   disabled?: boolean;
 }
@@ -103,7 +104,7 @@ const CenterText = styled.span<CenterTextProps>(
       : {}
 );
 
-interface LeftProps {
+export interface LeftProps {
   active?: boolean;
 }
 
@@ -120,7 +121,7 @@ const Left = styled.span<LeftProps>(({ active, theme }) =>
     : {}
 );
 
-interface ItemProps {
+export interface ItemProps {
   disabled?: boolean;
 }
 
@@ -208,14 +209,18 @@ const ListItem: FunctionComponent<ListItemProps> = ({
   ...rest
 }) => {
   const itemProps = getItemProps(onClick, href, LinkWrapper);
-  const commonProps = { active, disabled, loading };
+  const commonProps = { active, disabled };
 
   return (
     <Item {...commonProps} {...rest} {...itemProps}>
       {left && <Left {...commonProps}>{left}</Left>}
       {title || center ? (
         <Center>
-          {title && <Title {...commonProps}>{title}</Title>}
+          {title && (
+            <Title {...commonProps} loading={loading}>
+              {title}
+            </Title>
+          )}
           {center && <CenterText {...commonProps}>{center}</CenterText>}
         </Center>
       ) : null}

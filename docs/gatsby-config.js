@@ -39,6 +39,11 @@ module.exports = {
         '/configurations/cli-options/',
         '/configurations/standalone-options/',
       ],
+      formats: [
+        '/formats/component-story-format/',
+        '/formats/storiesof-api/',
+        '/formats/mdx-syntax/',
+      ],
       testing: [
         '/testing/react-ui-testing/',
         '/testing/structural-testing/',
@@ -66,7 +71,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        repoUrl: 'https://github.com/storybooks/storybook',
+        repoUrl: 'https://github.com/storybookjs/storybook',
       },
     },
     {
