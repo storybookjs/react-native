@@ -15,14 +15,14 @@ function render(node: React.ReactElement, el: Element) {
 }
 
 export default function renderMain({
-  storyFn,
+  storyFn: StoryFn,
   selectedKind,
   selectedStory,
   showMain,
   showError,
   forceRender,
 }: RenderMainArgs) {
-  const element = storyFn();
+  const element = <StoryFn />;
 
   if (!element) {
     showError({
