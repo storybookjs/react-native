@@ -19,7 +19,8 @@ class SelectType extends React.Component {
 
     const options = this.getOptions(knob);
 
-    const selected = options.filter(({ key }) => knob.value === key)[0].label;
+    const active = options.filter(({ key }) => knob.value === key)[0];
+    const selected = active && active.label;
 
     return (
       <View>
@@ -40,6 +41,7 @@ class SelectType extends React.Component {
             }}
             editable={false}
             value={selected}
+            autoCapitalize="none"
             underlineColorAndroid="transparent"
           />
         </ModalPicker>

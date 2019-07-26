@@ -1,4 +1,4 @@
-import uuid from 'uuid/v1';
+import uuid from 'uuid/v4';
 import { addons } from '@storybook/addons';
 import { EVENT_ID } from '../constants';
 import { ActionDisplay, ActionOptions, HandlerFunction } from '../models';
@@ -22,6 +22,7 @@ export function action(name: string, options: ActionOptions = {}): HandlerFuncti
       options: {
         ...actionOptions,
         depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false,
       },
     };
     channel.emit(EVENT_ID, actionDisplayToEmit);

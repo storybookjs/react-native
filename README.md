@@ -163,7 +163,7 @@ Looking for a first issue to tackle?
 
 ### Development scripts
 
-Storybook is organized as a monorepo using [Lerna](https://lernajs.io). Useful scripts include:
+Storybook is organized as a monorepo using [Lerna](https://lerna.js.org/). Useful scripts include:
 
 #### `yarn bootstrap`
 

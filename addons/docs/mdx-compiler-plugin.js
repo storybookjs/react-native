@@ -2,6 +2,7 @@ const mdxToJsx = require('@mdx-js/mdx/mdx-hast-to-jsx');
 const parser = require('@babel/parser');
 const generate = require('@babel/generator').default;
 const camelCase = require('lodash/camelCase');
+const jsStringEscape = require('js-string-escape');
 
 // Generate the MDX as is, but append named exports for every
 // story in the contents
@@ -60,28 +61,38 @@ function genStoryExport(ast, counter) {
     const { code } = generate(body, {});
     storyCode = code;
   }
-  statements.push(
-    `export const ${storyKey} = () => (
-      ${storyCode}
-    );`
-  );
+  if (storyCode.trim().startsWith('() =>')) {
+    statements.push(`export const ${storyKey} = ${storyCode}`);
+  } else {
+    statements.push(
+      `export const ${storyKey} = () => (
+        ${storyCode}
+      );`
+    );
+  }
+  statements.push(`${storyKey}.story = {};`);
 
   if (storyName !== storyKey) {
-    statements.push(`${storyKey}.title = '${storyName}';`);
+    statements.push(`${storyKey}.story.name = '${storyName}';`);
   }
 
   let parameters = getAttr(ast.openingElement, 'parameters');
   parameters = parameters && parameters.expression;
-  const source = `\`${storyCode.replace(/`/g, '\\`')}\``;
+  const source = jsStringEscape(storyCode);
   if (parameters) {
     const { code: params } = generate(parameters, {});
     // FIXME: hack in the story's source as a parameter
-    statements.push(`${storyKey}.parameters = { mdxSource: ${source}, ...${params} };`);
+    statements.push(`${storyKey}.story.parameters = { mdxSource: '${source}', ...${params} };`);
   } else {
-    statements.push(`${storyKey}.parameters = { mdxSource: ${source} };`);
+    statements.push(`${storyKey}.story.parameters = { mdxSource: '${source}' };`);
   }
 
-  // console.log(statements);
+  let decorators = getAttr(ast.openingElement, 'decorators');
+  decorators = decorators && decorators.expression;
+  if (decorators) {
+    const { code: decos } = generate(decorators, {});
+    statements.push(`${storyKey}.story.decorators = ${decos};`);
+  }
 
   return {
     [storyKey]: statements.join('\n'),

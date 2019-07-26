@@ -1,22 +1,31 @@
 import { document } from 'global';
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { withQuery } from '@storybook/addon-queryparams';
 
-// debugger;
+export default {
+  title: 'Addons|QueryParams',
+  decorators: [withQuery],
 
-storiesOf('Addons|QueryParams', module)
-  .addDecorator(withQuery)
-  .addParameters({
+  parameters: {
     query: {
       mock: true,
     },
-  })
-  .add('mock is true', () => (
-    <div>This story should have an extra url query param: {document.location.search}</div>
-  ))
-  .add(
-    'mock is 4',
-    () => <div>This story should have an extra url query param: {document.location.search}</div>,
-    { query: { mock: 4 } }
-  );
+  },
+};
+
+export const mockIsTrue = () => (
+  <div>This story should have an extra url query param: {document.location.search}</div>
+);
+
+mockIsTrue.story = {
+  name: 'mock is true',
+};
+
+export const mockIs4 = () => (
+  <div>This story should have an extra url query param: {document.location.search}</div>
+);
+
+mockIs4.story = {
+  name: 'mock is 4',
+  parameters: { query: { mock: 4 } },
+};

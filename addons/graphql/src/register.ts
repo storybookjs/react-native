@@ -1,7 +1,7 @@
 import { addons, types } from '@storybook/addons';
 
 import GQL from './manager';
-import { ADDON_ID } from '.';
+import { ADDON_ID, PARAM_KEY } from '.';
 
 export const register = () => {
   addons.register(ADDON_ID, () => {
@@ -11,6 +11,7 @@ export const register = () => {
       route: ({ storyId }) => `/graphql/${storyId}`,
       match: ({ viewMode }) => viewMode === 'graphql',
       render: GQL,
+      paramKey: PARAM_KEY,
     });
   });
 };

@@ -1,14 +1,20 @@
 # Migration
 
-- [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
-  - [Docs mode docgen](#docs-mode-docgen)
-- [From version 5.0.x to 5.1.x](#from-version-50x-to-51x)
-  - [React native server](#react-native-server)
-  - [Angular 7](#angular-7)
-  - [CoreJS 3](#corejs-3)
-- [From version 5.0.1 to 5.0.2](#from-version-501-to-502)
-  - [Deprecate webpack extend mode](#deprecate-webpack-extend-mode)
-- [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
+- [Migration](#migration)
+  - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
+    - [Grid toolbar-feature](#grid-toolbar-feature)
+    - [Docs mode docgen](#docs-mode-docgen)
+    - [storySort option](#storysort-option)
+  - [From version 5.1.x to 5.1.10](#from-version-51x-to-5110)
+    - [babel.config.js support](#babelconfigjs-support)
+  - [From version 5.0.x to 5.1.x](#from-version-50x-to-51x)
+    - [React native server](#react-native-server)
+    - [Angular 7](#angular-7)
+    - [CoreJS 3](#corejs-3)
+  - [From version 5.0.1 to 5.0.2](#from-version-501-to-502)
+    - [Deprecate webpack extend mode](#deprecate-webpack-extend-mode)
+  - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
+    - [sortStoriesByKind](#sortstoriesbykind)
   - [Webpack config simplification](#webpack-config-simplification)
   - [Theming overhaul](#theming-overhaul)
   - [Story hierarchy defaults](#story-hierarchy-defaults)
@@ -17,48 +23,53 @@
   - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
   - [Addon cssresources name attribute renamed](#addon-cssresources-name-attribute-renamed)
   - [Addon viewport uses parameters](#addon-viewport-uses-parameters)
-  - [Addon a11y uses parameters](#addon-a11y-uses-parameters-decorator-renamed)
+  - [Addon a11y uses parameters, decorator renamed](#addon-a11y-uses-parameters-decorator-renamed)
   - [New keyboard shortcuts defaults](#new-keyboard-shortcuts-defaults)
   - [New URL structure](#new-url-structure)
+  - [Rename of the `--secure` cli parameter to `--https`](#rename-of-the---secure-cli-parameter-to---https)
   - [Vue integration](#vue-integration)
-- [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
+  - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
   - [Private addon config](#private-addon-config)
   - [React 15.x](#react-15x)
-- [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
-  - [React 16.3+](#react-163)
-  - [Generic addons](#generic-addons)
-  - [Knobs select ordering](#knobs-select-ordering)
-  - [Knobs URL parameters](#knobs-url-parameters)
-  - [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
-  - [Removed addWithInfo](#removed-addwithinfo)
-  - [Removed RN packager](#removed-rn-packager)
-  - [Removed RN addons](#removed-rn-addons)
-  - [Storyshots Changes](#storyshots-changes)
-  - [Webpack 4](#webpack-4)
-  - [Babel 7](#babel-7)
-  - [Create-react-app](#create-react-app)
-    - [Upgrade CRA1 to babel 7](#upgrade-cra1-to-babel-7)
-    - [Migrate CRA1 while keeping babel 6](#migrate-cra1-while-keeping-babel-6)
-  - [start-storybook opens browser](#start-storybook-opens-browser)
-  - [CLI Rename](#cli-rename)
-  - [Addon story parameters](#addon-story-parameters)
-- [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
-- [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
-  - [`babel-core` is now a peer dependency (#2494)](#babel-core-is-now-a-peer-dependency-2494)
-  - [Base webpack config now contains vital plugins (#1775)](#base-webpack-config-now-contains-vital-plugins-1775)
-  - [Refactored Knobs](#refactored-knobs)
-- [From version 3.1.x to 3.2.x](#from-version-31x-to-32x)
-  - [Moved TypeScript addons definitions](#moved-typescript-addons-definitions)
-  - [Updated Addons API](#updated-addons-api)
-- [From version 3.0.x to 3.1.x](#from-version-30x-to-31x)
-  - [Moved TypeScript definitions](#moved-typescript-definitions)
-  - [Deprecated head.html](#deprecated-headhtml)
-- [From version 2.x.x to 3.x.x](#from-version-2xx-to-3xx)
-  - [Webpack upgrade](#webpack-upgrade)
-  - [Packages renaming](#packages-renaming)
-  - [Deprecated embedded addons](#deprecated-embedded-addons)
+  - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
+    - [React 16.3+](#react-163)
+    - [Generic addons](#generic-addons)
+    - [Knobs select ordering](#knobs-select-ordering)
+    - [Knobs URL parameters](#knobs-url-parameters)
+    - [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
+    - [Removed addWithInfo](#removed-addwithinfo)
+    - [Removed RN packager](#removed-rn-packager)
+    - [Removed RN addons](#removed-rn-addons)
+    - [Storyshots Changes](#storyshots-changes)
+    - [Webpack 4](#webpack-4)
+    - [Babel 7](#babel-7)
+    - [Create-react-app](#create-react-app)
+      - [Upgrade CRA1 to babel 7](#upgrade-cra1-to-babel-7)
+      - [Migrate CRA1 while keeping babel 6](#migrate-cra1-while-keeping-babel-6)
+    - [start-storybook opens browser](#start-storybook-opens-browser)
+    - [CLI Rename](#cli-rename)
+    - [Addon story parameters](#addon-story-parameters)
+  - [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
+  - [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
+    - [`babel-core` is now a peer dependency (#2494)](#babel-core-is-now-a-peer-dependency-2494)
+    - [Base webpack config now contains vital plugins (#1775)](#base-webpack-config-now-contains-vital-plugins-1775)
+    - [Refactored Knobs](#refactored-knobs)
+  - [From version 3.1.x to 3.2.x](#from-version-31x-to-32x)
+    - [Moved TypeScript addons definitions](#moved-typescript-addons-definitions)
+    - [Updated Addons API](#updated-addons-api)
+  - [From version 3.0.x to 3.1.x](#from-version-30x-to-31x)
+    - [Moved TypeScript definitions](#moved-typescript-definitions)
+    - [Deprecated head.html](#deprecated-headhtml)
+  - [From version 2.x.x to 3.x.x](#from-version-2xx-to-3xx)
+    - [Webpack upgrade](#webpack-upgrade)
+    - [Packages renaming](#packages-renaming)
+    - [Deprecated embedded addons](#deprecated-embedded-addons)
 
 ## From version 5.1.x to 5.2.x
+
+### Grid toolbar-feature
+
+The grid feature in the toolbar has been relocated to [addon-background](https://github.com/storybookjs/storybook/tree/next/addons/backgrounds), follow the setup intructions on that addon to get the feature again.
 
 ### Docs mode docgen
 
@@ -66,6 +77,26 @@ This isn't a breaking change per se, because `addon-docs` is a new feature. Howe
 
 1. Support for only one prop table
 2. Prop table docgen info should be stored on the component and not in the global variable `STORYBOOK_REACT_CLASSES` as before.
+
+### storySort option
+
+In 5.0.x the global option `sortStoriesByKind` option was [inadverttly removed](#sortstoriesbykind). In 5.2 we've introduced a new option, `storySort`, to replace it. `storySort` takes a comparator function, so it is strictly more powerful than `sortStoriesByKind`.
+
+For example, here's how to sort by story ID using `storySort`:
+
+```js
+addParameters({
+  options: {
+    storySort: (a, b) => a[1].id.localeCompare(b[1].id),
+  },
+});
+```
+
+## From version 5.1.x to 5.1.10
+
+### babel.config.js support
+
+SB 5.1.0 added [support for project root `babel.config.js` files](https://github.com/storybookjs/storybook/pull/6634), which was an [unintentional breaking change](https://github.com/storybookjs/storybook/issues/7058#issuecomment-515398228). 5.1.10 fixes this, but if you relied on project root `babel.config.js` support, this bugfix is a breaking change. The workaround is to copy the file into your `.storybook` config directory. We may add back project-level support in 6.0.
 
 ## From version 5.0.x to 5.1.x
 

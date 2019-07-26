@@ -19,7 +19,7 @@ const PropField = ({ onChange, onPress, knob }) => {
             fontWeight: 'bold',
           }}
         >
-          {`${knob.name}`}
+          {`${knob.label || knob.name}`}
         </Text>
       ) : null}
       <InputType knob={knob} onChange={onChange} onPress={onPress} />
@@ -30,7 +30,20 @@ const PropField = ({ onChange, onPress, knob }) => {
 PropField.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
+    label: PropTypes.string,
     value: PropTypes.any,
+    hideLabel: PropTypes.bool,
+    type: PropTypes.oneOf([
+      'text',
+      'number',
+      'color',
+      'boolean',
+      'object',
+      'select',
+      'array',
+      'date',
+      'button',
+    ]),
   }).isRequired,
   onChange: PropTypes.func.isRequired,
   onPress: PropTypes.func.isRequired,

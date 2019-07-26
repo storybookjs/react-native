@@ -1,0 +1,35 @@
+{
+  "name": "@storybook/addon-decorator",
+  "version": "5.2.0-beta.10",
+  "description": "decorator addon for storybook",
+  "keywords": [
+    "devkit",
+    "addon",
+    "storybook",
+    "decorator"
+  ],
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/actions",
+  "bugs": {
+    "url": "https://github.com/storybookjs/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/storybook.git",
+    "directory": "addons/actions"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/client-api": "5.2.0-beta.10",
+    "core-js": "^3.0.1",
+    "global": "^3.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -21,8 +21,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/client-logger": "5.2.0-alpha.30",
-    "@storybook/theming": "5.2.0-alpha.30",
+    "@storybook/client-logger": "5.2.0-beta.10",
+    "@storybook/theming": "5.2.0-beta.10",
+    "@types/react-syntax-highlighter": "10.1.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "markdown-to-jsx": "^6.9.1",
@@ -37,13 +38,10 @@
     "react-popper-tooltip": "^2.8.3",
     "react-syntax-highlighter": "^8.0.1",
     "react-textarea-autosize": "^7.1.0",
-    "recompose": "^0.30.0",
     "simplebar-react": "^1.0.0-alpha.6"
   },
   "devDependencies": {
-    "@types/react-syntax-highlighter": "10.1.0",
     "@types/react-textarea-autosize": "^4.3.3",
-    "@types/recompose": "^0.30.5",
     "enzyme": "^3.9.0",
     "jest": "^24.7.1",
     "jest-enzyme": "^7.0.2"

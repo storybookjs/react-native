@@ -1,6 +1,6 @@
 {
   "name": "@storybook/html",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Storybook for HTML: View HTML snippets in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -16,6 +16,7 @@
   },
   "license": "MIT",
   "main": "dist/client/index.js",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -25,7 +26,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.2.0-alpha.30",
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/core": "5.2.0-beta.10",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

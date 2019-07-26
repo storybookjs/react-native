@@ -1,6 +1,6 @@
 {
   "name": "@storybook/source-loader",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Source loader",
   "keywords": [
     "lib",
@@ -16,14 +16,14 @@
     "directory": "lib/source-loader"
   },
   "license": "MIT",
-  "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "main": "dist/server/index.js",
+  "jsnext:main": "src/server/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.30",
-    "@storybook/router": "5.2.0-alpha.30",
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/router": "5.2.0-beta.10",
     "core-js": "^3.0.1",
     "estraverse": "^4.2.0",
     "global": "^4.3.2",

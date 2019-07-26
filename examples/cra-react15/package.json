@@ -1,6 +1,6 @@
 {
   "name": "cra-react15",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "private": true,
   "dependencies": {
     "babel-loader": "8.0.6",
@@ -19,10 +19,10 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.2.0-alpha.30",
-    "@storybook/addon-links": "5.2.0-alpha.30",
-    "@storybook/react": "5.2.0-alpha.30",
-    "@storybook/theming": "5.2.0-alpha.30",
+    "@storybook/addon-actions": "5.2.0-beta.10",
+    "@storybook/addon-links": "5.2.0-beta.10",
+    "@storybook/react": "5.2.0-beta.10",
+    "@storybook/theming": "5.2.0-beta.10",
     "babel-core": "6",
     "babel-runtime": "6"
   }

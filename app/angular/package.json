@@ -1,6 +1,6 @@
 {
   "name": "@storybook/angular",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Storybook for Angular: Develop Angular Components in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -26,8 +26,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.2.0-alpha.30",
-    "@storybook/node-logger": "5.2.0-alpha.30",
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/core": "5.2.0-beta.10",
+    "@storybook/node-logger": "5.2.0-beta.10",
     "angular2-template-loader": "^0.6.2",
     "core-js": "^3.0.1",
     "fork-ts-checker-webpack-plugin": "^1.3.4",
@@ -35,10 +36,15 @@
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
     "ts-loader": "^6.0.1",
-    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tsconfig-paths-webpack-plugin": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/autoprefixer": "^9.4.0",
+    "@types/webpack-env": "^1.13.9",
     "webpack": "^4.33.0"
   },
   "peerDependencies": {
+    "@angular-devkit/build-angular": ">=6.0.0",
     "@angular-devkit/core": "^0.6.1 || >=7.0.0",
     "@angular/common": ">=6.0.0",
     "@angular/compiler": ">=6.0.0",
@@ -49,6 +55,8 @@
     "autoprefixer": "^8.1.0",
     "babel-loader": "^7.0.0 || ^8.0.0",
     "rxjs": "^6.0.0",
+    "typescript": "^3.4.0",
+    "webpack": "^4.32.2",
     "zone.js": "^0.8.29 || ^0.9.0"
   },
   "engines": {

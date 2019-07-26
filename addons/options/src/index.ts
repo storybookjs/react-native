@@ -31,7 +31,7 @@ export const withOptions = makeDecorator({
   parameterName: 'options',
   skipIfNoParametersOrOptions: false,
   wrapper: deprecate((getStory, context, { options: inputOptions, parameters }) => {
-    // do not send hierachy related options over the channel
+    // do not send hierarchy related options over the channel
     const { hierarchySeparator, hierarchyRootSeparator, ...change }: any = {
       ...globalOptions,
       ...inputOptions,

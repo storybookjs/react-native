@@ -10,11 +10,14 @@ import {
 } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
+import FlowTypeButton from '../components/FlowTypeButton';
+import DocgenButton from '../components/DocgenButton';
 
 <Meta
   title="Addons|Docs/mdx"
+  component={Button}
   decorators={[storyFn => <div style={{ backgroundColor: 'yellow' }}>{storyFn()}</div>]}
-  parameters={{ component: Button, notes: 'component notes' }}
+  parameters={{ notes: 'component notes' }}
 />
 
 # Selected
@@ -75,6 +78,16 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
   <Button onClick={action('clicked')}>solo</Button>
 </Story>
 
+<Story name="iframe story" inline={false} height="100px">
+  <>This is an iframe!</>
+</Story>
+
+<Story name="function" height="100px">
+  {() => {
+    return <div>function result</div>;
+  }}
+</Story>
+
 <Source name="hello story" />
 
 ## Configurable height
@@ -86,3 +99,15 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
 <Description markdown="this is _markdown_" />
 
 <Description of={Button} />
+
+## Props
+
+### Docgen
+
+<Props of={DocgenButton} />
+
+### Flow
+
+Flow types are not officially supported
+
+<Props of={FlowTypeButton} />

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-notes",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Write notes for your react-native Storybook stories.",
   "keywords": [
     "addon",
@@ -20,7 +20,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.30",
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/client-logger": "5.2.0-beta.10",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2",
     "react-native-simple-markdown": "^1.1.0"

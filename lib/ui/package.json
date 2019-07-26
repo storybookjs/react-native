@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,18 +22,18 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.30",
-    "@storybook/api": "5.2.0-alpha.30",
-    "@storybook/channels": "5.2.0-alpha.30",
-    "@storybook/client-logger": "5.2.0-alpha.30",
-    "@storybook/components": "5.2.0-alpha.30",
-    "@storybook/core-events": "5.2.0-alpha.30",
-    "@storybook/router": "5.2.0-alpha.30",
-    "@storybook/theming": "5.2.0-alpha.30",
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/api": "5.2.0-beta.10",
+    "@storybook/channels": "5.2.0-beta.10",
+    "@storybook/client-logger": "5.2.0-beta.10",
+    "@storybook/components": "5.2.0-beta.10",
+    "@storybook/core-events": "5.2.0-beta.10",
+    "@storybook/router": "5.2.0-beta.10",
+    "@storybook/theming": "5.2.0-beta.10",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
-    "emotion-theming": "^10.0.10",
+    "emotion-theming": "^10.0.14",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.4.4",
     "global": "^4.3.2",
@@ -49,7 +49,6 @@
     "react-helmet-async": "^1.0.2",
     "react-hotkeys": "2.0.0-pre4",
     "react-sizeme": "^2.6.7",
-    "recompose": "^0.30.0",
     "regenerator-runtime": "^0.13.2",
     "resolve-from": "^5.0.0",
     "semver": "^6.0.0",

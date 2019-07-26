@@ -1,6 +1,6 @@
 {
   "name": "@storybook/theming",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -21,13 +21,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.9",
-    "@emotion/styled": "^10.0.7",
-    "@storybook/client-logger": "5.2.0-alpha.30",
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "@storybook/client-logger": "5.2.0-beta.10",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "deep-object-diff": "^1.1.0",
-    "emotion-theming": "^10.0.9",
+    "emotion-theming": "^10.0.14",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",
     "polished": "^3.3.1",

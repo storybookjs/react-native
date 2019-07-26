@@ -22,7 +22,9 @@ type Props = {
 // To avoid issues we use absolute positioned element with predefined screen size
 export default class AbsolutePositionedKeyboardAwareView extends PureComponent<Props> {
   keyboardDidShowListener: EmitterSubscription;
+
   keyboardDidHideListener: EmitterSubscription;
+
   keyboardOpen: boolean;
 
   componentWillMount() {

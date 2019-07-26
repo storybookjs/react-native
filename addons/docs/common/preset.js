@@ -5,12 +5,13 @@ function createBabelOptions({ babelOptions, configureJSX }) {
     return babelOptions;
   }
 
+  const babelPlugins = (babelOptions && babelOptions.plugins) || [];
   return {
     ...babelOptions,
     // for frameworks that are not working with react, we need to configure
     // the jsx to transpile mdx, for now there will be a flag for that
     // for more complex solutions we can find alone that we need to add '@babel/plugin-transform-react-jsx'
-    plugins: [...babelOptions.plugins, '@babel/plugin-transform-react-jsx'],
+    plugins: [...babelPlugins, '@babel/plugin-transform-react-jsx'],
   };
 }
 
@@ -18,7 +19,19 @@ function webpack(webpackConfig = {}, options = {}) {
   const { module = {} } = webpackConfig;
   // it will reuse babel options that are already in use in storybook
   // also, these babel options are chained with other presets.
-  const { babelOptions, configureJSX } = options;
+  const { babelOptions, configureJSX, sourceLoaderOptions = {} } = options;
+
+  // set `sourceLoaderOptions` to `null` to disable for manual configuration
+  const sourceLoader = sourceLoaderOptions
+    ? [
+        {
+          test: /\.(stories|story)\.[tj]sx?$/,
+          loader: require.resolve('@storybook/source-loader'),
+          options: sourceLoaderOptions,
+          enforce: 'pre',
+        },
+      ]
+    : [];
 
   return {
     ...webpackConfig,
@@ -26,20 +39,8 @@ function webpack(webpackConfig = {}, options = {}) {
       ...module,
       rules: [
         ...(module.rules || []),
-        // {
-        //   test: [/\.stories\.(jsx?$|ts?$)/],
-        //   enforce: 'pre',
-        //   use: [
-        //     {
-        //       loader: require.resolve('@storybook/addon-storysource/loader'),
-        //       options: {
-        //         injectParameters: true,
-        //       },
-        //     },
-        //   ],
-        // },
         {
-          test: /\.stories.mdx$/,
+          test: /\.(stories|story).mdx$/,
           use: [
             {
               loader: 'babel-loader',
@@ -55,7 +56,7 @@ function webpack(webpackConfig = {}, options = {}) {
         },
         {
           test: /\.mdx$/,
-          exclude: /\.stories.mdx$/,
+          exclude: /\.(stories|story).mdx$/,
           use: [
             {
               loader: 'babel-loader',
@@ -66,17 +67,14 @@ function webpack(webpackConfig = {}, options = {}) {
             },
           ],
         },
+        ...sourceLoader,
       ],
     },
   };
 }
 
 function addons(entry = []) {
-  return [
-    ...entry,
-    // require.resolve('@storybook/addon-storysource/register'),
-    require.resolve('../register'),
-  ];
+  return [...entry, require.resolve('../register')];
 }
 
 module.exports = { webpack, addons };

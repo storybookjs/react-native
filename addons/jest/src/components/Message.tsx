@@ -1,205 +1,164 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-control-regex */
-/* tslint:disable:object-literal-sort-keys */
-
-import React from 'react';
+import React, { Fragment } from 'react';
 import { styled } from '@storybook/theming';
-import colors from '../colors';
 
-const patterns = [/^\x08+/, /^\x1b\[[012]?K/, /^\x1b\[?[\d;]{0,3}/];
+const positiveConsoleRegex = /\[32m(.*?)\[39m/;
+const negativeConsoleRegex = /\[31m(.*?)\[39m/;
+const positiveType = 'positive';
+const negativeType = 'negative';
+const endToken = '[39m';
+const failStartToken = '[31m';
+const passStartToken = '[32m';
+const stackTraceStartToken = 'at';
+const titleEndToken = ':';
 
-const Pre = styled.pre({
-  margin: 0,
-});
+type MsgElement = string | JSX.Element;
 
-const Positive = styled.strong({
-  color: colors.success,
-  fontWeight: 500,
-});
-const Negative = styled.strong({
-  color: colors.error,
-  fontWeight: 500,
-});
+class TestDetail {
+  description: MsgElement[];
 
-interface StackTraceProps {
-  trace: MsgElement[];
-  className?: string;
+  result: MsgElement[];
+
+  stackTrace: string;
 }
-
-const StackTrace = styled(({ trace, className }: StackTraceProps) => (
-  <details className={className}>
-    <summary>Callstack</summary>
-    {trace
-      .join('')
-      .trim()
-      .split(/\n/)
-      .map((traceLine, traceLineIndex) => (
-        <div key={traceLineIndex}>{traceLine.trim()}</div>
-      ))}
-  </details>
-))({
-  background: '#e2e2e2',
-  padding: 10,
+const StackTrace = styled.pre<{}>(({ theme }) => ({
+  background: theme.color.lighter,
+  paddingTop: '4px',
+  paddingBottom: '4px',
+  paddingLeft: '6px',
+  borderRadius: '2px',
   overflow: 'auto',
+  margin: '10px 30px 10px 30px',
+  whiteSpace: 'pre',
+}));
+
+const Results = styled.div({
+  paddingTop: '10px',
+  marginLeft: '31px',
+  marginRight: '30px',
 });
+
+const Description = styled.div<{}>(({ theme }) => ({
+  paddingBottom: '10px',
+  paddingTop: '10px',
+  borderBottom: theme.appBorderColor,
+  marginLeft: '31px',
+  marginRight: '30px',
+  overflowWrap: 'break-word',
+}));
+
+const StatusColor = styled.strong<{ status: string }>(({ status, theme }) => ({
+  color: status === positiveType ? theme.color.positive : theme.color.negative,
+  fontWeight: 500,
+}));
 
 const Main = styled(({ msg, className }) => <section className={className}>{msg}</section>)({
-  padding: 10,
-  borderBottom: '1px solid #e2e2e2',
+  padding: 5,
 });
 
-interface SubProps {
-  msg: MsgElement[];
-  className?: string;
-}
-
-const Sub = styled(({ msg, className }: SubProps) => (
-  <section className={className}>
-    {msg
-      .filter(item => typeof item !== 'string' || item.trim() !== '')
-      .map((item, index, list) => {
-        if (typeof item === 'string') {
-          if (index === 0 && index === list.length - 1) {
-            return item.trim();
-          }
-          if (index === 0) {
-            return item.replace(/^[\s\n]*/, '');
-          }
-          if (index === list.length - 1) {
-            return item.replace(/[\s\n]*$/, '');
-          }
-        }
-        return item;
-      })}
-  </section>
-))({
-  padding: 10,
-});
-
-interface SubgroupOptions {
-  startTrigger: (e: MsgElement) => boolean;
-  endTrigger: (e: MsgElement) => boolean;
-  grouper: (list: MsgElement[], key: number) => JSX.Element;
-  accList?: MsgElement[];
-  grouped?: MsgElement[];
-  grouperIndex?: number;
-  mode?: 'inject' | 'stop';
-  injectionPoint?: number;
-}
-
-const createSubgroup = ({
-  startTrigger,
-  endTrigger,
-  grouper,
-  accList = [],
-  grouped = [],
-  grouperIndex = 0,
-  mode,
-  injectionPoint,
-}: SubgroupOptions) => (acc: MsgElement[], item: MsgElement, i: number, list: MsgElement[]) => {
-  grouperIndex += 1;
-
-  // start or stop extraction
-  if (startTrigger(item)) {
-    mode = 'inject';
-    injectionPoint = i;
+const colorizeText: (msg: string, type: string) => MsgElement[] = (msg: string, type: string) => {
+  if (type) {
+    return msg
+      .split(type === positiveType ? positiveConsoleRegex : negativeConsoleRegex)
+      .map((i, index) =>
+        index % 2 ? (
+          <StatusColor key={`${type}_${i}`} status={type}>
+            {i}
+          </StatusColor>
+        ) : (
+          i
+        )
+      );
   }
-  if (endTrigger(item)) {
-    mode = 'stop';
-  }
+  return [msg];
+};
 
-  // push item in correct aggregator
-  if (mode === 'inject') {
-    grouped.push(item);
-  } else {
-    accList.push(item);
-  }
+const getConvertedText: (msg: string) => MsgElement[] = (msg: string) => {
+  let elementArray: MsgElement[] = [];
 
-  // on last iteration inject at detected injection point, and group
-  if (i === list.length - 1) {
-    // Provide a "safety net" when Jest returns a partially recognized "group"
-    // (recognized by acc.startTrigger but acc.endTrigger was never found) and
-    // it's the only group in output for a test result. In that case, accList
-    // will be empty, so return whatever was found, even if it will be unstyled
-    // and prevent next createSubgroup calls from throwing due to empty lists.
-    accList.push(null);
+  if (!msg) return elementArray;
 
-    return accList.reduce<MsgElement[]>((eacc, el, ei) => {
-      if (injectionPoint === 0 && ei === 0) {
-        // at index 0, inject before
-        return eacc.concat(grouper(grouped, grouperIndex)).concat(el);
+  const splitText = msg
+    .split(/\[2m/)
+    .join('')
+    .split(/\[22m/);
+
+  splitText.forEach(element => {
+    if (element && element.trim()) {
+      if (
+        element.indexOf(failStartToken) > -1 &&
+        element.indexOf(failStartToken) < element.indexOf(endToken)
+      ) {
+        elementArray = elementArray.concat(colorizeText(element, negativeType));
+      } else if (
+        element.indexOf(passStartToken) > -1 &&
+        element.indexOf(passStartToken) < element.indexOf(endToken)
+      ) {
+        elementArray = elementArray.concat(colorizeText(element, positiveType));
+      } else {
+        elementArray = elementArray.concat(element);
       }
-      if (injectionPoint > 0 && injectionPoint === ei + 1) {
-        // at index > 0, and next index WOULD BE injectionPoint, inject after
-        return eacc.concat(el).concat(grouper(grouped, grouperIndex));
+    }
+  });
+  return elementArray;
+};
+
+const getTestDetail: (msg: string) => TestDetail = (msg: string) => {
+  const lines = msg.split('\n').filter(Boolean);
+
+  const testDetail: TestDetail = new TestDetail();
+  testDetail.description = getConvertedText(lines[0]);
+  testDetail.stackTrace = '';
+  testDetail.result = [];
+
+  for (let index = 1; index < lines.length; index += 1) {
+    const current = lines[index];
+    const next = lines[index + 1];
+
+    if (
+      current
+        .trim()
+        .toLowerCase()
+        .indexOf(stackTraceStartToken) === 0
+    ) {
+      testDetail.stackTrace += `${current.trim()}\n`;
+    } else if (current.trim().indexOf(titleEndToken) > -1) {
+      let title;
+      let value = null;
+      if (current.trim().indexOf(titleEndToken) === current.length - 1) {
+        // there are breaks in the middle of result
+        title = current.trim();
+        value = getConvertedText(next);
+        index += 1;
+      } else {
+        // results come in a single line
+        title = current.substring(0, current.indexOf(titleEndToken)).trim();
+        value = getConvertedText(current.substring(current.indexOf(titleEndToken), current.length));
       }
-      // do not inject
-      return eacc.concat(el);
-    }, []);
+      testDetail.result = [...testDetail.result, title, ' ', ...value, <br key={index} />];
+    } else {
+      // results come in an unexpected format
+      testDetail.result = [...testDetail.result, ' ', ...getConvertedText(current)];
+    }
   }
-  return acc;
+
+  return testDetail;
 };
 
 interface MessageProps {
   msg: string;
 }
 
-type MsgElement = string | JSX.Element;
+export const Message = (props: any) => {
+  const { msg } = props;
 
-const Message = ({ msg }: MessageProps) => {
-  const data = patterns
-    .reduce((acc, regex) => acc.replace(regex, ''), msg)
-    .split(/\[2m/)
-    .join('')
-    .split(/\[22m/)
-    .reduce((acc, item) => acc.concat(item), [] as string[])
-    .map((item, li) =>
-      item
-        .split(/\[32m(.*?)\[39m/)
-        .map((i, index) => (index % 2 ? <Positive key={`p_${li}_${i}`}>{i}</Positive> : i))
-    )
-    .reduce((acc, item) => acc.concat(item))
-    .map((item, li) =>
-      typeof item === 'string'
-        ? item
-            .split(/\[31m(.*?)\[39m/)
-            .map((i, index) => (index % 2 ? <Negative key={`n_${li}_${i}`}>{i}</Negative> : i))
-        : item
-    )
-    .reduce<MsgElement[]>((acc, item) => acc.concat(item), [])
-    .reduce(
-      createSubgroup({
-        startTrigger: e => typeof e === 'string' && e.indexOf('Error: ') === 0,
-        endTrigger: e => typeof e === 'string' && Boolean(e.match('Expected ')),
-        grouper: (list, key) => <Main key={key} msg={list} />,
-      }),
-      []
-    )
-    .reduce(
-      (acc, it) =>
-        typeof it === 'string' ? acc.concat(it.split(/(at(.|\n)+\d+:\d+\))/)) : acc.concat(it),
-      [] as MsgElement[]
-    )
-    .reduce((acc, item) => acc.concat(item), [] as MsgElement[])
-    .reduce(
-      createSubgroup({
-        startTrigger: e => typeof e === 'string' && e.indexOf('Expected ') !== -1,
-        endTrigger: e => typeof e === 'string' && Boolean(e.match(/^at/)),
-        grouper: (list, key) => <Sub key={key} msg={list} />,
-      }),
-      []
-    )
-    .reduce(
-      createSubgroup({
-        startTrigger: e => typeof e === 'string' && Boolean(e.match(/at(.|\n)+\d+:\d+\)/)),
-        endTrigger: () => false,
-        grouper: (list, key) => <StackTrace key={key} trace={list} />,
-      }),
-      []
-    );
-
-  return <Pre>{data}</Pre>;
+  const detail: TestDetail = getTestDetail(msg);
+  return (
+    <Fragment>
+      {detail.description ? <Description>{detail.description}</Description> : null}
+      {detail.result ? <Results>{detail.result}</Results> : null}
+      {detail.stackTrace ? <StackTrace>{detail.stackTrace}</StackTrace> : null}
+    </Fragment>
+  );
 };
 
 export default Message;

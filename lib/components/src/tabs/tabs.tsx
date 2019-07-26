@@ -109,22 +109,25 @@ export const panelProps = {
 };
 
 const childrenToList = (children: any, selected: string) =>
-  Children.toArray(children).map(({ props: { title, id, children: childrenOfChild } }, index) => {
-    const content = Array.isArray(childrenOfChild) ? childrenOfChild[0] : childrenOfChild;
-    return {
-      active: selected ? id === selected : index === 0,
-      title,
-      id,
-      render:
-        typeof content === 'function'
-          ? content
-          : ({ active, key }: any) => (
-              <VisuallyHidden key={key} active={active} role="tabpanel">
-                {content}
-              </VisuallyHidden>
-            ),
-    };
-  });
+  Children.toArray(children).map(
+    ({ props: { title, id, color, children: childrenOfChild } }, index) => {
+      const content = Array.isArray(childrenOfChild) ? childrenOfChild[0] : childrenOfChild;
+      return {
+        active: selected ? id === selected : index === 0,
+        title,
+        id,
+        color,
+        render:
+          typeof content === 'function'
+            ? content
+            : ({ active, key }: any) => (
+                <VisuallyHidden key={key} active={active} role="tabpanel">
+                  {content}
+                </VisuallyHidden>
+              ),
+      };
+    }
+  );
 
 export interface TabsProps {
   id?: string;
@@ -134,23 +137,34 @@ export interface TabsProps {
   actions?: {
     onSelect: (id: string) => void;
   };
+  backgroundColor?: string;
   absolute?: boolean;
   bordered?: boolean;
 }
 
 export const Tabs = React.memo<TabsProps>(
-  ({ children, selected, actions, absolute, bordered, tools, id: htmlId }: TabsProps) => {
+  ({
+    children,
+    selected,
+    actions,
+    absolute,
+    bordered,
+    tools,
+    backgroundColor,
+    id: htmlId,
+  }: TabsProps) => {
     const list = childrenToList(children, selected);
 
     return list.length ? (
       <Wrapper absolute={absolute} bordered={bordered} id={htmlId}>
-        <FlexBar border>
+        <FlexBar border backgroundColor={backgroundColor}>
           <TabBar role="tablist">
-            {list.map(({ title, id, active }) => (
+            {list.map(({ title, id, active, color }) => (
               <TabButton
                 type="button"
                 key={id}
                 active={active}
+                textColor={color}
                 onClick={(e: MouseEvent) => {
                   e.preventDefault();
                   actions.onSelect(id);
@@ -191,6 +205,7 @@ export interface TabsStateProps {
   initial: string;
   absolute: boolean;
   bordered: boolean;
+  backgroundColor: string;
 }
 
 export interface TabsStateState {
@@ -203,6 +218,7 @@ export class TabsState extends Component<TabsStateProps, TabsStateState> {
     initial: null,
     absolute: false,
     bordered: false,
+    backgroundColor: '',
   };
 
   constructor(props: TabsStateProps) {
@@ -214,13 +230,14 @@ export class TabsState extends Component<TabsStateProps, TabsStateState> {
   }
 
   render() {
-    const { bordered = false, absolute = false, children } = this.props;
+    const { bordered = false, absolute = false, children, backgroundColor } = this.props;
     const { selected } = this.state;
     return (
       <Tabs
         bordered={bordered}
         absolute={absolute}
         selected={selected}
+        backgroundColor={backgroundColor}
         actions={{
           onSelect: id => this.setState({ selected: id }),
         }}

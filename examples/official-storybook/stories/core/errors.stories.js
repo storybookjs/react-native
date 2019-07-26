@@ -9,10 +9,12 @@ export default {
 export const exception = () => {
   throw new Error('storyFn threw an error! WHOOPS');
 };
-exception.title = 'story throws exception';
-exception.parameters = {
-  storyshots: { disable: true },
-  chromatic: { disable: true },
+exception.story = {
+  name: 'story throws exception',
+  parameters: {
+    storyshots: { disable: true },
+    chromatic: { disable: true },
+  },
 };
 
 export const badComponent = () => (
@@ -21,17 +23,21 @@ export const badComponent = () => (
     <BadComponent />
   </Fragment>
 );
-badComponent.title = 'story errors - variant error';
-badComponent.parameters = {
-  notes: 'Story does not return something react can render',
-  storyshots: { disable: true },
-  chromatic: { disable: true },
+badComponent.story = {
+  name: 'story errors - variant error',
+  parameters: {
+    notes: 'Story does not return something react can render',
+    storyshots: { disable: true },
+    chromatic: { disable: true },
+  },
 };
 
 export const badStory = () => false;
-badStory.title = 'story errors - story un-renderable type';
-badStory.parameters = {
-  notes: 'Story does not return something react can render',
-  storyshots: { disable: true },
-  chromatic: { disable: true },
+badStory.story = {
+  name: 'story errors - story un-renderable type',
+  parameters: {
+    notes: 'Story does not return something react can render',
+    storyshots: { disable: true },
+    chromatic: { disable: true },
+  },
 };

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-api",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Storybook Client API",
   "keywords": [
     "storybook"
@@ -16,22 +16,26 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.30",
-    "@storybook/client-logger": "5.2.0-alpha.30",
-    "@storybook/core-events": "5.2.0-alpha.30",
-    "@storybook/router": "5.2.0-alpha.30",
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/channel-postmessage": "5.2.0-beta.10",
+    "@storybook/channels": "5.2.0-beta.10",
+    "@storybook/client-logger": "5.2.0-beta.10",
+    "@storybook/core-events": "5.2.0-beta.10",
+    "@storybook/router": "5.2.0-beta.10",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
-    "eventemitter3": "^3.1.0",
+    "eventemitter3": "^4.0.0",
     "global": "^4.3.2",
     "is-plain-object": "^3.0.0",
     "lodash": "^4.17.11",
     "memoizerific": "^1.11.3",
-    "qs": "^6.6.0"
+    "qs": "^6.6.0",
+    "util-deprecate": "^1.0.2"
   },
   "publishConfig": {
     "access": "public"

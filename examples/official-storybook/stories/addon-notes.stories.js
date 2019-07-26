@@ -1,12 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import BaseButton from '../components/BaseButton';
 import markdownNotes from './notes/notes.md';
-
-const baseStory = () => (
-  <BaseButton label="Button with notes - check the notes panel for details" />
-);
 
 const markdownString = `
 # Documentation
@@ -72,20 +67,62 @@ const giphyMarkdown = `
 <Giphy query="cheese" />
 `;
 
-storiesOf('Addons|Notes', module)
-  .add('addon notes', baseStory, {
+export default {
+  title: 'Addons|Notes',
+};
+
+export const addonNotes = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
+
+addonNotes.story = {
+  name: 'addon notes',
+  parameters: {
     notes:
       'This is the notes for a button. This is helpful for adding details about a story in a separate panel.',
-  })
-  .add('addon notes rendering imported markdown', baseStory, {
+  },
+};
+
+export const addonNotesRenderingImportedMarkdown = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
+
+addonNotesRenderingImportedMarkdown.story = {
+  name: 'addon notes rendering imported markdown',
+  parameters: {
     notes: { markdown: markdownNotes },
-  })
-  .add('addon notes rendering inline, github-flavored markdown', baseStory, {
+  },
+};
+
+export const addonNotesRenderingInlineGithubFlavoredMarkdown = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
+
+addonNotesRenderingInlineGithubFlavoredMarkdown.story = {
+  name: 'addon notes rendering inline, github-flavored markdown',
+  parameters: {
     notes: { markdown: markdownString },
-  })
-  .add('with a markdown table', baseStory, {
+  },
+};
+
+export const withAMarkdownTable = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
+
+withAMarkdownTable.story = {
+  name: 'with a markdown table',
+  parameters: {
     notes: { markdown: markdownTable },
-  })
-  .add('with a markdown giphy', baseStory, {
+  },
+};
+
+export const withAMarkdownGiphy = () => (
+  <BaseButton label="Button with notes - check the notes panel for details" />
+);
+
+withAMarkdownGiphy.story = {
+  name: 'with a markdown giphy',
+  parameters: {
     notes: { markdown: giphyMarkdown },
-  });
+  },
+};

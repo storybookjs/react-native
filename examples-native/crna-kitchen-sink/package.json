@@ -1,6 +1,6 @@
 {
   "name": "crna-kitchen-sink",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -15,30 +15,30 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^32.0.6",
+    "expo": "^33.0.7",
     "prop-types": "^15.6.2",
     "react": "16.8.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-transform-react-jsx-source": "^7.2.0",
-    "@storybook/addon-actions": "5.2.0-alpha.30",
-    "@storybook/addon-knobs": "5.2.0-alpha.30",
-    "@storybook/addon-ondevice-actions": "5.2.0-alpha.30",
-    "@storybook/addon-ondevice-backgrounds": "5.2.0-alpha.30",
-    "@storybook/addon-ondevice-knobs": "5.2.0-alpha.30",
-    "@storybook/addon-ondevice-notes": "5.2.0-alpha.30",
-    "@storybook/addons": "5.2.0-alpha.30",
-    "@storybook/react-native": "5.2.0-alpha.30",
+    "@storybook/addon-actions": "5.2.0-beta.10",
+    "@storybook/addon-knobs": "5.2.0-beta.10",
+    "@storybook/addon-ondevice-actions": "5.2.0-beta.10",
+    "@storybook/addon-ondevice-backgrounds": "5.2.0-beta.10",
+    "@storybook/addon-ondevice-knobs": "5.2.0-beta.10",
+    "@storybook/addon-ondevice-notes": "5.2.0-beta.10",
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/react-native": "5.2.0-beta.10",
     "babel-loader": "^8.0.4",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-expo": "^5.1.1",
     "core-js": "^3.0.1",
     "expo-cli": "^2.17.1",
     "jest-expo": "^33.0.2",
-    "react-test-renderer": "16.5.1",
+    "react-test-renderer": "16.8.6",
     "schedule": "^0.5.0"
   },
   "workspaces": {

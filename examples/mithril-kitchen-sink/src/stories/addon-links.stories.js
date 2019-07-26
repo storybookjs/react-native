@@ -2,10 +2,14 @@
 
 import m from 'mithril';
 
-import { storiesOf } from '@storybook/mithril';
 import { linkTo } from '@storybook/addon-links';
 import Button from '../Button';
 
-storiesOf('Addons|Links', module).add('Go to welcome', () => ({
+export default {
+  title: 'Addons|Links',
+};
+
+export const story1 = () => ({
   view: () => <Button onclick={linkTo('Welcome')}>This buttons links to Welcome</Button>,
-}));
+});
+story1.story = { name: 'Go to welcome' };

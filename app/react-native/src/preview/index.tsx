@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { AsyncStorage } from 'react-native';
 import { ThemeProvider } from 'emotion-theming';
@@ -32,17 +33,20 @@ export type Params = {
 } & EmotionProps;
 
 export default class Preview {
-  currentStory: any;
   _clientApi: ClientApi;
+
   _stories: StoryStore;
+
   _addons: any;
+
   _decorators: any[];
+
+  _asyncStorageStoryId: string;
 
   constructor() {
     this._addons = {};
     this._decorators = [];
-
-    this._stories = new StoryStore({});
+    this._stories = new StoryStore({ channel: null });
     this._clientApi = new ClientApi({ storyStore: this._stories });
   }
 
@@ -64,9 +68,6 @@ export default class Preview {
 
     const onDeviceUI = params.onDeviceUI !== false;
     const { initialSelection, shouldPersistSelection } = params;
-    // should the initial story be sent to storybookUI
-    // set to true if using disableWebsockets or if connection to WebsocketServer fails.
-    let setInitialStory = false;
 
     try {
       channel = addons.getChannel();
@@ -78,6 +79,7 @@ export default class Preview {
     if (!channel || params.resetStorybook) {
       if (onDeviceUI && params.disableWebsockets) {
         channel = new Channel({ async: true });
+        this._setInitialStory(initialSelection, shouldPersistSelection);
       } else {
         const host = getHost(params.host || 'localhost');
         const port = `:${params.port || 7007}`;
@@ -93,11 +95,7 @@ export default class Preview {
           url,
           async: onDeviceUI,
           onError: () => {
-            // We are both emitting event and telling the component to get initial story. It may happen that component is created before the error or vise versa.
-            // This way we handle both cases
             this._setInitialStory(initialSelection, shouldPersistSelection);
-
-            setInitialStory = true;
           },
         });
       }
@@ -113,13 +111,6 @@ export default class Preview {
 
     this._sendSetStories();
 
-    // If the app is started with server running, set the story as the one selected in the browser
-    if (webUrl) {
-      this._sendGetCurrentStory();
-    } else {
-      setInitialStory = true;
-    }
-
     const preview = this;
 
     addons.loadAddons(this._clientApi);
@@ -127,7 +118,6 @@ export default class Preview {
     const appliedTheme = { ...theme, ...params.theme };
 
     // react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
-    // eslint-disable-next-line react/prefer-stateless-function
     return class StorybookRoot extends React.PureComponent {
       render() {
         if (onDeviceUI) {
@@ -138,11 +128,6 @@ export default class Preview {
                 url={webUrl}
                 isUIHidden={params.isUIHidden}
                 tabOpen={params.tabOpen}
-                getInitialStory={
-                  setInitialStory
-                    ? preview._getInitialStory(initialSelection, shouldPersistSelection)
-                    : null
-                }
                 shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
                 keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
               />
@@ -152,7 +137,7 @@ export default class Preview {
 
         return (
           <ThemeProvider theme={appliedTheme}>
-            <StoryView url={webUrl} listenToEvents />
+            <StoryView stories={preview._stories} url={webUrl} />
           </ThemeProvider>
         );
       }
@@ -164,14 +149,6 @@ export default class Preview {
     const stories = this._stories.extract();
     channel.emit(Events.SET_STORIES, { stories });
     channel.emit(Events.STORIES_CONFIGURED);
-    if (this.currentStory) {
-      channel.emit(Events.SET_CURRENT_STORY, this.currentStory);
-    }
-  }
-
-  _sendGetCurrentStory() {
-    const channel = addons.getChannel();
-    channel.emit(Events.GET_CURRENT_STORY);
   }
 
   _setInitialStory = async (initialSelection: any, shouldPersistSelection = true) => {
@@ -187,11 +164,18 @@ export default class Preview {
     if (initialSelection && this._checkStory(initialSelection)) {
       story = initialSelection;
     } else if (shouldPersistSelection) {
-      const value = await AsyncStorage.getItem(STORAGE_KEY);
-      const previousStory = JSON.parse(value);
+      try {
+        let value = this._asyncStorageStoryId;
+        if (!value) {
+          value = JSON.parse(await AsyncStorage.getItem(STORAGE_KEY));
+          this._asyncStorageStoryId = value;
+        }
 
-      if (this._checkStory(previousStory)) {
-        story = previousStory;
+        if (this._checkStory(value)) {
+          story = value;
+        }
+      } catch (e) {
+        //
       }
     }
 
@@ -199,43 +183,44 @@ export default class Preview {
       return this._getStory(story);
     }
 
-    const dump = this._stories.dumpStoryBook();
-
-    const nonEmptyKind = dump.find((kind: any) => kind.stories.length > 0);
-    if (nonEmptyKind) {
-      return this._getStory({ kind: nonEmptyKind.kind, story: nonEmptyKind.stories[0] });
+    const stories = this._stories.raw();
+    if (stories && stories.length) {
+      return this._getStory(stories[0].id);
     }
 
     return null;
   };
 
-  _getStory(selection: { kind: string; story: string }) {
-    const { kind, story } = selection;
-    const storyFn = this._stories.getStoryWithContext(kind, story);
-    return { ...selection, storyFn };
+  _getStory(storyId: string) {
+    return this._stories.fromId(storyId);
   }
 
-  _selectStoryEvent(selection: { kind: string; story: string }) {
-    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(selection));
+  _selectStoryEvent({ storyId }: { storyId: string }) {
+    if (storyId) {
+      try {
+        AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(storyId));
+      } catch (e) {
+        //
+      }
 
-    if (selection) {
-      const story = this._getStory(selection);
+      const story = this._getStory(storyId);
       this._selectStory(story);
     }
   }
 
   _selectStory(story: any) {
-    this.currentStory = story;
     const channel = addons.getChannel();
+
+    this._stories.setSelection({ storyId: story.id, viewMode: 'story' }, null);
     channel.emit(Events.SELECT_STORY, story);
   }
 
-  _checkStory(selection: any) {
-    if (!selection || typeof selection !== 'object' || !selection.kind || !selection.story) {
+  _checkStory(storyId: string) {
+    if (!storyId) {
       return null;
     }
 
-    const story = this._getStory(selection);
+    const story = this._getStory(storyId);
 
     if (story.storyFn === null) {
       return null;

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Storybook for React: Develop React Component in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -29,8 +29,9 @@
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/core": "5.2.0-alpha.30",
-    "@storybook/node-logger": "5.2.0-alpha.30",
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/core": "5.2.0-beta.10",
+    "@storybook/node-logger": "5.2.0-beta.10",
     "@svgr/webpack": "^4.0.3",
     "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-named-asset-import": "^0.3.1",
@@ -48,9 +49,15 @@
     "webpack": "^4.33.0"
   },
   "peerDependencies": {
+    "@babel/core": "^7.0.1",
     "babel-loader": "^7.0.0 || ^8.0.0",
     "react": "*",
     "react-dom": "*"
+  },
+  "devDependencies": {
+    "@types/mini-css-extract-plugin": "^0.2.1",
+    "@types/node": "^12.0.8",
+    "@types/webpack": "^4.4.32"
   },
   "engines": {
     "node": ">=8.0.0"

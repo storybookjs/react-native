@@ -11,7 +11,7 @@ const Item = styled.li({
   fontWeight: 600,
 });
 
-const ItemTitle = styled.span(({ theme }) => ({
+const ItemTitle = styled.span<{}>(({ theme }) => ({
   borderBottom: `1px solid ${theme.appBorderColor}`,
   width: '100%',
   display: 'flex',

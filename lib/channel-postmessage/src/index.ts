@@ -67,12 +67,18 @@ export class PostmsgTransport {
       });
     }
     let depth = 15;
+    let allowFunction = true;
+
+    if (options && typeof options.allowFunction === 'boolean') {
+      // eslint-disable-next-line prefer-destructuring
+      allowFunction = options.allowFunction;
+    }
     if (options && Number.isInteger(options.depth)) {
       // eslint-disable-next-line prefer-destructuring
       depth = options.depth;
     }
 
-    const data = stringify({ key: KEY, event }, { maxDepth: depth });
+    const data = stringify({ key: KEY, event }, { maxDepth: depth, allowFunction });
 
     // TODO: investigate http://blog.teamtreehouse.com/cross-domain-messaging-with-postmessage
     // might replace '*' with document.location ?

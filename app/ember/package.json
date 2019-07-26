@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ember",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Storybook for Ember: Develop Ember Component in isolation with Hot Reloading.",
   "homepage": "https://github.com/storybookjs/storybook/tree/master/app/ember",
   "bugs": {
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@ember/test-helpers": "^1.5.0",
-    "@storybook/core": "5.2.0-alpha.30",
+    "@storybook/core": "5.2.0-beta.10",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "5.2.0-alpha.30",
+  "version": "5.2.0-beta.10",
   "description": "Storybook Addon Prop Editor Component",
   "keywords": [
     "addon",
@@ -17,16 +17,17 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-alpha.30",
-    "@storybook/client-api": "5.2.0-alpha.30",
-    "@storybook/components": "5.2.0-alpha.30",
-    "@storybook/core-events": "5.2.0-alpha.30",
-    "@storybook/theming": "5.2.0-alpha.30",
+    "@storybook/addons": "5.2.0-beta.10",
+    "@storybook/api": "5.2.0-beta.10",
+    "@storybook/client-api": "5.2.0-beta.10",
+    "@storybook/components": "5.2.0-beta.10",
+    "@storybook/core-events": "5.2.0-beta.10",
+    "@storybook/theming": "5.2.0-beta.10",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "escape-html": "^1.0.3",
@@ -37,12 +38,18 @@
     "qs": "^6.6.0",
     "react-color": "^2.17.0",
     "react-lifecycles-compat": "^3.0.4",
-    "react-select": "^2.2.0"
+    "react-select": "^3.0.0"
   },
   "peerDependencies": {
     "react": "*"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@types/escape-html": "0.0.20",
+    "@types/react-color": "^3.0.1",
+    "@types/react-lifecycles-compat": "^3.0.1",
+    "@types/react-select": "^2.0.19"
   }
 }

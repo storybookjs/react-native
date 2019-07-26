@@ -4,26 +4,18 @@ const path = require('path');
 const shell = require('shelljs');
 
 function getCommand(watch) {
-  const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
+  // Compile angular with tsc
+  if (process.cwd().includes(path.join('app', 'angular'))) {
+    return '';
+  }
 
-  const ignore = [
-    '**/__mocks__/',
-    '**/tests/',
-    '**/__tests__/',
-    '**/*.test.*',
-    '**/stories/',
-    '**/*.story.*',
-    '**/*.stories.*',
-    '**/__snapshots__',
-    '**/*.d.ts',
-  ];
+  const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
 
   const args = [
     './src',
     '--out-dir ./dist',
     `--config-file ${path.resolve(__dirname, '../.babelrc.js')}`,
     `--copy-files`,
-    `--ignore "${ignore.join('","')}"`,
   ];
 
   /*
@@ -31,10 +23,7 @@ function getCommand(watch) {
    * runtime errors because of the the babel decorators plugin
    * Only transpile .js and let tsc do the job for .ts files
    */
-  if (
-    process.cwd().includes(path.join('app', 'angular')) ||
-    process.cwd().includes(path.join('addons', 'storyshots'))
-  ) {
+  if (process.cwd().includes(path.join('addons', 'storyshots'))) {
     args.push(`--extensions ".js"`);
   } else {
     args.push(`--extensions ".js,.jsx,.ts,.tsx"`);
@@ -68,9 +57,10 @@ function babelify(options = {}) {
   }
 
   const command = getCommand(watch);
-  const { code, stderr } = shell.exec(command, { silent });
-
-  handleExit(code, stderr, errorCallback);
+  if (command !== '') {
+    const { code, stderr } = shell.exec(command, { silent });
+    handleExit(code, stderr, errorCallback);
+  }
 }
 
 module.exports = {

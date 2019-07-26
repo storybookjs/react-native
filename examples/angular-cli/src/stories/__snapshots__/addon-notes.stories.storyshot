@@ -7,10 +7,10 @@ exports[`Storyshots Addon|Notes Note with HTML 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-button-component
-    _nghost-a-c9=""
+    _nghost-a-c6=""
   >
     <button
-      _ngcontent-a-c9=""
+      _ngcontent-a-c6=""
     >
       Notes with HTML
     </button>
@@ -25,10 +25,10 @@ exports[`Storyshots Addon|Notes Simple note 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-button-component
-    _nghost-a-c8=""
+    _nghost-a-c5=""
   >
     <button
-      _ngcontent-a-c8=""
+      _ngcontent-a-c5=""
     >
       Notes on some Button
     </button>
