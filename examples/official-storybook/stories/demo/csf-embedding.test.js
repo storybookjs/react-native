@@ -1,5 +1,6 @@
+import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
-import { withText, withCounter } from './button.stories';
+import { withText as WithText, withCounter as WithCounter } from './button.stories';
 
 const mockAction = jest.fn();
 jest.mock('@storybook/addon-actions', () => ({
@@ -8,13 +9,13 @@ jest.mock('@storybook/addon-actions', () => ({
 
 describe('module story embedding', () => {
   it('should test actions', () => {
-    const comp = render(withText());
+    const comp = render(<WithText />);
     fireEvent.click(comp.getByText('Hello Button'));
     expect(mockAction).toHaveBeenCalled();
   });
 
   it('should test story state', () => {
-    const comp = render(withCounter());
+    const comp = render(<WithCounter />);
     fireEvent.click(comp.getByText('Testing: 0'));
     expect(comp.getByText('Testing: 1')).toBeTruthy();
   });
