@@ -1,4 +1,4 @@
-import { load, addParameters, addDecorator } from '@storybook/vue';
+import { configure, addParameters, addDecorator } from '@storybook/vue';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { withA11y } from '@storybook/addon-a11y';
@@ -20,4 +20,4 @@ addParameters({
   docs: DocsPage,
 });
 
-load(require.context('../src/stories', true, /\.stories\.(js|mdx)$/), module);
+configure(require.context('../src/stories', true, /\.stories\.(js|mdx)$/), module);
