@@ -1,4 +1,4 @@
-import addons, { Parameters } from '@storybook/addons';
+import addons, { Parameters, DecoratorFunction, StoryFn } from '@storybook/addons';
 import deprecate from 'util-deprecate';
 import { normalize, sep } from 'upath';
 import { ADD_TESTS } from './shared';
@@ -48,16 +48,19 @@ const emitAddTests = ({ kind, story, testFiles, options }: EmitAddTestsArg) => {
   });
 };
 
-export const withTests = (userOptions: { results: any; filesExt?: string }) => {
+export const withTests = (userOptions: {
+  results: any;
+  filesExt?: string;
+}): DecoratorFunction<unknown> => {
   const defaultOptions = {
     filesExt: '((\\.specs?)|(\\.tests?))?(\\.[jt]sx?)?$',
   };
   const options = { ...defaultOptions, ...userOptions };
 
-  return (...args: [(string | (() => void)), { kind: string; parameters: AddonParameters }]) => {
+  return (...args) => {
     if (typeof args[0] === 'string') {
-      return deprecate((storyFn: () => void, { kind }: { kind: string }) => {
-        emitAddTests({ kind, story: storyFn, testFiles: args as string[], options });
+      return deprecate((storyFn: StoryFn<unknown>, { kind }: Parameters) => {
+        emitAddTests({ kind, story: storyFn, testFiles: (args as any) as string[], options });
 
         return storyFn();
       }, 'Passing component filenames to the `@storybook/addon-jest` via `withTests` is deprecated. Instead, use the `jest` story parameter');
