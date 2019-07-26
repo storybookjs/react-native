@@ -1,5 +1,7 @@
 # Migration
 
+- [From version 5.1.x to 5.1.10](#from-version-51x-to-5110)
+  - [babel.config.js support](#babelconfigjs-support)
 - [From version 5.0.x to 5.1.x](#from-version-50x-to-51x)
   - [React native server](#react-native-server)
   - [Angular 7](#angular-7)
@@ -55,6 +57,12 @@
   - [Webpack upgrade](#webpack-upgrade)
   - [Packages renaming](#packages-renaming)
   - [Deprecated embedded addons](#deprecated-embedded-addons)
+
+## From version 5.1.x to 5.1.10
+
+### babel.config.js support
+
+SB 5.1.0 added [support for project root `babel.config.js` files](https://github.com/storybookjs/storybook/pull/6634), which was an [unintentional breaking change](https://github.com/storybookjs/storybook/issues/7058#issuecomment-515398228). 5.1.10 fixes this, but if you relied on project root `babel.config.js` support, this bugfix is a breaking change. The workaround is to copy the file into your `.storybook` config directory. We may add back project-level support in 6.0.
 
 ## From version 5.0.x to 5.1.x
 
