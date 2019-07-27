@@ -49,6 +49,7 @@ export default function render({
     root[COMPONENT] = element;
   }
 
+  // @ts-ignore I'm not sure why we need this, but types are incompatible
   root[VALUES] = element.options[VALUES];
 
   if (!root.$el) {
