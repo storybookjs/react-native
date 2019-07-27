@@ -7,5 +7,4 @@ export {
   getStorybook,
   forceReRender,
   raw,
-  load,
 } from './preview';

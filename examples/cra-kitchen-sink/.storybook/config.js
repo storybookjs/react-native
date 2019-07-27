@@ -1,4 +1,4 @@
-import { load, addParameters, addDecorator } from '@storybook/react';
+import { configure, addParameters, addDecorator } from '@storybook/react';
 import { create } from '@storybook/theming';
 import { withA11y } from '@storybook/addon-a11y';
 import { DocsPage } from '@storybook/addon-docs/blocks';
@@ -24,4 +24,4 @@ addParameters({
   docs: DocsPage,
 });
 
-load(require.context('../src/stories', true, /\.stories\.(js|mdx)$/), module);
+configure(require.context('../src/stories', true, /\.stories\.(js|mdx)$/), module);

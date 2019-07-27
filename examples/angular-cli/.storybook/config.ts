@@ -1,4 +1,4 @@
-import { load, addParameters, addDecorator } from '@storybook/angular';
+import { configure, addParameters, addDecorator } from '@storybook/angular';
 import { withA11y } from '@storybook/addon-a11y';
 import { DocsPage } from '@storybook/addon-docs/blocks';
 import addCssWarning from '../src/cssWarning';
@@ -16,4 +16,4 @@ addParameters({
   docs: DocsPage,
 });
 
-load(require.context('../src/stories', true, /\.stories\.(ts|mdx)$/), module);
+configure(require.context('../src/stories', true, /\.stories\.(ts|mdx)$/), module);
