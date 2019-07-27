@@ -1,4 +1,4 @@
-## 5.2.0-beta.11 (July 27, 2019)
+## 5.2.0-beta.12 (July 27, 2019)
 
 ### Bug Fixes
 
@@ -8,6 +8,10 @@
 ### Maintenance
 
 * Angular: Print error message if angular.json has no default project specified ([#7574](https://github.com/storybookjs/storybook/pull/7574))
+
+## 5.2.0-beta.11 (July 26, 2019)
+
+Failed release
 
 ## 5.2.0-beta.10 (July 26, 2019)
 
