@@ -1,3 +1,13 @@
+## 5.2.0-beta.13 (July 27, 2019)
+
+This is a breaking change for anybody who used `load` on an earlier 5.2 pre-release. Simply rename `load` to `configure` in your storybook config and that should fix things.
+
+If you're not using SB Docs, you probably don't have to worry about this.
+
+### Breaking Changes
+
+* Core: Rename `load` to `configure` ([#7576](https://github.com/storybookjs/storybook/pull/7576))
+
 ## 5.2.0-beta.12 (July 27, 2019)
 
 ### Bug Fixes
