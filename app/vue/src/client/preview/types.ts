@@ -1,3 +1,5 @@
+import Vue, { ComponentOptions } from 'vue';
+import { StoryFn } from '@storybook/addons';
 // TODO, 'any' should be what is actually expected from a storyFn
 
 export interface ShowErrorArgs {
@@ -6,7 +8,7 @@ export interface ShowErrorArgs {
 }
 
 export interface RenderMainArgs {
-  storyFn: () => any;
+  storyFn: StoryFn<StoryFnVueReturnType>;
   selectedKind: string;
   selectedStory: string;
   showMain: () => void;
@@ -16,7 +18,7 @@ export interface RenderMainArgs {
 }
 
 // TODO: some vue expert needs to look at this
-export type StoryFnVueReturnType = any;
+export type StoryFnVueReturnType = ComponentOptions<Vue>;
 
 export interface ICollection {
   [p: string]: any;

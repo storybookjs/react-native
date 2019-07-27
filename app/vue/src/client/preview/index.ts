@@ -65,7 +65,7 @@ function decorateStory(
 ): StoryFn<StoryFnVueReturnType> {
   return decorators.reduce(
     (decorated, decorator) => (context: StoryContext = defaultContext) => {
-      let story: StoryFn<StoryFnVueReturnType>;
+      let story: StoryFnVueReturnType;
 
       const decoratedStory = decorator(p => {
         story = decorated(
