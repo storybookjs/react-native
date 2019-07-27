@@ -44,7 +44,7 @@
     "webpack": "^4.33.0"
   },
   "peerDependencies": {
-    "@angular-devkit/build-angular": ">=6.0.0",
+    "@angular-devkit/build-angular": ">=0.8.9",
     "@angular-devkit/core": "^0.6.1 || >=7.0.0",
     "@angular/common": ">=6.0.0",
     "@angular/compiler": ">=6.0.0",
