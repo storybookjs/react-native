@@ -1,6 +1,6 @@
 # Storybook Addon Knobs
 
-Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
+Storybook Addon Knobs allow you to edit props dynamically using the Storybook UI.
 You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
 
 [Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
