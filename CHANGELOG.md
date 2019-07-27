@@ -1,3 +1,28 @@
+## 5.2.0-beta.13 (July 27, 2019)
+
+This is a breaking change for anybody who used `load` on an earlier 5.2 pre-release. Simply rename `load` to `configure` in your storybook config and that should fix things.
+
+If you're not using SB Docs, you probably don't have to worry about this.
+
+### Breaking Changes
+
+* Core: Rename `load` to `configure` ([#7576](https://github.com/storybookjs/storybook/pull/7576))
+
+## 5.2.0-beta.12 (July 27, 2019)
+
+### Bug Fixes
+
+* Addon-knobs: Fix select knob default selection when using array values ([#7568](https://github.com/storybookjs/storybook/pull/7568))
+* Addon-knobs: Call onChanges only for changed props ([#6884](https://github.com/storybookjs/storybook/pull/6884))
+
+### Maintenance
+
+* Angular: Print error message if angular.json has no default project specified ([#7574](https://github.com/storybookjs/storybook/pull/7574))
+
+## 5.2.0-beta.11 (July 26, 2019)
+
+Failed release
+
 ## 5.2.0-beta.10 (July 26, 2019)
 
 This is a breaking release that undoes an unintentional breaking change introduced in 5.1.0 (and will also be released as a 5.1.x patch)

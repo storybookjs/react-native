@@ -1,5 +1,5 @@
 import React from 'react';
-import { load, addDecorator, addParameters } from '@storybook/react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { Global, ThemeProvider, themes, createReset, convert } from '@storybook/theming';
 import { DocsPage } from '@storybook/addon-docs/blocks';
 
@@ -60,7 +60,7 @@ addParameters({
   docs: DocsPage,
 });
 
-load(
+configure(
   [
     require.context('../../lib/ui/src', true, /\.stories\.(js|tsx?|mdx)$/),
     require.context('../../lib/components/src', true, /\.stories\.(js|tsx?|mdx)$/),

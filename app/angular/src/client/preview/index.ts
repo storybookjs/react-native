@@ -1,6 +1,6 @@
 /* eslint-disable prefer-destructuring */
 import { start } from '@storybook/core/client';
-import { ClientStoryApi } from '@storybook/addons';
+import { ClientStoryApi, Loadable } from '@storybook/addons';
 
 import './globals';
 import render from './render';
@@ -10,7 +10,7 @@ const framework = 'angular';
 
 interface ClientApi extends ClientStoryApi<StoryFnAngularReturnType> {
   setAddon(addon: any): void;
-  configure(loaders: () => void, module: NodeModule): void;
+  configure(loader: Loadable, module: NodeModule, framework: string): void;
   getStorybook(): IStorybookSection[];
   clearDecorators(): void;
   forceReRender(): void;
@@ -26,12 +26,11 @@ export const storiesOf: ClientApi['storiesOf'] = (kind, m) => {
   });
 };
 
-export const load: ClientApi['load'] = (...args) => api.load(...args, framework);
+export const configure: ClientApi['configure'] = (...args) => api.configure(...args, framework);
 export const addDecorator: ClientApi['addDecorator'] = api.clientApi.addDecorator;
 export const addParameters: ClientApi['addParameters'] = api.clientApi.addParameters;
 export const clearDecorators: ClientApi['clearDecorators'] = api.clientApi.clearDecorators;
 export const setAddon: ClientApi['setAddon'] = api.clientApi.setAddon;
-export const configure: ClientApi['configure'] = api.configApi.configure;
 export const forceReRender: ClientApi['forceReRender'] = api.forceReRender;
 export const getStorybook: ClientApi['getStorybook'] = api.clientApi.getStorybook;
 export const raw: ClientApi['raw'] = api.clientApi.raw;

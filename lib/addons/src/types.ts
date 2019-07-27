@@ -96,3 +96,7 @@ export interface ClientStoryApi<StoryFnReturnType = unknown> {
   addDecorator(decorator: DecoratorFunction<StoryFnReturnType>): StoryApi<StoryFnReturnType>;
   addParameters(parameter: Parameters): StoryApi<StoryFnReturnType>;
 }
+
+type LoadFn = () => any;
+type RequireContext = any; // FIXME
+export type Loadable = RequireContext | [RequireContext] | LoadFn;

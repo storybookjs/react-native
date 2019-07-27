@@ -57,6 +57,7 @@ export interface LegacyData {
 export interface ClientApiAddon<StoryFnReturnType = unknown> extends Addon {
   apply: (a: StoryApi<StoryFnReturnType>, b: any[]) => any;
 }
+
 export interface ClientApiAddons<StoryFnReturnType> {
   [key: string]: ClientApiAddon<StoryFnReturnType>;
 }

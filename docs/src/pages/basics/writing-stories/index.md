@@ -98,12 +98,12 @@ Stories are loaded in the `.storybook/config.js` file.
 The most convenient way to load stories is by filename. For example, if you stories files are located in the `src/components` directory, you can use the following snippet:
 
 ```js
-import { load } from '@storybook/react';
+import { configure } from '@storybook/react';
 
-load(require.context('../src/components', true, /\.stories\.js$/), module);
+configure(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-The `load` function accepts:
+The `configure` function accepts:
 
 - A single `require.context` "`req`"
 - An array of `req`s to load from multiple locations
@@ -112,9 +112,9 @@ The `load` function accepts:
 If you want to load from multiple locations, you could use an array:
 
 ```js
-import { load } from '@storybook/react';
+import { configure } from '@storybook/react';
 
-load([
+configure([
   require.context('../src/components', true, /\.stories\.js$/)
   require.context('../lib', true, /\.stories\.js$/)
 ], module);
@@ -123,7 +123,7 @@ load([
 Or if you want to do some custom loading logic, you can use a loader function. Just remember to return an array of module exports if you want to use the module story format:
 
 ```js
-import { load } from '@storybook/react';
+import { configure } from '@storybook/react';
 
 const loaderFn = () => {
   const allExports = [require('./welcome.stories.js')];
@@ -132,12 +132,14 @@ const loaderFn = () => {
   return allExports;
 };
 
-load(loaderFn, module);
+configure(loaderFn, module);
 ```
 
 Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use `require.context`.
 
-The `load` function is available since Storybook 5.2 and is the recommended way to load stories. It replaces the [configure function](../../formats/storiesof-api/#legacy-loading), which is still in use in most Storybook examples, and is the only way to currently load stories in React Native.
+If you are using the `storiesOf` API directly, or are using `@storybook/react-native` where CSF is unavailable, you should use a loader function with no return value.
+
+Furthermore, the **React Native** packager resolves all imports at build-time, so it's not possible to load modules dynamically. There is a third party loader [react-native-storybook-loader](https://github.com/elderfo/react-native-storybook-loader) to automatically generate the import statements for all stories.
 
 ## Decorators
 
