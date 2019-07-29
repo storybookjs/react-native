@@ -504,6 +504,9 @@ function MDXContent({ components, ...props }) {
       <Story name=\\"hello story\\" mdxType=\\"Story\\">
         <Button mdxType=\\"Button\\">Hello button</Button>
       </Story>
+      <Story name=\\"w/punctuation\\" mdxType=\\"Story\\">
+        <Button mdxType=\\"Button\\">with punctuation</Button>
+      </Story>
     </MDXLayout>
   );
 }
@@ -519,7 +522,12 @@ helloStory.story = {};
 helloStory.story.name = 'hello story';
 helloStory.story.parameters = { mdxSource: '<Button>Hello button</Button>' };
 
-const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory'] };
+export const wPunctuation = () => <Button>with punctuation</Button>;
+wPunctuation.story = {};
+wPunctuation.story.name = 'w/punctuation';
+wPunctuation.story.parameters = { mdxSource: '<Button>with punctuation</Button>' };
+
+const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory', 'wPunctuation'] };
 
 const mdxKind = componentMeta.title || componentMeta.displayName;
 const WrappedMDXContent = ({ context }) => (
