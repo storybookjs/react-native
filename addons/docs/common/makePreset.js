@@ -3,9 +3,9 @@ const common = require('./preset');
 
 module.exports = framework => {
   const frameworkConfig = `${__dirname}/../${framework}/config.js`;
-  const preconfig = fs.existsSync(frameworkConfig) ? [frameworkConfig] : [];
+  const preConfig = fs.existsSync(frameworkConfig) ? [frameworkConfig] : [];
   function config(entry = []) {
-    return [...preconfig, ...entry];
+    return [...preConfig, ...entry];
   }
 
   const configureJSX = framework !== 'react';
