@@ -1,3 +1,5 @@
+import { StoryFnVueReturnType } from './types';
+
 function getType(fn: Function) {
   const match = fn && fn.toString().match(/^\s*function (\w+)/);
   return match ? match[1] : '';
@@ -13,7 +15,8 @@ function resolveDefault({ type, default: def }: any) {
   return def;
 }
 
-export function extractProps(component: any) {
+export function extractProps(component: StoryFnVueReturnType) {
+  // @ts-ignore this options business seems not good according to the types
   return Object.entries(component.options.props || {})
     .map(([name, prop]) => ({ [name]: resolveDefault(prop) }))
     .reduce((wrap, prop) => ({ ...wrap, ...prop }), {});

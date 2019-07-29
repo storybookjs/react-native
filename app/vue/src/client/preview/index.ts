@@ -1,5 +1,5 @@
 /* eslint-disable prefer-destructuring */
-import Vue from 'vue';
+import Vue, { Component, VueConstructor } from 'vue';
 import { start } from '@storybook/core/client';
 import {
   ClientStoryApi,
@@ -17,7 +17,7 @@ import { extractProps } from './util';
 
 export const WRAPS = 'STORYBOOK_WRAPS';
 
-function prepare(rawStory: any, innerStory?: any): StoryFnVueReturnType {
+function prepare(rawStory: string | Component, innerStory?: VueConstructor): StoryFnVueReturnType {
   let story = rawStory;
   // eslint-disable-next-line no-underscore-dangle
   if (!story._isVue) {
@@ -62,7 +62,7 @@ const defaultContext: StoryContext = {
 function decorateStory(
   storyFn: StoryFn<StoryFnVueReturnType>,
   decorators: DecoratorFunction<StoryFnVueReturnType>[]
-): StoryFn<StoryFnVueReturnType> {
+): StoryFn<VueConstructor> {
   return decorators.reduce(
     (decorated, decorator) => (context: StoryContext = defaultContext) => {
       let story: StoryFnVueReturnType;
