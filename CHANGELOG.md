@@ -1,3 +1,18 @@
+## 5.2.0-beta.18 (July 30, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Ensure getNotes/getInfo return string ([#7597](https://github.com/storybookjs/storybook/pull/7597))
+* React/Angular/HTML/Vue: Fix typings for `configure` ([#7598](https://github.com/storybookjs/storybook/pull/7598))
+
+### Maintenance
+
+* Typescript: Migrate Vue ([#7578](https://github.com/storybookjs/storybook/pull/7578))
+
+### Dependency Upgrades
+
+* Upgrade corejs-upgrade-webpack-plugin lazy-universal-dotenv ([#7592](https://github.com/storybookjs/storybook/pull/7592))
+
 ## 5.2.0-beta.17 (July 29, 2019)
 
 ### Bug Fixes
