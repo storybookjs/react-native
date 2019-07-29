@@ -1,4 +1,4 @@
-import { StoryFn, ClientStoryApi } from '@storybook/addons';
+import { StoryFn, ClientStoryApi, Loadable } from '@storybook/addons';
 
 export type StoryFnPreactReturnType = string | Node;
 
@@ -28,7 +28,7 @@ export interface IStorybookSection {
 
 export interface ClientApi extends ClientStoryApi<StoryFnPreactReturnType> {
   setAddon(addon: any): void;
-  configure(loaders: () => void, module: NodeModule): void;
+  configure(loader: Loadable, module: NodeModule, framework: string): void;
   getStorybook(): IStorybookSection[];
   clearDecorators(): void;
   forceReRender(): void;

@@ -1,29 +1,22 @@
 import { start } from '@storybook/core/client';
-import { ClientApi } from './types';
 
 import './globals';
 import render from './render';
+import { ClientApi } from './types';
 
-const api = start(render);
-const { load: coreLoad, clientApi, configApi } = api;
 const framework = 'preact';
+const api = start(render);
 
 export const storiesOf: ClientApi['storiesOf'] = (kind, m) => {
-  return (clientApi.storiesOf(kind, m) as ReturnType<ClientApi['storiesOf']>).addParameters({
+  return (api.clientApi.storiesOf(kind, m) as ReturnType<ClientApi['storiesOf']>).addParameters({
     framework,
   });
 };
-export const load: ClientApi['load'] = (...args: any) => coreLoad(...args, framework);
-export const {
-  addDecorator,
-  addParameters,
-  clearDecorators,
-  setAddon,
-  getStorybook,
-  raw,
-}: Pick<
-  ClientApi,
-  'addDecorator' | 'addParameters' | 'clearDecorators' | 'setAddon' | 'getStorybook' | 'raw'
-> = clientApi;
-export const { configure }: Pick<ClientApi, 'configure'> = configApi;
-export const { forceReRender }: Pick<ClientApi, 'forceReRender'> = api;
+export const configure: ClientApi['configure'] = (...args) => api.configure(...args, framework);
+export const { addDecorator } = api.clientApi;
+export const { addParameters } = api.clientApi;
+export const { clearDecorators } = api.clientApi;
+export const { setAddon } = api.clientApi;
+export const { forceReRender } = api;
+export const { getStorybook } = api.clientApi;
+export const { raw } = api.clientApi;
