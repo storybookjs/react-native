@@ -26,7 +26,8 @@ export const storiesOf: ClientApi['storiesOf'] = (kind, m) => {
   });
 };
 
-export const configure: ClientApi['configure'] = (...args) => api.configure(...args, framework);
+export const configure = (loader: Loadable, module: NodeModule) =>
+  api.configure(loader, module, framework);
 export const addDecorator: ClientApi['addDecorator'] = api.clientApi.addDecorator;
 export const addParameters: ClientApi['addParameters'] = api.clientApi.addParameters;
 export const clearDecorators: ClientApi['clearDecorators'] = api.clientApi.clearDecorators;
