@@ -1,4 +1,4 @@
-## 5.2.0-beta.14 (July 29, 2019)
+## 5.2.0-beta.15 (July 29, 2019)
 
 ### Features
 
@@ -12,6 +12,10 @@
 
 * Update telejson dependency to 2.2.2 ([#7586](https://github.com/storybookjs/storybook/pull/7586))
 * Angular: Fix @angular-devkit/build-angular version ([#7585](https://github.com/storybookjs/storybook/pull/7585))
+
+## 5.2.0-beta.14 (July 29, 2019)
+
+Failed publish
 
 ## 5.2.0-beta.13 (July 27, 2019)
 
