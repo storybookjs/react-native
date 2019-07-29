@@ -1,1 +1,1 @@
-{"version":"5.2.0-beta.16","info":{"plain":"### Features\n\n* Addon-docs: Configure jsx automagically ([#7581](https://github.com/storybookjs/storybook/pull/7581))\n* Addon-docs: Add DocsPage automagically ([#7579](https://github.com/storybookjs/storybook/pull/7579))"}}
+{"version":"5.2.0-beta.17","info":{"plain":"### Bug Fixes\n\n* CLI: Fix storiesof-to-csf migration w/punctuation ([#7590](https://github.com/storybookjs/storybook/pull/7590))"}}
