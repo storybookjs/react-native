@@ -1,4 +1,4 @@
-import { load, addParameters } from '@storybook/react';
+import { configure, addParameters } from '@storybook/react';
 import { create } from '@storybook/theming/create';
 
 addParameters({
@@ -17,4 +17,4 @@ const loadFn = () => {
   return req.keys().map(fname => req(fname));
 };
 
-load(loadFn, module);
+configure(loadFn, module);

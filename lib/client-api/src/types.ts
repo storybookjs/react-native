@@ -58,6 +58,7 @@ export interface LegacyData {
 export interface ClientApiAddon<TApi = unknown> extends Addon {
   apply: (a: StoryApi<TApi>, b: any[]) => any;
 }
+
 export interface ClientApiAddons<TApi> {
   [key: string]: ClientApiAddon<TApi>;
 }

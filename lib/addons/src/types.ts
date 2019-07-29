@@ -93,3 +93,7 @@ export interface ClientStoryApi<TApi> {
   addDecorator(decorator: DecoratorFunction): StoryApi<TApi>;
   addParameters(parameter: Parameters): StoryApi<TApi>;
 }
+
+type LoadFn = () => any;
+type RequireContext = any; // FIXME
+export type Loadable = RequireContext | [RequireContext] | LoadFn;
