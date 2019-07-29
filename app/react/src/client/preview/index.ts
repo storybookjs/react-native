@@ -10,7 +10,7 @@ const framework = 'react';
 
 interface ClientApi extends ClientStoryApi<StoryFnReactReturnType> {
   setAddon(addon: any): void;
-  configure(loader: Loadable, module: NodeModule, framework: string): void;
+  configure(loader: Loadable, module: NodeModule): void;
   getStorybook(): IStorybookSection[];
   clearDecorators(): void;
   forceReRender(): void;
@@ -25,8 +25,7 @@ export const storiesOf: ClientApi['storiesOf'] = (kind, m) => {
   });
 };
 
-export const configure = (loader: Loadable, module: NodeModule) =>
-  api.configure(loader, module, framework);
+export const configure: ClientApi['configure'] = (...args) => api.configure(...args, framework);
 export const addDecorator: ClientApi['addDecorator'] = api.clientApi.addDecorator;
 export const addParameters: ClientApi['addParameters'] = api.clientApi.addParameters;
 export const clearDecorators: ClientApi['clearDecorators'] = api.clientApi.clearDecorators;
