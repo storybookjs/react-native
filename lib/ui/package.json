@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.2.0-beta.13",
+  "version": "5.2.0-beta.17",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,14 +22,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.13",
-    "@storybook/api": "5.2.0-beta.13",
-    "@storybook/channels": "5.2.0-beta.13",
-    "@storybook/client-logger": "5.2.0-beta.13",
-    "@storybook/components": "5.2.0-beta.13",
-    "@storybook/core-events": "5.2.0-beta.13",
-    "@storybook/router": "5.2.0-beta.13",
-    "@storybook/theming": "5.2.0-beta.13",
+    "@storybook/addons": "5.2.0-beta.17",
+    "@storybook/api": "5.2.0-beta.17",
+    "@storybook/channels": "5.2.0-beta.17",
+    "@storybook/client-logger": "5.2.0-beta.17",
+    "@storybook/components": "5.2.0-beta.17",
+    "@storybook/core-events": "5.2.0-beta.17",
+    "@storybook/router": "5.2.0-beta.17",
+    "@storybook/theming": "5.2.0-beta.17",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
@@ -53,7 +53,7 @@
     "resolve-from": "^5.0.0",
     "semver": "^6.0.0",
     "store2": "^2.7.1",
-    "telejson": "^2.2.1",
+    "telejson": "^2.2.2",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {

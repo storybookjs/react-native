@@ -1,3 +1,35 @@
+## 5.2.0-beta.17 (July 29, 2019)
+
+### Bug Fixes
+
+* CLI: Fix storiesof-to-csf migration w/punctuation ([#7590](https://github.com/storybookjs/storybook/pull/7590))
+
+## 5.2.0-beta.16 (July 29, 2019)
+
+### Features
+
+* Addon-docs: Configure jsx automagically ([#7581](https://github.com/storybookjs/storybook/pull/7581))
+* Addon-docs: Add DocsPage automagically ([#7579](https://github.com/storybookjs/storybook/pull/7579))
+
+## 5.2.0-beta.15 (July 29, 2019)
+
+### Features
+
+* CRA: Add support for TSX in config folder ([#7566](https://github.com/storybookjs/storybook/pull/7566))
+
+### Bug Fixes
+
+* Addon-info: only render Components in propTables ([#7477](https://github.com/storybookjs/storybook/pull/7477))
+
+### Dependency Upgrades
+
+* Update telejson dependency to 2.2.2 ([#7586](https://github.com/storybookjs/storybook/pull/7586))
+* Angular: Fix @angular-devkit/build-angular version ([#7585](https://github.com/storybookjs/storybook/pull/7585))
+
+## 5.2.0-beta.14 (July 29, 2019)
+
+Failed publish
+
 ## 5.2.0-beta.13 (July 27, 2019)
 
 This is a breaking change for anybody who used `load` on an earlier 5.2 pre-release. Simply rename `load` to `configure` in your storybook config and that should fix things.
