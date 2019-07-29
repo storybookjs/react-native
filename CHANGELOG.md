@@ -1,3 +1,9 @@
+## 5.2.0-beta.17 (July 29, 2019)
+
+### Bug Fixes
+
+* CLI: Fix storiesof-to-csf migration w/punctuation ([#7590](https://github.com/storybookjs/storybook/pull/7590))
+
 ## 5.2.0-beta.16 (July 29, 2019)
 
 ### Features
