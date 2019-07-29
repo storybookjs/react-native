@@ -311,7 +311,7 @@ class Story extends Component {
     const { stylesheet } = this.state;
     const types = new Map();
 
-    if (propTables === null) {
+    if (!propTables) {
       return null;
     }
 
@@ -319,11 +319,9 @@ class Story extends Component {
       return null;
     }
 
-    if (propTables) {
-      propTables.forEach(type => {
-        types.set(type, true);
-      });
-    }
+    propTables.forEach(type => {
+      types.set(type, true);
+    });
 
     // depth-first traverse and collect types
     const extract = innerChildren => {
@@ -348,6 +346,8 @@ class Story extends Component {
       if (
         typeof innerChildren === 'string' ||
         typeof innerChildren.type === 'string' ||
+        (propTables.length > 0 && // if propTables is set and has items in it
+          !propTables.includes(innerChildren.type)) || // ignore types that are missing from propTables
         (Array.isArray(propTablesExclude) && // also ignore excluded types
           ~propTablesExclude.indexOf(innerChildren.type)) // eslint-disable-line no-bitwise
       ) {

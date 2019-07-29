@@ -1,6 +1,6 @@
 {
   "name": "@storybook/source-loader",
-  "version": "5.2.0-beta.13",
+  "version": "5.2.0-beta.17",
   "description": "Source loader",
   "keywords": [
     "lib",
@@ -22,8 +22,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.13",
-    "@storybook/router": "5.2.0-beta.13",
+    "@storybook/addons": "5.2.0-beta.17",
+    "@storybook/router": "5.2.0-beta.17",
     "core-js": "^3.0.1",
     "estraverse": "^4.2.0",
     "global": "^4.3.2",

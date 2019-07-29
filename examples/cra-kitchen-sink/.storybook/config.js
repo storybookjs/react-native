@@ -1,7 +1,6 @@
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { create } from '@storybook/theming';
 import { withA11y } from '@storybook/addon-a11y';
-import { DocsPage } from '@storybook/addon-docs/blocks';
 
 addDecorator(withA11y);
 addParameters({
@@ -21,7 +20,6 @@ addParameters({
     }),
     storySort: (a, b) => a[1].id.localeCompare(b[1].id),
   },
-  docs: DocsPage,
 });
 
 configure(require.context('../src/stories', true, /\.stories\.(js|mdx)$/), module);
