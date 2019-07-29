@@ -142,7 +142,10 @@ export default class ClientApi {
   };
 
   // what are the occasions that "m" is simply a boolean, vs an obj
-  storiesOf = <TApi = unknown>(kind: string, m: NodeModule): StoryApi<TApi> => {
+  storiesOf = <StoryFnReturnType = unknown>(
+    kind: string,
+    m: NodeModule
+  ): StoryApi<StoryFnReturnType> => {
     if (!kind && typeof kind !== 'string') {
       throw new Error('Invalid or missing kind provided for stories, should be a string');
     }
@@ -161,10 +164,10 @@ export default class ClientApi {
       });
     }
 
-    const localDecorators: DecoratorFunction[] = [];
+    const localDecorators: DecoratorFunction<StoryFnReturnType>[] = [];
     let localParameters: Parameters = {};
     let hasAdded = false;
-    const api: StoryApi<TApi> = {
+    const api: StoryApi<StoryFnReturnType> = {
       kind: kind.toString(),
       add: () => api,
       addDecorator: () => api,
@@ -249,7 +252,7 @@ export default class ClientApi {
       return api;
     };
 
-    api.addDecorator = (decorator: DecoratorFunction) => {
+    api.addDecorator = (decorator: DecoratorFunction<StoryFnReturnType>) => {
       if (hasAdded) {
         logger.warn(`You have added a decorator to the kind '${kind}' after a story has already been added.
 In Storybook 4 this applied the decorator only to subsequent stories. In Storybook 5+ it applies to all stories.

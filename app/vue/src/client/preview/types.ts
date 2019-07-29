@@ -1,4 +1,6 @@
-import React from 'react';
+import { Component, VueConstructor } from 'vue';
+import { StoryFn } from '@storybook/addons';
+// TODO, 'any' should be what is actually expected from a storyFn
 
 export interface ShowErrorArgs {
   title: string;
@@ -6,15 +8,17 @@ export interface ShowErrorArgs {
 }
 
 export interface RenderMainArgs {
-  storyFn: () => React.ReactElement | undefined;
+  storyFn: StoryFn<VueConstructor>;
   selectedKind: string;
   selectedStory: string;
   showMain: () => void;
   showError: (args: ShowErrorArgs) => void;
+  showException: (...args: any[]) => void;
   forceRender: boolean;
 }
 
-export type StoryFnReactReturnType = React.ReactElement<unknown>;
+// TODO: some vue expert needs to look at this
+export type StoryFnVueReturnType = string | Component;
 
 export interface IStorybookStory {
   name: string;
