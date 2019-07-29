@@ -1,3 +1,10 @@
+## 5.2.0-beta.16 (July 29, 2019)
+
+### Features
+
+* Addon-docs: Configure jsx automagically ([#7581](https://github.com/storybookjs/storybook/pull/7581))
+* Addon-docs: Add DocsPage automagically ([#7579](https://github.com/storybookjs/storybook/pull/7579))
+
 ## 5.2.0-beta.15 (July 29, 2019)
 
 ### Features
