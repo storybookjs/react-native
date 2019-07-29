@@ -1,8 +1,6 @@
 import React from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { Global, ThemeProvider, themes, createReset, convert } from '@storybook/theming';
-import { DocsPage } from '@storybook/addon-docs/blocks';
-
 import { withCssResources } from '@storybook/addon-cssresources';
 import { withA11y } from '@storybook/addon-a11y';
 import { withNotes } from '@storybook/addon-notes';
@@ -57,7 +55,6 @@ addParameters({
     { name: 'light', value: '#eeeeee' },
     { name: 'dark', value: '#222222' },
   ],
-  docs: DocsPage,
 });
 
 configure(
