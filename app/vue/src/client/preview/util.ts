@@ -1,4 +1,4 @@
-import { StoryFnVueReturnType } from './types';
+import { VueConstructor } from 'vue';
 
 function getType(fn: Function) {
   const match = fn && fn.toString().match(/^\s*function (\w+)/);
@@ -15,7 +15,7 @@ function resolveDefault({ type, default: def }: any) {
   return def;
 }
 
-export function extractProps(component: StoryFnVueReturnType) {
+export function extractProps(component: VueConstructor) {
   // @ts-ignore this options business seems not good according to the types
   return Object.entries(component.options.props || {})
     .map(([name, prop]) => ({ [name]: resolveDefault(prop) }))

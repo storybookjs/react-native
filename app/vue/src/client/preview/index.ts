@@ -1,5 +1,5 @@
 /* eslint-disable prefer-destructuring */
-import Vue, { Component, VueConstructor } from 'vue';
+import Vue, { VueConstructor, ComponentOptions } from 'vue';
 import { start } from '@storybook/core/client';
 import {
   ClientStoryApi,
@@ -17,24 +17,31 @@ import { extractProps } from './util';
 
 export const WRAPS = 'STORYBOOK_WRAPS';
 
-function prepare(rawStory: string | Component, innerStory?: VueConstructor): StoryFnVueReturnType {
-  let story = rawStory;
+function prepare(rawStory: StoryFnVueReturnType, innerStory?: VueConstructor): VueConstructor {
+  let story: ComponentOptions<Vue> | VueConstructor;
+
+  if (typeof rawStory === 'string') {
+    story = { template: rawStory };
+  } else {
+    story = rawStory as ComponentOptions<Vue>;
+  }
+
+  // @ts-ignore
   // eslint-disable-next-line no-underscore-dangle
   if (!story._isVue) {
-    if (typeof story === 'string') {
-      story = { template: story };
-    }
     if (innerStory) {
       story.components = { ...(story.components || {}), story: innerStory };
     }
     story = Vue.extend(story);
+    // @ts-ignore // https://github.com/storybookjs/storybook/pull/7578#discussion_r307984824
   } else if (story.options[WRAPS]) {
-    return story;
+    return story as VueConstructor;
   }
 
   return Vue.extend({
-    // @ts-ignore // some Vue expert needs to look at this
+    // @ts-ignore // https://github.com/storybookjs/storybook/pull/7578#discussion_r307985279
     [WRAPS]: story,
+    // @ts-ignore // https://github.com/storybookjs/storybook/pull/7578#discussion_r307984824
     [VALUES]: { ...(innerStory ? innerStory.options[VALUES] : {}), ...extractProps(story) },
     functional: true,
     render(h, { data, parent, children }) {
@@ -42,7 +49,7 @@ function prepare(rawStory: string | Component, innerStory?: VueConstructor): Sto
         story,
         {
           ...data,
-          // @ts-ignore // some Vue expert needs to look at this
+          // @ts-ignore // https://github.com/storybookjs/storybook/pull/7578#discussion_r307986196
           props: { ...(data.props || {}), ...parent.$root[VALUES] },
         },
         children
@@ -58,14 +65,13 @@ const defaultContext: StoryContext = {
   parameters: {},
 };
 
-// (storyFn: StoryFn, decorators: DecoratorFunction[])
 function decorateStory(
   storyFn: StoryFn<StoryFnVueReturnType>,
-  decorators: DecoratorFunction<StoryFnVueReturnType>[]
+  decorators: DecoratorFunction<VueConstructor>[]
 ): StoryFn<VueConstructor> {
   return decorators.reduce(
-    (decorated, decorator) => (context: StoryContext = defaultContext) => {
-      let story: StoryFnVueReturnType;
+    (decorated: StoryFn<VueConstructor>, decorator) => (context: StoryContext = defaultContext) => {
+      let story;
 
       const decoratedStory = decorator(p => {
         story = decorated(
@@ -94,7 +100,7 @@ function decorateStory(
 
       return prepare(decoratedStory, story);
     },
-    (context => prepare(storyFn(context))) as StoryFn<StoryFnVueReturnType>
+    context => prepare(storyFn(context))
   );
 }
 const framework = 'vue';

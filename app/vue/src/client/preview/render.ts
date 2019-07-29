@@ -49,7 +49,7 @@ export default function render({
     root[COMPONENT] = element;
   }
 
-  // @ts-ignore I'm not sure why we need this, but types are incompatible
+  // @ts-ignore https://github.com/storybookjs/storybook/pull/7578#discussion_r307986139
   root[VALUES] = element.options[VALUES];
 
   if (!root.$el) {

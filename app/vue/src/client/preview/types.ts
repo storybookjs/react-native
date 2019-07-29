@@ -1,4 +1,4 @@
-import { VueConstructor } from 'vue';
+import { Component, VueConstructor } from 'vue';
 import { StoryFn } from '@storybook/addons';
 // TODO, 'any' should be what is actually expected from a storyFn
 
@@ -8,7 +8,7 @@ export interface ShowErrorArgs {
 }
 
 export interface RenderMainArgs {
-  storyFn: StoryFn<StoryFnVueReturnType>;
+  storyFn: StoryFn<VueConstructor>;
   selectedKind: string;
   selectedStory: string;
   showMain: () => void;
@@ -18,7 +18,7 @@ export interface RenderMainArgs {
 }
 
 // TODO: some vue expert needs to look at this
-export type StoryFnVueReturnType = VueConstructor;
+export type StoryFnVueReturnType = string | Component;
 
 export interface IStorybookStory {
   name: string;
