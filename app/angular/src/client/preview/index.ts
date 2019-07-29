@@ -10,7 +10,7 @@ const framework = 'angular';
 
 interface ClientApi extends ClientStoryApi<StoryFnAngularReturnType> {
   setAddon(addon: any): void;
-  configure(loader: Loadable, module: NodeModule, framework: string): void;
+  configure(loader: Loadable, module: NodeModule): void;
   getStorybook(): IStorybookSection[];
   clearDecorators(): void;
   forceReRender(): void;

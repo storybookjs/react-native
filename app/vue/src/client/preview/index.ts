@@ -107,7 +107,7 @@ const framework = 'vue';
 
 interface ClientApi extends ClientStoryApi<StoryFnVueReturnType> {
   setAddon(addon: any): void;
-  configure(loader: Loadable, module: NodeModule, framework: string): void;
+  configure(loader: Loadable, module: NodeModule): void;
   getStorybook(): IStorybookSection[];
   clearDecorators(): void;
   forceReRender(): void;
