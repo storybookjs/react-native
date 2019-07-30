@@ -363,12 +363,14 @@ Allows you to get a value from a file input from the user.
 import { files } from '@storybook/addon-knobs';
 
 const label = 'Images';
+const accept = '.xlsx, .pdf';
 const defaultValue = [];
 
 const value = files(label, accept, defaultValue);
 ```
 
-> Multiple files can be selected, and will be returned as an array of [Data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)
+> You can optionally specify a [list of file types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) which the file input should accept.
+> Multiple files can be selected, and will be returned as an array of [Data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
 
 ### date
 
