@@ -18,43 +18,43 @@ Some examples:
 <details>
   <summary>stories inside component directory</summary>
 
-  ```plaintext
-  •
-  └── src
-      └── components
-          └── button
-              ├── button.js
-              └── button.stories.js
-  ```
+```plaintext
+•
+└── src
+    └── components
+        └── button
+            ├── button.js
+            └── button.stories.js
+```
 
 </details>
 
 <details>
   <summary>stories sub-directory in component directory</summary>
 
-  ```plaintext
-  •
-  └── src
-      └── components
-          └── button
-              ├── button.js
-              └── stories
-                  └── button.stories.js
-  ```
+```plaintext
+•
+└── src
+    └── components
+        └── button
+            ├── button.js
+            └── stories
+                └── button.stories.js
+```
 
 </details>
 
 <details>
   <summary>stories directory outside src directory</summary>
 
-  ```plaintext
-  •
-  ├── src
-  │   └── components
-  │       └── button.js
-  └── stories
-      └── button.stories.js
-  ```
+```plaintext
+•
+├── src
+│   └── components
+│       └── button.js
+└── stories
+    └── button.stories.js
+```
 
 </details>
 
@@ -110,7 +110,7 @@ configure(loadStories, module);
 
 Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use `require.context`.
 
-The **React Native** packager resolves all the imports at build-time, so it's not possible to load modules dynamically. There is a third party loader  [react-native-storybook-loader](https://github.com/elderfo/react-native-storybook-loader) to automatically generate the import statements for all stories.
+The **React Native** packager resolves all the imports at build-time, so it's not possible to load modules dynamically. There is a third party loader [react-native-storybook-loader](https://github.com/elderfo/react-native-storybook-loader) to automatically generate the import statements for all stories.
 
 ## Using Decorators
 
