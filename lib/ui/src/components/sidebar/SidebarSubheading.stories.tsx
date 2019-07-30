@@ -1,10 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import SidebarSubheading from './SidebarSubheading';
 
-storiesOf('UI|Sidebar/SidebarSubheading', module)
-  .addParameters({
-    component: SidebarSubheading,
-  })
-  .add('default', () => <SidebarSubheading>Subheading</SidebarSubheading>);
+export default {
+  Component: SidebarSubheading,
+  title: 'UI|Sidebar/SidebarSubheading',
+};
+
+export const simple = () => <SidebarSubheading>Subheading</SidebarSubheading>;
