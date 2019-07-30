@@ -1,4 +1,3 @@
-/* eslint-disable import/export */
 import { logger } from '@storybook/client-logger';
 import addons, { StoryGetter, StoryContext } from '@storybook/addons';
 import { FORCE_RE_RENDER } from '@storybook/core-events';

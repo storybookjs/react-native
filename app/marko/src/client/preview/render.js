@@ -1,6 +1,8 @@
 import { document } from 'global';
 import { stripIndents } from 'common-tags';
 
+import { logger } from '@storybook/client-logger';
+
 const rootEl = document.getElementById('root');
 let activeComponent = null; // currently loaded marko component.
 let activeTemplate = null; // template for the currently loaded component.
@@ -28,7 +30,7 @@ export default function renderMain({
     return;
   }
   if (config.appendTo) {
-    console.warn(
+    logger.warn(
       '@storybook/marko: returning a rendered component for a story is deprecated, return an object with `{ component, input }` instead.'
     );
 
