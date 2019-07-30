@@ -1,6 +1,6 @@
 {
   "name": "cra-ts-kitchen-sink",
-  "version": "5.2.0-beta.17",
+  "version": "5.2.0-beta.18",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -s public",
@@ -14,12 +14,12 @@
     "react-dom": "^16.8.3"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.2.0-beta.17",
-    "@storybook/addon-actions": "5.2.0-beta.17",
-    "@storybook/addon-info": "5.2.0-beta.17",
-    "@storybook/addon-options": "5.2.0-beta.17",
-    "@storybook/addons": "5.2.0-beta.17",
-    "@storybook/react": "5.2.0-beta.17",
+    "@storybook/addon-a11y": "5.2.0-beta.18",
+    "@storybook/addon-actions": "5.2.0-beta.18",
+    "@storybook/addon-info": "5.2.0-beta.18",
+    "@storybook/addon-options": "5.2.0-beta.18",
+    "@storybook/addons": "5.2.0-beta.18",
+    "@storybook/react": "5.2.0-beta.18",
     "@types/enzyme": "^3.9.0",
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.2",

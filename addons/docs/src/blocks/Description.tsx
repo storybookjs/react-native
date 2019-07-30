@@ -21,9 +21,9 @@ interface DescriptionProps {
 }
 
 const getNotes = (notes?: Notes) =>
-  notes && (typeof notes === 'string' ? notes : notes.markdown || notes.text);
+  (notes && (typeof notes === 'string' ? notes : notes.markdown || notes.text)) || '';
 
-const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : info.text);
+const getInfo = (info?: Info) => (info && (typeof info === 'string' ? info : info.text)) || '';
 
 const getDocgen = (component?: Component) =>
   (component && component.__docgenInfo && component.__docgenInfo.description) || '';
