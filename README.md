@@ -13,6 +13,7 @@
   <a href="https://now-examples-slackin-rrirkqohko.now.sh/"><img src="https://now-examples-slackin-rrirkqohko.now.sh/badge.svg?logo=slack" alt="Storybook Slack" /></a>
   <a href="#backers"><img src="https://opencollective.com/storybook/backers/badge.svg" alt="Backers on Open Collective" /></a>
   <a href="#sponsors"><img src="https://opencollective.com/storybook/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://twitter.com/intent/follow?screen_name=storybookjs"><img src="https://img.shields.io/twitter/follow/storybookjs.svg?style=social&label=Follow" alt="Official Twitter Handle" /></a>  
 </p>
 
 ---
