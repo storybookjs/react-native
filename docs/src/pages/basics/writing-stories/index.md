@@ -255,7 +255,7 @@ import React from 'react';
 import Checkbox from './Checkbox';
 
 export default {
-  title: 'Design System|Atoms/Checkgox',
+  title: 'Design System|Atoms/Checkbox',
 };
 export const empty = () => <Checkbox label="empty" />;
 export const checked = () => <Checkbox label="checked" checked />;
