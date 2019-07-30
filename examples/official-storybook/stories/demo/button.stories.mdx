@@ -26,11 +26,11 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 ## Counter w/ Code
 
 <Preview>
-  <Story name="with coumter">
-    {React.createElement(() => {
+  <Story name="with counter">
+    {() => {
       const [counter, setCounter] = useState(0);
       const label = `Testing: ${counter}`;
       return <Button onClick={() => setCounter(counter + 1)}>{label}</Button>;
-    })}
+    }}
   </Story>
 </Preview>

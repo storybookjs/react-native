@@ -21,9 +21,9 @@ export default {
   title: 'Button',
 };
 
-export const withText = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+export const text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
 
-export const withEmoji = () => (
+export const emoji = () => (
   <Button onClick={action('clicked')}>
     <span role="img" aria-label="so cool">
       😀 😎 👍 💯
@@ -36,16 +36,16 @@ This is what you'll see in Storybook:
 
 ![Basic stories](../static/basic-stories.png)
 
-The named exports define the Button's stories, and the `default` export defines metadata that applies to the group. In this case, the `component` is `Button`. The title determines the title of the group in Storybook's left-hand navigation panel. In this case it's located at the top level, but typically it's [positioned within the story hierarchy](#story-hierarchy).
+The named exports define the Button's stories, and the `default` export defines metadata that applies to the group. In this case, the `component` is `Button`. The `title` determines the title of the group in Storybook's left-hand navigation panel and should be unique, i.e. not re-used across files. In this case it's located at the top level, but typically it's [positioned within the story hierarchy](#story-hierarchy).
 
-This example is written in Storybook's [Module format](../../formats/module-story-format/). Storybook also supports:
+This example is written in Storybook's [Component Story Format (CSF)](../../formats/component-story-format/). Storybook also supports:
 
-- a classic [storiesOf format](../../formats/storiesof-story-format/), which adds stories through Storybook's API.
-- an experimental [MDX format](../../formats/mdx-story-format/), which mixes longform Markdown docs and JSX stories.
+- a classic [storiesOf API](../../formats/storiesof-api/), which adds stories through Storybook's API.
+- an experimental [MDX syntax](../../formats/mdx-syntax/), which mixes longform Markdown docs and JSX stories.
 
-Since Module format is a new addition to Storybook, most Storybook examples you'll find in the wild are written in the legacy [storiesOf format](../../formats/stories-of-format/).
+Since CSF is a new addition to Storybook, most Storybook examples you'll find in the wild are written to the [storiesOf API](../../formats/storiesof-api/).
 
-Furthermore, Storybook for React Native currently only supports the `storiesOf` format. React Native will get Module and MDX support in a future release.
+Furthermore, Storybook for React Native currently only supports the `storiesOf` format. React Native will get CSF and MDX support in a future release.
 
 ## Story file location
 
@@ -98,12 +98,12 @@ Stories are loaded in the `.storybook/config.js` file.
 The most convenient way to load stories is by filename. For example, if you stories files are located in the `src/components` directory, you can use the following snippet:
 
 ```js
-import { load } from '@storybook/react';
+import { configure } from '@storybook/react';
 
-load(require.context('../src/components', true, /\.stories\.js$/), module);
+configure(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-The `load` function accepts:
+The `configure` function accepts:
 
 - A single `require.context` "`req`"
 - An array of `req`s to load from multiple locations
@@ -112,9 +112,9 @@ The `load` function accepts:
 If you want to load from multiple locations, you could use an array:
 
 ```js
-import { load } from '@storybook/react';
+import { configure } from '@storybook/react';
 
-load([
+configure([
   require.context('../src/components', true, /\.stories\.js$/)
   require.context('../lib', true, /\.stories\.js$/)
 ], module);
@@ -123,7 +123,7 @@ load([
 Or if you want to do some custom loading logic, you can use a loader function. Just remember to return an array of module exports if you want to use the module story format:
 
 ```js
-import { load } from '@storybook/react';
+import { configure } from '@storybook/react';
 
 const loaderFn = () => {
   const allExports = [require('./welcome.stories.js')];
@@ -132,12 +132,14 @@ const loaderFn = () => {
   return allExports;
 };
 
-load(loaderFn, module);
+configure(loaderFn, module);
 ```
 
 Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use `require.context`.
 
-The `load` function is available since Storybook 5.2 and is the recommended way to load stories. It replaces the [configure function](../../formats/storiesof-story-format/#legacy-loading), which is still in use in most Storybook examples, and is the only way to currently load stories in React Native.
+If you are using the `storiesOf` API directly, or are using `@storybook/react-native` where CSF is unavailable, you should use a loader function with no return value.
+
+Furthermore, the **React Native** packager resolves all imports at build-time, so it's not possible to load modules dynamically. There is a third party loader [react-native-storybook-loader](https://github.com/elderfo/react-native-storybook-loader) to automatically generate the import statements for all stories.
 
 ## Decorators
 
@@ -213,7 +215,7 @@ export const small = () => <MyComponent text="small" />;
 export const medium = () => <MyComponent text="medium" />;
 export const special = () => <MyComponent text="The Boss" />;
 special.story = {
-  notes: specialNotes,
+  parameters: { notes: specialNotes },
 };
 ```
 
@@ -224,15 +226,10 @@ In this example, the `small` and `medium` stories get the compoonent notes docum
 By default, search results will show up based on the file name of your stories. As of storybook 5, you can extend this with `notes` to have certain stories show up when the search input contains matches. For example, if you built a `Callout` component that you want to be found by searching for `popover` or `tooltip` as well, you could use `notes` like this:
 
 ```jsx
-.add(
-  "Callout",
-  () => (
-    <Callout>Some children</Callout>
-  ),
-  {
-    notes: "popover tooltip"
-  }
-)
+export const callout = () => <Callout>Some children</Callout>;
+callout.story = {
+  parameters: { notes: 'popover tooltip' },
+};
 ```
 
 ## Story hierarchy
@@ -258,7 +255,7 @@ import React from 'react';
 import Checkbox from './Checkbox';
 
 export default {
-  title: 'Design System|Atoms/Checkgox',
+  title: 'Design System|Atoms/Checkbox',
 };
 export const empty = () => <Checkbox label="empty" />;
 export const checked = () => <Checkbox label="checked" checked />;
@@ -276,14 +273,13 @@ One example would be to use `base` from [`paths.macro`](https://github.com/story
 ```js
 import React from 'react';
 import base from 'paths.macro';
-
-import { storiesOf } from '@storybook/react';
-
 import BaseButton from '../components/BaseButton';
 
-storiesOf(`Other|${base}/Dirname Example`, module)
-  .add('story 1', () => <BaseButton label="Story 1" />)
-  .add('story 2', () => <BaseButton label="Story 2" />);
+export default {
+  title: `Other|${base}/Dirname Example`,
+};
+export const story1 = () => <BaseButton label="Story 1" />;
+export const story2 = () => <BaseButton label="Story 2" />;
 ```
 
 _This uses [babel-plugin-macros](https://github.com/kentcdodds/babel-plugin-macros)_.

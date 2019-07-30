@@ -40,9 +40,9 @@ module.exports = {
         '/configurations/standalone-options/',
       ],
       formats: [
-        '/formats/module-story-format/',
-        '/formats/storiesof-story-format/',
-        '/formats/mdx-story-format/',
+        '/formats/component-story-format/',
+        '/formats/storiesof-api/',
+        '/formats/mdx-syntax/',
       ],
       testing: [
         '/testing/react-ui-testing/',

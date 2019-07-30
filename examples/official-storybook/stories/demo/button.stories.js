@@ -23,13 +23,12 @@ withSomeEmoji.story = {
   name: 'with some emoji',
 };
 
-export const withCounter = () =>
-  React.createElement(() => {
-    const [counter, setCounter] = useState(0);
-    const label = `Testing: ${counter}`;
-    return <Button onClick={() => setCounter(counter + 1)}>{label}</Button>;
-  });
+export const withCounter = () => {
+  const [counter, setCounter] = useState(0);
+  const label = `Testing: ${counter}`;
+  return <Button onClick={() => setCounter(counter + 1)}>{label}</Button>;
+};
 
 withCounter.story = {
-  name: 'with coumter',
+  name: 'with counter',
 };
