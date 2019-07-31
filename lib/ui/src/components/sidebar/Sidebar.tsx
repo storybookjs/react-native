@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { styled } from '@storybook/theming';
 import { ScrollArea } from '@storybook/components';
+import { State } from '@storybook/api';
 
 import SidebarHeading, { SidebarHeadingProps } from './SidebarHeading';
 import SidebarStories from './SidebarStories';
@@ -9,7 +11,9 @@ const Heading = styled(SidebarHeading)<SidebarHeadingProps>({
   padding: '20px 20px 12px',
 });
 
-const Stories = styled(SidebarStories)(({ loading }) => (loading ? { marginTop: 8 } : {}));
+const Stories = styled(({ className, ...rest }) => (
+  <SidebarStories className={className} {...rest} />
+))(({ loading }) => (loading ? { marginTop: 8 } : {}));
 
 const Container = styled.nav({
   position: 'absolute',
@@ -29,7 +33,7 @@ const CustomScrollArea = styled(ScrollArea)({
 });
 
 export interface SidebarProps {
-  stories: unknown;
+  stories: State['StoriesHash'];
   menu: any[];
   storyId?: string;
   menuHighlighted?: boolean;
