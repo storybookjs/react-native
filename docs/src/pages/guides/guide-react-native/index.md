@@ -193,7 +193,7 @@ Then:
 {
   "scripts": {
     ...
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook"
   }
 }
 ```
@@ -203,6 +203,11 @@ Finally:
 ```sh
 npm run storybook
 ```
+
+**Note** You can change port to custom with `start-storybook -p=YOUR_PORT_NUMBER`, but then you also have to pass it as an option to `getStorybookUI({port: YOUR_PORT_NUMBER})`. If you are running on android, there might be need to run `adb reverse tcp:YOUR_PORT_NUMBER tcp:YOUR_PORT_NUMBER`.
+
+### Start App
+To see your Storybook stories on the device, you should start your mobile app for the <platform> of your choice (typically ios or android). (Note that due to an implementation detail, your stories will only show up in the left pane of your browser window after your device has connected to this storybook server.)
 
 ### Historical notes
 

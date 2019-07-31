@@ -36,20 +36,10 @@ yarn add -D @storybook/addon-docs
 The add the following to your `.storybook/presets.js` exports:
 
 ```js
-module.exports = ['@storybook/addon-docs/common/preset'];
+module.exports = ['@storybook/addon-docs/react/preset'];
 ```
 
-Finally, update your Storybook configuration `.storybook/config.js`. Add `DocsPage` to auto-generate docs for your existing stories, and load MDX files.
-
-```js
-import { load, addDecorator } from '@storybook/react';
-import { DocsPage } from '@storybook/addon-docs/blocks';
-
-addDecorator({ docs: DocsPage });
-
-// wherever your story files are located
-load(require.context('../src', true, /\.stories\.(js|ts|tsx|mdx)$/), module);
-```
+If you're not using `react`, replace it with your framework of choice corresponding to the Storybook package name, e.g. `angular` for `@storybook/angular` etc.
 
 ## Preset options
 
@@ -58,7 +48,7 @@ The `addon-docs` preset has a few configuration options that can be used to conf
 ```js
 module.exports = [
   {
-    name: '@storybook/addon-docs/common/preset',
+    name: '@storybook/addon-docs/react/preset',
     options: {
       configureJSX: true,
       babelOptions: {},
