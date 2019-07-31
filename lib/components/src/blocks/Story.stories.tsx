@@ -5,7 +5,7 @@ import { Button } from '../Button/Button';
 
 export default {
   title: 'Docs|Story',
-  Component: Story,
+  component: Story,
   decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 

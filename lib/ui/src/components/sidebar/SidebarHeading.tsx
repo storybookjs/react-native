@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import { styled, withTheme } from '@storybook/theming';
 import { StorybookLogo, WithTooltip, TooltipLinkList, Button, Icons } from '@storybook/components';
 
-const BrandArea = styled.div(({ theme }) => ({
+export type BrandAreaProps = React.ComponentProps<'div'>;
+
+const BrandArea = styled.div<BrandAreaProps>(({ theme }) => ({
   fontSize: theme.typography.size.s2,
   fontWeight: theme.typography.weight.bold,
   marginRight: theme.layoutMargin,
@@ -43,7 +43,13 @@ const LogoLink = styled.a({
   textDecoration: 'none',
 });
 
-const MenuButton = styled(Button)(props => ({
+export type MenuButtonProps = React.ComponentProps<typeof Button> &
+  // FIXME: Button should extends from the native <button>
+  React.ComponentProps<'button'> & {
+    highlighted: boolean;
+  };
+
+const MenuButton = styled(Button)<MenuButtonProps>(props => ({
   position: 'relative',
   overflow: 'visible',
   padding: 7,
@@ -99,43 +105,44 @@ const Brand = withTheme(({ theme: { brand: { title = 'Storybook', url = './', im
   return null;
 });
 
-const SidebarHeading = ({ menuHighlighted, menu, ...props }) => {
-  return (
-    <Head {...props}>
-      <BrandArea>
-        <Brand />
-      </BrandArea>
+export interface SidebarHeadingProps {
+  menuHighlighted?: boolean;
+  menu: React.ComponentProps<typeof TooltipLinkList>['links'];
+  className?: string;
+}
 
-      <WithTooltip
-        placement="top"
-        trigger="click"
-        tooltip={({ onHide }) => (
-          <TooltipLinkList
-            links={menu.map(i => ({
-              ...i,
-              onClick: (...args) => {
-                i.onClick(...args);
-                onHide();
-              },
-            }))}
-          />
-        )}
-        closeOnClick
-      >
-        <MenuButton outline small containsIcon highlighted={menuHighlighted} title="Shortcuts">
-          <Icons icon="ellipsis" />
-        </MenuButton>
-      </WithTooltip>
-    </Head>
-  );
-};
-SidebarHeading.propTypes = {
-  menuHighlighted: PropTypes.bool,
-  menu: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-};
+const SidebarHeading = ({ menuHighlighted = false, menu, ...props }: SidebarHeadingProps) => (
+  <Head {...props}>
+    <BrandArea>
+      <Brand />
+    </BrandArea>
 
-SidebarHeading.defaultProps = {
-  menuHighlighted: false,
-};
+    <WithTooltip
+      placement="top"
+      trigger="click"
+      tooltip={({ onHide }) => (
+        <TooltipLinkList
+          // @ts-ignore // FIXME: onCLick/onHide should pass React synthetic event down to avoid surprise
+          links={menu.map(({ onClick, ...rest }) => ({
+            ...rest,
+            onClick: (e: React.MouseEvent) => {
+              if (onClick) {
+                // @ts-ignore
+                onClick(e);
+              }
+              // @ts-ignore
+              onHide(e);
+            },
+          }))}
+        />
+      )}
+      closeOnClick
+    >
+      <MenuButton outline small containsIcon highlighted={menuHighlighted} title="Shortcuts">
+        <Icons icon="ellipsis" />
+      </MenuButton>
+    </WithTooltip>
+  </Head>
+);
 
-export { SidebarHeading as default };
+export default SidebarHeading;

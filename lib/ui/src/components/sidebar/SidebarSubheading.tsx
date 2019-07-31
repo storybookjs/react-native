@@ -2,7 +2,9 @@ import React from 'react';
 import { transparentize } from 'polished';
 import { styled } from '@storybook/theming';
 
-const Heading = styled.div(({ theme }) => ({
+export type SubheadingProps = React.ComponentProps<'div'>;
+
+const Subheading = styled.div<SubheadingProps>(({ theme }) => ({
   letterSpacing: '0.35em',
   textTransform: 'uppercase',
   fontWeight: theme.typography.weight.black,
@@ -11,6 +13,9 @@ const Heading = styled.div(({ theme }) => ({
   color: transparentize(0.5, theme.color.defaultText),
 }));
 
-const Subheading = props => <Heading {...props} />;
+// issue #6098
+Subheading.defaultProps = {
+  className: 'sidebar-subheading',
+};
 
 export default Subheading;

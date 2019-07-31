@@ -5,7 +5,7 @@ import { DocsPageWrapper } from './DocsPage';
 
 export default {
   title: 'Docs|ColorPalette',
-  Component: ColorPalette,
+  component: ColorPalette,
   decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 

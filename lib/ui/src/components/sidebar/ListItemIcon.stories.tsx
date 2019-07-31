@@ -11,9 +11,13 @@ export default {
 export const all = () => (
   <TooltipLinkList
     links={[
-      { title: 'has icon', left: <ListItemIcon icon="check" /> },
-      { title: 'has imgSrc', left: <ListItemIcon imgSrc="https://via.placeholder.com/20" /> },
-      { title: 'has neither', left: <ListItemIcon /> },
+      { title: 'has icon', left: <ListItemIcon icon="check" />, id: 'icon' },
+      {
+        title: 'has imgSrc',
+        left: <ListItemIcon imgSrc="https://via.placeholder.com/20" />,
+        id: 'img',
+      },
+      { title: 'has neither', left: <ListItemIcon />, id: 'non' },
     ]}
   />
 );

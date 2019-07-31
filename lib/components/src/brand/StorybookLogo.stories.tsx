@@ -3,7 +3,7 @@ import React from 'react';
 import { StorybookLogo } from './StorybookLogo';
 
 export default {
-  Component: StorybookLogo,
+  component: StorybookLogo,
   title: 'Basics|Brand/StorybookLogo',
 };
 

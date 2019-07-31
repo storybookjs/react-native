@@ -5,7 +5,7 @@ import { DocsPageWrapper } from './DocsPage';
 
 export default {
   title: 'Docs|Typeset',
-  Component: Typeset,
+  component: Typeset,
   decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 
