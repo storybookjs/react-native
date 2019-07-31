@@ -87,7 +87,7 @@ Link.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-interface StoriesProps {
+export interface StoriesProps {
   loading: boolean;
   stories: State['StoriesHash'];
   storyId?: undefined | string;

@@ -3,7 +3,7 @@ import React from 'react';
 import SidebarSubheading from './SidebarSubheading';
 
 export default {
-  Component: SidebarSubheading,
+  component: SidebarSubheading,
   title: 'UI|Sidebar/SidebarSubheading',
 };
 

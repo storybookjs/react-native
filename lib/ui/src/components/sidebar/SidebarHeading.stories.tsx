@@ -26,10 +26,10 @@ export default {
 };
 
 const menuItems = [
-  { title: 'Menu Item 1', onClick: action('onActivateMenuItem') },
-  { title: 'Menu Item 2', onClick: action('onActivateMenuItem') },
-  { title: 'Menu Item 3', onClick: action('onActivateMenuItem') },
-] as any;
+  { title: 'Menu Item 1', onClick: action('onActivateMenuItem'), id: '1' },
+  { title: 'Menu Item 2', onClick: action('onActivateMenuItem'), id: '2' },
+  { title: 'Menu Item 3', onClick: action('onActivateMenuItem'), id: '3' },
+];
 
 export const menuHighlighted = () => <SidebarHeading menuHighlighted menu={menuItems} />;
 
