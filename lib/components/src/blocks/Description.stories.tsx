@@ -6,7 +6,7 @@ import markdownCaption from './DocsPageExampleCaption.md';
 
 export default {
   title: 'Docs|Description',
-  Component: Description,
+  component: Description,
   decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 

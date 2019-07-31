@@ -5,7 +5,7 @@ import { Table } from './PropsTable';
 import { DocsPageWrapper } from '../DocsPage';
 
 export default {
-  Component: PropRow,
+  component: PropRow,
   title: 'Docs|PropRow',
   excludeStories: /.*Def$/,
   decorators: [

@@ -5,7 +5,7 @@ import SidebarStories from './SidebarStories';
 import { mockDataset } from './treeview/treeview.mockdata';
 
 export default {
-  Component: SidebarStories,
+  component: SidebarStories,
   title: 'UI|Sidebar/SidebarStories',
   decorators: [s => <Spaced>{s()}</Spaced>],
   excludeStories: /.*Data$/,

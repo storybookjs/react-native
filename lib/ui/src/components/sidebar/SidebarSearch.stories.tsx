@@ -4,7 +4,7 @@ import { actions as makeActions } from '@storybook/addon-actions';
 import SidebarSearch, { PureSidebarSearch } from './SidebarSearch';
 
 export default {
-  Component: SidebarSearch,
+  component: SidebarSearch,
   title: 'UI|Sidebar/SidebarSearch',
   decorators: [
     (storyFn: any) => (

@@ -3,7 +3,7 @@ import React from 'react';
 import SidebarItem from './SidebarItem';
 
 export default {
-  Component: SidebarItem,
+  component: SidebarItem,
   title: 'UI|Sidebar/SidebarItem',
   decorators: [
     (storyFn: any) => (

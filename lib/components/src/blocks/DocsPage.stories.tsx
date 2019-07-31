@@ -8,7 +8,7 @@ import * as descriptionStories from './Description.stories';
 
 export default {
   title: 'Docs|DocsPage',
-  Component: DocsPage,
+  component: DocsPage,
   decorators: [
     storyFn => (
       <DocsWrapper>

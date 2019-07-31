@@ -4,7 +4,7 @@ import { DocsPageWrapper } from '../DocsPage';
 import { stringDef, numberDef } from './PropRow.stories';
 
 export default {
-  Component: PropsTable,
+  component: PropsTable,
   title: 'Docs|PropTable',
   decorators: [storyFn => <DocsPageWrapper>{storyFn()}</DocsPageWrapper>],
 };
