@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-api",
-  "version": "5.2.0-beta.18",
+  "version": "5.2.0-beta.19",
   "description": "Storybook Client API",
   "keywords": [
     "storybook"
@@ -21,12 +21,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.18",
-    "@storybook/channel-postmessage": "5.2.0-beta.18",
-    "@storybook/channels": "5.2.0-beta.18",
-    "@storybook/client-logger": "5.2.0-beta.18",
-    "@storybook/core-events": "5.2.0-beta.18",
-    "@storybook/router": "5.2.0-beta.18",
+    "@storybook/addons": "5.2.0-beta.19",
+    "@storybook/channel-postmessage": "5.2.0-beta.19",
+    "@storybook/channels": "5.2.0-beta.19",
+    "@storybook/client-logger": "5.2.0-beta.19",
+    "@storybook/core-events": "5.2.0-beta.19",
+    "@storybook/router": "5.2.0-beta.19",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "eventemitter3": "^4.0.0",

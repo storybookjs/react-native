@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-roundtrip",
-  "version": "5.2.0-beta.18",
+  "version": "5.2.0-beta.19",
   "description": "roundtrip addon for storybook",
   "keywords": [
     "devkit",
@@ -24,13 +24,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.18",
-    "@storybook/api": "5.2.0-beta.18",
-    "@storybook/client-api": "5.2.0-beta.18",
-    "@storybook/client-logger": "5.2.0-beta.18",
-    "@storybook/components": "5.2.0-beta.18",
-    "@storybook/core-events": "5.2.0-beta.18",
-    "@storybook/theming": "5.2.0-beta.18",
+    "@storybook/addons": "5.2.0-beta.19",
+    "@storybook/api": "5.2.0-beta.19",
+    "@storybook/client-api": "5.2.0-beta.19",
+    "@storybook/client-logger": "5.2.0-beta.19",
+    "@storybook/components": "5.2.0-beta.19",
+    "@storybook/core-events": "5.2.0-beta.19",
+    "@storybook/theming": "5.2.0-beta.19",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
