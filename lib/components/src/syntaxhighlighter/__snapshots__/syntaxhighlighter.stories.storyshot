@@ -799,7 +799,7 @@ exports[`Storyshots Basics|SyntaxHighlighter dark unsupported 1`] = `
   overflow: hidden;
   color: #FFFFFF;
   border: 1px solid rgba(255,255,255,.1);
-  background: #333333;
+  background: #333;
 }
 
 .emotion-2 {
