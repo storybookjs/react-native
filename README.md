@@ -52,6 +52,7 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
   - 👨‍💻[Development scripts](#development-scripts)
   - 💵[Backers](#backers)
   - 💸[Sponsors](#sponsors)
+  - [License](#license)
 
 ## Getting Started
 
