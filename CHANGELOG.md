@@ -1,3 +1,16 @@
+## 5.2.0-beta.19 (July 31, 2019)
+
+### Bug Fixes
+
+* Core: Change webpack-defined variables to globals ([#7622](https://github.com/storybookjs/storybook/pull/7622))
+* Addon-notes: Fix dark theming bug ([#7623](https://github.com/storybookjs/storybook/pull/7623))
+* CLI: Fix usage information ([#7627](https://github.com/storybookjs/storybook/pull/7627))
+* CLI: Show additional package information with `sb info` ([#7624](https://github.com/storybookjs/storybook/pull/7624))
+
+### Maintenance
+
+* Typescript: Migrate Preact ([#7527](https://github.com/storybookjs/storybook/pull/7527))
+
 ## 5.1.10 (July 31, 2019)
 
 ### Breaking Changes
