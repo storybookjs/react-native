@@ -323,8 +323,9 @@ const options = {
       Watermelon: 'watermelon',
 };
 const defaultValue = 'kiwi';
+const groupId = 'GROUP-ID1';
 
-const value = radios(label, options, defaultValue);
+const value = radios(label, options, defaultValue, groupId);
 ```
 
 ### options
@@ -344,8 +345,9 @@ const defaultValue = 'kiwi';
 const optionsObj = {
   display: 'inline-radio'
 };
+const groupId = 'GROUP-ID1';
 
-const value = options(label, valuesObj, defaultValue, optionsObj);
+const value = options(label, valuesObj, defaultValue, optionsObj, groupId);
 ```
 > The display property for `optionsObj` accepts:
 > - `radio`
@@ -365,8 +367,9 @@ import { files } from '@storybook/addon-knobs';
 const label = 'Images';
 const accept = '.xlsx, .pdf';
 const defaultValue = [];
+const groupId = 'GROUP-ID1';
 
-const value = files(label, accept, defaultValue);
+const value = files(label, accept, defaultValue, groupId);
 ```
 
 > You can optionally specify a [list of file types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) which the file input should accept.
