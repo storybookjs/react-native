@@ -30,9 +30,9 @@ story2.story = {
   name: 'story 2',
 };
 
-export const overriden = () => <BaseButton label="This one should have different backgrounds" />;
+export const overridden = () => <BaseButton label="This one should have different backgrounds" />;
 
-overriden.story = {
+overridden.story = {
   parameters: {
     backgrounds: [
       { name: 'pink', value: 'hotpink' },

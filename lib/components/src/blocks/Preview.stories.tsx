@@ -8,7 +8,7 @@ import * as sourceStories from './Source.stories';
 
 export default {
   title: 'Docs|Preview',
-  Component: Preview,
+  component: Preview,
   decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 

@@ -5,7 +5,7 @@ import { DocumentFormatting } from './DocumentFormatting';
 import markdownSample from './DocumentFormattingSample.md';
 
 export default {
-  Component: DocumentFormatting,
+  component: DocumentFormatting,
   title: 'Basics|DocumentFormatting',
   decorators: [
     (storyFn: any) => (

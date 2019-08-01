@@ -54,11 +54,11 @@ interface KnobManagerOptions {
 export default class KnobManager {
   knobStore = new KnobStore();
 
-  channel: Channel;
+  channel: Channel | undefined;
 
   options: KnobManagerOptions = {};
 
-  calling: boolean;
+  calling: boolean = false;
 
   setChannel(channel: Channel) {
     this.channel = channel;
@@ -139,7 +139,7 @@ export default class KnobManager {
     setTimeout(() => {
       this.calling = false;
       // emit to the channel and trigger a panel re-render
-      this.channel.emit(SET, { knobs: this.knobStore.getAll(), timestamp });
+      if (this.channel) this.channel.emit(SET, { knobs: this.knobStore.getAll(), timestamp });
     }, PANEL_UPDATE_INTERVAL);
   }
 }

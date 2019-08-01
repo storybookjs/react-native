@@ -4,7 +4,7 @@ import { DocsPageWrapper } from './DocsPage';
 
 export default {
   title: 'Docs|Source',
-  Component: Source,
+  component: Source,
   decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 

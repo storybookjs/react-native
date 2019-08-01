@@ -5,7 +5,7 @@ import { DocsPageWrapper } from './DocsPage';
 
 export default {
   title: 'Docs|EmptyBlock',
-  Component: EmptyBlock,
+  component: EmptyBlock,
   decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 

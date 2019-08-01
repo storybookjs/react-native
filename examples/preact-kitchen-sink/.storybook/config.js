@@ -1,5 +1,5 @@
 /** @jsx h */
-import { load, addParameters, addDecorator } from '@storybook/preact';
+import { configure, addParameters, addDecorator } from '@storybook/preact';
 import { withA11y } from '@storybook/addon-a11y';
 
 addDecorator(withA11y);
@@ -10,4 +10,4 @@ addParameters({
   },
 });
 
-load(require.context('../src', true, /\.stories\.js$/), module);
+configure(require.context('../src', true, /\.stories\.js$/), module);

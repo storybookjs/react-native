@@ -15,8 +15,9 @@ import DocgenButton from '../components/DocgenButton';
 
 <Meta
   title="Addons|Docs/mdx"
+  component={Button}
   decorators={[storyFn => <div style={{ backgroundColor: 'yellow' }}>{storyFn()}</div>]}
-  parameters={{ component: Button, notes: 'component notes' }}
+  parameters={{ notes: 'component notes' }}
 />
 
 # Selected
@@ -79,6 +80,12 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
 
 <Story name="iframe story" inline={false} height="100px">
   <>This is an iframe!</>
+</Story>
+
+<Story name="function" height="100px">
+  {() => {
+    return <div>function result</div>;
+  }}
 </Story>
 
 <Source name="hello story" />

@@ -1,3 +1,218 @@
+## 5.2.0-beta.20 (August 1, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Pass everything through babel & partial TS conversion ([#7653](https://github.com/storybookjs/storybook/pull/7653))
+* Addon-docs: Error on non-string description ([#7650](https://github.com/storybookjs/storybook/pull/7650))
+* CLI: Fix `npx -p @storybook/cli sb migrate` in yarn project ([#7649](https://github.com/storybookjs/storybook/pull/7649))
+
+## 5.2.0-beta.19 (July 31, 2019)
+
+### Bug Fixes
+
+* Core: Change webpack-defined variables to globals ([#7622](https://github.com/storybookjs/storybook/pull/7622))
+* Addon-notes: Fix dark theming bug ([#7623](https://github.com/storybookjs/storybook/pull/7623))
+* CLI: Fix usage information ([#7627](https://github.com/storybookjs/storybook/pull/7627))
+* CLI: Show additional package information with `sb info` ([#7624](https://github.com/storybookjs/storybook/pull/7624))
+
+### Maintenance
+
+* Typescript: Migrate Preact ([#7527](https://github.com/storybookjs/storybook/pull/7527))
+
+## 5.1.10 (July 31, 2019)
+
+### Breaking Changes
+
+* Core: Remove project root `babel.config.js` loading ([#7573](https://github.com/storybookjs/storybook/pull/7573))
+
+### Bug Fixes
+
+* Addon-info: change stylesheetBase info height from 110vh to 100vh ([#7141](https://github.com/storybookjs/storybook/pull/7141))
+* React-native: Fix react native server ([#7187](https://github.com/storybookjs/storybook/pull/7187))
+* Addon-centered/contexts: Move optionalDependencies to peerDependencies ([#7315](https://github.com/storybookjs/storybook/pull/7315))
+* Addon-notes/info: Fix indenting on markdown code blocks ([#7158](https://github.com/storybookjs/storybook/pull/7158))
+* Addon-actions: fix serialization performance ([#7256](https://github.com/storybookjs/storybook/pull/7256))
+* Addon-notes: Fix dark theming bug ([#7623](https://github.com/storybookjs/storybook/pull/7623))
+* CLI: Fix usage information ([#7627](https://github.com/storybookjs/storybook/pull/7627))
+* Addon-centered: Fix component disappearing on zoom ([#7400](https://github.com/storybookjs/storybook/pull/7400))
+* Addon-analytics: Fix API signature ([#7410](https://github.com/storybookjs/storybook/pull/7410))
+* UI: Fix Sidebar input refresh on 'Enter' ([#7342](https://github.com/storybookjs/storybook/pull/7342))
+* Addon-knobs: Prevent rerender when a button callback returns false. ([#7197](https://github.com/storybookjs/storybook/pull/7197))
+* Core: Keep story data and legacy data in sync ([#7319](https://github.com/storybookjs/storybook/pull/7319))
+* CLI: Move the free port logic so that loadOptions don't override it ([#7237](https://github.com/storybookjs/storybook/pull/7237))
+* Addon-backgrounds: Fix unstretched preview background wrapper ([#7173](https://github.com/storybookjs/storybook/pull/7173))
+
+### Maintenance
+
+* Build: delete tests & snapshots from dist ([#7358](https://github.com/storybookjs/storybook/pull/7358))
+
+### Dependency Upgrades
+
+* CLI: replaced merge-dirs dependency by fs-extra ([#7100](https://github.com/storybookjs/storybook/pull/7100))
+
+## 5.2.0-beta.18 (July 30, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Ensure getNotes/getInfo return string ([#7597](https://github.com/storybookjs/storybook/pull/7597))
+* React/Angular/HTML/Vue: Fix typings for `configure` ([#7598](https://github.com/storybookjs/storybook/pull/7598))
+
+### Maintenance
+
+* Typescript: Migrate Vue ([#7578](https://github.com/storybookjs/storybook/pull/7578))
+
+### Dependency Upgrades
+
+* Upgrade corejs-upgrade-webpack-plugin lazy-universal-dotenv ([#7592](https://github.com/storybookjs/storybook/pull/7592))
+
+## 5.2.0-beta.17 (July 29, 2019)
+
+### Bug Fixes
+
+* CLI: Fix storiesof-to-csf migration w/punctuation ([#7590](https://github.com/storybookjs/storybook/pull/7590))
+
+## 5.2.0-beta.16 (July 29, 2019)
+
+### Features
+
+* Addon-docs: Configure jsx automagically ([#7581](https://github.com/storybookjs/storybook/pull/7581))
+* Addon-docs: Add DocsPage automagically ([#7579](https://github.com/storybookjs/storybook/pull/7579))
+
+## 5.2.0-beta.15 (July 29, 2019)
+
+### Features
+
+* CRA: Add support for TSX in config folder ([#7566](https://github.com/storybookjs/storybook/pull/7566))
+
+### Bug Fixes
+
+* Addon-info: only render Components in propTables ([#7477](https://github.com/storybookjs/storybook/pull/7477))
+
+### Dependency Upgrades
+
+* Update telejson dependency to 2.2.2 ([#7586](https://github.com/storybookjs/storybook/pull/7586))
+* Angular: Fix @angular-devkit/build-angular version ([#7585](https://github.com/storybookjs/storybook/pull/7585))
+
+## 5.2.0-beta.14 (July 29, 2019)
+
+Failed publish
+
+## 5.2.0-beta.13 (July 27, 2019)
+
+This is a breaking change for anybody who used `load` on an earlier 5.2 pre-release. Simply rename `load` to `configure` in your storybook config and that should fix things.
+
+If you're not using SB Docs, you probably don't have to worry about this.
+
+### Breaking Changes
+
+* Core: Rename `load` to `configure` ([#7576](https://github.com/storybookjs/storybook/pull/7576))
+
+## 5.2.0-beta.12 (July 27, 2019)
+
+### Bug Fixes
+
+* Addon-knobs: Fix select knob default selection when using array values ([#7568](https://github.com/storybookjs/storybook/pull/7568))
+* Addon-knobs: Call onChanges only for changed props ([#6884](https://github.com/storybookjs/storybook/pull/6884))
+
+### Maintenance
+
+* Angular: Print error message if angular.json has no default project specified ([#7574](https://github.com/storybookjs/storybook/pull/7574))
+
+## 5.2.0-beta.11 (July 26, 2019)
+
+Failed release
+
+## 5.2.0-beta.10 (July 26, 2019)
+
+This is a breaking release that undoes an unintentional breaking change introduced in 5.1.0 (and will also be released as a 5.1.x patch)
+
+### Breaking Changes
+
+* Core: Remove project root `babel.config.js` loading ([#7573](https://github.com/storybookjs/storybook/pull/7573))
+
+### Features
+
+* React: Add hooks support to stories ([#7571](https://github.com/storybookjs/storybook/pull/7571))
+
+### Bug Fixes
+
+* UI: Fix attribute warning on shortcut button click ([#7548](https://github.com/storybookjs/storybook/pull/7548))
+
+## 5.2.0-beta.9 (July 26, 2019)
+
+### Bug Fixes
+
+* Angular: Fix automatic module metadata extraction for forRoot imports ([#7224](https://github.com/storybookjs/storybook/pull/7224))
+
+### Maintenance
+
+* Rename "Module" to Component Story Format ([#7564](https://github.com/storybookjs/storybook/pull/7564))
+
+## 5.2.0-beta.8 (July 25, 2019)
+
+### Breaking Changes
+
+`source-loader` is now part of `addon-docs` preset. If you're using both the `addon-docs` preset and `source-loader` in your project, you need to update. You can remove `source-loader` and let the preset take care of it. Alternatively, you can disable `source-loader` in the preset by setting `sourceLoaderOptions` to `null`.
+
+* Addon-docs: Add source-loader to preset ([#7547](https://github.com/storybookjs/storybook/pull/7547))
+* Core: Don't allow duplicate titles ([#7542](https://github.com/storybookjs/storybook/pull/7542))
+
+### Bug Fixes
+
+* Addon-storysource: Add source-loader dep to avoid breaking change ([#7554](https://github.com/storybookjs/storybook/pull/7554))
+* Addon-contexts: Ensure nodes is Array ([#7393](https://github.com/storybookjs/storybook/pull/7393))
+
+### Maintenance
+
+* Angular: Log angular cli config errors ([#7484](https://github.com/storybookjs/storybook/pull/7484))
+
+## 5.2.0-beta.7 (July 23, 2019)
+
+### Features
+
+* Addon-docs: MDX function stories ([#7529](https://github.com/storybookjs/storybook/pull/7529))
+* CLI: update `sb init` to module format for Ember/Marko/Mithril/Rax/Riot/Svelte ([#7504](https://github.com/storybookjs/storybook/pull/7504))
+* CLI: update `sb init` to module format for Angular ([#7502](https://github.com/storybookjs/storybook/pull/7502))
+* CLI: update `sb init` to module format for React ([#7500](https://github.com/storybookjs/storybook/pull/7500))
+
+### Bug Fixes
+
+* Ondevice-knobs: Graceful fail on missing default ([#7533](https://github.com/storybookjs/storybook/pull/7533))
+
+### Maintenance
+
+* Build: Attempt to fix travis timeouts ([#7531](https://github.com/storybookjs/storybook/pull/7531))
+
+## 5.2.0-beta.6 (July 23, 2019)
+
+### Breaking Changes
+
+It is now recommended to only use ONE `load` call in your app and it will warn you if you call it more than once. The examples and docs have been updated to reflect this. Technically this is not a breaking change since the old API is supported, but it's a change in usage from previous versions.
+
+### Features
+
+* Core: Top-level components in MDX/Module formats ([#7524](https://github.com/storybookjs/storybook/pull/7524))
+* Core: Module format `load` accept loader function  ([#7518](https://github.com/storybookjs/storybook/pull/7518))
+
+### Bug Fixes
+
+* Addon-centered: Fix component disappearing on zoom ([#7400](https://github.com/storybookjs/storybook/pull/7400))
+
+### Maintenance
+
+* Addon-knobs: enable Typescript `strict` flag ([#7515](https://github.com/storybookjs/storybook/pull/7515))
+
+## 5.2.0-beta.5 (July 21, 2019)
+
+### Features
+
+* CLI: update `sb init` to module format for Vue ([#7501](https://github.com/storybookjs/storybook/pull/7501))
+* CLI: update `sb init` to module format for HTML/Polymer ([#7503](https://github.com/storybookjs/storybook/pull/7503))
+
+### Bug Fixes
+
+* Source-loader: Separate server and client code for IE support ([#7510](https://github.com/storybookjs/storybook/pull/7510))
+
 ## 5.2.0-beta.4 (July 20, 2019)
 
 ### Breaking Changes

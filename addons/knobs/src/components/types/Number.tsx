@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Component, ChangeEvent } from 'react';
+import React, { Component, ChangeEvent, Validator } from 'react';
 
 import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
@@ -20,7 +20,7 @@ export interface NumberTypeKnob
   value: NumberTypeKnobValue;
 }
 
-interface NumberTypeProps extends KnobControlProps<NumberTypeKnobValue> {
+interface NumberTypeProps extends KnobControlProps<NumberTypeKnobValue | null> {
   knob: NumberTypeKnob;
 }
 
@@ -63,8 +63,13 @@ export default class NumberType extends Component<NumberTypeProps> {
       min: PropTypes.number,
       max: PropTypes.number,
       step: PropTypes.number,
-    }).isRequired,
-    onChange: PropTypes.func.isRequired,
+    }).isRequired as Validator<NumberTypeProps['knob']>,
+    onChange: PropTypes.func.isRequired as Validator<NumberTypeProps['onChange']>,
+  };
+
+  static defaultProps: NumberTypeProps = {
+    knob: {} as any,
+    onChange: value => value,
   };
 
   static serialize = (value: NumberTypeKnobValue | null | undefined) =>
@@ -82,7 +87,7 @@ export default class NumberType extends Component<NumberTypeProps> {
     const { onChange } = this.props;
     const { value } = event.target;
 
-    let parsedValue = Number(value);
+    let parsedValue: number | null = Number(value);
 
     if (Number.isNaN(parsedValue) || value === '') {
       parsedValue = null;

@@ -22,6 +22,7 @@ module.exports = {
         '/guides/guide-vue/',
         '/guides/guide-angular/',
         '/guides/guide-mithril/',
+        '/guides/guide-marko/',
         '/guides/guide-ember/',
         '/guides/guide-riot/',
         '/guides/guide-svelte/',
@@ -38,6 +39,11 @@ module.exports = {
         '/configurations/theming/',
         '/configurations/cli-options/',
         '/configurations/standalone-options/',
+      ],
+      formats: [
+        '/formats/component-story-format/',
+        '/formats/storiesof-api/',
+        '/formats/mdx-syntax/',
       ],
       testing: [
         '/testing/react-ui-testing/',

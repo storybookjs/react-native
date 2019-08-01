@@ -19,7 +19,7 @@ export default class KnobStore {
 
   callbacks: Callback[] = [];
 
-  timer: NodeJS.Timeout;
+  timer: number | undefined;
 
   has(key: string) {
     return this.store[key] !== undefined;
@@ -36,7 +36,7 @@ export default class KnobStore {
     if (this.timer) {
       clearTimeout(this.timer);
     }
-    this.timer = setTimeout(callAll, 50, this.callbacks);
+    this.timer = setTimeout(callAll, 50, this.callbacks) as number;
   }
 
   get(key: string) {

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { ChangeEvent, Component, WeakValidationMap } from 'react';
+import React, { ChangeEvent, Component, Validator } from 'react';
 
 import { Form } from '@storybook/components';
 import { KnobControlConfig, KnobControlProps } from './types';
@@ -27,14 +27,13 @@ export default class ArrayType extends Component<ArrayTypeProps> {
     onChange: (value: ArrayTypeKnobValue) => value,
   };
 
-  static propTypes: WeakValidationMap<ArrayTypeProps> = {
-    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+  static propTypes = {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.array,
       separator: PropTypes.string,
-    }) as any,
-    onChange: PropTypes.func,
+    }) as Validator<ArrayTypeProps['knob']>,
+    onChange: PropTypes.func as Validator<ArrayTypeProps['onChange']>,
   };
 
   static serialize = (value: ArrayTypeKnobValue) => value;

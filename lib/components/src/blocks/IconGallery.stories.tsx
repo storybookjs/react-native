@@ -6,7 +6,7 @@ import { Icons as ExampleIcon } from '../icon/icon';
 
 export default {
   title: 'Docs|IconGallery',
-  Component: IconGallery,
+  component: IconGallery,
   decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 

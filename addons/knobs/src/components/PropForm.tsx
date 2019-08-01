@@ -1,4 +1,4 @@
-import React, { Component, WeakValidationMap, ComponentType, Requireable } from 'react';
+import React, { Component, ComponentType, Validator } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form } from '@storybook/components';
@@ -7,8 +7,8 @@ import { KnobStoreKnob } from '../KnobStore';
 
 interface PropFormProps {
   knobs: KnobStoreKnob[];
-  onFieldChange: Function;
-  onFieldClick: Function;
+  onFieldChange: (changedKnob: KnobStoreKnob) => void;
+  onFieldClick: (knob: KnobStoreKnob) => void;
 }
 
 const InvalidType = () => <span>Invalid Type</span>;
@@ -18,24 +18,25 @@ export default class PropForm extends Component<PropFormProps> {
 
   static defaultProps = {
     knobs: [] as KnobStoreKnob[],
+    onFieldChange: () => {},
+    onFieldClick: () => {},
   };
 
-  static propTypes: WeakValidationMap<PropFormProps> = {
-    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+  static propTypes = {
     knobs: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string,
         value: PropTypes.any,
       })
-    ).isRequired as Requireable<any[]>,
-    onFieldChange: PropTypes.func.isRequired,
-    onFieldClick: PropTypes.func.isRequired,
+    ).isRequired as Validator<PropFormProps['knobs']>,
+    onFieldChange: PropTypes.func.isRequired as Validator<PropFormProps['onFieldChange']>,
+    onFieldClick: PropTypes.func.isRequired as Validator<PropFormProps['onFieldClick']>,
   };
 
   makeChangeHandler(name: string, type: string) {
     const { onFieldChange } = this.props;
     return (value = '') => {
-      const change = { name, type, value };
+      const change: KnobStoreKnob = { name, type, value } as any;
 
       onFieldChange(change);
     };

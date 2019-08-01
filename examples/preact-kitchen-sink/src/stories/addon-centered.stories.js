@@ -7,11 +7,8 @@ import Button from '../Button';
 
 export default {
   title: 'Addons|Centered',
+  component: Button,
   decorators: [Centered],
-
-  parameters: {
-    component: Centered,
-  },
 };
 
 export const button = () => <Button>A button</Button>;
