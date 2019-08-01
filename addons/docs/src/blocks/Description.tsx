@@ -20,13 +20,23 @@ interface DescriptionProps {
   markdown?: string;
 }
 
-const getNotes = (notes?: Notes) =>
-  (notes && (typeof notes === 'string' ? notes : notes.markdown || notes.text)) || '';
+const str = (o: any) => {
+  if (!o) {
+    return '';
+  }
+  if (typeof o === 'string') {
+    return o as string;
+  }
+  throw new Error(`Description: expected string, got: ${JSON.stringify(o)}`);
+};
 
-const getInfo = (info?: Info) => (info && (typeof info === 'string' ? info : info.text)) || '';
+const getNotes = (notes?: Notes) =>
+  notes && (typeof notes === 'string' ? notes : str(notes.markdown) || str(notes.text));
+
+const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
 
 const getDocgen = (component?: Component) =>
-  (component && component.__docgenInfo && component.__docgenInfo.description) || '';
+  component && component.__docgenInfo && str(component.__docgenInfo.description);
 
 export const getDescriptionProps = (
   { of, type, markdown }: DescriptionProps,
@@ -50,7 +60,7 @@ export const getDescriptionProps = (
         markdown: `
 ${getNotes(notes) || getInfo(info) || ''}
 
-${getDocgen(target)}
+${getDocgen(target) || ''}
 `.trim(),
       };
   }
