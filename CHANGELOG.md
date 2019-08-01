@@ -1,3 +1,11 @@
+## 5.2.0-beta.20 (August 1, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Pass everything through babel & partial TS conversion ([#7653](https://github.com/storybookjs/storybook/pull/7653))
+* Addon-docs: Error on non-string description ([#7650](https://github.com/storybookjs/storybook/pull/7650))
+* CLI: Fix `npx -p @storybook/cli sb migrate` in yarn project ([#7649](https://github.com/storybookjs/storybook/pull/7649))
+
 ## 5.2.0-beta.19 (July 31, 2019)
 
 ### Bug Fixes
