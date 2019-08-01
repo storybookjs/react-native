@@ -1,1 +1,1 @@
-module.exports = require('../common/makePreset')('react');
+module.exports = require('../dist/frameworks/common/makePreset').default('react');

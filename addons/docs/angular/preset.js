@@ -1,1 +1,1 @@
-module.exports = require('../common/makePreset')('angular');
+module.exports = require('../dist/frameworks/common/makePreset').default('angular');
