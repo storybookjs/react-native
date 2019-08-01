@@ -20,11 +20,20 @@ interface DescriptionProps {
   markdown?: string;
 }
 
-const str = (o: any) => (typeof o === 'string' ? o : '');
+const str = (o: any) => {
+  if (!o) {
+    return '';
+  }
+  if (typeof o === 'string') {
+    return o as string;
+  }
+  throw new Error(`Description: expected string, got: ${JSON.stringify(o)}`);
+};
 
-const getNotes = (notes?: Notes) => notes && (str(notes) || str(notes.markdown) || str(notes.text));
+const getNotes = (notes?: Notes) =>
+  notes && (typeof notes === 'string' ? notes : str(notes.markdown) || str(notes.text));
 
-const getInfo = (info?: Info) => info && (str(info) || str(info.text));
+const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
 
 const getDocgen = (component?: Component) =>
   component && component.__docgenInfo && str(component.__docgenInfo.description);
