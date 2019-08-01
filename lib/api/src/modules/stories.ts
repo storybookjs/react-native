@@ -286,6 +286,11 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       } else if (viewMode && firstLeaf) {
         navigate(`/${viewMode}/${firstLeaf.id}`);
       }
+    } else if (storiesHash[storyId]) {
+      // When story exists but specific child is not specified, it routes
+      // to the first child of the story.
+      const firstLeafId = storiesHash[storyId].children[0];
+      navigate(`/${viewMode}/${firstLeafId}`);
     }
 
     store.setState({
