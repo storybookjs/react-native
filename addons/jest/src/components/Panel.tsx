@@ -90,7 +90,11 @@ const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
       if (!result) {
-        return <Placeholder>This story has tests configured, but no file was found</Placeholder>;
+        return (
+          <Placeholder key={name}>
+            This story has tests configured, but no file was found
+          </Placeholder>
+        );
       }
 
       const successNumber = result.assertionResults.filter(({ status }) => status === 'passed')
