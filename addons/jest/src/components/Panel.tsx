@@ -17,11 +17,6 @@ const Item = styled.li({
   padding: 0,
 });
 
-const NoTests = styled.div({
-  padding: '10px 20px',
-  flex: 1,
-});
-
 const ProgressWrapper = styled.div({
   position: 'relative',
   height: '10px',
@@ -95,7 +90,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
       if (!result) {
-        return <NoTests key={name}>This story has tests configured, but no file was found</NoTests>;
+        return <Placeholder>This story has tests configured, but no file was found</Placeholder>;
       }
 
       const successNumber = result.assertionResults.filter(({ status }) => status === 'passed')
