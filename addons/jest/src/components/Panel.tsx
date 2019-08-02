@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { styled, withTheme } from '@storybook/theming';
-import { ScrollArea, TabsState } from '@storybook/components';
+import { ScrollArea, TabsState, Link, Placeholder } from '@storybook/components';
 import { SizeMe } from 'react-sizeme';
 import Result from './Result';
 import provideJestResult, { Test } from '../hoc/provideJestResult';
@@ -163,7 +163,19 @@ const Panel = ({ tests }: PanelProps) => (
     {tests ? (
       <ContentWithTheme tests={tests} />
     ) : (
-      <NoTests>This story has no tests configured</NoTests>
+      <Placeholder>
+        <Fragment>No tests found</Fragment>
+        <Fragment>
+          Learn how to{' '}
+          <Link
+            href="https://github.com/storybookjs/storybook/tree/master/addons/jest"
+            target="_blank"
+            withArrow
+          >
+            add your story's Jest test results
+          </Link>
+        </Fragment>
+      </Placeholder>
     )}
   </ScrollArea>
 );
