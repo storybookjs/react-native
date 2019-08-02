@@ -167,7 +167,7 @@ const Panel = ({ tests }: PanelProps) => (
             target="_blank"
             withArrow
           >
-            add your story's Jest test results
+            add Jest test results to your story
           </Link>
         </Fragment>
       </Placeholder>
