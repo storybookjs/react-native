@@ -1,3 +1,14 @@
+## 5.2.0-beta.21 (August 3, 2019)
+
+### Features
+
+* Addon-jest: Add placeholder info for missing tests ([#7660](https://github.com/storybookjs/storybook/pull/7660))
+
+### Bug Fixes
+
+* Addon-docs: Pass framework configs through babel ([#7667](https://github.com/storybookjs/storybook/pull/7667))
+* Addon-centered: Fix disappearing when zoomed ([#7640](https://github.com/storybookjs/storybook/pull/7640))
+
 ## 5.2.0-beta.20 (August 1, 2019)
 
 ### Bug Fixes
