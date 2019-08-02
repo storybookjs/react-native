@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { styled, withTheme } from '@storybook/theming';
-import { ScrollArea, TabsState } from '@storybook/components';
+import { ScrollArea, TabsState, Link, Placeholder } from '@storybook/components';
 import { SizeMe } from 'react-sizeme';
 import Result from './Result';
 import provideJestResult, { Test } from '../hoc/provideJestResult';
@@ -15,11 +15,6 @@ const List = styled.ul({
 const Item = styled.li({
   display: 'block',
   padding: 0,
-});
-
-const NoTests = styled.div({
-  padding: '10px 20px',
-  flex: 1,
 });
 
 const ProgressWrapper = styled.div({
@@ -95,7 +90,11 @@ const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
       if (!result) {
-        return <NoTests key={name}>This story has tests configured, but no file was found</NoTests>;
+        return (
+          <Placeholder key={name}>
+            This story has tests configured, but no file was found
+          </Placeholder>
+        );
       }
 
       const successNumber = result.assertionResults.filter(({ status }) => status === 'passed')
@@ -163,7 +162,19 @@ const Panel = ({ tests }: PanelProps) => (
     {tests ? (
       <ContentWithTheme tests={tests} />
     ) : (
-      <NoTests>This story has no tests configured</NoTests>
+      <Placeholder>
+        <Fragment>No tests found</Fragment>
+        <Fragment>
+          Learn how to{' '}
+          <Link
+            href="https://github.com/storybookjs/storybook/tree/master/addons/jest"
+            target="_blank"
+            withArrow
+          >
+            add Jest test results to your story
+          </Link>
+        </Fragment>
+      </Placeholder>
     )}
   </ScrollArea>
 );
