@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { Button } from '@storybook/react/demo';
 
-import Container from './Container';
+import Container from '../components/Container';
 
 const InfoButton = () => (
   <span
@@ -25,10 +25,7 @@ const InfoButton = () => (
 
 export default {
   title: 'Button',
-
-  parameters: {
-    component: Button,
-  },
+  component: Button,
 };
 
 export const story1 = () => <Button onClick={action('clicked', { depth: 1 })}>Hello Button</Button>;
@@ -74,10 +71,10 @@ story4.story = {
   parameters: {
     notes: 'Composition: Info(Notes())',
     options: { selectedPanel: 'storybook/info/panel' },
-    decorators: [
-      withInfo(
-        'Use the [info addon](https://github.com/storybookjs/storybook/tree/master/addons/info) with its new painless API.'
-      ),
-    ],
   },
+  decorators: [
+    withInfo(
+      'Use the [info addon](https://github.com/storybookjs/storybook/tree/master/addons/info) with its new painless API.'
+    ),
+  ],
 };
