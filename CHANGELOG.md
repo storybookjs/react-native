@@ -1,3 +1,13 @@
+## 5.2.0-beta.22 (August 3, 2019)
+
+### Bug Fixes
+
+* Core: Fix HMR for CSF files ([#7669](https://github.com/storybookjs/storybook/pull/7669))
+
+### Maintenance
+
+* React: Cleanup CSF stories in cra-kitchen-sink ([#7670](https://github.com/storybookjs/storybook/pull/7670))
+
 ## 5.2.0-beta.21 (August 3, 2019)
 
 ### Features
