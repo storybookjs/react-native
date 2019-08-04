@@ -6,7 +6,7 @@ function snapshotTest({ item, asyncJest, framework, testMethod, testMethodParams
   const context = { ...item, framework };
 
   if (asyncJest === true) {
-    it(name, (done: any) =>
+    it(name, (done: jest.DoneCallback) =>
       testMethod({
         done,
         story: item,

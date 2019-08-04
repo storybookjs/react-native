@@ -1,10 +1,11 @@
 import { snapshotWithOptions } from '../test-bodies';
 import Stories2SnapsConverter from '../Stories2SnapsConverter';
+import { StoryshotsOptions } from './StoryshotsOptions';
 
 const ignore = ['**/node_modules/**'];
 const defaultStories2SnapsConverter = new Stories2SnapsConverter();
 
-function getIntegrityOptions({ integrityOptions }: any) {
+function getIntegrityOptions({ integrityOptions }: StoryshotsOptions) {
   if (integrityOptions === false) {
     return false;
   }
@@ -13,14 +14,18 @@ function getIntegrityOptions({ integrityOptions }: any) {
     return false;
   }
 
+  const ignoreOption: string[] = Array.isArray(integrityOptions.ignore)
+    ? integrityOptions.ignore
+    : [];
+
   return {
     ...integrityOptions,
-    ignore: [...ignore, ...(integrityOptions.ignore || [])],
+    ignore: [...ignore, ...ignoreOption],
     absolute: true,
   };
 }
 
-function ensureOptionsDefaults(options: any) {
+function ensureOptionsDefaults(options: StoryshotsOptions) {
   const {
     suite = 'Storyshots',
     asyncJest,

@@ -3,7 +3,7 @@ import 'jest-specific-snapshot';
 const isFunction = (obj: any) => !!(obj && obj.constructor && obj.call && obj.apply);
 const optionsOrCallOptions = (opts: any, story: any) => (isFunction(opts) ? opts(story) : opts);
 
-export const snapshotWithOptions = (options = {}) => ({
+export const snapshotWithOptions = (options: { renderer?: any; serializer?: any } = {}) => ({
   story,
   context,
   renderTree,
