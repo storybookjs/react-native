@@ -8,6 +8,12 @@ const defaultOptions = {
 };
 
 class DefaultStories2SnapsConverter {
+  options: {
+    storiesExtensions: string[];
+    snapshotExtension: string;
+    snapshotsDirName: string;
+  };
+
   constructor(options = {}) {
     this.options = {
       ...defaultOptions,
@@ -17,14 +23,14 @@ class DefaultStories2SnapsConverter {
 
   getSnapshotExtension = () => this.options.snapshotExtension;
 
-  getStoryshotFile(fileName) {
+  getStoryshotFile(fileName: string) {
     const { dir, name } = path.parse(fileName);
     const { snapshotsDirName, snapshotExtension } = this.options;
 
     return path.format({ dir: path.join(dir, snapshotsDirName), name, ext: snapshotExtension });
   }
 
-  getSnapshotFileName(context) {
+  getSnapshotFileName(context: any) {
     const { fileName, kind } = context;
 
     if (!fileName) {
@@ -45,11 +51,11 @@ class DefaultStories2SnapsConverter {
     return this.getStoryshotFile(fileName);
   }
 
-  getPossibleStoriesFiles(storyshotFile) {
+  getPossibleStoriesFiles(storyshotFile: string) {
     const { dir, name } = path.parse(storyshotFile);
     const { storiesExtensions } = this.options;
 
-    return storiesExtensions.map(ext =>
+    return (storiesExtensions as string[]).map(ext =>
       path.format({
         dir: path.dirname(dir),
         name,

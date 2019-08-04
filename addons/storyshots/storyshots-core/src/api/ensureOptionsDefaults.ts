@@ -4,7 +4,7 @@ import Stories2SnapsConverter from '../Stories2SnapsConverter';
 const ignore = ['**/node_modules/**'];
 const defaultStories2SnapsConverter = new Stories2SnapsConverter();
 
-function getIntegrityOptions({ integrityOptions }) {
+function getIntegrityOptions({ integrityOptions }: any) {
   if (integrityOptions === false) {
     return false;
   }
@@ -20,7 +20,7 @@ function getIntegrityOptions({ integrityOptions }) {
   };
 }
 
-function ensureOptionsDefaults(options) {
+function ensureOptionsDefaults(options: any) {
   const {
     suite = 'Storyshots',
     asyncJest,

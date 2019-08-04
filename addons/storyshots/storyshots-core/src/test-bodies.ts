@@ -1,18 +1,19 @@
 import 'jest-specific-snapshot';
 
-const isFunction = obj => !!(obj && obj.constructor && obj.call && obj.apply);
-const optionsOrCallOptions = (opts, story) => (isFunction(opts) ? opts(story) : opts);
+const isFunction = (obj: any) => !!(obj && obj.constructor && obj.call && obj.apply);
+const optionsOrCallOptions = (opts: any, story: any) => (isFunction(opts) ? opts(story) : opts);
 
 export const snapshotWithOptions = (options = {}) => ({
   story,
   context,
   renderTree,
   snapshotFileName,
-}) => {
+}: any) => {
   const result = renderTree(story, context, optionsOrCallOptions(options, story));
 
-  function match(tree) {
+  function match(tree: any) {
     if (snapshotFileName) {
+      // @ts-ignore
       expect(tree).toMatchSpecificSnapshot(snapshotFileName);
     } else {
       expect(tree).toMatchSnapshot();
@@ -35,7 +36,7 @@ export const multiSnapshotWithOptions = (options = {}) => ({
   context,
   renderTree,
   stories2snapsConverter,
-}) =>
+}: any) =>
   snapshotWithOptions(options)({
     story,
     context,
@@ -43,12 +44,12 @@ export const multiSnapshotWithOptions = (options = {}) => ({
     snapshotFileName: stories2snapsConverter.getSnapshotFileName(context),
   });
 
-export function shallowSnapshot({ story, context, renderShallowTree, options = {} }) {
+export function shallowSnapshot({ story, context, renderShallowTree, options = {} }: any) {
   const result = renderShallowTree(story, context, options);
   expect(result).toMatchSnapshot();
 }
 
-export const renderWithOptions = (options = {}) => ({ story, context, renderTree }) => {
+export const renderWithOptions = (options = {}) => ({ story, context, renderTree }: any) => {
   const result = renderTree(story, context, options);
 
   if (typeof result.then === 'function') {

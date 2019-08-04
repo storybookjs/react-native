@@ -2,7 +2,7 @@ import fs from 'fs';
 import glob from 'glob';
 import { describe, it } from 'global';
 
-function integrityTest(integrityOptions, stories2snapsConverter) {
+function integrityTest(integrityOptions: any, stories2snapsConverter: any) {
   if (integrityOptions === false) {
     return;
   }

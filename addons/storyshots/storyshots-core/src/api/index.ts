@@ -3,13 +3,16 @@ import addons, { mockChannel } from '@storybook/addons';
 import ensureOptionsDefaults from './ensureOptionsDefaults';
 import snapshotsTests from './snapshotsTestsTemplate';
 import integrityTest from './integrityTestTemplate';
+// @ts-ignore
 import loadFramework from '../frameworks/frameworkLoader';
 
 global.STORYBOOK_REACT_CLASSES = global.STORYBOOK_REACT_CLASSES || {};
 
 const methods = ['beforeAll', 'beforeEach', 'afterEach', 'afterAll'];
 
-function callTestMethodGlobals(testMethod) {
+function callTestMethodGlobals(
+  testMethod: { [key in TestMethod]?: Function } & { [key in string]: any }
+) {
   methods.forEach(method => {
     if (typeof testMethod[method] === 'function') {
       global[method](testMethod[method]);
@@ -17,7 +20,8 @@ function callTestMethodGlobals(testMethod) {
   });
 }
 
-const isDisabled = parameter => parameter === false || (parameter && parameter.disable === true);
+const isDisabled = (parameter: any) =>
+  parameter === false || (parameter && parameter.disable === true);
 
 function testStorySnapshots(options = {}) {
   if (typeof describe !== 'function') {
@@ -45,11 +49,11 @@ function testStorySnapshots(options = {}) {
 
   const data = storybook
     .raw()
-    .filter(({ name }) => (storyNameRegex ? name.match(storyNameRegex) : true))
-    .filter(({ kind }) => (storyKindRegex ? kind.match(storyKindRegex) : true))
-    .reduce((acc, item) => {
+    .filter(({ name }: any) => (storyNameRegex ? name.match(storyNameRegex) : true))
+    .filter(({ kind }: any) => (storyKindRegex ? kind.match(storyKindRegex) : true))
+    .reduce((acc: any, item: any) => {
       const { kind, storyFn: render, parameters } = item;
-      const existing = acc.find(i => i.kind === kind);
+      const existing = acc.find((i: any) => i.kind === kind);
       const { fileName } = item.parameters;
 
       if (!isDisabled(parameters.storyshots)) {
