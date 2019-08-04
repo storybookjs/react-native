@@ -1,12 +1,14 @@
 /* eslint-disable global-require,import/no-dynamic-require */
 import fs from 'fs';
 import path from 'path';
+import { Loader } from './Loader';
+import { StoryshotsOptions } from '../api/StoryshotsOptions';
 
 const loaderScriptName = 'loader.js';
 
-const isDirectory = source => fs.lstatSync(source).isDirectory();
+const isDirectory = (source: string) => fs.lstatSync(source).isDirectory();
 
-function getLoaders() {
+function getLoaders(): Loader[] {
   return fs
     .readdirSync(__dirname)
     .map(name => path.join(__dirname, name))
@@ -16,7 +18,7 @@ function getLoaders() {
     .map(loader => require(loader).default);
 }
 
-function loadFramework(options) {
+function loadFramework(options: StoryshotsOptions) {
   const loaders = getLoaders();
 
   const loader = loaders.find(frameworkLoader => frameworkLoader.test(options));
