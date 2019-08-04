@@ -32,14 +32,9 @@
     "@storybook/api": "5.2.0-beta.22",
     "@storybook/components": "5.2.0-beta.22",
     "@storybook/core-events": "5.2.0-beta.22",
-    "core-js": "^3.0.1"
-  },
-  "peerDependencies": {
-    "global": "*",
-    "preact": "*",
-    "qs": "*",
-    "react": "*",
-    "vue": "*"
+    "core-js": "^3.0.1",
+    "global": "^4.3.2",
+    "qs": "^6.6.0"
   },
   "devDependencies": {
     "preact": "*",
