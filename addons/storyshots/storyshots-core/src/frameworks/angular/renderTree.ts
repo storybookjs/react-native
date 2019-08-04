@@ -14,18 +14,21 @@ import { initModuleData } from './helpers';
 addSerializer(HTMLCommentSerializer);
 addSerializer(AngularSnapshotSerializer);
 
-function getRenderedTree(story) {
+function getRenderedTree(story: any) {
   const currentStory = story.render();
 
   const { moduleMeta, AppComponent } = initModuleData(currentStory);
 
-  TestBed.configureTestingModule({
-    imports: [...moduleMeta.imports],
-    declarations: [...moduleMeta.declarations],
-    providers: [...moduleMeta.providers],
-    schemas: [NO_ERRORS_SCHEMA, ...moduleMeta.schemas],
-    bootstrap: [...moduleMeta.bootstrap],
-  });
+  TestBed.configureTestingModule(
+    // TODO: take a look at `bootstrap` because it looks it does not exists in TestModuleMetadata
+    {
+      imports: [...moduleMeta.imports],
+      declarations: [...moduleMeta.declarations],
+      providers: [...moduleMeta.providers],
+      schemas: [NO_ERRORS_SCHEMA, ...moduleMeta.schemas],
+      bootstrap: [...moduleMeta.bootstrap],
+    } as any
+  );
 
   TestBed.overrideModule(BrowserDynamicTestingModule, {
     set: {

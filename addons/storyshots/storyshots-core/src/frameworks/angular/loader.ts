@@ -2,6 +2,8 @@ import 'core-js';
 import 'core-js/es/reflect';
 import hasDependency from '../hasDependency';
 import configure from '../configure';
+import { Loader } from '../Loader';
+import { StoryshotsOptions } from '../../api/StoryshotsOptions';
 
 function setupAngularJestPreset() {
   // Needed to prevent "Zone.js has detected that ZoneAwarePromise `(window|global).Promise` has been overwritten."
@@ -18,13 +20,13 @@ function setupAngularJestPreset() {
   require.requireActual('jest-preset-angular/setupJest');
 }
 
-function test(options) {
+function test(options: StoryshotsOptions): boolean {
   return (
     options.framework === 'angular' || (!options.framework && hasDependency('@storybook/angular'))
   );
 }
 
-function load(options) {
+function load(options: StoryshotsOptions) {
   setupAngularJestPreset();
 
   const { configPath, config } = options;
@@ -33,7 +35,7 @@ function load(options) {
   configure({ configPath, config, storybook });
 
   return {
-    framework: 'angular',
+    framework: 'angular' as const,
     renderTree: require.requireActual('./renderTree').default,
     renderShallowTree: () => {
       throw new Error('Shallow renderer is not supported for angular');
@@ -42,7 +44,9 @@ function load(options) {
   };
 }
 
-export default {
+const angularLoader: Loader = {
   load,
   test,
 };
+
+export default angularLoader;
