@@ -118,6 +118,10 @@ With this addon you will have an additional panel at the bottom which provides y
 
 This addon lets you navigate different versions of static Storybook builds. As such you can see how a component has changed over time.
 
+### [Responsive Views](https://github.com/vizeat/storybook-addon-responsive-views)
+
+Preview your stories at a variety of breakpoints, so that you can be sure that your components will look great no matter what screen size.
+
 ### [Apollo](https://github.com/abhiaiyer91/apollo-storybook-decorator)
 
 Wrap your stories with the Apollo client for mocking GraphQL queries/mutations.
