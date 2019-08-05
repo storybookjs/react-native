@@ -34,6 +34,7 @@ module.exports = {
         '/configurations/custom-babel-config/',
         '/configurations/typescript-config/',
         '/configurations/add-custom-head-tags/',
+        '/configurations/add-custom-body/',
         '/configurations/serving-static-files/',
         '/configurations/env-vars/',
         '/configurations/theming/',
