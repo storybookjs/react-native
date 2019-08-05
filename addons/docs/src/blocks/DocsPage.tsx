@@ -2,22 +2,33 @@ import React from 'react';
 
 import { parseKind } from '@storybook/router';
 import { styled } from '@storybook/theming';
-import { DocsPage as PureDocsPage, DocsPageProps } from '@storybook/components';
+import {
+  DocsPage as PureDocsPage,
+  DocsPageProps as PureDocsPageProps,
+  PropsTable,
+  PropsTableProps,
+} from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { DocsContainer } from './DocsContainer';
-import { Description } from './Description';
+import { Description, getDocgen } from './Description';
 import { Story } from './Story';
 import { Preview } from './Preview';
-import { Props } from './Props';
+import { Props, getPropsTableProps } from './Props';
 
-enum DocsStoriesType {
-  ALL = 'all',
-  PRIMARY = 'primary',
-  REST = 'rest',
-}
+export type StringSlot = (context: DocsContextProps) => string | void;
+export type PropsSlot = (context: DocsContextProps) => PropsTableProps | void;
+export type StorySlot = (
+  storyData: StoryData,
+  isPrimary: boolean,
+  context: DocsContextProps
+) => DocsStoryProps;
 
-interface DocsStoriesProps {
-  type?: DocsStoriesType;
+export interface DocsPageProps {
+  titleSlot: StringSlot;
+  subtitleSlot: StringSlot;
+  descriptionSlot: StringSlot;
+  propsSlot: PropsSlot;
+  storySlot: StorySlot;
 }
 
 interface DocsStoryProps {
@@ -34,18 +45,27 @@ interface StoryData {
   parameters?: any;
 }
 
-const getDocsStories = (type: DocsStoriesType, componentStories: StoryData[]): DocsStoryProps[] => {
-  let stories = componentStories;
-  if (type !== DocsStoriesType.ALL) {
-    const [first, ...rest] = stories;
-    stories = type === DocsStoriesType.PRIMARY ? [first] : rest;
-  }
-  return stories.map(({ id, name, parameters: { notes, info } }) => ({
-    id,
-    name,
-    description: notes || info || null,
-  }));
+const defaultTitleSlot: StringSlot = ({ selectedKind, parameters }) => {
+  const {
+    hierarchyRootSeparator: rootSeparator,
+    hierarchySeparator: groupSeparator,
+  } = (parameters && parameters.options) || {
+    hierarchyRootSeparator: '|',
+    hierarchySeparator: /\/|\./,
+  };
+  const { groups } = parseKind(selectedKind, { rootSeparator, groupSeparator });
+  return (groups && groups[groups.length - 1]) || selectedKind;
 };
+
+const defaultSubtitleSlot: StringSlot = ({ parameters }) =>
+  parameters && parameters.componentDescription;
+
+const defaultPropsSlot: PropsSlot = context => getPropsTableProps({ of: '.' }, context);
+
+const defaultDescriptionSlot: StringSlot = ({ parameters }) =>
+  parameters && getDocgen(parameters.component);
+
+const defaultStorySlot: StorySlot = (storyData, isPrimary, context) => storyData;
 
 const StoriesHeading = styled.h2();
 const StoryHeading = styled.h3();
@@ -65,58 +85,35 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   </>
 );
 
-const DocsStories: React.FunctionComponent<DocsStoriesProps> = ({ type = DocsStoriesType.ALL }) => (
+const DocsPage: React.FunctionComponent<DocsPageProps> = ({
+  titleSlot,
+  subtitleSlot,
+  descriptionSlot,
+  propsSlot,
+  storySlot,
+}) => (
   <DocsContext.Consumer>
-    {({ selectedKind, storyStore }) => {
+    {context => {
+      const title = titleSlot(context) || '';
+      const subtitle = subtitleSlot(context) || '';
+      const description = descriptionSlot(context) || '';
+      const propsTableProps = propsSlot(context);
+
+      const { selectedKind, storyStore } = context;
       const componentStories = (storyStore.raw() as StoryData[]).filter(
         s => s.kind === selectedKind
       );
-      const stories = getDocsStories(type, componentStories);
-      if (stories.length === 0) {
-        return null;
-      }
-      const expanded = type !== DocsStoriesType.PRIMARY;
-      return (
-        <>
-          {expanded && <StoriesHeading>Stories</StoriesHeading>}
-          {stories.map(s => (
-            <DocsStory key={s.id} expanded={expanded} {...s} />
-          ))}
-        </>
+      const [primary, ...rest] = componentStories.map((storyData, idx) =>
+        storySlot(storyData, idx === 0, context)
       );
-    }}
-  </DocsContext.Consumer>
-);
 
-const getDocsPageProps = (context: DocsContextProps): DocsPageProps => {
-  const { selectedKind, selectedStory, parameters } = context;
-  const {
-    hierarchyRootSeparator: rootSeparator,
-    hierarchySeparator: groupSeparator,
-  } = (parameters && parameters.options) || {
-    hierarchyRootSeparator: '|',
-    hierarchySeparator: /\/|\./,
-  };
-
-  const { groups } = parseKind(selectedKind, { rootSeparator, groupSeparator });
-  const title = (groups && groups[groups.length - 1]) || selectedKind;
-
-  return {
-    title,
-    subtitle: parameters && parameters.componentDescription,
-  };
-};
-
-const DocsPage: React.FunctionComponent = () => (
-  <DocsContext.Consumer>
-    {context => {
-      const docsPageProps = getDocsPageProps(context);
       return (
-        <PureDocsPage {...docsPageProps}>
-          <Description of="." />
-          <DocsStories type={DocsStoriesType.PRIMARY} />
-          <Props of="." />
-          <DocsStories type={DocsStoriesType.REST} />
+        <PureDocsPage title={title} subtitle={subtitle}>
+          <Description markdown={description} />
+          <DocsStory {...primary} expanded={false} />
+          {propsTableProps && <PropsTable {...propsTableProps} />}
+          <StoriesHeading>Stories</StoriesHeading>
+          {rest.map(story => story && <DocsStory {...story} expanded />)}
         </PureDocsPage>
       );
     }}
@@ -125,11 +122,28 @@ const DocsPage: React.FunctionComponent = () => (
 
 interface DocsPageWrapperProps {
   context: DocsContextProps;
+  titleSlot?: StringSlot;
+  subtitleSlot?: StringSlot;
+  descriptionSlot?: StringSlot;
+  propsSlot?: PropsSlot;
+  storySlot?: StorySlot;
 }
 
-const DocsPageWrapper: React.FunctionComponent<DocsPageWrapperProps> = ({ context }) => (
+const DocsPageWrapper: React.FunctionComponent<DocsPageWrapperProps> = ({
+  context,
+  titleSlot = defaultTitleSlot,
+  subtitleSlot = defaultSubtitleSlot,
+  descriptionSlot = defaultDescriptionSlot,
+  propsSlot = defaultPropsSlot,
+  storySlot = defaultStorySlot,
+}) => (
   /* eslint-disable react/destructuring-assignment */
-  <DocsContainer context={{ ...context, mdxKind: context.selectedKind }} content={DocsPage} />
+  <DocsContainer
+    context={{ ...context, mdxKind: context.selectedKind }}
+    content={() => (
+      <DocsPage {...{ titleSlot, subtitleSlot, descriptionSlot, storySlot, propsSlot }} />
+    )}
+  />
 );
 
 export { DocsPageWrapper as DocsPage };
