@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-contexts",
-  "version": "5.2.0-beta.22",
+  "version": "5.2.0-beta.23",
   "description": "Storybook Addon Contexts",
   "keywords": [
     "storybook",
@@ -28,10 +28,10 @@
     "dev:check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.22",
-    "@storybook/api": "5.2.0-beta.22",
-    "@storybook/components": "5.2.0-beta.22",
-    "@storybook/core-events": "5.2.0-beta.22",
+    "@storybook/addons": "5.2.0-beta.23",
+    "@storybook/api": "5.2.0-beta.23",
+    "@storybook/components": "5.2.0-beta.23",
+    "@storybook/core-events": "5.2.0-beta.23",
     "core-js": "^3.0.1"
   },
   "peerDependencies": {
