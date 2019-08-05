@@ -119,7 +119,7 @@ export default class StoryStore extends EventEmitter {
   setSelection(data: Selection | undefined, error: ErrorLike): void {
     this._selection =
       data === undefined ? this._selection : { storyId: data.storyId, viewMode: data.viewMode };
-    this._error = error === undefined && data === undefined ? this._error : error;
+    this._error = error === undefined ? this._error : error;
 
     setTimeout(() => {
       // preferred method to emit event.
