@@ -1,11 +1,13 @@
 import global from 'global';
 import configure from '../configure';
+import { Loader } from '../Loader';
+import { StoryshotsOptions } from '../../api/StoryshotsOptions';
 
-function test(options) {
+function test(options: StoryshotsOptions): boolean {
   return options.framework === 'html';
 }
 
-function load(options) {
+function load(options: StoryshotsOptions) {
   global.STORYBOOK_ENV = 'html';
 
   const { configPath, config } = options;
@@ -14,7 +16,7 @@ function load(options) {
   configure({ configPath, config, storybook });
 
   return {
-    framework: 'html',
+    framework: 'html' as const,
     renderTree: require.requireActual('./renderTree').default,
     renderShallowTree: () => {
       throw new Error('Shallow renderer is not supported for HTML');
@@ -23,7 +25,9 @@ function load(options) {
   };
 }
 
-export default {
+const htmLoader: Loader = {
   load,
   test,
 };
+
+export default htmLoader;
