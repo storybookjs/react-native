@@ -70,7 +70,11 @@ interface Link extends LinkBase {
   onClick: () => void;
 }
 
-const flip = ({ width, height }: ViewportStyles) => ({ height: width, width: height });
+const flip = ({ width, height, ...styles }: ViewportStyles) => ({
+  ...styles,
+  height: width,
+  width: height,
+});
 
 const ActiveViewportSize = styled.div(() => ({
   display: 'inline-flex',
