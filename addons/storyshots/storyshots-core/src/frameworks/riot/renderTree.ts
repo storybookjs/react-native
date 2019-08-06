@@ -10,7 +10,7 @@ function bootstrapADocumentAndReturnANode() {
   return rootElement;
 }
 
-function makeSureThatResultIsRenderedSomehow({ context, result, rootElement }) {
+function makeSureThatResultIsRenderedSomehow({ context, result, rootElement }: any) {
   if (!rootElement.firstChild) {
     riotForStorybook.render({
       storyFn: () => result,
@@ -20,7 +20,7 @@ function makeSureThatResultIsRenderedSomehow({ context, result, rootElement }) {
   }
 }
 
-function getRenderedTree(story, context) {
+function getRenderedTree(story: any, context: any) {
   const rootElement = bootstrapADocumentAndReturnANode();
 
   const result = story.render();
