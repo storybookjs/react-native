@@ -11,7 +11,7 @@ import { document } from 'global';
  * If we don't render to HTML, we will get a snapshot of the raw story
  * i.e. ({ Component, data }).
  */
-function getRenderedTree(story) {
+function getRenderedTree(story: any) {
   const { Component, props } = story.render();
 
   const DefaultCompatComponent = Component.default || Component;
