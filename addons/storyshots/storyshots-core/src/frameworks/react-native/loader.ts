@@ -31,7 +31,7 @@ function load(options: StoryshotsOptions) {
   return {
     renderTree: require('../react/renderTree').default,
     renderShallowTree: require('../react/renderShallowTree').default,
-    framework: 'rn' as const,
+    framework: 'react-native' as const,
     storybook,
   };
 }
