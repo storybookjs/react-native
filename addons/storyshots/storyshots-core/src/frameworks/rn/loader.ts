@@ -1,15 +1,17 @@
 /* eslint-disable global-require */
 import path from 'path';
 import hasDependency from '../hasDependency';
+import { Loader } from '../Loader';
+import { StoryshotsOptions } from '../../api/StoryshotsOptions';
 
-function test(options) {
+function test(options: StoryshotsOptions): boolean {
   return (
     options.framework === 'react-native' ||
     (!options.framework && hasDependency('@storybook/react-native'))
   );
 }
 
-function configure(options, storybook) {
+function configure(options: StoryshotsOptions, storybook: any) {
   const { configPath = 'storybook', config } = options;
 
   if (config && typeof config === 'function') {
@@ -21,7 +23,7 @@ function configure(options, storybook) {
   require.requireActual(resolvedConfigPath);
 }
 
-function load(options) {
+function load(options: StoryshotsOptions) {
   const storybook = require.requireActual('@storybook/react-native');
 
   configure(options, storybook);
@@ -29,12 +31,14 @@ function load(options) {
   return {
     renderTree: require('../react/renderTree').default,
     renderShallowTree: require('../react/renderShallowTree').default,
-    framework: 'rn',
+    framework: 'rn' as const,
     storybook,
   };
 }
 
-export default {
+const reactNativeLoader: Loader = {
   load,
   test,
 };
+
+export default reactNativeLoader;

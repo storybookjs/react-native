@@ -1,6 +1,6 @@
 import { StoryshotsOptions } from '../api/StoryshotsOptions';
 
-type SupportedFramework = 'angular' | 'html' | 'preact' | 'react' | 'riot';
+type SupportedFramework = 'angular' | 'html' | 'preact' | 'react' | 'riot' | 'rn';
 
 export type RenderTree = (story: any) => any;
 
