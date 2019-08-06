@@ -1,4 +1,4 @@
-import Stories2SnapsConverter from './Stories2SnapsConverter';
+import { Stories2SnapsConverter } from './Stories2SnapsConverter';
 
 const target = new Stories2SnapsConverter();
 

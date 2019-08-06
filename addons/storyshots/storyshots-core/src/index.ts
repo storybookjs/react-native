@@ -1,4 +1,3 @@
-import Stories2SnapsConverter from './Stories2SnapsConverter';
 import api from './api';
 import {
   snapshotWithOptions,
@@ -10,7 +9,6 @@ import {
 } from './test-bodies';
 
 export {
-  Stories2SnapsConverter,
   snapshotWithOptions,
   multiSnapshotWithOptions,
   renderOnly,
@@ -19,6 +17,7 @@ export {
   snapshot,
 };
 
+export * from './Stories2SnapsConverter';
 export * from './frameworks';
 
 export default api;

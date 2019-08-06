@@ -7,7 +7,7 @@ const defaultOptions = {
   storiesExtensions: ['.js', '.jsx', '.ts', '.tsx'],
 };
 
-class DefaultStories2SnapsConverter {
+export class Stories2SnapsConverter {
   options: {
     storiesExtensions: string[];
     snapshotExtension: string;
@@ -64,5 +64,3 @@ class DefaultStories2SnapsConverter {
     );
   }
 }
-
-export default DefaultStories2SnapsConverter;

@@ -1,5 +1,5 @@
 import { IOptions } from 'glob';
-import Stories2SnapsConverter from '../Stories2SnapsConverter';
+import { Stories2SnapsConverter } from '../Stories2SnapsConverter';
 import { SupportedFramework } from '../frameworks';
 
 export interface StoryshotsOptions {
