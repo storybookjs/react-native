@@ -1,5 +1,6 @@
 import { IOptions } from 'glob';
 import Stories2SnapsConverter from '../Stories2SnapsConverter';
+import { SupportedFramework } from '../frameworks';
 
 export interface StoryshotsOptions {
   asyncJest?: boolean;
@@ -9,7 +10,7 @@ export interface StoryshotsOptions {
   suite?: string;
   storyKindRegex?: RegExp | string;
   storyNameRegex?: RegExp | string;
-  framework?: string;
+  framework?: SupportedFramework;
   test?: Function;
   renderer?: Function;
   snapshotSerializers?: any[];

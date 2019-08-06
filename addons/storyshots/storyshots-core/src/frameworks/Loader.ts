@@ -1,14 +1,5 @@
 import { StoryshotsOptions } from '../api/StoryshotsOptions';
-
-type SupportedFramework =
-  | 'angular'
-  | 'html'
-  | 'preact'
-  | 'react'
-  | 'riot'
-  | 'react-native'
-  | 'svelte'
-  | 'vue';
+import { SupportedFramework } from './SupportedFramework';
 
 export type RenderTree = (story: any) => any;
 
