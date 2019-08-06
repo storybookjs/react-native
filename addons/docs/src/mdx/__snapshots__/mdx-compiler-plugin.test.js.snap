@@ -1,48 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`docs-mdx-compiler-plugin supports "smart" current story 1`] = `
-"/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
-
-import { Story } from '@storybook/addon-docs/blocks';
-
-const makeShortcode = name =>
-  function MDXDefaultShortcode(props) {
-    console.warn(
-      'Component ' +
-        name +
-        ' was not imported, exported, or provided by MDXProvider as global scope'
-    );
-    return <div {...props} />;
-  };
-
-const layoutProps = {};
-const MDXLayout = 'wrapper';
-function MDXContent({ components, ...props }) {
-  return (
-    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
-      <h1>{\`Current story\`}</h1>
-      <Story id=\\".\\" mdxType=\\"Story\\" />
-    </MDXLayout>
-  );
-}
-
-MDXContent.isMDXComponent = true;
-
-const componentMeta = { includeStories: [] };
-
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
-componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
-
-export default componentMeta;
-"
-`;
-
-exports[`docs-mdx-compiler-plugin supports decorators 1`] = `
+exports[`docs-mdx-compiler-plugin decorators.mdx 1`] = `
 "/* @jsx mdx */
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 
@@ -125,66 +83,7 @@ export default componentMeta;
 "
 `;
 
-exports[`docs-mdx-compiler-plugin supports function stories 1`] = `
-"/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
-
-const makeShortcode = name =>
-  function MDXDefaultShortcode(props) {
-    console.warn(
-      'Component ' +
-        name +
-        ' was not imported, exported, or provided by MDXProvider as global scope'
-    );
-    return <div {...props} />;
-  };
-const Story = makeShortcode('Story');
-const layoutProps = {};
-const MDXLayout = 'wrapper';
-function MDXContent({ components, ...props }) {
-  return (
-    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
-      <Story name=\\"function\\" height=\\"100px\\" mdxType=\\"Story\\">
-        {() => {
-          const btn = document.createElement('button');
-          btn.innerHTML = 'Hello Button';
-          btn.addEventListener('click', action('Click'));
-          return btn;
-        }}
-      </Story>
-    </MDXLayout>
-  );
-}
-
-MDXContent.isMDXComponent = true;
-
-export const story0 = () => {
-  const btn = document.createElement('button');
-  btn.innerHTML = 'Hello Button';
-  btn.addEventListener('click', action('Click'));
-  return btn;
-};
-story0.story = {};
-story0.story.name = 'function';
-story0.story.parameters = {
-  mdxSource:
-    \\"() => {\\\\n  const btn = document.createElement('button');\\\\n  btn.innerHTML = 'Hello Button';\\\\n  btn.addEventListener('click', action('Click'));\\\\n  return btn;\\\\n}\\",
-};
-
-const componentMeta = { includeStories: ['story0'] };
-
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
-componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
-
-export default componentMeta;
-"
-`;
-
-exports[`docs-mdx-compiler-plugin supports non-story exports 1`] = `
+exports[`docs-mdx-compiler-plugin non-story-exports.mdx 1`] = `
 "/* @jsx mdx */
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 
@@ -245,78 +144,7 @@ export default componentMeta;
 "
 `;
 
-exports[`docs-mdx-compiler-plugin supports object-style story definitions 1`] = `
-"/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
-
-import { Story, Meta } from '@storybook/addon-docs/blocks';
-import { Welcome, Button } from '@storybook/angular/demo';
-import { linkTo } from '@storybook/addon-links';
-
-const makeShortcode = name =>
-  function MDXDefaultShortcode(props) {
-    console.warn(
-      'Component ' +
-        name +
-        ' was not imported, exported, or provided by MDXProvider as global scope'
-    );
-    return <div {...props} />;
-  };
-
-const layoutProps = {};
-const MDXLayout = 'wrapper';
-function MDXContent({ components, ...props }) {
-  return (
-    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
-      <Meta title=\\"MDX|Welcome\\" mdxType=\\"Meta\\" />
-      <h1>{\`Story object\`}</h1>
-      <Story name=\\"to storybook\\" height=\\"300px\\" mdxType=\\"Story\\">
-        {{
-          template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,
-          props: {
-            showApp: linkTo('Button'),
-          },
-          moduleMetadata: {
-            declarations: [Welcome],
-          },
-        }}
-      </Story>
-    </MDXLayout>
-  );
-}
-
-MDXContent.isMDXComponent = true;
-
-export const toStorybook = () => ({
-  template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,
-  props: {
-    showApp: linkTo('Button'),
-  },
-  moduleMetadata: {
-    declarations: [Welcome],
-  },
-});
-toStorybook.story = {};
-toStorybook.story.name = 'to storybook';
-toStorybook.story.parameters = {
-  mdxSource:
-    '{\\\\n  template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,\\\\n  props: {\\\\n    showApp: linkTo(\\\\'Button\\\\')\\\\n  },\\\\n  moduleMetadata: {\\\\n    declarations: [Welcome]\\\\n  }\\\\n}',
-};
-
-const componentMeta = { title: 'MDX|Welcome', includeStories: ['toStorybook'] };
-
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
-componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
-
-export default componentMeta;
-"
-`;
-
-exports[`docs-mdx-compiler-plugin supports parameters 1`] = `
+exports[`docs-mdx-compiler-plugin parameters.mdx 1`] = `
 "/* @jsx mdx */
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 
@@ -398,7 +226,7 @@ export default componentMeta;
 "
 `;
 
-exports[`docs-mdx-compiler-plugin supports previews 1`] = `
+exports[`docs-mdx-compiler-plugin previews.mdx 1`] = `
 "/* @jsx mdx */
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 
@@ -474,7 +302,98 @@ export default componentMeta;
 "
 `;
 
-exports[`docs-mdx-compiler-plugin supports story definitions 1`] = `
+exports[`docs-mdx-compiler-plugin story-current.mdx 1`] = `
+"/* @jsx mdx */
+import { DocsContainer } from '@storybook/addon-docs/blocks';
+
+import { Story } from '@storybook/addon-docs/blocks';
+
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+
+const layoutProps = {};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <h1>{\`Current story\`}</h1>
+      <Story id=\\".\\" mdxType=\\"Story\\" />
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+const componentMeta = { includeStories: [] };
+
+const mdxKind = componentMeta.title || componentMeta.displayName;
+const WrappedMDXContent = ({ context }) => (
+  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
+);
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = WrappedMDXContent;
+
+export default componentMeta;
+"
+`;
+
+exports[`docs-mdx-compiler-plugin story-def-text-only.mdx 1`] = `
+"/* @jsx mdx */
+import { DocsContainer } from '@storybook/addon-docs/blocks';
+
+import { Story, Meta } from '@storybook/addon-docs/blocks';
+
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+
+const layoutProps = {};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <Meta title=\\"Text\\" mdxType=\\"Meta\\" />
+      <h1>{\`Story definition\`}</h1>
+      <Story name=\\"text\\" mdxType=\\"Story\\">
+        Plain text
+      </Story>
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+export const text = () => 'Plain text';
+text.story = {};
+text.story.parameters = { mdxSource: \\"'Plain text'\\" };
+
+const componentMeta = { title: 'Text', includeStories: ['text'] };
+
+const mdxKind = componentMeta.title || componentMeta.displayName;
+const WrappedMDXContent = ({ context }) => (
+  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
+);
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = WrappedMDXContent;
+
+export default componentMeta;
+"
+`;
+
+exports[`docs-mdx-compiler-plugin story-definitions.mdx 1`] = `
 "/* @jsx mdx */
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 
@@ -540,7 +459,137 @@ export default componentMeta;
 "
 `;
 
-exports[`docs-mdx-compiler-plugin supports story references 1`] = `
+exports[`docs-mdx-compiler-plugin story-function.mdx 1`] = `
+"/* @jsx mdx */
+import { DocsContainer } from '@storybook/addon-docs/blocks';
+
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+const Story = makeShortcode('Story');
+const layoutProps = {};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <Story name=\\"function\\" height=\\"100px\\" mdxType=\\"Story\\">
+        {() => {
+          const btn = document.createElement('button');
+          btn.innerHTML = 'Hello Button';
+          btn.addEventListener('click', action('Click'));
+          return btn;
+        }}
+      </Story>
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+export const story0 = () => {
+  const btn = document.createElement('button');
+  btn.innerHTML = 'Hello Button';
+  btn.addEventListener('click', action('Click'));
+  return btn;
+};
+story0.story = {};
+story0.story.name = 'function';
+story0.story.parameters = {
+  mdxSource:
+    \\"() => {\\\\n  const btn = document.createElement('button');\\\\n  btn.innerHTML = 'Hello Button';\\\\n  btn.addEventListener('click', action('Click'));\\\\n  return btn;\\\\n}\\",
+};
+
+const componentMeta = { includeStories: ['story0'] };
+
+const mdxKind = componentMeta.title || componentMeta.displayName;
+const WrappedMDXContent = ({ context }) => (
+  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
+);
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = WrappedMDXContent;
+
+export default componentMeta;
+"
+`;
+
+exports[`docs-mdx-compiler-plugin story-object.mdx 1`] = `
+"/* @jsx mdx */
+import { DocsContainer } from '@storybook/addon-docs/blocks';
+
+import { Story, Meta } from '@storybook/addon-docs/blocks';
+import { Welcome, Button } from '@storybook/angular/demo';
+import { linkTo } from '@storybook/addon-links';
+
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+
+const layoutProps = {};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <Meta title=\\"MDX|Welcome\\" mdxType=\\"Meta\\" />
+      <h1>{\`Story object\`}</h1>
+      <Story name=\\"to storybook\\" height=\\"300px\\" mdxType=\\"Story\\">
+        {{
+          template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,
+          props: {
+            showApp: linkTo('Button'),
+          },
+          moduleMetadata: {
+            declarations: [Welcome],
+          },
+        }}
+      </Story>
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+export const toStorybook = () => ({
+  template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,
+  props: {
+    showApp: linkTo('Button'),
+  },
+  moduleMetadata: {
+    declarations: [Welcome],
+  },
+});
+toStorybook.story = {};
+toStorybook.story.name = 'to storybook';
+toStorybook.story.parameters = {
+  mdxSource:
+    '{\\\\n  template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,\\\\n  props: {\\\\n    showApp: linkTo(\\\\'Button\\\\')\\\\n  },\\\\n  moduleMetadata: {\\\\n    declarations: [Welcome]\\\\n  }\\\\n}',
+};
+
+const componentMeta = { title: 'MDX|Welcome', includeStories: ['toStorybook'] };
+
+const mdxKind = componentMeta.title || componentMeta.displayName;
+const WrappedMDXContent = ({ context }) => (
+  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
+);
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = WrappedMDXContent;
+
+export default componentMeta;
+"
+`;
+
+exports[`docs-mdx-compiler-plugin story-references.mdx 1`] = `
 "/* @jsx mdx */
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 
@@ -582,56 +631,7 @@ export default componentMeta;
 "
 `;
 
-exports[`docs-mdx-compiler-plugin supports text-only story definitions 1`] = `
-"/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
-
-import { Story, Meta } from '@storybook/addon-docs/blocks';
-
-const makeShortcode = name =>
-  function MDXDefaultShortcode(props) {
-    console.warn(
-      'Component ' +
-        name +
-        ' was not imported, exported, or provided by MDXProvider as global scope'
-    );
-    return <div {...props} />;
-  };
-
-const layoutProps = {};
-const MDXLayout = 'wrapper';
-function MDXContent({ components, ...props }) {
-  return (
-    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
-      <Meta title=\\"Text\\" mdxType=\\"Meta\\" />
-      <h1>{\`Story definition\`}</h1>
-      <Story name=\\"text\\" mdxType=\\"Story\\">
-        Plain text
-      </Story>
-    </MDXLayout>
-  );
-}
-
-MDXContent.isMDXComponent = true;
-
-export const text = () => 'Plain text';
-text.story = {};
-text.story.parameters = { mdxSource: \\"'Plain text'\\" };
-
-const componentMeta = { title: 'Text', includeStories: ['text'] };
-
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
-componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
-
-export default componentMeta;
-"
-`;
-
-exports[`docs-mdx-compiler-plugin supports vanilla mdx 1`] = `
+exports[`docs-mdx-compiler-plugin vanilla.mdx 1`] = `
 "/* @jsx mdx */
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 
