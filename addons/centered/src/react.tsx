@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { makeDecorator, StoryFn } from '@storybook/addons';
+import parameters from './parameters';
 import styles from './styles';
 
 function centered(storyFn: () => ReactNode) {
@@ -11,8 +12,7 @@ function centered(storyFn: () => ReactNode) {
 }
 
 export default makeDecorator({
-  name: 'centered',
-  parameterName: 'centered',
+  ...parameters,
   wrapper: getStory => centered(getStory as StoryFn),
 });
 
