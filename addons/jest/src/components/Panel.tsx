@@ -103,11 +103,11 @@ const Content = styled(({ tests, className }: ContentProps) => (
       const passingRate = ((successNumber / result.assertionResults.length) * 100).toFixed(2);
 
       return (
-        <SizeMe refreshMode="debounce">
+        <SizeMe refreshMode="debounce" key={name}>
           {({ size }: { size: any }) => {
             const { width } = size;
             return (
-              <section key={name}>
+              <section>
                 <SuiteHead>
                   <SuiteTotals {...{ successNumber, failedNumber, result, passingRate, width }} />
                   {width > 240 ? (
