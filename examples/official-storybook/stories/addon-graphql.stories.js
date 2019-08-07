@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react';
 //   url: 'https://graphql-pokemon.now.sh/?',
 // });
 
-storiesOf('Addons|GraphQL', module).add('get Pickachu', () => <div>hello</div>, {
+storiesOf('Addons|GraphQL', module).add('get Pikachu', () => <div>hello</div>, {
   graphiql: {
     query: `{
         pokemon(name: "Pikachu") {
