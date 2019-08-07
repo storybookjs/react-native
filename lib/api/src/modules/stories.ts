@@ -1,5 +1,6 @@
 // FIXME: we shouldn't import from dist but there are no types otherwise
 import { toId, sanitize, parseKind } from '@storybook/router';
+import { DOCS_MODE } from 'global';
 
 import { Module } from '../index';
 import merge from '../lib/merge';
@@ -112,6 +113,11 @@ const initStoriesApi = ({
   };
 
   const jumpToStory = (direction: Direction) => {
+    if (DOCS_MODE) {
+      jumpToComponent(direction);
+      return;
+    }
+
     const { storiesHash, viewMode, storyId } = store.getState();
 
     // cannot navigate when there's no current selection
