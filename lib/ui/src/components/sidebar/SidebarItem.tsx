@@ -135,11 +135,7 @@ const SidebarItem = ({
       {...props}
       className={isSelected ? 'sidebar-item selected' : 'sidebar-item'}
     >
-      <Expander
-        className="sidebar-expander"
-        isExpandable={!isLeaf && !isComponent}
-        isExpanded={isExpanded}
-      />
+      <Expander className="sidebar-expander" isExpandable={!isLeaf} isExpanded={isExpanded} />
       <Icon className="sidebar-svg-icon" icon={iconName} isSelected={isSelected} />
       <span>{name}</span>
     </Item>
