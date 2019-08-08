@@ -1,17 +1,18 @@
 import { IOptions } from 'glob';
 import { Stories2SnapsConverter } from '../Stories2SnapsConverter';
 import { SupportedFramework } from '../frameworks';
+import { RenderTree } from '../frameworks/Loader';
 
 export interface StoryshotsOptions {
   asyncJest?: boolean;
   config?: (options: any) => void;
-  integrityOptions?: IOptions;
+  integrityOptions?: IOptions | false;
   configPath?: string;
   suite?: string;
   storyKindRegex?: RegExp | string;
   storyNameRegex?: RegExp | string;
   framework?: SupportedFramework;
-  test?: Function;
+  test?: (story: any, context: any, renderTree: RenderTree, options?: any) => any;
   renderer?: Function;
   snapshotSerializers?: any[];
   /**

@@ -1,19 +1,27 @@
 import 'jest-specific-snapshot';
+import { RenderTree } from './frameworks/Loader';
+import { Stories2SnapsConverter } from './Stories2SnapsConverter';
 
 const isFunction = (obj: any) => !!(obj && obj.constructor && obj.call && obj.apply);
 const optionsOrCallOptions = (opts: any, story: any) => (isFunction(opts) ? opts(story) : opts);
 
-export const snapshotWithOptions = (options: { renderer?: any; serializer?: any } = {}) => ({
+export const snapshotWithOptions = (
+  options: { renderer?: any; serializer?: any } | Function = {}
+) => ({
   story,
   context,
   renderTree,
   snapshotFileName,
-}: any) => {
+}: {
+  story: any;
+  context: any;
+  renderTree: RenderTree;
+  snapshotFileName: string;
+}): Promise<void> | void => {
   const result = renderTree(story, context, optionsOrCallOptions(options, story));
 
   function match(tree: any) {
     if (snapshotFileName) {
-      // @ts-ignore
       expect(tree).toMatchSpecificSnapshot(snapshotFileName);
     } else {
       expect(tree).toMatchSnapshot();
@@ -36,7 +44,12 @@ export const multiSnapshotWithOptions = (options = {}) => ({
   context,
   renderTree,
   stories2snapsConverter,
-}: any) =>
+}: {
+  story: any;
+  context: any;
+  renderTree: RenderTree;
+  stories2snapsConverter: Stories2SnapsConverter;
+}) =>
   snapshotWithOptions(options)({
     story,
     context,
@@ -44,12 +57,30 @@ export const multiSnapshotWithOptions = (options = {}) => ({
     snapshotFileName: stories2snapsConverter.getSnapshotFileName(context),
   });
 
-export function shallowSnapshot({ story, context, renderShallowTree, options = {} }: any) {
+export function shallowSnapshot({
+  story,
+  context,
+  renderShallowTree,
+  options = {},
+}: {
+  story: any;
+  context: any;
+  renderShallowTree: RenderTree;
+  options: any;
+}) {
   const result = renderShallowTree(story, context, options);
   expect(result).toMatchSnapshot();
 }
 
-export const renderWithOptions = (options = {}) => ({ story, context, renderTree }: any) => {
+export const renderWithOptions = (options = {}) => ({
+  story,
+  context,
+  renderTree,
+}: {
+  story: any;
+  context: any;
+  renderTree: RenderTree;
+}) => {
   const result = renderTree(story, context, options);
 
   if (typeof result.then === 'function') {

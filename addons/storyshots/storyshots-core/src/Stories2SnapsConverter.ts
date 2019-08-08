@@ -1,20 +1,22 @@
 import path from 'path';
 import dedent from 'ts-dedent';
 
-const defaultOptions = {
+const defaultOptions: Stories2SnapsConverterOptions = {
   snapshotsDirName: '__snapshots__',
   snapshotExtension: '.storyshot',
   storiesExtensions: ['.js', '.jsx', '.ts', '.tsx'],
 };
 
-export class Stories2SnapsConverter {
-  options: {
-    storiesExtensions: string[];
-    snapshotExtension: string;
-    snapshotsDirName: string;
-  };
+export interface Stories2SnapsConverterOptions {
+  storiesExtensions: string[];
+  snapshotExtension: string;
+  snapshotsDirName: string;
+}
 
-  constructor(options = {}) {
+export class Stories2SnapsConverter {
+  options: Stories2SnapsConverterOptions;
+
+  constructor(options: Partial<Stories2SnapsConverterOptions> = {}) {
     this.options = {
       ...defaultOptions,
       ...options,
@@ -30,7 +32,7 @@ export class Stories2SnapsConverter {
     return path.format({ dir: path.join(dir, snapshotsDirName), name, ext: snapshotExtension });
   }
 
-  getSnapshotFileName(context: any) {
+  getSnapshotFileName(context: { fileName?: string, kind: any }) {
     const { fileName, kind } = context;
 
     if (!fileName) {
@@ -55,7 +57,7 @@ export class Stories2SnapsConverter {
     const { dir, name } = path.parse(storyshotFile);
     const { storiesExtensions } = this.options;
 
-    return (storiesExtensions as string[]).map(ext =>
+    return storiesExtensions.map(ext =>
       path.format({
         dir: path.dirname(dir),
         name,
