@@ -2,7 +2,7 @@ import { toId } from '@storybook/router/utils';
 
 import { URL } from 'url';
 
-export const constructUrl = (storybookUrl, kind, story) => {
+export const constructUrl = (storybookUrl: string, kind: string, story: string) => {
   const id = toId(kind, story);
 
   const storyUrl = `/iframe.html?id=${id}`;
