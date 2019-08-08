@@ -56,14 +56,27 @@ const refinedViewMode = (viewMode: string) => {
   return viewMode === 'settings' ? 'story' : viewMode;
 };
 
-export const Link = ({ id, prefix, name, children, isLeaf, onClick, onKeyUp }) =>
-  isLeaf ? (
+const targetId = (childIds?: string[]) =>
+  childIds && childIds.find((childId: string) => /.*--.*/.exec(childId));
+
+export const Link = ({
+  id,
+  prefix,
+  name,
+  children,
+  isLeaf,
+  isComponent,
+  onClick,
+  onKeyUp,
+  childIds,
+}) => {
+  return isLeaf || isComponent ? (
     <Location>
       {({ viewMode }) => (
         <PlainRouterLink
           title={name}
           id={prefix + id}
-          to={`/${viewMode ? refinedViewMode(viewMode) : 'story'}/${id}`}
+          to={`/${viewMode ? refinedViewMode(viewMode) : 'story'}/${targetId(childIds) || id}`}
           onKeyUp={onKeyUp}
           onClick={onClick}
         >
@@ -76,6 +89,7 @@ export const Link = ({ id, prefix, name, children, isLeaf, onClick, onKeyUp }) =
       {children}
     </PlainLink>
   );
+};
 Link.displayName = 'Link';
 Link.propTypes = {
   children: PropTypes.node.isRequired,
@@ -85,6 +99,10 @@ Link.propTypes = {
   prefix: PropTypes.string.isRequired,
   onKeyUp: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
+  childIds: PropTypes.arrayOf(PropTypes.string),
+};
+Link.defaultProps = {
+  childIds: null,
 };
 
 export interface StoriesProps {
