@@ -117,7 +117,9 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const storybookDocsOnly = () => 'See docs';
+export const storybookDocsOnly = () => {
+  throw new Error('Docs-only story');
+};
 
 storybookDocsOnly.story = { parameters: { docsOnly: true } };
 
