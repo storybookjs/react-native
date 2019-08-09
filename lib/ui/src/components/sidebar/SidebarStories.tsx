@@ -69,8 +69,9 @@ export const Link = ({
   onClick,
   onKeyUp,
   childIds,
+  isExpanded,
 }) => {
-  return isLeaf || isComponent ? (
+  return isLeaf || (isComponent && !isExpanded) ? (
     <Location>
       {({ viewMode }) => (
         <PlainRouterLink
@@ -100,9 +101,11 @@ Link.propTypes = {
   onKeyUp: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
   childIds: PropTypes.arrayOf(PropTypes.string),
+  isExpanded: PropTypes.bool,
 };
 Link.defaultProps = {
   childIds: null,
+  isExpanded: false,
 };
 
 export interface StoriesProps {

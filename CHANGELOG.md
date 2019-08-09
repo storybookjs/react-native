@@ -1,3 +1,9 @@
+## 5.2.0-beta.26 (August 9, 2019)
+
+### Features
+
+* UI: Improved component nav UI ([#7716](https://github.com/storybookjs/storybook/pull/7716))
+
 ## 5.2.0-beta.25 (August 8, 2019)
 
 ### Features
