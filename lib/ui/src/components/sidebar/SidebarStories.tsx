@@ -52,7 +52,7 @@ const PlainLink = styled.a(plain);
 
 const Wrapper = styled.div({});
 
-const refinedViewMode = (viewMode: string, isDocsOnly: boolean) => {
+const refinedViewMode = (viewMode: string | undefined, isDocsOnly: boolean) => {
   if (isDocsOnly) {
     return 'docs';
   }
