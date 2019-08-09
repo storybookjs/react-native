@@ -46,7 +46,7 @@ interface Selection {
   viewMode: string;
 }
 
-interface StoryFilter {
+interface StoryOptions {
   includeDocsOnly?: boolean;
 }
 
@@ -54,8 +54,8 @@ const isStoryDocsOnly = (parameters?: Parameters) => {
   return parameters && parameters.docsOnly;
 };
 
-const includeStory = (story: StoreItem, filter: StoryFilter = { includeDocsOnly: false }) => {
-  if (filter.includeDocsOnly) {
+const includeStory = (story: StoreItem, options: StoryOptions = { includeDocsOnly: false }) => {
+  if (options.includeDocsOnly) {
     return true;
   }
   return !isStoryDocsOnly(story.parameters);
@@ -108,14 +108,14 @@ export default class StoryStore extends EventEmitter {
     }
   };
 
-  raw(filter?: StoryFilter) {
+  raw(options?: StoryOptions) {
     return Object.values(this._data)
       .filter(i => !!i.getDecorated)
-      .filter(i => includeStory(i, filter))
+      .filter(i => includeStory(i, options))
       .map(({ id }) => this.fromId(id));
   }
 
-  extract(filter?: StoryFilter) {
+  extract(options?: StoryOptions) {
     const stories = Object.entries(this._data);
     // determine if we should apply a sort to the stories or just use default import order
     if (Object.values(this._data).length > 0) {
@@ -130,7 +130,7 @@ export default class StoryStore extends EventEmitter {
     }
     // removes function values from all stories so they are safe to transport over the channel
     return stories.reduce(
-      (a, [k, v]) => (includeStory(v, filter) ? Object.assign(a, { [k]: toExtracted(v) }) : a),
+      (a, [k, v]) => (includeStory(v, options) ? Object.assign(a, { [k]: toExtracted(v) }) : a),
       {}
     );
   }
