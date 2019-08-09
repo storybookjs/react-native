@@ -50,9 +50,13 @@ const Icon = styled(Icons)<IconProps>(
     if (icon === 'component') {
       return { color: '#1ea7fd' };
     }
-    if (icon === 'bookmarkhollow' || icon === 'document') {
+    if (icon === 'bookmarkhollow') {
       return { color: '#37d5d3' };
     }
+    if (icon === 'document') {
+      return { color: '#ffae00' };
+    }
+
     return {};
   },
   ({ isSelected = false }) => (isSelected ? { color: 'inherit' } : {})
