@@ -1,10 +1,19 @@
 import React from 'react';
 import { View } from 'react-native';
-import PropTypes from 'prop-types';
+import { AddonStore } from '@storybook/addons';
 import Constants from './constants';
 
-export default class Container extends React.Component<any, any> {
-  constructor(props: any) {
+interface ContainerProps {
+  initialBackground: string;
+  channel: ReturnType<AddonStore['getChannel']>;
+}
+
+interface ContainerState {
+  background: string;
+}
+
+export default class Container extends React.Component<ContainerProps, ContainerState> {
+  constructor(props: ContainerProps) {
     super(props);
     this.state = { background: props.initialBackground || '' };
   }
@@ -19,7 +28,7 @@ export default class Container extends React.Component<any, any> {
     channel.removeListener(Constants.UPDATE_BACKGROUND, this.onBackgroundChange);
   }
 
-  onBackgroundChange = (background: any) => {
+  onBackgroundChange = (background: string) => {
     this.setState({ background });
   };
 
@@ -32,18 +41,3 @@ export default class Container extends React.Component<any, any> {
     );
   }
 }
-
-(Container as any).propTypes = {
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }),
-  initialBackground: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
-
-(Container as any).defaultProps = {
-  channel: undefined,
-  initialBackground: '',
-};
