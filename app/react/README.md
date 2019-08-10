@@ -27,6 +27,13 @@ Here are some featured storybooks that you can reference to see how Storybook wo
 - [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
 - [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
 
+## Create React App
+
+Support for Create React App is handled by [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app).
+
+This preset enables support for all Create React App features, including Sass/SCSS and TypeScript.
+
+
 ## Typescript
 
 If you are using Typescript, make sure you have the type definitions installed via `yarn add @types/node @types/react @types/storybook__react --dev`.
