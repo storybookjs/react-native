@@ -1,1 +1,1 @@
-{"version":"5.2.0-beta.26","info":{"plain":"### Features\n\n* UI: Improved component nav UI ([#7716](https://github.com/storybookjs/storybook/pull/7716))"}}
+{"version":"5.2.0-beta.28","info":{"plain":"### Features\n\n* Core: Disable CRA behaviors when preset detected ([#7696](https://github.com/storybookjs/storybook/pull/7696))\n* Addon-docs: Docs only MDX and navigation UI ([#7719](https://github.com/storybookjs/storybook/pull/7719))"}}

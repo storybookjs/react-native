@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-design-assets",
-  "version": "5.2.0-beta.26",
+  "version": "5.2.0-beta.28",
   "description": "Design asset preview for storybook",
   "keywords": [
     "addon",
@@ -27,12 +27,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.26",
-    "@storybook/api": "5.2.0-beta.26",
-    "@storybook/client-logger": "5.2.0-beta.26",
-    "@storybook/components": "5.2.0-beta.26",
-    "@storybook/core-events": "5.2.0-beta.26",
-    "@storybook/theming": "5.2.0-beta.26",
+    "@storybook/addons": "5.2.0-beta.28",
+    "@storybook/api": "5.2.0-beta.28",
+    "@storybook/client-logger": "5.2.0-beta.28",
+    "@storybook/components": "5.2.0-beta.28",
+    "@storybook/core-events": "5.2.0-beta.28",
+    "@storybook/theming": "5.2.0-beta.28",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

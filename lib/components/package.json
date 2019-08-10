@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "5.2.0-beta.26",
+  "version": "5.2.0-beta.28",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -21,8 +21,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/client-logger": "5.2.0-beta.26",
-    "@storybook/theming": "5.2.0-beta.26",
+    "@storybook/client-logger": "5.2.0-beta.28",
+    "@storybook/theming": "5.2.0-beta.28",
     "@types/react-syntax-highlighter": "10.1.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

@@ -1,3 +1,14 @@
+## 5.2.0-beta.28 (August 10, 2019)
+
+### Features
+
+* Core: Disable CRA behaviors when preset detected ([#7696](https://github.com/storybookjs/storybook/pull/7696))
+* Addon-docs: Docs only MDX and navigation UI ([#7719](https://github.com/storybookjs/storybook/pull/7719))
+
+## 5.2.0-beta.27 (August 10, 2019)
+
+Publish failed
+
 ## 5.2.0-beta.26 (August 9, 2019)
 
 ### Features
