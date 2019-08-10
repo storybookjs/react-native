@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "@storybook/addons": "5.2.0-beta.26",
+    "@storybook/client-api": "5.2.0-beta.26",
+    "@storybook/api": "5.2.0-beta.26",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2"
   },

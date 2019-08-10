@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
-import { AddonStore } from '@storybook/addons';
 import Constants from './constants';
+import { Channel } from './BackgroundPanel';
 
 interface ContainerProps {
   initialBackground: string;
-  channel: ReturnType<AddonStore['getChannel']>;
+  channel: Channel;
 }
 
 interface ContainerState {

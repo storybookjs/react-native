@@ -41,14 +41,16 @@ const Instructions = () => (
   </View>
 );
 
+export type Channel = ReturnType<AddonStore['getChannel']>;
+type Selection = ReturnType<StoryStore['fromId']>;
 interface BackgroundPanelProps {
-  channel: ReturnType<AddonStore['getChannel']>;
+  channel: Channel;
   api: API;
   active: boolean;
 }
 
 interface BackgroundPanelState {
-  selection: ReturnType<StoryStore['fromId']>;
+  selection: Selection;
 }
 
 export default class BackgroundPanel extends Component<BackgroundPanelProps, BackgroundPanelState> {
@@ -64,7 +66,7 @@ export default class BackgroundPanel extends Component<BackgroundPanelProps, Bac
     this.props.channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
   };
 
-  onStorySelected = (selection: ReturnType<StoryStore['fromId']>) => {
+  onStorySelected = (selection: Selection) => {
     this.setState({ selection });
   };
 
