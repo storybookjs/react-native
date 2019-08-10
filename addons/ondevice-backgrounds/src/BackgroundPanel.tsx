@@ -2,10 +2,13 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Events from '@storybook/core-events';
+import { AddonStore } from '@storybook/addons';
+import { API } from '@storybook/api';
+import { StoryStore } from '@storybook/client-api';
+
 import Swatch from './Swatch';
 import BackgroundEvents, { PARAM_KEY } from './constants';
-
-import console = require('console');
+import { Background } from './index';
 
 const codeSample = `
 import { storiesOf } from '@storybook/react-native';
@@ -38,7 +41,17 @@ const Instructions = () => (
   </View>
 );
 
-export default class BackgroundPanel extends Component<any, any> {
+interface BackgroundPanelProps {
+  channel: ReturnType<AddonStore['getChannel']>;
+  api: API;
+  active: boolean;
+}
+
+interface BackgroundPanelState {
+  selection: ReturnType<StoryStore['fromId']>;
+}
+
+export default class BackgroundPanel extends Component<BackgroundPanelProps, BackgroundPanelState> {
   componentDidMount() {
     this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
@@ -47,11 +60,11 @@ export default class BackgroundPanel extends Component<any, any> {
     this.props.channel.removeListener(Events.SELECT_STORY, this.onStorySelected);
   }
 
-  setBackgroundFromSwatch = (background: any) => {
+  setBackgroundFromSwatch = (background: string) => {
     this.props.channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
   };
 
-  onStorySelected = (selection: any) => {
+  onStorySelected = (selection: ReturnType<StoryStore['fromId']>) => {
     this.setState({ selection });
   };
 
@@ -65,12 +78,12 @@ export default class BackgroundPanel extends Component<any, any> {
     const story = api
       .store()
       .getStoryAndParameters(this.state.selection.kind, this.state.selection.story);
-    const backgrounds = story.parameters[PARAM_KEY];
+    const backgrounds: Background[] = story.parameters[PARAM_KEY];
 
     return (
       <View>
         {backgrounds ? (
-          backgrounds.map(({ value, name }: any) => (
+          backgrounds.map(({ value, name }) => (
             <View key={`${name} ${value}`}>
               <Swatch value={value} name={name} setBackground={this.setBackgroundFromSwatch} />
             </View>
