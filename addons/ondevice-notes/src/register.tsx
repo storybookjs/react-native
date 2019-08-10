@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
@@ -9,7 +8,7 @@ import Events from '@storybook/core-events';
 
 export const PARAM_KEY = `notes`;
 
-class Notes extends React.Component {
+class Notes extends React.Component<any, any> {
   componentDidMount() {
     this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
@@ -18,7 +17,7 @@ class Notes extends React.Component {
     this.props.channel.removeListener(Events.SELECT_STORY, this.onStorySelected);
   }
 
-  onStorySelected = selection => {
+  onStorySelected = (selection: any) => {
     this.setState({ selection });
   };
 
