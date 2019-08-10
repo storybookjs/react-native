@@ -22,6 +22,9 @@
   "dependencies": {
     "@storybook/addons": "5.2.0-beta.28",
     "@storybook/client-logger": "5.2.0-beta.28",
+    "@storybook/core-events": "5.2.0-beta.28",
+    "@storybook/api": "5.2.0-beta.28",
+    "@storybook/client-api": "5.2.0-beta.28",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2",
     "react-native-simple-markdown": "^1.1.0"
