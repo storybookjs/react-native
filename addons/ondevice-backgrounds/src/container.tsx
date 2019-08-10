@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import Constants from './constants';
 
-export default class Container extends React.Component {
-  constructor(props) {
+export default class Container extends React.Component<any, any> {
+  constructor(props: any) {
     super(props);
     this.state = { background: props.initialBackground || '' };
   }
@@ -19,7 +19,7 @@ export default class Container extends React.Component {
     channel.removeListener(Constants.UPDATE_BACKGROUND, this.onBackgroundChange);
   }
 
-  onBackgroundChange = background => {
+  onBackgroundChange = (background: any) => {
     this.setState({ background });
   };
 
@@ -33,7 +33,7 @@ export default class Container extends React.Component {
   }
 }
 
-Container.propTypes = {
+(Container as any).propTypes = {
   channel: PropTypes.shape({
     emit: PropTypes.func,
     on: PropTypes.func,
@@ -43,7 +43,7 @@ Container.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Container.defaultProps = {
+(Container as any).defaultProps = {
   channel: undefined,
   initialBackground: '',
 };

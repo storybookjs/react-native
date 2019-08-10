@@ -1,9 +1,11 @@
-/* eslint-disable react/prop-types, react/destructuring-assignment, import/no-extraneous-dependencies */
+/* eslint-disable react/destructuring-assignment, import/no-extraneous-dependencies */
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Events from '@storybook/core-events';
 import Swatch from './Swatch';
 import BackgroundEvents, { PARAM_KEY } from './constants';
+
+import console = require('console');
 
 const codeSample = `
 import { storiesOf } from '@storybook/react-native';
@@ -36,7 +38,7 @@ const Instructions = () => (
   </View>
 );
 
-export default class BackgroundPanel extends Component {
+export default class BackgroundPanel extends Component<any, any> {
   componentDidMount() {
     this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
@@ -45,11 +47,11 @@ export default class BackgroundPanel extends Component {
     this.props.channel.removeListener(Events.SELECT_STORY, this.onStorySelected);
   }
 
-  setBackgroundFromSwatch = background => {
+  setBackgroundFromSwatch = (background: any) => {
     this.props.channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
   };
 
-  onStorySelected = selection => {
+  onStorySelected = (selection: any) => {
     this.setState({ selection });
   };
 
@@ -68,7 +70,7 @@ export default class BackgroundPanel extends Component {
     return (
       <View>
         {backgrounds ? (
-          backgrounds.map(({ value, name }) => (
+          backgrounds.map(({ value, name }: any) => (
             <View key={`${name} ${value}`}>
               <Swatch value={value} name={name} setBackground={this.setBackgroundFromSwatch} />
             </View>

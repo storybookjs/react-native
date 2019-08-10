@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, View, Text } from 'react-native';
 
-const Swatch = ({ name, value, setBackground }) => (
+const Swatch = ({ name, value, setBackground }: any) => (
   <TouchableOpacity
     style={{
       borderRadius: 4,
