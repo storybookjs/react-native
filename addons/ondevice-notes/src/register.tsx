@@ -3,12 +3,24 @@
 import React from 'react';
 import { View } from 'react-native';
 import Markdown from 'react-native-simple-markdown';
-import addons from '@storybook/addons';
+import addons, { AddonStore } from '@storybook/addons';
 import Events from '@storybook/core-events';
+import { API } from '@storybook/api';
+import { StoryStore } from '@storybook/client-api';
 
 export const PARAM_KEY = `notes`;
 
-class Notes extends React.Component<any, any> {
+type Selection = ReturnType<StoryStore['fromId']>;
+interface NotesProps {
+  channel: ReturnType<AddonStore['getChannel']>;
+  api: API;
+  active: boolean;
+}
+
+interface NotesState {
+  selection: Selection;
+}
+class Notes extends React.Component<NotesProps, NotesState> {
   componentDidMount() {
     this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
@@ -17,7 +29,7 @@ class Notes extends React.Component<any, any> {
     this.props.channel.removeListener(Events.SELECT_STORY, this.onStorySelected);
   }
 
-  onStorySelected = (selection: any) => {
+  onStorySelected = (selection: Selection) => {
     this.setState({ selection });
   };
 
@@ -31,7 +43,7 @@ class Notes extends React.Component<any, any> {
     const story = api
       .store()
       .getStoryAndParameters(this.state.selection.kind, this.state.selection.story);
-    const text = story.parameters[PARAM_KEY];
+    const text: string = story.parameters[PARAM_KEY];
 
     const textAfterFormatted = text ? text.trim() : '';
 
