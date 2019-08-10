@@ -35,6 +35,7 @@ describe('docs-mdx-compiler-plugin', () => {
     'parameters.mdx',
     'non-story-exports.mdx',
     'story-function.mdx',
+    'docs-only.mdx',
   ];
   fixtures.forEach(fixtureFile => {
     it(fixtureFile, async () => {

@@ -52,8 +52,11 @@ const PlainLink = styled.a(plain);
 
 const Wrapper = styled.div({});
 
-const refinedViewMode = (viewMode: string) => {
-  return viewMode === 'settings' ? 'story' : viewMode;
+const refinedViewMode = (viewMode: string | undefined, isDocsOnly: boolean) => {
+  if (isDocsOnly) {
+    return 'docs';
+  }
+  return viewMode === 'settings' || !viewMode ? 'story' : viewMode;
 };
 
 const targetId = (childIds?: string[]) =>
@@ -77,7 +80,7 @@ export const Link = ({
         <PlainRouterLink
           title={name}
           id={prefix + id}
-          to={`/${viewMode ? refinedViewMode(viewMode) : 'story'}/${targetId(childIds) || id}`}
+          to={`/${refinedViewMode(viewMode, isLeaf && isComponent)}/${targetId(childIds) || id}`}
           onKeyUp={onKeyUp}
           onClick={onClick}
         >

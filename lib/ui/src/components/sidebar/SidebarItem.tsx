@@ -53,6 +53,10 @@ const Icon = styled(Icons)<IconProps>(
     if (icon === 'bookmarkhollow') {
       return { color: '#37d5d3' };
     }
+    if (icon === 'document') {
+      return { color: '#ffae00' };
+    }
+
     return {};
   },
   ({ isSelected = false }) => (isSelected ? { color: 'inherit' } : {})
@@ -121,7 +125,9 @@ const SidebarItem = ({
   ...props
 }: SidebarItemProps) => {
   let iconName: React.ComponentProps<typeof Icons>['icon'];
-  if (isLeaf) {
+  if (isLeaf && isComponent) {
+    iconName = 'document';
+  } else if (isLeaf) {
     iconName = 'bookmarkhollow';
   } else if (isComponent) {
     iconName = 'component';
