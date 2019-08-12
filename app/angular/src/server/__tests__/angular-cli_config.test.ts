@@ -2,8 +2,6 @@ import stripJsonComments from 'strip-json-comments';
 import { Path } from '@angular-devkit/core';
 import { getAngularCliWebpackConfigOptions } from '../angular-cli_config';
 
-const angularJson = require('fs').readFileSync('./angular.json', 'utf8');
-
 // eslint-disable-next-line global-require
 jest.mock('fs', () => require('../../../../../__mocks__/fs'));
 jest.mock('path', () => ({
@@ -13,6 +11,10 @@ jest.mock('path', () => ({
       : jest.requireActual('path').join(...args),
   resolve: (...args) => 'tsconfig.json',
 }));
+
+const angularJson = jest
+  .requireActual('fs')
+  .readFileSync(jest.requireActual('path').resolve(__dirname, 'angular.json'), 'utf8');
 
 const setupFiles = (files: any) => {
   // eslint-disable-next-line no-underscore-dangle, global-require
