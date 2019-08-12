@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { withTheme, styled, themes, convert } from '@storybook/theming';
-import { ScrollArea, TabsState } from '@storybook/components';
+import { ScrollArea, TabsState, Link, Placeholder } from '@storybook/components';
 import { SizeMe } from 'react-sizeme';
 import Result from './Result';
 import provideJestResult, { Test } from '../hoc/provideJestResult';
@@ -18,11 +18,6 @@ const List = styled.ul({
 const Item = styled.li({
   display: 'block',
   padding: 0,
-});
-
-const NoTests = styled.div({
-  padding: '10px 20px',
-  flex: 1,
 });
 
 const ProgressWrapper = styled.div({
@@ -127,7 +122,11 @@ const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
       if (!result) {
-        return <NoTests key={name}>This story has tests configured, but no file was found</NoTests>;
+        return (
+          <Placeholder key={name}>
+            This story has tests configured, but no file was found
+          </Placeholder>
+        );
       }
 
       const testsByType: Map<string, any> = getTestsByTypeMap(result);
@@ -139,7 +138,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
           {({ size }: { size: any }) => {
             const { width } = size;
             return (
-              <section key={name}>
+              <section>
                 <SuiteHead>
                   <SuiteTotals {...{ result, width }} />
                   {width > 240 ? (
@@ -203,7 +202,23 @@ interface PanelProps {
 
 const Panel = ({ tests }: PanelProps) => (
   <ScrollArea vertical>
-    {tests ? <Content tests={tests} /> : <NoTests>This story has no tests configured</NoTests>}
+    {tests ? (
+      <Content tests={tests} />
+    ) : (
+      <Placeholder>
+        <Fragment>No tests found</Fragment>
+        <Fragment>
+          Learn how to{' '}
+          <Link
+            href="https://github.com/storybookjs/storybook/tree/master/addons/jest"
+            target="_blank"
+            withArrow
+          >
+            add Jest test results to your story
+          </Link>
+        </Fragment>
+      </Placeholder>
+    )}
   </ScrollArea>
 );
 

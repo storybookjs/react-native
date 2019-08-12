@@ -1,3 +1,77 @@
+## 5.2.0-beta.28 (August 10, 2019)
+
+### Features
+
+* Core: Disable CRA behaviors when preset detected ([#7696](https://github.com/storybookjs/storybook/pull/7696))
+* Addon-docs: Docs only MDX and navigation UI ([#7719](https://github.com/storybookjs/storybook/pull/7719))
+
+## 5.2.0-beta.27 (August 10, 2019)
+
+Publish failed
+
+## 5.2.0-beta.26 (August 9, 2019)
+
+### Features
+
+* UI: Improved component nav UI ([#7716](https://github.com/storybookjs/storybook/pull/7716))
+
+## 5.2.0-beta.25 (August 8, 2019)
+
+### Features
+
+* Addon-centered: ability to disable on specific story ([#7709](https://github.com/storybookjs/storybook/pull/7709))
+
+### Bug Fixes
+
+* Addon-jest: fix console warning ([#7705](https://github.com/storybookjs/storybook/pull/7705))
+* Core: Remove Object.append(...) from index.ejs ([#7707](https://github.com/storybookjs/storybook/pull/7707))
+
+## 5.2.0-beta.24 (August 7, 2019)
+
+### Features
+
+* Addon-docs: DocsPage slots for fine-grained user control ([#7680](https://github.com/storybookjs/storybook/pull/7680))
+
+### Bug Fixes
+
+* Core: Add polyfill for fetch ([#7401](https://github.com/storybookjs/storybook/pull/7401))
+
+### Dependency Upgrades
+
+* Addon-notes: Upgrade markdown-to-jsx dependency ([#7694](https://github.com/storybookjs/storybook/pull/7694))
+
+## 5.2.0-beta.23 (August 6, 2019)
+
+### Features
+
+* CLI: Suggest possible matches on invalid command ([#7658](https://github.com/storybookjs/storybook/pull/7658))
+* Core: Allow injecting preview-body.html ([#7417](https://github.com/storybookjs/storybook/pull/7417))
+
+### Bug Fixes
+
+* Core: Fix HMR error recovery ([#7684](https://github.com/storybookjs/storybook/pull/7684))
+
+## 5.2.0-beta.22 (August 3, 2019)
+
+### Bug Fixes
+
+* Core: Fix HMR for CSF files ([#7669](https://github.com/storybookjs/storybook/pull/7669))
+
+### Maintenance
+
+* React: Cleanup CSF stories in cra-kitchen-sink ([#7670](https://github.com/storybookjs/storybook/pull/7670))
+
+## 5.2.0-beta.21 (August 3, 2019)
+
+### Features
+
+* Addon-jest: Add placeholder info for missing tests ([#7660](https://github.com/storybookjs/storybook/pull/7660))
+
+### Bug Fixes
+
+* Addon-docs: Pass framework configs through babel ([#7667](https://github.com/storybookjs/storybook/pull/7667))
+* Addon-centered: Fix disappearing when zoomed ([#7640](https://github.com/storybookjs/storybook/pull/7640))
+
 ## 5.2.0-beta.20 (August 1, 2019)
 
 ### Bug Fixes

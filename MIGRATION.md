@@ -15,22 +15,22 @@
     - [Deprecate webpack extend mode](#deprecate-webpack-extend-mode)
   - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
     - [sortStoriesByKind](#sortstoriesbykind)
-  - [Webpack config simplification](#webpack-config-simplification)
-  - [Theming overhaul](#theming-overhaul)
-  - [Story hierarchy defaults](#story-hierarchy-defaults)
-  - [Options addon deprecated](#options-addon-deprecated)
-  - [Individual story decorators](#individual-story-decorators)
-  - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
-  - [Addon cssresources name attribute renamed](#addon-cssresources-name-attribute-renamed)
-  - [Addon viewport uses parameters](#addon-viewport-uses-parameters)
-  - [Addon a11y uses parameters, decorator renamed](#addon-a11y-uses-parameters-decorator-renamed)
-  - [New keyboard shortcuts defaults](#new-keyboard-shortcuts-defaults)
-  - [New URL structure](#new-url-structure)
-  - [Rename of the `--secure` cli parameter to `--https`](#rename-of-the---secure-cli-parameter-to---https)
-  - [Vue integration](#vue-integration)
+    - [Webpack config simplification](#webpack-config-simplification)
+    - [Theming overhaul](#theming-overhaul)
+    - [Story hierarchy defaults](#story-hierarchy-defaults)
+    - [Options addon deprecated](#options-addon-deprecated)
+    - [Individual story decorators](#individual-story-decorators)
+    - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
+    - [Addon cssresources name attribute renamed](#addon-cssresources-name-attribute-renamed)
+    - [Addon viewport uses parameters](#addon-viewport-uses-parameters)
+    - [Addon a11y uses parameters, decorator renamed](#addon-a11y-uses-parameters-decorator-renamed)
+    - [New keyboard shortcuts defaults](#new-keyboard-shortcuts-defaults)
+    - [New URL structure](#new-url-structure)
+    - [Rename of the `--secure` cli parameter to `--https`](#rename-of-the---secure-cli-parameter-to---https)
+    - [Vue integration](#vue-integration)
   - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
-  - [Private addon config](#private-addon-config)
-  - [React 15.x](#react-15x)
+    - [Private addon config](#private-addon-config)
+    - [React 15.x](#react-15x)
   - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
     - [React 16.3+](#react-163)
     - [Generic addons](#generic-addons)
@@ -222,7 +222,7 @@ sortedModules.forEach(key => {
 });
 ```
 
-## Webpack config simplification
+### Webpack config simplification
 
 The API for custom webpack configuration has been simplifed in 5.0, but it's a breaking change. Storybook's "full control mode" for webpack allows you to override the webpack config with a function that returns a configuration object.
 
@@ -236,11 +236,11 @@ In contrast, the 4.x configuration function accepted either two or three argumen
 
 Please see the [current custom webpack documentation](https://github.com/storybookjs/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
 
-## Theming overhaul
+### Theming overhaul
 
 Theming has been rewritten in v5. If you used theming in v4, please consult the [theming docs](https://github.com/storybookjs/storybook/blob/next/docs/src/pages/configurations/theming/index.md) to learn about the new API.
 
-## Story hierarchy defaults
+### Story hierarchy defaults
 
 Storybook's UI contains a hierarchical tree of stories that can be configured by `hierarchySeparator` and `hierarchyRootSeparator` [options](./addons/options/README.md).
 
@@ -268,7 +268,7 @@ addParameters({
 });
 ```
 
-## Options addon deprecated
+### Options addon deprecated
 
 In 4.x we added story parameters. In 5.x we've deprecated the options addon in favor of [global parameters](./docs/src/pages/configurations/options-parameter/index.md), and we've also renamed some of the options in the process (though we're maintaining backwards compatibility until 6.0).
 
@@ -322,7 +322,7 @@ Storybook v5 removes the search dialog box in favor of a quick search in the nav
 
 Storybook v5 introduce a new tool bar above the story view and you can show\hide it with the new `isToolshown` option.
 
-## Individual story decorators
+### Individual story decorators
 
 The behavior of adding decorators to a kind has changed in SB5 ([#5781](https://github.com/storybookjs/storybook/issues/5781)).
 
@@ -345,7 +345,7 @@ storiesOf('Stories', module)
   .add('centered', () => 'Hello', { decorators: [centered] });
 ```
 
-## Addon backgrounds uses parameters
+### Addon backgrounds uses parameters
 
 Similarly, `@storybook/addon-backgrounds` uses parameters to pass background options. If you previously had:
 
@@ -364,7 +364,7 @@ storiesOf('Stories', module).addParameters({ backgrounds: options });
 
 You can pass `backgrounds` parameters at the global level (via `addParameters` imported from `@storybook/react` et al.), and the story level (via the third argument to `.add()`).
 
-## Addon cssresources name attribute renamed
+### Addon cssresources name attribute renamed
 
 In the options object for `@storybook/addon-cssresources`, the `name` attribute for each resource has been renamed to `id`. If you previously had:
 
@@ -404,7 +404,7 @@ addDecorator(
 );
 ```
 
-## Addon viewport uses parameters
+### Addon viewport uses parameters
 
 Similarly, `@storybook/addon-viewport` uses parameters to pass viewport options. If you previously had:
 
@@ -426,7 +426,7 @@ The `withViewport` decorator is also no longer supported and should be replaced 
 
 See the [viewport addon README](https://github.com/storybookjs/storybook/blob/master/addons/viewport/README.md) for more information.
 
-## Addon a11y uses parameters, decorator renamed
+### Addon a11y uses parameters, decorator renamed
 
 Similarly, `@storybook/addon-a11y` uses parameters to pass a11y options. If you previously had:
 
@@ -450,7 +450,7 @@ Furthermore, the decorator `checkA11y` has been deprecated and renamed to `withA
 
 See the [a11y addon README](https://github.com/storybookjs/storybook/blob/master/addons/a11y/README.md) for more information.
 
-## New keyboard shortcuts defaults
+### New keyboard shortcuts defaults
 
 Storybook's keyboard shortcuts are updated in 5.0, but they are configurable via the menu so if you want to set them back you can:
 
@@ -466,7 +466,7 @@ Storybook's keyboard shortcuts are updated in 5.0, but they are configurable via
 | Prev component         |             | alt-↑ |
 | Search                 |             | /     |
 
-## New URL structure
+### New URL structure
 
 We've update Storybook's URL structure in 5.0. The old structure used URL parameters to save the UI state, resulting in long ugly URLs. v5 respects the old URL parameters, but largely does away with them.
 
@@ -480,7 +480,7 @@ https://url-of-storybook?path=/story/<storyId>
 
 The structure of `storyId` is a slugified `<selectedKind>--<selectedStory>` (slugified = lowercase, hyphen-separated). Each `storyId` must be unique. We plan to build more features into Storybook in upcoming versions based on this new structure.
 
-## Rename of the `--secure` cli parameter to `--https`
+### Rename of the `--secure` cli parameter to `--https`
 
 Storybook for React Native's start commands & the Web versions' start command were a bit different, for no reason.
 We've changed the start command for Reactnative to match the other.
@@ -499,7 +499,7 @@ You have to replace it with:
 start-storybook --https
 ```
 
-## Vue integration
+### Vue integration
 
 The Vue integration was updated, so that every story returned from a story or decorator function is now being normalized with `Vue.extend` **and** is being wrapped by a functional component. Returning a string from a story or decorator function is still supported and is treated as a component with the returned string as the template.
 
@@ -509,11 +509,11 @@ Currently there is no recommended way of accessing the component options of a st
 
 There are are a few migrations you should be aware of in 4.1, including one unintentionally breaking change for advanced addon usage.
 
-## Private addon config
+### Private addon config
 
 If your Storybook contains custom addons defined that are defined in your app (as opposed to installed from packages) and those addons rely on reconfiguring webpack/babel, Storybook 4.1 may break for you. There's a workaround [described in the issue](https://github.com/storybookjs/storybook/issues/4995), and we're working on official support in the next release.
 
-## React 15.x
+### React 15.x
 
 Storybook 4.1 supports React 15.x (which had been [lost in the 4.0 release](#react-163)). So if you've been blocked on upgrading, we've got you covered. You should be able to upgrade according to the 4.0 migration notes below, or following the [4.0 upgrade guide](https://medium.com/storybookjs/migrating-to-storybook-4-c65b19a03d2c).
 
