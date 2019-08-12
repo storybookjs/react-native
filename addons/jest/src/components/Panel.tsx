@@ -130,9 +130,8 @@ const Content = styled(({ tests, className }: ContentProps) => (
       }
 
       const testsByType: Map<string, any> = getTestsByTypeMap(result);
-      const sortedTestsByCount = [...testsByType.entries()].sort(
-        (a, b) => a[1].length - b[1].length
-      );
+      const entries: any = testsByType.entries();
+      const sortedTestsByCount = [...entries].sort((a, b) => a[1].length - b[1].length);
       return (
         <SizeMe refreshMode="debounce" key={name}>
           {({ size }: { size: any }) => {
