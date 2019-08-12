@@ -64,7 +64,7 @@ const defaultTitleSlot: StringSlot = ({ selectedKind, parameters }) => {
 };
 
 const defaultSubtitleSlot: StringSlot = ({ parameters }) =>
-  parameters && parameters.componentDescription;
+  parameters && parameters.componentSubtitle;
 
 const defaultPropsSlot: PropsSlot = context => getPropsTableProps({ of: '.' }, context);
 
