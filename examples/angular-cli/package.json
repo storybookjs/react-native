@@ -18,22 +18,22 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@angular/common": "^7.2.6",
-    "@angular/compiler": "^7.2.6",
-    "@angular/core": "^7.2.6",
-    "@angular/forms": "^7.2.6",
-    "@angular/platform-browser": "^7.2.6",
-    "@angular/platform-browser-dynamic": "^7.2.6",
+    "@angular/common": "^8.2.1",
+    "@angular/compiler": "^8.2.1",
+    "@angular/core": "^8.2.1",
+    "@angular/forms": "^8.2.1",
+    "@angular/platform-browser": "^8.2.1",
+    "@angular/platform-browser-dynamic": "^8.2.1",
     "@ngrx/store": "^7.2.0",
     "core-js": "^3.0.1",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.4.0",
-    "zone.js": "^0.8.29"
+    "zone.js": "^0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.4",
+    "@angular-devkit/build-angular": "^0.802.1",
     "@angular/cli": "^8.2.1",
-    "@angular/compiler-cli": "^7.2.6",
+    "@angular/compiler-cli": "^9.0.0-next.1",
     "@storybook/addon-a11y": "5.2.0-beta.28",
     "@storybook/addon-actions": "5.2.0-beta.28",
     "@storybook/addon-backgrounds": "5.2.0-beta.28",
