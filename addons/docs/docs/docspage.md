@@ -26,11 +26,11 @@ However, `DocsPage` brings the following improvements:
 
 ## Component parameter
 
-`DocsPage` pulls info from many sources, but one of the main ones is the `component` parameter, which is a new addition to Storybook in 5.2. It's based on the idea that each component should have an associated set of documentation and stories (versus organizing it in some other way).
+`DocsPage` pulls info from many sources, but one of the main ones is the `component` parameter, which is a new addition to Storybook in 5.2. It's based on the best practice that each component should have an associated set of documentation and stories (versus organizing it in some other way).
 
-Storybook uses `component` to extract the component's description and props, and in future versions will probably do more with it. We encourage you to add it to existing stories and use it in all new stories.
+Storybook uses `component` to extract the component's description and props, and will rely on it further in future releases. We encourage you to add it to existing stories and use it in all new stories.
 
-Here's how to set the component in Component Story Format (CSF):
+Here's how to set the component in [Component Story Format (CSF)]():
 
 ```js
 import { Badge } from './Badge';
@@ -93,7 +93,7 @@ export default {
 
 The `Subtitle` slot is computed from the component's `componentSubtitle` parameter.
 
-For example in Component Story Format (CSF):
+For example in [Component Story Format (CSF)](https://medium.com/storybookjs/component-story-format-66f4c32366df):
 
 ```js
 export default {

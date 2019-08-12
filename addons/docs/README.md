@@ -24,7 +24,7 @@ Read on to learn more:
 
 ## DocsPage
 
-When you [install docs](#installation), every story gets a `DocsPage`. `DocsPage` pulls information from your stories, components, source code, and story metadata to construct a sensible, zero-config default.
+When you [install Docs](#installation), every story gets a `DocsPage`. `DocsPage` pulls information from your stories, components, source code, and story metadata to construct a sensible, zero-config default.
 
 Click on the `Docs` tab to see it:
 

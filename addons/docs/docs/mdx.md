@@ -13,6 +13,7 @@
 - [Writing stories](#writing-stories)
 - [Embedding stories](#embedding-stories)
 - [Decorators and parameters](#decorators-and-parameters)
+- [MDX file names](#mdx-file-names)
 - [More resources](#more-resources)
 
 ## Basic example
@@ -55,9 +56,9 @@ Let's break it down.
 
 [MDX](https://mdxjs.com/) is a standard file format that combines Markdown with JSX. This means you can use Markdown’s terse syntax (such as `# heading`) for your documentation, and freely embed JSX component blocks at any point in the file.
 
-MDX-Flavored CSF includes a collection of components called **"Doc Blocks"**, that allow Storybook to translate MDX files into storybook stories. MDX-defined stories are identical to regular Storybook stories, so they can be used with Storybook's entire ecosystem of addons and view layers.
+MDX-flavored [Component Story Format (CSF)](https://medium.com/storybookjs/component-story-format-66f4c32366df) includes a collection of components called **"Doc Blocks"**, that allow Storybook to translate MDX files into storybook stories. MDX-defined stories are identical to regular Storybook stories, so they can be used with Storybook's entire ecosystem of addons and view layers.
 
-For example, here's the story from `Checkbox` example above, rewritten in Storybook's [Component Story Format (CSF)](https://medium.com/storybookjs/component-story-format-66f4c32366df):
+For example, here's the story from `Checkbox` example above, rewritten in CSF:
 
 ```js
 import React from 'react';
@@ -171,6 +172,12 @@ import { addDecorator, addParameters } from '@storybook/react';
 addDecorator(...);
 addParameters({ ... });
 ```
+
+## MDX file names
+
+Unless you use a custom webpack configuration, all of your `MDX` files should have the suffix `*.stories.mdx`. This tells Storybook to apply its special processing to the `<Meta>` and `<Story>` elements in the file.
+
+Be sure to update your Storybook config file to load `.stories.mdx` stories, as per the [`addon-docs` installation instructions](../README.md#installation).
 
 ## More resources
 
