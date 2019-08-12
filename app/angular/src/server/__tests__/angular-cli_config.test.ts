@@ -1,8 +1,8 @@
+import stripJsonComments from 'strip-json-comments';
 import { Path } from '@angular-devkit/core';
 import { getAngularCliWebpackConfigOptions } from '../angular-cli_config';
 
-// @ts-ignore
-import angularJson from './angular.json';
+const angularJson = require('fs').readFileSync('./angular.json', 'utf8');
 
 // eslint-disable-next-line global-require
 jest.mock('fs', () => require('../../../../../__mocks__/fs'));
@@ -19,10 +19,10 @@ const setupFiles = (files: any) => {
   require('fs').__setMockFiles(files);
 };
 
-describe('angualr-cli_config', () => {
+describe('angular-cli_config', () => {
   describe('getAngularCliWebpackConfigOptions()', () => {
     it('should return have empty `buildOptions.sourceMap` and `buildOptions.optimization` by default', () => {
-      setupFiles({ 'angular.json': JSON.stringify(angularJson) });
+      setupFiles({ 'angular.json': angularJson });
 
       const config = getAngularCliWebpackConfigOptions('/' as Path);
 
@@ -36,7 +36,7 @@ describe('angualr-cli_config', () => {
 
     it('should use `storybook` project by default when project is defined', () => {
       // Lazy clone example angular json
-      const overrideAngularJson = JSON.parse(JSON.stringify(angularJson));
+      const overrideAngularJson = JSON.parse(stripJsonComments(angularJson));
       // Add storybook project
       overrideAngularJson.projects.storybook = {
         architect: {
