@@ -1,5 +1,5 @@
 <center>
-  <img src="./media/hero.png" width="100%" />
+  <img src="./media/mdx-hero.png" width="100%" />
 </center>
 
 # Storybook Docs MDX
