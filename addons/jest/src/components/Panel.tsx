@@ -83,27 +83,12 @@ interface ContentProps {
 const getTestsByTypeMap = (result: any) => {
   const testsByType: Map<string, any> = new Map();
   result.assertionResults.forEach((assertion: any) => {
-    // using switch to allow for new types to be added
-    switch (assertion.status) {
-      case StatusTypes.PASSED_TYPE:
-        testsByType.set(
-          StatusTypes.PASSED_TYPE,
-          testsByType.get(StatusTypes.PASSED_TYPE)
-            ? testsByType.get(StatusTypes.PASSED_TYPE).concat(assertion)
-            : [assertion]
-        );
-        break;
-      case StatusTypes.FAILED_TYPE:
-        testsByType.set(
-          StatusTypes.FAILED_TYPE,
-          testsByType.get(StatusTypes.FAILED_TYPE)
-            ? testsByType.get(StatusTypes.FAILED_TYPE).concat(assertion)
-            : [assertion]
-        );
-        break;
-      default:
-        break;
-    }
+    testsByType.set(
+      assertion.status,
+      testsByType.get(assertion.status)
+        ? testsByType.get(assertion.status).concat(assertion)
+        : [assertion]
+    );
   });
   return testsByType;
 };
