@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { withTheme, styled, themes, convert } from '@storybook/theming';
+import { styled, themes, convert } from '@storybook/theming';
 import { ScrollArea, TabsState, Link, Placeholder } from '@storybook/components';
 import { SizeMe } from 'react-sizeme';
 import Result from './Result';
