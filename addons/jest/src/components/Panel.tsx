@@ -156,7 +156,10 @@ const Content = styled(({ tests, className }: ContentProps) => (
                     </ProgressWrapper>
                   ) : null}
                 </SuiteHead>
-                <TabsState initial="failing-tests" backgroundColor="rgba(0,0,0,.05)">
+                <TabsState
+                  initial="failing-tests"
+                  backgroundColor={convert(themes.normal).background.hoverable}
+                >
                   <div
                     id="failing-tests"
                     title={`${testsByType.get(FAILED_TYPE).length} Failed`}
