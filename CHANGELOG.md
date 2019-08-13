@@ -1,3 +1,10 @@
+## 5.1.11 (August 13, 2019)
+
+### Bug Fixes
+
+* Core: Add polyfill for fetch ([#7401](https://github.com/storybookjs/storybook/pull/7401))
+* Core: Revert "Fix #7167 addon-centered causes component to disappear when zooming" ([#7750](https://github.com/storybookjs/storybook/pull/7750))
+
 ## 5.2.0-beta.29 (August 13, 2019)
 
 ### Breaking Changes
