@@ -1,3 +1,14 @@
+## 5.2.0-beta.29 (August 13, 2019)
+
+### Breaking Changes
+
+* Addon-docs: Packaging for 5.2 release ([#7741](https://github.com/storybookjs/storybook/pull/7741))
+
+### Bug Fixes
+
+* Core: Revert "Fix #7167 addon-centered causes component to disappear when zooming" ([#7750](https://github.com/storybookjs/storybook/pull/7750))
+* Core: Revert "Addon-centered: Fix disappearing when zoomed" ([#7749](https://github.com/storybookjs/storybook/pull/7749))
+
 ## 5.2.0-beta.28 (August 10, 2019)
 
 ### Features
