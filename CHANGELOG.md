@@ -1,3 +1,14 @@
+## 5.2.0-beta.30 (August 14, 2019)
+
+### Features
+
+* CLI: Don't output startup information on smoke test ([#6949](https://github.com/storybookjs/storybook/pull/6949))
+* Ondevice-knobs: Expose withKnobs from addon-knobs ([#7555](https://github.com/storybookjs/storybook/pull/7555))
+
+### Maintenance
+
+* Addon-Jest: Add flexibility ([#7748](https://github.com/storybookjs/storybook/pull/7748))
+
 ## 5.1.11 (August 13, 2019)
 
 ### Bug Fixes
