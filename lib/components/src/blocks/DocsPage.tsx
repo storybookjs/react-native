@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
-import { DocumentFormatting } from '../typography/DocumentFormatting';
+import { withReset } from '../typography/DocumentFormatting';
 
 const breakpoint = 600;
 const pageMargin = '5.55555';
@@ -12,33 +12,27 @@ export interface DocsPageProps {
   subtitle?: string;
 }
 
-const Title = styled.h1<{}>(({ theme }) => ({
-  // overrides h1 in DocumentFormatting
-  '&&': {
-    fontSize: theme.typography.size.m3,
-    lineHeight: '32px',
+const Title = styled.h1<{}>(withReset, ({ theme }) => ({
+  fontSize: theme.typography.size.m3,
+  lineHeight: '32px',
 
-    [`@media (min-width: ${breakpoint * 1}px)`]: {
-      fontSize: theme.typography.size.l1,
-      lineHeight: '36px',
-    },
+  [`@media (min-width: ${breakpoint * 1}px)`]: {
+    fontSize: theme.typography.size.l1,
+    lineHeight: '36px',
   },
 }));
 
-const Subtitle = styled.h2<{}>(({ theme }) => ({
-  // overrides h2 in DocumentFormatting
-  '&&': {
-    fontWeight: theme.typography.weight.regular,
-    fontSize: theme.typography.size.s3,
-    lineHeight: '20px',
-    borderBottom: 'none',
-    marginBottom: '15px',
+const Subtitle = styled.h2<{}>(withReset, ({ theme }) => ({
+  fontWeight: theme.typography.weight.regular,
+  fontSize: theme.typography.size.s3,
+  lineHeight: '20px',
+  borderBottom: 'none',
+  marginBottom: '15px',
 
-    [`@media (min-width: ${breakpoint * 1}px)`]: {
-      fontSize: theme.typography.size.m1,
-      lineHeight: '28px',
-      marginBottom: '25px',
-    },
+  [`@media (min-width: ${breakpoint * 1}px)`]: {
+    fontSize: theme.typography.size.m1,
+    lineHeight: '28px',
+    marginBottom: '25px',
   },
 
   color:
@@ -47,7 +41,7 @@ const Subtitle = styled.h2<{}>(({ theme }) => ({
       : transparentize(0.25, theme.color.defaultText),
 }));
 
-export const DocsContent = styled(DocumentFormatting)({
+export const DocsContent = styled.div({
   maxWidth: 800,
   width: '100%',
 });

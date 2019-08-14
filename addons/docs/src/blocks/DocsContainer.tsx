@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { Global, createGlobal, ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
-import { DocumentFormatting, DocsWrapper, DocsContent } from '@storybook/components';
+import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
+import { DocsWrapper, DocsContent } from '@storybook/components';
+import * as html from '@storybook/components/html';
 import { DocsContextProps, DocsContext } from './DocsContext';
 
 interface DocsContainerProps {
@@ -11,20 +12,13 @@ interface DocsContainerProps {
   content: React.ElementType<any>;
 }
 
-const defaultComponents = {
-  // p: ({ children }) => <b>{children}</b>,
-  wrapper: DocumentFormatting,
-};
-
-const globalWithOverflow = (args: any) => {
-  const global = createGlobal(args);
-  const { body, ...rest } = global;
-  const { overflow, ...bodyRest } = body;
-  return {
-    body: bodyRest,
-    ...rest,
-  };
-};
+const defaultComponents = Object.entries(html).reduce(
+  (acc, [k, v]) => ({
+    ...acc,
+    [k.toLowerCase()]: v,
+  }),
+  {}
+);
 
 export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   context,
@@ -38,7 +32,6 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   return (
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>
-        <Global styles={globalWithOverflow} />
         <MDXProvider components={components}>
           <DocsWrapper>
             <DocsContent>
