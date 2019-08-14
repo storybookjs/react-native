@@ -9,6 +9,7 @@ When you install [Storybook Docs](../README.md), `DocsPage` is the zero-config d
 - [Motivation](#motivation)
 - [Component parameter](#component-parameter)
 - [DocsPage slots](#docspage-slots)
+- [Story file names](#story-file-names)
 - [More resources](#more-resources)
 
 ## Motivation
@@ -189,6 +190,12 @@ And here are the return type signatures for each of the slot functions
 | Primary  | primarySlot  | `StoryData[]`, `SlotContext` | `StoryProps?`      |
 | Props    | propsSlot    | `SlotContext`                | `PropsTableProps?` |
 | Stories  | storiesSlot  | `StoryData[]`, `SlotContext` | `StoryProps[]?`    |
+
+## Story file names
+
+Unless you use a custom webpack configuration, all of your story files should have the suffix `*.stories.[jt]sx?`, e.g. `"Badge.stories.js"`, `"Badge.stories.tsx"`, etc.
+
+The docs preset assumes this naming convention for its `source-loader` setup. If you want to use a different naming convention, you'll need a [manual configuration](../README.md#manual-configuration).
 
 ## More resources
 

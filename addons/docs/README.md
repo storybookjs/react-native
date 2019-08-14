@@ -110,7 +110,7 @@ module.exports = ['@storybook/addon-docs/react/preset'];
 
 If you're not using `react`, replace it with your framework of choice corresponding to the Storybook package name, e.g. `angular` for `@storybook/angular` etc.
 
-If you're migrating from an earlier version of Storybook and want to use `MDX`, you need to upgrade your Storybook config:
+**Configure.** If you're migrating from an earlier version of Storybook and want to use `MDX`, you need to upgrade your Storybook config:
 
 ```js
 import { configure } from '@storybook/react';
