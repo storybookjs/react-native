@@ -3,6 +3,7 @@ import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
+import { ResetWrapper } from '../typography/DocumentFormatting';
 
 const ItemTitle = styled.div<{}>(({ theme }) => ({
   fontWeight: theme.typography.weight.bold,
@@ -151,8 +152,8 @@ export const ColorItem: React.FunctionComponent<ColorProps> = ({ title, subtitle
  * Styleguide documentation for colors, including names, captions, and color swatches,
  * all specified as `ColorItem` children of this wrapper component.
  */
-export const ColorPalette: React.FunctionComponent = ({ children, ...props }) => {
-  return (
+export const ColorPalette: React.FunctionComponent = ({ children, ...props }) => (
+  <ResetWrapper>
     <List {...props}>
       <ListHeading>
         <ListName>Name</ListName>
@@ -160,5 +161,5 @@ export const ColorPalette: React.FunctionComponent = ({ children, ...props }) =>
       </ListHeading>
       {children}
     </List>
-  );
-};
+  </ResetWrapper>
+);

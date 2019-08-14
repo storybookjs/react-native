@@ -8,6 +8,7 @@ import {
   PropsTable,
   PropsTableProps,
 } from '@storybook/components';
+import { H2, H3 } from '@storybook/components/html';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { DocsContainer } from './DocsContainer';
 import { Description, getDocgen } from './Description';
@@ -67,8 +68,8 @@ const defaultDescriptionSlot: StringSlot = ({ parameters }) =>
 
 const defaultStorySlot: StorySlot = (storyData, isPrimary, context) => storyData;
 
-const StoriesHeading = styled.h2();
-const StoryHeading = styled.h3();
+const StoriesHeading = H2;
+const StoryHeading = H3;
 
 const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   id,

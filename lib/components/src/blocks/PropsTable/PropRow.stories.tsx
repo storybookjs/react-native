@@ -3,6 +3,7 @@ import { PropRow } from './PropRow';
 
 import { Table } from './PropsTable';
 import { DocsPageWrapper } from '../DocsPage';
+import { ResetWrapper } from '../../typography/DocumentFormatting';
 
 export default {
   component: PropRow,
@@ -11,9 +12,11 @@ export default {
   decorators: [
     getStory => (
       <DocsPageWrapper>
-        <Table>
-          <tbody>{getStory()}</tbody>
-        </Table>
+        <ResetWrapper>
+          <Table>
+            <tbody>{getStory()}</tbody>
+          </Table>
+        </ResetWrapper>
       </DocsPageWrapper>
     ),
   ],

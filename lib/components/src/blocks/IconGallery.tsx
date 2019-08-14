@@ -1,5 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
+import { ResetWrapper } from '../typography/DocumentFormatting';
 
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 
@@ -59,5 +60,9 @@ export const IconItem: React.FunctionComponent<IconItemProps> = ({ name, childre
  * Show a grid of icons, as specified by `IconItem`.
  */
 export const IconGallery: React.FunctionComponent = ({ children, ...props }) => {
-  return <List {...props}>{children}</List>;
+  return (
+    <ResetWrapper>
+      <List {...props}>{children}</List>
+    </ResetWrapper>
+  );
 };

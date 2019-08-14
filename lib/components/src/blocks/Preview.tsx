@@ -83,7 +83,7 @@ const Preview: React.FunctionComponent<PreviewProps> = ({
           {Array.isArray(children) ? (
             children.map((child, i) => <div key={i.toString()}>{child}</div>)
           ) : (
-            <div>{children}</div>
+            <>{children}</>
           )}
         </ChildrenContainer>
         {withSource && <ActionBar actionItems={[actionItem]} />}
