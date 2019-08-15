@@ -31,6 +31,7 @@ interface SourceErrorProps {
 interface SourceCodeProps {
   language?: string;
   code?: string;
+  format?: boolean;
   dark?: boolean;
 }
 
@@ -47,12 +48,13 @@ const Source: React.FunctionComponent<SourceProps> = props => {
     return <EmptyBlock {...props}>{error}</EmptyBlock>;
   }
 
-  const { language, code, dark, ...rest } = props as SourceCodeProps;
+  const { language, code, dark, format, ...rest } = props as SourceCodeProps;
 
   const syntaxHighlighter = (
     <StyledSyntaxHighlighter
       bordered
       copyable
+      format={format}
       language={language}
       className="docblock-source"
       {...rest}
