@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { IFrame } from './IFrame';
 import { EmptyBlock } from './EmptyBlock';
