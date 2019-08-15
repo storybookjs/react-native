@@ -24,6 +24,7 @@ export const ActionButton = styled.button<{}>(({ theme }) => ({
 
   fontSize: 12,
   lineHeight: '16px',
+  fontFamily: theme.typography.fonts.base,
   fontWeight: theme.typography.weight.bold,
 
   borderTop: `1px solid ${theme.appBorderColor}`,
