@@ -50,6 +50,7 @@ const PreviewWrapper = styled.div<PreviewProps>(({ theme, withSource, isExpanded
   overflow: 'hidden',
   borderBottomLeftRadius: withSource && isExpanded && 0,
   borderBottomRightRadius: withSource && isExpanded && 0,
+  borderBottomWidth: isExpanded && 0,
 }));
 
 const PreviewContainer = styled.div({
@@ -86,7 +87,7 @@ const Preview: React.FunctionComponent<PreviewProps> = ({
           {Array.isArray(children) ? (
             children.map((child, i) => <div key={i.toString()}>{child}</div>)
           ) : (
-            <>{children}</>
+            <div>{children}</div>
           )}
         </ChildrenContainer>
         {withSource && <ActionBar actionItems={[actionItem]} />}
