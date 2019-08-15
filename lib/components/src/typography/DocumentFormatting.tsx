@@ -1,6 +1,7 @@
 import React from 'react';
 import memoize from 'memoizerific';
 import { styled, css, CSSObject, Theme } from '@storybook/theming';
+import { withReset } from './withReset';
 
 const headerCommon: CSSObject = {
   margin: '20px 0 10px',
@@ -22,17 +23,6 @@ const headerCommon: CSSObject = {
 const withMargin: CSSObject = {
   margin: '15px 0',
 };
-
-export const withReset = ({ theme }: { theme: Theme }): CSSObject => ({
-  fontFamily: theme.typography.fonts.base,
-  fontSize: theme.typography.size.s3,
-  margin: 0,
-
-  WebkitFontSmoothing: 'antialiased',
-  MozOsxFontSmoothing: 'grayscale',
-  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-  WebkitOverflowScrolling: 'touch',
-});
 
 export const H1 = styled.h1<{}>(
   withReset,

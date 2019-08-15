@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
-import { withReset } from '../typography/DocumentFormatting';
+import { withReset } from '../typography/withReset';
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 
 const Label = styled.div<{}>(({ theme }) => ({

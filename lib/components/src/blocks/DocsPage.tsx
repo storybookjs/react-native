@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
-import { withReset } from '../typography/DocumentFormatting';
+import { withReset } from '../typography/withReset';
 
 const breakpoint = 600;
 const pageMargin = '5.55555';
