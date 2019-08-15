@@ -8,6 +8,8 @@ import provideJestResult, { Test } from '../hoc/provideJestResult';
 const StatusTypes = {
   PASSED_TYPE: 'passed',
   FAILED_TYPE: 'failed',
+  SKIPPED_TYPE: 'pending',
+  TODO_TYPE: 'todo',
 };
 
 const List = styled.ul({
@@ -100,6 +102,10 @@ const getColorByType = (type: string) => {
       return convert(themes.normal).color.positive;
     case StatusTypes.FAILED_TYPE:
       return convert(themes.normal).color.negative;
+    case StatusTypes.SKIPPED_TYPE:
+      return convert(themes.normal).color.warning;
+    case StatusTypes.TODO_TYPE:
+      return convert(themes.normal).color.dark;
     default:
       return null;
   }
@@ -117,6 +123,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
       }
 
       const testsByType: Map<string, any> = getTestsByTypeMap(result);
+      console.log({ testsByType });
       const entries: any = testsByType.entries();
       const sortedTestsByCount = [...entries].sort((a, b) => a[1].length - b[1].length);
       return (
@@ -167,6 +174,32 @@ const Content = styled(({ tests, className }: ContentProps) => (
                   >
                     <List>
                       {testsByType.get(StatusTypes.PASSED_TYPE).map((res: any) => (
+                        <Item key={res.fullName || res.title}>
+                          <Result {...res} />
+                        </Item>
+                      ))}
+                    </List>
+                  </div>
+                  <div
+                    id="skipped-tests"
+                    title={`${testsByType.get(StatusTypes.SKIPPED_TYPE).length} Skipped`}
+                    color={getColorByType(StatusTypes.SKIPPED_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.SKIPPED_TYPE).map((res: any) => (
+                        <Item key={res.fullName || res.title}>
+                          <Result {...res} />
+                        </Item>
+                      ))}
+                    </List>
+                  </div>
+                  <div
+                    id="todo-tests"
+                    title={`${testsByType.get(StatusTypes.TODO_TYPE).length} Todo`}
+                    color={getColorByType(StatusTypes.TODO_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.TODO_TYPE).map((res: any) => (
                         <Item key={res.fullName || res.title}>
                           <Result {...res} />
                         </Item>
