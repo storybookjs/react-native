@@ -69,8 +69,8 @@ export const DocsPageWrapper: React.FunctionComponent = ({ children }) => (
  */
 const DocsPage: React.FunctionComponent<DocsPageProps> = ({ title, subtitle, children }) => (
   <>
-    {title && <Title>{title}</Title>}
-    {subtitle && <Subtitle>{subtitle}</Subtitle>}
+    {title && <Title className="sbdocs-title">{title}</Title>}
+    {subtitle && <Subtitle className="sbdocs-subtitle">{subtitle}</Subtitle>}
     {children}
   </>
 );
