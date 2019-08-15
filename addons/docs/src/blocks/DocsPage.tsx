@@ -113,7 +113,7 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = ({
           <Description markdown={description} />
           <DocsStory {...primary} expanded={false} />
           {propsTableProps && <PropsTable {...propsTableProps} />}
-          <StoriesHeading>Stories</StoriesHeading>
+          {rest.length > 0 && <StoriesHeading>Stories</StoriesHeading>}
           {rest.map(story => story && <DocsStory {...story} expanded />)}
         </PureDocsPage>
       );
