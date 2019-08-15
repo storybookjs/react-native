@@ -20,8 +20,8 @@ export default {
 
 export const withSubtitle = () => (
   <DocsPage
-    title="SimStim"
-    subtitle="A digital representation of the thoughts and feelings of another person."
+    title="DocsPage"
+    subtitle="What the DocsPage looks like. Meant to be QAed in Canvas tab not in Docs tab."
   >
     {descriptionStories.text()}
     {previewStories.single()}
