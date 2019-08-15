@@ -99,10 +99,13 @@ const ListHeading = styled.div<{}>(({ theme }) => ({
       : transparentize(0.6, theme.color.defaultText),
 }));
 
-const List = styled.div({
+const List = styled.div<{}>(({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  lineHeight: `20px`,
+
   display: 'flex',
   flexDirection: 'column',
-});
+}));
 
 interface ColorProps {
   title: string;
@@ -154,7 +157,7 @@ export const ColorItem: React.FunctionComponent<ColorProps> = ({ title, subtitle
  */
 export const ColorPalette: React.FunctionComponent = ({ children, ...props }) => (
   <ResetWrapper>
-    <List {...props}>
+    <List {...props} className="docblock-colorpalette">
       <ListHeading>
         <ListName>Name</ListName>
         <ListSwatches>Swatches</ListSwatches>

@@ -148,7 +148,7 @@ const PropsTable: React.FunctionComponent<PropsTableProps> = props => {
   }
   return (
     <ResetWrapper>
-      <Table>
+      <Table className="docblock-propstable">
         <thead>
           <tr>
             <th>Name</th>

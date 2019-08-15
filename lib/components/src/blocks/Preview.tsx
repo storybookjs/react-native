@@ -30,6 +30,8 @@ const StyledSource = styled(Source)<{}>(({ theme }) => ({
   margin: 0,
   borderTopLeftRadius: 0,
   borderTopRightRadius: 0,
+  borderBottomLeftRadius: theme.appBorderRadius,
+  borderBottomRightRadius: theme.appBorderRadius,
   border: 'none',
 
   background:
@@ -41,12 +43,13 @@ const StyledSource = styled(Source)<{}>(({ theme }) => ({
   },
 }));
 
-const PreviewWrapper = styled.div<PreviewProps>(({ theme, withSource }) => ({
+const PreviewWrapper = styled.div<PreviewProps>(({ theme, withSource, isExpanded }) => ({
   ...getBlockBackgroundStyle(theme),
   padding: '30px 20px',
   position: 'relative',
-  borderBottomLeftRadius: withSource && 0,
-  borderBottomRightRadius: withSource && 0,
+  overflow: 'hidden',
+  borderBottomLeftRadius: withSource && isExpanded && 0,
+  borderBottomRightRadius: withSource && isExpanded && 0,
 }));
 
 const PreviewContainer = styled.div({
@@ -77,8 +80,8 @@ const Preview: React.FunctionComponent<PreviewProps> = ({
         actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
       };
   return (
-    <PreviewContainer {...props}>
-      <PreviewWrapper withSource={withSource}>
+    <PreviewContainer {...props} className="docblock-preview">
+      <PreviewWrapper withSource={withSource} isExpanded={expanded}>
         <ChildrenContainer isColumn={isColumn} columns={columns}>
           {Array.isArray(children) ? (
             children.map((child, i) => <div key={i.toString()}>{child}</div>)

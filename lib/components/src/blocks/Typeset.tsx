@@ -50,7 +50,7 @@ export const Typeset: React.FunctionComponent<TypesetProps> = ({
   sampleText,
   ...props
 }) => (
-  <Wrapper {...props}>
+  <Wrapper {...props} className="docblock-typeset">
     {fontSizes.map(num => (
       <TypeSpecimen key={num}>
         <Label>{num}px</Label>

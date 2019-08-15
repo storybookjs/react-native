@@ -62,7 +62,9 @@ export const IconItem: React.FunctionComponent<IconItemProps> = ({ name, childre
 export const IconGallery: React.FunctionComponent = ({ children, ...props }) => {
   return (
     <ResetWrapper>
-      <List {...props}>{children}</List>
+      <List {...props} className="docblock-icongallery">
+        {children}
+      </List>
     </ResetWrapper>
   );
 };

@@ -8,6 +8,7 @@ const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
   borderRadius: theme.appBorderRadius,
   border: `1px dashed ${theme.appBorderColor}`,
   display: 'flex',
+  fontSize: `${theme.typography.size.s2}px`,
   alignItems: 'center',
   justifyContent: 'center',
   padding: '20px',
@@ -19,4 +20,4 @@ const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
       : transparentize(0.6, theme.color.defaultText),
 }));
 
-export const EmptyBlock = (props: any) => <Wrapper {...props} />;
+export const EmptyBlock = (props: any) => <Wrapper {...props} className="docblock-emptyblock" />;
