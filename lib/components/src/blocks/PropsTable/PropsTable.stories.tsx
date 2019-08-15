@@ -9,8 +9,8 @@ export default {
   decorators: [storyFn => <DocsPageWrapper>{storyFn()}</DocsPageWrapper>],
 };
 
+export const normal = () => <PropsTable rows={[stringDef, numberDef]} />;
+
 export const error = () => <PropsTable error={PropsTableError.NO_COMPONENT} />;
 
 export const empty = () => <PropsTable rows={[]} />;
-
-export const normal = () => <PropsTable rows={[stringDef, numberDef]} />;
