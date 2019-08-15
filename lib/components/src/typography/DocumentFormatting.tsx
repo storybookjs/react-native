@@ -4,7 +4,7 @@ import { styled, css, CSSObject, Theme } from '@storybook/theming';
 import { withReset } from './withReset';
 
 const headerCommon: CSSObject = {
-  margin: '20px 0 10px',
+  margin: '20px 0 8px',
   padding: 0,
   cursor: 'text',
   position: 'relative',
@@ -21,59 +21,36 @@ const headerCommon: CSSObject = {
 };
 
 const withMargin: CSSObject = {
-  margin: '15px 0',
+  margin: '16px 0',
 };
 
-export const H1 = styled.h1<{}>(
-  withReset,
-  ({ theme }) => ({
-    fontSize: `${theme.typography.size.l1}px`,
-    fontWeight: theme.typography.weight.black,
-  }),
-  headerCommon
-);
+export const H1 = styled.h1<{}>(withReset, headerCommon, ({ theme }) => ({
+  fontSize: `${theme.typography.size.l1}px`,
+  fontWeight: theme.typography.weight.black,
+}));
 
-export const H2 = styled.h2<{}>(
-  withReset,
-  ({ theme }) => ({
-    fontSize: `${theme.typography.size.m2}px`,
-    borderBottom: `1px solid ${theme.appBorderColor}`,
-  }),
-  headerCommon
-);
+export const H2 = styled.h2<{}>(withReset, headerCommon, ({ theme }) => ({
+  fontSize: `${theme.typography.size.m2}px`,
+  paddingBottom: '4px',
+  borderBottom: `1px solid ${theme.appBorderColor}`,
+}));
 
-export const H3 = styled.h3<{}>(
-  withReset,
-  ({ theme }) => ({
-    fontSize: `${theme.typography.size.m1}px`,
-  }),
-  headerCommon
-);
+export const H3 = styled.h3<{}>(withReset, headerCommon, ({ theme }) => ({
+  fontSize: `${theme.typography.size.m1}px`,
+}));
 
-export const H4 = styled.h4<{}>(
-  withReset,
-  ({ theme }) => ({
-    fontSize: `${theme.typography.size.s3}px`,
-  }),
-  headerCommon
-);
+export const H4 = styled.h4<{}>(withReset, headerCommon, ({ theme }) => ({
+  fontSize: `${theme.typography.size.s3}px`,
+}));
 
-export const H5 = styled.h5<{}>(
-  withReset,
-  ({ theme }) => ({
-    fontSize: `${theme.typography.size.s2}px`,
-  }),
-  headerCommon
-);
+export const H5 = styled.h5<{}>(withReset, headerCommon, ({ theme }) => ({
+  fontSize: `${theme.typography.size.s2}px`,
+}));
 
-export const H6 = styled.h6<{}>(
-  withReset,
-  ({ theme }) => ({
-    fontSize: `${theme.typography.size.s2}px`,
-    color: theme.color.dark,
-  }),
-  headerCommon
-);
+export const H6 = styled.h6<{}>(withReset, headerCommon, ({ theme }) => ({
+  fontSize: `${theme.typography.size.s2}px`,
+  color: theme.color.dark,
+}));
 
 export const Pre = styled.pre<{}>(withReset, withMargin, ({ theme }) => ({
   // reset
@@ -107,6 +84,7 @@ export const Pre = styled.pre<{}>(withReset, withMargin, ({ theme }) => ({
     },
   },
   '& code': {
+    fontSize: theme.typography.size.s2 - 1,
     margin: 0,
     padding: 0,
     whiteSpace: 'pre',
@@ -120,6 +98,9 @@ export const Pre = styled.pre<{}>(withReset, withMargin, ({ theme }) => ({
 }));
 
 export const A = styled.a<{}>(withReset, ({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  lineHeight: '24px',
+
   color: `${theme.color.secondary}`,
   textDecoration: 'none',
   '&.absent': {
@@ -152,7 +133,7 @@ export const DL = styled.dl<{}>(withReset, {
     fontWeight: 'bold',
     fontStyle: 'italic',
     padding: 0,
-    margin: '15px 0 5px',
+    margin: '16px 0 4px',
   },
   '& dt:first-of-type': {
     padding: 0,
@@ -166,7 +147,7 @@ export const DL = styled.dl<{}>(withReset, {
   },
 
   '& dd': {
-    margin: '0 0 15px',
+    margin: '0 0 16px',
     padding: '0 15px',
   },
 
@@ -192,6 +173,8 @@ export const Blockquote = styled.blockquote<{}>(withReset, withMargin, ({ theme 
 }));
 
 export const Table = styled.table<{}>(withReset, withMargin, ({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  lineHeight: '24px',
   padding: 0,
   borderCollapse: 'collapse',
   '& tr': {
@@ -317,13 +300,26 @@ const listCommon: CSSObject = {
   },
 };
 
-export const LI = styled.li<{}>(withReset, withMargin);
+export const LI = styled.li<{}>(withReset, ({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  lineHeight: '24px',
+  '& + li': {
+    marginTop: '.25em',
+  },
+  '& ul, & ol': {
+    marginTop: '.25em',
+    marginBottom: 0,
+  },
+}));
 
-export const UL = styled.ul<{}>(withReset, withMargin, listCommon);
+export const UL = styled.ul<{}>(withReset, withMargin, listCommon, {});
 
 export const OL = styled.ol<{}>(withReset, withMargin, listCommon);
 
-export const P = styled.p<{}>(withReset, withMargin);
+export const P = styled.p<{}>(withReset, withMargin, ({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  lineHeight: '24px',
+}));
 
 const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
   margin: '0 2px',
@@ -332,6 +328,7 @@ const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
   border: `1px solid ${theme.color.mediumlight}`,
   backgroundColor: theme.color.lighter,
   borderRadius: '3px',
+  fontSize: theme.typography.size.s2 - 1,
 });
 
 export const Code = styled.code<{}>(

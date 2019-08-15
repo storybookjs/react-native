@@ -13,12 +13,15 @@ export interface DocsPageProps {
 }
 
 const Title = styled.h1<{}>(withReset, ({ theme }) => ({
+  color: theme.color.defaultText,
   fontSize: theme.typography.size.m3,
+  fontWeight: theme.typography.weight.black,
   lineHeight: '32px',
 
   [`@media (min-width: ${breakpoint * 1}px)`]: {
     fontSize: theme.typography.size.l1,
     lineHeight: '36px',
+    marginBottom: '.5rem', // 8px
   },
 }));
 
@@ -32,7 +35,7 @@ const Subtitle = styled.h2<{}>(withReset, ({ theme }) => ({
   [`@media (min-width: ${breakpoint * 1}px)`]: {
     fontSize: theme.typography.size.m1,
     lineHeight: '28px',
-    marginBottom: '25px',
+    marginBottom: '24px',
   },
 
   color:
