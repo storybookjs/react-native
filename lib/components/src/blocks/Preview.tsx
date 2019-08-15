@@ -1,16 +1,20 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
 import { darken } from 'polished';
+import { logger } from '@storybook/client-logger';
 
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 import { Source, SourceProps } from './Source';
 import { ActionBar } from '../ActionBar/ActionBar';
+import { Toolbar } from './Toolbar';
+import { ZoomContext } from './ZoomContext';
 
 export interface PreviewProps {
   isColumn?: boolean;
   columns?: number;
   withSource?: SourceProps;
   isExpanded?: boolean;
+  withToolbar?: boolean;
 }
 
 const ChildrenContainer = styled.div<PreviewProps>(({ isColumn, columns }) => ({
@@ -41,21 +45,34 @@ const StyledSource = styled(Source)<{}>(({ theme }) => ({
   },
 }));
 
-const PreviewWrapper = styled.div<PreviewProps>(({ theme, withSource }) => ({
-  ...getBlockBackgroundStyle(theme),
-  padding: '30px 20px',
-  position: 'relative',
-  borderBottomLeftRadius: withSource && 0,
-  borderBottomRightRadius: withSource && 0,
-}));
+const PreviewWrapper = styled.div<PreviewProps>(
+  ({ theme, withSource }) => ({
+    ...getBlockBackgroundStyle(theme),
+    padding: '30px 20px',
+    position: 'relative',
+    borderBottomLeftRadius: withSource && 0,
+    borderBottomRightRadius: withSource && 0,
+  }),
+  ({ withToolbar }) => withToolbar && { paddingTop: 64 }
+);
 
 const PreviewContainer = styled.div({
   margin: '25px 0 40px',
 });
 
+function getStoryId(children: React.ReactNode) {
+  if (React.Children.count(children) === 1) {
+    const elt = children as React.ReactElement;
+    if (elt.props) {
+      return elt.props.id;
+    }
+  }
+  return null;
+}
+
 /**
  * A preview component for showing one or more component `Story`
- * items. The preview also shows the source for the componnent
+ * items. The preview also shows the source for the component
  * as a drop-down.
  */
 const Preview: React.FunctionComponent<PreviewProps> = ({
@@ -63,10 +80,12 @@ const Preview: React.FunctionComponent<PreviewProps> = ({
   columns,
   children,
   withSource,
+  withToolbar = false,
   isExpanded = false,
   ...props
 }) => {
   const [expanded, setExpanded] = React.useState(isExpanded);
+  const [scale, setScale] = React.useState(1);
   const { source, actionItem } = expanded
     ? {
         source: <StyledSource {...withSource} dark />,
@@ -76,16 +95,33 @@ const Preview: React.FunctionComponent<PreviewProps> = ({
         source: null,
         actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
       };
+
+  if (withToolbar && Array.isArray(children)) {
+    logger.warn('Cannot use toolbar with multiple preview children, disabling');
+  }
+  const showToolbar = withToolbar && !Array.isArray(children);
+
   return (
     <PreviewContainer {...props}>
-      <PreviewWrapper withSource={withSource}>
-        <ChildrenContainer isColumn={isColumn} columns={columns}>
-          {Array.isArray(children) ? (
-            children.map((child, i) => <div key={i.toString()}>{child}</div>)
-          ) : (
-            <div>{children}</div>
-          )}
-        </ChildrenContainer>
+      <PreviewWrapper {...{ withSource, withToolbar: showToolbar }}>
+        {showToolbar && (
+          <Toolbar
+            border
+            zoom={z => setScale(scale * z)}
+            resetZoom={() => setScale(1)}
+            storyId={getStoryId(children)}
+            baseUrl="./iframe.html"
+          />
+        )}
+        <ZoomContext.Provider value={{ scale }}>
+          <ChildrenContainer isColumn={isColumn} columns={columns}>
+            {Array.isArray(children) ? (
+              children.map((child, i) => <div key={i.toString()}>{child}</div>)
+            ) : (
+              <div>{children}</div>
+            )}
+          </ChildrenContainer>
+        </ZoomContext.Provider>
         {withSource && <ActionBar actionItems={[actionItem]} />}
       </PreviewWrapper>
       {withSource && source}
