@@ -1,6 +1,6 @@
 import React from 'react';
 import memoize from 'memoizerific';
-import { styled, css, CSSObject, Theme } from '@storybook/theming';
+import { styled, css, CSSObject, Theme, background } from '@storybook/theming';
 import { withReset } from './withReset';
 
 const headerCommon: CSSObject = {
@@ -84,15 +84,9 @@ export const Pre = styled.pre<{}>(withReset, withMargin, ({ theme }) => ({
     },
   },
   '& code': {
-    fontSize: theme.typography.size.s2 - 1,
-    margin: 0,
-    padding: 0,
     whiteSpace: 'pre',
-    border: 'none',
-    background: 'transparent',
   },
   '& code, & tt': {
-    backgroundColor: 'transparent',
     border: 'none',
   },
 }));
@@ -319,6 +313,16 @@ export const OL = styled.ol<{}>(withReset, withMargin, listCommon);
 export const P = styled.p<{}>(withReset, withMargin, ({ theme }) => ({
   fontSize: theme.typography.size.s2,
   lineHeight: '24px',
+  '& code': {
+    // How do I get codeCommon here?
+    margin: '0 2px',
+    padding: '0 5px',
+    whiteSpace: 'nowrap',
+    border: `1px solid ${theme.color.mediumlight}`,
+    backgroundColor: theme.color.lighter,
+    borderRadius: '3px',
+    fontSize: theme.typography.size.s2 - 1,
+  },
 }));
 
 const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
