@@ -35,7 +35,7 @@ export function webpackFinal(config: Configuration, { configDir }: { configDir: 
   return applyCRAWebpackConfig(config, configDir);
 }
 
-export function managerWebpack(config: Configuration,  { configDir }: { configDir: string }) {
+export function managerWebpack(config: Configuration, { configDir }: { configDir: string }) {
   if (!isReactScriptsInstalled() || checkForNewPreset(configDir)) {
     return config;
   }
@@ -48,7 +48,7 @@ export function managerWebpack(config: Configuration,  { configDir }: { configDi
   };
 }
 
-export function babelDefault(config: Configuration,  { configDir }: { configDir: string }) {
+export function babelDefault(config: Configuration, { configDir }: { configDir: string }) {
   if (!isReactScriptsInstalled() || checkForNewPreset(configDir)) {
     return config;
   }
