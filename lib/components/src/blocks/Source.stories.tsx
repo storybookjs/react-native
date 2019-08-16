@@ -1,9 +1,11 @@
 import React from 'react';
 import { Source, SourceError } from './Source';
+import { DocsPageWrapper } from './DocsPage';
 
 export default {
   title: 'Docs|Source',
   component: Source,
+  decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 
 const jsxCode = `

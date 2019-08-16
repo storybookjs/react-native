@@ -1,9 +1,11 @@
 import React from 'react';
 import { ColorItem, ColorPalette } from './ColorPalette';
+import { DocsPageWrapper } from './DocsPage';
 
 export default {
   title: 'Docs|ColorPalette',
   component: ColorPalette,
+  decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 
 export const defaultStyle = () => (

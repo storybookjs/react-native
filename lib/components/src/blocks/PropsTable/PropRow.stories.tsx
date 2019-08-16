@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropRow } from './PropRow';
 import { Table } from './PropsTable';
-import { ResetWrapper } from '../../typography/DocumentFormatting';
+import { DocsPageWrapper } from '../DocsPage';
 
 export default {
   component: PropRow,
@@ -9,11 +9,11 @@ export default {
   excludeStories: /.*Def$/,
   decorators: [
     getStory => (
-      <ResetWrapper>
+      <DocsPageWrapper>
         <Table>
           <tbody>{getStory()}</tbody>
         </Table>
-      </ResetWrapper>
+      </DocsPageWrapper>
     ),
   ],
 };

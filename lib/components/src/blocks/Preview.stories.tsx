@@ -1,13 +1,14 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-
 import { Preview } from './Preview';
 import { Button } from '../Button/Button';
+
+import { DocsPageWrapper } from './DocsPage';
 import * as sourceStories from './Source.stories';
 
 export default {
   title: 'Docs|Preview',
   component: Preview,
+  decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 
 export const codeCollapsed = () => (
