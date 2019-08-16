@@ -9,6 +9,7 @@ When you install [Storybook Docs](../README.md), `DocsPage` is the zero-config d
 - [Motivation](#motivation)
 - [Component parameter](#component-parameter)
 - [DocsPage slots](#docspage-slots)
+- [Replacing DocsPage](#replacing-docspage)
 - [Story file names](#story-file-names)
 - [More resources](#more-resources)
 
@@ -190,6 +191,45 @@ And here are the return type signatures for each of the slot functions
 | Primary  | primarySlot  | `StoryData[]`, `SlotContext` | `StoryProps?`      |
 | Props    | propsSlot    | `SlotContext`                | `PropsTableProps?` |
 | Stories  | storiesSlot  | `StoryData[]`, `SlotContext` | `StoryProps[]?`    |
+
+## Replacing DocsPage
+
+What if you don't want a `DocsPage` for your storybook, for a specific component, or even for a specific story?
+
+You can replace DocsPage at any level by overriding the `docs` parameter:
+
+- With `null` to remove docs
+- [With MDX](#csf-stories-with-mdx-docs) docs
+- With a custom React component
+
+**Globally (config.js)**
+
+```js
+import { addParameters } from '@storybook/react';
+addParameters({ docs: null });
+```
+
+**Component-level (Button.stories.js)**
+
+```js
+import { Button } from './Button';
+export default {
+  title: 'Demo/Button',
+  component: Button,
+  parameters: { docs: null },
+};
+```
+
+**Story-level (Button.stories.js)**
+
+```js
+import { Button } from './Button';
+// export default { ... }
+export const basic => () => <Button>Basic</Button>
+basic.story = {
+  parameters: { docs: null }
+}
+```
 
 ## Story file names
 
