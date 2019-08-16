@@ -13,6 +13,7 @@
 - [Writing stories](#writing-stories)
 - [Embedding stories](#embedding-stories)
 - [Decorators and parameters](#decorators-and-parameters)
+- [Documentation-only MDX](#documentation-only-mdx)
 - [MDX file names](#mdx-file-names)
 - [More resources](#more-resources)
 
@@ -173,6 +174,20 @@ addDecorator(...);
 addParameters({ ... });
 ```
 
+## Documentation-only MDX
+
+Typically, when you use Storybook MDX, you define stories in the MDX documentation is automatically associated with those stories. But what if you want to write Markdown-style documentation and have it show up in your Storybook?
+
+If you don't define stories in your MDX, you can write MDX documentation and associate it with an existing story, or embed that MDX as its own documentation node in your Storybook's navigation.
+
+If you don't define a `Meta`, you can write Markdown and associate with an existing story. See ["CSF Stories with MDX Docs"](recipes.md#csf-stories-with-mdx-docs).
+
+To get a "documentation-only story", in your UI, simply define a `<Meta>` as you normally would, but don't define any stories. It will show up in your UI as a documentation node:
+
+<center>
+  <img src="./media/mdx-documentation-only.png" width="100%" />
+</center>
+
 ## MDX file names
 
 Unless you use a custom webpack configuration, all of your `MDX` files should have the suffix `*.stories.mdx`. This tells Storybook to apply its special processing to the `<Meta>` and `<Story>` elements in the file.
@@ -183,5 +198,6 @@ Be sure to update your Storybook config file to load `.stories.mdx` stories, as 
 
 `MDX` is an experimental feature and there's a lot more that hasn't been documented yet. Here are some more articles on Storybook Docs that contain more information:
 
-- [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
+- References: [README](../README.md) / [DocsPage](docspage.md) / [FAQ](faq.md) / [Recipes](recipes.md)
+- Vision: [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
 - [Technical preview guide](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing)
