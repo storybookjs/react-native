@@ -5,7 +5,7 @@ import { logger } from '@storybook/client-logger';
 
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 import { Source, SourceProps } from './Source';
-import { ActionBar } from '../ActionBar/ActionBar';
+import { ActionBar, ActionItem } from '../ActionBar/ActionBar';
 import { Toolbar } from './Toolbar';
 import { ZoomContext } from './ZoomContext';
 
@@ -34,6 +34,8 @@ const StyledSource = styled(Source)<{}>(({ theme }) => ({
   margin: 0,
   borderTopLeftRadius: 0,
   borderTopRightRadius: 0,
+  borderBottomLeftRadius: theme.appBorderRadius,
+  borderBottomRightRadius: theme.appBorderRadius,
   border: 'none',
 
   background:
@@ -46,12 +48,14 @@ const StyledSource = styled(Source)<{}>(({ theme }) => ({
 }));
 
 const PreviewWrapper = styled.div<PreviewProps>(
-  ({ theme, withSource }) => ({
+  ({ theme, withSource, isExpanded }) => ({
     ...getBlockBackgroundStyle(theme),
     padding: '30px 20px',
     position: 'relative',
-    borderBottomLeftRadius: withSource && 0,
-    borderBottomRightRadius: withSource && 0,
+    overflow: 'hidden',
+    borderBottomLeftRadius: withSource && isExpanded && 0,
+    borderBottomRightRadius: withSource && isExpanded && 0,
+    borderBottomWidth: isExpanded && 0,
   }),
   ({ withToolbar }) => withToolbar && { paddingTop: 64 }
 );
@@ -60,6 +64,41 @@ const PreviewContainer = styled.div({
   margin: '25px 0 40px',
 });
 
+interface SourceItem {
+  source?: React.ReactElement;
+  actionItem: ActionItem;
+}
+
+const getSource = (
+  withSource: SourceProps,
+  expanded: boolean,
+  setExpanded: Function
+): SourceItem => {
+  switch (true) {
+    case !!(withSource && withSource.error): {
+      return {
+        source: null,
+        actionItem: {
+          title: 'No code available',
+          disabled: true,
+          onClick: () => setExpanded(false),
+        },
+      };
+    }
+    case expanded: {
+      return {
+        source: <StyledSource {...withSource} dark />,
+        actionItem: { title: 'Hide code', onClick: () => setExpanded(false) },
+      };
+    }
+    default: {
+      return {
+        source: null,
+        actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
+      };
+    }
+  }
+};
 function getStoryId(children: React.ReactNode) {
   if (React.Children.count(children) === 1) {
     const elt = children as React.ReactElement;
@@ -85,22 +124,13 @@ const Preview: React.FunctionComponent<PreviewProps> = ({
   ...props
 }) => {
   const [expanded, setExpanded] = React.useState(isExpanded);
+  const { source, actionItem } = getSource(withSource, expanded, setExpanded);
   const [scale, setScale] = React.useState(1);
-  const { source, actionItem } = expanded
-    ? {
-        source: <StyledSource {...withSource} dark />,
-        actionItem: { title: 'Hide code', onClick: () => setExpanded(false) },
-      }
-    : {
-        source: null,
-        actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
-      };
 
   if (withToolbar && Array.isArray(children)) {
     logger.warn('Cannot use toolbar with multiple preview children, disabling');
   }
   const showToolbar = withToolbar && !Array.isArray(children);
-
   return (
     <PreviewContainer {...props}>
       <PreviewWrapper {...{ withSource, withToolbar: showToolbar }}>

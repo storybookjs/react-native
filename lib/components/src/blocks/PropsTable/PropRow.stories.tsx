@@ -1,6 +1,5 @@
 import React from 'react';
 import { PropRow } from './PropRow';
-
 import { Table } from './PropsTable';
 import { DocsPageWrapper } from '../DocsPage';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ColorItem, ColorPalette } from './ColorPalette';
-
 import { DocsPageWrapper } from './DocsPage';
 
 export default {

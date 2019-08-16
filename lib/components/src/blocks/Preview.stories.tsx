@@ -1,9 +1,10 @@
 import React from 'react';
-
 import { Preview } from './Preview';
+
 import { Story } from './Story';
-import { DocsPageWrapper } from './DocsPage';
 import { Button } from '../Button/Button';
+
+import { DocsPageWrapper } from './DocsPage';
 import * as sourceStories from './Source.stories';
 
 export default {

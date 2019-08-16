@@ -1,13 +1,8 @@
 import React from 'react';
 
 import { parseKind } from '@storybook/router';
-import { styled } from '@storybook/theming';
-import {
-  DocsPage as PureDocsPage,
-  DocsPageProps as PureDocsPageProps,
-  PropsTable,
-  PropsTableProps,
-} from '@storybook/components';
+import { DocsPage as PureDocsPage, PropsTable, PropsTableProps } from '@storybook/components';
+import { H2, H3 } from '@storybook/components/html';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { DocsContainer } from './DocsContainer';
 import { Description, getDocgen } from './Description';
@@ -81,8 +76,8 @@ const defaultStoriesSlot: StoriesSlot = stories => {
   return null;
 };
 
-const StoriesHeading = styled.h2();
-const StoryHeading = styled.h3();
+const StoriesHeading = H2;
+const StoryHeading = H3;
 
 const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   id,
@@ -127,7 +122,7 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = ({
           <Description markdown={description} />
           {primary && <DocsStory {...primary} expanded={false} withToolbar />}
           {propsTableProps && <PropsTable {...propsTableProps} />}
-          <StoriesHeading>Stories</StoriesHeading>
+          {stories && stories.length > 0 && <StoriesHeading>Stories</StoriesHeading>}
           {stories && stories.map(story => story && <DocsStory {...story} expanded />)}
         </PureDocsPage>
       );
