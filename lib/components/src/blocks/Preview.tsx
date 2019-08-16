@@ -57,6 +57,33 @@ const PreviewContainer = styled.div({
   margin: '25px 0 40px',
 });
 
+const getSource = (withSource: SourceProps, expanded: boolean, setExpanded: Function) => {
+  switch (true) {
+    case !!(withSource && withSource.error): {
+      return {
+        source: null,
+        actionItem: {
+          title: 'No code available',
+          disabled: true,
+          onClick: () => setExpanded(false),
+        },
+      };
+    }
+    case expanded: {
+      return {
+        source: <StyledSource {...withSource} dark />,
+        actionItem: { title: 'Hide code', onClick: () => setExpanded(false) },
+      };
+    }
+    default: {
+      return {
+        source: null,
+        actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
+      };
+    }
+  }
+};
+
 /**
  * A preview component for showing one or more component `Story`
  * items. The preview also shows the source for the componnent
@@ -71,15 +98,7 @@ const Preview: React.FunctionComponent<PreviewProps> = ({
   ...props
 }) => {
   const [expanded, setExpanded] = React.useState(isExpanded);
-  const { source, actionItem } = expanded
-    ? {
-        source: <StyledSource {...withSource} dark />,
-        actionItem: { title: 'Hide code', onClick: () => setExpanded(false) },
-      }
-    : {
-        source: null,
-        actionItem: { title: 'Show code', onClick: () => setExpanded(true) },
-      };
+  const { source, actionItem } = getSource(withSource, expanded, setExpanded);
   return (
     <PreviewContainer {...props} className="docblock-preview">
       <PreviewWrapper withSource={withSource} isExpanded={expanded}>
