@@ -1,6 +1,4 @@
-import React from 'react';
-import memoize from 'memoizerific';
-import { styled, css, CSSObject, Theme, background } from '@storybook/theming';
+import { styled, CSSObject, Theme } from '@storybook/theming';
 import { withReset } from './withReset';
 
 const headerCommon: CSSObject = {

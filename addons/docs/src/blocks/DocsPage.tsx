@@ -1,13 +1,7 @@
 import React from 'react';
 
 import { parseKind } from '@storybook/router';
-import { styled } from '@storybook/theming';
-import {
-  DocsPage as PureDocsPage,
-  DocsPageProps as PureDocsPageProps,
-  PropsTable,
-  PropsTableProps,
-} from '@storybook/components';
+import { DocsPage as PureDocsPage, PropsTable, PropsTableProps } from '@storybook/components';
 import { H2, H3 } from '@storybook/components/html';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { DocsContainer } from './DocsContainer';
