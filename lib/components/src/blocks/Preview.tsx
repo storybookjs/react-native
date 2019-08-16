@@ -4,7 +4,7 @@ import { darken } from 'polished';
 
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 import { Source, SourceProps } from './Source';
-import { ActionBar } from '../ActionBar/ActionBar';
+import { ActionBar, ActionItem } from '../ActionBar/ActionBar';
 
 export interface PreviewProps {
   isColumn?: boolean;
@@ -57,7 +57,16 @@ const PreviewContainer = styled.div({
   margin: '25px 0 40px',
 });
 
-const getSource = (withSource: SourceProps, expanded: boolean, setExpanded: Function) => {
+interface SourceItem {
+  source?: React.ReactElement;
+  actionItem: ActionItem;
+}
+
+const getSource = (
+  withSource: SourceProps,
+  expanded: boolean,
+  setExpanded: Function
+): SourceItem => {
   switch (true) {
     case !!(withSource && withSource.error): {
       return {
