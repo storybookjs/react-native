@@ -18,14 +18,17 @@ interface CodeOrSourceProps {
 export const CodeOrSource: React.FC<CodeOrSourceProps> = props => {
   const { className, children, ...rest } = props;
   // markdown-to-jsx does not add className to inline code
-  if (typeof className !== 'string') {
+  if (
+    typeof className !== 'string' &&
+    (typeof children !== 'string' || !(children as string).match(/[\n\r]/g))
+  ) {
     return <Code>{children}</Code>;
   }
   // className: "lang-jsx"
-  const language = className.split('-');
+  const language = className && className.split('-');
   return (
     <Source
-      language={language[1] || 'plaintext'}
+      language={(language && language[1]) || 'plaintext'}
       format={false}
       code={children as string}
       {...rest}

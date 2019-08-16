@@ -310,21 +310,6 @@ export const UL = styled.ul<{}>(withReset, withMargin, listCommon, {});
 
 export const OL = styled.ol<{}>(withReset, withMargin, listCommon);
 
-export const P = styled.p<{}>(withReset, withMargin, ({ theme }) => ({
-  fontSize: theme.typography.size.s2,
-  lineHeight: '24px',
-  '& code': {
-    // How do I get codeCommon here?
-    margin: '0 2px',
-    padding: '0 5px',
-    whiteSpace: 'nowrap',
-    border: `1px solid ${theme.color.mediumlight}`,
-    backgroundColor: theme.color.lighter,
-    borderRadius: '3px',
-    fontSize: theme.typography.size.s2 - 1,
-  },
-}));
-
 const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
   margin: '0 2px',
   padding: '0 5px',
@@ -334,6 +319,12 @@ const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
   borderRadius: '3px',
   fontSize: theme.typography.size.s2 - 1,
 });
+
+export const P = styled.p<{}>(withReset, withMargin, ({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  lineHeight: '24px',
+  '& code': codeCommon({ theme }),
+}));
 
 export const Code = styled.code<{}>(
   ({ theme }) => ({
