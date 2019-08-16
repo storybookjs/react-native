@@ -37,6 +37,7 @@ interface DocsStoryProps {
   name: string;
   description?: string;
   expanded?: boolean;
+  withToolbar?: boolean;
 }
 
 interface StoryData {
@@ -83,11 +84,12 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   name,
   description,
   expanded = true,
+  withToolbar = false,
 }) => (
   <>
     {expanded && <StoryHeading>{name}</StoryHeading>}
     {expanded && description && <Description markdown={description} />}
-    <Preview>
+    <Preview withToolbar={withToolbar}>
       <Story id={id} />
     </Preview>
   </>
@@ -118,7 +120,7 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = ({
       return (
         <PureDocsPage title={title} subtitle={subtitle}>
           <Description markdown={description} />
-          {primary && <DocsStory {...primary} expanded={false} />}
+          {primary && <DocsStory {...primary} expanded={false} withToolbar />}
           {propsTableProps && <PropsTable {...propsTableProps} />}
           {stories && stories.length > 0 && <StoriesHeading>Stories</StoriesHeading>}
           {stories && stories.map(story => story && <DocsStory {...story} expanded />)}
