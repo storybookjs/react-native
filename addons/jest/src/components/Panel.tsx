@@ -126,7 +126,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
       const entries: any = testsByType.entries();
       const sortedTestsByCount = [...entries].sort((a, b) => a[1].length - b[1].length);
 
-      if (!testsByType && !entries && !sortedTestsByCount && !result.assertionResults) {
+      if (!entries && !sortedTestsByCount && !result.assertionResults) {
         return null;
       }
 
