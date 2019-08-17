@@ -1,16 +1,14 @@
 import React from 'react';
+
 import { Preview } from './Preview';
 
 import { Story } from './Story';
 import { Button } from '../Button/Button';
-
-import { DocsPageWrapper } from './DocsPage';
 import * as sourceStories from './Source.stories';
 
 export default {
   title: 'Docs|Preview',
   component: Preview,
-  decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 
 export const codeCollapsed = () => (
