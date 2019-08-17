@@ -229,6 +229,29 @@ const Content = styled(({ tests, className }: ContentProps) => (
                       )}
                     </List>
                   </div>
+                  <div
+                    id="todo-tests"
+                    title={`${
+                      testsByType.get(StatusTypes.TODO_TYPE)
+                        ? testsByType.get(StatusTypes.TODO_TYPE).length
+                        : 0
+                    } Todo`}
+                    color={getColorByType(StatusTypes.TODO_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.TODO_TYPE) ? (
+                        testsByType.get(StatusTypes.TODO_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.TODO_TYPE}`}>
+                          This story has no tests todo.
+                        </Placeholder>
+                      )}
+                    </List>
+                  </div>
                 </TabsState>
               </section>
             );
