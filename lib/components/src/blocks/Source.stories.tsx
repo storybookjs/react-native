@@ -8,12 +8,6 @@ export default {
   decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 
-export const noStory = () => <Source error={SourceError.NO_STORY} />;
-noStory.story = { name: 'no story' };
-
-export const sourceUnavailable = () => <Source error={SourceError.SOURCE_UNAVAILABLE} />;
-sourceUnavailable.story = { name: 'source unavailable' };
-
 const jsxCode = `
 <MyComponent boolProp scalarProp={1} complexProp={{ foo: 1, bar: '2' }}>
   <SomeOtherComponent funcProp={(a) => a.id} />
@@ -38,3 +32,9 @@ const cssCode = `
 `.trim();
 
 export const css = () => <Source code={cssCode} language="css" />;
+
+export const noStory = () => <Source error={SourceError.NO_STORY} />;
+noStory.story = { name: 'no story' };
+
+export const sourceUnavailable = () => <Source error={SourceError.SOURCE_UNAVAILABLE} />;
+sourceUnavailable.story = { name: 'source unavailable' };

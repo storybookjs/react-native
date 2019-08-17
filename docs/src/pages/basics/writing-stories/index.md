@@ -198,7 +198,7 @@ addParameters({ notes: defaultNotes });
 
 This would make sense if, for example, `instructions.md` contained instructions on how to document your components when there is no documentation available.
 
-Then for componenents that did have documentation, we might override it at the component/story level:
+Then for components that did have documentation, we might override it at the component/story level:
 
 ```jsx
 import React from 'react';
@@ -219,7 +219,7 @@ special.story = {
 };
 ```
 
-In this example, the `small` and `medium` stories get the compoonent notes documented in `notes.md` (as opposed to the generic instructions in `instructions.md`). The `special` story gets some special notes.
+In this example, the `small` and `medium` stories get the component notes documented in `notes.md` (as opposed to the generic instructions in `instructions.md`). The `special` story gets some special notes.
 
 ## Searching
 
