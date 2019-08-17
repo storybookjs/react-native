@@ -114,7 +114,7 @@ const getColorByType = (type: string) => {
 const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
-      if (!result) {
+      if (!result || !result.assertionResults) {
         return (
           <Placeholder key={name}>
             This story has tests configured, but no file was found
@@ -125,10 +125,6 @@ const Content = styled(({ tests, className }: ContentProps) => (
       const testsByType: Map<string, any> = getTestsByTypeMap(result);
       const entries: any = testsByType.entries();
       const sortedTestsByCount = [...entries].sort((a, b) => a[1].length - b[1].length);
-
-      if (!entries && !sortedTestsByCount && !result.assertionResults) {
-        return null;
-      }
 
       return (
         <SizeMe refreshMode="debounce" key={name}>
