@@ -44,12 +44,12 @@ const SuiteHead = styled.div({
 const SuiteTotals = styled(({ result, className, width }) => (
   <div className={className}>
     <Fragment>
-      {width > 325 ? (
+      {width > 325 && result.assertionResults ? (
         <div>
           {result.assertionResults.length} {result.assertionResults.length > 1 ? `tests` : `test`}
         </div>
       ) : null}
-      {width > 280 ? (
+      {width > 280 && result.endTime && result.startTime ? (
         <div>
           {result.endTime - result.startTime}
           ms
