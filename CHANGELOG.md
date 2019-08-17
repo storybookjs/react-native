@@ -1,3 +1,13 @@
+## 5.2.0-beta.32 (August 17, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix docs-only story load ([#7787](https://github.com/storybookjs/storybook/pull/7787))
+
+### Maintenance
+
+* Addon-docs: Unwrap doc blocks stories ([#7788](https://github.com/storybookjs/storybook/pull/7788))
+
 ## 5.2.0-beta.31 (August 16, 2019)
 
 ### Features
