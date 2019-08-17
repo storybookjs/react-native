@@ -206,6 +206,29 @@ const Content = styled(({ tests, className }: ContentProps) => (
                       )}
                     </List>
                   </div>
+                  <div
+                    id="pending-tests"
+                    title={`${
+                      testsByType.get(StatusTypes.PENDING_TYPE)
+                        ? testsByType.get(StatusTypes.PENDING_TYPE).length
+                        : 0
+                    } Pending`}
+                    color={getColorByType(StatusTypes.PENDING_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.PENDING_TYPE) ? (
+                        testsByType.get(StatusTypes.PENDING_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.PENDING_TYPE}`}>
+                          This story has no pending tests.
+                        </Placeholder>
+                      )}
+                    </List>
+                  </div>
                 </TabsState>
               </section>
             );
