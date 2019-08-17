@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typeset } from './Typeset';
-
 import { DocsPageWrapper } from './DocsPage';
 
 export default {
