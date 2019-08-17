@@ -119,6 +119,11 @@ const Content = styled(({ tests, className }: ContentProps) => (
       const testsByType: Map<string, any> = getTestsByTypeMap(result);
       const entries: any = testsByType.entries();
       const sortedTestsByCount = [...entries].sort((a, b) => a[1].length - b[1].length);
+
+      if (!testsByType && !entries && sortedTestsByCount && result.assertionResults) {
+        return null;
+      }
+
       return (
         <SizeMe refreshMode="debounce" key={name}>
           {({ size }: { size: any }) => {
@@ -135,7 +140,9 @@ const Content = styled(({ tests, className }: ContentProps) => (
                             key={`progress-portion-${entry[0]}`}
                             color={getColorByType(entry[0])}
                             progressPercent={
-                              (entry[1].length / result.assertionResults.length) * 100
+                              entry[1]
+                                ? (entry[1].length / result.assertionResults.length) * 100
+                                : 0
                             }
                           />
                         );
@@ -149,28 +156,48 @@ const Content = styled(({ tests, className }: ContentProps) => (
                 >
                   <div
                     id="failing-tests"
-                    title={`${testsByType.get(StatusTypes.FAILED_TYPE).length} Failed`}
+                    title={`${
+                      testsByType.get(StatusTypes.FAILED_TYPE)
+                        ? testsByType.get(StatusTypes.FAILED_TYPE).length
+                        : 0
+                    } Failed`}
                     color={getColorByType(StatusTypes.FAILED_TYPE)}
                   >
                     <List>
-                      {testsByType.get(StatusTypes.FAILED_TYPE).map((res: any) => (
-                        <Item key={res.fullName || res.title}>
-                          <Result {...res} />
-                        </Item>
-                      ))}
+                      {testsByType.get(StatusTypes.FAILED_TYPE) ? (
+                        testsByType.get(StatusTypes.FAILED_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.FAILED_TYPE}`}>
+                          This story has no failing tests.
+                        </Placeholder>
+                      )}
                     </List>
                   </div>
                   <div
                     id="passing-tests"
-                    title={`${testsByType.get(StatusTypes.PASSED_TYPE).length} Passed`}
+                    title={`${
+                      testsByType.get(StatusTypes.PASSED_TYPE)
+                        ? testsByType.get(StatusTypes.PASSED_TYPE).length
+                        : 0
+                    } Passed`}
                     color={getColorByType(StatusTypes.PASSED_TYPE)}
                   >
                     <List>
-                      {testsByType.get(StatusTypes.PASSED_TYPE).map((res: any) => (
-                        <Item key={res.fullName || res.title}>
-                          <Result {...res} />
-                        </Item>
-                      ))}
+                      {testsByType.get(StatusTypes.PASSED_TYPE) ? (
+                        testsByType.get(StatusTypes.PASSED_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.PASSED_TYPE}`}>
+                          This story has no passing tests.
+                        </Placeholder>
+                      )}
                     </List>
                   </div>
                 </TabsState>
