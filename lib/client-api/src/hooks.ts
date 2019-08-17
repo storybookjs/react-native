@@ -32,6 +32,7 @@ type AbstractFunction = (...args: any[]) => any;
 
 const hookListsMap = new WeakMap<AbstractFunction, Hook[]>();
 let mountedDecorators = new Set<AbstractFunction>();
+let prevMountedDecorators = mountedDecorators;
 
 let currentHooks: Hook[] = [];
 let nextHookIndex = 0;
@@ -72,7 +73,7 @@ const hookify = (fn: AbstractFunction) => (...args: any[]) => {
   const prevDecoratorName = currentDecoratorName;
 
   currentDecoratorName = fn.name;
-  if (mountedDecorators.has(fn)) {
+  if (prevMountedDecorators.has(fn)) {
     currentPhase = 'UPDATE';
     currentHooks = hookListsMap.get(fn) || [];
   } else {
@@ -105,10 +106,11 @@ export const applyHooks = (
 ) => (getStory: StoryGetter, decorators: Decorator[]) => {
   const decorated = applyDecorators(hookify(getStory), decorators.map(hookify));
   return (context: StoryContext) => {
+    prevMountedDecorators = mountedDecorators;
+    mountedDecorators = new Set([getStory, ...decorators]);
     currentContext = context;
     hasUpdates = false;
     let result = decorated(context);
-    mountedDecorators = new Set([getStory, ...decorators]);
     numberOfRenders = 1;
     while (hasUpdates) {
       hasUpdates = false;
@@ -121,8 +123,10 @@ export const applyHooks = (
         );
       }
     }
-    addons.getChannel().once(STORY_RENDERED, triggerEffects);
-    currentContext = null;
+    addons.getChannel().once(STORY_RENDERED, () => {
+      triggerEffects();
+      currentContext = null;
+    });
     return result;
   };
 };
