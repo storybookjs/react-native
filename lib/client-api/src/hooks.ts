@@ -1,6 +1,6 @@
 import { logger } from '@storybook/client-logger';
 import addons, { StoryGetter, StoryContext } from '@storybook/addons';
-import { FORCE_RE_RENDER } from '@storybook/core-events';
+import { FORCE_RE_RENDER, STORY_RENDERED } from '@storybook/core-events';
 
 interface StoryStore {
   fromId: (
@@ -112,6 +112,7 @@ export const applyHooks = (
     numberOfRenders = 1;
     while (hasUpdates) {
       hasUpdates = false;
+      currentEffects = [];
       result = decorated(context);
       numberOfRenders += 1;
       if (numberOfRenders > RENDER_LIMIT) {
@@ -120,7 +121,7 @@ export const applyHooks = (
         );
       }
     }
-    triggerEffects();
+    addons.getChannel().once(STORY_RENDERED, triggerEffects);
     currentContext = null;
     return result;
   };
@@ -271,7 +272,7 @@ export function useReducer<S, A>(
 
 /*
   Triggers a side effect, see https://reactjs.org/docs/hooks-reference.html#usestate
-  Effects are triggered synchronously after calling the decorated story function
+  Effects are triggered synchronously after rendering the story
 */
 export function useEffect(create: () => (() => void) | void, deps?: any[]): void {
   const effect = useMemoLike('useEffect', () => ({ create }), deps);
