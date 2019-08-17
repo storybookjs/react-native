@@ -8,6 +8,8 @@ import provideJestResult, { Test } from '../hoc/provideJestResult';
 const StatusTypes = {
   PASSED_TYPE: 'passed',
   FAILED_TYPE: 'failed',
+  PENDING_TYPE: 'pending',
+  TODO_TYPE: 'todo',
 };
 
 const List = styled.ul({
