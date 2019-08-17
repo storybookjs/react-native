@@ -10,6 +10,12 @@ export default {
 
 export const basic = () => <div>Click docs tab to see basic docs</div>;
 
+export const noDocs = () => <div>Click docs tab to see no docs error</div>;
+noDocs.story = {
+  name: 'no docs',
+  parameters: { docs: null },
+};
+
 export const withNotes = () => <div>Click docs tab to see DocsPage docs</div>;
 withNotes.story = {
   name: 'with notes',
