@@ -115,6 +115,7 @@ export const applyHooks = (
     while (hasUpdates) {
       hasUpdates = false;
       currentEffects = [];
+      prevMountedDecorators = mountedDecorators;
       result = decorated(context);
       numberOfRenders += 1;
       if (numberOfRenders > RENDER_LIMIT) {
