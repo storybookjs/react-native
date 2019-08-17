@@ -102,6 +102,10 @@ const getColorByType = (type: string) => {
       return convert(themes.normal).color.positive;
     case StatusTypes.FAILED_TYPE:
       return convert(themes.normal).color.negative;
+    case StatusTypes.PENDING_TYPE:
+      return convert(themes.normal).color.warning;
+    case StatusTypes.TODO_TYPE:
+      return convert(themes.normal).color.purple;
     default:
       return null;
   }
