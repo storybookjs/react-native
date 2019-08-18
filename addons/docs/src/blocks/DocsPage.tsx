@@ -123,7 +123,8 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = ({
           {primary && <DocsStory {...primary} expanded={false} withToolbar />}
           {propsTableProps && <PropsTable {...propsTableProps} />}
           {stories && stories.length > 0 && <StoriesHeading>Stories</StoriesHeading>}
-          {stories && stories.map(story => story && <DocsStory {...story} expanded />)}
+          {stories &&
+            stories.map(story => story && <DocsStory key={story.id} {...story} expanded />)}
         </PureDocsPage>
       );
     }}
