@@ -1,1 +1,1 @@
-{"version":"5.2.0-beta.32","info":{"plain":"### Bug Fixes\n\n* Addon-docs: Fix docs-only story load ([#7787](https://github.com/storybookjs/storybook/pull/7787))\n\n### Maintenance\n\n* Addon-docs: Unwrap doc blocks stories ([#7788](https://github.com/storybookjs/storybook/pull/7788))"}}
+{"version":"5.2.0-beta.33","info":{"plain":"### Features\n\n* Addon-jest: Add pending & todo items ([#7793](https://github.com/storybookjs/storybook/pull/7793))\n\n### Bug Fixes\n\n* Addon-docs: Fix unique key warning ([#7796](https://github.com/storybookjs/storybook/pull/7796))"}}
