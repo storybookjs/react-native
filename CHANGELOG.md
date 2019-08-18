@@ -1,3 +1,13 @@
+## 5.2.0-beta.33 (August 18, 2019)
+
+### Features
+
+* Addon-jest: Add pending & todo items ([#7793](https://github.com/storybookjs/storybook/pull/7793))
+
+### Bug Fixes
+
+* Addon-docs: Fix unique key warning ([#7796](https://github.com/storybookjs/storybook/pull/7796))
+
 ## 5.2.0-beta.32 (August 17, 2019)
 
 ### Bug Fixes
