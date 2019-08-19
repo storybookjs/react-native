@@ -31,14 +31,14 @@ Perhaps you want to write your stories in CSF, but document them in MDX? Here's 
 **Button.stories.mdx**
 
 ```md
-import { Story } from '@storybook/docs/blocks';
+import { Story } from '@storybook/addon-docs/blocks';
 import { SomeComponent } from 'somewhere';
 
 # Button
 
 I can embed a story (but not define one, since this file should not contain a `Meta`):
 
-<Story id="some--id">
+<Story id="some--id" />
 
 And of course I can also embed arbitrary markdown & JSX in this file.
 
