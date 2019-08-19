@@ -4,6 +4,7 @@ type Decorator = (...args: any) => any;
 
 interface MetaProps {
   title: string;
+  component?: any;
   decorators?: [Decorator];
   parameters?: any;
 }

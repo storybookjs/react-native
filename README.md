@@ -13,6 +13,7 @@
   <a href="https://now-examples-slackin-rrirkqohko.now.sh/"><img src="https://now-examples-slackin-rrirkqohko.now.sh/badge.svg?logo=slack" alt="Storybook Slack" /></a>
   <a href="#backers"><img src="https://opencollective.com/storybook/backers/badge.svg" alt="Backers on Open Collective" /></a>
   <a href="#sponsors"><img src="https://opencollective.com/storybook/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://twitter.com/intent/follow?screen_name=storybookjs"><img src="https://img.shields.io/twitter/follow/storybookjs.svg?style=social&label=Follow" alt="Official Twitter Handle" /></a>  
 </p>
 
 ---
@@ -27,9 +28,9 @@ It allows you to browse a component library, view the different states of each c
 </center>
 
 <p align="center">
-README for:<br/>
-<a href="https://img.shields.io/npm/v/@storybook/core/latest.svg" title="latest"><img alt="latest" src="https://img.shields.io/npm/v/@storybook/core/latest.svg" /></a>
-<a href="https://img.shields.io/npm/v/@storybook/core/next.svg" title="next"><img alt="next" src="https://img.shields.io/npm/v/@storybook/core/next.svg" /></a>
+  README for:<br/>
+  <a href="https://github.com/storybookjs/storybook/blob/master/README.md" title="latest"><img alt="latest" src="https://img.shields.io/npm/v/@storybook/core/latest.svg" /></a>
+  <a href="https://github.com/storybookjs/storybook/blob/next/README.md" title="next"><img alt="next" src="https://img.shields.io/npm/v/@storybook/core/next.svg" /></a>
 </p>
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
@@ -51,6 +52,7 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
   - 👨‍💻[Development scripts](#development-scripts)
   - 💵[Backers](#backers)
   - 💸[Sponsors](#sponsors)
+- :memo:[License](#license)
 
 ## Getting Started
 

@@ -14,7 +14,7 @@ export function babel(config: TransformOptions) {
   ];
 
   // If `babelConfigPlugins` is not an `Array`, calling `concat` will inject it
-  // as a single value, if it is an `Array` it will be spreaded.
+  // as a single value, if it is an `Array` it will spread.
   return {
     ...config,
     plugins: [].concat(babelConfigPlugins, extraPlugins),

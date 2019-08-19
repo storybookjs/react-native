@@ -13,5 +13,5 @@ script:
 
 jobs:
   include:
-    - script: yarn test --cli
-    - script: yarn test-latest-cra
+    - script: travis_wait 30 yarn test --cli
+    - script: travis_wait 30 yarn test-latest-cra

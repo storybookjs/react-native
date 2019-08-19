@@ -126,7 +126,7 @@ addParameters({
 
 ### Add New Device
 
-This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is acheived by making use of the exported [`INITIAL_VIEWPORTS`](src/defaults.js) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
+This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is achieved by making use of the exported [`INITIAL_VIEWPORTS`](src/defaults.js) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
 
 ```js
 import { addParameters } from '@storybook/react';

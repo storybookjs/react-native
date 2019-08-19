@@ -6,8 +6,8 @@ const text = 'Testing the a11y addon';
 
 export default {
   title: 'Addons|A11y/BaseButton',
+  component: BaseButton,
   parameters: {
-    component: BaseButton,
     options: { selectedPanel: 'storybook/a11y/panel' },
   },
 };

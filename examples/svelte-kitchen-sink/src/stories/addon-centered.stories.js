@@ -5,10 +5,8 @@ import Button from '../components/Button.svelte';
 
 export default {
   title: 'Addon|Centered',
+  component: Button,
   decorators: [Centered],
-  parameters: {
-    component: Centered,
-  },
 };
 
 export const rounded = () => ({

@@ -16,10 +16,6 @@ export interface RenderMainArgs {
 
 export type StoryFnReactReturnType = React.ReactElement<unknown>;
 
-export interface ICollection {
-  [p: string]: any;
-}
-
 export interface IStorybookStory {
   name: string;
   render: () => any;

@@ -8,7 +8,7 @@ import * as descriptionStories from './Description.stories';
 
 export default {
   title: 'Docs|DocsPage',
-  Component: DocsPage,
+  component: DocsPage,
   decorators: [
     storyFn => (
       <DocsWrapper>
@@ -17,6 +17,19 @@ export default {
     ),
   ],
 };
+
+export const withSubtitle = () => (
+  <DocsPage
+    title="DocsPage"
+    subtitle="What the DocsPage looks like. Meant to be QAed in Canvas tab not in Docs tab."
+  >
+    {descriptionStories.text()}
+    {previewStories.single()}
+    {propsTableStories.normal()}
+    {sourceStories.jsx()}
+  </DocsPage>
+);
+withSubtitle.story = { name: 'with subtitle' };
 
 export const empty = () => (
   <DocsPage title={null}>
@@ -43,19 +56,6 @@ export const text = () => (
     {sourceStories.jsx()}
   </DocsPage>
 );
-
-export const withSubtitle = () => (
-  <DocsPage
-    title="SimStim"
-    subtitle="A digital representation of the thoughts and feelings of another person."
-  >
-    {descriptionStories.text()}
-    {previewStories.single()}
-    {propsTableStories.normal()}
-    {sourceStories.jsx()}
-  </DocsPage>
-);
-withSubtitle.story = { name: 'with subtitle' };
 
 export const markdown = () => (
   <DocsPage title="markdown">

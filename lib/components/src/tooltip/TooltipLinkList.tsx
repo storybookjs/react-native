@@ -1,7 +1,7 @@
 import React, { FunctionComponent, Key, ReactNode } from 'react';
 import { styled } from '@storybook/theming';
 
-import ListItem, { LinkWrapperType } from './ListItem';
+import ListItem, { LinkWrapperType, ListItemProps } from './ListItem';
 
 const List = styled.div<{}>(
   {
@@ -13,12 +13,8 @@ const List = styled.div<{}>(
   })
 );
 
-export interface Link {
+export interface Link extends ListItemProps {
   id: string;
-  title?: ReactNode;
-  active?: boolean;
-  href?: string | object;
-  onClick?: () => void;
   isGatsby?: boolean;
 }
 
