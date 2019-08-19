@@ -1,6 +1,6 @@
 import { logger } from '@storybook/client-logger';
 import addons, { StoryGetter, StoryContext } from '@storybook/addons';
-import { FORCE_RE_RENDER } from '@storybook/core-events';
+import { FORCE_RE_RENDER, STORY_RENDERED } from '@storybook/core-events';
 
 interface StoryStore {
   fromId: (
@@ -32,6 +32,7 @@ type AbstractFunction = (...args: any[]) => any;
 
 const hookListsMap = new WeakMap<AbstractFunction, Hook[]>();
 let mountedDecorators = new Set<AbstractFunction>();
+let prevMountedDecorators = mountedDecorators;
 
 let currentHooks: Hook[] = [];
 let nextHookIndex = 0;
@@ -72,7 +73,7 @@ const hookify = (fn: AbstractFunction) => (...args: any[]) => {
   const prevDecoratorName = currentDecoratorName;
 
   currentDecoratorName = fn.name;
-  if (mountedDecorators.has(fn)) {
+  if (prevMountedDecorators.has(fn)) {
     currentPhase = 'UPDATE';
     currentHooks = hookListsMap.get(fn) || [];
   } else {
@@ -105,13 +106,16 @@ export const applyHooks = (
 ) => (getStory: StoryGetter, decorators: Decorator[]) => {
   const decorated = applyDecorators(hookify(getStory), decorators.map(hookify));
   return (context: StoryContext) => {
+    prevMountedDecorators = mountedDecorators;
+    mountedDecorators = new Set([getStory, ...decorators]);
     currentContext = context;
     hasUpdates = false;
     let result = decorated(context);
-    mountedDecorators = new Set([getStory, ...decorators]);
     numberOfRenders = 1;
     while (hasUpdates) {
       hasUpdates = false;
+      currentEffects = [];
+      prevMountedDecorators = mountedDecorators;
       result = decorated(context);
       numberOfRenders += 1;
       if (numberOfRenders > RENDER_LIMIT) {
@@ -120,8 +124,10 @@ export const applyHooks = (
         );
       }
     }
-    triggerEffects();
-    currentContext = null;
+    addons.getChannel().once(STORY_RENDERED, () => {
+      triggerEffects();
+      currentContext = null;
+    });
     return result;
   };
 };
@@ -271,7 +277,7 @@ export function useReducer<S, A>(
 
 /*
   Triggers a side effect, see https://reactjs.org/docs/hooks-reference.html#usestate
-  Effects are triggered synchronously after calling the decorated story function
+  Effects are triggered synchronously after rendering the story
 */
 export function useEffect(create: () => (() => void) | void, deps?: any[]): void {
   const effect = useMemoLike('useEffect', () => ({ create }), deps);

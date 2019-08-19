@@ -1,5 +1,6 @@
 import { document } from 'global';
 import { action } from '@storybook/addon-actions';
+import { useEffect } from '@storybook/client-api';
 
 export default {
   title: 'Demo',
@@ -14,4 +15,12 @@ export const button = () => {
   btn.innerHTML = 'Hello Button';
   btn.addEventListener('click', action('Click'));
   return btn;
+};
+
+export const effect = () => {
+  useEffect(() => {
+    document.getElementById('button').style.backgroundColor = 'yellow';
+  });
+
+  return '<button id="button">I should be yellow</button>';
 };

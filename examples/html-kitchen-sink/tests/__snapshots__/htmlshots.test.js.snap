@@ -215,6 +215,14 @@ exports[`Storyshots Demo button 1`] = `
 </button>
 `;
 
+exports[`Storyshots Demo effect 1`] = `
+<button
+  id="button"
+>
+  I should be yellow
+</button>
+`;
+
 exports[`Storyshots Demo heading 1`] = `
 <h1>
   Hello World
