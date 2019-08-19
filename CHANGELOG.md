@@ -1,4 +1,4 @@
-## 5.2.0-beta.34 (August 20, 2019)
+## 5.2.0-beta.35 (August 20, 2019)
 
 ### Features
 
@@ -8,6 +8,10 @@
 ### Bug Fixes
 
 * Preview hooks: trigger effects after story render ([#7791](https://github.com/storybookjs/storybook/pull/7791))
+
+## 5.2.0-beta.34 (August 20, 2019)
+
+Failed publish
 
 ## 5.2.0-beta.33 (August 18, 2019)
 
