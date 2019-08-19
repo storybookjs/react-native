@@ -206,7 +206,15 @@ function extractExports(node, options) {
       }
     }
   });
-  if (!metaExport) {
+  if (metaExport) {
+    if (!storyExports.length) {
+      storyExports.push(
+        'export const storybookDocsOnly = () => { throw new Error("Docs-only story"); };'
+      );
+      storyExports.push('storybookDocsOnly.story = { parameters: { docsOnly: true } };');
+      includeStories.push('storybookDocsOnly');
+    }
+  } else {
     metaExport = {};
   }
   metaExport.includeStories = JSON.stringify(includeStories);

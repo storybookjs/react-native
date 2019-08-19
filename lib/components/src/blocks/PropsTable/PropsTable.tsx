@@ -4,6 +4,7 @@ import { opacify, transparentize } from 'polished';
 import { PropRow } from './PropRow';
 import { PropDef } from './PropDef';
 import { EmptyBlock } from '../EmptyBlock';
+import { ResetWrapper } from '../../typography/DocumentFormatting';
 
 export const Table = styled.table<{}>(({ theme }) => ({
   '&&': {
@@ -146,20 +147,22 @@ const PropsTable: React.FunctionComponent<PropsTableProps> = props => {
     return <EmptyBlock>No props found for this component</EmptyBlock>;
   }
   return (
-    <Table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map(row => (
-          <PropRow key={row.name} row={row} />
-        ))}
-      </tbody>
-    </Table>
+    <ResetWrapper>
+      <Table className="docblock-propstable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(row => (
+            <PropRow key={row.name} row={row} />
+          ))}
+        </tbody>
+      </Table>
+    </ResetWrapper>
   );
 };
 

@@ -30,12 +30,12 @@ const str = (o: any) => {
   throw new Error(`Description: expected string, got: ${JSON.stringify(o)}`);
 };
 
-const getNotes = (notes?: Notes) =>
+export const getNotes = (notes?: Notes) =>
   notes && (typeof notes === 'string' ? notes : str(notes.markdown) || str(notes.text));
 
-const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
+export const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
 
-const getDocgen = (component?: Component) =>
+export const getDocgen = (component?: Component) =>
   component && component.__docgenInfo && str(component.__docgenInfo.description);
 
 export const getDescriptionProps = (

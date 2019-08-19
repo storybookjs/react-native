@@ -139,6 +139,7 @@ exports[`A11YPanel should render report 1`] = `
   background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
   border-top: 1px solid rgba(0,0,0,.1);
   border-left: 1px solid rgba(0,0,0,.1);
@@ -215,13 +216,13 @@ exports[`A11YPanel should render report 1`] = `
               "insert": [Function],
               "inserted": Object {
                 "0": true,
-                "110qmus": true,
                 "11xgcgt": true,
                 "1551xjo": true,
                 "15paq49": true,
                 "1977chw": true,
                 "19mcg9j": true,
                 "1ez3l8h": true,
+                "1imo1gr": true,
                 "1kbt4a0": true,
                 "1l7fvsg": true,
                 "1vwgrhn": true,
@@ -497,7 +498,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-3{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                    .emotion-3{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                   </style>
                   <style
                     data-emotion="css"
@@ -723,7 +724,7 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .emotion-3{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                    .emotion-3{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                   </style>,
                   <style
                     data-emotion="css"
