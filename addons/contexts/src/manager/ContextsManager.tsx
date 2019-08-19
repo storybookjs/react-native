@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState, useCallback } from 'react';
 import { useChannel } from './libs/useChannel';
 import { ToolBar } from './components/ToolBar';
