@@ -4,11 +4,16 @@ import addons from '@storybook/addons';
 import { STORY_CHANGED, SET_CURRENT_STORY } from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
 
-interface Params {
+interface ParamsId {
   storyId: string;
 }
+interface ParamsCombo {
+  kind: string;
+  story: string;
+}
 
-export const navigate = (params: Params) => addons.getChannel().emit(SET_CURRENT_STORY, params);
+export const navigate = (params: ParamsId | ParamsCombo) =>
+  addons.getChannel().emit(SET_CURRENT_STORY, params);
 
 const generateUrl = (id: string) => {
   const { location } = document;
