@@ -5,7 +5,7 @@ title: 'Intro to Presets'
 
 Storybook **presets** are grouped collections of `babel`, `webpack`, and `addons` configurations that support specific use cases.
 
-For example, to write your stories in Typescript, rather than [manually configuring Storybook for typescript](../configurations/typescript-config/) with individual [babel](../configurations/custom-babel-config/) and [webpack](../configurations/custom-webpack-config/) configs, you can simply use the `@storybook/preset-typescript` package, which does the heavy lifting for you.
+For example, to write your stories in Typescript, rather than [manually configuring Storybook for typescript](../../configurations/typescript-config/) with individual [babel](../../configurations/custom-babel-config/) and [webpack](../../configurations/custom-webpack-config/) configs, you can simply use the `@storybook/preset-typescript` package, which does the heavy lifting for you.
 
 ## Basic usage
 

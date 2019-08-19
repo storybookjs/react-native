@@ -195,12 +195,13 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
                 },
                 [`#${wrapperId}`]: {
                   padding: theme.layoutMargin,
-                  display: 'flex',
+                  display: 'grid',
                   alignContent: 'center',
                   alignItems: 'center',
                   justifyContent: 'center',
                   justifyItems: 'center',
                   overflow: 'auto',
+                  gridTemplateColumns: 'minmax(0, 1fr)',
                 },
               }}
             />

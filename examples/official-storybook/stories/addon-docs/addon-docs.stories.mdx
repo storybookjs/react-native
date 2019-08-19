@@ -10,8 +10,8 @@ import {
 } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
-import FlowTypeButton from '../components/FlowTypeButton';
-import DocgenButton from '../components/DocgenButton';
+import FlowTypeButton from '../../components/FlowTypeButton';
+import DocgenButton from '../../components/DocgenButton';
 
 <Meta
   title="Addons|Docs/mdx"
@@ -92,7 +92,9 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
 
 ## Configurable height
 
-<Story id="basics-button--all-buttons" height="400px" />
+<Preview withToolbar>
+  <Story id="basics-button--all-buttons" height="400px" />
+</Preview>
 
 ## Description
 
