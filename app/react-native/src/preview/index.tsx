@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { AsyncStorage } from 'react-native';
 import { ThemeProvider } from 'emotion-theming';
 // @ts-ignore
 import getHost from 'rn-host-detect';
@@ -16,8 +15,14 @@ import { theme, EmotionProps } from './components/Shared/theme';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
+interface AsyncStorage {
+  getItem: <T>(key: string) => Promise<T>;
+  setItem: <T>(key: string, value: T) => Promise<void>;
+}
+
 export type Params = {
   onDeviceUI: boolean;
+  asyncStorage: AsyncStorage;
   resetStorybook: boolean;
   disableWebsockets: boolean;
   query: string;
@@ -43,6 +48,8 @@ export default class Preview {
 
   _asyncStorageStoryId: string;
 
+  _asyncStorage: AsyncStorage;
+
   constructor() {
     this._addons = {};
     this._decorators = [];
@@ -65,6 +72,10 @@ export default class Preview {
   getStorybookUI = (params: Partial<Params> = {}) => {
     let webUrl: string = null;
     let channel: Channel = null;
+
+    if (params.asyncStorage) {
+      this._asyncStorage = params.asyncStorage;
+    }
 
     const onDeviceUI = params.onDeviceUI !== false;
     const { initialSelection, shouldPersistSelection } = params;
@@ -166,8 +177,8 @@ export default class Preview {
     } else if (shouldPersistSelection) {
       try {
         let value = this._asyncStorageStoryId;
-        if (!value) {
-          value = JSON.parse(await AsyncStorage.getItem(STORAGE_KEY));
+        if (!value && this._asyncStorage) {
+          value = JSON.parse(await this._asyncStorage.getItem<string>(STORAGE_KEY));
           this._asyncStorageStoryId = value;
         }
 
@@ -197,10 +208,8 @@ export default class Preview {
 
   _selectStoryEvent({ storyId }: { storyId: string }) {
     if (storyId) {
-      try {
-        AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(storyId));
-      } catch (e) {
-        //
+      if (this._asyncStorage) {
+        this._asyncStorage.setItem(STORAGE_KEY, JSON.stringify(storyId)).catch(() => {});
       }
 
       const story = this._getStory(storyId);
