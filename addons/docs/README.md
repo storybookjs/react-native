@@ -181,6 +181,18 @@ module.exports = async ({ config }) => {
 };
 ```
 
+Finally, you'll need to set up DocsPage in `.storybook/config.js`:
+
+```js
+import { addParameters } from '@storybook/react';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+
+addParameters({
+  docsContainer: DocsContainer,
+  docs: DocsPage,
+});
+```
+
 ## More resources
 
 Want to learn more? Here are some more articles on Storybook Docs:
