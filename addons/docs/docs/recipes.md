@@ -6,6 +6,7 @@
 - [Pure MDX Stories](#pure-mdx-stories)
 - [Mixed CSF / MDX Stories](#mixed-csf--mdx-stories)
 - [CSF Stories with MDX Docs](#csf-stories-with-mdx-docs)
+- [Migrating from notes/info addons](#migrating-from-notesinfo-addons)
 - [More resources](#more-resources)
 
 ## Component Story Format (CSF) with DocsPage
@@ -59,6 +60,22 @@ export default {
 };
 
 export const basic = () => <Button>Basic</Button>;
+```
+
+## Migrating from notes/info addons
+
+If you're currently using the notes/info addons, you can upgrade to DocsPage [using slots](./docspage.md#docspage-slots). There are different ways to use each addon, so you can adapt this recipe according to your use case.
+
+Suppose you've added a `notes` parameter to each component in your library, containing markdown text, and you want that to show up at the top of the page in the `Description` slot. Then you would modify your setup in `.storybook/config.js`:
+
+```js
+import { DocsPage } from '@storybook/addon-docs/blocks';
+
+addParameters({
+  docs: ({ context }) => (
+    <DocsPage context={context} descriptionSlot={({ parameters }) => parameters.notes} />
+  ),
+});
 ```
 
 ## More resources
