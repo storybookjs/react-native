@@ -429,6 +429,13 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/sax@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@types/sax/-/sax-1.2.0.tgz#6025e0b7fc7cd5f3d83808a6809730bac798565d"
+  integrity sha512-D8ef/GGUjiHuUOiXV6tkJw6Zq2Sm8vcBScJSvj+monDI5YncJ6M3oNIXR7EtmWPVqJw0jsZF2ARN/X5gvGmQSA==
+  dependencies:
+    "@types/node" "*"
+
 "@types/tmp@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.32.tgz#0d3cb31022f8427ea58c008af32b80da126ca4e3"
@@ -11176,13 +11183,15 @@ simplebar@^4.0.0-alpha.9:
     resize-observer-polyfill "^1.5.1"
     scrollbarwidth "^0.1.3"
 
-sitemap@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-4.0.1.tgz#12789791b30911b8530db0cd2513252ada967273"
-  integrity sha512-LaOxQmvczMcI5OZojwm/IEynht2aJ3J3jfvH05Z2svx4/j+CK8Vvi3KhNmZYFwc3RcdW4Nuj+qMY2QmyqV5+1Q==
+sitemap@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-4.1.1.tgz#c9b459c7d797e629c61f56b86586d4f67dbf250b"
+  integrity sha512-+8yd66IxyIFEMFkFpVoPuoPwBvdiL7Ap/HS5YD7igqO4phkyTPFIprCAE9NMHehAY5ZGN3MkAze4lDrOAX3sVQ==
   dependencies:
     "@types/node" "^12.0.2"
+    "@types/sax" "^1.2.0"
     arg "^4.1.1"
+    sax "^1.2.4"
     xmlbuilder "^13.0.0"
 
 slash@^1.0.0:
