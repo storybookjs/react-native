@@ -30,7 +30,7 @@ The only limitation is that your exported titles (CSF: `default.title`, MDX `Met
 
 Perhaps you want to write your stories in CSF, but document them in MDX? Here's how to do that:
 
-**Button.stories.mdx**
+**Button.mdx**
 
 ```md
 import { Story } from '@storybook/addon-docs/blocks';
@@ -51,17 +51,23 @@ And of course I can also embed arbitrary markdown & JSX in this file.
 
 ```js
 import { Button } from './Button';
-import mdx from './Button.stories.mdx';
+import mdx from './Button.mdx';
 
 export default {
   title: 'Demo/Button',
   parameters: {
-    docs: mdx.parameters.docs,
+    docs: mdx,
   },
 };
 
 export const basic = () => <Button>Basic</Button>;
 ```
+
+Note that in contrast to other examples, the MDX file suffix is `.mdx` rather than `.stories.mdx`. This key difference means that the file will be loaded with the default MDX loader rather than Storybook's CSF loader, which has several implications:
+
+1. You don't need to provide a `Meta` declaration.
+2. You can refer to existing stories (i.e. `<Story id="...">`) but cannot define new stories (i.e. `<Story name="...">`).
+3. The documentation gets exported as the default export (MDX default) rather than as a parameter hanging off the default export (CSF).
 
 ## Migrating from notes/info addons
 
