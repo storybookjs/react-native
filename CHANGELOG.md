@@ -1,3 +1,9 @@
+## 5.2.0-beta.37 (August 20, 2019)
+
+### Breaking Changes
+
+* Addon-docs: Add docsContainer parameter ([#7814](https://github.com/storybookjs/storybook/pull/7814))
+
 ## 5.2.0-beta.36 (August 20, 2019)
 
 ### Features
