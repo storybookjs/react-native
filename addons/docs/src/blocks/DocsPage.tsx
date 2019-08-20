@@ -95,13 +95,13 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   </>
 );
 
-const DocsPage: React.FunctionComponent<DocsPageProps> = ({
-  titleSlot,
-  subtitleSlot,
-  descriptionSlot,
-  primarySlot,
-  propsSlot,
-  storiesSlot,
+export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
+  titleSlot = defaultTitleSlot,
+  subtitleSlot = defaultSubtitleSlot,
+  descriptionSlot = defaultDescriptionSlot,
+  primarySlot = defaultPrimarySlot,
+  propsSlot = defaultPropsSlot,
+  storiesSlot = defaultStoriesSlot,
 }) => (
   <DocsContext.Consumer>
     {context => {
@@ -130,35 +130,3 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = ({
     }}
   </DocsContext.Consumer>
 );
-
-interface DocsPageWrapperProps {
-  context: DocsContextProps;
-  titleSlot?: StringSlot;
-  subtitleSlot?: StringSlot;
-  descriptionSlot?: StringSlot;
-  primarySlot?: StorySlot;
-  propsSlot?: PropsSlot;
-  storiesSlot?: StoriesSlot;
-}
-
-const DocsPageWrapper: React.FunctionComponent<DocsPageWrapperProps> = ({
-  context,
-  titleSlot = defaultTitleSlot,
-  subtitleSlot = defaultSubtitleSlot,
-  descriptionSlot = defaultDescriptionSlot,
-  primarySlot = defaultPrimarySlot,
-  propsSlot = defaultPropsSlot,
-  storiesSlot = defaultStoriesSlot,
-}) => (
-  /* eslint-disable react/destructuring-assignment */
-  <DocsContainer
-    context={{ ...context, mdxKind: context.selectedKind }}
-    content={() => (
-      <DocsPage
-        {...{ titleSlot, subtitleSlot, descriptionSlot, primarySlot, propsSlot, storiesSlot }}
-      />
-    )}
-  />
-);
-
-export { DocsPageWrapper as DocsPage };
