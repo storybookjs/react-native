@@ -20,6 +20,7 @@ Read on to learn more:
 - [Installation](#installation)
 - [Preset options](#preset-options)
 - [Manual configuration](#manual-configuration)
+- [TypeScript configuration](#typescript-configuration)
 - [More resources](#more-resources)
 
 ## DocsPage
@@ -192,6 +193,15 @@ addParameters({
   docs: DocsPage,
 });
 ```
+
+## TypeScript configuration
+
+SB Docs for React uses `babel-plugin-react-docgen` to extract Docgen comments from your code automatically. However, if you're using TypeScript, some extra configuration maybe required to get this information included in your docs.
+
+1. You can add [react-docgen-typescript-loader](https://www.npmjs.com/package/react-docgen-typescript-loader) to your project by following the instructions there.
+2. You can use [@storybook/preset-typescript](https://www.npmjs.com/package/@storybook/preset-typescript) which includes `react-docgen-typescript-loader`.
+
+Install the preset with care. If you've already configured Typescript manually, that configuration may conflict with the preset. You can [debug your final webpack configuration with `--debug-webpack`](https://storybook.js.org/docs/configurations/custom-webpack-config/#debug-the-default-webpack-config).
 
 ## More resources
 
