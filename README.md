@@ -1,4 +1,12 @@
-# Storybook
+<p align="center">
+  <a href="https://storybook.js.org/">
+    <img src="https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png" alt="Storybook" width="400" />
+  </a>
+</p>
+
+<p align="center">Build bulletproof UI components faster</p>
+
+<br/>
 
 <p align="center">
   <a href="https://circleci.com/gh/storybookjs/storybook">
@@ -30,11 +38,9 @@
     <img src="https://opencollective.com/storybook/sponsors/badge.svg" alt="Sponsors on Open Collective" />
   </a>
   <a href="https://twitter.com/intent/follow?screen_name=storybookjs">
-    <img src="https://badgen.net/twitter/follow/storybookjs?icon=twitter&label=@storybookjs" alt="Official Twitter Handle" />
+    <img src="https://badgen.net/twitter/follow/storybookjs?icon=twitter&label=%40storybookjs" alt="Official Twitter Handle" />
   </a>
 </p>
-
----
 
 Storybook is a development environment for UI components.
 It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
