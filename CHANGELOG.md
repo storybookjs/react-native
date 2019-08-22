@@ -1,3 +1,10 @@
+## 5.2.0-beta.39 (August 22, 2019)
+
+### Bug Fixes
+
+* React-Native: Fix tabs layout issue on simulator ([#7809](https://github.com/storybookjs/storybook/pull/7809))
+* Source-loader: Selectively ignore typescript errors in generated code ([#7831](https://github.com/storybookjs/storybook/pull/7831))
+
 ## 5.2.0-beta.38 (August 21, 2019)
 
 ### Bug Fixes
