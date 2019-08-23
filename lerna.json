@@ -2,5 +2,5 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "registry": "https://registry.npmjs.org",
-  "version": "5.2.0-beta.39"
+  "version": "5.2.0-beta.40"
 }
