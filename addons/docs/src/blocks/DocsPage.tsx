@@ -119,7 +119,7 @@ export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
       return (
         <PureDocsPage title={title} subtitle={subtitle}>
           <Description markdown={description} />
-          {primary && <DocsStory {...primary} expanded={false} withToolbar />}
+          {primary && <DocsStory key={primary.id} {...primary} expanded={false} withToolbar />}
           {propsTableProps && <PropsTable {...propsTableProps} />}
           {stories && stories.length > 0 && <StoriesHeading>Stories</StoriesHeading>}
           {stories &&
