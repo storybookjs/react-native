@@ -41,7 +41,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-document-title": "^2.0.3",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.9.0",
     "react-helmet": "^5.2.0",
     "react-popper-tooltip": "^2.8.3",
     "react-router": "^4.3.1",
