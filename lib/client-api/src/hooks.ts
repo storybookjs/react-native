@@ -1,3 +1,4 @@
+import { window } from 'global';
 import { logger } from '@storybook/client-logger';
 import addons, { StoryGetter, StoryContext } from '@storybook/addons';
 import { FORCE_RE_RENDER, STORY_RENDERED } from '@storybook/core-events';
@@ -30,71 +31,115 @@ interface Effect {
 type Decorator = (getStory: StoryGetter, context: StoryContext) => any;
 type AbstractFunction = (...args: any[]) => any;
 
-const hookListsMap = new WeakMap<AbstractFunction, Hook[]>();
-let mountedDecorators = new Set<AbstractFunction>();
-let prevMountedDecorators = mountedDecorators;
+export class HooksContext {
+  hookListsMap: WeakMap<AbstractFunction, Hook[]>;
 
-let currentHooks: Hook[] = [];
-let nextHookIndex = 0;
-const getNextHook = () => {
-  const hook = currentHooks[nextHookIndex];
-  nextHookIndex += 1;
-  return hook;
-};
-let currentPhase: 'MOUNT' | 'UPDATE' | 'NONE' = 'NONE';
-let currentEffects: Effect[] = [];
-let prevEffects: Effect[] = [];
-let currentDecoratorName: string | null = null;
-let hasUpdates = false;
-let currentContext: StoryContext | null = null;
+  mountedDecorators: Set<AbstractFunction>;
 
-const triggerEffects = () => {
-  // destroy removed effects
-  prevEffects.forEach(effect => {
-    if (!currentEffects.includes(effect) && effect.destroy) {
-      effect.destroy();
-    }
-  });
-  // trigger added effects
-  currentEffects.forEach(effect => {
-    if (!prevEffects.includes(effect)) {
-      // eslint-disable-next-line no-param-reassign
-      effect.destroy = effect.create();
-    }
-  });
-  prevEffects = currentEffects;
-  currentEffects = [];
-};
+  prevMountedDecorators: Set<AbstractFunction>;
+
+  currentHooks: Hook[];
+
+  nextHookIndex: number;
+
+  currentPhase: 'MOUNT' | 'UPDATE' | 'NONE';
+
+  currentEffects: Effect[];
+
+  prevEffects: Effect[];
+
+  currentDecoratorName: string | null;
+
+  hasUpdates: boolean;
+
+  currentContext: StoryContext | null;
+
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.hookListsMap = new WeakMap();
+    this.mountedDecorators = new Set();
+    this.prevMountedDecorators = this.mountedDecorators;
+    this.currentHooks = [];
+    this.nextHookIndex = 0;
+    this.currentPhase = 'NONE';
+    this.currentEffects = [];
+    this.prevEffects = [];
+    this.currentDecoratorName = null;
+    this.hasUpdates = false;
+    this.currentContext = null;
+  }
+
+  clean() {
+    this.prevEffects.forEach(effect => {
+      if (effect.destroy) {
+        effect.destroy();
+      }
+    });
+    this.init();
+  }
+
+  getNextHook() {
+    const hook = this.currentHooks[this.nextHookIndex];
+    this.nextHookIndex += 1;
+    return hook;
+  }
+
+  triggerEffects() {
+    // destroy removed effects
+    this.prevEffects.forEach(effect => {
+      if (!this.currentEffects.includes(effect) && effect.destroy) {
+        effect.destroy();
+      }
+    });
+    // trigger added effects
+    this.currentEffects.forEach(effect => {
+      if (!this.prevEffects.includes(effect)) {
+        // eslint-disable-next-line no-param-reassign
+        effect.destroy = effect.create();
+      }
+    });
+    this.prevEffects = this.currentEffects;
+    this.currentEffects = [];
+  }
+}
 
 const hookify = (fn: AbstractFunction) => (...args: any[]) => {
-  const prevPhase = currentPhase;
-  const prevHooks = currentHooks;
-  const prevNextHookIndex = nextHookIndex;
-  const prevDecoratorName = currentDecoratorName;
+  const { hooks }: StoryContext = typeof args[0] === 'function' ? args[1] : args[0];
 
-  currentDecoratorName = fn.name;
-  if (prevMountedDecorators.has(fn)) {
-    currentPhase = 'UPDATE';
-    currentHooks = hookListsMap.get(fn) || [];
+  const prevPhase = hooks.currentPhase;
+  const prevHooks = hooks.currentHooks;
+  const prevNextHookIndex = hooks.nextHookIndex;
+  const prevDecoratorName = hooks.currentDecoratorName;
+
+  hooks.currentDecoratorName = fn.name;
+  if (hooks.prevMountedDecorators.has(fn)) {
+    hooks.currentPhase = 'UPDATE';
+    hooks.currentHooks = hooks.hookListsMap.get(fn) || [];
   } else {
-    currentPhase = 'MOUNT';
-    currentHooks = [];
-    hookListsMap.set(fn, currentHooks);
+    hooks.currentPhase = 'MOUNT';
+    hooks.currentHooks = [];
+    hooks.hookListsMap.set(fn, hooks.currentHooks);
   }
-  nextHookIndex = 0;
+  hooks.nextHookIndex = 0;
 
+  const prevContext = window.STORYBOOK_HOOKS_CONTEXT;
+  window.STORYBOOK_HOOKS_CONTEXT = hooks;
   const result = fn(...args);
+  window.STORYBOOK_HOOKS_CONTEXT = prevContext;
 
-  if (currentPhase === 'UPDATE' && getNextHook() != null) {
+  if (hooks.currentPhase === 'UPDATE' && hooks.getNextHook() != null) {
     throw new Error(
       'Rendered fewer hooks than expected. This may be caused by an accidental early return statement.'
     );
   }
 
-  currentPhase = prevPhase;
-  currentHooks = prevHooks;
-  nextHookIndex = prevNextHookIndex;
-  currentDecoratorName = prevDecoratorName;
+  hooks.currentPhase = prevPhase;
+  hooks.currentHooks = prevHooks;
+  hooks.nextHookIndex = prevNextHookIndex;
+  hooks.currentDecoratorName = prevDecoratorName;
   return result;
 };
 
@@ -106,16 +151,17 @@ export const applyHooks = (
 ) => (getStory: StoryGetter, decorators: Decorator[]) => {
   const decorated = applyDecorators(hookify(getStory), decorators.map(hookify));
   return (context: StoryContext) => {
-    prevMountedDecorators = mountedDecorators;
-    mountedDecorators = new Set([getStory, ...decorators]);
-    currentContext = context;
-    hasUpdates = false;
+    const { hooks } = context;
+    hooks.prevMountedDecorators = hooks.mountedDecorators;
+    hooks.mountedDecorators = new Set([getStory, ...decorators]);
+    hooks.currentContext = context;
+    hooks.hasUpdates = false;
     let result = decorated(context);
     numberOfRenders = 1;
-    while (hasUpdates) {
-      hasUpdates = false;
-      currentEffects = [];
-      prevMountedDecorators = mountedDecorators;
+    while (hooks.hasUpdates) {
+      hooks.hasUpdates = false;
+      hooks.currentEffects = [];
+      hooks.prevMountedDecorators = hooks.mountedDecorators;
       result = decorated(context);
       numberOfRenders += 1;
       if (numberOfRenders > RENDER_LIMIT) {
@@ -125,8 +171,8 @@ export const applyHooks = (
       }
     }
     addons.getChannel().once(STORY_RENDERED, () => {
-      triggerEffects();
-      currentContext = null;
+      hooks.triggerEffects();
+      hooks.currentContext = null;
     });
     return result;
   };
@@ -135,21 +181,37 @@ export const applyHooks = (
 const areDepsEqual = (deps: any[], nextDeps: any[]) =>
   deps.length === nextDeps.length && deps.every((dep, i) => dep === nextDeps[i]);
 
+const invalidHooksError = () =>
+  new Error('Storybook preview hooks can only be called inside decorators and story functions.');
+
+function getHooksContextOrNull(): HooksContext | null {
+  return window.STORYBOOK_HOOKS_CONTEXT || null;
+}
+
+function getHooksContextOrThrow(): HooksContext {
+  const hooks = getHooksContextOrNull();
+  if (hooks == null) {
+    throw invalidHooksError();
+  }
+  return hooks;
+}
+
 function useHook(name: string, callback: (hook: Hook) => void, deps?: any[] | undefined): Hook {
-  if (currentPhase === 'MOUNT') {
+  const hooks = getHooksContextOrThrow();
+  if (hooks.currentPhase === 'MOUNT') {
     if (deps != null && !Array.isArray(deps)) {
       logger.warn(
         `${name} received a final argument that is not an array (instead, received ${deps}). When specified, the final argument must be an array.`
       );
     }
     const hook: Hook = { name, deps };
-    currentHooks.push(hook);
+    hooks.currentHooks.push(hook);
     callback(hook);
     return hook;
   }
 
-  if (currentPhase === 'UPDATE') {
-    const hook = getNextHook();
+  if (hooks.currentPhase === 'UPDATE') {
+    const hook = hooks.getNextHook();
     if (hook == null) {
       throw new Error('Rendered more hooks than during the previous render.');
     }
@@ -157,7 +219,7 @@ function useHook(name: string, callback: (hook: Hook) => void, deps?: any[] | un
     if (hook.name !== name) {
       logger.warn(
         `Storybook has detected a change in the order of Hooks${
-          currentDecoratorName ? ` called by ${currentDecoratorName}` : ''
+          hooks.currentDecoratorName ? ` called by ${hooks.currentDecoratorName}` : ''
         }. This will lead to bugs and errors if not fixed.`
       );
     }
@@ -181,9 +243,7 @@ Incoming: ${deps}`);
     return hook;
   }
 
-  throw new Error(
-    'Storybook preview hooks can only be called inside decorators and story functions.'
-  );
+  throw invalidHooksError();
 }
 
 function useMemoLike<T>(name: string, nextCreate: () => T, deps: any[] | undefined): T {
@@ -218,9 +278,10 @@ export function useRef<T>(initialValue: T): { current: T } {
 }
 
 function triggerUpdate() {
+  const hooks = getHooksContextOrNull();
   // Rerun getStory if updates were triggered synchronously, force rerender otherwise
-  if (currentPhase !== 'NONE') {
-    hasUpdates = true;
+  if (hooks != null && hooks.currentPhase !== 'NONE') {
+    hooks.hasUpdates = true;
   } else {
     try {
       addons.getChannel().emit(FORCE_RE_RENDER);
@@ -280,8 +341,9 @@ export function useReducer<S, A>(
   Effects are triggered synchronously after rendering the story
 */
 export function useEffect(create: () => (() => void) | void, deps?: any[]): void {
+  const hooks = getHooksContextOrThrow();
   const effect = useMemoLike('useEffect', () => ({ create }), deps);
-  currentEffects.push(effect);
+  hooks.currentEffects.push(effect);
 }
 
 export interface Listener {
@@ -310,10 +372,9 @@ export function useChannel(eventMap: EventMap, deps: any[] = []) {
 
 /* Returns current story context */
 export function useStoryContext(): StoryContext {
+  const { currentContext } = getHooksContextOrThrow();
   if (currentContext == null) {
-    throw new Error(
-      'Storybook preview hooks can only be called inside decorators and story functions.'
-    );
+    throw invalidHooksError();
   }
 
   return currentContext;
