@@ -1,12 +1,9 @@
 import React from 'react';
 import { Typeset } from './Typeset';
 
-import { DocsPageWrapper } from './DocsPage';
-
 export default {
   title: 'Docs|Typeset',
-  Component: Typeset,
-  decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
+  component: Typeset,
 };
 
 const fontSizes = [12, 14, 16, 20, 24, 32, 40, 48];

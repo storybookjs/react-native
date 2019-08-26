@@ -162,7 +162,7 @@ If you follow that process, you can then link to the GitHub repository in the is
 
 Sometimes your storybook is deeply ingrained in your own setup and it's hard to create a minimal viable reproduction somewhere else.
 
-Inside the storybook repo we have a script that allows you to test the packages inside this repo in your own seperate project.
+Inside the storybook repo we have a script that allows you to test the packages inside this repo in your own separate project.
 
 You can use `npm link` on all packages, but npm linking is cumbersome and has subtle differences from what happens in a registry-based installation.
 So the way our script works is that it:

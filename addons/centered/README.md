@@ -195,3 +195,15 @@ configure(function () {
   //...
 }, module);
 ```
+
+If you don't want to use centered for a story, you can disable it by using `{ disable: true }` to skip the addon:
+
+```js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+storiesOf('Button', module)
+  .add('example', () => <button>Click me</button>, {
+    centered: { disable: true },
+  });
+```

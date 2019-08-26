@@ -16,7 +16,7 @@ export const converters = {
   },
   toBoolean: (value: any): boolean => value === 'true',
   toDate: (value: any): number => new Date(value).getTime() || new Date().getTime(),
-  toFloat: (value: any): number => (value === '' ? null : parseFloat(value)),
+  toFloat: (value: any): number | null => (value === '' ? null : parseFloat(value)),
 };
 
 export const serializers = {

@@ -26,6 +26,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
     maxPropObjectKeys={3}
     maxPropStringLength={50}
     maxPropsIntoLine={3}
+    propTableCompare={[Function]}
     propTables={Array []}
     propTablesExclude={Array []}
     showHeader={true}
@@ -160,6 +161,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
     maxPropObjectKeys={3}
     maxPropStringLength={50}
     maxPropsIntoLine={3}
+    propTableCompare={[Function]}
     propTables={Array []}
     propTablesExclude={Array []}
     showHeader={true}
@@ -292,6 +294,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
     maxPropObjectKeys={3}
     maxPropStringLength={50}
     maxPropsIntoLine={3}
+    propTableCompare={[Function]}
     propTables={null}
     propTablesExclude={Array []}
     showHeader={true}
@@ -769,6 +772,7 @@ exports[`addon Info should render component description if story kind matches co
   background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
   border-top: 1px solid rgba(0,0,0,.1);
   border-left: 1px solid rgba(0,0,0,.1);
@@ -820,6 +824,7 @@ exports[`addon Info should render component description if story kind matches co
     maxPropObjectKeys={3}
     maxPropStringLength={50}
     maxPropsIntoLine={3}
+    propTableCompare={[Function]}
     propTables={null}
     propTablesExclude={Array []}
     showHeader={true}
@@ -1360,8 +1365,8 @@ exports[`addon Info should render component description if story kind matches co
                               Object {
                                 "insert": [Function],
                                 "inserted": Object {
-                                  "110qmus": true,
                                   "11xgcgt": true,
+                                  "1imo1gr": true,
                                   "1maezg8": true,
                                   "1si67pu": true,
                                   "4zr3vl": true,
@@ -2077,7 +2082,7 @@ exports[`addon Info should render component description if story kind matches co
                                       data-emotion="css"
                                     >
                                       
-                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                                     </style>
                                     <style
                                       data-emotion="css"
@@ -2575,7 +2580,7 @@ exports[`addon Info should render component description if story kind matches co
                                       data-emotion="css"
                                     >
                                       
-                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                                     </style>,
                                     <style
                                       data-emotion="css"
@@ -3144,8 +3149,8 @@ exports[`addon Info should render component description if story kind matches co
                               Object {
                                 "insert": [Function],
                                 "inserted": Object {
-                                  "110qmus": true,
                                   "11xgcgt": true,
+                                  "1imo1gr": true,
                                   "1maezg8": true,
                                   "1si67pu": true,
                                   "4zr3vl": true,
@@ -3861,7 +3866,7 @@ exports[`addon Info should render component description if story kind matches co
                                       data-emotion="css"
                                     >
                                       
-                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                                     </style>
                                     <style
                                       data-emotion="css"
@@ -4359,7 +4364,7 @@ exports[`addon Info should render component description if story kind matches co
                                       data-emotion="css"
                                     >
                                       
-                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                                     </style>,
                                     <style
                                       data-emotion="css"
@@ -5326,6 +5331,7 @@ exports[`addon Info should render component description if story name matches co
   background: #FFFFFF;
   font-size: 12px;
   line-height: 16px;
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
   border-top: 1px solid rgba(0,0,0,.1);
   border-left: 1px solid rgba(0,0,0,.1);
@@ -5377,6 +5383,7 @@ exports[`addon Info should render component description if story name matches co
     maxPropObjectKeys={3}
     maxPropStringLength={50}
     maxPropsIntoLine={3}
+    propTableCompare={[Function]}
     propTables={null}
     propTablesExclude={Array []}
     showHeader={true}
@@ -5917,8 +5924,8 @@ exports[`addon Info should render component description if story name matches co
                               Object {
                                 "insert": [Function],
                                 "inserted": Object {
-                                  "110qmus": true,
                                   "11xgcgt": true,
+                                  "1imo1gr": true,
                                   "1maezg8": true,
                                   "1si67pu": true,
                                   "4zr3vl": true,
@@ -6862,7 +6869,7 @@ exports[`addon Info should render component description if story name matches co
                                       data-emotion="css"
                                     >
                                       
-                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                                     </style>
                                     <style
                                       data-emotion="css"
@@ -7360,7 +7367,7 @@ exports[`addon Info should render component description if story name matches co
                                       data-emotion="css"
                                     >
                                       
-                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                                     </style>,
                                     <style
                                       data-emotion="css"
@@ -7929,8 +7936,8 @@ exports[`addon Info should render component description if story name matches co
                               Object {
                                 "insert": [Function],
                                 "inserted": Object {
-                                  "110qmus": true,
                                   "11xgcgt": true,
+                                  "1imo1gr": true,
                                   "1maezg8": true,
                                   "1si67pu": true,
                                   "4zr3vl": true,
@@ -8874,7 +8881,7 @@ exports[`addon Info should render component description if story name matches co
                                       data-emotion="css"
                                     >
                                       
-                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                                     </style>
                                     <style
                                       data-emotion="css"
@@ -9372,7 +9379,7 @@ exports[`addon Info should render component description if story name matches co
                                       data-emotion="css"
                                     >
                                       
-                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
+                                      .emotion-8{border:0 none;padding:4px 10px;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#333333;background:#FFFFFF;font-size:12px;line-height:16px;font-family:"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;border-top:1px solid rgba(0,0,0,.1);border-left:1px solid rgba(0,0,0,.1);margin-left:-1px;border-radius:4px 0 0 0;}
                                     </style>,
                                     <style
                                       data-emotion="css"

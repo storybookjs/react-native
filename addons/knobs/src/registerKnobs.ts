@@ -46,7 +46,7 @@ function knobChanged(change: KnobStoreKnob) {
 
 function knobClicked(clicked: KnobStoreKnob) {
   const knobOptions = knobStore.get(clicked.name);
-  if (knobOptions.callback() !== false) {
+  if (knobOptions.callback && knobOptions.callback() !== false) {
     forceReRender();
   }
 }

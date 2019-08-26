@@ -1,31 +1,25 @@
-import React, { Component, WeakValidationMap } from 'react';
+import React, { Component, Validator } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
+import { KnobControlConfig, KnobControlProps } from './types';
 
-type RadiosTypeKnobValue = string;
+export type RadiosTypeKnobValue = string | number | null | undefined;
 
-export interface RadiosTypeKnob {
-  name: string;
-  value: RadiosTypeKnobValue;
-  defaultValue: RadiosTypeKnobValue;
-  options: RadiosTypeOptionsProp;
+export type RadiosTypeOptionsProp<T extends RadiosTypeKnobValue> = Record<string | number, T>;
+
+export interface RadiosTypeKnob extends KnobControlConfig<RadiosTypeKnobValue> {
+  options: RadiosTypeOptionsProp<RadiosTypeKnobValue>;
 }
 
-export interface RadiosTypeOptionsProp {
-  [key: string]: RadiosTypeKnobValue;
-}
-
-interface RadiosTypeProps {
+interface RadiosTypeProps extends KnobControlProps<RadiosTypeKnobValue>, RadiosWrapperProps {
   knob: RadiosTypeKnob;
-  isInline: boolean;
-  onChange: (value: RadiosTypeKnobValue) => RadiosTypeKnobValue;
 }
 
 interface RadiosWrapperProps {
   isInline: boolean;
 }
 
-const RadiosWrapper = styled.div(({ isInline }: RadiosWrapperProps) =>
+const RadiosWrapper = styled.div<RadiosWrapperProps>(({ isInline }) =>
   isInline
     ? {
         display: 'flex',
@@ -51,15 +45,14 @@ class RadiosType extends Component<RadiosTypeProps> {
     isInline: false,
   };
 
-  static propTypes: WeakValidationMap<RadiosTypeProps> = {
-    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+  static propTypes = {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.string,
       options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-    }) as any,
-    onChange: PropTypes.func,
-    isInline: PropTypes.bool,
+    }) as Validator<RadiosTypeProps['knob']>,
+    onChange: PropTypes.func as Validator<RadiosTypeProps['onChange']>,
+    isInline: PropTypes.bool as Validator<RadiosTypeProps['isInline']>,
   };
 
   static serialize = (value: RadiosTypeKnobValue) => value;
@@ -85,7 +78,7 @@ class RadiosType extends Component<RadiosTypeProps> {
           type="radio"
           id={id}
           name={name}
-          value={opts.value}
+          value={opts.value || undefined}
           onChange={e => onChange(e.target.value)}
           checked={value === knob.value}
         />

@@ -1,13 +1,19 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, Validator } from 'react';
 import PropTypes from 'prop-types';
 import ReactSelect from 'react-select';
-import { ValueType } from 'react-select/lib/types';
 import { styled } from '@storybook/theming';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 import RadiosType from './Radio';
 import CheckboxesType from './Checkboxes';
 
 // TODO: Apply the Storybook theme to react-select
+
+export type OptionsTypeKnobSingleValue = string | number | null | undefined;
+
+export type OptionsTypeKnobValue<
+  T extends OptionsTypeKnobSingleValue = OptionsTypeKnobSingleValue
+> = T | NonNullable<T>[] | readonly NonNullable<T>[];
 
 export type OptionsKnobOptionsDisplay =
   | 'radio'
@@ -21,10 +27,7 @@ export interface OptionsKnobOptions {
   display?: OptionsKnobOptionsDisplay;
 }
 
-export interface OptionsTypeKnob<T> {
-  name: string;
-  value: T;
-  defaultValue: T;
+export interface OptionsTypeKnob<T extends OptionsTypeKnobValue> extends KnobControlConfig<T> {
   options: OptionsTypeOptionsProp<T>;
   optionsObj: OptionsKnobOptions;
 }
@@ -33,22 +36,20 @@ export interface OptionsTypeOptionsProp<T> {
   [key: string]: T;
 }
 
-export interface OptionsTypeProps<T> {
+export interface OptionsTypeProps<T extends OptionsTypeKnobValue> extends KnobControlProps<T> {
   knob: OptionsTypeKnob<T>;
   display: OptionsKnobOptionsDisplay;
-  onChange: (value: T) => T;
 }
 
-// : React.ComponentType<ReactSelectProps>
 const OptionsSelect = styled(ReactSelect)({
   width: '100%',
   maxWidth: '300px',
   color: 'black',
 });
 
-type ReactSelectOnChangeFn<OptionType = OptionsSelectValueItem> = (
-  value: ValueType<OptionType>
-) => void;
+type ReactSelectOnChangeFn =
+  | { (v: OptionsSelectValueItem): void }
+  | { (v: OptionsSelectValueItem[]): void };
 
 interface OptionsSelectValueItem {
   value: any;
@@ -111,12 +112,11 @@ OptionsType.defaultProps = {
 };
 
 OptionsType.propTypes = {
-  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
     options: PropTypes.object,
-  }) as any,
+  }) as Validator<OptionsTypeProps<any>['knob']>,
   display: PropTypes.oneOf<OptionsKnobOptionsDisplay>([
     'radio',
     'inline-radio',
@@ -124,8 +124,8 @@ OptionsType.propTypes = {
     'inline-check',
     'select',
     'multi-select',
-  ]),
-  onChange: PropTypes.func,
+  ]) as Validator<OptionsTypeProps<any>['display']>,
+  onChange: PropTypes.func as Validator<OptionsTypeProps<any>['onChange']>,
 };
 
 OptionsType.serialize = serialize;

@@ -1,66 +1,69 @@
 # Migration
 
-- [Migration](#Migration)
-  - [From version 5.1.x to 5.2.x](#From-version-51x-to-52x)
-    - [Docs mode docgen](#Docs-mode-docgen)
-    - [storySort option](#storySort-option)
-  - [From version 5.0.x to 5.1.x](#From-version-50x-to-51x)
-    - [React native server](#React-native-server)
-    - [Angular 7](#Angular-7)
-    - [CoreJS 3](#CoreJS-3)
-  - [From version 5.0.1 to 5.0.2](#From-version-501-to-502)
-    - [Deprecate webpack extend mode](#Deprecate-webpack-extend-mode)
-  - [From version 4.1.x to 5.0.x](#From-version-41x-to-50x)
-    - [sortStoriesByKind](#sortStoriesByKind)
-  - [Webpack config simplification](#Webpack-config-simplification)
-  - [Theming overhaul](#Theming-overhaul)
-  - [Story hierarchy defaults](#Story-hierarchy-defaults)
-  - [Options addon deprecated](#Options-addon-deprecated)
-  - [Individual story decorators](#Individual-story-decorators)
-  - [Addon backgrounds uses parameters](#Addon-backgrounds-uses-parameters)
-  - [Addon cssresources name attribute renamed](#Addon-cssresources-name-attribute-renamed)
-  - [Addon viewport uses parameters](#Addon-viewport-uses-parameters)
-  - [Addon a11y uses parameters, decorator renamed](#Addon-a11y-uses-parameters-decorator-renamed)
-  - [New keyboard shortcuts defaults](#New-keyboard-shortcuts-defaults)
-  - [New URL structure](#New-URL-structure)
-  - [Rename of the `--secure` cli parameter to `--https`](#Rename-of-the---secure-cli-parameter-to---https)
-  - [Vue integration](#Vue-integration)
-  - [From version 4.0.x to 4.1.x](#From-version-40x-to-41x)
-  - [Private addon config](#Private-addon-config)
-  - [React 15.x](#React-15x)
-  - [From version 3.4.x to 4.0.x](#From-version-34x-to-40x)
-    - [React 16.3+](#React-163)
-    - [Generic addons](#Generic-addons)
-    - [Knobs select ordering](#Knobs-select-ordering)
-    - [Knobs URL parameters](#Knobs-URL-parameters)
-    - [Keyboard shortcuts moved](#Keyboard-shortcuts-moved)
-    - [Removed addWithInfo](#Removed-addWithInfo)
-    - [Removed RN packager](#Removed-RN-packager)
-    - [Removed RN addons](#Removed-RN-addons)
-    - [Storyshots Changes](#Storyshots-Changes)
-    - [Webpack 4](#Webpack-4)
-    - [Babel 7](#Babel-7)
-    - [Create-react-app](#Create-react-app)
-      - [Upgrade CRA1 to babel 7](#Upgrade-CRA1-to-babel-7)
-      - [Migrate CRA1 while keeping babel 6](#Migrate-CRA1-while-keeping-babel-6)
+- [Migration](#migration)
+  - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
+    - [Grid toolbar-feature](#grid-toolbar-feature)
+    - [Docs mode docgen](#docs-mode-docgen)
+    - [storySort option](#storysort-option)
+  - [From version 5.1.x to 5.1.10](#from-version-51x-to-5110)
+    - [babel.config.js support](#babelconfigjs-support)
+  - [From version 5.0.x to 5.1.x](#from-version-50x-to-51x)
+    - [React native server](#react-native-server)
+    - [Angular 7](#angular-7)
+    - [CoreJS 3](#corejs-3)
+  - [From version 5.0.1 to 5.0.2](#from-version-501-to-502)
+    - [Deprecate webpack extend mode](#deprecate-webpack-extend-mode)
+  - [From version 4.1.x to 5.0.x](#from-version-41x-to-50x)
+    - [sortStoriesByKind](#sortstoriesbykind)
+    - [Webpack config simplification](#webpack-config-simplification)
+    - [Theming overhaul](#theming-overhaul)
+    - [Story hierarchy defaults](#story-hierarchy-defaults)
+    - [Options addon deprecated](#options-addon-deprecated)
+    - [Individual story decorators](#individual-story-decorators)
+    - [Addon backgrounds uses parameters](#addon-backgrounds-uses-parameters)
+    - [Addon cssresources name attribute renamed](#addon-cssresources-name-attribute-renamed)
+    - [Addon viewport uses parameters](#addon-viewport-uses-parameters)
+    - [Addon a11y uses parameters, decorator renamed](#addon-a11y-uses-parameters-decorator-renamed)
+    - [New keyboard shortcuts defaults](#new-keyboard-shortcuts-defaults)
+    - [New URL structure](#new-url-structure)
+    - [Rename of the `--secure` cli parameter to `--https`](#rename-of-the---secure-cli-parameter-to---https)
+    - [Vue integration](#vue-integration)
+  - [From version 4.0.x to 4.1.x](#from-version-40x-to-41x)
+    - [Private addon config](#private-addon-config)
+    - [React 15.x](#react-15x)
+  - [From version 3.4.x to 4.0.x](#from-version-34x-to-40x)
+    - [React 16.3+](#react-163)
+    - [Generic addons](#generic-addons)
+    - [Knobs select ordering](#knobs-select-ordering)
+    - [Knobs URL parameters](#knobs-url-parameters)
+    - [Keyboard shortcuts moved](#keyboard-shortcuts-moved)
+    - [Removed addWithInfo](#removed-addwithinfo)
+    - [Removed RN packager](#removed-rn-packager)
+    - [Removed RN addons](#removed-rn-addons)
+    - [Storyshots Changes](#storyshots-changes)
+    - [Webpack 4](#webpack-4)
+    - [Babel 7](#babel-7)
+    - [Create-react-app](#create-react-app)
+      - [Upgrade CRA1 to babel 7](#upgrade-cra1-to-babel-7)
+      - [Migrate CRA1 while keeping babel 6](#migrate-cra1-while-keeping-babel-6)
     - [start-storybook opens browser](#start-storybook-opens-browser)
-    - [CLI Rename](#CLI-Rename)
-    - [Addon story parameters](#Addon-story-parameters)
-  - [From version 3.3.x to 3.4.x](#From-version-33x-to-34x)
-  - [From version 3.2.x to 3.3.x](#From-version-32x-to-33x)
+    - [CLI Rename](#cli-rename)
+    - [Addon story parameters](#addon-story-parameters)
+  - [From version 3.3.x to 3.4.x](#from-version-33x-to-34x)
+  - [From version 3.2.x to 3.3.x](#from-version-32x-to-33x)
     - [`babel-core` is now a peer dependency (#2494)](#babel-core-is-now-a-peer-dependency-2494)
-    - [Base webpack config now contains vital plugins (#1775)](#Base-webpack-config-now-contains-vital-plugins-1775)
-    - [Refactored Knobs](#Refactored-Knobs)
-  - [From version 3.1.x to 3.2.x](#From-version-31x-to-32x)
-    - [Moved TypeScript addons definitions](#Moved-TypeScript-addons-definitions)
-    - [Updated Addons API](#Updated-Addons-API)
-  - [From version 3.0.x to 3.1.x](#From-version-30x-to-31x)
-    - [Moved TypeScript definitions](#Moved-TypeScript-definitions)
-    - [Deprecated head.html](#Deprecated-headhtml)
-  - [From version 2.x.x to 3.x.x](#From-version-2xx-to-3xx)
-    - [Webpack upgrade](#Webpack-upgrade)
-    - [Packages renaming](#Packages-renaming)
-    - [Deprecated embedded addons](#Deprecated-embedded-addons)
+    - [Base webpack config now contains vital plugins (#1775)](#base-webpack-config-now-contains-vital-plugins-1775)
+    - [Refactored Knobs](#refactored-knobs)
+  - [From version 3.1.x to 3.2.x](#from-version-31x-to-32x)
+    - [Moved TypeScript addons definitions](#moved-typescript-addons-definitions)
+    - [Updated Addons API](#updated-addons-api)
+  - [From version 3.0.x to 3.1.x](#from-version-30x-to-31x)
+    - [Moved TypeScript definitions](#moved-typescript-definitions)
+    - [Deprecated head.html](#deprecated-headhtml)
+  - [From version 2.x.x to 3.x.x](#from-version-2xx-to-3xx)
+    - [Webpack upgrade](#webpack-upgrade)
+    - [Packages renaming](#packages-renaming)
+    - [Deprecated embedded addons](#deprecated-embedded-addons)
 
 ## From version 5.1.x to 5.2.x
 
@@ -99,10 +102,17 @@ For example, here's how to sort by story ID using `storySort`:
 ```js
 addParameters({
   options: {
-    storySort: (a, b) => a[1].id.localeCompare(b[1].id),
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, { numeric: true }),
   },
 });
 ```
+
+## From version 5.1.x to 5.1.10
+
+### babel.config.js support
+
+SB 5.1.0 added [support for project root `babel.config.js` files](https://github.com/storybookjs/storybook/pull/6634), which was an [unintentional breaking change](https://github.com/storybookjs/storybook/issues/7058#issuecomment-515398228). 5.1.10 fixes this, but if you relied on project root `babel.config.js` support, this bugfix is a breaking change. The workaround is to copy the file into your `.storybook` config directory. We may add back project-level support in 6.0.
 
 ## From version 5.0.x to 5.1.x
 
@@ -227,7 +237,7 @@ sortedModules.forEach(key => {
 });
 ```
 
-## Webpack config simplification
+### Webpack config simplification
 
 The API for custom webpack configuration has been simplifed in 5.0, but it's a breaking change. Storybook's "full control mode" for webpack allows you to override the webpack config with a function that returns a configuration object.
 
@@ -241,11 +251,11 @@ In contrast, the 4.x configuration function accepted either two or three argumen
 
 Please see the [current custom webpack documentation](https://github.com/storybookjs/storybook/blob/next/docs/src/pages/configurations/custom-webpack-config/index.md) for more information on custom webpack config.
 
-## Theming overhaul
+### Theming overhaul
 
 Theming has been rewritten in v5. If you used theming in v4, please consult the [theming docs](https://github.com/storybookjs/storybook/blob/next/docs/src/pages/configurations/theming/index.md) to learn about the new API.
 
-## Story hierarchy defaults
+### Story hierarchy defaults
 
 Storybook's UI contains a hierarchical tree of stories that can be configured by `hierarchySeparator` and `hierarchyRootSeparator` [options](./addons/options/README.md).
 
@@ -273,7 +283,7 @@ addParameters({
 });
 ```
 
-## Options addon deprecated
+### Options addon deprecated
 
 In 4.x we added story parameters. In 5.x we've deprecated the options addon in favor of [global parameters](./docs/src/pages/configurations/options-parameter/index.md), and we've also renamed some of the options in the process (though we're maintaining backwards compatibility until 6.0).
 
@@ -327,7 +337,7 @@ Storybook v5 removes the search dialog box in favor of a quick search in the nav
 
 Storybook v5 introduce a new tool bar above the story view and you can show\hide it with the new `isToolshown` option.
 
-## Individual story decorators
+### Individual story decorators
 
 The behavior of adding decorators to a kind has changed in SB5 ([#5781](https://github.com/storybookjs/storybook/issues/5781)).
 
@@ -350,7 +360,7 @@ storiesOf('Stories', module)
   .add('centered', () => 'Hello', { decorators: [centered] });
 ```
 
-## Addon backgrounds uses parameters
+### Addon backgrounds uses parameters
 
 Similarly, `@storybook/addon-backgrounds` uses parameters to pass background options. If you previously had:
 
@@ -369,7 +379,7 @@ storiesOf('Stories', module).addParameters({ backgrounds: options });
 
 You can pass `backgrounds` parameters at the global level (via `addParameters` imported from `@storybook/react` et al.), and the story level (via the third argument to `.add()`).
 
-## Addon cssresources name attribute renamed
+### Addon cssresources name attribute renamed
 
 In the options object for `@storybook/addon-cssresources`, the `name` attribute for each resource has been renamed to `id`. If you previously had:
 
@@ -409,7 +419,7 @@ addDecorator(
 );
 ```
 
-## Addon viewport uses parameters
+### Addon viewport uses parameters
 
 Similarly, `@storybook/addon-viewport` uses parameters to pass viewport options. If you previously had:
 
@@ -431,7 +441,7 @@ The `withViewport` decorator is also no longer supported and should be replaced 
 
 See the [viewport addon README](https://github.com/storybookjs/storybook/blob/master/addons/viewport/README.md) for more information.
 
-## Addon a11y uses parameters, decorator renamed
+### Addon a11y uses parameters, decorator renamed
 
 Similarly, `@storybook/addon-a11y` uses parameters to pass a11y options. If you previously had:
 
@@ -455,7 +465,7 @@ Furthermore, the decorator `checkA11y` has been deprecated and renamed to `withA
 
 See the [a11y addon README](https://github.com/storybookjs/storybook/blob/master/addons/a11y/README.md) for more information.
 
-## New keyboard shortcuts defaults
+### New keyboard shortcuts defaults
 
 Storybook's keyboard shortcuts are updated in 5.0, but they are configurable via the menu so if you want to set them back you can:
 
@@ -471,7 +481,7 @@ Storybook's keyboard shortcuts are updated in 5.0, but they are configurable via
 | Prev component         |             | alt-↑ |
 | Search                 |             | /     |
 
-## New URL structure
+### New URL structure
 
 We've update Storybook's URL structure in 5.0. The old structure used URL parameters to save the UI state, resulting in long ugly URLs. v5 respects the old URL parameters, but largely does away with them.
 
@@ -485,7 +495,7 @@ https://url-of-storybook?path=/story/<storyId>
 
 The structure of `storyId` is a slugified `<selectedKind>--<selectedStory>` (slugified = lowercase, hyphen-separated). Each `storyId` must be unique. We plan to build more features into Storybook in upcoming versions based on this new structure.
 
-## Rename of the `--secure` cli parameter to `--https`
+### Rename of the `--secure` cli parameter to `--https`
 
 Storybook for React Native's start commands & the Web versions' start command were a bit different, for no reason.
 We've changed the start command for Reactnative to match the other.
@@ -504,7 +514,7 @@ You have to replace it with:
 start-storybook --https
 ```
 
-## Vue integration
+### Vue integration
 
 The Vue integration was updated, so that every story returned from a story or decorator function is now being normalized with `Vue.extend` **and** is being wrapped by a functional component. Returning a string from a story or decorator function is still supported and is treated as a component with the returned string as the template.
 
@@ -514,11 +524,11 @@ Currently there is no recommended way of accessing the component options of a st
 
 There are are a few migrations you should be aware of in 4.1, including one unintentionally breaking change for advanced addon usage.
 
-## Private addon config
+### Private addon config
 
 If your Storybook contains custom addons defined that are defined in your app (as opposed to installed from packages) and those addons rely on reconfiguring webpack/babel, Storybook 4.1 may break for you. There's a workaround [described in the issue](https://github.com/storybookjs/storybook/issues/4995), and we're working on official support in the next release.
 
-## React 15.x
+### React 15.x
 
 Storybook 4.1 supports React 15.x (which had been [lost in the 4.0 release](#react-163)). So if you've been blocked on upgrading, we've got you covered. You should be able to upgrade according to the 4.0 migration notes below, or following the [4.0 upgrade guide](https://medium.com/storybookjs/migrating-to-storybook-4-c65b19a03d2c).
 

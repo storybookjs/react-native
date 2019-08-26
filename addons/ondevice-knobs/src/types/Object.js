@@ -37,12 +37,18 @@ class ObjectType extends React.Component {
 
   handleChange = value => {
     const { onChange } = this.props;
+
+    const withReplacedQuotes = value
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201C\u201D]/g, '"');
+
     const newState = {
-      jsonString: value,
+      jsonString: withReplacedQuotes,
     };
 
     try {
-      newState.json = JSON.parse(value.trim());
+      newState.json = JSON.parse(withReplacedQuotes.trim());
+
       onChange(newState.json);
       this.failed = false;
     } catch (err) {
@@ -70,6 +76,7 @@ class ObjectType extends React.Component {
         value={jsonString}
         onChangeText={this.handleChange}
         multiline
+        autoCapitalize="none"
         underlineColorAndroid="transparent"
       />
     );
