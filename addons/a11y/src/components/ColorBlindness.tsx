@@ -79,7 +79,7 @@ const getColorList = (active: string | null, set: (i: string | null) => void): L
   })),
 ];
 
-export function ColorBlindness() {
+export const ColorBlindness: React.FC = () => {
   const [active, setActiveState] = useState(null);
 
   const setActive = (activeState: string | null): void => {
@@ -114,4 +114,4 @@ export function ColorBlindness() {
       </IconButton>
     </WithTooltip>
   );
-}
+};
