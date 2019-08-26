@@ -6,7 +6,8 @@ import { getQueryParams } from '@storybook/client-api';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Channel } from '@storybook/channels';
 
-import KnobStore, { Knob } from './KnobStore';
+import KnobStore, { KnobStoreKnob } from './KnobStore';
+import { Knob, KnobType, Mutable } from './type-defs';
 import { SET } from './shared';
 
 import { deserializers } from './converters';
@@ -53,11 +54,11 @@ interface KnobManagerOptions {
 export default class KnobManager {
   knobStore = new KnobStore();
 
-  channel: Channel;
+  channel: Channel | undefined;
 
   options: KnobManagerOptions = {};
 
-  calling: boolean;
+  calling: boolean = false;
 
   setChannel(channel: Channel) {
     this.channel = channel;
@@ -71,7 +72,7 @@ export default class KnobManager {
     return this.options.escapeHTML ? escapeStrings(value) : value;
   }
 
-  knob(name: string, options: Knob) {
+  knob<T extends KnobType = any>(name: string, options: Knob<T>): Mutable<Knob<T>['value']> {
     this._mayCallChannel();
 
     const knobName = options.groupId ? `${name}_${options.groupId}` : name;
@@ -93,7 +94,7 @@ export default class KnobManager {
       return this.getKnobValue(existingKnob);
     }
 
-    const knobInfo: Knob & { name: string; label: string; defaultValue?: any } = {
+    const knobInfo: Knob<T> & { name: string; label: string; defaultValue?: any } = {
       ...options,
       name: knobName,
       label: name,
@@ -110,7 +111,7 @@ export default class KnobManager {
       knobInfo.defaultValue = options.value;
     }
 
-    knobStore.set(knobName, knobInfo);
+    knobStore.set(knobName, knobInfo as KnobStoreKnob);
     return this.getKnobValue(knobStore.get(knobName));
   }
 
@@ -138,7 +139,7 @@ export default class KnobManager {
     setTimeout(() => {
       this.calling = false;
       // emit to the channel and trigger a panel re-render
-      this.channel.emit(SET, { knobs: this.knobStore.getAll(), timestamp });
+      if (this.channel) this.channel.emit(SET, { knobs: this.knobStore.getAll(), timestamp });
     }, PANEL_UPDATE_INTERVAL);
   }
 }

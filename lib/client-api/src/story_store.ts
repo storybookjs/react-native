@@ -23,8 +23,6 @@ import {
 const toKey = (input: string) =>
   input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
 
-const toChild = (it: {}) => ({ ...it });
-
 let count = 0;
 
 const getId = (): number => {
@@ -47,6 +45,21 @@ interface Selection {
   storyId: string;
   viewMode: string;
 }
+
+interface StoryOptions {
+  includeDocsOnly?: boolean;
+}
+
+const isStoryDocsOnly = (parameters?: Parameters) => {
+  return parameters && parameters.docsOnly;
+};
+
+const includeStory = (story: StoreItem, options: StoryOptions = { includeDocsOnly: false }) => {
+  if (options.includeDocsOnly) {
+    return true;
+  }
+  return !isStoryDocsOnly(story.parameters);
+};
 
 export default class StoryStore extends EventEmitter {
   _error?: ErrorLike;
@@ -95,13 +108,14 @@ export default class StoryStore extends EventEmitter {
     }
   };
 
-  raw() {
+  raw(options?: StoryOptions) {
     return Object.values(this._data)
       .filter(i => !!i.getDecorated)
+      .filter(i => includeStory(i, options))
       .map(({ id }) => this.fromId(id));
   }
 
-  extract() {
+  extract(options?: StoryOptions) {
     const stories = Object.entries(this._data);
     // determine if we should apply a sort to the stories or just use default import order
     if (Object.values(this._data).length > 0) {
@@ -115,7 +129,10 @@ export default class StoryStore extends EventEmitter {
       }
     }
     // removes function values from all stories so they are safe to transport over the channel
-    return stories.reduce((a, [k, v]) => Object.assign(a, { [k]: toExtracted(v) }), {});
+    return stories.reduce(
+      (a, [k, v]) => (includeStory(v, options) ? Object.assign(a, { [k]: toExtracted(v) }) : a),
+      {}
+    );
   }
 
   setSelection(data: Selection | undefined, error: ErrorLike): void {
@@ -188,8 +205,12 @@ export default class StoryStore extends EventEmitter {
       applyDecorators(getOriginal(), getDecorators())
     );
 
-    const storyFn: StoryFn = (p: object) =>
-      getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
+    const storyFn: StoryFn = p =>
+      getDecorated()({
+        ...identification,
+        ...p,
+        parameters: { ...parameters, ...(p && p.parameters) },
+      });
 
     _data[id] = {
       ...identification,
@@ -202,7 +223,9 @@ export default class StoryStore extends EventEmitter {
     };
 
     // LEGACY DATA
-    this.addLegacyStory({ kind, name, storyFn, parameters });
+    if (!isStoryDocsOnly(parameters)) {
+      this.addLegacyStory({ kind, name, storyFn, parameters });
+    }
 
     // LET'S SEND IT TO THE MANAGER
     this.pushToManager();
@@ -210,7 +233,7 @@ export default class StoryStore extends EventEmitter {
 
   pushToManager = debounce(() => {
     if (this._channel) {
-      const stories = this.extract();
+      const stories = this.extract({ includeDocsOnly: true });
 
       // send to the parent frame.
       this._channel.emit(Events.SET_STORIES, { stories });
@@ -332,6 +355,7 @@ export default class StoryStore extends EventEmitter {
         }
         return acc;
       }, {});
+      this.pushToManager();
     }
   }
 

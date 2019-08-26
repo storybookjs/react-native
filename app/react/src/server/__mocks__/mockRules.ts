@@ -1,7 +1,7 @@
 export default [
   { parser: { requireEnsure: false } },
   {
-    test: /\.(js|mjs|jsx)$/,
+    test: /\.(js|mjs|jsx|ts|tsx)$/,
     enforce: 'pre',
     use: [
       {
@@ -10,7 +10,6 @@ export default [
           eslintPath: '/mock_folder/node_modules/eslint/lib/api.js',
           baseConfig: {
             extends: ['/mock_folder/node_modules/eslint-config-react-app/index.js'],
-            settings: { react: { version: '999.999.999' } },
           },
           ignore: false,
           useEslintrc: false,
@@ -44,7 +43,7 @@ export default [
               {
                 loaderMap: {
                   svg: {
-                    ReactComponent: '@svgr/webpack?-prettier,-svgo![path]',
+                    ReactComponent: '@svgr/webpack?-svgo,+titleProp,+ref![path]',
                   },
                 },
               },

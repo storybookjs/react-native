@@ -37,9 +37,6 @@ export class IFrame extends React.Component<IFrameProps> {
         transformOrigin: 'top left',
       });
     }
-    // if(this.props.src !== src) {
-    //   debugger;
-    // }
     return false;
   }
 

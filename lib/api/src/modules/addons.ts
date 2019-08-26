@@ -115,6 +115,7 @@ export default ({ provider, store }: Module) => {
       options?: Options
     ): Promise<S> {
       let nextState;
+      const { addons: existing } = store.getState();
       if (typeof newStateOrMerger === 'function') {
         const merger = newStateOrMerger as StateMerger<S>;
         nextState = merger(api.getAddonState<S>(addonId));
@@ -122,7 +123,7 @@ export default ({ provider, store }: Module) => {
         nextState = newStateOrMerger;
       }
       return store
-        .setState({ addons: { [addonId]: nextState } }, options)
+        .setState({ addons: { ...existing, [addonId]: nextState } }, options)
         .then(() => api.getAddonState(addonId));
     },
     getAddonState: addonId => {

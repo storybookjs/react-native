@@ -155,7 +155,7 @@ The webpack config [is configurable](/configurations/custom-webpack-config/), an
 - Create a `.storybook/webpack.config.js` file.
 - Edit its contents:
   ```js
-  module.exports = async ({ config }) => console.dir(config.plugins, { depth: null }) || config;
+  module.exports = async ({ config }) => console.dir(config, { depth: null }) || config;
   ```
 - Then run storybook:
   ```sh

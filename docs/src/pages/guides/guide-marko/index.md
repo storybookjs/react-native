@@ -88,15 +88,18 @@ That'll load stories in `../stories/index.js`. You can choose where to place sto
 Now create a `../stories/index.js` file, and write your first story like this:
 
 ```js
-/** @jsx m */
-
-import m from 'marko';
 import { storiesOf } from '@storybook/marko';
 import Button from '../components/button/index.marko';
 
 storiesOf('Button', module)
-  .add('with text', () => Button.renderSync({ text: 'some text'}))
-  .add('with emoji', () => Button.renderSync({ text: '😀 😎 👍 💯'}));
+  .add('with text', () => ({
+    component: Button,
+    input: { text 'some text' }
+  }))
+  .add('with emoji', () => ({
+    component: Button,
+    input: { text '😀 😎 👍 💯' }
+  }));
 ```
 
 Each story is a single state of your component. In the above case, there are two stories for the demo button component:

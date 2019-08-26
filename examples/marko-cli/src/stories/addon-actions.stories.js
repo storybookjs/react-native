@@ -5,7 +5,13 @@ export default {
   title: 'Addons|Actions/Button',
   parameters: {
     component: Button,
+    options: {
+      panelPosition: 'right',
+    },
   },
 };
 
-export const Simple = () => Button.renderSync({ click: action('action logged!') });
+export const Simple = () => ({
+  component: Button,
+  input: { click: action('action logged!') },
+});

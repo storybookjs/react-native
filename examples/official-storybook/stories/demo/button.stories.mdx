@@ -1,0 +1,36 @@
+import { useState } from 'react';
+import { action } from '@storybook/addon-actions';
+import { Button } from '@storybook/react/demo';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+<Meta title="Other|Demo/ButtonMdx" component={Button} />
+
+# Simple Button
+
+## Hello
+
+<Story name="with text">
+  <Button onClick={action('clicked')}>Hello Button</Button>
+</Story>
+
+## Emoji
+
+<Story name="with some emoji">
+  <Button onClick={action('clicked')}>
+    <span role="img" aria-label="so cool">
+      😀 😎 👍 💯
+    </span>
+  </Button>
+</Story>
+
+## Counter w/ Code
+
+<Preview>
+  <Story name="with counter">
+    {() => {
+      const [counter, setCounter] = useState(0);
+      const label = `Testing: ${counter}`;
+      return <Button onClick={() => setCounter(counter + 1)}>{label}</Button>;
+    }}
+  </Story>
+</Preview>

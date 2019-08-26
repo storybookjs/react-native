@@ -1,19 +1,17 @@
 import PropTypes from 'prop-types';
-import React, { Component, WeakValidationMap } from 'react';
+import React, { ChangeEvent, Component, Validator } from 'react';
 
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
-type ArrayTypeKnobValue = string[];
+export type ArrayTypeKnobValue = string[] | readonly string[];
 
-export interface ArrayTypeKnob {
-  name: string;
-  value: ArrayTypeKnobValue;
+export interface ArrayTypeKnob extends KnobControlConfig<ArrayTypeKnobValue> {
   separator: string;
 }
 
-interface ArrayTypeProps {
+interface ArrayTypeProps extends KnobControlProps<ArrayTypeKnobValue> {
   knob: ArrayTypeKnob;
-  onChange: (value: ArrayTypeKnobValue) => ArrayTypeKnobValue;
 }
 
 function formatArray(value: string, separator: string) {
@@ -29,19 +27,18 @@ export default class ArrayType extends Component<ArrayTypeProps> {
     onChange: (value: ArrayTypeKnobValue) => value,
   };
 
-  static propTypes: WeakValidationMap<ArrayTypeProps> = {
-    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+  static propTypes = {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.array,
       separator: PropTypes.string,
-    }) as any,
-    onChange: PropTypes.func,
+    }) as Validator<ArrayTypeProps['knob']>,
+    onChange: PropTypes.func as Validator<ArrayTypeProps['onChange']>,
   };
 
   static serialize = (value: ArrayTypeKnobValue) => value;
 
-  static deserialize = (value: ArrayTypeKnobValue) => {
+  static deserialize = (value: string[]) => {
     if (Array.isArray(value)) return value;
 
     return Object.keys(value)
@@ -55,7 +52,7 @@ export default class ArrayType extends Component<ArrayTypeProps> {
     return nextProps.knob.value !== knob.value;
   }
 
-  handleChange = (e: Event) => {
+  handleChange = (e: ChangeEvent<HTMLTextAreaElement>): void => {
     const { knob, onChange } = this.props;
     const { value } = e.target as HTMLTextAreaElement;
     const newVal = formatArray(value, knob.separator);

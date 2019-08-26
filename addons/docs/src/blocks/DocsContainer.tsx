@@ -2,33 +2,47 @@
 
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { Global, createGlobal, ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
-import { DocumentFormatting, DocsWrapper, DocsContent } from '@storybook/components';
+import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
+import { DocsWrapper, DocsContent, Source } from '@storybook/components';
+import { components as htmlComponents, Code } from '@storybook/components/html';
 import { DocsContextProps, DocsContext } from './DocsContext';
 
 interface DocsContainerProps {
   context: DocsContextProps;
-  content: React.ElementType<any>;
 }
 
-const defaultComponents = {
-  // p: ({ children }) => <b>{children}</b>,
-  wrapper: DocumentFormatting,
+interface CodeOrSourceProps {
+  className?: string;
+}
+export const CodeOrSource: React.FC<CodeOrSourceProps> = props => {
+  const { className, children, ...rest } = props;
+  // markdown-to-jsx does not add className to inline code
+  if (
+    typeof className !== 'string' &&
+    (typeof children !== 'string' || !(children as string).match(/[\n\r]/g))
+  ) {
+    return <Code>{children}</Code>;
+  }
+  // className: "lang-jsx"
+  const language = className && className.split('-');
+  return (
+    <Source
+      language={(language && language[1]) || 'plaintext'}
+      format={false}
+      code={children as string}
+      {...rest}
+    />
+  );
 };
 
-const globalWithOverflow = (args: any) => {
-  const global = createGlobal(args);
-  const { body, ...rest } = global;
-  const { overflow, ...bodyRest } = body;
-  return {
-    body: bodyRest,
-    ...rest,
-  };
+const defaultComponents = {
+  ...htmlComponents,
+  code: CodeOrSource,
 };
 
 export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   context,
-  content: MDXContent,
+  children,
 }) => {
   const parameters = (context && context.parameters) || {};
   const options = parameters.options || {};
@@ -38,12 +52,9 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   return (
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>
-        <Global styles={globalWithOverflow} />
         <MDXProvider components={components}>
           <DocsWrapper>
-            <DocsContent>
-              <MDXContent components={components} />
-            </DocsContent>
+            <DocsContent>{children}</DocsContent>
           </DocsWrapper>
         </MDXProvider>
       </ThemeProvider>

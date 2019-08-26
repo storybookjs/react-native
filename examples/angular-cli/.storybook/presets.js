@@ -1,8 +1,1 @@
-module.exports = [
-  {
-    name: '@storybook/addon-docs/angular/preset',
-    options: {
-      configureJSX: true,
-    },
-  },
-];
+module.exports = ['@storybook/addon-docs/angular/preset'];

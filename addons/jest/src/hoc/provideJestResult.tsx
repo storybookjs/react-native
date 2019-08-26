@@ -76,7 +76,7 @@ const provideTests = (Component: React.ComponentType<InjectedProps>) =>
       const { active } = this.props;
       const { tests } = this.state;
 
-      return active && tests ? <Component tests={tests} /> : null;
+      return active ? <Component tests={tests} /> : null;
     }
   };
 

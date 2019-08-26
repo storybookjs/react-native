@@ -5,7 +5,7 @@ export default {
   decorators: [
     storyFn => {
       // Decorated with story-function
-      const WrapButton = storyFn();
+      const WrapButton = storyFn({ customContext: 52, parameters: { customParameter: 42 } });
       return {
         components: { WrapButton },
         template: '<div :style="{ border: borderStyle }"><wrap-button/></div>',
@@ -28,6 +28,10 @@ export default {
 
 export const template = () => ({
   template: '<my-button>MyButton with template</my-button>',
+});
+
+export const withData = ({ parameters, ...rest }) => ({
+  template: `<pre>${JSON.stringify({ ...rest, parameters }, null, 2)}</pre>`,
 });
 
 export const render = () => ({
