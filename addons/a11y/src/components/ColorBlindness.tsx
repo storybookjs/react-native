@@ -1,5 +1,5 @@
 import { document } from 'global';
-import React, { Component, ReactNode, useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import memoize from 'memoizerific';
 import { styled } from '@storybook/theming';
 
