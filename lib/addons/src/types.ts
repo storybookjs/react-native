@@ -1,4 +1,4 @@
-import { HooksContext } from '@storybook/client-api';
+import { HooksContext } from './hooks';
 import { Addon } from './index';
 
 export enum types {
@@ -27,7 +27,7 @@ export interface StoryContext {
   kind: string;
   [key: string]: any;
   parameters: Parameters;
-  hooks: HooksContext;
+  hooks?: HooksContext;
 }
 
 export interface WrapperSettings {
