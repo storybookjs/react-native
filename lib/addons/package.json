@@ -24,6 +24,7 @@
     "@storybook/api": "5.2.0-beta.40",
     "@storybook/channels": "5.2.0-beta.40",
     "@storybook/client-logger": "5.2.0-beta.40",
+    "@storybook/core-events": "5.2.0-beta.40",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"

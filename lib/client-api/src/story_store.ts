@@ -17,6 +17,7 @@ import {
   StoreItem,
   ErrorLike,
 } from './types';
+import { HooksContext } from './hooks';
 
 // TODO: these are copies from components/nav/lib
 // refactor to DRY
@@ -205,16 +206,20 @@ export default class StoryStore extends EventEmitter {
       applyDecorators(getOriginal(), getDecorators())
     );
 
+    const hooks = new HooksContext();
+
     const storyFn: StoryFn = p =>
       getDecorated()({
         ...identification,
         ...p,
+        hooks,
         parameters: { ...parameters, ...(p && p.parameters) },
       });
 
     _data[id] = {
       ...identification,
 
+      hooks,
       getDecorated,
       getOriginal,
       storyFn,
@@ -297,6 +302,10 @@ export default class StoryStore extends EventEmitter {
       .map(name => this._legacydata[key as string].stories[name])
       .sort((info1, info2) => info1.index - info2.index)
       .map(info => info.name);
+  }
+
+  getStoriesForKind(kind: string) {
+    return this.raw().filter(story => story.kind === kind);
   }
 
   getStoryFileName(kind: string) {
@@ -382,5 +391,13 @@ export default class StoryStore extends EventEmitter {
 
   clean() {
     this.getStoryKinds().forEach(kind => delete this._legacydata[toKey(kind) as string]);
+  }
+
+  cleanHooks(id: string) {
+    this._data[id].hooks.clean();
+  }
+
+  cleanHooksForKind(kind: string) {
+    this.getStoriesForKind(kind).map(story => this.cleanHooks(story.id));
   }
 }
