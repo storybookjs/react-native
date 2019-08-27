@@ -83,7 +83,7 @@ const withSubscriptionTracking = (storyFn: StoryFn) => {
   return result;
 };
 
-export const defaultDisplayName = (key: string) => startCase(key);
+export const defaultMakeDisplayName = (key: string) => startCase(key);
 
 export default class ClientApi {
   private _storyStore: StoryStore;
@@ -126,9 +126,9 @@ export default class ClientApi {
       this._globalParameters.options
     );
 
-  getDisplayName = () =>
-    (this._globalParameters.options && this._globalParameters.options.displayName) ||
-    defaultDisplayName;
+  getMakeDisplayName = () =>
+    (this._globalParameters.options && this._globalParameters.options.makeDisplayName) ||
+    defaultMakeDisplayName;
 
   addDecorator = (decorator: DecoratorFunction) => {
     this._globalDecorators.push(decorator);

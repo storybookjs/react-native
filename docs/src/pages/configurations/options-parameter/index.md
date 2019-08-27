@@ -89,7 +89,7 @@ addParameters({
     * will not be transformed and will always take precedence over a named export.
     * @type {Function}
     */
-    displayName: lodash.startCase
+    makeDisplayName: lodash.startCase
   },
 });
 ```
