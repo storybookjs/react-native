@@ -31,8 +31,7 @@ export const getPropsTableProps = (
     }
 
     const { framework = null } = parameters || {};
-    const { getPropDefs = inferPropDefs(framework) } =
-      (parameters && parameters.options && parameters.options.docs) || {};
+    const { getPropDefs = inferPropDefs(framework) } = (parameters && parameters.docs) || {};
 
     if (!getPropDefs) {
       throw new Error(PropsTableError.PROPS_UNSUPPORTED);
