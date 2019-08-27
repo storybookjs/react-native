@@ -103,7 +103,7 @@ exports[`Storyshots Addon|Backgrounds story 1 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Centered rounded 1`] = `
+exports[`Storyshots Addon|Centered Rounded 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -267,7 +267,7 @@ exports[`Storyshots Addon|Notes Simple note 1`] = `
 </section>
 `;
 
-exports[`Storyshots Button rounded 1`] = `
+exports[`Storyshots Button Rounded 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -309,7 +309,7 @@ exports[`Storyshots Button rounded 1`] = `
 </section>
 `;
 
-exports[`Storyshots Button square 1`] = `
+exports[`Storyshots Button Square 1`] = `
 <section
   class="storybook-snapshot-container"
 >

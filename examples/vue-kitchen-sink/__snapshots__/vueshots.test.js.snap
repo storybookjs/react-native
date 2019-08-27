@@ -48,7 +48,7 @@ exports[`Storyshots Addon|Backgrounds story 2 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon|Centered rounded 1`] = `
+exports[`Storyshots Addon|Centered Rounded 1`] = `
 <div
   style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
 >
@@ -260,7 +260,7 @@ exports[`Storyshots App App 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button rounded 1`] = `
+exports[`Storyshots Button Rounded 1`] = `
 <button
   class="button rounded"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -269,7 +269,7 @@ exports[`Storyshots Button rounded 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button square 1`] = `
+exports[`Storyshots Button Square 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -293,7 +293,7 @@ exports[`Storyshots Core|Template string only 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Decorator for Vue render 1`] = `
+exports[`Storyshots Custom|Decorator for Vue Render 1`] = `
 <div
   style="border: medium solid blue;"
 >
@@ -310,7 +310,7 @@ exports[`Storyshots Custom|Decorator for Vue render 1`] = `
 </div>
 `;
 
-exports[`Storyshots Custom|Decorator for Vue template 1`] = `
+exports[`Storyshots Custom|Decorator for Vue Template 1`] = `
 <div
   style="border: medium solid blue;"
 >
@@ -327,7 +327,7 @@ exports[`Storyshots Custom|Decorator for Vue template 1`] = `
 </div>
 `;
 
-exports[`Storyshots Custom|Decorator for Vue withData 1`] = `
+exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
 <div
   style="border: medium solid blue;"
 >
@@ -336,10 +336,10 @@ exports[`Storyshots Custom|Decorator for Vue withData 1`] = `
   >
     <pre>
       {
-  "id": "custom-decorator-for-vue--withdata",
+  "id": "custom-decorator-for-vue--with-data",
   "kind": "Custom|Decorator for Vue",
-  "name": "withData",
-  "story": "withData",
+  "name": "With Data",
+  "story": "With Data",
   "customContext": 52,
   "parameters": {
     "options": {
@@ -368,6 +368,24 @@ exports[`Storyshots Custom|Method for rendering Vue JSX 1`] = `
 </button>
 `;
 
+exports[`Storyshots Custom|Method for rendering Vue Render 1`] = `
+<div>
+  renders a div with some text in it..
+</div>
+`;
+
+exports[`Storyshots Custom|Method for rendering Vue Template 1`] = `
+<div>
+  <h1>
+    A template
+  </h1>
+   
+  <p>
+    rendered in vue in storybook
+  </p>
+</div>
+`;
+
 exports[`Storyshots Custom|Method for rendering Vue pre-registered component 1`] = `
 <p>
   <em>
@@ -391,12 +409,6 @@ exports[`Storyshots Custom|Method for rendering Vue render + component 1`] = `
 >
   renders component: MyButton!
 </button>
-`;
-
-exports[`Storyshots Custom|Method for rendering Vue render 1`] = `
-<div>
-  renders a div with some text in it..
-</div>
 `;
 
 exports[`Storyshots Custom|Method for rendering Vue template + component 1`] = `
@@ -424,18 +436,6 @@ exports[`Storyshots Custom|Method for rendering Vue template + methods 1`] = `
 </p>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue template 1`] = `
-<div>
-  <h1>
-    A template
-  </h1>
-   
-  <p>
-    rendered in vue in storybook
-  </p>
-</div>
-`;
-
 exports[`Storyshots Custom|Method for rendering Vue vuex + actions 1`] = `
 <button
   class="button"
@@ -454,7 +454,7 @@ exports[`Storyshots Custom|Method for rendering Vue whatever you want 1`] = `
 </button>
 `;
 
-exports[`Storyshots Welcome welcome 1`] = `
+exports[`Storyshots Welcome Welcome 1`] = `
 <div
   class="main"
 >

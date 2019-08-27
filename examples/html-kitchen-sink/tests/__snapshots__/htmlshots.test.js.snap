@@ -98,7 +98,7 @@ exports[`Storyshots Addons|Events Logger 1`] = `
     
 `;
 
-exports[`Storyshots Addons|Jest withTests 1`] = `This story shows test results`;
+exports[`Storyshots Addons|Jest With Tests 1`] = `This story shows test results`;
 
 exports[`Storyshots Addons|Knobs All knobs 1`] = `
 <div
@@ -209,13 +209,13 @@ exports[`Storyshots Addons|a11y Label 1`] = `
 </button>
 `;
 
-exports[`Storyshots Demo button 1`] = `
+exports[`Storyshots Demo Button 1`] = `
 <button>
   Hello Button
 </button>
 `;
 
-exports[`Storyshots Demo effect 1`] = `
+exports[`Storyshots Demo Effect 1`] = `
 <button
   id="button"
 >
@@ -223,13 +223,13 @@ exports[`Storyshots Demo effect 1`] = `
 </button>
 `;
 
-exports[`Storyshots Demo heading 1`] = `
+exports[`Storyshots Demo Heading 1`] = `
 <h1>
   Hello World
 </h1>
 `;
 
-exports[`Storyshots Demo headings 1`] = `
+exports[`Storyshots Demo Headings 1`] = `
 <section>
   <h1>
     Hello World
