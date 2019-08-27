@@ -72,9 +72,8 @@ function genStoryExport(ast, counter) {
   }
   statements.push(`${storyKey}.story = {};`);
 
-  if (storyName !== storyKey) {
-    statements.push(`${storyKey}.story.name = '${storyName}';`);
-  }
+  // always preserve the name, since CSF exports can get modified by displayName
+  statements.push(`${storyKey}.story.name = '${storyName}';`);
 
   let parameters = getAttr(ast.openingElement, 'parameters');
   parameters = parameters && parameters.expression;

@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { logger } from '@storybook/client-logger';
 import addons, { mockChannel } from '@storybook/addons';
-import ClientApi from './client_api';
+import ClientApi, { defaultDisplayName } from './client_api';
 import ConfigApi from './config_api';
 import StoryStore from './story_store';
 
@@ -26,6 +26,18 @@ jest.mock('@storybook/client-logger', () => ({
 }));
 
 describe('preview.client_api', () => {
+  describe('defaultDisplayName', () => {
+    it('should format CSF with sensible defaults', () => {
+      const testCases = {
+        name: 'Name',
+        someName: 'Some Name',
+        someNAME: 'Some NAME',
+        some_custom_NAME: 'Some Custom NAME',
+      };
+      Object.entries(testCases).forEach(([key, val]) => expect(defaultDisplayName(key)).toBe(val));
+    });
+  });
+
   describe('setAddon', () => {
     it('should register addons', () => {
       const { clientApi } = getContext(undefined);
