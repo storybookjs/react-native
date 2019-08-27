@@ -1,3 +1,19 @@
+## 5.2.0-beta.41 (August 27, 2019)
+
+### Features
+
+* Addon-info: Add configurable component comparator ([#7409](https://github.com/storybookjs/storybook/pull/7409))
+
+### Bug Fixes
+
+* Addon-viewports: Add back default viewports ([#7448](https://github.com/storybookjs/storybook/pull/7448))
+* Core: Pass a separate hooks context per story ([#7860](https://github.com/storybookjs/storybook/pull/7860))
+* UI: Fix TooltipLinkList not scrollable ([#7865](https://github.com/storybookjs/storybook/pull/7865))
+
+### Maintenance
+
+* UI: Add ignore `first-child` selector warning flag ([#7861](https://github.com/storybookjs/storybook/pull/7861))
+
 ## 5.2.0-beta.40 (August 23, 2019)
 
 ### Bug Fixes
