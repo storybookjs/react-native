@@ -47,7 +47,7 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   const parameters = (context && context.parameters) || {};
   const options = parameters.options || {};
   const theme = ensureTheme(options.theme);
-  const { components: userComponents = null } = options.docs || {};
+  const { components: userComponents = null } = parameters.docs || {};
   const components = { ...defaultComponents, ...userComponents };
   return (
     <DocsContext.Provider value={context}>

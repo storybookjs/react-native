@@ -8,6 +8,7 @@ import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/comp
 
 import { useParameter, useAddonState } from '@storybook/api';
 import { PARAM_KEY, ADDON_ID } from './constants';
+import { MINIMAL_VIEWPORTS } from './defaults';
 import { ViewportAddonParameter, ViewportMap, ViewportStyles, Styles } from './models';
 
 interface ViewportItem {
@@ -122,7 +123,7 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
     const { viewports, defaultViewport, disable } = useParameter<ViewportAddonParameter>(
       PARAM_KEY,
       {
-        viewports: {},
+        viewports: MINIMAL_VIEWPORTS,
         defaultViewport: responsiveViewport.id,
       }
     );
@@ -195,13 +196,15 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
                 },
                 [`#${wrapperId}`]: {
                   padding: theme.layoutMargin,
-                  display: 'grid',
                   alignContent: 'center',
                   alignItems: 'center',
                   justifyContent: 'center',
                   justifyItems: 'center',
                   overflow: 'auto',
-                  gridTemplateColumns: 'minmax(0, 1fr)',
+
+                  display: 'grid',
+                  gridTemplateColumns: '100%',
+                  gridTemplateRows: '100%',
                 },
               }}
             />

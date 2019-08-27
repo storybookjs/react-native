@@ -196,7 +196,7 @@ And here are the return type signatures for each of the slot functions
 
 What if you don't want a `DocsPage` for your storybook, for a specific component, or even for a specific story?
 
-You can replace DocsPage at any level by overriding the `docs` parameter:
+You can replace DocsPage at any level by overriding the `docs.page` parameter:
 
 - With `null` to remove docs
 - [With MDX](#csf-stories-with-mdx-docs) docs
@@ -206,7 +206,7 @@ You can replace DocsPage at any level by overriding the `docs` parameter:
 
 ```js
 import { addParameters } from '@storybook/react';
-addParameters({ docs: null });
+addParameters({ docs: { page: null } });
 ```
 
 **Component-level (Button.stories.js)**
@@ -216,7 +216,7 @@ import { Button } from './Button';
 export default {
   title: 'Demo/Button',
   component: Button,
-  parameters: { docs: null },
+  parameters: { docs: { page: null } },
 };
 ```
 
@@ -227,7 +227,7 @@ import { Button } from './Button';
 // export default { ... }
 export const basic => () => <Button>Basic</Button>
 basic.story = {
-  parameters: { docs: null }
+  parameters: { docs: { page: null } }
 }
 ```
 
