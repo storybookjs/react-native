@@ -53,6 +53,7 @@ MDXContent.isMDXComponent = true;
 
 export const one = () => <Button>One</Button>;
 one.story = {};
+one.story.name = 'one';
 one.story.parameters = { mdxSource: '<Button>One</Button>' };
 one.story.decorators = [storyFn => <div className=\\"local\\">{storyFn()}</div>];
 
@@ -181,6 +182,7 @@ MDXContent.isMDXComponent = true;
 
 export const one = () => <Button>One</Button>;
 one.story = {};
+one.story.name = 'one';
 one.story.parameters = { mdxSource: '<Button>One</Button>' };
 
 export const helloStory = () => <Button>Hello button</Button>;
@@ -342,6 +344,7 @@ helloButton.story.parameters = { mdxSource: '<Button>Hello button</Button>' };
 
 export const two = () => <Button>Two</Button>;
 two.story = {};
+two.story.name = 'two';
 two.story.parameters = { mdxSource: '<Button>Two</Button>' };
 
 const componentMeta = {
@@ -443,6 +446,7 @@ MDXContent.isMDXComponent = true;
 
 export const text = () => 'Plain text';
 text.story = {};
+text.story.name = 'text';
 text.story.parameters = { mdxSource: \\"'Plain text'\\" };
 
 const componentMeta = { title: 'Text', includeStories: ['text'] };
@@ -501,6 +505,7 @@ MDXContent.isMDXComponent = true;
 
 export const one = () => <Button>One</Button>;
 one.story = {};
+one.story.name = 'one';
 one.story.parameters = { mdxSource: '<Button>One</Button>' };
 
 export const helloStory = () => <Button>Hello button</Button>;
