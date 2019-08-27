@@ -1,3 +1,15 @@
+## 5.2.0-beta.43 (August 28, 2019)
+
+CSF users: This is potentially a breaking change. If you want to opt-out of the new default display name calculation (`lodash.startCase`) you can add the following to your SB config:
+
+```js
+addParameters({ options: { makeDisplayName: key => key }});
+```
+
+### Features
+
+* CSF: Transform CSF named exports w/ `makeDisplayName` ([#7878](https://github.com/storybookjs/storybook/pull/7878))
+
 ## 5.2.0-beta.42 (August 28, 2019)
 
 Addon-docs users: This is a breaking change if you have been hacking the `docs` parameter manually. If you're using the zero-config option for `DocsPage` or `MDX`, you should be unaffected by it.
