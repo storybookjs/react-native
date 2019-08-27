@@ -83,7 +83,7 @@ const withSubscriptionTracking = (storyFn: StoryFn) => {
   return result;
 };
 
-export const defaultDisplayName = key => startCase(key);
+export const defaultDisplayName = (key: string) => startCase(key);
 
 export default class ClientApi {
   private _storyStore: StoryStore;
