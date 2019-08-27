@@ -163,10 +163,12 @@ function getExports(node, counter) {
 // insert `mdxKind` into the context so that we can know what "kind" we're rendering into
 // when we render <Story name="xxx">...</Story>, since this MDX can be attached to any `selectedKind`!
 const wrapperJs = `
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => <DocsContainer context={{...context, mdxKind}} content={MDXContent} />;
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => <DocsContainer context={{...context, mdxKind}}>{children}</DocsContainer>,
+  page: MDXContent,
+};
 `.trim();
 
 function stringifyMeta(meta) {

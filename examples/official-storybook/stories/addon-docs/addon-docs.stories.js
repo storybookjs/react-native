@@ -1,7 +1,7 @@
 import React from 'react';
-import notes from './notes/notes.md';
-import mdxNotes from './notes/notes.mdx';
-import DocgenButton from '../components/DocgenButton';
+import notes from '../notes/notes.md';
+import mdxNotes from '../notes/notes.mdx';
+import DocgenButton from '../../components/DocgenButton';
 
 export default {
   title: 'Addons|Docs/stories',
@@ -9,6 +9,12 @@ export default {
 };
 
 export const basic = () => <div>Click docs tab to see basic docs</div>;
+
+export const noDocs = () => <div>Click docs tab to see no docs error</div>;
+noDocs.story = {
+  name: 'no docs',
+  parameters: { docs: { page: null } },
+};
 
 export const withNotes = () => <div>Click docs tab to see DocsPage docs</div>;
 withNotes.story = {
@@ -28,7 +34,7 @@ export const mdxOverride = () => <div>Click docs tab to see MDX-overridden docs<
 mdxOverride.story = {
   name: 'mdx override',
   parameters: {
-    docs: mdxNotes,
+    docs: { page: mdxNotes },
   },
 };
 
@@ -36,6 +42,6 @@ export const jsxOverride = () => <div>Click docs tab to see JSX-overridden docs<
 jsxOverride.story = {
   name: 'jsx override',
   parameters: {
-    docs: () => <div>Hello docs</div>,
+    docs: { page: () => <div>Hello docs</div> },
   },
 };

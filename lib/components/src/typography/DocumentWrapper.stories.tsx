@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Markdown from 'markdown-to-jsx';
-import { DocumentFormatting } from './DocumentFormatting';
+import { DocumentWrapper } from './DocumentWrapper';
 import markdownSample from './DocumentFormattingSample.md';
 
 export default {
-  component: DocumentFormatting,
+  component: DocumentWrapper,
   title: 'Basics|DocumentFormatting',
   decorators: [
     (storyFn: any) => (
@@ -19,13 +19,13 @@ export default {
 };
 
 export const withMarkdown = () => (
-  <DocumentFormatting>
+  <DocumentWrapper>
     <Markdown>{markdownSample}</Markdown>
-  </DocumentFormatting>
+  </DocumentWrapper>
 );
 
 export const withDOM = () => (
-  <DocumentFormatting>
+  <DocumentWrapper>
     <h1>h1 Heading</h1>
     <h2>h2 Heading</h2>
     <h3>h3 Heading</h3>
@@ -186,5 +186,5 @@ export const withDOM = () => (
         title="The Stormtroopocat"
       />
     </p>
-  </DocumentFormatting>
+  </DocumentWrapper>
 );

@@ -8,6 +8,8 @@ import provideJestResult, { Test } from '../hoc/provideJestResult';
 const StatusTypes = {
   PASSED_TYPE: 'passed',
   FAILED_TYPE: 'failed',
+  PENDING_TYPE: 'pending',
+  TODO_TYPE: 'todo',
 };
 
 const List = styled.ul({
@@ -42,12 +44,12 @@ const SuiteHead = styled.div({
 const SuiteTotals = styled(({ result, className, width }) => (
   <div className={className}>
     <Fragment>
-      {width > 325 ? (
+      {width > 325 && result.assertionResults ? (
         <div>
           {result.assertionResults.length} {result.assertionResults.length > 1 ? `tests` : `test`}
         </div>
       ) : null}
-      {width > 280 ? (
+      {width > 280 && result.endTime && result.startTime ? (
         <div>
           {result.endTime - result.startTime}
           ms
@@ -100,6 +102,10 @@ const getColorByType = (type: string) => {
       return convert(themes.normal).color.positive;
     case StatusTypes.FAILED_TYPE:
       return convert(themes.normal).color.negative;
+    case StatusTypes.PENDING_TYPE:
+      return convert(themes.normal).color.warning;
+    case StatusTypes.TODO_TYPE:
+      return convert(themes.normal).color.purple;
     default:
       return null;
   }
@@ -108,7 +114,7 @@ const getColorByType = (type: string) => {
 const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
-      if (!result) {
+      if (!result || !result.assertionResults) {
         return (
           <Placeholder key={name}>
             This story has tests configured, but no file was found
@@ -119,6 +125,7 @@ const Content = styled(({ tests, className }: ContentProps) => (
       const testsByType: Map<string, any> = getTestsByTypeMap(result);
       const entries: any = testsByType.entries();
       const sortedTestsByCount = [...entries].sort((a, b) => a[1].length - b[1].length);
+
       return (
         <SizeMe refreshMode="debounce" key={name}>
           {({ size }: { size: any }) => {
@@ -135,7 +142,9 @@ const Content = styled(({ tests, className }: ContentProps) => (
                             key={`progress-portion-${entry[0]}`}
                             color={getColorByType(entry[0])}
                             progressPercent={
-                              (entry[1].length / result.assertionResults.length) * 100
+                              entry[1]
+                                ? (entry[1].length / result.assertionResults.length) * 100
+                                : 0
                             }
                           />
                         );
@@ -149,28 +158,94 @@ const Content = styled(({ tests, className }: ContentProps) => (
                 >
                   <div
                     id="failing-tests"
-                    title={`${testsByType.get(StatusTypes.FAILED_TYPE).length} Failed`}
+                    title={`${
+                      testsByType.get(StatusTypes.FAILED_TYPE)
+                        ? testsByType.get(StatusTypes.FAILED_TYPE).length
+                        : 0
+                    } Failed`}
                     color={getColorByType(StatusTypes.FAILED_TYPE)}
                   >
                     <List>
-                      {testsByType.get(StatusTypes.FAILED_TYPE).map((res: any) => (
-                        <Item key={res.fullName || res.title}>
-                          <Result {...res} />
-                        </Item>
-                      ))}
+                      {testsByType.get(StatusTypes.FAILED_TYPE) ? (
+                        testsByType.get(StatusTypes.FAILED_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.FAILED_TYPE}`}>
+                          This story has no failing tests.
+                        </Placeholder>
+                      )}
                     </List>
                   </div>
                   <div
                     id="passing-tests"
-                    title={`${testsByType.get(StatusTypes.PASSED_TYPE).length} Passed`}
+                    title={`${
+                      testsByType.get(StatusTypes.PASSED_TYPE)
+                        ? testsByType.get(StatusTypes.PASSED_TYPE).length
+                        : 0
+                    } Passed`}
                     color={getColorByType(StatusTypes.PASSED_TYPE)}
                   >
                     <List>
-                      {testsByType.get(StatusTypes.PASSED_TYPE).map((res: any) => (
-                        <Item key={res.fullName || res.title}>
-                          <Result {...res} />
-                        </Item>
-                      ))}
+                      {testsByType.get(StatusTypes.PASSED_TYPE) ? (
+                        testsByType.get(StatusTypes.PASSED_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.PASSED_TYPE}`}>
+                          This story has no passing tests.
+                        </Placeholder>
+                      )}
+                    </List>
+                  </div>
+                  <div
+                    id="pending-tests"
+                    title={`${
+                      testsByType.get(StatusTypes.PENDING_TYPE)
+                        ? testsByType.get(StatusTypes.PENDING_TYPE).length
+                        : 0
+                    } Pending`}
+                    color={getColorByType(StatusTypes.PENDING_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.PENDING_TYPE) ? (
+                        testsByType.get(StatusTypes.PENDING_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.PENDING_TYPE}`}>
+                          This story has no pending tests.
+                        </Placeholder>
+                      )}
+                    </List>
+                  </div>
+                  <div
+                    id="todo-tests"
+                    title={`${
+                      testsByType.get(StatusTypes.TODO_TYPE)
+                        ? testsByType.get(StatusTypes.TODO_TYPE).length
+                        : 0
+                    } Todo`}
+                    color={getColorByType(StatusTypes.TODO_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.TODO_TYPE) ? (
+                        testsByType.get(StatusTypes.TODO_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.TODO_TYPE}`}>
+                          This story has no tests todo.
+                        </Placeholder>
+                      )}
                     </List>
                   </div>
                 </TabsState>

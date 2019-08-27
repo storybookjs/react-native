@@ -9,6 +9,7 @@ When you install [Storybook Docs](../README.md), `DocsPage` is the zero-config d
 - [Motivation](#motivation)
 - [Component parameter](#component-parameter)
 - [DocsPage slots](#docspage-slots)
+- [Replacing DocsPage](#replacing-docspage)
 - [Story file names](#story-file-names)
 - [More resources](#more-resources)
 
@@ -51,7 +52,7 @@ import { Badge } from './Badge';
 storiesOf('Path/to/Badge', module).addParameters({ component: Badge });
 ```
 
-If you're coming from the`storiesOf` format, there's [a codemod that adds it for you](https://github.com/storybookjs/storybook/blob/next/lib/codemod/README.md#add-component-parameters).
+If you're coming from the `storiesOf` format, there's [a codemod that adds it for you](https://github.com/storybookjs/storybook/blob/next/lib/codemod/README.md#add-component-parameters).
 
 ## DocsPage slots
 
@@ -191,6 +192,45 @@ And here are the return type signatures for each of the slot functions
 | Props    | propsSlot    | `SlotContext`                | `PropsTableProps?` |
 | Stories  | storiesSlot  | `StoryData[]`, `SlotContext` | `StoryProps[]?`    |
 
+## Replacing DocsPage
+
+What if you don't want a `DocsPage` for your storybook, for a specific component, or even for a specific story?
+
+You can replace DocsPage at any level by overriding the `docs.page` parameter:
+
+- With `null` to remove docs
+- [With MDX](#csf-stories-with-mdx-docs) docs
+- With a custom React component
+
+**Globally (config.js)**
+
+```js
+import { addParameters } from '@storybook/react';
+addParameters({ docs: { page: null } });
+```
+
+**Component-level (Button.stories.js)**
+
+```js
+import { Button } from './Button';
+export default {
+  title: 'Demo/Button',
+  component: Button,
+  parameters: { docs: { page: null } },
+};
+```
+
+**Story-level (Button.stories.js)**
+
+```js
+import { Button } from './Button';
+// export default { ... }
+export const basic => () => <Button>Basic</Button>
+basic.story = {
+  parameters: { docs: { page: null } }
+}
+```
+
 ## Story file names
 
 Unless you use a custom webpack configuration, all of your story files should have the suffix `*.stories.[jt]sx?`, e.g. `"Badge.stories.js"`, `"Badge.stories.tsx"`, etc.
@@ -201,5 +241,7 @@ The docs preset assumes this naming convention for its `source-loader` setup. If
 
 Want to learn more? Here are some more articles on Storybook Docs:
 
-- [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
+- References: [README](../README.md) / [MDX](./mdx.md) / [FAQ](./faq.md) / [Recipes](recipes.md)
+- Vision: [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
+- Example: [Storybook Design System](https://github.com/storybookjs/design-system)
 - [Technical preview guide](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing)

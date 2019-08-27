@@ -29,4 +29,18 @@ describe('A bunch of failing tests: ', () => {
   test('should work', () => {
     expect(() => {}).toThrow();
   });
+
+  test.todo('Test this Todo later');
+});
+
+describe('Skipped tests:', () => {
+  test.skip('Would be true if not skipped', () => {
+    expect(true).toBe(true);
+  });
+
+  test.skip('Could fail, if not skipped', () => {
+    expect(() => {}).toThrow();
+  });
+
+  test.todo('Test Todo is not skipped');
 });

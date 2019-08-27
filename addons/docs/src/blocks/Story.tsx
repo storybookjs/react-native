@@ -45,7 +45,7 @@ export const getStoryProps = (
 
   // prefer props, then global options, then framework-inferred values
   const { inlineStories = inferInlineStories(framework), iframeHeight = undefined } =
-    (parameters && parameters.options && parameters.options.docs) || {};
+    (parameters && parameters.docs) || {};
   return {
     inline: typeof inline === 'boolean' ? inline : inlineStories,
     id: previewId,

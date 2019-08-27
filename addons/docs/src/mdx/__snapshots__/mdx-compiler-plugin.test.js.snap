@@ -72,12 +72,14 @@ const componentMeta = {
   includeStories: ['one'],
 };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -125,12 +127,14 @@ storybookDocsOnly.story = { parameters: { docsOnly: true } };
 
 const componentMeta = { title: 'docs-only', includeStories: ['storybookDocsOnly'] };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -186,12 +190,14 @@ helloStory.story.parameters = { mdxSource: '<Button>Hello button</Button>' };
 
 const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory'] };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -268,12 +274,14 @@ const componentMeta = {
   includeStories: ['componentNotes', 'storyNotes'],
 };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -344,12 +352,14 @@ const componentMeta = {
   includeStories: ['helloButton', 'two'],
 };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -386,12 +396,14 @@ MDXContent.isMDXComponent = true;
 
 const componentMeta = { includeStories: [] };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -435,12 +447,14 @@ text.story.parameters = { mdxSource: \\"'Plain text'\\" };
 
 const componentMeta = { title: 'Text', includeStories: ['text'] };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -501,12 +515,14 @@ wPunctuation.story.parameters = { mdxSource: '<Button>with punctuation</Button>'
 
 const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory', 'wPunctuation'] };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -560,12 +576,14 @@ story0.story.parameters = {
 
 const componentMeta = { includeStories: ['story0'] };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -631,12 +649,14 @@ toStorybook.story.parameters = {
 
 const componentMeta = { title: 'MDX|Welcome', includeStories: ['toStorybook'] };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -673,12 +693,14 @@ MDXContent.isMDXComponent = true;
 
 const componentMeta = { includeStories: [] };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
@@ -716,12 +738,14 @@ MDXContent.isMDXComponent = true;
 
 const componentMeta = { includeStories: [] };
 
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => (
-  <DocsContainer context={{ ...context, mdxKind }} content={MDXContent} />
-);
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxKind }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
 
 export default componentMeta;
 "
