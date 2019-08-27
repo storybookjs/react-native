@@ -30,8 +30,9 @@ export const getPropsTableProps = (
       throw new Error(PropsTableError.NO_COMPONENT);
     }
 
-    const { framework = null } = parameters || {};
-    const { getPropDefs = inferPropDefs(framework) } = (parameters && parameters.docs) || {};
+    const params = parameters || {};
+    const { framework = null } = params;
+    const { getPropDefs = inferPropDefs(framework) } = params.docs || {};
 
     if (!getPropDefs) {
       throw new Error(PropsTableError.PROPS_UNSUPPORTED);

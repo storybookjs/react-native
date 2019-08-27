@@ -4,7 +4,7 @@ import { Global, ThemeProvider, themes, createReset, convert } from '@storybook/
 import { withCssResources } from '@storybook/addon-cssresources';
 import { withA11y } from '@storybook/addon-a11y';
 import { withNotes } from '@storybook/addon-notes';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsPage } from '@storybook/addon-docs/blocks';
 
 import 'storybook-chromatic';
 
