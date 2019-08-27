@@ -1,3 +1,11 @@
+## 5.2.0-beta.42 (August 28, 2019)
+
+Addon-docs users: This is a breaking change if you have been hacking the `docs` parameter manually. If you're using the zero-config option for `DocsPage` or `MDX`, you should be unaffected by it.
+
+### Maintenance
+
+* Addon-docs: Make config API consistent with other addons ([#7874](https://github.com/storybookjs/storybook/pull/7874))
+
 ## 5.2.0-beta.41 (August 27, 2019)
 
 ### Features
