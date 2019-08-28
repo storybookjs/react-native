@@ -76,7 +76,7 @@ You can get the old default back by adding the following to your `config.js`:
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 addParameters({
-  options: {
+  viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
 });
