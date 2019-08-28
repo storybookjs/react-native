@@ -1,3 +1,9 @@
+## 5.2.0-beta.44 (August 28, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix MDX Story ID to match new CSF ([#7894](https://github.com/storybookjs/storybook/pull/7894))
+
 ## 5.2.0-beta.43 (August 28, 2019)
 
 CSF users: This is potentially a breaking change. If you want to opt-out of the new default display name calculation (`lodash.startCase`) you can add the following to your SB config:
