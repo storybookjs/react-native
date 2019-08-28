@@ -1,5 +1,4 @@
 import React from 'react';
-import { toId } from '@storybook/router';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
 import { CURRENT_SELECTION } from './shared';
 
