@@ -175,9 +175,9 @@ componentMeta.parameters.docs = {
 };
 `.trim();
 
-function stringifyObject(obj) {
+function stringifyMeta(meta) {
   let result = '{ ';
-  Object.entries(obj).forEach(([key, val]) => {
+  Object.entries(meta).forEach(([key, val]) => {
     if (val) {
       result += `'${key}': ${val}, `;
     }
@@ -231,7 +231,7 @@ function extractExports(node, options) {
   const mdxStoryNameToId = Object.entries(context.storyNameToKey).reduce(
     (acc, [storyName, storyKey]) => {
       if (title) {
-        acc[storyName] = `'${toId(title, storyKey)}'`;
+        acc[storyName] = toId(title, storyKey);
       }
       return acc;
     },
@@ -242,8 +242,8 @@ function extractExports(node, options) {
     'import { DocsContainer } from "@storybook/addon-docs/blocks";',
     defaultJsx,
     ...storyExports,
-    `const componentMeta = ${stringifyObject(metaExport)};`,
-    `const mdxStoryNameToId = ${stringifyObject(mdxStoryNameToId)};`,
+    `const componentMeta = ${stringifyMeta(metaExport)};`,
+    `const mdxStoryNameToId = ${JSON.stringify(mdxStoryNameToId)};`,
     wrapperJs,
     'export default componentMeta;',
   ].join('\n\n');
