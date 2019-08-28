@@ -82,6 +82,14 @@ addParameters({
     * @type {Function}
     */
     storySort: undefined
+
+    /**
+    * Function to transform Component Story Format named exports (typically camel-case
+    * variables) into display names. If the story specifies a `story.name` option, that
+    * will not be transformed and will always take precedence over a named export.
+    * @type {Function}
+    */
+    makeDisplayName: lodash.startCase
   },
 });
 ```
