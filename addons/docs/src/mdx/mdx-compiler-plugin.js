@@ -175,11 +175,14 @@ componentMeta.parameters.docs = {
 };
 `.trim();
 
+// Use this rather than JSON.stringify because `Meta`'s attributes
+// are already valid code strings, so we want to insert them raw
+// rather than add an extra set of quotes
 function stringifyMeta(meta) {
   let result = '{ ';
   Object.entries(meta).forEach(([key, val]) => {
     if (val) {
-      result += `'${key}': ${val}, `;
+      result += `${key}: ${val}, `;
     }
   });
   result += ' }';
