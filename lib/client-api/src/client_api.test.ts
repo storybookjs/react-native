@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { logger } from '@storybook/client-logger';
 import addons, { mockChannel } from '@storybook/addons';
-import ClientApi, { defaultMakeDisplayName } from './client_api';
+import ClientApi, { makeDisplayName } from './client_api';
 import ConfigApi from './config_api';
 import StoryStore from './story_store';
 
@@ -26,17 +26,17 @@ jest.mock('@storybook/client-logger', () => ({
 }));
 
 describe('preview.client_api', () => {
-  describe('defaultMakeDisplayName', () => {
+  describe('makeDisplayName', () => {
     it('should format CSF exports with sensible defaults', () => {
       const testCases = {
         name: 'Name',
         someName: 'Some Name',
         someNAME: 'Some NAME',
         some_custom_NAME: 'Some Custom NAME',
+        someName1234: 'Some Name 1234',
+        someName1_2_3_4: 'Some Name 1 2 3 4',
       };
-      Object.entries(testCases).forEach(([key, val]) =>
-        expect(defaultMakeDisplayName(key)).toBe(val)
-      );
+      Object.entries(testCases).forEach(([key, val]) => expect(makeDisplayName(key)).toBe(val));
     });
   });
 
