@@ -1,5 +1,4 @@
 import React from 'react';
-import startCase from 'lodash/startCase';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { Global, ThemeProvider, themes, createReset, convert } from '@storybook/theming';
 import { withCssResources } from '@storybook/addon-cssresources';
