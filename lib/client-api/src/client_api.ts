@@ -126,9 +126,7 @@ export default class ClientApi {
       this._globalParameters.options
     );
 
-  getMakeDisplayName = () =>
-    (this._globalParameters.options && this._globalParameters.options.makeDisplayName) ||
-    defaultMakeDisplayName;
+  getMakeDisplayName = () => defaultMakeDisplayName;
 
   addDecorator = (decorator: DecoratorFunction) => {
     this._globalDecorators.push(decorator);
