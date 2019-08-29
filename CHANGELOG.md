@@ -1,7 +1,6 @@
 ## 5.2.0-beta.46 (August 29, 2019)
 
-CSF users: this reverts the `makeDisplayName` change introduced in `5.2.0-beta.43` for maintainability reasons.
-See ([#7901](https://github.com/storybookjs/storybook/pull/7901)) for full rationale. And apologies for the inconvenience!
+CSF users: this reverts the `makeDisplayName` change introduced in `5.2.0-beta.43` for maintainability reasons. See [#7901](https://github.com/storybookjs/storybook/pull/7901) for full rationale. And apologies for the inconvenience!
 
 ### Bug Fixes
 
