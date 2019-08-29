@@ -37,6 +37,7 @@ interface DocsStoryProps {
   description?: string;
   expanded?: boolean;
   withToolbar?: boolean;
+  parameters?: any;
 }
 
 interface StoryData {
@@ -84,9 +85,10 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   description,
   expanded = true,
   withToolbar = false,
+  parameters,
 }) => (
   <>
-    {expanded && <StoryHeading>{name}</StoryHeading>}
+    {expanded && <StoryHeading>{(parameters && parameters.displayName) || name}</StoryHeading>}
     {expanded && description && <Description markdown={description} />}
     <Preview withToolbar={withToolbar}>
       <Story id={id} />
