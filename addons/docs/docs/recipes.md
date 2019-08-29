@@ -56,7 +56,9 @@ import mdx from './Button.mdx';
 export default {
   title: 'Demo/Button',
   parameters: {
-    docs: mdx,
+    docs: {
+      page: mdx,
+    },
   },
 };
 
