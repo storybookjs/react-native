@@ -1,3 +1,17 @@
+## 5.2.0-beta.46 (August 29, 2019)
+
+CSF users: this reverts the `makeDisplayName` change introduced in `5.2.0-beta.43` for maintainability reasons.
+See ([#7901](https://github.com/storybookjs/storybook/pull/7901)) for full rationale. And apologies for the inconvenience!
+
+### Bug Fixes
+
+* React: Fix missing props in the Welcome.tsx demo ([#7774](https://github.com/storybookjs/storybook/pull/7774))
+
+### Maintenance
+
+* CSF: Revert `makeDisplayName` & add stable `storyNameFromExport` ([#7901](https://github.com/storybookjs/storybook/pull/7901))
+* Addon-a11y: Upgrade axe to 3.3.2 which adds/mods rules ([#7888](https://github.com/storybookjs/storybook/pull/7888))
+
 ## 5.2.0-beta.45 (August 28, 2019)
 
 ### Bug Fixes
