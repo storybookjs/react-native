@@ -1,3 +1,10 @@
+## 5.2.0-beta.47 (August 30, 2019)
+
+### Bug Fixes
+
+* UI: Optimize treeview render/filter performance ([#7910](https://github.com/storybookjs/storybook/pull/7910))
+* Addon-docs: Fix DocsPage to respect displayName ([#7915](https://github.com/storybookjs/storybook/pull/7915))
+
 ## 5.2.0-beta.46 (August 29, 2019)
 
 CSF users: this reverts the `makeDisplayName` change introduced in `5.2.0-beta.43` for maintainability reasons. See [#7901](https://github.com/storybookjs/storybook/pull/7901) for full rationale. And apologies for the inconvenience!
