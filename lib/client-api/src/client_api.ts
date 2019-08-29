@@ -1,6 +1,7 @@
 /* eslint no-underscore-dangle: 0 */
 import deprecate from 'util-deprecate';
 import isPlainObject from 'is-plain-object';
+import startCase from 'lodash/startCase';
 import { logger } from '@storybook/client-logger';
 import addons, { StoryContext, StoryFn, Parameters, OptionsParameter } from '@storybook/addons';
 import Events from '@storybook/core-events';
@@ -82,6 +83,8 @@ const withSubscriptionTracking = (storyFn: StoryFn) => {
   return result;
 };
 
+export const defaultMakeDisplayName = (key: string) => startCase(key);
+
 export default class ClientApi {
   private _storyStore: StoryStore;
 
@@ -123,6 +126,10 @@ export default class ClientApi {
       this._globalParameters.options
     );
 
+  getMakeDisplayName = () =>
+    (this._globalParameters.options && this._globalParameters.options.makeDisplayName) ||
+    defaultMakeDisplayName;
+
   addDecorator = (decorator: DecoratorFunction) => {
     this._globalDecorators.push(decorator);
   };
@@ -133,6 +140,10 @@ export default class ClientApi {
       ...parameters,
       options: {
         ...merge(get(this._globalParameters, 'options', {}), get(parameters, 'options', {})),
+      },
+      // FIXME: https://github.com/storybookjs/storybook/issues/7872
+      docs: {
+        ...merge(get(this._globalParameters, 'docs', {}), get(parameters, 'docs', {})),
       },
     };
   };

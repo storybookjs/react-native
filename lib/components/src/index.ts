@@ -2,7 +2,7 @@ export { Badge } from './Badge/Badge';
 
 // Typography
 export { Link } from './typography/link/link';
-export { DocumentFormatting } from './typography/DocumentFormatting';
+export { DocumentWrapper } from './typography/DocumentWrapper';
 export { SyntaxHighlighter } from './syntaxhighlighter/syntaxhighlighter';
 
 // UI

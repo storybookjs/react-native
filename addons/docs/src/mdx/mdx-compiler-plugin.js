@@ -72,9 +72,8 @@ function genStoryExport(ast, counter) {
   }
   statements.push(`${storyKey}.story = {};`);
 
-  if (storyName !== storyKey) {
-    statements.push(`${storyKey}.story.name = '${storyName}';`);
-  }
+  // always preserve the name, since CSF exports can get modified by displayName
+  statements.push(`${storyKey}.story.name = '${storyName}';`);
 
   let parameters = getAttr(ast.openingElement, 'parameters');
   parameters = parameters && parameters.expression;
@@ -163,10 +162,12 @@ function getExports(node, counter) {
 // insert `mdxKind` into the context so that we can know what "kind" we're rendering into
 // when we render <Story name="xxx">...</Story>, since this MDX can be attached to any `selectedKind`!
 const wrapperJs = `
-const mdxKind = componentMeta.title || componentMeta.displayName;
-const WrappedMDXContent = ({ context }) => <DocsContainer context={{...context, mdxKind}} content={MDXContent} />;
+const mdxKind = componentMeta.title;
 componentMeta.parameters = componentMeta.parameters || {};
-componentMeta.parameters.docs = WrappedMDXContent;
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => <DocsContainer context={{...context, mdxKind}}>{children}</DocsContainer>,
+  page: MDXContent,
+};
 `.trim();
 
 function stringifyMeta(meta) {
@@ -206,7 +207,15 @@ function extractExports(node, options) {
       }
     }
   });
-  if (!metaExport) {
+  if (metaExport) {
+    if (!storyExports.length) {
+      storyExports.push(
+        'export const storybookDocsOnly = () => { throw new Error("Docs-only story"); };'
+      );
+      storyExports.push('storybookDocsOnly.story = { parameters: { docsOnly: true } };');
+      includeStories.push('storybookDocsOnly');
+    }
+  } else {
     metaExport = {};
   }
   metaExport.includeStories = JSON.stringify(includeStories);

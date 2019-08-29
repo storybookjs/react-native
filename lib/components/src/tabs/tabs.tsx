@@ -13,6 +13,9 @@ import { Placeholder } from '../placeholder/placeholder';
 import { FlexBar } from '../bar/bar';
 import { TabButton } from '../bar/button';
 
+const ignoreSsrWarning =
+  '/* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */';
+
 export interface WrapperProps {
   bordered?: boolean;
   absolute?: boolean;
@@ -73,7 +76,7 @@ const Content = styled.div<ContentProps>(
           bottom: 0,
           top: 40,
           overflow: 'auto',
-          '& > *:first-child': {
+          [`& > *:first-child${ignoreSsrWarning}`]: {
             position: 'absolute',
             left: 0,
             right: 0,
