@@ -121,13 +121,13 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const storybookDocsOnly = () => {
+export const __page = () => {
   throw new Error('Docs-only story');
 };
 
-storybookDocsOnly.story = { parameters: { docsOnly: true } };
+__page.story = { parameters: { docsOnly: true } };
 
-const componentMeta = { title: 'docs-only', includeStories: ['storybookDocsOnly'] };
+const componentMeta = { title: 'docs-only', includeStories: ['__page'] };
 
 const mdxStoryNameToId = {};
 
