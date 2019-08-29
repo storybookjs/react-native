@@ -3,7 +3,7 @@ const parser = require('@babel/parser');
 const generate = require('@babel/generator').default;
 const camelCase = require('lodash/camelCase');
 const jsStringEscape = require('js-string-escape');
-const { toId } = require('@storybook/router');
+const { toId, storyNameFromExport } = require('@storybook/router/utils');
 
 // Generate the MDX as is, but append named exports for every
 // story in the contents
@@ -234,7 +234,7 @@ function extractExports(node, options) {
   const mdxStoryNameToId = Object.entries(context.storyNameToKey).reduce(
     (acc, [storyName, storyKey]) => {
       if (title) {
-        acc[storyName] = toId(title, storyKey);
+        acc[storyName] = toId(title, storyNameFromExport(storyKey));
       }
       return acc;
     },

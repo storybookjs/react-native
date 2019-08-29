@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Actions actionOnly 1`] = `
+exports[`Storyshots Addon|Actions Action Only 1`] = `
 <div
   data-is="my-button"
   id="root"
@@ -14,7 +14,7 @@ exports[`Storyshots Addon|Actions actionOnly 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Actions multipleActions 1`] = `
+exports[`Storyshots Addon|Actions Multiple Actions 1`] = `
 <div
   data-is="my-button"
   id="root"
@@ -28,7 +28,7 @@ exports[`Storyshots Addon|Actions multipleActions 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Backgrounds story1 1`] = `
+exports[`Storyshots Addon|Backgrounds Story 1 1`] = `
 <div
   data-is="root"
   id="root"
@@ -44,7 +44,7 @@ exports[`Storyshots Addon|Backgrounds story1 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Backgrounds story2 1`] = `
+exports[`Storyshots Addon|Backgrounds Story 2 1`] = `
 <div
   data-is="root"
   id="root"
@@ -60,18 +60,7 @@ exports[`Storyshots Addon|Backgrounds story2 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Knobs Simple 1`] = `
-<div
-  data-is="root"
-  id="root"
->
-  <div>
-    I am John Doe and I'm 44 years old.
-  </div>
-</div>
-`;
-
-exports[`Storyshots Addon|Knobs allKnobs 1`] = `
+exports[`Storyshots Addon|Knobs All Knobs 1`] = `
 <div
   data-is="root"
   id="root"
@@ -126,7 +115,18 @@ exports[`Storyshots Addon|Knobs allKnobs 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Knobs xssSafety 1`] = `
+exports[`Storyshots Addon|Knobs Simple 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <div>
+    I am John Doe and I'm 44 years old.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Addon|Knobs Xss Safety 1`] = `
 <div
   data-is="root"
   id="root"
@@ -137,7 +137,7 @@ exports[`Storyshots Addon|Knobs xssSafety 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Links goToWelcome 1`] = `
+exports[`Storyshots Addon|Links Go To Welcome 1`] = `
 <div
   data-is="my-button"
   id="root"
@@ -151,7 +151,7 @@ exports[`Storyshots Addon|Links goToWelcome 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Notes noteWithHtml 1`] = `
+exports[`Storyshots Addon|Notes Note With Html 1`] = `
 <div
   data-is="root"
   id="root"
@@ -168,7 +168,7 @@ exports[`Storyshots Addon|Notes noteWithHtml 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Notes simpleNote 1`] = `
+exports[`Storyshots Addon|Notes Simple Note 1`] = `
 <div
   data-is="root"
   id="root"
@@ -181,7 +181,7 @@ exports[`Storyshots Addon|Notes simpleNote 1`] = `
 </div>
 `;
 
-exports[`Storyshots Core|Parameters passedToStory 1`] = `
+exports[`Storyshots Core|Parameters Passed To Story 1`] = `
 <div
   data-is="parameters"
   id="root"
@@ -192,7 +192,7 @@ exports[`Storyshots Core|Parameters passedToStory 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story builtAsString 1`] = `
+exports[`Storyshots Story|How to create a story Built As String 1`] = `
 <div
   data-is="root"
   id="root"
@@ -205,7 +205,7 @@ exports[`Storyshots Story|How to create a story builtAsString 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story builtFromRawImport 1`] = `
+exports[`Storyshots Story|How to create a story Built From Raw Import 1`] = `
 <div
   data-is="simpletest"
   id="root"
@@ -216,7 +216,7 @@ exports[`Storyshots Story|How to create a story builtFromRawImport 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story builtFromTagsAndTemplate 1`] = `
+exports[`Storyshots Story|How to create a story Built From Tags And Template 1`] = `
 <div
   data-is="root"
   id="root"
@@ -231,7 +231,7 @@ exports[`Storyshots Story|How to create a story builtFromTagsAndTemplate 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story builtFromThePrecompilation 1`] = `
+exports[`Storyshots Story|How to create a story Built From The Precompilation 1`] = `
 <div
   data-is="anothertest"
   id="root"
@@ -242,7 +242,7 @@ exports[`Storyshots Story|How to create a story builtFromThePrecompilation 1`] =
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story builtWithTag 1`] = `
+exports[`Storyshots Story|How to create a story Built With Tag 1`] = `
 <div
   data-is="test"
   id="root"
@@ -253,7 +253,7 @@ exports[`Storyshots Story|How to create a story builtWithTag 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story tagsTemplateAndTagConstructorAtOnce 1`] = `
+exports[`Storyshots Story|How to create a story Tags Template And Tag Constructor At Once 1`] = `
 <div
   data-is="root"
   id="root"
@@ -269,7 +269,7 @@ exports[`Storyshots Story|How to create a story tagsTemplateAndTagConstructorAtO
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story theMountInstructionIsNotNecessary 1`] = `
+exports[`Storyshots Story|How to create a story The Mount Instruction Is Not Necessary 1`] = `
 <div
   data-is="anothertest"
   id="root"
@@ -280,7 +280,7 @@ exports[`Storyshots Story|How to create a story theMountInstructionIsNotNecessar
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story theOptsValueIsNotNecessary 1`] = `
+exports[`Storyshots Story|How to create a story The Opts Value Is Not Necessary 1`] = `
 <div
   data-is="anothertest"
   id="root"
@@ -349,7 +349,7 @@ exports[`Storyshots Story|Nest tags Matriochka 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|Nest tags threeTags 1`] = `
+exports[`Storyshots Story|Nest tags Three Tags 1`] = `
 <div
   data-is="root"
   id="root"

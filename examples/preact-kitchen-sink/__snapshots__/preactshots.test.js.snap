@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Actions actionAndMethod 1`] = `
+exports[`Storyshots Addons|Actions Action And Method 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -9,7 +9,7 @@ exports[`Storyshots Addons|Actions actionAndMethod 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions actionOnly 1`] = `
+exports[`Storyshots Addons|Actions Action Only 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -18,7 +18,7 @@ exports[`Storyshots Addons|Actions actionOnly 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions multipleActions 1`] = `
+exports[`Storyshots Addons|Actions Multiple Actions 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -28,7 +28,7 @@ exports[`Storyshots Addons|Actions multipleActions 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions multipleActionsObject 1`] = `
+exports[`Storyshots Addons|Actions Multiple Actions Object 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -38,7 +38,7 @@ exports[`Storyshots Addons|Actions multipleActionsObject 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Backgrounds example1 1`] = `
+exports[`Storyshots Addons|Backgrounds Example 1 1`] = `
 <button
   class="button"
 >
@@ -46,7 +46,7 @@ exports[`Storyshots Addons|Backgrounds example1 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Backgrounds example2 1`] = `
+exports[`Storyshots Addons|Backgrounds Example 2 1`] = `
 <button
   class="button"
 >
@@ -54,7 +54,7 @@ exports[`Storyshots Addons|Backgrounds example2 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Centered button 1`] = `
+exports[`Storyshots Addons|Centered Button 1`] = `
 <div
   style={
     Object {
@@ -86,7 +86,7 @@ exports[`Storyshots Addons|Centered button 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addons|Contexts simpleCssTheming 1`] = `
+exports[`Storyshots Addons|Contexts Simple Css Theming 1`] = `
 <div
   style={
     Object {
@@ -103,13 +103,7 @@ exports[`Storyshots Addons|Contexts simpleCssTheming 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addons|Knobs Simple 1`] = `
-<div>
-  I am John Doe and I'm 44 years old.
-</div>
-`;
-
-exports[`Storyshots Addons|Knobs allKnobs 1`] = `
+exports[`Storyshots Addons|Knobs All Knobs 1`] = `
 <div
   style="border:2px dotted deeppink; padding: 8px 22px; border-radius: 8px"
 >
@@ -142,7 +136,13 @@ exports[`Storyshots Addons|Knobs allKnobs 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addons|Links goToWelcome 1`] = `
+exports[`Storyshots Addons|Knobs Simple 1`] = `
+<div>
+  I am John Doe and I'm 44 years old.
+</div>
+`;
+
+exports[`Storyshots Addons|Links Go To Welcome 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -151,7 +151,7 @@ exports[`Storyshots Addons|Links goToWelcome 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Notes noteWithHtml 1`] = `
+exports[`Storyshots Addons|Notes Note With Html 1`] = `
 <p>
   <span>
     🤔😳😯😮
@@ -167,7 +167,7 @@ exports[`Storyshots Addons|Notes noteWithHtml 1`] = `
 </p>
 `;
 
-exports[`Storyshots Addons|Notes simpleNote 1`] = `
+exports[`Storyshots Addons|Notes Simple Note 1`] = `
 <p>
   <strong>
     Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.
@@ -175,7 +175,7 @@ exports[`Storyshots Addons|Notes simpleNote 1`] = `
 </p>
 `;
 
-exports[`Storyshots Button withSomeEmoji 1`] = `
+exports[`Storyshots Button With Some Emoji 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -189,7 +189,7 @@ exports[`Storyshots Button withSomeEmoji 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button withText 1`] = `
+exports[`Storyshots Button With Text 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -198,7 +198,7 @@ exports[`Storyshots Button withText 1`] = `
 </button>
 `;
 
-exports[`Storyshots Welcome toStorybook 1`] = `
+exports[`Storyshots Welcome To Storybook 1`] = `
 <article
   style={
     Object {

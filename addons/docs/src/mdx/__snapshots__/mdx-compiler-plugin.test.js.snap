@@ -194,7 +194,7 @@ helloStory.story.parameters = { mdxSource: '<Button>Hello button</Button>' };
 
 const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory'] };
 
-const mdxStoryNameToId = { one: 'button--one', 'hello story': 'button--hellostory' };
+const mdxStoryNameToId = { one: 'button--one', 'hello story': 'button--hello-story' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
@@ -280,8 +280,8 @@ const componentMeta = {
 };
 
 const mdxStoryNameToId = {
-  'component notes': 'button--componentnotes',
-  'story notes': 'button--storynotes',
+  'component notes': 'button--component-notes',
+  'story notes': 'button--story-notes',
 };
 
 componentMeta.parameters = componentMeta.parameters || {};
@@ -362,7 +362,7 @@ const componentMeta = {
   includeStories: ['helloButton', 'two'],
 };
 
-const mdxStoryNameToId = { 'hello button': 'button--hellobutton', two: 'button--two' };
+const mdxStoryNameToId = { 'hello button': 'button--hello-button', two: 'button--two' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
@@ -532,8 +532,8 @@ const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory', '
 
 const mdxStoryNameToId = {
   one: 'button--one',
-  'hello story': 'button--hellostory',
-  'w/punctuation': 'button--wpunctuation',
+  'hello story': 'button--hello-story',
+  'w/punctuation': 'button--w-punctuation',
 };
 
 componentMeta.parameters = componentMeta.parameters || {};
@@ -670,7 +670,7 @@ toStorybook.story.parameters = {
 
 const componentMeta = { title: 'MDX|Welcome', includeStories: ['toStorybook'] };
 
-const mdxStoryNameToId = { 'to storybook': 'mdx-welcome--tostorybook' };
+const mdxStoryNameToId = { 'to storybook': 'mdx-welcome--to-storybook' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
