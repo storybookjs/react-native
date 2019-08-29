@@ -27,7 +27,8 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
 
   keyboardOpen: boolean;
 
-  componentWillMount() {
+  constructor(props: Props) {
+    super(props);
     this.keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
       this.keyboardDidShowHandler
