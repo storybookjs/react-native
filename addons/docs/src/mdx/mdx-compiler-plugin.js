@@ -219,11 +219,9 @@ function extractExports(node, options) {
   });
   if (metaExport) {
     if (!storyExports.length) {
-      storyExports.push(
-        'export const storybookDocsOnly = () => { throw new Error("Docs-only story"); };'
-      );
-      storyExports.push('storybookDocsOnly.story = { parameters: { docsOnly: true } };');
-      includeStories.push('storybookDocsOnly');
+      storyExports.push('export const __page = () => { throw new Error("Docs-only story"); };');
+      storyExports.push('__page.story = { parameters: { docsOnly: true } };');
+      includeStories.push('__page');
     }
   } else {
     metaExport = {};
