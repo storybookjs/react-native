@@ -164,7 +164,7 @@ exports[`Storyshots Addon|Notes Simple Note 1`] = `
 </p>
 `;
 
-exports[`Storyshots App app 1`] = `
+exports[`Storyshots App App 1`] = `
 <div
   id="app"
 >
@@ -351,7 +351,6 @@ exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
     },
     "globalParameter": "globalParameter",
     "framework": "vue",
-    "displayName": "With Data",
     "customParameter": 42
   }
 }

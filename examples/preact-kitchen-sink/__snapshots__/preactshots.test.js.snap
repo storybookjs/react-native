@@ -38,7 +38,7 @@ exports[`Storyshots Addons|Actions Multiple Actions Object 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Backgrounds example1 1`] = `
+exports[`Storyshots Addons|Backgrounds Example 1 1`] = `
 <button
   class="button"
 >
@@ -46,7 +46,7 @@ exports[`Storyshots Addons|Backgrounds example1 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Backgrounds example2 1`] = `
+exports[`Storyshots Addons|Backgrounds Example 2 1`] = `
 <button
   class="button"
 >
