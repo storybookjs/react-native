@@ -1,6 +1,6 @@
 {
   "name": "@storybook/router",
-  "version": "5.2.0-beta.43",
+  "version": "5.2.0-beta.46",
   "description": "Core Storybook Router",
   "keywords": [
     "storybook"
@@ -25,6 +25,7 @@
     "@types/reach__router": "^1.2.3",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
+    "lodash": "^4.17.11",
     "memoizerific": "^1.11.3",
     "qs": "^6.6.0"
   },

@@ -1,5 +1,4 @@
 import React from 'react';
-import { toId } from '@storybook/router';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
 import { CURRENT_SELECTION } from './shared';
 
@@ -32,12 +31,12 @@ const inferInlineStories = (framework: string): boolean => {
 
 export const getStoryProps = (
   props: StoryProps,
-  { id: currentId, storyStore, parameters, mdxKind }: DocsContextProps
+  { id: currentId, storyStore, parameters, mdxStoryNameToId }: DocsContextProps
 ): PureStoryProps => {
   const { id } = props as StoryRefProps;
   const { name } = props as StoryDefProps;
   const inputId = id === CURRENT_SELECTION ? currentId : id;
-  const previewId = inputId || toId(mdxKind, name);
+  const previewId = inputId || mdxStoryNameToId[name];
 
   const { height, inline } = props;
   const data = storyStore.fromId(previewId);

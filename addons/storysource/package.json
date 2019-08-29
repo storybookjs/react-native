@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storysource",
-  "version": "5.2.0-beta.43",
+  "version": "5.2.0-beta.46",
   "description": "Stories addon for storybook",
   "keywords": [
     "addon",
@@ -22,11 +22,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.43",
-    "@storybook/components": "5.2.0-beta.43",
-    "@storybook/router": "5.2.0-beta.43",
-    "@storybook/source-loader": "5.2.0-beta.43",
-    "@storybook/theming": "5.2.0-beta.43",
+    "@storybook/addons": "5.2.0-beta.46",
+    "@storybook/components": "5.2.0-beta.46",
+    "@storybook/router": "5.2.0-beta.46",
+    "@storybook/source-loader": "5.2.0-beta.46",
+    "@storybook/theming": "5.2.0-beta.46",
     "core-js": "^3.0.1",
     "estraverse": "^4.2.0",
     "loader-utils": "^1.2.3",

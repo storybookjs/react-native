@@ -75,21 +75,13 @@ addParameters({
      */
     theme: undefined,
     /**
-    * function to sort stories in the tree view
-    * common use is alphabetical `(a, b) => a[1].id.localeCompare(b[1].id)`
-    * if left undefined, then the order in which the stories are imported will
-    * be the order they display
-    * @type {Function}
-    */
-    storySort: undefined
-
-    /**
-    * Function to transform Component Story Format named exports (typically camel-case
-    * variables) into display names. If the story specifies a `story.name` option, that
-    * will not be transformed and will always take precedence over a named export.
-    * @type {Function}
-    */
-    makeDisplayName: lodash.startCase
+     * function to sort stories in the tree view
+     * common use is alphabetical `(a, b) => a[1].id.localeCompare(b[1].id)`
+     * if left undefined, then the order in which the stories are imported will
+     * be the order they display
+     * @type {Function}
+     */
+    storySort: undefined,
   },
 });
 ```
