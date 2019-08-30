@@ -67,6 +67,21 @@
 
 ## From version 5.1.x to 5.2.x
 
+### default viewports
+
+The default viewports have been reduced to a smaller set, we think is enough for most usecases.
+You can get the old default back by adding the following to your `config.js`:
+
+```js
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+addParameters({
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+});
+```
+
 ### Grid toolbar-feature
 
 The grid feature in the toolbar has been relocated to [addon-background](https://github.com/storybookjs/storybook/tree/next/addons/backgrounds), follow the setup intructions on that addon to get the feature again.

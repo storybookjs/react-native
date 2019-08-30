@@ -13,7 +13,7 @@ export const basic = () => <div>Click docs tab to see basic docs</div>;
 export const noDocs = () => <div>Click docs tab to see no docs error</div>;
 noDocs.story = {
   name: 'no docs',
-  parameters: { docs: null },
+  parameters: { docs: { page: null } },
 };
 
 export const withNotes = () => <div>Click docs tab to see DocsPage docs</div>;
@@ -34,7 +34,7 @@ export const mdxOverride = () => <div>Click docs tab to see MDX-overridden docs<
 mdxOverride.story = {
   name: 'mdx override',
   parameters: {
-    docs: mdxNotes,
+    docs: { page: mdxNotes },
   },
 };
 
@@ -42,6 +42,6 @@ export const jsxOverride = () => <div>Click docs tab to see JSX-overridden docs<
 jsxOverride.story = {
   name: 'jsx override',
   parameters: {
-    docs: () => <div>Hello docs</div>,
+    docs: { page: () => <div>Hello docs</div> },
   },
 };

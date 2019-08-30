@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Actions Action on component method 1`] = `
+exports[`Storyshots Addon|Actions Action On Component Method 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -19,7 +19,7 @@ exports[`Storyshots Addon|Actions Action on component method 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Actions Action on view method 1`] = `
+exports[`Storyshots Addon|Actions Action On View Method 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -61,7 +61,7 @@ exports[`Storyshots Addon|Actions Action on view method 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Backgrounds story 1 1`] = `
+exports[`Storyshots Addon|Backgrounds Story 1 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -103,7 +103,7 @@ exports[`Storyshots Addon|Backgrounds story 1 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Centered rounded 1`] = `
+exports[`Storyshots Addon|Centered Rounded 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -122,7 +122,7 @@ exports[`Storyshots Addon|Centered rounded 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Centered with action 1`] = `
+exports[`Storyshots Addon|Centered With Action 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -155,7 +155,7 @@ exports[`Storyshots Addon|Knobs Simple 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Links Go to welcome view 1`] = `
+exports[`Storyshots Addon|Links Go To Welcome View 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -183,7 +183,7 @@ exports[`Storyshots Addon|Links Go to welcome view 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Notes Note with HTML 1`] = `
+exports[`Storyshots Addon|Notes Note With Html 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -225,7 +225,7 @@ exports[`Storyshots Addon|Notes Note with HTML 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Notes Simple note 1`] = `
+exports[`Storyshots Addon|Notes Simple Note 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -267,7 +267,7 @@ exports[`Storyshots Addon|Notes Simple note 1`] = `
 </section>
 `;
 
-exports[`Storyshots Button rounded 1`] = `
+exports[`Storyshots Button Rounded 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -309,7 +309,7 @@ exports[`Storyshots Button rounded 1`] = `
 </section>
 `;
 
-exports[`Storyshots Button square 1`] = `
+exports[`Storyshots Button Square 1`] = `
 <section
   class="storybook-snapshot-container"
 >

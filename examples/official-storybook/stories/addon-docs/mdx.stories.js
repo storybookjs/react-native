@@ -9,6 +9,6 @@ export default {
 
 // This renders the contents of the docs panel into story content
 export const typography = () => {
-  const Docs = markdown.parameters.docs;
+  const Docs = markdown.parameters.docs.page;
   return <Docs />;
 };

@@ -1,3 +1,69 @@
+## 5.2.0-beta.47 (August 30, 2019)
+
+### Bug Fixes
+
+* UI: Optimize treeview render/filter performance ([#7910](https://github.com/storybookjs/storybook/pull/7910))
+* Addon-docs: Fix DocsPage to respect displayName ([#7915](https://github.com/storybookjs/storybook/pull/7915))
+
+## 5.2.0-beta.46 (August 29, 2019)
+
+CSF users: this reverts the `makeDisplayName` change introduced in `5.2.0-beta.43` for maintainability reasons. See [#7901](https://github.com/storybookjs/storybook/pull/7901) for full rationale. And apologies for the inconvenience!
+
+### Bug Fixes
+
+* React: Fix missing props in the Welcome.tsx demo ([#7774](https://github.com/storybookjs/storybook/pull/7774))
+
+### Maintenance
+
+* CSF: Revert `makeDisplayName` & add stable `storyNameFromExport` ([#7901](https://github.com/storybookjs/storybook/pull/7901))
+* Addon-a11y: Upgrade axe to 3.3.2 which adds/mods rules ([#7888](https://github.com/storybookjs/storybook/pull/7888))
+
+## 5.2.0-beta.45 (August 28, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix MDX Story ID to match new CSF ([#7894](https://github.com/storybookjs/storybook/pull/7894))
+
+## 5.2.0-beta.44 (August 28, 2019)
+
+Publish failed
+
+## 5.2.0-beta.43 (August 28, 2019)
+
+CSF users: This is potentially a breaking change. If you want to opt-out of the new default display name calculation (`lodash.startCase`) you can add the following to your SB config:
+
+```js
+addParameters({ options: { makeDisplayName: key => key }});
+```
+
+### Features
+
+* CSF: Transform CSF named exports w/ `makeDisplayName` ([#7878](https://github.com/storybookjs/storybook/pull/7878))
+
+## 5.2.0-beta.42 (August 28, 2019)
+
+Addon-docs users: This is a breaking change if you have been hacking the `docs` parameter manually. If you're using the zero-config option for `DocsPage` or `MDX`, you should be unaffected by it.
+
+### Maintenance
+
+* Addon-docs: Make config API consistent with other addons ([#7874](https://github.com/storybookjs/storybook/pull/7874))
+
+## 5.2.0-beta.41 (August 27, 2019)
+
+### Features
+
+* Addon-info: Add configurable component comparator ([#7409](https://github.com/storybookjs/storybook/pull/7409))
+
+### Bug Fixes
+
+* Addon-viewports: Add back default viewports ([#7448](https://github.com/storybookjs/storybook/pull/7448))
+* Core: Pass a separate hooks context per story ([#7860](https://github.com/storybookjs/storybook/pull/7860))
+* UI: Fix TooltipLinkList not scrollable ([#7865](https://github.com/storybookjs/storybook/pull/7865))
+
+### Maintenance
+
+* UI: Add ignore `first-child` selector warning flag ([#7861](https://github.com/storybookjs/storybook/pull/7861))
+
 ## 5.2.0-beta.40 (August 23, 2019)
 
 ### Bug Fixes
