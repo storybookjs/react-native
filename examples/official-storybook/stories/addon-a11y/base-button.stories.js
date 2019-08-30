@@ -9,6 +9,10 @@ export default {
   component: BaseButton,
   parameters: {
     options: { selectedPanel: 'storybook/a11y/panel' },
+    edit: {
+      fileName:
+        'https://github.com/storybookjs/storybook/blob/next/lib/components/src/Button/Button.tsx',
+    },
   },
 };
 
