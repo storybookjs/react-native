@@ -1,5 +1,6 @@
 import React from 'react';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
+import { StoryFn } from '@storybook/addons';
 import { CURRENT_SELECTION } from './shared';
 
 import { DocsContext, DocsContextProps } from './DocsContext';
@@ -24,6 +25,8 @@ const inferInlineStories = (framework: string): boolean => {
   switch (framework) {
     case 'react':
       return true;
+    case 'vue':
+      return true;
     default:
       return false;
   }
@@ -43,12 +46,16 @@ export const getStoryProps = (
   const { framework = null } = parameters || {};
 
   // prefer props, then global options, then framework-inferred values
-  const { inlineStories = inferInlineStories(framework), iframeHeight = undefined } =
-    (parameters && parameters.docs) || {};
+  const {
+    inlineStories = inferInlineStories(framework),
+    iframeHeight = undefined,
+    prepareForInline = (storyFn: StoryFn) => storyFn(),
+  } = (parameters && parameters.docs) || {};
+
   return {
     inline: typeof inline === 'boolean' ? inline : inlineStories,
     id: previewId,
-    storyFn: data && data.storyFn,
+    storyFn: prepareForInline ? () => prepareForInline(data && data.storyFn) : data && data.storyFn,
     height: height || iframeHeight,
     title: data && data.name,
   };

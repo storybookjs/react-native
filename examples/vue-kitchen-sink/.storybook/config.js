@@ -13,9 +13,6 @@ addParameters({
   options: {
     hierarchyRootSeparator: /\|/,
   },
-  docs: {
-    iframeHeight: '60px',
-  },
 });
 
 configure(require.context('../src/stories', true, /\.stories\.(js|mdx)$/), module);
