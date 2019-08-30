@@ -1,3 +1,13 @@
+## 5.2.0-rc.0 (August 30, 2019)
+
+5.2 is in RC!!! 🎉What this means:
+
+- no glaring bugs relating to new features (that we know of)
+- bugfixes only until 5.2 final
+- follow-on features to be released in `5.3-alpha` ASAP
+
+Track progress on the [5.2 release issue](https://github.com/storybookjs/storybook/issues/7430)
+
 ## 5.2.0-beta.48 (August 30, 2019)
 
 ### Bug Fixes
