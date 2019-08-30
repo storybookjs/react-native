@@ -1,7 +1,7 @@
 import { document, HTMLElement } from 'global';
 import qs from 'qs';
 import addons from '@storybook/addons';
-import { STORY_CHANGED, SET_CURRENT_STORY } from '@storybook/core-events';
+import { STORY_CHANGED, SELECT_STORY } from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
 
 interface ParamsId {
@@ -13,7 +13,7 @@ interface ParamsCombo {
 }
 
 export const navigate = (params: ParamsId | ParamsCombo) =>
-  addons.getChannel().emit(SET_CURRENT_STORY, params);
+  addons.getChannel().emit(SELECT_STORY, params);
 
 const generateUrl = (id: string) => {
   const { location } = document;
@@ -31,7 +31,8 @@ export const linkTo = (kind: string, story?: string) => (...args: string[]) => {
   const resolver = valueOrCall(args);
 
   navigate({
-    storyId: toId(resolver(kind), resolver(story)),
+    kind: resolver(kind),
+    story: resolver(story),
   });
 };
 
