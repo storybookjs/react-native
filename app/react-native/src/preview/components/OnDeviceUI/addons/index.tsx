@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { SafeAreaView } from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
 import AddonsList from './list';
@@ -37,20 +38,24 @@ export default class Addons extends PureComponent<{}, { addonSelected: string }>
 
     if (Object.keys(this.panels).length === 0) {
       return (
-        <NoAddonContainer>
-          <Label>No addons loaded.</Label>
-        </NoAddonContainer>
+        <SafeAreaView style={{ flex: 1 }}>
+          <NoAddonContainer>
+            <Label>No addons loaded.</Label>
+          </NoAddonContainer>
+        </SafeAreaView>
       );
     }
 
     return (
       <Container>
-        <AddonsList
-          onPressAddon={this.onPressAddon}
-          panels={this.panels}
-          addonSelected={addonSelected}
-        />
-        <AddonWrapper addonSelected={addonSelected} panels={this.panels} />
+        <SafeAreaView style={{ flex: 1 }}>
+          <AddonsList
+            onPressAddon={this.onPressAddon}
+            panels={this.panels}
+            addonSelected={addonSelected}
+          />
+          <AddonWrapper addonSelected={addonSelected} panels={this.panels} />
+        </SafeAreaView>
       </Container>
     );
   }

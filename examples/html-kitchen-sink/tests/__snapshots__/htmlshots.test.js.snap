@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
+exports[`Storyshots Addons|Actions Story 1 1`] = `
 <button
   type="button"
 >
@@ -8,7 +8,7 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Decorated actions 1`] = `
+exports[`Storyshots Addons|Actions Story 2 1`] = `
 <button
   type="button"
 >
@@ -16,7 +16,7 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Hello World 1`] = `
+exports[`Storyshots Addons|Actions Story 3 1`] = `
 <button
   type="button"
 >
@@ -24,7 +24,7 @@ exports[`Storyshots Addons|Actions Hello World 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
+exports[`Storyshots Addons|Actions Story 4 1`] = `
 <button
   type="button"
 >
@@ -32,36 +32,36 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Multiple actions, selector 1`] = `
+exports[`Storyshots Addons|Actions Story 5 1`] = `
 
         
 `;
 
-exports[`Storyshots Addons|Backgrounds story 1 1`] = `
+exports[`Storyshots Addons|Actions Story 6 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Story 7 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Story 8 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Backgrounds Story 1 1`] = `
 <span
   style="color: white"
 >
@@ -69,7 +69,7 @@ exports[`Storyshots Addons|Backgrounds story 1 1`] = `
 </span>
 `;
 
-exports[`Storyshots Addons|Backgrounds story 2 1`] = `
+exports[`Storyshots Addons|Backgrounds Story 2 1`] = `
 <span
   style="color: white"
 >
@@ -77,7 +77,7 @@ exports[`Storyshots Addons|Backgrounds story 2 1`] = `
 </span>
 `;
 
-exports[`Storyshots Addons|Centered button in center 1`] = `
+exports[`Storyshots Addons|Centered Story 1 1`] = `
 <div
   id="sb-addon-centered-wrapper"
   style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
@@ -98,9 +98,29 @@ exports[`Storyshots Addons|Events Logger 1`] = `
     
 `;
 
-exports[`Storyshots Addons|Jest withTests 1`] = `This story shows test results`;
+exports[`Storyshots Addons|Jest With Tests 1`] = `This story shows test results`;
 
-exports[`Storyshots Addons|Knobs All knobs 1`] = `
+exports[`Storyshots Addons|Knobs DOM 1`] = `
+<p>
+  John Doe
+</p>
+`;
+
+exports[`Storyshots Addons|Knobs Simple 1`] = `
+<div>
+  I am John Doe and I'm 44 years old.
+</div>
+`;
+
+exports[`Storyshots Addons|Knobs Story 3 1`] = `
+<p
+  style="transition: color 0.5s ease-out; color: orangered;"
+>
+  John Doe
+</p>
+`;
+
+exports[`Storyshots Addons|Knobs Story 4 1`] = `
 <div
   style="border: 2px dotted deeppink; padding: 8px 22px; border-radius: 8px"
 >
@@ -147,29 +167,9 @@ exports[`Storyshots Addons|Knobs All knobs 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addons|Knobs CSS transitions 1`] = `
-<p
-  style="transition: color 0.5s ease-out; color: orangered;"
->
-  John Doe
-</p>
-`;
+exports[`Storyshots Addons|Knobs Story 5 1`] = `&lt;img src=x onerror="alert('XSS Attack')" &gt;`;
 
-exports[`Storyshots Addons|Knobs DOM 1`] = `
-<p>
-  John Doe
-</p>
-`;
-
-exports[`Storyshots Addons|Knobs Simple 1`] = `
-<div>
-  I am John Doe and I'm 44 years old.
-</div>
-`;
-
-exports[`Storyshots Addons|Knobs XSS safety 1`] = `&lt;img src=x onerror="alert('XSS Attack')" &gt;`;
-
-exports[`Storyshots Addons|Notes Simple note 1`] = `
+exports[`Storyshots Addons|Notes Story 1 1`] = `
 <p>
   
       
@@ -185,19 +185,9 @@ exports[`Storyshots Addons|Notes Simple note 1`] = `
 
 exports[`Storyshots Addons|a11y Default 1`] = `<button />`;
 
-exports[`Storyshots Addons|a11y Delayed render 1`] = `<div />`;
-
 exports[`Storyshots Addons|a11y Disabled 1`] = `
 <button
   disabled=""
->
-  Testing the a11y addon
-</button>
-`;
-
-exports[`Storyshots Addons|a11y Invalid contrast 1`] = `
-<button
-  style="color: black; background-color: brown;"
 >
   Testing the a11y addon
 </button>
@@ -209,19 +199,37 @@ exports[`Storyshots Addons|a11y Label 1`] = `
 </button>
 `;
 
-exports[`Storyshots Demo button 1`] = `
+exports[`Storyshots Addons|a11y Story 4 1`] = `
+<button
+  style="color: black; background-color: brown;"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|a11y Story 5 1`] = `<div />`;
+
+exports[`Storyshots Demo Button 1`] = `
 <button>
   Hello Button
 </button>
 `;
 
-exports[`Storyshots Demo heading 1`] = `
+exports[`Storyshots Demo Effect 1`] = `
+<button
+  id="button"
+>
+  I should be yellow
+</button>
+`;
+
+exports[`Storyshots Demo Heading 1`] = `
 <h1>
   Hello World
 </h1>
 `;
 
-exports[`Storyshots Demo headings 1`] = `
+exports[`Storyshots Demo Headings 1`] = `
 <section>
   <h1>
     Hello World

@@ -166,6 +166,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           onClick={[Function]}
         >
           <button
+            onClick={[Function]}
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -272,6 +273,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
                 "textDecoration": "none",
               }
             }
+            target="_blank"
           >
             Writing Stories
           </a>

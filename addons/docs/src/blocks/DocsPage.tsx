@@ -3,8 +3,7 @@ import React from 'react';
 import { parseKind } from '@storybook/router';
 import { DocsPage as PureDocsPage, PropsTable, PropsTableProps } from '@storybook/components';
 import { H2, H3 } from '@storybook/components/html';
-import { DocsContext, DocsContextProps } from './DocsContext';
-import { DocsContainer } from './DocsContainer';
+import { DocsContext } from './DocsContext';
 import { Description, getDocgen } from './Description';
 import { Story } from './Story';
 import { Preview } from './Preview';
@@ -38,6 +37,7 @@ interface DocsStoryProps {
   description?: string;
   expanded?: boolean;
   withToolbar?: boolean;
+  parameters?: any;
 }
 
 interface StoryData {
@@ -85,9 +85,10 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   description,
   expanded = true,
   withToolbar = false,
+  parameters,
 }) => (
   <>
-    {expanded && <StoryHeading>{name}</StoryHeading>}
+    {expanded && <StoryHeading>{(parameters && parameters.displayName) || name}</StoryHeading>}
     {expanded && description && <Description markdown={description} />}
     <Preview withToolbar={withToolbar}>
       <Story id={id} />
@@ -95,13 +96,13 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   </>
 );
 
-const DocsPage: React.FunctionComponent<DocsPageProps> = ({
-  titleSlot,
-  subtitleSlot,
-  descriptionSlot,
-  primarySlot,
-  propsSlot,
-  storiesSlot,
+export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
+  titleSlot = defaultTitleSlot,
+  subtitleSlot = defaultSubtitleSlot,
+  descriptionSlot = defaultDescriptionSlot,
+  primarySlot = defaultPrimarySlot,
+  propsSlot = defaultPropsSlot,
+  storiesSlot = defaultStoriesSlot,
 }) => (
   <DocsContext.Consumer>
     {context => {
@@ -111,16 +112,14 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = ({
       const propsTableProps = propsSlot(context);
 
       const { selectedKind, storyStore } = context;
-      const componentStories = (storyStore.raw() as StoryData[]).filter(
-        s => s.kind === selectedKind
-      );
+      const componentStories = storyStore.getStoriesForKind(selectedKind);
       const primary = primarySlot(componentStories, context);
       const stories = storiesSlot(componentStories, context);
 
       return (
         <PureDocsPage title={title} subtitle={subtitle}>
           <Description markdown={description} />
-          {primary && <DocsStory {...primary} expanded={false} withToolbar />}
+          {primary && <DocsStory key={primary.id} {...primary} expanded={false} withToolbar />}
           {propsTableProps && <PropsTable {...propsTableProps} />}
           {stories && stories.length > 0 && <StoriesHeading>Stories</StoriesHeading>}
           {stories &&
@@ -130,35 +129,3 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = ({
     }}
   </DocsContext.Consumer>
 );
-
-interface DocsPageWrapperProps {
-  context: DocsContextProps;
-  titleSlot?: StringSlot;
-  subtitleSlot?: StringSlot;
-  descriptionSlot?: StringSlot;
-  primarySlot?: StorySlot;
-  propsSlot?: PropsSlot;
-  storiesSlot?: StoriesSlot;
-}
-
-const DocsPageWrapper: React.FunctionComponent<DocsPageWrapperProps> = ({
-  context,
-  titleSlot = defaultTitleSlot,
-  subtitleSlot = defaultSubtitleSlot,
-  descriptionSlot = defaultDescriptionSlot,
-  primarySlot = defaultPrimarySlot,
-  propsSlot = defaultPropsSlot,
-  storiesSlot = defaultStoriesSlot,
-}) => (
-  /* eslint-disable react/destructuring-assignment */
-  <DocsContainer
-    context={{ ...context, mdxKind: context.selectedKind }}
-    content={() => (
-      <DocsPage
-        {...{ titleSlot, subtitleSlot, descriptionSlot, primarySlot, propsSlot, storiesSlot }}
-      />
-    )}
-  />
-);
-
-export { DocsPageWrapper as DocsPage };
