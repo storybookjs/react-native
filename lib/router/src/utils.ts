@@ -1,5 +1,6 @@
 import qs from 'qs';
 import memoize from 'memoizerific';
+import startCase from 'lodash/startCase';
 
 interface StoryData {
   viewMode?: string;
@@ -91,3 +92,6 @@ export const parseKind = (kind: string, { rootSeparator, groupSeparator }: Separ
     groups,
   };
 };
+
+// Transform the CSF named export into a readable story name
+export const storyNameFromExport = (key: string) => startCase(key);

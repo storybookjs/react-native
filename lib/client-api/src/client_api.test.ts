@@ -121,7 +121,7 @@ describe('preview.client_api', () => {
       clientApi.addParameters({ a: '1' });
 
       // @ts-ignore
-      expect(clientApi._globalParameters).toEqual({ a: '1', options: {} });
+      expect(clientApi._globalParameters).toEqual({ a: '1', options: {}, docs: {} });
     });
 
     it('should merge options', () => {
@@ -131,7 +131,7 @@ describe('preview.client_api', () => {
       clientApi.addParameters({ options: { b: '2' } });
 
       // @ts-ignore
-      expect(clientApi._globalParameters).toEqual({ options: { a: '1', b: '2' } });
+      expect(clientApi._globalParameters).toEqual({ options: { a: '1', b: '2' }, docs: {} });
     });
 
     it('should override specific properties in options', () => {
@@ -144,6 +144,7 @@ describe('preview.client_api', () => {
       expect(clientApi._globalParameters).toEqual({
         backgrounds: ['value'],
         options: { a: '2', b: '3' },
+        docs: {},
       });
     });
 
@@ -157,6 +158,7 @@ describe('preview.client_api', () => {
       expect(clientApi._globalParameters).toEqual({
         backgrounds: [],
         options: { a: '2', b: '3' },
+        docs: {},
       });
     });
 
@@ -169,6 +171,7 @@ describe('preview.client_api', () => {
       // @ts-ignore
       expect(clientApi._globalParameters).toEqual({
         options: { a: '1', b: '2', theming: { c: '4', d: '5' } },
+        docs: {},
       });
     });
   });
@@ -454,6 +457,7 @@ describe('preview.client_api', () => {
         c: 'story',
         fileName: expect.any(String),
         options: expect.any(Object),
+        docs: expect.any(Object),
       });
     });
 
@@ -471,6 +475,7 @@ describe('preview.client_api', () => {
           sub: { global: true },
         },
         options: expect.any(Object),
+        docs: expect.any(Object),
       });
 
       storiesOf('kind', module)
@@ -508,6 +513,7 @@ describe('preview.client_api', () => {
         },
         fileName: expect.any(String),
         options: expect.any(Object),
+        docs: expect.any(Object),
       });
     });
   });

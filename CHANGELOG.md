@@ -1,3 +1,105 @@
+## 5.2.0-rc.0 (August 30, 2019)
+
+5.2 is in RC!!! 🎉What this means:
+
+- no glaring bugs relating to new features (that we know of)
+- bugfixes only until 5.2 final
+- follow-on features to be released in `5.3-alpha` ASAP
+
+Track progress on the [5.2 release issue](https://github.com/storybookjs/storybook/issues/7430)
+
+## 5.2.0-beta.48 (August 30, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix docs-only story ID suffix ([#7921](https://github.com/storybookjs/storybook/pull/7921))
+
+### Maintenance
+
+* Replace favicon with new Storybook icon. ([#7922](https://github.com/storybookjs/storybook/pull/7922))
+
+### Dependency Upgrades
+
+* Bump react-draggable from 3.1.1 to 3.3.2 ([#7912](https://github.com/storybookjs/storybook/pull/7912))
+
+## 5.2.0-beta.47 (August 30, 2019)
+
+### Bug Fixes
+
+* UI: Optimize treeview render/filter performance ([#7910](https://github.com/storybookjs/storybook/pull/7910))
+* Addon-docs: Fix DocsPage to respect displayName ([#7915](https://github.com/storybookjs/storybook/pull/7915))
+
+## 5.2.0-beta.46 (August 29, 2019)
+
+CSF users: this reverts the `makeDisplayName` change introduced in `5.2.0-beta.43` for maintainability reasons. See [#7901](https://github.com/storybookjs/storybook/pull/7901) for full rationale. And apologies for the inconvenience!
+
+### Bug Fixes
+
+* React: Fix missing props in the Welcome.tsx demo ([#7774](https://github.com/storybookjs/storybook/pull/7774))
+
+### Maintenance
+
+* CSF: Revert `makeDisplayName` & add stable `storyNameFromExport` ([#7901](https://github.com/storybookjs/storybook/pull/7901))
+* Addon-a11y: Upgrade axe to 3.3.2 which adds/mods rules ([#7888](https://github.com/storybookjs/storybook/pull/7888))
+
+## 5.2.0-beta.45 (August 28, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix MDX Story ID to match new CSF ([#7894](https://github.com/storybookjs/storybook/pull/7894))
+
+## 5.2.0-beta.44 (August 28, 2019)
+
+Publish failed
+
+## 5.2.0-beta.43 (August 28, 2019)
+
+CSF users: This is potentially a breaking change. If you want to opt-out of the new default display name calculation (`lodash.startCase`) you can add the following to your SB config:
+
+```js
+addParameters({ options: { makeDisplayName: key => key }});
+```
+
+### Features
+
+* CSF: Transform CSF named exports w/ `makeDisplayName` ([#7878](https://github.com/storybookjs/storybook/pull/7878))
+
+## 5.2.0-beta.42 (August 28, 2019)
+
+Addon-docs users: This is a breaking change if you have been hacking the `docs` parameter manually. If you're using the zero-config option for `DocsPage` or `MDX`, you should be unaffected by it.
+
+### Maintenance
+
+* Addon-docs: Make config API consistent with other addons ([#7874](https://github.com/storybookjs/storybook/pull/7874))
+
+## 5.2.0-beta.41 (August 27, 2019)
+
+### Features
+
+* Addon-info: Add configurable component comparator ([#7409](https://github.com/storybookjs/storybook/pull/7409))
+
+### Bug Fixes
+
+* Addon-viewports: Add back default viewports ([#7448](https://github.com/storybookjs/storybook/pull/7448))
+* Core: Pass a separate hooks context per story ([#7860](https://github.com/storybookjs/storybook/pull/7860))
+* UI: Fix TooltipLinkList not scrollable ([#7865](https://github.com/storybookjs/storybook/pull/7865))
+
+### Maintenance
+
+* UI: Add ignore `first-child` selector warning flag ([#7861](https://github.com/storybookjs/storybook/pull/7861))
+
+## 5.2.0-beta.40 (August 23, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix DocsPage primary story switching ([#7849](https://github.com/storybookjs/storybook/pull/7849))
+* Source-loader: Selectively ignore typescript errors in generated code ([#7845](https://github.com/storybookjs/storybook/pull/7845))
+* Addon-docs: Force hidden attribute on #root element ([#7841](https://github.com/storybookjs/storybook/pull/7841))
+
+### Maintenance
+
+* Remove temporarily added --no-dll option on examples ([#7647](https://github.com/storybookjs/storybook/pull/7647))
+
 ## 5.2.0-beta.39 (August 22, 2019)
 
 ### Bug Fixes

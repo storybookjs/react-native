@@ -37,6 +37,7 @@ interface DocsStoryProps {
   description?: string;
   expanded?: boolean;
   withToolbar?: boolean;
+  parameters?: any;
 }
 
 interface StoryData {
@@ -84,9 +85,10 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   description,
   expanded = true,
   withToolbar = false,
+  parameters,
 }) => (
   <>
-    {expanded && <StoryHeading>{name}</StoryHeading>}
+    {expanded && <StoryHeading>{(parameters && parameters.displayName) || name}</StoryHeading>}
     {expanded && description && <Description markdown={description} />}
     <Preview withToolbar={withToolbar}>
       <Story id={id} />
@@ -110,16 +112,14 @@ export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
       const propsTableProps = propsSlot(context);
 
       const { selectedKind, storyStore } = context;
-      const componentStories = (storyStore.raw() as StoryData[]).filter(
-        s => s.kind === selectedKind
-      );
+      const componentStories = storyStore.getStoriesForKind(selectedKind);
       const primary = primarySlot(componentStories, context);
       const stories = storiesSlot(componentStories, context);
 
       return (
         <PureDocsPage title={title} subtitle={subtitle}>
           <Description markdown={description} />
-          {primary && <DocsStory {...primary} expanded={false} withToolbar />}
+          {primary && <DocsStory key={primary.id} {...primary} expanded={false} withToolbar />}
           {propsTableProps && <PropsTable {...propsTableProps} />}
           {stories && stories.length > 0 && <StoriesHeading>Stories</StoriesHeading>}
           {stories &&

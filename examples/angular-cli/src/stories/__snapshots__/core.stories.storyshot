@@ -12,7 +12,7 @@ exports[`Storyshots Core|Parameters passed to story 1`] = `
     <button
       _ngcontent-a-c7=""
     >
-      Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{},"docs":{"iframeHeight":"60px"}},"globalParameter":"globalParameter","framework":"angular","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
+      Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"docs":{"iframeHeight":"60px"},"globalParameter":"globalParameter","framework":"angular","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
     </button>
   </storybook-button-component>
 </storybook-dynamic-app-root>

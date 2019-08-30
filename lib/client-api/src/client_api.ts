@@ -134,6 +134,10 @@ export default class ClientApi {
       options: {
         ...merge(get(this._globalParameters, 'options', {}), get(parameters, 'options', {})),
       },
+      // FIXME: https://github.com/storybookjs/storybook/issues/7872
+      docs: {
+        ...merge(get(this._globalParameters, 'docs', {}), get(parameters, 'docs', {})),
+      },
     };
   };
 
