@@ -200,4 +200,5 @@ Be sure to update your Storybook config file to load `.stories.mdx` stories, as 
 
 - References: [README](../README.md) / [DocsPage](docspage.md) / [FAQ](faq.md) / [Recipes](recipes.md)
 - Vision: [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
+- Example: [Storybook Design System](https://github.com/storybookjs/design-system)
 - [Technical preview guide](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing)

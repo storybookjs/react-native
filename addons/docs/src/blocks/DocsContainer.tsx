@@ -9,7 +9,6 @@ import { DocsContextProps, DocsContext } from './DocsContext';
 
 interface DocsContainerProps {
   context: DocsContextProps;
-  content: React.ElementType<any>;
 }
 
 interface CodeOrSourceProps {
@@ -43,21 +42,19 @@ const defaultComponents = {
 
 export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   context,
-  content: MDXContent,
+  children,
 }) => {
   const parameters = (context && context.parameters) || {};
   const options = parameters.options || {};
   const theme = ensureTheme(options.theme);
-  const { components: userComponents = null } = options.docs || {};
+  const { components: userComponents = null } = parameters.docs || {};
   const components = { ...defaultComponents, ...userComponents };
   return (
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>
         <MDXProvider components={components}>
           <DocsWrapper>
-            <DocsContent>
-              <MDXContent components={components} />
-            </DocsContent>
+            <DocsContent>{children}</DocsContent>
           </DocsWrapper>
         </MDXProvider>
       </ThemeProvider>

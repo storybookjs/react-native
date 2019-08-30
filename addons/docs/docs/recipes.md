@@ -6,6 +6,8 @@
 - [Pure MDX Stories](#pure-mdx-stories)
 - [Mixed CSF / MDX Stories](#mixed-csf--mdx-stories)
 - [CSF Stories with MDX Docs](#csf-stories-with-mdx-docs)
+- [Migrating from notes/info addons](#migrating-from-notesinfo-addons)
+- [Exporting documentation](#exporting-documentation)
 - [More resources](#more-resources)
 
 ## Component Story Format (CSF) with DocsPage
@@ -28,17 +30,17 @@ The only limitation is that your exported titles (CSF: `default.title`, MDX `Met
 
 Perhaps you want to write your stories in CSF, but document them in MDX? Here's how to do that:
 
-**Button.stories.mdx**
+**Button.mdx**
 
 ```md
-import { Story } from '@storybook/docs/blocks';
+import { Story } from '@storybook/addon-docs/blocks';
 import { SomeComponent } from 'somewhere';
 
 # Button
 
 I can embed a story (but not define one, since this file should not contain a `Meta`):
 
-<Story id="some--id">
+<Story id="some--id" />
 
 And of course I can also embed arbitrary markdown & JSX in this file.
 
@@ -49,16 +51,52 @@ And of course I can also embed arbitrary markdown & JSX in this file.
 
 ```js
 import { Button } from './Button';
-import mdx from './Button.stories.mdx';
+import mdx from './Button.mdx';
 
 export default {
   title: 'Demo/Button',
   parameters: {
-    docs: mdx.parameters.docs,
+    docs: {
+      page: mdx,
+    },
   },
 };
 
 export const basic = () => <Button>Basic</Button>;
+```
+
+Note that in contrast to other examples, the MDX file suffix is `.mdx` rather than `.stories.mdx`. This key difference means that the file will be loaded with the default MDX loader rather than Storybook's CSF loader, which has several implications:
+
+1. You don't need to provide a `Meta` declaration.
+2. You can refer to existing stories (i.e. `<Story id="...">`) but cannot define new stories (i.e. `<Story name="...">`).
+3. The documentation gets exported as the default export (MDX default) rather than as a parameter hanging off the default export (CSF).
+
+## Migrating from notes/info addons
+
+If you're currently using the notes/info addons, you can upgrade to DocsPage [using slots](./docspage.md#docspage-slots). There are different ways to use each addon, so you can adapt this recipe according to your use case.
+
+Suppose you've added a `notes` parameter to each component in your library, containing markdown text, and you want that to show up at the top of the page in the `Description` slot. Then you would modify your setup in `.storybook/config.js`:
+
+```js
+import { DocsPage } from '@storybook/addon-docs/blocks';
+
+addParameters({
+  docs: ({ context }) => (
+    <DocsPage context={context} descriptionSlot={({ parameters }) => parameters.notes} />
+  ),
+});
+```
+
+## Exporting documentation
+
+> ⚠️ The `--docs` flag is an experimental feature in Storybook 5.2. The behavior may change in 5.3 outside of the normal semver rules. Be forewarned!
+
+The Storybook UI is a workshop for developing components in isolation. Storybook Docs is a showcase for documenting your components. During component/docs development, it’s useful to see both of these modes side by side. But when you export your static storybook, you might want to just export the docs to reduce clutter.
+
+To address this, we’ve added a CLI flag to export just the docs. This flag is also available in dev mode:
+
+```sh
+yarn build-storybook --docs
 ```
 
 ## More resources
@@ -67,4 +105,5 @@ Want to learn more? Here are some more articles on Storybook Docs:
 
 - References: [README](../README.md) / [DocsPage](docspage.md) / [MDX](mdx.md) / [FAQ](faq.md)
 - Vision: [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
+- Example: [Storybook Design System](https://github.com/storybookjs/design-system)
 - [Technical preview guide](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing)
