@@ -27370,9 +27370,9 @@ store2@^2.7.1:
   integrity sha512-zzzP5ZY6QWumnAFV6kBRbS44pUMcpZBNER5DWUe1HETlaKXqLcCQxbNu6IHaKr1pUsjuhUGBdOy8sWKmMkL6pQ==
 
 storybook-addon-vue-info@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/storybook-addon-vue-info/-/storybook-addon-vue-info-1.2.1.tgz#41dc5b16392640866878441abb8c060414803c78"
-  integrity sha512-B4l93SBHjVilrbzZ7sFMyfBlwm5nCuecU+ZOhpeci5zOK0ixTgCAwg/zIWBpCT9yI0iUAZv70xaIO9ICxm3vOQ==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/storybook-addon-vue-info/-/storybook-addon-vue-info-1.2.2.tgz#3479ed65fe2cfc87bafff4f711716851986b8101"
+  integrity sha512-DkT2SjwAJxuv/G5f1NZ8DH8Q+1u2FIfutbdgJTbah+ZAQz5PeLS5pkY9/zL4oETs6DA7hB8NXBeFWiZoPGbEfw==
   dependencies:
     clone "^2.1.2"
     dedent-tabs "^0.8.0"
