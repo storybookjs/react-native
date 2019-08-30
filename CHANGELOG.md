@@ -1,3 +1,17 @@
+## 5.2.0-beta.48 (August 30, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix docs-only story ID suffix ([#7921](https://github.com/storybookjs/storybook/pull/7921))
+
+### Maintenance
+
+* Replace favicon with new Storybook icon. ([#7922](https://github.com/storybookjs/storybook/pull/7922))
+
+### Dependency Upgrades
+
+* Bump react-draggable from 3.1.1 to 3.3.2 ([#7912](https://github.com/storybookjs/storybook/pull/7912))
+
 ## 5.2.0-beta.47 (August 30, 2019)
 
 ### Bug Fixes
