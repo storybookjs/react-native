@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.2.0-beta.47",
+  "version": "5.2.0-beta.48",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,16 +22,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "5.2.0-beta.47",
-    "@storybook/addon-knobs": "5.2.0-beta.47",
-    "@storybook/addons": "5.2.0-beta.47",
-    "@storybook/api": "5.2.0-beta.47",
-    "@storybook/channels": "5.2.0-beta.47",
-    "@storybook/client-logger": "5.2.0-beta.47",
-    "@storybook/components": "5.2.0-beta.47",
-    "@storybook/core-events": "5.2.0-beta.47",
-    "@storybook/router": "5.2.0-beta.47",
-    "@storybook/theming": "5.2.0-beta.47",
+    "@storybook/addon-actions": "5.2.0-beta.48",
+    "@storybook/addon-knobs": "5.2.0-beta.48",
+    "@storybook/addons": "5.2.0-beta.48",
+    "@storybook/api": "5.2.0-beta.48",
+    "@storybook/channels": "5.2.0-beta.48",
+    "@storybook/client-logger": "5.2.0-beta.48",
+    "@storybook/components": "5.2.0-beta.48",
+    "@storybook/core-events": "5.2.0-beta.48",
+    "@storybook/router": "5.2.0-beta.48",
+    "@storybook/theming": "5.2.0-beta.48",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
