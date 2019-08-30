@@ -5,7 +5,7 @@ exports[`Storyshots Addon|Actions Action on component method 1`] = `
   class="storybook-snapshot-container"
 >
   <button
-    class="button svelte-n2tx93 rounded"
+    class="button svelte-11vzkcm rounded"
   >
     <strong>
       Round
@@ -28,7 +28,7 @@ exports[`Storyshots Addon|Actions Action on view method 1`] = `
   </h1>
    
   <button
-    class="button svelte-n2tx93"
+    class="button svelte-11vzkcm"
   >
     <strong>
       Square
@@ -70,7 +70,7 @@ exports[`Storyshots Addon|Backgrounds story 1 1`] = `
   </h1>
    
   <button
-    class="button svelte-n2tx93"
+    class="button svelte-11vzkcm"
   >
     <strong>
       Square
@@ -108,7 +108,7 @@ exports[`Storyshots Addon|Centered rounded 1`] = `
   class="storybook-snapshot-container"
 >
   <button
-    class="button svelte-n2tx93 rounded"
+    class="button svelte-11vzkcm rounded"
   >
     <strong>
       Round
@@ -127,7 +127,7 @@ exports[`Storyshots Addon|Centered with action 1`] = `
   class="storybook-snapshot-container"
 >
   <button
-    class="button svelte-n2tx93 rounded"
+    class="button svelte-11vzkcm rounded"
   >
     <strong>
       Round
@@ -192,7 +192,7 @@ exports[`Storyshots Addon|Notes Note with HTML 1`] = `
   </h1>
    
   <button
-    class="button svelte-n2tx93"
+    class="button svelte-11vzkcm"
   >
     <strong>
       Square
@@ -234,7 +234,7 @@ exports[`Storyshots Addon|Notes Simple note 1`] = `
   </h1>
    
   <button
-    class="button svelte-n2tx93"
+    class="button svelte-11vzkcm"
   >
     <strong>
       Square
@@ -276,7 +276,7 @@ exports[`Storyshots Button rounded 1`] = `
   </h1>
    
   <button
-    class="button svelte-n2tx93 rounded"
+    class="button svelte-11vzkcm rounded"
   >
     <strong>
       Round
@@ -318,7 +318,7 @@ exports[`Storyshots Button square 1`] = `
   </h1>
    
   <button
-    class="button svelte-n2tx93"
+    class="button svelte-11vzkcm"
   >
     <strong>
       Square
@@ -356,7 +356,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
   class="storybook-snapshot-container"
 >
   <div
-    class="main svelte-5n9a95"
+    class="main svelte-3o9yuo"
   >
     <h1>
       Welcome to Storybook for Svelte
@@ -372,7 +372,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
       
 			    We've added some basic stories inside the 
       <code
-        class="code svelte-5n9a95"
+        class="code svelte-3o9yuo"
       >
         src/stories
       </code>
@@ -388,7 +388,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
     </p>
      
     <h1
-      class="logo svelte-5n9a95"
+      class="logo svelte-3o9yuo"
     >
       Svelte
     </h1>
@@ -402,14 +402,14 @@ exports[`Storyshots Welcome Welcome 1`] = `
       
 			    (Try editing the 
       <code
-        class="code svelte-5n9a95"
+        class="code svelte-3o9yuo"
       >
         Button
       </code>
        component
 			    located at 
       <code
-        class="code svelte-5n9a95"
+        class="code svelte-3o9yuo"
       >
         src/stories/views/Welcome.svelte
       </code>
@@ -425,7 +425,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
 			    Have a look at the
 			    
       <a
-        class="link svelte-5n9a95"
+        class="link svelte-3o9yuo"
         href="https://storybook.js.org/basics/writing-stories"
         target="_blank"
       >
@@ -437,7 +437,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
     </p>
      
     <p
-      class="note svelte-5n9a95"
+      class="note svelte-3o9yuo"
     >
       <b>
         NOTE:
@@ -448,7 +448,7 @@ exports[`Storyshots Welcome Welcome 1`] = `
 			    Have a look at the
 			    
       <code
-        class="code svelte-5n9a95"
+        class="code svelte-3o9yuo"
       >
         .storybook/webpack.config.js
       </code>
