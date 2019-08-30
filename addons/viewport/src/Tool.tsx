@@ -133,6 +133,14 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
     });
     const list = toList(viewports);
 
+    useEffect(() => {
+      setState({
+        selected:
+          defaultViewport || (viewports[state.selected] ? state.selected : responsiveViewport.id),
+        isRotated: state.isRotated,
+      });
+    }, [defaultViewport]);
+
     const { selected, isRotated } = state;
     const item =
       list.find(i => i.id === selected) ||
