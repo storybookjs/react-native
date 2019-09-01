@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, memo } from 'react';
 
 import { useAddonState, useParameter } from '@storybook/api';
 import { Global } from '@storybook/theming';
@@ -12,7 +12,7 @@ export interface BackgroundGridParameters {
 
 const iframeId = 'storybook-preview-iframe';
 
-export const GridSelector: FunctionComponent = () => {
+export const GridSelector: FunctionComponent = memo(() => {
   const [state, setState] = useAddonState<boolean>(`${ADDON_ID}/grid`);
   const { cellSize } = useParameter<BackgroundGridParameters>(GRID_PARAM_KEY, { cellSize: 20 });
 
@@ -37,15 +37,15 @@ export const GridSelector: FunctionComponent = () => {
               backgroundPosition: '-1px -1px, -1px -1px, -1px -1px, -1px -1px',
               backgroundBlendMode: 'difference',
               backgroundImage: [
-                'linear-gradient(rgba(130, 130, 130,0.5) 1px,transparent 1px)',
-                'linear-gradient(90deg,rgb(130, 130, 130,0.5) 1px,transparent 1px)',
-                'linear-gradient(rgba(130, 130, 130, 0.25) 1px,transparent 1px)',
-                'linear-gradient(90deg,rgba(130, 130, 130, 0.25) 1px,transparent 1px)',
-              ].join(','),
+                'linear-gradient(rgba(130, 130, 130, 0.5) 1px, transparent 1px)',
+                'linear-gradient(90deg, rgba(130, 130, 130, 0.5) 1px, transparent 1px)',
+                'linear-gradient(rgba(130, 130, 130, 0.25) 1px, transparent 1px)',
+                'linear-gradient(90deg, rgba(130, 130, 130, 0.25) 1px, transparent 1px)',
+              ].join(', '),
             },
           }}
         />
       ) : null}
     </IconButton>
   );
-};
+});
