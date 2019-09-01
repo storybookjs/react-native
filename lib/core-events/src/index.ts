@@ -18,6 +18,8 @@ enum events {
   STORY_MISSING = 'storyMissing',
   STORY_ERRORED = 'storyErrored',
   STORY_THREW_EXCEPTION = 'storyThrewException',
+  STORIES_COLLAPSE_ALL = 'storiesCollapseAll',
+  STORIES_EXPAND_ALL = 'storiesExpandAll',
 }
 
 // Enables: `import Events from ...`
@@ -43,3 +45,5 @@ export const { STORY_MISSING } = events;
 export const { STORY_ERRORED } = events;
 export const { STORY_CHANGED } = events;
 export const { STORY_THREW_EXCEPTION } = events;
+export const { STORIES_COLLAPSE_ALL } = events;
+export const { STORIES_EXPAND_ALL } = events;
