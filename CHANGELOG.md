@@ -1,3 +1,9 @@
+## 5.2.0-rc.2 (September 1, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix inline stories using react hooks ([#7946](https://github.com/storybookjs/storybook/pull/7946))
+
 ## 5.2.0-rc.1 (August 31, 2019)
 
 ### Features
