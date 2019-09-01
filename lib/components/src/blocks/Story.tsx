@@ -17,7 +17,7 @@ interface CommonProps {
 }
 
 type InlineStoryProps = {
-  storyFn: () => React.ElementType;
+  storyFn: React.ElementType;
 } & CommonProps;
 
 type IFrameStoryProps = CommonProps;
@@ -48,10 +48,17 @@ const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => 
   );
 };
 
-const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ id, storyFn, height }) => (
+const InlineStory: React.FunctionComponent<InlineStoryProps> = ({
+  storyFn: ReactStory,
+  height,
+}) => (
   <div style={{ height }}>
     <ZoomContext.Consumer>
-      {({ scale }) => <InlineZoomWrapper scale={scale}>{storyFn()}</InlineZoomWrapper>}
+      {({ scale }) => (
+        <InlineZoomWrapper scale={scale}>
+          <ReactStory />
+        </InlineZoomWrapper>
+      )}
     </ZoomContext.Consumer>
   </div>
 );
