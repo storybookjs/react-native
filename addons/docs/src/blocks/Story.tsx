@@ -25,8 +25,6 @@ const inferInlineStories = (framework: string): boolean => {
   switch (framework) {
     case 'react':
       return true;
-    case 'vue':
-      return true;
     default:
       return false;
   }
@@ -52,12 +50,13 @@ export const getStoryProps = (
     prepareForInline = (storyFn: StoryFn) => storyFn(),
   } = (parameters && parameters.docs) || {};
 
+  const { storyFn = undefined, name: storyName = undefined } = data || {};
   return {
     inline: typeof inline === 'boolean' ? inline : inlineStories,
     id: previewId,
-    storyFn: prepareForInline ? () => prepareForInline(data && data.storyFn) : data && data.storyFn,
+    storyFn: prepareForInline && storyFn ? () => prepareForInline(storyFn) : storyFn,
     height: height || iframeHeight,
-    title: data && data.name,
+    title: storyName,
   };
 };
 
