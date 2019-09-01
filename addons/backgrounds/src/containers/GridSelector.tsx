@@ -1,15 +1,20 @@
 import React, { FunctionComponent } from 'react';
 
-import { useAddonState } from '@storybook/api';
+import { useAddonState, useParameter } from '@storybook/api';
 import { Global } from '@storybook/theming';
 import { Icons, IconButton } from '@storybook/components';
 
-import { ADDON_ID } from '../constants';
+import { ADDON_ID, GRID_PARAM_KEY } from '../constants';
+
+export interface BackgroundGridParameters {
+  cellSize: number;
+}
 
 const iframeId = 'storybook-preview-iframe';
 
 export const GridSelector: FunctionComponent = () => {
   const [state, setState] = useAddonState<boolean>(`${ADDON_ID}/grid`);
+  const { cellSize } = useParameter<BackgroundGridParameters>(GRID_PARAM_KEY, { cellSize: 20 });
 
   return (
     <IconButton
@@ -23,7 +28,12 @@ export const GridSelector: FunctionComponent = () => {
         <Global
           styles={{
             [`#${iframeId}`]: {
-              backgroundSize: '100px 100px, 100px 100px, 20px 20px, 20px 20px',
+              backgroundSize: [
+                `${cellSize * 5}px ${cellSize * 5}px`,
+                `${cellSize * 5}px ${cellSize * 5}px`,
+                `${cellSize}px ${cellSize}px`,
+                `${cellSize}px ${cellSize}px`,
+              ].join(', '),
               backgroundPosition: '-1px -1px, -1px -1px, -1px -1px, -1px -1px',
               backgroundBlendMode: 'difference',
               backgroundImage: [
