@@ -1,3 +1,46 @@
+## 5.2.0-rc.2 (September 1, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix inline stories using react hooks ([#7946](https://github.com/storybookjs/storybook/pull/7946))
+
+## 5.2.0-rc.1 (August 31, 2019)
+
+### Features
+
+*  Core: Add html lang attribute to iframe ([#7892](https://github.com/storybookjs/storybook/pull/7892))
+
+### Bug Fixes
+
+* Source-loader: Fix CSF display name handling ([#7940](https://github.com/storybookjs/storybook/pull/7940))
+* React-native: Resolve deprecated methods ([#7908](https://github.com/storybookjs/storybook/pull/7908))
+* Addon-viewport: keep styles on rotation-change ([#7683](https://github.com/storybookjs/storybook/pull/7683))
+* Addon-viewport: Fix defaultViewport ([#7934](https://github.com/storybookjs/storybook/pull/7934))
+
+## 5.2.0-rc.0 (August 30, 2019)
+
+5.2 is in RC!!! 🎉What this means:
+
+- no glaring bugs relating to new features (that we know of)
+- bugfixes only until 5.2 final
+- follow-on features to be released in `5.3-alpha` ASAP
+
+Track progress on the [5.2 release issue](https://github.com/storybookjs/storybook/issues/7430)
+
+## 5.2.0-beta.48 (August 30, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix docs-only story ID suffix ([#7921](https://github.com/storybookjs/storybook/pull/7921))
+
+### Maintenance
+
+* Replace favicon with new Storybook icon. ([#7922](https://github.com/storybookjs/storybook/pull/7922))
+
+### Dependency Upgrades
+
+* Bump react-draggable from 3.1.1 to 3.3.2 ([#7912](https://github.com/storybookjs/storybook/pull/7912))
+
 ## 5.2.0-beta.47 (August 30, 2019)
 
 ### Bug Fixes

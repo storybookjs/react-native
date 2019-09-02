@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addons",
-  "version": "5.2.0-beta.47",
+  "version": "5.2.0-rc.2",
   "description": "Storybook addons store",
   "keywords": [
     "storybook"
@@ -21,10 +21,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/api": "5.2.0-beta.47",
-    "@storybook/channels": "5.2.0-beta.47",
-    "@storybook/client-logger": "5.2.0-beta.47",
-    "@storybook/core-events": "5.2.0-beta.47",
+    "@storybook/api": "5.2.0-rc.2",
+    "@storybook/channels": "5.2.0-rc.2",
+    "@storybook/client-logger": "5.2.0-rc.2",
+    "@storybook/core-events": "5.2.0-rc.2",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
