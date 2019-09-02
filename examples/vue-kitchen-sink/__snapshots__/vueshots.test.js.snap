@@ -280,7 +280,7 @@ exports[`Storyshots Button Square 1`] = `
 
 exports[`Storyshots Core|Parameters Passed To Story 1`] = `
 <div>
-  Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"docs":{},"globalParameter":"globalParameter","framework":"vue","chapterParameter":"chapterParameter","storyParameter":"storyParameter","displayName":"passed to story"}
+  Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"docs":{"iframeHeight":"60px"},"globalParameter":"globalParameter","framework":"vue","chapterParameter":"chapterParameter","storyParameter":"storyParameter","displayName":"passed to story"}
 </div>
 `;
 
@@ -346,7 +346,9 @@ exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
       "hierarchyRootSeparator": {},
       "hierarchySeparator": {}
     },
-    "docs": {},
+    "docs": {
+      "iframeHeight": "60px"
+    },
     "globalParameter": "globalParameter",
     "framework": "vue",
     "customParameter": 42

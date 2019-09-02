@@ -47,15 +47,23 @@ export const getStoryProps = (
   const {
     inlineStories = inferInlineStories(framework),
     iframeHeight = undefined,
-    prepareForInline = (storyFn: StoryFn) => storyFn(),
+    prepareForInline = undefined,
   } = (parameters && parameters.docs) || {};
 
   const { storyFn = undefined, name: storyName = undefined } = data || {};
+
+  if ((inlineStories || inline) && !prepareForInline) {
+    throw new Error(
+      `Story '${storyName}' is set to render inline, but no 'prepareForInline' function is implented in your docs configuration!`
+    );
+  }
+
+  const storyIsInline = typeof inline === 'boolean' ? inline : inlineStories;
   return {
-    inline: typeof inline === 'boolean' ? inline : inlineStories,
+    inline: storyIsInline,
     id: previewId,
     storyFn: prepareForInline && storyFn ? () => prepareForInline(storyFn) : storyFn,
-    height: height || iframeHeight,
+    height: height || (storyIsInline ? undefined : iframeHeight),
     title: storyName,
   };
 };
