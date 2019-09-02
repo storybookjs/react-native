@@ -11,6 +11,7 @@ export enum SourceState {
 
 type PreviewProps = PurePreviewProps & {
   withSource?: SourceState;
+  mdxSource?: string;
 };
 
 const getPreviewProps = (
