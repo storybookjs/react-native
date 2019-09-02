@@ -17,12 +17,19 @@ const getPreviewProps = (
   {
     withSource = SourceState.CLOSED,
     children,
+    mdxSource,
     ...props
   }: PreviewProps & { children?: React.ReactNode },
   { mdxStoryNameToId, storyStore }: DocsContextProps
 ): PurePreviewProps => {
   if (withSource === SourceState.NONE && !children) {
     return props;
+  }
+  if (mdxSource) {
+    return {
+      ...props,
+      withSource: getSourceProps({ code: decodeURI(mdxSource) }, { storyStore }),
+    };
   }
   const childArray: ReactNodeArray = Array.isArray(children) ? children : [children];
   const stories = childArray.filter(

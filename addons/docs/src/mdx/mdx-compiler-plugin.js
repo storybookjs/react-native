@@ -189,7 +189,54 @@ function stringifyMeta(meta) {
   return result;
 }
 
+const hasStoryChild = node => {
+  if (node.openingElement && node.openingElement.name.name === 'Story') {
+    return node;
+  }
+  if (node.children && node.children.length > 0) {
+    return node.children.find(child => hasStoryChild(child));
+  }
+  return null;
+};
+
 function extractExports(node, options) {
+  node.children.forEach(child => {
+    if (child.type === 'jsx') {
+      const ast = parser.parseExpression(child.value, { plugins: ['jsx'] });
+      if (
+        ast.openingElement &&
+        ast.openingElement.type === 'JSXOpeningElement' &&
+        ast.openingElement.name.name === 'Preview' &&
+        !hasStoryChild(ast)
+      ) {
+        const previewAst = ast.openingElement;
+        previewAst.attributes.push({
+          type: 'JSXAttribute',
+          name: {
+            type: 'JSXIdentifier',
+            name: 'mdxSource',
+          },
+          value: {
+            type: 'StringLiteral',
+            value: encodeURI(generate(ast, {}).code),
+            /*               ast.children
+                .map(
+                  el =>
+                    generate(el, {
+                      quotes: 'double',
+                    }).code
+                )
+                .join('\n')
+            ),
+ */
+          },
+        });
+      }
+      const { code } = generate(ast, {});
+      // eslint-disable-next-line no-param-reassign
+      child.value = code;
+    }
+  });
   // we're overriding default export
   const defaultJsx = mdxToJsx.toJSX(node, {}, { ...options, skipExport: true });
   const storyExports = [];
