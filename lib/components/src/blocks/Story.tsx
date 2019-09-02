@@ -98,10 +98,13 @@ const IFrameStory: React.FunctionComponent<IFrameStoryProps> = ({
 const Story: React.FunctionComponent<StoryProps> = props => {
   const { error } = props as ErrorProps;
   const { storyFn } = props as InlineStoryProps;
-  const { id, inline, title, height } = props;
+  const { id, inline, title, height, children } = props;
 
   if (error) {
     return <EmptyBlock>{error}</EmptyBlock>;
+  }
+  if (!children) {
+    return <EmptyBlock>{StoryError.NO_STORY}</EmptyBlock>;
   }
   return inline ? (
     <InlineStory id={id} storyFn={storyFn} title={title} height={height} />
