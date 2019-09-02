@@ -24,7 +24,7 @@ However, `DocsPage` brings the following improvements:
 - It supports all frameworks that Storybook supports, including React, Vue, Angular and [many others](../README.md#framework-support).
 - It generates better documentation that can be used as a standalone docs site, independently of Storybook.
 - It supports better configuration, so you can capture project specific information with ease.
-- It's built to work with [`MDX`](./mdx.md`) when you need more control of your documentation.
+- It's built to work with [`MDX`](./mdx.md) when you need more control of your documentation.
 
 ## Component parameter
 
