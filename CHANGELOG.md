@@ -1,3 +1,22 @@
+## 5.2.0-rc.2 (September 1, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix inline stories using react hooks ([#7946](https://github.com/storybookjs/storybook/pull/7946))
+
+## 5.2.0-rc.1 (August 31, 2019)
+
+### Features
+
+*  Core: Add html lang attribute to iframe ([#7892](https://github.com/storybookjs/storybook/pull/7892))
+
+### Bug Fixes
+
+* Source-loader: Fix CSF display name handling ([#7940](https://github.com/storybookjs/storybook/pull/7940))
+* React-native: Resolve deprecated methods ([#7908](https://github.com/storybookjs/storybook/pull/7908))
+* Addon-viewport: keep styles on rotation-change ([#7683](https://github.com/storybookjs/storybook/pull/7683))
+* Addon-viewport: Fix defaultViewport ([#7934](https://github.com/storybookjs/storybook/pull/7934))
+
 ## 5.2.0-rc.0 (August 30, 2019)
 
 5.2 is in RC!!! 🎉What this means:
