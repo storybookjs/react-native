@@ -218,8 +218,8 @@ function extractExports(node, options) {
           },
           value: {
             type: 'StringLiteral',
-            value: encodeURI(generate(ast, {}).code),
-            /*               ast.children
+            value: encodeURI(
+              ast.children
                 .map(
                   el =>
                     generate(el, {
@@ -228,7 +228,6 @@ function extractExports(node, options) {
                 )
                 .join('\n')
             ),
- */
           },
         });
       }
