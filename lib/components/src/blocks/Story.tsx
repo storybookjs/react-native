@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { IFrame } from './IFrame';
 import { EmptyBlock } from './EmptyBlock';
 import { ZoomContext } from './ZoomContext';
@@ -17,7 +16,7 @@ interface CommonProps {
 }
 
 type InlineStoryProps = {
-  storyFn: React.ElementType;
+  storyFn: () => React.ElementType;
 } & CommonProps;
 
 type IFrameStoryProps = CommonProps;
@@ -48,16 +47,37 @@ const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => 
   );
 };
 
-const InlineStory: React.FunctionComponent<InlineStoryProps> = ({
-  storyFn: ReactStory,
-  height,
-}) => (
+/** render of the storyFn function.
+ * catch for null function
+ * catch for functional component stories using react hooks
+ */
+
+const renderStoryFn = (storyFn: () => React.ElementType): React.ReactNode => {
+  // invalid story function, bail out
+  if (!storyFn) {
+    return null;
+  }
+  try {
+    return storyFn();
+  } catch (e) {
+    // fallback for React.hooks being used
+    // Invariant Violation: Invalid hook call.
+    // Hooks can only be called inside of the body of a function component.
+    if (e.name === 'Invariant Violations') {
+      // let react do its magic for calling the render
+      // allows using react hooks in story functions
+      const ReactComponent = (storyFn as unknown) as React.ElementType;
+      return <ReactComponent />;
+    }
+    throw e;
+  }
+};
+
+const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, height }) => (
   <div style={{ height }}>
     <ZoomContext.Consumer>
       {({ scale }) => (
-        <InlineZoomWrapper scale={scale}>
-          <ReactStory />
-        </InlineZoomWrapper>
+        <InlineZoomWrapper scale={scale}> {renderStoryFn(storyFn)}</InlineZoomWrapper>
       )}
     </ZoomContext.Consumer>
   </div>
@@ -102,9 +122,6 @@ const Story: React.FunctionComponent<StoryProps> = props => {
 
   if (error) {
     return <EmptyBlock>{error}</EmptyBlock>;
-  }
-  if (!children) {
-    return <EmptyBlock>{StoryError.NO_STORY}</EmptyBlock>;
   }
   return inline ? (
     <InlineStory id={id} storyFn={storyFn} title={title} height={height} />
