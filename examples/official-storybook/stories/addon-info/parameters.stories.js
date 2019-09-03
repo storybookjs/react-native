@@ -27,9 +27,9 @@ export default {
   },
 };
 
-export const usingParamatersAcrossAllStories = () => <BaseButton label="Button" />;
-usingParamatersAcrossAllStories.story = {
-  name: 'Using paramaters across all stories',
+export const usingParametersAcrossAllStories = () => <BaseButton label="Button" />;
+usingParametersAcrossAllStories.story = {
+  name: 'Using parameters across all stories',
 };
 
 export const overwritingAndExtendingTheParametersAndOptionsSetStoriesWise = () => (

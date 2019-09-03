@@ -1,4 +1,4 @@
-import { load, addParameters } from '@storybook/rax';
+import { configure, addParameters } from '@storybook/rax';
 
 addParameters({
   options: {
@@ -7,7 +7,6 @@ addParameters({
     goFullScreen: false,
     showAddonsPanel: true,
     showSearchBox: false,
-    sortStoriesByKind: false,
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\|/,
     enableShortcuts: true,
@@ -15,4 +14,4 @@ addParameters({
   },
 });
 
-load(require.context('../src/stories', true, /\.stories\.js$/), module);
+configure(require.context('../src/stories', true, /\.stories\.js$/), module);

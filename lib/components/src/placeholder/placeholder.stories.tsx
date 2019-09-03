@@ -4,7 +4,7 @@ import { Placeholder } from './placeholder';
 import { Link } from '../typography/link/link';
 
 export default {
-  Component: Placeholder,
+  component: Placeholder,
   title: 'Basics|Placeholder',
 };
 

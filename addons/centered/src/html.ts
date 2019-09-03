@@ -1,4 +1,6 @@
 import { document, Node } from 'global';
+import { makeDecorator } from '@storybook/addons';
+import parameters from './parameters';
 import styles from './styles';
 
 const INNER_ID = 'sb-addon-centered-inner';
@@ -26,7 +28,7 @@ function getWrapperDiv() {
   return getOrCreate(WRAPPER_ID, styles.style);
 }
 
-export default function(storyFn: () => any) {
+function centered(storyFn: () => any) {
   const inner = getInnerDiv();
   const wrapper = getWrapperDiv();
   wrapper.appendChild(inner);
@@ -44,6 +46,11 @@ export default function(storyFn: () => any) {
 
   return wrapper;
 }
+
+export default makeDecorator({
+  ...parameters,
+  wrapper: getStory => centered(getStory as any),
+});
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();

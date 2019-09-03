@@ -1,13 +1,8 @@
 // Based on http://backbonejs.org/docs/backbone.html#section-164
 import { document, Element } from 'global';
-import { isEqual } from 'lodash';
-import { addons } from '@storybook/addons';
-import Events from '@storybook/core-events';
+import { useEffect } from '@storybook/client-api';
 
 import { actions } from './actions';
-
-let lastSubscription: () => () => void;
-let lastArgs: any[];
 
 const delegateEventSplitter = /^(\S+)\s*(.*)$/;
 
@@ -42,24 +37,17 @@ const createHandlers = (actionsFn: (...arg: any[]) => object, ...args: any[]) =>
   });
 };
 
-const actionsSubscription = (...args: any[]) => {
-  if (!isEqual(args, lastArgs)) {
-    lastArgs = args;
-    // @ts-ignore
-    const handlers = createHandlers(...args);
-    lastSubscription = () => {
+export const createDecorator = (actionsFn: any) => (...args: any[]) => (storyFn: () => any) => {
+  useEffect(() => {
+    if (root != null) {
+      const handlers = createHandlers(actionsFn, ...args);
       handlers.forEach(({ eventName, handler }) => root.addEventListener(eventName, handler));
       return () =>
         handlers.forEach(({ eventName, handler }) => root.removeEventListener(eventName, handler));
-    };
-  }
-  return lastSubscription;
-};
+    }
+    return undefined;
+  }, [root, actionsFn, args]);
 
-export const createDecorator = (actionsFn: any) => (...args: any[]) => (storyFn: () => any) => {
-  if (root != null) {
-    addons.getChannel().emit(Events.REGISTER_SUBSCRIPTION, actionsSubscription(actionsFn, ...args));
-  }
   return storyFn();
 };
 

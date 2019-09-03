@@ -4,6 +4,8 @@ Storybook Centered Decorator can be used to center components inside the preview
 
 [Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
+⚠️ This addon applies styling to the view in order to center the component. This may impact the look and feel of story.
+
 ### Usage
 
 ```sh
@@ -194,4 +196,16 @@ addDecorator(centered);
 configure(function () {
   //...
 }, module);
+```
+
+If you don't want to use centered for a story, you can disable it by using `{ disable: true }` to skip the addon:
+
+```js
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+storiesOf('Button', module)
+  .add('example', () => <button>Click me</button>, {
+    centered: { disable: true },
+  });
 ```

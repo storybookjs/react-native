@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "8"
+
+cache:
+  yarn: true
+
+install:
+  - yarn install
+  - yarn bootstrap --core
+
+script:
+
+jobs:
+  include:
+    - script: travis_wait 30 yarn test --cli
+    - script: travis_wait 30 yarn test-latest-cra

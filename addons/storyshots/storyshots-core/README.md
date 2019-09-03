@@ -26,7 +26,7 @@ If you still need to configure jest you can use the resources mentioned below:
 
 > Note: If you use React 16, you'll need to follow [these additional instructions](https://github.com/facebook/react/issues/9102#issuecomment-283873039).
 >
-> Note: Make sure you have added the ```json``` extention to ```moduleFileExtensions``` in ```jest.config.json```. If this is missing it leads to the [following error](https://github.com/storybookjs/storybook/issues/3728): ```Cannot find module 'spdx-license-ids' from 'scan.js'```.
+> Note: Make sure you have added the ```json``` extension to ```moduleFileExtensions``` in ```jest.config.json```. If this is missing it leads to the [following error](https://github.com/storybookjs/storybook/issues/3728): ```Cannot find module 'spdx-license-ids' from 'scan.js'```.
 >
 > Note: Please make sure you are using ```jsdom``` as the testEnvironment on your jest config file.
 
@@ -603,7 +603,7 @@ initStoryshots({
 
 ### `shallowSnapshot`
 
-Take a snapshot of a shallow-rendered version of the component. Note that this option will be overriden if you pass a `renderer` option.
+Take a snapshot of a shallow-rendered version of the component. Note that this option will be overridden if you pass a `renderer` option.
 
 ### `Stories2SnapsConverter`
 

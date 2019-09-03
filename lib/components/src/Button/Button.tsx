@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, forwardRef } from 'react';
 import { styled, css } from '@storybook/theming';
 import { darken, lighten, rgba, transparentize } from 'polished';
 
@@ -233,13 +233,24 @@ export interface ButtonProps {
   containsIcon?: boolean;
 }
 
-export const Button: FunctionComponent<ButtonProps> = ({ isLink, children, ...props }) => {
-  if (isLink) {
-    return <ButtonLink {...props}>{children}</ButtonLink>;
+export const Button = Object.assign(
+  forwardRef<any, ButtonProps>(({ isLink, children, ...props }, ref) => {
+    if (isLink) {
+      return (
+        <ButtonLink {...props} ref={ref}>
+          {children}
+        </ButtonLink>
+      );
+    }
+    return (
+      <ButtonWrapper {...props} ref={ref}>
+        {children}
+      </ButtonWrapper>
+    );
+  }),
+  {
+    defaultProps: {
+      isLink: false,
+    },
   }
-  return <ButtonWrapper {...props}>{children}</ButtonWrapper>;
-};
-
-Button.defaultProps = {
-  isLink: false,
-};
+);

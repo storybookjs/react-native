@@ -1,5 +1,4 @@
-/* eslint-disable react/no-multi-comp */
-import React, { ReactElement, Component, useContext, useEffect } from 'react';
+import React, { ReactElement, Component, useContext, useEffect, useRef } from 'react';
 import memoize from 'memoizerific';
 // @ts-ignore shallow-equal is not in DefinitelyTyped
 import shallowEqualObjects from 'shallow-equal/objects';
@@ -315,6 +314,7 @@ type StateMerger<S> = (input: S) => S;
 
 export function useAddonState<S>(addonId: string, defaultState?: S) {
   const api = useStorybookApi();
+  const ref = useRef<{ [k: string]: boolean }>({});
 
   const existingState = api.getAddonState<S>(addonId);
   const state = orDefault<S>(existingState, defaultState);
@@ -323,8 +323,11 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
     return api.setAddonState<S>(addonId, newStateOrMerger, options);
   };
 
-  if (typeof existingState === 'undefined') {
-    api.setAddonState<S>(addonId, state);
+  if (typeof existingState === 'undefined' && typeof state !== 'undefined') {
+    if (!ref.current[addonId]) {
+      api.setAddonState<S>(addonId, state);
+      ref.current[addonId] = true;
+    }
   }
 
   return [state, setState] as [

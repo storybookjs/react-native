@@ -79,7 +79,14 @@ export default class Panel extends React.Component {
 
     this.setState({ knobs: newKnobs });
 
-    this.setState({ knobs: newKnobs }, this.emitChange(changedKnob));
+    this.setState(
+      { knobs: newKnobs },
+      this.emitChange(
+        changedKnob.type === 'number'
+          ? { ...changedKnob, value: parseFloat(changedKnob.value) }
+          : changedKnob
+      )
+    );
   }
 
   handleClick(knob) {
@@ -118,6 +125,11 @@ export default class Panel extends React.Component {
         render: () => <Text id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</Text>,
         title: DEFAULT_GROUP_ID,
       };
+
+      if (groupId === DEFAULT_GROUP_ID) {
+        knobsArray = knobsArray.filter(key => !knobs[key].groupId);
+      }
+
       if (groupId !== DEFAULT_GROUP_ID) {
         knobsArray = knobsArray.filter(key => knobs[key].groupId === groupId);
       }

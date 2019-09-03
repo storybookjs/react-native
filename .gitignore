@@ -1,6 +1,7 @@
 node_modules
 *.log
 .idea
+*.iml
 .vscode
 *.sw*
 npm-shrinkwrap.json
@@ -29,3 +30,4 @@ scripts/storage
 htpasswd
 /false
 storybook-out
+/addons/docs/common/config-*

@@ -1,1 +1,1 @@
-{"version":"5.2.0-alpha.35","info":{"plain":"### Bug Fixes\n\n* React-Native: Fix null story check ([#7243](https://github.com/storybookjs/storybook/pull/7243))"}}
+{"version":"5.2.0-rc.4","info":{"plain":"### Bug Fixes\n\n* Addon-docs: Fix MDX theme bleed with reset context ([#7974](https://github.com/storybookjs/storybook/pull/7974))\n\n### Documentation\n\n* docspage.md broken link fix ([#7962](https://github.com/storybookjs/storybook/pull/7962))"}}

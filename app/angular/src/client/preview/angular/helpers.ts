@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReplaySubject } from 'rxjs';
+import { StoryFn } from '@storybook/addons';
 import { AppComponent } from './components/app.component';
 import { STORY } from './app.token';
-import { NgModuleMetadata, IStoryFn, NgStory } from './types';
+import { NgModuleMetadata, StoryFnAngularReturnType } from '../types';
 
 declare global {
   interface Window {
@@ -29,7 +30,7 @@ const getModule = (
   declarations: (Type<any> | any[])[],
   entryComponents: (Type<any> | any[])[],
   bootstrap: (Type<any> | any[])[],
-  data: NgStory,
+  data: StoryFnAngularReturnType,
   moduleMetadata: NgModuleMetadata
 ) => {
   storyData.next(data);
@@ -54,11 +55,14 @@ const createComponentFromTemplate = (template: string, styles: string[]) => {
 };
 
 const extractNgModuleMetadata = (importItem: any): NgModule => {
+  const target = importItem && importItem.ngModule ? importItem.ngModule : importItem;
   const decoratorKey = '__annotations__';
   const decorators: any[] =
-    Reflect && Reflect.getOwnPropertyDescriptor
-      ? Reflect.getOwnPropertyDescriptor(importItem, decoratorKey).value
-      : importItem[decoratorKey];
+    Reflect &&
+    Reflect.getOwnPropertyDescriptor &&
+    Reflect.getOwnPropertyDescriptor(target, decoratorKey)
+      ? Reflect.getOwnPropertyDescriptor(target, decoratorKey).value
+      : target[decoratorKey];
 
   if (!decorators || decorators.length === 0) {
     return null;
@@ -100,7 +104,7 @@ const getExistenceOfComponentInModules = (
   });
 };
 
-const initModule = (storyFn: IStoryFn) => {
+const initModule = (storyFn: StoryFn<StoryFnAngularReturnType>) => {
   const storyObj = storyFn();
   const { component, template, props, styles, moduleMetadata = {} } = storyObj;
 
@@ -110,7 +114,7 @@ const initModule = (storyFn: IStoryFn) => {
     ? createComponentFromTemplate(template, styles)
     : component;
 
-  const componentRequiesDeclaration =
+  const componentRequiresDeclaration =
     isCreatingComponentFromTemplate ||
     !getExistenceOfComponentInModules(
       component,
@@ -118,7 +122,7 @@ const initModule = (storyFn: IStoryFn) => {
       moduleMetadata.imports
     );
 
-  const componentDeclarations = componentRequiesDeclaration
+  const componentDeclarations = componentRequiresDeclaration
     ? [AppComponent, AnnotatedComponent]
     : [AppComponent];
 
@@ -167,7 +171,7 @@ const draw = (newModule: DynamicComponentType): void => {
   }
 };
 
-export const renderNgApp = (storyFn: IStoryFn, forced: boolean) => {
+export const renderNgApp = (storyFn: StoryFn<StoryFnAngularReturnType>, forced: boolean) => {
   if (!forced) {
     draw(initModule(storyFn));
   } else {

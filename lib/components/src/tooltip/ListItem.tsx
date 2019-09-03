@@ -8,8 +8,11 @@ export interface TitleProps {
   loading?: boolean;
   disabled?: boolean;
 }
-
-const Title = styled.span<TitleProps>(
+const Title = styled(({ active, loading, disabled, ...rest }: TitleProps) => <span {...rest} />)<{
+  active: boolean;
+  loading: boolean;
+  disabled: boolean;
+}>(
   ({ theme }) => ({
     color: theme.color.defaultText,
     // Previously was theme.typography.weight.normal but this weight does not exists in Theme
@@ -208,14 +211,18 @@ const ListItem: FunctionComponent<ListItemProps> = ({
   ...rest
 }) => {
   const itemProps = getItemProps(onClick, href, LinkWrapper);
-  const commonProps = { active, disabled, loading };
+  const commonProps = { active, disabled };
 
   return (
     <Item {...commonProps} {...rest} {...itemProps}>
       {left && <Left {...commonProps}>{left}</Left>}
       {title || center ? (
         <Center>
-          {title && <Title {...commonProps}>{title}</Title>}
+          {title && (
+            <Title {...commonProps} loading={loading}>
+              {title}
+            </Title>
+          )}
           {center && <CenterText {...commonProps}>{center}</CenterText>}
         </Center>
       ) : null}

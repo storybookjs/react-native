@@ -8,14 +8,14 @@
 Real world users expects your application being customizable, that is why often your components are **polymorphic**:
 they simply need to adapt themselves under different contextual environments. Imagine your components can speak
 Chinese, English, or even French, and they change their skin tone under dark or light theme. Yeah, you want to make
-sure a component look great in all scenario.
+sure a component looks great in all scenarios.
 
 A good practice to write maintainable components is separate the presentation and its business logic. Storybook is
 a great place for exercising the visualization and interaction of your components, which may depend on some contexts.
 Often enough, you will find it become very tedious to wrap each component deeply with its contextual environments
 before you can really write the main story. You even start to write extra components or factory functions just to
-make your life easier. How about changing the context of your story dynamically?! There were simply having no good
-way so you ended up writing stories like an accountant.
+make your life easier. How about changing the context of your story dynamically?! There was simply no good way so 
+you ended up writing stories like an accountant.
 
 That is why you need this. An elegant way to wrap your component stories and change their contextual environment
 directly and dynamically in Storybook UI! Kind of like a dependency injection, eh! The best bit is **you define it
@@ -26,17 +26,17 @@ once then apply it everywhere**.
 1. Define a single global file for managing contextual environments (a.k.a. containers) for all of your stories
    declaratively. No more repetitive setups or noisy wrapping, making your stories more focused and readable.
 2. Support dynamic contextual props switching from Storybook toolbar at runtime. You can easily slice into
-   different environments (e.g. languages or themes ) to understand how your component is going to response.
+   different environments (e.g. languages or themes ) to understand how your component is going to respond.
 3. Library agnostic: no presumption on what kind of components you want to wrap around your stories. You can even
    use it to bridge with your favorite routing, state-management solutions, or even your own
    [React Context](https://reactjs.org/docs/context.html) provider.
 4. Offer chainable and granular configurations. It is even possible to fine-tune at per story level.
-5. Visual regression friendly. You can use this addon to driving the same story under different contexts to smoke
-   testing important visual states.
+5. Visual regression friendly. You can use this addon to drive the same story under different contexts to smoke
+   test important visual states.
 
 ## 🧰 Requirements
 
-Make sure the version of your Storybook is above v5. For the full list the current supported framework, see
+Make sure the version of your Storybook is above v5. For the full list of the current supported frameworks, see
 [Addon / Framework Support Table](../../ADDONS_SUPPORT.md).
 
 ## 🎬 Getting started
@@ -54,7 +54,7 @@ under the storybook config directory of your project):
 import '@storybook/addon-contexts/register';
 ```
 
-To load your contextual setups for your stories globally, adding the following lines into `config.js` file (you should
+To load your contextual setups for your stories globally, add the following lines into `config.js` file (you should
 see it near your `addon.js` file):
 
 ```js
@@ -132,8 +132,8 @@ export const contexts = [
 #### `withContexts(contexts) : function`
 
 A decorating function for wrapping your stories under your predefined `contexts`. This means multiple contextual
-environments are supported. They are going to be loaded layer by layer and wraped in a descending oder (top -> down
--> story). The `contexts` is an array of object that should has the following properties:
+environments are supported. They are going to be loaded layer by layer and wrapped in a descending oder (top -> down
+-> story). The `contexts` is an array of objects that should have the following properties:
 
 ---
 
@@ -141,10 +141,10 @@ environments are supported. They are going to be loaded layer by layer and wrape
 
 (default `undefined`)
 
-A icon displayed in the Storybook toolbar to control contextual props. This addon allows you to define an icon for
-each contextual environment individually. Take a look from what are currently supported
+An icon displayed in the Storybook toolbar to control contextual props. This addon allows you to define an icon for
+each contextual environment individually. Take a look at the currently supported
 [icon lists](https://storybooks-official.netlify.com/?path=/story/basics-icon--labels) from the official Storybook
-story. You must define an icon first if you want to take advantage on switching props dynamically in your Storybook
+story. You must define an icon first if you want to take advantage of switching props dynamically in your Storybook
 toolbar.
 
 ---
@@ -153,7 +153,7 @@ toolbar.
 
 (required)
 
-An unique name of a contextual environment; if duplicated names provided, the later is going to be ignored.
+A unique name of a contextual environment; if duplicate names are provided, the latter is going to be ignored.
 
 ---
 
@@ -161,10 +161,10 @@ An unique name of a contextual environment; if duplicated names provided, the la
 
 (required)
 
-An array of components that is going to be injected to wrap stories. This means this addon allow multiple wrapping
-components coexisted. The wrapping sequence is from the left to right (parent -> children -> story). This nested
+An array of components that is going to be injected to wrap stories. This means this addon allows multiple wrapping
+components to coexist. The wrapping sequence is from the left to right (parent -> children -> story). This nested
 wrapping behaviour can be useful in some cases; for instance, in the above example, we are wrapping stories under
-`styled-componnets` and `material-ui` theme providers. Also, you can use this addon to wrap any valid HTML tags.
+`styled-components` and `material-ui` theme providers. Also, you can use this addon to wrap any valid HTML tags.
 
 ---
 
@@ -178,13 +178,13 @@ An array of params contains a set of predefined `props` for `components`. This o
 
 (required)
 
-An unique name for representing the props.
+A unique name for representing the props.
 
 #### `params.props : object | null:`
 
 (required)
 
-The `props` that is accepted by the wrapping component(s).
+The `props` that are accepted by the wrapping component(s).
 
 #### `params.default : true?`
 
@@ -220,16 +220,16 @@ be shown at first in the toolbar menu in your Storybook.
 
 ## 📔 Notes
 
-1. You can use this addon to inject any valid components, that is why `icon`, and `params` can be just optional.
+1. You can use this addon to inject any valid components, that is why `icon` and `params` can be just optional.
 2. As mentioned, extra contextual environment setups can be added at the story level. Please make sure they are
    passed via the second argument as `{ contexts: [{ /* extra contexts */ }}`.
-3. Additional `params` can be "appended" into an existed setups at the story level too (make sure it goes with the
+3. Additional `params` can be "appended" into an existing setup at the story level too (make sure it goes with the
    correct `title`); however, they are never be able to overridden the default setups. So it is important to have
-   non-collided names.
+   non-colliding names.
 4. The addon will persist the selected params (the addon state) between stories at run-time (similar to other
-   addons). If the active param were gone after story switching, it fallback to the default then the first. As a
-   rule of thumbs, whenever collisions made possible, always the first wins.
-5. Query parameters are supported for pre-selecting contexts param, which comes handy for visual regression testing.
+   addons). If the active params were gone after story switching, it falls back to the default then the first. As a
+   rule of thumb, whenever collisions are possible, the first always wins.
+5. Query parameters are supported for pre-selecting contexts param, which comes in handy for visual regression testing.
    You can do this by appending `&contexts=[name of contexts]=[name of param]` in the URL under iframe mode. Use `,`
    to separate multiple contexts (e.g. `&contexts=Theme=Forests,Language=Fr`).
 
