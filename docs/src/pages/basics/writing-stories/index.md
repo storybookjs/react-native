@@ -103,13 +103,15 @@ import { configure } from '@storybook/react';
 configure(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
+> NOTE: The `configure` function should be called only once in `config.js`.
+
 The `configure` function accepts:
 
 - A single `require.context` "`req`"
 - An array of `req`s to load from multiple locations
 - A loader function that should return void or an array of module exports
 
-If you want to load from multiple locations, you could use an array:
+If you want to load from multiple locations, you can use an array:
 
 ```js
 import { configure } from '@storybook/react';
