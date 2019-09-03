@@ -1,1 +1,1 @@
-{"version":"5.2.0-rc.2","info":{"plain":"### Bug Fixes\n\n* Addon-docs: Fix inline stories using react hooks ([#7946](https://github.com/storybookjs/storybook/pull/7946))"}}
+{"version":"5.2.0-rc.4","info":{"plain":"### Bug Fixes\n\n* Addon-docs: Fix MDX theme bleed with reset context ([#7974](https://github.com/storybookjs/storybook/pull/7974))\n\n### Documentation\n\n* docspage.md broken link fix ([#7962](https://github.com/storybookjs/storybook/pull/7962))"}}
