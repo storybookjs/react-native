@@ -1,3 +1,13 @@
+## 5.2.0-rc.3 (September 3, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix MDX theme bleed with reset context ([#7974](https://github.com/storybookjs/storybook/pull/7974))
+
+### Documentation
+
+* docspage.md broken link fix ([#7962](https://github.com/storybookjs/storybook/pull/7962))
+
 ## 5.2.0-rc.2 (September 1, 2019)
 
 ### Bug Fixes
