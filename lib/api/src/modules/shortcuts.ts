@@ -118,142 +118,144 @@ export default function initShortcuts({ store }: Module) {
     handleShortcutFeature(fullApi, feature) {
       const {
         layout: { isFullscreen, showNav, showPanel },
+        ui: { enableShortcuts },
       } = store.getState();
-
-      switch (feature) {
-        case 'escape': {
-          if (isFullscreen) {
-            fullApi.toggleFullscreen();
-          } else if (!showNav) {
-            fullApi.toggleNav();
-          }
-          break;
-        }
-
-        case 'focusNav': {
-          if (isFullscreen) {
-            fullApi.toggleFullscreen();
-          }
-          if (!showNav) {
-            fullApi.toggleNav();
-          }
-          fullApi.focusOnUIElement(focusableUIElements.storyListMenu);
-          break;
-        }
-
-        case 'search': {
-          if (isFullscreen) {
-            fullApi.toggleFullscreen();
-          }
-          if (!showNav) {
-            fullApi.toggleNav();
-          }
-
-          setTimeout(() => {
-            fullApi.focusOnUIElement(focusableUIElements.storySearchField);
-          }, 0);
-          break;
-        }
-
-        case 'focusIframe': {
-          const element = document.getElementById('storybook-preview-iframe');
-
-          if (element) {
-            try {
-              // should be like a channel message and all that, but yolo for now
-              element.contentWindow.focus();
-            } catch (e) {
-              //
+      if (enableShortcuts) {
+        switch (feature) {
+          case 'escape': {
+            if (isFullscreen) {
+              fullApi.toggleFullscreen();
+            } else if (!showNav) {
+              fullApi.toggleNav();
             }
+            break;
           }
-          break;
-        }
 
-        case 'focusPanel': {
-          if (isFullscreen) {
-            fullApi.toggleFullscreen();
+          case 'focusNav': {
+            if (isFullscreen) {
+              fullApi.toggleFullscreen();
+            }
+            if (!showNav) {
+              fullApi.toggleNav();
+            }
+            fullApi.focusOnUIElement(focusableUIElements.storyListMenu);
+            break;
           }
-          if (!showPanel) {
+
+          case 'search': {
+            if (isFullscreen) {
+              fullApi.toggleFullscreen();
+            }
+            if (!showNav) {
+              fullApi.toggleNav();
+            }
+
+            setTimeout(() => {
+              fullApi.focusOnUIElement(focusableUIElements.storySearchField);
+            }, 0);
+            break;
+          }
+
+          case 'focusIframe': {
+            const element = document.getElementById('storybook-preview-iframe');
+
+            if (element) {
+              try {
+                // should be like a channel message and all that, but yolo for now
+                element.contentWindow.focus();
+              } catch (e) {
+                //
+              }
+            }
+            break;
+          }
+
+          case 'focusPanel': {
+            if (isFullscreen) {
+              fullApi.toggleFullscreen();
+            }
+            if (!showPanel) {
+              fullApi.togglePanel();
+            }
+            fullApi.focusOnUIElement(focusableUIElements.storyPanelRoot);
+            break;
+          }
+
+          case 'nextStory': {
+            fullApi.jumpToStory(1);
+            break;
+          }
+
+          case 'prevStory': {
+            fullApi.jumpToStory(-1);
+            break;
+          }
+
+          case 'nextComponent': {
+            fullApi.jumpToComponent(1);
+            break;
+          }
+
+          case 'prevComponent': {
+            fullApi.jumpToComponent(-1);
+            break;
+          }
+
+          case 'fullScreen': {
+            fullApi.toggleFullscreen();
+            break;
+          }
+
+          case 'togglePanel': {
+            if (isFullscreen) {
+              fullApi.toggleFullscreen();
+              fullApi.resetLayout();
+            }
+
             fullApi.togglePanel();
-          }
-          fullApi.focusOnUIElement(focusableUIElements.storyPanelRoot);
-          break;
-        }
-
-        case 'nextStory': {
-          fullApi.jumpToStory(1);
-          break;
-        }
-
-        case 'prevStory': {
-          fullApi.jumpToStory(-1);
-          break;
-        }
-
-        case 'nextComponent': {
-          fullApi.jumpToComponent(1);
-          break;
-        }
-
-        case 'prevComponent': {
-          fullApi.jumpToComponent(-1);
-          break;
-        }
-
-        case 'fullScreen': {
-          fullApi.toggleFullscreen();
-          break;
-        }
-
-        case 'togglePanel': {
-          if (isFullscreen) {
-            fullApi.toggleFullscreen();
-            fullApi.resetLayout();
+            break;
           }
 
-          fullApi.togglePanel();
-          break;
-        }
+          case 'toggleNav': {
+            if (isFullscreen) {
+              fullApi.toggleFullscreen();
+              fullApi.resetLayout();
+            }
 
-        case 'toggleNav': {
-          if (isFullscreen) {
-            fullApi.toggleFullscreen();
-            fullApi.resetLayout();
+            fullApi.toggleNav();
+            break;
           }
 
-          fullApi.toggleNav();
-          break;
-        }
-
-        case 'toolbar': {
-          fullApi.toggleToolbar();
-          break;
-        }
-
-        case 'panelPosition': {
-          if (isFullscreen) {
-            fullApi.toggleFullscreen();
-          }
-          if (!showPanel) {
-            fullApi.togglePanel();
+          case 'toolbar': {
+            fullApi.toggleToolbar();
+            break;
           }
 
-          fullApi.togglePanelPosition();
-          break;
-        }
+          case 'panelPosition': {
+            if (isFullscreen) {
+              fullApi.toggleFullscreen();
+            }
+            if (!showPanel) {
+              fullApi.togglePanel();
+            }
 
-        case 'aboutPage': {
-          fullApi.navigate('/settings/about');
-          break;
-        }
+            fullApi.togglePanelPosition();
+            break;
+          }
 
-        case 'shortcutsPage': {
-          fullApi.navigate('/settings/shortcuts');
-          break;
-        }
+          case 'aboutPage': {
+            fullApi.navigate('/settings/about');
+            break;
+          }
 
-        default:
-          break;
+          case 'shortcutsPage': {
+            fullApi.navigate('/settings/shortcuts');
+            break;
+          }
+
+          default:
+            break;
+        }
       }
     },
   };
@@ -267,14 +269,13 @@ export default function initShortcuts({ store }: Module) {
     ),
   };
 
-  const init = ({ api: fullApi }: API) => {
+  const init = ({ api: fullApi, ...rest }: API) => {
     function focusInInput(event: Event) {
       return (
         /input|textarea/i.test(event.target.tagName) ||
         event.target.getAttribute('contenteditable') !== null
       );
     }
-
     // Listen for keydown events in the manager
     document.addEventListener('keydown', (event: Event) => {
       if (!focusInInput(event)) {
