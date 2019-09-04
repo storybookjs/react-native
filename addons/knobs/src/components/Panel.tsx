@@ -263,7 +263,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
     // Always sort DEFAULT_GROUP_ID (ungrouped) tab last without changing the remaining tabs
     const sortEntries = (g: Record<string, PanelKnobGroups>): [string, PanelKnobGroups][] => {
       const unsortedKeys = Object.keys(g);
-      if (unsortedKeys.indexOf(DEFAULT_GROUP_ID) !== -1) {
+      if (unsortedKeys.includes(DEFAULT_GROUP_ID)) {
         const sortedKeys = unsortedKeys.filter(key => key !== DEFAULT_GROUP_ID);
         sortedKeys.push(DEFAULT_GROUP_ID);
         return sortedKeys.map<[string, PanelKnobGroups]>(key => [key, g[key]]);
