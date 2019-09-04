@@ -13,7 +13,7 @@ export enum StoryError {
  * if the story id exists, it must be pointing to a non-existing story
  *  if there is assigned story id, the story must be empty
  */
-const MISSING_STORY = (id: string) => (id ? `Story "${id}" doesn't exist.` : StoryError.NO_STORY);
+const MISSING_STORY = (id?: string) => (id ? `Story "${id}" doesn't exist.` : StoryError.NO_STORY);
 
 interface CommonProps {
   title: string;
@@ -22,7 +22,7 @@ interface CommonProps {
 }
 
 type InlineStoryProps = {
-  storyFn: () => React.ElementType;
+  storyFn: React.ElementType;
 } & CommonProps;
 
 type IFrameStoryProps = CommonProps;
@@ -53,27 +53,13 @@ const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => 
   );
 };
 
-/** render of the storyFn function.
- * catch for null function
- * catch for functional component stories using react hooks
- */
-
-const renderStoryFn = (storyFn: () => React.ElementType, id: string): React.ReactNode => {
-  // invalid story function, bail out
-  if (!storyFn) {
-    return <EmptyBlock>{MISSING_STORY(id)}</EmptyBlock>;
-  }
-  // let react do its magic for calling the render
-  // allows using react hooks in story functions
-  const ReactComponent = (storyFn as unknown) as React.ElementType;
-  return <ReactComponent />;
-};
-
 const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, height, id }) => (
   <div style={{ height }}>
     <ZoomContext.Consumer>
       {({ scale }) => (
-        <InlineZoomWrapper scale={scale}>{renderStoryFn(storyFn, id)}</InlineZoomWrapper>
+        <InlineZoomWrapper scale={scale}>
+          {storyFn ? React.createElement(storyFn) : <EmptyBlock>{MISSING_STORY(id)}</EmptyBlock>}
+        </InlineZoomWrapper>
       )}
     </ZoomContext.Consumer>
   </div>
