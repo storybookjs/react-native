@@ -25,24 +25,29 @@ const withMargin: CSSObject = {
 export const H1 = styled.h1<{}>(withReset, headerCommon, ({ theme }) => ({
   fontSize: `${theme.typography.size.l1}px`,
   fontWeight: theme.typography.weight.black,
+  color: theme.color.defaultText,
 }));
 
 export const H2 = styled.h2<{}>(withReset, headerCommon, ({ theme }) => ({
   fontSize: `${theme.typography.size.m2}px`,
   paddingBottom: '4px',
   borderBottom: `1px solid ${theme.appBorderColor}`,
+  color: theme.color.defaultText,
 }));
 
 export const H3 = styled.h3<{}>(withReset, headerCommon, ({ theme }) => ({
   fontSize: `${theme.typography.size.m1}px`,
+  color: theme.color.defaultText,
 }));
 
 export const H4 = styled.h4<{}>(withReset, headerCommon, ({ theme }) => ({
   fontSize: `${theme.typography.size.s3}px`,
+  color: theme.color.defaultText,
 }));
 
 export const H5 = styled.h5<{}>(withReset, headerCommon, ({ theme }) => ({
   fontSize: `${theme.typography.size.s2}px`,
+  color: theme.color.defaultText,
 }));
 
 export const H6 = styled.h6<{}>(withReset, headerCommon, ({ theme }) => ({
@@ -321,6 +326,7 @@ const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
 export const P = styled.p<{}>(withReset, withMargin, ({ theme }) => ({
   fontSize: theme.typography.size.s2,
   lineHeight: '24px',
+  color: theme.color.defaultText,
   '& code': codeCommon({ theme }),
 }));
 
