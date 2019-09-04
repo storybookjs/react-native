@@ -1,6 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 
 import React from 'react';
+import document from 'global';
 import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
 import { DocsWrapper, DocsContent, Source } from '@storybook/components';
@@ -49,6 +50,13 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   const theme = ensureTheme(options.theme);
   const { components: userComponents = null } = parameters.docs || {};
   const components = { ...defaultComponents, ...userComponents };
+
+  React.useEffect(() => {
+    const element = document.getElementById(context.id);
+    if (element) {
+      element.scrollIntoView(true);
+    }
+  }, [context.selectedStory]);
   return (
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>

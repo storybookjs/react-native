@@ -49,10 +49,11 @@ const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => 
 };
 
 const InlineStory: React.FunctionComponent<InlineStoryProps> = ({
+  id,
   storyFn: ReactStory,
   height,
 }) => (
-  <div style={{ height }}>
+  <div style={{ height }} id={id}>
     <ZoomContext.Consumer>
       {({ scale }) => (
         <InlineZoomWrapper scale={scale}>
