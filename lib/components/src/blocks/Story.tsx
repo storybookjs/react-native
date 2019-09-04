@@ -64,20 +64,10 @@ const renderStoryFn = (storyFn: () => React.ElementType, id: string): React.Reac
   if (!storyFn) {
     return <EmptyBlock>{WRONG_OR_EMPTY_STORY(id)}</EmptyBlock>;
   }
-  try {
-    return storyFn();
-  } catch (e) {
-    // fallback for React.hooks being used
-    // Invariant Violation: Invalid hook call.
-    // Hooks can only be called inside of the body of a function component.
-    if (e.name === 'Invariant Violation') {
-      // let react do its magic for calling the render
-      // allows using react hooks in story functions
-      const ReactComponent = (storyFn as unknown) as React.ElementType;
-      return <ReactComponent />;
-    }
-    throw e;
-  }
+  // let react do its magic for calling the render
+  // allows using react hooks in story functions
+  const ReactComponent = (storyFn as unknown) as React.ElementType;
+  return <ReactComponent />;
 };
 
 const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, height, id }) => (
