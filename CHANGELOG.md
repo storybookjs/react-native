@@ -1,3 +1,9 @@
+## 5.2.0-rc.5 (September 4, 2019)
+
+### Bug Fixes
+
+* CLI: Force welcome stories to show up first in load order ([#7979](https://github.com/storybookjs/storybook/pull/7979))
+
 ## 5.2.0-rc.4 (September 3, 2019)
 
 ### Bug Fixes
