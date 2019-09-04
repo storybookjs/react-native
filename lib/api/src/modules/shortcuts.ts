@@ -269,7 +269,7 @@ export default function initShortcuts({ store }: Module) {
     ),
   };
 
-  const init = ({ api: fullApi, ...rest }: API) => {
+  const init = ({ api: fullApi }: API) => {
     function focusInInput(event: Event) {
       return (
         /input|textarea/i.test(event.target.tagName) ||
