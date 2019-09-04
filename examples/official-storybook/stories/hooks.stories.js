@@ -19,3 +19,13 @@ export const Input = () => {
   const [text, setText] = useState('foo');
   return <input value={text} onChange={e => setText(e.target.value)} />;
 };
+
+export const reactHookCheckbox = () => {
+  const [on, setOn] = React.useState(false);
+  return (
+    <label>
+      <input type="checkbox" checked={on} onChange={e => setOn(e.target.checked)} />
+      On
+    </label>
+  );
+};

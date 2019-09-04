@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { IFrame } from './IFrame';
 import { EmptyBlock } from './EmptyBlock';
 import { ZoomContext } from './ZoomContext';
@@ -9,6 +8,12 @@ const BASE_URL = 'iframe.html';
 export enum StoryError {
   NO_STORY = 'No component or story to display',
 }
+
+/** error message for Story with null storyFn
+ * if the story id exists, it must be pointing to a non-existing story
+ *  if there is assigned story id, the story must be empty
+ */
+const MISSING_STORY = (id?: string) => (id ? `Story "${id}" doesn't exist.` : StoryError.NO_STORY);
 
 interface CommonProps {
   title: string;
@@ -48,15 +53,12 @@ const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => 
   );
 };
 
-const InlineStory: React.FunctionComponent<InlineStoryProps> = ({
-  storyFn: ReactStory,
-  height,
-}) => (
+const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, height, id }) => (
   <div style={{ height }}>
     <ZoomContext.Consumer>
       {({ scale }) => (
         <InlineZoomWrapper scale={scale}>
-          <ReactStory />
+          {storyFn ? React.createElement(storyFn) : <EmptyBlock>{MISSING_STORY(id)}</EmptyBlock>}
         </InlineZoomWrapper>
       )}
     </ZoomContext.Consumer>
