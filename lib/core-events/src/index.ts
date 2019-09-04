@@ -18,6 +18,7 @@ enum events {
   STORY_MISSING = 'storyMissing',
   STORY_ERRORED = 'storyErrored',
   STORY_THREW_EXCEPTION = 'storyThrewException',
+  DOCS_RENDERED = 'docsRendered',
 }
 
 // Enables: `import Events from ...`
@@ -25,21 +26,24 @@ export default events;
 
 // Enables: `import * as Events from ...` or `import { CHANNEL_CREATED } as Events from ...`
 // This is the preferred method
-export const { CHANNEL_CREATED } = events;
-export const { GET_CURRENT_STORY } = events;
-export const { SET_CURRENT_STORY } = events;
-export const { GET_STORIES } = events;
-export const { SET_STORIES } = events;
-export const { STORIES_CONFIGURED } = events;
-export const { SELECT_STORY } = events;
-export const { PREVIEW_KEYDOWN } = events;
-export const { FORCE_RE_RENDER } = events;
-export const { REGISTER_SUBSCRIPTION } = events;
-export const { STORY_INIT } = events;
-export const { STORY_ADDED } = events;
-export const { STORY_RENDER } = events;
-export const { STORY_RENDERED } = events;
-export const { STORY_MISSING } = events;
-export const { STORY_ERRORED } = events;
-export const { STORY_CHANGED } = events;
-export const { STORY_THREW_EXCEPTION } = events;
+export const {
+  CHANNEL_CREATED,
+  GET_CURRENT_STORY,
+  SET_CURRENT_STORY,
+  GET_STORIES,
+  SET_STORIES,
+  STORIES_CONFIGURED,
+  SELECT_STORY,
+  PREVIEW_KEYDOWN,
+  FORCE_RE_RENDER,
+  REGISTER_SUBSCRIPTION,
+  STORY_INIT,
+  STORY_ADDED,
+  STORY_RENDER,
+  STORY_RENDERED,
+  STORY_MISSING,
+  STORY_ERRORED,
+  STORY_CHANGED,
+  STORY_THREW_EXCEPTION,
+  DOCS_RENDERED,
+} = events;

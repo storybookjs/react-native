@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from '@storybook/client-api';
+import { useEffect, useRef, useState } from '@storybook/client-api';
 
 export default {
   title: 'Hooks',
@@ -18,6 +18,21 @@ export const Checkbox = () => {
 export const Input = () => {
   const [text, setText] = useState('foo');
   return <input value={text} onChange={e => setText(e.target.value)} />;
+};
+
+export const effect = () => {
+  const ref = useRef();
+  useEffect(() => {
+    if (ref.current != null) {
+      ref.current.style.backgroundColor = 'yellow';
+    }
+  });
+
+  return (
+    <button type="button" ref={ref}>
+      I should be yellow
+    </button>
+  );
 };
 
 export const reactHookCheckbox = () => {
