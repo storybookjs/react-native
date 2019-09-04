@@ -34,3 +34,13 @@ export const effect = () => {
     </button>
   );
 };
+
+export const reactHookCheckbox = () => {
+  const [on, setOn] = React.useState(false);
+  return (
+    <label>
+      <input type="checkbox" checked={on} onChange={e => setOn(e.target.checked)} />
+      On
+    </label>
+  );
+};
