@@ -54,7 +54,11 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   React.useEffect(() => {
     const element = document.getElementById(context.id);
     if (element) {
-      element.scrollIntoView(true);
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
     }
   }, [context.selectedStory]);
   return (
