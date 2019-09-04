@@ -60,7 +60,7 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
         inline: 'nearest',
       });
     }
-  }, [context.selectedStory]);
+  }, [context.id]);
   return (
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>
