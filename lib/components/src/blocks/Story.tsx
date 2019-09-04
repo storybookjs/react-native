@@ -55,7 +55,7 @@ const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => 
 const renderStoryFn = (storyFn: () => React.ElementType): React.ReactNode => {
   // invalid story function, bail out
   if (!storyFn) {
-    return null;
+    return <EmptyBlock>{StoryError.NO_STORY}</EmptyBlock>;
   }
   try {
     return storyFn();
