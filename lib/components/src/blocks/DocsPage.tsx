@@ -51,6 +51,7 @@ export const DocsContent = styled.div({
 
 export const DocsWrapper = styled.div<{}>(({ theme }) => ({
   background: theme.background.content,
+  color: theme.color.defaultText,
   display: 'flex',
   justifyContent: 'center',
   minHeight: '100vh',
