@@ -13,8 +13,7 @@ export enum StoryError {
  * if the story id exists, it must be pointing to a non-existing story
  *  if there is assigned story id, the story must be empty
  */
-const WRONG_OR_EMPTY_STORY = (id: string) =>
-  id ? `Story "${id}" links to a nen-existing story` : StoryError.NO_STORY;
+const MISSING_STORY = (id: string) => (id ? `Story "${id}" doesn't exist.` : StoryError.NO_STORY);
 
 interface CommonProps {
   title: string;
@@ -62,7 +61,7 @@ const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => 
 const renderStoryFn = (storyFn: () => React.ElementType, id: string): React.ReactNode => {
   // invalid story function, bail out
   if (!storyFn) {
-    return <EmptyBlock>{WRONG_OR_EMPTY_STORY(id)}</EmptyBlock>;
+    return <EmptyBlock>{MISSING_STORY(id)}</EmptyBlock>;
   }
   // let react do its magic for calling the render
   // allows using react hooks in story functions
@@ -74,7 +73,7 @@ const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, heigh
   <div style={{ height }}>
     <ZoomContext.Consumer>
       {({ scale }) => (
-        <InlineZoomWrapper scale={scale}> {renderStoryFn(storyFn, id)}</InlineZoomWrapper>
+        <InlineZoomWrapper scale={scale}>{renderStoryFn(storyFn, id)}</InlineZoomWrapper>
       )}
     </ZoomContext.Consumer>
   </div>
