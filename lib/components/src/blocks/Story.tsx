@@ -9,9 +9,10 @@ export enum StoryError {
   NO_STORY = 'No component or story to display',
 }
 
-// error message for Story with null storyFn
-// if the story id exists, it must be pointing to a non-existing story
-// if there is assigned story id, the story must be empty
+/** error message for Story with null storyFn
+ * if the story id exists, it must be pointing to a non-existing story
+ *  if there is assigned story id, the story must be empty
+ */
 const WRONG_OR_EMPTY_STORY = (id: string) =>
   id ? `Story "${id}" links to a nen-existing story` : StoryError.NO_STORY;
 
