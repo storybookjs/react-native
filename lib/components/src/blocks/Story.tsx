@@ -9,6 +9,12 @@ export enum StoryError {
   NO_STORY = 'No component or story to display',
 }
 
+// error message for Story with null storyFn
+// if the story id exists, it must be pointing to a non-existing story
+// if there is assigned story id, the story must be empty
+const WRONG_OR_EMPTY_STORY = (id: string) =>
+  id ? `Story "${id}" links to a nen-existing story` : StoryError.NO_STORY;
+
 interface CommonProps {
   title: string;
   height?: string;
@@ -52,10 +58,10 @@ const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => 
  * catch for functional component stories using react hooks
  */
 
-const renderStoryFn = (storyFn: () => React.ElementType): React.ReactNode => {
+const renderStoryFn = (storyFn: () => React.ElementType, id: string): React.ReactNode => {
   // invalid story function, bail out
   if (!storyFn) {
-    return <EmptyBlock>{StoryError.NO_STORY}</EmptyBlock>;
+    return <EmptyBlock>{WRONG_OR_EMPTY_STORY(id)}</EmptyBlock>;
   }
   try {
     return storyFn();
@@ -73,11 +79,11 @@ const renderStoryFn = (storyFn: () => React.ElementType): React.ReactNode => {
   }
 };
 
-const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, height }) => (
+const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, height, id }) => (
   <div style={{ height }}>
     <ZoomContext.Consumer>
       {({ scale }) => (
-        <InlineZoomWrapper scale={scale}> {renderStoryFn(storyFn)}</InlineZoomWrapper>
+        <InlineZoomWrapper scale={scale}> {renderStoryFn(storyFn, id)}</InlineZoomWrapper>
       )}
     </ZoomContext.Consumer>
   </div>
@@ -118,7 +124,7 @@ const IFrameStory: React.FunctionComponent<IFrameStoryProps> = ({
 const Story: React.FunctionComponent<StoryProps> = props => {
   const { error } = props as ErrorProps;
   const { storyFn } = props as InlineStoryProps;
-  const { id, inline, title, height, children } = props;
+  const { id, inline, title, height } = props;
 
   if (error) {
     return <EmptyBlock>{error}</EmptyBlock>;
