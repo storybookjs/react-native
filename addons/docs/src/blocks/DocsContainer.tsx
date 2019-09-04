@@ -56,7 +56,7 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
-        block: 'start',
+        block: 'end',
         inline: 'nearest',
       });
     }
