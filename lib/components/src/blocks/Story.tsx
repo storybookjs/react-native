@@ -83,7 +83,7 @@ const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, heigh
   <div style={{ height }}>
     <ZoomContext.Consumer>
       {({ scale }) => (
-        <InlineZoomWrapper scale={scale}> {renderStoryFn(storyFn, id)}</InlineZoomWrapper>
+        <InlineZoomWrapper scale={scale}>{renderStoryFn(storyFn, id)}</InlineZoomWrapper>
       )}
     </ZoomContext.Consumer>
   </div>
