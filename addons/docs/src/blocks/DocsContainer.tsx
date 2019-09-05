@@ -1,14 +1,15 @@
 /* eslint-disable react/destructuring-assignment */
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
-import { DocsWrapper, DocsContent, Source } from '@storybook/components';
+import { DocsWrapper, DocsContent, Source, Description } from '@storybook/components';
 import { components as htmlComponents, Code } from '@storybook/components/html';
 import { DocsContextProps, DocsContext } from './DocsContext';
 
 interface DocsContainerProps {
   context: DocsContextProps;
+  children: React.ReactElement;
 }
 
 interface CodeOrSourceProps {
@@ -54,7 +55,13 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
       <ThemeProvider theme={theme}>
         <MDXProvider components={components}>
           <DocsWrapper>
-            <DocsContent>{children}</DocsContent>
+            <DocsContent>
+              {children && typeof children.type === 'string' ? (
+                <Description markdown={children.type} {...children.props} />
+              ) : (
+                children
+              )}
+            </DocsContent>
           </DocsWrapper>
         </MDXProvider>
       </ThemeProvider>
