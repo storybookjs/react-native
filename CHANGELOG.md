@@ -2,6 +2,7 @@
 
 ### Bug Fixes
 
+* Addon-docs: Doc blocks fixes for dark theme ([#7991](https://github.com/storybookjs/storybook/pull/7991))
 * API: Fix useEfect in inline Docs ([#7992](https://github.com/storybookjs/storybook/pull/7992))
 * UI: Fix enableShortcuts option ([#7990](https://github.com/storybookjs/storybook/pull/7990))
 * Addon-docs: Error handling for invalid Story id ([#7965](https://github.com/storybookjs/storybook/pull/7965))
