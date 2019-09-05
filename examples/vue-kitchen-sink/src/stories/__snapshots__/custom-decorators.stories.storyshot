@@ -47,9 +47,7 @@ exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
   "kind": "Custom|Decorator for Vue",
   "name": "With Data",
   "story": "With Data",
-  "customContext": 52,
   "parameters": {
-    "fileName": "/Users/jetbrains/IdeaProjects/storybook/examples/vue-kitchen-sink/src/stories/custom-decorators.stories.js",
     "options": {
       "hierarchyRootSeparator": {},
       "hierarchySeparator": {}
@@ -60,7 +58,8 @@ exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
     "globalParameter": "globalParameter",
     "framework": "vue",
     "customParameter": 42
-  }
+  },
+  "customContext": 52
 }
     </pre>
   </div>
