@@ -41,8 +41,7 @@ module.exports = {
     '<rootDir>/examples/official-storybook',
   ],
   transform: {
-    '^.+(\\.stories|directly_required\\/index)\\.[jt]sx?$':
-      '@storybook/addon-storyshots/injectFileName',
+    '^.+\\.stories\\.[jt]sx?$': '@storybook/addon-storyshots/injectFileName',
     '^.+\\.[jt]sx?$': '<rootDir>/scripts/babel-jest.js',
   },
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
