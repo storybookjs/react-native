@@ -13,10 +13,6 @@ export default {
 
 export const withText = () => <Button onClick={action('clicked')}>Hello Button</Button>;
 
-withText.story = {
-  name: 'with text',
-};
-
 export const withSomeEmoji = () => (
   <Button onClick={action('clicked')}>
     <span role="img" aria-label="so cool">
