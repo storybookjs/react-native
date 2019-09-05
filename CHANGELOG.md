@@ -1,3 +1,12 @@
+## 5.2.0-rc.6 (September 5, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Doc blocks fixes for dark theme ([#7991](https://github.com/storybookjs/storybook/pull/7991))
+* API: Fix useEfect in inline Docs ([#7992](https://github.com/storybookjs/storybook/pull/7992))
+* UI: Fix enableShortcuts option ([#7990](https://github.com/storybookjs/storybook/pull/7990))
+* Addon-docs: Error handling for invalid Story id ([#7965](https://github.com/storybookjs/storybook/pull/7965))
+
 ## 5.2.0-rc.5 (September 4, 2019)
 
 ### Bug Fixes
