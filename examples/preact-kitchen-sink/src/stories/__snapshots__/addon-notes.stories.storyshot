@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|Notes Note with HTML 1`] = `
+<p>
+  <span>
+    🤔😳😯😮
+  </span>
+  <br />
+  <span>
+    😄😩😓😱
+  </span>
+  <br />
+  <span>
+    🤓😑😶😊
+  </span>
+</p>
+`;
+
+exports[`Storyshots Addons|Notes Simple note 1`] = `
+<p>
+  <strong>
+    Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.
+  </strong>
+</p>
+`;

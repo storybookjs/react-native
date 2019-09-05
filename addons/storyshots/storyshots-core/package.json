@@ -25,6 +25,7 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
+    "@jest/transform": "^24.9.0",
     "@storybook/addons": "5.2.0-rc.5",
     "core-js": "^3.0.1",
     "glob": "^7.1.3",

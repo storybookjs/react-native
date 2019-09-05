@@ -36,9 +36,7 @@ initStoryshots({
   integrityOptions: { cwd: __dirname },
   stories2snapsConverter: new AnotherStories2SnapsConverter({ snapshotExtension: '.boo' }),
   config: ({ configure }) =>
-    configure(() => {
-      // eslint-disable-next-line global-require
-      require('../stories/directly_required');
-    }, module),
+    // eslint-disable-next-line global-require
+    configure(() => [require('../stories/directly_required')], module),
   test: multiSnapshotWithOptions(),
 });
