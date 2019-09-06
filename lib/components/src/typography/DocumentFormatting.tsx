@@ -295,6 +295,7 @@ const listCommon: CSSObject = {
 
 export const LI = styled.li<{}>(withReset, ({ theme }) => ({
   fontSize: theme.typography.size.s2,
+  color: theme.color.defaultText,
   lineHeight: '24px',
   '& + li': {
     marginTop: '.25em',
