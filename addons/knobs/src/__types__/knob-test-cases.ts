@@ -217,6 +217,68 @@ expectKnobOfType(
   options('options with group', {}, '', { display: 'check' })
 );
 
+expectKnobOfType<number | null>(
+  options('select with null option', { a: 1, b: null }, null, { display: 'check' })
+);
+
+expectKnobOfType<string | string[]>(
+  options(
+    'options with string and string array options',
+    {
+      Red: 'red',
+      Blue: 'blue',
+      Yellow: 'yellow',
+      Rainbow: ['red', 'orange', 'etc'],
+      None: 'transparent',
+    },
+    'red',
+    { display: 'check' }
+  )
+);
+
+expectKnobOfType<number | number[]>(
+  options(
+    'select with number and number array options',
+    {
+      Red: 1,
+      Blue: 2,
+      Yellow: 3,
+      Rainbow: [4, 5, 6],
+      None: 7,
+    },
+    7,
+    { display: 'check' }
+  )
+);
+
+expectKnobOfType<string | string[] | null>(
+  options(
+    'select with string, string array, and null options',
+    {
+      Red: 'red',
+      Blue: 'blue',
+      Yellow: 'yellow',
+      Rainbow: ['red', 'orange', 'etc'],
+      None: null,
+    },
+    null,
+    { display: 'check' }
+  )
+);
+
+expectKnobOfType<number[]>(
+  options(
+    'select with number array options',
+    {
+      ones: [1],
+      twos: [2, 2],
+      threes: [3, 3, 3],
+    },
+    [1],
+    { display: 'check' }
+  )
+);
+
 /** Array knob */
 
 const arrayReadonly = array('array as readonly', ['hi', 'there'] as const);

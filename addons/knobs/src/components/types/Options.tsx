@@ -9,7 +9,14 @@ import CheckboxesType from './Checkboxes';
 
 // TODO: Apply the Storybook theme to react-select
 
-export type OptionsTypeKnobSingleValue = string | number | null | undefined;
+export type OptionsTypeKnobSingleValue =
+  | string
+  | number
+  | null
+  | undefined
+  | string[]
+  | number[]
+  | (string | number)[];
 
 export type OptionsTypeKnobValue<
   T extends OptionsTypeKnobSingleValue = OptionsTypeKnobSingleValue
