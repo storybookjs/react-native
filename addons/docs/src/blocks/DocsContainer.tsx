@@ -1,5 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-
 import React from 'react';
 import { document } from 'global';
 import { MDXProvider } from '@mdx-js/react';
@@ -47,16 +45,16 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   context,
   children,
 }) => {
-  const parameters = (context && context.parameters) || {};
+  const { id: storyId, parameters = {} } = context || {};
   const options = parameters.options || {};
   const theme = ensureTheme(options.theme);
   const { components: userComponents = null } = parameters.docs || {};
   const components = { ...defaultComponents, ...userComponents };
 
   React.useEffect(() => {
-    let element = document.getElementById(anchorBlockIdFromId(context.id));
+    let element = document.getElementById(anchorBlockIdFromId(storyId));
     if (!element) {
-      element = document.getElementById(storyBlockIdFromId(context.id));
+      element = document.getElementById(storyBlockIdFromId(storyId));
     }
     if (element) {
       element.scrollIntoView({
@@ -65,7 +63,7 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
         inline: 'nearest',
       });
     }
-  }, [context.id]);
+  }, [storyId]);
   return (
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>
