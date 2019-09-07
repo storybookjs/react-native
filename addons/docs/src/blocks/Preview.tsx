@@ -23,7 +23,7 @@ const getPreviewProps = (
   }: PreviewProps & { children?: React.ReactNode },
   { mdxStoryNameToId, storyStore }: DocsContextProps
 ): PurePreviewProps => {
-  if (withSource === SourceState.NONE && !children) {
+  if (withSource === SourceState.NONE) {
     return props;
   }
   if (mdxSource) {
