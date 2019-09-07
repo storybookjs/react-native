@@ -19,7 +19,7 @@ If you want to intersperse longform documentation in your Storybook, for example
 
 ## Pure MDX Stories
 
-[MDX](mdx.md) is an alternative to syntax to CSF that allows you co-locate your stories and your documentation. Everything you can do in CSF, you can do in MDX. And if you're consuming it in [Webpack](https://webpack.js.org/), it exposes an _identical_ interface, so the two files are interchangeable. Some teams will choose to write all of their Storybook in MDX and never look back.
+[MDX](mdx.md) is an alternative syntax to CSF that allows you to co-locate your stories and your documentation. Everything you can do in CSF, you can do in MDX. And if you're consuming it in [Webpack](https://webpack.js.org/), it exposes an _identical_ interface, so the two files are interchangeable. Some teams will choose to write all of their Storybook in MDX and never look back.
 
 ## Mixed CSF / MDX Stories
 
