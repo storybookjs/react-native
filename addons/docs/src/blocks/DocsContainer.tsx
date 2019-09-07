@@ -45,7 +45,7 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   context,
   children,
 }) => {
-  const { id: storyId, parameters = {} } = context || {};
+  const { id: storyId = null, parameters = {} } = context || {};
   const options = parameters.options || {};
   const theme = ensureTheme(options.theme);
   const { components: userComponents = null } = parameters.docs || {};
