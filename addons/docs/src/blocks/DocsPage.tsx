@@ -7,6 +7,7 @@ import { DocsContext } from './DocsContext';
 import { Description, getDocgen } from './Description';
 import { Story } from './Story';
 import { Preview } from './Preview';
+import { Anchor } from './Anchor';
 import { getPropsTableProps } from './Props';
 
 export interface SlotContext {
@@ -87,13 +88,13 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   withToolbar = false,
   parameters,
 }) => (
-  <>
+  <Anchor storyId={id}>
     {expanded && <StoryHeading>{(parameters && parameters.displayName) || name}</StoryHeading>}
     {expanded && description && <Description markdown={description} />}
     <Preview withToolbar={withToolbar}>
       <Story id={id} />
     </Preview>
-  </>
+  </Anchor>
 );
 
 export const DocsPage: React.FunctionComponent<DocsPageProps> = ({

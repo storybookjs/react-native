@@ -7,6 +7,8 @@ import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
 import { DocsWrapper, DocsContent, Source } from '@storybook/components';
 import { components as htmlComponents, Code } from '@storybook/components/html';
 import { DocsContextProps, DocsContext } from './DocsContext';
+import { anchorBlockIdFromId } from './Anchor';
+import { storyBlockIdFromId } from './Story';
 
 interface DocsContainerProps {
   context: DocsContextProps;
@@ -52,7 +54,10 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   const components = { ...defaultComponents, ...userComponents };
 
   React.useEffect(() => {
-    const element = document.getElementById(context.id);
+    let element = document.getElementById(anchorBlockIdFromId(context.id));
+    if (!element) {
+      element = document.getElementById(storyBlockIdFromId(context.id));
+    }
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',

@@ -4,6 +4,8 @@ import { CURRENT_SELECTION } from './shared';
 
 import { DocsContext, DocsContextProps } from './DocsContext';
 
+export const storyBlockIdFromId = (storyId: string) => `story--${storyId}`;
+
 interface CommonProps {
   height?: string;
   inline?: boolean;
@@ -58,7 +60,11 @@ const StoryContainer: React.FunctionComponent<StoryProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const storyProps = getStoryProps(props, context);
-      return <Story {...storyProps} />;
+      return (
+        <div id={storyBlockIdFromId(storyProps.id)}>
+          <Story {...storyProps} />
+        </div>
+      );
     }}
   </DocsContext.Consumer>
 );
