@@ -31,7 +31,7 @@ export type OptionsKnobOptionsDisplay =
   | 'multi-select';
 
 export interface OptionsKnobOptions {
-  display?: OptionsKnobOptionsDisplay;
+  display: OptionsKnobOptionsDisplay;
 }
 
 export interface OptionsTypeKnob<T extends OptionsTypeKnobValue> extends KnobControlConfig<T> {
