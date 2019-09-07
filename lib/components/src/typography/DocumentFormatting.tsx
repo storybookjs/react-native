@@ -1,11 +1,12 @@
 import { styled, CSSObject, Theme } from '@storybook/theming';
 import { withReset } from './withReset';
 
-const headerCommon: CSSObject = {
+const headerCommon = ({ theme }: { theme: Theme }): CSSObject => ({
   margin: '20px 0 8px',
   padding: 0,
   cursor: 'text',
   position: 'relative',
+  color: theme.color.defaultText,
   '&:first-of-type': {
     marginTop: 0,
     paddingTop: 0,
@@ -16,7 +17,7 @@ const headerCommon: CSSObject = {
   '& tt, & code': {
     fontSize: 'inherit',
   },
-};
+});
 
 const withMargin: CSSObject = {
   margin: '16px 0',
@@ -294,6 +295,7 @@ const listCommon: CSSObject = {
 
 export const LI = styled.li<{}>(withReset, ({ theme }) => ({
   fontSize: theme.typography.size.s2,
+  color: theme.color.defaultText,
   lineHeight: '24px',
   '& + li': {
     marginTop: '.25em',
@@ -321,6 +323,7 @@ const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
 export const P = styled.p<{}>(withReset, withMargin, ({ theme }) => ({
   fontSize: theme.typography.size.s2,
   lineHeight: '24px',
+  color: theme.color.defaultText,
   '& code': codeCommon({ theme }),
 }));
 

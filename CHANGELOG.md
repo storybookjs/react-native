@@ -1,3 +1,28 @@
+## 5.2.0-rc.6 (September 5, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Doc blocks fixes for dark theme ([#7991](https://github.com/storybookjs/storybook/pull/7991))
+* API: Fix useEfect in inline Docs ([#7992](https://github.com/storybookjs/storybook/pull/7992))
+* UI: Fix enableShortcuts option ([#7990](https://github.com/storybookjs/storybook/pull/7990))
+* Addon-docs: Error handling for invalid Story id ([#7965](https://github.com/storybookjs/storybook/pull/7965))
+
+## 5.2.0-rc.5 (September 4, 2019)
+
+### Bug Fixes
+
+* CLI: Force welcome stories to show up first in load order ([#7979](https://github.com/storybookjs/storybook/pull/7979))
+
+## 5.2.0-rc.4 (September 3, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix MDX theme bleed with reset context ([#7974](https://github.com/storybookjs/storybook/pull/7974))
+
+## 5.2.0-rc.3 (September 3, 2019)
+
+Failed publish
+
 ## 5.2.0-rc.2 (September 1, 2019)
 
 ### Bug Fixes

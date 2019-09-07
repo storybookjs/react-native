@@ -1,6 +1,6 @@
 {
   "name": "cra-kitchen-sink",
-  "version": "5.2.0-rc.2",
+  "version": "5.2.0-rc.6",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -19,23 +19,23 @@
     "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.2.0-rc.2",
-    "@storybook/addon-actions": "5.2.0-rc.2",
-    "@storybook/addon-backgrounds": "5.2.0-rc.2",
-    "@storybook/addon-centered": "5.2.0-rc.2",
-    "@storybook/addon-docs": "5.2.0-rc.2",
-    "@storybook/addon-events": "5.2.0-rc.2",
-    "@storybook/addon-info": "5.2.0-rc.2",
-    "@storybook/addon-jest": "5.2.0-rc.2",
-    "@storybook/addon-knobs": "5.2.0-rc.2",
-    "@storybook/addon-links": "5.2.0-rc.2",
-    "@storybook/addon-notes": "5.2.0-rc.2",
-    "@storybook/addon-options": "5.2.0-rc.2",
-    "@storybook/addon-storyshots": "5.2.0-rc.2",
-    "@storybook/addons": "5.2.0-rc.2",
-    "@storybook/client-logger": "5.2.0-rc.2",
-    "@storybook/react": "5.2.0-rc.2",
-    "@storybook/theming": "5.2.0-rc.2",
+    "@storybook/addon-a11y": "5.2.0-rc.6",
+    "@storybook/addon-actions": "5.2.0-rc.6",
+    "@storybook/addon-backgrounds": "5.2.0-rc.6",
+    "@storybook/addon-centered": "5.2.0-rc.6",
+    "@storybook/addon-docs": "5.2.0-rc.6",
+    "@storybook/addon-events": "5.2.0-rc.6",
+    "@storybook/addon-info": "5.2.0-rc.6",
+    "@storybook/addon-jest": "5.2.0-rc.6",
+    "@storybook/addon-knobs": "5.2.0-rc.6",
+    "@storybook/addon-links": "5.2.0-rc.6",
+    "@storybook/addon-notes": "5.2.0-rc.6",
+    "@storybook/addon-options": "5.2.0-rc.6",
+    "@storybook/addon-storyshots": "5.2.0-rc.6",
+    "@storybook/addons": "5.2.0-rc.6",
+    "@storybook/client-logger": "5.2.0-rc.6",
+    "@storybook/react": "5.2.0-rc.6",
+    "@storybook/theming": "5.2.0-rc.6",
     "react-scripts": "^3.0.1"
   }
 }
