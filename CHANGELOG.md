@@ -1,3 +1,9 @@
+## 5.2.0-rc.9 (September 7, 2019)
+
+### Bug Fixes
+
+* Addon-knobs: allow array values in select and options knobs ([#8027](https://github.com/storybookjs/storybook/pull/8027))
+
 ## 5.2.0-rc.8 (September 6, 2019)
 
 ### Bug Fixes
