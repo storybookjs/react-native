@@ -1,1 +1,1 @@
-{"version":"5.2.0-rc.8","info":{"plain":"### Bug Fixes\n\n* Addon-docs: Scroll story into view ([#7994](https://github.com/storybookjs/storybook/pull/7994))\n* Addon-docs: Fix LI styling for dark color theme ([#8015](https://github.com/storybookjs/storybook/pull/8015))"}}
+{"version":"5.2.0-rc.9","info":{"plain":"### Bug Fixes\n\n* Addon-knobs: allow array values in select and options knobs ([#8027](https://github.com/storybookjs/storybook/pull/8027))"}}
