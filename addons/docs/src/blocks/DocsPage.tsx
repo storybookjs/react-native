@@ -35,7 +35,6 @@ export interface DocsPageProps {
 interface DocsStoryProps {
   id: string;
   name: string;
-  description?: string;
   expanded?: boolean;
   withToolbar?: boolean;
   parameters?: any;
