@@ -1,1 +1,1 @@
-{"version":"5.2.0-rc.9","info":{"plain":"### Bug Fixes\n\n* Addon-knobs: allow array values in select and options knobs ([#8027](https://github.com/storybookjs/storybook/pull/8027))"}}
+{"version":"5.2.0-rc.10","info":{"plain":"### Bug Fixes\n\n* Angular: remove webpack-env from tsconfig types ([#8036](https://github.com/storybookjs/storybook/pull/8036))\n\n### Documentation\n\n* Guides: Update all guides to CSF ([#8030](https://github.com/storybookjs/storybook/pull/8030))"}}
