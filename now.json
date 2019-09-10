@@ -6,11 +6,11 @@
     {
       "src": "package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "out" }
+      "config": { "distDir": "built-storybooks" }
     }
   ],
   "routes": [
     { "src": "/docs", "dest": "https://storybook.js.org" },
-    { "src": "/(.*)", "dest": "/out/$1" }
+    { "src": "/(.*)", "dest": "/built-storybooks/$1" }
   ]
 }
