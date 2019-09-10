@@ -5,10 +5,10 @@
   "license": "MIT",
   "scripts": {
     "build": "ng build",
-    "build-storybook": "npm run storybook:prebuild && build-storybook -s src/assets",
+    "prebuild-storybook": "npm run storybook:prebuild && cd ../.. && yarn add node-sass -W -s && cd examples/angular-cli",
+    "build-storybook": "build-storybook -s src/assets",
     "e2e": "ng e2e",
     "ng": "ng",
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "start": "ng serve",
     "storybook": "npm run storybook:prebuild && start-storybook -p 9008 -s src/assets",
     "storybook:prebuild": "npm run test:generate-output",
@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^7.2.6",
     "@ngrx/store": "^7.2.0",
     "core-js": "^3.0.1",
+    "node-sass": "^4.12.0",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.4.0",
     "zone.js": "^0.8.29"
