@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/* eslint-disable global-require */
+
 const { spawn } = require('child_process');
 const { promisify } = require('util');
 const { readdir: readdirRaw, readFile: readFileRaw, statSync, cop } = require('fs');
