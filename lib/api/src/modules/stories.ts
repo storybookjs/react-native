@@ -300,10 +300,7 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
     } else if (storiesHash[storyId] && !storiesHash[storyId].isLeaf) {
       // When story exists but if it is not the leaf story, it finds the proper
       // leaf story from any depth.
-      const firstLeafStoryId = storiesHash[storyId].isLeaf
-        ? storiesHash[storyId].children[0]
-        : findLeafStoryId(storiesHash, storyId);
-
+      const firstLeafStoryId = findLeafStoryId(storiesHash, storyId);
       navigate(`/${viewMode}/${firstLeafStoryId}`);
     }
 
