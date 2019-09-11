@@ -81,7 +81,7 @@ const handleExamples = async files => {
     await acc;
 
     logger.log(`💿 copy ${d} to built-storybooks`);
-    const to = p(['built-storybooks', target, 'built-storybooks', d]);
+    const to = p(['built-storybooks', target, d]);
     const from = p(['built-storybooks', d]);
 
     await copy(from, to, {
@@ -118,10 +118,23 @@ const handleExamples = async files => {
       #select {
         position: absolute;
         top: 0;
-        right: 10px;
+        right: 100px;
         left: 10px;
         height: 30px;
-        width: calc(100vw - 20px);
+        width: calc(100vw - 120px);
+        background: black;
+        color: white;
+        border: 0 none;
+        border-radius: 0;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      #open {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 30px;
         background: black;
         color: white;
         border: 0 none;
@@ -132,7 +145,11 @@ const handleExamples = async files => {
     </style>
 
     <script>
-      function handle() {
+      function handleClick() {
+        var value = document.getElementById("select").value;
+        window.location = document.location.origin + value;
+      }
+      function handleSelect() {
         var value = document.getElementById("select").value;
         var frame = document.getElementById("frame");
 
@@ -143,7 +160,9 @@ const handleExamples = async files => {
       }
     </script>
 
-    <select id="select" onchange="handle()">
+    <button id="open" onclick="handleClick()">open</button>
+
+    <select id="select" onchange="handleSelect()">
       ${deployables.map(i => `<option value="/${i}/">${i}</option>`).join('\n')}
     </select>
 

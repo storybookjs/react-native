@@ -2,14 +2,19 @@
   "version": 2,
   "name": "monorepo",
   "public": true,
+  "static": {
+    "cleanUrls": false,
+    "trailingSlash": true
+  },
+  "github": {
+    "silent": true
+  },
   "builds": [
     {
       "src": "package.json",
       "use": "@now/static-build",
       "config": { 
-        "distDir": "built-storybooks",
-        "trailingSlash": true,
-        "renderSingle": true
+        "distDir": "built-storybooks"
        }
     }
   ],
