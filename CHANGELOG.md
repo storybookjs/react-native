@@ -1,3 +1,13 @@
+## 5.2.0-rc.11 (September 10, 2019)
+
+### Features
+
+* DocsPage: show docs.storyDescription above story ([#8037](https://github.com/storybookjs/storybook/pull/8037))
+
+### Maintenance
+
+* Migrate to new github actions ([#8045](https://github.com/storybookjs/storybook/pull/8045))
+
 ## 5.2.0-rc.10 (September 9, 2019)
 
 ### Bug Fixes

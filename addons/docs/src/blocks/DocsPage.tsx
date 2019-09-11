@@ -35,7 +35,6 @@ export interface DocsPageProps {
 interface DocsStoryProps {
   id: string;
   name: string;
-  description?: string;
   expanded?: boolean;
   withToolbar?: boolean;
   parameters?: any;
@@ -83,14 +82,15 @@ const StoryHeading = H3;
 const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   id,
   name,
-  description,
   expanded = true,
   withToolbar = false,
   parameters,
 }) => (
   <Anchor storyId={id}>
     {expanded && <StoryHeading>{(parameters && parameters.displayName) || name}</StoryHeading>}
-    {expanded && description && <Description markdown={description} />}
+    {expanded && parameters && parameters.docs && parameters.docs.storyDescription && (
+      <Description markdown={parameters.docs.storyDescription} />
+    )}
     <Preview withToolbar={withToolbar}>
       <Story id={id} />
     </Preview>
