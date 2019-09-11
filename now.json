@@ -13,11 +13,15 @@
     {
       "src": "package.json",
       "use": "@now/static-build",
-      "config": { 
-        "distDir": "built-storybooks"
-       }
+      "config": { "distDir": "built-storybooks" }
     }
   ],
+  "build": {
+    "env": {
+      "DOTENV_DISPLAY_WARNING": "none",
+      "STORYBOOK_EXAMPLE_APP":"true"
+    }
+  },
   "routes": [
     { "src": "/(.*)", "dest": "/built-storybooks/$1" }
   ]

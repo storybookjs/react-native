@@ -3,7 +3,7 @@
   "version": "5.2.0-rc.10",
   "private": true,
   "scripts": {
-    "build-storybook": "build-storybook -c ./",
+    "build-storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true build-storybook -c ./",
     "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
     "do-image-snapshots": "../../node_modules/.bin/jest --projects=./image-snapshots",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
