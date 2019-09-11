@@ -4,11 +4,18 @@
 
 const { spawn } = require('child_process');
 const { promisify } = require('util');
-const { readdir: readdirRaw, readFile: readFileRaw, statSync, cop } = require('fs');
+const {
+  readdir: readdirRaw,
+  readFile: readFileRaw,
+  writeFile: writeFileRaw,
+  statSync,
+  cop,
+} = require('fs');
 const { join } = require('path');
 
 const readdir = promisify(readdirRaw);
 const readFile = promisify(readFileRaw);
+const writeFile = promisify(writeFileRaw);
 
 const p = l => join(__dirname, '..', ...l);
 const logger = console;
@@ -81,6 +88,73 @@ const handleExamples = async files => {
       overwrite: true,
     });
   }, Promise.resolve());
+
+  logger.log('-------');
+  logger.log('✅ done');
+  logger.log('-------');
+  logger.log('');
+
+  logger.log(`📑 creating index`);
+
+  const indexLocation = p(['built-storybooks', 'index.html']);
+  const indexContent = `
+    <style>
+      body {
+        background: black;
+        color: white;
+      }
+      #frame {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: calc(100vh - 30px);
+        bottom: 0;
+        top: 30px;
+        border: 0 none;
+        margin: 0;
+        padding: 0;
+      }
+      #select {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        left: 10px;
+        height: 30px;
+        width: calc(100vw - 20px);
+        background: black;
+        color: white;
+        border: 0 none;
+        border-radius: 0;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    </style>
+
+    <script>
+      function handle() {
+        var value = document.getElementById("select").value;
+        var frame = document.getElementById("frame");
+
+        sessionStorage.clear();
+        localStorage.clear();
+
+        frame.setAttribute('src', value);
+      }
+    </script>
+
+    <select id="select" onchange="handle()">
+      ${deployables.map(i => `<option value="/${i}/">${i}</option>`).join('\n')}
+    </select>
+
+    <iframe id="frame" src="/${deployables[0]}/" />
+  `;
+
+  await writeFile(indexLocation, indexContent);
+
+  logger.log('-------');
+  logger.log('✅ done');
+  logger.log('-------');
 };
 
 const run = async () => {
