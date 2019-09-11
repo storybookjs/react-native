@@ -179,6 +179,17 @@ const initStoriesApi = ({
     id: toKey(name),
   });
 
+  // Recursively traverse storiesHash from the initial storyId until finding
+  // the leaf story.
+  const findLeafStoryId = (storiesHash: StoriesHash, storyId: string): string => {
+    if (storiesHash[storyId].isLeaf) {
+      return storyId;
+    }
+
+    const childStoryId = storiesHash[storyId].children[0];
+    return findLeafStoryId(storiesHash, childStoryId);
+  };
+
   const setStories = (input: StoriesRaw) => {
     const hash: StoriesHash = {};
     const storiesHashOutOfOrder = Object.values(input).reduce((acc, item) => {
@@ -286,11 +297,14 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       } else if (viewMode && firstLeaf) {
         navigate(`/${viewMode}/${firstLeaf.id}`);
       }
-    } else if (storiesHash[storyId] && storiesHash[storyId].children) {
-      // When story exists but specific child is not specified, it routes
-      // to the first child of the story.
-      const firstLeafId = storiesHash[storyId].children[0];
-      navigate(`/${viewMode}/${firstLeafId}`);
+    } else if (storiesHash[storyId]) {
+      // When story exists but if it is not the leaf story, it finds the proper
+      // leaf story from any depth.
+      const firstLeafStoryId = storiesHash[storyId].isLeaf
+        ? storiesHash[storyId].children[0]
+        : findLeafStoryId(storiesHash, storyId);
+
+      navigate(`/${viewMode}/${firstLeafStoryId}`);
     }
 
     store.setState({
