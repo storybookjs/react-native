@@ -83,8 +83,8 @@ features as well. This chart captures the current state of support
 | StoriesOf stories |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Source            |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Notes / Info      |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| Props table       |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
-| Docgen            |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
+| Props table       |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
+| Docgen            |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
 | Inline stories    |   +   |  #  |         |      |        |         |       |         |      |       |        |
 
 **Note:** `#` = WIP support

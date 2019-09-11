@@ -6,6 +6,8 @@ import { CURRENT_SELECTION } from './shared';
 
 import { DocsContext, DocsContextProps } from './DocsContext';
 
+export const storyBlockIdFromId = (storyId: string) => `story--${storyId}`;
+
 const resetComponents: Record<string, React.ElementType> = {};
 Object.keys(docsComponents).forEach(key => {
   resetComponents[key] = (props: any) => React.createElement(key, props);
@@ -66,7 +68,7 @@ const StoryContainer: React.FunctionComponent<StoryProps> = props => (
     {context => {
       const storyProps = getStoryProps(props, context);
       return (
-        <div className="foobar">
+        <div id={storyBlockIdFromId(storyProps.id)}>
           <MDXProvider components={resetComponents}>
             <Story {...storyProps} />
           </MDXProvider>
