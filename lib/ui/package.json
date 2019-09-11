@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.2.0-beta.19",
+  "version": "5.2.0-rc.11",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -22,16 +22,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.19",
-    "@storybook/addon-actions": "5.2.0-beta.19",
-    "@storybook/addon-knobs": "5.2.0-beta.19",
-    "@storybook/api": "5.2.0-beta.19",
-    "@storybook/channels": "5.2.0-beta.19",
-    "@storybook/client-logger": "5.2.0-beta.19",
-    "@storybook/components": "5.2.0-beta.19",
-    "@storybook/core-events": "5.2.0-beta.19",
-    "@storybook/router": "5.2.0-beta.19",
-    "@storybook/theming": "5.2.0-beta.19",
+    "@storybook/addon-actions": "5.2.0-rc.11",
+    "@storybook/addon-knobs": "5.2.0-rc.11",
+    "@storybook/addons": "5.2.0-rc.11",
+    "@storybook/api": "5.2.0-rc.11",
+    "@storybook/channels": "5.2.0-rc.11",
+    "@storybook/client-logger": "5.2.0-rc.11",
+    "@storybook/components": "5.2.0-rc.11",
+    "@storybook/core-events": "5.2.0-rc.11",
+    "@storybook/router": "5.2.0-rc.11",
+    "@storybook/theming": "5.2.0-rc.11",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
@@ -47,7 +47,7 @@
     "qs": "^6.6.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-draggable": "^3.1.1",
+    "react-draggable": "^3.3.2",
     "react-helmet-async": "^1.0.2",
     "react-hotkeys": "2.0.0-pre4",
     "react-sizeme": "^2.6.7",

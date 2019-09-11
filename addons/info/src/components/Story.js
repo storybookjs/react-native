@@ -302,6 +302,7 @@ class Story extends Component {
     const {
       children,
       propTablesExclude,
+      propTableCompare,
       maxPropObjectKeys,
       maxPropArrayLength,
       maxPropStringLength,
@@ -349,7 +350,7 @@ class Story extends Component {
         (propTables.length > 0 && // if propTables is set and has items in it
           !propTables.includes(innerChildren.type)) || // ignore types that are missing from propTables
         (Array.isArray(propTablesExclude) && // also ignore excluded types
-          ~propTablesExclude.indexOf(innerChildren.type)) // eslint-disable-line no-bitwise
+          propTablesExclude.some(Comp => propTableCompare(innerChildren, Comp)))
       ) {
         return;
       }
@@ -409,6 +410,7 @@ Story.propTypes = {
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   propTables: PropTypes.arrayOf(PropTypes.func),
   propTablesExclude: PropTypes.arrayOf(PropTypes.func),
+  propTableCompare: PropTypes.func.isRequired,
   showInline: PropTypes.bool,
   showHeader: PropTypes.bool,
   showSource: PropTypes.bool,

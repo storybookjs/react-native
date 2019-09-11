@@ -43,6 +43,35 @@ simple.story = {
 };
 ```
 
+## Storybook Export vs Name Handling
+
+Storybook handles named exports and `story.name` slightly differently. When should you use one vs. the other?
+
+In general, you should use named exports. Storybook passes them through a `storyNameFromExport` function ([#7901](https://github.com/storybookjs/storybook/pull/7901)), which is implemented with `lodash.startCase`:
+
+```js
+it('should format CSF exports with sensible defaults', () => {
+  const testCases = {
+    name: 'Name',
+    someName: 'Some Name',
+    someNAME: 'Some NAME',
+    some_custom_NAME: 'Some Custom NAME',
+    someName1234: 'Some Name 1234',
+    someName1_2_3_4: 'Some Name 1 2 3 4',
+  };
+  Object.entries(testCases).forEach(([key, val]) => {
+    expect(storyNameFromExport(key)).toBe(val);
+  });
+});
+```
+
+When you want to change the name of your story, just rename the CSF export. This will change the name of the story and also change the Story's ID / URL.
+
+You should use the `story.name` option in the following cases:
+
+1. Want the name to show up in the Storybook UI in a way that's not possible with a named export, e.g. reserved keywords like "default", special characters like emoji, spacing/capitalization other than what's provided by `storyNameFromExport`
+2. Want to preserve the Story ID independently from changing how it's displayed. Having stable Story ID's is useful for integration with third party tools.
+
 ## Non-story exports
 
 In some cases, you may want to export a mixture of story and non-stories. For example., it can be useful to export data that's used in your stories.

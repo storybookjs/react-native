@@ -1,1 +1,1 @@
-module.exports = require('../common/makePreset')('html');
+module.exports = require('../dist/frameworks/common/makePreset').default('html');

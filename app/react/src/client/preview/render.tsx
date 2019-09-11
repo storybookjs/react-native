@@ -7,14 +7,16 @@ import { RenderMainArgs } from './types';
 
 const rootEl = document ? document.getElementById('root') : null;
 
-function render(node: React.ReactElement, el: Element) {
-  ReactDOM.render(
-    process.env.STORYBOOK_EXAMPLE_APP ? <React.StrictMode>{node}</React.StrictMode> : node,
-    el
-  );
-}
+const render = (node: React.ReactElement, el: Element) =>
+  new Promise(resolve => {
+    ReactDOM.render(
+      process.env.STORYBOOK_EXAMPLE_APP ? <React.StrictMode>{node}</React.StrictMode> : node,
+      el,
+      resolve
+    );
+  });
 
-export default function renderMain({
+export default async function renderMain({
   storyFn: StoryFn,
   selectedKind,
   selectedStory,
@@ -55,6 +57,6 @@ export default function renderMain({
     ReactDOM.unmountComponentAtNode(rootEl);
   }
 
-  render(element, rootEl);
+  await render(element, rootEl);
   showMain();
 }

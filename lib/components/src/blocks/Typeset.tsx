@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
+import { withReset } from '../typography/withReset';
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 
 const Label = styled.div<{}>(({ theme }) => ({
@@ -27,7 +28,7 @@ const TypeSpecimen = styled.div({
   '&:not(:last-child)': { marginBottom: '1rem' },
 });
 
-const Wrapper = styled.div<{}>(({ theme }) => ({
+const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
   ...getBlockBackgroundStyle(theme),
   margin: '25px 0 40px',
   padding: '30px 20px',
@@ -49,7 +50,7 @@ export const Typeset: React.FunctionComponent<TypesetProps> = ({
   sampleText,
   ...props
 }) => (
-  <Wrapper {...props}>
+  <Wrapper {...props} className="docblock-typeset">
     {fontSizes.map(num => (
       <TypeSpecimen key={num}>
         <Label>{num}px</Label>

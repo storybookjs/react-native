@@ -53,6 +53,10 @@ const Icon = styled(Icons)<IconProps>(
     if (icon === 'bookmarkhollow') {
       return { color: '#37d5d3' };
     }
+    if (icon === 'document') {
+      return { color: '#ffae00' };
+    }
+
     return {};
   },
   ({ isSelected = false }) => (isSelected ? { color: 'inherit' } : {})
@@ -121,13 +125,18 @@ const SidebarItem = ({
   ...props
 }: SidebarItemProps) => {
   let iconName: React.ComponentProps<typeof Icons>['icon'];
-  if (isLeaf) {
+  if (isLeaf && isComponent) {
+    iconName = 'document';
+  } else if (isLeaf) {
     iconName = 'bookmarkhollow';
   } else if (isComponent) {
     iconName = 'component';
   } else {
     iconName = 'folder';
   }
+
+  // eslint-disable-next-line react/destructuring-assignment
+  const displayName = (props.parameters && props.parameters.displayName) || name;
 
   return (
     <Item
@@ -137,7 +146,7 @@ const SidebarItem = ({
     >
       <Expander className="sidebar-expander" isExpandable={!isLeaf} isExpanded={isExpanded} />
       <Icon className="sidebar-svg-icon" icon={iconName} isSelected={isSelected} />
-      <span>{name}</span>
+      <span>{displayName}</span>
     </Item>
   );
 };

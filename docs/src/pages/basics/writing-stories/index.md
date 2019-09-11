@@ -103,13 +103,15 @@ import { configure } from '@storybook/react';
 configure(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
+> NOTE: The `configure` function should be called only once in `config.js`.
+
 The `configure` function accepts:
 
 - A single `require.context` "`req`"
 - An array of `req`s to load from multiple locations
 - A loader function that should return void or an array of module exports
 
-If you want to load from multiple locations, you could use an array:
+If you want to load from multiple locations, you can use an array:
 
 ```js
 import { configure } from '@storybook/react';
@@ -120,7 +122,22 @@ configure([
 ], module);
 ```
 
-Or if you want to do some custom loading logic, you can use a loader function. Just remember to return an array of module exports if you want to use the module story format:
+Or if you want to do some custom loading logic, you can use a loader function. Just remember to return an array of module exports if you want to use Component Story Format. Here's an example that forces files to load in a specific order.
+
+```js
+import { configure } from '@storybook/react';
+
+const loaderFn = () => ([
+  require('./welcome.stories.js'),
+  require('./prelude.stories.js'),
+  require('./button.stories.js'),
+  require('./input.stories.js'),
+]);
+
+configure(loaderFn, module);
+```
+
+Here's another example that mixes manual loading with glob-style loading:
 
 ```js
 import { configure } from '@storybook/react';
@@ -137,7 +154,23 @@ configure(loaderFn, module);
 
 Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use `require.context`.
 
-If you are using the `storiesOf` API directly, or are using `@storybook/react-native` where CSF is unavailable, you should use a loader function with no return value.
+If you are using the `storiesOf` API directly, or are using `@storybook/react-native` where CSF is unavailable, you should use a loader function with **no return value**:
+
+```js
+import { configure } from '@storybook/react';
+
+const loaderFn = () => {
+  // manual loading
+  require('./welcome.stories.js');
+  require('./button.stories.js');
+  
+  // dynamic loading, unavailable in react-native
+  const req = require.context('../src/components', true, /\.stories\.js$/);
+  req.keys().forEach(req(fname));
+};
+
+configure(loaderFn, module);
+```
 
 Furthermore, the **React Native** packager resolves all imports at build-time, so it's not possible to load modules dynamically. There is a third party loader [react-native-storybook-loader](https://github.com/elderfo/react-native-storybook-loader) to automatically generate the import statements for all stories.
 
@@ -198,7 +231,7 @@ addParameters({ notes: defaultNotes });
 
 This would make sense if, for example, `instructions.md` contained instructions on how to document your components when there is no documentation available.
 
-Then for componenents that did have documentation, we might override it at the component/story level:
+Then for components that did have documentation, we might override it at the component/story level:
 
 ```jsx
 import React from 'react';
@@ -219,7 +252,7 @@ special.story = {
 };
 ```
 
-In this example, the `small` and `medium` stories get the compoonent notes documented in `notes.md` (as opposed to the generic instructions in `instructions.md`). The `special` story gets some special notes.
+In this example, the `small` and `medium` stories get the component notes documented in `notes.md` (as opposed to the generic instructions in `instructions.md`). The `special` story gets some special notes.
 
 ## Searching
 
