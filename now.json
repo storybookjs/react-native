@@ -14,7 +14,6 @@
     }
   ],
   "routes": [
-    { "src": "/docs", "dest": "https://storybook.js.org" },
-    { "src": "/(.*)/.*", "dest": "/built-storybooks/$1/*" }
+    { "src": "/(.*)", "dest": "/built-storybooks/$1" }
   ]
 }
