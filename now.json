@@ -6,9 +6,6 @@
     "cleanUrls": false,
     "trailingSlash": true
   },
-  "github": {
-    "silent": true
-  },
   "builds": [
     {
       "src": "package.json",
