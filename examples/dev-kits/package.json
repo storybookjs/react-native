@@ -3,8 +3,7 @@
   "version": "5.2.0-rc.11",
   "private": true,
   "scripts": {
-    "build-storybook": "build-storybook -c ./ -s built-storybooks",
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
+    "build-storybook": "build-storybook -c ./",
     "storybook": "start-storybook -p 9011 -c ./"
   },
   "devDependencies": {

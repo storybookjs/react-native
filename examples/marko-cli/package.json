@@ -12,7 +12,6 @@
   "scripts": {
     "build": "NODE_ENV=production marko-starter build",
     "build-storybook": "build-storybook",
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "prettier": "prettier src/**/*.{js,css,less} *.js --write",
     "serve-static": "NODE_ENV=production marko-starter serve-static",
     "start": "marko-starter server",

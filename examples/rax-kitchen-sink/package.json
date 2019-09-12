@@ -3,14 +3,13 @@
   "version": "5.2.0-rc.11",
   "private": true,
   "scripts": {
-    "test:generate-output": "jest --json --outputFile=jest-test-results.json --config=./jest-addon.config.js",
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
+    "test:generate-output": "jest --json --outputFile=jest-test-results.json --config=./jest-addon.config.js -u",
     "test": "jest",
     "start": "rax-scripts start",
     "build": "rax-scripts build",
     "storybook": "start-storybook -p 9009 -s public",
     "prestorybook": "npm run test:generate-output",
-    "prebuild:storybook": "npm run test:generate-output",
+    "prebuild-storybook": "npm run test:generate-output",
     "build-storybook": "build-storybook -s public"
   },
   "dependencies": {

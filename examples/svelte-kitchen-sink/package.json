@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -s public",
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "storybook": "start-storybook -p 9009 -s public"
   },
   "dependencies": {

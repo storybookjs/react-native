@@ -6,7 +6,6 @@
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public",
     "eject": "react-scripts eject",
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9010 -s public",
     "test": "react-scripts test --env=jsdom"
