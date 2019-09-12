@@ -1,6 +1,9 @@
 name: Github CI
 
-on: [push]
+on: 
+  push:
+    paths:
+    - 'lib/cli'
 
 jobs:
   build:
@@ -21,6 +24,9 @@ jobs:
     - name: install, bootstrap
       run: |
         yarn bootstrap --core
-    - name: test
+    - name: cli
       run: |
-        yarn test --core
+        yarn test --cli
+    - name: latest-cra
+      run: |
+        yarn test-latest-cra
