@@ -1,9 +1,6 @@
-name: Github CI
+name: Unit tests
 
-on: 
-  push:
-    paths:
-    - 'lib/cli'
+on: [push]
 
 jobs:
   build:
@@ -24,9 +21,6 @@ jobs:
     - name: install, bootstrap
       run: |
         yarn bootstrap --core
-    - name: cli
+    - name: test
       run: |
-        yarn test --cli
-    - name: latest-cra
-      run: |
-        yarn test-latest-cra
+        yarn test --core
