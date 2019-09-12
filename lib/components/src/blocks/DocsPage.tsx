@@ -44,18 +44,10 @@ const Subtitle = styled.h2<{}>(withReset, ({ theme }) => ({
       : transparentize(0.25, theme.color.defaultText),
 }));
 
-export const DocsContent = styled.div({
-  maxWidth: 800,
-  width: '100%',
-});
+export const DocsContent = styled.div();
 
 export const DocsWrapper = styled.div<{}>(({ theme }) => ({
   background: theme.background.content,
-  display: 'flex',
-  justifyContent: 'center',
-  minHeight: '100vh',
-  padding: '4rem 20px',
-
   [`@media (min-width: ${breakpoint * 1}px)`]: {},
 }));
 
