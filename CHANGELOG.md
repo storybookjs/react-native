@@ -1,3 +1,14 @@
+## 5.2.0 (September 13, 2019)
+
+Storybook 5.2 is here!
+
+- 📚 DocsPage: Zero-config documentation
+- 📦 Component Story Format: Portable ES6 modules
+- 🖼 Design System: Best practice component development
+- 🧩 Addon API: Simplified w/ hooks
+
+5.2 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.2.0-alpha.*`, `5.2.0-beta.*`, and `5.2.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) to ugprade from `5.0` or earlier.
+
 ## 5.2.0-rc.11 (September 10, 2019)
 
 ### Features
