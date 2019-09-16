@@ -3466,6 +3466,57 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
+"@storybook/cli@5.2.0-rc.9":
+  version "5.2.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-5.2.0-rc.9.tgz#8f8229440a0070755b805e3b666fd92612723794"
+  integrity sha512-G87+xQ4KDaKnCnNQM1IupvNo2DIezlpooAsEjTwPVSVRddH9faQrIVyCnm5ygeyB4BYVBdzLSREz5BCR5hnImg==
+  dependencies:
+    "@babel/core" "^7.4.5"
+    "@babel/preset-env" "^7.4.5"
+    "@storybook/codemod" "5.2.0-rc.9"
+    chalk "^2.4.1"
+    commander "^2.19.0"
+    core-js "^3.0.1"
+    cross-spawn "^6.0.5"
+    didyoumean "^1.2.1"
+    envinfo "^7.3.1"
+    esm "3.2.25"
+    fs-extra "^8.0.1"
+    inquirer "^6.2.0"
+    jscodeshift "^0.6.3"
+    json5 "^2.1.0"
+    pkg-add-deps "^0.1.0"
+    semver "^6.0.0"
+    shelljs "^0.8.3"
+    update-notifier "^3.0.0"
+
+"@storybook/codemod@5.2.0-rc.9":
+  version "5.2.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-5.2.0-rc.9.tgz#421d62c4e44435881795e268f2e1ac79937f1b54"
+  integrity sha512-/6FCsde3gts3kAdmgf20BeGOTJwMTqHZul9cgztJ8mqI9UBEiCxLFn8BJgb60VB0gLpLBNY6gFNdi//ZK+x1jA==
+  dependencies:
+    "@mdx-js/mdx" "^1.0.0"
+    "@storybook/node-logger" "5.2.0-rc.9"
+    core-js "^3.0.1"
+    cross-spawn "^6.0.5"
+    globby "^10.0.1"
+    jscodeshift "^0.6.3"
+    lodash "^4.17.11"
+    prettier "^1.16.4"
+    recast "^0.16.1"
+    regenerator-runtime "^0.12.1"
+
+"@storybook/node-logger@5.2.0-rc.9":
+  version "5.2.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-5.2.0-rc.9.tgz#fd7a07b6aebd49f81ac593b57854fcd1385f46aa"
+  integrity sha512-FyOexug8FPrrhI4Zk/Iq9KfsW5sBK4nBxE/pN6j5pdb3H7pFoEu+uPv/TFDIo03Im1cF/vUCDGd+qsJkUd+dvA==
+  dependencies:
+    chalk "^2.4.2"
+    core-js "^3.0.1"
+    npmlog "^4.1.2"
+    pretty-hrtime "^1.0.3"
+    regenerator-runtime "^0.12.1"
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
