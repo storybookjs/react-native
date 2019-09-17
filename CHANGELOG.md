@@ -1,3 +1,9 @@
+## 5.2.1 (September 17, 2019)
+
+### Bug Fixes
+
+* Core: Fix error handling ([#8097](https://github.com/storybookjs/storybook/pull/8097))
+
 ## 5.2.0 (September 13, 2019)
 
 Storybook 5.2 is here!
