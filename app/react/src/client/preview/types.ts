@@ -11,6 +11,7 @@ export interface RenderMainArgs {
   selectedStory: string;
   showMain: () => void;
   showError: (args: ShowErrorArgs) => void;
+  showException: (err: Error) => void;
   forceRender: boolean;
 }
 
