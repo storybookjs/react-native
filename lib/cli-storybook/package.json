@@ -1,6 +1,7 @@
 {
   "name": "storybook",
   "version": "5.2.0-rc.11",
+  "private": true,
   "description": "Storybook CLI",
   "keywords": [
     "storybook"
