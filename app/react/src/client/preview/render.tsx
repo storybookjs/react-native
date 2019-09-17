@@ -1,7 +1,7 @@
 import { document } from 'global';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { RenderMainArgs, ShowErrorArgs } from './types';
+import { RenderMainArgs } from './types';
 
 const rootEl = document ? document.getElementById('root') : null;
 
