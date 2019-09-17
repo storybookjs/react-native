@@ -1,3 +1,18 @@
+## 5.3.0-alpha.0 (September 16, 2019)
+
+### Features
+
+* UI: Debounce sidebar search filter ([#8032](https://github.com/storybookjs/storybook/pull/8032))
+
+### Bug Fixes
+
+* Core: Fix error handling ([#8097](https://github.com/storybookjs/storybook/pull/8097))
+
+### Maintenance
+
+* CLI: Add wrapper packages: sb & storybook ([#8034](https://github.com/storybookjs/storybook/pull/8034))
+* Build: Update now config ([#8049](https://github.com/storybookjs/storybook/pull/8049))
+
 ## 5.2.0 (September 13, 2019)
 
 Storybook 5.2 is here!
