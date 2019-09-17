@@ -15,7 +15,8 @@
     "directory": "app/polymer"
   },
   "license": "MIT",
-  "main": "dist/client/index.js",
+  "main": "dist/client/index.ts",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
