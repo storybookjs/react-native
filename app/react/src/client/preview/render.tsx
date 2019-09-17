@@ -1,5 +1,5 @@
 import { document } from 'global';
-import React, { ErrorInfo } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { RenderMainArgs, ShowErrorArgs } from './types';
 
