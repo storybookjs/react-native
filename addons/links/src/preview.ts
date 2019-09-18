@@ -27,7 +27,9 @@ const generateUrl = (id: string) => {
 const valueOrCall = (args: string[]) => (value: string | ((...args: string[]) => string)) =>
   typeof value === 'function' ? value(...args) : value;
 
-export const linkTo = (kind: string, story?: string) => (...args: string[]) => {
+export const linkTo = (kind: string, story?: string | ((...args: any[]) => string)) => (
+  ...args: string[]
+) => {
   const resolver = valueOrCall(args);
 
   navigate({
