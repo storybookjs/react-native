@@ -287,7 +287,7 @@ const value = array(label, defaultValue, ',', groupId);
 
 ### select
 
-Allows you to get a value from a select box from the user.
+Allows you to get a value from a select box from the user (options as an object shown below)
 
 ```js
 import { select } from '@storybook/addon-knobs';
@@ -306,7 +306,37 @@ const groupId = 'GROUP-ID1';
 const value = select(label, options, defaultValue, groupId);
 ```
 
-> You can also provide options as an array like this: `['red', 'blue', 'yellow']`
+options can also be an array
+
+```js
+import { select } from '@storybook/addon-knobs';
+const label = 'Cats';
+const options = ['linus', 'eleanor', 'lover']
+const defaultValue = 'eleanor';
+const groupId = 'GROUP-ID2';
+const value = select(label, options, defaultValue, groupId);
+```
+
+options can also be an array OF objects
+
+```js
+const label = 'Dogs';
+const arrayOfObjects = [
+  {
+    label: 'Sparky',
+    dogParent: 'Matthew',
+    location: 'Austin',
+  },
+  {
+    label: 'Juniper',
+    dogParent: 'Joshua',
+    location: 'Austin',
+  },
+];
+const defaultValue = arrayOfObjects[0];
+const groupId = 'GROUP-ID3';
+const value = select(label, options, defaultValue, groupId);
+```
 
 
 ### radio buttons
