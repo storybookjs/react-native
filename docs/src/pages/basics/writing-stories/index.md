@@ -49,7 +49,7 @@ Furthermore, Storybook for React Native currently only supports the `storiesOf` 
 
 ## Story file location
 
-Stories are easier to maintain when they are located alongside the components they are documented. We recommend:
+Stories are easier to maintain when they are located alongside the components they document. We recommend:
 
 ```plaintext
 •
