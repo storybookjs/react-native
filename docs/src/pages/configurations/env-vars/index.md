@@ -24,6 +24,14 @@ out.log(process.env.STORYBOOK_DATA_KEY);
 
 > Even though we can access these env variables anywhere in the client side JS code, it's better to use them only inside stories and inside the main Storybook config file.
 
+## Usage in custom head/body
+
+These environment variables can be used in [custom head](/configurations/add-custom-head-tags] and [custom body](/configurations/add-custom-body) files.
+
+Storybook will replace percent-delimited variable names with their values; e.g. `%STORYBOOK_THEME%` will become `red`.
+
+> If using the environment variables as attributes or values in JavaScript, you may need to add quotes, as the value will be inserted directly. e.g. `<link rel="stylesheet" href="%STORYBOOK_STYLE_URL%" />`
+
 ## Build time environment variables
 
 You can also pass these environment variables when you are [building your storybook](/basics/exporting-storybook) with `build-storybook`.
