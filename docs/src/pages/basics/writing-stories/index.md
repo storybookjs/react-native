@@ -95,7 +95,7 @@ It's up to you to find a naming/placing scheme that works for your project/team.
 
 Stories are loaded in the `.storybook/config.js` file.
 
-The most convenient way to load stories is by filename. For example, if you stories files are located in the `src/components` directory, you can use the following snippet:
+The most convenient way to load stories is by filename. For example, if your stories files are located in the `src/components` directory, you can use the following snippet:
 
 ```js
 import { configure } from '@storybook/react';
