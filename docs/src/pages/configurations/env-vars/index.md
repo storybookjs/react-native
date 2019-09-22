@@ -26,7 +26,7 @@ out.log(process.env.STORYBOOK_DATA_KEY);
 
 ## Usage in custom head/body
 
-These environment variables can be used in [custom head](/configurations/add-custom-head-tags] and [custom body](/configurations/add-custom-body) files.
+These environment variables can be used in [custom head](/configurations/add-custom-head-tags) and [custom body](/configurations/add-custom-body) files.
 
 Storybook will replace percent-delimited variable names with their values; e.g. `%STORYBOOK_THEME%` will become `red`.
 
