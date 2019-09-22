@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { createElement } from 'react';
 import addons, { types } from '@storybook/addons';
 import { ContextsManager } from './manager/ContextsManager';

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
 import { createAddonDecorator, Render } from '../../index';
 import { ContextsPreviewAPI } from '../ContextsPreviewAPI';
