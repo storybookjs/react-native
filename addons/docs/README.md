@@ -83,8 +83,8 @@ features as well. This chart captures the current state of support
 | StoriesOf stories |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Source            |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Notes / Info      |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| Props table       |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
-| Docgen            |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
+| Props table       |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
+| Docgen            |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
 | Inline stories    |   +   |  #  |         |      |        |         |       |         |      |       |        |
 
 **Note:** `#` = WIP support
@@ -94,7 +94,7 @@ features as well. This chart captures the current state of support
 First add the package. Make sure that the versions for your `@storybook/*` packages match:
 
 ```sh
-yarn add -D @storybook/addon-docs
+yarn add -D @storybook/addon-docs@next
 ```
 
 Docs has peer dependencies on `react` and `babel-loader`. If you want to write stories in MDX, you may need to add these dependencies as well:

@@ -11,7 +11,7 @@ export const Table = styled.table<{}>(({ theme }) => ({
     // Resets for cascading/system styles
     borderCollapse: 'collapse',
     borderSpacing: 0,
-
+    color: theme.color.defaultText,
     tr: {
       border: 'none',
       background: 'none',
