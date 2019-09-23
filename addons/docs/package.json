@@ -22,6 +22,19 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "angular/**/*",
+    "common/**/*",
+    "html/**/*",
+    "react/**/*",
+    "vue/**/*",
+    "README.md",
+    "blocks.js",
+    "mdx-compiler-plugin.js",
+    "register.js"
+  ],
   "dependencies": {
     "@babel/generator": "^7.4.0",
     "@babel/parser": "^7.4.2",
