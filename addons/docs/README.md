@@ -162,7 +162,9 @@ module.exports = async ({ config }) => {
       {
         loader: 'babel-loader',
         // may or may not need this line depending on your app's setup
-        plugins: ['@babel/plugin-transform-react-jsx'],
+        options: {
+          plugins: ['@babel/plugin-transform-react-jsx'],
+        },
       },
       {
         loader: '@mdx-js/loader',
