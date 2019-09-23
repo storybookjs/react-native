@@ -20,6 +20,12 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "paths.js",
+    "create.js"
+  ],
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
