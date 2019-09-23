@@ -19,6 +19,14 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "dist/**/*",
+    "dll/**/*",
+    "README.md",
+    "server.js",
+    "standalone.ts",
+    "client.ts"
+  ],
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
