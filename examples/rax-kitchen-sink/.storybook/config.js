@@ -7,7 +7,6 @@ addParameters({
     goFullScreen: false,
     showAddonsPanel: true,
     showSearchBox: false,
-    sortStoriesByKind: false,
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\|/,
     enableShortcuts: true,
