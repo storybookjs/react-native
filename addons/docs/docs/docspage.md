@@ -241,7 +241,7 @@ The docs preset assumes this naming convention for its `source-loader` setup. If
 
 Want to learn more? Here are some more articles on Storybook Docs:
 
-- References: [README](../README.md) / [MDX](./mdx.md) / [FAQ](./faq.md) / [Recipes](recipes.md)
+- References: [README](../README.md) / [MDX](mdx.md) / [FAQ](faq.md) / [Recipes](recipes.md) / [Theming](theming.md)
 - Vision: [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
 - Example: [Storybook Design System](https://github.com/storybookjs/design-system)
 - [Technical preview guide](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing)
