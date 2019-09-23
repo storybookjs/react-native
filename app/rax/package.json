@@ -17,12 +17,17 @@
   },
   "license": "MIT",
   "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
     "storybook-server": "./bin/index.js"
   },
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "standalone.js"
+  ],
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
