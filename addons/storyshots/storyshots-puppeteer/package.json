@@ -17,7 +17,11 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md"
+  ],
   "scripts": {
     "prepare": "node ../../../scripts/prepare.js"
   },
