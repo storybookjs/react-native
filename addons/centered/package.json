@@ -22,6 +22,20 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "angular.js",
+    "angular.d.ts",
+    "ember.js",
+    "html.js",
+    "mithril.js",
+    "preact.js",
+    "rax.js",
+    "react.js",
+    "svelte.js",
+    "vue.js"
+  ],
   "dependencies": {
     "@storybook/addons": "5.2.0-beta.37",
     "core-js": "^3.0.1",
