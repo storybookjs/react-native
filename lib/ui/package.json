@@ -16,11 +16,15 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "createDlls": "node -r esm ./scripts/createDlls.js",
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "paths.js"
+  ],
   "dependencies": {
     "@storybook/addon-actions": "5.2.0-beta.37",
     "@storybook/addon-knobs": "5.2.0-beta.37",
