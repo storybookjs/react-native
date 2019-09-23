@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { TooltipLinkList } from '@storybook/components';
 import { OPT_OUT } from '../../shared/constants';

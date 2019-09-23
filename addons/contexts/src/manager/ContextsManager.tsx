@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState, useCallback } from 'react';
 import { useChannel } from '@storybook/api';
 import { ToolBar } from './components/ToolBar';

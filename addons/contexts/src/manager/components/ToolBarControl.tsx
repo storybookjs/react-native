@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { ToolBarMenu } from './ToolBarMenu';
 import { OPT_OUT } from '../../shared/constants';

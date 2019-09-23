@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { ComponentProps } from 'react';
 import { Separator } from '@storybook/components';
 import { ToolBarControl } from './ToolBarControl';
