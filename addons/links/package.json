@@ -31,6 +31,13 @@
     "prop-types": "^15.7.2",
     "qs": "^6.6.0"
   },
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "react.js",
+    "register.js"
+  ],
   "peerDependencies": {
     "react": "*"
   },
