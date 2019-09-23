@@ -20,6 +20,10 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
   "dependencies": {
     "core-js": "^3.0.1"
   },
