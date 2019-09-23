@@ -20,6 +20,12 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "utils.js",
+    "utils.d.ts"
+  ],
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@types/reach__router": "^1.2.3",
