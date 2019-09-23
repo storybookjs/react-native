@@ -20,6 +20,12 @@
     "url": "git+https://github.com/storybookjs/storybook.git",
     "directory": "addons/design-assets"
   },
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "register.js"
+  ],
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
