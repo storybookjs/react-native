@@ -1,0 +1,12 @@
+on: issues
+name: Automention Issues
+jobs:
+  automention:
+    name: Automention
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Automention
+      uses: shilman/automention@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

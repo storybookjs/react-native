@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-contexts",
-  "version": "5.2.0-rc.2",
+  "version": "5.3.0-alpha.0",
   "description": "Storybook Addon Contexts",
   "keywords": [
     "storybook",
@@ -28,18 +28,13 @@
     "dev:check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-rc.2",
-    "@storybook/api": "5.2.0-rc.2",
-    "@storybook/components": "5.2.0-rc.2",
-    "@storybook/core-events": "5.2.0-rc.2",
-    "core-js": "^3.0.1"
-  },
-  "peerDependencies": {
-    "global": "*",
-    "preact": "*",
-    "qs": "*",
-    "react": "*",
-    "vue": "*"
+    "@storybook/addons": "5.3.0-alpha.0",
+    "@storybook/api": "5.3.0-alpha.0",
+    "@storybook/components": "5.3.0-alpha.0",
+    "@storybook/core-events": "5.3.0-alpha.0",
+    "core-js": "^3.0.1",
+    "global": "^4.3.2",
+    "qs": "^6.6.0"
   },
   "devDependencies": {
     "preact": "*",
