@@ -21,6 +21,11 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md"
+  ],
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/native": "^10.0.14",
