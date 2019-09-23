@@ -17,6 +17,11 @@
     "directory": "app/react-native"
   },
   "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"

@@ -18,6 +18,13 @@
   },
   "license": "MIT",
   "author": "Storybook Team",
+  "files": [
+    "bin/**/*",
+    "docs/**/*",
+    "generators/**/*",
+    "lib/**/*",
+    "README.md"
+  ],
   "bin": {
     "getstorybook": "./bin/index.js",
     "sb": "./bin/index.js"

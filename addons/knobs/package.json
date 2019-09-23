@@ -16,6 +16,19 @@
     "directory": "addons/knobs"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "angular.js",
+    "html.js",
+    "marko.js",
+    "mithril.js",
+    "polymer.js",
+    "react.js",
+    "vue.js",
+    "register.js"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -41,15 +54,15 @@
     "react-lifecycles-compat": "^3.0.4",
     "react-select": "^3.0.0"
   },
+  "devDependencies": {
+    "@types/escape-html": "0.0.20",
+    "@types/react-lifecycles-compat": "^3.0.1",
+    "@types/react-select": "^2.0.19"
+  },
   "peerDependencies": {
     "react": "*"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "@types/escape-html": "0.0.20",
-    "@types/react-lifecycles-compat": "^3.0.1",
-    "@types/react-select": "^2.0.19"
   }
 }

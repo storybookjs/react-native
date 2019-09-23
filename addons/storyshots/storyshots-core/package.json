@@ -16,8 +16,12 @@
     "directory": "addons/storyshots/storyshots-core"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md"
+  ],
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "build-storybook": "build-storybook",
     "example": "jest storyshot.test",

@@ -4,8 +4,8 @@
   "description": "parameter addon for storybook",
   "keywords": [
     "addon",
-    "storybook",
-    "query"
+    "query",
+    "storybook"
   ],
   "homepage": "https://github.com/storybookjs/storybook#readme",
   "bugs": {
@@ -17,6 +17,11 @@
     "directory": "addons/addon-queryparams"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

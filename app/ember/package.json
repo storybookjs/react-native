@@ -12,6 +12,12 @@
     "directory": "app/ember"
   },
   "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "standalone.js"
+  ],
   "main": "dist/client/index.js",
   "jsnext:main": "src/client/index.js",
   "bin": {

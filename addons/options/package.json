@@ -16,6 +16,12 @@
     "directory": "addons/options"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "register.js"
+  ],
   "main": "dist/index.js",
   "types": "dist/public_api.d.ts",
   "scripts": {

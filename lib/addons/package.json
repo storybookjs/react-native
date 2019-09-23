@@ -15,6 +15,10 @@
     "directory": "lib/addons"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
   "scripts": {
