@@ -12,6 +12,12 @@
   "bugs": {
     "url": "https://github.com/storybookjs/storybook/issues"
   },
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "register.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/storybookjs/storybook.git",
