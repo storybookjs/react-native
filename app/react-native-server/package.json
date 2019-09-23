@@ -20,6 +20,11 @@
     "start-storybook": "./bin/index.js",
     "storybook-server": "./bin/index.js"
   },
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md"
+  ],
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
