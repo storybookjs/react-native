@@ -47,7 +47,7 @@
     "qs": "^6.6.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-draggable": "^3.3.2",
+    "react-draggable": "^4.0.3",
     "react-helmet-async": "^1.0.2",
     "react-hotkeys": "2.0.0-pre4",
     "react-sizeme": "^2.6.7",
