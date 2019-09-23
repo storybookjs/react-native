@@ -22,6 +22,12 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "standalone.js"
+  ],
   "dependencies": {
     "@ember/test-helpers": "^1.5.0",
     "@storybook/core": "5.2.0-beta.37",
