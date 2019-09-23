@@ -26,6 +26,13 @@
     "test": "cd test && ./run_tests.sh",
     "test-latest-cra": "cd test && ./test_latest_cra.sh"
   },
+  "files": [
+    "bin/**/*",
+    "docs/**/*",
+    "generators/**/*",
+    "lib/**/*",
+    "README.md"
+  ],
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
