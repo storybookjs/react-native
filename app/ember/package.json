@@ -12,6 +12,12 @@
     "directory": "app/ember"
   },
   "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "standalone.js"
+  ],
   "main": "dist/client/index.js",
   "jsnext:main": "src/client/index.js",
   "bin": {
@@ -22,12 +28,6 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
-  "files": [
-    "bin/**/*",
-    "dist/**/*",
-    "README.md",
-    "standalone.js"
-  ],
   "dependencies": {
     "@ember/test-helpers": "^1.5.0",
     "@storybook/core": "5.2.0-beta.37",

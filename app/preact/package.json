@@ -15,6 +15,12 @@
     "directory": "app/preact"
   },
   "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "standalone.js"
+  ],
   "main": "dist/client/index.js",
   "types": "dist/client/index.d.ts",
   "bin": {
@@ -22,12 +28,6 @@
     "start-storybook": "./bin/index.js",
     "storybook-server": "./bin/index.js"
   },
-  "files": [
-    "bin/**/*",
-    "dist/**/*",
-    "README.md",
-    "standalone.js"
-  ],
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },

@@ -18,6 +18,13 @@
   },
   "license": "MIT",
   "author": "Storybook Team",
+  "files": [
+    "bin/**/*",
+    "docs/**/*",
+    "generators/**/*",
+    "lib/**/*",
+    "README.md"
+  ],
   "bin": {
     "getstorybook": "./bin/index.js",
     "sb": "./bin/index.js"
@@ -26,13 +33,6 @@
     "test": "cd test && ./run_tests.sh",
     "test-latest-cra": "cd test && ./test_latest_cra.sh"
   },
-  "files": [
-    "bin/**/*",
-    "docs/**/*",
-    "generators/**/*",
-    "lib/**/*",
-    "README.md"
-  ],
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",

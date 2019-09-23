@@ -16,15 +16,15 @@
     "url": "https://github.com/storybookjs/storybook.git"
   },
   "license": "MIT",
-  "bin": {
-    "start-storybook": "./bin/index.js",
-    "storybook-server": "./bin/index.js"
-  },
   "files": [
     "bin/**/*",
     "dist/**/*",
     "README.md"
   ],
+  "bin": {
+    "start-storybook": "./bin/index.js",
+    "storybook-server": "./bin/index.js"
+  },
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },

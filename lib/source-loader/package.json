@@ -16,16 +16,16 @@
     "directory": "lib/source-loader"
   },
   "license": "MIT",
-  "main": "dist/server/index.js",
-  "jsnext:main": "src/server/index.js",
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "files": [
     "dist/**/*",
     "README.md",
     "preview.js"
   ],
+  "main": "dist/server/index.js",
+  "jsnext:main": "src/server/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "dependencies": {
     "@storybook/addons": "5.2.0-beta.37",
     "@storybook/router": "5.2.0-beta.37",

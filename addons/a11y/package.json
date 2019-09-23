@@ -20,17 +20,17 @@
     "directory": "addons/a11y"
   },
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "files": [
     "dist/**/*",
     "docs/**/*",
     "README.md",
     "register.js"
   ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "dependencies": {
     "@storybook/addons": "5.2.0-beta.37",
     "@storybook/api": "5.2.0-beta.37",

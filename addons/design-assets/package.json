@@ -4,11 +4,11 @@
   "description": "Design asset preview for storybook",
   "keywords": [
     "addon",
-    "storybook",
-    "parameter",
-    "design",
     "assets",
+    "design",
     "files",
+    "parameter",
+    "storybook",
     "viewer"
   ],
   "homepage": "https://github.com/storybookjs/storybook#readme",
@@ -20,13 +20,13 @@
     "url": "git+https://github.com/storybookjs/storybook.git",
     "directory": "addons/design-assets"
   },
+  "license": "MIT",
   "files": [
     "dist/**/*",
     "docs/**/*",
     "README.md",
     "register.js"
   ],
-  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

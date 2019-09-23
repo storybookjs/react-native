@@ -15,12 +15,12 @@
     "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/storyshots/storyshots-core"
   },
+  "license": "MIT",
   "files": [
     "dist/**/*",
     "docs/**/*",
     "README.md"
   ],
-  "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
     "build-storybook": "build-storybook",

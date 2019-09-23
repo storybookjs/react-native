@@ -17,15 +17,15 @@
     "directory": "app/react-native"
   },
   "license": "MIT",
-  "main": "dist/index.js",
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "files": [
     "bin/**/*",
     "dist/**/*",
     "README.md"
   ],
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/native": "^10.0.14",

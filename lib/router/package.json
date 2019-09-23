@@ -15,17 +15,17 @@
     "directory": "lib/router"
   },
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "files": [
     "dist/**/*",
     "README.md",
     "utils.js",
     "utils.d.ts"
   ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@types/reach__router": "^1.2.3",

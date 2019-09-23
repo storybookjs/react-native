@@ -13,11 +13,11 @@
     "type": "git",
     "url": "https://github.com/storybookjs/storybook.git"
   },
+  "license": "MIT",
   "files": [
     "dist/**/*",
     "README.md"
   ],
-  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

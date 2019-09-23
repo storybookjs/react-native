@@ -20,14 +20,14 @@
     "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/jest"
   },
+  "license": "MIT",
+  "author": "Renaud Tertrais <renaud.tertrais@gmail.com> (https://github.com/renaudtertrais)",
   "files": [
     "dist/**/*",
     "docs/**/*",
     "README.md",
     "register.js"
   ],
-  "license": "MIT",
-  "author": "Renaud Tertrais <renaud.tertrais@gmail.com> (https://github.com/renaudtertrais)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

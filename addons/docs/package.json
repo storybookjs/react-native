@@ -17,11 +17,6 @@
     "directory": "addons/docs"
   },
   "license": "MIT",
-  "main": "dist/public_api.js",
-  "types": "dist/public_api.d.ts",
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "files": [
     "dist/**/*",
     "docs/**/*",
@@ -35,6 +30,11 @@
     "mdx-compiler-plugin.js",
     "register.js"
   ],
+  "main": "dist/public_api.js",
+  "types": "dist/public_api.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "dependencies": {
     "@babel/generator": "^7.4.0",
     "@babel/parser": "^7.4.2",

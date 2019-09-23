@@ -17,11 +17,6 @@
   },
   "license": "MIT",
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "files": [
     "dist/**/*",
     "README.md",
@@ -36,6 +31,11 @@
     "svelte.js",
     "vue.js"
   ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "dependencies": {
     "@storybook/addons": "5.2.0-beta.37",
     "core-js": "^3.0.1",

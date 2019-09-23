@@ -15,10 +15,6 @@
     "directory": "lib/core"
   },
   "license": "MIT",
-  "main": "dist/client/index.js",
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "files": [
     "dist/**/*",
     "dll/**/*",
@@ -27,6 +23,10 @@
     "standalone.ts",
     "client.ts"
   ],
+  "main": "dist/client/index.js",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",

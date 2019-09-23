@@ -16,6 +16,13 @@
     "directory": "addons/links"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "react.js",
+    "register.js"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -31,13 +38,6 @@
     "prop-types": "^15.7.2",
     "qs": "^6.6.0"
   },
-  "files": [
-    "dist/**/*",
-    "docs/**/*",
-    "README.md",
-    "react.js",
-    "register.js"
-  ],
   "peerDependencies": {
     "react": "*"
   },
