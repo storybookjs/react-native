@@ -16,6 +16,11 @@
     "directory": "addons/info"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md"
+  ],
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {

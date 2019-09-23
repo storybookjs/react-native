@@ -15,6 +15,14 @@
     "directory": "lib/core"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "dll/**/*",
+    "README.md",
+    "server.js",
+    "standalone.ts",
+    "client.ts"
+  ],
   "main": "dist/client/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"

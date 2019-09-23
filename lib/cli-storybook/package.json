@@ -15,11 +15,11 @@
     "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/cli"
   },
+  "license": "MIT",
   "bin": {
     "sb": "./index.js",
     "storybook": "./index.js"
   },
-  "license": "MIT",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
