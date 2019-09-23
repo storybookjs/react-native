@@ -33,13 +33,5 @@
     "mithril": "*",
     "preact": "*",
     "react": "*"
-  },
-  "peerDependencies": {
-    "mithril": "*",
-    "preact": "*",
-    "react": "*"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
