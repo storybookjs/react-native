@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { ComponentProps } from 'react';
 import { Icons, IconButton, WithTooltipPure, TabButton } from '@storybook/components';
 import { ToolBarMenuOptions } from './ToolBarMenuOptions';

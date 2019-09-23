@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { createAddonDecorator, Render } from '../../index';
 import { ContextsPreviewAPI } from '../ContextsPreviewAPI';
