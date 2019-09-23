@@ -16,10 +16,15 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "register.js"
+  ],
   "dependencies": {
     "@storybook/addons": "5.2.0-beta.37",
     "@storybook/core-events": "5.2.0-beta.37",
