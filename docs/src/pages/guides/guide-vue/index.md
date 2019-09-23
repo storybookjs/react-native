@@ -56,35 +56,11 @@ To do that, create a file at `.storybook/config.js` with the following content:
 ```js
 import { configure } from '@storybook/vue';
 
-function loadStories() {
-  require('../stories/index.js');
-  // You can require as many stories as you need.
-}
-
-configure(loadStories, module);
+configure(require.context('../src', true, /\.stories\.js$/), module);
 ```
 
-That'll load stories in `../stories/index.js`. You can choose where to place stories, you can co-locate them with source files, or place them in an other directory.
+That will load all the stories underneath your `../src` directory that match the pattern `*.stories.js`. We recommend co-locating your stories with your source files, but you can place them wherever you choose.
 
-> Requiring all your stories becomes bothersome real quick, so you can use this to load all stories matching a glob.
->
-> <details>
->   <summary>details</summary>
->
-> ```js
-> import { configure } from '@storybook/vue';
->
-> function loadStories() {
->   const req = require.context('../stories', true, /\.stories\.js$/);
->   req.keys().forEach(filename => req(filename));
-> }
->
-> configure(loadStories, module);
-> ```
->
-> </details>
->
->
 > You might be using global components or vue plugins such as vuex, in that case you'll need to register them in this `config.js` file.
 >
 > <details>
@@ -107,15 +83,10 @@ That'll load stories in `../stories/index.js`. You can choose where to place sto
 > // Register global components.
 > Vue.component('my-button', Mybutton);
 >
-> function loadStories() {
->   // You can require as many stories as you need.
->   require('../src/stories');
-> }
->
-> configure(loadStories, module);
+> configure(require.context('../src', true, /\.stories\.js$/), module);
 > ```
 >
-> This example registered your custom `Button.vue` component, installed the Vuex plugin, and loaded your Storybook stories defined in `../stories/index.js`.
+> This example registered your custom `Button.vue` component, installed the Vuex plugin, and loaded your Storybook stories defined in `../src/index.stories.js`.
 >
 > All custom components and Vue plugins should be registered before calling `configure()`.
 >
@@ -128,25 +99,27 @@ Now create a `../stories/index.js` file, and write your first story like this:
 
 ```js
 import Vue from 'vue';
-import { storiesOf } from '@storybook/vue';
 import MyButton from './Button.vue';
 
-storiesOf('Button', module)
-  .add('with text', () => '<my-button>with text</my-button>')
-  .add('with emoji', () => '<my-button>😀 😎 👍 💯</my-button>')
-  .add('as a component', () => ({
-    components: { MyButton },
-    template: '<my-button :rounded="true">rounded</my-button>'
-  }));
+export default { title: 'Button' };
+
+export const withText = () => '<my-button>with text</my-button>';
+
+export const withEmoji = () => '<my-button>😀 😎 👍 💯</my-button>';
+
+export const asAComponent = () => ({
+  components: { MyButton },
+  template: '<my-button :rounded="true">rounded</my-button>'
+});
 ```
 
 Each story is a single state of your component. In the above case, there are three stories for the demo button component:
 
 ```plaintext
 Button
-  ├── with text
-  ├── with emoji
-  └── as a component
+  ├── With Text
+  ├── With Emoji
+  └── As A Component
 ```
 
 > If your story is returning a plain template you can only use globally registered components.
@@ -159,7 +132,7 @@ Button
 > If your story returns a plain string like below, you will need to register globally each VueJs component that it uses. 
 >
 > ```js
->  .add('with text', () => '<my-component>with text</my-component>')
+> export const withText = () => '<my-component>with text</my-component>';
 > ```
 >
 > In big solutions, globally registered components can conflict with each other.
@@ -170,9 +143,9 @@ Button
 > - use a JSX render function like below. No need to register anything.
 >
 > ```jsx
->   .add('with text', () => ({
->      render: h => <my-component>with text</my-component>
->   }))
+> export const withText = () => ({
+>    render: h => <my-component>with text</my-component>
+> });
 > ```
 >
 > </details>

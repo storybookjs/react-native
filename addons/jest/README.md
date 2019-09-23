@@ -26,14 +26,14 @@ When running **Jest**, be sure to save the results in a json file:
 
 ```js
 "scripts": {
-  "test:generate-output": "jest --json --outputFile=jest-test-results.json"
+  "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
 }
 ```
 
 You may want to add it the result file to `.gitignore`, since it's a generated file:
 
 ```
-jest-test-results.json
+.jest-test-results.json
 ```
 
 But much like lockfiles and snapshots checking-in generated files can have certain advantages as well. It's up to you.

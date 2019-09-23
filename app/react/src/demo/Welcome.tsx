@@ -59,6 +59,7 @@ const Link = ({
   children,
   href,
   target,
+  rel,
   ...props
 }: {
   children: string;
@@ -70,6 +71,8 @@ const Link = ({
   <a
     href={href}
     {...props}
+    target={target}
+    rel={rel}
     style={{
       color: '#1474f3',
       textDecoration: 'none',
@@ -101,6 +104,7 @@ const NavButton = ({
   <button
     {...props}
     type="button"
+    onClick={onClick}
     style={{
       color: '#1474f3',
       textDecoration: 'none',

@@ -20,6 +20,7 @@ Read on to learn more:
 - [Installation](#installation)
 - [Preset options](#preset-options)
 - [Manual configuration](#manual-configuration)
+- [TypeScript configuration](#typescript-configuration)
 - [More resources](#more-resources)
 
 ## DocsPage
@@ -82,8 +83,8 @@ features as well. This chart captures the current state of support
 | StoriesOf stories |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Source            |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Notes / Info      |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| Props table       |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
-| Docgen            |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
+| Props table       |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
+| Docgen            |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
 | Inline stories    |   +   |  #  |         |      |        |         |       |         |      |       |        |
 
 **Note:** `#` = WIP support
@@ -93,7 +94,7 @@ features as well. This chart captures the current state of support
 First add the package. Make sure that the versions for your `@storybook/*` packages match:
 
 ```sh
-yarn add -D @storybook/addon-docs
+yarn add -D @storybook/addon-docs@next
 ```
 
 Docs has peer dependencies on `react` and `babel-loader`. If you want to write stories in MDX, you may need to add these dependencies as well:
@@ -161,7 +162,9 @@ module.exports = async ({ config }) => {
       {
         loader: 'babel-loader',
         // may or may not need this line depending on your app's setup
-        plugins: ['@babel/plugin-transform-react-jsx'],
+        options: {
+          plugins: ['@babel/plugin-transform-react-jsx'],
+        },
       },
       {
         loader: '@mdx-js/loader',
@@ -188,10 +191,21 @@ import { addParameters } from '@storybook/react';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 
 addParameters({
-  docsContainer: DocsContainer,
-  docs: DocsPage,
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
 });
 ```
+
+## TypeScript configuration
+
+SB Docs for React uses `babel-plugin-react-docgen` to extract Docgen comments from your code automatically. However, if you're using TypeScript, some extra configuration maybe required to get this information included in your docs.
+
+1. You can add [react-docgen-typescript-loader](https://www.npmjs.com/package/react-docgen-typescript-loader) to your project by following the instructions there.
+2. You can use [@storybook/preset-typescript](https://www.npmjs.com/package/@storybook/preset-typescript) which includes `react-docgen-typescript-loader`.
+
+Install the preset with care. If you've already configured Typescript manually, that configuration may conflict with the preset. You can [debug your final webpack configuration with `--debug-webpack`](https://storybook.js.org/docs/configurations/custom-webpack-config/#debug-the-default-webpack-config).
 
 ## More resources
 

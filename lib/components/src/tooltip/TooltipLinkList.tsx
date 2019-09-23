@@ -7,6 +7,8 @@ const List = styled.div<{}>(
   {
     minWidth: 180,
     overflow: 'hidden',
+    overflowY: 'auto',
+    maxHeight: 10.5 * 32, // 10.5 items
   },
   ({ theme }) => ({
     borderRadius: theme.appBorderRadius * 2,

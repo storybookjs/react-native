@@ -55,55 +55,10 @@ To do that, create a file at `.storybook/config.js` with the following content:
 ```ts
 import { configure } from '@storybook/riot';
 
-function loadStories() {
-  require('../stories/index.js');
-  // You can require as many stories as you need.
-}
-
-configure(loadStories, module);
+configure(require.context('../src', true, /\.stories\.js$/), module);
 ```
 
-That'll load stories in `../stories/index.js`. You can choose where to place stories, you can co-locate them with source files, or place them in an other directory.
-
-> Requiring all your stories becomes bothersome real quick, so you can use this to load all stories matching a glob.
->
-> <details>
->   <summary>details</summary>
->
-> ```ts
-> import { configure } from '@storybook/riot';
->
-> function loadStories() {
->   const req = require.context('../stories', true, /\.stories\.ts$/);
->   req.keys().forEach(filename => req(filename));
-> }
->
-> configure(loadStories, module);
-> ```
->
-> </details>
->
->
-> Additionally this is the place where you can register global component.
->
-> <details>
->   <summary>details</summary>
->
-> ```ts
-> import { configure } from '@storybook/riot';
->
-> // Import your globally available components.
-> import '../src/stories/Button.tag';
->
-> function loadStories() {
->   require('../stories/index.js');
->   // You can require as many stories as you need.
-> }
->
-> configure(loadStories, module);
-> ```
->
-> </details>
+That will load all the stories underneath your `../src` directory that match the pattern `*.stories.js`. We recommend co-locating your stories with your source files, but you can place them wherever you choose.
 
 ## Step 4: Storybook TypeScript configuration
 
@@ -127,63 +82,58 @@ This makes it necessary to create a `tsconfig.json` file at `.storybook/tsconfig
 
 ## Step 5: Write your stories
 
-Now create a `../stories/index.js` file, and write your first story like this:
+Now create a `../src/index.stories.js` file, and write your first story like this:
 
 ```js
-import { tag, mount, storiesOf } from '@storybook/riot';
+import { tag, mount } from '@storybook/riot';
 import SimpleTestRaw from './SimpleTest.txt'; //can be loaded as string if you prefer
 import './AnotherTest.tag';
 //if you need to import .tag files as text, just use the raw-loader instead of the riot-tag-loader
 
-storiesOf('My Component', module)
-  .add(
-    'built with tag', // the template is compiled below
-    () =>
-      tag('test', '<div>simple test ({ opts.value })</div>', '', '', () => {}) &&
-      mount('test', { value: 'with a parameter' }))
+export default { title: 'My Component' };
+  
+// the template is compiled below
+export const builtWithTag = () => (
+  tag('test', '<div>simple test ({ opts.value })</div>', '', '', () => {}) &&
+  mount('test', { value: 'with a parameter' })
+);
 
-  // tags[0] will be the parent tag, always
-  // you can leave out the root tag, if we find out that the new root tag
-  // is a built-in html tag, it will be wrapped
-  .add('built as string', () => ({ tags: ['<test><div>simple test</div></test>'] })
+// tags[0] will be the parent tag, always
+// you can leave out the root tag, if we find out that the new root tag
+// is a built-in html tag, it will be wrapped
+export const builtAsString = () => ({
+  tags: ['<test><div>simple test</div></test>']
+});
 
-  // the component is a string, it will be instantiated without params
-  // e.g. <SimpletestRaw/>
-  .add('built from raw import', () => SimpleTestRaw)
+// the component is a string, it will be instantiated without params
+// e.g. <SimpletestRaw/>
+export const builtFromRawImport = () => SimpleTestRaw;
 
-  // the comprehensive form is this one
-  // list all the possible tags (the root element is in the content)
-  // then scenario is compiled and executed
-  .add(
-    'built from tags and scenario',
-    () => ({
-      tags: [{ content: SimpleTestRaw, boundAs: 'mustBeUniquePlease' }],
-      scenario:
-        '<SimpleTest test={ "with a parameter" } value={"value is mapped to riotValue"}></SimpleTest>',
-    }),
-    {
-      notes:
-        'WARN : the tag file root element must have exactly the same name (or else you will see nothing)',
-    }
-  )
+// the comprehensive form is this one
+// list all the possible tags (the root element is in the content)
+// then scenario is compiled and executed
+// WARN : the tag file root element must have exactly the same name (or else you will see nothing)
+export const builtFromTagsAndScenario = () => ({
+  tags: [{ content: SimpleTestRaw, boundAs: 'mustBeUniquePlease' }],
+  scenario:
+    '<SimpleTest test={ "with a parameter" } value={"value is mapped to riotValue"}></SimpleTest>',
+});
 
-  // the tag is already compiled before running the js
-  // the tag name 'anothertest' must match exactly the root tag inside the tag file
-  // mind the lower case
-  .add('built from the precompilation', () => mount('anothertest', {}), {
-    notes: 'WARN, only works in lower case, never upper case with precompiled templates',
-  });
+// the tag is already compiled before running the js
+// the tag name 'anothertest' must match exactly the root tag inside the tag file
+// must be lower case
+export const builtFromThePrecompilation = () => mount('anothertest', {});
 ```
 
 Each story is a single state of your component. In the above case, there are two stories for the demo button component:
 
 ```plaintext
 My Component
-  ├── built with tag
-  ├── built as string
-  ├── bubuilt from raw import
-  ├── built from tags and scenario
-  └── built from the precompilation
+  ├── Built With Tag
+  ├── Built As String
+  ├── Built From Raw Import
+  ├── Built From Tags And Scenario
+  └── Built From The Precompilation
 ```
 
 ## Finally: Run your Storybook

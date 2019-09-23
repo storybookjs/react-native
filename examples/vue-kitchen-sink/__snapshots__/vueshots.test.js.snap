@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Actions Action and method 1`] = `
+exports[`Storyshots Addon|Actions Action And Method 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -9,7 +9,7 @@ exports[`Storyshots Addon|Actions Action and method 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon|Actions Action only 1`] = `
+exports[`Storyshots Addon|Actions Action Only 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -18,7 +18,7 @@ exports[`Storyshots Addon|Actions Action only 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon|Actions Multiple actions 1`] = `
+exports[`Storyshots Addon|Actions Multiple Actions 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -27,7 +27,7 @@ exports[`Storyshots Addon|Actions Multiple actions 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon|Actions Multiple actions, object 1`] = `
+exports[`Storyshots Addon|Actions Multiple Actions Object 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -36,19 +36,19 @@ exports[`Storyshots Addon|Actions Multiple actions, object 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon|Backgrounds story 1 1`] = `
+exports[`Storyshots Addon|Backgrounds Story 1 1`] = `
 <button>
   You should be able to switch backgrounds for this story
 </button>
 `;
 
-exports[`Storyshots Addon|Backgrounds story 2 1`] = `
+exports[`Storyshots Addon|Backgrounds Story 2 1`] = `
 <button>
   This one too!
 </button>
 `;
 
-exports[`Storyshots Addon|Centered rounded 1`] = `
+exports[`Storyshots Addon|Centered Rounded 1`] = `
 <div
   style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
 >
@@ -77,7 +77,7 @@ exports[`Storyshots Addon|Contexts Languages 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Contexts Simple CSS Theming 1`] = `
+exports[`Storyshots Addon|Contexts Simple Css Theming 1`] = `
 <div
   style="color: white; background: rgb(23, 63, 95); height: 100vh; padding: 10px;"
 >
@@ -87,7 +87,7 @@ exports[`Storyshots Addon|Contexts Simple CSS Theming 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Knobs All knobs 1`] = `
+exports[`Storyshots Addon|Knobs All Knobs 1`] = `
 <div
   style="border: 2px dotted; padding: 8px 22px; border-radius: 8px; border-color: deeppink;"
 >
@@ -131,13 +131,13 @@ exports[`Storyshots Addon|Knobs Simple 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Knobs XSS safety 1`] = `
+exports[`Storyshots Addon|Knobs Xss Safety 1`] = `
 <div>
   &lt;img src=x onerror="alert('XSS Attack')" &gt;
 </div>
 `;
 
-exports[`Storyshots Addon|Links Go to welcome 1`] = `
+exports[`Storyshots Addon|Links Go To Welcome 1`] = `
 <button
   class="button rounded"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -146,7 +146,7 @@ exports[`Storyshots Addon|Links Go to welcome 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addon|Notes Note with HTML 1`] = `
+exports[`Storyshots Addon|Notes Note With Html 1`] = `
 <p>
   🤔😳😯😮
   <br />
@@ -156,7 +156,7 @@ exports[`Storyshots Addon|Notes Note with HTML 1`] = `
 </p>
 `;
 
-exports[`Storyshots Addon|Notes Simple note 1`] = `
+exports[`Storyshots Addon|Notes Simple Note 1`] = `
 <p>
   <strong>
     Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.
@@ -260,7 +260,7 @@ exports[`Storyshots App App 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button rounded 1`] = `
+exports[`Storyshots Button Rounded 1`] = `
 <button
   class="button rounded"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -269,7 +269,7 @@ exports[`Storyshots Button rounded 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button square 1`] = `
+exports[`Storyshots Button Square 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -278,13 +278,15 @@ exports[`Storyshots Button square 1`] = `
 </button>
 `;
 
-exports[`Storyshots Core|Parameters passed to story 1`] = `
+exports[`Storyshots Core|Errors Null Error 1`] = `<!---->`;
+
+exports[`Storyshots Core|Parameters Passed To Story 1`] = `
 <div>
-  Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{},"docs":{"iframeHeight":"60px"}},"globalParameter":"globalParameter","framework":"vue","chapterParameter":"chapterParameter","storyParameter":"storyParameter"}
+  Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"docs":{"iframeHeight":"60px"},"globalParameter":"globalParameter","framework":"vue","chapterParameter":"chapterParameter","storyParameter":"storyParameter","displayName":"passed to story"}
 </div>
 `;
 
-exports[`Storyshots Core|Template string only 1`] = `
+exports[`Storyshots Core|Template String Only 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -293,7 +295,7 @@ exports[`Storyshots Core|Template string only 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Decorator for Vue render 1`] = `
+exports[`Storyshots Custom|Decorator for Vue Render 1`] = `
 <div
   style="border: medium solid blue;"
 >
@@ -310,7 +312,7 @@ exports[`Storyshots Custom|Decorator for Vue render 1`] = `
 </div>
 `;
 
-exports[`Storyshots Custom|Decorator for Vue template 1`] = `
+exports[`Storyshots Custom|Decorator for Vue Template 1`] = `
 <div
   style="border: medium solid blue;"
 >
@@ -327,7 +329,7 @@ exports[`Storyshots Custom|Decorator for Vue template 1`] = `
 </div>
 `;
 
-exports[`Storyshots Custom|Decorator for Vue withData 1`] = `
+exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
 <div
   style="border: medium solid blue;"
 >
@@ -336,18 +338,18 @@ exports[`Storyshots Custom|Decorator for Vue withData 1`] = `
   >
     <pre>
       {
-  "id": "custom-decorator-for-vue--withdata",
+  "id": "custom-decorator-for-vue--with-data",
   "kind": "Custom|Decorator for Vue",
-  "name": "withData",
-  "story": "withData",
+  "name": "With Data",
+  "story": "With Data",
   "customContext": 52,
   "parameters": {
     "options": {
       "hierarchyRootSeparator": {},
-      "hierarchySeparator": {},
-      "docs": {
-        "iframeHeight": "60px"
-      }
+      "hierarchySeparator": {}
+    },
+    "docs": {
+      "iframeHeight": "60px"
     },
     "globalParameter": "globalParameter",
     "framework": "vue",
@@ -368,7 +370,7 @@ exports[`Storyshots Custom|Method for rendering Vue JSX 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue pre-registered component 1`] = `
+exports[`Storyshots Custom|Method for rendering Vue Pre Registered Component 1`] = `
 <p>
   <em>
     This component was pre-registered in .storybook/config.js
@@ -384,7 +386,13 @@ exports[`Storyshots Custom|Method for rendering Vue pre-registered component 1`]
 </p>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue render + component 1`] = `
+exports[`Storyshots Custom|Method for rendering Vue Render 1`] = `
+<div>
+  renders a div with some text in it..
+</div>
+`;
+
+exports[`Storyshots Custom|Method for rendering Vue Render Component 1`] = `
 <button
   class="button"
   style="color: pink; border-color: pink;"
@@ -393,13 +401,19 @@ exports[`Storyshots Custom|Method for rendering Vue render + component 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue render 1`] = `
+exports[`Storyshots Custom|Method for rendering Vue Template 1`] = `
 <div>
-  renders a div with some text in it..
+  <h1>
+    A template
+  </h1>
+   
+  <p>
+    rendered in vue in storybook
+  </p>
 </div>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue template + component 1`] = `
+exports[`Storyshots Custom|Method for rendering Vue Template Component 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -408,7 +422,7 @@ exports[`Storyshots Custom|Method for rendering Vue template + component 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue template + methods 1`] = `
+exports[`Storyshots Custom|Method for rendering Vue Template Methods 1`] = `
 <p>
   <em>
     Clicking the button will navigate to another story using the 'addon-links'
@@ -424,19 +438,7 @@ exports[`Storyshots Custom|Method for rendering Vue template + methods 1`] = `
 </p>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue template 1`] = `
-<div>
-  <h1>
-    A template
-  </h1>
-   
-  <p>
-    rendered in vue in storybook
-  </p>
-</div>
-`;
-
-exports[`Storyshots Custom|Method for rendering Vue vuex + actions 1`] = `
+exports[`Storyshots Custom|Method for rendering Vue Vuex Actions 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -445,7 +447,7 @@ exports[`Storyshots Custom|Method for rendering Vue vuex + actions 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue whatever you want 1`] = `
+exports[`Storyshots Custom|Method for rendering Vue Whatever You Want 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -454,7 +456,7 @@ exports[`Storyshots Custom|Method for rendering Vue whatever you want 1`] = `
 </button>
 `;
 
-exports[`Storyshots Welcome welcome 1`] = `
+exports[`Storyshots Welcome Welcome 1`] = `
 <div
   class="main"
 >
