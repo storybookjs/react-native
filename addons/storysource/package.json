@@ -16,8 +16,14 @@
     "directory": "addons/storysource"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "loader.js",
+    "register.js"
+  ],
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },

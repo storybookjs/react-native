@@ -17,6 +17,13 @@
     "directory": "addons/notes"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "register.js",
+    "register-panel.js"
+  ],
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
   "scripts": {

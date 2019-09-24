@@ -17,6 +17,20 @@
   },
   "license": "MIT",
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "angular.js",
+    "angular.d.ts",
+    "ember.js",
+    "html.js",
+    "mithril.js",
+    "preact.js",
+    "rax.js",
+    "react.js",
+    "svelte.js",
+    "vue.js"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -33,13 +47,5 @@
     "mithril": "*",
     "preact": "*",
     "react": "*"
-  },
-  "peerDependencies": {
-    "mithril": "*",
-    "preact": "*",
-    "react": "*"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

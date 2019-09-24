@@ -17,6 +17,19 @@
     "directory": "addons/docs"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "angular/**/*",
+    "common/**/*",
+    "html/**/*",
+    "react/**/*",
+    "vue/**/*",
+    "README.md",
+    "blocks.js",
+    "mdx-compiler-plugin.js",
+    "register.js"
+  ],
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
   "scripts": {

@@ -15,6 +15,12 @@
     "directory": "app/polymer"
   },
   "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "standalone.js"
+  ],
   "main": "dist/client/index.js",
   "bin": {
     "build-storybook": "./bin/build.js",

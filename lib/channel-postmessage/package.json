@@ -15,6 +15,10 @@
     "directory": "lib/channel-postmessage"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
