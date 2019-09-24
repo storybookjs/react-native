@@ -1,16 +1,20 @@
 {
   "name": "@storybook/addon-contexts",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.2",
   "description": "Storybook Addon Contexts",
   "keywords": [
-    "storybook",
     "preact",
     "react",
+    "storybook",
     "vue"
   ],
-  "author": "Leo Y. Li",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/storybook.git",
+    "directory": "addons/contexts"
+  },
   "license": "MIT",
-  "main": "dist/register.js",
+  "author": "Leo Y. Li",
   "files": [
     "dist/**/*",
     "register.js",
@@ -18,31 +22,24 @@
     "react.js",
     "vue.js"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/storybookjs/storybook.git",
-    "directory": "addons/contexts"
-  },
+  "main": "dist/register.js",
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js",
-    "dev:check-types": "tsc --noEmit"
+    "dev:check-types": "tsc --noEmit",
+    "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.0",
-    "@storybook/api": "5.3.0-alpha.0",
-    "@storybook/components": "5.3.0-alpha.0",
-    "@storybook/core-events": "5.3.0-alpha.0",
-    "core-js": "^3.0.1"
+    "@storybook/addons": "5.3.0-alpha.2",
+    "@storybook/api": "5.3.0-alpha.2",
+    "@storybook/components": "5.3.0-alpha.2",
+    "@storybook/core-events": "5.3.0-alpha.2",
+    "core-js": "^3.0.1",
+    "global": "^4.3.2",
+    "qs": "^6.6.0"
   },
   "peerDependencies": {
     "global": "*",
     "preact": "*",
     "qs": "*",
-    "react": "*",
-    "vue": "*"
-  },
-  "devDependencies": {
-    "preact": "*",
     "react": "*",
     "vue": "*"
   },

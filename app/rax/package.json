@@ -1,10 +1,10 @@
 {
   "name": "@storybook/rax",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.2",
   "description": "Storybook for Rax: Develop Rax Component in isolation.",
   "keywords": [
-    "storybook",
-    "rax"
+    "rax",
+    "storybook"
   ],
   "homepage": "https://github.com/storybookjs/storybook/tree/master/app/rax",
   "bugs": {
@@ -16,8 +16,13 @@
     "directory": "app/rax"
   },
   "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "standalone.js"
+  ],
   "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -27,7 +32,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.3.0-alpha.0",
+    "@storybook/core": "5.3.0-alpha.2",
     "babel-preset-rax": "^1.0.0-beta.0",
     "common-tags": "^1.8.0",
     "core-js": "^2.6.2",

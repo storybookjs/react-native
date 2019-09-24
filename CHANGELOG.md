@@ -1,3 +1,24 @@
+## 5.3.0-alpha.2 (September 24, 2019)
+
+### Bug Fixes
+
+* Core: Fix lib/core files ([#8182](https://github.com/storybookjs/storybook/pull/8182))
+
+## 5.3.0-alpha.1 (September 23, 2019)
+
+### Bug Fixes
+
+* Preact: Allow JSX.Element story ([#8159](https://github.com/storybookjs/storybook/pull/8159))
+* Addon-docs: CSS classes for escape-hatch theming wrapper/content ([#8061](https://github.com/storybookjs/storybook/pull/8061))
+* CLI: Fix variable collisions in storiesof-to-csf ([#8106](https://github.com/storybookjs/storybook/pull/8106))
+* Storyshots: Fix STORYBOOK_HOOKS_CONTEXT error ([#8163](https://github.com/storybookjs/storybook/pull/8163))
+* Addon-contexts: Remove peer dependencies ([#7675](https://github.com/storybookjs/storybook/pull/7675))
+* Addon-knobs: Add missing type def ([#8118](https://github.com/storybookjs/storybook/pull/8118))
+
+### Dependency Upgrades
+
+* Update react-draggable to 4.0.3 ([#8145](https://github.com/storybookjs/storybook/pull/8145))
+
 ## 5.2.1 (September 17, 2019)
 
 ### Bug Fixes
@@ -28,7 +49,7 @@ Storybook 5.2 is here!
 - 🖼 Design System: Best practice component development
 - 🧩 Addon API: Simplified w/ hooks
 
-5.2 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.2.0-alpha.*`, `5.2.0-beta.*`, and `5.2.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) to ugprade from `5.0` or earlier.
+5.2 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.2.0-alpha.*`, `5.2.0-beta.*`, and `5.2.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) to upgrade from `5.0` or earlier.
 
 ## 5.2.0-rc.11 (September 10, 2019)
 
@@ -1041,7 +1062,7 @@ Storybook 5.1 is a juicy upgrade including:
 - 🛠 Context addon: New UI for themes, internationalization, & more
 - 🎛 Presets: One-line configuration for babel, webpack, & addons
 
-5.1 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.1.0-alpha.*`, `5.1.0-beta.*`, and `5.1.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) to ugprade from `5.0` or earlier.
+5.1 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.1.0-alpha.*`, `5.1.0-beta.*`, and `5.1.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) to upgrade from `5.0` or earlier.
 
 ## 5.1.0 (June 5, 2019)
 
@@ -2133,7 +2154,7 @@ Storybook 5.0 is a completely new UI with the following improvements:
 - ⌨️ Improved keyboard shortcuts that are user configurable
 - 🌍 New URL structure that eliminates long strings of query parameters
 
-  5.0 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.0.0-alpha.*`, `5.0.0-beta.*`, and `5.0.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) to ugprade from `4.x`.
+  5.0 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.0.0-alpha.*`, `5.0.0-beta.*`, and `5.0.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) to upgrade from `4.x`.
 
 ## 5.0.0-rc.11 (March 5, 2019)
 

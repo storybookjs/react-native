@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-options",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.2",
   "description": "Options addon for storybook",
   "keywords": [
     "addon",
@@ -16,13 +16,19 @@
     "directory": "addons/options"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "register.js"
+  ],
   "main": "dist/index.js",
   "types": "dist/public_api.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.0",
+    "@storybook/addons": "5.3.0-alpha.2",
     "core-js": "^3.0.1",
     "util-deprecate": "^1.0.2"
   },

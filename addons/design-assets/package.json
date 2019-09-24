@@ -1,14 +1,14 @@
 {
   "name": "@storybook/addon-design-assets",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.2",
   "description": "Design asset preview for storybook",
   "keywords": [
     "addon",
-    "storybook",
-    "parameter",
-    "design",
     "assets",
+    "design",
     "files",
+    "parameter",
+    "storybook",
     "viewer"
   ],
   "homepage": "https://github.com/storybookjs/storybook#readme",
@@ -21,18 +21,24 @@
     "directory": "addons/design-assets"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "register.js"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.0",
-    "@storybook/api": "5.3.0-alpha.0",
-    "@storybook/client-logger": "5.3.0-alpha.0",
-    "@storybook/components": "5.3.0-alpha.0",
-    "@storybook/core-events": "5.3.0-alpha.0",
-    "@storybook/theming": "5.3.0-alpha.0",
+    "@storybook/addons": "5.3.0-alpha.2",
+    "@storybook/api": "5.3.0-alpha.2",
+    "@storybook/client-logger": "5.3.0-alpha.2",
+    "@storybook/components": "5.3.0-alpha.2",
+    "@storybook/core-events": "5.3.0-alpha.2",
+    "@storybook/theming": "5.3.0-alpha.2",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-docs",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.2",
   "description": "Superior documentation for your components",
   "keywords": [
     "addon",
@@ -17,6 +17,19 @@
     "directory": "addons/docs"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "angular/**/*",
+    "common/**/*",
+    "html/**/*",
+    "react/**/*",
+    "vue/**/*",
+    "README.md",
+    "blocks.js",
+    "mdx-compiler-plugin.js",
+    "register.js"
+  ],
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
   "scripts": {
@@ -29,12 +42,12 @@
     "@mdx-js/loader": "^1.1.0",
     "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/react": "^1.0.27",
-    "@storybook/addons": "5.3.0-alpha.0",
-    "@storybook/api": "5.3.0-alpha.0",
-    "@storybook/components": "5.3.0-alpha.0",
-    "@storybook/router": "5.3.0-alpha.0",
-    "@storybook/source-loader": "5.3.0-alpha.0",
-    "@storybook/theming": "5.3.0-alpha.0",
+    "@storybook/addons": "5.3.0-alpha.2",
+    "@storybook/api": "5.3.0-alpha.2",
+    "@storybook/components": "5.3.0-alpha.2",
+    "@storybook/router": "5.3.0-alpha.2",
+    "@storybook/source-loader": "5.3.0-alpha.2",
+    "@storybook/theming": "5.3.0-alpha.2",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "js-string-escape": "^1.0.1",

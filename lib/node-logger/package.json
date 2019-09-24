@@ -1,6 +1,6 @@
 {
   "name": "@storybook/node-logger",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.2",
   "description": "",
   "keywords": [
     "storybook"
@@ -15,6 +15,10 @@
     "directory": "lib/node-logger"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

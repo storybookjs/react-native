@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.2",
   "description": "Storybook decorator to center components",
   "keywords": [
     "addon",
@@ -17,13 +17,27 @@
   },
   "license": "MIT",
   "author": "Muhammed Thanish <mnmtanish@gmail.com>",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "angular.js",
+    "angular.d.ts",
+    "ember.js",
+    "html.js",
+    "mithril.js",
+    "preact.js",
+    "rax.js",
+    "react.js",
+    "svelte.js",
+    "vue.js"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.0",
+    "@storybook/addons": "5.3.0-alpha.2",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
@@ -33,13 +47,5 @@
     "mithril": "*",
     "preact": "*",
     "react": "*"
-  },
-  "peerDependencies": {
-    "mithril": "*",
-    "preact": "*",
-    "react": "*"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/theming",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.2",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -15,6 +15,12 @@
     "directory": "lib/theming"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "paths.js",
+    "create.js"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -23,7 +29,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
-    "@storybook/client-logger": "5.3.0-alpha.0",
+    "@storybook/client-logger": "5.3.0-alpha.2",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "deep-object-diff": "^1.1.0",

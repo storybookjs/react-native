@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addons",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.2",
   "description": "Storybook addons store",
   "keywords": [
     "storybook"
@@ -15,16 +15,20 @@
     "directory": "lib/addons"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/api": "5.3.0-alpha.0",
-    "@storybook/channels": "5.3.0-alpha.0",
-    "@storybook/client-logger": "5.3.0-alpha.0",
-    "@storybook/core-events": "5.3.0-alpha.0",
+    "@storybook/api": "5.3.0-alpha.2",
+    "@storybook/channels": "5.3.0-alpha.2",
+    "@storybook/client-logger": "5.3.0-alpha.2",
+    "@storybook/core-events": "5.3.0-alpha.2",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
