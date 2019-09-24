@@ -1,3 +1,9 @@
+## 5.3.0-alpha.2 (September 24, 2019)
+
+### Bug Fixes
+
+* Core: Fix lib/core files ([#8182](https://github.com/storybookjs/storybook/pull/8182))
+
 ## 5.3.0-alpha.1 (September 23, 2019)
 
 ### Bug Fixes
