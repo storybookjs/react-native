@@ -1,4 +1,6 @@
 {
+  /* tsconfig.json can have comments */
+  // tsconfig.json can have comments
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
