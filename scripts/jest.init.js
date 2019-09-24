@@ -35,6 +35,9 @@ const ignoreList = [
   error => error.message.includes('":nth-child" is potentially unsafe'),
   error => error.message.includes('":first-child" is potentially unsafe'),
   error => error.message.includes('Failed prop type') && error.stack.includes('storyshots'),
+  error =>
+    error.message.includes('react-async-component-lifecycle-hooks') &&
+    error.stack.includes('addons/knobs/src/components/__tests__/Options.js'),
 ];
 
 const throwMessage = (type, message) => {
