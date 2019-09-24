@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-a11y",
-  "version": "5.2.0-beta.33",
+  "version": "5.3.0-alpha.1",
   "description": "a11y addon for storybook",
   "keywords": [
     "a11y",
@@ -20,19 +20,25 @@
     "directory": "addons/a11y"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "register.js"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.33",
-    "@storybook/api": "5.2.0-beta.33",
-    "@storybook/client-logger": "5.2.0-beta.33",
-    "@storybook/components": "5.2.0-beta.33",
-    "@storybook/core-events": "5.2.0-beta.33",
-    "@storybook/theming": "5.2.0-beta.33",
-    "axe-core": "^3.2.2",
+    "@storybook/addons": "5.3.0-alpha.1",
+    "@storybook/api": "5.3.0-alpha.1",
+    "@storybook/client-logger": "5.3.0-alpha.1",
+    "@storybook/components": "5.3.0-alpha.1",
+    "@storybook/core-events": "5.3.0-alpha.1",
+    "@storybook/theming": "5.3.0-alpha.1",
+    "axe-core": "^3.3.2",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

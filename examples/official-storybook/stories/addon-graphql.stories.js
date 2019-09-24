@@ -4,11 +4,10 @@ export default {
   title: 'Addons|GraphQL',
 };
 
-export const getPickachu = () => <div>hello</div>;
+export const getPikachu = () => <div>hello</div>;
 
-getPickachu.story = {
-  name: 'get Pickachu',
-
+getPikachu.story = {
+  name: 'get Pikachu',
   parameters: {
     graphiql: {
       query: `{

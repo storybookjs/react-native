@@ -58,10 +58,15 @@ addParameters({
     { name: 'light', value: '#eeeeee' },
     { name: 'dark', value: '#222222' },
   ],
-  // eslint-disable-next-line react/prop-types
-  docs: ({ context }) => (
-    <DocsPage context={context} subtitleSlot={({ selectedKind }) => `Subtitle: ${selectedKind}`} />
-  ),
+  docs: {
+    // eslint-disable-next-line react/prop-types
+    page: ({ context }) => (
+      <DocsPage
+        context={context}
+        subtitleSlot={({ selectedKind }) => `Subtitle: ${selectedKind}`}
+      />
+    ),
+  },
 });
 
 configure(

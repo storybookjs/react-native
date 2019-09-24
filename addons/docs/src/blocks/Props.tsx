@@ -23,17 +23,16 @@ export const getPropsTableProps = (
   { exclude, of }: PropsProps,
   { parameters }: DocsContextProps
 ): PropsTableProps => {
-  const { component } = parameters;
   try {
+    const params = parameters || {};
+    const { component, framework = null } = params;
+
     const target = of === CURRENT_SELECTION ? component : of;
     if (!target) {
       throw new Error(PropsTableError.NO_COMPONENT);
     }
 
-    const { framework = null } = parameters || {};
-    const { getPropDefs = inferPropDefs(framework) } =
-      (parameters && parameters.options && parameters.options.docs) || {};
-
+    const { getPropDefs = inferPropDefs(framework) } = params.docs || {};
     if (!getPropDefs) {
       throw new Error(PropsTableError.PROPS_UNSUPPORTED);
     }

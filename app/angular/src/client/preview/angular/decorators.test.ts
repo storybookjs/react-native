@@ -1,3 +1,5 @@
+import addons, { mockChannel } from '@storybook/addons';
+
 import { moduleMetadata } from './decorators';
 import { addDecorator, storiesOf, clearDecorators, getStorybook } from '..';
 
@@ -78,6 +80,7 @@ describe('moduleMetadata', () => {
       imports: [MockModule],
     };
 
+    addons.setChannel(mockChannel());
     addDecorator(moduleMetadata(metadata));
 
     storiesOf('Test', module).add('Default', () => ({

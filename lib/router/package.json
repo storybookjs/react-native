@@ -1,6 +1,6 @@
 {
   "name": "@storybook/router",
-  "version": "5.2.0-beta.33",
+  "version": "5.3.0-alpha.1",
   "description": "Core Storybook Router",
   "keywords": [
     "storybook"
@@ -15,6 +15,12 @@
     "directory": "lib/router"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "utils.js",
+    "utils.d.ts"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -25,6 +31,7 @@
     "@types/reach__router": "^1.2.3",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
+    "lodash": "^4.17.11",
     "memoizerific": "^1.11.3",
     "qs": "^6.6.0"
   },
