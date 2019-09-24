@@ -1,41 +1,43 @@
 import React from 'react';
 
 import { parseKind } from '@storybook/router';
-import { styled } from '@storybook/theming';
-import {
-  DocsPage as PureDocsPage,
-  DocsPageProps as PureDocsPageProps,
-  PropsTable,
-  PropsTableProps,
-} from '@storybook/components';
-import { DocsContext, DocsContextProps } from './DocsContext';
-import { DocsContainer } from './DocsContainer';
+import { DocsPage as PureDocsPage, PropsTable, PropsTableProps } from '@storybook/components';
+import { H2, H3 } from '@storybook/components/html';
+import { DocsContext } from './DocsContext';
 import { Description, getDocgen } from './Description';
 import { Story } from './Story';
 import { Preview } from './Preview';
-import { Props, getPropsTableProps } from './Props';
+import { Anchor } from './Anchor';
+import { getPropsTableProps } from './Props';
 
-export type StringSlot = (context: DocsContextProps) => string | void;
-export type PropsSlot = (context: DocsContextProps) => PropsTableProps | void;
-export type StorySlot = (
-  storyData: StoryData,
-  isPrimary: boolean,
-  context: DocsContextProps
-) => DocsStoryProps;
+export interface SlotContext {
+  id?: string;
+  selectedKind?: string;
+  selectedStory?: string;
+  parameters?: any;
+  storyStore?: any;
+}
+
+export type StringSlot = (context: SlotContext) => string | void;
+export type PropsSlot = (context: SlotContext) => PropsTableProps | void;
+export type StorySlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps | void;
+export type StoriesSlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps[] | void;
 
 export interface DocsPageProps {
   titleSlot: StringSlot;
   subtitleSlot: StringSlot;
   descriptionSlot: StringSlot;
+  primarySlot: StorySlot;
   propsSlot: PropsSlot;
-  storySlot: StorySlot;
+  storiesSlot: StoriesSlot;
 }
 
 interface DocsStoryProps {
   id: string;
   name: string;
-  description?: string;
   expanded?: boolean;
+  withToolbar?: boolean;
+  parameters?: any;
 }
 
 interface StoryData {
@@ -58,39 +60,50 @@ const defaultTitleSlot: StringSlot = ({ selectedKind, parameters }) => {
 };
 
 const defaultSubtitleSlot: StringSlot = ({ parameters }) =>
-  parameters && parameters.componentDescription;
+  parameters && parameters.componentSubtitle;
 
 const defaultPropsSlot: PropsSlot = context => getPropsTableProps({ of: '.' }, context);
 
 const defaultDescriptionSlot: StringSlot = ({ parameters }) =>
   parameters && getDocgen(parameters.component);
 
-const defaultStorySlot: StorySlot = (storyData, isPrimary, context) => storyData;
+const defaultPrimarySlot: StorySlot = stories => stories && stories[0];
+const defaultStoriesSlot: StoriesSlot = stories => {
+  if (stories && stories.length > 1) {
+    const [first, ...rest] = stories;
+    return rest;
+  }
+  return null;
+};
 
-const StoriesHeading = styled.h2();
-const StoryHeading = styled.h3();
+const StoriesHeading = H2;
+const StoryHeading = H3;
 
 const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   id,
   name,
-  description,
   expanded = true,
+  withToolbar = false,
+  parameters,
 }) => (
-  <>
-    {expanded && <StoryHeading>{name}</StoryHeading>}
-    {expanded && description && <Description markdown={description} />}
-    <Preview>
+  <Anchor storyId={id}>
+    {expanded && <StoryHeading>{(parameters && parameters.displayName) || name}</StoryHeading>}
+    {expanded && parameters && parameters.docs && parameters.docs.storyDescription && (
+      <Description markdown={parameters.docs.storyDescription} />
+    )}
+    <Preview withToolbar={withToolbar}>
       <Story id={id} />
     </Preview>
-  </>
+  </Anchor>
 );
 
-const DocsPage: React.FunctionComponent<DocsPageProps> = ({
-  titleSlot,
-  subtitleSlot,
-  descriptionSlot,
-  propsSlot,
-  storySlot,
+export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
+  titleSlot = defaultTitleSlot,
+  subtitleSlot = defaultSubtitleSlot,
+  descriptionSlot = defaultDescriptionSlot,
+  primarySlot = defaultPrimarySlot,
+  propsSlot = defaultPropsSlot,
+  storiesSlot = defaultStoriesSlot,
 }) => (
   <DocsContext.Consumer>
     {context => {
@@ -100,50 +113,20 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = ({
       const propsTableProps = propsSlot(context);
 
       const { selectedKind, storyStore } = context;
-      const componentStories = (storyStore.raw() as StoryData[]).filter(
-        s => s.kind === selectedKind
-      );
-      const [primary, ...rest] = componentStories.map((storyData, idx) =>
-        storySlot(storyData, idx === 0, context)
-      );
+      const componentStories = storyStore.getStoriesForKind(selectedKind);
+      const primary = primarySlot(componentStories, context);
+      const stories = storiesSlot(componentStories, context);
 
       return (
         <PureDocsPage title={title} subtitle={subtitle}>
           <Description markdown={description} />
-          <DocsStory {...primary} expanded={false} />
+          {primary && <DocsStory key={primary.id} {...primary} expanded={false} withToolbar />}
           {propsTableProps && <PropsTable {...propsTableProps} />}
-          <StoriesHeading>Stories</StoriesHeading>
-          {rest.map(story => story && <DocsStory {...story} expanded />)}
+          {stories && stories.length > 0 && <StoriesHeading>Stories</StoriesHeading>}
+          {stories &&
+            stories.map(story => story && <DocsStory key={story.id} {...story} expanded />)}
         </PureDocsPage>
       );
     }}
   </DocsContext.Consumer>
 );
-
-interface DocsPageWrapperProps {
-  context: DocsContextProps;
-  titleSlot?: StringSlot;
-  subtitleSlot?: StringSlot;
-  descriptionSlot?: StringSlot;
-  propsSlot?: PropsSlot;
-  storySlot?: StorySlot;
-}
-
-const DocsPageWrapper: React.FunctionComponent<DocsPageWrapperProps> = ({
-  context,
-  titleSlot = defaultTitleSlot,
-  subtitleSlot = defaultSubtitleSlot,
-  descriptionSlot = defaultDescriptionSlot,
-  propsSlot = defaultPropsSlot,
-  storySlot = defaultStorySlot,
-}) => (
-  /* eslint-disable react/destructuring-assignment */
-  <DocsContainer
-    context={{ ...context, mdxKind: context.selectedKind }}
-    content={() => (
-      <DocsPage {...{ titleSlot, subtitleSlot, descriptionSlot, storySlot, propsSlot }} />
-    )}
-  />
-);
-
-export { DocsPageWrapper as DocsPage };

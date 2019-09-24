@@ -1,15 +1,6 @@
 <base target="_parent">
 
 <style>
-  html, body{
-    width: 100%;
-    height: 100%;
-  }
-  
-  body {
-    width: calc(100% - 16px);
-  }
-
   :not(.sb-show-main) > .sb-main,
   :not(.sb-show-nopreview) > .sb-nopreview,
   :not(.sb-show-errordisplay) > .sb-errordisplay {
@@ -33,6 +24,7 @@
     font-weight: 600;
     letter-spacing: 0.2px;
     margin: 10px 0;
+    padding-right: 25px;
   }
 
   .sb-nopreview {
@@ -56,6 +48,7 @@
     border: 20px solid rgb(187, 49, 49);
     background: #222;
     color: #fff;
+    z-index: 999999;
   }
 
   .sb-errordisplay_code {
@@ -63,6 +56,10 @@
     background: #000;
     color: #eee;
     font-family: "Operator Mono", "Fira Code Retina", "Fira Code", "FiraCode-Retina", "Andale Mono", "Lucida Console", Consolas, Monaco, monospace;
+  }
+
+  .sb-errordisplay pre {
+    white-space: pre-wrap;
   }
 </style>
 

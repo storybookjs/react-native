@@ -1,18 +1,10 @@
 import React from 'react';
 import { Source, SourceError } from './Source';
-import { DocsPageWrapper } from './DocsPage';
 
 export default {
   title: 'Docs|Source',
   component: Source,
-  decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
-
-export const noStory = () => <Source error={SourceError.NO_STORY} />;
-noStory.story = { name: 'no story' };
-
-export const sourceUnavailable = () => <Source error={SourceError.SOURCE_UNAVAILABLE} />;
-sourceUnavailable.story = { name: 'source unavailable' };
 
 const jsxCode = `
 <MyComponent boolProp scalarProp={1} complexProp={{ foo: 1, bar: '2' }}>
@@ -38,3 +30,7 @@ const cssCode = `
 `.trim();
 
 export const css = () => <Source code={cssCode} language="css" />;
+
+export const noStory = () => <Source error={SourceError.NO_STORY} />;
+
+export const sourceUnavailable = () => <Source error={SourceError.SOURCE_UNAVAILABLE} />;

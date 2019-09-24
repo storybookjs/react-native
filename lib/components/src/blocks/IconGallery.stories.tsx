@@ -1,13 +1,11 @@
 import React from 'react';
 import { IconItem, IconGallery } from './IconGallery';
 
-import { DocsPageWrapper } from './DocsPage';
 import { Icons as ExampleIcon } from '../icon/icon';
 
 export default {
   title: 'Docs|IconGallery',
   component: IconGallery,
-  decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 
 export const defaultStyle = () => (

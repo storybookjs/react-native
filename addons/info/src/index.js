@@ -13,6 +13,12 @@ const defaultOptions = {
   header: true,
   source: true,
   propTables: [],
+  propTableCompare: (element, Component) =>
+    // https://github.com/gaearon/react-hot-loader#checking-element-types
+    typeof reactHotLoaderGlobal === 'undefined'
+      ? element.type === Component
+      : // eslint-disable-next-line no-undef
+        reactHotLoaderGlobal.areComponentsEqual(element.type, Component),
   TableComponent: PropTable,
   maxPropsIntoLine: 3,
   maxPropObjectKeys: 3,
@@ -73,6 +79,7 @@ function addInfo(storyFn, context, infoOptions) {
         : s => nestedObjectAssign({}, s, options.styles),
     propTables: options.propTables,
     propTablesExclude: options.propTablesExclude,
+    propTableCompare: options.propTableCompare,
     PropTable: makeTableComponent(options.TableComponent),
     components,
     maxPropObjectKeys: options.maxPropObjectKeys,

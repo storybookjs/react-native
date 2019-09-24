@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-notes",
-  "version": "5.2.0-beta.28",
+  "version": "5.3.0-alpha.0",
   "description": "Write notes for your Storybook stories.",
   "keywords": [
     "addon",
@@ -17,19 +17,26 @@
     "directory": "addons/notes"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "register.js",
+    "register-panel.js"
+  ],
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.2.0-beta.28",
-    "@storybook/api": "5.2.0-beta.28",
-    "@storybook/client-logger": "5.2.0-beta.28",
-    "@storybook/components": "5.2.0-beta.28",
-    "@storybook/core-events": "5.2.0-beta.28",
-    "@storybook/router": "5.2.0-beta.28",
-    "@storybook/theming": "5.2.0-beta.28",
+    "@storybook/addons": "5.3.0-alpha.0",
+    "@storybook/api": "5.3.0-alpha.0",
+    "@storybook/client-logger": "5.3.0-alpha.0",
+    "@storybook/components": "5.3.0-alpha.0",
+    "@storybook/core-events": "5.3.0-alpha.0",
+    "@storybook/router": "5.3.0-alpha.0",
+    "@storybook/theming": "5.3.0-alpha.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "markdown-to-jsx": "^6.10.3",
