@@ -8,19 +8,17 @@
     "start": "rax-scripts start",
     "build": "rax-scripts build",
     "storybook": "start-storybook -p 9009 -s public",
-    "prestorybook": "npm run test:generate-output",
-    "prebuild-storybook": "npm run test:generate-output",
+    "prestorybook": "yarn test:generate-output",
+    "prebuild-storybook": "yarn test:generate-output",
     "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "event-emitter": "^0.3.5",
-    "rax": "^0.6.5",
-    "rax-button": "^0.6.5",
-    "rax-image": "^0.6.8",
-    "rax-link": "^0.6.5",
-    "rax-picker": "^0.6.5",
+    "rax": "^1.0.0",
+    "rax-image": "^1.0.0",
+    "rax-link": "^1.0.0",
     "rax-text": "^1.0.0",
-    "rax-view": "^0.6.5"
+    "rax-view": "^1.0.0"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "5.3.0-alpha.2",
@@ -42,8 +40,8 @@
     "@storybook/source-loader": "5.3.0-alpha.2",
     "babel-eslint": "^8.2.2",
     "babel-preset-rax": "^1.0.0-beta.0",
-    "rax-scripts": "^1.0.0-beta.10",
-    "rax-test-renderer": "^0.6.5",
+    "rax-scripts": "^2.0.0",
+    "rax-test-renderer": "^1.0.0",
     "stylesheet-loader": "^0.6.5"
   }
 }
