@@ -20,8 +20,8 @@
     "dll/**/*",
     "README.md",
     "server.js",
-    "standalone.ts",
-    "client.ts"
+    "standalone.js",
+    "client.js"
   ],
   "main": "dist/client/index.js",
   "scripts": {
