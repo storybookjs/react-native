@@ -17,13 +17,18 @@ import { extractProps } from './util';
 
 export const WRAPS = 'STORYBOOK_WRAPS';
 
-function prepare(rawStory: StoryFnVueReturnType, innerStory?: VueConstructor): VueConstructor {
+function prepare(
+  rawStory: StoryFnVueReturnType,
+  innerStory?: VueConstructor
+): VueConstructor | null {
   let story: ComponentOptions<Vue> | VueConstructor;
 
   if (typeof rawStory === 'string') {
     story = { template: rawStory };
-  } else {
+  } else if (rawStory != null) {
     story = rawStory as ComponentOptions<Vue>;
+  } else {
+    return null;
   }
 
   // @ts-ignore

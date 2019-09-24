@@ -4,6 +4,7 @@ import path from 'path';
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
+import stripJsonComments from 'strip-json-comments';
 import {
   isBuildAngularInstalled,
   normalizeAssetPatterns,
@@ -33,7 +34,7 @@ function getTsConfigOptions(tsConfigPath: Path) {
     return basicOptions;
   }
 
-  const tsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf8'));
+  const tsConfig = JSON.parse(stripJsonComments(fs.readFileSync(tsConfigPath, 'utf8')));
 
   const { baseUrl } = tsConfig.compilerOptions as CompilerOptions;
 
@@ -52,7 +53,7 @@ export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
     return null;
   }
 
-  const angularJson = JSON.parse(fs.readFileSync(fname, 'utf8'));
+  const angularJson = JSON.parse(stripJsonComments(fs.readFileSync(fname, 'utf8')));
   const { projects, defaultProject } = angularJson;
 
   if (!projects || !Object.keys(projects).length) {

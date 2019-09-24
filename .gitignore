@@ -31,3 +31,4 @@ htpasswd
 /false
 storybook-out
 /addons/docs/common/config-*
+built-storybooks
