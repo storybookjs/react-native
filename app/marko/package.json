@@ -31,7 +31,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@marko/webpack": "^1.2.0",
+    "@marko/webpack": "^2.0.0",
     "@storybook/client-logger": "5.3.0-alpha.2",
     "@storybook/core": "5.3.0-alpha.2",
     "common-tags": "^1.8.0",

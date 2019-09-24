@@ -3065,10 +3065,10 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
-"@marko/webpack@^1.2.0":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@marko/webpack/-/webpack-1.2.5.tgz#494756a2195d8020c8885c571b2af75e68eacbd7"
-  integrity sha512-h0UUasg8CKDbJH1A+Cc47E/gQxihbF/k5sdHqiKsex+XGvkhz1p7NmIl5uWE/HovtkY8dt07bAffSPrsqB1mLw==
+"@marko/webpack@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@marko/webpack/-/webpack-2.0.0.tgz#4dfc905c10eeb64c05194d10d9ac5a08b244e4fc"
+  integrity sha512-89VfWHONSIV5Y/I6/aRNe12bQzpcMnLC7tcptTdABBCmYvMimsLK+vPxh9KmljyHCngjTc8Cu64gTVjq71i1bg==
   dependencies:
     base-x "^3.0.5"
     lasso-modules-client "^2.0.5"
