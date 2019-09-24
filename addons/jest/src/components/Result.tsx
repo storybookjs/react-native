@@ -1,5 +1,5 @@
 import React, { Component, Fragment, useState } from 'react';
-import { styled } from '@storybook/theming';
+import { styled, themes, convert } from '@storybook/theming';
 import { Icons } from '@storybook/components';
 import Message from './Message';
 
@@ -70,7 +70,7 @@ export function Result(props: ResultProps) {
             <Icon
               icon="chevrondown"
               size={10}
-              color="#9DA5AB"
+              color={convert(themes.normal).color.mediumdark}
               style={{
                 transform: `rotate(${isOpen ? 0 : -90}deg)`,
               }}

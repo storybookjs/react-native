@@ -62,3 +62,13 @@ skippedViaDisableTrue.story = {
     backgrounds: { disable: true },
   },
 };
+
+export const gridCellSize = () => (
+  <BaseButton label="This one should have a different grid cell size" />
+);
+
+gridCellSize.story = {
+  parameters: {
+    grid: { cellSize: 10 },
+  },
+};

@@ -36,10 +36,10 @@ do
   if [ $dir == *"native"* ]
   then
     # run @storybook/cli
-    ../../../bin/index.js init --skip-install --yes --install-server
+    yarn sb init --skip-install --yes --install-server
   else
     # run @storybook/cli
-    ../../../bin/index.js init --skip-install --yes
+    yarn sb init --skip-install --yes
   fi
 
   cd ..

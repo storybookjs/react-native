@@ -118,8 +118,11 @@ export default function initShortcuts({ store }: Module) {
     handleShortcutFeature(fullApi, feature) {
       const {
         layout: { isFullscreen, showNav, showPanel },
+        ui: { enableShortcuts },
       } = store.getState();
-
+      if (!enableShortcuts) {
+        return;
+      }
       switch (feature) {
         case 'escape': {
           if (isFullscreen) {
@@ -274,7 +277,6 @@ export default function initShortcuts({ store }: Module) {
         event.target.getAttribute('contenteditable') !== null
       );
     }
-
     // Listen for keydown events in the manager
     document.addEventListener('keydown', (event: Event) => {
       if (!focusInInput(event)) {
