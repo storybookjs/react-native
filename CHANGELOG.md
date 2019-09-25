@@ -1,3 +1,10 @@
+## 5.3.0-alpha.3 (September 25, 2019)
+
+### Bug Fixes
+
+* Dependencies: add @types/webpack-env to apps that depend on it ([#8119](https://github.com/storybookjs/storybook/pull/8119))
+* UI: Removes default CSS margins on viewport ([#7742](https://github.com/storybookjs/storybook/pull/7742))
+
 ## 5.3.0-alpha.2 (September 24, 2019)
 
 ### Bug Fixes
