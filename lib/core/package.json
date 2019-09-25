@@ -46,7 +46,7 @@
     "ansi-to-html": "^0.6.11",
     "autoprefixer": "^9.4.9",
     "babel-plugin-add-react-displayname": "^0.0.5",
-    "babel-plugin-emotion": "^10.0.14",
+    "babel-plugin-emotion": "^10.0.19",
     "babel-plugin-macros": "^2.4.5",
     "babel-preset-minify": "^0.5.0 || 0.6.0-alpha.5",
     "boxen": "^3.0.0",

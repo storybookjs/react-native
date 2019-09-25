@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "enzyme-to-json": "^3.3.5",
-    "jest-emotion": "^10.0.10",
+    "jest-emotion": "^10.0.17",
     "react": "^16.8.3"
   },
   "publishConfig": {

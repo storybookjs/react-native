@@ -51,7 +51,7 @@
     "format-json": "^1.0.3",
     "global": "^4.3.2",
     "graphql": "^14.1.1",
-    "jest-emotion": "^10.0.11",
+    "jest-emotion": "^10.0.17",
     "lodash": "^4.17.11",
     "paths.macro": "^2.0.2",
     "prop-types": "^15.7.2",
