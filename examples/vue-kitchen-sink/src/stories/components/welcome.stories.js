@@ -4,9 +4,7 @@ import Welcome from '../Welcome.vue';
 
 export default {
   title: 'Welcome',
-  parameters: {
-    component: Welcome,
-  },
+  component: Welcome,
 };
 
 export const welcome = () => {

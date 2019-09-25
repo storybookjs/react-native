@@ -1,1 +1,1 @@
-{"version":"5.2.0-rc.4","info":{"plain":"### Bug Fixes\n\n* Addon-docs: Fix MDX theme bleed with reset context ([#7974](https://github.com/storybookjs/storybook/pull/7974))\n\n### Documentation\n\n* docspage.md broken link fix ([#7962](https://github.com/storybookjs/storybook/pull/7962))"}}
+{"version":"5.3.0-alpha.2","info":{"plain":"### Bug Fixes\n\n* Core: Fix lib/core files ([#8182](https://github.com/storybookjs/storybook/pull/8182))"}}

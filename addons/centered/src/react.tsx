@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { ReactNode } from 'react';
 import { makeDecorator, StoryFn } from '@storybook/addons';
 import parameters from './parameters';
