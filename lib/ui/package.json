@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.3.0-alpha.2",
+  "version": "5.3.0-alpha.3",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -26,16 +26,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "5.3.0-alpha.2",
-    "@storybook/addon-knobs": "5.3.0-alpha.2",
-    "@storybook/addons": "5.3.0-alpha.2",
-    "@storybook/api": "5.3.0-alpha.2",
-    "@storybook/channels": "5.3.0-alpha.2",
-    "@storybook/client-logger": "5.3.0-alpha.2",
-    "@storybook/components": "5.3.0-alpha.2",
-    "@storybook/core-events": "5.3.0-alpha.2",
-    "@storybook/router": "5.3.0-alpha.2",
-    "@storybook/theming": "5.3.0-alpha.2",
+    "@storybook/addon-actions": "5.3.0-alpha.3",
+    "@storybook/addon-knobs": "5.3.0-alpha.3",
+    "@storybook/addons": "5.3.0-alpha.3",
+    "@storybook/api": "5.3.0-alpha.3",
+    "@storybook/channels": "5.3.0-alpha.3",
+    "@storybook/client-logger": "5.3.0-alpha.3",
+    "@storybook/components": "5.3.0-alpha.3",
+    "@storybook/core-events": "5.3.0-alpha.3",
+    "@storybook/router": "5.3.0-alpha.3",
+    "@storybook/theming": "5.3.0-alpha.3",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
