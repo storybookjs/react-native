@@ -23474,9 +23474,9 @@ rax-view@^1.0.0:
     universal-env "^1.0.0"
 
 rax@^1.0.0:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/rax/-/rax-1.0.11.tgz#39b68ad4e31652b81cf4cb4dd37a1591ca0af05f"
-  integrity sha512-lg1Yf9EJlqVuD0DIzdjKiQiWdTUSRl/NV5vtDV2f8HZX0txExchJciWuWl33QjkuXiYjTjtvIoyi5cl4McUiPA==
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/rax/-/rax-1.0.12.tgz#0f0fd9006ea244631d1240b211a769683c0f1477"
+  integrity sha512-pySTLDTCKP9ils6l0Q1irbG5TBHOObYyb1n8YkZxqMNGNa19fNtEPrilS84KJpyUZ6KTBxDjAO5e0iOrU7VHvg==
   dependencies:
     "@babel/runtime" "^7.2.0"
     driver-server "^1.0.0"
