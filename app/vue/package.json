@@ -34,6 +34,7 @@
   "dependencies": {
     "@storybook/addons": "5.3.0-alpha.2",
     "@storybook/core": "5.3.0-alpha.2",
+    "@types/webpack-env": "^1.13.9",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
