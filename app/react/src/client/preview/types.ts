@@ -6,7 +6,7 @@ export interface ShowErrorArgs {
 }
 
 export interface RenderMainArgs {
-  storyFn: () => React.ReactElement | undefined;
+  storyFn: React.FunctionComponent<any>;
   selectedKind: string;
   selectedStory: string;
   showMain: () => void;
