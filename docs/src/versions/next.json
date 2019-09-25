@@ -1,1 +1,1 @@
-{"version":"5.3.0-alpha.2","info":{"plain":"### Bug Fixes\n\n* Core: Fix lib/core files ([#8182](https://github.com/storybookjs/storybook/pull/8182))"}}
+{"version":"5.3.0-alpha.3","info":{"plain":"### Bug Fixes\n\n* Dependencies: add @types/webpack-env to apps that depend on it ([#8119](https://github.com/storybookjs/storybook/pull/8119))\n* UI: Removes default CSS margins on viewport ([#7742](https://github.com/storybookjs/storybook/pull/7742))"}}
