@@ -9919,7 +9919,14 @@ de-indent@^1.0.2:
   resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
   integrity sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
 
-deasync@^0.1.14:
+deasync-promise@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/deasync-promise/-/deasync-promise-1.0.1.tgz#2b27de478167af4ef34ba99879c52ec0cedd61c2"
+  integrity sha1-KyfeR4Fnr07zS6mYecUuwM7dYcI=
+  dependencies:
+    deasync "^0.1.7"
+
+deasync@^0.1.14, deasync@^0.1.7:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/deasync/-/deasync-0.1.15.tgz#788c4bbe6d32521233b28d23936de1bbadd2e112"
   integrity sha512-pxMaCYu8cQIbGkA4Y1R0PLSooPIpH1WgFBLeJ+zLxQgHfkZG86ViJSmZmONSjZJ/R3NjwkMcIWZAzpLB2G9/CA==
