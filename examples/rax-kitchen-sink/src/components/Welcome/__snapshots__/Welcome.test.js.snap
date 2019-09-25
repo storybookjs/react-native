@@ -133,6 +133,44 @@ Object {
       "tagName": "DIV",
     },
     Object {
+      "attributes": Object {
+        "type": "button",
+      },
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                "button",
+              ],
+              "style": Object {
+                "alignContent": "flex-start",
+                "border": "0 solid black",
+                "boxSizing": "border-box",
+                "display": "block",
+                "flexDirection": "column",
+                "flexShrink": 0,
+                "fontSize": 12,
+                "whiteSpace": "pre-wrap",
+              },
+              "tagName": "SPAN",
+            },
+          ],
+          "style": Object {
+            "alignContent": "flex-start",
+            "border": "0 solid black",
+            "boxSizing": "border-box",
+            "display": "flex",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "marginBottom": 10,
+          },
+          "tagName": "DIV",
+        },
+      ],
+      "tagName": "BUTTON",
+    },
+    Object {
       "children": Array [
         Object {
           "children": Array [
