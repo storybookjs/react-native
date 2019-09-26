@@ -3288,6 +3288,33 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
+"@storybook/eslint-config-storybook@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/eslint-config-storybook/-/eslint-config-storybook-1.0.0.tgz#a7af05e793d218524c1fc675ea0c07f14344a9d8"
+  integrity sha512-JiMe7XSMLedktdSNL7W1aaIvJIE+iH/g8EYxqNhtWZG6EpF9oWFwO9D4oI48eXmPw3CK+O4Xiwzr3rRBsW4yWA==
+  dependencies:
+    "@storybook/linter-config" "*"
+
+"@storybook/linter-config@*", "@storybook/linter-config@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/linter-config/-/linter-config-1.0.0.tgz#bd3c27c5dec2f7601e363d6e6d386d925440db6d"
+  integrity sha512-z3KX8CEiNSCPP0lmzFH4JGMi0N+x+Jeh169TNyOZfD6Jn7C6JnQJ1m7asTMIgoCZNy5P524y1yMiMpE+v28C+Q==
+  dependencies:
+    "@typescript-eslint/eslint-plugin" "^1.7.0"
+    "@typescript-eslint/parser" "^2.3.1"
+    eslint-config-airbnb "^17.0.0"
+    eslint-config-prettier "^4.3.0"
+    eslint-plugin-html "^5.0.3"
+    eslint-plugin-import "^2.16.0"
+    eslint-plugin-jest "^22.4.1"
+    eslint-plugin-json "^1.4.0"
+    eslint-plugin-jsx-a11y "^6.2.1"
+    eslint-plugin-prettier "^3.0.1"
+    eslint-plugin-react "^7.12.4"
+    remark-cli "^6.0.1"
+    remark-lint "^6.0.4"
+    remark-preset-lint-recommended "^3.0.2"
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
@@ -3979,7 +4006,7 @@
     eslint-scope "^4.0.0"
     eslint-visitor-keys "^1.0.0"
 
-"@typescript-eslint/parser@^2.2.0":
+"@typescript-eslint/parser@^2.2.0", "@typescript-eslint/parser@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-2.3.1.tgz#f2b93b614d9b338825c44e75552a433e2ebf8c33"
   integrity sha512-ZlWdzhCJ2iZnSp/VBAJ/sowFbyHycIux8t0UEH0JsKgQvfSf7949hLYFMwTXdCMeEnpP1zRTHimrR+YHzs8LIw==
