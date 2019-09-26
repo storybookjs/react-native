@@ -136,7 +136,7 @@
     "@babel/preset-typescript": "^7.3.3",
     "@emotion/snapshot-serializer": "^0.8.2",
     "@storybook/eslint-config-storybook": "^1.0.0",
-    "@storybook/linter-config": "^1.0.0",
+    "@storybook/linter-config": "^1.0.1",
     "@types/common-tags": "^1.8.0",
     "@types/jest": "^24.0.11",
     "@types/lodash": "^4.14.129",
