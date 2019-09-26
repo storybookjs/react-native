@@ -12,42 +12,51 @@ const Container = styled.div<{}>(({ theme }) => ({
   zIndex: 1,
 }));
 
-export const ActionButton = styled.button<{}>(({ theme }) => ({
-  border: '0 none',
-  padding: '4px 10px',
-  cursor: 'pointer',
-  display: 'flex',
-  alignItems: 'center',
+export const ActionButton = styled.button<{ disabled: boolean }>(
+  ({ theme }) => ({
+    border: '0 none',
+    padding: '4px 10px',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
 
-  color: theme.color.defaultText,
-  background: theme.background.content,
+    color: theme.color.defaultText,
+    background: theme.background.content,
 
-  fontSize: 12,
-  lineHeight: '16px',
-  fontWeight: theme.typography.weight.bold,
+    fontSize: 12,
+    lineHeight: '16px',
+    fontFamily: theme.typography.fonts.base,
+    fontWeight: theme.typography.weight.bold,
 
-  borderTop: `1px solid ${theme.appBorderColor}`,
-  borderLeft: `1px solid ${theme.appBorderColor}`,
-  marginLeft: -1,
-
-  borderRadius: `4px 0 0 0`,
-
-  '&:not(:last-child)': { borderRight: `1px solid ${theme.appBorderColor}` },
-  '& + *': {
+    borderTop: `1px solid ${theme.appBorderColor}`,
     borderLeft: `1px solid ${theme.appBorderColor}`,
-    borderRadius: 0,
-  },
+    marginLeft: -1,
 
-  '&:focus': {
-    boxShadow: `${theme.color.secondary} 0 -3px 0 0 inset`,
-    outline: '0 none',
-  },
-}));
+    borderRadius: `4px 0 0 0`,
+
+    '&:not(:last-child)': { borderRight: `1px solid ${theme.appBorderColor}` },
+    '& + *': {
+      borderLeft: `1px solid ${theme.appBorderColor}`,
+      borderRadius: 0,
+    },
+
+    '&:focus': {
+      boxShadow: `${theme.color.secondary} 0 -3px 0 0 inset`,
+      outline: '0 none',
+    },
+  }),
+  ({ disabled }) =>
+    disabled && {
+      cursor: 'not-allowed',
+      opacity: 0.5,
+    }
+);
 ActionButton.displayName = 'ActionButton';
 
 export interface ActionItem {
   title: string | JSX.Element;
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  disabled?: boolean;
 }
 
 export interface ActionBarProps {
@@ -56,9 +65,9 @@ export interface ActionBarProps {
 
 export const ActionBar: FunctionComponent<ActionBarProps> = ({ actionItems, ...props }) => (
   <Container {...props}>
-    {actionItems.map(({ title, onClick }, index: number) => (
+    {actionItems.map(({ title, onClick, disabled }, index: number) => (
       // eslint-disable-next-line react/no-array-index-key
-      <ActionButton key={index} onClick={onClick}>
+      <ActionButton key={index} onClick={onClick} disabled={disabled}>
         {title}
       </ActionButton>
     ))}

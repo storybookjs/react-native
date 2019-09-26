@@ -3,9 +3,11 @@ import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
+import { ResetWrapper } from '../typography/DocumentFormatting';
 
 const ItemTitle = styled.div<{}>(({ theme }) => ({
   fontWeight: theme.typography.weight.bold,
+  color: theme.color.defaultText,
 }));
 
 const ItemSubtitle = styled.div<{}>(({ theme }) => ({
@@ -91,17 +93,19 @@ const ListHeading = styled.div<{}>(({ theme }) => ({
   alignItems: 'center',
   paddingBottom: 20,
   fontWeight: theme.typography.weight.bold,
-
   color:
     theme.base === 'light'
       ? transparentize(0.4, theme.color.defaultText)
       : transparentize(0.6, theme.color.defaultText),
 }));
 
-const List = styled.div({
+const List = styled.div<{}>(({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  lineHeight: `20px`,
+
   display: 'flex',
   flexDirection: 'column',
-});
+}));
 
 interface ColorProps {
   title: string;
@@ -151,14 +155,14 @@ export const ColorItem: React.FunctionComponent<ColorProps> = ({ title, subtitle
  * Styleguide documentation for colors, including names, captions, and color swatches,
  * all specified as `ColorItem` children of this wrapper component.
  */
-export const ColorPalette: React.FunctionComponent = ({ children, ...props }) => {
-  return (
-    <List {...props}>
+export const ColorPalette: React.FunctionComponent = ({ children, ...props }) => (
+  <ResetWrapper>
+    <List {...props} className="docblock-colorpalette">
       <ListHeading>
         <ListName>Name</ListName>
         <ListSwatches>Swatches</ListSwatches>
       </ListHeading>
       {children}
     </List>
-  );
-};
+  </ResetWrapper>
+);

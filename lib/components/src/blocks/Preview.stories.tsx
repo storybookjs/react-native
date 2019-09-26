@@ -1,15 +1,14 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 
 import { Preview } from './Preview';
-import { DocsPageWrapper } from './DocsPage';
+
+import { Story } from './Story';
 import { Button } from '../Button/Button';
 import * as sourceStories from './Source.stories';
 
 export default {
   title: 'Docs|Preview',
   component: Preview,
-  decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 
 export const codeCollapsed = () => (
@@ -78,5 +77,20 @@ export const gridWith3Columns = () => (
     <Button secondary>Button 18</Button>
     <Button secondary>Button 19</Button>
     <Button secondary>Button 20</Button>
+  </Preview>
+);
+
+const buttonFn = () => <Button secondary>Hello Button</Button>;
+
+export const withToolbar = () => (
+  <Preview withToolbar>
+    <Story inline storyFn={buttonFn} title="with toolbar" />
+  </Preview>
+);
+
+export const withToolbarMulti = () => (
+  <Preview withToolbar>
+    <Story inline storyFn={buttonFn} title="story1" />
+    <Story inline storyFn={buttonFn} title="story2" />
   </Preview>
 );

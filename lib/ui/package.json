@@ -1,6 +1,6 @@
 {
   "name": "@storybook/ui",
-  "version": "5.2.0-beta.28",
+  "version": "5.3.0-alpha.3",
   "description": "Core Storybook UI",
   "keywords": [
     "storybook"
@@ -15,27 +15,31 @@
     "directory": "lib/ui"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "paths.js"
+  ],
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "createDlls": "node -r esm ./scripts/createDlls.js",
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "5.2.0-beta.28",
-    "@storybook/addon-knobs": "5.2.0-beta.28",
-    "@storybook/addons": "5.2.0-beta.28",
-    "@storybook/api": "5.2.0-beta.28",
-    "@storybook/channels": "5.2.0-beta.28",
-    "@storybook/client-logger": "5.2.0-beta.28",
-    "@storybook/components": "5.2.0-beta.28",
-    "@storybook/core-events": "5.2.0-beta.28",
-    "@storybook/router": "5.2.0-beta.28",
-    "@storybook/theming": "5.2.0-beta.28",
+    "@storybook/addon-actions": "5.3.0-alpha.3",
+    "@storybook/addon-knobs": "5.3.0-alpha.3",
+    "@storybook/addons": "5.3.0-alpha.3",
+    "@storybook/api": "5.3.0-alpha.3",
+    "@storybook/channels": "5.3.0-alpha.3",
+    "@storybook/client-logger": "5.3.0-alpha.3",
+    "@storybook/components": "5.3.0-alpha.3",
+    "@storybook/core-events": "5.3.0-alpha.3",
+    "@storybook/router": "5.3.0-alpha.3",
+    "@storybook/theming": "5.3.0-alpha.3",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",
     "core-js-pure": "^3.0.1",
-    "emotion-theming": "^10.0.14",
+    "emotion-theming": "^10.0.19",
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.4.4",
     "global": "^4.3.2",
@@ -47,7 +51,7 @@
     "qs": "^6.6.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-draggable": "^3.1.1",
+    "react-draggable": "^4.0.3",
     "react-helmet-async": "^1.0.2",
     "react-hotkeys": "2.0.0-pre4",
     "react-sizeme": "^2.6.7",

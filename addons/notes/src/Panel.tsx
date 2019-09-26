@@ -7,7 +7,7 @@ import { styled } from '@storybook/theming';
 import {
   SyntaxHighlighter as SyntaxHighlighterBase,
   Placeholder,
-  DocumentFormatting,
+  DocumentWrapper,
   Link,
   TabWrapper,
   TabsState,
@@ -173,9 +173,9 @@ const NotesPanel = ({ active }: Props) => {
 
           return (
             <Panel className="addon-notes-container">
-              <DocumentFormatting>
+              <DocumentWrapper>
                 <Markdown options={options}>{formatter(md)}</Markdown>
-              </DocumentFormatting>
+              </DocumentWrapper>
             </Panel>
           );
         }
@@ -188,9 +188,9 @@ const NotesPanel = ({ active }: Props) => {
             render: ({ active: isActive }) => (
               <TabWrapper key={title} active={isActive}>
                 <Panel>
-                  <DocumentFormatting>
+                  <DocumentWrapper>
                     <Markdown options={options}>{formatter(docs)}</Markdown>
-                  </DocumentFormatting>
+                  </DocumentWrapper>
                 </Panel>
               </TabWrapper>
             ),

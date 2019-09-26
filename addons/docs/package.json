@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-docs",
-  "version": "5.2.0-beta.28",
+  "version": "5.3.0-alpha.3",
   "description": "Superior documentation for your components",
   "keywords": [
     "addon",
@@ -17,6 +17,19 @@
     "directory": "addons/docs"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "angular/**/*",
+    "common/**/*",
+    "html/**/*",
+    "react/**/*",
+    "vue/**/*",
+    "README.md",
+    "blocks.js",
+    "mdx-compiler-plugin.js",
+    "register.js"
+  ],
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
   "scripts": {
@@ -25,15 +38,16 @@
   "dependencies": {
     "@babel/generator": "^7.4.0",
     "@babel/parser": "^7.4.2",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@mdx-js/loader": "^1.1.0",
     "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/react": "^1.0.27",
-    "@storybook/addons": "5.2.0-beta.28",
-    "@storybook/api": "5.2.0-beta.28",
-    "@storybook/components": "5.2.0-beta.28",
-    "@storybook/router": "5.2.0-beta.28",
-    "@storybook/source-loader": "5.2.0-beta.28",
-    "@storybook/theming": "5.2.0-beta.28",
+    "@storybook/addons": "5.3.0-alpha.3",
+    "@storybook/api": "5.3.0-alpha.3",
+    "@storybook/components": "5.3.0-alpha.3",
+    "@storybook/router": "5.3.0-alpha.3",
+    "@storybook/source-loader": "5.3.0-alpha.3",
+    "@storybook/theming": "5.3.0-alpha.3",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "js-string-escape": "^1.0.1",
@@ -43,10 +57,11 @@
   "devDependencies": {
     "@types/prop-types": "^15.5.9",
     "@types/util-deprecate": "^1.0.0",
-    "@types/webpack-env": "^1.13.7"
+    "@types/webpack-env": "^1.14.0"
   },
   "peerDependencies": {
-    "react": "*"
+    "babel-loader": "^8.0.0",
+    "react": "^16.8.0"
   },
   "publishConfig": {
     "access": "public"

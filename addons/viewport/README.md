@@ -25,6 +25,7 @@ Then, add following content to .storybook/addons.js
 ```js
 import '@storybook/addon-viewport/register';
 ```
+
 You should now be able to see the viewport addon icon in the the toolbar at the top of the screen.
 
 ## Configuration
@@ -34,7 +35,12 @@ The viewport addon is configured by story parameters with the `viewport` key. To
 ```js
 import { addParameters } from '@storybook/react';
 
-addParameters({ viewport: { viewports: newViewports } });
+addParameters({
+  viewport: {
+    viewports: newViewports, // newViewports would be an ViewportMap. (see below for examples)
+    defaultViewport: 'someDefault',
+  },
+});
 ```
 
 Options can take a object with the following keys:
@@ -49,7 +55,7 @@ Setting this property to, let say `iphone6`, will make `iPhone 6` the default de
 
 ---
 
-A key-value pair of viewport's key and properties (see `Viewport` definition below) for all viewports to be displayed. Default is [`INITIAL_VIEWPORTS`](src/defaults.js)
+A key-value pair of viewport's key and properties (see `Viewport` definition below) for all viewports to be displayed. Default is [`MINIMAL_VIEWPORTS`](src/defaults.ts)
 
 #### Viewport Model
 
@@ -95,6 +101,21 @@ addStories('Stories', module)
 
 ## Examples
 
+### Use Detailed Set of Devices
+
+The default viewports being used is [`MINIMAL_VIEWPORTS`](src/defaults.ts). If you'd like to use a more granular list of devices, you can use [`INITIAL_VIEWPORTS`](src/defaults.ts) like so in your `config.js` file in your `.storybook` directory.
+
+```js
+import { addParameters } from '@storybook/react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+addParameters({
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+});
+```
+
 ### Use Custom Set of Devices
 
 This will replace all previous devices with `Kindle Fire 2` and `Kindle Fire HD` by simply calling `addParameters` with the two devices as `viewports` in `config.js` file in your `.storybook` directory.
@@ -126,7 +147,7 @@ addParameters({
 
 ### Add New Device
 
-This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is achieved by making use of the exported [`INITIAL_VIEWPORTS`](src/defaults.js) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
+This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is achieved by making use of the exported [`INITIAL_VIEWPORTS`](src/defaults.ts) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
 
 ```js
 import { addParameters } from '@storybook/react';
