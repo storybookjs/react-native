@@ -26,8 +26,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "5.3.0-alpha.3",
-    "@storybook/addon-knobs": "5.3.0-alpha.3",
     "@storybook/addons": "5.3.0-alpha.3",
     "@storybook/api": "5.3.0-alpha.3",
     "@storybook/channels": "5.3.0-alpha.3",
@@ -63,6 +61,8 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "5.3.0-alpha.3",
+    "@storybook/addon-knobs": "5.3.0-alpha.3",
     "corejs-upgrade-webpack-plugin": "^2.2.0",
     "flush-promises": "^1.0.2",
     "terser-webpack-plugin": "^1.2.4",
