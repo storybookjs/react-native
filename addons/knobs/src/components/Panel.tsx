@@ -220,6 +220,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
     const groupIds: string[] = [];
 
     const knobKeysArray = Object.keys(knobs).filter(key => knobs[key].used);
+    const knobsArray = knobKeysArray.map(key => knobs[key]);
 
     knobKeysArray.forEach(key => {
       const knobKeyGroupId = knobs[key].groupId || DEFAULT_GROUP_ID;
@@ -239,8 +240,6 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
         title: knobKeyGroupId,
       };
     });
-
-    const knobsArray = knobKeysArray.map(key => knobs[key]);
 
     if (knobsArray.length === 0) {
       return (
