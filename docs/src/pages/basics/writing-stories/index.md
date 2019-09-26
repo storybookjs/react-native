@@ -191,7 +191,7 @@ addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 load(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story director wraps a single story in an additional red frame.
+And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story decorator wraps a single story in an additional red frame.
 
 ```jsx
 import React from 'react';
