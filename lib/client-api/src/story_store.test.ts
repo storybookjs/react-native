@@ -158,12 +158,14 @@ describe('preview.story_store', () => {
 
       const storyWithContext = store.getStoryWithContext('kind', 'name');
       storyWithContext();
+      const { hooks } = store.fromId(toId('kind', 'name'));
       expect(storyFn).toHaveBeenCalledWith({
         id: 'kind--name',
         name: 'name',
         kind: 'kind',
         story: 'name',
         parameters,
+        hooks,
       });
     });
   });

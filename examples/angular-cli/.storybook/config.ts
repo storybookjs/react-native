@@ -8,9 +8,9 @@ addCssWarning();
 addParameters({
   options: {
     hierarchyRootSeparator: /\|/,
-    docs: {
-      iframeHeight: '60px',
-    },
+  },
+  docs: {
+    iframeHeight: '60px',
   },
 });
 

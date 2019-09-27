@@ -131,3 +131,30 @@ export const INITIAL_VIEWPORTS: ViewportMap = {
   },
 };
 export const DEFAULT_VIEWPORT = 'responsive';
+
+export const MINIMAL_VIEWPORTS: ViewportMap = {
+  mobile1: {
+    name: 'Small mobile',
+    styles: {
+      height: '568px',
+      width: '320px',
+    },
+    type: 'mobile',
+  },
+  mobile2: {
+    name: 'Large mobile',
+    styles: {
+      height: '896px',
+      width: '414px',
+    },
+    type: 'mobile',
+  },
+  tablet: {
+    name: 'Tablet',
+    styles: {
+      height: '1112px',
+      width: '834px',
+    },
+    type: 'tablet',
+  },
+};

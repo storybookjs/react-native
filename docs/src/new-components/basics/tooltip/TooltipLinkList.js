@@ -5,6 +5,9 @@ import ListItem from '../ListItem';
 
 const List = styled.div`
   min-width: 180px;
+  overflow: hidden;
+  overflow-y: auto;
+  maxheight: ${10.5 * 32 /* 10.5 items */};
 `;
 
 function TooltipLinkList({ links, LinkWrapper }) {

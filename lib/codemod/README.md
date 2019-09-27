@@ -10,13 +10,13 @@ The preferred way to run these codemods is via the CLI's `migrate` command.
 To get a list of available codemods:
 
 ```
-npx -p @storybook/cli sb migrate --list
+npx -p @storybook/cli@next sb migrate --list
 ```
 
 To run a codemod `<name-of-codemod>`:
 
 ```
-npx -p @storybook/cli sb migrate <name-of-codemod> --glob "**/*.stories.js"
+npx -p @storybook/cli@next sb migrate <name-of-codemod> --glob "**/*.stories.js"
 ```
 
 ## Installation
