@@ -1,8 +1,11 @@
 /** @jsx m */
+/* eslint-disable import/no-extraneous-dependencies */
 import m, { ComponentTypes } from 'mithril';
+import { makeDecorator } from '@storybook/addons';
+import parameters from './parameters';
 import styles from './styles';
 
-export default function(storyFn: () => ComponentTypes) {
+function centered(storyFn: () => ComponentTypes) {
   return {
     view: () => (
       <div style={styles.style}>
@@ -11,6 +14,11 @@ export default function(storyFn: () => ComponentTypes) {
     ),
   };
 }
+
+export default makeDecorator({
+  ...parameters,
+  wrapper: getStory => centered(getStory as any),
+});
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();

@@ -10,18 +10,19 @@ interface Additions {
   panelPosition?: PanelPositions;
   showNav?: boolean;
   selectedPanel?: string;
+  viewMode?: string;
 }
 
 // Initialize the state based on the URL.
 // NOTE:
-//   Although we don't change the URL when you change the state, we do support setting inital state
+//   Although we don't change the URL when you change the state, we do support setting initial state
 //   via the following URL parameters:
 //     - full: 0/1 -- show fullscreen
 //     - panel: bottom/right/0 -- set addons panel position (or hide)
 //     - nav: 0/1 -- show or hide the story list
 //
 //   We also support legacy URLs from storybook <5
-const initialUrlSupport = ({ navigate, location, path }: Module) => {
+const initialUrlSupport = ({ navigate, state: { location, path, viewMode, storyId } }: Module) => {
   const addition: Additions = {};
   const query = queryFromLocation(location);
   let selectedPanel;
@@ -70,20 +71,20 @@ const initialUrlSupport = ({ navigate, location, path }: Module) => {
   }
 
   if (selectedKind && selectedStory) {
-    const storyId = toId(selectedKind, selectedStory);
-    setTimeout(() => navigate(`/story/${storyId}`, { replace: true }), 1);
+    const id = toId(selectedKind, selectedStory);
+    setTimeout(() => navigate(`/${viewMode}/${id}`, { replace: true }), 1);
   } else if (selectedKind) {
     // Create a "storyId" of the form `kind-sanitized--*`
     const standInId = toId(selectedKind, 'star').replace(/star$/, '*');
-    setTimeout(() => navigate(`/story/${standInId}`, { replace: true }), 1);
+    setTimeout(() => navigate(`/${viewMode}/${standInId}`, { replace: true }), 1);
   } else if (!queryPath || queryPath === '/') {
-    setTimeout(() => navigate(`/story/*`, { replace: true }), 1);
+    setTimeout(() => navigate(`/${viewMode}/*`, { replace: true }), 1);
   } else if (Object.keys(query).length > 1) {
     // remove other queries
     setTimeout(() => navigate(`${queryPath}`, { replace: true }), 1);
   }
 
-  return { layout: addition, selectedPanel, location, path, customQueryParams };
+  return { viewMode, layout: addition, selectedPanel, location, path, customQueryParams, storyId };
 };
 
 export interface QueryParams {
@@ -102,7 +103,7 @@ export interface SubAPI {
   setQueryParams: (input: QueryParams) => void;
 }
 
-export default function({ store, navigate, location, path: initialPath, ...rest }: Module) {
+export default function({ store, navigate, state, provider, ...rest }: Module) {
   const api: SubAPI = {
     getQueryParam: key => {
       const { customQueryParams } = store.getState();
@@ -142,6 +143,6 @@ export default function({ store, navigate, location, path: initialPath, ...rest 
 
   return {
     api,
-    state: initialUrlSupport({ store, navigate, location, path: initialPath, ...rest }),
+    state: initialUrlSupport({ store, navigate, state, provider, ...rest }),
   };
 }

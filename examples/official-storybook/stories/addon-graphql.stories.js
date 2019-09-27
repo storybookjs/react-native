@@ -1,43 +1,46 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-// import { setupGraphiQL } from '@storybook/addon-graphql';
 
-// const graphiql = setupGraphiQL({
-//   url: 'https://graphql-pokemon.now.sh/?',
-// });
+export default {
+  title: 'Addons|GraphQL',
+};
 
-storiesOf('Addons|GraphQL', module).add('get Pikachu', () => <div>hello</div>, {
-  graphiql: {
-    query: `{
-        pokemon(name: "Pikachu") {
-          id
-          number
-          name
-          attacks {
-            special {
-              name
-              type
-              damage
-            }
-          }
-          evolutions {
+export const getPikachu = () => <div>hello</div>;
+
+getPikachu.story = {
+  name: 'get Pikachu',
+  parameters: {
+    graphiql: {
+      query: `{
+          pokemon(name: "Pikachu") {
             id
             number
             name
-            weight {
-              minimum
-              maximum
-            }
             attacks {
-              fast {
+              special {
                 name
                 type
                 damage
               }
             }
+            evolutions {
+              id
+              number
+              name
+              weight {
+                minimum
+                maximum
+              }
+              attacks {
+                fast {
+                  name
+                  type
+                  damage
+                }
+              }
+            }
           }
-        }
-      }`,
-    url: 'https://graphql-pokemon.now.sh/?',
+        }`,
+      url: 'https://graphql-pokemon.now.sh/?',
+    },
   },
-});
+};

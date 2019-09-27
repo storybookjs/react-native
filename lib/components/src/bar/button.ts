@@ -1,7 +1,8 @@
 import { styled } from '@storybook/theming';
 
-interface TabButtonProps {
+export interface TabButtonProps {
   active?: boolean;
+  textColor?: string;
 }
 
 export const TabButton = styled.button<TabButtonProps>(
@@ -38,20 +39,20 @@ export const TabButton = styled.button<TabButtonProps>(
       borderBottomColor: theme.color.secondary,
     },
   }),
-  ({ active, theme }) =>
+  ({ active, textColor, theme }) =>
     active
       ? {
-          color: theme.barSelectedColor,
+          color: textColor || theme.barSelectedColor,
           borderBottomColor: theme.barSelectedColor,
         }
       : {
-          color: 'inherit',
+          color: textColor || 'inherit',
           borderBottomColor: 'transparent',
         }
 );
 TabButton.displayName = 'TabButton';
 
-interface IconButtonProps {
+export interface IconButtonProps {
   active?: boolean;
 }
 

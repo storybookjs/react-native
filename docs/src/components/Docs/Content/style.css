@@ -37,7 +37,7 @@
 }
 
 #docs-content .markdown h2 {
-  font-size: 20px;
+  font-size: 28px;
   margin: 30px 0 10px 0;
 }
 
@@ -81,16 +81,24 @@
   color: #333;
 }
 
+
+#docs-content .markdown > div {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 #docs-content .markdown pre {
   border: 0;
   border-radius: 0;
   padding: 0;
+  background: none;
+  background-color: none;
 }
 
 #docs-content .markdown pre code {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 14px;
   line-height: 20px;
+  background: none;
   background-color: #f7f7f7;
   padding: 10px 12px;
 }

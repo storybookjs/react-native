@@ -8,7 +8,7 @@ const action2 = action('action2');
 const action3 = action('action3');
 
 export default {
-  Component: ActionBar,
+  component: ActionBar,
   title: 'Basics|ActionBar',
   decorators: [
     (storyFn: () => ReactNode) => (

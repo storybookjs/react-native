@@ -1,0 +1,19 @@
+import { Button } from '@storybook/react/demo';
+import { Preview, Story, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Button" component={Button} parameters={{ notes: 'component notes' }} />
+
+# Preview
+
+Previews can contain normal components, stories, and story references
+
+<Preview>
+  <Button>Just a button</Button>
+  <Story name="hello button">
+    <Button>Hello button</Button>
+  </Story>
+  <Story name="two">
+    <Button>Two</Button>
+  </Story>
+  <Story id="welcome--welcome" />
+</Preview>

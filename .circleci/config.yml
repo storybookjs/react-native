@@ -4,7 +4,7 @@ aliases:
   - &defaults
     working_directory: /tmp/storybook
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
 
 dependencies:
   pre:
@@ -38,6 +38,7 @@ jobs:
             - node_modules
             - examples
             - addons
+            - dev-kits
             - app
             - lib
   chromatic:
@@ -49,6 +50,17 @@ jobs:
       - run:
           name: Run chromatic on the pre-built storybook
           command: yarn chromatic -- -d ./storybook-static
+  packtracker:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Report webpack stats for manager of official storybook
+          command: |
+            cd examples/official-storybook
+            yarn packtracker
   examples:
     <<: *defaults
     steps:
@@ -309,29 +321,6 @@ jobs:
       - run:
           name: Upload coverage
           command: yarn coverage
-  cli-test:
-    <<: *defaults
-    environment:
-      BASH_ENV: ~/.bashrc
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: Test
-          command: yarn test --cli
-          no_output_timeout: 1800
-  cli-test-latest-cra:
-    <<: *defaults
-    environment:
-      BASH_ENV: ~/.bashrc
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: Test CLI with latest CR(N)A
-          command: yarn test-latest-cra
 workflows:
   version: 2
   build_test_deploy:
@@ -349,6 +338,9 @@ workflows:
       - smoke-tests:
           requires:
             - build
+      - packtracker:
+          requires:
+            - build
       - native-smoke-tests:
           requires:
             - build
@@ -358,12 +350,6 @@ workflows:
       - coverage:
           requires:
             - test
-      - cli-test:
-          requires:
-            - build
-      - cli-test-latest-cra:
-          requires:
-            - build
       - chromatic:
           requires:
             - examples

@@ -1,5 +1,4 @@
 /* eslint-disable no-shadow */
-/* eslint-disable no-use-before-define */
 /* eslint-disable no-bitwise */
 /* eslint-disable no-underscore-dangle */
 import { OperatingSystem } from './platform';
@@ -499,11 +498,14 @@ export function createKeyBinding(keybinding: number, OS: OperatingSystem): Keybi
 
   if (chordPart !== 0) {
     return new ChordKeybinding(
+      // eslint-disable-next-line no-use-before-define
       createSimpleKeybinding(firstPart, OS),
+      // eslint-disable-next-line no-use-before-define
       createSimpleKeybinding(chordPart, OS)
     );
   }
 
+  // eslint-disable-next-line no-use-before-define
   return createSimpleKeybinding(firstPart, OS);
 }
 

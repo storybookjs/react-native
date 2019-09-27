@@ -24,6 +24,7 @@ export interface UI {
   url?: string;
   enableShortcuts: boolean;
   sidebarAnimations: boolean;
+  docsMode: boolean;
 }
 
 export interface SubState {
@@ -132,6 +133,7 @@ const initial: SubState = {
   ui: {
     enableShortcuts: true,
     sidebarAnimations: true,
+    docsMode: false,
   },
   layout: {
     isToolshown: true,

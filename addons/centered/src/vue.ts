@@ -1,6 +1,8 @@
+import { makeDecorator } from '@storybook/addons';
+import parameters from './parameters';
 import styles from './styles';
 
-export default function() {
+function centered() {
   return {
     template: `
       <div :style="style">
@@ -14,6 +16,11 @@ export default function() {
     },
   };
 }
+
+export default makeDecorator({
+  ...parameters,
+  wrapper: centered,
+});
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();

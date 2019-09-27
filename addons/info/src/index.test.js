@@ -33,7 +33,9 @@ const storybookReactClassMock = {
 # Awesome test component description
 ## with markdown support
 **bold** *cursive*
-    `,
+\`\`\`js
+a;
+\`\`\``,
     name: 'TestComponent',
   },
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-import { storiesOf, configure, addDecorator, addParameters } from '@storybook/react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { Global, ThemeProvider, themes, createReset, convert } from '@storybook/theming';
-
 import { withCssResources } from '@storybook/addon-cssresources';
 import { withA11y } from '@storybook/addon-a11y';
 import { withNotes } from '@storybook/addon-notes';
+import { DocsPage } from '@storybook/addon-docs/blocks';
 
 import 'storybook-chromatic';
 
@@ -49,84 +49,31 @@ addParameters({
   options: {
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: '|',
-    theme: { base: 'light', brandTitle: 'Storybook!' },
+    theme: themes.light, // { base: 'dark', brandTitle: 'Storybook!' },
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, { numeric: true }),
   },
   backgrounds: [
     { name: 'storybook app', value: themes.light.appBg, default: true },
     { name: 'light', value: '#eeeeee' },
     { name: 'dark', value: '#222222' },
   ],
+  docs: {
+    // eslint-disable-next-line react/prop-types
+    page: ({ context }) => (
+      <DocsPage
+        context={context}
+        subtitleSlot={({ selectedKind }) => `Subtitle: ${selectedKind}`}
+      />
+    ),
+  },
 });
 
-let previousExports = {};
-if (module && module.hot && module.hot.dispose) {
-  ({ previousExports = {} } = module.hot.data || {});
-
-  module.hot.dispose(data => {
-    // eslint-disable-next-line no-param-reassign
-    data.previousExports = previousExports;
-  });
-}
-
-// The simplest version of examples would just export this function for users to use
-function importAll(context) {
-  const storyStore = window.__STORYBOOK_CLIENT_API__._storyStore; // eslint-disable-line no-undef, no-underscore-dangle
-
-  context.keys().forEach(filename => {
-    const fileExports = context(filename);
-
-    // A old-style story file
-    if (!fileExports.default) {
-      return;
-    }
-
-    const { default: component, ...examples } = fileExports;
-    let componentOptions = component;
-    if (component.prototype && component.prototype.isReactComponent) {
-      componentOptions = { component };
-    }
-    const kindName = componentOptions.title || componentOptions.component.displayName;
-
-    if (previousExports[filename]) {
-      if (previousExports[filename] === fileExports) {
-        return;
-      }
-
-      // Otherwise clear this kind
-      storyStore.removeStoryKind(kindName);
-      storyStore.incrementRevision();
-    }
-
-    // We pass true here to avoid the warning about HMR. It's cool clientApi, we got this
-    const kind = storiesOf(kindName, true);
-
-    (componentOptions.decorators || []).forEach(decorator => {
-      kind.addDecorator(decorator);
-    });
-    if (componentOptions.parameters) {
-      kind.addParameters(componentOptions.parameters);
-    }
-
-    Object.keys(examples).forEach(key => {
-      const example = examples[key];
-      const { title = key, parameters } = example;
-      kind.add(title, example, parameters);
-    });
-
-    previousExports[filename] = fileExports;
-  });
-}
-
-function loadStories() {
-  let req;
-  req = require.context('../../lib/ui/src', true, /\.stories\.js$/);
-  importAll(req);
-
-  req = require.context('../../lib/components/src', true, /\.stories\.tsx?$/);
-  importAll(req);
-
-  req = require.context('./stories', true, /\.stories\.js$/);
-  importAll(req);
-}
-
-configure(loadStories, module);
+configure(
+  [
+    require.context('../../lib/ui/src', true, /\.stories\.(js|tsx?|mdx)$/),
+    require.context('../../lib/components/src', true, /\.stories\.(js|tsx?|mdx)$/),
+    require.context('./stories', true, /\.stories\.(js|tsx?|mdx)$/),
+  ],
+  module
+);

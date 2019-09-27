@@ -1,12 +1,11 @@
 {
   "name": "cra-kitchen-sink",
-  "version": "5.1.11",
+  "version": "5.3.0-alpha.4",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public",
     "eject": "react-scripts eject",
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9010 -s public",
     "test": "react-scripts test --env=jsdom"
@@ -19,22 +18,23 @@
     "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.1.11",
-    "@storybook/addon-actions": "5.1.11",
-    "@storybook/addon-backgrounds": "5.1.11",
-    "@storybook/addon-centered": "5.1.11",
-    "@storybook/addon-events": "5.1.11",
-    "@storybook/addon-info": "5.1.11",
-    "@storybook/addon-jest": "5.1.11",
-    "@storybook/addon-knobs": "5.1.11",
-    "@storybook/addon-links": "5.1.11",
-    "@storybook/addon-notes": "5.1.11",
-    "@storybook/addon-options": "5.1.11",
-    "@storybook/addon-storyshots": "5.1.11",
-    "@storybook/addons": "5.1.11",
-    "@storybook/client-logger": "5.1.11",
-    "@storybook/react": "5.1.11",
-    "@storybook/theming": "5.1.11",
-    "react-scripts": "^2.1.8"
+    "@storybook/addon-a11y": "5.3.0-alpha.4",
+    "@storybook/addon-actions": "5.3.0-alpha.4",
+    "@storybook/addon-backgrounds": "5.3.0-alpha.4",
+    "@storybook/addon-centered": "5.3.0-alpha.4",
+    "@storybook/addon-docs": "5.3.0-alpha.4",
+    "@storybook/addon-events": "5.3.0-alpha.4",
+    "@storybook/addon-info": "5.3.0-alpha.4",
+    "@storybook/addon-jest": "5.3.0-alpha.4",
+    "@storybook/addon-knobs": "5.3.0-alpha.4",
+    "@storybook/addon-links": "5.3.0-alpha.4",
+    "@storybook/addon-notes": "5.3.0-alpha.4",
+    "@storybook/addon-options": "5.3.0-alpha.4",
+    "@storybook/addon-storyshots": "5.3.0-alpha.4",
+    "@storybook/addons": "5.3.0-alpha.4",
+    "@storybook/client-logger": "5.3.0-alpha.4",
+    "@storybook/react": "5.3.0-alpha.4",
+    "@storybook/theming": "5.3.0-alpha.4",
+    "react-scripts": "^3.0.1"
   }
 }

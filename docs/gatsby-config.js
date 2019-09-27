@@ -34,11 +34,17 @@ module.exports = {
         '/configurations/custom-babel-config/',
         '/configurations/typescript-config/',
         '/configurations/add-custom-head-tags/',
+        '/configurations/add-custom-body/',
         '/configurations/serving-static-files/',
         '/configurations/env-vars/',
         '/configurations/theming/',
         '/configurations/cli-options/',
         '/configurations/standalone-options/',
+      ],
+      formats: [
+        '/formats/component-story-format/',
+        '/formats/storiesof-api/',
+        '/formats/mdx-syntax/',
       ],
       testing: [
         '/testing/react-ui-testing/',

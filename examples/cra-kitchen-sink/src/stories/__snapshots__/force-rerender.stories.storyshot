@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots Force ReRender button 1`] = `
-<button
-  type="button"
->
-  Click me to increment: 0
-</button>
-`;

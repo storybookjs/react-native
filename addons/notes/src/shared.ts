@@ -11,5 +11,11 @@ interface MarkdownParameter {
 interface DisabledParameter {
   disable: boolean;
 }
+type TabsParameter = Record<string, string>;
 
-export type Parameters = string | TextParameter | MarkdownParameter | DisabledParameter;
+export type Parameters =
+  | string
+  | TextParameter
+  | MarkdownParameter
+  | DisabledParameter
+  | TabsParameter;

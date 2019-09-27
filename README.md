@@ -1,36 +1,61 @@
-# Storybook
-
 <p align="center">
-  <a href="https://circleci.com/gh/storybookjs/storybook"><img src="https://circleci.com/gh/storybookjs/storybook.svg?style=shield" alt="Build Status on CircleCI" /></a>
-  <a href="https://www.codefactor.io/repository/github/storybookjs/storybook"><img src="https://www.codefactor.io/repository/github/storybookjs/storybook/badge" alt="CodeFactor" /></a>
-  <a href="https://snyk.io/test/github/storybookjs/storybook"><img src="https://snyk.io/test/github/storybookjs/storybook/badge.svg" alt="Known Vulnerabilities" /></a>
-  <a href="https://bettercodehub.com/results/storybookjs/storybook"><img src="https://bettercodehub.com/edge/badge/storybookjs/storybook" alt="BCH compliance" /></a>
-  <a href="https://codecov.io/gh/storybookjs/storybook"><img src="https://codecov.io/gh/storybookjs/storybook/branch/master/graph/badge.svg" alt="codecov" /></a>
-  <a href="https://github.com/storybookjs/storybook/blob/master/LICENSE"><img src="https://img.shields.io/github/license/storybookjs/storybook.svg" alt="License" /></a></p>
-</p>
-<p align="center">
-  <a href="https://discord.gg/sMFvFsG"><img src="https://img.shields.io/badge/discord-join-7289DA.svg?logo=discord&longCache=true&style=flat" /></a>
-  <a href="https://now-examples-slackin-rrirkqohko.now.sh/"><img src="https://now-examples-slackin-rrirkqohko.now.sh/badge.svg?logo=slack" alt="Storybook Slack" /></a>
-  <a href="#backers"><img src="https://opencollective.com/storybook/backers/badge.svg" alt="Backers on Open Collective" /></a>
-  <a href="#sponsors"><img src="https://opencollective.com/storybook/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://storybook.js.org/">
+    <img src="https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png" alt="Storybook" width="400" />
+  </a>
 </p>
 
----
+<p align="center">Build bulletproof UI components faster</p>
+
+<br/>
+
+<p align="center">
+  <a href="https://circleci.com/gh/storybookjs/storybook">
+    <img src="https://circleci.com/gh/storybookjs/storybook.svg?style=shield" alt="Build Status on CircleCI" />
+  </a>
+  <a href="https://www.codefactor.io/repository/github/storybookjs/storybook">
+    <img src="https://www.codefactor.io/repository/github/storybookjs/storybook/badge" alt="CodeFactor" />
+  </a>
+  <a href="https://snyk.io/test/github/storybookjs/storybook">
+    <img src="https://snyk.io/test/github/storybookjs/storybook/badge.svg" alt="Known Vulnerabilities" />
+  </a>
+  <a href="https://codecov.io/gh/storybookjs/storybook">
+    <img src="https://codecov.io/gh/storybookjs/storybook/branch/master/graph/badge.svg" alt="codecov" />
+  </a>
+  <a href="https://github.com/storybookjs/storybook/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/storybookjs/storybook.svg" alt="License" />
+  </a>
+  <br/>
+  <a href="https://discord.gg/sMFvFsG">
+    <img src="https://img.shields.io/badge/discord-join-7289DA.svg?logo=discord&longCache=true&style=flat" />
+  </a>
+  <a href="https://now-examples-slackin-rrirkqohko.now.sh/">
+    <img src="https://now-examples-slackin-rrirkqohko.now.sh/badge.svg?logo=slack" alt="Storybook Slack" />
+  </a>
+  <a href="#backers">
+    <img src="https://opencollective.com/storybook/backers/badge.svg" alt="Backers on Open Collective" />
+  </a>
+  <a href="#sponsors">
+    <img src="https://opencollective.com/storybook/sponsors/badge.svg" alt="Sponsors on Open Collective" />
+  </a>
+  <a href="https://twitter.com/intent/follow?screen_name=storybookjs">
+    <img src="https://badgen.net/twitter/follow/storybookjs?icon=twitter&label=%40storybookjs" alt="Official Twitter Handle" />
+  </a>
+</p>
 
 Storybook is a development environment for UI components.
 It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
-
-## Intro
 
 <center>
   <img src="media/storybook-intro.gif" width="100%" />
 </center>
 
 <p align="center">
-  README for:<br/>
+  View README for:<br/>
   <a href="https://github.com/storybookjs/storybook/blob/master/README.md" title="latest"><img alt="latest" src="https://img.shields.io/npm/v/@storybook/core/latest.svg" /></a>
   <a href="https://github.com/storybookjs/storybook/blob/next/README.md" title="next"><img alt="next" src="https://img.shields.io/npm/v/@storybook/core/next.svg" /></a>
 </p>
+
+## Intro
 
 Storybook runs outside of your app. This allows you to develop UI components in isolation, which can improve component reuse, testability, and development speed. You can build quickly without having to worry about application-specific dependencies.
 
@@ -51,6 +76,7 @@ Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduct
   - 👨‍💻[Development scripts](#development-scripts)
   - 💵[Backers](#backers)
   - 💸[Sponsors](#sponsors)
+- :memo:[License](#license)
 
 ## Getting Started
 
@@ -112,6 +138,7 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 | [centered](addons/centered/)                | Center the alignment of your components within the Storybook UI            |
 | [contexts](addons/contexts/)                | Interactively inject component contexts for stories in the Storybook UI    |
 | [cssresources](addons/cssresources/)        | Dynamically add/remove css resources to the component iframe               |
+| [design assets](addons/design-assets/)      | View images, videos, weblinks alongside your story                         |
 | [events](addons/events/)                    | Interactively fire events to components that respond to EventEmitter       |
 | [graphql](addons/graphql/)                  | Query a GraphQL server within Storybook stories                            |
 | [google-analytics](addons/google-analytics) | Reports google analytics on stories                                        |
@@ -137,7 +164,7 @@ We have a badge! Link it to your live Storybook example.
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](link to site)
 ```
 
-If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [press repo](https://github.com/storybookjs/press).
+If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [brand repo](https://github.com/storybookjs/brand).
 
 ## Community
 
@@ -162,7 +189,7 @@ Looking for a first issue to tackle?
 
 ### Development scripts
 
-Storybook is organized as a monorepo using [Lerna](https://lernajs.io). Useful scripts include:
+Storybook is organized as a monorepo using [Lerna](https://lerna.js.org/). Useful scripts include:
 
 #### `yarn bootstrap`
 

@@ -8,6 +8,7 @@
 |[centered](addons/centered)                 |+| |+|+| |+|+| |+| |+|+|
 |[contexts](addons/contexts)                 |+| |+| | | | | | | | |+|
 |[events](addons/events)                     |+| |+|+|+|+|+|+| | |+|+|
+|[design assets](addons/design-assets)       |+| |+|+|+|+|+|+|+|+|+|+|
 |[graphql](addons/graphql)                   |+| | | | | | | | | | | |
 |[google-analytics](addons/google-analytics) |+|+|+|+|+|+|+|+|+|+|+|+|
 |[info](addons/info)                         |+| | | | | | | | | | | |

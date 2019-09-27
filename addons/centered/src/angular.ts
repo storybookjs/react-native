@@ -1,3 +1,6 @@
+import { makeDecorator, StoryFn } from '@storybook/addons';
+import { IStory } from '../angular.d';
+import parameters from './parameters';
 import styles from './styles';
 
 function getComponentSelector(component: any) {
@@ -43,7 +46,7 @@ function getModuleMetadata(metadata: any) {
   return moduleMetadata;
 }
 
-export default function(metadataFn: any) {
+function centered(metadataFn: StoryFn<IStory>) {
   const metadata = metadataFn();
 
   return {
@@ -56,6 +59,11 @@ export default function(metadataFn: any) {
     },
   };
 }
+
+export default makeDecorator({
+  ...parameters,
+  wrapper: getStory => centered(getStory as StoryFn),
+});
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();

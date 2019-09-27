@@ -1,6 +1,6 @@
 {
   "name": "@storybook/preact",
-  "version": "5.1.11",
+  "version": "5.3.0-alpha.4",
   "description": "Storybook for Preact: Develop Preact Component in isolation.",
   "keywords": [
     "storybook"
@@ -15,8 +15,14 @@
     "directory": "app/preact"
   },
   "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "standalone.js"
+  ],
   "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -27,7 +33,9 @@
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@storybook/core": "5.1.11",
+    "@storybook/addons": "5.3.0-alpha.4",
+    "@storybook/core": "5.3.0-alpha.4",
+    "@types/webpack-env": "^1.13.9",
     "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
@@ -37,6 +45,7 @@
     "preact": "^8.4.2"
   },
   "peerDependencies": {
+    "@babel/core": "7.0.1",
     "babel-loader": "^7.0.0 || ^8.0.0",
     "preact": "^8.4.2"
   },
