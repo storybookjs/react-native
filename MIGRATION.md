@@ -2,6 +2,8 @@
 
 - [Migration](#migration)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
+    - [Source-loader](#source-loader)
+    - [Default viewports](#default-viewports)
     - [Grid toolbar-feature](#grid-toolbar-feature)
     - [Docs mode docgen](#docs-mode-docgen)
     - [storySort option](#storysort-option)
@@ -67,9 +69,19 @@
 
 ## From version 5.1.x to 5.2.x
 
-### default viewports
+### Source-loader
 
-The default viewports have been reduced to a smaller set, we think is enough for most usecases.
+Addon-storysource contains a loader, `@storybook/addon-storysource/loader`, which has been deprecated in 5.2. If you use it, you'll see the warning:
+
+```
+@storybook/addon-storysource/loader is deprecated, please use @storybook/source-loader instead.
+```
+
+To upgrade to `@storybook/source-loader`, simply `npm install -D @storybook/source-laoder` (or use `yarn`), and replace every instance of `@storybook/addon-storysource/loaoder` with `@storybook/source-loader`.
+
+### Default viewports
+
+The default viewports have been reduced to a smaller set, we think is enough for most use cases.
 You can get the old default back by adding the following to your `config.js`:
 
 ```js

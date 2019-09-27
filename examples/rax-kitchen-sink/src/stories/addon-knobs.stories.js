@@ -1,7 +1,6 @@
 import { createElement } from 'rax';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
-import Button from 'rax-button';
 import Text from 'rax-text';
 
 export default {
@@ -29,9 +28,9 @@ export const withAButton = () => {
         color: disabled ? '#666' : '#000',
       };
   return (
-    <Button style={style} disabled={disabled}>
+    <button style={style} disabled={disabled} type="button">
       <Text style={textStyle}>{text('Label', 'Hello Storybook')}</Text>
-    </Button>
+    </button>
   );
 };
 

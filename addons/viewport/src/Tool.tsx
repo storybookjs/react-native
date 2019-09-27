@@ -20,6 +20,7 @@ interface ViewportItem {
 }
 
 const toList = memoize(50)((items: ViewportMap): ViewportItem[] => [
+  // eslint-disable-next-line no-use-before-define
   ...baseViewports,
   ...Object.entries(items).map(([id, { name, ...rest }]) => ({ ...rest, id, title: name })),
 ]);
@@ -71,7 +72,11 @@ interface Link extends LinkBase {
   onClick: () => void;
 }
 
-const flip = ({ width, height }: ViewportStyles) => ({ height: width, width: height });
+const flip = ({ width, height, ...styles }: ViewportStyles) => ({
+  ...styles,
+  height: width,
+  width: height,
+});
 
 const ActiveViewportSize = styled.div(() => ({
   display: 'inline-flex',
@@ -132,6 +137,14 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
       isRotated: false,
     });
     const list = toList(viewports);
+
+    useEffect(() => {
+      setState({
+        selected:
+          defaultViewport || (viewports[state.selected] ? state.selected : responsiveViewport.id),
+        isRotated: state.isRotated,
+      });
+    }, [defaultViewport]);
 
     const { selected, isRotated } = state;
     const item =
