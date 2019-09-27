@@ -68,8 +68,8 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>
         <MDXProvider components={components}>
-          <DocsWrapper>
-            <DocsContent>{children}</DocsContent>
+          <DocsWrapper className="sbdocs sbdocs-wrapper">
+            <DocsContent className="sbdocs sbdocs-content">{children}</DocsContent>
           </DocsWrapper>
         </MDXProvider>
       </ThemeProvider>
