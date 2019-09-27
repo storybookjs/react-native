@@ -64,78 +64,77 @@ To do that, simply create a file at `.storybook/config.js` with the following co
 ```js
 import { configure } from '@storybook/ember';
 
-function loadStories() {
-  require('../stories/index.js');
-  // You can require as many stories as you need.
-}
-
-configure(loadStories, module);
+configure(require.context('../src', true, /\.stories\.js$/), module);
 ```
 
-That'll load stories in `../stories/index.js`.
+That will load all the stories underneath your `../src` directory that match the pattern `*.stories.js`. We recommend co-locating your stories with your source files, but you can place them wherever you choose.
 
 ## Write your stories
 
-Now you can write some stories inside the `../stories/index.js` file, like this:
+Now you can write some stories inside the `../stories/index.stories.js` file, like this:
 
 > It is important that you import the `hbs` function that is provided by a babel plugin in `@storybook/ember`
 
 ```js
 import hbs from 'htmlbars-inline-precompile';
-import { storiesOf } from '@storybook/ember';
 
-storiesOf('Demo', module)
-  .add('heading', () => hbs`<h1>Hello World</h1>`)
-  .add('button', () => {
-    return {
-      template: hbs`<button {{action onClick}}>
-        Hello Button
-      </button>`,
-      context: {
-        onClick: (e) => console.log(e)
-      }
+export default { title: 'Demo' };
+
+export const heading = () => hbs`<h1>Hello World</h1>`;
+
+export const button = () => {
+  return {
+    template: hbs`<button {{action onClick}}>
+      Hello Button
+    </button>`,
+    context: {
+      onClick: (e) => console.log(e)
     }
-  })
-  .add('component', () => {
-    return {
-      template: hbs`{{foo-bar
-        click=onClick
-      }}`,
-      context: {
-        onClick: (e) => console.log(e)
-      }
+  }
+};
+
+export const component = () => {
+  return {
+    template: hbs`{{foo-bar
+      click=onClick
+    }}`,
+    context: {
+      onClick: (e) => console.log(e)
     }
-  });
+  }
+};
 ```
 
 > If you are using an older version of ember <= 3.1 please use this story style
 
 ```js
 import { compile } from 'ember-source/dist/ember-template-compiler';
-import { storiesOf } from '@storybook/ember';
 
-storiesOf('Demo', module)
-  .add('heading', () => compile(`<h1>Hello World</h1>`))
-  .add('button', () => {
-    return {
-      template: compile(`<button {{action onClick}}>
-        Hello Button
-      </button>`),
-      context: {
-        onClick: (e) => console.log(e)
-      }
+export default { title: 'Demo' };
+
+export const heading = () => compile(`<h1>Hello World</h1>`);
+
+export const button = () => {
+  return {
+    template: compile(`<button {{action onClick}}>
+      Hello Button
+    </button>`),
+    context: {
+      onClick: (e) => console.log(e)
     }
-  })
-  .add('component', () => {
-    return {
-      template: compile(`{{foo-bar
-        click=onClick
-      }}`),
-      context: {
-        onClick: (e) => console.log(e)
-      }
+  }
+};
+
+export const component = () => {
+  return {
+    template: compile(`{{foo-bar
+      click=onClick
+    }}`),
+    context: {
+      onClick: (e) => console.log(e)
     }
-  });
+  }
+};
 ```
 
 A story is either:

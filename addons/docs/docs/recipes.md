@@ -19,7 +19,7 @@ If you want to intersperse longform documentation in your Storybook, for example
 
 ## Pure MDX Stories
 
-[MDX](mdx.md) is an alternative to syntax to CSF that allows you co-locate your stories and your documentation. Everything you can do in CSF, you can do in MDX. And if you're consuming it in [Webpack](https://webpack.js.org/), it exposes an _identical_ interface, so the two files are interchangeable. Some teams will choose to write all of their Storybook in MDX and never look back.
+[MDX](mdx.md) is an alternative syntax to CSF that allows you to co-locate your stories and your documentation. Everything you can do in CSF, you can do in MDX. And if you're consuming it in [Webpack](https://webpack.js.org/), it exposes an _identical_ interface, so the two files are interchangeable. Some teams will choose to write all of their Storybook in MDX and never look back.
 
 ## Mixed CSF / MDX Stories
 
@@ -132,7 +132,8 @@ yarn build-storybook --docs
 
 Want to learn more? Here are some more articles on Storybook Docs:
 
-- References: [README](../README.md) / [DocsPage](docspage.md) / [MDX](mdx.md) / [FAQ](faq.md)
+- References: [README](../README.md) / [DocsPage](docspage.md) / [MDX](mdx.md) / [FAQ](faq.md) / [Theming](theming.md)
 - Vision: [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
+- Announcement: [DocsPage](https://medium.com/storybookjs/storybook-docspage-e185bc3622bf)
 - Example: [Storybook Design System](https://github.com/storybookjs/design-system)
 - [Technical preview guide](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing)
