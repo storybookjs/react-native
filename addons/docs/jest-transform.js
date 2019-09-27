@@ -1,13 +1,12 @@
 const mdx = require('@mdx-js/mdx');
 const babel = require('babel-jest');
-const deasyncPromise = require('deasync-promise');
 const createCompiler = require('./mdx-compiler-plugin');
 
 const compilers = [createCompiler({})];
 
 module.exports = {
   process(src, filename, config, options) {
-    let result = deasyncPromise(mdx(src, { compilers, filepath: filename }));
+    let result = mdx.sync(src, { compilers, filepath: filename });
 
     result = `/* @jsx mdx */
     import React from 'react'
