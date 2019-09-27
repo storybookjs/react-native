@@ -1,11 +1,12 @@
-/* eslint-disable react/destructuring-assignment */
-
 import React from 'react';
+import { document } from 'global';
 import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
 import { DocsWrapper, DocsContent, Source } from '@storybook/components';
 import { components as htmlComponents, Code } from '@storybook/components/html';
 import { DocsContextProps, DocsContext } from './DocsContext';
+import { anchorBlockIdFromId } from './Anchor';
+import { storyBlockIdFromId } from './Story';
 
 interface DocsContainerProps {
   context: DocsContextProps;
@@ -44,17 +45,31 @@ export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
   context,
   children,
 }) => {
-  const parameters = (context && context.parameters) || {};
+  const { id: storyId = null, parameters = {} } = context || {};
   const options = parameters.options || {};
   const theme = ensureTheme(options.theme);
-  const { components: userComponents = null } = options.docs || {};
+  const { components: userComponents = null } = parameters.docs || {};
   const components = { ...defaultComponents, ...userComponents };
+
+  React.useEffect(() => {
+    let element = document.getElementById(anchorBlockIdFromId(storyId));
+    if (!element) {
+      element = document.getElementById(storyBlockIdFromId(storyId));
+    }
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+        inline: 'nearest',
+      });
+    }
+  }, [storyId]);
   return (
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>
         <MDXProvider components={components}>
-          <DocsWrapper>
-            <DocsContent>{children}</DocsContent>
+          <DocsWrapper className="sbdocs sbdocs-wrapper">
+            <DocsContent className="sbdocs sbdocs-content">{children}</DocsContent>
           </DocsWrapper>
         </MDXProvider>
       </ThemeProvider>

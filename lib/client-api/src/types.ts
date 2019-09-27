@@ -7,6 +7,7 @@ import {
   DecoratorFunction,
 } from '@storybook/addons';
 import StoryStore from './story_store';
+import { HooksContext } from './hooks';
 
 export interface ErrorLike {
   message: string;
@@ -18,6 +19,7 @@ export interface StoreItem extends StoryContext {
   getOriginal: () => StoryFn;
   story: string;
   storyFn: StoryFn;
+  hooks: HooksContext;
 }
 
 export interface StoreData {

@@ -6,6 +6,7 @@
 - [Pure MDX Stories](#pure-mdx-stories)
 - [Mixed CSF / MDX Stories](#mixed-csf--mdx-stories)
 - [CSF Stories with MDX Docs](#csf-stories-with-mdx-docs)
+- [Mixing storiesOf with CSF/MDX](#mixing-storiesof-with-csfmdx)
 - [Migrating from notes/info addons](#migrating-from-notesinfo-addons)
 - [Exporting documentation](#exporting-documentation)
 - [More resources](#more-resources)
@@ -18,7 +19,7 @@ If you want to intersperse longform documentation in your Storybook, for example
 
 ## Pure MDX Stories
 
-[MDX](mdx.md) is an alternative to syntax to CSF that allows you co-locate your stories and your documentation. Everything you can do in CSF, you can do in MDX. And if you're consuming it in [Webpack](https://webpack.js.org/), it exposes an _identical_ interface, so the two files are interchangeable. Some teams will choose to write all of their Storybook in MDX and never look back.
+[MDX](mdx.md) is an alternative syntax to CSF that allows you to co-locate your stories and your documentation. Everything you can do in CSF, you can do in MDX. And if you're consuming it in [Webpack](https://webpack.js.org/), it exposes an _identical_ interface, so the two files are interchangeable. Some teams will choose to write all of their Storybook in MDX and never look back.
 
 ## Mixed CSF / MDX Stories
 
@@ -56,7 +57,9 @@ import mdx from './Button.mdx';
 export default {
   title: 'Demo/Button',
   parameters: {
-    docs: mdx,
+    docs: {
+      page: mdx,
+    },
   },
 };
 
@@ -68,6 +71,34 @@ Note that in contrast to other examples, the MDX file suffix is `.mdx` rather th
 1. You don't need to provide a `Meta` declaration.
 2. You can refer to existing stories (i.e. `<Story id="...">`) but cannot define new stories (i.e. `<Story name="...">`).
 3. The documentation gets exported as the default export (MDX default) rather than as a parameter hanging off the default export (CSF).
+
+## Mixing storiesOf with CSF/MDX
+
+You might have a collection of stories using the `storiesOf` API and want to add CSF/MDX piecemeal. Or you might have certain stories that are only possible with the `storiesOf` API (e.g. dynamically generated ones)
+
+So how do you mix these two types? The first argument to `configure` can be a `require.context "req"`, an array of `req's`, or a `loader function`. The loader function should either return null or an array of module exports that include the default export. The default export is used by `configure` to load CSF/MDX files.
+
+So here's a naive implementation of a loader function that assumes that none of your `storiesOf` files contains a default export, and filters out those exports:
+
+```js
+const loadFn = () => {
+  const req = require.context('../src', true, /\.stories\.js$/);
+  return req
+    .keys()
+    .map(fname => req(fname))
+    .filter(exp => !!exp.default);
+};
+
+configure(loadFn, module);
+```
+
+We could have baked this heuristic into Storybook, but we can't assume that your `storiesOf` files don't have default exports. If they do, you can filter them some other way (e.g. by file name).
+
+If you don't filter out those files, you'll see the following error:
+
+> "Loader function passed to 'configure' should return void or an array of module exports that all contain a 'default' export"
+
+We made this error explicit to make sure you know what you're doing when you mix `storiesOf` and CSF/MDX.
 
 ## Migrating from notes/info addons
 
@@ -101,7 +132,8 @@ yarn build-storybook --docs
 
 Want to learn more? Here are some more articles on Storybook Docs:
 
-- References: [README](../README.md) / [DocsPage](docspage.md) / [MDX](mdx.md) / [FAQ](faq.md)
+- References: [README](../README.md) / [DocsPage](docspage.md) / [MDX](mdx.md) / [FAQ](faq.md) / [Theming](theming.md)
 - Vision: [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
+- Announcement: [DocsPage](https://medium.com/storybookjs/storybook-docspage-e185bc3622bf)
 - Example: [Storybook Design System](https://github.com/storybookjs/design-system)
 - [Technical preview guide](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing)

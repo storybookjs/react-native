@@ -113,7 +113,7 @@ The default `tsconfig.json` that comes with CRA works great. If your stories are
 
 ## Create a TSX storybook index 
 
-The default storybook index file is `stories/index.js` -- you'll want to rename this to `stories/index.tsx`.
+The default storybook index file is `stories/index.stories.js` -- you'll want to rename this to `stories/index.stories.tsx`.
 
 ## Import tsx stories
 
@@ -122,13 +122,7 @@ Change `config.ts` inside the Storybook config directory (by default, it’s `.s
 ```js
 import { configure } from '@storybook/react';
 // automatically import all files ending in *.stories.tsx
-const req = require.context('../stories', true, /\.stories\.tsx$/);
-
-function loadStories() {
-  req.keys().forEach(req);
-}
-
-configure(loadStories, module);
+configure(require.context('../src', true, /\.stories\.tsx?$/), module)
 ```
 
 ## Using TypeScript with the TSDocgen addon

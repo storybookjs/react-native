@@ -8,6 +8,7 @@ import { Icons, IconButton, WithTooltip, TooltipLinkList } from '@storybook/comp
 
 import { useParameter, useAddonState } from '@storybook/api';
 import { PARAM_KEY, ADDON_ID } from './constants';
+import { MINIMAL_VIEWPORTS } from './defaults';
 import { ViewportAddonParameter, ViewportMap, ViewportStyles, Styles } from './models';
 
 interface ViewportItem {
@@ -19,6 +20,7 @@ interface ViewportItem {
 }
 
 const toList = memoize(50)((items: ViewportMap): ViewportItem[] => [
+  // eslint-disable-next-line no-use-before-define
   ...baseViewports,
   ...Object.entries(items).map(([id, { name, ...rest }]) => ({ ...rest, id, title: name })),
 ]);
@@ -70,7 +72,11 @@ interface Link extends LinkBase {
   onClick: () => void;
 }
 
-const flip = ({ width, height }: ViewportStyles) => ({ height: width, width: height });
+const flip = ({ width, height, ...styles }: ViewportStyles) => ({
+  ...styles,
+  height: width,
+  width: height,
+});
 
 const ActiveViewportSize = styled.div(() => ({
   display: 'inline-flex',
@@ -122,7 +128,7 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
     const { viewports, defaultViewport, disable } = useParameter<ViewportAddonParameter>(
       PARAM_KEY,
       {
-        viewports: {},
+        viewports: MINIMAL_VIEWPORTS,
         defaultViewport: responsiveViewport.id,
       }
     );
@@ -131,6 +137,14 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
       isRotated: false,
     });
     const list = toList(viewports);
+
+    useEffect(() => {
+      setState({
+        selected:
+          defaultViewport || (viewports[state.selected] ? state.selected : responsiveViewport.id),
+        isRotated: state.isRotated,
+      });
+    }, [defaultViewport]);
 
     const { selected, isRotated } = state;
     const item =
@@ -195,13 +209,15 @@ export const ViewportTool: FunctionComponent<{}> = React.memo(
                 },
                 [`#${wrapperId}`]: {
                   padding: theme.layoutMargin,
-                  display: 'grid',
                   alignContent: 'center',
                   alignItems: 'center',
                   justifyContent: 'center',
                   justifyItems: 'center',
                   overflow: 'auto',
-                  gridTemplateColumns: 'minmax(0, 1fr)',
+
+                  display: 'grid',
+                  gridTemplateColumns: '100%',
+                  gridTemplateRows: '100%',
                 },
               }}
             />

@@ -7,6 +7,7 @@ import { DocsContext } from './DocsContext';
 import { Description, getDocgen } from './Description';
 import { Story } from './Story';
 import { Preview } from './Preview';
+import { Anchor } from './Anchor';
 import { getPropsTableProps } from './Props';
 
 export interface SlotContext {
@@ -34,9 +35,9 @@ export interface DocsPageProps {
 interface DocsStoryProps {
   id: string;
   name: string;
-  description?: string;
   expanded?: boolean;
   withToolbar?: boolean;
+  parameters?: any;
 }
 
 interface StoryData {
@@ -81,17 +82,19 @@ const StoryHeading = H3;
 const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   id,
   name,
-  description,
   expanded = true,
   withToolbar = false,
+  parameters,
 }) => (
-  <>
-    {expanded && <StoryHeading>{name}</StoryHeading>}
-    {expanded && description && <Description markdown={description} />}
+  <Anchor storyId={id}>
+    {expanded && <StoryHeading>{(parameters && parameters.displayName) || name}</StoryHeading>}
+    {expanded && parameters && parameters.docs && parameters.docs.storyDescription && (
+      <Description markdown={parameters.docs.storyDescription} />
+    )}
     <Preview withToolbar={withToolbar}>
       <Story id={id} />
     </Preview>
-  </>
+  </Anchor>
 );
 
 export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
@@ -110,9 +113,7 @@ export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
       const propsTableProps = propsSlot(context);
 
       const { selectedKind, storyStore } = context;
-      const componentStories = (storyStore.raw() as StoryData[]).filter(
-        s => s.kind === selectedKind
-      );
+      const componentStories = storyStore.getStoriesForKind(selectedKind);
       const primary = primarySlot(componentStories, context);
       const stories = storiesSlot(componentStories, context);
 
