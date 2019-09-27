@@ -2,7 +2,7 @@ export {
   storiesOf,
   setAddon,
   addDecorator,
-  StoryDecorator,
+  DecoratorFn,
   addParameters,
   configure,
   getStorybook,
