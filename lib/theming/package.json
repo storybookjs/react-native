@@ -30,7 +30,6 @@
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
     "@storybook/client-logger": "5.3.0-alpha.4",
-    "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "deep-object-diff": "^1.1.0",
     "emotion-theming": "^10.0.19",
@@ -38,7 +37,8 @@
     "memoizerific": "^1.11.3",
     "polished": "^3.3.1",
     "prop-types": "^15.7.2",
-    "resolve-from": "^5.0.0"
+    "resolve-from": "^5.0.0",
+    "ts-dedent": "^1.1.0"
   },
   "peerDependencies": {
     "react": "*",

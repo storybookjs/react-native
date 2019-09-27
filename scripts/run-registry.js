@@ -3,7 +3,7 @@ import { spawn, exec } from 'child_process';
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import detectFreePort from 'detect-port';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 import fs from 'fs';
 
 import nodeCleanup from 'node-cleanup';
@@ -79,7 +79,7 @@ const applyRegistriesUrl = (yarnUrl, npmUrl, originalYarnUrl, originalNpmUrl) =>
   nodeCleanup(() => {
     registriesUrl(originalYarnUrl, originalNpmUrl);
 
-    logger.log(stripIndents`
+    logger.log(dedent`
       Your registry config has been restored from:
       npm: ${npmUrl} to ${originalNpmUrl} 
       yarn: ${yarnUrl} to ${originalYarnUrl} 
@@ -229,7 +229,7 @@ const run = async () => {
   logger.log(`🌿 verdaccio running on ${verdaccioUrl}`);
 
   if (shouldOverwrite) {
-    logger.log(stripIndents`
+    logger.log(dedent`
       You have chosen to change your system's default registry url. If this process fails for some reason and doesn't exit correctly, you may be stuck with a npm/yarn config that's broken.
       To fix this you can revert back to the registry urls you had before by running:
 
@@ -241,7 +241,7 @@ const run = async () => {
       The registry url is: ${verdaccioUrl}
     `);
   } else {
-    logger.log(stripIndents`
+    logger.log(dedent`
       You have chosen to NOT change your system's default registry url. 
 
       The registry is running locally, but you'll need to add a npm/yarn config file in your project in that points to the registry.
@@ -269,7 +269,7 @@ const run = async () => {
 
   await askForPublish(subset, verdaccioUrl, version);
 
-  logger.log(stripIndents`
+  logger.log(dedent`
     The verdaccio registry will now be terminated (this can take ±15 seconds, please be patient)
   `);
 
