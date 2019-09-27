@@ -19,6 +19,12 @@ interface ViewportItem {
   default?: boolean;
 }
 
+const toList = memoize(50)((items: ViewportMap): ViewportItem[] => [
+  // eslint-disable-next-line no-use-before-define
+  ...baseViewports,
+  ...Object.entries(items).map(([id, { name, ...rest }]) => ({ ...rest, id, title: name })),
+]);
+
 const responsiveViewport: ViewportItem = {
   id: 'reset',
   title: 'Reset viewport',
@@ -27,11 +33,6 @@ const responsiveViewport: ViewportItem = {
 };
 
 const baseViewports: ViewportItem[] = [responsiveViewport];
-
-const toList = memoize(50)((items: ViewportMap): ViewportItem[] => [
-  ...baseViewports,
-  ...Object.entries(items).map(([id, { name, ...rest }]) => ({ ...rest, id, title: name })),
-]);
 
 const toLinks = memoize(50)((list: ViewportItem[], active: LinkBase, set, state, close): Link[] => {
   return list
