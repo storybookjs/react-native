@@ -20,6 +20,7 @@ interface ViewportItem {
 }
 
 const toList = memoize(50)((items: ViewportMap): ViewportItem[] => [
+  // eslint-disable-next-line no-use-before-define
   ...baseViewports,
   ...Object.entries(items).map(([id, { name, ...rest }]) => ({ ...rest, id, title: name })),
 ]);
