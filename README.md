@@ -164,7 +164,7 @@ We have a badge! Link it to your live Storybook example.
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](link to site)
 ```
 
-If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [press repo](https://github.com/storybookjs/press).
+If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [brand repo](https://github.com/storybookjs/brand).
 
 ## Community
 

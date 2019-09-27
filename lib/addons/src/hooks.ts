@@ -1,6 +1,6 @@
-import { window } from 'global';
+import window from 'global';
 import { logger } from '@storybook/client-logger';
-import { FORCE_RE_RENDER, STORY_RENDERED } from '@storybook/core-events';
+import { FORCE_RE_RENDER, STORY_RENDERED, DOCS_RENDERED } from '@storybook/core-events';
 import addons, { StoryGetter, StoryContext } from './public_api';
 
 interface StoryStore {
@@ -31,6 +31,8 @@ interface Effect {
 type Decorator = (getStory: StoryGetter, context: StoryContext) => any;
 type AbstractFunction = (...args: any[]) => any;
 
+const RenderEvents = [STORY_RENDERED, DOCS_RENDERED];
+
 export class HooksContext {
   hookListsMap: WeakMap<AbstractFunction, Hook[]>;
 
@@ -53,6 +55,12 @@ export class HooksContext {
   hasUpdates: boolean;
 
   currentContext: StoryContext | null;
+
+  renderListener = () => {
+    this.triggerEffects();
+    this.currentContext = null;
+    this.removeRenderListeners();
+  };
 
   constructor() {
     this.init();
@@ -79,6 +87,7 @@ export class HooksContext {
       }
     });
     this.init();
+    this.removeRenderListeners();
   }
 
   getNextHook() {
@@ -103,6 +112,16 @@ export class HooksContext {
     });
     this.prevEffects = this.currentEffects;
     this.currentEffects = [];
+  }
+
+  addRenderListeners() {
+    const channel = addons.getChannel();
+    RenderEvents.forEach(e => channel.on(e, this.renderListener));
+  }
+
+  removeRenderListeners() {
+    const channel = addons.getChannel();
+    RenderEvents.forEach(e => channel.removeListener(e, this.renderListener));
   }
 }
 
@@ -170,10 +189,7 @@ export const applyHooks = (
         );
       }
     }
-    addons.getChannel().once(STORY_RENDERED, () => {
-      hooks.triggerEffects();
-      hooks.currentContext = null;
-    });
+    hooks.addRenderListeners();
     return result;
   };
 };

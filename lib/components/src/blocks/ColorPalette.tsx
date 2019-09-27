@@ -7,6 +7,7 @@ import { ResetWrapper } from '../typography/DocumentFormatting';
 
 const ItemTitle = styled.div<{}>(({ theme }) => ({
   fontWeight: theme.typography.weight.bold,
+  color: theme.color.defaultText,
 }));
 
 const ItemSubtitle = styled.div<{}>(({ theme }) => ({
@@ -92,7 +93,6 @@ const ListHeading = styled.div<{}>(({ theme }) => ({
   alignItems: 'center',
   paddingBottom: 20,
   fontWeight: theme.typography.weight.bold,
-
   color:
     theme.base === 'light'
       ? transparentize(0.4, theme.color.defaultText)

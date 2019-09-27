@@ -13,7 +13,7 @@ import { Placeholder } from '../placeholder/placeholder';
 import { FlexBar } from '../bar/bar';
 import { TabButton } from '../bar/button';
 
-const ignoreSsrWarning = 
+const ignoreSsrWarning =
   '/* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */';
 
 export interface WrapperProps {

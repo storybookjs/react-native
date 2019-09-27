@@ -1,9 +1,18 @@
 import React from 'react';
+import { MDXProvider } from '@mdx-js/react';
+import { components as docsComponents } from '@storybook/components/html';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
 import { StoryFn } from '@storybook/addons';
 import { CURRENT_SELECTION } from './shared';
 
 import { DocsContext, DocsContextProps } from './DocsContext';
+
+export const storyBlockIdFromId = (storyId: string) => `story--${storyId}`;
+
+const resetComponents: Record<string, React.ElementType> = {};
+Object.keys(docsComponents).forEach(key => {
+  resetComponents[key] = (props: any) => React.createElement(key, props);
+});
 
 interface CommonProps {
   height?: string;
@@ -72,7 +81,13 @@ const StoryContainer: React.FunctionComponent<StoryProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const storyProps = getStoryProps(props, context);
-      return <Story {...storyProps} />;
+      return (
+        <div id={storyBlockIdFromId(storyProps.id)}>
+          <MDXProvider components={resetComponents}>
+            <Story {...storyProps} />
+          </MDXProvider>
+        </div>
+      );
     }}
   </DocsContext.Consumer>
 );
