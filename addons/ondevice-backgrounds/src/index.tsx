@@ -5,6 +5,12 @@ import addons, { makeDecorator } from '@storybook/addons';
 import Events from './constants';
 import Container from './container';
 
+export interface Background {
+  name: string;
+  value: string;
+  default?: boolean;
+}
+
 export const withBackgrounds = makeDecorator({
   name: 'withBackgrounds',
   parameterName: 'backgrounds',
@@ -12,7 +18,7 @@ export const withBackgrounds = makeDecorator({
   allowDeprecatedUsage: true,
   wrapper: (getStory, context, { options, parameters }) => {
     const data = parameters || options || [];
-    const backgrounds = Array.isArray(data) ? data : Object.values(data);
+    const backgrounds: Background[] = Array.isArray(data) ? data : Object.values(data);
 
     let background = 'transparent';
     if (backgrounds.length !== 0) {
