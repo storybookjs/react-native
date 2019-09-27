@@ -28,6 +28,10 @@ import DocgenButton from '../../components/DocgenButton';
 
 <Props of="." />
 
+<Preview>
+  <Story id="nonexistent-story" />
+</Preview>
+
 ## A random color ColorPalette
 
 <ColorPalette>
@@ -80,6 +84,10 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
 
 <Story name="iframe story" inline={false} height="100px">
   <>This is an iframe!</>
+</Story>
+
+<Story name="theme">
+  <h1 className="text-lg">Hello Hugh</h1>
 </Story>
 
 <Story name="function" height="100px">
