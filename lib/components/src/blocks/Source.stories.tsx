@@ -1,11 +1,9 @@
 import React from 'react';
 import { Source, SourceError } from './Source';
-import { DocsPageWrapper } from './DocsPage';
 
 export default {
   title: 'Docs|Source',
   component: Source,
-  decorators: [getStory => <DocsPageWrapper>{getStory()}</DocsPageWrapper>],
 };
 
 const jsxCode = `
@@ -34,7 +32,5 @@ const cssCode = `
 export const css = () => <Source code={cssCode} language="css" />;
 
 export const noStory = () => <Source error={SourceError.NO_STORY} />;
-noStory.story = { name: 'no story' };
 
 export const sourceUnavailable = () => <Source error={SourceError.SOURCE_UNAVAILABLE} />;
-sourceUnavailable.story = { name: 'source unavailable' };

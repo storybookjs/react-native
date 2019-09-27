@@ -19,10 +19,10 @@ export function webpack(
           test: /\.tsx?$/,
           use: [
             {
-              loader: require.resolve('ts-loader'),
+              loader: 'ts-loader',
               options: tsLoaderOptions,
             },
-            require.resolve('angular2-template-loader'),
+            { loader: 'angular2-template-loader' },
           ],
         },
         {
@@ -37,14 +37,14 @@ export function webpack(
         {
           test: /\.s(c|a)ss$/,
           use: [
-            require.resolve('raw-loader'),
+            { loader: 'raw-loader' },
             {
               loader: require.resolve('postcss-loader'),
               options: {
                 plugins: [autoprefixer()],
               },
             },
-            require.resolve('sass-loader'),
+            { loader: 'sass-loader' },
           ],
         },
       ],
