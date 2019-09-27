@@ -10,6 +10,7 @@ export function register() {
     addons.addPanel(PANEL_ID, {
       title: 'Story',
       render: ({ active, key }) => <StoryPanel key={key} api={api} active={active} />,
+      paramKey: 'storysource',
     });
   });
 }
