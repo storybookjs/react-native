@@ -45,7 +45,6 @@
     "babel-plugin-named-asset-import": "^0.3.1",
     "babel-plugin-react-docgen": "^3.0.0",
     "babel-preset-react-app": "^9.0.0",
-    "common-tags": "^1.8.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "lodash": "^4.17.11",
@@ -54,6 +53,7 @@
     "react-dev-utils": "^9.0.0",
     "regenerator-runtime": "^0.12.1",
     "semver": "^6.0.0",
+    "ts-dedent": "^1.1.0",
     "webpack": "^4.33.0"
   },
   "devDependencies": {
