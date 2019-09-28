@@ -28,7 +28,7 @@ import { StoryFnAngularReturnType, ICollection } from '../../types';
   template: '<ng-template #target></ng-template>',
 })
 export class AppComponent implements OnInit, OnDestroy {
-  @ViewChild('target', { read: ViewContainerRef })
+  @ViewChild('target', { read: ViewContainerRef, static: true })
   target: ViewContainerRef;
 
   readonly previousValues: { [key: string]: any } = {};
