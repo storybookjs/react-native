@@ -1,3 +1,10 @@
+## 5.3.0-alpha.5 (September 27, 2019)
+
+### Maintenance
+
+* UI: Improve code indentation ([#8218](https://github.com/storybookjs/storybook/pull/8218))
+* Use the extracted linting configs ([#8213](https://github.com/storybookjs/storybook/pull/8213))
+
 ## 5.3.0-alpha.4 (September 26, 2019)
 
 ### Bug Fixes
