@@ -46,24 +46,30 @@ function getTsConfigOptions(tsConfigPath: Path) {
   return basicOptions;
 }
 
-export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
+export function getAngularCliConfig(dirToSearch: string) {
   const fname = path.join(dirToSearch, 'angular.json');
 
   if (!fs.existsSync(fname)) {
     return null;
   }
 
-  const angularJson = JSON.parse(stripJsonComments(fs.readFileSync(fname, 'utf8')));
-  const { projects, defaultProject } = angularJson;
+  return JSON.parse(stripJsonComments(fs.readFileSync(fname, 'utf8')));
+}
 
+export function getLeadingAngularCliProject(ngCliConfig: any) {
+  const { defaultProject } = ngCliConfig;
+  const { projects }: any = ngCliConfig;
   if (!projects || !Object.keys(projects).length) {
     throw new Error('angular.json must have projects entry.');
   }
 
   const fallbackProject = defaultProject && projects[defaultProject];
   const firstProject = projects[Object.keys(projects)[0]];
-  const project = projects.storybook || fallbackProject || firstProject;
+  return projects.storybook || fallbackProject || firstProject;
+}
 
+export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
+  const project = getLeadingAngularCliProject(getAngularCliConfig(dirToSearch));
   const { options: projectOptions } = project.architect.build;
 
   const normalizedAssets = normalizeAssetPatterns(
