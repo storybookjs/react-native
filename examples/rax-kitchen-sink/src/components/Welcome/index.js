@@ -2,7 +2,7 @@
 import { createElement } from 'rax';
 import View from 'rax-view';
 import Text from 'rax-text';
-import Button from 'rax-button';
+// import Button from 'rax-button';
 import Image from 'rax-image';
 
 const Main = ({ children, ...props }) => (
@@ -55,9 +55,9 @@ const Welcome = ({ showApp }) => (
       like a visual test case.)
     </P>
     <P>See these sample</P>
-    <Button onPress={showApp}>
-      <P>Button</P>
-    </Button>
+    <button onPress={showApp} type="button">
+      <P>button</P>
+    </button>
     <P>for a component called 'Button'.</P>
     <P>
       Just like that, you can add your own components as stories. You can also edit those components

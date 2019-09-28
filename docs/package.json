@@ -20,7 +20,7 @@
     "babel-loader": "^6.4.1",
     "babel-plugin-styled-components": "^1.10.6",
     "bootstrap": "^4.3.1",
-    "common-tags": "^1.8.0",
+    "ts-dedent": "^1.1.0",
     "gatsby": "^1.9.279",
     "gatsby-link": "^1.6.45",
     "gatsby-plugin-segment": "^1.0.2",

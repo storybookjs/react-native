@@ -77,7 +77,7 @@ Addon-storysource contains a loader, `@storybook/addon-storysource/loader`, whic
 @storybook/addon-storysource/loader is deprecated, please use @storybook/source-loader instead.
 ```
 
-To upgrade to `@storybook/source-loader`, simply `npm install -D @storybook/source-laoder` (or use `yarn`), and replace every instance of `@storybook/addon-storysource/loaoder` with `@storybook/source-loader`.
+To upgrade to `@storybook/source-loader`, simply `npm install -D @storybook/source-loader` (or use `yarn`), and replace every instance of `@storybook/addon-storysource/loader` with `@storybook/source-loader`.
 
 ### Default viewports
 
