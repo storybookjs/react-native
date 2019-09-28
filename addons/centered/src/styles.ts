@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
 const styles = {
   style: {
     position: 'fixed',

@@ -1,15 +1,25 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { View } from 'react-native';
 import Markdown from 'react-native-simple-markdown';
-import addons from '@storybook/addons';
+import { AddonStore } from '@storybook/addons';
 import Events from '@storybook/core-events';
+import { API } from '@storybook/api';
+import { StoryStore } from '@storybook/client-api';
 
 export const PARAM_KEY = `notes`;
 
-class Notes extends React.Component {
+type Selection = ReturnType<StoryStore['fromId']>;
+interface NotesProps {
+  channel: ReturnType<AddonStore['getChannel']>;
+  api: API;
+  active: boolean;
+}
+interface NotesState {
+  selection: Selection;
+}
+
+export class Notes extends React.Component<NotesProps, NotesState> {
   componentDidMount() {
     this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
@@ -18,7 +28,7 @@ class Notes extends React.Component {
     this.props.channel.removeListener(Events.SELECT_STORY, this.onStorySelected);
   }
 
-  onStorySelected = selection => {
+  onStorySelected = (selection: Selection) => {
     this.setState({ selection });
   };
 
@@ -34,7 +44,7 @@ class Notes extends React.Component {
       .getStoryAndParameters(this.state.selection.kind, this.state.selection.story);
     const text = story.parameters[PARAM_KEY];
 
-    const textAfterFormatted = text ? text.trim() : '';
+    const textAfterFormatted: string = text ? text.trim() : '';
 
     return (
       <View style={{ padding: 10, flex: 1 }}>
@@ -43,12 +53,3 @@ class Notes extends React.Component {
     );
   }
 }
-
-addons.register('storybook/notes', api => {
-  const channel = addons.getChannel();
-  addons.addPanel('storybook/notes/panel', {
-    title: 'Notes',
-    render: ({ active, key }) => <Notes key={key} channel={channel} api={api} active={active} />,
-    paramKey: PARAM_KEY,
-  });
-});

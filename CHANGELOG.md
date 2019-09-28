@@ -1,3 +1,21 @@
+## 5.3.0-alpha.5 (September 27, 2019)
+
+### Maintenance
+
+* UI: Improve code indentation ([#8218](https://github.com/storybookjs/storybook/pull/8218))
+* Use the extracted linting configs ([#8213](https://github.com/storybookjs/storybook/pull/8213))
+
+## 5.3.0-alpha.4 (September 26, 2019)
+
+### Bug Fixes
+
+* UI: Move addon dependencies to devDependencies ([#8206](https://github.com/storybookjs/storybook/pull/8206))
+* Addon-knobs: Handle undefined array value ([#8006](https://github.com/storybookjs/storybook/pull/8006))
+
+### Maintenance
+
+* Build: Upgrade from node8 to node10 ([#8207](https://github.com/storybookjs/storybook/pull/8207))
+
 ## 5.3.0-alpha.3 (September 25, 2019)
 
 ### Bug Fixes
