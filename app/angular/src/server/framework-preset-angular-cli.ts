@@ -10,10 +10,7 @@ import {
 export function webpackFinal(config: Configuration) {
   const cwd = process.cwd() as Path;
   const cliWebpackConfigOptions = getAngularCliWebpackConfigOptions(cwd);
-
-  if (cliWebpackConfigOptions) {
-    logger.info('=> Loading angular-cli config.');
-  }
+  logger.info('=> Loading angular-cli config.');
 
   return applyAngularCliWebpackConfig(config, cliWebpackConfigOptions);
 }
