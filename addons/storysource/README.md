@@ -4,7 +4,7 @@ This addon is used to show stories source in the addon panel.
 
 [Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Storysource Demo](demo.gif)
+![Storysource Demo](./docs/demo.gif)
 
 ## Getting Started
 

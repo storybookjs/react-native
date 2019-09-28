@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, View, Text } from 'react-native';
 
-const Swatch = ({ name, value, setBackground }) => (
+interface SwatchProps {
+  name: string;
+  value: string;
+  setBackground: (background: string) => void;
+}
+
+const Swatch: FunctionComponent<SwatchProps> = ({ name, value, setBackground }) => (
   <TouchableOpacity
     style={{
       borderRadius: 4,
@@ -21,6 +27,7 @@ const Swatch = ({ name, value, setBackground }) => (
     </View>
   </TouchableOpacity>
 );
+
 Swatch.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,

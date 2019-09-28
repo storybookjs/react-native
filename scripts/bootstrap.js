@@ -25,6 +25,7 @@ try {
   // give the filesystem some time
   cooldown = 1000;
 } finally {
+  // eslint-disable-next-line no-use-before-define
   setTimeout(run, cooldown);
 }
 
@@ -84,6 +85,7 @@ function run() {
     command: () => {
       // run all pre tasks
       pre
+        // eslint-disable-next-line no-use-before-define
         .map(key => tasks[key])
         .forEach(task => {
           if (task.check()) {
