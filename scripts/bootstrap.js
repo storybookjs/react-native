@@ -124,7 +124,7 @@ function run() {
       defaultValue: false,
       option: '--install',
       command: () => {
-        spawn('yarn install --ignore-optional ');
+        spawn('yarn install --ignore-optional --network-concurrency 8');
       },
       order: 1,
     }),
