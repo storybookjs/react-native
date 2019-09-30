@@ -252,8 +252,6 @@ export default function({ store, provider }: { store: Store; provider: Provider 
     getInitialOptions() {
       const { theme } = provider.getConfig();
 
-      console.log({ theme });
-
       return {
         ...initial,
         theme: theme || initial.theme,
