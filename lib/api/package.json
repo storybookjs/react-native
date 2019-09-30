@@ -39,7 +39,7 @@
     "semver": "^6.0.0",
     "shallow-equal": "^1.1.0",
     "store2": "^2.7.1",
-    "telejson": "^2.2.2",
+    "telejson": "^3.0.2",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
