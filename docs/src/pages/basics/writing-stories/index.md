@@ -166,7 +166,7 @@ const loaderFn = () => {
   
   // dynamic loading, unavailable in react-native
   const req = require.context('../src/components', true, /\.stories\.js$/);
-  req.keys().forEach(req(fname));
+  req.keys().forEach(fname => req(fname));
 };
 
 configure(loaderFn, module);
