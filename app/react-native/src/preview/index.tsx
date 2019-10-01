@@ -118,6 +118,7 @@ export default class Preview {
     const appliedTheme = { ...theme, ...params.theme };
 
     // react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
+    // eslint-disable-next-line react/prefer-stateless-function
     return class StorybookRoot extends React.PureComponent {
       render() {
         if (onDeviceUI) {

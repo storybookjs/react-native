@@ -36,10 +36,6 @@ export interface HocState {
 
 const provideTests = (Component: React.ComponentType<InjectedProps>) =>
   class TestProvider extends React.Component<HocProps, HocState> {
-    stopListeningOnStory: () => void;
-
-    mounted: boolean;
-
     state: HocState = {};
 
     static defaultProps = {
@@ -71,6 +67,10 @@ const provideTests = (Component: React.ComponentType<InjectedProps>) =>
     onAddTests = ({ kind, storyName, tests }: HocState) => {
       this.setState({ kind, storyName, tests });
     };
+
+    mounted: boolean;
+
+    stopListeningOnStory: () => void;
 
     render() {
       const { active } = this.props;

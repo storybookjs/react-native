@@ -89,8 +89,6 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
   mounted = false;
 
-  stopListeningOnStory!: Function;
-
   componentDidMount() {
     this.mounted = true;
     const { api } = this.props;
@@ -208,6 +206,8 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
     api.emit(CLICK, knob);
   };
+
+  stopListeningOnStory!: Function;
 
   render() {
     const { knobs } = this.state;
