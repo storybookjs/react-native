@@ -29,7 +29,7 @@
     "node-sass": "^4.12.0",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.4.0",
-    "zone.js": "^0.9.1"
+    "zone.js": "^0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.6",
