@@ -35,7 +35,7 @@
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "regenerator-runtime": "^0.12.1",
+    "regenerator-runtime": "^0.13.3",
     "ts-dedent": "^1.1.0",
     "webpack": "^4.33.0"
   },

@@ -39,7 +39,7 @@
     "prettier": "^1.16.4",
     "prop-types": "^15.7.2",
     "react-syntax-highlighter": "^8.0.1",
-    "regenerator-runtime": "^0.12.1",
+    "regenerator-runtime": "^0.13.3",
     "util-deprecate": "^1.0.2"
   },
   "peerDependencies": {
