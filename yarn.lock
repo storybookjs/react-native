@@ -28212,10 +28212,10 @@ telejson@^2.2.2:
     lodash "^4.17.11"
     memoizerific "^1.11.3"
 
-telejson@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/telejson/-/telejson-3.0.2.tgz#39d94c8736605f736fbb6a735e531eea5741c35d"
-  integrity sha512-Bl2OlwmdcCj0R1AS7QQXhR2GIZdAyGBzN4wAhy8fkL+gcu86Fah7VIvKoVTv8dVMkI2A7FLY1sJTgBiCpJ1kQw==
+telejson@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/telejson/-/telejson-3.0.3.tgz#442af55f78d791d3744c9e7a696be6cdf789a4b5"
+  integrity sha512-gUOh6wox1zJjbGMg+e26NquZcp/F18EbIaqVvjiGqikRqVB4fYEAM8Nyin8smgwX30XhaRBOg+kCj4vInmvwAg==
   dependencies:
     "@types/is-function" "^1.0.0"
     global "^4.4.0"
