@@ -1,7 +1,8 @@
 import window from 'global';
 import { logger } from '@storybook/client-logger';
 import { FORCE_RE_RENDER, STORY_RENDERED, DOCS_RENDERED } from '@storybook/core-events';
-import addons, { StoryGetter, StoryContext } from './public_api';
+import { addons } from './index';
+import { StoryGetter, StoryContext } from './types';
 
 interface StoryStore {
   fromId: (
