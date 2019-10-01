@@ -36,6 +36,9 @@ const toExtracted = <T>(obj: T) =>
     if (typeof value === 'function') {
       return acc;
     }
+    if (key === 'hooks') {
+      return acc;
+    }
     if (Array.isArray(value)) {
       return Object.assign(acc, { [key]: value.slice().sort() });
     }
