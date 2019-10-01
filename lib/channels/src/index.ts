@@ -126,6 +126,10 @@ export class Channel {
     this.addListener(eventName, listener);
   }
 
+  off(eventName: string, listener: Listener) {
+    this.removeListener(eventName, listener);
+  }
+
   private handleEvent(event: ChannelEvent, isPeer = false) {
     const listeners = this.listeners(event.type);
     if (listeners && (isPeer || event.from !== this.sender)) {
