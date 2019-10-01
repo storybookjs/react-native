@@ -32,7 +32,7 @@
     "@storybook/source-loader": "5.3.0-alpha.5",
     "babel-loader": "^8.0.4",
     "cross-env": "^5.2.0",
-    "file-loader": "^3.0.1",
+    "file-loader": "^4.2.0",
     "preact-render-to-json": "^3.6.6",
     "raw-loader": "^2.0.0",
     "svg-url-loader": "^2.3.2",
