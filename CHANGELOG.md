@@ -1,7 +1,10 @@
-## 5.3.0-alpha.6 (September 30, 2019)
+## 5.3.0-alpha.6 (October 1, 2019)
 
 ### Bug Fixes
 
+* Addon-ondevice-notes: Validate the state content  ([#8261](https://github.com/storybookjs/storybook/pull/8261))
+* API: Fix require cycles in addons hooks ([#8236](https://github.com/storybookjs/storybook/pull/8236))
+* API: Fix missing `channel.off` ([#8234](https://github.com/storybookjs/storybook/pull/8234))
 * Telejson: New version with typings and bugfixes ([#8228](https://github.com/storybookjs/storybook/pull/8228))
 * Addon-links: Update linkTo type to accept function ([#8117](https://github.com/storybookjs/storybook/pull/8117))
 * React: Add DecoratorFn type to exports ([#8121](https://github.com/storybookjs/storybook/pull/8121))
@@ -10,6 +13,11 @@
 
 * Update angular example to v8 ([#7747](https://github.com/storybookjs/storybook/pull/7747))
 * Hitting some flakiness in now deploys, this might help ([#8200](https://github.com/storybookjs/storybook/pull/8200))
+* Remov hooks from extracted StoryItem ([#8256](https://github.com/storybookjs/storybook/pull/8256))
+
+### Dependency Upgrades
+
+* Bump react-native-swipe-gestures to 1.0.4 ([#8235](https://github.com/storybookjs/storybook/pull/8235))
 
 ## 5.3.0-alpha.5 (September 27, 2019)
 
