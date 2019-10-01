@@ -9,6 +9,7 @@ const Main = (props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>,
       lineHeight: 1.4,
       fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
       backgroundColor: '#fff',
+      color: '#000',
     }}
   />
 );
