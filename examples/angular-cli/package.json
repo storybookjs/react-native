@@ -29,7 +29,7 @@
     "node-sass": "^4.12.0",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.4.0",
-    "zone.js": "^0.9.1"
+    "zone.js": "^0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.6",
@@ -56,7 +56,7 @@
     "@types/webpack-env": "^1.14.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "global": "^4.3.2",
-    "jasmine-core": "~3.4.0",
+    "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jest": "^24.7.1",
     "jest-preset-angular": "^7.1.0",
