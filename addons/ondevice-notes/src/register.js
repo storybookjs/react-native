@@ -29,6 +29,10 @@ class Notes extends React.Component {
       return null;
     }
 
+    if (!this.state) {
+      return null;
+    }
+
     const story = api
       .store()
       .getStoryAndParameters(this.state.selection.kind, this.state.selection.story);
