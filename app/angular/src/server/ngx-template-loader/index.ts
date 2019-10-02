@@ -18,7 +18,11 @@ const replaceStringsWithRequires = (string: string) => {
     if (url.charAt(0) !== '.') {
       newUrl = `./${url}`;
     }
-    return `(require('${newUrl}').default || require('${newUrl}'))`;
+    const requireString = `(require('${newUrl}').default || require('${newUrl}'))`;
+
+    // without the length check an empty style file will throw
+    // "Expected 'styles' to be an array of strings"
+    return `${requireString}.length ? ${requireString} : ''`;
   });
 };
 
@@ -35,12 +39,10 @@ export default function(source: string) {
       return `${templateProperty}:${replaceStringsWithRequires(templateUrlString)}`;
     })
     .replace(stylesRegex, (_, styleUrlsString: string) => {
-      console.log(styleUrlsString);
       // replace: stylesUrl: ['./foo.css', "./baz.css", "./index.component.css"]
       // with: styles: [require('./foo.css'), require("./baz.css"), require("./index.component.css")]
       // or: styleUrls: [require('./foo.css'), require("./baz.css"), require("./index.component.css")]
       // if `keepUrl` query parameter is set to true.
-      console.log(`${styleProperty}:${replaceStringsWithRequires(styleUrlsString)}`);
       return `${styleProperty}:${replaceStringsWithRequires(styleUrlsString)}`;
     });
 }
