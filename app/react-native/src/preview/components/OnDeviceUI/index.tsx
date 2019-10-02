@@ -59,10 +59,6 @@ const Preview: typeof TouchableOpacity = styled.TouchableOpacity`
 `;
 
 export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceUIState> {
-  animatedValue: Animated.Value;
-
-  channel: Channel;
-
   constructor(props: OnDeviceUIProps) {
     super(props);
     const tabOpen = props.tabOpen || PREVIEW;
@@ -104,6 +100,10 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
       Keyboard.dismiss();
     }
   };
+
+  animatedValue: Animated.Value;
+
+  channel: Channel;
 
   render() {
     const {
