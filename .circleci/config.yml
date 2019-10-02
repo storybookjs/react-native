@@ -49,7 +49,7 @@ jobs:
           at: .
       - run:
           name: Run chromatic on the pre-built storybook
-          command: yarn chromatic -- -d ./storybook-static
+          command: yarn chromatic
   packtracker:
     <<: *defaults
     steps:
