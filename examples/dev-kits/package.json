@@ -30,7 +30,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "storybook-chromatic": "^3.0.0-debug.0",
+    "storybook-chromatic": "^3.0.0-debug.1",
     "ts-loader": "^5.3.3",
     "uuid": "^3.3.2",
     "webpack": "^4.33.0"
