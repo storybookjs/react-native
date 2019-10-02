@@ -27898,10 +27898,10 @@ storybook-addon-vue-info@^1.2.1:
     vue-template-compiler "^2.5.16"
     vuera "^0.2.3"
 
-storybook-chromatic@^3.0.0-debug.1:
-  version "3.0.0-debug.1"
-  resolved "https://registry.yarnpkg.com/storybook-chromatic/-/storybook-chromatic-3.0.0-debug.1.tgz#ac2e2118988077b8684a9d14ea731a81e29b3818"
-  integrity sha512-yarIK/QopXC2I77RTKHCMIr3ffwUnqRjPf5+Z4nNkdLz3VcRJ7vlXhcZ7PL69nseQelKvRLLb9CNClUh/+BsAQ==
+storybook-chromatic@^3.0.0-debug.2:
+  version "3.0.0-debug.2"
+  resolved "https://registry.yarnpkg.com/storybook-chromatic/-/storybook-chromatic-3.0.0-debug.2.tgz#885cb179bb17d7818a2332a295e02fdd973faf08"
+  integrity sha512-3PIxpFCfyXIijcXQoHHzKussyT2srDO/ZUySc1XNUzaHEexoXROVl1Jgdmmm0cb8uwJb5ACVYYSrt3FbgneeFg==
   dependencies:
     "@babel/preset-react" "^7.0.0"
     "@babel/runtime" "^7.6.2"
