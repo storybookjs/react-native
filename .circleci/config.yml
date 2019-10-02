@@ -352,4 +352,4 @@ workflows:
             - test
       - chromatic:
           requires:
-            - examples
+            - build
