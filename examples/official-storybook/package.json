@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build-storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true build-storybook -c ./",
-    "chromatic": "chromatic test --storybook-addon --exit-zero-on-changes --app-code ab7m45tp9p",
     "do-image-snapshots": "../../node_modules/.bin/jest --projects=./image-snapshots",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "graphql": "node ./graphql-server/index.js",
@@ -57,7 +56,6 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "storybook-chromatic": "^3.0.0-debug.1",
     "terser-webpack-plugin": "^1.2.4",
     "ts-loader": "^6.0.0",
     "uuid": "^3.3.2",
