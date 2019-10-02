@@ -22,7 +22,8 @@ export function webpack(
               loader: 'ts-loader',
               options: tsLoaderOptions,
             },
-            { loader: 'angular2-template-loader' },
+            { loader: path.resolve(__dirname, 'ngx-template-loader') },
+            // { loader: 'angular2-template-loader' },
           ],
         },
         {
