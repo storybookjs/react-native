@@ -7,69 +7,40 @@
  * modified to be compatible with newer versions of raw-loader as well as backwards compatible with raw-loader ^1.0.0
  */
 
-// eslint-disable-next-line import/no-extraneous-dependencies
-// const loaderUtils = require('loader-utils');
-
 // using: regex, capture groups, and capture group variables.
 const templateUrlRegex = /templateUrl\s*:(\s*['"`](.*?)['"`]\s*([,}]))/gm;
 const stylesRegex = /styleUrls *:(\s*\[[^\]]*?\])/g;
 const stringRegex = /(['`"])((?:[^\\]\\\1|.)*?)\1/g;
 
-function replaceStringsWithRequires(string: string) {
-  // eslint-disable-next-line func-names
-  return string.replace(stringRegex, function(match, quote, url) {
+const replaceStringsWithRequires = (string: string) => {
+  return string.replace(stringRegex, (match, quote, url) => {
+    let newUrl = url;
     if (url.charAt(0) !== '.') {
-      // eslint-disable-next-line no-param-reassign
-      url = `./${url}`;
+      newUrl = `./${url}`;
     }
-    return `(require('${url}').default || require('${url}'))`;
+    return `(require('${newUrl}').default || require('${newUrl}'))`;
   });
-}
+};
 
-// eslint-disable-next-line consistent-return,func-names
-export default function(source: any, sourcemap: any) {
-  const config: any = {};
-  // const query = loaderUtils.parseQuery(this.query);
-  let styleProperty = 'styles';
-  let templateProperty = 'template';
+export default function(source: string) {
+  const styleProperty = 'styles';
+  const templateProperty = 'template';
 
-  if (this.options != null) {
-    Object.assign(config, this.options.angular2TemplateLoader);
-  }
-
-  // Object.assign(config, query);
-
-  if (config.keepUrl === true) {
-    styleProperty = 'styleUrls';
-    templateProperty = 'templateUrl';
-  }
-
-  // Not cacheable during unit tests;
-  // eslint-disable-next-line no-unused-expressions
-  this.cacheable && this.cacheable();
-
-  const newSource = source
-    // eslint-disable-next-line func-names
-    .replace(templateUrlRegex, function(match: any, url: any) {
+  return source
+    .replace(templateUrlRegex, (_, templateUrlString: string) => {
       // replace: templateUrl: './path/to/template.html'
       // with: template: require('./path/to/template.html')
       // or: templateUrl: require('./path/to/template.html')
       // if `keepUrl` query parameter is set to true.
-      return `${templateProperty}:${replaceStringsWithRequires(url)}`;
+      return `${templateProperty}:${replaceStringsWithRequires(templateUrlString)}`;
     })
-    // eslint-disable-next-line func-names
-    .replace(stylesRegex, function(match: any, urls: any) {
+    .replace(stylesRegex, (_, styleUrlsString: string) => {
+      console.log(styleUrlsString);
       // replace: stylesUrl: ['./foo.css', "./baz.css", "./index.component.css"]
       // with: styles: [require('./foo.css'), require("./baz.css"), require("./index.component.css")]
       // or: styleUrls: [require('./foo.css'), require("./baz.css"), require("./index.component.css")]
       // if `keepUrl` query parameter is set to true.
-      return `${styleProperty}:${replaceStringsWithRequires(urls)}`;
+      console.log(`${styleProperty}:${replaceStringsWithRequires(styleUrlsString)}`);
+      return `${styleProperty}:${replaceStringsWithRequires(styleUrlsString)}`;
     });
-
-  // Support for tests
-  if (this.callback) {
-    this.callback(null, newSource, sourcemap);
-  } else {
-    return newSource;
-  }
 }
