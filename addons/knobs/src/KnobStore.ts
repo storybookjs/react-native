@@ -43,7 +43,7 @@ export default class KnobStore {
     this.store[key] = {
       ...this.store[key],
       ...options,
-    };
+    } as KnobStoreKnob;
   }
 
   get(key: string) {
