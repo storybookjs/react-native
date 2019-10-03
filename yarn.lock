@@ -28087,10 +28087,10 @@ storybook-chromatic@^2.2.2:
     tree-kill "^1.1.0"
     uuid "^3.3.2"
 
-storybook-chromatic@^3.0.0-rc.0:
-  version "3.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/storybook-chromatic/-/storybook-chromatic-3.0.0-rc.0.tgz#60101ae837ab48ad3fe1c3bb878a2e1db0ed8e9d"
-  integrity sha512-mbgDYrPQSea4e/4wuXFJhWVmZ3AC9n6eeS3d716PZvZXBdbWut9rgqA/gBELr0ML5HXOJrjHkjgqw/V3e+y82w==
+storybook-chromatic@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/storybook-chromatic/-/storybook-chromatic-3.0.0.tgz#8dbbc3022b3bd28ebafeaaeb4bd83c1e8725b176"
+  integrity sha512-2jsG4K59Y0gWi7zur32VyFqQzSCvWghrfx5r7I5JCIL+ldxY2ysKdlVdBEgvjnxWTcxsx41byhTVPupzZF9XUg==
   dependencies:
     "@babel/preset-react" "^7.0.0"
     "@babel/runtime" "^7.6.2"
