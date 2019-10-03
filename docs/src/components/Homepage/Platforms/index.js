@@ -13,7 +13,7 @@ const Platform = () => (
         >
           React
         </a>
-        &
+        &nbsp;&amp;&nbsp;
         <a
           href="https://github.com/storybookjs/storybook/tree/master/app/react-native"
           target="_blank"
@@ -22,7 +22,6 @@ const Platform = () => (
           React Native
         </a>
       </p>
-
       <hr />
     </div>
   </div>

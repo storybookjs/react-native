@@ -108,14 +108,14 @@ const Welcome = {
         <br />
         You can also edit those components and see changes right away.
         <br />
-        (Try editing the <InlineCode>Button</InlineCode> stories located at
+        (Try editing the <InlineCode>Button</InlineCode> stories located at&nbsp;
         <InlineCode>src/stories/index.js</InlineCode>
         .)
       </p>
       <p>
         Usually we create stories with smaller UI components in the app.
         <br />
-        Have a look at the
+        Have a look at the&nbsp;
         <Link
           href="https://storybook.js.org/basics/writing-stories"
           target="_blank"
@@ -123,7 +123,7 @@ const Welcome = {
         >
           Writing Stories
         </Link>
-        section in our documentation.
+        &nbsp;section in our documentation.
       </p>
       <Note>
         <b>NOTE:</b>

@@ -247,7 +247,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
         <Placeholder>
           <Fragment>No knobs found</Fragment>
           <Fragment>
-            Learn how to
+            Learn how to&nbsp;
             <Link
               href="https://github.com/storybookjs/storybook/tree/master/addons/knobs"
               target="_blank"

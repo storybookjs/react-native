@@ -187,7 +187,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
             stories
           </button>
         </NavButton>
-         for a component called
+         for a component called 
         <InlineCode>
           <code
             style={
@@ -230,7 +230,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
             Button
           </code>
         </InlineCode>
-         stories located at
+         stories located at 
         <InlineCode>
           <code
             style={
@@ -253,7 +253,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
       <p>
         Usually we create stories with smaller UI components in the app.
         <br />
-        Have a look at the
+        Have a look at the 
         <Link
           href="https://storybook.js.org/basics/writing-stories"
           rel="noopener noreferrer"
@@ -275,7 +275,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
             Writing Stories
           </a>
         </Link>
-        section in our documentation.
+         section in our documentation.
       </p>
       <Note>
         <p
