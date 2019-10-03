@@ -114,7 +114,7 @@
   },
   "browserslist": "defaults",
   "dependencies": {
-    "eslint-plugin-react": "^7.15.1"
+    "node-sass": "^4.12.0"
   },
   "devDependencies": {
     "@angular/common": "^8.2.8",
@@ -170,6 +170,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.15.1",
     "esm": "^3.2.25",
     "github-release-from-changelog": "^2.1.0",
     "glob": "^7.1.3",
