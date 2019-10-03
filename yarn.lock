@@ -27939,7 +27939,7 @@ storybook-addon-vue-info@^1.2.1:
     vue-template-compiler "^2.5.16"
     vuera "^0.2.3"
 
-storybook-chromatic@^2.2.2:
+storybook-chromatic@2.2.2, storybook-chromatic@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/storybook-chromatic/-/storybook-chromatic-2.2.2.tgz#eade5178f334d6dd173dbe980c902ae90e727cb0"
   integrity sha512-n79eX0MQEHzDCnXqgOjvDOQ1xfBOTyQHy1RNxEMQvZolfAle8YVS0NnRpcW0xh/Ye621Iote3dwFI3uQmlcqPw==
