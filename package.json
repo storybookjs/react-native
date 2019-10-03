@@ -210,7 +210,7 @@
     "riot-jest-transformer": "^2.0.0",
     "shelljs": "^0.8.3",
     "sort-package-json": "^1.21.0",
-    "storybook-chromatic": "^3.0.0-debug.2",
+    "storybook-chromatic": "^3.0.0-rc.0",
     "svelte": "^3.4.1",
     "svelte-jest": "^0.3.0",
     "trash": "^6.0.0",
