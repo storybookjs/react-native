@@ -335,6 +335,13 @@ triggersActionsViaButton.story = {
   name: 'triggers actions via button',
 };
 
+export const buttonWithReactUseState = () => {
+  const [counter, setCounter] = React.useState(0);
+  button('increment', () => setCounter(counter + 1));
+  button('decrement', () => setCounter(counter - 1));
+  return counter;
+};
+
 export const xssSafety = () => (
   <div
     // eslint-disable-next-line react/no-danger

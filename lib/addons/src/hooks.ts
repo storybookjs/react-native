@@ -116,6 +116,7 @@ export class HooksContext {
   }
 
   addRenderListeners() {
+    this.removeRenderListeners();
     const channel = addons.getChannel();
     RenderEvents.forEach(e => channel.on(e, this.renderListener));
   }
@@ -360,7 +361,9 @@ export function useReducer<S, A>(
 export function useEffect(create: () => (() => void) | void, deps?: any[]): void {
   const hooks = getHooksContextOrThrow();
   const effect = useMemoLike('useEffect', () => ({ create }), deps);
-  hooks.currentEffects.push(effect);
+  if (!hooks.currentEffects.includes(effect)) {
+    hooks.currentEffects.push(effect);
+  }
 }
 
 export interface Listener {

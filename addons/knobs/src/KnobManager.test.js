@@ -26,6 +26,7 @@ describe('KnobManager', () => {
       beforeEach(() => {
         testManager.knobStore = {
           set: jest.fn(),
+          update: jest.fn(),
           get: () => ({
             defaultValue: 'default value',
             name: 'foo',
@@ -46,7 +47,21 @@ describe('KnobManager', () => {
         expect(testManager.knobStore.set).not.toHaveBeenCalled();
       });
 
-      it('should return the new default knob value when default has changed', () => {
+      it('should update the existing knob options when types match', () => {
+        const defaultKnob = {
+          name: 'foo',
+          type: 'string',
+          value: 'default value',
+          foo: 'foo',
+        };
+        const knob = testManager.knob('foo', defaultKnob);
+        expect(testManager.knobStore.update).toHaveBeenCalledWith(
+          'foo',
+          expect.objectContaining({ foo: 'foo' })
+        );
+      });
+
+      it('should return the new default knob value when type has changed', () => {
         const defaultKnob = {
           name: 'foo',
           value: true,
