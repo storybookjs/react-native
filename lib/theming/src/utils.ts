@@ -62,11 +62,10 @@ export const darkenColor = colorFactory('darken');
 // The default color scheme is light so unless the preferred color
 // scheme is set to dark we always want to use the light theme
 export const getPreferredColorScheme = () => {
-  const isDarkThemePreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (!window || !window.matchMedia) return 'light';
 
-  if (isDarkThemePreferred) {
-    return 'dark';
-  }
+  const isDarkThemePreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (isDarkThemePreferred) return 'dark';
 
   return 'light';
 };
