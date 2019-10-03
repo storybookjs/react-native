@@ -18,7 +18,9 @@ const Item = styled.div({
 });
 
 export default class Logger extends Component {
-  static LOG_EVENT = 'Logger:log';
+  state = {
+    events: [],
+  };
 
   static propTypes = {
     emitter: PropTypes.instanceOf(EventEmitter).isRequired,
@@ -27,10 +29,6 @@ export default class Logger extends Component {
 
   static defaultProps = {
     title: 'Logger',
-  };
-
-  state = {
-    events: [],
   };
 
   componentDidMount() {
@@ -50,6 +48,8 @@ export default class Logger extends Component {
       events: [...events, { name, id: uuid(), payload }],
     }));
   };
+
+  static LOG_EVENT = 'Logger:log';
 
   render() {
     const { events } = this.state;

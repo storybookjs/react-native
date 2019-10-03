@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-object-literal-type-assertion */
 import { document } from 'global';
 import axe, { AxeResults, ElementContext, RunOptions, Spec } from 'axe-core';
 import deprecate from 'util-deprecate';
