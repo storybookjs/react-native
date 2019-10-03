@@ -143,6 +143,7 @@ const hookify = (fn: AbstractFunction) => (...args: any[]) => {
     hooks.currentPhase = 'MOUNT';
     hooks.currentHooks = [];
     hooks.hookListsMap.set(fn, hooks.currentHooks);
+    hooks.prevMountedDecorators.add(fn);
   }
   hooks.nextHookIndex = 0;
 
@@ -182,7 +183,6 @@ export const applyHooks = (
     while (hooks.hasUpdates) {
       hooks.hasUpdates = false;
       hooks.currentEffects = [];
-      hooks.prevMountedDecorators = hooks.mountedDecorators;
       result = decorated(context);
       numberOfRenders += 1;
       if (numberOfRenders > RENDER_LIMIT) {
