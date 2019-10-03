@@ -16,7 +16,7 @@ export class ServiceComponent implements OnInit {
   @Input()
   name: any;
 
-  // eslint-disable-next-line no-useless-constructor, @typescript-eslint/no-parameter-properties, no-empty-function
+  // eslint-disable-next-line no-useless-constructor
   constructor(private dummy: DummyService) {}
 
   async ngOnInit() {

@@ -272,7 +272,7 @@ const Panel = ({ tests }: PanelProps) => (
       <Placeholder>
         <Fragment>No tests found</Fragment>
         <Fragment>
-          Learn how to{' '}
+          Learn how to
           <Link
             href="https://github.com/storybookjs/storybook/tree/master/addons/jest"
             target="_blank"

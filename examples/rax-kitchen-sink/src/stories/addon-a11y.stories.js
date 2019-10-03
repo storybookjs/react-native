@@ -26,11 +26,10 @@ withStyle.story = {
 
 export const withMarkdown = () => (
   <button type="button">
-    {' '}
     <Text id="text1">😀 😎 👍 💯</Text>
     <View>
       <Text id="text1">aaa</Text>
-    </View>{' '}
+    </View>
   </button>
 );
 

@@ -498,14 +498,11 @@ export function createKeyBinding(keybinding: number, OS: OperatingSystem): Keybi
 
   if (chordPart !== 0) {
     return new ChordKeybinding(
-      // eslint-disable-next-line no-use-before-define
       createSimpleKeybinding(firstPart, OS),
-      // eslint-disable-next-line no-use-before-define
       createSimpleKeybinding(chordPart, OS)
     );
   }
 
-  // eslint-disable-next-line no-use-before-define
   return createSimpleKeybinding(firstPart, OS);
 }
 

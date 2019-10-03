@@ -69,7 +69,6 @@ export class Channel {
     const event: ChannelEvent = { type: eventName, args, from: this.sender };
     let options = {};
     if (args.length >= 1 && args[0] && args[0].options) {
-      // eslint-disable-next-line prefer-destructuring
       options = args[0].options;
     }
 

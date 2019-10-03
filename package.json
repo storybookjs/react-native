@@ -79,42 +79,43 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "*.js": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.jsx": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.mjs": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.html": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.ts": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.tsx": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.json": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "package.json": [
-        "yarn lint:package",
-        "git add"
-      ]
-    }
+    "*.html": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.js": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.json": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.jsx": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.mjs": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.ts": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.tsx": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "package.json": [
+      "yarn lint:package",
+      "git add"
+    ]
   },
   "browserslist": "defaults",
+  "dependencies": {
+    "eslint-plugin-react": "^7.15.1"
+  },
   "devDependencies": {
     "@angular/common": "^8.2.8",
     "@angular/compiler": "^8.2.8",
@@ -135,8 +136,8 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@emotion/snapshot-serializer": "^0.8.2",
-    "@storybook/eslint-config-storybook": "^1.0.0",
-    "@storybook/linter-config": "^1.0.1",
+    "@storybook/eslint-config-storybook": "^2.0.0",
+    "@storybook/linter-config": "^2.0.0",
     "@types/jest": "^24.0.11",
     "@types/lodash": "^4.14.129",
     "@types/node": "^12.7.9",

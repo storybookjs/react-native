@@ -142,7 +142,7 @@ const Welcome = ({ showApp }: { showApp: () => void }) => (
       (Basically a story is like a visual test case.)
     </p>
     <p>
-      See these sample <NavButton onClick={showApp}>stories</NavButton> for a component called{' '}
+      See these sample <NavButton onClick={showApp}>stories</NavButton> for a component called
       <InlineCode>Button</InlineCode>.
     </p>
     <p>
@@ -150,21 +150,21 @@ const Welcome = ({ showApp }: { showApp: () => void }) => (
       <br />
       You can also edit those components and see changes right away.
       <br />
-      (Try editing the <InlineCode>Button</InlineCode> stories located at{' '}
+      (Try editing the <InlineCode>Button</InlineCode> stories located at
       <InlineCode>src/stories/index.js</InlineCode>
       .)
     </p>
     <p>
       Usually we create stories with smaller UI components in the app.
       <br />
-      Have a look at the{' '}
+      Have a look at the
       <Link
         href="https://storybook.js.org/basics/writing-stories"
         target="_blank"
         rel="noopener noreferrer"
       >
         Writing Stories
-      </Link>{' '}
+      </Link>
       section in our documentation.
     </p>
     <Note>

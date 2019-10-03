@@ -25,7 +25,6 @@ try {
   // give the filesystem some time
   cooldown = 1000;
 } finally {
-  // eslint-disable-next-line no-use-before-define
   setTimeout(run, cooldown);
 }
 
@@ -46,16 +45,11 @@ function run() {
   log.addLevel('aborted', 3001, { fg: 'red', bold: true });
 
   const spawn = (command, options = {}) => {
-    const out = childProcess.spawnSync(
-      `${command}`,
-      Object.assign(
-        {
-          shell: true,
-          stdio: 'inherit',
-        },
-        options
-      )
-    );
+    const out = childProcess.spawnSync(`${command}`, {
+      shell: true,
+      stdio: 'inherit',
+      ...options,
+    });
 
     if (out.status !== 0) {
       process.exit(out.status);
@@ -85,7 +79,6 @@ function run() {
     command: () => {
       // run all pre tasks
       pre
-        // eslint-disable-next-line no-use-before-define
         .map(key => tasks[key])
         .forEach(task => {
           if (task.check()) {

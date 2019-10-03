@@ -19,7 +19,7 @@ const InfoButton = () => (
       borderRadius: '0px 0px 0px 5px',
     }}
   >
-    {' Show Info '}
+    Show Info
   </span>
 );
 
