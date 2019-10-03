@@ -55,9 +55,43 @@ exports[`Storyshots Addons|Backgrounds Example 2 1`] = `
 `;
 
 exports[`Storyshots Addons|Centered Button 1`] = `
-<div
-  style={
-    Object {
+Object {
+  "__b": 0,
+  "__c": null,
+  "__e": null,
+  "__k": null,
+  "__p": null,
+  "constructor": undefined,
+  "key": undefined,
+  "l": null,
+  "props": Object {
+    "children": Object {
+      "__b": 0,
+      "__c": null,
+      "__e": null,
+      "__k": null,
+      "__p": null,
+      "constructor": undefined,
+      "key": undefined,
+      "l": null,
+      "props": Object {
+        "children": VNode {
+          "attributes": undefined,
+          "children": Array [
+            "A button",
+          ],
+          "key": undefined,
+          "nodeName": [Function],
+        },
+        "style": Object {
+          "margin": "auto",
+          "maxHeight": "100%",
+        },
+      },
+      "ref": undefined,
+      "type": "div",
+    },
+    "style": Object {
       "alignItems": "center",
       "bottom": "0",
       "display": "flex",
@@ -66,24 +100,11 @@ exports[`Storyshots Addons|Centered Button 1`] = `
       "position": "fixed",
       "right": "0",
       "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <button
-      class="button"
-    >
-      A button
-    </button>
-  </div>
-</div>
+    },
+  },
+  "ref": undefined,
+  "type": "div",
+}
 `;
 
 exports[`Storyshots Addons|Contexts Simple Css Theming 1`] = `
@@ -273,7 +294,7 @@ exports[`Storyshots Welcome To Storybook 1`] = `
     >
       stories
     </button>
-     for a component called 
+     for a component called
     <code
       style={
         Object {
@@ -312,7 +333,7 @@ exports[`Storyshots Welcome To Storybook 1`] = `
     >
       Button
     </code>
-     stories located at 
+     stories located at
     <code
       style={
         Object {
@@ -333,7 +354,7 @@ exports[`Storyshots Welcome To Storybook 1`] = `
   <p>
     Usually we create stories with smaller UI components in the app.
     <br />
-    Have a look at the 
+    Have a look at the
     <a
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
@@ -349,7 +370,7 @@ exports[`Storyshots Welcome To Storybook 1`] = `
     >
       Writing Stories
     </a>
-     section in our documentation.
+    section in our documentation.
   </p>
   <p
     style={
