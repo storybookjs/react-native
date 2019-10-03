@@ -588,6 +588,16 @@ Like the default, but allows you to specify a set of options for the renderer, j
 ### `multiSnapshotWithOptions(options)`
 
 Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes. If you'd like the benefit of separate snapshot files, but don't have custom options to pass, simply pass an empty object.
+If you use [Component Story Format](https://storybook.js.org/docs/formats/component-story-format/), you may also need to add an additional Jest transform to automate detecting story file names:
+```js
+// jest.config.js
+module.exports = {
+  transform: {
+    '^.+\\.stories\\.jsx?$': '@storybook/addon-storyshots/injectFileName',
+    '^.+\\.jsx?$': 'babel-jest',
+  },
+};
+```
 
 #### integrityOptions
 
