@@ -318,10 +318,16 @@ export const triggersActionsViaButton = () => {
       injectedItems = [];
     }
   });
+  // Needed to enforce @babel/transform-react-constant-elements deoptimization
+  // See https://github.com/babel/babel/issues/10522
+  const loaderProps = {
+    isLoading: injectedIsLoading,
+    items: injectedItems,
+  };
   return (
     <Fragment>
       <p>Hit the knob button and it will toggle the items list into multiple states.</p>
-      <ItemLoader isLoading={injectedIsLoading} items={injectedItems} />
+      <ItemLoader {...loaderProps} />
     </Fragment>
   );
 };
