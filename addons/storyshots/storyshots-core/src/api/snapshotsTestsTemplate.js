@@ -2,12 +2,11 @@ import { describe, it } from 'global';
 import { addSerializer } from 'jest-specific-snapshot';
 
 function snapshotTest({ item, asyncJest, framework, testMethod, testMethodParams }) {
-  const { parameters, name } = item;
-  const displayName = (parameters && parameters.displayName) || name;
+  const { name } = item;
   const context = { ...item, framework };
 
   if (asyncJest === true) {
-    it(displayName, done =>
+    it(name, done =>
       testMethod({
         done,
         story: item,
@@ -16,7 +15,7 @@ function snapshotTest({ item, asyncJest, framework, testMethod, testMethodParams
       })
     );
   } else {
-    it(displayName, () =>
+    it(name, () =>
       testMethod({
         story: item,
         context,

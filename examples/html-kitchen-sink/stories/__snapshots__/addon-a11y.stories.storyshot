@@ -2,19 +2,9 @@
 
 exports[`Storyshots Addons|a11y Default 1`] = `<button />`;
 
-exports[`Storyshots Addons|a11y Delayed render 1`] = `<div />`;
-
 exports[`Storyshots Addons|a11y Disabled 1`] = `
 <button
   disabled=""
->
-  Testing the a11y addon
-</button>
-`;
-
-exports[`Storyshots Addons|a11y Invalid contrast 1`] = `
-<button
-  style="color: black; background-color: brown;"
 >
   Testing the a11y addon
 </button>
@@ -25,3 +15,13 @@ exports[`Storyshots Addons|a11y Label 1`] = `
   Testing the a11y addon
 </button>
 `;
+
+exports[`Storyshots Addons|a11y Story 4 1`] = `
+<button
+  style="color: black; background-color: brown;"
+>
+  Testing the a11y addon
+</button>
+`;
+
+exports[`Storyshots Addons|a11y Story 5 1`] = `<div />`;
