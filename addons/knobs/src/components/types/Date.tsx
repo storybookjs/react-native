@@ -67,10 +67,6 @@ export default class DateType extends Component<DateTypeProps, DateTypeState> {
     valid: undefined,
   };
 
-  dateInput!: HTMLInputElement;
-
-  timeInput!: HTMLInputElement;
-
   componentDidUpdate() {
     const { knob } = this.props;
     const { valid } = this.state;
@@ -122,6 +118,10 @@ export default class DateType extends Component<DateTypeProps, DateTypeState> {
       this.setState({ valid });
     }
   };
+
+  dateInput!: HTMLInputElement;
+
+  timeInput!: HTMLInputElement;
 
   render() {
     const { knob } = this.props;

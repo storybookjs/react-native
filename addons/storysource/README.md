@@ -4,7 +4,7 @@ This addon is used to show stories source in the addon panel.
 
 [Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Storysource Demo](demo.gif)
+![Storysource Demo](./docs/demo.gif)
 
 ## Getting Started
 
@@ -48,12 +48,14 @@ Allowed values:
 - `typescript`
 - `flow`
 
+Be sure to update the regex test for the webpack rule if utilizing Typescript files.
+
 Usage:
 
 ```js
 module.exports = function({ config }) {
   config.module.rules.push({
-    test: /\.stories\.jsx?$/,
+    test: /\.stories\.tsx?$/,
     loaders: [
       {
         loader: require.resolve('@storybook/source-loader'),

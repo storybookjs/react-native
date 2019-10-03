@@ -2,7 +2,7 @@ import { document } from 'global';
 /** @jsx m */
 
 import m from 'mithril';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 
 const rootEl = document.getElementById('root');
 
@@ -19,7 +19,7 @@ export default function renderMain({
   if (!element) {
     const error = {
       title: `Expecting a Mithril element from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
+      description: dedent`
         Did you forget to return the Mithril element from the story?
         Use "() => MyComp" or "() => { return MyComp; }" when defining the story.
       `,

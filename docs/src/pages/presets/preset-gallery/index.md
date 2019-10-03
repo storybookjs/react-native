@@ -17,6 +17,10 @@ One-line Typescript w/ docgen configuration for storybook.
 
 One-line SCSS configuration for storybook.
 
+### [AntDesign](https://github.com/storybookjs/presets/tree/master/packages/preset-ant-design)
+
+One-line AntDesign configuration for storybook.
+
 ## Community presets
 
 There are no community presets available yet. Check back here or edit this page to add yours.

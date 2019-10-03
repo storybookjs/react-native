@@ -26,6 +26,14 @@ packages:
     access: $all
     publish: $all
 
+  'sb':
+    access: $all
+    publish: $all
+
+  'storybook':
+    access: $all
+    publish: $all
+
   '@*/*':
     access: $all
     publish: $all
