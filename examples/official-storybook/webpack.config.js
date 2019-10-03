@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = async ({ config }) => ({
+module.exports = async ({ config, mode }) => ({
   ...config,
   module: {
     ...config.module,
@@ -16,10 +16,13 @@ module.exports = async ({ config }) => ({
               presets: [
                 ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: 3 }],
                 '@babel/preset-typescript',
-                ['babel-preset-minify', { builtIns: false, mangle: false }],
+                mode === 'PRODUCTION' && [
+                  'babel-preset-minify',
+                  { builtIns: false, mangle: false },
+                ],
                 '@babel/preset-react',
                 '@babel/preset-flow',
-              ],
+              ].filter(Boolean),
               plugins: [
                 '@babel/plugin-proposal-object-rest-spread',
                 '@babel/plugin-proposal-class-properties',
