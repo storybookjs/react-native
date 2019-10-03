@@ -1,15 +1,17 @@
 const ignore = 0;
+// const warn = 1;
+const error = 2;
 
 module.exports = {
   root: true,
   extends: ['@storybook/eslint-config-storybook'],
   rules: {
     'import/extensions': [
-      'error',
+      error,
       'never',
       { ignorePackages: true, md: 'always', svg: 'always', json: 'always', tag: 'always' },
     ],
-    'import/no-unresolved': [2, { ignore: ['@storybook'] }],
+    'import/no-unresolved': [error, { ignore: ['@storybook'] }],
     'react/state-in-constructor': ignore,
     'react/static-property-placement': ignore,
     'react/jsx-props-no-spreading': ignore,
@@ -17,7 +19,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-ignore': ignore,
     '@typescript-eslint/no-object-literal-type-assertion': ignore,
     'react/sort-comp': [
-      'warn',
+      error,
       {
         order: [
           'staticLifecycle',
