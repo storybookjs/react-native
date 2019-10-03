@@ -1,5 +1,3 @@
-/* eslint-disable no-empty-function */
-/* eslint-disable @typescript-eslint/no-parameter-properties */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable import/no-extraneous-dependencies */
 // We could use NgComponentOutlet here but there's currently no easy way

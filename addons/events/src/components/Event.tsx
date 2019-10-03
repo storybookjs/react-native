@@ -113,12 +113,26 @@ class Item extends Component<ItemProps, ItemState> {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     onEmit: PropTypes.func.isRequired,
-    // eslint-disable-next-line react/forbid-prop-types, react/no-unused-prop-types
+    // eslint-disable-next-line react/forbid-prop-types
     payload: PropTypes.any,
   };
 
   static defaultProps = {
     payload: {},
+  };
+
+  static getDerivedStateFromProps = ({ payload }: ItemProps, { prevPayload }: ItemState) => {
+    if (!isEqual(payload, prevPayload)) {
+      const payloadString = json.plain(payload);
+      const refinedPayload = getJSONFromString(payloadString);
+      return {
+        failed: false,
+        payload: refinedPayload,
+        payloadString,
+        prevPayload: refinedPayload,
+      };
+    }
+    return null;
   };
 
   state: ItemState = {
@@ -158,20 +172,6 @@ class Item extends Component<ItemProps, ItemState> {
     this.setState(({ isTextAreaShowed }) => ({
       isTextAreaShowed: !isTextAreaShowed,
     }));
-  };
-
-  static getDerivedStateFromProps = ({ payload }: ItemProps, { prevPayload }: ItemState) => {
-    if (!isEqual(payload, prevPayload)) {
-      const payloadString = json.plain(payload);
-      const refinedPayload = getJSONFromString(payloadString);
-      return {
-        failed: false,
-        payload: refinedPayload,
-        payloadString,
-        prevPayload: refinedPayload,
-      };
-    }
-    return null;
   };
 
   render() {

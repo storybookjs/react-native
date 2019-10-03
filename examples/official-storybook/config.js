@@ -7,7 +7,6 @@ import { withNotes } from '@storybook/addon-notes';
 import { DocsPage } from '@storybook/addon-docs/blocks';
 
 import 'storybook-chromatic';
-
 import addHeadWarning from './head-warning';
 
 if (process.env.NODE_ENV === 'development') {

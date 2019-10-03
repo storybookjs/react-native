@@ -48,12 +48,14 @@ Allowed values:
 - `typescript`
 - `flow`
 
+Be sure to update the regex test for the webpack rule if utilizing Typescript files.
+
 Usage:
 
 ```js
 module.exports = function({ config }) {
   config.module.rules.push({
-    test: /\.stories\.jsx?$/,
+    test: /\.stories\.tsx?$/,
     loaders: [
       {
         loader: require.resolve('@storybook/source-loader'),

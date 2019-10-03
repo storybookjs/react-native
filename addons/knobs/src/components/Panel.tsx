@@ -89,8 +89,6 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
   mounted = false;
 
-  stopListeningOnStory!: Function;
-
   componentDidMount() {
     this.mounted = true;
     const { api } = this.props;
@@ -209,6 +207,8 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
     api.emit(CLICK, knob);
   };
 
+  stopListeningOnStory!: Function;
+
   render() {
     const { knobs } = this.state;
     const { active: panelActive } = this.props;
@@ -228,7 +228,6 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
         render: ({ active }) => (
           <TabWrapper key={knobKeyGroupId} active={active}>
             <PropForm
-              // eslint-disable-next-line no-use-before-define
               knobs={knobsArray.filter(
                 knob => (knob.groupId || DEFAULT_GROUP_ID) === knobKeyGroupId
               )}
@@ -248,7 +247,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
         <Placeholder>
           <Fragment>No knobs found</Fragment>
           <Fragment>
-            Learn how to{' '}
+            Learn how to&nbsp;
             <Link
               href="https://github.com/storybookjs/storybook/tree/master/addons/knobs"
               target="_blank"

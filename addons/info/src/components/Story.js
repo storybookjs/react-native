@@ -167,7 +167,7 @@ class Story extends Component {
       ...stylesheet.button.topRight,
     };
 
-    const infoStyle = Object.assign({}, stylesheet.info);
+    const infoStyle = { ...stylesheet.info };
     if (!open) {
       infoStyle.display = 'none';
     }

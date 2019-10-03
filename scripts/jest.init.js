@@ -51,3 +51,17 @@ const throwError = message => throwMessage('error: ', message);
 
 global.console.error = throwError;
 global.console.warn = throwWarning;
+
+// Mock for matchMedia since it's not yet implemented in JSDOM (https://jestjs.io/docs/en/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom)
+global.window.matchMedia = jest.fn().mockImplementation(query => {
+  return {
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  };
+});

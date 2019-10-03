@@ -58,7 +58,7 @@ export default class KnobManager {
 
   options: KnobManagerOptions = {};
 
-  calling: boolean = false;
+  calling = false;
 
   setChannel(channel: Channel) {
     this.channel = channel;
