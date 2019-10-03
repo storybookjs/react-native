@@ -1,3 +1,17 @@
+## 5.3.0-alpha.7 (October 2, 2019)
+
+### Features
+
+* UI: Preferred color scheme awareness ([#8271](https://github.com/storybookjs/storybook/pull/8271))
+
+### Bug Fixes
+
+* UI: Fix inline code styling for dark theme ([#8260](https://github.com/storybookjs/storybook/pull/8260))
+
+### Maintenance
+
+* Regenerate lockfile ([#8263](https://github.com/storybookjs/storybook/pull/8263))
+
 ## 5.3.0-alpha.6 (October 1, 2019)
 
 ### Bug Fixes
