@@ -16,7 +16,26 @@ module.exports = {
     'react/jsx-fragments': ignore,
     '@typescript-eslint/ban-ts-ignore': ignore,
     '@typescript-eslint/no-object-literal-type-assertion': ignore,
-    'react/sort-comp': 'warn',
+    'react/sort-comp': [
+      'warn',
+      {
+        order: [
+          'staticLifecycle',
+          'static-methods',
+          'instance-variables',
+          'lifecycle',
+          '/^on.+$/',
+          '/^(get|set)(?!(DerivedStateFromProps|SnapshotBeforeUpdate$)).+$/',
+          'instance-methods',
+          'instance-variables',
+          'everything-else',
+          'render',
+        ],
+        groups: {
+          staticLifecycle: ['displayName', 'propTypes', 'defaultProps', 'getDerivedStateFromProps'],
+        },
+      },
+    ],
     'max-classes-per-file': ignore,
   },
   overrides: [
