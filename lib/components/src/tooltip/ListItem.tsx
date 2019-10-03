@@ -8,9 +8,11 @@ export interface TitleProps {
   loading?: boolean;
   disabled?: boolean;
 }
-const Title = styled(({ active, loading, disabled, ...rest }: TitleProps) => (
-  <span {...rest}></span>
-))<{ active: boolean; loading: boolean; disabled: boolean }>(
+const Title = styled(({ active, loading, disabled, ...rest }: TitleProps) => <span {...rest} />)<{
+  active: boolean;
+  loading: boolean;
+  disabled: boolean;
+}>(
   ({ theme }) => ({
     color: theme.color.defaultText,
     // Previously was theme.typography.weight.normal but this weight does not exists in Theme

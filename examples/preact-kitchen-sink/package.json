@@ -31,12 +31,12 @@
     "@storybook/preact": "5.3.0-alpha.7",
     "@storybook/source-loader": "5.3.0-alpha.7",
     "babel-loader": "^8.0.4",
-    "cross-env": "^5.2.0",
+    "cross-env": "^6.0.3",
     "file-loader": "^4.2.0",
     "preact-render-to-json": "^3.6.6",
-    "raw-loader": "^2.0.0",
-    "svg-url-loader": "^2.3.2",
+    "raw-loader": "^3.1.0",
+    "svg-url-loader": "^3.0.2",
     "webpack": "^4.33.0",
-    "webpack-dev-server": "^3.4.1"
+    "webpack-dev-server": "^3.8.2"
   }
 }

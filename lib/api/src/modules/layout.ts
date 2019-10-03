@@ -84,7 +84,7 @@ const deprecatedLayoutOptions: {
   addonPanelInRight: 'panelPosition',
 };
 
-const deprecationMessage = (optionsMap: OptionsMap, prefix: string = '') =>
+const deprecationMessage = (optionsMap: OptionsMap, prefix = '') =>
   `The options { ${Object.keys(optionsMap).join(', ')} } are deprecated -- use ${
     prefix ? `${prefix}'s` : ''
   } { ${Object.values(optionsMap).join(', ')} } instead.`;
