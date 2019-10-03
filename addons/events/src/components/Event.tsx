@@ -121,6 +121,20 @@ class Item extends Component<ItemProps, ItemState> {
     payload: {},
   };
 
+  static getDerivedStateFromProps = ({ payload }: ItemProps, { prevPayload }: ItemState) => {
+    if (!isEqual(payload, prevPayload)) {
+      const payloadString = json.plain(payload);
+      const refinedPayload = getJSONFromString(payloadString);
+      return {
+        failed: false,
+        payload: refinedPayload,
+        payloadString,
+        prevPayload: refinedPayload,
+      };
+    }
+    return null;
+  };
+
   state: ItemState = {
     isTextAreaShowed: false,
     failed: false,
@@ -158,20 +172,6 @@ class Item extends Component<ItemProps, ItemState> {
     this.setState(({ isTextAreaShowed }) => ({
       isTextAreaShowed: !isTextAreaShowed,
     }));
-  };
-
-  static getDerivedStateFromProps = ({ payload }: ItemProps, { prevPayload }: ItemState) => {
-    if (!isEqual(payload, prevPayload)) {
-      const payloadString = json.plain(payload);
-      const refinedPayload = getJSONFromString(payloadString);
-      return {
-        failed: false,
-        payload: refinedPayload,
-        payloadString,
-        prevPayload: refinedPayload,
-      };
-    }
-    return null;
   };
 
   render() {

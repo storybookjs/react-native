@@ -1,22 +1,43 @@
 const ignore = 0;
+// const warn = 1;
+const error = 2;
 
 module.exports = {
   root: true,
   extends: ['@storybook/eslint-config-storybook'],
   rules: {
     'import/extensions': [
-      'error',
+      error,
       'never',
       { ignorePackages: true, md: 'always', svg: 'always', json: 'always', tag: 'always' },
     ],
-    'import/no-unresolved': [2, { ignore: ['@storybook'] }],
+    'import/no-unresolved': [error, { ignore: ['@storybook'] }],
     'react/state-in-constructor': ignore,
     'react/static-property-placement': ignore,
     'react/jsx-props-no-spreading': ignore,
     'react/jsx-fragments': ignore,
     '@typescript-eslint/ban-ts-ignore': ignore,
     '@typescript-eslint/no-object-literal-type-assertion': ignore,
-    'react/sort-comp': 'warn',
+    'react/sort-comp': [
+      error,
+      {
+        order: [
+          'staticLifecycle',
+          'static-methods',
+          'instance-variables',
+          'lifecycle',
+          '/^on.+$/',
+          '/^(get|set)(?!(DerivedStateFromProps|SnapshotBeforeUpdate$)).+$/',
+          'instance-methods',
+          'instance-variables',
+          'everything-else',
+          'render',
+        ],
+        groups: {
+          staticLifecycle: ['displayName', 'propTypes', 'defaultProps', 'getDerivedStateFromProps'],
+        },
+      },
+    ],
     'max-classes-per-file': ignore,
   },
   overrides: [
