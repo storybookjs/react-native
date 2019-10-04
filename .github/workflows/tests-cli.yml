@@ -3,17 +3,8 @@ name: CLI tests
 on: 
   push:
     paths:
-    - 'lib/cli/*'
-    - 'lib/cli/*/*'
-    - 'lib/cli/*/*/*'
-    - 'lib/cli/*/*/*/*'
-    - 'lib/cli/*/*/*/*/*'
-    - 'lib/cli/*/*/*/*/*/*'
-    - 'lib/cli/*/*/*/*/*/*/*'
-    - 'lib/cli/*/*/*/*/*/*/*/*'
-    - 'lib/cli/*/*/*/*/*/*/*/*/*'
-    - 'lib/cli/*/*/*/*/*/*/*/*/*/*'
-    - 'lib/cli/*/*/*/*/*/*/*/*/*/*/*'
+    - 'lib/**'
+    - 'app/**'
 
 jobs:
   build:
