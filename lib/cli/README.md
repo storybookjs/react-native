@@ -54,5 +54,3 @@ npx -p @storybook/cli sb init --type <type>
 ```
 
 Where type is one of the project types defined in [project_types.js](https://github.com/storybookjs/storybook/blob/master/lib/cli/lib/project_types.js)
-
-<!-- dummy change to test cli action!!! -->
