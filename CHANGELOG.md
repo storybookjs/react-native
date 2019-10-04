@@ -1,3 +1,13 @@
+## 5.3.0-alpha.10 (October 5, 2019)
+
+### Bug Fixes
+
+* Storyshots: First-class CSF support ([#8000](https://github.com/storybookjs/storybook/pull/8000))
+
+### Maintenance
+
+* Build: Add CLI test in github actions ([#8064](https://github.com/storybookjs/storybook/pull/8064))
+
 ## 5.3.0-alpha.9 (October 4, 2019)
 
 ### Features
