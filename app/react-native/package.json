@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "5.2.0-rc.11",
+  "version": "5.3.0-alpha.9",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -17,21 +17,26 @@
     "directory": "app/react-native"
   },
   "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.14",
+    "@emotion/core": "^10.0.20",
     "@emotion/native": "^10.0.14",
-    "@storybook/addons": "5.2.0-rc.11",
-    "@storybook/channel-websocket": "5.2.0-rc.11",
-    "@storybook/channels": "5.2.0-rc.11",
-    "@storybook/client-api": "5.2.0-rc.11",
-    "@storybook/core-events": "5.2.0-rc.11",
+    "@storybook/addons": "5.3.0-alpha.9",
+    "@storybook/channel-websocket": "5.3.0-alpha.9",
+    "@storybook/channels": "5.3.0-alpha.9",
+    "@storybook/client-api": "5.3.0-alpha.9",
+    "@storybook/core-events": "5.3.0-alpha.9",
     "core-js": "^3.0.1",
-    "emotion-theming": "^10.0.14",
-    "react-native-swipe-gestures": "^1.0.3",
+    "emotion-theming": "^10.0.19",
+    "react-native-swipe-gestures": "^1.0.4",
     "rn-host-detect": "^1.1.5"
   },
   "devDependencies": {

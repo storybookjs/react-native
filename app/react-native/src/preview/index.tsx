@@ -111,6 +111,7 @@ export default class Preview {
 
     this._sendSetStories();
 
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const preview = this;
 
     addons.loadAddons(this._clientApi);

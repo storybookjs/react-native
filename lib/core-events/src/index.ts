@@ -18,6 +18,8 @@ enum events {
   STORY_MISSING = 'storyMissing',
   STORY_ERRORED = 'storyErrored',
   STORY_THREW_EXCEPTION = 'storyThrewException',
+  STORIES_COLLAPSE_ALL = 'storiesCollapseAll',
+  STORIES_EXPAND_ALL = 'storiesExpandAll',
   DOCS_RENDERED = 'docsRendered',
 }
 
@@ -44,6 +46,8 @@ export const {
   STORY_MISSING,
   STORY_ERRORED,
   STORY_CHANGED,
+  STORIES_COLLAPSE_ALL,
+  STORIES_EXPAND_ALL,
   STORY_THREW_EXCEPTION,
   DOCS_RENDERED,
 } = events;

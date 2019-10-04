@@ -91,7 +91,8 @@ If you'd rather set up your project manually, take a look at our [Slow Start Gui
 
 Once it's installed, you can `npm run storybook` and it will run the development server on your local machine, and give you a URL to browse some sample stories.
 
-**Storybook v2.x migration note**: If you're using Storybook v2.x and want to shift to 4.x version the easiest way is:
+**Storybook v2.x migration note**: 
+If you're using Storybook v2.x and want to shift to 4.x version the easiest way is:
 
 ```sh
 cd my-storybook-v2-app
@@ -164,7 +165,7 @@ We have a badge! Link it to your live Storybook example.
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](link to site)
 ```
 
-If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [press repo](https://github.com/storybookjs/press).
+If you're looking for material to use in your presentation about storybook, like logo's video material and the colors we use etc, you can find all of that at our [brand repo](https://github.com/storybookjs/brand).
 
 ## Community
 

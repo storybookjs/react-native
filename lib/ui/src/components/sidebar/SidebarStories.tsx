@@ -152,7 +152,7 @@ const SidebarStories: FunctionComponent<StoriesProps> = React.memo(
           <Placeholder key="empty">
             <Fragment key="title">No stories found</Fragment>
             <Fragment>
-              Learn how to{' '}
+              Learn how to&nbsp;
               <StyledLink href="https://storybook.js.org/basics/writing-stories/" target="_blank">
                 write stories
               </StyledLink>
