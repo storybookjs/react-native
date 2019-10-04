@@ -10,8 +10,10 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    container: node:10
     steps:
+    - uses: actions/setup-node
+        with:
+          node-version: 10
     - uses: actions/checkout@v1
     - name: install, bootstrap
       run: |
@@ -19,7 +21,6 @@ jobs:
   cli:
     name: CLI
     runs-on: ubuntu-latest
-    container: node:10
     needs: build
     steps:
     - name: cli
@@ -28,12 +29,8 @@ jobs:
   latest-cra:
     name: Latest CRA
     runs-on: ubuntu-latest
-    container: node:10
     needs: build
     steps:
-    - name: cli
-      run: |
-        yarn test --cli
     - name: latest-cra
       run: |
         yarn test-latest-cra
