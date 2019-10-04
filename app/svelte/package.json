@@ -1,6 +1,6 @@
 {
   "name": "@storybook/svelte",
-  "version": "5.3.0-alpha.7",
+  "version": "5.3.0-alpha.9",
   "description": "Storybook for Svelte: Develop Svelte Component in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -31,10 +31,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/core": "5.3.0-alpha.7",
+    "@storybook/core": "5.3.0-alpha.9",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "regenerator-runtime": "^0.12.1",
+    "regenerator-runtime": "^0.13.3",
     "ts-dedent": "^1.1.0"
   },
   "devDependencies": {

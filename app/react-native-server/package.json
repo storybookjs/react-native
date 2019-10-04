@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-server",
-  "version": "5.3.0-alpha.7",
+  "version": "5.3.0-alpha.9",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -29,20 +29,20 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.7",
-    "@storybook/api": "5.3.0-alpha.7",
-    "@storybook/channel-websocket": "5.3.0-alpha.7",
-    "@storybook/core": "5.3.0-alpha.7",
-    "@storybook/core-events": "5.3.0-alpha.7",
-    "@storybook/ui": "5.3.0-alpha.7",
-    "commander": "^2.19.0",
+    "@storybook/addons": "5.3.0-alpha.9",
+    "@storybook/api": "5.3.0-alpha.9",
+    "@storybook/channel-websocket": "5.3.0-alpha.9",
+    "@storybook/core": "5.3.0-alpha.9",
+    "@storybook/core-events": "5.3.0-alpha.9",
+    "@storybook/ui": "5.3.0-alpha.9",
+    "commander": "^3.0.2",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "react": "^16.6.0",
     "react-dom": "^16.8.3",
     "uuid": "^3.3.2",
     "webpack": "^4.33.0",
-    "ws": "^6.1.0"
+    "ws": "^7.1.2"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0"

@@ -48,8 +48,11 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Generate static examples
+          command: yarn build-storybooks
+      - run:
           name: Run chromatic on the pre-built storybook
-          command: yarn chromatic -- -d ./storybook-static
+          command: yarn chromatic
   packtracker:
     <<: *defaults
     steps:
@@ -352,4 +355,4 @@ workflows:
             - test
       - chromatic:
           requires:
-            - examples
+            - build

@@ -1,3 +1,30 @@
+## 5.3.0-alpha.9 (October 4, 2019)
+
+### Features
+
+* API: Add method to set manager config ([#8232](https://github.com/storybookjs/storybook/pull/8232))
+
+### Bug Fixes
+
+* Core: Show exception rather than error on react error boundary ([#8100](https://github.com/storybookjs/storybook/pull/8100))
+* Addon-knobs: Fix issues caused by rerenders ([#8287](https://github.com/storybookjs/storybook/pull/8287))
+
+### Maintenance
+
+* Fix local `yarn lint` ([#8289](https://github.com/storybookjs/storybook/pull/8289))
+* Fix button knob story ([#8282](https://github.com/storybookjs/storybook/pull/8282))
+* Official examples: apply babel-preset-minify only in production mode ([#8283](https://github.com/storybookjs/storybook/pull/8283))
+* Build: Upgrade chromatic to test ([#8246](https://github.com/storybookjs/storybook/pull/8246))
+
+### Dependency Upgrades
+
+* Upgrade regenerator-runtime to 0.13 in all packages ([#8258](https://github.com/storybookjs/storybook/pull/8258))
+* Misc upgrades ([#8280](https://github.com/storybookjs/storybook/pull/8280))
+
+## 5.3.0-alpha.9 (October 4, 2019)
+
+NPM publish failed
+
 ## 5.3.0-alpha.7 (October 2, 2019)
 
 ### Features

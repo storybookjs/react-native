@@ -43,10 +43,10 @@
     "bootstrap": "node ./scripts/bootstrap.js",
     "bootstrap:docs": "yarn install --cwd docs",
     "build-packs": "lerna exec --scope '@storybook/*' -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
-    "build-storybooks": "./scripts/build-storybooks.sh",
+    "build-storybooks": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true ./scripts/build-storybooks.js",
     "changelog": "pr-log --sloppy --cherry-pick",
     "changelog:next": "pr-log --sloppy --since-prerelease",
-    "chromatic": "npm --prefix examples/official-storybook run chromatic",
+    "chromatic": "chromatic --storybook-build-dir=\"./built-storybooks/official-storybook/\" --exit-zero-on-changes --app-code=\"ab7m45tp9p\"",
     "coverage": "codecov",
     "danger": "danger",
     "dev": "concurrently --kill-others \"yarn dev:tsc\" \"yarn dev:babel\"",
@@ -62,7 +62,7 @@
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
-    "now-build": "./scripts/now.js",
+    "now-build": "yarn build-storybooks",
     "publish:crna": "yarn --cwd examples-native/crna-kitchen-sink expo publish",
     "publish:debug": "npm run publish:latest -- --npm-tag=debug --no-push",
     "publish:latest": "lerna publish --exact --concurrency 1 --force-publish",
@@ -79,42 +79,43 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "*.js": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.jsx": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.mjs": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.html": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.ts": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.tsx": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "*.json": [
-        "yarn lint:js --fix",
-        "git add"
-      ],
-      "package.json": [
-        "yarn lint:package",
-        "git add"
-      ]
-    }
+    "*.html": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.js": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.json": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.jsx": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.mjs": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.ts": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.tsx": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "package.json": [
+      "yarn lint:package",
+      "git add"
+    ]
   },
   "browserslist": "defaults",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  },
   "devDependencies": {
     "@angular/common": "^8.2.8",
     "@angular/compiler": "^8.2.8",
@@ -135,11 +136,12 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@emotion/snapshot-serializer": "^0.8.2",
-    "@storybook/eslint-config-storybook": "^1.0.0",
-    "@storybook/linter-config": "^1.0.1",
+    "@storybook/eslint-config-storybook": "^2.0.0",
+    "@storybook/linter-config": "^2.0.0",
+    "@testing-library/react": "^9.2.0",
     "@types/jest": "^24.0.11",
     "@types/lodash": "^4.14.129",
-    "@types/node": "^12.0.8",
+    "@types/node": "^12.7.9",
     "@types/react": "^16.8.14",
     "@types/semver": "^6.0.0",
     "@types/webpack": "^4.39.0",
@@ -150,28 +152,29 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-dynamic-import-node": "^2.2.0",
-    "babel-plugin-emotion": "^10.0.19",
+    "babel-plugin-emotion": "^10.0.20",
     "babel-plugin-macros": "^2.4.5",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-preset-vue": "^2.0.2",
     "chalk": "^2.4.2",
     "codecov": "^3.5.0",
     "codelyzer": "^5.0.0",
-    "commander": "^2.19.0",
+    "commander": "^3.0.2",
     "concurrently": "^4.0.1",
     "core-js": "^3.0.1",
     "corejs-upgrade-webpack-plugin": "^2.2.0",
-    "cross-env": "^5.2.0",
-    "danger": "^7.0.15",
-    "del": "^4.1.1",
+    "cross-env": "^6.0.3",
+    "danger": "^9.2.1",
+    "del": "^5.1.0",
     "detect-port": "^1.3.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
-    "eslint": "^5.14.1",
+    "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.15.1",
     "esm": "^3.2.25",
-    "github-release-from-changelog": "^1.3.2",
+    "github-release-from-changelog": "^2.1.0",
     "glob": "^7.1.3",
-    "husky": "^2.3.0",
+    "husky": "^3.0.8",
     "inquirer": "^7.0.0",
     "jest": "^24.8.0",
     "jest-cli": "^24.8.0",
@@ -187,9 +190,9 @@
     "jest-preset-angular": "^6.0.1",
     "jest-raw-loader": "^1.0.1",
     "jest-vue-preprocessor": "^1.5.0",
-    "jest-watch-typeahead": "^0.3.0",
+    "jest-watch-typeahead": "^0.4.0",
     "lerna": "^3.14.1",
-    "lint-staged": "^8.1.7",
+    "lint-staged": "^9.4.1",
     "lodash": "^4.17.11",
     "node-cleanup": "^2.1.2",
     "node-fetch": "^2.6.0",
@@ -199,17 +202,17 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-test-renderer": "^16.8.3",
-    "react-testing-library": "^6.0.0",
     "recursive-copy": "^2.0.10",
-    "regenerator-runtime": "^0.12.1",
-    "remark-cli": "^6.0.1",
+    "regenerator-runtime": "^0.13.3",
+    "remark-cli": "^7.0.0",
     "remark-lint": "^6.0.4",
     "remark-preset-lint-recommended": "^3.0.2",
     "riot-jest-transformer": "^2.0.0",
     "shelljs": "^0.8.3",
     "sort-package-json": "^1.21.0",
+    "storybook-chromatic": "^3.0.0",
     "svelte": "^3.4.1",
-    "svelte-jest": "^0.2.0",
+    "svelte-jest": "^0.3.0",
     "trash": "^6.0.0",
     "ts-dedent": "^1.1.0",
     "ts-jest": "^24.0.2",
