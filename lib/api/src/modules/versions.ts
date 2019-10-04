@@ -1,6 +1,6 @@
-import { fetch } from 'global';
+import { VERSIONCHECK } from 'global';
 import semver from 'semver';
-import { logger } from '@storybook/client-logger';
+import memoize from 'memoizerific';
 
 import { version as currentVersion } from '../version';
 
@@ -30,13 +30,13 @@ export interface SubState {
   dismissedVersionNotification: undefined | string;
 }
 
-const checkInterval = 24 * 60 * 60 * 1000;
-const versionsUrl = 'https://storybook.js.org/versions.json';
-
-async function fetchLatestVersion(v: string) {
-  const fromFetch = await fetch(`${versionsUrl}?current=${v}`);
-  return fromFetch.json();
-}
+const getVersionCheckData = memoize(1)(() => {
+  try {
+    return JSON.parse(VERSIONCHECK).data;
+  } catch (e) {
+    return {};
+  }
+});
 
 export interface SubAPI {
   getCurrentVersion: () => Version;
@@ -45,25 +45,14 @@ export interface SubAPI {
 }
 
 export default function({ store, mode }: Module) {
-  const {
-    versions: persistedVersions = {},
-    lastVersionCheck = 0,
-    dismissedVersionNotification,
-  } = store.getState();
+  const { dismissedVersionNotification } = store.getState();
 
-  // Check to see if we have info about the current version persisted
-  const persistedCurrentVersion = Object.values(persistedVersions).find(
-    v => v.version === currentVersion
-  );
   const state = {
     versions: {
-      ...persistedVersions,
       current: {
         version: currentVersion,
-        ...(persistedCurrentVersion && { info: persistedCurrentVersion.info }),
       },
     },
-    lastVersionCheck,
     dismissedVersionNotification,
   };
 
@@ -87,10 +76,13 @@ export default function({ store, mode }: Module) {
       const latest = api.getLatestVersion();
       const current = api.getCurrentVersion();
 
-      if (!latest || !latest.version) {
-        return true;
+      if (latest) {
+        if (!latest.version) {
+          return true;
+        }
+        return semver.gt(latest.version, current.version);
       }
-      return latest && semver.gt(latest.version, current.version);
+      return false;
     },
   };
 
@@ -98,21 +90,10 @@ export default function({ store, mode }: Module) {
   async function init({ api: fullApi }: API) {
     const { versions = {} } = store.getState();
 
-    const now = Date.now();
-    if (!lastVersionCheck || now - lastVersionCheck > checkInterval) {
-      try {
-        const { latest, next } = await fetchLatestVersion(currentVersion);
-        await store.setState(
-          {
-            versions: { ...versions, latest, next },
-            lastVersionCheck: now,
-          },
-          { persistence: 'permanent' }
-        );
-      } catch (error) {
-        logger.warn(`Failed to fetch latest version from server: ${error}`);
-      }
-    }
+    const { latest, next } = getVersionCheckData();
+    await store.setState({
+      versions: { ...versions, latest, next },
+    });
 
     if (api.versionUpdateAvailable()) {
       const latestVersion = api.getLatestVersion().version;
