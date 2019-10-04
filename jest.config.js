@@ -41,8 +41,8 @@ module.exports = {
     '<rootDir>/examples/official-storybook',
   ],
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
-    '^.+\\.tsx?$': '<rootDir>/scripts/babel-jest.js',
+    '^.+\\.stories\\.[jt]sx?$': '@storybook/addon-storyshots/injectFileName',
+    '^.+\\.[jt]sx?$': '<rootDir>/scripts/babel-jest.js',
   },
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
   testPathIgnorePatterns: [
