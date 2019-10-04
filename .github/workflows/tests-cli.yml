@@ -1,9 +1,10 @@
 name: CLI tests
 
+on: 
+  push
+  # push:
 # disabled for now:
 # https://github.community/t5/GitHub-Actions/Preserve-status-from-previous-action-run/m-p/33821#M1661
-# on: 
-#   push:
 #     paths:
 #     - 'lib/**'
 #     - 'app/**'
