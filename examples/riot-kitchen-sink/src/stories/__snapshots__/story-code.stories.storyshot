@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Story|How to create a story Built As String 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <test>
+    <div>
+      simple test
+    </div>
+  </test>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story Built From Raw Import 1`] = `
+<div
+  data-is="simpletest"
+  id="root"
+>
+  <div>
+    simple test (without parameter). Oh, by the way (... well, nothing)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story Built From Tags And Template 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <simpletest
+    test="with a parameter"
+  >
+    <div>
+      simple test (with a parameter). Oh, by the way (value is mapped to riotValue)
+    </div>
+  </simpletest>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story Built From The Precompilation 1`] = `
+<div
+  data-is="anothertest"
+  id="root"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story Built With Tag 1`] = `
+<div
+  data-is="test"
+  id="root"
+>
+  <div>
+    simple test (with a parameter)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story Tags Template And Tag Constructor At Once 1`] = `
+<div
+  data-is="root"
+  id="root"
+>
+  <simpletest
+    hacked="true"
+    test="with a parameter"
+  >
+    <div>
+      HACKED : true ; simple test (with a parameter). Oh, by the way (value is mapped to riotValue)
+    </div>
+  </simpletest>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story The Mount Instruction Is Not Necessary 1`] = `
+<div
+  data-is="anothertest"
+  id="root"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story|How to create a story The Opts Value Is Not Necessary 1`] = `
+<div
+  data-is="anothertest"
+  id="root"
+>
+  <div>
+    yet another test, precompiled this time (WARN, only works in lower case, never upper case with precompiled templates)
+  </div>
+</div>
+`;
