@@ -7,8 +7,8 @@ on:
     - 'app/**'
 
 jobs:
-  build:
-    name: Build
+  cli:
+    name: CLI
     runs-on: ubuntu-latest
     steps:
     - uses: actions/setup-node@v1
@@ -18,19 +18,20 @@ jobs:
     - name: install, bootstrap
       run: |
         yarn bootstrap --core
-  cli:
-    name: CLI
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
     - name: cli
       run: |
         yarn test --cli
   latest-cra:
     name: Latest CRA
     runs-on: ubuntu-latest
-    needs: build
     steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - uses: actions/checkout@v1
+    - name: install, bootstrap
+      run: |
+        yarn bootstrap --core
     - name: latest-cra
       run: |
         yarn test-latest-cra
