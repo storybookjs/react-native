@@ -8,23 +8,24 @@ on:
 
 jobs:
   build:
-
-    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [10]
-        os: [ubuntu-latest]
-
+    name: Build
+    container: node:10
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node_version }}
-      uses: actions/setup-node@v1
-      with:
-        version: ${{ matrix.node_version }}
     - name: install, bootstrap
       run: |
         yarn bootstrap --core
+  cli:
+    name: CLI
+    container: node:10
+    steps:
+    - name: cli
+      run: |
+        yarn test --cli
+  latest-cra:
+    name: Latest CRA
+    container: node:10
+    steps:
     - name: cli
       run: |
         yarn test --cli
