@@ -51,7 +51,7 @@
     "mini-css-extract-plugin": "^0.8.0",
     "prop-types": "^15.7.2",
     "react-dev-utils": "^9.0.0",
-    "regenerator-runtime": "^0.12.1",
+    "regenerator-runtime": "^0.13.3",
     "semver": "^6.0.0",
     "ts-dedent": "^1.1.0",
     "webpack": "^4.33.0"

@@ -36,7 +36,7 @@
     "global": "^4.3.2",
     "jest-specific-snapshot": "^2.0.0",
     "read-pkg-up": "^7.0.0",
-    "regenerator-runtime": "^0.12.1",
+    "regenerator-runtime": "^0.13.3",
     "ts-dedent": "^1.1.0"
   },
   "devDependencies": {
