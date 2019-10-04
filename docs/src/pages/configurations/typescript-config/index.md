@@ -12,7 +12,6 @@ This is a central reference for using Storybook with TypeScript.
 ```bash
 yarn add -D typescript
 yarn add -D awesome-typescript-loader
-yarn add -D @types/storybook__react # typings
 yarn add -D @storybook/addon-info react-docgen-typescript-loader # optional but recommended
 yarn add -D jest "@types/jest" ts-jest #testing
 ```
@@ -82,12 +81,6 @@ This is for the default configuration where `/stories` is a peer of `src`. If yo
 
 When using latest create-react-app (CRA 3.0), Babel 7 has native TypeScript 3.5.0 support. Setup becomes easier.
 For a full working demo (that also uses react-docgen-typescript-loader) you can check out this [repo](https://github.com/Luchanso/storybook-cra-ts-example).
-
-### Dependencies you may need
-
-```bash
-yarn add -D @types/storybook__react # typings
-```
 
 ### Setting up TypeScript to work with Storybook
 
