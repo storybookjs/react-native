@@ -20,6 +20,7 @@ jobs:
     name: CLI
     runs-on: ubuntu-latest
     container: node:10
+    needs: build
     steps:
     - name: cli
       run: |
@@ -28,6 +29,7 @@ jobs:
     name: Latest CRA
     runs-on: ubuntu-latest
     container: node:10
+    needs: build
     steps:
     - name: cli
       run: |
