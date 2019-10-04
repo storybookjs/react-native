@@ -1,4 +1,4 @@
-## 5.3.0-alpha.8 (October 4, 2019)
+## 5.3.0-alpha.9 (October 4, 2019)
 
 ### Features
 
@@ -20,6 +20,10 @@
 
 * Upgrade regenerator-runtime to 0.13 in all packages ([#8258](https://github.com/storybookjs/storybook/pull/8258))
 * Misc upgrades ([#8280](https://github.com/storybookjs/storybook/pull/8280))
+
+## 5.3.0-alpha.9 (October 4, 2019)
+
+NPM publish failed
 
 ## 5.3.0-alpha.7 (October 2, 2019)
 
