@@ -3,7 +3,7 @@ node_js:
   - "10"
 
 cache:
-  yarn: true
+  yarn: false
 
 install:
   - yarn install
@@ -14,4 +14,6 @@ script:
 jobs:
   include:
     - script: travis_wait 30 yarn test --cli
+      name: "CLI Fixtures" 
     - script: travis_wait 30 yarn test-latest-cra
+      name: "CRA latest" 
