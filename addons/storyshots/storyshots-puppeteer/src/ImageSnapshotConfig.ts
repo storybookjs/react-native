@@ -1,5 +1,5 @@
 import { MatchImageSnapshotOptions } from 'jest-image-snapshot';
-import { Base64ScreenShotOptions, Browser, DirectNavigationOptions, Page } from 'puppeteer';
+import { Base64ScreenShotOptions, Browser, DirectNavigationOptions, Page } from 'puppeteer-core';
 
 export interface Context {
   kind: string;

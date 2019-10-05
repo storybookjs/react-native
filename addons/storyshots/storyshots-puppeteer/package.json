@@ -30,18 +30,14 @@
     "@storybook/node-logger": "5.3.0-alpha.13",
     "@storybook/router": "5.3.0-alpha.13",
     "@types/jest-image-snapshot": "^2.8.0",
+    "@types/puppeteer-core": "^1.9.0",
     "core-js": "^3.0.1",
     "jest-image-snapshot": "^2.8.2",
+    "puppeteer-core": "^1.12.2",
     "regenerator-runtime": "^0.13.3"
   },
   "peerDependencies": {
-    "@storybook/addon-storyshots": "5.3.0-alpha.13",
-    "@types/puppeteer": "^1.19.0",
-    "puppeteer": "^1.12.2"
-  },
-  "optionalDependencies": {
-    "@types/puppeteer": "^1.19.0",
-    "puppeteer": "^1.12.2"
+    "@storybook/addon-storyshots": "5.3.0-alpha.13"
   },
   "publishConfig": {
     "access": "public"
