@@ -216,8 +216,7 @@
     "trash": "^6.0.0",
     "ts-dedent": "^1.1.0",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.4.0",
-    "weak": "^1.0.1"
+    "typescript": "^3.4.0"
   },
   "engines": {
     "node": ">=8.6.0",
