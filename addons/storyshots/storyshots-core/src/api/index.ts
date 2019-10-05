@@ -50,25 +50,31 @@ function testStorySnapshots(options: StoryshotsOptions = {}) {
 
   const data = storybook
     .raw()
-    .filter(({ name }: any) => (storyNameRegex ? name.match(storyNameRegex) : true))
-    .filter(({ kind }: any) => (storyKindRegex ? kind.match(storyKindRegex) : true))
-    .reduce((acc: any, item: any) => {
-      const { kind, storyFn: render, parameters } = item;
-      const existing = acc.find((i: any) => i.kind === kind);
-      const { fileName } = item.parameters;
+    .filter(({ name }) => (storyNameRegex ? name.match(storyNameRegex) : true))
+    .filter(({ kind }) => (storyKindRegex ? kind.match(storyKindRegex) : true))
+    .reduce(
+      (acc, item) => {
+        const { kind, storyFn: render, parameters } = item;
+        const existing = acc.find((i: any) => i.kind === kind);
+        const { fileName } = item.parameters;
 
-      if (!isDisabled(parameters.storyshots)) {
-        if (existing) {
-          existing.children.push({ ...item, render, fileName });
-        } else {
-          acc.push({
-            kind,
-            children: [{ ...item, render, fileName }],
-          });
+        if (!isDisabled(parameters.storyshots)) {
+          if (existing) {
+            existing.children.push({ ...item, render, fileName });
+          } else {
+            acc.push({
+              kind,
+              children: [{ ...item, render, fileName }],
+            });
+          }
         }
-      }
-      return acc;
-    }, []);
+        return acc;
+      },
+      [] as Array<{
+        kind: string;
+        children: any[];
+      }>
+    );
 
   if (data.length) {
     callTestMethodGlobals(testMethod);

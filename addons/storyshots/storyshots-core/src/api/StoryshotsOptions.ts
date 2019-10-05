@@ -14,7 +14,7 @@ export interface StoryshotsOptions {
   framework?: SupportedFramework;
   test?: (story: any, context: any, renderTree: RenderTree, options?: any) => any;
   renderer?: Function;
-  snapshotSerializers?: any[];
+  snapshotSerializers?: jest.SnapshotSerializerPlugin[];
   /**
    * @Deprecated The functionality of this option is completely covered by snapshotSerializers which should be used instead.
    */
