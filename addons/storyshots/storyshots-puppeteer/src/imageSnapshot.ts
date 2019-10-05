@@ -40,7 +40,7 @@ export const imageSnapshot = (customConfig: Partial<ImageSnapshotConfig> = {}) =
 
   const testFn = async ({ context }: any) => {
     const { kind, framework, name } = context;
-    if (framework === 'rn') {
+    if (framework === 'react-native') {
       // Skip tests since we de not support RN image snapshots.
       logger.error(
         "It seems you are running imageSnapshot on RN app and it's not supported. Skipping test."
