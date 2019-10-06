@@ -1,3 +1,13 @@
+## 5.3.0-alpha.11 (October 6, 2019)
+
+### Bug Fixes
+
+* Storyshots: Update `read-pkg-up` usage to work with version `7` ([#8299](https://github.com/storybookjs/storybook/pull/8299))
+
+### Maintenance
+
+* Remove `weak` dependency Node 12 ([#8300](https://github.com/storybookjs/storybook/pull/8300))
+
 ## 5.3.0-alpha.10 (October 5, 2019)
 
 ### Bug Fixes
