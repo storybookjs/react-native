@@ -51,6 +51,8 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
+
 export const one = () => <Button>One</Button>;
 one.story = {};
 one.story.name = 'one';
@@ -121,6 +123,8 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
+
 export const __page = () => {
   throw new Error('Docs-only story');
 };
@@ -181,6 +185,8 @@ function MDXContent({ components, ...props }) {
 }
 
 MDXContent.isMDXComponent = true;
+
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
 
 export const one = () => <Button>One</Button>;
 one.story = {};
@@ -255,6 +261,8 @@ function MDXContent({ components, ...props }) {
 }
 
 MDXContent.isMDXComponent = true;
+
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
 
 export const componentNotes = () => <Button>Component notes</Button>;
 componentNotes.story = {};
@@ -344,6 +352,8 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
+
 export const helloButton = () => <Button>Hello button</Button>;
 helloButton.story = {};
 helloButton.story.name = 'hello button';
@@ -405,6 +415,8 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
+
 const componentMeta = { includeStories: [] };
 
 const mdxStoryNameToId = {};
@@ -453,7 +465,9 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const text = () => 'Plain text';
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
+
+export const text = makeStoryFn('Plain text');
 text.story = {};
 text.story.name = 'text';
 text.story.parameters = { mdxSource: \\"'Plain text'\\" };
@@ -512,6 +526,8 @@ function MDXContent({ components, ...props }) {
 }
 
 MDXContent.isMDXComponent = true;
+
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
 
 export const one = () => <Button>One</Button>;
 one.story = {};
@@ -581,12 +597,14 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const functionStory = () => {
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
+
+export const functionStory = makeStoryFn(() => {
   const btn = document.createElement('button');
   btn.innerHTML = 'Hello Button';
   btn.addEventListener('click', action('Click'));
   return btn;
-};
+});
 functionStory.story = {};
 functionStory.story.name = 'function';
 functionStory.story.parameters = {
@@ -597,6 +615,65 @@ functionStory.story.parameters = {
 const componentMeta = { includeStories: ['functionStory'] };
 
 const mdxStoryNameToId = {};
+
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxStoryNameToId }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
+
+export default componentMeta;
+"
+`;
+
+exports[`docs-mdx-compiler-plugin story-function-var.mdx 1`] = `
+"/* @jsx mdx */
+import { DocsContainer } from '@storybook/addon-docs/blocks';
+
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+export const basicFn = () => <Button mdxType=\\"Button\\" />;
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+const Button = makeShortcode('Button');
+const layoutProps = {
+  basicFn,
+};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <Meta title=\\"story-function-var\\" mdxType=\\"Meta\\" />
+
+      <h1>{\`Button\`}</h1>
+      <p>{\`I can define a story with the function defined in CSF:\`}</p>
+      <Story name=\\"basic\\" mdxType=\\"Story\\">
+        {basicFn}
+      </Story>
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
+
+export const basic = makeStoryFn(basicFn);
+basic.story = {};
+basic.story.name = 'basic';
+basic.story.parameters = { mdxSource: 'basicFn' };
+
+const componentMeta = { title: 'story-function-var', includeStories: ['basic'] };
+
+const mdxStoryNameToId = { basic: 'story-function-var--basic' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
@@ -652,7 +729,9 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const toStorybook = () => ({
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
+
+export const toStorybook = makeStoryFn({
   template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,
   props: {
     showApp: linkTo('Button'),
@@ -713,6 +792,8 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
+
 const componentMeta = { includeStories: [] };
 
 const mdxStoryNameToId = {};
@@ -758,6 +839,8 @@ function MDXContent({ components, ...props }) {
 }
 
 MDXContent.isMDXComponent = true;
+
+const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
 
 const componentMeta = { includeStories: [] };
 
