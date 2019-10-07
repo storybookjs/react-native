@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import readPkgUp from 'read-pkg-up';
 
-const { packageJson: { dependencies, devDependencies } = {} } = readPkgUp.sync() || {};
+const { package: { dependencies, devDependencies } = {} } = readPkgUp.sync() || {};
 
 export default function hasDependency(name) {
   return (
