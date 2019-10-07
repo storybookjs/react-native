@@ -9,6 +9,7 @@
 - [Mixing storiesOf with CSF/MDX](#mixing-storiesof-with-csfmdx)
 - [Migrating from notes/info addons](#migrating-from-notesinfo-addons)
 - [Exporting documentation](#exporting-documentation)
+- [Disabling docs stories](#disabling-docs-stories)
 - [More resources](#more-resources)
 
 ## Component Story Format (CSF) with DocsPage
@@ -126,6 +127,29 @@ To address this, we’ve added a CLI flag to export just the docs. This flag is 
 
 ```sh
 yarn build-storybook --docs
+```
+
+## Disabling docs stories
+
+There are two cases where a user might wish to exclude stories from their documentation pages:
+
+### DocsPage
+
+User defines stories in CSF and renders docs using DocsPage, but wishes to exclude some fo the stories from the DocsPage to reduce noise on the page.
+
+```js
+export const foo = () => <Button>foo</Button>;
+foo.story = { parameters: { docs: { disable: true } } };
+```
+
+### MDX Stories
+
+User writes documentation & stories side-by-side in a single MDX file, and wants those stories to show up in the canvas but not in the docs themselves. They want something similar to the recipe "CSF stories with MDX docs" but want to do everything in MDX:
+
+```js
+<Story name="foo" parameters={{ docs: { disable: true }} >
+  <Button>foo</Button>
+</Story>
 ```
 
 ## More resources
