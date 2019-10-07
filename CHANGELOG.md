@@ -9,6 +9,12 @@
 * CSF: Ignore __esModule export ([#8317](https://github.com/storybookjs/storybook/pull/8317))
 * React: Improve type of storyFn ([#8197](https://github.com/storybookjs/storybook/pull/8197))
 
+## 5.2.3 (October 7, 2019)
+
+### Bug Fixes
+
+* Core: Fix lib/core whitelist ([#8182](https://github.com/storybookjs/storybook/pull/8182))
+
 ## 5.2.2 (October 7, 2019)
 
 ### Bug Fixes
