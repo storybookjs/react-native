@@ -49,7 +49,7 @@ Furthermore, Storybook for React Native currently only supports the `storiesOf` 
 
 ## Story file location
 
-Stories are easier to maintain when they are located alongside the components they are documented. We recommend:
+Stories are easier to maintain when they are located alongside the components they document. We recommend:
 
 ```plaintext
 •
@@ -95,7 +95,7 @@ It's up to you to find a naming/placing scheme that works for your project/team.
 
 Stories are loaded in the `.storybook/config.js` file.
 
-The most convenient way to load stories is by filename. For example, if you stories files are located in the `src/components` directory, you can use the following snippet:
+The most convenient way to load stories is by filename. For example, if your stories files are located in the `src/components` directory, you can use the following snippet:
 
 ```js
 import { configure } from '@storybook/react';
@@ -191,7 +191,7 @@ addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 load(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story director wraps a single story in an additional red frame.
+And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story decorator wraps a single story in an additional red frame.
 
 ```jsx
 import React from 'react';

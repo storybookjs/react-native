@@ -286,7 +286,7 @@ But if you do use emotion, you can use the active storybook theme, which benefit
 ## Re-using existing components
 
 Wouldn't it be awesome if we provided you with some common used components you could use to build out your own addon quickly and fit in right away?
-Good news! WE DO! We publish most of storybook's UI components as a package: `@storybook/components`. You can check them out in [our storybook](https://storybooks.netlify.com) (pretty meta right?).
+Good news! WE DO! We publish most of storybook's UI components as a package: `@storybook/components`. You can check them out in [our storybook](https://storybookjs.now.sh/) (pretty meta right?).
 
 ## Addon API
 

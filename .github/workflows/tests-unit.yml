@@ -1,4 +1,4 @@
-name: Github CI
+name: Unit tests
 
 on: [push]
 
@@ -18,7 +18,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         version: ${{ matrix.node_version }}
-    - name: install, build, and test
+    - name: install, bootstrap
       run: |
         yarn bootstrap --core
+    - name: test
+      run: |
         yarn test --core
