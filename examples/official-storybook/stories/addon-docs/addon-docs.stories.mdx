@@ -121,3 +121,9 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
 Flow types are not officially supported
 
 <Props of={FlowTypeButton} />
+
+## Docs Disable
+
+<Story name="docs disable" parameters={{ docs: { disable: true } }}>
+  <Button>This souldn't show up in docs page</Button>
+</Story>
