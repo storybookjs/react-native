@@ -53,7 +53,7 @@ basic.story = {
 
 ```md
 import { Meta, Story } from '@storybook/addon-docs/blocks';
-import \* as stories from './Button.stories.js';
+import * as stories from './Button.stories.js';
 import { SomeComponent } from 'path/to/SomeComponent';
 
 <Meta {...stories.default} />
