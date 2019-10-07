@@ -1,3 +1,23 @@
+## 5.2.2 (October 7, 2019)
+
+### Bug Fixes
+
+* Storyshots: First-class CSF support ([#8000](https://github.com/storybookjs/storybook/pull/8000))
+* UI: Move addon dependencies to devDependencies ([#8206](https://github.com/storybookjs/storybook/pull/8206))
+* Addon-docs: CSS classes for escape-hatch theming wrapper/content ([#8061](https://github.com/storybookjs/storybook/pull/8061))
+* CLI: Fix variable collisions in storiesof-to-csf ([#8106](https://github.com/storybookjs/storybook/pull/8106))
+* Addon-knobs: Add missing type def  #8105 ([#8118](https://github.com/storybookjs/storybook/pull/8118))
+* Dependencies: add @types/webpack-env to apps that depend on it ([#8119](https://github.com/storybookjs/storybook/pull/8119))
+* Core: Show exception rather than error on react error boundary ([#8100](https://github.com/storybookjs/storybook/pull/8100))
+* UI: Fix inline code styling for dark theme ([#8260](https://github.com/storybookjs/storybook/pull/8260))
+* Addon-ondevice-notes: Validate the state content ([#8261](https://github.com/storybookjs/storybook/pull/8261))
+* Telejson: New version with typings and bugfixes ([#8228](https://github.com/storybookjs/storybook/pull/8228))
+* React: Add DecoratorFn type to exports ([#8121](https://github.com/storybookjs/storybook/pull/8121))
+* Addon-knobs: Handle undefined array value ([#8006](https://github.com/storybookjs/storybook/pull/8006))
+* Preact: Allow JSX.Element story ([#8159](https://github.com/storybookjs/storybook/pull/8159))
+* Storyshots: Fix STORYBOOK_HOOKS_CONTEXT error ([#8163](https://github.com/storybookjs/storybook/pull/8163))
+* Update react-draggable to 4.0.3 ([#8145](https://github.com/storybookjs/storybook/pull/8145))
+
 ## 5.2.1 (September 17, 2019)
 
 ### Bug Fixes
