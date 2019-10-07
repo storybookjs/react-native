@@ -243,9 +243,8 @@ function extractExports(node, options) {
   );
 
   const fullJsx = [
-    'import { DocsContainer } from "@storybook/addon-docs/blocks";',
+    'import { DocsContainer, makeStoryFn } from "@storybook/addon-docs/blocks";',
     defaultJsx,
-    `const makeStoryFn = (val) => (typeof val === 'function' ? val : () => val);`,
     ...storyExports,
     `const componentMeta = ${stringifyMeta(metaExport)};`,
     `const mdxStoryNameToId = ${JSON.stringify(mdxStoryNameToId)};`,

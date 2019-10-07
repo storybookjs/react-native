@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin decorators.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Story, Meta } from '@storybook/addon-docs/blocks';
@@ -51,8 +51,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 export const one = () => <Button>One</Button>;
 one.story = {};
 one.story.name = 'one';
@@ -91,7 +89,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin docs-only.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Meta } from '@storybook/addon-docs/blocks';
 
@@ -123,8 +121,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 export const __page = () => {
   throw new Error('Docs-only story');
 };
@@ -149,7 +145,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin non-story-exports.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Story, Meta } from '@storybook/addon-docs/blocks';
@@ -186,8 +182,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 export const one = () => <Button>One</Button>;
 one.story = {};
 one.story.name = 'one';
@@ -216,7 +210,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin parameters.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Story, Meta } from '@storybook/addon-docs/blocks';
@@ -262,8 +256,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 export const componentNotes = () => <Button>Component notes</Button>;
 componentNotes.story = {};
 componentNotes.story.name = 'component notes';
@@ -306,7 +298,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin previews.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Preview, Story, Meta } from '@storybook/addon-docs/blocks';
@@ -352,8 +344,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 export const helloButton = () => <Button>Hello button</Button>;
 helloButton.story = {};
 helloButton.story.name = 'hello button';
@@ -388,7 +378,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-current.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Story } from '@storybook/addon-docs/blocks';
 
@@ -415,8 +405,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 const componentMeta = { includeStories: [] };
 
 const mdxStoryNameToId = {};
@@ -435,7 +423,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-def-text-only.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Story, Meta } from '@storybook/addon-docs/blocks';
 
@@ -465,8 +453,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 export const text = makeStoryFn('Plain text');
 text.story = {};
 text.story.name = 'text';
@@ -490,7 +476,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-definitions.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Story, Meta } from '@storybook/addon-docs/blocks';
@@ -526,8 +512,6 @@ function MDXContent({ components, ...props }) {
 }
 
 MDXContent.isMDXComponent = true;
-
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
 
 export const one = () => <Button>One</Button>;
 one.story = {};
@@ -566,7 +550,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-function.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 const makeShortcode = name =>
   function MDXDefaultShortcode(props) {
@@ -596,8 +580,6 @@ function MDXContent({ components, ...props }) {
 }
 
 MDXContent.isMDXComponent = true;
-
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
 
 export const functionStory = makeStoryFn(() => {
   const btn = document.createElement('button');
@@ -630,7 +612,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-function-var.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 export const basicFn = () => <Button mdxType=\\"Button\\" />;
@@ -664,8 +646,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 export const basic = makeStoryFn(basicFn);
 basic.story = {};
 basic.story.name = 'basic';
@@ -689,7 +669,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-object.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Story, Meta } from '@storybook/addon-docs/blocks';
 import { Welcome, Button } from '@storybook/angular/demo';
@@ -729,8 +709,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 export const toStorybook = makeStoryFn({
   template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,
   props: {
@@ -765,7 +743,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-references.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Story } from '@storybook/addon-docs/blocks';
 
@@ -792,8 +770,6 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
-
 const componentMeta = { includeStories: [] };
 
 const mdxStoryNameToId = {};
@@ -812,7 +788,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin vanilla.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 
@@ -839,8 +815,6 @@ function MDXContent({ components, ...props }) {
 }
 
 MDXContent.isMDXComponent = true;
-
-const makeStoryFn = val => (typeof val === 'function' ? val : () => val);
 
 const componentMeta = { includeStories: [] };
 
