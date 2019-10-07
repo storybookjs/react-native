@@ -60,7 +60,7 @@ import { SomeComponent } from 'path/to/SomeComponent';
 
 # Button
 
-I can embed a story (but not define one, since this file should not contain a `Meta`):
+I can define a story with the function imported from CSF:
 
 <Story name="basic">{stories.basic}</Story>
 
