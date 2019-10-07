@@ -70,11 +70,6 @@ export const getStoryProps = (
 const StoryContainer: React.FunctionComponent<StoryProps> = props => (
   <DocsContext.Consumer>
     {context => {
-      const { parameters } = context;
-      const disable = parameters && parameters.docs && parameters.docs.disable;
-      if (disable) {
-        return null;
-      }
       const storyProps = getStoryProps(props, context);
       if (!storyProps) {
         return null;
