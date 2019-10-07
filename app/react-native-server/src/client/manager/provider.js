@@ -46,6 +46,10 @@ export default class ReactProvider extends Provider {
     return addons.getElements(type);
   }
 
+  getConfig() {
+    return this.addons.getConfig();
+  }
+
   renderPreview() {
     return (
       <Consumer filter={mapper} pure>

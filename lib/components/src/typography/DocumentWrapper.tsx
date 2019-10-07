@@ -436,6 +436,7 @@ export const DocumentWrapper = styled.div(
       border: 1px solid ${theme.color.mediumlight};
       background-color: ${theme.color.lighter};
       border-radius: 3px;
+      color: ${theme.base === 'dark' && theme.color.darkest};
     }
   `
 );

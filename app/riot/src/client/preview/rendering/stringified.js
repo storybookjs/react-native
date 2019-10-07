@@ -42,8 +42,7 @@ export default function renderStringified({
     const rootName = oneTag.boundAs || guessRootName(oneTag);
     const { content } = oneTag || {};
     const code = content ? content.trim() : oneTag || '';
-    const compiled =
-      code.indexOf(alreadyCompiledMarker) !== -1 ? code : compileText(code, rootName);
+    const compiled = code.includes(alreadyCompiledMarker) ? code : compileText(code, rootName);
     unregister(rootName);
     eval(getRidOfRiotNoise(`${compiled}`)); // eslint-disable-line no-eval
   });

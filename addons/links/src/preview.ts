@@ -1,8 +1,14 @@
-import { document, HTMLElement } from 'global';
+import {
+  document,
+  HTMLElement,
+  __STORYBOOK_STORY_STORE__ as storyStore,
+  __STORYBOOK_CLIENT_API__ as clientApi,
+} from 'global';
 import qs from 'qs';
 import addons from '@storybook/addons';
 import { STORY_CHANGED, SELECT_STORY } from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
+import { logger } from '@storybook/client-logger';
 
 interface ParamsId {
   storyId: string;
@@ -27,19 +33,53 @@ const generateUrl = (id: string) => {
 const valueOrCall = (args: string[]) => (value: string | ((...args: string[]) => string)) =>
   typeof value === 'function' ? value(...args) : value;
 
-export const linkTo = (kind: string, story?: string) => (...args: string[]) => {
+export const linkTo = (
+  idOrKindInput: string,
+  storyInput?: string | ((...args: any[]) => string)
+) => (...args: string[]) => {
   const resolver = valueOrCall(args);
+  const { storyId } = storyStore.getSelection();
+  const current = storyStore.fromId(storyId) || {};
+  const kindVal = resolver(idOrKindInput);
+  const storyVal = resolver(storyInput);
 
-  navigate({
-    kind: resolver(kind),
-    story: resolver(story),
-  });
+  const fromid = storyStore.fromId(kindVal);
+
+  const item =
+    fromid ||
+    clientApi.raw().find((i: any) => {
+      if (kindVal && storyVal) {
+        return i.kind === kindVal && i.story === storyVal;
+      }
+      if (!kindVal && storyVal) {
+        return i.kind === current.kind && i.story === storyVal;
+      }
+      if (kindVal && !storyVal) {
+        return i.kind === kindVal;
+      }
+      if (!kindVal && !storyVal) {
+        return i.kind === current.kind;
+      }
+      return false;
+    });
+
+  if (item) {
+    navigate({
+      kind: item.kind,
+      story: item.story,
+    });
+  } else {
+    logger.error('could not navigate to provided story');
+  }
 };
 
-export const hrefTo = (kind: string, name: string): Promise<string> =>
-  new Promise(resolve => {
-    resolve(generateUrl(toId(kind, name)));
+export const hrefTo = (kind: string, name: string): Promise<string> => {
+  return new Promise(resolve => {
+    const { storyId } = storyStore.getSelection();
+    const current = storyStore.fromId(storyId);
+    resolve(generateUrl(toId(kind || current.kind, name)));
   });
+};
 
 const linksListener = (e: Event) => {
   const { target } = e;

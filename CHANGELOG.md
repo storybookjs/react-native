@@ -1,3 +1,110 @@
+## 5.3.0-alpha.11 (October 6, 2019)
+
+### Bug Fixes
+
+* Storyshots: Update `read-pkg-up` usage to work with version `7` ([#8299](https://github.com/storybookjs/storybook/pull/8299))
+
+### Maintenance
+
+* Remove `weak` dependency Node 12 ([#8300](https://github.com/storybookjs/storybook/pull/8300))
+
+## 5.3.0-alpha.10 (October 5, 2019)
+
+### Bug Fixes
+
+* Storyshots: First-class CSF support ([#8000](https://github.com/storybookjs/storybook/pull/8000))
+
+### Maintenance
+
+* Build: Add CLI test in github actions ([#8064](https://github.com/storybookjs/storybook/pull/8064))
+
+## 5.3.0-alpha.9 (October 4, 2019)
+
+### Features
+
+* API: Add method to set manager config ([#8232](https://github.com/storybookjs/storybook/pull/8232))
+
+### Bug Fixes
+
+* Core: Show exception rather than error on react error boundary ([#8100](https://github.com/storybookjs/storybook/pull/8100))
+* Addon-knobs: Fix issues caused by rerenders ([#8287](https://github.com/storybookjs/storybook/pull/8287))
+
+### Maintenance
+
+* Fix local `yarn lint` ([#8289](https://github.com/storybookjs/storybook/pull/8289))
+* Fix button knob story ([#8282](https://github.com/storybookjs/storybook/pull/8282))
+* Official examples: apply babel-preset-minify only in production mode ([#8283](https://github.com/storybookjs/storybook/pull/8283))
+* Build: Upgrade chromatic to test ([#8246](https://github.com/storybookjs/storybook/pull/8246))
+
+### Dependency Upgrades
+
+* Upgrade regenerator-runtime to 0.13 in all packages ([#8258](https://github.com/storybookjs/storybook/pull/8258))
+* Misc upgrades ([#8280](https://github.com/storybookjs/storybook/pull/8280))
+
+## 5.3.0-alpha.9 (October 4, 2019)
+
+NPM publish failed
+
+## 5.3.0-alpha.7 (October 2, 2019)
+
+### Features
+
+* UI: Preferred color scheme awareness ([#8271](https://github.com/storybookjs/storybook/pull/8271))
+
+### Bug Fixes
+
+* UI: Fix inline code styling for dark theme ([#8260](https://github.com/storybookjs/storybook/pull/8260))
+
+### Maintenance
+
+* Regenerate lockfile ([#8263](https://github.com/storybookjs/storybook/pull/8263))
+
+## 5.3.0-alpha.6 (October 1, 2019)
+
+### Bug Fixes
+
+* Addon-ondevice-notes: Validate the state content  ([#8261](https://github.com/storybookjs/storybook/pull/8261))
+* API: Fix require cycles in addons hooks ([#8236](https://github.com/storybookjs/storybook/pull/8236))
+* API: Fix missing `channel.off` ([#8234](https://github.com/storybookjs/storybook/pull/8234))
+* Telejson: New version with typings and bugfixes ([#8228](https://github.com/storybookjs/storybook/pull/8228))
+* Addon-links: Update linkTo type to accept function ([#8117](https://github.com/storybookjs/storybook/pull/8117))
+* React: Add DecoratorFn type to exports ([#8121](https://github.com/storybookjs/storybook/pull/8121))
+
+### Maintenance
+
+* Update angular example to v8 ([#7747](https://github.com/storybookjs/storybook/pull/7747))
+* Hitting some flakiness in now deploys, this might help ([#8200](https://github.com/storybookjs/storybook/pull/8200))
+* Remov hooks from extracted StoryItem ([#8256](https://github.com/storybookjs/storybook/pull/8256))
+
+### Dependency Upgrades
+
+* Bump react-native-swipe-gestures to 1.0.4 ([#8235](https://github.com/storybookjs/storybook/pull/8235))
+
+## 5.3.0-alpha.5 (September 27, 2019)
+
+### Maintenance
+
+* UI: Improve code indentation ([#8218](https://github.com/storybookjs/storybook/pull/8218))
+* Use the extracted linting configs ([#8213](https://github.com/storybookjs/storybook/pull/8213))
+
+## 5.3.0-alpha.4 (September 26, 2019)
+
+### Bug Fixes
+
+* UI: Move addon dependencies to devDependencies ([#8206](https://github.com/storybookjs/storybook/pull/8206))
+* Addon-knobs: Handle undefined array value ([#8006](https://github.com/storybookjs/storybook/pull/8006))
+
+### Maintenance
+
+* Build: Upgrade from node8 to node10 ([#8207](https://github.com/storybookjs/storybook/pull/8207))
+
+## 5.3.0-alpha.3 (September 25, 2019)
+
+### Bug Fixes
+
+* Dependencies: add @types/webpack-env to apps that depend on it ([#8119](https://github.com/storybookjs/storybook/pull/8119))
+* UI: Removes default CSS margins on viewport ([#7742](https://github.com/storybookjs/storybook/pull/7742))
+
 ## 5.3.0-alpha.2 (September 24, 2019)
 
 ### Bug Fixes

@@ -8,9 +8,6 @@ export function webpack(config) {
         {
           test: /\.marko$/,
           loader: require.resolve('@marko/webpack/loader'),
-          options: {
-            compiler: require.resolve('marko/compiler'),
-          },
         },
       ],
     },

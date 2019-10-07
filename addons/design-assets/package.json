@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-design-assets",
-  "version": "5.3.0-alpha.2",
+  "version": "5.3.0-alpha.11",
   "description": "Design asset preview for storybook",
   "keywords": [
     "addon",
@@ -33,20 +33,17 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.2",
-    "@storybook/api": "5.3.0-alpha.2",
-    "@storybook/client-logger": "5.3.0-alpha.2",
-    "@storybook/components": "5.3.0-alpha.2",
-    "@storybook/core-events": "5.3.0-alpha.2",
-    "@storybook/theming": "5.3.0-alpha.2",
-    "common-tags": "^1.8.0",
+    "@storybook/addons": "5.3.0-alpha.11",
+    "@storybook/api": "5.3.0-alpha.11",
+    "@storybook/client-logger": "5.3.0-alpha.11",
+    "@storybook/components": "5.3.0-alpha.11",
+    "@storybook/core-events": "5.3.0-alpha.11",
+    "@storybook/theming": "5.3.0-alpha.11",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "react": "^16.8.3",
+    "ts-dedent": "^1.1.0",
     "use-image": "^1.0.3"
-  },
-  "devDependencies": {
-    "@types/common-tags": "^1.8.0"
   },
   "publishConfig": {
     "access": "public"
