@@ -1,3 +1,9 @@
+## 5.2.3 (October 7, 2019)
+
+### Bug Fixes
+
+* Core: Fix lib/core whitelist ([#8182](https://github.com/storybookjs/storybook/pull/8182))
+
 ## 5.2.2 (October 7, 2019)
 
 ### Bug Fixes
