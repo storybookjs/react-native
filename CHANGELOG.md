@@ -1,3 +1,14 @@
+## 5.3.0-alpha.12 (October 7, 2019)
+
+### Features
+
+* CSF: Allow multiple CSF with same title ([#8133](https://github.com/storybookjs/storybook/pull/8133))
+
+### Bug Fixes
+
+* CSF: Ignore __esModule export ([#8317](https://github.com/storybookjs/storybook/pull/8317))
+* React: Improve type of storyFn ([#8197](https://github.com/storybookjs/storybook/pull/8197))
+
 ## 5.2.2 (October 7, 2019)
 
 ### Bug Fixes
