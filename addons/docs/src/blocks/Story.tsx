@@ -51,19 +51,33 @@ export const getStoryProps = (
   const data = storyStore.fromId(previewId);
   const { framework = null } = (data && data.parameters) || {};
 
-  // prefer props, then global options, then framework-inferred values
   const docsParam = (data && data.parameters && data.parameters.docs) || {};
-  const { inlineStories = inferInlineStories(framework), iframeHeight = undefined } = docsParam;
 
   if (docsParam.disable) {
     return null;
   }
+
+  // prefer props, then global options, then framework-inferred values
+  const {
+    inlineStories = inferInlineStories(framework),
+    iframeHeight = undefined,
+    prepareForInline = undefined,
+  } = docsParam;
+  const { storyFn = undefined, name: storyName = undefined } = data || {};
+
+  const storyIsInline = typeof inline === 'boolean' ? inline : inlineStories;
+  if (storyIsInline && !prepareForInline) {
+    throw new Error(
+      `Story '${storyName}' is set to render inline, but no 'prepareForInline' function is implemented in your docs configuration!`
+    );
+  }
+
   return {
-    inline: typeof inline === 'boolean' ? inline : inlineStories,
+    inline: storyIsInline,
     id: previewId,
-    storyFn: data && data.storyFn,
-    height: height || iframeHeight,
-    title: data && data.name,
+    storyFn: prepareForInline && storyFn ? () => prepareForInline(storyFn) : storyFn,
+    height: height || (storyIsInline ? undefined : iframeHeight),
+    title: storyName,
   };
 };
 

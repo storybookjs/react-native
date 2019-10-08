@@ -31,7 +31,7 @@ export const template = () => ({
 });
 
 export const withData = ({ parameters: { fileName, ...parameters }, hooks, ...rest }) => ({
-  template: `<pre>${JSON.stringify({ ...rest, parameters }, null, 2)}</pre>`,
+  template: `<pre v-pre>${JSON.stringify({ ...rest, parameters }, null, 2)}</pre>`,
 });
 
 export const render = () => ({

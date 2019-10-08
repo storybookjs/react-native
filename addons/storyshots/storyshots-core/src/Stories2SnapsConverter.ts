@@ -32,7 +32,7 @@ export class Stories2SnapsConverter {
     return path.format({ dir: path.join(dir, snapshotsDirName), name, ext: snapshotExtension });
   }
 
-  getSnapshotFileName(context: { fileName?: string, kind: any }) {
+  getSnapshotFileName(context: { fileName?: string; kind: any }) {
     const { fileName, kind } = context;
 
     if (!fileName) {
