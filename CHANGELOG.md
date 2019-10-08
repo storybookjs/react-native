@@ -1,4 +1,4 @@
-## 5.3.0-alpha.14 (October 8, 2019)
+## 5.3.0-alpha.15 (October 8, 2019)
 
 ### Features
 
@@ -7,6 +7,10 @@
 ### Maintenance
 
 * Typescript: Migrate addon-storyshots ([#7674](https://github.com/storybookjs/storybook/pull/7674))
+
+## 5.3.0-alpha.14 (October 8, 2019)
+
+NPM publish failed
 
 ## 5.3.0-alpha.13 (October 8, 2019)
 
