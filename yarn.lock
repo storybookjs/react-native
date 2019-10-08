@@ -286,7 +286,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.2.2", "@babel/core@^7.3.3", "@babel/core@^7.3.4", "@babel/core@^7.4.3", "@babel/core@^7.4.5":
+"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.2.2", "@babel/core@^7.3.3", "@babel/core@^7.3.4", "@babel/core@^7.4.3", "@babel/core@^7.4.5", "@babel/core@^7.6.2":
   version "7.6.2"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.6.2.tgz#069a776e8d5e9eefff76236bc8845566bd31dd91"
   integrity sha512-l8zto/fuoZIbncm+01p8zPSDZu/VuuJhAfA7d/AbzM09WR7iVhavvfNDYCNpo1VvLk6E6xgAoP9P+/EMJHuRkQ==
@@ -3809,6 +3809,11 @@
   version "1.1.17"
   resolved "https://registry.yarnpkg.com/@types/mithril/-/mithril-1.1.17.tgz#1a5dde2a653ef6011cd36ef70eefe6bac0cb92e4"
   integrity sha512-U/wwKZT8hjstY2Q470bLMGVh/fjT2+SgBMzIILn0Z4nmgzzG6j+n18UOAxQ63aI8vXIOkQsbkAdbESt8+jIQdQ==
+
+"@types/mithril@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/mithril/-/mithril-2.0.0.tgz#f9a9e523264af6dc8c2027029bcd400a459739bb"
+  integrity sha512-Bjjs5a7xc6eC207ZE1tR7ssnMoF8d3VVcupmzbhFaP2nM4G1Jpm1oqrvAiu+ys0OLKYUQjxNALUerHDPHbuwfA==
 
 "@types/node@*", "@types/node@^12.7.9":
   version "12.7.10"
