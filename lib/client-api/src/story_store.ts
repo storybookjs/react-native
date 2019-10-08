@@ -190,7 +190,7 @@ export default class StoryStore extends EventEmitter {
         Story with id ${id} already exists in the store!
 
         Perhaps you added the same story twice, or you have a name collision?
-        Story ids need to be unique -- ensure you aren't using the same names modolo url-sanitization.
+        Story ids need to be unique -- ensure you aren't using the same names modulo url-sanitization.
       `);
     }
 
