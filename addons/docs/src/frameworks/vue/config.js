@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { render } from 'react-dom';
 import toReact from '@egoist/vue-to-react';
 import { addParameters } from '@storybook/vue';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
