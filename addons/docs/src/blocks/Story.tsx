@@ -2,7 +2,6 @@ import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { components as docsComponents } from '@storybook/components/html';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
-import { StoryFn } from '@storybook/addons';
 import { CURRENT_SELECTION } from './shared';
 
 import { DocsContext, DocsContextProps } from './DocsContext';
