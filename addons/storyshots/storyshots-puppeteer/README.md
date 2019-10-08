@@ -120,12 +120,16 @@ You might use `getScreenshotOptions` to specify options for screenshot. Will be 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
-const getScreenshotOptions = ({context, url}) => {
+const getScreenshotOptions = ({ context, url }) => {
   return {
-    fullPage: false // Do not take the full page screenshot. Default is 'true' in Storyshots.
-  }
-}
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getScreenshotOptions})});
+    encoding: 'base64', // encoding: 'base64' is a property required by puppeteer
+    fullPage: false, // Do not take the full page screenshot. Default is 'true' in Storyshots.,
+  };
+};
+initStoryshots({
+  suite: 'Image storyshots',
+  test: imageSnapshot({ storybookUrl: 'http://localhost:6006', getScreenshotOptions }),
+});
 ```
 
 `getScreenshotOptions` receives an object `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
@@ -156,16 +160,15 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 import puppeteer from 'puppeteer';
 
 (async function() {
-    initStoryshots({
-      suite: 'Image storyshots',
-      test: imageSnapshot({ 
-        storybookUrl: 'http://localhost:6006', 
-        getCustomBrowser: async () => puppeteer.connect('ws://yourUrl')
-      }),
-    });
+  initStoryshots({
+    suite: 'Image storyshots',
+    test: imageSnapshot({
+      storybookUrl: 'http://localhost:6006',
+      getCustomBrowser: async () => puppeteer.connect({ browserWSEndpoint: 'ws://yourUrl' }),
+    }),
+  });
 })();
 ```
-
 
 ### Customizing a `page` instance
 
