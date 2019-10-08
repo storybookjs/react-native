@@ -15,7 +15,7 @@ addParameters({
   },
   docs: {
     // inlineStories: true,
-    iframeHeight: '600px',
+    iframeHeight: '60px',
   },
 });
 
