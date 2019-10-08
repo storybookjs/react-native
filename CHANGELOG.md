@@ -1,3 +1,14 @@
+## 5.3.0-alpha.13 (October 8, 2019)
+
+### Features
+
+* MDX: Better ergonomics for documenting CSF ([#8312](https://github.com/storybookjs/storybook/pull/8312))
+* Addon-docs: Story parameter for disabling docs ([#8313](https://github.com/storybookjs/storybook/pull/8313))
+
+### Dependency Upgrades
+
+* Remove redundant dependency on hoist-non-react-statics (#6349) ([#8310](https://github.com/storybookjs/storybook/pull/8310))
+
 ## 5.3.0-alpha.12 (October 7, 2019)
 
 ### Features
