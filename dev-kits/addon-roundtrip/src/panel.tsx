@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, memo } from 'react';
 import { useAddonState, useChannel } from '@storybook/api';
 import { ActionBar } from '@storybook/components';
 import { ADDON_ID, EVENTS } from './constants';
@@ -9,7 +9,7 @@ interface ContentProps {
   results: Results;
 }
 
-const Content = React.memo(({ results }: ContentProps) => (
+const Content = memo(({ results }: ContentProps) => (
   <Fragment>
     {results.length ? (
       <ol>

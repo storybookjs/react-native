@@ -1,4 +1,4 @@
-import React from 'react';
+import { Context, createContext } from 'react';
 
 export interface DocsContextProps {
   id?: string;
@@ -16,4 +16,4 @@ export interface DocsContextProps {
   forceRender?: () => void;
 }
 
-export const DocsContext: React.Context<DocsContextProps> = React.createContext({});
+export const DocsContext: Context<DocsContextProps> = createContext({});

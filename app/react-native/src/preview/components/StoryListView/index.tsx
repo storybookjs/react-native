@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, FunctionComponent } from 'react';
 import { SectionList, TextInput, TouchableOpacity, View, SafeAreaView } from 'react-native';
 import styled from '@emotion/native';
 import Events from '@storybook/core-events';
@@ -29,10 +29,7 @@ interface SectionProps {
   selected: boolean;
 }
 
-const SectionHeader: React.FunctionComponent<SectionProps> = ({
-  title,
-  selected,
-}: SectionProps) => (
+const SectionHeader: FunctionComponent<SectionProps> = ({ title, selected }: SectionProps) => (
   <HeaderContainer key={title}>
     <Header selected={selected}>{title}</Header>
   </HeaderContainer>
@@ -50,7 +47,7 @@ const ItemTouchable: typeof TouchableOpacity = styled.TouchableOpacity`
   padding-vertical: 5;
 `;
 
-const ListItem: React.FunctionComponent<ListItemProps> = ({ kind, title, selected, onPress }) => (
+const ListItem: FunctionComponent<ListItemProps> = ({ kind, title, selected, onPress }) => (
   <ItemTouchable
     key={title}
     onPress={onPress}

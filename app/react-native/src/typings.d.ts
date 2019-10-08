@@ -1,3 +1,5 @@
+import {Component} from 'react';
+
 declare module 'react-native-swipe-gestures' {
   export type GestureRecognizerConfig = Partial<{
     velocityThreshold: number;
@@ -21,7 +23,7 @@ declare module 'react-native-swipe-gestures' {
     config: GestureRecognizerConfig;
   }
 
-  declare class GestureRecognizer extends React.Component<Props> {}
+  declare class GestureRecognizer extends Component<Props> {}
 
   export default GestureRecognizer;
 }

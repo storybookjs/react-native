@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  FunctionComponent,
+  HTMLAttributes,
+} from 'react';
 import PropTypes from 'prop-types';
 
-const Main = (props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>) => (
+type MainProps = Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'style'>;
+const Main: FunctionComponent<MainProps> = props => (
   <article
     {...props}
     style={{
@@ -13,13 +20,10 @@ const Main = (props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>,
   />
 );
 
-const Title = ({
-  children,
-  ...props
-}: {
-  children: string;
-  props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
-}) => <h1 {...props}>{children}</h1>;
+type TitleProps = DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
+const Title: FunctionComponent<TitleProps> = ({ children, ...props }) => (
+  <h1 {...props}>{children}</h1>
+);
 Title.propTypes = {
   children: PropTypes.node,
 };
@@ -27,9 +31,11 @@ Title.defaultProps = {
   children: undefined,
 };
 
-const Note = (
-  props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>
-) => (
+type NoteProps = Omit<
+  DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>,
+  'style'
+>;
+const Note: FunctionComponent<NoteProps> = props => (
   <p
     {...props}
     style={{
@@ -38,9 +44,8 @@ const Note = (
   />
 );
 
-const InlineCode = (
-  props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
-) => (
+type InlineCodeProps = Omit<DetailedHTMLProps<HTMLAttributes<HTMLCod>, HTMLElement>, 'style'>;
+const InlineCode: FunctionComponent<InlineCodeProps> = props => (
   <code
     {...props}
     style={{
@@ -55,19 +60,15 @@ const InlineCode = (
   />
 );
 
-const Link = ({
-  children,
-  href,
-  target,
-  rel,
-  ...props
-}: {
-  children: string;
+type LinkProps = Omit<
+  DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>,
+  'style'
+> & {
   href: string;
   target: string;
   rel: string;
-  props?: React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
-}) => (
+};
+const Link: FunctionComponent<LinkProps> = ({ children, href, target, rel, ...props }) => (
   <a
     href={href}
     {...props}
@@ -92,15 +93,11 @@ Link.defaultProps = {
   children: undefined,
 };
 
-const NavButton = ({
-  children,
-  onClick,
-  ...props
-}: {
-  children: string;
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
-  props?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
-}) => (
+type NavButtonProps = Omit<
+  DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+  'style' | 'type'
+> & {};
+const NavButton: FunctionComponent<NavButtonProps> = ({ children, onClick, ...props }) => (
   <button
     {...props}
     type="button"
@@ -122,7 +119,6 @@ const NavButton = ({
     {children}
   </button>
 );
-
 NavButton.propTypes = {
   children: PropTypes.node,
 };
@@ -130,7 +126,10 @@ NavButton.defaultProps = {
   children: undefined,
 };
 
-const Welcome = ({ showApp }: { showApp: () => void }) => (
+type WelcomeProps = {
+  showApp: () => void;
+};
+const Welcome: FunctionComponent<WelcomeProps> = ({ showApp }) => (
   <Main>
     <Title>Welcome to storybook</Title>
     <p>This is a UI component dev environment for your app.</p>
@@ -175,7 +174,6 @@ const Welcome = ({ showApp }: { showApp: () => void }) => (
     </Note>
   </Main>
 );
-
 Welcome.displayName = 'Welcome';
 Welcome.propTypes = {
   showApp: PropTypes.func,

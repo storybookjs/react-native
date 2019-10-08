@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ComponentProps, MouseEvent } from 'react';
 import { styled } from '@storybook/theming';
 import { document, window } from 'global';
 import memoize from 'memoizerific';
@@ -91,7 +91,7 @@ export interface SyntaxHighlighterState {
   copied: boolean;
 }
 
-type ReactSyntaxHighlighterProps = React.ComponentProps<typeof ReactSyntaxHighlighter>;
+type ReactSyntaxHighlighterProps = ComponentProps<typeof ReactSyntaxHighlighter>;
 
 export class SyntaxHighlighter extends Component<
   SyntaxHighlighterProps & ReactSyntaxHighlighterProps,
@@ -108,7 +108,7 @@ export class SyntaxHighlighter extends Component<
 
   state = { copied: false };
 
-  onClick = (e: React.MouseEvent) => {
+  onClick = (e: MouseEvent) => {
     const { children } = this.props;
 
     e.preventDefault();

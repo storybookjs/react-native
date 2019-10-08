@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement, ElementType, FunctionComponent, ReactNode } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { components as docsComponents } from '@storybook/components/html';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
@@ -8,9 +8,9 @@ import { DocsContext, DocsContextProps } from './DocsContext';
 
 export const storyBlockIdFromId = (storyId: string) => `story--${storyId}`;
 
-const resetComponents: Record<string, React.ElementType> = {};
+const resetComponents: Record<string, ElementType> = {};
 Object.keys(docsComponents).forEach(key => {
-  resetComponents[key] = (props: any) => React.createElement(key, props);
+  resetComponents[key] = (props: any) => createElement(key, props);
 });
 
 interface CommonProps {
@@ -20,7 +20,7 @@ interface CommonProps {
 
 type StoryDefProps = {
   name: string;
-  children: React.ReactNode;
+  children: ReactNode;
 } & CommonProps;
 
 type StoryRefProps = {
@@ -81,7 +81,7 @@ export const getStoryProps = (
   };
 };
 
-const StoryContainer: React.FunctionComponent<StoryProps> = props => (
+const StoryContainer: FunctionComponent<StoryProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const storyProps = getStoryProps(props, context);

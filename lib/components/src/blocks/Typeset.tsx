@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
 import { withReset } from '../typography/withReset';
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 
-const Label = styled.div<{}>(({ theme }) => ({
+const Label = styled.div(({ theme }) => ({
   marginRight: 30,
   fontSize: `${theme.typography.size.s1}px`,
   color:
@@ -28,7 +28,7 @@ const TypeSpecimen = styled.div({
   '&:not(:last-child)': { marginBottom: '1rem' },
 });
 
-const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
+const Wrapper = styled.div(withReset, ({ theme }) => ({
   ...getBlockBackgroundStyle(theme),
   margin: '25px 0 40px',
   padding: '30px 20px',
@@ -41,10 +41,10 @@ export interface TypesetProps {
 }
 
 /**
- * Convenient tyleguide documentation showing examples of type
+ * Convenient styleguide documentation showing examples of type
  * with different sizes and weights and configurable sample text.
  */
-export const Typeset: React.FunctionComponent<TypesetProps> = ({
+export const Typeset: FunctionComponent<TypesetProps> = ({
   fontSizes,
   fontWeight,
   sampleText,

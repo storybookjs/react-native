@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { AsyncStorage } from 'react-native';
 import { ThemeProvider } from 'emotion-theming';
 // @ts-ignore
@@ -119,7 +119,7 @@ export default class Preview {
     const appliedTheme = { ...theme, ...params.theme };
 
     // react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
-    return class StorybookRoot extends React.PureComponent {
+    return class StorybookRoot extends PureComponent {
       render() {
         if (onDeviceUI) {
           return (

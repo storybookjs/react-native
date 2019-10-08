@@ -1,4 +1,4 @@
-import React from 'react';
+import { createContext as ReactCreateContext } from 'react';
 import { Combo } from './index';
 
-export const createContext = ({ api, state }: Combo) => React.createContext({ api, state });
+export const createContext = ({ api, state }: Combo) => ReactCreateContext({ api, state });
