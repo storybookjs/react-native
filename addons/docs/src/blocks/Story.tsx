@@ -41,7 +41,7 @@ const inferInlineStories = (framework: string): boolean => {
 
 export const getStoryProps = (
   props: StoryProps,
-  { id: currentId, storyStore, parameters, mdxStoryNameToId }: DocsContextProps
+  { id: currentId, storyStore, parameters, mdxStoryNameToId }: DocsContextProps | null
 ): PureStoryProps => {
   const { id } = props as StoryRefProps;
   const { name } = props as StoryDefProps;
@@ -50,24 +50,29 @@ export const getStoryProps = (
 
   const { height, inline } = props;
   const data = storyStore.fromId(previewId);
-  const { framework = null } = parameters || {};
+  const { framework = null } = (data && data.parameters) || {};
+
+  const docsParam = (data && data.parameters && data.parameters.docs) || {};
+
+  if (docsParam.disable) {
+    return null;
+  }
 
   // prefer props, then global options, then framework-inferred values
   const {
     inlineStories = inferInlineStories(framework),
     iframeHeight = undefined,
     prepareForInline = undefined,
-  } = (parameters && parameters.docs) || {};
-
+  } = docsParam;
   const { storyFn = undefined, name: storyName = undefined } = data || {};
 
-  if ((inlineStories || inline) && !prepareForInline) {
+  const storyIsInline = typeof inline === 'boolean' ? inline : inlineStories;
+  if (storyIsInline && !prepareForInline) {
     throw new Error(
-      `Story '${storyName}' is set to render inline, but no 'prepareForInline' function is implented in your docs configuration!`
+      `Story '${storyName}' is set to render inline, but no 'prepareForInline' function is implemented in your docs configuration!`
     );
   }
 
-  const storyIsInline = typeof inline === 'boolean' ? inline : inlineStories;
   return {
     inline: storyIsInline,
     id: previewId,
@@ -81,6 +86,9 @@ const StoryContainer: React.FunctionComponent<StoryProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const storyProps = getStoryProps(props, context);
+      if (!storyProps) {
+        return null;
+      }
       return (
         <div id={storyBlockIdFromId(storyProps.id)}>
           <MDXProvider components={resetComponents}>

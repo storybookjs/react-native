@@ -113,7 +113,9 @@ export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
       const propsTableProps = propsSlot(context);
 
       const { selectedKind, storyStore } = context;
-      const componentStories = storyStore.getStoriesForKind(selectedKind);
+      const componentStories = storyStore
+        .getStoriesForKind(selectedKind)
+        .filter((s: any) => !(s.parameters && s.parameters.docs && s.parameters.docs.disable));
       const primary = primarySlot(componentStories, context);
       const stories = storiesSlot(componentStories, context);
 

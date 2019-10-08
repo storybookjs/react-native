@@ -113,15 +113,11 @@ export default class ClientApi {
     };
   };
 
-  getSeparators = () =>
-    Object.assign(
-      {},
-      {
-        hierarchyRootSeparator: '|',
-        hierarchySeparator: /\/|\./,
-      },
-      this._globalParameters.options
-    );
+  getSeparators = () => ({
+    hierarchyRootSeparator: '|',
+    hierarchySeparator: /\/|\./,
+    ...this._globalParameters.options,
+  });
 
   addDecorator = (decorator: DecoratorFunction) => {
     this._globalDecorators.push(decorator);

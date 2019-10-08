@@ -19,20 +19,20 @@ class LifecycleLogger extends Component {
     log('componentDidMount');
   }
 
-  componentDidUpdate() {
-    log('componentDidUpdate');
-  }
-
-  componentWillUnmount() {
-    log('componentWillUnmount');
-  }
-
   getSnapshotBeforeUpdate() {
     log('getSnapshotBeforeUpdate');
   }
 
+  componentDidUpdate() {
+    log('componentDidUpdate');
+  }
+
   componentDidCatch() {
     log('componentDidCatch');
+  }
+
+  componentWillUnmount() {
+    log('componentWillUnmount');
   }
 
   render() {

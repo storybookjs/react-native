@@ -52,6 +52,7 @@ function genStoryExport(ast, context) {
 
   let body = ast.children.find(n => n.type !== 'JSXText');
   let storyCode = null;
+  let isJsx = false;
   if (!body) {
     // plain text node
     const { code } = generate(ast.children[0], {});
@@ -60,18 +61,20 @@ function genStoryExport(ast, context) {
     if (body.type === 'JSXExpressionContainer') {
       // FIXME: handle fragments
       body = body.expression;
+    } else {
+      isJsx = true;
     }
     const { code } = generate(body, {});
     storyCode = code;
   }
-  if (storyCode.trim().startsWith('() =>')) {
-    statements.push(`export const ${storyKey} = ${storyCode}`);
-  } else {
+  if (isJsx) {
     statements.push(
       `export const ${storyKey} = () => (
         ${storyCode}
       );`
     );
+  } else {
+    statements.push(`export const ${storyKey} = makeStoryFn(${storyCode});`);
   }
   statements.push(`${storyKey}.story = {};`);
 
@@ -240,7 +243,7 @@ function extractExports(node, options) {
   );
 
   const fullJsx = [
-    'import { DocsContainer } from "@storybook/addon-docs/blocks";',
+    'import { DocsContainer, makeStoryFn } from "@storybook/addon-docs/blocks";',
     defaultJsx,
     ...storyExports,
     `const componentMeta = ${stringifyMeta(metaExport)};`,

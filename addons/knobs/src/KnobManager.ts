@@ -58,7 +58,7 @@ export default class KnobManager {
 
   options: KnobManagerOptions = {};
 
-  calling: boolean = false;
+  calling = false;
 
   setChannel(channel: Channel) {
     this.channel = channel;
@@ -91,6 +91,8 @@ export default class KnobManager {
       // userAgent is not set in react-native
       (!navigator.userAgent || !navigator.userAgent.includes('jsdom'))
     ) {
+      const { value, ...restOptions } = options;
+      knobStore.update(knobName, restOptions);
       return this.getKnobValue(existingKnob);
     }
 

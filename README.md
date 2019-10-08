@@ -91,7 +91,8 @@ If you'd rather set up your project manually, take a look at our [Slow Start Gui
 
 Once it's installed, you can `npm run storybook` and it will run the development server on your local machine, and give you a URL to browse some sample stories.
 
-**Storybook v2.x migration note**: If you're using Storybook v2.x and want to shift to 4.x version the easiest way is:
+**Storybook v2.x migration note**: 
+If you're using Storybook v2.x and want to shift to 4.x version the easiest way is:
 
 ```sh
 cd my-storybook-v2-app

@@ -21,12 +21,6 @@ type Props = {
 // Android changes screen size when keyboard opens.
 // To avoid issues we use absolute positioned element with predefined screen size
 export default class AbsolutePositionedKeyboardAwareView extends PureComponent<Props> {
-  keyboardDidShowListener: EmitterSubscription;
-
-  keyboardDidHideListener: EmitterSubscription;
-
-  keyboardOpen: boolean;
-
   constructor(props: Props) {
     super(props);
     this.keyboardDidShowListener = Keyboard.addListener(
@@ -82,6 +76,12 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
       });
     }
   };
+
+  keyboardDidShowListener: EmitterSubscription;
+
+  keyboardDidHideListener: EmitterSubscription;
+
+  keyboardOpen: boolean;
 
   render() {
     const { children, previewWidth, previewHeight } = this.props;

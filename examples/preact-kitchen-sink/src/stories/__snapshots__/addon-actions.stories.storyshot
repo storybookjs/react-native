@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|Actions Action And Method 1`] = `
+<button
+  class="button"
+  onclick={[Function]}
+>
+  Click me to log the action
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Action Only 1`] = `
+<button
+  class="button"
+  onclick={[Function]}
+>
+  Click me to log the action
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple Actions 1`] = `
+<button
+  class="button"
+  onclick={[Function]}
+  ondblclick={[Function]}
+>
+  (Double) click me to log the action
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Multiple Actions Object 1`] = `
+<button
+  class="button"
+  onclick={[Function]}
+  ondblclick={[Function]}
+>
+  (Double) click me to log the action
+</button>
+`;

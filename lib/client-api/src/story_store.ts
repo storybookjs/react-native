@@ -2,7 +2,7 @@
 import EventEmitter from 'eventemitter3';
 import memoize from 'memoizerific';
 import debounce from 'lodash/debounce';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 
 import { Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
@@ -34,6 +34,9 @@ const getId = (): number => {
 const toExtracted = <T>(obj: T) =>
   Object.entries(obj).reduce((acc, [key, value]) => {
     if (typeof value === 'function') {
+      return acc;
+    }
+    if (key === 'hooks') {
       return acc;
     }
     if (Array.isArray(value)) {
@@ -183,7 +186,7 @@ export default class StoryStore extends EventEmitter {
     const { _data } = this;
 
     if (_data[id]) {
-      logger.warn(stripIndents`
+      logger.warn(dedent`
         Story with id ${id} already exists in the store!
 
         Perhaps you added the same story twice, or you have a name collision?

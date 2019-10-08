@@ -48,12 +48,14 @@ Allowed values:
 - `typescript`
 - `flow`
 
+Be sure to update the regex test for the webpack rule if utilizing Typescript files.
+
 Usage:
 
 ```js
 module.exports = function({ config }) {
   config.module.rules.push({
-    test: /\.stories\.jsx?$/,
+    test: /\.stories\.tsx?$/,
     loaders: [
       {
         loader: require.resolve('@storybook/source-loader'),
@@ -162,3 +164,7 @@ module.exports = function({ config }) {
   return config;
 };
 ```
+
+## Theming
+Storysource will automatically use the light or dark syntax theme based on your storybook theme. See [Theming Storybook](https://storybook.js.org/docs/configurations/theming/) for more information.
+![Storysource Light/Dark Themes](./docs/theming-light-dark.png)
