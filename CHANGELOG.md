@@ -1,3 +1,13 @@
+## 5.3.0-alpha.14 (October 8, 2019)
+
+### Features
+
+* Addon-docs: support vue inline rendering ([#7929](https://github.com/storybookjs/storybook/pull/7929))
+
+### Maintenance
+
+* Typescript: Migrate addon-storyshots ([#7674](https://github.com/storybookjs/storybook/pull/7674))
+
 ## 5.3.0-alpha.13 (October 8, 2019)
 
 ### Features
