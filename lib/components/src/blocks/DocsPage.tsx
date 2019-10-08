@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { styled } from '@storybook/theming';
+import { styled, Theme } from '@storybook/theming';
 import { transparentize } from 'polished';
 
 import { withReset } from '../typography/withReset';
@@ -11,7 +11,7 @@ export interface DocsPageProps {
   subtitle?: string;
 }
 
-const Title = styled.h1(withReset, ({ theme }) => ({
+const Title = styled.h1(withReset, ({ theme }: { theme: Theme }) => ({
   color: theme.color.defaultText,
   fontSize: theme.typography.size.m3,
   fontWeight: theme.typography.weight.black,
@@ -24,7 +24,7 @@ const Title = styled.h1(withReset, ({ theme }) => ({
   },
 }));
 
-const Subtitle = styled.h2(withReset, ({ theme }) => ({
+const Subtitle = styled.h2(withReset, ({ theme }: { theme: Theme }) => ({
   fontWeight: theme.typography.weight.regular,
   fontSize: theme.typography.size.s3,
   lineHeight: '20px',
@@ -48,7 +48,7 @@ export const DocsContent = styled.div({
   width: '100%',
 });
 
-export const DocsWrapper = styled.div(({ theme }) => ({
+export const DocsWrapper = styled.div(({ theme }: { theme: Theme }) => ({
   background: theme.background.content,
   display: 'flex',
   justifyContent: 'center',

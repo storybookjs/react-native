@@ -108,7 +108,7 @@ export class SyntaxHighlighter extends Component<
 
   state = { copied: false };
 
-  onClick = (e: MouseEvent) => {
+  onClick = (e: MouseEvent<HTMLButtonElement>) => {
     const { children } = this.props;
 
     e.preventDefault();
