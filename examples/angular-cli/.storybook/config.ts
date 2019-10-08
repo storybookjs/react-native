@@ -10,6 +10,7 @@ addParameters({
     hierarchyRootSeparator: /\|/,
   },
   docs: {
+    // inlineStories: true,
     iframeHeight: '60px',
   },
 });

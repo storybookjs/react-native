@@ -1,3 +1,28 @@
+## 5.3.0-alpha.15 (October 8, 2019)
+
+### Features
+
+* Addon-docs: support vue inline rendering ([#7929](https://github.com/storybookjs/storybook/pull/7929))
+
+### Maintenance
+
+* Typescript: Migrate addon-storyshots ([#7674](https://github.com/storybookjs/storybook/pull/7674))
+
+## 5.3.0-alpha.14 (October 8, 2019)
+
+NPM publish failed
+
+## 5.3.0-alpha.13 (October 8, 2019)
+
+### Features
+
+* MDX: Better ergonomics for documenting CSF ([#8312](https://github.com/storybookjs/storybook/pull/8312))
+* Addon-docs: Story parameter for disabling docs ([#8313](https://github.com/storybookjs/storybook/pull/8313))
+
+### Dependency Upgrades
+
+* Remove redundant dependency on hoist-non-react-statics (#6349) ([#8310](https://github.com/storybookjs/storybook/pull/8310))
+
 ## 5.3.0-alpha.12 (October 7, 2019)
 
 ### Features
@@ -8,6 +33,12 @@
 
 * CSF: Ignore __esModule export ([#8317](https://github.com/storybookjs/storybook/pull/8317))
 * React: Improve type of storyFn ([#8197](https://github.com/storybookjs/storybook/pull/8197))
+
+## 5.2.3 (October 7, 2019)
+
+### Bug Fixes
+
+* Core: Fix lib/core whitelist ([#8182](https://github.com/storybookjs/storybook/pull/8182))
 
 ## 5.2.2 (October 7, 2019)
 
