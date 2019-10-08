@@ -130,7 +130,7 @@ Add the following to your Jest configuration:
 {
  "transform": {
    "^.+\\.[tj]sx?$": "babel-jest",
-   "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
+   "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
  }
 }
 ```
