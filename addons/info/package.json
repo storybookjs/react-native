@@ -19,7 +19,9 @@
   "files": [
     "dist/**/*",
     "docs/**/*",
-    "README.md"
+    "README.md",
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",

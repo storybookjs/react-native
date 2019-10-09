@@ -19,7 +19,9 @@
     "bin/**/*",
     "dist/**/*",
     "README.md",
-    "standalone.js"
+    "standalone.js",
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/client/index.js",
   "bin": {

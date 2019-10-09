@@ -17,10 +17,9 @@
   "author": "Leo Y. Li",
   "files": [
     "dist/**/*",
-    "register.js",
-    "preact.js",
-    "react.js",
-    "vue.js"
+    "README.md",
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/register.js",
   "scripts": {

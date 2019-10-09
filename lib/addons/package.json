@@ -17,7 +17,9 @@
   "license": "MIT",
   "files": [
     "dist/**/*",
-    "README.md"
+    "README.md",
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
