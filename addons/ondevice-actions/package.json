@@ -18,7 +18,8 @@
     "dist/**/*",
     "docs/**/*",
     "README.md",
-    "register.js"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "scripts": {

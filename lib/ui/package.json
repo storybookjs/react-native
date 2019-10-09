@@ -18,7 +18,8 @@
   "files": [
     "dist/**/*",
     "README.md",
-    "paths.js"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "scripts": {

@@ -23,7 +23,9 @@
     "docs/**/*",
     "generators/**/*",
     "lib/**/*",
-    "README.md"
+    "README.md",
+    "*.js",
+    "*.d.ts"
   ],
   "bin": {
     "getstorybook": "./bin/index.js",
