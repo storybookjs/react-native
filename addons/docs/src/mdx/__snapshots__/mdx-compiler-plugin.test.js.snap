@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin decorators.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Story, Meta } from '@storybook/addon-docs/blocks';
@@ -89,7 +89,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin docs-only.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Meta } from '@storybook/addon-docs/blocks';
 
@@ -145,7 +145,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin non-story-exports.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Story, Meta } from '@storybook/addon-docs/blocks';
@@ -210,7 +210,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin parameters.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Story, Meta } from '@storybook/addon-docs/blocks';
@@ -298,7 +298,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin previews.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Preview, Story, Meta } from '@storybook/addon-docs/blocks';
@@ -378,7 +378,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-current.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Story } from '@storybook/addon-docs/blocks';
 
@@ -423,7 +423,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-def-text-only.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Story, Meta } from '@storybook/addon-docs/blocks';
 
@@ -453,7 +453,7 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const text = () => 'Plain text';
+export const text = makeStoryFn('Plain text');
 text.story = {};
 text.story.name = 'text';
 text.story.parameters = { mdxSource: \\"'Plain text'\\" };
@@ -476,7 +476,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-definitions.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Story, Meta } from '@storybook/addon-docs/blocks';
@@ -550,7 +550,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-function.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 const makeShortcode = name =>
   function MDXDefaultShortcode(props) {
@@ -581,12 +581,12 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const functionStory = () => {
+export const functionStory = makeStoryFn(() => {
   const btn = document.createElement('button');
   btn.innerHTML = 'Hello Button';
   btn.addEventListener('click', action('Click'));
   return btn;
-};
+});
 functionStory.story = {};
 functionStory.story.name = 'function';
 functionStory.story.parameters = {
@@ -610,9 +610,66 @@ export default componentMeta;
 "
 `;
 
+exports[`docs-mdx-compiler-plugin story-function-var.mdx 1`] = `
+"/* @jsx mdx */
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
+
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+export const basicFn = () => <Button mdxType=\\"Button\\" />;
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+const Button = makeShortcode('Button');
+const layoutProps = {
+  basicFn,
+};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <Meta title=\\"story-function-var\\" mdxType=\\"Meta\\" />
+
+      <h1>{\`Button\`}</h1>
+      <p>{\`I can define a story with the function defined in CSF:\`}</p>
+      <Story name=\\"basic\\" mdxType=\\"Story\\">
+        {basicFn}
+      </Story>
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+export const basic = makeStoryFn(basicFn);
+basic.story = {};
+basic.story.name = 'basic';
+basic.story.parameters = { mdxSource: 'basicFn' };
+
+const componentMeta = { title: 'story-function-var', includeStories: ['basic'] };
+
+const mdxStoryNameToId = { basic: 'story-function-var--basic' };
+
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = {
+  container: ({ context, children }) => (
+    <DocsContainer context={{ ...context, mdxStoryNameToId }}>{children}</DocsContainer>
+  ),
+  page: MDXContent,
+};
+
+export default componentMeta;
+"
+`;
+
 exports[`docs-mdx-compiler-plugin story-object.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Story, Meta } from '@storybook/addon-docs/blocks';
 import { Welcome, Button } from '@storybook/angular/demo';
@@ -652,7 +709,7 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const toStorybook = () => ({
+export const toStorybook = makeStoryFn({
   template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,
   props: {
     showApp: linkTo('Button'),
@@ -686,7 +743,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin story-references.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Story } from '@storybook/addon-docs/blocks';
 
@@ -731,7 +788,7 @@ export default componentMeta;
 
 exports[`docs-mdx-compiler-plugin vanilla.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 

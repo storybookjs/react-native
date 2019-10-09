@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-contexts",
-  "version": "5.3.0-alpha.11",
+  "version": "5.3.0-alpha.15",
   "description": "Storybook Addon Contexts",
   "keywords": [
     "preact",
@@ -28,10 +28,10 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.11",
-    "@storybook/api": "5.3.0-alpha.11",
-    "@storybook/components": "5.3.0-alpha.11",
-    "@storybook/core-events": "5.3.0-alpha.11",
+    "@storybook/addons": "5.3.0-alpha.15",
+    "@storybook/api": "5.3.0-alpha.15",
+    "@storybook/components": "5.3.0-alpha.15",
+    "@storybook/core-events": "5.3.0-alpha.15",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "qs": "^6.6.0"
