@@ -18,8 +18,8 @@
   "files": [
     "dist/**/*",
     "README.md",
-    "html.d.ts",
-    "html.js"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

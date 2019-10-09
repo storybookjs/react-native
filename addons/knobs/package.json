@@ -20,14 +20,8 @@
     "dist/**/*",
     "docs/**/*",
     "README.md",
-    "angular.js",
-    "html.js",
-    "marko.js",
-    "mithril.js",
-    "polymer.js",
-    "react.js",
-    "vue.js",
-    "register.js"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

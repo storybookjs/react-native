@@ -20,8 +20,8 @@
     "dist/**/*",
     "docs/**/*",
     "README.md",
-    "preview.js",
-    "register.js"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "preview.js",
   "scripts": {

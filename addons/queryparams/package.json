@@ -20,7 +20,9 @@
   "files": [
     "dist/**/*",
     "docs/**/*",
-    "README.md"
+    "README.md",
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

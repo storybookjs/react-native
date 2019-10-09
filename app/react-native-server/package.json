@@ -19,7 +19,9 @@
   "files": [
     "bin/**/*",
     "dist/**/*",
-    "README.md"
+    "README.md",
+    "*.js",
+    "*.d.ts"
   ],
   "bin": {
     "start-storybook": "./bin/index.js",
