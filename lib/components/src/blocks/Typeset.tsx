@@ -5,7 +5,7 @@ import { transparentize } from 'polished';
 import { withReset } from '../typography/withReset';
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 
-const Label = styled.div(({ theme }: { theme: Theme }) => ({
+const Label = styled.div<{}>(({ theme }) => ({
   marginRight: 30,
   fontSize: `${theme.typography.size.s1}px`,
   color:
@@ -28,7 +28,7 @@ const TypeSpecimen = styled.div({
   '&:not(:last-child)': { marginBottom: '1rem' },
 });
 
-const Wrapper = styled.div(withReset, ({ theme }: { theme: Theme }) => ({
+const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
   ...getBlockBackgroundStyle(theme),
   margin: '25px 0 40px',
   padding: '30px 20px',
