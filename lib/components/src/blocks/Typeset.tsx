@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { styled, Theme } from '@storybook/theming';
+import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
 import { withReset } from '../typography/withReset';

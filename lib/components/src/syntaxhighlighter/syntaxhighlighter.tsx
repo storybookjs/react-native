@@ -1,4 +1,4 @@
-import React, { Component, ComponentProps, FunctionComponent, MouseEvent, useState } from 'react';
+import React, { ComponentProps, FunctionComponent, MouseEvent, useState } from 'react';
 import { styled } from '@storybook/theming';
 import { document, window } from 'global';
 import memoize from 'memoizerific';
