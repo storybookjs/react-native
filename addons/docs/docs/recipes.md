@@ -6,6 +6,7 @@
 - [Pure MDX Stories](#pure-mdx-stories)
 - [Mixed CSF / MDX Stories](#mixed-csf--mdx-stories)
 - [CSF Stories with MDX Docs](#csf-stories-with-mdx-docs)
+- [CSF Stories with arbitrary MDX](#csf-stories-with-arbitrary-mdx)
 - [Mixing storiesOf with CSF/MDX](#mixing-storiesof-with-csfmdx)
 - [Migrating from notes/info addons](#migrating-from-notesinfo-addons)
 - [Exporting documentation](#exporting-documentation)
@@ -54,7 +55,7 @@ basic.story = {
 
 ```md
 import { Meta, Story } from '@storybook/addon-docs/blocks';
-import * as stories from './Button.stories.js';
+import \* as stories from './Button.stories.js';
 import { SomeComponent } from 'path/to/SomeComponent';
 
 <Meta {...stories.default} />
@@ -76,6 +77,51 @@ What's happening here:
 - The MDX file is adding the stories to Storybook, and using the story function defined in CSF.
 - The MDX loader is using story metadata from CSF, such as name, decorators, parameters, but will give giving preference to anything defined in the MDX file.
 - The MDX file is using the Meta `default` defined in the CSF.
+
+## CSF Stories with Arbitrary MDX
+
+We recommend [MDX Docs](#csf-stories-with-mdx-docs) as the most ergonomic way to annotate CSF stories with MDX. There's also a second option if you want to annotate your CSF with arbitrary markdown:
+
+**Button.mdx**
+
+```md
+import { Story } from '@storybook/addon-docs/blocks';
+import { SomeComponent } from 'somewhere';
+
+# Button
+
+I can embed a story (but not define one, since this file should not contain a `Meta`):
+
+<Story id="some--id" />
+
+And of course I can also embed arbitrary markdown & JSX in this file.
+
+<SomeComponent prop1="val1" />
+```
+
+**Button.stories.js**
+
+```js
+import React from 'react';
+import { Button } from './Button';
+import mdx from './Button.mdx';
+export default {
+  title: 'Demo/Button',
+  parameters: {
+    docs: {
+      page: mdx,
+    },
+  },
+  component: Button,
+};
+export const basic = () => <Button>Basic</Button>;
+```
+
+Note that in contrast to other examples, the MDX file suffix is `.mdx` rather than `.stories.mdx`. This key difference means that the file will be loaded with the default MDX loader rather than Storybook's CSF loader, which has several implications:
+
+1. You shouldn't provide a `Meta` declaration.
+2. You can refer to existing stories (i.e. `<Story id="...">`) but cannot define new stories (i.e. `<Story name="...">`).
+3. The documentation gets exported as the default export (MDX default) rather than as a parameter hanging off the default export (CSF).
 
 ## Mixing storiesOf with CSF/MDX
 
