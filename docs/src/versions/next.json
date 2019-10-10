@@ -1,1 +1,1 @@
-{"version":"5.3.0-alpha.15","info":{"plain":"### Features\n\n* Addon-docs: support vue inline rendering ([#7929](https://github.com/storybookjs/storybook/pull/7929))\n\n### Maintenance\n\n* Typescript: Migrate addon-storyshots ([#7674](https://github.com/storybookjs/storybook/pull/7674))"}}
+{"version":"5.3.0-alpha.17","info":{"plain":"### Maintenance\n\n* Publish top-level .js and .d.ts files ([#8354](https://github.com/storybookjs/storybook/pull/8354))"}}
