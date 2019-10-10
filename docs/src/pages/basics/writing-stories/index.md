@@ -237,7 +237,7 @@ Then for components that did have documentation, we might override it at the com
 import React from 'react';
 import MyComponent from './MyComponent';
 import componentNotes from './notes.md';
-import specialNotes from '/.special.md';
+import specialNotes from './special.md';
 
 export default {
   title: 'MyComponent',
