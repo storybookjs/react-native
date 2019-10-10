@@ -199,7 +199,7 @@ What if you don't want a `DocsPage` for your storybook, for a specific component
 You can replace DocsPage at any level by overriding the `docs.page` parameter:
 
 - With `null` to remove docs
-- [With MDX](#csf-stories-with-mdx-docs) docs
+- [With MDX](./recipes.md#csf-stories-with-mdx-docs) docs
 - With a custom React component
 
 **Globally (config.js)**
