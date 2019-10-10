@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-knobs",
-  "version": "5.3.0-alpha.15",
+  "version": "5.3.0-alpha.17",
   "description": "Storybook Addon Prop Editor Component",
   "keywords": [
     "addon",
@@ -20,14 +20,8 @@
     "dist/**/*",
     "docs/**/*",
     "README.md",
-    "angular.js",
-    "html.js",
-    "marko.js",
-    "mithril.js",
-    "polymer.js",
-    "react.js",
-    "vue.js",
-    "register.js"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -35,12 +29,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.15",
-    "@storybook/api": "5.3.0-alpha.15",
-    "@storybook/client-api": "5.3.0-alpha.15",
-    "@storybook/components": "5.3.0-alpha.15",
-    "@storybook/core-events": "5.3.0-alpha.15",
-    "@storybook/theming": "5.3.0-alpha.15",
+    "@storybook/addons": "5.3.0-alpha.17",
+    "@storybook/api": "5.3.0-alpha.17",
+    "@storybook/client-api": "5.3.0-alpha.17",
+    "@storybook/components": "5.3.0-alpha.17",
+    "@storybook/core-events": "5.3.0-alpha.17",
+    "@storybook/theming": "5.3.0-alpha.17",
     "@types/react-color": "^3.0.1",
     "copy-to-clipboard": "^3.0.8",
     "core-js": "^3.0.1",

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "5.3.0-alpha.15",
+  "version": "5.3.0-alpha.17",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -18,8 +18,8 @@
   "files": [
     "dist/**/*",
     "README.md",
-    "html.d.ts",
-    "html.js"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,8 +27,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/client-logger": "5.3.0-alpha.15",
-    "@storybook/theming": "5.3.0-alpha.15",
+    "@storybook/client-logger": "5.3.0-alpha.17",
+    "@storybook/theming": "5.3.0-alpha.17",
     "@types/react-syntax-highlighter": "11.0.1",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

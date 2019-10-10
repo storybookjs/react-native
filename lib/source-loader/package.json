@@ -1,6 +1,6 @@
 {
   "name": "@storybook/source-loader",
-  "version": "5.3.0-alpha.15",
+  "version": "5.3.0-alpha.17",
   "description": "Source loader",
   "keywords": [
     "lib",
@@ -19,7 +19,8 @@
   "files": [
     "dist/**/*",
     "README.md",
-    "preview.js"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/server/index.js",
   "jsnext:main": "src/server/index.js",
@@ -27,8 +28,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.15",
-    "@storybook/router": "5.3.0-alpha.15",
+    "@storybook/addons": "5.3.0-alpha.17",
+    "@storybook/router": "5.3.0-alpha.17",
     "core-js": "^3.0.1",
     "estraverse": "^4.2.0",
     "global": "^4.3.2",

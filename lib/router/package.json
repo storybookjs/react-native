@@ -1,6 +1,6 @@
 {
   "name": "@storybook/router",
-  "version": "5.3.0-alpha.15",
+  "version": "5.3.0-alpha.17",
   "description": "Core Storybook Router",
   "keywords": [
     "storybook"
@@ -18,8 +18,8 @@
   "files": [
     "dist/**/*",
     "README.md",
-    "utils.js",
-    "utils.d.ts"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
