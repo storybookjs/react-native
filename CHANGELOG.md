@@ -1,3 +1,9 @@
+## 5.3.0-alpha.16 (October 10, 2019)
+
+### Maintenance
+
+* Publish top-level .js and .d.ts files ([#8354](https://github.com/storybookjs/storybook/pull/8354))
+
 ## 5.3.0-alpha.15 (October 8, 2019)
 
 ### Features
