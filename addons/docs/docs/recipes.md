@@ -5,8 +5,8 @@
 - [Component Story Format (CSF) with DocsPage](#component-story-format-csf-with-docspage)
 - [Pure MDX Stories](#pure-mdx-stories)
 - [Mixed CSF / MDX Stories](#mixed-csf--mdx-stories)
-- [CSF Stories with MDX Docs: Option 1](#csf-stories-with-mdx-docs-option-1)
-- [CSF Stories with MDX Docs: Option 2](#csf-stories-with-mdx-docs-option-2)
+- [CSF Stories with MDX Docs](#csf-stories-with-mdx-docs)
+- [CSF Stories with arbitrary MDX](#csf-stories-with-arbitrary-mdx)
 - [Mixing storiesOf with CSF/MDX](#mixing-storiesof-with-csfmdx)
 - [Migrating from notes/info addons](#migrating-from-notesinfo-addons)
 - [Exporting documentation](#exporting-documentation)
@@ -29,7 +29,7 @@ Can't decide between CSF and MDX? In transition? Or have did you find that each 
 
 The only limitation is that your exported titles (CSF: `default.title`, MDX `Meta.title`) should be unique across files. Loading will fail if there are duplicate titles.
 
-## CSF Stories with MDX Docs: Option 1
+## CSF Stories with MDX Docs
 
 Perhaps you want to write your stories in CSF, but document them in MDX? Here's how to do that:
 
@@ -78,11 +78,9 @@ What's happening here:
 - The MDX loader is using story metadata from CSF, such as name, decorators, parameters, but will give giving preference to anything defined in the MDX file.
 - The MDX file is using the Meta `default` defined in the CSF.
 
-## CSF Stories with MDX Docs: Option 2
+## CSF Stories with Arbitrary MDX
 
-We recommend [Option 1](#csf-stories-with-mdx-docs-option-1) as the ergonomic way to annotate CSF stories with MDX.
-
-There's also a second option if you want to arbitrary markdown with your CSF:
+We recommend [MDX Docs](#csf-stories-with-mdx-docs) as the most ergonomic way to annotate CSF stories with MDX. There's also a second option if you want to annotate your CSF with arbitrary markdown:
 
 **Button.mdx**
 
