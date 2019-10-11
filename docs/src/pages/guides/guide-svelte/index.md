@@ -95,7 +95,7 @@ So you can create a story "view" file, essentially just a .svelte file to load y
 <!-- MyButtonView  -->
 <MyButton {rounded} on:click>
   {buttonText}
-</Button>
+</MyButton>
 ```
 
 In this example, the `on:click` that is heard on the `MyButton` component is simply passed up to the containing component `MyButtonView` using the svelte shorthand.
