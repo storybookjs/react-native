@@ -1,5 +1,3 @@
-/* eslint-disable no-empty-function */
-/* eslint-disable @typescript-eslint/no-parameter-properties */
 /* eslint-disable no-useless-constructor */
 import { Component, Input, InjectionToken, Injector, ElementRef, Inject } from '@angular/core';
 

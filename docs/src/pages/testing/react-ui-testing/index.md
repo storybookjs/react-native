@@ -77,7 +77,7 @@ But it would be great if we could do this once in a while (especially with a ma
 
 ## How Storybook Can Help Us
 
-A **story** is a smallest unit in Storybook.
+A **story** is the smallest unit in Storybook.
 It's a fully functioning UI element where the input can be used for any of the testing methods we've mentioned above.
 
 Let's look at how Storybook can help you do the above mentioned different aspects of testing.

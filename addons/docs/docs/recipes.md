@@ -6,9 +6,11 @@
 - [Pure MDX Stories](#pure-mdx-stories)
 - [Mixed CSF / MDX Stories](#mixed-csf--mdx-stories)
 - [CSF Stories with MDX Docs](#csf-stories-with-mdx-docs)
+- [CSF Stories with arbitrary MDX](#csf-stories-with-arbitrary-mdx)
 - [Mixing storiesOf with CSF/MDX](#mixing-storiesof-with-csfmdx)
 - [Migrating from notes/info addons](#migrating-from-notesinfo-addons)
 - [Exporting documentation](#exporting-documentation)
+- [Disabling docs stories](#disabling-docs-stories)
 - [More resources](#more-resources)
 
 ## Component Story Format (CSF) with DocsPage
@@ -31,6 +33,55 @@ The only limitation is that your exported titles (CSF: `default.title`, MDX `Met
 
 Perhaps you want to write your stories in CSF, but document them in MDX? Here's how to do that:
 
+**Button.stories.js**
+
+```js
+import React from 'react';
+import { Button } from './Button';
+
+export default {
+  title: 'Demo/Button',
+  component: Button,
+  includeStories: [], // or simply don't load this file at all
+};
+
+export const basic = () => <Button>Basic</Button>;
+basic.story = {
+  parameters: { foo: 'bar' },
+};
+```
+
+**Button.stories.mdx**
+
+```md
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Button.stories.js';
+import { SomeComponent } from 'path/to/SomeComponent';
+
+<Meta title="Demo/Button" component={Button} />
+
+# Button
+
+I can define a story with the function imported from CSF:
+
+<Story name="basic">{stories.basic}</Story>
+
+And of course I can also embed arbitrary markdown & JSX in this file.
+
+<SomeComponent prop1="val1" />
+```
+
+What's happening here:
+
+- Your stories are defined in CSF, but because of `includeStories: []`, they are not actually added to Storybook.
+- The MDX file is adding the stories to Storybook, and using the story function defined in CSF.
+- The MDX loader is using story metadata from CSF, such as name, decorators, parameters, but will give giving preference to anything defined in the MDX file.
+- The MDX file is using the Meta `default` defined in the CSF.
+
+## CSF Stories with Arbitrary MDX
+
+We recommend [MDX Docs](#csf-stories-with-mdx-docs) as the most ergonomic way to annotate CSF stories with MDX. There's also a second option if you want to annotate your CSF with arbitrary markdown:
+
 **Button.mdx**
 
 ```md
@@ -51,9 +102,9 @@ And of course I can also embed arbitrary markdown & JSX in this file.
 **Button.stories.js**
 
 ```js
+import React from 'react';
 import { Button } from './Button';
 import mdx from './Button.mdx';
-
 export default {
   title: 'Demo/Button',
   parameters: {
@@ -61,14 +112,14 @@ export default {
       page: mdx,
     },
   },
+  component: Button,
 };
-
 export const basic = () => <Button>Basic</Button>;
 ```
 
 Note that in contrast to other examples, the MDX file suffix is `.mdx` rather than `.stories.mdx`. This key difference means that the file will be loaded with the default MDX loader rather than Storybook's CSF loader, which has several implications:
 
-1. You don't need to provide a `Meta` declaration.
+1. You shouldn't provide a `Meta` declaration.
 2. You can refer to existing stories (i.e. `<Story id="...">`) but cannot define new stories (i.e. `<Story name="...">`).
 3. The documentation gets exported as the default export (MDX default) rather than as a parameter hanging off the default export (CSF).
 
@@ -126,6 +177,29 @@ To address this, we’ve added a CLI flag to export just the docs. This flag is 
 
 ```sh
 yarn build-storybook --docs
+```
+
+## Disabling docs stories
+
+There are two cases where a user might wish to exclude stories from their documentation pages:
+
+### DocsPage
+
+User defines stories in CSF and renders docs using DocsPage, but wishes to exclude some fo the stories from the DocsPage to reduce noise on the page.
+
+```js
+export const foo = () => <Button>foo</Button>;
+foo.story = { parameters: { docs: { disable: true } } };
+```
+
+### MDX Stories
+
+User writes documentation & stories side-by-side in a single MDX file, and wants those stories to show up in the canvas but not in the docs themselves. They want something similar to the recipe "CSF stories with MDX docs" but want to do everything in MDX:
+
+```js
+<Story name="foo" parameters={{ docs: { disable: true }} >
+  <Button>foo</Button>
+</Story>
 ```
 
 ## More resources

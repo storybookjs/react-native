@@ -21,6 +21,7 @@ module.exports = {
     'babel-runtime/core-js/(.*)': `core-js/es/$1`,
     // 'babel-runtime/core-js/object/assign'
     'core-js/library/fn/object/assign': 'core-js/es/object/assign',
+    'react-syntax-highlighter/dist/esm/(.*)': 'react-syntax-highlighter/dist/cjs/$1',
   },
   projects: [
     '<rootDir>',
@@ -41,8 +42,8 @@ module.exports = {
     '<rootDir>/examples/official-storybook',
   ],
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
-    '^.+\\.tsx?$': '<rootDir>/scripts/babel-jest.js',
+    '^.+\\.stories\\.[jt]sx?$': '@storybook/addon-storyshots/injectFileName',
+    '^.+\\.[jt]sx?$': '<rootDir>/scripts/babel-jest.js',
   },
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
   testPathIgnorePatterns: [

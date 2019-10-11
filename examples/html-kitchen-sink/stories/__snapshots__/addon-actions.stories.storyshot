@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons|Actions Story 1 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Story 2 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Story 3 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Story 4 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Story 5 1`] = `
+
+        
+`;
+
+exports[`Storyshots Addons|Actions Story 6 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Story 7 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons|Actions Story 8 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;

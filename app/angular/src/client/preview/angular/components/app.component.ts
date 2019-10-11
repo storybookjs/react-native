@@ -1,6 +1,4 @@
-/* eslint-disable no-empty-function */
 /* eslint-disable no-useless-constructor */
-/* eslint-disable @typescript-eslint/no-parameter-properties */
 // We could use NgComponentOutlet here but there's currently no easy way
 // to provide @Inputs and subscribe to @Outputs, see
 // https://github.com/angular/angular/issues/15360
