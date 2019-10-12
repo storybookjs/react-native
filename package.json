@@ -74,7 +74,7 @@
     "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
     "test:cli": "npm --prefix lib/cli run test",
     "test:e2e-run": "wait-on http://localhost:8001 && cypress run",
-    "test:e2e-start": "concurrently --kill-others \"yarn serve-storybooks\" \"yarn test:e2e-run\""
+    "test:e2e-start": "concurrently --success first --kill-others \"yarn test:e2e-run\" \"yarn serve-storybooks\""
   },
   "husky": {
     "hooks": {
