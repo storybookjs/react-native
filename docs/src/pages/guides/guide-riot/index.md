@@ -88,7 +88,7 @@ Now create a `../src/index.stories.js` file, and write your first story like thi
 import { tag, mount } from '@storybook/riot';
 import SimpleTestRaw from './SimpleTest.txt'; //can be loaded as string if you prefer
 import './AnotherTest.tag';
-//if you need to import .tag files as text, just use the raw-loader instead of the riot-tag-loader
+//if you need to import .tag files as text, use the raw-loader instead of the riot-tag-loader
 
 export default { title: 'My Component' };
   

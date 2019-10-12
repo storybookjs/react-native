@@ -71,7 +71,7 @@ storiesOf('<img />', module)
 
 ## 3. Via a CDN
 
-Upload your files to an online CDN and just reference them.
+Upload your files to an online CDN and reference them.
 In this example we're using a placeholder image service.
 
 ```js

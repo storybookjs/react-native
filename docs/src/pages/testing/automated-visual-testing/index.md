@@ -20,7 +20,7 @@ For example, changes in [anti-aliasing](https://en.wikipedia.org/wiki/Spatial_an
 ![Menu before and after differences](../static/image-diff-1.png)
 ![Close-up of menu before and after differences](../static/image-diff-2.png)
 
-Even though we didn't change any CSS and the menus appear visually the same to our eyes, if we just compare their pixels 1:1 we find that lots of it has changed! This can happen between browser versions, underlying hardware changes on your cloud platform, and more.
+Even though we didn't change any CSS and the menus appear visually the same to our eyes, if we compare their pixels 1:1 we find that lots of it has changed! This can happen between browser versions, underlying hardware changes on your cloud platform, and more.
 
 Similar situations happen all the time, such as how images, drop shadows, etc are rendered.
 

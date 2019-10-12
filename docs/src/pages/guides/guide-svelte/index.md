@@ -89,7 +89,7 @@ export const withEmoji = () => ({
 Svelte storybooks don't support using templates in a story yet. 
 Instead, you can create a `.svelte` file to compose components together, or to access all normal Svelte functionality, like slots.
 
-So you can create a story "view" file, essentially just a .svelte file to load your components into to test.
+So you can create a story "view" file, which is essentially a .svelte file to load your components into to test.
 
 ```html
 <!-- MyButtonView  -->

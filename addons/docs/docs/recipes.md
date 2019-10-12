@@ -171,9 +171,9 @@ addParameters({
 
 > ⚠️ The `--docs` flag is an experimental feature in Storybook 5.2. The behavior may change in 5.3 outside of the normal semver rules. Be forewarned!
 
-The Storybook UI is a workshop for developing components in isolation. Storybook Docs is a showcase for documenting your components. During component/docs development, it’s useful to see both of these modes side by side. But when you export your static storybook, you might want to just export the docs to reduce clutter.
+The Storybook UI is a workshop for developing components in isolation. Storybook Docs is a showcase for documenting your components. During component/docs development, it’s useful to see both of these modes side by side. But when you export your static storybook, you might want to export the docs to reduce clutter.
 
-To address this, we’ve added a CLI flag to export just the docs. This flag is also available in dev mode:
+To address this, we’ve added a CLI flag to only export the docs. This flag is also available in dev mode:
 
 ```sh
 yarn build-storybook --docs

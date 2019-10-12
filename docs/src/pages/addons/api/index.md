@@ -60,11 +60,11 @@ The render function is called with `active` and `key`.
 
 When the panel is in focus in the UI, the `active` will be true.
 
-As you can see, you can set any React Component as the panel. Currently, it's just a text. But you can do anything you want. You should specify the panel title. It could be a plain text.
+As you can see, you can set any React Component as the panel. Currently, it's one line of text. But you can do anything you want. You should specify the panel title. It could be a plain text.
 
 ## makeDecorator API
 
-The `makeDecorator` API can be used to create decorators in the style of the official addons easily. Use it like so:
+The `makeDecorator` API can be used to create decorators in the style of the official addons. Use it like so:
 
 ```jsx
 import { makeDecorator } from '@storybook/addons';

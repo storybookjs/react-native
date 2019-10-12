@@ -3,7 +3,7 @@ id: 'theming'
 title: 'Theming Storybook'
 ---
 
-Storybook is theme-able! Just set a `theme` in the [options parameter](../options-parameter)!
+Storybook is theme-able! Set a `theme` in the [options parameter](../options-parameter)!
 
 ## Global theming
 

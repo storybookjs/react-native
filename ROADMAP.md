@@ -24,7 +24,7 @@ Doing these will be backwards compatible.
 
 ### Responsive + multi-device viewports preview.
 
-If you're smart about it you can already view the preview on multiple devices and windows. It's just an iframe after-all.
+If you're smart about it you can already view the preview on multiple devices and windows. It's an iframe after-all.
 But story selection and addon-settings are not synced.
 We want to make this much much simpler and a core feature of storybook.
 

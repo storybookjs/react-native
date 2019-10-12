@@ -131,7 +131,7 @@ Now we need to create two files, `register.js` and `index.js,`. `register.js` wi
 
 Let's add the following content to the `index.js`. It will expose a decorator called `withFoo` which we use the `.addDecorator()` API to decorate all our stories.
 
-The `@storybook/addons` package contains a `makeDecorator` function which we can easily use to create such a decorator:
+The `@storybook/addons` package contains a `makeDecorator` function which we can use to create such a decorator:
 
 ```js
 import React from 'react';
@@ -203,7 +203,7 @@ Using the hook, we'll listen for events and gain access to the `emit` function f
 
 It also listens to another event, called onStory, in the storybook API, which fires when the user selects a story.
 
-Multiple addons can be loaded, but only a single panel can be shown, the render function will receive an `active` prop, which is true if the addon is shown. It is up to you to decide if this mean your component must be unmounted, or just visually hidden. This allows you to keep state but unmount expensive renderings.
+Multiple addons can be loaded, but only a single panel can be shown, the render function will receive an `active` prop, which is true if the addon is shown. It is up to you to decide if this mean your component must be unmounted, or visually hidden. This allows you to keep state but unmount expensive renderings.
 
 The `AddonPanel` component will stop rendering of it's children if it's `active`-prop is false.
 
@@ -221,7 +221,7 @@ export const Panel = () => {
 }
 ```
 
-This will store your addon's state into storybook core state, and so when your component gets unmounted & remounted, the state will just be restored.
+This will store your addon's state into storybook core state, and so when your component gets unmounted & remounted, the state will be restored.
 
 This is also a great way to sync state between multiple components of the same addon.
 
@@ -295,7 +295,7 @@ You can learn more about the complete API [here](/addons/api).
 
 ## Packaging
 
-You can package this addon into a NPM module very easily. As an example, have a look at this [package](https://github.com/storybookjs/storybook/tree/master/addons/notes).
+It's possible to package this addon into a NPM module. As an example, have a look at this [package](https://github.com/storybookjs/storybook/tree/master/addons/notes).
 
 In addition to moving the above code to a NPM module, we've set `react` and `@storybook/addons` as peer dependencies.
 

@@ -655,7 +655,7 @@ Storybook now uses Babel 7. There's a couple of cases when it can break with you
 If you are using `create-react-app` (aka CRA), you may need to do some manual steps to upgrade, depending on the setup.
 
 - `create-react-app@1` may require manual migrations.
-  - If you're adding storybook for the first time, it should just work: `sb init` should add the correct dependencies.
+  - If you're adding storybook for the first time: `sb init` should add the correct dependencies.
   - If you're upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
     - Upgrade to Babel 7 if you are not dependent on Babel 6-specific features.
     - Migrate Babel 6 if you're heavily dependent on some Babel 6-specific features).
@@ -748,7 +748,7 @@ This was done to support different major versions of babel.
 
 ### Base webpack config now contains vital plugins ([#1775](https://github.com/storybookjs/storybook/pull/1775))
 
-This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was just a recommendation, but now it [became](https://github.com/storybookjs/storybook/pull/2578) a requirement.
+This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was a recommendation, but now it [became](https://github.com/storybookjs/storybook/pull/2578) a requirement.
 
 ### Refactored Knobs
 
@@ -879,7 +879,7 @@ The new package names are:
 | `@kadira/storybook-addon-graphql`            | `@storybook/addon-graphql`       |
 | `@kadira/react-storybook-decorator-centered` | `@storybook/addon-centered`      |
 
-If your codebase is small, it's probably doable to just replace them by hand. (in your codebase and in `package.json`).
+If your codebase is small, it's probably doable to replace them by hand (in your codebase and in `package.json`).
 
 But if you have a lot of occurrences in your codebase, you can use a [codemod we created](./lib/codemod) for you.
 

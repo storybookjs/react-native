@@ -17,7 +17,7 @@ yarn add @storybook/addon-storyshots --dev
 ```
 
 ## Configure your app for Jest
-In many cases, for example Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
+In many cases, for example Create React App, it's already configured for Jest. You need to create a filename with the extension `.test.js`.
 
 If you still need to configure jest you can use the resources mentioned below:
 
@@ -602,7 +602,7 @@ module.exports = {
 #### integrityOptions
 
 This option is useful when running test with `multiSnapshotWithOptions(options)` in order to track snapshots are matching the stories. (disabled by default).
-The value is just a [settings](https://github.com/isaacs/node-glob#options) to a `glob` object, that searches for the snapshot files.
+The value is a [settings](https://github.com/isaacs/node-glob#options) to a `glob` object, that searches for the snapshot files.
 
 ```js
 initStoryshots({

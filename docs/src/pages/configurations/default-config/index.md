@@ -189,7 +189,7 @@ import './styles.css';
 ### Image and Static File Support
 
 You can also import images and media files directly via JavaScript.
-This helps you to write stories with media files easily. This is how to do it:
+This helps you to write stories with media files. This is how to do it:
 
 ```js
 import React from 'react';

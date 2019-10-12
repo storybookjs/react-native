@@ -74,7 +74,7 @@ export const allCheckboxes = () => (
 );
 ```
 
-There's a one-to-one mapping from the code in `MDX` to `CSF`, which in turn directly corresponds to Storybook's internal `storiesOf` API. As a user this means your existing Storybook knowledge should easily translate between the three. And technically, this means that the transformations that happen under the hood are simple and predictable.
+There's a one-to-one mapping from the code in `MDX` to `CSF`, which in turn directly corresponds to Storybook's internal `storiesOf` API. As a user, this means your existing Storybook knowledge should translate between the three. And technically, this means that the transformations that happen under the hood are simple and predictable.
 
 ## Writing stories
 

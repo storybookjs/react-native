@@ -93,7 +93,7 @@ Break your stories down into smaller categories (chapters) and subcategories (se
 ### [Props Combinations](https://github.com/evgenykochetkov/react-storybook-addon-props-combinations)
 
 Given possible values for each prop, renders your component with all combinations of prop values.
-Useful for finding edge cases or just seeing all component states at once.
+Useful for finding edge cases or seeing all component states at once.
 
 ### [Material-UI](https://github.com/sm-react/storybook-addon-material-ui)
 
