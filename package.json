@@ -73,8 +73,8 @@
     "test": "node ./scripts/test.js",
     "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
     "test:cli": "npm --prefix lib/cli run test",
-    "test:e2e-run": "wait-on http://localhost:8001 && cypress run",
-    "test:e2e-start": "concurrently --success first --kill-others \"yarn test:e2e-run\" \"yarn serve-storybooks\""
+    "test:e2e-ci": "concurrently --success first --kill-others \"wait-on http://localhost:8001 && cypress run\" \"yarn serve-storybooks\"",
+    "test:e2e-gui": "concurrently --success first --kill-others \"cypress open\" \"yarn serve-storybooks\""
   },
   "husky": {
     "hooks": {
