@@ -789,6 +789,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-syntax-import-meta@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-import-meta/-/plugin-syntax-import-meta-7.2.0.tgz#2333ef4b875553a3bcd1e93f8ebc09f5b9213a40"
+  integrity sha512-Hq6kFSZD7+PHkmBN8bCpHR6J8QEoCuEV/B38AIQscYjgMZkGlXB7cHNFzP5jR4RCh5545yP1ujHdmO7hAgKtBA==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-syntax-json-strings@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-json-strings/-/plugin-syntax-json-strings-7.2.0.tgz#72bd13f6ffe1d25938129d2a186b11fd62951470"
@@ -5968,6 +5975,14 @@ babel-plugin-apply-mdx-type-prop@^1.5.0:
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0"
     "@mdx-js/util" "^1.5.0"
+
+babel-plugin-bundled-import-meta@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-bundled-import-meta/-/babel-plugin-bundled-import-meta-0.3.1.tgz#878e28830c8d20a3ebc639b503ea73ebebd927d0"
+  integrity sha512-tmg3/GQ+broWbE2v9DI8GZRVtPQqJCRrgZPj49xC5Z05M409QdjuJS0Vzj4IqOzmObnpoEsISlH4x/XQ3orewg==
+  dependencies:
+    "@babel/plugin-syntax-import-meta" "^7.2.0"
+    "@babel/template" "^7.4.4"
 
 babel-plugin-check-es2015-constants@^6.22.0:
   version "6.22.0"
@@ -18519,6 +18534,13 @@ listr@^0.14.3:
     listr-verbose-renderer "^0.5.0"
     p-map "^2.0.0"
     rxjs "^6.3.3"
+
+lit-element@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.2.1.tgz#79c94d8cfdc2d73b245656e37991bd1e4811d96f"
+  integrity sha512-ipDcgQ1EpW6Va2Z6dWm79jYdimVepO5GL0eYkZrFvdr0OD/1N260Q9DH+K5HXHFrRoC7dOg+ZpED2XE0TgGdXw==
+  dependencies:
+    lit-html "^1.0.0"
 
 lit-html@^1.0.0:
   version "1.1.2"
