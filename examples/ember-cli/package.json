@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "ember build",
-    "prebuild-storybook": "yarn build && cp -r public/* dist",
+    "prebuild-storybook": "yarn build && shx cp -r public/* dist",
     "build-storybook": "build-storybook -s dist",
     "dev": "ember serve",
     "storybook": "yarn build && start-storybook -p 9009 -s dist",
