@@ -1,0 +1,49 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+import MyButton from './MyButton.vue';
+
+<Meta title="Button" />
+
+# Button
+
+This `Button` documentation defines three stories:
+
+<Story name="text">
+  {() => ({
+    components: {
+      MyButton,
+    },
+    template: '<my-button @click="action">Hello Button</my-button>',
+    methods: {
+      action: action('clicked'),
+    },
+  })}
+</Story>
+
+<Story name="jsx">
+  {() => ({
+    components: {
+      MyButton,
+    },
+    render() {
+      return <my-button onClick={this.action}>With JSX</my-button>;
+    },
+    methods: {
+      action: linkTo('clicked'),
+    },
+  })}
+</Story>
+
+<Story name="emoji">
+  {() => ({
+    components: {
+      MyButton,
+    },
+    template:
+      '<my-button @click="action"><span role="img" aria-label="so cool">😀 😎 👍 💯</span></my-button>',
+    methods: {
+      action: action('clicked'),
+    },
+  })}
+</Story>
