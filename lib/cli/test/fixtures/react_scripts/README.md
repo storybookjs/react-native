@@ -742,7 +742,7 @@ You can avoid this by reading the global variable explicitly from the `window` o
 const $ = window.$;
 ```
 
-This makes it obvious you are using a global variable intentionally rather than because of a typo.
+This makes it more clear that you are using a global variable intentionally rather than because of a typo.
 
 Alternatively, you can force the linter to ignore any line by adding `// eslint-disable-line` after it.
 

@@ -41,7 +41,7 @@ We're interested in full customizability of our UI, though addons and options.
 ### Add a playground addon
 
 Many other styleguide-type projects have what's called a playground, where developers can change the code rendering the component inside the app.
-Storybook has, of course, a very tight connection with your editor, and it has a knobs addon.
+Storybook has a very tight connection with your editor, and it has a knobs addon.
 But we still see value in an addon that will allow the workflow of a playground.
 
 ### See multiple (or all) stories in 1 preview.

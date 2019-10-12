@@ -66,7 +66,7 @@ I can define a story with the function imported from CSF:
 
 <Story name="basic">{stories.basic}</Story>
 
-And of course I can also embed arbitrary markdown & JSX in this file.
+And I can also embed arbitrary markdown & JSX in this file.
 
 <SomeComponent prop1="val1" />
 ```
@@ -94,7 +94,7 @@ I can embed a story (but not define one, since this file should not contain a `M
 
 <Story id="some--id" />
 
-And of course I can also embed arbitrary markdown & JSX in this file.
+And I can also embed arbitrary markdown & JSX in this file.
 
 <SomeComponent prop1="val1" />
 ```
