@@ -1,4 +1,4 @@
-context('Actions', () => {
+describe('Actions', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8001/official-storybook/');
   });
