@@ -299,7 +299,7 @@ Storybook is broken up into sub-projects that you can install as you need them. 
 
 #### Connecting Your App To Storybook
 
-**_Note:_** If you aren't seeing addons after linking storybook, you probably have a versioning issue which can be fixed by simply linking each addon you want to use.
+**_Note:_** If you aren't seeing addons after linking storybook, you probably have a versioning issue which can be fixed by linking each addon you want to use.
 This applies for the kitchen sink apps as well as your own projects.
 
 _Make sure `yarn dev` is running_

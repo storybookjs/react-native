@@ -9,7 +9,7 @@ Storybook provides two ways to do that.
 
 ## 1. Via Imports
 
-You can import any media assets by simply importing (or requiring) them as shown below.
+You can import any media assets by importing (or requiring) them as shown below.
 
 ```js
 import React from 'react';

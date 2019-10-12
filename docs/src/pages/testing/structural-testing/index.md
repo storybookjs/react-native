@@ -6,7 +6,7 @@ title: 'Structural Testing'
 For React, [Jest's snapshot testing](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html) is the best way to do Structural Testing.
 It's painless to use and maintain.
 We've integrated Jest's snapshot testing directly into Storybook using an addon called [StoryShots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots).
-Now we can simply use existing stories as the input for snapshot testing.
+Now we can use existing stories as the input for snapshot testing.
 
 ## What's Snapshot Testing?
 

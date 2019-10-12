@@ -6,7 +6,7 @@
 ## 💡 Why you need this?
 
 Real world users expects your application being customizable, that is why often your components are **polymorphic**:
-they simply need to adapt themselves under different contextual environments. Imagine your components can speak
+they need to adapt themselves under different contextual environments. Imagine your components can speak
 Chinese, English, or even French, and they change their skin tone under dark or light theme. Yeah, you want to make
 sure a component looks great in all scenarios.
 

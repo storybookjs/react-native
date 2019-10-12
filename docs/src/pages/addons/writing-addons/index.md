@@ -145,7 +145,7 @@ export default makeDecorator({
   wrapper: (getStory, context, { parameters }) => {
     const channel = addons.getChannel();
 
-    // Our simple API above simply sets the notes parameter to a string,
+    // Our API above sets the notes parameter to a string,
     // which we send to the channel
     channel.emit('my/customEvent', parameters);
     // we can also add subscriptions here using channel.on('eventName', callback);

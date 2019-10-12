@@ -90,7 +90,7 @@ storiesOf('Button', module).add(
 
 ## Global Configuration
 
-Sometimes you might want to configure an addon globally, as in the case of collocating stories with components, or just simply to keep your stories file cleaner. To do that, you can add your decorators to a config file, typically in `.storybook/config.js`. Here's an example of how you might do that.
+Sometimes you might want to configure an addon globally, as in the case of collocating stories with components, or to keep your stories file cleaner. To do that, you can add your decorators to a config file, typically in `.storybook/config.js`. Here's an example of how you might do that.
 
 ```js
 import { configure, addParameters } from '@storybook/react';

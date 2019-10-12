@@ -81,7 +81,7 @@ export function webpackFinal(config, { configDir }) {
 
 ### Addons
 
-The addon config `addons` allows you to add addons to Storybook from within a preset. For addons that require custom webpack/babel configuration, it is easier to simply install the preset, and it will take care of everything.
+The addon config `addons` allows you to add addons to Storybook from within a preset. For addons that require custom webpack/babel configuration, it is easier to install the preset, and it will take care of everything.
 
 For example, the Storysource preset contains the following code:
 

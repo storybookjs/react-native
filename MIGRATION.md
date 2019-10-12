@@ -77,7 +77,7 @@ Addon-storysource contains a loader, `@storybook/addon-storysource/loader`, whic
 @storybook/addon-storysource/loader is deprecated, please use @storybook/source-loader instead.
 ```
 
-To upgrade to `@storybook/source-loader`, simply `npm install -D @storybook/source-loader` (or use `yarn`), and replace every instance of `@storybook/addon-storysource/loader` with `@storybook/source-loader`.
+To upgrade to `@storybook/source-loader`, run `npm install -D @storybook/source-loader` (or use `yarn`), and replace every instance of `@storybook/addon-storysource/loader` with `@storybook/source-loader`.
 
 ### Default viewports
 
@@ -139,7 +139,7 @@ Storybook 5.1 contains a major overhaul of `@storybook/react-native` as compared
 
 In addition, both packages share more code with the rest of Storybook, which will reduce bugs and increase compatibility (e.g. with the latest versions of babel, etc.).
 
-As a user with an existing 4.1.x RN setup, no migration should be necessary to your RN app. Simply upgrading the library should be enough.
+As a user with an existing 4.1.x RN setup, no migration should be necessary to your RN app. Upgrading the library should be enough.
 
 If you wish to run the optional web server, you will need to do the following migration:
 
@@ -284,7 +284,7 @@ In 5.0, we now provide recommended defaults:
 
 This means if you use the characters { `|`, `/`, `.` } in your story kinds it will triggger the story hierarchy to appear. For example `storiesOf('UI|Widgets/Basics/Button')` will create a story root called `UI` containing a `Widgets/Basics` group, containing a `Button` component.
 
-If you wish to opt-out of this new behavior and restore the flat UI, simply set them back to `null` in your storybook config, or remove { `|`, `/`, `.` } from your story kinds:
+If you wish to opt-out of this new behavior and restore the flat UI, set them back to `null` in your storybook config, or remove { `|`, `/`, `.` } from your story kinds:
 
 ```js
 addParameters({

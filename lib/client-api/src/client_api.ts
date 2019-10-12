@@ -141,7 +141,7 @@ export default class ClientApi {
     this._globalDecorators = [];
   };
 
-  // what are the occasions that "m" is simply a boolean, vs an obj
+  // what are the occasions that "m" is a boolean vs an obj
   storiesOf = <StoryFnReturnType = unknown>(
     kind: string,
     m: NodeModule

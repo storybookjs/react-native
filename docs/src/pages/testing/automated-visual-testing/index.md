@@ -3,7 +3,7 @@ id: 'automated-visual-testing'
 title: 'Automated Visual Testing'
 ---
 
-Automated Visual Testing is a quality assurance process meant to automatically verify that a UI visually appears as intended. There are many alternative names for this process, such as Visual Regression Testing, Visual Validation Testing, Visual UI Testing, or just simply Visual Testing, but in all cases we're talking about confirming the thing your users will see—the actual pixels—without caring about how it's generated.
+Automated Visual Testing is a quality assurance process meant to automatically verify that a UI visually appears as intended. There are many alternative names for this process, such as Visual Regression Testing, Visual Validation Testing, Visual UI Testing, or Visual Testing, but in all cases we're talking about confirming the thing your users will see—the actual pixels—without caring about how it's generated.
 
 ## Benefits
 

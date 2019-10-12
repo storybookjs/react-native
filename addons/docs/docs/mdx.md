@@ -182,7 +182,7 @@ If you don't define stories in your MDX, you can write MDX documentation and ass
 
 If you don't define a `Meta`, you can write Markdown and associate with an existing story. See ["CSF Stories with MDX Docs"](recipes.md#csf-stories-with-mdx-docs).
 
-To get a "documentation-only story", in your UI, simply define a `<Meta>` as you normally would, but don't define any stories. It will show up in your UI as a documentation node:
+To get a "documentation-only story", in your UI, define a `<Meta>` as you normally would, but don't define any stories. It will show up in your UI as a documentation node:
 
 <center>
   <img src="./media/mdx-documentation-only.png" width="100%" />

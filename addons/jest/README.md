@@ -96,7 +96,7 @@ storiesOf('MyComponent', module)
   );
 ```
 
-Or in order to avoid importing `.jest-test-results.json` in each story, simply add the decorator in your `.storybook/config.js` and results will display for stories that you have set the `jest` parameter on:
+Or in order to avoid importing `.jest-test-results.json` in each story, add the decorator in your `.storybook/config.js` and results will display for stories that you have set the `jest` parameter on:
 
 ```js
 import { addDecorator } from '@storybook/react'; // <- or your view layer

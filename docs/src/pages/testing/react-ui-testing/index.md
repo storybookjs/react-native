@@ -71,7 +71,7 @@ But since we are building UI for humans, we must also manually test them to s
 Another reason for manual testing is for the better user experience.
 
 We should always try to test our UI with the naked eye.
-For this, we can simply use our existing Storybook.
+For this, we can use our existing Storybook.
 This is something that we can't automate(yet) and takes time.
 But it would be great if we could do this once in a while (especially with a major code changes).
 
