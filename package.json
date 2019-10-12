@@ -68,13 +68,13 @@
     "publish:latest": "lerna publish --exact --concurrency 1 --force-publish",
     "publish:next": "npm run publish:latest -- --npm-tag=next",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
+    "serve-storybooks": "serve ./built-storybooks -l 8001",
     "start": "yarn --cwd examples/official-storybook storybook",
     "test": "node ./scripts/test.js",
     "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
     "test:cli": "npm --prefix lib/cli run test",
-    "serve-storybooks": "serve ./built-storybooks -l 8001",
-    "test:e2e-start": "yarn serve-storybooks & yarn test:e2e-run",
-    "test:e2e-run": "wait-on http://localhost:8001 && cypress run"
+    "test:e2e-run": "wait-on http://localhost:8001 && cypress run",
+    "test:e2e-start": "concurrently --kill-others \"yarn serve-storybooks\" \"yarn test:e2e-run\""
   },
   "husky": {
     "hooks": {
