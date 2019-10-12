@@ -24,13 +24,17 @@ const exec = async (command, args = [], options = {}) =>
   new Promise((resolve, reject) => {
     const child = spawn(command, args, { ...options, stdio: 'inherit' });
 
-    child.on('close', code => {
-      if (code) {
-        reject();
-      } else {
-        resolve();
-      }
-    });
+    child
+      .on('close', code => {
+        if (code) {
+          reject();
+        } else {
+          resolve();
+        }
+      })
+      .on('error', e => {
+        logger.error(e);
+      });
   });
 
 const hasBuildScript = async l => {
