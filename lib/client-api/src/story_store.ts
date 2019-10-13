@@ -165,6 +165,7 @@ export default class StoryStore extends EventEmitter {
     delete _data[id];
 
     if (story) {
+      story.hooks.clean();
       const { kind, name } = story;
       const kindData = this._legacydata[toKey(kind)];
       if (kindData) {
@@ -360,7 +361,7 @@ export default class StoryStore extends EventEmitter {
   removeStoryKind(kind: string) {
     if (this.hasStoryKind(kind)) {
       this._legacydata[toKey(kind)].stories = {};
-
+      this.cleanHooksForKind(kind);
       this._data = Object.entries(this._data).reduce((acc, [id, story]) => {
         if (story.kind !== kind) {
           Object.assign(acc, { [id]: story });
@@ -397,7 +398,9 @@ export default class StoryStore extends EventEmitter {
   }
 
   cleanHooks(id: string) {
-    this._data[id].hooks.clean();
+    if (this._data[id]) {
+      this._data[id].hooks.clean();
+    }
   }
 
   cleanHooksForKind(kind: string) {
