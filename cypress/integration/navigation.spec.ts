@@ -1,14 +1,8 @@
-import { visitApp } from '../helper';
+import { getStorybookPreview, visitExample } from '../helper';
 
-describe('Navigation and routing', () => {
+describe('Navigation', () => {
   beforeEach(() => {
-    visitApp('official-storybook');
-  });
-
-  it('should navigate to story addons-a11y-basebutton--default', () => {
-    cy.get('#exploreraddons-a11y-basebutton--label').click();
-
-    cy.url().should('include', 'path=/story/addons-a11y-basebutton--label');
+    visitExample('official-storybook');
   });
 
   it('should search navigation item', () => {
@@ -27,5 +21,19 @@ describe('Navigation and routing', () => {
       .type('zzzzzzzzzz');
 
     cy.get('.sidebar-container').should('contain', 'This filter resulted in 0 results');
+  });
+});
+
+describe('Routing', () => {
+  it('should navigate to story addons-a11y-basebutton--default', () => {
+    visitExample('official-storybook');
+    cy.get('#exploreraddons-a11y-basebutton--label').click();
+
+    cy.url().should('include', 'path=/story/addons-a11y-basebutton--label');
+  });
+
+  it('should directly visit a certain story and render correctly', () => {
+    visitExample('official-storybook', '?path=/story/addons-a11y-basebutton--label');
+    getStorybookPreview().should('contain', 'Testing the a11y addon');
   });
 });
