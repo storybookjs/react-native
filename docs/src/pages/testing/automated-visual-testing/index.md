@@ -13,7 +13,7 @@ Another potential benefit is with cross-browser testing. If you perform your vis
 
 ## Challenges
 
-The biggest challenge with Automated Visual Testing is that humans and machines perceive pixels differently. Two screenshots of a UI could appear entirely identical to a human but 100% different to a simple 1:1, naive diffing algorithm.
+The biggest challenge with Automated Visual Testing is that humans and machines perceive pixels differently. Two screenshots of a UI could appear entirely identical to a human but 100% different to a 1:1, naive diffing algorithm.
 
 For example, changes in [anti-aliasing](https://en.wikipedia.org/wiki/Spatial_anti-aliasing) are common, even if human eyes don't notice them.
 

@@ -48,7 +48,7 @@ Let's again use the above login component as an example. It should do these thin
 -   When we click the submit button, it should give us the username and password.
 -   When we click the "Forgotten Account" link, it should redirect to a new page.
 
-We have few ways to do this type of testing with React. The simple way is to use [Enzyme](https://github.com/airbnb/enzyme).
+We have few ways to do this type of testing with React. One way is to use [Enzyme](https://github.com/airbnb/enzyme).
 
 ### 3. CSS/Style Testing
 

@@ -9,7 +9,7 @@ A Storybook is a collection of stories. Each story represents a single visual st
 
 ## Basic story
 
-Here is a simple example of stories for a `Button` component:
+Here is an example of stories for a `Button` component:
 
 ```js
 import React from 'react';

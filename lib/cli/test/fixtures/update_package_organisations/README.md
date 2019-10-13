@@ -941,7 +941,7 @@ You can also use [`jest.fn()` and `expect(fn).toBeCalled()`](http://facebook.git
 
 There is a broad spectrum of component testing techniques. They range from a “smoke test” verifying that a component renders without throwing, to shallow rendering and testing some of the output, to full rendering and testing component lifecycle and state changes.
 
-Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven’t decided on a testing strategy yet, we recommend that you start with creating simple smoke tests for your components:
+Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven’t decided on a testing strategy yet, we recommend that you start with creating smoke tests for your components:
 
 ```js
 import React from 'react';
@@ -1159,7 +1159,7 @@ If you use [Visual Studio Code](https://code.visualstudio.com), there is a [Jest
 ## Developing Components in Isolation
 
 Usually, in an app, you have a lot of UI components, and each of them has many different states.
-For an example, a simple button component could have following states:
+For an example, a button component could have following states:
 
 -   With a text label.
 -   With an emoji.

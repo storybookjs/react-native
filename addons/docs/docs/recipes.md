@@ -25,7 +25,7 @@ If you want to intersperse longform documentation in your Storybook, for example
 
 ## Mixed CSF / MDX Stories
 
-Can't decide between CSF and MDX? In transition? Or have did you find that each format has its own use? There's nothing stopping you from keeping some of your stories in CSF and some in MDX. And if you want to migrate one way or another, the [csf-to-mdx and mdx-to-csf codemod migrations](https://github.com/storybookjs/storybook/blob/next/lib/codemod/README.md) make it easy.
+Can't decide between CSF and MDX? In transition? Or have did you find that each format has its own use? There's nothing stopping you from keeping some of your stories in CSF and some in MDX. And if you want to migrate one way or another, the [csf-to-mdx and mdx-to-csf codemod migrations](https://github.com/storybookjs/storybook/blob/next/lib/codemod/README.md) can help.
 
 The only limitation is that your exported titles (CSF: `default.title`, MDX `Meta.title`) should be unique across files. Loading will fail if there are duplicate titles.
 

@@ -674,7 +674,7 @@ yarn add @babel/core babel-loader --dev
 yarn add babel-loader@7
 ```
 
-Also, make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's a simple one that works:
+Also, make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's one that works:
 
 ```json
 {
@@ -718,7 +718,7 @@ storiesOf('My component', module)
 
 This example applies notes globally to all stories. You can apply it locally with `storiesOf(...).addDecorator(withNotes)`.
 
-The story parameters correspond directly to the old withX arguments, so it's easy to migrate your code. See the parameters documentation for the packages that have been upgraded:
+The story parameters correspond directly to the old withX arguments, so it's less demanding to migrate your code. See the parameters documentation for the packages that have been upgraded:
 
 - [Notes](https://github.com/storybookjs/storybook/blob/master/addons/notes/README.md)
 - [Jest](https://github.com/storybookjs/storybook/blob/master/addons/jest/README.md)
@@ -752,7 +752,7 @@ This affects you if you use custom webpack config in [Full Control Mode](https:/
 
 ### Refactored Knobs
 
-Knobs users: there was a bug in 3.2.x where using the knobs addon imported all framework runtimes (e.g. React and Vue). To fix the problem, we [refactored knobs](https://github.com/storybookjs/storybook/pull/1832). Switching to the new style is easy:
+Knobs users: there was a bug in 3.2.x where using the knobs addon imported all framework runtimes (e.g. React and Vue). To fix the problem, we [refactored knobs](https://github.com/storybookjs/storybook/pull/1832). Switching to the new style is only takes one line of code.
 
 In the case of React or React-Native, import knobs like this:
 
@@ -893,7 +893,7 @@ You have to change your `package.json`, prune old and install new dependencies b
 
 We used to ship 2 addons with every single installation of storybook: `actions` and `links`. But in practice not everyone is using them, so we decided to deprecate this and in the future, they will be completely removed. If you use `@storybook/react/addons` you will get a deprecation warning.
 
-If you **are** using these addons, migrating is simple:
+If you **are** using these addons, it takes two steps to migrate:
 
 - add the addons you use to your `package.json`.
 - update your code:

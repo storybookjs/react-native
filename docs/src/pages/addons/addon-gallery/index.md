@@ -70,7 +70,7 @@ You need to install these addons directly from NPM in order to use them.
 
 With this addon, you can add docs in markdown format for each story.
 It's very useful because most projects and components already have README.md files.
-Now it is easy to add them into your Storybook.
+Now you can add them into your Storybook.
 
 ### [Story-router](https://github.com/gvaldambrini/storybook-router)
 

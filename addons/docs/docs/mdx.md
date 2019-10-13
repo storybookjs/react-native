@@ -19,7 +19,7 @@
 
 ## Basic example
 
-Let's get started with a simple example that combines markdown with a single story:
+Let's get started with an example that combines markdown with a single story:
 
 ```md
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';

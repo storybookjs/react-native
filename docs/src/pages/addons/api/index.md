@@ -193,7 +193,7 @@ export const Panel = () => {
 }
 ```
 
-This hook gets you the current story's parameter super easy.
+This hook gets you the current story's parameter.
 
 If the parameter isn't set, the default value (second argument) is returned instead.
 

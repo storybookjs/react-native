@@ -311,7 +311,7 @@ Alternatively you may use `yarn`:
 yarn add husky lint-staged prettier
 ```
 
--   `husky` makes it easy to use githooks as if they are npm scripts.
+-   `husky` enables you to use githooks as if they are npm scripts.
 -   `lint-staged` allows us to run scripts on staged files in git. See this [blog post about lint-staged to learn more about it](https://medium.com/@okonetchnikov/make-linting-great-again-f3890e1ad6b8).
 -   `prettier` is the JavaScript formatter we will run before commits.
 
@@ -1243,7 +1243,7 @@ You can also use [`jest.fn()` and `expect(fn).toBeCalled()`](http://facebook.git
 
 There is a broad spectrum of component testing techniques. They range from a “smoke test” verifying that a component renders without throwing, to shallow rendering and testing some of the output, to full rendering and testing component lifecycle and state changes.
 
-Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven’t decided on a testing strategy yet, we recommend that you start with creating simple smoke tests for your components:
+Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven’t decided on a testing strategy yet, we recommend that you start with creating smoke tests for your components:
 
 ```js
 import React from 'react';
@@ -1487,7 +1487,7 @@ If you use [Visual Studio Code](https://code.visualstudio.com), there is a [Jest
 ## Developing Components in Isolation
 
 Usually, in an app, you have a lot of UI components, and each of them has many different states.
-For an example, a simple button component could have following states:
+For an example, a button component could have following states:
 
 -   In a regular state, with a text label.
 -   In the disabled mode.
@@ -1611,7 +1611,7 @@ it may take up to 24 hours for the cache to be invalidated.
     changes you've made locally.
 
 4.  If you _need_ to test your offline-first service worker locally, build
-    the application (using `npm run build`) and run a simple http server from your
+    the application (using `npm run build`) and run a http server from your
     build directory. After running the build script, `create-react-app` will give
     instructions for one way to test your production build locally and the [deployment instructions](#deployment) have
     instructions for using other methods. _Be sure to always use an

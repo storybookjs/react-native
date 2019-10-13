@@ -36,7 +36,7 @@ With this, you can write some pretty cool addons. Look at our [Addon gallery](ht
 
 Let's write a simplistic addon for Storybook. We'll add some metadata to the story, which the addon can then use.
 
-### Add simple metadata using parameters
+### Add metadata using parameters
 
 We write a story for our addon like this:
 

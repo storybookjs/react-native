@@ -3,7 +3,7 @@ id: 'using-addons'
 title: 'Using Addons'
 ---
 
-Storybook comes with a variety of "core" addons developed and maintained alongside Storybook. Most examples in this site use [actions](https://github.com/storybookjs/storybook/tree/master/addons/actions) and [links](https://github.com/storybookjs/storybook/tree/master/addons/links). But it's easy to use any third party addons distributed via NPM.
+Storybook comes with a variety of "core" addons developed and maintained alongside Storybook. Most examples in this site use [actions](https://github.com/storybookjs/storybook/tree/master/addons/actions) and [links](https://github.com/storybookjs/storybook/tree/master/addons/links). But you can use any third party addons distributed via NPM.
 
 Here's how to do it.
 
@@ -57,7 +57,7 @@ storiesOf('Button', module).add(
       </span>
     </Button>
   ),
-  { notes: 'A very simple component' }
+  { notes: 'A small component' }
 );
 ```
 
