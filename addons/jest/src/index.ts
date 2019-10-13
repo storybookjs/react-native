@@ -1,4 +1,4 @@
-import addons, { Parameters, DecoratorFunction, StoryFn } from '@storybook/addons';
+import addons, { Parameters, StoryFn } from '@storybook/addons';
 import deprecate from 'util-deprecate';
 import { normalize, sep } from 'upath';
 import { ADD_TESTS } from './shared';
