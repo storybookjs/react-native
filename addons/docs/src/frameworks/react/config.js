@@ -7,6 +7,6 @@ addParameters({
     container: DocsContainer,
     page: DocsPage,
     // react is Storybook's "native" framework, so it's stories are inherently prepared to be rendered inline
-    prepareForInline: (storyFn: StoryFn) => storyFn(),
+    prepareForInline: storyFn => storyFn(),
   },
 });
