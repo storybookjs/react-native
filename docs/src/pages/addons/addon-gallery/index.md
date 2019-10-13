@@ -126,7 +126,7 @@ Preview your stories at a variety of breakpoints, so that you can be sure that y
 
 Wrap your stories with the Apollo client for mocking GraphQL queries/mutations.
 
-### [Screenshot](https://github.com/tsuyoshiwada/storybook-chrome-screenshot)
+### [Storycap](https://github.com/reg-viz/storycap)
 
 Save the screenshot image of your stories. via [Puppeteer](https://github.com/GoogleChrome/puppeteer).
 
