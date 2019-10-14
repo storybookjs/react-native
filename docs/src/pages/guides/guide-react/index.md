@@ -26,7 +26,7 @@ If you want to set up Storybook manually for your React project, this is the gui
 
 ### A note for Create React App users
 
-You can now use [@storybook/preset-create-react-app](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) to configure Storybook on your behalf. This is installed by Storybook during automatic setup (Storybook 5.3 or newer).
+You can now use [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) to configure Storybook on your behalf. This is installed by Storybook during automatic setup (Storybook 5.3 or newer).
 
 ## Step 1: Add dependencies
 

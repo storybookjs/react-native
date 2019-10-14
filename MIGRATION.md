@@ -73,9 +73,9 @@
 
 ### Create React App preset
 
-You can now move to the new preset for [Create React App](https://create-react-app.dev/). The in-built preset for Create React App will be deprecated with Storybook 6.0.
+You can now move to the new preset for [Create React App](https://create-react-app.dev/). The in-built preset for Create React App will be disabled in Storybook 6.0.
 
-Simply install [@storybook/preset-create-react-app](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) and it will be used automatically.
+Simply install [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) and it will be used automatically.
 
 ## From version 5.1.x to 5.2.x
 
