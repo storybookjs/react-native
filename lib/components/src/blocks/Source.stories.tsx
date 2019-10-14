@@ -12,7 +12,6 @@ const jsxCode = `
 </MyComponent>
 `.trim();
 
-const jsxProps = {};
 export const jsx = () => <Source code={jsxCode} language="jsx" />;
 
 const cssCode = `
