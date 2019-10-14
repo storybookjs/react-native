@@ -17,7 +17,7 @@ story_format='csf'
 # parse command-line options
 # '-f' sets fixtures directory
 # '-s' sets story format to use
-while getopts ":fs:" opt; do
+while getopts ":f:s:" opt; do
   case $opt in
     f)
       fixtures_dir=$OPTARG
