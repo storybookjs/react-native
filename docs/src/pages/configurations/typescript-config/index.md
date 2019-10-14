@@ -16,7 +16,7 @@ yarn add -D @storybook/addon-info react-docgen-typescript-loader # optional but 
 yarn add -D jest "@types/jest" ts-jest #testing
 ```
 
-We have had the best experience using `awesome-typescript-loader`, but other tutorials may use `ts-loader`, just configure accordingly. You can even use `babel-loader` with a `ts-loader` configuration.
+We have had the best experience using `awesome-typescript-loader`, but other tutorials may use `ts-loader`, so be sure to configure accordingly. You can even use `babel-loader` with a `ts-loader` configuration.
 
 ### Setting up TypeScript to work with Storybook
 
@@ -75,7 +75,7 @@ The above example shows a working Webpack config with the [TSDocgen plugin](http
 }
 ```
 
-This is for the default configuration where `/stories` is a peer of `src`. If you have them all in just `src` you may wish to replace `"rootDirs": ["src", "stories"]` above with `"rootDir": "src",`.
+This is for the default configuration where `/stories` is a peer of `src`. If you have them all in `src`, you may wish to replace `"rootDirs": ["src", "stories"]` above with `"rootDir": "src",`.
 
 ## Setting up TypeScript with babel-loader
 

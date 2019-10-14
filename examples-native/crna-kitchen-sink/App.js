@@ -4,7 +4,7 @@ export { StorybookUIRoot as default };
 
 // NOTE: The code below is what CRNA generates out of the box. We currently
 // have no clever way of replacing this with Storybook's UI (Vanilla RN does!)
-// so for now we just replace the code outright. Keeping this here for clarity.
+// so for now we replace the code outright. Keeping this here for clarity.
 //
 // import React from 'react';
 // import { StyleSheet, Text, View } from 'react-native';

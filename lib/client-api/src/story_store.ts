@@ -121,7 +121,7 @@ export default class StoryStore extends EventEmitter {
 
   extract(options?: StoryOptions) {
     const stories = Object.entries(this._data);
-    // determine if we should apply a sort to the stories or just use default import order
+    // determine if we should apply a sort to the stories or use default import order
     if (Object.values(this._data).length > 0) {
       const index = Object.keys(this._data).find(
         key =>

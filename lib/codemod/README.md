@@ -80,7 +80,7 @@ Replaces the Info addon's deprecated `addWithInfo` API with the standard `withIn
 ./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/update-addon-info.js . --ignore-pattern "node_modules|dist"
 ```
 
-Simple example:
+Example:
 
 ```js
 storiesOf('Button').addWithInfo('simple usage', 'This is the basic usage of the button.', () => (

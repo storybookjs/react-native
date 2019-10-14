@@ -25,7 +25,7 @@ If you want to intersperse longform documentation in your Storybook, for example
 
 ## Mixed CSF / MDX Stories
 
-Can't decide between CSF and MDX? In transition? Or have did you find that each format has its own use? There's nothing stopping you from keeping some of your stories in CSF and some in MDX. And if you want to migrate one way or another, the [csf-to-mdx and mdx-to-csf codemod migrations](https://github.com/storybookjs/storybook/blob/next/lib/codemod/README.md) make it easy.
+Can't decide between CSF and MDX? In transition? Or have did you find that each format has its own use? There's nothing stopping you from keeping some of your stories in CSF and some in MDX. And if you want to migrate one way or another, the [csf-to-mdx and mdx-to-csf codemod migrations](https://github.com/storybookjs/storybook/blob/next/lib/codemod/README.md) can help.
 
 The only limitation is that your exported titles (CSF: `default.title`, MDX `Meta.title`) should be unique across files. Loading will fail if there are duplicate titles.
 
@@ -42,7 +42,7 @@ import { Button } from './Button';
 export default {
   title: 'Demo/Button',
   component: Button,
-  includeStories: [], // or simply don't load this file at all
+  includeStories: [], // or don't load this file at all
 };
 
 export const basic = () => <Button>Basic</Button>;
@@ -66,7 +66,7 @@ I can define a story with the function imported from CSF:
 
 <Story name="basic">{stories.basic}</Story>
 
-And of course I can also embed arbitrary markdown & JSX in this file.
+And I can also embed arbitrary markdown & JSX in this file.
 
 <SomeComponent prop1="val1" />
 ```
@@ -94,7 +94,7 @@ I can embed a story (but not define one, since this file should not contain a `M
 
 <Story id="some--id" />
 
-And of course I can also embed arbitrary markdown & JSX in this file.
+And I can also embed arbitrary markdown & JSX in this file.
 
 <SomeComponent prop1="val1" />
 ```
@@ -171,9 +171,9 @@ addParameters({
 
 > ⚠️ The `--docs` flag is an experimental feature in Storybook 5.2. The behavior may change in 5.3 outside of the normal semver rules. Be forewarned!
 
-The Storybook UI is a workshop for developing components in isolation. Storybook Docs is a showcase for documenting your components. During component/docs development, it’s useful to see both of these modes side by side. But when you export your static storybook, you might want to just export the docs to reduce clutter.
+The Storybook UI is a workshop for developing components in isolation. Storybook Docs is a showcase for documenting your components. During component/docs development, it’s useful to see both of these modes side by side. But when you export your static storybook, you might want to export the docs to reduce clutter.
 
-To address this, we’ve added a CLI flag to export just the docs. This flag is also available in dev mode:
+To address this, we’ve added a CLI flag to only export the docs. This flag is also available in dev mode:
 
 ```sh
 yarn build-storybook --docs
