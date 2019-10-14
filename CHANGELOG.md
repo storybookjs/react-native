@@ -1,3 +1,19 @@
+## 5.3.0-alpha.19 (October 15, 2019)
+
+### Features
+
+* React: Move Create React App support to external preset ([#8416](https://github.com/storybookjs/storybook/pull/8416))
+* CLI: MDX template support ([#8396](https://github.com/storybookjs/storybook/pull/8396))
+
+### Bug Fixes
+
+* Addon-jest: Make withTests type generic ([#8410](https://github.com/storybookjs/storybook/pull/8410))
+* Addon-docs: Don't error in React when there's no `prepareForInline` ([#8415](https://github.com/storybookjs/storybook/pull/8415))
+
+### Dependency Upgrades
+
+* [Security] Bump lodash from 4.17.11 to 4.17.15 ([#8351](https://github.com/storybookjs/storybook/pull/8351))
+
 ## 5.3.0-alpha.18 (October 14, 2019)
 
 ### Bug Fixes
