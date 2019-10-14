@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { logger } from '@storybook/client-logger';
 import { components as docsComponents } from '@storybook/components/html';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
 import { CURRENT_SELECTION } from './shared';
@@ -67,7 +68,7 @@ export const getStoryProps = (
 
   const storyIsInline = typeof inline === 'boolean' ? inline : inlineStories;
   if (storyIsInline && !prepareForInline) {
-    throw new Error(
+    logger.warn(
       `Story '${storyName}' is set to render inline, but no 'prepareForInline' function is implemented in your docs configuration!`
     );
   }
