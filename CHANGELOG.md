@@ -1,3 +1,17 @@
+## 5.3.0-alpha.18 (October 14, 2019)
+
+### Bug Fixes
+
+* CSF: Warn when CSF and `storiesOf` mixed in one file ([#8411](https://github.com/storybookjs/storybook/pull/8411))
+* Addon API: Clean preview hooks when removing a story ([#8408](https://github.com/storybookjs/storybook/pull/8408))
+* Addon-docs: Fix typo in default config ([#8403](https://github.com/storybookjs/storybook/pull/8403))
+* Angular: Fix angular2-template-loader / raw-loader version conflicts ([#8269](https://github.com/storybookjs/storybook/pull/8269))
+* CLI: Update button.svelte template ([#8369](https://github.com/storybookjs/storybook/pull/8369))
+
+### Maintenance
+
+* Official-storybook: Add a story with duplicate decorators ([#8407](https://github.com/storybookjs/storybook/pull/8407))
+
 ## 5.3.0-alpha.17 (October 10, 2019)
 
 ### Maintenance
