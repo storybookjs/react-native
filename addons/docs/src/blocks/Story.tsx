@@ -66,7 +66,7 @@ export const getStoryProps = (
   const { storyFn = undefined, name: storyName = undefined } = data || {};
 
   const storyIsInline = typeof inline === 'boolean' ? inline : inlineStories;
-  if (storyIsInline && !prepareForInline) {
+  if (storyIsInline && !prepareForInline && framework !== 'react') {
     throw new Error(
       `Story '${storyName}' is set to render inline, but no 'prepareForInline' function is implemented in your docs configuration!`
     );
