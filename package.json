@@ -193,7 +193,7 @@
     "jest-watch-typeahead": "^0.4.0",
     "lerna": "^3.14.1",
     "lint-staged": "^9.4.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "node-cleanup": "^2.1.2",
     "node-fetch": "^2.6.0",
     "npmlog": "^4.1.2",

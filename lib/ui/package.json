@@ -42,7 +42,7 @@
     "fast-deep-equal": "^2.0.1",
     "fuse.js": "^3.4.4",
     "global": "^4.3.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "markdown-to-jsx": "^6.9.3",
     "memoizerific": "^1.11.3",
     "polished": "^3.3.1",

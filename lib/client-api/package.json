@@ -37,7 +37,7 @@
     "eventemitter3": "^4.0.0",
     "global": "^4.3.2",
     "is-plain-object": "^3.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "memoizerific": "^1.11.3",
     "qs": "^6.6.0",
     "ts-dedent": "^1.1.0",
