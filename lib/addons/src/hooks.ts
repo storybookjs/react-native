@@ -118,16 +118,12 @@ export class HooksContext {
   addRenderListeners() {
     this.removeRenderListeners();
     const channel = addons.getChannel();
-    if (channel != null) {
-      RenderEvents.forEach(e => channel.on(e, this.renderListener));
-    }
+    RenderEvents.forEach(e => channel.on(e, this.renderListener));
   }
 
   removeRenderListeners() {
     const channel = addons.getChannel();
-    if (channel != null) {
-      RenderEvents.forEach(e => channel.removeListener(e, this.renderListener));
-    }
+    RenderEvents.forEach(e => channel.removeListener(e, this.renderListener));
   }
 }
 
