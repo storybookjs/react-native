@@ -1334,11 +1334,9 @@ exports[`addon Info should render component description if story kind matches co
           >
             <SyntaxHighlighter
               bordered={true}
-              className={null}
               copyable={true}
               format={false}
               language="js"
-              padded={false}
             >
               <Styled(div)
                 bordered={true}
@@ -3118,11 +3116,9 @@ exports[`addon Info should render component description if story kind matches co
           >
             <SyntaxHighlighter
               bordered={true}
-              className={null}
               copyable={true}
               format={false}
               language="jsx"
-              padded={false}
             >
               <Styled(div)
                 bordered={true}
@@ -5893,11 +5889,9 @@ exports[`addon Info should render component description if story name matches co
           >
             <SyntaxHighlighter
               bordered={true}
-              className={null}
               copyable={true}
               format={false}
               language="js"
-              padded={false}
             >
               <Styled(div)
                 bordered={true}
@@ -7905,11 +7899,9 @@ exports[`addon Info should render component description if story name matches co
           >
             <SyntaxHighlighter
               bordered={true}
-              className={null}
               copyable={true}
               format={false}
               language="jsx"
-              padded={false}
             >
               <Styled(div)
                 bordered={true}
