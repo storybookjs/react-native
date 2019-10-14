@@ -44,7 +44,7 @@ const Note: FunctionComponent<NoteProps> = props => (
   />
 );
 
-type InlineCodeProps = Omit<DetailedHTMLProps<HTMLAttributes<HTMLCod>, HTMLElement>, 'style'>;
+type InlineCodeProps = Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'style'>;
 const InlineCode: FunctionComponent<InlineCodeProps> = props => (
   <code
     {...props}
@@ -175,9 +175,6 @@ const Welcome: FunctionComponent<WelcomeProps> = ({ showApp }) => (
   </Main>
 );
 Welcome.displayName = 'Welcome';
-Welcome.propTypes = {
-  showApp: PropTypes.func,
-};
 Welcome.defaultProps = {
   showApp: null,
 };

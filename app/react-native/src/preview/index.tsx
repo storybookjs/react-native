@@ -8,11 +8,10 @@ import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
 import createChannel from '@storybook/channel-websocket';
-// @ts-ignore remove when client-api is migrated to TS
 import { StoryStore, ClientApi } from '@storybook/client-api';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
-import { theme, EmotionProps } from './components/Shared/theme';
+import { theme } from './components/Shared/theme';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -30,7 +29,7 @@ export type Params = {
   isUIHidden: boolean;
   shouldDisableKeyboardAvoidingView: boolean;
   keyboardAvoidingViewVerticalOffset: number;
-} & EmotionProps;
+} & { theme: typeof theme };
 
 export default class Preview {
   _clientApi: ClientApi;

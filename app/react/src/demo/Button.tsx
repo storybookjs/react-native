@@ -1,5 +1,4 @@
 import React, { FunctionComponent, HTMLAttributes } from 'react';
-import PropTypes from 'prop-types';
 
 const styles = {
   border: '1px solid #eee',
@@ -19,10 +18,6 @@ const Button: FunctionComponent<Props> = ({ children, onClick }) => (
 );
 
 Button.displayName = 'Button';
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func,
-};
 Button.defaultProps = {
   onClick: () => {},
 };
