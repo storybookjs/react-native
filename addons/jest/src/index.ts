@@ -1,4 +1,4 @@
-import addons, { Parameters, DecoratorFunction, StoryFn } from '@storybook/addons';
+import addons, { Parameters, StoryFn } from '@storybook/addons';
 import deprecate from 'util-deprecate';
 import { normalize, sep } from 'upath';
 import { ADD_TESTS } from './shared';
@@ -51,15 +51,15 @@ const emitAddTests = ({ kind, story, testFiles, options }: EmitAddTestsArg) => {
 export const withTests = (userOptions: {
   results: any;
   filesExt?: string;
-}): DecoratorFunction<unknown> => {
+}) => {
   const defaultOptions = {
     filesExt: '((\\.specs?)|(\\.tests?))?(\\.[jt]sx?)?$',
   };
   const options = { ...defaultOptions, ...userOptions };
 
-  return (...args) => {
+  return (...args: any []) => {
     if (typeof args[0] === 'string') {
-      return deprecate((storyFn: StoryFn<unknown>, { kind }: Parameters) => {
+      return deprecate((storyFn: StoryFn<any>, { kind }: Parameters) => {
         emitAddTests({ kind, story: storyFn, testFiles: (args as any) as string[], options });
 
         return storyFn();
