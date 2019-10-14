@@ -1,3 +1,17 @@
+## 5.2.4 (October 14, 2019)
+
+### Bug Fixes
+
+* Angular: Fix angular2-template-loader / raw-loader version conflicts ([#8269](https://github.com/storybookjs/storybook/pull/8269))
+* CSF: Warn when CSF and `storiesOf` mixed in one file ([#8411](https://github.com/storybookjs/storybook/pull/8411))
+* Addon API: Clean preview hooks when removing a story ([#8408](https://github.com/storybookjs/storybook/pull/8408))
+* Update button.svelte ([#8369](https://github.com/storybookjs/storybook/pull/8369))
+* CSF: Ignore __esModule export ([#8317](https://github.com/storybookjs/storybook/pull/8317))
+
+### Maintenance
+
+* Publish top-level .js and .d.ts files ([#8354](https://github.com/storybookjs/storybook/pull/8354))
+
 ## 5.2.3 (October 7, 2019)
 
 ### Bug Fixes
