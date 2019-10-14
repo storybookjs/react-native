@@ -156,6 +156,16 @@ export default class ClientApi {
       );
     }
 
+    if (m) {
+      const proto = Object.getPrototypeOf(m);
+      if (proto.exports && proto.exports.default) {
+        // FIXME: throw an error in SB6.0
+        logger.error(
+          `Illegal mix of CSF default export and storiesOf calls in a single file: ${proto.i}`
+        );
+      }
+    }
+
     if (m && m.hot && m.hot.dispose) {
       m.hot.dispose(() => {
         const { _storyStore } = this;
