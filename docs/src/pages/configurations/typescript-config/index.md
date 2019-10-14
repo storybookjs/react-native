@@ -79,10 +79,13 @@ This is for the default configuration where `/stories` is a peer of `src`. If yo
 
 ## Setting up TypeScript with babel-loader
 
-When using latest create-react-app (CRA 3.0), Babel 7 has native TypeScript 3.5.0 support. Setup becomes easier.
-For a full working demo (that also uses react-docgen-typescript-loader) you can check out this [repo](https://github.com/Luchanso/storybook-cra-ts-example).
+### A note for Create React App users
+
+Please use [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) for full compatibility with [Create React App](https://create-react-app.dev/) features - which includes TypeScript support.
 
 ### Setting up TypeScript to work with Storybook
+
+The following code uses [`babel-preset-react-app`](https://github.com/facebook/create-react-app/tree/master/packages/babel-preset-react-app).
 
 We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default) by creating a `webpack.config.js` file in our Storybook configuration directory (by default, it’s `.storybook`):
 
@@ -102,7 +105,7 @@ module.exports = ({ config, mode }) => {
 
 ### `tsconfig.json`
 
-The default `tsconfig.json` that comes with CRA works great. If your stories are outside the `src` folder, for example the `stories` folder in root, then `"rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
+If your stories are outside the `src` folder, for example the `stories` folder in root, then `"rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
 
 ## Create a TSX storybook index
 
@@ -115,7 +118,7 @@ Change `config.ts` inside the Storybook config directory (by default, it’s `.s
 ```js
 import { configure } from '@storybook/react';
 // automatically import all files ending in *.stories.tsx
-configure(require.context('../src', true, /\.stories\.tsx?$/), module)
+configure(require.context('../src', true, /\.stories\.tsx?$/), module);
 ```
 
 ## Using TypeScript with the TSDocgen addon

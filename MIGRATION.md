@@ -1,6 +1,8 @@
 # Migration
 
 - [Migration](#migration)
+  - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
+    - [Create React App preset](#create-react-app-preset)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)
@@ -66,6 +68,14 @@
     - [Webpack upgrade](#webpack-upgrade)
     - [Packages renaming](#packages-renaming)
     - [Deprecated embedded addons](#deprecated-embedded-addons)
+
+## From version 5.2.x to 5.3.x
+
+### Create React App preset
+
+You can now move to the new preset for [Create React App](https://create-react-app.dev/). The in-built preset for Create React App will be disabled in Storybook 6.0.
+
+Simply install [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) and it will be used automatically.
 
 ## From version 5.1.x to 5.2.x
 
