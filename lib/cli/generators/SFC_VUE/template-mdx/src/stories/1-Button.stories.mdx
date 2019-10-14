@@ -7,10 +7,10 @@ import MyButton from './MyButton.vue';
 
 # Button
 
-This `Button` documentation defines three stories:
+This `Button` documentation defines two stories:
 
 <Story name="text">
-  {() => ({
+  {{
     components: {
       MyButton,
     },
@@ -18,25 +18,11 @@ This `Button` documentation defines three stories:
     methods: {
       action: action('clicked'),
     },
-  })}
-</Story>
-
-<Story name="jsx">
-  {() => ({
-    components: {
-      MyButton,
-    },
-    render() {
-      return <my-button onClick={this.action}>With JSX</my-button>;
-    },
-    methods: {
-      action: linkTo('clicked'),
-    },
-  })}
+  }}
 </Story>
 
 <Story name="emoji">
-  {() => ({
+  {{
     components: {
       MyButton,
     },
@@ -45,5 +31,5 @@ This `Button` documentation defines three stories:
     methods: {
       action: action('clicked'),
     },
-  })}
+  }}
 </Story>
