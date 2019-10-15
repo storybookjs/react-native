@@ -159,8 +159,6 @@ const handleExamples = async files => {
 };
 
 const run = async () => {
-  await exec('yarn', ['bootstrap', '--core']);
-
   const examples = await readdir(p(['examples']));
 
   await handleExamples(examples);

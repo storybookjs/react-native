@@ -62,7 +62,7 @@
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
-    "now-build": "yarn build-storybooks",
+    "now-build": "yarn bootstrap --core && yarn build-storybooks",
     "publish:crna": "yarn --cwd examples-native/crna-kitchen-sink expo publish",
     "publish:debug": "npm run publish:latest -- --npm-tag=debug --no-push",
     "publish:latest": "lerna publish --exact --concurrency 1 --force-publish",
