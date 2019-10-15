@@ -16,6 +16,7 @@ const Main: FunctionComponent<MainProps> = props => (
       lineHeight: 1.4,
       fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
       backgroundColor: '#fff',
+      color: '#000',
     }}
   />
 );
