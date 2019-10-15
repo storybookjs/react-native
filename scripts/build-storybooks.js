@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-/* eslint-disable global-require */
-
 const { spawn } = require('child_process');
 const { promisify } = require('util');
 const {
@@ -77,27 +75,7 @@ const handleExamples = async files => {
     logger.log('-------');
   }, Promise.resolve());
 
-  const copy = require('recursive-copy');
-  const target = 'official-storybook';
-  const copyables = deployables.filter(f => f !== target);
-
-  await copyables.reduce(async (acc, d) => {
-    await acc;
-
-    logger.log(`💿 copy ${d} to built-storybooks`);
-    const to = p(['built-storybooks', target, d]);
-    const from = p(['built-storybooks', d]);
-
-    await copy(from, to, {
-      overwrite: true,
-    });
-  }, Promise.resolve());
-
-  logger.log('-------');
-  logger.log('✅ done');
-  logger.log('-------');
   logger.log('');
-
   logger.log(`📑 creating index`);
 
   const indexLocation = p(['built-storybooks', 'index.html']);
