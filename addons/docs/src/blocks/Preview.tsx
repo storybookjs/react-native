@@ -11,14 +11,21 @@ export enum SourceState {
 
 type PreviewProps = PurePreviewProps & {
   withSource?: SourceState;
+  mdxSource?: string;
 };
 
 const getPreviewProps = (
-  { withSource = SourceState.CLOSED, children, ...props }: PreviewProps & { children?: ReactNode },
+  { withSource = SourceState.CLOSED, mdxSource, children, ...props }: PreviewProps & { children?: ReactNode },
   { mdxStoryNameToId, storyStore }: DocsContextProps
 ): PurePreviewProps => {
-  if (withSource === SourceState.NONE && !children) {
+  if (withSource === SourceState.NONE) {
     return props;
+  }
+  if (mdxSource) {
+    return {
+      ...props,
+      withSource: getSourceProps({ code: decodeURI(mdxSource) }, { storyStore }),
+    };
   }
   const childArray: ReactNodeArray = Array.isArray(children) ? children : [children];
   const stories = childArray.filter(
