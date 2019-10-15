@@ -45,13 +45,13 @@ exports[`Storyshots Another Button with text 1`] = `
 </button>
 `;
 
-exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
+exports[`Storyshots Async With Timeout 1`] = `
 <h1>
   
 </h1>
 `;
 
-exports[`Storyshots Button with some emoji 1`] = `
+exports[`Storyshots Button With Some Emoji 1`] = `
 <button
   onClick={[Function]}
   style={
@@ -76,7 +76,7 @@ exports[`Storyshots Button with some emoji 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button with text 1`] = `
+exports[`Storyshots Button With Text 1`] = `
 <button
   onClick={[Function]}
   style={
@@ -96,11 +96,12 @@ exports[`Storyshots Button with text 1`] = `
 </button>
 `;
 
-exports[`Storyshots Welcome to Storybook 1`] = `
+exports[`Storyshots Welcome To Storybook 1`] = `
 <article
   style={
     Object {
       "backgroundColor": "#fff",
+      "color": "#000",
       "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
       "lineHeight": 1.4,
       "padding": 15,
@@ -159,8 +160,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     >
       stories
     </button>
-     for a component called
-     
+     for a component called 
     <code
       style={
         Object {
@@ -199,8 +199,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     >
       Button
     </code>
-     stories located at
-     
+     stories located at 
     <code
       style={
         Object {
@@ -221,8 +220,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     Usually we create stories with smaller UI components in the app.
     <br />
-    Have a look at the
-     
+    Have a look at the 
     <a
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
@@ -238,8 +236,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     >
       Writing Stories
     </a>
-     
-    section in our documentation.
+     section in our documentation.
   </p>
   <p
     style={

@@ -1,5 +1,3 @@
-/* eslint-disable no-empty-function */
-/* eslint-disable @typescript-eslint/no-parameter-properties */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable import/no-extraneous-dependencies */
 // We could use NgComponentOutlet here but there's currently no easy way
@@ -27,7 +25,7 @@ import { NgStory, ICollection } from './types';
   template: '<ng-template #target></ng-template>',
 })
 export class AppComponent implements OnInit, OnDestroy {
-  @ViewChild('target', { read: ViewContainerRef })
+  @ViewChild('target', { read: ViewContainerRef, static: true })
   target: ViewContainerRef;
 
   constructor(private cfr: ComponentFactoryResolver, @Inject(STORY) private data: NgStory) {}

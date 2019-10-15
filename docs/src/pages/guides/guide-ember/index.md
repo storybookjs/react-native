@@ -23,7 +23,7 @@ In this guide, we will set up Storybook for your Ember project.
 
 ## Add @storybook/ember
 
-First of all, you need to add `@storybook/ember` to your project. To do that, simply run:
+First of all, you need to add `@storybook/ember` to your project. To do that, run:
 
 ```sh
 ember install @storybook/ember-cli-storybook
@@ -57,85 +57,84 @@ Your environment will be preconfigured using `ember-cli-storybook`. This will ad
 Storybook can be configured in several different ways.
 That’s why we need a config directory. We've added a `-c` option to the above NPM script mentioning `.storybook` as the config directory.
 
-For the basic Storybook configuration file, you don't need to do much, but simply tell Storybook where to find stories.
+For the basic Storybook configuration file, you don't need to do much, but tell Storybook where to find stories.
 
-To do that, simply create a file at `.storybook/config.js` with the following content:
+To do that, create a file at `.storybook/config.js` with the following content:
 
 ```js
 import { configure } from '@storybook/ember';
 
-function loadStories() {
-  require('../stories/index.js');
-  // You can require as many stories as you need.
-}
-
-configure(loadStories, module);
+configure(require.context('../src', true, /\.stories\.js$/), module);
 ```
 
-That'll load stories in `../stories/index.js`.
+That will load all the stories underneath your `../src` directory that match the pattern `*.stories.js`. We recommend co-locating your stories with your source files, but you can place them wherever you choose.
 
 ## Write your stories
 
-Now you can write some stories inside the `../stories/index.js` file, like this:
+Now you can write some stories inside the `../stories/index.stories.js` file, like this:
 
 > It is important that you import the `hbs` function that is provided by a babel plugin in `@storybook/ember`
 
 ```js
 import hbs from 'htmlbars-inline-precompile';
-import { storiesOf } from '@storybook/ember';
 
-storiesOf('Demo', module)
-  .add('heading', () => hbs`<h1>Hello World</h1>`)
-  .add('button', () => {
-    return {
-      template: hbs`<button {{action onClick}}>
-        Hello Button
-      </button>`,
-      context: {
-        onClick: (e) => console.log(e)
-      }
+export default { title: 'Demo' };
+
+export const heading = () => hbs`<h1>Hello World</h1>`;
+
+export const button = () => {
+  return {
+    template: hbs`<button {{action onClick}}>
+      Hello Button
+    </button>`,
+    context: {
+      onClick: (e) => console.log(e)
     }
-  })
-  .add('component', () => {
-    return {
-      template: hbs`{{foo-bar
-        click=onClick
-      }}`,
-      context: {
-        onClick: (e) => console.log(e)
-      }
+  }
+};
+
+export const component = () => {
+  return {
+    template: hbs`{{foo-bar
+      click=onClick
+    }}`,
+    context: {
+      onClick: (e) => console.log(e)
     }
-  });
+  }
+};
 ```
 
 > If you are using an older version of ember <= 3.1 please use this story style
 
 ```js
 import { compile } from 'ember-source/dist/ember-template-compiler';
-import { storiesOf } from '@storybook/ember';
 
-storiesOf('Demo', module)
-  .add('heading', () => compile(`<h1>Hello World</h1>`))
-  .add('button', () => {
-    return {
-      template: compile(`<button {{action onClick}}>
-        Hello Button
-      </button>`),
-      context: {
-        onClick: (e) => console.log(e)
-      }
+export default { title: 'Demo' };
+
+export const heading = () => compile(`<h1>Hello World</h1>`);
+
+export const button = () => {
+  return {
+    template: compile(`<button {{action onClick}}>
+      Hello Button
+    </button>`),
+    context: {
+      onClick: (e) => console.log(e)
     }
-  })
-  .add('component', () => {
-    return {
-      template: compile(`{{foo-bar
-        click=onClick
-      }}`),
-      context: {
-        onClick: (e) => console.log(e)
-      }
+  }
+};
+
+export const component = () => {
+  return {
+    template: compile(`{{foo-bar
+      click=onClick
+    }}`),
+    context: {
+      onClick: (e) => console.log(e)
     }
-  });
+  }
+};
 ```
 
 A story is either:
@@ -147,7 +146,7 @@ A story is either:
 
 ## Run your Storybook
 
-Now everything is ready. Simply run your storybook with:
+Now everything is ready. Run your storybook with:
 
 ```sh
 npm run storybook

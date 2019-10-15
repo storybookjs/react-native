@@ -39,6 +39,10 @@ interface Elements {
   [key: string]: Collection;
 }
 
+interface Config {
+  [key: string]: any;
+}
+
 export class AddonStore {
   constructor() {
     this.promise = new Promise(res => {
@@ -49,6 +53,8 @@ export class AddonStore {
   private loaders: Loaders = {};
 
   private elements: Elements = {};
+
+  private config: Config = {};
 
   private channel: Channel | undefined;
 
@@ -95,6 +101,12 @@ export class AddonStore {
     const collection = this.getElements(type);
     collection[name] = { id: name, ...addon };
   };
+
+  setConfig = (value: Config) => {
+    Object.assign(this.config, value);
+  };
+
+  getConfig = () => this.config;
 
   register = (name: string, registerCallback: (api: API) => void): void => {
     if (this.loaders[name]) {

@@ -1,5 +1,5 @@
 import { document } from 'global';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 import { render, TemplateResult } from 'lit-html';
 
 const rootElement = document.getElementById('root');
@@ -17,7 +17,7 @@ export default function renderMain({
   if (!element) {
     showError({
       title: `Expecting a Polymer component from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
+      description: dedent`
         Did you forget to return the Polymer component from the story?
         Use "() => '&lt;your-component-name&gt;&lt;/your-component-name\&gt;'" when defining the story.
       `,

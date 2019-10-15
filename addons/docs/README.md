@@ -6,7 +6,7 @@
 
 Storybook Docs transforms your Storybook stories into world-class component documentation.
 
-**DocsPage.** Out of the box, all your stories get a `DocsPage`. `DocsPage` is a zero-config aggregation of your component stories, text descriptions, docgen comments, props tables, and code examples into simple, easy-to-read pages.
+**DocsPage.** Out of the box, all your stories get a `DocsPage`. `DocsPage` is a zero-config aggregation of your component stories, text descriptions, docgen comments, props tables, and code examples into clean, readable pages.
 
 **MDX.** If you want more control, `MDX` allows you to write long-form markdown documentation and stories in one file. You can also use it to write pure documentation pages and embed them inside your Storybook alongside your stories.
 
@@ -83,8 +83,8 @@ features as well. This chart captures the current state of support
 | StoriesOf stories |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Source            |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Notes / Info      |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| Props table       |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
-| Docgen            |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
+| Props table       |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
+| Docgen            |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
 | Inline stories    |   +   |  #  |         |      |        |         |       |         |      |       |        |
 
 **Note:** `#` = WIP support
@@ -162,7 +162,9 @@ module.exports = async ({ config }) => {
       {
         loader: 'babel-loader',
         // may or may not need this line depending on your app's setup
-        plugins: ['@babel/plugin-transform-react-jsx'],
+        options: {
+          plugins: ['@babel/plugin-transform-react-jsx'],
+        },
       },
       {
         loader: '@mdx-js/loader',
@@ -209,7 +211,8 @@ Install the preset with care. If you've already configured Typescript manually, 
 
 Want to learn more? Here are some more articles on Storybook Docs:
 
-- References: [DocsPage](./docs/docspage.md) / [MDX](./docs/mdx.md) / [FAQ](./docs/faq.md) / [Recipes](./docs/recipes.md)
+- References: [DocsPage](./docs/docspage.md) / [MDX](./docs/mdx.md) / [FAQ](./docs/faq.md) / [Recipes](./docs/recipes.md) / [Theming](./docs/theming.md)
 - Vision: [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
+- Announcement: [DocsPage](https://medium.com/storybookjs/storybook-docspage-e185bc3622bf)
 - Example: [Storybook Design System](https://github.com/storybookjs/design-system)
 - [Technical preview guide](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing)
