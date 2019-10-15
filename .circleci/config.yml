@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
 
 aliases:
   - &defaults
@@ -64,24 +66,24 @@ jobs:
           command: |
             cd examples/official-storybook
             yarn packtracker
-  cypress:
-    working_directory: /tmp/storybook
-    docker:
-      - image: cypress/base:8
-        environment:
-          TERM: xterm
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: install optional dependencies
-          command: |
-            yarn install
-      - run:
-          name: Run cypress
-          command: |
-            yarn test:e2e-ci
+  # cypress:
+  #   working_directory: /tmp/storybook
+  #   docker:
+  #     - image: cypress/base:8
+  #       environment:
+  #         TERM: xterm
+  #   steps:
+  #     - checkout
+  #     - attach_workspace:
+  #         at: .
+  #     - run:
+  #         name: install optional dependencies
+  #         command: |
+  #           yarn install
+  #     - run:
+  #         name: Run cypress
+  #         command: |
+  #           yarn test:e2e-ci
   examples:
     <<: *defaults
     steps:
@@ -206,7 +208,7 @@ jobs:
             - core-dependencies-v3-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
-          command: yarn install
+          command: yarn bootstrap --install
       - run:
           name: Trigger build
           command: ./scripts/build-frontpage.js
@@ -238,11 +240,6 @@ jobs:
           key: docs-dependencies-v2-{{ checksum "docs/yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - persist_to_workspace:
-          root: .
-          paths:
-            - docs/public
-            - docs/node_modules
   lint:
     <<: *defaults
     steps:
@@ -275,20 +272,21 @@ jobs:
           name: Upload coverage
           command: yarn coverage
 workflows:
-  version: 2
-  build_test_deploy:
+  test:
     jobs:
       - build
-      - docs
-      - frontpage
       - lint:
           requires:
-            - docs
             - build
       - examples:
           requires:
             - build
-      - cypress:
+      - cypress/run:
+          no-workspace: true
+          yarn: true
+          cache-key: 'core-dependencies-v3-{{ checksum "yarn.lock" }}'
+          start: serve-storybooks
+          wait-on: 'http://localhost:8001'
           requires:
             - examples
       - smoke-tests:
@@ -309,3 +307,7 @@ workflows:
       - chromatic:
           requires:
             - build
+  deploy:
+    jobs:
+      - docs
+      - frontpage
