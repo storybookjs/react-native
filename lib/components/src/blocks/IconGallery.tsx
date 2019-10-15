@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { ResetWrapper } from '../typography/DocumentFormatting';
 
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 
-const ItemLabel = styled.div<{}>(({ theme }) => ({
+const ItemLabel = styled.div(({ theme }) => ({
   fontFamily: theme.typography.fonts.base,
   fontSize: theme.typography.size.s2,
   marginLeft: 10,
   lineHeight: 1.2,
 }));
 
-const ItemSpecimen = styled.div<{}>(({ theme }) => ({
+const ItemSpecimen = styled.div(({ theme }) => ({
   ...getBlockBackgroundStyle(theme),
   overflow: 'hidden',
   height: 40,
@@ -49,24 +49,20 @@ interface IconItemProps {
 /**
  * An individual icon with a caption and an example (passed as `children`).
  */
-export const IconItem: React.FunctionComponent<IconItemProps> = ({ name, children }) => {
-  return (
-    <Item>
-      <ItemSpecimen>{children}</ItemSpecimen>
-      <ItemLabel>{name}</ItemLabel>
-    </Item>
-  );
-};
+export const IconItem: FunctionComponent<IconItemProps> = ({ name, children }) => (
+  <Item>
+    <ItemSpecimen>{children}</ItemSpecimen>
+    <ItemLabel>{name}</ItemLabel>
+  </Item>
+);
 
 /**
  * Show a grid of icons, as specified by `IconItem`.
  */
-export const IconGallery: React.FunctionComponent = ({ children, ...props }) => {
-  return (
-    <ResetWrapper>
-      <List {...props} className="docblock-icongallery">
-        {children}
-      </List>
-    </ResetWrapper>
-  );
-};
+export const IconGallery: FunctionComponent = ({ children, ...props }) => (
+  <ResetWrapper>
+    <List {...props} className="docblock-icongallery">
+      {children}
+    </List>
+  </ResetWrapper>
+);

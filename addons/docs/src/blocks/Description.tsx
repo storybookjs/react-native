@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Description, DescriptionProps as PureDescriptionProps } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, CURRENT_SELECTION } from './shared';
@@ -66,7 +66,7 @@ ${getDocgen(target) || ''}
   }
 };
 
-const DescriptionContainer: React.FunctionComponent<DescriptionProps> = props => (
+const DescriptionContainer: FunctionComponent<DescriptionProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const { markdown } = getDescriptionProps(props, context);

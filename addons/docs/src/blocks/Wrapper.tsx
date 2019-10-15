@@ -1,9 +1,5 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-interface WrapperProps {
-  children: React.ReactNode;
-}
-
-export const Wrapper: React.FunctionComponent<WrapperProps> = ({ children }) => (
+export const Wrapper: FunctionComponent = ({ children }) => (
   <div style={{ fontFamily: 'sans-serif' }}>{children}</div>
 );

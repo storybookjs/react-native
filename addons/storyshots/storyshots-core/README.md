@@ -17,7 +17,7 @@ yarn add @storybook/addon-storyshots --dev
 ```
 
 ## Configure your app for Jest
-In many cases, for example Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
+In many cases, for example Create React App, it's already configured for Jest. You need to create a filename with the extension `.test.js`.
 
 If you still need to configure jest you can use the resources mentioned below:
 
@@ -96,7 +96,7 @@ First, install it:
 yarn add require-context.macro --dev
 ```
 
-Now, inside of your Storybook config file, simply import the macro and run it in place of `require.context`, like so:
+Now, inside of your Storybook config file, import the macro and run it in place of `require.context`, like so:
 
 ```javascript
 import requireContext from 'require-context.macro';
@@ -587,7 +587,7 @@ Like the default, but allows you to specify a set of options for the renderer, j
 
 ### `multiSnapshotWithOptions(options)`
 
-Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes. If you'd like the benefit of separate snapshot files, but don't have custom options to pass, simply pass an empty object.
+Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes. If you'd like the benefit of separate snapshot files, but don't have custom options to pass, you can pass an empty object.
 If you use [Component Story Format](https://storybook.js.org/docs/formats/component-story-format/), you may also need to add an additional Jest transform to automate detecting story file names:
 ```js
 // jest.config.js
@@ -602,7 +602,7 @@ module.exports = {
 #### integrityOptions
 
 This option is useful when running test with `multiSnapshotWithOptions(options)` in order to track snapshots are matching the stories. (disabled by default).
-The value is just a [settings](https://github.com/isaacs/node-glob#options) to a `glob` object, that searches for the snapshot files.
+The value is a [settings](https://github.com/isaacs/node-glob#options) to a `glob` object, that searches for the snapshot files.
 
 ```js
 initStoryshots({

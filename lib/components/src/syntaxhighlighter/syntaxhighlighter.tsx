@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { ComponentProps, FunctionComponent, MouseEvent, useState } from 'react';
 import { styled } from '@storybook/theming';
 import { document, window } from 'global';
 import memoize from 'memoizerific';
@@ -91,26 +91,22 @@ export interface SyntaxHighlighterState {
   copied: boolean;
 }
 
-type ReactSyntaxHighlighterProps = React.ComponentProps<typeof ReactSyntaxHighlighter>;
+type ReactSyntaxHighlighterProps = ComponentProps<typeof ReactSyntaxHighlighter>;
 
-export class SyntaxHighlighter extends Component<
-  SyntaxHighlighterProps & ReactSyntaxHighlighterProps,
-  SyntaxHighlighterState
-> {
-  static defaultProps: SyntaxHighlighterProps = {
-    language: null,
-    copyable: false,
-    bordered: false,
-    padded: false,
-    format: true,
-    className: null,
-  };
+type Props = SyntaxHighlighterProps & ReactSyntaxHighlighterProps;
+export const SyntaxHighlighter: FunctionComponent<Props> = ({
+  children,
+  language = 'jsx',
+  copyable = false,
+  bordered = false,
+  padded = false,
+  format = true,
+  className = null,
+  ...rest
+}) => {
+  const [copied, setCopied] = useState(false);
 
-  state = { copied: false };
-
-  onClick = (e: React.MouseEvent) => {
-    const { children } = this.props;
-
+  const onClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const tmp = document.createElement('TEXTAREA');
     const focus = document.activeElement;
@@ -123,43 +119,30 @@ export class SyntaxHighlighter extends Component<
     document.body.removeChild(tmp);
     focus.focus();
 
-    this.setState({ copied: true }, () => {
-      window.setTimeout(() => this.setState({ copied: false }), 1500);
-    });
+    setCopied(true);
+
+    window.setTimeout(() => setCopied(false), 1500);
   };
 
-  render() {
-    const {
-      children,
-      language = 'jsx',
-      copyable,
-      bordered,
-      padded,
-      format,
-      className,
-      ...rest
-    } = this.props;
-    const { copied } = this.state;
+  return children ? (
+    <Wrapper bordered={bordered} padded={padded} className={className}>
+      <Scroller>
+        <ReactSyntaxHighlighter
+          padded={padded || bordered}
+          language={language}
+          useInlineStyles={false}
+          PreTag={Pre}
+          CodeTag={Code}
+          lineNumberContainerStyle={{}}
+          {...rest}
+        >
+          {format ? formatter((children as string).trim()) : (children as string).trim()}
+        </ReactSyntaxHighlighter>
+      </Scroller>
 
-    return children ? (
-      <Wrapper bordered={bordered} padded={padded} className={className}>
-        <Scroller>
-          <ReactSyntaxHighlighter
-            padded={padded || bordered}
-            language={language}
-            useInlineStyles={false}
-            PreTag={Pre}
-            CodeTag={Code}
-            lineNumberContainerStyle={{}}
-            {...rest}
-          >
-            {format ? formatter((children as string).trim()) : (children as string).trim()}
-          </ReactSyntaxHighlighter>
-        </Scroller>
-        {copyable ? (
-          <ActionBar actionItems={[{ title: copied ? 'Copied' : 'Copy', onClick: this.onClick }]} />
-        ) : null}
-      </Wrapper>
-    ) : null;
-  }
-}
+      {copyable ? (
+        <ActionBar actionItems={[{ title: copied ? 'Copied' : 'Copy', onClick }]} />
+      ) : null}
+    </Wrapper>
+  ) : null;
+};

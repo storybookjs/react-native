@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Icons } from '@storybook/components';
 
@@ -24,7 +24,7 @@ const Placeholder = styled.div`
 `;
 
 export interface ListItemIconProps {
-  icon?: React.ComponentProps<typeof Icons>['icon'];
+  icon?: ComponentProps<typeof Icons>['icon'];
   imgSrc?: string;
 }
 

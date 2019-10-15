@@ -1,20 +1,20 @@
 import { document } from 'global';
-import React from 'react';
+import React, { Component, ReactElement, StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { RenderMainArgs } from './types';
 
 const rootEl = document ? document.getElementById('root') : null;
 
-const render = (node: React.ReactElement, el: Element) =>
+const render = (node: ReactElement, el: Element) =>
   new Promise(resolve => {
     ReactDOM.render(
-      process.env.STORYBOOK_EXAMPLE_APP ? <React.StrictMode>{node}</React.StrictMode> : node,
+      process.env.STORYBOOK_EXAMPLE_APP ? <StrictMode>{node}</StrictMode> : node,
       el,
       resolve
     );
   });
 
-class ErrorBoundary extends React.Component<{
+class ErrorBoundary extends Component<{
   showException: (err: Error) => void;
   showMain: () => void;
 }> {

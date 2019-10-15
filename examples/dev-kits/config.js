@@ -1,6 +1,6 @@
 import { configure } from '@storybook/react';
 
-// The simplest version of examples would just export this function for users to use
+// The simplest version of examples would export this function for users to use
 function importAll(context) {
   context.keys().forEach(filename => context(filename));
 }

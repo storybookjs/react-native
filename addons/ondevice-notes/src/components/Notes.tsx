@@ -1,5 +1,5 @@
 /* eslint-disable react/destructuring-assignment */
-import React from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 import Markdown from 'react-native-simple-markdown';
 import { AddonStore } from '@storybook/addons';
@@ -19,7 +19,7 @@ interface NotesState {
   selection: Selection;
 }
 
-export class Notes extends React.Component<NotesProps, NotesState> {
+export class Notes extends Component<NotesProps, NotesState> {
   componentDidMount() {
     this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
   }
