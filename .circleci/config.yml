@@ -50,9 +50,6 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Generate static examples
-          command: yarn build-storybooks
-      - run:
           name: Run chromatic on the pre-built storybook
           command: yarn chromatic
   packtracker:
@@ -66,24 +63,6 @@ jobs:
           command: |
             cd examples/official-storybook
             yarn packtracker
-  # cypress:
-  #   working_directory: /tmp/storybook
-  #   docker:
-  #     - image: cypress/base:8
-  #       environment:
-  #         TERM: xterm
-  #   steps:
-  #     - checkout
-  #     - attach_workspace:
-  #         at: .
-  #     - run:
-  #         name: install optional dependencies
-  #         command: |
-  #           yarn install
-  #     - run:
-  #         name: Run cypress
-  #         command: |
-  #           yarn test:e2e-ci
   examples:
     <<: *defaults
     steps:
@@ -94,21 +73,10 @@ jobs:
           name: examples
           command: |
             yarn build-storybooks
-      # - run:
-      #     name: Run image snapshots
-      #     command: yarn test --image
-      - store_artifacts:
-          path: examples/official-storybook/image-snapshots/__image_snapshots__
-          destination: official_storybook_image_snapshots
       - persist_to_workspace:
           root: .
           paths:
             - built-storybooks
-            - node_modules
-            - examples
-            - addons
-            - app
-            - lib
   smoke-tests:
     <<: *defaults
     steps:
@@ -282,11 +250,9 @@ workflows:
           requires:
             - build
       - cypress/run:
-          no-workspace: true
           yarn: true
           cache-key: 'core-dependencies-v3-{{ checksum "yarn.lock" }}'
           start: yarn serve-storybooks
-          wait-on: 'http://localhost:8001'
           requires:
             - examples
       - smoke-tests:
@@ -306,7 +272,7 @@ workflows:
             - test
       - chromatic:
           requires:
-            - build
+            - examples
   deploy:
     jobs:
       - docs
