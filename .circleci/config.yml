@@ -64,6 +64,20 @@ jobs:
           command: |
             cd examples/official-storybook
             yarn packtracker
+  cypress:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: install optional dependencies
+          command: |
+            yarn install
+      - run:
+          name: Report webpack stats for manager of official storybook
+          command: |
+            yarn test:e2e-ci
   examples:
     <<: *defaults
     steps:
@@ -71,78 +85,9 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
-          command: sh ./scripts/workaround-puppeteer-issue-290.sh
-      - run:
-          name: Build react kitchen-sink
+          name: examples
           command: |
-            cd examples/cra-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build react typescript kitchen-sink
-          command: |
-            cd examples/cra-ts-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build vue kitchen-sink
-          command: |
-            cd examples/vue-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build svelte kitchen-sink
-          command: |
-            cd examples/svelte-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build angular-cli
-          command: |
-            cd examples/angular-cli
-            yarn build-storybook
-      - run:
-          name: Build ember-cli
-          command: |
-            cd examples/ember-cli
-            yarn build-storybook
-      - run:
-          name: Build polymer-cli
-          command: |
-            cd examples/polymer-cli
-            yarn build-storybook
-      - run:
-          name: Build marko-cli
-          command: |
-            cd examples/marko-cli
-            yarn build-storybook
-      - run:
-          name: Build mithril kitchen-sink
-          command: |
-            cd examples/mithril-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build html kitchen-sink
-          command: |
-            cd examples/html-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build riot kitchen-sink
-          command: |
-            cd examples/riot-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build preact kitchen-sink
-          command: |
-            cd examples/preact-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build cra react15
-          command: |
-            cd examples/cra-react15
-            yarn build-storybook
-      - run:
-          name: Build official-storybook
-          command: |
-            cd examples/official-storybook
-            yarn build-storybook
+            yarn build-storybooks
       # - run:
       #     name: Run image snapshots
       #     command: yarn test --image
@@ -152,6 +97,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
+            - built-storybooks
             - node_modules
             - examples
             - addons
@@ -338,6 +284,9 @@ workflows:
       - examples:
           requires:
             - build
+      - cypress:
+          requires:
+            - examples
       - smoke-tests:
           requires:
             - build
