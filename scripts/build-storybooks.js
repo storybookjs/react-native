@@ -50,30 +50,26 @@ const handleExamples = async files => {
     return stats.isFile() && hasBuildScript(packageJsonLocation);
   });
 
-  await deployables.reduce(async (acc, d) => {
-    await acc;
-
-    logger.log('');
-    logger.log(
-      `-----------------${Array(d.length)
+  await Promise.all(
+    deployables.map(async d => {
+      const fill = `-----------------${Array(d.length)
         .fill('-')
-        .join('')}`
-    );
-    logger.log(`▶️  building: ${d}`);
-    logger.log(
-      `-----------------${Array(d.length)
-        .fill('-')
-        .join('')}`
-    );
-    const out = p(['built-storybooks', d]);
-    const cwd = p(['examples', d]);
+        .join('')}`;
 
-    await exec(`yarn`, [`build-storybook`, `--output-dir=${out}`, '--quiet'], { cwd });
+      logger.log('');
+      logger.log(fill);
+      logger.log(`▶️  building: ${d}`);
+      logger.log(fill);
+      const out = p(['built-storybooks', d]);
+      const cwd = p(['examples', d]);
 
-    logger.log('-------');
-    logger.log('✅ done');
-    logger.log('-------');
-  }, Promise.resolve());
+      await exec(`yarn`, [`build-storybook`, `--output-dir=${out}`, '--quiet'], { cwd });
+
+      logger.log(fill);
+      logger.log(`✅ done: ${d}`);
+      logger.log(fill);
+    })
+  );
 
   logger.log('');
   logger.log(`📑 creating index`);
