@@ -65,7 +65,11 @@ jobs:
             cd examples/official-storybook
             yarn packtracker
   cypress:
-    <<: *defaults
+    working_directory: /tmp/storybook
+    docker:
+      - image: cypress/base:8
+        environment:
+          TERM: xterm
     steps:
       - checkout
       - attach_workspace:
@@ -75,7 +79,7 @@ jobs:
           command: |
             yarn install
       - run:
-          name: Report webpack stats for manager of official storybook
+          name: Run cypress
           command: |
             yarn test:e2e-ci
   examples:
