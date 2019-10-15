@@ -285,7 +285,7 @@ workflows:
           no-workspace: true
           yarn: true
           cache-key: 'core-dependencies-v3-{{ checksum "yarn.lock" }}'
-          start: serve-storybooks
+          start: yarn serve-storybooks
           wait-on: 'http://localhost:8001'
           requires:
             - examples
