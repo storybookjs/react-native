@@ -90,9 +90,9 @@ jobs:
       - run:
           name: await running examples
           command: yarn await-serve-storybooks
-      - cypress/run:
-          yarn: true
-          cache-key: 'core-dependencies-v3-{{ checksum "yarn.lock" }}'
+      - run:
+          name: await running examples
+          command: yarn cypress run
 
   smoke-tests:
     <<: *defaults
