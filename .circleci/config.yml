@@ -85,6 +85,16 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: install cypress
+          command: yarn cypress install
+      - save_cache:
+          name: Cache core dependencies
+          key: core-dependencies-v4-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache
+            - node_modules
+            - /root/.cache
+      - run:
           name: running example
           command: yarn serve-storybooks
           background: true
