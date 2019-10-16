@@ -14,7 +14,7 @@ First, install the addon
 yarn add @storybook/addon-storysource @storybook/source-loader --dev
 ```
 
-You can add configuration for this addon using by using a preset or by using the addon config with webpack
+You can add configuration for this addon by using a preset or by using the addon config with webpack
 
 ### Install using preset
 
