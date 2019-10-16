@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable jest/valid-expect */
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -24,25 +26,14 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+const logger = console;
 Cypress.Commands.add(
   'console',
   {
     prevSubject: true,
   },
-  (subject, method) => {
-    // the previous subject is automatically received
-    // and the commands arguments are shifted
-
-    // allow us to change the console method used
-    method = method || 'log';
-
-    // log the subject to the console
-    console[method]('The subject is', subject);
-
-    // whatever we return becomes the new subject
-    //
-    // we don't want to change the subject so
-    // we return whatever was passed in
+  (subject, method = 'log') => {
+    logger[method]('The subject is', subject);
     return subject;
   }
 );

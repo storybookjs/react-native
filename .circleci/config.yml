@@ -6,9 +6,6 @@ aliases:
     docker:
       - image: circleci/node:10
 
-dependencies:
-  pre:
-    - yarn global add npm
 jobs:
   build:
     <<: *defaults
@@ -31,7 +28,7 @@ jobs:
           name: Cache core dependencies
           key: core-dependencies-v3-{{ checksum "yarn.lock" }}
           paths:
-            - ~/.cache/yarn
+            - ~/.cache
       - persist_to_workspace:
           root: .
           paths:
@@ -203,7 +200,7 @@ jobs:
           name: Cache core dependencies
           key: core-dependencies-v3-{{ checksum "yarn.lock" }}
           paths:
-            - ~/.cache/yarn
+            - ~/.cache
   docs:
     <<: *defaults
     steps:
@@ -226,7 +223,7 @@ jobs:
           name: Cache docs dependencies
           key: docs-dependencies-v2-{{ checksum "docs/yarn.lock" }}
           paths:
-            - ~/.cache/yarn
+            - ~/.cache
   lint:
     <<: *defaults
     steps:
