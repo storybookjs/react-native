@@ -1,4 +1,4 @@
-import { getStorybookPreview, visitExample } from '../helper';
+import { visitExample } from '../helper';
 
 describe('Navigation', () => {
   beforeEach(() => {
