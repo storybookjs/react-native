@@ -11,7 +11,7 @@ This addon is used to show stories source in the addon panel.
 First, install the addon
 
 ```sh
-yarn add @storybook/addon-storysource @storybook/source-loader --dev
+yarn add @storybook/addon-storysource --dev
 ```
 
 You can add configuration for this addon by using a preset or by using the addon config with webpack
