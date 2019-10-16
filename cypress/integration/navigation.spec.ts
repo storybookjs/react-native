@@ -34,6 +34,7 @@ describe('Routing', () => {
 
   it('should directly visit a certain story and render correctly', () => {
     visitExample('official-storybook', '?path=/story/addons-a11y-basebutton--label');
-    getStorybookPreview().should('contain', 'Testing the a11y addon');
+
+    cy.preview().should('contain.text', 'Testing the a11y addon');
   });
 });

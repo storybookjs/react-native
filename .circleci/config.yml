@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
 
 aliases:
   - &defaults
@@ -78,7 +76,11 @@ jobs:
           paths:
             - built-storybooks
   e2e:
-    <<: *defaults
+    working_directory: /tmp/storybook
+    docker:
+      - image: cypress/base:8
+        environment:
+          TERM: xterm
     steps:
       - checkout
       - attach_workspace:
@@ -91,7 +93,7 @@ jobs:
           name: await running examples
           command: yarn await-serve-storybooks
       - run:
-          name: await running examples
+          name: cypress run
           command: yarn cypress run
 
   smoke-tests:
