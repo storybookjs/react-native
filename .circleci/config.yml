@@ -29,6 +29,7 @@ jobs:
           key: core-dependencies-v3-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache
+            - node_modules
       - persist_to_workspace:
           root: .
           paths:
@@ -196,11 +197,6 @@ jobs:
       - run:
           name: Trigger build
           command: ./scripts/build-frontpage.js
-      - save_cache:
-          name: Cache core dependencies
-          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache
   docs:
     <<: *defaults
     steps:
