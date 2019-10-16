@@ -40,6 +40,7 @@
     "lib/cli/test/run/*"
   ],
   "scripts": {
+    "await-serve-storybooks": "wait-on http://localhost:8001",
     "bootstrap": "node ./scripts/bootstrap.js",
     "bootstrap:docs": "yarn install --cwd docs",
     "build-packs": "lerna exec --scope '@storybook/*' -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
@@ -73,7 +74,6 @@
     "test": "node ./scripts/test.js",
     "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
     "test:cli": "npm --prefix lib/cli run test",
-    "test:e2e-ci": "concurrently --success first --kill-others \"wait-on http://localhost:8001 && cypress run\" \"yarn serve-storybooks\"",
     "test:e2e-gui": "concurrently --success first --kill-others \"cypress open\" \"yarn serve-storybooks\""
   },
   "husky": {

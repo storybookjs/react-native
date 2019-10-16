@@ -77,6 +77,23 @@ jobs:
           root: .
           paths:
             - built-storybooks
+  e2e:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: running example
+          command: yarn serve-storybooks
+          background: true
+      - run:
+          name: await running examples
+          command: yarn await-serve-storybooks
+      - cypress/run:
+          yarn: true
+          cache-key: 'core-dependencies-v3-{{ checksum "yarn.lock" }}'
+
   smoke-tests:
     <<: *defaults
     steps:
@@ -249,10 +266,7 @@ workflows:
       - examples:
           requires:
             - build
-      - cypress/run:
-          yarn: true
-          cache-key: 'core-dependencies-v3-{{ checksum "yarn.lock" }}'
-          start: yarn serve-storybooks
+      - e2e:
           requires:
             - examples
       - smoke-tests:
