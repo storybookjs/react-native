@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 aliases:
   - &defaults
@@ -6,9 +6,6 @@ aliases:
     docker:
       - image: circleci/node:10
 
-dependencies:
-  pre:
-    - yarn global add npm
 jobs:
   build:
     <<: *defaults
@@ -17,7 +14,7 @@ jobs:
       - restore_cache:
           name: Restore core dependencies cache
           keys:
-            - core-dependencies-v3-{{ checksum "yarn.lock" }}
+            - core-dependencies-v4-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
           command: yarn install
@@ -29,9 +26,11 @@ jobs:
           command: yarn bootstrap --core
       - save_cache:
           name: Cache core dependencies
-          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
+          key: core-dependencies-v4-{{ checksum "yarn.lock" }}
           paths:
-            - ~/.cache/yarn
+            - ~/.cache
+            - node_modules
+            - /root/.cache
       - persist_to_workspace:
           root: .
           paths:
@@ -48,9 +47,6 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Generate static examples
-          command: yarn build-storybooks
-      - run:
           name: Run chromatic on the pre-built storybook
           command: yarn chromatic
   packtracker:
@@ -64,24 +60,6 @@ jobs:
           command: |
             cd examples/official-storybook
             yarn packtracker
-  cypress:
-    working_directory: /tmp/storybook
-    docker:
-      - image: cypress/base:8
-        environment:
-          TERM: xterm
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: install optional dependencies
-          command: |
-            yarn install
-      - run:
-          name: Run cypress
-          command: |
-            yarn test:e2e-ci
   examples:
     <<: *defaults
     steps:
@@ -92,21 +70,41 @@ jobs:
           name: examples
           command: |
             yarn build-storybooks
-      # - run:
-      #     name: Run image snapshots
-      #     command: yarn test --image
-      - store_artifacts:
-          path: examples/official-storybook/image-snapshots/__image_snapshots__
-          destination: official_storybook_image_snapshots
       - persist_to_workspace:
           root: .
           paths:
             - built-storybooks
+  e2e:
+    working_directory: /tmp/storybook
+    docker:
+      - image: cypress/base:8
+        environment:
+          TERM: xterm
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: install cypress
+          command: yarn cypress install
+      - save_cache:
+          name: Cache core dependencies
+          key: core-dependencies-v4-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache
             - node_modules
-            - examples
-            - addons
-            - app
-            - lib
+            - /root/.cache
+      - run:
+          name: running example
+          command: yarn serve-storybooks
+          background: true
+      - run:
+          name: await running examples
+          command: yarn await-serve-storybooks
+      - run:
+          name: cypress run
+          command: yarn cypress run
+
   smoke-tests:
     <<: *defaults
     steps:
@@ -203,18 +201,13 @@ jobs:
       - restore_cache:
           name: Restore core dependencies cache
           keys:
-            - core-dependencies-v3-{{ checksum "yarn.lock" }}
+            - core-dependencies-v4-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
-          command: yarn install
+          command: yarn bootstrap --install
       - run:
           name: Trigger build
           command: ./scripts/build-frontpage.js
-      - save_cache:
-          name: Cache core dependencies
-          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
   docs:
     <<: *defaults
     steps:
@@ -237,12 +230,7 @@ jobs:
           name: Cache docs dependencies
           key: docs-dependencies-v2-{{ checksum "docs/yarn.lock" }}
           paths:
-            - ~/.cache/yarn
-      - persist_to_workspace:
-          root: .
-          paths:
-            - docs/public
-            - docs/node_modules
+            - ~/.cache
   lint:
     <<: *defaults
     steps:
@@ -275,20 +263,16 @@ jobs:
           name: Upload coverage
           command: yarn coverage
 workflows:
-  version: 2
-  build_test_deploy:
+  test:
     jobs:
       - build
-      - docs
-      - frontpage
       - lint:
           requires:
-            - docs
             - build
       - examples:
           requires:
             - build
-      - cypress:
+      - e2e:
           requires:
             - examples
       - smoke-tests:
@@ -308,4 +292,8 @@ workflows:
             - test
       - chromatic:
           requires:
-            - build
+            - examples
+  deploy:
+    jobs:
+      - docs
+      - frontpage
