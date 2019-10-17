@@ -1,3 +1,14 @@
+## 5.3.0-alpha.22 (October 18, 2019)
+
+### Features
+
+* CLI: Add component meta to framework templates ([#8462](https://github.com/storybookjs/storybook/pull/8462))
+
+### Maintenance
+
+* Build: Add cypress to Storybook CI ([#8397](https://github.com/storybookjs/storybook/pull/8397))
+* Incorrect minimal required node version ([#8427](https://github.com/storybookjs/storybook/pull/8427))
+
 ## 5.3.0-alpha.21 (October 17, 2019)
 
 ### Features
