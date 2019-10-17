@@ -32,6 +32,7 @@ const exec = async (command, args = [], options = {}) =>
       })
       .on('error', e => {
         logger.error(e);
+        reject();
       });
   });
 
