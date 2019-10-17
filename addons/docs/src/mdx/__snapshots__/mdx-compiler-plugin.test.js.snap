@@ -338,6 +338,10 @@ function MDXContent({ components, ...props }) {
         </Story>
         <Story id=\\"welcome--welcome\\" mdxType=\\"Story\\" />
       </Preview>
+      <p>{\`Preview wthout a story\`}</p>
+      <Preview mdxSource=\\"%0A%3CButton%3EJust%20a%20button%3C/Button%3E%0A\\" mdxType=\\"Preview\\">
+        <Button mdxType=\\"Button\\">Just a button</Button>
+      </Preview>
     </MDXLayout>
   );
 }

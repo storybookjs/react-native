@@ -1,4 +1,4 @@
-import React, { ReactNodeArray } from 'react';
+import React, { FunctionComponent, ReactElement, ReactNode, ReactNodeArray } from 'react';
 import { Preview as PurePreview, PreviewProps as PurePreviewProps } from '@storybook/components';
 import { getSourceProps } from './Source';
 import { DocsContext, DocsContextProps } from './DocsContext';
@@ -11,23 +11,31 @@ export enum SourceState {
 
 type PreviewProps = PurePreviewProps & {
   withSource?: SourceState;
+  mdxSource?: string;
 };
 
 const getPreviewProps = (
   {
     withSource = SourceState.CLOSED,
+    mdxSource,
     children,
     ...props
-  }: PreviewProps & { children?: React.ReactNode },
+  }: PreviewProps & { children?: ReactNode },
   { mdxStoryNameToId, storyStore }: DocsContextProps
 ): PurePreviewProps => {
-  if (withSource === SourceState.NONE && !children) {
+  if (withSource === SourceState.NONE) {
     return props;
+  }
+  if (mdxSource) {
+    return {
+      ...props,
+      withSource: getSourceProps({ code: decodeURI(mdxSource) }, { storyStore }),
+    };
   }
   const childArray: ReactNodeArray = Array.isArray(children) ? children : [children];
   const stories = childArray.filter(
-    (c: React.ReactElement) => c.props && (c.props.id || c.props.name)
-  ) as React.ReactElement[];
+    (c: ReactElement) => c.props && (c.props.id || c.props.name)
+  ) as ReactElement[];
   const targetIds = stories.map(s => s.props.id || mdxStoryNameToId[s.props.name]);
   const sourceProps = getSourceProps({ ids: targetIds }, { storyStore });
   return {
@@ -37,7 +45,7 @@ const getPreviewProps = (
   };
 };
 
-export const Preview: React.FunctionComponent<PreviewProps> = props => (
+export const Preview: FunctionComponent<PreviewProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const previewProps = getPreviewProps(props, context);

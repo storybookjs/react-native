@@ -61,7 +61,7 @@ Storybook runs outside of your app. This allows you to develop UI components in 
 
 Here are some featured examples that you can reference to see how Storybook works: <https://storybook.js.org/examples/>
 
-Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduction/) for component design, documentation, testing, interactivity, and so on. Storybook's easy-to-use API makes it easy to configure and extend in various ways. It has even been extended to support React Native development for mobile.
+Storybook comes with a lot of [addons](https://storybook.js.org/addons/introduction/) for component design, documentation, testing, interactivity, and so on. Storybook's API makes it possible to configure and extend in various ways. It has even been extended to support React Native development for mobile.
 
 ## Table of contents
 
@@ -149,7 +149,7 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 | [links](addons/links/)                      | Create links between stories                                               |
 | [notes](addons/notes/)                      | Annotate Storybook stories with notes                                      |
 | [options](addons/options/)                  | Customize the Storybook UI in code                                         |
-| [storyshots](addons/storyshots/)            | Easy snapshot testing for components in Storybook                          |
+| [storyshots](addons/storyshots/)            | Snapshot testing for components in Storybook                               |
 | [storysource](addons/storysource/)          | View the code of your stories within the Storybook UI                      |
 | [viewport](addons/viewport/)                | Change display sizes and layouts for responsive components using Storybook |
 

@@ -22,7 +22,7 @@ The next thing you need to do is make Storybook UI visible in your app.
 
 ### CRNA, React Native vanilla
 
-The easiest way to use Storybook is to simply replace your App with the Storybook UI, which is possible by replacing `App.js` with a single line of code:
+The easiest way to use Storybook is to replace your App with the Storybook UI, which is possible by replacing `App.js` with a single line of code:
 
 ```js
 export default from './storybook';
@@ -41,7 +41,7 @@ module.exports = __DEV__ ? StorybookUI : App;
 
 ### React Native Navigation, other complex use cases
 
-`StorybookUI` is simply a RN `View` component that can be embedded anywhere in your RN application, e.g. on a tab or within an admin screen.
+`StorybookUI` is a RN `View` component that can be embedded anywhere in your RN application, e.g. on a tab or within an admin screen.
 
 ## Start Storybook server (optional)
 

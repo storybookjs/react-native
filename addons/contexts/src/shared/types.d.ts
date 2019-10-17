@@ -6,7 +6,6 @@ export { API as ManagerAPI } from '@storybook/api';
 // helpers
 export declare type AnyFunctionReturns<T> = (...arg: any[]) => T;
 export declare type FCNoChildren<P> = FunctionComponent<{ children?: never } & P>;
-export declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 export declare type GenericProp = null | {
   readonly [key: string]: unknown;
 };

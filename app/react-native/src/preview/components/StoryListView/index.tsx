@@ -1,38 +1,38 @@
-import React, { Component } from 'react';
-import { SectionList, TextInput, TouchableOpacity, View, SafeAreaView } from 'react-native';
+import React, { Component, FunctionComponent } from 'react';
+import { SafeAreaView } from 'react-native';
 import styled from '@emotion/native';
 import Events from '@storybook/core-events';
 import addons from '@storybook/addons';
-import { EmotionProps } from '../Shared/theme';
 import { Header, Name } from '../Shared/text';
 
-const SearchBar: typeof TextInput = styled.TextInput`
-  background: ${(props: EmotionProps) => props.theme.borderColor};
-  color: ${(props: EmotionProps) => props.theme.buttonActiveTextColor};
-  border-top-left-radius: 5;
-  border-top-right-radius: 5;
-  border-bottom-left-radius: 5;
-  border-bottom-right-radius: 5;
-  font-size: 16;
-  margin-horizontal: 5;
-  margin-vertical: 5;
-  padding-horizontal: 5;
-  padding-vertical: 5;
-`;
+const SearchBar = styled.TextInput(
+  {
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    fontSize: 16,
+    marginHorizontal: 5,
+    marginVertical: 5,
+    paddingHorizontal: 5,
+    paddingVertical: 5,
+  },
+  ({ theme }) => ({
+    background: theme.borderColor,
+    color: theme.buttonActiveTextColor,
+  })
+);
 
-const HeaderContainer = styled.View`
-  padding-vertical: 5;
-`;
+const HeaderContainer = styled.View({
+  paddingCertical: 5,
+});
 
 interface SectionProps {
   title: string;
   selected: boolean;
 }
 
-const SectionHeader: React.FunctionComponent<SectionProps> = ({
-  title,
-  selected,
-}: SectionProps) => (
+const SectionHeader: FunctionComponent<SectionProps> = ({ title, selected }: SectionProps) => (
   <HeaderContainer key={title}>
     <Header selected={selected}>{title}</Header>
   </HeaderContainer>
@@ -45,12 +45,12 @@ interface ListItemProps {
   onPress: () => void;
 }
 
-const ItemTouchable: typeof TouchableOpacity = styled.TouchableOpacity`
-  padding-horizontal: 16;
-  padding-vertical: 5;
-`;
+const ItemTouchable = styled.TouchableOpacity({
+  paddingHorizontal: 16,
+  paddingVertical: 5,
+});
 
-const ListItem: React.FunctionComponent<ListItemProps> = ({ kind, title, selected, onPress }) => (
+const ListItem: FunctionComponent<ListItemProps> = ({ kind, title, selected, onPress }) => (
   <ItemTouchable
     key={title}
     onPress={onPress}
@@ -71,10 +71,11 @@ interface State {
   originalData: any[];
 }
 
-const List: typeof SectionList = styled.SectionList`
-  flex: 1;
-  margin-bottom: 40;
-`;
+const List = styled.SectionList({
+  flex: '1',
+  marginBottom: '40',
+});
+
 export default class StoryListView extends Component<Props, State> {
   constructor(props: Props) {
     super(props);

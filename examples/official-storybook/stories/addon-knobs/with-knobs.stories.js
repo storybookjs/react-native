@@ -362,3 +362,8 @@ acceptsStoryParameters.story = {
     knobs: { escapeHTML: false },
   },
 };
+
+export const withDuplicateDecorator = () => {
+  return text('Text', 'Hello');
+};
+withDuplicateDecorator.story = { decorators: [withKnobs] };

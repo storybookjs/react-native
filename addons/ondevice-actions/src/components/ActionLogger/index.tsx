@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Button, View, Text, ScrollView } from 'react-native';
 import { ActionDisplay } from '@storybook/addon-actions';
 import Inspect from './Inspect';
@@ -8,7 +8,7 @@ interface ActionLoggerProps {
   onClear: () => void;
 }
 
-export const ActionLogger = ({ actions, onClear }: ActionLoggerProps) => (
+export const ActionLogger: FunctionComponent<ActionLoggerProps> = ({ actions, onClear }) => (
   <ScrollView>
     <ScrollView horizontal>
       <View>

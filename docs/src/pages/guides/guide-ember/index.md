@@ -23,7 +23,7 @@ In this guide, we will set up Storybook for your Ember project.
 
 ## Add @storybook/ember
 
-First of all, you need to add `@storybook/ember` to your project. To do that, simply run:
+First of all, you need to add `@storybook/ember` to your project. To do that, run:
 
 ```sh
 ember install @storybook/ember-cli-storybook
@@ -57,9 +57,9 @@ Your environment will be preconfigured using `ember-cli-storybook`. This will ad
 Storybook can be configured in several different ways.
 That’s why we need a config directory. We've added a `-c` option to the above NPM script mentioning `.storybook` as the config directory.
 
-For the basic Storybook configuration file, you don't need to do much, but simply tell Storybook where to find stories.
+For the basic Storybook configuration file, you don't need to do much, but tell Storybook where to find stories.
 
-To do that, simply create a file at `.storybook/config.js` with the following content:
+To do that, create a file at `.storybook/config.js` with the following content:
 
 ```js
 import { configure } from '@storybook/ember';
@@ -146,7 +146,7 @@ A story is either:
 
 ## Run your Storybook
 
-Now everything is ready. Simply run your storybook with:
+Now everything is ready. Run your storybook with:
 
 ```sh
 npm run storybook

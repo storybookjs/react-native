@@ -205,7 +205,7 @@ You can find a working example of this in the [official-storybook](https://githu
 
 You have two options here, you can either:
 
-- Simply add the storyshots configuration inside any of your `test.js` file. You must ensure you have either a running storybook or a static build available.
+- Add the storyshots configuration inside any of your `test.js` file. You must ensure you have either a running storybook or a static build available.
 
 - Create a custom test file using Jest outside of the CRA scope:
 
@@ -227,7 +227,7 @@ You have two options here, you can either:
 
 ### Reminder
 
-An image snapshot is simply a screenshot taken by a web browser (in our case, Chrome).
+An image snapshot is a screenshot taken by a web browser (in our case, Chrome).
 
 The browser opens a page (either using the static build of storybook or a running instance of Storybook)
 
