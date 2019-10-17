@@ -171,6 +171,7 @@ import React from 'react';
 import addons from '@storybook/addons';
 import { useChannel } from '@storybook/api';
 import { STORY_CHANGED } from '@storybook/core-events';
+import { AddonPanel } from '@storybook/components';
 
 const MyPanel = () => {
   const emit = useChannel({
