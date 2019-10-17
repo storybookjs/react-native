@@ -11,6 +11,7 @@
 * Addon-centered: Fix zoom issues for non-Firefox browsers ([#8442](https://github.com/storybookjs/storybook/pull/8442))
 * CLI: Add CRA preset to MDX template ([#8452](https://github.com/storybookjs/storybook/pull/8452))
 * CLI: Add preset-create-react-app to CRA presets template ([#8449](https://github.com/storybookjs/storybook/pull/8449))
+* CLI: Fix CRA-ts fixture package name ([#8457](https://github.com/storybookjs/storybook/pull/8457))
 
 ## 5.3.0-alpha.20 (October 15, 2019)
 
