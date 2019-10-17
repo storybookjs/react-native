@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`inject-decorator positive - ts - csf works 1`] = `
+exports[`inject-decorator positive - ts - csf includes storySource parameter in the default exported object 1`] = `
 "var addSourceDecorator = require(\\"@storybook/source-loader/preview\\").addSource;
 import React from \\"react\\";
 import { action } from \\"@storybook/addon-actions\\";
