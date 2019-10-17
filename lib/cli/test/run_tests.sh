@@ -38,13 +38,27 @@ do
   cd $dir
   echo "Running storybook-cli in $dir"
 
-  if [[ $dir =~ (react_native*|angular-cli-v6|ember-cli|marko|meteor|mithril|polymer|riot|react_babel_6) ]]
-  then
+  case $story_format in
+  csf)
     yarn sb init --skip-install --yes
-  else
-    yarn sb init --skip-install --yes --story-format $story_format
-  fi
-
+    ;;
+  mdx)
+    if [[ $dir =~ (react_native*|angular-cli-v6|ember-cli|marko|meteor|mithril|polymer|riot|react_babel_6) ]]
+    then
+      yarn sb init --skip-install --yes
+    else
+      yarn sb init --skip-install --yes --story-format mdx
+    fi
+    ;;
+  csf-ts)
+    if [[ $dir =~ (react_scripts_ts) ]]
+    then
+      yarn sb init --skip-install --yes --story-format csf-ts
+    else
+      yarn sb init --skip-install --yes
+    fi
+    ;;
+  esac
   cd ..
 done
 
