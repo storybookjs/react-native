@@ -185,3 +185,9 @@ govuk:
   demo: https://govuk-react.github.io/govuk-react/
   source: https://github.com/govuk-react/govuk-react
   site: https://design-system.service.gov.uk/
+reactPakistan:
+  thumbnail: react-pakistan.jpg
+  title: React Pakistan
+  description: A series of reuseable React Commons, UI/UX components, icons, logos and more by React Pakistan.
+  demo: https://taimoormk.github.io/react-commons-collection/?path=/docs/react-pakistan-intro--page
+  site: https://www.npmjs.com/package/@react-pakistan/react-commons-collection
