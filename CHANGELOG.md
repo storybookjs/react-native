@@ -1,3 +1,17 @@
+## 5.3.0-alpha.21 (October 17, 2019)
+
+### Features
+
+* CLI: React-scripts TS template & test ([#8451](https://github.com/storybookjs/storybook/pull/8451))
+* Addon-storysource: Add preset ([#8437](https://github.com/storybookjs/storybook/pull/8437))
+
+### Bug Fixes
+
+* UI: Fix React15 support ([#8454](https://github.com/storybookjs/storybook/pull/8454))
+* Addon-centered: Fix zoom issues for non-Firefox browsers ([#8442](https://github.com/storybookjs/storybook/pull/8442))
+* CLI: Add CRA preset to MDX template ([#8452](https://github.com/storybookjs/storybook/pull/8452))
+* CLI: Add preset-create-react-app to CRA presets template ([#8449](https://github.com/storybookjs/storybook/pull/8449))
+
 ## 5.3.0-alpha.20 (October 15, 2019)
 
 ### Features
