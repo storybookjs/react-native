@@ -12,12 +12,11 @@ This is a central reference for using Storybook with TypeScript.
 ```bash
 yarn add -D typescript
 yarn add -D awesome-typescript-loader
-yarn add -D @types/storybook__react # typings
 yarn add -D @storybook/addon-info react-docgen-typescript-loader # optional but recommended
 yarn add -D jest "@types/jest" ts-jest #testing
 ```
 
-We have had the best experience using `awesome-typescript-loader`, but other tutorials may use `ts-loader`, just configure accordingly. You can even use `babel-loader` with a `ts-loader` configuration.
+We have had the best experience using `awesome-typescript-loader`, but other tutorials may use `ts-loader`, so be sure to configure accordingly. You can even use `babel-loader` with a `ts-loader` configuration.
 
 ### Setting up TypeScript to work with Storybook
 
@@ -76,20 +75,17 @@ The above example shows a working Webpack config with the [TSDocgen plugin](http
 }
 ```
 
-This is for the default configuration where `/stories` is a peer of `src`. If you have them all in just `src` you may wish to replace `"rootDirs": ["src", "stories"]` above with `"rootDir": "src",`.
+This is for the default configuration where `/stories` is a peer of `src`. If you have them all in `src`, you may wish to replace `"rootDirs": ["src", "stories"]` above with `"rootDir": "src",`.
 
 ## Setting up TypeScript with babel-loader
 
-When using latest create-react-app (CRA 2.0), Babel 7 has native TypeScript support. Setup becomes easier.
-For a full working demo (that also uses react-docgen-typescript-loader) you can check out this [repo](https://github.com/johot/storybook4-cra2-typescript-react-docgen-typescript-demo).
+### A note for Create React App users
 
-### Dependencies you may need
-
-```bash
-yarn add -D @types/storybook__react # typings
-```
+Please use [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) for full compatibility with [Create React App](https://create-react-app.dev/) features - which includes TypeScript support.
 
 ### Setting up TypeScript to work with Storybook
+
+The following code uses [`babel-preset-react-app`](https://github.com/facebook/create-react-app/tree/master/packages/babel-preset-react-app).
 
 We first have to use the [custom Webpack config in full control mode, extending default configs](/configurations/custom-webpack-config/#full-control-mode--default) by creating a `webpack.config.js` file in our Storybook configuration directory (by default, it’s `.storybook`):
 
@@ -109,9 +105,9 @@ module.exports = ({ config, mode }) => {
 
 ### `tsconfig.json`
 
-The default `tsconfig.json` that comes with CRA works great. If your stories are outside the `src` folder, for example the `stories` folder in root, then `"rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
+If your stories are outside the `src` folder, for example the `stories` folder in root, then `"rootDirs": ["src", "stories"]` needs to be added to be added to `compilerOptions` so it knows what folders to compile. Make sure `jsx` is set to preserve. Should be unchanged.
 
-## Create a TSX storybook index 
+## Create a TSX storybook index
 
 The default storybook index file is `stories/index.stories.js` -- you'll want to rename this to `stories/index.stories.tsx`.
 
@@ -122,7 +118,7 @@ Change `config.ts` inside the Storybook config directory (by default, it’s `.s
 ```js
 import { configure } from '@storybook/react';
 // automatically import all files ending in *.stories.tsx
-configure(require.context('../src', true, /\.stories\.tsx?$/), module)
+configure(require.context('../src', true, /\.stories\.tsx?$/), module);
 ```
 
 ## Using TypeScript with the TSDocgen addon

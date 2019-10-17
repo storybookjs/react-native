@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent, ReactElement, ReactNode } from 'react';
+import React, { Children, cloneElement, FunctionComponent, MouseEvent, ReactElement } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithTooltip } from './WithTooltip';
@@ -19,9 +19,9 @@ const StoryLinkWrapper: FunctionComponent<StoryLinkWrapperProps> = ({
 }) => {
   const child = Children.only(children) as ReactElement;
 
-  return React.cloneElement(child, {
+  return cloneElement(child, {
     href: passHref && href,
-    onClick: (e: React.MouseEvent) => {
+    onClick: (e: MouseEvent) => {
       e.preventDefault();
       onLinkClick(href);
     },

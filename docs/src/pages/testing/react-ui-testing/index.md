@@ -48,7 +48,7 @@ Let's again use the above login component as an example. It should do these thin
 -   When we click the submit button, it should give us the username and password.
 -   When we click the "Forgotten Account" link, it should redirect to a new page.
 
-We have few ways to do this type of testing with React. The simple way is to use [Enzyme](https://github.com/airbnb/enzyme).
+We have few ways to do this type of testing with React. One way is to use [Enzyme](https://github.com/airbnb/enzyme).
 
 ### 3. CSS/Style Testing
 
@@ -71,13 +71,13 @@ But since we are building UI for humans, we must also manually test them to s
 Another reason for manual testing is for the better user experience.
 
 We should always try to test our UI with the naked eye.
-For this, we can simply use our existing Storybook.
+For this, we can use our existing Storybook.
 This is something that we can't automate(yet) and takes time.
 But it would be great if we could do this once in a while (especially with a major code changes).
 
 ## How Storybook Can Help Us
 
-A **story** is a smallest unit in Storybook.
+A **story** is the smallest unit in Storybook.
 It's a fully functioning UI element where the input can be used for any of the testing methods we've mentioned above.
 
 Let's look at how Storybook can help you do the above mentioned different aspects of testing.

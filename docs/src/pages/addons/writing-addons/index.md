@@ -36,7 +36,7 @@ With this, you can write some pretty cool addons. Look at our [Addon gallery](ht
 
 Let's write a simplistic addon for Storybook. We'll add some metadata to the story, which the addon can then use.
 
-### Add simple metadata using parameters
+### Add metadata using parameters
 
 We write a story for our addon like this:
 
@@ -131,7 +131,7 @@ Now we need to create two files, `register.js` and `index.js,`. `register.js` wi
 
 Let's add the following content to the `index.js`. It will expose a decorator called `withFoo` which we use the `.addDecorator()` API to decorate all our stories.
 
-The `@storybook/addons` package contains a `makeDecorator` function which we can easily use to create such a decorator:
+The `@storybook/addons` package contains a `makeDecorator` function which we can use to create such a decorator:
 
 ```js
 import React from 'react';
@@ -145,7 +145,7 @@ export default makeDecorator({
   wrapper: (getStory, context, { parameters }) => {
     const channel = addons.getChannel();
 
-    // Our simple API above simply sets the notes parameter to a string,
+    // Our API above sets the notes parameter to a string,
     // which we send to the channel
     channel.emit('my/customEvent', parameters);
     // we can also add subscriptions here using channel.on('eventName', callback);
@@ -171,6 +171,7 @@ import React from 'react';
 import addons from '@storybook/addons';
 import { useChannel } from '@storybook/api';
 import { STORY_CHANGED } from '@storybook/core-events';
+import { AddonPanel } from '@storybook/components';
 
 const MyPanel = () => {
   const emit = useChannel({
@@ -203,7 +204,7 @@ Using the hook, we'll listen for events and gain access to the `emit` function f
 
 It also listens to another event, called onStory, in the storybook API, which fires when the user selects a story.
 
-Multiple addons can be loaded, but only a single panel can be shown, the render function will receive an `active` prop, which is true if the addon is shown. It is up to you to decide if this mean your component must be unmounted, or just visually hidden. This allows you to keep state but unmount expensive renderings.
+Multiple addons can be loaded, but only a single panel can be shown, the render function will receive an `active` prop, which is true if the addon is shown. It is up to you to decide if this mean your component must be unmounted, or visually hidden. This allows you to keep state but unmount expensive renderings.
 
 The `AddonPanel` component will stop rendering of it's children if it's `active`-prop is false.
 
@@ -221,7 +222,7 @@ export const Panel = () => {
 }
 ```
 
-This will store your addon's state into storybook core state, and so when your component gets unmounted & remounted, the state will just be restored.
+This will store your addon's state into storybook core state, and so when your component gets unmounted & remounted, the state will be restored.
 
 This is also a great way to sync state between multiple components of the same addon.
 
@@ -286,7 +287,7 @@ But if you do use emotion, you can use the active storybook theme, which benefit
 ## Re-using existing components
 
 Wouldn't it be awesome if we provided you with some common used components you could use to build out your own addon quickly and fit in right away?
-Good news! WE DO! We publish most of storybook's UI components as a package: `@storybook/components`. You can check them out in [our storybook](https://storybooks.netlify.com) (pretty meta right?).
+Good news! WE DO! We publish most of storybook's UI components as a package: `@storybook/components`. You can check them out in [our storybook](https://storybookjs.now.sh/) (pretty meta right?).
 
 ## Addon API
 
@@ -295,7 +296,7 @@ You can learn more about the complete API [here](/addons/api).
 
 ## Packaging
 
-You can package this addon into a NPM module very easily. As an example, have a look at this [package](https://github.com/storybookjs/storybook/tree/master/addons/notes).
+It's possible to package this addon into a NPM module. As an example, have a look at this [package](https://github.com/storybookjs/storybook/tree/master/addons/notes).
 
 In addition to moving the above code to a NPM module, we've set `react` and `@storybook/addons` as peer dependencies.
 

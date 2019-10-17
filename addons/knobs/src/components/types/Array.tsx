@@ -62,7 +62,7 @@ export default class ArrayType extends Component<ArrayTypeProps> {
 
   render() {
     const { knob } = this.props;
-    const value = knob.value.join(knob.separator);
+    const value = knob.value && knob.value.join(knob.separator);
 
     return (
       <Form.Textarea

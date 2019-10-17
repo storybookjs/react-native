@@ -1,0 +1,49 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+
+import { Button } from '@storybook/angular/demo';
+
+<Meta title="Button" component={Button} />
+
+# Button
+
+This `Button` document defines a few stories:
+
+<Story name="text">
+  {{
+    component: Button,
+    props: {
+      text: 'Hello Button',
+    },
+  }}
+</Story>
+
+<Story name="emoji">
+  {{
+    component: Button,
+    props: {
+      text: '😀 😎 👍 💯',
+    },
+  }}
+</Story>
+
+<Story name="with some emoji and action">
+  {{
+    component: Button,
+    props: {
+      text: '😀 😎 👍 💯',
+      onClick: action('This was clicked OMG'),
+    },
+  }}
+</Story>
+
+<Story name="button with link to another story">
+  {{
+    component: Button,
+    props: {
+      text: 'Go to Welcome Story',
+      onClick: linkTo('Welcome'),
+    },
+  }}
+</Story>

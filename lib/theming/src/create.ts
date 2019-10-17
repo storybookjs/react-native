@@ -3,6 +3,7 @@ import lightThemeVars from './themes/light';
 import darkThemeVars from './themes/dark';
 
 import { ThemeVars } from './types';
+import { getPreferredColorScheme } from './utils';
 
 export const themes: { light: ThemeVars; dark: ThemeVars; normal: ThemeVars } = {
   light: lightThemeVars,
@@ -14,12 +15,17 @@ interface Rest {
   [key: string]: any;
 }
 
-export const create = (vars: ThemeVars = { base: 'light' }, rest?: Rest): ThemeVars => {
+const preferredColorScheme = getPreferredColorScheme();
+
+export const create = (
+  vars: ThemeVars = { base: preferredColorScheme },
+  rest?: Rest
+): ThemeVars => {
   const inherit: ThemeVars = {
-    ...themes.light,
+    ...themes[preferredColorScheme],
     ...(themes[vars.base] || {}),
     ...vars,
-    ...{ base: themes[vars.base] ? vars.base : 'light' },
+    ...{ base: themes[vars.base] ? vars.base : preferredColorScheme },
   };
   return {
     ...rest,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Story, StoryError } from './Story';
 import { Button } from '../Button/Button';
 
@@ -10,7 +10,7 @@ export default {
 const buttonFn = () => <Button secondary>Inline story</Button>;
 
 const buttonHookFn = () => {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
   return (
     <Button secondary onClick={() => setCount(count + 1)}>
       {`count: ${count}`}

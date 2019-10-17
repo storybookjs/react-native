@@ -175,7 +175,7 @@ So the way our script works is that it:
 Our script leaves the local registry running, for **as long as you keep it running** you can install storybook packages from this local registry.
 
 - Navigate to your own project and then change `package.json` so the storybook packages match the version of the one you just published.
-- Then just do the normal install procedure using `yarn` or `npm`
+- Then you can install using `yarn` or `npm`
 - Start using your storybook as normally.
 
 If you've made a change to storybook's codebase and would want this change to be reflected in your app:
@@ -229,7 +229,7 @@ We use the following label scheme to categorize issues:
 
 All issues should have a `type` label. `bug`/`feature`/`question`/`discussion` are self-explanatory. `dependencies` is for keeping package dependencies up to date. `maintenance` is a catch-all for any kind of cleanup or refactoring.
 
-They should also have one or more `area`/`status` labels. We use these labels to filter issues down so we can easily see all of the issues for a particular area, and keep the total number of open issues under control.
+They should also have one or more `area`/`status` labels. We use these labels to filter issues down so we can see all of the issues for a particular area, and keep the total number of open issues under control.
 
 For example, here is the list of [open, untyped issues](https://github.com/storybookjs/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20-label%3A%22bug%22%20-label%3A%22discussion%22%20-label%3A%22feature%22%20-label%3A%22maintenance%22%20-label%3A%22question%20%2F%20support%22%20-label%3A%22documentation%22%20-label%3A%22greenkeeper%22), or here is a list of [bugs that have not been modified since 2017-04-01](https://github.com/storybookjs/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3A%22bug%22%20updated%3A%3C%3D2017-04-01%20). For more info see [searching issues](https://help.github.com/articles/searching-issues/) in the Github docs.
 
@@ -299,7 +299,7 @@ Storybook is broken up into sub-projects that you can install as you need them. 
 
 #### Connecting Your App To Storybook
 
-**_Note:_** If you aren't seeing addons after linking storybook, you probably have a versioning issue which can be fixed by simply linking each addon you want to use.
+**_Note:_** If you aren't seeing addons after linking storybook, you probably have a versioning issue which can be fixed by linking each addon you want to use.
 This applies for the kitchen sink apps as well as your own projects.
 
 _Make sure `yarn dev` is running_

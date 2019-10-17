@@ -101,11 +101,11 @@ type StatePartial = Partial<State>;
 export type Props = Children & RouterData & ProviderData & DocsModeData;
 
 class ManagerProvider extends Component<Props, State> {
-  static displayName = 'Manager';
-
   api: API;
 
   modules: any[];
+
+  static displayName = 'Manager';
 
   constructor(props: Props) {
     super(props);
@@ -253,11 +253,11 @@ interface SubState {
 }
 
 class ManagerConsumer extends Component<ConsumerProps<SubState, Combo>> {
-  dataMemory?: (combo: Combo) => SubState;
-
   prevChildren?: ReactElement<any> | null;
 
   prevData?: SubState;
+
+  dataMemory?: (combo: Combo) => SubState;
 
   constructor(props: ConsumerProps<SubState, Combo>) {
     super(props);

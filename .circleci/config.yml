@@ -1,14 +1,11 @@
-version: 2
+version: 2.1
 
 aliases:
   - &defaults
     working_directory: /tmp/storybook
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
 
-dependencies:
-  pre:
-    - yarn global add npm
 jobs:
   build:
     <<: *defaults
@@ -17,7 +14,7 @@ jobs:
       - restore_cache:
           name: Restore core dependencies cache
           keys:
-            - core-dependencies-v3-{{ checksum "yarn.lock" }}
+            - core-dependencies-v4-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
           command: yarn install
@@ -29,9 +26,11 @@ jobs:
           command: yarn bootstrap --core
       - save_cache:
           name: Cache core dependencies
-          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
+          key: core-dependencies-v4-{{ checksum "yarn.lock" }}
           paths:
-            - ~/.cache/yarn
+            - ~/.cache
+            - node_modules
+            - /root/.cache
       - persist_to_workspace:
           root: .
           paths:
@@ -49,7 +48,7 @@ jobs:
           at: .
       - run:
           name: Run chromatic on the pre-built storybook
-          command: yarn chromatic -- -d ./storybook-static
+          command: yarn chromatic
   packtracker:
     <<: *defaults
     steps:
@@ -63,97 +62,50 @@ jobs:
             yarn packtracker
   examples:
     <<: *defaults
+    parallelism: 4
     steps:
       - checkout
       - attach_workspace:
           at: .
       - run:
-          name: Workaround for https://github.com/GoogleChrome/puppeteer/issues/290
-          command: sh ./scripts/workaround-puppeteer-issue-290.sh
-      - run:
-          name: Build react kitchen-sink
+          name: examples
           command: |
-            cd examples/cra-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build react typescript kitchen-sink
-          command: |
-            cd examples/cra-ts-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build vue kitchen-sink
-          command: |
-            cd examples/vue-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build svelte kitchen-sink
-          command: |
-            cd examples/svelte-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build angular-cli
-          command: |
-            cd examples/angular-cli
-            yarn build-storybook
-      - run:
-          name: Build ember-cli
-          command: |
-            cd examples/ember-cli
-            yarn build-storybook
-      - run:
-          name: Build polymer-cli
-          command: |
-            cd examples/polymer-cli
-            yarn build-storybook
-      - run:
-          name: Build marko-cli
-          command: |
-            cd examples/marko-cli
-            yarn build-storybook
-      - run:
-          name: Build mithril kitchen-sink
-          command: |
-            cd examples/mithril-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build html kitchen-sink
-          command: |
-            cd examples/html-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build riot kitchen-sink
-          command: |
-            cd examples/riot-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build preact kitchen-sink
-          command: |
-            cd examples/preact-kitchen-sink
-            yarn build-storybook
-      - run:
-          name: Build cra react15
-          command: |
-            cd examples/cra-react15
-            yarn build-storybook
-      - run:
-          name: Build official-storybook
-          command: |
-            cd examples/official-storybook
-            yarn build-storybook
-      # - run:
-      #     name: Run image snapshots
-      #     command: yarn test --image
-      - store_artifacts:
-          path: examples/official-storybook/image-snapshots/__image_snapshots__
-          destination: official_storybook_image_snapshots
+            yarn build-storybooks
       - persist_to_workspace:
           root: .
           paths:
+            - built-storybooks
+  e2e:
+    working_directory: /tmp/storybook
+    docker:
+      - image: cypress/base:8
+        environment:
+          TERM: xterm
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: install cypress
+          command: yarn cypress install
+      - save_cache:
+          name: Cache core dependencies
+          key: core-dependencies-v4-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache
             - node_modules
-            - examples
-            - addons
-            - app
-            - lib
+            - /root/.cache
+      - run:
+          name: running example
+          command: yarn serve-storybooks
+          background: true
+      - run:
+          name: await running examples
+          command: yarn await-serve-storybooks
+      - run:
+          name: cypress run
+          command: yarn cypress run
+
   smoke-tests:
     <<: *defaults
     steps:
@@ -250,18 +202,13 @@ jobs:
       - restore_cache:
           name: Restore core dependencies cache
           keys:
-            - core-dependencies-v3-{{ checksum "yarn.lock" }}
+            - core-dependencies-v4-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
-          command: yarn install
+          command: yarn bootstrap --install
       - run:
           name: Trigger build
           command: ./scripts/build-frontpage.js
-      - save_cache:
-          name: Cache core dependencies
-          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
   docs:
     <<: *defaults
     steps:
@@ -284,12 +231,7 @@ jobs:
           name: Cache docs dependencies
           key: docs-dependencies-v2-{{ checksum "docs/yarn.lock" }}
           paths:
-            - ~/.cache/yarn
-      - persist_to_workspace:
-          root: .
-          paths:
-            - docs/public
-            - docs/node_modules
+            - ~/.cache
   lint:
     <<: *defaults
     steps:
@@ -322,19 +264,18 @@ jobs:
           name: Upload coverage
           command: yarn coverage
 workflows:
-  version: 2
-  build_test_deploy:
+  test:
     jobs:
       - build
-      - docs
-      - frontpage
       - lint:
           requires:
-            - docs
             - build
       - examples:
           requires:
             - build
+      - e2e:
+          requires:
+            - examples
       - smoke-tests:
           requires:
             - build
@@ -353,3 +294,7 @@ workflows:
       - chromatic:
           requires:
             - examples
+  deploy:
+    jobs:
+      - docs
+      - frontpage

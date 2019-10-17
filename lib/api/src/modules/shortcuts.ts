@@ -46,6 +46,8 @@ export interface Shortcuts {
   shortcutsPage: KeyCollection;
   aboutPage: KeyCollection;
   escape: KeyCollection;
+  collapseAll: KeyCollection;
+  expandAll: KeyCollection;
 }
 
 export type Action = keyof Shortcuts;
@@ -67,6 +69,8 @@ export const defaultShortcuts: Shortcuts = Object.freeze({
   shortcutsPage: [controlOrMetaKey(), 'shift', ','],
   aboutPage: [','],
   escape: ['escape'], // This one is not customizable
+  collapseAll: [controlOrMetaKey(), 'shift', 'ArrowUp'],
+  expandAll: [controlOrMetaKey(), 'shift', 'ArrowDown'],
 });
 
 export interface Event extends KeyboardEvent {
@@ -254,7 +258,14 @@ export default function initShortcuts({ store }: Module) {
           fullApi.navigate('/settings/shortcuts');
           break;
         }
-
+        case 'collapseAll': {
+          fullApi.collapseAll();
+          break;
+        }
+        case 'expandAll': {
+          fullApi.expandAll();
+          break;
+        }
         default:
           break;
       }

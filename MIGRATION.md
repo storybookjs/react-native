@@ -1,6 +1,8 @@
 # Migration
 
 - [Migration](#migration)
+  - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
+    - [Create React App preset](#create-react-app-preset)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)
@@ -67,6 +69,14 @@
     - [Packages renaming](#packages-renaming)
     - [Deprecated embedded addons](#deprecated-embedded-addons)
 
+## From version 5.2.x to 5.3.x
+
+### Create React App preset
+
+You can now move to the new preset for [Create React App](https://create-react-app.dev/). The in-built preset for Create React App will be disabled in Storybook 6.0.
+
+Simply install [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) and it will be used automatically.
+
 ## From version 5.1.x to 5.2.x
 
 ### Source-loader
@@ -77,7 +87,7 @@ Addon-storysource contains a loader, `@storybook/addon-storysource/loader`, whic
 @storybook/addon-storysource/loader is deprecated, please use @storybook/source-loader instead.
 ```
 
-To upgrade to `@storybook/source-loader`, simply `npm install -D @storybook/source-laoder` (or use `yarn`), and replace every instance of `@storybook/addon-storysource/loaoder` with `@storybook/source-loader`.
+To upgrade to `@storybook/source-loader`, run `npm install -D @storybook/source-loader` (or use `yarn`), and replace every instance of `@storybook/addon-storysource/loader` with `@storybook/source-loader`.
 
 ### Default viewports
 
@@ -139,7 +149,7 @@ Storybook 5.1 contains a major overhaul of `@storybook/react-native` as compared
 
 In addition, both packages share more code with the rest of Storybook, which will reduce bugs and increase compatibility (e.g. with the latest versions of babel, etc.).
 
-As a user with an existing 4.1.x RN setup, no migration should be necessary to your RN app. Simply upgrading the library should be enough.
+As a user with an existing 4.1.x RN setup, no migration should be necessary to your RN app. Upgrading the library should be enough.
 
 If you wish to run the optional web server, you will need to do the following migration:
 
@@ -284,7 +294,7 @@ In 5.0, we now provide recommended defaults:
 
 This means if you use the characters { `|`, `/`, `.` } in your story kinds it will triggger the story hierarchy to appear. For example `storiesOf('UI|Widgets/Basics/Button')` will create a story root called `UI` containing a `Widgets/Basics` group, containing a `Button` component.
 
-If you wish to opt-out of this new behavior and restore the flat UI, simply set them back to `null` in your storybook config, or remove { `|`, `/`, `.` } from your story kinds:
+If you wish to opt-out of this new behavior and restore the flat UI, set them back to `null` in your storybook config, or remove { `|`, `/`, `.` } from your story kinds:
 
 ```js
 addParameters({
@@ -655,7 +665,7 @@ Storybook now uses Babel 7. There's a couple of cases when it can break with you
 If you are using `create-react-app` (aka CRA), you may need to do some manual steps to upgrade, depending on the setup.
 
 - `create-react-app@1` may require manual migrations.
-  - If you're adding storybook for the first time, it should just work: `sb init` should add the correct dependencies.
+  - If you're adding storybook for the first time: `sb init` should add the correct dependencies.
   - If you're upgrading an existing project, your `package.json` probably already uses Babel 6, making it incompatible with `@storybook/react@4` which uses Babel 7. There are two ways to make it compatible, each of which is spelled out in detail in the next section:
     - Upgrade to Babel 7 if you are not dependent on Babel 6-specific features.
     - Migrate Babel 6 if you're heavily dependent on some Babel 6-specific features).
@@ -674,7 +684,7 @@ yarn add @babel/core babel-loader --dev
 yarn add babel-loader@7
 ```
 
-Also, make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's a simple one that works:
+Also, make sure you have a `.babelrc` in your project directory. You probably already do if you are using Babel 6 features (otherwise you should consider upgrading to Babel 7 instead). If you don't have one, here's one that works:
 
 ```json
 {
@@ -718,7 +728,7 @@ storiesOf('My component', module)
 
 This example applies notes globally to all stories. You can apply it locally with `storiesOf(...).addDecorator(withNotes)`.
 
-The story parameters correspond directly to the old withX arguments, so it's easy to migrate your code. See the parameters documentation for the packages that have been upgraded:
+The story parameters correspond directly to the old withX arguments, so it's less demanding to migrate your code. See the parameters documentation for the packages that have been upgraded:
 
 - [Notes](https://github.com/storybookjs/storybook/blob/master/addons/notes/README.md)
 - [Jest](https://github.com/storybookjs/storybook/blob/master/addons/jest/README.md)
@@ -748,11 +758,11 @@ This was done to support different major versions of babel.
 
 ### Base webpack config now contains vital plugins ([#1775](https://github.com/storybookjs/storybook/pull/1775))
 
-This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was just a recommendation, but now it [became](https://github.com/storybookjs/storybook/pull/2578) a requirement.
+This affects you if you use custom webpack config in [Full Control Mode](https://storybook.js.org/configurations/custom-webpack-config/#full-control-mode) while not preserving the plugins from `storybookBaseConfig`. Before `3.3`, preserving them was a recommendation, but now it [became](https://github.com/storybookjs/storybook/pull/2578) a requirement.
 
 ### Refactored Knobs
 
-Knobs users: there was a bug in 3.2.x where using the knobs addon imported all framework runtimes (e.g. React and Vue). To fix the problem, we [refactored knobs](https://github.com/storybookjs/storybook/pull/1832). Switching to the new style is easy:
+Knobs users: there was a bug in 3.2.x where using the knobs addon imported all framework runtimes (e.g. React and Vue). To fix the problem, we [refactored knobs](https://github.com/storybookjs/storybook/pull/1832). Switching to the new style is only takes one line of code.
 
 In the case of React or React-Native, import knobs like this:
 
@@ -879,7 +889,7 @@ The new package names are:
 | `@kadira/storybook-addon-graphql`            | `@storybook/addon-graphql`       |
 | `@kadira/react-storybook-decorator-centered` | `@storybook/addon-centered`      |
 
-If your codebase is small, it's probably doable to just replace them by hand. (in your codebase and in `package.json`).
+If your codebase is small, it's probably doable to replace them by hand (in your codebase and in `package.json`).
 
 But if you have a lot of occurrences in your codebase, you can use a [codemod we created](./lib/codemod) for you.
 
@@ -893,7 +903,7 @@ You have to change your `package.json`, prune old and install new dependencies b
 
 We used to ship 2 addons with every single installation of storybook: `actions` and `links`. But in practice not everyone is using them, so we decided to deprecate this and in the future, they will be completely removed. If you use `@storybook/react/addons` you will get a deprecation warning.
 
-If you **are** using these addons, migrating is simple:
+If you **are** using these addons, it takes two steps to migrate:
 
 - add the addons you use to your `package.json`.
 - update your code:
