@@ -78,8 +78,8 @@ import StorybookUI from './storybook';
 export default StorybookUI;
 ```
 
-If you cannot replace your entry point just make sure that the component exported from `./storybook` is displayed
-somewhere in your app. `StorybookUI` is simply a RN `View` component that can be embedded anywhere in your 
+If you cannot replace your entry point, make sure that the component exported from `./storybook` is displayed
+somewhere in your app. `StorybookUI` is a RN `View` component that can be embedded anywhere in your 
 RN application, e.g. on a tab or within an admin screen.
 
 ## Server support

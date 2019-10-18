@@ -1,9 +1,10 @@
 <template>
-  <button class="button" :style="{color: color, borderColor: color}" @click="handleClick" @dblclick="handleDblclick" :class="{rounded: rounded}"><slot></slot>!</button>
+  <button class="button" :style="{color: color, borderColor: color}" @click="handleClick" @dblclick="handleDblclick" :class="{rounded: rounded}"><slot/>!</button>
 </template>
 
 <script>
   export default {
+    name: 'Button',
     props: {
       rounded: Boolean,
       handleClick: {

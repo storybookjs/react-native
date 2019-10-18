@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-nested-ternary */
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, View, Text } from 'react-native';
 
 const theme = {
@@ -22,7 +22,7 @@ const theme = {
   ARROW_ANIMATION_DURATION: '0',
 };
 
-class Inspect extends React.Component<{ name?: string; value: any }, { expanded: boolean }> {
+class Inspect extends Component<{ name?: string; value: any }, { expanded: boolean }> {
   state = { expanded: false };
 
   render() {

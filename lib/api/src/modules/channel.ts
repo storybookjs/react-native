@@ -1,5 +1,5 @@
 import deprecate from 'util-deprecate';
-import { STORY_CHANGED } from '@storybook/core-events';
+import { STORY_CHANGED, STORIES_COLLAPSE_ALL, STORIES_EXPAND_ALL } from '@storybook/core-events';
 import { Channel, Listener } from '@storybook/channels';
 
 import { Module } from '../index';
@@ -11,6 +11,8 @@ export interface SubAPI {
   emit: (type: string, ...args: any[]) => void;
   once: (type: string, cb: Listener) => void;
   onStory: (cb: Listener) => void;
+  collapseAll: () => void;
+  expandAll: () => void;
 }
 
 export default ({ provider }: Module) => {
@@ -33,6 +35,12 @@ export default ({ provider }: Module) => {
       (cb: Listener) => api.on(STORY_CHANGED, cb),
       'onStory(...) has been replaced with on(STORY_CHANGED, ...)'
     ),
+    collapseAll: () => {
+      provider.channel.emit(STORIES_COLLAPSE_ALL, {});
+    },
+    expandAll: () => {
+      api.emit(STORIES_EXPAND_ALL);
+    },
   };
   return { api };
 };

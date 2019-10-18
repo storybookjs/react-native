@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { AsyncStorage } from 'react-native';
 import { ThemeProvider } from 'emotion-theming';
 // @ts-ignore
@@ -8,11 +8,10 @@ import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
 import createChannel from '@storybook/channel-websocket';
-// @ts-ignore remove when client-api is migrated to TS
 import { StoryStore, ClientApi } from '@storybook/client-api';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
-import { theme, EmotionProps } from './components/Shared/theme';
+import { theme } from './components/Shared/theme';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -30,7 +29,7 @@ export type Params = {
   isUIHidden: boolean;
   shouldDisableKeyboardAvoidingView: boolean;
   keyboardAvoidingViewVerticalOffset: number;
-} & EmotionProps;
+} & { theme: typeof theme };
 
 export default class Preview {
   _clientApi: ClientApi;
@@ -111,6 +110,7 @@ export default class Preview {
 
     this._sendSetStories();
 
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const preview = this;
 
     addons.loadAddons(this._clientApi);
@@ -118,7 +118,7 @@ export default class Preview {
     const appliedTheme = { ...theme, ...params.theme };
 
     // react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
-    return class StorybookRoot extends React.PureComponent {
+    return class StorybookRoot extends PureComponent {
       render() {
         if (onDeviceUI) {
           return (

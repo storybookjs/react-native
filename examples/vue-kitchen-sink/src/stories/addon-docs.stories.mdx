@@ -1,4 +1,6 @@
 import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+import { stripIndents } from 'common-tags';
+import MyButton from './Button.vue';
 
 # Storybook Docs for Vue
 
@@ -25,7 +27,8 @@ Next let's declare some stories.
 
 But first let's review how it's done in SB5 for Vue.
 
-```
+```js
+import MyButton from './Button.vue';
 storiesOf('Button', module)
   .add('rounded', () => ({
     template: '<my-button :rounded="true">A Button with rounded edges</my-button>',
@@ -36,7 +39,7 @@ storiesOf('Button', module)
 
 Similarly, here's how we do it in the Docs MDX format:
 
-<Story name="rounded" height="60px">
+<Story name="rounded">
   {{
     template: '<my-button :rounded="true">A Button with rounded edges</my-button>',
   }}
@@ -48,7 +51,7 @@ This isn't the final syntax, but it gets the job done.
 
 Let's add another one. The UI updates automatically as you'd expect.
 
-<Story name="square" height="60px">
+<Story name="square">
   {{
     template: '<my-button :rounded="false">A Button with square edges</my-button>',
   }}
@@ -58,20 +61,29 @@ Let's add another one. The UI updates automatically as you'd expect.
 
 And just like in the React, case we're generating long-form docs as we go.
 
-The primary difference is that for Vue Docs we generate an iframe per story.
+The primary difference is that for Vue Docs we generate an iframe per story, by default. If you prefer your stories to be rendered inline, see the next section. 
 
-## Optimization
+## Inline Stories
 
-This can be optimized using a library like [Vuera](https://github.com/akxcv/vuera)
-for embedding Vue components in React.
+The default configuration for `addon-docs/vue` implements the `prepareForInline` parameter using [@egoist/vue-to-react](https://github.com/egoist/vue-to-react). This means you can set use `addParameters({ docs: { inlineStories: true } });` to set stories to be inline _globally_. If some of your stories rely on being within an iframe, you can instead selectively change certain stories to be inline through the `inline` prop on the `<Story>` block, or set stories to be rendered inline globally and set the `inline` prop to be false on the `<Story>` block for any stories that need to exist within an iframe. 
 
-We could also change the JSX rendering to render the entire page in Vue.
+To provide a tangible example of the inline/iframe rendering contexts, here's the same story rendered both ways.
+
+<Preview>
+  <Story id="app--app" inline={true} />
+</Preview>
+
+<Preview>
+  <Story id="app--app" height="200px" />
+</Preview>
+
+The biggest win here is that we don't have to worry about setting the height anymore. The story can calculate its height like any other inline element. As you can see, several of the stories on this page are quite small, but take up `500px`, because that's the default story height, and we didn't tweak the story to be an explicit height. Another huge gain here is in terms of performance. Using an iframe to render a single element is definitely unnecessary in most cases and, as you may have noticed while reading this page, can _really_ cause page performance to suffer.
 
 ## Previews
 
 Just like in React, we can easily reference other stories in our docs:
 
-<Story id="addon-knobs--all-knobs" height="400px" />
+<Story id="addon-knobs--all-knobs" height="400px"/>
 
 <Story id="nonexistent-story" />
 

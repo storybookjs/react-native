@@ -81,7 +81,7 @@ export function webpackFinal(config, { configDir }) {
 
 ### Addons
 
-The addon config `addons` allows you to add addons to Storybook from within a preset. For addons that require custom webpack/babel configuration, it is easier to simply install the preset, and it will take care of everything.
+The addon config `addons` allows you to add addons to Storybook from within a preset. For addons that require custom webpack/babel configuration, it is easier to install the preset, and it will take care of everything.
 
 For example, the Storysource preset contains the following code:
 
@@ -110,24 +110,28 @@ For example, some users want to configure the webpack for Storybook's UI and add
 First, create a file `my-preset.js` in your storybook folder:
 
 ```js
-export async function managerWebpack(config, options) {
+async function managerWebpack(config, options) {
   // update config here
   return config;
 }
-export async function managerBabel(config, options) {
+async function managerBabel(config, options) {
   // update config here
   return config;
 }
-export async function webpack(config, options) {
+async function webpack(config, options) {
   return config;
 }
-export async function babel(config, options) {
+async function babel(config, options) {
   return config;
 }
+async function addons(entry = []) {
+  return entry;
+}
+module.exports = { managerWebpack, managerBabel, webpack, babel, addons }
 ```
 
 Then, load that preset in your `presets.js` file:
 
 ```js
-module.exports = [path.resolve('./my-preset')];
+module.exports = [path.resolve('./.storybook/my-preset')];
 ```

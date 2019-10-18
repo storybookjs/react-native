@@ -12,8 +12,8 @@ const Platform = () => (
           rel="noopener noreferrer"
         >
           React
-        </a>{' '}
-        &{' '}
+        </a>
+        &nbsp;&amp;&nbsp;
         <a
           href="https://github.com/storybookjs/storybook/tree/master/app/react-native"
           target="_blank"
@@ -22,7 +22,6 @@ const Platform = () => (
           React Native
         </a>
       </p>
-
       <hr />
     </div>
   </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { opacify, transparentize } from 'polished';
 import { PropRow } from './PropRow';
@@ -136,7 +136,7 @@ export type PropsTableProps = PropsTableRowsProps | PropsTableErrorProps;
  * Display the props for a component as a props table. Each row is a collection of
  * PropDefs, usually derived from docgen info for the component.
  */
-const PropsTable: React.FunctionComponent<PropsTableProps> = props => {
+const PropsTable: FunctionComponent<PropsTableProps> = props => {
   const { error } = props as PropsTableErrorProps;
   if (error) {
     return <EmptyBlock>{error}</EmptyBlock>;

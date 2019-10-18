@@ -9,7 +9,7 @@ A Storybook is a collection of stories. Each story represents a single visual st
 
 ## Basic story
 
-Here is a simple example of stories for a `Button` component:
+Here is an example of stories for a `Button` component:
 
 ```js
 import React from 'react';
@@ -49,7 +49,7 @@ Furthermore, Storybook for React Native currently only supports the `storiesOf` 
 
 ## Story file location
 
-Stories are easier to maintain when they are located alongside the components they are documented. We recommend:
+Stories are easier to maintain when they are located alongside the components they document. We recommend:
 
 ```plaintext
 •
@@ -95,7 +95,7 @@ It's up to you to find a naming/placing scheme that works for your project/team.
 
 Stories are loaded in the `.storybook/config.js` file.
 
-The most convenient way to load stories is by filename. For example, if you stories files are located in the `src/components` directory, you can use the following snippet:
+The most convenient way to load stories is by filename. For example, if your stories files are located in the `src/components` directory, you can use the following snippet:
 
 ```js
 import { configure } from '@storybook/react';
@@ -166,7 +166,7 @@ const loaderFn = () => {
   
   // dynamic loading, unavailable in react-native
   const req = require.context('../src/components', true, /\.stories\.js$/);
-  req.keys().forEach(req(fname));
+  req.keys().forEach(fname => req(fname));
 };
 
 configure(loaderFn, module);
@@ -191,7 +191,7 @@ addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 load(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story director wraps a single story in an additional red frame.
+And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story decorator wraps a single story in an additional red frame.
 
 ```jsx
 import React from 'react';
@@ -209,9 +209,9 @@ special.story = {
 };
 ```
 
-Decorators are not just for story formatting, they are generally useful for any kind of context needed by a story.
+Decorators are not only for story formatting, they are generally useful for any kind of context needed by a story.
 
-- Theming libraries require a theme to be passed in through context. Rather than redefining this in every story, just add a decorator.
+- Theming libraries require a theme to be passed in through context. Rather than redefining this in every story, add a decorator.
 - Likewise, state management libraries like Redux provide a global data store through context.
 - Finally, Storybook [addons](../../addons/introduction) heavily use decorators. For example, the Storybook's [Knobs addon](https://github.com/storybookjs/storybook/tree/next/addons/knobs) uses decorators to modify the input properties of the story based on a UI.
 
@@ -237,7 +237,7 @@ Then for components that did have documentation, we might override it at the com
 import React from 'react';
 import MyComponent from './MyComponent';
 import componentNotes from './notes.md';
-import specialNotes from '/.special.md';
+import specialNotes from './special.md';
 
 export default {
   title: 'MyComponent',

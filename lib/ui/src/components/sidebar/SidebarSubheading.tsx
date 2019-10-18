@@ -1,8 +1,8 @@
-import React from 'react';
+import { ComponentProps } from 'react';
 import { transparentize } from 'polished';
 import { styled } from '@storybook/theming';
 
-export type SubheadingProps = React.ComponentProps<'div'>;
+export type SubheadingProps = ComponentProps<'div'>;
 
 const Subheading = styled.div<SubheadingProps>(({ theme }) => ({
   letterSpacing: '0.35em',
