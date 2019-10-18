@@ -85,7 +85,13 @@ const propsFromPropTypes: PropDefGetter = type => {
 };
 
 export const getPropDefs: PropDefGetter = type => {
-  const processedType = type.render ? type.render().type : type;
+  let processedType = type;
+  if (type.render) {
+    processedType = type.render().type;
+  }
+  if (typeof type.type === 'function') {
+    processedType = type.type().type;
+  }
   return hasDocgen(processedType.__docgenInfo)
     ? propsFromDocgen(processedType)
     : propsFromPropTypes(processedType);
