@@ -19,10 +19,13 @@ function getAttr(elt, what) {
 }
 
 const isReserved = name => RESERVED.exec(name);
+const startsWithNumber = name => /^\d/.exec(name);
 
 const sanitizeName = name => {
   let key = camelCase(name);
-  if (isReserved(key)) {
+  if (startsWithNumber(key)) {
+    key = `_${key}`;
+  } else if (isReserved(key)) {
     key = `${key}Story`;
   }
   return key;
