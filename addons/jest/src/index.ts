@@ -48,16 +48,13 @@ const emitAddTests = ({ kind, story, testFiles, options }: EmitAddTestsArg) => {
   });
 };
 
-export const withTests = (userOptions: {
-  results: any;
-  filesExt?: string;
-}) => {
+export const withTests = (userOptions: { results: any; filesExt?: string }) => {
   const defaultOptions = {
     filesExt: '((\\.specs?)|(\\.tests?))?(\\.[jt]sx?)?$',
   };
   const options = { ...defaultOptions, ...userOptions };
 
-  return (...args: any []) => {
+  return (...args: any[]) => {
     if (typeof args[0] === 'string') {
       return deprecate((storyFn: StoryFn<any>, { kind }: Parameters) => {
         emitAddTests({ kind, story: storyFn, testFiles: (args as any) as string[], options });

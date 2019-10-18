@@ -4,6 +4,8 @@ import { document } from 'global';
 import m from 'mithril';
 import dedent from 'ts-dedent';
 
+import { RenderMainArgs } from './types';
+
 const rootEl = document.getElementById('root');
 
 export default function renderMain({
@@ -12,8 +14,7 @@ export default function renderMain({
   selectedStory,
   showMain,
   showError,
-  // forceRender,
-}) {
+}: RenderMainArgs) {
   const element = storyFn();
 
   if (!element) {
