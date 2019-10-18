@@ -84,5 +84,9 @@ const propsFromPropTypes: PropDefGetter = type => {
   return Object.values(props);
 };
 
-export const getPropDefs: PropDefGetter = type =>
-  hasDocgen(type.__docgenInfo) ? propsFromDocgen(type) : propsFromPropTypes(type);
+export const getPropDefs: PropDefGetter = type => {
+  const processedType = type.render ? type.render().type : type;
+  return hasDocgen(processedType.__docgenInfo)
+    ? propsFromDocgen(processedType)
+    : propsFromPropTypes(processedType);
+};

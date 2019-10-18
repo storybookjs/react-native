@@ -27,12 +27,9 @@ export const getPropsTableProps = (
     const params = parameters || {};
     const { component, framework = null } = params;
 
-    let target = of === CURRENT_SELECTION ? component : of;
+    const target = of === CURRENT_SELECTION ? component : of;
     if (!target) {
       throw new Error(PropsTableError.NO_COMPONENT);
-    }
-    if (target.render) {
-      target = target.render().type;
     }
     const { getPropDefs = inferPropDefs(framework) } = params.docs || {};
     if (!getPropDefs) {
