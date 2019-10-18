@@ -23,11 +23,10 @@ const startsWithNumber = name => /^\d/.exec(name);
 
 const sanitizeName = name => {
   let key = camelCase(name);
-  if (isReserved(key)) {
-    key = `${key}Story`;
-  }
   if (startsWithNumber(key)) {
     key = `_${key}`;
+  } else if (isReserved(key)) {
+    key = `${key}Story`;
   }
   return key;
 };
