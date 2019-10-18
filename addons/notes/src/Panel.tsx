@@ -87,7 +87,7 @@ interface NotesLinkProps {
 export const NotesLink = ({ href, children, ...props }: NotesLinkProps) => {
   /* https://github.com/sindresorhus/is-absolute-url/blob/master/index.js */
   const isAbsoluteUrl = /^[a-z][a-z0-9+.-]*:/.test(href);
-  const isAnchorUrl = /\B#.*/.test(href);
+  const isAnchorUrl = /^#.*/.test(href);
 
   if (isAbsoluteUrl || isAnchorUrl) {
     return (

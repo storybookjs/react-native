@@ -1,3 +1,4 @@
+import React, { FunctionComponent } from 'react';
 import { styled, CSSObject, Theme } from '@storybook/theming';
 import { withReset } from './withReset';
 
@@ -90,7 +91,21 @@ export const Pre = styled.pre<{}>(withReset, withMargin, ({ theme }) => ({
   },
 }));
 
-export const A = styled.a<{}>(withReset, ({ theme }) => ({
+const Link: FunctionComponent<any> = ({ href: input, children, ...props }) => {
+  const isStorybookPath = /^\//.test(input);
+  const isAnchorUrl = /^#.*/.test(input);
+
+  const href = isStorybookPath ? `/?path=${input}` : input;
+  const target = isAnchorUrl ? '_self' : '_top';
+
+  return (
+    <a href={href} target={target} {...props}>
+      {children}
+    </a>
+  );
+};
+
+export const A = styled(Link)<{}>(withReset, ({ theme }) => ({
   fontSize: theme.typography.size.s2,
   lineHeight: '24px',
 
