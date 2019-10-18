@@ -47,7 +47,6 @@
     "build-storybooks": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true ./scripts/build-storybooks.js",
     "changelog": "pr-log --sloppy --cherry-pick",
     "changelog:next": "pr-log --sloppy --since-prerelease",
-    "chromatic": "chromatic --storybook-build-dir=\"built-storybooks/official-storybook\" --exit-zero-on-changes --app-code=\"ab7m45tp9p\"",
     "coverage": "codecov",
     "danger": "danger",
     "dev": "concurrently --kill-others \"yarn dev:tsc\" \"yarn dev:babel\"",
