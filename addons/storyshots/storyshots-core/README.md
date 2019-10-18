@@ -33,7 +33,9 @@ If you still need to configure jest you can use the resources mentioned below:
 
 ### Configure Jest to work with Webpack's [require.context()](https://webpack.js.org/guides/dependency-management/#require-context)
 
-Sometimes it's useful to configure Storybook with Webpack's require.context feature:
+Sometimes it's useful to configure Storybook with Webpack's require.context feature. You could be loading stories [one of two ways](https://storybook.js.org/docs/basics/writing-stories/#loading-stories). 
+
+1) If you're using the `storiesOf` API, you can integrate it this way:
 
 ```js
 import { configure } from '@storybook/react';
@@ -46,6 +48,16 @@ function loadStories() {
 
 configure(loadStories, module);
 ```
+
+2) If you're using Component Story Format (CSF), you'll integrate it like so:
+
+```js
+import { configure } from '@storybook/react';
+
+const req = require.context('../stories', true, /\.stories\.js$/); // <- import all the stories at once
+
+configure(req, module);
+``` 
 
 The problem here is that it will work only during the build with webpack,
 other tools may lack this feature. Since Storyshot is running under Jest,
