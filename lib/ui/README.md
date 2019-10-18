@@ -1,7 +1,7 @@
 # Storybook UI
 
 Storybook UI the core UI of [storybook](https://storybook.js.org).
-It's a React based UI which you can initialize with a simple function.
+It's a React based UI which you can initialize with a function.
 You can configure it by providing a provider API.
 
 ## Table of Contents
@@ -135,7 +135,7 @@ It's a set of modules. You can see those modules at `src/modules` directory.
 
 ### Changing UI
 
-If you like to change the appearance of the UI, you need to look at the `ui` module. Simply change components at the `components` directory for simple UI tweaks.
+If you like to change the appearance of the UI, you need to look at the `ui` module. Change components at the `components` directory for UI tweaks.
 
 You can also change containers(which are written with [react-komposer](https://github.com/kadirahq/react-komposer/)) to add more data from the redux state.
 

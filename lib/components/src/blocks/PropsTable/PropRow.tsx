@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 import { PropDef } from './PropDef';
@@ -27,13 +27,13 @@ interface PropRowProps {
 
 const Name = styled.span({ fontWeight: 'bold' });
 
-const Required = styled.span<{}>(({ theme }) => ({
+const Required = styled.span(({ theme }) => ({
   color: theme.color.negative,
   fontFamily: theme.typography.fonts.mono,
   cursor: 'help',
 }));
 
-const StyledPropDef = styled.div<{}>(({ theme }) => ({
+const StyledPropDef = styled.div(({ theme }) => ({
   color:
     theme.base === 'light'
       ? transparentize(0.4, theme.color.defaultText)
@@ -75,15 +75,15 @@ const prettyPrint = (type: any): string => {
   }
 };
 
-export const PrettyPropType: React.FunctionComponent<PrettyPropTypeProps> = ({ type }) => (
+export const PrettyPropType: FunctionComponent<PrettyPropTypeProps> = ({ type }) => (
   <span>{prettyPrint(type)}</span>
 );
 
-export const PrettyPropVal: React.FunctionComponent<PrettyPropValProps> = ({ value }) => (
+export const PrettyPropVal: FunctionComponent<PrettyPropValProps> = ({ value }) => (
   <span>{JSON.stringify(value)}</span>
 );
 
-export const PropRow: React.FunctionComponent<PropRowProps> = ({
+export const PropRow: FunctionComponent<PropRowProps> = ({
   row: { name, type, required, description, defaultValue },
 }) => (
   <tr>

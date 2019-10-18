@@ -6,7 +6,7 @@
 
 Storybook Docs transforms your Storybook stories into world-class component documentation.
 
-**DocsPage.** Out of the box, all your stories get a `DocsPage`. `DocsPage` is a zero-config aggregation of your component stories, text descriptions, docgen comments, props tables, and code examples into simple, easy-to-read pages.
+**DocsPage.** Out of the box, all your stories get a `DocsPage`. `DocsPage` is a zero-config aggregation of your component stories, text descriptions, docgen comments, props tables, and code examples into clean, readable pages.
 
 **MDX.** If you want more control, `MDX` allows you to write long-form markdown documentation and stories in one file. You can also use it to write pure documentation pages and embed them inside your Storybook alongside your stories.
 
@@ -94,7 +94,7 @@ features as well. This chart captures the current state of support
 First add the package. Make sure that the versions for your `@storybook/*` packages match:
 
 ```sh
-yarn add -D @storybook/addon-docs@next
+yarn add -D @storybook/addon-docs
 ```
 
 Docs has peer dependencies on `react` and `babel-loader`. If you want to write stories in MDX, you may need to add these dependencies as well:

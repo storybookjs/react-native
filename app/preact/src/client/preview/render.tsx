@@ -1,6 +1,6 @@
 import { h, render } from 'preact';
 import { document } from 'global';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 import { RenderMainArgs } from './types';
 
 let renderedStory: Element;
@@ -18,7 +18,7 @@ export default function renderMain({
   if (!element) {
     showError({
       title: `Expecting a Preact element from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
+      description: dedent`
         Did you forget to return the Preact element from the story?
         Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.
       `,

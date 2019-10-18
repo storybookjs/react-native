@@ -38,7 +38,7 @@ You may want to add it the result file to `.gitignore`, since it's a generated f
 
 But much like lockfiles and snapshots checking-in generated files can have certain advantages as well. It's up to you.
 We recommend to **do** check in the test results file so starting storybook from an clean git clone doesn't require running all tests first,
-but this can mean you'll experience merge conflicts on this file in the future. (_re-generating this file is super easy though, just like lockfiles and snapshots_)
+but this can mean you'll experience merge conflicts on this file in the future. (_re-generating this file is very similar to re-generating lockfiles and snapshots_)
 
 ## Generating the test results
 
@@ -96,7 +96,7 @@ storiesOf('MyComponent', module)
   );
 ```
 
-Or in order to avoid importing `.jest-test-results.json` in each story, simply add the decorator in your `.storybook/config.js` and results will display for stories that you have set the `jest` parameter on:
+Or in order to avoid importing `.jest-test-results.json` in each story, add the decorator in your `.storybook/config.js` and results will display for stories that you have set the `jest` parameter on:
 
 ```js
 import { addDecorator } from '@storybook/react'; // <- or your view layer

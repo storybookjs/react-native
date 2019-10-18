@@ -1,6 +1,6 @@
 {
   "name": "@storybook/components",
-  "version": "5.3.0-alpha.0",
+  "version": "5.3.0-alpha.22",
   "description": "Core Storybook Components",
   "keywords": [
     "storybook"
@@ -18,8 +18,8 @@
   "files": [
     "dist/**/*",
     "README.md",
-    "html.d.ts",
-    "html.js"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,9 +27,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/client-logger": "5.3.0-alpha.0",
-    "@storybook/theming": "5.3.0-alpha.0",
-    "@types/react-syntax-highlighter": "10.1.0",
+    "@storybook/client-logger": "5.3.0-alpha.22",
+    "@storybook/theming": "5.3.0-alpha.22",
+    "@types/react-syntax-highlighter": "11.0.1",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "markdown-to-jsx": "^6.9.1",
@@ -39,12 +39,13 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-focus-lock": "^1.18.3",
+    "react-focus-lock": "^2.1.0",
     "react-helmet-async": "^1.0.2",
     "react-popper-tooltip": "^2.8.3",
-    "react-syntax-highlighter": "^8.0.1",
+    "react-syntax-highlighter": "^11.0.2",
     "react-textarea-autosize": "^7.1.0",
-    "simplebar-react": "^1.0.0-alpha.6"
+    "simplebar-react": "^1.0.0-alpha.6",
+    "ts-dedent": "^1.1.0"
   },
   "devDependencies": {
     "@types/react-textarea-autosize": "^4.3.3",

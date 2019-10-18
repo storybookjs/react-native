@@ -1,11 +1,11 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { PureComponent } from 'react';
 import { View, SafeAreaView, StyleSheet } from 'react-native';
-import GestureRecognizer, { GestureRecognizerConfig } from 'react-native-swipe-gestures';
+import GestureRecognizer from 'react-native-swipe-gestures';
 import Bar from './bar';
 import VisibilityButton from './visibility-button';
 
-const SWIPE_CONFIG: GestureRecognizerConfig = {
+const SWIPE_CONFIG = {
   velocityThreshold: 0.2,
   directionalOffsetThreshold: 80,
 };

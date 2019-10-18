@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement, ElementType, FunctionComponent } from 'react';
 import { IFrame } from './IFrame';
 import { EmptyBlock } from './EmptyBlock';
 import { ZoomContext } from './ZoomContext';
@@ -22,7 +22,7 @@ interface CommonProps {
 }
 
 type InlineStoryProps = {
-  storyFn: React.ElementType;
+  storyFn: ElementType;
 } & CommonProps;
 
 type IFrameStoryProps = CommonProps;
@@ -36,7 +36,7 @@ export type StoryProps = (InlineStoryProps | IFrameStoryProps | ErrorProps) & {
   inline: boolean;
 };
 
-const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => {
+const InlineZoomWrapper: FunctionComponent<{ scale: number }> = ({ scale, children }) => {
   return scale === 1 ? (
     <>{children}</>
   ) : (
@@ -53,23 +53,19 @@ const InlineZoomWrapper: React.FC<{ scale: number }> = ({ scale, children }) => 
   );
 };
 
-const InlineStory: React.FunctionComponent<InlineStoryProps> = ({ storyFn, height, id }) => (
+const InlineStory: FunctionComponent<InlineStoryProps> = ({ storyFn, height, id }) => (
   <div style={{ height }}>
     <ZoomContext.Consumer>
       {({ scale }) => (
         <InlineZoomWrapper scale={scale}>
-          {storyFn ? React.createElement(storyFn) : <EmptyBlock>{MISSING_STORY(id)}</EmptyBlock>}
+          {storyFn ? createElement(storyFn) : <EmptyBlock>{MISSING_STORY(id)}</EmptyBlock>}
         </InlineZoomWrapper>
       )}
     </ZoomContext.Consumer>
   </div>
 );
 
-const IFrameStory: React.FunctionComponent<IFrameStoryProps> = ({
-  id,
-  title,
-  height = '500px',
-}) => (
+const IFrameStory: FunctionComponent<IFrameStoryProps> = ({ id, title, height = '500px' }) => (
   <div style={{ width: '100%', height }}>
     <ZoomContext.Consumer>
       {({ scale }) => {
@@ -97,7 +93,7 @@ const IFrameStory: React.FunctionComponent<IFrameStoryProps> = ({
  * A story element, either renderend inline or in an iframe,
  * with configurable height.
  */
-const Story: React.FunctionComponent<StoryProps> = props => {
+const Story: FunctionComponent<StoryProps> = props => {
   const { error } = props as ErrorProps;
   const { storyFn } = props as InlineStoryProps;
   const { id, inline, title, height } = props;

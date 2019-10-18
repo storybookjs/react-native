@@ -4,6 +4,7 @@ import path from 'path';
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
+import stripJsonComments from 'strip-json-comments';
 import {
   isBuildAngularInstalled,
   normalizeAssetPatterns,
@@ -33,7 +34,7 @@ function getTsConfigOptions(tsConfigPath: Path) {
     return basicOptions;
   }
 
-  const tsConfig = JSON.parse(fs.readFileSync(tsConfigPath, 'utf8'));
+  const tsConfig = JSON.parse(stripJsonComments(fs.readFileSync(tsConfigPath, 'utf8')));
 
   const { baseUrl } = tsConfig.compilerOptions as CompilerOptions;
 
@@ -45,24 +46,30 @@ function getTsConfigOptions(tsConfigPath: Path) {
   return basicOptions;
 }
 
-export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
+export function getAngularCliConfig(dirToSearch: string) {
   const fname = path.join(dirToSearch, 'angular.json');
 
   if (!fs.existsSync(fname)) {
     return null;
   }
 
-  const angularJson = JSON.parse(fs.readFileSync(fname, 'utf8'));
-  const { projects, defaultProject } = angularJson;
+  return JSON.parse(stripJsonComments(fs.readFileSync(fname, 'utf8')));
+}
 
+export function getLeadingAngularCliProject(ngCliConfig: any) {
+  const { defaultProject } = ngCliConfig;
+  const { projects }: any = ngCliConfig;
   if (!projects || !Object.keys(projects).length) {
     throw new Error('angular.json must have projects entry.');
   }
 
   const fallbackProject = defaultProject && projects[defaultProject];
   const firstProject = projects[Object.keys(projects)[0]];
-  const project = projects.storybook || fallbackProject || firstProject;
+  return projects.storybook || fallbackProject || firstProject;
+}
 
+export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
+  const project = getLeadingAngularCliProject(getAngularCliConfig(dirToSearch));
   const { options: projectOptions } = project.architect.build;
 
   const normalizedAssets = normalizeAssetPatterns(

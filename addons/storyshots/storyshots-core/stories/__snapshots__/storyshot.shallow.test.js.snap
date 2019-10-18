@@ -45,13 +45,13 @@ exports[`Storyshots Another Button with text 1`] = `
 </button>
 `;
 
-exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
+exports[`Storyshots Async With Timeout 1`] = `
 <h1>
   
 </h1>
 `;
 
-exports[`Storyshots Button with some emoji 1`] = `
+exports[`Storyshots Button With Some Emoji 1`] = `
 <button
   onClick={[Function]}
   style={
@@ -76,7 +76,7 @@ exports[`Storyshots Button with some emoji 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button with text 1`] = `
+exports[`Storyshots Button With Text 1`] = `
 <button
   onClick={[Function]}
   style={
@@ -96,7 +96,7 @@ exports[`Storyshots Button with text 1`] = `
 </button>
 `;
 
-exports[`Storyshots Welcome to Storybook 1`] = `
+exports[`Storyshots Welcome To Storybook 1`] = `
 <Main>
   <Title>
     Welcome to storybook
@@ -122,8 +122,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     >
       stories
     </NavButton>
-     for a component called
-     
+     for a component called 
     <InlineCode>
       Button
     </InlineCode>
@@ -138,8 +137,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     <InlineCode>
       Button
     </InlineCode>
-     stories located at
-     
+     stories located at 
     <InlineCode>
       src/stories/index.js
     </InlineCode>
@@ -148,8 +146,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
   <p>
     Usually we create stories with smaller UI components in the app.
     <br />
-    Have a look at the
-     
+    Have a look at the 
     <Link
       href="https://storybook.js.org/basics/writing-stories"
       rel="noopener noreferrer"
@@ -157,8 +154,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
     >
       Writing Stories
     </Link>
-     
-    section in our documentation.
+     section in our documentation.
   </p>
   <Note>
     <b>

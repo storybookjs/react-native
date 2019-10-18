@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-object-literal-type-assertion */
 import { document } from 'global';
 import axe, { AxeResults, ElementContext, RunOptions, Spec } from 'axe-core';
 import deprecate from 'util-deprecate';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 
 import addons, { makeDecorator } from '@storybook/addons';
 import { EVENTS, PARAM_KEY } from './constants';
@@ -80,7 +79,7 @@ export const configureA11y = deprecate(
   (config: any) => {
     setup = config;
   },
-  stripIndents`
+  dedent`
     configureA11y is deprecated, please configure addon-a11y using the addParameter api:
     
     addParameters({
