@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "ng build",
-    "prebuild-storybook": "npm run storybook:prebuild && cd ../.. && yarn add node-sass -W -s && cd examples/angular-cli",
+    "prebuild-storybook": "npm run storybook:prebuild",
     "build-storybook": "build-storybook -s src/assets",
     "e2e": "ng e2e",
     "ng": "ng",
