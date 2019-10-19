@@ -120,12 +120,16 @@ You might use `getScreenshotOptions` to specify options for screenshot. Will be 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
-const getScreenshotOptions = ({context, url}) => {
+const getScreenshotOptions = ({ context, url }) => {
   return {
-    fullPage: false // Do not take the full page screenshot. Default is 'true' in Storyshots.
-  }
-}
-initStoryshots({suite: 'Image storyshots', test: imageSnapshot({storybookUrl: 'http://localhost:6006', getScreenshotOptions})});
+    encoding: 'base64', // encoding: 'base64' is a property required by puppeteer
+    fullPage: false, // Do not take the full page screenshot. Default is 'true' in Storyshots.,
+  };
+};
+initStoryshots({
+  suite: 'Image storyshots',
+  test: imageSnapshot({ storybookUrl: 'http://localhost:6006', getScreenshotOptions }),
+});
 ```
 
 `getScreenshotOptions` receives an object `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
@@ -156,16 +160,15 @@ import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 import puppeteer from 'puppeteer';
 
 (async function() {
-    initStoryshots({
-      suite: 'Image storyshots',
-      test: imageSnapshot({ 
-        storybookUrl: 'http://localhost:6006', 
-        getCustomBrowser: async () => puppeteer.connect('ws://yourUrl')
-      }),
-    });
+  initStoryshots({
+    suite: 'Image storyshots',
+    test: imageSnapshot({
+      storybookUrl: 'http://localhost:6006',
+      getCustomBrowser: async () => puppeteer.connect({ browserWSEndpoint: 'ws://yourUrl' }),
+    }),
+  });
 })();
 ```
-
 
 ### Customizing a `page` instance
 
@@ -202,7 +205,7 @@ You can find a working example of this in the [official-storybook](https://githu
 
 You have two options here, you can either:
 
-- Simply add the storyshots configuration inside any of your `test.js` file. You must ensure you have either a running storybook or a static build available.
+- Add the storyshots configuration inside any of your `test.js` file. You must ensure you have either a running storybook or a static build available.
 
 - Create a custom test file using Jest outside of the CRA scope:
 
@@ -224,7 +227,7 @@ You have two options here, you can either:
 
 ### Reminder
 
-An image snapshot is simply a screenshot taken by a web browser (in our case, Chrome).
+An image snapshot is a screenshot taken by a web browser (in our case, Chrome).
 
 The browser opens a page (either using the static build of storybook or a running instance of Storybook)
 

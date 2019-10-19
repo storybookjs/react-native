@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, Animated } from 'react-native';
 import styled from '@emotion/native';
-import { EmotionProps } from '../Shared/theme';
 
-const Container: typeof Animated.View = styled(Animated.View)`
-  background: ${(props: EmotionProps) => props.theme.backgroundColor};
-`;
+const Container = styled(Animated.View)(({ theme }) => ({
+  background: theme.backgroundColor,
+}));
 
 interface Props {
   style: any[];

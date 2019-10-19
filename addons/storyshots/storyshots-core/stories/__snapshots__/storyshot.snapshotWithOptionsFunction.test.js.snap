@@ -101,6 +101,7 @@ exports[`Storyshots Welcome To Storybook 1`] = `
   style={
     Object {
       "backgroundColor": "#fff",
+      "color": "#000",
       "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
       "lineHeight": 1.4,
       "padding": 15,

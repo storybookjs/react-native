@@ -118,7 +118,7 @@ addParameters({
 
 ### Use Custom Set of Devices
 
-This will replace all previous devices with `Kindle Fire 2` and `Kindle Fire HD` by simply calling `addParameters` with the two devices as `viewports` in `config.js` file in your `.storybook` directory.
+This will replace all previous devices with `Kindle Fire 2` and `Kindle Fire HD` by calling `addParameters` with the two devices as `viewports` in `config.js` file in your `.storybook` directory.
 
 ```js
 import { addParameters } from '@storybook/react';

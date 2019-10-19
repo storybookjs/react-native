@@ -1,30 +1,89 @@
-declare module 'react-native-swipe-gestures' {
-  export type GestureRecognizerConfig = Partial<{
-    velocityThreshold: number;
-    directionalOffsetThreshold: number;
-    gestureIsClickThreshold: number;
-  }>;
-
-  export enum SwipeDirections {
-    SWIPE_UP = 'SWIPE_UP',
-    SWIPE_DOWN = 'SWIPE_DOWN',
-    SWIPE_LEFT = 'SWIPE_LEFT',
-    SWIPE_RIGHT = 'SWIPE_RIGHT',
-  }
-
-  export interface Props {
-    onSwipe?: (swipeDirection: SwipeDirections) => void;
-    onSwipeLeft?: () => void;
-    onSwipeRight?: () => void;
-    onSwipeTop?: () => void;
-    onSwipeBottom?: () => void;
-    config: GestureRecognizerConfig;
-  }
-
-  declare class GestureRecognizer extends React.Component<Props> {}
-
-  export default GestureRecognizer;
-}
+import React, { Component } from 'react';
+import css from '@emotion/css';
+import {
+  CreateStyled,
+  CreateStyledComponentExtrinsic,
+} from '@emotion/styled-base';
+import ReactNative from 'react-native';
+import { theme } from './preview/components/Shared/theme'
 
 // https://github.com/emotion-js/emotion/pull/1176/
-declare module '@emotion/native';
+// meanwhile: https://github.com/emotion-js/emotion/issues/839#issuecomment-500195354
+declare module '@emotion/native' {
+  type StyledReactNativeComponents =
+    | 'ActivityIndicator'
+    | 'ActivityIndicatorIOS'
+    | 'ART'
+    | 'Button'
+    | 'DatePickerIOS'
+    | 'DrawerLayoutAndroid'
+    | 'Image'
+    | 'ImageBackground'
+    | 'ImageEditor'
+    | 'ImageStore'
+    | 'KeyboardAvoidingView'
+    | 'ListView'
+    | 'MapView'
+    | 'Modal'
+    | 'NavigatorIOS'
+    | 'Picker'
+    | 'PickerIOS'
+    | 'ProgressBarAndroid'
+    | 'ProgressViewIOS'
+    | 'ScrollView'
+    | 'SegmentedControlIOS'
+    | 'Slider'
+    | 'SliderIOS'
+    | 'SnapshotViewIOS'
+    | 'Switch'
+    | 'RecyclerViewBackedScrollView'
+    | 'RefreshControl'
+    | 'SafeAreaView'
+    | 'StatusBar'
+    | 'SwipeableListView'
+    | 'SwitchAndroid'
+    | 'SwitchIOS'
+    | 'TabBarIOS'
+    | 'Text'
+    | 'TextInput'
+    | 'ToastAndroid'
+    | 'ToolbarAndroid'
+    | 'Touchable'
+    | 'TouchableHighlight'
+    | 'TouchableNativeFeedback'
+    | 'TouchableOpacity'
+    | 'TouchableWithoutFeedback'
+    | 'View'
+    | 'ViewPagerAndroid'
+    | 'WebView'
+    | 'FlatList'
+    | 'SectionList'
+    | 'VirtualizedList';
+
+  type StyledComponentsForReactNative<
+    T extends keyof typeof ReactNative,
+    ExtraProps,
+    Theme
+  > = {
+    [K in T]: CreateStyledComponentExtrinsic<
+      typeof ReactNative[K],
+      ExtraProps,
+      Theme
+    >;
+  };
+
+  type MyTheme = typeof theme;
+
+  export interface Styled<Theme extends object = MyTheme, ExtraProps = {}>
+    extends CreateStyled<Theme>,
+      StyledComponentsForReactNative<
+        StyledReactNativeComponents,
+        ExtraProps,
+        Theme
+      > {}
+
+  export {css};
+
+  const styled: Styled;
+  export default styled;
+}

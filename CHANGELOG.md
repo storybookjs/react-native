@@ -1,3 +1,194 @@
+## 5.3.0-alpha.23 (October 19, 2019)
+
+### Features
+
+* Webpack: Enabled error details ([#8391](https://github.com/storybookjs/storybook/pull/8391))
+
+### Bug Fixes
+
+* Addon-docs: Fix React.forwardedRef/memo props ([#8445](https://github.com/storybookjs/storybook/pull/8445))
+* MDX: Handle `<Story>` name starting with number ([#8469](https://github.com/storybookjs/storybook/pull/8469))
+
+### Maintenance
+
+* ADD a step in circleci to upload storybook for angular ([#8477](https://github.com/storybookjs/storybook/pull/8477))
+* Core: Check module type in configure ([#8412](https://github.com/storybookjs/storybook/pull/8412))
+* Angular: Convert angular-cli stories to CSF ([#7668](https://github.com/storybookjs/storybook/pull/7668))
+* Typescript: Migrate @storybook/mithril ([#8320](https://github.com/storybookjs/storybook/pull/8320))
+
+## 5.3.0-alpha.22 (October 18, 2019)
+
+### Features
+
+* CLI: Add component meta to framework templates ([#8462](https://github.com/storybookjs/storybook/pull/8462))
+
+### Maintenance
+
+* Build: Add cypress to Storybook CI ([#8397](https://github.com/storybookjs/storybook/pull/8397))
+* Incorrect minimal required node version ([#8427](https://github.com/storybookjs/storybook/pull/8427))
+
+## 5.3.0-alpha.21 (October 17, 2019)
+
+### Features
+
+* CLI: React-scripts TS template & test ([#8451](https://github.com/storybookjs/storybook/pull/8451))
+* Addon-storysource: Add preset ([#8437](https://github.com/storybookjs/storybook/pull/8437))
+
+### Bug Fixes
+
+* UI: Fix React15 support ([#8454](https://github.com/storybookjs/storybook/pull/8454))
+* Addon-centered: Fix zoom issues for non-Firefox browsers ([#8442](https://github.com/storybookjs/storybook/pull/8442))
+* CLI: Add CRA preset to MDX template ([#8452](https://github.com/storybookjs/storybook/pull/8452))
+* CLI: Add preset-create-react-app to CRA presets template ([#8449](https://github.com/storybookjs/storybook/pull/8449))
+* CLI: Fix CRA-ts fixture package name ([#8457](https://github.com/storybookjs/storybook/pull/8457))
+
+## 5.3.0-alpha.20 (October 15, 2019)
+
+### Features
+
+* Addon-docs: Support MDX source in Preview w/ no Story blocks ([#7966](https://github.com/storybookjs/storybook/pull/7966))
+
+### Bug Fixes
+
+* Addon-docs: Fix react inline stories ([#8419](https://github.com/storybookjs/storybook/pull/8419))
+* React: Fix custom themes breaking welcome demo ([#8259](https://github.com/storybookjs/storybook/pull/8259))
+
+## 5.3.0-alpha.19 (October 15, 2019)
+
+### Features
+
+* React: Move Create React App support to external preset ([#8416](https://github.com/storybookjs/storybook/pull/8416))
+* CLI: MDX template support ([#8396](https://github.com/storybookjs/storybook/pull/8396))
+
+### Bug Fixes
+
+* Addon-jest: Make withTests type generic ([#8410](https://github.com/storybookjs/storybook/pull/8410))
+* Addon-docs: Don't error in React when there's no `prepareForInline` ([#8415](https://github.com/storybookjs/storybook/pull/8415))
+
+### Dependency Upgrades
+
+* [Security] Bump lodash from 4.17.11 to 4.17.15 ([#8351](https://github.com/storybookjs/storybook/pull/8351))
+
+## 5.3.0-alpha.18 (October 14, 2019)
+
+### Bug Fixes
+
+* CSF: Warn when CSF and `storiesOf` mixed in one file ([#8411](https://github.com/storybookjs/storybook/pull/8411))
+* Addon API: Clean preview hooks when removing a story ([#8408](https://github.com/storybookjs/storybook/pull/8408))
+* Addon-docs: Fix typo in default config ([#8403](https://github.com/storybookjs/storybook/pull/8403))
+* Angular: Fix angular2-template-loader / raw-loader version conflicts ([#8269](https://github.com/storybookjs/storybook/pull/8269))
+* CLI: Update button.svelte template ([#8369](https://github.com/storybookjs/storybook/pull/8369))
+
+### Maintenance
+
+* Official-storybook: Add a story with duplicate decorators ([#8407](https://github.com/storybookjs/storybook/pull/8407))
+
+## 5.2.4 (October 14, 2019)
+
+### Bug Fixes
+
+* Angular: Fix angular2-template-loader / raw-loader version conflicts ([#8269](https://github.com/storybookjs/storybook/pull/8269))
+* CSF: Warn when CSF and `storiesOf` mixed in one file ([#8411](https://github.com/storybookjs/storybook/pull/8411))
+* Addon API: Clean preview hooks when removing a story ([#8408](https://github.com/storybookjs/storybook/pull/8408))
+* Update button.svelte ([#8369](https://github.com/storybookjs/storybook/pull/8369))
+* CSF: Ignore __esModule export ([#8317](https://github.com/storybookjs/storybook/pull/8317))
+
+### Maintenance
+
+* Publish top-level .js and .d.ts files ([#8354](https://github.com/storybookjs/storybook/pull/8354))
+
+## 5.3.0-alpha.17 (October 10, 2019)
+
+### Maintenance
+
+* Publish top-level .js and .d.ts files ([#8354](https://github.com/storybookjs/storybook/pull/8354))
+
+## 5.3.0-alpha.16 (October 10, 2019)
+
+Publish failed
+
+## 5.3.0-alpha.15 (October 8, 2019)
+
+### Features
+
+* Addon-docs: support vue inline rendering ([#7929](https://github.com/storybookjs/storybook/pull/7929))
+
+### Maintenance
+
+* Typescript: Migrate addon-storyshots ([#7674](https://github.com/storybookjs/storybook/pull/7674))
+
+## 5.3.0-alpha.14 (October 8, 2019)
+
+NPM publish failed
+
+## 5.3.0-alpha.13 (October 8, 2019)
+
+### Features
+
+* MDX: Better ergonomics for documenting CSF ([#8312](https://github.com/storybookjs/storybook/pull/8312))
+* Addon-docs: Story parameter for disabling docs ([#8313](https://github.com/storybookjs/storybook/pull/8313))
+
+### Dependency Upgrades
+
+* Remove redundant dependency on hoist-non-react-statics (#6349) ([#8310](https://github.com/storybookjs/storybook/pull/8310))
+
+## 5.3.0-alpha.12 (October 7, 2019)
+
+### Features
+
+* CSF: Allow multiple CSF with same title ([#8133](https://github.com/storybookjs/storybook/pull/8133))
+
+### Bug Fixes
+
+* CSF: Ignore __esModule export ([#8317](https://github.com/storybookjs/storybook/pull/8317))
+* React: Improve type of storyFn ([#8197](https://github.com/storybookjs/storybook/pull/8197))
+
+## 5.2.3 (October 7, 2019)
+
+### Bug Fixes
+
+* Core: Fix lib/core whitelist ([#8182](https://github.com/storybookjs/storybook/pull/8182))
+
+## 5.2.2 (October 7, 2019)
+
+### Bug Fixes
+
+* Storyshots: First-class CSF support ([#8000](https://github.com/storybookjs/storybook/pull/8000))
+* UI: Move addon dependencies to devDependencies ([#8206](https://github.com/storybookjs/storybook/pull/8206))
+* Addon-docs: CSS classes for escape-hatch theming wrapper/content ([#8061](https://github.com/storybookjs/storybook/pull/8061))
+* CLI: Fix variable collisions in storiesof-to-csf ([#8106](https://github.com/storybookjs/storybook/pull/8106))
+* Addon-knobs: Add missing type def  #8105 ([#8118](https://github.com/storybookjs/storybook/pull/8118))
+* Dependencies: add @types/webpack-env to apps that depend on it ([#8119](https://github.com/storybookjs/storybook/pull/8119))
+* Core: Show exception rather than error on react error boundary ([#8100](https://github.com/storybookjs/storybook/pull/8100))
+* UI: Fix inline code styling for dark theme ([#8260](https://github.com/storybookjs/storybook/pull/8260))
+* Addon-ondevice-notes: Validate the state content ([#8261](https://github.com/storybookjs/storybook/pull/8261))
+* Telejson: New version with typings and bugfixes ([#8228](https://github.com/storybookjs/storybook/pull/8228))
+* React: Add DecoratorFn type to exports ([#8121](https://github.com/storybookjs/storybook/pull/8121))
+* Addon-knobs: Handle undefined array value ([#8006](https://github.com/storybookjs/storybook/pull/8006))
+* Preact: Allow JSX.Element story ([#8159](https://github.com/storybookjs/storybook/pull/8159))
+* Storyshots: Fix STORYBOOK_HOOKS_CONTEXT error ([#8163](https://github.com/storybookjs/storybook/pull/8163))
+* Update react-draggable to 4.0.3 ([#8145](https://github.com/storybookjs/storybook/pull/8145))
+
+## 5.3.0-alpha.11 (October 6, 2019)
+
+### Bug Fixes
+
+* Storyshots: Update `read-pkg-up` usage to work with version `7` ([#8299](https://github.com/storybookjs/storybook/pull/8299))
+
+### Maintenance
+
+* Remove `weak` dependency Node 12 ([#8300](https://github.com/storybookjs/storybook/pull/8300))
+
+## 5.3.0-alpha.10 (October 5, 2019)
+
+### Bug Fixes
+
+* Storyshots: First-class CSF support ([#8000](https://github.com/storybookjs/storybook/pull/8000))
+
+### Maintenance
+
+* Build: Add CLI test in github actions ([#8064](https://github.com/storybookjs/storybook/pull/8064))
+
 ## 5.3.0-alpha.9 (October 4, 2019)
 
 ### Features

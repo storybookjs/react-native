@@ -29,10 +29,9 @@ Here are some featured storybooks that you can reference to see how Storybook wo
 
 ## Create React App
 
-Support for Create React App is handled by [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app).
+Support for [Create React App](https://create-react-app.dev/) is handled by [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app).
 
 This preset enables support for all Create React App features, including Sass/SCSS and TypeScript.
-
 
 ## Typescript
 

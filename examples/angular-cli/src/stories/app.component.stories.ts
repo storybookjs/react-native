@@ -1,7 +1,14 @@
-import { storiesOf } from '@storybook/angular';
 import { AppComponent } from '../app/app.component';
 
-storiesOf('App Component', module).add('Component with separate template', () => ({
+export default {
+  title: 'App Component',
+};
+
+export const componentWithSeparateTemplate = () => ({
   component: AppComponent,
   props: {},
-}));
+});
+
+componentWithSeparateTemplate.story = {
+  name: 'Component with separate template',
+};

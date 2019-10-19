@@ -72,11 +72,11 @@ exports[`Storyshots Addon|Background background template 1`] = `
 >
   <ng-component>
     <storybook-button-component
-      _nghost-a-c2=""
+      _nghost-a-c0=""
       ng-reflect-text="Hello Button"
     >
       <button
-        _ngcontent-a-c2=""
+        _ngcontent-a-c0=""
       >
         Hello Button
       </button>

@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-/* eslint-disable global-require */
-
 const { spawn } = require('child_process');
 const { promisify } = require('util');
 const {
@@ -9,7 +7,6 @@ const {
   readFile: readFileRaw,
   writeFile: writeFileRaw,
   statSync,
-  cop,
 } = require('fs');
 const { join } = require('path');
 
@@ -22,15 +19,20 @@ const logger = console;
 
 const exec = async (command, args = [], options = {}) =>
   new Promise((resolve, reject) => {
-    const child = spawn(command, args, { ...options, stdio: 'inherit' });
+    const child = spawn(command, args, { ...options, stdio: 'inherit', shell: true });
 
-    child.on('close', code => {
-      if (code) {
+    child
+      .on('close', code => {
+        if (code) {
+          reject();
+        } else {
+          resolve();
+        }
+      })
+      .on('error', e => {
+        logger.error(e);
         reject();
-      } else {
-        resolve();
-      }
-    });
+      });
   });
 
 const hasBuildScript = async l => {
@@ -40,64 +42,8 @@ const hasBuildScript = async l => {
   return !!json.scripts['build-storybook'];
 };
 
-const handleExamples = async files => {
-  const deployables = files.filter(f => {
-    const packageJsonLocation = p(['examples', f, 'package.json']);
-    const stats = statSync(packageJsonLocation);
-
-    return stats.isFile() && hasBuildScript(packageJsonLocation);
-  });
-
-  await deployables.reduce(async (acc, d) => {
-    await acc;
-
-    logger.log('');
-    logger.log(
-      `-----------------${Array(d.length)
-        .fill('-')
-        .join('')}`
-    );
-    logger.log(`▶️  building: ${d}`);
-    logger.log(
-      `-----------------${Array(d.length)
-        .fill('-')
-        .join('')}`
-    );
-    const out = p(['built-storybooks', d]);
-    const cwd = p(['examples', d]);
-
-    await exec(`yarn`, [`build-storybook`, `--output-dir=${out}`, '--quiet'], { cwd });
-
-    logger.log('-------');
-    logger.log('✅ done');
-    logger.log('-------');
-  }, Promise.resolve());
-
-  const copy = require('recursive-copy');
-  const target = 'official-storybook';
-  const copyables = deployables.filter(f => f !== target);
-
-  await copyables.reduce(async (acc, d) => {
-    await acc;
-
-    logger.log(`💿 copy ${d} to built-storybooks`);
-    const to = p(['built-storybooks', target, d]);
-    const from = p(['built-storybooks', d]);
-
-    await copy(from, to, {
-      overwrite: true,
-    });
-  }, Promise.resolve());
-
-  logger.log('-------');
-  logger.log('✅ done');
-  logger.log('-------');
-  logger.log('');
-
-  logger.log(`📑 creating index`);
-
-  const indexLocation = p(['built-storybooks', 'index.html']);
-  const indexContent = `
+const createContent = deployables => {
+  return `
     <style>
       body {
         background: black;
@@ -168,6 +114,46 @@ const handleExamples = async files => {
 
     <iframe id="frame" src="/${deployables[0]}/" />
   `;
+};
+
+const handleExamples = async files => {
+  const deployables = files.filter(f => {
+    const packageJsonLocation = p(['examples', f, 'package.json']);
+    const stats = statSync(packageJsonLocation);
+
+    return stats.isFile() && hasBuildScript(packageJsonLocation);
+  });
+
+  await deployables.reduce(async (acc, d) => {
+    await acc;
+
+    logger.log('');
+    logger.log(
+      `-----------------${Array(d.length)
+        .fill('-')
+        .join('')}`
+    );
+    logger.log(`▶️  building: ${d}`);
+    logger.log(
+      `-----------------${Array(d.length)
+        .fill('-')
+        .join('')}`
+    );
+    const out = p(['built-storybooks', d]);
+    const cwd = p(['examples', d]);
+
+    await exec(`yarn`, [`build-storybook`, `--output-dir=${out}`, '--quiet'], { cwd });
+
+    logger.log('-------');
+    logger.log('✅ done');
+    logger.log('-------');
+  }, Promise.resolve());
+
+  logger.log('');
+  logger.log(`📑 creating index`);
+
+  const indexLocation = p(['built-storybooks', 'index.html']);
+  const indexContent = createContent(deployables);
 
   await writeFile(indexLocation, indexContent);
 
@@ -177,11 +163,16 @@ const handleExamples = async files => {
 };
 
 const run = async () => {
-  await exec('yarn', ['bootstrap', '--core']);
-
   const examples = await readdir(p(['examples']));
 
-  await handleExamples(examples);
+  const { length } = examples;
+  const [a, b] = [process.env.CIRCLE_NODE_INDEX || 0, process.env.CIRCLE_NODE_TOTAL || 1];
+  const step = Math.ceil(length / b);
+  const offset = step * a;
+
+  const list = examples.slice().splice(offset, step);
+
+  await handleExamples(list);
 };
 
 run();

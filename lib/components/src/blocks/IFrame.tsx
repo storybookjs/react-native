@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import window from 'global';
 
 interface IFrameProps {
@@ -18,7 +18,7 @@ interface BodyStyle {
   transformOrigin: string;
 }
 
-export class IFrame extends React.Component<IFrameProps> {
+export class IFrame extends Component<IFrameProps> {
   iframe: any = null;
 
   componentDidMount() {

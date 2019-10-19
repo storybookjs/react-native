@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inject-decorator positive - ts - csf includes storySource parameter in the default exported object 1`] = `
+"var addSourceDecorator = require(\\"@storybook/source-loader/preview\\").addSource;
+import React from \\"react\\";
+import { action } from \\"@storybook/addon-actions\\";
+import { Button } from \\"@storybook/react/demo\\";
+
+export default {parameters: {\\"storySource\\":{\\"source\\":\\"import React from \\\\\\"react\\\\\\";\\\\nimport { action } from \\\\\\"@storybook/addon-actions\\\\\\";\\\\nimport { Button } from \\\\\\"@storybook/react/demo\\\\\\";\\\\n\\\\nexport default {\\\\n  title: \\\\\\"Button\\\\\\"\\\\n};\\\\n\\\\nexport const text = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>Hello Button</Button>\\\\n);\\\\n\\\\nexport const emoji = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>\\\\n    <span role=\\\\\\"img\\\\\\" aria-label=\\\\\\"so cool\\\\\\">\\\\n      😀 😎 👍 💯\\\\n    </span>\\\\n  </Button>\\\\n);\\\\n\\",\\"locationsMap\\":{}},},
+  title: \\"Button\\"
+};
+
+export const text = addSourceDecorator(() => (
+  <Button onClick={action(\\"clicked\\")}>Hello Button</Button>
+), {__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__});;
+
+export const emoji = addSourceDecorator(() => (
+  <Button onClick={action(\\"clicked\\")}>
+    <span role=\\"img\\" aria-label=\\"so cool\\">
+      😀 😎 👍 💯
+    </span>
+  </Button>
+), {__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__});
+"
+`;
