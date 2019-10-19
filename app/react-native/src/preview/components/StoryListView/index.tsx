@@ -18,7 +18,7 @@ const SearchBar = styled.TextInput(
     paddingVertical: 5,
   },
   ({ theme }) => ({
-    background: theme.borderColor,
+    backgroundColor: theme.borderColor,
     color: theme.buttonActiveTextColor,
   })
 );
