@@ -2,6 +2,7 @@ import { VERSIONCHECK } from 'global';
 import semver from 'semver';
 import memoize from 'memoizerific';
 
+import { version } from 'punycode';
 import { version as currentVersion } from '../version';
 
 import { Module, API } from '../index';
@@ -30,13 +31,15 @@ export interface SubState {
   dismissedVersionNotification: undefined | string;
 }
 
-const getVersionCheckData = memoize(1)(() => {
-  try {
-    return JSON.parse(VERSIONCHECK).data;
-  } catch (e) {
-    return {};
+const getVersionCheckData = memoize(1)(
+  (): Versions => {
+    try {
+      return JSON.parse(VERSIONCHECK).data as Versions;
+    } catch (e) {
+      return {};
+    }
   }
-});
+);
 
 export interface SubAPI {
   getCurrentVersion: () => Version;
@@ -52,6 +55,7 @@ export default function({ store, mode }: Module) {
       current: {
         version: currentVersion,
       },
+      ...getVersionCheckData(),
     },
     dismissedVersionNotification,
   };
@@ -98,9 +102,11 @@ export default function({ store, mode }: Module) {
     if (api.versionUpdateAvailable()) {
       const latestVersion = api.getLatestVersion().version;
 
+      const diff = semver.diff(versions.current.version, versions.latest.version);
+
       if (
         latestVersion !== dismissedVersionNotification &&
-        !semver.patch(latestVersion) &&
+        diff !== 'patch' &&
         !semver.prerelease(latestVersion) &&
         mode !== 'production'
       ) {
