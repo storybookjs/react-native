@@ -97,10 +97,10 @@ First add the package. Make sure that the versions for your `@storybook/*` packa
 yarn add -D @storybook/addon-docs
 ```
 
-Docs has peer dependencies on `react` and `babel-loader`. If you want to write stories in MDX, you may need to add these dependencies as well:
+Docs has peer dependencies on `react`, `react-is`, and `babel-loader`. If you want to write stories in MDX, you may need to add these dependencies as well:
 
 ```sh
-yarn add -D react babel-loader
+yarn add -D react react-is babel-loader
 ```
 
 Then add the following to your `.storybook/presets.js` exports:

@@ -1,14 +1,12 @@
 /* eslint-disable no-underscore-dangle,react/forbid-foreign-prop-types */
-
 import PropTypes from 'prop-types';
+import { isForwardRef, isMemo } from 'react-is';
 import { PropDef } from '@storybook/components';
-import { Component } from '../blocks/shared';
+import { PropDefGetter, PropsExtractor, propsFromDocgen, hasDocgen } from '../../lib/propsUtils';
 
-interface PropDefMap {
+export interface PropDefMap {
   [p: string]: PropDef;
 }
-
-export type PropDefGetter = (type: Component) => PropDef[] | null;
 
 const propTypesMap = new Map();
 
@@ -20,30 +18,7 @@ Object.keys(PropTypes).forEach(typeName => {
   propTypesMap.set(type.isRequired, typeName);
 });
 
-const hasDocgen = (obj: any) => obj && obj.props && Object.keys(obj.props).length > 0;
-
-const propsFromDocgen: PropDefGetter = type => {
-  const props: PropDefMap = {};
-  const docgenInfoProps = type.__docgenInfo.props;
-
-  Object.keys(docgenInfoProps).forEach(property => {
-    const docgenInfoProp = docgenInfoProps[property];
-    const defaultValueDesc = docgenInfoProp.defaultValue || {};
-    const propType = docgenInfoProp.flowType || docgenInfoProp.type || 'other';
-
-    props[property] = {
-      name: property,
-      type: propType,
-      required: docgenInfoProp.required,
-      description: docgenInfoProp.description,
-      defaultValue: defaultValueDesc.value,
-    };
-  });
-
-  return Object.values(props);
-};
-
-const propsFromPropTypes: PropDefGetter = type => {
+const propsFromPropTypes: PropDefGetter = (type, section) => {
   const props: PropDefMap = {};
 
   if (type.propTypes) {
@@ -51,7 +26,7 @@ const propsFromPropTypes: PropDefGetter = type => {
       const typeInfo = type.propTypes[property];
       const required = typeInfo.isRequired === undefined;
       const docgenInfo =
-        type.__docgenInfo && type.__docgenInfo.props && type.__docgenInfo.props[property];
+        type.__docgenInfo && type.__docgenInfo[section] && type.__docgenInfo[section][property];
       const description = docgenInfo ? docgenInfo.description : null;
       let propType = propTypesMap.get(typeInfo) || 'other';
 
@@ -84,15 +59,22 @@ const propsFromPropTypes: PropDefGetter = type => {
   return Object.values(props);
 };
 
-export const getPropDefs: PropDefGetter = type => {
+export const getPropDefs: PropDefGetter = (type, section) => {
   let processedType = type;
-  if (type.render) {
-    processedType = type.render().type;
+  if (!hasDocgen(type)) {
+    if (isForwardRef(type) || type.render) {
+      processedType = type.render().type;
+    }
+    if (isMemo(type)) {
+      // (typeof type.type === 'function')?
+      processedType = type.type().type;
+    }
   }
-  if (typeof type.type === 'function') {
-    processedType = type.type().type;
-  }
-  return hasDocgen(processedType.__docgenInfo)
-    ? propsFromDocgen(processedType)
-    : propsFromPropTypes(processedType);
+  return hasDocgen(processedType)
+    ? propsFromDocgen(processedType, section)
+    : propsFromPropTypes(processedType, section);
 };
+
+export const extractProps: PropsExtractor = component => ({
+  rows: getPropDefs(component, 'props'),
+});
