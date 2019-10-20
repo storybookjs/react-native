@@ -1,7 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { styled } from '@storybook/theming';
 import { opacify, transparentize } from 'polished';
-import { PropRow } from './PropRow';
+import { PropRow, PropRowProps } from './PropRow';
+import { SectionRow, SectionRowProps } from './SectionRow';
 import { PropDef } from './PropDef';
 import { EmptyBlock } from '../EmptyBlock';
 import { ResetWrapper } from '../../typography/DocumentFormatting';
@@ -126,24 +127,60 @@ export interface PropsTableRowsProps {
   rows: PropDef[];
 }
 
+export interface PropsTableSectionsProps {
+  sections?: Record<string, PropDef[]>;
+}
+
 export interface PropsTableErrorProps {
   error: PropsTableError;
 }
 
-export type PropsTableProps = PropsTableRowsProps | PropsTableErrorProps;
+export type PropsTableProps = PropsTableRowsProps | PropsTableSectionsProps | PropsTableErrorProps;
+
+const PropsTableRow: FC<SectionRowProps | PropRowProps> = props => {
+  const { section } = props as SectionRowProps;
+  if (section) {
+    return <SectionRow section={section} />;
+  }
+  const { row } = props as PropRowProps;
+  return <PropRow row={row} />;
+};
 
 /**
  * Display the props for a component as a props table. Each row is a collection of
  * PropDefs, usually derived from docgen info for the component.
  */
-const PropsTable: FunctionComponent<PropsTableProps> = props => {
+const PropsTable: FC<PropsTableProps> = props => {
   const { error } = props as PropsTableErrorProps;
   if (error) {
     return <EmptyBlock>{error}</EmptyBlock>;
   }
 
-  const { rows } = props as PropsTableRowsProps;
-  if (rows.length === 0) {
+  let allRows: any[];
+  const { sections } = props as PropsTableSectionsProps;
+  if (sections) {
+    allRows = [];
+    Object.keys(sections).forEach(section => {
+      const rows = sections[section];
+      if (rows && rows.length > 0) {
+        allRows.push({ key: section, value: { section } });
+        rows.forEach(row => {
+          allRows.push({
+            key: `${section}_${row.name}`,
+            value: { row },
+          });
+        });
+      }
+    });
+  } else {
+    const { rows } = props as PropsTableRowsProps;
+    allRows = rows.map(row => ({
+      key: row.name,
+      value: { row },
+    }));
+  }
+
+  if (allRows.length === 0) {
     return <EmptyBlock>No props found for this component</EmptyBlock>;
   }
   return (
@@ -157,8 +194,8 @@ const PropsTable: FunctionComponent<PropsTableProps> = props => {
           </tr>
         </thead>
         <tbody>
-          {rows.map(row => (
-            <PropRow key={row.name} row={row} />
+          {allRows.map(row => (
+            <PropsTableRow key={row.key} {...row.value} />
           ))}
         </tbody>
       </Table>
