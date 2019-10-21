@@ -1,3 +1,21 @@
+## 5.3.0-alpha.23 (October 19, 2019)
+
+### Features
+
+* Webpack: Enabled error details ([#8391](https://github.com/storybookjs/storybook/pull/8391))
+
+### Bug Fixes
+
+* Addon-docs: Fix React.forwardedRef/memo props ([#8445](https://github.com/storybookjs/storybook/pull/8445))
+* MDX: Handle `<Story>` name starting with number ([#8469](https://github.com/storybookjs/storybook/pull/8469))
+
+### Maintenance
+
+* ADD a step in circleci to upload storybook for angular ([#8477](https://github.com/storybookjs/storybook/pull/8477))
+* Core: Check module type in configure ([#8412](https://github.com/storybookjs/storybook/pull/8412))
+* Angular: Convert angular-cli stories to CSF ([#7668](https://github.com/storybookjs/storybook/pull/7668))
+* Typescript: Migrate @storybook/mithril ([#8320](https://github.com/storybookjs/storybook/pull/8320))
+
 ## 5.3.0-alpha.22 (October 18, 2019)
 
 ### Features
