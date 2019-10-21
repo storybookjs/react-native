@@ -48,6 +48,7 @@
     "ts-dedent": "^1.1.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.9.0",
     "@types/react-textarea-autosize": "^4.3.3",
     "enzyme": "^3.9.0",
     "jest": "^24.7.1",
