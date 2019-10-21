@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`insertAfterImports imports 1`] = `
+"import foo;
+import bar;
+INSERT
+whatever;"
+`;
+
+exports[`insertAfterImports no imports 1`] = `
+"INSERT
+foo bar;
+baz;"
+`;
