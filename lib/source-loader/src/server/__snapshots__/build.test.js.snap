@@ -1,8 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`insertAfterImports addon-notes 1`] = `
+"import React from 'react';
+
+import BaseButton from '../components/BaseButton';
+import markdownNotes from './notes/notes.md';
+INSERT
+
+const markdownString = '...';"
+`;
+
 exports[`insertAfterImports imports 1`] = `
 "import foo;
 import bar;
+INSERT
+whatever;"
+`;
+
+exports[`insertAfterImports multi-line imports 1`] = `
+"import foo;
+import {
+  bar
+} from baz;
 INSERT
 whatever;"
 `;
@@ -11,4 +30,11 @@ exports[`insertAfterImports no imports 1`] = `
 "INSERT
 foo bar;
 baz;"
+`;
+
+exports[`insertAfterImports single-line imports 1`] = `
+"import foo;
+import { bar } from baz;
+INSERT
+whatever;"
 `;
