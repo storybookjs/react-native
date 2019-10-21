@@ -30,6 +30,7 @@
     "@storybook/client-logger": "5.2.4",
     "@storybook/theming": "5.2.4",
     "@types/react-syntax-highlighter": "10.1.0",
+    "@types/react-textarea-autosize": "^4.3.3",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "markdown-to-jsx": "^6.9.1",
@@ -47,7 +48,6 @@
     "simplebar-react": "^1.0.0-alpha.6"
   },
   "devDependencies": {
-    "@types/react-textarea-autosize": "^4.3.3",
     "enzyme": "^3.9.0",
     "jest": "^24.7.1",
     "jest-enzyme": "^7.0.2"
