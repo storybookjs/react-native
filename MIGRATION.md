@@ -117,7 +117,7 @@ This isn't a breaking change per se, because `addon-docs` is a new feature. Howe
 
 ### storySort option
 
-In 5.0.x the global option `sortStoriesByKind` option was [inadverttly removed](#sortstoriesbykind). In 5.2 we've introduced a new option, `storySort`, to replace it. `storySort` takes a comparator function, so it is strictly more powerful than `sortStoriesByKind`.
+In 5.0.x the global option `sortStoriesByKind` option was [inadvertently removed](#sortstoriesbykind). In 5.2 we've introduced a new option, `storySort`, to replace it. `storySort` takes a comparator function, so it is strictly more powerful than `sortStoriesByKind`.
 
 For example, here's how to sort by story ID using `storySort`:
 
