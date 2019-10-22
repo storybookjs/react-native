@@ -2298,6 +2298,30 @@
   dependencies:
     "@hapi/hoek" "8.x.x"
 
+"@hypnosphi/jscodeshift@^0.6.4":
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/@hypnosphi/jscodeshift/-/jscodeshift-0.6.4.tgz#49a3be6ac515af831f8a3e630380e3511c8c0fb7"
+  integrity sha512-Ir4KMO+LW+4CoB21OZm0gzbUjwNsZ2zBvOBm4r4GP+d+qyxj5iIJXZF/sJUYUAEJJ3LnlnHL0FzgfBge+7PfLQ==
+  dependencies:
+    "@babel/core" "^7.1.6"
+    "@babel/parser" "^7.1.6"
+    "@babel/plugin-proposal-class-properties" "^7.1.0"
+    "@babel/plugin-proposal-object-rest-spread" "^7.0.0"
+    "@babel/preset-env" "^7.1.6"
+    "@babel/preset-flow" "^7.0.0"
+    "@babel/preset-typescript" "^7.1.0"
+    "@babel/register" "^7.0.0"
+    babel-core "^7.0.0-bridge.0"
+    colors "^1.1.2"
+    flow-parser "0.*"
+    graceful-fs "^4.1.11"
+    micromatch "^3.1.10"
+    neo-async "^2.5.0"
+    node-dir "^0.1.17"
+    recast "^0.18.1"
+    temp "^0.8.1"
+    write-file-atomic "^2.3.0"
+
 "@iarna/toml@^2.2.0":
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.3.tgz#f060bf6eaafae4d56a7dac618980838b0696e2ab"
@@ -5464,6 +5488,11 @@ ast-types@0.12.4, ast-types@^0.12.2:
   version "0.12.4"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.12.4.tgz#71ce6383800f24efc9a1a3308f3a6e420a0974d1"
   integrity sha512-ky/YVYCbtVAS8TdMIaTiPFHwEpRB5z1hctepJplTr3UW5q8TDrpIMCILyk8pmLxGtn2KCtC/lSn7zOsaI7nzDw==
+
+ast-types@0.13.2:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.13.2.tgz#df39b677a911a83f3a049644fb74fdded23cea48"
+  integrity sha512-uWMHxJxtfj/1oZClOxDEV1sQ1HCDkA4MG8Gr69KKeBjEVH0R84WlejZ0y2DcwyBlpAEMltmVYkVgqfLFb2oyiA==
 
 ast-types@0.9.6:
   version "0.9.6"
@@ -25633,6 +25662,16 @@ recast@^0.17.3:
   integrity sha512-yoQRMRrK1lszNtbkGyM4kN45AwylV5hMiuEveUBlxytUViWevjvX6w+tzJt1LH4cfUhWt4NZvy3ThIhu6+m5wQ==
   dependencies:
     ast-types "0.12.4"
+    esprima "~4.0.0"
+    private "^0.1.8"
+    source-map "~0.6.1"
+
+recast@^0.18.1:
+  version "0.18.5"
+  resolved "https://registry.yarnpkg.com/recast/-/recast-0.18.5.tgz#9d5adbc07983a3c8145f3034812374a493e0fe4d"
+  integrity sha512-sD1WJrpLQAkXGyQZyGzTM75WJvyAd98II5CHdK3IYbt/cZlU0UzCRVU11nUFNXX9fBVEt4E9ajkMjBlUlG+Oog==
+  dependencies:
+    ast-types "0.13.2"
     esprima "~4.0.0"
     private "^0.1.8"
     source-map "~0.6.1"
