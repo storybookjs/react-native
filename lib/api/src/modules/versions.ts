@@ -2,7 +2,6 @@ import { VERSIONCHECK } from 'global';
 import semver from 'semver';
 import memoize from 'memoizerific';
 
-import { version } from 'punycode';
 import { version as currentVersion } from '../version';
 
 import { Module, API } from '../index';
@@ -84,7 +83,13 @@ export default function({ store, mode }: Module) {
         if (!latest.version) {
           return true;
         }
-        return semver.gt(latest.version, current.version);
+        if (!current.version) {
+          return true;
+        }
+
+        const diff = semver.diff(current.version, latest.version);
+
+        return semver.gt(latest.version, current.version) && diff !== 'patch';
       }
       return false;
     },
