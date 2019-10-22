@@ -16,7 +16,7 @@ declare const Welcome: {
 
 declare const Button: {
     ({ children, onClick, }: {
-        children: React.ReactChildren;
+        children: React.ReactNode;
         onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
     }): JSX.Element;
     displayName: string;
