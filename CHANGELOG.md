@@ -1,3 +1,21 @@
+## 5.3.0-alpha.24 (October 22, 2019)
+
+### Features
+
+* Docs: Highlight ts and tsx syntax ([#8493](https://github.com/storybookjs/storybook/pull/8493))
+
+### Bug Fixes
+
+* React-native-server: Convert port to number in CLI options ([#8491](https://github.com/storybookjs/storybook/pull/8491))
+
+### Maintenance
+
+* Automate codemod tests as jest snapshots ([#8506](https://github.com/storybookjs/storybook/pull/8506))
+
+### Dependency Upgrades
+
+* Add  "@types/react-textarea-autosize" to dependencies ([#8503](https://github.com/storybookjs/storybook/pull/8503))
+
 ## 5.3.0-alpha.23 (October 19, 2019)
 
 ### Features
