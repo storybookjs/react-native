@@ -16,6 +16,25 @@
 
 * Add  "@types/react-textarea-autosize" to dependencies ([#8503](https://github.com/storybookjs/storybook/pull/8503))
 
+## 5.2.5 (October 22, 2019)
+
+### Bug Fixes
+
+* UI: Fix React15 support ([#8454](https://github.com/storybookjs/storybook/pull/8454))
+* React-native-server: Convert port to number in CLI options ([#8491](https://github.com/storybookjs/storybook/pull/8491))
+* Addon-docs: Fix React.forwardedRef/memo props ([#8445](https://github.com/storybookjs/storybook/pull/8445))
+* MDX: Handle `<Story>` name starting with number ([#8469](https://github.com/storybookjs/storybook/pull/8469))
+* React: Fix custom themes breaking the welcome demo ([#8259](https://github.com/storybookjs/storybook/pull/8259))
+* Addon-jest: Make withTests type generic ([#8410](https://github.com/storybookjs/storybook/pull/8410))
+
+### Dependency Upgrades
+
+* [Security] Bump lodash from 4.17.11 to 4.17.15 ([#8351](https://github.com/storybookjs/storybook/pull/8351))
+
+### Dependency Upgrades
+
+* Add  "@types/react-textarea-autosize" to dependencies ([#8503](https://github.com/storybookjs/storybook/pull/8503))
+
 ## 5.3.0-alpha.23 (October 19, 2019)
 
 ### Features
