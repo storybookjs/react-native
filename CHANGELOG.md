@@ -1,3 +1,14 @@
+## 5.3.0-alpha.26 (October 23, 2019)
+
+Fix web-components storybook dependencies
+
+## 5.3.0-alpha.25 (October 23, 2019)
+
+### Features
+
+* Web-components: New storybook app ([#8400](https://github.com/storybookjs/storybook/pull/8400))
+* Core: Allow custom postcss config ([#8498](https://github.com/storybookjs/storybook/pull/8498))
+
 ## 5.3.0-alpha.24 (October 22, 2019)
 
 ### Features
