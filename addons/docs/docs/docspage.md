@@ -77,6 +77,8 @@ Here is a summary of the slots, where the data comes from by default, and the sl
 | Props       | component docgen props or propTypes | `propsSlot`       | React, Vue |
 | Stories     | storybook stories                   | `storiesSlot`     | All        |
 
+The `storiesSlot` uses the `docs.storyDescription` parameter to show a description for each story, if available.
+
 For more information on frameworks, see ["Framework support"](../README.md#framework-support)
 
 ### Title
