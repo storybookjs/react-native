@@ -39,7 +39,7 @@ storiesOf('Component', module)
 ```
 
 Then, you can use the `info` parameter to either pass certain options or specific documentation text to your stories.
-A complete list of possible configurations can be found at [in a later section](#setting-global-options).
+A complete list of possible configurations can be found [in a later section](#setting-global-options).
 This can be done per book of stories:
 
 ```js
