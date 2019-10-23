@@ -1,3 +1,7 @@
+## 5.3.0-alpha.26 (October 23, 2019)
+
+Fix web-components storybook dependencies
+
 ## 5.3.0-alpha.25 (October 23, 2019)
 
 ### Features
