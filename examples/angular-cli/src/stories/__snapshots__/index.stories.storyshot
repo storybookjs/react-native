@@ -8,11 +8,11 @@ exports[`Storyshots Button with some emoji 1`] = `
 >
   <ng-component>
     <storybook-button-component
-      _nghost-a-c12=""
+      _nghost-a-c4=""
       ng-reflect-text="😀 😎 👍 💯"
     >
       <button
-        _ngcontent-a-c12=""
+        _ngcontent-a-c4=""
       >
         😀 😎 👍 💯
       </button>
@@ -29,11 +29,11 @@ exports[`Storyshots Button with text 1`] = `
 >
   <ng-component>
     <storybook-button-component
-      _nghost-a-c11=""
+      _nghost-a-c3=""
       ng-reflect-text="Hello Button"
     >
       <button
-        _ngcontent-a-c11=""
+        _ngcontent-a-c3=""
       >
         Hello Button
       </button>
@@ -50,47 +50,47 @@ exports[`Storyshots Welcome to Storybook 1`] = `
 >
   <ng-component>
     <storybook-welcome-component
-      _nghost-a-c10=""
+      _nghost-a-c2=""
     >
       <main
-        _ngcontent-a-c10=""
+        _ngcontent-a-c2=""
       >
         <h1
-          _ngcontent-a-c10=""
+          _ngcontent-a-c2=""
         >
           Welcome to storybook
         </h1>
         <p
-          _ngcontent-a-c10=""
+          _ngcontent-a-c2=""
         >
           This is a UI component dev environment for your app.
         </p>
         <p
-          _ngcontent-a-c10=""
+          _ngcontent-a-c2=""
         >
            We've added some basic stories inside the 
           <span
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
             class="inline-code"
           >
             src/stories
           </span>
            directory. 
           <br
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
           />
            A story is a single state of one or more UI components. You can have as many stories as you want. 
           <br
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
           />
            (Basically a story is like a visual test case.) 
         </p>
         <p
-          _ngcontent-a-c10=""
+          _ngcontent-a-c2=""
         >
            See these sample 
           <a
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
             role="button"
             tabindex="0"
           >
@@ -98,7 +98,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           </a>
            for a component called 
           <span
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
             class="inline-code"
           >
             Button
@@ -106,26 +106,26 @@ exports[`Storyshots Welcome to Storybook 1`] = `
            . 
         </p>
         <p
-          _ngcontent-a-c10=""
+          _ngcontent-a-c2=""
         >
            Just like that, you can add your own components as stories. 
           <br
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
           />
            You can also edit those components and see changes right away. 
           <br
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
           />
            (Try editing the 
           <span
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
             class="inline-code"
           >
             Button
           </span>
            stories located at 
           <span
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
             class="inline-code"
           >
             src/stories/index.js
@@ -133,15 +133,15 @@ exports[`Storyshots Welcome to Storybook 1`] = `
           .) 
         </p>
         <p
-          _ngcontent-a-c10=""
+          _ngcontent-a-c2=""
         >
            Usually we create stories with smaller UI components in the app.
           <br
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
           />
            Have a look at the 
           <a
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
             href="https://storybook.js.org/basics/writing-stories"
             rel="noopener noreferrer"
             target="_blank"
@@ -151,20 +151,20 @@ exports[`Storyshots Welcome to Storybook 1`] = `
            section in our documentation. 
         </p>
         <p
-          _ngcontent-a-c10=""
+          _ngcontent-a-c2=""
           class="note"
         >
           <b
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
           >
             NOTE:
           </b>
           <br
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
           />
            Have a look at the 
           <span
-            _ngcontent-a-c10=""
+            _ngcontent-a-c2=""
             class="inline-code"
           >
             .storybook/webpack.config.js

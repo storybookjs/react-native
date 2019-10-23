@@ -28,6 +28,10 @@ import DocgenButton from '../../components/DocgenButton';
 
 <Props of="." />
 
+<Preview>
+  <Story id="nonexistent-story" />
+</Preview>
+
 ## A random color ColorPalette
 
 <ColorPalette>
@@ -82,6 +86,10 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
   <>This is an iframe!</>
 </Story>
 
+<Story name="theme">
+  <h1 className="text-lg">Hello Hugh</h1>
+</Story>
+
 <Story name="function" height="100px">
   {() => {
     return <div>function result</div>;
@@ -89,6 +97,10 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
 </Story>
 
 <Source name="hello story" />
+
+<Preview>
+  <Button onClick={action('clicked')}>view source in preview</Button>
+</Preview>
 
 ## Configurable height
 
@@ -113,3 +125,21 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
 Flow types are not officially supported
 
 <Props of={FlowTypeButton} />
+
+### withSource="none"
+
+<Preview withSource="none">
+  <h1>no source</h1>
+</Preview>
+
+<Preview withSource="none">
+  <Story name="no source preview">
+    <Button onClick={action('clicked')}>solo</Button>
+  </Story>
+</Preview>
+
+## Docs Disable
+
+<Story name="docs disable" parameters={{ docs: { disable: true } }}>
+  <Button>This souldn't show up in docs page</Button>
+</Story>

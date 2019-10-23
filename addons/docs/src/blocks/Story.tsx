@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { createElement, ElementType, FunctionComponent, ReactNode } from 'react';
+import { MDXProvider } from '@mdx-js/react';
+import { components as docsComponents } from '@storybook/components/html';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
 import { CURRENT_SELECTION } from './shared';
 
 import { DocsContext, DocsContextProps } from './DocsContext';
+
+export const storyBlockIdFromId = (storyId: string) => `story--${storyId}`;
+
+const resetComponents: Record<string, ElementType> = {};
+Object.keys(docsComponents).forEach(key => {
+  resetComponents[key] = (props: any) => createElement(key, props);
+});
 
 interface CommonProps {
   height?: string;
@@ -11,7 +20,7 @@ interface CommonProps {
 
 type StoryDefProps = {
   name: string;
-  children: React.ReactNode;
+  children: ReactNode;
 } & CommonProps;
 
 type StoryRefProps = {
@@ -31,7 +40,7 @@ const inferInlineStories = (framework: string): boolean => {
 
 export const getStoryProps = (
   props: StoryProps,
-  { id: currentId, storyStore, parameters, mdxStoryNameToId }: DocsContextProps
+  { id: currentId, storyStore, parameters, mdxStoryNameToId }: DocsContextProps | null
 ): PureStoryProps => {
   const { id } = props as StoryRefProps;
   const { name } = props as StoryDefProps;
@@ -40,25 +49,52 @@ export const getStoryProps = (
 
   const { height, inline } = props;
   const data = storyStore.fromId(previewId);
-  const { framework = null } = parameters || {};
+  const { framework = null } = (data && data.parameters) || {};
+
+  const docsParam = (data && data.parameters && data.parameters.docs) || {};
+
+  if (docsParam.disable) {
+    return null;
+  }
 
   // prefer props, then global options, then framework-inferred values
-  const { inlineStories = inferInlineStories(framework), iframeHeight = undefined } =
-    (parameters && parameters.docs) || {};
+  const {
+    inlineStories = inferInlineStories(framework),
+    iframeHeight = undefined,
+    prepareForInline = undefined,
+  } = docsParam;
+  const { storyFn = undefined, name: storyName = undefined } = data || {};
+
+  const storyIsInline = typeof inline === 'boolean' ? inline : inlineStories;
+  if (storyIsInline && !prepareForInline && framework !== 'react') {
+    throw new Error(
+      `Story '${storyName}' is set to render inline, but no 'prepareForInline' function is implemented in your docs configuration!`
+    );
+  }
+
   return {
-    inline: typeof inline === 'boolean' ? inline : inlineStories,
+    inline: storyIsInline,
     id: previewId,
-    storyFn: data && data.storyFn,
-    height: height || iframeHeight,
-    title: data && data.name,
+    storyFn: prepareForInline && storyFn ? () => prepareForInline(storyFn) : storyFn,
+    height: height || (storyIsInline ? undefined : iframeHeight),
+    title: storyName,
   };
 };
 
-const StoryContainer: React.FunctionComponent<StoryProps> = props => (
+const StoryContainer: FunctionComponent<StoryProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const storyProps = getStoryProps(props, context);
-      return <Story {...storyProps} />;
+      if (!storyProps) {
+        return null;
+      }
+      return (
+        <div id={storyBlockIdFromId(storyProps.id)}>
+          <MDXProvider components={resetComponents}>
+            <Story {...storyProps} />
+          </MDXProvider>
+        </div>
+      );
     }}
   </DocsContext.Consumer>
 );

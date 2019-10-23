@@ -69,7 +69,6 @@ export class Channel {
     const event: ChannelEvent = { type: eventName, args, from: this.sender };
     let options = {};
     if (args.length >= 1 && args[0] && args[0].options) {
-      // eslint-disable-next-line prefer-destructuring
       options = args[0].options;
     }
 
@@ -124,6 +123,10 @@ export class Channel {
 
   on(eventName: string, listener: Listener) {
     this.addListener(eventName, listener);
+  }
+
+  off(eventName: string, listener: Listener) {
+    this.removeListener(eventName, listener);
   }
 
   private handleEvent(event: ChannelEvent, isPeer = false) {

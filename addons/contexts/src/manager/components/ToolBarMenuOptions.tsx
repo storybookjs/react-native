@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { TooltipLinkList } from '@storybook/components';
 import { OPT_OUT } from '../../shared/constants';
 import { FCNoChildren } from '../../shared/types.d';

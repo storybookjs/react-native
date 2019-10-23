@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children, FunctionComponent, ReactElement, ReactNode, useState } from 'react';
 import { styled } from '@storybook/theming';
 import { darken } from 'polished';
 import { logger } from '@storybook/client-logger';
@@ -65,7 +65,7 @@ const PreviewContainer = styled.div({
 });
 
 interface SourceItem {
-  source?: React.ReactElement;
+  source?: ReactElement;
   actionItem: ActionItem;
 }
 
@@ -99,9 +99,9 @@ const getSource = (
     }
   }
 };
-function getStoryId(children: React.ReactNode) {
-  if (React.Children.count(children) === 1) {
-    const elt = children as React.ReactElement;
+function getStoryId(children: ReactNode) {
+  if (Children.count(children) === 1) {
+    const elt = children as ReactElement;
     if (elt.props) {
       return elt.props.id;
     }
@@ -114,7 +114,7 @@ function getStoryId(children: React.ReactNode) {
  * items. The preview also shows the source for the component
  * as a drop-down.
  */
-const Preview: React.FunctionComponent<PreviewProps> = ({
+const Preview: FunctionComponent<PreviewProps> = ({
   isColumn,
   columns,
   children,
@@ -123,9 +123,9 @@ const Preview: React.FunctionComponent<PreviewProps> = ({
   isExpanded = false,
   ...props
 }) => {
-  const [expanded, setExpanded] = React.useState(isExpanded);
+  const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem } = getSource(withSource, expanded, setExpanded);
-  const [scale, setScale] = React.useState(1);
+  const [scale, setScale] = useState(1);
 
   if (withToolbar && Array.isArray(children)) {
     logger.warn('Cannot use toolbar with multiple preview children, disabling');

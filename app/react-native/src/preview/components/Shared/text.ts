@@ -1,19 +1,22 @@
 import styled from '@emotion/native';
-import { EmotionProps } from './theme';
 
-export const Header = styled.Text`
-  font-size: 20;
-  color: ${(props: EmotionProps) => props.theme.headerTextColor};
-  ${(props: any) => props.selected && 'font-weight: bold;'}
-`;
+export const Header = styled.Text<{ selected: boolean }>(
+  ({ theme }) => ({
+    fontSize: 20,
+    color: theme.headerTextColor,
+  }),
+  ({ selected }) => (selected ? { fontWeight: 'bold' } : {})
+);
 
-export const Name = styled.Text`
-  font-size: 16;
-  color: ${(props: EmotionProps) => props.theme.headerTextColor};
-  ${(props: any) => props.selected && 'font-weight: bold;'}
-`;
+export const Name = styled.Text<{ selected: boolean }>(
+  ({ theme }) => ({
+    fontSize: 16,
+    color: theme.headerTextColor,
+  }),
+  ({ selected }) => (selected ? { fontWeight: 'bold' } : {})
+);
 
-export const Label = styled.Text`
-  font-size: 18;
-  color: ${(props: EmotionProps) => props.theme.labelColor};
-`;
+export const Label = styled.Text(({ theme }) => ({
+  fontSize: 18,
+  color: theme.labelColor,
+}));

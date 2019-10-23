@@ -2,16 +2,15 @@ import React, { PureComponent } from 'react';
 import styled from '@emotion/native';
 import Button from './button';
 import { NAVIGATOR, PREVIEW, ADDONS } from './constants';
-import { EmotionProps } from '../../Shared/theme';
 
-const Container = styled.View`
-  flex-direction: row;
-  padding-horizontal: 8;
-  background: ${(props: EmotionProps) => props.theme.backgroundColor};
-  border-top-width: 1;
-  border-bottom-width: 1;
-  border-color: ${(props: EmotionProps) => props.theme.borderColor};
-`;
+const Container = styled.View(({ theme }) => ({
+  flexDirection: 'row',
+  paddingHorizontal: 8,
+  background: theme.backgroundColor,
+  borderTopWidth: 1,
+  borderBottomWidth: 1,
+  borderColor: theme.borderColor,
+}));
 
 export interface Props {
   index: number;

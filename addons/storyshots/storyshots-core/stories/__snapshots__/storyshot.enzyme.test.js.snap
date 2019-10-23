@@ -53,13 +53,13 @@ exports[`Storyshots Another Button with text 1`] = `
 </Button>
 `;
 
-exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
+exports[`Storyshots Async With Timeout 1`] = `
 <AsyncTestComponent>
   <h1 />
 </AsyncTestComponent>
 `;
 
-exports[`Storyshots Button with some emoji 1`] = `
+exports[`Storyshots Button With Some Emoji 1`] = `
 <Button
   onClick={[Function]}
 >
@@ -88,7 +88,7 @@ exports[`Storyshots Button with some emoji 1`] = `
 </Button>
 `;
 
-exports[`Storyshots Button with text 1`] = `
+exports[`Storyshots Button With Text 1`] = `
 <Button
   onClick={[Function]}
 >
@@ -112,7 +112,7 @@ exports[`Storyshots Button with text 1`] = `
 </Button>
 `;
 
-exports[`Storyshots Welcome to Storybook 1`] = `
+exports[`Storyshots Welcome To Storybook 1`] = `
 <Welcome
   showApp={[Function]}
 >
@@ -121,6 +121,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
       style={
         Object {
           "backgroundColor": "#fff",
+          "color": "#000",
           "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
           "lineHeight": 1.4,
           "padding": 15,
@@ -187,8 +188,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
             stories
           </button>
         </NavButton>
-         for a component called
-         
+         for a component called 
         <InlineCode>
           <code
             style={
@@ -231,8 +231,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
             Button
           </code>
         </InlineCode>
-         stories located at
-         
+         stories located at 
         <InlineCode>
           <code
             style={
@@ -255,8 +254,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
       <p>
         Usually we create stories with smaller UI components in the app.
         <br />
-        Have a look at the
-         
+        Have a look at the 
         <Link
           href="https://storybook.js.org/basics/writing-stories"
           rel="noopener noreferrer"
@@ -278,8 +276,7 @@ exports[`Storyshots Welcome to Storybook 1`] = `
             Writing Stories
           </a>
         </Link>
-         
-        section in our documentation.
+         section in our documentation.
       </p>
       <Note>
         <p

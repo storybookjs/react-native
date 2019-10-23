@@ -22,7 +22,7 @@ Next automatically defines `React` for all of your files via a babel plugin. You
 
 ### How do I setup Storybook to share Webpack configuration with Next.js?
 
-You can generally reuse webpack rules fairly easily by placing them in a file that is `require()`-ed from both your `next.config.js` and your `.storybook/webpack.config.js` files. For example, [this gist](https://gist.github.com/metasean/cadd2becd60cc3b295bf49895a56f9b4) sets both next.js and storybook up with global stylesheets.
+You can generally reuse webpack rules by placing them in a file that is `require()`-ed from both your `next.config.js` and your `.storybook/webpack.config.js` files. For example, [this gist](https://gist.github.com/metasean/cadd2becd60cc3b295bf49895a56f9b4) sets both next.js and storybook up with global stylesheets.
 
 ### Why is there no addons channel?
 

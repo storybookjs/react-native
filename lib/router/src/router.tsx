@@ -1,5 +1,5 @@
 import { document } from 'global';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { Link, Location, navigate, LocationProvider, RouteComponentProps } from '@reach/router';
 import { ToggleVisibility } from './visibility';
@@ -17,23 +17,23 @@ interface MatchingData {
 }
 
 interface QueryLocationProps {
-  children: (renderData: RenderData) => React.ReactNode;
+  children: (renderData: RenderData) => ReactNode;
 }
 interface QueryMatchProps {
   path: string;
   startsWith: boolean;
-  children: (matchingData: MatchingData) => React.ReactNode;
+  children: (matchingData: MatchingData) => ReactNode;
 }
 interface RouteProps {
   path: string;
   startsWith: boolean;
   hideOnly: boolean;
-  children: (renderData: RenderData) => React.ReactNode;
+  children: (renderData: RenderData) => ReactNode;
 }
 
 interface QueryLinkProps {
   to: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const getBase = () => `${document.location.pathname}?`;
@@ -54,7 +54,7 @@ QueryLink.displayName = 'QueryLink';
 // and will be called whenever it changes when it changes
 const QueryLocation = ({ children }: QueryLocationProps) => (
   <Location>
-    {({ location }: RouteComponentProps): React.ReactNode => {
+    {({ location }: RouteComponentProps): ReactNode => {
       const { path } = queryFromString(location.search);
       const { viewMode, storyId } = parsePath(path);
       return children({ path, location, navigate: queryNavigate, viewMode, storyId });

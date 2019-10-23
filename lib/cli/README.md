@@ -4,7 +4,7 @@ Storybook CLI (_Command Line Interface_) is the easiest way to add [Storybook](h
 
 ![Screenshot](docs/getstorybook.png)
 
-Just go to your project and run:
+Go to your project and run:
 
 ```sh
 cd my-app
