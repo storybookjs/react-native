@@ -89,7 +89,9 @@ export default function({ store, mode }: Module) {
 
         const diff = semver.diff(current.version, latest.version);
 
-        return semver.gt(latest.version, current.version) && diff !== 'patch';
+        return (
+          semver.gt(latest.version, current.version) && diff !== 'patch' && !diff.includes('pre')
+        );
       }
       return false;
     },
