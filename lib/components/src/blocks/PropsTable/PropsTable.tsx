@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { styled } from '@storybook/theming';
-import { opacify, transparentize } from 'polished';
+import { opacify, transparentize, darken, lighten } from 'polished';
 import { PropRow, PropRowProps } from './PropRow';
 import { SectionRow, SectionRowProps } from './SectionRow';
 import { PropDef } from './PropDef';
@@ -78,19 +78,22 @@ export const Table = styled.table<{}>(({ theme }) => ({
     marginLeft: 1,
     marginRight: 1,
 
-    'tr:first-child td:first-child': {
-      borderTopLeftRadius: theme.appBorderRadius,
+    'tr:first-child': {
+      'td:first-child, th:first-child': {
+        borderTopLeftRadius: theme.appBorderRadius,
+      },
+      'td:last-child, th:last-child': {
+        borderTopRightRadius: theme.appBorderRadius,
+      },
     },
 
-    'tr:first-child td:last-child': {
-      borderTopRightRadius: theme.appBorderRadius,
-    },
-    'tr:last-child td:first-child': {
-      borderBottomLeftRadius: theme.appBorderRadius,
-    },
-
-    'tr:last-child td:last-child': {
-      borderBottomRightRadius: theme.appBorderRadius,
+    'tr:last-child': {
+      'td:first-child, th:first-child': {
+        borderBottomLeftRadius: theme.appBorderRadius,
+      },
+      'td:last-child, th:last-child': {
+        borderBottomRightRadius: theme.appBorderRadius,
+      },
     },
 
     tbody: {
@@ -105,8 +108,14 @@ export const Table = styled.table<{}>(({ theme }) => ({
 
       tr: {
         background: 'transparent',
+        overflow: 'hidden',
         '&:not(:first-child)': {
-          borderTop: `1px solid ${theme.appBorderColor}`,
+          borderTopWidth: 1,
+          borderTopStyle: 'solid',
+          borderTopColor:
+            theme.base === 'light'
+              ? darken(0.1, theme.background.content)
+              : lighten(0.05, theme.background.content),
         },
       },
 
