@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Custom|Style Default Story 1`] = `
+exports[`Storyshots Addon|Docs With Some Emoji 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -8,20 +8,20 @@ exports[`Storyshots Custom|Style Default Story 1`] = `
 >
   <ng-component>
     <storybook-button-component
-      _nghost-a-c21=""
-      ng-reflect-text="Button with custom styles"
+      _nghost-a-c16=""
+      ng-reflect-text="😀 😎 👍 💯"
     >
       <button
-        _ngcontent-a-c21=""
+        _ngcontent-a-c16=""
       >
-        Button with custom styles
+        😀 😎 👍 💯
       </button>
     </storybook-button-component>
   </ng-component>
 </storybook-dynamic-app-root>
 `;
 
-exports[`Storyshots Custom|Style With Knobs Story 1`] = `
+exports[`Storyshots Addon|Docs With Text 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -29,13 +29,13 @@ exports[`Storyshots Custom|Style With Knobs Story 1`] = `
 >
   <ng-component>
     <storybook-button-component
-      _nghost-a-c22=""
-      ng-reflect-text="Button with custom styles"
+      _nghost-a-c15=""
+      ng-reflect-text="Hello Button"
     >
       <button
-        _ngcontent-a-c22=""
+        _ngcontent-a-c15=""
       >
-        Button with custom styles
+        Hello Button
       </button>
     </storybook-button-component>
   </ng-component>
