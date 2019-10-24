@@ -63,7 +63,8 @@
   },
   "peerDependencies": {
     "babel-loader": "^8.0.0",
-    "react": "^16.8.0"
+    "react": "^16.8.0",
+    "react-is": "^16.8.0"
   },
   "publishConfig": {
     "access": "public"

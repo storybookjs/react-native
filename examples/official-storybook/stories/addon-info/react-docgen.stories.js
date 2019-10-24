@@ -2,7 +2,7 @@ import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
-import DocgenButton from '../../components/DocgenButton';
+import { DocgenButton } from '../../components/DocgenButton';
 import FlowTypeButton from '../../components/FlowTypeButton';
 import BaseButton from '../../components/BaseButton';
 import { NamedExportButton } from '../../components/NamedExportButton';

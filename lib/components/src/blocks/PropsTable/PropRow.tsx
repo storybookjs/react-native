@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 import { PropDef } from './PropDef';
@@ -20,7 +20,7 @@ interface PrettyPropValProps {
   value: any;
 }
 
-interface PropRowProps {
+export interface PropRowProps {
   row: PropDef;
   // FIXME: row options
 }
@@ -75,15 +75,15 @@ const prettyPrint = (type: any): string => {
   }
 };
 
-export const PrettyPropType: FunctionComponent<PrettyPropTypeProps> = ({ type }) => (
+export const PrettyPropType: FC<PrettyPropTypeProps> = ({ type }) => (
   <span>{prettyPrint(type)}</span>
 );
 
-export const PrettyPropVal: FunctionComponent<PrettyPropValProps> = ({ value }) => (
+export const PrettyPropVal: FC<PrettyPropValProps> = ({ value }) => (
   <span>{JSON.stringify(value)}</span>
 );
 
-export const PropRow: FunctionComponent<PropRowProps> = ({
+export const PropRow: FC<PropRowProps> = ({
   row: { name, type, required, description, defaultValue },
 }) => (
   <tr>
