@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { mount } from 'enzyme';
 
 import { withInfo, setDefaults } from '.';
 import externalMdDocs from '../README.md';
 
-/* eslint-disable */
 const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
   <div>
     <h1>{String(func)}</h1>
@@ -22,7 +23,6 @@ const TestComponent = ({ func, obj, array, number, string, bool, empty }) => (
     </ul>
   </div>
 );
-/* eslint-enable */
 
 const reactClassPath = 'some/path/TestComponent.jsx';
 const storybookReactClassMock = {
@@ -47,7 +47,6 @@ const testMarkdown = `# Test story
 containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)`;
 
 describe('addon Info', () => {
-  // eslint-disable-next-line react/prop-types
   const createStoryFn = Component => ({ name }) => (
     <div>
       It's a {name} story:

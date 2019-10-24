@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { PropsTable, PropsTableError, PropsTableProps, PropDef } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, CURRENT_SELECTION } from './shared';
@@ -44,7 +44,7 @@ export const getPropsTableProps = (
   }
 };
 
-const PropsContainer: React.FunctionComponent<PropsProps> = props => (
+const PropsContainer: FunctionComponent<PropsProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const propsTableProps = getPropsTableProps(props, context);

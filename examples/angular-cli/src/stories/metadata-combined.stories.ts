@@ -1,9 +1,10 @@
-import { storiesOf, moduleMetadata } from '@storybook/angular';
+import { moduleMetadata } from '@storybook/angular';
 import { TokenComponent, ITEMS, DEFAULT_NAME } from './moduleMetadata/token.component';
 import { CustomPipePipe } from './moduleMetadata/custom.pipe';
 
-storiesOf('Metadata|Combined', module)
-  .addDecorator(
+export default {
+  title: 'Metadata|Combined',
+  decorators: [
     moduleMetadata({
       imports: [],
       declarations: [TokenComponent],
@@ -17,20 +18,31 @@ storiesOf('Metadata|Combined', module)
           useValue: 'Provider Name',
         },
       ],
-    })
-  )
-  .add('Combined 1', () => ({
-    template: `<storybook-simple-token-component [name]="name"></storybook-simple-token-component>`,
-    props: {
-      name: 'Prop Name',
-    },
-  }))
-  .add('Combined 2', () => ({
-    template: `<storybook-simple-token-component [name]="name | customPipe"></storybook-simple-token-component>`,
-    props: {
-      name: 'Prop Name',
-    },
-    moduleMetadata: {
-      declarations: [CustomPipePipe],
-    },
-  }));
+    }),
+  ],
+};
+
+export const combined1 = () => ({
+  template: `<storybook-simple-token-component [name]="name"></storybook-simple-token-component>`,
+  props: {
+    name: 'Prop Name',
+  },
+});
+
+combined1.story = {
+  name: 'Combined 1',
+};
+
+export const combined2 = () => ({
+  template: `<storybook-simple-token-component [name]="name | customPipe"></storybook-simple-token-component>`,
+  props: {
+    name: 'Prop Name',
+  },
+  moduleMetadata: {
+    declarations: [CustomPipePipe],
+  },
+});
+
+combined2.story = {
+  name: 'Combined 2',
+};

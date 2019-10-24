@@ -1,5 +1,5 @@
 import { document } from 'global';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 
 let previousComponent = null;
 
@@ -67,7 +67,7 @@ export default function render({
   if (!DefaultCompatComponent) {
     showError({
       title: `Expecting a Svelte component from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
+      description: dedent`
         Did you forget to return the Svelte component configuration from the story?
         Use "() => ({ Component: YourComponent, data: {} })"
         when defining the story.

@@ -3,15 +3,15 @@ id: 'theming'
 title: 'Theming Storybook'
 ---
 
-Storybook is theme-able! Just set a `theme` in the [options parameter](../options-parameter)!
+Storybook is theme-able! Set a `theme` in the [options parameter](../options-parameter)!
 
 ## Global theming
 
-It's really easy to theme Storybook globally.
+It's possible to theme Storybook globally.
 
-We've created two basic themes that look good of the box: "normal" (a light theme) and "dark" (a dark theme).
+We've created two basic themes that look good of the box: "normal" (a light theme) and "dark" (a dark theme). Unless you've set your preferred color scheme as dark Storybook will use the light theme as default.
 
-As the simplest example, you can tell Storybook to use the "dark" theme by modifying `.storybook/config.js`:
+As an example, you can tell Storybook to use the "dark" theme by modifying `.storybook/config.js`:
 
 ```js
 import { addParameters } from '@storybook/react';

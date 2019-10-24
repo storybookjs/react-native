@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 import { parseKind } from '@storybook/router';
 import { DocsPage as PureDocsPage, PropsTable, PropsTableProps } from '@storybook/components';
@@ -79,7 +79,7 @@ const defaultStoriesSlot: StoriesSlot = stories => {
 const StoriesHeading = H2;
 const StoryHeading = H3;
 
-const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
+const DocsStory: FunctionComponent<DocsStoryProps> = ({
   id,
   name,
   expanded = true,
@@ -97,7 +97,7 @@ const DocsStory: React.FunctionComponent<DocsStoryProps> = ({
   </Anchor>
 );
 
-export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
+export const DocsPage: FunctionComponent<DocsPageProps> = ({
   titleSlot = defaultTitleSlot,
   subtitleSlot = defaultSubtitleSlot,
   descriptionSlot = defaultDescriptionSlot,
@@ -113,7 +113,9 @@ export const DocsPage: React.FunctionComponent<DocsPageProps> = ({
       const propsTableProps = propsSlot(context);
 
       const { selectedKind, storyStore } = context;
-      const componentStories = storyStore.getStoriesForKind(selectedKind);
+      const componentStories = storyStore
+        .getStoriesForKind(selectedKind)
+        .filter((s: any) => !(s.parameters && s.parameters.docs && s.parameters.docs.disable));
       const primary = primarySlot(componentStories, context);
       const stories = storiesSlot(componentStories, context);
 

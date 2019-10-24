@@ -1,23 +1,18 @@
 import React, { PureComponent } from 'react';
 import { TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
-import { EmotionProps } from '../../Shared/theme';
 
-type EmotionButtonProps = EmotionProps & { active: boolean };
+const ActiveBorder = styled.View<{ active: boolean }>(({ active, theme }) => ({
+  background: active ? theme.borderColor : 'transparent',
+  height: 3,
+}));
 
-const ActiveBorder = styled.View`
-  background: ${(props: EmotionButtonProps) =>
-    props.active ? props.theme.borderColor : 'transparent'};
-  height: 3;
-`;
-
-const ButtonText = styled.Text`
-  color: ${(props: EmotionButtonProps) =>
-    props.active ? props.theme.buttonActiveTextColor : props.theme.buttonTextColor};
-  padding-horizontal: 8;
-  padding-vertical: 10;
-  font-size: 11;
-`;
+const ButtonText = styled.Text<{ active: boolean }>(({ theme, active }) => ({
+  color: active ? theme.buttonActiveTextColor : theme.buttonTextColor,
+  paddingHorizontal: 8,
+  paddingVertical: 10,
+  fontSize: 11,
+}));
 
 interface Props {
   id: number | string;

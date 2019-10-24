@@ -40,7 +40,7 @@ Shows up in the dev tools as follows:
   <img src="./media/faq-devtools.png" width="100%" />
 </center>
 
-This is just [Component Story Format (CSF)](https://medium.com/storybookjs/component-story-format-66f4c32366df), so it should be easy to debug. You can copy and paste this code into a new `.stories.js` file and play around with it at a lower level to understand what's going wrong.
+This is [Component Story Format (CSF)](https://medium.com/storybookjs/component-story-format-66f4c32366df), so there are ways to debug. You can copy and paste this code into a new `.stories.js` file and play around with it at a lower level to understand what's going wrong.
 
 ## More resources
 

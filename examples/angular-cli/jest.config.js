@@ -8,6 +8,7 @@ module.exports = {
   },
   roots: [__dirname],
   transform: {
+    '^.+\\.stories\\.[jt]sx?$': '@storybook/addon-storyshots/injectFileName',
     '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
     '^.+[/\\\\].storybook[/\\\\]config\\.ts$': '<rootDir>/scripts/jest-ts-babel.js',
     '^.+\\.html$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',

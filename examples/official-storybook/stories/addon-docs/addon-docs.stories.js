@@ -45,3 +45,10 @@ jsxOverride.story = {
     docs: { page: () => <div>Hello docs</div> },
   },
 };
+
+export const docsDisable = () => <div>This story shouldn't show up in DocsPage</div>;
+docsDisable.story = {
+  parameters: {
+    docs: { disable: true },
+  },
+};

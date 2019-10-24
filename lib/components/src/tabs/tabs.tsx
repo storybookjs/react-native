@@ -3,6 +3,7 @@ import React, {
   Component,
   Fragment,
   FunctionComponent,
+  memo,
   MouseEvent,
   ReactNode,
 } from 'react';
@@ -134,7 +135,6 @@ const childrenToList = (children: any, selected: string) =>
 
 export interface TabsProps {
   id?: string;
-  children?: ReactNode;
   tools?: ReactNode;
   selected?: string;
   actions?: {
@@ -145,17 +145,8 @@ export interface TabsProps {
   bordered?: boolean;
 }
 
-export const Tabs = React.memo<TabsProps>(
-  ({
-    children,
-    selected,
-    actions,
-    absolute,
-    bordered,
-    tools,
-    backgroundColor,
-    id: htmlId,
-  }: TabsProps) => {
+export const Tabs: FunctionComponent<TabsProps> = memo(
+  ({ children, selected, actions, absolute, bordered, tools, backgroundColor, id: htmlId }) => {
     const list = childrenToList(children, selected);
 
     return list.length ? (

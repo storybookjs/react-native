@@ -5,18 +5,17 @@ import addons from '@storybook/addons';
 import AddonsList from './list';
 import AddonWrapper from './wrapper';
 import { Label } from '../../Shared/text';
-import { EmotionProps } from '../../Shared/theme';
 
-const NoAddonContainer = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`;
+const NoAddonContainer = styled.View({
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+});
 
-const Container = styled.View`
-  flex: 1;
-  background: ${(props: EmotionProps) => props.theme.backgroundColor};
-`;
+const Container = styled.View(({ theme }) => ({
+  flex: 1,
+  background: theme.backgroundColor,
+}));
 
 export default class Addons extends PureComponent<{}, { addonSelected: string }> {
   panels = addons.getElements('panel');

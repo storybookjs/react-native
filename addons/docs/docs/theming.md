@@ -27,7 +27,7 @@ addParameters({
 
 The Storybook theme API is narrow by design. If you want to have fine-grained control over the CSS, all of the Docs components are tagged with class names to make this possible. This is advanced usage: use at your own risk.
 
-The classes correspond to markdown elements (e.g. `sbdocs-h1`, `sbdocs-p`, etc.) to UI elements on the page (e.g. `sbdocs-container`, `sbdocs-content`, etc.). To see the currently available classes, simply "inspect element" in your browser.
+The classes correspond to markdown elements (e.g. `sbdocs-title`, `sbdocs-subtitle`, `sbdocs-p`, etc.) to UI elements on the page (e.g. `sbdocs-container`, `sbdocs-content`, etc.). To see the currently available classes, use "inspect element" in your browser.
 
 You can style these classes in `.storybook/preview-head.html`. For example, here's how to make the content wider for UHD displays:
 
@@ -39,7 +39,7 @@ You can style these classes in `.storybook/preview-head.html`. For example, here
 </style>
 ```
 
-> NOTE: All of these elements also have the `sbdocs` class, which is simply an idiomatic way of increasing the CSS specificity so you don't have to use `!important`.
+> NOTE: All of these elements also have the `sbdocs` class, which is an idiomatic way of increasing the CSS specificity so you don't have to use `!important`.
 
 ## MDX component overrides
 
