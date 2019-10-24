@@ -6,7 +6,7 @@ export interface SectionRowProps {
   section: string;
 }
 
-const SectionTh = styled.th<SectionRowProps>(({ theme }) => ({
+const SectionTh = styled.th<{}>(({ theme }) => ({
   letterSpacing: '0.35em',
   textTransform: 'uppercase',
   fontWeight: theme.typography.weight.black,
