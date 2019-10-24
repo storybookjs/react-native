@@ -1,3 +1,21 @@
+## 5.3.0-alpha.27 (October 24, 2019)
+
+### Features
+
+* Core: Allow linking to kind/component ID ([#7648](https://github.com/storybookjs/storybook/pull/7648))
+* Addon-docs: Jest MDX transform for storyshots ([#8189](https://github.com/storybookjs/storybook/pull/8189))
+* CLI: Add flag to disable version checks ([#8488](https://github.com/storybookjs/storybook/pull/8488))
+* Typescript: add types for react demo ([#8517](https://github.com/storybookjs/storybook/pull/8517))
+
+### Bug Fixes
+
+* UI: Increase TooltipLinkList max-height to accommodate more links ([#8545](https://github.com/storybookjs/storybook/pull/8545))
+* UI: Prevent form submission as search is done while typing ([#8546](https://github.com/storybookjs/storybook/pull/8546))
+
+### Dependency Upgrades
+
+* Remove outdated and unused `jsx-to-string` library ([#8549](https://github.com/storybookjs/storybook/pull/8549))
+
 ## 5.3.0-alpha.26 (October 23, 2019)
 
 Fix web-components storybook dependencies
