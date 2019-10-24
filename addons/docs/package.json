@@ -25,6 +25,7 @@
     "html/**/*",
     "react/**/*",
     "vue/**/*",
+    "web-components/**/*",
     "README.md",
     "*.js",
     "*.d.ts"
