@@ -141,7 +141,7 @@ export default class ClientApi {
     this._globalDecorators = [];
   };
 
-  // what are the occasions that "m" is simply a boolean, vs an obj
+  // what are the occasions that "m" is a boolean vs an obj
   storiesOf = <StoryFnReturnType = unknown>(
     kind: string,
     m: NodeModule
@@ -154,6 +154,16 @@ export default class ClientApi {
       logger.warn(
         `Missing 'module' parameter for story with a kind of '${kind}'. It will break your HMR`
       );
+    }
+
+    if (m) {
+      const proto = Object.getPrototypeOf(m);
+      if (proto.exports && proto.exports.default) {
+        // FIXME: throw an error in SB6.0
+        logger.error(
+          `Illegal mix of CSF default export and storiesOf calls in a single file: ${proto.i}`
+        );
+      }
     }
 
     if (m && m.hot && m.hot.dispose) {

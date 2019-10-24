@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, ReactElement } from 'react';
 
 export interface ShowErrorArgs {
   title: string;
@@ -6,7 +6,7 @@ export interface ShowErrorArgs {
 }
 
 export interface RenderMainArgs {
-  storyFn: React.FunctionComponent<any>;
+  storyFn: FunctionComponent<any>;
   selectedKind: string;
   selectedStory: string;
   showMain: () => void;
@@ -15,7 +15,7 @@ export interface RenderMainArgs {
   forceRender: boolean;
 }
 
-export type StoryFnReactReturnType = React.ReactElement<unknown>;
+export type StoryFnReactReturnType = ReactElement<unknown>;
 
 export interface IStorybookStory {
   name: string;

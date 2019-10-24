@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, MouseEvent } from 'react';
 
 import { styled } from '@storybook/theming';
 
@@ -55,7 +55,7 @@ ActionButton.displayName = 'ActionButton';
 
 export interface ActionItem {
   title: string | JSX.Element;
-  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick: (e: MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
 }
 

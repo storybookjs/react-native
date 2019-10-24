@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { styled, ThemeProvider, convert, themes } from '@storybook/theming';
 import { EmptyBlock } from './EmptyBlock';
 
@@ -42,7 +42,7 @@ export type SourceProps = SourceErrorProps & SourceCodeProps;
 /**
  * Syntax-highlighted source code for a component (or anything!)
  */
-const Source: React.FunctionComponent<SourceProps> = props => {
+const Source: FunctionComponent<SourceProps> = props => {
   const { error } = props as SourceErrorProps;
   if (error) {
     return <EmptyBlock {...props}>{error}</EmptyBlock>;
