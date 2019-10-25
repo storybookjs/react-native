@@ -1,3 +1,10 @@
+## 5.3.0-alpha.28 (October 25, 2019)
+
+### Features
+
+* Addon-docs: Publish web-components preset ([#8563](https://github.com/storybookjs/storybook/pull/8563))
+* Addon-docs: Vue slots/events props table + generalization ([#8489](https://github.com/storybookjs/storybook/pull/8489))
+
 ## 5.3.0-alpha.27 (October 24, 2019)
 
 ### Features
