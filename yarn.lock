@@ -24493,9 +24493,9 @@ rax-link@^1.0.0:
     universal-env "^1.0.0"
 
 rax-scripts@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/rax-scripts/-/rax-scripts-2.0.2.tgz#de62b4a6eac52118edba49be1c37c71d82128ca5"
-  integrity sha512-CkdfIyEN2bVG3fQepzWd6B0RyKJ9ZlZmSS6KHo3P5kkJKou9Bh13luP4L7wTVricuoiarvaC0z//6a6afLGgPg==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/rax-scripts/-/rax-scripts-2.0.3.tgz#b14c4e705561ea63d39d76b03ce77a63b7026206"
+  integrity sha512-YKZ+AirJkU0qfhRwku5S0c/6p6rnKXzHtst6nriapGQhyQIQw+o2icJXoQ+aqoRqumkFnFYgYLWdEa72RIVmEQ==
   dependencies:
     "@babel/preset-typescript" "^7.6.0"
     babel-core "7.0.0-bridge.0"
