@@ -55,6 +55,7 @@
     "js-string-escape": "^1.0.1",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
+    "storybook-addon-vue-info": "^1.2.1",
     "ts-dedent": "^1.1.0"
   },
   "devDependencies": {

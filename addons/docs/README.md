@@ -73,8 +73,7 @@ For more information on `MDX`, see the [`MDX` reference](./docs/mdx.md).
 
 ## Framework support
 
-Storybook Docs supports all view layers that Storybook supports except for React Native (currently). There are some view-layer specific
-features as well. This chart captures the current state of support
+Storybook Docs supports all view layers that Storybook supports except for React Native (currently). There are some framework-specific features as well, such as props tables and inline story rendering. This chart captures the current state of support:
 
 |                   | React | Vue | Angular | HTML | Svelte | Polymer | Marko | Mithril | Riot | Ember | Preact |
 | ----------------- | :---: | :-: | :-----: | :--: | :----: | :-----: | :---: | :-----: | :--: | :---: | :----: |
@@ -83,11 +82,13 @@ features as well. This chart captures the current state of support
 | StoriesOf stories |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Source            |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
 | Notes / Info      |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| Props table       |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
-| Docgen            |   +   |  #  |    #    |      |        |         |       |         |      |       |        |
-| Inline stories    |   +   |  #  |         |      |        |         |       |         |      |       |        |
+| Props table       |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
+| Docgen            |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
+| Inline stories    |   +   |  +  |         |      |        |         |       |         |      |       |        |
 
 **Note:** `#` = WIP support
+
+Want to add enhanced features to your favorite framework? Check out this [dev guide](./docs/multiframework.md)
 
 ## Installation
 
