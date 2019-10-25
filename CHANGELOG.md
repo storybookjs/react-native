@@ -1,3 +1,13 @@
+## 5.3.0-alpha.29 (October 25, 2019)
+
+### Features
+
+* Addon-docs: Add props loader to vue preset ([#8567](https://github.com/storybookjs/storybook/pull/8567))
+
+### Dependency Upgrades
+
+* Angular: bump zone.js version in peer dependencies ([#8558](https://github.com/storybookjs/storybook/pull/8558))
+
 ## 5.3.0-alpha.28 (October 25, 2019)
 
 ### Features
