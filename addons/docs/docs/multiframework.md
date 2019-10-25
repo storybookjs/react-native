@@ -2,10 +2,9 @@
 
 Storybook Docs [provides basic support for all non-RN Storybook view layers](../README.md#framework-support) out of the box. However, some frameworks have been docs-optimized, adding features like automatic props table generation and inline story rendering. This document is a dev guide for how to set up a new framework in docs.
 
-- [Storybook Docs framework dev guide](#storybook-docs-framework-dev-guide)
-  - [Adding a preset](#adding-a-preset)
-  - [Props tables](#props-tables)
-  - [Inline story rendering](#inline-story-rendering)
+- [Adding a preset](#adding-a-preset)
+- [Props tables](#props-tables)
+- [Inline story rendering](#inline-story-rendering)
 
 ## Adding a preset
 
@@ -17,7 +16,7 @@ Here's a basic preset for `@storybook/html` in `addons/docs/html/preset.js`:
 module.exports = require('../dist/frameworks/common/makePreset').default('html');
 ```
 
-This automatically adds [DocsPage](./docspage.md) for each story and sets up various webpack/babel for MDX support.
+This automatically adds [DocsPage](./docspage.md) for each story, as well as webpack/babel settings for MDX support.
 
 There is also a little hoop-jumping that will hopefully be unnecessary soon.
 
