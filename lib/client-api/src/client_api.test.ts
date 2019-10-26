@@ -222,7 +222,7 @@ describe('preview.client_api', () => {
         storyStore,
       } = getContext(undefined);
 
-      addDecorator(fn => `bb-${fn()}`);
+      addDecorator(fn => `bb-${fn()}`, 'test-framework');
 
       storiesOf('kind', module).add('name', () => 'Hello');
       const f = storyStore.fromId('x');
@@ -236,7 +236,7 @@ describe('preview.client_api', () => {
         storyStore,
       } = getContext(undefined);
 
-      addDecorator(fn => `aa-${fn()}`);
+      addDecorator(fn => `aa-${fn()}`, 'test-framework');
 
       storiesOf('kind', module)
         .addDecorator(fn => `bb-${fn()}`)
@@ -279,7 +279,7 @@ describe('preview.client_api', () => {
       const { clientApi, storyStore } = getContext(undefined);
       const { storiesOf } = clientApi;
 
-      clientApi.addDecorator(() => 'foo');
+      clientApi.addDecorator(() => 'foo', 'test-framework');
       clientApi.clearDecorators();
 
       storiesOf('kind', module).add('name', () => 'bar');

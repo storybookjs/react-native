@@ -86,7 +86,12 @@ let _globalDecorators: DecoratorFunction[] = [];
 
 let _globalParameters: Parameters = {};
 
-export const addDecorator = (decoratorFn: DecoratorFunction, framework: string) => {
+/**
+ * Add a global decorator function to be applied to all stories
+ * within the given framework, or to all stories if no framework
+ * is specified.
+ */
+export const addDecorator = (decoratorFn: DecoratorFunction, framework?: string) => {
   // ignore framework for now, but add it to the API for the future
   _globalDecorators.push(decoratorFn);
 };
@@ -136,11 +141,11 @@ export default class ClientApi {
     ..._globalParameters.options,
   });
 
-  addDecorator = (decorator: DecoratorFunction, framework: string) => {
+  addDecorator = (decorator: DecoratorFunction, framework?: string) => {
     addDecorator(decorator, framework);
   };
 
-  addParameters = (parameters: Parameters | { globalParameter: 'string' }) => {
+  addParameters = (parameters: Parameters) => {
     addParameters(parameters);
   };
 
