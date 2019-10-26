@@ -1,7 +1,7 @@
 import { start } from '@storybook/core/client';
 
 import './globals';
-import { ClientStoryApi, Loadable } from '@storybook/addons';
+import { ClientStoryApi, Loadable, DecoratorFunction } from '@storybook/addons';
 import render from './render';
 
 import { IStorybookSection, StoryFnMithrilReturnType } from './types';
@@ -24,11 +24,9 @@ export const storiesOf: ClientApi['storiesOf'] = (kind, m) =>
 
 export const configure: ClientApi['configure'] = (...args) => coreConfigure(...args, framework);
 
-export const { setAddon } = clientApi;
-export const { addDecorator } = clientApi;
-export const { addParameters } = clientApi;
-export const { clearDecorators } = clientApi;
-export const { getStorybook } = clientApi;
-export const { raw } = clientApi;
+export const addDecorator = (decorator: DecoratorFunction) =>
+  clientApi.addDecorator(decorator, framework);
+
+export const { setAddon, addParameters, clearDecorators, getStorybook, raw } = clientApi;
 
 export { forceReRender };
