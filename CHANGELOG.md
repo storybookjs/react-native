@@ -1,3 +1,9 @@
+## 5.3.0-alpha.31 (October 27, 2019)
+
+### Dependency Upgrades
+
+* Upgrade babel-plugin-react-docgen to 4.0.0-beta.1 ([#8581](https://github.com/storybookjs/storybook/pull/8581))
+
 ## 5.3.0-alpha.30 (October 27, 2019)
 
 ### Features
