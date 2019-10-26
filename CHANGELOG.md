@@ -1,3 +1,21 @@
+## 5.3.0-alpha.30 (October 27, 2019)
+
+### Features
+
+* Addon-docs: Modify Typeset doc block to accept units ([#8574](https://github.com/storybookjs/storybook/pull/8574))
+
+### Bug Fixes
+
+* Web-components: Use framework id 'web-components' ([#8579](https://github.com/storybookjs/storybook/pull/8579))
+
+### Maintenance
+
+* WC-kitchen-sink: Add babel-loader dependency ([#8578](https://github.com/storybookjs/storybook/pull/8578))
+
+### Dependency Upgrades
+
+* Upgrade babel-plugin-react-docgen to 3.2.0 ([#8580](https://github.com/storybookjs/storybook/pull/8580))
+
 ## 5.3.0-alpha.29 (October 25, 2019)
 
 ### Features
