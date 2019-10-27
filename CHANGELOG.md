@@ -1,3 +1,20 @@
+## 5.3.0-alpha.32 (October 28, 2019)
+
+### Features
+
+* Addon-docs: Props / Description for web-components ([#8585](https://github.com/storybookjs/storybook/pull/8585))
+* Core: Global addDecorator/addParameters ([#8573](https://github.com/storybookjs/storybook/pull/8573))
+* Addon-docs: Generalize Description doc block ([#8590](https://github.com/storybookjs/storybook/pull/8590))
+
+### Bug Fixes
+
+* React-native-server: Changed default port to number in CLI options ([#8584](https://github.com/storybookjs/storybook/pull/8584))
+
+### Maintenance
+
+* Typescript: Use native package types now available ([#8588](https://github.com/storybookjs/storybook/pull/8588))
+* Build: Fix now deploy maybe ([#8589](https://github.com/storybookjs/storybook/pull/8589))
+
 ## 5.3.0-alpha.31 (October 27, 2019)
 
 ### Dependency Upgrades
