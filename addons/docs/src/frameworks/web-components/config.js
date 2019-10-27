@@ -24,7 +24,7 @@ addParameters({
     page: DocsPage,
     extractProps: tagName => {
       const customElements = getCustomElements();
-      if (customElements) {
+      if (typeof tagName === 'string' && customElements && customElements.tags) {
         const metaData = customElements.tags.find(
           tag => tag.name.toUpperCase() === tagName.toUpperCase()
         );
@@ -47,7 +47,7 @@ addParameters({
     },
     extractComponentDescription: tagName => {
       const customElements = getCustomElements();
-      if (customElements) {
+      if (typeof tagName === 'string' && customElements && customElements.tags) {
         const metaData = customElements.tags.find(
           tag => tag.name.toUpperCase() === tagName.toUpperCase()
         );
