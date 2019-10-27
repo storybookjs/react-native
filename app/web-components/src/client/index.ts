@@ -1,3 +1,6 @@
+/* eslint-disable no-underscore-dangle */
+/* global window */
+
 export {
   storiesOf,
   setAddon,
@@ -8,6 +11,19 @@ export {
   forceReRender,
   raw,
 } from './preview';
+
+/**
+ * @param customElements any for now as spec is not super stable yet
+ */
+export function setCustomElements(customElements: any) {
+  // @ts-ignore
+  window.__STORYBOOK_CUSTOM_ELEMENTS__ = customElements;
+}
+
+export function getCustomElements() {
+  // @ts-ignore
+  return window.__STORYBOOK_CUSTOM_ELEMENTS__;
+}
 
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();

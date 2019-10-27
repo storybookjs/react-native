@@ -1,7 +1,7 @@
 /* global window */
 /* eslint-disable import/no-extraneous-dependencies */
 import { addParameters } from '@storybook/client-api';
-import { getCustomElements } from './customElements';
+import { getCustomElements } from '@storybook/web-components';
 
 function mapData(data) {
   return data.map(item => ({

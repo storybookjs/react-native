@@ -7,7 +7,7 @@
 - Add to your `.storybook/config.js`
 
   ```js
-  import { setCustomElements } from '@storybook/addon-docs';
+  import { setCustomElements } from '@storybook/web-components';
   import customElements from '../custom-elements.json';
 
   setCustomElements(customElements);
