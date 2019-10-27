@@ -2,6 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { addParameters } from '@storybook/web-components';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { getCustomElements } from './customElements';
 
 function mapData(data) {
   return data.map(item => ({
@@ -22,8 +23,7 @@ addParameters({
     container: DocsContainer,
     page: DocsPage,
     extractProps: tagName => {
-      // eslint-disable-next-line no-underscore-dangle
-      const customElements = window.__STORYBOOK_CUSTOM_ELEMENTS__;
+      const customElements = getCustomElements();
       if (customElements) {
         const metaData = customElements.tags.find(
           tag => tag.name.toUpperCase() === tagName.toUpperCase()

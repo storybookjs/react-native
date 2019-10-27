@@ -75,16 +75,16 @@ For more information on `MDX`, see the [`MDX` reference](./docs/mdx.md).
 
 Storybook Docs supports all view layers that Storybook supports except for React Native (currently). There are some framework-specific features as well, such as props tables and inline story rendering. This chart captures the current state of support:
 
-|                   | React | Vue | Angular | HTML | Svelte | Polymer | Marko | Mithril | Riot | Ember | Preact |
-| ----------------- | :---: | :-: | :-----: | :--: | :----: | :-----: | :---: | :-----: | :--: | :---: | :----: |
-| MDX stories       |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| CSF stories       |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| StoriesOf stories |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| Source            |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| Notes / Info      |   +   |  +  |    +    |  +   |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
-| Props table       |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
-| Docgen            |   +   |  +  |    #    |      |        |         |       |         |      |       |        |
-| Inline stories    |   +   |  +  |         |      |        |         |       |         |      |       |        |
+|                   | React | Vue | Angular | HTML | Web Components | Svelte | Polymer | Marko | Mithril | Riot | Ember | Preact |
+| ----------------- | :---: | :-: | :-----: | :--: | :------------: | :----: | :-----: | :---: | :-----: | :--: | :---: | :----: |
+| MDX stories       |   +   |  +  |    +    |  +   |       +        |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| CSF stories       |   +   |  +  |    +    |  +   |       +        |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| StoriesOf stories |   +   |  +  |    +    |  +   |       +        |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| Source            |   +   |  +  |    +    |  +   |       +        |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| Notes / Info      |   +   |  +  |    +    |  +   |       +        |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| Props table       |   +   |  +  |    #    |      |       +        |        |         |       |         |      |       |        |
+| Docgen            |   +   |  +  |    #    |      |                |        |         |       |         |      |       |        |
+| Inline stories    |   +   |  +  |         |      |                |        |         |       |         |      |       |        |
 
 **Note:** `#` = WIP support
 
@@ -122,17 +122,17 @@ configure(require.context('../src', true, /\.stories\.(js|mdx)$/), module);
 
 For more information on the new `configure`, see ["Loading stories"](https://github.com/storybookjs/storybook/blob/next/docs/src/pages/basics/writing-stories/index.md#loading-stories) in the Storybook documentation.
 
-If using in conjunction with the [storyshots add-on](../storyshots/storyshots-core/README.md), you will need to 
+If using in conjunction with the [storyshots add-on](../storyshots/storyshots-core/README.md), you will need to
 configure Jest to transform MDX stories into something Storyshots can understand:
-                                                                                               
+
 Add the following to your Jest configuration:
 
 ```json
 {
- "transform": {
-   "^.+\\.[tj]sx?$": "babel-jest",
-   "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
- }
+  "transform": {
+    "^.+\\.[tj]sx?$": "babel-jest",
+    "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
+  }
 }
 ```
 
