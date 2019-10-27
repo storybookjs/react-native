@@ -7,12 +7,18 @@ import { compileNow as unboundCompileNow, asCompiledCode } from './compileStageF
 
 const { configure: coreConfigure, clientApi, forceReRender } = start(render);
 
-export const { setAddon, addParameters, clearDecorators, getStorybook, raw } = clientApi;
+export const {
+  setAddon,
+  addDecorator,
+  addParameters,
+  clearDecorators,
+  getStorybook,
+  raw,
+} = clientApi;
 
 const framework = 'riot';
 export const storiesOf = (...args) => clientApi.storiesOf(...args).addParameters({ framework });
 export const configure = (...args) => coreConfigure(...args, framework);
-export const addDecorator = decorator => clientApi.addDecorator(decorator, framework);
 
 const mount = vendorMount.bind(riot, '#root');
 const compileNow = unboundCompileNow.bind(null, tag2);
