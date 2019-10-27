@@ -2,6 +2,7 @@
 import { addParameters } from '@storybook/react';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { extractProps } from './extractProps';
+import { extractComponentDescription } from '../../lib/docgenUtils';
 
 addParameters({
   docs: {
@@ -11,5 +12,6 @@ addParameters({
     // NOTE: that the result is a react element. Hooks support is provided by the outer code.
     prepareForInline: storyFn => storyFn(),
     extractProps,
+    extractComponentDescription,
   },
 });
