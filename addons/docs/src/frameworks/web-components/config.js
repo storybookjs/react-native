@@ -18,11 +18,11 @@ function isEmpty(obj) {
   return Object.entries(obj).length === 0 && obj.constructor === Object;
 }
 
-function isValidComponent(tagName, customElements) {
+function isValidComponent(tagName) {
   if (!tagName) {
     return false;
   }
-  if (tagName && typeof tagName === 'string') {
+  if (typeof tagName === 'string') {
     return true;
   }
   throw new Error('Provided component needs to be a string. e.g. component: "my-element"');
@@ -32,7 +32,7 @@ function isValidMetaData(customElements) {
   if (!customElements) {
     return false;
   }
-  if (customElements && customElements.tags && Array.isArray(customElements.tags)) {
+  if (customElements.tags && Array.isArray(customElements.tags)) {
     return true;
   }
   throw new Error(`You need to setup valid meta data in your config.js via setCustomElements().
