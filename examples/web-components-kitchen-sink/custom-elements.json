@@ -3,6 +3,7 @@
   "tags": [
     {
       "name": "demo-wc-card",
+      "description": "This is a container looking like a card with a back and front side you can switch",
       "properties": [
         {
           "name": "header",

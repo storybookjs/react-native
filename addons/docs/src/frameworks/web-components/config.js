@@ -45,5 +45,17 @@ addParameters({
       }
       return false;
     },
+    extractComponentDescription: tagName => {
+      const customElements = getCustomElements();
+      if (customElements) {
+        const metaData = customElements.tags.find(
+          tag => tag.name.toUpperCase() === tagName.toUpperCase()
+        );
+        if (metaData && metaData.description) {
+          return metaData.description;
+        }
+      }
+      return false;
+    },
   },
 });
