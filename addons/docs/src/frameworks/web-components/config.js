@@ -1,7 +1,6 @@
 /* global window */
 /* eslint-disable import/no-extraneous-dependencies */
-import { addParameters } from '@storybook/web-components';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { addParameters } from '@storybook/client-api';
 import { getCustomElements } from './customElements';
 
 function mapData(data) {
@@ -41,8 +40,6 @@ function isValidMetaData(customElements) {
 
 addParameters({
   docs: {
-    container: DocsContainer,
-    page: DocsPage,
     extractProps: tagName => {
       const customElements = getCustomElements();
       if (isValidComponent(tagName) && isValidMetaData(customElements)) {
