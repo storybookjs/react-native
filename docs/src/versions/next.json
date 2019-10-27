@@ -1,1 +1,1 @@
-{"version":"5.3.0-alpha.29","info":{"plain":"### Features\n\n* Addon-docs: Add props loader to vue preset ([#8567](https://github.com/storybookjs/storybook/pull/8567))\n\n### Dependency Upgrades\n\n* Angular: bump zone.js version in peer dependencies ([#8558](https://github.com/storybookjs/storybook/pull/8558))"}}
+{"version":"5.3.0-alpha.31","info":{"plain":"### Dependency Upgrades\n\n* Upgrade babel-plugin-react-docgen to 4.0.0-beta.1 ([#8581](https://github.com/storybookjs/storybook/pull/8581))"}}

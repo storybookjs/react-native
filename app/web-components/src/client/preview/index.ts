@@ -6,7 +6,7 @@ import './globals';
 import render from './render';
 import { StoryFnHtmlReturnType, IStorybookSection } from './types';
 
-const framework = 'html';
+const framework = 'web-components';
 
 interface ClientApi extends ClientStoryApi<StoryFnHtmlReturnType> {
   setAddon(addon: any): void;

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-viewport",
-  "version": "5.3.0-alpha.29",
+  "version": "5.3.0-alpha.31",
   "description": "Storybook addon to change the viewport size to mobile",
   "keywords": [
     "addon",
@@ -28,12 +28,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.29",
-    "@storybook/api": "5.3.0-alpha.29",
-    "@storybook/client-logger": "5.3.0-alpha.29",
-    "@storybook/components": "5.3.0-alpha.29",
-    "@storybook/core-events": "5.3.0-alpha.29",
-    "@storybook/theming": "5.3.0-alpha.29",
+    "@storybook/addons": "5.3.0-alpha.31",
+    "@storybook/api": "5.3.0-alpha.31",
+    "@storybook/client-logger": "5.3.0-alpha.31",
+    "@storybook/components": "5.3.0-alpha.31",
+    "@storybook/core-events": "5.3.0-alpha.31",
+    "@storybook/theming": "5.3.0-alpha.31",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "memoizerific": "^1.11.3",

@@ -6,6 +6,16 @@ export type PropsExtractor = (component: Component) => PropsTableProps | null;
 
 export type PropDefGetter = (type: Component, section: string) => PropDef[] | null;
 
+export const str = (o: any) => {
+  if (!o) {
+    return '';
+  }
+  if (typeof o === 'string') {
+    return o as string;
+  }
+  throw new Error(`Description: expected string, got: ${JSON.stringify(o)}`);
+};
+
 export const hasDocgen = (obj: any) => !!obj.__docgenInfo;
 
 export const hasDocgenSection = (obj: any, section: string) =>
@@ -36,3 +46,6 @@ export const propsFromDocgen: PropDefGetter = (type, section) => {
 
   return Object.values(props);
 };
+
+export const extractComponentDescription = (component?: Component) =>
+  component && component.__docgenInfo && str(component.__docgenInfo.description);

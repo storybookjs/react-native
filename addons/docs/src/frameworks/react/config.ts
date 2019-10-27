@@ -2,6 +2,7 @@
 import { addParameters } from '@storybook/client-api';
 import { StoryFn } from '@storybook/addons';
 import { extractProps } from './extractProps';
+import { extractComponentDescription } from '../../lib/docgenUtils';
 
 addParameters({
   docs: {
@@ -9,5 +10,6 @@ addParameters({
     // NOTE: that the result is a react element. Hooks support is provided by the outer code.
     prepareForInline: (storyFn: StoryFn) => storyFn(),
     extractProps,
+    extractComponentDescription,
   },
 });

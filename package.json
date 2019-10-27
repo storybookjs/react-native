@@ -44,7 +44,7 @@
     "bootstrap": "node ./scripts/bootstrap.js",
     "bootstrap:docs": "yarn install --cwd docs",
     "build-packs": "lerna exec --scope '@storybook/*' -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
-    "build-storybooks": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true ./scripts/build-storybooks.js",
+    "build-storybooks": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true node ./scripts/build-storybooks.js",
     "changelog": "pr-log --sloppy --cherry-pick",
     "changelog:next": "pr-log --sloppy --since-prerelease",
     "coverage": "codecov",

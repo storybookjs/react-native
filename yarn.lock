@@ -326,7 +326,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.0.1":
+"@babel/core@^7.0.1", "@babel/core@^7.4.4":
   version "7.6.4"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.6.4.tgz#6ebd9fe00925f6c3e177bb726a188b5f578088ff"
   integrity sha512-Rm0HGw101GY8FTzpWSyRbki/jzq+/PkNQJ+nSulrdY6gFGOsNseCqD6KHRYe2E+EdzuBdr2pxCp6s4Uk6eJ+XQ==
@@ -5491,7 +5491,7 @@ ast-types@0.11.7:
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.11.7.tgz#f318bf44e339db6a320be0009ded64ec1471f46c"
   integrity sha512-2mP3TwtkY/aTv5X3ZsMpNAbOnyoC/aMJwJSoaELPkHId0nSQgFcnU4dRW3isxiz7+zBexk0ym3WNVjMiQBnJSw==
 
-ast-types@0.12.4, ast-types@^0.12.2:
+ast-types@0.12.4, ast-types@^0.12.2, ast-types@^0.12.4:
   version "0.12.4"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.12.4.tgz#71ce6383800f24efc9a1a3308f3a6e420a0974d1"
   integrity sha512-ky/YVYCbtVAS8TdMIaTiPFHwEpRB5z1hctepJplTr3UW5q8TDrpIMCILyk8pmLxGtn2KCtC/lSn7zOsaI7nzDw==
@@ -6230,13 +6230,13 @@ babel-plugin-named-asset-import@^0.3.1, babel-plugin-named-asset-import@^0.3.2, 
   resolved "https://registry.yarnpkg.com/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.4.tgz#4a8fc30e9a3e2b1f5ed36883386ab2d84e1089bd"
   integrity sha512-S6d+tEzc5Af1tKIMbsf2QirCcPdQ+mKUCY2H1nJj1DyA1ShwpsoxEOAwbWsG5gcXNV/olpvQd9vrUWRx4bnhpw==
 
-babel-plugin-react-docgen@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen/-/babel-plugin-react-docgen-3.1.0.tgz#14b02b363a38cc9e08c871df16960d27ef92030f"
-  integrity sha512-W6xqZnZIWjZuE9IjP7XolxxgFGB5Y9GZk4cLPSWKa10MrT86q7bX4ke9jbrNhFVIRhbmzL8wE1Sn++mIWoJLbw==
+babel-plugin-react-docgen@^4.0.0-beta.1:
+  version "4.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen/-/babel-plugin-react-docgen-4.0.0-beta.1.tgz#ff09340e060064ec653564e10ac5b5c8dd53dfba"
+  integrity sha512-sBSGAgz5O/RneuRoUS7QCDJq+K3m5r7qPFOGa8++GxacY9LzhP10tV6iY1UPWWj2SYoU19pj4Q3/rNUo/GHp9A==
   dependencies:
-    lodash "^4.17.11"
-    react-docgen "^4.1.0"
+    lodash "^4.17.15"
+    react-docgen "^5.0.0-beta.1"
     recast "^0.14.7"
 
 babel-plugin-react-native-web@^0.11.2:
@@ -8708,7 +8708,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -24493,9 +24493,9 @@ rax-link@^1.0.0:
     universal-env "^1.0.0"
 
 rax-scripts@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/rax-scripts/-/rax-scripts-2.0.2.tgz#de62b4a6eac52118edba49be1c37c71d82128ca5"
-  integrity sha512-CkdfIyEN2bVG3fQepzWd6B0RyKJ9ZlZmSS6KHo3P5kkJKou9Bh13luP4L7wTVricuoiarvaC0z//6a6afLGgPg==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/rax-scripts/-/rax-scripts-2.0.3.tgz#b14c4e705561ea63d39d76b03ce77a63b7026206"
+  integrity sha512-YKZ+AirJkU0qfhRwku5S0c/6p6rnKXzHtst6nriapGQhyQIQw+o2icJXoQ+aqoRqumkFnFYgYLWdEa72RIVmEQ==
   dependencies:
     "@babel/preset-typescript" "^7.6.0"
     babel-core "7.0.0-bridge.0"
@@ -24523,10 +24523,11 @@ rax-text@^1.0.0, rax-text@^1.0.1:
     universal-env "^1.0.0"
 
 rax-view@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/rax-view/-/rax-view-1.0.2.tgz#d90b9aeafd933f4f7944595a54dc3bb9e11ff1a7"
-  integrity sha512-LwhCKJ7lICj1m3KVDmAQA0cx5Alqyrj3Sw+NM58gm42QqGw4TwCaIX1nBcN20zguFszXaHmdnhq472WFqKg/VQ==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/rax-view/-/rax-view-1.1.0.tgz#4ff95bcadb6c5355d342753b7f4e364e219c3411"
+  integrity sha512-AaBkFaks49Igs8tHU3HmYoa+PoXitMbddAQ8BlfJabYTT6/gfcMdj7ejDB/23MGtB/cuJthmuiQMlkr8/JVUuA==
   dependencies:
+    classnames "^2.2.6"
     universal-env "^1.0.0"
 
 rax@^1.0.0:
@@ -24694,18 +24695,19 @@ react-docgen-typescript@^1.15.0:
   resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.15.0.tgz#963f14210841f9b51ed18c65152a6cc37f1c3184"
   integrity sha512-8xObdkRQbrc0505tEdVRO+pdId8pKFyD6jhLYM9FDdceKma+iB+a17Dk7e3lPRBRh8ArQLCedOCOfN/bO338kw==
 
-react-docgen@^4.1.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-4.1.1.tgz#8fef0212dbf14733e09edecef1de6b224d87219e"
-  integrity sha512-o1wdswIxbgJRI4pckskE7qumiFyqkbvCO++TylEDOo2RbMiueIOg8YzKU4X9++r0DjrbXePw/LHnh81GRBTWRw==
+react-docgen@^5.0.0-beta.1:
+  version "5.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-5.0.0-beta.1.tgz#3654ab8f5cb7abacbfc122c1950c45d8e77048da"
+  integrity sha512-CbbHF5jXrgyXuP3gQcN1zG4YpNj5QQuxTsEhKH3UXQN01V4cho/eL926ya6ecCWryUtlK97QGRxtK48KbCtXEQ==
   dependencies:
-    "@babel/core" "^7.0.0"
+    "@babel/core" "^7.4.4"
     "@babel/runtime" "^7.0.0"
+    ast-types "^0.12.4"
     async "^2.1.4"
     commander "^2.19.0"
     doctrine "^3.0.0"
     node-dir "^0.1.10"
-    recast "^0.17.3"
+    strip-indent "^2.0.0"
 
 react-dom@^15.4.2:
   version "15.6.2"

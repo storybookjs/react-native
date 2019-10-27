@@ -4,7 +4,7 @@ import { parseKind } from '@storybook/router';
 import { DocsPage as PureDocsPage, PropsTable, PropsTableProps } from '@storybook/components';
 import { H2, H3 } from '@storybook/components/html';
 import { DocsContext } from './DocsContext';
-import { Description, getDocgen } from './Description';
+import { Description } from './Description';
 import { Story } from './Story';
 import { Preview } from './Preview';
 import { Anchor } from './Anchor';
@@ -64,8 +64,13 @@ const defaultSubtitleSlot: StringSlot = ({ parameters }) =>
 
 const defaultPropsSlot: PropsSlot = context => getPropsTableProps({ of: '.' }, context);
 
-const defaultDescriptionSlot: StringSlot = ({ parameters }) =>
-  parameters && getDocgen(parameters.component);
+const defaultDescriptionSlot: StringSlot = ({ parameters: { component, docs } }) => {
+  if (!component) {
+    return null;
+  }
+  const { extractComponentDescription } = docs || {};
+  return extractComponentDescription && extractComponentDescription(component);
+};
 
 const defaultPrimarySlot: StorySlot = stories => stories && stories[0];
 const defaultStoriesSlot: StoriesSlot = stories => {
