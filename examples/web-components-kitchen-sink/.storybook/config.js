@@ -3,6 +3,11 @@
 import { configure, addParameters, addDecorator } from '@storybook/web-components';
 import { withA11y } from '@storybook/addon-a11y';
 
+import customElements from '../custom-elements.json';
+
+// eslint-disable-next-line no-underscore-dangle
+window.__STORYBOOK_CUSTOM_ELEMENTS__ = customElements;
+
 addDecorator(withA11y);
 
 addParameters({
