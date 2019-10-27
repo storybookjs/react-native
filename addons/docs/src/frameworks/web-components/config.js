@@ -18,13 +18,34 @@ function isEmpty(obj) {
   return Object.entries(obj).length === 0 && obj.constructor === Object;
 }
 
+function isValidComponent(tagName, customElements) {
+  if (!tagName) {
+    return false;
+  }
+  if (tagName && typeof tagName === 'string') {
+    return true;
+  }
+  throw new Error('Provided component needs to be a string. e.g. component: "my-element"');
+}
+
+function isValidMetaData(customElements) {
+  if (!customElements) {
+    return false;
+  }
+  if (customElements && customElements.tags && Array.isArray(customElements.tags)) {
+    return true;
+  }
+  throw new Error(`You need to setup valid meta data in your config.js via setCustomElements().
+    See the readme of addon-docs for web components for more details.`);
+}
+
 addParameters({
   docs: {
     container: DocsContainer,
     page: DocsPage,
     extractProps: tagName => {
       const customElements = getCustomElements();
-      if (typeof tagName === 'string' && customElements && customElements.tags) {
+      if (isValidComponent(tagName) && isValidMetaData(customElements)) {
         const metaData = customElements.tags.find(
           tag => tag.name.toUpperCase() === tagName.toUpperCase()
         );
@@ -47,7 +68,7 @@ addParameters({
     },
     extractComponentDescription: tagName => {
       const customElements = getCustomElements();
-      if (typeof tagName === 'string' && customElements && customElements.tags) {
+      if (isValidComponent(tagName) && isValidMetaData(customElements)) {
         const metaData = customElements.tags.find(
           tag => tag.name.toUpperCase() === tagName.toUpperCase()
         );
