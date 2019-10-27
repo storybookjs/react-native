@@ -4,6 +4,7 @@ import toReact from '@egoist/vue-to-react';
 import { addParameters } from '@storybook/vue';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { extractProps } from './extractProps';
+import { extractComponentDescription } from '../../lib/docgenUtils';
 
 addParameters({
   docs: {
@@ -14,5 +15,6 @@ addParameters({
       return <Story />;
     },
     extractProps,
+    extractComponentDescription,
   },
 });

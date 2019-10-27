@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { isForwardRef, isMemo } from 'react-is';
 import { PropDef } from '@storybook/components';
-import { PropDefGetter, PropsExtractor, propsFromDocgen, hasDocgen } from '../../lib/propsUtils';
+import { PropDefGetter, PropsExtractor, propsFromDocgen, hasDocgen } from '../../lib/docgenUtils';
 
 export interface PropDefMap {
   [p: string]: PropDef;
