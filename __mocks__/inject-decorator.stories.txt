@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
-import DocgenButton from '../components/DocgenButton';
+import { DocgenButton } from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
 import TableComponent from '../components/TableComponent';

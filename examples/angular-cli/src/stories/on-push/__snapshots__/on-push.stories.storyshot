@@ -7,7 +7,7 @@ exports[`Storyshots Core|OnPush Class Specified Component With On Push And Knobs
   target={[Function ViewContainerRef_]}
 >
   <storybook-on-push-box
-    _nghost-a-c21=""
+    _nghost-a-c23=""
     style="background-color: rgb(255, 240, 0);"
   >
      Word of the day: OnPush 

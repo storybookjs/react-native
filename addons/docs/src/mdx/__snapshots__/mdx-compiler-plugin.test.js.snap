@@ -511,6 +511,9 @@ function MDXContent({ components, ...props }) {
       <Story name=\\"w/punctuation\\" mdxType=\\"Story\\">
         <Button mdxType=\\"Button\\">with punctuation</Button>
       </Story>
+      <Story name=\\"1 fine day\\" mdxType=\\"Story\\">
+        <Button mdxType=\\"Button\\">starts with number</Button>
+      </Story>
     </MDXLayout>
   );
 }
@@ -532,12 +535,21 @@ wPunctuation.story = {};
 wPunctuation.story.name = 'w/punctuation';
 wPunctuation.story.parameters = { mdxSource: '<Button>with punctuation</Button>' };
 
-const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory', 'wPunctuation'] };
+export const _1FineDay = () => <Button>starts with number</Button>;
+_1FineDay.story = {};
+_1FineDay.story.name = '1 fine day';
+_1FineDay.story.parameters = { mdxSource: '<Button>starts with number</Button>' };
+
+const componentMeta = {
+  title: 'Button',
+  includeStories: ['one', 'helloStory', 'wPunctuation', '_1FineDay'],
+};
 
 const mdxStoryNameToId = {
   one: 'button--one',
   'hello story': 'button--hello-story',
   'w/punctuation': 'button--w-punctuation',
+  '1 fine day': 'button--1-fine-day',
 };
 
 componentMeta.parameters = componentMeta.parameters || {};

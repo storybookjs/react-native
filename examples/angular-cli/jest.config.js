@@ -13,6 +13,7 @@ module.exports = {
     '^.+[/\\\\].storybook[/\\\\]config\\.ts$': '<rootDir>/scripts/jest-ts-babel.js',
     '^.+\\.html$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
     '^.+\\.ts$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js',
+    '^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx',
   },
   moduleFileExtensions: [...config.moduleFileExtensions, 'html'],
 };

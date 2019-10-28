@@ -2,6 +2,9 @@
 
 exports[`Welcome render correctly 1`] = `
 Object {
+  "attributes": Object {
+    "class": "rax-view",
+  },
   "children": Array [
     Object {
       "children": Array [
@@ -43,6 +46,9 @@ Object {
       "tagName": "IMG",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -62,17 +68,14 @@ Object {
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
       },
       "tagName": "DIV",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -92,17 +95,14 @@ Object {
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
       },
       "tagName": "DIV",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -122,12 +122,6 @@ Object {
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
       },
       "tagName": "DIV",
@@ -138,6 +132,9 @@ Object {
       },
       "children": Array [
         Object {
+          "attributes": Object {
+            "class": "rax-view",
+          },
           "children": Array [
             Object {
               "children": Array [
@@ -157,12 +154,6 @@ Object {
             },
           ],
           "style": Object {
-            "alignContent": "flex-start",
-            "border": "0 solid black",
-            "boxSizing": "border-box",
-            "display": "flex",
-            "flexDirection": "column",
-            "flexShrink": 0,
             "marginBottom": 10,
           },
           "tagName": "DIV",
@@ -171,6 +162,9 @@ Object {
       "tagName": "BUTTON",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -190,17 +184,14 @@ Object {
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
       },
       "tagName": "DIV",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -220,24 +211,12 @@ Object {
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
       },
       "tagName": "DIV",
     },
   ],
   "style": Object {
-    "alignContent": "flex-start",
-    "border": "0 solid black",
-    "boxSizing": "border-box",
-    "display": "flex",
-    "flexDirection": "column",
-    "flexShrink": 0,
     "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
     "margin": 15,
   },

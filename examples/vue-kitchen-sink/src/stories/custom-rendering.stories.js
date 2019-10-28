@@ -44,7 +44,7 @@ export const templateMethods = () => ({
   template: `
       <p>
         <em>Clicking the button will navigate to another story using the 'addon-links'</em><br/>
-        <my-button :rounded="true" :handle-click="action">MyButton rendered in a template + props & methods</my-button>
+        <my-button :rounded="true" @click="action">MyButton rendered in a template + props & methods</my-button>
       </p>`,
   methods: {
     action: linkTo('Button'),
@@ -65,7 +65,7 @@ export const JSX = () => ({
 
 export const vuexActions = () => ({
   components: { MyButton },
-  template: '<my-button :handle-click="log">with vuex: {{ $store.state.count }}</my-button>',
+  template: '<my-button @click="log">with vuex: {{ $store.state.count }}</my-button>',
   store: new Vuex.Store({
     state: { count: 0 },
     mutations: {
@@ -88,7 +88,7 @@ vuexActions.story = {
 
 export const whateverYouWant = () => ({
   components: { MyButton },
-  template: '<my-button :handle-click="log">with awesomeness: {{ $store.state.count }}</my-button>',
+  template: '<my-button @click="log">with awesomeness: {{ $store.state.count }}</my-button>',
   store: new Vuex.Store({
     state: { count: 0 },
     mutations: {
