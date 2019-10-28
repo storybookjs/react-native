@@ -5,7 +5,7 @@ export default {
 };
 
 export const actionOnly = () => ({
-  template: '<my-button :handle-click="log">Click me to log the action</my-button>',
+  template: '<my-button @click="log">Click me to log the action</my-button>',
   methods: {
     log: action('log1'),
   },
@@ -17,7 +17,7 @@ actionOnly.story = {
 
 export const multipleActions = () => ({
   template:
-    '<my-button :handle-click="click" :handle-dblclick="doubleclick">(Double) click me to log the action</my-button>',
+    '<my-button @click="click" @double-click="doubleclick">(Double) click me to log the action</my-button>',
   methods: actions('click', 'doubleclick'),
 });
 
@@ -27,7 +27,7 @@ multipleActions.story = {
 
 export const multipleActionsObject = () => ({
   template:
-    '<my-button :handle-click="click" :handle-dblclick="doubleclick">(Double) click me to log the action</my-button>',
+    '<my-button @click="click" @double-click="doubleclick">(Double) click me to log the action</my-button>',
   methods: actions({ click: 'clicked', doubleclick: 'double clicked' }),
 });
 
@@ -36,7 +36,7 @@ multipleActionsObject.story = {
 };
 
 export const actionAndMethod = () => ({
-  template: '<my-button :handle-click="log">Click me to log the action</my-button>',
+  template: '<my-button @click="log">Click me to log the action</my-button>',
   methods: {
     log: e => {
       e.preventDefault();

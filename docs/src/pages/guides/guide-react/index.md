@@ -14,9 +14,19 @@ npx -p @storybook/cli sb init --type react
 
 Note: be sure you have a `package.json` in your project or the above command will fail.
 
+If you're using [Create React App](https://create-react-app.dev/), use:
+
+```sh
+npx -p @storybook/cli sb init --type react_scripts
+```
+
 ## Manual setup
 
 If you want to set up Storybook manually for your React project, this is the guide for you.
+
+### A note for Create React App users
+
+You can now use [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) to configure Storybook on your behalf. This is installed by Storybook during automatic setup (Storybook 5.3 or newer).
 
 ## Step 1: Add dependencies
 
@@ -34,7 +44,7 @@ Make sure that you have `react`, `react-dom`, `@babel/core`, and `babel-loader` 
 
 ```sh
 npm install react react-dom --save
-npm install babel-loader @babel/core --save-dev 
+npm install babel-loader @babel/core --save-dev
 ```
 
 ## Step 2: Add an npm script
@@ -76,8 +86,12 @@ export default { title: 'Button' };
 export const withText = () => <Button>Hello Button</Button>;
 
 export const withEmoji = () => (
-  <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
-);   
+  <Button>
+    <span role="img" aria-label="so cool">
+      😀 😎 👍 💯
+    </span>
+  </Button>
+);
 ```
 
 Each story is a single state of your component. In the above case, there are two stories for the demo button component:

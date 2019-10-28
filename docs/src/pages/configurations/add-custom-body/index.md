@@ -5,7 +5,7 @@ title: 'Add Custom Body'
 
 Sometimes, you may need to add different tags to the HTML body. This is useful for adding some custom content roots.
 
-You can do this very easily. Simply create a file called `preview-body.html` inside the Storybook config directory and add tags like this:
+You can accomplish this by creating a file called `preview-body.html` inside the Storybook config directory and add tags like this:
 
 ```html
 <div id="custom-root"></div>

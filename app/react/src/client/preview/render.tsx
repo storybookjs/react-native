@@ -1,21 +1,21 @@
 import { document } from 'global';
-import React from 'react';
+import React, { Component, ReactElement, StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { RenderMainArgs, ShowErrorArgs } from './types';
+import { RenderMainArgs } from './types';
 
 const rootEl = document ? document.getElementById('root') : null;
 
-const render = (node: React.ReactElement, el: Element) =>
+const render = (node: ReactElement, el: Element) =>
   new Promise(resolve => {
     ReactDOM.render(
-      process.env.STORYBOOK_EXAMPLE_APP ? <React.StrictMode>{node}</React.StrictMode> : node,
+      process.env.STORYBOOK_EXAMPLE_APP ? <StrictMode>{node}</StrictMode> : node,
       el,
       resolve
     );
   });
 
-class ErrorBoundary extends React.Component<{
-  showError: (args: ShowErrorArgs) => void;
+class ErrorBoundary extends Component<{
+  showException: (err: Error) => void;
   showMain: () => void;
 }> {
   state = { hasError: false };
@@ -32,10 +32,10 @@ class ErrorBoundary extends React.Component<{
     }
   }
 
-  componentDidCatch({ message, stack }: Error) {
-    const { showError } = this.props;
+  componentDidCatch(err: Error) {
+    const { showException } = this.props;
     // message partially duplicates stack, strip it
-    showError({ title: message.split(/\n/)[0], description: stack });
+    showException(err);
   }
 
   render() {
@@ -49,11 +49,11 @@ class ErrorBoundary extends React.Component<{
 export default async function renderMain({
   storyFn: StoryFn,
   showMain,
-  showError,
+  showException,
   forceRender,
 }: RenderMainArgs) {
   const element = (
-    <ErrorBoundary showMain={showMain} showError={showError}>
+    <ErrorBoundary showMain={showMain} showException={showException}>
       <StoryFn />
     </ErrorBoundary>
   );

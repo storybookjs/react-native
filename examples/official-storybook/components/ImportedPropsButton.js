@@ -1,5 +1,5 @@
 import React from 'react';
-import DocgenButton from './DocgenButton';
+import { DocgenButton } from './DocgenButton';
 
 /** Button component description */
 const ImportedPropsButton = ({ disabled, label, onClick }) => (

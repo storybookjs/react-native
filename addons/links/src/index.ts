@@ -1,4 +1,4 @@
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 import { linkTo, hrefTo, withLinks } from './preview';
 
 let hasWarned = false;
@@ -6,7 +6,7 @@ let hasWarned = false;
 export function LinkTo(): null {
   if (!hasWarned) {
     // eslint-disable-next-line no-console
-    console.error(stripIndents`
+    console.error(dedent`
       LinkTo has moved to addon-links/react:
       import LinkTo from '@storybook/addon-links/react';
     `);

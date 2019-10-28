@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Rounded 1`] = `
+<button
+  class="button rounded"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  A Button with rounded edges!
+</button>
+`;
+
+exports[`Storyshots Button Square 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  A Button with square edges!
+</button>
+`;
