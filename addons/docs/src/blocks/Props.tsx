@@ -1,19 +1,24 @@
 import React, { FunctionComponent } from 'react';
-import { PropsTable, PropsTableError, PropsTableProps, PropDef } from '@storybook/components';
+import { PropsTable, PropsTableError, PropsTableProps } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, CURRENT_SELECTION } from './shared';
-import { getPropDefs as autoPropDefs, PropDefGetter } from '../lib/getPropDefs';
+
+import { PropsExtractor } from '../lib/docgenUtils';
+import { extractProps as reactExtractProps } from '../frameworks/react/extractProps';
+import { extractProps as vueExtractProps } from '../frameworks/vue/extractProps';
 
 interface PropsProps {
   exclude?: string[];
   of: '.' | Component;
 }
 
-const inferPropDefs = (framework: string): PropDefGetter | null => {
+// FIXME: remove in SB6.0 & require config
+const inferPropsExtractor = (framework: string): PropsExtractor | null => {
   switch (framework) {
     case 'react':
+      return reactExtractProps;
     case 'vue':
-      return autoPropDefs;
+      return vueExtractProps;
     default:
       return null;
   }
@@ -32,13 +37,11 @@ export const getPropsTableProps = (
       throw new Error(PropsTableError.NO_COMPONENT);
     }
 
-    const { getPropDefs = inferPropDefs(framework) } = params.docs || {};
-    if (!getPropDefs) {
+    const { extractProps = inferPropsExtractor(framework) } = params.docs || {};
+    if (!extractProps) {
       throw new Error(PropsTableError.PROPS_UNSUPPORTED);
     }
-    const allRows = getPropDefs(target);
-    const rows = !exclude ? allRows : allRows.filter((row: PropDef) => !exclude.includes(row.name));
-    return { rows };
+    return extractProps(target, { exclude });
   } catch (err) {
     return { error: err.message };
   }

@@ -9,6 +9,6 @@ export default {
 
 export const welcome = () => {
   return {
-    render: h => h(Welcome, { props: { goToButton: linkTo('Button') } }),
+    render: h => h(Welcome, { listeners: { buttonRequested: linkTo('Button') } }),
   };
 };

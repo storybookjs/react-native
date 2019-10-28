@@ -7,10 +7,10 @@ exports[`Storyshots Core|Parameters Passed To Story 1`] = `
   target={[Function ViewContainerRef_]}
 >
   <storybook-button-component
-    _nghost-a-c18=""
+    _nghost-a-c20=""
   >
     <button
-      _ngcontent-a-c18=""
+      _ngcontent-a-c20=""
     >
       Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"docs":{"iframeHeight":"60px"},"globalParameter":"globalParameter","framework":"angular","chapterParameter":"chapterParameter","storyParameter":"storyParameter","displayName":"passed to story"}
     </button>

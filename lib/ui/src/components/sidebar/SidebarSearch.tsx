@@ -118,6 +118,7 @@ export const PureSidebarSearch = ({ className, onChange, ...props }: PureSidebar
       focussed={focussed}
       className={className}
       onReset={() => onChange('')}
+      onSubmit={e => e.preventDefault()}
     >
       <FilterField
         type="text"

@@ -3,7 +3,7 @@ import { TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
 
 const ActiveBorder = styled.View<{ active: boolean }>(({ active, theme }) => ({
-  background: active ? theme.borderColor : 'transparent',
+  backgroundColor: active ? theme.borderColor : 'transparent',
   height: 3,
 }));
 

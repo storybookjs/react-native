@@ -4,7 +4,7 @@ import dedent from 'ts-dedent';
 const defaultOptions: Stories2SnapsConverterOptions = {
   snapshotsDirName: '__snapshots__',
   snapshotExtension: '.storyshot',
-  storiesExtensions: ['.js', '.jsx', '.ts', '.tsx'],
+  storiesExtensions: ['.js', '.jsx', '.ts', '.tsx', '.mdx'],
 };
 
 export interface Stories2SnapsConverterOptions {
