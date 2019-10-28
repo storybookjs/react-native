@@ -3,6 +3,15 @@ import { Event } from 'global';
 import { LitElement, html } from 'lit-element';
 import { demoWcCardStyle } from './demoWcCardStyle.css.js';
 
+/**
+ * This is a container looking like a card with a back and front side you can switch
+ *
+ * @slot - This is an unnamed slot (the default slot)
+ * @fires side-changed - Fires whenever it switches between front/back
+ * @cssprop --demo-wc-card-header-font-size - Header font size
+ * @cssprop --demo-wc-card-front-color - Font color for front
+ * @cssprop --demo-wc-card-back-color - Font color for back
+ */
 export class DemoWcCard extends LitElement {
   static get properties() {
     return {

@@ -26,6 +26,9 @@ addParameters({
           tag => tag.name.toUpperCase() === tagName.toUpperCase()
         );
         const sections = {};
+        if (metaData.attributes) {
+          sections.attributes = mapData(metaData.attributes);
+        }
         if (metaData.properties) {
           sections.props = mapData(metaData.properties);
         }
