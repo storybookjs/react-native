@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component as ReactComponent, ComponentType } from 'react';
 import { STORY_CHANGED } from '@storybook/core-events';
 import { API } from '@storybook/api';
 import { ADD_TESTS } from '../shared';
@@ -34,12 +34,8 @@ export interface HocState {
   tests?: Test[];
 }
 
-const provideTests = (Component: React.ComponentType<InjectedProps>) =>
-  class TestProvider extends React.Component<HocProps, HocState> {
-    stopListeningOnStory: () => void;
-
-    mounted: boolean;
-
+const provideTests = (Component: ComponentType<InjectedProps>) =>
+  class TestProvider extends ReactComponent<HocProps, HocState> {
     state: HocState = {};
 
     static defaultProps = {
@@ -71,6 +67,10 @@ const provideTests = (Component: React.ComponentType<InjectedProps>) =>
     onAddTests = ({ kind, storyName, tests }: HocState) => {
       this.setState({ kind, storyName, tests });
     };
+
+    mounted: boolean;
+
+    stopListeningOnStory: () => void;
 
     render() {
       const { active } = this.props;

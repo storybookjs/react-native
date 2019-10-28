@@ -318,6 +318,7 @@ const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
   backgroundColor: theme.color.lighter,
   borderRadius: '3px',
   fontSize: theme.typography.size.s2 - 1,
+  color: theme.base === 'dark' && theme.color.darkest,
 });
 
 export const P = styled.p<{}>(withReset, withMargin, ({ theme }) => ({

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 
 import { window } from 'global';
@@ -22,7 +22,7 @@ interface BarProps {
 
 export type ToolbarProps = BarProps & ZoomProps & EjectProps;
 
-const Zoom: React.FC<ZoomProps> = ({ zoom, resetZoom }) => (
+const Zoom: FunctionComponent<ZoomProps> = ({ zoom, resetZoom }) => (
   <>
     <IconButton
       key="zoomin"
@@ -57,7 +57,7 @@ const Zoom: React.FC<ZoomProps> = ({ zoom, resetZoom }) => (
   </>
 );
 
-const Eject: React.FC<EjectProps> = ({ baseUrl, storyId }) => (
+const Eject: FunctionComponent<EjectProps> = ({ baseUrl, storyId }) => (
   <IconButton
     key="opener"
     onClick={() => window.open(`${baseUrl}?id=${storyId}`)}
@@ -75,7 +75,13 @@ const Bar = styled(props => <FlexBar {...props} />)({
   transition: 'transform .2s linear',
 });
 
-export const Toolbar: React.FC<ToolbarProps> = ({ storyId, baseUrl, zoom, resetZoom, ...rest }) => (
+export const Toolbar: FunctionComponent<ToolbarProps> = ({
+  storyId,
+  baseUrl,
+  zoom,
+  resetZoom,
+  ...rest
+}) => (
   <Bar {...rest}>
     <Fragment key="left">
       <Zoom {...{ zoom, resetZoom }} />

@@ -1,0 +1,21 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import { Button } from '@storybook/react/demo';
+
+<Meta title="Button" component={Button} />
+
+# Button
+
+This `Button` document defines two stories:
+
+<Story name="text">
+  <Button onClick={action('clicked')}>Hello Button</Button>
+</Story>
+
+<Story name="emoji">
+  <Button onClick={action('clicked')}>
+    <span role="img" aria-label="so cool">
+      😀 😎 👍 💯
+    </span>
+  </Button>
+</Story>

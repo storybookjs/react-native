@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { window, document } from 'global';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 
 const rootEl = document.getElementById('root');
 
@@ -63,7 +63,7 @@ export default function renderMain({
   if (!element) {
     showError({
       title: `Expecting a Ember element from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
+      description: dedent`
         Did you forget to return the Ember element from the story?
         Use "() => hbs('{{component}}')" or "() => { return {
           template: hbs\`{{component}}\`

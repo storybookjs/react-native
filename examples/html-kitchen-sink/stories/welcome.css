@@ -5,6 +5,10 @@
     background-color: #ffffff;
 }
 
+h1 {
+    color: rebeccapurple;
+}
+
 .logo {
     width: 256px;
     margin: 15px;

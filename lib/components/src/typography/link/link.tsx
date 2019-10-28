@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, FunctionComponent } from 'react';
+import React, { AnchorHTMLAttributes, FunctionComponent, MouseEvent } from 'react';
 import { styled, css, Theme } from '@storybook/theming';
 import { darken } from 'polished';
 
@@ -7,10 +7,10 @@ import { Icons } from '../../icon/icon';
 // Cmd/Ctrl/Shift/Alt + Click should trigger default browser behaviour. Same applies to non-left clicks
 const LEFT_BUTTON = 0;
 
-const isPlainLeftClick = (e: React.MouseEvent) =>
+const isPlainLeftClick = (e: MouseEvent) =>
   e.button === LEFT_BUTTON && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey;
 
-const cancelled = (e: React.MouseEvent, cb: (_e: React.MouseEvent) => void) => {
+const cancelled = (e: MouseEvent, cb: (_e: MouseEvent) => void) => {
   if (isPlainLeftClick(e)) {
     e.preventDefault();
     cb(e);
@@ -190,7 +190,7 @@ export interface LinkProps extends LinkInnerProps, LinkStylesProps {
   cancel?: boolean;
   className?: string;
   style?: object;
-  onClick?: (e: React.MouseEvent) => void;
+  onClick?: (e: MouseEvent) => void;
   href?: string;
 }
 

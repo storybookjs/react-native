@@ -21,12 +21,6 @@ type Props = {
 // Android changes screen size when keyboard opens.
 // To avoid issues we use absolute positioned element with predefined screen size
 export default class AbsolutePositionedKeyboardAwareView extends PureComponent<Props> {
-  keyboardDidShowListener: EmitterSubscription;
-
-  keyboardDidHideListener: EmitterSubscription;
-
-  keyboardOpen: boolean;
-
   constructor(props: Props) {
     super(props);
     this.keyboardDidShowListener = Keyboard.addListener(
@@ -49,7 +43,7 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
   keyboardDidShowHandler = (e: KeyboardEvent) => {
     if (Platform.OS === 'android') {
       const { previewWidth } = this.props;
-      // There is bug in RN android that keyboardDidShow event is called simply when you go from portrait to landscape.
+      // There is bug in RN android that keyboardDidShow event is called when you go from portrait to landscape.
       // To make sure that this is keyboard event we check screen width
       if (previewWidth === e.endCoordinates.width) {
         this.keyboardOpen = true;
@@ -82,6 +76,12 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
       });
     }
   };
+
+  keyboardDidShowListener: EmitterSubscription;
+
+  keyboardDidHideListener: EmitterSubscription;
+
+  keyboardOpen: boolean;
 
   render() {
     const { children, previewWidth, previewHeight } = this.props;

@@ -67,8 +67,6 @@ export default class ColorType extends Component<ColorTypeProps, ColorTypeState>
     displayColorPicker: false,
   };
 
-  popover!: HTMLDivElement;
-
   componentDidMount() {
     document.addEventListener('mousedown', this.handleWindowMouseDown);
   }
@@ -110,6 +108,8 @@ export default class ColorType extends Component<ColorTypeProps, ColorTypeState>
 
     onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`);
   };
+
+  popover!: HTMLDivElement;
 
   render() {
     const { knob } = this.props;

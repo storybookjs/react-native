@@ -5,8 +5,7 @@ export default {
 };
 
 export const goToWelcome = () => ({
-  template:
-    '<my-button :rounded="true" :handle-click="click" >This buttons links to Welcome</my-button>',
+  template: '<my-button :rounded="true" @click="click" >This buttons links to Welcome</my-button>',
   methods: {
     click: linkTo('Welcome'),
   },
