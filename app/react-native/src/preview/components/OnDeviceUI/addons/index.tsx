@@ -14,7 +14,7 @@ const NoAddonContainer = styled.View({
 
 const Container = styled.View(({ theme }) => ({
   flex: 1,
-  background: theme.backgroundColor,
+  backgroundColor: theme.backgroundColor,
 }));
 
 export default class Addons extends PureComponent<{}, { addonSelected: string }> {

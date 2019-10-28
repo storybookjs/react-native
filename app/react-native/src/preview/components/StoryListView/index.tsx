@@ -18,13 +18,13 @@ const SearchBar = styled.TextInput(
     paddingVertical: 5,
   },
   ({ theme }) => ({
-    background: theme.borderColor,
+    backgroundColor: theme.borderColor,
     color: theme.buttonActiveTextColor,
   })
 );
 
 const HeaderContainer = styled.View({
-  paddingCertical: 5,
+  paddingVertical: 5,
 });
 
 interface SectionProps {

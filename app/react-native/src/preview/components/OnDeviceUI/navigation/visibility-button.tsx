@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Touchable = styled.TouchableOpacity({
-  background: 'transparent',
+  backgroundColor: 'transparent',
   position: 'absolute',
   right: '8',
   bottom: '12',
