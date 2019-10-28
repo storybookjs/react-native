@@ -1,3 +1,9 @@
+## 5.3.0-alpha.33 (October 28, 2019)
+
+### Maintenance
+
+* Web-components: Move custom-elements utils to app ([#8592](https://github.com/storybookjs/storybook/pull/8592))
+
 ## 5.3.0-alpha.32 (October 28, 2019)
 
 ### Features
