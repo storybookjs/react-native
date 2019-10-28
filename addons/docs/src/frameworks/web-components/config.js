@@ -1,7 +1,7 @@
 /* global window */
 /* eslint-disable import/no-extraneous-dependencies */
 import { addParameters } from '@storybook/client-api';
-import { getCustomElements } from './customElements';
+import { getCustomElements, isValidComponent, isValidMetaData } from '@storybook/web-components';
 
 function mapData(data) {
   return data.map(item => ({
@@ -15,27 +15,6 @@ function mapData(data) {
 
 function isEmpty(obj) {
   return Object.entries(obj).length === 0 && obj.constructor === Object;
-}
-
-function isValidComponent(tagName) {
-  if (!tagName) {
-    return false;
-  }
-  if (typeof tagName === 'string') {
-    return true;
-  }
-  throw new Error('Provided component needs to be a string. e.g. component: "my-element"');
-}
-
-function isValidMetaData(customElements) {
-  if (!customElements) {
-    return false;
-  }
-  if (customElements.tags && Array.isArray(customElements.tags)) {
-    return true;
-  }
-  throw new Error(`You need to setup valid meta data in your config.js via setCustomElements().
-    See the readme of addon-docs for web components for more details.`);
 }
 
 addParameters({
