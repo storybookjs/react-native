@@ -14,7 +14,7 @@ We've created two basic themes that look good of the box: "normal" (a light them
 As an example, you can tell Storybook to use the "dark" theme by modifying `.storybook/config.js`:
 
 ```js
-import { addParameters } from '@storybook/react';
+import { configure, addParameters } from '@storybook/react'
 import { themes } from '@storybook/theming';
 
 // Option defaults.
@@ -23,7 +23,10 @@ addParameters({
     theme: themes.dark,
   },
 });
+
+// configure(...)
 ```
+> `addParameters` needs to be called before `configure()` method or it won't have any effect.
 
 When setting a theme, set a full theme object. The theme is replaced, not combined.
 
