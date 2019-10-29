@@ -10,6 +10,7 @@
   "devDependencies": {
     "@storybook/addon-decorator": "5.2.0-rc.0",
     "@storybook/addon-parameter": "5.2.0-rc.0",
+    "@storybook/addon-preview-wrapper": "5.2.0-rc.0",
     "@storybook/addon-roundtrip": "5.2.0-rc.0",
     "@storybook/addons": "5.2.0-rc.0",
     "@storybook/components": "5.2.0-rc.0",
