@@ -1,5 +1,5 @@
-/* eslint-disable no-underscore-dangle, import/extensions */
-import { Event } from 'global';
+/* eslint-disable import/extensions */
+import { CustomEvent } from 'global';
 import { LitElement, html } from 'lit-element';
 import { demoWcCardStyle } from './demoWcCardStyle.css.js';
 
@@ -15,28 +15,14 @@ import { demoWcCardStyle } from './demoWcCardStyle.css.js';
 export class DemoWcCard extends LitElement {
   static get properties() {
     return {
-      backSide: { type: Boolean, reflect: true, attribute: 'back-side' },
+      backSide: {
+        type: Boolean,
+        reflect: true,
+        attribute: 'back-side',
+      },
       header: { type: String },
       rows: { type: Object },
     };
-  }
-
-  /**
-   * A card setter can have side A or B
-   *
-   * @param {("A"|"B")} value
-   */
-  set side(value) {
-    this.__side = value;
-    this.dispatchEvent(new Event('side-changed'));
-    this.requestUpdate();
-  }
-
-  /**
-   * @returns {("A"|"B")}
-   */
-  get side() {
-    return this.__side;
   }
 
   static get styles() {
@@ -45,6 +31,7 @@ export class DemoWcCard extends LitElement {
 
   constructor() {
     super();
+
     /**
      * Indicates that the back of the card is shown
      */
@@ -104,5 +91,11 @@ export class DemoWcCard extends LitElement {
         </div>
       </div>
     `;
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has('backSide') && changedProperties.get('backSide') !== undefined) {
+      this.dispatchEvent(new CustomEvent('side-changed'));
+    }
   }
 }

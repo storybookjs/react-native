@@ -27,12 +27,6 @@
       ],
       "properties": [
         {
-          "name": "side",
-          "description": "A card setter can have side A or B",
-          "jsDoc": "/**\n   * A card setter can have side A or B\n   *\n   * @param {(\"A\"|\"B\")} value\n   */",
-          "type": "\"A\" | \"B\""
-        },
-        {
           "name": "backSide",
           "description": "Indicates that the back of the card is shown",
           "jsDoc": "/**\n     * Indicates that the back of the card is shown\n     */",
