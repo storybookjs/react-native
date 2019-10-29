@@ -14,6 +14,7 @@ import '@storybook/addon-jest/register';
 import '@storybook/addon-viewport/register';
 import '@storybook/addon-graphql/register';
 import '@storybook/addon-contexts/register';
+
 import addHeadWarning from './head-warning';
 
 addHeadWarning('manager-head-not-loaded', 'Manager head not loaded');
