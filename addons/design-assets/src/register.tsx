@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { addons, types } from '@storybook/addons';
 import { AddonPanel } from '@storybook/components';

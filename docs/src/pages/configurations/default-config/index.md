@@ -167,7 +167,7 @@ The webpack config [is configurable](/configurations/custom-webpack-config/), an
 
 ### CSS Support
 
-You can simply import CSS files wherever you want, whether it's in the storybook config file, a UI component, or inside a story definition file.
+You can import CSS files wherever you want, whether it's in the storybook config file, a UI component, or inside a story definition file.
 
 Basically, you can import CSS like this:
 
@@ -189,7 +189,7 @@ import './styles.css';
 ### Image and Static File Support
 
 You can also import images and media files directly via JavaScript.
-This helps you to write stories with media files easily. This is how to do it:
+This helps you to write stories with media files. This is how to do it:
 
 ```js
 import React from 'react';
@@ -228,4 +228,4 @@ storiesOf('Component', module)
 ## NPM Modules
 
 You can use any of the NPM modules installed on your project.
-You can simply import and use them.
+You can import and use them.

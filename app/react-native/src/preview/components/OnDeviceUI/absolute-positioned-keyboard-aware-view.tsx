@@ -43,7 +43,7 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
   keyboardDidShowHandler = (e: KeyboardEvent) => {
     if (Platform.OS === 'android') {
       const { previewWidth } = this.props;
-      // There is bug in RN android that keyboardDidShow event is called simply when you go from portrait to landscape.
+      // There is bug in RN android that keyboardDidShow event is called when you go from portrait to landscape.
       // To make sure that this is keyboard event we check screen width
       if (previewWidth === e.endCoordinates.width) {
         this.keyboardOpen = true;

@@ -1,1 +1,1 @@
-export * from '../../lib/getPropDefs';
+export * from '../../lib/docgenUtils';

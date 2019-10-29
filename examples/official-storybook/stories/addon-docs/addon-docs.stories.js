@@ -1,7 +1,7 @@
 import React from 'react';
 import notes from '../notes/notes.md';
 import mdxNotes from '../notes/notes.mdx';
-import DocgenButton from '../../components/DocgenButton';
+import { DocgenButton } from '../../components/DocgenButton';
 
 export default {
   title: 'Addons|Docs/stories',

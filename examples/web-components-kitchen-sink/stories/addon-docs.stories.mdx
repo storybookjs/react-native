@@ -1,0 +1,59 @@
+import { Story, Preview, Meta, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import { html } from 'lit-html';
+import '../demo-wc-card.js';
+
+# Storybook Docs for Web Components
+
+<Meta title="Addons|Docs" />
+
+## Story definition
+
+A story can be a simple return of `html`
+
+<Story name="simple" height="220px">
+  {html`
+    <demo-wc-card>Hello World</demo-wc-card>
+  `}
+</Story>
+
+## API
+
+You can show the api table of a web component at any point in your documentation.
+
+<Props of="demo-wc-card" />
+
+## Function stories
+
+Or a function
+
+<Story name="function" height="220px">
+  {() => {
+    const rows = [{ header: 'health', value: '200' }, { header: 'mana', value: '100' }];
+    return html`
+      <demo-wc-card back-side .rows=${rows}>
+        A card with data on the back
+      </demo-wc-card>
+    `;
+  }}
+</Story>
+
+## Wrapper
+
+You can also wrap your live demos in a nice little wrapper.
+
+<Preview withToolbar>
+  <Story name="wrapper" height="220px">
+    {html`
+      <demo-wc-card>Hello World</demo-wc-card>
+    `}
+  </Story>
+</Preview>
+
+## Story reference
+
+You can also reference an existing story from within your MDX file.
+
+<Preview withToolbar>
+  <Story id="welcome--welcome" height="500px" />
+</Preview>

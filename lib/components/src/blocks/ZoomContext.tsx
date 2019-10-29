@@ -1,5 +1,5 @@
-import React from 'react';
+import { Context, createContext } from 'react';
 
-export const ZoomContext: React.Context<{ scale: number }> = React.createContext({
+export const ZoomContext: Context<{ scale: number }> = createContext({
   scale: 1,
 });

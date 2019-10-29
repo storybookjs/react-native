@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import { document } from 'global';
 import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
@@ -15,7 +15,7 @@ interface DocsContainerProps {
 interface CodeOrSourceProps {
   className?: string;
 }
-export const CodeOrSource: React.FC<CodeOrSourceProps> = props => {
+export const CodeOrSource: FunctionComponent<CodeOrSourceProps> = props => {
   const { className, children, ...rest } = props;
   // markdown-to-jsx does not add className to inline code
   if (
@@ -41,17 +41,14 @@ const defaultComponents = {
   code: CodeOrSource,
 };
 
-export const DocsContainer: React.FunctionComponent<DocsContainerProps> = ({
-  context,
-  children,
-}) => {
+export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, children }) => {
   const { id: storyId = null, parameters = {} } = context || {};
   const options = parameters.options || {};
   const theme = ensureTheme(options.theme);
   const { components: userComponents = null } = parameters.docs || {};
   const components = { ...defaultComponents, ...userComponents };
 
-  React.useEffect(() => {
+  useEffect(() => {
     let element = document.getElementById(anchorBlockIdFromId(storyId));
     if (!element) {
       element = document.getElementById(storyBlockIdFromId(storyId));

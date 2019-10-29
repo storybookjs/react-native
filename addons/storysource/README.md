@@ -14,24 +14,33 @@ First, install the addon
 yarn add @storybook/addon-storysource --dev
 ```
 
-Add this line to your `addons.js` file
+You can add configuration for this addon by using a preset or by using the addon config with webpack
+
+### Install using preset
+
+Add the following to your `.storybook/presets.js` exports:
 
 ```js
-import '@storybook/addon-storysource/register';
+module.exports = ['@storybook/addon-storysource/preset'];
 ```
 
-Use this hook to a custom webpack.config. This will generate a decorator call in every story:
+You can pass configurations into the addon-storysource loader in your `.storybook/presets.js` file, e.g.:
 
-```js
-module.exports = function({ config }) {
-  config.module.rules.push({
-    test: /\.stories\.jsx?$/,
-    loaders: [require.resolve('@storybook/source-loader')],
-    enforce: 'pre',
-  });
-
-  return config;
-};
+```javascript
+module.exports = [
+  {
+    name: '@storybook/addon-storysource/preset',
+    options: {
+      rule: {
+        // test: [/\.stories\.jsx?$/], This is default
+        include: [path.resolve(__dirname, '../src')], // You can specify directories
+      },
+      loaderOptions: {
+        prettierConfig: { printWidth: 80, singleQuote: false },
+      },
+    },
+  },
+];
 ```
 
 ## Loader Options
@@ -166,5 +175,6 @@ module.exports = function({ config }) {
 ```
 
 ## Theming
+
 Storysource will automatically use the light or dark syntax theme based on your storybook theme. See [Theming Storybook](https://storybook.js.org/docs/configurations/theming/) for more information.
 ![Storysource Light/Dark Themes](./docs/theming-light-dark.png)

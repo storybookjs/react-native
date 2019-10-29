@@ -2,7 +2,10 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "paths": {
+      "@emotion/native": ["src/typings.d.ts"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["src/__tests__/**/*"]

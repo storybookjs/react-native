@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 import Constants from './constants';
 import { Channel } from './BackgroundPanel';
@@ -12,7 +12,7 @@ interface ContainerState {
   background: string;
 }
 
-export default class Container extends React.Component<ContainerProps, ContainerState> {
+export default class Container extends Component<ContainerProps, ContainerState> {
   constructor(props: ContainerProps) {
     super(props);
     this.state = { background: props.initialBackground || '' };

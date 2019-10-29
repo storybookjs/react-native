@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 
 interface Props {
   /**
@@ -8,7 +8,7 @@ interface Props {
   onClick?: () => void;
 }
 
-const Button: React.SFC<Props> = ({ children, onClick }) => (
+const Button: FunctionComponent<Props> = ({ children, onClick }) => (
   <button type="button" onClick={onClick}>
     {children}
   </button>
