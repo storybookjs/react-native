@@ -7,8 +7,6 @@ export enum types {
   TOOL = 'tool',
   PREVIEW = 'preview',
   NOTES_ELEMENT = 'notes-element',
-  IFRAME_START = 'iframe_start',
-  IFRAME_END = 'iframe_end',
 }
 
 export type Types = types | string;
