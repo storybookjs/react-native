@@ -25,8 +25,8 @@ const ChildrenContainer = styled.div<PreviewProps>(({ isColumn, columns }) => ({
 
   '> *': {
     flex: columns ? `1 1 calc(100%/${columns} - 20px)` : `1 1 0%`,
-    marginRight: 20,
     marginTop: 20,
+    maxWidth: '100%',
   },
 }));
 
