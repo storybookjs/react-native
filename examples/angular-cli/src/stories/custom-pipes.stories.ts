@@ -1,33 +1,40 @@
-import { storiesOf, moduleMetadata } from '@storybook/angular';
+import { moduleMetadata } from '@storybook/angular';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 import { NameComponent } from './moduleMetadata/name.component';
 import { CustomPipePipe } from './moduleMetadata/custom.pipe';
 
-storiesOf('Custom|Pipes', module)
-  .addDecorator(
+export default {
+  title: 'Custom|Pipes',
+  decorators: [
     moduleMetadata({
       imports: [],
       schemas: [],
       declarations: [CustomPipePipe],
       providers: [],
-    })
-  )
-  .add('Simple', () => ({
-    component: NameComponent,
-    props: {
-      field: 'foobar',
-    },
-  }))
-  .add(
-    'With Knobs',
-    () => ({
-      component: NameComponent,
-      props: {
-        field: text('field', 'foobar'),
-      },
     }),
-    {
-      decorators: [withKnobs],
-    }
-  );
+  ],
+};
+
+export const simple = () => ({
+  component: NameComponent,
+  props: {
+    field: 'foobar',
+  },
+});
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const withKnobsStory = () => ({
+  component: NameComponent,
+  props: {
+    field: text('field', 'foobar'),
+  },
+});
+
+withKnobsStory.story = {
+  name: 'With Knobs',
+  decorators: [withKnobs],
+};

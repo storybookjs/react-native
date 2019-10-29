@@ -1,3 +1,2 @@
-module.exports = {
-  plugins: ['remark-preset-lint-recommended', ['remark-lint-list-item-indent', false]],
-};
+/* eslint-disable import/no-extraneous-dependencies */
+module.exports = require('@storybook/linter-config/remark.config');

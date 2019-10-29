@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button with some emoji 1`] = `
+exports[`Storyshots Button With Some Emoji 1`] = `
 <button
   onClick={[Function]}
   style={
@@ -25,7 +25,7 @@ exports[`Storyshots Button with some emoji 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button with text 1`] = `
+exports[`Storyshots Button With Text 1`] = `
 <button
   onClick={[Function]}
   style={

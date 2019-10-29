@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { Text } from 'react-native';
 
@@ -8,7 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import knobsWrapper from './Knobs';
-// eslint-disable-next-line import/no-unresolved, import/extensions
+// eslint-disable-next-line import/no-unresolved
 import Button from './Button';
 import CenterView from './CenterView';
 import Welcome from './Welcome';

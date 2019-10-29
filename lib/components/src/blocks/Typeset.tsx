@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
@@ -35,28 +35,28 @@ const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
 }));
 
 export interface TypesetProps {
-  fontSizes: number[];
+  fontSizes: string[];
   fontWeight?: number;
   sampleText?: string;
 }
 
 /**
- * Convenient tyleguide documentation showing examples of type
+ * Convenient styleguide documentation showing examples of type
  * with different sizes and weights and configurable sample text.
  */
-export const Typeset: React.FunctionComponent<TypesetProps> = ({
+export const Typeset: FunctionComponent<TypesetProps> = ({
   fontSizes,
   fontWeight,
   sampleText,
   ...props
 }) => (
   <Wrapper {...props} className="docblock-typeset">
-    {fontSizes.map(num => (
-      <TypeSpecimen key={num}>
-        <Label>{num}px</Label>
+    {fontSizes.map(size => (
+      <TypeSpecimen key={size}>
+        <Label>{size}</Label>
         <Sample
           style={{
-            fontSize: num,
+            fontSize: size,
             fontWeight,
           }}
         >

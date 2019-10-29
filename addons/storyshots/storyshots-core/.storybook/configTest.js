@@ -1,11 +1,12 @@
 import { configure } from '@storybook/react';
 
-const req = require.context('../stories/required_with_context', true, /\.stories\.js$/);
+const req = require.context('../stories/required_with_context', false, /\.stories\.js$/);
 
-function loadStories() {
-  req.keys().forEach(filename => req(filename));
+const loadStories = () => {
+  const result = req.keys().map(filename => req(filename));
   // eslint-disable-next-line global-require
   require('../stories/directly_required');
-}
+  return result;
+};
 
 configure(loadStories, module);

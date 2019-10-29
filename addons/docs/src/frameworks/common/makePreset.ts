@@ -2,10 +2,13 @@ import fs from 'fs';
 import * as common from './preset';
 
 const makePreset = (framework: string) => {
-  const frameworkConfig = `${__dirname}/../../../${framework}/config.js`;
-  const preConfig = fs.existsSync(frameworkConfig) ? [frameworkConfig] : [];
+  const docsConfig = [`${__dirname}/config.js`];
+  const frameworkConfig = `${__dirname}/../../../dist/frameworks/${framework}/config.js`;
+  if (fs.existsSync(frameworkConfig)) {
+    docsConfig.push(frameworkConfig);
+  }
   function config(entry: any[] = []) {
-    return [...preConfig, ...entry];
+    return [...docsConfig, ...entry];
   }
 
   const configureJSX = framework !== 'react';

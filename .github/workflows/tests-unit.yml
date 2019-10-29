@@ -1,0 +1,20 @@
+name: Unit tests
+
+on: [push]
+
+jobs:
+  build:
+
+    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: install, bootstrap
+      run: |
+        yarn bootstrap --core
+    - name: test
+      run: |
+        yarn test --core

@@ -2,6 +2,9 @@
 
 exports[`Welcome render correctly 1`] = `
 Object {
+  "attributes": Object {
+    "class": "rax-view",
+  },
   "children": Array [
     Object {
       "children": Array [
@@ -17,13 +20,13 @@ Object {
         "fontSize": 40,
         "fontWeight": "bold",
         "lineHeight": 50,
-        "position": "relative",
         "whiteSpace": "pre-wrap",
       },
       "tagName": "SPAN",
     },
     Object {
       "attributes": Object {
+        "class": "rax-image ",
         "fallbackSource": Object {
           "uri": "https://user-images.githubusercontent.com/677114/49848760-999e7d00-fe11-11e8-978f-264ea31f6739.png",
         },
@@ -35,7 +38,6 @@ Object {
         "load": [Function],
       },
       "style": Object {
-        "display": "flex",
         "height": 100,
         "margin": "0 auto",
         "objectFit": "cover",
@@ -44,6 +46,9 @@ Object {
       "tagName": "IMG",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -57,25 +62,20 @@ Object {
             "flexDirection": "column",
             "flexShrink": 0,
             "fontSize": 12,
-            "position": "relative",
             "whiteSpace": "pre-wrap",
           },
           "tagName": "SPAN",
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
-        "position": "relative",
       },
       "tagName": "DIV",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -89,25 +89,20 @@ Object {
             "flexDirection": "column",
             "flexShrink": 0,
             "fontSize": 12,
-            "position": "relative",
             "whiteSpace": "pre-wrap",
           },
           "tagName": "SPAN",
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
-        "position": "relative",
       },
       "tagName": "DIV",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -121,34 +116,29 @@ Object {
             "flexDirection": "column",
             "flexShrink": 0,
             "fontSize": 12,
-            "position": "relative",
             "whiteSpace": "pre-wrap",
           },
           "tagName": "SPAN",
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
-        "position": "relative",
       },
       "tagName": "DIV",
     },
     Object {
       "attributes": Object {
-        "role": "button",
+        "type": "button",
       },
       "children": Array [
         Object {
+          "attributes": Object {
+            "class": "rax-view",
+          },
           "children": Array [
             Object {
               "children": Array [
-                "Button",
+                "button",
               ],
               "style": Object {
                 "alignContent": "flex-start",
@@ -158,38 +148,23 @@ Object {
                 "flexDirection": "column",
                 "flexShrink": 0,
                 "fontSize": 12,
-                "position": "relative",
                 "whiteSpace": "pre-wrap",
               },
               "tagName": "SPAN",
             },
           ],
           "style": Object {
-            "alignContent": "flex-start",
-            "border": "0 solid black",
-            "boxSizing": "border-box",
-            "display": "flex",
-            "flexDirection": "column",
-            "flexShrink": 0,
             "marginBottom": 10,
-            "position": "relative",
           },
           "tagName": "DIV",
         },
       ],
-      "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "cursor": "pointer",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
-        "position": "relative",
-      },
-      "tagName": "DIV",
+      "tagName": "BUTTON",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -203,25 +178,20 @@ Object {
             "flexDirection": "column",
             "flexShrink": 0,
             "fontSize": 12,
-            "position": "relative",
             "whiteSpace": "pre-wrap",
           },
           "tagName": "SPAN",
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
-        "position": "relative",
       },
       "tagName": "DIV",
     },
     Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
       "children": Array [
         Object {
           "children": Array [
@@ -235,35 +205,20 @@ Object {
             "flexDirection": "column",
             "flexShrink": 0,
             "fontSize": 12,
-            "position": "relative",
             "whiteSpace": "pre-wrap",
           },
           "tagName": "SPAN",
         },
       ],
       "style": Object {
-        "alignContent": "flex-start",
-        "border": "0 solid black",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
         "marginBottom": 10,
-        "position": "relative",
       },
       "tagName": "DIV",
     },
   ],
   "style": Object {
-    "alignContent": "flex-start",
-    "border": "0 solid black",
-    "boxSizing": "border-box",
-    "display": "flex",
-    "flexDirection": "column",
-    "flexShrink": 0,
     "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
     "margin": 15,
-    "position": "relative",
   },
   "tagName": "DIV",
 }

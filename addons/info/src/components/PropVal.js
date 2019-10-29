@@ -75,12 +75,7 @@ function PreviewArray({
     items[`c${i}`] = ',';
   });
   if (val.length > maxPropArrayLength) {
-    items.last = (
-      <span>
-        {indent(breakIntoNewLines, level)}
-        {'…'}
-      </span>
-    );
+    items.last = <span>{indent(breakIntoNewLines, level)}…</span>;
   } else {
     delete items[`c${val.length - 1}`];
   }
@@ -142,12 +137,7 @@ function PreviewObject({
     items[`m${i}`] = ',';
   });
   if (names.length > maxPropObjectKeys) {
-    items.rest = (
-      <span>
-        {indent(breakIntoNewLines, level)}
-        {'…'}
-      </span>
-    );
+    items.rest = <span>{indent(breakIntoNewLines, level)}…</span>;
   } else {
     delete items[`m${names.length - 1}`];
   }

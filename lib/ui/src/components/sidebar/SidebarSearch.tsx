@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { ComponentProps, useState } from 'react';
 import { styled } from '@storybook/theming';
 import { opacify } from 'polished';
 import { Icons } from '@storybook/components';
 
-export type FilterFieldProps = React.ComponentProps<'input'>;
+export type FilterFieldProps = ComponentProps<'input'>;
 
 const FilterField = styled.input<FilterFieldProps>(({ theme }) => ({
   // resets
@@ -30,7 +30,7 @@ const FilterField = styled.input<FilterFieldProps>(({ theme }) => ({
   },
 }));
 
-export type CancelButtonProps = React.ComponentProps<'button'>;
+export type CancelButtonProps = ComponentProps<'button'>;
 
 const CancelButton = styled.button<CancelButtonProps>(({ theme }) => ({
   border: 0,
@@ -62,7 +62,7 @@ const CancelButton = styled.button<CancelButtonProps>(({ theme }) => ({
   },
 }));
 
-export type FilterFormProps = React.ComponentProps<'form'> & {
+export type FilterFormProps = ComponentProps<'form'> & {
   focussed: boolean;
 };
 
@@ -118,6 +118,7 @@ export const PureSidebarSearch = ({ className, onChange, ...props }: PureSidebar
       focussed={focussed}
       className={className}
       onReset={() => onChange('')}
+      onSubmit={e => e.preventDefault()}
     >
       <FilterField
         type="text"

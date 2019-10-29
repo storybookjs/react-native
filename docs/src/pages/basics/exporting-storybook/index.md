@@ -10,7 +10,7 @@ Demos of [React Native Web](http://necolas.github.io/react-native-web/storybook/
 
 For that, Storybook comes with a tool to export your storybook into a static web app. Then you can deploy it to GitHub pages or any static hosting service.
 
-Simply add the following NPM script:
+Add the following NPM script:
 
 ```json
 {
@@ -35,4 +35,20 @@ npx http-server .out
 
 Additionally, you can deploy Storybook directly into GitHub pages with our [storybook-deployer](https://github.com/storybookjs/storybook-deployer) tool.
 
-Or, you can simply export your storybook into the docs directory and use it as the root for GitHub pages. Have a look at [this guide](https://github.com/blog/2233-publish-your-project-documentation-with-github-pages) for more information.
+Or, you can export your storybook into the docs directory and use it as the root for GitHub pages. Have a look at [this guide](https://github.com/blog/2233-publish-your-project-documentation-with-github-pages) for more information.
+
+## Deploying to ZEIT Now
+
+[ZEIT Now](https://zeit.co/home) is a cloud platform for websites and serverless APIs, that you can use to deploy your Storybook projects to your personal domain (or a free `.now.sh` suffixed URL).
+
+- Install the [Now CLI](https://github.com/zeit/now):
+
+  `npm i -g now`
+
+- Configure your `build` script:
+
+  `"build": "build-storybook -c .storybook -o public"`
+
+- Execute `now` on your terminal.
+
+[Example project](https://github.com/zeit/now-examples/tree/master/storybook) for reference.

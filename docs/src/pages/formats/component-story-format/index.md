@@ -65,7 +65,7 @@ it('should format CSF exports with sensible defaults', () => {
 });
 ```
 
-When you want to change the name of your story, just rename the CSF export. This will change the name of the story and also change the Story's ID / URL.
+When you want to change the name of your story, rename the CSF export. This will change the name of the story and also change the Story's ID / URL.
 
 You should use the `story.name` option in the following cases:
 

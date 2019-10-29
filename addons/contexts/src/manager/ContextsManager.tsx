@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { useChannel } from './libs/useChannel';
+import { useChannel } from '@storybook/api';
 import { ToolBar } from './components/ToolBar';
 import { deserialize, serialize } from '../shared/serializers';
 import { PARAM, REBOOT_MANAGER, UPDATE_MANAGER, UPDATE_PREVIEW } from '../shared/constants';
@@ -21,11 +21,13 @@ export const ContextsManager: ContextsManager = ({ api }) => {
   );
 
   // from preview
-  useChannel(UPDATE_MANAGER, newNodes => setNodes(newNodes || []), []);
+  const emit = useChannel({
+    [UPDATE_MANAGER]: newNodes => setNodes(newNodes || []),
+  });
 
   // to preview
-  useEffect(() => api.emit(REBOOT_MANAGER), []);
-  useEffect(() => api.emit(UPDATE_PREVIEW, state), [state]);
+  useEffect(() => emit(REBOOT_MANAGER), []);
+  useEffect(() => emit(UPDATE_PREVIEW, state), [state]);
   useEffect(() => api.setQueryParams({ [PARAM]: serialize(state) }), [state]);
 
   return <ToolBar nodes={nodes} state={state || {}} setSelected={setSelected} />;
