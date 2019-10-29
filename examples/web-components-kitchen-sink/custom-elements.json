@@ -8,14 +8,20 @@
       "attributes": [
         {
           "name": "back-side",
+          "description": "Indicates that the back of the card is shown",
+          "jsDoc": "/**\n     * Indicates that the back of the card is shown\n     */",
           "type": "boolean"
         },
         {
           "name": "header",
+          "description": "Header message",
+          "jsDoc": "/**\n     * Header message\n     */",
           "type": "string"
         },
         {
           "name": "rows",
+          "description": "Data rows",
+          "jsDoc": "/**\n     * Data rows\n     */",
           "type": "never[]"
         }
       ],
@@ -28,14 +34,20 @@
         },
         {
           "name": "backSide",
+          "description": "Indicates that the back of the card is shown",
+          "jsDoc": "/**\n     * Indicates that the back of the card is shown\n     */",
           "type": "boolean"
         },
         {
           "name": "header",
+          "description": "Header message",
+          "jsDoc": "/**\n     * Header message\n     */",
           "type": "string"
         },
         {
           "name": "rows",
+          "description": "Data rows",
+          "jsDoc": "/**\n     * Data rows\n     */",
           "type": "never[]"
         }
       ],

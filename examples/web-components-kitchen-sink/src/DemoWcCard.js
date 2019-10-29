@@ -45,8 +45,19 @@ export class DemoWcCard extends LitElement {
 
   constructor() {
     super();
+    /**
+     * Indicates that the back of the card is shown
+     */
     this.backSide = false;
+
+    /**
+     * Header message
+     */
     this.header = 'Your Message';
+
+    /**
+     * Data rows
+     */
     this.rows = [];
   }
 
