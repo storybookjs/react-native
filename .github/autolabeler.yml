@@ -2,7 +2,6 @@
 'addon: actions': ["addons/actions/**"]
 'addon: backgrounds': ["addons/backgrounds/**"]
 'addon: centered': ["addons/centered/**"]
-'addon: edit-page': ["addons/edit-page/**"]
 'addon: events ': ["addons/events/**"]
 'addon: graphql ': ["addons/graphql/**"]
 'addon: info': ["addons/info/**"]

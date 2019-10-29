@@ -23,7 +23,6 @@
     "@storybook/addon-cssresources": "5.2.0-rc.0",
     "@storybook/addon-design-assets": "5.2.0-rc.0",
     "@storybook/addon-docs": "5.2.0-rc.0",
-    "@storybook/addon-edit-page": "5.2.0-rc.0",
     "@storybook/addon-events": "5.2.0-rc.0",
     "@storybook/addon-graphql": "5.2.0-rc.0",
     "@storybook/addon-info": "5.2.0-rc.0",

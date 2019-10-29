@@ -139,7 +139,6 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 | [contexts](addons/contexts/)                | Interactively inject component contexts for stories in the Storybook UI    |
 | [cssresources](addons/cssresources/)        | Dynamically add/remove css resources to the component iframe               |
 | [design assets](addons/design-assets/)      | View images, videos, weblinks alongside your story                         |
-| [edit-page](addons/edit-page/)              | Can add 'edit this page' links to your preview and docs pages              |
 | [events](addons/events/)                    | Interactively fire events to components that respond to EventEmitter       |
 | [graphql](addons/graphql/)                  | Query a GraphQL server within Storybook stories                            |
 | [google-analytics](addons/google-analytics) | Reports google analytics on stories                                        |

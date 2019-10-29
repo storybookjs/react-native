@@ -14,14 +14,6 @@ import '@storybook/addon-jest/register';
 import '@storybook/addon-viewport/register';
 import '@storybook/addon-graphql/register';
 import '@storybook/addon-contexts/register';
-import { editPage } from '@storybook/addon-edit-page';
 import addHeadWarning from './head-warning';
-
-const gitPageResolver = ({ fileName }) => {
-  return fileName;
-};
-editPage({
-  fileNameResolve: gitPageResolver,
-});
 
 addHeadWarning('manager-head-not-loaded', 'Manager head not loaded');

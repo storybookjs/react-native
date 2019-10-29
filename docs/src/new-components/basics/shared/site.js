@@ -93,6 +93,5 @@ export const url = {
     accessibility: `${gitHubOrg}/storybook/tree/master/addons/a11y`,
     console: `${gitHubOrg}/storybook-addon-console`,
     links: `${gitHubOrg}/storybook/tree/master/addons/links`,
-    'edit-page': `${gitHubOrg}/storybook/tree/master/addons/edit-page`,
   },
 };
