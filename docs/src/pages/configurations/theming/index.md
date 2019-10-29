@@ -3,7 +3,7 @@ id: 'theming'
 title: 'Theming Storybook'
 ---
 
-Storybook is theme-able! Set a `theme` in the [options parameter](../options-parameter)!
+Storybook is theme-able!
 
 ## Global theming
 
@@ -20,6 +20,7 @@ import { themes } from '@storybook/theming';
 addons.setConfig({
   theme: themes.dark,
 });
+
 ```
 
 When setting a theme, set a full theme object. The theme is replaced, not combined.
