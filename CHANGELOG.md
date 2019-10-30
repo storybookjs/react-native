@@ -1,3 +1,23 @@
+## 5.3.0-alpha.34 (October 30, 2019)
+
+### Bug Fixes
+
+* Addon-notes: Add key to render function ([#8633](https://github.com/storybookjs/storybook/pull/8633))
+* Addon-docs: Fix story scroll-to heuristics ([#8629](https://github.com/storybookjs/storybook/pull/8629))
+* Addon-docs: Fix props table in no props case ([#8632](https://github.com/storybookjs/storybook/pull/8632))
+* Addon-docs/web-components: Add attributes to props table ([#8598](https://github.com/storybookjs/storybook/pull/8598))
+* CLI: Fix package.json update ([#8615](https://github.com/storybookjs/storybook/pull/8615))
+* React-native: Fix background style ([#8480](https://github.com/storybookjs/storybook/pull/8480))
+
+### Maintenance
+
+* Channel: Clean up test ([#8627](https://github.com/storybookjs/storybook/pull/8627))
+* RAX: Fix example app ([#8617](https://github.com/storybookjs/storybook/pull/8617))
+
+### Dependency Upgrades
+
+* Misc. dependency upgrades ([#8612](https://github.com/storybookjs/storybook/pull/8612))
+
 ## 5.3.0-alpha.33 (October 28, 2019)
 
 ### Maintenance
