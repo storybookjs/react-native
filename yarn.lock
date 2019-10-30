@@ -3548,6 +3548,25 @@
     remark-lint "^6.0.4"
     remark-preset-lint-recommended "^3.0.2"
 
+"@storybook/node-logger@^5.2.4":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-5.2.5.tgz#87f53de795db6eed912b54d3cca82fd7b7857771"
+  integrity sha512-UNyXGOhOr4Bn9wKwBTZABTBXQzrgvGxPLSmvAFZuMx9ZhqoT/EXAuLUl0/wiJtkyuYpoOOskNwIdKxLBdTKS2w==
+  dependencies:
+    chalk "^2.4.2"
+    core-js "^3.0.1"
+    npmlog "^4.1.2"
+    pretty-hrtime "^1.0.3"
+    regenerator-runtime "^0.12.1"
+
+"@storybook/preset-create-react-app@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@storybook/preset-create-react-app/-/preset-create-react-app-1.2.0.tgz#081fe3d66a97721d9e82e6cf198f0f9d57bc489c"
+  integrity sha512-SvfHsEJ0wA+9goJOci2P2CvI0K9AQEOuPzdB092ts21PIxOj2KQUiTdR/UjodNUcKguHZzPeMOjJr23EFLf4qA==
+  dependencies:
+    "@storybook/node-logger" "^5.2.4"
+    react-docgen-typescript-loader "^3.3.0"
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
@@ -24726,7 +24745,7 @@ react-devtools-core@^3.4.2, react-devtools-core@^3.6.0:
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
-react-docgen-typescript-loader@^3.0.1:
+react-docgen-typescript-loader@^3.0.1, react-docgen-typescript-loader@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.3.0.tgz#c1f5c1db9a2b6a6bca220bc50fee0a071bc75499"
   integrity sha512-gC0TeWTz7s7OMyeABppQGbbrtSNi0yl/gBgZJElBtaBFNSJlHH1sfgQybHZmlZqFcn4UBa+8DOGT6wEJKWTV6g==
@@ -25786,7 +25805,7 @@ regenerator-runtime@^0.11.0:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
 
-regenerator-runtime@^0.12.0:
+regenerator-runtime@^0.12.0, regenerator-runtime@^0.12.1:
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
   integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
