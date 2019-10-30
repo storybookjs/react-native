@@ -1,33 +1,28 @@
-/* eslint-disable no-underscore-dangle, import/extensions */
-import { Event } from 'global';
+/* eslint-disable import/extensions */
+import { CustomEvent } from 'global';
 import { LitElement, html } from 'lit-element';
 import { demoWcCardStyle } from './demoWcCardStyle.css.js';
 
+/**
+ * This is a container looking like a card with a back and front side you can switch
+ *
+ * @slot - This is an unnamed slot (the default slot)
+ * @fires side-changed - Fires whenever it switches between front/back
+ * @cssprop --demo-wc-card-header-font-size - Header font size
+ * @cssprop --demo-wc-card-front-color - Font color for front
+ * @cssprop --demo-wc-card-back-color - Font color for back
+ */
 export class DemoWcCard extends LitElement {
   static get properties() {
     return {
-      backSide: { type: Boolean, reflect: true, attribute: 'back-side' },
+      backSide: {
+        type: Boolean,
+        reflect: true,
+        attribute: 'back-side',
+      },
       header: { type: String },
       rows: { type: Object },
     };
-  }
-
-  /**
-   * A card setter can have side A or B
-   *
-   * @param {("A"|"B")} value
-   */
-  set side(value) {
-    this.__side = value;
-    this.dispatchEvent(new Event('side-changed'));
-    this.requestUpdate();
-  }
-
-  /**
-   * @returns {("A"|"B")}
-   */
-  get side() {
-    return this.__side;
   }
 
   static get styles() {
@@ -36,8 +31,20 @@ export class DemoWcCard extends LitElement {
 
   constructor() {
     super();
+
+    /**
+     * Indicates that the back of the card is shown
+     */
     this.backSide = false;
+
+    /**
+     * Header message
+     */
     this.header = 'Your Message';
+
+    /**
+     * Data rows
+     */
     this.rows = [];
   }
 
@@ -84,5 +91,11 @@ export class DemoWcCard extends LitElement {
         </div>
       </div>
     `;
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has('backSide') && changedProperties.get('backSide') !== undefined) {
+      this.dispatchEvent(new CustomEvent('side-changed'));
+    }
   }
 }

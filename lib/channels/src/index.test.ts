@@ -51,8 +51,20 @@ describe('Channel', () => {
     it('should do the same as addListener', () => {
       const eventName = 'event1';
 
-      channel.addListener(eventName, jest.fn());
+      channel.on(eventName, jest.fn());
       expect(channel.listeners(eventName).length).toBe(1);
+    });
+  });
+
+  describe('method:off', () => {
+    it('should remove listeners', () => {
+      const eventName = 'event1';
+      const fn = jest.fn();
+
+      channel.on(eventName, fn);
+      expect(channel.listeners(eventName).length).toBe(1);
+      channel.off(eventName, fn);
+      expect(channel.listeners(eventName).length).toBe(0);
     });
   });
 
