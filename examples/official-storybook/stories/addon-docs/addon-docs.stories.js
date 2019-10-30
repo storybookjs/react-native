@@ -52,3 +52,5 @@ docsDisable.story = {
     docs: { disable: true },
   },
 };
+
+export const largerThanPreview = () => <div style={{ width: 1000, background: 'pink' }}>HUGE</div>;
