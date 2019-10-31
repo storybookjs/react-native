@@ -74,7 +74,7 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
           const funcParts = [];
 
           if (hasParams) {
-            const funcParams = tags.params.map(x => {
+            const funcParams = tags.params.map((x: any) => {
               if (x.name && x.type) {
                 return `${x.name}: ${x.type}`;
               }
