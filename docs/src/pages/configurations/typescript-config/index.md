@@ -5,6 +5,16 @@ title: 'TypeScript Config'
 
 This is a central reference for using Storybook with TypeScript.
 
+## Typescript configuration presets
+
+The easiest way to write and configure your stories in TypeScript is by using [Storybook presets](../../presets/introduction/index.md).
+
+If you're using Create React App (CRA) and have configured it to work with TS, you should use the [CRA preset](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app), which configures Storybook to reuse CRA's TS handling.
+
+If you're not using CRA, the next best thing is to use the [Typescript preset](https://github.com/storybookjs/presets/tree/master/packages/preset-typescript), which configures `ts-loader` under the hood.
+
+If you need more control than the Typescript preset offers, read on for manual configuration instructions.
+
 ## Setting up TypeScript with awesome-typescript-loader
 
 ### Dependencies you may need
