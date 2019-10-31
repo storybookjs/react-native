@@ -114,6 +114,8 @@ export const withDOM = () => (
       <li>foo</li>
       <li>bar</li>
     </ol>
+    <h2>Horizontal Rule</h2>
+    <hr />
     <h2>Tables</h2>
     <table>
       <thead>
