@@ -1,4 +1,3 @@
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -10,7 +9,7 @@ ButtonFn.propTypes = {
   /**
    * onClick description
    */
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 ButtonFn.defaultProps = {
   onClick: null,

@@ -1,11 +1,10 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { FC, FunctionComponent } from 'react';
+import React, { FC, FunctionComponent, SyntheticEvent } from 'react';
 
 interface ButtonProps {
   /**
    * onClick description
    */
-  onClick?: () => void;
+  onClick?: (e: SyntheticEvent) => void;
 }
 
 /**

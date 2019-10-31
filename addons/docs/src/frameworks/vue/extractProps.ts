@@ -1,5 +1,5 @@
 import { PropDef } from '@storybook/components';
-import { PropsExtractor, propsFromDocgen, hasDocgen } from '../../lib/docgenUtils';
+import { PropsExtractor, extractPropsFromDocgen, hasDocgen } from '../../lib/docgenUtils';
 
 const SECTIONS = ['props', 'events', 'slots'];
 
@@ -9,7 +9,7 @@ export const extractProps: PropsExtractor = component => {
   }
   const sections: Record<string, PropDef[]> = {};
   SECTIONS.forEach(section => {
-    sections[section] = propsFromDocgen(component, section);
+    sections[section] = extractPropsFromDocgen(component, section);
   });
   return { sections };
 };
