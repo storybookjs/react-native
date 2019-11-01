@@ -1,6 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 /* global window */
 
+import { PropDef } from '@storybook/components';
+
+type Sections = Record<string, PropDef[]>;
+
 export const setCompodocJson = (compodocJson: any) => {
   // @ts-ignore
   window.__STORYBOOK_COMPODOC_JSON__ = compodocJson;
@@ -9,24 +13,24 @@ export const setCompodocJson = (compodocJson: any) => {
 // @ts-ignore
 export const getCompdocJson = () => window.__STORYBOOK_COMPODOC_JSON__;
 
-export const checkValidComponent = component => {
+export const checkValidComponent = (component: any) => {
   if (!component.name) {
     throw new Error(`Invalid component ${JSON.stringify(component)}`);
   }
 };
 
-export const checkValidCompodocJson = compodocJson => {
+export const checkValidCompodocJson = (compodocJson: any) => {
   if (!compodocJson || !compodocJson.components) {
     throw new Error('Invalid compodoc JSON');
   }
 };
 
-function isEmpty(obj) {
+function isEmpty(obj: any) {
   return Object.entries(obj).length === 0 && obj.constructor === Object;
 }
 
 const hasDecorator = (item: any, decoratorName: string) =>
-  item.decorators && item.decorators.find(x => x.name === decoratorName);
+  item.decorators && item.decorators.find((x: any) => x.name === decoratorName);
 
 const mapItemToSection = (key: string, item: any): string => {
   switch (key) {
@@ -63,11 +67,11 @@ const getComponentData = (component: any) => {
   const compodocJson = getCompdocJson();
   checkValidCompodocJson(compodocJson);
   const { name } = component;
-  return compodocJson.components.find(c => c.name === name);
+  return compodocJson.components.find((c: any) => c.name === name);
 };
 
 const displaySignature = (item: any): string => {
-  const args = item.args.map(arg => `${arg.name}${arg.optional ? '?' : ''}: ${arg.type}`);
+  const args = item.args.map((arg: any) => `${arg.name}${arg.optional ? '?' : ''}: ${arg.type}`);
   return `(${args.join(', ')}) => ${item.returnType}`;
 };
 
@@ -77,13 +81,13 @@ export const extractProps = (component: any) => {
     return null;
   }
 
-  const sectionToItems = {};
+  const sectionToItems: Sections = {};
 
   const COMPODOC_CLASSES = ['propertiesClass', 'methodsClass', 'inputsClass', 'outputsClass'];
   COMPODOC_CLASSES.forEach(key => {
     const data = componentData[key];
     if (data && data.length) {
-      data.forEach(item => {
+      data.forEach((item: any) => {
         const section = mapItemToSection(key, item);
         if (!sectionToItems[section]) {
           sectionToItems[section] = [];
@@ -116,7 +120,7 @@ export const extractProps = (component: any) => {
     'content child',
     'content children',
   ];
-  const sections = {};
+  const sections: Sections = {};
   SECTIONS.forEach(section => {
     const items = sectionToItems[section];
     if (items) {
