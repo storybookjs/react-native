@@ -1,6 +1,7 @@
 import { PropDef } from '@storybook/components';
 import { isNil } from 'lodash';
-import { parseComment, JsDocAst } from './jsdoc-parser';
+import doctrine from 'doctrine';
+import { parseComment } from './jsdoc-parser';
 
 export interface DocgenInfo {
   type?: {
@@ -15,20 +16,22 @@ export interface DocgenInfo {
   };
 }
 
-interface JsDocParamTag {
+interface ExtractedJsDocParamTag {
   name: string;
   type?: string;
   description?: string;
+  raw: doctrine.Tag;
 }
 
-interface JsDocReturnsTag {
+interface ExtractedJsDocReturnsTag {
   type?: string;
   description?: string;
+  raw: doctrine.Tag;
 }
 
 interface ExtractedJsDocTags {
-  params: JsDocParamTag[];
-  returns?: JsDocReturnsTag;
+  params: ExtractedJsDocParamTag[];
+  returns?: ExtractedJsDocReturnsTag;
 }
 
 export const TypeSystem = {
@@ -54,7 +57,10 @@ function createDefaultPropDef(propName: string, docgenInfo: DocgenInfo): PropDef
 
 export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
   const propDef = createDefaultPropDef(propName, docgenInfo);
+
+  // Take a default type value from docgen. It will be overrided later if something better can be infered from JSDoc tags.
   propDef.type = docgenInfo.type;
+  propDef.jsDocTags = {};
 
   if (!isNil(propDef.description)) {
     if (propDef.description.includes('@')) {
@@ -66,15 +72,15 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
       }
 
       if (propDef.type.name === 'func') {
-        const tags = extractJsDocTags(jsDocAst);
-        const hasParams = tags.params.length > 0;
-        const hasReturnType = !isNil(tags.returns) && !isNil(tags.returns.type);
+        const extractedTags = extractJsDocTags(jsDocAst);
+        const hasParams = extractedTags.params.length > 0;
+        const hasReturnType = !isNil(extractedTags.returns) && !isNil(extractedTags.returns.type);
 
         if (hasParams || hasReturnType) {
           const funcParts = [];
 
           if (hasParams) {
-            const funcParams = tags.params.map((x: any) => {
+            const funcParams = extractedTags.params.map((x: any) => {
               if (x.name && x.type) {
                 return `${x.name}: ${x.type}`;
               }
@@ -87,12 +93,14 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
             });
 
             funcParts.push(`(${funcParams.join(', ')})`);
+            propDef.jsDocTags.params = extractedTags.params.map(x => x.raw);
           } else {
             funcParts.push('()');
           }
 
           if (hasReturnType) {
-            funcParts.push(`=> ${tags.returns.type}`);
+            funcParts.push(`=> ${extractedTags.returns.type}`);
+            propDef.jsDocTags.returns = extractedTags.returns.raw;
           }
 
           propDef.type = {
@@ -103,16 +111,21 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
     }
   }
 
+  if (Object.keys(propDef.jsDocTags).length === 0) {
+    // We haven't found any JSDoc tags on the prop, cleaning up.
+    delete propDef.jsDocTags;
+  }
+
   return propDef;
 };
 
-function extractJsDocTags(ast: JsDocAst): Record<string, any> {
-  const tags: ExtractedJsDocTags = {
+function extractJsDocTags(ast: doctrine.Annotation): ExtractedJsDocTags {
+  const extractedTags: ExtractedJsDocTags = {
     params: [],
     returns: null,
   };
 
-  ast.tags.forEach(tag => {
+  ast.tags.forEach((tag: doctrine.Tag) => {
     // arg & argument are aliases for param.
     if (tag.title === 'param' || tag.title === 'arg' || tag.title === 'argument') {
       // When the @param doesn't have a name but have a type and a description, "null-null" is returned.
@@ -136,32 +149,35 @@ function extractJsDocTags(ast: JsDocAst): Record<string, any> {
           }
         }
 
-        tags.params.push({
+        extractedTags.params.push({
           name: paramName,
           type: paramType,
           description: tag.description,
+          raw: tag,
         });
       }
     } else if (tag.title === 'returns') {
       if (!isNil(tag.type)) {
-        tags.returns = {
+        extractedTags.returns = {
           type: extractJsDocTypeName(tag.type),
           description: tag.description,
+          raw: tag,
         };
       }
     }
   });
 
-  return tags;
+  return extractedTags;
 }
 
+// FIXME: type should be doctrine.Type
 function extractJsDocTypeName(type: any): string {
   if (type.type === 'NameExpression') {
     return type.name;
   }
 
   if (type.type === 'RecordType') {
-    const recordFields = type.fields.map((field: any) => {
+    const recordFields = type.fields.map((field: doctrine.type.FieldType) => {
       if (!isNil(field.value)) {
         const valueTypeName = extractJsDocTypeName(field.value);
 

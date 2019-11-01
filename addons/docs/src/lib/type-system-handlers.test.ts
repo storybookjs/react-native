@@ -54,7 +54,7 @@ describe('prop-types handler', () => {
     expect(propDef.defaultValue).toBe(docgenInfo.defaultValue.value);
   });
 
-  describe('when the prop is not a function', () => {
+  describe('for all prop types', () => {
     it('should handle prop without a description', () => {
       const docgenInfo = createPropTypesDocgenInfo({
         description: undefined,
@@ -448,6 +448,23 @@ describe('prop-types handler', () => {
         expect(propDef.type.name).toBe('(event: SyntheticEvent)');
         expect(propDef.description).toBe('onClick description');
       });
+
+      it('should provide raw @param tags', () => {
+        const docgenInfo = createPropTypesDocgenInfo({
+          type: PROP_TYPE_FUNC_TYPE,
+          description:
+            'onClick description\n@param {SyntheticEvent} event - Original event.\n@param {string} value',
+        });
+
+        const propDef = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+        expect(propDef.jsDocTags).toBeDefined();
+        expect(propDef.jsDocTags.params).toBeDefined();
+        expect(propDef.jsDocTags.params[0].name).toBe('event');
+        expect(propDef.jsDocTags.params[0].description).toBe('Original event.');
+        expect(propDef.jsDocTags.params[1].name).toBe('value');
+        expect(propDef.jsDocTags.params[1].description).toBeNull();
+      });
     });
 
     describe('when the description contains multiple @param tags', () => {
@@ -659,6 +676,34 @@ describe('prop-types handler', () => {
 
         expect(propDef.type.name).toBe('() => void');
         expect(propDef.description).toBe('onClick description');
+      });
+
+      it('should provide raw @returns tags when a description is defined', () => {
+        const docgenInfo = createPropTypesDocgenInfo({
+          type: PROP_TYPE_FUNC_TYPE,
+          description:
+            'onClick description\n@param {SyntheticEvent} event - Original event.\n@returns {string} - An awesome string.',
+        });
+
+        const propDef = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+        expect(propDef.jsDocTags).toBeDefined();
+        expect(propDef.jsDocTags.returns).toBeDefined();
+        expect(propDef.jsDocTags.returns.description).toBe('An awesome string.');
+      });
+
+      it('should provide raw @returns tags when there is no description', () => {
+        const docgenInfo = createPropTypesDocgenInfo({
+          type: PROP_TYPE_FUNC_TYPE,
+          description:
+            'onClick description\n@param {SyntheticEvent} event - Original event.\n@returns {string}',
+        });
+
+        const propDef = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+        expect(propDef.jsDocTags).toBeDefined();
+        expect(propDef.jsDocTags.returns).toBeDefined();
+        expect(propDef.jsDocTags.returns.description).toBeNull();
       });
     });
 

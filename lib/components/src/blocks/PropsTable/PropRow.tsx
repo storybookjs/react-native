@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
-import { PropDef } from './PropDef';
+import { PropDef, PropDefJsDocTags } from './PropDef';
 
 enum PropType {
   SHAPE = 'shape',
@@ -19,6 +19,10 @@ interface PrettyPropTypeProps {
 
 interface PrettyPropValProps {
   value: any;
+}
+
+interface JsDocParamsAndReturnsProps {
+  tags: PropDefJsDocTags;
 }
 
 export interface PropRowProps {
@@ -84,8 +88,30 @@ export const PrettyPropVal: FC<PrettyPropValProps> = ({ value }) => (
   <span>{JSON.stringify(value)}</span>
 );
 
+const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
+  if (!tags) {
+    return null;
+  }
+
+  if (!tags.params && !tags.returns) {
+    return null;
+  }
+
+  return (
+    <div>
+      {tags.params &&
+        tags.params.map(x => (
+          <div key={x.name}>
+            {x.name}-{x.description && x.description}
+          </div>
+        ))}
+      {tags.returns && <div>Returns: {tags.returns.description}</div>}
+    </div>
+  );
+};
+
 export const PropRow: FC<PropRowProps> = ({
-  row: { name, type, required, description, defaultValue },
+  row: { name, type, required, description, defaultValue, jsDocTags },
 }) => (
   <tr>
     <td>
@@ -97,6 +123,7 @@ export const PropRow: FC<PropRowProps> = ({
       <StyledPropDef>
         <PrettyPropType type={type} />
       </StyledPropDef>
+      <JsDocParamsAndReturns tags={jsDocTags} />
     </td>
     <td>
       {defaultValue === null || defaultValue === undefined ? (

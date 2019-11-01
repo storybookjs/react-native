@@ -1,11 +1,11 @@
-import doctrine from 'doctrine';
+import doctrine, { Annotation } from 'doctrine';
 
-export interface JsDocAst {
-  description?: string;
-  tags: any[];
-}
+// export interface JsDocAst {
+//   description?: string;
+//   tags: any[];
+// }
 
-export function parseComment(comment: string): JsDocAst {
+export function parseComment(comment: string): Annotation {
   let ast;
 
   try {

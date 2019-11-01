@@ -104,6 +104,21 @@ export const complexDef = {
   },
 };
 
+export const funcDef = {
+  name: 'concat',
+  type: { name: '(a: string, b: string) => string' },
+  required: true,
+  description: 'concat 2 string values.',
+  defaultValue: '(a, b) => { return a + b; }',
+  jsDocTags: {
+    params: [
+      { title: 'param', name: 'a', description: 'The first string' },
+      { title: 'param', name: 'b', description: 'The second string' },
+    ],
+    returns: { title: 'returns', description: 'The concatenation of both strings' },
+  },
+};
+
 export const string = () => <PropRow row={stringDef} />;
 export const longName = () => <PropRow row={longNameDef} />;
 export const longDesc = () => <PropRow row={longDescDef} />;
@@ -111,3 +126,4 @@ export const number = () => <PropRow row={numberDef} />;
 export const objectOf = () => <PropRow row={objectDef} />;
 export const arrayOf = () => <PropRow row={arrayDef} />;
 export const complex = () => <PropRow row={complexDef} />;
+export const func = () => <PropRow row={funcDef} />;
