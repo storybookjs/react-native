@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Markdown from 'markdown-to-jsx';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 import { PropDef } from './PropDef';
@@ -92,7 +93,7 @@ export const PropRow: FC<PropRowProps> = ({
       {required ? <Required title="Required">*</Required> : null}
     </td>
     <td>
-      <div>{description}</div>
+      <Markdown>{description || ''}</Markdown>
       <StyledPropDef>
         <PrettyPropType type={type} />
       </StyledPropDef>
