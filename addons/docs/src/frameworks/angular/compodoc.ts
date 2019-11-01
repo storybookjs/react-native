@@ -2,24 +2,29 @@
 /* global window */
 
 import { PropDef } from '@storybook/components';
+import { Argument, CompodocJson, Component, Method, Property } from './types';
 
 type Sections = Record<string, PropDef[]>;
 
-export const setCompodocJson = (compodocJson: any) => {
+export const isMethod = (methodOrProp: Method | Property): methodOrProp is Method => {
+  return (methodOrProp as Method).args !== undefined;
+};
+
+export const setCompodocJson = (compodocJson: CompodocJson) => {
   // @ts-ignore
   window.__STORYBOOK_COMPODOC_JSON__ = compodocJson;
 };
 
 // @ts-ignore
-export const getCompdocJson = () => window.__STORYBOOK_COMPODOC_JSON__;
+export const getCompdocJson = (): CompodocJson => window.__STORYBOOK_COMPODOC_JSON__;
 
-export const checkValidComponent = (component: any) => {
+export const checkValidComponent = (component: Component) => {
   if (!component.name) {
     throw new Error(`Invalid component ${JSON.stringify(component)}`);
   }
 };
 
-export const checkValidCompodocJson = (compodocJson: any) => {
+export const checkValidCompodocJson = (compodocJson: CompodocJson) => {
   if (!compodocJson || !compodocJson.components) {
     throw new Error('Invalid compodoc JSON');
   }
@@ -29,10 +34,26 @@ function isEmpty(obj: any) {
   return Object.entries(obj).length === 0 && obj.constructor === Object;
 }
 
-const hasDecorator = (item: any, decoratorName: string) =>
+const hasDecorator = (item: Property, decoratorName: string) =>
   item.decorators && item.decorators.find((x: any) => x.name === decoratorName);
 
-const mapItemToSection = (key: string, item: any): string => {
+const mapPropertyToSection = (key: string, item: Property) => {
+  if (hasDecorator(item, 'ViewChild')) {
+    return 'view child';
+  }
+  if (hasDecorator(item, 'ViewChildren')) {
+    return 'view children';
+  }
+  if (hasDecorator(item, 'ContentChild')) {
+    return 'content child';
+  }
+  if (hasDecorator(item, 'ContentChildren')) {
+    return 'content children';
+  }
+  return 'properties';
+};
+
+const mapItemToSection = (key: string, item: Method | Property): string => {
   switch (key) {
     case 'methodsClass':
       return 'methods';
@@ -41,25 +62,16 @@ const mapItemToSection = (key: string, item: any): string => {
     case 'outputsClass':
       return 'outputs';
     case 'propertiesClass':
-      if (hasDecorator(item, 'ViewChild')) {
-        return 'view child';
+      if (isMethod(item)) {
+        throw new Error("Cannot be of type Method if key === 'propertiesClass'");
       }
-      if (hasDecorator(item, 'ViewChildren')) {
-        return 'view children';
-      }
-      if (hasDecorator(item, 'ContentChild')) {
-        return 'content child';
-      }
-      if (hasDecorator(item, 'ContentChildren')) {
-        return 'content children';
-      }
-      return 'properties';
+      return mapPropertyToSection(key, item);
     default:
       throw new Error(`Unknown key: ${key}`);
   }
 };
 
-const getComponentData = (component: any) => {
+const getComponentData = (component: Component) => {
   if (!component) {
     return null;
   }
@@ -67,46 +79,43 @@ const getComponentData = (component: any) => {
   const compodocJson = getCompdocJson();
   checkValidCompodocJson(compodocJson);
   const { name } = component;
-  return compodocJson.components.find((c: any) => c.name === name);
+  return compodocJson.components.find((c: Component) => c.name === name);
 };
 
-const displaySignature = (item: any): string => {
-  const args = item.args.map((arg: any) => `${arg.name}${arg.optional ? '?' : ''}: ${arg.type}`);
+const displaySignature = (item: Method): string => {
+  const args = item.args.map(
+    (arg: Argument) => `${arg.name}${arg.optional ? '?' : ''}: ${arg.type}`
+  );
   return `(${args.join(', ')}) => ${item.returnType}`;
 };
 
-export const extractProps = (component: any) => {
+export const extractProps = (component: Component) => {
   const componentData = getComponentData(component);
   if (!componentData) {
     return null;
   }
 
   const sectionToItems: Sections = {};
+  const compodocClasses = ['propertiesClass', 'methodsClass', 'inputsClass', 'outputsClass'];
+  type COMPODOC_CLASS = 'propertiesClass' | 'methodsClass' | 'inputsClass' | 'outputsClass';
 
-  const COMPODOC_CLASSES = ['propertiesClass', 'methodsClass', 'inputsClass', 'outputsClass'];
-  COMPODOC_CLASSES.forEach(key => {
-    const data = componentData[key];
-    if (data && data.length) {
-      data.forEach((item: any) => {
-        const section = mapItemToSection(key, item);
-        if (!sectionToItems[section]) {
-          sectionToItems[section] = [];
-        }
-        let typeName = item.type;
-        let required = !item.optional;
-        if (key === 'methodsClass') {
-          typeName = displaySignature(item);
-          required = false;
-        }
-        sectionToItems[section].push({
-          name: item.name,
-          type: { name: typeName },
-          required,
-          description: item.description,
-          defaultValue: item.defaultValue,
-        });
-      });
-    }
+  compodocClasses.forEach((key: COMPODOC_CLASS) => {
+    const data = componentData[key] || [];
+    data.forEach((item: Method | Property) => {
+      const sectionItem: PropDef = {
+        name: item.name,
+        type: { name: isMethod(item) ? displaySignature(item) : item.type },
+        required: isMethod(item) ? false : !item.optional,
+        description: isMethod(item) ? item.description : '',
+        defaultValue: isMethod(item) ? '' : item.defaultValue,
+      };
+
+      const section = mapItemToSection(key, item);
+      if (!sectionToItems[section]) {
+        sectionToItems[section] = [];
+      }
+      sectionToItems[section].push(sectionItem);
+    });
   });
 
   // sort the sections
@@ -131,7 +140,7 @@ export const extractProps = (component: any) => {
   return isEmpty(sections) ? null : { sections };
 };
 
-export const extractComponentDescription = (component: any) => {
+export const extractComponentDescription = (component: Component) => {
   const componentData = getComponentData(component);
   if (!componentData) {
     return null;
