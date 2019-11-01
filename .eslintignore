@@ -14,6 +14,7 @@ scripts/storage
 *.d.ts
 examples/ember-cli/.storybook/preview-head.html
 examples/official-storybook/tests/addon-jest.test.js
+examples/cra-ts-kitchen-sink/package.json
 
 !.remarkrc.js
 !.babelrc.js
