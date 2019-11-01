@@ -1,3 +1,10 @@
+## 5.3.0-alpha.35 (November 1, 2019)
+
+### Bug Fixes
+
+* Core: Revert webpack rebuild changes in node_modules  ([#8657](https://github.com/storybookjs/storybook/pull/8657))
+* Ondevice-knobs: Fix peer dep ([#8643](https://github.com/storybookjs/storybook/pull/8643))
+
 ## 5.3.0-alpha.34 (October 30, 2019)
 
 ### Bug Fixes
