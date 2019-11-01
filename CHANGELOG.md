@@ -1,3 +1,15 @@
+## 5.3.0-alpha.36 (November 2, 2019)
+
+### Features
+
+* Addon-docs: Angular DocsPage props table ([#8621](https://github.com/storybookjs/storybook/pull/8621))
+* Addon-docs: Support jsdoc params to describe function signature ([#8660](https://github.com/storybookjs/storybook/pull/8660))
+
+### Bug Fixes
+
+* Addon-docs: Remove min-height CSS rule from DocsPage wrapper ([#8366](https://github.com/storybookjs/storybook/pull/8366))
+* Addon-docs: Check component propTypes before unwrapping ([#8665](https://github.com/storybookjs/storybook/pull/8665))
+
 ## 5.3.0-alpha.35 (November 1, 2019)
 
 ### Bug Fixes
