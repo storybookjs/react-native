@@ -98,6 +98,12 @@ export const PropRow: FC<PropRowProps> = ({
         <PrettyPropType type={type} />
       </StyledPropDef>
     </td>
-    <td>{defaultValue === undefined ? '-' : <PrettyPropVal value={defaultValue} />}</td>
+    <td>
+      {defaultValue === null || defaultValue === undefined ? (
+        '-'
+      ) : (
+        <PrettyPropVal value={defaultValue} />
+      )}
+    </td>
   </tr>
 );
