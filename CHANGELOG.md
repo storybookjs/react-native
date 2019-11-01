@@ -1,3 +1,22 @@
+## 5.3.0-alpha.36 (November 2, 2019)
+
+### Features
+
+* Addon-docs: Angular DocsPage props table ([#8621](https://github.com/storybookjs/storybook/pull/8621))
+* Addon-docs: Support jsdoc params to describe function signature ([#8660](https://github.com/storybookjs/storybook/pull/8660))
+
+### Bug Fixes
+
+* Addon-docs: Remove min-height CSS rule from DocsPage wrapper ([#8366](https://github.com/storybookjs/storybook/pull/8366))
+* Addon-docs: Check component propTypes before unwrapping ([#8665](https://github.com/storybookjs/storybook/pull/8665))
+
+## 5.3.0-alpha.35 (November 1, 2019)
+
+### Bug Fixes
+
+* Core: Revert webpack rebuild changes in node_modules  ([#8657](https://github.com/storybookjs/storybook/pull/8657))
+* Ondevice-knobs: Fix peer dep ([#8643](https://github.com/storybookjs/storybook/pull/8643))
+
 ## 5.3.0-alpha.34 (October 30, 2019)
 
 ### Bug Fixes
@@ -1259,7 +1278,7 @@ It is now recommended to only use ONE `load` call in your app and it will warn y
 
 * Addon-docs: Added inline option to Story block ([#7308](https://github.com/storybookjs/storybook/pull/7308))
 * Addon-knobs: Ensure unique knob names across groups ([#6793](https://github.com/storybookjs/storybook/pull/6793))
-* Core: Enable webpack to rebuild changes in node_modules ([#6265](https://github.com/storybooorybook/pull/6265))
+* Core: Enable webpack to rebuild changes in node_modules ([#6265](https://github.com/storybookjs/storybook/pull/6265))
 * Addons: Disable option for addon tab ([#6923](https://github.com/storybookjs/storybook/pull/6923))
 
 ### Bug Fixes

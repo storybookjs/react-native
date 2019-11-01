@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-docs",
-  "version": "5.3.0-alpha.34",
+  "version": "5.3.0-alpha.36",
   "description": "Superior documentation for your components",
   "keywords": [
     "addon",
@@ -44,13 +44,14 @@
     "@mdx-js/loader": "^1.1.0",
     "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/react": "^1.0.27",
-    "@storybook/addons": "5.3.0-alpha.34",
-    "@storybook/api": "5.3.0-alpha.34",
-    "@storybook/components": "5.3.0-alpha.34",
-    "@storybook/router": "5.3.0-alpha.34",
-    "@storybook/source-loader": "5.3.0-alpha.34",
-    "@storybook/theming": "5.3.0-alpha.34",
+    "@storybook/addons": "5.3.0-alpha.36",
+    "@storybook/api": "5.3.0-alpha.36",
+    "@storybook/components": "5.3.0-alpha.36",
+    "@storybook/router": "5.3.0-alpha.36",
+    "@storybook/source-loader": "5.3.0-alpha.36",
+    "@storybook/theming": "5.3.0-alpha.36",
     "core-js": "^3.0.1",
+    "doctrine": "^3.0.0",
     "global": "^4.3.2",
     "js-string-escape": "^1.0.1",
     "lodash": "^4.17.15",
@@ -59,6 +60,9 @@
     "ts-dedent": "^1.1.0"
   },
   "devDependencies": {
+    "@types/doctrine": "^0.0.3",
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.11",
     "@types/prop-types": "^15.5.9",
     "@types/util-deprecate": "^1.0.0",
     "@types/webpack-env": "^1.14.0"

@@ -1,10 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import { PropDef, PropsTableProps } from '@storybook/components';
 import { Component } from '../blocks/shared';
+import { getTypeSystemHandler, getPropTypeSystem } from './type-system-handlers';
 
 export type PropsExtractor = (component: Component) => PropsTableProps | null;
 
-export type PropDefGetter = (type: Component, section: string) => PropDef[] | null;
+export type PropDefGetter = (type: Component, section: string) => PropDef[];
 
 export const str = (o: any) => {
   if (!o) {
@@ -23,25 +24,28 @@ export const hasDocgenSection = (obj: any, section: string) =>
   obj.__docgenInfo[section] &&
   Object.keys(obj.__docgenInfo[section]).length > 0;
 
-export const propsFromDocgen: PropDefGetter = (type, section) => {
+export const extractPropsFromDocgen: PropDefGetter = (type, section) => {
   const props: Record<string, PropDef> = {};
+
   const docgenInfoProps = type.__docgenInfo[section];
   if (!docgenInfoProps) {
-    return null;
+    return [];
   }
 
-  Object.keys(docgenInfoProps).forEach(property => {
-    const docgenInfoProp = docgenInfoProps[property];
-    const defaultValueDesc = docgenInfoProp.defaultValue || {};
-    const propType = docgenInfoProp.flowType || docgenInfoProp.type || 'other';
+  const propKeys = Object.keys(docgenInfoProps);
+  if (propKeys.length === 0) {
+    return [];
+  }
 
-    props[property] = {
-      name: property,
-      type: propType,
-      required: docgenInfoProp.required,
-      description: docgenInfoProp.description,
-      defaultValue: defaultValueDesc.value,
-    };
+  // Assuming the props for a given type will all have the same type system.
+  const typeSystem = getPropTypeSystem(docgenInfoProps[propKeys[0]]);
+  const typeSystemHandler = getTypeSystemHandler(typeSystem);
+
+  propKeys.forEach(propKey => {
+    const docgenInfoProp = docgenInfoProps[propKey];
+
+    const propDef = typeSystemHandler(propKey, docgenInfoProp);
+    props[propKey] = propDef;
   });
 
   return Object.values(props);
