@@ -1,7 +1,14 @@
+/* eslint-disable react/no-unused-prop-types */
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const ButtonTooManyProps = ({ onClick, children }) => <button onClick={onClick}>{children}</button>;
+export const ButtonTooManyProps = ({ onClick, children }) => (
+  <button type="button" onClick={onClick}>
+    {children}
+  </button>
+);
 ButtonTooManyProps.propTypes = {
   /**
    * onClick description
@@ -12,7 +19,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -21,7 +28,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick1: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -30,7 +37,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick2: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -39,7 +46,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick3: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -48,7 +55,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick4: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -57,7 +64,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick5: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -66,7 +73,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick6: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -75,7 +82,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick7: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -84,7 +91,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick8: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -93,7 +100,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick9: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -102,7 +109,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick10: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -111,7 +118,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick11: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -120,7 +127,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick12: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -129,7 +136,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick13: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -138,7 +145,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick14: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -147,7 +154,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick15: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -156,7 +163,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick16: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -165,7 +172,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick17: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -174,7 +181,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick18: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -183,7 +190,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick19: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -192,7 +199,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick20: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -201,7 +208,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick21: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -210,7 +217,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick22: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -219,7 +226,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick23: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -228,7 +235,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick24: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -237,7 +244,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick25: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -246,7 +253,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick26: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -255,7 +262,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick27: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -264,7 +271,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick28: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -273,7 +280,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick29: PropTypes.func,
-    /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -282,7 +289,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick30: PropTypes.func,
-      /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -291,7 +298,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick31: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -300,7 +307,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick32: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -309,7 +316,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick33: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -318,7 +325,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick34: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -327,7 +334,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick35: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -336,7 +343,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick36: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -345,7 +352,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick37: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -354,7 +361,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick38: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -363,7 +370,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick39: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -372,7 +379,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick40: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -381,7 +388,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick41: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -390,7 +397,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick42: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -399,7 +406,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick43: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -408,7 +415,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick44: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -417,7 +424,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick45: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -426,7 +433,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick46: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -435,7 +442,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick47: PropTypes.func,
-        /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -444,7 +451,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick48: PropTypes.func,
-          /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -453,7 +460,7 @@ ButtonTooManyProps.propTypes = {
    * @returns {void}
    */
   onClick49: PropTypes.func,
-          /**
+  /**
    * onClick description
    * @param {SyntheticEvent} event - React's original SyntheticEvent.
    * @param {SyntheticEvent} event1 - React's original SyntheticEvent.
@@ -461,5 +468,5 @@ ButtonTooManyProps.propTypes = {
    * @param {SyntheticEvent} event3 - React's original SyntheticEvent.
    * @returns {void}
    */
-  onClick50: PropTypes.func
+  onClick50: PropTypes.func,
 };
