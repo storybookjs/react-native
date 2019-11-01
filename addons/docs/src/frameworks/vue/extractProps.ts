@@ -1,5 +1,5 @@
 import { PropDef } from '@storybook/components';
-import { PropsExtractor, propsFromDocgen, hasDocgen } from '../../lib/propsUtils';
+import { PropsExtractor, propsFromDocgen, hasDocgen } from '../../lib/docgenUtils';
 
 const SECTIONS = ['props', 'events', 'slots'];
 

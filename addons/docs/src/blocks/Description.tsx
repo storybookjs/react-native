@@ -1,13 +1,14 @@
-/* eslint-disable no-underscore-dangle */
 import React, { FunctionComponent } from 'react';
 import { Description, DescriptionProps as PureDescriptionProps } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, CURRENT_SELECTION } from './shared';
+import { str } from '../lib/docgenUtils';
 
 export enum DescriptionType {
   INFO = 'info',
   NOTES = 'notes',
   DOCGEN = 'docgen',
+  LEGACY_5_2 = 'legacy-5.2',
   AUTO = 'auto',
 }
 
@@ -20,23 +21,12 @@ interface DescriptionProps {
   markdown?: string;
 }
 
-const str = (o: any) => {
-  if (!o) {
-    return '';
-  }
-  if (typeof o === 'string') {
-    return o as string;
-  }
-  throw new Error(`Description: expected string, got: ${JSON.stringify(o)}`);
-};
-
 export const getNotes = (notes?: Notes) =>
   notes && (typeof notes === 'string' ? notes : str(notes.markdown) || str(notes.text));
 
 export const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
 
-export const getDocgen = (component?: Component) =>
-  component && component.__docgenInfo && str(component.__docgenInfo.description);
+const noDescription = (component?: Component): string | null => null;
 
 export const getDescriptionProps = (
   { of, type, markdown }: DescriptionProps,
@@ -45,24 +35,27 @@ export const getDescriptionProps = (
   if (markdown) {
     return { markdown };
   }
-  const { component, notes, info } = parameters;
+  const { component, notes, info, docs } = parameters;
+  const { extractComponentDescription = noDescription } = docs || {};
   const target = of === CURRENT_SELECTION ? component : of;
   switch (type) {
     case DescriptionType.INFO:
       return { markdown: getInfo(info) };
     case DescriptionType.NOTES:
       return { markdown: getNotes(notes) };
-    case DescriptionType.DOCGEN:
-      return { markdown: getDocgen(target) };
-    case DescriptionType.AUTO:
-    default:
+    // FIXME: remove in 6.0
+    case DescriptionType.LEGACY_5_2:
       return {
         markdown: `
 ${getNotes(notes) || getInfo(info) || ''}
 
-${getDocgen(target) || ''}
+${extractComponentDescription(target) || ''}
 `.trim(),
       };
+    case DescriptionType.DOCGEN:
+    case DescriptionType.AUTO:
+    default:
+      return { markdown: extractComponentDescription(target) };
   }
 };
 

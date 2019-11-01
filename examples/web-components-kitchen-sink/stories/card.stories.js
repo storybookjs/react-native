@@ -4,6 +4,7 @@ import '../demo-wc-card.js';
 
 export default {
   title: 'Demo Card',
+  component: 'demo-wc-card',
 };
 
 export const Front = () => html`

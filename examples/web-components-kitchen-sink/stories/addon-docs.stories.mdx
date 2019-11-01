@@ -1,4 +1,4 @@
-import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+import { Story, Preview, Meta, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 import { html } from 'lit-html';
 import '../demo-wc-card.js';
@@ -16,6 +16,12 @@ A story can be a simple return of `html`
     <demo-wc-card>Hello World</demo-wc-card>
   `}
 </Story>
+
+## API
+
+You can show the api table of a web component at any point in your documentation.
+
+<Props of="demo-wc-card" />
 
 ## Function stories
 

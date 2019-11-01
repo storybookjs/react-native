@@ -4,22 +4,22 @@ exports[`Storyshots Addons|Centered Button 1`] = `
 Object {
   "__b": 0,
   "__c": null,
+  "__d": null,
   "__e": null,
   "__k": null,
   "__p": null,
   "constructor": undefined,
   "key": undefined,
-  "l": null,
   "props": Object {
     "children": Object {
       "__b": 0,
       "__c": null,
+      "__d": null,
       "__e": null,
       "__k": null,
       "__p": null,
       "constructor": undefined,
       "key": undefined,
-      "l": null,
       "props": Object {
         "children": VNode {
           "attributes": undefined,

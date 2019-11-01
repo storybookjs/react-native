@@ -4,6 +4,7 @@ Storybook Docs [provides basic support for all non-RN Storybook view layers](../
 
 - [Adding a preset](#adding-a-preset)
 - [Props tables](#props-tables)
+- [Component descriptions](#component-descriptions)
 - [Inline story rendering](#inline-story-rendering)
 
 ## Adding a preset
@@ -76,6 +77,12 @@ So far, in React and Vue, the implementation of this extraction is as follows:
 - The view-layer specific `extractProps` function translates that metadata into `PropsTableProps`
 
 However, for your framework you may want to implement this in some other way. There is also an effort to load data from static JSON files for performance [#7942](https://github.com/storybookjs/storybook/issues/7942).
+
+## Component descriptions
+
+Component descriptions are enabled by the `docs.extractComponentDescription` parameter, which extract's a component description (usually from source code comments) into a markdown string.
+
+It follows the pattern of [Props tables](#props-tables) above, only it's even simpler because the function output is simply a string (or null if there no description).
 
 ## Inline story rendering
 

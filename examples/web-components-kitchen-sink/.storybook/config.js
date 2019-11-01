@@ -1,7 +1,16 @@
 /* global window */
 
-import { configure, addParameters, addDecorator } from '@storybook/web-components';
+import {
+  configure,
+  addParameters,
+  addDecorator,
+  setCustomElements,
+} from '@storybook/web-components';
 import { withA11y } from '@storybook/addon-a11y';
+
+import customElements from '../custom-elements.json';
+
+setCustomElements(customElements);
 
 addDecorator(withA11y);
 
