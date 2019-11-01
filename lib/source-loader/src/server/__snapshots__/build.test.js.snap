@@ -7,10 +7,7 @@ import BaseButton from '../components/BaseButton';
 import markdownNotes from './notes/notes.md';
 INSERT
 
-import React from 'react';
 
-import BaseButton from '../components/BaseButton';
-import markdownNotes from './notes/notes.md';
 
 const markdownString = '...';"
 `;
@@ -20,8 +17,7 @@ exports[`insertAfterImports imports 1`] = `
 import './bar';
 INSERT
 
-import './foo';
-import './bar';
+
 whatever;"
 `;
 
@@ -32,10 +28,7 @@ import {
 } from 'baz';
 INSERT
 
-import 'foo';
-import {
-  bar
-} from 'baz';
+
 whatever;"
 `;
 
@@ -52,7 +45,6 @@ exports[`insertAfterImports single-line imports 1`] = `
 import { bar } from 'baz';
 INSERT
 
-import 'foo';
-import { bar } from 'baz';
+
 whatever;"
 `;
