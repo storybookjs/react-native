@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render correctly 1`] = `
+Object {
+  "attributes": Object {
+    "class": "rax-view",
+  },
+  "children": Array [
+    Object {
+      "attributes": Object {
+        "class": "rax-view",
+      },
+      "children": Array [
+        Object {
+          "children": Array [
+            "Welcome to Rax",
+          ],
+          "style": Object {
+            "alignContent": "flex-start",
+            "border": "0 solid black",
+            "boxSizing": "border-box",
+            "display": "block",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "fontSize": 32,
+            "whiteSpace": "pre-wrap",
+          },
+          "tagName": "SPAN",
+        },
+      ],
+      "tagName": "DIV",
+    },
+    Object {
+      "children": Array [
+        "To get started, edit src/components/App.js and save to reload.",
+      ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "block",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "fontSize": 32,
+        "whiteSpace": "pre-wrap",
+      },
+      "tagName": "SPAN",
+    },
+  ],
+  "tagName": "DIV",
+}
+`;

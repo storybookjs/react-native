@@ -7,58 +7,58 @@ This is a list of available addons for Storybook.
 
 ## Addons maintained by storybook team.
 
-### [a11y](https://github.com/storybooks/storybook/tree/master/addons/a11y)
+### [a11y](https://github.com/storybookjs/storybook/tree/master/addons/a11y)
 
 With a11y you can test compliance of your stories with web accessibility standards.
 
-### [Actions](https://github.com/storybooks/storybook/tree/master/addons/actions)
+### [Actions](https://github.com/storybookjs/storybook/tree/master/addons/actions)
 
 With actions, you can inspect events related to your components. This is pretty neat when you are manually testing your components.
 
 Also, you can think of this as a way to document events in your components.
 
-### [Links](https://github.com/storybooks/storybook/tree/master/addons/links)
+### [Links](https://github.com/storybookjs/storybook/tree/master/addons/links)
 
 With links you can link stories together. With that, you can build demos and prototypes directly from your UI components.
 
-### [Knobs](https://github.com/storybooks/storybook/tree/master/addons/knobs)
+### [Knobs](https://github.com/storybookjs/storybook/tree/master/addons/knobs)
 
 Knobs allow you to edit React props dynamically using the Storybook UI.
 You can also use Knobs as dynamic variables inside your stories.
 
-### [Notes](https://github.com/storybooks/storybook/tree/master/addons/notes)
+### [Notes](https://github.com/storybookjs/storybook/tree/master/addons/notes)
 
 With this addon, you can write notes for each story in your component. This is pretty useful when you are working with a team.
 
-### [Info](https://github.com/storybooks/storybook/tree/master/addons/info)
+### [Info](https://github.com/storybookjs/storybook/tree/master/addons/info)
 
 If you are using Storybook as a style guide, then this addon will help you to build a nice-looking style guide with docs, automatic sample source code with a PropType explorer.
 
-### [Options](https://github.com/storybooks/storybook/tree/master/addons/options)
+### [Options](https://github.com/storybookjs/storybook/tree/master/addons/options)
 
 The Storybook webapp UI can be customised with this addon. It can be used to change the header, show/hide various UI elements and to enable full-screen mode by default.
 
-### [Storyshots](https://github.com/storybooks/storybook/tree/master/addons/storyshots)
+### [Storyshots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots)
 
 Storyshots is a way to automatically jest-snapshot all your stories. [More info here](/testing/structural-testing/).
 
-### [Console](https://github.com/storybooks/storybook-addon-console)
+### [Console](https://github.com/storybookjs/storybook-addon-console)
 
 Redirects console output (logs, errors, warnings) into Action Logger Panel. `withConsole` decorator notifies from what stories logs are coming.
 
-### [Backgrounds](https://github.com/storybooks/storybook/tree/master/addons/backgrounds)
+### [Backgrounds](https://github.com/storybookjs/storybook/tree/master/addons/backgrounds)
 
 With this addon, you can switch between background colors and background images for your preview components. It is really helpful for styleguides.
 
-### [Viewport](https://github.com/storybooks/storybook/tree/master/addons/viewport)
+### [Viewport](https://github.com/storybookjs/storybook/tree/master/addons/viewport)
 
 Viewport allows your stories to be displayed in different sizes and layouts in [Storybook](https://storybook.js.org). This helps build responsive components inside of Storybook.
 
-### [Google Analytics](https://github.com/storybooks/storybook/tree/master/addons/google-analytics)
+### [Google Analytics](https://github.com/storybookjs/storybook/tree/master/addons/google-analytics)
 
 Support google analytics in [Storybook](https://storybook.js.org)
 
-### [Storysource](https://github.com/storybooks/storybook/tree/master/addons/storysource)
+### [Storysource](https://github.com/storybookjs/storybook/tree/master/addons/storysource)
 
 Show story source in the addon panel.
 
@@ -70,7 +70,7 @@ You need to install these addons directly from NPM in order to use them.
 
 With this addon, you can add docs in markdown format for each story.
 It's very useful because most projects and components already have README.md files.
-Now it is easy to add them into your Storybook.
+Now you can add them into your Storybook.
 
 ### [Story-router](https://github.com/gvaldambrini/storybook-router)
 
@@ -93,7 +93,7 @@ Break your stories down into smaller categories (chapters) and subcategories (se
 ### [Props Combinations](https://github.com/evgenykochetkov/react-storybook-addon-props-combinations)
 
 Given possible values for each prop, renders your component with all combinations of prop values.
-Useful for finding edge cases or just seeing all component states at once.
+Useful for finding edge cases or seeing all component states at once.
 
 ### [Material-UI](https://github.com/sm-react/storybook-addon-material-ui)
 
@@ -118,11 +118,15 @@ With this addon you will have an additional panel at the bottom which provides y
 
 This addon lets you navigate different versions of static Storybook builds. As such you can see how a component has changed over time.
 
+### [Responsive Views](https://github.com/vizeat/storybook-addon-responsive-views)
+
+Preview your stories at a variety of breakpoints, so that you can be sure that your components will look great no matter what screen size.
+
 ### [Apollo](https://github.com/abhiaiyer91/apollo-storybook-decorator)
 
 Wrap your stories with the Apollo client for mocking GraphQL queries/mutations.
 
-### [Screenshot](https://github.com/tsuyoshiwada/storybook-chrome-screenshot)
+### [Storycap](https://github.com/reg-viz/storycap)
 
 Save the screenshot image of your stories. via [Puppeteer](https://github.com/GoogleChrome/puppeteer).
 
@@ -164,6 +168,10 @@ Create stories with AngularJS(1.x) components.
 ### [JSS theme](https://github.com/vertexbz/storybook-addon-jss-theme)
 
 JSS theme selection.
+
+### [Themes](https://github.com/tonai/storybook-addon-themes)
+
+Allows you to change the theme based on the css class name and adds a theme selection control to storybook panel.
 
 ### [React live edit](https://github.com/vertexbz/storybook-addon-react-live-edit)
 

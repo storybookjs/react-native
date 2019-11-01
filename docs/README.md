@@ -1,6 +1,6 @@
 # Website for [storybook.js.org](https://storybook.js.org)
 
-This is the source for [storybook.js.org](https://storybook.js.org). It documents [Storybook](https://github.com/storybooks/storybook), an amazing UI component development environment for React and React Native. The site is built with [Gatsby](https://github.com/gatsbyjs/gatsby).
+This is the source for [storybook.js.org](https://storybook.js.org). It documents [Storybook](https://github.com/storybookjs/storybook), an amazing UI component development environment for React and React Native. The site is built with [Gatsby](https://github.com/gatsbyjs/gatsby).
 
 ### Usage
 
@@ -11,7 +11,7 @@ yarn dev
 
 ### Edit Documentation
 
-Documentation is written in Markdown and located inside the [`docs/src/pages`](https://github.com/storybooks/storybook/tree/master/docs/src/pages) directory.
+Documentation is written in Markdown and located inside the [`docs/src/pages`](https://github.com/storybookjs/storybook/tree/master/docs/src/pages) directory.
 
 ### Guidelines for Writing Good Documentation
 

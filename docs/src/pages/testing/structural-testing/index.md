@@ -5,8 +5,8 @@ title: 'Structural Testing'
 
 For React, [Jest's snapshot testing](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html) is the best way to do Structural Testing.
 It's painless to use and maintain.
-We've integrated Jest's snapshot testing directly into Storybook using an addon called [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots).
-Now we can simply use existing stories as the input for snapshot testing.
+We've integrated Jest's snapshot testing directly into Storybook using an addon called [StoryShots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots).
+Now we can use existing stories as the input for snapshot testing.
 
 ## What's Snapshot Testing?
 
@@ -24,10 +24,9 @@ If things are not the same, we can do two things:
 
 ## Using StoryShots
 
-[StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) is our integration between Storybook and Jest Snapshot Testing.
-It's pretty simple to use.
+[StoryShots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) is our integration between Storybook and Jest Snapshot Testing.
 
-First, make sure you are inside a Storybook-enabled repo (make sure it has few stories).
+To use StoryShots, first make sure you are inside a Storybook-enabled repo (make sure it has few stories).
 Then, install StoryShots into your app with:
 
 ```sh
@@ -58,4 +57,4 @@ After you complete any changes, you can run the test again and find all struct
 
 * * *
 
-StoryShots also comes with a variety of customization options. Have a look at the StoryShots [repo](https://github.com/storybooks/storybook/tree/master/addons/storyshots) for more information.
+StoryShots also comes with a variety of customization options. Have a look at the StoryShots [repo](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) for more information.

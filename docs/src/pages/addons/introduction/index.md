@@ -94,13 +94,24 @@ storiesOf('Button', module)
   ));
 ```
 
-> You can call `addDecorator()` inside the story definition file as shown above. But adding it to the Storybook config file is a much better option.
+You can call `addDecorator()` inside the story definition file as shown above, but **adding it to the Storybook config file is a much better option**. That would look like this in `config.js`:
+
+```js
+import React from 'react'
+import { addDecorator } from '@storybook/react';
+
+const styles = {
+  textAlign: 'center',
+};
+const CenterDecorator = storyFn => <div style={styles}>{storyFn()}</div>;
+addDecorator(CenterDecorator);
+```
 
 ## 2. Native Addons
 
 Native addons use Storybook as a platform and interact with it. Native addons can add extra features beyond wrapping stories.
 
-For example, [storybook-actions](https://github.com/storybooks/storybook/tree/master/addons/actions) is such an addon.
+For example, [storybook-actions](https://github.com/storybookjs/storybook/tree/master/addons/actions) is such an addon.
 
 ![Demo of Storybook Addon Actions](../static/addon-actions-demo.gif)
 

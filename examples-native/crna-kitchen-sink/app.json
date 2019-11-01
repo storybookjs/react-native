@@ -1,6 +1,6 @@
 {
   "expo": {
-    "sdkVersion": "32.0.0",
+    "sdkVersion": "33.0.0",
     "platforms": [
       "ios",
       "android"
@@ -18,6 +18,6 @@
     },
     "name": "crna-kitchen-sink",
     "slug": "crna-kitchen-sink",
-    "githubUrl": "https://github.com/storybooks/storybook/"
+    "githubUrl": "https://github.com/storybookjs/storybook/"
   }
 }

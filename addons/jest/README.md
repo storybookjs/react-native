@@ -2,9 +2,9 @@
 
 Brings Jest results in storybook.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-[![Storybook Jest Addon Demo](https://raw.githubusercontent.com/storybooks/storybook-addon-jest/master/storybook-addon-jest.gif)](http://storybooks-official.netlify.com/?selectedKind=Addons%7Cjest&selectedStory=withTests&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Ftests%2Fpanel)
+[![Storybook Jest Addon Demo](https://raw.githubusercontent.com/storybookjs/storybook-addon-jest/master/storybook-addon-jest.gif)](http://storybooks-official.netlify.com/?selectedKind=Addons%7Cjest&selectedStory=withTests&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Ftests%2Fpanel)
 
 > Checkout the above [Live Storybook](http://storybooks-official.netlify.com/?selectedKind=Addons%7Cjest&selectedStory=withTests&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Ftests%2Fpanel).
 
@@ -12,7 +12,7 @@ Brings Jest results in storybook.
 
 ### Install
 
-`yarn add --save-dev @storybook/addon-jest --dev`
+`npm install --save-dev @storybook/addon-jest`
 
 or
 
@@ -26,19 +26,19 @@ When running **Jest**, be sure to save the results in a json file:
 
 ```js
 "scripts": {
-  "test:generate-output": "jest --json --outputFile=jest-test-results.json"
+  "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
 }
 ```
 
 You may want to add it the result file to `.gitignore`, since it's a generated file:
 
 ```
-jest-test-results.json
+.jest-test-results.json
 ```
 
 But much like lockfiles and snapshots checking-in generated files can have certain advantages as well. It's up to you.
 We recommend to **do** check in the test results file so starting storybook from an clean git clone doesn't require running all tests first,
-but this can mean you'll experience merge conflicts on this file in the future. (_re-generating this file is super easy though, just like lockfiles and snapshots_)
+but this can mean you'll experience merge conflicts on this file in the future. (_re-generating this file is very similar to re-generating lockfiles and snapshots_)
 
 ## Generating the test results
 
@@ -96,7 +96,7 @@ storiesOf('MyComponent', module)
   );
 ```
 
-Or in order to avoid importing `.jest-test-results.json` in each story, simply add the decorator in your `.storybook/config.js` and results will display for stories that you have set the `jest` parameter on:
+Or in order to avoid importing `.jest-test-results.json` in each story, add the decorator in your `.storybook/config.js` and results will display for stories that you have set the `jest` parameter on:
 
 ```js
 import { addDecorator } from '@storybook/react'; // <- or your view layer
@@ -180,7 +180,7 @@ storiesOf('MyComponent', module)
   );
 ```
 
-##### Example [here](https://github.com/storybooks/storybook/tree/master/examples/angular-cli)
+##### Example [here](https://github.com/storybookjs/storybook/tree/master/examples/angular-cli)
 
 ## TODO
 
@@ -193,7 +193,7 @@ storiesOf('MyComponent', module)
 
 ## Contributing
 
-Every ideas and contributions are welcomed.
+All ideas and contributions are welcomed.
 
 ## Licence
 

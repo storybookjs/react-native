@@ -1,9 +1,9 @@
 # Storybook Addon Knobs
 
-Storybook Addon Knobs allow you to edit React props dynamically using the Storybook UI.
+Storybook Addon Knobs allow you to edit props dynamically using the Storybook UI.
 You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
 This is how Knobs look like:
 
@@ -323,8 +323,9 @@ const options = {
       Watermelon: 'watermelon',
 };
 const defaultValue = 'kiwi';
+const groupId = 'GROUP-ID1';
 
-const value = radios(label, options, defaultValue);
+const value = radios(label, options, defaultValue, groupId);
 ```
 
 ### options
@@ -344,8 +345,9 @@ const defaultValue = 'kiwi';
 const optionsObj = {
   display: 'inline-radio'
 };
+const groupId = 'GROUP-ID1';
 
-const value = options(label, valuesObj, defaultValue, optionsObj);
+const value = options(label, valuesObj, defaultValue, optionsObj, groupId);
 ```
 > The display property for `optionsObj` accepts:
 > - `radio`
@@ -363,12 +365,15 @@ Allows you to get a value from a file input from the user.
 import { files } from '@storybook/addon-knobs';
 
 const label = 'Images';
+const accept = '.xlsx, .pdf';
 const defaultValue = [];
+const groupId = 'GROUP-ID1';
 
-const value = files(label, accept, defaultValue);
+const value = files(label, accept, defaultValue, groupId);
 ```
 
-> Multiple files can be selected, and will be returned as an array of [Data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)
+> You can optionally specify a [list of file types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) which the file input should accept.
+> Multiple files can be selected, and will be returned as an array of [Data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
 
 ### date
 
@@ -409,6 +414,9 @@ const groupId = 'GROUP-ID1';
 
 button(label, handler, groupId);
 ```
+
+Button knobs cause the story to re-render after the handler fires, you can prevent
+this by having the handler return false.
 
 ### withKnobs options
 

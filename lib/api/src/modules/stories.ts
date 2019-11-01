@@ -8,7 +8,7 @@ type Direction = -1 | 1;
 type StoryId = string;
 type ParameterName = string;
 
-type ViewMode = 'story' | 'info' | undefined;
+type ViewMode = 'story' | 'info' | 'settings' | undefined;
 
 export interface SubState {
   storiesHash: StoriesHash;
@@ -26,6 +26,7 @@ export interface SubAPI {
   jumpToStory: (direction: Direction) => void;
   getData: (storyId: StoryId) => Story | Group;
   getParameters: (storyId: StoryId, parameterName?: ParameterName) => Story['parameters'] | any;
+  getCurrentParameter<S>(parameterName?: ParameterName): S;
 }
 
 interface Group {
@@ -100,6 +101,16 @@ const initStoriesApi = ({
     return null;
   };
 
+  const getCurrentParameter = function getCurrentParameter<S>(parameterName: ParameterName) {
+    const { storyId } = store.getState();
+    const parameters = getParameters(storyId, parameterName);
+
+    if (parameters) {
+      return parameters as S;
+    }
+    return undefined;
+  };
+
   const jumpToStory = (direction: Direction) => {
     const { storiesHash, viewMode, storyId } = store.getState();
 
@@ -168,6 +179,17 @@ const initStoriesApi = ({
     id: toKey(name),
   });
 
+  // Recursively traverse storiesHash from the initial storyId until finding
+  // the leaf story.
+  const findLeafStoryId = (storiesHash: StoriesHash, storyId: string): string => {
+    if (storiesHash[storyId].isLeaf) {
+      return storyId;
+    }
+
+    const childStoryId = storiesHash[storyId].children[0];
+    return findLeafStoryId(storiesHash, childStoryId);
+  };
+
   const setStories = (input: StoriesRaw) => {
     const hash: StoriesHash = {};
     const storiesHashOutOfOrder = Object.values(input).reduce((acc, item) => {
@@ -178,7 +200,7 @@ const initStoriesApi = ({
         hierarchySeparator: groupSeparator,
       } = (parameters && parameters.options) || {
         hierarchyRootSeparator: '|',
-        hierarchySeparator: '/',
+        hierarchySeparator: /\/|\./,
       };
 
       const { root, groups } = parseKind(kind, { rootSeparator, groupSeparator });
@@ -198,7 +220,7 @@ const initStoriesApi = ({
                 `
 Invalid part '${name}', leading to id === parentId ('${id}'), inside kind '${kind}'
 
-Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybooks/storybook/issues/6128
+Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybookjs/storybook/issues/6128
               `.trim()
               );
             }
@@ -251,7 +273,7 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
 
     // Now create storiesHash by reordering the above by group
     const storiesHash: StoriesHash = Object.values(storiesHashOutOfOrder).reduce(addItem, {});
-
+    const settingsPageList = ['about', 'shortcuts'];
     const { storyId, viewMode } = store.getState();
 
     if (storyId && storyId.match(/--\*$/)) {
@@ -268,9 +290,18 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       // we pick the first leaf and navigate
       const firstLeaf = Object.values(storiesHash).find((s: Story | Group) => !s.children);
 
-      if (viewMode && firstLeaf) {
+      if (viewMode === 'settings' && settingsPageList.includes(storyId)) {
+        navigate(`/${viewMode}/${storyId}`);
+      } else if (viewMode === 'settings' && !settingsPageList.includes(storyId)) {
+        navigate(`/story/${firstLeaf.id}`);
+      } else if (viewMode && firstLeaf) {
         navigate(`/${viewMode}/${firstLeaf.id}`);
       }
+    } else if (storiesHash[storyId] && !storiesHash[storyId].isLeaf) {
+      // When story exists but if it is not the leaf story, it finds the proper
+      // leaf story from any depth.
+      const firstLeafStoryId = findLeafStoryId(storiesHash, storyId);
+      navigate(`/${viewMode}/${firstLeafStoryId}`);
     }
 
     store.setState({
@@ -305,6 +336,7 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       jumpToStory,
       getData,
       getParameters,
+      getCurrentParameter,
     },
     state: {
       storiesHash: {},

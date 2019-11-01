@@ -81,7 +81,7 @@ there gathering upvotes and "me too" comments. We need a way to make sure that
 these bugs get addressed.
 
 For every non-PATCH release, we nominate a small number of bugs that must be
-addressed before a release can go out by adding them to the milestone. For example, here's a list of blocking bugs [for the 3.2 milestone](https://github.com/storybooks/storybook/milestone/3).
+addressed before a release can go out by adding them to the milestone. For example, here's a list of blocking bugs [for the 3.2 milestone](https://github.com/storybookjs/storybook/milestone/3).
 
 Adding bugs to the milestone helps people looking for good ways to contribute,
 or to understand what is blocking the release so they can actually do something
@@ -91,9 +91,9 @@ channel [in our Slack](https://now-examples-slackin-rrirkqohko.now.sh/) [![Story
 If you're experiencing a bug, the best way to make sure that it gets attention
 is to upvote it by adding a "thumbs-up" reaction in Github. This way important
 bugs quickly bubble to the top [with a
-search](https://github.com/storybooks/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc%20label%3Abug).
+search](https://github.com/storybookjs/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc%20label%3Abug).
 
-And of course, the best way to make sure a bug gets addressed quickly is to fix
+The best way to make sure a bug gets addressed quickly is to fix
 it yourself and issue a PR. If the fix is good, we'll try to release it quickly
 in a patch release.
 
@@ -101,8 +101,8 @@ in a patch release.
 
 - For PATCH changes, all discussion can occur in issue/PR comments (and random slack chat as needed).
 - For MINOR feature changes, there are multiple stages of discussion:
-  - The feature may be discussed in an issue before it is implemented (ex: <https://github.com/storybooks/storybook/issues/151>)
-  - Once it's implemented, the discussion may occur on the PR (ex: <https://github.com/storybooks/storybook/pull/1329>)
+  - The feature may be discussed in an issue before it is implemented (ex: <https://github.com/storybookjs/storybook/issues/151>)
+  - Once it's implemented, the discussion may occur on the PR (ex: <https://github.com/storybookjs/storybook/pull/1329>)
   - If people disagree on an implementation and it can't be resolved in discussion, they may issue alternative PR's with different ideas
   - Ultimately the maintainers will reach a consensus before merging the changes. There is no set process for this, but we're all adults.
   - Since MINOR features are released in alpha before they are fully released, new issues may be created by end users, etc.

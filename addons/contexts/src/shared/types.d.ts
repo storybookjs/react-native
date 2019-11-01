@@ -6,9 +6,8 @@ export { API as ManagerAPI } from '@storybook/api';
 // helpers
 export declare type AnyFunctionReturns<T> = (...arg: any[]) => T;
 export declare type FCNoChildren<P> = FunctionComponent<{ children?: never } & P>;
-export declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 export declare type GenericProp = null | {
-  [key: string]: unknown;
+  readonly [key: string]: unknown;
 };
 
 // interfaces
@@ -36,7 +35,7 @@ export declare interface ContextNode extends Required<AddonSetting> {
 }
 
 export declare interface SelectionState {
-  readonly [key: string]: string;
+  readonly [key: string]: string | undefined;
 }
 
 export declare interface PropsMap {

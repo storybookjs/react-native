@@ -15,7 +15,7 @@ const Container = styled.div({
   minHeight: '100%',
 });
 
-const HighlightToggleLabel = styled.label(({ theme }) => ({
+const HighlightToggleLabel = styled.label<{}>(({ theme }) => ({
   cursor: 'pointer',
   userSelect: 'none',
   marginBottom: '3px',
@@ -77,7 +77,7 @@ const Item = styled.button(
 
 const TabsWrapper = styled.div({});
 
-const List = styled.div(({ theme }) => ({
+const List = styled.div<{}>(({ theme }) => ({
   boxShadow: `${theme.appBorderColor} 0 -1px 0 0 inset`,
   background: 'rgba(0, 0, 0, .05)',
   display: 'flex',

@@ -1,5 +1,5 @@
 import { document } from 'global';
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import { connect } from 'react-redux';
 import { styled, themes, convert } from '@storybook/theming';
 import memoize from 'memoizerific';
@@ -31,7 +31,7 @@ enum CheckBoxStates {
   INDETERMINATE,
 }
 
-const Checkbox = styled.input(({ disabled }) => ({
+const Checkbox = styled.input<{ disabled: boolean }>(({ disabled }) => ({
   cursor: disabled ? 'not-allowed' : 'pointer',
 }));
 
@@ -100,7 +100,7 @@ class HighlightToggle extends Component<ToggleProps> {
     elementsToHighlight: [],
   };
 
-  private checkBoxRef = React.createRef<HTMLInputElement>();
+  private checkBoxRef = createRef<HTMLInputElement>();
 
   componentDidMount() {
     const { elementsToHighlight, highlightedElementsMap } = this.props;

@@ -2,14 +2,14 @@
 
 The Storybook Links addon can be used to create links that navigate between stories in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ## Getting Started
 
 Install this addon by adding the `@storybook/addon-links` dependency:
 
 ```sh
-yarn add @storybook/addon-links
+yarn add -D @storybook/addon-links
 ```
 
 First configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
@@ -132,4 +132,4 @@ It accepts all the props the `a` element does, plus `story` and `kind`. It the `
 >Go to Second</LinkTo>
 ```
 
-To implement such a component for another framework, you need to add special handling for `click` event on native `a` element. See [`RoutedLink` sources](https://github.com/storybooks/storybook/blob/master/lib/components/src/navigation/routed_link.js#L4-L9) for reference. 
+To implement such a component for another framework, you need to add special handling for `click` event on native `a` element. See [`RoutedLink` sources](https://github.com/storybookjs/storybook/blob/master/lib/components/src/navigation/routed_link.js#L4-L9) for reference. 

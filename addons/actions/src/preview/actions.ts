@@ -1,12 +1,16 @@
 import { action } from './action';
-import { ActionOptions, ActionsMap } from '../models';
+import { ActionsFunction, ActionOptions, ActionsMap } from '../models';
+import { config } from './configureActions';
 
-export function actions(...args: any[]): ActionsMap {
-  let options: ActionOptions = {};
+export const actions: ActionsFunction = (...args: any[]) => {
+  let options: ActionOptions = config;
   const names = args;
   // last argument can be options
   if (names.length !== 1 && typeof args[args.length - 1] !== 'string') {
-    options = names.pop();
+    options = {
+      ...config,
+      ...names.pop(),
+    };
   }
 
   let namesObject = names[0];
@@ -22,4 +26,4 @@ export function actions(...args: any[]): ActionsMap {
     actionsObject[name] = action(namesObject[name], options);
   });
   return actionsObject;
-}
+};

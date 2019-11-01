@@ -8,7 +8,7 @@ rm -rfd cra-fixtures
 mkdir cra-fixtures
 cd cra-fixtures
 
-npx create-react-app react-scripts-latest-fixture
+npx create-react-app react-scripts-latest-fixture --use-npm
 
 cd ..
 ./run_tests.sh -f cra-fixtures $@

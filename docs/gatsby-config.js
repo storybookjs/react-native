@@ -22,6 +22,7 @@ module.exports = {
         '/guides/guide-vue/',
         '/guides/guide-angular/',
         '/guides/guide-mithril/',
+        '/guides/guide-marko/',
         '/guides/guide-ember/',
         '/guides/guide-riot/',
         '/guides/guide-svelte/',
@@ -33,11 +34,17 @@ module.exports = {
         '/configurations/custom-babel-config/',
         '/configurations/typescript-config/',
         '/configurations/add-custom-head-tags/',
+        '/configurations/add-custom-body/',
         '/configurations/serving-static-files/',
         '/configurations/env-vars/',
         '/configurations/theming/',
         '/configurations/cli-options/',
         '/configurations/standalone-options/',
+      ],
+      formats: [
+        '/formats/component-story-format/',
+        '/formats/storiesof-api/',
+        '/formats/mdx-syntax/',
       ],
       testing: [
         '/testing/react-ui-testing/',
@@ -52,6 +59,7 @@ module.exports = {
         '/addons/writing-addons/',
         '/addons/api/',
       ],
+      presets: ['/presets/introduction/', '/presets/preset-gallery/', '/presets/writing-presets/'],
     },
   },
   plugins: [
@@ -65,7 +73,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        repoUrl: 'https://github.com/storybooks/storybook',
+        repoUrl: 'https://github.com/storybookjs/storybook',
       },
     },
     {

@@ -27,7 +27,7 @@ export default {
 };
 
 export const all = () => <p>Story</p>;
-all.parameters = {
+all.story = {
   decorators: [
     s => (
       <>
@@ -36,4 +36,18 @@ all.parameters = {
       </>
     ),
   ],
+};
+
+export const deprecated = () => <p>Story</p>;
+deprecated.story = {
+  parameters: {
+    decorators: [
+      s => (
+        <>
+          <p>Deprecated Local Decorator</p>
+          {s()}
+        </>
+      ),
+    ],
+  },
 };

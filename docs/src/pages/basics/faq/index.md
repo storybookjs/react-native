@@ -3,7 +3,7 @@ id: 'faq'
 title: 'Frequently Asked Questions'
 ---
 
-Here are some answers to frequently asked questions. If you have a question, you can ask it by opening an issue on the [Storybook Repository](https://github.com/storybooks/storybook/).
+Here are some answers to frequently asked questions. If you have a question, you can ask it by opening an issue on the [Storybook Repository](https://github.com/storybookjs/storybook/).
 
 ### How can I run coverage tests with Create React App and leave out stories?
 
@@ -22,7 +22,7 @@ Next automatically defines `React` for all of your files via a babel plugin. You
 
 ### How do I setup Storybook to share Webpack configuration with Next.js?
 
-You can generally reuse webpack rules fairly easily by placing them in a file that is `require()`-ed from both your `next.config.js` and your `.storybook/webpack.config.js` files. For example, [this gist](https://gist.github.com/metasean/cadd2becd60cc3b295bf49895a56f9b4) sets both next.js and storybook up with global stylesheets.
+You can generally reuse webpack rules by placing them in a file that is `require()`-ed from both your `next.config.js` and your `.storybook/webpack.config.js` files. For example, [this gist](https://gist.github.com/metasean/cadd2becd60cc3b295bf49895a56f9b4) sets both next.js and storybook up with global stylesheets.
 
 ### Why is there no addons channel?
 
@@ -35,7 +35,7 @@ A common error is that an addon tries to access the "channel", but the channel i
     addons.setChannel(mockChannel());
     ```
 
-2.  In React Native, it's a special case that's documented in [#1192](https://github.com/storybooks/storybook/issues/1192)
+2.  In React Native, it's a special case that's documented in [#1192](https://github.com/storybookjs/storybook/issues/1192)
 
 ### Can I modify React component state in stories?
 
@@ -48,10 +48,11 @@ import { storiesOf } from '@storybook/react';
 class MyComponent extends Component {
   constructor(props) {
     super(props)
-    this.setState({
+
+    this.state = {
       someVar: 'defaultValue',
       ...props.initialState
-    })
+    }
   }
   // ...
 }

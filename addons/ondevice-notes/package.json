@@ -1,26 +1,37 @@
 {
   "name": "@storybook/addon-ondevice-notes",
-  "version": "5.1.0-beta.1",
+  "version": "5.3.0-alpha.34",
   "description": "Write notes for your react-native Storybook stories.",
   "keywords": [
     "addon",
     "notes",
-    "storybook",
-    "react-native"
+    "react-native",
+    "storybook"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "addons/ondevice-notes"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-beta.1",
+    "@storybook/addons": "5.3.0-alpha.34",
+    "@storybook/api": "5.3.0-alpha.34",
+    "@storybook/client-api": "5.3.0-alpha.34",
+    "@storybook/client-logger": "5.3.0-alpha.34",
+    "@storybook/core-events": "5.3.0-alpha.34",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2",
     "react-native-simple-markdown": "^1.1.0"

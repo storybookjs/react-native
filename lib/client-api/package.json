@@ -1,39 +1,47 @@
 {
   "name": "@storybook/client-api",
-  "version": "5.1.0-beta.1",
+  "version": "5.3.0-alpha.34",
   "description": "Storybook Client API",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/client-api",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/client-api",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/client-api"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.1.0-beta.1",
-    "@storybook/client-logger": "5.1.0-beta.1",
-    "@storybook/core-events": "5.1.0-beta.1",
-    "@storybook/router": "5.1.0-beta.1",
-    "common-tags": "^1.8.0",
+    "@storybook/addons": "5.3.0-alpha.34",
+    "@storybook/channel-postmessage": "5.3.0-alpha.34",
+    "@storybook/channels": "5.3.0-alpha.34",
+    "@storybook/client-logger": "5.3.0-alpha.34",
+    "@storybook/core-events": "5.3.0-alpha.34",
+    "@storybook/router": "5.3.0-alpha.34",
     "core-js": "^3.0.1",
-    "eventemitter3": "^3.1.0",
+    "eventemitter3": "^4.0.0",
     "global": "^4.3.2",
     "is-plain-object": "^3.0.0",
-    "lodash.debounce": "^4.0.8",
-    "lodash.isequal": "^4.5.0",
-    "lodash.mergewith": "^4.6.1",
+    "lodash": "^4.17.15",
     "memoizerific": "^1.11.3",
-    "qs": "^6.6.0"
+    "qs": "^6.6.0",
+    "ts-dedent": "^1.1.0",
+    "util-deprecate": "^1.0.2"
   },
   "publishConfig": {
     "access": "public"

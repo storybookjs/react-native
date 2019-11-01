@@ -1,0 +1,62 @@
+{
+  "name": "@storybook/web-components",
+  "version": "5.3.0-alpha.34",
+  "description": "Storybook for web-components: View web components snippets in isolation with Hot Reloading.",
+  "keywords": [
+    "lit-html",
+    "storybook",
+    "web-components"
+  ],
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/web-components",
+  "bugs": {
+    "url": "https://github.com/storybookjs/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/storybook.git",
+    "directory": "app/web-components"
+  },
+  "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
+  "main": "dist/client/index.js",
+  "types": "dist/client/index.d.ts",
+  "bin": {
+    "build-storybook": "./bin/build.js",
+    "start-storybook": "./bin/index.js",
+    "storybook-server": "./bin/index.js"
+  },
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@storybook/addons": "5.3.0-alpha.34",
+    "@storybook/core": "5.3.0-alpha.34",
+    "@types/webpack-env": "^1.13.9",
+    "babel-plugin-bundled-import-meta": "^0.3.1",
+    "core-js": "^3.0.1",
+    "global": "^4.3.2",
+    "regenerator-runtime": "^0.13.3",
+    "ts-dedent": "^1.1.0"
+  },
+  "devDependencies": {
+    "lit-html": "^1.0.0"
+  },
+  "peerDependencies": {
+    "babel-loader": "^7.0.0 || ^8.0.0",
+    "lit-html": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

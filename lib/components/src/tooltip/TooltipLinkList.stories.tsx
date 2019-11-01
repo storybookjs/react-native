@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { Children, cloneElement, FunctionComponent, MouseEvent, ReactElement } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithTooltip } from './WithTooltip';
 
 import { TooltipLinkList } from './TooltipLinkList';
-import StoryLinkWrapper from '../StoryLinkWrapper';
+
+const onLinkClick = action('onLinkClick');
+
+interface StoryLinkWrapperProps {
+  href: string;
+  passHref?: boolean;
+}
+
+const StoryLinkWrapper: FunctionComponent<StoryLinkWrapperProps> = ({
+  href,
+  passHref,
+  children,
+}) => {
+  const child = Children.only(children) as ReactElement;
+
+  return cloneElement(child, {
+    href: passHref && href,
+    onClick: (e: MouseEvent) => {
+      e.preventDefault();
+      onLinkClick(href);
+    },
+  });
+};
+
+StoryLinkWrapper.defaultProps = {
+  passHref: false,
+};
 
 export const links = [
   { id: '1', title: 'Link', href: 'http://google.com' },
@@ -15,7 +41,7 @@ export const links = [
 storiesOf('basics/Tooltip/TooltipLinkList', module)
   .addDecorator(storyFn => (
     <div style={{ height: '300px' }}>
-      <WithTooltip placement="top" trigger="click" tooltipShown tooltip={storyFn()}>
+      <WithTooltip placement="top" trigger="click" startOpen tooltip={storyFn()}>
         <div>Tooltip</div>
       </WithTooltip>
     </div>

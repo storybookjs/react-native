@@ -6,7 +6,7 @@ addDecorator(withA11y);
 addParameters({
   options: {
     brandTitle: 'CRA TypeScript Kitchen Sink',
-    brandUrl: 'https://github.com/storybooks/storybook/tree/master/examples/cra-ts-kitchen-sink',
+    brandUrl: 'https://github.com/storybookjs/storybook/tree/master/examples/cra-ts-kitchen-sink',
   },
 });
 addDecorator(withInfo());

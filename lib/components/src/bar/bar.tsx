@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 
 import { ScrollArea } from '../ScrollArea/ScrollArea';
 
-interface SideProps {
+export interface SideProps {
   left?: boolean;
   right?: boolean;
 }
@@ -57,28 +57,37 @@ export const Bar = styled(({ children, className }) => (
 );
 Bar.displayName = 'Bar';
 
-const BarInner = styled.div({
+const BarInner = styled.div<{ bgColor: string }>(({ bgColor }) => ({
   display: 'flex',
   justifyContent: 'space-between',
   position: 'relative',
   flexWrap: 'nowrap',
   flexShrink: 0,
   height: 40,
-});
+  backgroundColor: bgColor || '',
+}));
 
-interface FlexBarProps {
+export interface FlexBarProps {
   border?: boolean;
+  children?: any;
+  backgroundColor?: string;
 }
 
-export const FlexBar: FunctionComponent<FlexBarProps> = ({ children, ...rest }) => {
+export const FlexBar: FunctionComponent<FlexBarProps> = ({
+  children,
+  backgroundColor,
+  ...rest
+}) => {
   const [left, right] = Children.toArray(children);
   return (
-    <Bar {...rest}>
-      <BarInner>
-        <Side left>{left}</Side>
-        {right ? <Side right>{right}</Side> : null}
-      </BarInner>
-    </Bar>
+    <div>
+      <Bar {...rest}>
+        <BarInner bgColor={backgroundColor}>
+          <Side left>{left}</Side>
+          {right ? <Side right>{right}</Side> : null}
+        </BarInner>
+      </Bar>
+    </div>
   );
 };
 FlexBar.displayName = 'FlexBar';

@@ -1,5 +1,5 @@
 import { document } from 'global';
-import React, { Component } from 'react';
+import React, { FunctionComponent, ReactNode, useState } from 'react';
 import memoize from 'memoizerific';
 import { styled } from '@storybook/theming';
 
@@ -34,93 +34,84 @@ const ColorIcon = styled.span(
   })
 );
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ColorBlindnessProps {}
+const baseList = [
+  'protanopia',
+  'protanomaly',
+  'deuteranopia',
+  'deuteranomaly',
+  'tritanopia',
+  'tritanomaly',
+  'achromatopsia',
+  'achromatomaly',
+  'mono',
+];
 
-interface ColorBlindnessState {
-  expanded: boolean;
-  filter: string | null;
+export interface Link {
+  id: string;
+  title: ReactNode;
+  right?: ReactNode;
+  active: boolean;
+  onClick: () => void;
 }
 
-export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnessState> {
-  state: ColorBlindnessState = {
-    expanded: false,
-    filter: null,
-  };
+const getColorList = (active: string | null, set: (i: string | null) => void): Link[] => [
+  ...(active !== null
+    ? [
+        {
+          id: 'reset',
+          title: 'Reset color filter',
+          onClick: () => {
+            set(null);
+          },
+          right: undefined,
+          active: false,
+        },
+      ]
+    : []),
+  ...baseList.map(i => ({
+    id: i,
+    title: i.charAt(0).toUpperCase() + i.slice(1),
+    onClick: () => {
+      set(i);
+    },
+    right: <ColorIcon filter={i} />,
+    active: active === i,
+  })),
+];
 
-  setFilter = (filter: string | null) => {
+export const ColorBlindness: FunctionComponent = () => {
+  const [active, setActiveState] = useState(null);
+
+  const setActive = (activeState: string | null): void => {
     const iframe = getIframe();
 
     if (iframe) {
-      iframe.style.filter = getFilter(filter);
-      this.setState({
-        expanded: false,
-        filter,
+      iframe.style.filter = getFilter(activeState);
+      setActiveState({
+        active: activeState,
       });
     } else {
       logger.error('Cannot find Storybook iframe');
     }
   };
 
-  onVisibilityChange = (s: boolean) => {
-    const { expanded } = this.state;
-    if (expanded !== s) {
-      this.setState({ expanded: s });
-    }
-  };
-
-  render() {
-    const { filter, expanded } = this.state;
-
-    let colorList = [
-      'protanopia',
-      'protanomaly',
-      'deuteranopia',
-      'deuteranomaly',
-      'tritanopia',
-      'tritanomaly',
-      'achromatopsia',
-      'achromatomaly',
-      'mono',
-    ].map(i => ({
-      id: i,
-      title: i.charAt(0).toUpperCase() + i.slice(1),
-      onClick: () => {
-        this.setFilter(i);
-      },
-      right: <ColorIcon filter={i} />,
-      active: filter === i,
-    }));
-
-    if (filter !== null) {
-      colorList = [
-        {
-          id: 'reset',
-          title: 'Reset color filter',
-          onClick: () => {
-            this.setFilter(null);
-          },
-          right: undefined,
-          active: false,
-        },
-        ...colorList,
-      ];
-    }
-
-    return (
-      <WithTooltip
-        placement="top"
-        trigger="click"
-        tooltipShown={expanded}
-        onVisibilityChange={this.onVisibilityChange}
-        tooltip={<TooltipLinkList links={colorList} />}
-        closeOnClick
-        onDoubleClick={() => this.setFilter(null)}
-      >
-        <IconButton key="filter" active={!!filter} title="Color Blindness Emulation">
-          <Icons icon="mirror" />
-        </IconButton>
-      </WithTooltip>
-    );
-  }
-}
+  return (
+    <WithTooltip
+      placement="top"
+      trigger="click"
+      tooltip={({ onHide }) => {
+        const colorList = getColorList(active, i => {
+          setActive(i);
+          onHide();
+        });
+        return <TooltipLinkList links={colorList} />;
+      }}
+      closeOnClick
+      onDoubleClick={() => setActive(null)}
+    >
+      <IconButton key="filter" active={!!active} title="Color Blindness Emulation">
+        <Icons icon="mirror" />
+      </IconButton>
+    </WithTooltip>
+  );
+};

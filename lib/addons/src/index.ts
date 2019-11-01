@@ -3,8 +3,8 @@ import global from 'global';
 import { ReactElement } from 'react';
 import { Channel } from '@storybook/channels';
 import { API } from '@storybook/api';
-import logger from '@storybook/client-logger';
-import { types, Types, isSupportedType } from './types';
+import { logger } from '@storybook/client-logger';
+import { types, Types } from './types';
 
 export interface RenderOptions {
   active: boolean;
@@ -24,11 +24,10 @@ export interface Addon {
   route?: (routeOptions: RouteOptions) => string;
   match?: (matchOptions: MatchOptions) => boolean;
   render: (renderOptions: RenderOptions) => ReactElement<any>;
+  paramKey?: string;
 }
 
 export type Loader = (api: API) => void;
-
-export { types, Types, isSupportedType };
 
 interface Loaders {
   [key: string]: Loader;
@@ -40,12 +39,28 @@ interface Elements {
   [key: string]: Collection;
 }
 
+interface Config {
+  [key: string]: any;
+}
+
 export class AddonStore {
+  constructor() {
+    this.promise = new Promise(res => {
+      this.resolve = () => res(this.getChannel());
+    }) as Promise<Channel>;
+  }
+
   private loaders: Loaders = {};
 
   private elements: Elements = {};
 
+  private config: Config = {};
+
   private channel: Channel | undefined;
+
+  private promise: any;
+
+  private resolve: any;
 
   getChannel = (): Channel => {
     // this.channel should get overwritten by setChannel. If it wasn't called (e.g. in non-browser environment), throw.
@@ -58,10 +73,13 @@ export class AddonStore {
     return this.channel;
   };
 
+  ready = (): Promise<Channel> => this.promise;
+
   hasChannel = (): boolean => !!this.channel;
 
   setChannel = (channel: Channel): void => {
     this.channel = channel;
+    this.resolve();
   };
 
   getElements = (type: Types): Collection => {
@@ -83,6 +101,12 @@ export class AddonStore {
     const collection = this.getElements(type);
     collection[name] = { id: name, ...addon };
   };
+
+  setConfig = (value: Config) => {
+    Object.assign(this.config, value);
+  };
+
+  getConfig = () => this.config;
 
   register = (name: string, registerCallback: (api: API) => void): void => {
     if (this.loaders[name]) {

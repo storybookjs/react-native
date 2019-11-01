@@ -12,7 +12,6 @@
 }
 
 #nav h3 {
-  font-family: "Open Sans";
   font-size: 18px;
   font-weight: 600;
   margin: 10px 0;
@@ -38,6 +37,6 @@
 }
 
 #nav ul li a.selected {
-  color: #E25E5E;
+  color: #e25e5e;
   font-weight: 600;
 }

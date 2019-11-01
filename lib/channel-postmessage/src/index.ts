@@ -31,7 +31,6 @@ export class PostmsgTransport {
 
   private connected: boolean;
 
-  // eslint-disable-next-line @typescript-eslint/no-parameter-properties
   constructor(private readonly config: Config) {
     this.buffer = [];
     this.handler = null;
@@ -67,12 +66,16 @@ export class PostmsgTransport {
       });
     }
     let depth = 15;
+    let allowFunction = true;
+
+    if (options && typeof options.allowFunction === 'boolean') {
+      allowFunction = options.allowFunction;
+    }
     if (options && Number.isInteger(options.depth)) {
-      // eslint-disable-next-line prefer-destructuring
       depth = options.depth;
     }
 
-    const data = stringify({ key: KEY, event }, { maxDepth: depth });
+    const data = stringify({ key: KEY, event }, { maxDepth: depth, allowFunction });
 
     // TODO: investigate http://blog.teamtreehouse.com/cross-domain-messaging-with-postmessage
     // might replace '*' with document.location ?

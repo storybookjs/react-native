@@ -1,0 +1,74 @@
+{
+  "name": "@storybook/addon-docs",
+  "version": "5.3.0-alpha.34",
+  "description": "Superior documentation for your components",
+  "keywords": [
+    "addon",
+    "notes",
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/addons/docs",
+  "bugs": {
+    "url": "https://github.com/storybookjs/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/storybook.git",
+    "directory": "addons/docs"
+  },
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "angular/**/*",
+    "common/**/*",
+    "html/**/*",
+    "react/**/*",
+    "vue/**/*",
+    "web-components/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
+  "main": "dist/public_api.js",
+  "types": "dist/public_api.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.4.0",
+    "@babel/parser": "^7.4.2",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@egoist/vue-to-react": "^1.1.0",
+    "@jest/transform": "^24.9.0",
+    "@mdx-js/loader": "^1.1.0",
+    "@mdx-js/mdx": "^1.1.0",
+    "@mdx-js/react": "^1.0.27",
+    "@storybook/addons": "5.3.0-alpha.34",
+    "@storybook/api": "5.3.0-alpha.34",
+    "@storybook/components": "5.3.0-alpha.34",
+    "@storybook/router": "5.3.0-alpha.34",
+    "@storybook/source-loader": "5.3.0-alpha.34",
+    "@storybook/theming": "5.3.0-alpha.34",
+    "core-js": "^3.0.1",
+    "global": "^4.3.2",
+    "js-string-escape": "^1.0.1",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "storybook-addon-vue-info": "^1.2.1",
+    "ts-dedent": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.5.9",
+    "@types/util-deprecate": "^1.0.0",
+    "@types/webpack-env": "^1.14.0"
+  },
+  "peerDependencies": {
+    "babel-loader": "^8.0.0",
+    "react": "^16.8.0",
+    "react-is": "^16.8.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

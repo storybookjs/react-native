@@ -1,12 +1,11 @@
-import { chromeLight, chromeDark } from 'react-inspector';
 import { opacify } from 'polished';
 
 import { background, typography, color } from './base';
 import { Theme, Color, ThemeVars } from './types';
 import { easing, animation } from './animation';
-import { create as createSyntax } from './modules/syntax';
-
-import lightThemeVars from './themes/light';
+import { create as createSyntax, chromeLight, chromeDark } from './modules/syntax';
+import { getPreferredColorScheme } from './utils';
+import { themes } from './create';
 
 const lightSyntaxColors = {
   green1: '#008000',
@@ -73,7 +72,7 @@ const createColors = (vars: ThemeVars): Color => ({
   inverseText: vars.textInverseColor || color.lightest,
 });
 
-export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
+export const convert = (inherit: ThemeVars = themes[getPreferredColorScheme()]): Theme => {
   const {
     base,
     colorPrimary,
@@ -107,7 +106,7 @@ export const convert = (inherit: ThemeVars = lightThemeVars): Theme => {
     color: createColors(inherit),
     background: {
       app: appBg,
-      bar: background.bar,
+      bar: barBg,
       content: appContentBg,
       gridCellSize: gridCellSize || background.gridCellSize,
       hoverable:

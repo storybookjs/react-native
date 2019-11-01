@@ -34,7 +34,15 @@ This Code of Conduct applies both within project spaces and in public spaces whe
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at ndelangen@me.com. The project team will review and investigate all complaints, and will respond in a way that it deems appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting one of the Steering committee members:
+
+Norbert de Langen ~ @ndelangen - `ndelangen@me.com`
+Igor Davydkin ~ @igordv - `davydkin.igor@gmail.com`
+Tom Coleman ~ @tmeasday - `tom@thesnail.org`
+Michael Shilman ~ @shilman - `michael@lab80.co`
+Philip Riabchun ~ @hypnosphi - `talpa@yandex.ru`
+
+The steering committee will review and investigate all complaints, and will respond in a way that it deems appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
 
 Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.
 

@@ -7,6 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import knobsWrapper from './Knobs';
+// eslint-disable-next-line import/no-unresolved
 import Button from './Button';
 import CenterView from './CenterView';
 import Welcome from './Welcome';
@@ -20,15 +21,22 @@ addParameters({
   ],
 });
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />, {
-  notes: `
+storiesOf('Welcome', module)
+  .addParameters({
+    component: Welcome,
+  })
+  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />, {
+    notes: `
 # Markdown!\n
 * List Item
 * [List Item with Link](https://storybook.js.org)
 `,
-});
+  });
 
 storiesOf('Button', module)
+  .addParameters({
+    component: Button,
+  })
   .addParameters({
     backgrounds: [
       { name: 'dark', value: '#222222' },
