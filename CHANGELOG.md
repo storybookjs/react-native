@@ -1259,7 +1259,7 @@ It is now recommended to only use ONE `load` call in your app and it will warn y
 
 * Addon-docs: Added inline option to Story block ([#7308](https://github.com/storybookjs/storybook/pull/7308))
 * Addon-knobs: Ensure unique knob names across groups ([#6793](https://github.com/storybookjs/storybook/pull/6793))
-* Core: Enable webpack to rebuild changes in node_modules ([#6265](https://github.com/storybooorybook/pull/6265))
+* Core: Enable webpack to rebuild changes in node_modules ([#6265](https://github.com/storybookjs/storybook/pull/6265))
 * Addons: Disable option for addon tab ([#6923](https://github.com/storybookjs/storybook/pull/6923))
 
 ### Bug Fixes
