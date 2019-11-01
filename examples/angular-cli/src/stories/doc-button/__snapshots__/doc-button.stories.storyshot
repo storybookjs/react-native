@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DocButton Basic 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <my-button>
+    <button
+      class="btn-secondary btn-medium"
+      ng-reflect-ng-class="btn-secondary,btn-medium"
+    >
+      Test labels
+    </button>
+  </my-button>
+</storybook-dynamic-app-root>
+`;
