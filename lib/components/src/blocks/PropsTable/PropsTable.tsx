@@ -165,15 +165,15 @@ const PropsTable: FC<PropsTableProps> = props => {
     return <EmptyBlock>{error}</EmptyBlock>;
   }
 
-  let allRows: any[];
+  let allRows: any[] = [];
   const { sections } = props as PropsTableSectionsProps;
+  const { rows } = props as PropsTableRowsProps;
   if (sections) {
-    allRows = [];
     Object.keys(sections).forEach(section => {
-      const rows = sections[section];
-      if (rows && rows.length > 0) {
+      const sectionRows = sections[section];
+      if (sectionRows && sectionRows.length > 0) {
         allRows.push({ key: section, value: { section } });
-        rows.forEach(row => {
+        sectionRows.forEach(row => {
           allRows.push({
             key: `${section}_${row.name}`,
             value: { row },
@@ -181,8 +181,7 @@ const PropsTable: FC<PropsTableProps> = props => {
         });
       }
     });
-  } else {
-    const { rows } = props as PropsTableRowsProps;
+  } else if (rows) {
     allRows = rows.map(row => ({
       key: row.name,
       value: { row },

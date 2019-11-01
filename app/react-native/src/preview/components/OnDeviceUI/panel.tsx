@@ -3,7 +3,7 @@ import { StyleSheet, Animated } from 'react-native';
 import styled from '@emotion/native';
 
 const Container = styled(Animated.View)(({ theme }) => ({
-  background: theme.backgroundColor,
+  backgroundColor: theme.backgroundColor,
 }));
 
 interface Props {
