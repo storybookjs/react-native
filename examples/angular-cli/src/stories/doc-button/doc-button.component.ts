@@ -8,6 +8,7 @@ import {
   ViewChild,
   HostListener,
   HostBinding,
+  ElementRef,
 } from '@angular/core';
 
 export const exportedConstant = 'An exported constant';
@@ -44,7 +45,7 @@ export interface ISomeInterface {
   styleUrls: ['./doc-button.component.scss'],
 })
 export class ButtonComponent<T> {
-  @ViewChild('buttonRef', { static: false }) buttonRef: HTMLElement;
+  @ViewChild('buttonRef', { static: false }) buttonRef: ElementRef;
 
   /** Appearance style of the button. */
   @Input()
