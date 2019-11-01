@@ -1,6 +1,14 @@
 /* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+  HostListener,
+  HostBinding,
+} from '@angular/core';
 
 export const exportedConstant = 'An exported constant';
 
@@ -21,7 +29,7 @@ export interface ISomeInterface {
  * ornare risus_. In vitae ex eu lacus hendrerit elementum non ut massa. ~~Orci varius natoque penatibus et magnis dis
  * parturient montes~~, nascetur ridiculus mus. `Nullam vehicula lacus felis, ac aliquam nisl malesuada ac`.
  *
- * > Cras varius aliquam tortor in efficitur. Proin in egestas libero, ac ullamcorper est.
+ * > Cras varius aliquam tortor in efficitur. Proin in egestas libero, ac ullamcoer est.
  *
  * <abbr title="Hypertext Markup Language">HTML</abbr> tags work just as they would in markup.
  *
@@ -36,6 +44,8 @@ export interface ISomeInterface {
   styleUrls: ['./doc-button.component.scss'],
 })
 export class ButtonComponent<T> {
+  @ViewChild('buttonRef', { static: false }) buttonRef: HTMLElement;
+
   /** Appearance style of the button. */
   @Input()
   public appearance: 'primary' | 'secondary' = 'secondary';
@@ -54,7 +64,7 @@ export class ButtonComponent<T> {
 
   /** Size of the button. */
   @Input()
-  public size: ButtonSize = 'medium';
+  public size?: ButtonSize = 'medium';
 
   /**
    * Some input you shouldn't use.
@@ -97,6 +107,13 @@ export class ButtonComponent<T> {
   public get inputValue() {
     return this._inputValue;
   }
+
+  @HostListener('click', ['$event.target'])
+  onClickListener(btn) {
+    console.log('button', btn);
+  }
+
+  @HostBinding('class.focused') focus = false;
 
   /**
    * Returns all the CSS classes for the button.
@@ -148,7 +165,7 @@ export class ButtonComponent<T> {
    *
    * @param id Some `id`.
    */
-  protected protectedMethod(id: number) {
+  protected protectedMethod(id?: number) {
     console.log(id);
   }
 
@@ -161,7 +178,7 @@ export class ButtonComponent<T> {
     console.log(password);
   }
 
-  @Input()
+  @Input('showKeyAlias')
   public showKey: keyof T;
 
   @Input()
