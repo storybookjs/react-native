@@ -61,7 +61,7 @@ const propsFromPropTypes: PropDefGetter = (type, section) => {
 
 export const getPropDefs: PropDefGetter = (type, section) => {
   let processedType = type;
-  if (!hasDocgen(type)) {
+  if (!hasDocgen(type) && !type.propTypes) {
     if (isForwardRef(type) || type.render) {
       processedType = type.render().type;
     }
