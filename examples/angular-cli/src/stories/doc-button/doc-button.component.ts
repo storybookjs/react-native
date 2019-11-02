@@ -22,17 +22,12 @@ export interface ISomeInterface {
 }
 
 /**
- * Short description about the component.
+ * This is a simple button that demonstrates various JSDoc handling in Storybook Docs for Angular.
  *
- * Long description about the component - this also supports [markdown](https://en.wikipedia.org/wiki/Markdown)!
+ * It supports [markdown](https://en.wikipedia.org/wiki/Markdown), so you can embed formatted text,
+ * like **bold**, _italic_, and `inline code`.
  *
- * **Lorem ipsum dolor sit amet**, consectetur adipiscing elit. Nullam sit amet lectus condimentum, _posuere velit id,
- * ornare risus_. In vitae ex eu lacus hendrerit elementum non ut massa. ~~Orci varius natoque penatibus et magnis dis
- * parturient montes~~, nascetur ridiculus mus. `Nullam vehicula lacus felis, ac aliquam nisl malesuada ac`.
- *
- * > Cras varius aliquam tortor in efficitur. Proin in egestas libero, ac ullamcoer est.
- *
- * <abbr title="Hypertext Markup Language">HTML</abbr> tags work just as they would in markup.
+ * > How you like dem apples?! It's never been easier to document all your components.
  *
  * @string Hello world
  * @link [Example](http://example.com)

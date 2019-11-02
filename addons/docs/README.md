@@ -18,6 +18,7 @@ Read on to learn more:
 - [MDX](#mdx)
 - [Framework support](#framework-support)
 - [Installation](#installation)
+  - [Be sure to check framework specific installation needs](#be-sure-to-check-framework-specific-installation-needs)
 - [Preset options](#preset-options)
 - [Manual configuration](#manual-configuration)
 - [TypeScript configuration](#typescript-configuration)
@@ -138,6 +139,7 @@ Add the following to your Jest configuration:
 
 ### Be sure to check framework specific installation needs
 
+- [Angular](./angular)
 - [Web Components](./web-components)
 
 ## Preset options
@@ -234,4 +236,3 @@ Want to learn more? Here are some more articles on Storybook Docs:
 - Vision: [Storybook Docs sneak peak](https://medium.com/storybookjs/storybook-docs-sneak-peak-5be78445094a)
 - Announcement: [DocsPage](https://medium.com/storybookjs/storybook-docspage-e185bc3622bf)
 - Example: [Storybook Design System](https://github.com/storybookjs/design-system)
-- [Technical preview guide](https://docs.google.com/document/d/1un6YX7xDKEKl5-MVb-egnOYN8dynb5Hf7mq0hipk8JE/edit?usp=sharing)
