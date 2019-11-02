@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { PureComponent } from 'react';
-import { View, SafeAreaView, StyleSheet } from 'react-native';
+import { View, SafeAreaView } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import Bar from './bar';
 import VisibilityButton from './visibility-button';
