@@ -106,7 +106,7 @@ export const extractProps = (component: Component) => {
         name: item.name,
         type: { name: isMethod(item) ? displaySignature(item) : item.type },
         required: isMethod(item) ? false : !item.optional,
-        description: isMethod(item) ? item.description : '',
+        description: item.description,
         defaultValue: isMethod(item) ? '' : item.defaultValue,
       };
 
