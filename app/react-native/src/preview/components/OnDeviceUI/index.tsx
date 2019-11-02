@@ -1,11 +1,5 @@
 import React, { PureComponent } from 'react';
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  Platform,
-  Animated,
-  TouchableOpacityProps,
-} from 'react-native';
+import { Keyboard, KeyboardAvoidingView, Platform, Animated, TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
 import Channel from '@storybook/channels';
@@ -44,7 +38,7 @@ interface OnDeviceUIState {
   previewHeight: number;
 }
 
-const Preview = styled.TouchableOpacity<TouchableOpacityProps>(
+const Preview = styled.View<{ disabled: boolean }>(
   {
     flex: 1,
   },
@@ -56,6 +50,8 @@ const Preview = styled.TouchableOpacity<TouchableOpacityProps>(
     borderColor: disabled ? 'transparent' : theme.previewBorderColor,
   })
 );
+
+const absolutePosition = { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 };
 
 export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceUIState> {
   constructor(props: OnDeviceUIProps) {
@@ -136,13 +132,12 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
         >
           <Animated.View style={previewWrapperStyles}>
             <Animated.View style={previewStyles}>
-              <Preview
-                accessible={false}
-                disabled={tabOpen === PREVIEW}
-                onPress={this.handleOpenPreview}
-              >
+              <Preview disabled={tabOpen === PREVIEW}>
                 <StoryView url={url} onDevice stories={stories} />
               </Preview>
+              {tabOpen !== PREVIEW ? (
+                <TouchableOpacity style={absolutePosition} onPress={this.handleOpenPreview} />
+              ) : null}
             </Animated.View>
           </Animated.View>
           <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
