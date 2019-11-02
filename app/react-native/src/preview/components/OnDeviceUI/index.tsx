@@ -1,5 +1,12 @@
 import React, { PureComponent } from 'react';
-import { Keyboard, KeyboardAvoidingView, Platform, Animated, TouchableOpacity } from 'react-native';
+import {
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  Animated,
+  TouchableOpacity,
+  FlexStyle,
+} from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
 import Channel from '@storybook/channels';
@@ -51,7 +58,7 @@ const Preview = styled.View<{ disabled: boolean }>(
   })
 );
 
-const absolutePosition = { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 };
+const absolutePosition: FlexStyle = { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 };
 
 export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceUIState> {
   constructor(props: OnDeviceUIProps) {
