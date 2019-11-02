@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import React, { FC, FunctionComponent, SyntheticEvent } from 'react';
 
 interface ButtonProps {

@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`inject-decorator positive - ts - csf includes storySource parameter in the default exported object 1`] = `
-"var addSourceDecorator = require(\\"@storybook/source-loader/preview\\").addSource;
-import React from \\"react\\";
+"import React from \\"react\\";
 import { action } from \\"@storybook/addon-actions\\";
 import { Button } from \\"@storybook/react/demo\\";
 
-export default {parameters: {\\"storySource\\":{\\"source\\":\\"import React from \\\\\\"react\\\\\\";\\\\nimport { action } from \\\\\\"@storybook/addon-actions\\\\\\";\\\\nimport { Button } from \\\\\\"@storybook/react/demo\\\\\\";\\\\n\\\\nexport default {\\\\n  title: \\\\\\"Button\\\\\\"\\\\n};\\\\n\\\\nexport const text = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>Hello Button</Button>\\\\n);\\\\n\\\\nexport const emoji = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>\\\\n    <span role=\\\\\\"img\\\\\\" aria-label=\\\\\\"so cool\\\\\\">\\\\n      😀 😎 👍 💯\\\\n    </span>\\\\n  </Button>\\\\n);\\\\n\\",\\"locationsMap\\":{}},},
+export default {parameters: {\\"storySource\\":{\\"source\\":\\"import React from \\\\\\"react\\\\\\";\\\\nimport { action } from \\\\\\"@storybook/addon-actions\\\\\\";\\\\nimport { Button } from \\\\\\"@storybook/react/demo\\\\\\";\\\\n\\\\nexport default {\\\\n  title: \\\\\\"Button\\\\\\"\\\\n};\\\\n\\\\nexport const text = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>Hello Button</Button>\\\\n);\\\\n\\\\nexport const emoji = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>\\\\n    <span role=\\\\\\"img\\\\\\" aria-label=\\\\\\"so cool\\\\\\">\\\\n      😀 😎 👍 💯\\\\n    </span>\\\\n  </Button>\\\\n);\\\\n\\",\\"locationsMap\\":{\\"button--text\\":{\\"startLoc\\":{\\"col\\":20,\\"line\\":9},\\"endLoc\\":{\\"col\\":1,\\"line\\":11},\\"startBody\\":{\\"col\\":20,\\"line\\":9},\\"endBody\\":{\\"col\\":1,\\"line\\":11}},\\"button--emoji\\":{\\"startLoc\\":{\\"col\\":21,\\"line\\":13},\\"endLoc\\":{\\"col\\":1,\\"line\\":19},\\"startBody\\":{\\"col\\":21,\\"line\\":13},\\"endBody\\":{\\"col\\":1,\\"line\\":19}}}},},
   title: \\"Button\\"
 };
 
