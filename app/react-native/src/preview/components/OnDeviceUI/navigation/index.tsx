@@ -10,15 +10,6 @@ const SWIPE_CONFIG = {
   directionalOffsetThreshold: 80,
 };
 
-const style = StyleSheet.create({
-  wrapper: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-});
-
 interface Props {
   initialUiVisible?: boolean;
   tabOpen: number;
@@ -55,7 +46,7 @@ export default class Navigation extends PureComponent<Props> {
     const { isUIVisible } = this.state;
 
     return (
-      <View style={style.wrapper}>
+      <View>
         <SafeAreaView>
           {isUIVisible && (
             <GestureRecognizer
