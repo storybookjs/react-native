@@ -1,3 +1,9 @@
+## 5.3.0-alpha.37 (November 2, 2019)
+
+### Bug Fixes
+
+* Source-loader: Fix Typescript support ([#8499](https://github.com/storybookjs/storybook/pull/8499))
+
 ## 5.3.0-alpha.36 (November 2, 2019)
 
 ### Features
