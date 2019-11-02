@@ -2,8 +2,7 @@
 import React, { PureComponent } from 'react';
 import { AsyncStorage } from 'react-native';
 import { ThemeProvider } from 'emotion-theming';
-// @ts-ignore
-import getHost from 'rn-host-detect';
+
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
@@ -12,6 +11,8 @@ import { StoryStore, ClientApi } from '@storybook/client-api';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 import { theme } from './components/Shared/theme';
+// @ts-ignore
+import getHost from './rn-host-detect';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
