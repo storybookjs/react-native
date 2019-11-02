@@ -7,7 +7,3 @@ export const theme = {
   buttonTextColor: '#999999',
   buttonActiveTextColor: '#444444',
 };
-
-export interface EmotionProps {
-  theme: typeof theme;
-}

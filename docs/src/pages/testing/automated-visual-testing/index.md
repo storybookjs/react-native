@@ -3,7 +3,7 @@ id: 'automated-visual-testing'
 title: 'Automated Visual Testing'
 ---
 
-Automated Visual Testing is a quality assurance process meant to automatically verify that a UI visually appears as intended. There are many alternative names for this process, such as Visual Regression Testing, Visual Validation Testing, Visual UI Testing, or just simply Visual Testing, but in all cases we're talking about confirming the thing your users will see—the actual pixels—without caring about how it's generated.
+Automated Visual Testing is a quality assurance process meant to automatically verify that a UI visually appears as intended. There are many alternative names for this process, such as Visual Regression Testing, Visual Validation Testing, Visual UI Testing, or Visual Testing, but in all cases we're talking about confirming the thing your users will see—the actual pixels—without caring about how it's generated.
 
 ## Benefits
 
@@ -13,14 +13,14 @@ Another potential benefit is with cross-browser testing. If you perform your vis
 
 ## Challenges
 
-The biggest challenge with Automated Visual Testing is that humans and machines perceive pixels differently. Two screenshots of a UI could appear entirely identical to a human but 100% different to a simple 1:1, naive diffing algorithm.
+The biggest challenge with Automated Visual Testing is that humans and machines perceive pixels differently. Two screenshots of a UI could appear entirely identical to a human but 100% different to a 1:1, naive diffing algorithm.
 
 For example, changes in [anti-aliasing](https://en.wikipedia.org/wiki/Spatial_anti-aliasing) are common, even if human eyes don't notice them.
 
 ![Menu before and after differences](../static/image-diff-1.png)
 ![Close-up of menu before and after differences](../static/image-diff-2.png)
 
-Even though we didn't change any CSS and the menus appear visually the same to our eyes, if we just compare their pixels 1:1 we find that lots of it has changed! This can happen between browser versions, underlying hardware changes on your cloud platform, and more.
+Even though we didn't change any CSS and the menus appear visually the same to our eyes, if we compare their pixels 1:1 we find that lots of it has changed! This can happen between browser versions, underlying hardware changes on your cloud platform, and more.
 
 Similar situations happen all the time, such as how images, drop shadows, etc are rendered.
 

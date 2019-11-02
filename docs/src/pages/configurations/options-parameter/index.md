@@ -75,13 +75,13 @@ addParameters({
      */
     theme: undefined,
     /**
-    * function to sort stories in the tree view
-    * common use is alphabetical `(a, b) => a[1].id.localeCompare(b[1].id)`
-    * if left undefined, then the order in which the stories are imported will
-    * be the order they display
-    * @type {Function}
-    */
-    storySort: undefined
+     * function to sort stories in the tree view
+     * common use is alphabetical `(a, b) => a[1].id.localeCompare(b[1].id)`
+     * if left undefined, then the order in which the stories are imported will
+     * be the order they display
+     * @type {Function}
+     */
+    storySort: undefined,
   },
 });
 ```

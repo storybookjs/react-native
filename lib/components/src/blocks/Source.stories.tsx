@@ -12,7 +12,6 @@ const jsxCode = `
 </MyComponent>
 `.trim();
 
-const jsxProps = {};
 export const jsx = () => <Source code={jsxCode} language="jsx" />;
 
 const cssCode = `
@@ -32,7 +31,5 @@ const cssCode = `
 export const css = () => <Source code={cssCode} language="css" />;
 
 export const noStory = () => <Source error={SourceError.NO_STORY} />;
-noStory.story = { name: 'no story' };
 
 export const sourceUnavailable = () => <Source error={SourceError.SOURCE_UNAVAILABLE} />;
-sourceUnavailable.story = { name: 'source unavailable' };

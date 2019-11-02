@@ -7,21 +7,21 @@ exports[`Storyshots Custom|Feature Module as Context with forRoot Component with
   target={[Function ViewContainerRef_]}
 >
   <storybook-chip
-    _nghost-a-c15=""
+    _nghost-a-c7=""
     style="background-color: rgb(238, 238, 238);"
   >
     <span
-      _ngcontent-a-c15=""
+      _ngcontent-a-c7=""
       class="text"
     >
       My Chíp
     </span>
     <div
-      _ngcontent-a-c15=""
+      _ngcontent-a-c7=""
       class="remove"
     >
       <span
-        _ngcontent-a-c15=""
+        _ngcontent-a-c7=""
         class="x"
       >
         ✕
@@ -38,21 +38,21 @@ exports[`Storyshots Custom|Feature Module as Context with forRoot Component with
   target={[Function ViewContainerRef_]}
 >
   <storybook-chip
-    _nghost-a-c16=""
+    _nghost-a-c8=""
     style="background-color: rgb(238, 238, 238);"
   >
     <span
-      _ngcontent-a-c16=""
+      _ngcontent-a-c8=""
       class="text"
     >
       My Chíp
     </span>
     <div
-      _ngcontent-a-c16=""
+      _ngcontent-a-c8=""
       class="remove"
     >
       <span
-        _ngcontent-a-c16=""
+        _ngcontent-a-c8=""
         class="x"
       >
         ✕
@@ -69,28 +69,28 @@ exports[`Storyshots Custom|Feature Module as Context with forRoot Component with
   target={[Function ViewContainerRef_]}
 >
   <storybook-chips-group
-    _nghost-a-c13=""
+    _nghost-a-c5=""
   >
     
     <storybook-chip
-      _ngcontent-a-c13=""
-      _nghost-a-c14=""
+      _ngcontent-a-c5=""
+      _nghost-a-c6=""
       class="chip"
       ng-reflect-display-text="Chip 1"
       style="background-color: rgb(238, 238, 238);"
     >
       <span
-        _ngcontent-a-c14=""
+        _ngcontent-a-c6=""
         class="text"
       >
         Chíp 1
       </span>
       <div
-        _ngcontent-a-c14=""
+        _ngcontent-a-c6=""
         class="remove"
       >
         <span
-          _ngcontent-a-c14=""
+          _ngcontent-a-c6=""
           class="x"
         >
           ✕
@@ -98,24 +98,24 @@ exports[`Storyshots Custom|Feature Module as Context with forRoot Component with
       </div>
     </storybook-chip>
     <storybook-chip
-      _ngcontent-a-c13=""
-      _nghost-a-c14=""
+      _ngcontent-a-c5=""
+      _nghost-a-c6=""
       class="chip"
       ng-reflect-display-text="Chip 2"
       style="background-color: rgb(238, 238, 238);"
     >
       <span
-        _ngcontent-a-c14=""
+        _ngcontent-a-c6=""
         class="text"
       >
         Chíp 2
       </span>
       <div
-        _ngcontent-a-c14=""
+        _ngcontent-a-c6=""
         class="remove"
       >
         <span
-          _ngcontent-a-c14=""
+          _ngcontent-a-c6=""
           class="x"
         >
           ✕
@@ -124,7 +124,7 @@ exports[`Storyshots Custom|Feature Module as Context with forRoot Component with
     </storybook-chip>
     
     <div
-      _ngcontent-a-c13=""
+      _ngcontent-a-c5=""
       class="remove-all"
     >
        Remove All 

@@ -3,6 +3,7 @@ import React, {
   Component,
   Fragment,
   FunctionComponent,
+  memo,
   MouseEvent,
   ReactNode,
 } from 'react';
@@ -12,6 +13,9 @@ import { styled } from '@storybook/theming';
 import { Placeholder } from '../placeholder/placeholder';
 import { FlexBar } from '../bar/bar';
 import { TabButton } from '../bar/button';
+
+const ignoreSsrWarning =
+  '/* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */';
 
 export interface WrapperProps {
   bordered?: boolean;
@@ -73,7 +77,7 @@ const Content = styled.div<ContentProps>(
           bottom: 0,
           top: 40,
           overflow: 'auto',
-          '& > *:first-child': {
+          [`& > *:first-child${ignoreSsrWarning}`]: {
             position: 'absolute',
             left: 0,
             right: 0,
@@ -131,7 +135,6 @@ const childrenToList = (children: any, selected: string) =>
 
 export interface TabsProps {
   id?: string;
-  children?: ReactNode;
   tools?: ReactNode;
   selected?: string;
   actions?: {
@@ -142,17 +145,8 @@ export interface TabsProps {
   bordered?: boolean;
 }
 
-export const Tabs = React.memo<TabsProps>(
-  ({
-    children,
-    selected,
-    actions,
-    absolute,
-    bordered,
-    tools,
-    backgroundColor,
-    id: htmlId,
-  }: TabsProps) => {
+export const Tabs: FunctionComponent<TabsProps> = memo(
+  ({ children, selected, actions, absolute, bordered, tools, backgroundColor, id: htmlId }) => {
     const list = childrenToList(children, selected);
 
     return list.length ? (

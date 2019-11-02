@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { styled } from '@storybook/theming';
 import { opacify, transparentize } from 'polished';
 import { Icons } from '@storybook/components';
 
-export type ExpanderProps = React.ComponentProps<'span'> & {
+export type ExpanderProps = ComponentProps<'span'> & {
   isExpanded?: boolean;
   isExpandable?: boolean;
 };
@@ -31,7 +31,7 @@ const Expander = styled.span<ExpanderProps>(
   }
 );
 
-export type IconProps = React.ComponentProps<typeof Icons> & {
+export type IconProps = ComponentProps<typeof Icons> & {
   className: string; // FIXME: Icons should extended its typing from the native <svg>
   isSelected?: boolean;
 };
@@ -109,7 +109,7 @@ export const Item = styled(({ className, children, id }) => (
     }
 );
 
-type SidebarItemProps = React.ComponentProps<typeof Item> & {
+type SidebarItemProps = ComponentProps<typeof Item> & {
   isComponent?: boolean;
   isLeaf?: boolean;
   isExpanded?: boolean;
@@ -124,7 +124,7 @@ const SidebarItem = ({
   isSelected = false,
   ...props
 }: SidebarItemProps) => {
-  let iconName: React.ComponentProps<typeof Icons>['icon'];
+  let iconName: ComponentProps<typeof Icons>['icon'];
   if (isLeaf && isComponent) {
     iconName = 'document';
   } else if (isLeaf) {
@@ -135,6 +135,9 @@ const SidebarItem = ({
     iconName = 'folder';
   }
 
+  // eslint-disable-next-line react/destructuring-assignment
+  const displayName = (props.parameters && props.parameters.displayName) || name;
+
   return (
     <Item
       isSelected={isSelected}
@@ -143,7 +146,7 @@ const SidebarItem = ({
     >
       <Expander className="sidebar-expander" isExpandable={!isLeaf} isExpanded={isExpanded} />
       <Icon className="sidebar-svg-icon" icon={iconName} isSelected={isSelected} />
-      <span>{name}</span>
+      <span>{displayName}</span>
     </Item>
   );
 };

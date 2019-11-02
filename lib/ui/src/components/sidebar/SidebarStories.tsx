@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, FunctionComponent, memo } from 'react';
 import PropTypes from 'prop-types';
 
 import { styled } from '@storybook/theming';
@@ -118,7 +118,7 @@ export interface StoriesProps {
   className?: undefined | string;
 }
 
-const SidebarStories: FunctionComponent<StoriesProps> = React.memo(
+const SidebarStories: FunctionComponent<StoriesProps> = memo(
   ({ stories, storyId, loading, className, ...rest }) => {
     const list = Object.entries(stories);
 
@@ -152,7 +152,7 @@ const SidebarStories: FunctionComponent<StoriesProps> = React.memo(
           <Placeholder key="empty">
             <Fragment key="title">No stories found</Fragment>
             <Fragment>
-              Learn how to{' '}
+              Learn how to&nbsp;
               <StyledLink href="https://storybook.js.org/basics/writing-stories/" target="_blank">
                 write stories
               </StyledLink>

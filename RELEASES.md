@@ -93,7 +93,7 @@ is to upvote it by adding a "thumbs-up" reaction in Github. This way important
 bugs quickly bubble to the top [with a
 search](https://github.com/storybookjs/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc%20label%3Abug).
 
-And of course, the best way to make sure a bug gets addressed quickly is to fix
+The best way to make sure a bug gets addressed quickly is to fix
 it yourself and issue a PR. If the fix is good, we'll try to release it quickly
 in a patch release.
 

@@ -4,13 +4,11 @@ import Welcome from '../Welcome.vue';
 
 export default {
   title: 'Welcome',
-  parameters: {
-    component: Welcome,
-  },
+  component: Welcome,
 };
 
 export const welcome = () => {
   return {
-    render: h => h(Welcome, { props: { goToButton: linkTo('Button') } }),
+    render: h => h(Welcome, { listeners: { buttonRequested: linkTo('Button') } }),
   };
 };

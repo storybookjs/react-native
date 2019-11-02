@@ -18,6 +18,11 @@ const checkForNewPreset = (configDir: string) => {
 
     return hasNewPreset;
   } catch (e) {
+    logger.warn('Storybook support for Create React App is now a separate preset.');
+    logger.warn(
+      'To get started with the new preset, simply add `@storybook/preset-create-react-app` to your project.'
+    );
+    logger.warn('The built-in preset will be disabled in Storybook 6.0.');
     return false;
   }
 };

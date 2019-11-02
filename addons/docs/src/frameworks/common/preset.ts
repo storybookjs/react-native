@@ -28,7 +28,7 @@ export function webpack(webpackConfig: any = {}, options: any = {}) {
         {
           test: /\.(stories|story)\.[tj]sx?$/,
           loader: require.resolve('@storybook/source-loader'),
-          options: sourceLoaderOptions,
+          options: { ...sourceLoaderOptions, inspectLocalDependencies: true },
           enforce: 'pre',
         },
       ]
