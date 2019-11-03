@@ -50,8 +50,6 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
   };
 
   addAction = (action: ActionDisplay) => {
-    console.warn('called!!');
-
     this.setState((prevState: ActionLoggerState) => {
       const actions = [...prevState.actions];
       const previous = actions.length && actions[0];
