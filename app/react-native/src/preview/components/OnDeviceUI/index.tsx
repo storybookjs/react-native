@@ -5,6 +5,7 @@ import {
   Platform,
   Animated,
   FlexStyle,
+  SafeAreaView,
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
@@ -46,18 +47,15 @@ interface OnDeviceUIState {
   previewHeight: number;
 }
 
-const Preview = styled.View<{ disabled: boolean }>(
-  {
-    flex: 1,
-  },
-  ({ disabled, theme }) => ({
-    borderLeftWidth: disabled ? 0 : 1,
-    borderTopWidth: disabled ? 0 : 1,
-    borderRightWidth: disabled ? 0 : 1,
-    borderBottomWidth: disabled ? 0 : 1,
-    borderColor: disabled ? 'transparent' : theme.previewBorderColor,
-  })
-);
+const flex = { flex: 1 };
+
+const Preview = styled.View<{ disabled: boolean }>(flex, ({ disabled, theme }) => ({
+  borderLeftWidth: disabled ? 0 : 1,
+  borderTopWidth: disabled ? 0 : 1,
+  borderRightWidth: disabled ? 0 : 1,
+  borderBottomWidth: disabled ? 0 : 1,
+  borderColor: disabled ? 'transparent' : theme.previewBorderColor,
+}));
 
 const absolutePosition: FlexStyle = { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 };
 
@@ -121,47 +119,49 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
     const { tabOpen, slideBetweenAnimation, previewWidth, previewHeight } = this.state;
 
     const previewWrapperStyles = [
-      { flex: 1 },
+      flex,
       getPreviewPosition(this.animatedValue, previewWidth, previewHeight, slideBetweenAnimation),
     ];
 
-    const previewStyles = [{ flex: 1 }, getPreviewScale(this.animatedValue, slideBetweenAnimation)];
+    const previewStyles = [flex, getPreviewScale(this.animatedValue, slideBetweenAnimation)];
 
     return (
-      <KeyboardAvoidingView
-        enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
-        behavior={IS_IOS ? 'padding' : null}
-        keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
-        style={{ flex: 1 }}
-      >
-        <AbsolutePositionedKeyboardAwareView
-          onLayout={this.onLayout}
-          previewHeight={previewHeight}
-          previewWidth={previewWidth}
+      <SafeAreaView style={flex}>
+        <KeyboardAvoidingView
+          enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
+          behavior={IS_IOS ? 'padding' : null}
+          keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
+          style={flex}
         >
-          <Animated.View style={previewWrapperStyles}>
-            <Animated.View style={previewStyles}>
-              <Preview disabled={tabOpen === PREVIEW}>
-                <StoryView url={url} onDevice stories={stories} />
-              </Preview>
-              {tabOpen !== PREVIEW ? (
-                <TouchableOpacity style={absolutePosition} onPress={this.handleOpenPreview} />
-              ) : null}
+          <AbsolutePositionedKeyboardAwareView
+            onLayout={this.onLayout}
+            previewHeight={previewHeight}
+            previewWidth={previewWidth}
+          >
+            <Animated.View style={previewWrapperStyles}>
+              <Animated.View style={previewStyles}>
+                <Preview disabled={tabOpen === PREVIEW}>
+                  <StoryView url={url} onDevice stories={stories} />
+                </Preview>
+                {tabOpen !== PREVIEW ? (
+                  <TouchableOpacity style={absolutePosition} onPress={this.handleOpenPreview} />
+                ) : null}
+              </Animated.View>
             </Animated.View>
-          </Animated.View>
-          <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
-            <StoryListView stories={stories} />
-          </Panel>
-          <Panel style={getAddonPanelPosition(this.animatedValue, previewWidth)}>
-            <Addons />
-          </Panel>
-        </AbsolutePositionedKeyboardAwareView>
-        <Navigation
-          tabOpen={tabOpen}
-          onChangeTab={this.handleToggleTab}
-          initialUiVisible={!isUIHidden}
-        />
-      </KeyboardAvoidingView>
+            <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
+              <StoryListView stories={stories} />
+            </Panel>
+            <Panel style={getAddonPanelPosition(this.animatedValue, previewWidth)}>
+              <Addons />
+            </Panel>
+          </AbsolutePositionedKeyboardAwareView>
+          <Navigation
+            tabOpen={tabOpen}
+            onChangeTab={this.handleToggleTab}
+            initialUiVisible={!isUIHidden}
+          />
+        </KeyboardAvoidingView>
+      </SafeAreaView>
     );
   }
 }
