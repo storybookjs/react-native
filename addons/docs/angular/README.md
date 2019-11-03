@@ -30,9 +30,9 @@ module.exports = ['@storybook/addon-docs/angular/preset'];
 
 ## DocsPage
 
-When you [install docs](#installation) you should get basic [DocsPage](../docs/docspage.md) documentation automagically for all your Angular stories, available in the `Docs` tab of the Storybook UI.
+When you [install docs](#installation) you should get basic [DocsPage](../docs/docspage.md) documentation automagically for all your stories, available in the `Docs` tab of the Storybook UI.
 
-Pops tables for your components requires a few more steps. Docs for Angular relies on [Compodoc](https://compodoc.app/), the excellent API documentation tool. It supports `inputs`, `outputs`, `properties`, `methods`, `view/content child/children` as first class prop types.
+Props tables for your components requires a few more steps. Docs for Angular relies on [Compodoc](https://compodoc.app/), the excellent API documentation tool. It supports `inputs`, `outputs`, `properties`, `methods`, `view/content child/children` as first class prop types.
 
 To get this, you'll first need to install Compodoc:
 
@@ -107,7 +107,7 @@ Finally, you can create MDX files like this:
 import { Meta, Story, Props } from '@storybook/docs/blocks';
 import { AppComponent } from './app.component';
 
-<Meta title="'App Component" component={AppComponent} />
+<Meta title='App Component' component={AppComponent} />
 
 # App Component
 
