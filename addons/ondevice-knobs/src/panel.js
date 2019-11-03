@@ -122,6 +122,7 @@ export default class Panel extends React.Component {
 
     const allHaveGroups = groupIds.length > 0 && knobsArray.length === knobsWithGroups.length;
 
+    // If all of the knobs are assigned to a group, we don't need the default group.
     const groupId =
       stateGroupId === DEFAULT_GROUP_ID && allHaveGroups
         ? knobs[knobsWithGroups[0]].groupId
