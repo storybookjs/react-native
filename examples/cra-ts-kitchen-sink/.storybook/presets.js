@@ -1,6 +1,7 @@
 const path = require('path');
 
-module.exports = [{
+module.exports = [
+  {
     name: '@storybook/preset-create-react-app',
     options: {
       tsDocgenLoaderOptions: {
