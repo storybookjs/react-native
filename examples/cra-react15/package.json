@@ -1,6 +1,6 @@
 {
   "name": "cra-react15",
-  "version": "5.3.0-alpha.37",
+  "version": "5.3.0-alpha.38",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -18,10 +18,10 @@
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.3.0-alpha.37",
-    "@storybook/addon-links": "5.3.0-alpha.37",
-    "@storybook/react": "5.3.0-alpha.37",
-    "@storybook/theming": "5.3.0-alpha.37",
+    "@storybook/addon-actions": "5.3.0-alpha.38",
+    "@storybook/addon-links": "5.3.0-alpha.38",
+    "@storybook/react": "5.3.0-alpha.38",
+    "@storybook/theming": "5.3.0-alpha.38",
     "babel-core": "6",
     "babel-runtime": "6"
   }
