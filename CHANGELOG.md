@@ -1,3 +1,15 @@
+## 5.3.0-alpha.38 (November 3, 2019)
+
+### Bug Fixes
+
+* React-native: Patch rn-host-detect ([#8683](https://github.com/storybookjs/storybook/pull/8683))
+* React-native: Fix layout in RN61 so addons no longer initially displayed ([#8681](https://github.com/storybookjs/storybook/pull/8681))
+
+### Maintenance
+
+* React-native: Catch touch events when preview is minimized ([#8680](https://github.com/storybookjs/storybook/pull/8680))
+* React-native: Make menu bar have its own position instead of absolute  ([#8678](https://github.com/storybookjs/storybook/pull/8678))
+
 ## 5.3.0-alpha.37 (November 2, 2019)
 
 ### Bug Fixes
