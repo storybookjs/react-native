@@ -54,7 +54,7 @@ const Preview = styled.TouchableOpacity<TouchableOpacityProps>(flex, ({ disabled
   borderRightWidth: disabled ? 0 : 1,
   borderBottomWidth: disabled ? 0 : 1,
   borderColor: disabled ? 'transparent' : theme.previewBorderColor,
-});
+}));
 
 export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceUIState> {
   constructor(props: OnDeviceUIProps) {
