@@ -7,7 +7,6 @@ import {
   FlexStyle,
   Dimensions,
   TouchableOpacity,
-  TouchableOpacityProps,
 } from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
