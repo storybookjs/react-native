@@ -4,7 +4,11 @@ exports[`Storyshots InfoButton Simple 1`] = `
 <button
   class="btn normal"
 >
-  
+  <img
+    src="../../logo.png"
+    width="60px"
+  />
+   
     I'm a button!
   
 </button>
