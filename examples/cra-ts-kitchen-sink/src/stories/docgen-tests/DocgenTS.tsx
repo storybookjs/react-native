@@ -3,6 +3,7 @@ import React, { FC, FunctionComponent, SyntheticEvent } from 'react';
 interface ButtonProps {
   /**
    * onClick description
+   * @param { SyntheticEvent } e - React's original event. 
    */
   onClick?: (e: SyntheticEvent) => void;
 }

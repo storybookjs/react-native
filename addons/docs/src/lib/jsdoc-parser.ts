@@ -1,12 +1,8 @@
 import doctrine, { Annotation } from 'doctrine';
 import { PropDef } from '@storybook/components';
-import { isNil, last } from 'lodash';
+import { isNil } from 'lodash';
 
-export type ParseJsDoc = (propDef: PropDef, options?: JsDocParsingOptions) => JsDocParsingResult;
-
-export interface JsDocParsingOptions {
-  inferType: boolean;
-}
+export type ParseJsDoc = (propDef: PropDef) => JsDocParsingResult;
 
 export interface JsDocParsingResult {
   type?: {
@@ -52,10 +48,7 @@ function parseComment(comment: string): Annotation {
   return ast;
 }
 
-export const parseJsDoc: ParseJsDoc = (
-  propDef: PropDef,
-  options: JsDocParsingOptions = { inferType: false }
-) => {
+export const parseJsDoc: ParseJsDoc = (propDef: PropDef) => {
   let type;
   let description;
   const tags: any = {};
@@ -67,49 +60,47 @@ export const parseJsDoc: ParseJsDoc = (
     description = jsDocAst.description;
   }
 
-  if (propDef.type.name === 'func') {
-    const extractedTags = extractJsDocTags(jsDocAst);
-    const hasParams = extractedTags.params.length > 0;
-    const hasReturnType = !isNil(extractedTags.returns) && !isNil(extractedTags.returns.type);
+  const extractedTags = extractJsDocTags(jsDocAst);
+  const hasParams = extractedTags.params.length > 0;
+  const hasReturnType = !isNil(extractedTags.returns) && !isNil(extractedTags.returns.type);
 
-    if (hasParams || hasReturnType) {
-      if (options.inferType) {
-        const funcParts = [];
-
-        if (hasParams) {
-          const funcParams = extractedTags.params.map((x: any) => {
-            if (x.name && x.type) {
-              return `${x.name}: ${x.type}`;
-            }
-
-            if (x.name) {
-              return x.name;
-            }
-
-            return x.type;
-          });
-
-          funcParts.push(`(${funcParams.join(', ')})`);
-        } else {
-          funcParts.push('()');
-        }
-
-        if (hasReturnType) {
-          funcParts.push(`=> ${extractedTags.returns.type}`);
-        }
-
-        type = {
-          name: funcParts.join(' '),
-        };
-      }
+  if (hasParams || hasReturnType) {
+    if (propDef.type.name === 'func') {
+      const funcParts = [];
 
       if (hasParams) {
-        tags.params = extractedTags.params.map(x => x.raw);
+        const funcParams = extractedTags.params.map((x: any) => {
+          if (x.name && x.type) {
+            return `${x.name}: ${x.type}`;
+          }
+
+          if (x.name) {
+            return x.name;
+          }
+
+          return x.type;
+        });
+
+        funcParts.push(`(${funcParams.join(', ')})`);
+      } else {
+        funcParts.push('()');
       }
 
       if (hasReturnType) {
-        tags.returns = extractedTags.returns.raw;
+        funcParts.push(`=> ${extractedTags.returns.type}`);
       }
+
+      type = {
+        name: funcParts.join(' '),
+      };
+    }
+
+    if (hasParams) {
+      tags.params = extractedTags.params.map(x => x.raw);
+    }
+
+    if (hasReturnType) {
+      tags.returns = extractedTags.returns.raw;
     }
   }
 

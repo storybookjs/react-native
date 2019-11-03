@@ -47,7 +47,7 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
   propDef.type = docgenInfo.type;
 
   if (propMightContainsJsDoc(propDef)) {
-    const parsingResult = parseJsDoc(propDef, { inferType: true });
+    const parsingResult = parseJsDoc(propDef);
 
     if (!isNil(parsingResult.type)) {
       propDef.type = parsingResult.type;

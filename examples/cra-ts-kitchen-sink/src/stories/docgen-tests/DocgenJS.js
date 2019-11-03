@@ -8,12 +8,7 @@ export const ButtonFn = ({ onClick, children }) => <button onClick={onClick}>{ch
 ButtonFn.propTypes = {
   /**
    * onClick description
-   * @param {string} hello - This is hello
-   * @param {string[]} hello2 - Multiple string
-   * @returns {void} - Oh void!
-   * @version 1.0.1
-   * @since Version 1.0.1
-   * @see See [Wikipedia](https://en.wikipedia.org/wiki/Web_colors#HTML_color_names) for a list of color names
+   * @param {SyntheticEvent} event - React's original event
    * @ignore
    */
   onClick: PropTypes.func
