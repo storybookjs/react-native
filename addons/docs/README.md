@@ -140,6 +140,7 @@ Add the following to your Jest configuration:
 ### Be sure to check framework specific installation needs
 
 - [Angular](./angular)
+- [Vue](./vue)
 - [Web Components](./web-components)
 
 ## Preset options
