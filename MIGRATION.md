@@ -3,7 +3,7 @@
 - [Migration](#migration)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
     - [Create React App preset](#create-react-app-preset)
-    - [Description docs block](#description-docs-block)
+    - [Description doc block](#description-doc-block)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)
