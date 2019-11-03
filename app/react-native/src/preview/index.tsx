@@ -21,7 +21,7 @@ interface AsyncStorage {
 
 export type Params = {
   onDeviceUI: boolean;
-  asyncStorage: AsyncStorage;
+  asyncStorage?: AsyncStorage | null;
   resetStorybook: boolean;
   disableWebsockets: boolean;
   query: string;
@@ -47,7 +47,7 @@ export default class Preview {
 
   _asyncStorageStoryId: string;
 
-  _asyncStorage: AsyncStorage;
+  _asyncStorage: AsyncStorage | null;
 
   constructor() {
     this._addons = {};
@@ -71,6 +71,12 @@ export default class Preview {
   getStorybookUI = (params: Partial<Params> = {}) => {
     let webUrl: string = null;
     let channel: Channel = null;
+
+    if (params.asyncStorage === undefined) {
+      console.warn(
+        'Starting Storybook v5.3.0, we require to manually pass asyncStorage prop. Either set null to disable asyncStorage or pass it from @react-native-community or react-native itself.'
+      );
+    }
 
     if (params.asyncStorage) {
       this._asyncStorage = params.asyncStorage;
