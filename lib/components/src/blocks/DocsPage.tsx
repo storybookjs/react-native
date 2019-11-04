@@ -52,7 +52,6 @@ export const DocsWrapper = styled.div<{}>(({ theme }) => ({
   background: theme.background.content,
   display: 'flex',
   justifyContent: 'center',
-  minHeight: '100vh',
   padding: '4rem 20px',
 
   [`@media (min-width: ${breakpoint}px)`]: {},

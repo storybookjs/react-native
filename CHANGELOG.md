@@ -1,3 +1,60 @@
+## 5.3.0-alpha.38 (November 3, 2019)
+
+### Bug Fixes
+
+* React-native: Patch rn-host-detect ([#8683](https://github.com/storybookjs/storybook/pull/8683))
+* React-native: Fix layout in RN61 so addons no longer initially displayed ([#8681](https://github.com/storybookjs/storybook/pull/8681))
+
+### Maintenance
+
+* React-native: Catch touch events when preview is minimized ([#8680](https://github.com/storybookjs/storybook/pull/8680))
+* React-native: Make menu bar have its own position instead of absolute  ([#8678](https://github.com/storybookjs/storybook/pull/8678))
+
+## 5.3.0-alpha.37 (November 2, 2019)
+
+### Bug Fixes
+
+* Source-loader: Fix Typescript support ([#8499](https://github.com/storybookjs/storybook/pull/8499))
+
+## 5.3.0-alpha.36 (November 2, 2019)
+
+### Features
+
+* Addon-docs: Angular DocsPage props table ([#8621](https://github.com/storybookjs/storybook/pull/8621))
+* Addon-docs: Support jsdoc params to describe function signature ([#8660](https://github.com/storybookjs/storybook/pull/8660))
+
+### Bug Fixes
+
+* Addon-docs: Remove min-height CSS rule from DocsPage wrapper ([#8366](https://github.com/storybookjs/storybook/pull/8366))
+* Addon-docs: Check component propTypes before unwrapping ([#8665](https://github.com/storybookjs/storybook/pull/8665))
+
+## 5.3.0-alpha.35 (November 1, 2019)
+
+### Bug Fixes
+
+* Core: Revert webpack rebuild changes in node_modules  ([#8657](https://github.com/storybookjs/storybook/pull/8657))
+* Ondevice-knobs: Fix peer dep ([#8643](https://github.com/storybookjs/storybook/pull/8643))
+
+## 5.3.0-alpha.34 (October 30, 2019)
+
+### Bug Fixes
+
+* Addon-notes: Add key to render function ([#8633](https://github.com/storybookjs/storybook/pull/8633))
+* Addon-docs: Fix story scroll-to heuristics ([#8629](https://github.com/storybookjs/storybook/pull/8629))
+* Addon-docs: Fix props table in no props case ([#8632](https://github.com/storybookjs/storybook/pull/8632))
+* Addon-docs/web-components: Add attributes to props table ([#8598](https://github.com/storybookjs/storybook/pull/8598))
+* CLI: Fix package.json update ([#8615](https://github.com/storybookjs/storybook/pull/8615))
+* React-native: Fix background style ([#8480](https://github.com/storybookjs/storybook/pull/8480))
+
+### Maintenance
+
+* Channel: Clean up test ([#8627](https://github.com/storybookjs/storybook/pull/8627))
+* RAX: Fix example app ([#8617](https://github.com/storybookjs/storybook/pull/8617))
+
+### Dependency Upgrades
+
+* Misc. dependency upgrades ([#8612](https://github.com/storybookjs/storybook/pull/8612))
+
 ## 5.3.0-alpha.33 (October 28, 2019)
 
 ### Maintenance
@@ -1239,7 +1296,7 @@ It is now recommended to only use ONE `load` call in your app and it will warn y
 
 * Addon-docs: Added inline option to Story block ([#7308](https://github.com/storybookjs/storybook/pull/7308))
 * Addon-knobs: Ensure unique knob names across groups ([#6793](https://github.com/storybookjs/storybook/pull/6793))
-* Core: Enable webpack to rebuild changes in node_modules ([#6265](https://github.com/storybooorybook/pull/6265))
+* Core: Enable webpack to rebuild changes in node_modules ([#6265](https://github.com/storybookjs/storybook/pull/6265))
 * Addons: Disable option for addon tab ([#6923](https://github.com/storybookjs/storybook/pull/6923))
 
 ### Bug Fixes

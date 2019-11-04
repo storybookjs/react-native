@@ -102,29 +102,39 @@ export default class Panel extends React.Component {
       return null;
     }
 
-    const { knobs, groupId } = this.state;
+    const { knobs, groupId: stateGroupId } = this.state;
 
     const groups = {};
     const groupIds = [];
 
     let knobsArray = Object.keys(knobs);
 
-    knobsArray
-      .filter(key => knobs[key].groupId)
-      .forEach(key => {
-        const knobKeyGroupId = knobs[key].groupId;
-        groupIds.push(knobKeyGroupId);
-        groups[knobKeyGroupId] = {
-          render: () => <Text id={knobKeyGroupId}>{knobKeyGroupId}</Text>,
-          title: knobKeyGroupId,
-        };
-      });
+    const knobsWithGroups = knobsArray.filter(key => knobs[key].groupId);
+
+    knobsWithGroups.forEach(key => {
+      const knobKeyGroupId = knobs[key].groupId;
+      groupIds.push(knobKeyGroupId);
+      groups[knobKeyGroupId] = {
+        render: () => <Text id={knobKeyGroupId}>{knobKeyGroupId}</Text>,
+        title: knobKeyGroupId,
+      };
+    });
+
+    const allHaveGroups = groupIds.length > 0 && knobsArray.length === knobsWithGroups.length;
+
+    // If all of the knobs are assigned to a group, we don't need the default group.
+    const groupId =
+      stateGroupId === DEFAULT_GROUP_ID && allHaveGroups
+        ? knobs[knobsWithGroups[0]].groupId
+        : stateGroupId;
 
     if (groupIds.length > 0) {
-      groups[DEFAULT_GROUP_ID] = {
-        render: () => <Text id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</Text>,
-        title: DEFAULT_GROUP_ID,
-      };
+      if (!allHaveGroups) {
+        groups[DEFAULT_GROUP_ID] = {
+          render: () => <Text id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</Text>,
+          title: DEFAULT_GROUP_ID,
+        };
+      }
 
       if (groupId === DEFAULT_GROUP_ID) {
         knobsArray = knobsArray.filter(key => !knobs[key].groupId);

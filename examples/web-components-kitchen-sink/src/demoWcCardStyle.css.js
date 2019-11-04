@@ -88,7 +88,7 @@ export const demoWcCardStyle = css`
     background: linear-gradient(141deg, #333 25%, #aaa 40%, #666 55%);
     color: var(--demo-wc-card-back-color, #fff);
     text-align: center;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translate3d(0px, 0, 1px);
   }
 
   #back .note {
