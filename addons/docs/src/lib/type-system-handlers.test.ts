@@ -737,6 +737,41 @@ describe('prop-types handler', () => {
       expect(propDef.description).toBe('onClick description');
     });
   });
+
+  describe('when the prop type is arrayOf', () => {
+    it('should support array of primitives', () => {
+      const docgenInfo = createDocgenInfo({
+        type: {
+          name: 'arrayOf',
+          value: {
+            name: 'string',
+          },
+        },
+      });
+
+      const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+      expect(propDef.type.name).toBe('arrayOf');
+      expect(propDef.type.value.name).toBe('string');
+    });
+
+    it('should support array of custom shapes', () => {
+      const docgenInfo = createDocgenInfo({
+        type: {
+          name: 'arrayOf',
+          value: {
+            name: 'custom',
+            raw: 'Circle',
+          },
+        },
+      });
+
+      const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+      expect(propDef.type.name).toBe('arrayOf');
+      expect(propDef.type.value.name).toBe('Circle');
+    });
+  });
 });
 
 describe('ts handler', () => {
