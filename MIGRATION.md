@@ -354,7 +354,7 @@ addDecorator(
 And here's its new counterpart:
 
 ```js
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 addParameters({
   options: {
     theme: create({
