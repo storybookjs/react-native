@@ -23,6 +23,7 @@
     "angular/**/*",
     "common/**/*",
     "html/**/*",
+    "postinstall/**/*",
     "react/**/*",
     "vue/**/*",
     "web-components/**/*",
