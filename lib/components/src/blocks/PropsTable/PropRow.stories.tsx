@@ -119,6 +119,13 @@ export const funcDef = {
   },
 };
 
+export const markdownDef = {
+  name: 'someString',
+  type: { name: 'string' },
+  description:
+    'A `prop` can *support* __markdown__ syntax. This was ship in ~~5.2~~ 5.3. [Find more info in the storybook docs.](https://storybook.js.org/)',
+};
+
 export const string = () => <PropRow row={stringDef} />;
 export const longName = () => <PropRow row={longNameDef} />;
 export const longDesc = () => <PropRow row={longDescDef} />;
@@ -127,3 +134,4 @@ export const objectOf = () => <PropRow row={objectDef} />;
 export const arrayOf = () => <PropRow row={arrayDef} />;
 export const complex = () => <PropRow row={complexDef} />;
 export const func = () => <PropRow row={funcDef} />;
+export const markdown = () => <PropRow row={markdownDef} />;
