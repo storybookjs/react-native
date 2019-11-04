@@ -109,9 +109,9 @@ const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
 
   const params = (tags.params || []).filter(x => x.description);
   const hasDisplayableParams = params.length !== 0;
-  const hasReturns = !isNil(tags.returns) && !isNil(tags.returns.description);
+  const hasDisplayableReturns = !isNil(tags.returns) && !isNil(tags.returns.description);
 
-  if (!hasDisplayableParams && !hasReturns) {
+  if (!hasDisplayableParams && !hasDisplayableReturns) {
     return null;
   }
 
@@ -127,7 +127,7 @@ const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
               <JsDocDescCell>{x.description}</JsDocDescCell>
             </tr>
           ))}
-        {hasReturns && (
+        {hasDisplayableReturns && (
           <tr key="returns">
             <JsDocNameCell>
               <code>Returns</code>
