@@ -23,8 +23,6 @@ export type ParseJsDoc = (
 ) => JsDocParsingResult & Record<string, any>;
 
 export interface JsDocParsingResult {
-  // description?: string;
-  // jsDocTags?: any;
   ignore: boolean;
 }
 
