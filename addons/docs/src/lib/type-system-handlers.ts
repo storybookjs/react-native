@@ -1,6 +1,13 @@
 import { PropDef } from '@storybook/components';
 import { isNil } from 'lodash';
-import { parseJsDoc } from './jsdoc-parser';
+import {
+  parseJsDoc,
+  JsDocParsingOptions,
+  ExtractedJsDocTags,
+  ExtractedJsDocParamTag,
+  PropTypeHandler,
+  PropTypeHandlerContext,
+} from './jsdoc-parser';
 
 export interface DocgenInfo {
   type?: {
@@ -22,7 +29,15 @@ export const TypeSystem = {
   Unknown: 'Unknown',
 };
 
-export type TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => PropDef;
+export interface TypeSystemHandlerResult {
+  propDef?: PropDef;
+  ignore: boolean;
+}
+
+export type TypeSystemHandler = (
+  propName: string,
+  docgenInfo: DocgenInfo
+) => TypeSystemHandlerResult;
 
 function createDefaultPropDef(propName: string, docgenInfo: DocgenInfo): PropDef {
   const { description, required, defaultValue } = docgenInfo;
@@ -40,62 +55,111 @@ function propMightContainsJsDoc(propDef: PropDef): boolean {
   return !isNil(propDef.description) && propDef.description.includes('@');
 }
 
-export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
-  const propDef = createDefaultPropDef(propName, docgenInfo);
-
-  // Take a default type value from docgen. It will be overrided later if something better can be infered from JSDoc tags.
-  propDef.type = docgenInfo.type;
-
+function handleProp(propDef: PropDef, options?: JsDocParsingOptions) {
   if (propMightContainsJsDoc(propDef)) {
-    const parsingResult = parseJsDoc(propDef);
+    const parsingResult = parseJsDoc(propDef, options);
+
+    if (parsingResult.ignore) {
+      return {
+        ignore: true,
+      };
+    }
 
     if (!isNil(parsingResult.type)) {
+      // eslint-disable-next-line no-param-reassign
       propDef.type = parsingResult.type;
     }
 
     if (!isNil(parsingResult.description)) {
+      // eslint-disable-next-line no-param-reassign
       propDef.description = parsingResult.description;
     }
 
     if (!isNil(parsingResult.tags)) {
+      // eslint-disable-next-line no-param-reassign
       propDef.jsDocTags = parsingResult.tags;
     }
   }
 
-  return propDef;
+  return {
+    propDef,
+    ignore: false,
+  };
+}
+
+const propTypesFuncHandler: PropTypeHandler = (
+  propDef: PropDef,
+  extractedTags: ExtractedJsDocTags,
+  { hasParams, hasReturns }: PropTypeHandlerContext
+) => {
+  if (hasParams || hasReturns) {
+    const funcParts = [];
+
+    if (hasParams) {
+      const funcParams = extractedTags.params.map((x: ExtractedJsDocParamTag) => {
+        const typeName = x.getTypeName();
+
+        if (!isNil(typeName)) {
+          return `${x.name}: ${typeName}`;
+        }
+
+        return x.name;
+      });
+
+      funcParts.push(`(${funcParams.join(', ')})`);
+    } else {
+      funcParts.push('()');
+    }
+
+    if (hasReturns) {
+      funcParts.push(`=> ${extractedTags.returns.getTypeName()}`);
+    }
+
+    return {
+      type: {
+        name: funcParts.join(' '),
+      },
+    };
+  }
+
+  return null;
+};
+
+export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
+  const propDef = createDefaultPropDef(propName, docgenInfo);
+  // Take a default type value from docgen. It will be overrided later if something better can be infered from JSDoc tags.
+  propDef.type = docgenInfo.type;
+
+  return handleProp(propDef, {
+    propTypeHandlers: {
+      func: propTypesFuncHandler,
+    },
+  });
 };
 
 export const tsHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
   const propDef = createDefaultPropDef(propName, docgenInfo);
   propDef.type = docgenInfo.tsType;
 
-  if (propMightContainsJsDoc(propDef)) {
-    const parsingResult = parseJsDoc(propDef);
-
-    if (!isNil(parsingResult.description)) {
-      propDef.description = parsingResult.description;
-    }
-
-    if (!isNil(parsingResult.tags)) {
-      propDef.jsDocTags = parsingResult.tags;
-    }
-  }
-
-  return propDef;
+  return handleProp(propDef);
 };
 
+// It's there for backward compatibility. Not adding additional support.
 export const flowHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
   const propDef = createDefaultPropDef(propName, docgenInfo);
   propDef.type = docgenInfo.flowType;
 
-  return propDef;
+  return {
+    propDef,
+    ignore: false,
+  };
 };
 
 export const unknownHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
   const propDef = createDefaultPropDef(propName, docgenInfo);
   propDef.type = { name: 'unknown' };
 
-  return propDef;
+  return handleProp(propDef);
 };
 
 export const TypeSystemHandlers: Record<string, TypeSystemHandler> = {

@@ -2,7 +2,22 @@ import doctrine, { Annotation } from 'doctrine';
 import { PropDef } from '@storybook/components';
 import { isNil } from 'lodash';
 
-export type ParseJsDoc = (propDef: PropDef) => JsDocParsingResult;
+export interface PropTypeHandlerContext {
+  hasParams: boolean;
+  hasReturns: boolean;
+}
+
+export type PropTypeHandler = (
+  propDef: PropDef,
+  extractedTags: ExtractedJsDocTags,
+  context: PropTypeHandlerContext
+) => Record<string, any> | null;
+
+export interface JsDocParsingOptions {
+  propTypeHandlers?: Record<string, PropTypeHandler>;
+}
+
+export type ParseJsDoc = (propDef: PropDef, options?: JsDocParsingOptions) => JsDocParsingResult;
 
 export interface JsDocParsingResult {
   type?: {
@@ -10,32 +25,36 @@ export interface JsDocParsingResult {
   };
   description?: string;
   tags?: any;
+  ignore: boolean;
 }
 
-interface ExtractedJsDocParamTag {
+export interface ExtractedJsDocParamTag {
   name: string;
-  type?: string;
+  type?: doctrine.Type;
   description?: string;
   raw: doctrine.Tag;
+  getTypeName: () => string;
 }
 
-interface ExtractedJsDocReturnsTag {
-  type?: string;
+export interface ExtractedJsDocReturnsTag {
+  type?: doctrine.Type;
   description?: string;
   raw: doctrine.Tag;
+  getTypeName: () => string;
 }
 
-interface ExtractedJsDocTags {
+export interface ExtractedJsDocTags {
   params: ExtractedJsDocParamTag[];
   returns?: ExtractedJsDocReturnsTag;
+  ignore: boolean;
 }
 
-function parseComment(comment: string): Annotation {
+function parse(content: string): Annotation {
   let ast;
 
   try {
-    ast = doctrine.parse(comment, {
-      tags: ['param', 'arg', 'argument', 'returns'],
+    ast = doctrine.parse(content, {
+      tags: ['param', 'arg', 'argument', 'returns', 'ignore'],
       sloppy: true,
     });
   } catch (e) {
@@ -48,76 +67,77 @@ function parseComment(comment: string): Annotation {
   return ast;
 }
 
-export const parseJsDoc: ParseJsDoc = (propDef: PropDef) => {
-  let type;
+export const parseJsDoc: ParseJsDoc = (propDef: PropDef, options: JsDocParsingOptions = {}) => {
   let description;
   const tags: any = {};
 
-  const jsDocAst = parseComment(propDef.description);
+  const jsDocAst = parse(propDef.description);
 
   // Always use the parsed description to ensure JSDoc is removed from the description.
   if (!isNil(jsDocAst.description)) {
     description = jsDocAst.description;
   }
 
-  const extractedTags = extractJsDocTags(jsDocAst);
+  const extractedTags = extractJsDocTags(jsDocAst, options);
+
+  // There is no point in doing other stuff since this prop will not be rendered.
+  if (extractedTags.ignore) {
+    return {
+      ignore: true,
+    };
+  }
+
   const hasParams = extractedTags.params.length > 0;
-  const hasReturnType = !isNil(extractedTags.returns) && !isNil(extractedTags.returns.type);
+  const hasReturns = !isNil(extractedTags.returns) && !isNil(extractedTags.returns.type);
 
-  if (hasParams || hasReturnType) {
-    if (propDef.type.name === 'func') {
-      const funcParts = [];
+  if (hasParams) {
+    tags.params = extractedTags.params.map(x => x.raw);
+  }
 
-      if (hasParams) {
-        const funcParams = extractedTags.params.map((x: any) => {
-          if (x.name && x.type) {
-            return `${x.name}: ${x.type}`;
-          }
+  if (hasReturns) {
+    tags.returns = extractedTags.returns.raw;
+  }
 
-          if (x.name) {
-            return x.name;
-          }
+  let result = {
+    description: !isNil(description) ? description : undefined,
+    tags: Object.keys(tags).length !== 0 ? tags : undefined,
+    ignore: false,
+  };
 
-          return x.type;
-        });
+  if (!isNil(options.propTypeHandlers)) {
+    const handler = options.propTypeHandlers[propDef.type.name];
 
-        funcParts.push(`(${funcParams.join(', ')})`);
-      } else {
-        funcParts.push('()');
+    if (!isNil(handler)) {
+      const additionalResult = handler(propDef, extractedTags, {
+        hasParams,
+        hasReturns,
+      });
+
+      if (!isNil(additionalResult)) {
+        result = {
+          ...result,
+          ...additionalResult,
+        };
       }
-
-      if (hasReturnType) {
-        funcParts.push(`=> ${extractedTags.returns.type}`);
-      }
-
-      type = {
-        name: funcParts.join(' '),
-      };
-    }
-
-    if (hasParams) {
-      tags.params = extractedTags.params.map(x => x.raw);
-    }
-
-    if (hasReturnType) {
-      tags.returns = extractedTags.returns.raw;
     }
   }
 
-  return {
-    type: !isNil(type) ? type : undefined,
-    description: !isNil(description) ? description : undefined,
-    tags: Object.keys(tags).length !== 0 ? tags : undefined,
-  };
+  return result;
 };
 
-function extractJsDocTags(ast: doctrine.Annotation): ExtractedJsDocTags {
+function extractJsDocTags(
+  ast: doctrine.Annotation,
+  options: JsDocParsingOptions
+): ExtractedJsDocTags {
   const extractedTags: ExtractedJsDocTags = {
     params: [],
     returns: null,
+    ignore: false,
   };
 
-  ast.tags.forEach((tag: doctrine.Tag) => {
+  for (let i = 0; i < ast.tags.length; i += 1) {
+    const tag = ast.tags[i];
+
     // arg & argument are aliases for param.
     if (tag.title === 'param' || tag.title === 'arg' || tag.title === 'argument') {
       // When the @param doesn't have a name but have a type and a description, "null-null" is returned.
@@ -131,38 +151,40 @@ function extractJsDocTags(ast: doctrine.Annotation): ExtractedJsDocTags {
           paramName = paramName.replace('-null', '').replace('.null', '');
         }
 
-        let paramType;
-
-        if (!isNil(tag.type)) {
-          const extractedTypeName = extractJsDocTypeName(tag.type);
-
-          if (!isNil(extractedTypeName)) {
-            paramType = extractedTypeName;
-          }
+        if (!isNil(paramName)) {
+          extractedTags.params.push({
+            name: paramName,
+            type: tag.type,
+            description: tag.description,
+            raw: tag,
+            getTypeName: () => {
+              return !isNil(tag.type) ? extractJsDocTypeName(tag.type) : null;
+            },
+          });
         }
-
-        extractedTags.params.push({
-          name: paramName,
-          type: paramType,
-          description: tag.description,
-          raw: tag,
-        });
       }
     } else if (tag.title === 'returns') {
       if (!isNil(tag.type)) {
         extractedTags.returns = {
-          type: extractJsDocTypeName(tag.type),
+          type: tag.type,
           description: tag.description,
           raw: tag,
+          getTypeName: () => {
+            return extractJsDocTypeName(tag.type);
+          },
         };
       }
+    } else if (tag.title === 'ignore') {
+      extractedTags.ignore = true;
+      // Once we reach an @ignore tag, there is no point in parsing the other tags since we will not render the prop.
+      break;
     }
-  });
+  }
 
   return extractedTags;
 }
 
-// FIXME: type should be doctrine.Type
+// FIXME: type argument should be doctrine.Type instead of any.
 function extractJsDocTypeName(type: any): string {
   if (type.type === 'NameExpression') {
     return type.name;

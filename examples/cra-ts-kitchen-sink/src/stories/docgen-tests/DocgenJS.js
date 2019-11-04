@@ -8,8 +8,6 @@ export const ButtonFn = ({ onClick, children }) => <button onClick={onClick}>{ch
 ButtonFn.propTypes = {
   /**
    * onClick description
-   * @param {SyntheticEvent} event - React's original event
-   * @ignore
    */
   onClick: PropTypes.func
 };
