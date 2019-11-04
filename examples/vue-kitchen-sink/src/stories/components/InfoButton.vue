@@ -34,6 +34,7 @@ export default {
 <template>
   <button class="btn" :class="type" :disabled="disabled" @click="click">
     <!-- @slot Default to label prop -->
+    <img width="60px" src="../../logo.png" />
     <slot>
       {{ label }}
     </slot>
@@ -44,8 +45,8 @@ export default {
 .btn {
   padding: 3px 10px;
 
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 3px solid #42b983;
+  border-radius: 5px;
   background-color: #fff;
   color: #333;
 }

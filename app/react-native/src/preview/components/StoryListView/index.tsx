@@ -72,8 +72,8 @@ interface State {
 }
 
 const List = styled.SectionList({
-  flex: '1',
-  marginBottom: '40',
+  flex: 1,
+  marginBottom: 40,
 });
 
 export default class StoryListView extends Component<Props, State> {

@@ -12,6 +12,7 @@ export interface Property {
   type: string;
   optional: boolean;
   defaultValue?: string;
+  description?: string;
 }
 
 export interface Component {
