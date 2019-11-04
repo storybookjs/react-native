@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
+import { isNil } from 'lodash';
 import { PropDef, PropDefJsDocTags } from './PropDef';
 
 enum PropType {
@@ -47,6 +48,21 @@ const StyledPropDef = styled.div(({ theme }) => ({
   fontSize: `${theme.typography.size.code}%`,
 }));
 
+const JsDocParamsAndReturnsTable = styled.table({});
+
+const JsDocParamsAndReturnsTBody = styled.tbody({ boxShadow: 'none !important' });
+
+const JsDocCellStyle = { paddingTop: '0 !important', paddingBottom: '0 !important' };
+
+const JsDocNameCell = styled.td({
+  ...JsDocCellStyle,
+});
+
+const JsDocDescCell = styled.td({
+  ...JsDocCellStyle,
+  width: 'auto !important',
+});
+
 const prettyPrint = (type: any): string => {
   if (!type || !type.name) {
     return '';
@@ -89,24 +105,40 @@ export const PrettyPropVal: FC<PrettyPropValProps> = ({ value }) => (
 );
 
 const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
-  if (!tags) {
+  if (isNil(tags)) {
     return null;
   }
 
-  if (!tags.params && !tags.returns) {
+  const params = (tags.params || []).filter(x => x.description);
+  const hasDisplayableParams = params.length !== 0;
+  const hasReturns = !isNil(tags.returns);
+
+  if (!hasDisplayableParams && !hasReturns) {
     return null;
   }
 
   return (
-    <div>
-      {tags.params &&
-        tags.params.map(x => (
-          <div key={x.name}>
-            {x.name}-{x.description && x.description}
-          </div>
-        ))}
-      {tags.returns && <div>Returns: {tags.returns.description}</div>}
-    </div>
+    <JsDocParamsAndReturnsTable>
+      <JsDocParamsAndReturnsTBody>
+        {hasDisplayableParams &&
+          params.map(x => (
+            <tr key={x.name}>
+              <JsDocNameCell>
+                <code>{x.name}</code>
+              </JsDocNameCell>
+              <JsDocDescCell>{x.description}</JsDocDescCell>
+            </tr>
+          ))}
+        {hasReturns && (
+          <tr>
+            <JsDocNameCell>
+              <code>Returns</code>
+            </JsDocNameCell>
+            <JsDocDescCell>{tags.returns.description}</JsDocDescCell>
+          </tr>
+        )}
+      </JsDocParamsAndReturnsTBody>
+    </JsDocParamsAndReturnsTable>
   );
 };
 
@@ -125,12 +157,6 @@ export const PropRow: FC<PropRowProps> = ({
       </StyledPropDef>
       <JsDocParamsAndReturns tags={jsDocTags} />
     </td>
-    <td>
-      {defaultValue === null || defaultValue === undefined ? (
-        '-'
-      ) : (
-        <PrettyPropVal value={defaultValue} />
-      )}
-    </td>
+    <td>{isNil(defaultValue) ? '-' : <PrettyPropVal value={defaultValue} />}</td>
   </tr>
 );
