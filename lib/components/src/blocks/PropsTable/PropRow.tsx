@@ -130,7 +130,7 @@ const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
             </tr>
           ))}
         {hasReturns && (
-          <tr>
+          <tr key="returns">
             <JsDocNameCell>
               <code>Returns</code>
             </JsDocNameCell>
