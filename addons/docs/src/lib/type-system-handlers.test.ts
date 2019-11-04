@@ -1,10 +1,5 @@
-import {
-  propTypesHandler,
-  tsHandler,
-  flowHandler,
-  unknownHandler,
-  DocgenInfo,
-} from './type-system-handlers';
+import { propTypesHandler, tsHandler, flowHandler, unknownHandler } from './type-system-handlers';
+import { DocgenInfo } from './DocgenInfo';
 
 const DEFAULT_PROP_NAME = 'propName';
 
@@ -813,7 +808,7 @@ describe('ts handler', () => {
       description: 'onClick description',
     });
 
-    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+    const { ignore } = tsHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(ignore).toBeFalsy();
   });
@@ -824,7 +819,7 @@ describe('ts handler', () => {
       description: 'onClick description\n@ignore',
     });
 
-    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+    const { ignore } = tsHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(ignore).toBeTruthy();
   });
@@ -855,7 +850,7 @@ describe('flow handler', () => {
       description: 'onClick description',
     });
 
-    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+    const { ignore } = flowHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(ignore).toBeFalsy();
   });
@@ -868,7 +863,7 @@ describe('flow handler', () => {
       description: 'onClick description\n@ignore',
     });
 
-    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+    const { ignore } = flowHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(ignore).toBeTruthy();
   });
@@ -892,7 +887,7 @@ describe('unknown handler', () => {
       description: 'onClick description',
     });
 
-    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+    const { ignore } = unknownHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(ignore).toBeFalsy();
   });
@@ -902,7 +897,7 @@ describe('unknown handler', () => {
       description: 'onClick description\n@ignore',
     });
 
-    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+    const { ignore } = unknownHandler(DEFAULT_PROP_NAME, docgenInfo);
     expect(ignore).toBeTruthy();
   });
 });

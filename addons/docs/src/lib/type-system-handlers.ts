@@ -1,26 +1,7 @@
 import { PropDef } from '@storybook/components';
 import { isNil } from 'lodash';
-import {
-  parseJsDoc,
-  JsDocParsingOptions,
-  ExtractedJsDocTags,
-  ExtractedJsDocParamTag,
-  PropTypeHandler,
-  PropTypeHandlerContext,
-} from './jsdoc-parser';
-
-export interface DocgenInfo {
-  type?: {
-    name: string;
-  };
-  flowType?: any;
-  tsType?: any;
-  required: boolean;
-  description?: string;
-  defaultValue?: {
-    value: string;
-  };
-}
+import { parseJsDoc, ExtractedJsDocTags, ExtractedJsDocParamTag } from './jsdoc-parser';
+import { DocgenInfo } from './DocgenInfo';
 
 export const TypeSystem = {
   Flow: 'Flow',
@@ -39,43 +20,69 @@ export type TypeSystemHandler = (
   docgenInfo: DocgenInfo
 ) => TypeSystemHandlerResult;
 
-function createDefaultPropDef(propName: string, docgenInfo: DocgenInfo): PropDef {
+interface HandlePropResult extends TypeSystemHandlerResult {
+  extractedJsDocTags?: ExtractedJsDocTags;
+}
+
+function createDefaultPropDef(
+  propName: string,
+  propType: {
+    name: string;
+  },
+  docgenInfo: DocgenInfo
+): PropDef {
   const { description, required, defaultValue } = docgenInfo;
 
   return {
     name: propName,
-    type: null,
+    type: propType,
     required,
     description,
     defaultValue: isNil(defaultValue) ? null : defaultValue.value,
   };
 }
 
-function propMightContainsJsDoc(propDef: PropDef): boolean {
-  return !isNil(propDef.description) && propDef.description.includes('@');
+function propMightContainsJsDoc(docgenInfo: DocgenInfo): boolean {
+  return !isNil(docgenInfo.description) && docgenInfo.description.includes('@');
 }
 
-function handleProp(propDef: PropDef, options?: JsDocParsingOptions) {
-  if (propMightContainsJsDoc(propDef)) {
-    const parsingResult = parseJsDoc(propDef, options);
+function handleProp(
+  propName: string,
+  propType: {
+    name: string;
+  },
+  docgenInfo: DocgenInfo
+): HandlePropResult {
+  const propDef = createDefaultPropDef(propName, propType, docgenInfo);
 
-    if (parsingResult.ignore) {
+  if (propMightContainsJsDoc(docgenInfo)) {
+    const { ignore, description, extractedTags } = parseJsDoc(docgenInfo);
+
+    if (ignore) {
       return {
         ignore: true,
       };
     }
 
-    Object.keys(parsingResult).forEach(propName => {
-      if (propName !== 'ignore') {
-        const propValue = parsingResult[propName];
+    if (!isNil(description)) {
+      propDef.description = description;
+    }
 
-        if (!isNil(propValue)) {
-          // @ts-ignore
-          // eslint-disable-next-line no-param-reassign
-          propDef[propName] = propValue;
-        }
-      }
-    });
+    const hasParams = !isNil(extractedTags.params);
+    const hasReturns = !isNil(extractedTags.returns) && !isNil(extractedTags.returns.type);
+
+    if (hasParams || hasReturns) {
+      propDef.jsDocTags = {
+        params: hasParams && extractedTags.params.map(x => x.raw),
+        returns: hasReturns && extractedTags.returns.raw,
+      };
+
+      return {
+        propDef,
+        extractedJsDocTags: extractedTags,
+        ignore: false,
+      };
+    }
   }
 
   return {
@@ -84,75 +91,63 @@ function handleProp(propDef: PropDef, options?: JsDocParsingOptions) {
   };
 }
 
-// When available use the proper JSDoc tags to describe the function signature instead of displaying "func".
-const propTypesFuncHandler: PropTypeHandler = (
-  propDef: PropDef,
-  extractedTags: ExtractedJsDocTags,
-  { hasParams, hasReturns }: PropTypeHandlerContext
-) => {
-  if (hasParams || hasReturns) {
-    const funcParts = [];
+export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
+  const result = handleProp(propName, docgenInfo.type, docgenInfo);
 
-    if (hasParams) {
-      const funcParams = extractedTags.params.map((x: ExtractedJsDocParamTag) => {
-        const typeName = x.getTypeName();
+  if (!result.ignore) {
+    const { propDef, extractedJsDocTags } = result;
 
-        if (!isNil(typeName)) {
-          return `${x.name}: ${typeName}`;
+    // When available use the proper JSDoc tags to describe the function signature instead of displaying "func".
+    if (propDef.type.name === 'func') {
+      if (!isNil(extractedJsDocTags)) {
+        const hasParams = !isNil(extractedJsDocTags.params);
+        const hasReturns = !isNil(extractedJsDocTags.returns);
+
+        if (hasParams || hasReturns) {
+          const funcParts = [];
+
+          if (hasParams) {
+            const funcParams = extractedJsDocTags.params.map((x: ExtractedJsDocParamTag) => {
+              const prettyName = x.getPrettyName();
+              const typeName = x.getTypeName();
+
+              if (!isNil(typeName)) {
+                return `${prettyName}: ${typeName}`;
+              }
+
+              return prettyName;
+            });
+
+            funcParts.push(`(${funcParams.join(', ')})`);
+          } else {
+            funcParts.push('()');
+          }
+
+          if (hasReturns) {
+            funcParts.push(`=> ${extractedJsDocTags.returns.getTypeName()}`);
+          }
+
+          propDef.type = {
+            name: funcParts.join(' '),
+          };
         }
-
-        return x.name;
-      });
-
-      funcParts.push(`(${funcParams.join(', ')})`);
-    } else {
-      funcParts.push('()');
+      }
     }
-
-    if (hasReturns) {
-      funcParts.push(`=> ${extractedTags.returns.getTypeName()}`);
-    }
-
-    return {
-      type: {
-        name: funcParts.join(' '),
-      },
-    };
   }
 
-  return null;
-};
-
-export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
-  const propDef = createDefaultPropDef(propName, docgenInfo);
-  propDef.type = docgenInfo.type;
-
-  return handleProp(propDef, {
-    propTypeHandlers: {
-      func: propTypesFuncHandler,
-    },
-  });
+  return result;
 };
 
 export const tsHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
-  const propDef = createDefaultPropDef(propName, docgenInfo);
-  propDef.type = docgenInfo.tsType;
-
-  return handleProp(propDef);
+  return handleProp(propName, docgenInfo.tsType, docgenInfo);
 };
 
 export const flowHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
-  const propDef = createDefaultPropDef(propName, docgenInfo);
-  propDef.type = docgenInfo.flowType;
-
-  return handleProp(propDef);
+  return handleProp(propName, docgenInfo.flowType, docgenInfo);
 };
 
 export const unknownHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
-  const propDef = createDefaultPropDef(propName, docgenInfo);
-  propDef.type = { name: 'unknown' };
-
-  return handleProp(propDef);
+  return handleProp(propName, { name: 'unknown' }, docgenInfo);
 };
 
 export const TypeSystemHandlers: Record<string, TypeSystemHandler> = {

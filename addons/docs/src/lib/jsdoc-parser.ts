@@ -1,29 +1,13 @@
 import doctrine, { Annotation } from 'doctrine';
-import { PropDef } from '@storybook/components';
 import { isNil } from 'lodash';
+import { DocgenInfo } from './DocgenInfo';
 
-export interface PropTypeHandlerContext {
-  hasParams: boolean;
-  hasReturns: boolean;
-}
-
-export type PropTypeHandler = (
-  propDef: PropDef,
-  extractedTags: ExtractedJsDocTags,
-  context: PropTypeHandlerContext
-) => Record<string, any> | null;
-
-export interface JsDocParsingOptions {
-  propTypeHandlers?: Record<string, PropTypeHandler>;
-}
-
-export type ParseJsDoc = (
-  propDef: PropDef,
-  options?: JsDocParsingOptions
-) => JsDocParsingResult & Record<string, any>;
+export type ParseJsDoc = (docgenInfo: DocgenInfo) => JsDocParsingResult;
 
 export interface JsDocParsingResult {
   ignore: boolean;
+  description?: string;
+  extractedTags?: ExtractedJsDocTags;
 }
 
 export interface ExtractedJsDocParamTag {
@@ -31,6 +15,7 @@ export interface ExtractedJsDocParamTag {
   type?: doctrine.Type;
   description?: string;
   raw: doctrine.Tag;
+  getPrettyName: () => string;
   getTypeName: () => string;
 }
 
@@ -42,7 +27,7 @@ export interface ExtractedJsDocReturnsTag {
 }
 
 export interface ExtractedJsDocTags {
-  params: ExtractedJsDocParamTag[];
+  params?: ExtractedJsDocParamTag[];
   returns?: ExtractedJsDocReturnsTag;
   ignore: boolean;
 }
@@ -65,70 +50,28 @@ function parse(content: string): Annotation {
   return ast;
 }
 
-export const parseJsDoc: ParseJsDoc = (propDef: PropDef, options: JsDocParsingOptions = {}) => {
-  let description;
-  const tags: any = {};
+export const parseJsDoc: ParseJsDoc = (docgenInfo: DocgenInfo) => {
+  const jsDocAst = parse(docgenInfo.description);
+  const extractedTags = extractJsDocTags(jsDocAst);
 
-  const jsDocAst = parse(propDef.description);
-
-  // Always use the parsed description to ensure JSDoc is removed from the description.
-  if (!isNil(jsDocAst.description)) {
-    description = jsDocAst.description;
-  }
-
-  const extractedTags = extractJsDocTags(jsDocAst, options);
-
-  // There is no point in doing other stuff since this prop will not be rendered.
   if (extractedTags.ignore) {
+    // There is no point in doing other stuff since this prop will not be rendered.
     return {
       ignore: true,
     };
   }
 
-  const hasParams = extractedTags.params.length > 0;
-  const hasReturns = !isNil(extractedTags.returns) && !isNil(extractedTags.returns.type);
-
-  if (hasParams) {
-    tags.params = extractedTags.params.map(x => x.raw);
-  }
-
-  if (hasReturns) {
-    tags.returns = extractedTags.returns.raw;
-  }
-
-  let result = {
-    description: !isNil(description) ? description : undefined,
-    jsDocTags: Object.keys(tags).length !== 0 ? tags : undefined,
+  return {
     ignore: false,
+    // Always use the parsed description to ensure JSDoc is removed from the description.
+    description: jsDocAst.description,
+    extractedTags,
   };
-
-  if (!isNil(options.propTypeHandlers)) {
-    const handler = options.propTypeHandlers[propDef.type.name];
-
-    if (!isNil(handler)) {
-      const additionalResult = handler(propDef, extractedTags, {
-        hasParams,
-        hasReturns,
-      });
-
-      if (!isNil(additionalResult)) {
-        result = {
-          ...result,
-          ...additionalResult,
-        };
-      }
-    }
-  }
-
-  return result;
 };
 
-function extractJsDocTags(
-  ast: doctrine.Annotation,
-  options: JsDocParsingOptions
-): ExtractedJsDocTags {
+function extractJsDocTags(ast: doctrine.Annotation): ExtractedJsDocTags {
   const extractedTags: ExtractedJsDocTags = {
-    params: [],
+    params: null,
     returns: null,
     ignore: false,
   };
@@ -138,28 +81,33 @@ function extractJsDocTags(
 
     // arg & argument are aliases for param.
     if (tag.title === 'param' || tag.title === 'arg' || tag.title === 'argument') {
+      const paramName = tag.name;
+
       // When the @param doesn't have a name but have a type and a description, "null-null" is returned.
-      if (tag.name !== 'null-null') {
-        let paramName = tag.name;
-
-        if (paramName.includes('null')) {
-          // There is a few cases in which the returned param name contains "null".
-          // - @param {SyntheticEvent} event- Original SyntheticEvent
-          // - @param {SyntheticEvent} event.\n@returns {string}
-          paramName = paramName.replace('-null', '').replace('.null', '');
+      if (!isNil(paramName) && paramName !== 'null-null') {
+        if (isNil(extractedTags.params)) {
+          extractedTags.params = [];
         }
 
-        if (!isNil(paramName)) {
-          extractedTags.params.push({
-            name: paramName,
-            type: tag.type,
-            description: tag.description,
-            raw: tag,
-            getTypeName: () => {
-              return !isNil(tag.type) ? extractJsDocTypeName(tag.type) : null;
-            },
-          });
-        }
+        extractedTags.params.push({
+          name: tag.name,
+          type: tag.type,
+          description: tag.description,
+          raw: tag,
+          getPrettyName: () => {
+            if (paramName.includes('null')) {
+              // There is a few cases in which the returned param name contains "null".
+              // - @param {SyntheticEvent} event- Original SyntheticEvent
+              // - @param {SyntheticEvent} event.\n@returns {string}
+              return paramName.replace('-null', '').replace('.null', '');
+            }
+
+            return tag.name;
+          },
+          getTypeName: () => {
+            return !isNil(tag.type) ? extractJsDocTypeName(tag.type) : null;
+          },
+        });
       }
     } else if (tag.title === 'returns') {
       if (!isNil(tag.type)) {

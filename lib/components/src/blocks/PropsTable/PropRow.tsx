@@ -48,8 +48,6 @@ const StyledPropDef = styled.div(({ theme }) => ({
   fontSize: `${theme.typography.size.code}%`,
 }));
 
-const JsDocParamsAndReturnsTable = styled.table({});
-
 const JsDocParamsAndReturnsTBody = styled.tbody({ boxShadow: 'none !important' });
 
 const JsDocCellStyle = { paddingTop: '0 !important', paddingBottom: '0 !important' };
@@ -111,14 +109,14 @@ const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
 
   const params = (tags.params || []).filter(x => x.description);
   const hasDisplayableParams = params.length !== 0;
-  const hasReturns = !isNil(tags.returns);
+  const hasReturns = !isNil(tags.returns) && !isNil(tags.returns.description);
 
   if (!hasDisplayableParams && !hasReturns) {
     return null;
   }
 
   return (
-    <JsDocParamsAndReturnsTable>
+    <table>
       <JsDocParamsAndReturnsTBody>
         {hasDisplayableParams &&
           params.map(x => (
@@ -138,7 +136,7 @@ const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
           </tr>
         )}
       </JsDocParamsAndReturnsTBody>
-    </JsDocParamsAndReturnsTable>
+    </table>
   );
 };
 
