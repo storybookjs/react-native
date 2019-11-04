@@ -1,38 +1,32 @@
-import { propTypesHandler, tsHandler, flowHandler, DocgenInfo } from './type-system-handlers';
+import {
+  propTypesHandler,
+  tsHandler,
+  flowHandler,
+  unknownHandler,
+  DocgenInfo,
+} from './type-system-handlers';
 
 const DEFAULT_PROP_NAME = 'propName';
 
-const PROP_TYPE_FUNC_TYPE = {
+const PROP_TYPES_STRING_TYPE = {
+  name: 'string',
+};
+
+const PROP_TYPES_FUNC_TYPE = {
   name: 'func',
 };
 
-function createPropTypesDocgenInfo(overrides: Record<string, any> = {}): DocgenInfo {
-  return {
-    type: { name: 'string' },
-    required: true,
-    description: 'A string prop',
-    defaultValue: {
-      value: 'default string',
-    },
-    ...overrides,
-  };
-}
+const TS_FUNC_TYPE = {
+  name: '() => void',
+};
 
-function createTypeScriptDocgenInfo(overrides: Record<string, any> = {}): DocgenInfo {
-  return {
-    tsType: { name: 'string' },
-    required: true,
-    description: 'A string prop',
-    defaultValue: {
-      value: 'default string',
-    },
-    ...overrides,
-  };
-}
+const TS_STRING_TYPE = {
+  name: 'string',
+};
 
-function createFlowDocgenInfo(overrides: Record<string, any> = {}): DocgenInfo {
+function createDocgenInfo(overrides: Record<string, any> = {}): DocgenInfo {
   return {
-    flowType: { name: 'string' },
+    type: null,
     required: true,
     description: 'A string prop',
     defaultValue: {
@@ -44,7 +38,10 @@ function createFlowDocgenInfo(overrides: Record<string, any> = {}): DocgenInfo {
 
 describe('prop-types handler', () => {
   it('should map defaults docgen info properly', () => {
-    const docgenInfo = createPropTypesDocgenInfo();
+    const docgenInfo = createDocgenInfo({
+      type: PROP_TYPES_STRING_TYPE,
+    });
+
     const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(propDef.name).toBe(DEFAULT_PROP_NAME);
@@ -56,7 +53,8 @@ describe('prop-types handler', () => {
 
   describe('for all prop types', () => {
     it('should handle prop without a description', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
         description: undefined,
       });
 
@@ -66,10 +64,8 @@ describe('prop-types handler', () => {
     });
 
     it('should clean the description', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: {
-          name: 'string',
-        },
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
         description: 'onClick description\n@param {SyntheticEvent} event',
       });
 
@@ -79,10 +75,8 @@ describe('prop-types handler', () => {
     });
 
     it('should have an empty description when the description only contains JSDoc', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: {
-          name: 'string',
-        },
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
         description: '@param event',
       });
 
@@ -92,10 +86,8 @@ describe('prop-types handler', () => {
     });
 
     it('should not remove newline characters of multilines description without JSDoc tags', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: {
-          name: 'string',
-        },
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
         description: 'onClick description\nis a\nmulti-lines\ndescription',
       });
 
@@ -105,10 +97,8 @@ describe('prop-types handler', () => {
     });
 
     it('should not remove newline characters of multilines description with JSDoc tags', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: {
-          name: 'string',
-        },
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
         description: 'onClick description\nis a\nmulti-lines\ndescription\n@param event',
       });
 
@@ -118,10 +108,8 @@ describe('prop-types handler', () => {
     });
 
     it('should not remove markdown from description without JSDoc tags', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: {
-          name: 'string',
-        },
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
         description: 'onClick *emphasis*, **strong**, `formatted` description.',
       });
 
@@ -131,10 +119,8 @@ describe('prop-types handler', () => {
     });
 
     it('should not remove markdown from description with JSDoc tags', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: {
-          name: 'string',
-        },
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
         description: 'onClick *emphasis*, **strong**, `formatted` description.\n@param event',
       });
 
@@ -144,10 +130,8 @@ describe('prop-types handler', () => {
     });
 
     it('should not remove @ characters that does not match JSDoc tags', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: {
-          name: 'string',
-        },
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
         description: 'onClick @description@',
       });
 
@@ -155,12 +139,34 @@ describe('prop-types handler', () => {
 
       expect(propDef.description).toBe('onClick @description@');
     });
+
+    it('should not set ignore to true when the property is not marked with @ignore', () => {
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
+        description: 'onClick description',
+      });
+
+      const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+      expect(ignore).toBeFalsy();
+    });
+
+    it('should set ignore to true when the property is marked with @ignore', () => {
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_STRING_TYPE,
+        description: 'onClick description\n@ignore',
+      });
+
+      const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+      expect(ignore).toBeTruthy();
+    });
   });
 
   describe('when the prop is a function', () => {
     it("should have func as type when the props doesn't have a description", () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: PROP_TYPE_FUNC_TYPE,
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_FUNC_TYPE,
         description: undefined,
       });
 
@@ -171,8 +177,8 @@ describe('prop-types handler', () => {
     });
 
     it('should have func as type when the prop have a description without JSDoc', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: PROP_TYPE_FUNC_TYPE,
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_FUNC_TYPE,
         description: 'onClick description',
       });
 
@@ -183,8 +189,8 @@ describe('prop-types handler', () => {
     });
 
     it('should have an empty description when the description only contains JSDoc', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: PROP_TYPE_FUNC_TYPE,
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_FUNC_TYPE,
         description: '@param event',
       });
 
@@ -195,8 +201,8 @@ describe('prop-types handler', () => {
 
     describe('when the description contains a @param tag', () => {
       it('should have func as type when it is an invalid @param tag', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param',
         });
 
@@ -207,8 +213,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have a func signature with a single arg as type when it is a @param tag with a name', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param event',
         });
 
@@ -219,8 +225,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have a func signature with a single arg as type when it is a @param tag with a name and a type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {SyntheticEvent} event',
         });
 
@@ -231,8 +237,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have a func signature with a single arg as type when it is a @param tag with a name, a type and a desc', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param {SyntheticEvent} event - Original SyntheticEvent',
         });
@@ -244,8 +250,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have func as type when it is @param tag without a name 1', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param - Original SyntheticEvent',
         });
 
@@ -256,8 +262,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have func as type when it is @param tag without a name 2', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {SyntheticEvent} - Original SyntheticEvent',
         });
 
@@ -268,8 +274,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support param of record type with a single field', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {{a: number}} event',
         });
 
@@ -280,8 +286,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support param of record type with multiple fields', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {{a: number, b: string}} event',
         });
 
@@ -292,8 +298,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support param of record type with a field having only a name', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {{a}} event',
         });
 
@@ -304,8 +310,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support param of union type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {(number|boolean)} event',
         });
 
@@ -316,8 +322,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support param of array type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {number[]} event',
         });
 
@@ -328,8 +334,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support param of untyped array type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {[]} event',
         });
 
@@ -340,8 +346,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support param with a nullable type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {?number} event',
         });
 
@@ -352,8 +358,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support param with a non nullable type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {!number} event',
         });
 
@@ -364,8 +370,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support optional param 1', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {number} [event]',
         });
 
@@ -376,8 +382,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support optional param 2', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {number=} event',
         });
 
@@ -388,8 +394,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support param of type any', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {*} event',
         });
 
@@ -400,8 +406,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support multilines description when there is a @param', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\nis a\nmulti-lines\ndescription\n@param event',
         });
 
@@ -412,8 +418,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support multilines @param description', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param event - This is my param\nmultiline description\n@param customData',
         });
@@ -425,8 +431,8 @@ describe('prop-types handler', () => {
       });
 
       it('should autofix missing space between the param name and the description separator', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param {SyntheticEvent} event- Original SyntheticEvent',
         });
@@ -438,8 +444,8 @@ describe('prop-types handler', () => {
       });
 
       it('should autofix param name ending with . followed by a @returns tag', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param {SyntheticEvent} event.\n',
         });
 
@@ -450,8 +456,8 @@ describe('prop-types handler', () => {
       });
 
       it('should provide raw @param tags', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param {SyntheticEvent} event - Original event.\n@param {string} value',
         });
@@ -470,8 +476,8 @@ describe('prop-types handler', () => {
 
     describe('when the description contains multiple @param tags', () => {
       it('should have a func signature with multiple args as type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param {SyntheticEvent} event\n@param {string} customData',
         });
@@ -483,8 +489,8 @@ describe('prop-types handler', () => {
       });
 
       it('should ignore invalid @param tags', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param {SyntheticEvent} event\n@param {string} customData\n@param {SyntheticEvent} - Original event',
         });
@@ -497,8 +503,8 @@ describe('prop-types handler', () => {
     });
 
     it('should support @arg alias', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: PROP_TYPE_FUNC_TYPE,
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_FUNC_TYPE,
         description: 'onClick description\n@arg event',
       });
 
@@ -509,8 +515,8 @@ describe('prop-types handler', () => {
     });
 
     it('should support @argument alias', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: PROP_TYPE_FUNC_TYPE,
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_FUNC_TYPE,
         description: 'onClick description\n@argument event',
       });
 
@@ -522,8 +528,8 @@ describe('prop-types handler', () => {
 
     describe('when the description contains a @returns tag', () => {
       it('should have func as type when it is an invalid @returns tag', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns',
         });
 
@@ -534,8 +540,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have a func signature with a return type as type when it is a @returns tag with a type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns {string}',
         });
 
@@ -546,8 +552,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have a func signature with a return type as type when it is a @returns tag with a type and a description', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns {string} - A custom return type',
         });
 
@@ -558,8 +564,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have func as type when it is a @returns tag without a type and there is no params.', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns - A custom return type',
         });
 
@@ -570,8 +576,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have no return type when it is a @returns tag without a type and there is params.', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@param event\n@returns - A custom return type',
         });
 
@@ -582,8 +588,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have a full signature as type when there is a @param and a @returns tag 1', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param {SyntheticEvent} event - Original event.\n@returns {string}',
         });
@@ -595,8 +601,8 @@ describe('prop-types handler', () => {
       });
 
       it('should have a full signature as type when there is a @param and a @returns tag 2', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param {SyntheticEvent} event - Original event.\n@param {string} customData\n@returns {string}',
         });
@@ -608,8 +614,8 @@ describe('prop-types handler', () => {
       });
 
       it('should only consider the last @returns tag when there is more than one', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns {string}\n@returns {integer}',
         });
 
@@ -620,8 +626,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support returns of record type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns {{a: number, b: string}}',
         });
 
@@ -632,8 +638,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support returns of array type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns {integer[]}',
         });
 
@@ -644,8 +650,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support returns of union type', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns {(number|boolean)}',
         });
 
@@ -656,8 +662,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support returns of type any', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns {*}',
         });
 
@@ -668,8 +674,8 @@ describe('prop-types handler', () => {
       });
 
       it('should support returns of type void', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description: 'onClick description\n@returns {void}',
         });
 
@@ -680,8 +686,8 @@ describe('prop-types handler', () => {
       });
 
       it('should provide raw @returns tags when a description is defined', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param {SyntheticEvent} event - Original event.\n@returns {string} - An awesome string.',
         });
@@ -695,8 +701,8 @@ describe('prop-types handler', () => {
       });
 
       it('should provide raw @returns tags when there is no description', () => {
-        const docgenInfo = createPropTypesDocgenInfo({
-          type: PROP_TYPE_FUNC_TYPE,
+        const docgenInfo = createDocgenInfo({
+          type: PROP_TYPES_FUNC_TYPE,
           description:
             'onClick description\n@param {SyntheticEvent} event - Original event.\n@returns {string}',
         });
@@ -711,8 +717,8 @@ describe('prop-types handler', () => {
     });
 
     it('should remove extra newline characters between tags', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: PROP_TYPE_FUNC_TYPE,
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_FUNC_TYPE,
         description:
           'onClick description\n@param {SyntheticEvent} event - Original event.\n     \n     \n     \n@returns {string}',
       });
@@ -724,8 +730,8 @@ describe('prop-types handler', () => {
     });
 
     it('should ignore unsupported JSDoc tags', () => {
-      const docgenInfo = createPropTypesDocgenInfo({
-        type: PROP_TYPE_FUNC_TYPE,
+      const docgenInfo = createDocgenInfo({
+        type: PROP_TYPES_FUNC_TYPE,
         description:
           'onClick description\n@param {SyntheticEvent} event\n@type {number}\n@returns {string}\n@version 2',
       });
@@ -740,7 +746,10 @@ describe('prop-types handler', () => {
 
 describe('ts handler', () => {
   it('should map defaults docgen info properly', () => {
-    const docgenInfo = createTypeScriptDocgenInfo();
+    const docgenInfo = createDocgenInfo({
+      tsType: PROP_TYPES_STRING_TYPE,
+    });
+
     const { propDef } = tsHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(propDef.name).toBe(DEFAULT_PROP_NAME);
@@ -751,8 +760,8 @@ describe('ts handler', () => {
   });
 
   it('should provide raw @param tags', () => {
-    const docgenInfo = createTypeScriptDocgenInfo({
-      tsType: PROP_TYPE_FUNC_TYPE,
+    const docgenInfo = createDocgenInfo({
+      tsType: TS_FUNC_TYPE,
       description:
         'onClick description\n@param {SyntheticEvent} event - Original event.\n@param {string} value',
     });
@@ -769,8 +778,8 @@ describe('ts handler', () => {
   });
 
   it('should provide raw @returns tags when a description is defined', () => {
-    const docgenInfo = createTypeScriptDocgenInfo({
-      tsType: PROP_TYPE_FUNC_TYPE,
+    const docgenInfo = createDocgenInfo({
+      tsType: TS_FUNC_TYPE,
       description:
         'onClick description\n@param {SyntheticEvent} event - Original event.\n@returns {string} - An awesome string.',
     });
@@ -784,8 +793,8 @@ describe('ts handler', () => {
   });
 
   it('should provide raw @returns tags when there is no description', () => {
-    const docgenInfo = createTypeScriptDocgenInfo({
-      tsType: PROP_TYPE_FUNC_TYPE,
+    const docgenInfo = createDocgenInfo({
+      tsType: TS_FUNC_TYPE,
       description:
         'onClick description\n@param {SyntheticEvent} event - Original event.\n@returns {string}',
     });
@@ -797,11 +806,38 @@ describe('ts handler', () => {
     expect(propDef.jsDocTags.returns).toBeDefined();
     expect(propDef.jsDocTags.returns.description).toBeNull();
   });
+
+  it('should not set ignore to true when the property is not marked with @ignore', () => {
+    const docgenInfo = createDocgenInfo({
+      tsType: TS_STRING_TYPE,
+      description: 'onClick description',
+    });
+
+    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+    expect(ignore).toBeFalsy();
+  });
+
+  it('should set ignore to true when the property is marked with @ignore', () => {
+    const docgenInfo = createDocgenInfo({
+      tsType: TS_STRING_TYPE,
+      description: 'onClick description\n@ignore',
+    });
+
+    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+    expect(ignore).toBeTruthy();
+  });
 });
 
 describe('flow handler', () => {
   it('should map defaults docgen info properly', () => {
-    const docgenInfo = createFlowDocgenInfo();
+    const docgenInfo = createDocgenInfo({
+      flowType: {
+        name: 'string',
+      },
+    });
+
     const { propDef } = flowHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(propDef.name).toBe(DEFAULT_PROP_NAME);
@@ -809,5 +845,64 @@ describe('flow handler', () => {
     expect(propDef.description).toBe(docgenInfo.description);
     expect(propDef.required).toBe(docgenInfo.required);
     expect(propDef.defaultValue).toBe(docgenInfo.defaultValue.value);
+  });
+
+  it('should not set ignore to true when the property is not marked with @ignore', () => {
+    const docgenInfo = createDocgenInfo({
+      flowType: {
+        name: 'string',
+      },
+      description: 'onClick description',
+    });
+
+    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+    expect(ignore).toBeFalsy();
+  });
+
+  it('should set ignore to true when the property is marked with @ignore', () => {
+    const docgenInfo = createDocgenInfo({
+      flowType: {
+        name: 'string',
+      },
+      description: 'onClick description\n@ignore',
+    });
+
+    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+    expect(ignore).toBeTruthy();
+  });
+});
+
+describe('unknown handler', () => {
+  it('should map defaults docgen info properly', () => {
+    const docgenInfo = createDocgenInfo();
+
+    const { propDef } = unknownHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+    expect(propDef.name).toBe(DEFAULT_PROP_NAME);
+    expect(propDef.type.name).toBe('unknown');
+    expect(propDef.description).toBe(docgenInfo.description);
+    expect(propDef.required).toBe(docgenInfo.required);
+    expect(propDef.defaultValue).toBe(docgenInfo.defaultValue.value);
+  });
+
+  it('should not set ignore to true when the property is not marked with @ignore', () => {
+    const docgenInfo = createDocgenInfo({
+      description: 'onClick description',
+    });
+
+    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+
+    expect(ignore).toBeFalsy();
+  });
+
+  it('should set ignore to true when the property is marked with @ignore', () => {
+    const docgenInfo = createDocgenInfo({
+      description: 'onClick description\n@ignore',
+    });
+
+    const { ignore } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
+    expect(ignore).toBeTruthy();
   });
 });

@@ -17,14 +17,14 @@ export interface JsDocParsingOptions {
   propTypeHandlers?: Record<string, PropTypeHandler>;
 }
 
-export type ParseJsDoc = (propDef: PropDef, options?: JsDocParsingOptions) => JsDocParsingResult;
+export type ParseJsDoc = (
+  propDef: PropDef,
+  options?: JsDocParsingOptions
+) => JsDocParsingResult & Record<string, any>;
 
 export interface JsDocParsingResult {
-  type?: {
-    name: string;
-  };
-  description?: string;
-  tags?: any;
+  // description?: string;
+  // jsDocTags?: any;
   ignore: boolean;
 }
 
@@ -100,7 +100,7 @@ export const parseJsDoc: ParseJsDoc = (propDef: PropDef, options: JsDocParsingOp
 
   let result = {
     description: !isNil(description) ? description : undefined,
-    tags: Object.keys(tags).length !== 0 ? tags : undefined,
+    jsDocTags: Object.keys(tags).length !== 0 ? tags : undefined,
     ignore: false,
   };
 

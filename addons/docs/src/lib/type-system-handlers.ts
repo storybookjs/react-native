@@ -65,20 +65,17 @@ function handleProp(propDef: PropDef, options?: JsDocParsingOptions) {
       };
     }
 
-    if (!isNil(parsingResult.type)) {
-      // eslint-disable-next-line no-param-reassign
-      propDef.type = parsingResult.type;
-    }
+    Object.keys(parsingResult).forEach(propName => {
+      if (propName !== 'ignore') {
+        const propValue = parsingResult[propName];
 
-    if (!isNil(parsingResult.description)) {
-      // eslint-disable-next-line no-param-reassign
-      propDef.description = parsingResult.description;
-    }
-
-    if (!isNil(parsingResult.tags)) {
-      // eslint-disable-next-line no-param-reassign
-      propDef.jsDocTags = parsingResult.tags;
-    }
+        if (!isNil(propValue)) {
+          // @ts-ignore
+          // eslint-disable-next-line no-param-reassign
+          propDef[propName] = propValue;
+        }
+      }
+    });
   }
 
   return {
@@ -87,6 +84,7 @@ function handleProp(propDef: PropDef, options?: JsDocParsingOptions) {
   };
 }
 
+// When available use the proper JSDoc tags to describe the function signature instead of displaying "func".
 const propTypesFuncHandler: PropTypeHandler = (
   propDef: PropDef,
   extractedTags: ExtractedJsDocTags,
@@ -127,7 +125,6 @@ const propTypesFuncHandler: PropTypeHandler = (
 
 export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
   const propDef = createDefaultPropDef(propName, docgenInfo);
-  // Take a default type value from docgen. It will be overrided later if something better can be infered from JSDoc tags.
   propDef.type = docgenInfo.type;
 
   return handleProp(propDef, {
@@ -144,15 +141,11 @@ export const tsHandler: TypeSystemHandler = (propName: string, docgenInfo: Docge
   return handleProp(propDef);
 };
 
-// It's there for backward compatibility. Not adding additional support.
 export const flowHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
   const propDef = createDefaultPropDef(propName, docgenInfo);
   propDef.type = docgenInfo.flowType;
 
-  return {
-    propDef,
-    ignore: false,
-  };
+  return handleProp(propDef);
 };
 
 export const unknownHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
