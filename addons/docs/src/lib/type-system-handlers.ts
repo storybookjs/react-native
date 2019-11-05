@@ -135,7 +135,9 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
     } else if (propDef.type.name === 'arrayOf') {
       if (propDef.type.value.name === 'custom') {
         if (!isNil(propDef.type.value.raw)) {
-          propDef.type.value.name = propDef.type.value.raw;
+          propDef.type.value.name = propDef.type.value.raw
+            .replace(/PropTypes./g, '')
+            .replace(/.isRequired/g, '');
         }
       }
     }
