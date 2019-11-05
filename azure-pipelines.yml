@@ -17,6 +17,6 @@ steps:
 
 - script: |
     yarn install
-    yarn bootstrap.js --core
+    yarn bootstrap --core
     yarn build-storybooks
   displayName: 'examples'
