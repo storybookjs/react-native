@@ -1,3 +1,22 @@
+## 5.3.0-alpha.39 (November 5, 2019)
+
+### Breaking Changes
+
+* React-native: Require user-provided async storage ([#7801](https://github.com/storybookjs/storybook/pull/7801))
+
+### Features
+
+* Addon-docs: Inline rendering for web-components as default ([#8705](https://github.com/storybookjs/storybook/pull/8705))
+
+### Bug Fixes
+
+* Addon-docs: Fix recipe to use `notes` as component description ([#8718](https://github.com/storybookjs/storybook/pull/8718))
+* Addon-docs: Fix code style inside LI ([#8708](https://github.com/storybookjs/storybook/pull/8708))
+* React Native: Fix on-device-notes ([#8692](https://github.com/storybookjs/storybook/pull/8692))
+* React Native: On Device Knobs Groups Fix ([#8694](https://github.com/storybookjs/storybook/pull/8694))
+* React-native: Fix event listening for story navigation ([#8690](https://github.com/storybookjs/storybook/pull/8690))
+* React-Native: Add safe area wrapper for iphone x and later ([#8679](https://github.com/storybookjs/storybook/pull/8679))
+
 ## 5.3.0-alpha.38 (November 3, 2019)
 
 ### Bug Fixes
