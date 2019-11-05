@@ -74,11 +74,13 @@ export default class Preview {
     let channel: Channel = null;
 
     if (params.asyncStorage === undefined) {
-      console.warn(`
+      console.warn(
+        `
 Starting Storybook v5.3.0, we require to manually pass an asyncStorage prop. Pass null to disable or use one from @react-native-community or react-native itself.
 
 More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-native-async-storage
-      `.trim());
+      `.trim()
+      );
     }
 
     if (params.asyncStorage) {
