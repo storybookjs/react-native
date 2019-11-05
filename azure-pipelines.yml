@@ -16,6 +16,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    node ./scripts/bootstrap.js --core
-    npm run build-storybooks
+    yarn install
+    yarn bootstrap.js --core
+    yarn build-storybooks
   displayName: 'examples'
