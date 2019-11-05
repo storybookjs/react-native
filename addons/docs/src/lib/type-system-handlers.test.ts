@@ -737,59 +737,6 @@ describe('prop-types handler', () => {
       expect(propDef.description).toBe('onClick description');
     });
   });
-
-  describe('when the prop type is arrayOf', () => {
-    it('should support array of primitives', () => {
-      const docgenInfo = createDocgenInfo({
-        type: {
-          name: 'arrayOf',
-          value: {
-            name: 'string',
-          },
-        },
-      });
-
-      const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
-
-      expect(propDef.type.name).toBe('arrayOf');
-      expect(propDef.type.value.name).toBe('string');
-    });
-
-    it('should use the name of the custom shape when available', () => {
-      const docgenInfo = createDocgenInfo({
-        type: {
-          name: 'arrayOf',
-          value: {
-            name: 'custom',
-            raw: 'Circle',
-          },
-        },
-      });
-
-      const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
-
-      expect(propDef.type.name).toBe('arrayOf');
-      expect(propDef.type.value.name).toBe('Circle');
-    });
-
-    it('should use the inline shape when available', () => {
-      const docgenInfo = createDocgenInfo({
-        type: {
-          name: 'arrayOf',
-          value: {
-            name: 'custom',
-            raw:
-              '{\n  text: PropTypes.string.isRequired,\n  value: PropTypes.string.isRequired,\n}',
-          },
-        },
-      });
-
-      const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
-
-      expect(propDef.type.name).toBe('arrayOf');
-      expect(propDef.type.value.name).toBe('{\n  text: string,\n  value: string,\n}');
-    });
-  });
 });
 
 describe('ts handler', () => {
