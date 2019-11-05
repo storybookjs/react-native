@@ -3,7 +3,7 @@ id: 'theming'
 title: 'Theming Storybook'
 ---
 
-Storybook is theme-able! Set a `theme` in the [options parameter](../options-parameter)!
+Storybook is theme-able!
 
 ## Global theming
 
@@ -11,40 +11,19 @@ It's possible to theme Storybook globally.
 
 We've created two basic themes that look good of the box: "normal" (a light theme) and "dark" (a dark theme). Unless you've set your preferred color scheme as dark Storybook will use the light theme as default.
 
-As an example, you can tell Storybook to use the "dark" theme by modifying `.storybook/config.js`:
+As an example, you can tell Storybook to use the "dark" theme by modifying `.storybook/manager.js`:
 
 ```js
-import { configure, addParameters } from '@storybook/react'
+import { addons } from '@storybook/addons';
 import { themes } from '@storybook/theming';
 
-// Option defaults.
-addParameters({
-  options: {
-    theme: themes.dark,
-  },
+addons.setConfig({
+  theme: themes.dark,
 });
 
-// configure(...)
 ```
-> `addParameters` needs to be called before `configure()` method or it won't have any effect.
 
 When setting a theme, set a full theme object. The theme is replaced, not combined.
-
-## Dynamic theming
-
-You can also theme dynamically based on the story you're viewing or based on UI in an addon (e.g. a theme picker).
-
-For example, you can update the theme when the user is viewing a specific component:
-
-```js
-import { storiesOf } from '@storybook/react';
-import yourTheme from './yourTheme';
-
-storiesOf('MyComponent', module)
-  .addParameters({ options: { theme: yourTheme } })
-  .add(...)
-});
-```
 
 Read on for more on how to create your own theme.
 
@@ -96,15 +75,14 @@ export default create({
 });
 ```
 
-Finally, import your theme into `.storybook/config` and add it to your Storybook parameters.
+Finally, import your theme into `.storybook/manager.js` and add it to your Storybook parameters.
 
 ```js
+import { addons } from '@storybook/addons';
 import yourTheme from './yourTheme';
 
-addParameters({
-  options: {
-    theme: yourTheme,
-  },
+addons.setConfig({
+  theme: yourTheme,
 });
 ```
 
