@@ -64,12 +64,13 @@ const defaultSubtitleSlot: StringSlot = ({ parameters }) =>
 
 const defaultPropsSlot: PropsSlot = context => getPropsTableProps({ of: '.' }, context);
 
-const defaultDescriptionSlot: StringSlot = ({ parameters: { component, docs } }) => {
+const defaultDescriptionSlot: StringSlot = ({ parameters }) => {
+  const { component, docs } = parameters;
   if (!component) {
     return null;
   }
   const { extractComponentDescription } = docs || {};
-  return extractComponentDescription && extractComponentDescription(component);
+  return extractComponentDescription && extractComponentDescription(component, parameters);
 };
 
 const defaultPrimarySlot: StorySlot = stories => stories && stories[0];

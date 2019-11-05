@@ -87,6 +87,8 @@ The old behavior of `<Description of={Component} />` was to concatenate the info
 
 The new default behavior is to use the framework-specific description extractor, which for React/Vue is still docgen, but may come from other places (e.g. a JSON file) for other frameworks.
 
+The description doc block on DocsPage has also been updated. To see how to configure it in 5.3, please see [the updated recipe](https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#migrating-from-notesinfo-addons)
+
 ### React Native Async Storage
 
 Starting from version React Native 0.59, Async Storage is deprecated in React Native itself. The new @react-native-community/async-storage module requires native installation, and we don't want to have it as a dependency for React Native Storybook.
@@ -95,9 +97,9 @@ To avoid that now you have to manually pass asyncStorage to React Native Storybo
 
 Solution:
 
- * Use `require('@react-native-community/async-storage')` for React Native v0.59 and above.
- * Use `require('react-native').AsyncStorage` for React Native v0.58 or below.
- * Use `null` to disable Async Storage completely.
+- Use `require('@react-native-community/async-storage')` for React Native v0.59 and above.
+- Use `require('react-native').AsyncStorage` for React Native v0.58 or below.
+- Use `null` to disable Async Storage completely.
 
 ```javascript
 getStorybookUI({
