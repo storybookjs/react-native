@@ -304,6 +304,7 @@ export const LI = styled.li<{}>(withReset, ({ theme }) => ({
     marginTop: '.25em',
     marginBottom: 0,
   },
+  '& code': codeCommon({ theme }),
 }));
 
 export const UL = styled.ul<{}>(withReset, withMargin, listCommon, {});

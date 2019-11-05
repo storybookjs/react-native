@@ -1,1 +1,1 @@
-module.exports = require('../dist/frameworks/common/index');
+module.exports = require('../dist/frameworks/angular/index');
