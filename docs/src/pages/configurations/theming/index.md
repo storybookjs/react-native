@@ -36,7 +36,7 @@ First create a new file in `.storybook` called `yourTheme.js`.
 Next paste the code below and tweak the variables.
 
 ```ts
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 
 export default create({
   base: 'light',
@@ -91,7 +91,7 @@ The `storybook/theming` package is built using TypeScript, so this should help c
 Many theme variables are optional, the `base` property is NOT. This is a perfectly valid theme:
 
 ```ts
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 
 export default create({
   base: 'light',
