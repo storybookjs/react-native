@@ -4014,9 +4014,9 @@
     redux "^4.0.0"
 
 "@types/react-select@^3.0.4":
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-3.0.6.tgz#63e06aea611bcb264f4b8af069f11f987cbecb5e"
-  integrity sha512-vgEbVtwxtdgmaOPXb8HRlO3VgEwlhx8MVW/nB5yI/q3442x31XETy9P1UAoVRhSoYIEa4TuJGJCkKk7Ss3y5Eg==
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-3.0.8.tgz#b824a12d438dd493c30ffff49a805f797602a837"
+  integrity sha512-0763TXYZc8bTiHM+DUnWoy9Rg5mk6PxYWBrEe6Fkjgc0Kv0r1RqjZk9/BrK4wdM0RNjYjixlFPnUhOJb76sMGg==
   dependencies:
     "@types/react" "*"
     "@types/react-dom" "*"
