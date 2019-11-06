@@ -24,18 +24,12 @@ interface HandlePropResult extends TypeSystemHandlerResult {
   extractedJsDocTags?: ExtractedJsDocTags;
 }
 
-function createDefaultPropDef(
-  propName: string,
-  propType: {
-    name: string;
-  },
-  docgenInfo: DocgenInfo
-): PropDef {
+function createDefaultPropDef(name: string, type: string, docgenInfo: DocgenInfo): PropDef {
   const { description, required, defaultValue } = docgenInfo;
 
   return {
-    name: propName,
-    type: propType,
+    name,
+    type,
     required,
     description,
     defaultValue: isNil(defaultValue) ? null : defaultValue.value,
@@ -98,7 +92,7 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
     const { propDef, extractedJsDocTags } = result;
 
     // When available use the proper JSDoc tags to describe the function signature instead of displaying "func".
-    if (propDef.type.name === 'func') {
+    if (propDef.type === 'func') {
       if (!isNil(extractedJsDocTags)) {
         const hasParams = !isNil(extractedJsDocTags.params);
         const hasReturns = !isNil(extractedJsDocTags.returns);
@@ -127,9 +121,7 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
             funcParts.push(`=> ${extractedJsDocTags.returns.getTypeName()}`);
           }
 
-          propDef.type = {
-            name: funcParts.join(' '),
-          };
+          propDef.type = funcParts.join(' ');
         }
       }
     }

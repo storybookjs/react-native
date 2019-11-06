@@ -22,7 +22,7 @@ Object.keys(PropTypes).forEach(typeName => {
   propTypesMap.set(type.isRequired, typeName);
 });
 
-export const getPropDefs: PropDefGetter = (type, section) => {
+const getPropDefs: PropDefGetter = (type, section) => {
   let processedType = type;
 
   // eslint-disable-next-line react/forbid-foreign-prop-types
