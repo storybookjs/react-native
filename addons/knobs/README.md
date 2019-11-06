@@ -3,7 +3,7 @@
 Storybook Addon Knobs allow you to edit props dynamically using the Storybook UI.
 You can also use Knobs as a dynamic variable inside stories in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md).
 
 This is how Knobs look like:
 
@@ -29,30 +29,31 @@ Now, write your stories with knobs.
 
 ### With React
 ```js
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import React from "react";
+import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 
-const stories = storiesOf('Storybook Knobs', module);
-
+export default {
+  title: "Storybook Knobs",
+  decorators: [withKnobs]
+};
 // Add the `withKnobs` decorator to add knobs support to your stories.
 // You can also configure `withKnobs` as a global decorator.
-stories.addDecorator(withKnobs);
 
 // Knobs for React props
-stories.add('with a button', () => (
-  <button disabled={boolean('Disabled', false)} >
-    {text('Label', 'Hello Storybook')}
+export const withAButton = () => (
+  <button disabled={boolean("Disabled", false)}>
+    {text("Label", "Hello Storybook")}
   </button>
-));
+);
 
 // Knobs as dynamic variables.
-stories.add('as dynamic variables', () => {
-  const name = text('Name', 'Arunoda Susiripala');
-  const age = number('Age', 89);
+export const asDynamicVariables = () => {
+  const name = text("Name", "Arunoda Susiripala");
+  const age = number("Age", 89);
 
   const content = `I am ${name} and I'm ${age} years old.`;
-  return (<div>{content}</div>);
-});
+  return <div>{content}</div>;
+};
 ```
 
 ### With Vue.js
@@ -198,7 +199,7 @@ const groupId = 'GROUP-ID1';
 const value = number(label, defaultValue);
 ```
 
-For use with `groupId`, pass the default `options` as the third argument
+For use with `groupId`, pass the default `options` as the third argument.
 ```
 const value = number(label, defaultValue, {}, groupId);
 ```
