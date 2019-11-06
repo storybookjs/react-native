@@ -104,7 +104,7 @@ export const extractProps = (component: Component) => {
     data.forEach((item: Method | Property) => {
       const sectionItem: PropDef = {
         name: item.name,
-        type: { name: isMethod(item) ? displaySignature(item) : item.type },
+        type: isMethod(item) ? displaySignature(item) : item.type,
         required: isMethod(item) ? false : !item.optional,
         description: item.description,
         defaultValue: isMethod(item) ? '' : item.defaultValue,

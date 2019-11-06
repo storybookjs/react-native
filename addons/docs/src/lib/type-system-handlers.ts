@@ -41,13 +41,13 @@ function propMightContainsJsDoc(docgenInfo: DocgenInfo): boolean {
 }
 
 function handleProp(
-  propName: string,
-  propType: {
+  name: string,
+  type: {
     name: string;
   },
   docgenInfo: DocgenInfo
 ): HandlePropResult {
-  const propDef = createDefaultPropDef(propName, propType, docgenInfo);
+  const propDef = createDefaultPropDef(name, type.name, docgenInfo);
 
   if (propMightContainsJsDoc(docgenInfo)) {
     const { ignore, description, extractedTags } = parseJsDoc(docgenInfo);

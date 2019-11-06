@@ -5,23 +5,6 @@ import { transparentize } from 'polished';
 import { isNil } from 'lodash';
 import { PropDef, PropDefJsDocTags } from './PropDef';
 
-enum PropType {
-  SHAPE = 'shape',
-  UNION = 'union',
-  ARRAYOF = 'arrayOf',
-  OBJECTOF = 'objectOf',
-  ENUM = 'enum',
-  INSTANCEOF = 'instanceOf',
-}
-
-interface PrettyPropTypeProps {
-  type: any;
-}
-
-interface PrettyPropValProps {
-  value: any;
-}
-
 interface JsDocParamsAndReturnsProps {
   tags: PropDefJsDocTags;
 }
@@ -60,56 +43,6 @@ const JsDocDescCell = styled.td({
   ...JsDocCellStyle,
   width: 'auto !important',
 });
-
-const prettyPrint = (type: any): string => {
-  if (!type || !type.name) {
-    return '';
-  }
-  let fields = '';
-  switch (type.name) {
-    case PropType.SHAPE:
-      fields = Object.keys(type.value)
-        .map((key: string) => `${key}: ${prettyPrint(type.value[key])}`)
-        .join(', ');
-      return `{ ${fields} }`;
-    case PropType.UNION:
-      return Array.isArray(type.value)
-        ? `Union<${type.value.map(prettyPrint).join(' | ')}>`
-        : JSON.stringify(type.value);
-    case PropType.ARRAYOF: {
-      let shape = type.value.name;
-
-      if (shape === 'custom') {
-        if (type.value.raw) {
-          shape = type.value.raw.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
-        }
-      }
-
-      return `[ ${shape} ]`;
-    }
-    case PropType.OBJECTOF:
-      return `objectOf(${prettyPrint(type.value)})`;
-    case PropType.ENUM:
-      if (type.computed) {
-        return JSON.stringify(type);
-      }
-      return Array.isArray(type.value)
-        ? type.value.map((v: any) => v && v.value && v.value.toString()).join(' | ')
-        : JSON.stringify(type);
-    case PropType.INSTANCEOF:
-      return `instanceOf(${JSON.stringify(type.value)})`;
-    default:
-      return type.name;
-  }
-};
-
-export const PrettyPropType: FC<PrettyPropTypeProps> = ({ type }) => (
-  <span>{prettyPrint(type)}</span>
-);
-
-export const PrettyPropVal: FC<PrettyPropValProps> = ({ value }) => (
-  <span>{JSON.stringify(value)}</span>
-);
 
 const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
   if (isNil(tags)) {
@@ -160,10 +93,10 @@ export const PropRow: FC<PropRowProps> = ({
     <td>
       <Markdown>{description || ''}</Markdown>
       <StyledPropDef>
-        <PrettyPropType type={type} />
+        <span>{type}</span>
       </StyledPropDef>
       <JsDocParamsAndReturns tags={jsDocTags} />
     </td>
-    <td>{isNil(defaultValue) ? '-' : <PrettyPropVal value={defaultValue} />}</td>
+    <td>{isNil(defaultValue) ? '-' : <span>{JSON.stringify(defaultValue)}</span>}</td>
   </tr>
 );

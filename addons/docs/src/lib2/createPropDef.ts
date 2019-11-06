@@ -29,7 +29,7 @@ function createPropDef(
 ): PropDef {
   const propDef = createDefaultPropDef(name, type, docgenInfo);
 
-  if (jsDocParsingResult.hasJsDoc) {
+  if (jsDocParsingResult.propHasJsDoc) {
     const { description, extractedTags } = jsDocParsingResult;
 
     if (!isNil(description)) {
@@ -89,7 +89,7 @@ export const Factories: Record<TypeSystem, PropDefFactory> = {
   [TypeSystem.Unknown]: unknownFactory,
 };
 
-export const getTypeSystem = (docgenInfo: DocgenInfo): TypeSystem => {
+const getTypeSystem = (docgenInfo: DocgenInfo): TypeSystem => {
   if (!isNil(docgenInfo.type)) {
     return TypeSystem.JavaScript;
   }
@@ -105,6 +105,8 @@ export const getTypeSystem = (docgenInfo: DocgenInfo): TypeSystem => {
   return TypeSystem.Unknown;
 };
 
-export const getPropDefFactory = (typeSystem: TypeSystem): PropDefFactory => {
+export const getPropDefFactory = (docgenInfo: DocgenInfo): PropDefFactory => {
+  const typeSystem = getTypeSystem(docgenInfo);
+
   return Factories[typeSystem];
 };

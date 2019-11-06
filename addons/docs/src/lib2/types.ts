@@ -3,8 +3,6 @@ import { Component } from '../blocks/shared';
 
 export type PropsExtractor = (component: Component) => PropsTableProps | null;
 
-// export type PropDefGetter = (component: Component, section: string) => PropDef[];
-
 export interface DocgenInfo {
   type?: {
     name: string;

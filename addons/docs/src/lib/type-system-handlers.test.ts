@@ -40,7 +40,7 @@ describe('prop-types handler', () => {
     const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(propDef.name).toBe(DEFAULT_PROP_NAME);
-    expect(propDef.type.name).toBe(docgenInfo.type.name);
+    expect(propDef.type).toBe(docgenInfo.type.name);
     expect(propDef.description).toBe(docgenInfo.description);
     expect(propDef.required).toBe(docgenInfo.required);
     expect(propDef.defaultValue).toBe(docgenInfo.defaultValue.value);
@@ -168,7 +168,7 @@ describe('prop-types handler', () => {
       const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
       expect(propDef.description).toBeUndefined();
-      expect(propDef.type.name).toBe('func');
+      expect(propDef.type).toBe('func');
     });
 
     it('should have func as type when the prop have a description without JSDoc', () => {
@@ -179,7 +179,7 @@ describe('prop-types handler', () => {
 
       const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-      expect(propDef.type.name).toBe('func');
+      expect(propDef.type).toBe('func');
       expect(propDef.description).toBe('onClick description');
     });
 
@@ -203,7 +203,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('func');
+        expect(propDef.type).toBe('func');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -215,7 +215,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event)');
+        expect(propDef.type).toBe('(event)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -227,7 +227,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: SyntheticEvent)');
+        expect(propDef.type).toBe('(event: SyntheticEvent)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -240,7 +240,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: SyntheticEvent)');
+        expect(propDef.type).toBe('(event: SyntheticEvent)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -252,7 +252,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('func');
+        expect(propDef.type).toBe('func');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -264,7 +264,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('func');
+        expect(propDef.type).toBe('func');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -276,7 +276,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: ({a: number}))');
+        expect(propDef.type).toBe('(event: ({a: number}))');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -288,7 +288,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: ({a: number, b: string}))');
+        expect(propDef.type).toBe('(event: ({a: number, b: string}))');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -300,7 +300,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: ({a}))');
+        expect(propDef.type).toBe('(event: ({a}))');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -312,7 +312,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: (number|boolean))');
+        expect(propDef.type).toBe('(event: (number|boolean))');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -324,7 +324,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: number[])');
+        expect(propDef.type).toBe('(event: number[])');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -336,7 +336,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: [])');
+        expect(propDef.type).toBe('(event: [])');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -348,7 +348,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: number)');
+        expect(propDef.type).toBe('(event: number)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -360,7 +360,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: number)');
+        expect(propDef.type).toBe('(event: number)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -372,7 +372,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: number)');
+        expect(propDef.type).toBe('(event: number)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -384,7 +384,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: number)');
+        expect(propDef.type).toBe('(event: number)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -396,7 +396,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: any)');
+        expect(propDef.type).toBe('(event: any)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -408,7 +408,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event)');
+        expect(propDef.type).toBe('(event)');
         expect(propDef.description).toBe('onClick description\nis a\nmulti-lines\ndescription');
       });
 
@@ -421,7 +421,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event, customData)');
+        expect(propDef.type).toBe('(event, customData)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -434,7 +434,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: SyntheticEvent)');
+        expect(propDef.type).toBe('(event: SyntheticEvent)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -446,7 +446,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: SyntheticEvent)');
+        expect(propDef.type).toBe('(event: SyntheticEvent)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -479,7 +479,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: SyntheticEvent, customData: string)');
+        expect(propDef.type).toBe('(event: SyntheticEvent, customData: string)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -492,7 +492,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: SyntheticEvent, customData: string)');
+        expect(propDef.type).toBe('(event: SyntheticEvent, customData: string)');
         expect(propDef.description).toBe('onClick description');
       });
     });
@@ -505,7 +505,7 @@ describe('prop-types handler', () => {
 
       const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-      expect(propDef.type.name).toBe('(event)');
+      expect(propDef.type).toBe('(event)');
       expect(propDef.description).toBe('onClick description');
     });
 
@@ -517,7 +517,7 @@ describe('prop-types handler', () => {
 
       const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-      expect(propDef.type.name).toBe('(event)');
+      expect(propDef.type).toBe('(event)');
       expect(propDef.description).toBe('onClick description');
     });
 
@@ -530,7 +530,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('func');
+        expect(propDef.type).toBe('func');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -542,7 +542,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('() => string');
+        expect(propDef.type).toBe('() => string');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -554,7 +554,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('() => string');
+        expect(propDef.type).toBe('() => string');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -566,7 +566,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('func');
+        expect(propDef.type).toBe('func');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -578,7 +578,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event)');
+        expect(propDef.type).toBe('(event)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -591,7 +591,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: SyntheticEvent) => string');
+        expect(propDef.type).toBe('(event: SyntheticEvent) => string');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -604,7 +604,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('(event: SyntheticEvent, customData: string) => string');
+        expect(propDef.type).toBe('(event: SyntheticEvent, customData: string) => string');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -616,7 +616,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('() => integer');
+        expect(propDef.type).toBe('() => integer');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -628,7 +628,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('() => ({a: number, b: string})');
+        expect(propDef.type).toBe('() => ({a: number, b: string})');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -640,7 +640,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('() => integer[]');
+        expect(propDef.type).toBe('() => integer[]');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -652,7 +652,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('() => (number|boolean)');
+        expect(propDef.type).toBe('() => (number|boolean)');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -664,7 +664,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('() => any');
+        expect(propDef.type).toBe('() => any');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -676,7 +676,7 @@ describe('prop-types handler', () => {
 
         const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-        expect(propDef.type.name).toBe('() => void');
+        expect(propDef.type).toBe('() => void');
         expect(propDef.description).toBe('onClick description');
       });
 
@@ -720,7 +720,7 @@ describe('prop-types handler', () => {
 
       const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-      expect(propDef.type.name).toBe('(event: SyntheticEvent) => string');
+      expect(propDef.type).toBe('(event: SyntheticEvent) => string');
       expect(propDef.description).toBe('onClick description');
     });
 
@@ -733,7 +733,7 @@ describe('prop-types handler', () => {
 
       const { propDef } = propTypesHandler(DEFAULT_PROP_NAME, docgenInfo);
 
-      expect(propDef.type.name).toBe('(event: SyntheticEvent) => string');
+      expect(propDef.type).toBe('(event: SyntheticEvent) => string');
       expect(propDef.description).toBe('onClick description');
     });
   });
@@ -748,7 +748,7 @@ describe('ts handler', () => {
     const { propDef } = tsHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(propDef.name).toBe(DEFAULT_PROP_NAME);
-    expect(propDef.type.name).toBe(docgenInfo.tsType.name);
+    expect(propDef.type).toBe(docgenInfo.tsType.name);
     expect(propDef.description).toBe(docgenInfo.description);
     expect(propDef.required).toBe(docgenInfo.required);
     expect(propDef.defaultValue).toBe(docgenInfo.defaultValue.value);
@@ -836,7 +836,7 @@ describe('flow handler', () => {
     const { propDef } = flowHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(propDef.name).toBe(DEFAULT_PROP_NAME);
-    expect(propDef.type.name).toBe(docgenInfo.flowType.name);
+    expect(propDef.type).toBe(docgenInfo.flowType.name);
     expect(propDef.description).toBe(docgenInfo.description);
     expect(propDef.required).toBe(docgenInfo.required);
     expect(propDef.defaultValue).toBe(docgenInfo.defaultValue.value);
@@ -876,7 +876,7 @@ describe('unknown handler', () => {
     const { propDef } = unknownHandler(DEFAULT_PROP_NAME, docgenInfo);
 
     expect(propDef.name).toBe(DEFAULT_PROP_NAME);
-    expect(propDef.type.name).toBe('unknown');
+    expect(propDef.type).toBe('unknown');
     expect(propDef.description).toBe(docgenInfo.description);
     expect(propDef.required).toBe(docgenInfo.required);
     expect(propDef.defaultValue).toBe(docgenInfo.defaultValue.value);
