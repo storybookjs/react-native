@@ -50,7 +50,7 @@ export function getAngularCliConfig(dirToSearch: string) {
   const fname = path.join(dirToSearch, 'angular.json');
 
   if (!fs.existsSync(fname)) {
-    return null;
+    return undefined;
   }
 
   return JSON.parse(stripJsonComments(fs.readFileSync(fname, 'utf8')));
@@ -58,7 +58,7 @@ export function getAngularCliConfig(dirToSearch: string) {
 
 export function getLeadingAngularCliProject(ngCliConfig: any) {
   const { defaultProject } = ngCliConfig;
-  const { projects }: any = ngCliConfig;
+  const { projects } = ngCliConfig;
   if (!projects || !Object.keys(projects).length) {
     throw new Error('angular.json must have projects entry.');
   }
@@ -69,7 +69,12 @@ export function getLeadingAngularCliProject(ngCliConfig: any) {
 }
 
 export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
-  const project = getLeadingAngularCliProject(getAngularCliConfig(dirToSearch));
+  const angularCliConfig = getAngularCliConfig(dirToSearch);
+  if (!angularCliConfig) {
+    return undefined;
+  }
+
+  const project = getLeadingAngularCliProject(angularCliConfig);
   const { options: projectOptions } = project.architect.build;
 
   const normalizedAssets = normalizeAssetPatterns(
