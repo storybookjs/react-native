@@ -43,7 +43,6 @@ class ColorType extends React.Component {
   render() {
     const { knob } = this.props;
     const { displayColorPicker } = this.state;
-    const colorStyle = {};
     return (
       <View>
         <Touchable color={knob.value} onPress={this.openColorPicker} />
