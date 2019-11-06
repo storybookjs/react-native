@@ -4,7 +4,7 @@ import { Component } from '../blocks/shared';
 import { ExtractedJsDocTags, parseJsDoc } from './jsdocParser';
 import { DocgenInfo } from './types';
 import { getDocgenSection, isValidDocgenSection } from './docgenUtils';
-import { getPropDefFactory } from './createPropDef';
+import { getPropDefFactory, PropDefFactory } from './createPropDef';
 
 export interface ExtractedProp {
   propDef: PropDef;
@@ -21,28 +21,35 @@ export const extractPropsFromDocgen: ExtractProps = (component, section) => {
     return [];
   }
 
-  const extractedProps: ExtractedProp[] = [];
   const docgenPropsKeys = Object.keys(docgenSection);
   const createPropDef = getPropDefFactory(docgenSection[docgenPropsKeys[0]]);
 
-  docgenPropsKeys.forEach(propName => {
-    const docgenInfo = docgenSection[propName];
+  return docgenPropsKeys
+    .map(propName => {
+      const docgenInfo = docgenSection[propName];
 
-    if (!isNil(docgenInfo)) {
-      const jsDocParsingResult = parseJsDoc(docgenInfo);
-      const isIgnored = jsDocParsingResult.propHasJsDoc && jsDocParsingResult.ignore;
-
-      if (!isIgnored) {
-        const propDef = createPropDef(propName, docgenInfo, jsDocParsingResult);
-
-        extractedProps.push({
-          propDef,
-          jsDocTags: jsDocParsingResult.extractedTags,
-          docgenInfo,
-        });
-      }
-    }
-  });
-
-  return extractedProps;
+      return !isNil(docgenInfo) ? extractProp(propName, docgenInfo, createPropDef) : null;
+    })
+    .filter(x => x);
 };
+
+export function extractProp(
+  propName: string,
+  docgenInfo: DocgenInfo,
+  createPropDef: PropDefFactory
+): ExtractedProp {
+  const jsDocParsingResult = parseJsDoc(docgenInfo);
+  const isIgnored = jsDocParsingResult.propHasJsDoc && jsDocParsingResult.ignore;
+
+  if (!isIgnored) {
+    const propDef = createPropDef(propName, docgenInfo, jsDocParsingResult);
+
+    return {
+      propDef,
+      jsDocTags: jsDocParsingResult.extractedTags,
+      docgenInfo,
+    };
+  }
+
+  return null;
+}

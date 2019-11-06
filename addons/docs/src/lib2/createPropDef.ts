@@ -3,7 +3,7 @@ import { isNil } from 'lodash';
 import { TypeSystem, DocgenInfo } from './types';
 import { JsDocParsingResult } from './jsdocParser';
 
-type PropDefFactory = (
+export type PropDefFactory = (
   propName: string,
   docgenInfo: DocgenInfo,
   jsDocParsingResult?: JsDocParsingResult

@@ -52,11 +52,13 @@ function extractType(type: PropTypesType, extractedProp: ExtractedProp): string 
       case 'func': {
         const { jsDocTags } = extractedProp;
 
-        const hasParams = !isNil(jsDocTags.params);
-        const hasReturns = !isNil(jsDocTags.returns);
+        if (!isNil(jsDocTags)) {
+          const hasParams = !isNil(jsDocTags.params);
+          const hasReturns = !isNil(jsDocTags.returns);
 
-        if (hasParams || hasReturns) {
-          return generateSignature(extractedProp, hasParams, hasReturns);
+          if (hasParams || hasReturns) {
+            return generateSignature(extractedProp, hasParams, hasReturns);
+          }
         }
 
         return 'func';
@@ -97,6 +99,9 @@ function extractType(type: PropTypesType, extractedProp: ExtractedProp): string 
         return type.name;
     }
   } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(e);
+
     return 'unknown';
   }
 }
