@@ -1,7 +1,6 @@
-import { PropDef } from '@storybook/components';
 import { extractProp } from '../../lib2/docgenPropsExtractor';
 import { DocgenInfo } from '../../lib2/types';
-import { isPropTypes, enhancePropTypesProp } from './propTypesHandler';
+import { enhancePropTypesProp } from './propTypesHandler';
 import { javaScriptFactory } from '../../lib2/createPropDef';
 
 const PROP_NAME = 'propName';
