@@ -27,11 +27,8 @@ export const hasDocgenSection = (obj: any, section: string) =>
 export const extractPropsFromDocgen: PropDefGetter = (type, section) => {
   const props: Record<string, PropDef> = {};
 
-  const docgenInfoProps = type.__docgenInfo[section];
-  if (!docgenInfoProps) {
-    return [];
-  }
-
+  const docgenInfo = type.__docgenInfo;
+  const docgenInfoProps = (docgenInfo && docgenInfo[section]) || {};
   const propKeys = Object.keys(docgenInfoProps);
   if (propKeys.length === 0) {
     return [];
