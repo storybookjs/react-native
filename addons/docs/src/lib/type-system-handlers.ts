@@ -1,35 +1,7 @@
 import { PropDef } from '@storybook/components';
 import { isNil } from 'lodash';
-import { parseComment, JsDocAst } from './jsdoc-parser';
-
-export interface DocgenInfo {
-  type?: {
-    name: string;
-  };
-  flowType?: any;
-  tsType?: any;
-  required: boolean;
-  description?: string;
-  defaultValue?: {
-    value: string;
-  };
-}
-
-interface JsDocParamTag {
-  name: string;
-  type?: string;
-  description?: string;
-}
-
-interface JsDocReturnsTag {
-  type?: string;
-  description?: string;
-}
-
-interface ExtractedJsDocTags {
-  params: JsDocParamTag[];
-  returns?: JsDocReturnsTag;
-}
+import { parseJsDoc, ExtractedJsDocTags, ExtractedJsDocParamTag } from './jsdoc-parser';
+import { DocgenInfo } from './DocgenInfo';
 
 export const TypeSystem = {
   Flow: 'Flow',
@@ -38,52 +10,112 @@ export const TypeSystem = {
   Unknown: 'Unknown',
 };
 
-export type TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => PropDef;
+export interface TypeSystemHandlerResult {
+  propDef?: PropDef;
+  ignore: boolean;
+}
 
-function createDefaultPropDef(propName: string, docgenInfo: DocgenInfo): PropDef {
+export type TypeSystemHandler = (
+  propName: string,
+  docgenInfo: DocgenInfo
+) => TypeSystemHandlerResult;
+
+interface HandlePropResult extends TypeSystemHandlerResult {
+  extractedJsDocTags?: ExtractedJsDocTags;
+}
+
+function createDefaultPropDef(
+  propName: string,
+  propType: {
+    name: string;
+  },
+  docgenInfo: DocgenInfo
+): PropDef {
   const { description, required, defaultValue } = docgenInfo;
 
   return {
     name: propName,
-    type: null,
+    type: propType,
     required,
     description,
     defaultValue: isNil(defaultValue) ? null : defaultValue.value,
   };
 }
 
+function propMightContainsJsDoc(docgenInfo: DocgenInfo): boolean {
+  return !isNil(docgenInfo.description) && docgenInfo.description.includes('@');
+}
+
+function handleProp(
+  propName: string,
+  propType: {
+    name: string;
+  },
+  docgenInfo: DocgenInfo
+): HandlePropResult {
+  const propDef = createDefaultPropDef(propName, propType, docgenInfo);
+
+  if (propMightContainsJsDoc(docgenInfo)) {
+    const { ignore, description, extractedTags } = parseJsDoc(docgenInfo);
+
+    if (ignore) {
+      return {
+        ignore: true,
+      };
+    }
+
+    if (!isNil(description)) {
+      propDef.description = description;
+    }
+
+    const hasParams = !isNil(extractedTags.params);
+    const hasReturns = !isNil(extractedTags.returns) && !isNil(extractedTags.returns.type);
+
+    if (hasParams || hasReturns) {
+      propDef.jsDocTags = {
+        params: hasParams && extractedTags.params.map(x => x.raw),
+        returns: hasReturns && extractedTags.returns.raw,
+      };
+
+      return {
+        propDef,
+        extractedJsDocTags: extractedTags,
+        ignore: false,
+      };
+    }
+  }
+
+  return {
+    propDef,
+    ignore: false,
+  };
+}
+
 export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
-  const propDef = createDefaultPropDef(propName, docgenInfo);
-  propDef.type = docgenInfo.type;
+  const result = handleProp(propName, docgenInfo.type, docgenInfo);
 
-  if (!isNil(propDef.description)) {
-    if (propDef.description.includes('@')) {
-      const jsDocAst = parseComment(propDef.description);
+  if (!result.ignore) {
+    const { propDef, extractedJsDocTags } = result;
 
-      // Always use the parsed description to ensure JSDoc is removed from the description.
-      if (!isNil(jsDocAst.description)) {
-        propDef.description = jsDocAst.description;
-      }
+    // When available use the proper JSDoc tags to describe the function signature instead of displaying "func".
+    if (propDef.type.name === 'func') {
+      if (!isNil(extractedJsDocTags)) {
+        const hasParams = !isNil(extractedJsDocTags.params);
+        const hasReturns = !isNil(extractedJsDocTags.returns);
 
-      if (propDef.type.name === 'func') {
-        const tags = extractJsDocTags(jsDocAst);
-        const hasParams = tags.params.length > 0;
-        const hasReturnType = !isNil(tags.returns) && !isNil(tags.returns.type);
-
-        if (hasParams || hasReturnType) {
+        if (hasParams || hasReturns) {
           const funcParts = [];
 
           if (hasParams) {
-            const funcParams = tags.params.map((x: any) => {
-              if (x.name && x.type) {
-                return `${x.name}: ${x.type}`;
+            const funcParams = extractedJsDocTags.params.map((x: ExtractedJsDocParamTag) => {
+              const prettyName = x.getPrettyName();
+              const typeName = x.getTypeName();
+
+              if (!isNil(typeName)) {
+                return `${prettyName}: ${typeName}`;
               }
 
-              if (x.name) {
-                return x.name;
-              }
-
-              return x.type;
+              return prettyName;
             });
 
             funcParts.push(`(${funcParams.join(', ')})`);
@@ -91,8 +123,8 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
             funcParts.push('()');
           }
 
-          if (hasReturnType) {
-            funcParts.push(`=> ${tags.returns.type}`);
+          if (hasReturns) {
+            funcParts.push(`=> ${extractedJsDocTags.returns.getTypeName()}`);
           }
 
           propDef.type = {
@@ -103,132 +135,19 @@ export const propTypesHandler: TypeSystemHandler = (propName: string, docgenInfo
     }
   }
 
-  return propDef;
+  return result;
 };
 
-function extractJsDocTags(ast: JsDocAst): Record<string, any> {
-  const tags: ExtractedJsDocTags = {
-    params: [],
-    returns: null,
-  };
-
-  ast.tags.forEach(tag => {
-    // arg & argument are aliases for param.
-    if (tag.title === 'param' || tag.title === 'arg' || tag.title === 'argument') {
-      // When the @param doesn't have a name but have a type and a description, "null-null" is returned.
-      if (tag.name !== 'null-null') {
-        let paramName = tag.name;
-
-        if (paramName.includes('null')) {
-          // There is a few cases in which the returned param name contains "null".
-          // - @param {SyntheticEvent} event- Original SyntheticEvent
-          // - @param {SyntheticEvent} event.\n@returns {string}
-          paramName = paramName.replace('-null', '').replace('.null', '');
-        }
-
-        let paramType;
-
-        if (!isNil(tag.type)) {
-          const extractedTypeName = extractJsDocTypeName(tag.type);
-
-          if (!isNil(extractedTypeName)) {
-            paramType = extractedTypeName;
-          }
-        }
-
-        tags.params.push({
-          name: paramName,
-          type: paramType,
-          description: tag.description,
-        });
-      }
-    } else if (tag.title === 'returns') {
-      if (!isNil(tag.type)) {
-        tags.returns = {
-          type: extractJsDocTypeName(tag.type),
-          description: tag.description,
-        };
-      }
-    }
-  });
-
-  return tags;
-}
-
-function extractJsDocTypeName(type: any): string {
-  if (type.type === 'NameExpression') {
-    return type.name;
-  }
-
-  if (type.type === 'RecordType') {
-    const recordFields = type.fields.map((field: any) => {
-      if (!isNil(field.value)) {
-        const valueTypeName = extractJsDocTypeName(field.value);
-
-        return `${field.key}: ${valueTypeName}`;
-      }
-
-      return field.key;
-    });
-
-    return `({${recordFields.join(', ')}})`;
-  }
-
-  if (type.type === 'UnionType') {
-    const unionElements = type.elements.map(extractJsDocTypeName);
-
-    return `(${unionElements.join('|')})`;
-  }
-
-  // Only support untyped array: []. Might add more support later if required.
-  if (type.type === 'ArrayType') {
-    return '[]';
-  }
-
-  if (type.type === 'TypeApplication') {
-    if (!isNil(type.expression)) {
-      if (type.expression.name === 'Array') {
-        const arrayType = extractJsDocTypeName(type.applications[0]);
-
-        return `${arrayType}[]`;
-      }
-    }
-  }
-
-  if (
-    type.type === 'NullableType' ||
-    type.type === 'NonNullableType' ||
-    type.type === 'OptionalType'
-  ) {
-    return extractJsDocTypeName(type.expression);
-  }
-
-  if (type.type === 'AllLiteral') {
-    return 'any';
-  }
-
-  return null;
-}
-
 export const tsHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
-  const propDef = createDefaultPropDef(propName, docgenInfo);
-  propDef.type = docgenInfo.tsType;
-
-  return propDef;
+  return handleProp(propName, docgenInfo.tsType, docgenInfo);
 };
 
 export const flowHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
-  const propDef = createDefaultPropDef(propName, docgenInfo);
-  propDef.type = docgenInfo.flowType;
-
-  return propDef;
+  return handleProp(propName, docgenInfo.flowType, docgenInfo);
 };
 
 export const unknownHandler: TypeSystemHandler = (propName: string, docgenInfo: DocgenInfo) => {
-  const propDef = createDefaultPropDef(propName, docgenInfo);
-  propDef.type = { name: 'unknown' };
-
-  return propDef;
+  return handleProp(propName, { name: 'unknown' }, docgenInfo);
 };
 
 export const TypeSystemHandlers: Record<string, TypeSystemHandler> = {
