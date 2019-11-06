@@ -76,8 +76,17 @@ const prettyPrint = (type: any): string => {
       return Array.isArray(type.value)
         ? `Union<${type.value.map(prettyPrint).join(' | ')}>`
         : JSON.stringify(type.value);
-    case PropType.ARRAYOF:
-      return `[ ${prettyPrint(type.value)} ]`;
+    case PropType.ARRAYOF: {
+      let shape = type.value.name;
+
+      if (shape === 'custom') {
+        if (type.value.raw) {
+          shape = type.value.raw.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
+        }
+      }
+
+      return `[ ${shape} ]`;
+    }
     case PropType.OBJECTOF:
       return `objectOf(${prettyPrint(type.value)})`;
     case PropType.ENUM:

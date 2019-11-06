@@ -10,9 +10,7 @@ export interface PropDefJsDocTag {
 
 export interface PropDef {
   name: string;
-  type: {
-    name: string;
-  };
+  type: any;
   required: boolean;
   description?: string;
   defaultValue?: string;

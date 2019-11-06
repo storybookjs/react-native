@@ -42,7 +42,7 @@ function parse(content: string): Annotation {
     });
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.log(e);
+    console.error(e);
 
     throw new Error('Cannot parse JSDoc tags.');
   }
