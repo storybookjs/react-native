@@ -72,7 +72,7 @@ class ObjectType extends React.Component {
     return (
       <Input
         id={knob.name}
-        style={{ ...extraStyle }}
+        style={extraStyle}
         value={jsonString}
         onChangeText={this.handleChange}
         multiline
