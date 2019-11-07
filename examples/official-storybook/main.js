@@ -1,15 +1,11 @@
 module.exports = {
   presets: ['@storybook/addon-docs/react/preset'],
-  // TODO: would be nice if this could be just an array
-  stories: existing => [
-    ...existing,
+  stories: [
     '../../lib/ui/src/**/*.stories./(js|tsx|mdx)',
     '../../lib/components/src/**/*.stories.(js|tsx|mdx)',
     './stories/*.stories.(js|tsx|mdx)',
   ],
-  // TODO: would be nice if this could be just an array
-  addons: existing => [
-    ...existing,
+  addons: [
     '@storybook/addon-storysource/register',
     '@storybook/addon-design-assets/register',
     '@storybook/addon-docs/register',
