@@ -8,7 +8,7 @@ import { render } from 'lit-html';
 function mapData(data) {
   return data.map(item => ({
     name: item.name,
-    type: { name: item.type },
+    type: item.type,
     required: '',
     description: item.description,
     defaultValue: item.default,
