@@ -3,9 +3,9 @@ module.exports = {
   // TODO: would be nice if this could be just an array
   stories: existing => [
     ...existing,
-    { path: '../../lib/ui/src', recursive: true, match: /\.stories\.(js|tsx?|mdx)$/ },
-    { path: '../../lib/components/src', recursive: true, match: /\.stories\.(js|tsx?|mdx)$/ },
-    { path: './stories', recursive: true, match: /\.stories\.(js|tsx?|mdx)$/ },
+    '../../lib/ui/src/**/*.stories./(js|tsx|mdx)',
+    '../../lib/components/src/**/*.stories.(js|tsx|mdx)',
+    './stories/*.stories.(js|tsx|mdx)',
   ],
   // TODO: would be nice if this could be just an array
   addons: existing => [
