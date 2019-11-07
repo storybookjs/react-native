@@ -1,5 +1,13 @@
 module.exports = {
   presets: ['@storybook/addon-docs/react/preset'],
+  // TODO: would be nice if this could be just an array
+  stories: existing => [
+    ...existing,
+    { path: '../../lib/ui/src', recursive: true, match: /\.stories\.(js|tsx?|mdx)$/ },
+    { path: '../../lib/components/src', recursive: true, match: /\.stories\.(js|tsx?|mdx)$/ },
+    { path: './stories', recursive: true, match: /\.stories\.(js|tsx?|mdx)$/ },
+  ],
+  // TODO: would be nice if this could be just an array
   addons: existing => [
     ...existing,
     '@storybook/addon-storysource/register',

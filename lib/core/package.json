@@ -95,7 +95,8 @@
     "util-deprecate": "^1.0.2",
     "webpack": "^4.33.0",
     "webpack-dev-middleware": "^3.7.0",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-virtual-modules": "^0.2.0"
   },
   "devDependencies": {
     "mock-fs": "^4.8.0"

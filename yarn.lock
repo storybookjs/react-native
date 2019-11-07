@@ -31712,6 +31712,13 @@ webpack-virtual-modules@^0.1.10:
   dependencies:
     debug "^3.0.0"
 
+webpack-virtual-modules@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/webpack-virtual-modules/-/webpack-virtual-modules-0.2.0.tgz#dd13e089898ee14a77717d37a9848b40a9b1068b"
+  integrity sha512-Leo4r6Sjj0HkoeP9vtQzm1abUm6UJc6gK1KrqNakIer+03mCyFVivGOFy0I0NFpRrv+kQm3UKstjWg0Fe+JqUQ==
+  dependencies:
+    debug "^3.0.0"
+
 webpack@4.24.0:
   version "4.24.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.24.0.tgz#d9822c91eeb595f7351aa5dd785a1952f9c4340a"
