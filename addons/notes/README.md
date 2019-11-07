@@ -100,7 +100,7 @@ When using Markdown, you can also embed gifs from Giphy into your Markdown. Curr
 ```md
 # Title
 
-<Giphy gif='cheese' />
+<Giphy query='cheese' />
 ```
 
 ## Multiple Notes Sections
