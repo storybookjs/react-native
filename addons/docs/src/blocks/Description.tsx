@@ -55,7 +55,7 @@ ${extractComponentDescription(target) || ''}
     case DescriptionType.DOCGEN:
     case DescriptionType.AUTO:
     default:
-      return { markdown: extractComponentDescription(target) };
+      return { markdown: extractComponentDescription(target, parameters) };
   }
 };
 

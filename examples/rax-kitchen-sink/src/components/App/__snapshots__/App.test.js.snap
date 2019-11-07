@@ -2,14 +2,8 @@
 
 exports[`App render correctly 1`] = `
 Object {
-  "attributes": Object {
-    "class": "rax-view",
-  },
   "children": Array [
     Object {
-      "attributes": Object {
-        "class": "rax-view",
-      },
       "children": Array [
         Object {
           "children": Array [
@@ -28,6 +22,14 @@ Object {
           "tagName": "SPAN",
         },
       ],
+      "style": Object {
+        "alignContent": "flex-start",
+        "border": "0 solid black",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+      },
       "tagName": "DIV",
     },
     Object {
@@ -47,6 +49,14 @@ Object {
       "tagName": "SPAN",
     },
   ],
+  "style": Object {
+    "alignContent": "flex-start",
+    "border": "0 solid black",
+    "boxSizing": "border-box",
+    "display": "flex",
+    "flexDirection": "column",
+    "flexShrink": 0,
+  },
   "tagName": "DIV",
 }
 `;

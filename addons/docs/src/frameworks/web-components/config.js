@@ -2,6 +2,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { addParameters } from '@storybook/client-api';
 import { getCustomElements, isValidComponent, isValidMetaData } from '@storybook/web-components';
+import React from 'react';
+import { render } from 'lit-html';
 
 function mapData(data) {
   return data.map(item => ({
@@ -26,6 +28,9 @@ addParameters({
           tag => tag.name.toUpperCase() === tagName.toUpperCase()
         );
         const sections = {};
+        if (metaData.attributes) {
+          sections.attributes = mapData(metaData.attributes);
+        }
         if (metaData.properties) {
           sections.props = mapData(metaData.properties);
         }
@@ -53,6 +58,25 @@ addParameters({
         }
       }
       return false;
+    },
+    inlineStories: true,
+    prepareForInline: storyFn => {
+      class Story extends React.Component {
+        constructor(props) {
+          super(props);
+          this.wrapperRef = React.createRef();
+        }
+
+        componentDidMount() {
+          render(storyFn(), this.wrapperRef.current);
+        }
+
+        render() {
+          return React.createElement('div', { ref: this.wrapperRef });
+        }
+      }
+
+      return React.createElement(Story);
     },
   },
 });

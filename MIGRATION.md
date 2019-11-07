@@ -3,7 +3,8 @@
 - [Migration](#migration)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
     - [Create React App preset](#create-react-app-preset)
-    - [Description docs block](#description-docs-block)
+    - [Description doc block](#description-doc-block)
+    - [React Native Async Storage](#react-native-async-storage)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)
@@ -85,6 +86,27 @@ In 5.3 we've changed `addon-docs`'s `Description` doc block's default behavior. 
 The old behavior of `<Description of={Component} />` was to concatenate the info parameter or notes parameter, if available, with the docgen information loaded from source comments. If you depend on the old behavior, it's still available with `<Description of={Component} type='legacy-5.2' />`. This description type will be removed in Storybook 6.0.
 
 The new default behavior is to use the framework-specific description extractor, which for React/Vue is still docgen, but may come from other places (e.g. a JSON file) for other frameworks.
+
+The description doc block on DocsPage has also been updated. To see how to configure it in 5.3, please see [the updated recipe](https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#migrating-from-notesinfo-addons)
+
+### React Native Async Storage
+
+Starting from version React Native 0.59, Async Storage is deprecated in React Native itself. The new @react-native-community/async-storage module requires native installation, and we don't want to have it as a dependency for React Native Storybook.
+
+To avoid that now you have to manually pass asyncStorage to React Native Storybook with asyncStorage prop. To notify users we are displaying a warning about it.
+
+Solution:
+
+- Use `require('@react-native-community/async-storage')` for React Native v0.59 and above.
+- Use `require('react-native').AsyncStorage` for React Native v0.58 or below.
+- Use `null` to disable Async Storage completely.
+
+```javascript
+getStorybookUI({
+  ...
+  asyncStorage: require('@react-native-community/async-storage') || require('react-native').AsyncStorage || null
+});
+```
 
 ## From version 5.1.x to 5.2.x
 
@@ -334,7 +356,7 @@ addDecorator(
 And here's its new counterpart:
 
 ```js
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 addParameters({
   options: {
     theme: create({

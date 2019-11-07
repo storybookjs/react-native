@@ -40,6 +40,8 @@ export class FromComponent {
 }
 ~~~
 
+---
+
 ### html with special formatting
 ~~~html
 <foo-outer property-a="value"

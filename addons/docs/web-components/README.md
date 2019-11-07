@@ -61,3 +61,25 @@ It basically looks like this:
 ```
 
 For a full example see the [web-components-kitchen-sink/custom-elements.json](../../../examples/web-components-kitchen-sink/custom-elements.json).
+
+## Stories not inline
+
+By default stories are rendered inline.
+For web components that is usually fine as they are style encapsulated via shadow dom.
+However when you have a style tag in you template it might be best to show them in an iframe.
+
+To always use iframes you can set
+
+```js
+addParameters({
+  docs: {
+    inlineStories: false,
+  },
+});
+```
+
+or add it to individual stories.
+
+```js
+<Story inline={false} />
+```
