@@ -5,7 +5,7 @@ You can also use Knobs as a dynamic variable inside stories in [Storybook](https
 
 [Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md).
 
-This is how Knobs looks like:
+This is what Knobs looks like:
 
 [![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://storybooks-official.netlify.com/?knob-Dollars=12.5&knob-Name=Storyteller&knob-Years%20in%20NY=9&knob-background=%23ffff00&knob-Age=70&knob-Items%5B0%5D=Laptop&knob-Items%5B1%5D=Book&knob-Items%5B2%5D=Whiskey&knob-Other%20Fruit=lime&knob-Birthday=1484870400000&knob-Nice=true&knob-Styles=%7B%22border%22%3A%223px%20solid%20%23ff00ff%22%2C%22padding%22%3A%2210px%22%7D&knob-Fruit=apple&selectedKind=Addons%7CKnobs.withKnobs&selectedStory=tweaks%20static%20values&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybooks%2Fstorybook-addon-knobs)
 
@@ -378,7 +378,7 @@ const value = files(label, accept, defaultValue, groupId);
 
 ### date
 
-It Allows you to get date (and time) from the user.
+Allows you to get date (and time) from the user.
 
 ```js
 import { date } from '@storybook/addon-knobs';
