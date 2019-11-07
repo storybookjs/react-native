@@ -63,48 +63,90 @@ function extractType(type: PropTypesType, extractedProp: ExtractedProp): string 
 
         return 'func';
       }
-      case 'shape': {
-        const fields = Object.keys(type.value)
-          .map((key: string) => `${key}: ${extractType(type.value[key], extractedProp)}`)
-          .join(', ');
-        return `{ ${fields} }`;
-      }
-      case 'union':
-        return Array.isArray(type.value)
-          ? `Union<${type.value.map(v => extractType(v, extractedProp)).join(' | ')}>`
-          : JSON.stringify(type.value);
-      case 'arrayOf': {
-        let shape = type.value.name;
-
-        if (shape === 'custom') {
-          if (type.value.raw) {
-            shape = type.value.raw.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
-          }
-        }
-
-        return `[ ${shape} ]`;
-      }
-      case 'objectOf':
-        return `objectOf(${extractType(type.value, extractedProp)})`;
-      case 'enum':
-        if (type.computed) {
-          return JSON.stringify(type);
-        }
-        return Array.isArray(type.value)
-          ? type.value.map((v: any) => v && v.value && v.value.toString()).join(' | ')
-          : JSON.stringify(type);
+      case 'custom':
+        // TODO: raw might be a long stringify function, what do we do?
+        // If it's a name function it's fine,
+        // If it's something that contains "function" or "(" or "{" or "\n" or longuer than X characters we want to show "custom".
+        // Could use something to generate an AST from a string. (Also do this for defaultValue);
+        return isNil(type.raw) ? type.name : type.raw;
       case 'instanceOf':
-        return `instanceOf(${JSON.stringify(type.value)})`;
+        return type.value;
+      case 'enum':
+        if (Array.isArray(type.value)) {
+          return type.value.map((x: any) => x.value).join(' | ');
+        }
+
+        return type.value;
       default:
         return type.name;
     }
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error(e);
-
-    return 'unknown';
   }
+
+  return 'unknown';
 }
+
+// function extractType(type: PropTypesType, extractedProp: ExtractedProp): string {
+//   try {
+//     switch (type.name) {
+//       case 'func': {
+//         const { jsDocTags } = extractedProp;
+
+//         if (!isNil(jsDocTags)) {
+//           const hasParams = !isNil(jsDocTags.params);
+//           const hasReturns = !isNil(jsDocTags.returns);
+
+//           if (hasParams || hasReturns) {
+//             return generateSignature(extractedProp, hasParams, hasReturns);
+//           }
+//         }
+
+//         return 'func';
+//       }
+//       case 'shape': {
+//         const fields = Object.keys(type.value)
+//           .map((key: string) => `${key}: ${extractType(type.value[key], extractedProp)}`)
+//           .join(', ');
+//         return `{ ${fields} }`;
+//       }
+//       case 'union':
+//         return Array.isArray(type.value)
+//           ? `Union<${type.value.map(v => extractType(v, extractedProp)).join(' | ')}>`
+//           : JSON.stringify(type.value);
+//       case 'arrayOf': {
+//         let shape = type.value.name;
+
+//         if (shape === 'custom') {
+//           if (type.value.raw) {
+//             shape = type.value.raw.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
+//           }
+//         }
+
+//         return `[ ${shape} ]`;
+//       }
+//       case 'objectOf':
+//         return `objectOf(${extractType(type.value, extractedProp)})`;
+//       case 'enum':
+//         if (type.computed) {
+//           return JSON.stringify(type);
+//         }
+//         return Array.isArray(type.value)
+//           ? type.value.map((v: any) => v && v.value && v.value.toString()).join(' | ')
+//           : JSON.stringify(type);
+//       case 'instanceOf':
+//         return `instanceOf(${JSON.stringify(type.value)})`;
+//       default:
+//         return type.name;
+//     }
+//   } catch (e) {
+//     // eslint-disable-next-line no-console
+//     console.error(e);
+
+//     return 'unknown';
+//   }
+// }
 
 export function enhancePropTypesProp(extractedProp: ExtractedProp): PropDef {
   const { propDef, docgenInfo } = extractedProp;
