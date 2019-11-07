@@ -38,7 +38,7 @@ export function extractProp(
   docgenInfo: DocgenInfo,
   createPropDef: PropDefFactory
 ): ExtractedProp {
-  const jsDocParsingResult = parseJsDoc(docgenInfo);
+  const jsDocParsingResult = parseJsDoc(docgenInfo.description);
   const isIgnored = jsDocParsingResult.propHasJsDoc && jsDocParsingResult.ignore;
 
   if (!isIgnored) {

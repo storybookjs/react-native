@@ -1,8 +1,7 @@
 import doctrine, { Annotation } from 'doctrine';
 import { isNil } from 'lodash';
-import { DocgenInfo } from './types';
 
-export type ParseJsDoc = (docgenInfo: DocgenInfo) => JsDocParsingResult;
+export type ParseJsDoc = (value?: string) => JsDocParsingResult;
 
 export interface JsDocParsingResult {
   propHasJsDoc: boolean;
@@ -13,17 +12,15 @@ export interface JsDocParsingResult {
 
 export interface ExtractedJsDocParamTag {
   name: string;
-  type?: doctrine.Type;
+  type?: any;
   description?: string;
-  raw: doctrine.Tag;
   getPrettyName: () => string;
   getTypeName: () => string;
 }
 
 export interface ExtractedJsDocReturnsTag {
-  type?: doctrine.Type;
+  type?: any;
   description?: string;
-  raw: doctrine.Tag;
   getTypeName: () => string;
 }
 
@@ -33,8 +30,8 @@ export interface ExtractedJsDocTags {
   ignore: boolean;
 }
 
-function propMightContainsJsDoc(docgenInfo: DocgenInfo): boolean {
-  return !isNil(docgenInfo.description) && docgenInfo.description.includes('@');
+function containsJsDoc(value?: string): boolean {
+  return !isNil(value) && value.includes('@');
 }
 
 function parse(content: string): Annotation {
@@ -55,15 +52,15 @@ function parse(content: string): Annotation {
   return ast;
 }
 
-export const parseJsDoc: ParseJsDoc = (docgenInfo: DocgenInfo) => {
-  if (!propMightContainsJsDoc(docgenInfo)) {
+export const parseJsDoc: ParseJsDoc = (value?: string) => {
+  if (!containsJsDoc(value)) {
     return {
       propHasJsDoc: false,
       ignore: false,
     };
   }
 
-  const jsDocAst = parse(docgenInfo.description);
+  const jsDocAst = parse(value);
   const extractedTags = extractJsDocTags(jsDocAst);
 
   if (extractedTags.ignore) {
@@ -107,7 +104,6 @@ function extractJsDocTags(ast: doctrine.Annotation): ExtractedJsDocTags {
           name: tag.name,
           type: tag.type,
           description: tag.description,
-          raw: tag,
           getPrettyName: () => {
             if (paramName.includes('null')) {
               // There is a few cases in which the returned param name contains "null".
@@ -128,7 +124,6 @@ function extractJsDocTags(ast: doctrine.Annotation): ExtractedJsDocTags {
         extractedTags.returns = {
           type: tag.type,
           description: tag.description,
-          raw: tag,
           getTypeName: () => {
             return extractJsDocTypeName(tag.type);
           },
@@ -144,8 +139,7 @@ function extractJsDocTags(ast: doctrine.Annotation): ExtractedJsDocTags {
   return extractedTags;
 }
 
-// FIXME: type argument should be doctrine.Type instead of any.
-function extractJsDocTypeName(type: any): string {
+function extractJsDocTypeName(type: doctrine.Type): string {
   if (type.type === 'NameExpression') {
     return type.name;
   }
@@ -177,7 +171,7 @@ function extractJsDocTypeName(type: any): string {
 
   if (type.type === 'TypeApplication') {
     if (!isNil(type.expression)) {
-      if (type.expression.name === 'Array') {
+      if ((type.expression as doctrine.type.NameExpression).name === 'Array') {
         const arrayType = extractJsDocTypeName(type.applications[0]);
 
         return `${arrayType}[]`;

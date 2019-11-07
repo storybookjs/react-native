@@ -41,8 +41,10 @@ function createPropDef(
 
     if (hasParams || hasReturns) {
       propDef.jsDocTags = {
-        params: hasParams && extractedTags.params.map(x => x.raw),
-        returns: hasReturns && extractedTags.returns.raw,
+        params:
+          hasParams &&
+          extractedTags.params.map(x => ({ name: x.getPrettyName(), description: x.description })),
+        returns: hasReturns && { description: extractedTags.returns.description },
       };
     }
   }

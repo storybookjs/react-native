@@ -3,10 +3,10 @@ import Markdown from 'markdown-to-jsx';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 import { isNil } from 'lodash';
-import { PropDef, PropDefJsDocTags } from './PropDef';
+import { PropDef, JsDocTags } from './PropDef';
 
 interface JsDocParamsAndReturnsProps {
-  tags: PropDefJsDocTags;
+  tags: JsDocTags;
 }
 
 export interface PropRowProps {
@@ -61,14 +61,16 @@ const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
     <table>
       <JsDocParamsAndReturnsTBody>
         {hasDisplayableParams &&
-          params.map(x => (
-            <tr key={x.name}>
-              <JsDocNameCell>
-                <code>{x.name}</code>
-              </JsDocNameCell>
-              <JsDocDescCell>{x.description}</JsDocDescCell>
-            </tr>
-          ))}
+          params.map(x => {
+            return (
+              <tr key={x.name}>
+                <JsDocNameCell>
+                  <code>{x.name}</code>
+                </JsDocNameCell>
+                <JsDocDescCell>{x.description}</JsDocDescCell>
+              </tr>
+            );
+          })}
         {hasDisplayableReturns && (
           <tr key="returns">
             <JsDocNameCell>
