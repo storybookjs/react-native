@@ -14,7 +14,8 @@ export interface JsDocTags {
 
 export interface PropDef {
   name: string;
-  type: string;
+  // TODO: Change for a React component type.
+  type: any;
   required: boolean;
   description?: string;
   defaultValue?: string;

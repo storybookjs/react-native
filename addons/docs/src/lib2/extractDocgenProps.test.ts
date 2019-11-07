@@ -1,11 +1,11 @@
-import { extractProp } from './docgenPropsExtractor';
+import { extractProp } from './extractDocgenProps';
 import {
   javaScriptFactory,
   tsFactory,
   flowFactory,
   unknownFactory,
-  PropDefFactory,
-} from './createPropDef';
+  DocgenPropDefFactory,
+} from './createDocgenPropDef';
 import { DocgenInfo } from './types';
 
 const PROP_NAME = 'propName';
@@ -25,7 +25,7 @@ function createDocgenInfo(overrides: Record<string, any> = {}): DocgenInfo {
 interface TypeSystemDef {
   name: string;
   typeProperty?: string;
-  propFactory: PropDefFactory;
+  propFactory: DocgenPropDefFactory;
 }
 
 const TypeSystems: TypeSystemDef[] = [

@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import { isForwardRef, isMemo } from 'react-is';
 import { PropDef } from '@storybook/components';
 import { hasDocgen } from '../../lib2/docgenUtils';
-import { extractPropsFromDocgen } from '../../lib2/docgenPropsExtractor';
-import { PropsExtractor } from '../../lib2/types';
+import { extractPropsFromDocgen } from '../../lib2/extractDocgenProps';
+import { PropsExtractor, TypeSystem } from '../../lib2/types';
 import { Component } from '../../blocks/shared';
-import { isPropTypes, enhancePropTypesProp } from './propTypesHandler';
+import { enhancePropTypesProp } from './propTypesHandler';
 
 export interface PropDefMap {
   [p: string]: PropDef;
@@ -39,8 +39,8 @@ function getPropDefs(component: Component, section: string): PropDef[] {
     return [];
   }
 
-  if (isPropTypes(extractedProps[0].docgenInfo)) {
-    extractedProps.map(enhancePropTypesProp);
+  if (extractedProps[0].typeSystem === TypeSystem.JavaScript) {
+    return extractedProps.map(enhancePropTypesProp);
   }
 
   return extractedProps.map(x => x.propDef);

@@ -7,10 +7,10 @@ export interface JsDocParsingResult {
   propHasJsDoc: boolean;
   ignore: boolean;
   description?: string;
-  extractedTags?: ExtractedJsDocTags;
+  extractedTags?: ExtractedJsDoc;
 }
 
-export interface ExtractedJsDocParamTag {
+export interface ExtractedJsDocParam {
   name: string;
   type?: any;
   description?: string;
@@ -18,15 +18,15 @@ export interface ExtractedJsDocParamTag {
   getTypeName: () => string;
 }
 
-export interface ExtractedJsDocReturnsTag {
+export interface ExtractedJsDocReturns {
   type?: any;
   description?: string;
   getTypeName: () => string;
 }
 
-export interface ExtractedJsDocTags {
-  params?: ExtractedJsDocParamTag[];
-  returns?: ExtractedJsDocReturnsTag;
+export interface ExtractedJsDoc {
+  params?: ExtractedJsDocParam[];
+  returns?: ExtractedJsDocReturns;
   ignore: boolean;
 }
 
@@ -80,8 +80,8 @@ export const parseJsDoc: ParseJsDoc = (value?: string) => {
   };
 };
 
-function extractJsDocTags(ast: doctrine.Annotation): ExtractedJsDocTags {
-  const extractedTags: ExtractedJsDocTags = {
+function extractJsDocTags(ast: doctrine.Annotation): ExtractedJsDoc {
+  const extractedTags: ExtractedJsDoc = {
     params: null,
     returns: null,
     ignore: false,

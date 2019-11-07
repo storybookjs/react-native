@@ -1,7 +1,8 @@
-import { PropDef } from '@storybook/components';
 import { isNil } from 'lodash';
+import { PropDef } from '@storybook/components';
 import { TypeSystem, DocgenInfo } from './types';
 import { JsDocParsingResult } from './jsdocParser';
+import { createPropText } from './createComponents';
 
 export type PropDefFactory = (
   propName: string,
@@ -9,21 +10,25 @@ export type PropDefFactory = (
   jsDocParsingResult?: JsDocParsingResult
 ) => PropDef;
 
-function createDefaultPropDef(name: string, type: string, docgenInfo: DocgenInfo): PropDef {
+interface PropType {
+  name?: string;
+}
+
+function createDefaultPropDef(name: string, type: PropType, docgenInfo: DocgenInfo): PropDef {
   const { description, required, defaultValue } = docgenInfo;
 
   return {
     name,
-    type,
+    type: createPropText(type.name),
     required,
     description,
     defaultValue: isNil(defaultValue) ? null : defaultValue.value,
   };
 }
 
-function createPropDef(
+function createDocgenPropDef(
   name: string,
-  type: string,
+  type: PropType,
   docgenInfo: DocgenInfo,
   jsDocParsingResult: JsDocParsingResult
 ): PropDef {
@@ -57,7 +62,7 @@ export const javaScriptFactory: PropDefFactory = (
   docgenInfo: DocgenInfo,
   jsDocParsingResult?: JsDocParsingResult
 ) => {
-  return createPropDef(propName, docgenInfo.type.name, docgenInfo, jsDocParsingResult);
+  return createDocgenPropDef(propName, docgenInfo.type, docgenInfo, jsDocParsingResult);
 };
 
 export const tsFactory: PropDefFactory = (
@@ -65,7 +70,7 @@ export const tsFactory: PropDefFactory = (
   docgenInfo: DocgenInfo,
   jsDocParsingResult?: JsDocParsingResult
 ) => {
-  return createPropDef(propName, docgenInfo.tsType.name, docgenInfo, jsDocParsingResult);
+  return createDocgenPropDef(propName, docgenInfo.tsType, docgenInfo, jsDocParsingResult);
 };
 
 export const flowFactory: PropDefFactory = (
@@ -73,7 +78,7 @@ export const flowFactory: PropDefFactory = (
   docgenInfo: DocgenInfo,
   jsDocParsingResult?: JsDocParsingResult
 ) => {
-  return createPropDef(propName, docgenInfo.flowType.name, docgenInfo, jsDocParsingResult);
+  return createDocgenPropDef(propName, docgenInfo.flowType, docgenInfo, jsDocParsingResult);
 };
 
 export const unknownFactory: PropDefFactory = (
@@ -81,7 +86,7 @@ export const unknownFactory: PropDefFactory = (
   docgenInfo: DocgenInfo,
   jsDocParsingResult?: JsDocParsingResult
 ) => {
-  return createPropDef(propName, 'unknown', docgenInfo, jsDocParsingResult);
+  return createDocgenPropDef(propName, { name: 'unknown' }, docgenInfo, jsDocParsingResult);
 };
 
 export const Factories: Record<TypeSystem, PropDefFactory> = {
@@ -91,24 +96,6 @@ export const Factories: Record<TypeSystem, PropDefFactory> = {
   [TypeSystem.Unknown]: unknownFactory,
 };
 
-const getTypeSystem = (docgenInfo: DocgenInfo): TypeSystem => {
-  if (!isNil(docgenInfo.type)) {
-    return TypeSystem.JavaScript;
-  }
-
-  if (!isNil(docgenInfo.flowType)) {
-    return TypeSystem.Flow;
-  }
-
-  if (!isNil(docgenInfo.tsType)) {
-    return TypeSystem.TypeScript;
-  }
-
-  return TypeSystem.Unknown;
-};
-
-export const getPropDefFactory = (docgenInfo: DocgenInfo): PropDefFactory => {
-  const typeSystem = getTypeSystem(docgenInfo);
-
+export const getPropDefFactory = (typeSystem: TypeSystem): PropDefFactory => {
   return Factories[typeSystem];
 };

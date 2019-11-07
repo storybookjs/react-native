@@ -1,7 +1,7 @@
-import { extractProp } from '../../lib2/docgenPropsExtractor';
+import { extractProp } from '../../lib2/extractDocgenProps';
 import { DocgenInfo } from '../../lib2/types';
 import { enhancePropTypesProp } from './propTypesHandler';
-import { javaScriptFactory } from '../../lib2/createPropDef';
+import { javaScriptFactory } from '../../lib2/createDocgenPropDef';
 
 const PROP_NAME = 'propName';
 
