@@ -1,0 +1,33 @@
+{
+  "name": "@storybook/addon-preview-wrapper",
+  "version": "5.3.0-alpha.41",
+  "description": "preview wrapper addon for storybook",
+  "keywords": [
+    "addon",
+    "devkit",
+    "storybook",
+    "types"
+  ],
+  "homepage": "https://github.com/storybookjs/storybook#readme",
+  "bugs": {
+    "url": "https://github.com/storybookjs/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storybookjs/storybook.git",
+    "directory": "dev-kit/addon-preview-wrappe"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@storybook/addons": "5.3.0-alpha.41",
+    "react": "^16.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
