@@ -25,11 +25,6 @@ const ResetButton = styled.Text(({ theme }) => ({
   color: theme.buttonTextColor,
 }));
 
-const HideIcon = styled.Text(({ theme }) => ({
-  fontSize: 14,
-  color: theme.buttonTextColor,
-}));
-
 export default class Panel extends React.Component {
   constructor(props) {
     super(props);
