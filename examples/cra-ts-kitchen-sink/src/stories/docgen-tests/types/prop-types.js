@@ -261,6 +261,11 @@ PropTypesProps.defaultProps = {
   string: 'Default string',
   func: () => {},
   funcWithJsDoc: (foo, bar) => {
+    // eslint-disable-next-line
+    const yo = window.document;
+    // eslint-disable-next-line
+    const pouf = souffle;
+
     return { foo, bar };
   },
   namedDefaultFunc: concat,
@@ -329,7 +334,7 @@ PropTypesProps.defaultProps = {
       },
     },
   },
-  namedShape: NAMED_SHAPE,
+  namedShape: { foo: 'bar' },
   namedObjectInShape: { text: 'foo', value: 'bar' },
   exact: { name: 'foo', quantity: 2 },
   namedExact: { text: 'foo', value: 'bar' },

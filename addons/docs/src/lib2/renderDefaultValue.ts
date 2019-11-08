@@ -8,15 +8,6 @@ interface DefaultValue {
   value: string;
 }
 
-// interface PropType {
-//   name: string;
-// }
-
-// interface ValueDef {
-//   caption: string;
-//   value: string;
-// }
-
 function isBlacklisted(value: string) {
   return BLACKLIST.some(x => x === value);
 }

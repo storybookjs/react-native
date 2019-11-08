@@ -23,8 +23,7 @@ function createDefaultPropDef(name: string, type: PropType, docgenInfo: DocgenIn
     type: createPropText(type.name),
     required,
     description,
-    defaultValue: renderDefaultValue(defaultValue, type),
-    // defaultValue: isNil(defaultValue) ? null : defaultValue.value,
+    defaultValue: renderDefaultValue(defaultValue),
   };
 }
 
