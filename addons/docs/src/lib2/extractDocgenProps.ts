@@ -17,18 +17,18 @@ export type ExtractProps = (component: Component, section: string) => ExtractedP
 
 const getTypeSystem = (docgenInfo: DocgenInfo): TypeSystem => {
   if (!isNil(docgenInfo.type)) {
-    return TypeSystem.JavaScript;
+    return TypeSystem.JAVASCRIPT;
   }
 
   if (!isNil(docgenInfo.flowType)) {
-    return TypeSystem.Flow;
+    return TypeSystem.FLOW;
   }
 
   if (!isNil(docgenInfo.tsType)) {
-    return TypeSystem.TypeScript;
+    return TypeSystem.TYPESCRIPT;
   }
 
-  return TypeSystem.Unknown;
+  return TypeSystem.UNKNOWN;
 };
 
 export const extractPropsFromDocgen: ExtractProps = (component, section) => {
@@ -64,6 +64,7 @@ export function extractProp(
 
   if (!isIgnored) {
     const propDef = createPropDef(propName, docgenInfo, jsDocParsingResult);
+
     return {
       propDef,
       jsDocTags: jsDocParsingResult.extractedTags,

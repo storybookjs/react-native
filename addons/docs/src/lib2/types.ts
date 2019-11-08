@@ -24,38 +24,9 @@ export interface DocgenInfo {
   };
 }
 
-// export class DocgenPropDef {
-//   constructor(init: Partial<DocgenPropDef>) {
-//     Object.assign(this, init);
-//   }
-
-//   name: string;
-
-//   type: {
-//     component: ReactNode;
-//     typeSystem: TypeSystem;
-//     raw: any;
-//   };
-
-//   required: boolean;
-
-//   description?: string;
-
-//   defaultValue?: string;
-
-//   jsDocTags?: any;
-
-//   toPropDef(): PropDef {
-//     return {
-//       ...this,
-//       type: this.type.component,
-//     };
-//   }
-// }
-
 export enum TypeSystem {
-  JavaScript = 'JavaScript',
-  Flow = 'Flow',
-  TypeScript = 'TypeScript',
-  Unknown = 'Unknown',
+  JAVASCRIPT = 'JavaScript',
+  FLOW = 'Flow',
+  TYPESCRIPT = 'TypeScript',
+  UNKNOWN = 'Unknown',
 }

@@ -89,13 +89,15 @@ export const unknownFactory: PropDefFactory = (
   return createDocgenPropDef(propName, { name: 'unknown' }, docgenInfo, jsDocParsingResult);
 };
 
-export const Factories: Record<TypeSystem, PropDefFactory> = {
-  [TypeSystem.JavaScript]: javaScriptFactory,
-  [TypeSystem.Flow]: flowFactory,
-  [TypeSystem.TypeScript]: tsFactory,
-  [TypeSystem.Unknown]: unknownFactory,
-};
-
 export const getPropDefFactory = (typeSystem: TypeSystem): PropDefFactory => {
-  return Factories[typeSystem];
+  switch (typeSystem) {
+    case TypeSystem.JAVASCRIPT:
+      return javaScriptFactory;
+    case TypeSystem.TYPESCRIPT:
+      return tsFactory;
+    case TypeSystem.FLOW:
+      return flowFactory;
+    default:
+      return unknownFactory;
+  }
 };

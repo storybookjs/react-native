@@ -1,13 +1,13 @@
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 
-const NAMED_SHAPE = {
+const NAMED_OBJECT = {
   text: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };
 
-const ANOTHER_SHAPE = {
+const ANOTHER_OBJECT = {
   foo: PropTypes.string,
   bar: PropTypes.string,
 };
@@ -65,7 +65,36 @@ PropTypesProps.propTypes = {
    */
   oneOfString: PropTypes.oneOf(['News', 'Photos']),
   oneOfNumeric: PropTypes.oneOf([0, 1, 2, 3]),
-  oneOfComplexType: PropTypes.oneOf([NAMED_SHAPE, ANOTHER_SHAPE]),
+  oneOfShapes: PropTypes.oneOf([
+    PropTypes.shape({ foo: PropTypes.string }),
+    PropTypes.shape({ bar: PropTypes.number }),
+  ]),
+  oneOfComplexShapes: PropTypes.oneOf([
+    PropTypes.shape({
+      /**
+       *  Just an internal propType for a shape.
+       *  It's also required, and as you can see it supports multi-line comments!
+       */
+      id: PropTypes.number.isRequired,
+      /**
+       *  A simple non-required function
+       */
+      func: PropTypes.func,
+      /**
+       * An `arrayOf` shape
+       */
+      arr: PropTypes.arrayOf(
+        PropTypes.shape({
+          /**
+           * 5-level deep propType definition and still works.
+           */
+          index: PropTypes.number.isRequired,
+        })
+      ),
+    }),
+    PropTypes.shape({ bar: PropTypes.number }),
+  ]),
+  oneOfComplexType: PropTypes.oneOf([NAMED_OBJECT, ANOTHER_OBJECT]),
   oneOfComponents: PropTypes.oneOf([FunctionalComponent, ClassComponent]),
   oneOfEval: PropTypes.oneOf((() => ['News', 'Photos'])()),
   oneOfVar: PropTypes.oneOf(POSITIONS),
@@ -78,15 +107,15 @@ PropTypesProps.propTypes = {
    * array of a primitive type
    */
   arrayOfPrimitive: PropTypes.arrayOf(PropTypes.number),
-  arrayOfNamedShape: PropTypes.arrayOf(NAMED_SHAPE),
-  arrayOfShortInlineShape: PropTypes.arrayOf({
+  arrayOfNamedObject: PropTypes.arrayOf(NAMED_OBJECT),
+  arrayOfShortInlineObject: PropTypes.arrayOf({
     foo: PropTypes.string,
   }),
-  arrayOfInlineShape: PropTypes.arrayOf({
+  arrayOfInlineObject: PropTypes.arrayOf({
     text: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
   }),
-  arrayOfComplexInlineShape: PropTypes.arrayOf({
+  arrayOfComplexInlineObject: PropTypes.arrayOf({
     text: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     shape: {
@@ -94,14 +123,12 @@ PropTypesProps.propTypes = {
       age: PropTypes.number.isRequired,
     },
   }),
-  /**
-   *  A simple `objectOf` propType.
-   */
-  simpleObjectOf: PropTypes.objectOf(PropTypes.number),
-  /**
-   *  A very complex `objectOf` propType.
-   */
-  complexObjectOf: PropTypes.objectOf(
+  arrayOfShortShape: PropTypes.arrayOf(
+    PropTypes.shape({
+      bar: PropTypes.string,
+    })
+  ),
+  arrayOfComplexShape: PropTypes.arrayOf(
     PropTypes.shape({
       /**
        *  Just an internal propType for a shape.
@@ -125,7 +152,50 @@ PropTypesProps.propTypes = {
       ),
     })
   ),
-  namedObjectOf: PropTypes.objectOf(NAMED_SHAPE),
+  /**
+   *  A simple `objectOf` propType.
+   */
+  simpleObjectOf: PropTypes.objectOf(PropTypes.number),
+  objectOfShortInlineObject: PropTypes.objectOf({
+    foo: PropTypes.string,
+  }),
+  objectOfInlineObject: PropTypes.objectOf({
+    foo: PropTypes.string,
+    bar: PropTypes.string,
+  }),
+  objectOfShortShape: PropTypes.objectOf(
+    PropTypes.shape({
+      foo: string,
+    })
+  ),
+  /**
+   *  A very complex `objectOf` propType.
+   */
+  objectOfComplexShape: PropTypes.objectOf(
+    PropTypes.shape({
+      /**
+       *  Just an internal propType for a shape.
+       *  It's also required, and as you can see it supports multi-line comments!
+       */
+      id: PropTypes.number.isRequired,
+      /**
+       *  A simple non-required function
+       */
+      func: PropTypes.func,
+      /**
+       * An `arrayOf` shape
+       */
+      arr: PropTypes.arrayOf(
+        PropTypes.shape({
+          /**
+           * 5-level deep propType definition and still works.
+           */
+          index: PropTypes.number.isRequired,
+        })
+      ),
+    })
+  ),
+  namedObjectOf: PropTypes.objectOf(NAMED_OBJECT),
   /**
    * propType for shape with nested arrayOf
    *
@@ -160,12 +230,12 @@ PropTypesProps.propTypes = {
     }),
     oneOf: PropTypes.oneOf(['one', 'two']),
   }),
-  namedShape: PropTypes.shape(NAMED_SHAPE),
+  namedShape: PropTypes.shape(NAMED_OBJECT),
   exact: PropTypes.exact({
     name: PropTypes.string,
     quantity: PropTypes.number,
   }),
-  namedExact: PropTypes.exact(NAMED_SHAPE),
+  namedExact: PropTypes.exact(NAMED_OBJECT),
   /**
    * test string with a comment that has
    * two identical lines
@@ -199,6 +269,14 @@ PropTypesProps.defaultProps = {
   instanceOf: new Set(),
   oneOfString: 'News',
   oneOfNumeric: 1,
+  oneOfShapes: { foo: 'bar' },
+  oneOfComplexShapes: {
+    thing: {
+      id: 2,
+      func: () => {},
+      arr: [],
+    },
+  },
   oneOfComplexType: { text: 'foo', value: 'bar' },
   oneOfComponents: <FunctionalComponent />,
   oneOfEval: 'Photos',
@@ -206,18 +284,32 @@ PropTypesProps.defaultProps = {
   oneOfNested: 'top-right',
   oneOfType: 'hello',
   arrayOfPrimitive: [1, 2, 3],
-  arrayOfNamedShape: [{ text: 'foo', value: 'bar' }],
-  arrayOfShortInlineShape: [{ foo: 'bar' }],
-  arrayOfInlineShape: [{ text: 'foo', value: 'bar' }],
-  arrayOfComplexInlineShape: [{ text: 'foo', value: 'bar' }],
+  arrayOfNamedObject: [{ text: 'foo', value: 'bar' }],
+  arrayOfShortInlineObject: [{ foo: 'bar' }],
+  arrayOfInlineObject: [{ text: 'foo', value: 'bar' }],
+  arrayOfComplexInlineObject: [{ text: 'foo', value: 'bar' }],
+  arrayOfShortShape: [{ bar: 'foo' }],
+  arrayOfComplexShape: [
+    {
+      thing: {
+        id: 2,
+        func: () => {},
+        arr: [],
+      },
+    },
+  ],
   simpleObjectOf: { key: 1 },
-  complexObjectOf: {
+  objectOfShortInlineObject: { foo: 'bar' },
+  objectOfInlineObject: { foo: 'bar', bar: 'foo' },
+  objectOfShortShape: { foo: 'bar' },
+  objectOfComplexShape: {
     thing: {
       id: 2,
       func: () => {},
       arr: [],
     },
   },
+  namedObjectOf: { text: 'foo', value: 'bar' },
   shape: {
     id: 3,
     func: () => {},
@@ -228,7 +320,6 @@ PropTypesProps.defaultProps = {
       },
     },
   },
-  namedObjectOf: { text: 'foo', value: 'bar' },
   namedShape: { text: 'foo', value: 'bar' },
   exact: { name: 'foo', quantity: 2 },
   namedExact: { text: 'foo', value: 'bar' },

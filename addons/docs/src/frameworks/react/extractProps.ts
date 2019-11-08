@@ -39,7 +39,7 @@ function getPropDefs(component: Component, section: string): PropDef[] {
     return [];
   }
 
-  if (extractedProps[0].typeSystem === TypeSystem.JavaScript) {
+  if (extractedProps[0].typeSystem === TypeSystem.JAVASCRIPT) {
     return extractedProps.map(enhancePropTypesProp);
   }
 
