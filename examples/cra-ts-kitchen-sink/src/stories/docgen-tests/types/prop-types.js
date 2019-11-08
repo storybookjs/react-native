@@ -69,10 +69,7 @@ PropTypesProps.propTypes = {
   oneOfComponents: PropTypes.oneOf([FunctionalComponent, ClassComponent]),
   oneOfEval: PropTypes.oneOf((() => ['News', 'Photos'])()),
   oneOfVar: PropTypes.oneOf(POSITIONS),
-  oneOfNested: PropTypes.oneOf([
-    'News',
-    [POSITIONS, ['bottom-left', 'botton-center', 'bottom-right']],
-  ]),
+  oneOfNested: PropTypes.oneOf(['News', ['bottom-left', 'botton-center', 'bottom-right']]),
   /**
    *  A multi-type prop is also valid and is displayed as `Union<String|Message>`
    */
@@ -82,6 +79,9 @@ PropTypesProps.propTypes = {
    */
   arrayOfPrimitive: PropTypes.arrayOf(PropTypes.number),
   arrayOfNamedShape: PropTypes.arrayOf(NAMED_SHAPE),
+  arrayOfShortInlineShape: PropTypes.arrayOf({
+    foo: PropTypes.string,
+  }),
   arrayOfInlineShape: PropTypes.arrayOf({
     text: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
@@ -155,8 +155,10 @@ PropTypesProps.propTypes = {
     shape: PropTypes.shape({
       shape: PropTypes.shape({
         foo: PropTypes.string,
+        oneOf: PropTypes.oneOf(['one', 'two']),
       }),
     }),
+    oneOf: PropTypes.oneOf(['one', 'two']),
   }),
   namedShape: PropTypes.shape(NAMED_SHAPE),
   exact: PropTypes.exact({
@@ -205,6 +207,7 @@ PropTypesProps.defaultProps = {
   oneOfType: 'hello',
   arrayOfPrimitive: [1, 2, 3],
   arrayOfNamedShape: [{ text: 'foo', value: 'bar' }],
+  arrayOfShortInlineShape: [{ foo: 'bar' }],
   arrayOfInlineShape: [{ text: 'foo', value: 'bar' }],
   arrayOfComplexInlineShape: [{ text: 'foo', value: 'bar' }],
   simpleObjectOf: { key: 1 },

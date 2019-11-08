@@ -4,7 +4,7 @@ import {
   tsFactory,
   flowFactory,
   unknownFactory,
-  DocgenPropDefFactory,
+  PropDefFactory,
 } from './createDocgenPropDef';
 import { DocgenInfo } from './types';
 
@@ -25,7 +25,7 @@ function createDocgenInfo(overrides: Record<string, any> = {}): DocgenInfo {
 interface TypeSystemDef {
   name: string;
   typeProperty?: string;
-  propFactory: DocgenPropDefFactory;
+  propFactory: PropDefFactory;
 }
 
 const TypeSystems: TypeSystemDef[] = [

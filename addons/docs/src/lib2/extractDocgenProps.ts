@@ -1,7 +1,7 @@
 import { isNil } from 'lodash';
 import { PropDef } from '@storybook/components';
 import { Component } from '../blocks/shared';
-import { ExtractedJsDocTags, parseJsDoc } from './jsdocParser';
+import { ExtractedJsDoc, parseJsDoc } from './jsdocParser';
 import { DocgenInfo, TypeSystem } from './types';
 import { getDocgenSection, isValidDocgenSection } from './docgenUtils';
 import { getPropDefFactory, PropDefFactory } from './createDocgenPropDef';
@@ -9,7 +9,7 @@ import { getPropDefFactory, PropDefFactory } from './createDocgenPropDef';
 export interface ExtractedProp {
   propDef: PropDef;
   docgenInfo: DocgenInfo;
-  jsDocTags: ExtractedJsDocTags;
+  jsDocTags: ExtractedJsDoc;
   typeSystem: TypeSystem;
 }
 
@@ -64,7 +64,6 @@ export function extractProp(
 
   if (!isIgnored) {
     const propDef = createPropDef(propName, docgenInfo, jsDocParsingResult);
-
     return {
       propDef,
       jsDocTags: jsDocParsingResult.extractedTags,
