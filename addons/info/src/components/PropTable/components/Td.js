@@ -12,12 +12,13 @@ Td.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  ]),
   isMonospace: PropTypes.bool,
 };
 
 Td.defaultProps = {
   isMonospace: false,
+  children: null,
 };
 
 export default Td;
