@@ -19,7 +19,7 @@ function load(options: StoryshotsOptions) {
   const { configPath, config } = options;
   const storybook = require.requireActual('@storybook/vue');
 
-  configure({ configPath, config, storybook });
+  configure({ configPath, ...config, storybook });
 
   return {
     framework: 'vue' as const,
