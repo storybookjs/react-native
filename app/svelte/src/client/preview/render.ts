@@ -1,7 +1,8 @@
 import { document } from 'global';
 import dedent from 'ts-dedent';
+import { MountViewArgs, RenderMainArgs } from './types';
 
-let previousComponent = null;
+let previousComponent: any = null;
 
 function cleanUpPreviousStory() {
   if (!previousComponent) {
@@ -12,8 +13,8 @@ function cleanUpPreviousStory() {
   previousComponent = null;
 }
 
-function mountView({ Component, target, props, on, Wrapper, WrapperData }) {
-  let component;
+function mountView({ Component, target, props, on, Wrapper, WrapperData }: MountViewArgs) {
+  let component: any;
 
   if (Wrapper) {
     const fragment = document.createDocumentFragment();
@@ -47,8 +48,7 @@ export default function render({
   selectedStory,
   showMain,
   showError,
-  // showException,
-}) {
+}: RenderMainArgs) {
   const {
     /** @type {SvelteComponent} */
     Component,
