@@ -2,10 +2,11 @@ import React, { FC } from 'react';
 import { isNil } from 'lodash';
 
 interface PropTextProps {
-  title: string;
+  text?: string;
+  title?: string;
 }
 
-export const PropText: FC<PropTextProps> = ({ title, children, ...props }) => {
+export const PropText: FC<PropTextProps> = ({ text, title, ...props }) => {
   // TODO: Redo with styled in js
   const style = {};
   if (!isNil(title)) {
@@ -15,7 +16,7 @@ export const PropText: FC<PropTextProps> = ({ title, children, ...props }) => {
 
   return (
     <span {...props} title={title} style={style}>
-      {children}
+      {isNil(text) ? '-' : text}
     </span>
   );
 };

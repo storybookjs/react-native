@@ -3,15 +3,6 @@
 import { isNil } from 'lodash';
 import { Component } from '../blocks/shared';
 
-export function unquote(text: string) {
-  return text && text.replace(/^['"]|['"]$/g, '');
-}
-
-// TODO: Might not need this.
-export function showSpaces(text: string) {
-  return text && text.replace(/^\s|\s$/g, '␣');
-}
-
 export function hasDocgen(component: Component): boolean {
   return !!component.__docgenInfo;
 }

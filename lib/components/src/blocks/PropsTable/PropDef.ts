@@ -18,6 +18,7 @@ export interface PropDef {
   type: any;
   required: boolean;
   description?: string;
-  defaultValue?: string;
+  // TODO: Change for a React component type.
+  defaultValue?: any;
   jsDocTags?: JsDocTags;
 }

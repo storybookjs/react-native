@@ -1,13 +1,14 @@
 import { isNil } from 'lodash';
-import { PropDef } from '@storybook/components';
 import { ReactNode } from 'react';
-import { ExtractedProp } from '../../lib2/extractDocgenProps';
-import { ExtractedJsDocParam } from '../../lib2/jsdocParser';
-import { createPropText } from '../../lib2/createComponents';
+import { ExtractedProp } from '../../../lib2/extractDocgenProps';
+import { ExtractedJsDocParam } from '../../../lib2/jsdocParser';
+import { createPropText } from '../../../lib2/createComponents';
+
+// TODO: For shapes, need to somehow add <br /> between values. Does br works in title?
 
 const MAX_CAPTION_LENGTH = 35;
 
-enum PropType {
+enum PropTypesType {
   CUSTOM = 'custom',
   FUNC = 'func',
   SHAPE = 'shape',
@@ -18,7 +19,7 @@ enum PropType {
   ARRAYOF = 'arrayOf',
 }
 
-interface Type {
+interface PropType {
   name: string;
   value?: any;
   computed?: boolean;
@@ -26,7 +27,6 @@ interface Type {
   description?: string;
 }
 
-// TODO: Might delete and use any
 interface EnumValue {
   value: string;
   computed: boolean;
@@ -121,21 +121,21 @@ function generateComputedValue(typeName: string, value: string): TypeDef {
   });
 }
 
-function generateCustom({ raw }: Type): TypeDef {
+function generateCustom({ raw }: PropType): TypeDef {
   if (!isNil(raw)) {
     const { guessedType } = inspectTypeValue(raw);
 
     const value = guessedType === InspectionType.OBJECT ? shortifyPropTypes(raw) : raw;
 
     return createTypeDef({
-      name: PropType.CUSTOM,
+      name: PropTypesType.CUSTOM,
       caption: value.length <= MAX_CAPTION_LENGTH ? value : 'custom',
       value,
       guessedType,
     });
   }
 
-  return createTypeDef({ name: PropType.CUSTOM, caption: 'custom' });
+  return createTypeDef({ name: PropTypesType.CUSTOM, caption: 'custom' });
 }
 
 function generateFuncSignature(
@@ -178,17 +178,17 @@ function generateFunc(extractedProp: ExtractedProp): TypeDef {
 
     if (hasParams || hasReturns) {
       return createTypeDef({
-        name: PropType.FUNC,
+        name: PropTypesType.FUNC,
         caption: 'func',
         value: generateFuncSignature(extractedProp, hasParams, hasReturns),
       });
     }
   }
 
-  return createTypeDef({ name: PropType.FUNC, caption: 'func' });
+  return createTypeDef({ name: PropTypesType.FUNC, caption: 'func' });
 }
 
-function generateShape(type: Type, extractedProp: ExtractedProp): TypeDef {
+function generateShape(type: PropType, extractedProp: ExtractedProp): TypeDef {
   const fields = Object.keys(type.value)
     .map((key: string) => `${key}: ${generateType(type.value[key], extractedProp).value}`)
     .join(', ');
@@ -196,38 +196,38 @@ function generateShape(type: Type, extractedProp: ExtractedProp): TypeDef {
   const shape = `{ ${fields} }`;
 
   return createTypeDef({
-    name: PropType.SHAPE,
+    name: PropTypesType.SHAPE,
     caption: shape.length <= MAX_CAPTION_LENGTH ? shape : 'object',
     value: shape,
   });
 }
 
-function generateObjectOf(type: Type, extractedProp: ExtractedProp): TypeDef {
+function generateObjectOf(type: PropType, extractedProp: ExtractedProp): TypeDef {
   const format = (of: string) => `objectOf(${of})`;
 
   // eslint-disable-next-line prefer-const
   let { name, caption, value, guessedType } = generateType(type.value, extractedProp);
 
-  if (name === PropType.CUSTOM) {
+  if (name === PropTypesType.CUSTOM) {
     if (!isNil(guessedType)) {
       if (guessedType !== InspectionType.STRING && guessedType !== InspectionType.OBJECT) {
         caption = guessedType.toString();
       }
     }
-  } else if (name === PropType.SHAPE) {
+  } else if (name === PropTypesType.SHAPE) {
     if (value.length <= MAX_CAPTION_LENGTH) {
       caption = value;
     }
   }
 
   return createTypeDef({
-    name: PropType.OBJECTOF,
+    name: PropTypesType.OBJECTOF,
     caption: format(caption),
     value: format(value),
   });
 }
 
-function generateUnion(type: Type, extractedProp: ExtractedProp): TypeDef {
+function generateUnion(type: PropType, extractedProp: ExtractedProp): TypeDef {
   if (Array.isArray(type.value)) {
     const values = type.value.reduce(
       (acc: any, v: any) => {
@@ -242,13 +242,13 @@ function generateUnion(type: Type, extractedProp: ExtractedProp): TypeDef {
     );
 
     return createTypeDef({
-      name: PropType.UNION,
+      name: PropTypesType.UNION,
       caption: values.caption.join(' | '),
       value: values.value.join(' | '),
     });
   }
 
-  return createTypeDef({ name: PropType.UNION, caption: type.value });
+  return createTypeDef({ name: PropTypesType.UNION, caption: type.value });
 }
 
 function generateEnumValue({ value, computed }: EnumValue): TypeDef {
@@ -257,7 +257,7 @@ function generateEnumValue({ value, computed }: EnumValue): TypeDef {
     : createTypeDef({ name: 'enumvalue', caption: value });
 }
 
-function generateEnum(type: Type): TypeDef {
+function generateEnum(type: PropType): TypeDef {
   if (Array.isArray(type.value)) {
     const values = type.value.reduce(
       (acc: any, v: EnumValue) => {
@@ -272,23 +272,23 @@ function generateEnum(type: Type): TypeDef {
     );
 
     return createTypeDef({
-      name: PropType.ENUM,
+      name: PropTypesType.ENUM,
       caption: values.caption.join(' | '),
       value: values.value.join(' | '),
     });
   }
 
-  return createTypeDef({ name: PropType.ENUM, caption: type.value });
+  return createTypeDef({ name: PropTypesType.ENUM, caption: type.value });
 }
 
-function generateArray(type: Type, extractedProp: ExtractedProp): TypeDef {
+function generateArray(type: PropType, extractedProp: ExtractedProp): TypeDef {
   const braceAfter = (of: string) => `${of}[]`;
   const braceAround = (of: string) => `[${of}]`;
 
   // eslint-disable-next-line prefer-const
   let { name, caption, value, guessedType } = generateType(type.value, extractedProp);
 
-  if (name === PropType.CUSTOM) {
+  if (name === PropTypesType.CUSTOM) {
     if (!isNil(guessedType)) {
       if (guessedType !== InspectionType.STRING && guessedType !== InspectionType.OBJECT) {
         caption = guessedType.toString();
@@ -301,38 +301,38 @@ function generateArray(type: Type, extractedProp: ExtractedProp): TypeDef {
             : braceAfter(guessedType.toString());
         value = braceAround(value);
 
-        return createTypeDef({ name: PropType.ARRAYOF, caption, value });
+        return createTypeDef({ name: PropTypesType.ARRAYOF, caption, value });
       }
     }
-  } else if (name === PropType.SHAPE) {
+  } else if (name === PropTypesType.SHAPE) {
     // Brace around objects.
     caption = value.length <= MAX_CAPTION_LENGTH ? braceAround(value) : braceAfter(caption);
     value = braceAround(value);
 
-    return createTypeDef({ name: PropType.ARRAYOF, caption, value });
+    return createTypeDef({ name: PropTypesType.ARRAYOF, caption, value });
   }
 
-  return createTypeDef({ name: PropType.ARRAYOF, caption: braceAfter(value) });
+  return createTypeDef({ name: PropTypesType.ARRAYOF, caption: braceAfter(value) });
 }
 
-function generateType(type: Type, extractedProp: ExtractedProp): TypeDef {
+function generateType(type: PropType, extractedProp: ExtractedProp): TypeDef {
   try {
     switch (type.name) {
-      case PropType.CUSTOM:
+      case PropTypesType.CUSTOM:
         return generateCustom(type);
-      case PropType.FUNC:
+      case PropTypesType.FUNC:
         return generateFunc(extractedProp);
-      case PropType.SHAPE:
+      case PropTypesType.SHAPE:
         return generateShape(type, extractedProp);
-      case PropType.INSTANCEOF:
-        return createTypeDef({ name: PropType.INSTANCEOF, caption: type.value });
-      case PropType.OBJECTOF:
+      case PropTypesType.INSTANCEOF:
+        return createTypeDef({ name: PropTypesType.INSTANCEOF, caption: type.value });
+      case PropTypesType.OBJECTOF:
         return generateObjectOf(type, extractedProp);
-      case PropType.UNION:
+      case PropTypesType.UNION:
         return generateUnion(type, extractedProp);
-      case PropType.ENUM:
+      case PropTypesType.ENUM:
         return generateEnum(type);
-      case PropType.ARRAYOF:
+      case PropTypesType.ARRAYOF:
         return generateArray(type, extractedProp);
       default:
         return createTypeDef({ name: type.name, caption: type.name });
@@ -345,20 +345,20 @@ function generateType(type: Type, extractedProp: ExtractedProp): TypeDef {
   return createTypeDef({ name: 'unknown', caption: 'unknown' });
 }
 
-function renderType(type: Type, extractedProp: ExtractedProp): ReactNode {
+export function renderType(type: PropType, extractedProp: ExtractedProp): ReactNode {
   switch (type.name) {
-    case PropType.CUSTOM:
-    case PropType.SHAPE:
-    case PropType.INSTANCEOF:
-    case PropType.OBJECTOF:
-    case PropType.UNION:
-    case PropType.ENUM:
-    case PropType.ARRAYOF: {
+    case PropTypesType.CUSTOM:
+    case PropTypesType.SHAPE:
+    case PropTypesType.INSTANCEOF:
+    case PropTypesType.OBJECTOF:
+    case PropTypesType.UNION:
+    case PropTypesType.ENUM:
+    case PropTypesType.ARRAYOF: {
       const { caption, value } = generateType(type, extractedProp);
 
       return createPropText(caption, { title: caption !== value ? value : undefined });
     }
-    case PropType.FUNC: {
+    case PropTypesType.FUNC: {
       const { value } = generateType(type, extractedProp);
 
       return createPropText(value);
@@ -366,16 +366,4 @@ function renderType(type: Type, extractedProp: ExtractedProp): ReactNode {
     default:
       return null;
   }
-}
-
-export function enhancePropTypesProp(extractedProp: ExtractedProp): PropDef {
-  const { propDef, docgenInfo } = extractedProp;
-
-  const newtype = renderType(docgenInfo.type, extractedProp);
-
-  if (!isNil(newtype)) {
-    propDef.type = newtype;
-  }
-
-  return propDef;
 }

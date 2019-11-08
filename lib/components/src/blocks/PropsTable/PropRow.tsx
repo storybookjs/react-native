@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
-import { isNil } from 'lodash';
 import { PropDef } from './PropDef';
 import { PropJsDoc } from './PropJsDoc';
 
@@ -41,6 +40,6 @@ export const PropRow: FC<PropRowProps> = ({
       <Type>{type}</Type>
       <PropJsDoc tags={jsDocTags} />
     </td>
-    <td>{isNil(defaultValue) ? '-' : <span>{JSON.stringify(defaultValue)}</span>}</td>
+    <td>{defaultValue}</td>
   </tr>
 );

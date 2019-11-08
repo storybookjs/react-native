@@ -3,6 +3,7 @@ import { PropDef } from '@storybook/components';
 import { TypeSystem, DocgenInfo } from './types';
 import { JsDocParsingResult } from './jsdocParser';
 import { createPropText } from './createComponents';
+import { renderDefaultValue } from './renderDefaultValue';
 
 export type PropDefFactory = (
   propName: string,
@@ -11,7 +12,7 @@ export type PropDefFactory = (
 ) => PropDef;
 
 interface PropType {
-  name?: string;
+  name: string;
 }
 
 function createDefaultPropDef(name: string, type: PropType, docgenInfo: DocgenInfo): PropDef {
@@ -22,7 +23,8 @@ function createDefaultPropDef(name: string, type: PropType, docgenInfo: DocgenIn
     type: createPropText(type.name),
     required,
     description,
-    defaultValue: isNil(defaultValue) ? null : defaultValue.value,
+    defaultValue: renderDefaultValue(defaultValue, type),
+    // defaultValue: isNil(defaultValue) ? null : defaultValue.value,
   };
 }
 

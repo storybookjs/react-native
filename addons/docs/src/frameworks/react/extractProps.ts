@@ -5,7 +5,7 @@ import { hasDocgen } from '../../lib2/docgenUtils';
 import { extractPropsFromDocgen } from '../../lib2/extractDocgenProps';
 import { PropsExtractor, TypeSystem } from '../../lib2/types';
 import { Component } from '../../blocks/shared';
-import { enhancePropTypesProp } from './propTypesHandler';
+import { enhancePropTypesProp } from './propTypes/handleProp';
 
 export interface PropDefMap {
   [p: string]: PropDef;
