@@ -74,8 +74,8 @@ function mightBeComponent(value: string): boolean {
   return value.includes('React') || value.includes('Component') || value.includes('render');
 }
 
-function prettifyObject(value: string): string {
-  const cleanedValue = value.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
+function shortifyPropTypes(value: string): string {
+  return value.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
 
   // try {
   //   // Trying to re-build the value to provide a better formatting.
@@ -88,8 +88,6 @@ function prettifyObject(value: string): string {
   // } catch (e) {
   //   // do nothing.
   // }
-
-  return cleanedValue;
 }
 
 function createTypeDef({
@@ -118,7 +116,7 @@ function generateComputedValue(typeName: string, value: string): TypeDef {
   return createTypeDef({
     name: typeName,
     caption: guessedType.toString(),
-    value: guessedType === InspectionType.OBJECT ? prettifyObject(value) : value,
+    value: guessedType === InspectionType.OBJECT ? shortifyPropTypes(value) : value,
     guessedType,
   });
 }
@@ -127,10 +125,12 @@ function generateCustom({ raw }: Type): TypeDef {
   if (!isNil(raw)) {
     const { guessedType } = inspectTypeValue(raw);
 
+    const value = guessedType === InspectionType.OBJECT ? shortifyPropTypes(raw) : raw;
+
     return createTypeDef({
       name: PropType.CUSTOM,
-      caption: 'custom',
-      value: guessedType === InspectionType.OBJECT ? prettifyObject(raw) : raw,
+      caption: value.length <= MAX_CAPTION_LENGTH ? value : 'custom',
+      value,
       guessedType,
     });
   }
@@ -188,13 +188,18 @@ function generateFunc(extractedProp: ExtractedProp): TypeDef {
   return createTypeDef({ name: PropType.FUNC, caption: 'func' });
 }
 
-// TODO: do somekind of eval / stringify to format.
 function generateShape(type: Type, extractedProp: ExtractedProp): TypeDef {
   const fields = Object.keys(type.value)
     .map((key: string) => `${key}: ${generateType(type.value[key], extractedProp).value}`)
     .join(', ');
 
-  return createTypeDef({ name: PropType.SHAPE, caption: 'object', value: `{ ${fields} }` });
+  const shape = `{ ${fields} }`;
+
+  return createTypeDef({
+    name: PropType.SHAPE,
+    caption: shape.length <= MAX_CAPTION_LENGTH ? shape : 'object',
+    value: shape,
+  });
 }
 
 function generateObjectOf(type: Type, extractedProp: ExtractedProp): TypeDef {
@@ -205,16 +210,8 @@ function generateObjectOf(type: Type, extractedProp: ExtractedProp): TypeDef {
 
   if (name === PropType.CUSTOM) {
     if (!isNil(guessedType)) {
-      switch (guessedType) {
-        case InspectionType.STRING:
-        case InspectionType.OBJECT:
-          // Display the name of the object var if it's short.
-          if (value.length <= MAX_CAPTION_LENGTH) {
-            caption = value;
-          }
-          break;
-        default:
-          caption = guessedType.toString();
+      if (guessedType !== InspectionType.STRING && guessedType !== InspectionType.OBJECT) {
+        caption = guessedType.toString();
       }
     }
   } else if (name === PropType.SHAPE) {
@@ -293,25 +290,18 @@ function generateArray(type: Type, extractedProp: ExtractedProp): TypeDef {
 
   if (name === PropType.CUSTOM) {
     if (!isNil(guessedType)) {
-      switch (guessedType) {
-        case InspectionType.STRING:
-          // Display the name of the object var if it's short.
-          if (value.length <= MAX_CAPTION_LENGTH) {
-            caption = value;
-          }
-          break;
-        case InspectionType.OBJECT:
-          // Brace around inlined objects.
-          // Show the inlined object if it's short.
-          caption =
-            value.length <= MAX_CAPTION_LENGTH
-              ? braceAround(value)
-              : braceAfter(guessedType.toString());
-          value = braceAround(value);
+      if (guessedType !== InspectionType.STRING && guessedType !== InspectionType.OBJECT) {
+        caption = guessedType.toString();
+      } else if (guessedType === InspectionType.OBJECT) {
+        // Brace around inlined objects.
+        // Show the inlined object if it's short.
+        caption =
+          value.length <= MAX_CAPTION_LENGTH
+            ? braceAround(value)
+            : braceAfter(guessedType.toString());
+        value = braceAround(value);
 
-          return createTypeDef({ name: PropType.ARRAYOF, caption, value });
-        default:
-          caption = guessedType.toString();
+        return createTypeDef({ name: PropType.ARRAYOF, caption, value });
       }
     }
   } else if (name === PropType.SHAPE) {

@@ -12,6 +12,10 @@ const ANOTHER_OBJECT = {
   bar: PropTypes.string,
 };
 
+const NAMED_SHAPE = PropTypes.shape({
+  foo: PropTypes.string,
+});
+
 export const POSITIONS = ['top-left', 'top-right', 'top-center'];
 
 const FunctionalComponent = () => {
@@ -196,12 +200,15 @@ PropTypesProps.propTypes = {
     })
   ),
   namedObjectOf: PropTypes.objectOf(NAMED_OBJECT),
+  shapeShort: PropTypes.shape({
+    foo: string,
+  }),
   /**
    * propType for shape with nested arrayOf
    *
    * Also, multi-line description
    */
-  shape: PropTypes.shape({
+  shapeComplex: PropTypes.shape({
     /**
      *  Just an internal propType for a shape.
      *  It's also required, and as you can see it supports multi-line comments!
@@ -230,7 +237,8 @@ PropTypesProps.propTypes = {
     }),
     oneOf: PropTypes.oneOf(['one', 'two']),
   }),
-  namedShape: PropTypes.shape(NAMED_OBJECT),
+  namedShape: NAMED_SHAPE,
+  namedObjectInShape: PropTypes.shape(NAMED_OBJECT),
   exact: PropTypes.exact({
     name: PropTypes.string,
     quantity: PropTypes.number,
@@ -310,7 +318,8 @@ PropTypesProps.defaultProps = {
     },
   },
   namedObjectOf: { text: 'foo', value: 'bar' },
-  shape: {
+  shapeShort: { foo: 'bar' },
+  shapeComplex: {
     id: 3,
     func: () => {},
     arr: [],
@@ -320,7 +329,8 @@ PropTypesProps.defaultProps = {
       },
     },
   },
-  namedShape: { text: 'foo', value: 'bar' },
+  namedShape: NAMED_SHAPE,
+  namedObjectInShape: { text: 'foo', value: 'bar' },
   exact: { name: 'foo', quantity: 2 },
   namedExact: { text: 'foo', value: 'bar' },
   optionalString: 'Default String',
