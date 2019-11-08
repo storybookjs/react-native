@@ -18,5 +18,3 @@ addParameters({
     iframeHeight: '200px',
   },
 });
-
-configure(require.context('../stories', true, /\.stories\.(js|mdx)$/), module);
