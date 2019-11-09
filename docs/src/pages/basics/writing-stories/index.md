@@ -117,7 +117,7 @@ If you want to load from multiple locations, you can use an array:
 import { configure } from '@storybook/react';
 
 configure([
-  require.context('../src/components', true, /\.stories\.js$/)
+  require.context('../src/components', true, /\.stories\.js$/),
   require.context('../lib', true, /\.stories\.js$/)
 ], module);
 ```

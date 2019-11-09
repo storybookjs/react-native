@@ -178,6 +178,23 @@ StoryShots addon for Preact is dependent on [preact-render-to-json](https://gith
 yarn add preact-render-to-json --dev
 ```
 
+### Configure Jest for MDX Docs Add-On Stories
+
+If using the [Docs add-on](../../docs/README.md) with 
+[MDX stories](../../docs/docs/mdx.md) you will need
+to configure Jest to transform MDX stories into something Storyshots can understand:
+
+Add the following to your Jest configuration:
+
+```json
+{
+  "transform": {
+    "^.+\\.[tj]sx?$": "babel-jest",
+    "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
+  }
+}
+```
+
 ### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
 Storyshots addon is currently supporting React, Angular and Vue. Each framework needs its own packages to be integrated with Jest. We don't want people that use only React will need to bring other dependencies that do not make sense for them.
 

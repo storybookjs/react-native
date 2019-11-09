@@ -113,7 +113,7 @@ export const A = styled.a<{}>(withReset, ({ theme }) => ({
 
 export const HR = styled.hr<{}>(({ theme }) => ({
   border: '0 none',
-  color: theme.appBorderColor,
+  borderTop: `1px solid ${theme.appBorderColor}`,
   height: '4px',
   padding: '0',
 }));
@@ -304,6 +304,7 @@ export const LI = styled.li<{}>(withReset, ({ theme }) => ({
     marginTop: '.25em',
     marginBottom: 0,
   },
+  '& code': codeCommon({ theme }),
 }));
 
 export const UL = styled.ul<{}>(withReset, withMargin, listCommon, {});

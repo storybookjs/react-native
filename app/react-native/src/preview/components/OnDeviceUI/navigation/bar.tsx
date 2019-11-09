@@ -6,7 +6,7 @@ import { NAVIGATOR, PREVIEW, ADDONS } from './constants';
 const Container = styled.View(({ theme }) => ({
   flexDirection: 'row',
   paddingHorizontal: 8,
-  background: theme.backgroundColor,
+  backgroundColor: theme.backgroundColor,
   borderTopWidth: 1,
   borderBottomWidth: 1,
   borderColor: theme.borderColor,

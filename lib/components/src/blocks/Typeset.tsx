@@ -35,7 +35,7 @@ const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
 }));
 
 export interface TypesetProps {
-  fontSizes: number[];
+  fontSizes: string[];
   fontWeight?: number;
   sampleText?: string;
 }
@@ -51,12 +51,12 @@ export const Typeset: FunctionComponent<TypesetProps> = ({
   ...props
 }) => (
   <Wrapper {...props} className="docblock-typeset">
-    {fontSizes.map(num => (
-      <TypeSpecimen key={num}>
-        <Label>{num}px</Label>
+    {fontSizes.map(size => (
+      <TypeSpecimen key={size}>
+        <Label>{size}</Label>
         <Sample
           style={{
-            fontSize: num,
+            fontSize: size,
             fontWeight,
           }}
         >

@@ -1,7 +1,14 @@
 import { document } from 'global';
 import React, { ReactNode } from 'react';
 
-import { Link, Location, navigate, LocationProvider, RouteComponentProps } from '@reach/router';
+import {
+  Link,
+  Location,
+  navigate,
+  LocationProvider,
+  RouteComponentProps,
+  NavigateFn,
+} from '@reach/router';
 import { ToggleVisibility } from './visibility';
 import { queryFromString, parsePath, getMatch } from './utils';
 
@@ -38,9 +45,8 @@ interface QueryLinkProps {
 
 const getBase = () => `${document.location.pathname}?`;
 
-const queryNavigate = (to: string) => {
-  navigate(`${getBase()}path=${to}`);
-};
+const queryNavigate: NavigateFn = (to: string | number) =>
+  typeof to === 'number' ? navigate(to) : navigate(`${getBase()}path=${to}`);
 
 // A component that will navigate to a new location/path when clicked
 const QueryLink = ({ to, children, ...rest }: QueryLinkProps) => (

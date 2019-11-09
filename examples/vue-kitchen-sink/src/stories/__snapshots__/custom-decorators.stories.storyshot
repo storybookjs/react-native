@@ -53,6 +53,7 @@ exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
       "hierarchySeparator": {}
     },
     "docs": {
+      "inlineStories": true,
       "iframeHeight": "60px"
     },
     "globalParameter": "globalParameter",

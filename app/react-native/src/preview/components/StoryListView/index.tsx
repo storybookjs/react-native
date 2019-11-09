@@ -18,13 +18,13 @@ const SearchBar = styled.TextInput(
     paddingVertical: 5,
   },
   ({ theme }) => ({
-    background: theme.borderColor,
+    backgroundColor: theme.borderColor,
     color: theme.buttonActiveTextColor,
   })
 );
 
 const HeaderContainer = styled.View({
-  paddingCertical: 5,
+  paddingVertical: 5,
 });
 
 interface SectionProps {
@@ -72,8 +72,8 @@ interface State {
 }
 
 const List = styled.SectionList({
-  flex: '1',
-  marginBottom: '40',
+  flex: 1,
+  marginBottom: 40,
 });
 
 export default class StoryListView extends Component<Props, State> {

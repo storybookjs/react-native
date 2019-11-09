@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import deepEqual from 'fast-deep-equal';
 
 import { addons } from '@storybook/addons';
-import { STORY_RENDERED } from '@storybook/core-events';
+import { SELECT_STORY } from '@storybook/core-events';
 import { ActionDisplay, EVENT_ID } from '@storybook/addon-actions';
 
 import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
@@ -34,11 +34,11 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
 
   componentDidMount() {
     this.channel.addListener(EVENT_ID, this.addAction);
-    this.channel.addListener(STORY_RENDERED, this.handleStoryChange);
+    this.channel.addListener(SELECT_STORY, this.handleStoryChange);
   }
 
   componentWillUnmount() {
-    this.channel.removeListener(STORY_RENDERED, this.handleStoryChange);
+    this.channel.removeListener(SELECT_STORY, this.handleStoryChange);
     this.channel.removeListener(EVENT_ID, this.addAction);
   }
 

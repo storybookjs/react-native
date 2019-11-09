@@ -99,7 +99,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
-import DocgenButton from '../components/DocgenButton';
+import { DocgenButton } from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
 import TableComponent from '../components/TableComponent';
@@ -654,7 +654,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
-import DocgenButton from '../components/DocgenButton';
+import { DocgenButton } from '../components/DocgenButton';
 import FlowTypeButton from '../components/FlowTypeButton';
 import BaseButton from '../components/BaseButton';
 import TableComponent from '../components/TableComponent';
@@ -866,8 +866,7 @@ storiesOf('Foo', module)
 `;
 
 exports[`inject-decorator will not change the source when there are no "storiesOf" functions 1`] = `
-"var addSourceDecorator = require(\\"@storybook/source-loader/preview\\").addSource;
-while(true) {
+"while(true) {
   console.log(\\"it's a kind of magic\\");
 }"
 `;

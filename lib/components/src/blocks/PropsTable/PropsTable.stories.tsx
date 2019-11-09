@@ -9,6 +9,10 @@ export default {
 
 export const normal = () => <PropsTable rows={[stringDef, numberDef]} />;
 
+export const sections = () => (
+  <PropsTable sections={{ props: [stringDef, numberDef], events: [stringDef] }} />
+);
+
 export const error = () => <PropsTable error={PropsTableError.NO_COMPONENT} />;
 
 export const empty = () => <PropsTable rows={[]} />;

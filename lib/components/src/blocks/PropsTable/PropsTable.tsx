@@ -1,7 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { styled } from '@storybook/theming';
-import { opacify, transparentize } from 'polished';
-import { PropRow } from './PropRow';
+import { opacify, transparentize, darken, lighten } from 'polished';
+import { PropRow, PropRowProps } from './PropRow';
+import { SectionRow, SectionRowProps } from './SectionRow';
 import { PropDef } from './PropDef';
 import { EmptyBlock } from '../EmptyBlock';
 import { ResetWrapper } from '../../typography/DocumentFormatting';
@@ -77,19 +78,22 @@ export const Table = styled.table<{}>(({ theme }) => ({
     marginLeft: 1,
     marginRight: 1,
 
-    'tr:first-child td:first-child': {
-      borderTopLeftRadius: theme.appBorderRadius,
+    'tr:first-child': {
+      'td:first-child, th:first-child': {
+        borderTopLeftRadius: theme.appBorderRadius,
+      },
+      'td:last-child, th:last-child': {
+        borderTopRightRadius: theme.appBorderRadius,
+      },
     },
 
-    'tr:first-child td:last-child': {
-      borderTopRightRadius: theme.appBorderRadius,
-    },
-    'tr:last-child td:first-child': {
-      borderBottomLeftRadius: theme.appBorderRadius,
-    },
-
-    'tr:last-child td:last-child': {
-      borderBottomRightRadius: theme.appBorderRadius,
+    'tr:last-child': {
+      'td:first-child, th:first-child': {
+        borderBottomLeftRadius: theme.appBorderRadius,
+      },
+      'td:last-child, th:last-child': {
+        borderBottomRightRadius: theme.appBorderRadius,
+      },
     },
 
     tbody: {
@@ -104,8 +108,14 @@ export const Table = styled.table<{}>(({ theme }) => ({
 
       tr: {
         background: 'transparent',
+        overflow: 'hidden',
         '&:not(:first-child)': {
-          borderTop: `1px solid ${theme.appBorderColor}`,
+          borderTopWidth: 1,
+          borderTopStyle: 'solid',
+          borderTopColor:
+            theme.base === 'light'
+              ? darken(0.1, theme.background.content)
+              : lighten(0.05, theme.background.content),
         },
       },
 
@@ -126,24 +136,59 @@ export interface PropsTableRowsProps {
   rows: PropDef[];
 }
 
+export interface PropsTableSectionsProps {
+  sections?: Record<string, PropDef[]>;
+}
+
 export interface PropsTableErrorProps {
   error: PropsTableError;
 }
 
-export type PropsTableProps = PropsTableRowsProps | PropsTableErrorProps;
+export type PropsTableProps = PropsTableRowsProps | PropsTableSectionsProps | PropsTableErrorProps;
+
+const PropsTableRow: FC<SectionRowProps | PropRowProps> = props => {
+  const { section } = props as SectionRowProps;
+  if (section) {
+    return <SectionRow section={section} />;
+  }
+  const { row } = props as PropRowProps;
+  return <PropRow row={row} />;
+};
 
 /**
  * Display the props for a component as a props table. Each row is a collection of
  * PropDefs, usually derived from docgen info for the component.
  */
-const PropsTable: FunctionComponent<PropsTableProps> = props => {
+const PropsTable: FC<PropsTableProps> = props => {
   const { error } = props as PropsTableErrorProps;
   if (error) {
     return <EmptyBlock>{error}</EmptyBlock>;
   }
 
+  let allRows: any[] = [];
+  const { sections } = props as PropsTableSectionsProps;
   const { rows } = props as PropsTableRowsProps;
-  if (rows.length === 0) {
+  if (sections) {
+    Object.keys(sections).forEach(section => {
+      const sectionRows = sections[section];
+      if (sectionRows && sectionRows.length > 0) {
+        allRows.push({ key: section, value: { section } });
+        sectionRows.forEach(row => {
+          allRows.push({
+            key: `${section}_${row.name}`,
+            value: { row },
+          });
+        });
+      }
+    });
+  } else if (rows) {
+    allRows = rows.map(row => ({
+      key: row.name,
+      value: { row },
+    }));
+  }
+
+  if (allRows.length === 0) {
     return <EmptyBlock>No props found for this component</EmptyBlock>;
   }
   return (
@@ -157,8 +202,8 @@ const PropsTable: FunctionComponent<PropsTableProps> = props => {
           </tr>
         </thead>
         <tbody>
-          {rows.map(row => (
-            <PropRow key={row.name} row={row} />
+          {allRows.map(row => (
+            <PropsTableRow key={row.key} {...row.value} />
           ))}
         </tbody>
       </Table>

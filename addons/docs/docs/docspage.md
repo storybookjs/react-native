@@ -77,6 +77,8 @@ Here is a summary of the slots, where the data comes from by default, and the sl
 | Props       | component docgen props or propTypes | `propsSlot`       | React, Vue |
 | Stories     | storybook stories                   | `storiesSlot`     | All        |
 
+The `storiesSlot` uses the `docs.storyDescription` parameter to show a description for each story, if available.
+
 For more information on frameworks, see ["Framework support"](../README.md#framework-support)
 
 ### Title
@@ -260,7 +262,6 @@ addParameters({
 ```
 
 With that function, anyone using the docs addon for `@storybook/vue` can make their stories render inline, either globally with the `inlineStories` docs parameter, or on a per-story-basis using the `inline` prop on the `<Story>` doc block. If you come up with an elegant and flexible implementation for the `prepareForInline` function for your own framework, let us know! We'd love to make it the default configuration, to make inline stories more accessible for a larger variety of frameworks!
-
 
 ## More resources
 
