@@ -35,9 +35,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/generator": "^7.4.0",
-    "@babel/parser": "^7.4.2",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/generator": "^7.7.2",
+    "@babel/parser": "^7.7.3",
+    "@babel/plugin-transform-react-jsx": "^7.7.0",
     "@mdx-js/loader": "^1.1.0",
     "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/react": "^1.0.27",
