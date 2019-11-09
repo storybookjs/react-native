@@ -135,6 +135,7 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@babel/runtime": "^7.7.2",
     "@emotion/snapshot-serializer": "^0.8.2",
     "@types/common-tags": "^1.8.0",
     "@types/jest": "^24.0.11",
