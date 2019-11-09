@@ -1,3 +1,14 @@
+## 5.3.0-alpha.42 (November 9, 2019)
+
+### Bug Fixes
+
+* Addon-info: Remove jsnext:main ([#8764](https://github.com/storybookjs/storybook/pull/8764))
+* Addon-info: Fix "The prop 'children' is marked as required in 'Td'" ([#8745](https://github.com/storybookjs/storybook/pull/8745))
+
+### Maintenance
+
+* React-native: Update compilation target - it was compiled for old browsers ([#8698](https://github.com/storybookjs/storybook/pull/8698))
+
 ## 5.3.0-alpha.41 (November 7, 2019)
 
 ### Features
