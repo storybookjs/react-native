@@ -15,7 +15,7 @@ function cleanUpPreviousStory() {
 }
 
 function mountView({ Component, target, props, on, Wrapper, WrapperData }: MountViewArgs) {
-  let component: any;
+  let component: Component;
 
   if (Wrapper) {
     const fragment = document.createDocumentFragment();
