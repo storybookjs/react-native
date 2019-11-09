@@ -9,6 +9,7 @@
   "devDependencies": {
     "@storybook/addon-decorator": "5.3.0-alpha.41",
     "@storybook/addon-parameter": "5.3.0-alpha.41",
+    "@storybook/addon-preview-wrapper": "5.3.0-alpha.41",
     "@storybook/addon-roundtrip": "5.3.0-alpha.41",
     "@storybook/addons": "5.3.0-alpha.41",
     "@storybook/components": "5.3.0-alpha.41",
