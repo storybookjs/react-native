@@ -2,13 +2,14 @@ import { document } from 'global';
 import dedent from 'ts-dedent';
 import { MountViewArgs, RenderMainArgs } from './types';
 
-let previousComponent: any = null;
+type Component = any;
+
+let previousComponent: Component = null;
 
 function cleanUpPreviousStory() {
   if (!previousComponent) {
     return;
   }
-
   previousComponent.$destroy();
   previousComponent = null;
 }
