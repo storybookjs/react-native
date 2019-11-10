@@ -3445,63 +3445,6 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@storybook/addons@5.3.0-alpha.41":
-  version "5.3.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.0-alpha.41.tgz#f40e57f23da76ef492489ac9b6c0add89490b716"
-  integrity sha512-X4OGhR5lzK+JOElj7l8f4nNnQH+DAi7EQ7jvbPhoL6lp8MThQArHmj0qZKzoSX4k6geFFapJR5KemxK3s9TMgA==
-  dependencies:
-    "@storybook/api" "5.3.0-alpha.41"
-    "@storybook/channels" "5.3.0-alpha.41"
-    "@storybook/client-logger" "5.3.0-alpha.41"
-    "@storybook/core-events" "5.3.0-alpha.41"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    util-deprecate "^1.0.2"
-
-"@storybook/api@5.3.0-alpha.41":
-  version "5.3.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.0-alpha.41.tgz#6634f69d5c5de79bee68465754ff9609f566b60b"
-  integrity sha512-0KO/Kbr2W6q3RpyskMHwlL6EDs3FbszPbFOC9cqqxYlcM0pP0iWJNh3OT3HHCGpsykCjRRztVwM4nt4Ydz5W0Q==
-  dependencies:
-    "@storybook/channels" "5.3.0-alpha.41"
-    "@storybook/client-logger" "5.3.0-alpha.41"
-    "@storybook/core-events" "5.3.0-alpha.41"
-    "@storybook/router" "5.3.0-alpha.41"
-    "@storybook/theming" "5.3.0-alpha.41"
-    core-js "^3.0.1"
-    fast-deep-equal "^2.0.1"
-    global "^4.3.2"
-    lodash "^4.17.15"
-    memoizerific "^1.11.3"
-    prop-types "^15.6.2"
-    react "^16.8.3"
-    semver "^6.0.0"
-    shallow-equal "^1.1.0"
-    store2 "^2.7.1"
-    telejson "^3.0.3"
-    util-deprecate "^1.0.2"
-
-"@storybook/channels@5.3.0-alpha.41":
-  version "5.3.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-5.3.0-alpha.41.tgz#009594e1de8e0810dac988095af914dc9cc1efaa"
-  integrity sha512-jg0UOYf10rNsLozdaNKQ893Wcw0J33AEz7pFN5F7emAm/CQg9DG2/PB2WGjDzK2Q0QlHdv3KEcPhyn3kYjVSFQ==
-  dependencies:
-    core-js "^3.0.1"
-
-"@storybook/client-logger@5.3.0-alpha.41":
-  version "5.3.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-5.3.0-alpha.41.tgz#e451f797e480bd6211b2bc52997a10213ef484b9"
-  integrity sha512-4nVqAUb83DzZ6PJSWy957fRahzWSiZ7tBhk3xfF3MQ6LNayp3lSZ6ocZiNF5JrBL3UZkxRDk8bBRKo0/ZkX+IA==
-  dependencies:
-    core-js "^3.0.1"
-
-"@storybook/core-events@5.3.0-alpha.41":
-  version "5.3.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-5.3.0-alpha.41.tgz#a39423e98e8753609972748119dd3b68131e6e90"
-  integrity sha512-XX196XdEZ6PIyzrxJfIapf2mKz/OGpwblBe53WtHZ4U1jLoajhVciXWU31gaxjNd+GuD2aMUhcdBFv6piL+LEg==
-  dependencies:
-    core-js "^3.0.1"
-
 "@storybook/eslint-config-storybook@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@storybook/eslint-config-storybook/-/eslint-config-storybook-2.0.0.tgz#78e6d3dd1fafa90aa670f80bc0a80be50c31ff5e"
@@ -3547,37 +3490,6 @@
   dependencies:
     "@storybook/node-logger" "^5.2.4"
     react-docgen-typescript-loader "^3.3.0"
-
-"@storybook/router@5.3.0-alpha.41":
-  version "5.3.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-5.3.0-alpha.41.tgz#bccf18506b68778d485e9f11d4d9d30d7f9fa437"
-  integrity sha512-Ump0il+v8fT8g9kXF8tVpa5hjVzU85Av3Xe8/TeKn9T+uqGdnOFuVJ3N/tKUTf6xcnIBFQ7mJBE64h2m/luOWQ==
-  dependencies:
-    "@reach/router" "^1.2.1"
-    "@types/reach__router" "^1.2.3"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    lodash "^4.17.15"
-    memoizerific "^1.11.3"
-    qs "^6.6.0"
-
-"@storybook/theming@5.3.0-alpha.41":
-  version "5.3.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-5.3.0-alpha.41.tgz#c756865bb5354f6648099982e22d4052c6914ef1"
-  integrity sha512-U3jVgDVgLObq0FxKCoaOzwkPFNm1wr0N1aEAhZfVrArsK/OS1i6VuJiEQg7nq+pjDtsQI2kND5giigxvCDnjgA==
-  dependencies:
-    "@emotion/core" "^10.0.20"
-    "@emotion/styled" "^10.0.17"
-    "@storybook/client-logger" "5.3.0-alpha.41"
-    core-js "^3.0.1"
-    deep-object-diff "^1.1.0"
-    emotion-theming "^10.0.19"
-    global "^4.3.2"
-    memoizerific "^1.11.3"
-    polished "^3.3.1"
-    prop-types "^15.7.2"
-    resolve-from "^5.0.0"
-    ts-dedent "^1.1.0"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
