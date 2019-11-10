@@ -41,10 +41,10 @@
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
-    "@babel/preset-env": "^7.4.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
     "@babel/preset-flow": "^7.0.0",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/preset-react": "^7.7.0"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",
