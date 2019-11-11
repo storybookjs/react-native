@@ -25,7 +25,7 @@ yarn add -D @storybook/addon-docs@next
 Then add the following to your `.storybook/presets.js` exports:
 
 ```js
-module.exports = ['@storybook/addon-docs/angular/preset'];
+module.exports = ['@storybook/addon-docs/preset'];
 ```
 
 ## DocsPage
