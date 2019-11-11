@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import fs from 'fs';
 import createCompiler from '@storybook/addon-docs/mdx-compiler-plugin';
 
 function createBabelOptions(babelOptions?: any, configureJSX?: boolean) {

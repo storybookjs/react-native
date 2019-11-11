@@ -1,4 +1,3 @@
-import fs from 'fs';
 import * as commonPreset from './frameworks/common/preset';
 
 // Map a framework to a preset file that gets executed
