@@ -93,7 +93,7 @@ const DocsStory: FunctionComponent<DocsStoryProps> = ({
   parameters,
 }) => (
   <Anchor storyId={id}>
-    {expanded && <StoryHeading>{(parameters && parameters.displayName) || name}</StoryHeading>}
+    {expanded && <StoryHeading>{name}</StoryHeading>}
     {expanded && parameters && parameters.docs && parameters.docs.storyDescription && (
       <Description markdown={parameters.docs.storyDescription} />
     )}
