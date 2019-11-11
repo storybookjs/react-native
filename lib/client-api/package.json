@@ -40,6 +40,7 @@
     "lodash": "^4.17.15",
     "memoizerific": "^1.11.3",
     "qs": "^6.6.0",
+    "stable": "^0.1.8",
     "ts-dedent": "^1.1.0",
     "util-deprecate": "^1.0.2"
   },
