@@ -1,9 +1,8 @@
 import { ReactNode } from 'react';
 import { isNil } from 'lodash';
 import htmlTags from 'html-tags';
-import { ExtractedProp } from '../../../lib2/extractDocgenProps';
 import { createPropText } from '../../../lib2/createComponents';
-import { inspectValue } from './inspection/inspectValue';
+import { inspectValue } from '../inspection/inspectValue';
 import { OBJECT_CAPTION, FUNCTION_CAPTION, ELEMENT_CAPTION, ARRAY_CAPTION } from './captions';
 import { generateCode } from './generateCode';
 import {
@@ -11,7 +10,7 @@ import {
   InspectionResult,
   InspectionType,
   InspectionElement,
-} from './inspection/types';
+} from '../inspection/types';
 
 const MAX_DEFAULT_VALUE_LENGTH = 50;
 
