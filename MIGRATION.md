@@ -5,6 +5,7 @@
     - [Create React App preset](#create-react-app-preset)
     - [Description doc block](#description-doc-block)
     - [React Native Async Storage](#react-native-async-storage)
+    - [Unified docs preset](#unified-docs-preset)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)
@@ -107,6 +108,10 @@ getStorybookUI({
   asyncStorage: require('@react-native-community/async-storage') || require('react-native').AsyncStorage || null
 });
 ```
+
+### Unified docs preset
+
+Addon-docs configuration gets simpler in 5.3. In 5.2, each framework had its own preset, e.g. `@storybook/addon-docs/react/preset`. Starting in 5.3, everybody should use `@storybook/addon-docs/preset`.
 
 ## From version 5.1.x to 5.2.x
 
