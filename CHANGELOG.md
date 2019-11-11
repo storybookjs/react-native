@@ -1,3 +1,78 @@
+## 5.2.6 (November 9, 2019)
+
+### Bug Fixes
+
+* Addon-info: Remove jsnext:main ([#8764](https://github.com/storybookjs/storybook/pull/8764))
+* Addon-info: Fix "The prop 'children' is marked as required in 'Td'" ([#8745](https://github.com/storybookjs/storybook/pull/8745))
+* UI: Fix unmount components on Canvas/Docs tab switch ([#8625](https://github.com/storybookjs/storybook/pull/8625))
+* Addon-docs: Fix code style inside LI ([#8708](https://github.com/storybookjs/storybook/pull/8708))
+* Remove min-height CSS rule from DocsPage wrapper ([#8366](https://github.com/storybookjs/storybook/pull/8366))
+* Core: Revert webpack rebuild changes in node_modules  ([#8657](https://github.com/storybookjs/storybook/pull/8657))
+* Addon-notes: Add key to render function ([#8633](https://github.com/storybookjs/storybook/pull/8633))
+* Addon-docs: Fix story scroll-to heuristics ([#8629](https://github.com/storybookjs/storybook/pull/8629))
+* React-native-server: Changed default port to number in CLI options ([#8584](https://github.com/storybookjs/storybook/pull/8584))
+* Increase TooltipLinkList max-height to accommodate more links ([#8545](https://github.com/storybookjs/storybook/pull/8545))
+* Prevent form submission as search is done while typing ([#8546](https://github.com/storybookjs/storybook/pull/8546))
+* Ondevice-knobs: Fix peer dep ([#8644](https://github.com/storybookjs/storybook/pull/8644))
+
+## 5.3.0-alpha.42 (November 9, 2019)
+
+### Bug Fixes
+
+* Addon-info: Remove jsnext:main ([#8764](https://github.com/storybookjs/storybook/pull/8764))
+* Addon-info: Fix "The prop 'children' is marked as required in 'Td'" ([#8745](https://github.com/storybookjs/storybook/pull/8745))
+
+### Maintenance
+
+* React-native: Update compilation target - it was compiled for old browsers ([#8698](https://github.com/storybookjs/storybook/pull/8698))
+
+## 5.3.0-alpha.41 (November 7, 2019)
+
+### Features
+
+* Addon-docs: Render array of shape properly in props table ([#8707](https://github.com/storybookjs/storybook/pull/8707))
+* Addon-docs: Render params description in props table, support @ignore ([#8702](https://github.com/storybookjs/storybook/pull/8702))
+
+### Bug Fixes
+
+* Addon-docs: Fix "Cannot read property 'props'" ([#8731](https://github.com/storybookjs/storybook/pull/8731))
+* UI: Fix unmount components on Canvas/Docs tab switch ([#8625](https://github.com/storybookjs/storybook/pull/8625))
+* Angular: Fix loading baseConfig if no angular.json found ([#8727](https://github.com/storybookjs/storybook/pull/8727))
+
+## 5.3.0-alpha.40 (November 6, 2019)
+
+### Features
+
+* TriConfig configuration refactor ([#8597](https://github.com/storybookjs/storybook/pull/8597))
+* Presets: Ability to combine presets into another preset ([#6828](https://github.com/storybookjs/storybook/pull/6828))
+
+### Bug Fixes
+
+* Theming: Fix invisible hr styles in typography ([#8659](https://github.com/storybookjs/storybook/pull/8659))
+
+### Maintenance
+
+* Build: caching to github workflows ([#8724](https://github.com/storybookjs/storybook/pull/8724))
+
+## 5.3.0-alpha.39 (November 5, 2019)
+
+### Breaking Changes
+
+* React-native: Require user-provided async storage ([#7801](https://github.com/storybookjs/storybook/pull/7801))
+
+### Features
+
+* Addon-docs: Inline rendering for web-components as default ([#8705](https://github.com/storybookjs/storybook/pull/8705))
+
+### Bug Fixes
+
+* Addon-docs: Fix recipe to use `notes` as component description ([#8718](https://github.com/storybookjs/storybook/pull/8718))
+* Addon-docs: Fix code style inside LI ([#8708](https://github.com/storybookjs/storybook/pull/8708))
+* React Native: Fix on-device-notes ([#8692](https://github.com/storybookjs/storybook/pull/8692))
+* React Native: On Device Knobs Groups Fix ([#8694](https://github.com/storybookjs/storybook/pull/8694))
+* React-native: Fix event listening for story navigation ([#8690](https://github.com/storybookjs/storybook/pull/8690))
+* React-Native: Add safe area wrapper for iphone x and later ([#8679](https://github.com/storybookjs/storybook/pull/8679))
+
 ## 5.3.0-alpha.38 (November 3, 2019)
 
 ### Bug Fixes

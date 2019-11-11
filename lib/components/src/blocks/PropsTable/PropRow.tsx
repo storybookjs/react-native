@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
-import { PropDef } from './PropDef';
+import { isNil } from 'lodash';
+import { PropDef, PropDefJsDocTags } from './PropDef';
 
 enum PropType {
   SHAPE = 'shape',
@@ -19,6 +20,10 @@ interface PrettyPropTypeProps {
 
 interface PrettyPropValProps {
   value: any;
+}
+
+interface JsDocParamsAndReturnsProps {
+  tags: PropDefJsDocTags;
 }
 
 export interface PropRowProps {
@@ -43,6 +48,19 @@ const StyledPropDef = styled.div(({ theme }) => ({
   fontSize: `${theme.typography.size.code}%`,
 }));
 
+const JsDocParamsAndReturnsTBody = styled.tbody({ boxShadow: 'none !important' });
+
+const JsDocCellStyle = { paddingTop: '0 !important', paddingBottom: '0 !important' };
+
+const JsDocNameCell = styled.td({
+  ...JsDocCellStyle,
+});
+
+const JsDocDescCell = styled.td({
+  ...JsDocCellStyle,
+  width: 'auto !important',
+});
+
 const prettyPrint = (type: any): string => {
   if (!type || !type.name) {
     return '';
@@ -58,8 +76,17 @@ const prettyPrint = (type: any): string => {
       return Array.isArray(type.value)
         ? `Union<${type.value.map(prettyPrint).join(' | ')}>`
         : JSON.stringify(type.value);
-    case PropType.ARRAYOF:
-      return `[ ${prettyPrint(type.value)} ]`;
+    case PropType.ARRAYOF: {
+      let shape = type.value.name;
+
+      if (shape === 'custom') {
+        if (type.value.raw) {
+          shape = type.value.raw.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
+        }
+      }
+
+      return `[ ${shape} ]`;
+    }
     case PropType.OBJECTOF:
       return `objectOf(${prettyPrint(type.value)})`;
     case PropType.ENUM:
@@ -84,8 +111,46 @@ export const PrettyPropVal: FC<PrettyPropValProps> = ({ value }) => (
   <span>{JSON.stringify(value)}</span>
 );
 
+const JsDocParamsAndReturns: FC<JsDocParamsAndReturnsProps> = ({ tags }) => {
+  if (isNil(tags)) {
+    return null;
+  }
+
+  const params = (tags.params || []).filter(x => x.description);
+  const hasDisplayableParams = params.length !== 0;
+  const hasDisplayableReturns = !isNil(tags.returns) && !isNil(tags.returns.description);
+
+  if (!hasDisplayableParams && !hasDisplayableReturns) {
+    return null;
+  }
+
+  return (
+    <table>
+      <JsDocParamsAndReturnsTBody>
+        {hasDisplayableParams &&
+          params.map(x => (
+            <tr key={x.name}>
+              <JsDocNameCell>
+                <code>{x.name}</code>
+              </JsDocNameCell>
+              <JsDocDescCell>{x.description}</JsDocDescCell>
+            </tr>
+          ))}
+        {hasDisplayableReturns && (
+          <tr key="returns">
+            <JsDocNameCell>
+              <code>Returns</code>
+            </JsDocNameCell>
+            <JsDocDescCell>{tags.returns.description}</JsDocDescCell>
+          </tr>
+        )}
+      </JsDocParamsAndReturnsTBody>
+    </table>
+  );
+};
+
 export const PropRow: FC<PropRowProps> = ({
-  row: { name, type, required, description, defaultValue },
+  row: { name, type, required, description, defaultValue, jsDocTags },
 }) => (
   <tr>
     <td>
@@ -97,13 +162,8 @@ export const PropRow: FC<PropRowProps> = ({
       <StyledPropDef>
         <PrettyPropType type={type} />
       </StyledPropDef>
+      <JsDocParamsAndReturns tags={jsDocTags} />
     </td>
-    <td>
-      {defaultValue === null || defaultValue === undefined ? (
-        '-'
-      ) : (
-        <PrettyPropVal value={defaultValue} />
-      )}
-    </td>
+    <td>{isNil(defaultValue) ? '-' : <PrettyPropVal value={defaultValue} />}</td>
   </tr>
 );
