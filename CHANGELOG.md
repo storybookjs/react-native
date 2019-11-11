@@ -1,3 +1,14 @@
+## 5.3.0-alpha.43 (November 11, 2019)
+
+### Bug Fixes
+
+* Source-loader: Warn if applied to non-stories file ([#8773](https://github.com/storybookjs/storybook/pull/8773))
+
+### Maintenance
+
+* Presets / Addon-docs: Cleanup framework-specific presets ([#8782](https://github.com/storybookjs/storybook/pull/8782))
+* Add @babel/runtime to workspace ([#8774](https://github.com/storybookjs/storybook/pull/8774))
+
 ## 5.2.6 (November 9, 2019)
 
 ### Bug Fixes
