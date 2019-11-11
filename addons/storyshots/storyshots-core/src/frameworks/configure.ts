@@ -84,31 +84,56 @@ const loadStories = (loadable: string, framework: string, clientApi: ClientApi) 
   });
 };
 
+const getPreviewFile = (configDir: string): string | false => {
+  const preview = path.join(configDir, 'preview.js');
+  const previewTS = path.join(configDir, 'preview.ts');
+  const config = path.join(configDir, 'config.js');
+  const configTS = path.join(configDir, 'config.ts');
+
+  if (isFile(previewTS)) {
+    return configTS;
+  }
+  if (isFile(preview)) {
+    return config;
+  }
+  if (isFile(configTS)) {
+    return configTS;
+  }
+  if (isFile(config)) {
+    return config;
+  }
+
+  return false;
+};
+
+const getMainFile = (configDir: string): string | false => {
+  const main = path.join(configDir, 'main.js');
+
+  if (isFile(main)) {
+    return main;
+  }
+
+  return false;
+};
+
 function getConfigPathParts(input: string): Output {
   const configDir = path.resolve(input);
 
   if (fs.lstatSync(configDir).isDirectory()) {
     const output: Output = { files: [], stories: [] };
-    const main = path.join(configDir, 'main.js');
-    const preview = path.join(configDir, 'preview.js');
-    const config = path.join(configDir, 'config.js');
-    const configTS = path.join(configDir, 'config.ts');
 
-    if (isFile(preview)) {
+    const preview = getPreviewFile(configDir);
+    const main = getMainFile(configDir);
+
+    if (preview) {
       output.files.push(preview);
     }
-    if (isFile(main)) {
+    if (main) {
       const { stories = [] } = require.requireActual(main);
 
       const result = stories.reduce((acc: string[], i: string) => [...acc, ...glob.sync(i)], []);
 
       output.stories = result;
-    }
-    if (isFile(config)) {
-      output.files.push(config);
-    }
-    if (isFile(configTS)) {
-      output.files.push(configTS);
     }
 
     return output;
@@ -119,7 +144,7 @@ function getConfigPathParts(input: string): Output {
 
 function configure(
   options: {
-    storybook: any;
+    storybook: ClientApi;
   } & StoryshotsOptions
 ): void {
   const { configPath = '.storybook', config, storybook, framework } = options;
