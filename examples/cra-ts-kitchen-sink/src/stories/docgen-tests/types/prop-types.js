@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
-import PropTypes, { string } from 'prop-types';
+import PropTypes, { string, shape } from 'prop-types';
 
 const NAMED_OBJECT = {
   text: PropTypes.string.isRequired,
@@ -57,7 +57,10 @@ PropTypesProps.propTypes = {
   symbol: PropTypes.symbol,
   node: PropTypes.node,
   functionalElement: PropTypes.element,
+  functionalElementInline: PropTypes.element,
+  functionalElementNamedInline: PropTypes.element,
   classElement: PropTypes.element,
+  classElementInline: PropTypes.element,
   functionalElementType: PropTypes.elementType,
   classElementType: PropTypes.elementType,
   /**
@@ -96,7 +99,7 @@ PropTypesProps.propTypes = {
         })
       ),
     }),
-    PropTypes.shape({ bar: PropTypes.number }),
+    shape({ bar: PropTypes.number }),
   ]),
   oneOfComplexType: PropTypes.oneOf([NAMED_OBJECT, ANOTHER_OBJECT]),
   oneOfComponents: PropTypes.oneOf([FunctionalComponent, ClassComponent]),
@@ -166,6 +169,7 @@ PropTypesProps.propTypes = {
   objectOfInlineObject: PropTypes.objectOf({
     foo: PropTypes.string,
     bar: PropTypes.string,
+    barry: PropTypes.string,
   }),
   objectOfShortShape: PropTypes.objectOf(
     PropTypes.shape({
@@ -276,7 +280,18 @@ PropTypesProps.defaultProps = {
   symbol: Symbol('Default symbol'),
   node: <div>Hello!</div>,
   functionalElement: <FunctionalComponent />,
+  functionalElementInline: () => {
+    return <div>Inlined FunctionnalComponent!</div>;
+  },
+  functionalElementNamedInline: function InlinedFunctionalComponent() {
+    return <div>Inlined FunctionnalComponent!</div>;
+  },
   classElement: <ClassComponent />,
+  classElementInline: class InlinedClassComponent extends React.PureComponent {
+    render() {
+      return <div>Inlined ClassComponent!</div>;
+    }
+  },
   functionalElementType: FunctionalComponent,
   classElementType: ClassComponent,
   instanceOf: new Set(),

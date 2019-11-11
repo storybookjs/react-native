@@ -3,6 +3,7 @@ import { Component } from '../blocks/shared';
 
 export type PropsExtractor = (component: Component) => PropsTableProps | null;
 
+// TODO: Define proper docgen types and use them all around in addons-doc.
 export interface DocgenInfo {
   type?: {
     name: string;

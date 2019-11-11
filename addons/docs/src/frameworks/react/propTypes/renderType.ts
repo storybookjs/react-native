@@ -4,9 +4,16 @@ import { ExtractedProp } from '../../../lib2/extractDocgenProps';
 import { ExtractedJsDocParam } from '../../../lib2/jsdocParser';
 import { createPropText } from '../../../lib2/createComponents';
 import { PropTypesType } from './types';
-import { InspectionType, inspectValue } from './inspectValue';
-
-// TODO: For shapes, need to somehow add <br /> between values. Does br works in title?
+import { InspectionType, inspectValue } from './inspection/inspectValue';
+import { generateCode } from './generateCode';
+import {
+  OBJECT_CAPTION,
+  ARRAY_CAPTION,
+  CLASS_CAPTION,
+  FUNCTION_CAPTION,
+  ELEMENT_CAPTION,
+  CUSTOM_CAPTION,
+} from './captions';
 
 const MAX_CAPTION_LENGTH = 35;
 
@@ -30,10 +37,6 @@ interface TypeDef {
   inferedType?: InspectionType;
 }
 
-function shortifyPropTypes(value: string): string {
-  return value.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
-}
-
 function createTypeDef({
   name,
   caption,
@@ -53,33 +56,87 @@ function createTypeDef({
   };
 }
 
-// TODO: Fix "oneOfComplexShapes"
-function generateComputedValue(typeName: string, value: string): TypeDef {
-  const { inferedType } = inspectValue(value);
+function shortifyPropTypes(value: string): string {
+  return value.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
+}
 
-  return createTypeDef({
-    name: typeName,
-    caption: inferedType.toString(),
-    value: inferedType === InspectionType.OBJECT ? shortifyPropTypes(value) : value,
-    inferedType,
-  });
+function prettyObject(ast: any, compact = false): string {
+  return shortifyPropTypes(generateCode(ast, compact));
+}
+
+function getCaptionFromInspectionType(type: InspectionType): string {
+  switch (type) {
+    case InspectionType.OBJECT:
+      return OBJECT_CAPTION;
+    case InspectionType.ARRAY:
+      return ARRAY_CAPTION;
+    case InspectionType.CLASS:
+      return CLASS_CAPTION;
+    case InspectionType.FUNCTION:
+      return FUNCTION_CAPTION;
+    case InspectionType.ELEMENT:
+      return ELEMENT_CAPTION;
+    default:
+      return CUSTOM_CAPTION;
+  }
+}
+
+function isTooLongForCaption(value: string): boolean {
+  return value.length > MAX_CAPTION_LENGTH;
+}
+
+function generateValuesForObjectAst(ast: any): [string, string] {
+  let caption = prettyObject(ast, true);
+  let value;
+
+  if (!isTooLongForCaption(caption)) {
+    value = caption;
+  } else {
+    caption = OBJECT_CAPTION;
+    value = prettyObject(ast);
+  }
+
+  return [caption, value];
 }
 
 function generateCustom({ raw }: PropType): TypeDef {
   if (!isNil(raw)) {
-    const { inferedType } = inspectValue(raw);
+    const { inferedType, ast } = inspectValue(raw);
+    const { type, identifier } = inferedType as any;
 
-    const value = inferedType === InspectionType.OBJECT ? shortifyPropTypes(raw) : raw;
+    let caption;
+    let value;
+
+    switch (type) {
+      case InspectionType.IDENTIFIER:
+      case InspectionType.LITERAL:
+        caption = raw;
+        break;
+      case InspectionType.OBJECT: {
+        const [objectCaption, objectValue] = generateValuesForObjectAst(ast);
+        caption = objectCaption;
+        value = objectValue;
+        break;
+      }
+      case InspectionType.ELEMENT:
+        caption = !isNil(identifier) ? identifier : ELEMENT_CAPTION;
+        value = raw;
+        break;
+      default:
+        caption = getCaptionFromInspectionType(type);
+        value = raw;
+        break;
+    }
 
     return createTypeDef({
       name: PropTypesType.CUSTOM,
-      caption: value.length <= MAX_CAPTION_LENGTH ? value : 'custom',
+      caption,
       value,
-      inferedType,
+      inferedType: type,
     });
   }
 
-  return createTypeDef({ name: PropTypesType.CUSTOM, caption: 'custom' });
+  return createTypeDef({ name: PropTypesType.CUSTOM, caption: CUSTOM_CAPTION });
 }
 
 function generateFuncSignature(
@@ -123,13 +180,13 @@ function generateFunc(extractedProp: ExtractedProp): TypeDef {
     if (hasParams || hasReturns) {
       return createTypeDef({
         name: PropTypesType.FUNC,
-        caption: 'func',
+        caption: FUNCTION_CAPTION,
         value: generateFuncSignature(extractedProp, hasParams, hasReturns),
       });
     }
   }
 
-  return createTypeDef({ name: PropTypesType.FUNC, caption: 'func' });
+  return createTypeDef({ name: PropTypesType.FUNC, caption: FUNCTION_CAPTION });
 }
 
 function generateShape(type: PropType, extractedProp: ExtractedProp): TypeDef {
@@ -137,12 +194,13 @@ function generateShape(type: PropType, extractedProp: ExtractedProp): TypeDef {
     .map((key: string) => `${key}: ${generateType(type.value[key], extractedProp).value}`)
     .join(', ');
 
-  const shape = `{ ${fields} }`;
+  const { ast } = inspectValue(`{ ${fields} }`);
+  const [caption, value] = generateValuesForObjectAst(ast);
 
   return createTypeDef({
     name: PropTypesType.SHAPE,
-    caption: shape.length <= MAX_CAPTION_LENGTH ? shape : 'object',
-    value: shape,
+    caption,
+    value,
   });
 }
 
@@ -150,16 +208,10 @@ function generateObjectOf(type: PropType, extractedProp: ExtractedProp): TypeDef
   const format = (of: string) => `objectOf(${of})`;
 
   // eslint-disable-next-line prefer-const
-  let { name, caption, value, inferedType } = generateType(type.value, extractedProp);
+  let { name, caption, value } = generateType(type.value, extractedProp);
 
-  if (name === PropTypesType.CUSTOM) {
-    if (!isNil(inferedType)) {
-      if (inferedType !== InspectionType.STRING && inferedType !== InspectionType.OBJECT) {
-        caption = inferedType.toString();
-      }
-    }
-  } else if (name === PropTypesType.SHAPE) {
-    if (value.length <= MAX_CAPTION_LENGTH) {
+  if (name === PropTypesType.SHAPE) {
+    if (!isTooLongForCaption(value)) {
       caption = value;
     }
   }
@@ -196,9 +248,31 @@ function generateUnion(type: PropType, extractedProp: ExtractedProp): TypeDef {
 }
 
 function generateEnumValue({ value, computed }: EnumValue): TypeDef {
-  return computed
-    ? generateComputedValue('enumvalue', value)
-    : createTypeDef({ name: 'enumvalue', caption: value });
+  if (computed) {
+    const { inferedType, ast } = inspectValue(value) as any;
+    const { type } = inferedType;
+
+    let caption = getCaptionFromInspectionType(type);
+
+    if (
+      type === InspectionType.FUNCTION ||
+      type === InspectionType.CLASS ||
+      type === InspectionType.ELEMENT
+    ) {
+      if (!isNil(inferedType.identifier)) {
+        caption = inferedType.identifier;
+      }
+    }
+
+    return createTypeDef({
+      name: 'enumvalue',
+      caption,
+      value: type === InspectionType.OBJECT ? prettyObject(ast) : value,
+      inferedType: type,
+    });
+  }
+
+  return createTypeDef({ name: 'enumvalue', caption: value });
 }
 
 function generateEnum(type: PropType): TypeDef {
@@ -225,35 +299,32 @@ function generateEnum(type: PropType): TypeDef {
   return createTypeDef({ name: PropTypesType.ENUM, caption: type.value });
 }
 
-function generateArray(type: PropType, extractedProp: ExtractedProp): TypeDef {
-  const braceAfter = (of: string) => `${of}[]`;
-  const braceAround = (of: string) => `[${of}]`;
+function braceAfter(of: string): string {
+  return `${of}[]`;
+}
 
+function braceAround(of: string): string {
+  return `[${of}]`;
+}
+
+function createArrayOfObjectTypeDef(caption: string, value: string): TypeDef {
+  return createTypeDef({
+    name: PropTypesType.ARRAYOF,
+    caption: caption === OBJECT_CAPTION ? braceAfter(caption) : braceAround(caption),
+    value: braceAround(value),
+  });
+}
+
+function generateArray(type: PropType, extractedProp: ExtractedProp): TypeDef {
   // eslint-disable-next-line prefer-const
   let { name, caption, value, inferedType } = generateType(type.value, extractedProp);
 
   if (name === PropTypesType.CUSTOM) {
-    if (!isNil(inferedType)) {
-      if (inferedType !== InspectionType.STRING && inferedType !== InspectionType.OBJECT) {
-        caption = inferedType.toString();
-      } else if (inferedType === InspectionType.OBJECT) {
-        // Brace around inlined objects.
-        // Show the inlined object if it's short.
-        caption =
-          value.length <= MAX_CAPTION_LENGTH
-            ? braceAround(value)
-            : braceAfter(inferedType.toString());
-        value = braceAround(value);
-
-        return createTypeDef({ name: PropTypesType.ARRAYOF, caption, value });
-      }
+    if (inferedType === InspectionType.OBJECT) {
+      return createArrayOfObjectTypeDef(caption, value);
     }
   } else if (name === PropTypesType.SHAPE) {
-    // Brace around objects.
-    caption = value.length <= MAX_CAPTION_LENGTH ? braceAround(value) : braceAfter(caption);
-    value = braceAround(value);
-
-    return createTypeDef({ name: PropTypesType.ARRAYOF, caption, value });
+    return createArrayOfObjectTypeDef(caption, value);
   }
 
   return createTypeDef({ name: PropTypesType.ARRAYOF, caption: braceAfter(value) });

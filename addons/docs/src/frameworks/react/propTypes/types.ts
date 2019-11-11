@@ -1,5 +1,6 @@
 export enum PropTypesType {
   CUSTOM = 'custom',
+  ANY = 'any',
   FUNC = 'func',
   SHAPE = 'shape',
   OBJECT = 'object',
@@ -8,4 +9,7 @@ export enum PropTypesType {
   UNION = 'union',
   ENUM = 'enum',
   ARRAYOF = 'arrayOf',
+  ELEMENT = 'element',
+  ELEMENTTYPE = 'elementType',
+  NODE = 'node',
 }
