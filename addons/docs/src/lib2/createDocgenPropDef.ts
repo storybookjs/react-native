@@ -1,6 +1,6 @@
 import { isNil } from 'lodash';
 import { PropDef } from '@storybook/components';
-import { TypeSystem, DocgenInfo } from './types';
+import { TypeSystem, DocgenInfo, DocgenType } from './types';
 import { JsDocParsingResult } from './jsdocParser';
 import { createPropText } from './createComponents';
 import { renderDefaultValue } from './renderDefaultValue';
@@ -11,11 +11,7 @@ export type PropDefFactory = (
   jsDocParsingResult?: JsDocParsingResult
 ) => PropDef;
 
-interface PropType {
-  name: string;
-}
-
-function createDefaultPropDef(name: string, type: PropType, docgenInfo: DocgenInfo): PropDef {
+function createDefaultPropDef(name: string, type: DocgenType, docgenInfo: DocgenInfo): PropDef {
   const { description, required, defaultValue } = docgenInfo;
 
   return {
@@ -29,7 +25,7 @@ function createDefaultPropDef(name: string, type: PropType, docgenInfo: DocgenIn
 
 function createDocgenPropDef(
   name: string,
-  type: PropType,
+  type: DocgenType,
   docgenInfo: DocgenInfo,
   jsDocParsingResult: JsDocParsingResult
 ): PropDef {

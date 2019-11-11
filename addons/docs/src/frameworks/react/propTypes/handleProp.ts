@@ -12,9 +12,12 @@ export function enhancePropTypesProp(extractedProp: ExtractedProp): PropDef {
     propDef.type = newtype;
   }
 
-  const newDefaultValue = renderDefaultValue(extractedProp);
-  if (!isNil(newDefaultValue)) {
-    propDef.defaultValue = newDefaultValue;
+  const { defaultValue } = extractedProp.docgenInfo;
+  if (!isNil(defaultValue)) {
+    const newDefaultValue = renderDefaultValue(defaultValue.value);
+    if (!isNil(newDefaultValue)) {
+      propDef.defaultValue = newDefaultValue;
+    }
   }
 
   return propDef;

@@ -1,23 +1,32 @@
-import { PropsTableProps, PropDef } from '@storybook/components';
+import { PropsTableProps } from '@storybook/components';
 import { Component } from '../blocks/shared';
 
 export type PropsExtractor = (component: Component) => PropsTableProps | null;
 
-// TODO: Define proper docgen types and use them all around in addons-doc.
+export interface DocgenBaseType {
+  name: string;
+  description?: string;
+  require?: boolean;
+}
+
+export interface DocgenPropType extends DocgenBaseType {
+  value?: any;
+  raw?: string;
+  computed?: boolean;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface DocgenFlowType extends DocgenBaseType {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface DocgenTypeScriptType extends DocgenBaseType {}
+
+export type DocgenType = DocgenPropType | DocgenFlowType | DocgenTypeScriptType;
+
 export interface DocgenInfo {
-  type?: {
-    name: string;
-    value?: {
-      name?: string;
-      raw?: string;
-    };
-  };
-  flowType?: {
-    name: string;
-  };
-  tsType?: {
-    name: string;
-  };
+  type?: DocgenPropType;
+  flowType?: DocgenFlowType;
+  tsType?: DocgenTypeScriptType;
   required: boolean;
   description?: string;
   defaultValue?: {

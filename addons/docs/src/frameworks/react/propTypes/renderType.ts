@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { ExtractedProp } from '../../../lib2/extractDocgenProps';
 import { ExtractedJsDocParam } from '../../../lib2/jsdocParser';
 import { createPropText } from '../../../lib2/createComponents';
-import { PropTypesType } from './types';
+import { DocgenPropType } from '../../../lib2/types';
 import { inspectValue } from './inspection/inspectValue';
 import { generateCode } from './generateCode';
 import {
@@ -18,12 +18,20 @@ import { InspectionType } from './inspection/types';
 
 const MAX_CAPTION_LENGTH = 35;
 
-interface PropType {
-  name: string;
-  value?: any;
-  computed?: boolean;
-  raw?: string;
-  description?: string;
+enum PropTypesType {
+  CUSTOM = 'custom',
+  ANY = 'any',
+  FUNC = 'func',
+  SHAPE = 'shape',
+  OBJECT = 'object',
+  INSTANCEOF = 'instanceOf',
+  OBJECTOF = 'objectOf',
+  UNION = 'union',
+  ENUM = 'enum',
+  ARRAYOF = 'arrayOf',
+  ELEMENT = 'element',
+  ELEMENTTYPE = 'elementType',
+  NODE = 'node',
 }
 
 interface EnumValue {
@@ -57,12 +65,12 @@ function createTypeDef({
   };
 }
 
-function shortifyPropTypes(value: string): string {
+function cleanPropTypes(value: string): string {
   return value.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
 }
 
 function prettyObject(ast: any, compact = false): string {
-  return shortifyPropTypes(generateCode(ast, compact));
+  return cleanPropTypes(generateCode(ast, compact));
 }
 
 function getCaptionFromInspectionType(type: InspectionType): string {
@@ -100,7 +108,7 @@ function generateValuesForObjectAst(ast: any): [string, string] {
   return [caption, value];
 }
 
-function generateCustom({ raw }: PropType): TypeDef {
+function generateCustom({ raw }: DocgenPropType): TypeDef {
   if (!isNil(raw)) {
     const { inferedType, ast } = inspectValue(raw);
     const { type, identifier } = inferedType as any;
@@ -190,7 +198,7 @@ function generateFunc(extractedProp: ExtractedProp): TypeDef {
   return createTypeDef({ name: PropTypesType.FUNC, caption: FUNCTION_CAPTION });
 }
 
-function generateShape(type: PropType, extractedProp: ExtractedProp): TypeDef {
+function generateShape(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
   const fields = Object.keys(type.value)
     .map((key: string) => `${key}: ${generateType(type.value[key], extractedProp).value}`)
     .join(', ');
@@ -205,7 +213,7 @@ function generateShape(type: PropType, extractedProp: ExtractedProp): TypeDef {
   });
 }
 
-function generateObjectOf(type: PropType, extractedProp: ExtractedProp): TypeDef {
+function generateObjectOf(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
   const format = (of: string) => `objectOf(${of})`;
 
   // eslint-disable-next-line prefer-const
@@ -224,7 +232,7 @@ function generateObjectOf(type: PropType, extractedProp: ExtractedProp): TypeDef
   });
 }
 
-function generateUnion(type: PropType, extractedProp: ExtractedProp): TypeDef {
+function generateUnion(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
   if (Array.isArray(type.value)) {
     const values = type.value.reduce(
       (acc: any, v: any) => {
@@ -276,7 +284,7 @@ function generateEnumValue({ value, computed }: EnumValue): TypeDef {
   return createTypeDef({ name: 'enumvalue', caption: value });
 }
 
-function generateEnum(type: PropType): TypeDef {
+function generateEnum(type: DocgenPropType): TypeDef {
   if (Array.isArray(type.value)) {
     const values = type.value.reduce(
       (acc: any, v: EnumValue) => {
@@ -316,7 +324,7 @@ function createArrayOfObjectTypeDef(caption: string, value: string): TypeDef {
   });
 }
 
-function generateArray(type: PropType, extractedProp: ExtractedProp): TypeDef {
+function generateArray(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
   // eslint-disable-next-line prefer-const
   let { name, caption, value, inferedType } = generateType(type.value, extractedProp);
 
@@ -331,7 +339,7 @@ function generateArray(type: PropType, extractedProp: ExtractedProp): TypeDef {
   return createTypeDef({ name: PropTypesType.ARRAYOF, caption: braceAfter(value) });
 }
 
-function generateType(type: PropType, extractedProp: ExtractedProp): TypeDef {
+function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
   try {
     switch (type.name) {
       case PropTypesType.CUSTOM:
@@ -362,7 +370,7 @@ function generateType(type: PropType, extractedProp: ExtractedProp): TypeDef {
 }
 
 export function renderType(extractedProp: ExtractedProp): ReactNode {
-  const type = extractedProp.docgenInfo.type as PropType;
+  const { type } = extractedProp.docgenInfo;
 
   switch (type.name) {
     case PropTypesType.CUSTOM:

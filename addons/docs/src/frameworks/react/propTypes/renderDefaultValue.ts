@@ -92,27 +92,19 @@ function renderArray({ ast }: InspectionResult): ReactNode {
     : createPropText(ARRAY_CAPTION, { title: generateCode(ast) });
 }
 
-// TODO: The function signature might only receive a defaultValue
-export function renderDefaultValue({ docgenInfo }: ExtractedProp): ReactNode {
-  const { defaultValue } = docgenInfo;
+export function renderDefaultValue(defaultValue: string): ReactNode {
+  const inspectionResult = inspectValue(defaultValue);
 
-  if (!isNil(defaultValue)) {
-    const { value } = defaultValue;
-    const inspectionResult = inspectValue(value);
-
-    switch (inspectionResult.inferedType.type) {
-      case InspectionType.OBJECT:
-        return renderObject(inspectionResult);
-      case InspectionType.FUNCTION:
-        return renderFunc(inspectionResult);
-      case InspectionType.ELEMENT:
-        return renderElement(value, inspectionResult);
-      case InspectionType.ARRAY:
-        return renderArray(inspectionResult);
-      default:
-        break;
-    }
+  switch (inspectionResult.inferedType.type) {
+    case InspectionType.OBJECT:
+      return renderObject(inspectionResult);
+    case InspectionType.FUNCTION:
+      return renderFunc(inspectionResult);
+    case InspectionType.ELEMENT:
+      return renderElement(defaultValue, inspectionResult);
+    case InspectionType.ARRAY:
+      return renderArray(inspectionResult);
+    default:
+      return null;
   }
-
-  return null;
 }
