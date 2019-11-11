@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { isNil } from 'lodash';
-import { createPropText } from './createComponents';
+import { createPropText } from '../createComponents';
 
 const BLACKLIST = ['null', 'undefined'];
 

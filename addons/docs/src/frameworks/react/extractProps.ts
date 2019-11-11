@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { isForwardRef, isMemo } from 'react-is';
 import { PropDef } from '@storybook/components';
-import { hasDocgen } from '../../lib2/docgenUtils';
-import { extractPropsFromDocgen } from '../../lib2/extractDocgenProps';
-import { PropsExtractor, TypeSystem } from '../../lib2/types';
+import { hasDocgen } from '../../lib2/docgen/utils';
+import { extractPropsFromDocgen } from '../../lib2/docgen/extractDocgenProps';
+import { PropsExtractor, TypeSystem } from '../../lib2/docgen/types';
 import { Component } from '../../blocks/shared';
 import { enhancePropTypesProp } from './propTypes/handleProp';
 

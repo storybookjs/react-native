@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 
 import { isNil } from 'lodash';
-import { Component } from '../blocks/shared';
+import { Component } from '../../blocks/shared';
 
 export function hasDocgen(component: Component): boolean {
   return !!component.__docgenInfo;

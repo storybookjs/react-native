@@ -1,9 +1,9 @@
 import { isNil } from 'lodash';
 import { ReactNode } from 'react';
-import { ExtractedProp } from '../../../lib2/extractDocgenProps';
+import { ExtractedProp } from '../../../lib2/docgen/extractDocgenProps';
 import { ExtractedJsDocParam } from '../../../lib2/jsdocParser';
 import { createPropText } from '../../../lib2/createComponents';
-import { DocgenPropType } from '../../../lib2/types';
+import { DocgenPropType } from '../../../lib2/docgen/types';
 import { inspectValue } from '../inspection/inspectValue';
 import { generateCode } from './generateCode';
 import {

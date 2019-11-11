@@ -1,6 +1,6 @@
 import { isNil } from 'lodash';
 import { PropDef } from '@storybook/components';
-import { ExtractedProp } from '../../../lib2/extractDocgenProps';
+import { ExtractedProp } from '../../../lib2/docgen/extractDocgenProps';
 import { renderType } from './renderType';
 import { renderDefaultValue } from './renderDefaultValue';
 

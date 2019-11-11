@@ -1,10 +1,10 @@
 import { isNil } from 'lodash';
 import { PropDef } from '@storybook/components';
-import { Component } from '../blocks/shared';
-import { ExtractedJsDoc, parseJsDoc } from './jsdocParser';
+import { Component } from '../../blocks/shared';
+import { ExtractedJsDoc, parseJsDoc } from '../jsdocParser';
 import { DocgenInfo, TypeSystem } from './types';
-import { getDocgenSection, isValidDocgenSection } from './docgenUtils';
-import { getPropDefFactory, PropDefFactory } from './createDocgenPropDef';
+import { getDocgenSection, isValidDocgenSection } from './utils';
+import { getPropDefFactory, PropDefFactory } from './createPropDef';
 
 export interface ExtractedProp {
   propDef: PropDef;
@@ -53,7 +53,7 @@ export const extractPropsFromDocgen: ExtractProps = (component, section) => {
     .filter(x => x);
 };
 
-export function extractProp(
+function extractProp(
   propName: string,
   docgenInfo: DocgenInfo,
   typeSystem: TypeSystem,
