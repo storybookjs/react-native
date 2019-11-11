@@ -46,25 +46,17 @@ export interface InspectionArray extends BaseInspectionInferedType {
 export interface InspectionClass extends BaseInspectionInferedType {
   type: InspectionType.CLASS;
   identifier: string;
-  // TODO: Might remove this prop.
-  isDefinition: boolean;
 }
 
 export interface InspectionFunction extends BaseInspectionInferedType {
   type: InspectionType.FUNCTION;
   identifier?: string;
-  // TODO: Might remove this prop.
-  isDefinition: boolean;
   hasArguments: boolean;
 }
 
 export interface InspectionElement extends BaseInspectionInferedType {
   type: InspectionType.ELEMENT;
   identifier?: string;
-  // TODO: Might remove this prop.
-  isDefinition: boolean;
-  // TODO: Might Remove this prop.
-  isJsx: boolean;
 }
 
 export interface InspectionUnknown extends BaseInspectionInferedType {

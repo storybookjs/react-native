@@ -72,8 +72,6 @@ function parseFunction(
 
   const inferedType: InspectionFunction | InspectionElement = {
     type: isJsx ? InspectionType.ELEMENT : InspectionType.FUNCTION,
-    isDefinition: true,
-    isJsx,
     hasArguments: funcNode.params.length !== 0,
   };
 
@@ -107,8 +105,6 @@ function parseClass(
   const inferedType: any = {
     type: !isNil(innerJsxElementNode) ? InspectionType.ELEMENT : InspectionType.CLASS,
     identifier: extractIdentifierName(classNode.id),
-    isDefinition: true,
-    isJsx: !isNil(innerJsxElementNode),
   };
 
   return {
@@ -120,8 +116,6 @@ function parseClass(
 function parseJsxElement(jsxElementNode: any): ParsingResult<InspectionElement> {
   const inferedType: InspectionElement = {
     type: InspectionType.ELEMENT,
-    isDefinition: false,
-    isJsx: true,
   };
 
   const identifierName = extractIdentifierName(jsxElementNode.openingElement.name);
