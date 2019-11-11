@@ -140,6 +140,7 @@
     "@testing-library/react": "^9.2.0",
     "@types/doctrine": "^0.0.3",
     "@types/enzyme": "^3.10.3",
+    "@types/escodegen": "^0.0.6",
     "@types/jest": "^24.0.11",
     "@types/lodash": "^4.14.129",
     "@types/node": "^12.7.9",

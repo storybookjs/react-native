@@ -4,7 +4,7 @@ import { ExtractedProp } from '../../../lib2/extractDocgenProps';
 import { ExtractedJsDocParam } from '../../../lib2/jsdocParser';
 import { createPropText } from '../../../lib2/createComponents';
 import { PropTypesType } from './types';
-import { InspectionType, inspectValue } from './inspection/inspectValue';
+import { inspectValue } from './inspection/inspectValue';
 import { generateCode } from './generateCode';
 import {
   OBJECT_CAPTION,
@@ -14,6 +14,7 @@ import {
   ELEMENT_CAPTION,
   CUSTOM_CAPTION,
 } from './captions';
+import { InspectionType } from './inspection/types';
 
 const MAX_CAPTION_LENGTH = 35;
 

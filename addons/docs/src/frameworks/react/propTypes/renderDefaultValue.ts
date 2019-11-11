@@ -1,12 +1,17 @@
 import { ReactNode } from 'react';
 import { isNil } from 'lodash';
+import htmlTags from 'html-tags';
 import { ExtractedProp } from '../../../lib2/extractDocgenProps';
-import { PropTypesType } from './types';
 import { createPropText } from '../../../lib2/createComponents';
-import { InspectionType, inspectValue } from './inspection/inspectValue';
-import { CUSTOM_CAPTION, OBJECT_CAPTION, FUNCTION_CAPTION } from './captions';
+import { inspectValue } from './inspection/inspectValue';
+import { OBJECT_CAPTION, FUNCTION_CAPTION, ELEMENT_CAPTION, ARRAY_CAPTION } from './captions';
 import { generateCode } from './generateCode';
-import { InspectionFunction } from './inspection/types';
+import {
+  InspectionFunction,
+  InspectionResult,
+  InspectionType,
+  InspectionElement,
+} from './inspection/types';
 
 const MAX_DEFAULT_VALUE_LENGTH = 50;
 
@@ -14,39 +19,39 @@ function isTooLongForDefaultValue(value: string): boolean {
   return value.length > MAX_DEFAULT_VALUE_LENGTH;
 }
 
-function renderCustom(defaultValue: string): ReactNode {
-  const { inferedType, ast } = inspectValue(defaultValue);
+// TODO: Fix this any type.
+function getPrettyIdentifier(inferedType: any): string {
+  const { type, identifier } = inferedType;
 
-  switch (inferedType.type) {
-    case InspectionType.OBJECT:
-      return renderObject(defaultValue);
+  switch (type) {
+    case InspectionType.FUNCTION:
+      return inferedType.hasArguments ? `${identifier}( ... )` : `${identifier}()`;
+    case InspectionType.ELEMENT:
+      return inferedType.isJsx ? `<${identifier} />` : identifier;
     default:
-      return createPropText(CUSTOM_CAPTION, { title: defaultValue });
+      return identifier;
   }
 }
 
-function renderAny(defaultValue: string): ReactNode {
-  const { inferedType } = inspectValue(defaultValue);
+function renderObject({ ast }: InspectionResult): ReactNode {
+  let prettyCaption = generateCode(ast, true);
 
-  return createPropText(defaultValue);
-}
-
-function renderObject(defaultValue: string): ReactNode {
-  const { ast } = inspectValue(defaultValue);
-
-  const prettyCaption = generateCode(ast, true);
+  // Cannot get escodegen to add a space before the last } with the compact mode settings.
+  // This fix it until a better solution is found.
+  if (!prettyCaption.endsWith(' }')) {
+    prettyCaption = `${prettyCaption.slice(0, -1)} }`;
+  }
 
   return !isTooLongForDefaultValue(prettyCaption)
     ? createPropText(prettyCaption)
     : createPropText(OBJECT_CAPTION, { title: generateCode(ast) });
 }
 
-function renderFunc(defaultValue: string): ReactNode {
-  const { inferedType, ast } = inspectValue(defaultValue);
+function renderFunc({ inferedType, ast }: InspectionResult): ReactNode {
   const { identifier } = inferedType as InspectionFunction;
 
   if (!isNil(identifier)) {
-    return createPropText(identifier, { title: generateCode(ast) });
+    return createPropText(getPrettyIdentifier(inferedType), { title: generateCode(ast) });
   }
 
   const prettyCaption = generateCode(ast, true);
@@ -56,36 +61,56 @@ function renderFunc(defaultValue: string): ReactNode {
     : createPropText(FUNCTION_CAPTION, { title: generateCode(ast) });
 }
 
-function renderElementOrNode(defaultValue: string, defaultCaption: string): ReactNode {
-  const { inferedType } = inspectValue(defaultValue);
+// All elements are JSX elements.
+// JSX elements cannot are not supported by escodegen.
+function renderElement(defaultValue: string, inspectionResult: InspectionResult): ReactNode {
+  const { inferedType } = inspectionResult;
+  const { identifier } = inferedType as InspectionElement;
 
-  // if ()
+  if (!isNil(identifier)) {
+    const isHtmlTag = htmlTags.includes(identifier.toLowerCase());
 
-  return createPropText(defaultValue);
+    if (!isHtmlTag) {
+      const prettyIdentifier = getPrettyIdentifier(inferedType);
+
+      return createPropText(prettyIdentifier, {
+        title: prettyIdentifier !== defaultValue ? defaultValue : undefined,
+      });
+    }
+  }
+
+  return !isTooLongForDefaultValue(defaultValue)
+    ? createPropText(defaultValue)
+    : createPropText(ELEMENT_CAPTION, { title: defaultValue });
 }
 
+function renderArray({ ast }: InspectionResult): ReactNode {
+  const prettyCaption = generateCode(ast, true);
+
+  return !isTooLongForDefaultValue(prettyCaption)
+    ? createPropText(prettyCaption)
+    : createPropText(ARRAY_CAPTION, { title: generateCode(ast) });
+}
+
+// TODO: The function signature might only receive a defaultValue
 export function renderDefaultValue({ docgenInfo }: ExtractedProp): ReactNode {
-  const { type, defaultValue } = docgenInfo;
+  const { defaultValue } = docgenInfo;
 
   if (!isNil(defaultValue)) {
     const { value } = defaultValue;
+    const inspectionResult = inspectValue(value);
 
-    switch (type.name) {
-      case PropTypesType.CUSTOM:
-        return renderCustom(value);
-      case PropTypesType.ANY:
-        return renderAny(value);
-      case PropTypesType.SHAPE:
-      case PropTypesType.OBJECT:
-        return renderObject(value);
-      case PropTypesType.FUNC:
-        return renderFunc(value);
-      case PropTypesType.ELEMENT:
-        return renderElementOrNode(value, 'element');
-      case PropTypesType.NODE:
-        return renderElementOrNode(value, 'node');
+    switch (inspectionResult.inferedType.type) {
+      case InspectionType.OBJECT:
+        return renderObject(inspectionResult);
+      case InspectionType.FUNCTION:
+        return renderFunc(inspectionResult);
+      case InspectionType.ELEMENT:
+        return renderElement(value, inspectionResult);
+      case InspectionType.ARRAY:
+        return renderArray(inspectionResult);
       default:
-        return null;
+        break;
     }
   }
 

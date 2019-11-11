@@ -2,7 +2,7 @@ import { generate } from 'escodegen';
 
 const BASIC_OPTIONS = {
   format: {
-    ident: {
+    indent: {
       style: '  ',
     },
     semicolons: false,

@@ -13,6 +13,19 @@ export interface BaseInspectionInferedType {
   type: InspectionType;
 }
 
+// TODO: Fix this.
+// export interface OptionalIdentifierInspectionType extends BaseInspectionInferedType {
+//   identifier?: string;
+// }
+
+// export interface RequiredIdentifierInspectionType extends BaseInspectionInferedType {
+//   identifier: string;
+// }
+
+// export type IdentifiableInspectionType =
+//   | OptionalIdentifierInspectionType
+//   | RequiredIdentifierInspectionType;
+
 export interface InspectionIdentifier extends BaseInspectionInferedType {
   type: InspectionType.IDENTIFIER;
   identifier: string;
@@ -33,19 +46,24 @@ export interface InspectionArray extends BaseInspectionInferedType {
 export interface InspectionClass extends BaseInspectionInferedType {
   type: InspectionType.CLASS;
   identifier: string;
+  // TODO: Might remove this prop.
   isDefinition: boolean;
 }
 
 export interface InspectionFunction extends BaseInspectionInferedType {
   type: InspectionType.FUNCTION;
   identifier?: string;
+  // TODO: Might remove this prop.
   isDefinition: boolean;
+  hasArguments: boolean;
 }
 
 export interface InspectionElement extends BaseInspectionInferedType {
   type: InspectionType.ELEMENT;
   identifier?: string;
+  // TODO: Might remove this prop.
   isDefinition: boolean;
+  // TODO: Might Remove this prop.
   isJsx: boolean;
 }
 

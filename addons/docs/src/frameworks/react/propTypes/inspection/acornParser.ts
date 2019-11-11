@@ -19,7 +19,7 @@ import {
 } from './types';
 
 interface ParsingResult<T> {
-  inferedType: InspectionInferedType;
+  inferedType: T;
   ast: any;
 }
 
@@ -68,10 +68,13 @@ function parseFunction(
     ACORN_WALK_VISITORS
   );
 
+  const isJsx = !isNil(innerJsxElementNode);
+
   const inferedType: InspectionFunction | InspectionElement = {
-    type: !isNil(innerJsxElementNode) ? InspectionType.ELEMENT : InspectionType.FUNCTION,
+    type: isJsx ? InspectionType.ELEMENT : InspectionType.FUNCTION,
     isDefinition: true,
-    isJsx: !isNil(innerJsxElementNode),
+    isJsx,
+    hasArguments: funcNode.params.length !== 0,
   };
 
   const identifierName = extractIdentifierName((funcNode as estree.FunctionExpression).id);
@@ -201,7 +204,7 @@ export function parse(value: string): ParsingResult<InspectionInferedType> {
       case 'ExpressionStatement': {
         const expressionResult = parseExpression(rootNode.expression);
         if (!isNil(expressionResult)) {
-          parsingResult = expressionResult;
+          parsingResult = expressionResult as any;
         }
         break;
       }

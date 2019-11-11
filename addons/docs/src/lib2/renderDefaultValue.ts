@@ -8,7 +8,7 @@ interface DefaultValue {
   value: string;
 }
 
-function isBlacklisted(value: string) {
+function isDefaultValueBlacklisted(value: string) {
   return BLACKLIST.some(x => x === value);
 }
 
@@ -16,7 +16,7 @@ export function renderDefaultValue(defaultValue: DefaultValue): ReactNode {
   if (!isNil(defaultValue)) {
     const { value } = defaultValue;
 
-    if (!isBlacklisted(value)) {
+    if (!isDefaultValueBlacklisted(value)) {
       return createPropText(value.toString());
     }
   }
