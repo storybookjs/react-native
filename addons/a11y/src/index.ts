@@ -48,18 +48,20 @@ if (module && module.hot && module.hot.decline) {
   module.hot.decline();
 }
 
-let storedSetup: Setup | null = null;
+let storedDefaultSetup: Setup | null = null;
 
 export const withA11y = makeDecorator({
   name: 'withA11Y',
   parameterName: PARAM_KEY,
   wrapper: (getStory, context, { parameters }) => {
     if (parameters) {
-      storedSetup = setup;
-      setup = parameters as Setup;
-    } else if (storedSetup) {
-      setup = storedSetup;
-      storedSetup = null;
+      if (storedDefaultSetup === null) {
+        storedDefaultSetup = { ...setup };
+      }
+      Object.assign(setup, parameters as Setup);
+    } else if (storedDefaultSetup !== null) {
+      Object.assign(setup, storedDefaultSetup);
+      storedDefaultSetup = null;
     }
     addons.getChannel().on(EVENTS.REQUEST, () => run(setup.element, setup.config, setup.options));
 
