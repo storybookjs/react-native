@@ -3,8 +3,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const JsDocProps = () => <div>JSDoc Props!</div>;
+export const JsDocProps = () => <div>JSDoc with PropTypes!</div>;
 JsDocProps.propTypes = {
+  /**
+   * should not be visible since it's ignored.
+   * @ignore
+   */
+  case0: PropTypes.string,
   /**
    * simple description.
    */

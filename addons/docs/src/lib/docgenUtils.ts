@@ -41,8 +41,11 @@ export const extractPropsFromDocgen: PropDefGetter = (component, section) => {
   propKeys.forEach(propKey => {
     const docgenInfoProp = docgenInfoProps[propKey];
 
-    const propDef = typeSystemHandler(propKey, docgenInfoProp);
-    props[propKey] = propDef;
+    const result = typeSystemHandler(propKey, docgenInfoProp);
+
+    if (!result.ignore) {
+      props[propKey] = result.propDef;
+    }
   });
 
   return Object.values(props);

@@ -24,12 +24,13 @@ Object.keys(PropTypes).forEach(typeName => {
 
 export const getPropDefs: PropDefGetter = (type, section) => {
   let processedType = type;
+
+  // eslint-disable-next-line react/forbid-foreign-prop-types
   if (!hasDocgen(type) && !type.propTypes) {
     if (isForwardRef(type) || type.render) {
       processedType = type.render().type;
     }
     if (isMemo(type)) {
-      // (typeof type.type === 'function')?
       processedType = type.type().type;
     }
   }
