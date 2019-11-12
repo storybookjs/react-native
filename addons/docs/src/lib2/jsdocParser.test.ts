@@ -182,13 +182,13 @@ describe('parseJsDoc', () => {
         expect(extractedTags.params[0].getTypeName()).toBe('number');
       });
 
-      it('should support optional param 1', () => {
+      it('should support optional param with []', () => {
         const { extractedTags } = parseJsDoc('@param {number} [event]');
 
         expect(extractedTags.params[0].getTypeName()).toBe('number');
       });
 
-      it('should support optional param 2', () => {
+      it('should support optional param with =', () => {
         const { extractedTags } = parseJsDoc('@param {number=} event');
 
         expect(extractedTags.params[0].getTypeName()).toBe('number');
@@ -230,44 +230,46 @@ describe('parseJsDoc', () => {
     });
 
     it('should return a @returns with a type', () => {
-      const { extractedTags } = parseJsDoc('@returns {Foo}');
+      const { extractedTags } = parseJsDoc('@returns {string}');
 
       expect(extractedTags.returns).not.toBeNull();
       expect(extractedTags.returns.type).not.toBeNull();
-      expect(extractedTags.returns.type.name).toBe('Foo');
+      expect(extractedTags.returns.type.name).toBe('string');
     });
 
     it('should return a @returns with a type and a description', () => {
-      const { extractedTags } = parseJsDoc('@returns {Foo} - A bar description');
+      const { extractedTags } = parseJsDoc('@returns {string} - A bar description');
 
       expect(extractedTags.returns).not.toBeNull();
       expect(extractedTags.returns.type).not.toBeNull();
-      expect(extractedTags.returns.type.name).toBe('Foo');
+      expect(extractedTags.returns.type.name).toBe('string');
       expect(extractedTags.returns.description).toBe('A bar description');
     });
 
     it('should support multiline @returns description', () => {
-      const { extractedTags } = parseJsDoc('@returns {Foo} - This is\na multiline\ndescription\n');
+      const { extractedTags } = parseJsDoc(
+        '@returns {string} - This is\na multiline\ndescription\n'
+      );
 
       expect(extractedTags.returns).not.toBeNull();
       expect(extractedTags.returns.type).not.toBeNull();
-      expect(extractedTags.returns.type.name).toBe('Foo');
+      expect(extractedTags.returns.type.name).toBe('string');
       expect(extractedTags.returns.description).toBe('This is\na multiline\ndescription');
     });
 
     it('should only consider the last @returns tag when there is multiple', () => {
-      const { extractedTags } = parseJsDoc('@returns {Foo}\n@returns {Bar}');
+      const { extractedTags } = parseJsDoc('@returns {string}\n@returns {number}');
 
       expect(extractedTags.returns).not.toBeNull();
       expect(extractedTags.returns.type).not.toBeNull();
-      expect(extractedTags.returns.type.name).toBe('Bar');
+      expect(extractedTags.returns.type.name).toBe('number');
     });
 
     describe('getTypeName', () => {
       it('should support named type', () => {
-        const { extractedTags } = parseJsDoc('@returns {Foo}');
+        const { extractedTags } = parseJsDoc('@returns {string}');
 
-        expect(extractedTags.returns.getTypeName()).toBe('Foo');
+        expect(extractedTags.returns.getTypeName()).toBe('string');
       });
 
       it('should support record type with a single field', () => {

@@ -1,11 +1,11 @@
 import { isNil } from 'lodash';
 import { ReactNode } from 'react';
 import { ExtractedProp } from '../../../lib2/docgen/extractDocgenProps';
-import { ExtractedJsDocParam } from '../../../lib2/jsdocParser';
 import { createPropText } from '../../../lib2/createComponents';
 import { DocgenPropType } from '../../../lib2/docgen/types';
 import { inspectValue } from '../inspection/inspectValue';
 import { generateCode } from './generateCode';
+import { generateFuncSignature } from './generateFuncSignature';
 import {
   OBJECT_CAPTION,
   ARRAY_CAPTION,
@@ -148,37 +148,6 @@ function generateCustom({ raw }: DocgenPropType): TypeDef {
   return createTypeDef({ name: PropTypesType.CUSTOM, caption: CUSTOM_CAPTION });
 }
 
-function generateFuncSignature(
-  { jsDocTags }: ExtractedProp,
-  hasParams: boolean,
-  hasReturns: boolean
-): string {
-  const funcParts = [];
-
-  if (hasParams) {
-    const funcParams = jsDocTags.params.map((x: ExtractedJsDocParam) => {
-      const prettyName = x.getPrettyName();
-      const typeName = x.getTypeName();
-
-      if (!isNil(typeName)) {
-        return `${prettyName}: ${typeName}`;
-      }
-
-      return prettyName;
-    });
-
-    funcParts.push(`(${funcParams.join(', ')})`);
-  } else {
-    funcParts.push('()');
-  }
-
-  if (hasReturns) {
-    funcParts.push(`=> ${jsDocTags.returns.getTypeName()}`);
-  }
-
-  return funcParts.join(' ');
-}
-
 function generateFunc(extractedProp: ExtractedProp): TypeDef {
   const { jsDocTags } = extractedProp;
 
@@ -190,7 +159,7 @@ function generateFunc(extractedProp: ExtractedProp): TypeDef {
       return createTypeDef({
         name: PropTypesType.FUNC,
         caption: FUNCTION_CAPTION,
-        value: generateFuncSignature(extractedProp, hasParams, hasReturns),
+        value: generateFuncSignature(jsDocTags.params, jsDocTags.returns),
       });
     }
   }
