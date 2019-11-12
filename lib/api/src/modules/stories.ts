@@ -1,5 +1,6 @@
 // FIXME: we shouldn't import from dist but there are no types otherwise
 import { toId, sanitize, parseKind } from '@storybook/router';
+import deprecate from 'util-deprecate';
 
 import { Module } from '../index';
 import merge from '../lib/merge';
@@ -68,6 +69,22 @@ export type GroupsList = Group[];
 export interface StoriesRaw {
   [id: string]: StoryInput;
 }
+
+const warnUsingHierarchySeparatorsAndShowRoots = deprecate(() => {},
+`You cannot use both the hierarchySeparator/rootHierarchySeparator and showRoots options.`);
+
+const warnRemovingHierarchySeparators = deprecate(
+  () => {},
+  `hierarchySeparator and rootHierarchySeparator are deprecated and will be removed in Storybook 6.0.
+Read more about it in the migration guide: https://github.com/storybookjs/storybook/blob/master/MIGRATION.md`
+);
+
+const warnChangingDefaultHierarchySeparators = deprecate(
+  () => {},
+  `We are chaning the default hierarchy separators in Storybook 6.0.
+'|' and '.' will no longer create a hierarchy, but codemods are available.
+Read more about it in the migration guide: https://github.com/storybookjs/storybook/blob/master/MIGRATION.md`
+);
 
 const initStoriesApi = ({
   store,
@@ -192,18 +209,46 @@ const initStoriesApi = ({
 
   const setStories = (input: StoriesRaw) => {
     const hash: StoriesHash = {};
+
+    const anyKindMatchesOldHierarchySeparators = Object.values(input).some(({ kind }) =>
+      kind.match(/\.|\|/)
+    );
+
     const storiesHashOutOfOrder = Object.values(input).reduce((acc, item) => {
       const { kind, parameters } = item;
       // FIXME: figure out why parameters is missing when used with react-native-server
       const {
         hierarchyRootSeparator: rootSeparator,
         hierarchySeparator: groupSeparator,
-      } = (parameters && parameters.options) || {
-        hierarchyRootSeparator: '|',
-        hierarchySeparator: /\/|\./,
-      };
+        // showRoots,
+      } = (parameters && parameters.options) || {};
 
-      const { root, groups } = parseKind(kind, { rootSeparator, groupSeparator });
+      const showRoots; // Temp see above
+      const usingShowRoots = typeof showRoots !== 'undefined';
+
+      // Kind splitting behaviour as per https://github.com/storybookjs/storybook/issues/8793
+      let root = '';
+      let groups: string[];
+      // 1. If the user has passed separators, use the old behaviour but warn them
+      if (typeof rootSeparator !== 'undefined' || typeof groupSeparator !== 'undefined') {
+        warnRemovingHierarchySeparators();
+        if (usingShowRoots) warnUsingHierarchySeparatorsAndShowRoots();
+        ({ root, groups } = parseKind(kind, { rootSeparator, groupSeparator }));
+
+        // 2. If the user hasn't passed separators, but is using | or . in kinds, use the old behaviour but warn
+      } else if (anyKindMatchesOldHierarchySeparators && !usingShowRoots) {
+        warnChangingDefaultHierarchySeparators();
+        ({ root, groups } = parseKind(kind, { rootSeparator: '|', groupSeparator: /\/|\./ }));
+
+        // 3. If the user passes showRoots, or doesn't match above, do a simpler splitting.
+      } else {
+        const parts: string[] = kind.split('/');
+        if (showRoots) {
+          [root, ...groups] = parts;
+        } else {
+          groups = parts;
+        }
+      }
 
       const rootAndGroups = []
         .concat(root || [])
