@@ -1,6 +1,6 @@
 {
   "name": "cra-ts-kitchen-sink",
-  "version": "5.3.0-alpha.42",
+  "version": "5.3.0-alpha.43",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -34,15 +34,15 @@
     "typescript": "3.6.4"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.3.0-alpha.42",
-    "@storybook/addon-actions": "5.3.0-alpha.42",
-    "@storybook/addon-info": "5.3.0-alpha.42",
-    "@storybook/addon-knobs": "5.3.0-alpha.42",
-    "@storybook/addon-links": "5.3.0-alpha.42",
-    "@storybook/addon-options": "5.3.0-alpha.42",
-    "@storybook/addons": "5.3.0-alpha.42",
+    "@storybook/addon-a11y": "5.3.0-alpha.43",
+    "@storybook/addon-actions": "5.3.0-alpha.43",
+    "@storybook/addon-info": "5.3.0-alpha.43",
+    "@storybook/addon-knobs": "5.3.0-alpha.43",
+    "@storybook/addon-links": "5.3.0-alpha.43",
+    "@storybook/addon-options": "5.3.0-alpha.43",
+    "@storybook/addons": "5.3.0-alpha.43",
     "@storybook/preset-create-react-app": "^1.2.0",
-    "@storybook/react": "5.3.0-alpha.42",
+    "@storybook/react": "5.3.0-alpha.43",
     "@types/enzyme": "^3.9.0",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.2",

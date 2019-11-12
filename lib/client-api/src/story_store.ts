@@ -3,6 +3,7 @@ import EventEmitter from 'eventemitter3';
 import memoize from 'memoizerific';
 import debounce from 'lodash/debounce';
 import dedent from 'ts-dedent';
+import stable from 'stable';
 
 import { Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
@@ -129,7 +130,7 @@ export default class StoryStore extends EventEmitter {
       );
       if (index && this._data[index].parameters.options.storySort) {
         const sortFn = this._data[index].parameters.options.storySort;
-        stories.sort(sortFn);
+        stable.inplace(stories, sortFn);
       }
     }
     // removes function values from all stories so they are safe to transport over the channel
