@@ -60,7 +60,7 @@ function extractProp(
   createPropDef: PropDefFactory
 ): ExtractedProp {
   const jsDocParsingResult = parseJsDoc(docgenInfo.description);
-  const isIgnored = jsDocParsingResult.propHasJsDoc && jsDocParsingResult.ignore;
+  const isIgnored = jsDocParsingResult.includesJsDoc && jsDocParsingResult.ignore;
 
   if (!isIgnored) {
     const propDef = createPropDef(propName, docgenInfo, jsDocParsingResult);

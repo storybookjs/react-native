@@ -26,7 +26,7 @@ export interface JsDocParsingOptions {
 }
 
 export interface JsDocParsingResult {
-  propHasJsDoc: boolean;
+  includesJsDoc: boolean;
   ignore: boolean;
   description?: string;
   extractedTags?: ExtractedJsDoc;
@@ -66,7 +66,7 @@ export const parseJsDoc: ParseJsDoc = (
 ) => {
   if (!containsJsDoc(value)) {
     return {
-      propHasJsDoc: false,
+      includesJsDoc: false,
       ignore: false,
     };
   }
@@ -77,13 +77,13 @@ export const parseJsDoc: ParseJsDoc = (
   if (extractedTags.ignore) {
     // There is no point in doing other stuff since this prop will not be rendered.
     return {
-      propHasJsDoc: true,
+      includesJsDoc: true,
       ignore: true,
     };
   }
 
   return {
-    propHasJsDoc: true,
+    includesJsDoc: true,
     ignore: false,
     // Always use the parsed description to ensure JSDoc is removed from the description.
     description: jsDocAst.description,

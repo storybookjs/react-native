@@ -31,7 +31,7 @@ function createPropDef(
 ): PropDef {
   const propDef = createBasicPropDef(name, type, docgenInfo);
 
-  if (jsDocParsingResult.propHasJsDoc) {
+  if (jsDocParsingResult.includesJsDoc) {
     const { description, extractedTags } = jsDocParsingResult;
 
     if (!isNil(description)) {
