@@ -51,6 +51,7 @@ interface StoryInput {
     options: {
       hierarchyRootSeparator: RegExp;
       hierarchySeparator: RegExp;
+      showRoots?: boolean;
       [key: string]: any;
     };
     [parameterName: string]: any;
@@ -81,7 +82,7 @@ Read more about it in the migration guide: https://github.com/storybookjs/storyb
 
 const warnChangingDefaultHierarchySeparators = deprecate(
   () => {},
-  `We are chaning the default hierarchy separators in Storybook 6.0.
+  `The default hierarchy separators are changing in Storybook 6.0.
 '|' and '.' will no longer create a hierarchy, but codemods are available.
 Read more about it in the migration guide: https://github.com/storybookjs/storybook/blob/master/MIGRATION.md`
 );
@@ -218,12 +219,11 @@ const initStoriesApi = ({
       const { kind, parameters } = item;
       // FIXME: figure out why parameters is missing when used with react-native-server
       const {
-        hierarchyRootSeparator: rootSeparator,
-        hierarchySeparator: groupSeparator,
-        // showRoots,
+        hierarchyRootSeparator: rootSeparator = undefined,
+        hierarchySeparator: groupSeparator = undefined,
+        showRoots = undefined,
       } = (parameters && parameters.options) || {};
 
-      const showRoots; // Temp see above
       const usingShowRoots = typeof showRoots !== 'undefined';
 
       // Kind splitting behaviour as per https://github.com/storybookjs/storybook/issues/8793

@@ -129,6 +129,7 @@ export default class ClientApi {
     };
   };
 
+  // FIXME: not sure what to do about this API
   getSeparators = () => ({
     hierarchyRootSeparator: '|',
     hierarchySeparator: /\/|\./,
@@ -221,17 +222,7 @@ export default class ClientApi {
 
       const fileName = m && m.id ? `${m.id}` : undefined;
 
-      const { hierarchyRootSeparator, hierarchySeparator } = this.getSeparators();
-      const baseOptions: OptionsParameter = {
-        hierarchyRootSeparator,
-        hierarchySeparator,
-      };
-      const allParam = [
-        { options: baseOptions },
-        _globalParameters,
-        localParameters,
-        parameters,
-      ].reduce(
+      const allParam = [_globalParameters, localParameters, parameters].reduce(
         (acc: Parameters, p) => {
           if (p) {
             Object.entries(p).forEach(([key, value]) => {

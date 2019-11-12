@@ -9,6 +9,7 @@ export default {
   },
 };
 
+console.log('loaded');
 export const story1 = () => <Button onClick={action('clicked')}>Hello Button</Button>;
 story1.story = { name: 'with text' };
 
