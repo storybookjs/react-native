@@ -49,8 +49,7 @@ exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
   "story": "With Data",
   "parameters": {
     "options": {
-      "hierarchyRootSeparator": {},
-      "hierarchySeparator": {}
+      "hierarchyRootSeparator": {}
     },
     "docs": {
       "inlineStories": true,
