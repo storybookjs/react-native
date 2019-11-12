@@ -129,12 +129,30 @@ export default class ClientApi {
     };
   };
 
-  // FIXME: not sure what to do about this API
-  getSeparators = () => ({
-    hierarchyRootSeparator: '|',
-    hierarchySeparator: /\/|\./,
-    ..._globalParameters.options,
-  });
+  getSeparators = () => {
+    const { hierarchySeparator, hierarchyRootSeparator, showRoots } =
+      _globalParameters.options || {};
+
+    // Note these checks will be removed in 6.0, leaving this much simpler
+    if (
+      typeof hierarchySeparator !== 'undefined' ||
+      typeof hierarchyRootSeparator !== 'undefined'
+    ) {
+      return { hierarchySeparator, hierarchyRootSeparator };
+    }
+    if (
+      typeof showRoots === 'undefined' &&
+      this.store()
+        .getStoryKinds()
+        .some(kind => kind.match(/\.|\|/))
+    ) {
+      return {
+        hierarchyRootSeparator: '|',
+        hierarchySeparator: /\/|\./,
+      };
+    }
+    return { hierarchySeparator: '/' };
+  };
 
   addDecorator = (decorator: DecoratorFunction) => {
     addDecorator(decorator);
