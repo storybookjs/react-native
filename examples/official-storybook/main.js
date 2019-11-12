@@ -1,5 +1,5 @@
 module.exports = {
-  presets: ['@storybook/addon-docs/react/preset'],
+  presets: ['@storybook/addon-docs/preset'],
   stories: [
     '../../lib/ui/src/**/*.stories./(js|tsx|mdx)',
     '../../lib/components/src/**/*.stories.(js|tsx|mdx)',
@@ -8,7 +8,6 @@ module.exports = {
   addons: [
     '@storybook/addon-storysource/register',
     '@storybook/addon-design-assets/register',
-    '@storybook/addon-docs/register',
     '@storybook/addon-actions/register',
     '@storybook/addon-links/register',
     '@storybook/addon-events/register',
