@@ -350,7 +350,7 @@ describe('preview.client_api', () => {
 
         const options = { hierarchySeparator: /a/, hierarchyRootSeparator: 'b' };
         storiesOf('kind 1', module).add('name 1', () => '1', { options });
-        expect(getSeparators).toEqual(options);
+        expect(getSeparators()).toEqual(options);
       });
 
       it('returns old defaults if kind uses old separators', () => {
@@ -359,7 +359,7 @@ describe('preview.client_api', () => {
         } = getContext(undefined);
 
         storiesOf('kind|1', module).add('name 1', () => '1');
-        expect(getSeparators).toEqual({
+        expect(getSeparators()).toEqual({
           hierarchySeparator: /\.|\//,
           hierarchyRootSeparator: '|',
         });
@@ -371,7 +371,7 @@ describe('preview.client_api', () => {
         } = getContext(undefined);
 
         storiesOf('kind|1', module).add('name 1', () => '1', { options: { showRoots: false } });
-        expect(getSeparators).toEqual({ hierarchySeparator: '/' });
+        expect(getSeparators()).toEqual({ hierarchySeparator: '/' });
       });
 
       it('returns new values if kind does not use old separators', () => {
@@ -380,7 +380,7 @@ describe('preview.client_api', () => {
         } = getContext(undefined);
 
         storiesOf('kind/1', module).add('name 1', () => '1');
-        expect(getSeparators).toEqual({ hierarchySeparator: '/' });
+        expect(getSeparators()).toEqual({ hierarchySeparator: '/' });
       });
     });
 
