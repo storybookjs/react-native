@@ -6,3 +6,10 @@ exports[`add-preset-options transforms correctly using "empty.input.js" data 1`]
   options: {\\"a\\":[1,2,3],\\"b\\":{\\"foo\\":\\"bar\\"},\\"c\\":\\"baz\\"}
 }];"
 `;
+
+exports[`presets-add-preset-options transforms correctly using "empty.input.js" data 1`] = `
+"module.exports = [{
+  name: \\"test\\",
+  options: {\\"a\\":[1,2,3],\\"b\\":{\\"foo\\":\\"bar\\"},\\"c\\":\\"baz\\"}
+}];"
+`;

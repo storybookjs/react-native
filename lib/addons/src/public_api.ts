@@ -11,6 +11,4 @@ export * from './types';
 export * from './storybook-channel-mock';
 export * from './hooks';
 
-export * from './postinstall';
-
 export default addons;
