@@ -72,11 +72,11 @@ export interface StoriesRaw {
 }
 
 const warnUsingHierarchySeparatorsAndShowRoots = deprecate(() => {},
-`You cannot use both the hierarchySeparator/rootHierarchySeparator and showRoots options.`);
+`You cannot use both the hierarchySeparator/hierarchyRootSeparator and showRoots options.`);
 
 const warnRemovingHierarchySeparators = deprecate(
   () => {},
-  `hierarchySeparator and rootHierarchySeparator are deprecated and will be removed in Storybook 6.0.
+  `hierarchySeparator and hierarchyRootSeparator are deprecated and will be removed in Storybook 6.0.
 Read more about it in the migration guide: https://github.com/storybookjs/storybook/blob/master/MIGRATION.md`
 );
 
