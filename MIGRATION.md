@@ -118,7 +118,7 @@ Addon-docs configuration gets simpler in 5.3. In 5.2, each framework had its own
 
 We've deprecated the ability to specify the hierarchy separators (how you control the grouping of story kinds in the sidebar). From Storybook 6.0 we will have a single separator `/`, which cannot be configured.
 
-If you are currently using using custom separators, we encourage you to migrate to using `/` as the sole separator. If you are using `|` or `.` as a separator currently, (we will soon provide) a codemod can be used to rename all your components.
+If you are currently using using custom separators, we encourage you to migrate to using `/` as the sole separator. If you are using `|` or `.` as a separator currently, (we will soon provide) a codemod that can be used to rename all your components.
 
 If you were using `|` and wish to keep the "root" behaviour, use the `showRoots: true` option to re-enable roots:
 
