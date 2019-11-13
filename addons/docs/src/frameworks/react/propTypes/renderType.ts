@@ -1,7 +1,6 @@
 import { isNil } from 'lodash';
-import { ReactNode } from 'react';
+import { PropSummaryValue, PropType } from '@storybook/components';
 import { ExtractedProp } from '../../../lib2/docgen/extractDocgenProps';
-import { createPropText } from '../../../lib2/createComponents';
 import { DocgenPropType } from '../../../lib2/docgen/types';
 import { inspectValue } from '../inspection/inspectValue';
 import { generateCode } from './generateCode';
@@ -41,26 +40,29 @@ interface EnumValue {
 
 interface TypeDef {
   name: string;
-  caption: string;
-  value: string;
+  value: PropSummaryValue;
+  // caption: string;
+  // value: string;
   inferedType?: InspectionType;
 }
 
 function createTypeDef({
   name,
-  caption,
-  value,
+  summary,
+  detail,
   inferedType,
 }: {
   name: string;
-  caption: string;
-  value?: string;
+  summary: string;
+  detail?: string;
   inferedType?: InspectionType;
 }): TypeDef {
   return {
     name,
-    caption,
-    value: !isNil(value) ? value : caption,
+    value: {
+      summary,
+      detail: !isNil(detail) ? detail : summary,
+    },
     inferedType,
   };
 }
@@ -95,17 +97,17 @@ function isTooLongForCaption(value: string): boolean {
 }
 
 function generateValuesForObjectAst(ast: any): [string, string] {
-  let caption = prettyObject(ast, true);
-  let value;
+  let summary = prettyObject(ast, true);
+  let detail;
 
-  if (!isTooLongForCaption(caption)) {
-    value = caption;
+  if (!isTooLongForCaption(summary)) {
+    detail = summary;
   } else {
-    caption = OBJECT_CAPTION;
-    value = prettyObject(ast);
+    summary = OBJECT_CAPTION;
+    detail = prettyObject(ast);
   }
 
-  return [caption, value];
+  return [summary, detail];
 }
 
 function generateCustom({ raw }: DocgenPropType): TypeDef {
@@ -113,91 +115,90 @@ function generateCustom({ raw }: DocgenPropType): TypeDef {
     const { inferedType, ast } = inspectValue(raw);
     const { type, identifier } = inferedType as any;
 
-    let caption;
-    let value;
+    let summary;
+    let detail;
 
     switch (type) {
       case InspectionType.IDENTIFIER:
       case InspectionType.LITERAL:
-        caption = raw;
+        summary = raw;
         break;
       case InspectionType.OBJECT: {
         const [objectCaption, objectValue] = generateValuesForObjectAst(ast);
-        caption = objectCaption;
-        value = objectValue;
+
+        summary = objectCaption;
+        detail = objectValue;
         break;
       }
       case InspectionType.ELEMENT:
-        caption = !isNil(identifier) ? identifier : ELEMENT_CAPTION;
-        value = raw;
+        summary = !isNil(identifier) ? identifier : ELEMENT_CAPTION;
+        detail = raw;
         break;
       default:
-        caption = getCaptionFromInspectionType(type);
-        value = raw;
+        summary = getCaptionFromInspectionType(type);
+        detail = raw;
         break;
     }
 
     return createTypeDef({
       name: PropTypesType.CUSTOM,
-      caption,
-      value,
+      summary,
+      detail,
       inferedType: type,
     });
   }
 
-  return createTypeDef({ name: PropTypesType.CUSTOM, caption: CUSTOM_CAPTION });
+  return createTypeDef({ name: PropTypesType.CUSTOM, summary: CUSTOM_CAPTION });
 }
 
 function generateFunc(extractedProp: ExtractedProp): TypeDef {
   const { jsDocTags } = extractedProp;
 
   if (!isNil(jsDocTags)) {
-    const hasParams = !isNil(jsDocTags.params);
-    const hasReturns = !isNil(jsDocTags.returns);
-
-    if (hasParams || hasReturns) {
+    if (!isNil(jsDocTags.params) || !isNil(jsDocTags.returns)) {
       return createTypeDef({
         name: PropTypesType.FUNC,
-        caption: FUNCTION_CAPTION,
-        value: generateFuncSignature(jsDocTags.params, jsDocTags.returns),
+        summary: FUNCTION_CAPTION,
+        detail: generateFuncSignature(jsDocTags.params, jsDocTags.returns),
       });
     }
   }
 
-  return createTypeDef({ name: PropTypesType.FUNC, caption: FUNCTION_CAPTION });
+  return createTypeDef({ name: PropTypesType.FUNC, summary: FUNCTION_CAPTION });
 }
 
 function generateShape(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
   const fields = Object.keys(type.value)
-    .map((key: string) => `${key}: ${generateType(type.value[key], extractedProp).value}`)
+    .map((key: string) => `${key}: ${generateType(type.value[key], extractedProp).value.detail}`)
     .join(', ');
 
   const { ast } = inspectValue(`{ ${fields} }`);
-  const [caption, value] = generateValuesForObjectAst(ast);
+  const [summary, detail] = generateValuesForObjectAst(ast);
 
   return createTypeDef({
     name: PropTypesType.SHAPE,
-    caption,
-    value,
+    summary,
+    detail,
   });
 }
 
 function generateObjectOf(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
   const format = (of: string) => `objectOf(${of})`;
 
+  const { name, value } = generateType(type.value, extractedProp);
   // eslint-disable-next-line prefer-const
-  let { name, caption, value } = generateType(type.value, extractedProp);
+  let { summary, detail } = value;
 
   if (name === PropTypesType.SHAPE) {
-    if (!isTooLongForCaption(value)) {
-      caption = value;
+    if (!isTooLongForCaption(detail)) {
+      summary = detail;
     }
   }
 
   return createTypeDef({
     name: PropTypesType.OBJECTOF,
-    caption: format(caption),
-    value: format(value),
+    summary: format(summary),
+    detail: format(detail),
   });
 }
 
@@ -205,24 +206,24 @@ function generateUnion(type: DocgenPropType, extractedProp: ExtractedProp): Type
   if (Array.isArray(type.value)) {
     const values = type.value.reduce(
       (acc: any, v: any) => {
-        const { caption, value } = generateType(v, extractedProp);
+        const { summary, detail } = generateType(v, extractedProp).value;
 
-        acc.caption.push(caption);
-        acc.value.push(value);
+        acc.summary.push(summary);
+        acc.detail.push(detail);
 
         return acc;
       },
-      { caption: [], value: [] }
+      { summary: [], detail: [] }
     );
 
     return createTypeDef({
       name: PropTypesType.UNION,
-      caption: values.caption.join(' | '),
-      value: values.value.join(' | '),
+      summary: values.summary.join(' | '),
+      detail: values.detail.join(' | '),
     });
   }
 
-  return createTypeDef({ name: PropTypesType.UNION, caption: type.value });
+  return createTypeDef({ name: PropTypesType.UNION, summary: type.value });
 }
 
 function generateEnumValue({ value, computed }: EnumValue): TypeDef {
@@ -244,37 +245,37 @@ function generateEnumValue({ value, computed }: EnumValue): TypeDef {
 
     return createTypeDef({
       name: 'enumvalue',
-      caption,
-      value: type === InspectionType.OBJECT ? prettyObject(ast) : value,
+      summary: caption,
+      detail: type === InspectionType.OBJECT ? prettyObject(ast) : value,
       inferedType: type,
     });
   }
 
-  return createTypeDef({ name: 'enumvalue', caption: value });
+  return createTypeDef({ name: 'enumvalue', summary: value });
 }
 
 function generateEnum(type: DocgenPropType): TypeDef {
   if (Array.isArray(type.value)) {
     const values = type.value.reduce(
       (acc: any, v: EnumValue) => {
-        const { caption, value } = generateEnumValue(v);
+        const { summary, detail } = generateEnumValue(v).value;
 
-        acc.caption.push(caption);
-        acc.value.push(value);
+        acc.summary.push(summary);
+        acc.detail.push(detail);
 
         return acc;
       },
-      { caption: [], value: [] }
+      { summary: [], detail: [] }
     );
 
     return createTypeDef({
       name: PropTypesType.ENUM,
-      caption: values.caption.join(' | '),
-      value: values.value.join(' | '),
+      summary: values.summary.join(' | '),
+      detail: values.detail.join(' | '),
     });
   }
 
-  return createTypeDef({ name: PropTypesType.ENUM, caption: type.value });
+  return createTypeDef({ name: PropTypesType.ENUM, summary: type.value });
 }
 
 function braceAfter(of: string): string {
@@ -285,27 +286,27 @@ function braceAround(of: string): string {
   return `[${of}]`;
 }
 
-function createArrayOfObjectTypeDef(caption: string, value: string): TypeDef {
+function createArrayOfObjectTypeDef(summary: string, detail: string): TypeDef {
   return createTypeDef({
     name: PropTypesType.ARRAYOF,
-    caption: caption === OBJECT_CAPTION ? braceAfter(caption) : braceAround(caption),
-    value: braceAround(value),
+    summary: summary === OBJECT_CAPTION ? braceAfter(summary) : braceAround(summary),
+    detail: braceAround(detail),
   });
 }
 
 function generateArray(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
-  // eslint-disable-next-line prefer-const
-  let { name, caption, value, inferedType } = generateType(type.value, extractedProp);
+  const { name, value, inferedType } = generateType(type.value, extractedProp);
+  const { summary, detail } = value;
 
   if (name === PropTypesType.CUSTOM) {
     if (inferedType === InspectionType.OBJECT) {
-      return createArrayOfObjectTypeDef(caption, value);
+      return createArrayOfObjectTypeDef(summary, detail);
     }
   } else if (name === PropTypesType.SHAPE) {
-    return createArrayOfObjectTypeDef(caption, value);
+    return createArrayOfObjectTypeDef(summary, detail);
   }
 
-  return createTypeDef({ name: PropTypesType.ARRAYOF, caption: braceAfter(value) });
+  return createTypeDef({ name: PropTypesType.ARRAYOF, summary: braceAfter(detail) });
 }
 
 function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
@@ -318,7 +319,7 @@ function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeD
       case PropTypesType.SHAPE:
         return generateShape(type, extractedProp);
       case PropTypesType.INSTANCEOF:
-        return createTypeDef({ name: PropTypesType.INSTANCEOF, caption: type.value });
+        return createTypeDef({ name: PropTypesType.INSTANCEOF, summary: type.value });
       case PropTypesType.OBJECTOF:
         return generateObjectOf(type, extractedProp);
       case PropTypesType.UNION:
@@ -328,17 +329,17 @@ function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeD
       case PropTypesType.ARRAYOF:
         return generateArray(type, extractedProp);
       default:
-        return createTypeDef({ name: type.name, caption: type.name });
+        return createTypeDef({ name: type.name, summary: type.name });
     }
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error(e);
   }
 
-  return createTypeDef({ name: 'unknown', caption: 'unknown' });
+  return createTypeDef({ name: 'unknown', summary: 'unknown' });
 }
 
-export function renderType(extractedProp: ExtractedProp): ReactNode {
+export function renderType(extractedProp: ExtractedProp): PropType {
   const { type } = extractedProp.docgenInfo;
 
   switch (type.name) {
@@ -349,14 +350,17 @@ export function renderType(extractedProp: ExtractedProp): ReactNode {
     case PropTypesType.UNION:
     case PropTypesType.ENUM:
     case PropTypesType.ARRAYOF: {
-      const { caption, value } = generateType(type, extractedProp);
+      const { summary, detail } = generateType(type, extractedProp).value;
 
-      return createPropText(caption, { title: caption !== value ? value : undefined });
+      return {
+        summary,
+        detail: summary !== detail ? detail : undefined,
+      };
     }
     case PropTypesType.FUNC: {
-      const { value } = generateType(type, extractedProp);
+      const { detail } = generateType(type, extractedProp).value;
 
-      return createPropText(value);
+      return { summary: detail };
     }
     default:
       return null;

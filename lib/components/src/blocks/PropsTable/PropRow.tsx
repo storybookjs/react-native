@@ -4,10 +4,10 @@ import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 import { PropDef } from './PropDef';
 import { PropJsDoc } from './PropJsDoc';
+import { PropValue } from './PropValue';
 
 export interface PropRowProps {
   row: PropDef;
-  // FIXME: row options
 }
 
 const Name = styled.span({ fontWeight: 'bold' });
@@ -37,9 +37,13 @@ export const PropRow: FC<PropRowProps> = ({
     </td>
     <td>
       <Markdown>{description || ''}</Markdown>
-      <Type>{type}</Type>
+      <Type>
+        <PropValue value={type} />
+      </Type>
       <PropJsDoc tags={jsDocTags} />
     </td>
-    <td>{defaultValue}</td>
+    <td>
+      <PropValue value={defaultValue} />
+    </td>
   </tr>
 );

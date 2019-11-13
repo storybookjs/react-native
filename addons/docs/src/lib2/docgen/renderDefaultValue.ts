@@ -1,25 +1,21 @@
-import { ReactNode } from 'react';
 import { isNil } from 'lodash';
-import { createPropText } from '../createComponents';
+import { PropDefaultValue } from '@storybook/components';
+import { DocgenPropDefaultValue } from './types';
 
 const BLACKLIST = ['null', 'undefined'];
-
-interface DefaultValue {
-  value: string;
-}
 
 function isDefaultValueBlacklisted(value: string) {
   return BLACKLIST.some(x => x === value);
 }
 
-export function renderDefaultValue(defaultValue: DefaultValue): ReactNode {
+export function renderDefaultValue(defaultValue: DocgenPropDefaultValue): PropDefaultValue {
   if (!isNil(defaultValue)) {
     const { value } = defaultValue;
 
     if (!isDefaultValueBlacklisted(value)) {
-      return createPropText(value.toString());
+      return value;
     }
   }
 
-  return createPropText();
+  return null;
 }

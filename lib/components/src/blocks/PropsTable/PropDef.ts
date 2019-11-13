@@ -12,13 +12,19 @@ export interface JsDocTags {
   returns?: JsDocReturns;
 }
 
+export interface PropSummaryValue {
+  summary: string;
+  detail?: string;
+}
+
+export type PropType = PropSummaryValue | string;
+export type PropDefaultValue = PropSummaryValue | string;
+
 export interface PropDef {
   name: string;
-  // TODO: Change for a React component type.
-  type: any;
+  type: PropType;
   required: boolean;
   description?: string;
-  // TODO: Change for a React component type.
-  defaultValue?: any;
+  defaultValue?: PropDefaultValue;
   jsDocTags?: JsDocTags;
 }

@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
 import { isNil } from 'lodash';
+// @ts-ignore
 import htmlTags from 'html-tags';
-import { createPropText } from '../../../lib2/createComponents';
+import { PropDefaultValue, PropSummaryValue } from '@storybook/components';
 import { inspectValue } from '../inspection/inspectValue';
 import { OBJECT_CAPTION, FUNCTION_CAPTION, ELEMENT_CAPTION, ARRAY_CAPTION } from './captions';
 import { generateCode } from './generateCode';
@@ -26,13 +26,17 @@ function getPrettyIdentifier(inferedType: any): string {
     case InspectionType.FUNCTION:
       return inferedType.hasArguments ? `${identifier}( ... )` : `${identifier}()`;
     case InspectionType.ELEMENT:
-      return inferedType.isJsx ? `<${identifier} />` : identifier;
+      return `<${identifier} />`;
     default:
       return identifier;
   }
 }
 
-function renderObject({ ast }: InspectionResult): ReactNode {
+function createSummaryValue(summary: string, detail: string): PropSummaryValue {
+  return { summary, detail };
+}
+
+function renderObject({ ast }: InspectionResult): PropDefaultValue {
   let prettyCaption = generateCode(ast, true);
 
   // Cannot get escodegen to add a space before the last } with the compact mode settings.
@@ -42,27 +46,32 @@ function renderObject({ ast }: InspectionResult): ReactNode {
   }
 
   return !isTooLongForDefaultValue(prettyCaption)
-    ? createPropText(prettyCaption)
-    : createPropText(OBJECT_CAPTION, { title: generateCode(ast) });
+    ? prettyCaption
+    : createSummaryValue(OBJECT_CAPTION, generateCode(ast));
 }
 
-function renderFunc({ inferedType, ast }: InspectionResult): ReactNode {
+function renderFunc({ inferedType, ast }: InspectionResult): PropDefaultValue {
   const { identifier } = inferedType as InspectionFunction;
 
   if (!isNil(identifier)) {
-    return createPropText(getPrettyIdentifier(inferedType), { title: generateCode(ast) });
+    return createSummaryValue(getPrettyIdentifier(inferedType), generateCode(ast));
+    // return createPropText(getPrettyIdentifier(inferedType), { title: generateCode(ast) });
   }
 
   const prettyCaption = generateCode(ast, true);
 
   return !isTooLongForDefaultValue(prettyCaption)
-    ? createPropText(prettyCaption)
-    : createPropText(FUNCTION_CAPTION, { title: generateCode(ast) });
+    ? prettyCaption
+    : createSummaryValue(FUNCTION_CAPTION, generateCode(ast));
+
+  // return !isTooLongForDefaultValue(prettyCaption)
+  //   ? createPropText(prettyCaption)
+  //   : createPropText(FUNCTION_CAPTION, { title: generateCode(ast) });
 }
 
 // All elements are JSX elements.
 // JSX elements cannot are not supported by escodegen.
-function renderElement(defaultValue: string, inspectionResult: InspectionResult): ReactNode {
+function renderElement(defaultValue: string, inspectionResult: InspectionResult): PropDefaultValue {
   const { inferedType } = inspectionResult;
   const { identifier } = inferedType as InspectionElement;
 
@@ -72,26 +81,39 @@ function renderElement(defaultValue: string, inspectionResult: InspectionResult)
     if (!isHtmlTag) {
       const prettyIdentifier = getPrettyIdentifier(inferedType);
 
-      return createPropText(prettyIdentifier, {
-        title: prettyIdentifier !== defaultValue ? defaultValue : undefined,
-      });
+      return createSummaryValue(
+        prettyIdentifier,
+        prettyIdentifier !== defaultValue ? defaultValue : undefined
+      );
+
+      // return createPropText(prettyIdentifier, {
+      //   title: prettyIdentifier !== defaultValue ? defaultValue : undefined,
+      // });
     }
   }
 
   return !isTooLongForDefaultValue(defaultValue)
-    ? createPropText(defaultValue)
-    : createPropText(ELEMENT_CAPTION, { title: defaultValue });
+    ? defaultValue
+    : createSummaryValue(ELEMENT_CAPTION, defaultValue);
+
+  // return !isTooLongForDefaultValue(defaultValue)
+  //   ? createPropText(defaultValue)
+  //   : createPropText(ELEMENT_CAPTION, { title: defaultValue });
 }
 
-function renderArray({ ast }: InspectionResult): ReactNode {
+function renderArray({ ast }: InspectionResult): PropDefaultValue {
   const prettyCaption = generateCode(ast, true);
 
   return !isTooLongForDefaultValue(prettyCaption)
-    ? createPropText(prettyCaption)
-    : createPropText(ARRAY_CAPTION, { title: generateCode(ast) });
+    ? prettyCaption
+    : createSummaryValue(ARRAY_CAPTION, generateCode(ast));
+
+  // return !isTooLongForDefaultValue(prettyCaption)
+  //   ? createPropText(prettyCaption)
+  //   : createPropText(ARRAY_CAPTION, { title: generateCode(ast) });
 }
 
-export function renderDefaultValue(defaultValue: string): ReactNode {
+export function renderDefaultValue(defaultValue: string): PropDefaultValue {
   const inspectionResult = inspectValue(defaultValue);
 
   switch (inspectionResult.inferedType.type) {

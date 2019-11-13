@@ -23,15 +23,17 @@ export interface DocgenTypeScriptType extends DocgenBaseType {}
 
 export type DocgenType = DocgenPropType | DocgenFlowType | DocgenTypeScriptType;
 
+export interface DocgenPropDefaultValue {
+  value: string;
+}
+
 export interface DocgenInfo {
   type?: DocgenPropType;
   flowType?: DocgenFlowType;
   tsType?: DocgenTypeScriptType;
   required: boolean;
   description?: string;
-  defaultValue?: {
-    value: string;
-  };
+  defaultValue?: DocgenPropDefaultValue;
 }
 
 export enum TypeSystem {
