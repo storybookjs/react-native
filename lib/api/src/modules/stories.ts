@@ -243,7 +243,7 @@ const initStoriesApi = ({
         // 3. If the user passes showRoots, or doesn't match above, do a simpler splitting.
       } else {
         const parts: string[] = kind.split('/');
-        if (showRoots) {
+        if (showRoots && parts.length > 1) {
           [root, ...groups] = parts;
         } else {
           groups = parts;
