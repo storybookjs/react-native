@@ -1,7 +1,7 @@
 import { action, actions } from '@storybook/addon-actions';
 
 export default {
-  title: 'Addon|Actions',
+  title: 'Addon/Actions',
 };
 
 export const actionOnly = () => ({

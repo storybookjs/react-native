@@ -5,7 +5,7 @@ import { html } from 'lit-html';
 const text = 'Testing the a11y addon';
 
 export default {
-  title: 'Addons|a11y',
+  title: 'Addons/a11y',
   decorators: [withA11y],
   parameters: {
     options: { selectedPanel: 'storybook/a11y/panel' },
