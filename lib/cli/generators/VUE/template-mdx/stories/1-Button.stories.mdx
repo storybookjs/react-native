@@ -1,0 +1,34 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+import MyButton from './MyButton';
+
+<Meta title="Button" component={MyButton} />
+
+# Button
+
+This `Button` documentation defines two stories:
+
+<Story name="text">
+  {{
+    components: {
+      MyButton,
+    },
+    template: '<my-button @click="action">Hello Button</my-button>',
+    methods: {
+      action: action('clicked'),
+    },
+  }}
+</Story>
+
+<Story name="emoji">
+  {{
+    components: {
+      MyButton,
+    },
+    template: '<my-button @click="action">😀 😎 👍 💯</my-button>',
+    methods: {
+      action: action('clicked'),
+    },
+  }}
+</Story>

@@ -1,7 +1,7 @@
 import React from 'react';
 import notes from '../notes/notes.md';
 import mdxNotes from '../notes/notes.mdx';
-import DocgenButton from '../../components/DocgenButton';
+import { DocgenButton } from '../../components/DocgenButton';
 
 export default {
   title: 'Addons|Docs/stories',
@@ -43,5 +43,12 @@ jsxOverride.story = {
   name: 'jsx override',
   parameters: {
     docs: { page: () => <div>Hello docs</div> },
+  },
+};
+
+export const docsDisable = () => <div>This story shouldn't show up in DocsPage</div>;
+docsDisable.story = {
+  parameters: {
+    docs: { disable: true },
   },
 };

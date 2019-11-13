@@ -311,7 +311,7 @@ Alternatively you may use `yarn`:
 yarn add husky lint-staged prettier
 ```
 
--   `husky` makes it easy to use githooks as if they are npm scripts.
+-   `husky` enables you to use githooks as if they are npm scripts.
 -   `lint-staged` allows us to run scripts on staged files in git. See this [blog post about lint-staged to learn more about it](https://medium.com/@okonetchnikov/make-linting-great-again-f3890e1ad6b8).
 -   `prettier` is the JavaScript formatter we will run before commits.
 
@@ -369,7 +369,7 @@ Alternatively you may use `yarn`:
 yarn add react-router
 ```
 
-This works for any library, not just `react-router`.
+This works for any library, not only `react-router`.
 
 ## Importing a Component
 
@@ -742,7 +742,7 @@ You can avoid this by reading the global variable explicitly from the `window` o
 const $ = window.$;
 ```
 
-This makes it obvious you are using a global variable intentionally rather than because of a typo.
+This makes it more clear that you are using a global variable intentionally rather than because of a typo.
 
 Alternatively, you can force the linter to ignore any line by adding `// eslint-disable-line` after it.
 
@@ -1203,7 +1203,7 @@ Jest will look for test files with any of the following popular naming conventio
 
 The `.test.js` / `.spec.js` files (or the `__tests__` folders) can be located at any depth under the `src` top level folder.
 
-We recommend to put the test files (or `__tests__` folders) next to the code they are testing so that relative imports appear shorter. For example, if `App.test.js` and `App.js` are in the same folder, the test just needs to `import App from './App'` instead of a long relative path. Colocation also helps find tests more quickly in larger projects.
+We recommend to put the test files (or `__tests__` folders) next to the code they are testing so that relative imports appear shorter. For example, if `App.test.js` and `App.js` are in the same folder, the test needs to `import App from './App'` instead of a long relative path. Colocation also helps find tests more quickly in larger projects.
 
 ### Command Line Interface
 
@@ -1243,7 +1243,7 @@ You can also use [`jest.fn()` and `expect(fn).toBeCalled()`](http://facebook.git
 
 There is a broad spectrum of component testing techniques. They range from a “smoke test” verifying that a component renders without throwing, to shallow rendering and testing some of the output, to full rendering and testing component lifecycle and state changes.
 
-Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven’t decided on a testing strategy yet, we recommend that you start with creating simple smoke tests for your components:
+Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven’t decided on a testing strategy yet, we recommend that you start with creating smoke tests for your components:
 
 ```js
 import React from 'react';
@@ -1347,7 +1347,7 @@ and then use them in your tests like you normally do.
 
 > Note: this feature is available with `react-scripts@0.4.0` and higher.
 
-If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/setupTests.js` to your project. It will be automatically executed before running your tests.
+If your app uses a browser API that you need to mock in your tests or if you need a global setup before running your tests, add a `src/setupTests.js` to your project. It will be automatically executed before running your tests.
 
 For example:
 
@@ -1487,7 +1487,7 @@ If you use [Visual Studio Code](https://code.visualstudio.com), there is a [Jest
 ## Developing Components in Isolation
 
 Usually, in an app, you have a lot of UI components, and each of them has many different states.
-For an example, a simple button component could have following states:
+For an example, a button component could have following states:
 
 -   In a regular state, with a text label.
 -   In the disabled mode.
@@ -1495,7 +1495,7 @@ For an example, a simple button component could have following states:
 
 Usually, it’s hard to see these states without running a sample app or some examples.
 
-Create React App doesn’t include any tools for this by default, but you can easily add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybookjs/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
+Create React App doesn’t include any tools for this by default, but you can add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybookjs/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
 
 ![Storybook for React Demo](http://i.imgur.com/7CIAWpB.gif)
 
@@ -1611,7 +1611,7 @@ it may take up to 24 hours for the cache to be invalidated.
     changes you've made locally.
 
 4.  If you _need_ to test your offline-first service worker locally, build
-    the application (using `npm run build`) and run a simple http server from your
+    the application (using `npm run build`) and run a http server from your
     build directory. After running the build script, `create-react-app` will give
     instructions for one way to test your production build locally and the [deployment instructions](#deployment) have
     instructions for using other methods. _Be sure to always use an
@@ -1637,7 +1637,7 @@ it may take up to 24 hours for the cache to be invalidated.
     this messages is currently left as an exercise to the developer, but as a
     starting point, you can make use of the logic included in [`src/registerServiceWorker.js`](src/registerServiceWorker.js), which
     demonstrates which service worker lifecycle events to listen for to detect each
-    scenario, and which as a default, just logs appropriate messages to the
+    scenario, and which as a default, logs appropriate messages to the
     JavaScript console.
 
 7.  By default, the generated service worker file will not intercept or cache any
@@ -1828,7 +1828,7 @@ Then run the `firebase init` command from your project’s root. You need to cho
 
     First, let's associate this project directory with a Firebase project.
     You can create multiple project aliases by running firebase use --add,
-    but for now we'll just set up a default project.
+    but for now we'll set up a default project.
 
     ? What Firebase project do you want to associate as default? Example app (example-app-fd690)
 

@@ -1,4 +1,4 @@
-import { storiesOf, addParameters } from '@storybook/angular';
+import { addParameters } from '@storybook/angular';
 import { Button } from '@storybook/angular/demo';
 
 const globalParameter = 'globalParameter';
@@ -7,16 +7,22 @@ const storyParameter = 'storyParameter';
 
 addParameters({ globalParameter });
 
-storiesOf('Core|Parameters', module)
-  .addParameters({ chapterParameter })
-  .add(
-    'passed to story',
-    ({ parameters: { fileName, ...parameters } }) => ({
-      component: Button,
-      props: {
-        text: `Parameters are ${JSON.stringify(parameters)}`,
-        onClick: () => 0,
-      },
-    }),
-    { storyParameter }
-  );
+export default {
+  title: 'Core|Parameters',
+  parameters: {
+    chapterParameter,
+  },
+};
+
+export const passedToStory = ({ parameters: { fileName, ...parameters } }) => ({
+  component: Button,
+  props: {
+    text: `Parameters are ${JSON.stringify(parameters)}`,
+    onClick: () => 0,
+  },
+});
+
+passedToStory.story = {
+  name: 'passed to story',
+  parameters: { storyParameter },
+};

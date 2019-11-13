@@ -1,6 +1,6 @@
 import { StoryFn, ClientStoryApi, Loadable } from '@storybook/addons';
 
-export type StoryFnPreactReturnType = string | Node;
+export type StoryFnPreactReturnType = string | Node | JSX.Element;
 
 export interface ShowErrorArgs {
   title: string;

@@ -5,6 +5,7 @@
   ],
   "compilerOptions": {
     "rootDir": "./src",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "declaration": true
   }
 }

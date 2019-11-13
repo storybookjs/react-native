@@ -20,7 +20,11 @@ export function webpack(webpackConfig: any = {}, options: any = {}) {
   const { module = {} } = webpackConfig;
   // it will reuse babel options that are already in use in storybook
   // also, these babel options are chained with other presets.
-  const { babelOptions, configureJSX, sourceLoaderOptions = {} } = options;
+  const {
+    babelOptions,
+    configureJSX = options.framework !== 'react', // if not user-specified
+    sourceLoaderOptions = {},
+  } = options;
 
   // set `sourceLoaderOptions` to `null` to disable for manual configuration
   const sourceLoader = sourceLoaderOptions
@@ -28,13 +32,13 @@ export function webpack(webpackConfig: any = {}, options: any = {}) {
         {
           test: /\.(stories|story)\.[tj]sx?$/,
           loader: require.resolve('@storybook/source-loader'),
-          options: sourceLoaderOptions,
+          options: { ...sourceLoaderOptions, inspectLocalDependencies: true },
           enforce: 'pre',
         },
       ]
     : [];
 
-  return {
+  const result = {
     ...webpackConfig,
     module: {
       ...module,
@@ -72,8 +76,20 @@ export function webpack(webpackConfig: any = {}, options: any = {}) {
       ],
     },
   };
+  return result;
 }
 
-export function addons(entry: any[] = []) {
+export function addons(entry: any[] = [], options: any) {
   return [...entry, require.resolve('../../register')];
+}
+
+export function config(entry: any[] = [], options: any = {}) {
+  const { framework } = options;
+  const docsConfig = [require.resolve('./config')];
+  try {
+    docsConfig.push(require.resolve(`../${framework}/config`));
+  } catch (err) {
+    // there is no custom config for the user's framework, do nothing
+  }
+  return [...docsConfig, ...entry];
 }

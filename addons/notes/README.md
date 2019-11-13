@@ -35,7 +35,7 @@ import { storiesOf } from '@storybook/react';
 import Component from './Component';
 
 storiesOf('Component', module).add('with some emoji', () => <Component />, {
-  notes: 'A very simple example of addon notes',
+  notes: 'An example of addon notes',
 });
 ```
 
@@ -53,7 +53,7 @@ storiesOf('MyButton', module).add(
     template: '<my-button>😀 😎 👍 💯</my-button>',
   }),
   {
-    notes: 'A very simple example of addon notes',
+    notes: 'An example of addon notes',
   }
 );
 ```
@@ -74,7 +74,7 @@ storiesOf('Button', module).add(
     }
   }),
   {
-    notes: 'A very simple example of addon notes',
+    notes: 'An  example of addon notes',
   }
 );
 ```
@@ -95,12 +95,12 @@ storiesOf('Component', module).add('With Markdown', () => <Component />, {
 
 ## Giphy
 
-When using Markdown, you can also embed gifs from Giphy into your Markdown. Currently, the value `gif` of the gif prop is used to search and return the first result returned by Giphy.
+When using Markdown, you can also embed gifs from Giphy into your Markdown. Currently, the value `cheese` of the query prop is used to search and return the first result returned by Giphy.
 
 ```md
 # Title
 
-<Giphy gif='cheese' />
+<Giphy query='cheese' />
 ```
 
 ## Multiple Notes Sections

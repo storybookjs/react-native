@@ -70,7 +70,7 @@ You need to install these addons directly from NPM in order to use them.
 
 With this addon, you can add docs in markdown format for each story.
 It's very useful because most projects and components already have README.md files.
-Now it is easy to add them into your Storybook.
+Now you can add them into your Storybook.
 
 ### [Story-router](https://github.com/gvaldambrini/storybook-router)
 
@@ -93,7 +93,7 @@ Break your stories down into smaller categories (chapters) and subcategories (se
 ### [Props Combinations](https://github.com/evgenykochetkov/react-storybook-addon-props-combinations)
 
 Given possible values for each prop, renders your component with all combinations of prop values.
-Useful for finding edge cases or just seeing all component states at once.
+Useful for finding edge cases or seeing all component states at once.
 
 ### [Material-UI](https://github.com/sm-react/storybook-addon-material-ui)
 
@@ -126,7 +126,7 @@ Preview your stories at a variety of breakpoints, so that you can be sure that y
 
 Wrap your stories with the Apollo client for mocking GraphQL queries/mutations.
 
-### [Screenshot](https://github.com/tsuyoshiwada/storybook-chrome-screenshot)
+### [Storycap](https://github.com/reg-viz/storycap)
 
 Save the screenshot image of your stories. via [Puppeteer](https://github.com/GoogleChrome/puppeteer).
 

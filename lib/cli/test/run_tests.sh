@@ -12,13 +12,18 @@ function cleanup {
 trap cleanup EXIT
 
 fixtures_dir='fixtures'
+story_format='csf'
 
 # parse command-line options
 # '-f' sets fixtures directory
-while getopts ":f:" opt; do
+# '-s' sets story format to use
+while getopts ":f:s:" opt; do
   case $opt in
     f)
       fixtures_dir=$OPTARG
+      ;;
+    s)
+      story_format=$OPTARG
       ;;
   esac
 done
@@ -33,15 +38,27 @@ do
   cd $dir
   echo "Running storybook-cli in $dir"
 
-  if [ $dir == *"native"* ]
-  then
-    # run @storybook/cli
-    yarn sb init --skip-install --yes --install-server
-  else
-    # run @storybook/cli
+  case $story_format in
+  csf)
     yarn sb init --skip-install --yes
-  fi
-
+    ;;
+  mdx)
+    if [[ $dir =~ (react_native*|angular-cli-v6|ember-cli|marko|meteor|mithril|polymer|riot|react_babel_6) ]]
+    then
+      yarn sb init --skip-install --yes
+    else
+      yarn sb init --skip-install --yes --story-format mdx
+    fi
+    ;;
+  csf-ts)
+    if [[ $dir =~ (react_scripts_ts) ]]
+    then
+      yarn sb init --skip-install --yes --story-format csf-ts
+    else
+      yarn sb init --skip-install --yes
+    fi
+    ;;
+  esac
   cd ..
 done
 

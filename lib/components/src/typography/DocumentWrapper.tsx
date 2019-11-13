@@ -179,7 +179,7 @@ export const DocumentWrapper = styled.div(
 
     hr {
       border: 0 none;
-      color: ${theme.appBorderColor};
+      border-top: 1px solid ${theme.appBorderColor};
       height: 4px;
       padding: 0;
     }
@@ -436,6 +436,7 @@ export const DocumentWrapper = styled.div(
       border: 1px solid ${theme.color.mediumlight};
       background-color: ${theme.color.lighter};
       border-radius: 3px;
+      color: ${theme.base === 'dark' && theme.color.darkest};
     }
   `
 );

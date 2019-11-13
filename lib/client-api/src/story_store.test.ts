@@ -1,5 +1,6 @@
 import createChannel from '@storybook/channel-postmessage';
 import { toId } from '@storybook/router/utils';
+import addons from '@storybook/addons';
 
 import StoryStore from './story_store';
 import { defaultDecorateStory } from './client_api';
@@ -97,6 +98,7 @@ describe('preview.story_store', () => {
     });
     it('should remove the kind in both modern and legacy APIs', () => {
       const store = new StoryStore({ channel });
+      addons.setChannel(channel);
       store.addStory(...make('kind-1', 'story-1.1', () => 0));
       store.addStory(...make('kind-1', 'story-1.2', () => 0));
       store.addStory(...make('kind-2', 'story-2.1', () => 0));
@@ -117,6 +119,7 @@ describe('preview.story_store', () => {
   describe('remove', () => {
     it('should remove the kind in both modern and legacy APIs', () => {
       const store = new StoryStore({ channel });
+      addons.setChannel(channel);
       store.addStory(...make('kind-1', 'story-1.1', () => 0));
       store.addStory(...make('kind-1', 'story-1.2', () => 0));
 

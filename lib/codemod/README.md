@@ -80,7 +80,7 @@ Replaces the Info addon's deprecated `addWithInfo` API with the standard `withIn
 ./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/update-addon-info.js . --ignore-pattern "node_modules|dist"
 ```
 
-Simple example:
+Example:
 
 ```js
 storiesOf('Button').addWithInfo('simple usage', 'This is the basic usage of the button.', () => (
@@ -208,7 +208,7 @@ This converts all of your CSF Component Stories into MDX syntax, which integrate
 > NOTE: The output of this transformation may require manual editing after running the transformation. MDX is finnicky about the top-level statements it allows. For example, [variables should be defined with exports](https://mdxjs.com/getting-started/#defining-variables-with-exports), meaning `const foo = 5;` should be rewritten as `export const foo = 5;`. We don't do this transformation automatically, since you may prefer to refactor your stories.
 
 ```sh
-./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/csf-to-mdxt.js . --ignore-pattern "node_modules|dist"
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/csf-to-mdx.js . --ignore-pattern "node_modules|dist"
 ```
 
 For example:

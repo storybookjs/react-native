@@ -1,0 +1,49 @@
+name: CLI tests
+
+on: 
+  push
+  # push:
+# disabled for now:
+# https://github.community/t5/GitHub-Actions/Preserve-status-from-previous-action-run/m-p/33821#M1661
+#     paths:
+#     - 'lib/**'
+#     - 'app/**'
+
+jobs:
+  cli:
+    name: CLI Fixtures
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - uses: actions/checkout@v1
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+    - name: install, bootstrap
+      run: |
+        yarn bootstrap --core
+    - name: cli
+      run: |
+        yarn test --cli
+  latest-cra:
+    name: Latest CRA
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - uses: actions/checkout@v1
+    - name: install, bootstrap
+      run: |
+        yarn bootstrap --core
+    - name: latest-cra
+      run: |
+        yarn test-latest-cra

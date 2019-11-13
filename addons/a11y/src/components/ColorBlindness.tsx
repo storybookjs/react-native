@@ -1,5 +1,5 @@
 import { document } from 'global';
-import React, { Component, ReactNode } from 'react';
+import React, { FunctionComponent, ReactNode, useState } from 'react';
 import memoize from 'memoizerific';
 import { styled } from '@storybook/theming';
 
@@ -33,13 +33,6 @@ const ColorIcon = styled.span(
     boxShadow: `${theme.appBorderColor} 0 0 0 1px inset`,
   })
 );
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ColorBlindnessProps {}
-
-interface ColorBlindnessState {
-  active: string | null;
-}
 
 const baseList = [
   'protanopia',
@@ -86,45 +79,39 @@ const getColorList = (active: string | null, set: (i: string | null) => void): L
   })),
 ];
 
-export class ColorBlindness extends Component<ColorBlindnessProps, ColorBlindnessState> {
-  state: ColorBlindnessState = {
-    active: null,
-  };
+export const ColorBlindness: FunctionComponent = () => {
+  const [active, setActiveState] = useState(null);
 
-  setActive = (active: string | null) => {
+  const setActive = (activeState: string | null): void => {
     const iframe = getIframe();
 
     if (iframe) {
-      iframe.style.filter = getFilter(active);
-      this.setState({
-        active,
+      iframe.style.filter = getFilter(activeState);
+      setActiveState({
+        active: activeState,
       });
     } else {
       logger.error('Cannot find Storybook iframe');
     }
   };
 
-  render() {
-    const { active } = this.state;
-
-    return (
-      <WithTooltip
-        placement="top"
-        trigger="click"
-        tooltip={({ onHide }) => {
-          const colorList = getColorList(active, i => {
-            this.setActive(i);
-            onHide();
-          });
-          return <TooltipLinkList links={colorList} />;
-        }}
-        closeOnClick
-        onDoubleClick={() => this.setActive(null)}
-      >
-        <IconButton key="filter" active={!!active} title="Color Blindness Emulation">
-          <Icons icon="mirror" />
-        </IconButton>
-      </WithTooltip>
-    );
-  }
-}
+  return (
+    <WithTooltip
+      placement="top"
+      trigger="click"
+      tooltip={({ onHide }) => {
+        const colorList = getColorList(active, i => {
+          setActive(i);
+          onHide();
+        });
+        return <TooltipLinkList links={colorList} />;
+      }}
+      closeOnClick
+      onDoubleClick={() => setActive(null)}
+    >
+      <IconButton key="filter" active={!!active} title="Color Blindness Emulation">
+        <Icons icon="mirror" />
+      </IconButton>
+    </WithTooltip>
+  );
+};
