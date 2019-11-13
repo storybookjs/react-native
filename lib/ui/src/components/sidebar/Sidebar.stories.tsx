@@ -6,7 +6,7 @@ import { withRootData } from './SidebarStories.stories';
 
 export default {
   component: Sidebar,
-  title: 'UI|Sidebar/Sidebar',
+  title: 'UI/Sidebar/Sidebar',
   excludeStories: /.*Data$/,
 };
 

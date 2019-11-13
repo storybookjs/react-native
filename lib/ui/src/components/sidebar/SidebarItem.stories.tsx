@@ -4,7 +4,7 @@ import SidebarItem from './SidebarItem';
 
 export default {
   component: SidebarItem,
-  title: 'UI|Sidebar/SidebarItem',
+  title: 'UI/Sidebar/SidebarItem',
   decorators: [
     (storyFn: any) => (
       <div style={{ width: '240px', margin: '1rem', border: '1px dotted #ccc' }}>{storyFn()}</div>
