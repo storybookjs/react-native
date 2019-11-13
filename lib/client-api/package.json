@@ -1,6 +1,6 @@
 {
   "name": "@storybook/client-api",
-  "version": "5.3.0-alpha.42",
+  "version": "5.3.0-alpha.43",
   "description": "Storybook Client API",
   "keywords": [
     "storybook"
@@ -27,12 +27,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.42",
-    "@storybook/channel-postmessage": "5.3.0-alpha.42",
-    "@storybook/channels": "5.3.0-alpha.42",
-    "@storybook/client-logger": "5.3.0-alpha.42",
-    "@storybook/core-events": "5.3.0-alpha.42",
-    "@storybook/router": "5.3.0-alpha.42",
+    "@storybook/addons": "5.3.0-alpha.43",
+    "@storybook/channel-postmessage": "5.3.0-alpha.43",
+    "@storybook/channels": "5.3.0-alpha.43",
+    "@storybook/client-logger": "5.3.0-alpha.43",
+    "@storybook/core-events": "5.3.0-alpha.43",
+    "@storybook/router": "5.3.0-alpha.43",
     "core-js": "^3.0.1",
     "eventemitter3": "^4.0.0",
     "global": "^4.3.2",
@@ -40,6 +40,7 @@
     "lodash": "^4.17.15",
     "memoizerific": "^1.11.3",
     "qs": "^6.6.0",
+    "stable": "^0.1.8",
     "ts-dedent": "^1.1.0",
     "util-deprecate": "^1.0.2"
   },
