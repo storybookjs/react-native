@@ -115,8 +115,19 @@ TypeScriptProps.defaultProps = {
   unionOfPrimitive: 'A string value',
   unionOfComplexType: { text: 'foo', value: 'bar' },
   nullableComplexTypeUndefinedDefaultValue: undefined,
+  typeAlias: 'foo',
+  aliasesUnion: 'foo',
+  genericAlias: { value: 'foo' },
   namedStringLiteralUnion: 'top-right',
   inlinedStringLiteralUnion: 'bottom-right',
   namedNumericLiteralUnion: 0,
   inlinedNumericLiteralUnion: 1,
 };
+
+interface TypeScriptHtmlComponentProps {
+  text: string;
+}
+
+export const TypeScriptHtmlComponent: FC<
+  React.HTMLAttributes<HTMLDivElement> & TypeScriptHtmlComponentProps
+> = () => <div>My HTML component</div>;

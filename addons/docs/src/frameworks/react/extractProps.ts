@@ -35,7 +35,7 @@ function getPropDefs(component: Component, section: string): PropDef[] {
   }
 
   const extractedProps = extractPropsFromDocgen(processedComponent, section);
-  if (extractProps.length === 0) {
+  if (extractedProps.length === 0) {
     return [];
   }
 
