@@ -47,7 +47,7 @@ interface StoryData {
   parameters?: any;
 }
 
-const defaultTitleSlot: StringSlot = ({ selectedKind, parameters }) => {
+export const defaultTitleSlot: StringSlot = ({ selectedKind, parameters }) => {
   const {
     showRoots,
     hierarchyRootSeparator: rootSeparator,
