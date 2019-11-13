@@ -16,7 +16,7 @@ npx -p @storybook/cli@next sb migrate --list
 To run a codemod `<name-of-codemod>`:
 
 ```
-npx -p @storybook/cli@next sb migrate <name-of-codemod> --glob "**/*.stories.js"
+npx -p @storybook/cli@next sb migrate <name-of-codemod> --glob="**/*.stories.js"
 ```
 
 ## Installation
