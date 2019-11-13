@@ -91,10 +91,10 @@ const getPreviewFile = (configDir: string): string | false => {
   const configTS = path.join(configDir, 'config.ts');
 
   if (isFile(previewTS)) {
-    return configTS;
+    return previewTS;
   }
   if (isFile(preview)) {
-    return config;
+    return preview;
   }
   if (isFile(configTS)) {
     return configTS;
