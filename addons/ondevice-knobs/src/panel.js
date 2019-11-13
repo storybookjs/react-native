@@ -1,14 +1,29 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { SELECT_STORY, FORCE_RE_RENDER } from '@storybook/core-events';
 import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-knobs';
+import styled from '@emotion/native';
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 
 const getTimestamp = () => +new Date();
 
 const DEFAULT_GROUP_ID = 'Other';
+
+const Touchable = styled.TouchableOpacity(({ theme }) => ({
+  borderRadius: 2,
+  borderWidth: 1,
+  borderColor: theme.borderColor,
+  padding: 4,
+  margin: 10,
+  justifyContent: 'center',
+  alignItems: 'center',
+}));
+
+const ResetButton = styled.Text(({ theme }) => ({
+  color: theme.buttonTextColor,
+}));
 
 export default class Panel extends React.Component {
   constructor(props) {
@@ -152,7 +167,7 @@ export default class Panel extends React.Component {
     }
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, paddingTop: 10 }}>
         {groupIds.length > 0 && (
           <GroupTabs groups={groups} onGroupSelect={this.onGroupSelect} selectedGroup={groupId} />
         )}
@@ -163,20 +178,9 @@ export default class Panel extends React.Component {
             onFieldClick={this.handleClick}
           />
         </View>
-        <TouchableOpacity
-          style={{
-            borderRadius: 2,
-            borderWidth: 1,
-            borderColor: '#f7f4f4',
-            padding: 4,
-            margin: 10,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-          onPress={this.reset}
-        >
-          <Text>RESET</Text>
-        </TouchableOpacity>
+        <Touchable onPress={this.reset}>
+          <ResetButton>RESET</ResetButton>
+        </Touchable>
       </View>
     );
   }

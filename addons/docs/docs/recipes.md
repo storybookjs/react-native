@@ -66,7 +66,7 @@ import { SomeComponent } from 'path/to/SomeComponent';
 
 I can define a story with the function imported from CSF:
 
-<Story name="basic">{stories.basic}</Story>
+<Story name="basic">{stories.basic()}</Story>
 
 And I can also embed arbitrary markdown & JSX in this file.
 
