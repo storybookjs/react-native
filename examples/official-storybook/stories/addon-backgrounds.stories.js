@@ -3,7 +3,7 @@ import React from 'react';
 import BaseButton from '../components/BaseButton';
 
 export default {
-  title: 'Addons|Backgrounds',
+  title: 'Addons/Backgrounds',
 
   parameters: {
     backgrounds: [

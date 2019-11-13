@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default {
-  title: 'Addons|Cssresources',
+  title: 'Addons/Cssresources',
 };
 
 export const primaryLargeButton = () => (

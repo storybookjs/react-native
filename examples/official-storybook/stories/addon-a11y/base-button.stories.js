@@ -5,7 +5,7 @@ import DelayedRender from '../../components/DelayedRender';
 const text = 'Testing the a11y addon';
 
 export default {
-  title: 'Addons|A11y/BaseButton',
+  title: 'Addons/A11y/BaseButton',
   component: BaseButton,
   parameters: {
     options: { selectedPanel: 'storybook/a11y/panel' },

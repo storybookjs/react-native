@@ -8,7 +8,7 @@ import TableComponent from '../../components/TableComponent';
 import { markdownDescription } from './markdown.stories';
 
 export default {
-  title: 'Addons|Info/Options',
+  title: 'Addons/Info/Options',
   decorators: [withInfo],
 };
 

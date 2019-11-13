@@ -70,7 +70,7 @@ const giphyMarkdown = `
 `;
 
 export default {
-  title: 'Addons|Notes',
+  title: 'Addons/Notes',
 };
 
 export const addonNotes = () => (

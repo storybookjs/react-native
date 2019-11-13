@@ -6,7 +6,7 @@ import BaseButton from '../../components/BaseButton';
 import { markdownDescription } from '../addon-info/markdown.stories';
 
 export default {
-  title: 'Addons|Info/deprecated',
+  title: 'Addons/Info/deprecated',
 };
 
 export const displaysMarkdown = withInfo(markdownDescription)(() => (
