@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/angular/demo';
 
 export default {
-  title: 'Addon|Actions',
+  title: 'Addon/Actions',
 };
 
 export const actionOnly = () => ({

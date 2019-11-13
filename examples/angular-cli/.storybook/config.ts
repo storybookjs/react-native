@@ -14,7 +14,7 @@ addCssWarning();
 
 addParameters({
   options: {
-    hierarchyRootSeparator: /\|/,
+    showRoots: true,
   },
   docs: {
     // inlineStories: true,

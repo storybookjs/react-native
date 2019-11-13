@@ -4,7 +4,7 @@ import { AppComponent } from '../app/app.component';
 import * as results from '../../addon-jest.testresults.json';
 
 export default {
-  title: 'Addon|Jest',
+  title: 'Addon/Jest',
   decorators: [
     withTests({
       results,
