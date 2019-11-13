@@ -14,7 +14,7 @@ import {
 } from './captions';
 import { InspectionType } from '../inspection/types';
 
-const MAX_CAPTION_LENGTH = 35;
+const MAX_SUMMARY_LENGTH = 35;
 
 enum PropTypesType {
   CUSTOM = 'custom',
@@ -89,15 +89,15 @@ function getCaptionFromInspectionType(type: InspectionType): string {
   }
 }
 
-function isTooLongForCaption(value: string): boolean {
-  return value.length > MAX_CAPTION_LENGTH;
+function isTooLongForSummary(value: string): boolean {
+  return value.length > MAX_SUMMARY_LENGTH;
 }
 
 function generateValuesForObjectAst(ast: any): [string, string] {
   let summary = prettyObject(ast, true);
   let detail;
 
-  if (!isTooLongForCaption(summary)) {
+  if (!isTooLongForSummary(summary)) {
     detail = summary;
   } else {
     summary = OBJECT_CAPTION;
@@ -187,7 +187,7 @@ function generateObjectOf(type: DocgenPropType, extractedProp: ExtractedProp): T
   let { summary, detail } = value;
 
   if (name === PropTypesType.SHAPE) {
-    if (!isTooLongForCaption(detail)) {
+    if (!isTooLongForSummary(detail)) {
       summary = detail;
     }
   }

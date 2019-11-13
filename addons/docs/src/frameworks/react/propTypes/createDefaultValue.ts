@@ -12,10 +12,10 @@ import {
   InspectionElement,
 } from '../inspection/types';
 
-const MAX_DEFAULT_VALUE_LENGTH = 50;
+const MAX_SUMMARY_LENGTH = 50;
 
-function isTooLongForDefaultValue(value: string): boolean {
-  return value.length > MAX_DEFAULT_VALUE_LENGTH;
+function isTooLongForSummary(value: string): boolean {
+  return value.length > MAX_SUMMARY_LENGTH;
 }
 
 // TODO: Fix this any type.
@@ -45,7 +45,7 @@ function generateObject({ ast }: InspectionResult): PropDefaultValue {
     prettyCaption = `${prettyCaption.slice(0, -1)} }`;
   }
 
-  return !isTooLongForDefaultValue(prettyCaption)
+  return !isTooLongForSummary(prettyCaption)
     ? prettyCaption
     : createSummaryValue(OBJECT_CAPTION, generateCode(ast));
 }
@@ -59,7 +59,7 @@ function generateFunc({ inferedType, ast }: InspectionResult): PropDefaultValue 
 
   const prettyCaption = generateCode(ast, true);
 
-  return !isTooLongForDefaultValue(prettyCaption)
+  return !isTooLongForSummary(prettyCaption)
     ? prettyCaption
     : createSummaryValue(FUNCTION_CAPTION, generateCode(ast));
 }
@@ -86,7 +86,7 @@ function generateElement(
     }
   }
 
-  return !isTooLongForDefaultValue(defaultValue)
+  return !isTooLongForSummary(defaultValue)
     ? defaultValue
     : createSummaryValue(ELEMENT_CAPTION, defaultValue);
 }
@@ -94,7 +94,7 @@ function generateElement(
 function generateArray({ ast }: InspectionResult): PropDefaultValue {
   const prettyCaption = generateCode(ast, true);
 
-  return !isTooLongForDefaultValue(prettyCaption)
+  return !isTooLongForSummary(prettyCaption)
     ? prettyCaption
     : createSummaryValue(ARRAY_CAPTION, generateCode(ast));
 }
