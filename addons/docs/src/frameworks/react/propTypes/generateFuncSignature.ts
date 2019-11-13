@@ -1,5 +1,5 @@
 import { isNil } from 'lodash';
-import { ExtractedJsDocParam, ExtractedJsDocReturns } from '../../../lib2/jsdocParser';
+import { ExtractedJsDocParam, ExtractedJsDocReturns } from '../../../lib/jsdocParser';
 
 export function generateFuncSignature(
   params: ExtractedJsDocParam[],

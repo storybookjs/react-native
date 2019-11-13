@@ -3,7 +3,7 @@ import { PropsTable, PropsTableError, PropsTableProps } from '@storybook/compone
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, CURRENT_SELECTION } from './shared';
 
-import { PropsExtractor } from '../lib/docgenUtils';
+import { PropsExtractor } from '../lib/docgen/types';
 import { extractProps as reactExtractProps } from '../frameworks/react/extractProps';
 import { extractProps as vueExtractProps } from '../frameworks/vue/extractProps';
 

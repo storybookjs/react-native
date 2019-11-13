@@ -8,7 +8,7 @@ function isDefaultValueBlacklisted(value: string) {
   return BLACKLIST.some(x => x === value);
 }
 
-export function renderDefaultValue(defaultValue: DocgenPropDefaultValue): PropDefaultValue {
+export function createDefaultValue(defaultValue: DocgenPropDefaultValue): PropDefaultValue {
   if (!isNil(defaultValue)) {
     const { value } = defaultValue;
 

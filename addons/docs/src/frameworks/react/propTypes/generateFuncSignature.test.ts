@@ -1,5 +1,5 @@
 import { generateFuncSignature } from './generateFuncSignature';
-import { parseJsDoc } from '../../../lib2/jsdocParser';
+import { parseJsDoc } from '../../../lib/jsdocParser';
 
 it('should return an empty string with there is no @params and @returns tags', () => {
   const result = generateFuncSignature(null, null);

@@ -36,7 +36,7 @@ function createSummaryValue(summary: string, detail: string): PropSummaryValue {
   return { summary, detail };
 }
 
-function renderObject({ ast }: InspectionResult): PropDefaultValue {
+function generateObject({ ast }: InspectionResult): PropDefaultValue {
   let prettyCaption = generateCode(ast, true);
 
   // Cannot get escodegen to add a space before the last } with the compact mode settings.
@@ -50,12 +50,11 @@ function renderObject({ ast }: InspectionResult): PropDefaultValue {
     : createSummaryValue(OBJECT_CAPTION, generateCode(ast));
 }
 
-function renderFunc({ inferedType, ast }: InspectionResult): PropDefaultValue {
+function generateFunc({ inferedType, ast }: InspectionResult): PropDefaultValue {
   const { identifier } = inferedType as InspectionFunction;
 
   if (!isNil(identifier)) {
     return createSummaryValue(getPrettyIdentifier(inferedType), generateCode(ast));
-    // return createPropText(getPrettyIdentifier(inferedType), { title: generateCode(ast) });
   }
 
   const prettyCaption = generateCode(ast, true);
@@ -63,15 +62,14 @@ function renderFunc({ inferedType, ast }: InspectionResult): PropDefaultValue {
   return !isTooLongForDefaultValue(prettyCaption)
     ? prettyCaption
     : createSummaryValue(FUNCTION_CAPTION, generateCode(ast));
-
-  // return !isTooLongForDefaultValue(prettyCaption)
-  //   ? createPropText(prettyCaption)
-  //   : createPropText(FUNCTION_CAPTION, { title: generateCode(ast) });
 }
 
 // All elements are JSX elements.
 // JSX elements cannot are not supported by escodegen.
-function renderElement(defaultValue: string, inspectionResult: InspectionResult): PropDefaultValue {
+function generateElement(
+  defaultValue: string,
+  inspectionResult: InspectionResult
+): PropDefaultValue {
   const { inferedType } = inspectionResult;
   const { identifier } = inferedType as InspectionElement;
 
@@ -85,46 +83,34 @@ function renderElement(defaultValue: string, inspectionResult: InspectionResult)
         prettyIdentifier,
         prettyIdentifier !== defaultValue ? defaultValue : undefined
       );
-
-      // return createPropText(prettyIdentifier, {
-      //   title: prettyIdentifier !== defaultValue ? defaultValue : undefined,
-      // });
     }
   }
 
   return !isTooLongForDefaultValue(defaultValue)
     ? defaultValue
     : createSummaryValue(ELEMENT_CAPTION, defaultValue);
-
-  // return !isTooLongForDefaultValue(defaultValue)
-  //   ? createPropText(defaultValue)
-  //   : createPropText(ELEMENT_CAPTION, { title: defaultValue });
 }
 
-function renderArray({ ast }: InspectionResult): PropDefaultValue {
+function generateArray({ ast }: InspectionResult): PropDefaultValue {
   const prettyCaption = generateCode(ast, true);
 
   return !isTooLongForDefaultValue(prettyCaption)
     ? prettyCaption
     : createSummaryValue(ARRAY_CAPTION, generateCode(ast));
-
-  // return !isTooLongForDefaultValue(prettyCaption)
-  //   ? createPropText(prettyCaption)
-  //   : createPropText(ARRAY_CAPTION, { title: generateCode(ast) });
 }
 
-export function renderDefaultValue(defaultValue: string): PropDefaultValue {
+export function createDefaultValue(defaultValue: string): PropDefaultValue {
   const inspectionResult = inspectValue(defaultValue);
 
   switch (inspectionResult.inferedType.type) {
     case InspectionType.OBJECT:
-      return renderObject(inspectionResult);
+      return generateObject(inspectionResult);
     case InspectionType.FUNCTION:
-      return renderFunc(inspectionResult);
+      return generateFunc(inspectionResult);
     case InspectionType.ELEMENT:
-      return renderElement(defaultValue, inspectionResult);
+      return generateElement(defaultValue, inspectionResult);
     case InspectionType.ARRAY:
-      return renderArray(inspectionResult);
+      return generateArray(inspectionResult);
     default:
       return null;
   }

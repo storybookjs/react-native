@@ -2,7 +2,7 @@
 import { addParameters } from '@storybook/client-api';
 import { StoryFn } from '@storybook/addons';
 import { extractProps } from './extractProps';
-import { extractComponentDescription } from '../../lib2/docgen/utils';
+import { extractComponentDescription } from '../../lib/docgen';
 
 addParameters({
   docs: {

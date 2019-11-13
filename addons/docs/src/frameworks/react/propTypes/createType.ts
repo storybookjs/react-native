@@ -1,7 +1,6 @@
 import { isNil } from 'lodash';
 import { PropSummaryValue, PropType } from '@storybook/components';
-import { ExtractedProp } from '../../../lib2/docgen/extractDocgenProps';
-import { DocgenPropType } from '../../../lib2/docgen/types';
+import { ExtractedProp, DocgenPropType } from '../../../lib/docgen';
 import { inspectValue } from '../inspection/inspectValue';
 import { generateCode } from './generateCode';
 import { generateFuncSignature } from './generateFuncSignature';
@@ -41,8 +40,6 @@ interface EnumValue {
 interface TypeDef {
   name: string;
   value: PropSummaryValue;
-  // caption: string;
-  // value: string;
   inferedType?: InspectionType;
 }
 
@@ -339,7 +336,7 @@ function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeD
   return createTypeDef({ name: 'unknown', summary: 'unknown' });
 }
 
-export function renderType(extractedProp: ExtractedProp): PropType {
+export function createType(extractedProp: ExtractedProp): PropType {
   const { type } = extractedProp.docgenInfo;
 
   switch (type.name) {
