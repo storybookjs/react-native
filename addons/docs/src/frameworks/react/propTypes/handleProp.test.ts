@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 
-import { PropSummaryValue, PropDef } from '@storybook/components';
-import { stringify } from 'querystring';
+import { PropDef } from '@storybook/components';
 import { Component } from '../../../blocks/shared';
 import { extractPropsFromDocgen } from '../../../lib/docgen';
 import { enhancePropTypesProp } from './handleProp';

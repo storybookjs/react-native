@@ -3,11 +3,7 @@ import { isNil } from 'lodash';
 import { PropSummaryValue } from './PropDef';
 
 interface PropValueProps {
-  value?: PropSummaryValue | string;
-}
-
-interface PropTextProps {
-  value: string;
+  value?: PropSummaryValue;
 }
 
 interface PropSummaryProps {
