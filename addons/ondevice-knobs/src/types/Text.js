@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TextInput } from 'react-native';
+import styled from '@emotion/native';
+
+const Input = styled.TextInput(({ theme }) => ({
+  borderWidth: 1,
+  borderColor: theme.borderColor,
+  borderRadius: 2,
+  fontSize: 13,
+  padding: 5,
+  margin: 10,
+  color: theme.labelColor,
+}));
 
 const TextType = ({ knob, onChange }) => (
-  <TextInput
-    style={{
-      borderWidth: 1,
-      borderColor: '#f7f4f4',
-      borderRadius: 2,
-      fontSize: 13,
-      padding: 5,
-      margin: 10,
-      color: '#555',
-    }}
+  <Input
     id={knob.name}
     value={knob.value}
     onChangeText={onChange}
