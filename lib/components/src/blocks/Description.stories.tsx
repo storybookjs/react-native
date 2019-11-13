@@ -4,7 +4,7 @@ import { Description } from './Description';
 import markdownCaption from './DocsPageExampleCaption.md';
 
 export default {
-  title: 'Docs|Description',
+  title: 'Docs/Description',
   component: Description,
 };
 

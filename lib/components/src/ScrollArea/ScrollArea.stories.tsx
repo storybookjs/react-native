@@ -35,7 +35,7 @@ const list = (filler: (data: number) => JSX.Element) => {
 
 export default {
   component: ScrollArea,
-  title: 'Basics|ScrollArea',
+  title: 'Basics/ScrollArea',
   decorators: [(storyFn: () => any) => <Wrapper>{storyFn()}</Wrapper>],
 };
 

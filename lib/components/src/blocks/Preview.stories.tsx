@@ -7,7 +7,7 @@ import { Button } from '../Button/Button';
 import * as sourceStories from './Source.stories';
 
 export default {
-  title: 'Docs|Preview',
+  title: 'Docs/Preview',
   component: Preview,
 };
 

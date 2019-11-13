@@ -2,7 +2,7 @@ import React from 'react';
 import { Typeset } from './Typeset';
 
 export default {
-  title: 'Docs|Typeset',
+  title: 'Docs/Typeset',
   component: Typeset,
 };
 
