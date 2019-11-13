@@ -18,10 +18,6 @@ const EmptyProp = () => {
   return <span>-</span>;
 };
 
-const PropText: FC<PropTextProps> = ({ value }) => {
-  return <span>{value}</span>;
-};
-
 const PropSummary: FC<PropSummaryProps> = ({ value }) => {
   const { summary, detail } = value;
 
@@ -41,9 +37,5 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
 };
 
 export const PropValue: FC<PropValueProps> = ({ value }) => {
-  if (isNil(value)) {
-    return <EmptyProp />;
-  }
-
-  return typeof value !== 'object' ? <PropText value={value} /> : <PropSummary value={value} />;
+  return isNil(value) ? <EmptyProp /> : <PropSummary value={value} />;
 };
