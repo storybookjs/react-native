@@ -1,6 +1,5 @@
 import { isNil } from 'lodash';
 // @ts-ignore
-import htmlTags from 'html-tags';
 import { PropDefaultValue, PropSummaryValue } from '@storybook/components';
 import { inspectValue } from '../inspection/inspectValue';
 import { OBJECT_CAPTION, FUNCTION_CAPTION, ELEMENT_CAPTION, ARRAY_CAPTION } from './captions';
@@ -11,6 +10,7 @@ import {
   InspectionType,
   InspectionElement,
 } from '../inspection/types';
+import { isHtmlTag } from './isHtmlTag';
 
 const MAX_SUMMARY_LENGTH = 50;
 
@@ -74,9 +74,7 @@ function generateElement(
   const { identifier } = inferedType as InspectionElement;
 
   if (!isNil(identifier)) {
-    const isHtmlTag = htmlTags.includes(identifier.toLowerCase());
-
-    if (!isHtmlTag) {
+    if (!isHtmlTag(identifier)) {
       const prettyIdentifier = getPrettyIdentifier(inferedType);
 
       return createSummaryValue(

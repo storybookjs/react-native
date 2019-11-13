@@ -13,6 +13,7 @@ import {
   CUSTOM_CAPTION,
 } from './captions';
 import { InspectionType } from '../inspection/types';
+import { isHtmlTag } from './isHtmlTag';
 
 const MAX_SUMMARY_LENGTH = 35;
 
@@ -128,7 +129,7 @@ function generateCustom({ raw }: DocgenPropType): TypeDef {
         break;
       }
       case InspectionType.ELEMENT:
-        summary = !isNil(identifier) ? identifier : ELEMENT_CAPTION;
+        summary = !isNil(identifier) && !isHtmlTag(identifier) ? identifier : ELEMENT_CAPTION;
         detail = raw;
         break;
       default:
