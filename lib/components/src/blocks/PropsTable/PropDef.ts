@@ -17,8 +17,8 @@ export interface PropSummaryValue {
   detail?: string;
 }
 
-export type PropType = PropSummaryValue | string;
-export type PropDefaultValue = PropSummaryValue | string;
+export type PropType = PropSummaryValue;
+export type PropDefaultValue = PropSummaryValue;
 
 export interface PropDef {
   name: string;

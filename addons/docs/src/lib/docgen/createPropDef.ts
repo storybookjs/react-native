@@ -15,7 +15,7 @@ function createBasicPropDef(name: string, type: DocgenType, docgenInfo: DocgenIn
 
   return {
     name,
-    type: type.name,
+    type: { summary: type.name },
     required,
     description,
     defaultValue: createDefaultValue(defaultValue),

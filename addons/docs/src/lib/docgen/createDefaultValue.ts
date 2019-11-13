@@ -13,7 +13,9 @@ export function createDefaultValue(defaultValue: DocgenPropDefaultValue): PropDe
     const { value } = defaultValue;
 
     if (!isDefaultValueBlacklisted(value)) {
-      return value;
+      return {
+        summary: value,
+      };
     }
   }
 

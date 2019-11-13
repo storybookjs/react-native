@@ -32,7 +32,7 @@ function getPrettyIdentifier(inferedType: any): string {
   }
 }
 
-function createSummaryValue(summary: string, detail: string): PropSummaryValue {
+function createSummaryValue(summary: string, detail?: string): PropSummaryValue {
   return { summary, detail };
 }
 
@@ -46,7 +46,7 @@ function generateObject({ ast }: InspectionResult): PropDefaultValue {
   }
 
   return !isTooLongForSummary(prettyCaption)
-    ? prettyCaption
+    ? createSummaryValue(prettyCaption)
     : createSummaryValue(OBJECT_CAPTION, generateCode(ast));
 }
 
@@ -60,7 +60,7 @@ function generateFunc({ inferedType, ast }: InspectionResult): PropDefaultValue 
   const prettyCaption = generateCode(ast, true);
 
   return !isTooLongForSummary(prettyCaption)
-    ? prettyCaption
+    ? createSummaryValue(prettyCaption)
     : createSummaryValue(FUNCTION_CAPTION, generateCode(ast));
 }
 
@@ -87,7 +87,7 @@ function generateElement(
   }
 
   return !isTooLongForSummary(defaultValue)
-    ? defaultValue
+    ? createSummaryValue(defaultValue)
     : createSummaryValue(ELEMENT_CAPTION, defaultValue);
 }
 
@@ -95,7 +95,7 @@ function generateArray({ ast }: InspectionResult): PropDefaultValue {
   const prettyCaption = generateCode(ast, true);
 
   return !isTooLongForSummary(prettyCaption)
-    ? prettyCaption
+    ? createSummaryValue(prettyCaption)
     : createSummaryValue(ARRAY_CAPTION, generateCode(ast));
 }
 
