@@ -63,9 +63,10 @@
     "js-string-escape": "^1.0.1",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
-    "storybook-addon-vue-info": "^1.2.1",
     "ts-dedent": "^1.1.0",
-    "util-deprecate": "^1.0.2"
+    "util-deprecate": "^1.0.2",
+    "vue-docgen-api": "^3.26.0",
+    "vue-docgen-loader": "^1.0.1"
   },
   "devDependencies": {
     "@types/doctrine": "^0.0.3",
