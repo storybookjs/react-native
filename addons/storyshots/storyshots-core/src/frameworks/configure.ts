@@ -94,7 +94,8 @@ function configure(
   });
 
   if (stories && stories.length) {
-    storybook.configure(stories, false);
+    // eslint-disable-next-line global-require, import/no-dynamic-require
+    storybook.configure(stories.map(f => require(f)), false);
   }
 }
 
