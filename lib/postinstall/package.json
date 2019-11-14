@@ -1,8 +1,9 @@
 {
   "name": "@storybook/postinstall",
   "version": "5.3.0-alpha.45",
-  "description": "",
+  "description": "Storybook addons postinstall utilities",
   "keywords": [
+    "api",
     "storybook"
   ],
   "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/postinstall",
