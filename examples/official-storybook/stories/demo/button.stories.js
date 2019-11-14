@@ -5,6 +5,7 @@ import { Button } from '@storybook/react/demo';
 export default {
   title: 'Other/Demo/Button',
   component: Button,
+  id: 'demo-button-id',
   parameters: {
     docs: {
       inlineStories: false,

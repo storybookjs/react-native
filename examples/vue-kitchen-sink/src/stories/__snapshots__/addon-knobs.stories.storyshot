@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon/Knobs All Knobs 1`] = `
+exports[`Storyshots Addon/Knobs All knobs 1`] = `
 <div
   style="border: 2px dotted; padding: 8px 22px; border-radius: 8px; border-color: deeppink;"
 >
@@ -44,7 +44,7 @@ exports[`Storyshots Addon/Knobs Simple 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon/Knobs Xss Safety 1`] = `
+exports[`Storyshots Addon/Knobs XSS safety 1`] = `
 <div>
   &lt;img src=x onerror="alert('XSS Attack')" &gt;
 </div>
