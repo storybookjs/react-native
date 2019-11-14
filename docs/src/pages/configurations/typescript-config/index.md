@@ -13,7 +13,9 @@ If you're using Create React App (CRA) and have configured it to work with TS, y
 
 If you're not using CRA, the next best thing is to use the [Typescript preset](https://github.com/storybookjs/presets/tree/master/packages/preset-typescript), which configures `ts-loader` under the hood.
 
-If you need more control than the Typescript preset offers, read on for manual configuration instructions.
+If you need more control than the TypeScript preset offers, read on for manual configuration instructions.
+
+> If using TypeScript, some addons require features available in TS version 3.4+.
 
 ## Setting up TypeScript with awesome-typescript-loader
 

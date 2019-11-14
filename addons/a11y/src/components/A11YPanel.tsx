@@ -46,25 +46,34 @@ const Incomplete = styled.span<{}>(({ theme }) => ({
   color: theme.color.warning,
 }));
 
+const centeredStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%',
+};
+
 const Loader = styled(({ className }) => (
   <div className={className}>
     <Icon inline icon="sync" status="running" /> Please wait while the accessibility scan is running
     ...
   </div>
-))({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: '100%',
-});
+))(centeredStyle);
 Loader.displayName = 'Loader';
 
-interface A11YPanelState {
-  status: string;
+interface A11YPanelNormalState {
+  status: 'ready' | 'ran' | 'running';
   passes: Result[];
   violations: Result[];
   incomplete: Result[];
 }
+
+interface A11YPanelErrorState {
+  status: 'error';
+  error: unknown;
+}
+
+type A11YPanelState = A11YPanelNormalState | A11YPanelErrorState;
 
 interface A11YPanelProps {
   active: boolean;
@@ -84,6 +93,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
 
     api.on(STORY_RENDERED, this.request);
     api.on(EVENTS.RESULT, this.onUpdate);
+    api.on(EVENTS.ERROR, this.onError);
   }
 
   componentDidUpdate(prevProps: A11YPanelProps) {
@@ -101,6 +111,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
     const { api } = this.props;
     api.off(STORY_RENDERED, this.request);
     api.off(EVENTS.RESULT, this.onUpdate);
+    api.off(EVENTS.ERROR, this.onError);
   }
 
   onUpdate = ({ passes, violations, incomplete }: AxeResults) => {
@@ -124,6 +135,13 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
     );
   };
 
+  onError = (error: unknown) => {
+    this.setState({
+      status: 'error',
+      error,
+    });
+  };
+
   request = () => {
     const { api, active } = this.props;
 
@@ -142,8 +160,22 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
   };
 
   render() {
-    const { passes, violations, incomplete, status } = this.state;
     const { active } = this.props;
+    if (!active) return null;
+
+    // eslint-disable-next-line react/destructuring-assignment
+    if (this.state.status === 'error') {
+      const { error } = this.state;
+      return (
+        <div style={centeredStyle}>
+          The accessibility scan encountered an error.
+          <br />
+          {error}
+        </div>
+      );
+    }
+
+    const { passes, violations, incomplete, status } = this.state;
 
     let actionTitle;
     if (status === 'ready') {
@@ -162,7 +194,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
       );
     }
 
-    return active ? (
+    return (
       <Fragment>
         <Provider store={store}>
           {status === 'running' ? (
@@ -218,6 +250,6 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
           />
         </Provider>
       </Fragment>
-    ) : null;
+    );
   }
 }

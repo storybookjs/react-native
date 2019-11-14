@@ -25,7 +25,7 @@ yarn add -D @storybook/addon-docs@next
 Then add the following to your `.storybook/presets.js` exports:
 
 ```js
-module.exports = ['@storybook/addon-docs/angular/preset'];
+module.exports = ['@storybook/addon-docs/preset'];
 ```
 
 ## DocsPage
@@ -104,7 +104,7 @@ configure(require.context('../src/stories', true, /\.stories\.(ts|mdx)$/), modul
 Finally, you can create MDX files like this:
 
 ```md
-import { Meta, Story, Props } from '@storybook/docs/blocks';
+import { Meta, Story, Props } from '@storybook/addon-docs/blocks';
 import { AppComponent } from './app.component';
 
 <Meta title='App Component' component={AppComponent} />

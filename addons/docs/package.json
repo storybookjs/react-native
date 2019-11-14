@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-docs",
-  "version": "5.3.0-alpha.40",
+  "version": "5.3.0-alpha.44",
   "description": "Superior documentation for your components",
   "keywords": [
     "addon",
@@ -44,12 +44,12 @@
     "@mdx-js/loader": "^1.1.0",
     "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/react": "^1.0.27",
-    "@storybook/addons": "5.3.0-alpha.40",
-    "@storybook/api": "5.3.0-alpha.40",
-    "@storybook/components": "5.3.0-alpha.40",
-    "@storybook/router": "5.3.0-alpha.40",
-    "@storybook/source-loader": "5.3.0-alpha.40",
-    "@storybook/theming": "5.3.0-alpha.40",
+    "@storybook/addons": "5.3.0-alpha.44",
+    "@storybook/api": "5.3.0-alpha.44",
+    "@storybook/components": "5.3.0-alpha.44",
+    "@storybook/router": "5.3.0-alpha.44",
+    "@storybook/source-loader": "5.3.0-alpha.44",
+    "@storybook/theming": "5.3.0-alpha.44",
     "acorn": "^7.1.0",
     "acorn-jsx": "^5.1.0",
     "acorn-walk": "^7.0.0",
@@ -62,7 +62,8 @@
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "storybook-addon-vue-info": "^1.2.1",
-    "ts-dedent": "^1.1.0"
+    "ts-dedent": "^1.1.0",
+    "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "@types/doctrine": "^0.0.3",

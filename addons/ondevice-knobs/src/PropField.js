@@ -1,27 +1,24 @@
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import React from 'react';
+import styled from '@emotion/native';
 import TypeMap from './types';
 
 const InvalidType = () => <Text style={{ margin: 10 }}>Invalid Type</Text>;
+
+const Label = styled.Text(({ theme }) => ({
+  marginLeft: 10,
+  fontSize: 14,
+  color: theme.labelColor,
+  fontWeight: 'bold',
+}));
 
 const PropField = ({ onChange, onPress, knob }) => {
   const InputType = TypeMap[knob.type] || InvalidType;
 
   return (
     <View>
-      {!knob.hideLabel ? (
-        <Text
-          style={{
-            marginLeft: 10,
-            fontSize: 14,
-            color: 'rgb(68, 68, 68)',
-            fontWeight: 'bold',
-          }}
-        >
-          {`${knob.label || knob.name}`}
-        </Text>
-      ) : null}
+      {!knob.hideLabel ? <Label>{`${knob.label || knob.name}`}</Label> : null}
       <InputType knob={knob} onChange={onChange} onPress={onPress} />
     </View>
   );
