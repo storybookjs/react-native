@@ -35,7 +35,7 @@ If you don't have `package.json` in your project, you'll need to init it first:
 npm init
 ```
 
-Then add the following NPM script to your package json in order to start the storybook later in this guide:
+Then add the following NPM script to your `package.json` in order to start the storybook later in this guide:
 
 > In order for your storybook to run properly be sure to be either run `ember serve` or `ember build` before running any storybook commands. Running `ember serve` before storybook will enable live reloading.
 
@@ -105,7 +105,7 @@ export const component = () => {
 };
 ```
 
-> If you are using an older version of ember <= 3.1 please use this story style
+> If you are using an older version of Ember <= 3.1 please use this story style
 
 ```js
 import { compile } from 'ember-source/dist/ember-template-compiler';
