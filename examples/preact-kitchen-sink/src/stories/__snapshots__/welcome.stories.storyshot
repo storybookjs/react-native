@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Welcome To Storybook 1`] = `
+exports[`Storyshots Welcome to Storybook 1`] = `
 <article
   style={
     Object {
