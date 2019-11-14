@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Description, DescriptionProps as PureDescriptionProps } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, CURRENT_SELECTION } from './shared';
-import { str } from '../lib/docgenUtils';
+import { str } from '../lib/docgen/utils';
 
 export enum DescriptionType {
   INFO = 'info',
@@ -21,10 +21,10 @@ interface DescriptionProps {
   markdown?: string;
 }
 
-export const getNotes = (notes?: Notes) =>
+const getNotes = (notes?: Notes) =>
   notes && (typeof notes === 'string' ? notes : str(notes.markdown) || str(notes.text));
 
-export const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
+const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
 
 const noDescription = (component?: Component): string | null => null;
 
