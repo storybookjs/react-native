@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Centered Rounded 1`] = `
+exports[`Storyshots Addon/Centered Rounded 1`] = `
 <div
   style="position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; display: flex; align-items: center; overflow: auto;"
 >
