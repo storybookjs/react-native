@@ -1,3 +1,18 @@
+## 5.3.0-alpha.44 (November 13, 2019)
+
+### Features
+
+* React-native: Add theming to ondevice-addons ([#8738](https://github.com/storybookjs/storybook/pull/8738))
+
+### Bug Fixes
+
+* UI: Store layout state in sessionStorage ([#8786](https://github.com/storybookjs/storybook/pull/8786))
+* Core: Use `stable` package to ensure story sorting is stable ([#8795](https://github.com/storybookjs/storybook/pull/8795))
+
+### Maintenance
+
+* Svelte: Migrate @storybook/svelte to Typescript ([#8770](https://github.com/storybookjs/storybook/pull/8770))
+
 ## 5.3.0-alpha.43 (November 11, 2019)
 
 ### Bug Fixes

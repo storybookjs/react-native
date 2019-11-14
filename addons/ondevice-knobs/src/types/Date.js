@@ -1,7 +1,20 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { TouchableOpacity, Text, View } from 'react-native';
+import { View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
+import styled from '@emotion/native';
+
+const Touchable = styled.TouchableOpacity(({ theme }) => ({
+  borderColor: theme.borderColor,
+  borderWidth: 1,
+  borderRadius: 2,
+  padding: 5,
+}));
+
+const Label = styled.Text(({ theme }) => ({
+  fontSize: 13,
+  color: theme.labelColor,
+}));
 
 // TODO seconds support
 class DateType extends PureComponent {
@@ -49,29 +62,17 @@ class DateType extends PureComponent {
     return (
       <View style={{ margin: 10 }}>
         <View style={{ flexDirection: 'row' }}>
-          <TouchableOpacity
+          <Touchable onPress={this.showDatePicker}>
+            <Label>{dateString}</Label>
+          </Touchable>
+          <Touchable
             style={{
-              borderWidth: 1,
-              borderColor: '#f7f4f4',
-              borderRadius: 2,
-              padding: 5,
-            }}
-            onPress={this.showDatePicker}
-          >
-            <Text style={{ fontSize: 13, color: '#555' }}>{dateString}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              borderWidth: 1,
-              borderColor: '#f7f4f4',
-              borderRadius: 2,
-              padding: 5,
               marginLeft: 5,
             }}
             onPress={this.showTimePicker}
           >
-            <Text style={{ fontSize: 13, color: '#555' }}>{timeString}</Text>
-          </TouchableOpacity>
+            <Label>{timeString}</Label>
+          </Touchable>
         </View>
         <DateTimePicker
           date={d}

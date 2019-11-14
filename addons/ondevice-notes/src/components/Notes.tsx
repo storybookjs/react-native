@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import Markdown from 'react-native-simple-markdown';
 import { AddonStore } from '@storybook/addons';
 import { API } from '@storybook/api';
+import { ThemeContext } from '@emotion/core';
 
 export const PARAM_KEY = `notes`;
 
@@ -30,7 +31,13 @@ export const Notes = ({ active, api }: NotesProps) => {
 
   return (
     <View style={{ padding: 10, flex: 1 }}>
-      <Markdown>{textAfterFormatted}</Markdown>
+      <ThemeContext.Consumer>
+        {theme => (
+          <Markdown styles={{ text: { color: (theme as any).labelColor } }}>
+            {textAfterFormatted}
+          </Markdown>
+        )}
+      </ThemeContext.Consumer>
     </View>
   );
 };
