@@ -204,10 +204,10 @@ export default class ClientApi {
       };
     });
 
-    api.add = (storyName, storyFn, parameters) => {
+    api.add = (storyName, storyFn, parameters = {}) => {
       hasAdded = true;
 
-      const id = toId(kind, storyName);
+      const id = parameters.__id || toId(kind, storyName);
 
       if (typeof storyName !== 'string') {
         throw new Error(`Invalid or missing storyName provided for a "${kind}" story.`);
