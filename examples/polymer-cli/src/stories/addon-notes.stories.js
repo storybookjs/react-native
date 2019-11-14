@@ -1,5 +1,5 @@
 export default {
-  title: 'Addon|Notes',
+  title: 'Addon/Notes',
 };
 
 export const simpleNote = () =>

@@ -1,7 +1,7 @@
 import ButtonRaw from './Button.txt';
 
 export default {
-  title: 'Addon|Backgrounds',
+  title: 'Addon/Backgrounds',
   parameters: {
     backgrounds: [
       { name: 'light', value: '#eeeeee' },

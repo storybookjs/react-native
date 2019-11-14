@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
 
 export default {
-  title: 'Other|Demo/Button',
+  title: 'Other/Demo/Button',
   component: Button,
   id: 'demo-button-id',
   parameters: {

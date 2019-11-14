@@ -11,7 +11,7 @@ Vue.use(Vuex);
 
 addParameters({
   options: {
-    hierarchyRootSeparator: /\|/,
+    showRoots: true,
   },
   docs: {
     inlineStories: true,

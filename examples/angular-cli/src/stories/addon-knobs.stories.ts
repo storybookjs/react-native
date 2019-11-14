@@ -17,7 +17,7 @@ import { SimpleKnobsComponent } from './knobs.component';
 import { AllKnobsComponent } from './all-knobs.component';
 
 export default {
-  title: 'Addon|Knobs',
+  title: 'Addon/Knobs',
   decorators: [withKnobs],
   parameters: {
     knobs: {

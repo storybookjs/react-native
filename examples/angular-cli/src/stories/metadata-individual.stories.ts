@@ -1,7 +1,7 @@
 import { TokenComponent, ITEMS, DEFAULT_NAME } from './moduleMetadata/token.component';
 
 export default {
-  title: 'Metadata|Individual',
+  title: 'Metadata/Individual',
 };
 
 export const individual1 = () => ({

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default {
-  title: 'Addons|Design assets',
+  title: 'Addons/Design assets',
 
   parameters: {
     options: {

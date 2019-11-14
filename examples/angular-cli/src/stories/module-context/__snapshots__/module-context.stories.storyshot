@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Custom|Feature Module as Context Component with default providers 1`] = `
+exports[`Storyshots Custom/Feature Module as Context Component with default providers 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -31,7 +31,7 @@ exports[`Storyshots Custom|Feature Module as Context Component with default prov
 </storybook-dynamic-app-root>
 `;
 
-exports[`Storyshots Custom|Feature Module as Context Component with overridden provider 1`] = `
+exports[`Storyshots Custom/Feature Module as Context Component with overridden provider 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -62,7 +62,7 @@ exports[`Storyshots Custom|Feature Module as Context Component with overridden p
 </storybook-dynamic-app-root>
 `;
 
-exports[`Storyshots Custom|Feature Module as Context Component with self and dependencies declared in its feature module 1`] = `
+exports[`Storyshots Custom/Feature Module as Context Component with self and dependencies declared in its feature module 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}

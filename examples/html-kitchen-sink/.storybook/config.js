@@ -12,7 +12,7 @@ addParameters({
     },
   },
   options: {
-    hierarchyRootSeparator: /\|/,
+    showRoots: true,
   },
   docs: {
     iframeHeight: '200px',

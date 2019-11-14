@@ -7,7 +7,7 @@ import { Form } from '../form/index';
 
 const { Button: FormButton } = Form;
 
-storiesOf('Basics|Button', module).add('all buttons', () => (
+storiesOf('Basics/Button', module).add('all buttons', () => (
   <div>
     <p>Button that is used for forms</p>
     <FormButton>Form.Button</FormButton>

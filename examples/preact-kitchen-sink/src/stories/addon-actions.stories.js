@@ -6,7 +6,7 @@ import { action, actions } from '@storybook/addon-actions';
 import Button from '../Button';
 
 export default {
-  title: 'Addons|Actions',
+  title: 'Addons/Actions',
 };
 
 export const actionOnly = () => <Button onclick={action('log')}>Click me to log the action</Button>;

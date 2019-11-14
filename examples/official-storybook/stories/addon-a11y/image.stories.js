@@ -5,7 +5,7 @@ const text = 'Testing the a11y addon';
 const image = 'http://placehold.it/350x150';
 
 export default {
-  title: 'Addons|A11y/Image',
+  title: 'Addons/A11y/Image',
   parameters: {
     options: { selectedPanel: 'storybook/a11y/panel' },
   },

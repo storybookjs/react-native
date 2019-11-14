@@ -4,7 +4,7 @@ import Text from 'rax-text';
 import markdown from './note.md';
 
 export default {
-  title: 'Addon|addon-notes',
+  title: 'Addon/addon-notes',
   decorators: [withNotes],
 };
 

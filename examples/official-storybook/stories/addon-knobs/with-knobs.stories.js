@@ -41,7 +41,7 @@ let injectedItems = [];
 let injectedIsLoading = false;
 
 export default {
-  title: 'Addons|Knobs.withKnobs',
+  title: 'Addons/Knobs/withKnobs',
   decorators: [withKnobs],
 };
 

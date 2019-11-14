@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
+exports[`Storyshots Addons/Actions Decorated actions + config 1`] = `
 <button
   type="button"
 >
@@ -8,7 +8,7 @@ exports[`Storyshots Addons|Actions Decorated actions + config 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Decorated actions 1`] = `
+exports[`Storyshots Addons/Actions Decorated actions 1`] = `
 <button
   type="button"
 >
@@ -16,7 +16,7 @@ exports[`Storyshots Addons|Actions Decorated actions 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Hello World 1`] = `
+exports[`Storyshots Addons/Actions Hello World 1`] = `
 <button
   type="button"
 >
@@ -24,7 +24,7 @@ exports[`Storyshots Addons|Actions Hello World 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
+exports[`Storyshots Addons/Actions Multiple actions + config 1`] = `
 <button
   type="button"
 >
@@ -32,7 +32,7 @@ exports[`Storyshots Addons|Actions Multiple actions + config 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions 1`] = `
+exports[`Storyshots Addons/Actions Multiple actions 1`] = `
 <button
   type="button"
 >
@@ -40,7 +40,7 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
+exports[`Storyshots Addons/Actions Multiple actions, object + config 1`] = `
 <button
   type="button"
 >
@@ -48,7 +48,7 @@ exports[`Storyshots Addons|Actions Multiple actions, object + config 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
+exports[`Storyshots Addons/Actions Multiple actions, object 1`] = `
 <button
   type="button"
 >
@@ -56,7 +56,7 @@ exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions, selector 1`] = `
+exports[`Storyshots Addons/Actions Multiple actions, selector 1`] = `
 
         
 `;

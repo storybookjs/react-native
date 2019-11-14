@@ -39,7 +39,7 @@ const storyLevelContexts = [
 ];
 
 export default {
-  title: 'Addon|Contexts',
+  title: 'Addon/Contexts',
   decorators: [withContexts(topLevelContexts)],
 };
 

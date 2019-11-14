@@ -41,6 +41,7 @@ export interface OptionsParameter extends Object {
   storySort?: any;
   hierarchyRootSeparator?: string;
   hierarchySeparator?: RegExp;
+  showRoots?: boolean;
   theme?: {
     base: string;
     brandTitle?: string;

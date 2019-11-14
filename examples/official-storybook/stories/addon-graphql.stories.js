@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default {
-  title: 'Addons|GraphQL',
+  title: 'Addons/GraphQL',
 };
 
 export const getPikachu = () => <div>hello</div>;
