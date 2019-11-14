@@ -35,5 +35,5 @@ export default function transformer(file, api) {
 
   presetsAddPreset(`@storybook/addon-docs/preset`, presetOptions, { root, api });
 
-  return root.toSource();
+  return root.toSource({ quote: 'single' });
 }
