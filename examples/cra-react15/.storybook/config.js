@@ -13,7 +13,7 @@ const loadFn = () => {
   require('../src/stories/welcome.stories');
 
   // test mixtures of storiesof & module files
-  const req = require.context('../src/stories', true, /\.stories\.js$/);
+  const req = require.context('../src/stories', true, /button\.stories\.js$/);
   return req.keys().map(fname => req(fname));
 };
 

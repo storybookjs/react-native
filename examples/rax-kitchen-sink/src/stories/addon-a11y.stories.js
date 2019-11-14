@@ -5,7 +5,7 @@ import View from 'rax-view';
 import markdown from './note.md';
 
 export default {
-  title: 'Addon|addon-a11y',
+  title: 'Addon/addon-a11y',
   decorators: [withA11Y],
 };
 

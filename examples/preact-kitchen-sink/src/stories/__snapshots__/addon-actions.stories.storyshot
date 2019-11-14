@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Actions Action and method 1`] = `
+exports[`Storyshots Addons/Actions Action and method 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -9,7 +9,7 @@ exports[`Storyshots Addons|Actions Action and method 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Action only 1`] = `
+exports[`Storyshots Addons/Actions Action only 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -18,7 +18,7 @@ exports[`Storyshots Addons|Actions Action only 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions 1`] = `
+exports[`Storyshots Addons/Actions Multiple actions 1`] = `
 <button
   class="button"
   onclick={[Function]}
@@ -28,7 +28,7 @@ exports[`Storyshots Addons|Actions Multiple actions 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Multiple actions, object 1`] = `
+exports[`Storyshots Addons/Actions Multiple actions, object 1`] = `
 <button
   class="button"
   onclick={[Function]}

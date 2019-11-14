@@ -2,7 +2,7 @@ import { linkTo } from '@storybook/addon-links';
 import { Button } from '@storybook/angular/demo';
 
 export default {
-  title: 'Addon|Links',
+  title: 'Addon/Links',
 };
 
 export const buttonWithLinkToAnotherStory = () => ({

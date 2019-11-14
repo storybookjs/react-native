@@ -113,7 +113,7 @@ const content = Object.entries(panels).map(([k, v]) => (
   </div>
 ));
 
-storiesOf('Basics|Tabs', module)
+storiesOf('Basics/Tabs', module)
   .addDecorator(s => (
     <div
       style={{

@@ -4,7 +4,7 @@ import m from 'mithril';
 import BaseButton from '../BaseButton';
 
 export default {
-  title: 'Addons|Backgrounds',
+  title: 'Addons/Backgrounds',
   parameters: {
     backgrounds: [
       { name: 'light', value: '#eeeeee' },

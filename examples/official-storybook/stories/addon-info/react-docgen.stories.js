@@ -8,7 +8,7 @@ import BaseButton from '../../components/BaseButton';
 import { NamedExportButton } from '../../components/NamedExportButton';
 
 export default {
-  title: 'Addons|Info/React Docgen',
+  title: 'Addons/Info/React Docgen',
   component: DocgenButton,
   decorators: [withInfo],
 };

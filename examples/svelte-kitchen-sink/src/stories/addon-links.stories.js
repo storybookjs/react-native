@@ -3,7 +3,7 @@ import { linkTo } from '@storybook/addon-links';
 import ActionLinkView from './views/ActionLinkView.svelte';
 
 export default {
-  title: 'Addon|Links',
+  title: 'Addon/Links',
 };
 
 export const goToWelcomeView = () => ({

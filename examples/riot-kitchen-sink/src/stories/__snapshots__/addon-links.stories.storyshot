@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Links Go to welcome 1`] = `
+exports[`Storyshots Addon/Links Go to welcome 1`] = `
 <div
   data-is="my-button"
   id="root"

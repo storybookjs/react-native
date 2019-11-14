@@ -6,7 +6,7 @@ import BaseButton from '../../components/BaseButton';
 import externalMdDocs from './EXAMPLE.md';
 
 export default {
-  title: 'Addons|Info/Markdown',
+  title: 'Addons/Info/Markdown',
   decorators: [withInfo],
   excludeStories: ['markdownDescription'],
 };

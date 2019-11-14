@@ -5,7 +5,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 const Panel = styled.div();
 
 export default {
-  title: 'Addons|Viewport',
+  title: 'Addons/Viewport',
   parameters: {
     viewport: {
       viewports: INITIAL_VIEWPORTS,

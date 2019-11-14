@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Backgrounds story 1 1`] = `
+exports[`Storyshots Addon/Backgrounds story 1 1`] = `
 <div
   data-is="root"
   id="root"
@@ -16,7 +16,7 @@ exports[`Storyshots Addon|Backgrounds story 1 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Backgrounds story 2 1`] = `
+exports[`Storyshots Addon/Backgrounds story 2 1`] = `
 <div
   data-is="root"
   id="root"

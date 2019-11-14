@@ -3,7 +3,7 @@ import { withInfo } from '@storybook/addon-info';
 import BaseButton from '../../components/BaseButton';
 
 export default {
-  title: 'Addons|Info/Decorator',
+  title: 'Addons/Info/Decorator',
   decorators: [withInfo('Info can take options via the global or local decorator as well.')],
 };
 

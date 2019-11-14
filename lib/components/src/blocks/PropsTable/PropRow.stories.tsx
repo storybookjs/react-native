@@ -5,7 +5,7 @@ import { ResetWrapper } from '../../typography/DocumentFormatting';
 
 export default {
   component: PropRow,
-  title: 'Docs|PropRow',
+  title: 'Docs/PropRow',
   excludeStories: /.*Def$/,
   decorators: [
     getStory => (

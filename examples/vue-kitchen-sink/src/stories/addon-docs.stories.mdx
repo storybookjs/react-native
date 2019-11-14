@@ -9,7 +9,7 @@ React, Vue, Angular, Ember, React Native, etc.
 
 Storybook Docs does too.
 
-<Story id="welcome--welcome"/>
+<Story id="welcome--welcome" />
 
 Let's check out a Vue prototype to see how this works.
 
@@ -17,7 +17,7 @@ Let's check out a Vue prototype to see how this works.
 
 Just like in React, we first declare our component.
 
-<Meta title="Addon|Docs" />
+<Meta title="Addon/Docs" />
 
 This declaration doesn't show up in the MDX output.
 
@@ -29,10 +29,9 @@ But first let's review how it's done in SB5 for Vue.
 
 ```js
 import MyButton from './Button.vue';
-storiesOf('Button', module)
-  .add('rounded', () => ({
-    template: '<my-button :rounded="true">A Button with rounded edges</my-button>',
-  }))
+storiesOf('Button', module).add('rounded', () => ({
+  template: '<my-button :rounded="true">A Button with rounded edges</my-button>',
+}));
 ```
 
 ## MDX Stories
@@ -61,11 +60,11 @@ Let's add another one. The UI updates automatically as you'd expect.
 
 And just like in the React, case we're generating long-form docs as we go.
 
-The primary difference is that for Vue Docs we generate an iframe per story, by default. If you prefer your stories to be rendered inline, see the next section. 
+The primary difference is that for Vue Docs we generate an iframe per story, by default. If you prefer your stories to be rendered inline, see the next section.
 
 ## Inline Stories
 
-The default configuration for `addon-docs/vue` implements the `prepareForInline` parameter using [@egoist/vue-to-react](https://github.com/egoist/vue-to-react). This means you can set use `addParameters({ docs: { inlineStories: true } });` to set stories to be inline _globally_. If some of your stories rely on being within an iframe, you can instead selectively change certain stories to be inline through the `inline` prop on the `<Story>` block, or set stories to be rendered inline globally and set the `inline` prop to be false on the `<Story>` block for any stories that need to exist within an iframe. 
+The default configuration for `addon-docs/vue` implements the `prepareForInline` parameter using [@egoist/vue-to-react](https://github.com/egoist/vue-to-react). This means you can set use `addParameters({ docs: { inlineStories: true } });` to set stories to be inline _globally_. If some of your stories rely on being within an iframe, you can instead selectively change certain stories to be inline through the `inline` prop on the `<Story>` block, or set stories to be rendered inline globally and set the `inline` prop to be false on the `<Story>` block for any stories that need to exist within an iframe.
 
 To provide a tangible example of the inline/iframe rendering contexts, here's the same story rendered both ways.
 
@@ -83,7 +82,7 @@ The biggest win here is that we don't have to worry about setting the height any
 
 Just like in React, we can easily reference other stories in our docs:
 
-<Story id="addon-knobs--all-knobs"/>
+<Story id="addon-knobs--all-knobs" />
 
 <Story id="nonexistent-story" />
 

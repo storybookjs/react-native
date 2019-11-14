@@ -4,7 +4,7 @@ import { radios } from '@storybook/addon-knobs';
 import Button, { Type } from './Button';
 
 export default {
-  title: 'Docgen|Button',
+  title: 'Docgen/Button',
   component: Button,
 };
 
