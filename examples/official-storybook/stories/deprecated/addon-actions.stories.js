@@ -15,7 +15,7 @@ const pickNative = decorate([args => [args[0].nativeEvent]]);
 const pickNativeAction = decorateAction([args => [args[0].nativeEvent]]);
 
 export default {
-  title: 'Addons|Actions.deprecated',
+  title: 'Addons/Actions/deprecated',
 };
 
 export const decoratedAction = () => (

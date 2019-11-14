@@ -9,7 +9,7 @@ const theme = convert(light);
 
 export default {
   component: SidebarHeading,
-  title: 'UI|Sidebar/SidebarHeading',
+  title: 'UI/Sidebar/SidebarHeading',
   decorators: [
     (storyFn: any) => (
       <div

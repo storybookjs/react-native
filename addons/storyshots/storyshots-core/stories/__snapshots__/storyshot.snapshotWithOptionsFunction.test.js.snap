@@ -45,13 +45,33 @@ exports[`Storyshots Another Button with text 1`] = `
 </button>
 `;
 
-exports[`Storyshots Async With Timeout 1`] = `
+exports[`Storyshots Async with 5ms timeout simulating async operation 1`] = `
 <h1>
   
 </h1>
 `;
 
-exports[`Storyshots Button With Some Emoji 1`] = `
+exports[`Storyshots Button With Text 1`] = `
+<button
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "1px solid #eee",
+      "borderRadius": 3,
+      "cursor": "pointer",
+      "fontSize": 15,
+      "margin": 10,
+      "padding": "3px 10px",
+    }
+  }
+  type="button"
+>
+  Hello Button
+</button>
+`;
+
+exports[`Storyshots Button with some emoji 1`] = `
 <button
   onClick={[Function]}
   style={
@@ -76,27 +96,7 @@ exports[`Storyshots Button With Some Emoji 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button With Text 1`] = `
-<button
-  onClick={[Function]}
-  style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "border": "1px solid #eee",
-      "borderRadius": 3,
-      "cursor": "pointer",
-      "fontSize": 15,
-      "margin": 10,
-      "padding": "3px 10px",
-    }
-  }
-  type="button"
->
-  Hello Button
-</button>
-`;
-
-exports[`Storyshots Welcome MDX To Storybook 1`] = `
+exports[`Storyshots Welcome MDX to Storybook 1`] = `
 <article
   style={
     Object {
@@ -270,7 +270,7 @@ exports[`Storyshots Welcome MDX To Storybook 1`] = `
 </article>
 `;
 
-exports[`Storyshots Welcome To Storybook 1`] = `
+exports[`Storyshots Welcome to Storybook 1`] = `
 <article
   style={
     Object {

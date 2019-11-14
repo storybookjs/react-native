@@ -3,7 +3,7 @@ import { linkTo } from '@storybook/addon-links';
 import LinkTo from '@storybook/addon-links/react';
 
 export default {
-  title: 'Addons|Links.Select',
+  title: 'Addons/Links/Select',
 };
 
 export const Index = () => (

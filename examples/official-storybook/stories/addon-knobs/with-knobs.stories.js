@@ -41,7 +41,7 @@ let injectedItems = [];
 let injectedIsLoading = false;
 
 export default {
-  title: 'Addons|Knobs.withKnobs',
+  title: 'Addons/Knobs/withKnobs',
   decorators: [withKnobs],
 };
 
@@ -75,12 +75,27 @@ export const tweaksStaticValues = () => {
   const images = files('Happy Picture', 'image/*', [
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiARwMCyEWcOFPAAAAP0lEQVQoz8WQMQoAIAwDL/7/z3GwghSp4KDZyiUpBMCYUgd8rehtH16/l3XewgU2KAzapjXBbNFaPS6lDMlKB6OiDv3iAH1OAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAxLTI4VDEyOjExOjMzLTA3OjAwlAHQBgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMS0yOFQxMjoxMTozMy0wNzowMOVcaLoAAAAASUVORK5CYII=',
   ]);
+  // array of objects
+  const arrayOfObjects = [
+    {
+      label: 'Sparky',
+      dogParent: 'Matthew',
+      location: 'Austin',
+    },
+    {
+      label: 'Juniper',
+      dogParent: 'Joshua',
+      location: 'Austin',
+    },
+  ];
+
+  const dog = select('Dogs', arrayOfObjects, arrayOfObjects[0]);
 
   // NOTE: the default value must not change - e.g., do not do date('Label', new Date()) or date('Label')
   const defaultBirthday = new Date('Jan 20 2017 GMT+0');
   const birthday = date('Birthday', defaultBirthday);
 
-  const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}. I also enjoy ${otherFruit}.`;
+  const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}. I also enjoy ${otherFruit}, and hanging out with my dog ${dog.label}`;
   const style = { backgroundColor, ...otherStyles };
   const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
   const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };

@@ -67,7 +67,7 @@ const events = [
 ];
 
 export default {
-  title: 'Addons|Events',
+  title: 'Addons/Events',
   decorators: [withEvents({ emit, events })],
   parameters: {
     options: {

@@ -2,7 +2,7 @@ import { withKnobs, text, color } from '@storybook/addon-knobs';
 import { OnPushBoxComponent } from './on-push-box.component';
 
 export default {
-  title: 'Core|OnPush',
+  title: 'Core/OnPush',
   decorators: [withKnobs],
 };
 

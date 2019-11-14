@@ -3,7 +3,7 @@ import Centered from '@storybook/addon-centered/vue';
 import MyButton from './Button.vue';
 
 export default {
-  title: 'Addon|Centered',
+  title: 'Addon/Centered',
   component: MyButton,
   decorators: [Centered],
 };

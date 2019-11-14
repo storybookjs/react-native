@@ -5,7 +5,7 @@ import Centered from '@storybook/addon-centered/mithril';
 import Button from '../Button';
 
 export default {
-  title: 'Addons|Centered',
+  title: 'Addons/Centered',
   decorators: [Centered],
   parameters: {
     component: Centered,

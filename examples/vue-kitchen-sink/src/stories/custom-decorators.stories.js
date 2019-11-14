@@ -1,7 +1,7 @@
 import MyButton from './Button.vue';
 
 export default {
-  title: 'Custom|Decorator for Vue',
+  title: 'Custom/Decorator for Vue',
   decorators: [
     storyFn => {
       // Decorated with story-function

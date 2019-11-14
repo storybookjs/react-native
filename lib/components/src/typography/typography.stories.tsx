@@ -70,7 +70,7 @@ const Page = styled.div`
   padding: 3rem;
 `;
 
-storiesOf('Basics|typography', module).add('all', () => (
+storiesOf('Basics/typography', module).add('all', () => (
   <Page>
     <Info>
       <div>

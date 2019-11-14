@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 import { opacify, transparentize, darken, lighten } from 'polished';
 import { PropRow, PropRowProps } from './PropRow';
 import { SectionRow, SectionRowProps } from './SectionRow';
-import { PropDef } from './PropDef';
+import { PropDef, PropType, PropDefaultValue, PropSummaryValue } from './PropDef';
 import { EmptyBlock } from '../EmptyBlock';
 import { ResetWrapper } from '../../typography/DocumentFormatting';
 
@@ -211,4 +211,4 @@ const PropsTable: FC<PropsTableProps> = props => {
   );
 };
 
-export { PropsTable, PropDef };
+export { PropsTable, PropDef, PropType, PropDefaultValue, PropSummaryValue };

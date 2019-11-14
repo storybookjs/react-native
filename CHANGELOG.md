@@ -1,3 +1,22 @@
+## 5.3.0-alpha.45 (November 14, 2019)
+
+### Breaking Changes
+
+* CSF: Deprecate displayName parameter ([#8775](https://github.com/storybookjs/storybook/pull/8775))
+
+### Features
+
+* Addon-docs: Rich prop tables ([#8826](https://github.com/storybookjs/storybook/pull/8826))
+* Core: Simplified hierarchy separators ([#8796](https://github.com/storybookjs/storybook/pull/8796))
+* CLI: Upgrade hierarchy separator codemod + examples ([#8818](https://github.com/storybookjs/storybook/pull/8818))
+* CLI: Addon postinstall hooks ([#8700](https://github.com/storybookjs/storybook/pull/8700))
+* CSF/MDX: Add component id for permalinks ([#8808](https://github.com/storybookjs/storybook/pull/8808))
+* Addon-knobs: Add object[] support for select ([#7957](https://github.com/storybookjs/storybook/pull/7957))
+
+### Bug Fixes
+
+* Addon-A11y: Show errors, reset config properly ([#8779](https://github.com/storybookjs/storybook/pull/8779))
+
 ## 5.3.0-alpha.44 (November 13, 2019)
 
 ### Features

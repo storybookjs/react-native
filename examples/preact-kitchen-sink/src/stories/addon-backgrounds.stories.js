@@ -5,7 +5,7 @@ import { h } from 'preact';
 import Button from '../Button';
 
 export default {
-  title: 'Addons|Backgrounds',
+  title: 'Addons/Backgrounds',
 
   parameters: {
     backgrounds: [

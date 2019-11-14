@@ -3,7 +3,7 @@ import { withKnobs, text, number } from '@storybook/addon-knobs';
 import ActionKnobView from './views/ActionKnobView.svelte';
 
 export default {
-  title: 'Addon|Knobs',
+  title: 'Addon/Knobs',
   decorators: [withKnobs],
 };
 

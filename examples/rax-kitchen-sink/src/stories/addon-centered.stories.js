@@ -4,7 +4,7 @@ import Text from 'rax-text';
 import App from '../components/App';
 
 export default {
-  title: 'Addon|addon-centered',
+  title: 'Addon/addon-centered',
   decorators: [Centered],
 };
 
