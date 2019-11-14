@@ -4,7 +4,7 @@ import { document } from 'global';
 import '../simple-button.html';
 
 export default {
-  title: 'Addon|Links',
+  title: 'Addon/Links',
 };
 
 export const withCreateElement = () => {

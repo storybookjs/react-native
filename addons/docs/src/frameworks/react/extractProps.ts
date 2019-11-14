@@ -1,12 +1,9 @@
 import PropTypes from 'prop-types';
 import { isForwardRef, isMemo } from 'react-is';
 import { PropDef } from '@storybook/components';
-import {
-  PropDefGetter,
-  PropsExtractor,
-  extractPropsFromDocgen,
-  hasDocgen,
-} from '../../lib/docgenUtils';
+import { hasDocgen, extractPropsFromDocgen, PropsExtractor, TypeSystem } from '../../lib/docgen';
+import { Component } from '../../blocks/shared';
+import { enhancePropTypesProp } from './propTypes/handleProp';
 
 export interface PropDefMap {
   [p: string]: PropDef;
@@ -22,21 +19,30 @@ Object.keys(PropTypes).forEach(typeName => {
   propTypesMap.set(type.isRequired, typeName);
 });
 
-export const getPropDefs: PropDefGetter = (type, section) => {
-  let processedType = type;
+function getPropDefs(component: Component, section: string): PropDef[] {
+  let processedComponent = component;
 
   // eslint-disable-next-line react/forbid-foreign-prop-types
-  if (!hasDocgen(type) && !type.propTypes) {
-    if (isForwardRef(type) || type.render) {
-      processedType = type.render().type;
+  if (!hasDocgen(component) && !component.propTypes) {
+    if (isForwardRef(component) || component.render) {
+      processedComponent = component.render().type;
     }
-    if (isMemo(type)) {
-      processedType = type.type().type;
+    if (isMemo(component)) {
+      processedComponent = component.type().type;
     }
   }
 
-  return extractPropsFromDocgen(processedType, section);
-};
+  const extractedProps = extractPropsFromDocgen(processedComponent, section);
+  if (extractedProps.length === 0) {
+    return [];
+  }
+
+  if (extractedProps[0].typeSystem === TypeSystem.JAVASCRIPT) {
+    return extractedProps.map(enhancePropTypesProp);
+  }
+
+  return extractedProps.map(x => x.propDef);
+}
 
 export const extractProps: PropsExtractor = component => ({
   rows: getPropDefs(component, 'props'),

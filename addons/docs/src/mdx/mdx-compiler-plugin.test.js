@@ -1,8 +1,9 @@
-const path = require('path');
-const fs = require('fs-extra');
-const mdx = require('@mdx-js/mdx');
-const prettier = require('prettier');
-const plugin = require('./mdx-compiler-plugin');
+import 'jest-specific-snapshot';
+import path from 'path';
+import fs from 'fs-extra';
+import mdx from '@mdx-js/mdx';
+import prettier from 'prettier';
+import plugin from './mdx-compiler-plugin';
 
 async function generate(filePath) {
   const content = await fs.readFile(filePath, 'utf8');
@@ -22,28 +23,20 @@ async function generate(filePath) {
   });
 }
 
+const inputRegExp = /\.mdx$/;
+
 describe('docs-mdx-compiler-plugin', () => {
-  const fixtures = [
-    'vanilla.mdx',
-    'story-definitions.mdx',
-    'story-def-text-only.mdx',
-    'story-object.mdx',
-    'story-references.mdx',
-    'story-current.mdx',
-    'previews.mdx',
-    'decorators.mdx',
-    'parameters.mdx',
-    'non-story-exports.mdx',
-    'story-function.mdx',
-    'docs-only.mdx',
-    'story-function-var.mdx',
-  ];
-  fixtures.forEach(fixtureFile => {
-    it(fixtureFile, async () => {
-      const code = await generate(path.resolve(__dirname, `./__testfixtures__/${fixtureFile}`));
-      expect(code).toMatchSnapshot();
+  const transformFixturesDir = path.join(__dirname, '__testfixtures__');
+  fs.readdirSync(transformFixturesDir)
+    .filter(fileName => inputRegExp.test(fileName))
+    .filter(fileName => fileName !== 'story-missing-props.mdx')
+    .forEach(fixtureFile => {
+      it(fixtureFile, async () => {
+        const inputPath = path.join(transformFixturesDir, fixtureFile);
+        const code = await generate(inputPath);
+        expect(code).toMatchSpecificSnapshot(inputPath.replace(inputRegExp, '.output.snapshot'));
+      });
     });
-  });
   it('errors on missing story props', async () => {
     await expect(
       generate(path.resolve(__dirname, './__testfixtures__/story-missing-props.mdx'))

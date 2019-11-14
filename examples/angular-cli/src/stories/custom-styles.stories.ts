@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 import { Button } from '@storybook/angular/demo';
 
 export default {
-  title: 'Custom|Style',
+  title: 'Custom/Style',
   decorators: [
     moduleMetadata({
       declarations: [Button],

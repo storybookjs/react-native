@@ -8,10 +8,10 @@ import { render } from 'lit-html';
 function mapData(data) {
   return data.map(item => ({
     name: item.name,
-    type: { name: item.type },
+    type: { summary: item.type },
     required: '',
     description: item.description,
-    defaultValue: item.default,
+    defaultValue: { summary: item.default },
   }));
 }
 

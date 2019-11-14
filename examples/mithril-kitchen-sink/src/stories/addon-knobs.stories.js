@@ -15,7 +15,7 @@ import {
 } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Addons|Knobs',
+  title: 'Addons/Knobs',
   decorators: [withKnobs],
 };
 

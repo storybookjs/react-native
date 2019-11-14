@@ -5,7 +5,7 @@ import ButtonRaw from './Button.txt';
 compileNow(ButtonRaw);
 
 export default {
-  title: 'Addon|Links',
+  title: 'Addon/Links',
 };
 
 export const goToWelcome = () =>

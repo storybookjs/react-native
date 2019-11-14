@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Background background component 1`] = `
+exports[`Storyshots Addon/Background background component 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -64,7 +64,7 @@ exports[`Storyshots Addon|Background background component 1`] = `
 </storybook-dynamic-app-root>
 `;
 
-exports[`Storyshots Addon|Background background template 1`] = `
+exports[`Storyshots Addon/Background background template 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}

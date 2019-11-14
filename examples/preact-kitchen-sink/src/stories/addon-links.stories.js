@@ -7,7 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import Button from '../Button';
 
 export default {
-  title: 'Addons|Links',
+  title: 'Addons/Links',
 };
 
 export const goToWelcome = () => (

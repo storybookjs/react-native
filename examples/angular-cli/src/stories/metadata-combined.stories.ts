@@ -3,7 +3,7 @@ import { TokenComponent, ITEMS, DEFAULT_NAME } from './moduleMetadata/token.comp
 import { CustomPipePipe } from './moduleMetadata/custom.pipe';
 
 export default {
-  title: 'Metadata|Combined',
+  title: 'Metadata/Combined',
   decorators: [
     moduleMetadata({
       imports: [],

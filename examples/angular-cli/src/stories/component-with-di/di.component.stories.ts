@@ -2,7 +2,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 import { DiComponent } from './di.component';
 
 export default {
-  title: 'Custom|Dependencies',
+  title: 'Custom/Dependencies',
 };
 
 export const inputsAndInjectDependencies = () => ({

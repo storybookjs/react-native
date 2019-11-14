@@ -15,7 +15,7 @@ addDecorator((s, { kind }) =>
 );
 
 export default {
-  title: 'Core|Decorators',
+  title: 'Core/Decorators',
   decorators: [
     s => (
       <>

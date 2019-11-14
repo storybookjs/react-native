@@ -2,7 +2,7 @@ import { IconButtonComponent } from './icon-button.component';
 import { BaseButtonComponent } from './base-button.component';
 
 export default {
-  title: 'Custom|Inheritance',
+  title: 'Custom/Inheritance',
 };
 
 export const iconButton = () => ({

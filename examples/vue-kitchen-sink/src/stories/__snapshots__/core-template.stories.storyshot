@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Core|Template String Only 1`] = `
+exports[`Storyshots Core/Template string only 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"

@@ -7,7 +7,7 @@ import * as sourceStories from './Source.stories';
 import * as descriptionStories from './Description.stories';
 
 export default {
-  title: 'Docs|DocsPage',
+  title: 'Docs/DocsPage',
   component: DocsPage,
   decorators: [
     storyFn => (

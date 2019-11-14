@@ -9,7 +9,7 @@ import { Spaced } from '../spaced/Spaced';
 
 const Flexed = styled.div({ display: 'flex' });
 
-storiesOf('Basics|Form/Field', module).add('field', () => (
+storiesOf('Basics/Form/Field', module).add('field', () => (
   <Field key="key" label="label">
     <Select value="val2" onChange={action('onChange')} size={1}>
       <option value="val1">Value 1</option>
@@ -19,7 +19,7 @@ storiesOf('Basics|Form/Field', module).add('field', () => (
   </Field>
 ));
 
-storiesOf('Basics|Form/Select', module)
+storiesOf('Basics/Form/Select', module)
   .add('sizes', () => (
     <Spaced>
       {['auto', 'flex', '100%'].map(size => (
@@ -52,7 +52,7 @@ storiesOf('Basics|Form/Select', module)
     </div>
   ));
 
-storiesOf('Basics|Form/Button', module)
+storiesOf('Basics/Form/Button', module)
   .add('sizes', () => (
     <Spaced>
       {['auto', 'flex', '100%'].map(size => (
@@ -74,7 +74,7 @@ storiesOf('Basics|Form/Button', module)
     </Spaced>
   ));
 
-storiesOf('Basics|Form/Textarea', module)
+storiesOf('Basics/Form/Textarea', module)
   .add('sizes', () => (
     <Spaced>
       {['auto', 'flex', '100%'].map(size => (
@@ -103,7 +103,7 @@ storiesOf('Basics|Form/Textarea', module)
     </Spaced>
   ));
 
-storiesOf('Basics|Form/Input', module)
+storiesOf('Basics/Form/Input', module)
   .add('sizes', () => (
     <Spaced>
       {['auto', 'flex', '100%'].map(size => (

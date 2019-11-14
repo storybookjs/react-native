@@ -5,7 +5,9 @@
     - [Create React App preset](#create-react-app-preset)
     - [Description doc block](#description-doc-block)
     - [React Native Async Storage](#react-native-async-storage)
+    - [Deprecate displayName parameter](#deprecate-displayname-parameter)
     - [Unified docs preset](#unified-docs-preset)
+    - [Simplified hierarchy separators](#simplified-heirarchy-separators)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)
@@ -109,9 +111,29 @@ getStorybookUI({
 });
 ```
 
+### Deprecate displayName parameter
+
+In 5.2, the story parameter `displayName` was introduced as a publicly visible (but internal) API. Storybook's Component Story Format (CSF) loader used it to modify a story's display name independent of the story's `name`/`id` (which were coupled).
+
+In 5.3, the CSF loader decouples the story's `name`/`id`, which means that `displayName` is no longer necessary. Unfortunately, this is a breaking change for any code that uses the story `name` field. Storyshots relies on story `name`, and the appropriate migration is to simply update your snapshots. Apologies for the inconvenience!
+
 ### Unified docs preset
 
 Addon-docs configuration gets simpler in 5.3. In 5.2, each framework had its own preset, e.g. `@storybook/addon-docs/react/preset`. Starting in 5.3, everybody should use `@storybook/addon-docs/preset`.
+
+### Simplified hierarchy separators
+
+We've deprecated the ability to specify the hierarchy separators (how you control the grouping of story kinds in the sidebar). From Storybook 6.0 we will have a single separator `/`, which cannot be configured.
+
+If you are currently using using custom separators, we encourage you to migrate to using `/` as the sole separator. If you are using `|` or `.` as a separator currently, (we will soon provide) a codemod that can be used to rename all your components.
+
+If you were using `|` and wish to keep the "root" behaviour, use the `showRoots: true` option to re-enable roots:
+
+```js
+addParameters({ options: { showRoots: true } });
+```
+
+NOTE: it is no longer possible to have some stories with roots and others without. If you want to keep the old behaviour, simply add a root called "Others" to all your previously unrooted stories.
 
 ## From version 5.1.x to 5.2.x
 

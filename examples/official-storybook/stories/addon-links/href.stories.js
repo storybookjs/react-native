@@ -3,7 +3,7 @@ import { hrefTo } from '@storybook/addon-links';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Addons|Links.Href',
+  title: 'Addons/Links/Href',
 };
 
 export const log = () => {

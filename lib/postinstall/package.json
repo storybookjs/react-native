@@ -1,0 +1,40 @@
+{
+  "name": "@storybook/postinstall",
+  "version": "5.3.0-alpha.45",
+  "description": "Storybook addons postinstall utilities",
+  "keywords": [
+    "api",
+    "storybook"
+  ],
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/postinstall",
+  "bugs": {
+    "url": "https://github.com/storybookjs/storybook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/storybook.git",
+    "directory": "lib/postinstall"
+  },
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "core-js": "^3.0.1"
+  },
+  "devDependencies": {
+    "@hypnosphi/jscodeshift": "^0.6.4",
+    "jest-specific-snapshot": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

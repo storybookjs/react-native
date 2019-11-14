@@ -4,7 +4,7 @@ import { withTests as withTestsHOC } from '@storybook/addon-jest';
 import results from './addon-jest.testresults.json';
 
 export default {
-  title: 'Addons|Jest',
+  title: 'Addons/Jest',
   decorators: [withTestsHOC({ results })],
 };
 

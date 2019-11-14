@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Actions Action On Component Method 1`] = `
+exports[`Storyshots Addon/Actions Action on component method 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -19,7 +19,7 @@ exports[`Storyshots Addon|Actions Action On Component Method 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Actions Action On View Method 1`] = `
+exports[`Storyshots Addon/Actions Action on view method 1`] = `
 <section
   class="storybook-snapshot-container"
 >
