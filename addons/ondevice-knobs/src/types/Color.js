@@ -2,6 +2,17 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Text, Modal, View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { ColorPicker, fromHsv } from 'react-native-color-picker';
+import styled from '@emotion/native';
+
+const Touchable = styled.TouchableOpacity(({ theme, color }) => ({
+  borderColor: theme.borderColor,
+  width: 30,
+  height: 20,
+  borderRadius: 2,
+  borderWidth: 1,
+  margin: 10,
+  backgroundColor: color,
+}));
 
 class ColorType extends React.Component {
   constructor(props) {
@@ -32,17 +43,9 @@ class ColorType extends React.Component {
   render() {
     const { knob } = this.props;
     const { displayColorPicker } = this.state;
-    const colorStyle = {
-      borderColor: 'rgb(247, 244, 244)',
-      width: 30,
-      height: 20,
-      borderRadius: 2,
-      margin: 10,
-      backgroundColor: knob.value,
-    };
     return (
       <View>
-        <TouchableOpacity style={colorStyle} onPress={this.openColorPicker} />
+        <Touchable color={knob.value} onPress={this.openColorPicker} />
         <Modal
           supportedOrientations={['portrait', 'landscape']}
           transparent

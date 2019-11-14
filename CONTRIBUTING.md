@@ -327,9 +327,7 @@ First we are going to install storybook, then we are going to link `@storybook/r
 
 You should now have a working storybook dev environment up and running.
 
-> TODO: update this section (is already incorrect)
-
-Save and go to `http://localhost:9009` (or wherever storybook is running)
+Save and go to `http://localhost:9011` (or wherever storybook is running)
 
 If you don't see the changes rerun `yarn storybook` again in your sandbox app
 
