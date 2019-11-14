@@ -345,11 +345,12 @@ describe('preview.client_api', () => {
     describe('getSeparators', () => {
       it('returns values set via parameters', () => {
         const {
-          clientApi: { getSeparators, storiesOf },
+          clientApi: { getSeparators, storiesOf, addParameters },
         } = getContext(undefined);
 
         const options = { hierarchySeparator: /a/, hierarchyRootSeparator: 'b' };
-        storiesOf('kind 1', module).add('name 1', () => '1', { options });
+        addParameters({ options });
+        storiesOf('kind 1', module).add('name 1', () => '1');
         expect(getSeparators()).toEqual(options);
       });
 
@@ -360,17 +361,18 @@ describe('preview.client_api', () => {
 
         storiesOf('kind|1', module).add('name 1', () => '1');
         expect(getSeparators()).toEqual({
-          hierarchySeparator: /\.|\//,
+          hierarchySeparator: /\/|\./,
           hierarchyRootSeparator: '|',
         });
       });
 
       it('returns new values if showRoots is set', () => {
         const {
-          clientApi: { getSeparators, storiesOf },
+          clientApi: { getSeparators, storiesOf, addParameters },
         } = getContext(undefined);
+        addParameters({ options: { showRoots: false } });
 
-        storiesOf('kind|1', module).add('name 1', () => '1', { options: { showRoots: false } });
+        storiesOf('kind|1', module).add('name 1', () => '1');
         expect(getSeparators()).toEqual({ hierarchySeparator: '/' });
       });
 
