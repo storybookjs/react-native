@@ -1,5 +1,5 @@
 export default {
-  title: 'Core|Template',
+  title: 'Core/Template',
 };
 
 export const stringOnly = () =>

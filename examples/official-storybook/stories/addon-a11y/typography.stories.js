@@ -5,7 +5,7 @@ const text = 'Testing the a11y addon';
 const href = 'javascript:void 0';
 
 export default {
-  title: 'Addons|A11y/Typography',
+  title: 'Addons/A11y/Typography',
   parameters: {
     options: { selectedPanel: 'storybook/a11y/panel' },
   },

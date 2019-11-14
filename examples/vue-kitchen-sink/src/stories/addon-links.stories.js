@@ -1,7 +1,7 @@
 import { linkTo } from '@storybook/addon-links';
 
 export default {
-  title: 'Addon|Links',
+  title: 'Addon/Links',
 };
 
 export const goToWelcome = () => ({

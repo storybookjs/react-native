@@ -5,7 +5,7 @@ import ListItemIcon from './ListItemIcon';
 
 export default {
   component: ListItemIcon,
-  title: 'UI|Sidebar/ListItemIcon',
+  title: 'UI/Sidebar/ListItemIcon',
 };
 
 export const all = () => (

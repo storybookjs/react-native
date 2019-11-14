@@ -5,7 +5,7 @@ import './AnotherTest.tag';
 const simpleTestCompiled = asCompiledCode(SimpleTestRaw);
 
 export default {
-  title: 'Story|How to create a story',
+  title: 'Story/How to create a story',
 };
 
 export const builtWithTag = () =>

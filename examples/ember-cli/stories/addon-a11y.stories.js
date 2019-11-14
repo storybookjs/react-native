@@ -2,7 +2,7 @@ import hbs from 'htmlbars-inline-precompile';
 import { checkA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'Addon|a11y',
+  title: 'Addon/a11y',
   decorators: [checkA11y],
 
   parameters: {

@@ -5,7 +5,7 @@ import { NameComponent } from './moduleMetadata/name.component';
 import { CustomPipePipe } from './moduleMetadata/custom.pipe';
 
 export default {
-  title: 'Custom|Pipes',
+  title: 'Custom/Pipes',
   decorators: [
     moduleMetadata({
       imports: [],

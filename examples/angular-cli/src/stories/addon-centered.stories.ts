@@ -3,14 +3,14 @@ import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { Button } from '@storybook/angular/demo';
 import { AppComponent } from '../app/app.component';
 
-storiesOf('Addon|Centered', module)
+storiesOf('Addon/Centered', module)
   .addDecorator(centered)
   .add('centered component', () => ({
     component: AppComponent,
     props: {},
   }));
 
-storiesOf('Addon|Centered', module)
+storiesOf('Addon/Centered', module)
   .addDecorator(
     moduleMetadata({
       declarations: [Button],

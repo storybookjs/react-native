@@ -5,7 +5,7 @@ import { linkTo } from '@storybook/addon-links';
 import MyButton from './Button.vue';
 
 export default {
-  title: 'Custom|Method for rendering Vue',
+  title: 'Custom/Method for rendering Vue',
 };
 
 export const render = () => ({

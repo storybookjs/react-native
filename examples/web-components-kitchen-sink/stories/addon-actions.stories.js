@@ -8,7 +8,7 @@ const button = () => html`
 `;
 
 export default {
-  title: 'Addons|Actions',
+  title: 'Addons/Actions',
 };
 
 export const story1 = () => withActions('click')(button);

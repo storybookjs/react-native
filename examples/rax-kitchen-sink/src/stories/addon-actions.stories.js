@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Text from 'rax-text';
 
 export default {
-  title: 'Addon|addon-actions',
+  title: 'Addon/addon-actions',
 };
 
 export const withText = () => (

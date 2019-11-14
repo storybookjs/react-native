@@ -2,7 +2,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { TokenComponent, ITEMS, DEFAULT_NAME } from './moduleMetadata/token.component';
 
 export default {
-  title: 'Metadata|Shared',
+  title: 'Metadata/Shared',
   decorators: [
     moduleMetadata({
       imports: [],

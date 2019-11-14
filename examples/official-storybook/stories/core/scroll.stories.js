@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default {
-  title: 'Core|Scroll',
+  title: 'Core/Scroll',
 };
 
 export const story1 = () => (

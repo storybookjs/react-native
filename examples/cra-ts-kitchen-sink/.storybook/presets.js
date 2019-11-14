@@ -6,6 +6,14 @@ module.exports = [
     options: {
       tsDocgenLoaderOptions: {
         tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+        shouldExtractLiteralValuesFromEnum: true,
+        propFilter: prop => {
+          if (prop.parent) {
+            return !prop.parent.fileName.includes('node_modules/@types/react/');
+          }
+
+          return true;
+        },
       },
     },
   },
