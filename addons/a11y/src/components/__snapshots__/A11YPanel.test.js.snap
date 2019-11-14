@@ -177,8 +177,16 @@ exports[`A11YPanel should render report 1`] = `
             "storybook/a11y/result",
             [Function],
           ],
+          Array [
+            "storybook/a11y/error",
+            [Function],
+          ],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
