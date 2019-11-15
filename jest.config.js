@@ -3,7 +3,7 @@ module.exports = {
   clearMocks: true,
   moduleNameMapper: {
     // non-js files
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|mdx)$':
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|scss|stylesheet)$': '<rootDir>/__mocks__/styleMock.js',
     '\\.(md)$': '<rootDir>/__mocks__/htmlMock.js',
@@ -21,6 +21,7 @@ module.exports = {
     'babel-runtime/core-js/(.*)': `core-js/es/$1`,
     // 'babel-runtime/core-js/object/assign'
     'core-js/library/fn/object/assign': 'core-js/es/object/assign',
+    'react-syntax-highlighter/dist/esm/(.*)': 'react-syntax-highlighter/dist/cjs/$1',
   },
   projects: [
     '<rootDir>',
@@ -41,8 +42,9 @@ module.exports = {
     '<rootDir>/examples/official-storybook',
   ],
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/scripts/babel-jest.js',
-    '^.+\\.tsx?$': '<rootDir>/scripts/babel-jest.js',
+    '^.+\\.stories\\.[jt]sx?$': '@storybook/addon-storyshots/injectFileName',
+    '^.+\\.[jt]sx?$': '<rootDir>/scripts/babel-jest.js',
+    '^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx',
   },
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
   testPathIgnorePatterns: [

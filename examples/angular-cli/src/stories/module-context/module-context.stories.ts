@@ -7,7 +7,7 @@ import { ChipsGroupComponent } from './chips-group.component';
 import { ChipComponent } from './chip.component';
 import { CHIP_COLOR } from './chip-color.token';
 
-storiesOf('Custom|Feature Module as Context', module)
+storiesOf('Custom/Feature Module as Context', module)
   .addDecorator(withKnobs)
   .addDecorator(
     moduleMetadata({

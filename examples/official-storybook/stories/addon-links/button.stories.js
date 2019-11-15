@@ -2,7 +2,7 @@ import React from 'react';
 import { linkTo } from '@storybook/addon-links';
 
 export default {
-  title: 'Addons|Links.Button',
+  title: 'Addons/Links/Button',
 };
 
 export const First = () => (

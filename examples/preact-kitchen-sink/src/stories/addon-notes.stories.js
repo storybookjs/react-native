@@ -5,7 +5,7 @@ import { h } from 'preact';
 import { withNotes } from '@storybook/addon-notes';
 
 export default {
-  title: 'Addons|Notes',
+  title: 'Addons/Notes',
   decorators: [withNotes],
 };
 

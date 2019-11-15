@@ -17,7 +17,7 @@ const emitter = new EventEmitter();
 const emit = emitter.emit.bind(emitter);
 
 export default {
-  title: 'Addons|Events',
+  title: 'Addons/Events',
   decorators: [
     withEvents({
       emit,

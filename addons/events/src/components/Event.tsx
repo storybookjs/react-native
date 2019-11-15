@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { ChangeEvent, Component } from 'react';
 import PropTypes from 'prop-types';
 import { polyfill } from 'react-lifecycles-compat';
 import isEqual from 'lodash/isEqual';
@@ -12,7 +12,7 @@ interface StyledTextareaProps {
   shown: boolean;
   failed: boolean;
   value?: string;
-  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const StyledTextarea = styled(({ shown, failed, ...rest }: StyledTextareaProps) => (
@@ -113,12 +113,26 @@ class Item extends Component<ItemProps, ItemState> {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     onEmit: PropTypes.func.isRequired,
-    // eslint-disable-next-line react/forbid-prop-types, react/no-unused-prop-types
+    // eslint-disable-next-line react/forbid-prop-types
     payload: PropTypes.any,
   };
 
   static defaultProps = {
     payload: {},
+  };
+
+  static getDerivedStateFromProps = ({ payload }: ItemProps, { prevPayload }: ItemState) => {
+    if (!isEqual(payload, prevPayload)) {
+      const payloadString = json.plain(payload);
+      const refinedPayload = getJSONFromString(payloadString);
+      return {
+        failed: false,
+        payload: refinedPayload,
+        payloadString,
+        prevPayload: refinedPayload,
+      };
+    }
+    return null;
   };
 
   state: ItemState = {
@@ -129,7 +143,7 @@ class Item extends Component<ItemProps, ItemState> {
     prevPayload: null,
   };
 
-  onChange = ({ target: { value } }: React.ChangeEvent<HTMLTextAreaElement>) => {
+  onChange = ({ target: { value } }: ChangeEvent<HTMLTextAreaElement>) => {
     const newState: Partial<ItemState> = {
       payloadString: value,
     };
@@ -158,20 +172,6 @@ class Item extends Component<ItemProps, ItemState> {
     this.setState(({ isTextAreaShowed }) => ({
       isTextAreaShowed: !isTextAreaShowed,
     }));
-  };
-
-  static getDerivedStateFromProps = ({ payload }: ItemProps, { prevPayload }: ItemState) => {
-    if (!isEqual(payload, prevPayload)) {
-      const payloadString = json.plain(payload);
-      const refinedPayload = getJSONFromString(payloadString);
-      return {
-        failed: false,
-        payload: refinedPayload,
-        payloadString,
-        prevPayload: refinedPayload,
-      };
-    }
-    return null;
   };
 
   render() {

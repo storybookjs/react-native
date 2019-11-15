@@ -7,7 +7,7 @@ const storyParameter = 'storyParameter';
 addParameters({ globalParameter });
 
 export default {
-  title: 'Core|Parameters',
+  title: 'Core/Parameters',
   parameters: {
     chapterParameter,
   },

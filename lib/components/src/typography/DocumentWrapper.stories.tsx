@@ -6,7 +6,7 @@ import markdownSample from './DocumentFormattingSample.md';
 
 export default {
   component: DocumentWrapper,
-  title: 'Basics|DocumentFormatting',
+  title: 'Basics/DocumentFormatting',
   decorators: [
     (storyFn: any) => (
       <div
@@ -114,6 +114,8 @@ export const withDOM = () => (
       <li>foo</li>
       <li>bar</li>
     </ol>
+    <h2>Horizontal Rule</h2>
+    <hr />
     <h2>Tables</h2>
     <table>
       <thead>
@@ -174,8 +176,8 @@ export const withDOM = () => (
       </a>
     </p>
     <p>
-      Autoconverted link <a href="https://github.com/nodeca/pica">https://github.com/nodeca/pica</a>{' '}
-      (enable linkify to see)
+      Autoconverted link <a href="https://github.com/nodeca/pica">https://github.com/nodeca/pica</a>
+      &nbsp;(enable linkify to see)
     </p>
     <h2>Images</h2>
     <p>

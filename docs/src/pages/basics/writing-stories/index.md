@@ -9,7 +9,7 @@ A Storybook is a collection of stories. Each story represents a single visual st
 
 ## Basic story
 
-Here is a simple example of stories for a `Button` component:
+Here is an example of stories for a `Button` component:
 
 ```js
 import React from 'react';
@@ -49,7 +49,7 @@ Furthermore, Storybook for React Native currently only supports the `storiesOf` 
 
 ## Story file location
 
-Stories are easier to maintain when they are located alongside the components they are documented. We recommend:
+Stories are easier to maintain when they are located alongside the components they document. We recommend:
 
 ```plaintext
 •
@@ -95,7 +95,7 @@ It's up to you to find a naming/placing scheme that works for your project/team.
 
 Stories are loaded in the `.storybook/config.js` file.
 
-The most convenient way to load stories is by filename. For example, if you stories files are located in the `src/components` directory, you can use the following snippet:
+The most convenient way to load stories is by filename. For example, if your stories files are located in the `src/components` directory, you can use the following snippet:
 
 ```js
 import { configure } from '@storybook/react';
@@ -116,10 +116,13 @@ If you want to load from multiple locations, you can use an array:
 ```js
 import { configure } from '@storybook/react';
 
-configure([
-  require.context('../src/components', true, /\.stories\.js$/)
-  require.context('../lib', true, /\.stories\.js$/)
-], module);
+configure(
+  [
+    require.context('../src/components', true, /\.stories\.js$/),
+    require.context('../lib', true, /\.stories\.js$/),
+  ],
+  module
+);
 ```
 
 Or if you want to do some custom loading logic, you can use a loader function. Just remember to return an array of module exports if you want to use Component Story Format. Here's an example that forces files to load in a specific order.
@@ -127,12 +130,12 @@ Or if you want to do some custom loading logic, you can use a loader function. J
 ```js
 import { configure } from '@storybook/react';
 
-const loaderFn = () => ([
+const loaderFn = () => [
   require('./welcome.stories.js'),
   require('./prelude.stories.js'),
   require('./button.stories.js'),
   require('./input.stories.js'),
-]);
+];
 
 configure(loaderFn, module);
 ```
@@ -163,10 +166,10 @@ const loaderFn = () => {
   // manual loading
   require('./welcome.stories.js');
   require('./button.stories.js');
-  
+
   // dynamic loading, unavailable in react-native
   const req = require.context('../src/components', true, /\.stories\.js$/);
-  req.keys().forEach(req(fname));
+  req.keys().forEach(fname => req(fname));
 };
 
 configure(loaderFn, module);
@@ -191,7 +194,7 @@ addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 load(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story director wraps a single story in an additional red frame.
+And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story decorator wraps a single story in an additional red frame.
 
 ```jsx
 import React from 'react';
@@ -209,9 +212,9 @@ special.story = {
 };
 ```
 
-Decorators are not just for story formatting, they are generally useful for any kind of context needed by a story.
+Decorators are not only for story formatting, they are generally useful for any kind of context needed by a story.
 
-- Theming libraries require a theme to be passed in through context. Rather than redefining this in every story, just add a decorator.
+- Theming libraries require a theme to be passed in through context. Rather than redefining this in every story, add a decorator.
 - Likewise, state management libraries like Redux provide a global data store through context.
 - Finally, Storybook [addons](../../addons/introduction) heavily use decorators. For example, the Storybook's [Knobs addon](https://github.com/storybookjs/storybook/tree/next/addons/knobs) uses decorators to modify the input properties of the story based on a UI.
 
@@ -237,7 +240,7 @@ Then for components that did have documentation, we might override it at the com
 import React from 'react';
 import MyComponent from './MyComponent';
 import componentNotes from './notes.md';
-import specialNotes from '/.special.md';
+import specialNotes from './special.md';
 
 export default {
   title: 'MyComponent',
@@ -267,7 +270,7 @@ callout.story = {
 
 ## Story hierarchy
 
-Stories can be organized in a nested structure using "/" as a separator, and can be given a top-level heading using a "|" root separator.
+Stories can be organized in a nested structure using "/" as a separator.
 
 For example the following snippets nest the `Button` and `Checkbox` components within the `Atoms` group, under a top-level heading called `Design System`.
 
@@ -277,7 +280,7 @@ import React from 'react';
 import Button from './Button';
 
 export default {
-  title: 'Design System|Atoms/Button',
+  title: 'Design System/Atoms/Button',
 };
 export const normal = () => <Button onClick={action('clicked')}>Hello Button</Button>;
 ```
@@ -288,13 +291,13 @@ import React from 'react';
 import Checkbox from './Checkbox';
 
 export default {
-  title: 'Design System|Atoms/Checkbox',
+  title: 'Design System/Atoms/Checkbox',
 };
 export const empty = () => <Checkbox label="empty" />;
 export const checked = () => <Checkbox label="checked" checked />;
 ```
 
-If you prefer other characters as separators, you can configure this using the `hierarchySeparator` and `hierarchyRootSeparator` config options. See the
+By default the top-level heading will be treated as any other group, but if you'd like it to be given special emphasis as a "root", use the `showRoots` config option. See the
 [configuration options parameter](/configurations/options-parameter) page to learn more.
 
 ## Generating nesting path based on \_\_dirname
@@ -309,7 +312,7 @@ import base from 'paths.macro';
 import BaseButton from '../components/BaseButton';
 
 export default {
-  title: `Other|${base}/Dirname Example`,
+  title: `Other/${base}/Dirname Example`,
 };
 export const story1 = () => <BaseButton label="Story 1" />;
 export const story2 = () => <BaseButton label="Story 2" />;

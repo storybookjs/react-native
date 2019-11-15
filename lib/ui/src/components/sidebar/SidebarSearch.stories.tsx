@@ -5,7 +5,7 @@ import SidebarSearch, { PureSidebarSearch } from './SidebarSearch';
 
 export default {
   component: SidebarSearch,
-  title: 'UI|Sidebar/SidebarSearch',
+  title: 'UI/Sidebar/SidebarSearch',
   decorators: [
     (storyFn: any) => (
       <div style={{ width: '240px', margin: '1rem', padding: '1rem', background: '#999' }}>

@@ -5,7 +5,7 @@ import { action, actions } from '@storybook/addon-actions';
 import Button from '../Button';
 
 export default {
-  title: 'Addons|Actions',
+  title: 'Addons/Actions',
 };
 
 export const story1 = () => ({

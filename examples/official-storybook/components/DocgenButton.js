@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /** DocgenButton component description imported from comments inside the component file */
-const DocgenButton = ({ disabled, label, onClick }) => (
+export const DocgenButton = ({ disabled, label, onClick }) => (
   <button type="button" disabled={disabled} onClick={onClick}>
     {label}
   </button>
@@ -145,5 +145,3 @@ DocgenButton.propTypes = {
    */
   optionalString: PropTypes.string,
 };
-
-export default DocgenButton;

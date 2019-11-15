@@ -4,7 +4,7 @@ const badOutput = { renderable: 'no, react can not render objects' };
 const BadComponent = () => badOutput;
 
 export default {
-  title: 'Core|Errors',
+  title: 'Core/Errors',
 };
 
 export const exception = () => {
