@@ -8,6 +8,10 @@ const markdownString = `
 
 This is inline github-flavored markdown!
 
+[Link to a bottom ID](#anchor--addons-notes--with-a-markdown-table)  
+[Link to an external website](http://example.com)  
+[Link to a other storybook page](/story/addons-notes--addon-notes)  
+
 ## Example Usage
 ~~~js
 import React from 'react';

@@ -1,3 +1,22 @@
+## 5.3.0-alpha.46 (November 16, 2019)
+
+### Features
+
+* Core: allow uppercase path names in url query param ([#8516](https://github.com/storybookjs/storybook/pull/8516))
+
+### Bug Fixes
+
+* Core: Fix null version check bug ([#8806](https://github.com/storybookjs/storybook/pull/8806))
+* Addon-notes: Fix anchor links ([#8132](https://github.com/storybookjs/storybook/pull/8132))
+
+### Maintenance
+
+* Refactor: remove useless variables from eslint config ([#8843](https://github.com/storybookjs/storybook/pull/8843))
+
+### Dependency Upgrades
+
+* Addon-docs: Replace `storybook-addon-vue-info` with `vue-docgen-loader` ([#8831](https://github.com/storybookjs/storybook/pull/8831))
+
 ## 5.3.0-alpha.45 (November 14, 2019)
 
 ### Breaking Changes

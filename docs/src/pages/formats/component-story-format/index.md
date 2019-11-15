@@ -17,7 +17,7 @@ The default export defines metadata about your component, including the `compone
 import MyComponent from './MyComponent';
 
 export default {
-  title: 'Path|To/MyComponent',
+  title: 'Path/To/MyComponent',
   component: MyComponent,
   decorators: [ ... ],
   parameters: { ... }
