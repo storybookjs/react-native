@@ -95,7 +95,7 @@ function configure(
 
   if (stories && stories.length) {
     // eslint-disable-next-line global-require, import/no-dynamic-require
-    storybook.configure(stories.map(f => require(f)), false);
+    storybook.configure(() => stories.map(f => require(f)), false);
   }
 }
 
