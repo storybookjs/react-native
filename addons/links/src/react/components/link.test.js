@@ -6,6 +6,19 @@ import { SELECT_STORY } from '@storybook/core-events';
 import LinkTo from './link';
 
 jest.mock('@storybook/addons');
+jest.mock('global', () => ({
+  document: {
+    location: {
+      origin: 'origin',
+      pathname: 'pathname',
+      search: 'search',
+    },
+  },
+  __STORYBOOK_STORY_STORE__: {
+    getSelection: jest.fn(() => ({ id: 1 })),
+    fromId: jest.fn(() => ({})),
+  },
+}));
 
 const mockChannel = () => {
   return {
