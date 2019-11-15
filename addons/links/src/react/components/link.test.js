@@ -3,10 +3,17 @@ import React from 'react';
 import addons from '@storybook/addons';
 
 import { SELECT_STORY } from '@storybook/core-events';
-import { mockChannel } from '../../preview.test';
 import LinkTo from './link';
 
 jest.mock('@storybook/addons');
+
+const mockChannel = () => {
+  return {
+    emit: jest.fn(),
+    on: jest.fn(),
+    once: jest.fn(),
+  };
+};
 
 describe('LinkTo', () => {
   describe('render', () => {

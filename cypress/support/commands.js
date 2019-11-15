@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable jest/valid-expect */
+/* eslint-disable jest/no-standalone-expect, no-unused-expressions, jest/valid-expect */
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
