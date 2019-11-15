@@ -312,7 +312,7 @@ import base from 'paths.macro';
 import BaseButton from '../components/BaseButton';
 
 export default {
-  title: `Other|${base}/Dirname Example`,
+  title: `Other/${base}/Dirname Example`,
 };
 export const story1 = () => <BaseButton label="Story 1" />;
 export const story2 = () => <BaseButton label="Story 2" />;
