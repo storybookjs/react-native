@@ -2,7 +2,7 @@ import React from 'react';
 import { Source, SourceError } from './Source';
 
 export default {
-  title: 'Docs|Source',
+  title: 'Docs/Source',
   component: Source,
 };
 

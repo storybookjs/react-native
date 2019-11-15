@@ -4,7 +4,7 @@ import { document } from 'global';
 import '../simple-button.html';
 
 export default {
-  title: 'Addon|Actions',
+  title: 'Addon/Actions',
 };
 
 export const actionOnly = () => {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Story|Nest tags Matriochka 1`] = `
+exports[`Storyshots Story/Nest tags Matriochka 1`] = `
 <div
   data-is="root"
   id="root"
@@ -58,7 +58,7 @@ exports[`Storyshots Story|Nest tags Matriochka 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|Nest tags Three Tags 1`] = `
+exports[`Storyshots Story/Nest tags Three tags 1`] = `
 <div
   data-is="root"
   id="root"

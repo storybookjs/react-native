@@ -3,7 +3,7 @@ import { Story, StoryError } from './Story';
 import { Button } from '../Button/Button';
 
 export default {
-  title: 'Docs|Story',
+  title: 'Docs/Story',
   component: Story,
 };
 

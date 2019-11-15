@@ -2,7 +2,7 @@ import hbs from 'htmlbars-inline-precompile';
 import Centered from '@storybook/addon-centered/ember';
 
 export default {
-  title: 'Addon|Centered',
+  title: 'Addon/Centered',
   decorators: [Centered],
 
   parameters: {

@@ -1,7 +1,7 @@
 import { StyledComponent } from './styled.component';
 
 export default {
-  title: 'Custom|styleUrls',
+  title: 'Custom/styleUrls',
 };
 
 export const componentWithStyles = () => ({

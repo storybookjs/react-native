@@ -6,7 +6,7 @@ const description = `
 `;
 
 export default {
-  title: 'Custom|ngModel',
+  title: 'Custom/ngModel',
 };
 
 export const customControlValueAccessor = () => ({

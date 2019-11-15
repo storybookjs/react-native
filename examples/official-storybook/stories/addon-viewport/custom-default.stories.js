@@ -5,7 +5,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 const Panel = styled.div();
 
 export default {
-  title: 'Addons|Viewport.Custom Default (Kindle Fire 2)',
+  title: 'Addons/Viewport/Custom Default (Kindle Fire 2)',
   parameters: {
     viewport: {
       viewports: {

@@ -2,7 +2,7 @@ import React from 'react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Addons|Knobs.withKnobs using options',
+  title: 'Addons/Knobs/withKnobs using options',
   decorators: [
     withKnobs({
       escapeHTML: false,

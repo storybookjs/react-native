@@ -14,7 +14,7 @@ import {
 const logger = console;
 
 export default {
-  title: 'Addon|Knobs',
+  title: 'Addon/Knobs',
   decorators: [withKnobs],
 };
 

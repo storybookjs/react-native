@@ -3,7 +3,7 @@
 import m from 'mithril';
 
 export default {
-  title: 'Addons|Notes',
+  title: 'Addons/Notes',
 };
 
 export const story1 = () => ({
