@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { styled } from '@storybook/theming';
-import { transparentize } from 'polished';
 import { PropDef } from './PropDef';
 import { PropJsDoc } from './PropJsDoc';
 import { PropValue } from './PropValue';
@@ -19,18 +18,22 @@ const Required = styled.span(({ theme }) => ({
 }));
 
 const Type = styled.div(({ theme }) => ({
-  color:
-    theme.base === 'light'
-      ? transparentize(0.4, theme.color.defaultText)
-      : transparentize(0.6, theme.color.defaultText),
+  color: theme.color.dark,
   fontFamily: theme.typography.fonts.mono,
   fontSize: `${theme.typography.size.code}%`,
+}));
+
+const Tr = styled.tr(() => ({
+  p: {
+    margin: 0,
+    marginBottom: '8px',
+  },
 }));
 
 export const PropRow: FC<PropRowProps> = ({
   row: { name, type, required, description, defaultValue, jsDocTags },
 }) => (
-  <tr>
+  <Tr>
     <td>
       <Name>{name}</Name>
       {required ? <Required title="Required">*</Required> : null}
@@ -45,5 +48,5 @@ export const PropRow: FC<PropRowProps> = ({
     <td>
       <PropValue value={defaultValue} />
     </td>
-  </tr>
+  </Tr>
 );
