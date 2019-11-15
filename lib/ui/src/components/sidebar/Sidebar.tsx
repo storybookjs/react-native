@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 import { styled } from '@storybook/theming';
 import { ScrollArea } from '@storybook/components';
@@ -40,13 +40,13 @@ export interface SidebarProps {
   loading?: boolean;
 }
 
-const Sidebar = ({
+const Sidebar: FunctionComponent<SidebarProps> = ({
   storyId,
   stories,
   menu,
   menuHighlighted = false,
   loading = false,
-}: SidebarProps) => (
+}) => (
   <Container className="container sidebar-container">
     <CustomScrollArea vertical>
       <Heading className="sidebar-header" menuHighlighted={menuHighlighted} menu={menu} />

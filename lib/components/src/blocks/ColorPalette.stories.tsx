@@ -2,7 +2,7 @@ import React from 'react';
 import { ColorItem, ColorPalette } from './ColorPalette';
 
 export default {
-  title: 'Docs|ColorPalette',
+  title: 'Docs/ColorPalette',
   component: ColorPalette,
 };
 

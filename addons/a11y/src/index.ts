@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-object-literal-type-assertion */
 import { document } from 'global';
 import axe, { AxeResults, ElementContext, RunOptions, Spec } from 'axe-core';
 import deprecate from 'util-deprecate';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
 
 import addons, { makeDecorator } from '@storybook/addons';
 import { EVENTS, PARAM_KEY } from './constants';
@@ -40,7 +39,8 @@ const run = (element: ElementContext, config: Spec, options: RunOptions) => {
             restoreScroll: true,
           } as RunOptions) // cast to RunOptions is necessary because axe types are not up to date
       )
-      .then(report);
+      .then(report)
+      .catch(error => addons.getChannel().emit(EVENTS.ERROR, String(error)));
   });
 };
 
@@ -48,12 +48,20 @@ if (module && module.hot && module.hot.decline) {
   module.hot.decline();
 }
 
+let storedDefaultSetup: Setup | null = null;
+
 export const withA11y = makeDecorator({
   name: 'withA11Y',
   parameterName: PARAM_KEY,
   wrapper: (getStory, context, { parameters }) => {
     if (parameters) {
-      setup = parameters as Setup;
+      if (storedDefaultSetup === null) {
+        storedDefaultSetup = { ...setup };
+      }
+      Object.assign(setup, parameters as Setup);
+    } else if (storedDefaultSetup !== null) {
+      Object.assign(setup, storedDefaultSetup);
+      storedDefaultSetup = null;
     }
     addons.getChannel().on(EVENTS.REQUEST, () => run(setup.element, setup.config, setup.options));
 
@@ -80,7 +88,7 @@ export const configureA11y = deprecate(
   (config: any) => {
     setup = config;
   },
-  stripIndents`
+  dedent`
     configureA11y is deprecated, please configure addon-a11y using the addParameter api:
     
     addParameters({

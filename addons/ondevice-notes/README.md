@@ -36,7 +36,7 @@ import { storiesOf } from '@storybook/react-native';
 import Component from './Component';
 
 storiesOf('Component', module).add('with some emoji', () => <Component />, {
-  notes: 'A very simple component',
+  notes: 'A small component',
 });
 ```
 

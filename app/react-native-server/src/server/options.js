@@ -7,6 +7,7 @@ function extendOptions(options, extendServer) {
 
   return {
     ...options,
+    framework: 'react-native',
     extendServer,
     packageJson,
     mode: 'dev',

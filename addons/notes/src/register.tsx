@@ -13,7 +13,7 @@ export default function register(type: types) {
       title: 'Notes',
       route: ({ storyId }) => `/info/${storyId}`, // todo add type
       match: ({ viewMode }) => viewMode === 'info', // todo add type
-      render: ({ active }) => <Panel api={api} active={active} />,
+      render: ({ active, key }) => <Panel api={api} active={active} key={key} />,
       paramKey: PARAM_KEY,
     });
   });

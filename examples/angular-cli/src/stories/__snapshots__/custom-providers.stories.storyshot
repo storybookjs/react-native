@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Custom|Providers Simple 1`] = `
+exports[`Storyshots Custom/Providers Simple 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -17,7 +17,7 @@ exports[`Storyshots Custom|Providers Simple 1`] = `
 </storybook-dynamic-app-root>
 `;
 
-exports[`Storyshots Custom|Providers With knobs 1`] = `
+exports[`Storyshots Custom/Providers With knobs 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}

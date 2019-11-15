@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { ThemeProvider, themes, convert, ensure } from '@storybook/theming';
 import { SyntaxHighlighter } from './syntaxhighlighter';
 
-storiesOf('Basics|SyntaxHighlighter', module)
+storiesOf('Basics/SyntaxHighlighter', module)
   .add('bash', () => (
     <SyntaxHighlighter language="bash" copyable={false}>
       npx npm-check-updates '/storybook/' -u && npm install

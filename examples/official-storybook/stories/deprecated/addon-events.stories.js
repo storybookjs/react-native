@@ -66,7 +66,7 @@ const events = [
 ];
 
 export default {
-  title: 'Deprecated|Events',
+  title: 'Addons/Events/deprecated',
   decorators: [
     storyFn => (
       <WithEvents emit={emit} events={events}>

@@ -4,8 +4,7 @@ import { withA11y } from '@storybook/addon-a11y';
 addDecorator(withA11y);
 addParameters({
   options: {
-    hierarchySeparator: /\/|\./,
-    hierarchyRootSeparator: /\|/,
+    showRoots: true,
   },
 });
 

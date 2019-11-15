@@ -2,11 +2,10 @@ import { createElement } from 'rax';
 import { withA11Y } from '@storybook/addon-a11y';
 import Text from 'rax-text';
 import View from 'rax-view';
-import Button from 'rax-button';
 import markdown from './note.md';
 
 export default {
-  title: 'Addon|addon-a11y',
+  title: 'Addon/addon-a11y',
   decorators: [withA11Y],
 };
 
@@ -26,13 +25,14 @@ withStyle.story = {
 };
 
 export const withMarkdown = () => (
-  <Button>
-    {' '}
+  <button type="button">
+    &nbsp;
     <Text id="text1">😀 😎 👍 💯</Text>
     <View>
       <Text id="text1">aaa</Text>
-    </View>{' '}
-  </Button>
+    </View>
+    &nbsp;
+  </button>
 );
 
 withMarkdown.story = {

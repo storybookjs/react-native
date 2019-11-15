@@ -2,14 +2,12 @@ import { configure, addParameters } from '@storybook/rax';
 
 addParameters({
   options: {
-    name: 'Rax Kitchen Sink',
+    name: 'Stroybook for Rax',
     url: 'https://github.com/storybookjs/storybook/tree/master/examples/rax-kitchen-sink',
     goFullScreen: false,
     showAddonsPanel: true,
     showSearchBox: false,
-    sortStoriesByKind: false,
-    hierarchySeparator: /\./,
-    hierarchyRootSeparator: /\|/,
+    showRoots: true,
     enableShortcuts: true,
     panelPosition: 'bottom',
   },

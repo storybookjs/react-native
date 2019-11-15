@@ -8,7 +8,7 @@ const Input = hoc(() => <input type="text" />);
 const TextArea = hoc(({ children }) => <textarea>{children}</textarea>);
 
 export default {
-  title: 'Addons|Info/GitHub issues',
+  title: 'Addons/Info/GitHub issues',
   decorators: [withInfo],
 };
 

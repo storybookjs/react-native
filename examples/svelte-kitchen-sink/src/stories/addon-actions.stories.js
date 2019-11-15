@@ -4,7 +4,7 @@ import ButtonView from './views/ButtonView.svelte';
 import Button from '../components/Button.svelte';
 
 export default {
-  title: 'Addon|Actions',
+  title: 'Addon/Actions',
 };
 
 export const actionOnViewMethod = () => ({

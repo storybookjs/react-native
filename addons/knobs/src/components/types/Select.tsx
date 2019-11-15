@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { Form } from '@storybook/components';
 import { KnobControlConfig, KnobControlProps } from './types';
 
-export type SelectTypeKnobValue = string | number | null | undefined;
+export type SelectTypeKnobValue = string | number | null | undefined | PropertyKey[];
 
 export type SelectTypeOptionsProp<T extends SelectTypeKnobValue = SelectTypeKnobValue> =
-  | Record<string | number, T>
-  | Record<Exclude<T, null | undefined>, T[keyof T]>
-  | Exclude<T, null | undefined>[]
-  | readonly Exclude<T, null | undefined>[];
+  | Record<PropertyKey, T>
+  | Record<Extract<T, PropertyKey>, T[keyof T]>
+  | Extract<T, PropertyKey>[]
+  | readonly Extract<T, PropertyKey>[];
 
 export interface SelectTypeKnob<T extends SelectTypeKnobValue = SelectTypeKnobValue>
   extends KnobControlConfig<T> {
@@ -30,15 +30,23 @@ const SelectType: FunctionComponent<SelectTypeProps> & {
   deserialize: typeof deserialize;
 } = ({ knob, onChange }) => {
   const { options } = knob;
-  const entries = Array.isArray(options)
-    ? options.reduce<Record<string, SelectTypeKnobValue>>((acc, k) => ({ ...acc, [k]: k }), {})
-    : (options as Record<string, SelectTypeKnobValue>);
 
-  const selectedKey = Object.keys(entries).find(k => {
-    if (Array.isArray(knob.value)) {
-      return JSON.stringify(entries[k]) === JSON.stringify(knob.value);
+  const callbackReduceArrayOptions = (acc: any, option: any, i: number) => {
+    if (typeof option !== 'object') return { ...acc, [option]: option };
+    const label = option.label || option.key || i;
+    return { ...acc, [label]: option };
+  };
+
+  const entries = Array.isArray(options) ? options.reduce(callbackReduceArrayOptions, {}) : options;
+
+  const selectedKey = Object.keys(entries).find(key => {
+    const { value: knobVal } = knob;
+    const entryVal = entries[key];
+
+    if (Array.isArray(knobVal)) {
+      return JSON.stringify(entryVal) === JSON.stringify(knobVal);
     }
-    return entries[k] === knob.value;
+    return entryVal === knobVal;
   });
 
   return (

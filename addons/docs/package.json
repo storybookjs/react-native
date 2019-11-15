@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-docs",
-  "version": "5.2.0-beta.46",
+  "version": "5.3.0-alpha.45",
   "description": "Superior documentation for your components",
   "keywords": [
     "addon",
@@ -17,6 +17,20 @@
     "directory": "addons/docs"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "angular/**/*",
+    "common/**/*",
+    "html/**/*",
+    "postinstall/**/*",
+    "react/**/*",
+    "vue/**/*",
+    "web-components/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
   "main": "dist/public_api.js",
   "types": "dist/public_api.d.ts",
   "scripts": {
@@ -26,29 +40,47 @@
     "@babel/generator": "^7.4.0",
     "@babel/parser": "^7.4.2",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@egoist/vue-to-react": "^1.1.0",
+    "@jest/transform": "^24.9.0",
     "@mdx-js/loader": "^1.1.0",
     "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/react": "^1.0.27",
-    "@storybook/addons": "5.2.0-beta.46",
-    "@storybook/api": "5.2.0-beta.46",
-    "@storybook/components": "5.2.0-beta.46",
-    "@storybook/router": "5.2.0-beta.46",
-    "@storybook/source-loader": "5.2.0-beta.46",
-    "@storybook/theming": "5.2.0-beta.46",
+    "@storybook/addons": "5.3.0-alpha.45",
+    "@storybook/api": "5.3.0-alpha.45",
+    "@storybook/components": "5.3.0-alpha.45",
+    "@storybook/postinstall": "5.3.0-alpha.45",
+    "@storybook/router": "5.3.0-alpha.45",
+    "@storybook/source-loader": "5.3.0-alpha.45",
+    "@storybook/theming": "5.3.0-alpha.45",
+    "acorn": "^7.1.0",
+    "acorn-jsx": "^5.1.0",
+    "acorn-walk": "^7.0.0",
     "core-js": "^3.0.1",
+    "doctrine": "^3.0.0",
+    "escodegen": "^1.12.0",
     "global": "^4.3.2",
+    "html-tags": "^3.1.0",
     "js-string-escape": "^1.0.1",
-    "lodash": "^4.17.11",
-    "prop-types": "^15.7.2"
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "ts-dedent": "^1.1.0",
+    "util-deprecate": "^1.0.2",
+    "vue-docgen-api": "^3.26.0",
+    "vue-docgen-loader": "^1.0.1"
   },
   "devDependencies": {
+    "@types/doctrine": "^0.0.3",
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.11",
     "@types/prop-types": "^15.5.9",
     "@types/util-deprecate": "^1.0.0",
-    "@types/webpack-env": "^1.13.7"
+    "@types/webpack-env": "^1.14.0",
+    "jest-specific-snapshot": "^2.0.0"
   },
   "peerDependencies": {
     "babel-loader": "^8.0.0",
-    "react": "^16.8.0"
+    "react": "^16.8.0",
+    "react-is": "^16.8.0"
   },
   "publishConfig": {
     "access": "public"

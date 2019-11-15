@@ -10,7 +10,7 @@ const increment = () => {
 };
 
 export default {
-  title: 'Core|Events',
+  title: 'Core/Events',
 };
 
 export const force = () => <Button onClick={increment}>Clicked: {timesClicked}</Button>;

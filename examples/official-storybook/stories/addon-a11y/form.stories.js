@@ -5,7 +5,7 @@ import { Form } from '@storybook/components';
 const text = 'Testing the a11y addon';
 
 export default {
-  title: 'Addons|A11y/Form',
+  title: 'Addons/A11y/Form',
   component: Form,
   parameters: {
     options: { selectedPanel: 'storybook/a11y/panel' },

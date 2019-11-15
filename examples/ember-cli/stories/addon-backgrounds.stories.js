@@ -1,7 +1,7 @@
 import hbs from 'htmlbars-inline-precompile';
 
 export default {
-  title: 'Addon|Backgrounds',
+  title: 'Addon/Backgrounds',
 
   parameters: {
     backgrounds: [

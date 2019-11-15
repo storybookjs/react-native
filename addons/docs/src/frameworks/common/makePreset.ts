@@ -1,22 +1,17 @@
-import fs from 'fs';
-import * as common from './preset';
+import deprecate from 'util-deprecate';
+import dedent from 'ts-dedent';
+import * as common from '../../preset';
 
 const makePreset = (framework: string) => {
-  const frameworkConfig = `${__dirname}/../../../${framework}/config.js`;
-  const preConfig = fs.existsSync(frameworkConfig) ? [frameworkConfig] : [];
-  function config(entry: any[] = []) {
-    return [...preConfig, ...entry];
-  }
+  deprecate(
+    () => {},
+    dedent`
+    Framework-specific presets are no longer-needed as of Storybook 5.3 and will be removed in 6.0.
 
-  const configureJSX = framework !== 'react';
-  const webpack = (webpackConfig: any, options: any) =>
-    common.webpack(webpackConfig, { configureJSX, ...options });
-
-  return {
-    ...common,
-    webpack,
-    config,
-  };
+    Please use '@storybook/addon-docs/preset' instead of '@storybook/addon-docs/${framework}/preset'.
+  `
+  )();
+  return common;
 };
 
 export default makePreset;

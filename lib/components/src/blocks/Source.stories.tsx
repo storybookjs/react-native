@@ -2,7 +2,7 @@ import React from 'react';
 import { Source, SourceError } from './Source';
 
 export default {
-  title: 'Docs|Source',
+  title: 'Docs/Source',
   component: Source,
 };
 
@@ -12,7 +12,6 @@ const jsxCode = `
 </MyComponent>
 `.trim();
 
-const jsxProps = {};
 export const jsx = () => <Source code={jsxCode} language="jsx" />;
 
 const cssCode = `

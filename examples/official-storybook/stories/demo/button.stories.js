@@ -3,8 +3,14 @@ import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
 
 export default {
-  title: 'Other|Demo/Button',
+  title: 'Other/Demo/Button',
   component: Button,
+  id: 'demo-button-id',
+  parameters: {
+    docs: {
+      inlineStories: false,
+    },
+  },
 };
 
 export const withText = () => <Button onClick={action('clicked')}>Hello Button</Button>;
@@ -31,4 +37,9 @@ export const withCounter = () => {
 
 withCounter.story = {
   name: 'with counter',
+  parameters: {
+    docs: {
+      storyDescription: 'This demonstrates react hooks working inside stories. Go team! 🚀',
+    },
+  },
 };

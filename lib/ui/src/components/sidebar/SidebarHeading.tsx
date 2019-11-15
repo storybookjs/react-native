@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ComponentProps, MouseEvent } from 'react';
 import { styled, withTheme } from '@storybook/theming';
 import { StorybookLogo, WithTooltip, TooltipLinkList, Button, Icons } from '@storybook/components';
 
-export type BrandAreaProps = React.ComponentProps<'div'>;
+export type BrandAreaProps = ComponentProps<'div'>;
 
 const BrandArea = styled.div<BrandAreaProps>(({ theme }) => ({
   fontSize: theme.typography.size.s2,
@@ -43,9 +43,9 @@ const LogoLink = styled.a({
   textDecoration: 'none',
 });
 
-export type MenuButtonProps = React.ComponentProps<typeof Button> &
+export type MenuButtonProps = ComponentProps<typeof Button> &
   // FIXME: Button should extends from the native <button>
-  React.ComponentProps<'button'> & {
+  ComponentProps<'button'> & {
     highlighted: boolean;
   };
 
@@ -107,7 +107,7 @@ const Brand = withTheme(({ theme: { brand: { title = 'Storybook', url = './', im
 
 export interface SidebarHeadingProps {
   menuHighlighted?: boolean;
-  menu: React.ComponentProps<typeof TooltipLinkList>['links'];
+  menu: ComponentProps<typeof TooltipLinkList>['links'];
   className?: string;
 }
 
@@ -125,7 +125,7 @@ const SidebarHeading = ({ menuHighlighted = false, menu, ...props }: SidebarHead
           // @ts-ignore // FIXME: onCLick/onHide should pass React synthetic event down to avoid surprise
           links={menu.map(({ onClick, ...rest }) => ({
             ...rest,
-            onClick: (e: React.MouseEvent) => {
+            onClick: (e: MouseEvent) => {
               if (onClick) {
                 // @ts-ignore
                 onClick(e);

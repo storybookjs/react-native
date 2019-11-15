@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addon/Docs with some emoji 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <ng-component>
+    <storybook-button-component
+      _nghost-a-c16=""
+      ng-reflect-text="😀 😎 👍 💯"
+    >
+      <button
+        _ngcontent-a-c16=""
+      >
+        😀 😎 👍 💯
+      </button>
+    </storybook-button-component>
+  </ng-component>
+</storybook-dynamic-app-root>
+`;
+
+exports[`Storyshots Addon/Docs with text 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <ng-component>
+    <storybook-button-component
+      _nghost-a-c15=""
+      ng-reflect-text="Hello Button"
+    >
+      <button
+        _ngcontent-a-c15=""
+      >
+        Hello Button
+      </button>
+    </storybook-button-component>
+  </ng-component>
+</storybook-dynamic-app-root>
+`;

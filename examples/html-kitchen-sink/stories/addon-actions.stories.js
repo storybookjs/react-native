@@ -5,7 +5,7 @@ const pickTarget = decorate([args => [args[0].target]]);
 const button = () => `<button type="button">Hello World</button>`;
 
 export default {
-  title: 'Addons|Actions',
+  title: 'Addons/Actions',
 };
 
 export const story1 = () => withActions('click')(button);

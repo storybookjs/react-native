@@ -4,7 +4,7 @@ import ForwardedRefButton from '../../components/ForwardedRefButton';
 import ForwardedRefButtonWDisplayName from '../../components/ForwardedRefButtonWDisplayName';
 
 export default {
-  title: 'Addons|Info/ForwardRef',
+  title: 'Addons/Info/ForwardRef',
   decorators: [withInfo],
 };
 

@@ -3,7 +3,7 @@ import React from 'react';
 import BaseButton from '../components/BaseButton';
 
 export default {
-  title: 'Addons|Backgrounds',
+  title: 'Addons/Backgrounds',
 
   parameters: {
     backgrounds: [
@@ -60,5 +60,15 @@ skippedViaDisableTrue.story = {
 
   parameters: {
     backgrounds: { disable: true },
+  },
+};
+
+export const gridCellSize = () => (
+  <BaseButton label="This one should have a different grid cell size" />
+);
+
+gridCellSize.story = {
+  parameters: {
+    grid: { cellSize: 10 },
   },
 };

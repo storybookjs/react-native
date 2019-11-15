@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { MouseEvent, PureComponent, ReactNode } from 'react';
 
 import { navigate, hrefTo } from '../../preview';
 
@@ -8,10 +8,10 @@ import { navigate, hrefTo } from '../../preview';
 // Cmd/Ctrl/Shift/Alt + Click should trigger default browser behaviour. Same applies to non-left clicks
 const LEFT_BUTTON = 0;
 
-const isPlainLeftClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>
+const isPlainLeftClick = (e: MouseEvent<HTMLAnchorElement>) =>
   e.button === LEFT_BUTTON && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey;
 
-const cancelled = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, cb = (_e: any) => {}) => {
+const cancelled = (e: MouseEvent<HTMLAnchorElement>, cb = (_e: any) => {}) => {
   if (isPlainLeftClick(e)) {
     e.preventDefault();
     cb(e);
@@ -21,7 +21,7 @@ const cancelled = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, cb = (_e:
 interface Props {
   kind: string;
   story: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 interface State {
