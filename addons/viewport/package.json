@@ -23,7 +23,8 @@
     "*.js",
     "*.d.ts"
   ],
-  "main": "preview.js",
+  "main": "dist/preview.js",
+  "types": "dist/preview.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
