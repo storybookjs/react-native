@@ -67,7 +67,7 @@ describe('angular-cli_config', () => {
     const projectConfig = getAngularCliWebpackConfigOptions('test-path' as Path);
     const config = applyAngularCliWebpackConfig(baseConfig, projectConfig);
 
-    expect(projectConfig).toBe(undefined);
+    expect(projectConfig).toBe(null);
     expect(config).toBe(baseConfig);
   });
 });
