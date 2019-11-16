@@ -62,7 +62,7 @@ const PreviewWrapper = styled.div<PreviewProps>(
 );
 
 const PreviewContainer = styled.div({
-  // padding: '25px 0 40px',
+  margin: '25px 0 40px',
   overflow: 'hidden',
 });
 
