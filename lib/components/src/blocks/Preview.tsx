@@ -7,7 +7,6 @@ import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 import { Source, SourceProps } from './Source';
 import { ActionBar, ActionItem } from '../ActionBar/ActionBar';
 import { Toolbar } from './Toolbar';
-import { ZoomContext } from './ZoomContext';
 
 export interface PreviewProps {
   isColumn?: boolean;
