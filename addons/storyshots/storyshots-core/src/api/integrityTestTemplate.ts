@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-export */
 import fs from 'fs';
 import glob from 'glob';
 import { describe, it } from 'global';
