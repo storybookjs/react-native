@@ -100,9 +100,9 @@ const Horizontal = styled(props => <Spaced col={1} {...props} />)({
 export const wide = () => (
   <Preview withToolbar>
     <Horizontal>
-      <pre>START</pre>
+      <div>START</div>
       <div>middle</div>
-      <pre>END</pre>
+      <div>END</div>
     </Horizontal>
   </Preview>
 );

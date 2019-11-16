@@ -58,7 +58,7 @@ const PreviewWrapper = styled.div<PreviewProps>(
     borderBottomRightRadius: withSource && isExpanded && 0,
     borderBottomWidth: isExpanded && 0,
   }),
-  ({ withToolbar }) => withToolbar && { paddingTop: 64 }
+  ({ withToolbar }) => withToolbar && { paddingTop: 40 }
 );
 
 const PreviewContainer = styled.div({
