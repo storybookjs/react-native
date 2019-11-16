@@ -16,7 +16,7 @@ import {
 const cachedContainer = document.createElement('p');
 
 export default {
-  title: 'Addons|Knobs',
+  title: 'Addons/Knobs',
   decorators: [withKnobs],
 };
 

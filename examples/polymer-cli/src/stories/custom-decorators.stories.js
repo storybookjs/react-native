@@ -1,7 +1,7 @@
 import { document } from 'global';
 
 export default {
-  title: 'Custom|Decorator',
+  title: 'Custom/Decorator',
 
   decorators: [
     storyFn => {

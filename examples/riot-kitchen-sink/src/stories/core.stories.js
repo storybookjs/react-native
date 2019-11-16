@@ -9,7 +9,7 @@ tag('parameters', '<div>Parameters are {JSON.stringify (this.opts)}</div>', '', 
 addParameters({ globalParameter });
 
 export default {
-  title: 'Core|Parameters',
+  title: 'Core/Parameters',
   parameters: {
     chapterParameter,
   },

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`presets-add-preset transforms correctly using "empty.input.js" data 1`] = `"module.exports = ['test'];"`;

@@ -1,1 +1,1 @@
-export * from '../../lib/docgenUtils';
+export * from '../../lib/docgen';

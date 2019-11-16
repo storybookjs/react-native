@@ -4,7 +4,7 @@ import { stringDef, numberDef } from './PropRow.stories';
 
 export default {
   component: PropsTable,
-  title: 'Docs|PropTable',
+  title: 'Docs/PropTable',
 };
 
 export const normal = () => <PropsTable rows={[stringDef, numberDef]} />;

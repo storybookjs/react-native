@@ -79,6 +79,18 @@ storiesOf('Button', module).add(
 );
 ```
 
+### Upgrading to CSF Format
+
+Add `notes` to the `parameters` object:
+
+```js
+export default {
+  parameters: {
+    notes: 'My notes',
+  }
+}
+```
+
 ## Using Markdown
 
 Using Markdown in your notes is supported, Storybook will load Markdown as raw by default.
@@ -95,12 +107,12 @@ storiesOf('Component', module).add('With Markdown', () => <Component />, {
 
 ## Giphy
 
-When using Markdown, you can also embed gifs from Giphy into your Markdown. Currently, the value `gif` of the gif prop is used to search and return the first result returned by Giphy.
+When using Markdown, you can also embed gifs from Giphy into your Markdown. Currently, the value `cheese` of the query prop is used to search and return the first result returned by Giphy.
 
 ```md
 # Title
 
-<Giphy gif='cheese' />
+<Giphy query='cheese' />
 ```
 
 ## Multiple Notes Sections

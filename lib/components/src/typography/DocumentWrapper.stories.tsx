@@ -6,7 +6,7 @@ import markdownSample from './DocumentFormattingSample.md';
 
 export default {
   component: DocumentWrapper,
-  title: 'Basics|DocumentFormatting',
+  title: 'Basics/DocumentFormatting',
   decorators: [
     (storyFn: any) => (
       <div
@@ -114,6 +114,8 @@ export const withDOM = () => (
       <li>foo</li>
       <li>bar</li>
     </ol>
+    <h2>Horizontal Rule</h2>
+    <hr />
     <h2>Tables</h2>
     <table>
       <thead>

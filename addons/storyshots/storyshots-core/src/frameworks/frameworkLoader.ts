@@ -13,16 +13,13 @@ function getLoaders(): Loader[] {
     .readdirSync(__dirname)
     .map(name => path.join(__dirname, name))
     .filter(isDirectory)
-    .reduce(
-      (acc, framework) => {
-        const filename = path.join(framework, loaderScriptName);
-        const jsFile = `${filename}.js`;
-        const tsFile = `${filename}.ts`;
+    .reduce((acc, framework) => {
+      const filename = path.join(framework, loaderScriptName);
+      const jsFile = `${filename}.js`;
+      const tsFile = `${filename}.ts`;
 
-        return acc.concat([jsFile, tsFile]);
-      },
-      [] as string[]
-    )
+      return acc.concat([jsFile, tsFile]);
+    }, [] as string[])
     .filter(fs.existsSync)
     .map(loader => require(loader).default);
 }

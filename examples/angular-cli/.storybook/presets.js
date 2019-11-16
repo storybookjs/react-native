@@ -1,1 +1,1 @@
-module.exports = ['@storybook/addon-docs/angular/preset'];
+module.exports = ['@storybook/addon-docs/preset'];

@@ -9,7 +9,7 @@ import { storiesOf } from '@storybook/angular';
 })
 class WithNgContentComponent {}
 
-storiesOf('Custom|ng-content', module).add('Default', () => ({
+storiesOf('Custom/ng-content', module).add('Default', () => ({
   template: `<storybook-with-ng-content><h1>This is rendered in ng-content</h1></storybook-with-ng-content>`,
   moduleMetadata: {
     declarations: [WithNgContentComponent],

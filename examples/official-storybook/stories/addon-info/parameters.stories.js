@@ -6,7 +6,7 @@ import BaseButton from '../../components/BaseButton';
 import { markdownDescription } from './markdown.stories';
 
 export default {
-  title: 'Addons|Info/Parameters',
+  title: 'Addons/Info/Parameters',
   decorators: [
     withInfo({
       styles: {

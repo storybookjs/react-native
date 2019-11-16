@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Centered Rounded 1`] = `
+exports[`Storyshots Addon/Centered Rounded 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -19,7 +19,7 @@ exports[`Storyshots Addon|Centered Rounded 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Centered With Action 1`] = `
+exports[`Storyshots Addon/Centered with action 1`] = `
 <section
   class="storybook-snapshot-container"
 >

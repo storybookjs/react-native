@@ -21,7 +21,7 @@ const JSXDescription = (
 );
 
 export default {
-  title: 'Addons|Info/JSX',
+  title: 'Addons/Info/JSX',
   decorators: [withInfo],
 };
 

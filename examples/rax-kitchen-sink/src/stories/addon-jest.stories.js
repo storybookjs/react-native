@@ -6,7 +6,7 @@ import Welcome from '../components/Welcome';
 import results from '../../jest-test-results.json';
 
 export default {
-  title: 'Addon|addon-jest',
+  title: 'Addon/addon-jest',
   decorators: [withTests({ results })],
 };
 

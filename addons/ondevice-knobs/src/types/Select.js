@@ -1,9 +1,19 @@
 /* eslint no-underscore-dangle: 0 */
 
 import PropTypes from 'prop-types';
-import { View, TextInput } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import ModalPicker from 'react-native-modal-selector';
+import styled from '@emotion/native';
+
+const Input = styled.TextInput(({ theme }) => ({
+  borderWidth: 1,
+  borderRadius: 2,
+  padding: 5,
+  margin: 10,
+  borderColor: theme.borderColor,
+  color: theme.labelColor,
+}));
 
 class SelectType extends React.Component {
   getOptions = ({ options }) => {
@@ -30,15 +40,7 @@ class SelectType extends React.Component {
           onChange={option => onChange(option.key)}
           animationType="none"
         >
-          <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: '#f7f4f4',
-              borderRadius: 2,
-              padding: 5,
-              color: '#555',
-              margin: 10,
-            }}
+          <Input
             editable={false}
             value={selected}
             autoCapitalize="none"

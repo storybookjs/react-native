@@ -1,7 +1,7 @@
 import Hello from '../components/hello/index.marko';
 
 export default {
-  title: 'Main|Hello',
+  title: 'Main/Hello',
   parameters: {
     component: Hello,
   },

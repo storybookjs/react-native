@@ -5,7 +5,7 @@ import { DummyService } from './moduleMetadata/dummy.service';
 import { ServiceComponent } from './moduleMetadata/service.component';
 
 export default {
-  title: 'Custom|Providers',
+  title: 'Custom/Providers',
   decorators: [
     moduleMetadata({
       imports: [],

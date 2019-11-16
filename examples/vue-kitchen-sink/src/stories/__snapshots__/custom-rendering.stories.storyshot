@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Custom|Method for rendering Vue JSX 1`] = `
+exports[`Storyshots Custom/Method for rendering Vue JSX 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -9,7 +9,25 @@ exports[`Storyshots Custom|Method for rendering Vue JSX 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue Pre Registered Component 1`] = `
+exports[`Storyshots Custom/Method for rendering Vue Render 1`] = `
+<div>
+  renders a div with some text in it..
+</div>
+`;
+
+exports[`Storyshots Custom/Method for rendering Vue Template 1`] = `
+<div>
+  <h1>
+    A template
+  </h1>
+   
+  <p>
+    rendered in vue in storybook
+  </p>
+</div>
+`;
+
+exports[`Storyshots Custom/Method for rendering Vue pre-registered component 1`] = `
 <p>
   <em>
     This component was pre-registered in .storybook/config.js
@@ -25,13 +43,7 @@ exports[`Storyshots Custom|Method for rendering Vue Pre Registered Component 1`]
 </p>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue Render 1`] = `
-<div>
-  renders a div with some text in it..
-</div>
-`;
-
-exports[`Storyshots Custom|Method for rendering Vue Render Component 1`] = `
+exports[`Storyshots Custom/Method for rendering Vue render + component 1`] = `
 <button
   class="button"
   style="color: pink; border-color: pink;"
@@ -40,19 +52,7 @@ exports[`Storyshots Custom|Method for rendering Vue Render Component 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue Template 1`] = `
-<div>
-  <h1>
-    A template
-  </h1>
-   
-  <p>
-    rendered in vue in storybook
-  </p>
-</div>
-`;
-
-exports[`Storyshots Custom|Method for rendering Vue Template Component 1`] = `
+exports[`Storyshots Custom/Method for rendering Vue template + component 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -61,7 +61,7 @@ exports[`Storyshots Custom|Method for rendering Vue Template Component 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue Template Methods 1`] = `
+exports[`Storyshots Custom/Method for rendering Vue template + methods 1`] = `
 <p>
   <em>
     Clicking the button will navigate to another story using the 'addon-links'
@@ -77,7 +77,7 @@ exports[`Storyshots Custom|Method for rendering Vue Template Methods 1`] = `
 </p>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue Vuex Actions 1`] = `
+exports[`Storyshots Custom/Method for rendering Vue vuex + actions 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"
@@ -86,7 +86,7 @@ exports[`Storyshots Custom|Method for rendering Vue Vuex Actions 1`] = `
 </button>
 `;
 
-exports[`Storyshots Custom|Method for rendering Vue Whatever You Want 1`] = `
+exports[`Storyshots Custom/Method for rendering Vue whatever you want 1`] = `
 <button
   class="button"
   style="color: rgb(66, 185, 131); border-color: #42b983;"

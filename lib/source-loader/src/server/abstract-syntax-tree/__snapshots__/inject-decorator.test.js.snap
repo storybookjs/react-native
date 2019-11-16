@@ -866,8 +866,7 @@ storiesOf('Foo', module)
 `;
 
 exports[`inject-decorator will not change the source when there are no "storiesOf" functions 1`] = `
-"var addSourceDecorator = require(\\"@storybook/source-loader/preview\\").addSource;
-while(true) {
+"while(true) {
   console.log(\\"it's a kind of magic\\");
 }"
 `;

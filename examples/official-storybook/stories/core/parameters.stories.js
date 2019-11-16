@@ -10,7 +10,7 @@ addDecorator(fn => fn({ customStoryContext: 52, parameters: { customParameter: 4
 addParameters({ globalParameter: 'globalParameter' });
 
 export default {
-  title: 'Core|Parameters',
+  title: 'Core/Parameters',
   decorators: [fn => fn({ parameters: { decoratorParameter: 'decoratorParameter' } })],
   parameters: {
     chapterParameter: 'chapterParameter',

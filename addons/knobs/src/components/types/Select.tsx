@@ -30,15 +30,23 @@ const SelectType: FunctionComponent<SelectTypeProps> & {
   deserialize: typeof deserialize;
 } = ({ knob, onChange }) => {
   const { options } = knob;
-  const entries = Array.isArray(options)
-    ? options.reduce<Record<PropertyKey, SelectTypeKnobValue>>((acc, k) => ({ ...acc, [k]: k }), {})
-    : (options as Record<PropertyKey, SelectTypeKnobValue>);
 
-  const selectedKey = Object.keys(entries).find(k => {
-    if (Array.isArray(knob.value)) {
-      return JSON.stringify(entries[k]) === JSON.stringify(knob.value);
+  const callbackReduceArrayOptions = (acc: any, option: any, i: number) => {
+    if (typeof option !== 'object') return { ...acc, [option]: option };
+    const label = option.label || option.key || i;
+    return { ...acc, [label]: option };
+  };
+
+  const entries = Array.isArray(options) ? options.reduce(callbackReduceArrayOptions, {}) : options;
+
+  const selectedKey = Object.keys(entries).find(key => {
+    const { value: knobVal } = knob;
+    const entryVal = entries[key];
+
+    if (Array.isArray(knobVal)) {
+      return JSON.stringify(entryVal) === JSON.stringify(knobVal);
     }
-    return entries[k] === knob.value;
+    return entryVal === knobVal;
   });
 
   return (

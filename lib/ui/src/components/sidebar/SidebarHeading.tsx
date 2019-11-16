@@ -74,36 +74,44 @@ const Head = styled.div({
   justifyContent: 'space-between',
 });
 
-const Brand = withTheme(({ theme: { brand: { title = 'Storybook', url = './', image } } }) => {
-  const targetValue = url === './' ? '' : '_blank';
-  if (image === undefined && url === null) {
-    return <Logo alt={title} />;
+const Brand = withTheme(
+  ({
+    theme: {
+      brand: { title = 'Storybook', url = './', image },
+    },
+  }) => {
+    const targetValue = url === './' ? '' : '_blank';
+    if (image === undefined && url === null) {
+      return <Logo alt={title} />;
+    }
+    if (image === undefined && url) {
+      return (
+        <LogoLink href={url} target={targetValue}>
+          <Logo alt={title} />
+        </LogoLink>
+      );
+    }
+    if (image === null && url === null) {
+      return title;
+    }
+    if (image === null && url) {
+      return (
+        <LogoLink href={url} target={targetValue} dangerouslySetInnerHTML={{ __html: title }} />
+      );
+    }
+    if (image && url === null) {
+      return <Img src={image} alt={title} />;
+    }
+    if (image && url) {
+      return (
+        <LogoLink href={url} target={targetValue}>
+          <Img src={image} alt={title} />
+        </LogoLink>
+      );
+    }
+    return null;
   }
-  if (image === undefined && url) {
-    return (
-      <LogoLink href={url} target={targetValue}>
-        <Logo alt={title} />
-      </LogoLink>
-    );
-  }
-  if (image === null && url === null) {
-    return title;
-  }
-  if (image === null && url) {
-    return <LogoLink href={url} target={targetValue} dangerouslySetInnerHTML={{ __html: title }} />;
-  }
-  if (image && url === null) {
-    return <Img src={image} alt={title} />;
-  }
-  if (image && url) {
-    return (
-      <LogoLink href={url} target={targetValue}>
-        <Img src={image} alt={title} />
-      </LogoLink>
-    );
-  }
-  return null;
-});
+);
 
 export interface SidebarHeadingProps {
   menuHighlighted?: boolean;

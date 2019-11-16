@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered/react';
 import BaseButton from '../components/BaseButton';
 
 export default {
-  title: 'Addons|Centered',
+  title: 'Addons/Centered',
   decorators: [centered],
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-mocks-import */
 import fs from 'fs';
 import path from 'path';
 import {

@@ -4,7 +4,7 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import Text from 'rax-text';
 
 export default {
-  title: 'Addon|addon-knobs',
+  title: 'Addon/addon-knobs',
   decorators: [withKnobs],
 };
 

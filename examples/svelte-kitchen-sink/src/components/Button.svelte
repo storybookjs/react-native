@@ -22,7 +22,6 @@
 
 <script>
   import { createEventDispatcher, afterUpdate } from 'svelte';
-  export let count = 0;
   export let text = '';
   export let rounded = true;
 

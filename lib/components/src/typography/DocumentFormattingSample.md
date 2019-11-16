@@ -95,6 +95,10 @@ var foo = function(bar) {
 console.log(foo(5));
 ```
 
+## Horizontal Rule
+
+---
+
 ## Tables
 
 | Option | Description                                                               |
