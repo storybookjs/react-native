@@ -1,11 +1,8 @@
 import React from 'react';
-
 import { styled } from '@storybook/theming';
 
 import { Spaced } from '../spaced/Spaced';
-
 import { Preview } from './Preview';
-
 import { Story } from './Story';
 import { Button } from '../Button/Button';
 import * as sourceStories from './Source.stories';
