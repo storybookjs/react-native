@@ -65,6 +65,8 @@
     "find-cache-dir": "^3.0.0",
     "find-up": "^4.1.0",
     "fs-extra": "^8.0.1",
+    "glob-base": "^0.3.0",
+    "glob-regex": "^0.3.2",
     "global": "^4.3.2",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "inquirer": "^7.0.0",
@@ -95,7 +97,8 @@
     "util-deprecate": "^1.0.2",
     "webpack": "^4.33.0",
     "webpack-dev-middleware": "^3.7.0",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-virtual-modules": "^0.2.0"
   },
   "devDependencies": {
     "mock-fs": "^4.8.0"
