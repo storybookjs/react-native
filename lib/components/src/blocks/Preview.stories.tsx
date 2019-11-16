@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { styled } from '@storybook/theming';
+
+import { Spaced } from '../spaced/Spaced';
+
 import { Preview } from './Preview';
 
 import { Story } from './Story';
@@ -85,6 +89,21 @@ const buttonFn = () => <Button secondary>Hello Button</Button>;
 export const withToolbar = () => (
   <Preview withToolbar>
     <Story inline storyFn={buttonFn} title="with toolbar" />
+  </Preview>
+);
+
+const Horizontal = styled(props => <Spaced col={1} {...props} />)({
+  display: 'grid',
+  gridTemplateColumns: '100px calc(100vw + 100px) 100px',
+});
+
+export const wide = () => (
+  <Preview withToolbar>
+    <Horizontal>
+      <pre>START</pre>
+      <div>middle</div>
+      <pre>END</pre>
+    </Horizontal>
   </Preview>
 );
 

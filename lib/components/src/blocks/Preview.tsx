@@ -20,6 +20,8 @@ export interface PreviewProps {
 const ChildrenContainer = styled.div<PreviewProps>(({ isColumn, columns }) => ({
   display: 'flex',
   flexWrap: 'wrap',
+  padding: '30px 20px',
+  overflow: 'auto',
   flexDirection: isColumn ? 'column' : 'row',
   marginTop: -20,
 
@@ -50,7 +52,6 @@ const StyledSource = styled(Source)<{}>(({ theme }) => ({
 const PreviewWrapper = styled.div<PreviewProps>(
   ({ theme, withSource, isExpanded }) => ({
     ...getBlockBackgroundStyle(theme),
-    padding: '30px 20px',
     position: 'relative',
     overflow: 'hidden',
     borderBottomLeftRadius: withSource && isExpanded && 0,
@@ -61,7 +62,8 @@ const PreviewWrapper = styled.div<PreviewProps>(
 );
 
 const PreviewContainer = styled.div({
-  margin: '25px 0 40px',
+  // padding: '25px 0 40px',
+  overflow: 'hidden',
 });
 
 interface SourceItem {
