@@ -49,21 +49,21 @@ const StyledSource = styled(Source)<{}>(({ theme }) => ({
   },
 }));
 
-const PreviewWrapper = styled.div<PreviewProps>(
-  {
-    position: 'relative',
-  },
+const PreviewWrapper = styled.div<PreviewProps>({
+  position: 'relative',
+});
+
+const PreviewContainer = styled.div<PreviewProps>(
+  ({ theme, withSource, isExpanded }) => ({
+    ...getBlockBackgroundStyle(theme),
+    overflow: 'hidden',
+    margin: '25px 0 40px',
+    borderBottomLeftRadius: withSource && isExpanded && 0,
+    borderBottomRightRadius: withSource && isExpanded && 0,
+    borderBottomWidth: isExpanded && 0,
+  }),
   ({ withToolbar }) => withToolbar && { paddingTop: 40 }
 );
-
-const PreviewContainer = styled.div<PreviewProps>(({ theme, withSource, isExpanded }) => ({
-  ...getBlockBackgroundStyle(theme),
-  overflow: 'hidden',
-  margin: '25px 0 40px',
-  borderBottomLeftRadius: withSource && isExpanded && 0,
-  borderBottomRightRadius: withSource && isExpanded && 0,
-  borderBottomWidth: isExpanded && 0,
-}));
 
 interface SourceItem {
   source?: ReactElement;
