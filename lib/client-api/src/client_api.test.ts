@@ -4,7 +4,7 @@ import ClientApi from './client_api';
 import ConfigApi from './config_api';
 import StoryStore from './story_store';
 
-export const getContext = (() => decorateStory => {
+const getContext = (() => decorateStory => {
   const channel = mockChannel();
   addons.setChannel(channel);
   const storyStore = new StoryStore({ channel });
