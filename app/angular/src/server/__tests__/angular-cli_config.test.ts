@@ -49,16 +49,17 @@ describe('angular-cli_config', () => {
         },
       },
     });
+  });
 
-    it('should return null if `architect.build` option are not exists.', () => {
-      const angularJsonWithNoBuildOptions = { ...angularJson };
-      angularJsonWithNoBuildOptions.projects['angular-cli'].architect.build = undefined;
+  it('should return null if `architect.build` option are not exists.', () => {
+    const angularJson = fs.readFileSync(path.resolve(__dirname, 'angular.json'), 'utf8');
+    const angularJsonWithNoBuildOptions = JSON.parse(stripJsonComments(angularJson));
+    angularJsonWithNoBuildOptions.projects['angular-cli'].architect.build = undefined;
 
-      setupFiles({ 'angular.json': JSON.stringify(angularJsonWithNoBuildOptions) });
+    getLeadingAngularCliProject(angularJsonWithNoBuildOptions);
 
-      const config = getAngularCliWebpackConfigOptions('/');
-      expect(config).toBeNull();
-    });
+    const config = getAngularCliWebpackConfigOptions('/');
+    expect(config).toBeNull();
   });
 
   it('should return baseConfig if no angular.json was found', () => {
