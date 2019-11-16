@@ -172,7 +172,6 @@ const Preview: FunctionComponent<PreviewProps> = ({
           ) : (
             <Scale scale={scale}>{children}</Scale>
           )}
-          {scale}
         </ChildrenContainer>
         {withSource && <ActionBar actionItems={[actionItem]} />}
       </Relative>
