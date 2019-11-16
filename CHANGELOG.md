@@ -1,3 +1,14 @@
+## 5.3.0-beta.0 (November 16, 2019)
+
+Storybook 5.3 is in beta y'all 🔥🔥🔥 It includes:
+
+- 📝 Longform documentation in MDX
+- 🎨 Multi-framework SB Docs (React, Vue, Angular, WC)
+- 📦 Web-components framework support
+- 🔼 Tri-config (experimental)
+
+See the [latest changelog](https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md) for a full list of changes.
+
 ## 5.3.0-alpha.47 (November 16, 2019)
 
 ### Features
