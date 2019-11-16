@@ -19,11 +19,11 @@ export interface PreviewProps {
 
 const ChildrenContainer = styled.div<PreviewProps>(({ isColumn, columns }) => ({
   display: 'flex',
+  position: 'relative',
   flexWrap: 'wrap',
-  padding: '30px 20px',
+  padding: '10px 20px 30px 20px',
   overflow: 'auto',
   flexDirection: isColumn ? 'column' : 'row',
-  marginTop: -20,
 
   '> *': {
     flex: columns ? `1 1 calc(100%/${columns} - 20px)` : `1 1 0%`,
@@ -49,15 +49,12 @@ const StyledSource = styled(Source)<{}>(({ theme }) => ({
   },
 }));
 
-const PreviewWrapper = styled.div<PreviewProps>({
-  position: 'relative',
-});
-
 const PreviewContainer = styled.div<PreviewProps>(
   ({ theme, withSource, isExpanded }) => ({
-    ...getBlockBackgroundStyle(theme),
+    position: 'relative',
     overflow: 'hidden',
     margin: '25px 0 40px',
+    ...getBlockBackgroundStyle(theme),
     borderBottomLeftRadius: withSource && isExpanded && 0,
     borderBottomRightRadius: withSource && isExpanded && 0,
     borderBottomWidth: isExpanded && 0,
@@ -110,6 +107,31 @@ function getStoryId(children: ReactNode) {
   return null;
 }
 
+const Relative = styled.div({
+  position: 'relative',
+});
+
+const Scale = styled.div<{ scale: number }>(
+  {
+    position: 'relative',
+  },
+  ({ scale }) =>
+    scale
+      ? {
+          transform: `scale(${1 / scale})`,
+          transformOrigin: 'top left',
+        }
+      : {}
+);
+
+const PositionedToolbar = styled(Toolbar)({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  height: 40,
+});
+
 /**
  * A preview component for showing one or more component `Story`
  * items. The preview also shows the source for the component
@@ -134,27 +156,26 @@ const Preview: FunctionComponent<PreviewProps> = ({
   const showToolbar = withToolbar && !Array.isArray(children);
   return (
     <PreviewContainer {...{ withSource, withToolbar: showToolbar }} {...props}>
-      <PreviewWrapper>
-        {showToolbar && (
-          <Toolbar
-            border
-            zoom={z => setScale(scale * z)}
-            resetZoom={() => setScale(1)}
-            storyId={getStoryId(children)}
-            baseUrl="./iframe.html"
-          />
-        )}
-        <ZoomContext.Provider value={{ scale }}>
-          <ChildrenContainer isColumn={isColumn} columns={columns}>
-            {Array.isArray(children) ? (
-              children.map((child, i) => <div key={i.toString()}>{child}</div>)
-            ) : (
-              <div>{children}</div>
-            )}
-          </ChildrenContainer>
-        </ZoomContext.Provider>
+      {showToolbar && (
+        <PositionedToolbar
+          border
+          zoom={z => setScale(scale * z)}
+          resetZoom={() => setScale(1)}
+          storyId={getStoryId(children)}
+          baseUrl="./iframe.html"
+        />
+      )}
+      <Relative>
+        <ChildrenContainer isColumn={isColumn} columns={columns}>
+          {Array.isArray(children) ? (
+            children.map((child, i) => <div key={i.toString()}>{child}</div>)
+          ) : (
+            <Scale scale={scale}>{children}</Scale>
+          )}
+          {scale}
+        </ChildrenContainer>
         {withSource && <ActionBar actionItems={[actionItem]} />}
-      </PreviewWrapper>
+      </Relative>
       {withSource && source}
     </PreviewContainer>
   );
