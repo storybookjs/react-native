@@ -56,7 +56,7 @@ const List = styled.div({
 
 const list = Object.keys(icons).sort() as IconKey[];
 
-storiesOf('Basics|Icon', module)
+storiesOf('Basics/Icon', module)
   .add('labels', () => (
     <List>
       {list.map(key => (

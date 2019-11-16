@@ -1,30 +1,29 @@
 import React from 'react';
 import { PropRow } from './PropRow';
-
 import { Table } from './PropsTable';
-import { DocsPageWrapper } from '../DocsPage';
+import { ResetWrapper } from '../../typography/DocumentFormatting';
 
 export default {
-  Component: PropRow,
-  title: 'Docs|PropRow',
+  component: PropRow,
+  title: 'Docs/PropRow',
   excludeStories: /.*Def$/,
   decorators: [
     getStory => (
-      <DocsPageWrapper>
+      <ResetWrapper>
         <Table>
           <tbody>{getStory()}</tbody>
         </Table>
-      </DocsPageWrapper>
+      </ResetWrapper>
     ),
   ],
 };
 
 export const stringDef = {
   name: 'someString',
-  type: { name: 'string' },
+  type: { summary: 'string' },
   required: true,
   description: 'someString description',
-  defaultValue: 'fixme',
+  defaultValue: { summary: 'fixme' },
 };
 
 export const longNameDef = {
@@ -39,31 +38,32 @@ export const longDescDef = {
 
 export const numberDef = {
   name: 'someNumber',
-  type: { name: 'number' },
+  type: { summary: 'number' },
   required: false,
   description: 'someNumber description',
-  defaultValue: 0,
+  defaultValue: { summary: '0' },
 };
 
 export const objectDef = {
   name: 'someObject',
-  type: { name: 'objectOf', value: { name: 'number' } },
+  type: { summary: 'objectOf(number)' },
   required: false,
   description: 'A simple `objectOf` propType.',
-  defaultValue: { value: '{ key: 1 }', computed: false },
+  defaultValue: { summary: '{ key: 1 }' },
 };
 
 export const arrayDef = {
   name: 'someOArray',
-  type: { name: 'arrayOf', value: { name: 'number' } },
+  type: { summary: '[ number ]' },
   required: false,
   description: 'array of a certain type',
-  defaultValue: { value: '[1, 2, 3]', computed: false },
+  defaultValue: { summary: '[1, 2, 3]' },
 };
 
 export const complexDef = {
   name: 'someComplex',
   type: {
+    summary: 'object',
     name: 'objectOf',
     value: {
       name: 'shape',
@@ -105,10 +105,34 @@ export const complexDef = {
   },
 };
 
+export const funcDef = {
+  name: 'concat',
+  type: { summary: '(a: string, b: string) => string' },
+  required: true,
+  description: 'concat 2 string values.',
+  defaultValue: { summary: 'func', detail: '(a, b) => { return a + b; }' },
+  jsDocTags: {
+    params: [
+      { name: 'a', description: 'The first string' },
+      { name: 'b', description: 'The second string' },
+    ],
+    returns: { description: 'The concatenation of both strings' },
+  },
+};
+
+export const markdownDef = {
+  name: 'someString',
+  type: { summary: 'string' },
+  required: false,
+  description:
+    'A `prop` can *support* __markdown__ syntax. This was ship in ~~5.2~~ 5.3. [Find more info in the storybook docs.](https://storybook.js.org/)',
+};
+
 export const string = () => <PropRow row={stringDef} />;
 export const longName = () => <PropRow row={longNameDef} />;
 export const longDesc = () => <PropRow row={longDescDef} />;
 export const number = () => <PropRow row={numberDef} />;
 export const objectOf = () => <PropRow row={objectDef} />;
 export const arrayOf = () => <PropRow row={arrayDef} />;
-export const complex = () => <PropRow row={complexDef} />;
+export const func = () => <PropRow row={funcDef} />;
+export const markdown = () => <PropRow row={markdownDef} />;

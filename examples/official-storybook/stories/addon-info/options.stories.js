@@ -8,7 +8,7 @@ import TableComponent from '../../components/TableComponent';
 import { markdownDescription } from './markdown.stories';
 
 export default {
-  title: 'Addons|Info/Options',
+  title: 'Addons/Info/Options',
   decorators: [withInfo],
 };
 
@@ -128,8 +128,8 @@ fullControlOverStylesUsingAFunction.story = {
 export const useACustomComponentForTheTable = () => <BaseButton label="Button" />;
 useACustomComponentForTheTable.story = {
   name: 'Use a custom component for the table',
+  component: TableComponent,
   parameters: {
-    component: TableComponent,
     info: {
       TableComponent,
     },
@@ -140,14 +140,12 @@ export const useInfoAsStoryDecorator = () => <BaseButton label="Button" />;
 
 useInfoAsStoryDecorator.story = {
   name: 'Use Info as story decorator',
-  parameters: {
-    decorators: [withInfo('Info can take options via the global or local decorator as well.')],
-  },
+  decorators: [withInfo('Info can take options via the global or local decorator as well.')],
 };
 
-export const usingParamatersAcrossAllStories = () => <BaseButton label="Button" />;
-usingParamatersAcrossAllStories.story = {
-  name: 'Using paramaters across all stories',
+export const usingParametersAcrossAllStories = () => <BaseButton label="Button" />;
+usingParametersAcrossAllStories.story = {
+  name: 'Using parameters across all stories',
 };
 
 export const overwritingAndExtendingTheParametersAndOptionsSetStoriesWise = () => (

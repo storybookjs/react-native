@@ -7,10 +7,7 @@ export function webpack(config) {
         ...config.module.rules,
         {
           test: /\.marko$/,
-          loader: require.resolve('marko-loader'),
-          options: {
-            compiler: require.resolve('marko/compiler'),
-          },
+          loader: require.resolve('@marko/webpack/loader'),
         },
       ],
     },

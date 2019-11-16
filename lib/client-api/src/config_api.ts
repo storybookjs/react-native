@@ -70,7 +70,7 @@ export default class ConfigApi {
 
         throw errors[0];
       } else {
-        this._storyStore.setSelection(undefined, undefined);
+        this._storyStore.setSelection(undefined, null);
       }
     };
 

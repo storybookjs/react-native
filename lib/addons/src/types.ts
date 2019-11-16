@@ -1,3 +1,4 @@
+import { HooksContext } from './hooks';
 import { Addon } from './index';
 
 export enum types {
@@ -26,6 +27,7 @@ export interface StoryContext {
   kind: string;
   [key: string]: any;
   parameters: Parameters;
+  hooks?: HooksContext;
 }
 
 export interface WrapperSettings {
@@ -39,6 +41,7 @@ export interface OptionsParameter extends Object {
   storySort?: any;
   hierarchyRootSeparator?: string;
   hierarchySeparator?: RegExp;
+  showRoots?: boolean;
   theme?: {
     base: string;
     brandTitle?: string;
@@ -57,39 +60,46 @@ export type StoryWrapper = (
 
 export type MakeDecoratorResult = (...args: any) => any;
 
-export interface AddStoryArgs<ReturnType = unknown> {
+export interface AddStoryArgs<StoryFnReturnType = unknown> {
   id: string;
   kind: string;
   name: string;
-  storyFn: StoryFn<ReturnType>;
+  storyFn: StoryFn<StoryFnReturnType>;
   parameters: Parameters;
 }
 
-export interface ClientApiAddon<TApi = unknown> extends Addon {
-  apply: (a: StoryApi<TApi>, b: any[]) => any;
+export interface ClientApiAddon<StoryFnReturnType = unknown> extends Addon {
+  apply: (a: StoryApi<StoryFnReturnType>, b: any[]) => any;
 }
-export interface ClientApiAddons<TApi> {
-  [key: string]: ClientApiAddon<TApi>;
+export interface ClientApiAddons<StoryFnReturnType> {
+  [key: string]: ClientApiAddon<StoryFnReturnType>;
 }
 
-export type ClientApiReturnFn<TApi> = (...args: any[]) => StoryApi<TApi>;
+export type ClientApiReturnFn<StoryFnReturnType> = (...args: any[]) => StoryApi<StoryFnReturnType>;
 
-export interface StoryApi<StoryFnReturnType> {
+export interface StoryApi<StoryFnReturnType = unknown> {
   kind: string;
   add: (
     storyName: string,
     storyFn: StoryFn<StoryFnReturnType>,
     parameters?: Parameters
   ) => StoryApi<StoryFnReturnType>;
-  addDecorator: (decorator: DecoratorFunction) => StoryApi<StoryFnReturnType>;
+  addDecorator: (decorator: DecoratorFunction<StoryFnReturnType>) => StoryApi<StoryFnReturnType>;
   addParameters: (parameters: Parameters) => StoryApi<StoryFnReturnType>;
   [k: string]: string | ClientApiReturnFn<StoryFnReturnType>;
 }
 
-export type DecoratorFunction = (fn: StoryFn, c: StoryContext) => ReturnType<StoryFn>;
+export type DecoratorFunction<StoryFnReturnType = unknown> = (
+  fn: StoryFn<StoryFnReturnType>,
+  c: StoryContext
+) => ReturnType<StoryFn<StoryFnReturnType>>;
 
-export interface ClientStoryApi<TApi> {
-  storiesOf(kind: string, module: NodeModule): StoryApi<TApi>;
-  addDecorator(decorator: DecoratorFunction): StoryApi<TApi>;
-  addParameters(parameter: Parameters): StoryApi<TApi>;
+export interface ClientStoryApi<StoryFnReturnType = unknown> {
+  storiesOf(kind: string, module: NodeModule): StoryApi<StoryFnReturnType>;
+  addDecorator(decorator: DecoratorFunction<StoryFnReturnType>): StoryApi<StoryFnReturnType>;
+  addParameters(parameter: Parameters): StoryApi<StoryFnReturnType>;
 }
+
+type LoadFn = () => any;
+type RequireContext = any; // FIXME
+export type Loadable = RequireContext | [RequireContext] | LoadFn;

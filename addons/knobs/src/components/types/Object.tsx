@@ -1,18 +1,12 @@
-import React, { Component, ChangeEvent } from 'react';
+import React, { Component, ChangeEvent, Validator } from 'react';
 import PropTypes from 'prop-types';
 import deepEqual from 'fast-deep-equal';
 import { polyfill } from 'react-lifecycles-compat';
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
-export interface ObjectTypeKnob<T> {
-  name: string;
-  value: T;
-}
-
-interface ObjectTypeProps<T> {
-  knob: ObjectTypeKnob<T>;
-  onChange: (value: T) => T;
-}
+export type ObjectTypeKnob<T> = KnobControlConfig<T>;
+type ObjectTypeProps<T> = KnobControlProps<T>;
 
 interface ObjectTypeState<T> {
   value: string;
@@ -25,8 +19,13 @@ class ObjectType<T> extends Component<ObjectTypeProps<T>> {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-    }).isRequired,
-    onChange: PropTypes.func.isRequired,
+    }).isRequired as Validator<ObjectTypeProps<any>['knob']>,
+    onChange: PropTypes.func.isRequired as Validator<ObjectTypeProps<any>['onChange']>,
+  };
+
+  static defaultProps: ObjectTypeProps<any> = {
+    knob: {} as any,
+    onChange: value => value,
   };
 
   static serialize: { <T>(object: T): string } = object => JSON.stringify(object);
@@ -36,7 +35,7 @@ class ObjectType<T> extends Component<ObjectTypeProps<T>> {
   static getDerivedStateFromProps<T>(
     props: ObjectTypeProps<T>,
     state: ObjectTypeState<T>
-  ): ObjectTypeState<T> {
+  ): ObjectTypeState<T> | null {
     if (!deepEqual(props.knob.value, state.json)) {
       try {
         return {
@@ -87,7 +86,7 @@ class ObjectType<T> extends Component<ObjectTypeProps<T>> {
     return (
       <Form.Textarea
         name={knob.name}
-        valid={failed ? 'error' : null}
+        valid={failed ? 'error' : undefined}
         value={value}
         onChange={this.handleChange}
         size="flex"
@@ -96,6 +95,6 @@ class ObjectType<T> extends Component<ObjectTypeProps<T>> {
   }
 }
 
-polyfill(ObjectType);
+polyfill(ObjectType as any);
 
 export default ObjectType;

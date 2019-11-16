@@ -18,7 +18,7 @@ npx -p @storybook/cli sb init --type react_native
 
 **1. Add `@storybook/react-native` to your project.**
 
-To use React Native Storybook you need to have it as a dependency in your project. To do that, simply run:
+To use React Native Storybook you need to have it as a dependency in your project. To do that, run:
 
 ```sh
 npm i --save-dev @storybook/react-native
@@ -78,7 +78,7 @@ The easiest solution is to replace your app entry with:
 export default from './storybook';
 ```
 
-If you cannot replace your entry point just make sure that the component exported from `./storybook` is displayed somewhere in your app. `StorybookUI` is simply a RN `View` component that can be embedded anywhere in your RN application, e.g. on a tab or within an admin screen.
+If you cannot replace your entry point, make sure that the component exported from `./storybook` is displayed somewhere in your app. `StorybookUI` is a RN `View` component that can be embedded anywhere in your RN application, e.g. on a tab or within an admin screen.
 
 ---
 
@@ -169,9 +169,9 @@ Because on device addons are inside the app, they are also rerendered on every c
 
 ## Storybook server
 
-Storybook RN server, `@storybook/react-native-server` is a seperate package that provides a standalone server that the Storybook ondevice client can connect to.
+Storybook RN server, `@storybook/react-native-server` is a separate package that provides a standalone server that the Storybook ondevice client can connect to.
 
-Running storybook server gives a few advantages over simply running on-device:
+Running storybook server gives a few advantages over running on-device:
 
 **Websockets connection.** By using websockets connection you can create your own tools that integrate with your storybook app and control it from outside of your app.
 
@@ -193,7 +193,7 @@ Then:
 {
   "scripts": {
     ...
-    "storybook": "start-storybook -p 6006"
+    "storybook": "(adb reverse tcp:7007 tcp:7007 || true) && start-storybook"
   }
 }
 ```
@@ -203,6 +203,11 @@ Finally:
 ```sh
 npm run storybook
 ```
+
+**Note** You can change port to custom with `start-storybook -p=YOUR_PORT_NUMBER`, but then you also have to pass it as an option to `getStorybookUI({port: YOUR_PORT_NUMBER})`. If you are running on android, there might be need to run `adb reverse tcp:YOUR_PORT_NUMBER tcp:YOUR_PORT_NUMBER`.
+
+### Start App
+To see your Storybook stories on the device, you should start your mobile app for the <platform> of your choice (typically ios or android). (Note that due to an implementation detail, your stories will only show up in the left pane of your browser window after your device has connected to this storybook server.)
 
 ### Historical notes
 

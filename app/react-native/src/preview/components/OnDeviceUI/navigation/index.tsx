@@ -1,23 +1,14 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { PureComponent } from 'react';
-import { View, SafeAreaView, StyleSheet } from 'react-native';
-import GestureRecognizer, { GestureRecognizerConfig } from 'react-native-swipe-gestures';
+import { View, SafeAreaView } from 'react-native';
+import GestureRecognizer from 'react-native-swipe-gestures';
 import Bar from './bar';
 import VisibilityButton from './visibility-button';
 
-const SWIPE_CONFIG: GestureRecognizerConfig = {
+const SWIPE_CONFIG = {
   velocityThreshold: 0.2,
   directionalOffsetThreshold: 80,
 };
-
-const style = StyleSheet.create({
-  wrapper: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-});
 
 interface Props {
   initialUiVisible?: boolean;
@@ -55,7 +46,7 @@ export default class Navigation extends PureComponent<Props> {
     const { isUIVisible } = this.state;
 
     return (
-      <View style={style.wrapper}>
+      <View>
         <SafeAreaView>
           {isUIVisible && (
             <GestureRecognizer

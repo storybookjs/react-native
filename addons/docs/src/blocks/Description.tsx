@@ -1,13 +1,14 @@
-/* eslint-disable no-underscore-dangle */
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Description, DescriptionProps as PureDescriptionProps } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, CURRENT_SELECTION } from './shared';
+import { str } from '../lib/docgen/utils';
 
 export enum DescriptionType {
   INFO = 'info',
   NOTES = 'notes',
   DOCGEN = 'docgen',
+  LEGACY_5_2 = 'legacy-5.2',
   AUTO = 'auto',
 }
 
@@ -21,12 +22,11 @@ interface DescriptionProps {
 }
 
 const getNotes = (notes?: Notes) =>
-  notes && (typeof notes === 'string' ? notes : notes.markdown || notes.text);
+  notes && (typeof notes === 'string' ? notes : str(notes.markdown) || str(notes.text));
 
-const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : info.text);
+const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
 
-const getDocgen = (component?: Component) =>
-  (component && component.__docgenInfo && component.__docgenInfo.description) || '';
+const noDescription = (component?: Component): string | null => null;
 
 export const getDescriptionProps = (
   { of, type, markdown }: DescriptionProps,
@@ -35,28 +35,31 @@ export const getDescriptionProps = (
   if (markdown) {
     return { markdown };
   }
-  const { component, notes, info } = parameters;
+  const { component, notes, info, docs } = parameters;
+  const { extractComponentDescription = noDescription } = docs || {};
   const target = of === CURRENT_SELECTION ? component : of;
   switch (type) {
     case DescriptionType.INFO:
       return { markdown: getInfo(info) };
     case DescriptionType.NOTES:
       return { markdown: getNotes(notes) };
-    case DescriptionType.DOCGEN:
-      return { markdown: getDocgen(target) };
-    case DescriptionType.AUTO:
-    default:
+    // FIXME: remove in 6.0
+    case DescriptionType.LEGACY_5_2:
       return {
         markdown: `
 ${getNotes(notes) || getInfo(info) || ''}
 
-${getDocgen(target)}
+${extractComponentDescription(target) || ''}
 `.trim(),
       };
+    case DescriptionType.DOCGEN:
+    case DescriptionType.AUTO:
+    default:
+      return { markdown: extractComponentDescription(target, parameters) };
   }
 };
 
-const DescriptionContainer: React.FunctionComponent<DescriptionProps> = props => (
+const DescriptionContainer: FunctionComponent<DescriptionProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const { markdown } = getDescriptionProps(props, context);

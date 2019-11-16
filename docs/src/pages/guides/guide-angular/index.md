@@ -55,33 +55,10 @@ To do that, create a file at `.storybook/config.js` with the following content:
 ```ts
 import { configure } from '@storybook/angular';
 
-function loadStories() {
-  require('../stories/index.js');
-  // You can require as many stories as you need.
-}
-
-configure(loadStories, module);
+configure(require.context('../src', true, /\.stories\.[tj]s$/), module);
 ```
 
-That'll load stories in `../stories/index.js`. You can choose where to place stories, you can co-locate them with source files, or place them in an other directory.
-
-> Requiring all your stories becomes bothersome real quick, so you can use this to load all stories matching a glob.
-> 
-> <details>
->   <summary>details</summary>
-> 
-> ```ts
-> import { configure } from '@storybook/angular';
-> 
-> function loadStories() {
->   const req = require.context('../stories', true, /\.stories\.ts$/);
->   req.keys().forEach(filename => req(filename));
-> }
-> 
-> configure(loadStories, module);
-> ```
-> 
-> </details>
+That will load all the stories underneath your `../src` directory that match the pattern `*.stories.[tj]sx?`. We recommend co-locating your stories with your source files, but you can place them wherever you choose.
 
 ## Step 4: Storybook TypeScript configuration
 
@@ -105,33 +82,34 @@ This makes it necessary to create a `tsconfig.json` file at `.storybook/tsconfig
 
 ## Step 5: Write your stories
 
-Now create a `../stories/index.js` file, and write your first story like this:
+Now create a `../src/index.stories.js` file, and write your first story like this:
 
 ```ts
-import { storiesOf } from '@storybook/angular';
 import { Button } from '@storybook/angular/demo';
 
-storiesOf('My Button', module)
- .add('with text', () => ({
-    component: Button,
-    props: {
-      text: 'Hello Button',
-    },
-  }))
-  .add('with emoji', () => ({
-    component: Button,
-    props: {
-      text: '😀 😎 👍 💯',
-    },
-  }));
+export default { title: 'My Button' }
+
+export const withText = () => ({
+  component: Button,
+  props: {
+    text: 'Hello Button',
+  },
+});
+
+export const withEmoji = () => ({
+  component: Button,
+  props: {
+    text: '😀 😎 👍 💯',
+  },
+});
 ```
 
 Each story is a single state of your component. In the above case, there are two stories for the demo button component:
 
 ```plaintext
 Button
-  ├── with text
-  └── with emoji
+  ├── With Text
+  └── With Emoji
 ```
 
 ## Finally: Run your Storybook

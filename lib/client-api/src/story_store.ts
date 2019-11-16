@@ -2,7 +2,8 @@
 import EventEmitter from 'eventemitter3';
 import memoize from 'memoizerific';
 import debounce from 'lodash/debounce';
-import { stripIndents } from 'common-tags';
+import dedent from 'ts-dedent';
+import stable from 'stable';
 
 import { Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
@@ -17,13 +18,12 @@ import {
   StoreItem,
   ErrorLike,
 } from './types';
+import { HooksContext } from './hooks';
 
 // TODO: these are copies from components/nav/lib
 // refactor to DRY
 const toKey = (input: string) =>
   input.replace(/[^a-z0-9]+([a-z0-9])/gi, (...params) => params[1].toUpperCase());
-
-const toChild = (it: {}) => ({ ...it });
 
 let count = 0;
 
@@ -37,6 +37,9 @@ const toExtracted = <T>(obj: T) =>
     if (typeof value === 'function') {
       return acc;
     }
+    if (key === 'hooks') {
+      return acc;
+    }
     if (Array.isArray(value)) {
       return Object.assign(acc, { [key]: value.slice().sort() });
     }
@@ -47,6 +50,21 @@ interface Selection {
   storyId: string;
   viewMode: string;
 }
+
+interface StoryOptions {
+  includeDocsOnly?: boolean;
+}
+
+const isStoryDocsOnly = (parameters?: Parameters) => {
+  return parameters && parameters.docsOnly;
+};
+
+const includeStory = (story: StoreItem, options: StoryOptions = { includeDocsOnly: false }) => {
+  if (options.includeDocsOnly) {
+    return true;
+  }
+  return !isStoryDocsOnly(story.parameters);
+};
 
 export default class StoryStore extends EventEmitter {
   _error?: ErrorLike;
@@ -95,15 +113,16 @@ export default class StoryStore extends EventEmitter {
     }
   };
 
-  raw() {
+  raw(options?: StoryOptions) {
     return Object.values(this._data)
       .filter(i => !!i.getDecorated)
+      .filter(i => includeStory(i, options))
       .map(({ id }) => this.fromId(id));
   }
 
-  extract() {
+  extract(options?: StoryOptions) {
     const stories = Object.entries(this._data);
-    // determine if we should apply a sort to the stories or just use default import order
+    // determine if we should apply a sort to the stories or use default import order
     if (Object.values(this._data).length > 0) {
       const index = Object.keys(this._data).find(
         key =>
@@ -111,11 +130,14 @@ export default class StoryStore extends EventEmitter {
       );
       if (index && this._data[index].parameters.options.storySort) {
         const sortFn = this._data[index].parameters.options.storySort;
-        stories.sort(sortFn);
+        stable.inplace(stories, sortFn);
       }
     }
     // removes function values from all stories so they are safe to transport over the channel
-    return stories.reduce((a, [k, v]) => Object.assign(a, { [k]: toExtracted(v) }), {});
+    return stories.reduce(
+      (a, [k, v]) => (includeStory(v, options) ? Object.assign(a, { [k]: toExtracted(v) }) : a),
+      {}
+    );
   }
 
   setSelection(data: Selection | undefined, error: ErrorLike): void {
@@ -144,6 +166,7 @@ export default class StoryStore extends EventEmitter {
     delete _data[id];
 
     if (story) {
+      story.hooks.clean();
       const { kind, name } = story;
       const kindData = this._legacydata[toKey(kind)];
       if (kindData) {
@@ -165,11 +188,11 @@ export default class StoryStore extends EventEmitter {
     const { _data } = this;
 
     if (_data[id]) {
-      logger.warn(stripIndents`
+      logger.warn(dedent`
         Story with id ${id} already exists in the store!
 
         Perhaps you added the same story twice, or you have a name collision?
-        Story ids need to be unique -- ensure you aren't using the same names modolo url-sanitization.
+        Story ids need to be unique -- ensure you aren't using the same names modulo url-sanitization.
       `);
     }
 
@@ -188,12 +211,20 @@ export default class StoryStore extends EventEmitter {
       applyDecorators(getOriginal(), getDecorators())
     );
 
-    const storyFn: StoryFn = (p: object) =>
-      getDecorated()({ ...identification, parameters: { ...parameters, ...p } });
+    const hooks = new HooksContext();
+
+    const storyFn: StoryFn = p =>
+      getDecorated()({
+        ...identification,
+        ...p,
+        hooks,
+        parameters: { ...parameters, ...(p && p.parameters) },
+      });
 
     _data[id] = {
       ...identification,
 
+      hooks,
       getDecorated,
       getOriginal,
       storyFn,
@@ -202,7 +233,9 @@ export default class StoryStore extends EventEmitter {
     };
 
     // LEGACY DATA
-    this.addLegacyStory({ kind, name, storyFn, parameters });
+    if (!isStoryDocsOnly(parameters)) {
+      this.addLegacyStory({ kind, name, storyFn, parameters });
+    }
 
     // LET'S SEND IT TO THE MANAGER
     this.pushToManager();
@@ -210,7 +243,7 @@ export default class StoryStore extends EventEmitter {
 
   pushToManager = debounce(() => {
     if (this._channel) {
-      const stories = this.extract();
+      const stories = this.extract({ includeDocsOnly: true });
 
       // send to the parent frame.
       this._channel.emit(Events.SET_STORIES, { stories });
@@ -276,6 +309,10 @@ export default class StoryStore extends EventEmitter {
       .map(info => info.name);
   }
 
+  getStoriesForKind(kind: string) {
+    return this.raw().filter(story => story.kind === kind);
+  }
+
   getStoryFileName(kind: string) {
     const key = toKey(kind);
     const storiesKind = this._legacydata[key as string];
@@ -325,13 +362,14 @@ export default class StoryStore extends EventEmitter {
   removeStoryKind(kind: string) {
     if (this.hasStoryKind(kind)) {
       this._legacydata[toKey(kind)].stories = {};
-
+      this.cleanHooksForKind(kind);
       this._data = Object.entries(this._data).reduce((acc, [id, story]) => {
         if (story.kind !== kind) {
           Object.assign(acc, { [id]: story });
         }
         return acc;
       }, {});
+      this.pushToManager();
     }
   }
 
@@ -358,5 +396,15 @@ export default class StoryStore extends EventEmitter {
 
   clean() {
     this.getStoryKinds().forEach(kind => delete this._legacydata[toKey(kind) as string]);
+  }
+
+  cleanHooks(id: string) {
+    if (this._data[id]) {
+      this._data[id].hooks.clean();
+    }
+  }
+
+  cleanHooksForKind(kind: string) {
+    this.getStoriesForKind(kind).map(story => this.cleanHooks(story.id));
   }
 }

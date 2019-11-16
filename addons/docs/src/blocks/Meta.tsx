@@ -1,9 +1,10 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 
 type Decorator = (...args: any) => any;
 
 interface MetaProps {
   title: string;
+  component?: any;
   decorators?: [Decorator];
   parameters?: any;
 }
@@ -13,4 +14,4 @@ interface MetaProps {
  * and gets transformed into a default export underneath the hood.
  * It doesn't actually render anything.
  */
-export const Meta: React.FunctionComponent<MetaProps> = props => null;
+export const Meta: FunctionComponent<MetaProps> = props => null;

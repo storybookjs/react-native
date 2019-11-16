@@ -1,19 +1,12 @@
-import React, { Component, ChangeEvent, WeakValidationMap } from 'react';
+import React, { Component, ChangeEvent, Validator } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 type DateTypeKnobValue = number;
-
-export interface DateTypeKnob {
-  name: string;
-  value: DateTypeKnobValue;
-}
-
-interface DateTypeProps {
-  knob: DateTypeKnob;
-  onChange: (value: DateTypeKnobValue) => DateTypeKnobValue;
-}
+export type DateTypeKnob = KnobControlConfig<DateTypeKnobValue>;
+type DateTypeProps = KnobControlProps<DateTypeKnobValue>;
 
 interface DateTypeState {
   valid: boolean | undefined;
@@ -52,13 +45,12 @@ export default class DateType extends Component<DateTypeProps, DateTypeState> {
     onChange: value => value,
   };
 
-  static propTypes: WeakValidationMap<DateTypeProps> = {
-    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+  static propTypes = {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.number,
-    }) as any,
-    onChange: PropTypes.func,
+    }) as Validator<DateTypeProps['knob']>,
+    onChange: PropTypes.func as Validator<DateTypeProps['onChange']>,
   };
 
   static serialize = (value: DateTypeKnobValue) =>
@@ -74,10 +66,6 @@ export default class DateType extends Component<DateTypeProps, DateTypeState> {
   state: DateTypeState = {
     valid: undefined,
   };
-
-  dateInput: HTMLInputElement;
-
-  timeInput: HTMLInputElement;
 
   componentDidUpdate() {
     const { knob } = this.props;
@@ -130,6 +118,10 @@ export default class DateType extends Component<DateTypeProps, DateTypeState> {
       this.setState({ valid });
     }
   };
+
+  dateInput!: HTMLInputElement;
+
+  timeInput!: HTMLInputElement;
 
   render() {
     const { knob } = this.props;

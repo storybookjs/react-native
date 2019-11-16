@@ -1,5 +1,5 @@
 export default {
-  title: 'Addon|Backgrounds',
+  title: 'Addon/Backgrounds',
 
   parameters: {
     backgrounds: [

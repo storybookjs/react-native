@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Addons/Centered Button  1`] = `
+Object {
+  "__": null,
+  "__b": 0,
+  "__c": null,
+  "__d": null,
+  "__e": null,
+  "__k": null,
+  "constructor": undefined,
+  "key": undefined,
+  "props": Object {
+    "children": Object {
+      "__": null,
+      "__b": 0,
+      "__c": null,
+      "__d": null,
+      "__e": null,
+      "__k": null,
+      "constructor": undefined,
+      "key": undefined,
+      "props": Object {
+        "children": VNode {
+          "attributes": undefined,
+          "children": Array [
+            "A button",
+          ],
+          "key": undefined,
+          "nodeName": [Function],
+        },
+        "style": Object {
+          "margin": "auto",
+          "maxHeight": "100%",
+        },
+      },
+      "ref": undefined,
+      "type": "div",
+    },
+    "style": Object {
+      "alignItems": "center",
+      "bottom": "0",
+      "display": "flex",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
+    },
+  },
+  "ref": undefined,
+  "type": "div",
+}
+`;

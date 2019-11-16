@@ -1,6 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TextInput, View, Slider } from 'react-native';
+import { View, Slider } from 'react-native';
+import styled from '@emotion/native';
+
+const Input = styled.TextInput(({ theme }) => ({
+  borderWidth: 1,
+  borderColor: theme.borderColor,
+  borderRadius: 2,
+  fontSize: 13,
+  padding: 5,
+  color: theme.labelColor,
+}));
 
 class NumberType extends React.Component {
   constructor(props) {
@@ -9,23 +19,33 @@ class NumberType extends React.Component {
     this.renderRange = this.renderRange.bind(this);
   }
 
+  numberTransformer = x => {
+    if (Number.isNaN(Number(x))) {
+      return x.substr(0, x.length - 1);
+    }
+
+    return x;
+  };
+
+  onChangeNormal = value => {
+    const { onChange } = this.props;
+
+    if (!Number.isNaN(value)) {
+      onChange(value);
+    }
+  };
+
   renderNormal() {
-    const { knob, onChange } = this.props;
+    const { knob } = this.props;
 
     return (
-      <TextInput
-        style={{
-          borderWidth: 1,
-          borderColor: '#f7f4f4',
-          borderRadius: 2,
-          fontSize: 13,
-          padding: 5,
-          color: '#555',
-        }}
+      <Input
+        autoCapitalize="none"
         underlineColorAndroid="transparent"
-        value={knob.value.toString()}
+        value={(knob.value || '').toString()}
+        transformer={this.numberTransformer}
         keyboardType="numeric"
-        onChangeText={val => onChange(parseFloat(val))}
+        onChangeText={this.onChangeNormal}
       />
     );
   }
@@ -61,7 +81,7 @@ NumberType.defaultProps = {
 NumberType.propTypes = {
   knob: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.number,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     step: PropTypes.number,
     min: PropTypes.number,
     max: PropTypes.number,

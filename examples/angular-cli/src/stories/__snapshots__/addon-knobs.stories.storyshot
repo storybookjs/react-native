@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Knobs All knobs 1`] = `
+exports[`Storyshots Addon/Knobs All knobs 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -51,7 +51,7 @@ exports[`Storyshots Addon|Knobs All knobs 1`] = `
 </storybook-dynamic-app-root>
 `;
 
-exports[`Storyshots Addon|Knobs Simple 1`] = `
+exports[`Storyshots Addon/Knobs Simple 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -76,7 +76,7 @@ exports[`Storyshots Addon|Knobs Simple 1`] = `
 </storybook-dynamic-app-root>
 `;
 
-exports[`Storyshots Addon|Knobs XSS safety 1`] = `
+exports[`Storyshots Addon/Knobs XSS safety 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}

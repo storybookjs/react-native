@@ -38,23 +38,10 @@ addParameters({
      */
     panelPosition: 'bottom',
     /**
-     * regex for finding the hierarchy separator
-     * @example:
-     *   null - turn off hierarchy
-     *   /\// - split by `/`
-     *   /\./ - split by `.`
-     *   /\/|\./ - split by `/` or `.`
-     * @type {Regex}
+     * display the top-level grouping as a "root" in the sidebar
+     * @type {Boolean}
      */
-    hierarchySeparator: /\/|\./,
-    /**
-     * regex for finding the hierarchy root separator
-     * @example:
-     *   null - turn off multiple hierarchy roots
-     *   /\|/ - split by `|`
-     * @type {Regex}
-     */
-    hierarchyRootSeparator: /\|/,
+    showRoots: null,
     /**
      * sidebar tree animations
      * @type {Boolean}
@@ -75,13 +62,13 @@ addParameters({
      */
     theme: undefined,
     /**
-    * function to sort stories in the tree view
-    * common use is alphabetical `(a, b) => a[1].id.localeCompare(b[1].id)`
-    * if left undefined, then the order in which the stories are imported will
-    * be the order they display
-    * @type {Function}
-    */
-    storySort: undefined
+     * function to sort stories in the tree view
+     * common use is alphabetical `(a, b) => a[1].id.localeCompare(b[1].id)`
+     * if left undefined, then the order in which the stories are imported will
+     * be the order they display
+     * @type {Function}
+     */
+    storySort: undefined,
   },
 });
 ```

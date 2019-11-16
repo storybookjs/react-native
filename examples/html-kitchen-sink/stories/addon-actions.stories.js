@@ -5,7 +5,7 @@ const pickTarget = decorate([args => [args[0].target]]);
 const button = () => `<button type="button">Hello World</button>`;
 
 export default {
-  title: 'Addons|Actions',
+  title: 'Addons/Actions',
 };
 
 export const story1 = () => withActions('click')(button);
@@ -31,9 +31,10 @@ export const story5 = () =>
 story5.story = { name: 'Multiple actions, selector' };
 
 export const story6 = () =>
-  withActions({ click: 'clicked', contextmenu: 'right clicked' }, { clearOnStoryChange: false })(
-    button
-  );
+  withActions(
+    { click: 'clicked', contextmenu: 'right clicked' },
+    { clearOnStoryChange: false }
+  )(button);
 story6.story = { name: 'Multiple actions, object + config' };
 
 export const story7 = () => pickTarget.withActions('click', 'contextmenu')(button);

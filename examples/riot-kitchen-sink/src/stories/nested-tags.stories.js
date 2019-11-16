@@ -5,7 +5,7 @@ import './AnotherTest.tag';
 const simpleTestCompiled = asCompiledCode(SimpleTestRaw);
 
 export default {
-  title: 'Story|Nest tags',
+  title: 'Story/Nest tags',
 };
 
 export const threeTags = () => ({

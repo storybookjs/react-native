@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment, ComponentType } from 'react';
+import React, { PureComponent, Fragment, Validator } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { document } from 'global';
@@ -14,9 +14,10 @@ import {
   Link,
   ScrollArea,
 } from '@storybook/components';
+import { API } from '@storybook/api';
 import { RESET, SET, CHANGE, SET_OPTIONS, CLICK } from '../shared';
 
-import Types from './types';
+import { getKnobControl } from './types';
 import PropForm from './PropForm';
 import { KnobStoreKnob } from '../KnobStore';
 
@@ -41,13 +42,7 @@ interface PanelKnobGroups {
 interface KnobPanelProps {
   active: boolean;
   onReset?: object;
-  api: {
-    on: Function;
-    off: Function;
-    emit: Function;
-    getQueryParam: Function;
-    setQueryParams: Function;
-  };
+  api: Pick<API, 'on' | 'off' | 'emit' | 'getQueryParam' | 'setQueryParams'>;
 }
 
 interface KnobPanelState {
@@ -58,20 +53,28 @@ interface KnobPanelOptions {
   timestamps?: boolean;
 }
 
-type KnobControlType = ComponentType<any> & {
-  serialize: (v: any) => any;
-  deserialize: (v: any) => any;
-};
-
 export default class KnobPanel extends PureComponent<KnobPanelProps> {
   static propTypes = {
-    active: PropTypes.bool.isRequired,
-    onReset: PropTypes.object, // eslint-disable-line
+    active: PropTypes.bool.isRequired as Validator<KnobPanelProps['active']>,
+    onReset: PropTypes.object as Validator<KnobPanelProps['onReset']>, // eslint-disable-line
     api: PropTypes.shape({
       on: PropTypes.func,
+      off: PropTypes.func,
+      emit: PropTypes.func,
       getQueryParam: PropTypes.func,
       setQueryParams: PropTypes.func,
-    }).isRequired,
+    }).isRequired as Validator<KnobPanelProps['api']>,
+  };
+
+  static defaultProps: KnobPanelProps = {
+    active: true,
+    api: {
+      on: () => () => {},
+      off: () => {},
+      emit: () => {},
+      getQueryParam: () => undefined,
+      setQueryParams: () => {},
+    },
   };
 
   state: KnobPanelState = {
@@ -85,8 +88,6 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
   loadedFromUrl = false;
 
   mounted = false;
-
-  stopListeningOnStory: Function;
 
   componentDidMount() {
     this.mounted = true;
@@ -133,9 +134,9 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
           // If the knob value present in url
           if (urlValue !== undefined) {
-            const value = (Types[knob.type] as KnobControlType).deserialize(urlValue);
+            const value = getKnobControl(knob.type).deserialize(urlValue);
             knob.value = value;
-            queryParams[`knob-${name}`] = (Types[knob.type] as KnobControlType).serialize(value);
+            queryParams[`knob-${name}`] = getKnobControl(knob.type).serialize(value);
 
             api.emit(CHANGE, knob);
           }
@@ -161,7 +162,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
     const { knobs } = this.state;
 
     Object.entries(knobs).forEach(([name, knob]) => {
-      query[`knob-${name}`] = (Types[knob.type] as KnobControlType).serialize(knob.value);
+      query[`knob-${name}`] = getKnobControl(knob.type).serialize(knob.value);
     });
 
     copy(`${location.origin + location.pathname}?${qs.stringify(query, { encode: false })}`);
@@ -193,7 +194,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
       Object.keys(newKnobs).forEach(n => {
         const knob = newKnobs[n];
-        queryParams[`knob-${n}`] = (Types[knob.type] as KnobControlType).serialize(knob.value);
+        queryParams[`knob-${n}`] = getKnobControl(knob.type).serialize(knob.value);
       });
 
       api.setQueryParams(queryParams);
@@ -205,6 +206,8 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
 
     api.emit(CLICK, knob);
   };
+
+  stopListeningOnStory!: Function;
 
   render() {
     const { knobs } = this.state;
@@ -244,7 +247,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
         <Placeholder>
           <Fragment>No knobs found</Fragment>
           <Fragment>
-            Learn how to{' '}
+            Learn how to&nbsp;
             <Link
               href="https://github.com/storybookjs/storybook/tree/master/addons/knobs"
               target="_blank"
@@ -260,7 +263,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
     // Always sort DEFAULT_GROUP_ID (ungrouped) tab last without changing the remaining tabs
     const sortEntries = (g: Record<string, PanelKnobGroups>): [string, PanelKnobGroups][] => {
       const unsortedKeys = Object.keys(g);
-      if (unsortedKeys.indexOf(DEFAULT_GROUP_ID) !== -1) {
+      if (unsortedKeys.includes(DEFAULT_GROUP_ID)) {
         const sortedKeys = unsortedKeys.filter(key => key !== DEFAULT_GROUP_ID);
         sortedKeys.push(DEFAULT_GROUP_ID);
         return sortedKeys.map<[string, PanelKnobGroups]>(key => [key, g[key]]);

@@ -1,160 +1,262 @@
-import React from 'react';
-import { styled } from '@storybook/theming';
-import { ScrollArea } from '@storybook/components';
-
-import Indicator from './Indicator';
-import Result, { FailedResult } from './Result';
+import React, { Fragment } from 'react';
+import { styled, themes, convert } from '@storybook/theming';
+import { ScrollArea, TabsState, Link, Placeholder } from '@storybook/components';
+import { SizeMe } from 'react-sizeme';
+import Result from './Result';
 import provideJestResult, { Test } from '../hoc/provideJestResult';
-import colors from '../colors';
+
+const StatusTypes = {
+  PASSED_TYPE: 'passed',
+  FAILED_TYPE: 'failed',
+  PENDING_TYPE: 'pending',
+  TODO_TYPE: 'todo',
+};
 
 const List = styled.ul({
   listStyle: 'none',
   fontSize: 14,
   padding: 0,
-  margin: '10px 0',
+  margin: 0,
 });
 
 const Item = styled.li({
   display: 'block',
-  margin: '10px 0',
   padding: 0,
 });
 
-const NoTests = styled.div({
-  padding: '10px 20px',
-  flex: 1,
-});
-
-const FileTitle = styled.h2({
-  marginRight: '6px',
-  marginBottom: '3px',
-  fontWeight: 500,
-  fontSize: 18,
+const ProgressWrapper = styled.div({
+  position: 'relative',
+  height: '10px',
+  width: '30px',
+  display: 'flex',
+  top: '-2px',
 });
 
 const SuiteHead = styled.div({
   display: 'flex',
   alignItems: 'baseline',
-  justifyContent: 'space-between',
-  position: 'relative',
-  paddingTop: 10,
+  position: 'absolute',
+  zIndex: 2,
+  right: '20px',
+  marginTop: '15px',
 });
 
-const SuiteTotals = styled(({ successNumber, failedNumber, result, className }) => (
+const SuiteTotals = styled(({ result, className, width }) => (
   <div className={className}>
-    {successNumber > 0 && <div style={{ color: colors.success }}>{successNumber} passed</div>}
-    {failedNumber > 0 && <div style={{ color: colors.error }}>{failedNumber} failed</div>}
-    <div>{result.assertionResults.length} total</div>
-    <div>
-      <strong>
-        {result.endTime - result.startTime}
-        ms
-      </strong>
-    </div>
+    <Fragment>
+      {width > 325 && result.assertionResults ? (
+        <div>
+          {result.assertionResults.length} {result.assertionResults.length > 1 ? `tests` : `test`}
+        </div>
+      ) : null}
+      {width > 280 && result.endTime && result.startTime ? (
+        <div>
+          {result.endTime - result.startTime}
+          ms
+        </div>
+      ) : null}
+    </Fragment>
   </div>
-))({
+))(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  color: colors.grey,
-  fontSize: '10px',
-
+  color: theme.color.dark,
+  fontSize: '14px',
+  marginTop: '-5px',
   '& > *': {
-    marginLeft: 10,
-  },
-});
-
-const SuiteProgress = styled(({ successNumber, result, className }) => (
-  <div className={className} role="progressbar">
-    <span style={{ width: `${(successNumber / result.assertionResults.length) * 100}%` }} />
-  </div>
-))(() => ({
-  width: '100%',
-  backgroundColor: colors.error,
-  height: 4,
-  top: 0,
-  position: 'absolute',
-  left: 0,
-  borderRadius: 3,
-  overflow: 'hidden',
-  appearance: 'none',
-
-  '& > span': {
-    backgroundColor: colors.success,
-    bottom: 0,
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    boxShadow: '4px 0 0 white',
+    marginRight: 10,
   },
 }));
 
-const SuiteTitle = styled.div({
-  display: 'flex',
-  alignItems: 'center',
-  marginBottom: '3px',
-});
-
-const PassingRate = styled.div({
-  fontWeight: 500,
-  fontSize: '10px',
-});
+const SuiteProgressPortion = styled.div<{ color: any; progressPercent: number }>(
+  ({ theme, color, progressPercent }) => ({
+    height: '6px',
+    top: '3px',
+    width: `${progressPercent}%`,
+    backgroundColor: color,
+  })
+);
 
 interface ContentProps {
   tests: Test[];
   className?: string;
 }
 
+const getTestsByTypeMap = (result: any) => {
+  const testsByType: Map<string, any> = new Map();
+  result.assertionResults.forEach((assertion: any) => {
+    testsByType.set(
+      assertion.status,
+      testsByType.get(assertion.status)
+        ? testsByType.get(assertion.status).concat(assertion)
+        : [assertion]
+    );
+  });
+  return testsByType;
+};
+
+const getColorByType = (type: string) => {
+  // using switch to allow for new types to be added
+  switch (type) {
+    case StatusTypes.PASSED_TYPE:
+      return convert(themes.normal).color.positive;
+    case StatusTypes.FAILED_TYPE:
+      return convert(themes.normal).color.negative;
+    case StatusTypes.PENDING_TYPE:
+      return convert(themes.normal).color.warning;
+    case StatusTypes.TODO_TYPE:
+      return convert(themes.normal).color.purple;
+    default:
+      return null;
+  }
+};
+
 const Content = styled(({ tests, className }: ContentProps) => (
   <div className={className}>
     {tests.map(({ name, result }) => {
-      const title = name || 'Result status';
-
-      if (!result) {
+      if (!result || !result.assertionResults) {
         return (
-          <NoTests key={title}>This story has tests configured, but no file was found</NoTests>
+          <Placeholder key={name}>
+            This story has tests configured, but no file was found
+          </Placeholder>
         );
       }
 
-      const successNumber = result.assertionResults.filter(({ status }) => status === 'passed')
-        .length;
-      const failedNumber = result.assertionResults.length - successNumber;
+      const testsByType: Map<string, any> = getTestsByTypeMap(result);
+      const entries: any = testsByType.entries();
+      const sortedTestsByCount = [...entries].sort((a, b) => a[1].length - b[1].length);
+
       return (
-        <section key={title}>
-          <SuiteTitle>
-            <FileTitle>{`${title}:`}</FileTitle>
-            <Indicator
-              color={result.status === 'passed' ? colors.success : colors.error}
-              size={16}
-              styles={{ marginRight: 5 }}
-            >
-              {result.status}
-            </Indicator>
-          </SuiteTitle>
-          <SuiteHead>
-            <PassingRate>{`Passing rate: ${(
-              (successNumber / result.assertionResults.length) *
-              100
-            ).toFixed(2)}%`}</PassingRate>
-            <SuiteProgress {...{ successNumber, failedNumber, result }} />
-            <SuiteTotals {...{ successNumber, failedNumber, result }} />
-          </SuiteHead>
-          <List>
-            {result.assertionResults.map(res => (
-              <Item key={res.fullName || res.title}>
-                {res.failureMessages && res.failureMessages.length ? (
-                  <FailedResult {...res} />
-                ) : (
-                  <Result {...res} />
-                )}
-              </Item>
-            ))}
-          </List>
-        </section>
+        <SizeMe refreshMode="debounce" key={name}>
+          {({ size }: { size: any }) => {
+            const { width } = size;
+            return (
+              <section>
+                <SuiteHead>
+                  <SuiteTotals {...{ result, width }} />
+                  {width > 240 ? (
+                    <ProgressWrapper>
+                      {sortedTestsByCount.map((entry: any) => {
+                        return (
+                          <SuiteProgressPortion
+                            key={`progress-portion-${entry[0]}`}
+                            color={getColorByType(entry[0])}
+                            progressPercent={
+                              entry[1]
+                                ? (entry[1].length / result.assertionResults.length) * 100
+                                : 0
+                            }
+                          />
+                        );
+                      })}
+                    </ProgressWrapper>
+                  ) : null}
+                </SuiteHead>
+                <TabsState
+                  initial="failing-tests"
+                  backgroundColor={convert(themes.normal).background.hoverable}
+                >
+                  <div
+                    id="failing-tests"
+                    title={`${
+                      testsByType.get(StatusTypes.FAILED_TYPE)
+                        ? testsByType.get(StatusTypes.FAILED_TYPE).length
+                        : 0
+                    } Failed`}
+                    color={getColorByType(StatusTypes.FAILED_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.FAILED_TYPE) ? (
+                        testsByType.get(StatusTypes.FAILED_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.FAILED_TYPE}`}>
+                          This story has no failing tests.
+                        </Placeholder>
+                      )}
+                    </List>
+                  </div>
+                  <div
+                    id="passing-tests"
+                    title={`${
+                      testsByType.get(StatusTypes.PASSED_TYPE)
+                        ? testsByType.get(StatusTypes.PASSED_TYPE).length
+                        : 0
+                    } Passed`}
+                    color={getColorByType(StatusTypes.PASSED_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.PASSED_TYPE) ? (
+                        testsByType.get(StatusTypes.PASSED_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.PASSED_TYPE}`}>
+                          This story has no passing tests.
+                        </Placeholder>
+                      )}
+                    </List>
+                  </div>
+                  <div
+                    id="pending-tests"
+                    title={`${
+                      testsByType.get(StatusTypes.PENDING_TYPE)
+                        ? testsByType.get(StatusTypes.PENDING_TYPE).length
+                        : 0
+                    } Pending`}
+                    color={getColorByType(StatusTypes.PENDING_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.PENDING_TYPE) ? (
+                        testsByType.get(StatusTypes.PENDING_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.PENDING_TYPE}`}>
+                          This story has no pending tests.
+                        </Placeholder>
+                      )}
+                    </List>
+                  </div>
+                  <div
+                    id="todo-tests"
+                    title={`${
+                      testsByType.get(StatusTypes.TODO_TYPE)
+                        ? testsByType.get(StatusTypes.TODO_TYPE).length
+                        : 0
+                    } Todo`}
+                    color={getColorByType(StatusTypes.TODO_TYPE)}
+                  >
+                    <List>
+                      {testsByType.get(StatusTypes.TODO_TYPE) ? (
+                        testsByType.get(StatusTypes.TODO_TYPE).map((res: any) => (
+                          <Item key={res.fullName || res.title}>
+                            <Result {...res} />
+                          </Item>
+                        ))
+                      ) : (
+                        <Placeholder key={`no-tests-${StatusTypes.TODO_TYPE}`}>
+                          This story has no tests todo.
+                        </Placeholder>
+                      )}
+                    </List>
+                  </div>
+                </TabsState>
+              </section>
+            );
+          }}
+        </SizeMe>
       );
     })}
   </div>
 ))({
-  padding: '10px 20px',
   flex: '1 1 0%',
 });
 
@@ -164,7 +266,23 @@ interface PanelProps {
 
 const Panel = ({ tests }: PanelProps) => (
   <ScrollArea vertical>
-    {tests ? <Content tests={tests} /> : <NoTests>This story has no tests configured</NoTests>}
+    {tests ? (
+      <Content tests={tests} />
+    ) : (
+      <Placeholder>
+        <Fragment>No tests found</Fragment>
+        <Fragment>
+          Learn how to&nbsp;
+          <Link
+            href="https://github.com/storybookjs/storybook/tree/master/addons/jest"
+            target="_blank"
+            withArrow
+          >
+            add Jest test results to your story
+          </Link>
+        </Fragment>
+      </Placeholder>
+    )}
   </ScrollArea>
 );
 

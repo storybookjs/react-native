@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "tags": [
+    {
+      "name": "demo-wc-card",
+      "description": "This is a container looking like a card with a back and front side you can switch",
+      "jsDoc": "/**\n * This is a container looking like a card with a back and front side you can switch\n *\n * @slot - This is an unnamed slot (the default slot)\n * @fires side-changed - Fires whenever it switches between front/back\n * @cssprop --demo-wc-card-header-font-size - Header font size\n * @cssprop --demo-wc-card-front-color - Font color for front\n * @cssprop --demo-wc-card-back-color - Font color for back\n */",
+      "attributes": [
+        {
+          "name": "back-side",
+          "description": "Indicates that the back of the card is shown",
+          "jsDoc": "/**\n     * Indicates that the back of the card is shown\n     */",
+          "type": "boolean"
+        },
+        {
+          "name": "header",
+          "description": "Header message",
+          "jsDoc": "/**\n     * Header message\n     */",
+          "type": "string"
+        },
+        {
+          "name": "rows",
+          "description": "Data rows",
+          "jsDoc": "/**\n     * Data rows\n     */",
+          "type": "never[]"
+        }
+      ],
+      "properties": [
+        {
+          "name": "backSide",
+          "description": "Indicates that the back of the card is shown",
+          "jsDoc": "/**\n     * Indicates that the back of the card is shown\n     */",
+          "type": "boolean"
+        },
+        {
+          "name": "header",
+          "description": "Header message",
+          "jsDoc": "/**\n     * Header message\n     */",
+          "type": "string"
+        },
+        {
+          "name": "rows",
+          "description": "Data rows",
+          "jsDoc": "/**\n     * Data rows\n     */",
+          "type": "never[]"
+        }
+      ],
+      "events": [
+        {
+          "name": "side-changed",
+          "description": "Fires whenever it switches between front/back"
+        }
+      ],
+      "slots": [
+        {
+          "name": "",
+          "description": "This is an unnamed slot (the default slot)"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--demo-wc-card-back-color",
+          "description": "Font color for back"
+        },
+        {
+          "name": "--demo-wc-card-front-color",
+          "description": "Font color for front"
+        },
+        {
+          "name": "--demo-wc-card-header-font-size",
+          "description": "Header font size"
+        }
+      ]
+    }
+  ]
+}

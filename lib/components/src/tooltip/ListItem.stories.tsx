@@ -4,7 +4,7 @@ import ListItem from './ListItem';
 
 import { Icons } from '../icon/icon';
 
-storiesOf('basics|Tooltip/ListItem', module)
+storiesOf('basics/Tooltip/ListItem', module)
   .add('all', () => (
     <div>
       <ListItem loading />

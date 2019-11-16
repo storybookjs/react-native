@@ -1,6 +1,4 @@
-/* eslint-disable no-empty-function */
 /* eslint-disable no-useless-constructor */
-/* eslint-disable @typescript-eslint/no-parameter-properties */
 // We could use NgComponentOutlet here but there's currently no easy way
 // to provide @Inputs and subscribe to @Outputs, see
 // https://github.com/angular/angular/issues/15360
@@ -28,8 +26,10 @@ import { StoryFnAngularReturnType, ICollection } from '../../types';
   template: '<ng-template #target></ng-template>',
 })
 export class AppComponent implements OnInit, OnDestroy {
-  @ViewChild('target', { read: ViewContainerRef })
+  @ViewChild('target', { read: ViewContainerRef, static: true })
   target: ViewContainerRef;
+
+  readonly previousValues: { [key: string]: any } = {};
 
   subscription: Subscription;
 
@@ -77,11 +77,20 @@ export class AppComponent implements OnInit, OnDestroy {
       const value = props[key];
       const instanceProperty = instance[key];
 
-      if (!(instanceProperty instanceof EventEmitter) && (value !== undefined && value !== null)) {
+      if (!(instanceProperty instanceof EventEmitter) && value !== undefined && value !== null) {
         // eslint-disable-next-line no-param-reassign
         instance[key] = value;
         if (hasNgOnChangesHook) {
-          changes[key] = new SimpleChange(undefined, value, instanceProperty === undefined);
+          const previousValue = this.previousValues[key];
+
+          if (previousValue !== value) {
+            changes[key] = new SimpleChange(
+              previousValue,
+              value,
+              !Object.prototype.hasOwnProperty.call(this.previousValues, key)
+            );
+            this.previousValues[key] = value;
+          }
         }
       } else if (typeof value === 'function' && key !== 'ngModelChange') {
         instanceProperty.subscribe(value);

@@ -1,50 +1,62 @@
 import { document } from 'global';
-import React from 'react';
+import React, { Component, ReactElement, StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { stripIndents } from 'common-tags';
-import isReactRenderable from './element_check';
 import { RenderMainArgs } from './types';
 
 const rootEl = document ? document.getElementById('root') : null;
 
-function render(node: React.ReactElement, el: Element) {
-  ReactDOM.render(
-    process.env.STORYBOOK_EXAMPLE_APP ? <React.StrictMode>{node}</React.StrictMode> : node,
-    el
-  );
+const render = (node: ReactElement, el: Element) =>
+  new Promise(resolve => {
+    ReactDOM.render(
+      process.env.STORYBOOK_EXAMPLE_APP ? <StrictMode>{node}</StrictMode> : node,
+      el,
+      resolve
+    );
+  });
+
+class ErrorBoundary extends Component<{
+  showException: (err: Error) => void;
+  showMain: () => void;
+}> {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidMount() {
+    const { hasError } = this.state;
+    const { showMain } = this.props;
+    if (!hasError) {
+      showMain();
+    }
+  }
+
+  componentDidCatch(err: Error) {
+    const { showException } = this.props;
+    // message partially duplicates stack, strip it
+    showException(err);
+  }
+
+  render() {
+    const { hasError } = this.state;
+    const { children } = this.props;
+
+    return hasError ? null : children;
+  }
 }
 
-export default function renderMain({
-  storyFn,
-  selectedKind,
-  selectedStory,
+export default async function renderMain({
+  storyFn: StoryFn,
   showMain,
-  showError,
+  showException,
   forceRender,
 }: RenderMainArgs) {
-  const element = storyFn();
-
-  if (!element) {
-    showError({
-      title: `Expecting a React element from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
-        Did you forget to return the React element from the story?
-        Use "() => (<MyComp/>)" or "() => { return <MyComp/>; }" when defining the story.
-      `,
-    });
-    return;
-  }
-
-  if (!isReactRenderable(element)) {
-    showError({
-      title: `Expecting a valid React element from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
-         Seems like you are not returning a correct React element from the story.
-         Could you double check that?
-       `,
-    });
-    return;
-  }
+  const element = (
+    <ErrorBoundary showMain={showMain} showException={showException}>
+      <StoryFn />
+    </ErrorBoundary>
+  );
 
   // We need to unmount the existing set of components in the DOM node.
   // Otherwise, React may not recreate instances for every story run.
@@ -55,6 +67,5 @@ export default function renderMain({
     ReactDOM.unmountComponentAtNode(rootEl);
   }
 
-  render(element, rootEl);
-  showMain();
+  await render(element, rootEl);
 }

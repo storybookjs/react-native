@@ -30,3 +30,7 @@ scripts/storage
 htpasswd
 /false
 storybook-out
+/addons/docs/common/config-*
+built-storybooks
+cypress/videos
+cypress/screenshots

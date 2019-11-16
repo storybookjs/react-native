@@ -2,12 +2,12 @@ export {
   storiesOf,
   setAddon,
   addDecorator,
+  DecoratorFn,
   addParameters,
   configure,
   getStorybook,
   raw,
   forceReRender,
-  load,
 } from './preview';
 
 if (module && module.hot && module.hot.decline) {

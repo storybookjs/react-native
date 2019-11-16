@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ScrollView, Text, TouchableOpacity } from 'react-native';
+import styled from '@emotion/native';
+
+const Label = styled.Text(({ theme, active }) => ({
+  color: active ? theme.buttonActiveTextColor : theme.buttonTextColor,
+  fontSize: 17,
+}));
 
 class GroupTabs extends Component {
   renderTab(name, group) {
@@ -14,20 +20,14 @@ class GroupTabs extends Component {
     return (
       <TouchableOpacity
         style={{
+          marginTop: 5,
           marginRight: 15,
           paddingBottom: 10,
         }}
         key={name}
         onPress={() => onGroupSelect(name)}
       >
-        <Text
-          style={{
-            color: selectedGroup === name ? 'black' : '#ccc',
-            fontSize: 17,
-          }}
-        >
-          {title}
-        </Text>
+        <Label active={selectedGroup === name}>{title}</Label>
       </TouchableOpacity>
     );
   }

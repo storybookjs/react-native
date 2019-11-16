@@ -1,23 +1,25 @@
-import React, { FunctionComponent, ChangeEvent } from 'react';
+import React, { FunctionComponent, ChangeEvent, Validator } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
-export type SelectTypeKnobValue = string | number | null | undefined;
+export type SelectTypeKnobValue = string | number | null | undefined | PropertyKey[];
 
-export interface SelectTypeKnob {
-  name: string;
-  value: SelectTypeKnobValue;
-  options: SelectTypeOptionsProp;
+export type SelectTypeOptionsProp<T extends SelectTypeKnobValue = SelectTypeKnobValue> =
+  | Record<PropertyKey, T>
+  | Record<Extract<T, PropertyKey>, T[keyof T]>
+  | Extract<T, PropertyKey>[]
+  | readonly Extract<T, PropertyKey>[];
+
+export interface SelectTypeKnob<T extends SelectTypeKnobValue = SelectTypeKnobValue>
+  extends KnobControlConfig<T> {
+  options: SelectTypeOptionsProp<T>;
 }
 
-export type SelectTypeOptionsProp =
-  | Record<string, SelectTypeKnobValue>
-  | NonNullable<SelectTypeKnobValue>[];
-
-export interface SelectTypeProps {
-  knob: SelectTypeKnob;
-  onChange: (value: SelectTypeKnobValue) => SelectTypeKnobValue;
+export interface SelectTypeProps<T extends SelectTypeKnobValue = SelectTypeKnobValue>
+  extends KnobControlProps<T> {
+  knob: SelectTypeKnob<T>;
 }
 
 const serialize = (value: SelectTypeKnobValue) => value;
@@ -28,11 +30,24 @@ const SelectType: FunctionComponent<SelectTypeProps> & {
   deserialize: typeof deserialize;
 } = ({ knob, onChange }) => {
   const { options } = knob;
-  const entries = Array.isArray(options)
-    ? options.reduce((acc, k) => Object.assign(acc, { [k]: k }), {})
-    : options;
 
-  const selectedKey = Object.keys(entries).find(k => entries[k] === knob.value);
+  const callbackReduceArrayOptions = (acc: any, option: any, i: number) => {
+    if (typeof option !== 'object') return { ...acc, [option]: option };
+    const label = option.label || option.key || i;
+    return { ...acc, [label]: option };
+  };
+
+  const entries = Array.isArray(options) ? options.reduce(callbackReduceArrayOptions, {}) : options;
+
+  const selectedKey = Object.keys(entries).find(key => {
+    const { value: knobVal } = knob;
+    const entryVal = entries[key];
+
+    if (Array.isArray(knobVal)) {
+      return JSON.stringify(entryVal) === JSON.stringify(knobVal);
+    }
+    return entryVal === knobVal;
+  });
 
   return (
     <Form.Select
@@ -58,13 +73,12 @@ SelectType.defaultProps = {
 };
 
 SelectType.propTypes = {
-  // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
   knob: PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.any,
     options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  }) as any,
-  onChange: PropTypes.func,
+  }) as Validator<SelectTypeProps['knob']>,
+  onChange: PropTypes.func as Validator<SelectTypeProps['onChange']>,
 };
 
 SelectType.serialize = serialize;

@@ -113,6 +113,9 @@ class MainLinks extends React.Component {
                   <Link to="/configurations/add-custom-head-tags/">Custom scripts & styling</Link>
                 </li>
                 <li>
+                  <Link to="/configurations/add-custom-body/">Custom html body</Link>
+                </li>
+                <li>
                   <Link to="/configurations/serving-static-files/">Serving static files</Link>
                 </li>
               </ul>

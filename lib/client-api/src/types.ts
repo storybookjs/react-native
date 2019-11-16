@@ -1,5 +1,13 @@
-import { Addon, StoryFn, StoryContext, Parameters } from '@storybook/addons';
+import {
+  Addon,
+  StoryFn,
+  StoryContext,
+  Parameters,
+  StoryApi,
+  DecoratorFunction,
+} from '@storybook/addons';
 import StoryStore from './story_store';
+import { HooksContext } from './hooks';
 
 export interface ErrorLike {
   message: string;
@@ -11,6 +19,7 @@ export interface StoreItem extends StoryContext {
   getOriginal: () => StoryFn;
   story: string;
   storyFn: StoryFn;
+  hooks: HooksContext;
 }
 
 export interface StoreData {
@@ -22,17 +31,9 @@ export interface ClientApiParams {
   decorateStory?: (storyFn: any, decorators: any) => any;
 }
 
-export type ClientApiReturnFn<TApi> = (...args: any[]) => StoryApi<TApi>;
+export type ClientApiReturnFn<StoryFnReturnType> = (...args: any[]) => StoryApi<StoryFnReturnType>;
 
-export interface StoryApi<TApi> {
-  kind: string;
-  add: (storyName: string, storyFn: StoryFn, parameters: Parameters) => StoryApi<TApi>;
-  addDecorator: (decorator: DecoratorFunction) => StoryApi<TApi>;
-  addParameters: (parameters: Parameters) => StoryApi<TApi>;
-  [k: string]: string | ClientApiReturnFn<TApi>;
-}
-
-export type DecoratorFunction = (fn: StoryFn, c: StoryContext) => ReturnType<StoryFn>;
+export { StoryApi, DecoratorFunction };
 
 export interface LegacyItem {
   fileName: string;
@@ -55,9 +56,10 @@ export interface LegacyData {
   [K: string]: LegacyItem;
 }
 
-export interface ClientApiAddon<TApi = unknown> extends Addon {
-  apply: (a: StoryApi<TApi>, b: any[]) => any;
+export interface ClientApiAddon<StoryFnReturnType = unknown> extends Addon {
+  apply: (a: StoryApi<StoryFnReturnType>, b: any[]) => any;
 }
-export interface ClientApiAddons<TApi> {
-  [key: string]: ClientApiAddon<TApi>;
+
+export interface ClientApiAddons<StoryFnReturnType> {
+  [key: string]: ClientApiAddon<StoryFnReturnType>;
 }

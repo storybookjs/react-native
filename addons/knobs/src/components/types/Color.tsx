@@ -1,22 +1,15 @@
 import { document } from 'global';
 import PropTypes from 'prop-types';
-import React, { Component, WeakValidationMap } from 'react';
+import React, { Component, Validator } from 'react';
 import { SketchPicker, ColorResult } from 'react-color';
 
 import { styled } from '@storybook/theming';
 import { Form } from '@storybook/components';
+import { KnobControlConfig, KnobControlProps } from './types';
 
 type ColorTypeKnobValue = string;
-
-export interface ColorTypeKnob {
-  name: string;
-  value: ColorTypeKnobValue;
-}
-
-interface ColorTypeProps {
-  knob: ColorTypeKnob;
-  onChange: (value: ColorTypeKnobValue) => ColorTypeKnobValue;
-}
+export type ColorTypeKnob = KnobControlConfig<ColorTypeKnobValue>;
+type ColorTypeProps = KnobControlProps<ColorTypeKnobValue>;
 
 interface ColorTypeState {
   displayColorPicker: boolean;
@@ -43,7 +36,7 @@ const Swatch = styled.div<{}>(({ theme }) => ({
   borderRadius: '1rem',
 }));
 
-const ColorButton = styled(Button)(({ active }: ColorButtonProps) => ({
+const ColorButton = styled(Button)<ColorButtonProps>(({ active }) => ({
   zIndex: active ? 3 : 'unset',
 }));
 
@@ -53,13 +46,12 @@ const Popover = styled.div({
 });
 
 export default class ColorType extends Component<ColorTypeProps, ColorTypeState> {
-  static propTypes: WeakValidationMap<ColorTypeProps> = {
-    // TODO: remove `any` once DefinitelyTyped/DefinitelyTyped#31280 has been resolved
+  static propTypes = {
     knob: PropTypes.shape({
       name: PropTypes.string,
       value: PropTypes.string,
-    }) as any,
-    onChange: PropTypes.func,
+    }) as Validator<ColorTypeProps['knob']>,
+    onChange: PropTypes.func as Validator<ColorTypeProps['onChange']>,
   };
 
   static defaultProps: ColorTypeProps = {
@@ -74,8 +66,6 @@ export default class ColorType extends Component<ColorTypeProps, ColorTypeState>
   state: ColorTypeState = {
     displayColorPicker: false,
   };
-
-  popover: HTMLDivElement;
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleWindowMouseDown);
@@ -119,6 +109,8 @@ export default class ColorType extends Component<ColorTypeProps, ColorTypeState>
     onChange(`rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`);
   };
 
+  popover!: HTMLDivElement;
+
   render() {
     const { knob } = this.props;
     const { displayColorPicker } = this.state;
@@ -138,7 +130,7 @@ export default class ColorType extends Component<ColorTypeProps, ColorTypeState>
         {displayColorPicker ? (
           <Popover
             ref={e => {
-              this.popover = e;
+              if (e) this.popover = e;
             }}
           >
             <SketchPicker color={knob.value} onChange={this.handleChange} />

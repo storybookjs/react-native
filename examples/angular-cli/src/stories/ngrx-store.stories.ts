@@ -18,10 +18,22 @@ class WithStoreComponent {
   }
 }
 
-storiesOf('ngrx|Store', module)
+storiesOf('ngrx/Store', module)
   .addDecorator(
     moduleMetadata({
-      imports: [StoreModule.forRoot({})],
+      imports: [
+        StoreModule.forRoot(
+          {},
+          {
+            runtimeChecks: {
+              strictStateImmutability: true,
+              strictActionImmutability: true,
+              strictStateSerializability: true,
+              strictActionSerializability: true,
+            },
+          }
+        ),
+      ],
       declarations: [WithStoreComponent],
     })
   )

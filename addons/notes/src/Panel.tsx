@@ -7,7 +7,7 @@ import { styled } from '@storybook/theming';
 import {
   SyntaxHighlighter as SyntaxHighlighterBase,
   Placeholder,
-  DocumentFormatting,
+  DocumentWrapper,
   Link,
   TabWrapper,
   TabsState,
@@ -87,7 +87,9 @@ interface NotesLinkProps {
 export const NotesLink = ({ href, children, ...props }: NotesLinkProps) => {
   /* https://github.com/sindresorhus/is-absolute-url/blob/master/index.js */
   const isAbsoluteUrl = /^[a-z][a-z0-9+.-]*:/.test(href);
-  if (isAbsoluteUrl) {
+  const isAnchorUrl = /^#.*/.test(href);
+
+  if (isAbsoluteUrl || isAnchorUrl) {
     return (
       <a href={href} {...props}>
         {children}
@@ -153,7 +155,7 @@ const NotesPanel = ({ active }: Props) => {
             <Placeholder>
               <Fragment>No notes yet</Fragment>
               <Fragment>
-                Learn how to{' '}
+                Learn how to&nbsp;
                 <Link
                   href="https://github.com/storybookjs/storybook/tree/master/addons/notes"
                   target="_blank"
@@ -173,9 +175,9 @@ const NotesPanel = ({ active }: Props) => {
 
           return (
             <Panel className="addon-notes-container">
-              <DocumentFormatting>
+              <DocumentWrapper>
                 <Markdown options={options}>{formatter(md)}</Markdown>
-              </DocumentFormatting>
+              </DocumentWrapper>
             </Panel>
           );
         }
@@ -188,9 +190,9 @@ const NotesPanel = ({ active }: Props) => {
             render: ({ active: isActive }) => (
               <TabWrapper key={title} active={isActive}>
                 <Panel>
-                  <DocumentFormatting>
+                  <DocumentWrapper>
                     <Markdown options={options}>{formatter(docs)}</Markdown>
-                  </DocumentFormatting>
+                  </DocumentWrapper>
                 </Panel>
               </TabWrapper>
             ),

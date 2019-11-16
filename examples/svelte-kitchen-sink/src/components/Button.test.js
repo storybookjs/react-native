@@ -11,18 +11,20 @@ describe('Button Component', () => {
     component = new Button.default({ target }); // eslint-disable-line new-cap
   });
 
-  it('should render `text` property', done => {
-    const text = 'Hello world';
-    const expected = `Round corners ${text}`;
+  it('should render `text` property', () => {
+    return new Promise(done => {
+      const text = 'Hello world';
+      const expected = `Round corners ${text}`;
 
-    component.$on('afterUpdate', () => {
-      const componentText = target.firstChild.textContent.trim();
+      component.$on('afterUpdate', () => {
+        const componentText = target.firstChild.textContent.trim();
 
-      expect(componentText).toEqual(expected);
+        expect(componentText).toEqual(expected);
 
-      done();
+        done();
+      });
+
+      component.$set({ text });
     });
-
-    component.$set({ text });
   });
 });

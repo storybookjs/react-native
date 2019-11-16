@@ -1,6 +1,6 @@
 {
   "name": "@storybook/codemod",
-  "version": "5.2.0-alpha.41",
+  "version": "5.3.0-beta.0",
   "description": "A collection of codemod scripts written with JSCodeshift",
   "keywords": [
     "storybook"
@@ -15,18 +15,30 @@
     "directory": "lib/codemod"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/node-logger": "5.2.0-alpha.41",
+    "@hypnosphi/jscodeshift": "^0.6.4",
+    "@mdx-js/mdx": "^1.0.0",
+    "@storybook/node-logger": "5.3.0-beta.0",
+    "@storybook/router": "5.3.0-beta.0",
     "core-js": "^3.0.1",
-    "jscodeshift": "^0.6.3",
-    "lodash": "^4.17.11",
+    "cross-spawn": "^7.0.0",
+    "globby": "^10.0.1",
+    "jest-specific-snapshot": "^2.0.0",
+    "lodash": "^4.17.15",
     "prettier": "^1.16.4",
-    "regenerator-runtime": "^0.12.1"
+    "recast": "^0.16.1",
+    "regenerator-runtime": "^0.13.3"
   },
   "publishConfig": {
     "access": "public"

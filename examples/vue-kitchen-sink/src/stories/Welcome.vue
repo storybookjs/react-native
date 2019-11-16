@@ -16,7 +16,7 @@
     </p>
     <p>
       See these sample
-      <a class="link" @click="goToButton">stories</a>
+      <a class="link" @click="requestButton">stories</a>
       for a component called
       <code class="code">Button</code>
       .
@@ -55,9 +55,13 @@
 
 <script>
   export default {
-    props: {
-      goToButton: {
-        default: () => () => null
+    methods: {
+      requestButton() {
+        /**
+         * Emitted when the button example is requested
+         * @type {Event}
+         */
+        this.$emit('buttonRequested');
       },
     }
   }

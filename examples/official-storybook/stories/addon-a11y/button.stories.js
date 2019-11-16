@@ -4,9 +4,9 @@ import Button from '../../components/addon-a11y/Button';
 const text = 'Testing the a11y addon';
 
 export default {
-  title: 'Addons|A11y/Button',
+  title: 'Addons/A11y/Button',
+  component: Button,
   parameters: {
-    component: Button,
     options: { selectedPanel: 'storybook/a11y/panel' },
   },
 };

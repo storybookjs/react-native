@@ -6,7 +6,7 @@ import BaseButton from '../../components/BaseButton';
 import TableComponent from '../../components/TableComponent';
 
 export default {
-  title: 'Addons|Info/Story Source',
+  title: 'Addons/Info/Story Source',
   decorators: [withInfo],
 };
 

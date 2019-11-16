@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import Markdown from 'markdown-to-jsx';
+import { ResetWrapper } from '../typography/DocumentFormatting';
+import { components } from '../html';
 
 export interface DescriptionProps {
   markdown: string;
@@ -9,6 +11,8 @@ export interface DescriptionProps {
  * A markdown description for a component, typically used to show the
  * components docgen docs.
  */
-export const Description: React.FunctionComponent<DescriptionProps> = ({ markdown }) => (
-  <Markdown options={{ forceBlock: true }}>{markdown}</Markdown>
+export const Description: FunctionComponent<DescriptionProps> = ({ markdown }) => (
+  <ResetWrapper>
+    <Markdown options={{ forceBlock: true, overrides: components }}>{markdown}</Markdown>
+  </ResetWrapper>
 );

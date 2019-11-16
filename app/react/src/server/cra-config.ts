@@ -47,7 +47,7 @@ export function getReactScriptsPath({ noCache }: { noCache?: boolean } = {}) {
       }
     }
   } catch (e) {
-    logger.warn(`Error occured during react-scripts package path resolving: ${e}`);
+    logger.warn(`Error occurred during react-scripts package path resolving: ${e}`);
   }
 
   reactScriptsPath = path.join(reactScriptsScriptPath, '../..');
@@ -71,7 +71,7 @@ export function isReactScriptsInstalled(requiredVersion = '2.0.0') {
 }
 
 export const getRules = (extensions: string[]) => (rules: RuleSetRule[]) =>
-  rules.reduce((craRules: any, rule: any) => {
+  rules.reduce((craRules, rule) => {
     // If at least one extension satisfies the rule test, the rule is one
     // we want to extract
     if (rule.test && extensions.some(normalizeCondition(rule.test))) {
@@ -90,24 +90,28 @@ export const getRules = (extensions: string[]) => (rules: RuleSetRule[]) =>
     }
 
     return craRules;
-  }, []);
+  }, [] as RuleSetRule[]);
 
 const getStyleRules = getRules(cssExtensions.concat(cssModuleExtensions));
 
 export const getTypeScriptRules = (webpackConfigRules: RuleSetRule[], configDir: string) => {
   const rules = getRules(typeScriptExtensions)(webpackConfigRules);
-  // We know CRA only has one rule targetting TS for now, which is the first rule.
-  const babelRule = rules[0];
-  // Resolves an issue where this config is parsed twice (#4903).
-  if (typeof babelRule.include !== 'string') return rules;
+
   // Adds support for using TypeScript in the `.storybook` (or config) folder.
-  return [
-    {
-      ...babelRule,
-      include: [babelRule.include, path.resolve(configDir)],
-    },
-    ...rules.slice(1),
-  ];
+  return rules.reduce((accRules, rule) => {
+    // Resolves an issue where this config is parsed twice (#4903).
+    if (typeof rule.include !== 'string') {
+      return [...accRules, rule];
+    }
+
+    return [
+      ...accRules,
+      {
+        ...rule,
+        include: [rule.include, path.resolve(configDir)],
+      },
+    ];
+  }, [] as RuleSetRule[]);
 };
 
 export const getModulePath = () => {

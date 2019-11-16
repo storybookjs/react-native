@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import addons from '@storybook/addons';
 import { ADDON_ID, PANEL_ID, PARAM_KEY } from './shared';
 
