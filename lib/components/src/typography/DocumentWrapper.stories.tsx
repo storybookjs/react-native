@@ -6,7 +6,7 @@ import markdownSample from './DocumentFormattingSample.md';
 
 export default {
   component: DocumentWrapper,
-  title: 'Basics|DocumentFormatting',
+  title: 'Basics/DocumentFormatting',
   decorators: [
     (storyFn: any) => (
       <div

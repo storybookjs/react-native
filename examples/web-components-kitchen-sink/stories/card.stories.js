@@ -22,7 +22,10 @@ export const FrontOwnHeader = () => html`
 export const BackWithData = () => html`
   <demo-wc-card
     back-side
-    .rows=${[{ header: 'health', value: '200' }, { header: 'mana', value: '100' }]}
+    .rows=${[
+      { header: 'health', value: '200' },
+      { header: 'mana', value: '100' },
+    ]}
   >
     A simple card
   </demo-wc-card>

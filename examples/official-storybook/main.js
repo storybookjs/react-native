@@ -1,7 +1,11 @@
 module.exports = {
   presets: ['@storybook/addon-docs/preset'],
-  addons: existing => [
-    ...existing,
+  stories: [
+    '../../lib/ui/src/**/*.stories./(js|tsx|mdx)',
+    '../../lib/components/src/**/*.stories.(js|tsx|mdx)',
+    './stories/*.stories.(js|tsx|mdx)',
+  ],
+  addons: [
     '@storybook/addon-storysource/register',
     '@storybook/addon-design-assets/register',
     '@storybook/addon-actions/register',

@@ -3,7 +3,7 @@ import { withKnobs, text, color, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Addon|Knobs',
+  title: 'Addon/Knobs',
   decorators: [withKnobs],
 
   parameters: {

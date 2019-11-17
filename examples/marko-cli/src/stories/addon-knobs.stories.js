@@ -2,7 +2,7 @@ import { withKnobs, text, number } from '@storybook/addon-knobs';
 import Hello from '../components/hello/index.marko';
 
 export default {
-  title: 'Addons|Knobs/Hello',
+  title: 'Addons/Knobs/Hello',
   decorators: [withKnobs],
   parameters: {
     component: Hello,

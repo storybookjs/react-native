@@ -141,6 +141,7 @@
     "@testing-library/react": "^9.2.0",
     "@types/doctrine": "^0.0.3",
     "@types/enzyme": "^3.10.3",
+    "@types/escodegen": "^0.0.6",
     "@types/jest": "^24.0.11",
     "@types/lodash": "^4.14.129",
     "@types/node": "^12.7.9",
@@ -161,7 +162,7 @@
     "chalk": "^2.4.2",
     "codecov": "^3.5.0",
     "codelyzer": "^5.0.0",
-    "commander": "^3.0.2",
+    "commander": "^4.0.1",
     "concurrently": "^5.0.0",
     "core-js": "^3.0.1",
     "corejs-upgrade-webpack-plugin": "^2.2.0",
@@ -172,6 +173,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "^6.5.1",
+    "eslint-plugin-cypress": "^2.7.0",
     "eslint-plugin-react": "^7.15.1",
     "esm": "^3.2.25",
     "github-release-from-changelog": "^2.1.0",
@@ -226,8 +228,7 @@
   },
   "optionalDependencies": {
     "@cypress/webpack-preprocessor": "^4.1.0",
-    "cypress": "^3.4.1",
-    "eslint-plugin-cypress": "^2.7.0"
+    "cypress": "^3.4.1"
   },
   "engines": {
     "node": ">=8.10.0",

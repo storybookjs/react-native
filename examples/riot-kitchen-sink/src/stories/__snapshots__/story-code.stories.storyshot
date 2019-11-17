@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Story|How to create a story Built As String 1`] = `
+exports[`Storyshots Story/How to create a story built as string 1`] = `
 <div
   data-is="root"
   id="root"
@@ -13,7 +13,7 @@ exports[`Storyshots Story|How to create a story Built As String 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story Built From Raw Import 1`] = `
+exports[`Storyshots Story/How to create a story built from raw import 1`] = `
 <div
   data-is="simpletest"
   id="root"
@@ -24,7 +24,7 @@ exports[`Storyshots Story|How to create a story Built From Raw Import 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story Built From Tags And Template 1`] = `
+exports[`Storyshots Story/How to create a story built from tags and template 1`] = `
 <div
   data-is="root"
   id="root"
@@ -39,7 +39,7 @@ exports[`Storyshots Story|How to create a story Built From Tags And Template 1`]
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story Built From The Precompilation 1`] = `
+exports[`Storyshots Story/How to create a story built from the precompilation 1`] = `
 <div
   data-is="anothertest"
   id="root"
@@ -50,7 +50,7 @@ exports[`Storyshots Story|How to create a story Built From The Precompilation 1`
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story Built With Tag 1`] = `
+exports[`Storyshots Story/How to create a story built with tag 1`] = `
 <div
   data-is="test"
   id="root"
@@ -61,7 +61,7 @@ exports[`Storyshots Story|How to create a story Built With Tag 1`] = `
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story Tags Template And Tag Constructor At Once 1`] = `
+exports[`Storyshots Story/How to create a story tags, template and tagConstructor at once 1`] = `
 <div
   data-is="root"
   id="root"
@@ -77,7 +77,7 @@ exports[`Storyshots Story|How to create a story Tags Template And Tag Constructo
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story The Mount Instruction Is Not Necessary 1`] = `
+exports[`Storyshots Story/How to create a story the mount instruction is not necessary 1`] = `
 <div
   data-is="anothertest"
   id="root"
@@ -88,7 +88,7 @@ exports[`Storyshots Story|How to create a story The Mount Instruction Is Not Nec
 </div>
 `;
 
-exports[`Storyshots Story|How to create a story The Opts Value Is Not Necessary 1`] = `
+exports[`Storyshots Story/How to create a story the opts value is not necessary 1`] = `
 <div
   data-is="anothertest"
   id="root"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, addDecorator, addParameters } from '@storybook/react';
+import { addDecorator, addParameters } from '@storybook/react';
 import { Global, ThemeProvider, themes, createReset, convert } from '@storybook/theming';
 import { withCssResources } from '@storybook/addon-cssresources';
 import { withA11y } from '@storybook/addon-a11y';
@@ -45,8 +45,7 @@ addParameters({
     },
   },
   options: {
-    hierarchySeparator: /\/|\./,
-    hierarchyRootSeparator: '|',
+    showRoots: true,
     theme: themes.light, // { base: 'dark', brandTitle: 'Storybook!' },
     storySort: (a, b) =>
       a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, { numeric: true }),
@@ -66,12 +65,3 @@ addParameters({
     ),
   },
 });
-
-configure(
-  [
-    require.context('../../lib/ui/src', true, /\.stories\.(js|tsx?|mdx)$/),
-    require.context('../../lib/components/src', true, /\.stories\.(js|tsx?|mdx)$/),
-    require.context('./stories', true, /\.stories\.(js|tsx?|mdx)$/),
-  ],
-  module
-);

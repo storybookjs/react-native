@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default {
-  title: 'Addons|Options',
+  title: 'Addons/Options',
 };
 
 export const settingName = () => (

@@ -4,7 +4,7 @@ import mdxNotes from '../notes/notes.mdx';
 import { DocgenButton } from '../../components/DocgenButton';
 
 export default {
-  title: 'Addons|Docs/stories',
+  title: 'Addons/Docs/stories',
   component: DocgenButton,
 };
 
@@ -52,3 +52,5 @@ docsDisable.story = {
     docs: { disable: true },
   },
 };
+
+export const largerThanPreview = () => <div style={{ width: 1000, background: 'pink' }}>HUGE</div>;

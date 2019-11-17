@@ -9,7 +9,7 @@ const Block = styled.div({
 });
 
 export default {
-  title: 'Addons|Storyshots',
+  title: 'Addons/Storyshots',
 };
 
 export const block = () => <Block />;

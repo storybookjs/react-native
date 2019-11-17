@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Custom|Decorator for Vue Render 1`] = `
+exports[`Storyshots Custom/Decorator for Vue Render 1`] = `
 <div
   style="border: medium solid blue;"
 >
@@ -17,7 +17,7 @@ exports[`Storyshots Custom|Decorator for Vue Render 1`] = `
 </div>
 `;
 
-exports[`Storyshots Custom|Decorator for Vue Template 1`] = `
+exports[`Storyshots Custom/Decorator for Vue Template 1`] = `
 <div
   style="border: medium solid blue;"
 >
@@ -34,7 +34,7 @@ exports[`Storyshots Custom|Decorator for Vue Template 1`] = `
 </div>
 `;
 
-exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
+exports[`Storyshots Custom/Decorator for Vue With Data 1`] = `
 <div
   style="border: medium solid blue;"
 >
@@ -44,13 +44,12 @@ exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
     <pre>
       {
   "id": "custom-decorator-for-vue--with-data",
-  "kind": "Custom|Decorator for Vue",
+  "kind": "Custom/Decorator for Vue",
   "name": "With Data",
   "story": "With Data",
   "parameters": {
     "options": {
-      "hierarchyRootSeparator": {},
-      "hierarchySeparator": {}
+      "showRoots": true
     },
     "docs": {
       "inlineStories": true,
@@ -58,6 +57,7 @@ exports[`Storyshots Custom|Decorator for Vue With Data 1`] = `
     },
     "globalParameter": "globalParameter",
     "framework": "vue",
+    "__id": "custom-decorator-for-vue--with-data",
     "customParameter": 42
   },
   "customContext": 52

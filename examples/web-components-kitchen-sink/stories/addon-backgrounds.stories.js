@@ -3,7 +3,7 @@ import { html } from 'lit-html';
 import '../demo-wc-card.js';
 
 export default {
-  title: 'Addons|Backgrounds',
+  title: 'Addons/Backgrounds',
   parameters: {
     backgrounds: [
       { name: 'light', value: '#eeeeee' },
