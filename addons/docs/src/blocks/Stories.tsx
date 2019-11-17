@@ -2,6 +2,7 @@ import React, { useContext, FunctionComponent } from 'react';
 import { DocsContext } from './DocsContext';
 import { DocsStory } from './DocsStory';
 import { Heading } from './Heading';
+import { getDocsStories } from './utils';
 import { StoriesSlot, DocsStoryProps } from './types';
 
 interface StoriesProps {
@@ -11,10 +12,7 @@ interface StoriesProps {
 
 export const Stories: FunctionComponent<StoriesProps> = ({ slot, title }) => {
   const context = useContext(DocsContext);
-  const { storyStore, selectedKind } = context;
-  const componentStories = storyStore
-    .getStoriesForKind(selectedKind)
-    .filter((s: any) => !(s.parameters && s.parameters.docs && s.parameters.docs.disable));
+  const componentStories = getDocsStories(context);
 
   const stories: DocsStoryProps[] = slot
     ? slot(componentStories, context)

@@ -1,19 +1,16 @@
 import { PropsTableProps } from '@storybook/components';
 
 export interface StoryData {
-  id: string;
-  kind: string;
-  name: string;
+  id?: string;
+  kind?: string;
+  name?: string;
   parameters?: any;
 }
 
-export interface DocsStoryProps {
-  id: string;
-  name: string;
+export type DocsStoryProps = StoryData & {
   expanded?: boolean;
   withToolbar?: boolean;
-  parameters?: any;
-}
+};
 
 export interface SlotContext {
   id?: string;
@@ -24,9 +21,9 @@ export interface SlotContext {
 }
 
 export type StringSlot = (context: SlotContext) => string;
-export type PropsSlot = (context: SlotContext) => PropsTableProps | void;
-export type StorySlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps | void;
-export type StoriesSlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps[] | void;
+export type PropsSlot = (context: SlotContext) => PropsTableProps;
+export type StorySlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps;
+export type StoriesSlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps[];
 
 export interface DocsPageProps {
   titleSlot: StringSlot;
