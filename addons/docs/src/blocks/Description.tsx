@@ -19,6 +19,7 @@ interface DescriptionProps {
   of?: '.' | Component;
   type?: DescriptionType;
   markdown?: string;
+  children?: string;
 }
 
 const getNotes = (notes?: Notes) =>
@@ -29,11 +30,11 @@ const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(
 const noDescription = (component?: Component): string | null => null;
 
 export const getDescriptionProps = (
-  { of, type, markdown }: DescriptionProps,
+  { of, type, markdown, children }: DescriptionProps,
   { parameters }: DocsContextProps
 ): PureDescriptionProps => {
-  if (markdown) {
-    return { markdown };
+  if (children || markdown) {
+    return { markdown: children || markdown };
   }
   const { component, notes, info, docs } = parameters;
   const { extractComponentDescription = noDescription } = docs || {};
@@ -67,5 +68,10 @@ const DescriptionContainer: FunctionComponent<DescriptionProps> = props => (
     }}
   </DocsContext.Consumer>
 );
+
+// since we are in the docs blocks, assume default description if for primary component story
+DescriptionContainer.defaultProps = {
+  of: '.',
+};
 
 export { DescriptionContainer as Description };

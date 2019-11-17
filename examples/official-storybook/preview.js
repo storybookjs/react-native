@@ -56,12 +56,6 @@ addParameters({
     { name: 'dark', value: '#222222' },
   ],
   docs: {
-    // eslint-disable-next-line react/prop-types
-    page: ({ context }) => (
-      <DocsPage
-        context={context}
-        subtitleSlot={({ selectedKind }) => `Subtitle: ${selectedKind}`}
-      />
-    ),
+    page: () => <DocsPage subtitleSlot={({ selectedKind }) => `Subtitle: ${selectedKind}`} />,
   },
 });

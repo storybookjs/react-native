@@ -11,7 +11,7 @@ export interface DocsPageProps {
   subtitle?: string;
 }
 
-const Title = styled.h1<{}>(withReset, ({ theme }: { theme: Theme }) => ({
+export const Title = styled.h1<{}>(withReset, ({ theme }: { theme: Theme }) => ({
   color: theme.color.defaultText,
   fontSize: theme.typography.size.m3,
   fontWeight: theme.typography.weight.black,
@@ -24,7 +24,7 @@ const Title = styled.h1<{}>(withReset, ({ theme }: { theme: Theme }) => ({
   },
 }));
 
-const Subtitle = styled.h2<{}>(withReset, ({ theme }: { theme: Theme }) => ({
+export const Subtitle = styled.h2<{}>(withReset, ({ theme }: { theme: Theme }) => ({
   fontWeight: theme.typography.weight.regular,
   fontSize: theme.typography.size.s3,
   lineHeight: '20px',

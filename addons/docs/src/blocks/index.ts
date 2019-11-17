@@ -5,12 +5,20 @@ export * from './Description';
 export * from './DocsContext';
 export * from './DocsPage';
 export * from './DocsContainer';
+export * from './Heading';
 export * from './Meta';
 export * from './Preview';
+export * from './Primary';
+export * from './PrimaryProps';
 export * from './Props';
 export * from './Source';
+export * from './Stories';
 export * from './Story';
+export * from './Subtitle';
+export * from './Title';
 export * from './Wrapper';
+
+export * from './types';
 
 // helper function for MDX
 export const makeStoryFn = (val: any) => (typeof val === 'function' ? val : () => val);
