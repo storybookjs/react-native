@@ -30,7 +30,7 @@ export type StoriesSlot = (stories: StoryData[], context: SlotContext) => DocsSt
 export interface DocsPageProps {
   titleSlot?: StringSlot;
   subtitleSlot?: StringSlot;
-  descriptionSlot?: StringSlot;
+  descriptionSlot?: DescriptionSlot;
   primarySlot?: StorySlot;
   propsSlot?: PropsSlot;
   storiesSlot?: StoriesSlot;
