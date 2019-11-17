@@ -16,10 +16,9 @@ function load(options: StoryshotsOptions) {
   global.STORYBOOK_ENV = 'vue';
   mockVueToIncludeCompiler();
 
-  const { configPath, config } = options;
   const storybook = require.requireActual('@storybook/vue');
 
-  configure({ configPath, config, storybook });
+  configure({ ...options, storybook });
 
   return {
     framework: 'vue' as const,

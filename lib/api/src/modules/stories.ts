@@ -255,35 +255,32 @@ const initStoriesApi = ({
         .concat(groups)
         .map(toGroup)
         // Map a bunch of extra fields onto the groups, collecting the path as we go (thus the reduce)
-        .reduce(
-          (soFar, group, index, original) => {
-            const { name } = group;
-            const parent = index > 0 && soFar[index - 1].id;
-            const id = sanitize(parent ? `${parent}-${name}` : name);
-            if (parent === id) {
-              throw new Error(
-                `
+        .reduce((soFar, group, index, original) => {
+          const { name } = group;
+          const parent = index > 0 && soFar[index - 1].id;
+          const id = sanitize(parent ? `${parent}-${name}` : name);
+          if (parent === id) {
+            throw new Error(
+              `
 Invalid part '${name}', leading to id === parentId ('${id}'), inside kind '${kind}'
 
 Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybookjs/storybook/issues/6128
               `.trim()
-              );
-            }
+            );
+          }
 
-            const result: Group = {
-              ...group,
-              id,
-              parent,
-              depth: index,
-              children: [],
-              isComponent: index === original.length - 1,
-              isLeaf: false,
-              isRoot: !!root && index === 0,
-            };
-            return soFar.concat([result]);
-          },
-          [] as GroupsList
-        );
+          const result: Group = {
+            ...group,
+            id,
+            parent,
+            depth: index,
+            children: [],
+            isComponent: index === original.length - 1,
+            isLeaf: false,
+            isRoot: !!root && index === 0,
+          };
+          return soFar.concat([result]);
+        }, [] as GroupsList);
 
       const paths = [...rootAndGroups.map(g => g.id), item.id];
 

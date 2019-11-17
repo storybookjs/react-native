@@ -1,3 +1,29 @@
+## 5.3.0-beta.0 (November 16, 2019)
+
+Storybook 5.3 is in beta y'all 🔥🔥🔥 It includes:
+
+- 📝 Longform documentation in MDX
+- 🎨 Multi-framework SB Docs (React, Vue, Angular, WC)
+- 📦 Web-components framework support
+- 🔼 Tri-config (experimental)
+
+See the [latest changelog](https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md) for a full list of changes.
+
+## 5.3.0-alpha.47 (November 16, 2019)
+
+### Features
+
+* Triconfig: Declarative story definition in main.js ([#8748](https://github.com/storybookjs/storybook/pull/8748))
+* Storyshots: Triconfig support ([#8765](https://github.com/storybookjs/storybook/pull/8765))
+
+### Bug Fixes
+
+* Addon-viewports: Fix missing TypeScript types ([#8848](https://github.com/storybookjs/storybook/pull/8848))
+
+### Dependency Upgrades
+
+* Dependency upgrades ([#8847](https://github.com/storybookjs/storybook/pull/8847))
+
 ## 5.3.0-alpha.46 (November 16, 2019)
 
 ### Features
