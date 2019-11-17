@@ -10,6 +10,7 @@ import { Stories } from './Stories';
 export const DocsPage: FunctionComponent<DocsPageProps> = ({
   titleSlot,
   subtitleSlot,
+  descriptionSlot,
   primarySlot,
   propsSlot,
   storiesSlot,
@@ -17,7 +18,7 @@ export const DocsPage: FunctionComponent<DocsPageProps> = ({
   <>
     <Title slot={titleSlot} />
     <Subtitle slot={subtitleSlot} />
-    <Description />
+    <Description slot={descriptionSlot} />
     <Primary slot={primarySlot} />
     <PrimaryProps slot={propsSlot} />
     <Stories slot={storiesSlot} />

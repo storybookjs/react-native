@@ -21,15 +21,17 @@ export interface SlotContext {
 }
 
 export type StringSlot = (context: SlotContext) => string;
+export type DescriptionSlot = (description: string, context: SlotContext) => string;
 export type PropsSlot = (context: SlotContext) => PropsTableProps;
 export type StorySlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps;
+
 export type StoriesSlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps[];
 
 export interface DocsPageProps {
-  titleSlot: StringSlot;
-  subtitleSlot: StringSlot;
-  descriptionSlot: StringSlot;
-  primarySlot: StorySlot;
-  propsSlot: PropsSlot;
-  storiesSlot: StoriesSlot;
+  titleSlot?: StringSlot;
+  subtitleSlot?: StringSlot;
+  descriptionSlot?: StringSlot;
+  primarySlot?: StorySlot;
+  propsSlot?: PropsSlot;
+  storiesSlot?: StoriesSlot;
 }
