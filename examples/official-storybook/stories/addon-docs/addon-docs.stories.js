@@ -45,3 +45,5 @@ jsxOverride.story = {
     docs: { page: () => <div>Hello docs</div> },
   },
 };
+
+export const largerThanPreview = () => <div style={{ width: 1000, background: 'pink' }}>HUGE</div>;
