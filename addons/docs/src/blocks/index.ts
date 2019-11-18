@@ -14,6 +14,7 @@ export * from './Props';
 export * from './Source';
 export * from './Stories';
 export * from './Story';
+export * from './Subheading';
 export * from './Subtitle';
 export * from './Title';
 export * from './Wrapper';

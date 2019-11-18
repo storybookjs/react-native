@@ -5,9 +5,12 @@ import {
   Description,
   Primary,
   PrimaryProps,
+  Props,
   Stories,
 } from '@storybook/addon-docs/blocks';
 import { DocgenButton } from '../../components/DocgenButton';
+import BaseButton from '../../components/BaseButton';
+import { ButtonGroup } from '../../components/ButtonGroup';
 
 export default {
   title: 'Addons/Docs/stories docs bocks',
@@ -110,6 +113,57 @@ descriptionSlot.story = {
       page: () => (
         <>
           <Description slot={description => `<b>${description}</b>`} />
+        </>
+      ),
+    },
+  },
+};
+
+export const multipleComponents = () => (
+  <ButtonGroup>
+    <DocgenButton label="one" />
+    <DocgenButton label="two" />
+    <DocgenButton label="three" />
+  </ButtonGroup>
+);
+
+multipleComponents.story = {
+  name: 'Many Components',
+  parameters: {
+    component: ButtonGroup,
+    components: {
+      'Button Group': ButtonGroup,
+      'Docgen Button': DocgenButton,
+      'Base Button': BaseButton,
+    },
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary slot={stories => stories.find(story => story.story === 'Many Components')} />
+          <PrimaryProps />
+        </>
+      ),
+    },
+  },
+};
+
+export const componentsProps = () => <div>Display multiple prop tables in tabs</div>;
+componentsProps.story = {
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title>Multiple prop tables</Title>
+          <Props
+            components={{
+              'Button Group': ButtonGroup,
+              'Docgen Button': DocgenButton,
+              'Base Button': BaseButton,
+            }}
+          />
         </>
       ),
     },

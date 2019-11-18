@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { H3 } from '@storybook/components/html';
+import { Subheading } from './Subheading';
 import { DocsStoryProps } from './types';
 import { Anchor } from './Anchor';
 import { Description } from './Description';
@@ -14,7 +14,7 @@ export const DocsStory: FunctionComponent<DocsStoryProps> = ({
   parameters,
 }) => (
   <Anchor storyId={id}>
-    {expanded && <H3>{name}</H3>}
+    {expanded && <Subheading>{name}</Subheading>}
     {expanded && parameters && parameters.docs && parameters.docs.storyDescription && (
       <Description markdown={parameters.docs.storyDescription} />
     )}

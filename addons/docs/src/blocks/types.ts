@@ -1,4 +1,5 @@
 import { PropsTableProps } from '@storybook/components';
+import { Component } from './shared';
 
 export interface StoryData {
   id?: string;
@@ -22,7 +23,7 @@ export interface SlotContext {
 
 export type StringSlot = (context: SlotContext) => string;
 export type DescriptionSlot = (description: string, context: SlotContext) => string;
-export type PropsSlot = (context: SlotContext) => PropsTableProps;
+export type PropsSlot = (context: SlotContext, component: Component) => PropsTableProps;
 export type StorySlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps;
 
 export type StoriesSlot = (stories: StoryData[], context: SlotContext) => DocsStoryProps[];
