@@ -8,10 +8,9 @@ function test(options: StoryshotsOptions): boolean {
 }
 
 function load(options: StoryshotsOptions) {
-  const { configPath, config } = options;
   const storybook = require.requireActual('@storybook/react');
 
-  configure({ configPath, config, storybook });
+  configure({ ...options, storybook });
 
   return {
     framework: 'react' as const,

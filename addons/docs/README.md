@@ -47,7 +47,7 @@ Here's an example file:
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { Checkbox } from './Checkbox';
 
-<Meta title="MDX|Checkbox" component={Checkbox} />
+<Meta title="MDX/Checkbox" component={Checkbox} />
 
 # Checkbox
 
@@ -77,16 +77,16 @@ For more information on `MDX`, see the [`MDX` reference](./docs/mdx.md).
 
 Storybook Docs supports all view layers that Storybook supports except for React Native (currently). There are some framework-specific features as well, such as props tables and inline story rendering. This chart captures the current state of support:
 
-|                   | React |  Vue  | Angular | HTML  | [Web Components](./web-components) | Svelte | Polymer | Marko | Mithril | Riot  | Ember | Preact |
-| ----------------- | :---: | :---: | :-----: | :---: | :--------------------------------: | :----: | :-----: | :---: | :-----: | :---: | :---: | :----: |
-| MDX stories       |   +   |   +   |    +    |   +   |                 +                  |   +    |    +    |   +   |    +    |   +   |   +   |   +    |
-| CSF stories       |   +   |   +   |    +    |   +   |                 +                  |   +    |    +    |   +   |    +    |   +   |   +   |   +    |
-| StoriesOf stories |   +   |   +   |    +    |   +   |                 +                  |   +    |    +    |   +   |    +    |   +   |   +   |   +    |
-| Source            |   +   |   +   |    +    |   +   |                 +                  |   +    |    +    |   +   |    +    |   +   |   +   |   +    |
-| Notes / Info      |   +   |   +   |    +    |   +   |                 +                  |   +    |    +    |   +   |    +    |   +   |   +   |   +    |
-| Props table       |   +   |   +   |    #    |       |                 +                  |        |         |       |         |       |       |        |
-| Description       |   +   |   +   |    #    |       |                 +                  |        |         |       |         |       |       |        |
-| Inline stories    |   +   |   +   |         |       |                 +                  |        |         |       |         |       |       |        |
+|                   | React | Vue | Angular | HTML | [Web Components](./web-components) | Svelte | Polymer | Marko | Mithril | Riot | Ember | Preact |
+| ----------------- | :---: | :-: | :-----: | :--: | :--------------------------------: | :----: | :-----: | :---: | :-----: | :--: | :---: | :----: |
+| MDX stories       |   +   |  +  |    +    |  +   |                 +                  |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| CSF stories       |   +   |  +  |    +    |  +   |                 +                  |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| StoriesOf stories |   +   |  +  |    +    |  +   |                 +                  |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| Source            |   +   |  +  |    +    |  +   |                 +                  |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| Notes / Info      |   +   |  +  |    +    |  +   |                 +                  |   +    |    +    |   +   |    +    |  +   |   +   |   +    |
+| Props table       |   +   |  +  |    #    |      |                 +                  |        |         |       |         |      |       |        |
+| Description       |   +   |  +  |    #    |      |                 +                  |        |         |       |         |      |       |        |
+| Inline stories    |   +   |  +  |         |      |                 +                  |        |         |       |         |      |       |        |
 
 **Note:** `#` = WIP support
 

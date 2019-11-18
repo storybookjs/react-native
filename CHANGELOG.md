@@ -1,3 +1,59 @@
+## 5.3.0-beta.1 (November 18, 2019)
+
+### Features
+
+* Addon-google-analytics: Add gaOption config ([#8859](https://github.com/storybookjs/storybook/pull/8859))
+
+### Bug Fixes
+
+* Addon-docs: Fix props table props sorting for PropTypes ([#8857](https://github.com/storybookjs/storybook/pull/8857))
+* Fix layout of Preview container ([#8628](https://github.com/storybookjs/storybook/pull/8628))
+
+## 5.3.0-beta.0 (November 16, 2019)
+
+Storybook 5.3 is in beta y'all 🔥🔥🔥 It includes:
+
+- 📝 Longform documentation in MDX
+- 🎨 Multi-framework SB Docs (React, Vue, Angular, WC)
+- 📦 Web-components framework support
+- 🔼 Tri-config (experimental)
+
+See the [latest changelog](https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md) for a full list of changes.
+
+## 5.3.0-alpha.47 (November 16, 2019)
+
+### Features
+
+* Triconfig: Declarative story definition in main.js ([#8748](https://github.com/storybookjs/storybook/pull/8748))
+* Storyshots: Triconfig support ([#8765](https://github.com/storybookjs/storybook/pull/8765))
+
+### Bug Fixes
+
+* Addon-viewports: Fix missing TypeScript types ([#8848](https://github.com/storybookjs/storybook/pull/8848))
+
+### Dependency Upgrades
+
+* Dependency upgrades ([#8847](https://github.com/storybookjs/storybook/pull/8847))
+
+## 5.3.0-alpha.46 (November 16, 2019)
+
+### Features
+
+* Core: allow uppercase path names in url query param ([#8516](https://github.com/storybookjs/storybook/pull/8516))
+
+### Bug Fixes
+
+* Core: Fix null version check bug ([#8806](https://github.com/storybookjs/storybook/pull/8806))
+* Addon-notes: Fix anchor links ([#8132](https://github.com/storybookjs/storybook/pull/8132))
+
+### Maintenance
+
+* Refactor: remove useless variables from eslint config ([#8843](https://github.com/storybookjs/storybook/pull/8843))
+
+### Dependency Upgrades
+
+* Addon-docs: Replace `storybook-addon-vue-info` with `vue-docgen-loader` ([#8831](https://github.com/storybookjs/storybook/pull/8831))
+
 ## 5.3.0-alpha.45 (November 14, 2019)
 
 ### Breaking Changes

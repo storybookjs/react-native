@@ -1,7 +1,7 @@
 export function webpack(webpackConfig: any = {}, options: any = {}) {
   webpackConfig.module.rules.push({
     test: /\.vue$/,
-    loader: 'storybook-addon-vue-info/loader',
+    loader: 'vue-docgen-loader',
     enforce: 'post',
   });
   return webpackConfig;

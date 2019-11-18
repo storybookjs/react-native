@@ -33,7 +33,7 @@ export interface SubState {
 const getVersionCheckData = memoize(1)(
   (): Versions => {
     try {
-      return JSON.parse(VERSIONCHECK).data as Versions;
+      return { ...(JSON.parse(VERSIONCHECK).data || {}) };
     } catch (e) {
       return {};
     }

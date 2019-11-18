@@ -13,10 +13,9 @@ function test(options: StoryshotsOptions): boolean {
 function load(options: StoryshotsOptions) {
   global.STORYBOOK_ENV = 'svelte';
 
-  const { configPath, config } = options;
   const storybook = require.requireActual('@storybook/svelte');
 
-  configure({ configPath, config, storybook });
+  configure({ ...options, storybook });
 
   return {
     framework: 'svelte' as const,

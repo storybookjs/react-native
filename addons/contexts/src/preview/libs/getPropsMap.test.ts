@@ -2,7 +2,10 @@ import { _getPropsByParamName, getPropsMap } from './getPropsMap';
 import { OPT_OUT } from '../../shared/constants';
 
 describe('Test on behaviors from collecting the propsMap', () => {
-  const someParams = [{ name: 'A', props: {} }, { name: 'B', props: {} }];
+  const someParams = [
+    { name: 'A', props: {} },
+    { name: 'B', props: {} },
+  ];
 
   it('should return "null" when params in 0 length', () => {
     const result = _getPropsByParamName([]);
@@ -44,7 +47,10 @@ describe('Test on the integrity of the method to get the propMaps', () => {
         icon: 'box' as const,
         nodeId: 'Some Context',
         options: { cancelable: false, deep: false, disable: false },
-        params: [{ name: 'A1', props: { a: 1 } }, { name: 'A2', props: { a: 2 }, default: true }],
+        params: [
+          { name: 'A1', props: { a: 1 } },
+          { name: 'A2', props: { a: 2 }, default: true },
+        ],
         title: 'Some Context',
       },
       {
