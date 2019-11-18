@@ -30,6 +30,10 @@ const TypeWithJsDoc = styled.div(({ theme }: { theme: any }) => ({
   marginBottom: '12px',
 }));
 
+const DefaultValue = styled.td({
+  whiteSpace: 'nowrap',
+});
+
 export const PropRow: FC<PropRowProps> = ({
   row: { name, type, required, description, defaultValue, jsDocTags },
 }) => (
@@ -41,18 +45,20 @@ export const PropRow: FC<PropRowProps> = ({
     <td>
       <Markdown>{description || ''}</Markdown>
       {!isNil(jsDocTags) ? (
-        <TypeWithJsDoc>
-          <PropValue value={type} />
-        </TypeWithJsDoc>
+        <>
+          <TypeWithJsDoc>
+            <PropValue value={type} />
+          </TypeWithJsDoc>
+          <PropJsDoc tags={jsDocTags} />
+        </>
       ) : (
         <Type>
           <PropValue value={type} />
         </Type>
       )}
-      <PropJsDoc tags={jsDocTags} />
     </td>
-    <td>
+    <DefaultValue>
       <PropValue value={defaultValue} />
-    </td>
+    </DefaultValue>
   </tr>
 );

@@ -108,10 +108,6 @@ export const Table = styled.table<{}>(({ theme }) => ({
 }));
 
 export const PropJsDoc: FC<PropJsDocProps> = ({ tags }) => {
-  if (isNil(tags)) {
-    return null;
-  }
-
   const params = (tags.params || []).filter(x => x.description);
   const hasDisplayableParams = params.length !== 0;
   const hasDisplayableReturns = !isNil(tags.returns) && !isNil(tags.returns.description);

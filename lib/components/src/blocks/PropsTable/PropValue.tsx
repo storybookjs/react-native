@@ -18,7 +18,12 @@ interface PropSummaryProps {
   value: PropSummaryValue;
 }
 
-const Summary = styled.div(({ theme }: { theme: any }) => ({
+const Text = styled.span(({ theme }: { theme: any }) => ({
+  fontFamily: theme.typography.fonts.mono,
+  fontSize: theme.typography.size.s1,
+}));
+
+const Expandable = styled.div(({ theme }: { theme: any }) => ({
   fontSize: theme.typography.size.s1,
   lineHeight: '20px',
   display: 'inline-block',
@@ -31,12 +36,7 @@ const Summary = styled.div(({ theme }: { theme: any }) => ({
   fontFamily: theme.typography.fonts.mono,
 }));
 
-const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(() => ({
-  minWidth: '460px',
-  padding: '8px',
-}));
-
-const Icon = styled<any, any>(Icons)(({ theme }: { theme: any }) => ({
+const ArrowIcon = styled<any, any>(Icons)(({ theme }: { theme: any }) => ({
   height: 10,
   width: 10,
   minWidth: 10,
@@ -47,12 +47,17 @@ const Icon = styled<any, any>(Icons)(({ theme }: { theme: any }) => ({
   display: 'inline-flex',
 }));
 
+const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(() => ({
+  minWidth: '460px',
+  padding: '8px',
+}));
+
 const EmptyProp = () => {
   return <span>-</span>;
 };
 
 const PropText: FC<PropTextProps> = ({ text }) => {
-  return <span>{text}</span>;
+  return <Text>{text}</Text>;
 };
 
 const PropSummary: FC<PropSummaryProps> = ({ value }) => {
@@ -79,10 +84,10 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
         </StyledSyntaxHighlighter>
       }
     >
-      <Summary className="sbdocs-expandable">
+      <Expandable className="sbdocs-expandable">
         <span>{summary}</span>
-        <Icon icon={isOpen ? 'arrowup' : 'arrowdown'} size={10} />
-      </Summary>
+        <ArrowIcon icon={isOpen ? 'arrowup' : 'arrowdown'} size={10} />
+      </Expandable>
     </WithTooltipPure>
   );
 };
