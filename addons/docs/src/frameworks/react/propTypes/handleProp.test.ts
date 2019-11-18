@@ -710,7 +710,7 @@ describe('enhancePropTypesProp', () => {
 });
 
 describe('enhancePropTypesProps', () => {
-  it('keep the original definition order', () => {
+  it('should keep the original definition order', () => {
     const component = createComponent({
       propTypes: {
         foo: PropTypes.string,
@@ -750,5 +750,33 @@ describe('enhancePropTypesProps', () => {
     expect(props[1].name).toBe('middleWithDefaultValue');
     expect(props[2].name).toBe('bar');
     expect(props[3].name).toBe('endWithDefaultValue');
+  });
+
+  it('should not include @ignore props', () => {
+    const component = createComponent({
+      propTypes: {
+        foo: PropTypes.string,
+        bar: PropTypes.string,
+      },
+      docgenInfo: {
+        ...createDocgenProp({
+          name: 'foo',
+          type: { name: 'string' },
+        }),
+        ...createDocgenProp({
+          name: 'bar',
+          type: { name: 'string' },
+          description: '@ignore',
+        }),
+      },
+    });
+
+    const props = enhancePropTypesProps(
+      extractPropsFromDocgen(component, DOCGEN_SECTION),
+      component
+    );
+
+    expect(props.length).toBe(1);
+    expect(props[0].name).toBe('foo');
   });
 });

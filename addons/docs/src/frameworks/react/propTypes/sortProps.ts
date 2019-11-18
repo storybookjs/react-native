@@ -12,7 +12,9 @@ export function keepOriginalDefinitionOrder(
   const { propTypes } = component;
 
   if (!isNil(propTypes)) {
-    return Object.keys(propTypes).map(x => extractedProps.find(y => y.name === x));
+    return Object.keys(propTypes)
+      .map(x => extractedProps.find(y => y.name === x))
+      .filter(x => x);
   }
 
   return extractedProps;
