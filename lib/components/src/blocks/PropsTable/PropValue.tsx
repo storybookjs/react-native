@@ -1,9 +1,10 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { FC } from 'react';
-import { Icons, SyntaxHighlighter, WithTooltip } from '@storybook/components';
 import { isNil } from 'lodash';
 import { styled } from '@storybook/theming';
 import { PropSummaryValue } from './PropDef';
+import { WithTooltip } from '../../tooltip/WithTooltip';
+import { Icons } from '../../icon/icon';
+import { SyntaxHighlighter } from '../../syntaxhighlighter/syntaxhighlighter';
 
 interface PropValueProps {
   value?: PropSummaryValue;
