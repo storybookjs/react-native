@@ -1,3 +1,14 @@
+## 5.3.0-beta.1 (November 18, 2019)
+
+### Features
+
+* Addon-google-analytics: Add gaOption config ([#8859](https://github.com/storybookjs/storybook/pull/8859))
+
+### Bug Fixes
+
+* Addon-docs: Fix props table props sorting for PropTypes ([#8857](https://github.com/storybookjs/storybook/pull/8857))
+* Fix layout of Preview container ([#8628](https://github.com/storybookjs/storybook/pull/8628))
+
 ## 5.3.0-beta.0 (November 16, 2019)
 
 Storybook 5.3 is in beta y'all 🔥🔥🔥 It includes:
