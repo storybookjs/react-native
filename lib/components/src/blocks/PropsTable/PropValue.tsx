@@ -56,6 +56,8 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
     return <span>{summary}</span>;
   }
 
+  console.log(detail);
+
   return (
     <WithTooltipPure
       closeOnClick
@@ -66,7 +68,7 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
         setIsOpen(isVisible);
       }}
       tooltip={
-        <StyledSyntaxHighlighter language="jsx" copyable padded>
+        <StyledSyntaxHighlighter language="jsx" copyable padded format={false}>
           {detail}
         </StyledSyntaxHighlighter>
       }
