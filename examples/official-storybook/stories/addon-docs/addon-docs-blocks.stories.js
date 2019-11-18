@@ -7,8 +7,6 @@ import {
   PrimaryProps,
   Stories,
 } from '@storybook/addon-docs/blocks';
-import notes from '../notes/notes.md';
-import mdxNotes from '../notes/notes.mdx';
 import { DocgenButton } from '../../components/DocgenButton';
 
 export default {
@@ -18,63 +16,102 @@ export default {
     docs: {
       page: () => (
         <>
-          <Title>Custom Title</Title>
           <Title />
-          <Subtitle>Custom sub-title</Subtitle>
+          <Subtitle />
           <Description />
-          <Description>Custom markdown</Description>
           <Primary />
           <PrimaryProps />
-          <Stories title="Stories title" />
+          <Stories />
         </>
       ),
     },
   },
 };
 
-export const basic = () => <div>Click docs tab to see basic docs</div>;
+export const defDocsPage = () => <div>Default docs page</div>;
 
-export const noDocs = () => <div>Click docs tab to see no docs error</div>;
-noDocs.story = {
-  name: 'no docs',
-  parameters: { docs: { page: null } },
-};
-
-export const withNotes = () => <div>Click docs tab to see DocsPage docs</div>;
-withNotes.story = {
-  name: 'with notes',
-  parameters: { notes },
-};
-
-export const withInfo = () => <div>Click docs tab to see DocsPage docs</div>;
-withInfo.story = {
-  name: 'with info',
+export const smallDocsPage = () => <div>Just primary story, </div>;
+smallDocsPage.story = {
   parameters: {
-    info: 'some user info string',
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Primary />
+        </>
+      ),
+    },
   },
 };
 
-export const mdxOverride = () => <div>Click docs tab to see MDX-overridden docs</div>;
-mdxOverride.story = {
-  name: 'mdx override',
+export const checkBoxProps = () => <div>Primary props displayed with a check box </div>;
+checkBoxProps.story = {
   parameters: {
-    docs: { page: mdxNotes },
+    docs: {
+      page: () => {
+        const [showProps, setShowProps] = React.useState(false);
+        return (
+          <>
+            <Title />
+            <Subtitle />
+            <Description />
+            <Primary />
+            <label>
+              <input
+                type="checkbox"
+                checked={showProps}
+                onChange={() => setShowProps(!showProps)}
+              />
+              <span>display props</span>
+            </label>
+            {showProps && <PrimaryProps />}
+          </>
+        );
+      },
+    },
   },
 };
 
-export const jsxOverride = () => <div>Click docs tab to see JSX-overridden docs</div>;
-jsxOverride.story = {
-  name: 'jsx override',
+export const customLabels = () => <div>Display custom title, Subtitle, Description</div>;
+customLabels.story = {
   parameters: {
-    docs: { page: () => <div>Hello docs</div> },
+    docs: {
+      page: () => (
+        <>
+          <Title>Custom title</Title>
+          <Subtitle>Custom sub title</Subtitle>
+          <Description>Custom description</Description>
+          <Primary />
+          <PrimaryProps />
+          <Stories title="Custom stories title" />
+        </>
+      ),
+    },
   },
 };
 
-export const docsDisable = () => <div>This story shouldn't show up in DocsPage</div>;
-docsDisable.story = {
+export const customStoriesFilter = () => <div>Displays ALL stories (not excluding first one)</div>;
+customStoriesFilter.story = {
   parameters: {
-    docs: { disable: true },
+    docs: {
+      page: () => (
+        <>
+          <Stories slot={stories => stories} />
+        </>
+      ),
+    },
   },
 };
 
-export const largerThanPreview = () => <div style={{ width: 1000, background: 'pink' }}>HUGE</div>;
+export const descriptionSlot = () => <div>Adds markdown to the description</div>;
+descriptionSlot.story = {
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Description slot={description => `<b>${description}</b>`} />
+        </>
+      ),
+    },
+  },
+};
