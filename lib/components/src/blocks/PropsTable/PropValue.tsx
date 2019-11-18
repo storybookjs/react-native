@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { isNil } from 'lodash';
 import { styled } from '@storybook/theming';
 import { PropSummaryValue } from './PropDef';
-import { WithTooltip } from '../../tooltip/WithTooltip';
+import { WithTooltipPure } from '../../tooltip/WithTooltip';
 import { Icons } from '../../icon/icon';
 import { SyntaxHighlighter } from '../../syntaxhighlighter/syntaxhighlighter';
 
@@ -14,20 +14,16 @@ interface PropSummaryProps {
   value: PropSummaryValue;
 }
 
-const EmptyProp = () => {
-  return <span>-</span>;
-};
-
-export const Summary = styled.div<{ expandable: boolean }>(({ theme, expandable }) => ({
+const Summary = styled.div(({ theme }: { theme: any }) => ({
   fontSize: theme.typography.size.s1,
   lineHeight: '20px',
   display: 'inline-block',
   textAlign: 'left',
-  color: expandable ? theme.color.secondary : theme.color.dark,
-  backgroundColor: expandable ? theme.color.lighter : 'transparent',
-  padding: expandable ? '4px' : '0',
-  borderRadius: expandable ? '4px' : '0',
-  cursor: expandable ? 'pointer' : 'auto',
+  color: theme.color.secondary,
+  backgroundColor: theme.color.lighter,
+  padding: '4px',
+  borderRadius: '4px',
+  cursor: 'pointer',
   fontFamily: theme.typography.fonts.mono,
 }));
 
@@ -36,7 +32,7 @@ const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(() => ({
   padding: '8px',
 }));
 
-const Icon = styled<any, any>(Icons)(({ theme }) => ({
+const Icon = styled<any, any>(Icons)(({ theme }: { theme: any }) => ({
   height: 10,
   width: 10,
   minWidth: 10,
@@ -47,35 +43,39 @@ const Icon = styled<any, any>(Icons)(({ theme }) => ({
   display: 'inline-flex',
 }));
 
+const EmptyProp = () => {
+  return <span>-</span>;
+};
+
 const PropSummary: FC<PropSummaryProps> = ({ value }) => {
   const { summary, detail } = value;
-  const title = !isNil(detail) ? detail : null;
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  if (isNil(detail)) {
+    return <span>{summary}</span>;
+  }
 
   return (
-    <>
-      {title !== null ? (
-        <WithTooltip
-          closeOnClick
-          trigger="click"
-          placement="bottom"
-          tooltip={
-            <StyledSyntaxHighlighter language="jsx" copyable padded>
-              {title}
-            </StyledSyntaxHighlighter>
-          }
-        >
-          <Summary
-            expandable={title !== null}
-            className={title !== null ? 'sbdocs-expandable' : ''}
-          >
-            <span>{summary}</span>
-            <Icon icon="chevrondown" size={10} />
-          </Summary>
-        </WithTooltip>
-      ) : (
+    <WithTooltipPure
+      closeOnClick
+      trigger="click"
+      placement="bottom"
+      tooltipShown={isOpen}
+      onVisibilityChange={isVisible => {
+        setIsOpen(isVisible);
+      }}
+      tooltip={
+        <StyledSyntaxHighlighter language="jsx" copyable padded>
+          {detail}
+        </StyledSyntaxHighlighter>
+      }
+    >
+      <Summary className="sbdocs-expandable">
         <span>{summary}</span>
-      )}
-    </>
+        <Icon icon={isOpen ? 'arrowup' : 'arrowdown'} size={10} />
+      </Summary>
+    </WithTooltipPure>
   );
 };
 

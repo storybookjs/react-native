@@ -12,19 +12,19 @@ export interface PropRowProps {
 
 const Name = styled.span({ fontWeight: 'bold' });
 
-const Required = styled.span(({ theme }) => ({
+const Required = styled.span(({ theme }: { theme: any }) => ({
   color: theme.color.negative,
   fontFamily: theme.typography.fonts.mono,
   cursor: 'help',
 }));
 
-const Type = styled.div(({ theme }) => ({
+const Type = styled.div(({ theme }: { theme: any }) => ({
   color: theme.color.dark,
   fontFamily: theme.typography.fonts.mono,
   fontSize: `${theme.typography.size.code}%`,
 }));
 
-const TypeWithJsDoc = styled.div(({ theme }) => ({
+const TypeWithJsDoc = styled.div(({ theme }: { theme: any }) => ({
   color: theme.color.darker,
   marginTop: '12px',
   marginBottom: '12px',
