@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import { PropsTable, PropsTableError, PropsTableProps } from '@storybook/components';
+import { PropsTable, PropsTableError, PropsTableProps, PropDef } from '@storybook/components';
+import { isNil } from 'lodash';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, CURRENT_SELECTION } from './shared';
-
 import { PropsExtractor } from '../lib/docgen/types';
 import { extractProps as reactExtractProps } from '../frameworks/react/extractProps';
 import { extractProps as vueExtractProps } from '../frameworks/vue/extractProps';
@@ -41,7 +41,13 @@ export const getPropsTableProps = (
     if (!extractProps) {
       throw new Error(PropsTableError.PROPS_UNSUPPORTED);
     }
-    return extractProps(target, { exclude });
+
+    let { rows } = extractProps(target);
+    if (!isNil(exclude)) {
+      rows = rows.filter((row: PropDef) => !exclude.includes(row.name));
+    }
+
+    return { rows };
   } catch (err) {
     return { error: err.message };
   }
