@@ -9,5 +9,9 @@ export default {
   id: 'button-id',
 };
 
-export const story1 = () => <Button label=\\"Story 1\\" />;"
+export const Story1 = () => <Button label=\\"Story 1\\" />;
+
+Story1.story = {
+  name: 'story1',
+};"
 `;
