@@ -10,6 +10,10 @@ interface PropValueProps {
   value?: PropSummaryValue;
 }
 
+interface PropTextProps {
+  text: string;
+}
+
 interface PropSummaryProps {
   value: PropSummaryValue;
 }
@@ -47,16 +51,18 @@ const EmptyProp = () => {
   return <span>-</span>;
 };
 
+const PropText: FC<PropTextProps> = ({ text }) => {
+  return <span>{text}</span>;
+};
+
 const PropSummary: FC<PropSummaryProps> = ({ value }) => {
   const { summary, detail } = value;
 
   const [isOpen, setIsOpen] = useState(false);
 
   if (isNil(detail)) {
-    return <span>{summary}</span>;
+    return <PropText text={summary} />;
   }
-
-  console.log(detail);
 
   return (
     <WithTooltipPure
