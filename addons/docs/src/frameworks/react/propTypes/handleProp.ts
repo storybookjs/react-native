@@ -3,6 +3,8 @@ import { PropDef } from '@storybook/components';
 import { ExtractedProp } from '../../../lib/docgen';
 import { createType } from './createType';
 import { createDefaultValue } from './createDefaultValue';
+import { Component } from '../../../blocks/shared';
+import { keepOriginalDefinitionOrder } from './sortProps';
 
 export function enhancePropTypesProp(extractedProp: ExtractedProp): PropDef {
   const { propDef } = extractedProp;
@@ -21,4 +23,13 @@ export function enhancePropTypesProp(extractedProp: ExtractedProp): PropDef {
   }
 
   return propDef;
+}
+
+export function enhancePropTypesProps(
+  extractedProps: ExtractedProp[],
+  component: Component
+): PropDef[] {
+  const enhancedProps = extractedProps.map(enhancePropTypesProp);
+
+  return keepOriginalDefinitionOrder(enhancedProps, component);
 }

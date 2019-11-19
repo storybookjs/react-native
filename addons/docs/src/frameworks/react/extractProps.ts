@@ -3,7 +3,7 @@ import { isForwardRef, isMemo } from 'react-is';
 import { PropDef } from '@storybook/components';
 import { hasDocgen, extractPropsFromDocgen, PropsExtractor, TypeSystem } from '../../lib/docgen';
 import { Component } from '../../blocks/shared';
-import { enhancePropTypesProp } from './propTypes/handleProp';
+import { enhancePropTypesProps } from './propTypes/handleProp';
 
 export interface PropDefMap {
   [p: string]: PropDef;
@@ -38,7 +38,7 @@ function getPropDefs(component: Component, section: string): PropDef[] {
   }
 
   if (extractedProps[0].typeSystem === TypeSystem.JAVASCRIPT) {
-    return extractedProps.map(enhancePropTypesProp);
+    return enhancePropTypesProps(extractedProps, component);
   }
 
   return extractedProps.map(x => x.propDef);

@@ -65,7 +65,7 @@ function generateFunc({ inferedType, ast }: InspectionResult): PropDefaultValue 
 }
 
 // All elements are JSX elements.
-// JSX elements cannot are not supported by escodegen.
+// JSX elements are not supported by escodegen.
 function generateElement(
   defaultValue: string,
   inspectionResult: InspectionResult
