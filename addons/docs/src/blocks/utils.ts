@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { DocsContextProps } from './DocsContext';
-import { StoryData } from './types';
-import { Component } from './shared';
+import { StoryData, Component } from './shared';
 
 export const getDocsStories = (context: DocsContextProps): StoryData[] => {
   const { storyStore, selectedKind } = context;

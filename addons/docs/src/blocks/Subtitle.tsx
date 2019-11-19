@@ -1,7 +1,7 @@
 import React, { useContext, FunctionComponent } from 'react';
 import { Subtitle as PureSubtitle } from '@storybook/components';
 import { DocsContext } from './DocsContext';
-import { StringSlot } from './types';
+import { StringSlot } from './shared';
 
 interface SubtitleProps {
   slot?: StringSlot;

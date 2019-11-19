@@ -2,7 +2,7 @@ import React, { useContext, FunctionComponent } from 'react';
 import { DocsContext } from './DocsContext';
 import { DocsStory } from './DocsStory';
 import { getDocsStories } from './utils';
-import { StorySlot } from './types';
+import { StorySlot } from './shared';
 
 interface PrimaryProps {
   slot?: StorySlot;

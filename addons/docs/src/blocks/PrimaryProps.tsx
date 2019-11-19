@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Props } from './Props';
-import { PropsSlot } from './types';
+import { PropsSlot } from './shared';
 
 interface PrimaryPropsProps {
   slot?: PropsSlot;

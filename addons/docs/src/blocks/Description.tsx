@@ -1,9 +1,8 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { Description, DescriptionProps as PureDescriptionProps } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
-import { Component, CURRENT_SELECTION } from './shared';
+import { Component, CURRENT_SELECTION, DescriptionSlot } from './shared';
 import { str } from '../lib/docgen/utils';
-import { DescriptionSlot } from './types';
 
 export enum DescriptionType {
   INFO = 'info',

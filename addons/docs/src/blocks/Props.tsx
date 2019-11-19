@@ -1,13 +1,11 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { PropsTable, PropsTableError, PropsTableProps, TabsState } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
-import { Component, CURRENT_SELECTION } from './shared';
-import { getComponentName } from './utils';
+import { Component, PropsSlot, CURRENT_SELECTION } from './shared';
 
 import { PropsExtractor } from '../lib/docgen/types';
 import { extractProps as reactExtractProps } from '../frameworks/react/extractProps';
 import { extractProps as vueExtractProps } from '../frameworks/vue/extractProps';
-import { PropsSlot } from './types';
 
 interface PropsProps {
   exclude?: string[];
