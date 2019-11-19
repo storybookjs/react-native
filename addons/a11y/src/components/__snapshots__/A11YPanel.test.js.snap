@@ -1124,3 +1124,148 @@ exports[`A11YPanel should render report 1`] = `
   </Provider>
 </A11YPanel>
 `;
+
+exports[`A11YPanel should show initial state on tab activation 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+}
+
+<A11YPanel
+  active={true}
+  api={
+    Object {
+      "emit": [MockFunction],
+      "off": [MockFunction],
+      "on": [MockFunction] {
+        "calls": Array [
+          Array [
+            "storybook/a11y/result",
+            [Function],
+          ],
+          Array [
+            "storybook/a11y/error",
+            [Function],
+          ],
+          Array [
+            "storybook/a11y/manual",
+            [Function],
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+>
+  <Styled(span)>
+    <span
+      className="emotion-0"
+    >
+      Initializing...
+    </span>
+  </Styled(span)>
+</A11YPanel>
+`;
+
+exports[`A11YPanel should show manual state depending on config 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+}
+
+<A11YPanel
+  active={true}
+  api={
+    Object {
+      "emit": [MockFunction] {
+        "calls": Array [
+          Array [
+            "storybook/a11y/manual",
+            true,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+      "off": [MockFunction],
+      "on": [MockFunction] {
+        "calls": Array [
+          Array [
+            "storybook/a11y/result",
+            [Function],
+          ],
+          Array [
+            "storybook/a11y/error",
+            [Function],
+          ],
+          Array [
+            "storybook/a11y/manual",
+            [Function],
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+>
+  <Styled(span)>
+    <span
+      className="emotion-0"
+    >
+      Initializing...
+    </span>
+  </Styled(span)>
+</A11YPanel>
+`;

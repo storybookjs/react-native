@@ -11,8 +11,10 @@ interface Setup {
   element?: ElementContext;
   config: Spec;
   options: RunOptions;
+  manual: boolean;
 }
-let setup: Setup = { element: null, config: {}, options: {} };
+
+let setup: Setup = { element: null, config: {}, options: {}, manual: false };
 
 const getElement = () => {
   const storyRoot = document.getElementById('story-root');
@@ -58,12 +60,14 @@ export const withA11y = makeDecorator({
       if (storedDefaultSetup === null) {
         storedDefaultSetup = { ...setup };
       }
-      Object.assign(setup, parameters as Setup);
+      Object.assign(setup, parameters as Partial<Setup>);
     } else if (storedDefaultSetup !== null) {
       Object.assign(setup, storedDefaultSetup);
       storedDefaultSetup = null;
     }
+
     addons.getChannel().on(EVENTS.REQUEST, () => run(setup.element, setup.config, setup.options));
+    addons.getChannel().emit(EVENTS.MANUAL, setup.manual);
 
     return getStory(context);
   },

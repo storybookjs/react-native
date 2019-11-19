@@ -2,8 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { ThemeProvider, themes, convert } from '@storybook/theming';
-import { STORY_RENDERED } from '@storybook/core-events';
-import { ScrollArea } from '@storybook/components';
 
 import { A11YPanel } from './A11YPanel';
 import { EVENTS } from '../constants';
@@ -63,7 +61,7 @@ function ThemedA11YPanel(props) {
 }
 
 describe('A11YPanel', () => {
-  it('should register STORY_RENDERED, RESULT and ERROR updater on mount', () => {
+  it('should register event listener on mount', () => {
     // given
     const api = createApi();
     expect(api.on).not.toHaveBeenCalled();
@@ -73,12 +71,12 @@ describe('A11YPanel', () => {
 
     // then
     expect(api.on.mock.calls.length).toBe(3);
-    expect(api.on.mock.calls[0][0]).toBe(STORY_RENDERED);
-    expect(api.on.mock.calls[1][0]).toBe(EVENTS.RESULT);
-    expect(api.on.mock.calls[2][0]).toBe(EVENTS.ERROR);
+    expect(api.on.mock.calls[0][0]).toBe(EVENTS.RESULT);
+    expect(api.on.mock.calls[1][0]).toBe(EVENTS.ERROR);
+    expect(api.on.mock.calls[2][0]).toBe(EVENTS.MANUAL);
   });
 
-  it('should request a run on tab activation', () => {
+  it('should show initial state on tab activation', () => {
     // given
     const api = createApi();
 
@@ -90,11 +88,10 @@ describe('A11YPanel', () => {
     wrapper.update();
 
     // then
-    expect(api.emit).toHaveBeenCalledWith(EVENTS.REQUEST);
-    expect(wrapper.find(ScrollArea).length).toBe(0);
+    expect(wrapper.find(A11YPanel)).toMatchSnapshot();
   });
 
-  it('should deregister STORY_RENDERED, RESULT and ERROR updater on unmount', () => {
+  it('should deregister event listener on unmount', () => {
     // given
     const api = createApi();
     const wrapper = mount(<ThemedA11YPanel api={api} />);
@@ -105,9 +102,25 @@ describe('A11YPanel', () => {
 
     // then
     expect(api.off.mock.calls.length).toBe(3);
-    expect(api.off.mock.calls[0][0]).toBe(STORY_RENDERED);
-    expect(api.off.mock.calls[1][0]).toBe(EVENTS.RESULT);
-    expect(api.off.mock.calls[2][0]).toBe(EVENTS.ERROR);
+    expect(api.off.mock.calls[0][0]).toBe(EVENTS.RESULT);
+    expect(api.off.mock.calls[1][0]).toBe(EVENTS.ERROR);
+    expect(api.off.mock.calls[2][0]).toBe(EVENTS.MANUAL);
+  });
+
+  it('should show manual state depending on config', () => {
+    // given
+    const api = createApi();
+
+    const wrapper = mount(<ThemedA11YPanel api={api} />);
+    expect(api.emit).not.toHaveBeenCalled();
+
+    // when
+    wrapper.setProps({ active: true });
+    api.emit(EVENTS.MANUAL, true);
+    wrapper.update();
+
+    // then
+    expect(wrapper.find(A11YPanel)).toMatchSnapshot();
   });
 
   it('should update run result', () => {
@@ -141,7 +154,7 @@ describe('A11YPanel', () => {
     // given
     const api = createApi();
     const wrapper = mount(<ThemedA11YPanel api={api} active />);
-    const request = api.on.mock.calls.find(([event]) => event === STORY_RENDERED)[1];
+    const request = api.on.mock.calls.find(([event]) => event === EVENTS.MANUAL)[1];
 
     expect(
       wrapper
@@ -170,7 +183,7 @@ describe('A11YPanel', () => {
     // given
     const api = createApi();
     mount(<ThemedA11YPanel api={api} active={false} />);
-    const request = api.on.mock.calls.find(([event]) => event === STORY_RENDERED)[1];
+    const request = api.on.mock.calls.find(([event]) => event === EVENTS.MANUAL)[1];
     expect(api.emit).not.toHaveBeenCalled();
 
     // when
@@ -197,7 +210,7 @@ describe('A11YPanel', () => {
     // given
     const api = createApi();
     const wrapper = mount(<ThemedA11YPanel api={api} active />);
-    const request = api.on.mock.calls.find(([event]) => event === STORY_RENDERED)[1];
+    const request = api.on.mock.calls.find(([event]) => event === EVENTS.MANUAL)[1];
 
     // when
     request();
