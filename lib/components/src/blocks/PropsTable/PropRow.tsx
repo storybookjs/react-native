@@ -18,8 +18,17 @@ const Required = styled.span(({ theme }: { theme: any }) => ({
   cursor: 'help',
 }));
 
-const Type = styled.div(({ theme }: { theme: any }) => ({
+const Description = styled.div({
+  '&&': {
+    p: {
+      marginTop: '0',
+    },
+  },
+});
+
+const Type = styled.div(({ theme, hasDescription }: { theme: any; hasDescription: boolean }) => ({
   color: theme.color.dark,
+  marginTop: hasDescription ? '3px' : '0',
 }));
 
 const TypeWithJsDoc = styled.div(({ theme }: { theme: any }) => ({
@@ -34,29 +43,37 @@ const DefaultValue = styled.td({
 
 export const PropRow: FC<PropRowProps> = ({
   row: { name, type, required, description, defaultValue, jsDocTags },
-}) => (
-  <tr>
-    <td>
-      <Name>{name}</Name>
-      {required ? <Required title="Required">*</Required> : null}
-    </td>
-    <td>
-      <Markdown>{description || ''}</Markdown>
-      {!isNil(jsDocTags) ? (
-        <>
-          <TypeWithJsDoc>
+}) => {
+  const hasDescription = !isNil(description) && description !== '';
+
+  return (
+    <tr>
+      <td>
+        <Name>{name}</Name>
+        {required ? <Required title="Required">*</Required> : null}
+      </td>
+      <td>
+        {hasDescription && (
+          <Description>
+            <Markdown>{description}</Markdown>
+          </Description>
+        )}
+        {!isNil(jsDocTags) ? (
+          <>
+            <TypeWithJsDoc>
+              <PropValue value={type} />
+            </TypeWithJsDoc>
+            <PropJsDoc tags={jsDocTags} />
+          </>
+        ) : (
+          <Type hasDescription={hasDescription}>
             <PropValue value={type} />
-          </TypeWithJsDoc>
-          <PropJsDoc tags={jsDocTags} />
-        </>
-      ) : (
-        <Type>
-          <PropValue value={type} />
-        </Type>
-      )}
-    </td>
-    <DefaultValue>
-      <PropValue value={defaultValue} />
-    </DefaultValue>
-  </tr>
-);
+          </Type>
+        )}
+      </td>
+      <DefaultValue>
+        <PropValue value={defaultValue} />
+      </DefaultValue>
+    </tr>
+  );
+};
