@@ -39,7 +39,7 @@ componentNotes.story.parameters = { mdxSource: '<Button>Component notes</Button>
 
 const componentMeta = { title: 'Button', id: 'button-id', includeStories: ['componentNotes'] };
 
-const mdxStoryNameToId = { 'component notes': 'button--component-notes' };
+const mdxStoryNameToId = { 'component notes': 'button-id--component-notes' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
