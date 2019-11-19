@@ -31,7 +31,7 @@ const Expandable = styled.div(({ theme }: { theme: any }) => ({
   textAlign: 'left',
   color: theme.color.secondary,
   backgroundColor: theme.color.lighter,
-  padding: '4px',
+  padding: '4px 8px 4px 4px',
   borderRadius: '4px',
   cursor: 'pointer',
 }));
@@ -48,8 +48,9 @@ const ArrowIcon = styled<any, any>(Icons)(({ theme }: { theme: any }) => ({
 }));
 
 const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }: { theme: any }) => ({
-  minWidth: '460px',
-  padding: '8px',
+  padding: '8px 12px',
+  minWidth: '50ch',
+  maxWidth: '100ch',
   fontSize: theme.typography.size.s2,
 }));
 
@@ -80,9 +81,11 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
         setIsOpen(isVisible);
       }}
       tooltip={
-        <StyledSyntaxHighlighter language="jsx" copyable padded format={false}>
-          {detail}
-        </StyledSyntaxHighlighter>
+        <div>
+          <StyledSyntaxHighlighter language="jsx" copyable padded format={false}>
+            {detail}
+          </StyledSyntaxHighlighter>
+        </div>
       }
     >
       <Expandable className="sbdocs-expandable">
