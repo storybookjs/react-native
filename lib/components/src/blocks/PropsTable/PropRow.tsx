@@ -21,7 +21,7 @@ const Required = styled.span(({ theme }: { theme: any }) => ({
 const Description = styled.div({
   '&&': {
     p: {
-      marginTop: '0',
+      margin: '0',
     },
   },
 });
