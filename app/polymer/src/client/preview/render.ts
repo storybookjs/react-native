@@ -1,6 +1,7 @@
 import { document } from 'global';
 import dedent from 'ts-dedent';
 import { render, TemplateResult } from 'lit-html';
+import { RenderMainArgs } from './types';
 
 const rootElement = document.getElementById('root');
 
@@ -11,7 +12,7 @@ export default function renderMain({
   showMain,
   showError,
   forceRender,
-}) {
+}: RenderMainArgs) {
   const element = storyFn();
 
   if (!element) {
