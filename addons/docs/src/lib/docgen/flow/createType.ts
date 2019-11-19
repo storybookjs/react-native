@@ -1,55 +1,66 @@
 import { PropType, PropSummaryValue } from '@storybook/components';
 import { isNil } from 'lodash';
-import { DocgenPropType } from '../types';
-import { createSummaryValue } from '../../utils';
+import { DocgenFlowType } from '../types';
+import { createSummaryValue, isTooLongForTypeSummary } from '../../utils';
 
 enum FlowTypesType {
   UNION = 'union',
-  ARRAY = 'Array',
   SIGNATURE = 'signature',
 }
 
-interface DocgenFlowUnionType extends DocgenPropType {
+interface DocgenFlowUnionType extends DocgenFlowType {
   elements: { name: string; value: string }[];
 }
 
-function generateUnion(type: DocgenFlowUnionType): PropSummaryValue {
-  if (!isNil(type.raw)) {
-    return createSummaryValue(type.raw);
+function generateUnion({ name, raw, elements }: DocgenFlowUnionType): PropSummaryValue {
+  if (!isNil(raw)) {
+    return createSummaryValue(raw);
   }
 
-  if (!isNil(type.elements)) {
-    return createSummaryValue(type.elements.map(x => x.value).join(' | '));
+  if (!isNil(elements)) {
+    return createSummaryValue(elements.map(x => x.value).join(' | '));
   }
 
-  return createSummaryValue(type.name);
+  return createSummaryValue(name);
 }
 
-function generateArray(type: DocgenPropType): PropSummaryValue {
-  if (!isNil(type.raw)) {
-    return createSummaryValue(type.raw);
+function generateFuncSignature({ type, raw }: DocgenFlowType) {
+  if (!isNil(raw)) {
+    return createSummaryValue(raw);
   }
 
-  return createSummaryValue(type.name);
+  return createSummaryValue(type);
 }
 
-function generateSignature(type: DocgenPropType): PropSummaryValue {
-  if (!isNil(type.raw)) {
-    return createSummaryValue(type.raw);
+function generateObjectSignature({ type, raw }: DocgenFlowType) {
+  if (!isNil(raw)) {
+    return !isTooLongForTypeSummary(raw) ? createSummaryValue(raw) : createSummaryValue(type, raw);
   }
 
-  return createSummaryValue(type.name);
+  return createSummaryValue(type);
 }
 
-export function createType(type: DocgenPropType): PropType {
+function generateSignature(flowType: DocgenFlowType): PropSummaryValue {
+  const { type } = flowType;
+
+  return type === 'object' ? generateObjectSignature(flowType) : generateFuncSignature(flowType);
+}
+
+function generateDefault({ name, raw }: DocgenFlowType): PropSummaryValue {
+  if (!isNil(raw)) {
+    return !isTooLongForTypeSummary(raw) ? createSummaryValue(raw) : createSummaryValue(name, raw);
+  }
+
+  return createSummaryValue(name);
+}
+
+export function createType(type: DocgenFlowType): PropType {
   switch (type.name) {
     case FlowTypesType.UNION:
       return generateUnion(type as DocgenFlowUnionType);
-    case FlowTypesType.ARRAY:
-      return generateArray(type);
     case FlowTypesType.SIGNATURE:
       return generateSignature(type);
     default:
-      return createSummaryValue(type.name);
+      return generateDefault(type);
   }
 }
