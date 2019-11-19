@@ -4,7 +4,7 @@ import { Title } from './Title';
 import { Subtitle } from './Subtitle';
 import { Description } from './Description';
 import { Primary } from './Primary';
-import { PrimaryProps } from './PrimaryProps';
+import { Props } from './Props';
 import { Stories } from './Stories';
 
 export const DocsPage: FunctionComponent<DocsPageProps> = ({
@@ -20,7 +20,7 @@ export const DocsPage: FunctionComponent<DocsPageProps> = ({
     <Subtitle slot={subtitleSlot} />
     <Description slot={descriptionSlot} />
     <Primary slot={primarySlot} />
-    <PrimaryProps slot={propsSlot} />
+    <Props slot={propsSlot} />
     <Stories slot={storiesSlot} />
   </>
 );

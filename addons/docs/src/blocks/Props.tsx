@@ -107,4 +107,8 @@ const PropsContainer: FunctionComponent<PropsProps> = props => {
   );
 };
 
+PropsContainer.defaultProps = {
+  of: '.',
+};
+
 export { PropsContainer as Props };

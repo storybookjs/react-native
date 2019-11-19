@@ -10,7 +10,6 @@ export * from './Heading';
 export * from './Meta';
 export * from './Preview';
 export * from './Primary';
-export * from './PrimaryProps';
 export * from './Props';
 export * from './Source';
 export * from './Stories';

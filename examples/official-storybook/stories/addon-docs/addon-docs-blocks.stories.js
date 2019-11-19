@@ -4,7 +4,6 @@ import {
   Subtitle,
   Description,
   Primary,
-  PrimaryProps,
   Props,
   Stories,
 } from '@storybook/addon-docs/blocks';
@@ -23,7 +22,7 @@ export default {
           <Subtitle />
           <Description />
           <Primary />
-          <PrimaryProps />
+          <Props />
           <Stories />
         </>
       ),
@@ -67,7 +66,7 @@ checkBoxProps.story = {
               />
               <span>display props</span>
             </label>
-            {showProps && <PrimaryProps />}
+            {showProps && <Props />}
           </>
         );
       },
@@ -85,7 +84,7 @@ customLabels.story = {
           <Subtitle>Custom sub title</Subtitle>
           <Description>Custom description</Description>
           <Primary />
-          <PrimaryProps />
+          <Props />
           <Stories title="Custom stories title" />
         </>
       ),
@@ -143,7 +142,7 @@ multipleComponents.story = {
           <Subtitle />
           <Description />
           <Primary slot={stories => stories.find(story => story.story === 'Many Components')} />
-          <PrimaryProps />
+          <Props />
         </>
       ),
     },
