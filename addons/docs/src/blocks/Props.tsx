@@ -1,7 +1,13 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { isNil } from 'lodash';
 
-import { PropsTable, PropsTableError, PropsTableProps, TabsState } from '@storybook/components';
+import {
+  PropsTable,
+  PropsTableError,
+  PropsTableProps,
+  PropDef,
+  TabsState,
+} from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, PropsSlot, CURRENT_SELECTION } from './shared';
 import { getComponentName } from './utils';
@@ -47,7 +53,7 @@ export const getComponentProps = (
     if (!extractProps) {
       throw new Error(PropsTableError.PROPS_UNSUPPORTED);
     }
-    let { rows } = extractProps(target);
+    let { rows } = extractProps(component);
     if (!isNil(exclude)) {
       rows = rows.filter((row: PropDef) => !exclude.includes(row.name));
     }
