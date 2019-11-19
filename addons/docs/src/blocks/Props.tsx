@@ -2,6 +2,7 @@ import React, { FunctionComponent, useContext } from 'react';
 import { PropsTable, PropsTableError, PropsTableProps, TabsState } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { Component, PropsSlot, CURRENT_SELECTION } from './shared';
+import { getComponentName } from './utils';
 
 import { PropsExtractor } from '../lib/docgen/types';
 import { extractProps as reactExtractProps } from '../frameworks/react/extractProps';
@@ -69,34 +70,39 @@ const PropsContainer: FunctionComponent<PropsProps> = props => {
   const context = useContext(DocsContext);
   const { slot, components } = props;
   const {
-    parameters: { components: parametersComponents },
+    parameters: { subcomponents },
   } = context;
-  const subComponents = components || parametersComponents;
-  if (!subComponents || typeof subComponents !== 'object') {
+
+  let allComponents = components;
+  if (!allComponents) {
     const main = getComponent(props, context);
+    const mainLabel = getComponentName(main);
     const mainProps = slot ? slot(context, main) : getComponentProps(main, props, context);
-    return mainProps && <PropsTable {...mainProps} />;
+
+    if (!subcomponents || typeof subcomponents !== 'object') {
+      return mainProps && <PropsTable {...mainProps} />;
+    }
+
+    allComponents = { [mainLabel]: main, ...subcomponents };
   }
 
-  const subProps: { label: string; table: PropsTableProps }[] = Object.keys(subComponents).map(
-    label => {
-      const component = subComponents[label];
-      return {
-        label,
-        table: slot ? slot(context, component) : getComponentProps(component, props, context),
-      };
-    }
-  );
+  const tabs: { label: string; table: PropsTableProps }[] = [];
+  Object.entries(allComponents).forEach(([label, component]) => {
+    tabs.push({
+      label,
+      table: slot ? slot(context, component) : getComponentProps(component, props, context),
+    });
+  });
 
   return (
     <TabsState>
-      {subProps.map(item => {
-        const { label, table } = item;
+      {tabs.map(({ label, table }) => {
         if (!table) {
           return null;
         }
+        const id = `prop_table_div_${label}`;
         return (
-          <div key={`prop_table_div_${label}`} id={label} title={label}>
+          <div key={id} id={id} title={label}>
             {({ active }: { active: boolean }) =>
               active ? <PropsTable key={`prop_table_${label}`} {...table} /> : null
             }
