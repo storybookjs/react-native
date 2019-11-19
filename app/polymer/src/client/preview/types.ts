@@ -1,13 +1,13 @@
 import { TemplateResult } from 'lit-html';
 
-export interface IStorybookStory {
-  name: string;
-  render: () => any;
-}
-
 export interface IStorybookSection {
   kind: string;
   stories: IStorybookStory[];
+}
+
+export interface IStorybookStory {
+  name: string;
+  render: () => any;
 }
 
 export type StoryFnPolymerReturnType = string | Node | TemplateResult;
