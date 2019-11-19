@@ -29,10 +29,9 @@ function test(options: StoryshotsOptions): boolean {
 function load(options: StoryshotsOptions) {
   setupAngularJestPreset();
 
-  const { configPath, config } = options;
   const storybook = require.requireActual('@storybook/angular');
 
-  configure({ configPath, config, storybook });
+  configure({ ...options, storybook });
 
   return {
     framework: 'angular' as const,

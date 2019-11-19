@@ -1,25 +1,21 @@
-const ignore = 0;
-// const warn = 1;
-const error = 2;
-
 module.exports = {
   root: true,
   extends: ['@storybook/eslint-config-storybook'],
   rules: {
     'import/extensions': [
-      error,
+      'error',
       'never',
       { ignorePackages: true, md: 'always', svg: 'always', json: 'always', tag: 'always' },
     ],
-    'import/no-unresolved': [error, { ignore: ['@storybook'] }],
-    'react/state-in-constructor': ignore,
-    'react/static-property-placement': ignore,
-    'react/jsx-props-no-spreading': ignore,
-    'react/jsx-fragments': ignore,
-    '@typescript-eslint/ban-ts-ignore': ignore,
-    '@typescript-eslint/no-object-literal-type-assertion': ignore,
+    'import/no-unresolved': ['error', { ignore: ['@storybook'] }],
+    'react/state-in-constructor': 'off',
+    'react/static-property-placement': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-fragments': 'off',
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/no-object-literal-type-assertion': 'off',
     'react/sort-comp': [
-      error,
+      'error',
       {
         order: [
           'staticLifecycle',
@@ -38,7 +34,7 @@ module.exports = {
         },
       },
     ],
-    'max-classes-per-file': ignore,
+    'max-classes-per-file': 'off',
   },
   overrides: [
     {
@@ -51,30 +47,30 @@ module.exports = {
         'docs/src/stories/**',
       ],
       rules: {
-        '@typescript-eslint/no-empty-function': ignore,
-        'import/no-extraneous-dependencies': ignore,
+        '@typescript-eslint/no-empty-function': 'off',
+        'import/no-extraneous-dependencies': 'off',
       },
     },
-    { files: '**/.storybook/config.js', rules: { 'global-require': ignore } },
+    { files: '**/.storybook/config.js', rules: { 'global-require': 'off' } },
     {
       files: ['**/*.stories.*'],
       rules: {
-        'no-console': ignore,
+        'no-console': 'off',
       },
     },
     {
       files: ['**/*.tsx', '**/*.ts'],
       rules: {
-        'react/prop-types': ignore, // we should use types
-        'no-dupe-class-members': ignore, // this is called overloads in typescript
+        'react/prop-types': 'off', // we should use types
+        'no-dupe-class-members': 'off', // this is called overloads in typescript
       },
     },
     {
       files: ['**/*.d.ts'],
       rules: {
-        'vars-on-top': ignore,
-        'no-var': ignore, // this is how typescript works
-        'spaced-comment': ignore,
+        'vars-on-top': 'off',
+        'no-var': 'off', // this is how typescript works
+        'spaced-comment': 'off',
       },
     },
   ],

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "5.3.0-alpha.45",
+  "version": "5.3.0-beta.2",
   "description": "Storybook framework-agnostic API",
   "keywords": [
     "storybook"
@@ -32,15 +32,15 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-env": "^7.4.5",
-    "@storybook/addons": "5.3.0-alpha.45",
-    "@storybook/channel-postmessage": "5.3.0-alpha.45",
-    "@storybook/client-api": "5.3.0-alpha.45",
-    "@storybook/client-logger": "5.3.0-alpha.45",
-    "@storybook/core-events": "5.3.0-alpha.45",
-    "@storybook/node-logger": "5.3.0-alpha.45",
-    "@storybook/router": "5.3.0-alpha.45",
-    "@storybook/theming": "5.3.0-alpha.45",
-    "@storybook/ui": "5.3.0-alpha.45",
+    "@storybook/addons": "5.3.0-beta.2",
+    "@storybook/channel-postmessage": "5.3.0-beta.2",
+    "@storybook/client-api": "5.3.0-beta.2",
+    "@storybook/client-logger": "5.3.0-beta.2",
+    "@storybook/core-events": "5.3.0-beta.2",
+    "@storybook/node-logger": "5.3.0-beta.2",
+    "@storybook/router": "5.3.0-beta.2",
+    "@storybook/theming": "5.3.0-beta.2",
+    "@storybook/ui": "5.3.0-beta.2",
     "airbnb-js-shims": "^1 || ^2",
     "ansi-to-html": "^0.6.11",
     "autoprefixer": "^9.4.9",
@@ -50,9 +50,9 @@
     "babel-preset-minify": "^0.5.0 || 0.6.0-alpha.5",
     "boxen": "^4.1.0",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
-    "chalk": "^2.4.2",
+    "chalk": "^3.0.0",
     "cli-table3": "0.5.1",
-    "commander": "^3.0.2",
+    "commander": "^4.0.1",
     "core-js": "^3.0.1",
     "corejs-upgrade-webpack-plugin": "^2.2.0",
     "css-loader": "^3.0.0",
@@ -65,6 +65,8 @@
     "find-cache-dir": "^3.0.0",
     "find-up": "^4.1.0",
     "fs-extra": "^8.0.1",
+    "glob-base": "^0.3.0",
+    "glob-regex": "^0.3.2",
     "global": "^4.3.2",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "inquirer": "^7.0.0",
@@ -95,7 +97,8 @@
     "util-deprecate": "^1.0.2",
     "webpack": "^4.33.0",
     "webpack-dev-middleware": "^3.7.0",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-virtual-modules": "^0.2.0"
   },
   "devDependencies": {
     "mock-fs": "^4.8.0"

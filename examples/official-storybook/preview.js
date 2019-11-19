@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, addDecorator, addParameters } from '@storybook/react';
+import { addDecorator, addParameters } from '@storybook/react';
 import { Global, ThemeProvider, themes, createReset, convert } from '@storybook/theming';
 import { withCssResources } from '@storybook/addon-cssresources';
 import { withA11y } from '@storybook/addon-a11y';
@@ -56,21 +56,6 @@ addParameters({
     { name: 'dark', value: '#222222' },
   ],
   docs: {
-    // eslint-disable-next-line react/prop-types
-    page: ({ context }) => (
-      <DocsPage
-        context={context}
-        subtitleSlot={({ selectedKind }) => `Subtitle: ${selectedKind}`}
-      />
-    ),
+    page: () => <DocsPage subtitleSlot={({ selectedKind }) => `Subtitle: ${selectedKind}`} />,
   },
 });
-
-configure(
-  [
-    require.context('../../lib/ui/src', true, /\.stories\.(js|tsx?|mdx)$/),
-    require.context('../../lib/components/src', true, /\.stories\.(js|tsx?|mdx)$/),
-    require.context('./stories', true, /\.stories\.(js|tsx?|mdx)$/),
-  ],
-  module
-);

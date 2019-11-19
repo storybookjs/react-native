@@ -22,7 +22,10 @@ describe('Test on the merging result of a pair of settings', () => {
       icon: 'box' as const,
       title: 'Some Context',
       components: ['div'],
-      params: [{ name: 'T1', props: {} }, { name: 'T2', props: {} }],
+      params: [
+        { name: 'T1', props: {} },
+        { name: 'T2', props: {} },
+      ],
       options: {
         cancelable: true,
         disable: true,
@@ -32,7 +35,10 @@ describe('Test on the merging result of a pair of settings', () => {
       icon: 'box' as const,
       title: 'Some Context',
       components: ['span'],
-      params: [{ name: 'S1', props: {} }, { name: 'S2', props: {} }],
+      params: [
+        { name: 'S1', props: {} },
+        { name: 'S2', props: {} },
+      ],
       options: {
         deep: true,
         disable: false,
@@ -106,7 +112,10 @@ describe('Test on reconciliation of settings', () => {
         icon: 'box',
         nodeId: 'Some Context',
         options: { cancelable: false, deep: false, disable: false },
-        params: [{ name: 'T1', props: {} }, { name: 'S2', props: {}, default: true }],
+        params: [
+          { name: 'T1', props: {} },
+          { name: 'S2', props: {}, default: true },
+        ],
         title: 'Some Context',
       },
       {
