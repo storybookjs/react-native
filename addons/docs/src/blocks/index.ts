@@ -5,6 +5,7 @@ export * from './Description';
 export * from './DocsContext';
 export * from './DocsPage';
 export * from './DocsContainer';
+export * from './DocsStory';
 export * from './Heading';
 export * from './Meta';
 export * from './Preview';
