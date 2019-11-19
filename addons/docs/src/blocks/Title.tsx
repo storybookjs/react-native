@@ -2,7 +2,7 @@ import React, { useContext, FunctionComponent } from 'react';
 import { parseKind } from '@storybook/router';
 import { Title as PureTitle } from '@storybook/components';
 import { DocsContext } from './DocsContext';
-import { StringSlot } from './types';
+import { StringSlot } from './shared';
 
 interface TitleProps {
   slot?: StringSlot;

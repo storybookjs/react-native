@@ -3,7 +3,7 @@ import { DocsContext } from './DocsContext';
 import { DocsStory } from './DocsStory';
 import { Heading } from './Heading';
 import { getDocsStories } from './utils';
-import { StoriesSlot, DocsStoryProps } from './types';
+import { StoriesSlot, DocsStoryProps } from './shared';
 
 interface StoriesProps {
   slot?: StoriesSlot;
