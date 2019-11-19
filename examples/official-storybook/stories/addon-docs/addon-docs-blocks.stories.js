@@ -131,8 +131,7 @@ multipleComponents.story = {
   name: 'Many Components',
   parameters: {
     component: ButtonGroup,
-    components: {
-      'Button Group': ButtonGroup,
+    subcomponents: {
       'Docgen Button': DocgenButton,
       'Base Button': BaseButton,
     },
@@ -152,14 +151,21 @@ multipleComponents.story = {
 
 export const componentsProps = () => <div>Display multiple prop tables in tabs</div>;
 componentsProps.story = {
+  subcomponents: {
+    'Docgen Button': DocgenButton,
+    'Base Button': BaseButton,
+  },
   parameters: {
     docs: {
       page: () => (
         <>
           <Title>Multiple prop tables</Title>
+          <Description>
+            Here's what happens when your component has some related components
+          </Description>
           <Props
             components={{
-              'Button Group': ButtonGroup,
+              'ButtonGroup Custom': ButtonGroup,
               'Docgen Button': DocgenButton,
               'Base Button': BaseButton,
             }}
