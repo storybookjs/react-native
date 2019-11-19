@@ -14,7 +14,7 @@ import {
   button,
   object,
   files,
-  OptionsKnob as options,
+  optionsKnob as options,
 } from '@storybook/addon-knobs';
 
 const ItemLoader = ({ isLoading, items }) => {
