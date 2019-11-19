@@ -20,8 +20,6 @@ const Required = styled.span(({ theme }: { theme: any }) => ({
 
 const Type = styled.div(({ theme }: { theme: any }) => ({
   color: theme.color.dark,
-  fontFamily: theme.typography.fonts.mono,
-  fontSize: `${theme.typography.size.code}%`,
 }));
 
 const TypeWithJsDoc = styled.div(({ theme }: { theme: any }) => ({

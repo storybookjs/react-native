@@ -20,11 +20,12 @@ interface PropSummaryProps {
 
 const Text = styled.span(({ theme }: { theme: any }) => ({
   fontFamily: theme.typography.fonts.mono,
-  fontSize: theme.typography.size.s1,
+  fontSize: `${theme.typography.size.code}%`,
 }));
 
 const Expandable = styled.div(({ theme }: { theme: any }) => ({
-  fontSize: theme.typography.size.s1,
+  fontFamily: theme.typography.fonts.mono,
+  fontSize: `${theme.typography.size.code}%`,
   lineHeight: '20px',
   display: 'inline-block',
   textAlign: 'left',
@@ -33,7 +34,6 @@ const Expandable = styled.div(({ theme }: { theme: any }) => ({
   padding: '4px',
   borderRadius: '4px',
   cursor: 'pointer',
-  fontFamily: theme.typography.fonts.mono,
 }));
 
 const ArrowIcon = styled<any, any>(Icons)(({ theme }: { theme: any }) => ({
@@ -47,9 +47,10 @@ const ArrowIcon = styled<any, any>(Icons)(({ theme }: { theme: any }) => ({
   display: 'inline-flex',
 }));
 
-const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(() => ({
+const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }: { theme: any }) => ({
   minWidth: '460px',
   padding: '8px',
+  fontSize: theme.typography.size.s2,
 }));
 
 const EmptyProp = () => {
