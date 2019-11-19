@@ -5,7 +5,7 @@ export default {
   title: 'Addon/Links',
 };
 
-export const buttonWithLinkToAnotherStory = () => ({
+export const ButtonWithLinkToAnotherStory = () => ({
   component: Button,
   props: {
     text: 'Go to Welcome Story',
@@ -13,6 +13,6 @@ export const buttonWithLinkToAnotherStory = () => ({
   },
 });
 
-buttonWithLinkToAnotherStory.story = {
+ButtonWithLinkToAnotherStory.story = {
   name: 'button with link to another story',
 };

@@ -13,7 +13,7 @@ const Horizontal = styled(props => <Spaced col={1} {...props} />)({
 });
 const Vertical = styled(props => <Spaced row={1} {...props} />)({});
 
-export const story1 = () => (
+export const Story1 = () => (
   <Vertical>
     <pre>START, when switching stories, you should be able to read this at the top of the page</pre>
     <pre style={{ height: '100vh' }}>middle</pre>
@@ -23,9 +23,9 @@ export const story1 = () => (
     </pre>
   </Vertical>
 );
-story1.story = { name: 'story with 100vh padding 1' };
+Story1.story = { name: 'story with 100vh padding 1' };
 
-export const story2 = () => (
+export const Story2 = () => (
   <Vertical>
     <pre>START, when switching stories, you should be able to read this at the top of the page</pre>
     <pre style={{ height: '100vh' }}>middle</pre>
@@ -35,22 +35,22 @@ export const story2 = () => (
     </pre>
   </Vertical>
 );
-story2.story = { name: 'story with 100vh padding 2' };
+Story2.story = { name: 'story with 100vh padding 2' };
 
-export const story3 = () => (
+export const Story3 = () => (
   <Horizontal>
     <pre>START</pre>
     <pre>middle</pre>
     <pre>END</pre>
   </Horizontal>
 );
-story3.story = { name: 'story with 100vw+' };
+Story3.story = { name: 'story with 100vw+' };
 
-export const story4 = () => (
+export const Story4 = () => (
   <Horizontal>
     <pre>START</pre>
     <pre>middle</pre>
     <pre>END</pre>
   </Horizontal>
 );
-story4.story = { name: 'story with 100vw+ 2' };
+Story4.story = { name: 'story with 100vw+ 2' };

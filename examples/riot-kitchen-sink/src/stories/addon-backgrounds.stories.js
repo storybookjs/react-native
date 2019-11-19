@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const story1 = () => {
+export const Story1 = () => {
   const content = 'You should be able to switch backgrounds for this story';
 
   return {
@@ -19,11 +19,11 @@ export const story1 = () => {
   };
 };
 
-story1.story = {
+Story1.story = {
   name: 'story 1',
 };
 
-export const story2 = () => {
+export const Story2 = () => {
   const content = 'This one too!';
 
   return {
@@ -32,6 +32,6 @@ export const story2 = () => {
   };
 };
 
-story2.story = {
+Story2.story = {
   name: 'story 2',
 };

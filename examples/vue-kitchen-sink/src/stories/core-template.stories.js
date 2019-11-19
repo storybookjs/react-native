@@ -2,9 +2,9 @@ export default {
   title: 'Core/Template',
 };
 
-export const stringOnly = () =>
+export const StringOnly = () =>
   '<my-button :rounded="false">A Button with square edges</my-button>';
 
-stringOnly.story = {
+StringOnly.story = {
   name: 'string only',
 };

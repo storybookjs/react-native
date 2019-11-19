@@ -4,10 +4,10 @@ export default {
   title: 'Custom/styleUrls',
 };
 
-export const componentWithStyles = () => ({
+export const ComponentWithStyles = () => ({
   component: StyledComponent,
 });
 
-componentWithStyles.story = {
+ComponentWithStyles.story = {
   name: 'Component with styles',
 };

@@ -6,7 +6,7 @@ export default {
   title: 'Addons/Notes',
 };
 
-export const story1 = () => ({
+export const Story1 = () => ({
   view: () => (
     <p>
       <strong>
@@ -21,12 +21,12 @@ export const story1 = () => ({
   ),
 });
 
-story1.story = {
+Story1.story = {
   name: 'Simple note',
   parameters: { notes: 'My notes on some bold text' },
 };
 
-export const story2 = () => ({
+export const Story2 = () => ({
   view: () => (
     <p>
       <span>🤔😳😯😮</span>
@@ -38,7 +38,7 @@ export const story2 = () => ({
   ),
 });
 
-story2.story = {
+Story2.story = {
   name: 'Note with HTML',
   parameters: {
     notes: `

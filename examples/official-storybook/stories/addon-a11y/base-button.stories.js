@@ -16,11 +16,11 @@ export const Default = () => <BaseButton label="" />;
 export const Label = () => <BaseButton label={text} />;
 export const Disabled = () => <BaseButton disabled label={text} />;
 
-export const invalidContrast = () => (
+export const InvalidContrast = () => (
   // FIXME: has no effect on score
   <BaseButton style={{ color: 'black', backgroundColor: 'black' }} label={text} />
 );
-invalidContrast.story = {
+InvalidContrast.story = {
   name: 'Invalid contrast',
 };
 
