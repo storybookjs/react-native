@@ -2,7 +2,7 @@ import { PropDef } from '@storybook/components';
 import { isNil } from 'lodash';
 import { Component } from '../../../blocks/shared';
 
-// react-docgen doesn't returned the props in the order they were defined in the "propTypes" of the component.
+// react-docgen doesn't returned the props in the order they were defined in the "propTypes" object of the component.
 // This function re-order them by their original definition order.
 export function keepOriginalDefinitionOrder(
   extractedProps: PropDef[],
@@ -12,7 +12,9 @@ export function keepOriginalDefinitionOrder(
   const { propTypes } = component;
 
   if (!isNil(propTypes)) {
-    return Object.keys(propTypes).map(x => extractedProps.find(y => y.name === x));
+    return Object.keys(propTypes)
+      .map(x => extractedProps.find(y => y.name === x))
+      .filter(x => x);
   }
 
   return extractedProps;
