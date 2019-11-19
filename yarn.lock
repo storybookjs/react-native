@@ -3494,7 +3494,7 @@
     remark-lint "^6.0.4"
     remark-preset-lint-recommended "^3.0.2"
 
-"@storybook/node-logger@^5.2.4":
+"@storybook/node-logger@^5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-5.2.6.tgz#e353aff14375bef9e922c217a0afb50f93e2ceb1"
   integrity sha512-Z3mn9CUSiG7kR2OBoz4lNeoeBS094h5d9wufZSp5S+M47L6KEXmTgNcuePKj+t8Z8KT/Ph8B63bjChseKp3DNw==
@@ -3505,12 +3505,13 @@
     pretty-hrtime "^1.0.3"
     regenerator-runtime "^0.12.1"
 
-"@storybook/preset-create-react-app@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@storybook/preset-create-react-app/-/preset-create-react-app-1.2.0.tgz#081fe3d66a97721d9e82e6cf198f0f9d57bc489c"
-  integrity sha512-SvfHsEJ0wA+9goJOci2P2CvI0K9AQEOuPzdB092ts21PIxOj2KQUiTdR/UjodNUcKguHZzPeMOjJr23EFLf4qA==
+"@storybook/preset-create-react-app@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@storybook/preset-create-react-app/-/preset-create-react-app-1.3.1.tgz#1a7cb7d58b64a2254c566f9907eab8340a531506"
+  integrity sha512-atJ4Jbq5QYXRa+8wscfN1kCnDk3/Dn8RZy/xm1OVrozptjlRz2CuiJEDqfmKeIEi81fBuUs41Uc3M+VWocSklg==
   dependencies:
-    "@storybook/node-logger" "^5.2.4"
+    "@storybook/node-logger" "^5.2.6"
+    "@types/webpack" "^4.39.8"
     react-docgen-typescript-loader "^3.3.0"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
@@ -4241,6 +4242,18 @@
   version "4.39.9"
   resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.39.9.tgz#a8c7d0ba14631023e75ae1b5bd0bfad3cf2cba4c"
   integrity sha512-p6GjQ+x86XyQd32IS3rYlisEpkuP8/DCW87mxpzAUs4McmKus7mD+cCEDaMIJIFfLW6cyYHfD+xEo/xREpT9lA==
+  dependencies:
+    "@types/anymatch" "*"
+    "@types/node" "*"
+    "@types/tapable" "*"
+    "@types/uglify-js" "*"
+    "@types/webpack-sources" "*"
+    source-map "^0.6.0"
+
+"@types/webpack@^4.39.8":
+  version "4.41.0"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.0.tgz#b813a044d8b0dec7dfcd7622fdbe327bde06eb9a"
+  integrity sha512-tWkdf9nO0zFgAY/EumUKwrDUhraHKDqCPhwfFR/R8l0qnPdgb9le0Gzhvb7uzVpouuDGBgiE//ZdY+5jcZy2TA==
   dependencies:
     "@types/anymatch" "*"
     "@types/node" "*"
