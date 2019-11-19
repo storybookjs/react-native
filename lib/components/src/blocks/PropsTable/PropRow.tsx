@@ -12,7 +12,7 @@ export interface PropRowProps {
 
 const Name = styled.span({ fontWeight: 'bold' });
 
-const Required = styled.span(({ theme }: { theme: any }) => ({
+const Required = styled.span(({ theme }) => ({
   color: theme.color.negative,
   fontFamily: theme.typography.fonts.mono,
   cursor: 'help',
@@ -26,20 +26,16 @@ const Description = styled.div({
   },
 });
 
-const Type = styled.div(({ theme, hasDescription }: { theme: any; hasDescription: boolean }) => ({
+const Type = styled.div<{ hasDescription: boolean }>(({ theme, hasDescription }) => ({
   color: theme.color.dark,
   marginTop: hasDescription ? '3px' : '0',
 }));
 
-const TypeWithJsDoc = styled.div(({ theme }: { theme: any }) => ({
+const TypeWithJsDoc = styled.div(({ theme }) => ({
   color: theme.color.darker,
   marginTop: '12px',
   marginBottom: '12px',
 }));
-
-const DefaultValue = styled.td({
-  whiteSpace: 'nowrap',
-});
 
 export const PropRow: FC<PropRowProps> = ({
   row: { name, type, required, description, defaultValue, jsDocTags },
@@ -71,9 +67,9 @@ export const PropRow: FC<PropRowProps> = ({
           </Type>
         )}
       </td>
-      <DefaultValue>
+      <td>
         <PropValue value={defaultValue} />
-      </DefaultValue>
+      </td>
     </tr>
   );
 };
