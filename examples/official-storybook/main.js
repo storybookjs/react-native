@@ -1,7 +1,7 @@
 module.exports = {
   presets: ['@storybook/addon-docs/preset'],
   stories: [
-    '../../lib/ui/src/**/*.stories./(js|tsx|mdx)',
+    '../../lib/ui/src/**/*.stories.(js|tsx|mdx)',
     '../../lib/components/src/**/*.stories.(js|tsx|mdx)',
     './stories/**/*.stories.(js|tsx|mdx)',
   ],
