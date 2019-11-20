@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { styled, CSSObject, Theme } from '@storybook/theming';
+import { transparentize } from 'polished';
 import { withReset } from './withReset';
 
 const headerCommon = ({ theme }: { theme: Theme }): CSSObject => ({
@@ -18,6 +19,27 @@ const headerCommon = ({ theme }: { theme: Theme }): CSSObject => ({
   '& tt, & code': {
     fontSize: 'inherit',
   },
+});
+
+export const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
+  margin: '0 2px',
+  padding: '0 5px',
+  whiteSpace: 'nowrap',
+
+  borderRadius: '3px',
+  fontSize: theme.typography.size.s2 - 1,
+
+  // color: theme.base === 'dark' && theme.color.darkest,
+
+  border:
+    theme.base === 'light'
+      ? `1px solid ${theme.color.mediumlight}`
+      : `1px solid ${theme.color.darker}`,
+  color:
+    theme.base === 'light'
+      ? transparentize(0.1, theme.color.defaultText)
+      : transparentize(0.3, theme.color.defaultText),
+  backgroundColor: theme.base === 'light' ? theme.color.lighter : theme.color.border,
 });
 
 const withMargin: CSSObject = {
@@ -325,17 +347,6 @@ export const LI = styled.li<{}>(withReset, ({ theme }) => ({
 export const UL = styled.ul<{}>(withReset, withMargin, listCommon, {});
 
 export const OL = styled.ol<{}>(withReset, withMargin, listCommon);
-
-const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
-  margin: '0 2px',
-  padding: '0 5px',
-  whiteSpace: 'nowrap',
-  border: `1px solid ${theme.color.mediumlight}`,
-  backgroundColor: theme.color.lighter,
-  borderRadius: '3px',
-  fontSize: theme.typography.size.s2 - 1,
-  color: theme.base === 'dark' && theme.color.darkest,
-});
 
 export const P = styled.p<{}>(withReset, withMargin, ({ theme }) => ({
   fontSize: theme.typography.size.s2,
