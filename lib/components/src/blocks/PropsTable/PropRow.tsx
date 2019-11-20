@@ -6,7 +6,6 @@ import { styled } from '@storybook/theming';
 import { PropDef } from './PropDef';
 import { PropJsDoc } from './PropJsDoc';
 import { PropValue } from './PropValue';
-
 import { codeCommon } from '../../typography/DocumentFormatting';
 
 export interface PropRowProps {
@@ -27,7 +26,9 @@ const Description = styled.div(({ theme }) => ({
       margin: '0',
     },
   },
+
   code: codeCommon({ theme }),
+
   '& code': {
     lineHeight: '18px',
     margin: 0,

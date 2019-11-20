@@ -6,8 +6,9 @@ import { PropSummaryValue } from './PropDef';
 import { WithTooltipPure } from '../../tooltip/WithTooltip';
 import { Icons } from '../../icon/icon';
 import { SyntaxHighlighter } from '../../syntaxhighlighter/syntaxhighlighter';
-
 import { codeCommon } from '../../typography/DocumentFormatting';
+
+const DIRTY_PADDING_TOP_IN_PX = 3;
 
 interface PropValueProps {
   value?: PropSummaryValue;
@@ -26,26 +27,27 @@ const Text = styled.span(({ theme }) => ({
   fontSize: theme.typography.size.s2 - 1,
 }));
 
-const Expandable = styled.div(codeCommon, ({ theme }) => ({
+const Expandable = styled.div<{}>(codeCommon, ({ theme }) => ({
   fontFamily: theme.typography.fonts.mono,
   lineHeight: '18px',
-  display: 'inline-block',
   color: theme.color.secondary,
   margin: 0,
+  paddingTop: `${DIRTY_PADDING_TOP_IN_PX}px`,
   whiteSpace: 'nowrap',
+  display: 'flex',
+  alignItems: 'center',
 }));
 
-const ArrowIcon = styled(Icons)(({ theme }) => ({
+const ArrowIcon = styled(Icons)({
   height: 10,
   width: 10,
   minWidth: 10,
   marginLeft: '4px',
-  alignSelf: 'center',
-  display: 'inline-flex',
-}));
+  marginTop: `-${DIRTY_PADDING_TOP_IN_PX}px`,
+});
 
 const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme, width }) => ({
-  width: `${width}ch`,
+  width,
   minWidth: '200px',
   maxWith: '800px',
   padding: '15px',
@@ -62,10 +64,10 @@ const PropText: FC<PropTextProps> = ({ text }) => {
   return <Text>{text}</Text>;
 };
 
-const inferDetailWidth = memoize(1000)(function(detail: string): number {
+const calculateDetailWidth = memoize(1000)((detail: string): string => {
   const lines = detail.split(/\r?\n/);
 
-  return Math.max(...lines.map(x => x.length));
+  return `${Math.max(...lines.map(x => x.length))}ch`;
 });
 
 const PropSummary: FC<PropSummaryProps> = ({ value }) => {
@@ -87,7 +89,7 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
         setIsOpen(isVisible);
       }}
       tooltip={
-        <StyledSyntaxHighlighter width={inferDetailWidth(detail)} language="jsx" format={false}>
+        <StyledSyntaxHighlighter width={calculateDetailWidth(detail)} language="jsx" format={false}>
           {detail}
         </StyledSyntaxHighlighter>
       }

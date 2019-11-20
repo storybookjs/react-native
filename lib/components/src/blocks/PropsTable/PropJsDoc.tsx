@@ -8,7 +8,7 @@ interface PropJsDocProps {
   tags: JsDocTags;
 }
 
-export const Table = styled.table<{}>(({ theme }) => ({
+export const Table = styled.table(({ theme }) => ({
   '&&': {
     // Escape default table styles
     borderCollapse: 'collapse',
