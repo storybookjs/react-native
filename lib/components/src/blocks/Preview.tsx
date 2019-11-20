@@ -14,6 +14,7 @@ export interface PreviewProps {
   withSource?: SourceProps;
   isExpanded?: boolean;
   withToolbar?: boolean;
+  className?: string;
 }
 
 const ChildrenContainer = styled.div<PreviewProps>(({ isColumn, columns }) => ({
@@ -143,6 +144,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
   withSource,
   withToolbar = false,
   isExpanded = false,
+  className,
   ...props
 }) => {
   const [expanded, setExpanded] = useState(isExpanded);
@@ -154,7 +156,11 @@ const Preview: FunctionComponent<PreviewProps> = ({
   }
   const showToolbar = withToolbar && !Array.isArray(children);
   return (
-    <PreviewContainer {...{ withSource, withToolbar: showToolbar }} {...props}>
+    <PreviewContainer
+      {...{ withSource, withToolbar: showToolbar }}
+      {...props}
+      className="sbdocs-preview"
+    >
       {showToolbar && (
         <PositionedToolbar
           border
