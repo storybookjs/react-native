@@ -15,16 +15,16 @@ export default {
   },
 };
 
-export const example1 = () => (
+export const Example1 = () => (
   <Button>You should be able to switch backgrounds for this story</Button>
 );
 
-example1.story = {
+Example1.story = {
   name: 'Example 1',
 };
 
-export const example2 = () => <Button>This one too!</Button>;
+export const Example2 = () => <Button>This one too!</Button>;
 
-example2.story = {
+Example2.story = {
   name: 'Example 2',
 };

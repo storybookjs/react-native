@@ -14,10 +14,10 @@ export default {
   },
 };
 
-export const passedToStory = ({ parameters: { fileName, ...parameters } }) =>
+export const PassedToStory = ({ parameters: { fileName, ...parameters } }) =>
   `<div>Parameters are ${JSON.stringify(parameters)}</div>`;
 
-passedToStory.story = {
+PassedToStory.story = {
   name: 'passed to story',
 
   parameters: {

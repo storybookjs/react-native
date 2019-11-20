@@ -13,29 +13,29 @@ export default {
   },
 };
 
-export const withText = () => <Button onClick={action('clicked')}>Hello Button</Button>;
-withText.story = {
+export const WithText = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+WithText.story = {
   name: 'with text',
 };
 
-export const withSomeEmoji = () => (
+export const WithSomeEmoji = () => (
   <Button onClick={action('clicked')}>
     <span role="img" aria-label="so cool">
       😀 😎 👍 💯
     </span>
   </Button>
 );
-withSomeEmoji.story = {
+WithSomeEmoji.story = {
   name: 'with some emoji',
 };
 
-export const withCounter = () => {
+export const WithCounter = () => {
   const [counter, setCounter] = useState(0);
   const label = `Testing: ${counter}`;
   return <Button onClick={() => setCounter(counter + 1)}>{label}</Button>;
 };
 
-withCounter.story = {
+WithCounter.story = {
   name: 'with counter',
   parameters: {
     docs: {

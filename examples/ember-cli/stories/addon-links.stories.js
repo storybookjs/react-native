@@ -5,13 +5,13 @@ export default {
   title: 'Addon/Links',
 };
 
-export const goToWelcome = () => ({
+export const GoToWelcome = () => ({
   template: hbs`<button {{action onClick}}>This button brings you to welcome</button>`,
   context: {
     onClick: linkTo('Welcome'),
   },
 });
 
-goToWelcome.story = {
+GoToWelcome.story = {
   name: 'Go to welcome',
 };

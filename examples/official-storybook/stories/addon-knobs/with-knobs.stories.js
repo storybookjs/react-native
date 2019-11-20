@@ -45,7 +45,7 @@ export default {
   decorators: [withKnobs],
 };
 
-export const tweaksStaticValues = () => {
+export const TweaksStaticValues = () => {
   const name = text('Name', 'Storyteller');
   const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
   const fruits = {
@@ -119,11 +119,11 @@ export const tweaksStaticValues = () => {
     </div>
   );
 };
-tweaksStaticValues.story = {
+TweaksStaticValues.story = {
   name: 'tweaks static values',
 };
 
-export const tweaksStaticValuesOrganizedInGroups = () => {
+export const TweaksStaticValuesOrganizedInGroups = () => {
   const GROUP_IDS = {
     DISPLAY: 'Display',
     GENERAL: 'General',
@@ -206,11 +206,11 @@ export const tweaksStaticValuesOrganizedInGroups = () => {
     </div>
   );
 };
-tweaksStaticValuesOrganizedInGroups.story = {
+TweaksStaticValuesOrganizedInGroups.story = {
   name: 'tweaks static values organized in groups',
 };
 
-export const dynamicKnobs = () => {
+export const DynamicKnobs = () => {
   const showOptional = select('Show optional', ['yes', 'no'], 'yes');
   return (
     <Fragment>
@@ -219,11 +219,11 @@ export const dynamicKnobs = () => {
     </Fragment>
   );
 };
-dynamicKnobs.story = {
+DynamicKnobs.story = {
   name: 'dynamic knobs',
 };
 
-export const complexSelect = () => {
+export const ComplexSelect = () => {
   const m = select(
     'complex',
     {
@@ -243,11 +243,11 @@ export const complexSelect = () => {
     </pre>
   );
 };
-complexSelect.story = {
+ComplexSelect.story = {
   name: 'complex select',
 };
 
-export const optionsKnob = () => {
+export const OptionsKnob = () => {
   const valuesRadio = {
     Monday: 'Monday',
     Tuesday: 'Tuesday',
@@ -322,7 +322,7 @@ export const optionsKnob = () => {
   );
 };
 
-export const triggersActionsViaButton = () => {
+export const TriggersActionsViaButton = () => {
   button('Toggle item list state', () => {
     if (!injectedIsLoading && injectedItems.length === 0) {
       injectedIsLoading = true;
@@ -346,18 +346,18 @@ export const triggersActionsViaButton = () => {
     </Fragment>
   );
 };
-triggersActionsViaButton.story = {
+TriggersActionsViaButton.story = {
   name: 'triggers actions via button',
 };
 
-export const buttonWithReactUseState = () => {
+export const ButtonWithReactUseState = () => {
   const [counter, setCounter] = React.useState(0);
   button('increment', () => setCounter(counter + 1));
   button('decrement', () => setCounter(counter - 1));
   return counter;
 };
 
-export const xssSafety = () => (
+export const XssSafety = () => (
   <div
     // eslint-disable-next-line react/no-danger
     dangerouslySetInnerHTML={{
@@ -365,12 +365,12 @@ export const xssSafety = () => (
     }}
   />
 );
-xssSafety.story = {
+XssSafety.story = {
   name: 'XSS safety',
 };
 
-export const acceptsStoryParameters = () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>;
-acceptsStoryParameters.story = {
+export const AcceptsStoryParameters = () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>;
+AcceptsStoryParameters.story = {
   name: 'accepts story parameters',
 
   parameters: {
@@ -378,7 +378,7 @@ acceptsStoryParameters.story = {
   },
 };
 
-export const withDuplicateDecorator = () => {
+export const WithDuplicateDecorator = () => {
   return text('Text', 'Hello');
 };
-withDuplicateDecorator.story = { decorators: [withKnobs] };
+WithDuplicateDecorator.story = { decorators: [withKnobs] };

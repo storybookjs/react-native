@@ -9,9 +9,9 @@ export default {
   title: 'Button',
 };
 
-export const withStoryParameters = () => <Button label=\\"The Button\\" />;
+export const WithStoryParameters = () => <Button label=\\"The Button\\" />;
 
-withStoryParameters.story = {
+WithStoryParameters.story = {
   name: 'with story parameters',
 
   parameters: {
@@ -20,9 +20,9 @@ withStoryParameters.story = {
   },
 };
 
-export const foo = () => <Button label=\\"Foo\\" />;
+export const Foo = () => <Button label=\\"Foo\\" />;
 
-foo.story = {
+Foo.story = {
   name: 'foo',
 
   parameters: {
