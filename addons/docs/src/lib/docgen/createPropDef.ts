@@ -1,16 +1,28 @@
 import { isNil } from 'lodash';
-import { PropDef } from '@storybook/components';
-import { TypeSystem, DocgenInfo, DocgenType } from './types';
+import { PropDef, PropDefaultValue } from '@storybook/components';
+import { TypeSystem, DocgenInfo, DocgenType, DocgenPropDefaultValue } from './types';
 import { JsDocParsingResult } from '../jsdocParser';
-import { createDefaultValue } from './createDefaultValue';
 import { createSummaryValue } from '../utils';
 import { createFlowPropDef } from './flow/createPropDef';
+import { isDefaultValueBlacklisted } from './utils/defaultValue';
 
 export type PropDefFactory = (
   propName: string,
   docgenInfo: DocgenInfo,
   jsDocParsingResult?: JsDocParsingResult
 ) => PropDef;
+
+function createDefaultValue(defaultValue: DocgenPropDefaultValue): PropDefaultValue {
+  if (!isNil(defaultValue)) {
+    const { value } = defaultValue;
+
+    if (!isDefaultValueBlacklisted(value)) {
+      return createSummaryValue(value);
+    }
+  }
+
+  return null;
+}
 
 function createBasicPropDef(name: string, type: DocgenType, docgenInfo: DocgenInfo): PropDef {
   const { description, required, defaultValue } = docgenInfo;
