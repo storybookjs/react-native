@@ -6,7 +6,7 @@ title: 'Exporting Storybook as a Static App'
 Storybook gives a great developer experience with its dev time features, like instant change updates via Webpack's HMR.
 
 But Storybook is also a tool you can use to showcase your components to others.
-Demos of [React Native Web](http://necolas.github.io/react-native-web/storybook/) and [React Dates](http://airbnb.io/react-dates/) are a good example for that.
+Demos of [React Native Web](https://necolas.github.io/react-native-web/docs/) and [React Dates](http://airbnb.io/react-dates/) are a good example for that.
 
 For that, Storybook comes with a tool to export your storybook into a static web app. Then you can deploy it to GitHub pages or any static hosting service.
 
