@@ -1,6 +1,6 @@
 import { isNil } from 'lodash';
 // @ts-ignore
-import { PropDefaultValue, PropSummaryValue } from '@storybook/components';
+import { PropDefaultValue } from '@storybook/components';
 import { inspectValue } from '../inspection/inspectValue';
 import { OBJECT_CAPTION, FUNCTION_CAPTION, ELEMENT_CAPTION, ARRAY_CAPTION } from './captions';
 import { generateCode } from './generateCode';
@@ -11,12 +11,7 @@ import {
   InspectionElement,
 } from '../inspection/types';
 import { isHtmlTag } from './isHtmlTag';
-
-const MAX_SUMMARY_LENGTH = 50;
-
-function isTooLongForSummary(value: string): boolean {
-  return value.length > MAX_SUMMARY_LENGTH;
-}
+import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../lib';
 
 // TODO: Fix this any type.
 function getPrettyIdentifier(inferedType: any): string {
@@ -32,10 +27,6 @@ function getPrettyIdentifier(inferedType: any): string {
   }
 }
 
-function createSummaryValue(summary: string, detail?: string): PropSummaryValue {
-  return { summary, detail };
-}
-
 function generateObject({ ast }: InspectionResult): PropDefaultValue {
   let prettyCaption = generateCode(ast, true);
 
@@ -45,7 +36,7 @@ function generateObject({ ast }: InspectionResult): PropDefaultValue {
     prettyCaption = `${prettyCaption.slice(0, -1)} }`;
   }
 
-  return !isTooLongForSummary(prettyCaption)
+  return !isTooLongForDefaultValueSummary(prettyCaption)
     ? createSummaryValue(prettyCaption)
     : createSummaryValue(OBJECT_CAPTION, generateCode(ast));
 }
@@ -59,7 +50,7 @@ function generateFunc({ inferedType, ast }: InspectionResult): PropDefaultValue 
 
   const prettyCaption = generateCode(ast, true);
 
-  return !isTooLongForSummary(prettyCaption)
+  return !isTooLongForDefaultValueSummary(prettyCaption)
     ? createSummaryValue(prettyCaption)
     : createSummaryValue(FUNCTION_CAPTION, generateCode(ast));
 }
@@ -84,7 +75,7 @@ function generateElement(
     }
   }
 
-  return !isTooLongForSummary(defaultValue)
+  return !isTooLongForDefaultValueSummary(defaultValue)
     ? createSummaryValue(defaultValue)
     : createSummaryValue(ELEMENT_CAPTION, defaultValue);
 }
@@ -92,7 +83,7 @@ function generateElement(
 function generateArray({ ast }: InspectionResult): PropDefaultValue {
   const prettyCaption = generateCode(ast, true);
 
-  return !isTooLongForSummary(prettyCaption)
+  return !isTooLongForDefaultValueSummary(prettyCaption)
     ? createSummaryValue(prettyCaption)
     : createSummaryValue(ARRAY_CAPTION, generateCode(ast));
 }

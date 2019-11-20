@@ -14,6 +14,7 @@ interface TypeSystemDef {
 const TypeSystems: TypeSystemDef[] = [
   { name: 'javascript', typeProperty: 'type' },
   { name: 'typescript', typeProperty: 'tsType' },
+  { name: 'flow', typeProperty: 'flowType' },
 ];
 
 function createType(typeName: string, others: Record<string, any> = {}): Record<string, string> {
