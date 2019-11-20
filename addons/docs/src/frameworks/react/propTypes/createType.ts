@@ -3,7 +3,7 @@ import { PropSummaryValue, PropType } from '@storybook/components';
 import { createSummaryValue, isTooLongForTypeSummary } from '../../../lib';
 import { ExtractedProp, DocgenPropType } from '../../../lib/docgen';
 import { inspectValue } from '../inspection/inspectValue';
-import { generateCode } from './generateCode';
+import { generateCode } from '../utils/generateCode';
 import { generateFuncSignature } from './generateFuncSignature';
 import {
   OBJECT_CAPTION,
@@ -14,7 +14,7 @@ import {
   CUSTOM_CAPTION,
 } from './captions';
 import { InspectionType } from '../inspection/types';
-import { isHtmlTag } from './isHtmlTag';
+import { isHtmlTag } from '../utils/isHtmlTag';
 
 enum PropTypesType {
   CUSTOM = 'custom',

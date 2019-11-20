@@ -3,14 +3,14 @@ import { isNil } from 'lodash';
 import { PropDefaultValue } from '@storybook/components';
 import { inspectValue } from '../inspection/inspectValue';
 import { OBJECT_CAPTION, FUNCTION_CAPTION, ELEMENT_CAPTION, ARRAY_CAPTION } from './captions';
-import { generateCode } from './generateCode';
+import { generateCode } from '../utils/generateCode';
 import {
   InspectionFunction,
   InspectionResult,
   InspectionType,
   InspectionElement,
 } from '../inspection/types';
-import { isHtmlTag } from './isHtmlTag';
+import { isHtmlTag } from '../utils/isHtmlTag';
 import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../lib';
 
 // TODO: Fix this any type.
