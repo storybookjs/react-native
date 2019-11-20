@@ -5,5 +5,5 @@ export default {
   decorators: [centered],
 };
 
-export const story1 = () => '<button>I am a Button !</button>';
-story1.story = { name: 'button in center' };
+export const Story1 = () => '<button>I am a Button !</button>';
+Story1.story = { name: 'button in center' };

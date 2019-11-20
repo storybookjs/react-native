@@ -25,11 +25,11 @@ export default {
   decorators: [withInfo],
 };
 
-export const displaysJsxInDescription = () => (
+export const DisplaysJsxInDescription = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
 
-displaysJsxInDescription.story = {
+DisplaysJsxInDescription.story = {
   name: 'Displays JSX in description',
 
   parameters: {

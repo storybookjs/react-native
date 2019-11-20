@@ -15,8 +15,12 @@ export interface DocgenPropType extends DocgenBaseType {
   computed?: boolean;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface DocgenFlowType extends DocgenBaseType {}
+export interface DocgenFlowType extends DocgenBaseType {
+  type?: string;
+  raw?: string;
+  signature?: any;
+  elements?: any[];
+}
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface DocgenTypeScriptType extends DocgenBaseType {}

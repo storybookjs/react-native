@@ -10,6 +10,6 @@ export default {
   },
 };
 
-export const button = () => ({
+export const Button = () => ({
   template: hbs`<button>A Button</button>`,
 });

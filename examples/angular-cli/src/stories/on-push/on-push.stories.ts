@@ -6,7 +6,7 @@ export default {
   decorators: [withKnobs],
 };
 
-export const classSpecifiedComponentWithOnPushAndKnobs = () => ({
+export const ClassSpecifiedComponentWithOnPushAndKnobs = () => ({
   component: OnPushBoxComponent,
   props: {
     word: text('Word', 'OnPush'),
@@ -14,7 +14,7 @@ export const classSpecifiedComponentWithOnPushAndKnobs = () => ({
   },
 });
 
-classSpecifiedComponentWithOnPushAndKnobs.story = {
+ClassSpecifiedComponentWithOnPushAndKnobs.story = {
   name: 'Class-specified component with OnPush and Knobs',
   parameters: {
     notes: `

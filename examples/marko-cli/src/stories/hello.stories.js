@@ -8,5 +8,5 @@ export default {
 };
 
 export const Simple = () => ({ input: { name: 'abc', age: 20 } });
-export const story2 = () => 'NOT A MARKO RENDER_RESULT';
-story2.story = { name: 'with ERROR!' };
+export const Story2 = () => 'NOT A MARKO RENDER_RESULT';
+Story2.story = { name: 'with ERROR!' };

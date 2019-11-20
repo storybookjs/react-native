@@ -7,8 +7,8 @@ export default {
   title: 'Basic',
 };
 
-export const welcomeScreen = () => <Welcome showApp={linkTo('Addon|addon-actions', 'with text')} />;
-welcomeScreen.story = {
+export const WelcomeScreen = () => <Welcome showApp={linkTo('Addon|addon-actions', 'with text')} />;
+WelcomeScreen.story = {
   name: 'Welcome screen',
 };
 

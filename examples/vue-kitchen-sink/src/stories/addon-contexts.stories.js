@@ -43,11 +43,11 @@ export default {
   decorators: [withContexts(topLevelContexts)],
 };
 
-export const simpleCssTheming = () => ({
+export const SimpleCssTheming = () => ({
   template: "<span>I'm a children of the injected 'div' (where provides a theming context).</span>",
 });
 
-simpleCssTheming.story = {
+SimpleCssTheming.story = {
   name: 'Simple CSS Theming',
   parameters: {
     contexts: storyLevelContexts,

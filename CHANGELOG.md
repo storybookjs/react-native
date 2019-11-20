@@ -1,3 +1,19 @@
+## 5.3.0-beta.2 (November 19, 2019)
+
+### Features
+
+* Addon-docs: Customizable DocPage doc blocks ([#8855](https://github.com/storybookjs/storybook/pull/8855))
+
+### Bug Fixes
+
+* Addon-docs: Add back Props "exclude" support ([#8868](https://github.com/storybookjs/storybook/pull/8868))
+* Addon-docs: Fix MDX component permalinking ([#8872](https://github.com/storybookjs/storybook/pull/8872))
+* Addon-docs: Fix regression to @ignore in Props ([#8867](https://github.com/storybookjs/storybook/pull/8867))
+
+### Maintenance
+
+* Addon-docs: Add tests for prop types default value ([#8869](https://github.com/storybookjs/storybook/pull/8869))
+
 ## 5.3.0-beta.1 (November 18, 2019)
 
 ### Features

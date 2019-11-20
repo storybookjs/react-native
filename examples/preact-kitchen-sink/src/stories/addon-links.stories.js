@@ -10,10 +10,10 @@ export default {
   title: 'Addons/Links',
 };
 
-export const goToWelcome = () => (
+export const GoToWelcome = () => (
   <Button onclick={linkTo('Welcome')}>This button links to Welcome</Button>
 );
 
-goToWelcome.story = {
+GoToWelcome.story = {
   name: 'Go to welcome',
 };

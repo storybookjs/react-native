@@ -8,9 +8,9 @@ export default {
   },
 };
 
-export const story1 = () =>
+export const Story1 = () =>
   '<span style="color: white">You should be able to switch backgrounds for this story</span>';
-story1.story = { name: 'story 1' };
+Story1.story = { name: 'story 1' };
 
-export const story2 = () => '<span style="color: white">This one too!</span>';
-story2.story = { name: 'story 2' };
+export const Story2 = () => '<span style="color: white">This one too!</span>';
+Story2.story = { name: 'story 2' };

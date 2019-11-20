@@ -7,7 +7,7 @@
     - [React Native Async Storage](#react-native-async-storage)
     - [Deprecate displayName parameter](#deprecate-displayname-parameter)
     - [Unified docs preset](#unified-docs-preset)
-    - [Simplified hierarchy separators](#simplified-heirarchy-separators)
+    - [Simplified hierarchy separators](#simplified-hierarchy-separators)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)

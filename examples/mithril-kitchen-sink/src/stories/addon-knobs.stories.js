@@ -29,7 +29,7 @@ export const Simple = () => {
   };
 };
 
-export const story2 = () => {
+export const Story2 = () => {
   const name = text('Name', 'Jane');
   const stock = number('Stock', 20, {
     range: true,
@@ -75,9 +75,9 @@ export const story2 = () => {
     ),
   };
 };
-story2.story = { name: 'All knobs' };
+Story2.story = { name: 'All knobs' };
 
-export const story3 = () => ({
+export const Story3 = () => ({
   view: () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >'),
 });
-story3.story = { name: 'XSS safety' };
+Story3.story = { name: 'XSS safety' };
