@@ -2,6 +2,7 @@ import { PropDefaultValue } from '@storybook/components';
 import { isNil } from 'lodash';
 import { DocgenPropDefaultValue, DocgenPropType } from '../types';
 import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../utils';
+import { isDefaultValueBlacklisted } from '../utils/defaultValue';
 
 export function createDefaultValue(
   defaultValue: DocgenPropDefaultValue,
@@ -10,9 +11,11 @@ export function createDefaultValue(
   if (!isNil(defaultValue)) {
     const { value } = defaultValue;
 
-    return !isTooLongForDefaultValueSummary(value)
-      ? createSummaryValue(value)
-      : createSummaryValue(type.name, value);
+    if (!isDefaultValueBlacklisted(value)) {
+      return !isTooLongForDefaultValueSummary(value)
+        ? createSummaryValue(value)
+        : createSummaryValue(type.name, value);
+    }
   }
 
   return null;

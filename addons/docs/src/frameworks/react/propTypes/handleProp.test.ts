@@ -3,7 +3,7 @@
 import { PropDef } from '@storybook/components';
 import PropTypes from 'prop-types';
 import { Component } from '../../../blocks/shared';
-import { extractPropsFromDocgen, DocgenInfo } from '../../../lib/docgen';
+import { extractComponentProps, DocgenInfo } from '../../../lib/docgen';
 import { enhancePropTypesProp, enhancePropTypesProps } from './handleProp';
 
 const DOCGEN_SECTION = 'props';
@@ -43,7 +43,7 @@ function createComponent({ propTypes = {}, defaultProps = {}, docgenInfo = {} })
 }
 
 function extractPropDef(component: Component): PropDef {
-  return enhancePropTypesProp(extractPropsFromDocgen(component, DOCGEN_SECTION)[0]);
+  return enhancePropTypesProp(extractComponentProps(component, DOCGEN_SECTION)[0]);
 }
 
 describe('enhancePropTypesProp', () => {
@@ -914,7 +914,7 @@ describe('enhancePropTypesProps', () => {
     });
 
     const props = enhancePropTypesProps(
-      extractPropsFromDocgen(component, DOCGEN_SECTION),
+      extractComponentProps(component, DOCGEN_SECTION),
       component
     );
 
@@ -945,7 +945,7 @@ describe('enhancePropTypesProps', () => {
     });
 
     const props = enhancePropTypesProps(
-      extractPropsFromDocgen(component, DOCGEN_SECTION),
+      extractComponentProps(component, DOCGEN_SECTION),
       component
     );
 
