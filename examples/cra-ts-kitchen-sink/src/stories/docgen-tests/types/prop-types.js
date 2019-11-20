@@ -1,6 +1,8 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
 import PropTypes, { string, shape } from 'prop-types';
+import { PRESET_SHAPE, SOME_PROP_TYPES } from './ext';
 
 const NAMED_OBJECT = {
   text: PropTypes.string.isRequired,
@@ -159,6 +161,7 @@ PropTypesProps.propTypes = {
       ),
     })
   ),
+  arrayExternalShape: PropTypes.arrayOf(PropTypes.shape(PRESET_SHAPE)),
   /**
    *  A simple `objectOf` propType.
    */
@@ -257,6 +260,7 @@ PropTypesProps.propTypes = {
   requiredString: PropTypes.string.isRequired,
   nullDefaultValue: PropTypes.string,
   undefinedDefaultValue: PropTypes.string,
+  ...SOME_PROP_TYPES,
 };
 
 PropTypesProps.defaultProps = {
