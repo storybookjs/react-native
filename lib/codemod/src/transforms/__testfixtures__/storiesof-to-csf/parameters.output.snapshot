@@ -15,9 +15,9 @@ export default {
   },
 };
 
-export const withKindParameters = () => <Button label=\\"The Button\\" />;
+export const WithKindParameters = () => <Button label=\\"The Button\\" />;
 
-withKindParameters.story = {
+WithKindParameters.story = {
   name: 'with kind parameters',
 };"
 `;

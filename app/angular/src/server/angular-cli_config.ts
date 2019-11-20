@@ -57,6 +57,10 @@ export function getAngularCliConfig(dirToSearch: string) {
 }
 
 export function getLeadingAngularCliProject(ngCliConfig: any) {
+  if (!ngCliConfig) {
+    return null;
+  }
+
   const { defaultProject } = ngCliConfig;
   const { projects } = ngCliConfig;
   if (!projects || !Object.keys(projects).length) {
@@ -70,19 +74,18 @@ export function getLeadingAngularCliProject(ngCliConfig: any) {
 
 export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
   const angularCliConfig = getAngularCliConfig(dirToSearch);
-  if (!angularCliConfig) {
-    return undefined;
+  const project = getLeadingAngularCliProject(angularCliConfig);
+
+  if (!angularCliConfig || !project.architect.build) {
+    return null;
   }
 
-  const project = getLeadingAngularCliProject(angularCliConfig);
   const { options: projectOptions } = project.architect.build;
-
   const normalizedAssets = normalizeAssetPatterns(
     projectOptions.assets,
     dirToSearch,
     project.sourceRoot
   );
-
   const projectRoot = path.resolve(dirToSearch, project.root);
   const tsConfigPath = path.resolve(dirToSearch, projectOptions.tsConfig) as Path;
   const tsConfig = getTsConfigOptions(tsConfigPath);

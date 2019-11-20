@@ -4,7 +4,7 @@ export default {
   title: 'Metadata/Individual',
 };
 
-export const individual1 = () => ({
+export const Individual1 = () => ({
   template: `<storybook-simple-token-component [name]="name"></storybook-simple-token-component>`,
   props: {
     name: 'Prop Name',
@@ -21,11 +21,11 @@ export const individual1 = () => ({
   },
 });
 
-individual1.story = {
+Individual1.story = {
   name: 'Individual 1',
 };
 
-export const individual2 = () => ({
+export const Individual2 = () => ({
   template: `<storybook-simple-token-component></storybook-simple-token-component>`,
   moduleMetadata: {
     imports: [],
@@ -43,6 +43,6 @@ export const individual2 = () => ({
   },
 });
 
-individual2.story = {
+Individual2.story = {
   name: 'Individual 2',
 };

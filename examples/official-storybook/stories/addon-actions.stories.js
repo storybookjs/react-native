@@ -23,39 +23,39 @@ export default {
   },
 };
 
-export const basicExample = () => <Button onClick={action('hello-world')}>Hello World</Button>;
+export const BasicExample = () => <Button onClick={action('hello-world')}>Hello World</Button>;
 
-basicExample.story = {
+BasicExample.story = {
   name: 'Basic example',
 };
 
-export const multipleActions = () => (
+export const MultipleActions = () => (
   <Button {...actions('onClick', 'onMouseOver')}>Hello World</Button>
 );
 
-multipleActions.story = {
+MultipleActions.story = {
   name: 'Multiple actions',
 };
 
-export const multipleActionsConfig = () => (
+export const MultipleActionsConfig = () => (
   <Button {...actions('onClick', 'onMouseOver', { clearOnStoryChange: false })}>
     Moving away from this story will persist the action logger
   </Button>
 );
 
-multipleActionsConfig.story = {
+MultipleActionsConfig.story = {
   name: 'Multiple actions + config',
 };
 
-export const multipleActionsAsObject = () => (
+export const MultipleActionsAsObject = () => (
   <Button {...actions({ onClick: 'clicked', onMouseOver: 'hovered' })}>Hello World</Button>
 );
 
-multipleActionsAsObject.story = {
+MultipleActionsAsObject.story = {
   name: 'Multiple actions as object',
 };
 
-export const multipleActionsObjectConfig = () => (
+export const MultipleActionsObjectConfig = () => (
   <Button
     {...actions({ onClick: 'clicked', onMouseOver: 'hovered' }, { clearOnStoryChange: false })}
   >
@@ -63,63 +63,63 @@ export const multipleActionsObjectConfig = () => (
   </Button>
 );
 
-multipleActionsObjectConfig.story = {
+MultipleActionsObjectConfig.story = {
   name: 'Multiple actions, object + config',
 };
 
-export const decoratedAction = () => (
+export const DecoratedAction = () => (
   <Button onClick={pickNative.action('decorated')}>Native Event</Button>
 );
 
-decoratedAction.story = {
+DecoratedAction.story = {
   name: 'Decorated action',
 };
 
-export const decoratedActionConfig = () => (
+export const DecoratedActionConfig = () => (
   <Button onClick={pickNative.action('decorated', { clearOnStoryChange: false })}>
     Moving away from this story will persist the action logger
   </Button>
 );
 
-decoratedActionConfig.story = {
+DecoratedActionConfig.story = {
   name: 'Decorated action + config',
 };
 
-export const decoratedActions = () => (
+export const DecoratedActions = () => (
   <Button {...pickNative.actions('onClick', 'onMouseOver')}>Native Event</Button>
 );
 
-decoratedActions.story = {
+DecoratedActions.story = {
   name: 'Decorated actions',
 };
 
-export const decoratedActionsConfig = () => (
+export const DecoratedActionsConfig = () => (
   <Button {...pickNative.actions('onClick', 'onMouseOver', { clearOnStoryChange: false })}>
     Moving away from this story will persist the action logger
   </Button>
 );
 
-decoratedActionsConfig.story = {
+DecoratedActionsConfig.story = {
   name: 'Decorated actions + config',
 };
 
-export const circularPayload = () => {
+export const CircularPayload = () => {
   const circular = { foo: {} };
   circular.foo.circular = circular;
   return <Button onClick={() => action('circular')(circular)}>Circular Payload</Button>;
 };
 
-circularPayload.story = {
+CircularPayload.story = {
   name: 'Circular Payload',
 };
 
-export const reservedKeywordAsName = () => <Button onClick={action('delete')}>Delete</Button>;
+export const ReservedKeywordAsName = () => <Button onClick={action('delete')}>Delete</Button>;
 
-reservedKeywordAsName.story = {
+ReservedKeywordAsName.story = {
   name: 'Reserved keyword as name',
 };
 
-export const allTypes = () => {
+export const AllTypes = () => {
   function A() {}
   function B() {}
 
@@ -185,11 +185,11 @@ export const allTypes = () => {
   );
 };
 
-allTypes.story = {
+AllTypes.story = {
   name: 'All types',
 };
 
-export const configureActionsDepth = () => {
+export const ConfigureActionsDepth = () => {
   configureActions({
     depth: 2,
   });
@@ -201,7 +201,7 @@ export const configureActionsDepth = () => {
   );
 };
 
-export const persistingTheActionLogger = () => (
+export const PersistingTheActionLogger = () => (
   <Fragment>
     <p>Moving away from this story will persist the action logger</p>
     <Button onClick={action('clear-action-logger', { clearOnStoryChange: false })}>
@@ -210,11 +210,11 @@ export const persistingTheActionLogger = () => (
   </Fragment>
 );
 
-persistingTheActionLogger.story = {
+PersistingTheActionLogger.story = {
   name: 'Persisting the action logger',
 };
 
-export const limitActionOutput = () => {
+export const LimitActionOutput = () => {
   configureActions({
     limit: 2,
   });
@@ -226,6 +226,6 @@ export const limitActionOutput = () => {
     </Fragment>
   );
 };
-limitActionOutput.story = {
+LimitActionOutput.story = {
   name: 'Limit Action Output',
 };

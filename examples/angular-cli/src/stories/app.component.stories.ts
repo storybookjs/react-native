@@ -5,12 +5,12 @@ export default {
   component: AppComponent,
 };
 
-export const componentWithSeparateTemplate = () => ({
+export const ComponentWithSeparateTemplate = () => ({
   component: AppComponent,
   props: {},
 });
 
-componentWithSeparateTemplate.story = {
+ComponentWithSeparateTemplate.story = {
   name: 'Component with separate template',
   parameters: { docs: { iframeHeight: 400 } },
 };

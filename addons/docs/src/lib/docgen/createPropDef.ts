@@ -3,6 +3,8 @@ import { PropDef } from '@storybook/components';
 import { TypeSystem, DocgenInfo, DocgenType } from './types';
 import { JsDocParsingResult } from '../jsdocParser';
 import { createDefaultValue } from './createDefaultValue';
+import { createSummaryValue } from '../utils';
+import { createFlowPropDef } from './flow/createPropDef';
 
 export type PropDefFactory = (
   propName: string,
@@ -15,25 +17,19 @@ function createBasicPropDef(name: string, type: DocgenType, docgenInfo: DocgenIn
 
   return {
     name,
-    type: { summary: type.name },
+    type: createSummaryValue(type.name),
     required,
     description,
     defaultValue: createDefaultValue(defaultValue),
   };
 }
 
-function createPropDef(
-  name: string,
-  type: DocgenType,
-  docgenInfo: DocgenInfo,
-  jsDocParsingResult: JsDocParsingResult
-): PropDef {
-  const propDef = createBasicPropDef(name, type, docgenInfo);
-
+function applyJsDocResult(propDef: PropDef, jsDocParsingResult: JsDocParsingResult): PropDef {
   if (jsDocParsingResult.includesJsDoc) {
     const { description, extractedTags } = jsDocParsingResult;
 
     if (!isNil(description)) {
+      // eslint-disable-next-line no-param-reassign
       propDef.description = jsDocParsingResult.description;
     }
 
@@ -41,6 +37,7 @@ function createPropDef(
     const hasReturns = !isNil(extractedTags.returns) && !isNil(extractedTags.returns.type);
 
     if (hasParams || hasReturns) {
+      // eslint-disable-next-line no-param-reassign
       propDef.jsDocTags = {
         params:
           hasParams &&
@@ -53,36 +50,28 @@ function createPropDef(
   return propDef;
 }
 
-export const javaScriptFactory: PropDefFactory = (
-  propName: string,
-  docgenInfo: DocgenInfo,
-  jsDocParsingResult?: JsDocParsingResult
-) => {
-  return createPropDef(propName, docgenInfo.type, docgenInfo, jsDocParsingResult);
+export const javaScriptFactory: PropDefFactory = (propName, docgenInfo, jsDocParsingResult) => {
+  const propDef = createBasicPropDef(propName, docgenInfo.type, docgenInfo);
+
+  return applyJsDocResult(propDef, jsDocParsingResult);
 };
 
-export const tsFactory: PropDefFactory = (
-  propName: string,
-  docgenInfo: DocgenInfo,
-  jsDocParsingResult?: JsDocParsingResult
-) => {
-  return createPropDef(propName, docgenInfo.tsType, docgenInfo, jsDocParsingResult);
+export const tsFactory: PropDefFactory = (propName, docgenInfo, jsDocParsingResult) => {
+  const propDef = createBasicPropDef(propName, docgenInfo.tsType, docgenInfo);
+
+  return applyJsDocResult(propDef, jsDocParsingResult);
 };
 
-export const flowFactory: PropDefFactory = (
-  propName: string,
-  docgenInfo: DocgenInfo,
-  jsDocParsingResult?: JsDocParsingResult
-) => {
-  return createPropDef(propName, docgenInfo.flowType, docgenInfo, jsDocParsingResult);
+export const flowFactory: PropDefFactory = (propName, docgenInfo, jsDocParsingResult) => {
+  const propDef = createFlowPropDef(propName, docgenInfo);
+
+  return applyJsDocResult(propDef, jsDocParsingResult);
 };
 
-export const unknownFactory: PropDefFactory = (
-  propName: string,
-  docgenInfo: DocgenInfo,
-  jsDocParsingResult?: JsDocParsingResult
-) => {
-  return createPropDef(propName, { name: 'unknown' }, docgenInfo, jsDocParsingResult);
+export const unknownFactory: PropDefFactory = (propName, docgenInfo, jsDocParsingResult) => {
+  const propDef = createBasicPropDef(propName, { name: 'unknown' }, docgenInfo);
+
+  return applyJsDocResult(propDef, jsDocParsingResult);
 };
 
 export const getPropDefFactory = (typeSystem: TypeSystem): PropDefFactory => {

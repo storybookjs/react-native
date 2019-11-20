@@ -8,12 +8,12 @@ export default {
   decorators: [Centered],
 };
 
-export const button = () => (
-  <button type="button">
+export const Button = () => (
+  <Button type="button">
     <Text>BUTTON</Text>
-  </button>
+  </Button>
 );
-button.story = { name: 'Button' };
+Button.story = { name: 'Button' };
 
 export const app = () => <App />;
 app.story = { name: 'App' };

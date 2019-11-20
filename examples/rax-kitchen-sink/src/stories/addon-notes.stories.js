@@ -8,24 +8,24 @@ export default {
   decorators: [withNotes],
 };
 
-export const basic = () => <Text>RAX TEXT NODE</Text>;
+export const Basic = () => <Text>RAX TEXT NODE</Text>;
 
-basic.story = {
+Basic.story = {
   parameters: { notes: 'super awesome note' },
 };
 
-export const withEmojies = () => <Text style={{ fontSize: 20, color: 'blue' }}>Styled text</Text>;
+export const WithEmojies = () => <Text style={{ fontSize: 20, color: 'blue' }}>Styled text</Text>;
 
-withEmojies.story = {
+WithEmojies.story = {
   name: 'with emojies',
   parameters: {
     notes: ' this is a note with emojies 🚀🚀🚀🚀🚀',
   },
 };
 
-export const withMarkdown = () => <Text>😀 😎 👍 💯</Text>;
+export const WithMarkdown = () => <Text>😀 😎 👍 💯</Text>;
 
-withMarkdown.story = {
+WithMarkdown.story = {
   name: 'with markdown',
   parameters: {
     notes: {

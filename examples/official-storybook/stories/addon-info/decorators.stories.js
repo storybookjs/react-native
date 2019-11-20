@@ -7,5 +7,5 @@ export default {
   decorators: [withInfo('Info can take options via the global or local decorator as well.')],
 };
 
-export const useInfo = () => <BaseButton label="Button" />;
-useInfo.story = { name: 'Use Info as story decorator' };
+export const UseInfo = () => <BaseButton label="Button" />;
+UseInfo.story = { name: 'Use Info as story decorator' };

@@ -11,8 +11,8 @@ export default {
   title: 'Force ReRender',
 };
 
-export const button = () => (
-  <button type="button" onClick={increment}>
+export const Button = () => (
+  <Button type="button" onClick={increment}>
     Click me to increment: {count}
-  </button>
+  </Button>
 );

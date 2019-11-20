@@ -1,6 +1,7 @@
 import { isNil } from 'lodash';
 import { PropDefaultValue } from '@storybook/components';
 import { DocgenPropDefaultValue } from './types';
+import { createSummaryValue } from '../utils';
 
 const BLACKLIST = ['null', 'undefined'];
 
@@ -13,9 +14,7 @@ export function createDefaultValue(defaultValue: DocgenPropDefaultValue): PropDe
     const { value } = defaultValue;
 
     if (!isDefaultValueBlacklisted(value)) {
-      return {
-        summary: value,
-      };
+      return createSummaryValue(value);
     }
   }
 
