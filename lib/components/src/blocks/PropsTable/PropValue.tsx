@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { isNil } from 'lodash';
 import { styled } from '@storybook/theming';
+import memoize from 'memoizerific';
 import { PropSummaryValue } from './PropDef';
 import { WithTooltipPure } from '../../tooltip/WithTooltip';
 import { Icons } from '../../icon/icon';
@@ -18,12 +19,12 @@ interface PropSummaryProps {
   value: PropSummaryValue;
 }
 
-const Text = styled.span(({ theme }: { theme: any }) => ({
+const Text = styled.span(({ theme }) => ({
   fontFamily: theme.typography.fonts.mono,
   fontSize: `${theme.typography.size.code}%`,
 }));
 
-const Expandable = styled.div(({ theme }: { theme: any }) => ({
+const Expandable = styled.div(({ theme }) => ({
   fontFamily: theme.typography.fonts.mono,
   fontSize: `${theme.typography.size.code}%`,
   lineHeight: '20px',
@@ -34,9 +35,10 @@ const Expandable = styled.div(({ theme }: { theme: any }) => ({
   padding: '4px 8px 4px 4px',
   borderRadius: '4px',
   cursor: 'pointer',
+  whiteSpace: 'nowrap',
 }));
 
-const ArrowIcon = styled<any, any>(Icons)(({ theme }: { theme: any }) => ({
+const ArrowIcon = styled(Icons)(({ theme }) => ({
   height: 10,
   width: 10,
   minWidth: 10,
@@ -47,10 +49,13 @@ const ArrowIcon = styled<any, any>(Icons)(({ theme }: { theme: any }) => ({
   display: 'inline-flex',
 }));
 
-const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme }: { theme: any }) => ({
-  padding: '8px 12px',
-  minWidth: '50ch',
-  maxWidth: '100ch',
+const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme, width }) => ({
+  width: `${width}ch`,
+  minWidth: '200px',
+  maxWith: '800px',
+  padding: '12px',
+  // Dont remove the mono fontFamily here even if it seem useless, this is used by the browser to calculate the length of a "ch" unit.
+  fontFamily: theme.typography.fonts.mono,
   fontSize: theme.typography.size.s2,
 }));
 
@@ -61,6 +66,12 @@ const EmptyProp = () => {
 const PropText: FC<PropTextProps> = ({ text }) => {
   return <Text>{text}</Text>;
 };
+
+const inferDetailWidth = memoize(1000)(function(detail: string): number {
+  const lines = detail.split(/\r?\n/);
+
+  return Math.max(...lines.map(x => x.length));
+});
 
 const PropSummary: FC<PropSummaryProps> = ({ value }) => {
   const { summary, detail } = value;
@@ -81,16 +92,14 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
         setIsOpen(isVisible);
       }}
       tooltip={
-        <div>
-          <StyledSyntaxHighlighter language="jsx" copyable padded format={false}>
-            {detail}
-          </StyledSyntaxHighlighter>
-        </div>
+        <StyledSyntaxHighlighter width={inferDetailWidth(detail)} language="jsx" format={false}>
+          {detail}
+        </StyledSyntaxHighlighter>
       }
     >
       <Expandable className="sbdocs-expandable">
         <span>{summary}</span>
-        <ArrowIcon icon={isOpen ? 'arrowup' : 'arrowdown'} size={10} />
+        <ArrowIcon icon={isOpen ? 'arrowup' : 'arrowdown'} />
       </Expandable>
     </WithTooltipPure>
   );
