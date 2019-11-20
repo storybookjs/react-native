@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { isNil } from 'lodash';
+import { transparentize } from 'polished';
 import { styled } from '@storybook/theming';
 import { PropDef } from './PropDef';
 import { PropJsDoc } from './PropJsDoc';
 import { PropValue } from './PropValue';
+
+import { codeCommon } from '../../typography/DocumentFormatting';
 
 export interface PropRowProps {
   row: PropDef;
@@ -18,21 +21,34 @@ const Required = styled.span(({ theme }) => ({
   cursor: 'help',
 }));
 
-const Description = styled.div({
+const Description = styled.div(({ theme }) => ({
   '&&': {
     p: {
       margin: '0',
     },
   },
-});
+  code: codeCommon({ theme }),
+  '& code': {
+    lineHeight: '18px',
+    margin: 0,
+    display: 'inline-block',
+  },
+}));
 
 const Type = styled.div<{ hasDescription: boolean }>(({ theme, hasDescription }) => ({
-  color: theme.color.dark,
-  marginTop: hasDescription ? '3px' : '0',
+  color:
+    theme.base === 'light'
+      ? transparentize(0.1, theme.color.defaultText)
+      : transparentize(0.2, theme.color.defaultText),
+  marginTop: hasDescription ? '4px' : '0',
 }));
 
 const TypeWithJsDoc = styled.div(({ theme }) => ({
-  color: theme.color.darker,
+  color:
+    theme.base === 'light'
+      ? transparentize(0.1, theme.color.defaultText)
+      : transparentize(0.2, theme.color.defaultText),
+  fontSize: theme.typography.size.s2 - 1,
   marginTop: '12px',
   marginBottom: '12px',
 }));

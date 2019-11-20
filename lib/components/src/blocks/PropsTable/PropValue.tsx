@@ -7,6 +7,8 @@ import { WithTooltipPure } from '../../tooltip/WithTooltip';
 import { Icons } from '../../icon/icon';
 import { SyntaxHighlighter } from '../../syntaxhighlighter/syntaxhighlighter';
 
+import { codeCommon } from '../../typography/DocumentFormatting';
+
 interface PropValueProps {
   value?: PropSummaryValue;
 }
@@ -21,20 +23,15 @@ interface PropSummaryProps {
 
 const Text = styled.span(({ theme }) => ({
   fontFamily: theme.typography.fonts.mono,
-  fontSize: `${theme.typography.size.code}%`,
+  fontSize: theme.typography.size.s2 - 1,
 }));
 
-const Expandable = styled.div(({ theme }) => ({
+const Expandable = styled.div(codeCommon, ({ theme }) => ({
   fontFamily: theme.typography.fonts.mono,
-  fontSize: `${theme.typography.size.code}%`,
-  lineHeight: '20px',
+  lineHeight: '18px',
   display: 'inline-block',
-  textAlign: 'left',
   color: theme.color.secondary,
-  backgroundColor: theme.color.lighter,
-  padding: '4px',
-  borderRadius: '4px',
-  cursor: 'pointer',
+  margin: 0,
   whiteSpace: 'nowrap',
 }));
 
@@ -42,9 +39,7 @@ const ArrowIcon = styled(Icons)(({ theme }) => ({
   height: 10,
   width: 10,
   minWidth: 10,
-  color: theme.color.secondary,
-  marginLeft: '8px',
-  transition: 'transform 0.1s ease-in-out',
+  marginLeft: '4px',
   alignSelf: 'center',
   display: 'inline-flex',
 }));
@@ -53,10 +48,10 @@ const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme, width }) => 
   width: `${width}ch`,
   minWidth: '200px',
   maxWith: '800px',
-  padding: '12px',
+  padding: '15px',
   // Dont remove the mono fontFamily here even if it seem useless, this is used by the browser to calculate the length of a "ch" unit.
   fontFamily: theme.typography.fonts.mono,
-  fontSize: theme.typography.size.s2,
+  fontSize: theme.typography.size.s2 - 1,
 }));
 
 const EmptyProp = () => {

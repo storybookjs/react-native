@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { styled } from '@storybook/theming';
 import { isNil } from 'lodash';
 import { JsDocTags } from './PropDef';
+import { codeCommon } from '../../typography/DocumentFormatting';
 
 interface PropJsDocProps {
   tags: JsDocTags;
@@ -9,23 +10,13 @@ interface PropJsDocProps {
 
 export const Table = styled.table<{}>(({ theme }) => ({
   '&&': {
-    // Resets for cascading/system styles
-    borderCollapse: 'collapse',
-    borderSpacing: 0,
-    color: theme.color.defaultText,
-    border: 'none',
-
-    tr: {
-      border: 'none',
-      background: 'none',
-    },
-
+    // Escape default table styles
     'td, th': {
       padding: 0,
       border: 'none',
       width: 'auto!important',
     },
-    // End Resets
+    // End escape
 
     fontSize: theme.typography.size.s2,
     lineHeight: '20px',
@@ -40,49 +31,25 @@ export const Table = styled.table<{}>(({ theme }) => ({
     },
 
     'th:last-of-type, td:last-of-type': {
-      paddingRight: '20px',
-      width: '20%',
-    },
-
-    th: {
-      paddingTop: 10,
-      paddingBottom: 10,
-
-      '&:not(:first-of-type)': {
-        paddingLeft: 12,
-        paddingRight: 12,
-      },
+      paddingRight: 0,
     },
 
     td: {
-      paddingTop: '8px',
-      paddingBottom: '8px',
+      paddingTop: '0',
+      paddingBottom: '4px',
 
       '&:not(:first-of-type)': {
-        paddingLeft: 12,
-        paddingRight: 12,
-      },
-
-      '&:last-of-type': {
-        paddingRight: '20px',
+        paddingLeft: 10,
+        paddingRight: 0,
       },
     },
 
-    'tr:first-child': {
-      'td:first-child, th:first-child': {
-        borderTopLeftRadius: 0,
-      },
-      'td:last-child, th:last-child': {
-        borderTopRightRadius: 0,
-      },
-    },
+    code: codeCommon({ theme }),
 
-    code: {
-      backgroundColor: theme.color.lighter,
-      padding: '4px',
-      borderRadius: '4px',
-      color: theme.color.darker,
-      fontSize: theme.typography.size.s2,
+    '& code': {
+      lineHeight: '18px',
+      margin: 0,
+      display: 'inline-block',
     },
 
     tbody: {
@@ -95,13 +62,6 @@ export const Table = styled.table<{}>(({ theme }) => ({
         '&:not(:first-child)': {
           borderTopWidth: 0,
         },
-      },
-
-      td: {
-        background: theme.background.content,
-        border: 'none',
-        width: 'auto',
-        color: theme.color.darker,
       },
     },
   },
