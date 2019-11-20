@@ -11,17 +11,21 @@ interface PropJsDocProps {
 export const Table = styled.table<{}>(({ theme }) => ({
   '&&': {
     // Escape default table styles
+    borderCollapse: 'collapse',
+    borderSpacing: 0,
+    border: 'none',
+
+    tr: {
+      border: 'none !important',
+      background: 'none',
+    },
+
     'td, th': {
       padding: 0,
       border: 'none',
       width: 'auto!important',
     },
     // End escape
-
-    fontSize: theme.typography.size.s2,
-    lineHeight: '20px',
-    textAlign: 'left',
-    width: '100%',
 
     marginTop: '0',
     marginBottom: '0',
@@ -44,25 +48,17 @@ export const Table = styled.table<{}>(({ theme }) => ({
       },
     },
 
+    tbody: {
+      boxShadow: 'none',
+      border: 'none',
+    },
+
     code: codeCommon({ theme }),
 
     '& code': {
       lineHeight: '18px',
       margin: 0,
       display: 'inline-block',
-    },
-
-    tbody: {
-      boxShadow: 'none',
-      border: 'none',
-
-      tr: {
-        background: 'transparent',
-        overflow: 'hidden',
-        '&:not(:first-child)': {
-          borderTopWidth: 0,
-        },
-      },
     },
   },
 }));
