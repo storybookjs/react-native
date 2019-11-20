@@ -48,7 +48,6 @@ const TypeWithJsDoc = styled.div(({ theme }) => ({
     theme.base === 'light'
       ? transparentize(0.1, theme.color.defaultText)
       : transparentize(0.2, theme.color.defaultText),
-  fontSize: theme.typography.size.s2 - 1,
   marginTop: '12px',
   marginBottom: '12px',
 }));
