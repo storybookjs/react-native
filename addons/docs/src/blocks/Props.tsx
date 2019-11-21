@@ -5,6 +5,8 @@ import {
   PropsTable,
   PropsTableError,
   PropsTableProps,
+  PropsTableRowsProps,
+  PropsTableSectionsProps,
   PropDef,
   TabsState,
 } from '@storybook/components';
@@ -37,6 +39,9 @@ const inferPropsExtractor = (framework: string): PropsExtractor | null => {
   }
 };
 
+const filterRows = (rows: PropDef[], exclude: string[]) =>
+  rows && rows.filter((row: PropDef) => !exclude.includes(row.name));
+
 export const getComponentProps = (
   component: Component,
   { exclude }: PropsProps,
@@ -49,16 +54,25 @@ export const getComponentProps = (
     const params = parameters || {};
     const { framework = null } = params;
 
-    const { extractProps = inferPropsExtractor(framework) } = params.docs || {};
+    const { extractProps = inferPropsExtractor(framework) }: { extractProps: PropsExtractor } =
+      params.docs || {};
     if (!extractProps) {
       throw new Error(PropsTableError.PROPS_UNSUPPORTED);
     }
-    let { rows } = extractProps(component);
+    let props = extractProps(component);
     if (!isNil(exclude)) {
-      rows = rows.filter((row: PropDef) => !exclude.includes(row.name));
+      const { rows } = props as PropsTableRowsProps;
+      const { sections } = props as PropsTableSectionsProps;
+      if (rows) {
+        props = { rows: filterRows(rows, exclude) };
+      } else if (sections) {
+        Object.keys(sections).forEach(section => {
+          sections[section] = filterRows(sections[section], exclude);
+        });
+      }
     }
 
-    return { rows };
+    return props;
   } catch (err) {
     return { error: err.message };
   }

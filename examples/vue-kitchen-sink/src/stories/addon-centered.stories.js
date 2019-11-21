@@ -8,7 +8,7 @@ export default {
   decorators: [Centered],
 };
 
-export const rounded = () => ({
+export const Rounded = () => ({
   components: { MyButton },
   template: '<my-button :rounded="true">A Button with rounded edges</my-button>',
 });

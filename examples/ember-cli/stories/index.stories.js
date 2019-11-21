@@ -8,7 +8,7 @@ export default {
   },
 };
 
-export const basic = () => ({
+export const Basic = () => ({
   template: hbs`
         {{welcome-page}}
       `,

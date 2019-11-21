@@ -8,8 +8,8 @@ export default {
   title: 'App',
 };
 
-export const fullApp = () => <App />;
+export const FullApp = () => <App />;
 
-fullApp.story = {
+FullApp.story = {
   name: 'full app',
 };

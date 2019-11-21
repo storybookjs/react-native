@@ -4,10 +4,10 @@ export default {
   title: 'Addons/Knobs/with decorators',
 };
 
-export const withDecoratorCallingStoryFunctionMoreThanOnce = () => {
+export const WithDecoratorCallingStoryFunctionMoreThanOnce = () => {
   return text('Text', 'Hello');
 };
-withDecoratorCallingStoryFunctionMoreThanOnce.story = {
+WithDecoratorCallingStoryFunctionMoreThanOnce.story = {
   decorators: [
     withKnobs,
     storyFn => {

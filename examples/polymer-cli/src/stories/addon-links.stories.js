@@ -7,13 +7,13 @@ export default {
   title: 'Addon/Links',
 };
 
-export const withCreateElement = () => {
+export const WithCreateElement = () => {
   const el = document.createElement('simple-button');
   el.title = 'Go to welcome';
   el.handleClick = linkTo('Welcome');
   return el;
 };
 
-withCreateElement.story = {
+WithCreateElement.story = {
   name: 'With Create Element',
 };

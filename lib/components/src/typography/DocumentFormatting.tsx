@@ -1,28 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { styled, CSSObject, Theme } from '@storybook/theming';
-import { withReset } from './withReset';
-
-const headerCommon = ({ theme }: { theme: Theme }): CSSObject => ({
-  margin: '20px 0 8px',
-  padding: 0,
-  cursor: 'text',
-  position: 'relative',
-  color: theme.color.defaultText,
-  '&:first-of-type': {
-    marginTop: 0,
-    paddingTop: 0,
-  },
-  '&:hover a.anchor': {
-    textDecoration: 'none',
-  },
-  '& tt, & code': {
-    fontSize: 'inherit',
-  },
-});
-
-const withMargin: CSSObject = {
-  margin: '16px 0',
-};
+import { styled, CSSObject } from '@storybook/theming';
+import { withReset, withMargin, headerCommon, codeCommon } from './shared';
 
 export const H1 = styled.h1<{}>(withReset, headerCommon, ({ theme }) => ({
   fontSize: `${theme.typography.size.l1}px`,
@@ -325,17 +303,6 @@ export const LI = styled.li<{}>(withReset, ({ theme }) => ({
 export const UL = styled.ul<{}>(withReset, withMargin, listCommon, {});
 
 export const OL = styled.ol<{}>(withReset, withMargin, listCommon);
-
-const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
-  margin: '0 2px',
-  padding: '0 5px',
-  whiteSpace: 'nowrap',
-  border: `1px solid ${theme.color.mediumlight}`,
-  backgroundColor: theme.color.lighter,
-  borderRadius: '3px',
-  fontSize: theme.typography.size.s2 - 1,
-  color: theme.base === 'dark' && theme.color.darkest,
-});
 
 export const P = styled.p<{}>(withReset, withMargin, ({ theme }) => ({
   fontSize: theme.typography.size.s2,

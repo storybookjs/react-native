@@ -5,7 +5,7 @@ export default {
   title: 'Addon/Actions',
 };
 
-export const actionOnly = () => ({
+export const ActionOnly = () => ({
   component: Button,
   props: {
     text: 'Action only',
@@ -13,11 +13,11 @@ export const actionOnly = () => ({
   },
 });
 
-actionOnly.story = {
+ActionOnly.story = {
   name: 'Action only',
 };
 
-export const actionAndMethod = () => ({
+export const ActionAndMethod = () => ({
   component: Button,
   props: {
     text: 'Action and Method',
@@ -29,6 +29,6 @@ export const actionAndMethod = () => ({
   },
 });
 
-actionAndMethod.story = {
+ActionAndMethod.story = {
   name: 'Action and method',
 };

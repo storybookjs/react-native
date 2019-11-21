@@ -21,6 +21,7 @@ export const Table = styled.table<{}>(({ theme }) => ({
     'td, th': {
       padding: 0,
       border: 'none',
+      verticalAlign: 'top',
     },
     // End Resets
 
@@ -45,8 +46,8 @@ export const Table = styled.table<{}>(({ theme }) => ({
     th: {
       color:
         theme.base === 'light'
-          ? transparentize(0.4, theme.color.defaultText)
-          : transparentize(0.6, theme.color.defaultText),
+          ? transparentize(0.25, theme.color.defaultText)
+          : transparentize(0.45, theme.color.defaultText),
       paddingTop: 10,
       paddingBottom: 10,
 

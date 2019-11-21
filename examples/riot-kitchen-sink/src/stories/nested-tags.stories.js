@@ -8,7 +8,7 @@ export default {
   title: 'Story/Nest tags',
 };
 
-export const threeTags = () => ({
+export const ThreeTags = () => ({
   tags: [
     '<WebPage><PageHeader>Simple title</PageHeader><PageBody>Simple Content</PageBody></WebPage>',
     '<PageHeader><h1><yield/></h1></PageHeader>',
@@ -16,7 +16,7 @@ export const threeTags = () => ({
   ],
 });
 
-threeTags.story = {
+ThreeTags.story = {
   name: 'Three tags',
 };
 
