@@ -150,6 +150,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
   const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem } = getSource(withSource, expanded, setExpanded);
   const [scale, setScale] = useState(1);
+  const previewClasses = className ? `${className} sbdocs-preview` : 'sbdocs-preview';
 
   if (withToolbar && Array.isArray(children)) {
     logger.warn('Cannot use toolbar with multiple preview children, disabling');
@@ -159,7 +160,7 @@ const Preview: FunctionComponent<PreviewProps> = ({
     <PreviewContainer
       {...{ withSource, withToolbar: showToolbar }}
       {...props}
-      className="sbdocs-preview"
+      className={previewClasses}
     >
       {showToolbar && (
         <PositionedToolbar
