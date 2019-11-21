@@ -41,7 +41,7 @@
     "core-js-pure": "^3.0.1",
     "emotion-theming": "^10.0.19",
     "fast-deep-equal": "^2.0.1",
-    "fuse.js": "^3.4.4",
+    "fuse.js": "^3.4.6",
     "global": "^4.3.2",
     "lodash": "^4.17.15",
     "markdown-to-jsx": "^6.9.3",
@@ -59,7 +59,7 @@
     "resolve-from": "^5.0.0",
     "semver": "^6.0.0",
     "store2": "^2.7.1",
-    "telejson": "^3.0.3",
+    "telejson": "^3.2.0",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {

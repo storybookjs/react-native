@@ -42,7 +42,7 @@
     "ts-dedent": "^1.1.0"
   },
   "devDependencies": {
-    "rax": "^1.0.0"
+    "rax": "^1.1.0"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0",

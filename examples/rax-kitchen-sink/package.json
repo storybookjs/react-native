@@ -14,10 +14,10 @@
   },
   "dependencies": {
     "event-emitter": "^0.3.5",
-    "rax": "^1.0.0",
+    "rax": "^1.1.0",
     "rax-image": "^1.0.0",
     "rax-link": "^1.0.0",
-    "rax-text": "^1.0.0",
+    "rax-text": "^1.1.2",
     "rax-view": "^1.0.0"
   },
   "devDependencies": {
