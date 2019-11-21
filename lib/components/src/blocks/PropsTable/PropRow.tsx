@@ -6,7 +6,7 @@ import { styled } from '@storybook/theming';
 import { PropDef } from './PropDef';
 import { PropJsDoc } from './PropJsDoc';
 import { PropValue } from './PropValue';
-import { codeCommon } from '../../typography/DocumentFormatting';
+import { codeCommon } from '../../typography/shared';
 
 export interface PropRowProps {
   row: PropDef;

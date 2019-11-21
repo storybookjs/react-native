@@ -1,50 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { styled, CSSObject, Theme } from '@storybook/theming';
-import { transparentize } from 'polished';
-import { withReset } from './withReset';
-
-const headerCommon = ({ theme }: { theme: Theme }): CSSObject => ({
-  margin: '20px 0 8px',
-  padding: 0,
-  cursor: 'text',
-  position: 'relative',
-  color: theme.color.defaultText,
-  '&:first-of-type': {
-    marginTop: 0,
-    paddingTop: 0,
-  },
-  '&:hover a.anchor': {
-    textDecoration: 'none',
-  },
-  '& tt, & code': {
-    fontSize: 'inherit',
-  },
-});
-
-export const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
-  margin: '0 2px',
-  padding: '0 5px',
-  whiteSpace: 'nowrap',
-
-  borderRadius: '3px',
-  fontSize: theme.typography.size.s2 - 1,
-
-  // color: theme.base === 'dark' && theme.color.darkest,
-
-  border:
-    theme.base === 'light'
-      ? `1px solid ${theme.color.mediumlight}`
-      : `1px solid ${theme.color.darker}`,
-  color:
-    theme.base === 'light'
-      ? transparentize(0.1, theme.color.defaultText)
-      : transparentize(0.3, theme.color.defaultText),
-  backgroundColor: theme.base === 'light' ? theme.color.lighter : theme.color.border,
-});
-
-const withMargin: CSSObject = {
-  margin: '16px 0',
-};
+import { withReset, withMargin, headerCommon, codeCommon } from './shared';
 
 export const H1 = styled.h1<{}>(withReset, headerCommon, ({ theme }) => ({
   fontSize: `${theme.typography.size.l1}px`,

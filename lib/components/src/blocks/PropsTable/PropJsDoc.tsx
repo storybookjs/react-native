@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { styled } from '@storybook/theming';
 import { isNil } from 'lodash';
 import { JsDocTags } from './PropDef';
-import { codeCommon } from '../../typography/DocumentFormatting';
+import { codeCommon } from '../../typography/shared';
 
 interface PropJsDocProps {
   tags: JsDocTags;

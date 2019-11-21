@@ -6,7 +6,7 @@ import { PropSummaryValue } from './PropDef';
 import { WithTooltipPure } from '../../tooltip/WithTooltip';
 import { Icons } from '../../icon/icon';
 import { SyntaxHighlighter } from '../../syntaxhighlighter/syntaxhighlighter';
-import { codeCommon } from '../../typography/DocumentFormatting';
+import { codeCommon } from '../../typography/shared';
 
 const DIRTY_PADDING_TOP_IN_PX = 3;
 
