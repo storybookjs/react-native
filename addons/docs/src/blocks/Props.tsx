@@ -62,11 +62,10 @@ export const getComponentProps = (
     let props = extractProps(component);
     if (!isNil(exclude)) {
       const { rows } = props as PropsTableRowsProps;
+      const { sections } = props as PropsTableSectionsProps;
       if (rows) {
         props = { rows: filterRows(rows, exclude) };
-      }
-      const { sections } = props as PropsTableSectionsProps;
-      if (sections) {
+      } else if (sections) {
         Object.keys(sections).forEach(section => {
           sections[section] = filterRows(sections[section], exclude);
         });
