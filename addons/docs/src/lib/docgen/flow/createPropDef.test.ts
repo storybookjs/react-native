@@ -1,22 +1,13 @@
-import { isNil } from 'lodash';
 import { createFlowPropDef } from './createPropDef';
-import { DocgenInfo, DocgenFlowType } from '../types';
+import { DocgenInfo } from '../types';
 
 const PROP_NAME = 'propName';
 
-function createDocgenInfo({
-  type,
-  defaultValue,
-  ...rest
-}: {
-  type: DocgenFlowType;
-  defaultValue?: string;
-}): DocgenInfo {
+function createDocgenInfo({ flowType, ...others }: Partial<DocgenInfo>): DocgenInfo {
   return {
-    flowType: type,
-    defaultValue: !isNil(defaultValue) ? { value: defaultValue } : undefined,
+    flowType,
     required: false,
-    ...rest,
+    ...others,
   };
 }
 
@@ -25,7 +16,7 @@ describe('type', () => {
     x => {
       it(`should support ${x}`, () => {
         const docgenInfo = createDocgenInfo({
-          type: { name: x },
+          flowType: { name: x },
         });
 
         const { type } = createFlowPropDef(PROP_NAME, docgenInfo);
@@ -39,7 +30,7 @@ describe('type', () => {
   ['Array', 'Class', 'MyClass'].forEach(x => {
     it(`should support untyped ${x}`, () => {
       const docgenInfo = createDocgenInfo({
-        type: { name: x },
+        flowType: { name: x },
       });
 
       const { type } = createFlowPropDef(PROP_NAME, docgenInfo);
@@ -50,7 +41,7 @@ describe('type', () => {
 
     it(`should support typed ${x}`, () => {
       const docgenInfo = createDocgenInfo({
-        type: {
+        flowType: {
           name: x,
           elements: [
             {
@@ -70,7 +61,7 @@ describe('type', () => {
 
   it('should support short object signature', () => {
     const docgenInfo = createDocgenInfo({
-      type: {
+      flowType: {
         name: 'signature',
         type: 'object',
         raw: '{ foo: string, bar?: mixed }',
@@ -103,7 +94,7 @@ describe('type', () => {
 
   it('should support long object signature', () => {
     const docgenInfo = createDocgenInfo({
-      type: {
+      flowType: {
         name: 'signature',
         type: 'object',
         raw: '{ (x: string): void, prop: string }',
@@ -147,7 +138,7 @@ describe('type', () => {
 
   it('should support func signature', () => {
     const docgenInfo = createDocgenInfo({
-      type: {
+      flowType: {
         name: 'signature',
         type: 'function',
         raw: '(x: string) => void',
@@ -175,7 +166,7 @@ describe('type', () => {
 
   it('should support tuple', () => {
     const docgenInfo = createDocgenInfo({
-      type: {
+      flowType: {
         name: 'tuple',
         raw: '[foo, "value", number]',
         elements: [
@@ -200,7 +191,7 @@ describe('type', () => {
 
   it('should support union', () => {
     const docgenInfo = createDocgenInfo({
-      type: {
+      flowType: {
         name: 'union',
         raw: 'number | string',
         elements: [
@@ -221,7 +212,7 @@ describe('type', () => {
 
   it('should support intersection', () => {
     const docgenInfo = createDocgenInfo({
-      type: {
+      flowType: {
         name: 'intersection',
         raw: 'number & string',
         elements: [
