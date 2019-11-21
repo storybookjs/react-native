@@ -41,11 +41,11 @@
     "semver": "^6.0.0",
     "shallow-equal": "^1.1.0",
     "store2": "^2.7.1",
-    "telejson": "^3.0.3",
+    "telejson": "^3.2.0",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.129",
+    "@types/lodash": "^4.14.149",
     "@types/semver": "^6.0.0"
   },
   "publishConfig": {
