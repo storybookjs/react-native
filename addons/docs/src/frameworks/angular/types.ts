@@ -24,6 +24,15 @@ export interface Component {
   rawdescription: string;
 }
 
+export interface Directive {
+  name: string;
+  propertiesClass: Property[];
+  inputsClass: Property[];
+  outputsClass: Property[];
+  methodsClass: Method[];
+  rawdescription: string;
+}
+
 export interface Argument {
   name: string;
   type: string;
@@ -35,5 +44,6 @@ export interface Decorator {
 }
 
 export interface CompodocJson {
+  directives: Directive[];
   components: Component[];
 }
