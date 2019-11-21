@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { styled, CSSObject, Theme } from '@storybook/theming';
+import { styled, CSSObject } from '@storybook/theming';
 import { withReset, withMargin, headerCommon, codeCommon } from './shared';
 
 export const H1 = styled.h1<{}>(withReset, headerCommon, ({ theme }) => ({
