@@ -76,6 +76,6 @@ function extractProp(
   return null;
 }
 
-export function extractComponentDescription(component: Component): string {
-  return getDocgenDescription(component);
+export function extractComponentDescription(component?: Component): string {
+  return !isNil(component) && getDocgenDescription(component);
 }
