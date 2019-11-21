@@ -2,8 +2,8 @@ import { isNil } from 'lodash';
 import { PropSummaryValue, PropType } from '@storybook/components';
 import { createSummaryValue, isTooLongForTypeSummary } from '../../../lib';
 import { ExtractedProp, DocgenPropType } from '../../../lib/docgen';
-import { inspectValue } from '../inspection/inspectValue';
-import { generateCode } from '../utils/generateCode';
+import { inspectValue } from '../lib/inspection/inspectValue';
+import { generateCode } from '../lib/generateCode';
 import { generateFuncSignature } from './generateFuncSignature';
 import {
   OBJECT_CAPTION,
@@ -13,8 +13,8 @@ import {
   ELEMENT_CAPTION,
   CUSTOM_CAPTION,
 } from './captions';
-import { InspectionType } from '../inspection/types';
-import { isHtmlTag } from '../utils/isHtmlTag';
+import { InspectionType } from '../lib/inspection/types';
+import { isHtmlTag } from '../lib/isHtmlTag';
 
 enum PropTypesType {
   CUSTOM = 'custom',
