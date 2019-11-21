@@ -9,8 +9,8 @@ export default {
   title: 'Addons/Info/deprecated',
 };
 
-export const displaysMarkdown = withInfo(markdownDescription)(() => (
+export const DisplaysMarkdown = withInfo(markdownDescription)(() => (
   <BaseButton onClick={action('clicked')} label="Button" />
 ));
 
-displaysMarkdown.story = { name: 'Displays Markdown in description' };
+DisplaysMarkdown.story = { name: 'Displays Markdown in description' };

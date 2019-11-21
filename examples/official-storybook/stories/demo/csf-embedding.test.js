@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { withText as WithText, withCounter as WithCounter } from './button.stories';
+import { WithText, WithCounter } from './button.stories';
 
 const mockAction = jest.fn();
 jest.mock('@storybook/addon-actions', () => ({

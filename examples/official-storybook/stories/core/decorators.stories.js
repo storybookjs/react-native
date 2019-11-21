@@ -26,8 +26,8 @@ export default {
   ],
 };
 
-export const all = () => <p>Story</p>;
-all.story = {
+export const All = () => <p>Story</p>;
+All.story = {
   decorators: [
     s => (
       <>
@@ -38,8 +38,8 @@ all.story = {
   ],
 };
 
-export const deprecated = () => <p>Story</p>;
-deprecated.story = {
+export const Deprecated = () => <p>Story</p>;
+Deprecated.story = {
   parameters: {
     decorators: [
       s => (

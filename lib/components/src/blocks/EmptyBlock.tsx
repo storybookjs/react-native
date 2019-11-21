@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
-import { withReset } from '../typography/withReset';
+import { withReset } from '../typography/shared';
 
 const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
   backgroundColor: theme.base === 'light' ? 'rgba(0,0,0,.01)' : 'rgba(255,255,255,.01)',

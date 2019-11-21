@@ -8,28 +8,28 @@ export default {
   title: 'Addons/Actions',
 };
 
-export const story1 = () => ({
+export const Story1 = () => ({
   view: () => <Button onclick={action('logo1')}>Click me to log the action</Button>,
 });
-story1.story = { name: 'Action only' };
+Story1.story = { name: 'Action only' };
 
-export const story2 = () => ({
+export const Story2 = () => ({
   view: () => (
     <Button {...actions('onclick', 'ondblclick')}>(Double) click me to log the action</Button>
   ),
 });
-story2.story = { name: 'Multiple actions' };
+Story2.story = { name: 'Multiple actions' };
 
-export const story3 = () => ({
+export const Story3 = () => ({
   view: () => (
     <Button {...actions({ onclick: 'clicked', ondblclick: 'double clicked' })}>
       (Double) click me to log the action
     </Button>
   ),
 });
-story3.story = { name: 'Multiple actions, object' };
+Story3.story = { name: 'Multiple actions, object' };
 
-export const story4 = () => ({
+export const Story4 = () => ({
   view: () => (
     <Button
       onclick={e => {
@@ -41,4 +41,4 @@ export const story4 = () => ({
     </Button>
   ),
 });
-story4.story = { name: 'Action and method' };
+Story4.story = { name: 'Action and method' };

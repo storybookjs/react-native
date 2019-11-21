@@ -9,7 +9,7 @@ export default {
   decorators: [withNotes],
 };
 
-export const simpleNote = () => (
+export const SimpleNote = () => (
   <p>
     <strong>
       Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed
@@ -22,12 +22,12 @@ export const simpleNote = () => (
   </p>
 );
 
-simpleNote.story = {
+SimpleNote.story = {
   name: 'Simple note',
   parameters: { notes: 'My notes on some bold text' },
 };
 
-export const noteWithHtml = () => (
+export const NoteWithHtml = () => (
   <p>
     <span>🤔😳😯😮</span>
     <br />
@@ -37,7 +37,7 @@ export const noteWithHtml = () => (
   </p>
 );
 
-noteWithHtml.story = {
+NoteWithHtml.story = {
   name: 'Note with HTML',
 
   parameters: {

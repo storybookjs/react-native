@@ -9,9 +9,9 @@ export default {
   title: 'Button',
 };
 
-export const defaultStory = () => <Button label=\\"Story 1\\" />;
+export const Default = () => <Button label=\\"Story 1\\" />;
 
-defaultStory.story = {
+Default.story = {
   name: 'default',
 };"
 `;

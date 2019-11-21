@@ -9,8 +9,8 @@ export default {
   },
 };
 
-export const buttonWithText = () => '<button>Click me</button>';
+export const ButtonWithText = () => '<button>Click me</button>';
 
-buttonWithText.story = {
+ButtonWithText.story = {
   name: 'button with text',
 };

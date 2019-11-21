@@ -18,10 +18,10 @@ export default {
   title: 'Addons/Actions/deprecated',
 };
 
-export const decoratedAction = () => (
+export const DecoratedAction = () => (
   <Button onClick={pickNativeAction('decorated')}>Native Event</Button>
 );
 
-decoratedAction.story = {
+DecoratedAction.story = {
   name: 'Decorated Action',
 };

@@ -11,7 +11,7 @@ export default {
   },
 };
 
-export const withText = () => ({
+export const WithText = () => ({
   template: hbs`
       {{welcome-banner
         style=(if hidden "display: none")
@@ -34,6 +34,6 @@ export const withText = () => ({
   },
 });
 
-withText.story = {
+WithText.story = {
   name: 'with text',
 };

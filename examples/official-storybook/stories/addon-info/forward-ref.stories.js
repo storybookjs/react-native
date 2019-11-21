@@ -8,10 +8,10 @@ export default {
   decorators: [withInfo],
 };
 
-export const displaysCorrectly = () => <ForwardedRefButton label="Forwarded Ref Button" />;
-displaysCorrectly.story = { name: 'Displays forwarded ref components correctly' };
+export const DisplaysCorrectly = () => <ForwardedRefButton label="Forwarded Ref Button" />;
+DisplaysCorrectly.story = { name: 'Displays forwarded ref components correctly' };
 
-export const displayName = () => (
+export const DisplayName = () => (
   <ForwardedRefButtonWDisplayName label="Forwarded Ref Button w/ Display Name" />
 );
-displayName.story = { name: 'Uses forwardRef displayName if available' };
+DisplayName.story = { name: 'Uses forwardRef displayName if available' };
