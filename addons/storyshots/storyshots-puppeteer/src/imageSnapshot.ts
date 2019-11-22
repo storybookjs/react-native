@@ -1,4 +1,4 @@
-import puppeteer, { Browser, Page } from 'puppeteer';
+import { Browser, Page } from 'puppeteer-core';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import { logger } from '@storybook/node-logger';
 import { constructUrl } from './url';
@@ -88,6 +88,8 @@ export const imageSnapshot = (customConfig: Partial<ImageSnapshotConfig> = {}) =
     if (getCustomBrowser) {
       browser = await getCustomBrowser();
     } else {
+      // eslint-disable-next-line global-require
+      const puppeteer = require('puppeteer');
       // add some options "no-sandbox" to make it work properly on some Linux systems as proposed here: https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322851507
       browser = await puppeteer.launch({
         args: ['--no-sandbox ', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
