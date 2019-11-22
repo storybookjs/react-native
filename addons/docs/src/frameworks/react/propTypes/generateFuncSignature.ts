@@ -1,5 +1,17 @@
 import { isNil } from 'lodash';
+import { MAX_TYPE_SUMMARY_LENGTH } from '../../../lib';
 import { ExtractedJsDocParam, ExtractedJsDocReturns } from '../../../lib/jsdocParser';
+
+function generateSignatureArg(x: ExtractedJsDocParam): string {
+  const prettyName = x.getPrettyName();
+  const typeName = x.getTypeName();
+
+  if (!isNil(typeName)) {
+    return `${prettyName}: ${typeName}`;
+  }
+
+  return prettyName;
+}
 
 export function generateFuncSignature(
   params: ExtractedJsDocParam[],
@@ -11,16 +23,7 @@ export function generateFuncSignature(
   const funcParts = [];
 
   if (hasParams) {
-    const funcParams = params.map((x: ExtractedJsDocParam) => {
-      const prettyName = x.getPrettyName();
-      const typeName = x.getTypeName();
-
-      if (!isNil(typeName)) {
-        return `${prettyName}: ${typeName}`;
-      }
-
-      return prettyName;
-    });
+    const funcParams = params.map(generateSignatureArg);
 
     funcParts.push(`(${funcParams.join(', ')})`);
   } else {
@@ -42,17 +45,29 @@ export function generateCompactFuncSignature(
   const hasParams = !isNil(params);
   const hasReturns = !isNil(returns);
 
-  const funcParts = [];
+  const returnsPart = hasReturns ? ` => ${returns.getTypeName()}` : '';
 
   if (hasParams) {
-    funcParts.push('( ... )');
-  } else {
-    funcParts.push('()');
+    const paramsParts = [];
+    // 2 is for '()'.
+    let currentLength = 2 + returnsPart.length;
+
+    for (let i = 0; i < params.length; i += 1) {
+      const param = generateSignatureArg(params[i]);
+      const paramLength = param.length;
+
+      if (currentLength + paramLength < MAX_TYPE_SUMMARY_LENGTH) {
+        paramsParts.push(param);
+        // 2 is for ', '.
+        currentLength += paramLength + 2;
+      } else {
+        paramsParts.push('...');
+        break;
+      }
+    }
+
+    return `(${paramsParts.join(', ')})${returnsPart}`;
   }
 
-  if (hasReturns) {
-    funcParts.push(`=> ${returns.getTypeName()}`);
-  }
-
-  return funcParts.join(' ');
+  return `()${returnsPart}`;
 }
