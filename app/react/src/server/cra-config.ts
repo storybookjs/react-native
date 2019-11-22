@@ -191,7 +191,7 @@ export function applyCRAWebpackConfig(baseConfig: Configuration, configDir: stri
   //  Add css minification for production
   const plugins = [...baseConfig.plugins];
   if (baseConfig.mode === 'production') {
-    plugins.push(new MiniCssExtractPlugin());
+    plugins.push(new MiniCssExtractPlugin() as Plugin);
   }
 
   return {
