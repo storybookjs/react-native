@@ -13,7 +13,7 @@ Object {
       "children": Array [
         Object {
           "attributes": Object {
-            "class": "rax-text",
+            "class": "rax-text ",
           },
           "children": Array [
             "Welcome to Rax",
@@ -28,7 +28,7 @@ Object {
     },
     Object {
       "attributes": Object {
-        "class": "rax-text",
+        "class": "rax-text ",
       },
       "children": Array [
         "To get started, edit src/components/App.js and save to reload.",

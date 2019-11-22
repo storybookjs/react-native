@@ -1,6 +1,8 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
 import PropTypes, { string, shape } from 'prop-types';
+import { PRESET_SHAPE, SOME_PROP_TYPES } from './ext';
 
 const NAMED_OBJECT = {
   text: PropTypes.string.isRequired,
@@ -63,6 +65,7 @@ PropTypesProps.propTypes = {
   classElementInline: PropTypes.element,
   functionalElementType: PropTypes.elementType,
   classElementType: PropTypes.elementType,
+  elementWithProps: PropTypes.elementType,
   /**
    * `instanceOf` is also supported and the custom type will be shown instead of `instanceOf`
    */
@@ -159,6 +162,7 @@ PropTypesProps.propTypes = {
       ),
     })
   ),
+  arrayExternalShape: PropTypes.arrayOf(PropTypes.shape(PRESET_SHAPE)),
   /**
    *  A simple `objectOf` propType.
    */
@@ -257,6 +261,7 @@ PropTypesProps.propTypes = {
   requiredString: PropTypes.string.isRequired,
   nullDefaultValue: PropTypes.string,
   undefinedDefaultValue: PropTypes.string,
+  ...SOME_PROP_TYPES,
 };
 
 PropTypesProps.defaultProps = {
@@ -294,6 +299,7 @@ PropTypesProps.defaultProps = {
   },
   functionalElementType: FunctionalComponent,
   classElementType: ClassComponent,
+  elementWithProps: <ClassComponent className="w8 h8 fill-marine-500" />,
   instanceOf: new Set(),
   oneOfString: 'News',
   oneOfNumeric: 1,

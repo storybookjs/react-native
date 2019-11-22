@@ -44,7 +44,10 @@ export const Table = styled.table<{}>(({ theme }) => ({
     },
 
     th: {
-      color: theme.color.dark,
+      color:
+        theme.base === 'light'
+          ? transparentize(0.25, theme.color.defaultText)
+          : transparentize(0.45, theme.color.defaultText),
       paddingTop: 10,
       paddingBottom: 10,
 

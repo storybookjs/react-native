@@ -7,7 +7,6 @@ import estree from 'estree';
 import * as acornWalk from 'acorn-walk';
 import {
   InspectionType,
-  InspectionInferedType,
   InspectionLiteral,
   InspectionElement,
   InspectionFunction,
@@ -16,6 +15,7 @@ import {
   InspectionUnknown,
   InspectionIdentifier,
   InspectionArray,
+  InspectionInferedType,
 } from './types';
 
 interface ParsingResult<T> {

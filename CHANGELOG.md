@@ -1,3 +1,41 @@
+## 5.3.0-beta.4 (November 23, 2019)
+
+### Features
+
+* Presets: dynamic preset injection ([#8921](https://github.com/storybookjs/storybook/pull/8921))
+
+### Bug Fixes
+
+* Revert "feat: use `puppeteer-core` instead of `puppeteer`" ([#8925](https://github.com/storybookjs/storybook/pull/8925))
+* Addon-docs: Fix props detail tooltip to prevent cutting end of content ([#8923](https://github.com/storybookjs/storybook/pull/8923))
+
+### Maintenance
+
+* Addon-docs: base code to improve the props table for TS ([#8905](https://github.com/storybookjs/storybook/pull/8905))
+
+### Dependency Upgrades
+
+* Miscellaneous upgrades ([#8912](https://github.com/storybookjs/storybook/pull/8912))
+
+## 5.3.0-beta.3 (November 21, 2019)
+
+### Features
+
+* Addon-docs: Rich props table UI ([#8887](https://github.com/storybookjs/storybook/pull/8887))
+* Addon-docs: Improve basic support for Flow props ([#8890](https://github.com/storybookjs/storybook/pull/8890))
+* CLI: Avoid id changes after `storiesof-to-csf` migration ([#8856](https://github.com/storybookjs/storybook/pull/8856))
+
+### Bug Fixes
+
+* Addon-docs: Fix props table for sections props ([#8904](https://github.com/storybookjs/storybook/pull/8904))
+* Addon-docs: Fix Description block when no component provided ([#8902](https://github.com/storybookjs/storybook/pull/8902))
+* Angular: Fix project without `architect.build` option ([#6737](https://github.com/storybookjs/storybook/pull/6737))
+
+### Maintenance
+
+* Addon-docs: Docgen lib maintenance ([#8896](https://github.com/storybookjs/storybook/pull/8896))
+* Examples: Fix stories glob in official-storybook ([#8888](https://github.com/storybookjs/storybook/pull/8888))
+
 ## 5.3.0-beta.2 (November 19, 2019)
 
 ### Features

@@ -8,7 +8,7 @@ Object {
   "children": Array [
     Object {
       "attributes": Object {
-        "class": "rax-text",
+        "class": "rax-text ",
       },
       "children": Array [
         "Welcome to storybook for Rax",
@@ -49,7 +49,7 @@ Object {
       "children": Array [
         Object {
           "attributes": Object {
-            "class": "rax-text",
+            "class": "rax-text ",
           },
           "children": Array [
             "This is a UI component dev environment for your Rax app.",
@@ -73,7 +73,7 @@ Object {
       "children": Array [
         Object {
           "attributes": Object {
-            "class": "rax-text",
+            "class": "rax-text ",
           },
           "children": Array [
             "We&#x27;ve added some basic stories inside the &#x27;src/stories&#x27; directory. A story is a single state of one or more UI components. You can have as many stories as you want. (Basically a story is like a visual test case.)",
@@ -97,7 +97,7 @@ Object {
       "children": Array [
         Object {
           "attributes": Object {
-            "class": "rax-text",
+            "class": "rax-text ",
           },
           "children": Array [
             "See these sample",
@@ -126,7 +126,7 @@ Object {
           "children": Array [
             Object {
               "attributes": Object {
-                "class": "rax-text",
+                "class": "rax-text ",
               },
               "children": Array [
                 "button",
@@ -153,7 +153,7 @@ Object {
       "children": Array [
         Object {
           "attributes": Object {
-            "class": "rax-text",
+            "class": "rax-text ",
           },
           "children": Array [
             "for a component called &#x27;Button&#x27;.",
@@ -177,7 +177,7 @@ Object {
       "children": Array [
         Object {
           "attributes": Object {
-            "class": "rax-text",
+            "class": "rax-text ",
           },
           "children": Array [
             "Just like that, you can add your own components as stories. You can also edit those components and see changes right away. (Try editing the &#x27;Button&#x27; stories located at &#x27;src/stories/index.js&#x27; .)",
