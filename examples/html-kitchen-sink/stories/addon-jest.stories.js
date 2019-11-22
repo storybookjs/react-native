@@ -6,5 +6,5 @@ export default {
   decorators: [wt({ results })],
 };
 
-export const withTests = () => 'This story shows test results';
-withTests.parameters = { jest: 'addon-jest' };
+export const WithTests = () => 'This story shows test results';
+WithTests.parameters = { jest: 'addon-jest' };

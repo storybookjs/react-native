@@ -1,5 +1,6 @@
 import { isNil } from 'lodash';
 import { PropSummaryValue, PropType } from '@storybook/components';
+import { createSummaryValue, isTooLongForTypeSummary } from '../../../lib';
 import { ExtractedProp, DocgenPropType } from '../../../lib/docgen';
 import { inspectValue } from '../inspection/inspectValue';
 import { generateCode } from './generateCode';
@@ -14,8 +15,6 @@ import {
 } from './captions';
 import { InspectionType } from '../inspection/types';
 import { isHtmlTag } from './isHtmlTag';
-
-const MAX_SUMMARY_LENGTH = 35;
 
 enum PropTypesType {
   CUSTOM = 'custom',
@@ -90,15 +89,11 @@ function getCaptionFromInspectionType(type: InspectionType): string {
   }
 }
 
-function isTooLongForSummary(value: string): boolean {
-  return value.length > MAX_SUMMARY_LENGTH;
-}
-
 function generateValuesForObjectAst(ast: any): [string, string] {
   let summary = prettyObject(ast, true);
   let detail;
 
-  if (!isTooLongForSummary(summary)) {
+  if (!isTooLongForTypeSummary(summary)) {
     detail = summary;
   } else {
     summary = OBJECT_CAPTION;
@@ -188,7 +183,7 @@ function generateObjectOf(type: DocgenPropType, extractedProp: ExtractedProp): T
   let { summary, detail } = value;
 
   if (name === PropTypesType.SHAPE) {
-    if (!isTooLongForSummary(detail)) {
+    if (!isTooLongForTypeSummary(detail)) {
       summary = detail;
     }
   }
@@ -350,15 +345,12 @@ export function createType(extractedProp: ExtractedProp): PropType {
     case PropTypesType.ARRAYOF: {
       const { summary, detail } = generateType(type, extractedProp).value;
 
-      return {
-        summary,
-        detail: summary !== detail ? detail : undefined,
-      };
+      return createSummaryValue(summary, summary !== detail ? detail : undefined);
     }
     case PropTypesType.FUNC: {
       const { detail } = generateType(type, extractedProp).value;
 
-      return { summary: detail };
+      return createSummaryValue(detail);
     }
     default:
       return null;

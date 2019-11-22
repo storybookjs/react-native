@@ -12,34 +12,34 @@ export default {
   title: 'Button',
 };
 
-export const story1 = () => <Button label=\\"Story 1\\" />;
+export const Story1 = () => <Button label=\\"Story 1\\" />;
 
-story1.story = {
+Story1.story = {
   name: 'story1',
 };
 
-export const secondStory = () => <Button label=\\"Story 2\\" onClick={action('click')} />;
+export const SecondStory = () => <Button label=\\"Story 2\\" onClick={action('click')} />;
 
-secondStory.story = {
+SecondStory.story = {
   name: 'second story',
 };
 
-export const complexStory = () => (
+export const ComplexStory = () => (
   <div>
     <Button label=\\"The Button\\" onClick={action('onClick')} />
     <br />
   </div>
 );
 
-complexStory.story = {
+ComplexStory.story = {
   name: 'complex story',
 };
 
-export const wPunctuation = () => <Button label=\\"Story 2\\" onClick={action('click')} />;
+export const WPunctuation = () => <Button label=\\"Story 2\\" onClick={action('click')} />;
 
-wPunctuation.story = {
+WPunctuation.story = {
   name: 'w/punctuation',
 };
 
-export const startCase = () => <Button label=\\"Story 2\\" onClick={action('click')} />;"
+export const StartCase = () => <Button label=\\"Story 2\\" onClick={action('click')} />;"
 `;

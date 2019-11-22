@@ -3,7 +3,7 @@ import { PropDef } from '@storybook/components';
 import { Component } from '../../blocks/shared';
 import { ExtractedJsDoc, parseJsDoc } from '../jsdocParser';
 import { DocgenInfo, TypeSystem } from './types';
-import { getDocgenSection, isValidDocgenSection } from './utils';
+import { getDocgenSection, isValidDocgenSection, getDocgenDescription } from './utils';
 import { getPropDefFactory, PropDefFactory } from './createPropDef';
 
 export interface ExtractedProp {
@@ -31,7 +31,7 @@ const getTypeSystem = (docgenInfo: DocgenInfo): TypeSystem => {
   return TypeSystem.UNKNOWN;
 };
 
-export const extractPropsFromDocgen: ExtractProps = (component, section) => {
+export const extractComponentProps: ExtractProps = (component, section) => {
   const docgenSection = getDocgenSection(component, section);
 
   if (!isValidDocgenSection(docgenSection)) {
@@ -74,4 +74,8 @@ function extractProp(
   }
 
   return null;
+}
+
+export function extractComponentDescription(component?: Component): string {
+  return !isNil(component) && getDocgenDescription(component);
 }

@@ -25,7 +25,7 @@ You can also build a [static version](https://storybook.js.org/basics/exporting-
 Here are some featured storybooks that you can reference to see how Storybook works:
 
 - [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
-- [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
+- [Demo of React Native Web](https://necolas.github.io/react-native-web/docs/) - [source](https://github.com/necolas/react-native-web)
 
 ## Create React App
 

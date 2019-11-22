@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { isForwardRef, isMemo } from 'react-is';
 import { PropDef } from '@storybook/components';
-import { hasDocgen, extractPropsFromDocgen, PropsExtractor, TypeSystem } from '../../lib/docgen';
+import { hasDocgen, extractComponentProps, PropsExtractor, TypeSystem } from '../../lib/docgen';
 import { Component } from '../../blocks/shared';
 import { enhancePropTypesProps } from './propTypes/handleProp';
 
@@ -32,7 +32,7 @@ function getPropDefs(component: Component, section: string): PropDef[] {
     }
   }
 
-  const extractedProps = extractPropsFromDocgen(processedComponent, section);
+  const extractedProps = extractComponentProps(processedComponent, section);
   if (extractedProps.length === 0) {
     return [];
   }

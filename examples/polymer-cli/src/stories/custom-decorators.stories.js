@@ -12,12 +12,12 @@ export default {
   ],
 };
 
-export const exampleDecoration = () => {
+export const ExampleDecoration = () => {
   const el = document.createElement('playground-button');
   el.setAttribute('title', 'An example title');
   return el;
 };
 
-exampleDecoration.story = {
+ExampleDecoration.story = {
   name: 'example decoration',
 };

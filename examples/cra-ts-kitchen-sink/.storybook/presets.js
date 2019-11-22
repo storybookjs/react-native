@@ -8,6 +8,7 @@ module.exports = [
         tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
         shouldExtractLiteralValuesFromEnum: true,
         propFilter: prop => {
+          // Currently not working, prop.parent is always null.
           if (prop.parent) {
             return !prop.parent.fileName.includes('node_modules/@types/react/');
           }

@@ -8,7 +8,7 @@ export default {
   title: 'Addon/Links',
 };
 
-export const goToWelcome = () =>
+export const GoToWelcome = () =>
   mount('my-button', {
     rounded: true,
     content: 'This button links to Welcome',
@@ -16,6 +16,6 @@ export const goToWelcome = () =>
     handleClick: linkTo('Welcome', 'Welcome'),
   });
 
-goToWelcome.story = {
+GoToWelcome.story = {
   name: 'Go to welcome',
 };

@@ -11,18 +11,18 @@ export default {
   },
 };
 
-export const story1 = () => ({
+export const Story1 = () => ({
   template: hbs`<button>You should be able to switch backgrounds for this story</button>`,
 });
 
-story1.story = {
+Story1.story = {
   name: 'story 1',
 };
 
-export const story2 = () => ({
+export const Story2 = () => ({
   template: hbs`<button>This one too!</button>`,
 });
 
-story2.story = {
+Story2.story = {
   name: 'story 2',
 };

@@ -4,7 +4,7 @@ export default {
   title: 'Addon/Notes',
 };
 
-export const simpleNote = () => ({
+export const SimpleNote = () => ({
   component: Button,
   props: {
     text: 'Notes on some Button',
@@ -12,12 +12,12 @@ export const simpleNote = () => ({
   },
 });
 
-simpleNote.story = {
+SimpleNote.story = {
   name: 'Simple note',
   parameters: { notes: 'My notes on some button' },
 };
 
-export const noteWithHtml = () => ({
+export const NoteWithHtml = () => ({
   component: Button,
   props: {
     text: 'Notes with HTML',
@@ -25,7 +25,7 @@ export const noteWithHtml = () => ({
   },
 });
 
-noteWithHtml.story = {
+NoteWithHtml.story = {
   name: 'Note with HTML',
   parameters: {
     notes: `
