@@ -32,10 +32,8 @@
     "@storybook/node-logger": "5.3.0-beta.3",
     "@storybook/router": "5.3.0-beta.3",
     "@types/jest-image-snapshot": "^2.8.0",
-    "@types/puppeteer-core": "^2.0.0",
     "core-js": "^3.0.1",
     "jest-image-snapshot": "^2.8.2",
-    "puppeteer-core": "^2.0.0",
     "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
