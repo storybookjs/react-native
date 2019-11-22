@@ -50,15 +50,19 @@ export function getAngularCliConfig(dirToSearch: string) {
   const fname = path.join(dirToSearch, 'angular.json');
 
   if (!fs.existsSync(fname)) {
-    return null;
+    return undefined;
   }
 
   return JSON.parse(stripJsonComments(fs.readFileSync(fname, 'utf8')));
 }
 
 export function getLeadingAngularCliProject(ngCliConfig: any) {
+  if (!ngCliConfig) {
+    return null;
+  }
+
   const { defaultProject } = ngCliConfig;
-  const { projects }: any = ngCliConfig;
+  const { projects } = ngCliConfig;
   if (!projects || !Object.keys(projects).length) {
     throw new Error('angular.json must have projects entry.');
   }
@@ -69,15 +73,19 @@ export function getLeadingAngularCliProject(ngCliConfig: any) {
 }
 
 export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
-  const project = getLeadingAngularCliProject(getAngularCliConfig(dirToSearch));
-  const { options: projectOptions } = project.architect.build;
+  const angularCliConfig = getAngularCliConfig(dirToSearch);
+  const project = getLeadingAngularCliProject(angularCliConfig);
 
+  if (!angularCliConfig || !project.architect.build) {
+    return null;
+  }
+
+  const { options: projectOptions } = project.architect.build;
   const normalizedAssets = normalizeAssetPatterns(
     projectOptions.assets,
     dirToSearch,
     project.sourceRoot
   );
-
   const projectRoot = path.resolve(dirToSearch, project.root);
   const tsConfigPath = path.resolve(dirToSearch, projectOptions.tsConfig) as Path;
   const tsConfig = getTsConfigOptions(tsConfigPath);

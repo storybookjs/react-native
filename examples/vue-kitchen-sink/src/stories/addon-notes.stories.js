@@ -1,22 +1,22 @@
 export default {
-  title: 'Addon|Notes',
+  title: 'Addon/Notes',
 };
 
-export const simpleNote = () => ({
+export const SimpleNote = () => ({
   template:
     '<p><strong>Etiam vulputate elit eu venenatis eleifend. Duis nec lectus augue. Morbi egestas diam sed vulputate mollis. Fusce egestas pretium vehicula. Integer sed neque diam. Donec consectetur velit vitae enim varius, ut placerat arcu imperdiet. Praesent sed faucibus arcu. Nullam sit amet nibh a enim eleifend rhoncus. Donec pretium elementum leo at fermentum. Nulla sollicitudin, mauris quis semper tempus, sem metus tristique diam, efficitur pulvinar mi urna id urna.</strong></p>',
 });
 
-simpleNote.story = {
+SimpleNote.story = {
   name: 'Simple note',
   parameters: { notes: 'My notes on some bold text' },
 };
 
-export const noteWithHtml = () => ({
+export const NoteWithHtml = () => ({
   template: '<p>🤔😳😯😮<br/>😄😩😓😱<br/>🤓😑😶😊</p>',
 });
 
-noteWithHtml.story = {
+NoteWithHtml.story = {
   name: 'Note with HTML',
 
   parameters: {

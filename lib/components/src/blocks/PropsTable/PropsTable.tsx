@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 import { opacify, transparentize, darken, lighten } from 'polished';
 import { PropRow, PropRowProps } from './PropRow';
 import { SectionRow, SectionRowProps } from './SectionRow';
-import { PropDef } from './PropDef';
+import { PropDef, PropType, PropDefaultValue, PropSummaryValue } from './PropDef';
 import { EmptyBlock } from '../EmptyBlock';
 import { ResetWrapper } from '../../typography/DocumentFormatting';
 
@@ -21,6 +21,7 @@ export const Table = styled.table<{}>(({ theme }) => ({
     'td, th': {
       padding: 0,
       border: 'none',
+      verticalAlign: 'top',
     },
     // End Resets
 
@@ -45,8 +46,8 @@ export const Table = styled.table<{}>(({ theme }) => ({
     th: {
       color:
         theme.base === 'light'
-          ? transparentize(0.4, theme.color.defaultText)
-          : transparentize(0.6, theme.color.defaultText),
+          ? transparentize(0.25, theme.color.defaultText)
+          : transparentize(0.45, theme.color.defaultText),
       paddingTop: 10,
       paddingBottom: 10,
 
@@ -165,15 +166,15 @@ const PropsTable: FC<PropsTableProps> = props => {
     return <EmptyBlock>{error}</EmptyBlock>;
   }
 
-  let allRows: any[];
+  let allRows: any[] = [];
   const { sections } = props as PropsTableSectionsProps;
+  const { rows } = props as PropsTableRowsProps;
   if (sections) {
-    allRows = [];
     Object.keys(sections).forEach(section => {
-      const rows = sections[section];
-      if (rows && rows.length > 0) {
+      const sectionRows = sections[section];
+      if (sectionRows && sectionRows.length > 0) {
         allRows.push({ key: section, value: { section } });
-        rows.forEach(row => {
+        sectionRows.forEach(row => {
           allRows.push({
             key: `${section}_${row.name}`,
             value: { row },
@@ -181,8 +182,7 @@ const PropsTable: FC<PropsTableProps> = props => {
         });
       }
     });
-  } else {
-    const { rows } = props as PropsTableRowsProps;
+  } else if (rows) {
     allRows = rows.map(row => ({
       key: row.name,
       value: { row },
@@ -212,4 +212,4 @@ const PropsTable: FC<PropsTableProps> = props => {
   );
 };
 
-export { PropsTable, PropDef };
+export { PropsTable, PropDef, PropType, PropDefaultValue, PropSummaryValue };

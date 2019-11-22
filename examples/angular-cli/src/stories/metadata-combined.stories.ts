@@ -3,7 +3,7 @@ import { TokenComponent, ITEMS, DEFAULT_NAME } from './moduleMetadata/token.comp
 import { CustomPipePipe } from './moduleMetadata/custom.pipe';
 
 export default {
-  title: 'Metadata|Combined',
+  title: 'Metadata/Combined',
   decorators: [
     moduleMetadata({
       imports: [],
@@ -22,18 +22,18 @@ export default {
   ],
 };
 
-export const combined1 = () => ({
+export const Combined1 = () => ({
   template: `<storybook-simple-token-component [name]="name"></storybook-simple-token-component>`,
   props: {
     name: 'Prop Name',
   },
 });
 
-combined1.story = {
+Combined1.story = {
   name: 'Combined 1',
 };
 
-export const combined2 = () => ({
+export const Combined2 = () => ({
   template: `<storybook-simple-token-component [name]="name | customPipe"></storybook-simple-token-component>`,
   props: {
     name: 'Prop Name',
@@ -43,6 +43,6 @@ export const combined2 = () => ({
   },
 });
 
-combined2.story = {
+Combined2.story = {
   name: 'Combined 2',
 };

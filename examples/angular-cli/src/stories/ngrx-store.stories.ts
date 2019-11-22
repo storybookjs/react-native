@@ -18,7 +18,7 @@ class WithStoreComponent {
   }
 }
 
-storiesOf('ngrx|Store', module)
+storiesOf('ngrx/Store', module)
   .addDecorator(
     moduleMetadata({
       imports: [

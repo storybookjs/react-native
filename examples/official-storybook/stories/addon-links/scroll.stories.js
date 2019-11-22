@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import LinkTo from '@storybook/addon-links/react';
 
 export default {
-  title: 'Addons|Links.Scroll position',
+  title: 'Addons/Links/Scroll position',
   decorators: [
     storyFn => (
       <Fragment>

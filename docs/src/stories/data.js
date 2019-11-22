@@ -82,7 +82,7 @@ storiesOf('Toggle', module)
       owner: 'https://avatars3.githubusercontent.com/u/239676?v=3&s=460',
       storybook: {
         name: 'React Native Web',
-        link: 'https://necolas.github.io/react-native-web/storybook',
+        link: 'https://necolas.github.io/react-native-web/docs/',
       },
       source: 'https://github.com/necolas/react-native-web',
     },

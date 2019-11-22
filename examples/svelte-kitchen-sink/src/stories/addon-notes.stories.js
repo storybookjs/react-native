@@ -1,26 +1,26 @@
 import ButtonView from './views/ButtonView.svelte';
 
 export default {
-  title: 'Addon|Notes',
+  title: 'Addon/Notes',
 };
 
-export const simpleNote = () => ({
+export const SimpleNote = () => ({
   Component: ButtonView,
 });
 
-simpleNote.story = {
+SimpleNote.story = {
   name: 'Simple note',
   parameters: { notes: 'My notes on the [ButtonView](/story/addon-notes--simple-note) component' },
 };
 
-export const noteWithHtml = () => ({
+export const NoteWithHtml = () => ({
   Component: ButtonView,
   props: {
     text: '🤔😳😯😮😄😩😓😱🤓😑😶😊',
   },
 });
 
-noteWithHtml.story = {
+NoteWithHtml.story = {
   name: 'Note with HTML',
   parameters: {
     notes: `

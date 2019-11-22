@@ -4,7 +4,7 @@ import { IconItem, IconGallery } from './IconGallery';
 import { Icons as ExampleIcon } from '../icon/icon';
 
 export default {
-  title: 'Docs|IconGallery',
+  title: 'Docs/IconGallery',
   component: IconGallery,
 };
 

@@ -3,7 +3,11 @@
 - [Migration](#migration)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
     - [Create React App preset](#create-react-app-preset)
-    - [Description docs block](#description-docs-block)
+    - [Description doc block](#description-doc-block)
+    - [React Native Async Storage](#react-native-async-storage)
+    - [Deprecate displayName parameter](#deprecate-displayname-parameter)
+    - [Unified docs preset](#unified-docs-preset)
+    - [Simplified hierarchy separators](#simplified-hierarchy-separators)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)
@@ -85,6 +89,55 @@ In 5.3 we've changed `addon-docs`'s `Description` doc block's default behavior. 
 The old behavior of `<Description of={Component} />` was to concatenate the info parameter or notes parameter, if available, with the docgen information loaded from source comments. If you depend on the old behavior, it's still available with `<Description of={Component} type='legacy-5.2' />`. This description type will be removed in Storybook 6.0.
 
 The new default behavior is to use the framework-specific description extractor, which for React/Vue is still docgen, but may come from other places (e.g. a JSON file) for other frameworks.
+
+The description doc block on DocsPage has also been updated. To see how to configure it in 5.3, please see [the updated recipe](https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#migrating-from-notesinfo-addons)
+
+### React Native Async Storage
+
+Starting from version React Native 0.59, Async Storage is deprecated in React Native itself. The new @react-native-community/async-storage module requires native installation, and we don't want to have it as a dependency for React Native Storybook.
+
+To avoid that now you have to manually pass asyncStorage to React Native Storybook with asyncStorage prop. To notify users we are displaying a warning about it.
+
+Solution:
+
+- Use `require('@react-native-community/async-storage').AsyncStorage` for React Native v0.59 and above.
+- Use `require('react-native').AsyncStorage` for React Native v0.58 or below.
+- Use `null` to disable Async Storage completely.
+
+```javascript
+getStorybookUI({
+  ...
+  asyncStorage: require('@react-native-community/async-storage').AsyncStorage || require('react-native').AsyncStorage || null
+});
+```
+
+### Deprecate displayName parameter
+
+In 5.2, the story parameter `displayName` was introduced as a publicly visible (but internal) API. Storybook's Component Story Format (CSF) loader used it to modify a story's display name independent of the story's `name`/`id` (which were coupled).
+
+In 5.3, the CSF loader decouples the story's `name`/`id`, which means that `displayName` is no longer necessary. Unfortunately, this is a breaking change for any code that uses the story `name` field. Storyshots relies on story `name`, and the appropriate migration is to simply update your snapshots. Apologies for the inconvenience!
+
+### Unified docs preset
+
+Addon-docs configuration gets simpler in 5.3. In 5.2, each framework had its own preset, e.g. `@storybook/addon-docs/react/preset`. Starting in 5.3, everybody should use `@storybook/addon-docs/preset`.
+
+### Simplified hierarchy separators
+
+We've deprecated the ability to specify the hierarchy separators (how you control the grouping of story kinds in the sidebar). From Storybook 6.0 we will have a single separator `/`, which cannot be configured.
+
+If you are currently using using custom separators, we encourage you to migrate to using `/` as the sole separator. If you are using `|` or `.` as a separator currently, we provide a codemod, [`upgrade-hierarchy-separators`](https://github.com/storybookjs/storybook/blob/next/lib/codemod/README.md#upgrade-hierarchy-separators), that can be used to rename all your components.
+
+```
+yarn sb migrate upgrade-hierarchy-separators --glob="*.stories.js"
+```
+
+If you were using `|` and wish to keep the "root" behavior, use the `showRoots: true` option to re-enable roots:
+
+```js
+addParameters({ options: { showRoots: true } });
+```
+
+NOTE: it is no longer possible to have some stories with roots and others without. If you want to keep the old behavior, simply add a root called "Others" to all your previously unrooted stories.
 
 ## From version 5.1.x to 5.2.x
 
@@ -334,7 +387,7 @@ addDecorator(
 And here's its new counterpart:
 
 ```js
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 addParameters({
   options: {
     theme: create({

@@ -2,7 +2,7 @@ import React from 'react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Addons|Knobs.withKnobs using options',
+  title: 'Addons/Knobs/withKnobs using options',
   decorators: [
     withKnobs({
       escapeHTML: false,
@@ -10,7 +10,7 @@ export default {
   ],
 };
 
-export const acceptsOptions = () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>;
-acceptsOptions.story = {
+export const AcceptsOptions = () => <div>{text('Rendered string', '<h1>Hello</h1>')}</div>;
+AcceptsOptions.story = {
   name: 'accepts options',
 };

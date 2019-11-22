@@ -4,16 +4,16 @@ import Text from 'rax-text';
 import App from '../components/App';
 
 export default {
-  title: 'Addon|addon-centered',
+  title: 'Addon/addon-centered',
   decorators: [Centered],
 };
 
-export const button = () => (
-  <button type="button">
+export const Button = () => (
+  <Button type="button">
     <Text>BUTTON</Text>
-  </button>
+  </Button>
 );
-button.story = { name: 'Button' };
+Button.story = { name: 'Button' };
 
 export const app = () => <App />;
 app.story = { name: 'App' };

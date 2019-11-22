@@ -3,5 +3,9 @@
 exports[`mdx-to-csf transforms correctly using "plaintext.input.js" data 1`] = `
 "import React from 'react';
 export default {};
-export const plaintext = () => 'Plain text';"
+export const Plaintext = () => 'Plain text';
+
+Plaintext.story = {
+  name: 'plaintext',
+};"
 `;

@@ -6,34 +6,34 @@ import { action, actions } from '@storybook/addon-actions';
 import Button from '../Button';
 
 export default {
-  title: 'Addons|Actions',
+  title: 'Addons/Actions',
 };
 
-export const actionOnly = () => <Button onclick={action('log')}>Click me to log the action</Button>;
+export const ActionOnly = () => <Button onclick={action('log')}>Click me to log the action</Button>;
 
-actionOnly.story = {
+ActionOnly.story = {
   name: 'Action only',
 };
 
-export const multipleActions = () => (
+export const MultipleActions = () => (
   <Button {...actions('onclick', 'ondblclick')}>(Double) click me to log the action</Button>
 );
 
-multipleActions.story = {
+MultipleActions.story = {
   name: 'Multiple actions',
 };
 
-export const multipleActionsObject = () => (
+export const MultipleActionsObject = () => (
   <Button {...actions({ onclick: 'click', ondblclick: 'double-click' })}>
     (Double) click me to log the action
   </Button>
 );
 
-multipleActionsObject.story = {
+MultipleActionsObject.story = {
   name: 'Multiple actions, object',
 };
 
-export const actionAndMethod = () => (
+export const ActionAndMethod = () => (
   <Button
     onclick={event => {
       event.preventDefault();
@@ -44,6 +44,6 @@ export const actionAndMethod = () => (
   </Button>
 );
 
-actionAndMethod.story = {
+ActionAndMethod.story = {
   name: 'Action and method',
 };

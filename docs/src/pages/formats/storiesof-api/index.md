@@ -80,7 +80,7 @@ storiesOf('Button', module).add(
 To make it easier to adopt the new [Component Story Format (CSF)](../component-story-format/), we've created an automatic migration tool to transform `storiesOf` API to Module format.
 
 ```sh
-sb migrate storiesof-to-csf --glob src/**/*.stories.js
+sb migrate storiesof-to-csf --glob=src/**/*.stories.js
 ```
 
 For more information, see the CLI's [Codemod README](https://github.com/storybookjs/storybook/tree/next/lib/codemod).

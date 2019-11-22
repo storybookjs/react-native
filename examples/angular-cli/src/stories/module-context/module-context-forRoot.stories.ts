@@ -6,7 +6,7 @@ import { ChipsModule } from './chips.module';
 import { ChipsGroupComponent } from './chips-group.component';
 import { ChipComponent } from './chip.component';
 
-storiesOf('Custom|Feature Module as Context with forRoot', module)
+storiesOf('Custom/Feature Module as Context with forRoot', module)
   .addDecorator(withKnobs)
   .addDecorator(
     moduleMetadata({

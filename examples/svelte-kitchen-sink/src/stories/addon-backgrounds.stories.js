@@ -1,7 +1,7 @@
 import ButtonView from './views/ButtonView.svelte';
 
 export default {
-  title: 'Addon|Backgrounds',
+  title: 'Addon/Backgrounds',
   parameters: {
     backgrounds: [
       { name: 'light', value: '#eeeeee' },
@@ -10,10 +10,10 @@ export default {
   },
 };
 
-export const story1 = () => ({
+export const Story1 = () => ({
   Component: ButtonView,
 });
 
-story1.story = {
+Story1.story = {
   name: 'story 1',
 };

@@ -17,7 +17,7 @@ import { SimpleKnobsComponent } from './knobs.component';
 import { AllKnobsComponent } from './all-knobs.component';
 
 export default {
-  title: 'Addon|Knobs',
+  title: 'Addon/Knobs',
   decorators: [withKnobs],
   parameters: {
     knobs: {
@@ -26,7 +26,7 @@ export default {
   },
 };
 
-export const simple = () => {
+export const Simple = () => {
   const name = text('name', 'John Doe');
   const age = number('age', 0);
   const phoneNumber = text('phoneNumber', '555-55-55');
@@ -53,11 +53,11 @@ export const simple = () => {
   };
 };
 
-simple.story = {
+Simple.story = {
   name: 'Simple',
 };
 
-export const allKnobs = () => {
+export const AllKnobs = () => {
   const name = text('name', 'Jane');
   const stock = number('stock', 20, {
     range: true,
@@ -101,14 +101,14 @@ export const allKnobs = () => {
   };
 };
 
-allKnobs.story = {
+AllKnobs.story = {
   name: 'All knobs',
 };
 
-export const xssSafety = () => ({
+export const XssSafety = () => ({
   template: text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >'),
 });
 
-xssSafety.story = {
+XssSafety.story = {
   name: 'XSS safety',
 };

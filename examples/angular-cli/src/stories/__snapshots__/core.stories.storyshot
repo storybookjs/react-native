@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Core|Parameters Passed To Story 1`] = `
+exports[`Storyshots Core/Parameters passed to story 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -12,7 +12,7 @@ exports[`Storyshots Core|Parameters Passed To Story 1`] = `
     <button
       _ngcontent-a-c20=""
     >
-      Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"docs":{"iframeHeight":"60px"},"globalParameter":"globalParameter","framework":"angular","chapterParameter":"chapterParameter","storyParameter":"storyParameter","displayName":"passed to story"}
+      Parameters are {"options":{"showRoots":true},"docs":{"iframeHeight":"60px"},"globalParameter":"globalParameter","framework":"angular","chapterParameter":"chapterParameter","storyParameter":"storyParameter","__id":"core-parameters--passed-to-story"}
     </button>
   </storybook-button-component>
 </storybook-dynamic-app-root>

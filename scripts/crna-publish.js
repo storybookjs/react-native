@@ -28,7 +28,7 @@ const expoPublish = channel => {
   );
 };
 
-const username = process.env.EXPO_USERNAME;
+const username = 'storybook';
 const password = process.env.EXPO_PASSWORD;
 
 if (!username) {

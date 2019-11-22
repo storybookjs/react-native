@@ -3,7 +3,7 @@ import { withKnobs, text, color, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Addon|Knobs',
+  title: 'Addon/Knobs',
   decorators: [withKnobs],
 
   parameters: {
@@ -11,7 +11,7 @@ export default {
   },
 };
 
-export const withText = () => ({
+export const WithText = () => ({
   template: hbs`
       {{welcome-banner
         style=(if hidden "display: none")
@@ -34,6 +34,6 @@ export const withText = () => ({
   },
 });
 
-withText.story = {
+WithText.story = {
   name: 'with text',
 };

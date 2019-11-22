@@ -39,7 +39,8 @@ const run = (element: ElementContext, config: Spec, options: RunOptions) => {
             restoreScroll: true,
           } as RunOptions) // cast to RunOptions is necessary because axe types are not up to date
       )
-      .then(report);
+      .then(report)
+      .catch(error => addons.getChannel().emit(EVENTS.ERROR, String(error)));
   });
 };
 
@@ -47,12 +48,20 @@ if (module && module.hot && module.hot.decline) {
   module.hot.decline();
 }
 
+let storedDefaultSetup: Setup | null = null;
+
 export const withA11y = makeDecorator({
   name: 'withA11Y',
   parameterName: PARAM_KEY,
   wrapper: (getStory, context, { parameters }) => {
     if (parameters) {
-      setup = parameters as Setup;
+      if (storedDefaultSetup === null) {
+        storedDefaultSetup = { ...setup };
+      }
+      Object.assign(setup, parameters as Setup);
+    } else if (storedDefaultSetup !== null) {
+      Object.assign(setup, storedDefaultSetup);
+      storedDefaultSetup = null;
     }
     addons.getChannel().on(EVENTS.REQUEST, () => run(setup.element, setup.config, setup.options));
 

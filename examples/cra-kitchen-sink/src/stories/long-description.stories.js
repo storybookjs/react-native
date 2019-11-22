@@ -8,5 +8,5 @@ export default {
   decorators: [centered],
 };
 
-export const story1 = () => <Button onClick={action('clicked')}>Hello Button</Button>;
-story1.story = { name: 'with text' };
+export const Story1 = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+Story1.story = { name: 'with text' };

@@ -16,7 +16,7 @@ import {
 } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Addons|Knobs',
+  title: 'Addons/Knobs',
   decorators: [withKnobs],
 };
 
@@ -30,7 +30,7 @@ export const Simple = () => {
   `;
 };
 
-export const story3 = () => {
+export const Story3 = () => {
   const header = text('header', 'Power Ranger');
   const textColor = color('Text color', 'orangered');
   return html`
@@ -44,9 +44,9 @@ export const story3 = () => {
     </style>
   `;
 };
-story3.story = { name: 'Color Selection' };
+Story3.story = { name: 'Color Selection' };
 
-export const story4 = () => {
+export const Story4 = () => {
   const name = text('Name', 'Jane');
   const stock = number('Stock', 20, {
     range: true,
@@ -94,7 +94,7 @@ export const story4 = () => {
     </div>
   `;
 };
-story4.story = { name: 'All knobs' };
+Story4.story = { name: 'All knobs' };
 
 export const XssSafety = () => {
   const content = text('content', '<img src=x onerror="alert(\'XSS Attack\')" >');

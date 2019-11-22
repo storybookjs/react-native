@@ -15,13 +15,13 @@ const pickNative = decorate([args => [args[0].nativeEvent]]);
 const pickNativeAction = decorateAction([args => [args[0].nativeEvent]]);
 
 export default {
-  title: 'Addons|Actions.deprecated',
+  title: 'Addons/Actions/deprecated',
 };
 
-export const decoratedAction = () => (
+export const DecoratedAction = () => (
   <Button onClick={pickNativeAction('decorated')}>Native Event</Button>
 );
 
-decoratedAction.story = {
+DecoratedAction.story = {
   name: 'Decorated Action',
 };

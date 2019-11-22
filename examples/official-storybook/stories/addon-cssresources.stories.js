@@ -1,15 +1,15 @@
 import React from 'react';
 
 export default {
-  title: 'Addons|Cssresources',
+  title: 'Addons/Cssresources',
 };
 
-export const primaryLargeButton = () => (
+export const PrimaryLargeButton = () => (
   <button type="button" className="btn btn-lg btn-primary">
     Primary Large Button
   </button>
 );
-primaryLargeButton.story = {
+PrimaryLargeButton.story = {
   name: 'Primary Large Button',
   parameters: {
     cssresources: [
@@ -30,8 +30,8 @@ primaryLargeButton.story = {
   },
 };
 
-export const cameraIcon = () => <i className="fa fa-camera-retro"> Camera Icon</i>;
-cameraIcon.story = {
+export const CameraIcon = () => <i className="fa fa-camera-retro"> Camera Icon</i>;
+CameraIcon.story = {
   name: 'Camera Icon',
   parameters: {
     cssresources: [

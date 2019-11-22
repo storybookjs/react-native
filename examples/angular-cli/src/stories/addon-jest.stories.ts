@@ -4,7 +4,7 @@ import { AppComponent } from '../app/app.component';
 import * as results from '../../addon-jest.testresults.json';
 
 export default {
-  title: 'Addon|Jest',
+  title: 'Addon/Jest',
   decorators: [
     withTests({
       results,
@@ -13,12 +13,12 @@ export default {
   ],
 };
 
-export const appComponentWithJestTests = () => ({
+export const AppComponentWithJestTests = () => ({
   component: AppComponent,
   props: {},
 });
 
-appComponentWithJestTests.story = {
+AppComponentWithJestTests.story = {
   name: 'app.component with jest tests',
 
   parameters: {

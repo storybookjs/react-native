@@ -7,7 +7,7 @@ export default {
   title: 'CRA',
 };
 
-export const story1 = () => {
+export const Story1 = () => {
   if (!Component) {
     import('@storybook/react/demo').then(({ Button }) => {
       Component = Button;
@@ -20,4 +20,4 @@ export const story1 = () => {
   return <Component>Hello Button</Component>;
 };
 
-story1.story = { name: 'Dynamic import' };
+Story1.story = { name: 'Dynamic import' };

@@ -5,26 +5,26 @@ import View from 'rax-view';
 import markdown from './note.md';
 
 export default {
-  title: 'Addon|addon-a11y',
+  title: 'Addon/addon-a11y',
   decorators: [withA11Y],
 };
 
-export const basic = () => <Text>RAX TEXT NODE</Text>;
+export const Basic = () => <Text>RAX TEXT NODE</Text>;
 
-basic.story = {
+Basic.story = {
   parameters: { notes: 'super awesome note' },
 };
 
-export const withStyle = () => <Text style={{ fontSize: 20, color: 'blue' }}>Styled text</Text>;
+export const WithStyle = () => <Text style={{ fontSize: 20, color: 'blue' }}>Styled text</Text>;
 
-withStyle.story = {
+WithStyle.story = {
   name: 'with style',
   parameters: {
     notes: ' this is a note with emojis 🚀🚀🚀🚀🚀',
   },
 };
 
-export const withMarkdown = () => (
+export const WithMarkdown = () => (
   <button type="button">
     &nbsp;
     <Text id="text1">😀 😎 👍 💯</Text>
@@ -35,7 +35,7 @@ export const withMarkdown = () => (
   </button>
 );
 
-withMarkdown.story = {
+WithMarkdown.story = {
   name: 'with markdown',
   parameters: {
     notes: {

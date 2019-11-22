@@ -54,9 +54,14 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, 
       element = document.getElementById(storyBlockIdFromId(storyId));
     }
     if (element) {
+      const allStories = element.parentElement.querySelectorAll('[id|="anchor-"]');
+      let block = 'start';
+      if (allStories && allStories[0] === element) {
+        block = 'end'; // first story should be shown with the intro content above
+      }
       element.scrollIntoView({
         behavior: 'smooth',
-        block: 'end',
+        block,
         inline: 'nearest',
       });
     }

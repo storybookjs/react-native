@@ -5,24 +5,24 @@ import { linkTo } from '@storybook/addon-links';
 import MyButton from './Button.vue';
 
 export default {
-  title: 'Custom|Method for rendering Vue',
+  title: 'Custom/Method for rendering Vue',
 };
 
-export const render = () => ({
+export const Render = () => ({
   render: h => h('div', ['renders a div with some text in it..']),
 });
 
-export const renderComponent = () => ({
+export const RenderComponent = () => ({
   render(h) {
     return h(MyButton, { props: { color: 'pink' } }, ['renders component: MyButton']);
   },
 });
 
-renderComponent.story = {
+RenderComponent.story = {
   name: 'render + component',
 };
 
-export const template = () => ({
+export const Template = () => ({
   template: `
       <div>
         <h1>A template</h1>
@@ -30,16 +30,16 @@ export const template = () => ({
       </div>`,
 });
 
-export const templateComponent = () => ({
+export const TemplateComponent = () => ({
   components: { MyButton },
   template: '<my-button>MyButton rendered in a template</my-button>',
 });
 
-templateComponent.story = {
+TemplateComponent.story = {
   name: 'template + component',
 };
 
-export const templateMethods = () => ({
+export const TemplateMethods = () => ({
   components: { MyButton },
   template: `
       <p>
@@ -51,7 +51,7 @@ export const templateMethods = () => ({
   },
 });
 
-templateMethods.story = {
+TemplateMethods.story = {
   name: 'template + methods',
 };
 
@@ -63,7 +63,7 @@ export const JSX = () => ({
   },
 });
 
-export const vuexActions = () => ({
+export const VuexActions = () => ({
   components: { MyButton },
   template: '<my-button @click="log">with vuex: {{ $store.state.count }}</my-button>',
   store: new Vuex.Store({
@@ -82,11 +82,11 @@ export const vuexActions = () => ({
   },
 });
 
-vuexActions.story = {
+VuexActions.story = {
   name: 'vuex + actions',
 };
 
-export const whateverYouWant = () => ({
+export const WhateverYouWant = () => ({
   components: { MyButton },
   template: '<my-button @click="log">with awesomeness: {{ $store.state.count }}</my-button>',
   store: new Vuex.Store({
@@ -105,11 +105,11 @@ export const whateverYouWant = () => ({
   },
 });
 
-whateverYouWant.story = {
+WhateverYouWant.story = {
   name: 'whatever you want',
 };
 
-export const preRegisteredComponent = () => ({
+export const PreRegisteredComponent = () => ({
   /* By pre-registering component in config.js,
    * the need to register all components with each story is removed.
    * You'll only need the template */
@@ -120,6 +120,6 @@ export const preRegisteredComponent = () => ({
       </p>`,
 });
 
-preRegisteredComponent.story = {
+PreRegisteredComponent.story = {
   name: 'pre-registered component',
 };

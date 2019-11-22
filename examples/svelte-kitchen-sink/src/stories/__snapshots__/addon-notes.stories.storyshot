@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Notes Note With Html 1`] = `
+exports[`Storyshots Addon/Notes Note with HTML 1`] = `
 <section
   class="storybook-snapshot-container"
 >
@@ -42,7 +42,7 @@ exports[`Storyshots Addon|Notes Note With Html 1`] = `
 </section>
 `;
 
-exports[`Storyshots Addon|Notes Simple Note 1`] = `
+exports[`Storyshots Addon/Notes Simple note 1`] = `
 <section
   class="storybook-snapshot-container"
 >

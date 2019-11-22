@@ -130,9 +130,11 @@ function genPreviewExports(ast, context) {
 
 function genMeta(ast) {
   let title = getAttr(ast.openingElement, 'title');
+  let id = getAttr(ast.openingElement, 'id');
   let parameters = getAttr(ast.openingElement, 'parameters');
   let decorators = getAttr(ast.openingElement, 'decorators');
   title = title && `'${title.value}'`;
+  id = id && `'${id.value}'`;
   if (parameters && parameters.expression) {
     const { code: params } = generate(parameters.expression, {});
     parameters = params;
@@ -143,6 +145,7 @@ function genMeta(ast) {
   }
   return {
     title,
+    id,
     parameters,
     decorators,
   };
@@ -295,11 +298,11 @@ function extractExports(node, options) {
   }
   metaExport.includeStories = JSON.stringify(includeStories);
 
-  const { title } = metaExport;
+  const { title, id: componentId } = metaExport;
   const mdxStoryNameToId = Object.entries(context.storyNameToKey).reduce(
     (acc, [storyName, storyKey]) => {
       if (title) {
-        acc[storyName] = toId(title, storyNameFromExport(storyKey));
+        acc[storyName] = toId(componentId || title, storyNameFromExport(storyKey));
       }
       return acc;
     },

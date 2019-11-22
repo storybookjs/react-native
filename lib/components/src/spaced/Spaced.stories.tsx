@@ -14,7 +14,7 @@ const PlaceholderInline = styled.span(({ color }) => ({
   padding: 20,
 }));
 
-storiesOf('Basics|Spaced', module)
+storiesOf('Basics/Spaced', module)
   .add('row', () => (
     <div>
       <PlaceholderBlock color="silver" />
