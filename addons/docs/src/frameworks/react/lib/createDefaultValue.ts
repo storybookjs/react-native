@@ -7,7 +7,6 @@ import {
   ELEMENT_CAPTION,
   ARRAY_CAPTION,
 } from '../propTypes/captions';
-import { generateCode } from './codeGeneration/generateCode';
 import {
   InspectionFunction,
   InspectionResult,
@@ -18,7 +17,7 @@ import {
 } from './inspection';
 import { isHtmlTag } from './isHtmlTag';
 import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../lib';
-import { generateCompactObject } from './codeGeneration/generateObject';
+import { generateObjectCode, generateCode, generateArrayCode } from './generateCode';
 
 function getPrettyIdentifier(inferedType: InspectionIdentifiableInferedType): string {
   const { type, identifier } = inferedType;
@@ -36,11 +35,11 @@ function getPrettyIdentifier(inferedType: InspectionIdentifiableInferedType): st
 }
 
 function generateObject({ ast }: InspectionResult): PropDefaultValue {
-  const prettyCaption = generateCompactObject(ast);
+  const prettyCaption = generateObjectCode(ast, true);
 
   return !isTooLongForDefaultValueSummary(prettyCaption)
     ? createSummaryValue(prettyCaption)
-    : createSummaryValue(OBJECT_CAPTION, generateCode(ast));
+    : createSummaryValue(OBJECT_CAPTION, generateObjectCode(ast));
 }
 
 function generateFunc({ inferedType, ast }: InspectionResult): PropDefaultValue {
@@ -88,26 +87,33 @@ function generateElement(
 }
 
 function generateArray({ ast }: InspectionResult): PropDefaultValue {
-  const prettyCaption = generateCode(ast, true);
+  const prettyCaption = generateArrayCode(ast, true);
 
   return !isTooLongForDefaultValueSummary(prettyCaption)
     ? createSummaryValue(prettyCaption)
-    : createSummaryValue(ARRAY_CAPTION, generateCode(ast));
+    : createSummaryValue(ARRAY_CAPTION, generateArrayCode(ast));
 }
 
 export function createDefaultValue(defaultValue: string): PropDefaultValue {
-  const inspectionResult = inspectValue(defaultValue);
+  try {
+    const inspectionResult = inspectValue(defaultValue);
 
-  switch (inspectionResult.inferedType.type) {
-    case InspectionType.OBJECT:
-      return generateObject(inspectionResult);
-    case InspectionType.FUNCTION:
-      return generateFunc(inspectionResult);
-    case InspectionType.ELEMENT:
-      return generateElement(defaultValue, inspectionResult);
-    case InspectionType.ARRAY:
-      return generateArray(inspectionResult);
-    default:
-      return null;
+    switch (inspectionResult.inferedType.type) {
+      case InspectionType.OBJECT:
+        return generateObject(inspectionResult);
+      case InspectionType.FUNCTION:
+        return generateFunc(inspectionResult);
+      case InspectionType.ELEMENT:
+        return generateElement(defaultValue, inspectionResult);
+      case InspectionType.ARRAY:
+        return generateArray(inspectionResult);
+      default:
+        return null;
+    }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(e);
   }
+
+  return null;
 }

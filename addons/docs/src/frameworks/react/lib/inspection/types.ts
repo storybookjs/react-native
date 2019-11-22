@@ -29,6 +29,7 @@ export interface InspectionObject extends InspectionInferedType {
 
 export interface InspectionArray extends InspectionInferedType {
   type: InspectionType.ARRAY;
+  depth: number;
 }
 
 export interface InspectionClass extends InspectionInferedType {

@@ -2,7 +2,6 @@ import { isNil } from 'lodash';
 import { PropType } from '@storybook/components';
 import { createSummaryValue, isTooLongForTypeSummary } from '../../../lib';
 import { ExtractedProp, DocgenPropType } from '../../../lib/docgen';
-import { generateCode } from '../lib/codeGeneration/generateCode';
 import { generateFuncSignature, generateCompactFuncSignature } from './generateFuncSignature';
 import {
   OBJECT_CAPTION,
@@ -17,10 +16,10 @@ import {
   inspectValue,
   InspectionElement,
   InspectionObject,
-  InspectionIdentifiableInferedType,
+  InspectionArray,
 } from '../lib/inspection';
 import { isHtmlTag } from '../lib/isHtmlTag';
-import { generateCompactObject } from '../lib/codeGeneration/generateObject';
+import { generateObjectCode, generateCode } from '../lib/generateCode';
 
 enum PropTypesType {
   CUSTOM = 'custom',
@@ -78,12 +77,14 @@ function cleanPropTypes(value: string): string {
 }
 
 function prettyObject(ast: any, compact = false): string {
-  const obj = compact ? generateCompactObject(ast) : generateCode(ast);
-
-  return cleanPropTypes(obj);
+  return cleanPropTypes(generateObjectCode(ast, compact));
 }
 
-function getCaptionFromInspectionType(type: InspectionType): string {
+function prettyArray(ast: any, compact = false): string {
+  return cleanPropTypes(generateCode(ast, compact));
+}
+
+function getCaptionForInspectionType(type: InspectionType): string {
   switch (type) {
     case InspectionType.OBJECT:
       return OBJECT_CAPTION;
@@ -100,49 +101,63 @@ function getCaptionFromInspectionType(type: InspectionType): string {
   }
 }
 
+function generateTypeFromString(value: string, originalTypeName: string): TypeDef {
+  const { inferedType, ast } = inspectValue(value);
+  const { type } = inferedType;
+
+  let short;
+  let compact;
+  let full;
+
+  switch (type) {
+    case InspectionType.IDENTIFIER:
+    case InspectionType.LITERAL:
+      short = value;
+      compact = value;
+      break;
+    case InspectionType.OBJECT: {
+      const { depth } = inferedType as InspectionObject;
+
+      short = OBJECT_CAPTION;
+      compact = depth === 1 ? prettyObject(ast, true) : null;
+      full = prettyObject(ast);
+      break;
+    }
+    case InspectionType.ELEMENT: {
+      const { identifier } = inferedType as InspectionElement;
+
+      short = !isNil(identifier) && !isHtmlTag(identifier) ? identifier : ELEMENT_CAPTION;
+      compact = value;
+      full = value;
+      break;
+    }
+    case InspectionType.ARRAY: {
+      const { depth } = inferedType as InspectionArray;
+
+      short = ARRAY_CAPTION;
+      compact = depth <= 2 ? prettyArray(ast, true) : null;
+      full = prettyArray(ast);
+      break;
+    }
+    default:
+      short = getCaptionForInspectionType(type);
+      compact = value;
+      full = value;
+      break;
+  }
+
+  return createTypeDef({
+    name: originalTypeName,
+    short,
+    compact,
+    full,
+    inferedType: type,
+  });
+}
+
 function generateCustom({ raw }: DocgenPropType): TypeDef {
   if (!isNil(raw)) {
-    const { inferedType, ast } = inspectValue(raw);
-    const { type } = inferedType;
-
-    let short;
-    let compact;
-    let full;
-
-    switch (type) {
-      case InspectionType.IDENTIFIER:
-      case InspectionType.LITERAL:
-        short = raw;
-        compact = raw;
-        break;
-      case InspectionType.OBJECT: {
-        const { depth } = inferedType as InspectionObject;
-
-        short = OBJECT_CAPTION;
-        compact = depth === 1 ? prettyObject(ast, true) : null;
-        full = prettyObject(ast);
-        break;
-      }
-      case InspectionType.ELEMENT: {
-        const { identifier } = inferedType as InspectionElement;
-
-        short = !isNil(identifier) && !isHtmlTag(identifier) ? identifier : ELEMENT_CAPTION;
-        compact = raw;
-        break;
-      }
-      default:
-        short = getCaptionFromInspectionType(type);
-        compact = raw;
-        break;
-    }
-
-    return createTypeDef({
-      name: PropTypesType.CUSTOM,
-      short,
-      compact,
-      full,
-      inferedType: type,
-    });
+    return generateTypeFromString(raw, PropTypesType.CUSTOM);
   }
 
   return createTypeDef({
@@ -230,44 +245,10 @@ function generateUnion(type: DocgenPropType, extractedProp: ExtractedProp): Type
   return createTypeDef({ name: PropTypesType.UNION, short: type.value, compact: null });
 }
 
-// TODO: Je fais quoi avec un array qui contient un objet avec du depth?
-//    -> aconParser retourne le depth d'un array?
 function generateEnumValue({ value, computed }: EnumValue): TypeDef {
-  if (computed) {
-    const { inferedType, ast } = inspectValue(value);
-    const { type } = inferedType;
-
-    let short = getCaptionFromInspectionType(type);
-    let compact = value;
-    let full = value;
-
-    if (
-      type === InspectionType.FUNCTION ||
-      type === InspectionType.CLASS ||
-      type === InspectionType.ELEMENT
-    ) {
-      const { identifier } = inferedType as InspectionIdentifiableInferedType;
-
-      if (!isNil(identifier)) {
-        short = identifier;
-      }
-    } else if (type === InspectionType.OBJECT) {
-      const { depth } = inferedType as InspectionObject;
-
-      compact = depth === 1 ? prettyObject(ast, true) : null;
-      full = prettyObject(ast);
-    }
-
-    return createTypeDef({
-      name: 'enumvalue',
-      short,
-      compact,
-      full,
-      inferedType: type,
-    });
-  }
-
-  return createTypeDef({ name: 'enumvalue', short: value, compact: value });
+  return computed
+    ? generateTypeFromString(value, 'enumvalue')
+    : createTypeDef({ name: 'enumvalue', short: value, compact: value });
 }
 
 function generateEnum(type: DocgenPropType): TypeDef {
@@ -366,41 +347,48 @@ function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeD
 }
 
 export function createType(extractedProp: ExtractedProp): PropType {
-  const { type } = extractedProp.docgenInfo;
+  try {
+    const { type } = extractedProp.docgenInfo;
 
-  switch (type.name) {
-    case PropTypesType.CUSTOM:
-    case PropTypesType.SHAPE:
-    case PropTypesType.INSTANCEOF:
-    case PropTypesType.OBJECTOF:
-    case PropTypesType.UNION:
-    case PropTypesType.ENUM:
-    case PropTypesType.ARRAYOF: {
-      const { short, compact, full } = generateType(type, extractedProp);
+    switch (type.name) {
+      case PropTypesType.CUSTOM:
+      case PropTypesType.SHAPE:
+      case PropTypesType.INSTANCEOF:
+      case PropTypesType.OBJECTOF:
+      case PropTypesType.UNION:
+      case PropTypesType.ENUM:
+      case PropTypesType.ARRAYOF: {
+        const { short, compact, full } = generateType(type, extractedProp);
 
-      if (!isNil(compact)) {
-        if (!isTooLongForTypeSummary(compact)) {
-          return createSummaryValue(compact);
+        if (!isNil(compact)) {
+          if (!isTooLongForTypeSummary(compact)) {
+            return createSummaryValue(compact);
+          }
         }
+
+        return createSummaryValue(short, short !== full ? full : undefined);
       }
+      case PropTypesType.FUNC: {
+        const { short, compact, full } = generateType(type, extractedProp);
 
-      return createSummaryValue(short, short !== full ? full : undefined);
-    }
-    case PropTypesType.FUNC: {
-      const { short, compact, full } = generateType(type, extractedProp);
+        let summary = short;
+        const detail = full;
 
-      let summary = short;
-      const detail = full;
+        if (!isTooLongForTypeSummary(full)) {
+          summary = full;
+        } else if (!isNil(compact)) {
+          summary = compact;
+        }
 
-      if (!isTooLongForTypeSummary(full)) {
-        summary = full;
-      } else if (!isNil(compact)) {
-        summary = compact;
+        return createSummaryValue(summary, summary !== detail ? detail : undefined);
       }
-
-      return createSummaryValue(summary, summary !== detail ? detail : undefined);
+      default:
+        return null;
     }
-    default:
-      return null;
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(e);
   }
+
+  return null;
 }

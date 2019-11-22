@@ -35,6 +35,25 @@ function extractIdentifierName(identifierNode: any) {
   return !isNil(identifierNode) ? identifierNode.name : null;
 }
 
+function calculateNodeDepth(node: estree.Expression): number {
+  let depth = 0;
+
+  acornWalk.simple(
+    node,
+    {
+      ObjectExpression() {
+        depth += 1;
+      },
+      ArrayExpression() {
+        depth += 1;
+      },
+    },
+    ACORN_WALK_VISITORS
+  );
+
+  return depth;
+}
+
 function parseIdentifier(identifierNode: estree.Identifier): ParsingResult<InspectionIdentifier> {
   return {
     inferedType: {
@@ -142,30 +161,15 @@ function parseCall(callNode: estree.CallExpression): ParsingResult<InspectionObj
 }
 
 function parseObject(objectNode: estree.ObjectExpression): ParsingResult<InspectionObject> {
-  let depth = 0;
-
-  acornWalk.simple(
-    objectNode,
-    {
-      ObjectExpression() {
-        depth += 1;
-      },
-      ArrayExpression() {
-        depth += 1;
-      },
-    },
-    ACORN_WALK_VISITORS
-  );
-
   return {
-    inferedType: { type: InspectionType.OBJECT, depth },
+    inferedType: { type: InspectionType.OBJECT, depth: calculateNodeDepth(objectNode) },
     ast: objectNode,
   };
 }
 
 function parseArray(arrayNode: estree.ArrayExpression): ParsingResult<InspectionArray> {
   return {
-    inferedType: { type: InspectionType.ARRAY },
+    inferedType: { type: InspectionType.ARRAY, depth: calculateNodeDepth(arrayNode) },
     ast: arrayNode,
   };
 }

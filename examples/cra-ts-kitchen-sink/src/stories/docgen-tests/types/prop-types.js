@@ -120,6 +120,15 @@ PropTypesProps.propTypes = {
   oneOfEval: PropTypes.oneOf((() => ['News', 'Photos'])()),
   oneOfVar: PropTypes.oneOf(POSITIONS),
   oneOfNested: PropTypes.oneOf(['News', ['bottom-left', 'botton-center', 'bottom-right']]),
+  oneOfNestedSimpleInlineObject: PropTypes.oneOf(['News', [{ foo: PropTypes.string }]]),
+  oneOfNestedComplexInlineObject: PropTypes.oneOf([
+    'News',
+    [{ nested: { foo: PropTypes.string } }],
+  ]),
+  oneOfNestedComplexShape: PropTypes.oneOf([
+    'News',
+    [{ nested: PropTypes.shape({ foo: PropTypes.string }) }],
+  ]),
   /**
    *  A multi-type prop is also valid and is displayed as `Union<String|Message>`
    */
@@ -255,6 +264,9 @@ PropTypesProps.propTypes = {
       }),
     }),
     oneOf: PropTypes.oneOf(['one', 'two']),
+  }),
+  shapeWithArray: PropTypes.shape({
+    arr: PropTypes.arrayOf({ foo: PropTypes.string }),
   }),
   namedShape: NAMED_SHAPE,
   namedObjectInShape: PropTypes.shape(NAMED_OBJECT),
