@@ -33,7 +33,6 @@ const Expandable = styled.div<{}>(codeCommon, ({ theme }) => ({
   color: theme.color.secondary,
   margin: 0,
   paddingTop: `${DIRTY_PADDING_TOP_IN_PX}px`,
-  whiteSpace: 'nowrap',
   display: 'flex',
   alignItems: 'center',
 }));
