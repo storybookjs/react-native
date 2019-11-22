@@ -14,6 +14,7 @@ import {
   InspectionElement,
   InspectionIdentifiableInferedType,
   inspectValue,
+  InspectionArray,
 } from './inspection';
 import { isHtmlTag } from './isHtmlTag';
 import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../lib';
@@ -34,12 +35,18 @@ function getPrettyIdentifier(inferedType: InspectionIdentifiableInferedType): st
   }
 }
 
-function generateObject({ ast }: InspectionResult): PropDefaultValue {
-  const prettyCaption = generateObjectCode(ast, true);
+function generateObject({ inferedType, ast }: InspectionResult): PropDefaultValue {
+  const { depth } = inferedType as InspectionArray;
 
-  return !isTooLongForDefaultValueSummary(prettyCaption)
-    ? createSummaryValue(prettyCaption)
-    : createSummaryValue(OBJECT_CAPTION, generateObjectCode(ast));
+  if (depth === 1) {
+    const compactObject = generateObjectCode(ast, true);
+
+    if (!isTooLongForDefaultValueSummary(compactObject)) {
+      return createSummaryValue(compactObject);
+    }
+  }
+
+  return createSummaryValue(OBJECT_CAPTION, generateObjectCode(ast));
 }
 
 function generateFunc({ inferedType, ast }: InspectionResult): PropDefaultValue {
@@ -86,12 +93,18 @@ function generateElement(
     : createSummaryValue(ELEMENT_CAPTION, defaultValue);
 }
 
-function generateArray({ ast }: InspectionResult): PropDefaultValue {
-  const prettyCaption = generateArrayCode(ast, true);
+function generateArray({ inferedType, ast }: InspectionResult): PropDefaultValue {
+  const { depth } = inferedType as InspectionArray;
 
-  return !isTooLongForDefaultValueSummary(prettyCaption)
-    ? createSummaryValue(prettyCaption)
-    : createSummaryValue(ARRAY_CAPTION, generateArrayCode(ast));
+  if (depth <= 2) {
+    const compactArray = generateArrayCode(ast, true);
+
+    if (!isTooLongForDefaultValueSummary(compactArray)) {
+      return createSummaryValue(compactArray);
+    }
+  }
+
+  return createSummaryValue(ARRAY_CAPTION, generateArrayCode(ast));
 }
 
 export function createDefaultValue(defaultValue: string): PropDefaultValue {
