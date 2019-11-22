@@ -135,18 +135,30 @@ function parseCall(callNode: estree.CallExpression): ParsingResult<InspectionObj
 
   const identifierName = extractIdentifierName(identifierNode);
   if (identifierName === 'shape') {
-    return {
-      inferedType: { type: InspectionType.OBJECT },
-      ast: callNode.arguments[0],
-    };
+    return parseObject(callNode.arguments[0] as estree.ObjectExpression);
   }
 
   return null;
 }
 
 function parseObject(objectNode: estree.ObjectExpression): ParsingResult<InspectionObject> {
+  let depth = 0;
+
+  acornWalk.simple(
+    objectNode,
+    {
+      ObjectExpression() {
+        depth += 1;
+      },
+      ArrayExpression() {
+        depth += 1;
+      },
+    },
+    ACORN_WALK_VISITORS
+  );
+
   return {
-    inferedType: { type: InspectionType.OBJECT },
+    inferedType: { type: InspectionType.OBJECT, depth },
     ast: objectNode,
   };
 }

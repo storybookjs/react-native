@@ -8,10 +8,6 @@ export function generateFuncSignature(
   const hasParams = !isNil(params);
   const hasReturns = !isNil(returns);
 
-  if (!hasParams && !hasReturns) {
-    return '';
-  }
-
   const funcParts = [];
 
   if (hasParams) {
@@ -27,6 +23,29 @@ export function generateFuncSignature(
     });
 
     funcParts.push(`(${funcParams.join(', ')})`);
+  } else {
+    funcParts.push('()');
+  }
+
+  if (hasReturns) {
+    funcParts.push(`=> ${returns.getTypeName()}`);
+  }
+
+  return funcParts.join(' ');
+}
+
+// TODO: Add tests
+export function generateCompactFuncSignature(
+  params: ExtractedJsDocParam[],
+  returns: ExtractedJsDocReturns
+): string {
+  const hasParams = !isNil(params);
+  const hasReturns = !isNil(returns);
+
+  const funcParts = [];
+
+  if (hasParams) {
+    funcParts.push('( ... )');
   } else {
     funcParts.push('()');
   }

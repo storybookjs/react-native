@@ -7,7 +7,7 @@ import {
   ELEMENT_CAPTION,
   ARRAY_CAPTION,
 } from '../propTypes/captions';
-import { generateCode } from './generateCode';
+import { generateCode } from './codeGeneration/generateCode';
 import {
   InspectionFunction,
   InspectionResult,
@@ -18,6 +18,7 @@ import {
 } from './inspection';
 import { isHtmlTag } from './isHtmlTag';
 import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../lib';
+import { generateCompactObject } from './codeGeneration/generateObject';
 
 function getPrettyIdentifier(inferedType: InspectionIdentifiableInferedType): string {
   const { type, identifier } = inferedType;
@@ -35,13 +36,7 @@ function getPrettyIdentifier(inferedType: InspectionIdentifiableInferedType): st
 }
 
 function generateObject({ ast }: InspectionResult): PropDefaultValue {
-  let prettyCaption = generateCode(ast, true);
-
-  // Cannot get escodegen to add a space before the last } with the compact mode settings.
-  // This fix it until a better solution is found.
-  if (!prettyCaption.endsWith(' }')) {
-    prettyCaption = `${prettyCaption.slice(0, -1)} }`;
-  }
+  const prettyCaption = generateCompactObject(ast);
 
   return !isTooLongForDefaultValueSummary(prettyCaption)
     ? createSummaryValue(prettyCaption)

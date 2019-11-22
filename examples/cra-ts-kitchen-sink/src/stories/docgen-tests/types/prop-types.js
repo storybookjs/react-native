@@ -50,6 +50,18 @@ PropTypesProps.propTypes = {
    * @returns {ComplexObject} - Returns a complex object.
    */
   funcWithJsDoc: PropTypes.func,
+  /**
+   * @param {string} foo - A foo value.
+   * @param {number} bar - A bar value.
+   * @param {number} bar1 - A bar value.
+   * @param {number} bar2 - A bar value.
+   * @param {number} bar3 - A bar value.
+   * @param {number} bar4 - A bar value.
+   * @param {number} bar5 - A bar value.
+   * @param {number} bar6 - A bar value.
+   * @returns {ComplexObject} - Returns a complex object.
+   */
+  veryLongFuncWithJsDoc: PropTypes.func,
   namedDefaultFunc: PropTypes.func,
   number: PropTypes.number,
   /**
