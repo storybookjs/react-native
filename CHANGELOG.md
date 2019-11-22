@@ -1,4 +1,4 @@
-## 5.3.0-beta.4 (November 23, 2019)
+## 5.3.0-beta.5 (November 23, 2019)
 
 ### Features
 
@@ -16,6 +16,10 @@
 ### Dependency Upgrades
 
 * Miscellaneous upgrades ([#8912](https://github.com/storybookjs/storybook/pull/8912))
+
+## 5.3.0-beta.4 (November 23, 2019)
+
+Failed npm publish
 
 ## 5.3.0-beta.3 (November 21, 2019)
 
