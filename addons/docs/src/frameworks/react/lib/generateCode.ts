@@ -42,16 +42,28 @@ function generateCompactObjectCode(ast: any): string {
 }
 
 export function generateArrayCode(ast: any, compact = false): string {
-  return !compact ? generateArray(ast) : generateCode(ast, true);
+  return !compact ? generateMultilineArrayCode(ast) : generateCompactArrayCode(ast);
 }
 
-function generateArray(ast: any): string {
+function generateMultilineArrayCode(ast: any): string {
   let result = generateCode(ast);
 
   // escodegen add extra spacing before the closing bracket of a multile line array with a nested object.
   // Fix it until a better solution is found.
   if (result.endsWith('  }]')) {
     result = dedent(result);
+  }
+
+  return result;
+}
+
+function generateCompactArrayCode(ast: any): string {
+  let result = generateCode(ast, true);
+
+  // escodegen add extra an extra before the opening bracket of a compact array that contains primitive values.
+  // Fix it until a better solution is found.
+  if (result.startsWith('[    ')) {
+    result = result.replace('[    ', '[');
   }
 
   return result;
