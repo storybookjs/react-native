@@ -34,28 +34,28 @@ export function generateFuncSignature(
   return funcParts.join(' ');
 }
 
-// TODO: Add tests
-export function generateCompactFuncSignature(
-  params: ExtractedJsDocParam[],
-  returns: ExtractedJsDocReturns
-): string {
-  const hasParams = !isNil(params);
-  const hasReturns = !isNil(returns);
+// // TODO: Add tests
+// export function generateCompactFuncSignature(
+//   params: ExtractedJsDocParam[],
+//   returns: ExtractedJsDocReturns
+// ): string {
+//   const hasParams = !isNil(params);
+//   const hasReturns = !isNil(returns);
 
-  const funcParts = [];
+//   const funcParts = [];
 
-  if (hasParams) {
-    funcParts.push('( ... )');
-  } else {
-    funcParts.push('()');
-  }
+//   if (hasParams) {
+//     funcParts.push('( ... )');
+//   } else {
+//     funcParts.push('()');
+//   }
 
-  if (hasReturns) {
-    funcParts.push(`=> ${returns.getTypeName()}`);
-  }
+//   if (hasReturns) {
+//     funcParts.push(`=> ${returns.getTypeName()}`);
+//   }
 
-  return funcParts.join(' ');
-}
+//   return funcParts.join(' ');
+// }
 
 // TODO: Add tests
 // export function generateCompactFuncSignature(

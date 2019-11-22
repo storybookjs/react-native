@@ -1,3 +1,4 @@
+/* eslint-disable react/default-props-match-prop-types */
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
@@ -340,6 +341,7 @@ PropTypesProps.defaultProps = {
   oneOfNested: 'top-right',
   oneOfType: 'hello',
   arrayOfPrimitive: [1, 2, 3],
+  arrayOfString: ['0px', '0px'],
   arrayOfNamedObject: [{ text: 'foo', value: 'bar' }],
   arrayOfShortInlineObject: [{ foo: 'bar' }],
   arrayOfInlineObject: [{ text: 'foo', value: 'bar' }],

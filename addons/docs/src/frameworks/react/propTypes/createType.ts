@@ -2,7 +2,7 @@ import { isNil } from 'lodash';
 import { PropType } from '@storybook/components';
 import { createSummaryValue, isTooLongForTypeSummary } from '../../../lib';
 import { ExtractedProp, DocgenPropType } from '../../../lib/docgen';
-import { generateFuncSignature, generateCompactFuncSignature } from './generateFuncSignature';
+import { generateFuncSignature } from './generateFuncSignature';
 import {
   OBJECT_CAPTION,
   ARRAY_CAPTION,
@@ -175,7 +175,7 @@ function generateFunc(extractedProp: ExtractedProp): TypeDef {
       return createTypeDef({
         name: PropTypesType.FUNC,
         short: FUNCTION_CAPTION,
-        compact: generateCompactFuncSignature(jsDocTags.params, jsDocTags.returns),
+        compact: null,
         full: generateFuncSignature(jsDocTags.params, jsDocTags.returns),
       });
     }
@@ -347,9 +347,14 @@ function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeD
 }
 
 export function createType(extractedProp: ExtractedProp): PropType {
-  try {
-    const { type } = extractedProp.docgenInfo;
+  const { type } = extractedProp.docgenInfo;
 
+  // A type could be null if a defaultProp has been provided without a type definition.
+  if (isNil(type)) {
+    return null;
+  }
+
+  try {
     switch (type.name) {
       case PropTypesType.CUSTOM:
       case PropTypesType.SHAPE:
