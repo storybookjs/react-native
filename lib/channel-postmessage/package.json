@@ -1,31 +1,37 @@
 {
   "name": "@storybook/channel-postmessage",
-  "version": "5.1.0-rc.3",
+  "version": "5.3.0-beta.5",
   "description": "",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/channel-postmessage",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/channel-postmessage",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/channel-postmessage"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "5.1.0-rc.3",
-    "@storybook/client-logger": "5.1.0-rc.3",
+    "@storybook/channels": "5.3.0-beta.5",
+    "@storybook/client-logger": "5.3.0-beta.5",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "telejson": "^2.2.1"
+    "telejson": "^3.2.0"
   },
   "publishConfig": {
     "access": "public"

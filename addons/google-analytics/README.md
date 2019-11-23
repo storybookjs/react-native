@@ -2,7 +2,7 @@
 
 Storybook Addon Google Analytics can be used to support google analytics in [Storybook](https://storybook.js.org).
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
 ## Getting Started
 
@@ -22,4 +22,5 @@ Then, set an environment variable
 
 ```
 window.STORYBOOK_GA_ID = UA-000000-01
+window.STORYBOOK_REACT_GA_OPTIONS = {}
 ```

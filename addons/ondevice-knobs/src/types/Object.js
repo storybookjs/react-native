@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TextInput } from 'react-native';
 import deepEqual from 'deep-equal';
+import styled from '@emotion/native';
 
-const styles = {
+const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
-  borderColor: '#f7f4f4',
   borderRadius: 2,
   fontSize: 13,
   padding: 5,
   margin: 10,
-  color: '#555',
-};
+  borderColor: theme.borderColor,
+  color: theme.labelColor,
+}));
 
 class ObjectType extends React.Component {
   constructor(...args) {
@@ -37,12 +37,18 @@ class ObjectType extends React.Component {
 
   handleChange = value => {
     const { onChange } = this.props;
+
+    const withReplacedQuotes = value
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201C\u201D]/g, '"');
+
     const newState = {
-      jsonString: value,
+      jsonString: withReplacedQuotes,
     };
 
     try {
-      newState.json = JSON.parse(value.trim());
+      newState.json = JSON.parse(withReplacedQuotes.trim());
+
       onChange(newState.json);
       this.failed = false;
     } catch (err) {
@@ -64,12 +70,13 @@ class ObjectType extends React.Component {
     }
 
     return (
-      <TextInput
+      <Input
         id={knob.name}
-        style={{ ...styles, ...extraStyle }}
+        style={extraStyle}
         value={jsonString}
         onChangeText={this.handleChange}
         multiline
+        autoCapitalize="none"
         underlineColorAndroid="transparent"
       />
     );

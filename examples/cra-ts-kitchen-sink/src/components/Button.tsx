@@ -1,4 +1,6 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
+
+export type Type = 'default' | 'action';
 
 interface Props {
   /**
@@ -6,12 +8,19 @@ interface Props {
    * @default null
    */
   onClick?: () => void;
+
+  /**
+   * Button type yo
+   */
+  type?: Type;
 }
 
-const Button: React.SFC<Props> = ({ children, onClick }) => (
-  <button type="button" onClick={onClick}>
-    {children}
-  </button>
-);
+const Button: FunctionComponent<Props> = ({ children, type = 'default', onClick }) => {
+  return (
+    <button type="button" onClick={onClick}>
+      {type}: {children}
+    </button>
+  );
+};
 
 export default Button;

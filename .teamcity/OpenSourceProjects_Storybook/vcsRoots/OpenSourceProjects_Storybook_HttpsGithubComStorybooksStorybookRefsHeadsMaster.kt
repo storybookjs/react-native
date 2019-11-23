@@ -7,7 +7,7 @@ object OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMa
     uuid = "cec03c4b-d52c-42a0-8e9e-53bde85d6b33"
     id = "OpenSourceProjects_Storybook_HttpsGithubComStorybooksStorybookRefsHeadsMaster"
     name = "Main root"
-    url = "git@github.com:storybooks/storybook.git"
+    url = "git@github.com:storybookjs/storybook.git"
     branch = "refs/heads/next"
     branchSpec = """
         +:refs/(pull/*)/head

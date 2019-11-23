@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ToolBarMenu } from './ToolBarMenu';
 import { OPT_OUT } from '../../shared/constants';
-import { ContextNode, FCNoChildren, Omit } from '../../shared/types.d';
+import { ContextNode, FCNoChildren } from '../../shared/types.d';
 
 type ToolBarControl = FCNoChildren<
   Omit<
@@ -22,7 +22,7 @@ export const ToolBarControl: ToolBarControl = ({
   selected,
   setSelected,
 }) => {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
   const paramNames = params.map(({ name }) => name);
   const activeName =
     // validate the integrity of the selected name
@@ -47,5 +47,7 @@ export const ToolBarControl: ToolBarControl = ({
     },
   };
 
-  return icon && list.length && !options.disable ? <ToolBarMenu icon={icon} {...props} /> : null;
+  return Array.isArray(list) && list.length && !options.disable ? (
+    <ToolBarMenu icon={icon} {...props} />
+  ) : null;
 };

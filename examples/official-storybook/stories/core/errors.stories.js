@@ -1,19 +1,44 @@
+import React, { Fragment } from 'react';
+
+const badOutput = { renderable: 'no, react can not render objects' };
+const BadComponent = () => badOutput;
+
 export default {
-  title: 'Core|Errors',
+  title: 'Core/Errors',
 };
 
-export const exception = () => {
-  throw new Error('error');
+export const Exception = () => {
+  throw new Error('storyFn threw an error! WHOOPS');
 };
-exception.title = 'story throws exception';
-exception.parameters = {
-  storyshots: { disable: true },
-  chromatic: { disable: true },
+Exception.story = {
+  name: 'story throws exception',
+  parameters: {
+    storyshots: { disable: true },
+    chromatic: { disable: true },
+  },
 };
 
-export const errors = () => null;
-errors.title = 'story errors';
-errors.parameters = {
-  notes: 'Story does not return something react can render',
-  storyshots: { disable: true },
+export const badComponent = () => (
+  <Fragment>
+    <div>Hello world</div>
+    <BadComponent />
+  </Fragment>
+);
+badComponent.story = {
+  name: 'story errors - invariant error',
+  parameters: {
+    notes: 'Story does not return something react can render',
+    storyshots: { disable: true },
+    chromatic: { disable: true },
+  },
+};
+
+export const BadStory = () => badOutput;
+BadStory.story = {
+  name: 'story errors - story un-renderable type',
+  parameters: {
+    notes: 'Story does not return something react can render',
+    storyshots: { disable: true },
+    chromatic: { disable: true },
+  },
 };

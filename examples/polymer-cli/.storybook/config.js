@@ -4,15 +4,8 @@ import { withA11y } from '@storybook/addon-a11y';
 addDecorator(withA11y);
 addParameters({
   options: {
-    hierarchyRootSeparator: /\|/,
+    showRoots: true,
   },
 });
 
-function loadStories() {
-  require('../src/stories/index.stories');
-
-  const req = require.context('../src/stories', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
-}
-
-configure(loadStories, module);
+configure(require.context('../src/stories', true, /\.stories\.js$/), module);

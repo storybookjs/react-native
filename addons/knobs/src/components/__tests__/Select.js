@@ -24,6 +24,21 @@ describe('Select', () => {
       expect(green.text()).toEqual('Green');
       expect(green.prop('value')).toEqual('Green');
     });
+
+    it('should set the default value for array-values correctly', () => {
+      knob = {
+        name: 'Array values',
+        options: {
+          '100 x 100': [100, 100],
+          '200 x 200': [200, 200],
+        },
+        value: [200, 200],
+      };
+
+      const wrapper = shallow(<SelectType knob={knob} />);
+      const value = wrapper.prop('value');
+      expect(value).toEqual('200 x 200');
+    });
   });
 
   describe('Array values', () => {

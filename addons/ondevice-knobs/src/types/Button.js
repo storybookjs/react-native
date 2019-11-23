@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import styled from '@emotion/native';
+
+const Label = styled.Text(({ theme }) => ({
+  fontSize: 17,
+  color: theme.labelColor,
+}));
 
 const ButtonType = ({ knob, onPress }) => (
   <TouchableOpacity style={{ margin: 10 }} onPress={() => onPress(knob)}>
-    <Text style={{ fontSize: 17, color: '#007aff' }}>{knob.name}</Text>
+    <Label>{knob.name}</Label>
   </TouchableOpacity>
 );
 

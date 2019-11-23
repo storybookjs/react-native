@@ -3,9 +3,9 @@
 Storybook Info Addon will show additional information for your stories in [Storybook](https://storybook.js.org).
 Useful when you want to display usage or other types of documentation alongside your story.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/info/docs/home-screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/info/docs/home-screenshot.png)
 
 ## Installation
 
@@ -23,7 +23,11 @@ It is possible to add `info` by default to all or a subsection of stories by usi
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
 ```js
-addDecorator(withInfo); // Globally in your .storybook/config.js.
+// Globally in your .storybook/config.js.
+import { addDecorator } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+
+addDecorator(withInfo); 
 ```
 
 or
@@ -35,7 +39,7 @@ storiesOf('Component', module)
 ```
 
 Then, you can use the `info` parameter to either pass certain options or specific documentation text to your stories.
-A complete list of possible configurations can be found at [in a later section](#setting-global-options).
+A complete list of possible configurations can be found [in a later section](#setting-global-options).
 This can be done per book of stories:
 
 ```js
@@ -198,7 +202,7 @@ In order, all of them will be combined together, with a later call overriding th
   propTablesExclude: Array<React.ComponentType>,
   /**
    * Overrides styles of addon. The object should follow this shape:
-   * https://github.com/storybooks/storybook/blob/master/addons/info/src/components/Story.js#L19.
+   * https://github.com/storybookjs/storybook/blob/master/addons/info/src/components/Story.js#L19.
    * This prop can also accept a function which has the default stylesheet passed as an argument
    */
   styles: Object | Function,

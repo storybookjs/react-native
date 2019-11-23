@@ -37,7 +37,7 @@ type Patch = Partial<State>;
 type InputFnPatch = (s: State) => Patch;
 type InputPatch = Patch | InputFnPatch;
 
-interface Options {
+export interface Options {
   persistence: 'none' | 'session' | string;
 }
 type CallBack = (s: State) => void;
@@ -91,7 +91,7 @@ export default class Store {
     // What did the patch actually return
     let delta: Patch = {};
     if (typeof inputPatch === 'function') {
-      // Pass the same function, but just set delta on the way
+      // Pass the same function, but set delta on the way
       patch = (state: State) => {
         const getDelta = inputPatch as InputFnPatch;
         delta = getDelta(state);

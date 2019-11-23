@@ -1,0 +1,23 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { linkTo } from '@storybook/addon-links';
+import Welcome from './Welcome.vue';
+
+<Meta title="Welcome" component={Welcome} />
+
+# Welcome
+
+This is a test document written in MDX that defines a `Welcome` story wrapped in a `Preview` doc block:
+
+<Preview withToolbar>
+  <Story name="to Storybook">
+    {{
+      components: {
+        Welcome,
+      },
+      template: '<welcome :showApp="action" />',
+      methods: {
+        action: linkTo('Button'),
+      },
+    }}
+  </Story>
+</Preview>

@@ -15,7 +15,7 @@ addDecorator((s, { kind }) =>
 );
 
 export default {
-  title: 'Core|Decorators',
+  title: 'Core/Decorators',
   decorators: [
     s => (
       <>
@@ -26,8 +26,8 @@ export default {
   ],
 };
 
-export const all = () => <p>Story</p>;
-all.parameters = {
+export const All = () => <p>Story</p>;
+All.story = {
   decorators: [
     s => (
       <>
@@ -36,4 +36,18 @@ all.parameters = {
       </>
     ),
   ],
+};
+
+export const Deprecated = () => <p>Story</p>;
+Deprecated.story = {
+  parameters: {
+    decorators: [
+      s => (
+        <>
+          <p>Deprecated Local Decorator</p>
+          {s()}
+        </>
+      ),
+    ],
+  },
 };

@@ -13,7 +13,7 @@ const PropertyLabel = ({ property, required }) => {
   return (
     <span style={styles.hasProperty}>
       {property}
-      {required ? '' : '?'}:{' '}
+      {required ? '' : '?'}:&nbsp;
     </span>
   );
 };

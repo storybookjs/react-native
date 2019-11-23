@@ -1,22 +1,29 @@
 {
   "name": "@storybook/preact",
-  "version": "5.1.0-rc.3",
+  "version": "5.3.0-beta.5",
   "description": "Storybook for Preact: Develop Preact Component in isolation.",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/app/preact",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/app/preact",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "app/preact"
   },
   "license": "MIT",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
   "main": "dist/client/index.js",
-  "jsnext:main": "src/client/index.js",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -27,16 +34,19 @@
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@storybook/core": "5.1.0-rc.3",
-    "common-tags": "^1.8.0",
+    "@storybook/addons": "5.3.0-beta.5",
+    "@storybook/core": "5.3.0-beta.5",
+    "@types/webpack-env": "^1.13.9",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "regenerator-runtime": "^0.12.1"
+    "regenerator-runtime": "^0.13.3",
+    "ts-dedent": "^1.1.0"
   },
   "devDependencies": {
     "preact": "^8.4.2"
   },
   "peerDependencies": {
+    "@babel/core": "7.0.1",
     "babel-loader": "^7.0.0 || ^8.0.0",
     "preact": "^8.4.2"
   },

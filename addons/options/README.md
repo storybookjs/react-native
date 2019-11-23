@@ -11,9 +11,9 @@ See the [migration docs](../../MIGRATION.md#options-addon-deprecated) for what's
 
 The Options addon can be used to (re-)configure the [Storybook](https://storybook.js.org) UI at runtime.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/options/docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/options/docs/screenshot.png)
 
 ## Getting Started
 
@@ -75,23 +75,10 @@ addParameters({
      */
     addonPanelInRight: false,
     /**
-     * regex for finding the hierarchy separator
-     * @example:
-     *   null - turn off hierarchy
-     *   /\// - split by `/`
-     *   /\./ - split by `.`
-     *   /\/|\./ - split by `/` or `.`
-     * @type {Regex}
+     * display the top-level grouping as a "root" in the sidebar
+     * @type {Boolean}
      */
-    hierarchySeparator: null,
-    /**
-     * regex for finding the hierarchy root separator
-     * @example:
-     *   null - turn off multiple hierarchy roots
-     *   /\|/ - split by `|`
-     * @type {Regex}
-     */
-    hierarchyRootSeparator: null,
+    showRoots: null,
     /**
      * sidebar tree animations
      * @type {Boolean}

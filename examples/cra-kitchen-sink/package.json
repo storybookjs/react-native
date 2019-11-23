@@ -1,12 +1,11 @@
 {
   "name": "cra-kitchen-sink",
-  "version": "5.1.0-rc.3",
+  "version": "5.3.0-beta.5",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public",
     "eject": "react-scripts eject",
-    "now-build": "node ../../scripts/bootstrap --core && yarn run build-storybook --quiet",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9010 -s public",
     "test": "react-scripts test --env=jsdom"
@@ -14,27 +13,28 @@
   "dependencies": {
     "global": "^4.3.2",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-lifecycles-compat": "^3.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.1.0-rc.3",
-    "@storybook/addon-actions": "5.1.0-rc.3",
-    "@storybook/addon-backgrounds": "5.1.0-rc.3",
-    "@storybook/addon-centered": "5.1.0-rc.3",
-    "@storybook/addon-events": "5.1.0-rc.3",
-    "@storybook/addon-info": "5.1.0-rc.3",
-    "@storybook/addon-jest": "5.1.0-rc.3",
-    "@storybook/addon-knobs": "5.1.0-rc.3",
-    "@storybook/addon-links": "5.1.0-rc.3",
-    "@storybook/addon-notes": "5.1.0-rc.3",
-    "@storybook/addon-options": "5.1.0-rc.3",
-    "@storybook/addon-storyshots": "5.1.0-rc.3",
-    "@storybook/addons": "5.1.0-rc.3",
-    "@storybook/client-logger": "5.1.0-rc.3",
-    "@storybook/react": "5.1.0-rc.3",
-    "@storybook/theming": "5.1.0-rc.3",
-    "react-scripts": "^2.1.8"
+    "@storybook/addon-a11y": "5.3.0-beta.5",
+    "@storybook/addon-actions": "5.3.0-beta.5",
+    "@storybook/addon-backgrounds": "5.3.0-beta.5",
+    "@storybook/addon-centered": "5.3.0-beta.5",
+    "@storybook/addon-docs": "5.3.0-beta.5",
+    "@storybook/addon-events": "5.3.0-beta.5",
+    "@storybook/addon-info": "5.3.0-beta.5",
+    "@storybook/addon-jest": "5.3.0-beta.5",
+    "@storybook/addon-knobs": "5.3.0-beta.5",
+    "@storybook/addon-links": "5.3.0-beta.5",
+    "@storybook/addon-notes": "5.3.0-beta.5",
+    "@storybook/addon-options": "5.3.0-beta.5",
+    "@storybook/addon-storyshots": "5.3.0-beta.5",
+    "@storybook/addons": "5.3.0-beta.5",
+    "@storybook/client-logger": "5.3.0-beta.5",
+    "@storybook/react": "5.3.0-beta.5",
+    "@storybook/theming": "5.3.0-beta.5",
+    "react-scripts": "^3.0.1"
   }
 }

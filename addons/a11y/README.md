@@ -2,9 +2,9 @@
 
 This storybook addon can be helpful to make your UI components more accessible.
 
-[Framework Support](https://github.com/storybooks/storybook/blob/master/ADDONS_SUPPORT.md)
+[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-![Screenshot](https://raw.githubusercontent.com/storybooks/storybook/HEAD/addons/a11y/docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/a11y/docs/screenshot.png)
 
 ## Getting started
 
@@ -45,7 +45,7 @@ storiesOf('button', module)
 ```
 
 For more customizability. Use the `addParameters` function to configure [aXe options](https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#api-name-axeconfigure).
-You can override these options at story level too.
+You can override these options [at story level too](https://storybook.js.org/docs/configurations/options-parameter/#per-story-options).
 
 ```js
 import React from 'react';
@@ -56,7 +56,6 @@ import { withA11y } from '@storybook/addon-a11y';
 addDecorator(withA11y)
 addParameters({
   a11y: {
-    // ... axe options
     element: '#root', // optional selector which element to inspect
     config: {}, // axe-core configurationOptions (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#parameters-1)
     options: {} // axe-core optionsParameter (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#options-parameter)
@@ -78,7 +77,7 @@ storiesOf('button', module)
 
 ## Roadmap
 
-* Make UI accessibile
+* Make UI accessible
 * Show in story where violations are.
 * Add more example tests
 * Add tests

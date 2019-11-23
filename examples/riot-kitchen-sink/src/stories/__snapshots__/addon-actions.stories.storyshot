@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Actions Action only 1`] = `
+exports[`Storyshots Addon/Actions Action only 1`] = `
 <div
   data-is="my-button"
   id="root"
@@ -14,7 +14,7 @@ exports[`Storyshots Addon|Actions Action only 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Actions Multiple actions 1`] = `
+exports[`Storyshots Addon/Actions Multiple actions 1`] = `
 <div
   data-is="my-button"
   id="root"

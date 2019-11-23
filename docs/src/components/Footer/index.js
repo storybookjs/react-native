@@ -17,10 +17,10 @@ const Footer = () => (
               target="_blank"
               rel="noreferrer noopener"
             >
-              <img src={slackIcon} alt="Storybook Slack" />
+              <img src={slackIcon} alt="Storybook Slack" style={{ padding: '7px' }} />
             </a>
             <a
-              href="https://github.com/storybooks/storybook"
+              href="https://github.com/storybookjs/storybook"
               target="_blank"
               rel="noreferrer noopener"
             >

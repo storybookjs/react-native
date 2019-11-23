@@ -40,7 +40,7 @@ initStoryshots({
         done();
       }, TIMEOUT);
     } else {
-      // If not async just mark the test as done
+      // If not async, mark the test as done
       done();
     }
   },

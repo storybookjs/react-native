@@ -1,31 +1,37 @@
 {
   "name": "@storybook/node-logger",
-  "version": "5.1.0-rc.3",
+  "version": "5.3.0-beta.5",
   "description": "",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybooks/storybook/tree/master/lib/node-logger",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/node-logger",
   "bugs": {
-    "url": "https://github.com/storybooks/storybook/issues"
+    "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybooks/storybook.git",
+    "url": "https://github.com/storybookjs/storybook.git",
     "directory": "lib/node-logger"
   },
   "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^3.0.0",
     "core-js": "^3.0.1",
     "npmlog": "^4.1.2",
     "pretty-hrtime": "^1.0.3",
-    "regenerator-runtime": "^0.12.1"
+    "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
     "@types/npmlog": "^4.1.1",

@@ -3,13 +3,12 @@ import { ScrollView } from 'react-native';
 import styled from '@emotion/native';
 import { Collection } from '@storybook/addons';
 import Button from '../navigation/button';
-import { EmotionProps } from '../../Shared/theme';
 
-const Container = styled.View`
-  flex-direction: row;
-  border-bottom-width: 1;
-  border-bottom-color: ${(props: EmotionProps) => props.theme.borderColor};
-`;
+const Container = styled.View(({ theme }) => ({
+  flexDirection: 'row',
+  borderBottomWidth: 1,
+  borderBottomColor: theme.borderColor,
+}));
 
 export interface Props {
   panels: Collection;

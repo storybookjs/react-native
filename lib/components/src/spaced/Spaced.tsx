@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 
 const toNumber = (input: any) => (typeof input === 'number' ? input : Number(input));
 
-interface ContainerProps {
+export interface ContainerProps {
   col?: number;
   row?: number;
   outer?: number;
@@ -58,11 +58,11 @@ export interface SpacedProps {
   outer?: number | boolean;
 }
 
-export const Spaced: FunctionComponent<SpacedProps> = ({ col, row, outer, children }) => {
+export const Spaced: FunctionComponent<SpacedProps> = ({ col, row, outer, children, ...rest }) => {
   const outerAmount = toNumber(typeof outer === 'number' || !outer ? outer : col || row);
 
   return (
-    <Container col={col} row={row} outer={outerAmount}>
+    <Container col={col} row={row} outer={outerAmount} {...rest}>
       {children}
     </Container>
   );

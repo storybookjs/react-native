@@ -1,21 +1,21 @@
 import React, { PureComponent } from 'react';
+import { SafeAreaView } from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
 import AddonsList from './list';
 import AddonWrapper from './wrapper';
 import { Label } from '../../Shared/text';
-import { EmotionProps } from '../../Shared/theme';
 
-const NoAddonContainer = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`;
+const NoAddonContainer = styled.View({
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+});
 
-const Container = styled.View`
-  flex: 1;
-  background: ${(props: EmotionProps) => props.theme.backgroundColor};
-`;
+const Container = styled.View(({ theme }) => ({
+  flex: 1,
+  backgroundColor: theme.backgroundColor,
+}));
 
 export default class Addons extends PureComponent<{}, { addonSelected: string }> {
   panels = addons.getElements('panel');
@@ -37,20 +37,24 @@ export default class Addons extends PureComponent<{}, { addonSelected: string }>
 
     if (Object.keys(this.panels).length === 0) {
       return (
-        <NoAddonContainer>
-          <Label>No addons loaded.</Label>
-        </NoAddonContainer>
+        <SafeAreaView style={{ flex: 1 }}>
+          <NoAddonContainer>
+            <Label>No addons loaded.</Label>
+          </NoAddonContainer>
+        </SafeAreaView>
       );
     }
 
     return (
       <Container>
-        <AddonsList
-          onPressAddon={this.onPressAddon}
-          panels={this.panels}
-          addonSelected={addonSelected}
-        />
-        <AddonWrapper addonSelected={addonSelected} panels={this.panels} />
+        <SafeAreaView style={{ flex: 1 }}>
+          <AddonsList
+            onPressAddon={this.onPressAddon}
+            panels={this.panels}
+            addonSelected={addonSelected}
+          />
+          <AddonWrapper addonSelected={addonSelected} panels={this.panels} />
+        </SafeAreaView>
       </Container>
     );
   }

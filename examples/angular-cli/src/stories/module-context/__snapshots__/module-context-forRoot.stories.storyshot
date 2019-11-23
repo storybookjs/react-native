@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Custom/Feature Module as Context with forRoot Component with default providers 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <storybook-chip
+    _nghost-a-c7=""
+    style="background-color: rgb(238, 238, 238);"
+  >
+    <span
+      _ngcontent-a-c7=""
+      class="text"
+    >
+      My Chíp
+    </span>
+    <div
+      _ngcontent-a-c7=""
+      class="remove"
+    >
+      <span
+        _ngcontent-a-c7=""
+        class="x"
+      >
+        ✕
+      </span>
+    </div>
+  </storybook-chip>
+</storybook-dynamic-app-root>
+`;
+
+exports[`Storyshots Custom/Feature Module as Context with forRoot Component with overridden provider 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <storybook-chip
+    _nghost-a-c8=""
+    style="background-color: rgb(238, 238, 238);"
+  >
+    <span
+      _ngcontent-a-c8=""
+      class="text"
+    >
+      My Chíp
+    </span>
+    <div
+      _ngcontent-a-c8=""
+      class="remove"
+    >
+      <span
+        _ngcontent-a-c8=""
+        class="x"
+      >
+        ✕
+      </span>
+    </div>
+  </storybook-chip>
+</storybook-dynamic-app-root>
+`;
+
+exports[`Storyshots Custom/Feature Module as Context with forRoot Component with self and dependencies declared in its feature module 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <storybook-chips-group
+    _nghost-a-c5=""
+  >
+    
+    <storybook-chip
+      _ngcontent-a-c5=""
+      _nghost-a-c6=""
+      class="chip"
+      ng-reflect-display-text="Chip 1"
+      style="background-color: rgb(238, 238, 238);"
+    >
+      <span
+        _ngcontent-a-c6=""
+        class="text"
+      >
+        Chíp 1
+      </span>
+      <div
+        _ngcontent-a-c6=""
+        class="remove"
+      >
+        <span
+          _ngcontent-a-c6=""
+          class="x"
+        >
+          ✕
+        </span>
+      </div>
+    </storybook-chip>
+    <storybook-chip
+      _ngcontent-a-c5=""
+      _nghost-a-c6=""
+      class="chip"
+      ng-reflect-display-text="Chip 2"
+      style="background-color: rgb(238, 238, 238);"
+    >
+      <span
+        _ngcontent-a-c6=""
+        class="text"
+      >
+        Chíp 2
+      </span>
+      <div
+        _ngcontent-a-c6=""
+        class="remove"
+      >
+        <span
+          _ngcontent-a-c6=""
+          class="x"
+        >
+          ✕
+        </span>
+      </div>
+    </storybook-chip>
+    
+    <div
+      _ngcontent-a-c5=""
+      class="remove-all"
+    >
+       Remove All 
+    </div>
+  </storybook-chips-group>
+</storybook-dynamic-app-root>
+`;
