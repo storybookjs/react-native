@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import glob from 'glob';
+import { toRequireContext } from '@storybook/core/server';
 import { ClientApi } from './Loader';
 import { StoryshotsOptions } from '../api/StoryshotsOptions';
 
@@ -64,9 +64,16 @@ function getConfigPathParts(input: string): Output {
     if (main) {
       const { stories = [] } = require.requireActual(main);
 
-      const result = stories.reduce((acc: string[], i: string) => [...acc, ...glob.sync(i)], []);
-
-      output.stories = result;
+      output.stories = stories.map(
+        (pattern: string | { path: string; recursive: boolean; match: string }) => {
+          const { path: basePath, recursive, match } = toRequireContext(pattern);
+          return require.context(
+            path.resolve(configDir, basePath),
+            recursive,
+            new RegExp(match.slice(1, -1))
+          );
+        }
+      );
     }
 
     return output;
@@ -94,8 +101,7 @@ function configure(
   });
 
   if (stories && stories.length) {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    storybook.configure(() => stories.map(f => require(f)), false);
+    storybook.configure(stories, false);
   }
 }
 

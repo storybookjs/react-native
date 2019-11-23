@@ -196,6 +196,11 @@ initStoryshots({
 });
 ```
 
+### Specifying setup and tests timeout
+
+By default, `@storybook/addon-storyshots-puppeteer` uses 15 second timeouts for browser setup and test functions.
+Those can be customized with `setupTimeout` and `testTimeout` parameters.
+
 ### Integrate image storyshots with regular app
 
 You may want to use another Jest project to run your image snapshots as they require more resources: Chrome and Storybook built/served.
