@@ -9,10 +9,15 @@ export interface Context {
   };
 }
 
+interface Options {
+  context: Context;
+  url: string;
+}
+
 export interface CommonConfig {
   storybookUrl: string;
   chromeExecutablePath: string;
-  getGotoOptions: (options: { context: Context; url: string }) => DirectNavigationOptions;
+  getGotoOptions: (options: Options) => DirectNavigationOptions;
   customizePage: (page: Page) => Promise<void>;
   getCustomBrowser: () => Promise<Browser>;
   setupTimeout: number;
@@ -20,13 +25,15 @@ export interface CommonConfig {
 }
 
 export interface PuppeteerTestConfig extends CommonConfig {
-  testBody: (page: Page, options: { context: Context; url: string }) => void | Promise<void>;
+  testBody: ((page: Page, options: Options) => void | Promise<void>) & {
+    filter?: (options: Options) => boolean;
+  };
 }
 
 export interface ImageSnapshotConfig extends CommonConfig {
-  getMatchOptions: (options: { context: Context; url: string }) => MatchImageSnapshotOptions;
-  getScreenshotOptions: (options: { context: Context; url: string }) => Base64ScreenShotOptions;
-  beforeScreenshot: (page: Page, options: { context: Context; url: string }) => void;
+  getMatchOptions: (options: Options) => MatchImageSnapshotOptions;
+  getScreenshotOptions: (options: Options) => Base64ScreenShotOptions;
+  beforeScreenshot: (page: Page, options: Options) => void;
 }
 
 const noop: () => undefined = () => undefined;
@@ -42,15 +49,21 @@ export const defaultCommonConfig: CommonConfig = {
   testTimeout: 15000,
 };
 
+const getTestBody = (options: Options) => options.context.parameters.puppeteerTest;
+
+function defaultTestBody(page: Page, options: Options) {
+  const testBody = getTestBody(options);
+  if (testBody != null) {
+    return testBody(page, options);
+  }
+  return null;
+}
+
+defaultTestBody.filter = (options: Options) => getTestBody(options) != null;
+
 export const defaultPuppeteerTestConfig: PuppeteerTestConfig = {
   ...defaultCommonConfig,
-  testBody(page, options) {
-    const testBody = options.context.parameters.puppeteerTest;
-    if (testBody != null) {
-      return testBody(page, options);
-    }
-    return null;
-  },
+  testBody: defaultTestBody,
 };
 
 // We consider taking the full page is a reasonable default.

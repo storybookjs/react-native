@@ -28,7 +28,12 @@ export const puppeteerTest = (customConfig: Partial<PuppeteerTestConfig> = {}) =
 
       return;
     }
+
     const url = constructUrl(storybookUrl, kind, name);
+    const options = { context, url };
+    if (testBody.filter != null && !testBody.filter(options)) {
+      return;
+    }
 
     if (!browser || !page) {
       logger.error(
@@ -40,14 +45,14 @@ export const puppeteerTest = (customConfig: Partial<PuppeteerTestConfig> = {}) =
 
     try {
       await customizePage(page);
-      await page.goto(url, getGotoOptions({ context, url }));
+      await page.goto(url, getGotoOptions(options));
     } catch (e) {
       logger.error(
         `Error when connecting to ${url}, did you start or build the storybook first? A storybook instance should be running or a static version should be built when using puppeteer test feature.`
       );
       throw e;
     }
-    await testBody(page, { context, url });
+    await testBody(page, options);
   };
   testFn.timeout = testTimeout;
 
