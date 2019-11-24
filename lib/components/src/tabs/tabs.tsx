@@ -171,7 +171,7 @@ export const Tabs: FunctionComponent<TabsProps> = memo(
           </TabBar>
           {tools ? <Fragment>{tools}</Fragment> : null}
         </FlexBar>
-        <Content absolute={absolute}>
+        <Content absolute={absolute} tabIndex={0}>
           {list.map(({ id, active, render }) => render({ key: id, active }))}
         </Content>
       </Wrapper>
