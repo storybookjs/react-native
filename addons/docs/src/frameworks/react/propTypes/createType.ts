@@ -10,7 +10,10 @@ import {
   FUNCTION_CAPTION,
   ELEMENT_CAPTION,
   CUSTOM_CAPTION,
-} from './captions';
+  isHtmlTag,
+  generateObjectCode,
+  generateCode,
+} from '../lib';
 import {
   InspectionType,
   inspectValue,
@@ -18,8 +21,6 @@ import {
   InspectionObject,
   InspectionArray,
 } from '../lib/inspection';
-import { isHtmlTag } from '../lib/isHtmlTag';
-import { generateObjectCode, generateCode } from '../lib/generateCode';
 
 enum PropTypesType {
   CUSTOM = 'custom',

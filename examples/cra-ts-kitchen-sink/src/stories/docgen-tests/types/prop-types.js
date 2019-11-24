@@ -1,7 +1,6 @@
-/* eslint-disable react/default-props-match-prop-types */
-/* eslint-disable react/require-default-props */
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
+// @ts-ignore
 import PropTypes, { string, shape } from 'prop-types';
 import { PRESET_SHAPE, SOME_PROP_TYPES } from './ext';
 
@@ -34,6 +33,68 @@ class ClassComponent extends React.PureComponent {
 function concat(a, b) {
   return a + b;
 }
+
+const SOME_INLINE_PROP_TYPES = {
+  /**
+   * Hey Hey!
+   */
+  inlineString: PropTypes.string,
+  inlineBool: PropTypes.bool,
+  inlineNumber: PropTypes.number,
+  inlineObj: PropTypes.shape({
+    foo: PropTypes.string,
+  }),
+  inlineArray: PropTypes.arrayOf(PropTypes.number),
+  inlineFunctionalElement: PropTypes.element,
+  inlineFunctionalElementInline: PropTypes.element,
+  inlineFunctionalElementInlineReturningNull: PropTypes.element,
+  inlineHtmlElement: PropTypes.element,
+  inlineFunctionalElementInlineWithProps: PropTypes.element,
+  inlineFunctionalElementNamedInline: PropTypes.element,
+  inlineClassElement: PropTypes.element,
+  inlineClassElementWithProps: PropTypes.element,
+  inlineClassElementWithChildren: PropTypes.element,
+  inlineClassElementInline: PropTypes.element,
+  inlineFunc: PropTypes.func,
+};
+
+const SOME_INLINE_DEFAULT_PROPS = {
+  inlineString: 'Inline prop default value',
+  inlineBool: true,
+  inlineNumber: 10,
+  inlineObj: { foo: 'bar' },
+  inlineArray: [1, 2, 3],
+  inlineFunctionalElement: <FunctionalComponent />,
+  inlineFunctionalElementInline: () => {
+    return <div>Inlined FunctionnalComponent!</div>;
+  },
+  inlineFunctionalElementInlineReturningNull: () => {
+    return null;
+  },
+  inlineHtmlElement: <div>Hey!</div>,
+  // eslint-disable-next-line react/prop-types
+  inlineFunctionalElementInlineWithProps: ({ foo }) => {
+    return <div>{foo}</div>;
+  },
+  inlineFunctionalElementNamedInline: function InlinedFunctionalComponent() {
+    return <div>Inlined FunctionnalComponent!</div>;
+  },
+  inlineClassElement: <ClassComponent />,
+  inlineClassElementWithProps: <ClassComponent className="toto" />,
+  inlineClassElementWithChildren: (
+    <ClassComponent>
+      <div>hey!</div>
+    </ClassComponent>
+  ),
+  inlineClassElementInline: class InlinedClassComponent extends React.PureComponent {
+    render() {
+      return <div>Inlined ClassComponent!</div>;
+    }
+  },
+  inlineFunc: function add(a, b) {
+    return a + b;
+  },
+};
 
 export const PropTypesProps = () => <div>PropTypes!</div>;
 
@@ -285,6 +346,7 @@ PropTypesProps.propTypes = {
   requiredString: PropTypes.string.isRequired,
   nullDefaultValue: PropTypes.string,
   undefinedDefaultValue: PropTypes.string,
+  ...SOME_INLINE_PROP_TYPES,
   ...SOME_PROP_TYPES,
 };
 
@@ -386,4 +448,5 @@ PropTypesProps.defaultProps = {
   optionalString: 'Default String',
   nullDefaultValue: null,
   undefinedDefaultValue: undefined,
+  ...SOME_INLINE_DEFAULT_PROPS,
 };

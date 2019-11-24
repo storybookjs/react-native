@@ -1,12 +1,6 @@
 import { isNil } from 'lodash';
-// @ts-ignore
 import { PropDefaultValue } from '@storybook/components';
-import {
-  OBJECT_CAPTION,
-  FUNCTION_CAPTION,
-  ELEMENT_CAPTION,
-  ARRAY_CAPTION,
-} from '../propTypes/captions';
+import { FUNCTION_CAPTION, ELEMENT_CAPTION } from '../captions';
 import {
   InspectionFunction,
   InspectionResult,
@@ -14,40 +8,13 @@ import {
   InspectionElement,
   InspectionIdentifiableInferedType,
   inspectValue,
-  InspectionArray,
-} from './inspection';
-import { isHtmlTag } from './isHtmlTag';
-import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../lib';
-import { generateObjectCode, generateCode, generateArrayCode } from './generateCode';
-
-function getPrettyIdentifier(inferedType: InspectionIdentifiableInferedType): string {
-  const { type, identifier } = inferedType;
-
-  switch (type) {
-    case InspectionType.FUNCTION:
-      return (inferedType as InspectionFunction).hasArguments
-        ? `${identifier}( ... )`
-        : `${identifier}()`;
-    case InspectionType.ELEMENT:
-      return `<${identifier} />`;
-    default:
-      return identifier;
-  }
-}
-
-function generateObject({ inferedType, ast }: InspectionResult): PropDefaultValue {
-  const { depth } = inferedType as InspectionArray;
-
-  if (depth === 1) {
-    const compactObject = generateObjectCode(ast, true);
-
-    if (!isTooLongForDefaultValueSummary(compactObject)) {
-      return createSummaryValue(compactObject);
-    }
-  }
-
-  return createSummaryValue(OBJECT_CAPTION, generateObjectCode(ast));
-}
+} from '../inspection';
+import { isHtmlTag } from '../isHtmlTag';
+import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../../lib';
+import { generateCode } from '../generateCode';
+import { generateObject } from './generateObject';
+import { generateArray } from './generateArray';
+import { getPrettyIdentifier } from './prettyIdentifier';
 
 function generateFunc({ inferedType, ast }: InspectionResult): PropDefaultValue {
   const { identifier } = inferedType as InspectionFunction;
@@ -91,20 +58,6 @@ function generateElement(
   return !isTooLongForDefaultValueSummary(defaultValue)
     ? createSummaryValue(defaultValue)
     : createSummaryValue(ELEMENT_CAPTION, defaultValue);
-}
-
-function generateArray({ inferedType, ast }: InspectionResult): PropDefaultValue {
-  const { depth } = inferedType as InspectionArray;
-
-  if (depth <= 2) {
-    const compactArray = generateArrayCode(ast, true);
-
-    if (!isTooLongForDefaultValueSummary(compactArray)) {
-      return createSummaryValue(compactArray);
-    }
-  }
-
-  return createSummaryValue(ARRAY_CAPTION, generateArrayCode(ast));
 }
 
 export function createDefaultValue(defaultValue: string): PropDefaultValue {

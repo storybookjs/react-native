@@ -40,7 +40,8 @@ export interface InspectionClass extends InspectionInferedType {
 export interface InspectionFunction extends InspectionInferedType {
   type: InspectionType.FUNCTION;
   identifier?: string;
-  hasArguments: boolean;
+  params: any[];
+  hasParams: boolean;
 }
 
 export interface InspectionElement extends InspectionInferedType {

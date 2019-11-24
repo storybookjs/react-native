@@ -129,7 +129,7 @@ describe('parse', () => {
 
       expect(inferedType.type).toBe(InspectionType.FUNCTION);
       expect(inferedType.identifier).toBeUndefined();
-      expect(inferedType.hasArguments).toBeFalsy();
+      expect(inferedType.hasParams).toBeFalsy();
       expect(result.ast).toBeDefined();
     });
 
@@ -139,7 +139,7 @@ describe('parse', () => {
 
       expect(inferedType.type).toBe(InspectionType.FUNCTION);
       expect(inferedType.identifier).toBeUndefined();
-      expect(inferedType.hasArguments).toBeTruthy();
+      expect(inferedType.hasParams).toBeTruthy();
       expect(result.ast).toBeDefined();
     });
 
@@ -149,7 +149,7 @@ describe('parse', () => {
 
       expect(inferedType.type).toBe(InspectionType.FUNCTION);
       expect(inferedType.identifier).toBe('concat');
-      expect(inferedType.hasArguments).toBeFalsy();
+      expect(inferedType.hasParams).toBeFalsy();
       expect(result.ast).toBeDefined();
     });
 
@@ -159,7 +159,7 @@ describe('parse', () => {
 
       expect(inferedType.type).toBe(InspectionType.FUNCTION);
       expect(inferedType.identifier).toBe('concat');
-      expect(inferedType.hasArguments).toBeTruthy();
+      expect(inferedType.hasParams).toBeTruthy();
       expect(result.ast).toBeDefined();
     });
 

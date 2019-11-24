@@ -91,7 +91,8 @@ function parseFunction(
 
   const inferedType: InspectionFunction | InspectionElement = {
     type: isJsx ? InspectionType.ELEMENT : InspectionType.FUNCTION,
-    hasArguments: funcNode.params.length !== 0,
+    params: funcNode.params,
+    hasParams: funcNode.params.length !== 0,
   };
 
   const identifierName = extractIdentifierName((funcNode as estree.FunctionExpression).id);

@@ -1,7 +1,7 @@
 import { isNil } from 'lodash';
 import { PropDef } from '@storybook/components';
 import { ExtractedProp } from '../../../lib/docgen';
-import { createDefaultValue } from '../lib/createDefaultValue';
+import { createDefaultValue } from '../lib/defaultValues';
 
 export function enhanceTypeScriptProp(extractedProp: ExtractedProp): PropDef {
   const { propDef } = extractedProp;
