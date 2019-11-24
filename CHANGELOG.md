@@ -1,4 +1,4 @@
-## 5.3.0-beta.5 (November 23, 2019)
+## 5.3.0-beta.6 (November 24, 2019)
 
 ### Features
 
@@ -11,11 +11,16 @@
 
 ### Maintenance
 
-* Addon-docs: base code to improve the props table for TS ([#8905](https://github.com/storybookjs/storybook/pull/8905))
+* Addon-docs: Base code to improve the props table for TS ([#8905](https://github.com/storybookjs/storybook/pull/8905))
+* Build: Fix now deploy ([#8929](https://github.com/storybookjs/storybook/pull/8929))
 
 ### Dependency Upgrades
 
 * Miscellaneous upgrades ([#8912](https://github.com/storybookjs/storybook/pull/8912))
+
+## 5.3.0-beta.5 (November 23, 2019)
+
+Failed npm publish
 
 ## 5.3.0-beta.4 (November 23, 2019)
 
