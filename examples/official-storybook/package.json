@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "build-storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true build-storybook -c ./",
-    "do-image-snapshots": "../../node_modules/.bin/jest --projects=./image-snapshots",
+    "do-storyshots-puppeteer": "../../node_modules/.bin/jest --projects=./storyshots-puppeteer",
     "generate-addon-jest-testresults": "jest --config=tests/addon-jest.config.json --json --outputFile=stories/addon-jest.testresults.json",
     "graphql": "node ./graphql-server/index.js",
-    "image-snapshots": "yarn run build-storybook && yarn run do-image-snapshots",
     "packtracker": "yarn storybook --smoke-test --quiet && cross-env PT_PROJECT_TOKEN=1af1d41b-d737-41d4-ac00-53c8f3913b53 packtracker-upload --stats=./node_modules/.cache/storybook/manager-stats.json",
-    "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ --no-dll"
+    "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 9011 -c ./ --no-dll",
+    "storyshots-puppeteer": "yarn run build-storybook && yarn run do-storyshots-puppeteer"
   },
   "devDependencies": {
     "@packtracker/webpack-plugin": "^2.0.1",
