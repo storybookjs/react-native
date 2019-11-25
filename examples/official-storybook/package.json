@@ -61,5 +61,8 @@
     "ts-loader": "^6.0.0",
     "uuid": "^3.3.2",
     "webpack": "^4.33.0"
+  },
+  "optionalDependencies": {
+    "puppeteer": "^2.0.0"
   }
 }
