@@ -38,6 +38,22 @@ const Expandable = styled.div<{}>(codeCommon, ({ theme }) => ({
   alignItems: 'center',
 }));
 
+const Detail = styled.div<{ width: string }>(({ theme, width }) => ({
+  width,
+  minWidth: '200px',
+  maxWidth: '800px',
+  padding: '15px',
+  // Dont remove the mono fontFamily here even if it seem useless, this is used by the browser to calculate the length of a "ch" unit.
+  fontFamily: theme.typography.fonts.mono,
+  fontSize: theme.typography.size.s2 - 1,
+  // Most custom stylesheet will reset the box-sizing to "border-box" and will break the tooltip.
+  boxSizing: 'content-box',
+
+  '& code': {
+    padding: '0 !important',
+  },
+}));
+
 const ArrowIcon = styled(Icons)({
   height: 10,
   width: 10,
@@ -45,16 +61,6 @@ const ArrowIcon = styled(Icons)({
   marginLeft: '4px',
   marginTop: `-${DIRTY_PADDING_TOP_IN_PX}px`,
 });
-
-const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme, width }) => ({
-  width,
-  minWidth: '200px',
-  maxWith: '800px',
-  padding: '15px',
-  // Dont remove the mono fontFamily here even if it seem useless, this is used by the browser to calculate the length of a "ch" unit.
-  fontFamily: theme.typography.fonts.mono,
-  fontSize: theme.typography.size.s2 - 1,
-}));
 
 const EmptyProp = () => {
   return <span>-</span>;
@@ -89,9 +95,11 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
         setIsOpen(isVisible);
       }}
       tooltip={
-        <StyledSyntaxHighlighter width={calculateDetailWidth(detail)} language="jsx" format={false}>
-          {detail}
-        </StyledSyntaxHighlighter>
+        <Detail width={calculateDetailWidth(detail)}>
+          <SyntaxHighlighter language="jsx" format={false}>
+            {detail}
+          </SyntaxHighlighter>
+        </Detail>
       }
     >
       <Expandable className="sbdocs-expandable">

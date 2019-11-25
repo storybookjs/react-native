@@ -3,19 +3,19 @@ import { Component } from '../../blocks/shared';
 
 export type PropsExtractor = (component: Component) => PropsTableProps | null;
 
-export interface DocgenBaseType {
+export interface DocgenType {
   name: string;
   description?: string;
-  require?: boolean;
+  required?: boolean;
 }
 
-export interface DocgenPropType extends DocgenBaseType {
+export interface DocgenPropType extends DocgenType {
   value?: any;
   raw?: string;
   computed?: boolean;
 }
 
-export interface DocgenFlowType extends DocgenBaseType {
+export interface DocgenFlowType extends DocgenType {
   type?: string;
   raw?: string;
   signature?: any;
@@ -23,9 +23,9 @@ export interface DocgenFlowType extends DocgenBaseType {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface DocgenTypeScriptType extends DocgenBaseType {}
+export interface DocgenTypeScriptType extends DocgenType {}
 
-export type DocgenType = DocgenPropType | DocgenFlowType | DocgenTypeScriptType;
+// export type DocgenType = DocgenPropType | DocgenFlowType | DocgenTypeScriptType;
 
 export interface DocgenPropDefaultValue {
   value: string;

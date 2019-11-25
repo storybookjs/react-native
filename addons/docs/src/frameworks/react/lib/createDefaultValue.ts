@@ -1,25 +1,32 @@
 import { isNil } from 'lodash';
 // @ts-ignore
 import { PropDefaultValue } from '@storybook/components';
-import { inspectValue } from '../inspection/inspectValue';
-import { OBJECT_CAPTION, FUNCTION_CAPTION, ELEMENT_CAPTION, ARRAY_CAPTION } from './captions';
+import {
+  OBJECT_CAPTION,
+  FUNCTION_CAPTION,
+  ELEMENT_CAPTION,
+  ARRAY_CAPTION,
+} from '../propTypes/captions';
 import { generateCode } from './generateCode';
 import {
   InspectionFunction,
   InspectionResult,
   InspectionType,
   InspectionElement,
-} from '../inspection/types';
+  InspectionIdentifiableInferedType,
+  inspectValue,
+} from './inspection';
 import { isHtmlTag } from './isHtmlTag';
 import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../lib';
 
-// TODO: Fix this any type.
-function getPrettyIdentifier(inferedType: any): string {
+function getPrettyIdentifier(inferedType: InspectionIdentifiableInferedType): string {
   const { type, identifier } = inferedType;
 
   switch (type) {
     case InspectionType.FUNCTION:
-      return inferedType.hasArguments ? `${identifier}( ... )` : `${identifier}()`;
+      return (inferedType as InspectionFunction).hasArguments
+        ? `${identifier}( ... )`
+        : `${identifier}()`;
     case InspectionType.ELEMENT:
       return `<${identifier} />`;
     default:
@@ -45,7 +52,10 @@ function generateFunc({ inferedType, ast }: InspectionResult): PropDefaultValue 
   const { identifier } = inferedType as InspectionFunction;
 
   if (!isNil(identifier)) {
-    return createSummaryValue(getPrettyIdentifier(inferedType), generateCode(ast));
+    return createSummaryValue(
+      getPrettyIdentifier(inferedType as InspectionIdentifiableInferedType),
+      generateCode(ast)
+    );
   }
 
   const prettyCaption = generateCode(ast, true);
@@ -66,7 +76,9 @@ function generateElement(
 
   if (!isNil(identifier)) {
     if (!isHtmlTag(identifier)) {
-      const prettyIdentifier = getPrettyIdentifier(inferedType);
+      const prettyIdentifier = getPrettyIdentifier(
+        inferedType as InspectionIdentifiableInferedType
+      );
 
       return createSummaryValue(
         prettyIdentifier,

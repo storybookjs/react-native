@@ -712,7 +712,7 @@ describe('enhancePropTypesProp', () => {
         docgenInfo: {
           ...createDocgenProp({
             name: 'prop',
-            type: { name: 'custom' },
+            type: { name: 'anything-is-fine' },
             defaultValue: { value: defaultValue },
           }),
         },
