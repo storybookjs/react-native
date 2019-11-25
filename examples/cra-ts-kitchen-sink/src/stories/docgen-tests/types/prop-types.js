@@ -45,6 +45,7 @@ const SOME_INLINE_PROP_TYPES = {
     foo: PropTypes.string,
   }),
   inlineArray: PropTypes.arrayOf(PropTypes.number),
+  inlineArrayOfObjects: PropTypes.arrayOf({ foo: PropTypes.string }),
   inlineFunctionalElement: PropTypes.element,
   inlineFunctionalElementInline: PropTypes.element,
   inlineFunctionalElementInlineReturningNull: PropTypes.element,
@@ -64,6 +65,13 @@ const SOME_INLINE_DEFAULT_PROPS = {
   inlineNumber: 10,
   inlineObj: { foo: 'bar' },
   inlineArray: [1, 2, 3],
+  inlineArrayOfObjects: [
+    { foo: 'bar' },
+    { foo: 'bar' },
+    { foo: 'bar' },
+    { foo: 'bar' },
+    { foo: 'bar' },
+  ],
   inlineFunctionalElement: <FunctionalComponent />,
   inlineFunctionalElementInline: () => {
     return <div>Inlined FunctionnalComponent!</div>;
@@ -370,7 +378,7 @@ PropTypesProps.defaultProps = {
   },
   symbol: Symbol('Default symbol'),
   node: <div>Hello!</div>,
-  functionalElement: <FunctionalComponent />,
+  functionalElement: <FunctionalComponent className="toto" />,
   functionalElementInline: () => {
     return <div>Inlined FunctionnalComponent!</div>;
   },

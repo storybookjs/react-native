@@ -13,6 +13,7 @@ const funcResolver: TypeResolver = (rawDefaultProp, { name, type }) => {
 
   const funcName = extractFunctionName(rawDefaultProp, name);
   if (!isNil(funcName)) {
+    // Try to display the name of the component. The body of the component is ommited since the code has been transpiled.
     if (isElement) {
       return createSummaryValue(getPrettyElementIdentifier(funcName));
     }

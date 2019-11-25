@@ -16,7 +16,7 @@ export function enhancePropTypesProp(extractedProp: ExtractedProp, rawDefaultPro
   }
 
   const { defaultValue } = extractedProp.docgenInfo;
-  if (!isNil(defaultValue)) {
+  if (!isNil(defaultValue) && !isNil(defaultValue.value)) {
     const newDefaultValue = createDefaultValue(defaultValue.value);
 
     if (!isNil(newDefaultValue)) {

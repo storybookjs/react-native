@@ -1,11 +1,13 @@
 import { PropDefaultValue, PropDef } from '@storybook/components';
-import { isNil, isPlainObject, isArray, isFunction } from 'lodash';
-import { createSummaryValue } from '../../../../lib';
+import { isNil, isPlainObject, isArray, isFunction, isString } from 'lodash';
+import reactElementToJSXString from 'react-element-to-jsx-string';
+import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../../lib';
 import { inspectValue, InspectionFunction } from '../inspection';
 import { generateObject } from './generateObject';
 import { generateArray } from './generateArray';
 import { getPrettyElementIdentifier, getPrettyFuncIdentifier } from './prettyIdentifier';
 import { OBJECT_CAPTION, FUNCTION_CAPTION, ELEMENT_CAPTION } from '../captions';
+import { isHtmlTag } from '../isHtmlTag';
 
 export type TypeResolver = (rawDefaultProp: any, propDef: PropDef) => PropDefaultValue;
 
@@ -35,16 +37,36 @@ const stringResolver: TypeResolver = rawDefaultProp => {
   return createSummaryValue(rawDefaultProp);
 };
 
-const objectResolver: TypeResolver = rawDefaultProp => {
-  // Try to display the name of the component. The body of the component is ommited since the code has been transpiled.
-  // The body of a React component object could be reconstructured from React metadata props on objects.
-  if (isReactElement(rawDefaultProp) && !isNil(rawDefaultProp.type)) {
-    const { displayName } = rawDefaultProp.type;
+function generateReactObject(rawDefaultProp: any) {
+  const { type } = rawDefaultProp;
+  const { displayName } = type;
 
-    // When the displayName is null, it indicate that it is an HTML element.
-    return !isNil(displayName)
-      ? createSummaryValue(getPrettyElementIdentifier(displayName))
-      : createSummaryValue(ELEMENT_CAPTION);
+  const jsx = reactElementToJSXString(rawDefaultProp);
+
+  if (!isNil(displayName)) {
+    const prettyIdentifier = getPrettyElementIdentifier(displayName);
+
+    return createSummaryValue(prettyIdentifier, prettyIdentifier !== jsx ? jsx : undefined);
+  }
+
+  if (isString(type)) {
+    // This is an HTML element.
+    if (isHtmlTag(type)) {
+      const jsxCompact = reactElementToJSXString(rawDefaultProp, { tabStop: 0 });
+      const jsxSummary = jsxCompact.replace(/\r?\n|\r/g, '');
+
+      if (!isTooLongForDefaultValueSummary(jsxSummary)) {
+        return createSummaryValue(jsxSummary);
+      }
+    }
+  }
+
+  return createSummaryValue(ELEMENT_CAPTION, jsx);
+}
+
+const objectResolver: TypeResolver = rawDefaultProp => {
+  if (isReactElement(rawDefaultProp) && !isNil(rawDefaultProp.type)) {
+    return generateReactObject(rawDefaultProp);
   }
 
   if (isPlainObject(rawDefaultProp)) {
@@ -66,6 +88,7 @@ const functionResolver: TypeResolver = (rawDefaultProp, propDef) => {
   let isElement = false;
   let inspectionResult;
 
+  // Try to display the name of the component. The body of the component is ommited since the code has been transpiled.
   if (isFunction(rawDefaultProp.render)) {
     isElement = true;
   } else if (!isNil(rawDefaultProp.prototype) && isFunction(rawDefaultProp.prototype.render)) {
@@ -135,7 +158,7 @@ export function createTypeResolvers(customResolvers: Partial<TypeResolvers> = {}
 // When react-docgen cannot provide a defaultValue we take it from the raw defaultProp.
 // It works fine for types that are not transpiled. For the types that are transpiled, we can only provide partial support.
 // This means that:
-//   - The detail will not be available.
+//   - The detail might not be available.
 //   - Identifiers might not be "prettified" for all the types.
 export function createDefaultValueFromRawDefaultProp(
   rawDefaultProp: any,
