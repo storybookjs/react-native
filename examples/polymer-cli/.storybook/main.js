@@ -14,7 +14,7 @@ module.exports = {
     '@storybook/addon-options/register',
     '@storybook/addon-a11y/register',
   ],
-  webpack: async ({ config }) => {
+  webpack: async config => {
     config.module.rules.push({
       test: [/\.stories\.js$/, /index\.js$/],
       loaders: [require.resolve('@storybook/source-loader')],
