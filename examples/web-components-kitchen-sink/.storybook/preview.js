@@ -22,9 +22,6 @@ addParameters({
       restoreScroll: true,
     },
   },
-  options: {
-    hierarchyRootSeparator: /\|/,
-  },
   docs: {
     iframeHeight: '200px',
   },
