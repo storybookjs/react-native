@@ -35,23 +35,27 @@ function extractIdentifierName(identifierNode: any) {
   return !isNil(identifierNode) ? identifierNode.name : null;
 }
 
-function calculateNodeDepth(node: estree.Expression): number {
-  let depth = 0;
+function filterAncestors(ancestors: estree.Node[]): estree.Node[] {
+  return ancestors.filter(x => x.type === 'ObjectExpression' || x.type === 'ArrayExpression');
+}
 
-  acornWalk.simple(
+function calculateNodeDepth(node: estree.Expression): number {
+  const depths: number[] = [];
+
+  acornWalk.ancestor(
     node,
     {
-      ObjectExpression() {
-        depth += 1;
+      ObjectExpression(_: any, ancestors: estree.Node[]) {
+        depths.push(filterAncestors(ancestors).length);
       },
-      ArrayExpression() {
-        depth += 1;
+      ArrayExpression(_: any, ancestors: estree.Node[]) {
+        depths.push(filterAncestors(ancestors).length);
       },
     },
     ACORN_WALK_VISITORS
   );
 
-  return depth;
+  return Math.max(...depths);
 }
 
 function parseIdentifier(identifierNode: estree.Identifier): ParsingResult<InspectionIdentifier> {
