@@ -18,15 +18,19 @@ function snapshotTest({ item, asyncJest, framework, testMethod, testMethodParams
             context,
             ...testMethodParams,
           })
-        )
+        ),
+      testMethod.timeout
     );
   } else {
-    it(name, () =>
-      testMethod({
-        story: item,
-        context,
-        ...testMethodParams,
-      })
+    it(
+      name,
+      () =>
+        testMethod({
+          story: item,
+          context,
+          ...testMethodParams,
+        }),
+      testMethod.timeout
     );
   }
 }

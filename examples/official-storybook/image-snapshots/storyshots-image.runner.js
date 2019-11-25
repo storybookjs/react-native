@@ -20,7 +20,7 @@ if (!fs.existsSync(pathToStorybookStatic)) {
 } else {
   initStoryshots({
     suite: 'Image snapshots',
-    storyKindRegex: /^Addons\|Storyshots/,
+    storyKindRegex: /^Addons\/Storyshots/,
     framework: 'react',
     configPath: path.join(__dirname, '..'),
     test: imageSnapshot({
