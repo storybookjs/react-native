@@ -112,6 +112,19 @@ describe('enhancePropTypesProp', () => {
           expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
         });
 
+        it('should not have a deep object as summary', () => {
+          const component = createTestComponent({
+            type: {
+              name: 'custom',
+              raw: '{\n  foo: { bar: PropTypes.string.isRequired,\n  }}',
+            },
+          });
+
+          const { type } = extractPropDef(component);
+
+          expect(type.summary).toBe('object');
+        });
+
         it('should use identifier of a React element when available', () => {
           const component = createTestComponent({
             type: {
@@ -301,6 +314,30 @@ describe('enhancePropTypesProp', () => {
       expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
     });
 
+    it('should not have a deep shape as summary', () => {
+      const component = createTestComponent({
+        type: {
+          name: 'shape',
+          value: {
+            bar: {
+              name: 'shape',
+              value: {
+                hey: {
+                  name: 'string',
+                  required: false,
+                },
+              },
+              required: false,
+            },
+          },
+        },
+      });
+
+      const { type } = extractPropDef(component);
+
+      expect(type.summary).toBe('object');
+    });
+
     it('should support enum of string', () => {
       const component = createTestComponent({
         type: {
@@ -354,6 +391,50 @@ describe('enhancePropTypesProp', () => {
         }`;
 
       expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+    });
+
+    it('should support short object in enum summary', () => {
+      const component = createTestComponent({
+        type: {
+          name: 'enum',
+          value: [
+            {
+              value: '{\n  text: PropTypes.string.isRequired,\n}',
+              computed: true,
+            },
+            {
+              value: '{\n  foo: PropTypes.string,\n}',
+              computed: true,
+            },
+          ],
+        },
+      });
+
+      const { type } = extractPropDef(component);
+
+      expect(type.summary).toBe('{ text: string } | { foo: string }');
+    });
+
+    it('should not have a deep object in an enum summary', () => {
+      const component = createTestComponent({
+        type: {
+          name: 'enum',
+          value: [
+            {
+              value: '{\n  text: { foo: PropTypes.string.isRequired,\n }\n}',
+              computed: true,
+            },
+            {
+              value: '{\n  foo: PropTypes.string,\n}',
+              computed: true,
+            },
+          ],
+        },
+      });
+
+      const { type } = extractPropDef(component);
+
+      expect(type.summary).toBe('object | object');
     });
 
     it('should support enum of element', () => {
@@ -519,6 +600,22 @@ describe('enhancePropTypesProp', () => {
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
       });
 
+      it('should not have deep object in summary', () => {
+        const component = createTestComponent({
+          type: {
+            name: 'objectOf',
+            value: {
+              name: 'custom',
+              raw: '{\n  foo: { bar: PropTypes.string,\n }\n}',
+            },
+          },
+        });
+
+        const { type } = extractPropDef(component);
+
+        expect(type.summary).toBe('objectOf(object)');
+      });
+
       it('should support objectOf short shape', () => {
         const component = createTestComponent({
           type: {
@@ -581,6 +678,33 @@ describe('enhancePropTypesProp', () => {
         })`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      });
+
+      it('should not have a deep shape in summary', () => {
+        const component = createTestComponent({
+          type: {
+            name: 'objectOf',
+            value: {
+              name: 'shape',
+              value: {
+                bar: {
+                  name: 'shape',
+                  value: {
+                    hey: {
+                      name: 'string',
+                      required: false,
+                    },
+                  },
+                  required: false,
+                },
+              },
+            },
+          },
+        });
+
+        const { type } = extractPropDef(component);
+
+        expect(type.summary).toBe('objectOf(object)');
       });
     });
 
@@ -683,6 +807,22 @@ describe('enhancePropTypesProp', () => {
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
       });
 
+      it('should not have deep object in summary', () => {
+        const component = createTestComponent({
+          type: {
+            name: 'arrayOf',
+            value: {
+              name: 'custom',
+              raw: '{\n  foo: { bar: PropTypes.string, }\n}',
+            },
+          },
+        });
+
+        const { type } = extractPropDef(component);
+
+        expect(type.summary).toBe('object[]');
+      });
+
       it('should support array of short shape', () => {
         const component = createTestComponent({
           type: {
@@ -745,6 +885,33 @@ describe('enhancePropTypesProp', () => {
         }]`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      });
+
+      it('should not have deep shape in summary', () => {
+        const component = createTestComponent({
+          type: {
+            name: 'arrayOf',
+            value: {
+              name: 'shape',
+              value: {
+                bar: {
+                  name: 'shape',
+                  value: {
+                    hey: {
+                      name: 'string',
+                      required: false,
+                    },
+                  },
+                  required: false,
+                },
+              },
+            },
+          },
+        });
+
+        const { type } = extractPropDef(component);
+
+        expect(type.summary).toBe('object[]');
       });
     });
   });
