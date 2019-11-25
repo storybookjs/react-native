@@ -1,3 +1,21 @@
+## 5.3.0-beta.7 (November 26, 2019)
+
+### Features
+
+* Storyshots-puppeteer: Add afterScreenshot handler ([#8092](https://github.com/storybookjs/storybook/pull/8092))
+
+### Bug Fixes
+
+* Core: Upgrade telejson to fix cross-origin frame error ([#8940](https://github.com/storybookjs/storybook/pull/8940))
+
+### Maintenance
+
+* Build: Fix image snapshots setup in official-storybook ([#8932](https://github.com/storybookjs/storybook/pull/8932))
+
+### Dependency Upgrades
+
+* Core: Add @babel/core peer dependency to  @storybook/core ([#8933](https://github.com/storybookjs/storybook/pull/8933))
+
 ## 5.3.0-beta.6 (November 24, 2019)
 
 ### Features

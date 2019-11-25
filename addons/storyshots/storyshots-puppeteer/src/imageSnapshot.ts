@@ -18,6 +18,7 @@ const defaultConfig: ImageSnapshotConfig = {
   getMatchOptions: noop,
   getScreenshotOptions: defaultScreenshotOptions,
   beforeScreenshot: noop,
+  afterScreenshot: noop,
   getGotoOptions: noop,
   customizePage: asyncNoop,
   getCustomBrowser: undefined,
@@ -32,6 +33,7 @@ export const imageSnapshot = (customConfig: Partial<ImageSnapshotConfig> = {}) =
     getMatchOptions,
     getScreenshotOptions,
     beforeScreenshot,
+    afterScreenshot,
     getGotoOptions,
     customizePage,
     getCustomBrowser,
@@ -70,6 +72,7 @@ export const imageSnapshot = (customConfig: Partial<ImageSnapshotConfig> = {}) =
       await page.goto(url, getGotoOptions({ context, url }));
       await beforeScreenshot(page, { context, url });
       image = await page.screenshot(getScreenshotOptions({ context, url }));
+      await afterScreenshot({ image, context });
     } catch (e) {
       logger.error(
         `Error when connecting to ${url}, did you start or build the storybook first? A storybook instance should be running or a static version should be built when using image snapshot feature.`
