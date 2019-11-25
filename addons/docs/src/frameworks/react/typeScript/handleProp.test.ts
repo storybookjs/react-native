@@ -86,6 +86,14 @@ describe('enhanceTypeScriptProp', () => {
       expect(defaultValue.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
     });
 
+    it('should not have deep object in summary', () => {
+      const component = createTestComponent("{ foo: 'foo', bar: { hey: 'ho' } }");
+
+      const { defaultValue } = extractPropDef(component);
+
+      expect(defaultValue.summary).toBe('object');
+    });
+
     it('should support short function', () => {
       const component = createTestComponent('() => {}');
 
@@ -218,6 +226,14 @@ describe('enhanceTypeScriptProp', () => {
         }]`;
 
       expect(defaultValue.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+    });
+
+    it('should not have deep array in summary', () => {
+      const component = createTestComponent('[[[1]]]');
+
+      const { defaultValue } = extractPropDef(component);
+
+      expect(defaultValue.summary).toBe('array');
     });
   });
 });
