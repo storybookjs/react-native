@@ -12,11 +12,11 @@ type TestMethod = 'beforeAll' | 'beforeEach' | 'afterEach' | 'afterAll';
 const methods: TestMethod[] = ['beforeAll', 'beforeEach', 'afterEach', 'afterAll'];
 
 function callTestMethodGlobals(
-  testMethod: { [key in TestMethod]?: Function } & { [key in string]: any }
+  testMethod: { [key in TestMethod]?: Function & { timeout?: number } } & { [key in string]: any }
 ) {
   methods.forEach(method => {
     if (typeof testMethod[method] === 'function') {
-      global[method](testMethod[method]);
+      global[method](testMethod[method], testMethod[method].timeout);
     }
   });
 }

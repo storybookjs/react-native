@@ -1,4 +1,4 @@
-import puppeteer, { Browser, Page } from 'puppeteer';
+import { Browser, Page } from 'puppeteer';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import { logger } from '@storybook/node-logger';
 import { constructUrl } from './url';
@@ -21,6 +21,8 @@ const defaultConfig: ImageSnapshotConfig = {
   getGotoOptions: noop,
   customizePage: asyncNoop,
   getCustomBrowser: undefined,
+  setupTimeout: 15000,
+  testTimeout: 15000,
 };
 
 export const imageSnapshot = (customConfig: Partial<ImageSnapshotConfig> = {}) => {
@@ -33,6 +35,8 @@ export const imageSnapshot = (customConfig: Partial<ImageSnapshotConfig> = {}) =
     getGotoOptions,
     customizePage,
     getCustomBrowser,
+    setupTimeout,
+    testTimeout,
   } = { ...defaultConfig, ...customConfig };
 
   let browser: Browser; // holds ref to browser. (ie. Chrome)
@@ -75,19 +79,22 @@ export const imageSnapshot = (customConfig: Partial<ImageSnapshotConfig> = {}) =
 
     expect(image).toMatchImageSnapshot(getMatchOptions({ context, url }));
   };
+  testFn.timeout = testTimeout;
 
-  testFn.afterAll = () => {
+  testFn.afterAll = async () => {
     if (getCustomBrowser && page) {
-      return page.close();
+      await page.close();
+    } else if (browser) {
+      await browser.close();
     }
-
-    return browser.close();
   };
 
-  testFn.beforeAll = async () => {
+  const beforeAll = async () => {
     if (getCustomBrowser) {
       browser = await getCustomBrowser();
     } else {
+      // eslint-disable-next-line global-require
+      const puppeteer = require('puppeteer');
       // add some options "no-sandbox" to make it work properly on some Linux systems as proposed here: https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322851507
       browser = await puppeteer.launch({
         args: ['--no-sandbox ', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
@@ -97,6 +104,8 @@ export const imageSnapshot = (customConfig: Partial<ImageSnapshotConfig> = {}) =
 
     page = await browser.newPage();
   };
+  beforeAll.timeout = setupTimeout;
+  testFn.beforeAll = beforeAll;
 
   return testFn;
 };

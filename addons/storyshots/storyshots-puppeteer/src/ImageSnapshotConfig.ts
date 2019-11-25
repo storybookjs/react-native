@@ -15,4 +15,6 @@ export interface ImageSnapshotConfig {
   getGotoOptions: (options: { context: Context; url: string }) => DirectNavigationOptions;
   customizePage: (page: Page) => Promise<void>;
   getCustomBrowser: () => Promise<Browser>;
+  setupTimeout: number;
+  testTimeout: number;
 }
