@@ -8,6 +8,10 @@ export function generateFuncSignature(
   const hasParams = !isNil(params);
   const hasReturns = !isNil(returns);
 
+  if (!hasParams && !hasReturns) {
+    return '';
+  }
+
   const funcParts = [];
 
   if (hasParams) {

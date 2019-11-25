@@ -1,7 +1,7 @@
 import { generateFuncSignature } from './generateFuncSignature';
 import { parseJsDoc } from '../../../lib/jsdocParser';
 
-it('should return an empty string with there is no @params and @returns tags', () => {
+it('should return an empty string when there is no @params and @returns tags', () => {
   const result = generateFuncSignature(null, null);
 
   expect(result).toBe('');

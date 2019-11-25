@@ -77,6 +77,10 @@ function cleanPropTypes(value: string): string {
   return value.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
 }
 
+function splitIntoLines(value: string): string[] {
+  return value.split(/\r?\n/);
+}
+
 function prettyObject(ast: any, compact = false): string {
   return cleanPropTypes(generateObjectCode(ast, compact));
 }
@@ -128,7 +132,7 @@ function generateTypeFromString(value: string, originalTypeName: string): TypeDe
       const { identifier } = inferedType as InspectionElement;
 
       short = !isNil(identifier) && !isHtmlTag(identifier) ? identifier : ELEMENT_CAPTION;
-      compact = value;
+      compact = splitIntoLines(value).length === 1 ? value : null;
       full = value;
       break;
     }

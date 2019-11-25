@@ -93,7 +93,7 @@ describe('enhancePropTypesProp', () => {
             type: {
               name: 'custom',
               raw:
-                '{\n  text: PropTypes.string.isRequired,\n  value: PropTypes.string.isRequired,\n}',
+                '{\n  text: PropTypes.string.isRequired,\n  value1: PropTypes.string.isRequired,\n  value2: PropTypes.string.isRequired,\n  value3: PropTypes.string.isRequired,\n  value4: PropTypes.string.isRequired,\n}',
             },
           });
 
@@ -103,7 +103,10 @@ describe('enhancePropTypesProp', () => {
 
           const expectedDetail = `{
             text: string,
-            value: string
+            value1: string,
+            value2: string,
+            value3: string,
+            value4: string
           }`;
 
           expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
@@ -133,7 +136,8 @@ describe('enhancePropTypesProp', () => {
           const component = createTestComponent({
             type: {
               name: 'custom',
-              raw: '<div>Hello world!</div>',
+              raw:
+                '<div>Hello world from Montreal, Quebec, Canada!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>',
             },
           });
 
@@ -141,7 +145,8 @@ describe('enhancePropTypesProp', () => {
 
           expect(type.summary).toBe('element');
 
-          const expectedDetail = '<div>Hello world!</div>';
+          const expectedDetail =
+            '<div>Hello world from Montreal, Quebec, Canada!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>';
 
           expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
         });
@@ -150,7 +155,7 @@ describe('enhancePropTypesProp', () => {
           const component = createTestComponent({
             type: {
               name: 'custom',
-              raw: '() => {\n  return <div>Inlined FunctionnalComponent!</div>;\n}',
+              raw: '() => {\n  return <div>Inlined FunctionalComponent!</div>;\n}',
             },
           });
 
@@ -159,23 +164,43 @@ describe('enhancePropTypesProp', () => {
           expect(type.summary).toBe('element');
 
           const expectedDetail = `() => {
-              return <div>Inlined FunctionnalComponent!</div>;
+              return <div>Inlined FunctionalComponent!</div>;
             }`;
 
           expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
         });
 
-        it('should return "custom" when it is not a known type', () => {
-          const component = createTestComponent({
-            type: {
-              name: 'custom',
-              raw: 'Symbol("Hey!")',
-            },
+        describe('when it is not a known type', () => {
+          it('should return "custom" when its a long type', () => {
+            const component = createTestComponent({
+              type: {
+                name: 'custom',
+                raw:
+                  'Symbol("A very very very very very very lonnnngggggggggggggggggggggggggggggggggggg symbol")',
+              },
+            });
+
+            const { type } = extractPropDef(component);
+
+            expect(type.summary).toBe('custom');
+            expect(type.detail).toBe(
+              'Symbol("A very very very very very very lonnnngggggggggggggggggggggggggggggggggggg symbol")'
+            );
           });
 
-          const { type } = extractPropDef(component);
+          it('should return "custom" when its a short type', () => {
+            const component = createTestComponent({
+              type: {
+                name: 'custom',
+                raw: 'Symbol("Hey!")',
+              },
+            });
 
-          expect(type.summary).toBe('custom');
+            const { type } = extractPropDef(component);
+
+            expect(type.summary).toBe('Symbol("Hey!")');
+            expect(type.detail).toBeUndefined();
+          });
         });
       });
 
@@ -254,6 +279,10 @@ describe('enhancePropTypesProp', () => {
               name: 'string',
               required: false,
             },
+            anotherAnother: {
+              name: 'string',
+              required: false,
+            },
           },
         },
       });
@@ -265,7 +294,8 @@ describe('enhancePropTypesProp', () => {
       const expectedDetail = `{
         foo: string,
         bar: string,
-        another: string
+        another: string,
+        anotherAnother: string
       }`;
 
       expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
@@ -470,7 +500,7 @@ describe('enhancePropTypesProp', () => {
             value: {
               name: 'custom',
               raw:
-                '{\n  foo: PropTypes.string,\n  bar: PropTypes.string,\n  another: PropTypes.string,\n}',
+                '{\n  foo: PropTypes.string,\n  bar: PropTypes.string,\n  another: PropTypes.string,\n  anotherAnother: PropTypes.string,\n}',
             },
           },
         });
@@ -482,7 +512,8 @@ describe('enhancePropTypesProp', () => {
         const expectedDetail = `objectOf({
           foo: string,
           bar: string,
-          another: string
+          another: string,
+          anotherAnother: string
         })`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
@@ -529,6 +560,10 @@ describe('enhancePropTypesProp', () => {
                   name: 'string',
                   required: false,
                 },
+                anotherAnother: {
+                  name: 'string',
+                  required: false,
+                },
               },
             },
           },
@@ -541,7 +576,8 @@ describe('enhancePropTypesProp', () => {
         const expectedDetail = `objectOf({
           foo: string,
           bar: string,
-          another: string
+          another: string,
+          anotherAnother: string
         })`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
@@ -628,7 +664,7 @@ describe('enhancePropTypesProp', () => {
             value: {
               name: 'custom',
               raw:
-                '{\n  text: PropTypes.string.isRequired,\n  value: PropTypes.string.isRequired,\n}',
+                '{\n  text: PropTypes.string.isRequired,\n  value: PropTypes.string.isRequired,\n  another: PropTypes.string.isRequired,\n  anotherAnother: PropTypes.string.isRequired,\n}',
             },
           },
         });
@@ -639,7 +675,9 @@ describe('enhancePropTypesProp', () => {
 
         const expectedDetail = `[{
           text: string,
-          value: string
+          value: string,
+          another: string,
+          anotherAnother: string
         }]`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
@@ -686,6 +724,10 @@ describe('enhancePropTypesProp', () => {
                   name: 'string',
                   required: false,
                 },
+                anotherAnother: {
+                  name: 'string',
+                  required: false,
+                },
               },
             },
           },
@@ -698,7 +740,8 @@ describe('enhancePropTypesProp', () => {
         const expectedDetail = `[{
           foo: string,
           bar: string,
-          another: string
+          another: string,
+          anotherAnother: string
         }]`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
