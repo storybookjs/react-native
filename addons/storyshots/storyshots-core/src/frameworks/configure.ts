@@ -1,8 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import { toRequireContext } from '@storybook/core/server';
+import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
+import global from 'global';
 import { ClientApi } from './Loader';
 import { StoryshotsOptions } from '../api/StoryshotsOptions';
+
+registerRequireContextHook();
 
 const isFile = (file: string): boolean => {
   try {
@@ -67,8 +71,10 @@ function getConfigPathParts(input: string): Output {
       output.stories = stories.map(
         (pattern: string | { path: string; recursive: boolean; match: string }) => {
           const { path: basePath, recursive, match } = toRequireContext(pattern);
-          return require.context(
-            path.resolve(configDir, basePath),
+          // eslint-disable-next-line no-underscore-dangle
+          return global.__requireContext(
+            configDir,
+            basePath,
             recursive,
             new RegExp(match.slice(1, -1))
           );
