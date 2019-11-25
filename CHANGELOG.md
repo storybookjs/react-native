@@ -1,4 +1,22 @@
-## 5.3.0-beta.5 (November 23, 2019)
+## 5.3.0-beta.7 (November 26, 2019)
+
+### Features
+
+* Storyshots-puppeteer: Add afterScreenshot handler ([#8092](https://github.com/storybookjs/storybook/pull/8092))
+
+### Bug Fixes
+
+* Core: Upgrade telejson to fix cross-origin frame error ([#8940](https://github.com/storybookjs/storybook/pull/8940))
+
+### Maintenance
+
+* Build: Fix image snapshots setup in official-storybook ([#8932](https://github.com/storybookjs/storybook/pull/8932))
+
+### Dependency Upgrades
+
+* Core: Add @babel/core peer dependency to  @storybook/core ([#8933](https://github.com/storybookjs/storybook/pull/8933))
+
+## 5.3.0-beta.6 (November 24, 2019)
 
 ### Features
 
@@ -11,11 +29,16 @@
 
 ### Maintenance
 
-* Addon-docs: base code to improve the props table for TS ([#8905](https://github.com/storybookjs/storybook/pull/8905))
+* Addon-docs: Base code to improve the props table for TS ([#8905](https://github.com/storybookjs/storybook/pull/8905))
+* Build: Fix now deploy ([#8929](https://github.com/storybookjs/storybook/pull/8929))
 
 ### Dependency Upgrades
 
 * Miscellaneous upgrades ([#8912](https://github.com/storybookjs/storybook/pull/8912))
+
+## 5.3.0-beta.5 (November 23, 2019)
+
+Failed npm publish
 
 ## 5.3.0-beta.4 (November 23, 2019)
 
