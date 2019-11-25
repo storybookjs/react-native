@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../src/stories/**/*.stories.js'],
+  stories: ['../src/stories/**/*.stories.*'],
   addons: [
     '@storybook/addon-storysource/register',
     '@storybook/addon-actions/register',
@@ -13,7 +13,7 @@ module.exports = {
     '@storybook/addon-options/register',
     '@storybook/addon-a11y/register',
   ],
-  webpack: ({ config }) => {
+  webpack: async config => {
     config.module.rules.push({
       test: [/\.stories\.js$/, /index\.js$/],
       loaders: [require.resolve('@storybook/source-loader')],
