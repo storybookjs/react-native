@@ -2,7 +2,7 @@ import { isNil } from 'lodash';
 import { PropType } from '@storybook/components';
 import { createSummaryValue, isTooLongForTypeSummary } from '../../../lib';
 import { ExtractedProp, DocgenPropType } from '../../../lib/docgen';
-import { generateFuncSignature } from './generateFuncSignature';
+import { generateFuncSignature, generateShortFuncSignature } from './generateFuncSignature';
 import {
   OBJECT_CAPTION,
   ARRAY_CAPTION,
@@ -179,7 +179,7 @@ function generateFunc(extractedProp: ExtractedProp): TypeDef {
     if (!isNil(jsDocTags.params) || !isNil(jsDocTags.returns)) {
       return createTypeDef({
         name: PropTypesType.FUNC,
-        short: FUNCTION_CAPTION,
+        short: generateShortFuncSignature(jsDocTags.params, jsDocTags.returns),
         compact: null,
         full: generateFuncSignature(jsDocTags.params, jsDocTags.returns),
       });

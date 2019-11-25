@@ -38,96 +38,28 @@ export function generateFuncSignature(
   return funcParts.join(' ');
 }
 
-// // TODO: Add tests
-// export function generateCompactFuncSignature(
-//   params: ExtractedJsDocParam[],
-//   returns: ExtractedJsDocReturns
-// ): string {
-//   const hasParams = !isNil(params);
-//   const hasReturns = !isNil(returns);
+export function generateShortFuncSignature(
+  params: ExtractedJsDocParam[],
+  returns: ExtractedJsDocReturns
+): string {
+  const hasParams = !isNil(params);
+  const hasReturns = !isNil(returns);
 
-//   const funcParts = [];
+  if (!hasParams && !hasReturns) {
+    return '';
+  }
 
-//   if (hasParams) {
-//     funcParts.push('( ... )');
-//   } else {
-//     funcParts.push('()');
-//   }
+  const funcParts = [];
 
-//   if (hasReturns) {
-//     funcParts.push(`=> ${returns.getTypeName()}`);
-//   }
+  if (hasParams) {
+    funcParts.push('( ... )');
+  } else {
+    funcParts.push('()');
+  }
 
-//   return funcParts.join(' ');
-// }
+  if (hasReturns) {
+    funcParts.push(`=> ${returns.getTypeName()}`);
+  }
 
-// TODO: Add tests
-// export function generateCompactFuncSignature(
-//   params: ExtractedJsDocParam[],
-//   returns: ExtractedJsDocReturns
-// ): string {
-//   const hasParams = !isNil(params);
-//   const hasReturns = !isNil(returns);
-
-//   const returnsPart = hasReturns ? ` => ${returns.getTypeName()}` : '';
-
-//   if (hasParams) {
-//     const paramsParts = [];
-//     // 2 is for '()'.
-//     let currentLength = 2 + returnsPart.length;
-
-//     for (let i = 0; i < params.length; i += 1) {
-//       const param = params[i].getPrettyName();
-//       const paramLength = param.length;
-
-//       if (currentLength + paramLength < MAX_EXPANDABLE_LENGTH) {
-//         paramsParts.push(param);
-//         // 2 is for ', '.
-//         currentLength += paramLength + 2;
-//       } else {
-//         paramsParts.push('...');
-//         break;
-//       }
-//     }
-
-//     return `(${paramsParts.join(', ')})${returnsPart}`;
-//   }
-
-//   return `()${returnsPart}`;
-// }
-
-// // TODO: Add tests
-// export function generateCompactFuncSignature(
-//   params: ExtractedJsDocParam[],
-//   returns: ExtractedJsDocReturns
-// ): string {
-//   const hasParams = !isNil(params);
-//   const hasReturns = !isNil(returns);
-
-//   const returnsPart = hasReturns ? ` => ${returns.getTypeName()}` : '';
-
-//   if (hasParams) {
-//     const paramsParts = [];
-//     // 2 is for '()'.
-//     let currentLength = 2 + returnsPart.length;
-
-//     for (let i = 0; i < params.length; i += 1) {
-//       const param = generateSignatureArg(params[i]);
-//       const paramLength = param.length;
-
-//       // if (currentLength + paramLength < MAX_TYPE_SUMMARY_LENGTH) {
-//       if (currentLength + paramLength < 70) {
-//         paramsParts.push(param);
-//         // 2 is for ', '.
-//         currentLength += paramLength + 2;
-//       } else {
-//         paramsParts.push('...');
-//         break;
-//       }
-//     }
-
-//     return `(${paramsParts.join(', ')})${returnsPart}`;
-//   }
-
-//   return `()${returnsPart}`;
-// }
+  return funcParts.join(' ');
+}
