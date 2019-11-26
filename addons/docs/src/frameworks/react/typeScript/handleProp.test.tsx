@@ -36,7 +36,9 @@ function createDocgenProp({
 
 // eslint-disable-next-line react/forbid-foreign-prop-types
 function createComponent({ propTypes = {}, defaultProps = {}, docgenInfo = {} }): Component {
-  const component = () => {};
+  const component = () => {
+    return <div>Hey!</div>;
+  };
   component.propTypes = propTypes;
   component.defaultProps = defaultProps;
 
