@@ -15,15 +15,6 @@ export interface Property {
   description?: string;
 }
 
-export interface Component {
-  name: string;
-  propertiesClass: Property[];
-  inputsClass: Property[];
-  outputsClass: Property[];
-  methodsClass: Method[];
-  rawdescription: string;
-}
-
 export interface Directive {
   name: string;
   propertiesClass: Property[];
@@ -32,6 +23,8 @@ export interface Directive {
   methodsClass: Method[];
   rawdescription: string;
 }
+
+export type Component = Directive;
 
 export interface Argument {
   name: string;
