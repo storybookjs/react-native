@@ -1,5 +1,5 @@
 import path from 'path';
-import initStoryshots, { multiSnapshotWithOptions, Stories2SnapsConverter } from '../src';
+import initStoryshots, { multiSnapshotWithOptions, Stories2SnapsConverter } from '../dist';
 
 class AnotherStories2SnapsConverter extends Stories2SnapsConverter {
   getSnapshotFileName(context) {
