@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin previews.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer, makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
+import { makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Preview, Story, Meta } from '@storybook/addon-docs/blocks';
@@ -74,6 +74,7 @@ const mdxStoryNameToId = { 'hello button': 'button--hello-button', two: 'button-
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
+  ...(componentMeta.parameters.docs || {}),
   page: () => (
     <AddContext mdxStoryNameToId={mdxStoryNameToId}>
       <MDXContent />

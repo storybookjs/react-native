@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin vanilla.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer, makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
+import { makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 
@@ -36,6 +36,7 @@ const mdxStoryNameToId = {};
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
+  ...(componentMeta.parameters.docs || {}),
   page: () => (
     <AddContext mdxStoryNameToId={mdxStoryNameToId}>
       <MDXContent />

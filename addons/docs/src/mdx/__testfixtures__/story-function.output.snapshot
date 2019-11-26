@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin story-function.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer, makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
+import { makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
 
 const makeShortcode = name =>
   function MDXDefaultShortcode(props) {
@@ -52,6 +52,7 @@ const mdxStoryNameToId = {};
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
+  ...(componentMeta.parameters.docs || {}),
   page: () => (
     <AddContext mdxStoryNameToId={mdxStoryNameToId}>
       <MDXContent />

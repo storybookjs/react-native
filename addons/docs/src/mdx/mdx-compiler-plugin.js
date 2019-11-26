@@ -179,6 +179,7 @@ function getExports(node, counter) {
 const wrapperJs = `
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
+  ...(componentMeta.parameters.docs || {}),
   page: () => <AddContext mdxStoryNameToId={mdxStoryNameToId}><MDXContent /></AddContext>,
 };
 `.trim();
@@ -309,7 +310,7 @@ function extractExports(node, options) {
   );
 
   const fullJsx = [
-    'import { DocsContainer, makeStoryFn, AddContext } from "@storybook/addon-docs/blocks";',
+    'import { makeStoryFn, AddContext } from "@storybook/addon-docs/blocks";',
     defaultJsx,
     ...storyExports,
     `const componentMeta = ${stringifyMeta(metaExport)};`,
