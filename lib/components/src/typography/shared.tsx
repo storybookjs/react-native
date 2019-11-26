@@ -20,6 +20,7 @@ export const headerCommon = ({ theme }: { theme: Theme }): CSSObject => ({
 });
 
 export const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
+  lineHeight: 1,
   margin: '0 2px',
   padding: '0 5px',
   whiteSpace: 'nowrap',

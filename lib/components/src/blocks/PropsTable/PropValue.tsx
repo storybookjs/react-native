@@ -8,8 +8,6 @@ import { Icons } from '../../icon/icon';
 import { SyntaxHighlighter } from '../../syntaxhighlighter/syntaxhighlighter';
 import { codeCommon } from '../../typography/shared';
 
-const DIRTY_PADDING_TOP_IN_PX = 3;
-
 interface PropValueProps {
   value?: PropSummaryValue;
 }
@@ -29,13 +27,13 @@ const Text = styled.span(({ theme }) => ({
 
 const Expandable = styled.div<{}>(codeCommon, ({ theme }) => ({
   fontFamily: theme.typography.fonts.mono,
-  lineHeight: '18px',
   color: theme.color.secondary,
   margin: 0,
-  paddingTop: `${DIRTY_PADDING_TOP_IN_PX}px`,
   whiteSpace: 'nowrap',
   display: 'flex',
   alignItems: 'center',
+  paddingTop: '3px',
+  paddingBottom: '3px',
 }));
 
 const Detail = styled.div<{ width: string }>(({ theme, width }) => ({
@@ -59,7 +57,6 @@ const ArrowIcon = styled(Icons)({
   width: 10,
   minWidth: 10,
   marginLeft: '4px',
-  marginTop: `-${DIRTY_PADDING_TOP_IN_PX}px`,
 });
 
 const EmptyProp = () => {
