@@ -2,6 +2,7 @@
 import React from 'react';
 // @ts-ignore
 import PropTypes, { string, shape } from 'prop-types';
+import momentPropTypes from 'react-moment-proptypes';
 import { PRESET_SHAPE, SOME_PROP_TYPES } from './ext';
 
 const NAMED_OBJECT = {
@@ -33,6 +34,14 @@ class ClassComponent extends React.PureComponent {
 function concat(a, b) {
   return a + b;
 }
+
+function customPropType() {
+  return null;
+}
+
+const nestedCustomPropType = {
+  custom: customPropType,
+};
 
 const SOME_INLINE_PROP_TYPES = {
   /**
@@ -140,6 +149,9 @@ PropTypesProps.propTypes = {
   obj: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   symbol: PropTypes.symbol,
   node: PropTypes.node,
+  useCustomPropType: customPropType,
+  useNestedCustomPropType: nestedCustomPropType.custom,
+  externalMomentPropType: momentPropTypes.momentObj,
   functionalElement: PropTypes.element,
   functionalElementInline: PropTypes.element,
   functionalElementNamedInline: PropTypes.element,
