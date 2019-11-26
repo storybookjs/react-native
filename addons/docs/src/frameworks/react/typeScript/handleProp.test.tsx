@@ -56,12 +56,15 @@ function extractPropDef(component: Component, rawDefaultProp?: any): PropDef {
 
 describe('enhanceTypeScriptProp', () => {
   describe('defaultValue', () => {
-    function createTestComponent(defaultValue: DocgenPropDefaultValue): Component {
+    function createTestComponent(
+      defaultValue: DocgenPropDefaultValue,
+      typeName = 'anything-is-fine'
+    ): Component {
       return createComponent({
         docgenInfo: {
           ...createDocgenProp({
             name: 'prop',
-            tsType: { name: 'anything-is-fine' },
+            tsType: { name: typeName },
             defaultValue,
           }),
         },

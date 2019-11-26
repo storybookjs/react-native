@@ -1,5 +1,6 @@
 import { PropDefaultValue, PropDef } from '@storybook/components';
 import { isNil, isPlainObject, isArray, isFunction, isString } from 'lodash';
+// @ts-ignore
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import { createSummaryValue, isTooLongForDefaultValueSummary } from '../../../../lib';
 import { inspectValue, InspectionFunction } from '../inspection';
