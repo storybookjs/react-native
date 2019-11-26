@@ -1,5 +1,5 @@
 import path from 'path';
-import initStoryshots, { snapshotWithOptions } from '../src';
+import initStoryshots, { snapshotWithOptions } from '../dist';
 
 initStoryshots({
   framework: 'react',

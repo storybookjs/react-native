@@ -1,5 +1,5 @@
 import path from 'path';
-import initStoryshots, { shallowSnapshot } from '../src';
+import initStoryshots, { shallowSnapshot } from '../dist';
 
 initStoryshots({
   framework: 'react',
