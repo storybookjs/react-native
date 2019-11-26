@@ -1,4 +1,18 @@
-## 5.3.0-beta.7 (November 26, 2019)
+## 5.3.0-beta.9 (November 26, 2019)
+
+### Features
+
+* Storyshots: Remove abandoned storyshots when run with `-u` flag ([#8889](https://github.com/storybookjs/storybook/pull/8889))
+
+### Bug Fixes
+
+* Addon-docs: Support subcomponents as a top-level default export ([#8931](https://github.com/storybookjs/storybook/pull/8931))
+
+### Dependency Upgrades
+
+* Core: Add missing dependencies  ([#8945](https://github.com/storybookjs/storybook/pull/8945))
+
+## 5.3.0-beta.8 (November 26, 2019)
 
 ### Features
 
@@ -15,6 +29,10 @@
 ### Dependency Upgrades
 
 * Core: Add @babel/core peer dependency to  @storybook/core ([#8933](https://github.com/storybookjs/storybook/pull/8933))
+
+## 5.3.0-beta.7 (November 26, 2019)
+
+Failed npm publish
 
 ## 5.3.0-beta.6 (November 24, 2019)
 
