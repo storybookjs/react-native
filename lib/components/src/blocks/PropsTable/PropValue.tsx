@@ -32,8 +32,6 @@ const Expandable = styled.div<{}>(codeCommon, ({ theme }) => ({
   whiteSpace: 'nowrap',
   display: 'flex',
   alignItems: 'center',
-  paddingTop: '3px',
-  paddingBottom: '3px',
 }));
 
 const Detail = styled.div<{ width: string }>(({ theme, width }) => ({
