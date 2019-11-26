@@ -1,6 +1,6 @@
-/* eslint-disable react/require-default-props */
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
+// @ts-ignore
 import PropTypes, { string, shape } from 'prop-types';
 import { PRESET_SHAPE, SOME_PROP_TYPES } from './ext';
 
@@ -34,6 +34,76 @@ function concat(a, b) {
   return a + b;
 }
 
+const SOME_INLINE_PROP_TYPES = {
+  /**
+   * Hey Hey!
+   */
+  inlineString: PropTypes.string,
+  inlineBool: PropTypes.bool,
+  inlineNumber: PropTypes.number,
+  inlineObj: PropTypes.shape({
+    foo: PropTypes.string,
+  }),
+  inlineArray: PropTypes.arrayOf(PropTypes.number),
+  inlineArrayOfObjects: PropTypes.arrayOf({ foo: PropTypes.string }),
+  inlineFunctionalElement: PropTypes.element,
+  inlineFunctionalElementInline: PropTypes.element,
+  inlineFunctionalElementInlineReturningNull: PropTypes.element,
+  inlineHtmlElement: PropTypes.element,
+  inlineFunctionalElementInlineWithProps: PropTypes.element,
+  inlineFunctionalElementNamedInline: PropTypes.element,
+  inlineClassElement: PropTypes.element,
+  inlineClassElementWithProps: PropTypes.element,
+  inlineClassElementWithChildren: PropTypes.element,
+  inlineClassElementInline: PropTypes.element,
+  inlineFunc: PropTypes.func,
+};
+
+const SOME_INLINE_DEFAULT_PROPS = {
+  inlineString: 'Inline prop default value',
+  inlineBool: true,
+  inlineNumber: 10,
+  inlineObj: { foo: 'bar' },
+  inlineArray: [1, 2, 3],
+  inlineArrayOfObjects: [
+    { foo: 'bar' },
+    { foo: 'bar' },
+    { foo: 'bar' },
+    { foo: 'bar' },
+    { foo: 'bar' },
+  ],
+  inlineFunctionalElement: <FunctionalComponent />,
+  inlineFunctionalElementInline: () => {
+    return <div>Inlined FunctionnalComponent!</div>;
+  },
+  inlineFunctionalElementInlineReturningNull: () => {
+    return null;
+  },
+  inlineHtmlElement: <div>Hey!</div>,
+  // eslint-disable-next-line react/prop-types
+  inlineFunctionalElementInlineWithProps: ({ foo }) => {
+    return <div>{foo}</div>;
+  },
+  inlineFunctionalElementNamedInline: function InlinedFunctionalComponent() {
+    return <div>Inlined FunctionnalComponent!</div>;
+  },
+  inlineClassElement: <ClassComponent />,
+  inlineClassElementWithProps: <ClassComponent className="toto" />,
+  inlineClassElementWithChildren: (
+    <ClassComponent>
+      <div>hey!</div>
+    </ClassComponent>
+  ),
+  inlineClassElementInline: class InlinedClassComponent extends React.PureComponent {
+    render() {
+      return <div>Inlined ClassComponent!</div>;
+    }
+  },
+  inlineFunc: function add(a, b) {
+    return a + b;
+  },
+};
+
 export const PropTypesProps = () => <div>PropTypes!</div>;
 
 PropTypesProps.propTypes = {
@@ -50,6 +120,18 @@ PropTypesProps.propTypes = {
    * @returns {ComplexObject} - Returns a complex object.
    */
   funcWithJsDoc: PropTypes.func,
+  /**
+   * @param {string} foo - A foo value.
+   * @param {number} bar - A bar value.
+   * @param {number} bar1 - A bar value.
+   * @param {number} bar2 - A bar value.
+   * @param {number} bar3 - A bar value.
+   * @param {number} bar4 - A bar value.
+   * @param {number} bar5 - A bar value.
+   * @param {number} bar6 - A bar value.
+   * @returns {ComplexObject} - Returns a complex object.
+   */
+  veryLongFuncWithJsDoc: PropTypes.func,
   namedDefaultFunc: PropTypes.func,
   number: PropTypes.number,
   /**
@@ -109,6 +191,15 @@ PropTypesProps.propTypes = {
   oneOfEval: PropTypes.oneOf((() => ['News', 'Photos'])()),
   oneOfVar: PropTypes.oneOf(POSITIONS),
   oneOfNested: PropTypes.oneOf(['News', ['bottom-left', 'botton-center', 'bottom-right']]),
+  oneOfNestedSimpleInlineObject: PropTypes.oneOf(['News', [{ foo: PropTypes.string }]]),
+  oneOfNestedComplexInlineObject: PropTypes.oneOf([
+    'News',
+    [{ nested: { foo: PropTypes.string } }],
+  ]),
+  oneOfNestedComplexShape: PropTypes.oneOf([
+    'News',
+    [{ nested: PropTypes.shape({ foo: PropTypes.string }) }],
+  ]),
   /**
    *  A multi-type prop is also valid and is displayed as `Union<String|Message>`
    */
@@ -245,6 +336,9 @@ PropTypesProps.propTypes = {
     }),
     oneOf: PropTypes.oneOf(['one', 'two']),
   }),
+  shapeWithArray: PropTypes.shape({
+    arr: PropTypes.arrayOf({ foo: PropTypes.string }),
+  }),
   namedShape: NAMED_SHAPE,
   namedObjectInShape: PropTypes.shape(NAMED_OBJECT),
   exact: PropTypes.exact({
@@ -261,6 +355,7 @@ PropTypesProps.propTypes = {
   requiredString: PropTypes.string.isRequired,
   nullDefaultValue: PropTypes.string,
   undefinedDefaultValue: PropTypes.string,
+  ...SOME_INLINE_PROP_TYPES,
   ...SOME_PROP_TYPES,
 };
 
@@ -284,7 +379,7 @@ PropTypesProps.defaultProps = {
   },
   symbol: Symbol('Default symbol'),
   node: <div>Hello!</div>,
-  functionalElement: <FunctionalComponent />,
+  functionalElement: <FunctionalComponent className="toto" />,
   functionalElementInline: () => {
     return <div>Inlined FunctionnalComponent!</div>;
   },
@@ -318,6 +413,7 @@ PropTypesProps.defaultProps = {
   oneOfNested: 'top-right',
   oneOfType: 'hello',
   arrayOfPrimitive: [1, 2, 3],
+  arrayOfString: ['0px', '0px'],
   arrayOfNamedObject: [{ text: 'foo', value: 'bar' }],
   arrayOfShortInlineObject: [{ foo: 'bar' }],
   arrayOfInlineObject: [{ text: 'foo', value: 'bar' }],
@@ -362,4 +458,5 @@ PropTypesProps.defaultProps = {
   optionalString: 'Default String',
   nullDefaultValue: null,
   undefinedDefaultValue: undefined,
+  ...SOME_INLINE_DEFAULT_PROPS,
 };

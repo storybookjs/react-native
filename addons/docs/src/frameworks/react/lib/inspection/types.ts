@@ -24,10 +24,12 @@ export interface InspectionLiteral extends InspectionInferedType {
 
 export interface InspectionObject extends InspectionInferedType {
   type: InspectionType.OBJECT;
+  depth: number;
 }
 
 export interface InspectionArray extends InspectionInferedType {
   type: InspectionType.ARRAY;
+  depth: number;
 }
 
 export interface InspectionClass extends InspectionInferedType {
@@ -38,7 +40,8 @@ export interface InspectionClass extends InspectionInferedType {
 export interface InspectionFunction extends InspectionInferedType {
   type: InspectionType.FUNCTION;
   identifier?: string;
-  hasArguments: boolean;
+  params: any[];
+  hasParams: boolean;
 }
 
 export interface InspectionElement extends InspectionInferedType {
