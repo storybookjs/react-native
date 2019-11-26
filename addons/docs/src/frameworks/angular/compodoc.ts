@@ -18,7 +18,7 @@ export const setCompodocJson = (compodocJson: CompodocJson) => {
 // @ts-ignore
 export const getCompdocJson = (): CompodocJson => window.__STORYBOOK_COMPODOC_JSON__;
 
-export const checkValidComponent = (component: Component | Directive) => {
+export const checkValidComponentOrDirective = (component: Component | Directive) => {
   if (!component.name) {
     throw new Error(`Invalid component ${JSON.stringify(component)}`);
   }
@@ -75,7 +75,7 @@ const getComponentData = (component: Component | Directive) => {
   if (!component) {
     return null;
   }
-  checkValidComponent(component);
+  checkValidComponentOrDirective(component);
   const compodocJson = getCompdocJson();
   checkValidCompodocJson(compodocJson);
   const { name } = component;
