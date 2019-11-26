@@ -2,7 +2,7 @@ import { isNil } from 'lodash';
 import { PropDef } from '@storybook/components';
 import { ExtractedProp } from '../../../lib/docgen';
 import { createType } from './createType';
-import { createDefaultValue } from './createDefaultValue';
+import { createDefaultValue } from '../lib/createDefaultValue';
 import { Component } from '../../../blocks/shared';
 import { keepOriginalDefinitionOrder } from './sortProps';
 

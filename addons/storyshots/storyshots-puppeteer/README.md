@@ -67,7 +67,7 @@ initStoryshots({
 
 ### Specifying options to _jest-image-snapshots_
 
-If you wish to customize [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot), then you can provide a `getMatchOptions` parameter that should return the options config object. Additionally, you can provide `beforeScreenshot` which is called before the screenshot is captured.
+If you wish to customize [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot), then you can provide a `getMatchOptions` parameter that should return the options config object. Additionally, you can provide `beforeScreenshot` which is called before the screenshot is captured and a `afterScreenshot` handler which is called after the screenshot and receives the just created image.
 
 ```js
 import initStoryshots from '@storybook/addon-storyshots';
@@ -85,15 +85,24 @@ const beforeScreenshot = (page, { context: { kind, story }, url }) => {
     }, 600)
   );
 };
+const afterScreenshot = ({ image, context }) => {
+  return new Promise(resolve =>
+    setTimeout(() => {
+      resolve();
+    }, 600)
+  );
+};
 initStoryshots({
   suite: 'Image storyshots',
-  test: imageSnapshot({ storybookUrl: 'http://localhost:6006', getMatchOptions, beforeScreenshot }),
+  test: imageSnapshot({ storybookUrl: 'http://localhost:6006', getMatchOptions, beforeScreenshot, afterScreenshot }),
 });
 ```
 
 `getMatchOptions` receives an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot.
 
 `beforeScreenshot` receives the [Puppeteer page instance](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#class-page) and an object: `{ context: {kind, story}, url}`. _kind_ is the kind of the story and the _story_ its name. _url_ is the URL the browser will use to screenshot. `beforeScreenshot` is part of the promise chain and is called after the browser navigation is completed but before the screenshot is taken. It allows for triggering events on the page elements and delaying the screenshot and can be used avoid regressions due to mounting animations.
+
+`afterScreenshot` receives the created image from puppeteer.
 
 ### Specifying options to _goto()_ (puppeteer API)
 
@@ -195,6 +204,11 @@ initStoryshots({
   }),
 });
 ```
+
+### Specifying setup and tests timeout
+
+By default, `@storybook/addon-storyshots-puppeteer` uses 15 second timeouts for browser setup and test functions.
+Those can be customized with `setupTimeout` and `testTimeout` parameters.
 
 ### Integrate image storyshots with regular app
 

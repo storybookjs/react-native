@@ -5,6 +5,7 @@ import { JsDocParsingResult } from '../jsdocParser';
 import { createSummaryValue } from '../utils';
 import { createFlowPropDef } from './flow/createPropDef';
 import { isDefaultValueBlacklisted } from './utils/defaultValue';
+import { createTsPropDef } from './typeScript/createPropDef';
 
 export type PropDefFactory = (
   propName: string,
@@ -69,7 +70,7 @@ export const javaScriptFactory: PropDefFactory = (propName, docgenInfo, jsDocPar
 };
 
 export const tsFactory: PropDefFactory = (propName, docgenInfo, jsDocParsingResult) => {
-  const propDef = createBasicPropDef(propName, docgenInfo.tsType, docgenInfo);
+  const propDef = createTsPropDef(propName, docgenInfo);
 
   return applyJsDocResult(propDef, jsDocParsingResult);
 };

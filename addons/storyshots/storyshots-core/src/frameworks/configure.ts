@@ -1,8 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import glob from 'glob';
+import { toRequireContext } from '@storybook/core/server';
+import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
+import global from 'global';
 import { ClientApi } from './Loader';
 import { StoryshotsOptions } from '../api/StoryshotsOptions';
+
+registerRequireContextHook();
 
 const isFile = (file: string): boolean => {
   try {
@@ -64,9 +68,18 @@ function getConfigPathParts(input: string): Output {
     if (main) {
       const { stories = [] } = require.requireActual(main);
 
-      const result = stories.reduce((acc: string[], i: string) => [...acc, ...glob.sync(i)], []);
-
-      output.stories = result;
+      output.stories = stories.map(
+        (pattern: string | { path: string; recursive: boolean; match: string }) => {
+          const { path: basePath, recursive, match } = toRequireContext(pattern);
+          // eslint-disable-next-line no-underscore-dangle
+          return global.__requireContext(
+            configDir,
+            basePath,
+            recursive,
+            new RegExp(match.slice(1, -1))
+          );
+        }
+      );
     }
 
     return output;
@@ -94,8 +107,7 @@ function configure(
   });
 
   if (stories && stories.length) {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    storybook.configure(() => stories.map(f => require(f)), false);
+    storybook.configure(stories, false);
   }
 }
 

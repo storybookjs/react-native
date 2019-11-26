@@ -65,6 +65,7 @@ PropTypesProps.propTypes = {
   classElementInline: PropTypes.element,
   functionalElementType: PropTypes.elementType,
   classElementType: PropTypes.elementType,
+  elementWithProps: PropTypes.elementType,
   /**
    * `instanceOf` is also supported and the custom type will be shown instead of `instanceOf`
    */
@@ -298,6 +299,7 @@ PropTypesProps.defaultProps = {
   },
   functionalElementType: FunctionalComponent,
   classElementType: ClassComponent,
+  elementWithProps: <ClassComponent className="w8 h8 fill-marine-500" />,
   instanceOf: new Set(),
   oneOfString: 'News',
   oneOfNumeric: 1,
