@@ -29,7 +29,6 @@ module.exports = {
 You need add the all the css resources at compile time using the `withCssResources` decorator. They can be added globally or per story. You can then choose which ones to load from the cssresources addon UI:
 
 ```js
-// import { addDecorator, addParameters, storiesOf } from '@storybook/react';
 import { withCssResources } from '@storybook/addon-cssresources';
 
 export default {
