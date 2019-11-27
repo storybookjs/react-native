@@ -101,7 +101,7 @@ Please use [`@storybook/preset-create-react-app`](https://github.com/storybookjs
 
 The following code uses [`babel-preset-react-app`](https://github.com/facebook/create-react-app/tree/master/packages/babel-preset-react-app).
 
-We will some [custom Webpack config](/configurations/custom-webpack-config/) by creating editing/creating the `.storybook/main.js`:
+We will create a [custom Webpack config](/configurations/custom-webpack-config/) by creating editing/creating the `.storybook/main.js`:
 
 ```js
 module.exports = {
