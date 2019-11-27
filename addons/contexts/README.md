@@ -47,7 +47,7 @@ To get it started, add this package into your project:
 yarn add -D @storybook/addon-contexts
 ```
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
