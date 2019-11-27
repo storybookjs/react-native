@@ -30,7 +30,6 @@ const Description = styled.div(({ theme }) => ({
   code: codeCommon({ theme }),
 
   '& code': {
-    lineHeight: '18px',
     margin: 0,
     display: 'inline-block',
   },
