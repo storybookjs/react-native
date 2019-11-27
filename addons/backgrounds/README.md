@@ -92,15 +92,16 @@ export default {
 export const noBackgrounds = () => (
   <button>Click me</button>
 );
-defaultView.story = {
+noBackgrounds.story = {
   parameters: {
     background: [],
   },
 };
-export const disabledbackgrounds = () => (
+
+export const disabledBackgrounds = () => (
   <button>Click me</button>
 );
-defaultView.story = {
+disabledBackgrounds.story = {
   parameters: {
     background: { disabled: true },
   },
