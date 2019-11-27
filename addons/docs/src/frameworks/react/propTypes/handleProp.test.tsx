@@ -2,11 +2,16 @@
 
 import { PropDef } from '@storybook/components';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { Component } from '../../../blocks/shared';
-import { extractComponentProps, DocgenInfo } from '../../../lib/docgen';
+import { extractComponentProps, DocgenInfo, DocgenPropDefaultValue } from '../../../lib/docgen';
 import { enhancePropTypesProp, enhancePropTypesProps } from './handleProp';
 
 const DOCGEN_SECTION = 'props';
+
+function ReactComponent() {
+  return <div>React Component!</div>;
+}
 
 function createDocgenSection(docgenInfo: DocgenInfo): Record<string, any> {
   return {
@@ -32,7 +37,9 @@ function createDocgenProp({
 
 // eslint-disable-next-line react/forbid-foreign-prop-types
 function createComponent({ propTypes = {}, defaultProps = {}, docgenInfo = {} }): Component {
-  const component = () => {};
+  const component = () => {
+    return <div>Hey!</div>;
+  };
   component.propTypes = propTypes;
   component.defaultProps = defaultProps;
 
@@ -42,8 +49,12 @@ function createComponent({ propTypes = {}, defaultProps = {}, docgenInfo = {} })
   return component;
 }
 
-function extractPropDef(component: Component): PropDef {
-  return enhancePropTypesProp(extractComponentProps(component, DOCGEN_SECTION)[0]);
+function createDefaultValue(defaultValue: string): DocgenPropDefaultValue {
+  return { value: defaultValue };
+}
+
+function extractPropDef(component: Component, rawDefaultProp?: any): PropDef {
+  return enhancePropTypesProp(extractComponentProps(component, DOCGEN_SECTION)[0], rawDefaultProp);
 }
 
 describe('enhancePropTypesProp', () => {
@@ -93,7 +104,7 @@ describe('enhancePropTypesProp', () => {
             type: {
               name: 'custom',
               raw:
-                '{\n  text: PropTypes.string.isRequired,\n  value: PropTypes.string.isRequired,\n}',
+                '{\n  text: PropTypes.string.isRequired,\n  value1: PropTypes.string.isRequired,\n  value2: PropTypes.string.isRequired,\n  value3: PropTypes.string.isRequired,\n  value4: PropTypes.string.isRequired,\n}',
             },
           });
 
@@ -103,10 +114,26 @@ describe('enhancePropTypesProp', () => {
 
           const expectedDetail = `{
             text: string,
-            value: string
+            value1: string,
+            value2: string,
+            value3: string,
+            value4: string
           }`;
 
           expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+        });
+
+        it('should not have a deep object as summary', () => {
+          const component = createTestComponent({
+            type: {
+              name: 'custom',
+              raw: '{\n  foo: { bar: PropTypes.string.isRequired,\n  }}',
+            },
+          });
+
+          const { type } = extractPropDef(component);
+
+          expect(type.summary).toBe('object');
         });
 
         it('should use identifier of a React element when available', () => {
@@ -133,7 +160,8 @@ describe('enhancePropTypesProp', () => {
           const component = createTestComponent({
             type: {
               name: 'custom',
-              raw: '<div>Hello world!</div>',
+              raw:
+                '<div>Hello world from Montreal, Quebec, Canada!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>',
             },
           });
 
@@ -141,7 +169,8 @@ describe('enhancePropTypesProp', () => {
 
           expect(type.summary).toBe('element');
 
-          const expectedDetail = '<div>Hello world!</div>';
+          const expectedDetail =
+            '<div>Hello world from Montreal, Quebec, Canada!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>';
 
           expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
         });
@@ -150,7 +179,7 @@ describe('enhancePropTypesProp', () => {
           const component = createTestComponent({
             type: {
               name: 'custom',
-              raw: '() => {\n  return <div>Inlined FunctionnalComponent!</div>;\n}',
+              raw: '() => {\n  return <div>Inlined FunctionalComponent!</div>;\n}',
             },
           });
 
@@ -159,23 +188,43 @@ describe('enhancePropTypesProp', () => {
           expect(type.summary).toBe('element');
 
           const expectedDetail = `() => {
-              return <div>Inlined FunctionnalComponent!</div>;
+              return <div>Inlined FunctionalComponent!</div>;
             }`;
 
           expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
         });
 
-        it('should return "custom" when it is not a known type', () => {
-          const component = createTestComponent({
-            type: {
-              name: 'custom',
-              raw: 'Symbol("Hey!")',
-            },
+        describe('when it is not a known type', () => {
+          it('should return "custom" when its a long type', () => {
+            const component = createTestComponent({
+              type: {
+                name: 'custom',
+                raw:
+                  'Symbol("A very very very very very very lonnnngggggggggggggggggggggggggggggggggggg symbol")',
+              },
+            });
+
+            const { type } = extractPropDef(component);
+
+            expect(type.summary).toBe('custom');
+            expect(type.detail).toBe(
+              'Symbol("A very very very very very very lonnnngggggggggggggggggggggggggggggggggggg symbol")'
+            );
           });
 
-          const { type } = extractPropDef(component);
+          it('should return "custom" when its a short type', () => {
+            const component = createTestComponent({
+              type: {
+                name: 'custom',
+                raw: 'Symbol("Hey!")',
+              },
+            });
 
-          expect(type.summary).toBe('custom');
+            const { type } = extractPropDef(component);
+
+            expect(type.summary).toBe('Symbol("Hey!")');
+            expect(type.detail).toBeUndefined();
+          });
         });
       });
 
@@ -254,6 +303,10 @@ describe('enhancePropTypesProp', () => {
               name: 'string',
               required: false,
             },
+            anotherAnother: {
+              name: 'string',
+              required: false,
+            },
           },
         },
       });
@@ -265,10 +318,35 @@ describe('enhancePropTypesProp', () => {
       const expectedDetail = `{
         foo: string,
         bar: string,
-        another: string
+        another: string,
+        anotherAnother: string
       }`;
 
       expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+    });
+
+    it('should not have a deep shape as summary', () => {
+      const component = createTestComponent({
+        type: {
+          name: 'shape',
+          value: {
+            bar: {
+              name: 'shape',
+              value: {
+                hey: {
+                  name: 'string',
+                  required: false,
+                },
+              },
+              required: false,
+            },
+          },
+        },
+      });
+
+      const { type } = extractPropDef(component);
+
+      expect(type.summary).toBe('object');
     });
 
     it('should support enum of string', () => {
@@ -324,6 +402,50 @@ describe('enhancePropTypesProp', () => {
         }`;
 
       expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+    });
+
+    it('should support short object in enum summary', () => {
+      const component = createTestComponent({
+        type: {
+          name: 'enum',
+          value: [
+            {
+              value: '{\n  text: PropTypes.string.isRequired,\n}',
+              computed: true,
+            },
+            {
+              value: '{\n  foo: PropTypes.string,\n}',
+              computed: true,
+            },
+          ],
+        },
+      });
+
+      const { type } = extractPropDef(component);
+
+      expect(type.summary).toBe('{ text: string } | { foo: string }');
+    });
+
+    it('should not have a deep object in an enum summary', () => {
+      const component = createTestComponent({
+        type: {
+          name: 'enum',
+          value: [
+            {
+              value: '{\n  text: { foo: PropTypes.string.isRequired,\n }\n}',
+              computed: true,
+            },
+            {
+              value: '{\n  foo: PropTypes.string,\n}',
+              computed: true,
+            },
+          ],
+        },
+      });
+
+      const { type } = extractPropDef(component);
+
+      expect(type.summary).toBe('object | object');
     });
 
     it('should support enum of element', () => {
@@ -470,7 +592,7 @@ describe('enhancePropTypesProp', () => {
             value: {
               name: 'custom',
               raw:
-                '{\n  foo: PropTypes.string,\n  bar: PropTypes.string,\n  another: PropTypes.string,\n}',
+                '{\n  foo: PropTypes.string,\n  bar: PropTypes.string,\n  another: PropTypes.string,\n  anotherAnother: PropTypes.string,\n}',
             },
           },
         });
@@ -482,10 +604,27 @@ describe('enhancePropTypesProp', () => {
         const expectedDetail = `objectOf({
           foo: string,
           bar: string,
-          another: string
+          another: string,
+          anotherAnother: string
         })`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      });
+
+      it('should not have deep object in summary', () => {
+        const component = createTestComponent({
+          type: {
+            name: 'objectOf',
+            value: {
+              name: 'custom',
+              raw: '{\n  foo: { bar: PropTypes.string,\n }\n}',
+            },
+          },
+        });
+
+        const { type } = extractPropDef(component);
+
+        expect(type.summary).toBe('objectOf(object)');
       });
 
       it('should support objectOf short shape', () => {
@@ -529,6 +668,10 @@ describe('enhancePropTypesProp', () => {
                   name: 'string',
                   required: false,
                 },
+                anotherAnother: {
+                  name: 'string',
+                  required: false,
+                },
               },
             },
           },
@@ -541,10 +684,38 @@ describe('enhancePropTypesProp', () => {
         const expectedDetail = `objectOf({
           foo: string,
           bar: string,
-          another: string
+          another: string,
+          anotherAnother: string
         })`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      });
+
+      it('should not have a deep shape in summary', () => {
+        const component = createTestComponent({
+          type: {
+            name: 'objectOf',
+            value: {
+              name: 'shape',
+              value: {
+                bar: {
+                  name: 'shape',
+                  value: {
+                    hey: {
+                      name: 'string',
+                      required: false,
+                    },
+                  },
+                  required: false,
+                },
+              },
+            },
+          },
+        });
+
+        const { type } = extractPropDef(component);
+
+        expect(type.summary).toBe('objectOf(object)');
       });
     });
 
@@ -628,7 +799,7 @@ describe('enhancePropTypesProp', () => {
             value: {
               name: 'custom',
               raw:
-                '{\n  text: PropTypes.string.isRequired,\n  value: PropTypes.string.isRequired,\n}',
+                '{\n  text: PropTypes.string.isRequired,\n  value: PropTypes.string.isRequired,\n  another: PropTypes.string.isRequired,\n  anotherAnother: PropTypes.string.isRequired,\n}',
             },
           },
         });
@@ -639,10 +810,28 @@ describe('enhancePropTypesProp', () => {
 
         const expectedDetail = `[{
           text: string,
-          value: string
+          value: string,
+          another: string,
+          anotherAnother: string
         }]`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      });
+
+      it('should not have deep object in summary', () => {
+        const component = createTestComponent({
+          type: {
+            name: 'arrayOf',
+            value: {
+              name: 'custom',
+              raw: '{\n  foo: { bar: PropTypes.string, }\n}',
+            },
+          },
+        });
+
+        const { type } = extractPropDef(component);
+
+        expect(type.summary).toBe('object[]');
       });
 
       it('should support array of short shape', () => {
@@ -686,6 +875,10 @@ describe('enhancePropTypesProp', () => {
                   name: 'string',
                   required: false,
                 },
+                anotherAnother: {
+                  name: 'string',
+                  required: false,
+                },
               },
             },
           },
@@ -698,29 +891,60 @@ describe('enhancePropTypesProp', () => {
         const expectedDetail = `[{
           foo: string,
           bar: string,
-          another: string
+          another: string,
+          anotherAnother: string
         }]`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      });
+
+      it('should not have deep shape in summary', () => {
+        const component = createTestComponent({
+          type: {
+            name: 'arrayOf',
+            value: {
+              name: 'shape',
+              value: {
+                bar: {
+                  name: 'shape',
+                  value: {
+                    hey: {
+                      name: 'string',
+                      required: false,
+                    },
+                  },
+                  required: false,
+                },
+              },
+            },
+          },
+        });
+
+        const { type } = extractPropDef(component);
+
+        expect(type.summary).toBe('object[]');
       });
     });
   });
 
   describe('defaultValue', () => {
-    function createTestComponent(defaultValue: string): Component {
+    function createTestComponent(
+      defaultValue: DocgenPropDefaultValue,
+      typeName = 'anything-is-fine'
+    ): Component {
       return createComponent({
         docgenInfo: {
           ...createDocgenProp({
             name: 'prop',
-            type: { name: 'anything-is-fine' },
-            defaultValue: { value: defaultValue },
+            type: { name: typeName },
+            defaultValue,
           }),
         },
       });
     }
 
     it('should support short object', () => {
-      const component = createTestComponent("{ foo: 'foo', bar: 'bar' }");
+      const component = createTestComponent(createDefaultValue("{ foo: 'foo', bar: 'bar' }"));
 
       const { defaultValue } = extractPropDef(component);
 
@@ -731,7 +955,9 @@ describe('enhancePropTypesProp', () => {
     });
 
     it('should support long object', () => {
-      const component = createTestComponent("{ foo: 'foo', bar: 'bar', another: 'another' }");
+      const component = createTestComponent(
+        createDefaultValue("{ foo: 'foo', bar: 'bar', another: 'another' }")
+      );
 
       const { defaultValue } = extractPropDef(component);
 
@@ -746,8 +972,18 @@ describe('enhancePropTypesProp', () => {
       expect(defaultValue.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
     });
 
+    it('should not have deep object in summary', () => {
+      const component = createTestComponent(
+        createDefaultValue("{ foo: 'foo', bar: { hey: 'ho' } }")
+      );
+
+      const { defaultValue } = extractPropDef(component);
+
+      expect(defaultValue.summary).toBe('object');
+    });
+
     it('should support short function', () => {
-      const component = createTestComponent('() => {}');
+      const component = createTestComponent(createDefaultValue('() => {}'));
 
       const { defaultValue } = extractPropDef(component);
 
@@ -757,7 +993,9 @@ describe('enhancePropTypesProp', () => {
 
     it('should support long function', () => {
       const component = createTestComponent(
-        '(foo, bar) => {\n  const concat = foo + bar;\n  const append = concat + " hey!";\n  \n  return append;\n}'
+        createDefaultValue(
+          '(foo, bar) => {\n  const concat = foo + bar;\n  const append = concat + " hey!";\n  \n  return append;\n}'
+        )
       );
 
       const { defaultValue } = extractPropDef(component);
@@ -774,7 +1012,9 @@ describe('enhancePropTypesProp', () => {
     });
 
     it('should use the name of function when available and indicate that args are present', () => {
-      const component = createTestComponent('function concat(a, b) {\n  return a + b;\n}');
+      const component = createTestComponent(
+        createDefaultValue('function concat(a, b) {\n  return a + b;\n}')
+      );
 
       const { defaultValue } = extractPropDef(component);
 
@@ -788,7 +1028,9 @@ describe('enhancePropTypesProp', () => {
     });
 
     it('should use the name of function when available', () => {
-      const component = createTestComponent('function hello() {\n  return "hello";\n}');
+      const component = createTestComponent(
+        createDefaultValue('function hello() {\n  return "hello";\n}')
+      );
 
       const { defaultValue } = extractPropDef(component);
 
@@ -802,7 +1044,7 @@ describe('enhancePropTypesProp', () => {
     });
 
     it('should support short element', () => {
-      const component = createTestComponent('<div>Hey!</div>');
+      const component = createTestComponent(createDefaultValue('<div>Hey!</div>'));
 
       const { defaultValue } = extractPropDef(component);
 
@@ -812,23 +1054,33 @@ describe('enhancePropTypesProp', () => {
 
     it('should support long element', () => {
       const component = createTestComponent(
-        '() => {\n  return <div>Inlined FunctionnalComponent!</div>;\n}'
+        createDefaultValue(
+          '<div>Hey! Hey! Hey!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>'
+        )
       );
 
       const { defaultValue } = extractPropDef(component);
 
       expect(defaultValue.summary).toBe('element');
+      expect(defaultValue.detail).toBe(
+        '<div>Hey! Hey! Hey!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>'
+      );
+    });
 
-      const expectedDetail = `() => {
-        return <div>Inlined FunctionnalComponent!</div>;
-      }`;
+    it('should support element with props', () => {
+      const component = createTestComponent(createDefaultValue('<Component className="toto" />'));
 
-      expect(defaultValue.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      const { defaultValue } = extractPropDef(component);
+
+      expect(defaultValue.summary).toBe('<Component />');
+      expect(defaultValue.detail).toBe('<Component className="toto" />');
     });
 
     it("should use the name of the React component when it's available", () => {
       const component = createTestComponent(
-        'function InlinedFunctionalComponent() {\n  return <div>Inlined FunctionnalComponent!</div>;\n}'
+        createDefaultValue(
+          'function InlinedFunctionalComponent() {\n  return <div>Inlined FunctionnalComponent!</div>;\n}'
+        )
       );
 
       const { defaultValue } = extractPropDef(component);
@@ -843,7 +1095,7 @@ describe('enhancePropTypesProp', () => {
     });
 
     it('should not use the name of an HTML element', () => {
-      const component = createTestComponent('<div>Hey!</div>');
+      const component = createTestComponent(createDefaultValue('<div>Hey!</div>'));
 
       const { defaultValue } = extractPropDef(component);
 
@@ -851,7 +1103,7 @@ describe('enhancePropTypesProp', () => {
     });
 
     it('should support short array', () => {
-      const component = createTestComponent('[1]');
+      const component = createTestComponent(createDefaultValue('[1]'));
 
       const { defaultValue } = extractPropDef(component);
 
@@ -861,7 +1113,9 @@ describe('enhancePropTypesProp', () => {
 
     it('should support long array', () => {
       const component = createTestComponent(
-        '[\n  {\n    thing: {\n      id: 2,\n      func: () => {},\n      arr: [],\n    },\n  },\n]'
+        createDefaultValue(
+          '[\n  {\n    thing: {\n      id: 2,\n      func: () => {},\n      arr: [],\n    },\n  },\n]'
+        )
       );
 
       const { defaultValue } = extractPropDef(component);
@@ -878,6 +1132,241 @@ describe('enhancePropTypesProp', () => {
         }]`;
 
       expect(defaultValue.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+    });
+
+    it('should not have deep array in summary', () => {
+      const component = createTestComponent(createDefaultValue('[[[1]]]'));
+
+      const { defaultValue } = extractPropDef(component);
+
+      expect(defaultValue.summary).toBe('array');
+    });
+
+    describe('fromRawDefaultProp', () => {
+      [
+        { type: 'string', defaultProp: 'foo' },
+        { type: 'number', defaultProp: 1 },
+        { type: 'boolean', defaultProp: true },
+        { type: 'symbol', defaultProp: Symbol('hey!') },
+      ].forEach(x => {
+        it(`should support ${x.type}`, () => {
+          const component = createTestComponent(null);
+
+          const { defaultValue } = extractPropDef(component, x.defaultProp);
+
+          expect(defaultValue.summary).toBe(x.defaultProp.toString());
+          expect(defaultValue.detail).toBeUndefined();
+        });
+      });
+
+      it('should support array of primitives', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(component, [1, 2, 3]);
+
+        expect(defaultValue.summary).toBe('[1,    2,    3]');
+        expect(defaultValue.detail).toBeUndefined();
+      });
+
+      it('should support array of short object', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(component, [{ foo: 'bar' }]);
+
+        expect(defaultValue.summary).toBe("[{ 'foo': 'bar' }]");
+        expect(defaultValue.detail).toBeUndefined();
+      });
+
+      it('should support array of long object', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(component, [{ foo: 'bar', bar: 'foo', hey: 'ho' }]);
+
+        expect(defaultValue.summary).toBe('array');
+
+        const expectedDetail = `[{
+          'foo': 'bar',
+          'bar': 'foo',
+          'hey': 'ho'
+        }]`;
+
+        expect(defaultValue.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      });
+
+      it('should support short object', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(component, { foo: 'bar' });
+
+        expect(defaultValue.summary).toBe("{ 'foo': 'bar' }");
+        expect(defaultValue.detail).toBeUndefined();
+      });
+
+      it('should support long object', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(component, { foo: 'bar', bar: 'foo', hey: 'ho' });
+
+        expect(defaultValue.summary).toBe('object');
+
+        const expectedDetail = `{
+          'foo': 'bar',
+          'bar': 'foo',
+          'hey': 'ho'
+        }`;
+
+        expect(defaultValue.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      });
+
+      it('should support anonymous function', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(component, () => 'hey!');
+
+        expect(defaultValue.summary).toBe('func');
+        expect(defaultValue.detail).toBeUndefined();
+      });
+
+      it('should support named function', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(component, function hello() {
+          return 'world!';
+        });
+
+        expect(defaultValue.summary).toBe('hello()');
+        expect(defaultValue.detail).toBeUndefined();
+      });
+
+      it('should support named function with params', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(component, function add(a: number, b: number) {
+          return a + b;
+        });
+
+        expect(defaultValue.summary).toBe('add( ... )');
+        expect(defaultValue.detail).toBeUndefined();
+      });
+
+      it('should support React element', () => {
+        const component = createTestComponent(null);
+
+        const defaultProp = <ReactComponent />;
+        // Simulate babel-plugin-add-react-displayname.
+        defaultProp.type.displayName = 'ReactComponent';
+
+        const { defaultValue } = extractPropDef(component, defaultProp);
+
+        expect(defaultValue.summary).toBe('<ReactComponent />');
+        expect(defaultValue.detail).toBeUndefined();
+      });
+
+      it('should support React element with props', () => {
+        const component = createTestComponent(null);
+
+        // @ts-ignore
+        const defaultProp = <ReactComponent className="toto" />;
+        // Simulate babel-plugin-add-react-displayname.
+        defaultProp.type.displayName = 'ReactComponent';
+
+        const { defaultValue } = extractPropDef(component, defaultProp);
+
+        expect(defaultValue.summary).toBe('<ReactComponent />');
+        expect(defaultValue.detail).toBe('<ReactComponent className="toto" />');
+      });
+
+      it('should support short HTML element', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(component, <div>HTML element</div>);
+
+        expect(defaultValue.summary).toBe('<div>HTML element</div>');
+        expect(defaultValue.detail).toBeUndefined();
+      });
+
+      it('should support long HTML element', () => {
+        const component = createTestComponent(null);
+
+        const { defaultValue } = extractPropDef(
+          component,
+          <div>HTML element!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+        );
+
+        expect(defaultValue.summary).toBe('element');
+
+        const expectedDetail = `<div>
+          HTML element!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        </div>`;
+
+        expect(defaultValue.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
+      });
+
+      ['element', 'elementType'].forEach(x => {
+        it(`should support inlined React class component for ${x}`, () => {
+          const component = createTestComponent(null, x);
+
+          const { defaultValue } = extractPropDef(
+            component,
+            class InlinedClassComponent extends React.PureComponent {
+              render() {
+                return <div>Inlined ClassComponent!</div>;
+              }
+            }
+          );
+
+          expect(defaultValue.summary).toBe('<InlinedClassComponent />');
+          expect(defaultValue.detail).toBeUndefined();
+        });
+
+        it(`should support inlined anonymous React functional component for ${x}`, () => {
+          const component = createTestComponent(null, x);
+
+          const { defaultValue } = extractPropDef(component, () => {
+            return <div>Inlined FunctionnalComponent!</div>;
+          });
+
+          expect(defaultValue.summary).toBe('element');
+          expect(defaultValue.detail).toBeUndefined();
+        });
+
+        it(`should support inlined anonymous React functional component with props for ${x}`, () => {
+          const component = createTestComponent(null, x);
+
+          const { defaultValue } = extractPropDef(component, ({ foo }: { foo: string }) => {
+            return <div>{foo}</div>;
+          });
+
+          expect(defaultValue.summary).toBe('element');
+          expect(defaultValue.detail).toBeUndefined();
+        });
+
+        it(`should support inlined named React functional component for ${x}`, () => {
+          const component = createTestComponent(null, x);
+
+          const { defaultValue } = extractPropDef(component, function InlinedFunctionalComponent() {
+            return <div>Inlined FunctionnalComponent!</div>;
+          });
+
+          expect(defaultValue.summary).toBe('<InlinedFunctionalComponent />');
+          expect(defaultValue.detail).toBeUndefined();
+        });
+
+        it(`should support inlined named React functional component with props for ${x}`, () => {
+          const component = createTestComponent(null, x);
+
+          const { defaultValue } = extractPropDef(component, function InlinedFunctionalComponent({
+            foo,
+          }: {
+            foo: string;
+          }) {
+            return <div>{foo}</div>;
+          });
+
+          expect(defaultValue.summary).toBe('<InlinedFunctionalComponent />');
+          expect(defaultValue.detail).toBeUndefined();
+        });
+      });
     });
   });
 });

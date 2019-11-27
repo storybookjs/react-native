@@ -44,12 +44,12 @@ const Type = styled.div<{ hasDescription: boolean }>(({ theme, hasDescription })
   marginTop: hasDescription ? '4px' : '0',
 }));
 
-const TypeWithJsDoc = styled.div(({ theme }) => ({
+const TypeWithJsDoc = styled.div<{ hasDescription: boolean }>(({ theme, hasDescription }) => ({
   color:
     theme.base === 'light'
       ? transparentize(0.1, theme.color.defaultText)
       : transparentize(0.2, theme.color.defaultText),
-  marginTop: '12px',
+  marginTop: hasDescription ? '12px' : '0',
   marginBottom: '12px',
 }));
 
@@ -72,7 +72,7 @@ export const PropRow: FC<PropRowProps> = ({
         )}
         {!isNil(jsDocTags) ? (
           <>
-            <TypeWithJsDoc>
+            <TypeWithJsDoc hasDescription={hasDescription}>
               <PropValue value={type} />
             </TypeWithJsDoc>
             <PropJsDoc tags={jsDocTags} />
