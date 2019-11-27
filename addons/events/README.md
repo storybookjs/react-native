@@ -12,7 +12,7 @@ This [storybook](https://storybooks.js.org) ([source](https://github.com/storybo
 npm i --save-dev @storybook/addon-events
 ```
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
