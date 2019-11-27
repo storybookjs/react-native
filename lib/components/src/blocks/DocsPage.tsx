@@ -44,7 +44,7 @@ export const Subtitle = styled.h2<{}>(withReset, ({ theme }: { theme: Theme }) =
 }));
 
 export const DocsContent = styled.div({
-  maxWidth: 800,
+  maxWidth: 1000,
   width: '100%',
 });
 

@@ -5,8 +5,6 @@ title: 'Options Parameter'
 
 Storybook UI is configurable using an options API that allows you to tweak its appearance globally and for each story.
 
-> NOTE: If you've used older versions of Storybook this is formerly [addon-options](https://github.com/storybookjs/storybook/tree/next/addons/options), which has been deprecated.
-
 ### Global options
 
 Import and use `setConfig` in your `manager.js` file.
@@ -14,7 +12,6 @@ Import and use `setConfig` in your `manager.js` file.
 ```js
 import { addons } from '@storybook/addons';
 
-// Option defaults:
 addons.setConfig({
   /**
    * show story component as full screen
@@ -44,7 +41,7 @@ addons.setConfig({
    * display the top-level grouping as a "root" in the sidebar
    * @type {Boolean}
    */
-  showRoots: null,
+  showRoots: false,
 
   /**
    * sidebar tree animations
@@ -69,13 +66,11 @@ addons.setConfig({
    */
   theme: undefined,
 
-  /**
-   * function to sort stories in the tree view
-   * common use is alphabetical `(a, b) => a[1].id.localeCompare(b[1].id)`
-   * if left undefined, then the order in which the stories are imported will
-   * be the order they display
-   * @type {Function}
-   */
+  /**	
+   * id to select an addon panel	
+   * @type {String}	
+   */	
+  selectedPanel: undefined,
 });
 ```
 

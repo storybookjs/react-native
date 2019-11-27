@@ -20,6 +20,4 @@ export * from './Title';
 export * from './Wrapper';
 
 export * from './shared';
-
-// helper function for MDX
-export const makeStoryFn = (val: any) => (typeof val === 'function' ? val : () => val);
+export * from './mdx';
