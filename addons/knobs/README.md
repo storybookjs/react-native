@@ -130,6 +130,27 @@ export const withKnobs = () => ({
 });
 ```
 
+### With Ember
+```js
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import hbs from 'htmlbars-inline-precompile';
+
+export default {
+  title: 'StoryBook with Knobs',
+  decorators: [withKnobs],
+};
+
+export const button = () => ({
+  template: hbs`
+    <button disabled={{disabled}}>{{label}}</button>
+  `,
+  context: {
+    label: text('label', 'Hello Storybook'),
+    disabled: boolean('disabled', false),
+  },
+});
+```
+
 ## Categorization
 
 Categorize your Knobs by assigning them a `groupId`. When a `groupId` exists, tabs will appear in the Knobs storybook panel to filter between the groups. Knobs without a `groupId` are automatically categorized into the `ALL` group.
