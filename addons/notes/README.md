@@ -79,6 +79,33 @@ storiesOf('Button', module).add(
 );
 ```
 
+### With Ember
+
+```js
+import hbs from 'htmlbars-inline-precompile';
+
+export const button = () => {
+  return {
+    template: hbs`
+      <button>
+         <h4>title</h4>
+      </button>
+    `,
+  };
+};
+
+button.story = {
+  parameters: {
+    notes: {
+      markdown: `
+      ##Component usage with block 
+      The component is call as any other example but with a block instead of a title param 
+    `,
+    },
+  },
+};
+```
+
 ### Upgrading to CSF Format
 
 Add `notes` to the `parameters` object:
