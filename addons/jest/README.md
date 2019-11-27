@@ -69,7 +69,7 @@ You could create a `prebuild:storybook` npm script, which will never fail by app
 
 ### Register
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
