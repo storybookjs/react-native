@@ -6,13 +6,13 @@ export default {
 };
 
 export const First = () => (
-  <button type="button" onClick={linkTo('Addons|Links.Button', 'Second')}>
+  <button type="button" onClick={linkTo('Addons/Links/Button', 'Second')}>
     Go to "Second"
   </button>
 );
 
 export const Second = () => (
-  <button type="button" onClick={linkTo('Addons|Links.Button', 'First')}>
+  <button type="button" onClick={linkTo('Addons/Links/Button', 'First')}>
     Go to "First"
   </button>
 );
