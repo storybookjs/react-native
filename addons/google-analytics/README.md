@@ -12,7 +12,7 @@ Install:
 yarn add @storybook/addon-google-analytics --dev
 ```
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
