@@ -96,7 +96,7 @@ addons.register(ADDON_ID, api => {
 
 ### register the addon
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
@@ -230,7 +230,7 @@ This is also a great way to sync state between multiple components of the same a
 
 ### Using the complex addon
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
