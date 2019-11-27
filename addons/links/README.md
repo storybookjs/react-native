@@ -12,7 +12,7 @@ Install this addon by adding the `@storybook/addon-links` dependency:
 yarn add -D @storybook/addon-links
 ```
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
