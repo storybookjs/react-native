@@ -14,7 +14,7 @@ Storybook Addon Notes allows you to write notes (text or HTML) for your stories 
 yarn add -D @storybook/addon-notes
 ```
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
