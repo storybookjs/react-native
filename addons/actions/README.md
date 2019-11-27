@@ -59,11 +59,11 @@ const eventsFromNames = actions('onClick', 'onMouseOver');
 // This will lead to { onClick: action('clicked'), ... }
 const eventsFromObject = actions({ onClick: 'clicked', onMouseOver: 'hovered' });
 
-export const fromName = () => (
+export const first = () => (
   <Button {...eventsFromNames}>Hello World!</Button>
 );
 
-export const fromObject = () => (
+export const second = () => (
   <Button {...eventsFromObject}>Hello World!</Button>
 );
 ```
@@ -85,7 +85,7 @@ export default {
 
 const firstArg = decorate([args => args.slice(0, 1)]);
 
-export const fromObject = () => (
+export const first = () => (
   <Button onClick={firstArg.action('button-click')}>Hello World!</Button>
 );
 ```
@@ -143,7 +143,7 @@ export default {
   decorators: [withActions('mouseover', 'click .btn')]
 };
 
-export const fromObject = () => (
+export const first = () => (
   <Button className="btn">Hello World!</Button>
 );
 ```
