@@ -56,7 +56,6 @@ export const Table = styled.table(({ theme }) => ({
     code: codeCommon({ theme }),
 
     '& code': {
-      lineHeight: '18px',
       margin: 0,
       display: 'inline-block',
     },

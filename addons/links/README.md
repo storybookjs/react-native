@@ -12,25 +12,29 @@ Install this addon by adding the `@storybook/addon-links` dependency:
 yarn add -D @storybook/addon-links
 ```
 
-First configure it as an addon by adding it to your addons.js file (located in the Storybook config directory).
+within `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-links/register';
+module.exports = {
+  addons: ['@storybook/addon-links/register']
+}
 ```
 
 Then you can import `linkTo` in your stories and use like this:
 
 ```js
-import { storiesOf } from '@storybook/react'
 import { linkTo } from '@storybook/addon-links'
 
-storiesOf('Button', module)
-  .add('First', () => (
-    <button onClick={linkTo('Button', 'Second')}>Go to "Second"</button>
-  ))
-  .add('Second', () => (
-    <button onClick={linkTo('Button', 'First')}>Go to "First"</button>
-  ));
+export default {
+  title: 'Button',
+};
+
+export const first = () => (
+  <button onClick={linkTo('Button', 'second')}>Go to "Second"</button>
+);
+export const second = () => (
+  <button onClick={linkTo('Button', 'first')}>Go to "First"</button>
+);
 ```
 
 Have a look at the linkTo function:
@@ -45,28 +49,36 @@ linkTo('Toggle') // Links to the first story in the 'Toggle' kind
 
 With that, you can link an event in a component to any story in the Storybook.
 
--   First parameter is the story kind name (what you named with `storiesOf`).
--   Second (optional) parameter is the story name (what you named with `.add`). 
-    If the second parameter is omitted, the link will point to the first story in the given kind.
+- First parameter is the story kind name (what you named with `title`).
+- Second (optional) parameter is the story name (what you named with `exported name`). 
+  If the second parameter is omitted, the link will point to the first story in the given kind.
 
 You can also pass a function instead for any of above parameter. That function accepts arguments emitted by the event and it should return a string:
 
 ```js
-import { storiesOf } from '@storybook/react';
 import { LinkTo, linkTo } from '@storybook/addon-links';
 
-storiesOf('Select', module)
-  .add('Index', () => (
-    <select value="Index" onChange={linkTo('Select', e => e.currentTarget.value)}>
-      <option>Index</option>
-      <option>First</option>
-      <option>Second</option>
-      <option>Third</option>
-    </select>
-  ))
-  .add('First', () =>  <LinkTo story="Index">Go back</LinkTo>)
-  .add('Second', () => <LinkTo story="Index">Go back</LinkTo>)
-  .add('Third', () => <LinkTo story="Index">Go back</LinkTo>);
+export default {
+  title: 'Select',
+};
+
+export const index = () => (
+  <select value="Index" onChange={linkTo('Select', e => e.currentTarget.value)}>
+    <option>index</option>
+    <option>first</option>
+    <option>second</option>
+    <option>third</option>
+  </select>  
+);
+export const first = () => (
+  <LinkTo story="index">Go back</LinkTo>
+);
+export const second = () => (
+  <LinkTo story="index">Go back</LinkTo>
+);
+export const third = () => (
+  <LinkTo story="index">Go back</LinkTo>
+);
 ```
 
 ## hrefTo function
@@ -74,16 +86,18 @@ storiesOf('Select', module)
 If you want to get an URL for a particular story, you may use `hrefTo` function. It returns a promise, which resolves to string containing a relative URL:
 
 ```js
-import { storiesOf } from '@storybook/react';
 import { hrefTo } from '@storybook/addon-links';
 import { action } from '@storybook/addon-actions';
 
-storiesOf('Href', module)
-  .add('log', () => {
-    hrefTo('Href', 'log').then(action('URL of this story'));
+export default {
+  title: 'Href',
+};
 
-    return <span>See action logger</span>;
-  });
+export const log = () => {
+  hrefTo('Href', 'log').then(action('URL of this story'));
+
+  return <span>See action logger</span>;
+};
 ```
 
 ## withLinks decorator
@@ -92,14 +106,16 @@ storiesOf('Href', module)
 Here is an example in React, but it works with any framework:
 
 ```js
-import { storiesOf } from '@storybook/react'
 import { withLinks } from '@storybook/addon-links'
 
-storiesOf('Button', module)
-  .addDecorator(withLinks)
-  .add('First', () => (
-    <button data-sb-kind="OtherKind" data-sb-story="OtherStory">Go to "OtherStory"</button>
-  ))
+export default {
+  title: 'Button',
+  decorators: [withLinks],
+};
+
+export const first = () => (
+  <button data-sb-kind="OtherKind" data-sb-story="otherStory">Go to "OtherStory"</button>
+);
 ```
 
 ## LinkTo component (React only)
@@ -108,16 +124,18 @@ One possible way of using `hrefTo` is to create a component that uses native `a`
 A React implementation of such a component can be imported from `@storybook/addon-links` package:
 
 ```js
-import { storiesOf } from '@storybook/react';
 import LinkTo from '@storybook/addon-links/react';
 
-storiesOf('Link', module)
-  .add('First', () => (
-    <LinkTo story="Second">Go to Second</LinkTo>
-  ))
-  .add('Second', () => (
-    <LinkTo story="First">Go to First</LinkTo>
-  ));
+export default {
+  title: 'Link',
+};
+
+export const first = () => (
+  <LinkTo story="second">Go to Second</LinkTo>
+);
+export const second = () => (
+  <LinkTo story="first">Go to First</LinkTo>
+);
 ```
 
 It accepts all the props the `a` element does, plus `story` and `kind`. It the `kind` prop is omitted, the current kind will be preserved.

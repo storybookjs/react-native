@@ -14,108 +14,34 @@ Storybook Addon Notes allows you to write notes (text or HTML) for your stories 
 yarn add -D @storybook/addon-notes
 ```
 
-Then create a file called `addons.js` in your Storybook config.
-
-Add following content to it:
+within `.storybook/main.js`:
 
 ```js
-// register the notes addon as a tab
-import '@storybook/addon-notes/register';
-// or register the notes addon as a panel. Only one can be used!
-import '@storybook/addon-notes/register-panel';
+module.exports = {
+  addons: ['@storybook/addon-notes/register']
+}
+```
+
+Alternatively register the notes addon into a panel. Choose only one, not both.
+
+```js
+module.exports = {
+  addons: ['@storybook/addon-notes/register-panel']
+}
 ```
 
 Now, you can use the `notes` parameter to add a note to each story.
 
-### With React
 
 ```js
-import { storiesOf } from '@storybook/react';
-
 import Component from './Component';
 
-storiesOf('Component', module).add('with some emoji', () => <Component />, {
-  notes: 'An example of addon notes',
-});
-```
-
-### With Vue
-
-```js
-import { storiesOf } from '@storybook/vue';
-
-import MyButton from './MyButton.vue';
-
-storiesOf('MyButton', module).add(
-  'with some emoji',
-  () => ({
-    components: { MyButton },
-    template: '<my-button>😀 😎 👍 💯</my-button>',
-  }),
-  {
-    notes: 'An example of addon notes',
-  }
-);
-```
-
-### With Angular
-
-```js
-import { storiesOf } from '@storybook/vue';
-
-import { ButtonComponent } from './button.component';
-
-storiesOf('Button', module).add(
-  'with some emoji',
-  () => ({
-    component: ButtonComponent,
-    props: {
-      text: '😀 😎 👍 💯'
-    }
-  }),
-  {
-    notes: 'An  example of addon notes',
-  }
-);
-```
-
-### With Ember
-
-```js
-import hbs from 'htmlbars-inline-precompile';
-
-export const button = () => {
-  return {
-    template: hbs`
-      <button>
-         <h4>title</h4>
-      </button>
-    `,
-  };
-};
-
-button.story = {
+export default {
+  title: 'Component',
   parameters: {
-    notes: {
-      markdown: `
-      ##Component usage with block 
-      The component is call as any other example but with a block instead of a title param 
-    `,
-    },
+    notes: 'some documentation here',
   },
 };
-```
-
-### Upgrading to CSF Format
-
-Add `notes` to the `parameters` object:
-
-```js
-export default {
-  parameters: {
-    notes: 'My notes',
-  }
-}
 ```
 
 ## Using Markdown
@@ -123,13 +49,19 @@ export default {
 Using Markdown in your notes is supported, Storybook will load Markdown as raw by default.
 
 ```js
-import { storiesOf } from '@storybook/react';
 import Component from './Component';
-import markdownNotes from './someMarkdownText.md';
+import markdown from './someMarkdownText.md';
 
-storiesOf('Component', module).add('With Markdown', () => <Component />, {
-  notes: { markdown: markdownNotes },
-});
+export default {
+  title: 'Component',
+};
+
+export const withMarkdown = () => <Component />;
+withmarkdown.story = {
+  parameters: {
+    notes: { markdown },
+  }
+};
 ```
 
 ## Giphy
@@ -149,10 +81,14 @@ If you need to display different notes for different consumers of your storybook
 ```js
 import { storiesOf } from '@storybook/react';
 import Component from './Component';
+
 import intro from './intro.md';
 import design from './design.md';
 
-storiesOf('Component', module).add('With Markdown', () => <Component />, {
-  notes: { Introduction: intro, 'Design Notes': design },
-});
+export default {
+  title: 'Component',
+  parameters: {
+    notes: { Introduction: intro, 'Design Notes': design },
+  },
+};
 ```
