@@ -60,6 +60,22 @@ addParameters({
 });
 ```
 
+You can even override a Storybook *block* component.
+
+Here's how you might insert a custom `<Preview />` block:
+
+```js
+import { PreviewBlock } from './PreviewBlock';
+
+addParameters({
+  docs: {
+    components: {
+      Preview: PreviewBlock,
+    },
+  },
+});
+```
+
 ## More resources
 
 Want to learn more? Here are some more articles on Storybook Docs:
