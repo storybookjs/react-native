@@ -65,12 +65,12 @@ You can even override a Storybook *block* component.
 Here's how you might insert a custom `<Preview />` block:
 
 ```js
-import { PreviewBlock } from './PreviewBlock';
+import { MyPreview } from './MyPreview';
 
 addParameters({
   docs: {
     components: {
-      Preview: PreviewBlock,
+      Preview: MyPreview,
     },
   },
 });
