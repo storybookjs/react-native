@@ -9,11 +9,7 @@ const theme = create({
 });
 
 addons.setConfig({
-  goFullScreen: false,
-  showAddonsPanel: true,
-  showSearchBox: false,
   showRoots: true,
-  enableShortcuts: true,
   panelPosition: 'bottom',
   theme,
 });
