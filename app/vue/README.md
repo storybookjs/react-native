@@ -28,7 +28,7 @@ You can also build a [static version](https://storybook.js.org/basics/exporting-
 
 ## Vue Notes
 
-- When using global custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/config.js`.
+- When using global custom components or extension (e.g `Vue.use`). You will need to declare those in the `./storybook/preview.js`.
 
 ## Known Limitations
 

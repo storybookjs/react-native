@@ -46,16 +46,16 @@ Then add the following NPM script to your `package.json` in order to start the s
 }
 ```
 
-## Step 3: Create the config file
+## Step 3: Create the main file
 
 For a basic Storybook configuration, the only thing you need to do is tell Storybook where to find stories.
 
-To do that, create a file at `.storybook/config.js` with the following content:
+To do that, create a file at `.storybook/main.js` with the following content:
 
-```ts
-import { configure } from '@storybook/angular';
-
-configure(require.context('../src', true, /\.stories\.[tj]s$/), module);
+```js
+module.exports {
+  stories: ['../src/**/*.stories.[tj]s'],
+};
 ```
 
 That will load all the stories underneath your `../src` directory that match the pattern `*.stories.[tj]sx?`. We recommend co-locating your stories with your source files, but you can place them wherever you choose.

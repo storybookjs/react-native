@@ -23,7 +23,7 @@ It is possible to add `info` by default to all or a subsection of stories by usi
 It is important to declare this decorator as **the first decorator**, otherwise it won't work well.
 
 ```js
-// Globally in your .storybook/config.js.
+// Globally in your .storybook/preview.js.
 import { addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
@@ -33,9 +33,10 @@ addDecorator(withInfo);
 or
 
 ```js
-storiesOf('Component', module)
-  .addDecorator(withInfo) // At your stories directly.
-  .add(...);
+export default {
+  title: 'Component',
+  decorators: [withInfo],
+};
 ```
 
 Then, you can use the `info` parameter to either pass certain options or specific documentation text to your stories.
@@ -43,88 +44,39 @@ A complete list of possible configurations can be found [in a later section](#se
 This can be done per book of stories:
 
 ```js
-import { storiesOf } from '@storybook/react';
-
 import Component from './Component';
 
-storiesOf('Component', module)
-  .addParameters({
-    info: {
-      // Your settings
-    },
-  })
-  .add('with some emoji', () => <Component />);
+export default {
+  title: 'Component',
+  parameters: {
+    info: {},
+  },
+};
 ```
 
 ...or for each story individually:
 
 ```js
-import { storiesOf } from '@storybook/react';
-
 import Component from './Component';
 
-storiesOf('Component', module)
-  .add(
-    'with some emoji',
-    () => <Component emoji />,
-    { info: { inline: true, header: false } } // Make your component render inline with the additional info
-  )
-  .add(
-    'with no emoji',
-    () => <Component />,
-    { info: '☹️ no emojis' } // Add additional info text directly
-  );
-```
+export default {
+  title: 'Component',
+};
 
-...or even together:
-
-```js
-import { storiesOf } from '@storybook/react';
-
-import Component from './Component';
-
-storiesOf('Component', module)
-  .addParameters({
-    info: {
-      // Make a default for all stories in this book,
-      inline: true, // where the components are inlined
-      styles: {
-        header: {
-          h1: {
-            color: 'red', // and the headers of the sections are red.
-          },
-        },
-      },
-    },
-  })
-  .add('green version', () => <Component green />, {
-    info: {
-      styles: stylesheet => ({
-        // Setting the style with a function
-        ...stylesheet,
-        header: {
-          ...stylesheet.header,
-          h1: {
-            ...stylesheet.header.h1,
-            color: 'green', // Still inlined but with green headers!
-          },
-        },
-      }),
-    },
-  })
-  .add('something else', () => <Component different />, {
-    info: 'This story has additional text added to the info!', // Still inlined and with red headers!
-  });
+export const defaultView = () => <Component />;
+defaultView = {
+  parameters: {
+    info: { inline: true },
+  },
+};
 ```
 
 It is also possible to disable the `info` addon entirely.
 Depending on the scope at which you want to disable the addon, pass the following parameters object either to an individual story or to an `addParameters` call.
 
 ```
-{
-  info: {
-    disable: true
-  }
+info: {
+  disable: true,
 }
 ```
 
@@ -134,30 +86,27 @@ The `info` addon also supports markdown.
 To use markdown as additional textual documentation for your stories, either pass it directly as a String to the `info` parameters, or use the `text` option.
 
 ```js
-storiesOf('Button', module).add('Button Component', () => <Button />, {
-  info: {
-    text: `
-          description or documentation about my component, supports markdown
+info: {
+  text: `
+    description or documentation about my component, supports markdown
 
-          ~~~js
-          <Button>Click Here</Button>
-          ~~~
-        `,
-  },
-});
+    ~~~js
+    <Button>Click Here</Button>
+    ~~~
+  `,
+}
 ```
 
 ## Setting Global Options
 
-To configure default options for all usage of the info addon, pass a option object along with the decorator in `.storybook/config.js`.
+To configure default options for all usage of the info addon, pass a option object along with the decorator in `.storybook/preview.js`.
 
 ```js
-// config.js
 import { withInfo } from '@storybook/addon-info';
 
 addDecorator(
   withInfo({
-    header: false, // Global configuration for the info addon across all of your stories.
+    header: false,
   })
 );
 ```
@@ -298,6 +247,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Button from './button';
 
+export default {
+  title: 'Button',
+  component: Button,
+  parameters: {
+    info: TableComponent,
+  },
+};
+
 const Red = props => <span style={{ color: 'red' }} {...props} />;
 
 const TableComponent = ({ propDefinitions }) => {
@@ -332,11 +289,7 @@ const TableComponent = ({ propDefinitions }) => {
   );
 };
 
-storiesOf('Button', module).add('with text', () => <Button>Hello Button</Button>, {
-  info: {
-    TableComponent,
-  },
-});
+export const defaultView = () => <Button />;
 ```
 
 ### React Docgen Integration

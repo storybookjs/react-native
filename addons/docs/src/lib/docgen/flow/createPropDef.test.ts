@@ -97,11 +97,40 @@ describe('type', () => {
       flowType: {
         name: 'signature',
         type: 'object',
-        raw: '{ (x: string): void, prop: string }',
+        raw:
+          '{ (x: string): void, prop1: string, prop2: string, prop3: string, prop4: string, prop5: string }',
         signature: {
           properties: [
             {
-              key: 'prop',
+              key: 'prop1',
+              value: {
+                name: 'string',
+                required: true,
+              },
+            },
+            {
+              key: 'prop2',
+              value: {
+                name: 'string',
+                required: true,
+              },
+            },
+            {
+              key: 'prop3',
+              value: {
+                name: 'string',
+                required: true,
+              },
+            },
+            {
+              key: 'prop4',
+              value: {
+                name: 'string',
+                required: true,
+              },
+            },
+            {
+              key: 'prop5',
               value: {
                 name: 'string',
                 required: true,
@@ -133,7 +162,9 @@ describe('type', () => {
     const { type } = createFlowPropDef(PROP_NAME, docgenInfo);
 
     expect(type.summary).toBe('object');
-    expect(type.detail).toBe('{ (x: string): void, prop: string }');
+    expect(type.detail).toBe(
+      '{ (x: string): void, prop1: string, prop2: string, prop3: string, prop4: string, prop5: string }'
+    );
   });
 
   it('should support func signature', () => {
