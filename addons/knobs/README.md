@@ -19,7 +19,7 @@ First of all, you need to install Knobs into your project as a dev dependency.
 yarn add @storybook/addon-knobs --dev
 ```
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
