@@ -34,7 +34,7 @@ addons.setConfig({
    * display the top-level grouping as a "root" in the sidebar
    * @type {Boolean}
    */
-  showRoots: null,
+  showRoots: true,
   /**
    * sidebar tree animations
    * @type {Boolean}
@@ -54,6 +54,16 @@ addons.setConfig({
    * theme storybook, see link below
    */
   theme: undefined,
+  /**	
+   * show story component as full screen	
+   * @type {Boolean}	
+   */	
+  goFullScreen: false,	
+  /**	
+   * id to select an addon panel	
+   * @type {String}	
+   */	
+  selectedPanel: undefined, // The order of addons in the "Addon panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook	
 });
 ```
 
