@@ -1,9 +1,8 @@
 import { isNil } from 'lodash';
-import { PropSummaryValue, PropType } from '@storybook/components';
+import { PropType } from '@storybook/components';
 import { createSummaryValue, isTooLongForTypeSummary } from '../../../lib';
 import { ExtractedProp, DocgenPropType } from '../../../lib/docgen';
-import { generateCode } from '../lib/generateCode';
-import { generateFuncSignature } from './generateFuncSignature';
+import { generateFuncSignature, generateShortFuncSignature } from './generateFuncSignature';
 import {
   OBJECT_CAPTION,
   ARRAY_CAPTION,
@@ -11,9 +10,17 @@ import {
   FUNCTION_CAPTION,
   ELEMENT_CAPTION,
   CUSTOM_CAPTION,
-} from './captions';
-import { InspectionType, inspectValue } from '../lib/inspection';
-import { isHtmlTag } from '../lib/isHtmlTag';
+  isHtmlTag,
+  generateObjectCode,
+  generateCode,
+} from '../lib';
+import {
+  InspectionType,
+  inspectValue,
+  InspectionElement,
+  InspectionObject,
+  InspectionArray,
+} from '../lib/inspection';
 
 enum PropTypesType {
   CUSTOM = 'custom',
@@ -38,27 +45,30 @@ interface EnumValue {
 
 interface TypeDef {
   name: string;
-  value: PropSummaryValue;
+  short: string;
+  compact: string;
+  full: string;
   inferedType?: InspectionType;
 }
 
 function createTypeDef({
   name,
-  summary,
-  detail,
+  short,
+  compact,
+  full,
   inferedType,
 }: {
   name: string;
-  summary: string;
-  detail?: string;
+  short: string;
+  compact: string;
+  full?: string;
   inferedType?: InspectionType;
 }): TypeDef {
   return {
     name,
-    value: {
-      summary,
-      detail: !isNil(detail) ? detail : summary,
-    },
+    short,
+    compact,
+    full: !isNil(full) ? full : short,
     inferedType,
   };
 }
@@ -67,11 +77,19 @@ function cleanPropTypes(value: string): string {
   return value.replace(/PropTypes./g, '').replace(/.isRequired/g, '');
 }
 
+function splitIntoLines(value: string): string[] {
+  return value.split(/\r?\n/);
+}
+
 function prettyObject(ast: any, compact = false): string {
+  return cleanPropTypes(generateObjectCode(ast, compact));
+}
+
+function prettyArray(ast: any, compact = false): string {
   return cleanPropTypes(generateCode(ast, compact));
 }
 
-function getCaptionFromInspectionType(type: InspectionType): string {
+function getCaptionForInspectionType(type: InspectionType): string {
   switch (type) {
     case InspectionType.OBJECT:
       return OBJECT_CAPTION;
@@ -88,59 +106,70 @@ function getCaptionFromInspectionType(type: InspectionType): string {
   }
 }
 
-function generateValuesForObjectAst(ast: any): [string, string] {
-  let summary = prettyObject(ast, true);
-  let detail;
+function generateTypeFromString(value: string, originalTypeName: string): TypeDef {
+  const { inferedType, ast } = inspectValue(value);
+  const { type } = inferedType;
 
-  if (!isTooLongForTypeSummary(summary)) {
-    detail = summary;
-  } else {
-    summary = OBJECT_CAPTION;
-    detail = prettyObject(ast);
+  let short;
+  let compact;
+  let full;
+
+  switch (type) {
+    case InspectionType.IDENTIFIER:
+    case InspectionType.LITERAL:
+      short = value;
+      compact = value;
+      break;
+    case InspectionType.OBJECT: {
+      const { depth } = inferedType as InspectionObject;
+
+      short = OBJECT_CAPTION;
+      compact = depth === 1 ? prettyObject(ast, true) : null;
+      full = prettyObject(ast);
+      break;
+    }
+    case InspectionType.ELEMENT: {
+      const { identifier } = inferedType as InspectionElement;
+
+      short = !isNil(identifier) && !isHtmlTag(identifier) ? identifier : ELEMENT_CAPTION;
+      compact = splitIntoLines(value).length === 1 ? value : null;
+      full = value;
+      break;
+    }
+    case InspectionType.ARRAY: {
+      const { depth } = inferedType as InspectionArray;
+
+      short = ARRAY_CAPTION;
+      compact = depth <= 2 ? prettyArray(ast, true) : null;
+      full = prettyArray(ast);
+      break;
+    }
+    default:
+      short = getCaptionForInspectionType(type);
+      compact = value;
+      full = value;
+      break;
   }
 
-  return [summary, detail];
+  return createTypeDef({
+    name: originalTypeName,
+    short,
+    compact,
+    full,
+    inferedType: type,
+  });
 }
 
 function generateCustom({ raw }: DocgenPropType): TypeDef {
   if (!isNil(raw)) {
-    const { inferedType, ast } = inspectValue(raw);
-    const { type, identifier } = inferedType as any;
-
-    let summary;
-    let detail;
-
-    switch (type) {
-      case InspectionType.IDENTIFIER:
-      case InspectionType.LITERAL:
-        summary = raw;
-        break;
-      case InspectionType.OBJECT: {
-        const [objectCaption, objectValue] = generateValuesForObjectAst(ast);
-
-        summary = objectCaption;
-        detail = objectValue;
-        break;
-      }
-      case InspectionType.ELEMENT:
-        summary = !isNil(identifier) && !isHtmlTag(identifier) ? identifier : ELEMENT_CAPTION;
-        detail = raw;
-        break;
-      default:
-        summary = getCaptionFromInspectionType(type);
-        detail = raw;
-        break;
-    }
-
-    return createTypeDef({
-      name: PropTypesType.CUSTOM,
-      summary,
-      detail,
-      inferedType: type,
-    });
+    return generateTypeFromString(raw, PropTypesType.CUSTOM);
   }
 
-  return createTypeDef({ name: PropTypesType.CUSTOM, summary: CUSTOM_CAPTION });
+  return createTypeDef({
+    name: PropTypesType.CUSTOM,
+    short: CUSTOM_CAPTION,
+    compact: CUSTOM_CAPTION,
+  });
 }
 
 function generateFunc(extractedProp: ExtractedProp): TypeDef {
@@ -150,47 +179,48 @@ function generateFunc(extractedProp: ExtractedProp): TypeDef {
     if (!isNil(jsDocTags.params) || !isNil(jsDocTags.returns)) {
       return createTypeDef({
         name: PropTypesType.FUNC,
-        summary: FUNCTION_CAPTION,
-        detail: generateFuncSignature(jsDocTags.params, jsDocTags.returns),
+        short: generateShortFuncSignature(jsDocTags.params, jsDocTags.returns),
+        compact: null,
+        full: generateFuncSignature(jsDocTags.params, jsDocTags.returns),
       });
     }
   }
 
-  return createTypeDef({ name: PropTypesType.FUNC, summary: FUNCTION_CAPTION });
+  return createTypeDef({
+    name: PropTypesType.FUNC,
+    short: FUNCTION_CAPTION,
+    compact: FUNCTION_CAPTION,
+  });
 }
 
 function generateShape(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
   const fields = Object.keys(type.value)
-    .map((key: string) => `${key}: ${generateType(type.value[key], extractedProp).value.detail}`)
+    .map((key: string) => `${key}: ${generateType(type.value[key], extractedProp).full}`)
     .join(', ');
 
-  const { ast } = inspectValue(`{ ${fields} }`);
-  const [summary, detail] = generateValuesForObjectAst(ast);
+  const { inferedType, ast } = inspectValue(`{ ${fields} }`);
+  const { depth } = inferedType as InspectionObject;
 
   return createTypeDef({
     name: PropTypesType.SHAPE,
-    summary,
-    detail,
+    short: OBJECT_CAPTION,
+    compact: depth === 1 ? prettyObject(ast, true) : null,
+    full: prettyObject(ast),
   });
 }
 
+function objectOf(of: string): string {
+  return `objectOf(${of})`;
+}
+
 function generateObjectOf(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
-  const format = (of: string) => `objectOf(${of})`;
-
-  const { name, value } = generateType(type.value, extractedProp);
-  // eslint-disable-next-line prefer-const
-  let { summary, detail } = value;
-
-  if (name === PropTypesType.SHAPE) {
-    if (!isTooLongForTypeSummary(detail)) {
-      summary = detail;
-    }
-  }
+  const { short, compact, full } = generateType(type.value, extractedProp);
 
   return createTypeDef({
     name: PropTypesType.OBJECTOF,
-    summary: format(summary),
-    detail: format(detail),
+    short: objectOf(short),
+    compact: !isNil(compact) ? objectOf(compact) : null,
+    full: objectOf(full),
   });
 }
 
@@ -198,76 +228,58 @@ function generateUnion(type: DocgenPropType, extractedProp: ExtractedProp): Type
   if (Array.isArray(type.value)) {
     const values = type.value.reduce(
       (acc: any, v: any) => {
-        const { summary, detail } = generateType(v, extractedProp).value;
+        const { short, compact, full } = generateType(v, extractedProp);
 
-        acc.summary.push(summary);
-        acc.detail.push(detail);
+        acc.short.push(short);
+        acc.compact.push(compact);
+        acc.full.push(full);
 
         return acc;
       },
-      { summary: [], detail: [] }
+      { short: [], compact: [], full: [] }
     );
 
     return createTypeDef({
       name: PropTypesType.UNION,
-      summary: values.summary.join(' | '),
-      detail: values.detail.join(' | '),
+      short: values.short.join(' | '),
+      compact: values.compact.every((x: string) => !isNil(x)) ? values.compact.join(' | ') : null,
+      full: values.full.join(' | '),
     });
   }
 
-  return createTypeDef({ name: PropTypesType.UNION, summary: type.value });
+  return createTypeDef({ name: PropTypesType.UNION, short: type.value, compact: null });
 }
 
 function generateEnumValue({ value, computed }: EnumValue): TypeDef {
-  if (computed) {
-    const { inferedType, ast } = inspectValue(value) as any;
-    const { type } = inferedType;
-
-    let caption = getCaptionFromInspectionType(type);
-
-    if (
-      type === InspectionType.FUNCTION ||
-      type === InspectionType.CLASS ||
-      type === InspectionType.ELEMENT
-    ) {
-      if (!isNil(inferedType.identifier)) {
-        caption = inferedType.identifier;
-      }
-    }
-
-    return createTypeDef({
-      name: 'enumvalue',
-      summary: caption,
-      detail: type === InspectionType.OBJECT ? prettyObject(ast) : value,
-      inferedType: type,
-    });
-  }
-
-  return createTypeDef({ name: 'enumvalue', summary: value });
+  return computed
+    ? generateTypeFromString(value, 'enumvalue')
+    : createTypeDef({ name: 'enumvalue', short: value, compact: value });
 }
 
 function generateEnum(type: DocgenPropType): TypeDef {
   if (Array.isArray(type.value)) {
     const values = type.value.reduce(
       (acc: any, v: EnumValue) => {
-        const { summary, detail } = generateEnumValue(v).value;
+        const { short, compact, full } = generateEnumValue(v);
 
-        acc.summary.push(summary);
-        acc.detail.push(detail);
+        acc.short.push(short);
+        acc.compact.push(compact);
+        acc.full.push(full);
 
         return acc;
       },
-      { summary: [], detail: [] }
+      { short: [], compact: [], full: [] }
     );
 
     return createTypeDef({
       name: PropTypesType.ENUM,
-      summary: values.summary.join(' | '),
-      detail: values.detail.join(' | '),
+      short: values.short.join(' | '),
+      compact: values.compact.every((x: string) => !isNil(x)) ? values.compact.join(' | ') : null,
+      full: values.full.join(' | '),
     });
   }
 
-  return createTypeDef({ name: PropTypesType.ENUM, summary: type.value });
+  return createTypeDef({ name: PropTypesType.ENUM, short: type.value, compact: type.value });
 }
 
 function braceAfter(of: string): string {
@@ -278,27 +290,31 @@ function braceAround(of: string): string {
   return `[${of}]`;
 }
 
-function createArrayOfObjectTypeDef(summary: string, detail: string): TypeDef {
+function createArrayOfObjectTypeDef(short: string, compact: string, full: string): TypeDef {
   return createTypeDef({
     name: PropTypesType.ARRAYOF,
-    summary: summary === OBJECT_CAPTION ? braceAfter(summary) : braceAround(summary),
-    detail: braceAround(detail),
+    short: braceAfter(short),
+    compact: !isNil(compact) ? braceAround(compact) : null,
+    full: braceAround(full),
   });
 }
 
 function generateArray(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
-  const { name, value, inferedType } = generateType(type.value, extractedProp);
-  const { summary, detail } = value;
+  const { name, short, compact, full, inferedType } = generateType(type.value, extractedProp);
 
   if (name === PropTypesType.CUSTOM) {
     if (inferedType === InspectionType.OBJECT) {
-      return createArrayOfObjectTypeDef(summary, detail);
+      return createArrayOfObjectTypeDef(short, compact, full);
     }
   } else if (name === PropTypesType.SHAPE) {
-    return createArrayOfObjectTypeDef(summary, detail);
+    return createArrayOfObjectTypeDef(short, compact, full);
   }
 
-  return createTypeDef({ name: PropTypesType.ARRAYOF, summary: braceAfter(detail) });
+  return createTypeDef({
+    name: PropTypesType.ARRAYOF,
+    short: braceAfter(short),
+    compact: braceAfter(short),
+  });
 }
 
 function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeDef {
@@ -311,7 +327,11 @@ function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeD
       case PropTypesType.SHAPE:
         return generateShape(type, extractedProp);
       case PropTypesType.INSTANCEOF:
-        return createTypeDef({ name: PropTypesType.INSTANCEOF, summary: type.value });
+        return createTypeDef({
+          name: PropTypesType.INSTANCEOF,
+          short: type.value,
+          compact: type.value,
+        });
       case PropTypesType.OBJECTOF:
         return generateObjectOf(type, extractedProp);
       case PropTypesType.UNION:
@@ -321,37 +341,64 @@ function generateType(type: DocgenPropType, extractedProp: ExtractedProp): TypeD
       case PropTypesType.ARRAYOF:
         return generateArray(type, extractedProp);
       default:
-        return createTypeDef({ name: type.name, summary: type.name });
+        return createTypeDef({ name: type.name, short: type.name, compact: type.name });
     }
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error(e);
   }
 
-  return createTypeDef({ name: 'unknown', summary: 'unknown' });
+  return createTypeDef({ name: 'unknown', short: 'unknown', compact: 'unknown' });
 }
 
 export function createType(extractedProp: ExtractedProp): PropType {
   const { type } = extractedProp.docgenInfo;
 
-  switch (type.name) {
-    case PropTypesType.CUSTOM:
-    case PropTypesType.SHAPE:
-    case PropTypesType.INSTANCEOF:
-    case PropTypesType.OBJECTOF:
-    case PropTypesType.UNION:
-    case PropTypesType.ENUM:
-    case PropTypesType.ARRAYOF: {
-      const { summary, detail } = generateType(type, extractedProp).value;
-
-      return createSummaryValue(summary, summary !== detail ? detail : undefined);
-    }
-    case PropTypesType.FUNC: {
-      const { detail } = generateType(type, extractedProp).value;
-
-      return createSummaryValue(detail);
-    }
-    default:
-      return null;
+  // A type could be null if a defaultProp has been provided without a type definition.
+  if (isNil(type)) {
+    return null;
   }
+
+  try {
+    switch (type.name) {
+      case PropTypesType.CUSTOM:
+      case PropTypesType.SHAPE:
+      case PropTypesType.INSTANCEOF:
+      case PropTypesType.OBJECTOF:
+      case PropTypesType.UNION:
+      case PropTypesType.ENUM:
+      case PropTypesType.ARRAYOF: {
+        const { short, compact, full } = generateType(type, extractedProp);
+
+        if (!isNil(compact)) {
+          if (!isTooLongForTypeSummary(compact)) {
+            return createSummaryValue(compact);
+          }
+        }
+
+        return createSummaryValue(short, short !== full ? full : undefined);
+      }
+      case PropTypesType.FUNC: {
+        const { short, compact, full } = generateType(type, extractedProp);
+
+        let summary = short;
+        const detail = full;
+
+        if (!isTooLongForTypeSummary(full)) {
+          summary = full;
+        } else if (!isNil(compact)) {
+          summary = compact;
+        }
+
+        return createSummaryValue(summary, summary !== detail ? detail : undefined);
+      }
+      default:
+        return null;
+    }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(e);
+  }
+
+  return null;
 }

@@ -6,7 +6,7 @@ exports[`Storyshots Core/Parameters passed to story 1`] = `
   id="root"
 >
   <div>
-    Parameters are {"options":{"showRoots":true},"docs":{},"globalParameter":"globalParameter","framework":"riot","chapterParameter":"chapterParameter","__id":"core-parameters--passed-to-story","storyParameter":"storyParameter","id":"root","dataIs":"parameters"}
+    Parameters are {"globalParameter":"globalParameter","options":{},"docs":{},"framework":"riot","chapterParameter":"chapterParameter","__id":"core-parameters--passed-to-story","storyParameter":"storyParameter","id":"root","dataIs":"parameters"}
   </div>
 </div>
 `;
