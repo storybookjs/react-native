@@ -1,3 +1,16 @@
+## 5.3.0-beta.11 (November 28, 2019)
+
+### Features
+
+* UI: Escape hatch CSS on for "active" tablist buttons ([#8989](https://github.com/storybookjs/storybook/pull/8989))
+* Addon-docs: Added dark theme option to source component ([#8732](https://github.com/storybookjs/storybook/pull/8732))
+* Triconfig: Configure UI options overhaul ([#8871](https://github.com/storybookjs/storybook/pull/8871))
+
+### Bug Fixes
+
+* Addon-docs: Fix vertical alignment of props expandable ([#8953](https://github.com/storybookjs/storybook/pull/8953))
+* Addon-links: Fix return type of linkTo and examples ([#8975](https://github.com/storybookjs/storybook/pull/8975))
+
 ## 5.3.0-beta.10 (November 27, 2019)
 
 ### Features
