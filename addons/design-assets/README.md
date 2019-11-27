@@ -11,7 +11,7 @@ npm install @storybook/addon-design-assets
 ```
 
 ## Usage
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
