@@ -93,9 +93,18 @@ It's up to you to find a naming/placing scheme that works for your project/team.
 
 ## Loading stories
 
-Stories are loaded in the `.storybook/config.js` file.
+Stories are loaded in the `.storybook/main.js` file or `.storybook/preview.js` file.
 
 The most convenient way to load stories is by filename. For example, if your stories files are located in the `src/components` directory, you can use the following snippet:
+
+```js
+// .storybook/main.js
+module.exports = {
+  stories: ['../src/components/**/*.stories.js'],
+};
+```
+
+Alternatively you can import all your stories in `.storybook/preview.js`:
 
 ```js
 import { configure } from '@storybook/react';
@@ -103,7 +112,7 @@ import { configure } from '@storybook/react';
 configure(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-> NOTE: The `configure` function should be called only once in `config.js`.
+> NOTE: The `configure` function should be called only once in `.storybook/preview.js`.
 
 The `configure` function accepts:
 
@@ -183,15 +192,13 @@ A decorator is a way to wrap a story with a common set of components, for exampl
 
 Decorators can be applied globally, at the component level, or individually at the story level. Global decorators are typically applied in the Storybook config files, and component/story decorators are applied in the story file.
 
-Here is an example of a global decorator which centers every story in the storybook:
+Here is an example of a global decorator which centers every story in the `.storybook/preview.js`:
 
 ```jsx
 import React from 'react';
-import { load, addDecorator } from '@storybook/react';
+import { addDecorator } from '@storybook/react';
 
 addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
-
-load(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
 And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story decorator wraps a single story in an additional red frame.
@@ -224,11 +231,12 @@ Parameters are custom metadata for a story. Like decorators, they can also be hi
 
 Here's an example where we are annotating our stories with [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) notes using parameters, to be displayed in the [Notes addon](https://github.com/storybookjs/storybook/tree/next/addons/notes).
 
-We first apply some notes globally in the Storybook config.
+We first apply some notes globally in the `.storybook/preview.js`.
 
 ```js
 import { load, addParameters } from '@storybook/react';
 import defaultNotes from './instructions.md';
+
 addParameters({ notes: defaultNotes });
 ```
 

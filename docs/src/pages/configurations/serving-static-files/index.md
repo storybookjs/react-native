@@ -13,19 +13,20 @@ You can import any media assets by importing (or requiring) them as shown below.
 
 ```js
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import imageFile from './static/image.png';
+
+export default {
+  title: 'img',
+};
 
 const image = {
   src: imageFile,
   alt: 'my image',
 };
 
-storiesOf('<img />', module)
-  .add('with an image', () => (
-    <img src={image.src} alt={image.alt} />
-  ));
+export const withAnImage = () => (
+  <img src={image.src} alt={image.alt} />
+);
 ```
 
 This is enabled with our [default config](/configurations/default-config). But, if you are using a [custom Webpack config](/configurations/custom-webpack-config), you need to add the [file-loader](https://github.com/webpack/file-loader) into your custom Webpack config.
@@ -48,15 +49,15 @@ Here `./public` is our static directory. Now you can use static files in the pub
 
 ```js
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-const imageAlt = 'my image';
+export default {
+  title: 'img',
+};
 
 // assume image.png is located in the "public" directory.
-storiesOf('<img />', module)
-  .add('with a image', () => (
-    <img src="/image.png" alt={imageAlt} />
-  ));
+export const withAnImage = () => (
+  <img src="/image.png" alt="my image" />
+);
 ```
 
 > You can also pass a list of directories separated by commas without spaces instead of a single directory.
@@ -76,20 +77,23 @@ In this example we're using a placeholder image service.
 
 ```js
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-storiesOf('<img />', module)
-  .add('with a image', () => (
-    <img src="https://placehold.it/350x150" alt="My CDN placeholder" />
-  ));
+export default {
+  title: 'img',
+};
+
+// assume image.png is located in the "public" directory.
+export const withAnImage = () => (
+  <img src="https://placehold.it/350x150" alt="My CDN placeholder" />
+);
 ```
 
 ## Absolute versus relative paths
 
 Sometimes, you may want to deploy your storybook into a subpath, like `https://example.com/storybook`.
 
-In this case, you need to have all your images and media files with relative paths. Otherwise, Storybook cannot locate those files.
+In this case, you need to have all your images and media files with relative paths. Otherwise, the browser cannot locate those files.
 
 If you load static content via importing, this is automatic and you do not have to do anything.
 
-If you are using a static directory, then you need to use _relative paths_ to load images.
+If you are using a static directory, then you need to use _relative paths_ to load images or use [the base element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base).

@@ -20,17 +20,19 @@ or with yarn:
 yarn add -D @storybook/addon-viewport
 ```
 
-Then, add following content to .storybook/addons.js
+within `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-viewport/register';
+module.exports = {
+  addons: ['@storybook/addon-viewport/register']
+}
 ```
 
 You should now be able to see the viewport addon icon in the the toolbar at the top of the screen.
 
 ## Configuration
 
-The viewport addon is configured by story parameters with the `viewport` key. To configure globally, import `addParameters` from your app layer in your `config.js` file.
+The viewport addon is configured by story parameters with the `viewport` key. To configure globally, import `addParameters` from your app layer in your `preview.js` file.
 
 ```js
 import { addParameters } from '@storybook/react';
@@ -91,19 +93,27 @@ A key-value pair of viewport's key and properties (see `Viewport` definition bel
 Parameters can be configured for a whole set of stories or a single story via the standard parameter API:
 
 ```js
-import addStories from '@storybook/react';
 
-addStories('Stories', module)
-  // To set a default viewport for all the stories for this component
-  .addParameters({ viewport: { defaultViewport: 'iphone6' }})
-  .add('story', () => </>, { viewport: { defaultViewport: 'iphonex' }});
+export default {
+  title: 'Stories',
+  parameters: {
+    viewport: { defaultViewport: 'iphone6' },
+  };
+};
+
+export const myStory = () => <div />;
+myStory.story = {
+  parameters: {
+    viewport: { defaultViewport: 'iphonex' },
+  },
+};
 ```
 
 ## Examples
 
 ### Use Detailed Set of Devices
 
-The default viewports being used is [`MINIMAL_VIEWPORTS`](src/defaults.ts). If you'd like to use a more granular list of devices, you can use [`INITIAL_VIEWPORTS`](src/defaults.ts) like so in your `config.js` file in your `.storybook` directory.
+The default viewports being used is [`MINIMAL_VIEWPORTS`](src/defaults.ts). If you'd like to use a more granular list of devices, you can use [`INITIAL_VIEWPORTS`](src/defaults.ts) like so in your `.storybook/preview.js` file.
 
 ```js
 import { addParameters } from '@storybook/react';
@@ -118,12 +128,12 @@ addParameters({
 
 ### Use Custom Set of Devices
 
-This will replace all previous devices with `Kindle Fire 2` and `Kindle Fire HD` by calling `addParameters` with the two devices as `viewports` in `config.js` file in your `.storybook` directory.
+This will replace all previous devices with `Kindle Fire 2` and `Kindle Fire HD` by calling `addParameters` with the two devices as `viewports` in `.storybook/preview.js` file.
 
 ```js
 import { addParameters } from '@storybook/react';
 
-const newViewports = {
+const customViewports = {
   kindleFire2: {
     name: 'Kindle Fire 2',
     styles: {
@@ -141,7 +151,7 @@ const newViewports = {
 };
 
 addParameters({
-  viewport: { viewports: newViewports },
+  viewport: { viewports: customViewports },
 });
 ```
 
@@ -153,7 +163,7 @@ This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. 
 import { addParameters } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
-const newViewports = {
+const customViewports = {
   kindleFire2: {
     name: 'Kindle Fire 2',
     styles: {
@@ -174,7 +184,7 @@ addParameters({
   viewport: {
     viewports: {
       ...INITIAL_VIEWPORTS,
-      ...newViewports,
+      ...customViewports,
     },
   },
 });

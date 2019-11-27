@@ -36,7 +36,7 @@ For props tables and descriptions, both of which are described in more detail be
 
 Props tables are enabled by the framework-specific `docs.extractProps` parameter, which extracts a component's props into a common data structure.
 
-Here's how it's done in Vue's framework-specific `config.js`:
+Here's how it's done in Vue's framework-specific `preview.js`:
 
 ```js
 import { extractProps } from './extractProps';
@@ -79,7 +79,7 @@ It follows the pattern of [Props tables](#props-tables) above, only it's even si
 
 Inline story rendering is another framework specific optimization, made possible by the `docs.prepareForInline` parameter.
 
-Again let's look at Vue's framework-specific `config.js`:
+Again let's look at Vue's framework-specific `preview.js`:
 
 ```js
 import toReact from '@egoist/vue-to-react';

@@ -57,17 +57,19 @@ By default storybook only works with precompiled es5 code but as most web compon
 For example if you have a library called `my-library` which is in es7 then you can add it like so
 
 ```js
-// .storybook/webpack.config.js
+// .storybook/main.js
 
-module.exports = ({ config }) => {
-  // find web-components rule for extra transpilation
-  const webComponentsRule = config.module.rules.find(
-    rule => rule.use && rule.use.options && rule.use.options.babelrc === false
-  );
-  // add your own `my-library`
-  webComponentsRule.test.push(new RegExp(`node_modules(\\/|\\\\)my-library(.*)\\.js$`));
+module.exports = { 
+  webpack: async config => {
+    // find web-components rule for extra transpilation
+    const webComponentsRule = config.module.rules.find(
+      rule => rule.use && rule.use.options && rule.use.options.babelrc === false
+    );
+    // add your own `my-library`
+    webComponentsRule.test.push(new RegExp(`node_modules(\\/|\\\\)my-library(.*)\\.js$`));
 
-  return config;
+    return config;
+  },
 };
 ```
 
