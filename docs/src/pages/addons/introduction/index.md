@@ -59,7 +59,7 @@ export const defaultView = () => (
 
 You can also add a decorator globally for all stories like this:
 
-in `preview.js`:
+in `.storybook/preview.js`:
 
 ```js
 import { addDecorator } from '@storybook/react';
