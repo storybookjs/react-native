@@ -86,8 +86,8 @@ defaultView.story = {
   parameters: {
     context: [{}]
   }
-}
- ```
+};
+```
 
 ## ⚙️ Setups
 
