@@ -4,9 +4,7 @@ import { addons } from '@storybook/addons';
 addons.setConfig({
   isFullscreen: false,
   showAddonsPanel: true,
-  showSearchBox: false,
   panelPosition: 'right',
-  enableShortcuts: true,
   theme: create({
     base: 'light',
     brandTitle: 'CRA Kitchen Sink',
