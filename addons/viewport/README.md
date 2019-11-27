@@ -20,7 +20,7 @@ or with yarn:
 yarn add -D @storybook/addon-viewport
 ```
 
-within `main.js`:
+within `.storybook/main.js`:
 
 ```js
 module.exports = {
