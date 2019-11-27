@@ -104,7 +104,7 @@ module.exports = {
 };
 ```
 
-Alternatively you can import all your stories in `preview.js`:
+Alternatively you can import all your stories in `.storybook/preview.js`:
 
 ```js
 import { configure } from '@storybook/react';
@@ -112,7 +112,7 @@ import { configure } from '@storybook/react';
 configure(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-> NOTE: The `configure` function should be called only once in `preview.js`.
+> NOTE: The `configure` function should be called only once in `.storybook/preview.js`.
 
 The `configure` function accepts:
 
