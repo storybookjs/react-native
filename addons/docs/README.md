@@ -143,7 +143,7 @@ The `addon-docs` preset has a few configuration options that can be used to conf
 module.exports = {
   presets: [
     {
-      name: '@storybook/addon-docs/react/preset',
+      name: '@storybook/addon-docs/preset',
       options: {
         configureJSX: true,
         babelOptions: {},
