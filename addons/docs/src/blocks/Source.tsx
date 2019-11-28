@@ -5,6 +5,7 @@ import { CURRENT_SELECTION } from './shared';
 
 interface CommonProps {
   language?: string;
+  dark?: boolean;
 }
 
 type SingleSourceProps = {
@@ -76,7 +77,7 @@ export const getSourceProps = (
       .join('\n\n');
   }
   return source
-    ? { code: source, language: props.language || 'jsx' }
+    ? { code: source, language: props.language || 'jsx', dark: props.dark || false }
     : { error: SourceError.SOURCE_UNAVAILABLE };
 };
 

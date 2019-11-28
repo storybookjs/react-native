@@ -106,21 +106,14 @@ Docs has peer dependencies on `react`, `react-is`, and `babel-loader`. If you wa
 yarn add -D react react-is babel-loader
 ```
 
-Then add the following to your `.storybook/presets.js` exports:
+Then add the following to your `.storybook/main.js`:
 
 ```js
-module.exports = ['@storybook/addon-docs/preset'];
+module.exports = {
+  presets: ['@storybook/addon-docs/preset'],
+  stories: ['../src/**/*/stories.(js|mdx)'],
+};
 ```
-
-**Configure.** If you're migrating from an earlier version of Storybook and want to use `MDX`, you need to upgrade your Storybook config:
-
-```js
-import { configure } from '@storybook/react';
-
-configure(require.context('../src', true, /\.stories\.(js|mdx)$/), module);
-```
-
-For more information on the new `configure`, see ["Loading stories"](https://github.com/storybookjs/storybook/blob/next/docs/src/pages/basics/writing-stories/index.md#loading-stories) in the Storybook documentation.
 
 If using in conjunction with the [storyshots add-on](../storyshots/storyshots-core/README.md), you will need to
 configure Jest to transform MDX stories into something Storyshots can understand:
@@ -147,65 +140,72 @@ Add the following to your Jest configuration:
 The `addon-docs` preset has a few configuration options that can be used to configure its babel/webpack loading behavior. Here's an example of how to use the preset with options:
 
 ```js
-module.exports = [
-  {
-    name: '@storybook/addon-docs/react/preset',
-    options: {
-      configureJSX: true,
-      babelOptions: {},
-      sourceLoaderOptions: null,
+module.exports = {
+  presets: [
+    {
+      name: '@storybook/addon-docs/preset',
+      options: {
+        configureJSX: true,
+        babelOptions: {},
+        sourceLoaderOptions: null,
+      },
     },
-  },
-];
+  ],
+};
 ```
 
 The `configureJsx` option is useful when you're writing your docs in MDX and your project's babel config isn't already set up to handle JSX files. `babelOptions` is a way to further configure the babel processor when you're using `configureJSX`.
 
-`sourceLoaderOptions` is an object for configuring `@storybook/source-loader`. When set to `null` it tells docs not to run the `source-loader` at all, which can be used as an optimization, or if you're already using `source-loader` in your `webpack.config.js`.
+`sourceLoaderOptions` is an object for configuring `@storybook/source-loader`. When set to `null` it tells docs not to run the `source-loader` at all, which can be used as an optimization, or if you're already using `source-loader` in your `main.js`.
 
 ## Manual configuration
 
-If you don't want to use the preset, and prefer to configure "the long way", first register the addon in `.storybook/addons.js`:
+If you don't want to use the preset, and prefer to configure "the long way", first register the addon in `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-docs/register';
+module.exports = {
+  addons: ['@storybook/addon-docs/register']
+};
 ```
 
-Then configure Storybook's webpack loader in `.storybook/webpack.config.js` to understand MDX story files and annotate TS/JS story files with source code using `source-loader`:
+
+Then configure Storybook's webpack loader in `.storybook/main.js` to understand MDX story files and annotate TS/JS story files with source code using `source-loader`:
 
 ```js
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
-module.exports = async ({ config }) => {
-  config.module.rules.push({
-    test: /\.(stories|story)\.mdx$/,
-    use: [
-      {
-        loader: 'babel-loader',
-        // may or may not need this line depending on your app's setup
-        options: {
-          plugins: ['@babel/plugin-transform-react-jsx'],
+module.exports = {
+  webpack: async config => {
+    config.module.rules.push({
+      test: /\.(stories|story)\.mdx$/,
+      use: [
+        {
+          loader: 'babel-loader',
+          // may or may not need this line depending on your app's setup
+          options: {
+            plugins: ['@babel/plugin-transform-react-jsx'],
+          },
         },
-      },
-      {
-        loader: '@mdx-js/loader',
-        options: {
-          compilers: [createCompiler({})],
+        {
+          loader: '@mdx-js/loader',
+          options: {
+            compilers: [createCompiler({})],
+          },
         },
-      },
-    ],
-  });
-  config.module.rules.push({
-    test: /\.(stories|story)\.[tj]sx?$/,
-    loader: require.resolve('@storybook/source-loader'),
-    exclude: [/node_modules/],
-    enforce: 'pre',
-  });
-  return config;
+      ],
+    });
+    config.module.rules.push({
+      test: /\.(stories|story)\.[tj]sx?$/,
+      loader: require.resolve('@storybook/source-loader'),
+      exclude: [/node_modules/],
+      enforce: 'pre',
+    });
+    return config;
+  }
 };
 ```
 
-Finally, you'll need to set up DocsPage in `.storybook/config.js`:
+Finally, you'll need to set up DocsPage in `.storybook/preview.js`:
 
 ```js
 import { addParameters } from '@storybook/react';

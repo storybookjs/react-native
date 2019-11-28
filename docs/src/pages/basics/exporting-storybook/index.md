@@ -43,11 +43,15 @@ Or, you can export your storybook into the docs directory and use it as the root
 
 - Install the [Now CLI](https://github.com/zeit/now):
 
-  `npm i -g now`
+```sh
+npm i -g now
+```
 
 - Configure your `build` script:
 
-  `"build": "build-storybook -c .storybook -o public"`
+```
+`"build": "build-storybook -c .storybook -o public"`
+```
 
 - Execute `now` on your terminal.
 

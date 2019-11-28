@@ -66,10 +66,12 @@ Docs has peer dependencies on `react`, `react-is`, and `babel-loader`. If you wa
 yarn add -D react react-is babel-loader
 ```
 
-Then update your `.storybook/config.js` to make sure you load MDX files:
+Then update your `.storybook/main.js` to make sure you load MDX files:
 
-```ts
-configure(require.context('../src/stories', true, /\.stories\.(js|mdx)$/), module);
+```js
+module.exports = {
+  stories: ['../src/stories/**/*.stories.(js|mdx)'],
+};
 ```
 
 Finally, you can create MDX files like this:
@@ -100,7 +102,7 @@ Yes, it's redundant to declare `component` twice. [Coming soon](https://github.c
 
 Storybook Docs renders all Vue stories inside IFrames, with a default height of `60px` (configurable using the `docs.iframeHeight` story parameter).
 
-Starting in 5.3, you can also render stories inline, and in 6.0 this will become the default behavior. To render inline, update `.storybook/config.js`:
+Starting in 5.3, you can also render stories inline, and in 6.0 this will become the default behavior. To render inline, update `.storybook/preview.js`:
 
 ```js
 import { addParameters } from '@storybook/vue';

@@ -40,7 +40,7 @@ The webpack config [is configurable](/configurations/custom-webpack-config/), an
     entry: [
       '@storybook/core/dist/server/common/polyfills.js',
       '@storybook/core/dist/server/preview/globals.js',
-      '<your-storybook-dir>/config.js',
+      '<your-storybook-dir>/preview.js',
       'webpack-hot-middleware/client.js?reload=true',
     ],
     output: {

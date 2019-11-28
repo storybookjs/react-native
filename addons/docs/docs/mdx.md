@@ -165,7 +165,7 @@ To add [decorators](https://github.com/storybookjs/storybook/blob/next/docs/src/
 </Story>
 ```
 
-In addition, global decorators work just like before, e.g. adding the following to your `.storybook/config.js`:
+In addition, global decorators work just like before, e.g. adding the following to your `.storybook/preview.js`:
 
 ```js
 import { addDecorator, addParameters } from '@storybook/react';

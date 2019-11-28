@@ -13,6 +13,11 @@ export type PropDefFactory = (
   jsDocParsingResult?: JsDocParsingResult
 ) => PropDef;
 
+function createType(type: DocgenType) {
+  // A type could be null if a defaultProp has been provided without a type definition.
+  return !isNil(type) ? createSummaryValue(type.name) : null;
+}
+
 function createDefaultValue(defaultValue: DocgenPropDefaultValue): PropDefaultValue {
   if (!isNil(defaultValue)) {
     const { value } = defaultValue;
@@ -30,7 +35,7 @@ function createBasicPropDef(name: string, type: DocgenType, docgenInfo: DocgenIn
 
   return {
     name,
-    type: createSummaryValue(type.name),
+    type: createType(type),
     required,
     description,
     defaultValue: createDefaultValue(defaultValue),
