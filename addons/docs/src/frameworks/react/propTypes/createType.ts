@@ -2,7 +2,11 @@ import { isNil } from 'lodash';
 import { PropType } from '@storybook/components';
 import { createSummaryValue, isTooLongForTypeSummary } from '../../../lib';
 import { ExtractedProp, DocgenPropType } from '../../../lib/docgen';
-import { generateFuncSignature, generateShortFuncSignature } from './generateFuncSignature';
+import {
+  generateFuncSignature,
+  generateShortFuncSignature,
+  toMultilineSignature,
+} from './generateFuncSignature';
 import {
   OBJECT_CAPTION,
   ARRAY_CAPTION,
@@ -381,18 +385,18 @@ export function createType(extractedProp: ExtractedProp): PropType {
         return createSummaryValue(short, short !== full ? full : undefined);
       }
       case PropTypesType.FUNC: {
-        const { short, compact, full } = generateType(type, extractedProp);
+        const { short, full } = generateType(type, extractedProp);
 
         let summary = short;
-        const detail = full;
+        let detail;
 
         if (full.length < MAX_FUNC_LENGTH) {
           summary = full;
-        } else if (!isNil(compact)) {
-          summary = compact;
+        } else {
+          detail = toMultilineSignature(full);
         }
 
-        return createSummaryValue(summary, summary !== detail ? detail : undefined);
+        return createSummaryValue(summary, detail);
       }
       default:
         return null;

@@ -63,3 +63,7 @@ export function generateShortFuncSignature(
 
   return funcParts.join(' ');
 }
+
+export function toMultilineSignature(signature: string): string {
+  return signature.replace(/,/g, ',\r\n');
+}
