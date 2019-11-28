@@ -2,7 +2,8 @@ node_modules
 *.log
 .idea
 *.iml
-.vscode
+.vscode/*
+!.vscode/launch.json
 *.sw*
 npm-shrinkwrap.json
 dist
