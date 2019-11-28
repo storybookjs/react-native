@@ -49,6 +49,6 @@
     "sitemap": "^4.1.1",
     "styled-components": "^4.4.1",
     "ts-dedent": "^1.1.0",
-    "validatorjs": "^3.17.1"
+    "validatorjs": "^3.18.0"
   }
 }

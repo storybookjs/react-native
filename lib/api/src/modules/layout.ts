@@ -271,10 +271,20 @@ export default function({ store, provider }: { store: Store; provider: Provider 
     },
 
     getInitialOptions() {
-      const { theme } = provider.getConfig();
+      const { theme, selectedPanel, ...options } = provider.getConfig();
 
       return {
         ...initial,
+        layout: {
+          ...initial.layout,
+          ...pick(options, Object.keys(initial.layout)),
+          ...checkDeprecatedLayoutOptions(options),
+        },
+        ui: {
+          ...initial.ui,
+          ...pick(options, Object.keys(initial.ui)),
+        },
+        selectedPanel: selectedPanel || initial.selectedPanel,
         theme: theme || initial.theme,
       };
     },

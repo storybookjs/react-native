@@ -35,6 +35,29 @@ function extractIdentifierName(identifierNode: any) {
   return !isNil(identifierNode) ? identifierNode.name : null;
 }
 
+function filterAncestors(ancestors: estree.Node[]): estree.Node[] {
+  return ancestors.filter(x => x.type === 'ObjectExpression' || x.type === 'ArrayExpression');
+}
+
+function calculateNodeDepth(node: estree.Expression): number {
+  const depths: number[] = [];
+
+  acornWalk.ancestor(
+    node,
+    {
+      ObjectExpression(_: any, ancestors: estree.Node[]) {
+        depths.push(filterAncestors(ancestors).length);
+      },
+      ArrayExpression(_: any, ancestors: estree.Node[]) {
+        depths.push(filterAncestors(ancestors).length);
+      },
+    },
+    ACORN_WALK_VISITORS
+  );
+
+  return Math.max(...depths);
+}
+
 function parseIdentifier(identifierNode: estree.Identifier): ParsingResult<InspectionIdentifier> {
   return {
     inferedType: {
@@ -72,7 +95,8 @@ function parseFunction(
 
   const inferedType: InspectionFunction | InspectionElement = {
     type: isJsx ? InspectionType.ELEMENT : InspectionType.FUNCTION,
-    hasArguments: funcNode.params.length !== 0,
+    params: funcNode.params,
+    hasParams: funcNode.params.length !== 0,
   };
 
   const identifierName = extractIdentifierName((funcNode as estree.FunctionExpression).id);
@@ -135,10 +159,7 @@ function parseCall(callNode: estree.CallExpression): ParsingResult<InspectionObj
 
   const identifierName = extractIdentifierName(identifierNode);
   if (identifierName === 'shape') {
-    return {
-      inferedType: { type: InspectionType.OBJECT },
-      ast: callNode.arguments[0],
-    };
+    return parseObject(callNode.arguments[0] as estree.ObjectExpression);
   }
 
   return null;
@@ -146,14 +167,14 @@ function parseCall(callNode: estree.CallExpression): ParsingResult<InspectionObj
 
 function parseObject(objectNode: estree.ObjectExpression): ParsingResult<InspectionObject> {
   return {
-    inferedType: { type: InspectionType.OBJECT },
+    inferedType: { type: InspectionType.OBJECT, depth: calculateNodeDepth(objectNode) },
     ast: objectNode,
   };
 }
 
 function parseArray(arrayNode: estree.ArrayExpression): ParsingResult<InspectionArray> {
   return {
-    inferedType: { type: InspectionType.ARRAY },
+    inferedType: { type: InspectionType.ARRAY, depth: calculateNodeDepth(arrayNode) },
     ast: arrayNode,
   };
 }

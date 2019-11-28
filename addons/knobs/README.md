@@ -19,10 +19,12 @@ First of all, you need to install Knobs into your project as a dev dependency.
 yarn add @storybook/addon-knobs --dev
 ```
 
-Then, configure it as an addon by adding it to your `addons.js` file (located in the Storybook config directory).
+within `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-knobs/register';
+module.exports = {
+  addons: ['@storybook/addon-knobs/register']
+}
 ```
 
 Now, write your stories with Knobs.
@@ -48,10 +50,10 @@ export const withAButton = () => (
 
 // Knobs as dynamic variables.
 export const asDynamicVariables = () => {
-  const name = text("Name", "Arunoda Susiripala");
-  const age = number("Age", 89);
-
+  const name = text("Name", "James");
+  const age = number("Age", 35);
   const content = `I am ${name} and I'm ${age} years old.`;
+
   return <div>{content}</div>;
 };
 ```
@@ -64,18 +66,17 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import MyButton from './MyButton.vue';
 
-const stories = storiesOf('Storybook Knobs', module);
-
-// Add the `withKnobs` decorator to add knobs support to your stories.
-// You can also configure `withKnobs` as a global decorator.
-stories.addDecorator(withKnobs);
+export default {
+  title: "Storybook Knobs",
+  decorators: [withKnobs]
+};
 
 // Assign `props` to the story's component, calling
 // knob methods within the `default` property of each prop,
 // then pass the story's prop data to the component’s prop in
 // the template with `v-bind:` or by placing the prop within
 // the component’s slot.
-stories.add('with a button', () => ({
+export const withKnobs = () => ({
   components: { MyButton },
   props: {
     isDisabled: {
@@ -86,7 +87,7 @@ stories.add('with a button', () => ({
     }
   },
   template: `<MyButton :isDisabled="isDisabled">{{ text }}</MyButton>`
-}));
+});
 ```
 
 MyButton.vue:
@@ -116,31 +117,59 @@ import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 
 import { Button } from '@storybook/angular/demo';
 
-const stories = storiesOf('Storybook Knobs', module);
+export default {
+  title: "Storybook Knobs",
+  decorators: [withKnobs]
+};
 
-// "withKnobs" decorator should be applied before the stories using knobs
-stories.addDecorator(withKnobs);
-
-// Knobs for Angular props
-stories.add('with a button', () => ({
+export const withKnobs = () => ({
   component: Button,
   props: {
-   text: text('text', 'Hello Storybook'), // The first param of the knob function has to be exactly the same as the component input.
+    text: text('text', 'Hello Storybook'), // The first param of the knob function has to be exactly the same as the component input.
   },
-}));
-
+});
 ```
 
-Categorize your Knobs by assigning them a `groupId`. When a `groupId` exists, tabs will appear in the Knobs storybook panel to filter between the groups. Knobs without a `groupId` are automatically categorized into the `ALL` group.
+### With Ember
 ```js
-// Knob assigned a groupId.
-stories.add('as dynamic variables', () => {
-  const groupId = 'GROUP-ID1'
-  const name = text('Name', 'Arunoda Susiripala', groupId);
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import hbs from 'htmlbars-inline-precompile';
 
-  const content = `My name is ${name}.`;
-  return (<div>{content}</div>);
+export default {
+  title: 'StoryBook with Knobs',
+  decorators: [withKnobs],
+};
+
+export const button = () => ({
+  template: hbs`
+    <button disabled={{disabled}}>{{label}}</button>
+  `,
+  context: {
+    label: text('label', 'Hello Storybook'),
+    disabled: boolean('disabled', false),
+  },
 });
+```
+
+## Categorization
+
+Categorize your Knobs by assigning them a `groupId`. When a `groupId` exists, tabs will appear in the Knobs storybook panel to filter between the groups. Knobs without a `groupId` are automatically categorized into the `ALL` group.
+
+```js
+export const inGroups = () => {
+  const personalGroupId = 'personal info';
+  const generalGroupId = 'general info';
+
+  const name = text("Name", "James", personalGroupId);
+  const age = number("Age", 35, personalGroupId);
+  const message = text("Hello!", 35, generalGroupId);
+  const content = `
+    I am ${name} and I'm ${age} years old.
+    ${message}
+  `;
+
+  return <div>{content}</div>;
+};
 ```
 
 You can see your Knobs in a Storybook panel as shown below.
@@ -166,7 +195,7 @@ Allows you to get some text from the user.
 import { text } from '@storybook/addon-knobs';
 
 const label = 'Your Name';
-const defaultValue = 'Arunoda Susiripala';
+const defaultValue = 'James';
 const groupId = 'GROUP-ID1';
 
 const value = text(label, defaultValue, groupId);
@@ -185,6 +214,7 @@ const groupId = 'GROUP-ID1';
 
 const value = boolean(label, defaultValue, groupId);
 ```
+
 ### number
 
 Allows you to get a number from the user.
@@ -200,9 +230,11 @@ const value = number(label, defaultValue);
 ```
 
 For use with `groupId`, pass the default `options` as the third argument.
-```
+
+```js
 const value = number(label, defaultValue, {}, groupId);
 ```
+
 ### number bound by range
 
 Allows you to get a number from the user using a range slider.
@@ -246,7 +278,7 @@ import { object } from '@storybook/addon-knobs';
 
 const label = 'Styles';
 const defaultValue = {
-  backgroundColor: 'red'
+  backgroundColor: 'red',
 };
 const groupId = 'GROUP-ID1';
 
@@ -281,8 +313,9 @@ const value = array(label, defaultValue);
 > const value = array(label, defaultValue, separator);
 > ```
 
-For use with `groupId`, pass the default `separator` as the third argument
-```
+For use with `groupId`, pass the default `separator` as the third argument.
+
+```js
 const value = array(label, defaultValue, ',', groupId);
 ```
 
@@ -348,9 +381,9 @@ import { radios } from '@storybook/addon-knobs';
 
 const label = 'Fruits';
 const options = {
-      Kiwi: 'kiwi',
-      Guava: 'guava',
-      Watermelon: 'watermelon',
+  Kiwi: 'kiwi',
+  Guava: 'guava',
+  Watermelon: 'watermelon',
 };
 const defaultValue = 'kiwi';
 const groupId = 'GROUP-ID1';
@@ -454,30 +487,38 @@ withKnobs also accepts two optional options as story parameters.
 Usage:
 
 ```js
-import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-const stories = storiesOf('Storybook Knobs', module);
+export default {
+  title: 'Storybook Knobs',
+  decorators: [withKnobs],
+};
 
-stories.addDecorator(withKnobs)
-stories.add('story name', () => ..., {
-  knobs: {
-    timestamps: true, // Doesn't emit events while user is typing.
-    escapeHTML: true // Escapes strings to be safe for inserting as innerHTML. This option is true by default. It's safe to set it to `false` with frameworks like React which do escaping on their side.
-                     // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.
+export const defaultView = () => (
+  <div />
+);
+defaultView.story = {
+  parameters: {
+    knobs: {
+      // Doesn't emit events while user is typing.
+      timestamps: true,
+
+      // Escapes strings to be safe for inserting as innerHTML. This option is true by default. It's safe to set it to `false` with frameworks like React which do escaping on their side.
+      // You can still set it to false, but it's strongly discouraged to set to true in cases when you host your storybook on some route of your main site or web app.
+      escapeHTML: true,
+    }
   }
-});
+};
 ```
 
 ## Typescript
 
 If you are using Typescript, make sure you have the type definitions installed for the following libs:
 
--   node
--   react
+- node
+- react
 
-You can install them using:
-*assuming you are using Typescript >2.0.*
+You can install them using: (*assuming you are using Typescript >2.0.*)
 
 ```sh
 yarn add @types/node @types/react --dev

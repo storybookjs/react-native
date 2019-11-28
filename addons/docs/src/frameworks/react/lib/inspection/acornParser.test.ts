@@ -67,14 +67,34 @@ describe('parse', () => {
       const inferedType = result.inferedType as InspectionObject;
 
       expect(inferedType.type).toBe(InspectionType.OBJECT);
+      expect(inferedType.depth).toBe(1);
+      expect(result.ast).toBeDefined();
+    });
+
+    it('support deep PropTypes.shape', () => {
+      const result = parse('PropTypes.shape({ foo: PropTypes.shape({ bar: PropTypes.string }) })');
+      const inferedType = result.inferedType as InspectionObject;
+
+      expect(inferedType.type).toBe(InspectionType.OBJECT);
+      expect(inferedType.depth).toBe(2);
       expect(result.ast).toBeDefined();
     });
 
     it('support shape', () => {
-      const result = parse('shape({ foo: PropTypes.string })');
+      const result = parse('shape({ foo: string })');
       const inferedType = result.inferedType as InspectionObject;
 
       expect(inferedType.type).toBe(InspectionType.OBJECT);
+      expect(inferedType.depth).toBe(1);
+      expect(result.ast).toBeDefined();
+    });
+
+    it('support deep shape', () => {
+      const result = parse('shape({ foo: shape({ bar: string }) })');
+      const inferedType = result.inferedType as InspectionObject;
+
+      expect(inferedType.type).toBe(InspectionType.OBJECT);
+      expect(inferedType.depth).toBe(2);
       expect(result.ast).toBeDefined();
     });
 
@@ -83,6 +103,7 @@ describe('parse', () => {
       const inferedType = result.inferedType as InspectionObject;
 
       expect(inferedType.type).toBe(InspectionType.OBJECT);
+      expect(inferedType.depth).toBe(1);
       expect(result.ast).toBeDefined();
     });
 
@@ -95,6 +116,25 @@ describe('parse', () => {
       const inferedType = result.inferedType as InspectionObject;
 
       expect(inferedType.type).toBe(InspectionType.OBJECT);
+      expect(inferedType.depth).toBe(1);
+      expect(result.ast).toBeDefined();
+    });
+
+    it('support deep object literal', () => {
+      const result = parse(`
+      {
+          foo: {
+            hey: PropTypes.string
+          },
+          bar: PropTypes.string,
+          hey: {
+            ho: PropTypes.string
+          }
+      }`);
+      const inferedType = result.inferedType as InspectionObject;
+
+      expect(inferedType.type).toBe(InspectionType.OBJECT);
+      expect(inferedType.depth).toBe(2);
       expect(result.ast).toBeDefined();
     });
 
@@ -103,6 +143,7 @@ describe('parse', () => {
       const inferedType = result.inferedType as InspectionObject;
 
       expect(inferedType.type).toBe(InspectionType.OBJECT);
+      expect(inferedType.depth).toBe(1);
       expect(result.ast).toBeDefined();
     });
 
@@ -111,6 +152,16 @@ describe('parse', () => {
       const inferedType = result.inferedType as InspectionArray;
 
       expect(inferedType.type).toBe(InspectionType.ARRAY);
+      expect(inferedType.depth).toBe(1);
+      expect(result.ast).toBeDefined();
+    });
+
+    it('support deep array', () => {
+      const result = parse("['bottom-left', { foo: string }, [['hey', 'ho']]]");
+      const inferedType = result.inferedType as InspectionArray;
+
+      expect(inferedType.type).toBe(InspectionType.ARRAY);
+      expect(inferedType.depth).toBe(3);
       expect(result.ast).toBeDefined();
     });
 
@@ -129,7 +180,8 @@ describe('parse', () => {
 
       expect(inferedType.type).toBe(InspectionType.FUNCTION);
       expect(inferedType.identifier).toBeUndefined();
-      expect(inferedType.hasArguments).toBeFalsy();
+      expect(inferedType.hasParams).toBeFalsy();
+      expect(inferedType.params.length).toBe(0);
       expect(result.ast).toBeDefined();
     });
 
@@ -139,7 +191,8 @@ describe('parse', () => {
 
       expect(inferedType.type).toBe(InspectionType.FUNCTION);
       expect(inferedType.identifier).toBeUndefined();
-      expect(inferedType.hasArguments).toBeTruthy();
+      expect(inferedType.hasParams).toBeTruthy();
+      expect(inferedType.params.length).toBe(2);
       expect(result.ast).toBeDefined();
     });
 
@@ -149,7 +202,8 @@ describe('parse', () => {
 
       expect(inferedType.type).toBe(InspectionType.FUNCTION);
       expect(inferedType.identifier).toBe('concat');
-      expect(inferedType.hasArguments).toBeFalsy();
+      expect(inferedType.hasParams).toBeFalsy();
+      expect(inferedType.params.length).toBe(0);
       expect(result.ast).toBeDefined();
     });
 
@@ -159,7 +213,8 @@ describe('parse', () => {
 
       expect(inferedType.type).toBe(InspectionType.FUNCTION);
       expect(inferedType.identifier).toBe('concat');
-      expect(inferedType.hasArguments).toBeTruthy();
+      expect(inferedType.hasParams).toBeTruthy();
+      expect(inferedType.params.length).toBe(2);
       expect(result.ast).toBeDefined();
     });
 

@@ -157,7 +157,7 @@ We made this error explicit to make sure you know what you're doing when you mix
 
 If you're currently using the notes/info addons, you can upgrade to DocsPage by providing a custom `docs.extractComponentDescription` parameter. There are different ways to use each addon, so you can adapt this recipe according to your use case.
 
-Suppose you've added a `notes` parameter to each component in your library, containing markdown text, and you want that to show up at the top of the page in the `Description` slot. You could do that by adding the following snippet to `.storybook/config.js`:
+Suppose you've added a `notes` parameter to each component in your library, containing markdown text, and you want that to show up at the top of the page in the `Description` slot. You could do that by adding the following snippet to `.storybook/preview.js`:
 
 ```js
 import { addParameters } from '@storybook/client-api';

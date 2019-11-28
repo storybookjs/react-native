@@ -164,6 +164,7 @@ export const Tabs: FunctionComponent<TabsProps> = memo(
                   actions.onSelect(id);
                 }}
                 role="tab"
+                className={`tabbutton ${active ? 'tabbutton-active' : ''}`}
               >
                 {typeof title === 'function' ? title() : title}
               </TabButton>

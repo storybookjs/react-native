@@ -34,6 +34,7 @@ export interface ImageSnapshotConfig extends CommonConfig {
   getMatchOptions: (options: Options) => MatchImageSnapshotOptions;
   getScreenshotOptions: (options: Options) => Base64ScreenShotOptions;
   beforeScreenshot: (page: Page, options: Options) => void;
+  afterScreenshot: (options: { image: string; context: Context }) => void;
 }
 
 const noop: () => undefined = () => undefined;
@@ -73,4 +74,5 @@ export const defaultImageSnapshotConfig: ImageSnapshotConfig = {
   getMatchOptions: noop,
   getScreenshotOptions: defaultScreenshotOptions,
   beforeScreenshot: noop,
+  afterScreenshot: noop,
 };

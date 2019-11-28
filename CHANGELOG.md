@@ -1,3 +1,73 @@
+## 5.3.0-beta.11 (November 28, 2019)
+
+### Features
+
+* UI: Escape hatch CSS on for "active" tablist buttons ([#8989](https://github.com/storybookjs/storybook/pull/8989))
+* Addon-docs: Added dark theme option to source component ([#8732](https://github.com/storybookjs/storybook/pull/8732))
+* Triconfig: Configure UI options overhaul ([#8871](https://github.com/storybookjs/storybook/pull/8871))
+
+### Bug Fixes
+
+* Addon-docs: Fix vertical alignment of props expandable ([#8953](https://github.com/storybookjs/storybook/pull/8953))
+* Addon-links: Fix return type of linkTo and examples ([#8975](https://github.com/storybookjs/storybook/pull/8975))
+
+## 5.3.0-beta.10 (November 27, 2019)
+
+### Features
+
+* MDX: Allow user to override `docs.container` parameter ([#8968](https://github.com/storybookjs/storybook/pull/8968))
+* Addon-docs: Increase docs content wrapper max-width to 1000px ([#8970](https://github.com/storybookjs/storybook/pull/8970))
+* Addon-docs: Prop table support for Angular directives ([#8922](https://github.com/storybookjs/storybook/pull/8922))
+* Addon-docs: Increase width of props table type column ([#8950](https://github.com/storybookjs/storybook/pull/8950))
+
+### Bug Fixes
+
+* Addon-docs: Fix `Preview` theming escape hatch ([#8969](https://github.com/storybookjs/storybook/pull/8969))
+* Core: Don't try to require .ts files from dist ([#8971](https://github.com/storybookjs/storybook/pull/8971))
+* Core: Use logger in base-webpack.config.js ([#8966](https://github.com/storybookjs/storybook/pull/8966))
+
+### Maintenance
+
+* Examples: Add "debug" script for storybook-official ([#8973](https://github.com/storybookjs/storybook/pull/8973))
+* Build: Upgrade to node 10 on netlify ([#8967](https://github.com/storybookjs/storybook/pull/8967))
+* Core/triconfig everywhere: migrate examples ([#8942](https://github.com/storybookjs/storybook/pull/8942))
+
+## 5.3.0-beta.9 (November 26, 2019)
+
+### Features
+
+* Storyshots: Remove abandoned storyshots when run with `-u` flag ([#8889](https://github.com/storybookjs/storybook/pull/8889))
+
+### Bug Fixes
+
+* Addon-docs: Support subcomponents as a top-level default export ([#8931](https://github.com/storybookjs/storybook/pull/8931))
+
+### Dependency Upgrades
+
+* Core: Add missing dependencies  ([#8945](https://github.com/storybookjs/storybook/pull/8945))
+
+## 5.3.0-beta.8 (November 26, 2019)
+
+### Features
+
+* Storyshots-puppeteer: Add afterScreenshot handler ([#8092](https://github.com/storybookjs/storybook/pull/8092))
+
+### Bug Fixes
+
+* Core: Upgrade telejson to fix cross-origin frame error ([#8940](https://github.com/storybookjs/storybook/pull/8940))
+
+### Maintenance
+
+* Build: Fix image snapshots setup in official-storybook ([#8932](https://github.com/storybookjs/storybook/pull/8932))
+
+### Dependency Upgrades
+
+* Core: Add @babel/core peer dependency to  @storybook/core ([#8933](https://github.com/storybookjs/storybook/pull/8933))
+
+## 5.3.0-beta.7 (November 26, 2019)
+
+Failed npm publish
+
 ## 5.3.0-beta.6 (November 24, 2019)
 
 ### Features

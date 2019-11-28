@@ -36,7 +36,7 @@ const valueOrCall = (args: string[]) => (value: string | ((...args: string[]) =>
 export const linkTo = (
   idOrKindInput: string,
   storyInput?: string | ((...args: any[]) => string)
-) => (...args: string[]) => {
+) => (...args: any[]) => {
   const resolver = valueOrCall(args);
   const { storyId } = storyStore.getSelection();
   const current = storyStore.fromId(storyId) || {};

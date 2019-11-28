@@ -55,6 +55,11 @@ function generateDefault({ name, raw }: DocgenFlowType): PropType {
 }
 
 export function createType(type: DocgenFlowType): PropType {
+  // A type could be null if a defaultProp has been provided without a type definition.
+  if (isNil(type)) {
+    return null;
+  }
+
   switch (type.name) {
     case FlowTypesType.UNION:
       return generateUnion(type as DocgenFlowUnionType);

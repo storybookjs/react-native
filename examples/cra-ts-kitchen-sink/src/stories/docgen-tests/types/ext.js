@@ -1,3 +1,4 @@
+// @ts-ignore
 import PropTypes from 'prop-types';
 
 export const PRESET_SHAPE = {
