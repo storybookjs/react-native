@@ -22,6 +22,8 @@ import {
   InspectionArray,
 } from '../lib/inspection';
 
+const MAX_FUNC_LENGTH = 150;
+
 enum PropTypesType {
   CUSTOM = 'custom',
   ANY = 'any',
@@ -146,7 +148,7 @@ function generateTypeFromString(value: string, originalTypeName: string): TypeDe
     }
     default:
       short = getCaptionForInspectionType(type);
-      compact = value;
+      compact = splitIntoLines(value).length === 1 ? value : null;
       full = value;
       break;
   }
@@ -384,7 +386,7 @@ export function createType(extractedProp: ExtractedProp): PropType {
         let summary = short;
         const detail = full;
 
-        if (!isTooLongForTypeSummary(full)) {
+        if (full.length < MAX_FUNC_LENGTH) {
           summary = full;
         } else if (!isNil(compact)) {
           summary = compact;

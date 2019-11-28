@@ -98,7 +98,7 @@ describe('type', () => {
         name: 'signature',
         type: 'object',
         raw:
-          '{ (x: string): void, prop1: string, prop2: string, prop3: string, prop4: string, prop5: string }',
+          '{ (x: string): void, prop1: string, prop2: string, prop3: string, prop4: string, prop5: string, prop6: string, prop7: string, prop8: string }',
         signature: {
           properties: [
             {
@@ -136,6 +136,34 @@ describe('type', () => {
                 required: true,
               },
             },
+            {
+              key: 'prop5',
+              value: {
+                name: 'string',
+                required: true,
+              },
+            },
+            {
+              key: 'prop6',
+              value: {
+                name: 'string',
+                required: true,
+              },
+            },
+            {
+              key: 'prop7',
+              value: {
+                name: 'string',
+                required: true,
+              },
+            },
+            {
+              key: 'prop8',
+              value: {
+                name: 'string',
+                required: true,
+              },
+            },
           ],
           constructor: {
             name: 'signature',
@@ -163,7 +191,7 @@ describe('type', () => {
 
     expect(type.summary).toBe('object');
     expect(type.detail).toBe(
-      '{ (x: string): void, prop1: string, prop2: string, prop3: string, prop4: string, prop5: string }'
+      '{ (x: string): void, prop1: string, prop2: string, prop3: string, prop4: string, prop5: string, prop6: string, prop7: string, prop8: string }'
     );
   });
 
