@@ -50,11 +50,11 @@ const tasks = {
     projectLocation: '<all>',
     isJest: true,
   }),
-  image: createProject({
-    name: `Image snapshots for Official storybook ${chalk.gray('(image)')}`,
+  puppeteer: createProject({
+    name: `Puppeteer and A11y tests for Official storybook ${chalk.gray('(puppeteer)')}`,
     defaultValue: false,
-    option: '--image',
-    projectLocation: path.join(__dirname, '..', 'examples/official-storybook/image-snapshots'),
+    option: '--puppeteer',
+    projectLocation: path.join(__dirname, '..', 'examples/official-storybook/storyshots-puppeteer'),
     isJest: true,
   }),
   cli: createProject({

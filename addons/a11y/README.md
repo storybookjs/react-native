@@ -47,6 +47,8 @@ export const inaccessible = () => (
 );
 ```
 
+## Parameters
+
 For more customizability use parameters to configure [aXe options](https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#api-name-axeconfigure).
 You can override these options [at story level too](https://storybook.js.org/docs/configurations/options-parameter/#per-story-options).
 

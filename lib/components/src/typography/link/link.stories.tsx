@@ -48,7 +48,7 @@ storiesOf('Basics/Link', module)
         With icon in front
       </Link>
       <br />
-      <Link containsIcon href="http://google.com">
+      <Link title="Toggle sidebar" containsIcon href="http://google.com">
         {/* A linked icon by itself   */}
         <Icons icon="sidebar" />
       </Link>

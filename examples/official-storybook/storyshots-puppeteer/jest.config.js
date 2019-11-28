@@ -5,7 +5,7 @@ const finalJestConfig = { ...globalJestConfig };
 
 finalJestConfig.rootDir = path.join(__dirname, '../../..');
 finalJestConfig.testMatch = [
-  '<rootDir>/examples/official-storybook/image-snapshots/storyshots-image.runner.js',
+  '<rootDir>/examples/official-storybook/storyshots-puppeteer/*.runner.js',
 ];
 
 module.exports = finalJestConfig;
