@@ -64,6 +64,8 @@
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react-element-to-jsx-string": "^14.1.0",
+    "remark-external-links": "^5.0.0",
+    "remark-slug": "^5.1.2",
     "ts-dedent": "^1.1.0",
     "util-deprecate": "^1.0.2",
     "vue-docgen-api": "^3.26.0",

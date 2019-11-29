@@ -1,44 +1,22 @@
 import React, { FunctionComponent, useEffect } from 'react';
-import { document } from 'global';
+import { document, window } from 'global';
 import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
-import { DocsWrapper, DocsContent, Source } from '@storybook/components';
-import { components as htmlComponents, Code } from '@storybook/components/html';
+import { DocsWrapper, DocsContent } from '@storybook/components';
+import { components as htmlComponents } from '@storybook/components/html';
 import { DocsContextProps, DocsContext } from './DocsContext';
-import { anchorBlockIdFromId } from './Anchor';
+import { anchorBlockIdFromId, scrollToElement } from './Anchor';
 import { storyBlockIdFromId } from './Story';
+import { CodeOrSourceMdx, AnchorMdx } from './mdx';
 
 interface DocsContainerProps {
   context: DocsContextProps;
 }
 
-interface CodeOrSourceProps {
-  className?: string;
-}
-export const CodeOrSource: FunctionComponent<CodeOrSourceProps> = props => {
-  const { className, children, ...rest } = props;
-  // markdown-to-jsx does not add className to inline code
-  if (
-    typeof className !== 'string' &&
-    (typeof children !== 'string' || !(children as string).match(/[\n\r]/g))
-  ) {
-    return <Code>{children}</Code>;
-  }
-  // className: "lang-jsx"
-  const language = className && className.split('-');
-  return (
-    <Source
-      language={(language && language[1]) || 'plaintext'}
-      format={false}
-      code={children as string}
-      {...rest}
-    />
-  );
-};
-
 const defaultComponents = {
   ...htmlComponents,
-  code: CodeOrSource,
+  code: CodeOrSourceMdx,
+  a: AnchorMdx,
 };
 
 export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, children }) => {
@@ -46,30 +24,35 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, 
   const options = parameters.options || {};
   const theme = ensureTheme(options.theme);
   const { components: userComponents = null } = parameters.docs || {};
-  const components = { ...defaultComponents, ...userComponents };
+  const allComponents = { ...defaultComponents, ...userComponents };
 
   useEffect(() => {
-    let element = document.getElementById(anchorBlockIdFromId(storyId));
-    if (!element) {
-      element = document.getElementById(storyBlockIdFromId(storyId));
-    }
-    if (element) {
-      const allStories = element.parentElement.querySelectorAll('[id|="anchor-"]');
-      let block = 'start';
-      if (allStories && allStories[0] === element) {
-        block = 'end'; // first story should be shown with the intro content above
+    const url = new URL(window.parent.location);
+    if (url.hash) {
+      const element = document.getElementById(url.hash.substring(1));
+      if (element) {
+        scrollToElement(element);
       }
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block,
-        inline: 'nearest',
-      });
+    } else {
+      let element = document.getElementById(anchorBlockIdFromId(storyId));
+      if (!element) {
+        element = document.getElementById(storyBlockIdFromId(storyId));
+      }
+      if (element) {
+        const allStories = element.parentElement.querySelectorAll('[id|="anchor-"]');
+        let block = 'start';
+        if (allStories && allStories[0] === element) {
+          block = 'end'; // first story should be shown with the intro content above
+        }
+        scrollToElement(element, block);
+      }
     }
   }, [storyId]);
+
   return (
     <DocsContext.Provider value={context}>
       <ThemeProvider theme={theme}>
-        <MDXProvider components={components}>
+        <MDXProvider components={allComponents}>
           <DocsWrapper className="sbdocs sbdocs-wrapper">
             <DocsContent className="sbdocs sbdocs-content">{children}</DocsContent>
           </DocsWrapper>
