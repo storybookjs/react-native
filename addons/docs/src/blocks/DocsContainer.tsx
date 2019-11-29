@@ -5,9 +5,10 @@ import { ThemeProvider, ensure as ensureTheme } from '@storybook/theming';
 import { DocsWrapper, DocsContent } from '@storybook/components';
 import { components as htmlComponents } from '@storybook/components/html';
 import { DocsContextProps, DocsContext } from './DocsContext';
-import { anchorBlockIdFromId, scrollToElement } from './Anchor';
+import { anchorBlockIdFromId } from './Anchor';
 import { storyBlockIdFromId } from './Story';
 import { CodeOrSourceMdx, AnchorMdx } from './mdx';
+import { scrollToElement } from './utils';
 
 interface DocsContainerProps {
   context: DocsContextProps;

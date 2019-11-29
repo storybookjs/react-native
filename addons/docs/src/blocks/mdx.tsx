@@ -1,14 +1,15 @@
-import * as React from 'react';
+import React, { FC, SyntheticEvent } from 'react';
 import { Source } from '@storybook/components';
-import { Code, A } from '@storybook/components/html';
+import { Code, components } from '@storybook/components/html';
+import { document } from 'global';
 import { DocsContext, DocsContextProps } from './DocsContext';
-import { AnchorInPage } from './Anchor';
+import { scrollToElement } from './utils';
 
 // Hacky utility for dealing with functions or values in MDX Story elements
 export const makeStoryFn = (val: any) => (typeof val === 'function' ? val : () => val);
 
 // Hacky utilty for adding mdxStoryToId to the default context
-export const AddContext: React.FC<DocsContextProps> = props => {
+export const AddContext: FC<DocsContextProps> = props => {
   const { children, ...rest } = props;
   const parentContext = React.useContext(DocsContext);
   return (
@@ -42,6 +43,29 @@ export const CodeOrSourceMdx: React.FC<CodeOrSourceMdxProps> = ({
     />
   );
 };
+
+interface AnchorInPageProps {
+  href: string;
+}
+
+// @ts-ignore
+const A = components.a;
+
+const AnchorInPage: FC<AnchorInPageProps> = ({ href, children }) => (
+  <A
+    href={href}
+    onClick={(event: SyntheticEvent) => {
+      event.preventDefault();
+
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        scrollToElement(element);
+      }
+    }}
+  >
+    {children}
+  </A>
+);
 
 interface AnchorMdxProps {
   href: string;
