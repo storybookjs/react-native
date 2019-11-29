@@ -25,10 +25,8 @@ export const codeCommon = ({ theme }: { theme: Theme }): CSSObject => ({
   padding: '3px 5px',
   whiteSpace: 'nowrap',
 
-  borderRadius: '3px',
+  borderRadius: 3,
   fontSize: theme.typography.size.s2 - 1,
-
-  // color: theme.base === 'dark' && theme.color.darkest,
 
   border:
     theme.base === 'light'

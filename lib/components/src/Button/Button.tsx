@@ -23,7 +23,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
     cursor: 'pointer',
     display: 'inline-block',
     overflow: 'hidden',
-    padding: small ? '10px' : '16px',
+    padding: small ? 10 : 16,
     position: 'relative',
     textAlign: 'center',
     textDecoration: 'none',
@@ -78,46 +78,36 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
           ...(small ? { padding: 9 } : { padding: 12 }),
         }
       : {},
-  ({ theme, primary }) =>
-    primary
+  ({ theme, primary, secondary }) => {
+    let color;
+
+    if (primary) {
+      color = theme.color.primary;
+    }
+    if (secondary) {
+      color = theme.color.secondary;
+    }
+
+    return color
       ? {
-          background: theme.color.primary,
+          background: color,
           color: theme.color.lightest,
 
           '&:hover': {
-            background: darken(0.05, theme.color.primary),
+            background: darken(0.05, color),
           },
           '&:active': {
             boxShadow: 'rgba(0, 0, 0, 0.1) 0 0 0 3em inset',
           },
           '&:focus': {
-            boxShadow: `${rgba(theme.color.primary, 0.4)} 0 1px 9px 2px`,
+            boxShadow: `${rgba(color, 0.4)} 0 1px 9px 2px`,
           },
           '&:focus:hover': {
-            boxShadow: `${rgba(theme.color.primary, 0.2)} 0 8px 18px 0px`,
+            boxShadow: `${rgba(color, 0.2)} 0 8px 18px 0px`,
           },
         }
-      : {},
-  ({ theme, secondary }) =>
-    secondary
-      ? {
-          background: theme.color.secondary,
-          color: theme.color.lightest,
-
-          '&:hover': {
-            background: darken(0.05, theme.color.secondary),
-          },
-          '&:active': {
-            boxShadow: 'rgba(0, 0, 0, 0.1) 0 0 0 3em inset',
-          },
-          '&:focus': {
-            boxShadow: `${rgba(theme.color.secondary, 0.4)} 0 1px 9px 2px`,
-          },
-          '&:focus:hover': {
-            boxShadow: `${rgba(theme.color.secondary, 0.2)} 0 8px 18px 0px`,
-          },
-        }
-      : {},
+      : {};
+  },
   ({ theme, tertiary, inForm }) =>
     tertiary
       ? {
@@ -165,40 +155,37 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
           },
         }
       : {},
-  ({ theme, outline, primary }) =>
-    outline && primary
+  ({ theme, outline, primary }) => {
+    const color = theme.color.primary;
+
+    return outline && primary
       ? {
-          boxShadow: `${theme.color.primary} 0 0 0 1px inset`,
-          color: theme.color.primary,
+          boxShadow: `${color} 0 0 0 1px inset`,
+          color,
 
           'svg path': {
-            fill: theme.color.primary,
+            fill: color,
           },
 
           '&:hover': {
-            boxShadow: `${theme.color.primary} 0 0 0 1px inset`,
+            boxShadow: `${color} 0 0 0 1px inset`,
             background: 'transparent',
           },
 
           '&:active': {
-            background: theme.color.primary,
-            boxShadow: `${theme.color.primary} 0 0 0 1px inset`,
+            background: color,
+            boxShadow: `${color} 0 0 0 1px inset`,
             color: theme.color.lightest,
           },
           '&:focus': {
-            boxShadow: `${theme.color.primary} 0 0 0 1px inset, ${rgba(
-              theme.color.primary,
-              0.4
-            )} 0 1px 9px 2px`,
+            boxShadow: `${color} 0 0 0 1px inset, ${rgba(color, 0.4)} 0 1px 9px 2px`,
           },
           '&:focus:hover': {
-            boxShadow: `${theme.color.primary} 0 0 0 1px inset, ${rgba(
-              theme.color.primary,
-              0.2
-            )} 0 8px 18px 0px`,
+            boxShadow: `${color} 0 0 0 1px inset, ${rgba(color, 0.2)} 0 8px 18px 0px`,
           },
         }
-      : {},
+      : {};
+  },
   ({ theme, outline, primary, secondary }) => {
     let color;
     if (primary) {

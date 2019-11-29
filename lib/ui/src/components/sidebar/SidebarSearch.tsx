@@ -66,45 +66,42 @@ export type FilterFormProps = ComponentProps<'form'> & {
   focussed: boolean;
 };
 
-const FilterForm = styled.form<FilterFormProps>(
-  ({ theme, focussed }) =>
-    ({
+const FilterForm = styled.form<FilterFormProps>(({ theme, focussed }) => ({
+  transition: 'all 150ms ease-out',
+  borderBottom: '1px solid transparent',
+  borderBottomColor: focussed
+    ? opacify(0.3, theme.appBorderColor)
+    : opacify(0.1, theme.appBorderColor),
+  outline: 0,
+  position: 'relative',
+
+  input: {
+    color: theme.input.color,
+    fontSize: theme.typography.size.s2 - 1,
+    lineHeight: '20px',
+    paddingTop: 2,
+    paddingBottom: 2,
+    paddingLeft: 20,
+  },
+
+  '> svg': {
+    transition: 'all 150ms ease-out',
+    position: 'absolute',
+    top: '50%',
+    height: 12,
+    width: 12,
+    transform: 'translateY(-50%)',
+    zIndex: 1,
+
+    background: 'transparent',
+
+    path: {
       transition: 'all 150ms ease-out',
-      borderBottom: '1px solid transparent',
-      borderBottomColor: focussed
-        ? opacify(0.3, theme.appBorderColor)
-        : opacify(0.1, theme.appBorderColor),
-      outline: 0,
-      position: 'relative',
-
-      input: {
-        color: theme.input.color,
-        fontSize: theme.typography.size.s2 - 1,
-        lineHeight: '20px',
-        paddingTop: '2px',
-        paddingBottom: '2px',
-        paddingLeft: '20px',
-      },
-
-      '> svg': {
-        transition: 'all 150ms ease-out',
-        position: 'absolute',
-        top: '50%',
-        height: '12px',
-        width: '12px',
-        transform: 'translateY(-50%)',
-        zIndex: '1',
-
-        background: 'transparent',
-
-        path: {
-          transition: 'all 150ms ease-out',
-          fill: 'currentColor',
-          opacity: focussed ? 1 : 0.3,
-        },
-      },
-    } as any) // FIXME: emotion have hard time to provide '> svg' typing
-);
+      fill: 'currentColor',
+      opacity: focussed ? 1 : 0.3,
+    },
+  },
+}));
 
 export type PureSidebarSearchProps = FilterFieldProps & {
   onChange: (arg: string) => void;

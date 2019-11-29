@@ -9,7 +9,7 @@ export const H1 = styled.h1<{}>(withReset, headerCommon, ({ theme }) => ({
 
 export const H2 = styled.h2<{}>(withReset, headerCommon, ({ theme }) => ({
   fontSize: `${theme.typography.size.m2}px`,
-  paddingBottom: '4px',
+  paddingBottom: 4,
   borderBottom: `1px solid ${theme.appBorderColor}`,
 }));
 
@@ -94,21 +94,21 @@ export const A = styled(Link)<{}>(withReset, ({ theme }) => ({
   },
   '&.anchor': {
     display: 'block',
-    paddingLeft: '30px',
-    marginLeft: '-30px',
+    paddingLeft: 30,
+    marginLeft: -30,
     cursor: 'pointer',
     position: 'absolute',
-    top: '0',
-    left: '0',
-    bottom: '0',
+    top: 0,
+    left: 0,
+    bottom: 0,
   },
 }));
 
 export const HR = styled.hr<{}>(({ theme }) => ({
   border: '0 none',
   borderTop: `1px solid ${theme.appBorderColor}`,
-  height: '4px',
-  padding: '0',
+  height: 4,
+  padding: 0,
 }));
 
 export const DL = styled.dl<{}>(withReset, {
@@ -151,7 +151,7 @@ export const Blockquote = styled.blockquote<{}>(withReset, withMargin, ({ theme 
   padding: '0 15px',
   color: theme.color.dark,
   '& > :first-of-type': {
-    marginTop: '0',
+    marginTop: 0,
   },
   '& > :last-child': {
     marginBottom: 0,
@@ -166,8 +166,8 @@ export const Table = styled.table<{}>(withReset, withMargin, ({ theme }) => ({
   '& tr': {
     borderTop: `1px solid ${theme.appBorderColor}`,
     backgroundColor: 'white',
-    margin: '0',
-    padding: '0',
+    margin: 0,
+    padding: 0,
   },
   '& tr:nth-of-type(2n)': {
     backgroundColor: `${theme.color.lighter}`,
@@ -176,20 +176,20 @@ export const Table = styled.table<{}>(withReset, withMargin, ({ theme }) => ({
     fontWeight: 'bold',
     border: `1px solid ${theme.appBorderColor}`,
     textAlign: 'left',
-    margin: '0',
+    margin: 0,
     padding: '6px 13px',
   },
   '& tr td': {
     border: `1px solid ${theme.appBorderColor}`,
     textAlign: 'left',
-    margin: '0',
+    margin: 0,
     padding: '6px 13px',
   },
   '& tr th :first-of-type, & tr td :first-of-type': {
-    marginTop: '0',
+    marginTop: 0,
   },
   '& tr th :last-child, & tr td :last-child': {
-    marginBottom: '0',
+    marginBottom: 0,
   },
 }));
 
@@ -210,7 +210,7 @@ export const Span = styled.span<{}>(withReset, ({ theme }) => ({
     float: 'left',
     overflow: 'hidden',
     margin: '13px 0 0',
-    padding: '7px',
+    padding: 7,
     width: 'auto',
   },
   '&.frame span img': {
@@ -250,12 +250,12 @@ export const Span = styled.span<{}>(withReset, ({ theme }) => ({
     textAlign: 'right',
   },
   '&.align-right span img': {
-    margin: '0',
+    margin: 0,
     textAlign: 'right',
   },
   '&.float-left': {
     display: 'block',
-    marginRight: '13px',
+    marginRight: 13,
     overflow: 'hidden',
     float: 'left',
   },
@@ -264,7 +264,7 @@ export const Span = styled.span<{}>(withReset, ({ theme }) => ({
   },
   '&.float-right': {
     display: 'block',
-    marginLeft: '13px',
+    marginLeft: 13,
     overflow: 'hidden',
     float: 'right',
   },
@@ -277,7 +277,7 @@ export const Span = styled.span<{}>(withReset, ({ theme }) => ({
 }));
 
 const listCommon: CSSObject = {
-  paddingLeft: '30px',
+  paddingLeft: 30,
   '& :first-of-type': {
     marginTop: 0,
   },

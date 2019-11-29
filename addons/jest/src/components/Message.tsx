@@ -22,27 +22,27 @@ class TestDetail {
 }
 const StackTrace = styled.pre<{}>(({ theme }) => ({
   background: theme.color.lighter,
-  paddingTop: '4px',
-  paddingBottom: '4px',
-  paddingLeft: '6px',
-  borderRadius: '2px',
+  paddingTop: 4,
+  paddingBottom: 4,
+  paddingLeft: 6,
+  borderRadius: 2,
   overflow: 'auto',
   margin: '10px 30px 10px 30px',
   whiteSpace: 'pre',
 }));
 
 const Results = styled.div({
-  paddingTop: '10px',
-  marginLeft: '31px',
-  marginRight: '30px',
+  paddingTop: 10,
+  marginLeft: 31,
+  marginRight: 30,
 });
 
 const Description = styled.div<{}>(({ theme }) => ({
-  paddingBottom: '10px',
-  paddingTop: '10px',
+  paddingBottom: 10,
+  paddingTop: 10,
   borderBottom: theme.appBorderColor,
-  marginLeft: '31px',
-  marginRight: '30px',
+  marginLeft: 31,
+  marginRight: 30,
   overflowWrap: 'break-word',
 }));
 

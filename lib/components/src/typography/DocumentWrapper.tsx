@@ -23,18 +23,18 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
   },
   h6: {
     fontSize: `${theme.typography.size.s2}px`,
-    color: `${theme.color.dark}`,
+    color: theme.color.dark,
   },
   'pre:not(.hljs)': {
     background: 'transparent',
     border: 'none',
-    borderRadius: '0',
-    padding: '0',
-    margin: '0',
+    borderRadius: 0,
+    padding: 0,
+    margin: 0,
   },
   'pre pre, pre.hljs': {
-    padding: '15px',
-    margin: '0',
+    padding: 15,
+    margin: 0,
     whiteSpace: 'pre-wrap',
     color: 'inherit',
     fontSize: '13px',
@@ -45,8 +45,8 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
     fontSize: 'inherit',
   },
   'pre code': {
-    margin: '0',
-    padding: '0',
+    margin: 0,
+    padding: 0,
     whiteSpace: 'pre',
     border: 'none',
     background: 'transparent',
@@ -71,23 +71,23 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
   },
   'a.anchor': {
     display: 'block',
-    paddingLeft: '30px',
-    marginLeft: '-30px',
+    paddingLeft: 30,
+    marginLeft: -30,
     cursor: 'pointer',
     position: 'absolute',
-    top: '0',
-    left: '0',
-    bottom: '0',
+    top: 0,
+    left: 0,
+    bottom: 0,
   },
   'h1, h2, h3, h4, h5, h6': {
     margin: '20px 0 10px',
-    padding: '0',
+    padding: 0,
     cursor: 'text',
     position: 'relative',
 
     '&:first-of-type': {
-      marginTop: '0',
-      paddingTop: '0',
+      marginTop: 0,
+      paddingTop: 0,
     },
     '&:hover a.anchor': {
       textDecoration: 'none',
@@ -97,8 +97,8 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
     },
   },
   'h1:first-of-type + h2': {
-    marginTop: '0',
-    paddingTop: '0',
+    marginTop: 0,
+    paddingTop: 0,
   },
   'p, blockquote, ul, ol, dl, li, table, pre': {
     margin: '15px 0',
@@ -106,39 +106,39 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
   hr: {
     border: '0 none',
     borderTop: `1px solid ${theme.appBorderColor}`,
-    height: '4px',
-    padding: '0',
+    height: 4,
+    padding: 0,
   },
   'body > h1:first-of-type, body > h2:first-of-type, body > h3:first-of-type, body > h4:first-of-type, body > h5:first-of-type, body > h6:first-of-type': {
-    marginTop: '0',
-    paddingTop: '0',
+    marginTop: 0,
+    paddingTop: 0,
   },
   'body > h1:first-of-type + h2': {
-    marginTop: '0',
-    paddingTop: '0',
+    marginTop: 0,
+    paddingTop: 0,
   },
   'a:first-of-type h1, a:first-of-type h2, a:first-of-type h3, a:first-of-type h4, a:first-of-type h5, a:first-of-type h6': {
-    marginTop: '0',
-    paddingTop: '0',
+    marginTop: 0,
+    paddingTop: 0,
   },
   'h1 p, h2 p, h3 p, h4 p, h5 p, h6 p': {
-    marginTop: '0',
+    marginTop: 0,
   },
   'li p.first': {
     display: 'inline-block',
   },
   'ul, ol': {
-    paddingLeft: '30px',
+    paddingLeft: 30,
 
     '& :first-of-type': {
-      marginTop: '0',
+      marginTop: 0,
     },
     '& :last-child': {
-      marginBottom: '0',
+      marginBottom: 0,
     },
   },
   dl: {
-    padding: '0',
+    padding: 0,
   },
 
   'dl dt': {
@@ -149,63 +149,63 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
     padding: '0 15px',
 
     '&:first-of-type': {
-      padding: '0',
+      padding: 0,
     },
     '& > :first-of-type': {
-      marginTop: '0',
+      marginTop: 0,
     },
     '& > :last-child': {
-      marginBottom: '0',
+      marginBottom: 0,
     },
   },
 
   blockquote: {
     borderLeft: `4px solid ${theme.color.medium}`,
     padding: '0 15px',
-    color: `${theme.color.dark}`,
+    color: theme.color.dark,
 
     '& > :first-of-type': {
-      marginTop: '0',
+      marginTop: 0,
     },
 
     '& > :last-child': {
-      marginBottom: '0',
+      marginBottom: 0,
     },
   },
 
   table: {
-    padding: '0',
+    padding: 0,
     borderCollapse: 'collapse',
 
     '& tr': {
       borderTop: `1px solid ${theme.appBorderColor}`,
       backgroundColor: 'white',
-      margin: '0',
-      padding: '0',
+      margin: 0,
+      padding: 0,
 
       '& th': {
         fontWeight: 'bold',
         border: `1px solid ${theme.appBorderColor}`,
         textAlign: 'left',
-        margin: '0',
+        margin: 0,
         padding: '6px 13px',
       },
 
       '& td': {
         border: `1px solid ${theme.appBorderColor}`,
         textAlign: 'left',
-        margin: '0',
+        margin: 0,
         padding: '6px 13px',
       },
       '&:nth-of-type(2n)': {
-        backgroundColor: `${theme.color.lighter}`,
+        backgroundColor: theme.color.lighter,
       },
 
       '& th :first-of-type, & td :first-of-type': {
-        marginTop: '0',
+        marginTop: 0,
       },
       '& th :last-child, & td :last-child': {
-        marginBottom: '0',
+        marginBottom: 0,
       },
     },
   },
@@ -222,7 +222,7 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
       float: 'left',
       overflow: 'hidden',
       margin: '13px 0 0',
-      padding: '7px',
+      padding: 7,
       width: 'auto',
     },
 
@@ -233,7 +233,7 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
 
     '& span span': {
       clear: 'both',
-      color: `${theme.color.darkest}`,
+      color: theme.color.darkest,
       display: 'block',
       padding: '5px 0 0',
     },
@@ -267,14 +267,14 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
     },
 
     '& span img': {
-      margin: '0',
+      margin: 0,
       textAlign: 'right',
     },
   },
 
   'span.float-left': {
     display: 'block',
-    marginRight: '13px',
+    marginRight: 13,
     overflow: 'hidden',
     float: 'left',
 
@@ -285,7 +285,7 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
 
   'span.float-right': {
     display: 'block',
-    marginLeft: '13px',
+    marginLeft: 13,
     overflow: 'hidden',
     float: 'right',
 
@@ -301,8 +301,8 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
     padding: '0 5px',
     whiteSpace: 'nowrap',
     border: `1px solid ${theme.color.mediumlight}`,
-    backgroundColor: `${theme.color.lighter}`,
-    borderRadius: '3px',
-    color: `${theme.base === 'dark' && theme.color.darkest}`,
+    backgroundColor: theme.color.lighter,
+    borderRadius: 3,
+    color: theme.base === 'dark' && theme.color.darkest,
   },
 }));
