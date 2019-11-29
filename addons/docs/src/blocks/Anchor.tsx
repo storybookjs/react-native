@@ -1,6 +1,4 @@
-import React, { FC, SyntheticEvent } from 'react';
-import { document } from 'global';
-import { A } from '@storybook/components/html';
+import React, { FC } from 'react';
 
 export const anchorBlockIdFromId = (storyId: string) => `anchor--${storyId}`;
 
