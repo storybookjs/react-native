@@ -32,8 +32,8 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
     verticalAlign: 'top',
     whiteSpace: 'nowrap',
     userSelect: 'none',
-    opacity: '1',
-    margin: '0',
+    opacity: 1,
+    margin: 0,
     background: 'transparent',
 
     fontSize: `${small ? theme.typography.size.s1 : theme.typography.size.s2 - 1}px`,
@@ -62,7 +62,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
     disabled
       ? {
           cursor: 'not-allowed !important',
-          opacity: '0.5',
+          opacity: 0.5,
           '&:hover': {
             transform: 'none',
           },
@@ -73,7 +73,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
       ? {
           svg: {
             display: 'block',
-            margin: '0',
+            margin: 0,
           },
           ...(small ? { padding: 9 } : { padding: 12 }),
         }
@@ -152,7 +152,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
     outline
       ? {
           boxShadow: `${transparentize(0.8, theme.color.defaultText)} 0 0 0 1px inset`,
-          color: `${transparentize(0.3, theme.color.defaultText)}`,
+          color: transparentize(0.3, theme.color.defaultText),
           background: 'transparent',
 
           '&:hover': {
@@ -161,7 +161,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
 
           '&:active': {
             boxShadow: `${transparentize(0.5, theme.color.defaultText)} 0 0 0 2px inset`,
-            color: `${transparentize(0, theme.color.defaultText)}`,
+            color: transparentize(0, theme.color.defaultText),
           },
         }
       : {},
@@ -169,7 +169,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
     outline && primary
       ? {
           boxShadow: `${theme.color.primary} 0 0 0 1px inset`,
-          color: `${theme.color.primary}`,
+          color: theme.color.primary,
 
           'svg path': {
             fill: theme.color.primary,
@@ -200,11 +200,17 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
         }
       : {},
   ({ theme, outline, primary, secondary }) => {
-    const color = primary || secondary;
+    let color;
+    if (primary) {
+      color = theme.color.primary;
+    }
+    if (secondary) {
+      color = theme.color.secondary;
+    }
     return outline && color
       ? {
           boxShadow: `${color} 0 0 0 1px inset`,
-          color: `${color}`,
+          color,
 
           'svg path': {
             fill: color,
