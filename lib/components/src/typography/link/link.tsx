@@ -98,32 +98,32 @@ const A = styled.a<LinkStylesProps>(
     },
   }),
   ({ theme, secondary, tertiary }) => {
-    let color;
+    let colors;
     if (secondary) {
-      color = theme.color.secondary;
+      colors = [theme.color.mediumdark, theme.color.dark, theme.color.darker];
     }
     if (tertiary) {
-      color = theme.color.tertiary;
+      colors = [theme.color.dark, theme.color.darkest, theme.color.mediumdark];
     }
 
-    return color
+    return colors
       ? {
-          color: theme.color.mediumdark,
+          color: colors[0],
           'svg path': {
-            fill: theme.color.mediumdark,
+            fill: colors[0],
           },
 
           '&:hover': {
-            color: theme.color.dark,
+            color: colors[1],
             'svg path': {
-              fill: theme.color.dark,
+              fill: colors[1],
             },
           },
 
           '&:active': {
-            color: theme.color.darker,
+            color: colors[2],
             'svg path': {
-              fill: theme.color.darker,
+              fill: colors[2],
             },
           },
         }
