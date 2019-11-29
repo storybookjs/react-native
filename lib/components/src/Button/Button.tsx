@@ -23,7 +23,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>(
     cursor: 'pointer',
     display: 'inline-block',
     overflow: 'hidden',
-    padding: small ? 10 : 16,
+    padding: small ? '10px 16px' : '13px 20px',
     position: 'relative',
     textAlign: 'center',
     textDecoration: 'none',
