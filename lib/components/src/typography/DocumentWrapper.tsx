@@ -212,7 +212,7 @@ export const DocumentWrapper = styled.div<{}>(({ theme }) => ({
   img: {
     maxWidth: '100%',
   },
-  '&': {
+  'span.frame': {
     display: 'block',
     overflow: 'hidden',
 

@@ -87,7 +87,7 @@ export const A = styled(Link)<{}>(withReset, ({ theme }) => ({
   fontSize: theme.typography.size.s2,
   lineHeight: '24px',
 
-  color: `${theme.color.secondary}`,
+  color: theme.color.secondary,
   textDecoration: 'none',
   '&.absent': {
     color: '#cc0000',
@@ -203,76 +203,80 @@ export const Span = styled.span<{}>(withReset, ({ theme }) => ({
   '&.frame': {
     display: 'block',
     overflow: 'hidden',
-  },
-  '&.frame > span': {
-    border: `1px solid ${theme.color.medium}`,
-    display: 'block',
-    float: 'left',
-    overflow: 'hidden',
-    margin: '13px 0 0',
-    padding: 7,
-    width: 'auto',
-  },
-  '&.frame span img': {
-    display: 'block',
-    float: 'left',
-  },
-  '&.frame span span': {
-    clear: 'both',
-    color: theme.color.darkest,
-    display: 'block',
-    padding: '5px 0 0',
+
+    '& > span': {
+      border: `1px solid ${theme.color.medium}`,
+      display: 'block',
+      float: 'left',
+      overflow: 'hidden',
+      margin: '13px 0 0',
+      padding: 7,
+      width: 'auto',
+    },
+    '& span img': {
+      display: 'block',
+      float: 'left',
+    },
+    '& span span': {
+      clear: 'both',
+      color: theme.color.darkest,
+      display: 'block',
+      padding: '5px 0 0',
+    },
   },
   '&.align-center': {
     display: 'block',
     overflow: 'hidden',
     clear: 'both',
-  },
-  '&.align-center > span': {
-    display: 'block',
-    overflow: 'hidden',
-    margin: '13px auto 0',
-    textAlign: 'center',
-  },
-  '&.align-center span img': {
-    margin: '0 auto',
-    textAlign: 'center',
+
+    '& > span': {
+      display: 'block',
+      overflow: 'hidden',
+      margin: '13px auto 0',
+      textAlign: 'center',
+    },
+    '& span img': {
+      margin: '0 auto',
+      textAlign: 'center',
+    },
   },
   '&.align-right': {
     display: 'block',
     overflow: 'hidden',
     clear: 'both',
-  },
-  '&.align-right > span': {
-    display: 'block',
-    overflow: 'hidden',
-    margin: '13px 0 0',
-    textAlign: 'right',
-  },
-  '&.align-right span img': {
-    margin: 0,
-    textAlign: 'right',
+
+    '& > span': {
+      display: 'block',
+      overflow: 'hidden',
+      margin: '13px 0 0',
+      textAlign: 'right',
+    },
+    '& span img': {
+      margin: 0,
+      textAlign: 'right',
+    },
   },
   '&.float-left': {
     display: 'block',
     marginRight: 13,
     overflow: 'hidden',
     float: 'left',
-  },
-  '&.float-left span': {
-    margin: '13px 0 0',
+    '& span': {
+      margin: '13px 0 0',
+    },
   },
   '&.float-right': {
     display: 'block',
     marginLeft: 13,
     overflow: 'hidden',
     float: 'right',
-  },
-  '&.float-right > span': {
-    display: 'block',
-    overflow: 'hidden',
-    margin: '13px auto 0',
-    textAlign: 'right',
+
+    '& > span': {
+      display: 'block',
+      overflow: 'hidden',
+      margin: '13px auto 0',
+      textAlign: 'right',
+    },
   },
 }));
 
