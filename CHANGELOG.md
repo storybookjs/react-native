@@ -1,3 +1,13 @@
+## 5.3.0-beta.13 (November 30, 2019)
+
+### Bug Fixes
+
+* Addon-contexts: Fix 'cannot read property h of undefined' in preact ([#9001](https://github.com/storybookjs/storybook/pull/9001))
+
+### Maintenance
+
+* CLI: Code cleanup ([#9004](https://github.com/storybookjs/storybook/pull/9004))
+
 ## 5.3.0-beta.12 (November 29, 2019)
 
 ### Features
