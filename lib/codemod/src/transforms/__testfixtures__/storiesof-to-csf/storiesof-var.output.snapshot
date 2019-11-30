@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`storiesof-to-csf transforms correctly using "storiesof-var.input.js" data 1`] = `
+"/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
+
+import Hero from './Hero';
+
+export default {
+  title: 'Webapp screens/Marketing/LandingScreen/Hero',
+};
+
+export const Default = () => <Hero />;
+
+Default.story = {
+  name: 'default',
+};
+
+export const MaintenanceMode = () => <Hero maintenanceMode />;
+
+MaintenanceMode.story = {
+  name: 'maintenanceMode',
+};
+
+// Remove this story from storyshots. Let's use the parameters API for this soon!
+if (typeof jest === 'undefined') {
+  export const VideoStartOpen = () => <Hero startOpen />;
+
+  VideoStartOpen.story = {
+    name: 'video start open',
+  };
+}"
+`;

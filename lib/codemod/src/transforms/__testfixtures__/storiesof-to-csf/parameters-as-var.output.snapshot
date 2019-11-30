@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`storiesof-to-csf transforms correctly using "parameters-as-var.input.js" data 1`] = `
+"/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
+import { specs, urls } from './LiveView.stories';
+import { ignoredRegions } from './IgnoredRegions.stories';
+export { specs, urls, ignoredRegions };
+
+const figure = 'http://via.placeholder.com/400x350';
+
+const captureImageSize = { width: 300, height: 300 };
+const CHROMATIC_DELAY = { chromatic: { delay: 500 } };
+
+export default {
+  title: 'Webapp components/Canvas',
+  excludeStories: ['specs', 'urls', 'ignoredRegions'],
+};
+
+export const InteractiveUrlWInteractiveMode = () => (
+  <Canvas
+    interactiveUrl={urls.storybook52}
+    interactiveMode=\\"interactive\\"
+    figure={figure}
+    captureImageSize={captureImageSize}
+    spec={specs.basic}
+    showIgnoredRegions={false}
+  />
+);
+
+InteractiveUrlWInteractiveMode.story = {
+  name: 'interactiveUrl w/ interactiveMode',
+  parameters: CHROMATIC_DELAY,
+};
+
+export const WideShortImage = () => (
+  <Canvas
+    figure=\\"http://via.placeholder.com/900x350\\"
+    captureImageSize={{ width: 900, height: 350 }}
+    showIgnoredRegions={false}
+  />
+);
+
+WideShortImage.story = {
+  name: 'wide short image',
+  parameters: { chromatic: { viewports: [600, 1200] } },
+};"
+`;
