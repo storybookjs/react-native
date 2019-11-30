@@ -1,3 +1,14 @@
+## 5.2.7 (November 30, 2019)
+
+### Bug Fixes
+
+* Addon-contexts: Fix 'cannot read property h of undefined' in preact ([#9001](https://github.com/storybookjs/storybook/pull/9001))
+* Addon-viewports: Fix missing TypeScript types ([#8848](https://github.com/storybookjs/storybook/pull/8848))
+* Addon-A11y: Show errors, reset config properly ([#8779](https://github.com/storybookjs/storybook/pull/8779))
+* UI: Store layout state in sessionStorage ([#8786](https://github.com/storybookjs/storybook/pull/8786))
+* UI: Fix MobileLayout component error on master ([#8941](https://github.com/storybookjs/storybook/pull/8941))
+* Addon-analytics: Fix 'path is required in .pageview()' ([#8468](https://github.com/storybookjs/storybook/pull/8468))
+
 ## 5.2.6 (November 9, 2019)
 
 ### Bug Fixes
