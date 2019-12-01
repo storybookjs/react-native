@@ -6,7 +6,7 @@ import { DocgenButton } from '../../components/DocgenButton';
 const docsTitle = title => `Docs/${title}`;
 
 export default {
-  title: `Addons/${docsTitle('Stories')}`,
+  title: `Addons/${docsTitle('stories')}`,
   component: DocgenButton,
 };
 
