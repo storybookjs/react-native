@@ -1,0 +1,32 @@
+name: Puppeteer & A11y tests
+
+on: [push]
+
+jobs:
+  build:
+
+    name: Puppeteer & A11y tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - uses: actions/checkout@v1
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+    - name: install, bootstrap
+      run: |
+        yarn bootstrap --core
+    - name: build storybook
+      run: |
+        yarn --cwd examples/official-storybook build-storybook
+    - name: test
+      run: |
+        yarn test --puppeteer

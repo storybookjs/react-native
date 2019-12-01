@@ -225,7 +225,7 @@ You can replace DocsPage at any level by overriding the `docs.page` parameter:
 - [With MDX](./recipes.md#csf-stories-with-mdx-docs) docs
 - With a custom React component
 
-**Globally (config.js)**
+**Globally (preview.js)**
 
 ```js
 import { addParameters } from '@storybook/react';

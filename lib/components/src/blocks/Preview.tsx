@@ -14,6 +14,7 @@ export interface PreviewProps {
   withSource?: SourceProps;
   isExpanded?: boolean;
   withToolbar?: boolean;
+  className?: string;
 }
 
 const ChildrenContainer = styled.div<PreviewProps>(({ isColumn, columns }) => ({
@@ -143,18 +144,24 @@ const Preview: FunctionComponent<PreviewProps> = ({
   withSource,
   withToolbar = false,
   isExpanded = false,
+  className,
   ...props
 }) => {
   const [expanded, setExpanded] = useState(isExpanded);
   const { source, actionItem } = getSource(withSource, expanded, setExpanded);
   const [scale, setScale] = useState(1);
+  const previewClasses = className ? `${className} sbdocs sbdocs-preview` : 'sbdocs sbdocs-preview';
 
   if (withToolbar && Array.isArray(children)) {
     logger.warn('Cannot use toolbar with multiple preview children, disabling');
   }
   const showToolbar = withToolbar && !Array.isArray(children);
   return (
-    <PreviewContainer {...{ withSource, withToolbar: showToolbar }} {...props}>
+    <PreviewContainer
+      {...{ withSource, withToolbar: showToolbar }}
+      {...props}
+      className={previewClasses}
+    >
       {showToolbar && (
         <PositionedToolbar
           border

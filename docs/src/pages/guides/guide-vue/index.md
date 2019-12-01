@@ -47,21 +47,21 @@ Then add the following NPM script to your `package.json` in order to start the s
 }
 ```
 
-## Step 3: Create the config file
+## Step 3: Create the main file
 
 For a basic Storybook configuration, the only thing you need to do is tell Storybook where to find stories.
 
-To do that, create a file at `.storybook/config.js` with the following content:
+To do that, create a file at `.storybook/main.js` with the following content:
 
 ```js
-import { configure } from '@storybook/vue';
-
-configure(require.context('../src', true, /\.stories\.js$/), module);
+module.exports {
+  stories: ['../src/**/*.stories.[tj]s'],
+};
 ```
 
 That will load all the stories underneath your `../src` directory that match the pattern `*.stories.js`. We recommend co-locating your stories with your source files, but you can place them wherever you choose.
 
-> You might be using global components or vue plugins such as vuex, in that case you'll need to register them in this `config.js` file.
+> You might be using global components or vue plugins such as vuex, in that case you'll need to register them in this `preview.js` file.
 >
 > <details>
 >   <summary>details</summary>
@@ -124,7 +124,7 @@ Button
 
 > If your story is returning a plain template you can only use globally registered components.
 >
-> To register them, use `Vue.component('my-button', Mybutton)` in your `config.js` file.
+> To register them, use `Vue.component('my-button', Mybutton)` in your `preview.js` file.
 >
 > <details>
 >   <summary>details</summary>

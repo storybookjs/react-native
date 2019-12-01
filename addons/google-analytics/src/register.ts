@@ -8,8 +8,8 @@ addons.register('storybook/google-analytics', api => {
   ReactGA.initialize(window.STORYBOOK_GA_ID, window.STORYBOOK_REACT_GA_OPTIONS);
 
   api.on(STORY_CHANGED, () => {
-    const { url } = api.getUrlState();
-    ReactGA.pageview(url);
+    const { path } = api.getUrlState();
+    ReactGA.pageview(path);
   });
   api.on(STORY_ERRORED, ({ description }: { description: string }) => {
     ReactGA.exception({

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/core",
-  "version": "5.3.0-beta.3",
+  "version": "5.3.0-beta.13",
   "description": "Storybook framework-agnostic API",
   "keywords": [
     "storybook"
@@ -32,15 +32,15 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-env": "^7.4.5",
-    "@storybook/addons": "5.3.0-beta.3",
-    "@storybook/channel-postmessage": "5.3.0-beta.3",
-    "@storybook/client-api": "5.3.0-beta.3",
-    "@storybook/client-logger": "5.3.0-beta.3",
-    "@storybook/core-events": "5.3.0-beta.3",
-    "@storybook/node-logger": "5.3.0-beta.3",
-    "@storybook/router": "5.3.0-beta.3",
-    "@storybook/theming": "5.3.0-beta.3",
-    "@storybook/ui": "5.3.0-beta.3",
+    "@storybook/addons": "5.3.0-beta.13",
+    "@storybook/channel-postmessage": "5.3.0-beta.13",
+    "@storybook/client-api": "5.3.0-beta.13",
+    "@storybook/client-logger": "5.3.0-beta.13",
+    "@storybook/core-events": "5.3.0-beta.13",
+    "@storybook/node-logger": "5.3.0-beta.13",
+    "@storybook/router": "5.3.0-beta.13",
+    "@storybook/theming": "5.3.0-beta.13",
+    "@storybook/ui": "5.3.0-beta.13",
     "airbnb-js-shims": "^2.2.1",
     "ansi-to-html": "^0.6.11",
     "autoprefixer": "^9.7.2",
@@ -66,7 +66,6 @@
     "find-up": "^4.1.0",
     "fs-extra": "^8.0.1",
     "glob-base": "^0.3.0",
-    "glob-regex": "^0.3.2",
     "global": "^4.3.2",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "inquirer": "^7.0.0",
@@ -74,6 +73,7 @@
     "ip": "^1.1.5",
     "json5": "^2.1.1",
     "lazy-universal-dotenv": "^3.0.1",
+    "micromatch": "^4.0.2",
     "node-fetch": "^2.6.0",
     "open": "^7.0.0",
     "pnp-webpack-plugin": "1.5.0",
@@ -104,6 +104,7 @@
     "mock-fs": "^4.8.0"
   },
   "peerDependencies": {
+    "@babel/core": "*",
     "babel-loader": "^7.0.0 || ^8.0.0",
     "react": "*",
     "react-dom": "*"

@@ -5,12 +5,18 @@ import { JsDocParsingResult } from '../jsdocParser';
 import { createSummaryValue } from '../utils';
 import { createFlowPropDef } from './flow/createPropDef';
 import { isDefaultValueBlacklisted } from './utils/defaultValue';
+import { createTsPropDef } from './typeScript/createPropDef';
 
 export type PropDefFactory = (
   propName: string,
   docgenInfo: DocgenInfo,
   jsDocParsingResult?: JsDocParsingResult
 ) => PropDef;
+
+function createType(type: DocgenType) {
+  // A type could be null if a defaultProp has been provided without a type definition.
+  return !isNil(type) ? createSummaryValue(type.name) : null;
+}
 
 function createDefaultValue(defaultValue: DocgenPropDefaultValue): PropDefaultValue {
   if (!isNil(defaultValue)) {
@@ -29,7 +35,7 @@ function createBasicPropDef(name: string, type: DocgenType, docgenInfo: DocgenIn
 
   return {
     name,
-    type: createSummaryValue(type.name),
+    type: createType(type),
     required,
     description,
     defaultValue: createDefaultValue(defaultValue),
@@ -69,7 +75,7 @@ export const javaScriptFactory: PropDefFactory = (propName, docgenInfo, jsDocPar
 };
 
 export const tsFactory: PropDefFactory = (propName, docgenInfo, jsDocParsingResult) => {
-  const propDef = createBasicPropDef(propName, docgenInfo.tsType, docgenInfo);
+  const propDef = createTsPropDef(propName, docgenInfo);
 
   return applyJsDocResult(propDef, jsDocParsingResult);
 };

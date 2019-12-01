@@ -69,10 +69,12 @@ You could create a `prebuild:storybook` npm script, which will never fail by app
 
 ### Register
 
-Register addon at `.storybook/addons.js`
+within `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-jest/register';
+module.exports = {
+  addons: ['@storybook/addon-jest/register']
+}
 ```
 
 ## Usage
@@ -85,18 +87,22 @@ In your `story.js`
 import results from '../.jest-test-results.json';
 import { withTests } from '@storybook/addon-jest';
 
-storiesOf('MyComponent', module)
-  .addDecorator(withTests({ results }))
-  .add(
-    'This story shows test results from MyComponent.test.js and MyOtherComponent.test.js',
-    () => <div>Jest results in storybook</div>,
-    {
-      jest: ['MyComponent.test.js', 'MyOtherComponent.test.js'],
-    }
-  );
+export default {
+  title: 'MyComponent',
+  decorators: [withTests({ results })],
+};
+
+export const defaultView = () => (
+  <div>Jest results in storybook</div>
+);
+defaultView.story = {
+  parameters: {
+    jest: ['MyComponent.test.js', 'MyOtherComponent.test.js'],
+  },
+};
 ```
 
-Or in order to avoid importing `.jest-test-results.json` in each story, add the decorator in your `.storybook/config.js` and results will display for stories that you have set the `jest` parameter on:
+Or in order to avoid importing `.jest-test-results.json` in each story, add the decorator in your `.storybook/preview.js` and results will display for stories that you have set the `jest` parameter on:
 
 ```js
 import { addDecorator } from '@storybook/react'; // <- or your view layer
@@ -114,13 +120,20 @@ addDecorator(
 Then in your story:
 
 ```js
-storiesOf('MyComponent', module)
-  // Use .addParameters if you want the same tests displayed for all stories of the component
-  .addParameters({ jest: ['MyComponent', 'MyOtherComponent'] })
-  .add(
-    'This story shows test results from MyComponent.test.js and MyOtherComponent.test.js',
-    () => <div>Jest results in storybook</div>
-  );
+import React from 'react';
+
+export default {
+  title: 'MyComponent',
+};
+
+export const defaultView = () => (
+  <div>Jest results in storybook</div>
+);
+defaultView.story = {
+  parameters: {
+    jest: ['MyComponent.test.js', 'MyOtherComponent.test.js'],
+  },
+};
 ```
 
 ### Disabling
@@ -128,9 +141,20 @@ storiesOf('MyComponent', module)
 You can disable the addon for a single story by setting the `jest` parameter to `{disable: true}`:
 
 ```js
-storiesOf('MyComponent', module).add('Story', () => <div>Jest results disabled here</div>, {
-  jest: { disable: true },
-});
+import React from 'react';
+
+export default {
+  title: 'MyComponent',
+};
+
+export const defaultView = () => (
+  <div>Jest results in storybook</div>
+);
+defaultView.story = {
+  parameters: {
+    jest: { disable: true },
+  },
+};
 ```
 
 ### withTests(options)
@@ -153,7 +177,7 @@ declare module '*.json' {
 }
 ```
 
-In your `.storybook/config.ts`:
+In your `.storybook/preview.ts`:
 
 ```ts
 import { addDecorator } from '@storybook/angular';
@@ -167,17 +191,6 @@ addDecorator(
     filesExt: '((\\.specs?)|(\\.tests?))?(\\.ts)?$',
   })
 );
-```
-
-Then in your story:
-
-```js
-storiesOf('MyComponent', module)
-  .addParameters({ jest: ['my.component', 'my-other.component'] })
-  .add(
-    'This story shows test results from my.component.spec.ts and my-other.component.spec.ts',
-    () => <div>Jest results in storybook</div>
-  );
 ```
 
 ##### Example [here](https://github.com/storybookjs/storybook/tree/master/examples/angular-cli)

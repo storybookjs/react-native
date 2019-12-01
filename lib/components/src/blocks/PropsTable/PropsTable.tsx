@@ -195,14 +195,14 @@ const PropsTable: FC<PropsTableProps> = props => {
   return (
     <ResetWrapper>
       <Table className="docblock-propstable">
-        <thead>
+        <thead className="docblock-propstable-head">
           <tr>
             <th>Name</th>
             <th>Description</th>
             <th>Default</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="docblock-propstable-body">
           {allRows.map(row => (
             <PropsTableRow key={row.key} {...row.value} />
           ))}

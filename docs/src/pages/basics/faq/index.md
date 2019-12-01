@@ -22,7 +22,18 @@ Next automatically defines `React` for all of your files via a babel plugin. You
 
 ### How do I setup Storybook to share Webpack configuration with Next.js?
 
-You can generally reuse webpack rules by placing them in a file that is `require()`-ed from both your `next.config.js` and your `.storybook/webpack.config.js` files. For example, [this gist](https://gist.github.com/metasean/cadd2becd60cc3b295bf49895a56f9b4) sets both next.js and storybook up with global stylesheets.
+You can generally reuse webpack rules by placing them in a file that is `require()`-ed from both your `next.config.js` and your `.storybook/main.js` files. For example:
+
+```js
+module.exports = {
+  webpack: async (baseConfig) => {
+    const nextConfig = require('/path/to/next.config.js');
+
+    // merge whatever from nextConfig into the webpack config storybook will use
+    return { ...baseConfig };
+  },
+};
+```
 
 ### Why is there no addons channel?
 
@@ -42,22 +53,23 @@ A common error is that an addon tries to access the "channel", but the channel i
 Not directly. If you control the component source, you can do something like this:
 
 ```js
-import React, { Component} from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { Component } from 'react';
+
+export default {
+  title: 'MyComponent',
+};
 
 class MyComponent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       someVar: 'defaultValue',
-      ...props.initialState
-    }
+      ...props.initialState,
+    };
   }
   // ...
-}
+};
 
-storiesOf('MyComponent', module)
-  .add('default', () => <MyComponent />)
-  .add('other', () => <MyComponent initialState={{ someVar: 'otherVal' }} />);
+export const defaultView = () => <MyComponent initialState={} />;
 ```

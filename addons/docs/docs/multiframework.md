@@ -36,7 +36,7 @@ For props tables and descriptions, both of which are described in more detail be
 
 Props tables are enabled by the framework-specific `docs.extractProps` parameter, which extracts a component's props into a common data structure.
 
-Here's how it's done in Vue's framework-specific `config.js`:
+Here's how it's done in Vue's framework-specific `preview.js`:
 
 ```js
 import { extractProps } from './extractProps';
@@ -49,7 +49,7 @@ addParameters({
 });
 ```
 
-The `extractProps`function receives a component as an argument, and returns an object of type [`PropsTableProps`](https://github.com/storybookjs/storybook/blob/next/lib/components/src/blocks/PropsTable/PropsTable.tsx#L147), which can either be a array of `PropDef` rows (React), or a mapping of section name to an array of `PropDef` rows (e.g. `Props`/`Events`/`Slots` in Vue).
+The `extractProps`function receives a component as an argument, and returns an object of type [`PropsTableProps`](https://github.com/storybookjs/storybook/blob/next/lib/components/src/blocks/PropsTable/PropsTable.tsx#L147), which can either be an array of `PropDef` rows (React), or a mapping of section name to an array of `PropDef` rows (e.g. `Props`/`Events`/`Slots` in Vue).
 
 ```ts
 export interface PropDef {
@@ -79,7 +79,7 @@ It follows the pattern of [Props tables](#props-tables) above, only it's even si
 
 Inline story rendering is another framework specific optimization, made possible by the `docs.prepareForInline` parameter.
 
-Again let's look at Vue's framework-specific `config.js`:
+Again let's look at Vue's framework-specific `preview.js`:
 
 ```js
 import toReact from '@egoist/vue-to-react';

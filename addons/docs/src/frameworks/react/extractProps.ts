@@ -4,6 +4,7 @@ import { PropDef } from '@storybook/components';
 import { hasDocgen, extractComponentProps, PropsExtractor, TypeSystem } from '../../lib/docgen';
 import { Component } from '../../blocks/shared';
 import { enhancePropTypesProps } from './propTypes/handleProp';
+import { enhanceTypeScriptProps } from './typeScript/handleProp';
 
 export interface PropDefMap {
   [p: string]: PropDef;
@@ -37,11 +38,14 @@ function getPropDefs(component: Component, section: string): PropDef[] {
     return [];
   }
 
-  if (extractedProps[0].typeSystem === TypeSystem.JAVASCRIPT) {
-    return enhancePropTypesProps(extractedProps, component);
+  switch (extractedProps[0].typeSystem) {
+    case TypeSystem.JAVASCRIPT:
+      return enhancePropTypesProps(extractedProps, component);
+    case TypeSystem.TYPESCRIPT:
+      return enhanceTypeScriptProps(extractedProps);
+    default:
+      return extractedProps.map(x => x.propDef);
   }
-
-  return extractedProps.map(x => x.propDef);
 }
 
 export const extractProps: PropsExtractor = component => ({

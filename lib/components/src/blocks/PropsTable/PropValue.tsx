@@ -8,8 +8,6 @@ import { Icons } from '../../icon/icon';
 import { SyntaxHighlighter } from '../../syntaxhighlighter/syntaxhighlighter';
 import { codeCommon } from '../../typography/shared';
 
-const DIRTY_PADDING_TOP_IN_PX = 3;
-
 interface PropValueProps {
   value?: PropSummaryValue;
 }
@@ -29,13 +27,27 @@ const Text = styled.span(({ theme }) => ({
 
 const Expandable = styled.div<{}>(codeCommon, ({ theme }) => ({
   fontFamily: theme.typography.fonts.mono,
-  lineHeight: '18px',
   color: theme.color.secondary,
   margin: 0,
-  paddingTop: `${DIRTY_PADDING_TOP_IN_PX}px`,
   whiteSpace: 'nowrap',
   display: 'flex',
   alignItems: 'center',
+}));
+
+const Detail = styled.div<{ width: string }>(({ theme, width }) => ({
+  width,
+  minWidth: '200px',
+  maxWidth: '800px',
+  padding: '15px',
+  // Dont remove the mono fontFamily here even if it seem useless, this is used by the browser to calculate the length of a "ch" unit.
+  fontFamily: theme.typography.fonts.mono,
+  fontSize: theme.typography.size.s2 - 1,
+  // Most custom stylesheet will reset the box-sizing to "border-box" and will break the tooltip.
+  boxSizing: 'content-box',
+
+  '& code': {
+    padding: '0 !important',
+  },
 }));
 
 const ArrowIcon = styled(Icons)({
@@ -43,18 +55,7 @@ const ArrowIcon = styled(Icons)({
   width: 10,
   minWidth: 10,
   marginLeft: '4px',
-  marginTop: `-${DIRTY_PADDING_TOP_IN_PX}px`,
 });
-
-const StyledSyntaxHighlighter = styled(SyntaxHighlighter)(({ theme, width }) => ({
-  width,
-  minWidth: '200px',
-  maxWith: '800px',
-  padding: '15px',
-  // Dont remove the mono fontFamily here even if it seem useless, this is used by the browser to calculate the length of a "ch" unit.
-  fontFamily: theme.typography.fonts.mono,
-  fontSize: theme.typography.size.s2 - 1,
-}));
 
 const EmptyProp = () => {
   return <span>-</span>;
@@ -89,9 +90,11 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
         setIsOpen(isVisible);
       }}
       tooltip={
-        <StyledSyntaxHighlighter width={calculateDetailWidth(detail)} language="jsx" format={false}>
-          {detail}
-        </StyledSyntaxHighlighter>
+        <Detail width={calculateDetailWidth(detail)}>
+          <SyntaxHighlighter language="jsx" format={false}>
+            {detail}
+          </SyntaxHighlighter>
+        </Detail>
       }
     >
       <Expandable className="sbdocs-expandable">
