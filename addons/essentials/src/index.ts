@@ -33,7 +33,7 @@ const warnIfInstalled = (addon: string, dependencies?: Record<string, string>) =
   }
 };
 
-const makeAddon = (key: string, options: PresetOptions) => {
+const makeAddon = (key: string) => {
   const addon = `@storybook/addon-${key}`;
   const { dependencies, devDependencies } = packageJson;
   warnIfInstalled(addon, devDependencies);
@@ -44,7 +44,7 @@ const makeAddon = (key: string, options: PresetOptions) => {
 export const presets = (options: PresetOptions = {}) => {
   const presetAddons = ['docs', 'knobs']
     .filter(key => (options as any)[key] !== null)
-    .map(key => makeAddon(key, options))
+    .map(key => makeAddon(key))
     .map(addon => ({
       name: `${addon}/preset`,
       options: (options as any)[addon] || {},
@@ -55,7 +55,7 @@ export const presets = (options: PresetOptions = {}) => {
 export function addons(entry: any[] = [], options: PresetOptions = {}) {
   const registerAddons = ['actions', 'backgrounds', 'links', 'viewport']
     .filter(key => (options as any)[key] !== null)
-    .map(key => makeAddon(key, options))
+    .map(key => makeAddon(key))
     .map(addon => `${addon}/register`);
   return [...entry, ...registerAddons];
 }
