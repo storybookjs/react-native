@@ -3,21 +3,14 @@
 exports[`storiesof-to-csf transforms correctly using "export-names.input.js" data 1`] = `
 "/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import styled from 'styled-components';
-
 import FlexCenter from './FlexCenter';
 import { specs, urls } from './LiveView.stories';
 import { ignoredRegions } from './IgnoredRegions.stories';
 
 export { specs, urls, ignoredRegions };
 
-const CanvasWrapper = styled.div\`
-  width: 50%;
-\`;
-
 export default {
-  title: 'Webapp components/FlexCenter',
-  decorators: [storyFn => <CanvasWrapper>{storyFn()}</CanvasWrapper>],
+  title: 'FlexCenter',
   excludeStories: ['specs', 'urls', 'ignoredRegions'],
 };
 
@@ -29,25 +22,5 @@ export const _21 = () => (
 
 _21.story = {
   name: '2:1',
-};
-
-export const _22 = () => (
-  <FlexCenter width={200} height={200} style={{ background: 'papayawhip' }}>
-    <div style={{ padding: 30, background: 'hotpink' }}>2:2</div>
-  </FlexCenter>
-);
-
-_22.story = {
-  name: '2:2',
-};
-
-export const _23 = () => (
-  <FlexCenter width={200} height={300} style={{ background: 'papayawhip' }}>
-    <div style={{ padding: 30, background: 'hotpink' }}>2:3</div>
-  </FlexCenter>
-);
-
-_23.story = {
-  name: '2:3',
 };"
 `;

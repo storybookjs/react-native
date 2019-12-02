@@ -3,18 +3,13 @@
 exports[`storiesof-to-csf transforms correctly using "export-destructuring.input.js" data 1`] = `
 "/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-
-import ComponentRow, { PureComponentRow } from './ComponentRow';
+import ComponentRow from './ComponentRow';
 import * as SpecRowStories from './SpecRow.stories';
-import Table from '../../components/Table';
-
-const specNames = ['Default', 'Low data', 'empty', 'something', 'extra one'];
 
 export const { actions } = SpecRowStories;
 
 export default {
-  title: 'Webapp screens/Build/ComponentRow',
+  title: 'ComponentRow',
   excludeStories: ['actions'],
 };
 
