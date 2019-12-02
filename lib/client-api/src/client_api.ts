@@ -2,7 +2,7 @@
 import deprecate from 'util-deprecate';
 import isPlainObject from 'is-plain-object';
 import { logger } from '@storybook/client-logger';
-import addons, { StoryContext, StoryFn, Parameters, OptionsParameter } from '@storybook/addons';
+import addons, { StoryContext, StoryFn, Parameters } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { toId } from '@storybook/router/utils';
 
@@ -82,14 +82,32 @@ const withSubscriptionTracking = (storyFn: StoryFn) => {
   return result;
 };
 
+let _globalDecorators: DecoratorFunction[] = [];
+
+let _globalParameters: Parameters = {};
+
+export const addDecorator = (decoratorFn: DecoratorFunction) => {
+  _globalDecorators.push(decoratorFn);
+};
+
+export const addParameters = (parameters: Parameters) => {
+  _globalParameters = {
+    ..._globalParameters,
+    ...parameters,
+    options: {
+      ...merge(get(_globalParameters, 'options', {}), get(parameters, 'options', {})),
+    },
+    // FIXME: https://github.com/storybookjs/storybook/issues/7872
+    docs: {
+      ...merge(get(_globalParameters, 'docs', {}), get(parameters, 'docs', {})),
+    },
+  };
+};
+
 export default class ClientApi {
   private _storyStore: StoryStore;
 
   private _addons: ClientApiAddons<unknown>;
-
-  private _globalDecorators: DecoratorFunction[];
-
-  private _globalParameters: Parameters;
 
   private _decorateStory: (storyFn: StoryFn, decorators: DecoratorFunction[]) => any;
 
@@ -97,8 +115,6 @@ export default class ClientApi {
     this._storyStore = storyStore;
     this._addons = {};
 
-    this._globalDecorators = [];
-    this._globalParameters = {};
     this._decorateStory = decorateStory;
 
     if (!storyStore) {
@@ -113,35 +129,49 @@ export default class ClientApi {
     };
   };
 
-  getSeparators = () => ({
-    hierarchyRootSeparator: '|',
-    hierarchySeparator: /\/|\./,
-    ...this._globalParameters.options,
-  });
+  getSeparators = () => {
+    const { hierarchySeparator, hierarchyRootSeparator, showRoots } =
+      _globalParameters.options || {};
 
-  addDecorator = (decorator: DecoratorFunction) => {
-    this._globalDecorators.push(decorator);
+    // Note these checks will be removed in 6.0, leaving this much simpler
+    if (
+      typeof hierarchySeparator !== 'undefined' ||
+      typeof hierarchyRootSeparator !== 'undefined'
+    ) {
+      return { hierarchySeparator, hierarchyRootSeparator };
+    }
+    if (
+      typeof showRoots === 'undefined' &&
+      this.store()
+        .getStoryKinds()
+        .some(kind => kind.match(/\.|\|/))
+    ) {
+      return {
+        hierarchyRootSeparator: '|',
+        hierarchySeparator: /\/|\./,
+      };
+    }
+    return { hierarchySeparator: '/' };
   };
 
-  addParameters = (parameters: Parameters | { globalParameter: 'string' }) => {
-    this._globalParameters = {
-      ...this._globalParameters,
-      ...parameters,
-      options: {
-        ...merge(get(this._globalParameters, 'options', {}), get(parameters, 'options', {})),
-      },
-      // FIXME: https://github.com/storybookjs/storybook/issues/7872
-      docs: {
-        ...merge(get(this._globalParameters, 'docs', {}), get(parameters, 'docs', {})),
-      },
-    };
+  addDecorator = (decorator: DecoratorFunction) => {
+    addDecorator(decorator);
+  };
+
+  addParameters = (parameters: Parameters) => {
+    addParameters(parameters);
   };
 
   clearDecorators = () => {
-    this._globalDecorators = [];
+    _globalDecorators = [];
   };
 
-  // what are the occasions that "m" is simply a boolean, vs an obj
+  clearParameters = () => {
+    // Utility function FOR TESTING USE ONLY
+    _globalParameters = {};
+  };
+
+  // what are the occasions that "m" is a boolean vs an obj
   storiesOf = <StoryFnReturnType = unknown>(
     kind: string,
     m: NodeModule
@@ -154,6 +184,16 @@ export default class ClientApi {
       logger.warn(
         `Missing 'module' parameter for story with a kind of '${kind}'. It will break your HMR`
       );
+    }
+
+    if (m) {
+      const proto = Object.getPrototypeOf(m);
+      if (proto.exports && proto.exports.default) {
+        // FIXME: throw an error in SB6.0
+        logger.error(
+          `Illegal mix of CSF default export and storiesOf calls in a single file: ${proto.i}`
+        );
+      }
     }
 
     if (m && m.hot && m.hot.dispose) {
@@ -183,11 +223,10 @@ export default class ClientApi {
       };
     });
 
-    api.add = (storyName, storyFn, parameters) => {
+    api.add = (storyName, storyFn, parameters = {}) => {
       hasAdded = true;
-      const { _globalParameters, _globalDecorators } = this;
 
-      const id = toId(kind, storyName);
+      const id = parameters.__id || toId(kind, storyName);
 
       if (typeof storyName !== 'string') {
         throw new Error(`Invalid or missing storyName provided for a "${kind}" story.`);
@@ -201,17 +240,7 @@ export default class ClientApi {
 
       const fileName = m && m.id ? `${m.id}` : undefined;
 
-      const { hierarchyRootSeparator, hierarchySeparator } = this.getSeparators();
-      const baseOptions: OptionsParameter = {
-        hierarchyRootSeparator,
-        hierarchySeparator,
-      };
-      const allParam = [
-        { options: baseOptions },
-        _globalParameters,
-        localParameters,
-        parameters,
-      ].reduce(
+      const allParam = [_globalParameters, localParameters, parameters].reduce(
         (acc: Parameters, p) => {
           if (p) {
             Object.entries(p).forEach(([key, value]) => {

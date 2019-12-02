@@ -157,86 +157,107 @@ let hasSetOptions = false;
 export default function({ store, provider }: { store: Store; provider: Provider }) {
   const api = {
     toggleFullscreen(toggled?: boolean) {
-      return store.setState((state: State) => {
-        const value = typeof toggled === 'boolean' ? toggled : !state.layout.isFullscreen;
+      return store.setState(
+        (state: State) => {
+          const value = typeof toggled === 'boolean' ? toggled : !state.layout.isFullscreen;
 
-        return {
-          layout: {
-            ...state.layout,
-            isFullscreen: value,
-          },
-        };
-      });
+          return {
+            layout: {
+              ...state.layout,
+              isFullscreen: value,
+            },
+          };
+        },
+        { persistence: 'session' }
+      );
     },
 
     togglePanel(toggled?: boolean) {
-      return store.setState((state: State) => {
-        const value = typeof toggled !== 'undefined' ? toggled : !state.layout.showPanel;
+      return store.setState(
+        (state: State) => {
+          const value = typeof toggled !== 'undefined' ? toggled : !state.layout.showPanel;
 
-        return {
-          layout: {
-            ...state.layout,
-            showPanel: value,
-          },
-        };
-      });
+          return {
+            layout: {
+              ...state.layout,
+              showPanel: value,
+            },
+          };
+        },
+        { persistence: 'session' }
+      );
     },
 
     togglePanelPosition(position?: 'bottom' | 'right') {
       if (typeof position !== 'undefined') {
-        return store.setState((state: State) => ({
-          layout: {
-            ...state.layout,
-            panelPosition: position,
-          },
-        }));
+        return store.setState(
+          (state: State) => ({
+            layout: {
+              ...state.layout,
+              panelPosition: position,
+            },
+          }),
+          { persistence: 'session' }
+        );
       }
 
-      return store.setState((state: State) => ({
-        layout: {
-          ...state.layout,
-          panelPosition: state.layout.panelPosition === 'right' ? 'bottom' : 'right',
-        },
-      }));
+      return store.setState(
+        (state: State) => ({
+          layout: {
+            ...state.layout,
+            panelPosition: state.layout.panelPosition === 'right' ? 'bottom' : 'right',
+          },
+        }),
+        { persistence: 'session' }
+      );
     },
 
     toggleNav(toggled?: boolean) {
-      return store.setState((state: State) => {
-        const value = typeof toggled !== 'undefined' ? toggled : !state.layout.showNav;
+      return store.setState(
+        (state: State) => {
+          const value = typeof toggled !== 'undefined' ? toggled : !state.layout.showNav;
 
-        return {
-          layout: {
-            ...state.layout,
-            showNav: value,
-          },
-        };
-      });
+          return {
+            layout: {
+              ...state.layout,
+              showNav: value,
+            },
+          };
+        },
+        { persistence: 'session' }
+      );
     },
 
     toggleToolbar(toggled?: boolean) {
-      return store.setState((state: State) => {
-        const value = typeof toggled !== 'undefined' ? toggled : !state.layout.isToolshown;
+      return store.setState(
+        (state: State) => {
+          const value = typeof toggled !== 'undefined' ? toggled : !state.layout.isToolshown;
 
-        return {
-          layout: {
-            ...state.layout,
-            isToolshown: value,
-          },
-        };
-      });
+          return {
+            layout: {
+              ...state.layout,
+              isToolshown: value,
+            },
+          };
+        },
+        { persistence: 'session' }
+      );
     },
 
     resetLayout() {
-      return store.setState((state: State) => {
-        return {
-          layout: {
-            ...state.layout,
-            showNav: false,
-            showPanel: false,
-            isFullscreen: false,
-          },
-        };
-      });
+      return store.setState(
+        (state: State) => {
+          return {
+            layout: {
+              ...state.layout,
+              showNav: false,
+              showPanel: false,
+              isFullscreen: false,
+            },
+          };
+        },
+        { persistence: 'session' }
+      );
     },
 
     focusOnUIElement(elementId?: string) {
@@ -250,10 +271,20 @@ export default function({ store, provider }: { store: Store; provider: Provider 
     },
 
     getInitialOptions() {
-      const { theme } = provider.getConfig();
+      const { theme, selectedPanel, ...options } = provider.getConfig();
 
       return {
         ...initial,
+        layout: {
+          ...initial.layout,
+          ...pick(options, Object.keys(initial.layout)),
+          ...checkDeprecatedLayoutOptions(options),
+        },
+        ui: {
+          ...initial.ui,
+          ...pick(options, Object.keys(initial.ui)),
+        },
+        selectedPanel: selectedPanel || initial.selectedPanel,
         theme: theme || initial.theme,
       };
     },

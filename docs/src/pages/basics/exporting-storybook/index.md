@@ -6,11 +6,11 @@ title: 'Exporting Storybook as a Static App'
 Storybook gives a great developer experience with its dev time features, like instant change updates via Webpack's HMR.
 
 But Storybook is also a tool you can use to showcase your components to others.
-Demos of [React Native Web](http://necolas.github.io/react-native-web/storybook/) and [React Dates](http://airbnb.io/react-dates/) are a good example for that.
+Demos of [React Native Web](https://necolas.github.io/react-native-web/docs/) and [React Dates](http://airbnb.io/react-dates/) are a good example for that.
 
 For that, Storybook comes with a tool to export your storybook into a static web app. Then you can deploy it to GitHub pages or any static hosting service.
 
-Simply add the following NPM script:
+Add the following NPM script:
 
 ```json
 {
@@ -35,7 +35,7 @@ npx http-server .out
 
 Additionally, you can deploy Storybook directly into GitHub pages with our [storybook-deployer](https://github.com/storybookjs/storybook-deployer) tool.
 
-Or, you can simply export your storybook into the docs directory and use it as the root for GitHub pages. Have a look at [this guide](https://github.com/blog/2233-publish-your-project-documentation-with-github-pages) for more information.
+Or, you can export your storybook into the docs directory and use it as the root for GitHub pages. Have a look at [this guide](https://github.com/blog/2233-publish-your-project-documentation-with-github-pages) for more information.
 
 ## Deploying to ZEIT Now
 
@@ -43,11 +43,15 @@ Or, you can simply export your storybook into the docs directory and use it as t
 
 - Install the [Now CLI](https://github.com/zeit/now):
 
-  `npm i -g now`
+```sh
+npm i -g now
+```
 
 - Configure your `build` script:
 
-  `"build": "build-storybook -c .storybook -o public"`
+```
+`"build": "build-storybook -c .storybook -o public"`
+```
 
 - Execute `now` on your terminal.
 

@@ -1,7 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from '@emotion/native';
 
-import { TextInput } from 'react-native';
+const Input = styled.TextInput(({ theme }) => ({
+  borderWidth: 1,
+  borderColor: theme.borderColor,
+  borderRadius: 2,
+  fontSize: 13,
+  padding: 5,
+  margin: 10,
+  color: theme.labelColor,
+}));
 
 function formatArray(value, separator) {
   if (value === '') {
@@ -11,19 +20,10 @@ function formatArray(value, separator) {
 }
 
 const ArrayType = ({ knob, onChange }) => (
-  <TextInput
+  <Input
     id={knob.name}
     underlineColorAndroid="transparent"
     autoCapitalize="none"
-    style={{
-      borderWidth: 1,
-      borderColor: '#f7f4f4',
-      borderRadius: 2,
-      fontSize: 13,
-      padding: 5,
-      margin: 10,
-      color: '#555',
-    }}
     value={knob.value.join(knob.separator)}
     onChangeText={e => onChange(formatArray(e, knob.separator))}
   />

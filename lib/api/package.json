@@ -1,6 +1,6 @@
 {
   "name": "@storybook/api",
-  "version": "5.3.0-alpha.10",
+  "version": "5.3.0-beta.14",
   "description": "Core Storybook API & Context",
   "keywords": [
     "storybook"
@@ -16,7 +16,9 @@
   "license": "MIT",
   "files": [
     "dist/**/*",
-    "README.md"
+    "README.md",
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,27 +26,30 @@
     "prepare": "node ./scripts/generateVersion.js && node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/channels": "5.3.0-alpha.10",
-    "@storybook/client-logger": "5.3.0-alpha.10",
-    "@storybook/core-events": "5.3.0-alpha.10",
-    "@storybook/router": "5.3.0-alpha.10",
-    "@storybook/theming": "5.3.0-alpha.10",
+    "@storybook/channels": "5.3.0-beta.14",
+    "@storybook/client-logger": "5.3.0-beta.14",
+    "@storybook/core-events": "5.3.0-beta.14",
+    "@storybook/router": "5.3.0-beta.14",
+    "@storybook/theming": "5.3.0-beta.14",
     "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1",
     "global": "^4.3.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "memoizerific": "^1.11.3",
     "prop-types": "^15.6.2",
     "react": "^16.8.3",
     "semver": "^6.0.0",
     "shallow-equal": "^1.1.0",
     "store2": "^2.7.1",
-    "telejson": "^3.0.3",
+    "telejson": "^3.2.0",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.129",
+    "@types/lodash": "^4.14.149",
     "@types/semver": "^6.0.0"
+  },
+  "peerDependencies": {
+    "regenerator-runtime": "*"
   },
   "publishConfig": {
     "access": "public"

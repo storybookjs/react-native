@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Welcome To Storybook 1`] = `
+exports[`Storyshots Welcome to Storybook 1`] = `
 <article
   style={
     Object {
       "backgroundColor": "#fff",
+      "color": "#000",
       "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
       "lineHeight": 1.4,
       "padding": 15,

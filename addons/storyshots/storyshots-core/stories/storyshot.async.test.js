@@ -1,7 +1,7 @@
 import path from 'path';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import initStoryshots, { Stories2SnapsConverter } from '../src';
+import initStoryshots, { Stories2SnapsConverter } from '../dist';
 import { TIMEOUT, EXPECTED_VALUE } from './required_with_context/Async.stories';
 
 initStoryshots({
@@ -40,7 +40,7 @@ initStoryshots({
         done();
       }, TIMEOUT);
     } else {
-      // If not async just mark the test as done
+      // If not async, mark the test as done
       done();
     }
   },

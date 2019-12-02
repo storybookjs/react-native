@@ -2,7 +2,8 @@ node_modules
 *.log
 .idea
 *.iml
-.vscode
+.vscode/*
+!.vscode/launch.json
 *.sw*
 npm-shrinkwrap.json
 dist
@@ -32,3 +33,5 @@ htpasswd
 storybook-out
 /addons/docs/common/config-*
 built-storybooks
+cypress/videos
+cypress/screenshots

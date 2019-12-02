@@ -12,12 +12,12 @@ export default {
   },
 };
 
-export const story1 = () => ({
+export const Story1 = () => ({
   view: () => m(Button, { onclick: action('clicked') }, 'Hello Button'),
 });
-story1.story = { name: 'with text' };
+Story1.story = { name: 'with text' };
 
-export const story2 = () => ({
+export const Story2 = () => ({
   view: () =>
     m(
       Button,
@@ -25,4 +25,4 @@ export const story2 = () => ({
       m('span', { role: 'img', ariaLabel: 'so cool' }, '😀 😎 👍 💯')
     ),
 });
-story2.story = { name: 'with some emoji' };
+Story2.story = { name: 'with some emoji' };

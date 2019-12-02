@@ -19,13 +19,13 @@
 
 ## Basic example
 
-Let's get started with a simple example that combines markdown with a single story:
+Let's get started with an example that combines markdown with a single story:
 
 ```md
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { Checkbox } from './Checkbox';
 
-<Meta title="MDX|Checkbox" component={Checkbox} />
+<Meta title="MDX/Checkbox" component={Checkbox} />
 
 # Checkbox
 
@@ -64,7 +64,7 @@ For example, here's the story from `Checkbox` example above, rewritten in CSF:
 ```js
 import React from 'react';
 import { Checkbox } from './Checkbox';
-export default { title: "MDX|Checkbox" component: Checkbox };
+export default { title: "MDX/Checkbox" component: Checkbox };
 export const allCheckboxes = () => (
   <form>
     <Checkbox id="Unchecked" label="Unchecked" />
@@ -74,7 +74,7 @@ export const allCheckboxes = () => (
 );
 ```
 
-There's a one-to-one mapping from the code in `MDX` to `CSF`, which in turn directly corresponds to Storybook's internal `storiesOf` API. As a user this means your existing Storybook knowledge should easily translate between the three. And technically, this means that the transformations that happen under the hood are simple and predictable.
+There's a one-to-one mapping from the code in `MDX` to `CSF`, which in turn directly corresponds to Storybook's internal `storiesOf` API. As a user, this means your existing Storybook knowledge should translate between the three. And technically, this means that the transformations that happen under the hood are simple and predictable.
 
 ## Writing stories
 
@@ -86,7 +86,7 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { Badge } from './Badge';
 import { Icon } from './Icon';
 
-<Meta title="MDX|Badge" component={Badge} />
+<Meta title="MDX/Badge" component={Badge} />
 
 # Badge
 
@@ -165,7 +165,7 @@ To add [decorators](https://github.com/storybookjs/storybook/blob/next/docs/src/
 </Story>
 ```
 
-In addition, global decorators work just like before, e.g. adding the following to your `.storybook/config.js`:
+In addition, global decorators work just like before, e.g. adding the following to your `.storybook/preview.js`:
 
 ```js
 import { addDecorator, addParameters } from '@storybook/react';
@@ -182,7 +182,7 @@ If you don't define stories in your MDX, you can write MDX documentation and ass
 
 If you don't define a `Meta`, you can write Markdown and associate with an existing story. See ["CSF Stories with MDX Docs"](recipes.md#csf-stories-with-mdx-docs).
 
-To get a "documentation-only story", in your UI, simply define a `<Meta>` as you normally would, but don't define any stories. It will show up in your UI as a documentation node:
+To get a "documentation-only story", in your UI, define a `<Meta>` as you normally would, but don't define any stories. It will show up in your UI as a documentation node:
 
 <center>
   <img src="./media/mdx-documentation-only.png" width="100%" />

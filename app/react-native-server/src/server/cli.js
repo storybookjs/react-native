@@ -8,7 +8,7 @@ export function parseList(str) {
 function getCli() {
   program
     .option('-h, --host <host>', 'host to listen on', 'localhost')
-    .option('-p, --port <port>', 'port to listen on', 7007)
+    .option('-p, --port <port>', 'port to listen on', str => parseInt(str, 10), 7007)
     .option('-e, --environment [environment]', 'DEVELOPMENT/PRODUCTION environment for webpack')
     .option('-i, --manual-id', 'allow multiple users to work with same storybook')
     .option('-c, --config-dir [dir-name]', 'Directory where to load Storybook configurations from')

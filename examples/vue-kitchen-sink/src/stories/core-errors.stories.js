@@ -1,10 +1,10 @@
 export default {
-  title: 'Core|Errors',
+  title: 'Core/Errors',
 };
 
-export const throwsError = () => {
+export const ThrowsError = () => {
   throw new Error('foo');
 };
-throwsError.story = { parameters: { storyshots: { disable: true } } };
+ThrowsError.story = { parameters: { storyshots: { disable: true } } };
 
-export const nullError = () => null;
+export const NullError = () => null;

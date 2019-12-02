@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Core|Parameters Passed To Story 1`] = `
+exports[`Storyshots Core/Parameters passed to story 1`] = `
 <div
   data-is="parameters"
   id="root"
 >
   <div>
-    Parameters are {"options":{"hierarchyRootSeparator":{},"hierarchySeparator":{}},"docs":{},"globalParameter":"globalParameter","framework":"riot","chapterParameter":"chapterParameter","displayName":"passed to story","storyParameter":"storyParameter","id":"root","dataIs":"parameters"}
+    Parameters are {"globalParameter":"globalParameter","options":{},"docs":{},"framework":"riot","chapterParameter":"chapterParameter","__id":"core-parameters--passed-to-story","storyParameter":"storyParameter","id":"root","dataIs":"parameters"}
   </div>
 </div>
 `;

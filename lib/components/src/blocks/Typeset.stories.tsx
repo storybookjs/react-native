@@ -2,11 +2,11 @@ import React from 'react';
 import { Typeset } from './Typeset';
 
 export default {
-  title: 'Docs|Typeset',
+  title: 'Docs/Typeset',
   component: Typeset,
 };
 
-const fontSizes = [12, 14, 16, 20, 24, 32, 40, 48];
+const fontSizes = ['12px', '14px', '16px', '20px', '24px', '32px', '40px', '48px'];
 const fontWeight = 900;
 
 export const withFontSizes = () => <Typeset fontSizes={fontSizes} />;

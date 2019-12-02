@@ -1,14 +1,29 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { SELECT_STORY, FORCE_RE_RENDER } from '@storybook/core-events';
 import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-knobs';
+import styled from '@emotion/native';
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 
 const getTimestamp = () => +new Date();
 
 const DEFAULT_GROUP_ID = 'Other';
+
+const Touchable = styled.TouchableOpacity(({ theme }) => ({
+  borderRadius: 2,
+  borderWidth: 1,
+  borderColor: theme.borderColor,
+  padding: 4,
+  margin: 10,
+  justifyContent: 'center',
+  alignItems: 'center',
+}));
+
+const ResetButton = styled.Text(({ theme }) => ({
+  color: theme.buttonTextColor,
+}));
 
 export default class Panel extends React.Component {
   constructor(props) {
@@ -102,29 +117,39 @@ export default class Panel extends React.Component {
       return null;
     }
 
-    const { knobs, groupId } = this.state;
+    const { knobs, groupId: stateGroupId } = this.state;
 
     const groups = {};
     const groupIds = [];
 
     let knobsArray = Object.keys(knobs);
 
-    knobsArray
-      .filter(key => knobs[key].groupId)
-      .forEach(key => {
-        const knobKeyGroupId = knobs[key].groupId;
-        groupIds.push(knobKeyGroupId);
-        groups[knobKeyGroupId] = {
-          render: () => <Text id={knobKeyGroupId}>{knobKeyGroupId}</Text>,
-          title: knobKeyGroupId,
-        };
-      });
+    const knobsWithGroups = knobsArray.filter(key => knobs[key].groupId);
+
+    knobsWithGroups.forEach(key => {
+      const knobKeyGroupId = knobs[key].groupId;
+      groupIds.push(knobKeyGroupId);
+      groups[knobKeyGroupId] = {
+        render: () => <Text id={knobKeyGroupId}>{knobKeyGroupId}</Text>,
+        title: knobKeyGroupId,
+      };
+    });
+
+    const allHaveGroups = groupIds.length > 0 && knobsArray.length === knobsWithGroups.length;
+
+    // If all of the knobs are assigned to a group, we don't need the default group.
+    const groupId =
+      stateGroupId === DEFAULT_GROUP_ID && allHaveGroups
+        ? knobs[knobsWithGroups[0]].groupId
+        : stateGroupId;
 
     if (groupIds.length > 0) {
-      groups[DEFAULT_GROUP_ID] = {
-        render: () => <Text id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</Text>,
-        title: DEFAULT_GROUP_ID,
-      };
+      if (!allHaveGroups) {
+        groups[DEFAULT_GROUP_ID] = {
+          render: () => <Text id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</Text>,
+          title: DEFAULT_GROUP_ID,
+        };
+      }
 
       if (groupId === DEFAULT_GROUP_ID) {
         knobsArray = knobsArray.filter(key => !knobs[key].groupId);
@@ -142,7 +167,7 @@ export default class Panel extends React.Component {
     }
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, paddingTop: 10 }}>
         {groupIds.length > 0 && (
           <GroupTabs groups={groups} onGroupSelect={this.onGroupSelect} selectedGroup={groupId} />
         )}
@@ -153,20 +178,9 @@ export default class Panel extends React.Component {
             onFieldClick={this.handleClick}
           />
         </View>
-        <TouchableOpacity
-          style={{
-            borderRadius: 2,
-            borderWidth: 1,
-            borderColor: '#f7f4f4',
-            padding: 4,
-            margin: 10,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-          onPress={this.reset}
-        >
-          <Text>RESET</Text>
-        </TouchableOpacity>
+        <Touchable onPress={this.reset}>
+          <ResetButton>RESET</ResetButton>
+        </Touchable>
       </View>
     );
   }

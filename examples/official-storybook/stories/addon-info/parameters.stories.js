@@ -6,7 +6,7 @@ import BaseButton from '../../components/BaseButton';
 import { markdownDescription } from './markdown.stories';
 
 export default {
-  title: 'Addons|Info/Parameters',
+  title: 'Addons/Info/Parameters',
   decorators: [
     withInfo({
       styles: {
@@ -27,15 +27,15 @@ export default {
   },
 };
 
-export const usingParametersAcrossAllStories = () => <BaseButton label="Button" />;
-usingParametersAcrossAllStories.story = {
+export const UsingParametersAcrossAllStories = () => <BaseButton label="Button" />;
+UsingParametersAcrossAllStories.story = {
   name: 'Using parameters across all stories',
 };
 
-export const overwritingAndExtendingTheParametersAndOptionsSetStoriesWise = () => (
+export const OverwritingAndExtendingTheParametersAndOptionsSetStoriesWise = () => (
   <BaseButton label="Button" />
 );
-overwritingAndExtendingTheParametersAndOptionsSetStoriesWise.story = {
+OverwritingAndExtendingTheParametersAndOptionsSetStoriesWise.story = {
   name: 'Overwriting and extending the parameters and options set stories-wise',
   parameters: {
     info: {
@@ -45,18 +45,18 @@ overwritingAndExtendingTheParametersAndOptionsSetStoriesWise.story = {
   },
 };
 
-export const overwriteTheParametersWithMarkdownVariable = () => (
+export const OverwriteTheParametersWithMarkdownVariable = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
-overwriteTheParametersWithMarkdownVariable.story = {
+OverwriteTheParametersWithMarkdownVariable.story = {
   name: 'Overwrite the parameters with markdown variable',
   parameters: { info: markdownDescription },
 };
 
-export const overwriteTheTextParameterWithMarkdownInline = () => (
+export const OverwriteTheTextParameterWithMarkdownInline = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
-overwriteTheTextParameterWithMarkdownInline.story = {
+OverwriteTheTextParameterWithMarkdownInline.story = {
   name: 'Overwrite the text parameter with markdown inline',
   parameters: {
     info: {
@@ -71,10 +71,10 @@ overwriteTheTextParameterWithMarkdownInline.story = {
   },
 };
 
-export const disableTheAddonEntirely = () => (
+export const DisableTheAddonEntirely = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
-disableTheAddonEntirely.story = {
+DisableTheAddonEntirely.story = {
   name: 'Disable the addon entirely',
   parameters: { info: { disable: true } },
 };

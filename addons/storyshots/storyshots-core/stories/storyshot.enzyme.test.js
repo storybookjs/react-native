@@ -2,7 +2,7 @@ import path from 'path';
 import { mount } from 'enzyme';
 import { createSerializer as enzymeSerializer } from 'enzyme-to-json';
 import { createSerializer as emotionSerializer } from 'jest-emotion';
-import initStoryshots from '../src';
+import initStoryshots from '../dist';
 
 initStoryshots({
   framework: 'react',

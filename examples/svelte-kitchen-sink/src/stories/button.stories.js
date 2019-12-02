@@ -4,7 +4,7 @@ export default {
   title: 'Button',
 };
 
-export const rounded = () => ({
+export const Rounded = () => ({
   Component: ButtonView,
   props: {
     rounded: true,
@@ -12,7 +12,7 @@ export const rounded = () => ({
   },
 });
 
-export const square = () => ({
+export const Square = () => ({
   Component: ButtonView,
   props: {
     rounded: false,

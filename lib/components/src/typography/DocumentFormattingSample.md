@@ -52,7 +52,7 @@ Unordered
     - Ac tristique libero volutpat at
     * Facilisis in pretium nisl aliquet
     - Nulla volutpat aliquam velit
-- Very easy!
+- Hooray!
 
 Ordered
 
@@ -94,6 +94,10 @@ var foo = function(bar) {
 
 console.log(foo(5));
 ```
+
+## Horizontal Rule
+
+---
 
 ## Tables
 

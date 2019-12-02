@@ -17,7 +17,7 @@ yarn add @storybook/addon-storyshots --dev
 ```
 
 ## Configure your app for Jest
-In many cases, for example Create React App, it's already configured for Jest. You just need to create a filename with the extension `.test.js`.
+In many cases, for example Create React App, it's already configured for Jest. You need to create a filename with the extension `.test.js`.
 
 If you still need to configure jest you can use the resources mentioned below:
 
@@ -33,7 +33,9 @@ If you still need to configure jest you can use the resources mentioned below:
 
 ### Configure Jest to work with Webpack's [require.context()](https://webpack.js.org/guides/dependency-management/#require-context)
 
-Sometimes it's useful to configure Storybook with Webpack's require.context feature:
+Sometimes it's useful to configure Storybook with Webpack's require.context feature. You could be loading stories [one of two ways](https://storybook.js.org/docs/basics/writing-stories/#loading-stories). 
+
+1) If you're using the `storiesOf` API, you can integrate it this way:
 
 ```js
 import { configure } from '@storybook/react';
@@ -46,6 +48,16 @@ function loadStories() {
 
 configure(loadStories, module);
 ```
+
+2) If you're using Component Story Format (CSF), you'll integrate it like so:
+
+```js
+import { configure } from '@storybook/react';
+
+const req = require.context('../stories', true, /\.stories\.js$/); // <- import all the stories at once
+
+configure(req, module);
+``` 
 
 The problem here is that it will work only during the build with webpack,
 other tools may lack this feature. Since Storyshot is running under Jest,
@@ -96,7 +108,7 @@ First, install it:
 yarn add require-context.macro --dev
 ```
 
-Now, inside of your Storybook config file, simply import the macro and run it in place of `require.context`, like so:
+Now, inside of your Storybook config file, import the macro and run it in place of `require.context`, like so:
 
 ```javascript
 import requireContext from 'require-context.macro';
@@ -164,6 +176,23 @@ StoryShots addon for Preact is dependent on [preact-render-to-json](https://gith
 
 ```sh
 yarn add preact-render-to-json --dev
+```
+
+### Configure Jest for MDX Docs Add-On Stories
+
+If using the [Docs add-on](../../docs/README.md) with 
+[MDX stories](../../docs/docs/mdx.md) you will need
+to configure Jest to transform MDX stories into something Storyshots can understand:
+
+Add the following to your Jest configuration:
+
+```json
+{
+  "transform": {
+    "^.+\\.[tj]sx?$": "babel-jest",
+    "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
+  }
+}
 ```
 
 ### <a name="deps-issue"></a>Why don't we install dependencies of each framework ?
@@ -356,7 +385,7 @@ Whenever you change you're data requirements by adding (and rendering) or (accid
 
 ### `config`
 
-The `config` parameter must be a function that helps to configure storybook like the `config.js` does.
+The `config` parameter must be a function that helps to configure storybook like the `preview.js` does.
 If it's not specified, storyshots will try to use [configPath](#configPath) parameter.
 
 ```js
@@ -396,8 +425,8 @@ import initStoryshots from '@storybook/addon-storyshots';
 initStoryshots({ configPath: path.resolve(__dirname, '../../.storybook') });
 ```
 
-`configPath` can also specify path to the `config.js` itself. In this case, config directory will be
-a base directory of the `configPath`. It may be useful when the `config.js` for test should differ from the
+`configPath` can also specify path to the `preview.js` itself. In this case, config directory will be
+a base directory of the `configPath`. It may be useful when the `preview.js` for test should differ from the
 original one. It also may be useful for separating tests to different test configs:
 
 ```js
@@ -587,7 +616,7 @@ Like the default, but allows you to specify a set of options for the renderer, j
 
 ### `multiSnapshotWithOptions(options)`
 
-Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes. If you'd like the benefit of separate snapshot files, but don't have custom options to pass, simply pass an empty object.
+Like `snapshotWithOptions`, but generate a separate snapshot file for each stories file rather than a single monolithic file (as is the convention in Jest). This makes it dramatically easier to review changes. If you'd like the benefit of separate snapshot files, but don't have custom options to pass, you can pass an empty object.
 If you use [Component Story Format](https://storybook.js.org/docs/formats/component-story-format/), you may also need to add an additional Jest transform to automate detecting story file names:
 ```js
 // jest.config.js
@@ -602,7 +631,7 @@ module.exports = {
 #### integrityOptions
 
 This option is useful when running test with `multiSnapshotWithOptions(options)` in order to track snapshots are matching the stories. (disabled by default).
-The value is just a [settings](https://github.com/isaacs/node-glob#options) to a `glob` object, that searches for the snapshot files.
+The value is a [settings](https://github.com/isaacs/node-glob#options) to a `glob` object, that searches for the snapshot files.
 
 ```js
 initStoryshots({
@@ -624,13 +653,15 @@ This is a class that generates snapshot's name based on the story (kind, story &
 Let's say we wanted to create a test function for shallow && multi-file snapshots:
 
 ```js
-import initStoryshots, { getSnapshotFileName } from '@storybook/addon-storyshots';
+import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
+const converter = new Stories2SnapsConverter();
+
 initStoryshots({
   test: ({ story, context }) => {
-    const snapshotFileName = getSnapshotFileName(context);
+    const snapshotFileName = converter.getSnapshotFileName(context);
     const storyElement = story.render();
     const shallowTree = shallow(storyElement);
 

@@ -1,11 +1,10 @@
-/* eslint-disable no-underscore-dangle */
 import { logger } from '@storybook/client-logger';
 import addons, { mockChannel } from '@storybook/addons';
 import ClientApi from './client_api';
 import ConfigApi from './config_api';
 import StoryStore from './story_store';
 
-export const getContext = (() => decorateStory => {
+const getContext = (() => decorateStory => {
   const channel = mockChannel();
   addons.setChannel(channel);
   const storyStore = new StoryStore({ channel });
@@ -26,6 +25,11 @@ jest.mock('@storybook/client-logger', () => ({
 }));
 
 describe('preview.client_api', () => {
+  afterEach(() => {
+    const { clientApi } = getContext(undefined);
+    clientApi.clearDecorators();
+    clientApi.clearParameters();
+  });
   describe('setAddon', () => {
     it('should register addons', () => {
       const { clientApi } = getContext(undefined);
@@ -116,63 +120,85 @@ describe('preview.client_api', () => {
 
   describe('addParameters', () => {
     it('should add parameters', () => {
-      const { clientApi } = getContext(undefined);
+      const { clientApi, storyStore } = getContext(undefined);
+      const { storiesOf } = clientApi;
 
-      clientApi.addParameters({ a: '1' });
+      clientApi.addParameters({ a: 1 });
+      storiesOf('kind', module).add('name', ({ parameters }) => parameters);
 
+      const result = storyStore.fromId('kind--name').storyFn();
       // @ts-ignore
-      expect(clientApi._globalParameters).toEqual({ a: '1', options: {}, docs: {} });
+      const { docs, fileName, options, ...rest } = result;
+
+      expect(rest).toEqual({ a: 1 });
     });
 
     it('should merge options', () => {
-      const { clientApi } = getContext(undefined);
+      const { clientApi, storyStore } = getContext(undefined);
+      const { storiesOf } = clientApi;
 
       clientApi.addParameters({ options: { a: '1' } });
       clientApi.addParameters({ options: { b: '2' } });
+      storiesOf('kind', module).add('name', ({ parameters }) => parameters);
 
       // @ts-ignore
-      expect(clientApi._globalParameters).toEqual({ options: { a: '1', b: '2' }, docs: {} });
+      const {
+        options: { hierarchyRootSeparator, hierarchySeparator, ...rest },
+      } = storyStore.fromId('kind--name').storyFn();
+
+      expect(rest).toEqual({ a: '1', b: '2' });
     });
 
     it('should override specific properties in options', () => {
-      const { clientApi } = getContext(undefined);
+      const { clientApi, storyStore } = getContext(undefined);
+      const { storiesOf } = clientApi;
 
       clientApi.addParameters({ backgrounds: ['value'], options: { a: '1', b: '3' } });
       clientApi.addParameters({ options: { a: '2' } });
+      storiesOf('kind', module).add('name', ({ parameters }) => parameters);
 
       // @ts-ignore
-      expect(clientApi._globalParameters).toEqual({
-        backgrounds: ['value'],
-        options: { a: '2', b: '3' },
-        docs: {},
-      });
+      const {
+        options: { hierarchyRootSeparator, hierarchySeparator, ...rest },
+        backgrounds,
+      } = storyStore.fromId('kind--name').storyFn();
+
+      expect(backgrounds).toEqual(['value']);
+      expect(rest).toEqual({ a: '2', b: '3' });
     });
 
     it('should replace top level properties and override specific properties in options', () => {
-      const { clientApi } = getContext(undefined);
+      const { clientApi, storyStore } = getContext(undefined);
+      const { storiesOf } = clientApi;
 
       clientApi.addParameters({ backgrounds: ['value'], options: { a: '1', b: '3' } });
       clientApi.addParameters({ backgrounds: [], options: { a: '2' } });
+      storiesOf('kind', module).add('name', ({ parameters }) => parameters);
 
       // @ts-ignore
-      expect(clientApi._globalParameters).toEqual({
-        backgrounds: [],
-        options: { a: '2', b: '3' },
-        docs: {},
-      });
+      const {
+        options: { hierarchyRootSeparator, hierarchySeparator, ...rest },
+        backgrounds,
+      } = storyStore.fromId('kind--name').storyFn();
+
+      expect(backgrounds).toEqual([]);
+      expect(rest).toEqual({ a: '2', b: '3' });
     });
 
     it('should deep merge in options', () => {
-      const { clientApi } = getContext(undefined);
+      const { clientApi, storyStore } = getContext(undefined);
+      const { storiesOf } = clientApi;
 
       clientApi.addParameters({ options: { a: '1', b: '2', theming: { c: '3' } } });
       clientApi.addParameters({ options: { theming: { c: '4', d: '5' } } });
+      storiesOf('kind', module).add('name', ({ parameters }) => parameters);
 
       // @ts-ignore
-      expect(clientApi._globalParameters).toEqual({
-        options: { a: '1', b: '2', theming: { c: '4', d: '5' } },
-        docs: {},
-      });
+      const {
+        options: { hierarchyRootSeparator, hierarchySeparator, ...rest },
+      } = storyStore.fromId('kind--name').storyFn();
+
+      expect(rest).toEqual({ a: '1', b: '2', theming: { c: '4', d: '5' } });
     });
   });
 
@@ -250,14 +276,16 @@ describe('preview.client_api', () => {
 
   describe('clearDecorators', () => {
     it('should remove all global decorators', () => {
-      const { clientApi } = getContext(undefined);
+      const { clientApi, storyStore } = getContext(undefined);
+      const { storiesOf } = clientApi;
 
-      // @ts-ignore
-      clientApi._globalDecorators = 1234;
+      clientApi.addDecorator(() => 'foo');
       clientApi.clearDecorators();
 
-      // @ts-ignore
-      expect(clientApi._globalDecorators).toEqual([]);
+      storiesOf('kind', module).add('name', () => 'bar');
+
+      const result = storyStore.fromId('kind--name').storyFn();
+      expect(result).toBe(`bar`);
     });
   });
 
@@ -312,6 +340,50 @@ describe('preview.client_api', () => {
           ],
         }),
       ]);
+    });
+
+    describe('getSeparators', () => {
+      it('returns values set via parameters', () => {
+        const {
+          clientApi: { getSeparators, storiesOf, addParameters },
+        } = getContext(undefined);
+
+        const options = { hierarchySeparator: /a/, hierarchyRootSeparator: 'b' };
+        addParameters({ options });
+        storiesOf('kind 1', module).add('name 1', () => '1');
+        expect(getSeparators()).toEqual(options);
+      });
+
+      it('returns old defaults if kind uses old separators', () => {
+        const {
+          clientApi: { getSeparators, storiesOf },
+        } = getContext(undefined);
+
+        storiesOf('kind|1', module).add('name 1', () => '1');
+        expect(getSeparators()).toEqual({
+          hierarchySeparator: /\/|\./,
+          hierarchyRootSeparator: '|',
+        });
+      });
+
+      it('returns new values if showRoots is set', () => {
+        const {
+          clientApi: { getSeparators, storiesOf, addParameters },
+        } = getContext(undefined);
+        addParameters({ options: { showRoots: false } });
+
+        storiesOf('kind|1', module).add('name 1', () => '1');
+        expect(getSeparators()).toEqual({ hierarchySeparator: '/' });
+      });
+
+      it('returns new values if kind does not use old separators', () => {
+        const {
+          clientApi: { getSeparators, storiesOf },
+        } = getContext(undefined);
+
+        storiesOf('kind/1', module).add('name 1', () => '1');
+        expect(getSeparators()).toEqual({ hierarchySeparator: '/' });
+      });
     });
 
     it('reads filename from module', () => {

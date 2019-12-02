@@ -2,7 +2,7 @@ import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { Button } from '@storybook/angular/demo';
 import { AppComponent } from '../app/app.component';
 
-storiesOf('Addon|Background', module)
+storiesOf('Addon/Background', module)
   .addParameters({
     backgrounds: [
       { name: 'twitter', value: '#00aced', default: true },
@@ -14,7 +14,7 @@ storiesOf('Addon|Background', module)
     props: {},
   }));
 
-storiesOf('Addon|Background', module)
+storiesOf('Addon/Background', module)
   .addDecorator(
     moduleMetadata({
       declarations: [Button],

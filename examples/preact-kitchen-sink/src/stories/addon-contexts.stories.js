@@ -41,15 +41,15 @@ const storyLevelContexts = [
 ];
 
 export default {
-  title: 'Addons|Contexts',
+  title: 'Addons/Contexts',
   decorators: [withContexts(topLevelContexts)],
 };
 
-export const simpleCssTheming = () => (
+export const SimpleCssTheming = () => (
   <div>I'm a children of the injected 'div' (where provides a theming context).</div>
 );
 
-simpleCssTheming.story = {
+SimpleCssTheming.story = {
   name: 'Simple CSS Theming',
 
   parameters: {

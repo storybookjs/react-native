@@ -5,19 +5,19 @@ const text = 'Testing the a11y addon';
 const image = 'http://placehold.it/350x150';
 
 export default {
-  title: 'Addons|A11y/Image',
+  title: 'Addons/A11y/Image',
   parameters: {
     options: { selectedPanel: 'storybook/a11y/panel' },
   },
 };
 
-export const withoutAlt = () => <img src={image} />;
-withoutAlt.story = {
+export const WithoutAlt = () => <img src={image} />;
+WithoutAlt.story = {
   name: 'Without alt',
 };
 
-export const withoutAltButUnchecked = () => <img src={image} />;
-withoutAltButUnchecked.story = {
+export const WithoutAltButUnchecked = () => <img src={image} />;
+WithoutAltButUnchecked.story = {
   name: 'Without alt but unchecked',
   parameters: {
     a11y: {
@@ -30,8 +30,8 @@ withoutAltButUnchecked.story = {
   },
 };
 
-export const withAlt = () => <img src={image} alt={text} />;
-withAlt.story = {
+export const WithAlt = () => <img src={image} alt={text} />;
+WithAlt.story = {
   name: 'With alt',
 };
 

@@ -4,13 +4,13 @@ const badOutput = { renderable: 'no, react can not render objects' };
 const BadComponent = () => badOutput;
 
 export default {
-  title: 'Core|Errors',
+  title: 'Core/Errors',
 };
 
-export const exception = () => {
+export const Exception = () => {
   throw new Error('storyFn threw an error! WHOOPS');
 };
-exception.story = {
+Exception.story = {
   name: 'story throws exception',
   parameters: {
     storyshots: { disable: true },
@@ -33,8 +33,8 @@ badComponent.story = {
   },
 };
 
-export const badStory = () => badOutput;
-badStory.story = {
+export const BadStory = () => badOutput;
+BadStory.story = {
   name: 'story errors - story un-renderable type',
   parameters: {
     notes: 'Story does not return something react can render',

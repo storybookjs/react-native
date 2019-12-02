@@ -5,36 +5,36 @@ import { Form } from '@storybook/components';
 const text = 'Testing the a11y addon';
 
 export default {
-  title: 'Addons|A11y/Form',
+  title: 'Addons/A11y/Form',
   component: Form,
   parameters: {
     options: { selectedPanel: 'storybook/a11y/panel' },
   },
 };
 
-export const withoutLabel = () => (
+export const WithoutLabel = () => (
   <Form.Field label="">
     <Form.Input />
   </Form.Field>
 );
-withoutLabel.story = {
+WithoutLabel.story = {
   name: 'Without Label',
 };
 
-export const withLabel = () => (
+export const WithLabel = () => (
   <Form.Field label={text}>
     <Form.Input id="1" />
   </Form.Field>
 );
-withLabel.story = {
+WithLabel.story = {
   name: 'With label',
 };
 
-export const withPlaceholder = () => (
+export const WithPlaceholder = () => (
   <Form.Field label="">
     <Form.Input id="1" placeholder={text} />
   </Form.Field>
 );
-withPlaceholder.story = {
+WithPlaceholder.story = {
   name: 'With placeholder',
 };

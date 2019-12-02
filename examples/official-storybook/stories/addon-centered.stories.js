@@ -4,19 +4,19 @@ import centered from '@storybook/addon-centered/react';
 import BaseButton from '../components/BaseButton';
 
 export default {
-  title: 'Addons|Centered',
+  title: 'Addons/Centered',
   decorators: [centered],
 };
 
-export const story1 = () => <BaseButton label="This story should be centered" />;
+export const Story1 = () => <BaseButton label="This story should be centered" />;
 
-story1.story = {
+Story1.story = {
   name: 'story 1',
 };
 
-export const story2 = () => <BaseButton label="This story should not be centered" />;
+export const Story2 = () => <BaseButton label="This story should not be centered" />;
 
-story2.story = {
+Story2.story = {
   name: 'story 2 not centered',
 
   parameters: {

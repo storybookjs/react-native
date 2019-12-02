@@ -3,16 +3,16 @@ import { linkTo } from '@storybook/addon-links';
 import ActionLinkView from './views/ActionLinkView.svelte';
 
 export default {
-  title: 'Addon|Links',
+  title: 'Addon/Links',
 };
 
-export const goToWelcomeView = () => ({
+export const GoToWelcomeView = () => ({
   Component: ActionLinkView,
   on: {
     click: linkTo('Welcome'),
   },
 });
 
-goToWelcomeView.story = {
+GoToWelcomeView.story = {
   name: 'Go to welcome view',
 };

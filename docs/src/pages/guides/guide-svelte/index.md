@@ -36,6 +36,15 @@ Make sure that you have `@babel/core`, and `babel-loader` in your dependencies a
 npm install babel-loader @babel/core --save-dev 
 ```
 
+### svelte-loader
+
+You'll also need to install `svelte-loader` if you haven't already.
+
+```sh
+
+npm install svelte-loader --save-dev
+```
+
 ## Step 2: Add a npm script
 
 Then add the following NPM script to your `package.json` in order to start the storybook later in this guide:
@@ -48,16 +57,16 @@ Then add the following NPM script to your `package.json` in order to start the s
 }
 ```
 
-## Step 3: Create the config file
+## Step 3: Create the main file
 
 For a basic Storybook configuration, the only thing you need to do is tell Storybook where to find stories.
 
-To do that, create a file at `.storybook/config.js` with the following content:
+To do that, create a file at `.storybook/main.js` with the following content:
 
 ```js
-import { configure } from '@storybook/svelte';
-
-configure(require.context('../src', true, /\.stories\.js$/), module);
+module.exports {
+  stories: ['../src/**/*.stories.[tj]s'],
+};
 ```
 
 That will load all the stories underneath your `../src` directory that match the pattern `*.stories.js`. We recommend co-locating your stories with your source files, but you can place them wherever you choose.
@@ -87,9 +96,9 @@ export const withEmoji = () => ({
 ```
 
 Svelte storybooks don't support using templates in a story yet. 
-Instead, you can create a `.svelte` file to compose components together, or simply to access all normal Svelte functionality, like slots.
+Instead, you can create a `.svelte` file to compose components together, or to access all normal Svelte functionality, like slots.
 
-So you can create a story "view" file, essentially just a .svelte file to load your components into to test.
+So you can create a story "view" file, which is essentially a .svelte file to load your components into to test.
 
 ```html
 <!-- MyButtonView  -->
@@ -98,7 +107,7 @@ So you can create a story "view" file, essentially just a .svelte file to load y
 </Button>
 ```
 
-In this example, the `on:click` that is heard on the `MyButton` component is simply passed up to the containing component `MyButtonView` using the svelte shorthand.
+In this example, the `on:click` that is heard on the `MyButton` component is passed up to the containing component `MyButtonView` using the svelte shorthand.
 It's the equivalent to `on:click="fire('click', event)"`, but it's worth knowing about especially in this "component wrapper" scenario.
 
 > If your component doesn't use slots, you don't need to do this, but if it does or some other svelte functionality that requires the component to exist in a svelte view, then this is how to do that.

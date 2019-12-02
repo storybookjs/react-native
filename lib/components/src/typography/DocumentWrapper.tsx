@@ -179,7 +179,7 @@ export const DocumentWrapper = styled.div(
 
     hr {
       border: 0 none;
-      color: ${theme.appBorderColor};
+      border-top: 1px solid ${theme.appBorderColor};
       height: 4px;
       padding: 0;
     }

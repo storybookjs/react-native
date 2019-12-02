@@ -6,7 +6,7 @@
 ## 💡 Why you need this?
 
 Real world users expects your application being customizable, that is why often your components are **polymorphic**:
-they simply need to adapt themselves under different contextual environments. Imagine your components can speak
+they need to adapt themselves under different contextual environments. Imagine your components can speak
 Chinese, English, or even French, and they change their skin tone under dark or light theme. Yeah, you want to make
 sure a component looks great in all scenarios.
 
@@ -25,7 +25,7 @@ once then apply it everywhere**.
 
 1. Define a single global file for managing contextual environments (a.k.a. containers) for all of your stories
    declaratively. No more repetitive setups or noisy wrapping, making your stories more focused and readable.
-2. Support dynamic contextual props switching from Storybook toolbar at runtime. You can easily slice into
+2. Support dynamic contextual props switching from Storybook toolbar at runtime. You can slice into
    different environments (e.g. languages or themes ) to understand how your component is going to respond.
 3. Library agnostic: no presumption on what kind of components you want to wrap around your stories. You can even
    use it to bridge with your favorite routing, state-management solutions, or even your own
@@ -47,14 +47,15 @@ To get it started, add this package into your project:
 yarn add -D @storybook/addon-contexts
 ```
 
-Then, register the addon by adding the following line into your `addon.js` file (you should be able to find the file
-under the storybook config directory of your project):
+within `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-contexts/register';
+module.exports = {
+  addons: ['@storybook/addon-contexts/register']
+}
 ```
 
-To load your contextual setups for your stories globally, add the following lines into `config.js` file (you should
+To load your contextual setups for your stories globally, add the following lines into `preview.js` file (you should
 see it near your `addon.js` file):
 
 ```js
@@ -65,31 +66,27 @@ import { contexts } from './configs/contexts'; // we will define the contextual 
 addDecorator(withContexts(contexts));
 ```
 
-Alternatively, just like other addons, you can use this addon only for a given set of stories:
+Alternatively, like other addons, you can use this addon only for a given set of stories:
 
 ```js
-import { storiesOf } from '@storybook/[framework]';
 import { withContexts } from '@storybook/addon-contexts/[framework]';
 import { contexts } from './configs/contexts';
 
-const story = storiesOf('Component With Contexts', module).addDecorator(withContexts(contexts)); // use this addon with a default contextual environment setups
+export default {
+  title: 'Component With Contexts',
+  decorators: [withContexts(contexts)],
+};
 ```
 
 Finally, you may want to modify the default setups at per story level. Here is how you can do this:
 
 ```js
-story.add(
-  () => {
-    /* some stories */
-  },
-  {
-    contexts: [
-      {
-        /* the modified setup goes here, sharing the same API signatures */
-      },
-    ],
+export const defaultView = () => <div />;
+defaultView.story = {
+  parameters: {
+    context: [{}]
   }
-);
+};
 ```
 
 ## ⚙️ Setups
@@ -220,7 +217,7 @@ be shown at first in the toolbar menu in your Storybook.
 
 ## 📔 Notes
 
-1. You can use this addon to inject any valid components, that is why `icon` and `params` can be just optional.
+1. You can use this addon to inject any valid components, that is why `icon` and `params` can be optional.
 2. As mentioned, extra contextual environment setups can be added at the story level. Please make sure they are
    passed via the second argument as `{ contexts: [{ /* extra contexts */ }}`.
 3. Additional `params` can be "appended" into an existing setup at the story level too (make sure it goes with the

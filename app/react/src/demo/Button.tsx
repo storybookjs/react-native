@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent, HTMLAttributes } from 'react';
 
 const styles = {
   border: '1px solid #eee',
@@ -11,23 +10,14 @@ const styles = {
   margin: 10,
 };
 
-const Button = ({
-  children,
-  onClick,
-}: {
-  children: React.ReactChildren;
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
-}) => (
+type Props = Pick<HTMLAttributes<HTMLButtonElement>, 'onClick'>;
+const Button: FunctionComponent<Props> = ({ children, onClick }) => (
   <button onClick={onClick} style={styles} type="button">
     {children}
   </button>
 );
 
 Button.displayName = 'Button';
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func,
-};
 Button.defaultProps = {
   onClick: () => {},
 };

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/router",
-  "version": "5.3.0-alpha.10",
+  "version": "5.3.0-beta.14",
   "description": "Core Storybook Router",
   "keywords": [
     "storybook"
@@ -18,8 +18,8 @@
   "files": [
     "dist/**/*",
     "README.md",
-    "utils.js",
-    "utils.d.ts"
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,7 +31,7 @@
     "@types/reach__router": "^1.2.3",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "memoizerific": "^1.11.3",
     "qs": "^6.6.0"
   },

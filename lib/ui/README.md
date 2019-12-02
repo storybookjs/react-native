@@ -1,25 +1,25 @@
 # Storybook UI
 
 Storybook UI the core UI of [storybook](https://storybook.js.org).
-It's a React based UI which you can initialize with a simple function.
+It's a React based UI which you can initialize with a function.
 You can configure it by providing a provider API.
 
 ## Table of Contents
 
--   [Usage](#usage)
--   [API](#api)
-    -   [.setOptions()](#setoptions)
--   [.setStories()](#setstories)
--   [.onStory()](#onstory)
--   [Hacking Guide](#hacking-guide)
-    -   [The App](#the-app)
-    -   [Changing UI](#changing-ui)
-    -   [Mounting](#mounting)
-    -   [App Context](#app-context)
-    -   [Actions](#actions)
-    -   [Core API](#core-api)
-    -   [Keyboard Shortcuts](#keyboard-shortcuts)
-    -   [URL Changes](#url-changes)
+- [Usage](#usage)
+- [API](#api)
+  - [.setOptions()](#setoptions)
+- [.setStories()](#setstories)
+- [.onStory()](#onstory)
+- [Hacking Guide](#hacking-guide)
+  - [The App](#the-app)
+  - [Changing UI](#changing-ui)
+  - [Mounting](#mounting)
+  - [App Context](#app-context)
+  - [Actions](#actions)
+  - [Core API](#core-api)
+  - [Keyboard Shortcuts](#keyboard-shortcuts)
+  - [URL Changes](#url-changes)
 
 ## Usage
 
@@ -41,9 +41,7 @@ export default class MyProvider extends Provider {
   }
 
   renderPreview() {
-    return (
-      <p>This is the Preview</p>
-    );
+    return <p>This is the Preview</p>;
   }
 
   handleAPI(api) {
@@ -63,8 +61,6 @@ const roolEl = document.getElementById('root');
 renderStorybookUI(roolEl, new Provider());
 ```
 
-> **See the [example](./example) app for a complete example.**
-
 ## API
 
 ### .setOptions()
@@ -79,7 +75,7 @@ class ReactProvider extends Provider {
       // https://github.com/storybookjs/storybook/tree/master/addons/options#getting-started
     });
   }
-};
+}
 ```
 
 ## .setStories()
@@ -94,13 +90,13 @@ class ReactProvider extends Provider {
     api.setStories([
       {
         kind: 'Component 1',
-        stories: ['State 1', 'State 2']
+        stories: ['State 1', 'State 2'],
       },
 
       {
         kind: 'Component 2',
-        stories: ['State a', 'State b']
-      }
+        stories: ['State a', 'State b'],
+      },
     ]);
   }
 }
@@ -116,7 +112,7 @@ import { Provider } from '@storybook/ui';
 class ReactProvider extends Provider {
   handleAPI(api) {
     api.onStory((kind, story) => {
-        this.globalState.emit('change', kind, story);
+      this.globalState.emit('change', kind, story);
     });
   }
 }
@@ -135,7 +131,7 @@ It's a set of modules. You can see those modules at `src/modules` directory.
 
 ### Changing UI
 
-If you like to change the appearance of the UI, you need to look at the `ui` module. Simply change components at the `components` directory for simple UI tweaks.
+If you like to change the appearance of the UI, you need to look at the `ui` module. Change components at the `components` directory for UI tweaks.
 
 You can also change containers(which are written with [react-komposer](https://github.com/kadirahq/react-komposer/)) to add more data from the redux state.
 
@@ -177,7 +173,8 @@ TODO: state we use reach/router customized to query params
 
 ### Story Order
 
-Stories are sorted in the order in which they were imported. This can be overridden by adding storySort to the Parameters for the stories in `.storybook/config.js`:
+Stories are sorted in the order in which they were imported. This can be overridden by adding storySort to the Parameters for the stories in `.storybook/preview.js`:
+
 ```js
 addParameters({
   options: {

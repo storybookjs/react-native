@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Source, SourceProps as PureSourceProps, SourceError } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { CURRENT_SELECTION } from './shared';
 
 interface CommonProps {
   language?: string;
+  dark?: boolean;
 }
 
 type SingleSourceProps = {
@@ -76,7 +77,7 @@ export const getSourceProps = (
       .join('\n\n');
   }
   return source
-    ? { code: source, language: props.language || 'jsx' }
+    ? { code: source, language: props.language || 'jsx', dark: props.dark || false }
     : { error: SourceError.SOURCE_UNAVAILABLE };
 };
 
@@ -85,7 +86,7 @@ export const getSourceProps = (
  * or the source for a story if `storyId` is provided, or
  * the source for the current story if nothing is provided.
  */
-const SourceContainer: React.FunctionComponent<SourceProps> = props => (
+const SourceContainer: FunctionComponent<SourceProps> = props => (
   <DocsContext.Consumer>
     {context => {
       const sourceProps = getSourceProps(props, context);

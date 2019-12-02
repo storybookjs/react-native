@@ -77,7 +77,7 @@ export class AppComponent implements OnInit, OnDestroy {
       const value = props[key];
       const instanceProperty = instance[key];
 
-      if (!(instanceProperty instanceof EventEmitter) && (value !== undefined && value !== null)) {
+      if (!(instanceProperty instanceof EventEmitter) && value !== undefined && value !== null) {
         // eslint-disable-next-line no-param-reassign
         instance[key] = value;
         if (hasNgOnChangesHook) {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addon|Contexts Languages 1`] = `
+exports[`Storyshots Addon/Contexts Languages 1`] = `
 <div
   style="color: white; background: rgb(23, 63, 95); height: 100vh; padding: 10px;"
 >
@@ -12,7 +12,7 @@ exports[`Storyshots Addon|Contexts Languages 1`] = `
 </div>
 `;
 
-exports[`Storyshots Addon|Contexts Simple Css Theming 1`] = `
+exports[`Storyshots Addon/Contexts Simple CSS Theming 1`] = `
 <div
   style="color: white; background: rgb(23, 63, 95); height: 100vh; padding: 10px;"
 >

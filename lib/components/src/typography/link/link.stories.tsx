@@ -6,7 +6,7 @@ import { Link } from './link';
 import { Icons } from '../../icon/icon';
 
 const onClick = action('onClick');
-storiesOf('Basics|Link', module)
+storiesOf('Basics/Link', module)
   .add('cancel w/ onClick', () => (
     <Link cancel href="/" onClick={onClick}>
       Try clicking with different mouse buttons and modifier keys (shift/ctrl/alt/cmd)
@@ -48,7 +48,7 @@ storiesOf('Basics|Link', module)
         With icon in front
       </Link>
       <br />
-      <Link containsIcon href="http://google.com">
+      <Link title="Toggle sidebar" containsIcon href="http://google.com">
         {/* A linked icon by itself   */}
         <Icons icon="sidebar" />
       </Link>

@@ -7,13 +7,13 @@ import { linkTo } from '@storybook/addon-links';
 import Button from '../Button';
 
 export default {
-  title: 'Addons|Links',
+  title: 'Addons/Links',
 };
 
-export const goToWelcome = () => (
+export const GoToWelcome = () => (
   <Button onclick={linkTo('Welcome')}>This button links to Welcome</Button>
 );
 
-goToWelcome.story = {
+GoToWelcome.story = {
   name: 'Go to welcome',
 };

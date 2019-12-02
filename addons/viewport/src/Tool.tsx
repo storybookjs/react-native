@@ -1,5 +1,5 @@
 /* eslint-disable no-fallthrough */
-import React, { Fragment, ReactNode, useEffect, useRef, FunctionComponent } from 'react';
+import React, { Fragment, ReactNode, useEffect, useRef, FunctionComponent, memo } from 'react';
 import memoize from 'memoizerific';
 
 import { styled, Global, Theme, withTheme } from '@storybook/theming';
@@ -122,7 +122,7 @@ const getStyles = (
   return isRotated ? flip(result) : result;
 };
 
-export const ViewportTool: FunctionComponent<{}> = React.memo(
+export const ViewportTool: FunctionComponent = memo(
   withTheme(({ theme }: { theme: Theme }) => {
     const { viewports, defaultViewport, disable } = useParameter<ViewportAddonParameter>(
       PARAM_KEY,

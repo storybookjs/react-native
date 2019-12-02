@@ -12,7 +12,7 @@ import {
 } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Addon|Knobs',
+  title: 'Addon/Knobs',
   decorators: [withKnobs],
 };
 
@@ -26,7 +26,7 @@ export const Simple = () => {
   };
 };
 
-export const allKnobs = () => {
+export const AllKnobs = () => {
   const name = text('Name', 'Jane');
   const stock = number('Stock', 20, {
     range: true,
@@ -73,11 +73,11 @@ export const allKnobs = () => {
   };
 };
 
-allKnobs.story = {
+AllKnobs.story = {
   name: 'All knobs',
 };
 
-export const xssSafety = () => ({
+export const XssSafety = () => ({
   tags: [
     `
       <div>
@@ -87,6 +87,6 @@ export const xssSafety = () => ({
   ],
 });
 
-xssSafety.story = {
+XssSafety.story = {
   name: 'XSS safety',
 };

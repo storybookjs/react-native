@@ -6,10 +6,10 @@ import { linkTo } from '@storybook/addon-links';
 import Button from '../Button';
 
 export default {
-  title: 'Addons|Links',
+  title: 'Addons/Links',
 };
 
-export const story1 = () => ({
+export const Story1 = () => ({
   view: () => <Button onclick={linkTo('Welcome')}>This buttons links to Welcome</Button>,
 });
-story1.story = { name: 'Go to welcome' };
+Story1.story = { name: 'Go to welcome' };

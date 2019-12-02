@@ -10,7 +10,7 @@ addDecorator(fn => fn({ customStoryContext: 52, parameters: { customParameter: 4
 addParameters({ globalParameter: 'globalParameter' });
 
 export default {
-  title: 'Core|Parameters',
+  title: 'Core/Parameters',
   decorators: [fn => fn({ parameters: { decoratorParameter: 'decoratorParameter' } })],
   parameters: {
     chapterParameter: 'chapterParameter',
@@ -19,10 +19,10 @@ export default {
 
 // I'm not sure what we should recommend regarding propTypes? are they a good idea for examples?
 // Given we sort of control the props, should we export a prop type?
-export const passed = ({ parameters: { options, fileName, ...parameters }, ...rest }) => (
+export const Passed = ({ parameters: { options, fileName, ...parameters }, ...rest }) => (
   <pre>Parameters: {JSON.stringify(parameters, null, 2)}</pre>
 );
-passed.story = {
+Passed.story = {
   name: 'passed to story',
   parameters: { storyParameter: 'storyParameter' },
 };

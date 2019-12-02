@@ -175,7 +175,7 @@ So the way our script works is that it:
 Our script leaves the local registry running, for **as long as you keep it running** you can install storybook packages from this local registry.
 
 - Navigate to your own project and then change `package.json` so the storybook packages match the version of the one you just published.
-- Then just do the normal install procedure using `yarn` or `npm`
+- Then you can install using `yarn` or `npm`
 - Start using your storybook as normally.
 
 If you've made a change to storybook's codebase and would want this change to be reflected in your app:
@@ -187,7 +187,7 @@ If you've made a change to storybook's codebase and would want this change to be
 
 ### Updating Tests
 
-Before any contributes are submitted in a PR, make sure to add or update meaningful tests. A PR that has failing tests will be regarded as a “Work in Progress” and will not be merged until all tests pass.
+Before any contributions are submitted in a PR, make sure to add or update meaningful tests. A PR that has failing tests will be regarded as a “Work in Progress” and will not be merged until all tests pass.
 When creating new unit test files, the tests should adhere to a particular folder structure and naming convention, as defined below.
 
 ```sh
@@ -205,7 +205,7 @@ Before you submit a new PR, make sure you run `yarn test`. Do not submit a PR if
 
 ### Reviewing PRs
 
-**As a PR submitter**, you should reference the issue if there is one, include a short description of what you contributed and, if it is a code change, instructions for how to manually test out the change. This is informally enforced by our [PR template](https://github.com/storybookjs/storybook/blob/master/.github/PULL_REQUEST_TEMPLATE.md). If your PR is reviewed as only needing trivial changes (e.g. small typos etc), and you have commit access, then you can merge the PR after making those changes.
+**As a PR submitter**, you should reference the issue if there is one, include a short description of what you contributed and, if it is a code change, instructions for how to manually test out the change. This is informally enforced by our [PR template](https://github.com/storybookjs/storybook/blob/master/.github/PULL_REQUEST_TEMPLATE.md). If your PR is reviewed as only needing trivial changes (e.g. small typos etc), and you have commit access then you can merge the PR after making those changes.
 
 **As a PR reviewer**, you should read through the changes and comment on any potential problems. If you see something cool, a kind word never hurts either! Additionally, you should follow the testing instructions and manually test the changes. If the instructions are missing, unclear, or overly complex, feel free to request better instructions from the submitter. Unless the PR is tagged with the `do not merge` label, if you approve the review and there is no other required discussion or changes, you should also go ahead and merge the PR.
 
@@ -215,7 +215,7 @@ If you are looking for a way to help the project, triaging issues is a great pla
 
 ### Responding to issues
 
-Issues that are tagged `question / support` or `needs reproduction` are great places to help. If you can answer a question, it will help the asker as well as anyone searching. If an issue needs reproduction, you may be able to guide the reporter toward one, or even reproduce it yourself using [this technique](https://github.com/storybookjs/storybook/blob/master/CONTRIBUTING.md#reproductions).
+Issues that are tagged `question / support` or `needs reproduction` are great places to help. If you can answer a question, it will help the asker as well as anyone who has a similar question. Also in the future if anyone has that same question they can easily find it by searching. If an issue needs reproduction, you may be able to guide the reporter toward one, or even reproduce it yourself using [this technique](https://github.com/storybookjs/storybook/blob/master/CONTRIBUTING.md#reproductions).
 
 ### Triaging issues
 
@@ -229,7 +229,7 @@ We use the following label scheme to categorize issues:
 
 All issues should have a `type` label. `bug`/`feature`/`question`/`discussion` are self-explanatory. `dependencies` is for keeping package dependencies up to date. `maintenance` is a catch-all for any kind of cleanup or refactoring.
 
-They should also have one or more `area`/`status` labels. We use these labels to filter issues down so we can easily see all of the issues for a particular area, and keep the total number of open issues under control.
+They should also have one or more `area`/`status` labels. We use these labels to filter issues down so we can see all of the issues for a particular area, and keep the total number of open issues under control.
 
 For example, here is the list of [open, untyped issues](https://github.com/storybookjs/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20-label%3A%22bug%22%20-label%3A%22discussion%22%20-label%3A%22feature%22%20-label%3A%22maintenance%22%20-label%3A%22question%20%2F%20support%22%20-label%3A%22documentation%22%20-label%3A%22greenkeeper%22), or here is a list of [bugs that have not been modified since 2017-04-01](https://github.com/storybookjs/storybook/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3A%22bug%22%20updated%3A%3C%3D2017-04-01%20). For more info see [searching issues](https://help.github.com/articles/searching-issues/) in the Github docs.
 
@@ -299,7 +299,7 @@ Storybook is broken up into sub-projects that you can install as you need them. 
 
 #### Connecting Your App To Storybook
 
-**_Note:_** If you aren't seeing addons after linking storybook, you probably have a versioning issue which can be fixed by simply linking each addon you want to use.
+**_Note:_** If you aren't seeing addons after linking storybook, you probably have a versioning issue which can be fixed by linking each addon you want to use.
 This applies for the kitchen sink apps as well as your own projects.
 
 _Make sure `yarn dev` is running_
@@ -327,9 +327,7 @@ First we are going to install storybook, then we are going to link `@storybook/r
 
 You should now have a working storybook dev environment up and running.
 
-> TODO: update this section (is already incorrect)
-
-Save and go to `http://localhost:9009` (or wherever storybook is running)
+Save and go to `http://localhost:9011` (or wherever storybook is running)
 
 If you don't see the changes rerun `yarn storybook` again in your sandbox app
 

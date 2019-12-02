@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-info",
-  "version": "5.3.0-alpha.10",
+  "version": "5.3.0-beta.14",
   "description": "A Storybook addon to show additional information for your stories.",
   "keywords": [
     "addon",
@@ -19,21 +19,21 @@
   "files": [
     "dist/**/*",
     "docs/**/*",
-    "README.md"
+    "README.md",
+    "*.js",
+    "*.d.ts"
   ],
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-alpha.10",
-    "@storybook/client-logger": "5.3.0-alpha.10",
-    "@storybook/components": "5.3.0-alpha.10",
-    "@storybook/theming": "5.3.0-alpha.10",
+    "@storybook/addons": "5.3.0-beta.14",
+    "@storybook/client-logger": "5.3.0-beta.14",
+    "@storybook/components": "5.3.0-beta.14",
+    "@storybook/theming": "5.3.0-beta.14",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "jsx-to-string": "^1.4.0",
     "marksy": "^7.0.0",
     "nested-object-assign": "^1.0.3",
     "prop-types": "^15.7.2",

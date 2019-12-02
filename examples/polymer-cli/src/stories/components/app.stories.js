@@ -4,8 +4,8 @@ export default {
   title: 'App',
 };
 
-export const fullApp = () =>
+export const FullApp = () =>
   '<polymer-playground-app title="Storybook for Polymer"></polymer-playground-app>';
-fullApp.story = {
+FullApp.story = {
   name: 'full app',
 };

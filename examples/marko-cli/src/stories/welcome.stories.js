@@ -1,7 +1,7 @@
 import Welcome from '../components/welcome/index.marko';
 
 export default {
-  title: 'Main|Welcome',
+  title: 'Main/Welcome',
   parameters: {
     component: Welcome,
   },
