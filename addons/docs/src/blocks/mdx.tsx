@@ -71,7 +71,6 @@ interface AnchorMdxProps {
   href: string;
 }
 
-// TODO: use A from html components
 export const AnchorMdx: React.FC<AnchorMdxProps> = ({ href, children, ...rest }) => {
   if (href.startsWith('#')) {
     return <AnchorInPage href={href}>{children}</AnchorInPage>;
