@@ -35,7 +35,7 @@
     "regenerator-runtime": "^0.12.1"
   },
   "peerDependencies": {
-    "@storybook/addon-storyshots": "5.2.7",
+    "@storybook/addon-storyshots": "5.2.8",
     "puppeteer": "^1.12.2"
   },
   "optionalDependencies": {
