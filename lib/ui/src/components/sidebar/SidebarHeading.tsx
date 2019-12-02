@@ -86,7 +86,7 @@ const Brand = withTheme(
     }
     if (image === undefined && url) {
       return (
-        <LogoLink href={url} target={targetValue}>
+        <LogoLink title={title} href={url} target={targetValue}>
           <Logo alt={title} />
         </LogoLink>
       );
@@ -104,7 +104,7 @@ const Brand = withTheme(
     }
     if (image && url) {
       return (
-        <LogoLink href={url} target={targetValue}>
+        <LogoLink title={title} href={url} target={targetValue}>
           <Img src={image} alt={title} />
         </LogoLink>
       );

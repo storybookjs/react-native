@@ -36,6 +36,15 @@ Make sure that you have `@babel/core`, and `babel-loader` in your dependencies a
 npm install babel-loader @babel/core --save-dev 
 ```
 
+### svelte-loader
+
+You'll also need to install `svelte-loader` if you haven't already.
+
+```sh
+
+npm install svelte-loader --save-dev
+```
+
 ## Step 2: Add a npm script
 
 Then add the following NPM script to your `package.json` in order to start the storybook later in this guide:

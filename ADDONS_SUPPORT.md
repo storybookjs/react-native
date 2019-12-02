@@ -12,7 +12,7 @@
 |[graphql](addons/graphql)                   |+| | | | | | | | | | | |
 |[google-analytics](addons/google-analytics) |+|+|+|+|+|+|+|+|+|+|+|+|
 |[info](addons/info)                         |+| | | | | | | | | | | |
-|[jest](addons/jest)                         |+| | |+| | |+| | | | | |
+|[jest](addons/jest)                         |+|+|+|+|+|+|+|+|+|+|+|+|
 |[knobs](addons/knobs)                       |+|+*|+|+|+|+|+|+|+|+|+|+|
 |[links](addons/links)                       |+|+|+|+|+|+|+| |+|+|+|+|
 |[notes](addons/notes)                       |+|+*|+|+|+|+|+| |+|+|+|+|

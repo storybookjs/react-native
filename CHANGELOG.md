@@ -1,3 +1,40 @@
+## 5.2.7 (November 30, 2019)
+
+### Bug Fixes
+
+* Addon-contexts: Fix 'cannot read property h of undefined' in preact ([#9001](https://github.com/storybookjs/storybook/pull/9001))
+* Addon-viewports: Fix missing TypeScript types ([#8848](https://github.com/storybookjs/storybook/pull/8848))
+* Addon-A11y: Show errors, reset config properly ([#8779](https://github.com/storybookjs/storybook/pull/8779))
+* UI: Store layout state in sessionStorage ([#8786](https://github.com/storybookjs/storybook/pull/8786))
+* UI: Fix MobileLayout component error on master ([#8941](https://github.com/storybookjs/storybook/pull/8941))
+* Addon-analytics: Fix 'path is required in .pageview()' ([#8468](https://github.com/storybookjs/storybook/pull/8468))
+
+## 5.3.0-beta.13 (November 30, 2019)
+
+### Bug Fixes
+
+* Addon-contexts: Fix 'cannot read property h of undefined' in preact ([#9001](https://github.com/storybookjs/storybook/pull/9001))
+
+### Maintenance
+
+* CLI: Code cleanup ([#9004](https://github.com/storybookjs/storybook/pull/9004))
+
+## 5.3.0-beta.12 (November 29, 2019)
+
+### Features
+
+* Storyshots: Support a11y tests, generic tests ([#8934](https://github.com/storybookjs/storybook/pull/8934))
+
+### Maintenance
+
+* Dev: Add vscode launch.json for debugging ([#8993](https://github.com/storybookjs/storybook/pull/8993))
+* UI: viewMode proptypes changed to any string ([#8994](https://github.com/storybookjs/storybook/pull/8994))
+* Addon-docs: Remove deprecated framework-specific docs presets ([#8985](https://github.com/storybookjs/storybook/pull/8985))
+
+### Dependency Upgrades
+
+* Addon-docs: Upgrade MDX dependencies ([#8991](https://github.com/storybookjs/storybook/pull/8991))
+
 ## 5.3.0-beta.11 (November 28, 2019)
 
 ### Features
