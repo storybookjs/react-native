@@ -1,3 +1,11 @@
+## 5.2.8 (December 2, 2019)
+
+### Bug Fixes
+
+* UI: Fix layout of Preview container ([#8628](https://github.com/storybookjs/storybook/pull/8628))
+* Core: Use `stable` package to ensure story sorting is stable ([#8795](https://github.com/storybookjs/storybook/pull/8795))
+* Source-loader: Warn if applied to non-stories file ([#8773](https://github.com/storybookjs/storybook/pull/8773))
+
 ## 5.2.7 (November 30, 2019)
 
 ### Bug Fixes
