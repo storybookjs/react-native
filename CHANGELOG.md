@@ -1,3 +1,15 @@
+## 5.3.0-beta.14 (December 2, 2019)
+
+### Features
+
+* Addon-docs: Increase Props summary and func length ([#8998](https://github.com/storybookjs/storybook/pull/8998))
+
+### Bug Fixes
+
+* Addon-docs: Restore IE11 compat by transpiling acorn-jsx ([#9021](https://github.com/storybookjs/storybook/pull/9021))
+* Source-loader: Handle template strings in CSF title ([#8995](https://github.com/storybookjs/storybook/pull/8995))
+* CLI: Fix various storiesof-to-csf cases based on chromatic stories upgrade ([#9013](https://github.com/storybookjs/storybook/pull/9013))
+
 ## 5.2.7 (November 30, 2019)
 
 ### Bug Fixes
