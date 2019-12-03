@@ -7,7 +7,7 @@ import { components as htmlComponents } from '@storybook/components/html';
 import { DocsContextProps, DocsContext } from './DocsContext';
 import { anchorBlockIdFromId } from './Anchor';
 import { storyBlockIdFromId } from './Story';
-import { CodeOrSourceMdx, AnchorMdx, AllHeadersMdx } from './mdx';
+import { CodeOrSourceMdx, AnchorMdx, HeadersMdx } from './mdx';
 import { scrollToElement } from './utils';
 
 interface DocsContainerProps {
@@ -18,7 +18,7 @@ const defaultComponents = {
   ...htmlComponents,
   code: CodeOrSourceMdx,
   a: AnchorMdx,
-  ...AllHeadersMdx,
+  ...HeadersMdx,
 };
 
 export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, children }) => {
@@ -33,7 +33,10 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, 
     if (url.hash) {
       const element = document.getElementById(url.hash.substring(1));
       if (element) {
-        scrollToElement(element);
+        // Introducing a delay to ensure scrolling works when it's a full refresh.
+        setTimeout(() => {
+          scrollToElement(element);
+        }, 200);
       }
     } else {
       let element = document.getElementById(anchorBlockIdFromId(storyId));
@@ -46,7 +49,10 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, 
         if (allStories && allStories[0] === element) {
           block = 'end'; // first story should be shown with the intro content above
         }
-        scrollToElement(element, block);
+        // Introducing a delay to ensure scrolling works when it's a full refresh.
+        setTimeout(() => {
+          scrollToElement(element, block);
+        }, 200);
       }
     }
   }, [storyId]);

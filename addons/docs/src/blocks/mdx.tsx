@@ -129,7 +129,9 @@ interface HeaderWithOcticonLinkProps {
 const HeaderWithOcticonLink: FC<HeaderWithOcticonLinkProps> = ({ as, id, children, ...rest }) => {
   // @ts-ignore
   const OctolinkHeader = OctolinkHeaders[as];
-  const href = `${window.parent.location.href}#${id}`;
+
+  const url = new URL(window.parent.location);
+  const href = `${url.origin}/${url.search}#${id}`;
 
   return (
     <OctolinkHeader id={id} {...rest}>
@@ -169,7 +171,7 @@ const HeaderMdx: FC<HeaderMdxProps> = (props: object) => {
   return <Header {...props} />;
 };
 
-export const AllHeadersMdx = SUPPORTED_MDX_HEADERS.reduce(
+export const HeadersMdx = SUPPORTED_MDX_HEADERS.reduce(
   (acc, headerType) => ({
     ...acc,
     // @ts-ignore
