@@ -5,6 +5,9 @@ export { Link } from './typography/link/link';
 export { DocumentWrapper } from './typography/DocumentWrapper';
 export { SyntaxHighlighter } from './syntaxhighlighter/syntaxhighlighter';
 
+// TEMP:
+export { H1 } from './typography/DocumentFormatting';
+
 // UI
 export { ActionBar } from './ActionBar/ActionBar';
 export { Spaced } from './spaced/Spaced';

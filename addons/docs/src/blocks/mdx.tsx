@@ -1,6 +1,6 @@
-import React, { FC, SyntheticEvent, useState } from 'react';
+import React, { FC, SyntheticEvent } from 'react';
 import { Source } from '@storybook/components';
-import { Code, components } from '@storybook/components/html';
+import { Code, components, H1 } from '@storybook/components/html';
 import { document, window } from 'global';
 import { isNil } from 'lodash';
 import { styled } from '@storybook/theming';
@@ -11,7 +11,7 @@ import { scrollToElement } from './utils';
 export const makeStoryFn = (val: any) => (typeof val === 'function' ? val : () => val);
 
 // Hacky utilty for adding mdxStoryToId to the default context
-export const AddContext: FC<DocsContextProps> = props => {
+export const AddContext: FC<DocsContextProps> = (props: object) => {
   const { children, ...rest } = props;
   const parentContext = React.useContext(DocsContext);
   return (
@@ -71,7 +71,9 @@ interface AnchorMdxProps {
   target: string;
 }
 
-export const AnchorMdx: FC<AnchorMdxProps> = ({ href, target, children, ...rest }) => {
+export const AnchorMdx: FC<AnchorMdxProps> = (props: object) => {
+  const { href, target, children, ...rest } = props;
+
   if (!isNil(href)) {
     // Enable scrolling for in-page anchors.
     if (href.startsWith('#')) {
@@ -92,47 +94,46 @@ export const AnchorMdx: FC<AnchorMdxProps> = ({ href, target, children, ...rest 
   }
 
   // External URL dont need any modification.
-  return (
-    <A href={href} target={target} {...rest}>
-      {children}
-    </A>
-  );
+  return <A {...props} />;
 };
 
-interface HeaderMdxProps {
+const SUPPORTED_MDX_HEADERS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
+const OctolinkHeaders = SUPPORTED_MDX_HEADERS.reduce(
+  (acc, headerType) => ({
+    ...acc,
+    // @ts-ignore
+    [headerType]: styled(components[headerType])({
+      '& svg': {
+        visibility: 'hidden',
+      },
+      '&:hover svg': {
+        visibility: 'visible',
+      },
+    }),
+  }),
+  {}
+);
+
+const OcticonLink = styled.a(() => ({
+  float: 'left',
+  paddingRight: '4px',
+  marginLeft: '-20px',
+}));
+
+interface HeaderWithOcticonLinkProps {
   as: string;
   id: string;
 }
 
-const OcticonLink = styled.a<{ visibility: string }>(({ visibility }) => ({
-  position: 'absolute',
-  left: '-22px',
-  visibility,
-}));
-
-const HeaderMdx: FC<HeaderMdxProps> = ({ as, id, children, ...rest }) => {
-  const [linkVisibility, setLinkVisibility] = useState('hidden');
+const HeaderWithOcticonLink: FC<HeaderWithOcticonLinkProps> = ({ as, id, children, ...rest }) => {
+  // @ts-ignore
+  const OctolinkHeader = OctolinkHeaders[as];
   const href = `${window.parent.location.href}#${id}`;
 
-  // @ts-ignore
-  const Header = styled(components[as])({
-    position: 'relative',
-  });
-
-  // TODO: Make sure it doesn't hide when it's on the link
   return (
-    // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
-    <Header
-      id={id}
-      {...rest}
-      onMouseOver={() => {
-        setLinkVisibility('visible');
-      }}
-      onMouseOut={() => {
-        setLinkVisibility('hidden');
-      }}
-    >
-      <OcticonLink aria-hidden="true" href={href} visibility={linkVisibility}>
+    <OctolinkHeader id={id} {...rest}>
+      <OcticonLink aria-hidden="true" href={href}>
         <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
           <path
             fillRule="evenodd"
@@ -141,15 +142,38 @@ const HeaderMdx: FC<HeaderMdxProps> = ({ as, id, children, ...rest }) => {
         </svg>
       </OcticonLink>
       {children}
-    </Header>
+    </OctolinkHeader>
   );
 };
 
-export const AllHeadersMdx = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].reduce(
-  (accumulator: Record<string, any>, current: string) => {
-    accumulator[current] = (props: any) => <HeaderMdx as={current} {...props} />;
+interface HeaderMdxProps {
+  as: string;
+  id: string;
+}
 
-    return accumulator;
-  },
+const HeaderMdx: FC<HeaderMdxProps> = (props: object) => {
+  const { as, id, children, ...rest } = props;
+
+  if (!isNil(id)) {
+    return (
+      <HeaderWithOcticonLink as={as} id={id} {...rest}>
+        {children}
+      </HeaderWithOcticonLink>
+    );
+  }
+
+  // @ts-ignore
+  const Header = components[as];
+
+  // Make sure it still work if "remark-slug" plugin is not present.
+  return <Header {...props} />;
+};
+
+export const AllHeadersMdx = SUPPORTED_MDX_HEADERS.reduce(
+  (acc, headerType) => ({
+    ...acc,
+    // @ts-ignore
+    [headerType]: (props: object) => <HeaderMdx as={headerType} {...props} />,
+  }),
   {}
 );
