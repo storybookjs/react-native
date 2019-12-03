@@ -1,7 +1,8 @@
 import React, { FC, SyntheticEvent } from 'react';
 import { Source } from '@storybook/components';
 import { Code, components } from '@storybook/components/html';
-import { document } from 'global';
+import { document, window } from 'global';
+import { isNil } from 'lodash';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { scrollToElement } from './utils';
 
@@ -69,15 +70,31 @@ const AnchorInPage: FC<AnchorInPageProps> = ({ href, children }) => (
 
 interface AnchorMdxProps {
   href: string;
+  target: string;
 }
 
-export const AnchorMdx: React.FC<AnchorMdxProps> = ({ href, children, ...rest }) => {
-  if (href.startsWith('#')) {
-    return <AnchorInPage href={href}>{children}</AnchorInPage>;
+export const AnchorMdx: React.FC<AnchorMdxProps> = ({ href, target, children, ...rest }) => {
+  if (!isNil(href)) {
+    if (href.startsWith('#')) {
+      // Enable scrolling for in-page anchors.
+      return <AnchorInPage href={href}>{children}</AnchorInPage>;
+    }
+    if (target !== '_blank') {
+      // Links to other pages of SB should use the base URL of the top level iframe instead of the base URL of the preview iframe.
+      const parentUrl = new URL(window.parent.location.href);
+      const newHref = `${parentUrl.origin}${href}`;
+
+      return (
+        <A href={newHref} target={target} {...rest}>
+          {children}
+        </A>
+      );
+    }
   }
 
+  // External URL dont need any modification.
   return (
-    <A href={href} {...rest}>
+    <A href={href} target={target} {...rest}>
       {children}
     </A>
   );
