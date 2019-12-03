@@ -11,7 +11,7 @@ import { scrollToElement } from './utils';
 export const makeStoryFn = (val: any) => (typeof val === 'function' ? val : () => val);
 
 // Hacky utilty for adding mdxStoryToId to the default context
-export const AddContext: FC<DocsContextProps> = (props: object) => {
+export const AddContext: FC<DocsContextProps> = props => {
   const { children, ...rest } = props;
   const parentContext = React.useContext(DocsContext);
   return (
@@ -71,7 +71,7 @@ interface AnchorMdxProps {
   target: string;
 }
 
-export const AnchorMdx: FC<AnchorMdxProps> = (props: object) => {
+export const AnchorMdx: FC<AnchorMdxProps> = props => {
   const { href, target, children, ...rest } = props;
 
   if (!isNil(href)) {
@@ -124,6 +124,7 @@ const OcticonLink = styled.a(() => ({
 interface HeaderWithOcticonLinkProps {
   as: string;
   id: string;
+  children: any;
 }
 
 const HeaderWithOcticonLink: FC<HeaderWithOcticonLinkProps> = ({ as, id, children, ...rest }) => {
@@ -153,7 +154,7 @@ interface HeaderMdxProps {
   id: string;
 }
 
-const HeaderMdx: FC<HeaderMdxProps> = (props: object) => {
+const HeaderMdx: FC<HeaderMdxProps> = props => {
   const { as, id, children, ...rest } = props;
 
   if (!isNil(id)) {
