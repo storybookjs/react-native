@@ -1,6 +1,6 @@
 import React, { FC, SyntheticEvent } from 'react';
 import { Source } from '@storybook/components';
-import { Code, components, H1 } from '@storybook/components/html';
+import { Code, components } from '@storybook/components/html';
 import { document, window } from 'global';
 import { isNil } from 'lodash';
 import { styled } from '@storybook/theming';
