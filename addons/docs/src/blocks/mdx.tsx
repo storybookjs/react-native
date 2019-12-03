@@ -43,21 +43,31 @@ export const CodeOrSourceMdx: FC<CodeOrSourceMdxProps> = ({ className, children,
   );
 };
 
-interface AnchorInPageProps {
-  href: string;
+function generateHrefWithHash(hash: string): string {
+  const url = new URL(window.parent.location);
+  const href = `${url.origin}/${url.search}#${hash}`;
+
+  return href;
 }
 
 // @ts-ignore
 const A = components.a;
 
-const AnchorInPage: FC<AnchorInPageProps> = ({ href, children }) => (
+interface AnchorInPageProps {
+  hash: string;
+}
+
+const AnchorInPage: FC<AnchorInPageProps> = ({ hash, children }) => (
   <A
-    href={href}
+    href={hash}
     onClick={(event: SyntheticEvent) => {
       event.preventDefault();
 
-      const element = document.getElementById(href.substring(1));
+      const hashValue = hash.substring(1);
+      const element = document.getElementById(hashValue);
+
       if (element) {
+        window.parent.history.replaceState(null, '', generateHrefWithHash(hashValue));
         scrollToElement(element);
       }
     }}
@@ -77,7 +87,7 @@ export const AnchorMdx: FC<AnchorMdxProps> = props => {
   if (!isNil(href)) {
     // Enable scrolling for in-page anchors.
     if (href.startsWith('#')) {
-      return <AnchorInPage href={href}>{children}</AnchorInPage>;
+      return <AnchorInPage hash={href}>{children}</AnchorInPage>;
     }
 
     // Links to other pages of SB should use the base URL of the top level iframe instead of the base URL of the preview iframe.
@@ -99,7 +109,7 @@ export const AnchorMdx: FC<AnchorMdxProps> = props => {
 
 const SUPPORTED_MDX_HEADERS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
-const OctolinkHeaders = SUPPORTED_MDX_HEADERS.reduce(
+const OcticonHeaders = SUPPORTED_MDX_HEADERS.reduce(
   (acc, headerType) => ({
     ...acc,
     // @ts-ignore
@@ -115,37 +125,39 @@ const OctolinkHeaders = SUPPORTED_MDX_HEADERS.reduce(
   {}
 );
 
-const OcticonLink = styled.a(() => ({
+const OcticonAnchor = styled.a(() => ({
   float: 'left',
   paddingRight: '4px',
   marginLeft: '-20px',
 }));
 
-interface HeaderWithOcticonLinkProps {
+interface HeaderWithOcticonAnchorProps {
   as: string;
   id: string;
   children: any;
 }
 
-const HeaderWithOcticonLink: FC<HeaderWithOcticonLinkProps> = ({ as, id, children, ...rest }) => {
+const HeaderWithOcticonAnchor: FC<HeaderWithOcticonAnchorProps> = ({
+  as,
+  id,
+  children,
+  ...rest
+}) => {
   // @ts-ignore
-  const OctolinkHeader = OctolinkHeaders[as];
-
-  const url = new URL(window.parent.location);
-  const href = `${url.origin}/${url.search}#${id}`;
+  const OcticonHeader = OcticonHeaders[as];
 
   return (
-    <OctolinkHeader id={id} {...rest}>
-      <OcticonLink aria-hidden="true" href={href}>
+    <OcticonHeader id={id} {...rest}>
+      <OcticonAnchor aria-hidden="true" href={generateHrefWithHash(id)}>
         <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
           <path
             fillRule="evenodd"
             d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"
           />
         </svg>
-      </OcticonLink>
+      </OcticonAnchor>
       {children}
-    </OctolinkHeader>
+    </OcticonHeader>
   );
 };
 
@@ -157,11 +169,12 @@ interface HeaderMdxProps {
 const HeaderMdx: FC<HeaderMdxProps> = props => {
   const { as, id, children, ...rest } = props;
 
+  // An id should have been added on every header by the "remark-slug" plugin.
   if (!isNil(id)) {
     return (
-      <HeaderWithOcticonLink as={as} id={id} {...rest}>
+      <HeaderWithOcticonAnchor as={as} id={id} {...rest}>
         {children}
-      </HeaderWithOcticonLink>
+      </HeaderWithOcticonAnchor>
     );
   }
 
