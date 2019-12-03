@@ -7,7 +7,7 @@ import { components as htmlComponents } from '@storybook/components/html';
 import { DocsContextProps, DocsContext } from './DocsContext';
 import { anchorBlockIdFromId } from './Anchor';
 import { storyBlockIdFromId } from './Story';
-import { CodeOrSourceMdx, AnchorMdx } from './mdx';
+import { CodeOrSourceMdx, AnchorMdx, AllHeadersMdx } from './mdx';
 import { scrollToElement } from './utils';
 
 interface DocsContainerProps {
@@ -18,6 +18,7 @@ const defaultComponents = {
   ...htmlComponents,
   code: CodeOrSourceMdx,
   a: AnchorMdx,
+  ...AllHeadersMdx,
 };
 
 export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, children }) => {
