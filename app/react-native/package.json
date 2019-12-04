@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "5.3.0-beta.14",
+  "version": "5.3.0-beta.15",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -31,11 +31,11 @@
   "dependencies": {
     "@emotion/core": "^10.0.20",
     "@emotion/native": "^10.0.14",
-    "@storybook/addons": "5.3.0-beta.14",
-    "@storybook/channel-websocket": "5.3.0-beta.14",
-    "@storybook/channels": "5.3.0-beta.14",
-    "@storybook/client-api": "5.3.0-beta.14",
-    "@storybook/core-events": "5.3.0-beta.14",
+    "@storybook/addons": "5.3.0-beta.15",
+    "@storybook/channel-websocket": "5.3.0-beta.15",
+    "@storybook/channels": "5.3.0-beta.15",
+    "@storybook/client-api": "5.3.0-beta.15",
+    "@storybook/core-events": "5.3.0-beta.15",
     "core-js": "^3.0.1",
     "emotion-theming": "^10.0.19",
     "react-native-swipe-gestures": "^1.0.4"
