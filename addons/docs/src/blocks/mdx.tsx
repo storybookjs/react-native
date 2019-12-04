@@ -65,8 +65,7 @@ const AnchorInPage: FC<AnchorInPageProps> = ({ hash, children }) => (
 
       const hashValue = hash.substring(1);
       const element = document.getElementById(hashValue);
-
-      if (element) {
+      if (!isNil(element)) {
         window.parent.history.replaceState(null, '', generateHrefWithHash(hashValue));
         scrollToElement(element);
       }
@@ -148,7 +147,16 @@ const HeaderWithOcticonAnchor: FC<HeaderWithOcticonAnchorProps> = ({
 
   return (
     <OcticonHeader id={id} {...rest}>
-      <OcticonAnchor aria-hidden="true" href={generateHrefWithHash(id)}>
+      <OcticonAnchor
+        aria-hidden="true"
+        href={generateHrefWithHash(id)}
+        onClick={() => {
+          const element = document.getElementById(id);
+          if (!isNil(element)) {
+            scrollToElement(element);
+          }
+        }}
+      >
         <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
           <path
             fillRule="evenodd"
