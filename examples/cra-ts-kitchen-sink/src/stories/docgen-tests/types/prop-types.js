@@ -137,7 +137,22 @@ PropTypesProps.propTypes = {
    * @param {number} bar3 - A bar value.
    * @param {number} bar4 - A bar value.
    * @param {number} bar5 - A bar value.
+   * @returns {ComplexObject} - Returns a complex object.
+   */
+  semiLongFuncWithJsDoc: PropTypes.func,
+  /**
+   * @param {string} foo - A foo value.
+   * @param {number} bar - A bar value.
+   * @param {number} bar1 - A bar value.
+   * @param {number} bar2 - A bar value.
+   * @param {number} bar3 - A bar value.
+   * @param {number} bar4 - A bar value.
+   * @param {number} bar5 - A bar value.
    * @param {number} bar6 - A bar value.
+   * @param {number} bar7 - A bar value.
+   * @param {number} bar8 - A bar value.
+   * @param {number} bar9 - A bar value.
+   * @param {number} bar10 - A bar value.
    * @returns {ComplexObject} - Returns a complex object.
    */
   veryLongFuncWithJsDoc: PropTypes.func,
@@ -313,6 +328,16 @@ PropTypesProps.propTypes = {
   namedObjectOf: PropTypes.objectOf(NAMED_OBJECT),
   shapeShort: PropTypes.shape({
     foo: string,
+  }),
+  shapeLong: PropTypes.shape({
+    foo: string,
+    prop1: string,
+    prop2: string,
+    prop3: string,
+    prop4: string,
+    prop5: string,
+    prop6: string,
+    prop7: string,
   }),
   /**
    * propType for shape with nested arrayOf

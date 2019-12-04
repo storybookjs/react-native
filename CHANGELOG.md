@@ -1,3 +1,44 @@
+## 5.2.8 (December 2, 2019)
+
+### Bug Fixes
+
+* UI: Fix layout of Preview container ([#8628](https://github.com/storybookjs/storybook/pull/8628))
+* Core: Use `stable` package to ensure story sorting is stable ([#8795](https://github.com/storybookjs/storybook/pull/8795))
+* Source-loader: Warn if applied to non-stories file ([#8773](https://github.com/storybookjs/storybook/pull/8773))
+
+## 5.3.0-beta.14 (December 2, 2019)
+
+### Features
+
+* Addon-docs: Increase Props summary and func length ([#8998](https://github.com/storybookjs/storybook/pull/8998))
+
+### Bug Fixes
+
+* Addon-docs: Restore IE11 compat by transpiling acorn-jsx ([#9021](https://github.com/storybookjs/storybook/pull/9021))
+* Source-loader: Handle template strings in CSF title ([#8995](https://github.com/storybookjs/storybook/pull/8995))
+* CLI: Fix various storiesof-to-csf cases based on chromatic stories upgrade ([#9013](https://github.com/storybookjs/storybook/pull/9013))
+
+## 5.2.7 (November 30, 2019)
+
+### Bug Fixes
+
+* Addon-contexts: Fix 'cannot read property h of undefined' in preact ([#9001](https://github.com/storybookjs/storybook/pull/9001))
+* Addon-viewports: Fix missing TypeScript types ([#8848](https://github.com/storybookjs/storybook/pull/8848))
+* Addon-A11y: Show errors, reset config properly ([#8779](https://github.com/storybookjs/storybook/pull/8779))
+* UI: Store layout state in sessionStorage ([#8786](https://github.com/storybookjs/storybook/pull/8786))
+* UI: Fix MobileLayout component error on master ([#8941](https://github.com/storybookjs/storybook/pull/8941))
+* Addon-analytics: Fix 'path is required in .pageview()' ([#8468](https://github.com/storybookjs/storybook/pull/8468))
+
+## 5.3.0-beta.13 (November 30, 2019)
+
+### Bug Fixes
+
+* Addon-contexts: Fix 'cannot read property h of undefined' in preact ([#9001](https://github.com/storybookjs/storybook/pull/9001))
+
+### Maintenance
+
+* CLI: Code cleanup ([#9004](https://github.com/storybookjs/storybook/pull/9004))
+
 ## 5.3.0-beta.12 (November 29, 2019)
 
 ### Features

@@ -201,6 +201,15 @@ import { addDecorator } from '@storybook/react';
 addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 ```
 
+> \* In Vue projects you have to use the special component `<story/>` instead of the function parameter `storyFn` that is used in React projects, even if you are using JSX, for example:
+> ```jsx
+> var decoratorVueJsx = () => ({ render() { return <div style={{ textAlign: 'center' }}><story/></div>} })
+> addDecorator(decoratorVueJsx)
+> 
+> var decoratorVueTemplate = () => { return { template: `<div style="text-align:center"><story/></div>` }
+> addDecorator(decoratorVueTemplate)
+> ```
+
 And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story decorator wraps a single story in an additional red frame.
 
 ```jsx
