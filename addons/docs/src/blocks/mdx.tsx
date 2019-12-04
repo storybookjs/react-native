@@ -150,6 +150,7 @@ const HeaderWithOcticonAnchor: FC<HeaderWithOcticonAnchorProps> = ({
       <OcticonAnchor
         aria-hidden="true"
         href={generateHrefWithHash(id)}
+        tabIndex={-1}
         onClick={() => {
           const element = document.getElementById(id);
           if (!isNil(element)) {
