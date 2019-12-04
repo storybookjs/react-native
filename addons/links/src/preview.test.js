@@ -31,14 +31,6 @@ jest.mock('global', () => ({
   },
 }));
 
-export const mockChannel = () => {
-  return {
-    emit: jest.fn(),
-    on: jest.fn(),
-    once: jest.fn(),
-  };
-};
-
 describe('preview', () => {
   describe('linkTo()', () => {
     it('should select the kind and story provided', () => {
@@ -116,7 +108,10 @@ describe('preview', () => {
       addons.getChannel.mockReturnValue(channel);
       __STORYBOOK_STORY_STORE__.fromId.mockImplementation(input => null);
 
-      const handler = linkTo((a, b) => a + b, (a, b) => b + a);
+      const handler = linkTo(
+        (a, b) => a + b,
+        (a, b) => b + a
+      );
       handler('kind', 'name');
 
       expect(channel.emit.mock.calls).toContainEqual([

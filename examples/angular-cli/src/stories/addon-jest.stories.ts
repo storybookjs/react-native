@@ -13,12 +13,12 @@ export default {
   ],
 };
 
-export const appComponentWithJestTests = () => ({
+export const AppComponentWithJestTests = () => ({
   component: AppComponent,
   props: {},
 });
 
-appComponentWithJestTests.story = {
+AppComponentWithJestTests.story = {
   name: 'app.component with jest tests',
 
   parameters: {

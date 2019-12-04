@@ -69,7 +69,7 @@ necolas:
   title: React Native Web
   description: Storybook demo for React Native Web.
   source: https://github.com/necolas/react-native-web
-  demo: https://necolas.github.io/react-native-web/storybook/
+  demo: https://necolas.github.io/react-native-web/docs/
 griddle:
   thumbnail: griddle.jpg
   title: Griddle

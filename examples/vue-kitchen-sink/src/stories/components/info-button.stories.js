@@ -5,7 +5,7 @@ export default {
   component: InfoButton,
 };
 
-export const simple = () => ({
+export const Simple = () => ({
   components: { InfoButton },
   template: '<info-button label="I\'m a button!"/>',
 });

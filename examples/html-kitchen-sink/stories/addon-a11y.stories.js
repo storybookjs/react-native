@@ -14,15 +14,15 @@ export default {
 export const Default = () => `<button></button>`;
 export const Label = () => `<button>${text}</button>`;
 export const Disabled = () => `<button disabled>${text}</button>`;
-export const story4 = () =>
+export const Story4 = () =>
   `<button style="color: black; background-color: brown;">${text}</button>`;
-story4.story = { name: 'Invalid contrast' };
+Story4.story = { name: 'Invalid contrast' };
 
-export const story5 = () => {
+export const Story5 = () => {
   const div = document.createElement('div');
   setTimeout(() => {
     div.innerHTML = `<button>This button has a delayed render of 1s</button>`;
   }, 1000);
   return div;
 };
-story5.story = { name: 'Delayed render' };
+Story5.story = { name: 'Delayed render' };

@@ -4,7 +4,7 @@
 
 - Be sure to check the [installation section of the general addon-docs page](../README.md) before proceeding.
 - Be sure to have a [custom-elements.json](./#custom-elementsjson) file.
-- Add to your `.storybook/config.js`
+- Add to your `.storybook/preview.js`
 
   ```js
   import { setCustomElements } from '@storybook/web-components';

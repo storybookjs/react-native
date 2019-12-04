@@ -15,10 +15,9 @@ function test(options: StoryshotsOptions): boolean {
 function load(options: StoryshotsOptions) {
   global.STORYBOOK_ENV = 'preact';
 
-  const { configPath, config } = options;
   const storybook = require.requireActual('@storybook/preact');
 
-  configure({ configPath, config, storybook });
+  configure({ ...options, storybook });
 
   return {
     framework: 'preact' as const,

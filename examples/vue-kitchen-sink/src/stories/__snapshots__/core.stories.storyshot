@@ -2,6 +2,6 @@
 
 exports[`Storyshots Core/Parameters passed to story 1`] = `
 <div>
-  Parameters are {"options":{"showRoots":true},"docs":{"inlineStories":true,"iframeHeight":"60px"},"globalParameter":"globalParameter","framework":"vue","chapterParameter":"chapterParameter","storyParameter":"storyParameter","__id":"core-parameters--passed-to-story"}
+  Parameters are {"docs":{"inlineStories":true,"iframeHeight":"60px"},"options":{},"globalParameter":"globalParameter","framework":"vue","chapterParameter":"chapterParameter","storyParameter":"storyParameter","__id":"core-parameters--passed-to-story"}
 </div>
 `;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DocDirective Basic 1`] = `
+<storybook-dynamic-app-root
+  cfr={[Function CodegenComponentFactoryResolver]}
+  data={[Function Object]}
+  target={[Function ViewContainerRef_]}
+>
+  <ng-component>
+    <div
+      docdirective=""
+      ng-reflect-has-gray-background="true"
+      style="background-color: lightgray;"
+    >
+      <h1>
+        DocDirective
+      </h1>
+    </div>
+  </ng-component>
+</storybook-dynamic-app-root>
+`;

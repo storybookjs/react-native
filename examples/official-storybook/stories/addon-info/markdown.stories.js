@@ -47,20 +47,20 @@ html with special formatting
 Maybe include a [link](http://storybook.js.org) to your project as well.
 `;
 
-export const displaysMarkdownInDescription = () => (
+export const DisplaysMarkdownInDescription = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
 
-displaysMarkdownInDescription.story = {
+DisplaysMarkdownInDescription.story = {
   name: 'Displays Markdown in description',
   parameters: { info: markdownDescription },
 };
 
-export const fromInternalMarkdownFile = () => (
+export const FromInternalMarkdownFile = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
 
-fromInternalMarkdownFile.story = {
+FromInternalMarkdownFile.story = {
   name: 'From internal Markdown file',
 
   parameters: {
@@ -72,11 +72,11 @@ fromInternalMarkdownFile.story = {
   },
 };
 
-export const fromExternalMarkdownFile = () => (
+export const FromExternalMarkdownFile = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
 
-fromExternalMarkdownFile.story = {
+FromExternalMarkdownFile.story = {
   name: 'From external Markdown file',
   parameters: { info: externalMdDocs },
 };

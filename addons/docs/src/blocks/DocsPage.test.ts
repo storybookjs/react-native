@@ -1,4 +1,4 @@
-import { defaultTitleSlot } from './DocsPage';
+import { defaultTitleSlot } from './Title';
 
 describe('defaultTitleSlot', () => {
   it('showRoots', () => {

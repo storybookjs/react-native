@@ -179,8 +179,8 @@ function getExports(node, counter) {
 const wrapperJs = `
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
-  container: ({ context, children }) => <DocsContainer context={{...context, mdxStoryNameToId}}>{children}</DocsContainer>,
-  page: MDXContent,
+  ...(componentMeta.parameters.docs || {}),
+  page: () => <AddContext mdxStoryNameToId={mdxStoryNameToId}><MDXContent /></AddContext>,
 };
 `.trim();
 
@@ -298,11 +298,11 @@ function extractExports(node, options) {
   }
   metaExport.includeStories = JSON.stringify(includeStories);
 
-  const { title } = metaExport;
+  const { title, id: componentId } = metaExport;
   const mdxStoryNameToId = Object.entries(context.storyNameToKey).reduce(
     (acc, [storyName, storyKey]) => {
       if (title) {
-        acc[storyName] = toId(title, storyNameFromExport(storyKey));
+        acc[storyName] = toId(componentId || title, storyNameFromExport(storyKey));
       }
       return acc;
     },
@@ -310,7 +310,7 @@ function extractExports(node, options) {
   );
 
   const fullJsx = [
-    'import { DocsContainer, makeStoryFn } from "@storybook/addon-docs/blocks";',
+    'import { makeStoryFn, AddContext } from "@storybook/addon-docs/blocks";',
     defaultJsx,
     ...storyExports,
     `const componentMeta = ${stringifyMeta(metaExport)};`,

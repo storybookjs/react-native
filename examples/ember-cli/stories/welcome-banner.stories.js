@@ -5,7 +5,7 @@ export default {
   title: 'welcome-banner',
 };
 
-export const basic = () => ({
+export const Basic = () => ({
   template: hbs`
       {{welcome-banner
         backgroundColor=backgroundColor

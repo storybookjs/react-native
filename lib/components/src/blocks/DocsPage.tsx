@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { styled, Theme } from '@storybook/theming';
 import { transparentize } from 'polished';
 
-import { withReset } from '../typography/withReset';
+import { withReset } from '../typography/shared';
 
 const breakpoint = 600;
 
@@ -11,7 +11,7 @@ export interface DocsPageProps {
   subtitle?: string;
 }
 
-const Title = styled.h1<{}>(withReset, ({ theme }: { theme: Theme }) => ({
+export const Title = styled.h1<{}>(withReset, ({ theme }: { theme: Theme }) => ({
   color: theme.color.defaultText,
   fontSize: theme.typography.size.m3,
   fontWeight: theme.typography.weight.black,
@@ -24,7 +24,7 @@ const Title = styled.h1<{}>(withReset, ({ theme }: { theme: Theme }) => ({
   },
 }));
 
-const Subtitle = styled.h2<{}>(withReset, ({ theme }: { theme: Theme }) => ({
+export const Subtitle = styled.h2<{}>(withReset, ({ theme }: { theme: Theme }) => ({
   fontWeight: theme.typography.weight.regular,
   fontSize: theme.typography.size.s3,
   lineHeight: '20px',
@@ -44,7 +44,7 @@ const Subtitle = styled.h2<{}>(withReset, ({ theme }: { theme: Theme }) => ({
 }));
 
 export const DocsContent = styled.div({
-  maxWidth: 800,
+  maxWidth: 1000,
   width: '100%',
 });
 
@@ -62,18 +62,3 @@ export const DocsPageWrapper: FunctionComponent = ({ children }) => (
     <DocsContent>{children}</DocsContent>
   </DocsWrapper>
 );
-
-/**
- * An out-of-the box documentation page for components that shows the
- * title & subtitle and a collection of blocks including `Description`,
- * and `Preview`s for each of the component's stories.
- */
-const DocsPage: FunctionComponent<DocsPageProps> = ({ title, subtitle, children }) => (
-  <>
-    {title && <Title className="sbdocs-title">{title}</Title>}
-    {subtitle && <Subtitle className="sbdocs-subtitle">{subtitle}</Subtitle>}
-    {children}
-  </>
-);
-
-export { DocsPage };

@@ -10,9 +10,9 @@ export default {
   },
 };
 
-export const singleImage = () => <div>This story should a single image in the assets panel</div>;
+export const SingleImage = () => <div>This story should a single image in the assets panel</div>;
 
-singleImage.story = {
+SingleImage.story = {
   name: 'single image',
 
   parameters: {
@@ -20,9 +20,9 @@ singleImage.story = {
   },
 };
 
-export const singleWebpage = () => <div>This story should a single image in the assets panel</div>;
+export const SingleWebpage = () => <div>This story should a single image in the assets panel</div>;
 
-singleWebpage.story = {
+SingleWebpage.story = {
   name: 'single webpage',
 
   parameters: {
@@ -30,9 +30,9 @@ singleWebpage.story = {
   },
 };
 
-export const youtubeVideo = () => <div>This story should a single image in the assets panel</div>;
+export const YoutubeVideo = () => <div>This story should a single image in the assets panel</div>;
 
-youtubeVideo.story = {
+YoutubeVideo.story = {
   name: 'youtube video',
 
   parameters: {
@@ -40,11 +40,11 @@ youtubeVideo.story = {
   },
 };
 
-export const multipleImages = () => (
+export const MultipleImages = () => (
   <div>This story should a multiple images in the assets panel</div>
 );
 
-multipleImages.story = {
+MultipleImages.story = {
   name: 'multiple images',
 
   parameters: {
@@ -55,9 +55,9 @@ multipleImages.story = {
   },
 };
 
-export const namedAssets = () => <div>This story should a single image in the assets panel</div>;
+export const NamedAssets = () => <div>This story should a single image in the assets panel</div>;
 
-namedAssets.story = {
+NamedAssets.story = {
   name: 'named assets',
 
   parameters: {
@@ -74,11 +74,11 @@ namedAssets.story = {
   },
 };
 
-export const urlReplacement = () => (
+export const UrlReplacement = () => (
   <div>This story should have a webpge, with within it's url the storyId</div>
 );
 
-urlReplacement.story = {
+UrlReplacement.story = {
   name: 'url replacement',
 
   parameters: {

@@ -5,7 +5,7 @@ export default {
   title: 'Custom/Inheritance',
 };
 
-export const iconButton = () => ({
+export const IconButton = () => ({
   component: IconButtonComponent,
   props: {
     icon: 'this is icon',
@@ -13,17 +13,17 @@ export const iconButton = () => ({
   },
 });
 
-iconButton.story = {
+IconButton.story = {
   name: 'icon button',
 };
 
-export const baseButton = () => ({
+export const BaseButton = () => ({
   component: BaseButtonComponent,
   props: {
     label: 'this is label',
   },
 });
 
-baseButton.story = {
+BaseButton.story = {
   name: 'base button',
 };

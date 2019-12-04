@@ -21,6 +21,7 @@ export const Table = styled.table<{}>(({ theme }) => ({
     'td, th': {
       padding: 0,
       border: 'none',
+      verticalAlign: 'top',
     },
     // End Resets
 
@@ -45,8 +46,8 @@ export const Table = styled.table<{}>(({ theme }) => ({
     th: {
       color:
         theme.base === 'light'
-          ? transparentize(0.4, theme.color.defaultText)
-          : transparentize(0.6, theme.color.defaultText),
+          ? transparentize(0.25, theme.color.defaultText)
+          : transparentize(0.45, theme.color.defaultText),
       paddingTop: 10,
       paddingBottom: 10,
 
@@ -194,14 +195,14 @@ const PropsTable: FC<PropsTableProps> = props => {
   return (
     <ResetWrapper>
       <Table className="docblock-propstable">
-        <thead>
+        <thead className="docblock-propstable-head">
           <tr>
             <th>Name</th>
             <th>Description</th>
             <th>Default</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="docblock-propstable-body">
           {allRows.map(row => (
             <PropsTableRow key={row.key} {...row.value} />
           ))}

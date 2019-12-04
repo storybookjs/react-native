@@ -39,7 +39,7 @@ export const Simple = () => ({
   },
 });
 
-export const allKnobs = () => {
+export const AllKnobs = () => {
   const fruits = {
     Apple: 'apples',
     Banana: 'bananas',
@@ -104,17 +104,17 @@ export const allKnobs = () => {
   };
 };
 
-allKnobs.story = {
+AllKnobs.story = {
   name: 'All knobs',
 };
 
-export const xssSafety = () => ({
+export const XssSafety = () => ({
   props: {
     text: { default: text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >') },
   },
   template: '<div v-html="text"></div>',
 });
 
-xssSafety.story = {
+XssSafety.story = {
   name: 'XSS safety',
 };

@@ -88,6 +88,10 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
   <>This is an iframe!</>
 </Story>
 
+<Story name="decorator story" decorators={[storyFn => <div style={{ backgroundColor: 'pink' }}>{storyFn()}</div>]}>
+  <>Story decorators</>
+</Story>
+
 <Story name="theme">
   <h1 className="text-lg">Hello Hugh</h1>
 </Story>

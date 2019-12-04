@@ -8,7 +8,7 @@ export default {
   decorators: [withTestsHOC({ results })],
 };
 
-export const withTests = () => <p>Hello</p>;
-withTests.story = {
+export const WithTests = () => <p>Hello</p>;
+WithTests.story = {
   parameters: { jest: 'addon-jest' },
 };

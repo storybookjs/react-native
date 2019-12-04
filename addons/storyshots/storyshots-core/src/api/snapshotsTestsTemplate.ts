@@ -1,3 +1,5 @@
+/* eslint-disable jest/no-export */
+/* eslint-disable jest/expect-expect */
 import { describe, it } from 'global';
 import { addSerializer } from 'jest-specific-snapshot';
 
@@ -6,30 +8,36 @@ function snapshotTest({ item, asyncJest, framework, testMethod, testMethodParams
   const context = { ...item, framework };
 
   if (asyncJest === true) {
-    it(name, (done: jest.DoneCallback) =>
-      testMethod({
-        done,
-        story: item,
-        context,
-        ...testMethodParams,
-      })
+    it(
+      name,
+      () =>
+        new Promise(done =>
+          testMethod({
+            done,
+            story: item,
+            context,
+            ...testMethodParams,
+          })
+        ),
+      testMethod.timeout
     );
   } else {
-    it(name, () =>
-      testMethod({
-        story: item,
-        context,
-        ...testMethodParams,
-      })
+    it(
+      name,
+      () =>
+        testMethod({
+          story: item,
+          context,
+          ...testMethodParams,
+        }),
+      testMethod.timeout
     );
   }
 }
 
 function snapshotTestSuite({ item, suite, ...restParams }: any) {
   const { kind, children } = item;
-  // eslint-disable-next-line jest/valid-describe
   describe(suite, () => {
-    // eslint-disable-next-line jest/valid-describe
     describe(kind, () => {
       children.forEach((c: any) => {
         snapshotTest({ item: c, ...restParams });

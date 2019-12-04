@@ -10,10 +10,10 @@ export default {
   },
 };
 
-export const story1 = () => ({
+export const Story1 = () => ({
   Component: ButtonView,
 });
 
-story1.story = {
+Story1.story = {
   name: 'story 1',
 };

@@ -215,16 +215,18 @@ With this method, you can select a story via an API. This method accepts two par
 Let's say you've got a story like this:
 
 ```jsx
-import { storiesOf } from '@storybook/react';
+export default {
+  title: 'heading',
+};
 
-storiesOf('heading', module).add('with text', () => <h1>Hello world</h1>);
+export const withText = () => <h1>Hello world</h1>;
 ```
 
 This is how you can select the above story:
 
 ```jsx
 addons.register('my-organisation/my-addon', api => {
-  api.selectStory('heading', 'with text');
+  api.selectStory('heading', 'withText');
 });
 ```
 
@@ -234,7 +236,7 @@ Same as `selectStory`, but accepts a story inside current kind as the only param
 
 ```jsx
 addons.register('my-organisation/my-addon', api => {
-  api.selectInCurrentKind('with text');
+  api.selectInCurrentKind('withText');
 });
 ```
 
@@ -283,14 +285,13 @@ addons.register('my-organisation/my-addon', api => {
   }).url;
 });
 ```
-### deprecated APIs
 
-#### api.onStory(fn)
+### api.on(eventName, fn)
 
 This method allows you to register a handler function which will be called whenever the user navigates between stories.
 
 ```jsx
 addons.register('my-organisation/my-addon', api => {
-  api.onStory((kind, story) => console.log(kind, story));
+  api.on('some-event', (eventData) => console.log(eventData));
 });
 ```

@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 
 import { Component } from '../../blocks/shared';
-import { extractPropsFromDocgen } from './extractDocgenProps';
+import { extractComponentProps } from './extractDocgenProps';
 
 const DOCGEN_SECTION = 'props';
 const PROP_NAME = 'propName';
@@ -14,6 +14,7 @@ interface TypeSystemDef {
 const TypeSystems: TypeSystemDef[] = [
   { name: 'javascript', typeProperty: 'type' },
   { name: 'typescript', typeProperty: 'tsType' },
+  { name: 'flow', typeProperty: 'flowType' },
 ];
 
 function createType(typeName: string, others: Record<string, any> = {}): Record<string, string> {
@@ -53,103 +54,127 @@ function createComponent(docgenInfo: Record<string, any>): Component {
 }
 
 TypeSystems.forEach(x => {
-  it('should map defaults docgen info properly', () => {
-    const component = createComponent({
-      ...createStringType(x),
-      description: 'Hey! Hey!',
-      defaultValue: {
-        value: 'Default',
-      },
+  describe(`${x.name}`, () => {
+    it('should map defaults docgen info properly', () => {
+      const component = createComponent({
+        ...createStringType(x),
+        description: 'Hey! Hey!',
+        defaultValue: {
+          value: 'Default',
+        },
+      });
+
+      const { propDef } = extractComponentProps(component, DOCGEN_SECTION)[0];
+
+      expect(propDef.name).toBe(PROP_NAME);
+      expect(propDef.type.summary).toBe('string');
+      expect(propDef.description).toBe('Hey! Hey!');
+      expect(propDef.required).toBe(false);
+      expect(propDef.defaultValue.summary).toBe('Default');
     });
 
-    const { propDef } = extractPropsFromDocgen(component, DOCGEN_SECTION)[0];
+    it('should remove JSDoc tags from the description', () => {
+      const component = createComponent({
+        ...createStringType(x),
+        description: 'Hey!\n@param event\nreturns {string}',
+      });
 
-    expect(propDef.name).toBe(PROP_NAME);
-    expect(propDef.type.summary).toBe('string');
-    expect(propDef.description).toBe('Hey! Hey!');
-    expect(propDef.required).toBe(false);
-    expect(propDef.defaultValue.summary).toBe('Default');
-  });
+      const { propDef } = extractComponentProps(component, DOCGEN_SECTION)[0];
 
-  it('should remove JSDoc tags from the description', () => {
-    const component = createComponent({
-      ...createStringType(x),
-      description: 'Hey!\n@param event\nreturns {string}',
+      expect(propDef.description).toBe('Hey!');
     });
 
-    const { propDef } = extractPropsFromDocgen(component, DOCGEN_SECTION)[0];
+    it('should not remove newline characters of multilines description without JSDoc tags', () => {
+      const component = createComponent({
+        ...createStringType(x),
+        description: 'onClick description\nis a\nmulti-lines\ndescription',
+      });
 
-    expect(propDef.description).toBe('Hey!');
-  });
+      const { propDef } = extractComponentProps(component, DOCGEN_SECTION)[0];
 
-  it('should not remove newline characters of multilines description without JSDoc tags', () => {
-    const component = createComponent({
-      ...createStringType(x),
-      description: 'onClick description\nis a\nmulti-lines\ndescription',
+      expect(propDef.description).toBe('onClick description\nis a\nmulti-lines\ndescription');
     });
 
-    const { propDef } = extractPropsFromDocgen(component, DOCGEN_SECTION)[0];
+    it('should not remove newline characters of multilines description with JSDoc tags', () => {
+      const component = createComponent({
+        ...createFuncType(x),
+        description: 'onClick description\nis a\nmulti-lines\ndescription\n@param event',
+      });
 
-    expect(propDef.description).toBe('onClick description\nis a\nmulti-lines\ndescription');
-  });
+      const { propDef } = extractComponentProps(component, DOCGEN_SECTION)[0];
 
-  it('should not remove newline characters of multilines description with JSDoc tags', () => {
-    const component = createComponent({
-      ...createFuncType(x),
-      description: 'onClick description\nis a\nmulti-lines\ndescription\n@param event',
+      expect(propDef.description).toBe('onClick description\nis a\nmulti-lines\ndescription');
     });
 
-    const { propDef } = extractPropsFromDocgen(component, DOCGEN_SECTION)[0];
+    it('should not remove markdown from description without JSDoc tags', () => {
+      const component = createComponent({
+        ...createStringType(x),
+        description: 'onClick *emphasis*, **strong**, `formatted` description.',
+      });
 
-    expect(propDef.description).toBe('onClick description\nis a\nmulti-lines\ndescription');
-  });
+      const { propDef } = extractComponentProps(component, DOCGEN_SECTION)[0];
 
-  it('should not remove markdown from description without JSDoc tags', () => {
-    const component = createComponent({
-      ...createStringType(x),
-      description: 'onClick *emphasis*, **strong**, `formatted` description.',
+      expect(propDef.description).toBe('onClick *emphasis*, **strong**, `formatted` description.');
     });
 
-    const { propDef } = extractPropsFromDocgen(component, DOCGEN_SECTION)[0];
+    it('should not remove markdown from description with JSDoc tags', () => {
+      const component = createComponent({
+        ...createFuncType(x),
+        description: 'onClick *emphasis*, **strong**, `formatted` description.\n@param event',
+      });
 
-    expect(propDef.description).toBe('onClick *emphasis*, **strong**, `formatted` description.');
-  });
+      const { propDef } = extractComponentProps(component, DOCGEN_SECTION)[0];
 
-  it('should not remove markdown from description with JSDoc tags', () => {
-    const component = createComponent({
-      ...createFuncType(x),
-      description: 'onClick *emphasis*, **strong**, `formatted` description.\n@param event',
+      expect(propDef.description).toBe('onClick *emphasis*, **strong**, `formatted` description.');
     });
 
-    const { propDef } = extractPropsFromDocgen(component, DOCGEN_SECTION)[0];
+    it('should return null when the property is marked with @ignore', () => {
+      const component = createComponent({
+        ...createStringType(x),
+        description: 'onClick description\n@ignore',
+      });
 
-    expect(propDef.description).toBe('onClick *emphasis*, **strong**, `formatted` description.');
-  });
-
-  it('should return null when the property is marked with @ignore', () => {
-    const component = createComponent({
-      ...createStringType(x),
-      description: 'onClick description\n@ignore',
+      expect(extractComponentProps(component, DOCGEN_SECTION).length).toBe(0);
     });
 
-    expect(extractPropsFromDocgen(component, DOCGEN_SECTION).length).toBe(0);
-  });
+    it('should provide raw @param tags', () => {
+      const component = createComponent({
+        ...createFuncType(x),
+        description:
+          'onClick description\n@param {SyntheticEvent} event - Original event.\n@param {string} value',
+      });
 
-  it('should provide raw @param tags', () => {
-    const component = createComponent({
-      ...createFuncType(x),
-      description:
-        'onClick description\n@param {SyntheticEvent} event - Original event.\n@param {string} value',
+      const { propDef } = extractComponentProps(component, DOCGEN_SECTION)[0];
+
+      expect(propDef.description).toBe('onClick description');
+      expect(propDef.jsDocTags).toBeDefined();
+      expect(propDef.jsDocTags.params).toBeDefined();
+      expect(propDef.jsDocTags.params[0].name).toBe('event');
+      expect(propDef.jsDocTags.params[0].description).toBe('Original event.');
+      expect(propDef.jsDocTags.params[1].name).toBe('value');
+      expect(propDef.jsDocTags.params[1].description).toBeNull();
     });
 
-    const { propDef } = extractPropsFromDocgen(component, DOCGEN_SECTION)[0];
+    it("should not return 'null' default value", () => {
+      const component = createComponent({
+        ...createStringType(x),
+        defaultValue: { value: 'null' },
+      });
 
-    expect(propDef.description).toBe('onClick description');
-    expect(propDef.jsDocTags).toBeDefined();
-    expect(propDef.jsDocTags.params).toBeDefined();
-    expect(propDef.jsDocTags.params[0].name).toBe('event');
-    expect(propDef.jsDocTags.params[0].description).toBe('Original event.');
-    expect(propDef.jsDocTags.params[1].name).toBe('value');
-    expect(propDef.jsDocTags.params[1].description).toBeNull();
+      const { propDef } = extractComponentProps(component, DOCGEN_SECTION)[0];
+
+      expect(propDef.defaultValue).toBeNull();
+    });
+
+    it("should not return 'undefined' default value", () => {
+      const component = createComponent({
+        ...createStringType(x),
+        defaultValue: { value: 'undefined' },
+      });
+
+      const { propDef } = extractComponentProps(component, DOCGEN_SECTION)[0];
+
+      expect(propDef.defaultValue).toBeNull();
+    });
   });
 });

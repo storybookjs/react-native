@@ -8,7 +8,7 @@ export default {
   title: 'UI/Sidebar/SidebarSearch',
   decorators: [
     (storyFn: any) => (
-      <div style={{ width: '240px', margin: '1rem', padding: '1rem', background: '#999' }}>
+      <div style={{ width: '240px', margin: '1rem', padding: '1rem', background: 'white' }}>
         {storyFn()}
       </div>
     ),

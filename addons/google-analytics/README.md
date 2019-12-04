@@ -12,14 +12,17 @@ Install:
 yarn add @storybook/addon-google-analytics --dev
 ```
 
-Then, add following content to `.storybook/addons.js`
+within `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-google-analytics/register';
+module.exports = {
+  addons: ['@storybook/addon-google-analytics/register']
+}
 ```
 
 Then, set an environment variable
 
 ```
 window.STORYBOOK_GA_ID = UA-000000-01
+window.STORYBOOK_REACT_GA_OPTIONS = {}
 ```

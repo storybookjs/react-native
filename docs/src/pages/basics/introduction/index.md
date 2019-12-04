@@ -16,6 +16,6 @@ A [Static version](/basics/exporting-storybook) of Storybook can also be built a
 Here are some featured Storybooks to see how it works:
 
 - [Demo of React Dates](http://airbnb.io/react-dates/) - [source](https://github.com/airbnb/react-dates)
-- [Demo of React Native Web](http://necolas.github.io/react-native-web/storybook/) - [source](https://github.com/necolas/react-native-web)
+- [Demo of React Native Web](https://necolas.github.io/react-native-web/docs/) - [source](https://github.com/necolas/react-native-web)
 
 Read the Learn Storybook [tutorial](https://www.learnstorybook.com) for a step by step guide to building an app with Storybook and to see how building components in isolation can supercharge your app development workflow.

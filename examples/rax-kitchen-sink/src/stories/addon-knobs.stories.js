@@ -8,7 +8,7 @@ export default {
   decorators: [withKnobs],
 };
 
-export const withAButton = () => {
+export const WithAButton = () => {
   const disabled = boolean('Disabled', false);
   const hasStyle = boolean('Has Style', false);
   const style = hasStyle
@@ -34,11 +34,11 @@ export const withAButton = () => {
   );
 };
 
-withAButton.story = {
+WithAButton.story = {
   name: 'with a button',
 };
 
-export const asDynamicVariables = () => {
+export const AsDynamicVariables = () => {
   const name = text('Name', 'Benjamin Button');
   const age = number('Age', 89);
 
@@ -46,6 +46,6 @@ export const asDynamicVariables = () => {
   return <Text>{content}</Text>;
 };
 
-asDynamicVariables.story = {
+AsDynamicVariables.story = {
   name: 'as dynamic variables',
 };
