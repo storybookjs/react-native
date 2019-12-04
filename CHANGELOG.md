@@ -1,3 +1,9 @@
+## 5.3.0-beta.15 (December 4, 2019)
+
+### Features
+
+* Addon-docs: MDX Linking ([#9051](https://github.com/storybookjs/storybook/pull/9051))
+
 ## 5.2.8 (December 2, 2019)
 
 ### Bug Fixes
