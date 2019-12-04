@@ -1,8 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import createCompiler from '@storybook/addon-docs/mdx-compiler-plugin';
-// @ts-ignore
 import remarkSlug from 'remark-slug';
-// @ts-ignore
 import remarkExternalLinks from 'remark-external-links';
 
 function createBabelOptions(babelOptions?: any, configureJSX?: boolean) {

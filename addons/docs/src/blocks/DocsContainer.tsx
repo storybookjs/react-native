@@ -39,10 +39,9 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, 
         }, 200);
       }
     } else {
-      let element = document.getElementById(anchorBlockIdFromId(storyId));
-      if (!element) {
-        element = document.getElementById(storyBlockIdFromId(storyId));
-      }
+      const element =
+        document.getElementById(anchorBlockIdFromId(storyId)) ||
+        document.getElementById(storyBlockIdFromId(storyId));
       if (element) {
         const allStories = element.parentElement.querySelectorAll('[id|="anchor-"]');
         let block = 'start';
