@@ -16,7 +16,7 @@ module.exports = {
     return `${code};
 if(exports.default != null) {
   exports.default.parameters = exports.default.parameters || {};
-  exports.default.parameters.fileName = '${fileName}';
+  exports.default.parameters.fileName = '${fileName.replace(/\\/g, '\\\\')}';
 }
 `;
   },
