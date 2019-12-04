@@ -1,5 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import createCompiler from '@storybook/addon-docs/mdx-compiler-plugin';
+import remarkSlug from 'remark-slug';
+import remarkExternalLinks from 'remark-external-links';
 
 function createBabelOptions(babelOptions?: any, configureJSX?: boolean) {
   if (!configureJSX) {
@@ -25,6 +27,10 @@ export function webpack(webpackConfig: any = {}, options: any = {}) {
     configureJSX = options.framework !== 'react', // if not user-specified
     sourceLoaderOptions = {},
   } = options;
+
+  const mdxLoaderOptions = {
+    remarkPlugins: [remarkSlug, remarkExternalLinks],
+  };
 
   // set `sourceLoaderOptions` to `null` to disable for manual configuration
   const sourceLoader = sourceLoaderOptions
@@ -67,6 +73,7 @@ export function webpack(webpackConfig: any = {}, options: any = {}) {
               loader: '@mdx-js/loader',
               options: {
                 compilers: [createCompiler(options)],
+                ...mdxLoaderOptions,
               },
             },
           ],
@@ -81,6 +88,7 @@ export function webpack(webpackConfig: any = {}, options: any = {}) {
             },
             {
               loader: '@mdx-js/loader',
+              options: mdxLoaderOptions,
             },
           ],
         },
