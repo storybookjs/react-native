@@ -128,7 +128,7 @@ function genPreviewExports(ast, context) {
   return previewExports;
 }
 
-function genMeta(ast) {
+function genMeta(ast, options) {
   let title = getAttr(ast.openingElement, 'title');
   let id = getAttr(ast.openingElement, 'id');
   let parameters = getAttr(ast.openingElement, 'parameters');
@@ -145,7 +145,7 @@ function genMeta(ast) {
       } catch (e) {
         // eat exception if title parsing didnt go well
         // eslint-disable-next-line no-console
-        console.warn('Invalid title found');
+        console.warn(`Invalid title: ${options.filepath}`);
         title = undefined;
       }
     }
@@ -167,7 +167,7 @@ function genMeta(ast) {
   };
 }
 
-function getExports(node, counter) {
+function getExports(node, counter, options) {
   const { value, type } = node;
   if (type === 'jsx') {
     if (STORY_REGEX.exec(value)) {
@@ -184,7 +184,7 @@ function getExports(node, counter) {
     if (META_REGEX.exec(value)) {
       // Preview, possibly containing multiple stories
       const ast = parser.parseExpression(value, { plugins: ['jsx'] });
-      return { meta: genMeta(ast) };
+      return { meta: genMeta(ast, options) };
     }
   }
   return null;
@@ -286,7 +286,7 @@ function extractExports(node, options) {
     storyNameToKey: {},
   };
   node.children.forEach(n => {
-    const exports = getExports(n, context);
+    const exports = getExports(n, context, options);
     if (exports) {
       const { stories, meta } = exports;
       if (stories) {
