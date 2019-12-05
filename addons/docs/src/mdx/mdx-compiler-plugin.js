@@ -133,7 +133,20 @@ function genMeta(ast) {
   let id = getAttr(ast.openingElement, 'id');
   let parameters = getAttr(ast.openingElement, 'parameters');
   let decorators = getAttr(ast.openingElement, 'decorators');
-  title = title && `'${title.value}'`;
+  if (title) {
+    if (title.type === 'StringLiteral') {
+      title = "'".concat(title.value, "'");
+    } else {
+      try {
+        // generate code, so the expression is evaluated by the CSF compiler
+        const { code } = generate(title, {});
+        // remove the curly brackes at start and end of code
+        title = code.replace(/^\{(.+)\}$/, '$1');
+      } catch (e) {
+        // eat exception if title parsing didnt go well
+      }
+    }
+  }
   id = id && `'${id.value}'`;
   if (parameters && parameters.expression) {
     const { code: params } = generate(parameters.expression, {});
