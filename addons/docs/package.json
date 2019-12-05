@@ -68,7 +68,7 @@
     "remark-slug": "^5.1.2",
     "ts-dedent": "^1.1.0",
     "util-deprecate": "^1.0.2",
-    "vue-docgen-api": "^3.26.0",
+    "vue-docgen-api": "^4.1.0",
     "vue-docgen-loader": "^1.0.1"
   },
   "devDependencies": {
