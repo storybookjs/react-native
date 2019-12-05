@@ -9,6 +9,8 @@ export {
   raw,
 } from './preview';
 
+export { setJSONDoc } from './jsondoc';
+
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();
 }
