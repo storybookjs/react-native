@@ -341,18 +341,14 @@ export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) 
   const api = useStorybookApi();
   const existingState = api.getAddonState<S>(addonId);
   const state = orDefault<S>(existingState, defaultState);
-
-  const setState = (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
-    return api.setAddonState<S>(addonId, newStateOrMerger, options);
-  };
-
+  
   const emit = useChannel(
     {
       [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
-        setState(s);
+        api.setAddonState<S>(addonId, s);
       },
       [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
-        setState(s);
+        api.setAddonState<S>(addonId, s);
       },
     }
   );
@@ -365,7 +361,7 @@ export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) 
 
   return [state, (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
     emit(`${ADDON_STATE_CHANGED}-${addonId}`, newStateOrMerger);
-    return setState(newStateOrMerger, options);
+    return api.setAddonState<S>(addonId, newStateOrMerger, options);
   }] as [
     S,
     (newStateOrMerger: S | StateMerger<S>, options?: Options) => Promise<S>
