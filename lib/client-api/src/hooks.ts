@@ -28,19 +28,15 @@ export {
   useParameter,
 };
 
-export function useAddonState<S>(addonId: string, defaultValue?: S): [S, (s: S) => void] {
-  const [state, setState] = useState<S>(defaultValue);
+export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) => void] {
+  const [state, setState] = useState<S>(defaultState);
   const emit = useChannel(
     {
       [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
-        console.log(ADDON_STATE_CHANGED, s);
         setState(s);
       },
       [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
-        if (s !== undefined) {
-          console.log(ADDON_STATE_SET, s);
-          setState(s);
-        }
+        setState(s);
       },
     },
     [addonId]
@@ -48,7 +44,9 @@ export function useAddonState<S>(addonId: string, defaultValue?: S): [S, (s: S) 
 
   useEffect(() => {
     // init
-    emit(`${ADDON_STATE_SET}-${addonId}`, defaultValue);
+    if (defaultState !== undefined) {
+      emit(`${ADDON_STATE_SET}-${addonId}`, defaultState);
+    }
   }, []);
 
   return [
