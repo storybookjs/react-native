@@ -145,7 +145,7 @@ function genMeta(ast) {
       } catch (e) {
         // eat exception if title parsing didnt go well
         // eslint-disable-next-line no-console
-        console.warn('Invalid title found');
+        console.warn('Invalid title', title);
         title = undefined;
       }
     }
