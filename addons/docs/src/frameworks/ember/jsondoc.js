@@ -1,9 +1,12 @@
 /* eslint-disable no-underscore-dangle */
 /* global window */
 
-function getJSONDoc() {
+export const setJSONDoc = jsondoc => {
+  window.__EMBER_GENERATED_DOC_JSON__ = jsondoc;
+};
+export const getJSONDoc = () => {
   return window.__EMBER_GENERATED_DOC_JSON__;
-}
+};
 
 export const extractProps = componentName => {
   const json = getJSONDoc();
