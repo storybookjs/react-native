@@ -32,10 +32,10 @@ export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) 
   const [state, setState] = useState<S>(defaultState);
   const emit = useChannel(
     {
-      [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
+      [`${ADDON_STATE_CHANGED}-manager-${addonId}`]: (s: S) => {
         setState(s);
       },
-      [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
+      [`${ADDON_STATE_SET}-manager-${addonId}`]: (s: S) => {
         setState(s);
       },
     },
@@ -45,14 +45,15 @@ export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) 
   useEffect(() => {
     // init
     if (defaultState !== undefined) {
-      emit(`${ADDON_STATE_SET}-${addonId}`, defaultState);
+      emit(`${ADDON_STATE_SET}-client-${addonId}`, defaultState);
     }
   }, []);
 
   return [
     state,
     s => {
-      emit(`${ADDON_STATE_CHANGED}-${addonId}`, s);
+      setState(s);
+      emit(`${ADDON_STATE_CHANGED}-client-${addonId}`, s);
     },
   ];
 }

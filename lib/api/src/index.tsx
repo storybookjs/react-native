@@ -4,6 +4,7 @@ import memoize from 'memoizerific';
 import shallowEqualObjects from 'shallow-equal/objects';
 
 import {
+  CHANNEL_CREATED,
   STORY_CHANGED,
   SET_STORIES,
   SELECT_STORY,
@@ -340,28 +341,34 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
   const state = orDefault<S>(existingState, defaultState);
 
   const emit = useChannel({
-    [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
+    [`${ADDON_STATE_CHANGED}-client-${addonId}`]: (s: S) => {
       console.log(ADDON_STATE_CHANGED, s);
       api.setAddonState<S>(addonId, s);
     },
-    [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
+    [`${ADDON_STATE_SET}-client-${addonId}`]: (s: S) => {
       console.log(ADDON_STATE_SET, s);
       api.setAddonState<S>(addonId, s);
     },
+    [CHANNEL_CREATED]: () => {
+      if (defaultState !== undefined) {
+        api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState);
+      }
+    },
   });
-  console.log('setup MMMMMMM');
+
   useEffect(() => {
+    console.log('useEffect', defaultState);
     // init
     if (defaultState !== undefined) {
-      emit(`${ADDON_STATE_SET}-${addonId}`, defaultState);
+      emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState);
     }
   }, []);
 
   return [
     state,
     (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
-      emit(`${ADDON_STATE_CHANGED}-${addonId}`, newStateOrMerger);
-      return api.setAddonState<S>(addonId, newStateOrMerger, options);
+      emit(`${ADDON_STATE_CHANGED}-manager-${addonId}`, newStateOrMerger);
+      api.setAddonState<S>(addonId, newStateOrMerger, options);
     },
-  ] as [S, (newStateOrMerger: S | StateMerger<S>, options?: Options) => Promise<S>];
+  ] as [S, (newStateOrMerger: S | StateMerger<S>, options?: Options) => void];
 }
