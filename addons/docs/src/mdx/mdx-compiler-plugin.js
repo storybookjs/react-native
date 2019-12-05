@@ -143,9 +143,9 @@ function genMeta(ast, options) {
         // remove the curly brackes at start and end of code
         title = code.replace(/^\{(.+)\}$/, '$1');
       } catch (e) {
-        // eat exception if title parsing didnt go well
+        // eat exception if title parsing didn't go well
         // eslint-disable-next-line no-console
-        console.warn(`Invalid title: ${options.filepath}`);
+        console.warn('Invalid title', title);
         title = undefined;
       }
     }
