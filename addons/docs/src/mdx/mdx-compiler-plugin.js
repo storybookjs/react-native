@@ -135,7 +135,7 @@ function genMeta(ast) {
   let decorators = getAttr(ast.openingElement, 'decorators');
   if (title) {
     if (title.type === 'StringLiteral') {
-      title = "'".concat(title.value, "'");
+      title = "'".concat(jsStringEscape(title.value), "'");
     } else {
       try {
         // generate code, so the expression is evaluated by the CSF compiler
@@ -144,6 +144,9 @@ function genMeta(ast) {
         title = code.replace(/^\{(.+)\}$/, '$1');
       } catch (e) {
         // eat exception if title parsing didnt go well
+        // eslint-disable-next-line no-console
+        console.warn('Invalid title found');
+        title = undefined;
       }
     }
   }
