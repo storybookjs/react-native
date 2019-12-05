@@ -140,12 +140,12 @@ function genMeta(ast, options) {
       try {
         // generate code, so the expression is evaluated by the CSF compiler
         const { code } = generate(title, {});
-        // remove the curly brackes at start and end of code
+        // remove the curly brackets at start and end of code
         title = code.replace(/^\{(.+)\}$/, '$1');
       } catch (e) {
         // eat exception if title parsing didn't go well
         // eslint-disable-next-line no-console
-        console.warn('Invalid title', title);
+        console.warn('Invalid title:', options.filepath);
         title = undefined;
       }
     }
