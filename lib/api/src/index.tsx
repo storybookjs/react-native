@@ -335,9 +335,17 @@ export function useParameter<S>(parameterKey: string, defaultValue?: S) {
   return orDefault<S>(result, defaultValue);
 }
 
+type StateMerger<S> = (input: S) => S;
 // shared state
-export function useAddonState<S>(addonId: string, defaultValue?: S): [S, (s: S) => void] {
-  const [state, setState] = useState<S>(defaultValue);
+export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) => void] {
+  const api = useStorybookApi();
+  const existingState = api.getAddonState<S>(addonId);
+  const state = orDefault<S>(existingState, defaultState);
+
+  const setState = (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
+    return api.setAddonState<S>(addonId, newStateOrMerger, options);
+  };
+
   const emit = useChannel(
     {
       [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
@@ -355,10 +363,11 @@ export function useAddonState<S>(addonId: string, defaultValue?: S): [S, (s: S) 
     }  
   }, [state]);
 
-  return [
-    state,
-    s => {
-      emit(`${ADDON_STATE_CHANGED}-${addonId}`, s);
-    },
+  return [state, (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
+    emit(`${ADDON_STATE_CHANGED}-${addonId}`, newStateOrMerger);
+    return setState(newStateOrMerger, options);
+  }] as [
+    S,
+    (newStateOrMerger: S | StateMerger<S>, options?: Options) => Promise<S>
   ];
 }
