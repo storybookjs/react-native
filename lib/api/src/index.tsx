@@ -1,9 +1,15 @@
-import React, { ReactElement, Component, useContext, useEffect, useRef } from 'react';
+import React, { ReactElement, Component, useContext, useEffect, useState } from 'react';
 import memoize from 'memoizerific';
 // @ts-ignore shallow-equal is not in DefinitelyTyped
 import shallowEqualObjects from 'shallow-equal/objects';
 
-import Events from '@storybook/core-events';
+import {
+  STORY_CHANGED,
+  SET_STORIES,
+  SELECT_STORY,
+  ADDON_STATE_CHANGED,
+  ADDON_STATE_SET
+} from '@storybook/core-events';
 import { RenderData as RouterData } from '@storybook/router';
 import { Listener } from '@storybook/channels';
 import initProviderApi, { SubAPI as ProviderAPI, Provider } from './init-provider-api';
@@ -38,7 +44,6 @@ export { Options as StoreOptions, Listener as ChannelListener };
 
 const ManagerContext = createContext({ api: undefined, state: getInitialState({}) });
 
-const { STORY_CHANGED, SET_STORIES, SELECT_STORY } = Events;
 
 export type Module = StoreData &
   RouterData &
@@ -186,7 +191,6 @@ class ManagerProvider extends Component<Props, State> {
         api.selectStory(kind, story, rest);
       }
     );
-
     this.state = state;
     this.api = api;
   }
@@ -310,32 +314,6 @@ function orDefault<S>(fromStore: S, defaultState: S): S {
   return fromStore;
 }
 
-type StateMerger<S> = (input: S) => S;
-
-export function useAddonState<S>(addonId: string, defaultState?: S) {
-  const api = useStorybookApi();
-  const ref = useRef<{ [k: string]: boolean }>({});
-
-  const existingState = api.getAddonState<S>(addonId);
-  const state = orDefault<S>(existingState, defaultState);
-
-  const setState = (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
-    return api.setAddonState<S>(addonId, newStateOrMerger, options);
-  };
-
-  if (typeof existingState === 'undefined' && typeof state !== 'undefined') {
-    if (!ref.current[addonId]) {
-      api.setAddonState<S>(addonId, state);
-      ref.current[addonId] = true;
-    }
-  }
-
-  return [state, setState] as [
-    S,
-    (newStateOrMerger: S | StateMerger<S>, options?: Options) => Promise<S>
-  ];
-}
-
 export const useChannel = (eventMap: EventMap) => {
   const api = useStorybookApi();
   useEffect(() => {
@@ -348,9 +326,39 @@ export const useChannel = (eventMap: EventMap) => {
   return api.emit;
 };
 
+
+
 export function useParameter<S>(parameterKey: string, defaultValue?: S) {
   const api = useStorybookApi();
 
   const result = api.getCurrentParameter<S>(parameterKey);
   return orDefault<S>(result, defaultValue);
+}
+
+// shared state
+export function useAddonState<S>(addonId: string, defaultValue?: S): [S, (s: S) => void] {
+  const [state, setState] = useState<S>(defaultValue);
+  const emit = useChannel(
+    {
+      [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
+        setState(s);
+      },
+      [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
+        setState(s);
+      },
+    }
+  );
+  useEffect(() => {
+    // init
+    if (state !== undefined) {
+      emit(`${ADDON_STATE_SET}-${addonId}`, state);
+    }  
+  }, [state]);
+
+  return [
+    state,
+    s => {
+      emit(`${ADDON_STATE_CHANGED}-${addonId}`, s);
+    },
+  ];
 }
