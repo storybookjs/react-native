@@ -1,4 +1,4 @@
-import React, { ReactElement, Component, useContext, useEffect, useState } from 'react';
+import React, { ReactElement, Component, useContext, useEffect } from 'react';
 import memoize from 'memoizerific';
 // @ts-ignore shallow-equal is not in DefinitelyTyped
 import shallowEqualObjects from 'shallow-equal/objects';
@@ -8,7 +8,7 @@ import {
   SET_STORIES,
   SELECT_STORY,
   ADDON_STATE_CHANGED,
-  ADDON_STATE_SET
+  ADDON_STATE_SET,
 } from '@storybook/core-events';
 import { RenderData as RouterData } from '@storybook/router';
 import { Listener } from '@storybook/channels';
@@ -43,7 +43,6 @@ import initVersions, {
 export { Options as StoreOptions, Listener as ChannelListener };
 
 const ManagerContext = createContext({ api: undefined, state: getInitialState({}) });
-
 
 export type Module = StoreData &
   RouterData &
@@ -326,8 +325,6 @@ export const useChannel = (eventMap: EventMap) => {
   return api.emit;
 };
 
-
-
 export function useParameter<S>(parameterKey: string, defaultValue?: S) {
   const api = useStorybookApi();
 
@@ -337,33 +334,31 @@ export function useParameter<S>(parameterKey: string, defaultValue?: S) {
 
 type StateMerger<S> = (input: S) => S;
 // shared state
-export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) => void] {
+export function useAddonState<S>(addonId: string, defaultState?: S) {
   const api = useStorybookApi();
   const existingState = api.getAddonState<S>(addonId);
   const state = orDefault<S>(existingState, defaultState);
-  
-  const emit = useChannel(
-    {
-      [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
-        api.setAddonState<S>(addonId, s);
-      },
-      [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
-        api.setAddonState<S>(addonId, s);
-      },
-    }
-  );
+
+  const emit = useChannel({
+    [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
+      api.setAddonState<S>(addonId, s);
+    },
+    [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
+      api.setAddonState<S>(addonId, s);
+    },
+  });
   useEffect(() => {
     // init
-    if (state !== undefined) {
-      emit(`${ADDON_STATE_SET}-${addonId}`, state);
-    }  
+    if (defaultState !== undefined) {
+      emit(`${ADDON_STATE_SET}-${addonId}`, defaultState);
+    }
   }, [state]);
 
-  return [state, (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
-    emit(`${ADDON_STATE_CHANGED}-${addonId}`, newStateOrMerger);
-    return api.setAddonState<S>(addonId, newStateOrMerger, options);
-  }] as [
-    S,
-    (newStateOrMerger: S | StateMerger<S>, options?: Options) => Promise<S>
-  ];
+  return [
+    state,
+    (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
+      emit(`${ADDON_STATE_CHANGED}-${addonId}`, newStateOrMerger);
+      return api.setAddonState<S>(addonId, newStateOrMerger, options);
+    },
+  ] as [S, (newStateOrMerger: S | StateMerger<S>, options?: Options) => Promise<S>];
 }
