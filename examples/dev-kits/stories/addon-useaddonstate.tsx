@@ -7,7 +7,7 @@ export default {
 };
 
 export const variant1 = () => {
-  const [state, setState] = useAddonState<string>('test', 'foo');
+  const [state, setState] = useAddonState<string>('test');
 
   return (
     <div>

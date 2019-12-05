@@ -33,10 +33,14 @@ export function useAddonState<S>(addonId: string, defaultValue?: S): [S, (s: S) 
   const emit = useChannel(
     {
       [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
+        console.log(ADDON_STATE_CHANGED, s);
         setState(s);
       },
       [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
-        setState(s);
+        if (s !== undefined) {
+          console.log(ADDON_STATE_SET, s);
+          setState(s);
+        }
       },
     },
     [addonId]
@@ -44,9 +48,7 @@ export function useAddonState<S>(addonId: string, defaultValue?: S): [S, (s: S) 
 
   useEffect(() => {
     // init
-    if (defaultValue !== undefined) {
-      emit(`${ADDON_STATE_SET}-${addonId}`, defaultValue);
-    }
+    emit(`${ADDON_STATE_SET}-${addonId}`, defaultValue);
   }, []);
 
   return [

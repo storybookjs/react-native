@@ -341,18 +341,17 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
 
   const emit = useChannel({
     [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
-      console.log(ADDON_STATE_CHANGED);
       api.setAddonState<S>(addonId, s);
     },
     [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
-      api.setAddonState<S>(addonId, s);
+      if (s !== undefined) {
+        api.setAddonState<S>(addonId, s);
+      }
     },
   });
   useEffect(() => {
     // init
-    if (defaultState !== undefined) {
-      emit(`${ADDON_STATE_SET}-${addonId}`, defaultState);
-    }
+    emit(`${ADDON_STATE_SET}-${addonId}`, defaultState);
   }, []);
 
   return [
