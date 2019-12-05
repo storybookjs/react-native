@@ -4,7 +4,7 @@ import { extractProps, extractComponentDescription } from './jsondoc';
 
 addParameters({
   docs: {
-    iframeHeight: 60,
+    iframeHeight: 80,
     extractProps,
     extractComponentDescription,
   },
