@@ -13,7 +13,7 @@ addons.setConfig({
 });
 
 const StatePanel = ({ active, key }) => {
-  const [state, setState] = useAddonState('test', 'foo');
+  const [state, setState] = useAddonState('test');
   return (
     <AddonPanel key={key} active={active}>
       Click to change from manager:

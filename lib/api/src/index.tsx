@@ -341,6 +341,7 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
 
   const emit = useChannel({
     [`${ADDON_STATE_CHANGED}-${addonId}`]: (s: S) => {
+      console.log(ADDON_STATE_CHANGED);
       api.setAddonState<S>(addonId, s);
     },
     [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
@@ -352,7 +353,7 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
     if (defaultState !== undefined) {
       emit(`${ADDON_STATE_SET}-${addonId}`, defaultState);
     }
-  }, [state]);
+  }, []);
 
   return [
     state,

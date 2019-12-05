@@ -38,17 +38,16 @@ export function useAddonState<S>(addonId: string, defaultValue?: S): [S, (s: S) 
       [`${ADDON_STATE_SET}-${addonId}`]: (s: S) => {
         setState(s);
       },
-
     },
     [addonId]
   );
 
   useEffect(() => {
     // init
-    if (state !== undefined) {
-      emit(`${ADDON_STATE_SET}-${addonId}`, state);
-    }  
-  }, [state]);
+    if (defaultValue !== undefined) {
+      emit(`${ADDON_STATE_SET}-${addonId}`, defaultValue);
+    }
+  }, []);
 
   return [
     state,
