@@ -1,3 +1,18 @@
+## 5.3.0-beta.16 (December 5, 2019)
+
+### Features
+
+* Addon-docs: DocsPage Heading and Subheading anchor links ([#9060](https://github.com/storybookjs/storybook/pull/9060))
+
+### Bug Fixes
+
+* Core: Fix `api.selectStory` for component permalinks ([#9054](https://github.com/storybookjs/storybook/pull/9054))
+* Storyshots: Escape Windows fileNames ([#9061](https://github.com/storybookjs/storybook/pull/9061))
+
+### Dependency Upgrades
+
+* Addon-docs: Upgrade vue-docgen-api ([#9066](https://github.com/storybookjs/storybook/pull/9066))
+
 ## 5.3.0-beta.15 (December 4, 2019)
 
 ### Features
