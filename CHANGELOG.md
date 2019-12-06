@@ -1,4 +1,4 @@
-## 5.3.0-beta.17 (December 6, 2019)
+## 5.3.0-beta.18 (December 6, 2019)
 
 ### Features
 
@@ -13,6 +13,10 @@
 ### Dependency Upgrades
 
 * Addon-docs: Upgrade vue-docgen-loader ([#9082](https://github.com/storybookjs/storybook/pull/9082))
+
+## 5.3.0-beta.17 (December 6, 2019)
+
+NPM publish failed
 
 ## 5.3.0-beta.16 (December 5, 2019)
 
