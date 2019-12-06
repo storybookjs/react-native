@@ -145,9 +145,19 @@ export default class StoryStore extends EventEmitter {
       data === undefined ? this._selection : { storyId: data.storyId, viewMode: data.viewMode };
     this._error = error === undefined ? this._error : error;
 
+    let failed = false;
+    try {
+      if (this._channel) {
+        this._channel.emit(Events.STORY_RENDER);
+      }
+      failed = true;
+    } catch (e) {
+      failed = true;
+    }
+
     setTimeout(() => {
       // preferred method to emit event.
-      if (this._channel) {
+      if (this._channel && failed) {
         this._channel.emit(Events.STORY_RENDER);
       }
 
