@@ -161,7 +161,7 @@ describe('enhancePropTypesProp', () => {
             type: {
               name: 'custom',
               raw:
-                '<div>Hello world from Montreal, Quebec, Canada!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>',
+                '<div>Hello world from Montreal, Quebec, Canada!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>',
             },
           });
 
@@ -170,7 +170,7 @@ describe('enhancePropTypesProp', () => {
           expect(type.summary).toBe('element');
 
           const expectedDetail =
-            '<div>Hello world from Montreal, Quebec, Canada!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>';
+            '<div>Hello world from Montreal, Quebec, Canada!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>';
 
           expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
         });
@@ -303,7 +303,15 @@ describe('enhancePropTypesProp', () => {
               name: 'string',
               required: false,
             },
-            anotherAnother: {
+            another2: {
+              name: 'string',
+              required: false,
+            },
+            another3: {
+              name: 'string',
+              required: false,
+            },
+            another4: {
               name: 'string',
               required: false,
             },
@@ -319,7 +327,9 @@ describe('enhancePropTypesProp', () => {
         foo: string,
         bar: string,
         another: string,
-        anotherAnother: string
+        another2: string,
+        another3: string,
+        another4: string
       }`;
 
       expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
@@ -382,7 +392,8 @@ describe('enhancePropTypesProp', () => {
               computed: true,
             },
             {
-              value: '{\n  foo: PropTypes.string,\n  bar: PropTypes.string,\n}',
+              value:
+                '{\n  foo: PropTypes.string,\n  bar: PropTypes.string,\n  hey: PropTypes.string,\n  ho: PropTypes.string,\n}',
               computed: true,
             },
           ],
@@ -398,7 +409,9 @@ describe('enhancePropTypesProp', () => {
           value: string
         } | {
           foo: string,
-          bar: string
+          bar: string,
+          hey: string,
+          ho: string
         }`;
 
       expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
@@ -799,7 +812,7 @@ describe('enhancePropTypesProp', () => {
             value: {
               name: 'custom',
               raw:
-                '{\n  text: PropTypes.string.isRequired,\n  value: PropTypes.string.isRequired,\n  another: PropTypes.string.isRequired,\n  anotherAnother: PropTypes.string.isRequired,\n}',
+                '{\n  text: PropTypes.string.isRequired,\n  value: PropTypes.string.isRequired,\n  another: PropTypes.string.isRequired,\n  another2: PropTypes.string.isRequired,\n  another3: PropTypes.string.isRequired,\n  another4: PropTypes.string.isRequired,\n}',
             },
           },
         });
@@ -812,7 +825,9 @@ describe('enhancePropTypesProp', () => {
           text: string,
           value: string,
           another: string,
-          anotherAnother: string
+          another2: string,
+          another3: string,
+          another4: string
         }]`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));
@@ -875,7 +890,15 @@ describe('enhancePropTypesProp', () => {
                   name: 'string',
                   required: false,
                 },
-                anotherAnother: {
+                another2: {
+                  name: 'string',
+                  required: false,
+                },
+                another3: {
+                  name: 'string',
+                  required: false,
+                },
+                another4: {
                   name: 'string',
                   required: false,
                 },
@@ -892,7 +915,9 @@ describe('enhancePropTypesProp', () => {
           foo: string,
           bar: string,
           another: string,
-          anotherAnother: string
+          another2: string,
+          another3: string,
+          another4: string
         }]`;
 
         expect(type.detail.replace(/\s/g, '')).toBe(expectedDetail.replace(/\s/g, ''));

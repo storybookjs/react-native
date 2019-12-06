@@ -31,13 +31,16 @@ const getTypeSystem = (docgenInfo: DocgenInfo): TypeSystem => {
   return TypeSystem.UNKNOWN;
 };
 
-export const extractComponentProps: ExtractProps = (component, section) => {
-  const docgenSection = getDocgenSection(component, section);
+export const extractComponentSectionArray = (docgenSection: any) => {
+  const typeSystem = getTypeSystem(docgenSection[0]);
+  const createPropDef = getPropDefFactory(typeSystem);
 
-  if (!isValidDocgenSection(docgenSection)) {
-    return [];
-  }
+  return docgenSection
+    .map((item: any) => extractProp(item.name, item, typeSystem, createPropDef))
+    .filter(Boolean);
+};
 
+export const extractComponentSectionObject = (docgenSection: any) => {
   const docgenPropsKeys = Object.keys(docgenSection);
   const typeSystem = getTypeSystem(docgenSection[docgenPropsKeys[0]]);
   const createPropDef = getPropDefFactory(typeSystem);
@@ -50,7 +53,20 @@ export const extractComponentProps: ExtractProps = (component, section) => {
         ? extractProp(propName, docgenInfo, typeSystem, createPropDef)
         : null;
     })
-    .filter(x => x);
+    .filter(Boolean);
+};
+
+export const extractComponentProps: ExtractProps = (component, section) => {
+  const docgenSection = getDocgenSection(component, section);
+
+  if (!isValidDocgenSection(docgenSection)) {
+    return [];
+  }
+
+  // vue-docgen-api has diverged from react-docgen and returns an array
+  return Array.isArray(docgenSection)
+    ? extractComponentSectionArray(docgenSection)
+    : extractComponentSectionObject(docgenSection);
 };
 
 function extractProp(
