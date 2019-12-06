@@ -6,9 +6,9 @@ import { applyCRAWebpackConfig, getReactScriptsPath, isReactScriptsInstalled } f
 type Preset = string | { name: string };
 
 // Disable the built-in preset if the new preset is detected.
-const checkForNewPreset = (presets: Preset[]) => {
+const checkForNewPreset = (presetsList: Preset[]) => {
   try {
-    const hasNewPreset = presets.some((preset: Preset) => {
+    const hasNewPreset = presetsList.some((preset: Preset) => {
       const presetName = typeof preset === 'string' ? preset : preset.name;
       return presetName === '@storybook/preset-create-react-app';
     });
@@ -40,8 +40,8 @@ export function webpackFinal(
   return applyCRAWebpackConfig(config, configDir);
 }
 
-export function managerWebpack(config: Configuration, { presets }: { presets: Preset[] }) {
-  if (!isReactScriptsInstalled() || checkForNewPreset(presets)) {
+export function managerWebpack(config: Configuration, { presetsList }: { presetsList: Preset[] }) {
+  if (!isReactScriptsInstalled() || checkForNewPreset(presetsList)) {
     return config;
   }
 
@@ -53,8 +53,8 @@ export function managerWebpack(config: Configuration, { presets }: { presets: Pr
   };
 }
 
-export function babelDefault(config: Configuration, { presets }: { presets: Preset[] }) {
-  if (!isReactScriptsInstalled() || checkForNewPreset(presets)) {
+export function babelDefault(config: Configuration, { presetsList }: { presetsList: Preset[] }) {
+  if (!isReactScriptsInstalled() || checkForNewPreset(presetsList)) {
     return config;
   }
 
