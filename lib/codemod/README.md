@@ -133,14 +133,14 @@ for use in SB Docs.
 For example:
 
 ```js
-input { Button } from './Button';
+import { Button } from './Button';
 storiesOf('Button', module).add('story', () => <Button label="The Button" />);
 ```
 
 Becomes:
 
 ```js
-input { Button } from './Button';
+import { Button } from './Button';
 storiesOf('Button', module)
   .addParameters({ component: Button })
   .add('story', () => <Button label="The Button" />);

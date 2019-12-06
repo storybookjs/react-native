@@ -150,6 +150,7 @@ const HeaderWithOcticonAnchor: FC<HeaderWithOcticonAnchorProps> = ({
       <OcticonAnchor
         aria-hidden="true"
         href={generateHrefWithHash(id)}
+        tabIndex={-1}
         onClick={() => {
           const element = document.getElementById(id);
           if (!isNil(element)) {
@@ -174,7 +175,7 @@ interface HeaderMdxProps {
   id: string;
 }
 
-const HeaderMdx: FC<HeaderMdxProps> = props => {
+export const HeaderMdx: FC<HeaderMdxProps> = props => {
   const { as, id, children, ...rest } = props;
 
   // An id should have been added on every header by the "remark-slug" plugin.
