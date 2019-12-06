@@ -32,3 +32,11 @@ export const getComponentName = (component: Component): string => {
 
   return component.name;
 };
+
+export function scrollToElement(element: any, block = 'start') {
+  element.scrollIntoView({
+    behavior: 'smooth',
+    block,
+    inline: 'nearest',
+  });
+}
