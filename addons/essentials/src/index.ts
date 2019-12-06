@@ -1,6 +1,5 @@
 import fs from 'fs';
 import { logger } from '@storybook/node-logger';
-import dedent from 'ts-dedent';
 
 type PresetOptions = {
   actions?: any;
@@ -20,42 +19,27 @@ if (fs.existsSync('./package.json')) {
   }
 }
 
-const warnIfInstalled = (addon: string, dependencies?: Record<string, string>) => {
-  if (dependencies) {
-    const version = dependencies[addon];
-    if (version) {
-      logger.warn(dedent`
-        ${addon}@${version} found in package.json
-        Consider removing it from your app or disabling it in addon-essentials
-        For more information see the addon-essentials FAQ in its README
-      `);
-    }
-  }
-};
-
-const makeAddon = (key: string) => {
-  const addon = `@storybook/addon-${key}`;
+const isInstalled = (addon: string) => {
   const { dependencies, devDependencies } = packageJson;
-  warnIfInstalled(addon, devDependencies);
-  warnIfInstalled(addon, dependencies);
-  return addon;
+  return (dependencies && dependencies[addon]) || (devDependencies && devDependencies[addon]);
 };
 
-export const presets = (options: PresetOptions = {}) => {
+const makeAddon = (key: string) => `@storybook/addon-${key}`;
+
+export function presets(options: PresetOptions = {}) {
   const presetAddons = ['docs', 'knobs']
-    .filter(key => (options as any)[key] !== null)
+    .filter(key => (options as any)[key] !== false)
     .map(key => makeAddon(key))
-    .map(addon => ({
-      name: `${addon}/preset`,
-      options: (options as any)[addon] || {},
-    }));
+    .filter(addon => !isInstalled(addon))
+    .map(addon => `${addon}/preset`);
   return presetAddons;
-};
+}
 
 export function addons(entry: any[] = [], options: PresetOptions = {}) {
   const registerAddons = ['actions', 'backgrounds', 'links', 'viewport']
-    .filter(key => (options as any)[key] !== null)
+    .filter(key => (options as any)[key] !== false)
     .map(key => makeAddon(key))
+    .filter(addon => !isInstalled(addon))
     .map(addon => `${addon}/register`);
   return [...entry, ...registerAddons];
 }

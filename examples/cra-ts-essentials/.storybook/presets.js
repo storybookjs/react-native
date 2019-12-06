@@ -3,8 +3,7 @@ module.exports = [
   {
     name: '@storybook/addon-essentials',
     options: {
-      backgrounds: null,
-      knobs: { addDecorator: false },
+      backgrounds: false,
     },
   },
 ];
