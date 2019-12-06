@@ -1,4 +1,4 @@
-import React, { ReactElement, Component, useContext, useEffect } from 'react';
+import React, { ReactElement, Component, useContext, useEffect, useMemo } from 'react';
 import memoize from 'memoizerific';
 // @ts-ignore shallow-equal is not in DefinitelyTyped
 import shallowEqualObjects from 'shallow-equal/objects';
@@ -340,25 +340,26 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
   const existingState = api.getAddonState<S>(addonId);
   const state = orDefault<S>(existingState, defaultState);
 
-  const emit = useChannel({
-    [`${ADDON_STATE_CHANGED}-client-${addonId}`]: (s: S) => {
-      console.log(ADDON_STATE_CHANGED, s);
-      api.setAddonState<S>(addonId, s);
-    },
-    [`${ADDON_STATE_SET}-client-${addonId}`]: (s: S) => {
-      console.log(ADDON_STATE_SET, s);
-      api.setAddonState<S>(addonId, s);
-    },
-    [CHANNEL_CREATED]: () => {
-      if (defaultState !== undefined) {
-        api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState);
-      }
-    },
-  });
+  const allListeners = useMemo(() => {
+    const stateChangeHandlers = {
+      [`${ADDON_STATE_CHANGED}-client-${addonId}`]: (s: S) => api.setAddonState<S>(addonId, s),
+      [`${ADDON_STATE_SET}-client-${addonId}`]: (s: S) => api.setAddonState<S>(addonId, s),
+    };
+
+    const stateInitializationHandlers = {
+      [CHANNEL_CREATED]: () => api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState),
+      [STORY_CHANGED]: () => api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState),
+    };
+
+    return {
+      ...stateChangeHandlers,
+      ...(defaultState !== undefined ? stateInitializationHandlers : {}),
+    };
+  }, [addonId]);
+
+  const emit = useChannel(allListeners);
 
   useEffect(() => {
-    console.log('useEffect', defaultState);
-    // init
     if (defaultState !== undefined) {
       emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState);
     }
