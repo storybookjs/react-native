@@ -28,19 +28,28 @@ export {
   useParameter,
 };
 
+// We keep this store, because when stories are edited by the user, and HMR, state is lost.
+// This allows us to restore instantly.
+const addonStateCache: Record<string, any> = {};
+
 export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) => void] {
-  const [state, setState] = useState<S>(defaultState);
-  const emit = useChannel(
-    {
-      [`${ADDON_STATE_CHANGED}-manager-${addonId}`]: (s: S) => {
-        setState(s);
-      },
-      [`${ADDON_STATE_SET}-manager-${addonId}`]: (s: S) => {
-        setState(s);
-      },
-    },
+  const restoredState = addonStateCache[addonId] as S;
+
+  const [state, setState] = useState<S>(
+    typeof restoredState === 'undefined' ? defaultState : restoredState
+  );
+
+  addonStateCache[addonId] = state;
+
+  const allListeners = useMemo(
+    () => ({
+      [`${ADDON_STATE_CHANGED}-manager-${addonId}`]: (s: S) => setState(s),
+      [`${ADDON_STATE_SET}-manager-${addonId}`]: (s: S) => setState(s),
+    }),
     [addonId]
   );
+
+  const emit = useChannel(allListeners, [addonId]);
 
   useEffect(() => {
     // init
