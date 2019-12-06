@@ -33,14 +33,13 @@ export {
 const addonStateCache: Record<string, any> = {};
 
 export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) => void] {
-  const restoredState = addonStateCache[addonId] as S;
-
   const [state, setState] = useState<S>(
-    typeof restoredState === 'undefined' ? defaultState : restoredState
+    addonStateCache[addonId] ? addonStateCache[addonId] : defaultState
   );
-
-  addonStateCache[addonId] = state;
-
+  // only initialize after the first loading
+  if (addonStateCache[addonId]) {
+    addonStateCache[addonId] = state;
+  }
   const allListeners = useMemo(
     () => ({
       [`${ADDON_STATE_CHANGED}-manager-${addonId}`]: (s: S) => setState(s),
@@ -53,7 +52,8 @@ export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) 
 
   useEffect(() => {
     // init
-    if (defaultState !== undefined) {
+    if (defaultState !== undefined && !addonStateCache[addonId]) {
+      addonStateCache[addonId] = defaultState;
       emit(`${ADDON_STATE_SET}-client-${addonId}`, defaultState);
     }
   }, []);

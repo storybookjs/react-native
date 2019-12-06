@@ -4,10 +4,11 @@ import memoize from 'memoizerific';
 import shallowEqualObjects from 'shallow-equal/objects';
 
 import {
-  CHANNEL_CREATED,
+  STORIES_CONFIGURED,
   STORY_CHANGED,
   SET_STORIES,
   SELECT_STORY,
+  FORCE_RE_RENDER,
   ADDON_STATE_CHANGED,
   ADDON_STATE_SET,
 } from '@storybook/core-events';
@@ -334,43 +335,64 @@ export function useParameter<S>(parameterKey: string, defaultValue?: S) {
 }
 
 type StateMerger<S> = (input: S) => S;
+// chache for taking care of HMR
+const addonStateCache: {
+  [key: string]: any;
+} = {};
+
 // shared state
 export function useAddonState<S>(addonId: string, defaultState?: S) {
   const api = useStorybookApi();
   const existingState = api.getAddonState<S>(addonId);
-  const state = orDefault<S>(existingState, defaultState);
-
+  const state = orDefault<S>(
+    existingState,
+    addonStateCache[addonId] ? addonStateCache[addonId] : defaultState
+  );
+  const setState = (s: S | StateMerger<S>, options?: Options) => {
+    // set only after the stories are loaded
+    if (addonStateCache[addonId]) {
+      addonStateCache[addonId] = s;
+    }
+    api.setAddonState<S>(addonId, s, options);
+  };
   const allListeners = useMemo(() => {
     const stateChangeHandlers = {
-      [`${ADDON_STATE_CHANGED}-client-${addonId}`]: (s: S) => api.setAddonState<S>(addonId, s),
-      [`${ADDON_STATE_SET}-client-${addonId}`]: (s: S) => api.setAddonState<S>(addonId, s),
+      [`${ADDON_STATE_CHANGED}-client-${addonId}`]: (s: S) => setState(s),
+      [`${ADDON_STATE_SET}-client-${addonId}`]: (s: S) => setState(s),
     };
-
     const stateInitializationHandlers = {
-      [CHANNEL_CREATED]: () => api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState),
-      [STORY_CHANGED]: () =>
-        api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, api.getAddonState(addonId)),
+      [STORIES_CONFIGURED]: () => {
+        if (addonStateCache[addonId]) {
+          // this happens when HMR
+          setState(addonStateCache[addonId]);
+          api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, addonStateCache[addonId]);
+        } else if (defaultState !== undefined) {
+          // if not HMR, yet the defaults are form the manager
+          setState(defaultState);
+          // initialize addonStateCache after first load, so its available for subsequent HMR
+          addonStateCache[addonId] = defaultState;
+          api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState);
+        }
+      },
+      [STORY_CHANGED]: () => {
+        if (api.getAddonState(addonId) !== undefined) {
+          api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, api.getAddonState(addonId));
+        }
+      },
     };
 
     return {
       ...stateChangeHandlers,
-      ...(defaultState !== undefined ? stateInitializationHandlers : {}),
+      ...stateInitializationHandlers,
     };
   }, [addonId]);
 
   const emit = useChannel(allListeners);
-
-  useEffect(() => {
-    if (defaultState !== undefined) {
-      emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState);
-    }
-  }, []);
-
   return [
     state,
     (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
+      setState(newStateOrMerger, options);
       emit(`${ADDON_STATE_CHANGED}-manager-${addonId}`, newStateOrMerger);
-      api.setAddonState<S>(addonId, newStateOrMerger, options);
     },
   ] as [S, (newStateOrMerger: S | StateMerger<S>, options?: Options) => void];
 }

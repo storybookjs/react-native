@@ -27,8 +27,8 @@ const StatePanel = ({ active, key }) => {
       <div>
         Preview counter: {previewState}
         <br />
-        <Button onClick={() => setPreviewState(previewState - 1)}>decrement</Button>
-        <Button onClick={() => setPreviewState(previewState + 1)}>increment</Button>
+        <Button onClick={() => previewState && setPreviewState(previewState - 1)}>decrement</Button>
+        <Button onClick={() => previewState && setPreviewState(previewState + 1)}>increment</Button>
       </div>
     </AddonPanel>
   );
