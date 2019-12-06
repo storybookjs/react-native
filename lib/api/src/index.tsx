@@ -348,7 +348,8 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
 
     const stateInitializationHandlers = {
       [CHANNEL_CREATED]: () => api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState),
-      [STORY_CHANGED]: () => api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState),
+      [STORY_CHANGED]: () =>
+        api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, api.getAddonState(addonId)),
     };
 
     return {
