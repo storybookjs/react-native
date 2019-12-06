@@ -314,14 +314,14 @@ function orDefault<S>(fromStore: S, defaultState: S): S {
   return fromStore;
 }
 
-export const useChannel = (eventMap: EventMap) => {
+export const useChannel = (eventMap: EventMap, deps: any[] = []) => {
   const api = useStorybookApi();
   useEffect(() => {
     Object.entries(eventMap).forEach(([type, listener]) => api.on(type, listener));
     return () => {
       Object.entries(eventMap).forEach(([type, listener]) => api.off(type, listener));
     };
-  });
+  }, deps);
 
   return api.emit;
 };
