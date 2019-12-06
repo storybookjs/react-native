@@ -7,20 +7,14 @@ export default {
 };
 
 export const variant1 = () => {
-  const [state, setState] = useAddonState<string>('test');
+  const [state, setState] = useAddonState<number>('test');
 
   return (
     <div>
-      Click to change from preview:
+      Preview counter: {state}
       <br />
-      <br />
-      <Button
-        onClick={() => {
-          setState(state === 'baz' ? 'fooo' : 'baz');
-        }}
-      >
-        {state}
-      </Button>
+      <Button onClick={() => setState(state - 1)}>decrement</Button>
+      <Button onClick={() => setState(state + 1)}>increment</Button>
     </div>
   );
 };

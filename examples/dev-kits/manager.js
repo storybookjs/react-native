@@ -13,19 +13,13 @@ addons.setConfig({
 });
 
 const StatePanel = ({ active, key }) => {
-  const [state, setState] = useAddonState('test', 'foo');
+  const [state, setState] = useAddonState('test', 10);
   return (
     <AddonPanel key={key} active={active}>
-      Click to change from manager:
+      Manager counter: {state}
       <br />
-      <br />
-      <Button
-        onClick={() => {
-          setState(state === 'baz' ? 'fooo' : 'baz');
-        }}
-      >
-        {state}
-      </Button>
+      <Button onClick={() => setState(state - 1)}>decrement</Button>
+      <Button onClick={() => setState(state + 1)}>increment</Button>
     </AddonPanel>
   );
 };
