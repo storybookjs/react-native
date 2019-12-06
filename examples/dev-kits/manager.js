@@ -13,13 +13,23 @@ addons.setConfig({
 });
 
 const StatePanel = ({ active, key }) => {
-  const [state, setState] = useAddonState('test', 10);
+  const [managerState, setManagerState] = useAddonState('manager', 10);
+  const [previewState, setPreviewState] = useAddonState('client', 10);
   return (
     <AddonPanel key={key} active={active}>
-      Manager counter: {state}
+      <div>
+        Manager counter: {managerState}
+        <br />
+        <Button onClick={() => setManagerState(managerState - 1)}>decrement</Button>
+        <Button onClick={() => setManagerState(managerState + 1)}>increment</Button>
+      </div>
       <br />
-      <Button onClick={() => setState(state - 1)}>decrement</Button>
-      <Button onClick={() => setState(state + 1)}>increment</Button>
+      <div>
+        Preview counter: {previewState}
+        <br />
+        <Button onClick={() => setPreviewState(previewState - 1)}>decrement</Button>
+        <Button onClick={() => setPreviewState(previewState + 1)}>increment</Button>
+      </div>
     </AddonPanel>
   );
 };

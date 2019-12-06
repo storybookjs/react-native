@@ -6,12 +6,25 @@ export default {
   title: 'addons|useAddonState',
 };
 
-export const variant1 = () => {
-  const [state, setState] = useAddonState<number>('test');
+export const managerDefault = () => {
+  const [state, setState] = useAddonState<number>('manager');
 
   return (
     <div>
-      Preview counter: {state}
+      Manager counter: {state}
+      <br />
+      <Button onClick={() => setState(state - 1)}>decrement</Button>
+      <Button onClick={() => setState(state + 1)}>increment</Button>
+    </div>
+  );
+};
+
+export const previewDefault = () => {
+  const [state, setState] = useAddonState<number>('preview', 50);
+
+  return (
+    <div>
+      Manager counter: {state}
       <br />
       <Button onClick={() => setState(state - 1)}>decrement</Button>
       <Button onClick={() => setState(state + 1)}>increment</Button>
