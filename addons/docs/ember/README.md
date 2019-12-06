@@ -28,7 +28,17 @@ module.exports = ['@storybook/addon-docs/preset'];
 
 When you [install docs](#installation) you should get basic [DocsPage](../docs/docspage.md) documentation automagically for all your stories, available in the `Docs` tab of the Storybook UI.
 
-Props tables for your components requires a few more steps. Docs for Ember relies on [@storybook/ember-cli-storybook addon](https://github.com/storybookjs/ember-cli-storybook), to extract documentation comments from your component source files. If you're using Storybook with Ember, you should already have this addon installed and the documentation functionality is enabled by default. Running the ember-cli server will generate a JSON documentation file at `/storybook-docgen/index.json`. Since generation of this file is tied into the ember-cli build, it will get regenerated everytime component files are saved. For details on documenting your components, check out the examples in the addon that powers the generation [ember-cli-addon-docs-yuidoc](https://github.com/ember-learn/ember-cli-addon-docs-yuidoc#documenting-components).
+Props tables for your components requires a few more steps. Docs for Ember relies on [@storybook/ember-cli-storybook addon](https://github.com/storybookjs/ember-cli-storybook), to extract documentation comments from your component source files. If you're using Storybook with Ember, you should already have this addon installed, you will just need to enable it by adding the following config block in your `ember-cli-build.js` file:
+
+```js
+  let app = new EmberApp(defaults, {
+    'ember-cli-storybook': {
+      enableAddonDocsIntegration: true
+    }
+  });
+```
+
+Now, running the ember-cli server will generate a JSON documentation file at `/storybook-docgen/index.json`. Since generation of this file is tied into the ember-cli build, it will get regenerated everytime component files are saved. For details on documenting your components, check out the examples in the addon that powers the generation [ember-cli-addon-docs-yuidoc](https://github.com/ember-learn/ember-cli-addon-docs-yuidoc#documenting-components).
 
 Next, add the following to your `.storybook/config.js` to load the generated json file:
 
