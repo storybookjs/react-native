@@ -17,3 +17,13 @@ export const emoji = () => (
     </span>
   </Button>
 );
+
+export function emojiFn() {
+  return (
+    <Button onClick={action("clicked")}>
+      <span role="img" aria-label="so cool">
+        😀 😎 👍 💯
+      </span>
+    </Button>
+  )
+};
