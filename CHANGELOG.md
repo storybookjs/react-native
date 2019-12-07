@@ -1,3 +1,13 @@
+## 5.3.0-beta.19 (December 7, 2019)
+
+### Features
+
+* Addon-essentials ([#9019](https://github.com/storybookjs/storybook/pull/9019))
+
+### Bug Fixes
+
+* Addon-docs: Fix prop table default value for web-components ([#9086](https://github.com/storybookjs/storybook/pull/9086))
+
 ## 5.3.0-beta.18 (December 6, 2019)
 
 ### Features
