@@ -6,12 +6,9 @@ import { applyCRAWebpackConfig, getReactScriptsPath, isReactScriptsInstalled } f
 type Preset = string | { name: string };
 
 // Disable the built-in preset if the new preset is detected.
-const checkForNewPreset = (configDir: string) => {
+const checkForNewPreset = (presetsList: Preset[]) => {
   try {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    const presets = require(path.resolve(configDir, 'presets.js'));
-
-    const hasNewPreset = presets.some((preset: Preset) => {
+    const hasNewPreset = presetsList.some((preset: Preset) => {
       const presetName = typeof preset === 'string' ? preset : preset.name;
       return presetName === '@storybook/preset-create-react-app';
     });
@@ -27,8 +24,11 @@ const checkForNewPreset = (configDir: string) => {
   }
 };
 
-export function webpackFinal(config: Configuration, { configDir }: { configDir: string }) {
-  if (checkForNewPreset(configDir)) {
+export function webpackFinal(
+  config: Configuration,
+  { presets, configDir }: { presets: Preset[]; configDir: string }
+) {
+  if (checkForNewPreset(presets)) {
     return config;
   }
   if (!isReactScriptsInstalled()) {
@@ -40,8 +40,8 @@ export function webpackFinal(config: Configuration, { configDir }: { configDir: 
   return applyCRAWebpackConfig(config, configDir);
 }
 
-export function managerWebpack(config: Configuration, { configDir }: { configDir: string }) {
-  if (!isReactScriptsInstalled() || checkForNewPreset(configDir)) {
+export function managerWebpack(config: Configuration, { presetsList }: { presetsList: Preset[] }) {
+  if (!isReactScriptsInstalled() || checkForNewPreset(presetsList)) {
     return config;
   }
 
@@ -53,8 +53,8 @@ export function managerWebpack(config: Configuration, { configDir }: { configDir
   };
 }
 
-export function babelDefault(config: Configuration, { configDir }: { configDir: string }) {
-  if (!isReactScriptsInstalled() || checkForNewPreset(configDir)) {
+export function babelDefault(config: Configuration, { presetsList }: { presetsList: Preset[] }) {
+  if (!isReactScriptsInstalled() || checkForNewPreset(presetsList)) {
     return config;
   }
 

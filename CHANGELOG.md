@@ -1,3 +1,23 @@
+## 5.3.0-beta.18 (December 6, 2019)
+
+### Features
+
+* CLI: Change generators to Triconfig ([#9075](https://github.com/storybookjs/storybook/pull/9075))
+* Addon-docs: Add Props for Ember ([#9067](https://github.com/storybookjs/storybook/pull/9067))
+* MDX: Handle quotes / template literals in title ([#9069](https://github.com/storybookjs/storybook/pull/9069))
+
+### Bug Fixes
+
+* Addon-docs: MDX Octicon anchors should not be tabbable ([#9063](https://github.com/storybookjs/storybook/pull/9063))
+
+### Dependency Upgrades
+
+* Addon-docs: Upgrade vue-docgen-loader ([#9082](https://github.com/storybookjs/storybook/pull/9082))
+
+## 5.3.0-beta.17 (December 6, 2019)
+
+NPM publish failed
+
 ## 5.3.0-beta.16 (December 5, 2019)
 
 ### Features
