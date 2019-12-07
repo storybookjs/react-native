@@ -4,7 +4,6 @@ import { logger } from '@storybook/node-logger';
 type PresetOptions = {
   actions?: any;
   backgrounds?: any;
-  docs?: any;
   knobs?: any;
   links?: any;
   viewport?: any;
@@ -27,7 +26,7 @@ const isInstalled = (addon: string) => {
 const makeAddon = (key: string) => `@storybook/addon-${key}`;
 
 export function presets(options: PresetOptions = {}) {
-  const presetAddons = ['docs', 'knobs']
+  const presetAddons = ['knobs']
     .filter(key => (options as any)[key] !== false)
     .map(key => makeAddon(key))
     .filter(addon => !isInstalled(addon))
