@@ -200,7 +200,7 @@ export const ViewportTool: FunctionComponent = memo(
             <Global
               styles={{
                 [`#${iframeId}`]: {
-                  margin: `${theme.layoutMargin}px auto`,
+                  margin: `auto`,
                   transition: 'width .3s, height .3s',
                   position: 'relative',
                   border: `1px solid black`,
