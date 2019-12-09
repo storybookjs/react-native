@@ -1,4 +1,3 @@
-// FIXME: we shouldn't import from dist but there are no types otherwise
 import { toId, sanitize, parseKind } from '@storybook/csf';
 import deprecate from 'util-deprecate';
 
