@@ -1,3 +1,18 @@
+## 5.3.0-beta.20 (December 9, 2019)
+
+### Features
+
+* Addon-essentials: Remove docs from essentials ([#9093](https://github.com/storybookjs/storybook/pull/9093))
+
+### Bug Fixes
+
+* Source-loader: Handle includeStories/excludeStories in CSF ([#9100](https://github.com/storybookjs/storybook/pull/9100))
+* Source-loader: Support function declaration story exports ([#9092](https://github.com/storybookjs/storybook/pull/9092))
+
+### Maintenance
+
+* CSF: Refactor router utils into CSF library ([#9099](https://github.com/storybookjs/storybook/pull/9099))
+
 ## 5.3.0-beta.19 (December 7, 2019)
 
 ### Features
