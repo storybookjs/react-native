@@ -3,7 +3,9 @@ import { action } from "@storybook/addon-actions";
 import { Button } from "@storybook/react/demo";
 
 export default {
-  title: "Button"
+  title: "Button",
+  excludeStories: ["text"],
+  includeStories: /emoji.*/
 };
 
 export const text = () => (
