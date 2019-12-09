@@ -1,5 +1,5 @@
 import React, { useContext, FunctionComponent } from 'react';
-import { parseKind } from '@storybook/router';
+import { parseKind } from '@storybook/csf';
 import { Title as PureTitle } from '@storybook/components';
 import { DocsContext } from './DocsContext';
 import { StringSlot } from './shared';

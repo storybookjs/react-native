@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "@storybook/csf": "0.0.1",
     "@types/reach__router": "^1.2.3",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
