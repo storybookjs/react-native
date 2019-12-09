@@ -1,4 +1,4 @@
-import { toId, storyNameFromExport } from './utils';
+import { toId, storyNameFromExport, isExportStory } from '.';
 
 describe('toId', () => {
   [
@@ -49,5 +49,43 @@ describe('storyNameFromExport', () => {
       someName1_2_3_4: 'Some Name 1 2 3 4',
     };
     Object.entries(testCases).forEach(([key, val]) => expect(storyNameFromExport(key)).toBe(val));
+  });
+});
+
+describe('isExportStory', () => {
+  it('should exclude __esModule', () => {
+    expect(isExportStory('__esModule', {})).toBeFalsy();
+  });
+
+  it('should include all stories when there are no filters', () => {
+    expect(isExportStory('a', {})).toBeTruthy();
+  });
+
+  it('should filter stories by arrays', () => {
+    expect(isExportStory('a', { includeStories: ['a'] })).toBeTruthy();
+    expect(isExportStory('a', { includeStories: [] })).toBeFalsy();
+    expect(isExportStory('a', { includeStories: ['b'] })).toBeFalsy();
+
+    expect(isExportStory('a', { excludeStories: ['a'] })).toBeFalsy();
+    expect(isExportStory('a', { excludeStories: [] })).toBeTruthy();
+    expect(isExportStory('a', { excludeStories: ['b'] })).toBeTruthy();
+
+    expect(isExportStory('a', { includeStories: ['a'], excludeStories: ['a'] })).toBeFalsy();
+    expect(isExportStory('a', { includeStories: [], excludeStories: [] })).toBeFalsy();
+    expect(isExportStory('a', { includeStories: ['a'], excludeStories: ['b'] })).toBeTruthy();
+  });
+
+  it('should filter stories by regex', () => {
+    expect(isExportStory('a', { includeStories: /a/ })).toBeTruthy();
+    expect(isExportStory('a', { includeStories: /.*/ })).toBeTruthy();
+    expect(isExportStory('a', { includeStories: /b/ })).toBeFalsy();
+
+    expect(isExportStory('a', { excludeStories: /a/ })).toBeFalsy();
+    expect(isExportStory('a', { excludeStories: /.*/ })).toBeFalsy();
+    expect(isExportStory('a', { excludeStories: /b/ })).toBeTruthy();
+
+    expect(isExportStory('a', { includeStories: /a/, excludeStories: ['a'] })).toBeFalsy();
+    expect(isExportStory('a', { includeStories: /.*/, excludeStories: /.*/ })).toBeFalsy();
+    expect(isExportStory('a', { includeStories: /a/, excludeStories: /b/ })).toBeTruthy();
   });
 });

@@ -1,18 +1,18 @@
 {
-  "name": "@storybook/router",
+  "name": "@storybook/csf",
   "version": "5.3.0-beta.19",
-  "description": "Core Storybook Router",
+  "description": "",
   "keywords": [
     "storybook"
   ],
-  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/router",
+  "homepage": "https://github.com/storybookjs/storybook/tree/master/lib/csf",
   "bugs": {
     "url": "https://github.com/storybookjs/storybook/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/storybookjs/storybook.git",
-    "directory": "lib/router"
+    "directory": "lib/csf"
   },
   "license": "MIT",
   "files": [
@@ -27,18 +27,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@reach/router": "^1.2.1",
-    "@storybook/csf": "5.3.0-beta.19",
-    "@types/reach__router": "^1.2.3",
-    "core-js": "^3.0.1",
-    "global": "^4.3.2",
-    "lodash": "^4.17.15",
-    "memoizerific": "^1.11.3",
-    "qs": "^6.6.0"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "lodash": "^4.17.15"
   },
   "publishConfig": {
     "access": "public"

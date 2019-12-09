@@ -1,5 +1,5 @@
 import { queryFromLocation } from '@storybook/router';
-import { toId } from '@storybook/router/dist/utils';
+import { toId } from '@storybook/csf';
 
 import { Module } from '../index';
 import { PanelPositions } from './layout';
