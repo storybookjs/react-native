@@ -7,8 +7,13 @@ import { styled } from '@storybook/theming';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { scrollToElement } from './utils';
 
-// Hacky utility for dealing with functions or values in MDX Story elements
-export const makeStoryFn = (val: any) => (typeof val === 'function' ? val : () => val);
+// Hacky utility for asserting identifiers in MDX Story elements
+export const assertIsFn = (val: any) => {
+  if (typeof val !== 'function') {
+    throw new Error(`Expected story function, got: ${val}`);
+  }
+  return val;
+};
 
 // Hacky utilty for adding mdxStoryToId to the default context
 export const AddContext: FC<DocsContextProps> = props => {

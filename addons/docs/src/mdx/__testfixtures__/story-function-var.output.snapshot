@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin story-function-var.mdx 1`] = `
 "/* @jsx mdx */
-import { makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
 
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 export const basicFn = () => <Button mdxType=\\"Button\\" />;
@@ -36,7 +36,7 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const basic = makeStoryFn(basicFn);
+export const basic = assertIsFn(basicFn);
 basic.story = {};
 basic.story.name = 'basic';
 basic.story.parameters = { mdxSource: 'basicFn' };

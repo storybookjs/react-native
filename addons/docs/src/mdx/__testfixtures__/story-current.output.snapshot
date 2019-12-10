@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin story-current.mdx 1`] = `
 "/* @jsx mdx */
-import { makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
 
 import { Story } from '@storybook/addon-docs/blocks';
 
