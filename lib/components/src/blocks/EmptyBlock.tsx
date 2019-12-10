@@ -11,7 +11,7 @@ const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
   fontSize: `${theme.typography.size.s2}px`,
   alignItems: 'center',
   justifyContent: 'center',
-  padding: '20px',
+  padding: 20,
   margin: '25px 0 40px',
 
   color:
