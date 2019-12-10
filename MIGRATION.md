@@ -2,7 +2,7 @@
 
 - [Migration](#migration)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
-    - [To tri-config](#to-triconfig)
+    - [To tri-config configuration](#to-triconfig-configuration)
     - [Create React App preset](#create-react-app-preset)
     - [Description doc block](#description-doc-block)
     - [React Native Async Storage](#react-native-async-storage)
@@ -78,7 +78,7 @@
 
 ## From version 5.2.x to 5.3.x
 
-### To tri-config
+### To tri-config configuration
 
 In storybook 5.3 3 new files for configuration were introduced, that replaced some previous files.
 
@@ -90,7 +90,7 @@ These files are now soft-deprecated, (*they still work, but over time we will pr
 
 #### Using main.js
 
-this is what a basic `main.js` looks like:
+Now main.js is now the main point of configuration for Storybook. This is what a basic `main.js` looks like:
 
 ```js
 module.exports = {
@@ -116,7 +116,7 @@ module.exports = {
 
 #### Using preview.js
 
-If after migrating the imports/requires of your stories to `main.js` you're left with some code in `config.js` it's likely the usage of `useParameters` & `addDecorator`.
+If after migrating the imports/requires of your stories to `main.js` you're left with some code in `config.js` it's likely the usage of `addParameters` & `addDecorator`.
 
 This is fine, rename `config.js` to `preview.js`.
 
@@ -141,6 +141,9 @@ addons.setConfig({
   theme,
 });
 ```
+
+This makes storybook load and use the theme in the manager directly. 
+This allows for richer theming in the future, and has a much better performance!
 
 ### Create React App preset
 
