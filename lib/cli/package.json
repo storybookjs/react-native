@@ -46,6 +46,7 @@
     "didyoumean": "^1.2.1",
     "envinfo": "^7.5.0",
     "esm": "3.2.25",
+    "find-up": "^4.1.0",
     "fs-extra": "^8.0.1",
     "inquirer": "^7.0.0",
     "jscodeshift": "^0.6.3",
