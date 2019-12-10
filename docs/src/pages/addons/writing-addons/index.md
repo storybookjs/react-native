@@ -62,7 +62,6 @@ We write an addon that responds to a change in story selection like so:
 // register.js
 
 import React from 'react';
-import { STORY_RENDERED } from '@storybook/core-events';
 import { addons, types } from '@storybook/addons';
 import { useParameter } from '@storybook/api';
 import { AddonPanel } from '@storybook/components';
