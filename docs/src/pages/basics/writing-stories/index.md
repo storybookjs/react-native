@@ -184,11 +184,11 @@ Here is an example of a global decorator which centers every story in the storyb
 
 ```jsx
 import React from 'react';
-import { load, addDecorator } from '@storybook/react';
+import { configure, addDecorator } from '@storybook/react';
 
 addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 
-load(require.context('../src/components', true, /\.stories\.js$/), module);
+configure(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
 > \* In Vue projects you have to use the special component `<story/>` instead of the function parameter `storyFn` that is used in React projects, even if you are using JSX, for example:
