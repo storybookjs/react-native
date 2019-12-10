@@ -56,8 +56,8 @@ jobs:
           name: Run chromatic on the pre-built cra-kitchen-sink example
           command: yarn chromatic --storybook-build-dir="built-storybooks/cra-kitchen-sink" --app-code="tg55gajmdt"
       - run:
-          name: Run chromatic on the pre-built cra-react-15 example
-          command: yarn chromatic --storybook-build-dir="built-storybooks/cra-react-15" --app-code="gxk7iqej3wt"
+          name: Run chromatic on the pre-built cra-react15 example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/cra-react15" --app-code="gxk7iqej3wt"
       - run:
           name: Run chromatic on the pre-built cra-ts-essentials example
           command: yarn chromatic --storybook-build-dir="built-storybooks/cra-ts-essentials" --app-code="b311ypk6of"
