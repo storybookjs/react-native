@@ -92,9 +92,6 @@ jobs:
           name: Run chromatic on the pre-built riot-kitchen-sink example
           command: yarn chromatic --storybook-build-dir="built-storybooks/riot-kitchen-sink" --app-code="g2dp3lnr34a"
       - run:
-          name: Run chromatic on the pre-built standalone-preview example
-          command: yarn chromatic --storybook-build-dir="built-storybooks/standalone-preview" --app-code="8v3rfttbmp"
-      - run:
           name: Run chromatic on the pre-built svelte-kitchen-sink example
           command: yarn chromatic --storybook-build-dir="built-storybooks/svelte-kitchen-sink" --app-code="8ob73wgl995"
       - run:
