@@ -90,7 +90,7 @@ These files are now soft-deprecated, (*they still work, but over time we will pr
 
 #### Using main.js
 
-Now main.js is now the main point of configuration for Storybook. This is what a basic `main.js` looks like:
+`main.js` is now the main point of configuration for Storybook. This is what a basic `main.js` looks like:
 
 ```js
 module.exports = {
