@@ -7,7 +7,7 @@
 ### Bug Fixes
 
 * Addon-docs: Update MDX compiler to fix knobs ([#9118](https://github.com/storybookjs/storybook/pull/9118))
-* fix: add web-components to cli init ([#9106](https://github.com/storybookjs/storybook/pull/9106))
+* CLI: Add web-components to sb init ([#9106](https://github.com/storybookjs/storybook/pull/9106))
 
 ### Maintenance
 
