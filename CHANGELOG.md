@@ -1,3 +1,18 @@
+## 5.3.0-beta.21 (December 11, 2019)
+
+### Features
+
+* CLI: Add Yarn workspaces support for init command ([#9104](https://github.com/storybookjs/storybook/pull/9104))
+
+### Bug Fixes
+
+* Addon-docs: Update MDX compiler to fix knobs ([#9118](https://github.com/storybookjs/storybook/pull/9118))
+* CLI: Add web-components to sb init ([#9106](https://github.com/storybookjs/storybook/pull/9106))
+
+### Maintenance
+
+* UI: Remove css usage ([#9003](https://github.com/storybookjs/storybook/pull/9003))
+
 ## 5.3.0-beta.20 (December 9, 2019)
 
 ### Features
