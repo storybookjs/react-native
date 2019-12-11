@@ -69,7 +69,7 @@ export const TweaksStaticValues = () => {
   const otherStyles = object('Styles', {
     border: '2px dashed silver',
     borderRadius: 10,
-    padding: '10px',
+    padding: 10,
   });
   const nice = boolean('Nice', true);
   const images = files('Happy Picture', 'image/*', [
@@ -173,7 +173,7 @@ export const TweaksStaticValuesOrganizedInGroups = () => {
     {
       border: '2px dashed silver',
       borderRadius: 10,
-      padding: '10px',
+      padding: 10,
     },
     GROUP_IDS.DISPLAY
   );

@@ -1,225 +1,6 @@
 import React, { FunctionComponent, forwardRef } from 'react';
-import { styled, css } from '@storybook/theming';
+import { styled } from '@storybook/theming';
 import { darken, lighten, rgba, transparentize } from 'polished';
-
-type ButtonWrapperProps = ButtonProps;
-
-const ButtonWrapper = styled.button<ButtonWrapperProps>`
-  border: 0;
-  border-radius: 3em;
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
-  padding: ${props => (props.small ? '10px 16px' : '13px 20px')};
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: all 150ms ease-out;
-  transform: translate3d(0,0,0);
-  vertical-align: top;
-  white-space: nowrap;
-  user-select: none;
-  opacity: 1;
-  margin: 0;
-  background: transparent;
-
-
-  font-size: ${props =>
-    props.small ? props.theme.typography.size.s1 : props.theme.typography.size.s2 - 1}px;
-  font-weight: ${props => props.theme.typography.weight.bold};
-  line-height: 1;
-
-
-  svg {
-    display: inline-block;
-    height: ${props => (props.small ? '14' : '16')}px;
-    width: ${props => (props.small ? '14' : '16')}px;
-    vertical-align: top;
-    margin-right: ${props => (props.small ? '4' : '6')}px;
-    margin-top: ${props => (props.small ? '-1' : '-2')}px;
-    margin-bottom: ${props => (props.small ? '-1' : '-2')}px;
-
-    /* Necessary for js mouse events to not glitch out when hovering on svgs */
-    pointer-events: none;
-
-    path { fill: currentColor; }
-  }
-
-  ${props =>
-    props.disabled &&
-    css`
-      cursor: not-allowed !important;
-      opacity: 0.5;
-      &:hover {
-        transform: none;
-      }
-    `}
-
-  ${props =>
-    props.containsIcon &&
-    css`
-      svg {
-        display: block;
-        margin: 0;
-      }
-
-      ${props.small &&
-        css`
-          padding: 9px;
-        `}
-
-      ${!props.small &&
-        css`
-          padding: 12px;
-        `}
-    `}
-
-  /* Colored button for primary CTAs */
-  ${props =>
-    props.primary &&
-    css`
-      background: ${props.theme.color.primary};
-      color: ${props.theme.color.lightest};
-
-      &:hover {
-        background: ${darken(0.05, props.theme.color.primary)};
-      }
-      &:active {
-        box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
-      }
-      &:focus {
-        box-shadow: ${rgba(props.theme.color.primary, 0.4)} 0 1px 9px 2px;
-      }
-      &:focus:hover {
-        box-shadow: ${rgba(props.theme.color.primary, 0.2)} 0 8px 18px 0px;
-      }
-    `}
-
-
-  /* Colored button for secondary CTAs */
-  ${props =>
-    props.secondary &&
-    css`
-      background: ${props.theme.color.secondary};
-      color: ${props.theme.color.lightest};
-
-      &:hover {
-        background: ${darken(0.05, props.theme.color.secondary)};
-      }
-      &:active {
-        box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
-      }
-      &:focus {
-        box-shadow: ${rgba(props.theme.color.secondary, 0.4)} 0 1px 9px 2px;
-      }
-      &:focus:hover {
-        box-shadow: ${rgba(props.theme.color.secondary, 0.2)} 0 8px 18px 0px;
-      }
-    `}
-
-  /* Button for tertiary CTAs and forms that responds to theme */
-  ${props =>
-    props.tertiary &&
-    css`
-      background: ${props.theme.base === 'light'
-        ? darken(0.02, props.theme.input.background)
-        : lighten(0.02, props.theme.input.background)};
-      color: ${props.theme.input.color};
-      box-shadow: ${props.theme.input.border} 0 0 0 1px inset;
-      border-radius: ${props.theme.input.borderRadius}px;
-
-      &:hover {
-        background: ${props.theme.base === 'light'
-          ? darken(0.05, props.theme.input.background)
-          : lighten(0.05, props.theme.input.background)};
-        ${props.inForm
-          ? ''
-          : 'box-shadow: rgba(0,0,0,.2) 0 2px 6px 0, rgba(0,0,0,.1) 0 0 0 1px inset'}
-      }
-      &:active {
-        background: ${props.theme.base === 'light'
-          ? props.theme.input.background
-          : props.theme.input.background};
-      }
-      &:focus {
-        box-shadow: ${rgba(props.theme.color.secondary, 0.4)} 0 0 0 1px inset;
-      }
-    `}
-
-  /* Button that's outlined */
-  ${props =>
-    props.outline &&
-    css`
-      box-shadow: ${transparentize(0.8, props.theme.color.defaultText)} 0 0 0 1px inset;
-      color: ${transparentize(0.3, props.theme.color.defaultText)};
-      background: transparent;
-
-      &:hover {
-        box-shadow: ${transparentize(0.5, props.theme.color.defaultText)} 0 0 0 1px inset;
-      }
-
-      &:active {
-        box-shadow: ${transparentize(0.5, props.theme.color.defaultText)} 0 0 0 2px inset;
-        color: ${transparentize(0, props.theme.color.defaultText)};
-      }
-
-      ${props.primary &&
-        css`
-          box-shadow: ${props.theme.color.primary} 0 0 0 1px inset;
-          color: ${props.theme.color.primary};
-
-          svg path {
-            fill: ${props.theme.color.primary};
-          }
-
-          &:hover {
-            box-shadow: ${props.theme.color.primary} 0 0 0 1px inset;
-            background: transparent;
-          }
-
-          &:active {
-            background: ${props.theme.color.primary};
-            box-shadow: ${props.theme.color.primary} 0 0 0 1px inset;
-            color: ${props.theme.color.lightest};
-          }
-          &:focus {
-            box-shadow: ${props.theme.color.primary} 0 0 0 1px inset,
-              ${rgba(props.theme.color.primary, 0.4)} 0 1px 9px 2px;
-          }
-          &:focus:hover {
-            box-shadow: ${props.theme.color.primary} 0 0 0 1px inset,
-              ${rgba(props.theme.color.primary, 0.2)} 0 8px 18px 0px;
-          }
-        `};
-
-      ${props.secondary &&
-        css`
-          box-shadow: ${props.theme.color.secondary} 0 0 0 1px inset;
-          color: ${props.theme.color.secondary};
-
-          &:hover {
-            box-shadow: ${props.theme.color.secondary} 0 0 0 1px inset;
-            background: transparent;
-          }
-
-          &:active {
-            background: ${props.theme.color.secondary};
-            box-shadow: ${props.theme.color.secondary} 0 0 0 1px inset;
-            color: ${props.theme.color.lightest};
-          }
-          &:focus {
-            box-shadow: ${props.theme.color.secondary} 0 0 0 1px inset,
-              ${rgba(props.theme.color.secondary, 0.4)} 0 1px 9px 2px;
-          }
-          &:focus:hover {
-            box-shadow: ${props.theme.color.secondary} 0 0 0 1px inset,
-              ${rgba(props.theme.color.secondary, 0.2)} 0 8px 18px 0px;
-          }
-        `};
-    `}
-`;
-
-const ButtonLink = ButtonWrapper.withComponent('a');
 
 export interface ButtonProps {
   isLink?: boolean;
@@ -232,6 +13,218 @@ export interface ButtonProps {
   outline?: boolean;
   containsIcon?: boolean;
 }
+
+type ButtonWrapperProps = ButtonProps;
+
+const ButtonWrapper = styled.button<ButtonWrapperProps>(
+  ({ small, theme }) => ({
+    border: 0,
+    borderRadius: '3em',
+    cursor: 'pointer',
+    display: 'inline-block',
+    overflow: 'hidden',
+    padding: small ? '10px 16px' : '13px 20px',
+    position: 'relative',
+    textAlign: 'center',
+    textDecoration: 'none',
+    transition: 'all 150ms ease-out',
+    transform: 'translate3d(0,0,0)',
+    verticalAlign: 'top',
+    whiteSpace: 'nowrap',
+    userSelect: 'none',
+    opacity: 1,
+    margin: 0,
+    background: 'transparent',
+
+    fontSize: `${small ? theme.typography.size.s1 : theme.typography.size.s2 - 1}px`,
+    fontWeight: theme.typography.weight.bold,
+    lineHeight: '1',
+
+    svg: {
+      display: 'inline-block',
+      height: small ? 14 : 16,
+      width: small ? 14 : 16,
+
+      verticalAlign: 'top',
+      marginRight: small ? 4 : 6,
+      marginTop: small ? -1 : -2,
+      marginBottom: small ? -1 : -2,
+
+      /* Necessary for js mouse events to not glitch out when hovering on svgs */
+      pointerEvents: 'none',
+
+      path: {
+        fill: 'currentColor }',
+      },
+    },
+  }),
+  ({ disabled }) =>
+    disabled
+      ? {
+          cursor: 'not-allowed !important',
+          opacity: 0.5,
+          '&:hover': {
+            transform: 'none',
+          },
+        }
+      : {},
+  ({ containsIcon, small }) =>
+    containsIcon
+      ? {
+          svg: {
+            display: 'block',
+            margin: 0,
+          },
+          ...(small ? { padding: 9 } : { padding: 12 }),
+        }
+      : {},
+  ({ theme, primary, secondary }) => {
+    let color;
+
+    if (primary) {
+      color = theme.color.primary;
+    }
+    if (secondary) {
+      color = theme.color.secondary;
+    }
+
+    return color
+      ? {
+          background: color,
+          color: theme.color.lightest,
+
+          '&:hover': {
+            background: darken(0.05, color),
+          },
+          '&:active': {
+            boxShadow: 'rgba(0, 0, 0, 0.1) 0 0 0 3em inset',
+          },
+          '&:focus': {
+            boxShadow: `${rgba(color, 0.4)} 0 1px 9px 2px`,
+          },
+          '&:focus:hover': {
+            boxShadow: `${rgba(color, 0.2)} 0 8px 18px 0px`,
+          },
+        }
+      : {};
+  },
+  ({ theme, tertiary, inForm }) =>
+    tertiary
+      ? {
+          background:
+            theme.base === 'light'
+              ? darken(0.02, theme.input.background)
+              : lighten(0.02, theme.input.background),
+          color: theme.input.color,
+          boxShadow: `${theme.input.border} 0 0 0 1px inset`,
+          borderRadius: theme.input.borderRadius,
+
+          '&:hover': {
+            background:
+              theme.base === 'light'
+                ? darken(0.05, theme.input.background)
+                : lighten(0.05, theme.input.background),
+            ...(inForm
+              ? {}
+              : {
+                  boxShadow: 'rgba(0,0,0,.2) 0 2px 6px 0, rgba(0,0,0,.1) 0 0 0 1px inset',
+                }),
+          },
+          '&:active': {
+            background: theme.input.background,
+          },
+          '&:focus': {
+            boxShadow: `${rgba(theme.color.secondary, 0.4)} 0 0 0 1px inset`,
+          },
+        }
+      : {},
+  ({ theme, outline }) =>
+    outline
+      ? {
+          boxShadow: `${transparentize(0.8, theme.color.defaultText)} 0 0 0 1px inset`,
+          color: transparentize(0.3, theme.color.defaultText),
+          background: 'transparent',
+
+          '&:hover': {
+            boxShadow: `${transparentize(0.5, theme.color.defaultText)} 0 0 0 1px inset`,
+          },
+
+          '&:active': {
+            boxShadow: `${transparentize(0.5, theme.color.defaultText)} 0 0 0 2px inset`,
+            color: transparentize(0, theme.color.defaultText),
+          },
+        }
+      : {},
+  ({ theme, outline, primary }) => {
+    const color = theme.color.primary;
+
+    return outline && primary
+      ? {
+          boxShadow: `${color} 0 0 0 1px inset`,
+          color,
+
+          'svg path': {
+            fill: color,
+          },
+
+          '&:hover': {
+            boxShadow: `${color} 0 0 0 1px inset`,
+            background: 'transparent',
+          },
+
+          '&:active': {
+            background: color,
+            boxShadow: `${color} 0 0 0 1px inset`,
+            color: theme.color.lightest,
+          },
+          '&:focus': {
+            boxShadow: `${color} 0 0 0 1px inset, ${rgba(color, 0.4)} 0 1px 9px 2px`,
+          },
+          '&:focus:hover': {
+            boxShadow: `${color} 0 0 0 1px inset, ${rgba(color, 0.2)} 0 8px 18px 0px`,
+          },
+        }
+      : {};
+  },
+  ({ theme, outline, primary, secondary }) => {
+    let color;
+    if (primary) {
+      color = theme.color.primary;
+    }
+    if (secondary) {
+      color = theme.color.secondary;
+    }
+    return outline && color
+      ? {
+          boxShadow: `${color} 0 0 0 1px inset`,
+          color,
+
+          'svg path': {
+            fill: color,
+          },
+
+          '&:hover': {
+            boxShadow: `${color} 0 0 0 1px inset`,
+            background: 'transparent',
+          },
+
+          '&:active': {
+            background: color,
+            boxShadow: `${color} 0 0 0 1px inset`,
+            color: theme.color.lightest,
+          },
+          '&:focus': {
+            boxShadow: `${color} 0 0 0 1px inset, ${rgba(color, 0.4)} 0 1px 9px 2px`,
+          },
+          '&:focus:hover': {
+            boxShadow: `${color} 0 0 0 1px inset, ${rgba(color, 0.2)} 0 8px 18px 0px`,
+          },
+        }
+      : {};
+  }
+);
+
+const ButtonLink = ButtonWrapper.withComponent('a');
 
 export const Button = Object.assign(
   forwardRef<any, ButtonProps>(({ isLink, children, ...props }, ref) => {

@@ -11,7 +11,7 @@ import { Event as EventType, OnEmitEvent } from '../index';
 const Wrapper = styled.div({
   width: '100%',
   boxSizing: 'border-box',
-  padding: '10px',
+  padding: 10,
   minHeight: '100%',
 });
 

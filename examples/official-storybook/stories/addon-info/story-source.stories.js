@@ -65,7 +65,7 @@ export const ObjectProp = () => (
       backgroundColor: 'powderblue',
       fontSize: '16px',
       boxShadow: '1px 1px rgba(0, 0, 0, .07)',
-      borderRadius: '5px',
+      borderRadius: 5,
       padding: '4px 8px',
     }}
   />
