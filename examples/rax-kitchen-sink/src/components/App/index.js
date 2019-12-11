@@ -3,7 +3,7 @@ import View from 'rax-view';
 import Text from 'rax-text';
 import styles from './index.stylesheet';
 
-const App = () => (
+export const App = () => (
   <View style={styles.app}>
     <View style={styles.appHeader}>
       <Text style={styles.appBanner}>Welcome to Rax</Text>
@@ -13,5 +13,3 @@ const App = () => (
     </Text>
   </View>
 );
-
-export default App;

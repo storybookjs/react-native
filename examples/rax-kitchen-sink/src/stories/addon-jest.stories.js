@@ -1,7 +1,7 @@
 import { createElement } from 'rax';
 import { withTests } from '@storybook/addon-jest';
-import App from '../components/App';
-import Welcome from '../components/Welcome';
+import { App } from '../components/App';
+import { Welcome } from '../components/Welcome';
 // eslint-disable-next-line
 import results from '../../jest-test-results.json';
 
