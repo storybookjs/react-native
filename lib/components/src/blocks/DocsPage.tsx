@@ -37,10 +37,7 @@ export const Subtitle = styled.h2<{}>(withReset, ({ theme }: { theme: Theme }) =
     marginBottom: '24px',
   },
 
-  color:
-    theme.base === 'light'
-      ? transparentize(0.25, theme.color.defaultText)
-      : transparentize(0.25, theme.color.defaultText),
+  color: transparentize(0.25, theme.color.defaultText),
 }));
 
 export const DocsContent = styled.div({

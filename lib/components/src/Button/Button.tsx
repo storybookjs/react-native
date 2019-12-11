@@ -137,9 +137,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
           : 'box-shadow: rgba(0,0,0,.2) 0 2px 6px 0, rgba(0,0,0,.1) 0 0 0 1px inset'}
       }
       &:active {
-        background: ${props.theme.base === 'light'
-          ? props.theme.input.background
-          : props.theme.input.background};
+        background: ${props.theme.input.background};
       }
       &:focus {
         box-shadow: ${rgba(props.theme.color.secondary, 0.4)} 0 0 0 1px inset;
