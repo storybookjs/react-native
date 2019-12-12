@@ -1,6 +1,6 @@
 {
   "name": "@storybook/source-loader",
-  "version": "5.3.0-beta.21",
+  "version": "5.3.0-beta.22",
   "description": "Source loader",
   "keywords": [
     "lib",
@@ -28,8 +28,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.0-beta.21",
-    "@storybook/client-logger": "5.3.0-beta.21",
+    "@storybook/addons": "5.3.0-beta.22",
+    "@storybook/client-logger": "5.3.0-beta.22",
     "@storybook/csf": "0.0.1",
     "core-js": "^3.0.1",
     "estraverse": "^4.2.0",
