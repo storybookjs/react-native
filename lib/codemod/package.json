@@ -27,7 +27,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@hypnosphi/jscodeshift": "^0.6.4",
     "@mdx-js/mdx": "^1.5.1",
     "@storybook/csf": "0.0.1",
     "@storybook/node-logger": "5.3.0-beta.21",
@@ -35,6 +34,7 @@
     "cross-spawn": "^7.0.0",
     "globby": "^10.0.1",
     "jest-specific-snapshot": "^2.0.0",
+    "jscodeshift": "^0.7.0",
     "lodash": "^4.17.15",
     "prettier": "^1.16.4",
     "recast": "^0.16.1",
