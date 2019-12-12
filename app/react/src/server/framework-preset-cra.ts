@@ -26,9 +26,9 @@ const checkForNewPreset = (presetsList: Preset[]) => {
 
 export function webpackFinal(
   config: Configuration,
-  { presets, configDir }: { presets: Preset[]; configDir: string }
+  { presetsList, configDir }: { presetsList: Preset[]; configDir: string }
 ) {
-  if (checkForNewPreset(presets)) {
+  if (checkForNewPreset(presetsList)) {
     return config;
   }
   if (!isReactScriptsInstalled()) {
