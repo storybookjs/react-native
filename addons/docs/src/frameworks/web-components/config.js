@@ -11,7 +11,7 @@ function mapData(data) {
     type: { summary: item.type },
     required: '',
     description: item.description,
-    defaultValue: { summary: item.defaultValue }
+    defaultValue: { summary: item.defaultValue },
   }));
 }
 
