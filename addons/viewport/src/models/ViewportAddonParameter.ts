@@ -3,7 +3,7 @@ import { ViewportMap } from './Viewport';
 export interface ViewportAddonParameter {
   disable?: boolean;
   defaultViewport?: string;
-  viewports: ViewportMap;
+  viewports?: ViewportMap;
   /*
    * @deprecated
    * The viewport parameter `onViewportChange` is no longer supported

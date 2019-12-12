@@ -124,13 +124,11 @@ const getStyles = (
 
 export const ViewportTool: FunctionComponent = memo(
   withTheme(({ theme }: { theme: Theme }) => {
-    const { viewports, defaultViewport, disable } = useParameter<ViewportAddonParameter>(
-      PARAM_KEY,
-      {
-        viewports: MINIMAL_VIEWPORTS,
-        defaultViewport: responsiveViewport.id,
-      }
-    );
+    const {
+      viewports = MINIMAL_VIEWPORTS,
+      defaultViewport = responsiveViewport.id,
+      disable,
+    } = useParameter<ViewportAddonParameter>(PARAM_KEY, {});
     const [state, setState] = useAddonState<ViewportToolState>(ADDON_ID, {
       selected: defaultViewport || responsiveViewport.id,
       isRotated: false,
