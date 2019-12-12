@@ -1,6 +1,7 @@
 import { ADDON_STATE_CHANGED, ADDON_STATE_SET } from '@storybook/core-events';
 
 import {
+  addons,
   HooksContext,
   applyHooks,
   useMemo,
@@ -28,18 +29,16 @@ export {
   useParameter,
 };
 
-// We keep this store, because when stories are edited by the user, and HMR, state is lost.
-// This allows us to restore instantly.
-const addonStateCache: Record<string, any> = {};
-
 export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) => void] {
-  const [state, setState] = useState<S>(
-    addonStateCache[addonId] ? addonStateCache[addonId] : defaultState
-  );
-  // only initialize after the first loading
-  if (addonStateCache[addonId]) {
-    addonStateCache[addonId] = state;
-  }
+  const channel = addons.getChannel();
+
+  const [lastValue] =
+    channel.last(`${ADDON_STATE_CHANGED}-manager-${addonId}`) ||
+    channel.last(`${ADDON_STATE_SET}-manager-${addonId}`) ||
+    [];
+
+  const [state, setState] = useState<S>(lastValue || defaultState);
+
   const allListeners = useMemo(
     () => ({
       [`${ADDON_STATE_CHANGED}-manager-${addonId}`]: (s: S) => setState(s),
@@ -52,11 +51,10 @@ export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) 
 
   useEffect(() => {
     // init
-    if (defaultState !== undefined && !addonStateCache[addonId]) {
-      addonStateCache[addonId] = defaultState;
+    if (defaultState !== undefined && !lastValue) {
       emit(`${ADDON_STATE_SET}-client-${addonId}`, defaultState);
     }
-  }, []);
+  }, [addonId]);
 
   return [
     state,
