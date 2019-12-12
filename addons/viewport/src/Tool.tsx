@@ -135,6 +135,12 @@ export const ViewportTool: FunctionComponent = memo(
     });
     const list = toList(viewports);
 
+    if (!list.find(i => i.id === defaultViewport)) {
+      console.warn(
+        `Cannot find "defaultViewport" of "${defaultViewport}" in addon-viewport configs, please check the "viewports" setting in the configuration.`
+      );
+    }
+
     useEffect(() => {
       setState({
         selected:
