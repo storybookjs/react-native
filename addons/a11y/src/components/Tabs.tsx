@@ -18,8 +18,8 @@ const Container = styled.div({
 const HighlightToggleLabel = styled.label<{}>(({ theme }) => ({
   cursor: 'pointer',
   userSelect: 'none',
-  marginBottom: '3px',
-  marginRight: '3px',
+  marginBottom: 3,
+  marginRight: 3,
   color: theme.color.dark,
 }));
 
@@ -31,7 +31,7 @@ const GlobalToggle = styled.div(({ elementWidth }: { elementWidth: number }) => 
     padding: elementWidth > maxWidthBeforeBreak ? '12px 15px 10px 0' : '12px 0px 3px 12px',
     height: '40px',
     border: 'none',
-    marginTop: elementWidth > maxWidthBeforeBreak ? '-40px' : '0px',
+    marginTop: elementWidth > maxWidthBeforeBreak ? -40 : 0,
     float: elementWidth > maxWidthBeforeBreak ? 'right' : 'left',
     display: elementWidth > maxWidthBeforeBreak ? 'flex' : 'block',
     alignItems: 'center',
@@ -39,10 +39,10 @@ const GlobalToggle = styled.div(({ elementWidth }: { elementWidth: number }) => 
     borderBottom: elementWidth > maxWidthBeforeBreak ? 'none' : '1px solid rgba(0,0,0,.1)',
 
     input: {
-      marginLeft: '10',
-      marginRight: '0',
-      marginTop: '0',
-      marginBottom: '0',
+      marginLeft: 10,
+      marginRight: 0,
+      marginTop: 0,
+      marginBottom: 0,
     },
   };
 });

@@ -27,12 +27,12 @@ interface NumberTypeProps extends KnobControlProps<NumberTypeKnobValue | null> {
 const RangeInput = styled.input(
   {
     boxSizing: 'border-box',
-    height: '25px',
+    height: 25,
     outline: 'none',
     border: '1px solid #f7f4f4',
     borderRadius: 2,
     fontSize: 11,
-    padding: '5px',
+    padding: 5,
     color: '#444',
   },
   {

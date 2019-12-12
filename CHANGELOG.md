@@ -1,3 +1,43 @@
+## 5.3.0-beta.21 (December 11, 2019)
+
+### Features
+
+* CLI: Add Yarn workspaces support for init command ([#9104](https://github.com/storybookjs/storybook/pull/9104))
+
+### Bug Fixes
+
+* Addon-docs: Update MDX compiler to fix knobs ([#9118](https://github.com/storybookjs/storybook/pull/9118))
+* CLI: Add web-components to sb init ([#9106](https://github.com/storybookjs/storybook/pull/9106))
+
+### Maintenance
+
+* UI: Remove css usage ([#9003](https://github.com/storybookjs/storybook/pull/9003))
+
+## 5.3.0-beta.20 (December 9, 2019)
+
+### Features
+
+* Addon-essentials: Remove docs from essentials ([#9093](https://github.com/storybookjs/storybook/pull/9093))
+
+### Bug Fixes
+
+* Source-loader: Handle includeStories/excludeStories in CSF ([#9100](https://github.com/storybookjs/storybook/pull/9100))
+* Source-loader: Support function declaration story exports ([#9092](https://github.com/storybookjs/storybook/pull/9092))
+
+### Maintenance
+
+* CSF: Refactor router utils into CSF library ([#9099](https://github.com/storybookjs/storybook/pull/9099))
+
+## 5.3.0-beta.19 (December 7, 2019)
+
+### Features
+
+* Addon-essentials ([#9019](https://github.com/storybookjs/storybook/pull/9019))
+
+### Bug Fixes
+
+* Addon-docs: Fix prop table default value for web-components ([#9086](https://github.com/storybookjs/storybook/pull/9086))
+
 ## 5.3.0-beta.18 (December 6, 2019)
 
 ### Features

@@ -1,0 +1,44 @@
+{
+  "name": "cra-ts-essentials",
+  "version": "5.3.0-beta.21",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "build-storybook": "build-storybook -s public",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 9009 -s public",
+    "test": "react-scripts test"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@types/jest": "24.0.22",
+    "@types/node": "12.12.6",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.4",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0",
+    "typescript": "3.7.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "5.3.0-beta.21",
+    "@storybook/addons": "5.3.0-beta.21",
+    "@storybook/preset-create-react-app": "^1.2.0",
+    "@storybook/react": "5.3.0-beta.21"
+  }
+}

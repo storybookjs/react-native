@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin previews.mdx 1`] = `
 "/* @jsx mdx */
-import { makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
 
 import { Button } from '@storybook/react/demo';
 import { Preview, Story, Meta } from '@storybook/addon-docs/blocks';
