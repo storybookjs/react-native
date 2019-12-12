@@ -1,3 +1,63 @@
+## 5.3.0-beta.21 (December 11, 2019)
+
+### Features
+
+* CLI: Add Yarn workspaces support for init command ([#9104](https://github.com/storybookjs/storybook/pull/9104))
+
+### Bug Fixes
+
+* Addon-docs: Update MDX compiler to fix knobs ([#9118](https://github.com/storybookjs/storybook/pull/9118))
+* CLI: Add web-components to sb init ([#9106](https://github.com/storybookjs/storybook/pull/9106))
+
+### Maintenance
+
+* UI: Remove css usage ([#9003](https://github.com/storybookjs/storybook/pull/9003))
+
+## 5.3.0-beta.20 (December 9, 2019)
+
+### Features
+
+* Addon-essentials: Remove docs from essentials ([#9093](https://github.com/storybookjs/storybook/pull/9093))
+
+### Bug Fixes
+
+* Source-loader: Handle includeStories/excludeStories in CSF ([#9100](https://github.com/storybookjs/storybook/pull/9100))
+* Source-loader: Support function declaration story exports ([#9092](https://github.com/storybookjs/storybook/pull/9092))
+
+### Maintenance
+
+* CSF: Refactor router utils into CSF library ([#9099](https://github.com/storybookjs/storybook/pull/9099))
+
+## 5.3.0-beta.19 (December 7, 2019)
+
+### Features
+
+* Addon-essentials ([#9019](https://github.com/storybookjs/storybook/pull/9019))
+
+### Bug Fixes
+
+* Addon-docs: Fix prop table default value for web-components ([#9086](https://github.com/storybookjs/storybook/pull/9086))
+
+## 5.3.0-beta.18 (December 6, 2019)
+
+### Features
+
+* CLI: Change generators to Triconfig ([#9075](https://github.com/storybookjs/storybook/pull/9075))
+* Addon-docs: Add Props for Ember ([#9067](https://github.com/storybookjs/storybook/pull/9067))
+* MDX: Handle quotes / template literals in title ([#9069](https://github.com/storybookjs/storybook/pull/9069))
+
+### Bug Fixes
+
+* Addon-docs: MDX Octicon anchors should not be tabbable ([#9063](https://github.com/storybookjs/storybook/pull/9063))
+
+### Dependency Upgrades
+
+* Addon-docs: Upgrade vue-docgen-loader ([#9082](https://github.com/storybookjs/storybook/pull/9082))
+
+## 5.3.0-beta.17 (December 6, 2019)
+
+NPM publish failed
+
 ## 5.3.0-beta.16 (December 5, 2019)
 
 ### Features

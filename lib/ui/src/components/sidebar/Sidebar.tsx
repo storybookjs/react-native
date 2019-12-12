@@ -28,7 +28,7 @@ const Container = styled.nav({
 
 const CustomScrollArea = styled(ScrollArea)({
   '.simplebar-track.simplebar-vertical': {
-    right: '4px',
+    right: 4,
   },
 });
 

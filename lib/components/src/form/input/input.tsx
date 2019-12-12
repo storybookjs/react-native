@@ -8,7 +8,7 @@ import { Button as StyledButton } from '../../Button/Button';
 const styleResets: CSSObject = {
   // resets
   appearance: 'none',
-  border: '0',
+  border: '0 none',
   boxSizing: 'inherit',
   display: ' block',
   margin: ' 0',

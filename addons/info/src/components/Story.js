@@ -18,7 +18,7 @@ const stylesheetBase = {
   button: {
     base: {
       fontFamily: 'sans-serif',
-      fontSize: '12px',
+      fontSize: 12,
       display: 'block',
       position: 'fixed',
       border: 'none',

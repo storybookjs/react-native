@@ -1,5 +1,5 @@
 import createChannel from '@storybook/channel-postmessage';
-import { toId } from '@storybook/router/utils';
+import { toId } from '@storybook/csf';
 import addons from '@storybook/addons';
 
 import StoryStore from './story_store';

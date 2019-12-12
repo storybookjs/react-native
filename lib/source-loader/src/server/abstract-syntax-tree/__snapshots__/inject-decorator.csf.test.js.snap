@@ -5,13 +5,15 @@ exports[`inject-decorator positive - ts - csf includes storySource parameter in 
 import { action } from \\"@storybook/addon-actions\\";
 import { Button } from \\"@storybook/react/demo\\";
 
-export default {parameters: {\\"storySource\\":{\\"source\\":\\"import React from \\\\\\"react\\\\\\";\\\\nimport { action } from \\\\\\"@storybook/addon-actions\\\\\\";\\\\nimport { Button } from \\\\\\"@storybook/react/demo\\\\\\";\\\\n\\\\nexport default {\\\\n  title: \\\\\\"Button\\\\\\"\\\\n};\\\\n\\\\nexport const text = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>Hello Button</Button>\\\\n);\\\\n\\\\nexport const emoji = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>\\\\n    <span role=\\\\\\"img\\\\\\" aria-label=\\\\\\"so cool\\\\\\">\\\\n      😀 😎 👍 💯\\\\n    </span>\\\\n  </Button>\\\\n);\\\\n\\",\\"locationsMap\\":{\\"button--text\\":{\\"startLoc\\":{\\"col\\":20,\\"line\\":9},\\"endLoc\\":{\\"col\\":1,\\"line\\":11},\\"startBody\\":{\\"col\\":20,\\"line\\":9},\\"endBody\\":{\\"col\\":1,\\"line\\":11}},\\"button--emoji\\":{\\"startLoc\\":{\\"col\\":21,\\"line\\":13},\\"endLoc\\":{\\"col\\":1,\\"line\\":19},\\"startBody\\":{\\"col\\":21,\\"line\\":13},\\"endBody\\":{\\"col\\":1,\\"line\\":19}}}},},
-  title: \\"Button\\"
+export default {parameters: {\\"storySource\\":{\\"source\\":\\"import React from \\\\\\"react\\\\\\";\\\\nimport { action } from \\\\\\"@storybook/addon-actions\\\\\\";\\\\nimport { Button } from \\\\\\"@storybook/react/demo\\\\\\";\\\\n\\\\nexport default {\\\\n  title: \\\\\\"Button\\\\\\",\\\\n  excludeStories: [\\\\\\"text\\\\\\"],\\\\n  includeStories: /emoji.*/\\\\n};\\\\n\\\\nexport const text = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>Hello Button</Button>\\\\n);\\\\n\\\\nexport const emoji = () => (\\\\n  <Button onClick={action(\\\\\\"clicked\\\\\\")}>\\\\n    <span role=\\\\\\"img\\\\\\" aria-label=\\\\\\"so cool\\\\\\">\\\\n      😀 😎 👍 💯\\\\n    </span>\\\\n  </Button>\\\\n);\\\\n\\\\nexport function emojiFn() {\\\\n  return (\\\\n    <Button onClick={action(\\\\\\"clicked\\\\\\")}>\\\\n      <span role=\\\\\\"img\\\\\\" aria-label=\\\\\\"so cool\\\\\\">\\\\n        😀 😎 👍 💯\\\\n      </span>\\\\n    </Button>\\\\n  )\\\\n};\\\\n\\",\\"locationsMap\\":{\\"button--text\\":{\\"startLoc\\":{\\"col\\":20,\\"line\\":11},\\"endLoc\\":{\\"col\\":1,\\"line\\":13},\\"startBody\\":{\\"col\\":20,\\"line\\":11},\\"endBody\\":{\\"col\\":1,\\"line\\":13}},\\"button--emoji\\":{\\"startLoc\\":{\\"col\\":21,\\"line\\":15},\\"endLoc\\":{\\"col\\":1,\\"line\\":21},\\"startBody\\":{\\"col\\":21,\\"line\\":15},\\"endBody\\":{\\"col\\":1,\\"line\\":21}},\\"button--emoji-fn\\":{\\"startLoc\\":{\\"col\\":7,\\"line\\":23},\\"endLoc\\":{\\"col\\":1,\\"line\\":31},\\"startBody\\":{\\"col\\":7,\\"line\\":23},\\"endBody\\":{\\"col\\":1,\\"line\\":31}}}},},
+  title: \\"Button\\",
+  excludeStories: [\\"text\\"],
+  includeStories: /emoji.*/
 };
 
-export const text = addSourceDecorator(() => (
+export const text = () => (
   <Button onClick={action(\\"clicked\\")}>Hello Button</Button>
-), {__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__});;
+);
 
 export const emoji = addSourceDecorator(() => (
   <Button onClick={action(\\"clicked\\")}>
@@ -19,6 +21,16 @@ export const emoji = addSourceDecorator(() => (
       😀 😎 👍 💯
     </span>
   </Button>
-), {__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__});
+), {__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__});;
+
+export const emojiFn = addSourceDecorator(function emojiFn() {
+  return (
+    <Button onClick={action(\\"clicked\\")}>
+      <span role=\\"img\\" aria-label=\\"so cool\\">
+        😀 😎 👍 💯
+      </span>
+    </Button>
+  )
+}, {__STORY__, __ADDS_MAP__,__MAIN_FILE_LOCATION__,__MODULE_DEPENDENCIES__,__LOCAL_DEPENDENCIES__,__SOURCE_PREFIX__,__IDS_TO_FRAMEWORKS__});
 "
 `;

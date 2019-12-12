@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'welcome-banner',
+  component: 'WelcomeBanner',
 };
 
 export const Basic = () => ({

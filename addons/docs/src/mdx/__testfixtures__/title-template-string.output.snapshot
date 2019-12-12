@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin title-template-string.mdx 1`] = `
 "/* @jsx mdx */
-import { makeStoryFn, AddContext } from '@storybook/addon-docs/blocks';
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
 
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import { titleFunction } from '../title-generators';
