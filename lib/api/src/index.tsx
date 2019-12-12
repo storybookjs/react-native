@@ -8,7 +8,6 @@ import {
   STORY_CHANGED,
   SET_STORIES,
   SELECT_STORY,
-  FORCE_RE_RENDER,
   ADDON_STATE_CHANGED,
   ADDON_STATE_SET,
 } from '@storybook/core-events';
