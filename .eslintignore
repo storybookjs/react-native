@@ -18,6 +18,7 @@ examples/cra-ts-kitchen-sink/*.json
 examples/cra-ts-kitchen-sink/public/*
 examples/cra-ts-essentials/*.json
 examples/cra-ts-essentials/public/*
+.yarn
 
 !.remarkrc.js
 !.babelrc.js
