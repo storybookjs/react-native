@@ -130,7 +130,7 @@ export const ViewportTool: FunctionComponent = memo(
       disable,
     } = useParameter<ViewportAddonParameter>(PARAM_KEY, {});
     const [state, setState] = useAddonState<ViewportToolState>(ADDON_ID, {
-      selected: defaultViewport || responsiveViewport.id,
+      selected: defaultViewport,
       isRotated: false,
     });
     const list = toList(viewports);
