@@ -124,18 +124,22 @@ const getStyles = (
 
 export const ViewportTool: FunctionComponent = memo(
   withTheme(({ theme }: { theme: Theme }) => {
-    const { viewports, defaultViewport, disable } = useParameter<ViewportAddonParameter>(
-      PARAM_KEY,
-      {
-        viewports: MINIMAL_VIEWPORTS,
-        defaultViewport: responsiveViewport.id,
-      }
-    );
+    const {
+      viewports = MINIMAL_VIEWPORTS,
+      defaultViewport = responsiveViewport.id,
+      disable,
+    } = useParameter<ViewportAddonParameter>(PARAM_KEY, {});
     const [state, setState] = useAddonState<ViewportToolState>(ADDON_ID, {
-      selected: defaultViewport || responsiveViewport.id,
+      selected: defaultViewport,
       isRotated: false,
     });
     const list = toList(viewports);
+
+    if (!list.find(i => i.id === defaultViewport)) {
+      console.warn(
+        `Cannot find "defaultViewport" of "${defaultViewport}" in addon-viewport configs, please check the "viewports" setting in the configuration.`
+      );
+    }
 
     useEffect(() => {
       setState({
