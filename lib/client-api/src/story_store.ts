@@ -145,20 +145,25 @@ export default class StoryStore extends EventEmitter {
       data === undefined ? this._selection : { storyId: data.storyId, viewMode: data.viewMode };
     this._error = error === undefined ? this._error : error;
 
+    let isStarted = false;
     try {
       if (this._channel) {
         this._channel.emit(Events.STORY_RENDER);
       }
+      isStarted = true;
     } catch (e) {
-      setTimeout(() => {
-        if (this._channel) {
-          this._channel.emit(Events.STORY_RENDER);
-        } else {
-          // should be deprecated in future.
-          this.emit(Events.STORY_RENDER);
-        }
-      }, 1);
+      //
     }
+
+    setTimeout(() => {
+      // preferred method to emit event.
+      if (this._channel && !isStarted) {
+        this._channel.emit(Events.STORY_RENDER);
+      }
+
+      // should be deprecated in future.
+      this.emit(Events.STORY_RENDER);
+    }, 1);
   }
 
   getSelection = (): Selection => this._selection;
