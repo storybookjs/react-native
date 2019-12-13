@@ -1,3 +1,18 @@
+## 5.3.0-beta.22 (December 12, 2019)
+
+### Bug Fixes
+
+* React: Fix CRA preset check ([#9142](https://github.com/storybookjs/storybook/pull/9142))
+
+### Maintenance
+
+* Build: Change CI to chromatic on all examples ([#9114](https://github.com/storybookjs/storybook/pull/9114))
+* Web-components: Clean up example `custom-elements.json` and expose `defaultValue` ([#9107](https://github.com/storybookjs/storybook/pull/9107))
+
+### Dependency Upgrades
+
+* Restore main jscodeshift package ([#9140](https://github.com/storybookjs/storybook/pull/9140))
+
 ## 5.3.0-beta.21 (December 11, 2019)
 
 ### Features

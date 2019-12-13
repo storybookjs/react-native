@@ -24,8 +24,8 @@ within `.storybook/main.js`:
 
 ```js
 module.exports = {
-  addons: ['@storybook/addon-viewport/register']
-}
+  addons: ['@storybook/addon-viewport/register'],
+};
 ```
 
 You should now be able to see the viewport addon icon in the the toolbar at the top of the screen.
@@ -157,11 +157,14 @@ addParameters({
 
 ### Add New Device
 
-This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is achieved by making use of the exported [`INITIAL_VIEWPORTS`](src/defaults.ts) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
+This will add both `Kindle Fire 2` and `Kindle Fire HD` to the list of devices. This is achieved by making use of the exported [`INITIAL_VIEWPORTS`](src/defaults.ts) or [`MINIMAL_VIEWPORTS`](src/defaults.ts) property, by merging it with the new viewports and pass the result as `viewports` to `configureViewport` function
 
 ```js
 import { addParameters } from '@storybook/react';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import {
+  INITIAL_VIEWPORTS,
+  // or MINIMAL_VIEWPORTS,
+} from '@storybook/addon-viewport';
 
 const customViewports = {
   kindleFire2: {
@@ -184,6 +187,7 @@ addParameters({
   viewport: {
     viewports: {
       ...INITIAL_VIEWPORTS,
+      // or ...MINIMAL_VIEWPORTS,
       ...customViewports,
     },
   },
