@@ -111,7 +111,7 @@ Then add the following to your `.storybook/main.js`:
 ```js
 module.exports = {
   presets: ['@storybook/addon-docs/preset'],
-  stories: ['../src/**/*/stories.(js|mdx)'],
+  stories: ['../src/**/*.stories.(js|mdx)'],
 };
 ```
 
