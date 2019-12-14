@@ -79,7 +79,7 @@ module.exports = {
 Finally, you can create MDX files like this:
 
 ```md
-import { Meta, Story, Props } from '@storybook/docs/blocks';
+import { Meta, Story, Props } from '@storybook/addon-docs/blocks';
 import { InfoButton } from './InfoButton.vue';
 
 <Meta title='InfoButton' component={InfoButton} />
