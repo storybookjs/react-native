@@ -40,7 +40,7 @@ Each `.add` call takes a story name, a story function that returns a renderable 
 
 [Decorators](../../basics/writing-stories/#decorators) and [parameters](../../basics/writing-stories/#parameters) can be specified globally, at the component level, or locally at the story level.
 
-Global decorators are parameters are specified in the Storybook config:
+Global decorators and parameters are specified in the Storybook config:
 
 ```js
 addDecorator(storyFn => <blink>{storyFn()}</blink>);
