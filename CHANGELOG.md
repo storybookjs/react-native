@@ -1,3 +1,13 @@
+## 5.3.0-beta.23 (December 14, 2019)
+
+### Features
+
+* Addon-docs: Render components as leaves in `--docs` mode ([#7700](https://github.com/storybookjs/storybook/pull/7700))
+
+### Bug Fixes
+
+* Addon-viewport: Allow viewports config to be optional ([#9137](https://github.com/storybookjs/storybook/pull/9137))
+
 ## 5.3.0-beta.22 (December 12, 2019)
 
 ### Bug Fixes
