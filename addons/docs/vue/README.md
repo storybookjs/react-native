@@ -22,10 +22,12 @@ First add the package. Make sure that the versions for your `@storybook/*` packa
 yarn add -D @storybook/addon-docs@next
 ```
 
-Then add the following to your `.storybook/presets.js` exports:
+Then add the following to your `.storybook/main.js` presets:
 
 ```js
-module.exports = ['@storybook/addon-docs/preset'];
+module.exports = {
+  presets: ['@storybook/addon-docs/preset'],
+};
 ```
 
 ## DocsPage

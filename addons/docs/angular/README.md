@@ -22,10 +22,12 @@ First add the package. Make sure that the versions for your `@storybook/*` packa
 yarn add -D @storybook/addon-docs@next
 ```
 
-Then add the following to your `.storybook/presets.js` exports:
+Then add the following to your `.storybook/main.js` exports:
 
 ```js
-module.exports = ['@storybook/addon-docs/preset'];
+module.exports = {
+  presets: ['@storybook/addon-docs/preset'],
+};
 ```
 
 ## DocsPage
@@ -55,7 +57,7 @@ Then you'll need to configure Compodoc to generate a `documentation.json` file. 
 
 Unfortunately, it's not currently possible to update this dynamically as you edit your components, but [there's an open issue](https://github.com/storybookjs/storybook/issues/8672) to support this with improvements to Compodoc.
 
-Next, add the following to your `.storybook/config.json` to load the Compodoc-generated file:
+Next, add the following to `.storybook/preview.ts` to load the Compodoc-generated file:
 
 ```js
 import { setCompodocJson } from '@storybook/addon-docs/angular';
@@ -95,10 +97,12 @@ Docs has peer dependencies on `react`, `react-is`, and `babel-loader`. If you wa
 yarn add -D react react-is babel-loader
 ```
 
-Then update your `.storybook/config.ts` to make sure you load MDX files:
+Then update your `.storybook/main.js` to make sure you load MDX files:
 
 ```ts
-configure(require.context('../src/stories', true, /\.stories\.(ts|mdx)$/), module);
+module.exports = {
+  stories: ['../src/stories/**/*.stories.(js|mdx)'],
+};
 ```
 
 Finally, you can create MDX files like this:
@@ -131,7 +135,7 @@ Also, to use the `Props` doc block, you need to set up Compodoc, [as described a
 
 Storybook Docs renders all Angular stories inside IFrames, with a default height of `60px`. You can update this default globally, or modify the IFrame height locally per story in `DocsPage` and `MDX`.
 
-To update the global default, modify `.storybook/config.ts`:
+To update the global default, modify `.storybook/preview.ts`:
 
 ```ts
 import { addParameters } from '@storybook/angular';
