@@ -6,7 +6,7 @@ const Main = {
   view: vnode => (
     <article
       style={{
-        padding: '15px',
+        padding: 15,
         lineHeight: 1.4,
         fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
         backgroundColor: '#ffffff',

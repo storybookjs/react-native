@@ -1,6 +1,5 @@
 import { DOCS_MODE } from 'global';
-// FIXME: we shouldn't import from dist but there are no types otherwise
-import { toId, sanitize, parseKind } from '@storybook/router';
+import { toId, sanitize, parseKind } from '@storybook/csf';
 import deprecate from 'util-deprecate';
 
 import { Module } from '../index';
@@ -370,7 +369,19 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       const kind = storyId.split('--', 2)[0];
       selectStory(toId(kind, story));
     } else {
-      selectStory(toId(kindOrId, story));
+      const id = toId(kindOrId, story);
+      if (storiesHash[id]) {
+        selectStory(id);
+      } else {
+        // Support legacy API with component permalinks, where kind is `x/y` but permalink is 'z'
+        const k = storiesHash[sanitize(kindOrId)];
+        if (k && k.children) {
+          const foundId = k.children.find(childId => storiesHash[childId].name === story);
+          if (foundId) {
+            selectStory(foundId);
+          }
+        }
+      }
     }
   };
 

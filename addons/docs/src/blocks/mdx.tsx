@@ -7,8 +7,13 @@ import { styled } from '@storybook/theming';
 import { DocsContext, DocsContextProps } from './DocsContext';
 import { scrollToElement } from './utils';
 
-// Hacky utility for dealing with functions or values in MDX Story elements
-export const makeStoryFn = (val: any) => (typeof val === 'function' ? val : () => val);
+// Hacky utility for asserting identifiers in MDX Story elements
+export const assertIsFn = (val: any) => {
+  if (typeof val !== 'function') {
+    throw new Error(`Expected story function, got: ${val}`);
+  }
+  return val;
+};
 
 // Hacky utilty for adding mdxStoryToId to the default context
 export const AddContext: FC<DocsContextProps> = props => {
@@ -150,6 +155,7 @@ const HeaderWithOcticonAnchor: FC<HeaderWithOcticonAnchorProps> = ({
       <OcticonAnchor
         aria-hidden="true"
         href={generateHrefWithHash(id)}
+        tabIndex={-1}
         onClick={() => {
           const element = document.getElementById(id);
           if (!isNil(element)) {
@@ -174,7 +180,7 @@ interface HeaderMdxProps {
   id: string;
 }
 
-const HeaderMdx: FC<HeaderMdxProps> = props => {
+export const HeaderMdx: FC<HeaderMdxProps> = props => {
   const { as, id, children, ...rest } = props;
 
   // An id should have been added on every header by the "remark-slug" plugin.

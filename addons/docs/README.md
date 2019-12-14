@@ -111,7 +111,7 @@ Then add the following to your `.storybook/main.js`:
 ```js
 module.exports = {
   presets: ['@storybook/addon-docs/preset'],
-  stories: ['../src/**/*/stories.(js|mdx)'],
+  stories: ['../src/**/*.stories.(js|mdx)'],
 };
 ```
 
@@ -131,8 +131,10 @@ Add the following to your Jest configuration:
 
 ### Be sure to check framework specific installation needs
 
-- [Angular](./angular)
+- [React](./react) (covered here)
 - [Vue](./vue)
+- [Angular](./angular)
+- [Ember](./ember)
 - [Web Components](./web-components)
 
 ## Preset options
@@ -164,10 +166,9 @@ If you don't want to use the preset, and prefer to configure "the long way", fir
 
 ```js
 module.exports = {
-  addons: ['@storybook/addon-docs/register']
+  addons: ['@storybook/addon-docs/register'],
 };
 ```
-
 
 Then configure Storybook's webpack loader in `.storybook/main.js` to understand MDX story files and annotate TS/JS story files with source code using `source-loader`:
 
@@ -201,7 +202,7 @@ module.exports = {
       enforce: 'pre',
     });
     return config;
-  }
+  },
 };
 ```
 

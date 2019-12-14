@@ -2,13 +2,14 @@
   flex: 1;
   justify-content: center;
   align-items: center;
-  width: 300;
+  background-color: #222;
+  color: white;
+  padding: 40px;
 }
 
 .appHeader {
-  background-color: #222;
   height: 160;
-  padding: 40;
+  padding: 40px;
 }
 
 .appBanner, .appIntro {
@@ -23,5 +24,4 @@
 .appIntro {
   margin-top: 40;
   font-size: 20;
-  line-height: 30;
 }

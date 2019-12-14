@@ -7,7 +7,10 @@ export default {
   component: Welcome,
 };
 
-export const ToStorybook = () => <Welcome showApp={linkTo('Button')} />;
+// Some other valid values:
+// - 'other-demo-buttonmdx--with-text'
+// - 'Other/Demo/ButtonMdx'
+export const ToStorybook = () => <Welcome showApp={linkTo('Other/Demo/Button')} />;
 ToStorybook.story = {
   name: 'to Storybook',
 };
