@@ -1,4 +1,4 @@
-## 5.3.0-beta.24 (December 15, 2019)
+## 5.3.0-beta.25 (December 15, 2019)
 
 ### Bug Fixes
 
@@ -7,6 +7,10 @@
 ### Dependency Upgrades
 
 * Upgrade vue-docgen-loader to 1.3.0-beta.0 ([#9155](https://github.com/storybookjs/storybook/pull/9155))
+
+## 5.3.0-beta.24 (December 15, 2019)
+
+Failed NPM publish
 
 ## 5.3.0-beta.23 (December 14, 2019)
 
