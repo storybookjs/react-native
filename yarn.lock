@@ -31831,12 +31831,13 @@ vue-docgen-api@^4.1.0:
     ts-map "^1.0.3"
     vue-template-compiler "^2.0.0"
 
-vue-docgen-loader@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/vue-docgen-loader/-/vue-docgen-loader-1.2.0.tgz#135df08ae17b8e16fcac410f9c3568d4fe97629d"
-  integrity sha512-/Bt9tc4dvdIsM0cD5Bg6AuEB8oeXwe/CygFRSQPPP8SB3s0HIdgsF4bMxNLxogcsvmcfoREyg06bwBggP5NMXw==
+vue-docgen-loader@^1.3.0-beta.0:
+  version "1.3.0-beta.1"
+  resolved "https://registry.yarnpkg.com/vue-docgen-loader/-/vue-docgen-loader-1.3.0-beta.1.tgz#e72972e7d3c1b37679ec303180ec72c1d1d8d13a"
+  integrity sha512-842c/87P4T4wChDzuoFs0Iuni66Fe4ztlRi0XFJg1e7EN0IRZEAvgbkE2vT2BcGkQQkhB7VNFjmYSEEucz7BwQ==
   dependencies:
     clone "^2.1.2"
+    jscodeshift "^0.7.0"
     loader-utils "^1.2.3"
     querystring "^0.2.0"
 

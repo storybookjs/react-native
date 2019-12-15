@@ -69,7 +69,7 @@
     "ts-dedent": "^1.1.0",
     "util-deprecate": "^1.0.2",
     "vue-docgen-api": "^4.1.0",
-    "vue-docgen-loader": "^1.2.0"
+    "vue-docgen-loader": "^1.3.0-beta.0"
   },
   "devDependencies": {
     "@types/doctrine": "^0.0.3",
