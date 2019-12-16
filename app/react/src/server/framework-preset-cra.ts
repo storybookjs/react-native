@@ -7,14 +7,12 @@ type Preset = string | { name: string };
 
 // Disable the built-in preset if the new preset is detected.
 const checkForNewPreset = (presetsList: Preset[]) => {
-  try {
-    const hasNewPreset = presetsList.some((preset: Preset) => {
-      const presetName = typeof preset === 'string' ? preset : preset.name;
-      return presetName === '@storybook/preset-create-react-app';
-    });
+  const hasNewPreset = presetsList.some((preset: Preset) => {
+    const presetName = typeof preset === 'string' ? preset : preset.name;
+    return presetName === '@storybook/preset-create-react-app';
+  });
 
-    return hasNewPreset;
-  } catch (e) {
+  if (!hasNewPreset) {
     logger.warn('Storybook support for Create React App is now a separate preset.');
     logger.warn(
       'To get started with the new preset, simply add `@storybook/preset-create-react-app` to your project.'
@@ -22,6 +20,8 @@ const checkForNewPreset = (presetsList: Preset[]) => {
     logger.warn('The built-in preset will be disabled in Storybook 6.0.');
     return false;
   }
+
+  return true;
 };
 
 export function webpackFinal(
