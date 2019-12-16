@@ -1,3 +1,9 @@
+## 5.3.0-beta.26 (December 16, 2019)
+
+### Bug Fixes
+
+* Core: Emit store render event synchronously if we can ([#9087](https://github.com/storybookjs/storybook/pull/9087))
+
 ## 5.3.0-beta.25 (December 15, 2019)
 
 ### Bug Fixes
