@@ -59,14 +59,17 @@ If you want to override backgrounds for a single story or group of stories, pass
 
 ```js
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-storiesOf('Button', module)
-  .add('with text', () => <button>Click me</button>, {
-    backgrounds: [{
-      name: 'red', value: 'rgba(255, 0, 0)',
-    }]
-  });
+export default {
+  title: 'Button',
+};
+
+export const defaultView = () => <button>Click me</button>;
+defaultView.story = {
+  parameters: {
+    backgrounds: [{ name: 'red', value: 'rgba(255, 0, 0)' }],
+  },
+};
 ```
 
 If you don't want to use backgrounds for a story, you can set the `backgrounds` parameter to `[]`, or use `{ disable: true }` to skip the addon:
@@ -75,26 +78,25 @@ If you don't want to use backgrounds for a story, you can set the `backgrounds` 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-storiesOf('Button', module)
-  .add('example 1', () => <button>Click me</button>, {
-    backgrounds: [],
-  });
-
-storiesOf('Button', module)
-  .add('example 2', () => <button>Click me</button>, {
-    backgrounds: { disable: true },
-  });
-```
-
-## Events
-
-If you want to react to a background change—for instance to implement some custom logic in your Storybook—you can subscribe to the `storybook/background/update` event. It will be emitted when the user changes the background.
-
-```js
-import { addons } from '@storybook/addons';
-
-addons.getChannel().on('storybook/background/update', (bg) => {
-  console.log('Background color', bg.selected);
-  console.log('Background name', bg.name);
+storiesOf('Button', module).add('example 1', () => <button>Click me</button>, {
+  backgrounds: [],
 });
+
+export default {
+  title: 'Button',
+};
+
+export const noBackgrounds = () => <button>Click me</button>;
+noBackgrounds.story = {
+  parameters: {
+    backgrounds: [],
+  },
+};
+
+export const disabledBackgrounds = () => <button>Click me</button>;
+disabledBackgrounds.story = {
+  parameters: {
+    backgrounds: { disabled: true },
+  },
+};
 ```
