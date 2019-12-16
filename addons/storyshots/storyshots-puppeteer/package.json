@@ -41,7 +41,7 @@
     "@types/puppeteer": "^2.0.0"
   },
   "peerDependencies": {
-    "@storybook/addon-storyshots": "5.3.0-beta.28",
+    "@storybook/addon-storyshots": "5.3.0-beta.29",
     "puppeteer": "^1.12.2 || ^2.0.0"
   },
   "publishConfig": {
