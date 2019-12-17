@@ -1,6 +1,6 @@
 import React, { Component, SyntheticEvent } from 'react';
 
-import { styled, themes } from '@storybook/theming';
+import { styled } from '@storybook/theming';
 import { NodeResult, Result } from 'axe-core';
 import { SizeMe } from 'react-sizeme';
 import store, { clearElements } from '../redux-config';

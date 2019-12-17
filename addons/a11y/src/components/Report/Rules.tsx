@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
-import { Badge, Icons } from '@storybook/components';
+import { Badge } from '@storybook/components';
 import { CheckResult } from 'axe-core';
 import { SizeMe } from 'react-sizeme';
-import { RuleType } from '../A11YPanel';
 
 const List = styled.div({
   display: 'flex',
