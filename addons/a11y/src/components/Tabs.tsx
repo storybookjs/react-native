@@ -23,7 +23,7 @@ const HighlightToggleLabel = styled.label<{}>(({ theme }) => ({
   color: theme.color.dark,
 }));
 
-const GlobalToggle = styled.div(({ elementWidth }: { elementWidth: number }) => {
+const GlobalToggle = styled.div<{ elementWidth: number }>(({ elementWidth }) => {
   const maxWidthBeforeBreak = 450;
   return {
     cursor: 'pointer',
@@ -47,7 +47,7 @@ const GlobalToggle = styled.div(({ elementWidth }: { elementWidth: number }) => 
   };
 });
 
-const Item = styled.button(
+const Item = styled.button<{ active?: boolean }>(
   ({ theme }) => ({
     textDecoration: 'none',
     padding: '10px 15px',
@@ -66,7 +66,7 @@ const Item = styled.button(
       borderBottom: `3px solid ${theme.color.secondary}`,
     },
   }),
-  ({ active, theme }: any) =>
+  ({ active, theme }) =>
     active
       ? {
           opacity: 1,

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, ComponentProps } from 'react';
 
 import { styled } from '@storybook/theming';
 
@@ -20,13 +20,15 @@ export enum RuleType {
   INCOMPLETION,
 }
 
-const Icon = styled(Icons)(
+type IconProps = ComponentProps<typeof Icons> & { status?: string; inline?: boolean };
+
+const Icon = styled(Icons)<IconProps>(
   {
     height: 12,
     width: 12,
     marginRight: 4,
   },
-  ({ status, theme }: any) =>
+  ({ status, theme }) =>
     status === 'running'
       ? {
           animation: `${theme.animation.rotate360} 1s linear infinite;`,

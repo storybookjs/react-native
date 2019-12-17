@@ -5,7 +5,8 @@
     "types": ["webpack-env"],
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "strictFunctionTypes": true
   },
   "include": [
     "src/**/*"

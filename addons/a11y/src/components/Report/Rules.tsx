@@ -13,7 +13,7 @@ const List = styled.div({
   fontWeight: '400',
 } as any);
 
-const Item = styled.div(({ elementWidth }: { elementWidth: number }) => {
+const Item = styled.div<{ elementWidth: number }>(({ elementWidth }) => {
   const maxWidthBeforeBreak = 407;
   return {
     flexDirection: elementWidth > maxWidthBeforeBreak ? 'row' : 'inherit',
