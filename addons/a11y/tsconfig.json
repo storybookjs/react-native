@@ -3,6 +3,7 @@
   "compilerOptions": {
     "rootDir": "./src",
     "types": ["webpack-env"],
+    "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true
   },
   "include": [
