@@ -5,14 +5,6 @@ import { CheckResult } from 'axe-core';
 import { SizeMe } from 'react-sizeme';
 import { RuleType } from '../A11YPanel';
 
-const impactColors = {
-  minor: '#f1c40f',
-  moderate: '#e67e22',
-  serious: '#e74c3c',
-  critical: '#c0392b',
-  success: '#2ecc71',
-};
-
 const List = styled.div({
   display: 'flex',
   flexDirection: 'column',
@@ -44,17 +36,6 @@ const Message = styled.div({
   paddingLeft: 6,
   paddingRight: 23,
 });
-
-const Status = styled.div(({ passes, impact }: { passes: boolean; impact: string }) => ({
-  display: 'inline-flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  color: passes ? impactColors.success : (impactColors as any)[impact],
-  '& > svg': {
-    height: 16,
-    width: 16,
-  },
-}));
 
 export enum ImpactValue {
   MINOR = 'minor',
