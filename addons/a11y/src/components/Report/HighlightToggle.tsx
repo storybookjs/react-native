@@ -10,9 +10,8 @@ import { RuleType } from '../A11YPanel';
 import { addElement } from '../../redux-config';
 import { IFRAME } from '../../constants';
 
-export class HighlightedElementData {
+export interface HighlightedElementData {
   originalOutline: string;
-
   isHighlighted: boolean;
 }
 
@@ -164,9 +163,7 @@ class HighlightToggle extends Component<ToggleProps> {
     originalOutline: string
   ): void {
     const { addElement: localAddElement } = this.props;
-    const data: HighlightedElementData = new HighlightedElementData();
-    data.isHighlighted = isHighlighted;
-    data.originalOutline = originalOutline;
+    const data: HighlightedElementData = { isHighlighted, originalOutline };
     const payload = { element: targetElement, highlightedElementData: data };
     localAddElement(payload);
   }
