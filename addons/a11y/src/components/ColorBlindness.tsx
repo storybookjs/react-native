@@ -80,7 +80,7 @@ const getColorList = (active: string | null, set: (i: string | null) => void): L
 ];
 
 export const ColorBlindness: FunctionComponent = () => {
-  const [active, setActiveState] = useState(null);
+  const [active, setActiveState] = useState<string | null>(null);
 
   const setActive = (activeState: string | null): void => {
     const iframe = getIframe();

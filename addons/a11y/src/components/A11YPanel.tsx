@@ -179,7 +179,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
 
     const { passes, violations, incomplete, status } = this.state;
 
-    let actionTitle;
+    let actionTitle: string | JSX.Element = 'Rerun tests';
     if (status === 'ready') {
       actionTitle = 'Rerun tests';
     } else if (status === 'running') {

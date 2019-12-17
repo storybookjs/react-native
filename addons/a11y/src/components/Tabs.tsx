@@ -99,7 +99,7 @@ interface TabsState {
 }
 
 function retrieveAllNodesFromResults(items: Result[]): NodeResult[] {
-  return items.reduce((acc, item) => acc.concat(item.nodes), []);
+  return items.reduce((acc, item) => acc.concat(item.nodes), [] as NodeResult[]);
 }
 
 export class Tabs extends Component<TabsProps, TabsState> {
@@ -109,7 +109,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
 
   onToggle = (event: SyntheticEvent) => {
     this.setState({
-      active: parseInt(event.currentTarget.getAttribute('data-index'), 10),
+      active: parseInt(event.currentTarget.getAttribute('data-index') || '', 10),
     });
     // removes all elements from the redux map in store from the previous panel
     store.dispatch(clearElements());
