@@ -6,8 +6,7 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true
+    "strict": true
   },
   "include": [
     "src/**/*"
