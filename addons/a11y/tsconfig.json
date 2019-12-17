@@ -4,6 +4,7 @@
     "rootDir": "./src",
     "types": ["webpack-env"],
     "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
     "noUnusedLocals": true
   },
   "include": [
