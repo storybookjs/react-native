@@ -4,10 +4,11 @@
     "rootDir": "./src",
     "types": ["webpack-env"],
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
+    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strict": true
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src/**/*"
