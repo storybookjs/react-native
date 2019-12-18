@@ -40,7 +40,7 @@ describe('preview.story_store', () => {
 
       const extracted = store.extract();
 
-      // We need exact key ordering, even if in theory JS doesns't guarantee it
+      // We need exact key ordering, even if in theory JS doesn't guarantee it
       expect(Object.keys(extracted)).toEqual(['a--1', 'a--2', 'b--1']);
 
       // content of item should be correct
@@ -50,6 +50,40 @@ describe('preview.story_store', () => {
         name: '1',
         parameters: expect.any(Object),
       });
+    });
+  });
+
+  describe('storySort', () => {
+    it('sorts stories using given function', () => {
+      const parameters = {
+        options: {
+          // Test function does alphabetical ordering.
+          storySort: (a: any, b: any): number =>
+            a[1].kind === b[1].kind
+              ? 0
+              : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
+        },
+      };
+      const store = new StoryStore({ channel });
+      store.addStory(...make('a/a', '1', () => 0, parameters));
+      store.addStory(...make('a/a', '2', () => 0, parameters));
+      store.addStory(...make('a/b', '1', () => 0, parameters));
+      store.addStory(...make('b/b1', '1', () => 0, parameters));
+      store.addStory(...make('b/b10', '1', () => 0, parameters));
+      store.addStory(...make('b/b9', '1', () => 0, parameters));
+      store.addStory(...make('c', '1', () => 0, parameters));
+
+      const extracted = store.extract();
+
+      expect(Object.keys(extracted)).toEqual([
+        'a-a--1',
+        'a-a--2',
+        'a-b--1',
+        'b-b1--1',
+        'b-b9--1',
+        'b-b10--1',
+        'c--1',
+      ]);
     });
   });
 
