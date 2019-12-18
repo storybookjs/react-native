@@ -22,14 +22,14 @@ const Item = styled.div<{ elementWidth: number }>(({ elementWidth }) => {
   };
 });
 
-const StyledBadge = styled(Badge)(({ status }: { status: string }) => ({
+const StyledBadge = styled(Badge)({
   padding: '2px 8px',
   marginBottom: 3,
   minWidth: 65,
   maxWidth: 'fit-content',
   width: '100%',
   textAlign: 'center',
-}));
+});
 
 const Message = styled.div({
   paddingLeft: 6,

@@ -112,7 +112,7 @@ class HighlightToggle extends Component<ToggleProps> {
     });
   }
 
-  componentDidUpdate(prevProps: Readonly<ToggleProps>): void {
+  componentDidUpdate(): void {
     const { indeterminate } = this.props;
     if (this.checkBoxRef.current) {
       this.checkBoxRef.current.indeterminate = indeterminate;
