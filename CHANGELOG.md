@@ -1,3 +1,17 @@
+## 5.3.0-rc.0 (December 19, 2019)
+
+### Features
+
+* CSF: Use `__orderedExports` in loader if provided  ([#9181](https://github.com/storybookjs/storybook/pull/9181))
+
+### Bug Fixes
+
+* Addon-a11y: Fix selected blindness color filter ([#9179](https://github.com/storybookjs/storybook/pull/9179))
+
+### Maintenance
+
+* Addon-essentials: Remove actions, links, knobs ([#9184](https://github.com/storybookjs/storybook/pull/9184))
+
 ## 5.3.0-beta.31 (December 16, 2019)
 
 ### Features
