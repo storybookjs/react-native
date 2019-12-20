@@ -47,7 +47,9 @@ Or, you can simply export your storybook into the docs directory and use it as t
 
 - Configure your `build` script:
 
-  `"build": "build-storybook -c .storybook -o public"`
+```
+"build": "build-storybook -c .storybook -o build"
+```
 
 - Execute `now` on your terminal.
 
