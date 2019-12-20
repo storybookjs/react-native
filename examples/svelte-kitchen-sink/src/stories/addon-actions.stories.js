@@ -7,18 +7,18 @@ export default {
   title: 'Addon/Actions',
 };
 
-export const actionOnViewMethod = () => ({
+export const ActionOnViewMethod = () => ({
   Component: ButtonView,
   props: {
     click: action('I am logging in the actions tab'),
   },
 });
 
-actionOnViewMethod.story = {
+ActionOnViewMethod.story = {
   name: 'Action on view method',
 };
 
-export const actionOnComponentMethod = () => ({
+export const ActionOnComponentMethod = () => ({
   Component: Button,
   props: {
     text: 'Custom text',
@@ -28,6 +28,6 @@ export const actionOnComponentMethod = () => ({
   },
 });
 
-actionOnComponentMethod.story = {
+ActionOnComponentMethod.story = {
   name: 'Action on component method',
 };

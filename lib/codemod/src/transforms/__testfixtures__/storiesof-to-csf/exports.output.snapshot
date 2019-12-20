@@ -8,9 +8,9 @@ export default {
   excludeStories: ['foo'],
 };
 
-export const baz = () => <button />;
+export const Baz = () => <button />;
 
-baz.story = {
+Baz.story = {
   name: 'baz',
 };"
 `;

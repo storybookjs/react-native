@@ -51,12 +51,23 @@ describe('angular-cli_config', () => {
     });
   });
 
+  it('should return null if `architect.build` option are not exists.', () => {
+    const angularJson = fs.readFileSync(path.resolve(__dirname, 'angular.json'), 'utf8');
+    const angularJsonWithNoBuildOptions = JSON.parse(stripJsonComments(angularJson));
+    angularJsonWithNoBuildOptions.projects['angular-cli'].architect.build = undefined;
+
+    getLeadingAngularCliProject(angularJsonWithNoBuildOptions);
+
+    const config = getAngularCliWebpackConfigOptions('/');
+    expect(config).toBeNull();
+  });
+
   it('should return baseConfig if no angular.json was found', () => {
     const baseConfig = { test: 'config' };
     const projectConfig = getAngularCliWebpackConfigOptions('test-path' as Path);
     const config = applyAngularCliWebpackConfig(baseConfig, projectConfig);
 
-    expect(projectConfig).toBe(undefined);
+    expect(projectConfig).toBe(null);
     expect(config).toBe(baseConfig);
   });
 });

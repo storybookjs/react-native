@@ -4,5 +4,5 @@ export default {
   title: 'Button',
 };
 
-export const rounded = () => '<playground-button></playground-button>';
-export const square = () => '<playground-button is-square></playground-button>';
+export const Rounded = () => '<playground-button></playground-button>';
+export const Square = () => '<playground-button is-square></playground-button>';

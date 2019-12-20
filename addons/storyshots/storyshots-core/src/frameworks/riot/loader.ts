@@ -16,10 +16,9 @@ function load(options: StoryshotsOptions) {
   global.STORYBOOK_ENV = 'riot';
   mockRiotToIncludeCompiler();
 
-  const { configPath, config } = options;
   const storybook = require.requireActual('@storybook/riot');
 
-  configure({ configPath, config, storybook });
+  configure({ ...options, storybook });
 
   return {
     framework: 'riot' as const,

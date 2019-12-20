@@ -3,7 +3,8 @@ id: 'custom-webpack-config'
 title: 'Custom Webpack Config'
 ---
 
-You can customize Storybook's webpack setup by providing a `webpack.config.js` file exporting a **webpack 4** compatible config exported as a **commonjs module**.
+You can customize Storybook's webpack setup by providing a `webpack` field in `main.js` file.
+The value should be an async function that receives a webpack config and eventually returns a webpack config.
 
 Storybook has its own Webpack setup and a dev server.
 The webpack config [is configurable](/configurations/custom-webpack-config#webpack-customisation-modes/), and the default can depend on which framework you're using and whether you've used a generator like [Create React App](https://github.com/facebookincubator/create-react-app) or Angular CLI etc.
@@ -21,7 +22,7 @@ The webpack config [is configurable](/configurations/custom-webpack-config#webpa
   entry: [
     '@storybook/core/dist/server/common/polyfills.js',
     '@storybook/core/dist/server/preview/globals.js',
-    '<your-storybook-dir>/config.js',
+    '<your-storybook-dir>/preview.js',
     'webpack-hot-middleware/client.js?reload=true',
   ],
   output: {
@@ -148,7 +149,7 @@ The webpack config [is configurable](/configurations/custom-webpack-config#webpa
 
 ### Debug the default webpack config
 
-  <summary>To effectively customise the webpack config, you might need to get the full default config it's using.</summary>
+  <summary>To effectively customize the webpack config, you might need to get the full default config it's using.</summary>
 
   <div></div>
 

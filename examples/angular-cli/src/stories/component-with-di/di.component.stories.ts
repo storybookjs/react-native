@@ -5,25 +5,25 @@ export default {
   title: 'Custom/Dependencies',
 };
 
-export const inputsAndInjectDependencies = () => ({
+export const InputsAndInjectDependencies = () => ({
   component: DiComponent,
   props: {
     title: 'Component dependencies',
   },
 });
 
-inputsAndInjectDependencies.story = {
+InputsAndInjectDependencies.story = {
   name: 'inputs and inject dependencies',
 };
 
-export const inputsAndInjectDependenciesWithKnobs = () => ({
+export const InputsAndInjectDependenciesWithKnobs = () => ({
   component: DiComponent,
   props: {
     title: text('title', 'Component dependencies'),
   },
 });
 
-inputsAndInjectDependenciesWithKnobs.story = {
+InputsAndInjectDependenciesWithKnobs.story = {
   name: 'inputs and inject dependencies with knobs',
   decorators: [withKnobs],
 };

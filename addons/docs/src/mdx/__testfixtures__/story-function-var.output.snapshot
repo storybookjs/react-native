@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin story-function-var.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
 
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 export const basicFn = () => <Button mdxType=\\"Button\\" />;
@@ -36,7 +36,7 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const basic = makeStoryFn(basicFn);
+export const basic = assertIsFn(basicFn);
 basic.story = {};
 basic.story.name = 'basic';
 basic.story.parameters = { mdxSource: 'basicFn' };
@@ -47,10 +47,12 @@ const mdxStoryNameToId = { basic: 'story-function-var--basic' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
-  container: ({ context, children }) => (
-    <DocsContainer context={{ ...context, mdxStoryNameToId }}>{children}</DocsContainer>
+  ...(componentMeta.parameters.docs || {}),
+  page: () => (
+    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+      <MDXContent />
+    </AddContext>
   ),
-  page: MDXContent,
 };
 
 export default componentMeta;

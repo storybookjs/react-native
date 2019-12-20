@@ -28,12 +28,12 @@ export const Inherited = () => (
   </Panel>
 );
 
-export const overriddenViaWithViewportParameterizedDecorator = () => (
+export const OverriddenViaWithViewportParameterizedDecorator = () => (
   <Panel>
     I respect my parents but I should be looking good on <b>iPad</b>.
   </Panel>
 );
-overriddenViaWithViewportParameterizedDecorator.story = {
+OverriddenViaWithViewportParameterizedDecorator.story = {
   name: 'Overridden via "withViewport" parameterized decorator',
   parameters: { viewport: { defaultViewport: 'ipad' } },
 };

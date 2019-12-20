@@ -4,14 +4,14 @@ import { styled } from '@storybook/theming';
 import { Result } from 'axe-core';
 
 const Wrapper = styled.div({
-  padding: '12px',
-  marginBottom: '10px',
+  padding: 12,
+  marginBottom: 10,
 });
 const Help = styled.p({
   margin: '0 0 12px',
 });
 const Link = styled.a({
-  marginTop: '12px',
+  marginTop: 12,
   textDecoration: 'underline',
   color: 'inherit',
   display: 'block',

@@ -2,7 +2,7 @@
 
 exports[`docs-mdx-compiler-plugin story-object.mdx 1`] = `
 "/* @jsx mdx */
-import { DocsContainer, makeStoryFn } from '@storybook/addon-docs/blocks';
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
 
 import { Story, Meta } from '@storybook/addon-docs/blocks';
 import { Welcome, Button } from '@storybook/angular/demo';
@@ -42,7 +42,7 @@ function MDXContent({ components, ...props }) {
 
 MDXContent.isMDXComponent = true;
 
-export const toStorybook = makeStoryFn({
+export const toStorybook = () => ({
   template: \`<storybook-welcome-component (showApp)=\\"showApp()\\"></storybook-welcome-component>\`,
   props: {
     showApp: linkTo('Button'),
@@ -64,10 +64,12 @@ const mdxStoryNameToId = { 'to storybook': 'mdx-welcome--to-storybook' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
-  container: ({ context, children }) => (
-    <DocsContainer context={{ ...context, mdxStoryNameToId }}>{children}</DocsContainer>
+  ...(componentMeta.parameters.docs || {}),
+  page: () => (
+    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+      <MDXContent />
+    </AddContext>
   ),
-  page: MDXContent,
 };
 
 export default componentMeta;

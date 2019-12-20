@@ -13,12 +13,12 @@ export default {
   },
 };
 
-export const story1 = () => ({
+export const Story1 = () => ({
   view: () => <BaseButton label="You should be able to switch backgrounds for this story" />,
 });
-story1.story = { name: 'story 1' };
+Story1.story = { name: 'story 1' };
 
-export const story2 = () => ({
+export const Story2 = () => ({
   view: () => <BaseButton label="This one too!" />,
 });
-story2.story = { name: 'story 2' };
+Story2.story = { name: 'story 2' };

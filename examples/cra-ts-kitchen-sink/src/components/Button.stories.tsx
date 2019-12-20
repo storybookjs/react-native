@@ -10,7 +10,7 @@ export default {
 
 type Story = () => any;
 
-export const simpleButton: Story = () => {
+export const SimpleButton: Story = () => {
   const x = 0;
   return <Button onClick={action('button clicked')}>OK {x}</Button>;
 };
@@ -20,6 +20,6 @@ const typeOptions = {
   Action: 'action',
 };
 
-export const withType = () => (
+export const WithType = () => (
   <Button type={radios('Type', typeOptions, typeOptions.Default) as Type}>Label</Button>
 );

@@ -12,7 +12,7 @@ export default {
     },
   },
 };
-export const defaultFn = () => (
+export const DefaultFn = () => (
   <Panel>I don't have problems being rendered using the default viewport.</Panel>
 );
-defaultFn.story = { name: 'default' };
+DefaultFn.story = { name: 'default' };

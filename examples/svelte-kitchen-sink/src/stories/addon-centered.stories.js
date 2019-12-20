@@ -9,7 +9,7 @@ export default {
   decorators: [Centered],
 };
 
-export const rounded = () => ({
+export const Rounded = () => ({
   Component: Button,
   props: {
     rounded: true,
@@ -17,13 +17,13 @@ export const rounded = () => ({
   },
 });
 
-export const withAction = () => ({
+export const WithAction = () => ({
   Component: Button,
   on: {
     click: action(`Tell me it ain't so! Centered and with actions! Thanks @ekhaled :)`),
   },
 });
 
-withAction.story = {
+WithAction.story = {
   name: 'with action',
 };

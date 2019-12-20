@@ -1,4 +1,4 @@
-import { defaultTitleSlot } from './DocsPage';
+import { defaultTitleSlot } from './Title';
 
 describe('defaultTitleSlot', () => {
   it('showRoots', () => {
@@ -11,6 +11,12 @@ describe('defaultTitleSlot', () => {
   });
   it('no showRoots', () => {
     const parameters = {};
+    expect(defaultTitleSlot({ selectedKind: 'a/b/c', parameters })).toBe('c');
+    expect(defaultTitleSlot({ selectedKind: 'a|b', parameters })).toBe('b');
+    expect(defaultTitleSlot({ selectedKind: 'a/b/c.d', parameters })).toBe('d');
+  });
+  it('empty options', () => {
+    const parameters = { options: {} };
     expect(defaultTitleSlot({ selectedKind: 'a/b/c', parameters })).toBe('c');
     expect(defaultTitleSlot({ selectedKind: 'a|b', parameters })).toBe('b');
     expect(defaultTitleSlot({ selectedKind: 'a/b/c.d', parameters })).toBe('d');

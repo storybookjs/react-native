@@ -11,24 +11,29 @@ export const rowData = {
 
 export default {
   title: 'Button',
-  includeStories: ['story1', 'secondStory', 'complexStory'],
+  includeStories: ['Story1', 'SecondStory', 'ComplexStory'],
 };
 
-export const story1 = () => <Button label=\\"Story 1\\" />;
-export const secondStory = () => <Button label=\\"Story 2\\" onClick={action('click')} />;
+export const Story1 = () => <Button label=\\"Story 1\\" />;
 
-secondStory.story = {
+Story1.story = {
+  name: 'story1',
+};
+
+export const SecondStory = () => <Button label=\\"Story 2\\" onClick={action('click')} />;
+
+SecondStory.story = {
   name: 'second story',
 };
 
-export const complexStory = () => (
+export const ComplexStory = () => (
   <div>
     <Button label=\\"The Button\\" onClick={action('onClick')} />
     <br />
   </div>
 );
 
-complexStory.story = {
+ComplexStory.story = {
   name: 'complex story',
 };"
 `;

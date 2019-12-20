@@ -20,7 +20,7 @@ export const Input = () => {
   return <input value={text} onChange={e => setText(e.target.value)} />;
 };
 
-export const effect = () => {
+export const Effect = () => {
   const ref = useRef();
   useEffect(() => {
     if (ref.current != null) {
@@ -35,7 +35,7 @@ export const effect = () => {
   );
 };
 
-export const reactHookCheckbox = () => {
+export const ReactHookCheckbox = () => {
   const [on, setOn] = React.useState(false);
   return (
     <label>

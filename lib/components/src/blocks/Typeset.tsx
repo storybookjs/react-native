@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import { transparentize } from 'polished';
 
-import { withReset } from '../typography/withReset';
+import { withReset } from '../typography/shared';
 import { getBlockBackgroundStyle } from './BlockBackgroundStyles';
 
 const Label = styled.div<{}>(({ theme }) => ({
@@ -35,6 +35,7 @@ const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
 }));
 
 export interface TypesetProps {
+  fontFamily?: string;
   fontSizes: string[];
   fontWeight?: number;
   sampleText?: string;
@@ -45,6 +46,7 @@ export interface TypesetProps {
  * with different sizes and weights and configurable sample text.
  */
 export const Typeset: FunctionComponent<TypesetProps> = ({
+  fontFamily,
   fontSizes,
   fontWeight,
   sampleText,
@@ -56,6 +58,7 @@ export const Typeset: FunctionComponent<TypesetProps> = ({
         <Label>{size}</Label>
         <Sample
           style={{
+            fontFamily,
             fontSize: size,
             fontWeight,
           }}

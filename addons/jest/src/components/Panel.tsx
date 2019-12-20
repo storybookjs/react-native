@@ -26,10 +26,10 @@ const Item = styled.li({
 
 const ProgressWrapper = styled.div({
   position: 'relative',
-  height: '10px',
-  width: '30px',
+  height: 10,
+  width: 30,
   display: 'flex',
-  top: '-2px',
+  top: -2,
 });
 
 const SuiteHead = styled.div({
@@ -37,8 +37,8 @@ const SuiteHead = styled.div({
   alignItems: 'baseline',
   position: 'absolute',
   zIndex: 2,
-  right: '20px',
-  marginTop: '15px',
+  right: 20,
+  marginTop: 15,
 });
 
 const SuiteTotals = styled(({ result, className, width }) => (
@@ -62,7 +62,7 @@ const SuiteTotals = styled(({ result, className, width }) => (
   alignItems: 'center',
   color: theme.color.dark,
   fontSize: '14px',
-  marginTop: '-5px',
+  marginTop: -5,
   '& > *': {
     marginRight: 10,
   },
@@ -70,8 +70,8 @@ const SuiteTotals = styled(({ result, className, width }) => (
 
 const SuiteProgressPortion = styled.div<{ color: any; progressPercent: number }>(
   ({ theme, color, progressPercent }) => ({
-    height: '6px',
-    top: '3px',
+    height: 6,
+    top: 3,
     width: `${progressPercent}%`,
     backgroundColor: color,
   })

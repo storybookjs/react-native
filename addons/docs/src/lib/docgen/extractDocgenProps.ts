@@ -3,7 +3,7 @@ import { PropDef } from '@storybook/components';
 import { Component } from '../../blocks/shared';
 import { ExtractedJsDoc, parseJsDoc } from '../jsdocParser';
 import { DocgenInfo, TypeSystem } from './types';
-import { getDocgenSection, isValidDocgenSection } from './utils';
+import { getDocgenSection, isValidDocgenSection, getDocgenDescription } from './utils';
 import { getPropDefFactory, PropDefFactory } from './createPropDef';
 
 export interface ExtractedProp {
@@ -31,13 +31,16 @@ const getTypeSystem = (docgenInfo: DocgenInfo): TypeSystem => {
   return TypeSystem.UNKNOWN;
 };
 
-export const extractPropsFromDocgen: ExtractProps = (component, section) => {
-  const docgenSection = getDocgenSection(component, section);
+export const extractComponentSectionArray = (docgenSection: any) => {
+  const typeSystem = getTypeSystem(docgenSection[0]);
+  const createPropDef = getPropDefFactory(typeSystem);
 
-  if (!isValidDocgenSection(docgenSection)) {
-    return [];
-  }
+  return docgenSection
+    .map((item: any) => extractProp(item.name, item, typeSystem, createPropDef))
+    .filter(Boolean);
+};
 
+export const extractComponentSectionObject = (docgenSection: any) => {
   const docgenPropsKeys = Object.keys(docgenSection);
   const typeSystem = getTypeSystem(docgenSection[docgenPropsKeys[0]]);
   const createPropDef = getPropDefFactory(typeSystem);
@@ -50,7 +53,20 @@ export const extractPropsFromDocgen: ExtractProps = (component, section) => {
         ? extractProp(propName, docgenInfo, typeSystem, createPropDef)
         : null;
     })
-    .filter(x => x);
+    .filter(Boolean);
+};
+
+export const extractComponentProps: ExtractProps = (component, section) => {
+  const docgenSection = getDocgenSection(component, section);
+
+  if (!isValidDocgenSection(docgenSection)) {
+    return [];
+  }
+
+  // vue-docgen-api has diverged from react-docgen and returns an array
+  return Array.isArray(docgenSection)
+    ? extractComponentSectionArray(docgenSection)
+    : extractComponentSectionObject(docgenSection);
 };
 
 function extractProp(
@@ -74,4 +90,8 @@ function extractProp(
   }
 
   return null;
+}
+
+export function extractComponentDescription(component?: Component): string {
+  return !isNil(component) && getDocgenDescription(component);
 }

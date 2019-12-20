@@ -26,9 +26,9 @@ export default {
   },
 };
 
-export const soloStory = () => <Button onClick={action('clicked')}>solo</Button>;
+export const SoloStory = () => <Button onClick={action('clicked')}>solo</Button>;
 
-soloStory.story = {
+SoloStory.story = {
   name: 'solo story',
 };"
 `;

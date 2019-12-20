@@ -5,9 +5,9 @@ exports[`storiesof-to-csf transforms correctly using "const.input.js" data 1`] =
   title: 'bar',
 };
 
-export const constStory = () => <button />;
+export const Const = () => <button />;
 
-constStory.story = {
+Const.story = {
   name: 'const',
 };"
 `;

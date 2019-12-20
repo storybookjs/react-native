@@ -54,7 +54,7 @@ export const objectDef = {
 
 export const arrayDef = {
   name: 'someOArray',
-  type: { summary: '[ number ]' },
+  type: { summary: 'number[]' },
   required: false,
   description: 'array of a certain type',
   defaultValue: { summary: '[1, 2, 3]' },
@@ -64,44 +64,21 @@ export const complexDef = {
   name: 'someComplex',
   type: {
     summary: 'object',
-    name: 'objectOf',
-    value: {
-      name: 'shape',
-      value: {
-        id: {
-          name: 'number',
-          description:
-            "Just an internal propType for a shape.\n It's also required, and as you can see it supports multi-line comments!",
-          required: true,
-        },
-        func: {
-          name: 'func',
-          description: 'A simple non-required function',
-          required: false,
-        },
-        arr: {
-          name: 'arrayOf',
-          value: {
-            name: 'shape',
-            value: {
-              index: {
-                name: 'number',
-                description: '5-level deep propType definition and still works.',
-                required: true,
-              },
-            },
-          },
-          description: 'An `arrayOf` shape',
-          required: false,
-        },
-      },
-    },
+    detail: `[{
+  id: number,
+  func: func,
+  arr: [{ index: number }]
+}]`,
   },
   required: false,
   description: 'A very complex `objectOf` propType.',
   defaultValue: {
-    value: '{\n  thing: {\n    id: 2,\n    func: () => {},\n    arr: [],\n  },\n}',
-    computed: false,
+    summary: 'object',
+    detail: `[{
+  id: 1,
+  func: () => {},
+  arr: [{ index: 1 }]
+}]`,
   },
 };
 
@@ -134,5 +111,6 @@ export const longDesc = () => <PropRow row={longDescDef} />;
 export const number = () => <PropRow row={numberDef} />;
 export const objectOf = () => <PropRow row={objectDef} />;
 export const arrayOf = () => <PropRow row={arrayDef} />;
+export const complexObject = () => <PropRow row={complexDef} />;
 export const func = () => <PropRow row={funcDef} />;
 export const markdown = () => <PropRow row={markdownDef} />;

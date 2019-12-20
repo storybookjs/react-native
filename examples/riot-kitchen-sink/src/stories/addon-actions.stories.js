@@ -8,22 +8,22 @@ export default {
   title: 'Addon/Actions',
 };
 
-export const actionOnly = () =>
+export const ActionOnly = () =>
   mount('my-button', {
     handleClick: action('button-click'),
     content: 'Click me to log the action',
   });
 
-actionOnly.story = {
+ActionOnly.story = {
   name: 'Action only',
 };
 
-export const multipleActions = () =>
+export const MultipleActions = () =>
   mount('my-button', {
     handleDblClick: action('button-double-click'),
     content: 'Double Click me to log the action',
   });
 
-multipleActions.story = {
+MultipleActions.story = {
   name: 'Multiple actions',
 };

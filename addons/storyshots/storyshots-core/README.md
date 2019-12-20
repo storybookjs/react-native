@@ -385,7 +385,7 @@ Whenever you change you're data requirements by adding (and rendering) or (accid
 
 ### `config`
 
-The `config` parameter must be a function that helps to configure storybook like the `config.js` does.
+The `config` parameter must be a function that helps to configure storybook like the `preview.js` does.
 If it's not specified, storyshots will try to use [configPath](#configPath) parameter.
 
 ```js
@@ -425,8 +425,8 @@ import initStoryshots from '@storybook/addon-storyshots';
 initStoryshots({ configPath: path.resolve(__dirname, '../../.storybook') });
 ```
 
-`configPath` can also specify path to the `config.js` itself. In this case, config directory will be
-a base directory of the `configPath`. It may be useful when the `config.js` for test should differ from the
+`configPath` can also specify path to the `preview.js` itself. In this case, config directory will be
+a base directory of the `configPath`. It may be useful when the `preview.js` for test should differ from the
 original one. It also may be useful for separating tests to different test configs:
 
 ```js
@@ -653,13 +653,15 @@ This is a class that generates snapshot's name based on the story (kind, story &
 Let's say we wanted to create a test function for shallow && multi-file snapshots:
 
 ```js
-import initStoryshots, { getSnapshotFileName } from '@storybook/addon-storyshots';
+import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
+const converter = new Stories2SnapsConverter();
+
 initStoryshots({
   test: ({ story, context }) => {
-    const snapshotFileName = getSnapshotFileName(context);
+    const snapshotFileName = converter.getSnapshotFileName(context);
     const storyElement = story.render();
     const shallowTree = shallow(storyElement);
 

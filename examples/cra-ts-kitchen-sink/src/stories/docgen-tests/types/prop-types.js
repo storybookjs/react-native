@@ -1,6 +1,9 @@
 /* eslint-disable react/no-unused-prop-types */
 import React from 'react';
+// @ts-ignore
 import PropTypes, { string, shape } from 'prop-types';
+import momentPropTypes from 'react-moment-proptypes';
+import { PRESET_SHAPE, SOME_PROP_TYPES } from './ext';
 
 const NAMED_OBJECT = {
   text: PropTypes.string.isRequired,
@@ -32,6 +35,84 @@ function concat(a, b) {
   return a + b;
 }
 
+function customPropType() {
+  return null;
+}
+
+const nestedCustomPropType = {
+  custom: customPropType,
+};
+
+const SOME_INLINE_PROP_TYPES = {
+  /**
+   * Hey Hey!
+   */
+  inlineString: PropTypes.string,
+  inlineBool: PropTypes.bool,
+  inlineNumber: PropTypes.number,
+  inlineObj: PropTypes.shape({
+    foo: PropTypes.string,
+  }),
+  inlineArray: PropTypes.arrayOf(PropTypes.number),
+  inlineArrayOfObjects: PropTypes.arrayOf({ foo: PropTypes.string }),
+  inlineFunctionalElement: PropTypes.element,
+  inlineFunctionalElementInline: PropTypes.element,
+  inlineFunctionalElementInlineReturningNull: PropTypes.element,
+  inlineHtmlElement: PropTypes.element,
+  inlineFunctionalElementInlineWithProps: PropTypes.element,
+  inlineFunctionalElementNamedInline: PropTypes.element,
+  inlineClassElement: PropTypes.element,
+  inlineClassElementWithProps: PropTypes.element,
+  inlineClassElementWithChildren: PropTypes.element,
+  inlineClassElementInline: PropTypes.element,
+  inlineFunc: PropTypes.func,
+};
+
+const SOME_INLINE_DEFAULT_PROPS = {
+  inlineString: 'Inline prop default value',
+  inlineBool: true,
+  inlineNumber: 10,
+  inlineObj: { foo: 'bar' },
+  inlineArray: [1, 2, 3],
+  inlineArrayOfObjects: [
+    { foo: 'bar' },
+    { foo: 'bar' },
+    { foo: 'bar' },
+    { foo: 'bar' },
+    { foo: 'bar' },
+  ],
+  inlineFunctionalElement: <FunctionalComponent />,
+  inlineFunctionalElementInline: () => {
+    return <div>Inlined FunctionnalComponent!</div>;
+  },
+  inlineFunctionalElementInlineReturningNull: () => {
+    return null;
+  },
+  inlineHtmlElement: <div>Hey!</div>,
+  // eslint-disable-next-line react/prop-types
+  inlineFunctionalElementInlineWithProps: ({ foo }) => {
+    return <div>{foo}</div>;
+  },
+  inlineFunctionalElementNamedInline: function InlinedFunctionalComponent() {
+    return <div>Inlined FunctionnalComponent!</div>;
+  },
+  inlineClassElement: <ClassComponent />,
+  inlineClassElementWithProps: <ClassComponent className="toto" />,
+  inlineClassElementWithChildren: (
+    <ClassComponent>
+      <div>hey!</div>
+    </ClassComponent>
+  ),
+  inlineClassElementInline: class InlinedClassComponent extends React.PureComponent {
+    render() {
+      return <div>Inlined ClassComponent!</div>;
+    }
+  },
+  inlineFunc: function add(a, b) {
+    return a + b;
+  },
+};
+
 export const PropTypesProps = () => <div>PropTypes!</div>;
 
 PropTypesProps.propTypes = {
@@ -48,6 +129,33 @@ PropTypesProps.propTypes = {
    * @returns {ComplexObject} - Returns a complex object.
    */
   funcWithJsDoc: PropTypes.func,
+  /**
+   * @param {string} foo - A foo value.
+   * @param {number} bar - A bar value.
+   * @param {number} bar1 - A bar value.
+   * @param {number} bar2 - A bar value.
+   * @param {number} bar3 - A bar value.
+   * @param {number} bar4 - A bar value.
+   * @param {number} bar5 - A bar value.
+   * @returns {ComplexObject} - Returns a complex object.
+   */
+  semiLongFuncWithJsDoc: PropTypes.func,
+  /**
+   * @param {string} foo - A foo value.
+   * @param {number} bar - A bar value.
+   * @param {number} bar1 - A bar value.
+   * @param {number} bar2 - A bar value.
+   * @param {number} bar3 - A bar value.
+   * @param {number} bar4 - A bar value.
+   * @param {number} bar5 - A bar value.
+   * @param {number} bar6 - A bar value.
+   * @param {number} bar7 - A bar value.
+   * @param {number} bar8 - A bar value.
+   * @param {number} bar9 - A bar value.
+   * @param {number} bar10 - A bar value.
+   * @returns {ComplexObject} - Returns a complex object.
+   */
+  veryLongFuncWithJsDoc: PropTypes.func,
   namedDefaultFunc: PropTypes.func,
   number: PropTypes.number,
   /**
@@ -56,6 +164,9 @@ PropTypesProps.propTypes = {
   obj: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   symbol: PropTypes.symbol,
   node: PropTypes.node,
+  useCustomPropType: customPropType,
+  useNestedCustomPropType: nestedCustomPropType.custom,
+  externalMomentPropType: momentPropTypes.momentObj,
   functionalElement: PropTypes.element,
   functionalElementInline: PropTypes.element,
   functionalElementNamedInline: PropTypes.element,
@@ -63,6 +174,7 @@ PropTypesProps.propTypes = {
   classElementInline: PropTypes.element,
   functionalElementType: PropTypes.elementType,
   classElementType: PropTypes.elementType,
+  elementWithProps: PropTypes.elementType,
   /**
    * `instanceOf` is also supported and the custom type will be shown instead of `instanceOf`
    */
@@ -106,6 +218,15 @@ PropTypesProps.propTypes = {
   oneOfEval: PropTypes.oneOf((() => ['News', 'Photos'])()),
   oneOfVar: PropTypes.oneOf(POSITIONS),
   oneOfNested: PropTypes.oneOf(['News', ['bottom-left', 'botton-center', 'bottom-right']]),
+  oneOfNestedSimpleInlineObject: PropTypes.oneOf(['News', [{ foo: PropTypes.string }]]),
+  oneOfNestedComplexInlineObject: PropTypes.oneOf([
+    'News',
+    [{ nested: { foo: PropTypes.string } }],
+  ]),
+  oneOfNestedComplexShape: PropTypes.oneOf([
+    'News',
+    [{ nested: PropTypes.shape({ foo: PropTypes.string }) }],
+  ]),
   /**
    *  A multi-type prop is also valid and is displayed as `Union<String|Message>`
    */
@@ -159,6 +280,7 @@ PropTypesProps.propTypes = {
       ),
     })
   ),
+  arrayExternalShape: PropTypes.arrayOf(PropTypes.shape(PRESET_SHAPE)),
   /**
    *  A simple `objectOf` propType.
    */
@@ -207,6 +329,16 @@ PropTypesProps.propTypes = {
   shapeShort: PropTypes.shape({
     foo: string,
   }),
+  shapeLong: PropTypes.shape({
+    foo: string,
+    prop1: string,
+    prop2: string,
+    prop3: string,
+    prop4: string,
+    prop5: string,
+    prop6: string,
+    prop7: string,
+  }),
   /**
    * propType for shape with nested arrayOf
    *
@@ -241,6 +373,9 @@ PropTypesProps.propTypes = {
     }),
     oneOf: PropTypes.oneOf(['one', 'two']),
   }),
+  shapeWithArray: PropTypes.shape({
+    arr: PropTypes.arrayOf({ foo: PropTypes.string }),
+  }),
   namedShape: NAMED_SHAPE,
   namedObjectInShape: PropTypes.shape(NAMED_OBJECT),
   exact: PropTypes.exact({
@@ -257,6 +392,8 @@ PropTypesProps.propTypes = {
   requiredString: PropTypes.string.isRequired,
   nullDefaultValue: PropTypes.string,
   undefinedDefaultValue: PropTypes.string,
+  ...SOME_INLINE_PROP_TYPES,
+  ...SOME_PROP_TYPES,
 };
 
 PropTypesProps.defaultProps = {
@@ -279,7 +416,7 @@ PropTypesProps.defaultProps = {
   },
   symbol: Symbol('Default symbol'),
   node: <div>Hello!</div>,
-  functionalElement: <FunctionalComponent />,
+  functionalElement: <FunctionalComponent className="toto" />,
   functionalElementInline: () => {
     return <div>Inlined FunctionnalComponent!</div>;
   },
@@ -294,6 +431,7 @@ PropTypesProps.defaultProps = {
   },
   functionalElementType: FunctionalComponent,
   classElementType: ClassComponent,
+  elementWithProps: <ClassComponent className="w8 h8 fill-marine-500" />,
   instanceOf: new Set(),
   oneOfString: 'News',
   oneOfNumeric: 1,
@@ -312,6 +450,7 @@ PropTypesProps.defaultProps = {
   oneOfNested: 'top-right',
   oneOfType: 'hello',
   arrayOfPrimitive: [1, 2, 3],
+  arrayOfString: ['0px', '0px'],
   arrayOfNamedObject: [{ text: 'foo', value: 'bar' }],
   arrayOfShortInlineObject: [{ foo: 'bar' }],
   arrayOfInlineObject: [{ text: 'foo', value: 'bar' }],
@@ -356,4 +495,5 @@ PropTypesProps.defaultProps = {
   optionalString: 'Default String',
   nullDefaultValue: null,
   undefinedDefaultValue: undefined,
+  ...SOME_INLINE_DEFAULT_PROPS,
 };

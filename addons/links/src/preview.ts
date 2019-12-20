@@ -7,7 +7,7 @@ import {
 import qs from 'qs';
 import addons from '@storybook/addons';
 import { STORY_CHANGED, SELECT_STORY } from '@storybook/core-events';
-import { toId } from '@storybook/router/utils';
+import { toId } from '@storybook/csf';
 import { logger } from '@storybook/client-logger';
 
 interface ParamsId {
@@ -36,7 +36,7 @@ const valueOrCall = (args: string[]) => (value: string | ((...args: string[]) =>
 export const linkTo = (
   idOrKindInput: string,
   storyInput?: string | ((...args: any[]) => string)
-) => (...args: string[]) => {
+) => (...args: any[]) => {
   const resolver = valueOrCall(args);
   const { storyId } = storyStore.getSelection();
   const current = storyStore.fromId(storyId) || {};
