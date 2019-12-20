@@ -4,7 +4,7 @@ import isPlainObject from 'is-plain-object';
 import { logger } from '@storybook/client-logger';
 import addons, { StoryContext, StoryFn, Parameters } from '@storybook/addons';
 import Events from '@storybook/core-events';
-import { toId } from '@storybook/router/utils';
+import { toId } from '@storybook/csf';
 
 import mergeWith from 'lodash/mergeWith';
 import isEqual from 'lodash/isEqual';

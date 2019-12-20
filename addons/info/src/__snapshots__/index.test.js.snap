@@ -118,7 +118,7 @@ exports[`addon Info should render <Info /> and external markdown 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -253,7 +253,7 @@ containing **bold**, *cursive* text, \`code\` and [a link](https://github.com)"
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -386,7 +386,7 @@ exports[`addon Info should render <Info /> for memoized component 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2627,6 +2627,11 @@ exports[`addon Info should render component description if story kind matches co
                           >
                             <l
                               className="emotion-2"
+                              scrollableNodeProps={
+                                Object {
+                                  "tabIndex": 0,
+                                }
+                              }
                             >
                               <div
                                 className="emotion-2"
@@ -2650,6 +2655,7 @@ exports[`addon Info should render component description if story kind matches co
                                     >
                                       <div
                                         className="simplebar-content-wrapper"
+                                        tabIndex={0}
                                       >
                                         <div
                                           className="simplebar-content"
@@ -4412,6 +4418,11 @@ exports[`addon Info should render component description if story kind matches co
                           >
                             <l
                               className="emotion-2"
+                              scrollableNodeProps={
+                                Object {
+                                  "tabIndex": 0,
+                                }
+                              }
                             >
                               <div
                                 className="emotion-2"
@@ -4435,6 +4446,7 @@ exports[`addon Info should render component description if story kind matches co
                                     >
                                       <div
                                         className="simplebar-content-wrapper"
+                                        tabIndex={0}
                                       >
                                         <div
                                           className="simplebar-content"
@@ -7416,6 +7428,11 @@ exports[`addon Info should render component description if story name matches co
                           >
                             <l
                               className="emotion-2"
+                              scrollableNodeProps={
+                                Object {
+                                  "tabIndex": 0,
+                                }
+                              }
                             >
                               <div
                                 className="emotion-2"
@@ -7439,6 +7456,7 @@ exports[`addon Info should render component description if story name matches co
                                     >
                                       <div
                                         className="simplebar-content-wrapper"
+                                        tabIndex={0}
                                       >
                                         <div
                                           className="simplebar-content"
@@ -9429,6 +9447,11 @@ exports[`addon Info should render component description if story name matches co
                           >
                             <l
                               className="emotion-2"
+                              scrollableNodeProps={
+                                Object {
+                                  "tabIndex": 0,
+                                }
+                              }
                             >
                               <div
                                 className="emotion-2"
@@ -9452,6 +9475,7 @@ exports[`addon Info should render component description if story name matches co
                                     >
                                       <div
                                         className="simplebar-content-wrapper"
+                                        tabIndex={0}
                                       >
                                         <div
                                           className="simplebar-content"

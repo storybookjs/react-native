@@ -653,13 +653,15 @@ This is a class that generates snapshot's name based on the story (kind, story &
 Let's say we wanted to create a test function for shallow && multi-file snapshots:
 
 ```js
-import initStoryshots, { getSnapshotFileName } from '@storybook/addon-storyshots';
+import initStoryshots, { Stories2SnapsConverter } from '@storybook/addon-storyshots';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
+const converter = new Stories2SnapsConverter();
+
 initStoryshots({
   test: ({ story, context }) => {
-    const snapshotFileName = getSnapshotFileName(context);
+    const snapshotFileName = converter.getSnapshotFileName(context);
     const storyElement = story.render();
     const shallowTree = shallow(storyElement);
 

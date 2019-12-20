@@ -22,10 +22,12 @@ First add the package. Make sure that the versions for your `@storybook/*` packa
 yarn add -D @storybook/addon-docs@next
 ```
 
-Then add the following to your `.storybook/presets.js` exports:
+Then add the following to your `.storybook/main.js` presets:
 
 ```js
-module.exports = ['@storybook/addon-docs/preset'];
+module.exports = {
+  presets: ['@storybook/addon-docs/preset'],
+};
 ```
 
 ## DocsPage
@@ -77,7 +79,7 @@ module.exports = {
 Finally, you can create MDX files like this:
 
 ```md
-import { Meta, Story, Props } from '@storybook/docs/blocks';
+import { Meta, Story, Props } from '@storybook/addon-docs/blocks';
 import { InfoButton } from './InfoButton.vue';
 
 <Meta title='InfoButton' component={InfoButton} />

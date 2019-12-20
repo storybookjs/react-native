@@ -229,7 +229,6 @@ exports[`A11YPanel should render report 1`] = `
                 "15paq49": true,
                 "1977chw": true,
                 "19mcg9j": true,
-                "1ez3l8h": true,
                 "1imo1gr": true,
                 "1kbt4a0": true,
                 "1l7fvsg": true,
@@ -239,6 +238,7 @@ exports[`A11YPanel should render report 1`] = `
                 "6z0ulf": true,
                 "animation-u07e3c": true,
                 "aq4p19": true,
+                "f68qle": true,
                 "fg630j": true,
                 "iau1th": true,
                 "jb2puo": true,
@@ -620,13 +620,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1ez3l8h{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-f68qle{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1ez3l8h input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
+                    .css-f68qle input{margin-left:10px;margin-right:0;margin-top:0;margin-bottom:0;}
                   </style>
                   <style
                     data-emotion="css"
@@ -846,13 +846,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1ez3l8h{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-f68qle{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1ez3l8h input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
+                    .css-f68qle input{margin-left:10px;margin-right:0;margin-top:0;margin-bottom:0;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -952,6 +952,11 @@ exports[`A11YPanel should render report 1`] = `
         >
           <l
             className="emotion-0"
+            scrollableNodeProps={
+              Object {
+                "tabIndex": 0,
+              }
+            }
           >
             <div
               className="emotion-0"
@@ -975,6 +980,7 @@ exports[`A11YPanel should render report 1`] = `
                   >
                     <div
                       className="simplebar-content-wrapper"
+                      tabIndex={0}
                     >
                       <div
                         className="simplebar-content"

@@ -87,9 +87,7 @@ export const ColorBlindness: FunctionComponent = () => {
 
     if (iframe) {
       iframe.style.filter = getFilter(activeState);
-      setActiveState({
-        active: activeState,
-      });
+      setActiveState(activeState);
     } else {
       logger.error('Cannot find Storybook iframe');
     }

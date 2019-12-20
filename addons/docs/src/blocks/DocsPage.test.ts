@@ -15,4 +15,10 @@ describe('defaultTitleSlot', () => {
     expect(defaultTitleSlot({ selectedKind: 'a|b', parameters })).toBe('b');
     expect(defaultTitleSlot({ selectedKind: 'a/b/c.d', parameters })).toBe('d');
   });
+  it('empty options', () => {
+    const parameters = { options: {} };
+    expect(defaultTitleSlot({ selectedKind: 'a/b/c', parameters })).toBe('c');
+    expect(defaultTitleSlot({ selectedKind: 'a|b', parameters })).toBe('b');
+    expect(defaultTitleSlot({ selectedKind: 'a/b/c.d', parameters })).toBe('d');
+  });
 });

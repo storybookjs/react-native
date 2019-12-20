@@ -3,7 +3,7 @@ const parser = require('@babel/parser');
 const generate = require('@babel/generator').default;
 const camelCase = require('lodash/camelCase');
 const jsStringEscape = require('js-string-escape');
-const { toId, storyNameFromExport } = require('@storybook/router/utils');
+const { toId, storyNameFromExport } = require('@storybook/csf');
 
 // Generate the MDX as is, but append named exports for every
 // story in the contents
@@ -55,7 +55,7 @@ function genStoryExport(ast, context) {
 
   let body = ast.children.find(n => n.type !== 'JSXText');
   let storyCode = null;
-  let isJsx = false;
+
   if (!body) {
     // plain text node
     const { code } = generate(ast.children[0], {});
@@ -64,21 +64,29 @@ function genStoryExport(ast, context) {
     if (body.type === 'JSXExpressionContainer') {
       // FIXME: handle fragments
       body = body.expression;
-    } else {
-      isJsx = true;
     }
     const { code } = generate(body, {});
     storyCode = code;
   }
-  if (isJsx) {
-    statements.push(
-      `export const ${storyKey} = () => (
+
+  let storyVal = null;
+  switch (body && body.type) {
+    // We don't know what type the identifier is, but this code
+    // assumes it's a function from CSF. Let's see who complains!
+    case 'Identifier':
+      storyVal = `assertIsFn(${storyCode})`;
+      break;
+    case 'ArrowFunctionExpression':
+      storyVal = `(${storyCode})`;
+      break;
+    default:
+      storyVal = `() => (
         ${storyCode}
-      );`
-    );
-  } else {
-    statements.push(`export const ${storyKey} = makeStoryFn(${storyCode});`);
+      )`;
+      break;
   }
+
+  statements.push(`export const ${storyKey} = ${storyVal};`);
   statements.push(`${storyKey}.story = {};`);
 
   // always preserve the name, since CSF exports can get modified by displayName
@@ -128,12 +136,28 @@ function genPreviewExports(ast, context) {
   return previewExports;
 }
 
-function genMeta(ast) {
+function genMeta(ast, options) {
   let title = getAttr(ast.openingElement, 'title');
   let id = getAttr(ast.openingElement, 'id');
   let parameters = getAttr(ast.openingElement, 'parameters');
   let decorators = getAttr(ast.openingElement, 'decorators');
-  title = title && `'${title.value}'`;
+  if (title) {
+    if (title.type === 'StringLiteral') {
+      title = "'".concat(jsStringEscape(title.value), "'");
+    } else {
+      try {
+        // generate code, so the expression is evaluated by the CSF compiler
+        const { code } = generate(title, {});
+        // remove the curly brackets at start and end of code
+        title = code.replace(/^\{(.+)\}$/, '$1');
+      } catch (e) {
+        // eat exception if title parsing didn't go well
+        // eslint-disable-next-line no-console
+        console.warn('Invalid title:', options.filepath);
+        title = undefined;
+      }
+    }
+  }
   id = id && `'${id.value}'`;
   if (parameters && parameters.expression) {
     const { code: params } = generate(parameters.expression, {});
@@ -151,7 +175,7 @@ function genMeta(ast) {
   };
 }
 
-function getExports(node, counter) {
+function getExports(node, counter, options) {
   const { value, type } = node;
   if (type === 'jsx') {
     if (STORY_REGEX.exec(value)) {
@@ -168,7 +192,7 @@ function getExports(node, counter) {
     if (META_REGEX.exec(value)) {
       // Preview, possibly containing multiple stories
       const ast = parser.parseExpression(value, { plugins: ['jsx'] });
-      return { meta: genMeta(ast) };
+      return { meta: genMeta(ast, options) };
     }
   }
   return null;
@@ -270,7 +294,7 @@ function extractExports(node, options) {
     storyNameToKey: {},
   };
   node.children.forEach(n => {
-    const exports = getExports(n, context);
+    const exports = getExports(n, context, options);
     if (exports) {
       const { stories, meta } = exports;
       if (stories) {
@@ -310,7 +334,7 @@ function extractExports(node, options) {
   );
 
   const fullJsx = [
-    'import { makeStoryFn, AddContext } from "@storybook/addon-docs/blocks";',
+    'import { assertIsFn, AddContext } from "@storybook/addon-docs/blocks";',
     defaultJsx,
     ...storyExports,
     `const componentMeta = ${stringifyMeta(metaExport)};`,

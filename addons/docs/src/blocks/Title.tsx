@@ -1,5 +1,5 @@
 import React, { useContext, FunctionComponent } from 'react';
-import { parseKind } from '@storybook/router';
+import { parseKind } from '@storybook/csf';
 import { Title as PureTitle } from '@storybook/components';
 import { DocsContext } from './DocsContext';
 import { StringSlot } from './shared';
@@ -11,13 +11,9 @@ interface TitleProps {
 export const defaultTitleSlot: StringSlot = ({ selectedKind, parameters }) => {
   const {
     showRoots,
-    hierarchyRootSeparator: rootSeparator,
-    hierarchySeparator: groupSeparator,
-  } = (parameters && parameters.options) || {
-    showRoots: undefined,
-    hierarchyRootSeparator: '|',
-    hierarchySeparator: /\/|\./,
-  };
+    hierarchyRootSeparator: rootSeparator = '|',
+    hierarchySeparator: groupSeparator = /\/|\./,
+  } = (parameters && parameters.options) || {};
 
   let groups;
   if (typeof showRoots !== 'undefined') {

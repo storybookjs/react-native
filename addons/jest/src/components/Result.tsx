@@ -34,7 +34,7 @@ const Icon = styled<any, any>(Icons)(({ theme }) => ({
   width: 10,
   minWidth: 10,
   color: theme.color.mediumdark,
-  marginRight: '10px',
+  marginRight: 10,
   transition: 'transform 0.1s ease-in-out',
   alignSelf: 'center',
   display: 'inline-flex',
