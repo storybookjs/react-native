@@ -11,13 +11,9 @@ interface TitleProps {
 export const defaultTitleSlot: StringSlot = ({ selectedKind, parameters }) => {
   const {
     showRoots,
-    hierarchyRootSeparator: rootSeparator,
-    hierarchySeparator: groupSeparator,
-  } = (parameters && parameters.options) || {
-    showRoots: undefined,
-    hierarchyRootSeparator: '|',
-    hierarchySeparator: /\/|\./,
-  };
+    hierarchyRootSeparator: rootSeparator = '|',
+    hierarchySeparator: groupSeparator = /\/|\./,
+  } = (parameters && parameters.options) || {};
 
   let groups;
   if (typeof showRoots !== 'undefined') {
