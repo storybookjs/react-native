@@ -1,3 +1,4 @@
+import { DOCS_MODE } from 'global';
 import { toId, sanitize, parseKind } from '@storybook/csf';
 import deprecate from 'util-deprecate';
 
@@ -130,6 +131,11 @@ const initStoriesApi = ({
 
   const jumpToStory = (direction: Direction) => {
     const { storiesHash, viewMode, storyId } = store.getState();
+
+    if (DOCS_MODE) {
+      jumpToComponent(direction);
+      return;
+    }
 
     // cannot navigate when there's no current selection
     if (!storyId || !storiesHash[storyId]) {

@@ -18,10 +18,12 @@ First add the package. Make sure that the versions for your `@storybook/*` packa
 yarn add -D @storybook/addon-docs@next
 ```
 
-Then add the following to your `.storybook/presets.js` exports:
+Then add the following to your `.storybook/main.js` presets:
 
 ```js
-module.exports = ['@storybook/addon-docs/preset'];
+module.exports = {
+  presets: ['@storybook/addon-docs/preset'],
+};
 ```
 
 ## DocsPage
@@ -31,16 +33,16 @@ When you [install docs](#installation) you should get basic [DocsPage](../docs/d
 Props tables for your components requires a few more steps. Docs for Ember relies on [@storybook/ember-cli-storybook addon](https://github.com/storybookjs/ember-cli-storybook), to extract documentation comments from your component source files. If you're using Storybook with Ember, you should already have this addon installed, you will just need to enable it by adding the following config block in your `ember-cli-build.js` file:
 
 ```js
-  let app = new EmberApp(defaults, {
-    'ember-cli-storybook': {
-      enableAddonDocsIntegration: true
-    }
-  });
+let app = new EmberApp(defaults, {
+  'ember-cli-storybook': {
+    enableAddonDocsIntegration: true,
+  },
+});
 ```
 
 Now, running the ember-cli server will generate a JSON documentation file at `/storybook-docgen/index.json`. Since generation of this file is tied into the ember-cli build, it will get regenerated everytime component files are saved. For details on documenting your components, check out the examples in the addon that powers the generation [ember-cli-addon-docs-yuidoc](https://github.com/ember-learn/ember-cli-addon-docs-yuidoc#documenting-components).
 
-Next, add the following to your `.storybook/config.js` to load the generated json file:
+Next, add the following to your `.storybook/preview.js` to load the generated json file:
 
 ```js
 import { setJSONDoc } from '@storybook/addon-docs/ember';
@@ -77,10 +79,12 @@ Docs has peer dependencies on `react`, `react-is`, and `babel-loader`. If you wa
 yarn add -D react react-is babel-loader
 ```
 
-Then update your `.storybook/config.js` to make sure you load MDX files:
+Then update your `.storybook/main.js` to make sure you load MDX files:
 
-```ts
-configure(require.context('../src/stories', true, /\.stories\.(js|mdx)$/), module);
+```js
+module.exports = {
+  stories: ['../src/stories/**/*.stories.(js|mdx)'],
+};
 ```
 
 Finally, you can create MDX files like this:
@@ -88,7 +92,6 @@ Finally, you can create MDX files like this:
 ```md
 import { Meta, Story, Props } from '@storybook/addon-docs/blocks';
 import hbs from 'htmlbars-inline-precompile'
-
 
 <Meta title='App Component' component='AppComponent' />
 
@@ -98,7 +101,7 @@ Some **markdown** description, or whatever you want.
 
 <Story name='basic' height='400px'>{{
   template: hbs`<AppComponent @title={{title}} />`,
-  context: { title: "Title" },
+context: { title: "Title" },
 }}</Story>
 
 ## Props
@@ -114,7 +117,7 @@ Also, to use the `Props` doc block, you need to set up documentation generation,
 
 Storybook Docs renders all Ember stories inside `iframe`s, with a default height of `60px`. You can update this default globally, or modify the `iframe` height locally per story in `DocsPage` and `MDX`.
 
-To update the global default, modify `.storybook/config.js`:
+To update the global default, modify `.storybook/preview.js`:
 
 ```ts
 import { addParameters } from '@storybook/ember';

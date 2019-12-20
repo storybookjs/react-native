@@ -2,10 +2,7 @@ import fs from 'fs';
 import { logger } from '@storybook/node-logger';
 
 type PresetOptions = {
-  actions?: any;
   backgrounds?: any;
-  knobs?: any;
-  links?: any;
   viewport?: any;
 };
 
@@ -25,17 +22,8 @@ const isInstalled = (addon: string) => {
 
 const makeAddon = (key: string) => `@storybook/addon-${key}`;
 
-export function presets(options: PresetOptions = {}) {
-  const presetAddons = ['knobs']
-    .filter(key => (options as any)[key] !== false)
-    .map(key => makeAddon(key))
-    .filter(addon => !isInstalled(addon))
-    .map(addon => `${addon}/preset`);
-  return presetAddons;
-}
-
 export function addons(entry: any[] = [], options: PresetOptions = {}) {
-  const registerAddons = ['actions', 'backgrounds', 'links', 'viewport']
+  const registerAddons = ['backgrounds', 'viewport']
     .filter(key => (options as any)[key] !== false)
     .map(key => makeAddon(key))
     .filter(addon => !isInstalled(addon))

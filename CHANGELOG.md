@@ -1,3 +1,72 @@
+## 5.3.0-rc.0 (December 19, 2019)
+
+### Features
+
+* CSF: Use `__orderedExports` in loader if provided  ([#9181](https://github.com/storybookjs/storybook/pull/9181))
+
+### Bug Fixes
+
+* Addon-a11y: Fix selected blindness color filter ([#9179](https://github.com/storybookjs/storybook/pull/9179))
+
+### Maintenance
+
+* Addon-essentials: Remove actions, links, knobs ([#9184](https://github.com/storybookjs/storybook/pull/9184))
+
+## 5.3.0-beta.31 (December 16, 2019)
+
+### Features
+
+* React: Add support for CRA without overrides ([#9157](https://github.com/storybookjs/storybook/pull/9157))
+* Addon-docs: Add fontFamily prop to Typeset component ([#9158](https://github.com/storybookjs/storybook/pull/9158))
+
+### Bug Fixes
+
+* Core: Emit store render event synchronously if we can ([#9087](https://github.com/storybookjs/storybook/pull/9087))
+
+## 5.3.0-beta.30 (December 16, 2019)
+
+Failed NPM publish
+
+## 5.3.0-beta.29 (December 16, 2019)
+
+Failed NPM publish
+
+## 5.3.0-beta.28 (December 16, 2019)
+
+Failed NPM publish
+
+## 5.3.0-beta.27 (December 16, 2019)
+
+Failed NPM publish
+
+## 5.3.0-beta.26 (December 16, 2019)
+
+Failed NPM publish
+
+## 5.3.0-beta.25 (December 15, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Hide addons on  docs-only stories ([#9125](https://github.com/storybookjs/storybook/pull/9125))
+
+### Dependency Upgrades
+
+* Upgrade vue-docgen-loader to 1.3.0-beta.0 ([#9155](https://github.com/storybookjs/storybook/pull/9155))
+
+## 5.3.0-beta.24 (December 15, 2019)
+
+Failed NPM publish
+
+## 5.3.0-beta.23 (December 14, 2019)
+
+### Features
+
+* Addon-docs: Render components as leaves in `--docs` mode ([#7700](https://github.com/storybookjs/storybook/pull/7700))
+
+### Bug Fixes
+
+* Addon-viewport: Allow viewports config to be optional ([#9137](https://github.com/storybookjs/storybook/pull/9137))
+
 ## 5.3.0-beta.22 (December 12, 2019)
 
 ### Bug Fixes
