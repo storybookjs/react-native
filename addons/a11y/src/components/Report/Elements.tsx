@@ -15,15 +15,15 @@ const ItemTitle = styled.span<{}>(({ theme }) => ({
   borderBottom: `1px solid ${theme.appBorderColor}`,
   width: '100%',
   display: 'flex',
-  paddingBottom: '6px',
-  marginBottom: '6px',
+  paddingBottom: 6,
+  marginBottom: 6,
   justifyContent: 'space-between',
 }));
 
 const HighlightToggleElement = styled.span({
   fontWeight: 'normal',
   alignSelf: 'center',
-  paddingRight: '15px',
+  paddingRight: 15,
   input: { margin: 0 },
 });
 

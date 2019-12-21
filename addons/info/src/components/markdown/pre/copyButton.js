@@ -16,11 +16,11 @@ function CopyButton({ onClick, toggled }) {
         alignSelf: 'flex-start',
         flexShrink: '0',
         overflow: 'hidden',
-        borderWidth: '1px',
+        borderWidth: 1,
         borderStyle: 'solid',
         borderColor: 'rgb(238, 238, 238)',
         borderImage: 'initial',
-        borderRadius: '3px',
+        borderRadius: 3,
         padding: '3px 10px',
       }}
     >

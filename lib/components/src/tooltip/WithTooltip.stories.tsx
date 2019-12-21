@@ -5,28 +5,28 @@ import { styled } from '@storybook/theming';
 import { TooltipMessage } from './TooltipMessage';
 import { WithToolTipState as WithTooltip } from './WithTooltip';
 
-const ViewPort = styled.div`
-  height: 300px;
-`;
+const ViewPort = styled.div({
+  height: 300,
+});
 
-const BackgroundBox = styled.div`
-  width: 500px;
-  height: 500px;
-  overflow-y: scroll;
-  background: #eee;
-  position: relative;
-`;
+const BackgroundBox = styled.div({
+  width: 500,
+  height: 500,
+  overflowY: 'scroll',
+  background: '#eee',
+  position: 'relative',
+});
 
-const Spacer = styled.div`
-  height: 100px;
-`;
+const Spacer = styled.div({
+  height: 100,
+});
 
-const Trigger = styled.div`
-  width: 200px;
-  height: 100px;
-  background-color: red;
-  color: white;
-`;
+const Trigger = styled.div({
+  width: 200,
+  height: 100,
+  backgroundColor: 'red',
+  color: 'white',
+});
 
 interface TooltipProps {
   onHide?: () => void;

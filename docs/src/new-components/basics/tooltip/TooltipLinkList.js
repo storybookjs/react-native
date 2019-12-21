@@ -7,7 +7,7 @@ const List = styled.div`
   min-width: 180px;
   overflow: hidden;
   overflow-y: auto;
-  maxheight: ${11.5 * 32 /* 11.5 items */};
+  max-height: ${11.5 * 32 /* 11.5 items */};
 `;
 
 function TooltipLinkList({ links, LinkWrapper }) {

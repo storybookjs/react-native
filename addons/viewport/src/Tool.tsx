@@ -84,10 +84,10 @@ const ActiveViewportSize = styled.div(() => ({
 const ActiveViewportLabel = styled.div<{}>(({ theme }) => ({
   display: 'inline-block',
   textDecoration: 'none',
-  padding: '10px',
+  padding: 10,
   fontWeight: theme.typography.weight.bold,
   fontSize: theme.typography.size.s2 - 1,
-  lineHeight: 1,
+  lineHeight: '1',
   height: 40,
   border: 'none',
   borderTop: '3px solid transparent',
@@ -102,7 +102,7 @@ const IconButtonWithLabel = styled(IconButton)(() => ({
 
 const IconButtonLabel = styled.div<{}>(({ theme }) => ({
   fontSize: theme.typography.size.s2 - 1,
-  marginLeft: '10px',
+  marginLeft: 10,
 }));
 
 interface ViewportToolState {
@@ -124,18 +124,22 @@ const getStyles = (
 
 export const ViewportTool: FunctionComponent = memo(
   withTheme(({ theme }: { theme: Theme }) => {
-    const { viewports, defaultViewport, disable } = useParameter<ViewportAddonParameter>(
-      PARAM_KEY,
-      {
-        viewports: MINIMAL_VIEWPORTS,
-        defaultViewport: responsiveViewport.id,
-      }
-    );
+    const {
+      viewports = MINIMAL_VIEWPORTS,
+      defaultViewport = responsiveViewport.id,
+      disable,
+    } = useParameter<ViewportAddonParameter>(PARAM_KEY, {});
     const [state, setState] = useAddonState<ViewportToolState>(ADDON_ID, {
-      selected: defaultViewport || responsiveViewport.id,
+      selected: defaultViewport,
       isRotated: false,
     });
     const list = toList(viewports);
+
+    if (!list.find(i => i.id === defaultViewport)) {
+      console.warn(
+        `Cannot find "defaultViewport" of "${defaultViewport}" in addon-viewport configs, please check the "viewports" setting in the configuration.`
+      );
+    }
 
     useEffect(() => {
       setState({

@@ -2,7 +2,6 @@
 import { createElement } from 'rax';
 import View from 'rax-view';
 import Text from 'rax-text';
-// import Button from 'rax-button';
 import Image from 'rax-image';
 
 const Main = ({ children, ...props }) => (
@@ -24,12 +23,12 @@ const P = ({ children, ...props }) => (
 );
 
 const Title = ({ children, ...props }) => (
-  <Text {...props} style={{ fontSize: 40, lineHeight: 50, fontWeight: 'bold' }}>
+  <Text {...props} style={{ fontSize: 40, lineHeight: '80px', fontWeight: 'bold' }}>
     {children}
   </Text>
 );
 
-const Welcome = ({ showApp }) => (
+export const Welcome = ({ showApp }) => (
   <Main>
     <Title>Welcome to storybook for Rax</Title>
     <Image
@@ -66,5 +65,3 @@ const Welcome = ({ showApp }) => (
     </P>
   </Main>
 );
-
-export default Welcome;

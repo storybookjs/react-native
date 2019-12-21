@@ -6,9 +6,14 @@ export * from './typography/DocumentFormatting';
 export const components = Object.entries(rawComponents).reduce(
   (acc, [k, V]) => ({
     ...acc,
-    [k.toLowerCase()]: (props: object) => (
-      <V {...props} className={`sbdocs sbdocs-${k.toLowerCase()}`} />
-    ),
+    [k.toLowerCase()]: ({ className, ...rest }: { className: string }) => {
+      return (
+        <V
+          {...rest}
+          className={`sbdocs sbdocs-${k.toLowerCase()}${className ? ` ${className}` : ''}`}
+        />
+      );
+    },
   }),
   {}
 );

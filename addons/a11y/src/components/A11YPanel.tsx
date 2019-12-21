@@ -22,9 +22,9 @@ export enum RuleType {
 
 const Icon = styled(Icons)(
   {
-    height: '12px',
-    width: '12px',
-    marginRight: '4px',
+    height: 12,
+    width: 12,
+    marginRight: 4,
   },
   ({ status, theme }: any) =>
     status === 'running'
