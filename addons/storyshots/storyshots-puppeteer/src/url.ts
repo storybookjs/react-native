@@ -1,4 +1,4 @@
-import { toId } from '@storybook/router/utils';
+import { toId } from '@storybook/csf';
 
 import { URL } from 'url';
 

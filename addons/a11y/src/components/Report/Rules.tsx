@@ -16,9 +16,9 @@ const impactColors = {
 const List = styled.div({
   display: 'flex',
   flexDirection: 'column',
-  paddingBottom: '4px',
-  paddingRight: '4px',
-  paddingTop: '4px',
+  paddingBottom: 4,
+  paddingRight: 4,
+  paddingTop: 4,
   fontWeight: '400',
 } as any);
 
@@ -26,23 +26,23 @@ const Item = styled.div(({ elementWidth }: { elementWidth: number }) => {
   const maxWidthBeforeBreak = 407;
   return {
     flexDirection: elementWidth > maxWidthBeforeBreak ? 'row' : 'inherit',
-    marginBottom: elementWidth > maxWidthBeforeBreak ? '6px' : '12px',
+    marginBottom: elementWidth > maxWidthBeforeBreak ? 6 : 12,
     display: elementWidth > maxWidthBeforeBreak ? 'flex' : 'block',
   };
 });
 
 const StyledBadge = styled(Badge)(({ status }: { status: string }) => ({
   padding: '2px 8px',
-  marginBottom: '3px',
-  minWidth: '65px',
+  marginBottom: 3,
+  minWidth: 65,
   maxWidth: 'fit-content',
   width: '100%',
   textAlign: 'center',
 }));
 
 const Message = styled.div({
-  paddingLeft: '6px',
-  paddingRight: '23px',
+  paddingLeft: 6,
+  paddingRight: 23,
 });
 
 const Status = styled.div(({ passes, impact }: { passes: boolean; impact: string }) => ({
@@ -51,8 +51,8 @@ const Status = styled.div(({ passes, impact }: { passes: boolean; impact: string
   alignItems: 'center',
   color: passes ? impactColors.success : (impactColors as any)[impact],
   '& > svg': {
-    height: '16px',
-    width: '16px',
+    height: 16,
+    width: 16,
   },
 }));
 

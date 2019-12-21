@@ -24,7 +24,7 @@ const Icon = styled<any, any>(Icons)(({ theme }) => ({
   width: 10,
   minWidth: 10,
   color: theme.color.mediumdark,
-  marginRight: '10px',
+  marginRight: 10,
   transition: 'transform 0.1s ease-in-out',
   alignSelf: 'center',
   display: 'inline-flex',
@@ -49,7 +49,7 @@ const HeaderBar = styled.div<{}>(({ theme }) => ({
 const HighlightToggleElement = styled.span({
   fontWeight: 'normal',
   float: 'right',
-  marginRight: '15px',
+  marginRight: 15,
   alignSelf: 'center',
   input: { margin: 0 },
 });

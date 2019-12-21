@@ -51,7 +51,55 @@ jobs:
           command: yarn chromatic --storybook-build-dir="built-storybooks/official-storybook" --exit-zero-on-changes --app-code="ab7m45tp9p"
       - run:
           name: Run chromatic on the pre-built angular example
-          command: yarn chromatic --storybook-build-dir="built-storybooks/angular-cli" --exit-zero-on-changes --app-code="tl92yzsj6w"
+          command: yarn chromatic --storybook-build-dir="built-storybooks/angular-cli" --app-code="tl92yzsj6w"
+      - run:
+          name: Run chromatic on the pre-built cra-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/cra-kitchen-sink" --app-code="tg55gajmdt"
+      - run:
+          name: Run chromatic on the pre-built cra-react15 example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/cra-react15" --app-code="gxk7iqej3wt"
+      - run:
+          name: Run chromatic on the pre-built cra-ts-essentials example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/cra-ts-essentials" --app-code="b311ypk6of"
+      - run:
+          name: Run chromatic on the pre-built cra-ts-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/cra-ts-kitchen-sink" --app-code="19whyj1tlac"
+      - run:
+          name: Run chromatic on the pre-built dev-kits example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/dev-kits" --app-code="7yykp9ifdxx"
+      - run:
+          name: Run chromatic on the pre-built ember-cli example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/ember-cli" --app-code="19z23qxndju"
+      - run:
+          name: Run chromatic on the pre-built html-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/html-kitchen-sink" --app-code="e8zolxoyg8o"
+      - run:
+          name: Run chromatic on the pre-built marko-cli example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/marko-cli" --app-code="qaegx64axu"
+      - run:
+          name: Run chromatic on the pre-built mithril-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/mithril-kitchen-sink" --app-code="8adgm46jzk8"
+      - run:
+          name: Run chromatic on the pre-built polymer-cli example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/polymer-cli" --app-code="o6jl9kmh0qd"
+      - run:
+          name: Run chromatic on the pre-built preact-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/preact-kitchen-sink" --app-code="ls0ikhnwqt"
+      - run:
+          name: Run chromatic on the pre-built rax-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/rax-kitchen-sink" --app-code="4co6vptx8qo"
+      - run:
+          name: Run chromatic on the pre-built riot-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/riot-kitchen-sink" --app-code="g2dp3lnr34a"
+      - run:
+          name: Run chromatic on the pre-built svelte-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/svelte-kitchen-sink" --app-code="8ob73wgl995"
+      - run:
+          name: Run chromatic on the pre-built vue-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/vue-kitchen-sink" --app-code="cyxj0e38bqj"
+      - run:
+          name: Run chromatic on the pre-built web-components-kitchen-sink example
+          command: yarn chromatic --storybook-build-dir="built-storybooks/web-components-kitchen-sink" --app-code="npm5gsofwkf"
 
   packtracker:
     <<: *defaults

@@ -3,7 +3,9 @@ import { action } from "@storybook/addon-actions";
 import { Button } from "@storybook/react/demo";
 
 export default {
-  title: "Button"
+  title: "Button",
+  excludeStories: ["text"],
+  includeStories: /emoji.*/
 };
 
 export const text = () => (
@@ -17,3 +19,13 @@ export const emoji = () => (
     </span>
   </Button>
 );
+
+export function emojiFn() {
+  return (
+    <Button onClick={action("clicked")}>
+      <span role="img" aria-label="so cool">
+        😀 😎 👍 💯
+      </span>
+    </Button>
+  )
+};

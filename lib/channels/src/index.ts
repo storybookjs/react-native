@@ -40,6 +40,8 @@ export class Channel {
 
   private events: EventsKeyValue = {};
 
+  private data: Record<string, any> = {};
+
   private readonly transport: ChannelTransport;
 
   constructor({ transport, async = false }: ChannelArgs = {}) {
@@ -85,6 +87,10 @@ export class Channel {
     } else {
       handler();
     }
+  }
+
+  last(eventName: string) {
+    return this.data[eventName];
   }
 
   eventNames() {
@@ -134,6 +140,7 @@ export class Channel {
     if (listeners && (isPeer || event.from !== this.sender)) {
       listeners.forEach(fn => !(isPeer && fn.ignorePeer) && fn(...event.args));
     }
+    this.data[event.type] = event.args;
   }
 
   private onceListener(eventName: string, listener: Listener) {

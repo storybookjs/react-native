@@ -23,7 +23,7 @@ const Required = styled.span(({ theme }) => ({
 const Description = styled.div(({ theme }) => ({
   '&&': {
     p: {
-      margin: '0',
+      margin: 0,
     },
   },
 
@@ -40,7 +40,7 @@ const Type = styled.div<{ hasDescription: boolean }>(({ theme, hasDescription })
     theme.base === 'light'
       ? transparentize(0.1, theme.color.defaultText)
       : transparentize(0.2, theme.color.defaultText),
-  marginTop: hasDescription ? '4px' : '0',
+  marginTop: hasDescription ? 4 : 0,
 }));
 
 const TypeWithJsDoc = styled.div<{ hasDescription: boolean }>(({ theme, hasDescription }) => ({
@@ -48,8 +48,8 @@ const TypeWithJsDoc = styled.div<{ hasDescription: boolean }>(({ theme, hasDescr
     theme.base === 'light'
       ? transparentize(0.1, theme.color.defaultText)
       : transparentize(0.2, theme.color.defaultText),
-  marginTop: hasDescription ? '12px' : '0',
-  marginBottom: '12px',
+  marginTop: hasDescription ? 12 : 0,
+  marginBottom: 12,
 }));
 
 export const PropRow: FC<PropRowProps> = ({

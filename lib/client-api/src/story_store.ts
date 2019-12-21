@@ -8,7 +8,7 @@ import stable from 'stable';
 import { Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import { logger } from '@storybook/client-logger';
-import { StoryFn, Parameters } from '@storybook/addons';
+import { Comparator, Parameters, StoryFn } from '@storybook/addons';
 import {
   DecoratorFunction,
   LegacyData,
@@ -19,6 +19,7 @@ import {
   ErrorLike,
 } from './types';
 import { HooksContext } from './hooks';
+import storySort from './storySort';
 
 // TODO: these are copies from components/nav/lib
 // refactor to DRY
@@ -129,7 +130,13 @@ export default class StoryStore extends EventEmitter {
           !!(this._data[key] && this._data[key].parameters && this._data[key].parameters.options)
       );
       if (index && this._data[index].parameters.options.storySort) {
-        const sortFn = this._data[index].parameters.options.storySort;
+        const storySortParameter = this._data[index].parameters.options.storySort;
+        let sortFn: Comparator<any>;
+        if (typeof storySortParameter === 'function') {
+          sortFn = storySortParameter;
+        } else {
+          sortFn = storySort(storySortParameter);
+        }
         stable.inplace(stories, sortFn);
       }
     }
@@ -145,9 +152,16 @@ export default class StoryStore extends EventEmitter {
       data === undefined ? this._selection : { storyId: data.storyId, viewMode: data.viewMode };
     this._error = error === undefined ? this._error : error;
 
+    // Try and emit the STORY_RENDER event synchronously, but if the channel is not ready (RN),
+    // we'll try again later.
+    let isStarted = false;
+    if (this._channel) {
+      this._channel.emit(Events.STORY_RENDER);
+      isStarted = true;
+    }
+
     setTimeout(() => {
-      // preferred method to emit event.
-      if (this._channel) {
+      if (this._channel && !isStarted) {
         this._channel.emit(Events.STORY_RENDER);
       }
 

@@ -7,7 +7,7 @@
 'app: react-native': ['benoitdion', 'gongreg']
 'app: react-native-server': ['benoitdion', 'gongreg']
 'app: svelte': ['rixo', 'cam-stitt', 'plumpNation']
-'app: vue': ['backbone87', 'elevatebart', 'pksunkara', 'Aaron-Pool']
+'app: vue': ['backbone87', 'elevatebart', 'pksunkara', 'Aaron-Pool', 'pocka']
 'app: web-components': ['daKmoR']
 'api: addons': ['ndelangen']
 'addon: a11y': ['CodeByAlex', 'Armanio', 'jsomsanith']

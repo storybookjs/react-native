@@ -36,9 +36,9 @@ const Expandable = styled.div<{}>(codeCommon, ({ theme }) => ({
 
 const Detail = styled.div<{ width: string }>(({ theme, width }) => ({
   width,
-  minWidth: '200px',
-  maxWidth: '800px',
-  padding: '15px',
+  minWidth: 200,
+  maxWidth: 800,
+  padding: 15,
   // Dont remove the mono fontFamily here even if it seem useless, this is used by the browser to calculate the length of a "ch" unit.
   fontFamily: theme.typography.fonts.mono,
   fontSize: theme.typography.size.s2 - 1,
@@ -54,7 +54,7 @@ const ArrowIcon = styled(Icons)({
   height: 10,
   width: 10,
   minWidth: 10,
-  marginLeft: '4px',
+  marginLeft: 4,
 });
 
 const EmptyProp = () => {
