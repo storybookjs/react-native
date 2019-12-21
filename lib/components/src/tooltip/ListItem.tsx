@@ -49,12 +49,12 @@ const Right = styled.span<RightProps>(
   {
     '& svg': {
       transition: 'all 200ms ease-out',
-      opacity: '0',
-      height: '12px',
-      width: '12px',
+      opacity: 0,
+      height: 12,
+      width: 12,
       margin: '3px 0',
       verticalAlign: 'top',
-    } as any,
+    },
     '& path': {
       fill: 'inherit',
     },

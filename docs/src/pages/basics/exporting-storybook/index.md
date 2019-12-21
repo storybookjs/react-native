@@ -50,7 +50,7 @@ npm i -g now
 - Configure your `build` script:
 
 ```
-`"build": "build-storybook -c .storybook -o public"`
+`"build": "build-storybook -c .storybook -o build"`
 ```
 
 - Execute `now` on your terminal.

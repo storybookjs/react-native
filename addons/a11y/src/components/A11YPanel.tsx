@@ -21,9 +21,9 @@ export enum RuleType {
 }
 
 const RotatingIcons = styled(Icons)(({ theme }) => ({
-  height: '12px',
-  width: '12px',
-  marginRight: '4px',
+  height: 12,
+  width: 12,
+  marginRight: 4,
   animation: `${theme.animation.rotate360} 1s linear infinite;`,
 }));
 

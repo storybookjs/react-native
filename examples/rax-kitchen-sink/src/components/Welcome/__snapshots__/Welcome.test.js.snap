@@ -16,7 +16,7 @@ Object {
       "style": Object {
         "fontSize": 40,
         "fontWeight": "bold",
-        "lineHeight": 50,
+        "lineHeight": "80px",
         "webkitLineClamp": undefined,
       },
       "tagName": "SPAN",
