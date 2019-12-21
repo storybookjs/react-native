@@ -60,7 +60,7 @@ export class PostmsgTransport {
    */
   send(event: ChannelEvent, options?: any): Promise<any> {
     const iframeWindow = this.getWindow();
-    if (!iframeWindow) {
+    if (!iframeWindow || this.buffer.length) {
       return new Promise((resolve, reject) => {
         this.buffer.push({ event, resolve, reject });
       });

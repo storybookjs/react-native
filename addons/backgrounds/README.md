@@ -73,7 +73,7 @@ export const defaultView = () => (
 );
 defaultView.story = {
   parameters: {
-    background: [
+    backgrounds: [
       { name: 'red', value: 'rgba(255, 0, 0)' },
     ],
   },
@@ -94,7 +94,7 @@ export const noBackgrounds = () => (
 );
 noBackgrounds.story = {
   parameters: {
-    background: [],
+    backgrounds: [],
   },
 };
 
@@ -103,7 +103,7 @@ export const disabledBackgrounds = () => (
 );
 disabledBackgrounds.story = {
   parameters: {
-    background: { disabled: true },
+    backgrounds: { disabled: true },
   },
 };
 ```
