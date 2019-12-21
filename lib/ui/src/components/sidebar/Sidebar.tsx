@@ -13,7 +13,7 @@ const Heading = styled(SidebarHeading)<SidebarHeadingProps>({
 
 const Stories = styled(({ className, ...rest }) => (
   <SidebarStories className={className} {...rest} />
-))(({ loading }) => (loading ? { marginTop: 8 } : {}));
+))(({ loading }) => (loading ? { marginTop: 8, overflow: 'hidden' } : { overflow: 'hidden' }));
 
 const Container = styled.nav({
   position: 'absolute',
