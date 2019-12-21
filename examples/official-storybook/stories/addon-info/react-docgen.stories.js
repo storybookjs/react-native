@@ -2,17 +2,18 @@ import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
-import DocgenButton from '../../components/DocgenButton';
+import { DocgenButton } from '../../components/DocgenButton';
 import FlowTypeButton from '../../components/FlowTypeButton';
 import BaseButton from '../../components/BaseButton';
 import { NamedExportButton } from '../../components/NamedExportButton';
 
 export default {
-  title: 'Addons|Info/React Docgen',
+  title: 'Addons/Info/React Docgen',
+  component: DocgenButton,
   decorators: [withInfo],
 };
 
-export const commentsFromPropTypeDeclarations = () => (
+export const CommentsFromPropTypeDeclarations = () => (
   <DocgenButton
     onClick={action('clicked')}
     label="Docgen Button"
@@ -32,7 +33,7 @@ export const commentsFromPropTypeDeclarations = () => (
   />
 );
 
-commentsFromPropTypeDeclarations.story = {
+CommentsFromPropTypeDeclarations.story = {
   name: 'Comments from PropType declarations',
 
   parameters: {
@@ -41,11 +42,11 @@ commentsFromPropTypeDeclarations.story = {
   },
 };
 
-export const commentsFromFlowDeclarations = () => (
+export const CommentsFromFlowDeclarations = () => (
   <FlowTypeButton onClick={action('clicked')} label="Flow Typed Button" />
 );
 
-commentsFromFlowDeclarations.story = {
+CommentsFromFlowDeclarations.story = {
   name: 'Comments from Flow declarations',
 
   parameters: {
@@ -54,11 +55,11 @@ commentsFromFlowDeclarations.story = {
   },
 };
 
-export const commentsFromComponentDeclaration = () => (
+export const CommentsFromComponentDeclaration = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
 
-commentsFromComponentDeclaration.story = {
+CommentsFromComponentDeclaration.story = {
   name: 'Comments from component declaration',
 
   parameters: {
@@ -67,11 +68,11 @@ commentsFromComponentDeclaration.story = {
   },
 };
 
-export const commentsFromNamedExportComponentDeclaration = () => (
+export const CommentsFromNamedExportComponentDeclaration = () => (
   <NamedExportButton onClick={action('clicked')} label="Button" />
 );
 
-commentsFromNamedExportComponentDeclaration.story = {
+CommentsFromNamedExportComponentDeclaration.story = {
   name: 'Comments from named export component declaration',
 
   parameters: {

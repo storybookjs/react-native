@@ -13,7 +13,10 @@ const withTests = {
 };
 
 module.exports = {
-  ignore: ['./lib/codemod/src/transforms/__testfixtures__'],
+  ignore: [
+    './lib/codemod/src/transforms/__testfixtures__',
+    './lib/postinstall/src/__testfixtures__',
+  ],
   presets: [
     ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
     '@babel/preset-typescript',
@@ -71,6 +74,11 @@ module.exports = {
       env: {
         test: withTests,
       },
+    },
+    {
+      test: './app/react-native',
+      presets: ['module:metro-react-native-babel-preset'],
+      plugins: ['babel-plugin-macros', ['emotion', { sourceMap: true, autoLabel: true }]],
     },
     {
       test: [

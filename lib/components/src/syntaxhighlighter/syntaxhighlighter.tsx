@@ -7,6 +7,8 @@ import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
 import bash from 'react-syntax-highlighter/dist/esm/languages/prism/bash';
 import css from 'react-syntax-highlighter/dist/esm/languages/prism/css';
 import html from 'react-syntax-highlighter/dist/esm/languages/prism/markup';
+import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
+import typescript from 'react-syntax-highlighter/dist/esm/languages/prism/typescript';
 
 import { PrismLight as ReactSyntaxHighlighter } from 'react-syntax-highlighter';
 
@@ -19,6 +21,8 @@ ReactSyntaxHighlighter.registerLanguage('jsx', jsx);
 ReactSyntaxHighlighter.registerLanguage('bash', bash);
 ReactSyntaxHighlighter.registerLanguage('css', css);
 ReactSyntaxHighlighter.registerLanguage('html', html);
+ReactSyntaxHighlighter.registerLanguage('tsx', tsx);
+ReactSyntaxHighlighter.registerLanguage('typescript', typescript);
 
 const themedSyntax = memoize(2)(theme =>
   Object.entries(theme.code || {}).reduce((acc, [key, val]) => ({ ...acc, [`* .${key}`]: val }), {})

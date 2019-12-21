@@ -6,25 +6,25 @@ import BaseButton from '../../components/BaseButton';
 import TableComponent from '../../components/TableComponent';
 
 export default {
-  title: 'Addons|Info/Story Source',
+  title: 'Addons/Info/Story Source',
   decorators: [withInfo],
 };
 
-export const oneProp = () => <BaseButton label="Button" />;
-oneProp.story = { name: 'One prop' };
+export const OneProp = () => <BaseButton label="Button" />;
+OneProp.story = { name: 'One prop' };
 
-export const manyProps = () => <BaseButton label="Button" onClick={action('clicked')} disabled />;
-manyProps.story = { name: 'Many props' };
+export const ManyProps = () => <BaseButton label="Button" onClick={action('clicked')} disabled />;
+ManyProps.story = { name: 'Many props' };
 
-export const children = () => (
+export const Children = () => (
   <div>
     <p>Here is my nice button:</p>
     <BaseButton label="Button" onClick={action('clicked')} />
   </div>
 );
-children.story = { name: 'Children' };
+Children.story = { name: 'Children' };
 
-export const arrayProp = () => {
+export const ArrayProp = () => {
   const propDefs = [
     {
       property: 'label',
@@ -55,9 +55,9 @@ export const arrayProp = () => {
   ];
   return <TableComponent propDefinitions={propDefs} />;
 };
-arrayProp.story = { name: 'Array prop' };
+ArrayProp.story = { name: 'Array prop' };
 
-export const objectProp = () => (
+export const ObjectProp = () => (
   <BaseButton
     label="Button"
     style={{
@@ -65,9 +65,9 @@ export const objectProp = () => (
       backgroundColor: 'powderblue',
       fontSize: '16px',
       boxShadow: '1px 1px rgba(0, 0, 0, .07)',
-      borderRadius: '5px',
+      borderRadius: 5,
       padding: '4px 8px',
     }}
   />
 );
-objectProp.story = { name: 'Object prop' };
+ObjectProp.story = { name: 'Object prop' };

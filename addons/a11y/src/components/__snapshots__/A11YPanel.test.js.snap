@@ -177,8 +177,16 @@ exports[`A11YPanel should render report 1`] = `
             "storybook/a11y/result",
             [Function],
           ],
+          Array [
+            "storybook/a11y/error",
+            [Function],
+          ],
         ],
         "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
           Object {
             "type": "return",
             "value": undefined,
@@ -221,7 +229,6 @@ exports[`A11YPanel should render report 1`] = `
                 "15paq49": true,
                 "1977chw": true,
                 "19mcg9j": true,
-                "1ez3l8h": true,
                 "1imo1gr": true,
                 "1kbt4a0": true,
                 "1l7fvsg": true,
@@ -231,6 +238,7 @@ exports[`A11YPanel should render report 1`] = `
                 "6z0ulf": true,
                 "animation-u07e3c": true,
                 "aq4p19": true,
+                "f68qle": true,
                 "fg630j": true,
                 "iau1th": true,
                 "jb2puo": true,
@@ -612,13 +620,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1ez3l8h{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-f68qle{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
                   </style>
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1ez3l8h input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
+                    .css-f68qle input{margin-left:10px;margin-right:0;margin-top:0;margin-bottom:0;}
                   </style>
                   <style
                     data-emotion="css"
@@ -838,13 +846,13 @@ exports[`A11YPanel should render report 1`] = `
                     data-emotion="css"
                   >
                     
-                    .css-1ez3l8h{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0px;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
+                    .css-f68qle{cursor:pointer;font-size:14px;padding:12px 0px 3px 12px;height:40px;border:none;margin-top:0;float:left;display:block;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;border-bottom:1px solid rgba(0,0,0,.1);}
                   </style>,
                   <style
                     data-emotion="css"
                   >
                     
-                    .css-1ez3l8h input{margin-left:10;margin-right:0;margin-top:0;margin-bottom:0;}
+                    .css-f68qle input{margin-left:10px;margin-right:0;margin-top:0;margin-bottom:0;}
                   </style>,
                   <style
                     data-emotion="css"
@@ -928,6 +936,7 @@ exports[`A11YPanel should render report 1`] = `
               "name": "nh5djz",
               "next": undefined,
               "styles": "[data-simplebar]{position:relative;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:flex-start;}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content-wrapper{direction:inherit;position:relative;display:block;visibility:visible;}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}[data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}.simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";border-radius:7px;left:0;right:0;opacity:0;transition:opacity 0.2s linear;background:#333333;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:11px;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:11px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}[data-simplebar-direction=\\"rtl\\"] .simplebar-track.simplebar-vertical{right:auto;left:0;}",
+              "toString": [Function],
             }
           }
         />
@@ -943,6 +952,11 @@ exports[`A11YPanel should render report 1`] = `
         >
           <l
             className="emotion-0"
+            scrollableNodeProps={
+              Object {
+                "tabIndex": 0,
+              }
+            }
           >
             <div
               className="emotion-0"
@@ -966,6 +980,7 @@ exports[`A11YPanel should render report 1`] = `
                   >
                     <div
                       className="simplebar-content-wrapper"
+                      tabIndex={0}
                     >
                       <div
                         className="simplebar-content"

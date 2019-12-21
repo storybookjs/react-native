@@ -1,3 +1,2 @@
 declare module 'global';
-declare module '@storybook/client-logger';
-declare module '@storybook/addons';
+declare module '@hypnosphi/jscodeshift/dist/testUtils';

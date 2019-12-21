@@ -5,7 +5,7 @@ const text = 'Testing the a11y addon';
 const href = 'javascript:void 0';
 
 export default {
-  title: 'Addons|A11y/Typography',
+  title: 'Addons/A11y/Typography',
   parameters: {
     options: { selectedPanel: 'storybook/a11y/panel' },
   },
@@ -19,26 +19,26 @@ export const Correct = () => (
   </Fragment>
 );
 
-export const emptyHeading = () => <h1 />;
+export const EmptyHeading = () => <h1 />;
 
-emptyHeading.story = {
+EmptyHeading.story = {
   name: 'Empty Heading',
 };
 
-export const emptyParagraph = () => <p />;
+export const EmptyParagraph = () => <p />;
 
-emptyParagraph.story = {
+EmptyParagraph.story = {
   name: 'Empty Paragraph',
 };
 
-export const emptyLink = () => <a href={href} />;
+export const EmptyLink = () => <a href={href} />;
 
-emptyLink.story = {
+EmptyLink.story = {
   name: 'Empty Link',
 };
 
-export const linkWithoutHref = () => <a>{`${text}...`}</a>;
+export const LinkWithoutHref = () => <a>{`${text}...`}</a>;
 
-linkWithoutHref.story = {
+LinkWithoutHref.story = {
   name: 'Link without href',
 };

@@ -100,11 +100,9 @@ WithTooltipPure.defaultProps = {
   tooltipShown: false,
 };
 
-const WithToolTipState: FunctionComponent<
-  WithTooltipPureProps & {
-    startOpen?: boolean;
-  }
-> = ({ startOpen, ...rest }) => {
+const WithToolTipState: FunctionComponent<WithTooltipPureProps & {
+  startOpen?: boolean;
+}> = ({ startOpen, ...rest }) => {
   const [tooltipShown, onVisibilityChange] = useState(startOpen || false);
 
   useEffect(() => {

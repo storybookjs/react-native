@@ -1,7 +1,7 @@
 import MyButton from './Button.vue';
 
 export default {
-  title: 'Custom|Decorator for Vue',
+  title: 'Custom/Decorator for Vue',
   decorators: [
     storyFn => {
       // Decorated with story-function
@@ -26,15 +26,15 @@ export default {
   ],
 };
 
-export const template = () => ({
+export const Template = () => ({
   template: '<my-button>MyButton with template</my-button>',
 });
 
-export const withData = ({ parameters: { fileName, ...parameters }, hooks, ...rest }) => ({
+export const WithData = ({ parameters: { fileName, ...parameters }, hooks, ...rest }) => ({
   template: `<pre v-pre>${JSON.stringify({ ...rest, parameters }, null, 2)}</pre>`,
 });
 
-export const render = () => ({
+export const Render = () => ({
   render(h) {
     return h(MyButton, { props: { color: 'pink' } }, ['renders component: MyButton']);
   },

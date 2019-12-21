@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Custom|Dependencies inputs and inject dependencies 1`] = `
+exports[`Storyshots Custom/Dependencies inputs and inject dependencies 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}
@@ -31,7 +31,7 @@ exports[`Storyshots Custom|Dependencies inputs and inject dependencies 1`] = `
 </storybook-dynamic-app-root>
 `;
 
-exports[`Storyshots Custom|Dependencies inputs and inject dependencies with knobs 1`] = `
+exports[`Storyshots Custom/Dependencies inputs and inject dependencies with knobs 1`] = `
 <storybook-dynamic-app-root
   cfr={[Function CodegenComponentFactoryResolver]}
   data={[Function Object]}

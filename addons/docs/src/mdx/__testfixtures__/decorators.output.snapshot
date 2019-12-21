@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`docs-mdx-compiler-plugin decorators.mdx 1`] = `
+"/* @jsx mdx */
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
+
+import { Button } from '@storybook/react/demo';
+import { Story, Meta } from '@storybook/addon-docs/blocks';
+
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+
+const layoutProps = {};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <Meta
+        title=\\"Button\\"
+        decorators={[
+          storyFn => (
+            <div
+              style={{
+                backgroundColor: 'yellow',
+              }}
+            >
+              {storyFn()}
+            </div>
+          ),
+        ]}
+        mdxType=\\"Meta\\"
+      />
+      <h1>{\`Decorated story\`}</h1>
+      <Story
+        name=\\"one\\"
+        decorators={[storyFn => <div className=\\"local\\">{storyFn()}</div>]}
+        mdxType=\\"Story\\"
+      >
+        <Button mdxType=\\"Button\\">One</Button>
+      </Story>
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+export const one = () => <Button>One</Button>;
+one.story = {};
+one.story.name = 'one';
+one.story.parameters = { mdxSource: '<Button>One</Button>' };
+one.story.decorators = [storyFn => <div className=\\"local\\">{storyFn()}</div>];
+
+const componentMeta = {
+  title: 'Button',
+  decorators: [
+    storyFn => (
+      <div
+        style={{
+          backgroundColor: 'yellow',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ],
+  includeStories: ['one'],
+};
+
+const mdxStoryNameToId = { one: 'button--one' };
+
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = {
+  ...(componentMeta.parameters.docs || {}),
+  page: () => (
+    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+      <MDXContent />
+    </AddContext>
+  ),
+};
+
+export default componentMeta;
+"
+`;

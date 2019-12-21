@@ -1,7 +1,7 @@
 import StopWatch from '../components/stop-watch/index.marko';
 
 export default {
-  title: 'Main|StopWatch',
+  title: 'Main/StopWatch',
   parameters: {
     component: StopWatch,
   },

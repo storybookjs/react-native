@@ -16,7 +16,7 @@ npx -p @storybook/cli@next sb migrate --list
 To run a codemod `<name-of-codemod>`:
 
 ```
-npx -p @storybook/cli@next sb migrate <name-of-codemod> --glob "**/*.stories.js"
+npx -p @storybook/cli@next sb migrate <name-of-codemod> --glob="**/*.stories.js"
 ```
 
 ## Installation
@@ -133,14 +133,14 @@ for use in SB Docs.
 For example:
 
 ```js
-input { Button } from './Button';
+import { Button } from './Button';
 storiesOf('Button', module).add('story', () => <Button label="The Button" />);
 ```
 
 Becomes:
 
 ```js
-input { Button } from './Button';
+import { Button } from './Button';
 storiesOf('Button', module)
   .addParameters({ component: Button })
   .add('story', () => <Button label="The Button" />);
@@ -273,5 +273,35 @@ export default {
 export const basicStory = () => <Button label="The Button" />;
 basicStory.story = {
   name: 'basic stories',
+};
+```
+
+### upgrade-hierarchy-separators
+
+Starting in 5.3, Storybook is moving to using a single path separator, `/`, to specify the story hierarchy. It previously defaulted to `|` for story "roots" (optional) and either `/` or `.` for denoting paths. This codemod updates the old default to the new default.
+
+```sh
+./node_modules/.bin/jscodeshift -t ./node_modules/@storybook/codemod/dist/transforms/upgrade-hierarchy-separators.js . --ignore-pattern "node_modules|dist"
+```
+
+For example:
+
+```js
+storiesOf('Foo|Bar/baz');
+storiesOf('Foo.Bar.baz');
+
+export default {
+  title: 'Foo|Bar/baz.whatever',
+};
+```
+
+Becomes:
+
+```js
+storiesOf('Foo/Bar/baz');
+storiesOf('Foo/Bar/baz');
+
+export default {
+  title: 'Foo/Bar/baz/whatever',
 };
 ```

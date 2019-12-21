@@ -2,7 +2,13 @@
 
 - [Migration](#migration)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
+    - [To tri-config configuration](#to-triconfig-configuration)
     - [Create React App preset](#create-react-app-preset)
+    - [Description doc block](#description-doc-block)
+    - [React Native Async Storage](#react-native-async-storage)
+    - [Deprecate displayName parameter](#deprecate-displayname-parameter)
+    - [Unified docs preset](#unified-docs-preset)
+    - [Simplified hierarchy separators](#simplified-hierarchy-separators)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)
@@ -69,13 +75,138 @@
     - [Packages renaming](#packages-renaming)
     - [Deprecated embedded addons](#deprecated-embedded-addons)
 
+
 ## From version 5.2.x to 5.3.x
+
+### To tri-config configuration
+
+In storybook 5.3 3 new files for configuration were introduced, that replaced some previous files.
+
+These files are now soft-deprecated, (*they still work, but over time we will promote users to migrate*):
+
+- `config.js` has been renamed to `preview.js`.
+- `addons.js` has been renamed to `manager.js`.
+- `presets.js` has been renamed to `main.js`.
+
+#### Using main.js
+
+`main.js` is now the main point of configuration for Storybook. This is what a basic `main.js` looks like:
+
+```js
+module.exports = {
+  stories: ['../**/*.stories.js'],
+  addons: [
+    '@storybook/addon-docs/register',
+  ],
+};
+```
+
+You remove all "register" import from `addons.js` and place them inside the array. If this means `addons.js` is now empty for you, it's safe to remove.
+
+Next you remove the code that imports/requires all your stories from `config.js`, and change it to a glob-pattern and place that glob in the `stories` array. If this means `config.js` is empty, it's safe to remove.
+
+If you had a `presets.js` file before you can add the array of presets to the main.js file and remove `presets.js` like so:
+
+```js
+module.exports = {
+  stories: ['../**/*.stories.js'],
+  presets: ['@storybook/addon-docs/preset'],
+};
+```
+
+#### Using preview.js
+
+If after migrating the imports/requires of your stories to `main.js` you're left with some code in `config.js` it's likely the usage of `addParameters` & `addDecorator`.
+
+This is fine, rename `config.js` to `preview.js`.
+
+This file can also be used to inject global stylesheets, fonts etc, into the preview bundle.
+
+#### Using manager.js
+
+If you are setting storybook options in `config.js`, especially `theme`, you should migrate it to `manager.js`:
+
+```js
+import { addons } from '@storybook/addons';
+import { create } from '@storybook/theming/create';
+
+const theme = create({
+  base: 'light',
+  brandTitle: 'My custom title',
+});
+
+addons.setConfig({
+  showRoots: true,
+  panelPosition: 'bottom',
+  theme,
+});
+```
+
+This makes storybook load and use the theme in the manager directly. 
+This allows for richer theming in the future, and has a much better performance!
 
 ### Create React App preset
 
 You can now move to the new preset for [Create React App](https://create-react-app.dev/). The in-built preset for Create React App will be disabled in Storybook 6.0.
 
 Simply install [`@storybook/preset-create-react-app`](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app) and it will be used automatically.
+
+### Description doc block
+
+In 5.3 we've changed `addon-docs`'s `Description` doc block's default behavior. Technically this is a breaking change, but MDX was not officially released in 5.2 and we reserved the right to make small breaking changes. The behavior of `DocsPage`, which was officially released, remains unchanged.
+
+The old behavior of `<Description of={Component} />` was to concatenate the info parameter or notes parameter, if available, with the docgen information loaded from source comments. If you depend on the old behavior, it's still available with `<Description of={Component} type='legacy-5.2' />`. This description type will be removed in Storybook 6.0.
+
+The new default behavior is to use the framework-specific description extractor, which for React/Vue is still docgen, but may come from other places (e.g. a JSON file) for other frameworks.
+
+The description doc block on DocsPage has also been updated. To see how to configure it in 5.3, please see [the updated recipe](https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#migrating-from-notesinfo-addons)
+
+### React Native Async Storage
+
+Starting from version React Native 0.59, Async Storage is deprecated in React Native itself. The new @react-native-community/async-storage module requires native installation, and we don't want to have it as a dependency for React Native Storybook.
+
+To avoid that now you have to manually pass asyncStorage to React Native Storybook with asyncStorage prop. To notify users we are displaying a warning about it.
+
+Solution:
+
+- Use `require('@react-native-community/async-storage').AsyncStorage` for React Native v0.59 and above.
+- Use `require('react-native').AsyncStorage` for React Native v0.58 or below.
+- Use `null` to disable Async Storage completely.
+
+```javascript
+getStorybookUI({
+  ...
+  asyncStorage: require('@react-native-community/async-storage').AsyncStorage || require('react-native').AsyncStorage || null
+});
+```
+
+### Deprecate displayName parameter
+
+In 5.2, the story parameter `displayName` was introduced as a publicly visible (but internal) API. Storybook's Component Story Format (CSF) loader used it to modify a story's display name independent of the story's `name`/`id` (which were coupled).
+
+In 5.3, the CSF loader decouples the story's `name`/`id`, which means that `displayName` is no longer necessary. Unfortunately, this is a breaking change for any code that uses the story `name` field. Storyshots relies on story `name`, and the appropriate migration is to simply update your snapshots. Apologies for the inconvenience!
+
+### Unified docs preset
+
+Addon-docs configuration gets simpler in 5.3. In 5.2, each framework had its own preset, e.g. `@storybook/addon-docs/react/preset`. Starting in 5.3, everybody should use `@storybook/addon-docs/preset`.
+
+### Simplified hierarchy separators
+
+We've deprecated the ability to specify the hierarchy separators (how you control the grouping of story kinds in the sidebar). From Storybook 6.0 we will have a single separator `/`, which cannot be configured.
+
+If you are currently using using custom separators, we encourage you to migrate to using `/` as the sole separator. If you are using `|` or `.` as a separator currently, we provide a codemod, [`upgrade-hierarchy-separators`](https://github.com/storybookjs/storybook/blob/next/lib/codemod/README.md#upgrade-hierarchy-separators), that can be used to rename all your components.
+
+```
+yarn sb migrate upgrade-hierarchy-separators --glob="*.stories.js"
+```
+
+If you were using `|` and wish to keep the "root" behavior, use the `showRoots: true` option to re-enable roots:
+
+```js
+addParameters({ options: { showRoots: true } });
+```
+
+NOTE: it is no longer possible to have some stories with roots and others without. If you want to keep the old behavior, simply add a root called "Others" to all your previously unrooted stories.
 
 ## From version 5.1.x to 5.2.x
 
@@ -117,7 +248,7 @@ This isn't a breaking change per se, because `addon-docs` is a new feature. Howe
 
 ### storySort option
 
-In 5.0.x the global option `sortStoriesByKind` option was [inadverttly removed](#sortstoriesbykind). In 5.2 we've introduced a new option, `storySort`, to replace it. `storySort` takes a comparator function, so it is strictly more powerful than `sortStoriesByKind`.
+In 5.0.x the global option `sortStoriesByKind` option was [inadvertently removed](#sortstoriesbykind). In 5.2 we've introduced a new option, `storySort`, to replace it. `storySort` takes a comparator function, so it is strictly more powerful than `sortStoriesByKind`.
 
 For example, here's how to sort by story ID using `storySort`:
 
@@ -125,7 +256,7 @@ For example, here's how to sort by story ID using `storySort`:
 addParameters({
   options: {
     storySort: (a, b) =>
-      a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, { numeric: true }),
+      a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
 });
 ```
@@ -325,7 +456,7 @@ addDecorator(
 And here's its new counterpart:
 
 ```js
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming/create';
 addParameters({
   options: {
     theme: create({

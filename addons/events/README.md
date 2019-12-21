@@ -12,20 +12,17 @@ This [storybook](https://storybooks.js.org) ([source](https://github.com/storybo
 npm i --save-dev @storybook/addon-events
 ```
 
-Then create a file called `addons.js` in your storybook config.
-
-Add following content to it:
+within `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-actions/register';
-import '@storybook/addon-links/register';
-import '@storybook/addon-events/register';
+module.exports = {
+  addons: ['@storybook/addon-events/register']
+}
 ```
 
 Then write your stories like this:
 
 ```js
-import { storiesOf } from '@storybook/react';
 import withEvents from '@storybook/addon-events';
 import EventEmiter from 'event-emiter';
 
@@ -35,9 +32,9 @@ import * as EVENTS from './events';
 const emiter = new EventEmiter();
 const emit = emiter.emit.bind(emiter);
 
-
-storiesOf('WithEvents', module)
-  .addDecorator(
+export default {
+  title: 'withEvents',
+  decorators: [
     withEvents({
       emit,
       events: [
@@ -87,7 +84,11 @@ storiesOf('WithEvents', module)
           ],
         },
       ]
-    })
-  )
-  .add('Logger', () => <Logger emiter={emiter} />);
+    }),
+  ],
+}
+
+export const defaultView = () => (
+  <Logger emiter={emiter} />
+);
 ```

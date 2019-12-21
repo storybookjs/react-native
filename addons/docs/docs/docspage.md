@@ -8,6 +8,7 @@ When you install [Storybook Docs](../README.md), `DocsPage` is the zero-config d
 
 - [Motivation](#motivation)
 - [Component parameter](#component-parameter)
+- [Subcomponents parameter](#subcomponents-parameter)
 - [DocsPage slots](#docspage-slots)
 - [Replacing DocsPage](#replacing-docspage)
 - [Story file names](#story-file-names)
@@ -54,6 +55,26 @@ storiesOf('Path/to/Badge', module).addParameters({ component: Badge });
 
 If you're coming from the `storiesOf` format, there's [a codemod that adds it for you](https://github.com/storybookjs/storybook/blob/next/lib/codemod/README.md#add-component-parameters).
 
+## Subcomponents parameter
+
+Sometimes it's useful to document multiple components on the same page. For example, suppose your component library contains `List` and `ListItem` components that don't make sense without one another. `DocsPage` has the concept of a "primary" component with the [`component` parameter](#component-parameter), and can also accept one or more "subcomponents":
+
+```js
+import { List, ListHeading, ListItem } from './List';
+
+export default {
+  title: 'Path/to/List',
+  component: List,
+  subcomponents: { ListHeading, ListItem },
+};
+```
+
+Subcomponent prop tables will show up in a tabbed interface along with the primary component, and the tab titles will correspond to the keys of the `subcomponents` object.
+
+<img src="./media/docspage-subcomponents.png" width="100%" />
+
+If you want organize your documentation differently for groups of components, we recommend trying [MDX](./mdx.md) which is completely flexible to support any configuration.
+
 ## DocsPage slots
 
 `DocsPage` is organized into a series of "slots" including Title, Subtitle, Description, Props, and Story. Each of these slots pulls information from your project and formats it for the screen.
@@ -76,6 +97,8 @@ Here is a summary of the slots, where the data comes from by default, and the sl
 | Primary     | storybook stories                   | `primarySlot`     | All        |
 | Props       | component docgen props or propTypes | `propsSlot`       | React, Vue |
 | Stories     | storybook stories                   | `storiesSlot`     | All        |
+
+The `storiesSlot` uses the `docs.storyDescription` parameter to show a description for each story, if available.
 
 For more information on frameworks, see ["Framework support"](../README.md#framework-support)
 
@@ -202,7 +225,7 @@ You can replace DocsPage at any level by overriding the `docs.page` parameter:
 - [With MDX](./recipes.md#csf-stories-with-mdx-docs) docs
 - With a custom React component
 
-**Globally (config.js)**
+**Globally (preview.js)**
 
 ```js
 import { addParameters } from '@storybook/react';
@@ -260,7 +283,6 @@ addParameters({
 ```
 
 With that function, anyone using the docs addon for `@storybook/vue` can make their stories render inline, either globally with the `inlineStories` docs parameter, or on a per-story-basis using the `inline` prop on the `<Story>` doc block. If you come up with an elegant and flexible implementation for the `prepareForInline` function for your own framework, let us know! We'd love to make it the default configuration, to make inline stories more accessible for a larger variety of frameworks!
-
 
 ## More resources
 

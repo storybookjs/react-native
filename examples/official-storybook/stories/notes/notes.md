@@ -2,6 +2,8 @@
 
 #### It is imported and compiled using a webpack markdown loader
 
+---
+
 Supports code snippets too:
 
 ```jsx

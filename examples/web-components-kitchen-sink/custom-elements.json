@@ -1,0 +1,71 @@
+{
+  "version": 1.2,
+  "tags": [
+    {
+      "name": "demo-wc-card",
+      "description": "This is a container looking like a card with a back and front side you can switch",
+      "attributes": [
+        {
+          "name": "back-side",
+          "description": "Indicates that the back of the card is shown",
+          "type": "boolean",
+          "defaultValue": false
+        },
+        {
+          "name": "header",
+          "description": "Header message",
+          "type": "string",
+          "defaultValue": "Your message"
+        },
+        {
+          "name": "rows",
+          "description": "Data rows",
+          "type": "never[]"
+        }
+      ],
+      "properties": [
+        {
+          "name": "backSide",
+          "description": "Indicates that the back of the card is shown",
+          "type": "boolean"
+        },
+        {
+          "name": "header",
+          "description": "Header message",
+          "type": "string"
+        },
+        {
+          "name": "rows",
+          "description": "Data rows",
+          "type": "never[]"
+        }
+      ],
+      "events": [
+        {
+          "name": "side-changed",
+          "description": "Fires whenever it switches between front/back"
+        }
+      ],
+      "slots": [
+        {
+          "name": "",
+          "description": "This is an unnamed slot (the default slot)"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--demo-wc-card-back-color",
+          "description": "Font color for back"
+        },
+        {
+          "name": "--demo-wc-card-front-color",
+          "description": "Font color for front"
+        },
+        {
+          "name": "--demo-wc-card-header-font-size",
+          "description": "Header font size"
+        }
+      ]
+    }
+  ]
+}

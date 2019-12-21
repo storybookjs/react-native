@@ -47,14 +47,15 @@ To get it started, add this package into your project:
 yarn add -D @storybook/addon-contexts
 ```
 
-Then, register the addon by adding the following line into your `addon.js` file (you should be able to find the file
-under the storybook config directory of your project):
+within `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-contexts/register';
+module.exports = {
+  addons: ['@storybook/addon-contexts/register']
+}
 ```
 
-To load your contextual setups for your stories globally, add the following lines into `config.js` file (you should
+To load your contextual setups for your stories globally, add the following lines into `preview.js` file (you should
 see it near your `addon.js` file):
 
 ```js
@@ -68,28 +69,24 @@ addDecorator(withContexts(contexts));
 Alternatively, like other addons, you can use this addon only for a given set of stories:
 
 ```js
-import { storiesOf } from '@storybook/[framework]';
 import { withContexts } from '@storybook/addon-contexts/[framework]';
 import { contexts } from './configs/contexts';
 
-const story = storiesOf('Component With Contexts', module).addDecorator(withContexts(contexts)); // use this addon with a default contextual environment setups
+export default {
+  title: 'Component With Contexts',
+  decorators: [withContexts(contexts)],
+};
 ```
 
 Finally, you may want to modify the default setups at per story level. Here is how you can do this:
 
 ```js
-story.add(
-  () => {
-    /* some stories */
-  },
-  {
-    contexts: [
-      {
-        /* the modified setup goes here, sharing the same API signatures */
-      },
-    ],
+export const defaultView = () => <div />;
+defaultView.story = {
+  parameters: {
+    context: [{}]
   }
-);
+};
 ```
 
 ## ⚙️ Setups

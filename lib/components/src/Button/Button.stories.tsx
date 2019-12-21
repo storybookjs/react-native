@@ -7,7 +7,7 @@ import { Form } from '../form/index';
 
 const { Button: FormButton } = Form;
 
-storiesOf('Basics|Button', module).add('all buttons', () => (
+storiesOf('Basics/Button', module).add('all buttons', () => (
   <div>
     <p>Button that is used for forms</p>
     <FormButton>Form.Button</FormButton>
@@ -15,7 +15,7 @@ storiesOf('Basics|Button', module).add('all buttons', () => (
     <p>Buttons that are used for everything else</p>
     <Button primary>Primary</Button>
     <Button secondary>Secondary</Button>
-    <Button outline containsIcon>
+    <Button outline containsIcon title="link">
       <Icons icon="link" />
     </Button>
     <br />
@@ -42,7 +42,7 @@ storiesOf('Basics|Button', module).add('all buttons', () => (
     <Button primary disabled small>
       Disabled
     </Button>
-    <Button outline small containsIcon>
+    <Button outline small containsIcon title="link">
       <Icons icon="link" />
     </Button>
     <Button outline small>

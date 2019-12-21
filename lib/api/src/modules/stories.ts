@@ -1,5 +1,6 @@
-// FIXME: we shouldn't import from dist but there are no types otherwise
-import { toId, sanitize, parseKind } from '@storybook/router';
+import { DOCS_MODE } from 'global';
+import { toId, sanitize, parseKind } from '@storybook/csf';
+import deprecate from 'util-deprecate';
 
 import { Module } from '../index';
 import merge from '../lib/merge';
@@ -50,6 +51,7 @@ interface StoryInput {
     options: {
       hierarchyRootSeparator: RegExp;
       hierarchySeparator: RegExp;
+      showRoots?: boolean;
       [key: string]: any;
     };
     [parameterName: string]: any;
@@ -68,6 +70,22 @@ export type GroupsList = Group[];
 export interface StoriesRaw {
   [id: string]: StoryInput;
 }
+
+const warnUsingHierarchySeparatorsAndShowRoots = deprecate(() => {},
+`You cannot use both the hierarchySeparator/hierarchyRootSeparator and showRoots options.`);
+
+const warnRemovingHierarchySeparators = deprecate(
+  () => {},
+  `hierarchySeparator and hierarchyRootSeparator are deprecated and will be removed in Storybook 6.0.
+Read more about it in the migration guide: https://github.com/storybookjs/storybook/blob/master/MIGRATION.md`
+);
+
+const warnChangingDefaultHierarchySeparators = deprecate(
+  () => {},
+  `The default hierarchy separators are changing in Storybook 6.0.
+'|' and '.' will no longer create a hierarchy, but codemods are available.
+Read more about it in the migration guide: https://github.com/storybookjs/storybook/blob/master/MIGRATION.md`
+);
 
 const initStoriesApi = ({
   store,
@@ -113,6 +131,11 @@ const initStoriesApi = ({
 
   const jumpToStory = (direction: Direction) => {
     const { storiesHash, viewMode, storyId } = store.getState();
+
+    if (DOCS_MODE) {
+      jumpToComponent(direction);
+      return;
+    }
 
     // cannot navigate when there's no current selection
     if (!storyId || !storiesHash[storyId]) {
@@ -179,55 +202,90 @@ const initStoriesApi = ({
     id: toKey(name),
   });
 
+  // Recursively traverse storiesHash from the initial storyId until finding
+  // the leaf story.
+  const findLeafStoryId = (storiesHash: StoriesHash, storyId: string): string => {
+    if (storiesHash[storyId].isLeaf) {
+      return storyId;
+    }
+
+    const childStoryId = storiesHash[storyId].children[0];
+    return findLeafStoryId(storiesHash, childStoryId);
+  };
+
   const setStories = (input: StoriesRaw) => {
     const hash: StoriesHash = {};
+
+    const anyKindMatchesOldHierarchySeparators = Object.values(input).some(({ kind }) =>
+      kind.match(/\.|\|/)
+    );
+
     const storiesHashOutOfOrder = Object.values(input).reduce((acc, item) => {
       const { kind, parameters } = item;
       // FIXME: figure out why parameters is missing when used with react-native-server
       const {
-        hierarchyRootSeparator: rootSeparator,
-        hierarchySeparator: groupSeparator,
-      } = (parameters && parameters.options) || {
-        hierarchyRootSeparator: '|',
-        hierarchySeparator: /\/|\./,
-      };
+        hierarchyRootSeparator: rootSeparator = undefined,
+        hierarchySeparator: groupSeparator = undefined,
+        showRoots = undefined,
+      } = (parameters && parameters.options) || {};
 
-      const { root, groups } = parseKind(kind, { rootSeparator, groupSeparator });
+      const usingShowRoots = typeof showRoots !== 'undefined';
+
+      // Kind splitting behaviour as per https://github.com/storybookjs/storybook/issues/8793
+      let root = '';
+      let groups: string[];
+      // 1. If the user has passed separators, use the old behaviour but warn them
+      if (typeof rootSeparator !== 'undefined' || typeof groupSeparator !== 'undefined') {
+        warnRemovingHierarchySeparators();
+        if (usingShowRoots) warnUsingHierarchySeparatorsAndShowRoots();
+        ({ root, groups } = parseKind(kind, { rootSeparator, groupSeparator }));
+
+        // 2. If the user hasn't passed separators, but is using | or . in kinds, use the old behaviour but warn
+      } else if (anyKindMatchesOldHierarchySeparators && !usingShowRoots) {
+        warnChangingDefaultHierarchySeparators();
+        ({ root, groups } = parseKind(kind, { rootSeparator: '|', groupSeparator: /\/|\./ }));
+
+        // 3. If the user passes showRoots, or doesn't match above, do a simpler splitting.
+      } else {
+        const parts: string[] = kind.split('/');
+        if (showRoots && parts.length > 1) {
+          [root, ...groups] = parts;
+        } else {
+          groups = parts;
+        }
+      }
 
       const rootAndGroups = []
         .concat(root || [])
         .concat(groups)
         .map(toGroup)
         // Map a bunch of extra fields onto the groups, collecting the path as we go (thus the reduce)
-        .reduce(
-          (soFar, group, index, original) => {
-            const { name } = group;
-            const parent = index > 0 && soFar[index - 1].id;
-            const id = sanitize(parent ? `${parent}-${name}` : name);
-            if (parent === id) {
-              throw new Error(
-                `
+        .reduce((soFar, group, index, original) => {
+          const { name } = group;
+          const parent = index > 0 && soFar[index - 1].id;
+          const id = sanitize(parent ? `${parent}-${name}` : name);
+          if (parent === id) {
+            throw new Error(
+              `
 Invalid part '${name}', leading to id === parentId ('${id}'), inside kind '${kind}'
 
 Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybookjs/storybook/issues/6128
               `.trim()
-              );
-            }
+            );
+          }
 
-            const result: Group = {
-              ...group,
-              id,
-              parent,
-              depth: index,
-              children: [],
-              isComponent: index === original.length - 1,
-              isLeaf: false,
-              isRoot: !!root && index === 0,
-            };
-            return soFar.concat([result]);
-          },
-          [] as GroupsList
-        );
+          const result: Group = {
+            ...group,
+            id,
+            parent,
+            depth: index,
+            children: [],
+            isComponent: index === original.length - 1,
+            isLeaf: false,
+            isRoot: !!root && index === 0,
+          };
+          return soFar.concat([result]);
+        }, [] as GroupsList);
 
       const paths = [...rootAndGroups.map(g => g.id), item.id];
 
@@ -286,6 +344,11 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       } else if (viewMode && firstLeaf) {
         navigate(`/${viewMode}/${firstLeaf.id}`);
       }
+    } else if (storiesHash[storyId] && !storiesHash[storyId].isLeaf) {
+      // When story exists but if it is not the leaf story, it finds the proper
+      // leaf story from any depth.
+      const firstLeafStoryId = findLeafStoryId(storiesHash, storyId);
+      navigate(`/${viewMode}/${firstLeafStoryId}`);
     }
 
     store.setState({
@@ -306,7 +369,19 @@ Did you create a path that uses the separator char accidentally, such as 'Vue <d
       const kind = storyId.split('--', 2)[0];
       selectStory(toId(kind, story));
     } else {
-      selectStory(toId(kindOrId, story));
+      const id = toId(kindOrId, story);
+      if (storiesHash[id]) {
+        selectStory(id);
+      } else {
+        // Support legacy API with component permalinks, where kind is `x/y` but permalink is 'z'
+        const k = storiesHash[sanitize(kindOrId)];
+        if (k && k.children) {
+          const foundId = k.children.find(childId => storiesHash[childId].name === story);
+          if (foundId) {
+            selectStory(foundId);
+          }
+        }
+      }
     }
   };
 

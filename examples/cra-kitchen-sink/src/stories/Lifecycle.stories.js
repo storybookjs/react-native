@@ -5,4 +5,4 @@ export default {
   title: 'Lifecycle',
 };
 
-export const logging = () => <LifecycleLogger />;
+export const Logging = () => <LifecycleLogger />;

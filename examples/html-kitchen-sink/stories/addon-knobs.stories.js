@@ -16,7 +16,7 @@ import {
 const cachedContainer = document.createElement('p');
 
 export default {
-  title: 'Addons|Knobs',
+  title: 'Addons/Knobs',
   decorators: [withKnobs],
 };
 
@@ -34,7 +34,7 @@ export const DOM = () => {
   return container;
 };
 
-export const story3 = () => {
+export const Story3 = () => {
   const name = text('Name', 'John Doe');
   const textColor = color('Text color', 'orangered');
   cachedContainer.textContent = name;
@@ -42,9 +42,9 @@ export const story3 = () => {
   cachedContainer.style.color = textColor;
   return cachedContainer;
 };
-story3.story = { name: 'CSS transitions' };
+Story3.story = { name: 'CSS transitions' };
 
-export const story4 = () => {
+export const Story4 = () => {
   const name = text('Name', 'Jane');
   const stock = number('Stock', 20, {
     range: true,
@@ -85,7 +85,7 @@ export const story4 = () => {
       </div>
     `;
 };
-story4.story = { name: 'All knobs' };
+Story4.story = { name: 'All knobs' };
 
-export const story5 = () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >');
-story5.story = { name: 'XSS safety' };
+export const Story5 = () => text('Rendered string', '<img src=x onerror="alert(\'XSS Attack\')" >');
+Story5.story = { name: 'XSS safety' };

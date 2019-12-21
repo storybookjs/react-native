@@ -43,6 +43,7 @@ describe('getPossibleStoriesFiles', () => {
       'test/foo.web.stories.jsx',
       'test/foo.web.stories.ts',
       'test/foo.web.stories.tsx',
+      'test/foo.web.stories.mdx',
     ]);
   });
 });

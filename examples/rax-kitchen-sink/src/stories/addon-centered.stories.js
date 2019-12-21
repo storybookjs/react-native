@@ -1,19 +1,17 @@
 import { createElement } from 'rax';
 import Centered from '@storybook/addon-centered/rax';
 import Text from 'rax-text';
-import App from '../components/App';
+import { App as AppComponent } from '../components/App';
 
 export default {
-  title: 'Addon|addon-centered',
+  title: 'Addon/addon-centered',
   decorators: [Centered],
 };
 
-export const button = () => (
+export const Button = () => (
   <button type="button">
     <Text>BUTTON</Text>
   </button>
 );
-button.story = { name: 'Button' };
 
-export const app = () => <App />;
-app.story = { name: 'App' };
+export const App = () => <AppComponent />;

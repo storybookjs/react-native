@@ -23,7 +23,7 @@ See the command-line help with `-h` for details.
 
 ## [Yarn](https://github.com/yarnpkg/yarn) support
 
-The CLI supports yarn. If you have installed yarn in your system, it'll detect it and use `yarn` instead of `npm`.
+The CLI supports yarn. If you have installed yarn in your system and your project has `yarn.lock` file, it'll detect it and use `yarn` instead of `npm`.
 
 If you don't want to use `yarn` always you can use the `--use-npm` option like this:
 

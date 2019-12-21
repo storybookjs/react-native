@@ -15,7 +15,12 @@ type PreviewProps = PurePreviewProps & {
 };
 
 const getPreviewProps = (
-  { withSource = SourceState.CLOSED, mdxSource, children, ...props }: PreviewProps & { children?: ReactNode },
+  {
+    withSource = SourceState.CLOSED,
+    mdxSource,
+    children,
+    ...props
+  }: PreviewProps & { children?: ReactNode },
   { mdxStoryNameToId, storyStore }: DocsContextProps
 ): PurePreviewProps => {
   if (withSource === SourceState.NONE) {
