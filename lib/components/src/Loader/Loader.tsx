@@ -10,17 +10,15 @@ const spin = keyframes`
   }
 `;
 
-export const Loader = styled.div`
-  animation: ${spin} 1s linear infinite;
-  border-radius: 50%;
-  height: 48px;
-  left: calc(50% - 24px);
-  position: absolute;
-  top: calc(50% - 24px);
-  width: 48px;
-  z-index: 4;
-  ${({ theme }) => `
-    border: 3px solid ${theme.color.secondary};
-  `}
-  border-top: 3px solid transparent;
-`;
+export const Loader = styled.div(({ theme }) => ({
+  animation: `${spin} 1s linear infinite`,
+  borderRadius: '50%',
+  height: 48,
+  left: 'calc(50% - 24px)',
+  position: 'absolute',
+  top: 'calc(50% - 24px)',
+  width: 48,
+  zIndex: 4,
+  border: `3px solid ${theme.color.secondary}`,
+  borderTop: '3px solid transparent',
+}));
