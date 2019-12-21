@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import { Description, DescriptionProps as PureDescriptionProps } from '@storybook/components';
 import { DocsContext, DocsContextProps } from './DocsContext';
-import { Component, CURRENT_SELECTION } from './shared';
-import { str } from '../lib/docgenUtils';
+import { Component, CURRENT_SELECTION, DescriptionSlot } from './shared';
+import { str } from '../lib/docgen';
 
 export enum DescriptionType {
   INFO = 'info',
@@ -16,24 +16,26 @@ type Notes = string | any;
 type Info = string | any;
 
 interface DescriptionProps {
+  slot?: DescriptionSlot;
   of?: '.' | Component;
   type?: DescriptionType;
   markdown?: string;
+  children?: string;
 }
 
-export const getNotes = (notes?: Notes) =>
+const getNotes = (notes?: Notes) =>
   notes && (typeof notes === 'string' ? notes : str(notes.markdown) || str(notes.text));
 
-export const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
+const getInfo = (info?: Info) => info && (typeof info === 'string' ? info : str(info.text));
 
 const noDescription = (component?: Component): string | null => null;
 
 export const getDescriptionProps = (
-  { of, type, markdown }: DescriptionProps,
+  { of, type, markdown, children }: DescriptionProps,
   { parameters }: DocsContextProps
 ): PureDescriptionProps => {
-  if (markdown) {
-    return { markdown };
+  if (children || markdown) {
+    return { markdown: children || markdown };
   }
   const { component, notes, info, docs } = parameters;
   const { extractComponentDescription = noDescription } = docs || {};
@@ -59,13 +61,19 @@ ${extractComponentDescription(target) || ''}
   }
 };
 
-const DescriptionContainer: FunctionComponent<DescriptionProps> = props => (
-  <DocsContext.Consumer>
-    {context => {
-      const { markdown } = getDescriptionProps(props, context);
-      return markdown && <Description markdown={markdown} />;
-    }}
-  </DocsContext.Consumer>
-);
+const DescriptionContainer: FunctionComponent<DescriptionProps> = props => {
+  const context = useContext(DocsContext);
+  const { slot } = props;
+  let { markdown } = getDescriptionProps(props, context);
+  if (slot) {
+    markdown = slot(markdown, context);
+  }
+  return markdown ? <Description markdown={markdown} /> : null;
+};
+
+// since we are in the docs blocks, assume default description if for primary component story
+DescriptionContainer.defaultProps = {
+  of: '.',
+};
 
 export { DescriptionContainer as Description };

@@ -13,5 +13,6 @@ Storybook supports multiple UI libraries. The manual setup for each framework is
 - [Storybook for Marko](/guides/guide-marko/)
 - [Storybook for HTML](/guides/guide-html/)
 - [Storybook for Svelte](/guides/guide-svelte/)
+- [Storybook for Ember](/guides/guide-ember/)
 - [Storybook for Riot](/guides/guide-riot/)
 - [Storybook for Preact](/guides/guide-preact/)

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Addons|Actions Story 1 1`] = `
+exports[`Storyshots Addons/Actions Decorated actions + config 1`] = `
 <button
   type="button"
 >
@@ -8,7 +8,7 @@ exports[`Storyshots Addons|Actions Story 1 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Story 2 1`] = `
+exports[`Storyshots Addons/Actions Decorated actions 1`] = `
 <button
   type="button"
 >
@@ -16,7 +16,7 @@ exports[`Storyshots Addons|Actions Story 2 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Story 3 1`] = `
+exports[`Storyshots Addons/Actions Hello World 1`] = `
 <button
   type="button"
 >
@@ -24,7 +24,7 @@ exports[`Storyshots Addons|Actions Story 3 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Story 4 1`] = `
+exports[`Storyshots Addons/Actions Multiple actions + config 1`] = `
 <button
   type="button"
 >
@@ -32,31 +32,31 @@ exports[`Storyshots Addons|Actions Story 4 1`] = `
 </button>
 `;
 
-exports[`Storyshots Addons|Actions Story 5 1`] = `
+exports[`Storyshots Addons/Actions Multiple actions 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons/Actions Multiple actions, object + config 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons/Actions Multiple actions, object 1`] = `
+<button
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Addons/Actions Multiple actions, selector 1`] = `
 
         
-`;
-
-exports[`Storyshots Addons|Actions Story 6 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Story 7 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
-`;
-
-exports[`Storyshots Addons|Actions Story 8 1`] = `
-<button
-  type="button"
->
-  Hello World
-</button>
 `;

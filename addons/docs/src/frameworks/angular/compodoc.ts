@@ -2,7 +2,7 @@
 /* global window */
 
 import { PropDef } from '@storybook/components';
-import { Argument, CompodocJson, Component, Method, Property } from './types';
+import { Argument, CompodocJson, Component, Method, Property, Directive } from './types';
 
 type Sections = Record<string, PropDef[]>;
 
@@ -18,7 +18,7 @@ export const setCompodocJson = (compodocJson: CompodocJson) => {
 // @ts-ignore
 export const getCompdocJson = (): CompodocJson => window.__STORYBOOK_COMPODOC_JSON__;
 
-export const checkValidComponent = (component: Component) => {
+export const checkValidComponentOrDirective = (component: Component | Directive) => {
   if (!component.name) {
     throw new Error(`Invalid component ${JSON.stringify(component)}`);
   }
@@ -71,15 +71,18 @@ const mapItemToSection = (key: string, item: Method | Property): string => {
   }
 };
 
-const getComponentData = (component: Component) => {
+const getComponentData = (component: Component | Directive) => {
   if (!component) {
     return null;
   }
-  checkValidComponent(component);
+  checkValidComponentOrDirective(component);
   const compodocJson = getCompdocJson();
   checkValidCompodocJson(compodocJson);
   const { name } = component;
-  return compodocJson.components.find((c: Component) => c.name === name);
+  return (
+    compodocJson.components.find((c: Component) => c.name === name) ||
+    compodocJson.directives.find((c: Directive) => c.name === name)
+  );
 };
 
 const displaySignature = (item: Method): string => {
@@ -89,7 +92,7 @@ const displaySignature = (item: Method): string => {
   return `(${args.join(', ')}) => ${item.returnType}`;
 };
 
-export const extractProps = (component: Component) => {
+export const extractProps = (component: Component | Directive) => {
   const componentData = getComponentData(component);
   if (!componentData) {
     return null;
@@ -104,10 +107,10 @@ export const extractProps = (component: Component) => {
     data.forEach((item: Method | Property) => {
       const sectionItem: PropDef = {
         name: item.name,
-        type: { name: isMethod(item) ? displaySignature(item) : item.type },
+        type: { summary: isMethod(item) ? displaySignature(item) : item.type },
         required: isMethod(item) ? false : !item.optional,
         description: item.description,
-        defaultValue: isMethod(item) ? '' : item.defaultValue,
+        defaultValue: { summary: isMethod(item) ? '' : item.defaultValue },
       };
 
       const section = mapItemToSection(key, item);
@@ -140,7 +143,7 @@ export const extractProps = (component: Component) => {
   return isEmpty(sections) ? null : { sections };
 };
 
-export const extractComponentDescription = (component: Component) => {
+export const extractComponentDescription = (component: Component | Directive) => {
   const componentData = getComponentData(component);
   if (!componentData) {
     return null;

@@ -25,7 +25,7 @@ Let's get started with an example that combines markdown with a single story:
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { Checkbox } from './Checkbox';
 
-<Meta title="MDX|Checkbox" component={Checkbox} />
+<Meta title="MDX/Checkbox" component={Checkbox} />
 
 # Checkbox
 
@@ -64,7 +64,7 @@ For example, here's the story from `Checkbox` example above, rewritten in CSF:
 ```js
 import React from 'react';
 import { Checkbox } from './Checkbox';
-export default { title: "MDX|Checkbox" component: Checkbox };
+export default { title: "MDX/Checkbox" component: Checkbox };
 export const allCheckboxes = () => (
   <form>
     <Checkbox id="Unchecked" label="Unchecked" />
@@ -86,7 +86,7 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { Badge } from './Badge';
 import { Icon } from './Icon';
 
-<Meta title="MDX|Badge" component={Badge} />
+<Meta title="MDX/Badge" component={Badge} />
 
 # Badge
 
@@ -165,7 +165,7 @@ To add [decorators](https://github.com/storybookjs/storybook/blob/next/docs/src/
 </Story>
 ```
 
-In addition, global decorators work just like before, e.g. adding the following to your `.storybook/config.js`:
+In addition, global decorators work just like before, e.g. adding the following to your `.storybook/preview.js`:
 
 ```js
 import { addDecorator, addParameters } from '@storybook/react';

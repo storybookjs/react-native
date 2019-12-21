@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`docs-mdx-compiler-plugin story-current.mdx 1`] = `
+"/* @jsx mdx */
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
+
+import { Story } from '@storybook/addon-docs/blocks';
+
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+
+const layoutProps = {};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <h1>{\`Current story\`}</h1>
+      <Story id=\\".\\" mdxType=\\"Story\\" />
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+const componentMeta = { includeStories: [] };
+
+const mdxStoryNameToId = {};
+
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = {
+  ...(componentMeta.parameters.docs || {}),
+  page: () => (
+    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+      <MDXContent />
+    </AddContext>
+  ),
+};
+
+export default componentMeta;
+"
+`;

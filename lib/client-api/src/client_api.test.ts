@@ -4,7 +4,7 @@ import ClientApi from './client_api';
 import ConfigApi from './config_api';
 import StoryStore from './story_store';
 
-export const getContext = (() => decorateStory => {
+const getContext = (() => decorateStory => {
   const channel = mockChannel();
   addons.setChannel(channel);
   const storyStore = new StoryStore({ channel });
@@ -340,6 +340,50 @@ describe('preview.client_api', () => {
           ],
         }),
       ]);
+    });
+
+    describe('getSeparators', () => {
+      it('returns values set via parameters', () => {
+        const {
+          clientApi: { getSeparators, storiesOf, addParameters },
+        } = getContext(undefined);
+
+        const options = { hierarchySeparator: /a/, hierarchyRootSeparator: 'b' };
+        addParameters({ options });
+        storiesOf('kind 1', module).add('name 1', () => '1');
+        expect(getSeparators()).toEqual(options);
+      });
+
+      it('returns old defaults if kind uses old separators', () => {
+        const {
+          clientApi: { getSeparators, storiesOf },
+        } = getContext(undefined);
+
+        storiesOf('kind|1', module).add('name 1', () => '1');
+        expect(getSeparators()).toEqual({
+          hierarchySeparator: /\/|\./,
+          hierarchyRootSeparator: '|',
+        });
+      });
+
+      it('returns new values if showRoots is set', () => {
+        const {
+          clientApi: { getSeparators, storiesOf, addParameters },
+        } = getContext(undefined);
+        addParameters({ options: { showRoots: false } });
+
+        storiesOf('kind|1', module).add('name 1', () => '1');
+        expect(getSeparators()).toEqual({ hierarchySeparator: '/' });
+      });
+
+      it('returns new values if kind does not use old separators', () => {
+        const {
+          clientApi: { getSeparators, storiesOf },
+        } = getContext(undefined);
+
+        storiesOf('kind/1', module).add('name 1', () => '1');
+        expect(getSeparators()).toEqual({ hierarchySeparator: '/' });
+      });
     });
 
     it('reads filename from module', () => {

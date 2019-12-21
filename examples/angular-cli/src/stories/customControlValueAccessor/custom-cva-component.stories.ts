@@ -6,10 +6,10 @@ const description = `
 `;
 
 export default {
-  title: 'Custom|ngModel',
+  title: 'Custom/ngModel',
 };
 
-export const customControlValueAccessor = () => ({
+export const CustomControlValueAccessor = () => ({
   component: CustomCvaComponent,
   props: {
     ngModel: 'Type anything',
@@ -17,7 +17,7 @@ export const customControlValueAccessor = () => ({
   },
 });
 
-customControlValueAccessor.story = {
+CustomControlValueAccessor.story = {
   name: 'custom ControlValueAccessor',
   parameters: { notes: description },
 };

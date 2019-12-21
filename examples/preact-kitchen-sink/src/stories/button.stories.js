@@ -10,13 +10,13 @@ export default {
   component: Button,
 };
 
-export const withText = () => <Button onclick={action('clicked')}>Hello Button</Button>;
+export const WithText = () => <Button onclick={action('clicked')}>Hello Button</Button>;
 
-withText.story = {
+WithText.story = {
   name: 'with text',
 };
 
-export const withSomeEmoji = () => (
+export const WithSomeEmoji = () => (
   <Button onclick={action('clicked')}>
     <span role="img" aria-label="so cool">
       😀 😎 👍 💯
@@ -24,6 +24,6 @@ export const withSomeEmoji = () => (
   </Button>
 );
 
-withSomeEmoji.story = {
+WithSomeEmoji.story = {
   name: 'with some emoji',
 };

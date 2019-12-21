@@ -15,8 +15,9 @@ import FlowTypeButton from '../../components/FlowTypeButton';
 import { DocgenButton } from '../../components/DocgenButton';
 
 <Meta
-  title="Addons|Docs/mdx"
+  title="Addons/Docs/mdx"
   component={Button}
+  id="addons-docs-mdx-id"
   decorators={[storyFn => <div style={{ backgroundColor: 'yellow' }}>{storyFn()}</div>, withKnobs]}
   parameters={{ notes: 'component notes' }}
 />
@@ -85,6 +86,10 @@ export const nonStory2 = () => <Button>Not a story</Button>; // another one
 
 <Story name="iframe story" inline={false} height="100px">
   <>This is an iframe!</>
+</Story>
+
+<Story name="decorator story" decorators={[storyFn => <div style={{ backgroundColor: 'pink' }}>{storyFn()}</div>]}>
+  <>Story decorators</>
 </Story>
 
 <Story name="theme">

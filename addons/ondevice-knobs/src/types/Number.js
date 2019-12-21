@@ -1,6 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TextInput, View, Slider } from 'react-native';
+import { View, Slider } from 'react-native';
+import styled from '@emotion/native';
+
+const Input = styled.TextInput(({ theme }) => ({
+  borderWidth: 1,
+  borderColor: theme.borderColor,
+  borderRadius: 2,
+  fontSize: 13,
+  padding: 5,
+  color: theme.labelColor,
+}));
 
 class NumberType extends React.Component {
   constructor(props) {
@@ -29,15 +39,7 @@ class NumberType extends React.Component {
     const { knob } = this.props;
 
     return (
-      <TextInput
-        style={{
-          borderWidth: 1,
-          borderColor: '#f7f4f4',
-          borderRadius: 2,
-          fontSize: 13,
-          padding: 5,
-          color: '#555',
-        }}
+      <Input
         autoCapitalize="none"
         underlineColorAndroid="transparent"
         value={(knob.value || '').toString()}

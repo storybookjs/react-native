@@ -8,6 +8,10 @@ const markdownString = `
 
 This is inline github-flavored markdown!
 
+[Link to a bottom ID](#anchor--addons-notes--with-a-markdown-table)  
+[Link to an external website](http://example.com)  
+[Link to a other storybook page](/story/addons-notes--addon-notes)  
+
 ## Example Usage
 ~~~js
 import React from 'react';
@@ -70,14 +74,14 @@ const giphyMarkdown = `
 `;
 
 export default {
-  title: 'Addons|Notes',
+  title: 'Addons/Notes',
 };
 
-export const addonNotes = () => (
+export const AddonNotes = () => (
   <BaseButton label="Button with notes - check the notes panel for details" />
 );
 
-addonNotes.story = {
+AddonNotes.story = {
   name: 'addon notes',
   parameters: {
     notes:
@@ -85,44 +89,44 @@ addonNotes.story = {
   },
 };
 
-export const addonNotesRenderingImportedMarkdown = () => (
+export const AddonNotesRenderingImportedMarkdown = () => (
   <BaseButton label="Button with notes - check the notes panel for details" />
 );
 
-addonNotesRenderingImportedMarkdown.story = {
+AddonNotesRenderingImportedMarkdown.story = {
   name: 'addon notes rendering imported markdown',
   parameters: {
     notes: { markdown: markdownNotes },
   },
 };
 
-export const addonNotesRenderingInlineGithubFlavoredMarkdown = () => (
+export const AddonNotesRenderingInlineGithubFlavoredMarkdown = () => (
   <BaseButton label="Button with notes - check the notes panel for details" />
 );
 
-addonNotesRenderingInlineGithubFlavoredMarkdown.story = {
+AddonNotesRenderingInlineGithubFlavoredMarkdown.story = {
   name: 'addon notes rendering inline, github-flavored markdown',
   parameters: {
     notes: { markdown: markdownString },
   },
 };
 
-export const withAMarkdownTable = () => (
+export const WithAMarkdownTable = () => (
   <BaseButton label="Button with notes - check the notes panel for details" />
 );
 
-withAMarkdownTable.story = {
+WithAMarkdownTable.story = {
   name: 'with a markdown table',
   parameters: {
     notes: { markdown: markdownTable },
   },
 };
 
-export const withAMarkdownGiphy = () => (
+export const WithAMarkdownGiphy = () => (
   <BaseButton label="Button with notes - check the notes panel for details" />
 );
 
-withAMarkdownGiphy.story = {
+WithAMarkdownGiphy.story = {
   name: 'with a markdown giphy',
   parameters: {
     notes: { markdown: giphyMarkdown },

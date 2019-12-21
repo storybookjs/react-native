@@ -1,13 +1,13 @@
 import { StyledComponent } from './styled.component';
 
 export default {
-  title: 'Custom|styleUrls',
+  title: 'Custom/styleUrls',
 };
 
-export const componentWithStyles = () => ({
+export const ComponentWithStyles = () => ({
   component: StyledComponent,
 });
 
-componentWithStyles.story = {
+ComponentWithStyles.story = {
   name: 'Component with styles',
 };

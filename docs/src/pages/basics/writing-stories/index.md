@@ -93,9 +93,18 @@ It's up to you to find a naming/placing scheme that works for your project/team.
 
 ## Loading stories
 
-Stories are loaded in the `.storybook/config.js` file.
+Stories are loaded in the `.storybook/main.js` file or `.storybook/preview.js` file.
 
 The most convenient way to load stories is by filename. For example, if your stories files are located in the `src/components` directory, you can use the following snippet:
+
+```js
+// .storybook/main.js
+module.exports = {
+  stories: ['../src/components/**/*.stories.js'],
+};
+```
+
+Alternatively you can import all your stories in `.storybook/preview.js`:
 
 ```js
 import { configure } from '@storybook/react';
@@ -103,7 +112,7 @@ import { configure } from '@storybook/react';
 configure(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
 
-> NOTE: The `configure` function should be called only once in `config.js`.
+> NOTE: The `configure` function should be called only once in `.storybook/preview.js`.
 
 The `configure` function accepts:
 
@@ -116,10 +125,13 @@ If you want to load from multiple locations, you can use an array:
 ```js
 import { configure } from '@storybook/react';
 
-configure([
-  require.context('../src/components', true, /\.stories\.js$/),
-  require.context('../lib', true, /\.stories\.js$/)
-], module);
+configure(
+  [
+    require.context('../src/components', true, /\.stories\.js$/),
+    require.context('../lib', true, /\.stories\.js$/),
+  ],
+  module
+);
 ```
 
 Or if you want to do some custom loading logic, you can use a loader function. Just remember to return an array of module exports if you want to use Component Story Format. Here's an example that forces files to load in a specific order.
@@ -127,12 +139,12 @@ Or if you want to do some custom loading logic, you can use a loader function. J
 ```js
 import { configure } from '@storybook/react';
 
-const loaderFn = () => ([
+const loaderFn = () => [
   require('./welcome.stories.js'),
   require('./prelude.stories.js'),
   require('./button.stories.js'),
   require('./input.stories.js'),
-]);
+];
 
 configure(loaderFn, module);
 ```
@@ -163,7 +175,7 @@ const loaderFn = () => {
   // manual loading
   require('./welcome.stories.js');
   require('./button.stories.js');
-  
+
   // dynamic loading, unavailable in react-native
   const req = require.context('../src/components', true, /\.stories\.js$/);
   req.keys().forEach(fname => req(fname));
@@ -180,16 +192,23 @@ A decorator is a way to wrap a story with a common set of components, for exampl
 
 Decorators can be applied globally, at the component level, or individually at the story level. Global decorators are typically applied in the Storybook config files, and component/story decorators are applied in the story file.
 
-Here is an example of a global decorator which centers every story in the storybook:
+Here is an example of a global decorator which centers every story in the `.storybook/preview.js`:
 
 ```jsx
 import React from 'react';
-import { load, addDecorator } from '@storybook/react';
+import { addDecorator } from '@storybook/react';
 
 addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
-
-load(require.context('../src/components', true, /\.stories\.js$/), module);
 ```
+
+> \* In Vue projects you have to use the special component `<story/>` instead of the function parameter `storyFn` that is used in React projects, even if you are using JSX, for example:
+> ```jsx
+> var decoratorVueJsx = () => ({ render() { return <div style={{ textAlign: 'center' }}><story/></div>} })
+> addDecorator(decoratorVueJsx)
+> 
+> var decoratorVueTemplate = () => { return { template: `<div style="text-align:center"><story/></div>` }
+> addDecorator(decoratorVueTemplate)
+> ```
 
 And here's an example of component/local decorators. The component decorator wraps all the stories in a yellow frame, and the story decorator wraps a single story in an additional red frame.
 
@@ -221,11 +240,12 @@ Parameters are custom metadata for a story. Like decorators, they can also be hi
 
 Here's an example where we are annotating our stories with [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) notes using parameters, to be displayed in the [Notes addon](https://github.com/storybookjs/storybook/tree/next/addons/notes).
 
-We first apply some notes globally in the Storybook config.
+We first apply some notes globally in the `.storybook/preview.js`.
 
 ```js
 import { load, addParameters } from '@storybook/react';
 import defaultNotes from './instructions.md';
+
 addParameters({ notes: defaultNotes });
 ```
 
@@ -267,7 +287,7 @@ callout.story = {
 
 ## Story hierarchy
 
-Stories can be organized in a nested structure using "/" as a separator, and can be given a top-level heading using a "|" root separator.
+Stories can be organized in a nested structure using "/" as a separator.
 
 For example the following snippets nest the `Button` and `Checkbox` components within the `Atoms` group, under a top-level heading called `Design System`.
 
@@ -277,7 +297,7 @@ import React from 'react';
 import Button from './Button';
 
 export default {
-  title: 'Design System|Atoms/Button',
+  title: 'Design System/Atoms/Button',
 };
 export const normal = () => <Button onClick={action('clicked')}>Hello Button</Button>;
 ```
@@ -288,13 +308,13 @@ import React from 'react';
 import Checkbox from './Checkbox';
 
 export default {
-  title: 'Design System|Atoms/Checkbox',
+  title: 'Design System/Atoms/Checkbox',
 };
 export const empty = () => <Checkbox label="empty" />;
 export const checked = () => <Checkbox label="checked" checked />;
 ```
 
-If you prefer other characters as separators, you can configure this using the `hierarchySeparator` and `hierarchyRootSeparator` config options. See the
+By default the top-level heading will be treated as any other group, but if you'd like it to be given special emphasis as a "root", use the `showRoots` config option. See the
 [configuration options parameter](/configurations/options-parameter) page to learn more.
 
 ## Generating nesting path based on \_\_dirname
@@ -309,7 +329,7 @@ import base from 'paths.macro';
 import BaseButton from '../components/BaseButton';
 
 export default {
-  title: `Other|${base}/Dirname Example`,
+  title: `Other/${base}/Dirname Example`,
 };
 export const story1 = () => <BaseButton label="Story 1" />;
 export const story2 = () => <BaseButton label="Story 2" />;

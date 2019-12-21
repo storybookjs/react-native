@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`docs-mdx-compiler-plugin story-function-var.mdx 1`] = `
+"/* @jsx mdx */
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
+
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+export const basicFn = () => <Button mdxType=\\"Button\\" />;
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+const Button = makeShortcode('Button');
+const layoutProps = {
+  basicFn,
+};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <Meta title=\\"story-function-var\\" mdxType=\\"Meta\\" />
+
+      <h1>{\`Button\`}</h1>
+      <p>{\`I can define a story with the function defined in CSF:\`}</p>
+      <Story name=\\"basic\\" mdxType=\\"Story\\">
+        {basicFn}
+      </Story>
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+export const basic = assertIsFn(basicFn);
+basic.story = {};
+basic.story.name = 'basic';
+basic.story.parameters = { mdxSource: 'basicFn' };
+
+const componentMeta = { title: 'story-function-var', includeStories: ['basic'] };
+
+const mdxStoryNameToId = { basic: 'story-function-var--basic' };
+
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = {
+  ...(componentMeta.parameters.docs || {}),
+  page: () => (
+    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+      <MDXContent />
+    </AddContext>
+  ),
+};
+
+export default componentMeta;
+"
+`;

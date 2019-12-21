@@ -35,7 +35,7 @@ If you don't have `package.json` in your project, you'll need to init it first:
 npm init
 ```
 
-Then add the following NPM script to your package json in order to start the storybook later in this guide:
+Then add the following NPM script to your `package.json` in order to start the storybook later in this guide:
 
 > In order for your storybook to run properly be sure to be either run `ember serve` or `ember build` before running any storybook commands. Running `ember serve` before storybook will enable live reloading.
 
@@ -52,19 +52,16 @@ Then add the following NPM script to your package json in order to start the sto
 
 Your environment will be preconfigured using `ember-cli-storybook`. This will add a `preview-head.html`, a `.env` and make sure that your environment is configured to work with live reload.
 
-## Create the config file
+## Create the main file
 
-Storybook can be configured in several different ways.
-That’s why we need a config directory. We've added a `-c` option to the above NPM script mentioning `.storybook` as the config directory.
+For a basic Storybook configuration, the only thing you need to do is tell Storybook where to find stories.
 
-For the basic Storybook configuration file, you don't need to do much, but tell Storybook where to find stories.
-
-To do that, create a file at `.storybook/config.js` with the following content:
+To do that, create a file at `.storybook/main.js` with the following content:
 
 ```js
-import { configure } from '@storybook/ember';
-
-configure(require.context('../src', true, /\.stories\.js$/), module);
+module.exports {
+  stories: ['../src/**/*.stories.[tj]s'],
+};
 ```
 
 That will load all the stories underneath your `../src` directory that match the pattern `*.stories.js`. We recommend co-locating your stories with your source files, but you can place them wherever you choose.
@@ -105,7 +102,7 @@ export const component = () => {
 };
 ```
 
-> If you are using an older version of ember <= 3.1 please use this story style
+> If you are using an older version of Ember <= 3.1 please use this story style
 
 ```js
 import { compile } from 'ember-source/dist/ember-template-compiler';

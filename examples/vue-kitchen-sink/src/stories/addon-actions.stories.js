@@ -1,41 +1,41 @@
 import { action, actions } from '@storybook/addon-actions';
 
 export default {
-  title: 'Addon|Actions',
+  title: 'Addon/Actions',
 };
 
-export const actionOnly = () => ({
+export const ActionOnly = () => ({
   template: '<my-button @click="log">Click me to log the action</my-button>',
   methods: {
     log: action('log1'),
   },
 });
 
-actionOnly.story = {
+ActionOnly.story = {
   name: 'Action only',
 };
 
-export const multipleActions = () => ({
+export const MultipleActions = () => ({
   template:
     '<my-button @click="click" @double-click="doubleclick">(Double) click me to log the action</my-button>',
   methods: actions('click', 'doubleclick'),
 });
 
-multipleActions.story = {
+MultipleActions.story = {
   name: 'Multiple actions',
 };
 
-export const multipleActionsObject = () => ({
+export const MultipleActionsObject = () => ({
   template:
     '<my-button @click="click" @double-click="doubleclick">(Double) click me to log the action</my-button>',
   methods: actions({ click: 'clicked', doubleclick: 'double clicked' }),
 });
 
-multipleActionsObject.story = {
+MultipleActionsObject.story = {
   name: 'Multiple actions, object',
 };
 
-export const actionAndMethod = () => ({
+export const ActionAndMethod = () => ({
   template: '<my-button @click="log">Click me to log the action</my-button>',
   methods: {
     log: e => {
@@ -45,6 +45,6 @@ export const actionAndMethod = () => ({
   },
 });
 
-actionAndMethod.story = {
+ActionAndMethod.story = {
   name: 'Action and method',
 };

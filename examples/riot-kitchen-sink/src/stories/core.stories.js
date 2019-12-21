@@ -9,15 +9,15 @@ tag('parameters', '<div>Parameters are {JSON.stringify (this.opts)}</div>', '', 
 addParameters({ globalParameter });
 
 export default {
-  title: 'Core|Parameters',
+  title: 'Core/Parameters',
   parameters: {
     chapterParameter,
   },
 };
 
-export const passedToStory = ({ parameters: { fileName, ...parameters } }) =>
+export const PassedToStory = ({ parameters: { fileName, ...parameters } }) =>
   mount('parameters', { ...parameters, storyParameter });
 
-passedToStory.story = {
+PassedToStory.story = {
   name: 'passed to story',
 };

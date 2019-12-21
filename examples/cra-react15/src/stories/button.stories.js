@@ -9,14 +9,14 @@ export default {
   },
 };
 
-export const story1 = () => <Button onClick={action('clicked')}>Hello Button</Button>;
-story1.story = { name: 'with text' };
+export const Story1 = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+Story1.story = { name: 'with text' };
 
-export const story2 = () => (
+export const Story2 = () => (
   <Button onClick={action('clicked')}>
     <span role="img" aria-label="so cool">
       😀 😎 👍 💯
     </span>
   </Button>
 );
-story2.story = { name: 'with some emoji' };
+Story2.story = { name: 'with some emoji' };

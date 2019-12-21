@@ -13,7 +13,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "target": "es5",
-    "types": ["node", "jest"],
+    "types": ["jest"],
     "lib": ["es2017", "dom"]
   },
   "exclude": [

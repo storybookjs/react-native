@@ -42,16 +42,16 @@ We write a story for our addon like this:
 
 ```js
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import Button from './Button';
 
-storiesOf('Button', module)
-  .add('with text', () => <Button>Hello Button</Button>, {
+export default {
+  title: 'Button',
+  parameters: {
     myAddon: {
       data: 'this data is passed to the addon',
     },
-  });
+  },
+};
 ```
 
 ### Add a panel
@@ -62,7 +62,6 @@ We write an addon that responds to a change in story selection like so:
 // register.js
 
 import React from 'react';
-import { STORY_RENDERED } from '@storybook/core-events';
 import { addons, types } from '@storybook/addons';
 import { useParameter } from '@storybook/api';
 import { AddonPanel } from '@storybook/components';
@@ -96,10 +95,12 @@ addons.register(ADDON_ID, api => {
 
 ### register the addon
 
-Then create an `addons.js` inside the Storybook config directory and add the following content to it.
+within `.storybook/main.js`:
 
 ```js
-import 'path/to/register.js';
+module.exports = {
+  addons: ['path/to/register.js']
+}
 ```
 
 Now restart/rebuild storybook and the addon should show up!
@@ -168,7 +169,7 @@ A very convenient way of using the channel in the manager is using the `useChann
 
 ```js
 import React from 'react';
-import addons from '@storybook/addons';
+import { addons } from '@storybook/addons';
 import { useChannel } from '@storybook/api';
 import { STORY_CHANGED } from '@storybook/core-events';
 import { AddonPanel } from '@storybook/components';
@@ -228,7 +229,13 @@ This is also a great way to sync state between multiple components of the same a
 
 ### Using the complex addon
 
-Add the `register.js` to your `addons.js` file.
+within `.storybook/main.js`:
+
+```js
+module.exports = {
+  addons: ['path/to/register.js']
+}
+```
 
 Then you need to start using the decorator:
 
@@ -239,13 +246,19 @@ import withMyAddon from 'path/to/index.js';
 
 import Button from './Button';
 
-storiesOf('Button', module)
-  .addDecorator(withMyAddon)
-  .add('with text', () => <Button>Hello Button</Button>, {
-    myParameter: {
-      data: 'awesome',
-    },
-  });
+export default {
+  title: 'Button',
+  decorators: [withMyAddon],
+};
+
+export const defaultView = () => (
+  <Button>Hello Button</Button>
+);
+defaultView.story = {
+  parameters: {
+    myParameter: { data: 'awesome' },
+  },
+};
 ```
 
 ### Disabling an addon panel
@@ -267,14 +280,19 @@ addons.register(ADDON_ID, () => {
 While adding a story, you can then pass a `disabled` parameter.
 
 ```js
-storiesOf('Button', module)
-  .add('with text', () => <Button>Hello Button</Button>, {
-    myAddon: {
-      disabled: true,
-    },
-  });
-```
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import withMyAddon from 'path/to/index.js';
 
+export default {
+  title: 'Button',
+  decorators: [withMyAddon],
+  parameters: {
+    myAddon: { disable: true },
+  },
+};
+
+```
 
 ## Styling your addon
 

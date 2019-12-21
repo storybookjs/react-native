@@ -16,7 +16,7 @@ import {
 } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Addons|Knobs',
+  title: 'Addons/Knobs',
   decorators: [withKnobs],
 };
 
@@ -28,7 +28,7 @@ export const Simple = () => {
   return <div>{content}</div>;
 };
 
-export const allKnobs = () => {
+export const AllKnobs = () => {
   const name = text('Name', 'Jane');
   const stock = number('Stock', 20, {
     range: true,
@@ -73,6 +73,6 @@ export const allKnobs = () => {
   );
 };
 
-allKnobs.story = {
+AllKnobs.story = {
   name: 'All knobs',
 };

@@ -5,36 +5,36 @@ import './AnotherTest.tag';
 const simpleTestCompiled = asCompiledCode(SimpleTestRaw);
 
 export default {
-  title: 'Story|How to create a story',
+  title: 'Story/How to create a story',
 };
 
-export const builtWithTag = () =>
+export const BuiltWithTag = () =>
   tag('test', '<div>simple test ({ opts.value })</div>', '', '', () => {}) &&
   mount('test', { value: 'with a parameter' });
 
-builtWithTag.story = {
+BuiltWithTag.story = {
   name: 'built with tag',
 };
 
-export const builtAsString = () => ({ tags: ['<test><div>simple test</div></test>'] });
+export const BuiltAsString = () => ({ tags: ['<test><div>simple test</div></test>'] });
 
-builtAsString.story = {
+BuiltAsString.story = {
   name: 'built as string',
 };
 
-export const builtFromRawImport = () => simpleTestCompiled;
+export const BuiltFromRawImport = () => simpleTestCompiled;
 
-builtFromRawImport.story = {
+BuiltFromRawImport.story = {
   name: 'built from raw import',
 };
 
-export const builtFromTagsAndTemplate = () => ({
+export const BuiltFromTagsAndTemplate = () => ({
   tags: [{ content: SimpleTestRaw, boundAs: 'mustBeUniquePlease' }],
   template:
     '<SimpleTest test={ "with a parameter" } value={"value is mapped to riotValue"}></SimpleTest>',
 });
 
-builtFromTagsAndTemplate.story = {
+BuiltFromTagsAndTemplate.story = {
   name: 'built from tags and template',
   parameters: {
     notes:
@@ -42,7 +42,7 @@ builtFromTagsAndTemplate.story = {
   },
 };
 
-export const tagsTemplateAndTagConstructorAtOnce = () => ({
+export const TagsTemplateAndTagConstructorAtOnce = () => ({
   tags: [
     {
       content:
@@ -57,27 +57,27 @@ export const tagsTemplateAndTagConstructorAtOnce = () => ({
   },
 });
 
-tagsTemplateAndTagConstructorAtOnce.story = {
+TagsTemplateAndTagConstructorAtOnce.story = {
   name: 'tags, template and tagConstructor at once',
 };
 
-export const builtFromThePrecompilation = () => mount('anothertest', {});
+export const BuiltFromThePrecompilation = () => mount('anothertest', {});
 
-builtFromThePrecompilation.story = {
+BuiltFromThePrecompilation.story = {
   name: 'built from the precompilation',
   parameters: {
     notes: 'WARN, only works in lower case, never upper case with precompiled templates',
   },
 };
 
-export const theMountInstructionIsNotNecessary = () => ({ tagName: 'anothertest', opts: {} });
+export const TheMountInstructionIsNotNecessary = () => ({ tagName: 'anothertest', opts: {} });
 
-theMountInstructionIsNotNecessary.story = {
+TheMountInstructionIsNotNecessary.story = {
   name: 'the mount instruction is not necessary',
 };
 
-export const theOptsValueIsNotNecessary = () => ({ tagName: 'anothertest' });
+export const TheOptsValueIsNotNecessary = () => ({ tagName: 'anothertest' });
 
-theOptsValueIsNotNecessary.story = {
+TheOptsValueIsNotNecessary.story = {
   name: 'the opts value is not necessary',
 };

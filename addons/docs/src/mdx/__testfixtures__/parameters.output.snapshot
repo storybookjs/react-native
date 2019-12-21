@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`docs-mdx-compiler-plugin parameters.mdx 1`] = `
+"/* @jsx mdx */
+import { assertIsFn, AddContext } from '@storybook/addon-docs/blocks';
+
+import { Button } from '@storybook/react/demo';
+import { Story, Meta } from '@storybook/addon-docs/blocks';
+
+const makeShortcode = name =>
+  function MDXDefaultShortcode(props) {
+    console.warn(
+      'Component ' +
+        name +
+        ' was not imported, exported, or provided by MDXProvider as global scope'
+    );
+    return <div {...props} />;
+  };
+
+const layoutProps = {};
+const MDXLayout = 'wrapper';
+function MDXContent({ components, ...props }) {
+  return (
+    <MDXLayout {...layoutProps} {...props} components={components} mdxType=\\"MDXLayout\\">
+      <Meta
+        title=\\"Button\\"
+        component={Button}
+        parameters={{
+          notes: 'component notes',
+        }}
+        mdxType=\\"Meta\\"
+      />
+      <Story name=\\"component notes\\" mdxType=\\"Story\\">
+        <Button mdxType=\\"Button\\">Component notes</Button>
+      </Story>
+      <Story
+        name=\\"story notes\\"
+        parameters={{
+          notes: 'story notes',
+        }}
+        mdxType=\\"Story\\"
+      >
+        <Button mdxType=\\"Button\\">Story notes</Button>
+      </Story>
+    </MDXLayout>
+  );
+}
+
+MDXContent.isMDXComponent = true;
+
+export const componentNotes = () => <Button>Component notes</Button>;
+componentNotes.story = {};
+componentNotes.story.name = 'component notes';
+componentNotes.story.parameters = { mdxSource: '<Button>Component notes</Button>' };
+
+export const storyNotes = () => <Button>Story notes</Button>;
+storyNotes.story = {};
+storyNotes.story.name = 'story notes';
+storyNotes.story.parameters = {
+  mdxSource: '<Button>Story notes</Button>',
+  ...{
+    notes: 'story notes',
+  },
+};
+
+const componentMeta = {
+  title: 'Button',
+  parameters: {
+    notes: 'component notes',
+  },
+  includeStories: ['componentNotes', 'storyNotes'],
+};
+
+const mdxStoryNameToId = {
+  'component notes': 'button--component-notes',
+  'story notes': 'button--story-notes',
+};
+
+componentMeta.parameters = componentMeta.parameters || {};
+componentMeta.parameters.docs = {
+  ...(componentMeta.parameters.docs || {}),
+  page: () => (
+    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+      <MDXContent />
+    </AddContext>
+  ),
+};
+
+export default componentMeta;
+"
+`;

@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 import { Button } from '@storybook/angular/demo';
 
 export default {
-  title: 'Custom|Style',
+  title: 'Custom/Style',
   decorators: [
     moduleMetadata({
       declarations: [Button],
@@ -12,7 +12,7 @@ export default {
   ],
 };
 
-export const defaultStory = () => ({
+export const DefaultStory = () => ({
   template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
   props: {
     text: 'Button with custom styles',
@@ -28,11 +28,11 @@ export const defaultStory = () => ({
   ],
 });
 
-defaultStory.story = {
+DefaultStory.story = {
   name: 'Default',
 };
 
-export const withKnobsStory = () => ({
+export const WithKnobsStory = () => ({
   template: `<storybook-button-component [text]="text" (onClick)="onClick($event)"></storybook-button-component>`,
   props: {
     text: text('text', 'Button with custom styles'),
@@ -48,7 +48,7 @@ export const withKnobsStory = () => ({
   ],
 });
 
-withKnobsStory.story = {
+WithKnobsStory.story = {
   name: 'With Knobs',
   decorators: [withKnobs],
 };

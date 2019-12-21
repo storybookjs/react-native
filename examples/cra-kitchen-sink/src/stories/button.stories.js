@@ -28,30 +28,30 @@ export default {
   component: Button,
 };
 
-export const story1 = () => <Button onClick={action('clicked', { depth: 1 })}>Hello Button</Button>;
-story1.story = {
+export const Story1 = () => <Button onClick={action('clicked', { depth: 1 })}>Hello Button</Button>;
+Story1.story = {
   name: 'with text',
   parameters: {
     options: { selectedPanel: 'storybook/actions/panel' },
   },
 };
 
-export const story2 = () => (
+export const Story2 = () => (
   <Button onClick={action('clicked')}>
     <span role="img" aria-label="yolo">
       😀 😎 👍 💯
     </span>
   </Button>
 );
-story2.story = {
+Story2.story = {
   name: 'with some emoji',
   parameters: {
     options: { selectedPanel: 'storybook/actions/panel' },
   },
 };
 
-export const story3 = () => <Button>Check my notes in the notes panel</Button>;
-story3.story = {
+export const Story3 = () => <Button>Check my notes in the notes panel</Button>;
+Story3.story = {
   name: 'with notes',
   parameters: {
     notes: 'A very simple button',
@@ -59,14 +59,14 @@ story3.story = {
   },
 };
 
-export const story4 = context => (
+export const Story4 = context => (
   <Container>
     <span>
       click the <InfoButton /> label in top right for info about "{context.name}"
     </span>
   </Container>
 );
-story4.story = {
+Story4.story = {
   name: 'with new info',
   parameters: {
     notes: 'Composition: Info(Notes())',

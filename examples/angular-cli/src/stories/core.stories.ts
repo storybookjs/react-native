@@ -8,13 +8,13 @@ const storyParameter = 'storyParameter';
 addParameters({ globalParameter });
 
 export default {
-  title: 'Core|Parameters',
+  title: 'Core/Parameters',
   parameters: {
     chapterParameter,
   },
 };
 
-export const passedToStory = ({ parameters: { fileName, ...parameters } }) => ({
+export const PassedToStory = ({ parameters: { fileName, ...parameters } }) => ({
   component: Button,
   props: {
     text: `Parameters are ${JSON.stringify(parameters)}`,
@@ -22,7 +22,7 @@ export const passedToStory = ({ parameters: { fileName, ...parameters } }) => ({
   },
 });
 
-passedToStory.story = {
+PassedToStory.story = {
   name: 'passed to story',
   parameters: { storyParameter },
 };

@@ -5,7 +5,7 @@ import { DummyService } from './moduleMetadata/dummy.service';
 import { ServiceComponent } from './moduleMetadata/service.component';
 
 export default {
-  title: 'Custom|Providers',
+  title: 'Custom/Providers',
   decorators: [
     moduleMetadata({
       imports: [],
@@ -16,18 +16,18 @@ export default {
   ],
 };
 
-export const simple = () => ({
+export const Simple = () => ({
   component: ServiceComponent,
   props: {
     name: 'Static name',
   },
 });
 
-simple.story = {
+Simple.story = {
   name: 'Simple',
 };
 
-export const withKnobsStory = () => {
+export const WithKnobsStory = () => {
   const name = text('name', 'Dynamic knob');
 
   return {
@@ -38,7 +38,7 @@ export const withKnobsStory = () => {
   };
 };
 
-withKnobsStory.story = {
+WithKnobsStory.story = {
   name: 'With knobs',
   decorators: [withKnobs],
 };

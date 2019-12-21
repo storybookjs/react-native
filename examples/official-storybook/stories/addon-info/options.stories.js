@@ -8,12 +8,12 @@ import TableComponent from '../../components/TableComponent';
 import { markdownDescription } from './markdown.stories';
 
 export default {
-  title: 'Addons|Info/Options',
+  title: 'Addons/Info/Options',
   decorators: [withInfo],
 };
 
-export const inlinesComponentInsideStory = () => <BaseButton label="Button" />;
-inlinesComponentInsideStory.story = {
+export const InlinesComponentInsideStory = () => <BaseButton label="Button" />;
+InlinesComponentInsideStory.story = {
   name: 'Inlines component inside story',
   parameters: {
     info: {
@@ -23,10 +23,10 @@ inlinesComponentInsideStory.story = {
   },
 };
 
-export const excludesPropTypesThatAreInTheExcludedPropTypesArray = () => (
+export const ExcludesPropTypesThatAreInTheExcludedPropTypesArray = () => (
   <BaseButton label="Button" />
 );
-excludesPropTypesThatAreInTheExcludedPropTypesArray.story = {
+ExcludesPropTypesThatAreInTheExcludedPropTypesArray.story = {
   name: 'Excludes propTypes that are in the excludedPropTypes array',
   parameters: {
     info: {
@@ -36,8 +36,8 @@ excludesPropTypesThatAreInTheExcludedPropTypesArray.story = {
   },
 };
 
-export const showsOrHidesInfoAddonHeader = () => <BaseButton label="Button" />;
-showsOrHidesInfoAddonHeader.story = {
+export const ShowsOrHidesInfoAddonHeader = () => <BaseButton label="Button" />;
+ShowsOrHidesInfoAddonHeader.story = {
   name: 'Shows or hides Info Addon header',
   parameters: {
     info: {
@@ -47,8 +47,8 @@ showsOrHidesInfoAddonHeader.story = {
   },
 };
 
-export const showsOrHidesInfoAddonSource = () => <BaseButton label="Button" />;
-showsOrHidesInfoAddonSource.story = {
+export const ShowsOrHidesInfoAddonSource = () => <BaseButton label="Button" />;
+ShowsOrHidesInfoAddonSource.story = {
   name: 'Shows or hides Info Addon source',
   parameters: {
     info: {
@@ -58,8 +58,8 @@ showsOrHidesInfoAddonSource.story = {
   },
 };
 
-export const showsAdditionalComponentPropTables = () => <BaseButton label="Button" />;
-showsAdditionalComponentPropTables.story = {
+export const ShowsAdditionalComponentPropTables = () => <BaseButton label="Button" />;
+ShowsAdditionalComponentPropTables.story = {
   name: 'Shows additional component prop tables',
   parameters: {
     info: {
@@ -69,13 +69,13 @@ showsAdditionalComponentPropTables.story = {
   },
 };
 
-export const excludeComponentFromPropTables = () => (
+export const ExcludeComponentFromPropTables = () => (
   <div>
     <BaseButton label="Button" />
     <FlowTypeButton label="Flow Typed Button" />
   </div>
 );
-excludeComponentFromPropTables.story = {
+ExcludeComponentFromPropTables.story = {
   name: 'Exclude component from prop tables',
   parameters: {
     info: {
@@ -85,8 +85,8 @@ excludeComponentFromPropTables.story = {
   },
 };
 
-export const extendInfoStylesWithAnObject = () => <BaseButton label="Button" />;
-extendInfoStylesWithAnObject.story = {
+export const ExtendInfoStylesWithAnObject = () => <BaseButton label="Button" />;
+ExtendInfoStylesWithAnObject.story = {
   name: 'Extend info styles with an object',
   parameters: {
     info: {
@@ -106,8 +106,8 @@ extendInfoStylesWithAnObject.story = {
   },
 };
 
-export const fullControlOverStylesUsingAFunction = () => <BaseButton label="Button" />;
-fullControlOverStylesUsingAFunction.story = {
+export const FullControlOverStylesUsingAFunction = () => <BaseButton label="Button" />;
+FullControlOverStylesUsingAFunction.story = {
   name: 'Full control over styles using a function',
   parameters: {
     info: {
@@ -125,8 +125,8 @@ fullControlOverStylesUsingAFunction.story = {
   },
 };
 
-export const useACustomComponentForTheTable = () => <BaseButton label="Button" />;
-useACustomComponentForTheTable.story = {
+export const UseACustomComponentForTheTable = () => <BaseButton label="Button" />;
+UseACustomComponentForTheTable.story = {
   name: 'Use a custom component for the table',
   component: TableComponent,
   parameters: {
@@ -136,22 +136,22 @@ useACustomComponentForTheTable.story = {
   },
 };
 
-export const useInfoAsStoryDecorator = () => <BaseButton label="Button" />;
+export const UseInfoAsStoryDecorator = () => <BaseButton label="Button" />;
 
-useInfoAsStoryDecorator.story = {
+UseInfoAsStoryDecorator.story = {
   name: 'Use Info as story decorator',
   decorators: [withInfo('Info can take options via the global or local decorator as well.')],
 };
 
-export const usingParametersAcrossAllStories = () => <BaseButton label="Button" />;
-usingParametersAcrossAllStories.story = {
+export const UsingParametersAcrossAllStories = () => <BaseButton label="Button" />;
+UsingParametersAcrossAllStories.story = {
   name: 'Using parameters across all stories',
 };
 
-export const overwritingAndExtendingTheParametersAndOptionsSetStoriesWise = () => (
+export const OverwritingAndExtendingTheParametersAndOptionsSetStoriesWise = () => (
   <BaseButton label="Button" />
 );
-overwritingAndExtendingTheParametersAndOptionsSetStoriesWise.story = {
+OverwritingAndExtendingTheParametersAndOptionsSetStoriesWise.story = {
   name: 'Overwriting and extending the parameters and options set stories-wise',
   parameters: {
     info: {
@@ -161,20 +161,20 @@ overwritingAndExtendingTheParametersAndOptionsSetStoriesWise.story = {
   },
 };
 
-export const overwriteTheParametersWithMarkdownVariable = () => (
+export const OverwriteTheParametersWithMarkdownVariable = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
 
-overwriteTheParametersWithMarkdownVariable.story = {
+OverwriteTheParametersWithMarkdownVariable.story = {
   name: 'Overwrite the parameters with markdown variable',
   parameters: { info: markdownDescription },
 };
 
-export const overwriteTheTextParameterWithMarkdownInline = () => (
+export const OverwriteTheTextParameterWithMarkdownInline = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
 
-overwriteTheTextParameterWithMarkdownInline.story = {
+OverwriteTheTextParameterWithMarkdownInline.story = {
   name: 'Overwrite the text parameter with markdown inline',
   parameters: {
     info: {
@@ -189,10 +189,10 @@ overwriteTheTextParameterWithMarkdownInline.story = {
   },
 };
 
-export const disableTheAddonEntirely = () => (
+export const DisableTheAddonEntirely = () => (
   <BaseButton onClick={action('clicked')} label="Button" />
 );
-disableTheAddonEntirely.story = {
+DisableTheAddonEntirely.story = {
   name: 'Disable the addon entirely',
   parameters: { info: { disable: true } },
 };
