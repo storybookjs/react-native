@@ -1,18 +1,28 @@
 <center>
-  <img src="./media/docspage-hero.png" width="100%" />
+  <img src="https://raw.githubusercontent.com/storybookjs/storybook/master/addons/docs/docs/media/docspage-hero.png" width="100%" />
 </center>
 
 # Storybook DocsPage
 
 When you install [Storybook Docs](../README.md), `DocsPage` is the zero-config default documentation that all stories get out of the box. It aggregates your stories, text descriptions, docgen comments, props tables, and code examples into a single page for each component.
 
-- [Motivation](#motivation)
-- [Component parameter](#component-parameter)
-- [Subcomponents parameter](#subcomponents-parameter)
-- [DocsPage slots](#docspage-slots)
-- [Replacing DocsPage](#replacing-docspage)
-- [Story file names](#story-file-names)
-- [More resources](#more-resources)
+- [Storybook DocsPage](#storybook-docspage)
+  - [Motivation](#motivation)
+  - [Component parameter](#component-parameter)
+  - [Subcomponents parameter](#subcomponents-parameter)
+  - [DocsPage slots](#docspage-slots)
+  - [Slot values](#slot-values)
+    - [Title](#title)
+    - [Subtitle](#subtitle)
+    - [Description](#description)
+    - [Primary](#primary)
+    - [Props](#props)
+    - [Stories](#stories)
+  - [Slot functions](#slot-functions)
+  - [Replacing DocsPage](#replacing-docspage)
+  - [Story file names](#story-file-names)
+  - [Inline stories vs. Iframe stories](#inline-stories-vs-iframe-stories)
+  - [More resources](#more-resources)
 
 ## Motivation
 
@@ -80,7 +90,7 @@ If you want organize your documentation differently for groups of components, we
 `DocsPage` is organized into a series of "slots" including Title, Subtitle, Description, Props, and Story. Each of these slots pulls information from your project and formats it for the screen.
 
 <center>
-  <img style="padding: 30px; border: 3px solid #eee;" src="./media/docspage-slots.png" width="100%" />
+  <img style="padding: 30px; border: 3px solid #eee;" src="https://raw.githubusercontent.com/storybookjs/storybook/master/addons/docs/docs/media/docspage-slots.png" width="100%" />
 </center>
 
 ## Slot values
