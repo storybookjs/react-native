@@ -123,6 +123,7 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 | [Riot](app/riot)                 | [v5.1.0](https://storybooks-riot.netlify.com/)    | [![Riot](https://img.shields.io/npm/dm/@storybook/riot.svg)](app/riot)                         |
 | [Ember](app/ember)               | [v5.1.0](https://storybooks-ember.netlify.com/)   | [![Ember](https://img.shields.io/npm/dm/@storybook/ember.svg)](app/ember)                      |
 | [Preact](app/preact)             | [v5.1.0](https://storybooks-preact.netlify.com/)  | [![Preact](https://img.shields.io/npm/dm/@storybook/preact.svg)](app/preact)                   |
+| [Rax](app/rax)             | [v5.1.0](https://storybooks-rax.netlify.com/)  | [![Rax](https://img.shields.io/npm/dm/@storybook/rax.svg)](app/rax)                   |
 
 ### Sub Projects
 

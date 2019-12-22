@@ -25363,24 +25363,6 @@ rax-link@^1.0.0:
     rax-text "^1.0.1"
     universal-env "^1.0.0"
 
-rax-scripts@^2.0.0:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/rax-scripts/-/rax-scripts-2.0.4.tgz#da322451be7c98a56e95fbecc1d91f0b26393a74"
-  integrity sha512-VMBDLhX8HIEs5Q6gAsQqlr65UU+Ilyef7HLrZCaAo03//Wj0f7zTxNa7jSeRS4Cbt+wFrhZOwpzi9i5zbnAVfA==
-  dependencies:
-    "@babel/preset-typescript" "^7.6.0"
-    babel-core "7.0.0-bridge.0"
-    babel-jest "^23.6.0"
-    commander "^3.0.1"
-    eslint "^5.10.0"
-    eslint-plugin-import "^2.14.0"
-    eslint-plugin-react "~7.11.1"
-    jest "^24.8.0"
-    jest-cli "^24.7.1"
-    jest-localstorage-mock "^2.3.0"
-    rax-compile-config "^0.2.0"
-    scripts-core "^0.1.0"
-
 rax-test-renderer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/rax-test-renderer/-/rax-test-renderer-1.0.0.tgz#13b7d680557db20539d216e3a0bb397ab210beb6"

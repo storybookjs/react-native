@@ -11,6 +11,7 @@ module.exports = {
     '@storybook/addon-options/register',
     '@storybook/addon-knobs/register',
     '@storybook/addon-backgrounds/register',
+    '@storybook/addon-contexts/register',
     '@storybook/addon-a11y/register',
     '@storybook/addon-jest/register',
   ],

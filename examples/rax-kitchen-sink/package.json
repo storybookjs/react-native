@@ -3,16 +3,17 @@
   "version": "5.3.0-rc.0",
   "private": true,
   "scripts": {
-    "build": "rax-scripts build",
+    "build": "build-scripts build",
     "prebuild-storybook": "yarn test:generate-output",
     "build-storybook": "build-storybook -s public",
-    "start": "rax-scripts start",
+    "start": "build-scripts start",
     "prestorybook": "yarn test:generate-output",
     "storybook": "start-storybook -p 9009 -s public",
     "test": "jest",
     "test:generate-output": "jest --json --outputFile=jest-test-results.json --config=./jest-addon.config.js -u"
   },
   "dependencies": {
+    "driver-universal": "^3.0.0",
     "event-emitter": "^0.3.5",
     "rax": "^1.1.0",
     "rax-image": "^1.0.0",
@@ -21,6 +22,7 @@
     "rax-view": "^1.0.0"
   },
   "devDependencies": {
+    "@alib/build-scripts": "^0.1.8",
     "@storybook/addon-a11y": "5.3.0-rc.0",
     "@storybook/addon-actions": "5.3.0-rc.0",
     "@storybook/addon-backgrounds": "5.3.0-rc.0",
@@ -41,7 +43,7 @@
     "@storybook/theming": "5.3.0-rc.0",
     "babel-eslint": "^10.0.3",
     "babel-preset-rax": "^1.0.0-beta.0",
-    "rax-scripts": "^2.0.0",
+    "build-plugin-rax-app": "^0.2.0",
     "rax-test-renderer": "^1.0.0",
     "stylesheet-loader": "^0.6.5"
   }

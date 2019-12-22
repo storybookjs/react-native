@@ -1,7 +1,7 @@
 import { createElement } from 'rax';
 import View from 'rax-view';
 import Text from 'rax-text';
-import styles from './index.stylesheet';
+import styles from './index.css';
 
 export const App = () => (
   <View style={styles.app}>
