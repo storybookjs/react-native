@@ -70,4 +70,13 @@ describe('angular-cli_config', () => {
     expect(projectConfig).toBe(null);
     expect(config).toBe(baseConfig);
   });
+
+  it('should return empty `buildOptions.budgets` by default', () => {
+    const config = getAngularCliWebpackConfigOptions(__dirname as Path);
+    expect(config).toMatchObject({
+      buildOptions: {
+        budgets: [],
+      },
+    });
+  });
 });

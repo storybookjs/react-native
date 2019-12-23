@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-storyshots-puppeteer",
-  "version": "5.3.0-rc.0",
+  "version": "5.3.0-rc.1",
   "description": "Image snapshots addition to StoryShots based on puppeteer",
   "keywords": [
     "addon",
@@ -31,7 +31,7 @@
   "dependencies": {
     "@hypnosphi/jest-puppeteer-axe": "^1.4.0",
     "@storybook/csf": "0.0.1",
-    "@storybook/node-logger": "5.3.0-rc.0",
+    "@storybook/node-logger": "5.3.0-rc.1",
     "@types/jest-image-snapshot": "^2.8.0",
     "core-js": "^3.0.1",
     "jest-image-snapshot": "^2.8.2",
@@ -41,7 +41,7 @@
     "@types/puppeteer": "^2.0.0"
   },
   "peerDependencies": {
-    "@storybook/addon-storyshots": "5.3.0-rc.0",
+    "@storybook/addon-storyshots": "5.3.0-rc.1",
     "puppeteer": "^1.12.2 || ^2.0.0"
   },
   "publishConfig": {
