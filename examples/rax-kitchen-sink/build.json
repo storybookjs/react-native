@@ -6,5 +6,6 @@
         "targets": ["web"]
       }
     ]
-  ]
+  ],
+  "inlineStyle": true
 }
