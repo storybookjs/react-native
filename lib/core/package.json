@@ -74,6 +74,7 @@
     "ip": "^1.1.5",
     "json5": "^2.1.1",
     "lazy-universal-dotenv": "^3.0.1",
+    "memoizerific": "^1.11.3",
     "micromatch": "^4.0.2",
     "node-fetch": "^2.6.0",
     "open": "^7.0.0",
