@@ -1,10 +1,6 @@
 import * as React from 'react';
-import { configure, storiesOf } from '@storybook/react';
+import { configure } from '@storybook/react';
+import * as Comp1 from './stories/Component1.stories';
+import * as Comp2 from './stories/Component2.stories';
 
-configure(() => {
-  storiesOf('Component 1', module).add('Story 1', () => <div>Component 1 - Story 1</div>);
-
-  storiesOf('Component 2', module)
-    .add('Story 1', () => <div>Category 2 - Story 1</div>)
-    .add('Story 2', () => <div>Category 2 - Story 2</div>);
-}, module);
+configure(() => [Comp1, Comp2], module);
