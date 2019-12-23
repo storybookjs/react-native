@@ -1,3 +1,14 @@
+## 5.3.0-rc.1 (December 23, 2019)
+
+### Bug Fixes
+
+* Angular: Add default value to the budgets property ([#9207](https://github.com/storybookjs/storybook/pull/9207))
+* DocsPage: Fix title with new path separator scheme ([#9204](https://github.com/storybookjs/storybook/pull/9204))
+
+### Maintenance
+
+* CLI: Make template `stories` glob more permissive ([#9224](https://github.com/storybookjs/storybook/pull/9224))
+
 ## 5.3.0-rc.0 (December 19, 2019)
 
 ### Features
