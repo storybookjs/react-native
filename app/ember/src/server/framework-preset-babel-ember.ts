@@ -1,6 +1,7 @@
 import { precompile } from 'ember-source/dist/ember-template-compiler';
+import { Configuration } from 'webpack'; // eslint-disable-line
 
-export function babel(config) {
+export function babel(config: Configuration) {
   const babelConfigPlugins = config.plugins || [];
 
   const extraPlugins = [

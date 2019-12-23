@@ -8,7 +8,7 @@ Storybook Addon Notes allows you to write notes (text or HTML) for your stories 
 
 ## Getting Started
 
-**NOTE: Documentation on master branch is for alpha version, stable release is on [master](https://github.com/storybookjs/storybook/tree/master/addons/)**
+**NOTE: Documentation on `next` branch is for alpha version, stable release is on [master](https://github.com/storybookjs/storybook/tree/master/addons/)**
 
 ```sh
 yarn add -D @storybook/addon-notes
