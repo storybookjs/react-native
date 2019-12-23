@@ -1,16 +1,13 @@
 /* eslint no-underscore-dangle: 0 */
-import deprecate from 'util-deprecate';
 import isPlainObject from 'is-plain-object';
 import { logger } from '@storybook/client-logger';
-import addons, { StoryContext, StoryFn, Parameters } from '@storybook/addons';
-import Events from '@storybook/core-events';
+import { StoryContext, StoryFn, Parameters } from '@storybook/addons';
 import { toId } from '@storybook/csf';
 
 import mergeWith from 'lodash/mergeWith';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
 import { ClientApiParams, DecoratorFunction, ClientApiAddons, StoryApi } from './types';
-import subscriptionsStore from './subscriptions_store';
 import { applyHooks } from './hooks';
 import StoryStore from './story_store';
 
@@ -59,28 +56,6 @@ export const defaultDecorateStory = (storyFn: StoryFn, decorators: DecoratorFunc
       ),
     storyFn
   );
-
-const metaSubscriptionHandler = deprecate(
-  subscriptionsStore.register,
-  'Events.REGISTER_SUBSCRIPTION is deprecated and will be removed in 6.0. Please use useEffect from @storybook/client-api instead.'
-);
-
-const metaSubscription = () => {
-  addons.getChannel().on(Events.REGISTER_SUBSCRIPTION, metaSubscriptionHandler);
-  return () =>
-    addons.getChannel().removeListener(Events.REGISTER_SUBSCRIPTION, metaSubscriptionHandler);
-};
-
-const withSubscriptionTracking = (storyFn: StoryFn) => {
-  if (!addons.hasChannel()) {
-    return storyFn();
-  }
-  subscriptionsStore.markAllAsUnused();
-  subscriptionsStore.register(metaSubscription);
-  const result = storyFn();
-  subscriptionsStore.clearUnused();
-  return result;
-};
 
 let _globalDecorators: DecoratorFunction[] = [];
 
@@ -274,7 +249,6 @@ export default class ClientApi {
             ...(allParam.decorators || []),
             ...localDecorators,
             ..._globalDecorators,
-            withSubscriptionTracking,
           ],
         }
       );
