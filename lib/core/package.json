@@ -61,7 +61,7 @@
     "dotenv-webpack": "^1.7.0",
     "ejs": "^2.7.4",
     "express": "^4.17.0",
-    "file-loader": "^4.2.0",
+    "file-loader": "^5.0.2",
     "file-system-cache": "^1.0.5",
     "find-cache-dir": "^3.0.0",
     "find-up": "^4.1.0",
