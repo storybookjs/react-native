@@ -28,7 +28,7 @@ module.exports = {
           enforce: 'pre',
         },
         {
-          test: /\.stylesheet$/,
+          test: /\.css$/,
           use: [require.resolve('stylesheet-loader')],
         },
       ],
