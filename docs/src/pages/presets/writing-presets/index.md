@@ -86,7 +86,7 @@ The addon config `addons` allows you to add addons to Storybook from within a pr
 For example, the Storysource preset contains the following code:
 
 ```js
-export function addons(entry = []) {
+export function managerEntries(entry = []) {
   return [...entry, require.resolve('@storybook/addon-storysource/register')];
 }
 ```
@@ -95,8 +95,8 @@ This is equivalent to [registering the addon manually](../../addons/using-addons
 
 ```js
 module.exports = {
-  addons: ['@storybook/addon-storysource/register']
-}
+  addons: ['@storybook/addon-storysource/register'],
+};
 ```
 
 ### Entries
@@ -128,7 +128,7 @@ module.exports = {
     return config;
   },
   addons: [],
-}
+};
 ```
 
 ## Sharing advanced configuration
@@ -162,7 +162,7 @@ module.exports = {
     return config;
   },
   addons: [],
-}
+};
 ```
 
-Place your `my-preset.js` file where ever you want, if you want to share if far and wide you'll want to make it it's own package. 
+Place your `my-preset.js` file where ever you want, if you want to share if far and wide you'll want to make it it's own package.

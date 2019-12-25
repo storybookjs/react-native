@@ -11,7 +11,7 @@ const PRESET_METHODS = [
   'webpack',
   'webpackFinal',
   'managerWebpack',
-  'addons',
+  'managerEntries',
   'entries',
   'config',
 ];
