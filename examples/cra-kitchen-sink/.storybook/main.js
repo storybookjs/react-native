@@ -1,13 +1,11 @@
 module.exports = {
-  presets: [
+  addons: [
     {
       name: '@storybook/addon-docs/preset',
       options: {
         configureJSX: true,
       },
     },
-  ],
-  addons: [
     '@storybook/addon-actions/register',
     '@storybook/addon-links/register',
     '@storybook/addon-events/register',
