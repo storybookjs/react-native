@@ -51,13 +51,13 @@ helloStory.story.parameters = { mdxSource: '<Button>Hello button</Button>' };
 
 const componentMeta = { title: 'Button', includeStories: ['one', 'helloStory'] };
 
-const mdxStoryNameToId = { one: 'button--one', 'hello story': 'button--hello-story' };
+const mdxStoryNameToKey = { one: 'one', 'hello story': 'helloStory' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
   ...(componentMeta.parameters.docs || {}),
   page: () => (
-    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+    <AddContext mdxStoryNameToKey={mdxStoryNameToKey} mdxComponentMeta={componentMeta}>
       <MDXContent />
     </AddContext>
   ),
