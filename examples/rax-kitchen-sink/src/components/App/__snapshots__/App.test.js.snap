@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Welcome render correctly 1`] = `
+exports[`App render correctly 1`] = `
 Object {
   "attributes": Object {
     "class": "rax-view",
