@@ -28,7 +28,7 @@ const Title = ({ children, ...props }) => (
   </Text>
 );
 
-export const Welcome = ({ showApp }) => (
+export const App = ({ showApp }) => (
   <Main>
     <Title>Welcome to storybook for Rax</Title>
     <Image
