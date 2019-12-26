@@ -1,3 +1,17 @@
+## 5.3.0-rc.2 (December 26, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Include ember files in addon-docs publish ([#9230](https://github.com/storybookjs/storybook/pull/9230))
+
+### Maintenance
+
+* Standalone CSF example ([#9223](https://github.com/storybookjs/storybook/pull/9223))
+
+### Dependency Upgrades
+
+* Addon-info: Upgrade marksy for security ([#9234](https://github.com/storybookjs/storybook/pull/9234))
+
 ## 5.3.0-rc.1 (December 23, 2019)
 
 ### Bug Fixes
