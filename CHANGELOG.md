@@ -1,4 +1,4 @@
-## 5.3.0-rc.2 (December 26, 2019)
+## 5.3.0-rc.3 (December 26, 2019)
 
 ### Bug Fixes
 
@@ -11,6 +11,10 @@
 ### Dependency Upgrades
 
 * Addon-info: Upgrade marksy for security ([#9234](https://github.com/storybookjs/storybook/pull/9234))
+
+## 5.3.0-rc.2 (December 26, 2019)
+
+Failed NPM publish
 
 ## 5.3.0-rc.1 (December 23, 2019)
 
