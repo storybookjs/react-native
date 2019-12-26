@@ -1,9 +1,9 @@
 import { createElement } from 'rax';
 import renderer from 'rax-test-renderer';
-import { Welcome } from './index';
+import { App } from './index';
 
-test('Welcome render correctly', () => {
-  const tree = renderer.create(<Welcome />).toJSON();
+test('App render correctly', () => {
+  const tree = renderer.create(<App />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });
