@@ -1,5 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
+import { transparentize, opacify } from 'polished';
 import { rotate360 } from '../shared/animation';
 
 const LoaderWrapper = styled.div(({ theme }) => ({
@@ -19,8 +20,8 @@ const LoaderWrapper = styled.div(({ theme }) => ({
   zIndex: 4,
   borderWidth: 2,
   borderStyle: 'solid',
-  borderColor: 'rgba(0, 0, 0, 0.03)',
-  borderTopColor: 'rgba(0, 0, 0, 0.15)',
+  borderColor: transparentize(0.06, theme.appBorderColor),
+  borderTopColor: opacify(0.07, theme.appBorderColor),
   animation: `${rotate360} 0.7s linear infinite`,
 }));
 
