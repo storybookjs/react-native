@@ -34,7 +34,7 @@
     "@storybook/theming": "5.3.0-rc.1",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "marksy": "^7.0.0",
+    "marksy": "^8.0.0",
     "nested-object-assign": "^1.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
