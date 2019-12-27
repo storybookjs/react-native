@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactElement, ReactNode, ReactNodeArray } from 'react';
-import { toId } from '@storybook/csf';
+import { toId, storyNameFromExport } from '@storybook/csf';
 import { Preview as PurePreview, PreviewProps as PurePreviewProps } from '@storybook/components';
 import { getSourceProps } from './Source';
 import { DocsContext, DocsContextProps } from './DocsContext';
@@ -40,7 +40,10 @@ const getPreviewProps = (
   const targetIds = stories.map(
     s =>
       s.props.id ||
-      toId(mdxComponentMeta.id || mdxComponentMeta.title, mdxStoryNameToKey[s.props.name])
+      toId(
+        mdxComponentMeta.id || mdxComponentMeta.title,
+        storyNameFromExport(mdxStoryNameToKey[s.props.name])
+      )
   );
   const sourceProps = getSourceProps({ ids: targetIds }, { storyStore });
   return {

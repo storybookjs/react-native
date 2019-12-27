@@ -2,7 +2,7 @@ import React, { createElement, ElementType, FunctionComponent, ReactNode } from 
 import { MDXProvider } from '@mdx-js/react';
 import { components as docsComponents } from '@storybook/components/html';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
-import { toId } from '@storybook/csf';
+import { toId, storyNameFromExport } from '@storybook/csf';
 import { CURRENT_SELECTION } from './shared';
 
 import { DocsContext, DocsContextProps } from './DocsContext';
@@ -47,7 +47,11 @@ export const getStoryProps = (
   const { name } = props as StoryDefProps;
   const inputId = id === CURRENT_SELECTION ? currentId : id;
   const previewId =
-    inputId || toId(mdxComponentMeta.id || mdxComponentMeta.title, mdxStoryNameToKey[name]);
+    inputId ||
+    toId(
+      mdxComponentMeta.id || mdxComponentMeta.title,
+      storyNameFromExport(mdxStoryNameToKey[name])
+    );
 
   const { height, inline } = props;
   const data = storyStore.fromId(previewId);
