@@ -1,3 +1,13 @@
+## 5.3.0-rc.4 (December 28, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix MDX story rendering with dynamic component titles ([#9248](https://github.com/storybookjs/storybook/pull/9248))
+
+### Maintenance
+
+* Ignore testfixtures directory in storybook publish ([#9244](https://github.com/storybookjs/storybook/pull/9244))
+
 ## 5.3.0-rc.3 (December 26, 2019)
 
 ### Bug Fixes
