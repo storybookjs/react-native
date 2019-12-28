@@ -60,13 +60,13 @@ toStorybook.story.parameters = {
 
 const componentMeta = { title: 'MDX|Welcome', includeStories: ['toStorybook'] };
 
-const mdxStoryNameToId = { 'to storybook': 'mdx-welcome--to-storybook' };
+const mdxStoryNameToKey = { 'to storybook': 'toStorybook' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
   ...(componentMeta.parameters.docs || {}),
   page: () => (
-    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+    <AddContext mdxStoryNameToKey={mdxStoryNameToKey} mdxComponentMeta={componentMeta}>
       <MDXContent />
     </AddContext>
   ),

@@ -43,13 +43,13 @@ basic.story.parameters = { mdxSource: 'basicFn' };
 
 const componentMeta = { title: 'story-function-var', includeStories: ['basic'] };
 
-const mdxStoryNameToId = { basic: 'story-function-var--basic' };
+const mdxStoryNameToKey = { basic: 'basic' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
   ...(componentMeta.parameters.docs || {}),
   page: () => (
-    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+    <AddContext mdxStoryNameToKey={mdxStoryNameToKey} mdxComponentMeta={componentMeta}>
       <MDXContent />
     </AddContext>
   ),
