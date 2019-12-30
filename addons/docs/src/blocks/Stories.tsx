@@ -17,7 +17,7 @@ export const Stories: FunctionComponent<StoriesProps> = ({ slot, title }) => {
   const stories: DocsStoryProps[] = slot
     ? slot(componentStories, context)
     : componentStories && componentStories.slice(1);
-  if (!stories) {
+  if (!stories || stories.length === 0) {
     return null;
   }
   return (
