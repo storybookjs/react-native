@@ -1,43 +1,35 @@
 import React from 'react';
-import { Button } from '@storybook/components';
+
+// eslint-disable-next-line react/prop-types
+const Box = ({ children, display = 'block' }) => (
+  <div style={{ display, border: '2px solid #FF4785', padding: 10 }}>{children}</div>
+);
 
 export default {
   title: 'Core/Layout',
   parameters: {
-    layout: 'padded',
+    layout: ctx => ctx.name.toLowerCase().split(' ')[1],
   },
 };
 
-export const InheritedLayout = () => <Button primary>a button</Button>;
+export const AutoPadded = () => <Box>padded layout based on story name</Box>;
+export const AutoFullscreen = () => <Box>fullscreen layout based on story name</Box>;
+export const AutoCentered = () => <Box>centered layout based on story name</Box>;
 
-export const PaddedLayout = () => <Button primary>a button</Button>;
-PaddedLayout.story = {
-  parameters: {
-    layout: 'padded',
-  },
-};
+export const PaddedBlock = () => <Box>padded</Box>;
+PaddedBlock.story = { parameters: { layout: 'padded' } };
 
-export const CenteredLayout = () => <Button primary>a button</Button>;
-CenteredLayout.story = {
-  parameters: {
-    layout: 'centered',
-  },
-};
+export const PaddedInline = () => <Box display="inline-block">padded</Box>;
+PaddedInline.story = { parameters: { layout: 'padded' } };
 
-export const CenteredBlockLayout = () => (
-  <div>
-    <Button primary>a button</Button>
-  </div>
-);
-CenteredBlockLayout.story = {
-  parameters: {
-    layout: 'centered',
-  },
-};
+export const FullscreenBlock = () => <Box>fullscreen</Box>;
+FullscreenBlock.story = { parameters: { layout: 'fullscreen' } };
 
-export const FullScreenLayout = () => <Button primary>a button</Button>;
-FullScreenLayout.story = {
-  parameters: {
-    layout: 'fullscreen',
-  },
-};
+export const FullscreenInline = () => <Box display="inline-block">fullscreen</Box>;
+FullscreenInline.story = { parameters: { layout: 'fullscreen' } };
+
+export const CenteredBlock = () => <Box>centered</Box>;
+CenteredBlock.story = { parameters: { layout: 'centered' } };
+
+export const CenteredInline = () => <Box display="inline-block">centered</Box>;
+CenteredInline.story = { parameters: { layout: 'centered' } };
