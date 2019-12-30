@@ -8,16 +8,16 @@ export default {
   },
 };
 
-export const InheritedLayout = () => <Button>a button</Button>;
+export const InheritedLayout = () => <Button primary>a button</Button>;
 
-export const PaddedLayout = () => <Button>a button</Button>;
+export const PaddedLayout = () => <Button primary>a button</Button>;
 PaddedLayout.story = {
   parameters: {
     layout: 'padded',
   },
 };
 
-export const CenteredLayout = () => <Button>a button</Button>;
+export const CenteredLayout = () => <Button primary>a button</Button>;
 CenteredLayout.story = {
   parameters: {
     layout: 'centered',
@@ -26,7 +26,7 @@ CenteredLayout.story = {
 
 export const CenteredBlockLayout = () => (
   <div>
-    <Button>a button</Button>
+    <Button primary>a button</Button>
   </div>
 );
 CenteredBlockLayout.story = {
@@ -35,7 +35,7 @@ CenteredBlockLayout.story = {
   },
 };
 
-export const FullScreenLayout = () => <Button>a button</Button>;
+export const FullScreenLayout = () => <Button primary>a button</Button>;
 FullScreenLayout.story = {
   parameters: {
     layout: 'fullscreen',
