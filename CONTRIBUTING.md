@@ -273,7 +273,7 @@ If you run into trouble here, make sure your node, npm, and **_yarn_** are on th
 _This method is slow_
 
 1.  `yarn bootstrap --all`
-2.  Have a beer 🍺
+2.  Take a break 🍵
 3.  `yarn test` (to verify everything worked)
 
 ### Working with the kitchen sink apps
