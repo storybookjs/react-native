@@ -1,3 +1,10 @@
+## 5.3.0-rc.5 (December 31, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Hide stories block when there are no stories ([#9271](https://github.com/storybookjs/storybook/pull/9271))
+* Source-loader: Disable no-implicit-any linting ([#9272](https://github.com/storybookjs/storybook/pull/9272))
+
 ## 5.3.0-rc.4 (December 28, 2019)
 
 ### Bug Fixes
