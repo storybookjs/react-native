@@ -1,3 +1,11 @@
+## 5.3.0-rc.6 (December 31, 2019)
+
+This is significant change to `main.js` aka tri-config, dramatically simplifying how addons and presets are registered. See the maintenannce PR for details.
+
+### Maintenance
+
+* Main.js: Combine presets/registers in `addons` field ([#9246](https://github.com/storybookjs/storybook/pull/9246))
+
 ## 5.3.0-rc.5 (December 31, 2019)
 
 ### Bug Fixes
