@@ -4,10 +4,8 @@
   "private": true,
   "scripts": {
     "build": "build-scripts build",
-    "prebuild-storybook": "yarn test:generate-output",
     "build-storybook": "build-storybook -s public",
     "start": "build-scripts start",
-    "prestorybook": "yarn test:generate-output",
     "storybook": "start-storybook -p 9009 -s public",
     "test": "jest --logHeapUsage --detectOpenHandles"
   },

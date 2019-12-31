@@ -13,7 +13,6 @@ module.exports = {
     '@storybook/addon-backgrounds/register',
     '@storybook/addon-contexts/register',
     '@storybook/addon-a11y/register',
-    '@storybook/addon-jest/register',
   ],
   webpack: async config => ({
     ...config,
@@ -26,10 +25,6 @@ module.exports = {
           loaders: [require.resolve('@storybook/source-loader')],
           include: [path.resolve(__dirname, '../src')],
           enforce: 'pre',
-        },
-        {
-          test: /\.css$/,
-          use: [require.resolve('stylesheet-loader')],
         },
       ],
     },
