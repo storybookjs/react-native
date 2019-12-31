@@ -110,8 +110,8 @@ Then add the following to your `.storybook/main.js`:
 
 ```js
 module.exports = {
-  presets: ['@storybook/addon-docs/preset'],
   stories: ['../src/**/*.stories.(js|mdx)'],
+  addons: ['@storybook/addon-docs'],
 };
 ```
 
@@ -143,9 +143,9 @@ The `addon-docs` preset has a few configuration options that can be used to conf
 
 ```js
 module.exports = {
-  presets: [
+  addons: [
     {
-      name: '@storybook/addon-docs/preset',
+      name: '@storybook/addon-docs',
       options: {
         configureJSX: true,
         babelOptions: {},

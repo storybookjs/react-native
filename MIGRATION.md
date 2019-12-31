@@ -2,7 +2,7 @@
 
 - [Migration](#migration)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
-    - [To tri-config configuration](#to-tri-config-configuration)
+    - [To tri-config configuration](#to-main-js-configuration)
     - [Create React App preset](#create-react-app-preset)
     - [Description doc block](#description-doc-block)
     - [React Native Async Storage](#react-native-async-storage)
@@ -75,14 +75,13 @@
     - [Packages renaming](#packages-renaming)
     - [Deprecated embedded addons](#deprecated-embedded-addons)
 
-
 ## From version 5.2.x to 5.3.x
 
-### To tri-config configuration
+### To main.js configuration
 
 In storybook 5.3 3 new files for configuration were introduced, that replaced some previous files.
 
-These files are now soft-deprecated, (*they still work, but over time we will promote users to migrate*):
+These files are now soft-deprecated, (_they still work, but over time we will promote users to migrate_):
 
 - `config.js` has been renamed to `preview.js`.
 - `addons.js` has been renamed to `manager.js`.
@@ -95,9 +94,7 @@ These files are now soft-deprecated, (*they still work, but over time we will pr
 ```js
 module.exports = {
   stories: ['../**/*.stories.js'],
-  addons: [
-    '@storybook/addon-docs/register',
-  ],
+  addons: ['@storybook/addon-knobs'],
 };
 ```
 
@@ -110,9 +107,12 @@ If you had a `presets.js` file before you can add the array of presets to the ma
 ```js
 module.exports = {
   stories: ['../**/*.stories.js'],
-  presets: ['@storybook/addon-docs/preset'],
+  addons: ['@storybook/addon-docs'],
 };
 ```
+
+By default, adding a package to the `addons` array will first try to load its `preset` entry, then its `register` entry, and finally, it will just assume the package itself is a
+If you want to load a specific package entry, for example you want to use `@storybook/addon-docs/register`, you can also include that in the addons array and Storybook will do the right thing.
 
 #### Using preview.js
 
@@ -142,7 +142,7 @@ addons.setConfig({
 });
 ```
 
-This makes storybook load and use the theme in the manager directly. 
+This makes storybook load and use the theme in the manager directly.
 This allows for richer theming in the future, and has a much better performance!
 
 ### Create React App preset
