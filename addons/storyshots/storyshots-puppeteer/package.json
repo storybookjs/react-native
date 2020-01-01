@@ -38,6 +38,7 @@
     "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
+    "@storybook/csf": "0.0.1",
     "@types/puppeteer": "^2.0.0"
   },
   "peerDependencies": {
