@@ -1,6 +1,6 @@
 {
   "name": "svelte-example",
-  "version": "5.3.0-rc.6",
+  "version": "5.3.0-rc.7",
   "private": true,
   "scripts": {
     "build-storybook": "build-storybook -s public",
@@ -10,19 +10,19 @@
     "global": "^4.3.2"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "5.3.0-rc.6",
-    "@storybook/addon-actions": "5.3.0-rc.6",
-    "@storybook/addon-backgrounds": "5.3.0-rc.6",
-    "@storybook/addon-centered": "5.3.0-rc.6",
-    "@storybook/addon-knobs": "5.3.0-rc.6",
-    "@storybook/addon-links": "5.3.0-rc.6",
-    "@storybook/addon-notes": "5.3.0-rc.6",
-    "@storybook/addon-options": "5.3.0-rc.6",
-    "@storybook/addon-storyshots": "5.3.0-rc.6",
-    "@storybook/addon-storysource": "5.3.0-rc.6",
-    "@storybook/addon-viewport": "5.3.0-rc.6",
-    "@storybook/addons": "5.3.0-rc.6",
-    "@storybook/source-loader": "5.3.0-rc.6",
-    "@storybook/svelte": "5.3.0-rc.6"
+    "@storybook/addon-a11y": "5.3.0-rc.7",
+    "@storybook/addon-actions": "5.3.0-rc.7",
+    "@storybook/addon-backgrounds": "5.3.0-rc.7",
+    "@storybook/addon-centered": "5.3.0-rc.7",
+    "@storybook/addon-knobs": "5.3.0-rc.7",
+    "@storybook/addon-links": "5.3.0-rc.7",
+    "@storybook/addon-notes": "5.3.0-rc.7",
+    "@storybook/addon-options": "5.3.0-rc.7",
+    "@storybook/addon-storyshots": "5.3.0-rc.7",
+    "@storybook/addon-storysource": "5.3.0-rc.7",
+    "@storybook/addon-viewport": "5.3.0-rc.7",
+    "@storybook/addons": "5.3.0-rc.7",
+    "@storybook/source-loader": "5.3.0-rc.7",
+    "@storybook/svelte": "5.3.0-rc.7"
   }
 }
