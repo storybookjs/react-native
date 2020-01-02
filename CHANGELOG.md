@@ -5,10 +5,6 @@
 * Core: Fix babel.js to disable simplify ([#9280](https://github.com/storybookjs/storybook/pull/9280))
 * Storyshots-Puppeteer: Don't infer story ID from its name ([#9291](https://github.com/storybookjs/storybook/pull/9291))
 
-### Documentation
-
-* fix: adjust web component name in cli ([#9281](https://github.com/storybookjs/storybook/pull/9281))
-
 ## 5.3.0-rc.6 (December 31, 2019)
 
 This is significant change to `main.js` aka tri-config, dramatically simplifying how addons and presets are registered. See the maintenannce PR for details.
