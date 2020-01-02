@@ -39,7 +39,7 @@
     "react-native-switch": "^1.5.0"
   },
   "peerDependencies": {
-    "@storybook/addon-knobs": "5.3.0-rc.6",
+    "@storybook/addon-knobs": "5.3.0-rc.7",
     "react": "*",
     "react-native": "*"
   },
