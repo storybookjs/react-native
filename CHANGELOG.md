@@ -1,3 +1,17 @@
+## 5.3.0-rc.8 (January 3, 2020)
+
+### Bug Fixes
+
+* Addon-docs: Tweak props table paragraph spacing ([#9307](https://github.com/storybookjs/storybook/pull/9307))
+
+### Maintenance
+
+* Add minimal typescript component to official-storybook ([#9308](https://github.com/storybookjs/storybook/pull/9308))
+
+### Dependency Upgrades
+
+* React: Upgrade babel-plugin-react-docgen to 4.0.0 ([#9303](https://github.com/storybookjs/storybook/pull/9303))
+
 ## 5.3.0-rc.7 (January 2, 2020)
 
 ### Bug Fixes
