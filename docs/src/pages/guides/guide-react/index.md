@@ -18,7 +18,7 @@ If it failed because it couldn't detect you're using React, you could try forcin
 npx -p @storybook/cli sb init --type react
 ```
 
-If you're using [Create React App](https://create-react-app.dev/) (or a fork of `react-scrips`), you should use this command instead:
+If you're using [Create React App](https://create-react-app.dev/) (or a fork of `react-scripts`), you should use this command instead:
 
 ```sh
 npx -p @storybook/cli sb init --type react_scripts
