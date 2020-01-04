@@ -1,3 +1,13 @@
+## 5.3.0-rc.9 (January 4, 2020)
+
+### Features
+
+* CSF: Use `__namedExportsOrder` array in loader if provided ([#9315](https://github.com/storybookjs/storybook/pull/9315))
+
+### Bug Fixes
+
+* Router: Add storyNameFromExport to avoid breaking changes ([#9320](https://github.com/storybookjs/storybook/pull/9320))
+
 ## 5.3.0-rc.8 (January 3, 2020)
 
 ### Bug Fixes
