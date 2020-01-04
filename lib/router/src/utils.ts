@@ -2,7 +2,7 @@ import qs from 'qs';
 import memoize from 'memoizerific';
 
 // FIXME: Remove in SB 6.0
-export { toId, parseKind, sanitize } from '@storybook/csf';
+export { toId, parseKind, sanitize, storyNameFromExport } from '@storybook/csf';
 
 interface StoryData {
   viewMode?: string;
