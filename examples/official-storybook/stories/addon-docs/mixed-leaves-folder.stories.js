@@ -5,7 +5,7 @@
 // See also ./mixed-leaves-component.stories.js
 
 export default {
-  title: 'Addons/Docs/MixedLeaves',
+  title: 'Addons/Docs/Mixed Leaves',
   parameters: { chromatic: { disable: true } },
 };
 
