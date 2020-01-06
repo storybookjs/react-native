@@ -1,3 +1,10 @@
+## 5.3.0-rc.10 (January 6, 2020)
+
+### Bug Fixes
+
+* Revert "Source-loader: Disable no-implicit-any linting" ([#9333](https://github.com/storybookjs/storybook/pull/9333))
+* Addon-docs: Fix scroll behavior on page navigation ([#9331](https://github.com/storybookjs/storybook/pull/9331))
+
 ## 5.3.0-rc.9 (January 4, 2020)
 
 ### Features
