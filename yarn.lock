@@ -2400,14 +2400,6 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@hypnosphi/jest-puppeteer-axe@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@hypnosphi/jest-puppeteer-axe/-/jest-puppeteer-axe-1.4.0.tgz#aa7a348934178fcb41defb688ebd493970e3d660"
-  integrity sha512-sQ1BpqNE9C2d0afEtm3LLQWfQjITuxHXaLF79sGDUGa7/DPnfn2qgzcQOtL9uPu7KnZOz95dmsUgoHXkyQbrmQ==
-  dependencies:
-    "@babel/runtime" "^7.4.4"
-    axe-puppeteer "^1.0.0"
-
 "@hypnosphi/jscodeshift@^0.6.4":
   version "0.6.4"
   resolved "https://registry.yarnpkg.com/@hypnosphi/jscodeshift/-/jscodeshift-0.6.4.tgz#49a3be6ac515af831f8a3e630380e3511c8c0fb7"
@@ -4722,6 +4714,14 @@
     strip-ansi "^4.0.0"
     text-table "^0.2.0"
     webpack-log "^1.1.2"
+
+"@wordpress/jest-puppeteer-axe@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/jest-puppeteer-axe/-/jest-puppeteer-axe-1.5.0.tgz#b1a5eb15f38afa691b9f252040666c18363717f7"
+  integrity sha512-qRTKIdlp+15P+0qqb9FnWmDlS3owlGPE4VcZqVUwiaJAL9pOOqd7uLFca+86SiWJm0VVHGKP+6q7yjfarPG8Og==
+  dependencies:
+    "@babel/runtime" "^7.4.4"
+    axe-puppeteer "^1.0.0"
 
 "@wry/equality@^0.1.2":
   version "0.1.9"
