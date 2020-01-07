@@ -29,10 +29,10 @@
     "prepare": "node ../../../scripts/prepare.js"
   },
   "dependencies": {
-    "@hypnosphi/jest-puppeteer-axe": "^1.4.0",
     "@storybook/csf": "0.0.1",
     "@storybook/node-logger": "5.3.0-rc.10",
     "@types/jest-image-snapshot": "^2.8.0",
+    "@wordpress/jest-puppeteer-axe": "^1.5.0",
     "core-js": "^3.0.1",
     "jest-image-snapshot": "^2.8.2",
     "regenerator-runtime": "^0.13.3"
