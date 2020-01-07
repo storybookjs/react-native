@@ -1,7 +1,6 @@
-import React from 'react';
-
 export default {
   title: 'Core/Named Export Order',
+  parameters: { chromatic: { disable: true } },
 };
 
 export const Story1 = () => 'story1';
