@@ -6,8 +6,7 @@
     "build": "build-scripts build",
     "build-storybook": "build-storybook -s public",
     "start": "build-scripts start",
-    "storybook": "start-storybook -p 9009 -s public",
-    "test": "jest --logHeapUsage --detectOpenHandles"
+    "storybook": "start-storybook -p 9009 -s public"
   },
   "dependencies": {
     "driver-universal": "^3.0.0",
@@ -20,6 +19,7 @@
   },
   "devDependencies": {
     "@alib/build-scripts": "^0.1.8",
+    "@babel/preset-react": "^7.7.4",
     "@storybook/addon-a11y": "5.3.0-rc.1",
     "@storybook/addon-actions": "5.3.0-rc.1",
     "@storybook/addon-backgrounds": "5.3.0-rc.1",
@@ -39,10 +39,7 @@
     "@storybook/source-loader": "5.3.0-rc.1",
     "@storybook/theming": "5.3.0-rc.1",
     "babel-eslint": "^10.0.3",
-    "babel-preset-rax": "^1.0.0-beta.0",
     "build-plugin-rax-app": "^0.2.0",
-    "jest": "^24.9.0",
-    "rax-test-renderer": "^1.0.0",
     "stylesheet-loader": "^0.6.5"
   }
 }
