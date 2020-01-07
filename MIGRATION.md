@@ -2,7 +2,7 @@
 
 - [Migration](#migration)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
-    - [To tri-config configuration](#to-main-js-configuration)
+    - [To main.js configuration](#to-main-js-configuration)
     - [Create React App preset](#create-react-app-preset)
     - [Description doc block](#description-doc-block)
     - [React Native Async Storage](#react-native-async-storage)
@@ -98,7 +98,7 @@ module.exports = {
 };
 ```
 
-You remove all "register" import from `addons.js` and place them inside the array. If this means `addons.js` is now empty for you, it's safe to remove.
+You remove all "register" import from `addons.js` and place them inside the array. You can also safely remove the `/register` suffix from these entries, for a cleaner, more readable configuration. If this means `addons.js` is now empty for you, it's safe to remove.
 
 Next you remove the code that imports/requires all your stories from `config.js`, and change it to a glob-pattern and place that glob in the `stories` array. If this means `config.js` is empty, it's safe to remove.
 
@@ -107,11 +107,18 @@ If you had a `presets.js` file before you can add the array of presets to the ma
 ```js
 module.exports = {
   stories: ['../**/*.stories.js'],
-  addons: ['@storybook/addon-docs'],
+  addons: [
+    '@storybook/preset-create-react-app'
+    {
+      name: '@storybook/addon-docs',
+      options: { configureJSX: true }
+    }
+  ],
 };
 ```
 
-By default, adding a package to the `addons` array will first try to load its `preset` entry, then its `register` entry, and finally, it will just assume the package itself is a
+By default, adding a package to the `addons` array will first try to load its `preset` entry, then its `register` entry, and finally, it will just assume the package itself is a preset.
+
 If you want to load a specific package entry, for example you want to use `@storybook/addon-docs/register`, you can also include that in the addons array and Storybook will do the right thing.
 
 #### Using preview.js
