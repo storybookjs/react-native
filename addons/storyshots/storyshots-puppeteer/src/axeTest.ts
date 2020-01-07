@@ -1,4 +1,4 @@
-import '@hypnosphi/jest-puppeteer-axe';
+import '@wordpress/jest-puppeteer-axe';
 import { defaultCommonConfig, CommonConfig } from './config';
 import { puppeteerTest } from './puppeteerTest';
 
