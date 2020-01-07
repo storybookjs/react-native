@@ -110,8 +110,8 @@ Then add the following to your `.storybook/main.js`:
 
 ```js
 module.exports = {
-  presets: ['@storybook/addon-docs/preset'],
   stories: ['../src/**/*.stories.(js|mdx)'],
+  addons: ['@storybook/addon-docs'],
 };
 ```
 
@@ -143,9 +143,9 @@ The `addon-docs` preset has a few configuration options that can be used to conf
 
 ```js
 module.exports = {
-  presets: [
+  addons: [
     {
-      name: '@storybook/addon-docs/preset',
+      name: '@storybook/addon-docs',
       options: {
         configureJSX: true,
         babelOptions: {},
@@ -156,7 +156,7 @@ module.exports = {
 };
 ```
 
-The `configureJsx` option is useful when you're writing your docs in MDX and your project's babel config isn't already set up to handle JSX files. `babelOptions` is a way to further configure the babel processor when you're using `configureJSX`.
+The `configureJSX` option is useful when you're writing your docs in MDX and your project's babel config isn't already set up to handle JSX files. `babelOptions` is a way to further configure the babel processor when you're using `configureJSX`.
 
 `sourceLoaderOptions` is an object for configuring `@storybook/source-loader`. When set to `null` it tells docs not to run the `source-loader` at all, which can be used as an optimization, or if you're already using `source-loader` in your `main.js`.
 
