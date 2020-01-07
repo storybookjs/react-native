@@ -23,7 +23,7 @@ And then add the following line to your `.storybook/main.js`:
 
 ```js
 module.exports = {
-  presets: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-essentials'],
 };
 ```
 
@@ -39,8 +39,8 @@ Yuu can disable any of Essential's addons using the following configuration sche
 
 ```js
 module.exports = {
-  presets: [{
-    name: '@storybook/addon-essentials'],
+  addons: [{
+    name: '@storybook/addon-essentials',
     options: {
       <addon-key>: false,
     }

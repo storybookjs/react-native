@@ -1,4 +1,4 @@
-import { configure, addParameters, addDecorator } from '@storybook/react';
+import { addParameters, addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 
@@ -11,6 +11,3 @@ addParameters({
     showRoots: true,
   },
 });
-
-// automatically import all files ending in *.stories.(tsx|jsx)
-configure(require.context('../src/stories', true, /\.stories\.(mdx|[tj]sx?)$/), module);

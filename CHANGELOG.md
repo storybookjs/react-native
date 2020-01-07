@@ -1,3 +1,94 @@
+## 5.3.0-rc.11 (January 7, 2020)
+
+### Bug Fixes
+
+* Addon-Docs: Handle leaf/non-leaf mixture in docs-mode navigation ([#9321](https://github.com/storybookjs/storybook/pull/9321))
+
+### Dependency Upgrades
+
+* Axe storyshots: move to original @wordpress/jest-puppeteer-axe package ([#9337](https://github.com/storybookjs/storybook/pull/9337))
+
+## 5.3.0-rc.10 (January 6, 2020)
+
+### Bug Fixes
+
+* Revert "Source-loader: Disable no-implicit-any linting" ([#9333](https://github.com/storybookjs/storybook/pull/9333))
+* Addon-docs: Fix scroll behavior on page navigation ([#9331](https://github.com/storybookjs/storybook/pull/9331))
+
+## 5.3.0-rc.9 (January 4, 2020)
+
+### Features
+
+* CSF: Use `__namedExportsOrder` array in loader if provided ([#9315](https://github.com/storybookjs/storybook/pull/9315))
+
+### Bug Fixes
+
+* Router: Add storyNameFromExport to avoid breaking changes ([#9320](https://github.com/storybookjs/storybook/pull/9320))
+
+## 5.3.0-rc.8 (January 3, 2020)
+
+### Bug Fixes
+
+* Addon-docs: Tweak props table paragraph spacing ([#9307](https://github.com/storybookjs/storybook/pull/9307))
+
+### Maintenance
+
+* Add minimal typescript component to official-storybook ([#9308](https://github.com/storybookjs/storybook/pull/9308))
+
+### Dependency Upgrades
+
+* React: Upgrade babel-plugin-react-docgen to 4.0.0 ([#9303](https://github.com/storybookjs/storybook/pull/9303))
+
+## 5.3.0-rc.7 (January 2, 2020)
+
+### Bug Fixes
+
+* Core: Fix babel.js to disable simplify ([#9280](https://github.com/storybookjs/storybook/pull/9280))
+* Storyshots-Puppeteer: Don't infer story ID from its name ([#9291](https://github.com/storybookjs/storybook/pull/9291))
+
+## 5.3.0-rc.6 (December 31, 2019)
+
+This is significant change to `main.js` aka tri-config, dramatically simplifying how addons and presets are registered. See the maintenannce PR for details.
+
+### Maintenance
+
+* Main.js: Combine presets/registers in `addons` field ([#9246](https://github.com/storybookjs/storybook/pull/9246))
+
+## 5.3.0-rc.5 (December 31, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Hide stories block when there are no stories ([#9271](https://github.com/storybookjs/storybook/pull/9271))
+* Source-loader: Disable no-implicit-any linting ([#9272](https://github.com/storybookjs/storybook/pull/9272))
+
+## 5.3.0-rc.4 (December 28, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Fix MDX story rendering with dynamic component titles ([#9248](https://github.com/storybookjs/storybook/pull/9248))
+
+### Maintenance
+
+* Ignore testfixtures directory in storybook publish ([#9244](https://github.com/storybookjs/storybook/pull/9244))
+
+## 5.3.0-rc.3 (December 26, 2019)
+
+### Bug Fixes
+
+* Addon-docs: Include ember files in addon-docs publish ([#9230](https://github.com/storybookjs/storybook/pull/9230))
+
+### Maintenance
+
+* Standalone CSF example ([#9223](https://github.com/storybookjs/storybook/pull/9223))
+
+### Dependency Upgrades
+
+* Addon-info: Upgrade marksy for security ([#9234](https://github.com/storybookjs/storybook/pull/9234))
+
+## 5.3.0-rc.2 (December 26, 2019)
+
+Failed NPM publish
+
 ## 5.3.0-rc.1 (December 23, 2019)
 
 ### Bug Fixes
