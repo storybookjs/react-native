@@ -7,9 +7,6 @@ type Preset = string | { name: string };
 
 // Disable the built-in preset if the new preset is detected.
 const checkForNewPreset = (presetsList: Preset[]) => {
-  if (!isReactScriptsInstalled()) {
-    return false;
-  }
   const hasNewPreset = presetsList.some((preset: Preset) => {
     const presetName = typeof preset === 'string' ? preset : preset.name;
     return presetName === '@storybook/preset-create-react-app';
@@ -31,11 +28,12 @@ export function webpackFinal(
   config: Configuration,
   { presetsList, configDir }: { presetsList: Preset[]; configDir: string }
 ) {
-  if (checkForNewPreset(presetsList)) {
-    return config;
-  }
   if (!isReactScriptsInstalled()) {
     logger.info('=> Using base config because react-scripts is not installed.');
+    return config;
+  }
+
+  if (checkForNewPreset(presetsList)) {
     return config;
   }
 
