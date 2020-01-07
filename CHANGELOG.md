@@ -1,3 +1,13 @@
+## 5.3.0-rc.11 (January 7, 2020)
+
+### Bug Fixes
+
+* Addon-Docs: Handle leaf/non-leaf mixture in docs-mode navigation ([#9321](https://github.com/storybookjs/storybook/pull/9321))
+
+### Dependency Upgrades
+
+* Axe storyshots: move to original @wordpress/jest-puppeteer-axe package ([#9337](https://github.com/storybookjs/storybook/pull/9337))
+
 ## 5.3.0-rc.10 (January 6, 2020)
 
 ### Bug Fixes
