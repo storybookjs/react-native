@@ -369,11 +369,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-<<<<<<< HEAD
-"@babel/core@^7.5.5":
-=======
-"@babel/core@^7.7.5":
->>>>>>> next-6.0.0
+"@babel/core@^7.5.5", "@babel/core@^7.7.5":
   version "7.7.7"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.7.7.tgz#ee155d2e12300bcc0cff6a8ad46f2af5063803e9"
   integrity sha512-jlSjuj/7z138NLZALxVgrx13AOtqip42ATZP7+kYl53GvDV6+4dCek1mVUo8z8c8Xnw/mx2q3d9HWh3griuesQ==
@@ -403,11 +399,7 @@
     lodash "^4.17.13"
     source-map "^0.5.0"
 
-<<<<<<< HEAD
 "@babel/generator@^7.2.0", "@babel/generator@^7.3.4", "@babel/generator@^7.7.7":
-=======
-"@babel/generator@^7.7.7":
->>>>>>> next-6.0.0
   version "7.7.7"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.7.7.tgz#859ac733c44c74148e1a72980a64ec84b85f4f45"
   integrity sha512-/AOIBpHh/JU1l0ZFS4kiRCBnLi6OTHzh0RPk3h9isBxkkqELtQNFi1Vr/tiG9p1yfoUdKVwISuXWQR+hwwM4VQ==
@@ -644,11 +636,6 @@
   version "7.7.5"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.7.5.tgz#cbf45321619ac12d83363fcf9c94bb67fa646d71"
   integrity sha512-KNlOe9+/nk4i29g0VXgl8PEXIRms5xKLJeuZ6UptN0fHv+jDiriG+y94X6qAgWTR0h3KaoM1wK5G5h7MHFRSig==
-
-"@babel/parser@^7.7.7":
-  version "7.7.7"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.7.7.tgz#1b886595419cf92d811316d5b715a53ff38b4937"
-  integrity sha512-WtTZMZAZLbeymhkd/sEaPD8IQyGAhmuTuvTzLiCFM7iXiVdY0gc0IaI+cW0fh1BnSMbJSzXX6/fHllgHKwHhXw==
 
 "@babel/plugin-external-helpers@^7.0.0":
   version "7.7.4"
@@ -1571,7 +1558,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/preset-react@^7.0.0":
+"@babel/preset-react@^7.0.0", "@babel/preset-react@^7.7.4":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/preset-react/-/preset-react-7.7.4.tgz#3fe2ea698d8fb536d8e7881a592c3c1ee8bf5707"
   integrity sha512-j+vZtg0/8pQr1H8wKoaJyGL2IEk3rG/GIvua7Sec7meXVIvGycihlGMx5xcU00kqCJbwzHs18xTu3YfREOqQ+g==
@@ -25773,11 +25760,6 @@ rax-server-renderer@^1.0.0:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/rax-server-renderer/-/rax-server-renderer-1.1.5.tgz#296afa172c19c943edde2ab4e16b83e05ed78d49"
   integrity sha512-W6hjMFixaXuh0FQqujc2r/v0eHLgwKgEeatgks+kRJtjN+HbEHbpA4QFKbcsyQE5n0vNI2k9nBj2hcGP5b2EvA==
-
-rax-test-renderer@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/rax-test-renderer/-/rax-test-renderer-1.0.0.tgz#13b7d680557db20539d216e3a0bb397ab210beb6"
-  integrity sha512-4k0WFgueaZsGsGE1OJoKMQCVXIGN7lGKwSM29GU6f7X/YPvZ33pSCFOyr+TFFjs7YUO4GfVX1at0Hoo3E2mrog==
 
 rax-text@^1.0.1, rax-text@^1.1.2:
   version "1.1.2"
