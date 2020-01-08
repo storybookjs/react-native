@@ -71,16 +71,13 @@ const componentMeta = {
   includeStories: ['componentNotes', 'storyNotes'],
 };
 
-const mdxStoryNameToId = {
-  'component notes': 'button--component-notes',
-  'story notes': 'button--story-notes',
-};
+const mdxStoryNameToKey = { 'component notes': 'componentNotes', 'story notes': 'storyNotes' };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
   ...(componentMeta.parameters.docs || {}),
   page: () => (
-    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+    <AddContext mdxStoryNameToKey={mdxStoryNameToKey} mdxComponentMeta={componentMeta}>
       <MDXContent />
     </AddContext>
   ),

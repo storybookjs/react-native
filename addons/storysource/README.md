@@ -18,29 +18,33 @@ You can add configuration for this addon by using a preset or by using the addon
 
 ### Install using preset
 
-Add the following to your `.storybook/presets.js` exports:
+Add the following to your `.storybook/main.js` exports:
 
 ```js
-module.exports = ['@storybook/addon-storysource/preset'];
+module.exports = {
+  addons: ['@storybook/addon-storysource'],
+};
 ```
 
-You can pass configurations into the addon-storysource loader in your `.storybook/presets.js` file, e.g.:
+You can pass configurations into the addon-storysource loader in your `.storybook/main.js` file, e.g.:
 
-```javascript
-module.exports = [
-  {
-    name: '@storybook/addon-storysource/preset',
-    options: {
-      rule: {
-        // test: [/\.stories\.jsx?$/], This is default
-        include: [path.resolve(__dirname, '../src')], // You can specify directories
-      },
-      loaderOptions: {
-        prettierConfig: { printWidth: 80, singleQuote: false },
+```js
+module.exports = {
+  addons: [
+    {
+      name: '@storybook/addon-storysource',
+      options: {
+        rule: {
+          // test: [/\.stories\.jsx?$/], This is default
+          include: [path.resolve(__dirname, '../src')], // You can specify directories
+        },
+        loaderOptions: {
+          prettierConfig: { printWidth: 80, singleQuote: false },
+        },
       },
     },
-  },
-];
+  ],
+};
 ```
 
 ## Loader Options

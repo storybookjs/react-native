@@ -378,6 +378,7 @@ export interface EventMap {
 /* Accepts a map of Storybook channel event listeners, returns an emit function */
 export function useChannel(eventMap: EventMap, deps: any[] = []) {
   const channel = addons.getChannel();
+
   useEffect(() => {
     Object.entries(eventMap).forEach(([type, listener]) => channel.on(type, listener));
     return () => {
@@ -387,7 +388,7 @@ export function useChannel(eventMap: EventMap, deps: any[] = []) {
     };
   }, [...Object.keys(eventMap), ...deps]);
 
-  return channel.emit.bind(channel);
+  return useCallback(channel.emit.bind(channel), [channel]);
 }
 
 /* Returns current story context */

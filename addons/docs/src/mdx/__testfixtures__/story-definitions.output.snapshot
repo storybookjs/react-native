@@ -67,18 +67,18 @@ const componentMeta = {
   includeStories: ['one', 'helloStory', 'wPunctuation', '_1FineDay'],
 };
 
-const mdxStoryNameToId = {
-  one: 'button--one',
-  'hello story': 'button--hello-story',
-  'w/punctuation': 'button--w-punctuation',
-  '1 fine day': 'button--1-fine-day',
+const mdxStoryNameToKey = {
+  one: 'one',
+  'hello story': 'helloStory',
+  'w/punctuation': 'wPunctuation',
+  '1 fine day': '_1FineDay',
 };
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
   ...(componentMeta.parameters.docs || {}),
   page: () => (
-    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+    <AddContext mdxStoryNameToKey={mdxStoryNameToKey} mdxComponentMeta={componentMeta}>
       <MDXContent />
     </AddContext>
   ),

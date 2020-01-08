@@ -4,6 +4,7 @@
 'app: marko': ['nm123github']
 'app: polymer': ['stijnkoopal', 'ndelangen']
 'app: preact': ['BartWaardenburg']
+'app: rax': ['SoloJiang']
 'app: react-native': ['benoitdion', 'gongreg']
 'app: react-native-server': ['benoitdion', 'gongreg']
 'app: svelte': ['rixo', 'cam-stitt', 'plumpNation']
