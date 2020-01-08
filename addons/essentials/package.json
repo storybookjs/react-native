@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-essentials",
-  "version": "5.3.0-rc.1",
+  "version": "5.3.0-rc.11",
   "description": "Curated addons to bring out the best of Storybook",
   "keywords": [
     "addon",
@@ -27,11 +27,11 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-backgrounds": "5.3.0-rc.1",
-    "@storybook/addon-viewport": "5.3.0-rc.1",
-    "@storybook/addons": "5.3.0-rc.1",
-    "@storybook/api": "5.3.0-rc.1",
-    "@storybook/node-logger": "5.3.0-rc.1",
+    "@storybook/addon-backgrounds": "5.3.0-rc.11",
+    "@storybook/addon-viewport": "5.3.0-rc.11",
+    "@storybook/addons": "5.3.0-rc.11",
+    "@storybook/api": "5.3.0-rc.11",
+    "@storybook/node-logger": "5.3.0-rc.11",
     "ts-dedent": "^1.1.0"
   },
   "devDependencies": {
@@ -45,5 +45,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "6ad2664adf18b50ea3ce015cbae2ff3e9a60cc4a"
+  "gitHead": "4b9d901add9452525135caae98ae5f78dd8da9ff"
 }
