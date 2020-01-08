@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line import/no-unresolved
 import raxTestRenderer from 'rax-test-renderer';
 
 function getRenderedTree(story: any, context: any, { renderer, ...rendererOptions }: any) {
