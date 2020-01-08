@@ -83,9 +83,9 @@ In storybook 5.3 3 new files for configuration were introduced, that replaced so
 
 These files are now soft-deprecated, (_they still work, but over time we will promote users to migrate_):
 
-- `config.js` has been renamed to `preview.js`.
-- `addons.js` has been renamed to `manager.js`.
-- `presets.js` has been renamed to `main.js`.
+- `presets.js` has been renamed to `main.js`. `main.js` is the main point of configuration for storybook.
+- `config.js` has been renamed to `preview.js`. `preview.js` configures the "preview" iframe that renders your components.
+- `addons.js` has been renamed to `manager.js`. `manager.js` configures Storybook's "manager" UI that wraps the preview, and also configures addons panel.
 
 #### Using main.js
 
