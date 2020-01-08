@@ -2,7 +2,7 @@
 
 - [Migration](#migration)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
-    - [To main.js configuration](#to-main-js-configuration)
+    - [To main.js configuration](#to-mainjs-configuration)
     - [Create React App preset](#create-react-app-preset)
     - [Description doc block](#description-doc-block)
     - [React Native Async Storage](#react-native-async-storage)
