@@ -26,10 +26,6 @@ module.exports = {
           include: [path.resolve(__dirname, '../src')],
           enforce: 'pre',
         },
-        {
-          test: /\.stylesheet$/,
-          use: [require.resolve('stylesheet-loader')],
-        },
       ],
     },
   }),
