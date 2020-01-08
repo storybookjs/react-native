@@ -26,7 +26,7 @@ Then add the following to your `.storybook/main.js` exports:
 
 ```js
 module.exports = {
-  presets: ['@storybook/addon-docs/preset'],
+  addons: ['@storybook/addon-docs'],
 };
 ```
 
