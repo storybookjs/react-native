@@ -4,7 +4,7 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This repo uses yarn workspaces, so you should install `yarn@1.3.2` or higher as a package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
+This repo uses yarn workspaces, so you should install `yarn` as the package manager. See [installation guide](https://yarnpkg.com/en/docs/install).
 
 ## Issues
 
@@ -273,7 +273,7 @@ If you run into trouble here, make sure your node, npm, and **_yarn_** are on th
 _This method is slow_
 
 1.  `yarn bootstrap --all`
-2.  Have a beer 🍺
+2.  Take a break 🍵
 3.  `yarn test` (to verify everything worked)
 
 ### Working with the kitchen sink apps
@@ -283,9 +283,10 @@ Within the `examples` folder of the Storybook repo, you will find kitchen sink e
 Not only do these show many of the options and add-ons available, they are also automatically linked to all the development packages. We highly encourage you to use these to develop/test contributions on.
 
 #### React and Vue
+
 1. `cd examples/official-storybook`
-2.  `yarn storybook`
-3.  Verify that your local version works
+2. `yarn storybook`
+3. Verify that your local version works
 
 ### Working with your own app
 

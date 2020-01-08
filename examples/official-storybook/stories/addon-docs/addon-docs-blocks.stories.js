@@ -12,7 +12,7 @@ import BaseButton from '../../components/BaseButton';
 import { ButtonGroup } from '../../components/ButtonGroup';
 
 export default {
-  title: 'Addons/Docs/stories docs bocks',
+  title: 'Addons/Docs/stories docs blocks',
   component: DocgenButton,
   parameters: {
     docs: {

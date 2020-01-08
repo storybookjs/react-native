@@ -1,22 +1,20 @@
 module.exports = {
-  presets: [
+  addons: [
     {
       name: '@storybook/addon-docs/preset',
       options: {
         configureJSX: true,
       },
     },
-  ],
-  addons: [
-    '@storybook/addon-actions/register',
-    '@storybook/addon-links/register',
-    '@storybook/addon-events/register',
-    '@storybook/addon-notes/register',
-    '@storybook/addon-options/register',
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-backgrounds/register',
-    '@storybook/addon-a11y/register',
-    '@storybook/addon-jest/register',
+    '@storybook/addon-actions',
+    '@storybook/addon-links',
+    '@storybook/addon-events',
+    '@storybook/addon-notes',
+    '@storybook/addon-options',
+    '@storybook/addon-knobs',
+    '@storybook/addon-backgrounds',
+    '@storybook/addon-a11y',
+    '@storybook/addon-jest',
   ],
   stories: ['../src/stories/**/*.stories.(js|mdx)'],
 };
