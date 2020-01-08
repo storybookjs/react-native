@@ -8,6 +8,7 @@ export * from './types';
 
 export * from '@emotion/core';
 export * from 'emotion-theming';
+export { default as isPropValid } from '@emotion/is-prop-valid';
 
 export { createGlobal, createReset } from './global';
 export * from './create';
