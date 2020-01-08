@@ -2,7 +2,7 @@
 
 - [Migration](#migration)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
-    - [To main.js configuration](#to-main-js-configuration)
+    - [To main.js configuration](#to-mainjs-configuration)
     - [Create React App preset](#create-react-app-preset)
     - [Description doc block](#description-doc-block)
     - [React Native Async Storage](#react-native-async-storage)
@@ -83,9 +83,9 @@ In storybook 5.3 3 new files for configuration were introduced, that replaced so
 
 These files are now soft-deprecated, (_they still work, but over time we will promote users to migrate_):
 
-- `config.js` has been renamed to `preview.js`.
-- `addons.js` has been renamed to `manager.js`.
-- `presets.js` has been renamed to `main.js`.
+- `presets.js` has been renamed to `main.js`. `main.js` is the main point of configuration for storybook.
+- `config.js` has been renamed to `preview.js`. `preview.js` configures the "preview" iframe that renders your components.
+- `addons.js` has been renamed to `manager.js`. `manager.js` configures Storybook's "manager" UI that wraps the preview, and also configures addons panel.
 
 #### Using main.js
 
