@@ -18,8 +18,8 @@ examples/cra-ts-kitchen-sink/*.json
 examples/cra-ts-kitchen-sink/public/*
 examples/cra-ts-essentials/*.json
 examples/cra-ts-essentials/public/*
+examples/rax-kitchen-sink/src/document/*
 .yarn
-
 !.remarkrc.js
 !.babelrc.js
 !.eslintrc.js

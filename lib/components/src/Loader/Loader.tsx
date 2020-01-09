@@ -1,24 +1,37 @@
-import { keyframes, styled } from '@storybook/theming';
+import React from 'react';
+import { styled } from '@storybook/theming';
+import { transparentize, opacify } from 'polished';
+import { rotate360 } from '../shared/animation';
 
-const spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const Loader = styled.div(({ theme }) => ({
-  animation: `${spin} 1s linear infinite`,
-  borderRadius: '50%',
-  height: 48,
-  left: 'calc(50% - 24px)',
+const LoaderWrapper = styled.div(({ theme }) => ({
+  borderRadius: '3em',
+  cursor: 'progress',
+  display: 'inline-block',
+  overflow: 'hidden',
   position: 'absolute',
-  top: 'calc(50% - 24px)',
-  width: 48,
+  transition: 'all 200ms ease-out',
+  verticalAlign: 'top',
+  top: '50%',
+  left: '50%',
+  marginTop: -16,
+  marginLeft: -16,
+  height: 32,
+  width: 32,
   zIndex: 4,
-  border: `3px solid ${theme.color.secondary}`,
-  borderTop: '3px solid transparent',
+  borderWidth: 2,
+  borderStyle: 'solid',
+  borderColor: transparentize(0.06, theme.appBorderColor),
+  borderTopColor: opacify(0.07, theme.appBorderColor),
+  animation: `${rotate360} 0.7s linear infinite`,
 }));
+
+export function Loader({ ...props }) {
+  return (
+    <LoaderWrapper
+      aria-label="Content is loading ..."
+      aria-live="polite"
+      role="status"
+      {...props}
+    />
+  );
+}
