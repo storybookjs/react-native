@@ -41,7 +41,6 @@ export const TabButton = styled(ButtonOrLink, { shouldForwardProp: isPropValid }
   },
   ({ theme }) => ({
     padding: '0 15px',
-    textTransform: 'capitalize',
     transition: 'color 0.2s linear, border-bottom-color 0.2s linear',
     height: 40,
     lineHeight: '12px',
