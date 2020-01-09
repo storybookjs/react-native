@@ -7,14 +7,7 @@ const Box = ({ children, display = 'block' }) => (
 
 export default {
   title: 'Core/Layout',
-  parameters: {
-    layout: ctx => ctx.name.toLowerCase().split(' ')[1],
-  },
 };
-
-export const AutoPadded = () => <Box>padded layout based on story name</Box>;
-export const AutoFullscreen = () => <Box>fullscreen layout based on story name</Box>;
-export const AutoCentered = () => <Box>centered layout based on story name</Box>;
 
 export const PaddedBlock = () => <Box>padded</Box>;
 PaddedBlock.story = { parameters: { layout: 'padded' } };
