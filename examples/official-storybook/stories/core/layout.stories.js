@@ -9,6 +9,8 @@ export default {
   title: 'Core/Layout',
 };
 
+export const Default = () => <Box>padded by default</Box>;
+
 export const PaddedBlock = () => <Box>padded</Box>;
 PaddedBlock.story = { parameters: { layout: 'padded' } };
 
@@ -26,3 +28,6 @@ CenteredBlock.story = { parameters: { layout: 'centered' } };
 
 export const CenteredInline = () => <Box display="inline-block">centered</Box>;
 CenteredInline.story = { parameters: { layout: 'centered' } };
+
+export const Invalid = () => <Box>invalid layout value</Box>;
+CenteredInline.story = { parameters: { layout: '!invalid!' } };
