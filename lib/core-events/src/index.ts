@@ -21,6 +21,7 @@ enum events {
   STORIES_COLLAPSE_ALL = 'storiesCollapseAll',
   STORIES_EXPAND_ALL = 'storiesExpandAll',
   DOCS_RENDERED = 'docsRendered',
+  NAVIGATE_URL = 'navigateUrl',
 }
 
 // Enables: `import Events from ...`
@@ -50,4 +51,5 @@ export const {
   STORIES_EXPAND_ALL,
   STORY_THREW_EXCEPTION,
   DOCS_RENDERED,
+  NAVIGATE_URL,
 } = events;
