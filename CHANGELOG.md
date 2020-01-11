@@ -1,3 +1,14 @@
+## 5.3.0 (January 11, 2020)
+
+Storybook 5.3 is here!
+
+- 📝 [Custom documentation in MDX](https://medium.com/storybookjs/rich-docs-with-storybook-mdx-61bc145ae7bc)
+- 🎨 [Multi-framework SB Docs (React, Vue, Angular, WC, Ember)](https://medium.com/storybookjs/storybook-docs-for-new-frameworks-b1f6090ee0ea)
+- 📦 [Web-components framework support](https://dev.to/open-wc/storybook-for-web-components-on-steroids-4h29)
+- 🔼 [Main.js declarative configuration](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78)
+
+5.3 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.3.0-alpha.*`, `5.3.0-beta.*`, and `5.3.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) to upgrade from `5.0` or earlier.
+
 ## 5.3.0-rc.14 (January 11, 2020)
 
 * Merge `master` into `next` for 5.3.0 release ([#9388](https://github.com/storybookjs/storybook/pull/9388))
