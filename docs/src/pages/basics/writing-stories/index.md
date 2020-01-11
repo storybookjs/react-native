@@ -164,7 +164,7 @@ const loaderFn = () => {
 configure(loaderFn, module);
 ```
 
-Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#require-context) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#require-context) to learn more about how to use `require.context`.
+Storybook uses Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#requirecontext) to load modules dynamically. Take a look at the relevant Webpack [docs](https://webpack.js.org/guides/dependency-management/#requirecontext) to learn more about how to use `require.context`.
 
 If you are using the `storiesOf` API directly, or are using `@storybook/react-native` where CSF is unavailable, you should use a loader function with **no return value**:
 
