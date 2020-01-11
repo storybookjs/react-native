@@ -108,6 +108,9 @@ export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
   const tsConfigPath = path.resolve(dirToSearch, projectOptions.tsConfig) as Path;
   const tsConfig = getTsConfigOptions(tsConfigPath);
   const budgets = projectOptions.budgets || [];
+  const scripts = projectOptions.scripts || [];
+  const outputPath = projectOptions.outputPath || 'dist/storybook-angular';
+  const styles = projectOptions.styles || [];
 
   return {
     root: dirToSearch,
@@ -121,6 +124,9 @@ export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
       ...projectOptions,
       assets: normalizedAssets,
       budgets,
+      scripts,
+      styles,
+      outputPath,
     },
   };
 }
