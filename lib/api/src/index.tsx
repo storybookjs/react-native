@@ -38,7 +38,7 @@ export { Options as StoreOptions, Listener as ChannelListener };
 
 const ManagerContext = createContext({ api: undefined, state: getInitialState({}) });
 
-const { STORY_CHANGED, SET_STORIES, SELECT_STORY } = Events;
+const { STORY_CHANGED, SET_STORIES, SELECT_STORY, NAVIGATE_URL } = Events;
 
 export type Module = StoreData &
   RouterData &
@@ -186,6 +186,9 @@ class ManagerProvider extends Component<Props, State> {
         api.selectStory(kind, story, rest);
       }
     );
+    api.on(NAVIGATE_URL, (url: string, options: { [k: string]: any }) => {
+      api.navigateUrl(url, options);
+    });
 
     this.state = state;
     this.api = api;
