@@ -27,8 +27,8 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.3.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-react-constant-elements": "^7.2.0",
     "@babel/preset-env": "^7.4.5",

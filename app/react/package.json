@@ -33,7 +33,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@babel/plugin-transform-react-constant-elements": "^7.2.0",
+    "@babel/plugin-transform-react-constant-elements": "^7.6.3",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addons": "5.3.0-rc.13",
