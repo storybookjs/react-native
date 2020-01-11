@@ -32,7 +32,7 @@ addParameters({
           sections.attributes = mapData(metaData.attributes);
         }
         if (metaData.properties) {
-          sections.props = mapData(metaData.properties);
+          sections.properties = mapData(metaData.properties);
         }
         if (metaData.events) {
           sections.events = mapData(metaData.events);

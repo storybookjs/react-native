@@ -12,7 +12,7 @@ interface Setup {
   config: Spec;
   options: RunOptions;
 }
-let setup: Setup = { element: null, config: {}, options: {} };
+let setup: Setup = { element: undefined, config: {}, options: {} };
 
 const getElement = () => {
   const storyRoot = document.getElementById('story-root');
@@ -63,7 +63,9 @@ export const withA11y = makeDecorator({
       Object.assign(setup, storedDefaultSetup);
       storedDefaultSetup = null;
     }
-    addons.getChannel().on(EVENTS.REQUEST, () => run(setup.element, setup.config, setup.options));
+    addons
+      .getChannel()
+      .on(EVENTS.REQUEST, () => run(setup.element as ElementContext, setup.config, setup.options));
 
     return getStory(context);
   },
