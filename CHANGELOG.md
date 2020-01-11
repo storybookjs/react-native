@@ -1,3 +1,7 @@
+## 5.3.0-rc.14 (January 11, 2020)
+
+* Merge `master` into `next` for 5.3.0 release ([#9388](https://github.com/storybookjs/storybook/pull/9388))
+
 ## 5.3.0-rc.13 (January 11, 2020)
 
 ### Bug Fixes
