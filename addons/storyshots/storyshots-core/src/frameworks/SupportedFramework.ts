@@ -6,4 +6,5 @@ export type SupportedFramework =
   | 'riot'
   | 'react-native'
   | 'svelte'
-  | 'vue';
+  | 'vue'
+  | 'rax';

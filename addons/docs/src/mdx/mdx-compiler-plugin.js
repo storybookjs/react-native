@@ -3,7 +3,6 @@ const parser = require('@babel/parser');
 const generate = require('@babel/generator').default;
 const camelCase = require('lodash/camelCase');
 const jsStringEscape = require('js-string-escape');
-const { toId, storyNameFromExport } = require('@storybook/csf');
 
 // Generate the MDX as is, but append named exports for every
 // story in the contents
@@ -198,13 +197,13 @@ function getExports(node, counter, options) {
   return null;
 }
 
-// insert `mdxKind` into the context so that we can know what "kind" we're rendering into
-// when we render <Story name="xxx">...</Story>, since this MDX can be attached to any `selectedKind`!
+// insert `mdxStoryNameToKey` and `mdxComponentMeta` into the context so that we
+// can reconstruct the Story ID dynamically from the `name` at render time
 const wrapperJs = `
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
   ...(componentMeta.parameters.docs || {}),
-  page: () => <AddContext mdxStoryNameToId={mdxStoryNameToId}><MDXContent /></AddContext>,
+  page: () => <AddContext mdxStoryNameToKey={mdxStoryNameToKey} mdxComponentMeta={componentMeta}><MDXContent /></AddContext>,
 };
 `.trim();
 
@@ -322,23 +321,12 @@ function extractExports(node, options) {
   }
   metaExport.includeStories = JSON.stringify(includeStories);
 
-  const { title, id: componentId } = metaExport;
-  const mdxStoryNameToId = Object.entries(context.storyNameToKey).reduce(
-    (acc, [storyName, storyKey]) => {
-      if (title) {
-        acc[storyName] = toId(componentId || title, storyNameFromExport(storyKey));
-      }
-      return acc;
-    },
-    {}
-  );
-
   const fullJsx = [
     'import { assertIsFn, AddContext } from "@storybook/addon-docs/blocks";',
     defaultJsx,
     ...storyExports,
     `const componentMeta = ${stringifyMeta(metaExport)};`,
-    `const mdxStoryNameToId = ${JSON.stringify(mdxStoryNameToId)};`,
+    `const mdxStoryNameToKey = ${JSON.stringify(context.storyNameToKey)};`,
     wrapperJs,
     'export default componentMeta;',
   ].join('\n\n');

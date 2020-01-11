@@ -18,7 +18,7 @@ const getFilter = (filter: string | null) => {
   return `url('#${filter}')`;
 };
 
-const ColorIcon = styled.span(
+const ColorIcon = styled.span<{ filter: string | null }>(
   {
     background: 'linear-gradient(to right, #F44336, #FF9800, #FFEB3B, #8BC34A, #2196F3, #9C27B0)',
     borderRadius: '1rem',
@@ -26,7 +26,7 @@ const ColorIcon = styled.span(
     height: '1rem',
     width: '1rem',
   },
-  ({ filter }: { filter: string | null }) => ({
+  ({ filter }) => ({
     filter: getFilter(filter),
   }),
   ({ theme }) => ({
@@ -80,7 +80,7 @@ const getColorList = (active: string | null, set: (i: string | null) => void): L
 ];
 
 export const ColorBlindness: FunctionComponent = () => {
-  const [active, setActiveState] = useState(null);
+  const [active, setActiveState] = useState<string | null>(null);
 
   const setActive = (activeState: string | null): void => {
     const iframe = getIframe();

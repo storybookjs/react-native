@@ -9,10 +9,10 @@ import {
 } from '@storybook/addon-docs/blocks';
 import { DocgenButton } from '../../components/DocgenButton';
 import BaseButton from '../../components/BaseButton';
-import { ButtonGroup } from '../../components/ButtonGroup';
+import { ButtonGroup, SubGroup } from '../../components/ButtonGroup';
 
 export default {
-  title: 'Addons/Docs/stories docs bocks',
+  title: 'Addons/Docs/stories docs blocks',
   component: DocgenButton,
   parameters: {
     docs: {
@@ -131,6 +131,7 @@ multipleComponents.story = {
   parameters: {
     component: ButtonGroup,
     subcomponents: {
+      SubGroup,
       'Docgen Button': DocgenButton,
       'Base Button': BaseButton,
     },

@@ -4,6 +4,11 @@ import { StoryData, Component } from './shared';
 
 export const getDocsStories = (context: DocsContextProps): StoryData[] => {
   const { storyStore, selectedKind } = context;
+
+  if (!storyStore) {
+    return [];
+  }
+
   return storyStore
     .getStoriesForKind(selectedKind)
     .filter((s: any) => !(s.parameters && s.parameters.docs && s.parameters.docs.disable));

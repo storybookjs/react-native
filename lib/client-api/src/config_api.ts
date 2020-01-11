@@ -76,9 +76,12 @@ export default class ConfigApi {
 
     if (module.hot) {
       module.hot.accept();
-      module.hot.dispose(() => {
-        this._clearDecorators();
-      });
+      // @ts-ignore
+      if (!module._StorybookPreserveDecorators) {
+        module.hot.dispose(() => {
+          this._clearDecorators();
+        });
+      }
     }
 
     if (this._channel) {

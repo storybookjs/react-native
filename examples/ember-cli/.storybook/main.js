@@ -2,16 +2,16 @@ const path = require('path');
 
 module.exports = {
   addons: [
-    '@storybook/addon-a11y/register',
-    '@storybook/addon-storysource/register',
-    '@storybook/addon-actions/register',
-    '@storybook/addon-docs/register',
-    '@storybook/addon-links/register',
-    '@storybook/addon-notes/register',
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-viewport/register',
-    '@storybook/addon-options/register',
-    '@storybook/addon-backgrounds/register',
+    '@storybook/addon-a11y',
+    '@storybook/addon-storysource',
+    '@storybook/addon-actions',
+    '@storybook/addon-docs',
+    '@storybook/addon-links',
+    '@storybook/addon-notes',
+    '@storybook/addon-knobs',
+    '@storybook/addon-viewport',
+    '@storybook/addon-options',
+    '@storybook/addon-backgrounds',
   ],
   stories: ['../stories/**/*.stories.js'],
   webpack: async config => {

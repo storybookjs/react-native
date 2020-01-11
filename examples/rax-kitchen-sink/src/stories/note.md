@@ -1,6 +1,6 @@
  #markdown note
 
-hi **ho**
+Hello **Rax**
 
 - works with notes
 - works with knobs
