@@ -6,6 +6,7 @@ const ForwardedButton = React.forwardRef((props, ref) => <DocgenButton ref={ref}
 export default {
   title: 'Addons|Docs/ForwardRef',
   component: ForwardedButton,
+  parameters: { chromatic: { disable: true } },
 };
 
 export const displaysCorrectly = () => <ForwardedButton>Hello World!</ForwardedButton>;
