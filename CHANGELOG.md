@@ -1,3 +1,19 @@
+## 5.3.0-rc.13 (January 11, 2020)
+
+### Bug Fixes
+
+* Addon-docs: Fix link CORS errors using channel navigate event ([#9381](https://github.com/storybookjs/storybook/pull/9381))
+* CLI: Fix `sb init` to use spawn.sync if creating package.json ([#9359](https://github.com/storybookjs/storybook/pull/9359))
+
+### Maintenance
+
+* Official-storybook: Prop table example for multiple named exports ([#9364](https://github.com/storybookjs/storybook/pull/9364))
+* Addon-docs / web-components: Rename 'props' to 'properties' in props table ([#9362](https://github.com/storybookjs/storybook/pull/9362))
+
+### Dependency Upgrades
+
+* Upgrade @types/webpack-env and @types/node to fix conflicting types ([#9365](https://github.com/storybookjs/storybook/pull/9365))
+
 ## 5.3.0-rc.12 (January 8, 2020)
 
 ### Bug Fixes
