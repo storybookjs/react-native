@@ -1,3 +1,9 @@
+## 5.3.1 (January 12, 2020)
+
+### Bug Fixes
+
+* Core: Fix generated entry to import at top of file ([#9398](https://github.com/storybookjs/storybook/pull/9398))
+
 ## 5.3.0 (January 11, 2020)
 
 Storybook 5.3 is here!
