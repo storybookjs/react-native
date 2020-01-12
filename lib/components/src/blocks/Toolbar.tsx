@@ -1,7 +1,6 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, FunctionComponent, MouseEvent } from 'react';
 import { styled } from '@storybook/theming';
 
-import { window } from 'global';
 import { FlexBar } from '../bar/bar';
 import { Icons } from '../icon/icon';
 import { IconButton } from '../bar/button';
@@ -26,7 +25,7 @@ const Zoom: FunctionComponent<ZoomProps> = ({ zoom, resetZoom }) => (
   <>
     <IconButton
       key="zoomin"
-      onClick={e => {
+      onClick={(e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         zoom(0.8);
       }}
@@ -36,7 +35,7 @@ const Zoom: FunctionComponent<ZoomProps> = ({ zoom, resetZoom }) => (
     </IconButton>
     <IconButton
       key="zoomout"
-      onClick={e => {
+      onClick={(e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         zoom(1.25);
       }}
@@ -46,7 +45,7 @@ const Zoom: FunctionComponent<ZoomProps> = ({ zoom, resetZoom }) => (
     </IconButton>
     <IconButton
       key="zoomreset"
-      onClick={e => {
+      onClick={(e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         resetZoom();
       }}
@@ -60,7 +59,8 @@ const Zoom: FunctionComponent<ZoomProps> = ({ zoom, resetZoom }) => (
 const Eject: FunctionComponent<EjectProps> = ({ baseUrl, storyId }) => (
   <IconButton
     key="opener"
-    onClick={() => window.open(`${baseUrl}?id=${storyId}`)}
+    href={`${baseUrl}?id=${storyId}`}
+    target="_blank"
     title="Open canvas in new tab"
   >
     <Icons icon="share" />

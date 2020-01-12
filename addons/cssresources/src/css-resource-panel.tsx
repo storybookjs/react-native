@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { SyntaxHighlighter } from '@storybook/components';
+import { SyntaxHighlighter, Placeholder, Spaced, Icons } from '@storybook/components';
 import { STORY_RENDERED } from '@storybook/core-events';
 import { API } from '@storybook/api';
+import { styled } from '@storybook/theming';
 
 import { EVENTS, PARAM_KEY } from './constants';
 import { CssResource } from './CssResource';
@@ -19,6 +20,27 @@ interface State {
 interface CssResourceLookup {
   [key: string]: CssResource;
 }
+
+const maxLimitToUseSyntaxHighlighter = 100000;
+
+const PlainCode = styled.pre({
+  textAlign: 'left',
+  fontWeight: 'normal',
+});
+
+const Warning = styled.div({
+  display: 'flex',
+  padding: '10px',
+  justifyContent: 'center',
+  alignItems: 'center',
+  background: '#fff3cd',
+  fontSize: 12,
+  '& svg': {
+    marginRight: 10,
+    width: 24,
+    height: 24,
+  },
+});
 
 export class CssResourcePanel extends Component<Props, State> {
   constructor(props: Props) {
@@ -96,7 +118,20 @@ export class CssResourcePanel extends Component<Props, State> {
                 <input type="checkbox" checked={picked} onChange={this.onChange} id={id} />
                 <span>#{id}</span>
               </label>
-              {code ? <SyntaxHighlighter language="html">{code}</SyntaxHighlighter> : null}
+              {code && code.length < maxLimitToUseSyntaxHighlighter && (
+                <SyntaxHighlighter language="html">{code}</SyntaxHighlighter>
+              )}
+              {code && code.length >= maxLimitToUseSyntaxHighlighter && (
+                <Placeholder>
+                  <Spaced row={1}>
+                    <PlainCode>{code.substring(0, maxLimitToUseSyntaxHighlighter)} ...</PlainCode>
+                    <Warning>
+                      <Icons icon="alert" />
+                      Rest of the content cannot be displayed
+                    </Warning>
+                  </Spaced>
+                </Placeholder>
+              )}
             </div>
           ))}
       </div>

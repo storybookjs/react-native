@@ -42,13 +42,13 @@ __page.story = { parameters: { docsOnly: true } };
 
 const componentMeta = { title: 'docs-only', includeStories: ['__page'] };
 
-const mdxStoryNameToId = {};
+const mdxStoryNameToKey = {};
 
 componentMeta.parameters = componentMeta.parameters || {};
 componentMeta.parameters.docs = {
   ...(componentMeta.parameters.docs || {}),
   page: () => (
-    <AddContext mdxStoryNameToId={mdxStoryNameToId}>
+    <AddContext mdxStoryNameToKey={mdxStoryNameToKey} mdxComponentMeta={componentMeta}>
       <MDXContent />
     </AddContext>
   ),

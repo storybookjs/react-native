@@ -2,6 +2,7 @@ import React, { createElement, ElementType, FunctionComponent, ReactNode } from 
 import { MDXProvider } from '@mdx-js/react';
 import { components as docsComponents } from '@storybook/components/html';
 import { Story, StoryProps as PureStoryProps } from '@storybook/components';
+import { toId, storyNameFromExport } from '@storybook/csf';
 import { CURRENT_SELECTION } from './shared';
 
 import { DocsContext, DocsContextProps } from './DocsContext';
@@ -40,12 +41,17 @@ const inferInlineStories = (framework: string): boolean => {
 
 export const getStoryProps = (
   props: StoryProps,
-  { id: currentId, storyStore, parameters, mdxStoryNameToId }: DocsContextProps | null
+  { id: currentId, storyStore, mdxStoryNameToKey, mdxComponentMeta }: DocsContextProps | null
 ): PureStoryProps => {
   const { id } = props as StoryRefProps;
   const { name } = props as StoryDefProps;
   const inputId = id === CURRENT_SELECTION ? currentId : id;
-  const previewId = inputId || mdxStoryNameToId[name];
+  const previewId =
+    inputId ||
+    toId(
+      mdxComponentMeta.id || mdxComponentMeta.title,
+      storyNameFromExport(mdxStoryNameToKey[name])
+    );
 
   const { height, inline } = props;
   const data = storyStore.fromId(previewId);

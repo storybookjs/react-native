@@ -2,7 +2,7 @@
 
 Storybook Backgrounds Addon for react-native can be used to change background colors of your stories right from the device.
 
-<img src="docs/demo.gif" alt="Storybook Backgrounds Addon Demo" width="400" />
+<img src="https://raw.githubusercontent.com/storybookjs/storybook/master/addons/ondevice-backgrounds/docs/demo.gif" alt="Storybook Backgrounds Addon Demo" width="400" />
 
 ## Installation
 

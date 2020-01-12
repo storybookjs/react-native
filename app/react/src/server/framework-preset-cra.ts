@@ -28,11 +28,12 @@ export function webpackFinal(
   config: Configuration,
   { presetsList, configDir }: { presetsList: Preset[]; configDir: string }
 ) {
-  if (checkForNewPreset(presetsList)) {
-    return config;
-  }
   if (!isReactScriptsInstalled()) {
     logger.info('=> Using base config because react-scripts is not installed.');
+    return config;
+  }
+
+  if (checkForNewPreset(presetsList)) {
     return config;
   }
 

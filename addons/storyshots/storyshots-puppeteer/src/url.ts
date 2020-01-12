@@ -1,10 +1,6 @@
-import { toId } from '@storybook/csf';
-
 import { URL } from 'url';
 
-export const constructUrl = (storybookUrl: string, kind: string, story: string) => {
-  const id = toId(kind, story);
-
+export const constructUrl = (storybookUrl: string, id: string) => {
   const storyUrl = `/iframe.html?id=${id}`;
   const { protocol, host, pathname, search } = new URL(storybookUrl);
   const pname = pathname.replace(/\/$/, ''); // removes trailing /

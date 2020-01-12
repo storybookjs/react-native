@@ -1,4 +1,8 @@
-import { FunctionComponent } from 'react';
+import React, { FC, useContext } from 'react';
+import { document } from 'global';
+import { Anchor } from './Anchor';
+import { DocsContext, DocsContextProps } from './DocsContext';
+import { getDocsStories } from './utils';
 
 type Decorator = (...args: any) => any;
 
@@ -9,9 +13,27 @@ interface MetaProps {
   parameters?: any;
 }
 
+function getFirstStoryId(docsContext: DocsContextProps): string {
+  const stories = getDocsStories(docsContext);
+
+  return stories.length > 0 ? stories[0].id : null;
+}
+
+function renderAnchor() {
+  const context = useContext(DocsContext);
+  // eslint-disable-next-line react/destructuring-assignment
+  const anchorId = getFirstStoryId(context) || context.id;
+
+  return <Anchor storyId={anchorId} />;
+}
+
 /**
  * This component is used to declare component metadata in docs
  * and gets transformed into a default export underneath the hood.
- * It doesn't actually render anything.
  */
-export const Meta: FunctionComponent<MetaProps> = props => null;
+export const Meta: FC<MetaProps> = () => {
+  const params = new URL(document.location).searchParams;
+  const isDocs = params.get('viewMode') === 'docs';
+
+  return isDocs ? renderAnchor() : null;
+};

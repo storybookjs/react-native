@@ -20,26 +20,29 @@ export enum RuleType {
   INCOMPLETION,
 }
 
-const RotatingIcons = styled(Icons)(({ theme }) => ({
+const Icon = styled(Icons)({
   height: 12,
   width: 12,
   marginRight: 4,
+});
+
+const RotatingIcon = styled(Icon)(({ theme }) => ({
   animation: `${theme.animation.rotate360} 1s linear infinite;`,
 }));
 
-const Passes = styled.span(({ theme }) => ({
+const Passes = styled.span<{}>(({ theme }) => ({
   color: theme.color.positive,
 }));
 
-const Violations = styled.span(({ theme }) => ({
+const Violations = styled.span<{}>(({ theme }) => ({
   color: theme.color.negative,
 }));
 
-const Incomplete = styled.span(({ theme }) => ({
+const Incomplete = styled.span<{}>(({ theme }) => ({
   color: theme.color.warning,
 }));
 
-const Centered = styled.span({
+const Centered = styled.span<{}>({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -195,7 +198,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
       case 'running':
         return (
           <Centered>
-            <RotatingIcons inline icon="sync" /> Please wait while the accessibility scan is running
+            <RotatingIcon inline icon="sync" /> Please wait while the accessibility scan is running
             ...
           </Centered>
         );
@@ -207,7 +210,7 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
             'Rerun tests'
           ) : (
             <Fragment>
-              <Icons inline icon="check" /> Tests completed
+              <Icon inline icon="check" /> Tests completed
             </Fragment>
           );
         return (
