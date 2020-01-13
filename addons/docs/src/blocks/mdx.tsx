@@ -1,11 +1,11 @@
 import React, { FC, SyntheticEvent } from 'react';
+import addons from '@storybook/addons';
 import { Source } from '@storybook/components';
+import { NAVIGATE_URL } from '@storybook/core-events';
 import { Code, components } from '@storybook/components/html';
-import { document, window } from 'global';
-import { isNil } from 'lodash';
+import { document } from 'global';
 import { styled } from '@storybook/theming';
 import { DocsContext, DocsContextProps } from './DocsContext';
-import { scrollToElement } from './utils';
 
 // Hacky utility for asserting identifiers in MDX Story elements
 export const assertIsFn = (val: any) => {
@@ -48,11 +48,8 @@ export const CodeOrSourceMdx: FC<CodeOrSourceMdxProps> = ({ className, children,
   );
 };
 
-function generateHrefWithHash(hash: string): string {
-  const url = new URL(window.parent.location);
-  const href = `${url.origin}/${url.search}#${hash}`;
-
-  return href;
+function navigate(url: string) {
+  addons.getChannel().emit(NAVIGATE_URL, url);
 }
 
 // @ts-ignore
@@ -65,14 +62,12 @@ interface AnchorInPageProps {
 const AnchorInPage: FC<AnchorInPageProps> = ({ hash, children }) => (
   <A
     href={hash}
+    target="_self"
     onClick={(event: SyntheticEvent) => {
-      event.preventDefault();
-
-      const hashValue = hash.substring(1);
-      const element = document.getElementById(hashValue);
-      if (!isNil(element)) {
-        window.parent.history.replaceState(null, '', generateHrefWithHash(hashValue));
-        scrollToElement(element);
+      const id = hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        navigate(hash);
       }
     }}
   >
@@ -88,7 +83,7 @@ interface AnchorMdxProps {
 export const AnchorMdx: FC<AnchorMdxProps> = props => {
   const { href, target, children, ...rest } = props;
 
-  if (!isNil(href)) {
+  if (href) {
     // Enable scrolling for in-page anchors.
     if (href.startsWith('#')) {
       return <AnchorInPage hash={href}>{children}</AnchorInPage>;
@@ -96,11 +91,16 @@ export const AnchorMdx: FC<AnchorMdxProps> = props => {
 
     // Links to other pages of SB should use the base URL of the top level iframe instead of the base URL of the preview iframe.
     if (target !== '_blank') {
-      const parentUrl = new URL(window.parent.location.href);
-      const newHref = `${parentUrl.origin}${href}`;
-
       return (
-        <A href={newHref} target={target} {...rest}>
+        <A
+          href={href}
+          onClick={(event: SyntheticEvent) => {
+            event.preventDefault();
+            navigate(href);
+          }}
+          target={target}
+          {...rest}
+        >
           {children}
         </A>
       );
@@ -149,17 +149,19 @@ const HeaderWithOcticonAnchor: FC<HeaderWithOcticonAnchorProps> = ({
 }) => {
   // @ts-ignore
   const OcticonHeader = OcticonHeaders[as];
+  const hash = `#${id}`;
 
   return (
     <OcticonHeader id={id} {...rest}>
       <OcticonAnchor
         aria-hidden="true"
-        href={generateHrefWithHash(id)}
+        href={hash}
         tabIndex={-1}
-        onClick={() => {
+        target="_self"
+        onClick={(event: SyntheticEvent) => {
           const element = document.getElementById(id);
-          if (!isNil(element)) {
-            scrollToElement(element);
+          if (element) {
+            navigate(hash);
           }
         }}
       >
@@ -184,7 +186,7 @@ export const HeaderMdx: FC<HeaderMdxProps> = props => {
   const { as, id, children, ...rest } = props;
 
   // An id should have been added on every header by the "remark-slug" plugin.
-  if (!isNil(id)) {
+  if (id) {
     return (
       <HeaderWithOcticonAnchor as={as} id={id} {...rest}>
         {children}

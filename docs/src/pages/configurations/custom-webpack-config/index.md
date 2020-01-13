@@ -157,7 +157,7 @@ The webpack config [is configurable](/configurations/custom-webpack-config#webpa
 - Edit its contents:
   ```js
   module.exports = {
-    webpack: (config) => console.dir(config, { depth: null }) || config,
+    webpackFinal: (config) => console.dir(config, { depth: null }) || config,
   };
   ```
 - Then run storybook:
@@ -178,7 +178,7 @@ const path = require('path');
 
 // Export a function. Accept the base config as the only param.
 module.exports = {
-  webpack: async (config, { configType }) => {
+  webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
     // 'PRODUCTION' is used when building the static version of storybook.
@@ -207,7 +207,7 @@ Furthermore, `config` requires the `HtmlWebpackplugin` to generate the preview p
 
 ```js
 module.exports = {
-  webpack: (config) => {
+  webpackFinal: (config) => {
     config.plugins.push(...);
     return config;
   },
@@ -234,7 +234,7 @@ const path = require('path');
 const custom = require('../webpack.config.js');
 
 module.exports = {
-  webpack: (config) => {
+  webpackFinal: (config) => {
     return { ...config, module: { ...config.module, rules: custom.module.rules } };
   },
 };

@@ -44,6 +44,18 @@ export default {
 };
 ```
 
+### Upgrading to CSF Format
+
+Add `notes` to the `parameters` object:
+
+```js
+export default {
+  parameters: {
+    notes: 'My notes',
+  }
+}
+```
+
 ## Using Markdown
 
 Using Markdown in your notes is supported, Storybook will load Markdown as raw by default.

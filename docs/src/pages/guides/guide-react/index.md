@@ -5,6 +5,12 @@ title: 'Storybook for React'
 
 ## Automatic setup
 
+Before trying the below commands, you should try the following command. In most cases, Storybook will detect that you're using `react` or `react-scripts`, and install the appropriate packages.
+
+```sh
+npx -p @storybook/cli sb init
+```
+
 You may have tried to use our quick start guide to setup your project for Storybook.
 If it failed because it couldn't detect you're using React, you could try forcing it to use React:
 
@@ -12,7 +18,13 @@ If it failed because it couldn't detect you're using React, you could try forcin
 npx -p @storybook/cli sb init --type react
 ```
 
-Note: be sure you have a `package.json` in your project or the above command will fail.
+If you're using [Create React App](https://create-react-app.dev/) (or a fork of `react-scripts`), you should use this command instead:
+
+```sh
+npx -p @storybook/cli sb init --type react_scripts
+```
+
+Note: You must have a `package.json` in your project or the above commands will fail.
 
 If you're using [Create React App](https://create-react-app.dev/), use:
 

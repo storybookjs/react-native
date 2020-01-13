@@ -14,7 +14,7 @@ module.exports = {
     '@storybook/addon-backgrounds',
   ],
   stories: ['../stories/**/*.stories.js'],
-  webpack: async config => {
+  webpackFinal: async config => {
     config.module.rules.push({
       test: [/\.stories\.js$/, /index\.js$/],
       loaders: [require.resolve('@storybook/source-loader')],

@@ -26,7 +26,7 @@ You can generally reuse webpack rules by placing them in a file that is `require
 
 ```js
 module.exports = {
-  webpack: async (baseConfig) => {
+  webpackFinal: async (baseConfig) => {
     const nextConfig = require('/path/to/next.config.js');
 
     // merge whatever from nextConfig into the webpack config storybook will use

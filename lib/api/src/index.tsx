@@ -10,6 +10,7 @@ import {
   SELECT_STORY,
   ADDON_STATE_CHANGED,
   ADDON_STATE_SET,
+  NAVIGATE_URL,
 } from '@storybook/core-events';
 import { RenderData as RouterData } from '@storybook/router';
 import { Listener } from '@storybook/channels';
@@ -191,6 +192,10 @@ class ManagerProvider extends Component<Props, State> {
         api.selectStory(kind, story, rest);
       }
     );
+    api.on(NAVIGATE_URL, (url: string, options: { [k: string]: any }) => {
+      api.navigateUrl(url, options);
+    });
+
     this.state = state;
     this.api = api;
   }
