@@ -45,6 +45,12 @@ export default {
   decorators: [withKnobs],
 };
 
+export const selectKnob = () => {
+  const value = select('value', [1, 2, 3, undefined, null], 1);
+
+  return <div>{JSON.stringify({ value: String(value) }, null, 2)}</div>;
+};
+
 export const TweaksStaticValues = () => {
   const name = text('Name', 'Storyteller');
   const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
