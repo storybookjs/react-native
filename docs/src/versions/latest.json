@@ -1,1 +1,1 @@
-{"version":"5.3.1","info":{"plain":"### Bug Fixes\n\n* Core: Fix generated entry to import at top of file ([#9398](https://github.com/storybookjs/storybook/pull/9398))"}}
+{"version":"5.3.2","info":{"plain":"### Bug Fixes\n\n* Source-loader: Disable eslint entirely for generated code ([#9410](https://github.com/storybookjs/storybook/pull/9410))"}}
