@@ -1,13 +1,13 @@
 module.exports = {
-  presets: ['@storybook/addon-docs/preset'],
   addons: [
-    '@storybook/addon-a11y/register',
-    '@storybook/addon-actions/register',
-    '@storybook/addon-backgrounds/register',
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-links/register',
-    '@storybook/addon-options/register',
-    '@storybook/addon-storysource/register',
-    '@storybook/addon-viewport/register',
+    '@storybook/addon-docs',
+    '@storybook/addon-a11y',
+    '@storybook/addon-actions',
+    '@storybook/addon-backgrounds',
+    '@storybook/addon-knobs',
+    '@storybook/addon-links',
+    '@storybook/addon-options',
+    '@storybook/addon-storysource',
+    '@storybook/addon-viewport',
   ],
 };

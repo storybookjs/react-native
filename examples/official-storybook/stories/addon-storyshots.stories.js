@@ -22,6 +22,7 @@ export const block = () => {
   );
 };
 block.story = {
+  name: 'Block story',
   parameters: {
     async puppeteerTest(page) {
       const element = await page.$('[data-test-block]');

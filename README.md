@@ -46,7 +46,7 @@ Storybook is a development environment for UI components.
 It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
 <center>
-  <img src="media/storybook-intro.gif" width="100%" />
+  <img src="https://raw.githubusercontent.com/storybookjs/storybook/master/media/storybook-intro.gif" width="100%" />
 </center>
 
 <p align="center">
@@ -91,7 +91,7 @@ If you'd rather set up your project manually, take a look at our [Slow Start Gui
 
 Once it's installed, you can `npm run storybook` and it will run the development server on your local machine, and give you a URL to browse some sample stories.
 
-**Storybook v2.x migration note**: 
+**Storybook v2.x migration note**:
 If you're using Storybook v2.x and want to shift to 4.x version the easiest way is:
 
 ```sh
@@ -123,6 +123,7 @@ For additional help, join us [in our Discord](https://discord.gg/sMFvFsG) or [Sl
 | [Riot](app/riot)                 | [v5.1.0](https://storybooks-riot.netlify.com/)    | [![Riot](https://img.shields.io/npm/dm/@storybook/riot.svg)](app/riot)                         |
 | [Ember](app/ember)               | [v5.1.0](https://storybooks-ember.netlify.com/)   | [![Ember](https://img.shields.io/npm/dm/@storybook/ember.svg)](app/ember)                      |
 | [Preact](app/preact)             | [v5.1.0](https://storybooks-preact.netlify.com/)  | [![Preact](https://img.shields.io/npm/dm/@storybook/preact.svg)](app/preact)                   |
+| [Rax](app/rax)             | [v5.1.0](https://storybooks-rax.netlify.com/)  | [![Rax](https://img.shields.io/npm/dm/@storybook/rax.svg)](app/rax)                   |
 
 ### Sub Projects
 

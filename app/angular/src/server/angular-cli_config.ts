@@ -89,6 +89,7 @@ export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
   const projectRoot = path.resolve(dirToSearch, project.root);
   const tsConfigPath = path.resolve(dirToSearch, projectOptions.tsConfig) as Path;
   const tsConfig = getTsConfigOptions(tsConfigPath);
+  const budgets = projectOptions.budgets || [];
 
   return {
     root: dirToSearch,
@@ -101,6 +102,7 @@ export function getAngularCliWebpackConfigOptions(dirToSearch: Path) {
       optimization: {},
       ...projectOptions,
       assets: normalizedAssets,
+      budgets
     },
   };
 }

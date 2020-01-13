@@ -1,8 +1,19 @@
 import qs from 'qs';
 import memoize from 'memoizerific';
+import deprecate from 'util-deprecate';
 
 // FIXME: Remove in SB 6.0
-export { toId, parseKind, sanitize } from '@storybook/csf';
+import * as csf from '@storybook/csf';
+
+export const { toId, parseKind, sanitize, storyNameFromExport } = {
+  toId: deprecate(csf.toId, `Router util 'toId' moved to '@storybook/csf'.`),
+  parseKind: deprecate(csf.parseKind, `Router util 'parseKind' moved to '@storybook/csf'.`),
+  sanitize: deprecate(csf.sanitize, `Router util 'sanitize' moved to '@storybook/csf'.`),
+  storyNameFromExport: deprecate(
+    csf.storyNameFromExport,
+    `Router util 'storyNameFromExport' moved to '@storybook/csf'.`
+  ),
+};
 
 interface StoryData {
   viewMode?: string;
