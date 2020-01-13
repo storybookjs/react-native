@@ -14,7 +14,7 @@ module.exports = {
     '@storybook/addon-contexts',
     '@storybook/addon-a11y',
   ],
-  webpack: config => {
+  webpackFinal: config => {
     config.module.rules.push({
       test: [/\.stories\.js$/],
       loaders: [require.resolve('@storybook/source-loader')],
