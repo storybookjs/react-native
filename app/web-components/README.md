@@ -60,7 +60,7 @@ For example if you have a library called `my-library` which is in es7 then you c
 // .storybook/main.js
 
 module.exports = { 
-  webpack: async config => {
+  webpackFinal: async config => {
     // find web-components rule for extra transpilation
     const webComponentsRule = config.module.rules.find(
       rule => rule.use && rule.use.options && rule.use.options.babelrc === false
