@@ -1,3 +1,9 @@
+## 5.3.2 (January 13, 2020)
+
+### Bug Fixes
+
+* Source-loader: Disable eslint entirely for generated code ([#9410](https://github.com/storybookjs/storybook/pull/9410))
+
 ## 5.3.1 (January 12, 2020)
 
 ### Bug Fixes
