@@ -202,10 +202,11 @@ addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
 ```
 
 > \* In Vue projects you have to use the special component `<story/>` instead of the function parameter `storyFn` that is used in React projects, even if you are using JSX, for example:
+>
 > ```jsx
 > var decoratorVueJsx = () => ({ render() { return <div style={{ textAlign: 'center' }}><story/></div>} })
 > addDecorator(decoratorVueJsx)
-> 
+>
 > var decoratorVueTemplate = () => { return { template: `<div style="text-align:center"><story/></div>` }
 > addDecorator(decoratorVueTemplate)
 > ```
@@ -349,3 +350,35 @@ Multiple storybooks can be built for different kinds of stories or components in
   }
 }
 ```
+
+## Permalinking to stories
+
+Sometimes you might wish to change the name of a story or its position in the hierarchy, but preserve the link to the story or its documentation. Here's how to do it.
+
+Consider the following story:
+
+```js
+export default {
+  title: 'Foo/Bar',
+};
+
+export const Baz = () => <MyComponent />;
+```
+
+Storybook's ID-generation logic will give this the ID `foo-bar--baz`, so the link would be `?path=/story/foo-bar--baz`.
+
+Now suppose you want to change the position in the hierarchy to `OtherFoo/Bar` and the story name to `Moo`. Here's how to do that:
+
+```js
+export default {
+  title: 'OtherFoo/Bar',
+  componentId: 'Foo/Bar', // or 'foo-bar' if you prefer
+};
+
+export const Baz = () => <MyComponent />;
+Baz.story = {
+  name: 'Moo',
+};
+```
+
+Storybook will prioritize the `componentId` over the title for ID generation, if provided, and will prioritize the `story.name` over the export key for display.
