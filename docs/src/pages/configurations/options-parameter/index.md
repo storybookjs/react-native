@@ -83,7 +83,7 @@ addParameters({
      */
     showRoots: false,
   },
-};
+});
 ```
 
 ### Sorting stories
@@ -98,7 +98,7 @@ addParameters({
     storySort: (a, b) =>
       a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
-};
+});
 ```
 
 For more information on configuring the `theme`, see [theming](../theming/).
