@@ -160,19 +160,17 @@ export class A11YPanel extends Component<A11YPanelProps, A11YPanelState> {
   };
 
   request = () => {
-    const { api, active } = this.props;
-    if (active) {
-      this.setState(
-        {
-          status: 'running',
-        },
-        () => {
-          api.emit(EVENTS.REQUEST);
-          // removes all elements from the redux map in store from the previous panel
-          store.dispatch(clearElements());
-        }
-      );
-    }
+    const { api } = this.props;
+    this.setState(
+      {
+        status: 'running',
+      },
+      () => {
+        api.emit(EVENTS.REQUEST);
+        // removes all elements from the redux map in store from the previous panel
+        store.dispatch(clearElements());
+      }
+    );
   };
 
   render() {
