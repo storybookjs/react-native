@@ -32,7 +32,7 @@ const SelectType: FunctionComponent<SelectTypeProps> & {
   const { options } = knob;
 
   const callbackReduceArrayOptions = (acc: any, option: any, i: number) => {
-    if (typeof option !== 'object') return { ...acc, [option]: option };
+    if (typeof option !== 'object' || option === null) return { ...acc, [option]: option };
     const label = option.label || option.key || i;
     return { ...acc, [label]: option };
   };
