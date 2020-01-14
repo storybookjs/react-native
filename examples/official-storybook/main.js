@@ -22,7 +22,7 @@ module.exports = {
     '@storybook/addon-graphql',
     '@storybook/addon-contexts',
   ],
-  webpack: async (config, { configType }) => ({
+  webpackFinal: async (config, { configType }) => ({
     ...config,
     module: {
       ...config.module,

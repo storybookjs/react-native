@@ -129,6 +129,38 @@ const initStoriesApi = ({
     return undefined;
   };
 
+  const jumpToComponent = (direction: Direction) => {
+    const state = store.getState();
+    const { storiesHash, viewMode, storyId } = state;
+
+    // cannot navigate when there's no current selection
+    if (!storyId || !storiesHash[storyId]) {
+      return;
+    }
+
+    const lookupList = Object.entries(storiesHash).reduce((acc, i) => {
+      const value = i[1];
+      if (value.isComponent) {
+        acc.push([...i[1].children]);
+      }
+      return acc;
+    }, []);
+
+    const index = lookupList.findIndex(i => i.includes(storyId));
+
+    // cannot navigate beyond fist or last
+    if (index === lookupList.length - 1 && direction > 0) {
+      return;
+    }
+    if (index === 0 && direction < 0) {
+      return;
+    }
+
+    const result = lookupList[index + direction][0];
+
+    navigate(`/${viewMode || 'story'}/${result}`);
+  };
+
   const jumpToStory = (direction: Direction) => {
     const { storiesHash, viewMode, storyId } = store.getState();
 
@@ -160,38 +192,6 @@ const initStoriesApi = ({
     if (viewMode && result) {
       navigate(`/${viewMode}/${result}`);
     }
-  };
-
-  const jumpToComponent = (direction: Direction) => {
-    const state = store.getState();
-    const { storiesHash, viewMode, storyId } = state;
-
-    // cannot navigate when there's no current selection
-    if (!storyId || !storiesHash[storyId]) {
-      return;
-    }
-
-    const lookupList = Object.entries(storiesHash).reduce((acc, i) => {
-      const value = i[1];
-      if (value.isComponent) {
-        acc.push([...i[1].children]);
-      }
-      return acc;
-    }, []);
-
-    const index = lookupList.findIndex(i => i.includes(storyId));
-
-    // cannot navigate beyond fist or last
-    if (index === lookupList.length - 1 && direction > 0) {
-      return;
-    }
-    if (index === 0 && direction < 0) {
-      return;
-    }
-
-    const result = lookupList[index + direction][0];
-
-    navigate(`/${viewMode || 'story'}/${result}`);
   };
 
   const toKey = (input: string) =>
@@ -238,7 +238,10 @@ const initStoriesApi = ({
       if (typeof rootSeparator !== 'undefined' || typeof groupSeparator !== 'undefined') {
         warnRemovingHierarchySeparators();
         if (usingShowRoots) warnUsingHierarchySeparatorsAndShowRoots();
-        ({ root, groups } = parseKind(kind, { rootSeparator, groupSeparator }));
+        ({ root, groups } = parseKind(kind, {
+          rootSeparator: rootSeparator || '|',
+          groupSeparator: groupSeparator || /\/|\./,
+        }));
 
         // 2. If the user hasn't passed separators, but is using | or . in kinds, use the old behaviour but warn
       } else if (anyKindMatchesOldHierarchySeparators && !usingShowRoots) {
