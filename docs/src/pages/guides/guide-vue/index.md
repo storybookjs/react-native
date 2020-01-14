@@ -54,7 +54,7 @@ For a basic Storybook configuration, the only thing you need to do is tell Story
 To do that, create a file at `.storybook/main.js` with the following content:
 
 ```js
-module.exports {
+module.exports = {
   stories: ['../src/**/*.stories.[tj]s'],
 };
 ```
