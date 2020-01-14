@@ -1,19 +1,18 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { EventEmitter } from 'events';
 
 import { ThemeProvider, themes, convert } from '@storybook/theming';
-import { STORY_RENDERED } from '@storybook/core-events';
-import { ScrollArea } from '@storybook/components';
 
 import { A11YPanel } from './A11YPanel';
 import { EVENTS } from '../constants';
 
 function createApi() {
-  return {
-    emit: jest.fn(),
-    on: jest.fn(),
-    off: jest.fn(),
-  };
+  const emitter = new EventEmitter();
+  jest.spyOn(emitter, 'emit');
+  jest.spyOn(emitter, 'on');
+  jest.spyOn(emitter, 'off');
+  return emitter;
 }
 
 const axeResult = {
@@ -63,7 +62,7 @@ function ThemedA11YPanel(props) {
 }
 
 describe('A11YPanel', () => {
-  it('should register STORY_RENDERED, RESULT and ERROR updater on mount', () => {
+  it('should register event listener on mount', () => {
     // given
     const api = createApi();
     expect(api.on).not.toHaveBeenCalled();
@@ -73,59 +72,75 @@ describe('A11YPanel', () => {
 
     // then
     expect(api.on.mock.calls.length).toBe(3);
-    expect(api.on.mock.calls[0][0]).toBe(STORY_RENDERED);
-    expect(api.on.mock.calls[1][0]).toBe(EVENTS.RESULT);
-    expect(api.on.mock.calls[2][0]).toBe(EVENTS.ERROR);
+    expect(api.on.mock.calls[0][0]).toBe(EVENTS.RESULT);
+    expect(api.on.mock.calls[1][0]).toBe(EVENTS.ERROR);
+    expect(api.on.mock.calls[2][0]).toBe(EVENTS.MANUAL);
   });
 
-  it('should request a run on tab activation', () => {
+  it('should deregister event listener on unmount', () => {
     // given
     const api = createApi();
-
-    const wrapper = mount(<ThemedA11YPanel api={api} />);
-    expect(api.emit).not.toHaveBeenCalled();
-
-    // when
-    wrapper.setProps({ active: true });
-    wrapper.update();
-
-    // then
-    expect(api.emit).toHaveBeenCalledWith(EVENTS.REQUEST);
-    expect(wrapper.find(ScrollArea).length).toBe(0);
-  });
-
-  it('should deregister STORY_RENDERED, RESULT and ERROR updater on unmount', () => {
-    // given
-    const api = createApi();
-    const wrapper = mount(<ThemedA11YPanel api={api} />);
     expect(api.off).not.toHaveBeenCalled();
 
     // when
+    const wrapper = mount(<ThemedA11YPanel api={api} />);
     wrapper.unmount();
 
     // then
     expect(api.off.mock.calls.length).toBe(3);
-    expect(api.off.mock.calls[0][0]).toBe(STORY_RENDERED);
-    expect(api.off.mock.calls[1][0]).toBe(EVENTS.RESULT);
-    expect(api.off.mock.calls[2][0]).toBe(EVENTS.ERROR);
+    expect(api.off.mock.calls[0][0]).toBe(EVENTS.RESULT);
+    expect(api.off.mock.calls[1][0]).toBe(EVENTS.ERROR);
+    expect(api.off.mock.calls[2][0]).toBe(EVENTS.MANUAL);
   });
 
-  it('should update run result', () => {
+  it('should handle "initial" status', () => {
+    // given
+    const api = createApi();
+
+    // when
+    const wrapper = mount(<ThemedA11YPanel api={api} active />);
+
+    // then
+    expect(api.emit).not.toHaveBeenCalled();
+    expect(wrapper.text()).toMatch(/Initializing/);
+  });
+
+  it('should handle "manual" status', () => {
     // given
     const api = createApi();
     const wrapper = mount(<ThemedA11YPanel api={api} active />);
-    const onUpdate = api.on.mock.calls.find(([event]) => event === EVENTS.RESULT)[1];
-
-    expect(
-      wrapper
-        .find('button')
-        .last()
-        .text()
-        .trim()
-    ).toBe('Rerun tests');
 
     // when
-    onUpdate(axeResult);
+    api.emit(EVENTS.MANUAL, true);
+    wrapper.update();
+
+    // then
+    expect(wrapper.text()).toMatch(/Manually run the accessibility scan/);
+    expect(api.emit).not.toHaveBeenCalledWith(EVENTS.REQUEST);
+  });
+
+  it('should handle "running" status', () => {
+    // given
+    const api = createApi();
+    const wrapper = mount(<ThemedA11YPanel api={api} active />);
+
+    // when
+    api.emit(EVENTS.MANUAL, false);
+    wrapper.update();
+
+    // then
+    expect(wrapper.text()).toMatch(/Please wait while the accessibility scan is running/);
+    expect(api.emit).toHaveBeenCalledWith(EVENTS.REQUEST);
+  });
+
+  it('should handle "ran" status', () => {
+    // given
+    const api = createApi();
+    const wrapper = mount(<ThemedA11YPanel api={api} active />);
+
+    // when
+    api.emit(EVENTS.RESULT, axeResult);
+    wrapper.update();
 
     // then
     expect(
@@ -135,82 +150,13 @@ describe('A11YPanel', () => {
         .text()
         .trim()
     ).toBe('Tests completed');
+    expect(wrapper.find('Tabs').prop('tabs').length).toBe(3);
+    expect(wrapper.find('Tabs').prop('tabs')[0].label.props.children).toEqual([1, ' Violations']);
+    expect(wrapper.find('Tabs').prop('tabs')[1].label.props.children).toEqual([1, ' Passes']);
+    expect(wrapper.find('Tabs').prop('tabs')[2].label.props.children).toEqual([1, ' Incomplete']);
   });
 
-  it('should request run', () => {
-    // given
-    const api = createApi();
-    const wrapper = mount(<ThemedA11YPanel api={api} active />);
-    const request = api.on.mock.calls.find(([event]) => event === STORY_RENDERED)[1];
-
-    expect(
-      wrapper
-        .find('button')
-        .last()
-        .text()
-        .trim()
-    ).toBe('Rerun tests');
-    expect(api.emit).not.toHaveBeenCalled();
-
-    // when
-    request();
-
-    // then
-    expect(
-      wrapper
-        .find('button')
-        .last()
-        .text()
-        .trim()
-    ).toBe('Running test');
-    expect(api.emit).toHaveBeenCalledWith(EVENTS.REQUEST);
-  });
-
-  it('should NOT request run on inactive tab', () => {
-    // given
-    const api = createApi();
-    mount(<ThemedA11YPanel api={api} active={false} />);
-    const request = api.on.mock.calls.find(([event]) => event === STORY_RENDERED)[1];
-    expect(api.emit).not.toHaveBeenCalled();
-
-    // when
-    request();
-
-    // then
-    expect(api.emit).not.toHaveBeenCalled();
-  });
-
-  it('should render report', () => {
-    // given
-    const api = createApi();
-    const wrapper = mount(<ThemedA11YPanel api={api} active />);
-    const onUpdate = api.on.mock.calls.find(([event]) => event === EVENTS.RESULT)[1];
-
-    // when
-    onUpdate(axeResult);
-
-    // then
-    expect(wrapper.find(A11YPanel)).toMatchSnapshot();
-  });
-
-  it("should render loader when it's running", () => {
-    // given
-    const api = createApi();
-    const wrapper = mount(<ThemedA11YPanel api={api} active />);
-    const request = api.on.mock.calls.find(([event]) => event === STORY_RENDERED)[1];
-
-    // when
-    request();
-    wrapper.update();
-
-    // then
-    expect(wrapper.find('ScrollArea').length).toBe(0);
-    expect(wrapper.find('Loader').length).toBe(1);
-    expect(wrapper.find('ActionBar').length).toBe(1);
-    expect(wrapper.find('Loader')).toMatchSnapshot();
-  });
-
-  it('should NOT anything when tab is not active', () => {
+  it('should handle inactive state', () => {
     // given
     const api = createApi();
 
@@ -218,7 +164,7 @@ describe('A11YPanel', () => {
     const wrapper = mount(<ThemedA11YPanel api={api} active={false} />);
 
     // then
-    expect(wrapper.find('ScrollArea').length).toBe(0);
-    expect(wrapper.find('ActionBar').length).toBe(0);
+    expect(wrapper.text()).toBe('');
+    expect(api.emit).not.toHaveBeenCalled();
   });
 });
