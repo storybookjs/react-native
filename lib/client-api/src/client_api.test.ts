@@ -507,6 +507,44 @@ describe('preview.client_api', () => {
       expect(stories[1]).toHaveBeenCalled();
       expect(logger.warn).not.toHaveBeenCalled();
     });
+
+    it('should maintain kind order when the module reloads', async () => {
+      const {
+        clientApi: { storiesOf, getStorybook },
+        channel,
+      } = getContext(undefined);
+      const module1 = new MockModule();
+      const module2 = new MockModule();
+      channel.emit = jest.fn();
+
+      const stories = [jest.fn(), jest.fn()];
+
+      expect(getStorybook()).toEqual([]);
+
+      storiesOf('kind1', module1).add('story1', jest.fn());
+      storiesOf('kind2', module2).add('story2', jest.fn());
+
+      // storyStore debounces so we need to wait for the next tick
+      await new Promise(r => setTimeout(r, 0));
+      let [event, storiesHash] = channel.emit.mock.calls[0];
+      expect(event).toEqual('setStories');
+      expect(Object.values(storiesHash.stories).map(v => v.kind)).toEqual(['kind1', 'kind2']);
+
+      expect(getStorybook().map(story => story.kind)).toEqual(['kind1', 'kind2']);
+
+      channel.emit.mockClear();
+
+      module1.hot.reload();
+      storiesOf('kind1', module1).add('story1', jest.fn());
+
+      await new Promise(r => setTimeout(r, 0));
+      // eslint-disable-next-line prefer-destructuring
+      [event, storiesHash] = channel.emit.mock.calls[0];
+      expect(event).toEqual('setStories');
+      expect(Object.values(storiesHash.stories).map(v => v.kind)).toEqual(['kind1', 'kind2']);
+
+      expect(getStorybook().map(story => story.kind)).toEqual(['kind1', 'kind2']);
+    });
   });
 
   describe('parameters', () => {
