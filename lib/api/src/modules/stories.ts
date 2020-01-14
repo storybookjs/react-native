@@ -238,7 +238,10 @@ const initStoriesApi = ({
       if (typeof rootSeparator !== 'undefined' || typeof groupSeparator !== 'undefined') {
         warnRemovingHierarchySeparators();
         if (usingShowRoots) warnUsingHierarchySeparatorsAndShowRoots();
-        ({ root, groups } = parseKind(kind, { rootSeparator, groupSeparator }));
+        ({ root, groups } = parseKind(kind, {
+          rootSeparator: rootSeparator || '|',
+          groupSeparator: groupSeparator || /\/|\./,
+        }));
 
         // 2. If the user hasn't passed separators, but is using | or . in kinds, use the old behaviour but warn
       } else if (anyKindMatchesOldHierarchySeparators && !usingShowRoots) {
