@@ -143,7 +143,6 @@ const theme = create({
 });
 
 addons.setConfig({
-  showRoots: true,
   panelPosition: 'bottom',
   theme,
 });
@@ -210,7 +209,11 @@ yarn sb migrate upgrade-hierarchy-separators --glob="*.stories.js"
 If you were using `|` and wish to keep the "root" behavior, use the `showRoots: true` option to re-enable roots:
 
 ```js
-addParameters({ options: { showRoots: true } });
+addParameters({ 
+  options: {
+    showRoots: true,
+  },
+});
 ```
 
 NOTE: it is no longer possible to have some stories with roots and others without. If you want to keep the old behavior, simply add a root called "Others" to all your previously unrooted stories.

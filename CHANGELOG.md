@@ -1,3 +1,34 @@
+## 5.3.0 (January 11, 2020)
+
+Storybook 5.3 is here!
+
+- 📝 [Custom documentation in MDX](https://medium.com/storybookjs/rich-docs-with-storybook-mdx-61bc145ae7bc)
+- 🎨 [Multi-framework SB Docs (React, Vue, Angular, WC, Ember)](https://medium.com/storybookjs/storybook-docs-for-new-frameworks-b1f6090ee0ea)
+- 📦 [Web-components framework support](https://dev.to/open-wc/storybook-for-web-components-on-steroids-4h29)
+- 🔼 [Main.js declarative configuration](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78)
+
+5.3 contains hundreds more fixes, features, and tweaks. Browse the changelogs matching `5.3.0-alpha.*`, `5.3.0-beta.*`, and `5.3.0-rc.*` for the full list of changes. See [MIGRATION.md](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) to upgrade from `5.0` or earlier.
+
+## 5.3.0-rc.14 (January 11, 2020)
+
+* Merge `master` into `next` for 5.3.0 release ([#9388](https://github.com/storybookjs/storybook/pull/9388))
+
+## 5.3.0-rc.13 (January 11, 2020)
+
+### Bug Fixes
+
+* Addon-docs: Fix link CORS errors using channel navigate event ([#9381](https://github.com/storybookjs/storybook/pull/9381))
+* CLI: Fix `sb init` to use spawn.sync if creating package.json ([#9359](https://github.com/storybookjs/storybook/pull/9359))
+
+### Maintenance
+
+* Official-storybook: Prop table example for multiple named exports ([#9364](https://github.com/storybookjs/storybook/pull/9364))
+* Addon-docs / web-components: Rename 'props' to 'properties' in props table ([#9362](https://github.com/storybookjs/storybook/pull/9362))
+
+### Dependency Upgrades
+
+* Upgrade @types/webpack-env and @types/node to fix conflicting types ([#9365](https://github.com/storybookjs/storybook/pull/9365))
+
 ## 5.3.0-rc.12 (January 8, 2020)
 
 ### Bug Fixes

@@ -176,7 +176,7 @@ Then configure Storybook's webpack loader in `.storybook/main.js` to understand 
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
-  webpack: async config => {
+  webpackFinal: async config => {
     config.module.rules.push({
       test: /\.(stories|story)\.mdx$/,
       use: [

@@ -23,6 +23,8 @@ addons.setConfig({
 
 ```
 
+> `addParameters` needs to be called before `configure()` method or it won't have any effect.
+
 When setting a theme, set a full theme object. The theme is replaced, not combined.
 
 Read on for more on how to create your own theme.

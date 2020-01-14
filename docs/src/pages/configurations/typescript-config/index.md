@@ -36,7 +36,7 @@ We [configure storybook's webpack](/configurations/custom-webpack-config/#full-c
 
 ```js
 module.exports = {
-  webpack: async config => {
+  webpackFinal: async config => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       use: [
@@ -106,7 +106,7 @@ We will create a [custom Webpack config](/configurations/custom-webpack-config/)
 ```js
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
-  webpack: async config => {
+  webpackFinal: async config => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       loader: require.resolve('babel-loader'),

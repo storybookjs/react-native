@@ -121,7 +121,8 @@ module.exports = {
     // update config here
     return config;
   },
-  webpack: async (config, options) => {
+  webpackFinal: async (config, options) => {
+    // change webpack config
     return config;
   },
   babel: async (config, options) => {
@@ -155,7 +156,7 @@ module.exports = {
     // update config here
     return config;
   },
-  webpack: async (config, options) => {
+  webpackFinal: async (config, options) => {
     return config;
   },
   babel: async (config, options) => {

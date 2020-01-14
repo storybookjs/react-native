@@ -23,6 +23,7 @@ enum events {
   DOCS_RENDERED = 'docsRendered',
   ADDON_STATE_CHANGED = 'addonStateChanged',
   ADDON_STATE_SET = 'addonStateSet',
+  NAVIGATE_URL = 'navigateUrl',
 }
 
 // Enables: `import Events from ...`
@@ -54,4 +55,5 @@ export const {
   DOCS_RENDERED,
   ADDON_STATE_CHANGED,
   ADDON_STATE_SET,
+  NAVIGATE_URL,
 } = events;
