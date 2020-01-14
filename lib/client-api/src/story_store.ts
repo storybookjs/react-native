@@ -132,8 +132,10 @@ export default class StoryStore extends EventEmitter {
         const sortFn = this._data[index].parameters.options.storySort;
         stable.inplace(stories, sortFn);
       } else {
-        // NOTE: here we are using _legacydata to preserve the original kind loading
-        // order if there is no sort function, which is totally weird.
+        // NOTE: when kinds are HMR'ed they get temporarily removed from the `_data` array
+        // and thus lose order. However in `_legacydata` they just get zeroed out, meaning
+        // that the order is preserved. Here we can use this to preserve the load
+        // order if there is no sort function, although it's a hack.
         const kindOrder = Object.keys(this._legacydata).reduce(
           (acc: Record<string, number>, kind: string, idx: number) => {
             acc[kind] = idx;
