@@ -131,6 +131,17 @@ export default class StoryStore extends EventEmitter {
       if (index && this._data[index].parameters.options.storySort) {
         const sortFn = this._data[index].parameters.options.storySort;
         stable.inplace(stories, sortFn);
+      } else {
+        // NOTE: here we are using _legacydata to preserve the original kind loading
+        // order if there is no sort function, which is totally weird.
+        const kindOrder = Object.keys(this._legacydata).reduce(
+          (acc: Record<string, number>, kind: string, idx: number) => {
+            acc[kind] = idx;
+            return acc;
+          },
+          {}
+        );
+        stable.inplace(stories, (s1, s2) => kindOrder[s1[1].kind] - kindOrder[s2[1].kind]);
       }
     }
     // removes function values from all stories so they are safe to transport over the channel

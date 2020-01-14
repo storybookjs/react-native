@@ -1,5 +1,6 @@
 import { logger } from '@storybook/client-logger';
 import addons, { mockChannel } from '@storybook/addons';
+import Events from '@storybook/core-events';
 import ClientApi from './client_api';
 import ConfigApi from './config_api';
 import StoryStore from './story_store';
@@ -517,8 +518,6 @@ describe('preview.client_api', () => {
       const module2 = new MockModule();
       channel.emit = jest.fn();
 
-      const stories = [jest.fn(), jest.fn()];
-
       expect(getStorybook()).toEqual([]);
 
       storiesOf('kind1', module1).add('story1', jest.fn());
@@ -526,23 +525,25 @@ describe('preview.client_api', () => {
 
       // storyStore debounces so we need to wait for the next tick
       await new Promise(r => setTimeout(r, 0));
-      let [event, storiesHash] = channel.emit.mock.calls[0];
-      expect(event).toEqual('setStories');
-      expect(Object.values(storiesHash.stories).map(v => v.kind)).toEqual(['kind1', 'kind2']);
 
+      let [event, storiesHash] = channel.emit.mock.calls[0];
+      expect(event).toEqual(Events.SET_STORIES);
+      expect(Object.values(storiesHash.stories).map(v => v.kind)).toEqual(['kind1', 'kind2']);
       expect(getStorybook().map(story => story.kind)).toEqual(['kind1', 'kind2']);
 
       channel.emit.mockClear();
 
+      // simulate an HMR of kind1, which would cause it to go to the end
+      // if the original order is not maintainaed
       module1.hot.reload();
       storiesOf('kind1', module1).add('story1', jest.fn());
 
       await new Promise(r => setTimeout(r, 0));
       // eslint-disable-next-line prefer-destructuring
       [event, storiesHash] = channel.emit.mock.calls[0];
-      expect(event).toEqual('setStories');
-      expect(Object.values(storiesHash.stories).map(v => v.kind)).toEqual(['kind1', 'kind2']);
 
+      expect(event).toEqual(Events.SET_STORIES);
+      expect(Object.values(storiesHash.stories).map(v => v.kind)).toEqual(['kind1', 'kind2']);
       expect(getStorybook().map(story => story.kind)).toEqual(['kind1', 'kind2']);
     });
   });
