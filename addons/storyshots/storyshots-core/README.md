@@ -16,6 +16,24 @@ Add the following module into your app.
 yarn add @storybook/addon-storyshots --dev
 ```
 
+## Configure Storyshots for HTML snapshots
+
+Create a new test file with the name `Storyshots.test.js`. (Or whatever the name you prefer, as long as it matches Jest's config [`testMatch`](http://facebook.github.io/jest/docs/en/configuration.html#testmatch-array-string)).
+Then add following content to it:
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+
+initStoryshots();
+```
+
+That's all.
+
+Now run your Jest test command. (Usually, `npm test`.) Then you can see all of your stories are converted as Jest snapshot tests.
+
+![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/storyshots/storyshots-core/docs/storyshots.png)
+
+
 ## Configure your app for Jest
 In many cases, for example Create React App, it's already configured for Jest. You need to create a filename with the extension `.test.js`.
 
@@ -32,6 +50,8 @@ If you still need to configure jest you can use the resources mentioned below:
 
 
 ### Configure Jest to work with Webpack's [require.context()](https://webpack.js.org/guides/dependency-management/#require-context)
+
+**NOTE**: if you are using Storybook 5.3's `main.js` to list story files, this is no longer needed.
 
 Sometimes it's useful to configure Storybook with Webpack's require.context feature. You could be loading stories [one of two ways](https://storybook.js.org/docs/basics/writing-stories/#loading-stories). 
 
@@ -207,24 +227,6 @@ Storyshots addon is currently supporting React, Angular and Vue. Each framework 
 `optionalPeerDependencies` - unfortunately there is nothing like this =(
 
 For more information read npm [docs](https://docs.npmjs.com/files/package.json#dependencies)
-
-## Configure Storyshots for HTML snapshots
-
-Create a new test file with the name `Storyshots.test.js`. (Or whatever the name you prefer, as long as it matches Jest's config [`testMatch`](http://facebook.github.io/jest/docs/en/configuration.html#testmatch-array-string)).
-Then add following content to it:
-
-```js
-import initStoryshots from '@storybook/addon-storyshots';
-
-initStoryshots();
-```
-
-That's all.
-
-Now run your Jest test command. (Usually, `npm test`.) Then you can see all of your stories are converted as Jest snapshot tests.
-
-![Screenshot](https://raw.githubusercontent.com/storybookjs/storybook/HEAD/addons/storyshots/storyshots-core/docs/storyshots.png)
-
 
 ### Using `createNodeMock` to mock refs
 

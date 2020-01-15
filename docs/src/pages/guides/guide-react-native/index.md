@@ -63,7 +63,7 @@ Create a file called `rn-addons.js` that you can use to include on device addons
 
 `storybook/rn-addons.js`
 
-```
+```js
 import '@storybook/addon-ondevice-knobs/register';
 import '@storybook/addon-ondevice-notes/register';
 ...
