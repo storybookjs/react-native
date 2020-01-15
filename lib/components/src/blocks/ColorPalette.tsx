@@ -137,19 +137,19 @@ function renderSwatchLabel(color: string, colorDescription?: string) {
 function renderSwatchSpecimen(colors: Colors) {
   if (Array.isArray(colors)) {
     return (
-      <>
+      <SwatchSpecimen>
         <SwatchColors>{colors.map(color => renderSwatch(color))}</SwatchColors>
         <SwatchLabels>{colors.map(color => renderSwatchLabel(color))}</SwatchLabels>
-      </>
+      </SwatchSpecimen>
     );
   }
   return (
-    <>
+    <SwatchSpecimen>
       <SwatchColors>{Object.values(colors).map(color => renderSwatch(color))}</SwatchColors>
       <SwatchLabels>
         {Object.keys(colors).map(color => renderSwatchLabel(color, colors[color]))}
       </SwatchLabels>
-    </>
+    </SwatchSpecimen>
   );
 }
 
@@ -164,9 +164,7 @@ export const ColorItem: FunctionComponent<ColorProps> = ({ title, subtitle, colo
         <ItemTitle>{title}</ItemTitle>
         <ItemSubtitle>{subtitle}</ItemSubtitle>
       </ItemDescription>
-      <Swatches>
-        <SwatchSpecimen>{renderSwatchSpecimen(colors)}</SwatchSpecimen>
-      </Swatches>
+      <Swatches>{renderSwatchSpecimen(colors)}</Swatches>
     </Item>
   );
 };
