@@ -136,8 +136,8 @@ export default class StoryStore extends EventEmitter {
         // and thus lose order. However in `_legacydata` they just get zeroed out, meaning
         // that the order is preserved. Here we can use this to preserve the load
         // order if there is no sort function, although it's a hack.
-        const kindOrder = Object.keys(this._legacydata).reduce(
-          (acc: Record<string, number>, kind: string, idx: number) => {
+        const kindOrder = Object.values(this._legacydata).reduce(
+          (acc: Record<string, number>, { kind }: any, idx: number) => {
             acc[kind] = idx;
             return acc;
           },
@@ -261,9 +261,13 @@ export default class StoryStore extends EventEmitter {
     this.pushToManager();
   }
 
+  getStoriesForManager = () => {
+    return this.extract({ includeDocsOnly: true });
+  };
+
   pushToManager = debounce(() => {
     if (this._channel) {
-      const stories = this.extract({ includeDocsOnly: true });
+      const stories = this.getStoriesForManager();
 
       // send to the parent frame.
       this._channel.emit(Events.SET_STORIES, { stories });
