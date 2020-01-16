@@ -186,6 +186,8 @@ getStorybookUI({
 });
 ```
 
+The benefit of using Async Storage is so that when users refresh the app, Storybook can open their last visited story.
+
 ### Deprecate displayName parameter
 
 In 5.2, the story parameter `displayName` was introduced as a publicly visible (but internal) API. Storybook's Component Story Format (CSF) loader used it to modify a story's display name independent of the story's `name`/`id` (which were coupled).
