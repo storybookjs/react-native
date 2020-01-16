@@ -1,3 +1,10 @@
+## 5.3.5 (January 17, 2020)
+
+### Bug Fixes
+
+* Core: Fix typo for loading addon-notes/register-panel ([#9497](https://github.com/storybookjs/storybook/pull/9497))
+* Source-loader: Add imports to top of file ([#9492](https://github.com/storybookjs/storybook/pull/9492))
+
 ## 5.3.4 (January 16, 2020)
 
 ### Bug Fixes
