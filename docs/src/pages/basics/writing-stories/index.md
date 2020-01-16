@@ -372,7 +372,7 @@ Now suppose you want to change the position in the hierarchy to `OtherFoo/Bar` a
 ```js
 export default {
   title: 'OtherFoo/Bar',
-  componentId: 'Foo/Bar', // or 'foo-bar' if you prefer
+  id: 'Foo/Bar', // or 'foo-bar' if you prefer
 };
 
 export const Baz = () => <MyComponent />;
@@ -381,4 +381,4 @@ Baz.story = {
 };
 ```
 
-Storybook will prioritize the `componentId` over the title for ID generation, if provided, and will prioritize the `story.name` over the export key for display.
+Storybook will prioritize the `id` over the title for ID generation, if provided, and will prioritize the `story.name` over the export key for display.
