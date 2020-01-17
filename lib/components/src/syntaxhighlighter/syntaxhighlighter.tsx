@@ -80,6 +80,7 @@ const Code = styled.code({
   flex: 1,
   paddingRight: 0,
   opacity: 1,
+  whiteSpace: 'pre',
 });
 
 export interface SyntaxHighlighterProps {
@@ -104,7 +105,7 @@ export const SyntaxHighlighter: FunctionComponent<Props> = ({
   copyable = false,
   bordered = false,
   padded = false,
-  format = true,
+  format = false,
   className = null,
   ...rest
 }) => {
