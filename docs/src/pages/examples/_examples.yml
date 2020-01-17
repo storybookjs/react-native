@@ -191,3 +191,9 @@ reactPakistan:
   description: A series of reuseable React Commons, UI/UX components, icons, logos and more by React Pakistan.
   demo: https://taimoormk.github.io/react-commons-collection/?path=/docs/react-pakistan-intro--page
   site: https://www.npmjs.com/package/@react-pakistan/react-commons-collection
+bbc:
+  thumbnail: bbc.jpg
+  title: BBC Psammead
+  description: React component library for BBC World Service and more
+  demo: https://bbc.github.io/psammead/
+  source: https://github.com/bbc/psammead
