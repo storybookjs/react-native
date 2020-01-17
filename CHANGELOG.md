@@ -1,3 +1,10 @@
+## 5.3.6 (January 17, 2020)
+
+### Bug Fixes
+
+* Source-loader: Bypass if file has no exports ([#9505](https://github.com/storybookjs/storybook/pull/9505))
+* Core: Fix default sorting of docs-only stories ([#9504](https://github.com/storybookjs/storybook/pull/9504))
+
 ## 5.3.5 (January 17, 2020)
 
 ### Bug Fixes
