@@ -1,1 +1,1 @@
-{"version":"5.3.5","info":{"plain":"### Bug Fixes\n\n* Core: Fix typo for loading addon-notes/register-panel ([#9497](https://github.com/storybookjs/storybook/pull/9497))\n* Source-loader: Add imports to top of file ([#9492](https://github.com/storybookjs/storybook/pull/9492))"}}
+{"version":"5.3.6","info":{"plain":"### Bug Fixes\n\n* Source-loader: Bypass if file has no exports ([#9505](https://github.com/storybookjs/storybook/pull/9505))\n* Core: Fix default sorting of docs-only stories ([#9504](https://github.com/storybookjs/storybook/pull/9504))"}}
