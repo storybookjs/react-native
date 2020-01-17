@@ -55,6 +55,8 @@ interface StoryOptions {
   includeDocsOnly?: boolean;
 }
 
+type KindOrder = Record<string, number>;
+
 const isStoryDocsOnly = (parameters?: Parameters) => {
   return parameters && parameters.docsOnly;
 };
@@ -81,6 +83,8 @@ export default class StoryStore extends EventEmitter {
 
   _selection: Selection;
 
+  _kindOrder: KindOrder;
+
   constructor(params: { channel: Channel }) {
     super();
 
@@ -90,6 +94,7 @@ export default class StoryStore extends EventEmitter {
     this._selection = {} as any;
     this._channel = params.channel;
     this._error = undefined;
+    this._kindOrder = {};
   }
 
   setChannel = (channel: Channel) => {
@@ -133,17 +138,11 @@ export default class StoryStore extends EventEmitter {
         stable.inplace(stories, sortFn);
       } else {
         // NOTE: when kinds are HMR'ed they get temporarily removed from the `_data` array
-        // and thus lose order. However in `_legacydata` they just get zeroed out, meaning
-        // that the order is preserved. Here we can use this to preserve the load
-        // order if there is no sort function, although it's a hack.
-        const kindOrder = Object.values(this._legacydata).reduce(
-          (acc: Record<string, number>, { kind }: any, idx: number) => {
-            acc[kind] = idx;
-            return acc;
-          },
-          {}
+        // and thus lose order. However `_kindOrder` preservers the original load order
+        stable.inplace(
+          stories,
+          (s1, s2) => this._kindOrder[s1[1].kind] - this._kindOrder[s2[1].kind]
         );
-        stable.inplace(stories, (s1, s2) => kindOrder[s1[1].kind] - kindOrder[s2[1].kind]);
       }
     }
     // removes function values from all stories so they are safe to transport over the channel
@@ -252,9 +251,16 @@ export default class StoryStore extends EventEmitter {
       parameters,
     };
 
-    // LEGACY DATA
+    // Don't store docs-only stories in legacy data because
+    // existing clients (at the time?!), e.g. storyshots/chromatic
+    // are not necessarily equipped to process them
     if (!isStoryDocsOnly(parameters)) {
       this.addLegacyStory({ kind, name, storyFn, parameters });
+    }
+
+    // Store 1-based order of kind loading to preserve sorting on HMR
+    if (!this._kindOrder[kind]) {
+      this._kindOrder[kind] = 1 + Object.keys(this._kindOrder).length;
     }
 
     // LET'S SEND IT TO THE MANAGER

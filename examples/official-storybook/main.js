@@ -1,5 +1,6 @@
 module.exports = {
   stories: [
+    // FIXME: Breaks e2e tests './intro.stories.mdx',
     '../../lib/ui/src/**/*.stories.(js|tsx|mdx)',
     '../../lib/components/src/**/*.stories.(js|tsx|mdx)',
     './stories/**/*.stories.(js|tsx|mdx)',
