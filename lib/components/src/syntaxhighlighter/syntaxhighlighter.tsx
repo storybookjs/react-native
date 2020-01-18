@@ -80,7 +80,6 @@ const Code = styled.code({
   flex: 1,
   paddingRight: 0,
   opacity: 1,
-  whiteSpace: 'pre',
 });
 
 export interface SyntaxHighlighterProps {
