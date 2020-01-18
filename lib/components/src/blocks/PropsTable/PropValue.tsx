@@ -76,8 +76,11 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  // summary is used for the default value
+  // below check fixes not displaying default values for boolean typescript vars
+  const summaryAsString = typeof summary.toString === 'function' ? summary.toString() : summary;
   if (isNil(detail)) {
-    return <PropText text={summary} />;
+    return <PropText text={summaryAsString} />;
   }
 
   return (
@@ -98,7 +101,7 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
       }
     >
       <Expandable className="sbdocs-expandable">
-        <span>{summary}</span>
+        <span>{summaryAsString}</span>
         <ArrowIcon icon={isOpen ? 'arrowup' : 'arrowdown'} />
       </Expandable>
     </WithTooltipPure>
