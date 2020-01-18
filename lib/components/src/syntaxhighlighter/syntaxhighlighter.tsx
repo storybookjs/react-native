@@ -105,7 +105,7 @@ export const SyntaxHighlighter: FunctionComponent<Props> = ({
   copyable = false,
   bordered = false,
   padded = false,
-  format = false,
+  format = true,
   className = null,
   ...rest
 }) => {
