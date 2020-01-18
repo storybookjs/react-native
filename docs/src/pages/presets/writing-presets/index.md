@@ -109,7 +109,7 @@ The presets API is also more powerful than the [standard configuration options](
 
 For example, some users want to configure the webpack for Storybook's UI and addons ([issue](https://github.com/storybookjs/storybook/issues/4995)), but this is not possible using [standard webpack configuration](../custom-webpack-config/) (it used to be possible before SB4.1). However, you can achieve this with a private preset.
 
-If it doesn't exists yet, create a file `.storybook/main.js`:
+If it doesn't exist yet, create a file `.storybook/main.js`:
 
 ```js
 module.exports = {
@@ -166,4 +166,4 @@ module.exports = {
 };
 ```
 
-Place your `my-preset.js` file where ever you want, if you want to share if far and wide you'll want to make it it's own package.
+Place your `my-preset.js` file wherever you want, if you want to share it far and wide you'll want to make it its own package.
