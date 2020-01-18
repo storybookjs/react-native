@@ -78,7 +78,8 @@ const PropSummary: FC<PropSummaryProps> = ({ value }) => {
 
   // summary is used for the default value
   // below check fixes not displaying default values for boolean typescript vars
-  const summaryAsString = typeof summary.toString === 'function' ? summary.toString() : summary;
+  const summaryAsString =
+    summary && typeof summary.toString === 'function' ? summary.toString() : summary;
   if (isNil(detail)) {
     return <PropText text={summaryAsString} />;
   }
