@@ -45,7 +45,8 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.149",
-    "@types/uuid": "^3.4.4"
+    "@types/uuid": "^3.4.4",
+    "@types/webpack-env": "^1.15.0"
   },
   "publishConfig": {
     "access": "public"

@@ -33,6 +33,7 @@
     "@storybook/client-logger": "5.3.7",
     "@storybook/core-events": "5.3.7",
     "@storybook/csf": "0.0.1",
+    "@types/webpack-env": "^1.15.0",
     "core-js": "^3.0.1",
     "eventemitter3": "^4.0.0",
     "global": "^4.3.2",

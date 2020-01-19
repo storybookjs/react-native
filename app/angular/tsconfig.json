@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "dist",
-    "types": [],
+    "types": ["webpack-env"],
     "rootDir": "./src",
     "resolveJsonModule": true
   }

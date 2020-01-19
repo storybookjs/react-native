@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@types/mithril": "^1.1.16",
+    "@types/webpack-env": "^1.15.0",
     "mithril": "*",
     "preact": "*",
     "react": "*"
