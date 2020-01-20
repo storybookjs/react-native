@@ -13,6 +13,8 @@
     "@storybook/addon-preview-wrapper": "5.3.7",
     "@storybook/addon-roundtrip": "5.3.7",
     "@storybook/addons": "5.3.7",
+    "@storybook/api": "5.3.7",
+    "@storybook/client-api": "5.3.7",
     "@storybook/components": "5.3.7",
     "@storybook/core-events": "5.3.7",
     "@storybook/node-logger": "5.3.7",
