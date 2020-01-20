@@ -1,4 +1,4 @@
-import { ADDON_STATE_CHANGED, ADDON_STATE_SET } from '@storybook/core-events';
+import { SHARED_STATE_CHANGED, SHARED_STATE_SET } from '@storybook/core-events';
 
 import {
   addons,
@@ -29,38 +29,47 @@ export {
   useParameter,
 };
 
-export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) => void] {
+export function useSharedState<S>(sharedId: string, defaultState?: S): [S, (s: S) => void] {
   const channel = addons.getChannel();
 
   const [lastValue] =
-    channel.last(`${ADDON_STATE_CHANGED}-manager-${addonId}`) ||
-    channel.last(`${ADDON_STATE_SET}-manager-${addonId}`) ||
+    channel.last(`${SHARED_STATE_CHANGED}-manager-${sharedId}`) ||
+    channel.last(`${SHARED_STATE_SET}-manager-${sharedId}`) ||
     [];
 
   const [state, setState] = useState<S>(lastValue || defaultState);
 
   const allListeners = useMemo(
     () => ({
-      [`${ADDON_STATE_CHANGED}-manager-${addonId}`]: (s: S) => setState(s),
-      [`${ADDON_STATE_SET}-manager-${addonId}`]: (s: S) => setState(s),
+      [`${SHARED_STATE_CHANGED}-manager-${sharedId}`]: (s: S) => setState(s),
+      [`${SHARED_STATE_SET}-manager-${sharedId}`]: (s: S) => setState(s),
     }),
-    [addonId]
+    [sharedId]
   );
 
-  const emit = useChannel(allListeners, [addonId]);
+  const emit = useChannel(allListeners, [sharedId]);
 
   useEffect(() => {
     // init
     if (defaultState !== undefined && !lastValue) {
-      emit(`${ADDON_STATE_SET}-client-${addonId}`, defaultState);
+      emit(`${SHARED_STATE_SET}-client-${sharedId}`, defaultState);
     }
-  }, [addonId]);
+  }, [sharedId]);
 
   return [
     state,
     s => {
       setState(s);
-      emit(`${ADDON_STATE_CHANGED}-client-${addonId}`, s);
+      emit(`${SHARED_STATE_CHANGED}-client-${sharedId}`, s);
     },
   ];
+}
+
+export function useAddonState<S>(addonId: string, defaultState?: S): [S, (s: S) => void] {
+  return useSharedState<S>(addonId, defaultState);
+}
+
+export function useStoryState<S>(defaultState?: S): [S, (s: S) => void] {
+  const { id: storyId } = useStoryContext();
+  return useSharedState<S>(`story-state-${storyId}`, defaultState);
 }
