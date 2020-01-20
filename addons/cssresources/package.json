@@ -41,6 +41,9 @@
     "global": "^4.3.2",
     "react": "^16.8.3"
   },
+  "devDependencies": {
+    "@types/webpack-env": "^1.15.0"
+  },
   "peerDependencies": {
     "react": "*"
   },

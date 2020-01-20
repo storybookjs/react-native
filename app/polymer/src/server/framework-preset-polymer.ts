@@ -1,6 +1,6 @@
-import { IgnorePlugin } from 'webpack';
+import { Configuration, IgnorePlugin, RuleSetUseItem } from 'webpack';
 
-export function webpack(config) {
+export function webpack(config: Configuration) {
   return {
     ...config,
     module: {
@@ -10,7 +10,7 @@ export function webpack(config) {
         {
           test: /\.html$/,
           use: [
-            ...config.module.rules[0].use,
+            ...(config.module.rules[0].use as RuleSetUseItem[]),
             {
               loader: require.resolve('polymer-webpack-loader'),
               options: { processStyleLinks: true },

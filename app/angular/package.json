@@ -36,6 +36,7 @@
     "@storybook/addons": "5.3.7",
     "@storybook/core": "5.3.7",
     "@storybook/node-logger": "5.3.7",
+    "@types/webpack-env": "^1.15.0",
     "core-js": "^3.0.1",
     "fork-ts-checker-webpack-plugin": "^3.0.1",
     "global": "^4.3.2",
@@ -47,7 +48,6 @@
   },
   "devDependencies": {
     "@types/autoprefixer": "^9.4.0",
-    "@types/webpack-env": "^1.14.0",
     "webpack": "^4.33.0"
   },
   "peerDependencies": {

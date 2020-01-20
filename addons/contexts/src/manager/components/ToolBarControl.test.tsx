@@ -9,10 +9,7 @@ describe('Tests on addon-contexts component: ToolBarControl', () => {
     icon: 'box' as const,
     nodeId: 'Some Context',
     options: { cancelable: true, deep: false, disable: false },
-    params: [
-      { name: 'A', props: {} },
-      { name: 'B', props: {} },
-    ],
+    params: [{ name: 'A', props: {} }, { name: 'B', props: {} }],
     title: 'Some Context',
     selected: '',
     setSelected: jest.fn,

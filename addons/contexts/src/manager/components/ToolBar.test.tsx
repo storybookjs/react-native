@@ -27,10 +27,7 @@ describe('Tests on addon-contexts component: ToolBar', () => {
         icon: 'box' as const,
         nodeId: 'Some Context B',
         options: { cancelable: true, deep: false, disable: false },
-        params: [
-          { name: 'Some Param X', props: {} },
-          { name: 'Some Param Y', props: {} },
-        ],
+        params: [{ name: 'Some Param X', props: {} }, { name: 'Some Param Y', props: {} }],
         title: 'Some Context B',
       },
     ];

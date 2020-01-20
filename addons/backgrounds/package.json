@@ -44,7 +44,8 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/util-deprecate": "^1.0.0"
+    "@types/util-deprecate": "^1.0.0",
+    "@types/webpack-env": "^1.15.0"
   },
   "publishConfig": {
     "access": "public"

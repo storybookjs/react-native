@@ -51,7 +51,8 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
-    "@types/react-redux": "^7.0.6"
+    "@types/react-redux": "^7.0.6",
+    "@types/webpack-env": "^1.15.0"
   },
   "publishConfig": {
     "access": "public"

@@ -45,6 +45,9 @@
     "react-textarea-autosize": "^7.0.4",
     "util-deprecate": "^1.0.2"
   },
+  "devDependencies": {
+    "@types/webpack-env": "^1.15.0"
+  },
   "peerDependencies": {
     "react": "*"
   },
