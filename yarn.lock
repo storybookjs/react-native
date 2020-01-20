@@ -7459,6 +7459,18 @@ babylon@^6.18.0:
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha512-q/UEjfGJ2Cm3oKV71DJz9d25TPnq5rhBVL2Q4fA5wcC3jcrdn7+SssEybFIxwAvvP+YCsCYNKughoF33GxgycQ==
 
+backbone.marionette@*:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/backbone.marionette/-/backbone.marionette-4.1.2.tgz#55de74363219f6d5c343dab5bff6aeb20fc44419"
+  integrity sha512-T8wWxZZnuYjylONTnWZsGsgXtdx2ZrE38pZWJI9LmPqzYK5j0T8uduapFO7OEpsW5rtdbBgwof30xhzAkbb5eQ==
+  dependencies:
+    backbone.radio "^2.0.0"
+
+backbone.radio@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/backbone.radio/-/backbone.radio-2.0.0.tgz#bbe8672b373e313f99f36d2fbcf583fe77d04f42"
+  integrity sha1-u+hnKzc+MT+Z820vvPWD/nfQT0I=
+
 backbone@^1.1.2:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/backbone/-/backbone-1.4.0.tgz#54db4de9df7c3811c3f032f34749a4cd27f3bd12"
@@ -27384,6 +27396,11 @@ regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
+
+regenerator-runtime@^0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
+  integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
 
 regenerator-transform@^0.10.0:
   version "0.10.1"

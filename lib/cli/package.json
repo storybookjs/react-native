@@ -74,6 +74,7 @@
     "@storybook/channels": "5.3.7",
     "@storybook/ember": "5.3.7",
     "@storybook/html": "5.3.7",
+    "@storybook/marionette": "5.3.7",
     "@storybook/marko": "5.3.7",
     "@storybook/mithril": "5.3.7",
     "@storybook/polymer": "5.3.7",
