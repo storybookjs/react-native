@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-centered",
-  "version": "5.3.3",
+  "version": "5.3.7",
   "description": "Storybook decorator to center components",
   "keywords": [
     "addon",
@@ -29,13 +29,14 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.3",
+    "@storybook/addons": "5.3.7",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
     "@types/mithril": "^1.1.16",
+    "@types/webpack-env": "^1.15.0",
     "mithril": "*",
     "preact": "*",
     "react": "*"

@@ -11,14 +11,14 @@ export default {
 export const Text = () => ({
   component: Button,
   props: {
-    Text: 'Hello Button',
+    text: 'Hello Button',
   },
 });
 
 export const Emoji = () => ({
   component: Button,
   props: {
-    Text: '😀 😎 👍 💯',
+    text: '😀 😎 👍 💯',
   },
 });
 
@@ -29,7 +29,7 @@ Emoji.story = {
 export const WithSomeEmojiAndAction = () => ({
   component: Button,
   props: {
-    Text: '😀 😎 👍 💯',
+    text: '😀 😎 👍 💯',
     onClick: action('This was clicked OMG'),
   },
 });
@@ -42,7 +42,7 @@ WithSomeEmojiAndAction.story = {
 export const ButtonWithLinkToAnotherStory = () => ({
   component: Button,
   props: {
-    Text: 'Go to Welcome Story',
+    text: 'Go to Welcome Story',
     onClick: linkTo('Welcome'),
   },
 });

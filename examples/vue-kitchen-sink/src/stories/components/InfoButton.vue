@@ -1,23 +1,26 @@
 <script>
+/**
+ * InfoButton component description
+ */
 export default {
   props: {
     /**
      * Whether to disable button
      */
     disabled: {
-      type: Boolean
+      type: Boolean,
     },
     /**
      * Button type
      */
     type: {
       type: String,
-      default: 'normal'
+      default: 'normal',
     },
     label: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     click(ev) {
@@ -25,10 +28,10 @@ export default {
        * Passthrough click event
        * @type {Event}
        */
-      this.$emit('click', ev)
-    }
-  }
-}
+      this.$emit('click', ev);
+    },
+  },
+};
 </script>
 
 <template>

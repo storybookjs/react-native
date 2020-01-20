@@ -223,10 +223,11 @@ describe('preview.story_store', () => {
     });
   });
 
-  describe('dumpStoryBook', () => {
+  describe('dumpStoryBook/getStoriesForManager', () => {
     it('should return nothing when empty', () => {
       const store = new StoryStore({ channel });
       expect(store.dumpStoryBook()).toEqual([]);
+      expect(Object.keys(store.getStoriesForManager())).toEqual([]);
     });
 
     it('should return storybook with stories', () => {
@@ -246,6 +247,13 @@ describe('preview.story_store', () => {
           kind: 'kind-2',
           stories: ['story-2.1', 'story-2.2'],
         },
+      ]);
+
+      expect(Object.keys(store.getStoriesForManager())).toEqual([
+        'kind-1--story-1-1',
+        'kind-1--story-1-2',
+        'kind-2--story-2-1',
+        'kind-2--story-2-2',
       ]);
     });
   });
