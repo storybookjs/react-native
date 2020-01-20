@@ -1,3 +1,34 @@
+## 5.3.7 (January 20, 2020)
+
+### Bug Fixes
+
+* Node-logger: Move `@types/npmlog` to dependencies  ([#9538](https://github.com/storybookjs/storybook/pull/9538))
+* Core: Fix legacy story URLs ([#9545](https://github.com/storybookjs/storybook/pull/9545))
+* Addon-docs: Convert default prop value to string ([#9525](https://github.com/storybookjs/storybook/pull/9525))
+* Addon-docs: Preserve Source indentation by default ([#9513](https://github.com/storybookjs/storybook/pull/9513))
+
+## 5.3.6 (January 17, 2020)
+
+### Bug Fixes
+
+* Source-loader: Bypass if file has no exports ([#9505](https://github.com/storybookjs/storybook/pull/9505))
+* Core: Fix default sorting of docs-only stories ([#9504](https://github.com/storybookjs/storybook/pull/9504))
+
+## 5.3.5 (January 17, 2020)
+
+### Bug Fixes
+
+* Core: Fix typo for loading addon-notes/register-panel ([#9497](https://github.com/storybookjs/storybook/pull/9497))
+* Source-loader: Add imports to top of file ([#9492](https://github.com/storybookjs/storybook/pull/9492))
+
+## 5.3.4 (January 16, 2020)
+
+### Bug Fixes
+
+* Core: Fix presets register panel ([#9486](https://github.com/storybookjs/storybook/pull/9486))
+* Core: Fix addon/preset detection for local addons ([#9485](https://github.com/storybookjs/storybook/pull/9485))
+* Core: Fix default story sort ([#9482](https://github.com/storybookjs/storybook/pull/9482))
+
 ## 5.3.3 (January 14, 2020)
 
 ### Bug Fixes
