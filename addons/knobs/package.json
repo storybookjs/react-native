@@ -51,7 +51,8 @@
   "devDependencies": {
     "@types/escape-html": "0.0.20",
     "@types/react-lifecycles-compat": "^3.0.1",
-    "@types/react-select": "^2.0.19"
+    "@types/react-select": "^2.0.19",
+    "@types/webpack-env": "^1.15.0"
   },
   "peerDependencies": {
     "react": "*"

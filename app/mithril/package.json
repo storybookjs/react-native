@@ -38,6 +38,7 @@
     "@storybook/addons": "5.3.7",
     "@storybook/core": "5.3.7",
     "@types/mithril": "^2.0.0",
+    "@types/webpack-env": "^1.15.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "regenerator-runtime": "^0.13.3",
