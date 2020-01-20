@@ -9,6 +9,7 @@
     - [Deprecate displayName parameter](#deprecate-displayname-parameter)
     - [Unified docs preset](#unified-docs-preset)
     - [Simplified hierarchy separators](#simplified-hierarchy-separators)
+    - [Addon StoryShots Puppeteer uses external puppeteer](#addon-storyshots-puppeteer-uses-external-puppeteer)
   - [From version 5.1.x to 5.2.x](#from-version-51x-to-52x)
     - [Source-loader](#source-loader)
     - [Default viewports](#default-viewports)
@@ -219,6 +220,17 @@ addParameters({
 ```
 
 NOTE: it is no longer possible to have some stories with roots and others without. If you want to keep the old behavior, simply add a root called "Others" to all your previously unrooted stories.
+
+### Addon StoryShots Puppeteer uses external puppeteer
+
+To give you more control on the Chrome version used when running StoryShots Puppeteer, `puppeteer` is no more included in the addon dependencies. So you can now pick the version of `puppeteer` you want and set it in your project.
+ 
+If you want the latest version available just run:
+```sh
+yarn add puppeteer --dev
+OR
+npm install puppeteer --save-dev
+``` 
 
 ## From version 5.1.x to 5.2.x
 
