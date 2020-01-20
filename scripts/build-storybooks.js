@@ -119,9 +119,14 @@ const createContent = deployables => {
 const handleExamples = async files => {
   const deployables = files.filter(f => {
     const packageJsonLocation = p(['examples', f, 'package.json']);
-    const stats = statSync(packageJsonLocation);
+    let stats = null;
+    try {
+      stats = statSync(packageJsonLocation);
+    } catch (e) {
+      //
+    }
 
-    return stats.isFile() && hasBuildScript(packageJsonLocation);
+    return stats && stats.isFile() && hasBuildScript(packageJsonLocation);
   });
 
   await deployables.reduce(async (acc, d) => {
@@ -175,4 +180,7 @@ const run = async () => {
   await handleExamples(list);
 };
 
-run();
+run().catch(e => {
+  logger.error(e);
+  process.exit(1);
+});
