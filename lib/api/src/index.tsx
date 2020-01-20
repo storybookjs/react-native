@@ -406,8 +406,6 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
 }
 
 export function useStoryState<S>(defaultState?: S) {
-  const {
-    state: { storyId },
-  } = useContext(ManagerContext);
+  const { storyId } = useStorybookState();
   return useSharedState<S>(`story-state-${storyId}`, defaultState);
 }
