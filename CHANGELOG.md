@@ -1,3 +1,12 @@
+## 5.3.7 (January 20, 2020)
+
+### Bug Fixes
+
+* Node-logger: Move `@types/npmlog` to dependencies  ([#9538](https://github.com/storybookjs/storybook/pull/9538))
+* Core: Fix legacy story URLs ([#9545](https://github.com/storybookjs/storybook/pull/9545))
+* Addon-docs: Convert default prop value to string ([#9525](https://github.com/storybookjs/storybook/pull/9525))
+* Addon-docs: Preserve Source indentation by default ([#9513](https://github.com/storybookjs/storybook/pull/9513))
+
 ## 5.3.6 (January 17, 2020)
 
 ### Bug Fixes
