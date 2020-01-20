@@ -280,6 +280,18 @@ export default class StoryStore extends EventEmitter {
     }
   }, 0);
 
+  // Unlike a bunch of deprecated APIs below, these lookup functions
+  // use the `_data` member, which is the new data structure. They should
+  // be the preferred way of looking up stories in the future.
+
+  getStoriesForKind(kind: string) {
+    return this.raw().filter(story => story.kind === kind);
+  }
+
+  getRawStory(kind: string, name: string) {
+    return this.getStoriesForKind(kind).find(s => s.name === name);
+  }
+
   // OLD apis
   getRevision() {
     return this._revision;
@@ -337,10 +349,6 @@ export default class StoryStore extends EventEmitter {
       .map(name => this._legacydata[key as string].stories[name])
       .sort((info1, info2) => info1.index - info2.index)
       .map(info => info.name);
-  }
-
-  getStoriesForKind(kind: string) {
-    return this.raw().filter(story => story.kind === kind);
   }
 
   getStoryFileName(kind: string) {
