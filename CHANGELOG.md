@@ -1,3 +1,25 @@
+## 5.3.3 (January 14, 2020)
+
+### Bug Fixes
+
+* UI: Fix edge case where only one legacy separator is defined ([#9425](https://github.com/storybookjs/storybook/pull/9425))
+* Core: Preserve kind load order on HMR when no sortFn is provided ([#9424](https://github.com/storybookjs/storybook/pull/9424))
+* Angular: Fix missing architect properties ([#9390](https://github.com/storybookjs/storybook/pull/9390))
+* Addon-knobs: Fix null knob values in select ([#9416](https://github.com/storybookjs/storybook/pull/9416))
+* Source-loader: Disable linting altogether ([#9417](https://github.com/storybookjs/storybook/pull/9417))
+
+## 5.3.2 (January 13, 2020)
+
+### Bug Fixes
+
+* Source-loader: Disable eslint entirely for generated code ([#9410](https://github.com/storybookjs/storybook/pull/9410))
+
+## 5.3.1 (January 12, 2020)
+
+### Bug Fixes
+
+* Core: Fix generated entry to import at top of file ([#9398](https://github.com/storybookjs/storybook/pull/9398))
+
 ## 5.3.0 (January 11, 2020)
 
 Storybook 5.3 is here!
