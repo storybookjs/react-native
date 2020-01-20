@@ -15,7 +15,6 @@ const Label = styled.div<{}>(({ theme }) => ({
 }));
 
 const Sample = styled.div({
-  lineHeight: 1,
   overflow: 'hidden',
   whiteSpace: 'nowrap',
   textOverflow: 'ellipsis',
