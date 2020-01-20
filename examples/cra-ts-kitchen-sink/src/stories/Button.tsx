@@ -9,7 +9,7 @@ interface ButtonProps {
   /**
    * Is primary?
    */
-  primary: boolean;
+  primary?: boolean;
 }
 
 /**
