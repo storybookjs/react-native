@@ -23,6 +23,7 @@
     "*.d.ts"
   ],
   "main": "dist/client/index.js",
+  "types": "dist/client/index.d.ts",
   "bin": {
     "build-storybook": "./bin/build.js",
     "start-storybook": "./bin/index.js",
@@ -32,6 +33,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@storybook/addons": "5.3.7",
     "@storybook/core": "5.3.7",
     "@webcomponents/webcomponentsjs": "^1.2.0",
     "core-js": "^3.0.1",

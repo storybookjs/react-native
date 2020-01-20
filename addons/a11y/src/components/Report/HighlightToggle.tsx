@@ -184,4 +184,7 @@ class HighlightToggle extends Component<ToggleProps> {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HighlightToggle);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HighlightToggle);
