@@ -33,7 +33,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.5",
     "cross-env": "^6.0.3",
-    "file-loader": "^4.2.0",
+    "file-loader": "^5.0.2",
     "prop-types": "^15.7.2",
     "svg-url-loader": "^3.0.2",
     "vue-loader": "^15.7.0",

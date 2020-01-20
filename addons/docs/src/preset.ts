@@ -49,7 +49,7 @@ function withFrameworkExtensions(basePreset: Preset, mapper: FrameworkPresetMapp
 
 module.exports = withFrameworkExtensions(commonPreset, framework => {
   try {
-    return require.resolve(`./frameworks/${framework}/preset`);
+    return require.resolve(`./frameworks/${framework}/preset`) as string;
   } catch (err) {
     // there is no custom config for the user's framework, do nothing
     return null;

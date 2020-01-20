@@ -15,6 +15,7 @@
 'app: angular': ["app/angular/**"]
 'app: polymer ': ["app/polymer/**"]
 'app: preact': ["app/preact/**"]
+'app: rax': ["app/rax/**"]
 'app: react-native': ["app/react-native/**"]
 'app: react': ["app/react/**"]
 'app: vue': ["app/vue/**"]

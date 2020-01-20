@@ -69,6 +69,8 @@ export default {
       config: {},
       // axe-core optionsParameter (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#options-parameter)
       options: {},
+       // optional flag to prevent the automatic check
+      manual: true,
     },
   },
 };

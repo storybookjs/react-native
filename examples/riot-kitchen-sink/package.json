@@ -31,7 +31,7 @@
     "@storybook/source-loader": "5.3.7",
     "babel-loader": "^8.0.4",
     "cross-env": "^6.0.3",
-    "file-loader": "^4.2.0",
+    "file-loader": "^5.0.2",
     "raw-loader": "^3.1.0",
     "riot-tag-loader": "^2.1.0",
     "svg-url-loader": "^3.0.2",
