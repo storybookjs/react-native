@@ -1,6 +1,6 @@
 {
   "name": "@storybook/node-logger",
-  "version": "5.3.0-rc.0",
+  "version": "5.3.7",
   "description": "",
   "keywords": [
     "storybook"
@@ -27,6 +27,7 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
+    "@types/npmlog": "^4.1.2",
     "chalk": "^3.0.0",
     "core-js": "^3.0.1",
     "npmlog": "^4.1.2",
@@ -34,11 +35,10 @@
     "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
-    "@types/npmlog": "^4.1.1",
     "@types/pretty-hrtime": "^1.0.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "6ad2664adf18b50ea3ce015cbae2ff3e9a60cc4a"
+  "gitHead": "4b9d901add9452525135caae98ae5f78dd8da9ff"
 }

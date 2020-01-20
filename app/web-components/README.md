@@ -14,7 +14,7 @@ So you can develop UI components in isolation without worrying about app specifi
 
 ```sh
 cd my-app
-npx -p @storybook/cli sb init -t web-components
+npx -p @storybook/cli sb init -t web_components
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
@@ -60,7 +60,7 @@ For example if you have a library called `my-library` which is in es7 then you c
 // .storybook/main.js
 
 module.exports = { 
-  webpack: async config => {
+  webpackFinal: async config => {
     // find web-components rule for extra transpilation
     const webComponentsRule = config.module.rules.find(
       rule => rule.use && rule.use.options && rule.use.options.babelrc === false

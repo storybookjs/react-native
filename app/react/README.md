@@ -35,7 +35,9 @@ This preset enables support for all Create React App features, including Sass/SC
 
 ## Typescript
 
-If you are using Typescript, make sure you have the type definitions installed via `yarn add @types/node @types/react @types/storybook__react --dev`.
+`@storybook/react` is now exporting its own types to use with Typescript.
+You don't need to have `@types/storybook__react` installed anymore if it was your case.
+But you probably also need to use types from `@types/node @types/react`.
 
 ## Docs
 

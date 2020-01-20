@@ -19,7 +19,7 @@ export const puppeteerTest = (customConfig: Partial<PuppeteerTestConfig> = {}) =
   let page: Page; // Hold ref to the page to screenshot.
 
   const testFn = async ({ context }: any) => {
-    const { kind, framework, name } = context;
+    const { kind, framework, name, id } = context;
     if (framework === 'react-native') {
       // Skip tests since RN is not a browser environment.
       logger.error(
@@ -29,7 +29,7 @@ export const puppeteerTest = (customConfig: Partial<PuppeteerTestConfig> = {}) =
       return;
     }
 
-    const url = constructUrl(storybookUrl, kind, name);
+    const url = constructUrl(storybookUrl, id);
     const options = { context, url };
     if (testBody.filter != null && !testBody.filter(options)) {
       return;

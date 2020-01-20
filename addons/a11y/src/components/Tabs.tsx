@@ -1,6 +1,6 @@
 import React, { Component, SyntheticEvent } from 'react';
 
-import { styled, themes } from '@storybook/theming';
+import { styled } from '@storybook/theming';
 import { NodeResult, Result } from 'axe-core';
 import { SizeMe } from 'react-sizeme';
 import store, { clearElements } from '../redux-config';
@@ -23,7 +23,7 @@ const HighlightToggleLabel = styled.label<{}>(({ theme }) => ({
   color: theme.color.dark,
 }));
 
-const GlobalToggle = styled.div(({ elementWidth }: { elementWidth: number }) => {
+const GlobalToggle = styled.div<{ elementWidth: number }>(({ elementWidth }) => {
   const maxWidthBeforeBreak = 450;
   return {
     cursor: 'pointer',
@@ -47,7 +47,7 @@ const GlobalToggle = styled.div(({ elementWidth }: { elementWidth: number }) => 
   };
 });
 
-const Item = styled.button(
+const Item = styled.button<{ active?: boolean }>(
   ({ theme }) => ({
     textDecoration: 'none',
     padding: '10px 15px',
@@ -66,7 +66,7 @@ const Item = styled.button(
       borderBottom: `3px solid ${theme.color.secondary}`,
     },
   }),
-  ({ active, theme }: any) =>
+  ({ active, theme }) =>
     active
       ? {
           opacity: 1,
@@ -99,7 +99,7 @@ interface TabsState {
 }
 
 function retrieveAllNodesFromResults(items: Result[]): NodeResult[] {
-  return items.reduce((acc, item) => acc.concat(item.nodes), []);
+  return items.reduce((acc, item) => acc.concat(item.nodes), [] as NodeResult[]);
 }
 
 export class Tabs extends Component<TabsProps, TabsState> {
@@ -109,7 +109,7 @@ export class Tabs extends Component<TabsProps, TabsState> {
 
   onToggle = (event: SyntheticEvent) => {
     this.setState({
-      active: parseInt(event.currentTarget.getAttribute('data-index'), 10),
+      active: parseInt(event.currentTarget.getAttribute('data-index') || '', 10),
     });
     // removes all elements from the redux map in store from the previous panel
     store.dispatch(clearElements());

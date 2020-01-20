@@ -104,7 +104,7 @@ export const Item = styled(({ className, children, id }) => (
         }),
   ({ theme, loading }) =>
     loading && {
-      '&& > svg + span': { background: theme.color.medium },
+      '&& > svg + span': { background: theme.appBorderColor },
       '&& > *': theme.animation.inlineGlow,
       '&& > span': { borderColor: 'transparent' },
     }

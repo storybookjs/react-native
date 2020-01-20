@@ -29,7 +29,12 @@ export const DocsContainer: FunctionComponent<DocsContainerProps> = ({ context, 
   const allComponents = { ...defaultComponents, ...userComponents };
 
   useEffect(() => {
-    const url = new URL(window.parent.location);
+    let url;
+    try {
+      url = new URL(window.parent.location);
+    } catch (err) {
+      return;
+    }
     if (url.hash) {
       const element = document.getElementById(url.hash.substring(1));
       if (element) {

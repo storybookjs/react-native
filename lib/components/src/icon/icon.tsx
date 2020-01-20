@@ -2,13 +2,13 @@ import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
 import icons, { IconKey } from './icons';
 
-import Svg from './svg';
+import Svg, { SvgProps } from './svg';
 
 const Path = styled.path({
   fill: 'currentColor',
 });
 
-export interface IconsProps {
+export interface IconsProps extends SvgProps {
   icon: IconKey;
 }
 

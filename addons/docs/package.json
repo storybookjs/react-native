@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-docs",
-  "version": "5.3.0-rc.0",
+  "version": "5.3.7",
   "description": "Superior documentation for your components",
   "keywords": [
     "addon",
@@ -22,6 +22,7 @@
     "docs/**/*",
     "angular/**/*",
     "common/**/*",
+    "ember/**/*",
     "html/**/*",
     "postinstall/**/*",
     "react/**/*",
@@ -45,13 +46,14 @@
     "@mdx-js/loader": "^1.5.1",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
-    "@storybook/addons": "5.3.0-rc.0",
-    "@storybook/api": "5.3.0-rc.0",
-    "@storybook/components": "5.3.0-rc.0",
+    "@storybook/addons": "5.3.7",
+    "@storybook/api": "5.3.7",
+    "@storybook/components": "5.3.7",
+    "@storybook/core-events": "5.3.7",
     "@storybook/csf": "0.0.1",
-    "@storybook/postinstall": "5.3.0-rc.0",
-    "@storybook/source-loader": "5.3.0-rc.0",
-    "@storybook/theming": "5.3.0-rc.0",
+    "@storybook/postinstall": "5.3.7",
+    "@storybook/source-loader": "5.3.7",
+    "@storybook/theming": "5.3.7",
     "acorn": "^7.1.0",
     "acorn-jsx": "^5.1.0",
     "acorn-walk": "^7.0.0",
@@ -77,7 +79,6 @@
     "@types/jest": "^24.0.11",
     "@types/prop-types": "^15.5.9",
     "@types/util-deprecate": "^1.0.0",
-    "@types/webpack-env": "^1.14.0",
     "jest-specific-snapshot": "^2.0.0"
   },
   "peerDependencies": {
@@ -88,5 +89,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "6ad2664adf18b50ea3ce015cbae2ff3e9a60cc4a"
+  "gitHead": "4b9d901add9452525135caae98ae5f78dd8da9ff"
 }

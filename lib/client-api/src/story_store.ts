@@ -56,6 +56,8 @@ interface StoryOptions {
   includeDocsOnly?: boolean;
 }
 
+type KindOrder = Record<string, number>;
+
 const isStoryDocsOnly = (parameters?: Parameters) => {
   return parameters && parameters.docsOnly;
 };
@@ -82,6 +84,8 @@ export default class StoryStore extends EventEmitter {
 
   _selection: Selection;
 
+  _kindOrder: KindOrder;
+
   constructor(params: { channel: Channel }) {
     super();
 
@@ -91,6 +95,7 @@ export default class StoryStore extends EventEmitter {
     this._selection = {} as any;
     this._channel = params.channel;
     this._error = undefined;
+    this._kindOrder = {};
   }
 
   setChannel = (channel: Channel) => {
@@ -138,6 +143,13 @@ export default class StoryStore extends EventEmitter {
           sortFn = storySort(storySortParameter);
         }
         stable.inplace(stories, sortFn);
+      } else {
+        // NOTE: when kinds are HMR'ed they get temporarily removed from the `_data` array
+        // and thus lose order. However `_kindOrder` preservers the original load order
+        stable.inplace(
+          stories,
+          (s1, s2) => this._kindOrder[s1[1].kind] - this._kindOrder[s2[1].kind]
+        );
       }
     }
     // removes function values from all stories so they are safe to transport over the channel
@@ -246,23 +258,46 @@ export default class StoryStore extends EventEmitter {
       parameters,
     };
 
-    // LEGACY DATA
+    // Don't store docs-only stories in legacy data because
+    // existing clients (at the time?!), e.g. storyshots/chromatic
+    // are not necessarily equipped to process them
     if (!isStoryDocsOnly(parameters)) {
       this.addLegacyStory({ kind, name, storyFn, parameters });
+    }
+
+    // Store 1-based order of kind loading to preserve sorting on HMR
+    if (!this._kindOrder[kind]) {
+      this._kindOrder[kind] = 1 + Object.keys(this._kindOrder).length;
     }
 
     // LET'S SEND IT TO THE MANAGER
     this.pushToManager();
   }
 
+  getStoriesForManager = () => {
+    return this.extract({ includeDocsOnly: true });
+  };
+
   pushToManager = debounce(() => {
     if (this._channel) {
-      const stories = this.extract({ includeDocsOnly: true });
+      const stories = this.getStoriesForManager();
 
       // send to the parent frame.
       this._channel.emit(Events.SET_STORIES, { stories });
     }
   }, 0);
+
+  // Unlike a bunch of deprecated APIs below, these lookup functions
+  // use the `_data` member, which is the new data structure. They should
+  // be the preferred way of looking up stories in the future.
+
+  getStoriesForKind(kind: string) {
+    return this.raw().filter(story => story.kind === kind);
+  }
+
+  getRawStory(kind: string, name: string) {
+    return this.getStoriesForKind(kind).find(s => s.name === name);
+  }
 
   // OLD apis
   getRevision() {
@@ -321,10 +356,6 @@ export default class StoryStore extends EventEmitter {
       .map(name => this._legacydata[key as string].stories[name])
       .sort((info1, info2) => info1.index - info2.index)
       .map(info => info.name);
-  }
-
-  getStoriesForKind(kind: string) {
-    return this.raw().filter(story => story.kind === kind);
   }
 
   getStoryFileName(kind: string) {
