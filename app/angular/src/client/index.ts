@@ -9,6 +9,8 @@ export {
   raw,
 } from './preview';
 
+export { StoryFnAngularReturnType as IStory } from './preview/types';
+
 export { moduleMetadata } from './preview/angular/decorators';
 
 if (module && module.hot && module.hot.decline) {
