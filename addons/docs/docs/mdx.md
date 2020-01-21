@@ -4,8 +4,6 @@
 
 # Storybook Docs MDX
 
-> ⚠️ MDX support is an experimental feature in Storybook 5.2. The API may change in 5.3 outside of the normal semver rules. Be forewarned!
-
 `MDX` is the syntax [Storybook Docs](../README.md) uses to capture long-form markdown documentation and stories in one file. You can also write pure documentation pages in `MDX` and add them to Storybook alongside your stories.
 
 - [Storybook Docs MDX](#storybook-docs-mdx)
