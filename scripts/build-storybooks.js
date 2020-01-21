@@ -7,11 +7,11 @@ const {
   readFile: readFileRaw,
   writeFile: writeFileRaw,
   statSync,
+  readFileSync,
 } = require('fs');
 const { join } = require('path');
 
 const readdir = promisify(readdirRaw);
-const readFile = promisify(readFileRaw);
 const writeFile = promisify(writeFileRaw);
 
 const p = l => join(__dirname, '..', ...l);
@@ -35,8 +35,8 @@ const exec = async (command, args = [], options = {}) =>
       });
   });
 
-const hasBuildScript = async l => {
-  const text = await readFile(l, 'utf8');
+const hasBuildScript = l => {
+  const text = readFileSync(l, 'utf8');
   const json = JSON.parse(text);
 
   return !!json.scripts['build-storybook'];
@@ -119,9 +119,14 @@ const createContent = deployables => {
 const handleExamples = async files => {
   const deployables = files.filter(f => {
     const packageJsonLocation = p(['examples', f, 'package.json']);
-    const stats = statSync(packageJsonLocation);
+    let stats = null;
+    try {
+      stats = statSync(packageJsonLocation);
+    } catch (e) {
+      // the folder had no package.json, we'll ignore
+    }
 
-    return stats.isFile() && hasBuildScript(packageJsonLocation);
+    return stats && stats.isFile() && hasBuildScript(packageJsonLocation);
   });
 
   await deployables.reduce(async (acc, d) => {
@@ -175,4 +180,7 @@ const run = async () => {
   await handleExamples(list);
 };
 
-run();
+run().catch(e => {
+  logger.error(e);
+  process.exit(1);
+});
