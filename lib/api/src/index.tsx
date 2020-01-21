@@ -1,4 +1,4 @@
-import React, { ReactElement, Component, useContext, useEffect, useMemo } from 'react';
+import React, { ReactElement, Component, useContext, useEffect, useMemo, useRef } from 'react';
 import memoize from 'memoizerific';
 // @ts-ignore shallow-equal is not in DefinitelyTyped
 import shallowEqualObjects from 'shallow-equal/objects';
@@ -8,8 +8,8 @@ import {
   STORY_CHANGED,
   SET_STORIES,
   SELECT_STORY,
-  ADDON_STATE_CHANGED,
-  ADDON_STATE_SET,
+  SHARED_STATE_CHANGED,
+  SHARED_STATE_SET,
   NAVIGATE_URL,
 } from '@storybook/core-events';
 import { RenderData as RouterData } from '@storybook/router';
@@ -345,42 +345,42 @@ const addonStateCache: {
 } = {};
 
 // shared state
-export function useAddonState<S>(addonId: string, defaultState?: S) {
+export function useSharedState<S>(stateId: string, defaultState?: S) {
   const api = useStorybookApi();
-  const existingState = api.getAddonState<S>(addonId);
+  const existingState = api.getAddonState<S>(stateId);
   const state = orDefault<S>(
     existingState,
-    addonStateCache[addonId] ? addonStateCache[addonId] : defaultState
+    addonStateCache[stateId] ? addonStateCache[stateId] : defaultState
   );
   const setState = (s: S | StateMerger<S>, options?: Options) => {
     // set only after the stories are loaded
-    if (addonStateCache[addonId]) {
-      addonStateCache[addonId] = s;
+    if (addonStateCache[stateId]) {
+      addonStateCache[stateId] = s;
     }
-    api.setAddonState<S>(addonId, s, options);
+    api.setAddonState<S>(stateId, s, options);
   };
   const allListeners = useMemo(() => {
     const stateChangeHandlers = {
-      [`${ADDON_STATE_CHANGED}-client-${addonId}`]: (s: S) => setState(s),
-      [`${ADDON_STATE_SET}-client-${addonId}`]: (s: S) => setState(s),
+      [`${SHARED_STATE_CHANGED}-client-${stateId}`]: (s: S) => setState(s),
+      [`${SHARED_STATE_SET}-client-${stateId}`]: (s: S) => setState(s),
     };
     const stateInitializationHandlers = {
       [STORIES_CONFIGURED]: () => {
-        if (addonStateCache[addonId]) {
+        if (addonStateCache[stateId]) {
           // this happens when HMR
-          setState(addonStateCache[addonId]);
-          api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, addonStateCache[addonId]);
+          setState(addonStateCache[stateId]);
+          api.emit(`${SHARED_STATE_SET}-manager-${stateId}`, addonStateCache[stateId]);
         } else if (defaultState !== undefined) {
           // if not HMR, yet the defaults are form the manager
           setState(defaultState);
           // initialize addonStateCache after first load, so its available for subsequent HMR
-          addonStateCache[addonId] = defaultState;
-          api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, defaultState);
+          addonStateCache[stateId] = defaultState;
+          api.emit(`${SHARED_STATE_SET}-manager-${stateId}`, defaultState);
         }
       },
       [STORY_CHANGED]: () => {
-        if (api.getAddonState(addonId) !== undefined) {
-          api.emit(`${ADDON_STATE_SET}-manager-${addonId}`, api.getAddonState(addonId));
+        if (api.getAddonState(stateId) !== undefined) {
+          api.emit(`${SHARED_STATE_SET}-manager-${stateId}`, api.getAddonState(stateId));
         }
       },
     };
@@ -389,14 +389,23 @@ export function useAddonState<S>(addonId: string, defaultState?: S) {
       ...stateChangeHandlers,
       ...stateInitializationHandlers,
     };
-  }, [addonId]);
+  }, [stateId]);
 
   const emit = useChannel(allListeners);
   return [
     state,
     (newStateOrMerger: S | StateMerger<S>, options?: Options) => {
       setState(newStateOrMerger, options);
-      emit(`${ADDON_STATE_CHANGED}-manager-${addonId}`, newStateOrMerger);
+      emit(`${SHARED_STATE_CHANGED}-manager-${stateId}`, newStateOrMerger);
     },
   ] as [S, (newStateOrMerger: S | StateMerger<S>, options?: Options) => void];
+}
+
+export function useAddonState<S>(addonId: string, defaultState?: S) {
+  return useSharedState<S>(addonId, defaultState);
+}
+
+export function useStoryState<S>(defaultState?: S) {
+  const { storyId } = useStorybookState();
+  return useSharedState<S>(`story-state-${storyId}`, defaultState);
 }
