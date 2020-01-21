@@ -252,6 +252,7 @@ export default class KnobPanel extends PureComponent<KnobPanelProps> {
               href="https://github.com/storybookjs/storybook/tree/master/addons/knobs"
               target="_blank"
               withArrow
+              cancel={false}
             >
               dynamically interact with components
             </Link>
