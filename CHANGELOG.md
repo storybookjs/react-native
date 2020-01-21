@@ -1,3 +1,29 @@
+## 6.0.0-alpha.0 (January 21, 2020)
+
+### Features
+
+* Addon-a11y: Support manual run ([#8883](https://github.com/storybookjs/storybook/pull/8883))
+* Addon-cssresources: Disable SyntaxHighlighter for long code ([#9360](https://github.com/storybookjs/storybook/pull/9360))
+* Core: Improve monorepo support ([#8822](https://github.com/storybookjs/storybook/pull/8822))
+
+### Bug Fixes
+
+* Fixed Angular button example story ([#9540](https://github.com/storybookjs/storybook/pull/9540))
+* Core: Fix generated entry to import at top of file ([#9398](https://github.com/storybookjs/storybook/pull/9398))
+* Preact: Fix story function typescript type ([#9123](https://github.com/storybookjs/storybook/pull/9123))
+* UI: Make canvas link a link ([#9257](https://github.com/storybookjs/storybook/pull/9257))
+
+### Maintenance
+
+* Typescript: Migrate ember ([#9020](https://github.com/storybookjs/storybook/pull/9020))
+* Next 6.0.0 ([#9212](https://github.com/storybookjs/storybook/pull/9212))
+* Lock yarn version ([#9138](https://github.com/storybookjs/storybook/pull/9138))
+* REMOVE subscription_store ([#9228](https://github.com/storybookjs/storybook/pull/9228))
+
+### Dependency Upgrades
+
+* Update husky to v4 ([#9509](https://github.com/storybookjs/storybook/pull/9509))
+
 ## 5.3.7 (January 20, 2020)
 
 ### Bug Fixes
