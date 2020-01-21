@@ -1,6 +1,6 @@
 {
   "name": "@storybook/api",
-  "version": "5.3.7",
+  "version": "6.0.0-alpha.0",
   "description": "Core Storybook API & Context",
   "keywords": [
     "storybook"
@@ -27,12 +27,12 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "@storybook/channels": "5.3.7",
-    "@storybook/client-logger": "5.3.7",
-    "@storybook/core-events": "5.3.7",
+    "@storybook/channels": "6.0.0-alpha.0",
+    "@storybook/client-logger": "6.0.0-alpha.0",
+    "@storybook/core-events": "6.0.0-alpha.0",
     "@storybook/csf": "0.0.1",
-    "@storybook/router": "5.3.7",
-    "@storybook/theming": "5.3.7",
+    "@storybook/router": "6.0.0-alpha.0",
+    "@storybook/theming": "6.0.0-alpha.0",
     "@types/reach__router": "^1.2.3",
     "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1",

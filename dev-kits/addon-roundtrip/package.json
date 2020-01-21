@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-roundtrip",
-  "version": "5.3.7",
+  "version": "6.0.0-alpha.0",
   "description": "roundtrip addon for storybook",
   "keywords": [
     "addon",
@@ -24,13 +24,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.7",
-    "@storybook/api": "5.3.7",
-    "@storybook/client-api": "5.3.7",
-    "@storybook/client-logger": "5.3.7",
-    "@storybook/components": "5.3.7",
-    "@storybook/core-events": "5.3.7",
-    "@storybook/theming": "5.3.7",
+    "@storybook/addons": "6.0.0-alpha.0",
+    "@storybook/api": "6.0.0-alpha.0",
+    "@storybook/client-api": "6.0.0-alpha.0",
+    "@storybook/client-logger": "6.0.0-alpha.0",
+    "@storybook/components": "6.0.0-alpha.0",
+    "@storybook/core-events": "6.0.0-alpha.0",
+    "@storybook/theming": "6.0.0-alpha.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "react": "^16.8.3",
