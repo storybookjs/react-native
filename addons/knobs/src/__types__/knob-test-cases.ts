@@ -15,7 +15,6 @@ import {
 } from '../index';
 
 // Note: this is a helper to batch test return types and avoid "declared but never read" errors
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 function expectKnobOfType<T>(..._: T[]) {}
 
 const groupId = 'GROUP-ID1';

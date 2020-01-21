@@ -14,6 +14,7 @@ module.exports = {
     'react/jsx-fragments': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/no-object-literal-type-assertion': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
     'react/sort-comp': [
       'error',
       {
