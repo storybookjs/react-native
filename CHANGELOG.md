@@ -1,3 +1,13 @@
+## 5.3.8 (January 22, 2020)
+
+### Bug Fixes
+
+* Addon-docs:  Fix TS false default value in prop table ([#9560](https://github.com/storybookjs/storybook/pull/9560))
+* Addon-knobs: Fix broken repo link in empty panel ([#9530](https://github.com/storybookjs/storybook/pull/9530))
+* Typescript: Export IStory in `@storybook/angular` ([#9097](https://github.com/storybookjs/storybook/pull/9097))
+* Fixed Angular button example story ([#9540](https://github.com/storybookjs/storybook/pull/9540))
+* Clean usage of `@types/webpack-env` dep in all packages ([#9536](https://github.com/storybookjs/storybook/pull/9536))
+
 ## 6.0.0-alpha.0 (January 21, 2020)
 
 ### Features
