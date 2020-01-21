@@ -76,9 +76,7 @@ And I can also embed arbitrary markdown & JSX in this file.
 What's happening here:
 
 - Your stories are defined in CSF, but because of `includeStories: []`, they are not actually added to Storybook.
-- The MDX file is adding the stories to Storybook, and using the story function defined in CSF.
-- The MDX loader is using story metadata from CSF, such as name, decorators, parameters, but will give giving preference to anything defined in the MDX file.
-- The MDX file is using the Meta `default` defined in the CSF.
+- The MDX file is simply importing stories as functions in the MDX, and other aspects of the CSF file, such as decorators, parameters, and any other metadata should be applied as needed in the MDX from the import.
 
 ## CSF Stories with arbitrary MDX
 
