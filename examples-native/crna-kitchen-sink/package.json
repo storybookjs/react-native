@@ -32,6 +32,7 @@
     "@babel/core": "^7.7.2",
     "@babel/plugin-transform-react-jsx-source": "^7.2.0",
     "@storybook/addon-actions": "6.0.0-alpha.0",
+    "@storybook/addon-notes": "6.0.0-alpha.0",
     "@storybook/addon-knobs": "6.0.0-alpha.0",
     "@storybook/addon-links": "6.0.0-alpha.0",
     "@storybook/addon-ondevice-actions": "6.0.0-alpha.0",
