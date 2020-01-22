@@ -3093,6 +3093,15 @@
     prop-types "^15.7.2"
     util-deprecate "^1.0.2"
 
+"@storybook/addon-options@6.0.0-alpha.0":
+  version "6.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-6.0.0-alpha.0.tgz#71aa0c9815dd3c2036da63be45b5f8586104ce2d"
+  integrity sha512-Pj0Xf29HB9p5Ej9rauahCG5ataJ6Suz5/iWxvaZXSFxVgsjQ20jZoA2Eg3UzsWtFyvH9WQ2gNVECrphe/8qCwQ==
+  dependencies:
+    "@storybook/addons" "6.0.0-alpha.0"
+    core-js "^3.0.1"
+    util-deprecate "^1.0.2"
+
 "@storybook/addons@6.0.0-alpha.0":
   version "6.0.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.0.0-alpha.0.tgz#f4416a8c9c081961e5950a7962d7a5102138717e"
