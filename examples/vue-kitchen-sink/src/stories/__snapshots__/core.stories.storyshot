@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Storyshots Core/Parameters passed to story 1`] = `
-<div>
-  Parameters are {"docs":{"inlineStories":true,"iframeHeight":"60px"},"options":{},"globalParameter":"globalParameter","framework":"vue","chapterParameter":"chapterParameter","storyParameter":"storyParameter","__id":"core-parameters--passed-to-story"}
-</div>
-`;
