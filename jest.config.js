@@ -25,26 +25,15 @@ module.exports = {
   },
   projects: [
     '<rootDir>',
-    '<rootDir>/examples/cra-kitchen-sink',
-    '<rootDir>/examples/cra-ts-kitchen-sink',
-    '<rootDir>/examples/html-kitchen-sink',
-    '<rootDir>/examples/riot-kitchen-sink',
-    '<rootDir>/examples/svelte-kitchen-sink',
-    '<rootDir>/examples/vue-kitchen-sink',
-    '<rootDir>/examples/angular-cli',
-    '<rootDir>/examples/preact-kitchen-sink',
-    '<rootDir>/examples/rax-kitchen-sink',
   ],
   roots: [
     '<rootDir>/addons',
     '<rootDir>/app',
-    '<rootDir>/lib',
-    '<rootDir>/examples/official-storybook',
   ],
   transform: {
-    '^.+\\.stories\\.[jt]sx?$': '@storybook/addon-storyshots/injectFileName',
+    '^.+\\.stories\\.[jt]sx?$': '<rootDir>/scripts/storyshots-jest-transform.js',
     '^.+\\.[jt]sx?$': '<rootDir>/scripts/babel-jest.js',
-    '^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx',
+    '^.+\\.mdx$': '<rootDir>/scripts/jest-transform-mdx.js',
   },
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
   testPathIgnorePatterns: [

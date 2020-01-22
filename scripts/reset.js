@@ -25,12 +25,7 @@ cleaningProcess.stdout.on('data', data => {
         const [, uri] = i.match(/Would remove (.*)$/) || [];
 
         if (uri) {
-          if (
-            uri.match(/node_modules/) ||
-            uri.match(/dist/) ||
-            uri.match(/\.cache/) ||
-            uri.match(/dll/)
-          ) {
+          if (uri.match(/node_modules/) || uri.match(/dist/) || uri.match(/\.cache/)) {
             del(uri).then(() => {
               logger.log(`deleted ${uri}`);
             });

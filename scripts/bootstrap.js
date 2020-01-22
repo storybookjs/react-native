@@ -93,13 +93,13 @@ function run() {
 
   const tasks = {
     core: createTask({
-      name: `Core, Dll & Examples ${chalk.gray('(core)')}`,
+      name: `Core & Examples ${chalk.gray('(core)')}`,
       defaultValue: true,
       option: '--core',
       command: () => {
         log.info(prefix, 'yarn workspace');
       },
-      pre: ['install', 'build', 'dll'],
+      pre: ['install', 'build'],
       order: 1,
     }),
     reset: createTask({
@@ -130,16 +130,6 @@ function run() {
         spawn('lerna run prepare');
       },
       order: 2,
-    }),
-    dll: createTask({
-      name: `Generate DLL ${chalk.gray('(dll)')}`,
-      defaultValue: false,
-      option: '--dll',
-      command: () => {
-        log.info(prefix, 'dll');
-        spawn('lerna run createDlls --scope "@storybook/ui"');
-      },
-      order: 3,
     }),
     docs: createTask({
       name: `Documentation ${chalk.gray('(docs)')}`,
@@ -182,7 +172,7 @@ function run() {
 
   const groups = {
     main: ['core', 'docs'],
-    buildtasks: ['install', 'build', 'dll', 'packs'],
+    buildtasks: ['install', 'build', 'packs'],
     devtasks: ['dev', 'registry', 'reset'],
   };
 

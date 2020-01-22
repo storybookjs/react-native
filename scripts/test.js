@@ -174,7 +174,7 @@ selection
           ? ''
           : `--projects ${jestProjects.join(' ')}`;
 
-        const cmd = `node --max_old_space_size=4096 ${jest} ${projectsParam} ${extraParams}`;
+        const cmd = `node --max_old_space_size=4096 ${jest} ${projectsParam} --passWithNoTests ${extraParams}`;
 
         spawn(cmd);
       }

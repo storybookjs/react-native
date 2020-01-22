@@ -42,68 +42,9 @@ module.exports = {
   },
   overrides: [
     {
-      test: './examples/vue-kitchen-sink',
-      presets: ['babel-preset-vue'],
-      env: {
-        test: withTests,
-      },
-    },
-    {
-      test: './lib',
-      presets: [
-        ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }],
-        '@babel/preset-react',
-      ],
-      plugins: [
-        ['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }],
-        '@babel/plugin-proposal-export-default-from',
-        '@babel/plugin-syntax-dynamic-import',
-        ['@babel/plugin-proposal-class-properties', { loose: true }],
-        'babel-plugin-macros',
-        ['emotion', { sourceMap: true, autoLabel: true }],
-        '@babel/plugin-transform-react-constant-elements',
-        'babel-plugin-add-react-displayname',
-      ],
-      env: {
-        test: withTests,
-      },
-    },
-    {
       test: './app/react-native',
       presets: ['module:metro-react-native-babel-preset'],
       plugins: ['babel-plugin-macros', ['emotion', { sourceMap: true, autoLabel: true }]],
-    },
-    {
-      test: [
-        './lib/node-logger',
-        './lib/codemod',
-        './addons/storyshots',
-        '**/src/server/**',
-        '**/src/bin/**',
-      ],
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            shippedProposals: true,
-            useBuiltIns: 'usage',
-            targets: {
-              node: '8.11',
-            },
-            corejs: '3',
-          },
-        ],
-      ],
-      plugins: [
-        'emotion',
-        'babel-plugin-macros',
-        ['@babel/plugin-proposal-class-properties', { loose: true }],
-        '@babel/plugin-proposal-object-rest-spread',
-        '@babel/plugin-proposal-export-default-from',
-      ],
-      env: {
-        test: withTests,
-      },
     },
   ],
 };
