@@ -23,13 +23,8 @@ module.exports = {
     'core-js/library/fn/object/assign': 'core-js/es/object/assign',
     'react-syntax-highlighter/dist/esm/(.*)': 'react-syntax-highlighter/dist/cjs/$1',
   },
-  projects: [
-    '<rootDir>',
-  ],
-  roots: [
-    '<rootDir>/addons',
-    '<rootDir>/app',
-  ],
+  projects: ['<rootDir>'],
+  roots: ['<rootDir>/addons', '<rootDir>/app'],
   transform: {
     '^.+\\.stories\\.[jt]sx?$': '<rootDir>/scripts/storyshots-jest-transform.js',
     '^.+\\.[jt]sx?$': '<rootDir>/scripts/babel-jest.js',

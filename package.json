@@ -131,6 +131,7 @@
     "@babel/preset-typescript": "^7.3.3",
     "@babel/runtime": "^7.7.2",
     "@emotion/snapshot-serializer": "^0.8.2",
+    "@jest/transform": "^25.1.0",
     "@storybook/eslint-config-storybook": "^2.0.0",
     "@storybook/linter-config": "^2.0.0",
     "@testing-library/react": "^9.2.0",
