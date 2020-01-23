@@ -1,7 +1,0 @@
-[build]
-  publish = "docs/public"
-  command = "cd docs && yarn && yarn build && cd .."
-[build.environment]
-  NODE_VERSION = "10"
-  YARN_VERSION = "1.19.1"
-  YARN_FLAGS = "--version"
