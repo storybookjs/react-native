@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import {Text} from 'react-native';
 
-import { storiesOf, addDecorator, addParameters } from '@storybook/react-native';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withKnobs } from '@storybook/addon-knobs';
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+import {storiesOf, addDecorator, addParameters} from '@storybook/react-native';
+import {action} from '@storybook/addon-actions';
+import {linkTo} from '@storybook/addon-links';
+import {withKnobs} from '@storybook/addon-knobs';
+import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
 import knobsWrapper from './Knobs';
 // eslint-disable-next-line import/no-unresolved
 import Button from './Button';
@@ -16,8 +16,8 @@ addDecorator(withBackgrounds);
 
 addParameters({
   backgrounds: [
-    { name: 'dark', value: '#222222' },
-    { name: 'white', value: '#ffffff', default: true },
+    {name: 'dark', value: '#222222'},
+    {name: 'white', value: '#ffffff', default: true},
   ],
 });
 
@@ -39,8 +39,8 @@ storiesOf('Button', module)
   })
   .addParameters({
     backgrounds: [
-      { name: 'dark', value: '#222222' },
-      { name: 'light', value: '#eeeeee', default: true },
+      {name: 'dark', value: '#222222'},
+      {name: 'light', value: '#eeeeee', default: true},
     ],
     notes: `
 # Custom note\n
@@ -67,14 +67,14 @@ const globalParameter = 'globalParameter';
 const chapterParameter = 'chapterParameter';
 const storyParameter = 'storyParameter';
 
-addParameters({ globalParameter });
+addParameters({globalParameter});
 
 storiesOf('Core|Parameters', module)
-  .addParameters({ chapterParameter })
+  .addParameters({chapterParameter})
   .add(
     'passed to story',
-    ({ parameters }) => <Text>Parameters are {JSON.stringify(parameters)}</Text>,
+    ({parameters}) => <Text>Parameters are {JSON.stringify(parameters)}</Text>,
     {
       storyParameter,
-    }
+    },
   );

@@ -1,4 +1,4 @@
-name: Detox
+name: E2E Detox tests
 
 on: [push, pull_request]
 
