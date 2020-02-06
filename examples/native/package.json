@@ -22,19 +22,18 @@
     "@babel/core": "^7.8.4",
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^0.0.7",
-
     "@storybook/addon-actions": "6.0.0-alpha.0",
-    "@storybook/addon-notes": "6.0.0-alpha.0",
-    "@storybook/addon-options": "6.0.0-alpha.0",
     "@storybook/addon-knobs": "6.0.0-alpha.0",
     "@storybook/addon-links": "6.0.0-alpha.0",
+    "@storybook/addon-notes": "6.0.0-alpha.0",
     "@storybook/addon-ondevice-actions": "6.0.0-alpha.0",
     "@storybook/addon-ondevice-backgrounds": "6.0.0-alpha.0",
     "@storybook/addon-ondevice-knobs": "6.0.0-alpha.0",
     "@storybook/addon-ondevice-notes": "6.0.0-alpha.0",
+    "@storybook/addon-options": "6.0.0-alpha.0",
     "@storybook/addons": "6.0.0-alpha.0",
-
     "babel-jest": "^25.1.0",
+    "detox": "^15.1.4",
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.58.0",
@@ -42,5 +41,26 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/native.app",
+        "build": "xcodebuild -workspace ios/native.xcworkspace -scheme native -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "device": {
+          "type": "iPhone 11 Pro"
+        }
+      },
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/native.app",
+        "build": "xcodebuild -workspace ios/native.xcworkspace -scheme native -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "device": {
+          "type": "iPhone 11 Pro"
+        }
+      }
+    },
+    "test-runner": "jest"
   }
 }

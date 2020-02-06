@@ -28,7 +28,7 @@
       "app/*",
       "examples/*"
     ],
-    "nohoist": ["**/react-native", "**/react-native/**"]
+    "nohoist": ["**/react-native", "**/react-native/**", "**/detox", "**/detox/**"]
   },
   "scripts": {
     "await-serve-storybooks": "wait-on http://localhost:8001",
