@@ -28,7 +28,12 @@
       "app/*",
       "examples/*"
     ],
-    "nohoist": ["**/react-native", "**/react-native/**", "**/detox", "**/detox/**"]
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/detox",
+      "**/detox/**"
+    ]
   },
   "scripts": {
     "await-serve-storybooks": "wait-on http://localhost:8001",
@@ -106,6 +111,9 @@
     ]
   },
   "browserslist": "defaults",
+  "dependencies": {
+    "@types/react-native": "^0.61.10"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",

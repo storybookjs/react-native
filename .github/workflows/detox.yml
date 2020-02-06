@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: macOS-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
 
     env:
       DEVELOPER_DIR: /Applications/Xcode_11.2.app
@@ -22,6 +22,9 @@ jobs:
 
     - name: Install Dependencies
       run: yarn install
+
+    - name: Bootstrap
+      run: yarn bootstrap --core
 
     - name: Cache Pods
       uses: actions/cache@v1
