@@ -25,17 +25,26 @@ jobs:
 
     - name: Cache Pods
       uses: actions/cache@v1
+      working-directory: ./examples/native
       id: podcache
       with:
-        path: examples/native/ios/Pods
+        path: ios/Pods
         key: pods-${{ hashFiles('**/Podfile.lock') }}
 
     - name: Update Pods
+      working-directory: ./examples/native
       run: |
-        cd examples/native
         gem update cocoapods xcodeproj
         cd ios && pod install && cd ..
-    - run: brew tap wix/brew
+    
+        - run: brew tap wix/brew
+    
     - run: brew install applesimutils
-    - run: yarn detox build --configuration ios.sim.release
-    - run: yarn detox test --configuration ios.sim.release --cleanup
+
+    - name: Detox build
+      working-directory: ./examples/native
+      run: yarn detox build --configuration ios.sim.release
+
+    - name: Detox test
+      working-directory: ./examples/native
+      run: yarn detox test --configuration ios.sim.release --cleanup
