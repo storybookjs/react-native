@@ -1,0 +1,41 @@
+name: Detox
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    timeout-minutes: 15
+
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_11.2.app
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: node_modules
+        key: node-modules-${{ hashFiles('**/yarn.lock') }}
+
+    - name: Install Dependencies
+      run: yarn install
+
+    - name: Cache Pods
+      uses: actions/cache@v1
+      id: podcache
+      with:
+        path: examples/native/ios/Pods
+        key: pods-${{ hashFiles('**/Podfile.lock') }}
+
+    - name: Update Pods
+      run: |
+        cd examples/native
+        gem update cocoapods xcodeproj
+        cd ios && pod install && cd ..
+    - run: brew tap wix/brew
+    - run: brew install applesimutils
+    - run: yarn detox build --configuration ios.sim.release
+    - run: yarn detox test --configuration ios.sim.release --cleanup
