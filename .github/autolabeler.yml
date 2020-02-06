@@ -19,7 +19,6 @@
 'app: react-native': ["app/react-native/**"]
 'app: react': ["app/react/**"]
 'app: vue': ["app/vue/**"]
-'app: svelte': ["app/svelte/**"]
 'app: mithril': ["app/mithril/**"]
 'babel / webpack': ["webpack", "babel"]
 'cli': ["lib/cli/**"]

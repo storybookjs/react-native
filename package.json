@@ -68,8 +68,7 @@
     "start": "yarn --cwd examples/official-storybook storybook",
     "test": "node ./scripts/test.js",
     "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
-    "test:cli": "npm --prefix lib/cli run test",
-    "test:e2e-gui": "concurrently --success first --kill-others \"cypress open\" \"yarn serve-storybooks\""
+    "test:cli": "npm --prefix lib/cli run test"
   },
   "husky": {
     "hooks": {
@@ -111,9 +110,6 @@
     ]
   },
   "browserslist": "defaults",
-  "dependencies": {
-    "@types/react-native": "^0.61.10"
-  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
@@ -140,6 +136,7 @@
     "@types/lodash": "^4.14.149",
     "@types/node": "^12.12.11",
     "@types/react": "^16.8.14",
+    "@types/react-native": "^0.61.10",
     "@types/semver": "^6.0.0",
     "@types/webpack": "^4.41.0",
     "@types/webpack-env": "^1.15.0",
@@ -167,7 +164,6 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "^6.5.1",
-    "eslint-plugin-cypress": "^2.7.0",
     "eslint-plugin-react": "^7.15.1",
     "esm": "^3.2.25",
     "github-release-from-changelog": "^2.1.0",
@@ -206,22 +202,14 @@
     "remark-cli": "^7.0.0",
     "remark-lint": "^6.0.4",
     "remark-preset-lint-recommended": "^3.0.2",
-    "riot-jest-transformer": "^2.0.0",
     "shelljs": "^0.8.3",
     "shx": "^0.3.2",
     "sort-package-json": "^1.21.0",
-    "storybook-chromatic": "^3.0.0",
-    "svelte": "^3.15.0",
-    "svelte-jest": "^0.3.0",
     "trash": "^6.1.1",
     "ts-dedent": "^1.1.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.0",
     "wait-on": "^3.3.0"
-  },
-  "optionalDependencies": {
-    "@cypress/webpack-preprocessor": "^4.1.0",
-    "cypress": "^3.4.1"
   },
   "engines": {
     "node": ">=8.10.0",

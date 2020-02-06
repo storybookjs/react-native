@@ -50,13 +50,6 @@ const tasks = {
     projectLocation: '<all>',
     isJest: true,
   }),
-  puppeteer: createProject({
-    name: `Puppeteer and A11y tests for Official storybook ${chalk.gray('(puppeteer)')}`,
-    defaultValue: false,
-    option: '--puppeteer',
-    projectLocation: path.join(__dirname, '..', 'examples/official-storybook/storyshots-puppeteer'),
-    isJest: true,
-  }),
   cli: createProject({
     name: `Command Line Interface ${chalk.gray('(cli)')}`,
     defaultValue: false,
