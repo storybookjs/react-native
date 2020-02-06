@@ -40,11 +40,4 @@ module.exports = {
   env: {
     test: withTests,
   },
-  overrides: [
-    {
-      test: './app/react-native',
-      presets: ['module:metro-react-native-babel-preset'],
-      plugins: ['babel-plugin-macros', ['emotion', { sourceMap: true, autoLabel: true }]],
-    },
-  ],
 };
