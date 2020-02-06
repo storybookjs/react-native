@@ -1,0 +1,46 @@
+{
+  "name": "native",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "workspaces": {
+    "nohoist": [
+      "react-native"
+    ]
+  },
+  "dependencies": {
+    "react": "16.9.0",
+    "react-native": "0.61.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^0.0.7",
+
+    "@storybook/addon-actions": "6.0.0-alpha.0",
+    "@storybook/addon-notes": "6.0.0-alpha.0",
+    "@storybook/addon-options": "6.0.0-alpha.0",
+    "@storybook/addon-knobs": "6.0.0-alpha.0",
+    "@storybook/addon-links": "6.0.0-alpha.0",
+    "@storybook/addon-ondevice-actions": "6.0.0-alpha.0",
+    "@storybook/addon-ondevice-backgrounds": "6.0.0-alpha.0",
+    "@storybook/addon-ondevice-knobs": "6.0.0-alpha.0",
+    "@storybook/addon-ondevice-notes": "6.0.0-alpha.0",
+    "@storybook/addons": "6.0.0-alpha.0",
+
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react-test-renderer": "16.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

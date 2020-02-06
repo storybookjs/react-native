@@ -38,6 +38,9 @@
     "react-native-modal-selector": "^1.0.2",
     "react-native-switch": "^1.5.0"
   },
+  "devDependencies": {
+    "@storybook/addon-knobs": "6.0.0-alpha.0"
+  },
   "peerDependencies": {
     "@storybook/addon-knobs": "6.0.0-alpha.0",
     "react": "*",
