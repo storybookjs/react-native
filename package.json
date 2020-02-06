@@ -4,17 +4,11 @@
   "private": true,
   "description": "Storybook is an open source tool for developing UI components in isolation for React, Vue and Angular. It makes building stunning UIs organized and efficient.",
   "keywords": [
-    "angular",
-    "angularjs",
-    "babel",
     "components",
     "documentation",
     "frontend",
-    "jamstack",
     "markup",
-    "rax",
-    "react",
-    "reactjs",
+    "react-native",
     "reuseable",
     "storybook",
     "storybookjs",
@@ -22,24 +16,17 @@
     "tool",
     "ui",
     "user interface",
-    "vue",
-    "vuejs"
   ],
   "homepage": "https://storybook.js.org/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook.git"
+    "url": "https://github.com/storybookjs/react-native.git"
   },
   "workspaces": {
     "packages": [
       "addons/*",
-      "addons/storyshots/*",
       "app/*",
-      "dev-kits/*",
-      "examples-native/*",
-      "examples/*",
-      "lib/*",
-      "lib/cli/test/run/*"
+      "examples/*"
     ],
     "nohoist": ["**/react-native", "**/react-native/**"]
   },

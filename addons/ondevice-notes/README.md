@@ -40,4 +40,4 @@ storiesOf('Component', module).add('with some emoji', () => <Component />, {
 });
 ```
 
-See the [crna-kitchen-sink app](../../examples-native/crna-kitchen-sink) for more examples.
+See the [crna-kitchen-sink app](../../examples/crna-kitchen-sink) for more examples.

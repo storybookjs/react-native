@@ -50,7 +50,7 @@ jobs:
       - run:
           name: Run React-Native-App example
           command: |
-            cd examples-native/crna-kitchen-sink
+            cd examples/crna-kitchen-sink
             yarn storybook --smoke-test
       - run:
           name: Publish React-Native-App example

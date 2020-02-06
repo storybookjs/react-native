@@ -29,4 +29,4 @@ Then import `rn-addons.js` next to your `getStorybookUI` call.
 import './rn-addons';
 ```
 
-See [@storybook/addon-knobs](https://github.com/storybookjs/storybook/blob/master/addons/knobs) to learn how to write stories with knobs and the [crna-kitchen-sink app](../../examples-native/crna-kitchen-sink) for more examples.
+See [@storybook/addon-knobs](https://github.com/storybookjs/storybook/blob/master/addons/knobs) to learn how to write stories with knobs and the [crna-kitchen-sink app](../../examples/crna-kitchen-sink) for more examples.

@@ -49,4 +49,4 @@ storiesOf('Button', module)
   .add('with text', () => <Text>Click me</Text>);
 ```
 
-See [web backgrounds addon](../backgrounds#usage) for detailed usage and the [crna-kitchen-sink app](../../examples-native/crna-kitchen-sink) for more examples.
+See [web backgrounds addon](../backgrounds#usage) for detailed usage and the [crna-kitchen-sink app](../../examples/crna-kitchen-sink) for more examples.
