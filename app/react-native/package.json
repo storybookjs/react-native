@@ -41,8 +41,7 @@
     "react-native-swipe-gestures": "^1.0.4"
   },
   "devDependencies": {
-    "@types/react-native": "^0.57.57",
-    "react-native": "^0.57.8"
+    "@types/react-native": "^0.57.57"
   },
   "peerDependencies": {
     "react": "*",

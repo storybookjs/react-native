@@ -30,16 +30,19 @@
     "type": "git",
     "url": "https://github.com/storybookjs/storybook.git"
   },
-  "workspaces": [
-    "addons/*",
-    "addons/storyshots/*",
-    "app/*",
-    "dev-kits/*",
-    "examples-native/*",
-    "examples/*",
-    "lib/*",
-    "lib/cli/test/run/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "addons/*",
+      "addons/storyshots/*",
+      "app/*",
+      "dev-kits/*",
+      "examples-native/*",
+      "examples/*",
+      "lib/*",
+      "lib/cli/test/run/*"
+    ],
+    "nohoist": ["**/react-native", "**/react-native/**"]
+  },
   "scripts": {
     "await-serve-storybooks": "wait-on http://localhost:8001",
     "bootstrap": "node ./scripts/bootstrap.js",
