@@ -13,7 +13,6 @@ webpack
 addons
 styleguide-type
 styleguides
-angularjs
 api
 github
 config

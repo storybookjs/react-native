@@ -4,11 +4,6 @@ const path = require('path');
 const shell = require('shelljs');
 
 function getCommand(watch) {
-  // Compile angular with tsc
-  if (process.cwd().includes(path.join('app', 'angular'))) {
-    return '';
-  }
-
   const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
 
   const args = [
@@ -18,11 +13,6 @@ function getCommand(watch) {
     `--copy-files`,
   ];
 
-  /*
-   * angular needs to be compiled with tsc; a compilation with babel is possible but throws
-   * runtime errors because of the the babel decorators plugin
-   * Only transpile .js and let tsc do the job for .ts files
-   */
   if (process.cwd().includes(path.join('addons', 'storyshots'))) {
     args.push(`--extensions ".js"`);
   } else {

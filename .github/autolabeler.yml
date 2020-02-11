@@ -12,7 +12,6 @@
 'addon: options': ["addons/options/**"]
 'addon: storyshots': ["addons/storyshots/**"]
 'addon: viewport': ["addons/viewport/**"]
-'app: angular': ["app/angular/**"]
 'app: polymer ': ["app/polymer/**"]
 'app: preact': ["app/preact/**"]
 'app: rax': ["app/rax/**"]

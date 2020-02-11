@@ -18,6 +18,7 @@ interface Props {
   id: number | string;
   active: boolean;
   onPress: (id: number | string) => void;
+  testID: string;
 }
 
 export default class Button extends PureComponent<Props> {
@@ -27,10 +28,10 @@ export default class Button extends PureComponent<Props> {
   };
 
   render() {
-    const { active, children } = this.props;
+    const { active, children, testID } = this.props;
 
     return (
-      <TouchableOpacity onPress={this.onPress} activeOpacity={0.8}>
+      <TouchableOpacity testID={testID} onPress={this.onPress} activeOpacity={0.8}>
         <ButtonText active={active}>{children}</ButtonText>
         <ActiveBorder active={active} />
       </TouchableOpacity>

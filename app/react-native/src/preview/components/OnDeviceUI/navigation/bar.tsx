@@ -22,13 +22,23 @@ export default class Bar extends PureComponent<Props> {
     const { index, onPress } = this.props;
     return (
       <Container>
-        <Button onPress={onPress} id={NAVIGATOR} active={index === NAVIGATOR}>
+        <Button
+          onPress={onPress}
+          testID="BottomMenu.Navigator"
+          id={NAVIGATOR}
+          active={index === NAVIGATOR}
+        >
           NAVIGATOR
         </Button>
-        <Button onPress={onPress} id={PREVIEW} active={index === PREVIEW}>
+        <Button
+          onPress={onPress}
+          testID="BottomMenu.Preview"
+          id={PREVIEW}
+          active={index === PREVIEW}
+        >
           PREVIEW
         </Button>
-        <Button onPress={onPress} id={ADDONS} active={index === ADDONS}>
+        <Button onPress={onPress} testID="BottomMenu.Addons" id={ADDONS} active={index === ADDONS}>
           ADDONS
         </Button>
       </Container>
