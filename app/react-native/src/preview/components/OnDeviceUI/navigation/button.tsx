@@ -18,7 +18,7 @@ interface Props {
   id: number | string;
   active: boolean;
   onPress: (id: number | string) => void;
-  testID: string;
+  testID?: string;
 }
 
 export default class Button extends PureComponent<Props> {
