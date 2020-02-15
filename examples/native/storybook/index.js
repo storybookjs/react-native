@@ -18,5 +18,7 @@ configure(() => {
 
 // const StorybookUIRoot = getStorybookUI({ theme: darkTheme });
 
-const StorybookUIRoot = getStorybookUI();
+const StorybookUIRoot = getStorybookUI({
+  asyncStorage: false,
+});
 export default StorybookUIRoot;
