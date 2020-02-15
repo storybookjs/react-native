@@ -54,7 +54,7 @@ export default class Preview {
     this._addons = {};
     this._decorators = [];
     this._stories = new StoryStore({ channel: null });
-    this._clientApi = new ClientApi({ storyStore: this._stories });
+    this._clientApi = new ClientApi({ storyStore: this._stories, disableAddStoryHotReload: true });
   }
 
   api = () => {
@@ -126,17 +126,16 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
       this._stories.setChannel(channel);
 
       channel.emit(Events.CHANNEL_CREATED);
+
+      channel.on(Events.GET_STORIES, () => this._sendSetStories());
+      channel.on(Events.SET_CURRENT_STORY, (d) => this._selectStoryEvent(d));
+      this._sendSetStories();
+
+      addons.loadAddons(this._clientApi);
     }
-
-    channel.on(Events.GET_STORIES, () => this._sendSetStories());
-    channel.on(Events.SET_CURRENT_STORY, (d) => this._selectStoryEvent(d));
-
-    this._sendSetStories();
 
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const preview = this;
-
-    addons.loadAddons(this._clientApi);
 
     const appliedTheme = { ...theme, ...params.theme };
 
