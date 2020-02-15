@@ -7,7 +7,7 @@ module.exports = {
       'never',
       { ignorePackages: true, md: 'always', svg: 'always', json: 'always', tag: 'always' },
     ],
-    'import/no-unresolved': ['error', { ignore: ['@storybook'] }],
+    'import/no-unresolved': ['error', { ignore: ['@storybook', 'detox'] }],
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
     'react/jsx-props-no-spreading': 'off',
