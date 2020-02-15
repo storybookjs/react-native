@@ -18,6 +18,8 @@
     "directory": "addons/ondevice-backgrounds"
   },
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*",
     "docs/**/*",
@@ -25,15 +27,13 @@
     "*.js",
     "*.d.ts"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "6.0.0-alpha.0",
-    "@storybook/api": "6.0.0-alpha.0",
-    "@storybook/client-api": "6.0.0-alpha.0",
+    "@storybook/addons": "5.3.13",
+    "@storybook/api": "5.3.13",
+    "@storybook/client-api": "5.3.13",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2"
   },

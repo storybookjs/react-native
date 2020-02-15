@@ -14,6 +14,7 @@
     "url": "https://github.com/storybookjs/storybook.git"
   },
   "license": "MIT",
+  "main": "dist/index.js",
   "files": [
     "dist/**/*",
     "docs/**/*",
@@ -21,18 +22,17 @@
     "*.js",
     "*.d.ts"
   ],
-  "main": "dist/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "6.0.0-alpha.0",
-    "@storybook/core-events": "6.0.0-alpha.0",
+    "@storybook/addons": "5.3.13",
+    "@storybook/core-events": "5.3.13",
     "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "6.0.0-alpha.0"
+    "@storybook/addon-actions": "5.3.13"
   },
   "peerDependencies": {
     "@storybook/addon-actions": "*",

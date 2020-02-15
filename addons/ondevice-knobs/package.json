@@ -15,6 +15,7 @@
     "directory": "addons/ondevice-knobs"
   },
   "license": "MIT",
+  "main": "dist/index.js",
   "files": [
     "dist/**/*",
     "docs/**/*",
@@ -22,14 +23,13 @@
     "*.js",
     "*.d.ts"
   ],
-  "main": "dist/index.js",
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
     "@emotion/native": "^10.0.14",
-    "@storybook/addons": "6.0.0-alpha.0",
-    "@storybook/core-events": "6.0.0-alpha.0",
+    "@storybook/addons": "5.3.13",
+    "@storybook/core-events": "5.3.13",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -39,10 +39,10 @@
     "react-native-switch": "^1.5.0"
   },
   "devDependencies": {
-    "@storybook/addon-knobs": "6.0.0-alpha.0"
+    "@storybook/addon-knobs": "5.3.13"
   },
   "peerDependencies": {
-    "@storybook/addon-knobs": "6.0.0-alpha.0",
+    "@storybook/addon-knobs": "5.3.13",
     "react": "*",
     "react-native": "*"
   },
