@@ -54,7 +54,10 @@ export default class Preview {
     this._addons = {};
     this._decorators = [];
     this._stories = new StoryStore({ channel: null });
-    this._clientApi = new ClientApi({ storyStore: this._stories, disableAddStoryHotReload: true });
+    this._clientApi = new ClientApi({
+      storyStore: this._stories,
+      noStoryModuleAddMethodHotDispose: true,
+    });
   }
 
   api = () => {
