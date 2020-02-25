@@ -31,9 +31,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.13",
-    "@storybook/api": "5.3.13",
-    "@storybook/client-api": "5.3.13",
+    "@storybook/addons": "6.0.0-alpha.19",
+    "@storybook/api": "6.0.0-alpha.19",
+    "@storybook/client-api": "6.0.0-alpha.19",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2"
   },
