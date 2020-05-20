@@ -16,8 +16,8 @@ import getHost from './rn-host-detect';
 const STORAGE_KEY = 'lastOpenedStory';
 
 interface AsyncStorage {
-  getItem: <T>(key: string) => Promise<T>;
-  setItem: <T>(key: string, value: T) => Promise<void>;
+  getItem: (key: string) => Promise<string | null>;
+  setItem: (key: string, value: string) => Promise<void>;
 }
 
 export type Params = {
