@@ -35,7 +35,7 @@
     "prop-types": "^15.7.2",
     "react-native-color-picker": "^0.4.0",
     "react-native-modal-datetime-picker": "^7.4.2",
-    "react-native-modal-selector": "^1.0.2",
+    "react-native-modal-selector": "^2.0.2",
     "react-native-switch": "^1.5.0"
   },
   "devDependencies": {
