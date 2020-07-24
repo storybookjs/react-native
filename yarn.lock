@@ -18887,7 +18887,7 @@ react-native-modal-datetime-picker@^7.4.2:
 
 react-native-modal-selector@^2.0.2:
   version "2.0.2"
-  resolved "http://artifactory-prd.prd.betfair/artifactory/api/npm/npm/react-native-modal-selector/-/react-native-modal-selector-2.0.2.tgz#dd3589cfe0a3f176a8dc6f7dc79b3f638341864b"
+  resolved "https://registry.yarnpkg.com/react-native-modal-selector/-/react-native-modal-selector-2.0.2.tgz#dd3589cfe0a3f176a8dc6f7dc79b3f638341864b"
   integrity sha1-3TWJz+Cj8Xao3G99x5s/Y4NBhks=
   dependencies:
     prop-types "^15.5.10"
