@@ -1,7 +1,9 @@
 import { fail, danger } from 'danger';
 import { execSync } from 'child_process';
 
-const { flatten, intersection, isEmpty } = require('./lodash.min.js');
+execSync('npm install lodash; rm -f package-lock.json');
+
+const { flatten, intersection, isEmpty } = require('lodash');
 
 const pkg = require('../../package.json'); // eslint-disable-line import/newline-after-import
 const prLogConfig = pkg['pr-log'];
