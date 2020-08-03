@@ -1,7 +1,7 @@
 import { fail, danger } from 'danger';
 import { execSync } from 'child_process';
 
-execSync('npm install lodash');
+execSync('yarn install lodash');
 
 const { flatten, intersection, isEmpty } = require('lodash');
 
@@ -24,11 +24,18 @@ const checkRequiredLabels = labels => {
     branchVersion === Versions.PATCH ? 'feature request' : [],
   ]);
 
-  const requiredLabels = flatten([prLogConfig.skipLabels || [], (prLogConfig.validLabels || []).map(keyVal => keyVal[0])]);
+  const requiredLabels = flatten([
+    prLogConfig.skipLabels || [],
+    (prLogConfig.validLabels || []).map(keyVal => keyVal[0]),
+  ]);
 
   const blockingLabels = intersection(forbiddenLabels, labels);
   if (!isEmpty(blockingLabels)) {
-    fail(`PR is marked with ${blockingLabels.map(label => `"${label}"`).join(', ')} label${blockingLabels.length > 1 ? 's' : ''}.`);
+    fail(
+      `PR is marked with ${blockingLabels.map(label => `"${label}"`).join(', ')} label${
+        blockingLabels.length > 1 ? 's' : ''
+      }.`
+    );
   }
 
   const foundLabels = intersection(requiredLabels, labels);
