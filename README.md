@@ -128,4 +128,4 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 
 ## Learn More
 
-Check the `docs` directory in this repo for more advanced setup guides and other info.
+More documentation to come!
