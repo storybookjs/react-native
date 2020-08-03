@@ -1,9 +1,19 @@
 import { fail, danger } from 'danger';
 import { execSync } from 'child_process';
 
-execSync('npm install lodash; rm -f package-lock.json');
+// execSync('npm install lodash');
 
-const { flatten, intersection, isEmpty } = require('lodash');
+// const { flatten, intersection, isEmpty } = require('lodash');
+const flatten = (arr: any[]) =>
+  arr.reduce((prev: any[], cur: any) => {
+    return prev.concat(cur);
+  }, []);
+
+const intersection = (arr1: any[], arr2: any[]) =>
+  [arr1, arr2].reduce((prev, cur) => prev.filter(item => cur.includes(item)));
+
+const isEmpty = (obj: any) =>
+  [Object, Array].includes((obj || {}).constructor) && !Object.entries(obj || {}).length;
 
 const pkg = require('../../package.json'); // eslint-disable-line import/newline-after-import
 const prLogConfig = pkg['pr-log'];
@@ -20,8 +30,8 @@ const checkRequiredLabels = labels => {
   const forbiddenLabels = flatten([
     'do not merge',
     'in progress',
-    branchVersion !== Versions.MAJOR ? 'BREAKING CHANGE' : [],
-    branchVersion === Versions.PATCH ? 'feature request' : [],
+    'branchVersion' !== Versions.MAJOR ? 'BREAKING CHANGE' : [],
+    'branchVersion' === Versions.PATCH ? 'feature request' : [],
   ]);
 
   const requiredLabels = flatten([
