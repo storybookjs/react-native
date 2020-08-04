@@ -190,7 +190,7 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
       try {
         let value = this._asyncStorageStoryId;
         if (!value && this._asyncStorage) {
-          value = JSON.parse(await this._asyncStorage.getItem<string>(STORAGE_KEY));
+          value = JSON.parse(await this._asyncStorage.getItem(STORAGE_KEY));
           this._asyncStorageStoryId = value;
         }
 
