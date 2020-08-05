@@ -35,7 +35,7 @@ class ObjectType extends React.Component {
     return JSON.stringify(knob.value, null, 2);
   }
 
-  handleChange = value => {
+  handleChange = (value) => {
     const { onChange } = this.props;
 
     const withReplacedQuotes = value
@@ -85,7 +85,7 @@ class ObjectType extends React.Component {
 
 ObjectType.defaultProps = {
   knob: {},
-  onChange: value => value,
+  onChange: (value) => value,
 };
 
 ObjectType.propTypes = {
@@ -96,7 +96,7 @@ ObjectType.propTypes = {
   onChange: PropTypes.func,
 };
 
-ObjectType.serialize = object => JSON.stringify(object);
-ObjectType.deserialize = value => (value ? JSON.parse(value) : {});
+ObjectType.serialize = (object) => JSON.stringify(object);
+ObjectType.deserialize = (value) => (value ? JSON.parse(value) : {});
 
 export default ObjectType;

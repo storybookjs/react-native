@@ -24,7 +24,7 @@ const TextType = ({ knob, onChange }) => (
 
 TextType.defaultProps = {
   knob: {},
-  onChange: value => value,
+  onChange: (value) => value,
 };
 
 TextType.propTypes = {
@@ -35,7 +35,7 @@ TextType.propTypes = {
   onChange: PropTypes.func,
 };
 
-TextType.serialize = value => value;
-TextType.deserialize = value => value;
+TextType.serialize = (value) => value;
+TextType.deserialize = (value) => value;
 
 export default TextType;

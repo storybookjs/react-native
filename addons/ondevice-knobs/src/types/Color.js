@@ -34,7 +34,7 @@ class ColorType extends React.Component {
     });
   };
 
-  onChangeColor = color => {
+  onChangeColor = (color) => {
     const { onChange } = this.props;
 
     onChange(fromHsv(color));
@@ -95,10 +95,10 @@ ColorType.propTypes = {
 };
 ColorType.defaultProps = {
   knob: {},
-  onChange: value => value,
+  onChange: (value) => value,
 };
 
-ColorType.serialize = value => value;
-ColorType.deserialize = value => value;
+ColorType.serialize = (value) => value;
+ColorType.deserialize = (value) => value;
 
 export default ColorType;

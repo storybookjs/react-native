@@ -15,7 +15,7 @@ const getNextTransformer = (filename, config) => {
   return new ScriptTransformer({
     ...config,
     transform: [
-      ...config.transform.filter(entry => entry !== self),
+      ...config.transform.filter((entry) => entry !== self),
       ...jsTransforms.map(([pattern, ...rest]) => [self[0], ...rest]),
     ],
   });

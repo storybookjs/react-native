@@ -32,7 +32,7 @@ export const Notes = ({ active, api }: NotesProps) => {
   return (
     <View style={{ padding: 10, flex: 1 }}>
       <ThemeContext.Consumer>
-        {theme => (
+        {(theme) => (
           <Markdown styles={{ text: { color: (theme as any).labelColor } }}>
             {textAfterFormatted}
           </Markdown>

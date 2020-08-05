@@ -1,4 +1,4 @@
-import {expect, element, by} from 'detox';
+import { expect, element, by } from 'detox';
 
 describe('Example', () => {
   it('should have welcome screen', async () => {

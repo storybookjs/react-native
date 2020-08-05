@@ -16,12 +16,12 @@ const cleaningProcess = spawn('git', [
   '--exclude=".idea"',
 ]);
 
-cleaningProcess.stdout.on('data', data => {
+cleaningProcess.stdout.on('data', (data) => {
   if (data && data.toString()) {
     const l = data
       .toString()
       .split(/\n/)
-      .forEach(i => {
+      .forEach((i) => {
         const [, uri] = i.match(/Would remove (.*)$/) || [];
 
         if (uri) {
@@ -34,7 +34,7 @@ cleaningProcess.stdout.on('data', data => {
               .then(() => {
                 logger.log(`trashed ${uri}`);
               })
-              .catch(e => {
+              .catch((e) => {
                 logger.log('failed to trash, will try permanent delete');
                 trash(uri);
               });
@@ -42,13 +42,13 @@ cleaningProcess.stdout.on('data', data => {
         }
       });
   }
-  fs.appendFile('reset.log', data, err => {
+  fs.appendFile('reset.log', data, (err) => {
     if (err) {
       throw err;
     }
   });
 });
-cleaningProcess.on('exit', code => {
+cleaningProcess.on('exit', (code) => {
   if (code === 0) {
     logger.log('all went well, files are being trashed now');
   } else {

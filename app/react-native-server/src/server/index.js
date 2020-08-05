@@ -31,8 +31,8 @@ export default class Server {
       }
     }
 
-    socket.on('message', data => {
-      this.wsServer.clients.forEach(c => {
+    socket.on('message', (data) => {
+      this.wsServer.clients.forEach((c) => {
         if (!this.options.manualId || (socket.pairedId && socket.pairedId === c.pairedId)) {
           c.send(data);
         }

@@ -10,14 +10,14 @@ import nodeCleanup from 'node-cleanup';
 
 const logger = console;
 
-const freePort = port => detectFreePort(port);
+const freePort = (port) => detectFreePort(port);
 
 let verdaccioProcess;
 
-const startVerdaccio = port => {
+const startVerdaccio = (port) => {
   let resolved = false;
   return Promise.race([
-    new Promise(res => {
+    new Promise((res) => {
       verdaccioProcess = spawn('npx', [
         'verdaccio@4.0.1',
         '-c',
@@ -25,13 +25,13 @@ const startVerdaccio = port => {
         '-l',
         port,
       ]);
-      verdaccioProcess.stdout.on('data', data => {
+      verdaccioProcess.stdout.on('data', (data) => {
         if (!resolved && data && data.toString().match(/http address/)) {
           const [url] = data.toString().match(/(http:.*\d\/)/);
           res(url);
           resolved = true;
         }
-        fs.appendFile('verdaccio.log', data, err => {
+        fs.appendFile('verdaccio.log', data, (err) => {
           if (err) {
             throw err;
           }
@@ -89,11 +89,11 @@ const applyRegistriesUrl = (yarnUrl, npmUrl, originalYarnUrl, originalNpmUrl) =>
   return registriesUrl(yarnUrl, npmUrl);
 };
 
-const addUser = url =>
+const addUser = (url) =>
   new Promise((res, rej) => {
     logger.log(`👤 add temp user to verdaccio`);
 
-    exec(`npx npm-cli-adduser -r "${url}" -a -u user -p password -e user@example.com`, e => {
+    exec(`npx npm-cli-adduser -r "${url}" -a -u user -p password -e user@example.com`, (e) => {
       if (e) {
         rej(e);
       } else {
@@ -113,7 +113,7 @@ const publish = (packages, url) =>
       return new Promise((res, rej) => {
         logger.log(`🛫 publishing ${name} (${location})`);
         const command = `cd ${location} && npm publish --registry ${url} --force --access restricted`;
-        exec(command, e => {
+        exec(command, (e) => {
           if (e) {
             rej(e);
           } else {
@@ -187,7 +187,7 @@ const askForPublish = (packages, url, version) =>
       return false;
     });
 
-const askForSubset = packages =>
+const askForSubset = (packages) =>
   inquirer
     .prompt([
       {
@@ -195,10 +195,10 @@ const askForSubset = packages =>
         message: 'which packages?',
         name: 'subset',
         pageSize: packages.length,
-        choices: packages.map(p => ({ name: p.name, checked: true })),
+        choices: packages.map((p) => ({ name: p.name, checked: true })),
       },
     ])
-    .then(({ subset }) => packages.filter(p => subset.includes(p.name)));
+    .then(({ subset }) => packages.filter((p) => subset.includes(p.name)));
 
 const run = async () => {
   const port = await freePort(4873);

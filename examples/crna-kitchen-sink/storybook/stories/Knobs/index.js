@@ -56,7 +56,7 @@ export default () => {
       <Text>My wallet contains: ${dollars.toFixed(2)}</Text>
       <Text>In my backpack, I have:</Text>
       <View>
-        {items.map(item => (
+        {items.map((item) => (
           <Text key={item}>{item}</Text>
         ))}
       </View>
