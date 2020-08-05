@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
-import { Switch } from 'react-native-switch';
+import { View, Switch } from 'react-native';
 import React from 'react';
 
 class BooleanType extends React.Component {
