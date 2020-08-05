@@ -5,47 +5,47 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: macOS-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
 
     env:
       DEVELOPER_DIR: /Applications/Xcode_11.2.app
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-node@master
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
 
-    - name: Cache node modules
-      uses: actions/cache@v1
-      id: cache
-      with:
-        path: node_modules
-        key: node-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Cache node modules
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('**/yarn.lock') }}
 
-    - name: Install Dependencies
-      run: yarn install
+      - name: Install Dependencies
+        run: yarn install
 
-    - name: Bootstrap
-      run: yarn bootstrap --core
+      - name: Bootstrap
+        run: yarn bootstrap --core
 
-    - name: Cache Pods
-      uses: actions/cache@v1
-      id: podcache
-      with:
-        path: ./examples/native/ios/Pods
-        key: pods-${{ hashFiles('**/Podfile.lock') }}
+      - name: Cache Pods
+        uses: actions/cache@v1
+        id: podcache
+        with:
+          path: ./examples/native/ios/Pods
+          key: pods-${{ hashFiles('**/Podfile.lock') }}
 
-    - name: Update Pods
-      working-directory: ./examples/native
-      run: |
-        gem update cocoapods xcodeproj
-        cd ios && pod install && cd ..
-    
-    - run: brew tap wix/brew
-    - run: brew install applesimutils
+      - name: Update Pods
+        working-directory: ./examples/native
+        run: |
+          gem update cocoapods xcodeproj
+          cd ios && pod install && cd ..
 
-    - name: Detox build
-      working-directory: ./examples/native
-      run: yarn detox build --configuration ios.sim.release
+      - run: brew tap wix/brew
+      - run: brew install applesimutils
 
-    - name: Detox test
-      working-directory: ./examples/native
-      run: yarn detox test --configuration ios.sim.release --cleanup
+      - name: Detox build
+        working-directory: ./examples/native
+        run: yarn detox build --configuration ios.sim.release
+
+      - name: Detox test
+        working-directory: ./examples/native
+        run: yarn detox test --configuration ios.sim.release --cleanup
