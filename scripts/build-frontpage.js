@@ -10,7 +10,7 @@ if (CIRCLE_BRANCH === 'master') {
   if (FRONTPAGE_WEBHOOK) {
     console.log('triggering frontpage build');
     const url = `https://api.netlify.com/build_hooks/${FRONTPAGE_WEBHOOK}`;
-    fetch(url, { method: 'post' }).then(res => console.log('result', res.status));
+    fetch(url, { method: 'post' }).then((res) => console.log('result', res.status));
   } else {
     console.log('no webhook defined');
   }

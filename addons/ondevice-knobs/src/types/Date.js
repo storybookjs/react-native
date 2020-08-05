@@ -38,7 +38,7 @@ class DateType extends PureComponent {
     this.setState({ isDateVisible: false, isTimeVisible: false });
   };
 
-  onDatePicked = date => {
+  onDatePicked = (date) => {
     const value = date.valueOf();
     const { onChange } = this.props;
     onChange(value);
@@ -87,7 +87,7 @@ class DateType extends PureComponent {
 }
 DateType.defaultProps = {
   knob: {},
-  onChange: value => value,
+  onChange: (value) => value,
 };
 
 DateType.propTypes = {
@@ -98,7 +98,7 @@ DateType.propTypes = {
   onChange: PropTypes.func,
 };
 
-DateType.serialize = value => String(value);
-DateType.deserialize = value => parseFloat(value);
+DateType.serialize = (value) => String(value);
+DateType.deserialize = (value) => parseFloat(value);
 
 export default DateType;

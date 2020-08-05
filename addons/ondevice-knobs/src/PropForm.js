@@ -7,7 +7,7 @@ import PropField from './PropField';
 
 export default class PropForm extends React.Component {
   makeChangeHandler(name, type) {
-    return value => {
+    return (value) => {
       const { onFieldChange } = this.props;
       const change = { name, type, value };
       onFieldChange(change);
@@ -19,7 +19,7 @@ export default class PropForm extends React.Component {
 
     return (
       <View>
-        {knobs.map(knob => {
+        {knobs.map((knob) => {
           const changeHandler = this.makeChangeHandler(knob.name, knob.type);
           return (
             <PropField

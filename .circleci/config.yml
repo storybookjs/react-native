@@ -86,9 +86,6 @@ workflows:
       - lint:
           requires:
             - build
-      - native-smoke-tests:
-          requires:
-            - build
       - test:
           requires:
             - build

@@ -21,7 +21,7 @@ class BooleanType extends React.Component {
 
 BooleanType.defaultProps = {
   knob: {},
-  onChange: value => value,
+  onChange: (value) => value,
 };
 
 BooleanType.propTypes = {
@@ -32,7 +32,7 @@ BooleanType.propTypes = {
   onChange: PropTypes.func,
 };
 
-BooleanType.serialize = value => (value ? String(value) : null);
-BooleanType.deserialize = value => value === 'true';
+BooleanType.serialize = (value) => (value ? String(value) : null);
+BooleanType.deserialize = (value) => value === 'true';
 
 export default BooleanType;
