@@ -1,13 +1,12 @@
 import React from 'react';
-import {Text} from 'react-native';
+import { Text } from 'react-native';
 
-import {storiesOf, addDecorator, addParameters} from '@storybook/react-native';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
-import {withKnobs} from '@storybook/addon-knobs';
-import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
+import { storiesOf, addDecorator, addParameters } from '@storybook/react-native';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import knobsWrapper from './Knobs';
-// eslint-disable-next-line import/no-unresolved
 import Button from './Button';
 import CenterView from './CenterView';
 import Welcome from './Welcome';
@@ -16,8 +15,8 @@ addDecorator(withBackgrounds);
 
 addParameters({
   backgrounds: [
-    {name: 'dark', value: '#222222'},
-    {name: 'white', value: '#ffffff', default: true},
+    { name: 'dark', value: '#222222' },
+    { name: 'white', value: '#ffffff', default: true },
   ],
 });
 
@@ -39,15 +38,15 @@ storiesOf('Button', module)
   })
   .addParameters({
     backgrounds: [
-      {name: 'dark', value: '#222222'},
-      {name: 'light', value: '#eeeeee', default: true},
+      { name: 'dark', value: '#222222' },
+      { name: 'light', value: '#eeeeee', default: true },
     ],
     notes: `
 # Custom note\n
 _This component doesn't look right_
 `,
   })
-  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('with text', () => (
     <Button onPress={action('clicked-text')}>
       <Text>Hello Button</Text>
@@ -59,22 +58,20 @@ _This component doesn't look right_
     </Button>
   ));
 
-storiesOf('Knobs', module)
-  .addDecorator(withKnobs)
-  .add('with knobs', knobsWrapper);
+storiesOf('Knobs', module).addDecorator(withKnobs).add('with knobs', knobsWrapper);
 
 const globalParameter = 'globalParameter';
 const chapterParameter = 'chapterParameter';
 const storyParameter = 'storyParameter';
 
-addParameters({globalParameter});
+addParameters({ globalParameter });
 
 storiesOf('Core|Parameters', module)
-  .addParameters({chapterParameter})
+  .addParameters({ chapterParameter })
   .add(
     'passed to story',
-    ({parameters}) => <Text>Parameters are {JSON.stringify(parameters)}</Text>,
+    ({ parameters }) => <Text>Parameters are {JSON.stringify(parameters)}</Text>,
     {
       storyParameter,
-    },
+    }
   );

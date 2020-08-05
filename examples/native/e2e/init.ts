@@ -1,7 +1,9 @@
+/* eslint-disable */
 import detox from 'detox';
 import adapter from 'detox/runners/jest/adapter';
 import specReporter from 'detox/runners/jest/specReporter';
-import {detox as config} from '../package.json';
+// @ts-ignore
+import { detox as config } from '../package.json';
 
 // Set the default timeout
 jest.setTimeout(120000);
