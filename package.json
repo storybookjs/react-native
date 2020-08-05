@@ -55,6 +55,7 @@
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
     "lint": "yarn lint:js . && yarn lint:md .",
+    "lint:js:fix": "yarn lint:js . --fix",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
