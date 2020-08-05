@@ -18,10 +18,10 @@ const Input = styled.TextInput(({ theme }) => ({
 class SelectType extends React.Component {
   getOptions = ({ options }) => {
     if (Array.isArray(options)) {
-      return options.map(val => ({ key: val, label: val }));
+      return options.map((val) => ({ key: val, label: val }));
     }
 
-    return Object.keys(options).map(key => ({ label: key, key: options[key] }));
+    return Object.keys(options).map((key) => ({ label: key, key: options[key] }));
   };
 
   render() {
@@ -37,7 +37,7 @@ class SelectType extends React.Component {
         <ModalPicker
           data={options}
           initValue={knob.value}
-          onChange={option => onChange(option.key)}
+          onChange={(option) => onChange(option.key)}
           animationType="none"
         >
           <Input
@@ -54,7 +54,7 @@ class SelectType extends React.Component {
 
 SelectType.defaultProps = {
   knob: {},
-  onChange: value => value,
+  onChange: (value) => value,
 };
 
 SelectType.propTypes = {
@@ -67,7 +67,7 @@ SelectType.propTypes = {
   onChange: PropTypes.func,
 };
 
-SelectType.serialize = value => value;
-SelectType.deserialize = value => value;
+SelectType.serialize = (value) => value;
+SelectType.deserialize = (value) => value;
 
 export default SelectType;

@@ -19,7 +19,7 @@ class NumberType extends React.Component {
     this.renderRange = this.renderRange.bind(this);
   }
 
-  numberTransformer = x => {
+  numberTransformer = (x) => {
     if (Number.isNaN(Number(x))) {
       return x.substr(0, x.length - 1);
     }
@@ -27,7 +27,7 @@ class NumberType extends React.Component {
     return x;
   };
 
-  onChangeNormal = value => {
+  onChangeNormal = (value) => {
     const { onChange } = this.props;
 
     if (!Number.isNaN(value)) {
@@ -59,7 +59,7 @@ class NumberType extends React.Component {
         minimumValue={knob.min}
         maximumValue={knob.max}
         step={knob.step}
-        onSlidingComplete={val => onChange(parseFloat(val))}
+        onSlidingComplete={(val) => onChange(parseFloat(val))}
       />
     );
   }
@@ -75,7 +75,7 @@ class NumberType extends React.Component {
 
 NumberType.defaultProps = {
   knob: {},
-  onChange: value => value,
+  onChange: (value) => value,
 };
 
 NumberType.propTypes = {
@@ -90,7 +90,7 @@ NumberType.propTypes = {
   onChange: PropTypes.func,
 };
 
-NumberType.serialize = value => String(value);
-NumberType.deserialize = value => parseFloat(value);
+NumberType.serialize = (value) => String(value);
+NumberType.deserialize = (value) => parseFloat(value);
 
 export default NumberType;

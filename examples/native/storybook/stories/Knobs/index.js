@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 
 import {
   text,
@@ -15,7 +15,7 @@ import {
 
 export default () => {
   const name = text('Name', 'Storyteller');
-  const age = number('Age', 70, {range: true, min: 0, max: 90, step: 5});
+  const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
   const fruits = {
     Apple: 'apple',
     Banana: 'banana',
@@ -45,21 +45,18 @@ export default () => {
   const birthday = date('Birthday', new Date('Jan 20 2017'));
 
   const intro = `My name is ${name}, I'm ${age} years old, and my favorite fruit is ${fruit}. I also enjoy ${otherFruit}.`;
-  const style = {backgroundColor, ...otherStyles};
+  const style = { backgroundColor, ...otherStyles };
   const salutation = nice ? 'Nice to meet you!' : 'Leave me alone!';
-  const dateOptions = {year: 'numeric', month: 'long', day: 'numeric'};
+  const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
   return (
     <View style={style}>
       <Text>{intro}</Text>
-      <Text>
-        My birthday is:{' '}
-        {new Date(birthday).toLocaleDateString('en-US', dateOptions)}
-      </Text>
+      <Text>My birthday is: {new Date(birthday).toLocaleDateString('en-US', dateOptions)}</Text>
       <Text>My wallet contains: ${dollars.toFixed(2)}</Text>
       <Text>In my backpack, I have:</Text>
       <View>
-        {items.map(item => (
+        {items.map((item) => (
           <Text key={item}>{item}</Text>
         ))}
       </View>

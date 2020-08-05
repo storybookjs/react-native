@@ -25,13 +25,13 @@ const ArrayType = ({ knob, onChange }) => (
     underlineColorAndroid="transparent"
     autoCapitalize="none"
     value={knob.value.join(knob.separator)}
-    onChangeText={e => onChange(formatArray(e, knob.separator))}
+    onChangeText={(e) => onChange(formatArray(e, knob.separator))}
   />
 );
 
 ArrayType.defaultProps = {
   knob: {},
-  onChange: value => value,
+  onChange: (value) => value,
 };
 
 ArrayType.propTypes = {
@@ -43,8 +43,8 @@ ArrayType.propTypes = {
   onChange: PropTypes.func,
 };
 
-ArrayType.serialize = value => value;
-ArrayType.deserialize = value => {
+ArrayType.serialize = (value) => value;
+ArrayType.deserialize = (value) => {
   if (Array.isArray(value)) return value;
 
   return Object.keys(value)

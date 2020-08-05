@@ -29,7 +29,7 @@ export default class Wrapper extends PureComponent<Props> {
 
     const addonKeys = Object.keys(panels);
 
-    return addonKeys.map(id => {
+    return addonKeys.map((id) => {
       const selected = addonSelected === id;
 
       return (

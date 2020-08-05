@@ -4,7 +4,7 @@ import { Notes } from './components/Notes';
 
 export const PARAM_KEY = `notes`;
 
-addons.register('storybook/notes', api => {
+addons.register('storybook/notes', (api) => {
   const channel = addons.getChannel();
   addons.addPanel('storybook/notes/panel', {
     title: 'Notes',
