@@ -47,7 +47,7 @@ storiesOf('Button', module)
 _This component doesn't look right_
 `,
   })
-  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('with text', () => (
     <Button onPress={action('clicked-text')}>
       <Text>Hello Button</Text>
@@ -59,9 +59,7 @@ _This component doesn't look right_
     </Button>
   ));
 
-storiesOf('Knobs', module)
-  .addDecorator(withKnobs)
-  .add('with knobs', knobsWrapper);
+storiesOf('Knobs', module).addDecorator(withKnobs).add('with knobs', knobsWrapper);
 
 const globalParameter = 'globalParameter';
 const chapterParameter = 'chapterParameter';

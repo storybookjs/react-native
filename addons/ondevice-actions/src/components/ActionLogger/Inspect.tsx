@@ -37,7 +37,7 @@ class Inspect extends Component<{ name?: string; value: any }, { expanded: boole
             !Array.isArray(value) &&
             Object.keys(value).length)) ? (
           <Button
-            onPress={() => this.setState(s => ({ expanded: !s.expanded }))}
+            onPress={() => this.setState((s) => ({ expanded: !s.expanded }))}
             title={!expanded ? '▶' : '▼'}
           />
         ) : null}

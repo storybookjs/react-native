@@ -14,7 +14,7 @@ const { join } = require('path');
 const readdir = promisify(readdirRaw);
 const writeFile = promisify(writeFileRaw);
 
-const p = l => join(__dirname, '..', ...l);
+const p = (l) => join(__dirname, '..', ...l);
 const logger = console;
 
 const exec = async (command, args = [], options = {}) =>
@@ -22,27 +22,27 @@ const exec = async (command, args = [], options = {}) =>
     const child = spawn(command, args, { ...options, stdio: 'inherit', shell: true });
 
     child
-      .on('close', code => {
+      .on('close', (code) => {
         if (code) {
           reject();
         } else {
           resolve();
         }
       })
-      .on('error', e => {
+      .on('error', (e) => {
         logger.error(e);
         reject();
       });
   });
 
-const hasBuildScript = l => {
+const hasBuildScript = (l) => {
   const text = readFileSync(l, 'utf8');
   const json = JSON.parse(text);
 
   return !!json.scripts['build-storybook'];
 };
 
-const createContent = deployables => {
+const createContent = (deployables) => {
   return `
     <style>
       body {
@@ -109,15 +109,15 @@ const createContent = deployables => {
     <button id="open" onclick="handleClick()">open</button>
 
     <select id="select" onchange="handleSelect()">
-      ${deployables.map(i => `<option value="/${i}/">${i}</option>`).join('\n')}
+      ${deployables.map((i) => `<option value="/${i}/">${i}</option>`).join('\n')}
     </select>
 
     <iframe id="frame" src="/${deployables[0]}/" />
   `;
 };
 
-const handleExamples = async files => {
-  const deployables = files.filter(f => {
+const handleExamples = async (files) => {
+  const deployables = files.filter((f) => {
     const packageJsonLocation = p(['examples', f, 'package.json']);
     let stats = null;
     try {
@@ -133,17 +133,9 @@ const handleExamples = async files => {
     await acc;
 
     logger.log('');
-    logger.log(
-      `-----------------${Array(d.length)
-        .fill('-')
-        .join('')}`
-    );
+    logger.log(`-----------------${Array(d.length).fill('-').join('')}`);
     logger.log(`▶️  building: ${d}`);
-    logger.log(
-      `-----------------${Array(d.length)
-        .fill('-')
-        .join('')}`
-    );
+    logger.log(`-----------------${Array(d.length).fill('-').join('')}`);
     const out = p(['built-storybooks', d]);
     const cwd = p(['examples', d]);
 
@@ -180,7 +172,7 @@ const run = async () => {
   await handleExamples(list);
 };
 
-run().catch(e => {
+run().catch((e) => {
   logger.error(e);
   process.exit(1);
 });

@@ -129,7 +129,7 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
     }
 
     channel.on(Events.GET_STORIES, () => this._sendSetStories());
-    channel.on(Events.SET_CURRENT_STORY, d => this._selectStoryEvent(d));
+    channel.on(Events.SET_CURRENT_STORY, (d) => this._selectStoryEvent(d));
 
     this._sendSetStories();
 

@@ -24,7 +24,7 @@ export const withBackgrounds = makeDecorator({
     if (backgrounds.length !== 0) {
       addons.getChannel().emit(Events.SET, backgrounds);
 
-      const defaultOrFirst = backgrounds.find(x => x.default) || backgrounds[0];
+      const defaultOrFirst = backgrounds.find((x) => x.default) || backgrounds[0];
 
       if (defaultOrFirst) {
         background = defaultOrFirst.value;

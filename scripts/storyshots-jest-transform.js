@@ -4,7 +4,7 @@ const getNextTransformer = (fileName, config) => {
   const self = config.transform.find(([pattern]) => new RegExp(pattern).test(fileName));
   return new ScriptTransformer({
     ...config,
-    transform: config.transform.filter(entry => entry !== self),
+    transform: config.transform.filter((entry) => entry !== self),
   });
 };
 

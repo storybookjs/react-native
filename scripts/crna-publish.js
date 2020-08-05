@@ -3,12 +3,9 @@ const childProcess = require('child_process');
 const log = require('npmlog');
 
 const getCurrentBranch = () =>
-  childProcess
-    .execSync('git rev-parse --abbrev-ref HEAD')
-    .toString()
-    .trim();
+  childProcess.execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
 
-const sanitizeBranchName = branch => branch.replace(/[^a-zA-Z0-9-_]/g, '-');
+const sanitizeBranchName = (branch) => branch.replace(/[^a-zA-Z0-9-_]/g, '-');
 
 const expoLogin = (username, password) => {
   log.info('Logging in to expo');
@@ -20,7 +17,7 @@ const expoLogout = () => {
   childProcess.execSync('yarn expo logout');
 };
 
-const expoPublish = channel => {
+const expoPublish = (channel) => {
   log.info(`Publishing to channel ${channel}`);
   childProcess.execSync(`yarn publish:crna --release-channel=${channel}`);
   log.info(

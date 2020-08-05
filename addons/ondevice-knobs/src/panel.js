@@ -124,9 +124,9 @@ export default class Panel extends React.Component {
 
     let knobsArray = Object.keys(knobs);
 
-    const knobsWithGroups = knobsArray.filter(key => knobs[key].groupId);
+    const knobsWithGroups = knobsArray.filter((key) => knobs[key].groupId);
 
-    knobsWithGroups.forEach(key => {
+    knobsWithGroups.forEach((key) => {
       const knobKeyGroupId = knobs[key].groupId;
       groupIds.push(knobKeyGroupId);
       groups[knobKeyGroupId] = {
@@ -152,15 +152,15 @@ export default class Panel extends React.Component {
       }
 
       if (groupId === DEFAULT_GROUP_ID) {
-        knobsArray = knobsArray.filter(key => !knobs[key].groupId);
+        knobsArray = knobsArray.filter((key) => !knobs[key].groupId);
       }
 
       if (groupId !== DEFAULT_GROUP_ID) {
-        knobsArray = knobsArray.filter(key => knobs[key].groupId === groupId);
+        knobsArray = knobsArray.filter((key) => knobs[key].groupId === groupId);
       }
     }
 
-    knobsArray = knobsArray.map(key => knobs[key]);
+    knobsArray = knobsArray.map((key) => knobs[key]);
 
     if (knobsArray.length === 0) {
       return <Text>NO KNOBS</Text>;

@@ -10,7 +10,7 @@ log.heading = 'storybook';
 const prefix = 'test';
 log.addLevel('aborted', 3001, { fg: 'red', bold: true });
 
-const spawn = command => {
+const spawn = (command) => {
   const out = childProcess.spawnSync(`${command}`, {
     shell: true,
     stdio: 'inherit',
@@ -94,17 +94,17 @@ const tasks = {
   }),
 };
 
-const getProjects = list => list.filter(key => key.projectLocation);
+const getProjects = (list) => list.filter((key) => key.projectLocation);
 
-const getScripts = list => list.filter(key => key.script);
+const getScripts = (list) => list.filter((key) => key.script);
 
-const getExtraParams = list => list.filter(key => key.extraParam).map(key => key.extraParam);
+const getExtraParams = (list) => list.filter((key) => key.extraParam).map((key) => key.extraParam);
 
 Object.keys(tasks)
   .reduce((acc, key) => acc.option(tasks[key].option, tasks[key].name), main)
   .parse(process.argv);
 
-Object.keys(tasks).forEach(key => {
+Object.keys(tasks).forEach((key) => {
   tasks[key].value =
     program[tasks[key].option.replace('--', '')] || (program.all && tasks[key].projectLocation);
 });
@@ -112,7 +112,7 @@ Object.keys(tasks).forEach(key => {
 let selection;
 if (
   !Object.keys(tasks)
-    .map(key => tasks[key].value)
+    .map((key) => tasks[key].value)
     .filter(Boolean).length
 ) {
   selection = inquirer
@@ -123,17 +123,17 @@ if (
         name: 'todo',
         pageSize: 18,
         choices: Object.values(tasks)
-          .filter(key => !key.extraParam)
-          .map(key => ({
+          .filter((key) => !key.extraParam)
+          .map((key) => ({
             name: key.name,
             checked: key.defaultValue,
           }))
           .concat(new inquirer.Separator())
           .concat(
             Object.keys(tasks)
-              .map(key => tasks[key])
-              .filter(key => key.extraParam)
-              .map(key => ({
+              .map((key) => tasks[key])
+              .filter((key) => key.extraParam)
+              .map((key) => ({
                 name: key.name,
                 checked: key.defaultValue,
               }))
@@ -141,29 +141,29 @@ if (
       },
     ])
     .then(({ todo }) =>
-      todo.map(name => tasks[Object.keys(tasks).find(i => tasks[i].name === name)])
+      todo.map((name) => tasks[Object.keys(tasks).find((i) => tasks[i].name === name)])
     );
 } else {
   selection = Promise.resolve(
     Object.keys(tasks)
-      .map(key => tasks[key])
-      .filter(item => item.value === true)
+      .map((key) => tasks[key])
+      .filter((item) => item.value === true)
   );
 }
 
 selection
-  .then(list => {
+  .then((list) => {
     if (list.length === 0) {
       log.warn(prefix, 'Nothing to test');
     } else {
       const projects = getProjects(list);
-      const jestProjects = projects.filter(key => key.isJest).map(key => key.projectLocation);
-      const nonJestProjects = projects.filter(key => !key.isJest);
+      const jestProjects = projects.filter((key) => key.isJest).map((key) => key.projectLocation);
+      const nonJestProjects = projects.filter((key) => !key.isJest);
       const extraParams = getExtraParams(list).join(' ');
       const jest = path.join(__dirname, '..', 'node_modules', '.bin', 'jest');
 
       if (jestProjects.length > 0) {
-        const projectsParam = jestProjects.some(project => project === '<all>')
+        const projectsParam = jestProjects.some((project) => project === '<all>')
           ? ''
           : `--projects ${jestProjects.join(' ')}`;
 
@@ -172,17 +172,17 @@ selection
         spawn(cmd);
       }
 
-      nonJestProjects.forEach(key =>
+      nonJestProjects.forEach((key) =>
         spawn(`npm --prefix ${key.projectLocation} test -- ${extraParams}`)
       );
 
       const scripts = getScripts(list);
-      scripts.forEach(key => spawn(`${key.script} -- ${extraParams}`));
+      scripts.forEach((key) => spawn(`${key.script} -- ${extraParams}`));
 
       process.stdout.write('\x07');
     }
   })
-  .catch(e => {
+  .catch((e) => {
     log.aborted(prefix, chalk.red(e.message));
     log.silly(prefix, e);
     process.exit(1);
