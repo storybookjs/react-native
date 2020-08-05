@@ -7,6 +7,7 @@ import SelectType from './Select';
 import ArrayType from './Array';
 import DateType from './Date';
 import ButtonType from './Button';
+import RadioType from './Radio';
 
 export default {
   text: TextType,
@@ -18,4 +19,5 @@ export default {
   array: ArrayType,
   date: DateType,
   button: ButtonType,
+  radios: RadioType,
 };

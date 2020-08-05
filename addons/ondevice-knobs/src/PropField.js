@@ -40,6 +40,7 @@ PropField.propTypes = {
       'array',
       'date',
       'button',
+      'radios',
     ]),
   }).isRequired,
   onChange: PropTypes.func.isRequired,
