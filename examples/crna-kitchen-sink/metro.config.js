@@ -10,6 +10,7 @@ module.exports = {
     blacklistRE: blacklist([
       // exclude react-native modules outside of this package
       /app\/.*\/node_modules\/react-native\/.*/,
+      /examples\/native\/node_modules\/react-native\/.*/,
       /node_modules\/.*\/node_modules\/react-native\/.*/,
       // duplicate packages in server mocks. We don't need them so it's safe to exclude.
       /__mocks__\/.*/,
