@@ -22,7 +22,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^33.0.7",
+    "expo": "^34.0.0",
     "prop-types": "^15.6.2",
     "react": "16.12.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
@@ -44,10 +44,10 @@
     "@storybook/react-native": "6.0.0-alpha.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-module-resolver": "^3.2.0",
-    "babel-preset-expo": "^7.0.0",
+    "babel-preset-expo": "^6.0.0",
     "core-js": "^3.0.1",
     "expo-cli": "^3.7.1",
-    "jest-expo": "^33.0.2",
+    "jest-expo": "^34.0.0",
     "react-test-renderer": "16.10.2",
     "schedule": "^0.5.0"
   }
