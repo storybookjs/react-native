@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   Dimensions,
   TouchableOpacity,
+  StatusBar,
 } from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
@@ -126,7 +127,9 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
     const previewStyles = [flex, getPreviewScale(this.animatedValue, slideBetweenAnimation)];
 
     return (
-      <SafeAreaView style={flex}>
+      <SafeAreaView
+        style={[flex, { paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 }]}
+      >
         <KeyboardAvoidingView
           enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
           behavior={IS_IOS ? 'padding' : null}
