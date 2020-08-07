@@ -19730,14 +19730,6 @@ react-native-branch@2.2.5:
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.2.5.tgz#4074dd63b4973e6397d9ce50e97b57c77a518e9d"
   integrity sha1-QHTdY7SXPmOX2c5Q6XtXx3pRjp0=
 
-react-native-color-picker@^0.4.0:
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/react-native-color-picker/-/react-native-color-picker-0.4.6.tgz#ae773ada067e80407cdcb931b606f3d6fdaa61f5"
-  integrity sha512-Uya/ZvAkBQoFtQS+sHMxzzRdPTCTkvsGWj+xCeVKARBuqWfvKp8Zfu1JkJ0+BPQ5mvHkWByQuDeAy3VD8BKBsg==
-  dependencies:
-    prop-types "^15.5.10"
-    tinycolor2 "^1.4.1"
-
 react-native-gesture-handler@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.2.1.tgz#9c48fb1ab13d29cece24bbb77b1e847eebf27a2b"

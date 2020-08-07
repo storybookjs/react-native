@@ -27,5 +27,7 @@ examples/rax-kitchen-sink/src/document/*
 !.jest.config.js
 !.storybook
 examples/native/e2e/init.ts
+examples/native/ios
+examples/native/android
 examples/native/metro.config.js
 examples/crna-kitchen-sink/metro.config.js
