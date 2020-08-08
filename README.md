@@ -8,17 +8,15 @@ For more information visit: [storybook.js.org](https://storybook.js.org)
 
 Follow these steps to setup storybook for your project. This will be the most simple setup that will show the stories and storybook UI on the Device.
 
-Note that there is another setup with storybook server which enables you to control the component that is visible via a web ui.
-
 First add the react native storybook library to your react native app.
 
-Yarn:
+#### Install with yarn
 
 ```shell
 yarn add @storybook/react-native
 ```
 
-Npm:
+#### Install with npm
 
 ```shell
 npm i --save @storybook/react-native
@@ -41,7 +39,7 @@ const StorybookUIRoot = getStorybookUI({});
 AppRegistry.registerComponent(appName, () => StorybookUIRoot);
 ```
 
-If your using expo you don't need to use the register component call and you can just export storybookUIRoot as default
+If your using expo you don't need to use the register component call and you can just do `export default storybookUIRoot`
 
 ### Making stories
 
@@ -56,8 +54,8 @@ configure(() => {
 
 ```js
 // src/stories.js
-require('./components/myComponent/MyComponent.stories.js');
-require('./components/button/CustomButton.stories.js');
+import './components/myComponent/MyComponent.stories.jsx';
+import './components/button/CustomButton.stories.jsx';
 ```
 
 In the stories.js file I import some stories of components I've made.
@@ -191,8 +189,9 @@ You could also create a separate app just for storybook that also works as a pac
 
 ## Storybook server (optional)
 
-Steps for the storybook server will be re-done soon to make sure they are accurate.
+Storybook server is used to control the component visible on the device via a web ui. This is useful to control multiple devices at once and compare them at the same time.
 
+Steps for the storybook server will be re-done soon to make sure they are accurate.
 see the old docs [here](app/react-native/readme.md)
 
 ## getStorybookUI Options
