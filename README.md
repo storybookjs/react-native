@@ -4,6 +4,8 @@ With Storybook for React Native you can design and develop individual React Nati
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
 
+> NOTE: `@storybook/react-native` and `@storybook/react-native` server are now on a different release cycle from the Storybook for Web packages (`@storybook/react`, `@storybook/vue`, etc.). The last stable version of `@storybook/react-native` is `5.3.19`.
+
 ## Getting Started
 
 Follow these steps to setup storybook for your project. This will be the most simple setup that will show the stories and storybook UI on the Device.
