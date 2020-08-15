@@ -12,7 +12,7 @@ class BooleanType extends React.Component {
     const { knob } = this.props;
 
     return (
-      <View style={{ margin: 10 }}>
+      <View style={{ margin: 10, alignItems: 'flex-start' }}>
         <Switch id={knob.name} onValueChange={this.onValueChange} value={knob.value} />
       </View>
     );
