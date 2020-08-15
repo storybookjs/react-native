@@ -33,9 +33,9 @@
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
-    "react-native-color-picker": "^0.4.0",
     "react-native-modal-datetime-picker": "^7.4.2",
-    "react-native-modal-selector": "^2.0.2"
+    "react-native-modal-selector": "^2.0.2",
+    "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
     "@storybook/addon-knobs": "6.0.0-alpha.19"
