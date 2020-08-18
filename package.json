@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "5.3.0-beta.7",
+  "version": "5.3.19",
   "private": true,
   "description": "Storybook for React Native is an open source tool for developing UI components in isolation. It makes building stunning UIs organized and efficient.",
   "keywords": [
@@ -55,8 +55,8 @@
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
     "lint": "yarn lint:js . && yarn lint:md .",
-    "lint:js:fix": "yarn lint:js . --fix",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
+    "lint:js:fix": "yarn lint:js . --fix",
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
     "now-build": "yarn bootstrap --core && yarn build-storybooks",
