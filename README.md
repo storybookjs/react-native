@@ -15,6 +15,7 @@ For more information visit: [storybook.js.org](https://storybook.js.org)
   - [On device Addons](#ondevice-addons)
 - [Other ways to render storybook](#other-ways-to-render-storybook)
 - [getStorybookUI Options](#getstorybookui-options)
+- [Contributing](#contributing)
 
 # Getting Started
 
