@@ -1,24 +1,34 @@
 # Storybook for React Native
 
+
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
 
 > NOTE: `@storybook/react-native` and `@storybook/react-native-server` are now on a different release cycle from the Storybook Core packages (`@storybook/react`, `@storybook/vue`, etc.). The last stable version of `@storybook/react-native` is `5.3.19` and it should be used with `5.3` versions of Storybook Core.
 
-## Getting Started
+
+# Table of contents
+
+- 🚀 [Getting Started](#getting-started)
+  - 📒 [Making stories](#making-stories)
+  - [On device Addons](#ondevice-addons)
+- [Other ways to render storybook](#other-ways-to-render-storybook)
+- [getStorybookUI Options](#getstorybookui-options)
+
+# Getting Started
 
 Follow these steps to setup storybook for your project. This will be the most simple setup that will show the stories and storybook UI on the Device.
 
 First add the react native storybook library to your react native app.
 
-#### Install with yarn
+### Install with yarn
 
 ```shell
 yarn add @storybook/react-native
 ```
 
-#### Install with npm
+### Install with npm
 
 ```shell
 npm i --save @storybook/react-native
@@ -43,7 +53,7 @@ AppRegistry.registerComponent(appName, () => StorybookUIRoot);
 
 If your using expo you don't need to use the register component call and you can just do `export default storybookUIRoot`
 
-### Making stories
+## Making stories
 
 To make you storybook stories appear you need to import them in the configure function. You can do this individually or import a file that itself imports all of the stories.
 
@@ -86,7 +96,7 @@ buttonStories.add('default view', () => (
 ));
 ```
 
-# Ondevice Addons
+## Ondevice Addons
 
 You will most likely want to make use of addons, some good starter addons are "knobs" and "actions".
 Knobs will give you a way to change the props on the components in the storybook dynamically.
@@ -163,13 +173,13 @@ buttonStories.add('default view', () => (
 Other ondevice supported addons are addon-ondevice-backgrounds and addon-ondevice-notes.
 More documentation for that coming soon.
 
-## Other ways to render storybook
+# Other ways to render storybook
 
 There are a few options on how you can make the storybook render in your app so it's up to you to decide which works best for your project.
 
 The example in the "getting started" section means that any existing app no longer renders because we hijacked the index.js file to export the storybook ui. There are some other options you can use if want to mix your app and storybook together
 
-### Optionally run storybook or your app
+## Optionally run storybook or your app
 
 You could do something like this if you want to run storybook in dev mode and your app in release mode.
 
@@ -183,7 +193,7 @@ module.exports = __DEV__ ? StorybookUI : App;
 
 Or you could use some kind of setting/environment variable to define what renders.
 
-### React Native Navigation, or other custom approaches
+## React Native Navigation, or other custom approaches
 
 `StorybookUI` is a RN `View` component that can be embedded anywhere in your RN application, e.g. on a tab or within an admin screen.
 
@@ -196,7 +206,7 @@ Storybook server is used to control the component visible on the device via a we
 Steps for the storybook server will be re-done soon to make sure they are accurate.
 see the old docs [here](app/react-native/readme.md)
 
-## getStorybookUI Options
+# getStorybookUI Options
 
 You can pass these parameters to getStorybookUI call in your storybook entry point:
 
@@ -228,3 +238,16 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
         -- With shouldDisableKeyboardAvoidingView=true, this will set the keyboardverticaloffset (https://facebook.github.io/react-native/docs/keyboardavoidingview#keyboardverticaloffset) value for KeyboardAvoidingView wrapping Storybook's view
 }
 ```
+
+# Contributing
+
+We welcome contributions to Storybook!
+
+- 📥 Pull requests and 🌟 Stars are always welcome.
+- Read our [contributing guide](CONTRIBUTING.md) to get started,
+  or find us on [Discord](https://discord.gg/sMFvFsG), we will take the time to guide you
+
+Looking for a first issue to tackle?
+
+- We tag issues with [![Good First Issue](https://img.shields.io/github/issues/storybookjs/storybook/good%20first%20issue.svg)](https://github.com/storybookjs/storybook/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
+- [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
