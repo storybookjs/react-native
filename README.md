@@ -246,7 +246,7 @@ We welcome contributions to Storybook!
 
 - 📥 Pull requests and 🌟 Stars are always welcome.
 - Read our [contributing guide](CONTRIBUTING.md) to get started,
-  or find us on [Discord](https://discord.gg/sMFvFsG), and find the react-native channel. 
+  or find us on [Discord](https://discord.gg/sMFvFsG) and look for the react-native channel. 
 
 Looking for a first issue to tackle?
 
