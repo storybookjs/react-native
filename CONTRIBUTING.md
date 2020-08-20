@@ -178,6 +178,7 @@ The command `yarn bootstrap --core` may take a long time to complete (10-20 mins
 ### Running the project
 
 To see your changes you should run `yarn dev` this starts everything in watch mode so don't need to manually build the packages.
+Once you have this running then you can run one of the example "kitchen sink apps" to see your changes.
 
 ### Working with the kitchen sink apps
 
