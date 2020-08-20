@@ -14,6 +14,7 @@ Content:
 - [Pull requests](#pull-requests)
   - [Reviewing PRs](#reviewing-prs)
 - [Development Guide](#development-guide)
+  - [Repository explained](#repository-explained)
 
 ## Issues
 
@@ -122,6 +123,37 @@ If an issue is a `bug`, and it doesn't have a clear reproduction that you have p
 - `discussion`s should be closed at a maintainer's discretion.
 
 ## Development Guide
+
+### Repository explained
+
+This repository is madeup of the various packages that are specific to react-native storybook.
+
+These packages are:
+
+ - @storybook/react-native
+ - @storybook/react-native-server
+ - @storybook/addon-ondevice-actions
+ - @storybook/addon-ondevice-backgrounds
+ - @storybook/addon-ondevice-knobs
+ - @storybook/addon-ondevice-notes
+
+#### @storybook/react-native
+
+This is the core of the project that makes it possible to use storybook in react native and "on device" for example android/ios devices. This project uses the packages from @storybook to make a version of storybook that works for react native. You will also find here all of the UI components that you see on your device such as the sidebar and other navigation components.
+
+You can find this package under `app/react-native`
+
+#### @storybook/react-native-server
+
+This is the web server and client that are used to control the on device UI remotely. By using the server package you can control which story is shown on devices that are running @storybook/react-native.
+
+You can find this package under `app/react-native-server`
+
+#### Ondevice Addons
+
+These are the addons for storybook that have been recreated for the on device UI on react-native. The currently supported addons are actions, knobs, notes and backgrounds.
+
+You can find the addons under `addons/`
 
 ### Prerequisites
 
