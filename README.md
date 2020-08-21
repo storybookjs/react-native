@@ -23,6 +23,9 @@ Follow these steps to setup storybook for your project. This will be the most si
 
 First add the react native storybook library to your react native app.
 
+If you're struggling check out this (snack)[https://snack.expo.io/@dannyhw/expo-storybook-example] with a working example
+
+
 ### Install with yarn
 
 ```shell
