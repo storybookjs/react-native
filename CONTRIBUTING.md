@@ -69,7 +69,7 @@ If you follow that process, you can then link to the GitHub repository in the is
 
 Since react-native by default doesn't support sym links we can't easily link the project like you might with web projects. 
 
-No good solution for this currently however if you know an easy way to get symlinking working for react native + metro please open and issue explaining your suggestion. 
+No good solution for this currently however if you know an easy way to get symlinking working for react native + metro please open and issue explain your suggestion. 
 
 
 # Pull Requests
