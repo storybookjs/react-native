@@ -223,6 +223,25 @@ _You can change "storybook" to any name you like._
 
 This will open the server web client, you will need to open storybook on the device for the stories to appear in the sidebar
 
+### Server cli options
+
+```
+-h, --host <host>
+    host to listen on
+-p, --port <port>
+    port to listen on
+--https
+    whether server is running on https
+-c, --config-dir [dir-name]
+    storybook config directory
+-e, --environment [environment]
+    DEVELOPMENT/PRODUCTION environment for webpack
+-i, --manual-id
+    allow multiple users to work with same storybook
+--smoke-test
+    Exit after successful start
+```
+
 # getStorybookUI Options
 
 You can pass these parameters to getStorybookUI call in your storybook entry point:
