@@ -27,7 +27,7 @@ jobs:
           key: node-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Dependencies
-        run: yarn install
+        run: yarn install --network-timeout 600000
 
       - name: Bootstrap
         run: yarn bootstrap --core
