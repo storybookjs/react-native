@@ -1,14 +1,20 @@
+## 5.3.20-alpha.1 (August 27, 2020)
+
+### Bug Fixes
+
+* server addons and update all dependencies to use storybook 5.3.20 [#100](https://github.com/storybookjs/react-native/pull/100)
+
 ## 5.3.20-alpha.0 (August 19, 2020)
 
 ### Features
 
-- radios knob type added [83](https://github.com/storybookjs/react-native/pull/83)
+* radios knob type added [83](https://github.com/storybookjs/react-native/pull/83)
 
 ### Bug Fixes
 
-- color picker will no longer crash the app [85](https://github.com/storybookjs/react-native/pull/85)
-- boolean knob no longer throws a warning [70](https://github.com/storybookjs/react-native/pull/70)
-- modal selector no longer causes the app to freeze/crash [74](https://github.com/storybookjs/react-native/pull/74)
+* color picker will no longer crash the app [#85](https://github.com/storybookjs/react-native/pull/85)
+* boolean knob no longer throws a warning [#70](https://github.com/storybookjs/react-native/pull/70)
+* modal selector no longer causes the app to freeze/crash [#74](https://github.com/storybookjs/react-native/pull/74)
 
 ## 5.3.8 (January 22, 2020)
 
