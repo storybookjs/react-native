@@ -214,7 +214,7 @@ yarn `yarn add @storybook/react-native-server`
 npm `npm i --save @storybook/react-native-server`
 
 To run the server you can use `yarn start-storybook`
-or add a script to your package json like
+or add a script to your package.json like
 
 ```
 "storybook": "start-storybook"
@@ -223,7 +223,7 @@ _You can change "storybook" to any name you like._
 
 This will open the server web client, you will need to open storybook on the device for the stories to appear in the sidebar.
 
-To enable addons for react native server add a folder `storybook/` in the root of the project which a addons.js file inside. The server will detect this file and import it. The file should contain the addon imports similar to the rn-addons.js file but using the regular storybook (for web) addons. For example:
+To enable addons for react native server add a folder `storybook/` in the root of the project with a addons.js file inside. The server will detect this file and import it. The file should contain the addon imports similar to the rn-addons.js file but using the regular storybook (for web) addons. For example:
 
 ```
 // storybook/addons.js
