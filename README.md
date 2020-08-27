@@ -207,8 +207,21 @@ You could also create a separate app just for storybook that also works as a pac
 
 Storybook server is used to control the component visible on the device via a web ui. This is useful to control multiple devices at once and compare them at the same time.
 
-Steps for the storybook server will be re-done soon to make sure they are accurate.
-see the old docs [here](app/react-native/readme.md)
+Install the package
+
+yarn `yarn add @storybook/react-native-server`
+
+npm `npm i --save @storybook/react-native-server`
+
+To run the server you can use `yarn start-storybook`
+or add a script to your package json like
+
+```
+"storybook": "start-storybook"
+```
+_You can change "storybook" to any name you like._
+
+This will open the server web client, you will need to open storybook on the device for the stories to appear in the sidebar
 
 # getStorybookUI Options
 
