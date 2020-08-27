@@ -221,7 +221,17 @@ or add a script to your package json like
 ```
 _You can change "storybook" to any name you like._
 
-This will open the server web client, you will need to open storybook on the device for the stories to appear in the sidebar
+This will open the server web client, you will need to open storybook on the device for the stories to appear in the sidebar.
+
+To enable addons for react native server add a folder `storybook/` in the root of the project which a addons.js file inside. The server will detect this file and import it. The file should contain the addon imports similar to the rn-addons.js file but using the regular storybook (for web) addons. For example:
+
+```
+// storybook/addons.js
+require('@storybook/addon-knobs/register');
+require('@storybook/addon-actions/register');
+```
+
+If you get the error `Can't resolve 'babel-loader'` install babel-loader from npm and it should fix it.
 
 ### Server cli options
 
