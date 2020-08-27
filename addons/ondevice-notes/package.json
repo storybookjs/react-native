@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-notes",
-  "version": "5.3.20-alpha.1",
+  "version": "5.3.21-alpha.0",
   "description": "Write notes for your react-native Storybook stories.",
   "keywords": [
     "addon",

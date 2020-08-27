@@ -1,6 +1,6 @@
 {
   "name": "rn_example",
-  "version": "5.3.20-alpha.1",
+  "version": "5.3.21-alpha.0",
   "private": true,
   "workspaces": {
     "nohoist": [
@@ -34,14 +34,14 @@
     "@storybook/addon-knobs": "5.3.20",
     "@storybook/addon-links": "5.3.20",
     "@storybook/addon-notes": "5.3.20",
-    "@storybook/addon-ondevice-actions": "^5.3.20-alpha.1",
-    "@storybook/addon-ondevice-backgrounds": "^5.3.20-alpha.1",
-    "@storybook/addon-ondevice-knobs": "^5.3.20-alpha.1",
-    "@storybook/addon-ondevice-notes": "^5.3.20-alpha.1",
+    "@storybook/addon-ondevice-actions": "^5.3.21-alpha.0",
+    "@storybook/addon-ondevice-backgrounds": "^5.3.21-alpha.0",
+    "@storybook/addon-ondevice-knobs": "^5.3.21-alpha.0",
+    "@storybook/addon-ondevice-notes": "^5.3.21-alpha.0",
     "@storybook/addon-options": "5.3.20",
     "@storybook/addons": "5.3.20",
-    "@storybook/react-native": "^5.3.20-alpha.1",
-    "@storybook/react-native-server": "^5.3.20-alpha.1",
+    "@storybook/react-native": "^5.3.21-alpha.0",
+    "@storybook/react-native-server": "^5.3.21-alpha.0",
     "react": "16.13.1",
     "react-native": "0.63.0"
   },
