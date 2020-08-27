@@ -1,3 +1,10 @@
+## 5.3.20-alpha.0 (August 19, 2020)
+
+- feature: radios knob type added [83](https://github.com/storybookjs/react-native/pull/83)
+- fix: color picker will no longer crash the app [85](https://github.com/storybookjs/react-native/pull/85)
+- fix: boolean knob no longer throws a warning [70](https://github.com/storybookjs/react-native/pull/70)
+- fix: modal selector no longer causes the app to freeze/crash [74](https://github.com/storybookjs/react-native/pull/74)
+
 ## 5.3.8 (January 22, 2020)
 
 ### Bug Fixes
