@@ -23,6 +23,10 @@ const styles = {
     padding: '1px 10px',
     margin: '10px 0',
   },
+
+  instructionsCode: {
+    color: '#000000',
+  },
 };
 
 const PreviewHelp = () => (
