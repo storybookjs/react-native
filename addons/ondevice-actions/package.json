@@ -26,13 +26,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.20",
-    "@storybook/core-events": "5.3.20",
+    "@storybook/addons": "5.3.21",
+    "@storybook/core-events": "5.3.21",
     "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.3.20"
+    "@storybook/addon-actions": "5.3.21"
   },
   "peerDependencies": {
     "@storybook/addon-actions": "*",
