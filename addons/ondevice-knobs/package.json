@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "@emotion/native": "^10.0.14",
-    "@storybook/addons": "5.3.20",
-    "@storybook/core-events": "5.3.20",
+    "@storybook/addons": "5.3.21",
+    "@storybook/core-events": "5.3.21",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -38,10 +38,10 @@
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
-    "@storybook/addon-knobs": "5.3.20"
+    "@storybook/addon-knobs": "5.3.21"
   },
   "peerDependencies": {
-    "@storybook/addon-knobs": "5.3.20",
+    "@storybook/addon-knobs": "5.3.21",
     "react": "*",
     "react-native": "*"
   },
