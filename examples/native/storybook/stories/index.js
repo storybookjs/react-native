@@ -1,4 +1,4 @@
 import './Welcome/Welcome.stories';
-import './Knobs/Knobs.stories';
+import './KnobsExample/KnobsExample.stories';
 import './Button/Button.stories';
 import './Parameters/Parameters.stories';
