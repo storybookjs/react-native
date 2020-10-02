@@ -60,6 +60,12 @@ module.exports = {
       },
     },
     {
+      files: ['examples/**/*.js'],
+      rules: {
+        'react/prop-types': 'off',
+      },
+    },
+    {
       files: ['**/*.tsx', '**/*.ts'],
       rules: {
         'react/prop-types': 'off', // we should use types
