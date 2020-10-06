@@ -39,6 +39,7 @@ class SelectType extends React.Component {
           initValue={knob.value}
           onChange={(option) => onChange(option.key)}
           animationType="none"
+          keyExtractor={({ key, label }) => `${label}-${key}`}
         >
           <Input
             editable={false}
