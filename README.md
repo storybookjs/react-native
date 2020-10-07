@@ -57,7 +57,7 @@ const StorybookUIRoot = getStorybookUI({});
 AppRegistry.registerComponent(appName, () => StorybookUIRoot);
 ```
 
-If your using expo you don't need to use the register component call and you can just do `export default storybookUIRoot`
+If your using expo you don't need to use the register component call and you can just do `export default StorybookUIRoot`
 
 ## Making stories
 
