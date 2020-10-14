@@ -12,25 +12,25 @@ _To re-iterate storybook dependencies with a version 6.0 and higher are not supp
 
 - 🚀 [Getting Started](#getting-started)
   - 📒 [Making stories](#making-stories)
-  - [On device Addons](#ondevice-addons)
-- [Other ways to render storybook](#other-ways-to-render-storybook)
-- [getStorybookUI Options](#getstorybookui-options)
-- [Contributing](#contributing)
+  - 🔌 [On device Addons](#ondevice-addons)
+- 📱 [Other ways to render storybook](#other-ways-to-render-storybook)
+- 🔧 [getStorybookUI Options](#getstorybookui-options)
+- 🤝 [Contributing](#contributing)
 
 # Getting Started
 
 To get started run this command from within the root of your react native app:
 
 ```
-npx @storybook/cli sb init --type react_native
+npx -p @storybook/cli sb init --type react_native
 ```
 
-You'll be prompted asking if you want to install the server also, you can safely choose not to install this now since you can add it later and its not required.
+You'll be prompted asking if you want to install @storybook/react-native-server, you can safely choose not to install this now since you can add it later and its not required.
 
 This command will setup most things for you, now you just need to add the following to your entrypoint (usually App.js or index.js).
 
 ```
-export {default} from "storybook"
+export {default} from "./storybook";
 ```
 
 The above steps use the storybook cli to install the most useful addons and creates a few example stories in a folder called `storybook`.
