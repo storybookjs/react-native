@@ -29,6 +29,7 @@
   "dependencies": {
     "@storybook/addons": "5.3.21",
     "@storybook/core-events": "5.3.21",
+    "@storybook/ondevice-theme": "5.3.23",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -41,7 +42,6 @@
   },
   "peerDependencies": {
     "@storybook/addon-knobs": "5.3.21",
-    "@storybook/ondevice-theme": "5.3.23",
     "react": "*",
     "react-native": "*"
   },

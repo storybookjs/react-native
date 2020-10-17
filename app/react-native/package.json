@@ -43,7 +43,7 @@
   "peerDependencies": {
     "@storybook/ondevice-theme": "5.3.23",
     "react": "*",
-    "react-native": ">=0.57.0"
+    "react-native": ">=0.59.0"
   },
   "engines": {
     "node": ">=8.0.0"

@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import Markdown from 'react-native-simple-markdown';
 import { AddonStore } from '@storybook/addons';
 import { API } from '@storybook/api';
-// import { ThemeContext } from '@emotion/core';
+import { Theme, withTheme } from '@storybook/ondevice-theme';
 
 export const PARAM_KEY = `notes`;
 
@@ -13,7 +13,7 @@ interface NotesProps {
   active: boolean;
 }
 
-export const Notes = ({ active, api }: NotesProps) => {
+const Notes = ({ active, api, theme }: NotesProps & { theme: Theme }) => {
   if (!active) {
     return null;
   }
@@ -28,11 +28,13 @@ export const Notes = ({ active, api }: NotesProps) => {
   const text = story.parameters[PARAM_KEY];
 
   const textAfterFormatted: string = text ? text.trim() : '';
-
-  const theme = { labelColor: 'black' };
+  // const theme = useTheme();
+  // const theme = { labelColor: 'black' };
   return (
     <View style={{ padding: 10, flex: 1 }}>
       <Markdown styles={{ text: { color: theme.labelColor } }}>{textAfterFormatted}</Markdown>
     </View>
   );
 };
+
+export default withTheme<NotesProps>(Notes);

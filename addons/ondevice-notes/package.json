@@ -32,12 +32,12 @@
     "@storybook/client-api": "5.3.21",
     "@storybook/client-logger": "5.3.21",
     "@storybook/core-events": "5.3.21",
+    "@storybook/ondevice-theme": "5.3.23",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2",
     "react-native-simple-markdown": "^1.1.0"
   },
   "peerDependencies": {
-    "@storybook/ondevice-theme": "5.3.23",
     "react": "*",
     "react-native": "*"
   },
