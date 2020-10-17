@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 
 const Touchable = styled.TouchableOpacity(({ theme }) => ({
-  borderColor: theme.borderColor,
+  borderColor: theme.inputBorderColor,
   borderWidth: 1,
   borderRadius: 2,
   padding: 5,

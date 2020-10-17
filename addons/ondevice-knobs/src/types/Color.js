@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Text, Modal, View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 import { ColorPicker, fromHsv } from '../components/color-picker';
 
 const Touchable = styled.TouchableOpacity(({ theme, color }) => ({
-  borderColor: theme.borderColor,
+  borderColor: theme.inputBorderColor,
   width: 30,
   height: 20,
   borderRadius: 2,

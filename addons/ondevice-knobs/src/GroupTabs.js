@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ScrollView, Text, TouchableOpacity } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 
 const Label = styled.Text(({ theme, active }) => ({
   color: active ? theme.buttonActiveTextColor : theme.buttonTextColor,

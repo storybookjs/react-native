@@ -1,17 +1,17 @@
 import React, { PureComponent } from 'react';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 
 interface Props {
   onPress: () => void;
 }
 
-const Touchable = styled.TouchableOpacity({
+const Touchable = styled.TouchableOpacity(() => ({
   backgroundColor: 'transparent',
   position: 'absolute',
   right: 8,
   bottom: 12,
   zIndex: 100,
-});
+}));
 
 const HideIcon = styled.Text(({ theme }) => ({
   fontSize: 14,

@@ -1,31 +1,27 @@
 import React, { Component, FunctionComponent } from 'react';
 import { SafeAreaView } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 import Events from '@storybook/core-events';
 import addons from '@storybook/addons';
 import { Header, Name } from '../Shared/text';
 
-const SearchBar = styled.TextInput(
-  {
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
-    borderBottomLeftRadius: 5,
-    borderBottomRightRadius: 5,
-    fontSize: 16,
-    marginHorizontal: 5,
-    marginVertical: 5,
-    paddingHorizontal: 5,
-    paddingVertical: 5,
-  },
-  ({ theme }) => ({
-    backgroundColor: theme.borderColor,
-    color: theme.buttonActiveTextColor,
-  })
-);
-
-const HeaderContainer = styled.View({
+const SearchBar = styled.TextInput(({ theme }) => ({
+  borderTopLeftRadius: 5,
+  borderTopRightRadius: 5,
+  borderBottomLeftRadius: 5,
+  borderBottomRightRadius: 5,
+  fontSize: 16,
+  marginHorizontal: 5,
+  marginVertical: 5,
+  paddingHorizontal: 5,
   paddingVertical: 5,
-});
+  backgroundColor: theme.borderColor,
+  color: theme.buttonActiveTextColor,
+}));
+
+const HeaderContainer = styled.View(() => ({
+  paddingVertical: 5,
+}));
 
 interface SectionProps {
   title: string;
@@ -45,10 +41,10 @@ interface ListItemProps {
   onPress: () => void;
 }
 
-const ItemTouchable = styled.TouchableOpacity({
+const ItemTouchable = styled.TouchableOpacity(() => ({
   paddingHorizontal: 16,
   paddingVertical: 5,
-});
+}));
 
 const ListItem: FunctionComponent<ListItemProps> = ({ kind, title, selected, onPress }) => (
   <ItemTouchable
@@ -71,10 +67,12 @@ interface State {
   originalData: any[];
 }
 
-const List = styled.SectionList({
+type Item = { name: string; kind: string; id: string };
+
+const List = styled.SectionList<Item>(() => ({
   flex: 1,
   marginBottom: 40,
-});
+}));
 
 export default class StoryListView extends Component<Props, State> {
   constructor(props: Props) {
@@ -175,7 +173,7 @@ export default class StoryListView extends Component<Props, State> {
         />
         <List
           testID="Storybook.ListView"
-          renderItem={({ item }) => (
+          renderItem={({ item }: { item: Item }) => (
             <ListItem
               title={item.name}
               kind={item.kind}
@@ -186,7 +184,7 @@ export default class StoryListView extends Component<Props, State> {
           renderSectionHeader={({ section: { title } }) => (
             <SectionHeader title={title} selected={selectedStory && title === selectedStory.kind} />
           )}
-          keyExtractor={(item, index) => item + index}
+          keyExtractor={(item, index) => item.id + index}
           sections={data}
           stickySectionHeadersEnabled={false}
         />

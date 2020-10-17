@@ -29,7 +29,7 @@
     "expo-file-system": "~9.0.1",
     "expo-font": "~8.1.0",
     "prop-types": "^15.6.2",
-    "react": "16.12.0",
+    "react": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "whatwg-fetch": "^3.0.0"
   },

@@ -29,21 +29,19 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.20",
-    "@emotion/native": "^10.0.14",
     "@storybook/addons": "5.3.21",
     "@storybook/channel-websocket": "5.3.21",
     "@storybook/channels": "5.3.21",
     "@storybook/client-api": "5.3.21",
     "@storybook/core-events": "5.3.21",
     "core-js": "^3.0.1",
-    "emotion-theming": "^10.0.19",
     "react-native-swipe-gestures": "^1.0.4"
   },
   "devDependencies": {
     "@types/react-native": "^0.57.57"
   },
   "peerDependencies": {
+    "@storybook/ondevice-theme": "5.3.23",
     "react": "*",
     "react-native": ">=0.57.0"
   },

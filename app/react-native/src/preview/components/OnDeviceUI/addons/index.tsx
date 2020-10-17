@@ -1,16 +1,16 @@
 import React, { PureComponent } from 'react';
 import { SafeAreaView } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 import addons from '@storybook/addons';
 import AddonsList from './list';
 import AddonWrapper from './wrapper';
 import { Label } from '../../Shared/text';
 
-const NoAddonContainer = styled.View({
+const NoAddonContainer = styled.View(() => ({
   flex: 1,
   alignItems: 'center',
   justifyContent: 'center',
-});
+}));
 
 const Container = styled.View(({ theme }) => ({
   flex: 1,

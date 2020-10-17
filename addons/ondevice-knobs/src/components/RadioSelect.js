@@ -1,4 +1,4 @@
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -17,7 +17,7 @@ const RadioTouchable = styled.TouchableOpacity(() => ({
   padding: 4,
 }));
 
-const RadioCircle = styled.View(({ selected, theme }) => ({
+const RadioCircle = styled.View(({ theme }) => ({
   width: 20,
   height: 20,
   borderRadius: 10,
@@ -25,15 +25,15 @@ const RadioCircle = styled.View(({ selected, theme }) => ({
   justifyContent: 'center',
   marginRight: 4,
   borderWidth: StyleSheet.hairlineWidth,
-  borderColor: selected ? 'green' : theme.borderColor,
+  borderColor: theme.inputBorderColor,
 }));
 
-const RadioInnerCircle = styled.View(({ selected }) => ({
+const RadioInnerCircle = styled.View(({ selected, theme }) => ({
   position: 'absolute',
   height: 16,
   width: 16,
   borderRadius: 8,
-  backgroundColor: selected ? 'green' : 'transparent',
+  backgroundColor: selected ? theme.positive : 'transparent',
 }));
 
 const RadioLabel = styled.Text(() => ({
@@ -65,7 +65,7 @@ class RadioSelect extends React.Component {
               this.setState({ value: item.key });
             }}
           >
-            <RadioCircle selected={value === item.key}>
+            <RadioCircle>
               <RadioInnerCircle selected={value === item.key} />
             </RadioCircle>
             <RadioLabel>{item.label}</RadioLabel>

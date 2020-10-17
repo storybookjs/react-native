@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import { View, Text } from 'react-native';
-import styled from '@emotion/native';
+
+import { styled } from '@storybook/ondevice-theme';
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
 
@@ -10,13 +11,13 @@ interface Props {
   onDevice?: boolean;
 }
 
-const HelpContainer = styled.View`
-  flex: 1;
-  padding-horizontal: 15;
-  padding-vertical: 15;
-  align-items: center;
-  justify-content: center;
-`;
+const HelpContainer = styled.View(() => ({
+  flex: 1,
+  paddingHorizontal: 15,
+  paddingVertical: 15,
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
 
 export default class StoryView extends Component<Props> {
   componentDidMount() {

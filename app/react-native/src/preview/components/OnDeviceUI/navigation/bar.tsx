@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 import Button from './button';
 import { NAVIGATOR, PREVIEW, ADDONS } from './constants';
 

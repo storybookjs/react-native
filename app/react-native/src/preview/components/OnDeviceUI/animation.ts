@@ -6,19 +6,17 @@ const PREVIEW_SCALE = 0.3;
 const panelWidth = (width: number) => width * (1 - PREVIEW_SCALE - 0.05);
 
 export const getNavigatorPanelPosition = (animatedValue: Animated.Value, previewWidth: number) => {
-  return [
-    {
-      transform: [
-        {
-          translateX: animatedValue.interpolate({
-            inputRange: [NAVIGATOR, PREVIEW],
-            outputRange: [0, -panelWidth(previewWidth) - 1],
-          }),
-        },
-      ],
-      width: panelWidth(previewWidth),
-    },
-  ];
+  return {
+    transform: [
+      {
+        translateX: animatedValue.interpolate({
+          inputRange: [NAVIGATOR, PREVIEW],
+          outputRange: [0, -panelWidth(previewWidth) - 1],
+        }),
+      },
+    ],
+    width: panelWidth(previewWidth),
+  };
 };
 
 export const getAddonPanelPosition = (animatedValue: Animated.Value, previewWidth: number) => {

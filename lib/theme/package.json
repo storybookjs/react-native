@@ -1,0 +1,36 @@
+{
+  "name": "@storybook/ondevice-theme",
+  "version": "5.3.23",
+  "description": "Theme for react native storybook",
+  "keywords": [
+    "react-native",
+    "storybook",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/react-native.git",
+    "directory": "lib/theme"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@emotion/native": "^10.0.27",
+    "@emotion/styled-base": "^10.0.31",
+    "emotion-theming": "^10.0.19"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}

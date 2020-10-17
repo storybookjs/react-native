@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import React from 'react';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 import TypeMap from './types';
 
 const InvalidType = () => <Text style={{ margin: 10 }}>Invalid Type</Text>;

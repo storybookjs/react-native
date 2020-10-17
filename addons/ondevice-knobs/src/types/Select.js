@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import React from 'react';
 import ModalPicker from 'react-native-modal-selector';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 
 const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
   borderRadius: 2,
   padding: 5,
   margin: 10,
-  borderColor: theme.borderColor,
+  borderColor: theme.inputBorderColor,
   color: theme.labelColor,
 }));
 

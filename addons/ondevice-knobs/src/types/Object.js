@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import deepEqual from 'deep-equal';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 
 const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
@@ -9,7 +9,7 @@ const Input = styled.TextInput(({ theme }) => ({
   fontSize: 13,
   padding: 5,
   margin: 10,
-  borderColor: theme.borderColor,
+  borderColor: theme.inputBorderColor,
   color: theme.labelColor,
 }));
 

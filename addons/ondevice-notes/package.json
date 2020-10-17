@@ -27,7 +27,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.20",
     "@storybook/addons": "5.3.21",
     "@storybook/api": "5.3.21",
     "@storybook/client-api": "5.3.21",
@@ -38,6 +37,7 @@
     "react-native-simple-markdown": "^1.1.0"
   },
   "peerDependencies": {
+    "@storybook/ondevice-theme": "5.3.23",
     "react": "*",
     "react-native": "*"
   },

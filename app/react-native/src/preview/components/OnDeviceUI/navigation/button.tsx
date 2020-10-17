@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { TouchableOpacity } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 
 const ActiveBorder = styled.View<{ active: boolean }>(({ active, theme }) => ({
   backgroundColor: active ? theme.borderColor : 'transparent',

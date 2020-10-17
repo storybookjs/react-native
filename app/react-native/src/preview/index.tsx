@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { PureComponent } from 'react';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider, theme } from '@storybook/ondevice-theme';
 
 import addons from '@storybook/addons';
 import Events from '@storybook/core-events';
@@ -9,7 +9,6 @@ import createChannel from '@storybook/channel-websocket';
 import { StoryStore, ClientApi } from '@storybook/client-api';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
-import { theme } from './components/Shared/theme';
 // @ts-ignore
 import getHost from './rn-host-detect';
 
@@ -138,14 +137,12 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
 
     addons.loadAddons(this._clientApi);
 
-    const appliedTheme = { ...theme, ...params.theme };
-
     // react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
     return class StorybookRoot extends PureComponent {
       render() {
         if (onDeviceUI) {
           return (
-            <ThemeProvider theme={appliedTheme}>
+            <ThemeProvider extendedTheme={params.theme}>
               <OnDeviceUI
                 stories={preview._stories}
                 url={webUrl}
@@ -159,7 +156,7 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
         }
 
         return (
-          <ThemeProvider theme={appliedTheme}>
+          <ThemeProvider extendedTheme={params.theme}>
             <StoryView stories={preview._stories} url={webUrl} />
           </ThemeProvider>
         );

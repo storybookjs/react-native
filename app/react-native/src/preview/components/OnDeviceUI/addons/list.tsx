@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { ScrollView } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 import { Collection } from '@storybook/addons';
 import Button from '../navigation/button';
 

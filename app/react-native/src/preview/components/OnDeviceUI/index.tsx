@@ -9,7 +9,7 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 import addons from '@storybook/addons';
 import Channel from '@storybook/channels';
 import StoryListView from '../StoryListView';
@@ -49,12 +49,13 @@ interface OnDeviceUIState {
 
 const flex = { flex: 1 };
 
-const Preview = styled.View<{ disabled: boolean }>(flex, ({ disabled, theme }) => ({
+const Preview = styled.View<{ disabled: boolean }>(({ disabled, theme }) => ({
   borderLeftWidth: disabled ? 0 : 1,
   borderTopWidth: disabled ? 0 : 1,
   borderRightWidth: disabled ? 0 : 1,
   borderBottomWidth: disabled ? 0 : 1,
   borderColor: disabled ? 'transparent' : theme.previewBorderColor,
+  ...flex,
 }));
 
 const absolutePosition: FlexStyle = { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 };

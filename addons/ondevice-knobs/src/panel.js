@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { SELECT_STORY, FORCE_RE_RENDER } from '@storybook/core-events';
 import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-knobs';
-import styled from '@emotion/native';
+import { styled } from '@storybook/ondevice-theme';
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 

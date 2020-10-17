@@ -27,7 +27,6 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@emotion/native": "^10.0.14",
     "@storybook/addons": "5.3.21",
     "@storybook/core-events": "5.3.21",
     "core-js": "^3.0.1",
@@ -42,6 +41,7 @@
   },
   "peerDependencies": {
     "@storybook/addon-knobs": "5.3.21",
+    "@storybook/ondevice-theme": "5.3.23",
     "react": "*",
     "react-native": "*"
   },
