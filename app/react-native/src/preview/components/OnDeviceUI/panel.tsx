@@ -1,15 +1,17 @@
-import { theme } from '@storybook/ondevice-theme';
-import React, { PureComponent } from 'react';
+import { Theme, withTheme } from '@storybook/ondevice-theme';
+import React, { PureComponent, ReactNode } from 'react';
+
 import { Animated, StyleSheet } from 'react-native';
 
 interface Props {
   style: any;
+  children: ReactNode;
 }
 
-export default class Panel extends PureComponent<Props> {
+class Panel extends PureComponent<Props & { theme: Theme }> {
   render() {
     // const theme = useTheme();
-    const { children, style } = this.props;
+    const { children, style, theme } = this.props;
     return (
       <Animated.View
         style={[StyleSheet.absoluteFillObject, { backgroundColor: theme.backgroundColor }, style]}
@@ -19,3 +21,5 @@ export default class Panel extends PureComponent<Props> {
     );
   }
 }
+
+export default withTheme<Props>(Panel);

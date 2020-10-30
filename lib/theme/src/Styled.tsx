@@ -1,6 +1,5 @@
-import React, { ComponentType, ReactChildren, ReactNode } from 'react';
+import React, { ComponentType, ReactNode } from 'react';
 import {
-  StyleProp,
   ViewStyle,
   TextStyle,
   View,
@@ -13,10 +12,10 @@ import {
   TouchableOpacity,
   SectionListProps,
   SectionList,
-  FlatListProps,
 } from 'react-native';
 import { Theme, theme } from './theme';
-import { useTheme } from './useTheme';
+import { withTheme } from './ThemeContext';
+// import { useTheme } from './useTheme';
 
 export type ThemedStyle<T, StyleType> = (props: { theme: Theme } & T) => StyleType;
 
@@ -25,54 +24,32 @@ type StyledProps<ComponentProps, StyleType, T> = ComponentProps &
   RChildren &
   T & { style?: StyleType };
 
-// function view<T>(stylefn: ThemedStyle<T, ViewStyle>) {
-//   return (props: StyledProps<ViewProps, ViewStyle, T>) => {
-//     const theme = useTheme();
-//     const { style } = props;
-//     const themedStyle = stylefn({ theme, ...props });
-//     return <View style={[themedStyle, style]} {...props} />;
-//   };
-// }
-
-// function text<T>(stylefn: ThemedStyle<T, TextStyle>) {
-//   return (props: StyledProps<TextProps, TextStyle, T>) => {
-//     const theme = useTheme();
-
-//     const { style } = props;
-//     const themedStyle = stylefn({ theme, ...props });
-//     return <Text style={[themedStyle, style]} {...props} />;
-//   };
-// }
-
-// function textInput<T>(stylefn: ThemedStyle<T, TextStyle>) {
-//   return (props: StyledProps<TextInputProps, TextStyle, T>) => {
-//     const theme = useTheme();
-//     const { style } = props;
-//     const themedStyle = stylefn({ theme, ...props });
-//     return <TextInput style={[themedStyle, style]} {...props} />;
-//   };
-// }
-
 export function createStyled<StyleType, ComponentProps>(Component: ComponentType<any>) {
   return function styledComponent<T>(stylefn: ThemedStyle<T, StyleType>) {
-    return (props: StyledProps<ComponentProps, StyleType, T>) => {
+    const component = (props: StyledProps<ComponentProps, StyleType, T> & { theme: Theme }) => {
+      // TODO: replace withTheme with use theme here once hooks are working
       // const theme = useTheme();
       const { style } = props;
-      const themedStyle = stylefn({ theme, ...props });
-      return <Component style={[themedStyle, style]} {...props} />;
+      const themedStyle = stylefn({ ...props });
+      return <Component {...props} style={[themedStyle, style]} />;
     };
+    return withTheme<StyledProps<ComponentProps, StyleType, T>>(component);
   };
 }
 
 // type listTypes<Item> = FlatListProps<Item> | SectionListProps<Item>
 
 function sectionList<Item, T = {}>(stylefn: ThemedStyle<T, ViewStyle>) {
-  return (props: StyledProps<SectionListProps<Item>, ViewStyle, T>) => {
+  const component = (
+    props: StyledProps<SectionListProps<Item>, ViewStyle, T> & { theme: Theme }
+  ) => {
+    // TODO: replace withTheme with use theme here once hooks are working
     // const theme = useTheme();
     const { style } = props;
-    const themedStyle = stylefn({ theme, ...props });
+    const themedStyle = stylefn({ ...props });
     return <SectionList style={[themedStyle, style]} {...props} />;
   };
+  return withTheme<StyledProps<SectionListProps<Item>, ViewStyle, T>>(component);
 }
 
 export const styled = {

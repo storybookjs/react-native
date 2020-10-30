@@ -21,6 +21,7 @@ const SearchBar = styled.TextInput(({ theme }) => ({
 
 const HeaderContainer = styled.View(() => ({
   paddingVertical: 5,
+  paddingHorizontal: 8,
 }));
 
 interface SectionProps {

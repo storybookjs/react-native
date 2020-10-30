@@ -1,7 +1,7 @@
 {
   "name": "@storybook/ondevice-theme",
   "version": "5.3.23",
-  "description": "Theme for react native storybook",
+  "description": "Theming for react native storybook",
   "keywords": [
     "react-native",
     "storybook",
