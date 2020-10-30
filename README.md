@@ -11,8 +11,8 @@ _To re-iterate storybook dependencies with a version 6.0 and higher are not supp
 # Table of contents
 
 - 🚀 [Getting Started](#getting-started)
-  - 📒 [Making stories](#making-stories)
-  - 🔌 [On device Addons](#ondevice-addons)
+- 📒 [Making stories](#making-stories)
+- 🔌 [On device Addons](#ondevice-addons)
 - 📱 [Other ways to render storybook](#other-ways-to-render-storybook)
 - 🔧 [getStorybookUI Options](#getstorybookui-options)
 - 🤝 [Contributing](#contributing)
@@ -47,6 +47,29 @@ The react native storybook is designed to be flexible so that you can navigate a
 
 The UI that allows you to navigate stories on the device is what we will call the "OnDeviceUI". When referring to features specific to this UI this term is used to distinguish it from the server ui.
 
+# Making stories
+
+The simplest type of story could look something like this
+
+```
+  
+  import React from 'react';
+  import { storiesOf } from '@storybook/react-native';
+  
+  // I import the component I want to display here
+  import CustomButton from './CustomButton';
+
+  // here I define that I want to create stories with the label "Buttons",
+  // this will be the name in the storybook navigation
+
+  const buttonStories = storiesOf('Buttons', module);
+
+  // then I add a story with the name default view, I can add multiple stories to button stories
+  buttonStories.add('default view', () => (<CustomButton onPress={() => null} />));
+```
+
+You can then include addons such as action and knobs to make it more interactive.
+
 # Ondevice Addons
 
 The cli will install some basic addons for you such as knobs and actions.
@@ -70,6 +93,41 @@ Make sure to import the rn-addons.js file in the storybook entrypoint (index.js 
 ```
 import './rn-addons';
 ```
+
+
+### Using the addons in your story
+
+Based on the previous example heres how you could extend it to use addons.
+
+```
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import CustomButton from './CustomButton';
+import { View } from 'react-native';
+
+// the action function has one argument which is the name of the action,
+// this will be displayed in the actions tab in the addons panel
+// action("name here")
+import { action } from '@storybook/addon-actions';
+
+// the boolean knob renders a switch which lets you toggle a value between true or false
+// you call it like boolean("name here", default_value)
+import { boolean, withKnobs } from '@storybook/addon-knobs';
+
+const buttonStories = storiesOf('CustomButton', module);
+
+// lets storybook know to show the knobs addon for this story
+buttonStories.addDecorator(withKnobs);
+
+// I use to boolean knob to set the disabled prop based on the knob state
+// I use the action function to log every time the button gets called
+buttonStories.add('default view', () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <CustomButton onPress={action('Button Press!')} disabled={boolean('Disabled', false)} />
+  </View>
+));
+```
+
 
 # Other ways to render storybook
 
