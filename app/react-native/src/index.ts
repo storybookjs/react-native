@@ -1,5 +1,7 @@
 /* eslint-disable prefer-destructuring */
+import { StoryApi } from '@storybook/addons';
 import { ClientApi } from '@storybook/client-api';
+import { ReactNode } from 'react';
 import Preview from './preview';
 
 const preview = new Preview();
@@ -16,5 +18,5 @@ export const getStorybook: ClientApi['getStorybook'] = preview.api().getStoryboo
 export const getStorybookUI = preview.getStorybookUI;
 export const raw: ClientApi['raw'] = preview.api().raw.bind(preview);
 
-export const storiesOf = (kind: string, module: NodeModule) =>
+export const storiesOf = (kind: string, module: NodeModule): StoryApi<ReactNode> =>
   rawStoriesOf(kind, module).addParameters({ framework: 'react-native' });
