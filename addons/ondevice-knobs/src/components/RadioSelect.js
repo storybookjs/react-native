@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 
 const RadioContainer = styled.View(({ isInline }) => ({
@@ -17,27 +17,27 @@ const RadioTouchable = styled.TouchableOpacity(() => ({
   padding: 4,
 }));
 
-const RadioCircle = styled.View(({ selected, theme }) => ({
-  width: 20,
-  height: 20,
-  borderRadius: 10,
+const RadioCircle = styled.View(({ theme }) => ({
+  width: 16,
+  height: 16,
+  borderRadius: 8,
   alignItems: 'center',
   justifyContent: 'center',
   marginRight: 4,
   borderWidth: StyleSheet.hairlineWidth,
-  borderColor: selected ? 'green' : theme.borderColor,
+  borderColor: theme.borderColor,
 }));
 
 const RadioInnerCircle = styled.View(({ selected }) => ({
   position: 'absolute',
-  height: 16,
-  width: 16,
-  borderRadius: 8,
-  backgroundColor: selected ? 'green' : 'transparent',
+  height: 12,
+  width: 12,
+  borderRadius: 6,
+  backgroundColor: selected ? '#66bf3c' : 'transparent',
 }));
 
 const RadioLabel = styled.Text(() => ({
-  fontSize: 16,
+  fontSize: 13,
 }));
 
 class RadioSelect extends React.Component {
@@ -52,7 +52,7 @@ class RadioSelect extends React.Component {
   }
 
   render() {
-    const { data, initValue, onChange } = this.props;
+    const { data, onChange } = this.props;
     const { value } = this.state;
     return (
       <RadioContainer>
@@ -65,7 +65,7 @@ class RadioSelect extends React.Component {
               this.setState({ value: item.key });
             }}
           >
-            <RadioCircle selected={value === item.key}>
+            <RadioCircle>
               <RadioInnerCircle selected={value === item.key} />
             </RadioCircle>
             <RadioLabel>{item.label}</RadioLabel>
