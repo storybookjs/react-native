@@ -81,6 +81,8 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
       );
     }
 
+    const { initialSelection, shouldPersistSelection } = params;
+    this._setInitialStory(initialSelection, shouldPersistSelection);
     if (params.asyncStorage) {
       this._asyncStorage = params.asyncStorage;
     }

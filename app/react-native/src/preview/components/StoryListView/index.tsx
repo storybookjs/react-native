@@ -1,8 +1,9 @@
+import styled from '@emotion/native';
+import addons from '@storybook/addons';
+import { StoryStore } from '@storybook/client-api';
+import Events from '@storybook/core-events';
 import React, { Component, FunctionComponent } from 'react';
 import { SafeAreaView } from 'react-native';
-import styled from '@emotion/native';
-import Events from '@storybook/core-events';
-import addons from '@storybook/addons';
 import { Header, Name } from '../Shared/text';
 
 const SearchBar = styled.TextInput(
@@ -64,7 +65,7 @@ const ListItem: FunctionComponent<ListItemProps> = ({ kind, title, selected, onP
 );
 
 interface Props {
-  stories: any;
+  stories: StoryStore;
 }
 
 interface State {
