@@ -21,7 +21,7 @@ const HelpContainer = styled.View`
 export default class StoryView extends Component<Props> {
   componentDidMount() {
     const channel = addons.getChannel();
-    channel.on(Events.STORY_RENDER, this.forceReRender);
+    channel.on(Events.STORY_RENDERED, this.forceReRender);
     channel.on(Events.FORCE_RE_RENDER, this.forceReRender);
   }
 
@@ -37,7 +37,7 @@ export default class StoryView extends Component<Props> {
 
   componentWillUnmount() {
     const channel = addons.getChannel();
-    channel.removeListener(Events.STORY_RENDER, this.forceReRender);
+    channel.removeListener(Events.STORY_RENDERED, this.forceReRender);
     channel.removeListener(Events.FORCE_RE_RENDER, this.forceReRender);
   }
 

@@ -89,14 +89,14 @@ export default class StoryListView extends Component<Props, State> {
 
   componentDidMount() {
     const channel = addons.getChannel();
-    channel.on(Events.STORY_ADDED, this.handleStoryAdded);
+    channel.on(Events.SET_STORIES, this.handleStoryAdded);
     channel.on(Events.SELECT_STORY, this.forceReRender);
     this.handleStoryAdded();
   }
 
   componentWillUnmount() {
     const channel = addons.getChannel();
-    channel.removeListener(Events.STORY_ADDED, this.handleStoryAdded);
+    channel.removeListener(Events.SET_STORIES, this.handleStoryAdded);
     channel.removeListener(Events.SELECT_STORY, this.forceReRender);
   }
 

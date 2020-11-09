@@ -79,7 +79,7 @@ export default class BackgroundPanel extends Component<BackgroundPanelProps, Bac
 
     const story = api
       .store()
-      .getStoryAndParameters(this.state.selection.kind, this.state.selection.story);
+      .getStoryAndParameters(this.state.selection.kind, this.state.selection.name);
     const backgrounds: Background[] = story.parameters[PARAM_KEY];
 
     return (

@@ -34,7 +34,11 @@ export default class AddonList extends PureComponent<Props> {
     return (
       <Container>
         <ScrollView showsHorizontalScrollIndicator={false} horizontal>
-          {addonKeys.map((id) => this.renderTab(id, panels[id].title))}
+          {addonKeys.map((id) => {
+            const { title } = panels[id];
+            const resolvedTitle = typeof title === 'function' ? title() : title;
+            return this.renderTab(id, resolvedTitle);
+          })}
         </ScrollView>
       </Container>
     );
