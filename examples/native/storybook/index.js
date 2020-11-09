@@ -1,8 +1,8 @@
 import { getStorybookUI, configure, addParameters, addDecorator } from '@storybook/react-native';
-import './rn-addons';
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+// import './rn-addons';
+// import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
-addDecorator(withBackgrounds);
+// addDecorator(withBackgrounds);
 
 addParameters({
   backgrounds: [
