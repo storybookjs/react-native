@@ -65,12 +65,13 @@ const ListItem: FunctionComponent<ListItemProps> = ({ kind, title, selected, onP
 );
 
 interface Props {
-  stories: StoryStore;
+  storyStore: StoryStore;
 }
 
 interface State {
   data: any[];
   originalData: any[];
+  storyId: string;
 }
 
 const List = styled.SectionList({
@@ -85,32 +86,33 @@ export default class StoryListView extends Component<Props, State> {
     this.state = {
       data: [],
       originalData: [],
+      storyId: props.storyStore.getSelection().storyId,
     };
   }
 
   componentDidMount() {
     const channel = addons.getChannel();
-    channel.on(Events.SET_STORIES, this.handleStoryAdded);
-    channel.on(Events.SELECT_STORY, this.forceReRender);
+    channel.on(Events.CURRENT_STORY_WAS_SET, this.handleStoryWasSet);
     this.handleStoryAdded();
   }
 
   componentWillUnmount() {
     const channel = addons.getChannel();
-    channel.removeListener(Events.SET_STORIES, this.handleStoryAdded);
-    channel.removeListener(Events.SELECT_STORY, this.forceReRender);
+    channel.removeListener(Events.CURRENT_STORY_WAS_SET, this.handleStoryWasSet);
   }
 
-  forceReRender = () => {
-    this.forceUpdate();
+  handleStoryWasSet = ({ storyId }: { storyId: string }) => {
+    this.setState({
+      storyId,
+    });
   };
 
   handleStoryAdded = () => {
-    const { stories } = this.props;
+    const { storyStore } = this.props;
 
-    if (stories) {
+    if (storyStore) {
       const data = Object.values(
-        stories
+        storyStore
           .raw()
           .reduce((acc: { [kind: string]: { title: string; data: any[] } }, story: any) => {
             acc[story.kind] = {
@@ -160,10 +162,10 @@ export default class StoryListView extends Component<Props, State> {
   }
 
   render() {
-    const { stories } = this.props;
-    const { storyId } = stories.getSelection();
-    const selectedStory = stories.fromId(storyId);
-    const { data } = this.state;
+    const { storyStore } = this.props;
+
+    const { data, storyId } = this.state;
+    const selectedStory = storyStore.fromId(storyId);
 
     return (
       <SafeAreaView style={{ flex: 1 }}>

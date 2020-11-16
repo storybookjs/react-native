@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
+import { StoryStore } from '@storybook/client-api';
 import Events from '@storybook/core-events';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 
 interface Props {
-  stories: any;
+  storyStore: StoryStore;
   url: string;
   onDevice?: boolean;
+}
+
+interface State {
+  storyId: string;
 }
 
 const HelpContainer = styled.View`
@@ -18,31 +23,28 @@ const HelpContainer = styled.View`
   justify-content: center;
 `;
 
-export default class StoryView extends Component<Props> {
-  componentDidMount() {
-    const channel = addons.getChannel();
-    channel.on(Events.STORY_RENDERED, this.forceReRender);
-    channel.on(Events.FORCE_RE_RENDER, this.forceReRender);
+export default class StoryView extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      storyId: props.storyStore.getSelection().storyId,
+    };
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     const channel = addons.getChannel();
-    const { stories } = this.props;
-    const { storyId } = stories.getSelection();
-
-    if (storyId) {
-      channel.emit(Events.STORY_RENDERED, { storyId });
-    }
+    channel.on(Events.CURRENT_STORY_WAS_SET, this.handleStoryWasSet);
   }
 
   componentWillUnmount() {
     const channel = addons.getChannel();
-    channel.removeListener(Events.STORY_RENDERED, this.forceReRender);
-    channel.removeListener(Events.FORCE_RE_RENDER, this.forceReRender);
+    channel.removeListener(Events.CURRENT_STORY_WAS_SET, this.handleStoryWasSet);
   }
 
-  forceReRender = () => {
-    this.forceUpdate();
+  handleStoryWasSet = ({ storyId }: { storyId: string }) => {
+    this.setState({
+      storyId,
+    });
   };
 
   renderHelp = () => {
@@ -69,9 +71,9 @@ export default class StoryView extends Component<Props> {
   );
 
   render() {
-    const { onDevice, stories } = this.props;
-    const { storyId } = stories.getSelection();
-    const story = stories.fromId(storyId);
+    const { onDevice, storyStore } = this.props;
+    const { storyId } = this.state;
+    const story = storyStore.fromId(storyId);
 
     if (story && story.storyFn) {
       const { id, storyFn } = story;

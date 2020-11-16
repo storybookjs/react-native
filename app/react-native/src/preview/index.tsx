@@ -36,7 +36,7 @@ export type Params = {
 export default class Preview {
   _clientApi: ClientApi;
 
-  _stories: StoryStore;
+  _storyStore: StoryStore;
 
   _addons: any;
 
@@ -51,8 +51,8 @@ export default class Preview {
   constructor() {
     const channel = new Channel({ async: true });
     this._decorators = [];
-    this._stories = new StoryStore({ channel });
-    this._clientApi = new ClientApi({ storyStore: this._stories });
+    this._storyStore = new StoryStore({ channel });
+    this._clientApi = new ClientApi({ storyStore: this._storyStore });
     this._channel = channel;
     addons.setChannel(channel);
   }
@@ -63,10 +63,7 @@ export default class Preview {
 
   configure = (loadStories: () => void, module: any) => {
     loadStories();
-    if (module && module.hot) {
-      // module.hot.accept(() => this._sendSetStories()); //TODO: ???
-      // TODO remove all global decorators on dispose
-    }
+    // TODO: check hot module reloading
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
@@ -87,42 +84,38 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
       this._asyncStorage = params.asyncStorage;
     }
 
-    this._channel.on(Events.SET_CURRENT_STORY, (d) => this._selectStoryEvent(d));
+    this._channel.on(Events.SET_CURRENT_STORY, (d) => {
+      this._selectStoryEvent(d);
+    });
 
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
-    const preview = this;
+    const { _storyStore } = this;
 
     addons.loadAddons(this._clientApi);
 
     const appliedTheme = { ...theme, ...params.theme };
 
-    // react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
-    return class StorybookRoot extends PureComponent {
-      render() {
-        return (
-          <ThemeProvider theme={appliedTheme}>
-            <OnDeviceUI
-              stories={preview._stories}
-              isUIHidden={params.isUIHidden}
-              tabOpen={params.tabOpen}
-              shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
-              keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
-            />
-          </ThemeProvider>
-        );
-      }
-    };
+    return () => (
+      <ThemeProvider theme={appliedTheme}>
+        <OnDeviceUI
+          storyStore={_storyStore}
+          isUIHidden={params.isUIHidden}
+          tabOpen={params.tabOpen}
+          shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
+          keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
+        />
+      </ThemeProvider>
+    );
   };
 
   _setInitialStory = async (initialSelection: any, shouldPersistSelection = true) => {
-    const story = await this._getInitialStory(initialSelection, shouldPersistSelection)();
+    const story = await this._getInitialStory(initialSelection, shouldPersistSelection);
 
     if (story) {
       this._selectStory(story);
     }
   };
 
-  _getInitialStory = (initialSelection: any, shouldPersistSelection = true) => async () => {
+  _getInitialStory = async (initialSelection: any, shouldPersistSelection = true) => {
     let story = null;
     if (initialSelection && this._checkStory(initialSelection)) {
       story = initialSelection;
@@ -146,7 +139,7 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
       return this._getStory(story);
     }
 
-    const stories = this._stories.raw();
+    const stories = this._storyStore.raw();
     if (stories && stories.length) {
       return this._getStory(stories[0].id);
     }
@@ -155,7 +148,7 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
   };
 
   _getStory(storyId: string) {
-    return this._stories.fromId(storyId);
+    return this._storyStore.fromId(storyId);
   }
 
   _selectStoryEvent({ storyId }: { storyId: string }) {
@@ -170,8 +163,7 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
   }
 
   _selectStory(story: any) {
-    this._stories.setSelection({ storyId: story.id, viewMode: 'story' });
-    this._channel.emit(Events.SELECT_STORY, story);
+    this._storyStore.setSelection({ storyId: story.id, viewMode: 'story' });
   }
 
   _checkStory(storyId: string) {

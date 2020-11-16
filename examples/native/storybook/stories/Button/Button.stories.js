@@ -5,11 +5,20 @@ import { Text } from 'react-native';
 import Button from '.';
 // import CenterView from '../CenterView';
 
-storiesOf('Button', module).add('with text', () => (
-  <Button onPress={() => null}>
-    <Text>Hello Button</Text>
-  </Button>
-));
+storiesOf('Button', module)
+  .add('with text', () => {
+    // console.log('s');
+    return (
+      <Button onPress={() => null}>
+        <Text>Hello Button!!!</Text>
+      </Button>
+    );
+  })
+  .add('with some emoji', () => (
+    <Button onPress={() => null}>
+      <Text>😀 😎 👍 💯 🤘</Text>
+    </Button>
+  ));
 //   .addParameters({
 //     component: Button,
 //   })
