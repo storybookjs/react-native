@@ -27,7 +27,7 @@ export default class StoryView extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      storyId: props.storyStore.getSelection().storyId,
+      storyId: props.storyStore.getSelection()?.storyId || '',
     };
   }
 
