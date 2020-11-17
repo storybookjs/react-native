@@ -31,7 +31,7 @@ class NumberType extends React.Component {
     const { onChange } = this.props;
 
     if (!Number.isNaN(value)) {
-      onChange(value);
+      onChange(value.replace(/,(?=\d+$)/, '.'));
     }
   };
 
