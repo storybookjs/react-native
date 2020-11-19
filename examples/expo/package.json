@@ -5,7 +5,9 @@
   "main": "node_modules/expo/AppEntry.js",
   "workspaces": {
     "nohoist": [
-      "*"
+      "react-native/**",
+      "**/app/react-native*",
+      "expo"
     ]
   },
   "scripts": {

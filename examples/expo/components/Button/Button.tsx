@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text } from 'react-native';
 
 interface ButtonProps {
   onPress: () => void;
@@ -10,6 +10,6 @@ const styles = StyleSheet.create({ button: { paddingHorizontal: 16, paddingVerti
 
 export const Button: FunctionComponent<ButtonProps> = ({ onPress, text }) => (
   <TouchableOpacity style={styles.button} onPress={onPress}>
-    {text}
+    <Text>{text}</Text>
   </TouchableOpacity>
 );

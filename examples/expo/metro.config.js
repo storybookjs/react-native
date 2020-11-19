@@ -1,23 +1,27 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 const path = require('path');
+const blacklist = require('metro-config/src/defaults/blacklist');
 
 module.exports = {
   watchFolders: [
     // The monorepo
-    path.resolve(__dirname, '../../app/react-native'),
+    path.resolve(__dirname, '../..'),
   ],
   resolver: {
-    extraNodeModules: new Proxy(
-      {},
-      {
-        get: (target, name) => path.join(process.cwd(), `node_modules/${name}`),
-      }
-    ),
+    blacklistRE: blacklist([
+      // exclude react-native modules outside of this package
+      /app\/.*\/node_modules\/react-native\/.*/,
+      /examples\/native\/.*/,
+      /examples\/crna-kitchen-sink\/.*/,
+      /addons\/.*\/node_modules\/react-native\/.*/,
+      /node_modules\/.*\/node_modules\/react-native\/.*/,
+      // duplicate packages in server mocks. We don't need them so it's safe to exclude.
+      /__mocks__\/.*/,
+    ]),
+    extraNodeModules: {
+      // resolve react-native to this package's node_modules
+      'react-native': path.resolve(__dirname, 'node_modules/react-native'),
+    },
   },
-  // resolver: {
-  //   extraNodeModules: {
-  //     // resolve react-native to this package's node_modules
-  //     'react-native': path.resolve(__dirname, 'node_modules/react-native'),
-  //     '@storybook/react-native': path.resolve(__dirname, '../../app/react-native'),
-  //   },
-  // },
 };
