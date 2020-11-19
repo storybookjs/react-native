@@ -47,14 +47,14 @@ export default class Panel extends React.Component {
 
     channel.on(SET, this.setKnobs);
     channel.on(SET_OPTIONS, this.setOptions);
-    channel.on(SELECT_STORY, this.reset);
+    channel.on(SELECT_STORY, this.selectStory);
     channel.emit(FORCE_RE_RENDER);
   }
 
   componentWillUnmount() {
     const { channel } = this.props;
     channel.removeListener(SET, this.setKnobs);
-    channel.removeListener(SELECT_STORY, this.reset);
+    channel.removeListener(SELECT_STORY, this.selectStory);
   }
 
   onGroupSelect(name) {
@@ -74,6 +74,12 @@ export default class Panel extends React.Component {
   reset = () => {
     const { channel } = this.props;
     this.setState({ knobs: {} });
+    channel.emit(RESET);
+  };
+
+  selectStory = () => {
+    const { channel } = this.props;
+    this.setState({ knobs: {}, groupId: DEFAULT_GROUP_ID });
     channel.emit(RESET);
   };
 
