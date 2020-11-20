@@ -17,33 +17,24 @@ class NumberType extends React.Component {
     super(props);
     this.renderNormal = this.renderNormal.bind(this);
     this.renderRange = this.renderRange.bind(this);
+
+    const { knob } = this.props;
+    this.defaultValue = knob.value;
   }
-
-  numberTransformer = (x) => {
-    if (Number.isNaN(Number(x))) {
-      return x.substr(0, x.length - 1);
-    }
-
-    return x;
-  };
 
   onChangeNormal = (value) => {
     const { onChange } = this.props;
+    const number = value.replace(/,(?=\d+$)/, '.');
 
-    if (!Number.isNaN(value)) {
-      onChange(value.replace(/,(?=\d+$)/, '.'));
-    }
+    onChange(number);
   };
 
   renderNormal() {
-    const { knob } = this.props;
-
     return (
       <Input
         autoCapitalize="none"
         underlineColorAndroid="transparent"
-        value={(knob.value || '').toString()}
-        transformer={this.numberTransformer}
+        defaultValue={(this.defaultValue || '').toString()}
         keyboardType="numeric"
         onChangeText={this.onChangeNormal}
       />
