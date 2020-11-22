@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   Dimensions,
   TouchableOpacity,
+  StatusBar,
 } from 'react-native';
 import styled from '@emotion/native';
 import addons from '@storybook/addons';
@@ -30,6 +31,12 @@ import {
 
 const ANIMATION_DURATION = 300;
 const IS_IOS = Platform.OS === 'ios';
+
+// @ts-ignore: Property 'Expo' does not exist on type 'Global'
+// eslint-disable-next-line no-underscore-dangle
+const getExpoRoot = () => global.Expo || global.__expo || global.__exponent;
+export const IS_EXPO = getExpoRoot() !== undefined;
+const IS_ANDROID = Platform.OS === 'android';
 
 interface OnDeviceUIProps {
   stories: any;
@@ -126,7 +133,9 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
     const previewStyles = [flex, getPreviewScale(this.animatedValue, slideBetweenAnimation)];
 
     return (
-      <SafeAreaView style={flex}>
+      <SafeAreaView
+        style={[flex, { paddingTop: IS_ANDROID && IS_EXPO ? StatusBar.currentHeight : 0 }]}
+      >
         <KeyboardAvoidingView
           enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
           behavior={IS_IOS ? 'padding' : null}
