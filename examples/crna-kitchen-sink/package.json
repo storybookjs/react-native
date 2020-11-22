@@ -1,6 +1,6 @@
 {
   "name": "crna-kitchen-sink",
-  "version": "5.3.23",
+  "version": "5.3.24-alpha.0",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "workspaces": {
@@ -42,11 +42,11 @@
     "@storybook/addon-notes": "5.3.21",
     "@storybook/addon-ondevice-actions": "^5.3.23",
     "@storybook/addon-ondevice-backgrounds": "^5.3.23",
-    "@storybook/addon-ondevice-knobs": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.24-alpha.0",
     "@storybook/addon-ondevice-notes": "^5.3.23",
     "@storybook/addon-options": "5.3.21",
     "@storybook/addons": "5.3.21",
-    "@storybook/react-native": "^5.3.23",
+    "@storybook/react-native": "^5.3.24-alpha.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-expo": "^8.2.3",
