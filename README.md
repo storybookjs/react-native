@@ -37,7 +37,7 @@ The above steps use the storybook cli to install the most useful addons and crea
 
 All the config for storybook and the entrypoint also live in the `storybook` folder by default.
 
-If you prefer to set things up yourself you can follow the [manual setup](app/react-native/docs/manual-setup.md)
+If you prefer to set things up yourself you can follow the [manual setup](https://github.com/storybookjs/react-native/blob/master/app/react-native/docs/manual-setup.md)
 
 If you're struggling check out this [snack](https://snack.expo.io/@dannyhw/expo-storybook-example) with a working example
 
@@ -52,10 +52,10 @@ The UI that allows you to navigate stories on the device is what we will call th
 The simplest type of story could look something like this
 
 ```
-  
+
   import React from 'react';
   import { storiesOf } from '@storybook/react-native';
-  
+
   // I import the component I want to display here
   import CustomButton from './CustomButton';
 
@@ -94,7 +94,6 @@ Make sure to import the rn-addons.js file in the storybook entrypoint (index.js 
 import './rn-addons';
 ```
 
-
 ### Using the addons in your story
 
 Based on the previous example heres how you could extend it to use addons.
@@ -127,7 +126,6 @@ buttonStories.add('default view', () => (
   </View>
 ));
 ```
-
 
 # Other ways to render storybook
 
@@ -247,7 +245,7 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 We welcome contributions to Storybook!
 
 - 📥 Pull requests and 🌟 Stars are always welcome.
-- Read our [contributing guide](CONTRIBUTING.md) to get started,
+- Read our [contributing guide](https://github.com/storybookjs/react-native/blob/master/CONTRIBUTING.md) to get started,
   or find us on [Discord](https://discord.gg/sMFvFsG) and look for the react-native channel.
 
 Looking for a first issue to tackle?
