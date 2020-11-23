@@ -25,3 +25,29 @@ consolidate the state of the list view and the story view into a single state co
 before next session danny to setup expo web, to make it easier to test changes quickly.
 
 create issues for 6.0 to maybe get more people involved and create visibility also roadmap/project thing.
+
+triconfig
+
+# 23/11/2020
+
+we did some stuff with preval and got something kind of working
+
+we tried to figure how to do a custom resolver in metro config.
+We should try and find what the default behaviour of resolveRequest is.
+
+https://github.com/facebook/metro/blob/master/packages/metro-resolver/src/resolve.js
+https://docs.expo.io/guides/customizing-metro/
+https://github.com/expo/expo-cli/tree/master/packages/metro-config
+https://github.com/facebook/metro/tree/master/packages/metro-resolver
+
+look into doing a custom transformer
+
+```
+    transformer: {
+        babelTransformerPath: require.resolve(
+            'storybook-transformer'
+        ),
+    },
+```
+
+https://github.com/bamlab/react-native-graphql-transformer/blob/master/index.js
