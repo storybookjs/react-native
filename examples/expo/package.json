@@ -24,7 +24,9 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "preval.macro": "^5.0.0",
+    "babel-plugin-macros": "^2.8.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",

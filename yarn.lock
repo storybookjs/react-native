@@ -8062,6 +8062,15 @@ babel-plugin-module-resolver@^3.2.0:
     reselect "^3.0.1"
     resolve "^1.4.0"
 
+babel-plugin-preval@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-preval/-/babel-plugin-preval-5.0.0.tgz#6cabb947ecc241664966e1f99eb56a3b4bb63d1e"
+  integrity sha512-8DqJq6/LPUjSZ0Qq6bVIFpsj2flCEE0Cbnbut9TvGU6jP9g3dOWEXtQ/sdvsA9d6souza8eNGh04WRXpuH9ThA==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    babel-plugin-macros "^2.8.0"
+    require-from-string "^2.0.2"
+
 babel-plugin-react-native-web@^0.11.7:
   version "0.11.7"
   resolved "https://registry.yarnpkg.com/babel-plugin-react-native-web/-/babel-plugin-react-native-web-0.11.7.tgz#15b578c0731bd7d65d334f9c759d95e8e4a602e2"
@@ -21095,6 +21104,13 @@ prettyjson@^1.2.1:
   dependencies:
     colors "^1.1.2"
     minimist "^1.2.0"
+
+preval.macro@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/preval.macro/-/preval.macro-5.0.0.tgz#bb9e0e0cd06aee094dd84eed89851b5a7337cc2f"
+  integrity sha512-+OZRqZYx1pjZ7H5Jis8bPFXkiT7lwA46UzAT4IjuzFVKwkJK+TwIx1TCqrqNCf8U3e5O12mEJEz1BXslkCLWfQ==
+  dependencies:
+    babel-plugin-preval "^5.0.0"
 
 prismjs@^1.8.4:
   version "1.19.0"

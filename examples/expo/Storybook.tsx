@@ -1,8 +1,10 @@
+/* eslint-disable global-require */
 import { getStorybookUI, configure } from '@storybook/react-native';
 
 configure(() => {
-  // eslint-disable-next-line global-require
-  require('../components/Button/Button.stories');
+  // require('../components/Button/Button.stories');
+
+  require('./storybook.requires');
 }, module);
 
 const StorybookUIRoot = getStorybookUI({
