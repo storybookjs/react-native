@@ -1,5 +1,5 @@
 // @ts-ignore
-import { getStorybookUI, configure } from './storybook.requires';
+import { getStorybookUI, configure } from './storybook.requires.js';
 
 configure(() => {
   // require('../components/Button/Button.stories');
