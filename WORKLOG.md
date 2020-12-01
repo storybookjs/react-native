@@ -51,3 +51,10 @@ look into doing a custom transformer
 ```
 
 https://github.com/bamlab/react-native-graphql-transformer/blob/master/index.js
+
+# 01/12/2020
+
+We want to take the pre-script and make it a bin for @storybook/react-native. This bin would be a watcher that just watches the .storybook/main.js and rewrites the storbook.requires.js file.
+
+Node watcher package:
+https://github.com/paulmillr/chokidar
