@@ -19,24 +19,49 @@ class NumberType extends React.Component {
     this.renderRange = this.renderRange.bind(this);
 
     const { knob } = this.props;
-    this.defaultValue = knob.value;
+    const initialInputValue = Number.isNaN(knob.value) ? '' : knob.value.toString();
+    this.lastInputValue = initialInputValue;
+    this.state = {
+      inputValue: initialInputValue,
+    };
+  }
+
+  componentDidUpdate() {
+    const { onChange } = this.props;
+    const { inputValue } = this.state;
+
+    if (this.lastInputValue !== inputValue) {
+      const inputValueEmpty = inputValue.trim() === '';
+      const parsedInputValue = inputValueEmpty ? NaN : Number(inputValue);
+
+      if (!Number.isNaN(parsedInputValue) || inputValueEmpty) {
+        onChange(parsedInputValue);
+        this.lastInputValue = inputValue;
+      }
+    }
   }
 
   onChangeNormal = (value) => {
-    const { onChange } = this.props;
-    const number = value.replace(/,(?=\d+$)/, '.');
-
-    onChange(number);
+    this.setState({
+      inputValue: value.replace(/,(?=\d+$)/, '.'),
+    });
   };
 
   renderNormal() {
+    const { knob } = this.props;
+    const { inputValue } = this.state;
+    const showError =
+      inputValue.trim() !== '' &&
+      (Number(inputValue).toString() !== knob.value.toString() || Number.isNaN(knob.value));
+
     return (
       <Input
         autoCapitalize="none"
         underlineColorAndroid="transparent"
-        defaultValue={(this.defaultValue || '').toString()}
+        value={inputValue}
         keyboardType="numeric"
         onChangeText={this.onChangeNormal}
+        style={showError && { borderColor: '#FF4400' }}
       />
     );
   }
