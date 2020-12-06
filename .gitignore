@@ -33,3 +33,4 @@ htpasswd
 storybook-out
 /addons/docs/common/config-*
 built-storybooks
+storybook.requires.js
