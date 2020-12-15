@@ -47,8 +47,11 @@ interface Category {
 // type StoryList = Array<ListItemStory | ListItemCategory>;
 // type StoryMap = { [key: string]: ListItemStory | StoryCategory };
 export const x: Category[] = [
-  { category: NO_CATEGORY, storyKinds: [{ name: 'kind', stories: ['name1', 'name2'] }] },
-  { category: 'xyz', storyKinds: [{ name: 'abc', stories: ['name 3', 'name4'] }] },
+  { category: NO_CATEGORY, storyKinds: [{ name: 'kind1', stories: ['storyname1', 'storyname2'] }] },
+  {
+    category: 'Category1',
+    storyKinds: [{ name: 'kind2', stories: ['storyname1', 'storyname4'] }],
+  },
 ];
 
 const Expandable = ({
@@ -66,8 +69,12 @@ const Expandable = ({
   const display = visible ? 'flex' : 'none';
   return (
     <View style={containerStyle}>
-      <TouchableOpacity onPress={() => setVisible(!visible)}>
-        <Text style={[styles.title, titleStyle]}>y{title}</Text>
+      <TouchableOpacity
+        style={{ paddingVertical: 4, flexDirection: 'row', justifyContent: 'space-between' }}
+        onPress={() => setVisible(!visible)}
+      >
+        <Text style={[styles.title, titleStyle]}>{title}</Text>
+        <Text>V</Text>
       </TouchableOpacity>
 
       <View style={[styles.childContainer, { display }]}>{children}</View>
@@ -157,7 +164,7 @@ export const StorySectionList = ({ storyItems }: StorySectionListProps) => {
 
 export const styles = StyleSheet.create({
   subTitle: { fontSize: 14, fontWeight: '600' },
-  itemContainer: { marginLeft: 4 },
+  itemContainer: { marginHorizontal: 4 },
   title: { fontWeight: 'bold', fontSize: 16 },
   childContainer: { marginLeft: 8 },
 });
