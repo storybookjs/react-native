@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from '@emotion/native';
-import Button from './button';
+import Button from './Button';
 import { NAVIGATOR, PREVIEW, ADDONS } from './constants';
 
 const Container = styled.View(({ theme }) => ({

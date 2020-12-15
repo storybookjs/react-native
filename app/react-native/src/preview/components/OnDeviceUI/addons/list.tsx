@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { ScrollView } from 'react-native';
 import styled from '@emotion/native';
 import { Collection } from '@storybook/addons';
-import Button from '../navigation/button';
+import Button from '../navigation/Button';
 
 const Container = styled.View(({ theme }) => ({
   flexDirection: 'row',
@@ -36,6 +36,7 @@ export default class AddonList extends PureComponent<Props> {
         <ScrollView showsHorizontalScrollIndicator={false} horizontal>
           {addonKeys.map((id) => {
             const { title } = panels[id];
+            // @ts-ignore
             const resolvedTitle = typeof title === 'function' ? title() : title;
             return this.renderTab(id, resolvedTitle);
           })}
