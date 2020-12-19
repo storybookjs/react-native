@@ -17,6 +17,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prestart": "node ../../app/react-native/pre-script.js",
     "start": "react-native start",
+    "storybook-watcher": "node ../../app/react-native/watcher.js",
     "test": "jest"
   },
   "jest": {
