@@ -37,10 +37,12 @@
     "@storybook/channels": "6.0.28",
     "@storybook/client-api": "6.0.28",
     "@storybook/core-events": "6.0.28",
+    "chokidar": "^3.4.3",
     "core-js": "^3.0.1",
     "emotion-theming": "^10.0.19",
-    "react-native-swipe-gestures": "^1.0.4",
-    "preval.macro": "^5.0.0"
+    "glob": "^7.1.6",
+    "preval.macro": "^5.0.0",
+    "react-native-swipe-gestures": "^1.0.4"
   },
   "devDependencies": {
     "@types/react-native": "^0.57.57"

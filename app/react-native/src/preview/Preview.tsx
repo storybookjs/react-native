@@ -18,7 +18,7 @@ interface AsyncStorage {
 
 export type Params = {
   onDeviceUI: boolean;
-  asyncStorage?: AsyncStorage | null;
+  asyncStorage: AsyncStorage | null;
   resetStorybook: boolean;
   disableWebsockets: boolean;
   query: string;
@@ -68,12 +68,10 @@ export default class Preview {
         const channel = addons.getChannel();
         const stories = this._storyStore.extract();
         channel.emit(Events.SET_STORIES, { stories });
-        channel.emit(Events.STORIES_CONFIGURED);
       });
     }
 
     loadStories();
-    // TODO: check hot module reloading
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
@@ -81,10 +79,10 @@ export default class Preview {
       // eslint-disable-next-line no-console
       console.warn(
         `
-Starting Storybook v5.3.0, we require to manually pass an asyncStorage prop. Pass null to disable or use one from @react-native-community or react-native itself.
+    Starting Storybook v5.3.0, we require you to manually pass an asyncStorage prop. Pass null to disable or use https://github.com/react-native-async-storage/async-storage.
 
-More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-native-async-storage
-      `.trim()
+    More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-native-async-storage
+          `.trim()
       );
     }
 
@@ -172,7 +170,7 @@ More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react
   }
 
   _selectStory(story: any) {
-    this._storyStore.setSelection({ storyId: story.id, viewMode: 'story' }, null);
+    this._storyStore.setSelection({ storyId: story.id, viewMode: 'story' });
   }
 
   _checkStory(storyId: string) {
