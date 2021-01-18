@@ -15,42 +15,58 @@ const Input = styled.TextInput(({ theme }) => ({
 class NumberType extends React.Component {
   constructor(props) {
     super(props);
-    this.renderNormal = this.renderNormal.bind(this);
-    this.renderRange = this.renderRange.bind(this);
+
+    const { knob } = this.props;
+    const initialInputValue = Number.isNaN(knob.value) ? '' : knob.value.toString();
+
+    this.state = {
+      inputValue: initialInputValue,
+      showError: false,
+    };
   }
 
-  numberTransformer = (x) => {
-    if (Number.isNaN(Number(x))) {
-      return x.substr(0, x.length - 1);
-    }
-
-    return x;
-  };
-
-  onChangeNormal = (value) => {
-    const { onChange } = this.props;
-
-    if (!Number.isNaN(value)) {
-      onChange(value);
-    }
-  };
-
-  renderNormal() {
+  shouldComponentUpdate(nextProps, nextState) {
     const { knob } = this.props;
+    const { inputValue } = this.state;
 
+    return nextProps.knob.value !== knob.value || nextState.inputValue !== inputValue;
+  }
+
+  onChangeNormal = (text) => {
+    const { onChange } = this.props;
+    const inputValue = text.trim().replace(/,/, '.');
+    if (inputValue === '') {
+      this.setState({ showError: false, inputValue });
+      return;
+    }
+
+    const parsedValue = Number(inputValue);
+
+    this.setState({ inputValue });
+
+    if (!Number.isNaN(parsedValue)) {
+      onChange(parsedValue);
+      this.setState({ showError: false });
+    } else {
+      this.setState({ showError: true });
+    }
+  };
+
+  renderNormal = () => {
+    const { inputValue, showError } = this.state;
     return (
       <Input
         autoCapitalize="none"
         underlineColorAndroid="transparent"
-        value={(knob.value || '').toString()}
-        transformer={this.numberTransformer}
+        value={inputValue}
         keyboardType="numeric"
         onChangeText={this.onChangeNormal}
+        style={showError && { borderColor: '#FF4400' }}
       />
     );
-  }
+  };
 
-  renderRange() {
+  renderRange = () => {
     const { knob, onChange } = this.props;
 
     return (
@@ -62,7 +78,7 @@ class NumberType extends React.Component {
         onSlidingComplete={(val) => onChange(parseFloat(val))}
       />
     );
-  }
+  };
 
   render() {
     const { knob } = this.props;
@@ -86,6 +102,7 @@ NumberType.propTypes = {
     min: PropTypes.number,
     max: PropTypes.number,
     range: PropTypes.bool,
+    defaultValue: PropTypes.number,
   }),
   onChange: PropTypes.func,
 };
