@@ -38,7 +38,7 @@ function writeRequires(paths) {
 
   let fileContent = storyPaths
     .map((storyPath) => {
-      return `require('${storyPath}');`;
+      return `require('${storyPath}'),`;
     })
     .join('\n      ');
 
@@ -51,11 +51,13 @@ import { getStorybookUI, configure } from '@storybook/react-native';
 export const load = (
   (extraRequireFn, m) => configure(
     () => {
+      extraRequireFn();
+
       // auto imports
-      ${fileContent}
-      // extra
-      extraRequireFn()
-    },
+      return [
+        ${fileContent}
+      ]
+  },
     m
   )
 );

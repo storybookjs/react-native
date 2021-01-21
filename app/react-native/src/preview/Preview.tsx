@@ -62,7 +62,7 @@ export default class Preview {
     return this._clientApi;
   };
 
-  configure = (loadStories: () => void, module: any) => {
+  configure = (loadStories: () => Array<any>, module: any) => {
     if (module && module.hot) {
       module.hot.accept(() => {
         const channel = addons.getChannel();
@@ -71,7 +71,16 @@ export default class Preview {
       });
     }
 
-    loadStories();
+    const modules = loadStories();
+    if (modules && modules.length > 0) {
+      modules.forEach((m) => {
+        const { default: meta, ...namedExports } = m;
+        const kind = this._clientApi.storiesOf(meta.title, m);
+        Object.entries(namedExports).forEach(([name, storyFn], i) => {
+          kind.add(name, storyFn as any);
+        });
+      });
+    }
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
