@@ -12,7 +12,7 @@ const Input = styled.TextInput(({ theme }) => ({
   padding: 5,
   margin: 10,
   borderColor: theme.borderColor,
-  color: theme.labelColor,
+  color: theme.labelColor || 'black',
 }));
 
 class SelectType extends React.Component {
