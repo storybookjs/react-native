@@ -4,7 +4,7 @@ Storybook Knobs Addon allows you to edit react props using the Storybook UI usin
 
 [Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
 
-**This addon is a wrapper for addon [@storybook/addon-knobs](https://github.com/storybookjs/storybook/blob/master/addons/knobs).
+**This is a wrapper for the addon [@storybook/addon-knobs](https://github.com/storybookjs/storybook/blob/master/addons/knobs).
 Refer to its documentation to understand how to use knobs**
 
 ## Installation
