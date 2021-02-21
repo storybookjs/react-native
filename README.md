@@ -4,7 +4,7 @@ With Storybook for React Native you can design and develop individual React Nati
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
 
-> NOTE: `@storybook/react-native` and `@storybook/react-native-server` are now on a different release cycle from the Storybook Core packages (`@storybook/react`, `@storybook/vue`, etc.). The last stable version of `@storybook/react-native` is `5.3.23` and it should be used with `5.3` versions of Storybook Core.
+> NOTE: `@storybook/react-native` and `@storybook/react-native-server` are now on a different release cycle from the Storybook Core packages (`@storybook/react`, `@storybook/vue`, etc.). The last stable version of `@storybook/react-native` is `5.3.24` and it should be used with `5.3` versions of Storybook Core.
 
 _To re-iterate storybook dependencies with a version 6.0 and higher are not supported by react native storybook yet._
 
