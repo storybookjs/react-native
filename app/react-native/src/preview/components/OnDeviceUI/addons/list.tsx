@@ -7,7 +7,7 @@ import Button from '../navigation/button';
 const Container = styled.View(({ theme }) => ({
   flexDirection: 'row',
   borderBottomWidth: 1,
-  borderBottomColor: theme.borderColor,
+  borderBottomColor: theme.borderColor || '#e6e6e6',
 }));
 
 export interface Props {

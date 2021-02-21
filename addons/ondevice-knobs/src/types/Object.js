@@ -9,8 +9,8 @@ const Input = styled.TextInput(({ theme }) => ({
   fontSize: 13,
   padding: 5,
   margin: 10,
-  borderColor: theme.borderColor,
-  color: theme.labelColor,
+  borderColor: theme.borderColor || '#e6e6e6',
+  color: theme.labelColor || 'black',
 }));
 
 class ObjectType extends React.Component {

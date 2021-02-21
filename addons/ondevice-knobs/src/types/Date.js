@@ -5,7 +5,7 @@ import DateTimePicker from 'react-native-modal-datetime-picker';
 import styled from '@emotion/native';
 
 const Touchable = styled.TouchableOpacity(({ theme }) => ({
-  borderColor: theme.borderColor,
+  borderColor: theme.borderColor || '#e6e6e6',
   borderWidth: 1,
   borderRadius: 2,
   padding: 5,
@@ -13,7 +13,7 @@ const Touchable = styled.TouchableOpacity(({ theme }) => ({
 
 const Label = styled.Text(({ theme }) => ({
   fontSize: 13,
-  color: theme.labelColor,
+  color: theme.labelColor || 'black',
 }));
 
 // TODO seconds support

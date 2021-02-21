@@ -11,7 +11,7 @@ const Input = styled.TextInput(({ theme }) => ({
   borderRadius: 2,
   padding: 5,
   margin: 10,
-  borderColor: theme.borderColor,
+  borderColor: theme.borderColor || '#e6e6e6',
   color: theme.labelColor || 'black',
 }));
 
