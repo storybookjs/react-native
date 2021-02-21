@@ -9,7 +9,7 @@ const InvalidType = () => <Text style={{ margin: 10 }}>Invalid Type</Text>;
 const Label = styled.Text(({ theme }) => ({
   marginLeft: 10,
   fontSize: 14,
-  color: theme.labelColor,
+  color: theme.labelColor || 'black',
   fontWeight: 'bold',
 }));
 

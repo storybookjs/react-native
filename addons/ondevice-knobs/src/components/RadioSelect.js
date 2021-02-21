@@ -25,7 +25,7 @@ const RadioCircle = styled.View(({ theme }) => ({
   justifyContent: 'center',
   marginRight: 4,
   borderWidth: StyleSheet.hairlineWidth,
-  borderColor: theme.borderColor,
+  borderColor: theme.borderColor || '#e6e6e6',
 }));
 
 const RadioInnerCircle = styled.View(({ selected }) => ({

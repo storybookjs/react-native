@@ -5,7 +5,7 @@ import styled from '@emotion/native';
 import { ColorPicker, fromHsv } from '../components/color-picker';
 
 const Touchable = styled.TouchableOpacity(({ theme, color }) => ({
-  borderColor: theme.borderColor,
+  borderColor: theme.borderColor || '#e6e6e6',
   width: 30,
   height: 20,
   borderRadius: 2,

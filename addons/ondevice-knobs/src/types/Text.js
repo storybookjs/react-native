@@ -4,12 +4,12 @@ import styled from '@emotion/native';
 
 const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
-  borderColor: theme.borderColor,
+  borderColor: theme.borderColor || '#e6e6e6',
   borderRadius: 2,
   fontSize: 13,
   padding: 5,
   margin: 10,
-  color: theme.labelColor,
+  color: theme.labelColor || 'black',
 }));
 
 const TextType = ({ knob, onChange }) => (

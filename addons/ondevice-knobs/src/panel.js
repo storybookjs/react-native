@@ -14,7 +14,7 @@ const DEFAULT_GROUP_ID = 'Other';
 const Touchable = styled.TouchableOpacity(({ theme }) => ({
   borderRadius: 2,
   borderWidth: 1,
-  borderColor: theme.borderColor,
+  borderColor: theme.borderColor || '#e6e6e6',
   padding: 4,
   margin: 10,
   justifyContent: 'center',
@@ -22,7 +22,7 @@ const Touchable = styled.TouchableOpacity(({ theme }) => ({
 }));
 
 const ResetButton = styled.Text(({ theme }) => ({
-  color: theme.buttonTextColor,
+  color: theme.buttonTextColor || '#999999',
 }));
 
 export default class Panel extends React.Component {

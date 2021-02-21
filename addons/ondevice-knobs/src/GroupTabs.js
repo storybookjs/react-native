@@ -4,7 +4,7 @@ import { ScrollView, Text, TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
 
 const Label = styled.Text(({ theme, active }) => ({
-  color: active ? theme.buttonActiveTextColor : theme.buttonTextColor,
+  color: active ? theme.buttonActiveTextColor || '#444444' : theme.buttonTextColor || '#999999',
   fontSize: 17,
 }));
 

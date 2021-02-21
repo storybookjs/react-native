@@ -15,7 +15,7 @@ const Touchable = styled.TouchableOpacity({
 
 const HideIcon = styled.Text(({ theme }) => ({
   fontSize: 14,
-  color: theme.buttonTextColor,
+  color: theme.buttonTextColor || '#999999',
 }));
 
 export default class VisibilityButton extends PureComponent<Props> {

@@ -6,10 +6,10 @@ import { NAVIGATOR, PREVIEW, ADDONS } from './constants';
 const Container = styled.View(({ theme }) => ({
   flexDirection: 'row',
   paddingHorizontal: 8,
-  backgroundColor: theme.backgroundColor,
+  backgroundColor: theme.backgroundColor || 'white',
   borderTopWidth: 1,
   borderBottomWidth: 1,
-  borderColor: theme.borderColor,
+  borderColor: theme.borderColor || '#e6e6e6',
 }));
 
 export interface Props {
