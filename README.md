@@ -213,6 +213,8 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 
 ```
 {
+    asyncStorage: AsyncStorage (null)
+        -- module to persist state across reloads
     onDeviceUI: Boolean (true)
         -- display navigator and addons on the device
     disableWebsockets: Boolean (false)
