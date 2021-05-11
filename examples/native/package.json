@@ -2,11 +2,6 @@
   "name": "rn_example",
   "version": "5.3.25",
   "private": true,
-  "workspaces": {
-    "nohoist": [
-      "react-native"
-    ]
-  },
   "scripts": {
     "android": "react-native run-android",
     "e2e:build:dev": "detox build --configuration ios.sim.debug",
@@ -39,11 +34,11 @@
     "@storybook/addon-ondevice-backgrounds": "^5.3.23",
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/addon-ondevice-notes": "^5.3.23",
-    "@storybook/react-native": "^5.3.25",
     "@storybook/addons": "6.0.28",
-    "@storybook/react-native-server": "^5.3.23",
+    "@storybook/react-native": "5.3.25",
+    "@storybook/react-native-server": "5.3.23",
     "react": "16.13.1",
-    "react-native": "0.63.0"
+    "react-native": "0.63.4"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
