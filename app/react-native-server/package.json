@@ -31,12 +31,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "5.3.21",
-    "@storybook/api": "5.3.21",
-    "@storybook/channel-websocket": "5.3.21",
-    "@storybook/core": "5.3.21",
-    "@storybook/core-events": "5.3.21",
-    "@storybook/ui": "5.3.21",
+    "@storybook/addons": "6.0.28",
+    "@storybook/api": "6.0.28",
+    "@storybook/channel-websocket": "6.0.28",
+    "@storybook/core": "6.0.28",
+    "@storybook/core-events": "6.0.28",
+    "@storybook/ui": "6.0.28",
     "commander": "^4.0.1",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

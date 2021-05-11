@@ -15,7 +15,9 @@
     "format": "prettier --write .",
     "ios": "react-native run-ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prestart": "node ../../app/react-native/pre-script.js",
     "start": "react-native start",
+    "storybook-watcher": "node ../../app/react-native/watcher.js",
     "test": "jest"
   },
   "jest": {
@@ -30,17 +32,15 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@storybook/addon-actions": "5.3.21",
-    "@storybook/addon-knobs": "5.3.21",
-    "@storybook/addon-links": "5.3.21",
-    "@storybook/addon-notes": "5.3.21",
+    "@storybook/addon-actions": "6.0.28",
+    "@storybook/addon-knobs": "6.0.28",
+    "@storybook/addon-links": "6.0.28",
     "@storybook/addon-ondevice-actions": "^5.3.23",
     "@storybook/addon-ondevice-backgrounds": "^5.3.23",
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/addon-ondevice-notes": "^5.3.23",
-    "@storybook/addon-options": "5.3.21",
-    "@storybook/addons": "5.3.21",
     "@storybook/react-native": "^5.3.25",
+    "@storybook/addons": "6.0.28",
     "@storybook/react-native-server": "^5.3.23",
     "react": "16.13.1",
     "react-native": "0.63.0"

@@ -28,11 +28,11 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.20",
-    "@storybook/addons": "5.3.21",
-    "@storybook/api": "5.3.21",
-    "@storybook/client-api": "5.3.21",
-    "@storybook/client-logger": "5.3.21",
-    "@storybook/core-events": "5.3.21",
+    "@storybook/addons": "6.0.28",
+    "@storybook/api": "6.0.28",
+    "@storybook/client-api": "6.0.28",
+    "@storybook/client-logger": "6.0.28",
+    "@storybook/core-events": "6.0.28",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2",
     "react-native-simple-markdown": "^1.1.0"
