@@ -29,8 +29,6 @@
       "examples/*"
     ],
     "nohoist": [
-      "**/react-native",
-      "**/react-native/**",
       "**/detox",
       "**/detox/**"
     ]
@@ -111,6 +109,9 @@
     ]
   },
   "browserslist": "defaults",
+  "resolutions": {
+    "react": "16.13.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
@@ -194,9 +195,10 @@
     "npmlog": "^4.1.2",
     "prettier": "^2.0.5",
     "raf": "^3.4.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-test-renderer": "^16.8.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "0.63.4",
+    "react-test-renderer": "16.13.1",
     "recursive-copy": "^2.0.10",
     "regenerator-runtime": "^0.13.3",
     "remark-cli": "^7.0.0",
