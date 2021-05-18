@@ -18,5 +18,5 @@ const testing = () => {
 };
 
 storiesOf('button promise', module)
-  .add('finally', () => <Button text="test3" onPress={testing} />)
+  .add('finally', () => <Button text="Do a promise" onPress={testing} />)
   .add('nothing', () => <Button text="test4" onPress={() => null} />);
