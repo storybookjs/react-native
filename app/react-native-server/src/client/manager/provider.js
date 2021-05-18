@@ -2,7 +2,7 @@ import React from 'react';
 import { Consumer } from '@storybook/api';
 import { Provider } from '@storybook/ui';
 import createChannel from '@storybook/channel-websocket';
-import addons from '@storybook/addons';
+import { addons } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import uuid from 'uuid';
 import PreviewHelp from './components/PreviewHelp';

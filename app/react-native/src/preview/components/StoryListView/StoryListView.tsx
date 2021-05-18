@@ -1,7 +1,6 @@
 import styled from '@emotion/native';
-import addons from '@storybook/addons';
-import { StoryStore } from '@storybook/client-api';
-import { StoreItem } from '@storybook/client-api/dist/types';
+import { addons } from '@storybook/addons';
+import { StoryStore, StoreItem } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { Component, FunctionComponent } from 'react';
 import { StyleSheet } from 'react-native';

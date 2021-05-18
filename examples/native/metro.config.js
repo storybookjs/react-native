@@ -16,4 +16,7 @@ module.exports = {
       },
     }),
   },
+  resolver: {
+    resolverMainFields: ['sbmodern', 'main'],
+  },
 };

@@ -1,7 +1,22 @@
-import { storiesOf } from '@storybook/react-native';
 import React from 'react';
+import { storiesOf } from '@storybook/react-native';
 import { Button } from './Button';
 
-storiesOf('button2', module)
-  .add('example2', () => <Button text="test3" onPress={() => null} />)
-  .add('example3', () => <Button text="test4" onPress={() => null} />);
+const testing = () => {
+  const timeout = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('hi');
+    }, 1000);
+  });
+  timeout
+    .then((res) => {
+      console.log(res);
+    })
+    .finally(() => {
+      console.log('resolved ');
+    });
+};
+
+storiesOf('button promise', module)
+  .add('finally', () => <Button text="test3" onPress={testing} />)
+  .add('nothing', () => <Button text="test4" onPress={() => null} />);

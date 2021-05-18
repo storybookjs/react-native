@@ -2,7 +2,7 @@
 import React from 'react';
 import { ThemeProvider } from 'emotion-theming';
 
-import addons from '@storybook/addons';
+import { addons } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
 import { StoryStore, ClientApi } from '@storybook/client-api';
@@ -75,10 +75,12 @@ export default class Preview {
     if (modules && modules.length > 0) {
       modules.forEach((m) => {
         const { default: meta, ...namedExports } = m;
-        const kind = this._clientApi.storiesOf(meta.title, m);
-        Object.entries(namedExports).forEach(([name, storyFn], i) => {
-          kind.add(name, storyFn as any);
-        });
+        if (meta) {
+          const kind = this._clientApi.storiesOf(meta.title, m);
+          Object.entries(namedExports).forEach(([name, storyFn], i) => {
+            kind.add(name, storyFn as any);
+          });
+        }
       });
     }
   };
@@ -101,7 +103,7 @@ export default class Preview {
       this._asyncStorage = params.asyncStorage;
     }
 
-    this._channel.on(Events.SET_CURRENT_STORY, (d) => {
+    this._channel.on(Events.SET_CURRENT_STORY, (d: { storyId: string }) => {
       this._selectStoryEvent(d);
     });
 
