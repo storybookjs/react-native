@@ -8,7 +8,7 @@ For more information visit: [storybook.js.org](https://storybook.js.org)
 
 _To re-iterate storybook dependencies with a version 6.0 and higher are not supported by react native storybook yet._
 
-Work on 6.0 is currently underway, if you want to help out or are just curious then check out the project board to see the open issues related to 6.0. If you want to work on something then assign it to yourself and drag the item to the doing column.
+Work on 6.0 is currently underway, if you want to help out or are just curious then check out the [project board](https://github.com/storybookjs/react-native/projects/2?fullscreen=true) to see the open issues related to 6.0. If you want to work on something then assign it to yourself and drag the item to the doing column.
 
 # Table of contents
 
