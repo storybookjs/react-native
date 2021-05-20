@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StoreItem } from '@storybook/client-api/dist/types';
+import { StoreItem } from '@storybook/client-api';
 import { Text, View, StyleSheet } from 'react-native';
 
 interface Props {

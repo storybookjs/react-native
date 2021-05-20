@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { SafeAreaView } from 'react-native';
 import styled from '@emotion/native';
-import addons from '@storybook/addons';
+import { addons } from '@storybook/addons';
 import AddonsList from './List';
 import AddonWrapper from './Wrapper';
 import { Label } from '../../Shared/text';

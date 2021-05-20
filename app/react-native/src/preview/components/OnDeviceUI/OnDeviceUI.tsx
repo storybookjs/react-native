@@ -1,5 +1,5 @@
 import styled from '@emotion/native';
-import addons from '@storybook/addons';
+import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
 import { StoryStore } from '@storybook/client-api';
 import React, { PureComponent } from 'react';
