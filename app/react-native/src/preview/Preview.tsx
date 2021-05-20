@@ -1,13 +1,13 @@
 /* eslint-disable no-underscore-dangle */
-import React from 'react';
-import { ThemeProvider } from 'emotion-theming';
-
 import { addons } from '@storybook/addons';
-import Events from '@storybook/core-events';
 import Channel from '@storybook/channels';
-import { StoryStore, ClientApi } from '@storybook/client-api';
+import { ClientApi, StoryStore } from '@storybook/client-api';
+import Events from '@storybook/core-events';
+import { ThemeProvider } from 'emotion-theming';
+import React from 'react';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
+import { loadCsf } from './loadCsf';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -71,18 +71,7 @@ export default class Preview {
       });
     }
 
-    const modules = loadStories();
-    if (modules && modules.length > 0) {
-      modules.forEach((m) => {
-        const { default: meta, ...namedExports } = m;
-        if (meta) {
-          const kind = this._clientApi.storiesOf(meta.title, m);
-          Object.entries(namedExports).forEach(([name, storyFn], i) => {
-            kind.add(name, storyFn as any);
-          });
-        }
-      });
-    }
+    loadCsf(this._clientApi, loadStories);
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
