@@ -1,6 +1,6 @@
 {
   "name": "rn_example",
-  "version": "5.3.25",
+  "version": "6.0.0-alpha.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -30,8 +30,8 @@
     "@storybook/addon-actions": "6.3.0-alpha.33",
     "@storybook/addon-links": "6.3.0-alpha.33",
     "@storybook/addons": "6.3.0-alpha.33",
-    "@storybook/react-native": "5.3.25",
-    "@storybook/react-native-server": "5.3.23",
+    "@storybook/react-native": "^6.0.0-alpha.0",
+    "@storybook/react-native-server": "^6.0.0-alpha.0",
     "react": "16.13.1",
     "react-native": "0.63.4"
   },
