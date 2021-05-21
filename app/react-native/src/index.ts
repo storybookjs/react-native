@@ -20,3 +20,5 @@ export const raw: ClientApi['raw'] = preview.api().raw.bind(preview);
 
 export const storiesOf = (kind: string, module: NodeModule): StoryApi<ReactNode> =>
   rawStoriesOf(kind, module).addParameters({ framework: 'react-native' });
+
+export * from './types-6.0';
