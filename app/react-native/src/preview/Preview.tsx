@@ -1,13 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
-import { ClientApi, StoryStore } from '@storybook/client-api';
+import { ClientApi, ConfigApi, StoryStore } from '@storybook/client-api';
+import { loadCsf } from '@storybook/core-client/dist/modern/preview/loadCsf';
+import { Loadable } from '@storybook/core-client';
 import Events from '@storybook/core-events';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
-import { loadCsf } from './loadCsf';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -48,30 +49,33 @@ export default class Preview {
 
   _asyncStorage: AsyncStorage | null;
 
+  _configApi: ConfigApi;
+
+  configure: (
+    framework: string,
+    loadable: Loadable,
+    m: NodeModule,
+    showDeprecationWarning: boolean
+  ) => void;
+
   constructor() {
     const channel = new Channel({ async: true });
     this._decorators = [];
     this._storyStore = new StoryStore({ channel });
     this._clientApi = new ClientApi({ storyStore: this._storyStore });
+    this._configApi = new ConfigApi({ storyStore: this._storyStore });
     this._channel = channel;
+    this.configure = loadCsf({
+      clientApi: this._clientApi,
+      storyStore: this._storyStore,
+      configApi: this._configApi,
+    });
 
     addons.setChannel(channel);
   }
 
   api = () => {
     return this._clientApi;
-  };
-
-  configure = (loadStories: () => Array<any>, module: any) => {
-    if (module && module.hot) {
-      module.hot.accept(() => {
-        const channel = addons.getChannel();
-        const stories = this._storyStore.extract();
-        channel.emit(Events.SET_STORIES, { stories });
-      });
-    }
-
-    loadCsf(this._clientApi, loadStories);
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {

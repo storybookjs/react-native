@@ -1,10 +1,6 @@
 // @ts-ignore
-import { getStorybookUI, configure } from './storybook.requires.js';
-
-configure(() => {
-  // require('../components/Button/Button.stories');
-}, module);
-
+import { getStorybookUI } from '@storybook/react-native';
+import './storybook.requires';
 const StorybookUIRoot = getStorybookUI({
   asyncStorage: null,
 });

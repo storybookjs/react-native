@@ -1,18 +1,21 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react-native';
+import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Button } from './CSFExampleButton';
 
-export default {
+const CSFExample: ComponentMeta<typeof Button> = {
   title: 'CSF Example',
-} as Meta;
+};
 
-export const CSFExample1: Story<{ text: string }> = (args) => (
-  <Button {...args} onPress={() => null} />
-);
+export default CSFExample;
+
+type ButtonStory = ComponentStory<typeof Button>;
+
+export const CSFExample1: ButtonStory = (args) => <Button {...args} onPress={() => null} />;
 
 CSFExample1.args = {
   text: 'args!',
 };
 
-export const CSFExample2: Story = () => <Button text="test2" onPress={() => null} />;
-export const CSFExample3: Story = () => <Button text="test3" onPress={() => null} />;
+export const CSFExample2: ButtonStory = () => <Button text="test2" onPress={() => null} />;
+
+export const CSFExample3: ButtonStory = () => <Button text="test3" onPress={() => null} />;

@@ -1,5 +1,5 @@
-import { ComponentType, ReactElement } from 'react';
-import { Args as DefaultArgs, Annotations, BaseMeta, BaseStory } from '@storybook/addons';
+import { Annotations, Args as DefaultArgs, BaseMeta, BaseStory } from '@storybook/addons';
+import { ComponentProps, ComponentType, JSXElementConstructor, ReactElement } from 'react';
 
 export type StoryFnReactReturnType = ReactElement<unknown>;
 
@@ -23,3 +23,25 @@ export type Meta<Args = DefaultArgs> = BaseMeta<ReactComponent> &
  */
 export type Story<Args = DefaultArgs> = BaseStory<Args, ReactReturnType> &
   Annotations<Args, ReactReturnType>;
+
+/**
+ * For the common case where a component's stories are simple components that receives args as props:
+ *
+ * ```tsx
+ * export default { ... } as ComponentMeta<typeof Button>;
+ * ```
+ */
+export type ComponentMeta<
+  T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>
+> = Meta<ComponentProps<T>>;
+
+/**
+ * For the common case where a story is a simple component that receives args as props:
+ *
+ * ```tsx
+ * const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+ * ```
+ */
+export type ComponentStory<
+  T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>
+> = Story<ComponentProps<T>>;
