@@ -46,7 +46,7 @@ function writeRequires(paths) {
 import { configure } from '@storybook/react-native';
 const paths = ${path_array_str}
 const getCSFStories=() => {
-  return paths.filter((exports) => !!exports.default);
+  return paths.filter((exports) => !!exports.default?.title);
 }
 configure("react-native", getCSFStories, module, true)
 
