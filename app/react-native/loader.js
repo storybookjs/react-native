@@ -48,7 +48,7 @@ const paths = ${path_array_str}
 const getCSFStories=() => {
   return paths.filter((exports) => !!exports.default?.title);
 }
-configure("react-native", getCSFStories, module, true)
+configure(getCSFStories, module, false)
 
   `;
 

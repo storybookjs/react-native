@@ -2,8 +2,8 @@
 import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
 import { ClientApi, ConfigApi, StoryStore } from '@storybook/client-api';
-import { loadCsf } from '@storybook/core-client/dist/modern/preview/loadCsf';
 import { Loadable } from '@storybook/core-client';
+import { loadCsf } from '@storybook/core-client/dist/modern/preview/loadCsf';
 import Events from '@storybook/core-events';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
@@ -51,12 +51,7 @@ export default class Preview {
 
   _configApi: ConfigApi;
 
-  configure: (
-    framework: string,
-    loadable: Loadable,
-    m: NodeModule,
-    showDeprecationWarning: boolean
-  ) => void;
+  configure: (loadable: Loadable, m: NodeModule, showDeprecationWarning: boolean) => void;
 
   constructor() {
     const channel = new Channel({ async: true });
@@ -65,11 +60,12 @@ export default class Preview {
     this._clientApi = new ClientApi({ storyStore: this._storyStore });
     this._configApi = new ConfigApi({ storyStore: this._storyStore });
     this._channel = channel;
-    this.configure = loadCsf({
+    const configure = loadCsf({
       clientApi: this._clientApi,
       storyStore: this._storyStore,
       configApi: this._configApi,
     });
+    this.configure = (...args) => configure('react-native', ...args);
 
     addons.setChannel(channel);
   }
