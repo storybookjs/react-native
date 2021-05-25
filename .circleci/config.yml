@@ -4,7 +4,7 @@ aliases:
   - &defaults
     working_directory: /tmp/storybook
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
 
 jobs:
   build:
