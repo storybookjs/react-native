@@ -1,9 +1,9 @@
 import styled from '@emotion/native';
-import { addons } from '@storybook/addons';
-import { StoryStore, StoreItem } from '@storybook/client-api';
+import { addons, StoryKind } from '@storybook/addons';
+import { StoryStore, StoreItem, PublishedStoreItem } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { Component, FunctionComponent } from 'react';
-import { StyleSheet } from 'react-native';
+import { SectionList, StyleSheet } from 'react-native';
 import { Header, Name } from '../Shared/text';
 
 const SearchBar = styled.TextInput(
@@ -83,16 +83,15 @@ interface Props {
   selectedStory: StoreItem;
 }
 
-interface State {
-  data: any[];
-  originalData: any[];
-  // storyId: string;
+interface DataItem {
+  title: StoryKind;
+  data: PublishedStoreItem[];
 }
 
-const List = styled.SectionList({
-  flex: 1,
-  marginBottom: 40,
-});
+interface State {
+  data: DataItem[];
+  originalData: DataItem[];
+}
 
 export default class StoryListView extends Component<Props, State> {
   constructor(props: Props) {
@@ -115,14 +114,20 @@ export default class StoryListView extends Component<Props, State> {
       const data = Object.values(
         storyStore
           .raw()
-          .reduce((acc: { [kind: string]: { title: string; data: any[] } }, story: any) => {
-            acc[story.kind] = {
-              title: story.kind,
-              data: (acc[story.kind] ? acc[story.kind].data : []).concat(story),
-            };
+          .reduce(
+            (
+              acc: { [kind: string]: { title: string; data: PublishedStoreItem[] } },
+              story: PublishedStoreItem
+            ) => {
+              acc[story.kind] = {
+                title: story.kind,
+                data: (acc[story.kind] ? acc[story.kind].data : []).concat(story),
+              };
 
-            return acc;
-          }, {})
+              return acc;
+            },
+            {}
+          )
       );
 
       this.setState({ data, originalData: data });
@@ -141,13 +146,13 @@ export default class StoryListView extends Component<Props, State> {
     const checkValue = (value: string) => value.toLowerCase().includes(query.toLowerCase());
     const filteredData = data.reduce((acc, story) => {
       const hasTitle = checkValue(story.title);
-      const hasKind = story.data.some((ref: any) => checkValue(ref.name));
+      const hasKind = story.data.some((ref) => checkValue(ref.name));
 
       if (hasTitle || hasKind) {
         acc.push({
           ...story,
           // in case the query matches component's title, all of its stories will be shown
-          data: !hasTitle ? story.data.filter((ref: any) => checkValue(ref.name)) : story.data,
+          data: !hasTitle ? story.data.filter((ref) => checkValue(ref.name)) : story.data,
         });
       }
 
@@ -177,7 +182,8 @@ export default class StoryListView extends Component<Props, State> {
           placeholder="Filter"
           returnKeyType="search"
         />
-        <List
+        <SectionList
+          style={styles.sectionList}
           testID="Storybook.ListView"
           renderItem={({ item }) => (
             <ListItem
@@ -190,7 +196,7 @@ export default class StoryListView extends Component<Props, State> {
           renderSectionHeader={({ section: { title } }) => (
             <SectionHeader title={title} selected={selectedStory && title === selectedStory.kind} />
           )}
-          keyExtractor={(item, index) => item + index}
+          keyExtractor={(item, index) => item.id + index}
           sections={data}
           stickySectionHeadersEnabled={false}
         />
@@ -198,3 +204,7 @@ export default class StoryListView extends Component<Props, State> {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  sectionList: { flex: 1, marginBottom: 40 },
+});

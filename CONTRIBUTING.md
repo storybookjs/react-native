@@ -6,8 +6,7 @@ Please review this document to help to streamline the process and save everyone'
 
 This repo uses yarn workspaces, so you should install `yarn` as the package manager. See [installation guide](https://classic.yarnpkg.com/en/docs/install).
 
-
-Content:
+Content:1
 
 - [Issues](#issues)
   - [Reproductions](#reproductions)
@@ -46,8 +45,8 @@ yarn bootstrap --core
 cd examples/crna-kitchen-sink
 yarn install
 # for ios
-yarn ios 
-# for android 
+yarn ios
+# for android
 yarn android
 
 # see if you can see the problem, if so, commit it:
@@ -64,13 +63,11 @@ _setup guide for native example (non expo) coming soon_
 
 If you follow that process, you can then link to the GitHub repository in the issue. See <https://github.com/storybookjs/storybook/issues/708#issuecomment-290589886> for an example.
 
-
 #### Outside the monorepo
 
-Since react-native by default doesn't support sym links we can't easily link the project like you might with web projects. 
+Since react-native by default doesn't support sym links we can't easily link the project like you might with web projects.
 
-No good solution for this currently however if you know an easy way to get symlinking working for react native + metro please open and issue explain your suggestion. 
-
+No good solution for this currently however if you know an easy way to get symlinking working for react native + metro please open and issue explain your suggestion.
 
 # Pull Requests
 
@@ -130,12 +127,12 @@ This repository is madeup of the various packages that are specific to react-nat
 
 These packages are:
 
- - @storybook/react-native
- - @storybook/react-native-server
- - @storybook/addon-ondevice-actions
- - @storybook/addon-ondevice-backgrounds
- - @storybook/addon-ondevice-knobs
- - @storybook/addon-ondevice-notes
+- @storybook/react-native
+- @storybook/react-native-server
+- @storybook/addon-ondevice-actions
+- @storybook/addon-ondevice-backgrounds
+- @storybook/addon-ondevice-knobs
+- @storybook/addon-ondevice-notes
 
 #### @storybook/react-native
 
@@ -173,7 +170,7 @@ If you run into trouble here, make sure your node, npm, and **_yarn_** are on th
 3.  `cd react-native-storybook`
 4.  `yarn bootstrap --core`
 
-The command `yarn bootstrap --core` may take a long time to complete (10-20 mins) since there a lot of dependencies to install.  
+The command `yarn bootstrap --core` may take a long time to complete (10-20 mins) since there a lot of dependencies to install.
 
 ### Running the project
 
@@ -188,7 +185,6 @@ Not only do these show many of the options and add-ons available, they are also 
 
 You still need to yarn dev or you won't see your changes reflected in the app. For example if I change an addon or app/react-native I need to rebuild the code for the changes take effect (yarn prepare) or `yarn dev` can do this automatically as I make changes.
 
-
 #### Expo app
 
 ```
@@ -196,9 +192,9 @@ cd examples/crna-kitchen-sink
 yarn install
 
 # for ios
-yarn ios 
+yarn ios
 
-# for android 
+# for android
 yarn android
 ```
 
@@ -215,9 +211,9 @@ pod install
 cd ..
 
 # for ios
-yarn ios 
+yarn ios
 
-# for android 
+# for android
 yarn android
 ```
 
@@ -251,7 +247,6 @@ It can be immensely helpful to get feedback in your editor, if you're using VsCo
 ```
 
 This should enable auto-fix for all source files, and give linting warnings and errors within your editor.
-
 
 ## Release Guide
 
