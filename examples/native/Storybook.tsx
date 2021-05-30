@@ -1,4 +1,3 @@
-// @ts-ignore
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getStorybookUI } from '@storybook/react-native';
 
