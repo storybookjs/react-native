@@ -3,10 +3,10 @@ import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
 import { ClientApi, ConfigApi, StoryStore } from '@storybook/client-api';
 import { Loadable } from '@storybook/core-client';
-import { loadCsf } from '@storybook/core-client/dist/modern/preview/loadCsf';
 import Events from '@storybook/core-events';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
+import { loadCsf } from './loadCsf';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
 
