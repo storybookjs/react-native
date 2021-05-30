@@ -33,6 +33,7 @@ function writeRequires(paths) {
 
   const storyPaths = getPaths();
 
+  // eslint-disable-next-line no-console
   console.log(`writing to storybook requires\n\n`, storyPaths);
   fs.writeFileSync(path.join(cwd, '/storybook.requires.js'), '');
 
