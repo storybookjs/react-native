@@ -1,6 +1,6 @@
-import { ClientApi, StoryStore, ConfigApi, StoreItem } from '@storybook/client-api';
-import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
+import { ClientApi, ConfigApi, StoryStore } from '@storybook/client-api';
 import { logger } from '@storybook/client-logger';
+import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
 import './global';
 
 export interface RequireContext {
@@ -47,6 +47,10 @@ const loadStories = (
   }
 
   let currentExports = new Map<any, string>();
+
+  // reqs is not null when require context is used,
+  // this comes from storybook core client and will never be true in RN
+  // keeping this here only to get an idea how the core version could be re-used
   if (reqs) {
     reqs.forEach((req) => {
       req.keys().forEach((filename: string) => {
@@ -65,9 +69,10 @@ const loadStories = (
     });
   } else {
     const exported = (loadable as LoadableFunction)();
-    if (Array.isArray(exported) && exported.every((obj) => obj.default != null)) {
-      currentExports = new Map(exported.map((fileExports) => [fileExports, null]));
-    } else if (exported) {
+    if (Array.isArray(exported)) {
+      const csfExports = exported.filter((obj) => obj.default != null);
+      currentExports = new Map(csfExports.map((fileExports) => [fileExports, null]));
+    } else {
       logger.warn(
         `Loader function passed to 'configure' should return void or an array of module exports that all contain a 'default' export. Received: ${JSON.stringify(
           exported
