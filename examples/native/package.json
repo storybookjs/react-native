@@ -27,6 +27,7 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.4",
     "@storybook/addon-actions": "6.3.0-alpha.33",
     "@storybook/addon-links": "6.3.0-alpha.33",
     "@storybook/addons": "6.3.0-alpha.33",

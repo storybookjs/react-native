@@ -1,12 +1,10 @@
-// @ts-ignore
-import { getStorybookUI, configure } from './storybook.requires.js';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getStorybookUI } from '@storybook/react-native';
 
-configure(() => {
-  // require('../components/Button/Button.stories');
-}, module);
+import './storybook.requires';
 
 const StorybookUIRoot = getStorybookUI({
-  asyncStorage: null,
+  asyncStorage: AsyncStorage,
 });
 
 export default StorybookUIRoot;
