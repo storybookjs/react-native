@@ -18,13 +18,17 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "bin": {
+    "sbn-get-stories": "./bin/get-stories.js",
+    "sbn-watcher": "./bin/watcher.js"
+  },
   "files": [
     "bin/**/*",
     "dist/**/*",
     "README.md",
     "*.js",
     "*.d.ts",
-    "babel.js"
+    "scripts/*"
   ],
   "scripts": {
     "prepare": "tsc"
@@ -40,12 +44,10 @@
     "@storybook/core-client": "6.3.0-beta.12",
     "@storybook/core-events": "6.3.0-beta.12",
     "@storybook/csf": "0.0.1",
-    "chokidar": "^3.4.3",
-    "core-js": "^3.0.1",
+    "chokidar": "^3.5.1",
     "emotion-theming": "^10.0.19",
-    "glob": "^7.1.6",
-    "preval.macro": "^5.0.0",
-    "react-native-swipe-gestures": "^1.0.4"
+    "glob": "^7.1.7",
+    "react-native-swipe-gestures": "^1.0.5"
   },
   "devDependencies": {
     "@types/react-native": "^0.64.6"
