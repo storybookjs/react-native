@@ -18,7 +18,7 @@ function formatArray(value: string, separator: string) {
   return value.split(separator);
 }
 
-interface ArrayProps {
+export interface ArrayProps {
   knob: {
     name: string;
     value: string[];

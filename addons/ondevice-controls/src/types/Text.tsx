@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/native';
 
-interface TextProps {
+export interface TextProps {
   knob: {
     name: string;
     value: string;
@@ -19,7 +19,7 @@ const Input = styled.TextInput(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-const TextType = ({ knob, onChange }) => (
+const TextType = ({ knob, onChange }: TextProps) => (
   <Input
     testID={knob.name}
     value={knob.value}

@@ -12,7 +12,7 @@ const Input = styled.TextInput(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-interface NumberProps {
+export interface NumberProps {
   knob: {
     name: string;
     value: any;
