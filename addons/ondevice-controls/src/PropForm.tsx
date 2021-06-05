@@ -1,12 +1,17 @@
 /* eslint no-underscore-dangle: 0 */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import PropField from './PropField';
+import PropField, { Knob } from './PropField';
 
-export default class PropForm extends React.Component {
-  makeChangeHandler(name, type) {
+interface FormProps {
+  knobs: Knob[];
+  onFieldPress: Function;
+  onFieldChange: (value: any) => void;
+}
+
+export default class PropForm extends React.Component<FormProps> {
+  makeChangeHandler(name: string, type) {
     return (value) => {
       const { onFieldChange } = this.props;
       const change = { name, type, value };
@@ -15,7 +20,7 @@ export default class PropForm extends React.Component {
   }
 
   render() {
-    const { knobs, onFieldClick } = this.props;
+    const { knobs, onFieldPress } = this.props;
 
     return (
       <View>
@@ -29,7 +34,7 @@ export default class PropForm extends React.Component {
               value={knob.value}
               knob={knob}
               onChange={changeHandler}
-              onPress={onFieldClick}
+              onPress={onFieldPress}
             />
           );
         })}
@@ -37,20 +42,3 @@ export default class PropForm extends React.Component {
     );
   }
 }
-
-PropForm.displayName = 'PropForm';
-
-PropForm.defaultProps = {
-  knobs: [],
-};
-
-PropForm.propTypes = {
-  knobs: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      value: PropTypes.any,
-    })
-  ),
-  onFieldChange: PropTypes.func.isRequired,
-  onFieldClick: PropTypes.func.isRequired,
-};

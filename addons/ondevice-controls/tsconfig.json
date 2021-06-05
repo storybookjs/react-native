@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-native",
+    "rootDir": "./src",
+    "module": "ESNext",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@emotion/native": ["src/typings.d.ts"]
+    },
+    "outDir": "dist/",
+    "moduleResolution": "node",
+    "declaration": true,
+    "allowJs": true
+  },
+  "include": ["src/**/*"]
+}

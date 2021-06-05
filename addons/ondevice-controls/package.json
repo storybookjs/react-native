@@ -1,10 +1,10 @@
 {
-  "name": "@storybook/addon-ondevice-knobs",
+  "name": "@storybook/addon-ondevice-controls",
   "version": "6.0.0-alpha.0",
-  "description": "Display storybook story knobs on your deviced.",
+  "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
-    "knobs",
+    "control",
     "ondevice",
     "react-native",
     "storybook"
@@ -12,7 +12,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/storybookjs/react-native.git",
-    "directory": "addons/ondevice-knobs"
+    "directory": "addons/ondevice-controls"
   },
   "license": "MIT",
   "main": "dist/index.js",
@@ -24,12 +24,13 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
+    "prepare": "tsc --clean"
   },
   "dependencies": {
     "@emotion/native": "^10.0.14",
     "@storybook/addons": "^6",
     "@storybook/core-events": "^6",
+    "@react-native-community/slider": "^3.0.3",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -41,7 +42,7 @@
     "@storybook/addon-knobs": "^6"
   },
   "peerDependencies": {
-    "@storybook/addon-knobs": "^6",
+    "@storybook/addon-controls": "^6",
     "react": "*",
     "react-native": "*"
   },

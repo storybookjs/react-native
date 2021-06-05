@@ -6,6 +6,17 @@ import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-knobs';
 import styled from '@emotion/native';
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
+import { Knob } from './PropField';
+
+interface PanelProps {
+  active: boolean;
+  channel: {
+    emit: Function;
+    on: Function;
+    removeListener: Function;
+  };
+  onReset?: object;
+}
 
 const getTimestamp = () => +new Date();
 
@@ -25,11 +36,14 @@ const ResetButton = styled.Text(({ theme }) => ({
   color: theme.buttonTextColor || '#999999',
 }));
 
-export default class Panel extends React.Component {
+export default class Panel extends React.Component<
+  PanelProps,
+  { knobs: Record<string, Knob>; groupId: string }
+> {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handlePress = this.handlePress.bind(this);
     this.setKnobs = this.setKnobs.bind(this);
     this.reset = this.reset.bind(this);
     this.setOptions = this.setOptions.bind(this);
@@ -41,6 +55,12 @@ export default class Panel extends React.Component {
     this.lastEdit = getTimestamp();
     this.loadedFromUrl = false;
   }
+
+  options: any;
+
+  lastEdit: number;
+
+  loadedFromUrl: boolean;
 
   componentDidMount() {
     const { channel } = this.props;
@@ -100,8 +120,7 @@ export default class Panel extends React.Component {
 
     this.setState({ knobs: newKnobs });
 
-    this.setState(
-      { knobs: newKnobs },
+    this.setState({ knobs: newKnobs }, () =>
       this.emitChange(
         changedKnob.type === 'number'
           ? { ...changedKnob, value: parseFloat(changedKnob.value) }
@@ -110,7 +129,7 @@ export default class Panel extends React.Component {
     );
   }
 
-  handleClick(knob) {
+  handlePress(knob) {
     const { channel } = this.props;
 
     channel.emit(CLICK, knob);
@@ -128,20 +147,20 @@ export default class Panel extends React.Component {
     const groups = {};
     const groupIds = [];
 
-    let knobsArray = Object.keys(knobs);
+    let knobsKeys = Object.keys(knobs);
 
-    const knobsWithGroups = knobsArray.filter((key) => knobs[key].groupId);
+    const knobsWithGroups = knobsKeys.filter((key) => knobs[key].groupId);
 
     knobsWithGroups.forEach((key) => {
       const knobKeyGroupId = knobs[key].groupId;
       groupIds.push(knobKeyGroupId);
       groups[knobKeyGroupId] = {
-        render: () => <Text id={knobKeyGroupId}>{knobKeyGroupId}</Text>,
+        render: () => <Text testID={knobKeyGroupId}>{knobKeyGroupId}</Text>,
         title: knobKeyGroupId,
       };
     });
 
-    const allHaveGroups = groupIds.length > 0 && knobsArray.length === knobsWithGroups.length;
+    const allHaveGroups = groupIds.length > 0 && knobsKeys.length === knobsWithGroups.length;
 
     // If all of the knobs are assigned to a group, we don't need the default group.
     const groupId =
@@ -152,21 +171,21 @@ export default class Panel extends React.Component {
     if (groupIds.length > 0) {
       if (!allHaveGroups) {
         groups[DEFAULT_GROUP_ID] = {
-          render: () => <Text id={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</Text>,
+          render: () => <Text testID={DEFAULT_GROUP_ID}>{DEFAULT_GROUP_ID}</Text>,
           title: DEFAULT_GROUP_ID,
         };
       }
 
       if (groupId === DEFAULT_GROUP_ID) {
-        knobsArray = knobsArray.filter((key) => !knobs[key].groupId);
+        knobsKeys = knobsKeys.filter((key) => !knobs[key].groupId);
       }
 
       if (groupId !== DEFAULT_GROUP_ID) {
-        knobsArray = knobsArray.filter((key) => knobs[key].groupId === groupId);
+        knobsKeys = knobsKeys.filter((key) => knobs[key].groupId === groupId);
       }
     }
 
-    knobsArray = knobsArray.map((key) => knobs[key]);
+    const knobsArray = knobsKeys.map((key) => knobs[key]);
 
     if (knobsArray.length === 0) {
       return <Text>NO KNOBS</Text>;
@@ -181,7 +200,7 @@ export default class Panel extends React.Component {
           <PropForm
             knobs={knobsArray}
             onFieldChange={this.handleChange}
-            onFieldClick={this.handleClick}
+            onFieldPress={this.handlePress}
           />
         </View>
         <Touchable onPress={this.reset}>
@@ -191,13 +210,3 @@ export default class Panel extends React.Component {
     );
   }
 }
-
-Panel.propTypes = {
-  active: PropTypes.bool.isRequired,
-  channel: PropTypes.shape({
-    emit: PropTypes.func,
-    on: PropTypes.func,
-    removeListener: PropTypes.func,
-  }).isRequired,
-  onReset: PropTypes.object, // eslint-disable-line
-};

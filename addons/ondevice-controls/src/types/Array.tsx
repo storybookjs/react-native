@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import styled from '@emotion/native';
 
 const Input = styled.TextInput(({ theme }) => ({
@@ -12,16 +11,25 @@ const Input = styled.TextInput(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-function formatArray(value, separator) {
+function formatArray(value: string, separator: string) {
   if (value === '') {
     return [];
   }
   return value.split(separator);
 }
 
-const ArrayType = ({ knob, onChange }) => (
+interface ArrayProps {
+  knob: {
+    name: string;
+    value: string[];
+    separator: string;
+  };
+  onChange: (value: string[]) => void;
+}
+
+const ArrayType = ({ knob, onChange = () => null }: ArrayProps) => (
   <Input
-    id={knob.name}
+    testID={knob.name}
     underlineColorAndroid="transparent"
     autoCapitalize="none"
     value={knob.value.join(knob.separator)}
@@ -29,21 +37,8 @@ const ArrayType = ({ knob, onChange }) => (
   />
 );
 
-ArrayType.defaultProps = {
-  knob: {},
-  onChange: (value) => value,
-};
-
-ArrayType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.array,
-    separator: PropTypes.string,
-  }),
-  onChange: PropTypes.func,
-};
-
 ArrayType.serialize = (value) => value;
+
 ArrayType.deserialize = (value) => {
   if (Array.isArray(value)) return value;
 

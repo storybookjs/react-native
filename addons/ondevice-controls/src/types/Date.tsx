@@ -1,25 +1,44 @@
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import styled from '@emotion/native';
 
-const Touchable = styled.TouchableOpacity(({ theme }) => ({
+interface DateProps {
+  knob: {
+    name: string;
+    value: number;
+  };
+  onChange: (value: number) => void;
+}
+
+const Touchable = styled.TouchableOpacity(({ theme }: any) => ({
   borderColor: theme.borderColor || '#e6e6e6',
   borderWidth: 1,
   borderRadius: 2,
   padding: 5,
 }));
 
-const Label = styled.Text(({ theme }) => ({
+const Label = styled.Text(({ theme }: any) => ({
   fontSize: 13,
   color: theme.labelColor || 'black',
 }));
 
 // TODO seconds support
-class DateType extends PureComponent {
-  constructor() {
-    super();
+class DateType extends PureComponent<
+  DateProps,
+  { isTimeVisible: boolean; isDateVisible: boolean }
+> {
+  static defaultProps = {
+    knob: {},
+    onChange: (value) => value,
+  };
+
+  static serialize = (value) => String(value);
+
+  static deserialize = (value) => parseFloat(value);
+
+  constructor(props) {
+    super(props);
     this.state = {
       isDateVisible: false,
       isTimeVisible: false,
@@ -85,20 +104,5 @@ class DateType extends PureComponent {
     );
   }
 }
-DateType.defaultProps = {
-  knob: {},
-  onChange: (value) => value,
-};
-
-DateType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.number,
-  }),
-  onChange: PropTypes.func,
-};
-
-DateType.serialize = (value) => String(value);
-DateType.deserialize = (value) => parseFloat(value);
 
 export default DateType;
