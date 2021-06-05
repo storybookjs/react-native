@@ -10,9 +10,9 @@
     "format": "prettier --write .",
     "ios": "react-native run-ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prestart": "node ../../app/react-native/pre-script.js",
+    "prestart": "sbn-get-stories",
     "start": "react-native start",
-    "storybook-watcher": "node ../../app/react-native/watcher.js",
+    "storybook-watcher": "sbn-watcher",
     "test": "jest"
   },
   "jest": {
