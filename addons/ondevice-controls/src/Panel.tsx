@@ -1,12 +1,18 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import PropTypes from 'prop-types';
 import { SELECT_STORY, FORCE_RE_RENDER } from '@storybook/core-events';
-import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-knobs';
+// import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-controls';
+
 import styled from '@emotion/native';
 import GroupTabs from './GroupTabs';
 import PropForm from './PropForm';
 import { Knob } from './PropField';
+
+const SET = () => null;
+const SET_OPTIONS = () => null;
+const RESET = () => null;
+const CHANGE = () => null;
+const CLICK = () => null;
 
 interface PanelProps {
   active: boolean;

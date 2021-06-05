@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import React, { ComponentType, FunctionComponent, ReactElement } from 'react';
 import styled from '@emotion/native';
