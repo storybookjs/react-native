@@ -1,6 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
 
-import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import React from 'react';
 import ModalPicker from 'react-native-modal-selector';
@@ -15,7 +14,26 @@ const Input = styled.TextInput(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-class SelectType extends React.Component {
+interface SelectProps {
+  knob: {
+    name: string;
+    value: string;
+    options: Array<any> | Record<string, any>;
+    selectV2: boolean;
+  };
+  onChange: (value: any) => void;
+}
+
+class SelectType extends React.Component<SelectProps> {
+  static defaultProps = {
+    knob: {},
+    onChange: (value) => value,
+  };
+
+  static serialize = (value) => value;
+
+  static deserialize = (value) => value;
+
   getOptions = ({ options }) => {
     if (Array.isArray(options)) {
       return options.map((val) => ({ key: val, label: val }));
@@ -52,23 +70,5 @@ class SelectType extends React.Component {
     );
   }
 }
-
-SelectType.defaultProps = {
-  knob: {},
-  onChange: (value) => value,
-};
-
-SelectType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.string,
-    options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-    selectV2: PropTypes.bool,
-  }),
-  onChange: PropTypes.func,
-};
-
-SelectType.serialize = (value) => value;
-SelectType.deserialize = (value) => value;
 
 export default SelectType;

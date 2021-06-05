@@ -2,6 +2,19 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import deepEqual from 'deep-equal';
 import styled from '@emotion/native';
+import { ViewStyle } from 'react-native';
+
+interface ObjectProps {
+  knob: {
+    name: string;
+    value: Record<string, any> | Array<any>;
+  };
+  onChange: (value: any) => void;
+}
+interface ObjectState {
+  json?: any;
+  jsonString?: any;
+}
 
 const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
@@ -13,10 +26,21 @@ const Input = styled.TextInput(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-class ObjectType extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = {};
+class ObjectType extends React.Component<ObjectProps, ObjectState> {
+  static defaultProps = {
+    knob: {},
+    onChange: (value) => value,
+  };
+
+  static serialize = (object) => JSON.stringify(object);
+
+  static deserialize = (value) => (value ? JSON.parse(value) : {});
+
+  failed: boolean;
+
+  constructor(props) {
+    super(props);
+    this.state = { json: undefined, jsonString: undefined };
   }
 
   getJSONString() {
@@ -42,7 +66,7 @@ class ObjectType extends React.Component {
       .replace(/[\u2018\u2019]/g, "'")
       .replace(/[\u201C\u201D]/g, '"');
 
-    const newState = {
+    const newState: ObjectState = {
       jsonString: withReplacedQuotes,
     };
 
@@ -61,7 +85,7 @@ class ObjectType extends React.Component {
   render() {
     const { knob } = this.props;
     const jsonString = this.getJSONString();
-    const extraStyle = {};
+    const extraStyle: ViewStyle = {};
 
     if (this.failed) {
       extraStyle.borderWidth = 1;
@@ -71,7 +95,7 @@ class ObjectType extends React.Component {
 
     return (
       <Input
-        id={knob.name}
+        testID={knob.name}
         style={extraStyle}
         value={jsonString}
         onChangeText={this.handleChange}
@@ -82,21 +106,5 @@ class ObjectType extends React.Component {
     );
   }
 }
-
-ObjectType.defaultProps = {
-  knob: {},
-  onChange: (value) => value,
-};
-
-ObjectType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  }),
-  onChange: PropTypes.func,
-};
-
-ObjectType.serialize = (object) => JSON.stringify(object);
-ObjectType.deserialize = (value) => (value ? JSON.parse(value) : {});
 
 export default ObjectType;

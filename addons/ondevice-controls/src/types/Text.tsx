@@ -2,6 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from '@emotion/native';
 
+interface TextProps {
+  knob: {
+    name: string;
+    value: string;
+  };
+  onChange: (value: any) => void;
+}
+
 const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
   borderColor: theme.borderColor || '#e6e6e6',
@@ -14,7 +22,7 @@ const Input = styled.TextInput(({ theme }) => ({
 
 const TextType = ({ knob, onChange }) => (
   <Input
-    id={knob.name}
+    testID={knob.name}
     value={knob.value}
     onChangeText={onChange}
     autoCapitalize="none"
@@ -27,13 +35,7 @@ TextType.defaultProps = {
   onChange: (value) => value,
 };
 
-TextType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.string,
-  }),
-  onChange: PropTypes.func,
-};
+TextType.propTypes = {};
 
 TextType.serialize = (value) => value;
 TextType.deserialize = (value) => value;

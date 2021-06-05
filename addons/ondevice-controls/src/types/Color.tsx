@@ -4,7 +4,15 @@ import { Text, Modal, View, TouchableOpacity, TouchableWithoutFeedback } from 'r
 import styled from '@emotion/native';
 import { ColorPicker, fromHsv } from '../components/color-picker';
 
-const Touchable = styled.TouchableOpacity(({ theme, color }) => ({
+interface ColorProps {
+  knob: {
+    name: string;
+    value: string;
+  };
+  onChange: (value: string) => void;
+}
+
+const Touchable = styled.TouchableOpacity(({ theme, color }: any) => ({
   borderColor: theme.borderColor || '#e6e6e6',
   width: 30,
   height: 20,
@@ -14,7 +22,16 @@ const Touchable = styled.TouchableOpacity(({ theme, color }) => ({
   backgroundColor: color,
 }));
 
-class ColorType extends React.Component {
+class ColorType extends React.Component<ColorProps, { displayColorPicker: boolean }> {
+  static defaultProps = {
+    knob: {},
+    onChange: (value) => value,
+  };
+
+  static serialize = (value) => value;
+
+  static deserialize = (value) => value;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -85,20 +102,5 @@ class ColorType extends React.Component {
     );
   }
 }
-
-ColorType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.string,
-  }),
-  onChange: PropTypes.func,
-};
-ColorType.defaultProps = {
-  knob: {},
-  onChange: (value) => value,
-};
-
-ColorType.serialize = (value) => value;
-ColorType.deserialize = (value) => value;
 
 export default ColorType;

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { View, Slider } from 'react-native';
+import { View } from 'react-native';
+import Slider from '@react-native-community/slider';
 import styled from '@emotion/native';
 
 const Input = styled.TextInput(({ theme }) => ({
@@ -12,7 +13,29 @@ const Input = styled.TextInput(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-class NumberType extends React.Component {
+interface NumberProps {
+  knob: {
+    name: string;
+    value: any;
+    step: number;
+    min: number;
+    max: number;
+    range: boolean;
+    defaultValue: number;
+  };
+  onChange: (value: any) => void;
+}
+
+class NumberType extends React.Component<NumberProps, { inputValue: any; showError: boolean }> {
+  static defaultProps = {
+    knob: {},
+    onChange: (value) => value,
+  };
+
+  static serialize = (value) => String(value);
+
+  static deserialize = (value) => parseFloat(value);
+
   constructor(props) {
     super(props);
 
@@ -58,7 +81,7 @@ class NumberType extends React.Component {
       <Input
         autoCapitalize="none"
         underlineColorAndroid="transparent"
-        value={inputValue}
+        value={inputValue.toString()}
         keyboardType="numeric"
         onChangeText={this.onChangeNormal}
         style={showError && { borderColor: '#FF4400' }}
@@ -75,7 +98,7 @@ class NumberType extends React.Component {
         minimumValue={knob.min}
         maximumValue={knob.max}
         step={knob.step}
-        onSlidingComplete={(val) => onChange(parseFloat(val))}
+        onSlidingComplete={(val) => onChange(val)}
       />
     );
   };
@@ -88,26 +111,5 @@ class NumberType extends React.Component {
     );
   }
 }
-
-NumberType.defaultProps = {
-  knob: {},
-  onChange: (value) => value,
-};
-
-NumberType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    step: PropTypes.number,
-    min: PropTypes.number,
-    max: PropTypes.number,
-    range: PropTypes.bool,
-    defaultValue: PropTypes.number,
-  }),
-  onChange: PropTypes.func,
-};
-
-NumberType.serialize = (value) => String(value);
-NumberType.deserialize = (value) => parseFloat(value);
 
 export default NumberType;
