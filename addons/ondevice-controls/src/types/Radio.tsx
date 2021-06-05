@@ -2,7 +2,7 @@ import { View } from 'react-native';
 import React from 'react';
 import RadioSelect from '../components/RadioSelect';
 
-interface RadioProps {
+export interface RadioProps {
   knob: {
     name: string;
     value: string;

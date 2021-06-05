@@ -14,7 +14,7 @@ const Input = styled.TextInput(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-interface SelectProps {
+export interface SelectProps {
   knob: {
     name: string;
     value: string;

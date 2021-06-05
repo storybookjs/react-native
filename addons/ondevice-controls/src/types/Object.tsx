@@ -3,7 +3,7 @@ import deepEqual from 'deep-equal';
 import styled from '@emotion/native';
 import { ViewStyle } from 'react-native';
 
-interface ObjectProps {
+export interface ObjectProps {
   knob: {
     name: string;
     value: Record<string, any> | Array<any>;

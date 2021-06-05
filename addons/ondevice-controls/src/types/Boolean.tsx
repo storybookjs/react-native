@@ -1,7 +1,7 @@
 import { View, Switch } from 'react-native';
 import React from 'react';
 
-interface BooleanProps {
+export interface BooleanProps {
   onChange: (value: boolean) => void;
   knob: {
     name: string;

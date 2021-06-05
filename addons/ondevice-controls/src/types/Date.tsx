@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import styled from '@emotion/native';
 
-interface DateProps {
+export interface DateProps {
   knob: {
     name: string;
     value: number;

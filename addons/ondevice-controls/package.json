@@ -24,7 +24,8 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepare": "tsc --clean"
+    "preprepare": "rm -rf dist/",
+    "prepare": "tsc"
   },
   "dependencies": {
     "@emotion/native": "^10.0.14",

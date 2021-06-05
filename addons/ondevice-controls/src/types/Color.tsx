@@ -3,7 +3,7 @@ import { Text, Modal, View, TouchableOpacity, TouchableWithoutFeedback } from 'r
 import styled from '@emotion/native';
 import { ColorPicker, fromHsv } from '../components/color-picker';
 
-interface ColorProps {
+export interface ColorProps {
   knob: {
     name: string;
     value: string;

@@ -7,14 +7,14 @@ const Label = styled.Text(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-interface ButtonProps {
+export interface ButtonTypeProps {
   knob: {
     name: string;
   };
   onPress: Function;
 }
 
-const ButtonType = ({ knob, onPress }: ButtonProps) => (
+const ButtonType = ({ knob, onPress }: ButtonTypeProps) => (
   <TouchableOpacity style={{ margin: 10 }} onPress={() => onPress(knob)}>
     <Label>{knob.name}</Label>
   </TouchableOpacity>
