@@ -1,14 +1,25 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ScrollView, Text, TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
 
-const Label = styled.Text(({ theme, active }) => ({
+const Label = styled.Text(({ theme, active }: any) => ({
   color: active ? theme.buttonActiveTextColor || '#444444' : theme.buttonTextColor || '#999999',
   fontSize: 17,
 }));
 
-class GroupTabs extends Component {
+interface GroupTabProps {
+  groups: Record<string, any>;
+  onGroupSelect: Function;
+  selectedGroup: string;
+}
+
+class GroupTabs extends Component<GroupTabProps> {
+  static defaultProps = {
+    groups: {},
+    onGroupSelect: () => {},
+    selectedGroup: null,
+  };
+
   renderTab(name, group) {
     let { title } = group;
     if (typeof title === 'function') {
@@ -55,18 +66,5 @@ class GroupTabs extends Component {
     );
   }
 }
-
-GroupTabs.defaultProps = {
-  groups: {},
-  onGroupSelect: () => {},
-  selectedGroup: null,
-};
-
-GroupTabs.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  groups: PropTypes.object,
-  onGroupSelect: PropTypes.func,
-  selectedGroup: PropTypes.string,
-};
 
 export default GroupTabs;

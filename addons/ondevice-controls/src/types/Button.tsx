@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
@@ -8,7 +7,14 @@ const Label = styled.Text(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-const ButtonType = ({ knob, onPress }) => (
+interface ButtonProps {
+  knob: {
+    name: string;
+  };
+  onPress: Function;
+}
+
+const ButtonType = ({ knob, onPress }: ButtonProps) => (
   <TouchableOpacity style={{ margin: 10 }} onPress={() => onPress(knob)}>
     <Label>{knob.name}</Label>
   </TouchableOpacity>
@@ -18,12 +24,7 @@ ButtonType.defaultProps = {
   knob: {},
 };
 
-ButtonType.propTypes = {
-  knob: PropTypes.shape({
-    name: PropTypes.string,
-  }),
-  onPress: PropTypes.func.isRequired,
-};
+ButtonType.propTypes = {};
 
 ButtonType.serialize = (value) => value;
 ButtonType.deserialize = (value) => value;

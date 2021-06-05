@@ -1,9 +1,15 @@
 import styled from '@emotion/native';
-import PropTypes from 'prop-types';
+
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-const RadioContainer = styled.View(({ isInline }) => ({
+interface RadioProps {
+  data: Array<Record<string, any>>;
+  initValue: string;
+  onChange: Function;
+}
+
+const RadioContainer = styled.View(({ isInline }: any) => ({
   flexDirection: isInline ? 'row' : 'column',
   alignItems: isInline ? 'center' : 'flex-start',
   flexWrap: 'wrap',
@@ -28,7 +34,7 @@ const RadioCircle = styled.View(({ theme }) => ({
   borderColor: theme.borderColor || '#e6e6e6',
 }));
 
-const RadioInnerCircle = styled.View(({ selected }) => ({
+const RadioInnerCircle = styled.View(({ selected }: any) => ({
   position: 'absolute',
   height: 12,
   width: 12,
@@ -40,7 +46,13 @@ const RadioLabel = styled.Text(() => ({
   fontSize: 13,
 }));
 
-class RadioSelect extends React.Component {
+class RadioSelect extends React.Component<RadioProps, { value: string }> {
+  static defaultProps = {
+    data: [],
+    onChange: (value) => value,
+    initValue: '',
+  };
+
   constructor(props) {
     super(props);
 
@@ -77,15 +89,3 @@ class RadioSelect extends React.Component {
 }
 
 export default RadioSelect;
-
-RadioSelect.defaultProps = {
-  data: [],
-  onChange: (value) => value,
-  initValue: '',
-};
-
-RadioSelect.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object),
-  initValue: PropTypes.string,
-  onChange: PropTypes.func,
-};

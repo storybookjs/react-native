@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Text, Modal, View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import styled from '@emotion/native';

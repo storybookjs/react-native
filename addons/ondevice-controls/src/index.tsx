@@ -2,8 +2,6 @@ import React from 'react';
 import addons from '@storybook/addons';
 import Panel from './Panel';
 
-export { withKnobs } from '@storybook/addon-knobs';
-
 export function register() {
   addons.register('RNCONTROLS', () => {
     const channel = addons.getChannel();

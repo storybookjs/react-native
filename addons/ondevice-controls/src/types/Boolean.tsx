@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { View, Switch } from 'react-native';
 import React from 'react';
 

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import React from 'react';
 import RadioSelect from '../components/RadioSelect';
@@ -33,7 +32,7 @@ class RadioType extends React.Component<RadioProps> {
   };
 
   render() {
-    const { knob, onChange, isInline } = this.props;
+    const { knob, onChange } = this.props;
 
     const options = this.getOptions(knob);
 
@@ -43,7 +42,6 @@ class RadioType extends React.Component<RadioProps> {
           data={options}
           initValue={knob.value}
           onChange={(option) => onChange(option.key)}
-          inline={isInline}
         />
       </View>
     );
