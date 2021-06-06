@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { View } from 'react-native';
-import PropField, { Knob } from './PropField';
+import { ArgTypes } from './ControlsPanel';
+import PropField from './PropField';
 
 interface FormProps {
-  knobs: Knob[];
-  onFieldPress: Function;
+  args: ArgTypes;
   onFieldChange: (value: any) => void;
 }
 
@@ -20,21 +20,20 @@ export default class PropForm extends React.Component<FormProps> {
   }
 
   render() {
-    const { knobs, onFieldPress } = this.props;
+    const { args } = this.props;
 
     return (
       <View>
-        {knobs.map((knob) => {
-          const changeHandler = this.makeChangeHandler(knob.name, knob.type);
+        {Object.values(args).map((arg) => {
+          const changeHandler = this.makeChangeHandler(arg.name, arg.type);
           return (
             <PropField
-              key={knob.name}
-              name={knob.name}
-              type={knob.type}
-              value={knob.value}
-              knob={knob}
+              key={arg.name}
+              name={arg.name}
+              type={arg.type}
+              value={arg.value}
+              arg={arg}
               onChange={changeHandler}
-              onPress={onFieldPress}
             />
           );
         })}

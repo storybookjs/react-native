@@ -1,7 +1,8 @@
 import { View, Text } from 'react-native';
-import React, { ComponentType, FunctionComponent, ReactElement } from 'react';
+import React, { ComponentType } from 'react';
 import styled from '@emotion/native';
 import TypeMap from './types';
+import { ArgType } from './ControlsPanel';
 
 type ControlTypes =
   | 'text'
@@ -24,8 +25,8 @@ export interface Knob {
   groupId?: string;
 }
 
-const InvalidType = ({ knob }: { knob: Knob }) => (
-  <Text style={{ margin: 10 }}>Invalid Type {knob.type}</Text>
+const InvalidType = ({ arg }: { arg: ArgType }) => (
+  <Text style={{ margin: 10 }}>Invalid Type {arg.type}</Text>
 );
 
 const Label = styled.Text(({ theme }) => ({
@@ -37,23 +38,18 @@ const Label = styled.Text(({ theme }) => ({
 
 interface PropFieldProps {
   onChange: (value: any) => void;
-  onPress: Function;
-  knob: Knob;
+  arg: ArgType;
   name: string;
   type: string;
   value: string;
 }
 
-const PropField = ({ onChange, onPress, knob }: PropFieldProps) => {
-  const InputType: ComponentType<any> = TypeMap[knob.type];
+const PropField = ({ onChange, arg }: PropFieldProps) => {
+  const InputType: ComponentType<any> = TypeMap[arg.type];
   return (
     <View>
-      {!knob.hideLabel ? <Label>{`${knob.label || knob.name}`}</Label> : null}
-      {InputType ? (
-        <InputType knob={knob} onChange={onChange} onPress={onPress} />
-      ) : (
-        <InvalidType knob={knob} />
-      )}
+      {!arg.hideLabel ? <Label>{`${arg.label || arg.name}`}</Label> : null}
+      {InputType ? <InputType arg={arg} onChange={onChange} /> : <InvalidType arg={arg} />}
     </View>
   );
 };

@@ -31,6 +31,7 @@
     "scripts/*"
   ],
   "scripts": {
+    "preprepare": "rm -rf dist/",
     "prepare": "tsc"
   },
   "dependencies": {
