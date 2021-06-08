@@ -4,6 +4,7 @@ import React from 'react';
 import { Linking, Text } from 'react-native';
 import { useArgs } from './hooks';
 import PropForm from './PropForm';
+import { useArgs, useParameter } from './hooks';
 
 const Touchable = styled.TouchableOpacity(({ theme }) => ({
   borderRadius: 2,
