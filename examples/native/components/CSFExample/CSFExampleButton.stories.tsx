@@ -4,6 +4,7 @@ import { Button } from './CSFExampleButton';
 
 const CSFExample: ComponentMeta<typeof Button> = {
   title: 'CSF Example',
+  parameters: { notes: '- test' },
 };
 
 export default CSFExample;
@@ -13,7 +14,11 @@ type ButtonStory = ComponentStory<typeof Button>;
 export const CSFExample1: ButtonStory = (args) => <Button {...args} onPress={() => null} />;
 
 CSFExample1.args = {
-  text: 'args!',
+  text: 'args!!',
+};
+
+CSFExample1.parameters = {
+  notes: '# notes',
 };
 
 export const CSFExample2: ButtonStory = () => <Button text="test2" onPress={() => null} />;

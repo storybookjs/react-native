@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Markdown from 'react-native-simple-markdown';
-import { AddonStore } from '@storybook/addons';
+import Markdown from './Markdown/Markdown';
+import { AddonStore, addons } from '@storybook/addons';
+import { SET_CURRENT_STORY } from '@storybook/core-events';
 import { API } from '@storybook/api';
-import { ThemeContext } from '@emotion/core';
 
 export const PARAM_KEY = 'notes';
 
@@ -14,30 +14,28 @@ interface NotesProps {
 }
 
 export const Notes = ({ active, api }: NotesProps) => {
-  if (!active) {
+  const [story, setStory] = useState<any>();
+  useEffect(() => {
+    if (active) {
+      const selection = api.store().getSelection();
+      setStory(api.store().fromId(selection.storyId));
+    }
+    addons.getChannel().on(SET_CURRENT_STORY, () => {
+      const selection = api.store().getSelection();
+      setStory(api.store().fromId(selection.storyId));
+    });
+  }, [api, active]);
+
+  if (!active || !story) {
     return null;
   }
 
-  const selection = api.store().getSelection();
-
-  if (!selection) {
-    return null;
-  }
-
-  const story = api.store().fromId(selection.storyId);
-  const text = story.parameters[PARAM_KEY];
+  const text: string = story.parameters[PARAM_KEY];
 
   const textAfterFormatted: string = text ? text.trim() : '';
-
   return (
     <View style={styles.container}>
-      <ThemeContext.Consumer>
-        {(theme) => (
-          <Markdown styles={{ text: { color: (theme as any).labelColor } }}>
-            {textAfterFormatted}
-          </Markdown>
-        )}
-      </ThemeContext.Consumer>
+      <Markdown>{textAfterFormatted}</Markdown>
     </View>
   );
 };
