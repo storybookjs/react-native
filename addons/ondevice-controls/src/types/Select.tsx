@@ -39,7 +39,10 @@ class SelectType extends React.Component<SelectProps> {
       return options.map((val) => ({ key: val, label: val }));
     }
 
-    return Object.keys(options).map((key) => ({ label: key, key: options[key] }));
+    return Object.keys(options).map((key) => ({
+      label: key,
+      key: options[key],
+    }));
   };
 
   render() {

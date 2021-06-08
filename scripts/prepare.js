@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* tslint:disable:no-console */
 const path = require('path');
 const shell = require('shelljs');
 const chalk = require('chalk');
@@ -11,7 +9,6 @@ const { tscfy } = require('./compile-tsc');
 function getPackageJson() {
   const modulePath = path.resolve('./');
 
-  // eslint-disable-next-line global-require,import/no-dynamic-require
   return require(path.join(modulePath, 'package.json'));
 }
 
@@ -62,7 +59,9 @@ const packageJson = getPackageJson();
 
 removeDist();
 
-babelify({ errorCallback: (errorLogs) => logError('js', packageJson, errorLogs) });
+babelify({
+  errorCallback: (errorLogs) => logError('js', packageJson, errorLogs),
+});
 tscfy({ errorCallback: (errorLogs) => logError('ts', packageJson, errorLogs) });
 
 cleanup();

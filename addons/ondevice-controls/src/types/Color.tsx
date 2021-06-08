@@ -1,5 +1,12 @@
 import React from 'react';
-import { Text, Modal, View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import {
+  Text,
+  Modal,
+  View,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  StyleSheet,
+} from 'react-native';
 import styled from '@emotion/native';
 import { ColorPicker, fromHsv } from '../components/color-picker';
 
@@ -69,28 +76,16 @@ class ColorType extends React.Component<ColorProps, { displayColorPicker: boolea
           onRequestClose={this.closeColorPicker}
         >
           <TouchableWithoutFeedback onPress={this.closeColorPicker}>
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View style={styles.containerCenter}>
               <TouchableWithoutFeedback>
-                <View
-                  style={{
-                    backgroundColor: 'white',
-                    borderWidth: 1,
-                    borderColor: 'rgb(247, 244, 244)',
-                    width: 250,
-                    height: 250,
-                    padding: 10,
-                  }}
-                >
-                  <TouchableOpacity
-                    onPress={this.closeColorPicker}
-                    style={{ alignSelf: 'flex-end', padding: 5 }}
-                  >
-                    <Text style={{ fontSize: 18, fontWeight: 'bold' }}>X</Text>
+                <View style={styles.innerContainer}>
+                  <TouchableOpacity onPress={this.closeColorPicker} style={styles.end}>
+                    <Text style={styles.close}>X</Text>
                   </TouchableOpacity>
                   <ColorPicker
                     onColorSelected={this.onChangeColor}
                     defaultColor={knob.value}
-                    style={{ flex: 1 }}
+                    style={styles.picker}
                   />
                 </View>
               </TouchableWithoutFeedback>
@@ -101,5 +96,20 @@ class ColorType extends React.Component<ColorProps, { displayColorPicker: boolea
     );
   }
 }
+
+const styles = StyleSheet.create({
+  picker: { flex: 1 },
+  close: { fontSize: 18, fontWeight: 'bold' },
+  end: { alignSelf: 'flex-end', padding: 5 },
+  innerContainer: {
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: 'rgb(247, 244, 244)',
+    width: 250,
+    height: 250,
+    padding: 10,
+  },
+  containerCenter: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+});
 
 export default ColorType;

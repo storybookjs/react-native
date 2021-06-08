@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
@@ -10,13 +9,13 @@ function getCommand(watch) {
     './src',
     '--out-dir ./dist',
     `--config-file ${path.resolve(__dirname, '../.babelrc.js')}`,
-    `--copy-files`,
+    '--copy-files',
   ];
 
   if (process.cwd().includes(path.join('addons', 'storyshots'))) {
-    args.push(`--extensions ".js"`);
+    args.push('--extensions ".js"');
   } else {
-    args.push(`--extensions ".js,.jsx,.ts,.tsx"`);
+    args.push('--extensions ".js,.jsx,.ts,.tsx"');
   }
 
   if (watch) {

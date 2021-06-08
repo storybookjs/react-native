@@ -1,7 +1,5 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, StyleSheet } from 'react-native';
 
 const theme = {
   OBJECT_PREVIEW_ARRAY_MAX_PROPERTIES: 10,
@@ -29,7 +27,7 @@ class Inspect extends Component<{ name?: string; value: any }, { expanded: boole
     const { name, value } = this.props;
     const { expanded } = this.state;
     const toggle = (
-      <View style={{ width: 40, height: 40 }}>
+      <View style={styles.container}>
         {name &&
         ((Array.isArray(value) && value.length) ||
           (value &&
@@ -52,19 +50,19 @@ class Inspect extends Component<{ name?: string; value: any }, { expanded: boole
       if (name) {
         return (
           <>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View style={styles.row}>
               {toggle}
               {nameComponent}
               <Text>{`: ${value.length === 0 ? '[]' : expanded ? '[' : '[...]'}`}</Text>
             </View>
             {expanded ? (
-              <View style={{ marginLeft: 40 }}>
+              <View style={styles.expanded}>
                 {value.map((v, i) => (
-                  <View key={i} style={{ marginLeft: 40 }}>
+                  <View key={i} style={styles.expanded}>
                     <Inspect value={v} />
                   </View>
                 ))}
-                <View style={{ marginLeft: 20 }}>
+                <View style={styles.spacingLeft}>
                   <Text>]</Text>
                 </View>
               </View>
@@ -76,7 +74,7 @@ class Inspect extends Component<{ name?: string; value: any }, { expanded: boole
         <View>
           <Text>[</Text>
           {value.map((v, i) => (
-            <View key={i} style={{ marginLeft: 20 }}>
+            <View key={i} style={styles.spacingLeft}>
               <Inspect value={v} />
             </View>
           ))}
@@ -88,7 +86,7 @@ class Inspect extends Component<{ name?: string; value: any }, { expanded: boole
       if (name) {
         return (
           <>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View style={styles.row}>
               {toggle}
               {nameComponent}
               <Text>
@@ -96,13 +94,13 @@ class Inspect extends Component<{ name?: string; value: any }, { expanded: boole
               </Text>
             </View>
             {expanded ? (
-              <View style={{ marginLeft: 40 }}>
+              <View style={styles.expanded}>
                 {Object.entries(value).map(([key, v]) => (
                   <View key={key}>
                     <Inspect name={key} value={v} />
                   </View>
                 ))}
-                <View style={{ marginLeft: 20 }}>
+                <View style={styles.spacingLeft}>
                   <Text>{'}'}</Text>
                 </View>
               </View>
@@ -124,7 +122,7 @@ class Inspect extends Component<{ name?: string; value: any }, { expanded: boole
     }
     if (name) {
       return (
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <View style={styles.row}>
           {toggle}
           {nameComponent}
           <Text>: </Text>
@@ -175,3 +173,10 @@ function Value({ value }: { value: any }) {
 }
 
 export default Inspect;
+
+const styles = StyleSheet.create({
+  spacingLeft: { marginLeft: 20 },
+  expanded: { marginLeft: 40 },
+  row: { flexDirection: 'row', alignItems: 'center' },
+  container: { width: 40, height: 40 },
+});

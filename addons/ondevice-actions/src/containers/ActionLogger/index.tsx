@@ -54,9 +54,9 @@ export default class ActionLogger extends Component<ActionLoggerProps, ActionLog
       const actions = [...prevState.actions];
       const previous = actions.length && actions[0];
       if (previous && safeDeepEqual(previous.data, action.data)) {
-        previous.count++; // eslint-disable-line
+        previous.count++;
       } else {
-        action.count = 1; // eslint-disable-line
+        action.count = 1;
         actions.unshift(action);
       }
       return { actions: actions.slice(0, action.options.limit) };

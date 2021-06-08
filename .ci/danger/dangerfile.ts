@@ -16,7 +16,7 @@ const Versions = {
 
 const branchVersion = Versions.MINOR;
 
-const checkRequiredLabels = labels => {
+const checkRequiredLabels = (labels) => {
   const forbiddenLabels = flatten([
     'do not merge',
     'in progress',
@@ -24,11 +24,18 @@ const checkRequiredLabels = labels => {
     branchVersion === Versions.PATCH ? 'feature request' : [],
   ]);
 
-  const requiredLabels = flatten([prLogConfig.skipLabels || [], (prLogConfig.validLabels || []).map(keyVal => keyVal[0])]);
+  const requiredLabels = flatten([
+    prLogConfig.skipLabels || [],
+    (prLogConfig.validLabels || []).map((keyVal) => keyVal[0]),
+  ]);
 
   const blockingLabels = intersection(forbiddenLabels, labels);
   if (!isEmpty(blockingLabels)) {
-    fail(`PR is marked with ${blockingLabels.map(label => `"${label}"`).join(', ')} label${blockingLabels.length > 1 ? 's' : ''}.`);
+    fail(
+      `PR is marked with ${blockingLabels.map((label) => `"${label}"`).join(', ')} label${
+        blockingLabels.length > 1 ? 's' : ''
+      }.`
+    );
   }
 
   const foundLabels = intersection(requiredLabels, labels);
@@ -41,5 +48,5 @@ const checkRequiredLabels = labels => {
 
 if (prLogConfig) {
   const { labels } = danger.github.issue;
-  checkRequiredLabels(labels.map(l => l.name));
+  checkRequiredLabels(labels.map((l) => l.name));
 }

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import styled from '@emotion/native';
 
 const Input = styled.TextInput(({ theme }) => ({
@@ -40,7 +40,9 @@ const ArrayType = ({ knob, onChange = () => null }: ArrayProps) => (
 ArrayType.serialize = (value) => value;
 
 ArrayType.deserialize = (value) => {
-  if (Array.isArray(value)) return value;
+  if (Array.isArray(value)) {
+    return value;
+  }
 
   return Object.keys(value)
     .sort()

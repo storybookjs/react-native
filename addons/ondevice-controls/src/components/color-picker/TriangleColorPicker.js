@@ -1,7 +1,3 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable global-require */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -81,14 +77,18 @@ export class TriangleColorPicker extends React.PureComponent {
   _onColorSelected() {
     const { onColorSelected } = this.props;
     const color = tinycolor(this._getColor()).toHexString();
-    if (onColorSelected) onColorSelected(color);
+    if (onColorSelected) {
+      onColorSelected(color);
+    }
   }
 
   _onOldColorSelected() {
     const { oldColor, onOldColorSelected } = this.props;
     const color = tinycolor(oldColor);
     this.setState({ color: color.toHsv() });
-    if (onOldColorSelected) onOldColorSelected(color.toHexString());
+    if (onOldColorSelected) {
+      onOldColorSelected(color.toHexString());
+    }
   }
 
   _onSValueChange(s) {
@@ -303,7 +303,11 @@ export class TriangleColorPicker extends React.PureComponent {
 TriangleColorPicker.propTypes = {
   color: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.shape({ h: PropTypes.number, s: PropTypes.number, v: PropTypes.number }),
+    PropTypes.shape({
+      h: PropTypes.number,
+      s: PropTypes.number,
+      v: PropTypes.number,
+    }),
   ]),
   defaultColor: PropTypes.string,
   oldColor: PropTypes.string,
@@ -341,13 +345,8 @@ function getPickerProperties(pickerSize) {
 }
 
 const makeComputedStyles = ({ indicatorColor, angle, pickerSize, selectedColorHsv, isRTL }) => {
-  const {
-    triangleSize,
-    triangleHeight,
-    triangleWidth,
-    indicatorSize,
-    pickerPadding,
-  } = getPickerProperties(pickerSize);
+  const { triangleSize, triangleHeight, triangleWidth, indicatorSize, pickerPadding } =
+    getPickerProperties(pickerSize);
 
   /* ===== INDICATOR ===== */
   const indicatorRadius = pickerSize / 2 - indicatorSize / 2 - pickerPadding;

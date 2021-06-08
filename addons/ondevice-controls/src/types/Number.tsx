@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 import styled from '@emotion/native';
 
@@ -83,7 +83,7 @@ class NumberType extends React.Component<NumberProps, { inputValue: any; showErr
         value={inputValue.toString()}
         keyboardType="numeric"
         onChangeText={this.onChangeNormal}
-        style={showError && { borderColor: '#FF4400' }}
+        style={showError && styles.errorBorder}
       />
     );
   };
@@ -106,9 +106,14 @@ class NumberType extends React.Component<NumberProps, { inputValue: any; showErr
     const { knob } = this.props;
 
     return (
-      <View style={{ margin: 10 }}>{knob.range ? this.renderRange() : this.renderNormal()}</View>
+      <View style={styles.spacing}>{knob.range ? this.renderRange() : this.renderNormal()}</View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  spacing: { margin: 10 },
+  errorBorder: { borderColor: '#FF4400' },
+});
 
 export default NumberType;

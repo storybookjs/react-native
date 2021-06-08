@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button, View, Text, ScrollView } from 'react-native';
+import { Button, View, Text, ScrollView, StyleSheet } from 'react-native';
 import { ActionDisplay } from '@storybook/addon-actions';
 import Inspect from './Inspect';
 
@@ -13,9 +13,9 @@ export const ActionLogger: FunctionComponent<ActionLoggerProps> = ({ actions, on
     <ScrollView horizontal>
       <View>
         {actions.map((action: ActionDisplay) => (
-          <View key={action.id} style={{ flexDirection: 'row' }}>
+          <View key={action.id} style={styles.row}>
             <View>{action.count > 1 ? <Text>{action.count}</Text> : null}</View>
-            <View style={{ flexGrow: 1 }}>
+            <View style={styles.grow}>
               <Inspect name={action.data.name} value={action.data.args || action.data} />
             </View>
           </View>
@@ -29,3 +29,8 @@ export const ActionLogger: FunctionComponent<ActionLoggerProps> = ({ actions, on
 );
 
 export default ActionLogger;
+
+const styles = StyleSheet.create({
+  grow: { flexGrow: 1 },
+  row: { flexDirection: 'row' },
+});

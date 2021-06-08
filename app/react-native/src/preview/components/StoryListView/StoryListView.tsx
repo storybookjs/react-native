@@ -116,7 +116,9 @@ export default class StoryListView extends Component<Props, State> {
           .raw()
           .reduce(
             (
-              acc: { [kind: string]: { title: string; data: PublishedStoreItem[] } },
+              acc: {
+                [kind: string]: { title: string; data: PublishedStoreItem[] };
+              },
               story: PublishedStoreItem
             ) => {
               acc[story.kind] = {

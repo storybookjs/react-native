@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import styled from '@emotion/native';
 
@@ -79,17 +79,12 @@ class DateType extends PureComponent<
     const timeString = `${`0${d.getHours()}`.slice(-2)}:${`0${d.getMinutes()}`.slice(-2)}`;
 
     return (
-      <View style={{ margin: 10 }}>
-        <View style={{ flexDirection: 'row' }}>
+      <View style={styles.spacing}>
+        <View style={styles.row}>
           <Touchable onPress={this.showDatePicker}>
             <Label>{dateString}</Label>
           </Touchable>
-          <Touchable
-            style={{
-              marginLeft: 5,
-            }}
-            onPress={this.showTimePicker}
-          >
+          <Touchable style={styles.timeTouchable} onPress={this.showTimePicker}>
             <Label>{timeString}</Label>
           </Touchable>
         </View>
@@ -104,5 +99,13 @@ class DateType extends PureComponent<
     );
   }
 }
+
+const styles = StyleSheet.create({
+  timeTouchable: {
+    marginLeft: 5,
+  },
+  row: { flexDirection: 'row' },
+  spacing: { margin: 10 },
+});
 
 export default DateType;

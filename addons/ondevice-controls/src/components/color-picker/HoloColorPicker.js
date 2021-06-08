@@ -1,18 +1,14 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable global-require */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
   TouchableOpacity,
-  Slider,
   View,
   Image,
   StyleSheet,
   InteractionManager,
   I18nManager,
 } from 'react-native';
+import Slider from '@react-native-community/slider';
 import tinycolor from 'tinycolor2';
 import { createPanResponder } from './utils';
 
@@ -110,14 +106,18 @@ export class HoloColorPicker extends React.PureComponent {
   _onColorSelected() {
     const { onColorSelected } = this.props;
     const color = tinycolor(this._getColor()).toHexString();
-    if (onColorSelected) onColorSelected(color);
+    if (onColorSelected) {
+      onColorSelected(color);
+    }
   }
 
   _onOldColorSelected() {
     const { oldColor, onOldColorSelected } = this.props;
     const color = tinycolor(oldColor);
     this.setState({ color: color.toHsv() });
-    if (onOldColorSelected) onOldColorSelected(color.toHexString());
+    if (onOldColorSelected) {
+      onOldColorSelected(color.toHexString());
+    }
   }
 
   _computeHValue(x, y) {
@@ -221,7 +221,11 @@ export class HoloColorPicker extends React.PureComponent {
 HoloColorPicker.propTypes = {
   color: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.shape({ h: PropTypes.number, s: PropTypes.number, v: PropTypes.number }),
+    PropTypes.shape({
+      h: PropTypes.number,
+      s: PropTypes.number,
+      v: PropTypes.number,
+    }),
   ]),
   defaultColor: PropTypes.string,
   oldColor: PropTypes.string,
@@ -230,7 +234,6 @@ HoloColorPicker.propTypes = {
   onOldColorSelected: PropTypes.func,
   hideSliders: PropTypes.bool,
   sliderComponent: PropTypes.elementType,
-  // eslint-disable-next-line react/forbid-prop-types
   style: PropTypes.any,
 };
 

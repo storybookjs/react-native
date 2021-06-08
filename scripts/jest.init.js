@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'jest-enzyme/lib/index';
 
 // setup file

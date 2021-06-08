@@ -1,4 +1,4 @@
-import { View, Switch } from 'react-native';
+import { View, Switch, StyleSheet } from 'react-native';
 import React from 'react';
 
 export interface BooleanProps {
@@ -28,11 +28,15 @@ class BooleanType extends React.Component<BooleanProps, {}> {
     const { knob } = this.props;
 
     return (
-      <View style={{ margin: 10, alignItems: 'flex-start' }}>
+      <View style={styles.switch}>
         <Switch testID={knob.name} onValueChange={this.onValueChange} value={knob.value} />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  switch: { margin: 10, alignItems: 'flex-start' },
+});
 
 export default BooleanType;

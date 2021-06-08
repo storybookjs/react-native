@@ -1,3 +1,5 @@
+import { HooksContext } from './hooks';
+
 export {};
 
 declare global {
@@ -9,7 +11,7 @@ declare global {
     interface Global {
       // Reference our above type,
       // this allows global.debug to be used anywhere in our code.
-      previousExports: Map<any, string>;
+      STORYBOOK_HOOKS_CONTEXT: HooksContext;
     }
   }
 

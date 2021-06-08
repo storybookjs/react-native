@@ -1,5 +1,5 @@
 import React from 'react';
-import addons from '@storybook/addons';
+import addons, { types } from '@storybook/addons';
 import { AddonPanel } from './Panel';
 import ControlsPanel from './ControlsPanel';
 
@@ -9,6 +9,7 @@ export const PARAM_KEY = 'controls' as const;
 export function register() {
   addons.register(ADDON_ID, () => {
     addons.addPanel(ADDON_ID, {
+      type: types.PANEL,
       title: 'Controls',
       render: ({ active, key }) => (
         <AddonPanel key={key} active={active}>
