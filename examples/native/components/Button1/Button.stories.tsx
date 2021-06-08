@@ -25,10 +25,12 @@ storiesOf('button promise', module)
     },
     {
       notes: `
-# Markdown!\n
-* Promises are working finally!
-* [storybook!](https://storybook.js.org)
-`,
+# Markdown
+
+* Promises are working
+* This is notes and also a very long string to test the word wrapping. Test test test test.
+* Does it overlap?
+      `,
     }
   )
   .add('nothing', () => <Button text="test4" onPress={() => null} />);
