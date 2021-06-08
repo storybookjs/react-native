@@ -1,9 +1,12 @@
 import styled from '@emotion/native';
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Linking, Text } from 'react-native';
-import { PARAM_KEY } from './index';
+// import { PARAM_KEY } from './index';
 import PropForm from './PropForm';
-import { useArgs, useParameter } from './hooks';
+// import { useArgs, useParameter } from './hooks';
+import { Channel } from '@storybook/addons';
+import { API } from '@storybook/api';
+import { SET_CURRENT_STORY } from '@storybook/core-events';
 
 // const getTimestamp = () => +new Date();
 
@@ -47,13 +50,56 @@ export interface ArgTypes {
   [key: string]: ArgType;
 }
 
-const ControlsPanel = () => {
-  const [args, updateArgs, resetArgs] = useArgs();
-  const controls = useParameter<ArgTypes>('argTypes', {});
-  const isArgsStory = useParameter<boolean>('__isArgsStory', true);
-  const { hideNoControlsWarning = false } = useParameter<ControlsParameters>(PARAM_KEY, {});
-  const hasControls = Object.values(controls).some((arg) => arg?.control);
-  const showWarning = !(hasControls && isArgsStory) && !hideNoControlsWarning;
+const ControlsPanel = ({
+  api,
+  active,
+  channel,
+}: {
+  channel: Channel;
+  api: API;
+  active: boolean;
+}) => {
+  const [story, setStory] = useState<any>();
+
+  const getStory = useCallback(() => {
+    const sel = api.store().getSelection();
+    setStory(api.store().fromId(sel.storyId));
+  }, [api]);
+
+  const reset = () => {
+    api.store().resetStoryArgs(story.id);
+  };
+
+  useEffect(() => {
+    if (active) {
+      getStory();
+    }
+    channel.on(SET_CURRENT_STORY, getStory);
+    return channel.off(SET_CURRENT_STORY, getStory);
+  }, [api, active, channel, getStory]);
+  if (!active || !story) {
+    return null;
+  }
+
+  const params = story.parameters;
+
+  const argTypes = params.argTypes;
+  const isArgsStory = params.__isArgsStory;
+
+  const updateArg = ({ name, value }) => {
+    story.parameters.args[name] = value;
+    api.store().updateStoryArgs(story.id, story.parameters.args);
+  };
+
+  const hasControls = Object.values(argTypes).some((arg: ArgType) => arg?.control);
+  const showWarning = !(hasControls && isArgsStory);
+  const args = Object.entries(story.parameters.args).reduce((prev, [name, value]) => {
+    return {
+      ...prev,
+      [name]: { name, type: argTypes[name].control.type, value },
+    };
+  }, {});
+
   return (
     <>
       {showWarning && (
@@ -68,8 +114,8 @@ const ControlsPanel = () => {
           </Text>
         </Text>
       )}
-      <PropForm args={args} onFieldChange={updateArgs} />
-      <Touchable onPress={() => resetArgs(args.map((a: ArgType) => a.name))}>
+      <PropForm args={args} onFieldChange={updateArg} />
+      <Touchable onPress={reset}>
         <ResetButton>RESET</ResetButton>
       </Touchable>
       {/* <ArgsTable

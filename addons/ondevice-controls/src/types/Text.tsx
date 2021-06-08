@@ -2,9 +2,10 @@ import React from 'react';
 import styled from '@emotion/native';
 
 export interface TextProps {
-  knob: {
+  arg: {
     name: string;
     value: string;
+    type: string;
   };
   onChange: (value: any) => void;
 }
@@ -19,18 +20,20 @@ const Input = styled.TextInput(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-const TextType = ({ knob, onChange }: TextProps) => (
-  <Input
-    testID={knob.name}
-    value={knob.value}
-    onChangeText={onChange}
-    autoCapitalize="none"
-    underlineColorAndroid="transparent"
-  />
-);
+const TextType = ({ arg, onChange }: TextProps) => {
+  return (
+    <Input
+      testID={arg.name}
+      defaultValue={arg.value}
+      onChangeText={onChange}
+      autoCapitalize="none"
+      underlineColorAndroid="transparent"
+    />
+  );
+};
 
 TextType.defaultProps = {
-  knob: {},
+  arg: {},
   onChange: (value) => value,
 };
 

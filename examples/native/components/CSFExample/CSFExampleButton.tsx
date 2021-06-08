@@ -3,15 +3,15 @@ import { TouchableOpacity, StyleSheet, Text } from 'react-native';
 
 interface ButtonProps {
   onPress: () => void;
-  text: string;
+  buttonText: string;
 }
 
 const styles = StyleSheet.create({
   button: { paddingHorizontal: 16, paddingVertical: 8 },
 });
 
-export const Button: FunctionComponent<ButtonProps> = ({ onPress, text }) => (
+export const Button: FunctionComponent<ButtonProps> = ({ onPress, buttonText }) => (
   <TouchableOpacity style={styles.button} onPress={onPress}>
-    <Text>{text}</Text>
+    <Text>{buttonText}</Text>
   </TouchableOpacity>
 );

@@ -7,7 +7,7 @@ import PropField from './PropField';
 
 interface FormProps {
   args: ArgTypes;
-  onFieldChange: (value: any) => void;
+  onFieldChange: (value: { name: string; value: any; type: string }) => void;
 }
 
 export default class PropForm extends React.Component<FormProps> {
@@ -26,6 +26,7 @@ export default class PropForm extends React.Component<FormProps> {
       <View>
         {Object.values(args).map((arg) => {
           const changeHandler = this.makeChangeHandler(arg.name, arg.type);
+
           return (
             <PropField
               key={arg.name}

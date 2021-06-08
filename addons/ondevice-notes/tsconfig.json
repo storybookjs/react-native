@@ -1,8 +1,18 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "./src"
+    "baseUrl": ".",
+    "jsx": "react-native",
+    "rootDir": "./src",
+    "module": "ESNext",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist/",
+    "moduleResolution": "node",
+    "declaration": true,
+    "allowJs": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/__tests__/**/*"]
+  "include": ["src/**/*"]
 }
