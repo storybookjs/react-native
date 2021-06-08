@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
 
 const Label = styled.Text(({ theme, active }: any) => ({
@@ -29,15 +29,7 @@ class GroupTabs extends Component<GroupTabProps> {
     const { onGroupSelect, selectedGroup } = this.props;
 
     return (
-      <TouchableOpacity
-        style={{
-          marginTop: 5,
-          marginRight: 15,
-          paddingBottom: 10,
-        }}
-        key={name}
-        onPress={() => onGroupSelect(name)}
-      >
+      <TouchableOpacity style={styles.tab} key={name} onPress={() => onGroupSelect(name)}>
         <Label active={selectedGroup === name}>{title}</Label>
       </TouchableOpacity>
     );
@@ -49,16 +41,7 @@ class GroupTabs extends Component<GroupTabProps> {
     const entries = groups ? Object.entries(groups) : null;
 
     return entries && entries.length ? (
-      <ScrollView
-        horizontal
-        style={{
-          marginHorizontal: 10,
-          flexDirection: 'row',
-          marginBottom: 10,
-          borderBottomWidth: 1,
-          borderBottomColor: '#ccc',
-        }}
-      >
+      <ScrollView horizontal style={styles.scrollView}>
         {entries.map(([key, value]) => this.renderTab(key, value))}
       </ScrollView>
     ) : (
@@ -66,5 +49,20 @@ class GroupTabs extends Component<GroupTabProps> {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  scrollView: {
+    marginHorizontal: 10,
+    flexDirection: 'row',
+    marginBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  tab: {
+    marginTop: 5,
+    marginRight: 15,
+    paddingBottom: 10,
+  },
+});
 
 export default GroupTabs;

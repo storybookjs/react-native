@@ -8,6 +8,7 @@ interface Props {
 }
 
 const styles = StyleSheet.create({
+  container: { flex: 1 },
   helpContainer: {
     flex: 1,
     paddingHorizontal: 16,
@@ -21,7 +22,7 @@ const StoryView = ({ story }: Props) => {
   if (story && story.storyFn) {
     const { id, storyFn } = story;
     return (
-      <View key={id} testID={id} style={{ flex: 1 }}>
+      <View key={id} testID={id} style={styles.container}>
         {storyFn()}
       </View>
     );

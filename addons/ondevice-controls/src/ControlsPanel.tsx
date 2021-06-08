@@ -1,13 +1,13 @@
 import styled from '@emotion/native';
-import { useArgs, useParameter } from '@storybook/addons';
 import React from 'react';
 import { Linking, Text } from 'react-native';
 import { PARAM_KEY } from './index';
 import PropForm from './PropForm';
+import { useArgs, useParameter } from './hooks';
 
-const getTimestamp = () => +new Date();
+// const getTimestamp = () => +new Date();
 
-const DEFAULT_GROUP_ID = 'Other';
+// const DEFAULT_GROUP_ID = 'Other';
 
 const Touchable = styled.TouchableOpacity(({ theme }) => ({
   borderRadius: 2,
@@ -46,10 +46,11 @@ export interface ArgType {
 export interface ArgTypes {
   [key: string]: ArgType;
 }
+
 const ControlsPanel = () => {
   const [args, updateArgs, resetArgs] = useArgs();
   const controls = useParameter<ArgTypes>('argTypes', {});
-  const isArgsStory = useParameter<boolean>('__isArgsStory', false);
+  const isArgsStory = useParameter<boolean>('__isArgsStory', true);
   const { hideNoControlsWarning = false } = useParameter<ControlsParameters>(PARAM_KEY, {});
   const hasControls = Object.values(controls).some((arg) => arg?.control);
   const showWarning = !(hasControls && isArgsStory) && !hideNoControlsWarning;
@@ -68,6 +69,9 @@ const ControlsPanel = () => {
         </Text>
       )}
       <PropForm args={args} onFieldChange={updateArgs} />
+      <Touchable onPress={() => resetArgs(args.map((a: ArgType) => a.name))}>
+        <ResetButton>RESET</ResetButton>
+      </Touchable>
       {/* <ArgsTable
         {...{
           key: path, // resets state when switching stories

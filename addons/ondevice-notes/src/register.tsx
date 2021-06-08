@@ -2,7 +2,7 @@ import * as React from 'react';
 import addons from '@storybook/addons';
 import { Notes } from './components/Notes';
 
-export const PARAM_KEY = `notes`;
+export const PARAM_KEY = 'notes';
 
 addons.register('storybook/notes', (api) => {
   const channel = addons.getChannel();

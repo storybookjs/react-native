@@ -1,4 +1,3 @@
-/* eslint-disable prefer-destructuring */
 import { StoryApi } from '@storybook/addons';
 import { ClientApi } from '@storybook/client-api';
 import { ReactNode } from 'react';

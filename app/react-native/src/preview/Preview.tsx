@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
 import { ClientApi, ConfigApi, StoryStore } from '@storybook/client-api';
@@ -76,7 +75,6 @@ export default class Preview {
 
   getStorybookUI = (params: Partial<Params> = {}) => {
     if (params.asyncStorage === undefined) {
-      // eslint-disable-next-line no-console
       console.warn(
         `
     Starting Storybook v5.3.0, we require you to manually pass an asyncStorage prop. Pass null to disable or use https://github.com/react-native-async-storage/async-storage.

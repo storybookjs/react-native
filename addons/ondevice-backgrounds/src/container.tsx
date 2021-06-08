@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Constants from './constants';
 import { Channel } from './BackgroundPanel';
 
@@ -37,7 +37,13 @@ export default class Container extends Component<ContainerProps, ContainerState>
     const { children } = this.props;
 
     return (
-      <View style={{ flex: 1, backgroundColor: background || 'transparent' }}>{children}</View>
+      <View style={[styles.container, background && { backgroundColor: background }]}>
+        {children}
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: 'transparent' },
+});

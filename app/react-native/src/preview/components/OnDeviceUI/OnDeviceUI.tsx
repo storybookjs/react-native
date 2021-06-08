@@ -12,6 +12,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   StatusBar,
+  StyleSheet,
 } from 'react-native';
 import Events from '@storybook/core-events';
 import StoryListView from '../StoryListView';
@@ -34,7 +35,6 @@ import Panel from './Panel';
 const ANIMATION_DURATION = 300;
 const IS_IOS = Platform.OS === 'ios';
 // @ts-ignore: Property 'Expo' does not exist on type 'Global'
-// eslint-disable-next-line no-underscore-dangle
 const getExpoRoot = () => global.Expo || global.__expo || global.__exponent;
 export const IS_EXPO = getExpoRoot() !== undefined;
 const IS_ANDROID = Platform.OS === 'android';
@@ -58,7 +58,17 @@ const Preview = styled.View<{ disabled: boolean }>(flex, ({ disabled, theme }) =
   borderColor: disabled ? 'transparent' : theme.previewBorderColor,
 }));
 
-const absolutePosition: FlexStyle = { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 };
+const absolutePosition: FlexStyle = {
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0,
+};
+
+const styles = StyleSheet.create({
+  expoAndroidContainer: { paddingTop: StatusBar.currentHeight },
+});
 
 const useSelectedStory = (storyStore: StoryStore) => {
   const [storyId, setStoryId] = useState(storyStore.getSelection()?.storyId || '');

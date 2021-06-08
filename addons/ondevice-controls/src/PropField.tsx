@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import React, { ComponentType } from 'react';
 import styled from '@emotion/native';
 import TypeMap from './types';
@@ -26,7 +26,7 @@ export interface Knob {
 }
 
 const InvalidType = ({ arg }: { arg: ArgType }) => (
-  <Text style={{ margin: 10 }}>Invalid Type {arg.type}</Text>
+  <Text style={styles.invalidType}>Invalid Type {arg.type}</Text>
 );
 
 const Label = styled.Text(({ theme }) => ({
@@ -53,5 +53,9 @@ const PropField = ({ onChange, arg }: PropFieldProps) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  invalidType: { margin: 10 },
+});
 
 export default PropField;

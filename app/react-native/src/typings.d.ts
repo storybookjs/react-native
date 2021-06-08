@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import css from '@emotion/css';
-import {
-  CreateStyled,
-  CreateStyledComponentExtrinsic,
-} from '@emotion/styled-base';
+import { CreateStyled, CreateStyledComponentExtrinsic } from '@emotion/styled-base';
 import ReactNative from 'react-native';
-import { theme } from './preview/components/Shared/theme'
+import { theme } from './preview/components/Shared/theme';
 
 // https://github.com/emotion-js/emotion/pull/1176/
 // meanwhile: https://github.com/emotion-js/emotion/issues/839#issuecomment-500195354
@@ -60,29 +57,17 @@ declare module '@emotion/native' {
     | 'SectionList'
     | 'VirtualizedList';
 
-  type StyledComponentsForReactNative<
-    T extends keyof typeof ReactNative,
-    ExtraProps,
-    Theme
-  > = {
-    [K in T]: CreateStyledComponentExtrinsic<
-      typeof ReactNative[K],
-      ExtraProps,
-      Theme
-    >;
+  type StyledComponentsForReactNative<T extends keyof typeof ReactNative, ExtraProps, Theme> = {
+    [K in T]: CreateStyledComponentExtrinsic<typeof ReactNative[K], ExtraProps, Theme>;
   };
 
   type MyTheme = typeof theme;
 
   export interface Styled<Theme extends object = MyTheme, ExtraProps = {}>
     extends CreateStyled<Theme>,
-      StyledComponentsForReactNative<
-        StyledReactNativeComponents,
-        ExtraProps,
-        Theme
-      > {}
+      StyledComponentsForReactNative<StyledReactNativeComponents, ExtraProps, Theme> {}
 
-  export {css};
+  export { css };
 
   const styled: Styled;
   export default styled;

@@ -6,6 +6,7 @@ import {
   View,
   LayoutChangeEvent,
   KeyboardEvent,
+  StyleSheet,
 } from 'react-native';
 
 export interface PreviewDimens {
@@ -54,7 +55,7 @@ const useIsKeyboardOpen = (previewWidth: number) => {
       keyboardDidHideListener.remove();
       Dimensions.removeEventListener('change', removeKeyboardOnOrientationChange);
     };
-  }, []);
+  }, [previewWidth]);
 
   return keyboardOpen.current;
 };
@@ -78,11 +79,23 @@ const AbsolutePositionedKeyboardAwareView = ({
   };
 
   return (
-    <View style={{ flex: 1 }} onLayout={onLayoutHandler}>
-      <View style={width === 0 ? { flex: 1 } : { position: 'absolute', width, height }}>
+    <View style={styles.container} onLayout={onLayoutHandler}>
+      <View
+        style={
+          width === 0
+            ? styles.container
+            : [styles.absolute, { position: 'absolute', width, height }]
+        }
+      >
         {children}
       </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  absolute: { position: 'absolute' },
+  container: { flex: 1 },
+});
+
 export default React.memo(AbsolutePositionedKeyboardAwareView);

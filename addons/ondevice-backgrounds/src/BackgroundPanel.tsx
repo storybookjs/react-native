@@ -1,6 +1,5 @@
-/* eslint-disable react/destructuring-assignment, import/no-extraneous-dependencies */
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Events from '@storybook/core-events';
 import { AddonStore } from '@storybook/addons';
 import { API } from '@storybook/api';
@@ -28,7 +27,7 @@ storiesOf('First Component', module)
 
 const Instructions = () => (
   <View>
-    <Text style={{ fontSize: 16 }}>Setup Instructions</Text>
+    <Text style={styles.title}>Setup Instructions</Text>
     <Text>
       Please add the background decorator definition to your story. The background decorate accepts
       an array of items, which should include a name for your color (preferably the css class name)
@@ -97,3 +96,7 @@ export default class BackgroundPanel extends Component<BackgroundPanelProps, Bac
     );
   }
 }
+
+const styles = StyleSheet.create({
+  title: { fontSize: 16 },
+});

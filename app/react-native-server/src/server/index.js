@@ -27,7 +27,7 @@ export default class Server {
       const params = req.url ? querystring.parse(req.url.substr(1)) : {};
 
       if (params.pairedId) {
-        socket.pairedId = params.pairedId; // eslint-disable-line
+        socket.pairedId = params.pairedId;
       }
     }
 

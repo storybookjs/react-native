@@ -88,11 +88,6 @@ interface DataItem {
   data: PublishedStoreItem[];
 }
 
-interface State {
-  data: DataItem[];
-  originalData: DataItem[];
-}
-
 const getStories = (storyStore: StoryStore): DataItem[] => {
   if (!storyStore) {
     return [];

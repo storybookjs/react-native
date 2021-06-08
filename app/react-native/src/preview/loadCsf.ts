@@ -174,7 +174,8 @@ const loadStories = (
       if (isExportStory(key, meta)) {
         const storyFn = exports[key];
         const { story } = storyFn;
-        const { storyName = story?.name } = storyFn;
+        const name = story?.name;
+        const { storyName = name } = storyFn;
 
         // storyFn.x and storyFn.story.x get merged with
         // storyFn.x taking precedence in the merge

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, View, Text } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 
 interface SwatchProps {
   name: string;
@@ -9,19 +9,9 @@ interface SwatchProps {
 }
 
 const Swatch: FunctionComponent<SwatchProps> = ({ name, value, setBackground }) => (
-  <TouchableOpacity
-    style={{
-      borderRadius: 4,
-      borderWidth: 1,
-      borderColor: 'rgba(0,0,0,0.2)',
-      marginTop: 10,
-      marginBottom: 20,
-      marginHorizontal: 10,
-    }}
-    onPress={() => setBackground(value)}
-  >
-    <View style={{ flex: 1, backgroundColor: value, height: 40 }} />
-    <View style={{ padding: 4, flexDirection: 'row', justifyContent: 'space-between' }}>
+  <TouchableOpacity style={styles.container} onPress={() => setBackground(value)}>
+    <View style={[styles.color, { backgroundColor: value }]} />
+    <View style={styles.valueContainer}>
       <Text>{name}:</Text>
       <Text>{value}</Text>
     </View>
@@ -35,3 +25,20 @@ Swatch.propTypes = {
 };
 
 export default Swatch;
+
+const styles = StyleSheet.create({
+  valueContainer: {
+    padding: 4,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  color: { flex: 1, height: 40 },
+  container: {
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.2)',
+    marginTop: 10,
+    marginBottom: 20,
+    marginHorizontal: 10,
+  },
+});
