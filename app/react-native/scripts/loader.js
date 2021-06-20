@@ -11,7 +11,16 @@ function requireUncached(module) {
 
 function getMainPath() {
   const cwd = process.cwd();
-  return path.join(cwd, '/.storybook/main.js');
+  return path.join(cwd, '.storybook/main.js');
+}
+
+function getPreviewPath() {
+  const cwd = process.cwd();
+  return path.join(cwd, '.storybook/preview.js');
+}
+
+function getPreviewExists() {
+  return fs.existsSync(getPreviewPath());
 }
 
 function getGlobs() {
@@ -39,11 +48,10 @@ function writeRequires() {
 
   const storyPaths = getPaths();
   const addons = getAddons();
-  // eslint-disable-next-line no-console
-  console.log(`writing to storybook requires\n\n`, storyPaths);
+
   fs.writeFileSync(path.join(cwd, '/storybook.requires.js'), '');
 
-  const previewExists = fs.existsSync(path.join(cwd, '.storybook/main.js'));
+  const previewExists = getPreviewExists();
   let previewJs = previewExists
     ? `
 import { decorators, parameters } from './.storybook/preview';
@@ -66,7 +74,6 @@ if (parameters) {
 import { configure, addDecorator, addParameters } from '@storybook/react-native';
 ${registerAddons}
 
-//from preview js
 ${previewJs}
 
 const getStories=() => {
@@ -86,4 +93,6 @@ module.exports = {
   writeRequires,
   getGlobs,
   getMainPath,
+  getPreviewExists,
+  getPreviewPath,
 };
