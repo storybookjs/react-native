@@ -175,30 +175,13 @@ The command `yarn bootstrap --core` may take a long time to complete (10-20 mins
 ### Running the project
 
 To see your changes you should run `yarn dev` this starts everything in watch mode so don't need to manually build the packages.
-Once you have this running then you can run one of the example "kitchen sink apps" to see your changes.
+Once you have this running then you can run the example app to see your changes.
 
-### Working with the kitchen sink apps
+### Working with the example app
 
-Within the `examples` folder of the repo, you will two examples of storybook implementations, one which is a managed expo project and build with the react-native cli.
-
-Not only do these show many of the options and add-ons available, they are also automatically linked to all the development packages. We highly encourage you to use these to develop/test contributions on.
+The `examples/native` folder of the repo has an example storybook implementation built with the react-native cli. It shows many of the options and add-ons available and is automatically linked to all the development packages. We highly encourage you to use it to develop/test contributions on.
 
 You still need to yarn dev or you won't see your changes reflected in the app. For example if I change an addon or app/react-native I need to rebuild the code for the changes take effect (yarn prepare) or `yarn dev` can do this automatically as I make changes.
-
-#### Expo app
-
-```
-cd examples/crna-kitchen-sink
-yarn install
-
-# for ios
-yarn ios
-
-# for android
-yarn android
-```
-
-#### Native app
 
 If this is your first time running react native from the cli follow the setup instructions in the [react native documentation](https://reactnative.dev/docs/environment-setup) to get everything setup correctly.
 
@@ -210,10 +193,13 @@ cd ios
 pod install
 cd ..
 
-# for ios
+# start Metro and leave it running on the background
+yarn start
+
+# for ios, run in another terminal
 yarn ios
 
-# for android
+# for android, run in another terminal
 yarn android
 ```
 
