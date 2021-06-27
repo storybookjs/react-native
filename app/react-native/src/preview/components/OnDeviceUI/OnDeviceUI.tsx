@@ -29,7 +29,7 @@ import {
   getPreviewScale,
 } from './animation';
 import Navigation from './navigation';
-import { PREVIEW } from './navigation/constants';
+import { PREVIEW, ADDONS } from './navigation/constants';
 import Panel from './Panel';
 
 const ANIMATION_DURATION = 300;
@@ -77,10 +77,12 @@ const useSelectedStory = (storyStore: StoryStore) => {
   useEffect(() => {
     const handleStoryWasSet = ({ storyId: newStoryId }: { storyId: string }) =>
       setStoryId(newStoryId);
+
+    const currentChannel = channel.current;
     channel.current.on(Events.SET_CURRENT_STORY, handleStoryWasSet);
 
     return () => {
-      channel.current.removeListener(Events.SET_CURRENT_STORY, handleStoryWasSet);
+      currentChannel.removeListener(Events.SET_CURRENT_STORY, handleStoryWasSet);
     };
   }, []);
 
@@ -130,9 +132,7 @@ const OnDeviceUI = ({
   const previewStyles = [flex, getPreviewScale(animatedValue.current, slideBetweenAnimation)];
 
   return (
-    <SafeAreaView
-      style={[flex, { paddingTop: IS_ANDROID && IS_EXPO ? StatusBar.currentHeight : 0 }]}
-    >
+    <SafeAreaView style={[flex, IS_ANDROID && IS_EXPO && styles.expoAndroidContainer]}>
       <KeyboardAvoidingView
         enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
         behavior={IS_IOS ? 'padding' : null}
@@ -160,7 +160,7 @@ const OnDeviceUI = ({
             <StoryListView storyStore={storyStore} selectedStory={story} />
           </Panel>
           <Panel style={getAddonPanelPosition(animatedValue.current, previewDimensions.width)}>
-            <Addons />
+            <Addons active={tabOpen === ADDONS} />
           </Panel>
         </AbsolutePositionedKeyboardAwareView>
         <Navigation
