@@ -17,7 +17,7 @@ const Container = styled.View(({ theme }) => ({
   backgroundColor: theme.backgroundColor,
 }));
 
-export default React.memo(() => {
+const Addons = () => {
   const panels = addons.getElements('panel');
   const [addonSelected, setAddonSelected] = useState<string | null>(Object.keys(panels)[0] || null);
 
@@ -39,4 +39,5 @@ export default React.memo(() => {
       </SafeAreaView>
     </Container>
   );
-});
+};
+export default React.memo(Addons);
