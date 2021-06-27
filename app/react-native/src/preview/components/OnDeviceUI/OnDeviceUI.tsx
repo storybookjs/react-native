@@ -30,7 +30,7 @@ import {
   getPreviewScale,
 } from './animation';
 import Navigation from './navigation';
-import { PREVIEW } from './navigation/constants';
+import { PREVIEW, ADDONS } from './navigation/constants';
 import Panel from './Panel';
 
 const ANIMATION_DURATION = 300;
@@ -190,7 +190,7 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
               <StoryListView storyStore={storyStore} selectedStory={story} />
             </Panel>
             <Panel style={getAddonPanelPosition(this.animatedValue, previewWidth)}>
-              <Addons />
+              <Addons active={tabOpen === ADDONS} />
             </Panel>
           </AbsolutePositionedKeyboardAwareView>
           <Navigation

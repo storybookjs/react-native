@@ -17,7 +17,7 @@ const Container = styled.View(({ theme }) => ({
   backgroundColor: theme.backgroundColor,
 }));
 
-const Addons = () => {
+const Addons = ({ active }: { active: boolean }) => {
   const panels = addons.getElements('panel');
   const [addonSelected, setAddonSelected] = useState<string | null>(Object.keys(panels)[0] || null);
 
@@ -34,10 +34,15 @@ const Addons = () => {
   return (
     <Container>
       <SafeAreaView style={{ flex: 1 }}>
-        <AddonsList onPressAddon={setAddonSelected} panels={panels} addonSelected={addonSelected} />
-        <AddonWrapper addonSelected={addonSelected} panels={panels} />
+        <AddonsList
+          onPressAddon={setAddonSelected}
+          panels={panels}
+          addonSelected={active ? addonSelected : null}
+        />
+        <AddonWrapper addonSelected={active ? addonSelected : null} panels={panels} />
       </SafeAreaView>
     </Container>
   );
 };
+
 export default React.memo(Addons);
