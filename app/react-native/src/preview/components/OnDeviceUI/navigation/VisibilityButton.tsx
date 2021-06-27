@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styled from '@emotion/native';
 
 interface Props {
@@ -18,18 +18,14 @@ const HideIcon = styled.Text(({ theme }) => ({
   color: theme.buttonTextColor || '#999999',
 }));
 
-export default class VisibilityButton extends PureComponent<Props> {
-  render() {
-    const { onPress } = this.props;
-    return (
-      <Touchable
-        onPress={onPress}
-        testID="Storybook.OnDeviceUI.toggleUI"
-        accessibilityLabel="Storybook.OnDeviceUI.toggleUI"
-        hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
-      >
-        <HideIcon>□</HideIcon>
-      </Touchable>
-    );
-  }
-}
+const VisibilityButton = React.memo(({ onPress }: Props) => (
+  <Touchable
+    onPress={onPress}
+    testID="Storybook.OnDeviceUI.toggleUI"
+    accessibilityLabel="Storybook.OnDeviceUI.toggleUI"
+    hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
+  >
+    <HideIcon>□</HideIcon>
+  </Touchable>
+));
+export default VisibilityButton;

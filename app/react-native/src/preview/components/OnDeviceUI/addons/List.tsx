@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { ScrollView } from 'react-native';
 import styled from '@emotion/native';
 import { Collection } from '@storybook/addons';
@@ -16,32 +16,25 @@ export interface Props {
   onPressAddon: (id: string) => void;
 }
 
-export default class AddonList extends PureComponent<Props> {
-  renderTab = (id: string, title: string) => {
-    const { addonSelected, onPressAddon } = this.props;
+const AddonList = React.memo(({ panels, addonSelected, onPressAddon }: Props) => {
+  const addonKeys = Object.keys(panels);
 
-    return (
-      <Button active={id === addonSelected} key={id} id={id} onPress={() => onPressAddon(id)}>
-        {title.toUpperCase()}
-      </Button>
-    );
-  };
+  const renderTab = (id: string, title: string) => (
+    <Button active={id === addonSelected} key={id} id={id} onPress={() => onPressAddon(id)}>
+      {title.toUpperCase()}
+    </Button>
+  );
 
-  render() {
-    const { panels } = this.props;
-    const addonKeys = Object.keys(panels);
-
-    return (
-      <Container>
-        <ScrollView showsHorizontalScrollIndicator={false} horizontal>
-          {addonKeys.map((id) => {
-            const { title } = panels[id];
-            // @ts-ignore
-            const resolvedTitle = typeof title === 'function' ? title() : title;
-            return this.renderTab(id, resolvedTitle);
-          })}
-        </ScrollView>
-      </Container>
-    );
-  }
-}
+  return (
+    <Container>
+      <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+        {addonKeys.map((id) => {
+          const { title } = panels[id];
+          const resolvedTitle = typeof title === 'function' ? title() : title;
+          return renderTab(id, resolvedTitle);
+        })}
+      </ScrollView>
+    </Container>
+  );
+});
+export default AddonList;

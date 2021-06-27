@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { ReactNode } from 'react';
 import { TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
 
@@ -19,22 +19,13 @@ interface Props {
   active: boolean;
   onPress: (id: number | string) => void;
   testID?: string;
+  children: ReactNode;
 }
 
-export default class Button extends PureComponent<Props> {
-  onPress = () => {
-    const { onPress, id } = this.props;
-    onPress(id);
-  };
-
-  render() {
-    const { active, children, testID } = this.props;
-
-    return (
-      <TouchableOpacity testID={testID} onPress={this.onPress} activeOpacity={0.8}>
-        <ButtonText active={active}>{children}</ButtonText>
-        <ActiveBorder active={active} />
-      </TouchableOpacity>
-    );
-  }
-}
+const Button = React.memo(({ onPress, id, active, children, testID }: Props) => (
+  <TouchableOpacity testID={testID} onPress={() => onPress(id)} activeOpacity={0.8}>
+    <ButtonText active={active}>{children}</ButtonText>
+    <ActiveBorder active={active} />
+  </TouchableOpacity>
+));
+export default Button;
