@@ -3,8 +3,8 @@
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import React from 'react';
-import ModalPicker from 'react-native-modal-selector';
 import styled from '@emotion/native';
+import { Picker } from '@react-native-picker/picker';
 
 const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
@@ -30,24 +30,14 @@ class SelectType extends React.Component {
     const options = this.getOptions(knob);
 
     const active = options.filter(({ key }) => knob.value === key)[0];
-    const selected = active && active.label;
 
     return (
       <View>
-        <ModalPicker
-          data={options}
-          initValue={knob.value}
-          onChange={(option) => onChange(option.key)}
-          animationType="none"
-          keyExtractor={({ key, label }) => `${label}-${key}`}
-        >
-          <Input
-            editable={false}
-            value={selected}
-            autoCapitalize="none"
-            underlineColorAndroid="transparent"
-          />
-        </ModalPicker>
+        <Picker selectedValue={knob.value} onValueChange={(itemValue) => onChange(itemValue)}>
+          {options.map(({ key, label }) => (
+            <Picker.Item key={`${label}-${key}`} value={key} label={label} />
+          ))}
+        </Picker>
       </View>
     );
   }

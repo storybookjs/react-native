@@ -30,11 +30,12 @@
     "@emotion/native": "^10.0.14",
     "@storybook/addons": "^6",
     "@storybook/core-events": "^6",
+    "@react-native-community/datetimepicker": "^3.5.2",
+    "@react-native-picker/picker": "^1.16.3",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
-    "react-native-modal-datetime-picker": "^7.4.2",
-    "react-native-modal-selector": "^2.0.2",
+    "react-native-modal-datetime-picker": "^10.0.0",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
