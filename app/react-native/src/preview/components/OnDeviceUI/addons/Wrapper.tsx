@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { Collection } from '@storybook/addons';
 
@@ -19,24 +19,18 @@ const style = StyleSheet.create({
   },
 });
 
-export default class Wrapper extends PureComponent<Props> {
-  static defaultProps = {
-    addonSelected: '',
-  };
+const Wrapper = React.memo(({ panels, addonSelected }: Props) => {
+  const addonKeys = Object.keys(panels);
+  const content = addonKeys.map((id) => {
+    const selected = addonSelected === id;
 
-  render() {
-    const { panels, addonSelected } = this.props;
+    return (
+      <View key={id} style={selected ? style.flex : style.invisible}>
+        <ScrollView>{panels[id].render({ active: selected, key: id })}</ScrollView>
+      </View>
+    );
+  });
 
-    const addonKeys = Object.keys(panels);
-
-    return addonKeys.map((id) => {
-      const selected = addonSelected === id;
-
-      return (
-        <View key={id} style={selected ? style.flex : style.invisible}>
-          <ScrollView>{panels[id].render({ active: selected, key: id })}</ScrollView>
-        </View>
-      );
-    });
-  }
-}
+  return <>{content}</>;
+});
+export default Wrapper;
