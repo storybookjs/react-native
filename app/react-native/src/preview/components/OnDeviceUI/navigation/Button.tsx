@@ -22,10 +22,10 @@ interface Props {
   children: ReactNode;
 }
 
-const Button = React.memo(({ onPress, id, active, children, testID }: Props) => (
+const Button = ({ onPress, id, active, children, testID }: Props) => (
   <TouchableOpacity testID={testID} onPress={() => onPress(id)} activeOpacity={0.8}>
     <ButtonText active={active}>{children}</ButtonText>
     <ActiveBorder active={active} />
   </TouchableOpacity>
-));
-export default Button;
+);
+export default React.memo(Button);

@@ -19,7 +19,7 @@ const style = StyleSheet.create({
   },
 });
 
-const Wrapper = React.memo(({ panels, addonSelected }: Props) => {
+const Wrapper = ({ panels, addonSelected }: Props) => {
   const addonKeys = Object.keys(panels);
   const content = addonKeys.map((id) => {
     const selected = addonSelected === id;
@@ -32,5 +32,5 @@ const Wrapper = React.memo(({ panels, addonSelected }: Props) => {
   });
 
   return <>{content}</>;
-});
-export default Wrapper;
+};
+export default React.memo(Wrapper);

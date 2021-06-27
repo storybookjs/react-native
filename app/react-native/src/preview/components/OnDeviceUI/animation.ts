@@ -1,4 +1,5 @@
 import { Animated } from 'react-native';
+import { PreviewDimens } from './absolute-positioned-keyboard-aware-view';
 import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
 
 const PREVIEW_SCALE = 0.3;
@@ -39,8 +40,7 @@ export const getAddonPanelPosition = (animatedValue: Animated.Value, previewWidt
 
 export const getPreviewPosition = (
   animatedValue: Animated.Value,
-  previewWidth: number,
-  previewHeight: number,
+  { width: previewWidth, height: previewHeight }: PreviewDimens,
   slideBetweenAnimation: boolean
 ) => {
   const translateX = previewWidth / 2 - (previewWidth * PREVIEW_SCALE) / 2 - 6;

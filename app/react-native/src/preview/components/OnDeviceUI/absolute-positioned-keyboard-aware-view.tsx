@@ -10,13 +10,14 @@ import {
 } from 'react-native';
 
 export interface PreviewDimens {
-  previewWidth: number;
-  previewHeight: number;
+  width: number;
+  height: number;
 }
 
 type Props = {
   onLayout: (dimens: PreviewDimens) => void;
-} & PreviewDimens;
+  previewDimensions: PreviewDimens;
+};
 
 // Android changes screen size when keyboard opens.
 // To avoid issues we use absolute positioned element with predefined screen size
@@ -42,10 +43,12 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
 
   keyboardDidShowHandler = (e: KeyboardEvent) => {
     if (Platform.OS === 'android') {
-      const { previewWidth } = this.props;
+      const {
+        previewDimensions: { width },
+      } = this.props;
       // There is bug in RN android that keyboardDidShow event is called when you go from portrait to landscape.
       // To make sure that this is keyboard event we check screen width
-      if (previewWidth === e.endCoordinates.width) {
+      if (width === e.endCoordinates.width) {
         this.keyboardOpen = true;
       }
     }
@@ -71,8 +74,8 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
       const { onLayout } = this.props;
 
       onLayout({
-        previewHeight: height,
-        previewWidth: width,
+        height,
+        width,
       });
     }
   };
@@ -84,17 +87,14 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
   keyboardOpen: boolean;
 
   render() {
-    const { children, previewWidth, previewHeight } = this.props;
+    const {
+      children,
+      previewDimensions: { width, height },
+    } = this.props;
 
     return (
       <View style={{ flex: 1 }} onLayout={this.onLayoutHandler}>
-        <View
-          style={
-            previewWidth === 0
-              ? { flex: 1 }
-              : { position: 'absolute', width: previewWidth, height: previewHeight }
-          }
-        >
+        <View style={width === 0 ? { flex: 1 } : { position: 'absolute', width, height }}>
           {children}
         </View>
       </View>

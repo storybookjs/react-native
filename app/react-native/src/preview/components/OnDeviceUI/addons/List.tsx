@@ -16,7 +16,7 @@ export interface Props {
   onPressAddon: (id: string) => void;
 }
 
-const AddonList = React.memo(({ panels, addonSelected, onPressAddon }: Props) => {
+const AddonList = ({ panels, addonSelected, onPressAddon }: Props) => {
   const addonKeys = Object.keys(panels);
 
   const renderTab = (id: string, title: string) => (
@@ -36,5 +36,5 @@ const AddonList = React.memo(({ panels, addonSelected, onPressAddon }: Props) =>
       </ScrollView>
     </Container>
   );
-});
-export default AddonList;
+};
+export default React.memo(AddonList);

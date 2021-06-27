@@ -18,7 +18,7 @@ const HideIcon = styled.Text(({ theme }) => ({
   color: theme.buttonTextColor || '#999999',
 }));
 
-const VisibilityButton = React.memo(({ onPress }: Props) => (
+const VisibilityButton = ({ onPress }: Props) => (
   <Touchable
     onPress={onPress}
     testID="Storybook.OnDeviceUI.toggleUI"
@@ -27,5 +27,5 @@ const VisibilityButton = React.memo(({ onPress }: Props) => (
   >
     <HideIcon>□</HideIcon>
   </Touchable>
-));
-export default VisibilityButton;
+);
+export default React.memo(VisibilityButton);
