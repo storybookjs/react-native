@@ -1,8 +1,7 @@
 import styled from '@emotion/native';
 import { addons } from '@storybook/addons';
-import Channel from '@storybook/channels';
 import { StoryStore } from '@storybook/client-api';
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Animated,
   Dimensions,
@@ -49,14 +48,6 @@ interface OnDeviceUIProps {
   keyboardAvoidingViewVerticalOffset?: number;
 }
 
-interface OnDeviceUIState {
-  tabOpen: number;
-  slideBetweenAnimation: boolean;
-  previewWidth: number;
-  previewHeight: number;
-  storyId: string;
-}
-
 const flex = { flex: 1 };
 
 const Preview = styled.View<{ disabled: boolean }>(flex, ({ disabled, theme }) => ({
@@ -69,129 +60,106 @@ const Preview = styled.View<{ disabled: boolean }>(flex, ({ disabled, theme }) =
 
 const absolutePosition: FlexStyle = { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 };
 
-export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceUIState> {
-  constructor(props: OnDeviceUIProps) {
-    super(props);
-    const tabOpen = props.tabOpen || PREVIEW;
-    const storyId = props.storyStore.getSelection()?.storyId || '';
-    this.state = {
-      tabOpen,
-      slideBetweenAnimation: false,
-      previewWidth: Dimensions.get('window').width,
-      previewHeight: Dimensions.get('window').height,
-      storyId,
+const useSelectedStory = (storyStore: StoryStore) => {
+  const [storyId, setStoryId] = useState(storyStore.getSelection()?.storyId || '');
+  const channel = useRef(addons.getChannel());
+
+  useEffect(() => {
+    const handleStoryWasSet = ({ storyId: newStoryId }: { storyId: string }) =>
+      setStoryId(newStoryId);
+    channel.current.on(Events.SET_CURRENT_STORY, handleStoryWasSet);
+
+    return () => {
+      channel.current.removeListener(Events.SET_CURRENT_STORY, handleStoryWasSet);
     };
-    this.animatedValue = new Animated.Value(tabOpen);
-    this.channel = addons.getChannel();
-  }
+  }, []);
 
-  componentDidMount() {
-    const channel = addons.getChannel();
-    channel.on(Events.SET_CURRENT_STORY, this.handleStoryWasSet);
-  }
+  return storyStore.fromId(storyId);
+};
 
-  componentWillUnmount() {
-    const channel = addons.getChannel();
-    channel.removeListener(Events.SET_CURRENT_STORY, this.handleStoryWasSet);
-  }
+const OnDeviceUI = ({
+  storyStore,
+  isUIHidden,
+  shouldDisableKeyboardAvoidingView,
+  keyboardAvoidingViewVerticalOffset,
+  tabOpen: initialTabOpen,
+}: OnDeviceUIProps) => {
+  const [tabOpen, setTabOpen] = useState(initialTabOpen || PREVIEW);
+  const [slideBetweenAnimation, setSlideBetweenAnimation] = useState(false);
+  const [previewDimensions, setPreviewDimensions] = useState<PreviewDimens>({
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+  });
+  const story = useSelectedStory(storyStore);
+  const animatedValue = useRef(new Animated.Value(tabOpen));
 
-  onLayout = ({ previewWidth, previewHeight }: PreviewDimens) => {
-    this.setState({ previewWidth, previewHeight });
-  };
-
-  handleStoryWasSet = ({ storyId }: { storyId: string }) => {
-    this.setState({ storyId });
-  };
-
-  handleOpenPreview = () => {
-    this.handleToggleTab(PREVIEW);
-  };
-
-  handleToggleTab = (newTabOpen: number) => {
-    const { tabOpen } = this.state;
+  const handleToggleTab = (newTabOpen: number) => {
     if (newTabOpen === tabOpen) {
       return;
     }
-    Animated.timing(this.animatedValue, {
+    Animated.timing(animatedValue.current, {
       toValue: newTabOpen,
       duration: ANIMATION_DURATION,
       useNativeDriver: true,
     }).start();
-    this.setState({
-      tabOpen: newTabOpen,
-      // True if swiping between navigator and addons
-      slideBetweenAnimation: tabOpen + newTabOpen === PREVIEW,
-    });
+    setTabOpen(newTabOpen);
+    const isSwipingBetweenNavigatorAndAddons = tabOpen + newTabOpen === PREVIEW;
+    setSlideBetweenAnimation(isSwipingBetweenNavigatorAndAddons);
+
     // close the keyboard opened from a TextInput from story list or knobs
     if (newTabOpen === PREVIEW) {
       Keyboard.dismiss();
     }
   };
 
-  animatedValue: Animated.Value;
+  const previewWrapperStyles = [
+    flex,
+    getPreviewPosition(animatedValue.current, previewDimensions, slideBetweenAnimation),
+  ];
 
-  channel: Channel;
+  const previewStyles = [flex, getPreviewScale(animatedValue.current, slideBetweenAnimation)];
 
-  render() {
-    const {
-      storyStore,
-      isUIHidden,
-      shouldDisableKeyboardAvoidingView,
-      keyboardAvoidingViewVerticalOffset,
-    } = this.props;
-
-    const { storyId } = this.state;
-
-    const story = storyStore.fromId(storyId);
-
-    const { tabOpen, slideBetweenAnimation, previewWidth, previewHeight } = this.state;
-
-    const previewWrapperStyles = [
-      flex,
-      getPreviewPosition(this.animatedValue, previewWidth, previewHeight, slideBetweenAnimation),
-    ];
-
-    const previewStyles = [flex, getPreviewScale(this.animatedValue, slideBetweenAnimation)];
-
-    return (
-      <SafeAreaView
-        style={[flex, { paddingTop: IS_ANDROID && IS_EXPO ? StatusBar.currentHeight : 0 }]}
+  return (
+    <SafeAreaView
+      style={[flex, { paddingTop: IS_ANDROID && IS_EXPO ? StatusBar.currentHeight : 0 }]}
+    >
+      <KeyboardAvoidingView
+        enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
+        behavior={IS_IOS ? 'padding' : null}
+        keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
+        style={flex}
       >
-        <KeyboardAvoidingView
-          enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
-          behavior={IS_IOS ? 'padding' : null}
-          keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
-          style={flex}
+        <AbsolutePositionedKeyboardAwareView
+          onLayout={setPreviewDimensions}
+          previewDimensions={previewDimensions}
         >
-          <AbsolutePositionedKeyboardAwareView
-            onLayout={this.onLayout}
-            previewHeight={previewHeight}
-            previewWidth={previewWidth}
-          >
-            <Animated.View style={previewWrapperStyles}>
-              <Animated.View style={previewStyles}>
-                <Preview disabled={tabOpen === PREVIEW}>
-                  <StoryView story={story} />
-                </Preview>
-                {tabOpen !== PREVIEW ? (
-                  <TouchableOpacity style={absolutePosition} onPress={this.handleOpenPreview} />
-                ) : null}
-              </Animated.View>
+          <Animated.View style={previewWrapperStyles}>
+            <Animated.View style={previewStyles}>
+              <Preview disabled={tabOpen === PREVIEW}>
+                <StoryView story={story} />
+              </Preview>
+              {tabOpen !== PREVIEW ? (
+                <TouchableOpacity
+                  style={absolutePosition}
+                  onPress={() => handleToggleTab(PREVIEW)}
+                />
+              ) : null}
             </Animated.View>
-            <Panel style={getNavigatorPanelPosition(this.animatedValue, previewWidth)}>
-              <StoryListView storyStore={storyStore} selectedStory={story} />
-            </Panel>
-            <Panel style={getAddonPanelPosition(this.animatedValue, previewWidth)}>
-              <Addons />
-            </Panel>
-          </AbsolutePositionedKeyboardAwareView>
-          <Navigation
-            tabOpen={tabOpen}
-            onChangeTab={this.handleToggleTab}
-            initialUiVisible={!isUIHidden}
-          />
-        </KeyboardAvoidingView>
-      </SafeAreaView>
-    );
-  }
-}
+          </Animated.View>
+          <Panel style={getNavigatorPanelPosition(animatedValue.current, previewDimensions.width)}>
+            <StoryListView storyStore={storyStore} selectedStory={story} />
+          </Panel>
+          <Panel style={getAddonPanelPosition(animatedValue.current, previewDimensions.width)}>
+            <Addons />
+          </Panel>
+        </AbsolutePositionedKeyboardAwareView>
+        <Navigation
+          tabOpen={tabOpen}
+          onChangeTab={handleToggleTab}
+          initialUiVisible={!isUIHidden}
+        />
+      </KeyboardAvoidingView>
+    </SafeAreaView>
+  );
+};
+export default React.memo(OnDeviceUI);

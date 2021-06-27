@@ -17,7 +17,7 @@ export interface Props {
   onPress: (id: number) => void;
 }
 
-const Bar = React.memo(({ index, onPress }: Props) => (
+const Bar = ({ index, onPress }: Props) => (
   <Container>
     <Button
       onPress={onPress}
@@ -34,5 +34,5 @@ const Bar = React.memo(({ index, onPress }: Props) => (
       ADDONS
     </Button>
   </Container>
-));
-export default Bar;
+);
+export default React.memo(Bar);

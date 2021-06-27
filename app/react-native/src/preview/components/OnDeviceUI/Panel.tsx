@@ -11,7 +11,7 @@ interface Props {
   children: ReactNode;
 }
 
-const Panel = React.memo(({ children, style }: Props) => (
+const Panel = ({ children, style }: Props) => (
   <Container style={[StyleSheet.absoluteFillObject, ...style]}>{children}</Container>
-));
-export default Panel;
+);
+export default React.memo(Panel);

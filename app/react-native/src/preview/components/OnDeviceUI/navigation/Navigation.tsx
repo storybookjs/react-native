@@ -15,7 +15,7 @@ interface Props {
   onChangeTab: (index: number) => void;
 }
 
-const Navigation = React.memo(({ tabOpen, onChangeTab, initialUiVisible }: Props) => {
+const Navigation = ({ tabOpen, onChangeTab, initialUiVisible }: Props) => {
   const [isUIVisible, setIsUIVisible] = useState(
     initialUiVisible !== undefined ? initialUiVisible : true
   );
@@ -54,5 +54,5 @@ const Navigation = React.memo(({ tabOpen, onChangeTab, initialUiVisible }: Props
       </SafeAreaView>
     </View>
   );
-});
-export default Navigation;
+};
+export default React.memo(Navigation);
