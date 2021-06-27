@@ -29,8 +29,6 @@ class SelectType extends React.Component {
 
     const options = this.getOptions(knob);
 
-    const active = options.filter(({ key }) => knob.value === key)[0];
-
     return (
       <View>
         <Picker selectedValue={knob.value} onValueChange={(itemValue) => onChange(itemValue)}>
