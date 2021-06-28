@@ -26,16 +26,16 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "6.3.0-beta.12",
-    "@storybook/core-events": "6.3.0-beta.12",
+    "@storybook/addons": "^6",
+    "@storybook/core-events": "^6",
     "core-js": "^3.0.1",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "6.3.0-beta.12"
+    "@storybook/addon-actions": "^6"
   },
   "peerDependencies": {
-    "@storybook/addon-actions": "*",
+    "@storybook/addon-actions": "^6",
     "react": "*",
     "react-native": "*"
   },

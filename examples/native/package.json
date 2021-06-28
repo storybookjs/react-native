@@ -28,9 +28,9 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.4",
-    "@storybook/addon-actions": "6.3.0-beta.12",
-    "@storybook/addon-links": "6.3.0-beta.12",
-    "@storybook/addons": "6.3.0-beta.12",
+    "@storybook/addon-actions": "^6.3.1",
+    "@storybook/addon-links": "^6.3.1",
+    "@storybook/addons": "^6.3.1",
     "@storybook/react-native": "^6.0.0-alpha.0",
     "@storybook/react-native-server": "^6.0.0-alpha.0",
     "react": "^17.0.2",
