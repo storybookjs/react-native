@@ -2,7 +2,7 @@ import styled from '@emotion/native';
 import { addons, StoryKind } from '@storybook/addons';
 import { StoryStore, StoreItem, PublishedStoreItem } from '@storybook/client-api';
 import Events from '@storybook/core-events';
-import React, { Component, FunctionComponent } from 'react';
+import React, { FunctionComponent, useMemo, useState } from 'react';
 import { SectionList, StyleSheet } from 'react-native';
 import { Header, Name } from '../Shared/text';
 
@@ -93,58 +93,49 @@ interface State {
   originalData: DataItem[];
 }
 
-export default class StoryListView extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      data: [],
-      originalData: [],
-    };
+const getStories = (storyStore: StoryStore): DataItem[] => {
+  if (!storyStore) {
+    return [];
   }
 
-  componentDidMount() {
-    this.handleStoryAdded();
-  }
+  return Object.values(
+    storyStore
+      .raw()
+      .reduce(
+        (
+          acc: { [kind: string]: { title: string; data: PublishedStoreItem[] } },
+          story: PublishedStoreItem
+        ) => {
+          acc[story.kind] = {
+            title: story.kind,
+            data: (acc[story.kind] ? acc[story.kind].data : []).concat(story),
+          };
 
-  handleStoryAdded = () => {
-    const { storyStore } = this.props;
+          return acc;
+        },
+        {}
+      )
+  );
+};
 
-    if (storyStore) {
-      const data = Object.values(
-        storyStore
-          .raw()
-          .reduce(
-            (
-              acc: { [kind: string]: { title: string; data: PublishedStoreItem[] } },
-              story: PublishedStoreItem
-            ) => {
-              acc[story.kind] = {
-                title: story.kind,
-                data: (acc[story.kind] ? acc[story.kind].data : []).concat(story),
-              };
+const styles = StyleSheet.create({
+  sectionList: { flex: 1, marginBottom: 40 },
+});
 
-              return acc;
-            },
-            {}
-          )
-      );
+const StoryListView = ({ selectedStory, storyStore }: Props) => {
+  const originalData = useMemo(() => getStories(storyStore), [storyStore]);
+  const [data, setData] = useState<DataItem[]>(originalData);
 
-      this.setState({ data, originalData: data });
-    }
-  };
-
-  handleChangeSearchText = (text: string) => {
+  const handleChangeSearchText = (text: string) => {
     const query = text.trim();
-    const { originalData: data } = this.state;
 
     if (!query) {
-      this.setState({ data });
+      setData(originalData);
       return;
     }
 
     const checkValue = (value: string) => value.toLowerCase().includes(query.toLowerCase());
-    const filteredData = data.reduce((acc, story) => {
+    const filteredData = originalData.reduce((acc, story) => {
       const hasTitle = checkValue(story.title);
       const hasKind = story.data.some((ref) => checkValue(ref.name));
 
@@ -159,52 +150,44 @@ export default class StoryListView extends Component<Props, State> {
       return acc;
     }, []);
 
-    this.setState({ data: filteredData });
+    setData(filteredData);
   };
 
-  changeStory(storyId: string) {
+  const changeStory = (storyId: string) => {
     const channel = addons.getChannel();
     channel.emit(Events.SET_CURRENT_STORY, { storyId });
-  }
+  };
 
-  render() {
-    const { selectedStory } = this.props;
+  return (
+    <StoryListContainer>
+      <SearchBar
+        testID="Storybook.ListView.SearchBar"
+        clearButtonMode="while-editing"
+        disableFullscreenUI
+        onChangeText={handleChangeSearchText}
+        placeholder="Filter"
+        returnKeyType="search"
+      />
+      <SectionList
+        style={styles.sectionList}
+        testID="Storybook.ListView"
+        renderItem={({ item }) => (
+          <ListItem
+            title={item.name}
+            kind={item.kind}
+            selected={selectedStory && item.id === selectedStory.id}
+            onPress={() => changeStory(item.id)}
+          />
+        )}
+        renderSectionHeader={({ section: { title } }) => (
+          <SectionHeader title={title} selected={selectedStory && title === selectedStory.kind} />
+        )}
+        keyExtractor={(item, index) => item.id + index}
+        sections={data}
+        stickySectionHeadersEnabled={false}
+      />
+    </StoryListContainer>
+  );
+};
 
-    const { data } = this.state;
-
-    return (
-      <StoryListContainer>
-        <SearchBar
-          testID="Storybook.ListView.SearchBar"
-          clearButtonMode="while-editing"
-          disableFullscreenUI
-          onChangeText={this.handleChangeSearchText}
-          placeholder="Filter"
-          returnKeyType="search"
-        />
-        <SectionList
-          style={styles.sectionList}
-          testID="Storybook.ListView"
-          renderItem={({ item }) => (
-            <ListItem
-              title={item.name}
-              kind={item.kind}
-              selected={selectedStory && item.id === selectedStory.id}
-              onPress={() => this.changeStory(item.id)}
-            />
-          )}
-          renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader title={title} selected={selectedStory && title === selectedStory.kind} />
-          )}
-          keyExtractor={(item, index) => item.id + index}
-          sections={data}
-          stickySectionHeadersEnabled={false}
-        />
-      </StoryListContainer>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  sectionList: { flex: 1, marginBottom: 40 },
-});
+export default StoryListView;
