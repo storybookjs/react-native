@@ -13,7 +13,7 @@ const Input = styled.TextInput(({ theme }) => ({
 }));
 
 export interface NumberProps {
-  knob: {
+  arg: {
     name: string;
     value: any;
     step: number;
@@ -22,98 +22,49 @@ export interface NumberProps {
     range: boolean;
     defaultValue: number;
   };
+
   onChange: (value: any) => void;
 }
 
-class NumberType extends React.Component<NumberProps, { inputValue: any; showError: boolean }> {
-  static defaultProps = {
-    knob: {},
-    onChange: (value) => value,
-  };
+const NumberType = ({ arg, onChange = (value) => value }: NumberProps) => {
+  const allowComma = typeof arg.value === 'string' ? arg.value.trim().replace(/,/, '.') : arg.value;
+  const showError = Number.isNaN(Number(allowComma));
 
-  static serialize = (value) => String(value);
-
-  static deserialize = (value) => parseFloat(value);
-
-  constructor(props) {
-    super(props);
-
-    const { knob } = this.props;
-    const initialInputValue = Number.isNaN(knob.value) ? '' : knob.value.toString();
-
-    this.state = {
-      inputValue: initialInputValue,
-      showError: false,
-    };
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    const { knob } = this.props;
-    const { inputValue } = this.state;
-
-    return nextProps.knob.value !== knob.value || nextState.inputValue !== inputValue;
-  }
-
-  onChangeNormal = (text) => {
-    const { onChange } = this.props;
-    const inputValue = text.trim().replace(/,/, '.');
-    if (inputValue === '') {
-      this.setState({ showError: false, inputValue });
-      return;
-    }
-
-    const parsedValue = Number(inputValue);
-
-    this.setState({ inputValue });
-
-    if (!Number.isNaN(parsedValue)) {
-      onChange(parsedValue);
-      this.setState({ showError: false });
-    } else {
-      this.setState({ showError: true });
-    }
-  };
-
-  renderNormal = () => {
-    const { inputValue, showError } = this.state;
+  const renderNormal = () => {
     return (
       <Input
         autoCapitalize="none"
         underlineColorAndroid="transparent"
-        value={inputValue.toString()}
+        value={arg.value.toString()}
         keyboardType="numeric"
-        onChangeText={this.onChangeNormal}
+        onChangeText={onChange}
         style={showError && styles.errorBorder}
       />
     );
   };
 
-  renderRange = () => {
-    const { knob, onChange } = this.props;
-
+  const renderRange = () => {
     return (
       <Slider
-        value={knob.value}
-        minimumValue={knob.min}
-        maximumValue={knob.max}
-        step={knob.step}
+        value={arg.value}
+        minimumValue={arg.min}
+        maximumValue={arg.max}
+        step={arg.step}
         onSlidingComplete={(val) => onChange(val)}
       />
     );
   };
 
-  render() {
-    const { knob } = this.props;
-
-    return (
-      <View style={styles.spacing}>{knob.range ? this.renderRange() : this.renderNormal()}</View>
-    );
-  }
-}
+  return <View style={styles.spacing}>{arg.range ? renderRange() : renderNormal()}</View>;
+};
 
 const styles = StyleSheet.create({
   spacing: { margin: 10 },
   errorBorder: { borderColor: '#FF4400' },
 });
+
+NumberType.serialize = (value) => String(value);
+
+NumberType.deserialize = (value) => parseFloat(value);
 
 export default NumberType;

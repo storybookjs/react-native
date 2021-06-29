@@ -1,5 +1,5 @@
 import TextType from './Text';
-// import NumberType from './Number';
+import NumberType from './Number';
 // import ColorType from './Color';
 // import BooleanType from './Boolean';
 // import ObjectType from './Object';
@@ -11,7 +11,7 @@ import TextType from './Text';
 
 export default {
   text: TextType,
-  // number: NumberType,
+  number: NumberType,
   // color: ColorType,
   // boolean: BooleanType,
   // object: ObjectType,

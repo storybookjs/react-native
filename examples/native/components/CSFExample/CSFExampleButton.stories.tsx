@@ -15,12 +15,17 @@ export const CSFExample1: ButtonStory = (args) => <Button {...args} onPress={() 
 
 CSFExample1.args = {
   buttonText: 'args!!',
+  num: 1,
 };
 
 CSFExample1.parameters = {
   notes: '# notes',
 };
 
-export const CSFExample2: ButtonStory = () => <Button buttonText="test2" onPress={() => null} />;
+export const CSFExample2: ButtonStory = () => (
+  <Button buttonText="test2" num={2} onPress={() => null} />
+);
 
-export const CSFExample3: ButtonStory = () => <Button buttonText="test3" onPress={() => null} />;
+export const CSFExample3: ButtonStory = () => (
+  <Button buttonText="test3" num={3} onPress={() => null} />
+);
