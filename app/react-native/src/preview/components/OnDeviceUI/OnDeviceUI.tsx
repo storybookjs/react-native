@@ -98,6 +98,8 @@ export default class OnDeviceUI extends PureComponent<OnDeviceUIProps, OnDeviceU
   componentDidMount() {
     const channel = addons.getChannel();
     channel.on(Events.SET_CURRENT_STORY, this.handleStoryWasSet);
+    //TODO: update preview without force
+    channel.on(Events.FORCE_RE_RENDER, () => this.forceUpdate());
   }
 
   componentWillUnmount() {
