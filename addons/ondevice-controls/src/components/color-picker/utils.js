@@ -1,3 +1,4 @@
+// credit to https://github.com/instea/react-native-color-picker
 import tinycolor from 'tinycolor2';
 import { PanResponder } from 'react-native';
 

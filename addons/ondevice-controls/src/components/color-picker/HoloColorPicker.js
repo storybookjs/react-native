@@ -1,3 +1,4 @@
+// credit to https://github.com/instea/react-native-color-picker
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -134,21 +135,6 @@ export class HoloColorPicker extends React.PureComponent {
     return rad - Math.PI - Math.PI / 2;
   }
 
-  _getSlider() {
-    if (this.props.hideSliders) {
-      return undefined;
-    }
-    if (this.props.sliderComponent) {
-      return this.props.sliderComponent;
-    }
-    if (!Slider) {
-      throw new Error(
-        'You need to install `@react-native-community/slider` and pass it (or any other Slider compatible component) as `sliderComponent` prop'
-      );
-    }
-    return Slider;
-  }
-
   render() {
     const { pickerSize } = this.state;
     const { oldColor, style } = this.props;
@@ -165,7 +151,6 @@ export class HoloColorPicker extends React.PureComponent {
       angle,
       isRTL: this._isRTL,
     });
-    const SliderComp = this._getSlider();
     return (
       <View style={style}>
         <View onLayout={this._onLayout} ref={this.pickerContainer} style={styles.pickerContainer}>
@@ -209,8 +194,8 @@ export class HoloColorPicker extends React.PureComponent {
         </View>
         {this.props.hideSliders ? null : (
           <View>
-            <SliderComp value={s} onValueChange={this._onSValueChange} />
-            <SliderComp value={v} onValueChange={this._onVValueChange} />
+            <Slider value={s} onValueChange={this._onSValueChange} />
+            <Slider value={v} onValueChange={this._onVValueChange} />
           </View>
         )}
       </View>
@@ -233,7 +218,6 @@ HoloColorPicker.propTypes = {
   onColorSelected: PropTypes.func,
   onOldColorSelected: PropTypes.func,
   hideSliders: PropTypes.bool,
-  sliderComponent: PropTypes.elementType,
   style: PropTypes.any,
 };
 

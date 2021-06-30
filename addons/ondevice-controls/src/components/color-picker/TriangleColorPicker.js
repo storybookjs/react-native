@@ -1,3 +1,4 @@
+// credit to https://github.com/instea/react-native-color-picker
 import React from 'react';
 import PropTypes from 'prop-types';
 import {

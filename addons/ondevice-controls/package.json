@@ -25,14 +25,14 @@
   ],
   "scripts": {
     "preprepare": "rm -rf dist/",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "postprepare": "cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
     "@emotion/native": "^10.0.14",
     "@storybook/addons": "^6",
-    "@storybook/core-events": "^6",
-    "@react-native-community/slider": "^3.0.3",
     "@storybook/client-logger": "^6",
+    "@storybook/core-events": "^6",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -44,6 +44,7 @@
     "@storybook/addon-knobs": "^6"
   },
   "peerDependencies": {
+    "@react-native-community/slider": "*",
     "@storybook/addon-controls": "^6",
     "react": "*",
     "react-native": "*"
