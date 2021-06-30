@@ -1,7 +1,7 @@
 import styled from '@emotion/native';
 import { addons } from '@storybook/addons';
 import { StoryStore } from '@storybook/client-api';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useReducer } from 'react';
 import {
   Animated,
   Dimensions,
@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
 
 const useSelectedStory = (storyStore: StoryStore) => {
   const [storyId, setStoryId] = useState(storyStore.getSelection()?.storyId || '');
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
   const channel = useRef(addons.getChannel());
 
   useEffect(() => {
@@ -80,9 +81,12 @@ const useSelectedStory = (storyStore: StoryStore) => {
 
     const currentChannel = channel.current;
     channel.current.on(Events.SET_CURRENT_STORY, handleStoryWasSet);
+    //TODO: update preview without force
+    channel.current.on(Events.FORCE_RE_RENDER, forceUpdate);
 
     return () => {
       currentChannel.removeListener(Events.SET_CURRENT_STORY, handleStoryWasSet);
+      currentChannel.removeListener(Events.FORCE_RE_RENDER, forceUpdate);
     };
   }, []);
 
