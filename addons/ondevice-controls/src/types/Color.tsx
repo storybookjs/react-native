@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Text,
   Modal,
@@ -8,10 +8,10 @@ import {
   StyleSheet,
 } from 'react-native';
 import styled from '@emotion/native';
-import { ColorPicker, fromHsv } from '../components/color-picker';
+import { ColorPicker, fromHsv, HsvColor } from '../components/color-picker';
 
 export interface ColorProps {
-  knob: {
+  arg: {
     name: string;
     value: string;
   };
@@ -28,76 +28,65 @@ const Touchable = styled.TouchableOpacity(({ theme, color }: any) => ({
   backgroundColor: color,
 }));
 
-class ColorType extends React.Component<ColorProps, { displayColorPicker: boolean }> {
-  static defaultProps = {
-    knob: {},
-    onChange: (value) => value,
+const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
+  const [currentColor, setCurrentColor] = useState<HsvColor | null>(null);
+
+  const openColorPicker = () => {
+    setDisplayColorPicker(true);
   };
 
-  static serialize = (value) => value;
-
-  static deserialize = (value) => value;
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayColorPicker: false,
-    };
-  }
-
-  openColorPicker = () => {
-    this.setState({
-      displayColorPicker: true,
-    });
+  const closeColorPicker = () => {
+    setDisplayColorPicker(false);
   };
 
-  closeColorPicker = () => {
-    this.setState({
-      displayColorPicker: false,
-    });
-  };
-
-  onChangeColor = (color) => {
-    const { onChange } = this.props;
-
+  const onChangeColor = (color) => {
     onChange(fromHsv(color));
   };
 
-  render() {
-    const { knob } = this.props;
-    const { displayColorPicker } = this.state;
-    return (
-      <View>
-        <Touchable color={knob.value} onPress={this.openColorPicker} />
-        <Modal
-          supportedOrientations={['portrait', 'landscape']}
-          transparent
-          visible={displayColorPicker}
-          onRequestClose={this.closeColorPicker}
-        >
-          <TouchableWithoutFeedback onPress={this.closeColorPicker}>
-            <View style={styles.containerCenter}>
-              <TouchableWithoutFeedback>
-                <View style={styles.innerContainer}>
-                  <TouchableOpacity onPress={this.closeColorPicker} style={styles.end}>
-                    <Text style={styles.close}>X</Text>
+  return (
+    <View>
+      <Touchable color={arg.value} onPress={openColorPicker} />
+      <Modal
+        supportedOrientations={['portrait', 'landscape']}
+        transparent
+        visible={displayColorPicker}
+        onRequestClose={closeColorPicker}
+      >
+        <TouchableWithoutFeedback onPress={closeColorPicker}>
+          <View style={styles.containerCenter}>
+            <TouchableWithoutFeedback>
+              <View style={styles.innerContainer}>
+                <TouchableOpacity onPress={closeColorPicker} style={styles.end}>
+                  <Text style={styles.close}>X</Text>
+                </TouchableOpacity>
+                <ColorPicker
+                  onColorSelected={onChangeColor}
+                  onColorChange={(color: HsvColor) => setCurrentColor(color)}
+                  defaultColor={arg.value}
+                  style={styles.picker}
+                />
+                <View style={styles.applyContainer}>
+                  <TouchableOpacity
+                    style={styles.applyButton}
+                    onPress={() => onChangeColor(currentColor)}
+                  >
+                    <Text style={styles.applyText}>Apply</Text>
                   </TouchableOpacity>
-                  <ColorPicker
-                    onColorSelected={this.onChangeColor}
-                    defaultColor={knob.value}
-                    style={styles.picker}
-                  />
                 </View>
-              </TouchableWithoutFeedback>
-            </View>
-          </TouchableWithoutFeedback>
-        </Modal>
-      </View>
-    );
-  }
-}
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+      </Modal>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
+  applyText: { color: '#1EA7FD', fontSize: 16 },
+  applyButton: { paddingVertical: 8, paddingHorizontal: 16 },
+  applyContainer: { alignItems: 'center' },
   picker: { flex: 1 },
   close: { fontSize: 18, fontWeight: 'bold' },
   end: { alignSelf: 'flex-end', padding: 5 },
@@ -112,4 +101,7 @@ const styles = StyleSheet.create({
   containerCenter: { flex: 1, justifyContent: 'center', alignItems: 'center' },
 });
 
+ColorType.serialize = (value) => value;
+
+ColorType.deserialize = (value) => value;
 export default ColorType;
