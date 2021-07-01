@@ -1,7 +1,7 @@
 import TextType from './Text';
 import NumberType from './Number';
 import ColorType from './Color';
-// import BooleanType from './Boolean';
+import BooleanType from './Boolean';
 // import ObjectType from './Object';
 // import SelectType from './Select';
 // import ArrayType from './Array';
@@ -13,7 +13,7 @@ export default {
   text: TextType,
   number: NumberType,
   color: ColorType,
-  // boolean: BooleanType,
+  boolean: BooleanType,
   // object: ObjectType,
   // select: SelectType,
   // array: ArrayType,
