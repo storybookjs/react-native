@@ -9,7 +9,7 @@ export interface BooleanProps {
   };
 }
 
-const BooleanType = ({ arg, onChange = (value) => value }: BooleanProps) => (
+const BooleanType = ({ arg, onChange }: BooleanProps) => (
   <View style={styles.switch}>
     <Switch testID={arg.name} onValueChange={() => onChange(!arg.value)} value={arg.value} />
   </View>
