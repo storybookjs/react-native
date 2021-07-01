@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import styled from '@emotion/native';
 import { addons } from '@storybook/addons';
 import AddonsList from './List';
@@ -23,7 +23,7 @@ const Addons = ({ active }: { active: boolean }) => {
 
   if (Object.keys(panels).length === 0) {
     return (
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={styles.container}>
         <NoAddonContainer>
           <Label>No addons loaded.</Label>
         </NoAddonContainer>
@@ -33,7 +33,7 @@ const Addons = ({ active }: { active: boolean }) => {
 
   return (
     <Container>
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={styles.container}>
         <AddonsList
           onPressAddon={setAddonSelected}
           panels={panels}
@@ -44,5 +44,9 @@ const Addons = ({ active }: { active: boolean }) => {
     </Container>
   );
 };
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+});
 
 export default React.memo(Addons);
