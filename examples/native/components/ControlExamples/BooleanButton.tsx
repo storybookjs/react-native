@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   button: { paddingHorizontal: 16, paddingVertical: 8 },
 });
 
-export const BooleanExampleButton: FunctionComponent<Props> = ({ isEnabled }: Props) => (
+export const BooleanButton: FunctionComponent<Props> = ({ isEnabled }: Props) => (
   <TouchableOpacity style={styles.button} disabled={!isEnabled}>
     <Text>{isEnabled ? 'Enabled' : 'Disabled'}</Text>
     <Text>Toggle via Addons -&gt; Controls</Text>
