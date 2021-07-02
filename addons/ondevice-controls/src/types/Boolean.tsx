@@ -3,40 +3,24 @@ import React from 'react';
 
 export interface BooleanProps {
   onChange: (value: boolean) => void;
-  knob: {
+  arg: {
     name: string;
     value: boolean;
   };
 }
 
-class BooleanType extends React.Component<BooleanProps, {}> {
-  static defaultProps = {
-    knob: {},
-    onChange: (value) => value,
-  };
-
-  static serialize = (value) => (value ? String(value) : null);
-
-  static deserialize = (value) => value === 'true';
-
-  onValueChange = () => {
-    const { onChange, knob } = this.props;
-    onChange(!knob.value);
-  };
-
-  render() {
-    const { knob } = this.props;
-
-    return (
-      <View style={styles.switch}>
-        <Switch testID={knob.name} onValueChange={this.onValueChange} value={knob.value} />
-      </View>
-    );
-  }
-}
+const BooleanType = ({ arg, onChange }: BooleanProps) => (
+  <View style={styles.switch}>
+    <Switch testID={arg.name} onValueChange={() => onChange(!arg.value)} value={arg.value} />
+  </View>
+);
 
 const styles = StyleSheet.create({
   switch: { margin: 10, alignItems: 'flex-start' },
 });
+
+BooleanType.serialize = (value) => (value ? String(value) : null);
+
+BooleanType.deserialize = (value) => value === 'true';
 
 export default BooleanType;
