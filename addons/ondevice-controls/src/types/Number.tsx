@@ -67,9 +67,4 @@ NumberType.serialize = (value) => String(value);
 
 NumberType.deserialize = (value) => parseFloat(value);
 
-const styles = StyleSheet.create({
-  spacing: { margin: 10 },
-  errorBorder: { borderColor: '#FF4400' },
-});
-
 export default NumberType;
