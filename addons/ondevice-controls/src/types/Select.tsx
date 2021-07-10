@@ -15,15 +15,21 @@ const Input = styled.TextInput(({ theme }) => ({
 export interface SelectProps {
   arg: {
     name: string;
-    value: string;
+    value: any;
     options: Array<any> | Record<string, any>;
-    selectV2: boolean;
+    control: {
+      labels?: Record<string, string>;
+    };
   };
   onChange: (value: any) => void;
 }
 
-const getOptions = ({ options }: SelectProps['arg']) => {
+//TODO: mapping
+const getOptions = ({ options, control: { labels } }: SelectProps['arg']) => {
   if (Array.isArray(options)) {
+    if (labels) {
+      return options.map((val) => ({ key: val, label: labels[val] || val }));
+    }
     return options.map((val) => ({ key: val, label: val }));
   }
 
@@ -33,19 +39,19 @@ const getOptions = ({ options }: SelectProps['arg']) => {
   }));
 };
 
-const SelectType = (props: SelectProps) => {
-  console.log('propit');
-  console.log(JSON.stringify(props));
-  const { arg, onChange } = props;
+const SelectType = ({ arg, onChange }: SelectProps) => {
+  const { value } = arg;
   const options = getOptions(arg);
-  const active = options.filter(({ key }) => arg.value === key)[0];
+
+  const active = options.find(({ key }) => value === key);
+
   const selected = active && active.label;
 
   return (
     <View>
       <ModalPicker
         data={options}
-        initValue={arg.value}
+        initValue={value}
         onChange={(option) => onChange(option.key)}
         animationType="none"
         keyExtractor={({ key, label }) => `${label}-${key}`}

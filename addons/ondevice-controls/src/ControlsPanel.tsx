@@ -55,9 +55,10 @@ const ControlsPanel = ({ api }: { api: API }) => {
   const showWarning = !(hasControls && isArgsStory);
   const argsObject = hasControls
     ? Object.entries(argsfromHook).reduce((prev, [name, value]) => {
+        console.log({ [name]: argTypes[name], argsfromHook });
         return {
           ...prev,
-          [name]: { name, type: argTypes[name]?.control?.type, value },
+          [name]: { ...argTypes?.[name], name, type: argTypes[name]?.control?.type, value },
         };
       }, {})
     : {};
