@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Multiply } from './Number';
 
 const NumberMeta: ComponentMeta<typeof Multiply> = {
-  title: 'Number Example',
+  title: 'Number control',
   component: Multiply,
 };
 

@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Heading } from './Text';
 
 const TextMeta: ComponentMeta<typeof Heading> = {
-  title: 'Text Example',
+  title: 'Text control',
   component: Heading,
   args: { text: 'Hello world!' },
 };

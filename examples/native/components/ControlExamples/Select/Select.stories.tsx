@@ -9,7 +9,7 @@ const ArrowRight = '➡️';
 const arrows = { ArrowUp, ArrowDown, ArrowLeft, ArrowRight };
 
 const SelectExampleMeta: ComponentMeta<typeof SelectExample> = {
-  title: 'Select Example',
+  title: 'Select control',
   component: SelectExample,
   argTypes: {
     arrow: {

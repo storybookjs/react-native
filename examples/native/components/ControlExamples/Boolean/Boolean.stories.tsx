@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Switch } from './Boolean';
 
 const BooleanExample: ComponentMeta<typeof Switch> = {
-  title: 'Boolean Example',
+  title: 'Boolean Control',
   component: Switch,
 };
 
