@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
-import { SelectExample } from './SelectExample';
+import { SelectExample } from './Select';
 
 const ArrowUp = '⬆';
 const ArrowDown = '⬇';
