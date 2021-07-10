@@ -32,7 +32,11 @@ export const useArgs = (
     [storyId, storyStore]
   );
   const resetArgs = useCallback(
-    (argNames?: string[]) => storyStore.resetStoryArgs(storyId, argNames),
+    (argNames?: string[]) => {
+      storyStore.resetStoryArgs(storyId, argNames);
+      //TODO: remove this if possible
+      storyStore._channel.emit(FORCE_RE_RENDER);
+    },
     [storyId, storyStore]
   );
   return [args, updateArgs, resetArgs];

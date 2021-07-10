@@ -1,5 +1,3 @@
-/* eslint no-underscore-dangle: 0 */
-
 import { View } from 'react-native';
 import React from 'react';
 import ModalPicker from 'react-native-modal-selector';
@@ -15,63 +13,62 @@ const Input = styled.TextInput(({ theme }) => ({
 }));
 
 export interface SelectProps {
-  knob: {
+  arg: {
     name: string;
-    value: string;
+    value: any;
     options: Array<any> | Record<string, any>;
-    selectV2: boolean;
+    control: {
+      labels?: Record<string, string>;
+    };
   };
   onChange: (value: any) => void;
 }
 
-class SelectType extends React.Component<SelectProps> {
-  static defaultProps = {
-    knob: {},
-    onChange: (value) => value,
-  };
-
-  static serialize = (value) => value;
-
-  static deserialize = (value) => value;
-
-  getOptions = ({ options }) => {
-    if (Array.isArray(options)) {
-      return options.map((val) => ({ key: val, label: val }));
+//TODO: mapping
+const getOptions = ({ options, control: { labels } }: SelectProps['arg']) => {
+  if (Array.isArray(options)) {
+    if (labels) {
+      return options.map((val) => ({ key: val, label: labels[val] || val }));
     }
-
-    return Object.keys(options).map((key) => ({
-      label: key,
-      key: options[key],
-    }));
-  };
-
-  render() {
-    const { knob, onChange } = this.props;
-
-    const options = this.getOptions(knob);
-
-    const active = options.filter(({ key }) => knob.value === key)[0];
-    const selected = active && active.label;
-
-    return (
-      <View>
-        <ModalPicker
-          data={options}
-          initValue={knob.value}
-          onChange={(option) => onChange(option.key)}
-          animationType="none"
-          keyExtractor={({ key, label }) => `${label}-${key}`}
-        >
-          <Input
-            editable={false}
-            value={selected}
-            autoCapitalize="none"
-            underlineColorAndroid="transparent"
-          />
-        </ModalPicker>
-      </View>
-    );
+    return options.map((val) => ({ key: val, label: val }));
   }
-}
+
+  return Object.keys(options).map((key) => ({
+    label: key,
+    key: options[key],
+  }));
+};
+
+const SelectType = ({ arg, onChange }: SelectProps) => {
+  const { value } = arg;
+  const options = getOptions(arg);
+
+  const active = options.find(({ key }) => value === key);
+
+  const selected = active && active.label;
+
+  return (
+    <View>
+      <ModalPicker
+        data={options}
+        initValue={value}
+        onChange={(option) => onChange(option.key)}
+        animationType="none"
+        keyExtractor={({ key, label }) => `${label}-${key}`}
+      >
+        <Input
+          editable={false}
+          value={selected}
+          autoCapitalize="none"
+          underlineColorAndroid="transparent"
+        />
+      </ModalPicker>
+    </View>
+  );
+};
+
+SelectType.serialize = (value) => value;
+
+SelectType.deserialize = (value) => value;
 
 export default SelectType;
