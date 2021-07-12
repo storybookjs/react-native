@@ -15,11 +15,12 @@ const styles = StyleSheet.create({
   },
   on: { backgroundColor: 'yellow' },
   off: { backgroundColor: 'black' },
+  onText: { color: 'black' },
   offText: { color: 'white' },
 });
 
 export const Switch = ({ on }: Props) => (
   <View style={[styles.circle, on ? styles.on : styles.off]}>
-    <Text style={!on && styles.offText}>{on ? 'on' : 'off'}</Text>
+    <Text style={on ? styles.onText : styles.offText}>{on ? 'on' : 'off'}</Text>
   </View>
 );
