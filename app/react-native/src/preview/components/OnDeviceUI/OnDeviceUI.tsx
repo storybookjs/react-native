@@ -1,7 +1,7 @@
 import styled from '@emotion/native';
 import { addons } from '@storybook/addons';
 import { StoryStore } from '@storybook/client-api';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useReducer } from 'react';
 import {
   Animated,
   Dimensions,
@@ -12,6 +12,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   StatusBar,
+  StyleSheet,
 } from 'react-native';
 import Events from '@storybook/core-events';
 import StoryListView from '../StoryListView';
@@ -28,13 +29,12 @@ import {
   getPreviewScale,
 } from './animation';
 import Navigation from './navigation';
-import { PREVIEW } from './navigation/constants';
+import { PREVIEW, ADDONS } from './navigation/constants';
 import Panel from './Panel';
 
 const ANIMATION_DURATION = 300;
 const IS_IOS = Platform.OS === 'ios';
 // @ts-ignore: Property 'Expo' does not exist on type 'Global'
-// eslint-disable-next-line no-underscore-dangle
 const getExpoRoot = () => global.Expo || global.__expo || global.__exponent;
 export const IS_EXPO = getExpoRoot() !== undefined;
 const IS_ANDROID = Platform.OS === 'android';
@@ -58,19 +58,35 @@ const Preview = styled.View<{ disabled: boolean }>(flex, ({ disabled, theme }) =
   borderColor: disabled ? 'transparent' : theme.previewBorderColor,
 }));
 
-const absolutePosition: FlexStyle = { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 };
+const absolutePosition: FlexStyle = {
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0,
+};
+
+const styles = StyleSheet.create({
+  expoAndroidContainer: { paddingTop: StatusBar.currentHeight },
+});
 
 const useSelectedStory = (storyStore: StoryStore) => {
   const [storyId, setStoryId] = useState(storyStore.getSelection()?.storyId || '');
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
   const channel = useRef(addons.getChannel());
 
   useEffect(() => {
     const handleStoryWasSet = ({ storyId: newStoryId }: { storyId: string }) =>
       setStoryId(newStoryId);
+
+    const currentChannel = channel.current;
     channel.current.on(Events.SET_CURRENT_STORY, handleStoryWasSet);
+    //TODO: update preview without force
+    channel.current.on(Events.FORCE_RE_RENDER, forceUpdate);
 
     return () => {
-      channel.current.removeListener(Events.SET_CURRENT_STORY, handleStoryWasSet);
+      currentChannel.removeListener(Events.SET_CURRENT_STORY, handleStoryWasSet);
+      currentChannel.removeListener(Events.FORCE_RE_RENDER, forceUpdate);
     };
   }, []);
 
@@ -120,9 +136,7 @@ const OnDeviceUI = ({
   const previewStyles = [flex, getPreviewScale(animatedValue.current, slideBetweenAnimation)];
 
   return (
-    <SafeAreaView
-      style={[flex, { paddingTop: IS_ANDROID && IS_EXPO ? StatusBar.currentHeight : 0 }]}
-    >
+    <SafeAreaView style={[flex, IS_ANDROID && IS_EXPO && styles.expoAndroidContainer]}>
       <KeyboardAvoidingView
         enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
         behavior={IS_IOS ? 'padding' : null}
@@ -150,7 +164,7 @@ const OnDeviceUI = ({
             <StoryListView storyStore={storyStore} selectedStory={story} />
           </Panel>
           <Panel style={getAddonPanelPosition(animatedValue.current, previewDimensions.width)}>
-            <Addons />
+            <Addons active={tabOpen === ADDONS} />
           </Panel>
         </AbsolutePositionedKeyboardAwareView>
         <Navigation

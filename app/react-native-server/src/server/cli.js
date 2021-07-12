@@ -24,6 +24,7 @@ function getCli() {
     .option('--ssl-cert <cert>', 'Provide an SSL certificate. (Required with --https)')
     .option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)')
     .option('--smoke-test', 'Exit after successful start')
+    // eslint-disable-next-line quotes
     .option('--ci', "CI mode (skip interactive prompts, don't open browser")
     .option('--quiet', 'Suppress verbose build output')
     .parse(process.argv);

@@ -32,3 +32,4 @@ examples/native/android
 examples/native/metro.config.js
 examples/crna-kitchen-sink/metro.config.js
 storybook.requires.js
+jest.config.js

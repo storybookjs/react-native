@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const shell = require('shelljs');
 
 // exit with code 1 if there are some changed files

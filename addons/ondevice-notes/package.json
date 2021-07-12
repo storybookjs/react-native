@@ -24,7 +24,8 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
+    "preprepare": "rm -rf dist/",
+    "prepare": "tsc"
   },
   "dependencies": {
     "@emotion/core": "^10.0.20",
@@ -35,7 +36,7 @@
     "@storybook/core-events": "^6",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2",
-    "react-native-simple-markdown": "^1.1.0"
+    "simple-markdown": "^0.7.3"
   },
   "peerDependencies": {
     "react": "*",

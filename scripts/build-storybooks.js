@@ -2,13 +2,7 @@
 
 const { spawn } = require('child_process');
 const { promisify } = require('util');
-const {
-  readdir: readdirRaw,
-  readFile: readFileRaw,
-  writeFile: writeFileRaw,
-  statSync,
-  readFileSync,
-} = require('fs');
+const { readdir: readdirRaw, writeFile: writeFileRaw, statSync, readFileSync } = require('fs');
 const { join } = require('path');
 
 const readdir = promisify(readdirRaw);
@@ -19,7 +13,11 @@ const logger = console;
 
 const exec = async (command, args = [], options = {}) =>
   new Promise((resolve, reject) => {
-    const child = spawn(command, args, { ...options, stdio: 'inherit', shell: true });
+    const child = spawn(command, args, {
+      ...options,
+      stdio: 'inherit',
+      shell: true,
+    });
 
     child
       .on('close', (code) => {
@@ -139,7 +137,9 @@ const handleExamples = async (files) => {
     const out = p(['built-storybooks', d]);
     const cwd = p(['examples', d]);
 
-    await exec(`yarn`, [`build-storybook`, `--output-dir=${out}`, '--quiet'], { cwd });
+    await exec('yarn', ['build-storybook', `--output-dir=${out}`, '--quiet'], {
+      cwd,
+    });
 
     logger.log('-------');
     logger.log('✅ done');
@@ -147,7 +147,7 @@ const handleExamples = async (files) => {
   }, Promise.resolve());
 
   logger.log('');
-  logger.log(`📑 creating index`);
+  logger.log('📑 creating index');
 
   const indexLocation = p(['built-storybooks', 'index.html']);
   const indexContent = createContent(deployables);

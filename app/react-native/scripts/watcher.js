@@ -1,11 +1,21 @@
-/* eslint-disable no-console */
 const chokidar = require('chokidar');
-
-const { getGlobs, writeRequires, getMainPath } = require('./loader');
+const path = require('path');
+const {
+  getGlobs,
+  writeRequires,
+  getMainPath,
+  getPreviewPath,
+  getPreviewExists,
+} = require('./loader');
 
 const log = console.log.bind(console);
 
-chokidar.watch([...getGlobs(), getMainPath()]).on('all', (event, watchPath) => {
-  log(`File ${watchPath} has been ${event}`);
+const watchPaths = [...getGlobs(), getMainPath()];
+if (getPreviewExists()) {
+  watchPaths.push(getPreviewPath());
+}
+
+chokidar.watch(watchPaths).on('all', (event, watchPath) => {
+  log(`event ${event} for file ${path.basename(watchPath)}`);
   writeRequires();
 });

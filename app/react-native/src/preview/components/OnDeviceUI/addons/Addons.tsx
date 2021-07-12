@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import styled from '@emotion/native';
 import { addons } from '@storybook/addons';
 import AddonsList from './List';
@@ -17,13 +17,13 @@ const Container = styled.View(({ theme }) => ({
   backgroundColor: theme.backgroundColor,
 }));
 
-const Addons = () => {
+const Addons = ({ active }: { active: boolean }) => {
   const panels = addons.getElements('panel');
   const [addonSelected, setAddonSelected] = useState<string | null>(Object.keys(panels)[0] || null);
 
   if (Object.keys(panels).length === 0) {
     return (
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={styles.container}>
         <NoAddonContainer>
           <Label>No addons loaded.</Label>
         </NoAddonContainer>
@@ -33,11 +33,20 @@ const Addons = () => {
 
   return (
     <Container>
-      <SafeAreaView style={{ flex: 1 }}>
-        <AddonsList onPressAddon={setAddonSelected} panels={panels} addonSelected={addonSelected} />
-        <AddonWrapper addonSelected={addonSelected} panels={panels} />
+      <SafeAreaView style={styles.container}>
+        <AddonsList
+          onPressAddon={setAddonSelected}
+          panels={panels}
+          addonSelected={active ? addonSelected : null}
+        />
+        <AddonWrapper addonSelected={active ? addonSelected : null} panels={panels} />
       </SafeAreaView>
     </Container>
   );
 };
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+});
+
 export default React.memo(Addons);

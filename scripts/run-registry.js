@@ -41,7 +41,8 @@ const startVerdaccio = (port) => {
     new Promise((res, rej) => {
       setTimeout(() => {
         if (!resolved) {
-          rej(new Error(`TIMEOUT - verdaccio didn't start within 60s`));
+          // eslint-disable-next-line quotes
+          rej(new Error("TIMEOUT - verdaccio didn't start within 60s"));
 
           resolved = true;
 
@@ -75,7 +76,7 @@ nodeCleanup(() => {
 });
 
 const applyRegistriesUrl = (yarnUrl, npmUrl, originalYarnUrl, originalNpmUrl) => {
-  logger.log(`↪️  changing system config`);
+  logger.log('↪️  changing system config');
   nodeCleanup(() => {
     registriesUrl(originalYarnUrl, originalNpmUrl);
 
@@ -91,7 +92,7 @@ const applyRegistriesUrl = (yarnUrl, npmUrl, originalYarnUrl, originalNpmUrl) =>
 
 const addUser = (url) =>
   new Promise((res, rej) => {
-    logger.log(`👤 add temp user to verdaccio`);
+    logger.log('👤 add temp user to verdaccio');
 
     exec(`npx npm-cli-adduser -r "${url}" -a -u user -p password -e user@example.com`, (e) => {
       if (e) {
@@ -127,7 +128,7 @@ const publish = (packages, url) =>
 
 const listOfPackages = () =>
   new Promise((res, rej) => {
-    const command = `./node_modules/.bin/lerna list --json`;
+    const command = './node_modules/.bin/lerna list --json';
     exec(command, (e, result) => {
       if (e) {
         rej(e);
@@ -164,7 +165,7 @@ const askForReset = () =>
     ])
     .then(({ sure }) => {
       if (sure) {
-        logger.log(`↩️ changing system config`);
+        logger.log('↩️ changing system config');
         return registriesUrl('https://registry.npmjs.org/');
       }
       return process.exit(1);
@@ -204,7 +205,7 @@ const run = async () => {
   const port = await freePort(4873);
   logger.log(`🌏 found a open port: ${port}`);
 
-  logger.log(`🔖 reading current registry settings`);
+  logger.log('🔖 reading current registry settings');
   let [originalYarnRegistryUrl, originalNpmRegistryUrl] = await registriesUrl();
   if (
     originalYarnRegistryUrl.includes('localhost') ||
@@ -215,9 +216,9 @@ const run = async () => {
     originalNpmRegistryUrl = 'https://registry.npmjs.org/';
   }
 
-  logger.log(`📐 reading version of storybook`);
-  logger.log(`🚛 listing storybook packages`);
-  logger.log(`🎬 starting verdaccio (this takes ±20 seconds, so be patient)`);
+  logger.log('📐 reading version of storybook');
+  logger.log('🚛 listing storybook packages');
+  logger.log('🎬 starting verdaccio (this takes ±20 seconds, so be patient)');
 
   const [shouldOverwrite, verdaccioUrl, packages, version] = await Promise.all([
     askForPermission(),

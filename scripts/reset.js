@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { spawn, exec } from 'child_process';
+import { spawn } from 'child_process';
 import trash from 'trash';
 import del from 'del';
 
@@ -18,7 +18,7 @@ const cleaningProcess = spawn('git', [
 
 cleaningProcess.stdout.on('data', (data) => {
   if (data && data.toString()) {
-    const l = data
+    data
       .toString()
       .split(/\n/)
       .forEach((i) => {
