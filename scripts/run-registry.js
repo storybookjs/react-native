@@ -41,6 +41,7 @@ const startVerdaccio = (port) => {
     new Promise((res, rej) => {
       setTimeout(() => {
         if (!resolved) {
+          // eslint-disable-next-line quotes
           rej(new Error("TIMEOUT - verdaccio didn't start within 60s"));
 
           resolved = true;

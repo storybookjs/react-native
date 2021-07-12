@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
-
 const fetch = require('node-fetch');
 
 const { CIRCLE_BRANCH, FRONTPAGE_WEBHOOK } = process.env;

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-/* eslint-disable global-require, no-octal-escape */
 const childProcess = require('child_process');
 const { lstatSync, readdirSync } = require('fs');
 const { join } = require('path');
@@ -20,7 +19,7 @@ try {
     stdio: ['inherit', 'inherit', 'inherit'],
   });
   process.stdout.write('\x07');
-  process.stdout.write('\033c');
+  process.stdout.write('\x1Bc');
 
   // give the filesystem some time
   cooldown = 1000;

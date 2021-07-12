@@ -32,7 +32,4 @@ examples/native/android
 examples/native/metro.config.js
 examples/crna-kitchen-sink/metro.config.js
 storybook.requires.js
-scripts/
 jest.config.js
-prettier.config.js
-tsconfig.json
