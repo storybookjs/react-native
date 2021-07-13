@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface SwatchProps {
   name: string;
@@ -8,19 +8,15 @@ interface SwatchProps {
   setBackground: (background: string) => void;
 }
 
-const Swatch = (
-  {
-    name,
-    value,
-    setBackground
-  }: SwatchProps
-) => <TouchableOpacity style={styles.container} onPress={() => setBackground(value)}>
-  <View style={[styles.color, { backgroundColor: value }]} />
-  <View style={styles.valueContainer}>
-    <Text>{name}:</Text>
-    <Text>{value}</Text>
-  </View>
-</TouchableOpacity>;
+const Swatch = ({ name, value, setBackground }: SwatchProps) => (
+  <TouchableOpacity style={styles.container} onPress={() => setBackground(value)}>
+    <View style={[styles.color, { backgroundColor: value }]} />
+    <View style={styles.valueContainer}>
+      <Text>{name}:</Text>
+      <Text>{value}</Text>
+    </View>
+  </TouchableOpacity>
+);
 
 Swatch.propTypes = {
   name: PropTypes.string.isRequired,

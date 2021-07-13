@@ -1,8 +1,8 @@
 import styled from '@emotion/native';
 import { addons, StoryKind } from '@storybook/addons';
-import { StoryStore, StoreItem, PublishedStoreItem } from '@storybook/client-api';
+import { PublishedStoreItem, StoreItem, StoryStore } from '@storybook/client-api';
 import Events from '@storybook/core-events';
-import React, { FunctionComponent, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { SectionList, StyleSheet } from 'react-native';
 import { Header, Name } from '../Shared/text';
 
@@ -48,14 +48,11 @@ interface SectionProps {
   selected: boolean;
 }
 
-const SectionHeader = (
-  {
-    title,
-    selected
-  }: SectionProps
-) => <HeaderContainer key={title}>
-  <Header selected={selected}>{title}</Header>
-</HeaderContainer>;
+const SectionHeader = ({ title, selected }: SectionProps) => (
+  <HeaderContainer key={title}>
+    <Header selected={selected}>{title}</Header>
+  </HeaderContainer>
+);
 
 interface ListItemProps {
   title: string;
@@ -69,22 +66,17 @@ const ItemTouchable = styled.TouchableOpacity({
   paddingVertical: 5,
 });
 
-const ListItem = (
-  {
-    kind,
-    title,
-    selected,
-    onPress
-  }: ListItemProps
-) => <ItemTouchable
-  key={title}
-  onPress={onPress}
-  activeOpacity={0.8}
-  testID={`Storybook.ListItem.${kind}.${title}`}
-  accessibilityLabel={`Storybook.ListItem.${title}`}
->
-  <Name selected={selected}>{title}</Name>
-</ItemTouchable>;
+const ListItem = ({ kind, title, selected, onPress }: ListItemProps) => (
+  <ItemTouchable
+    key={title}
+    onPress={onPress}
+    activeOpacity={0.8}
+    testID={`Storybook.ListItem.${kind}.${title}`}
+    accessibilityLabel={`Storybook.ListItem.${title}`}
+  >
+    <Name selected={selected}>{title}</Name>
+  </ItemTouchable>
+);
 
 interface Props {
   storyStore: StoryStore;
