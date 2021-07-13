@@ -48,11 +48,14 @@ interface SectionProps {
   selected: boolean;
 }
 
-const SectionHeader: FunctionComponent<SectionProps> = ({ title, selected }: SectionProps) => (
-  <HeaderContainer key={title}>
-    <Header selected={selected}>{title}</Header>
-  </HeaderContainer>
-);
+const SectionHeader = (
+  {
+    title,
+    selected
+  }: SectionProps
+) => <HeaderContainer key={title}>
+  <Header selected={selected}>{title}</Header>
+</HeaderContainer>;
 
 interface ListItemProps {
   title: string;
@@ -66,17 +69,22 @@ const ItemTouchable = styled.TouchableOpacity({
   paddingVertical: 5,
 });
 
-const ListItem: FunctionComponent<ListItemProps> = ({ kind, title, selected, onPress }) => (
-  <ItemTouchable
-    key={title}
-    onPress={onPress}
-    activeOpacity={0.8}
-    testID={`Storybook.ListItem.${kind}.${title}`}
-    accessibilityLabel={`Storybook.ListItem.${title}`}
-  >
-    <Name selected={selected}>{title}</Name>
-  </ItemTouchable>
-);
+const ListItem = (
+  {
+    kind,
+    title,
+    selected,
+    onPress
+  }: ListItemProps
+) => <ItemTouchable
+  key={title}
+  onPress={onPress}
+  activeOpacity={0.8}
+  testID={`Storybook.ListItem.${kind}.${title}`}
+  accessibilityLabel={`Storybook.ListItem.${title}`}
+>
+  <Name selected={selected}>{title}</Name>
+</ItemTouchable>;
 
 interface Props {
   storyStore: StoryStore;

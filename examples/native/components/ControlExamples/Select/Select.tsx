@@ -5,6 +5,8 @@ interface Props {
   arrow: string;
 }
 
-export const SelectExample: FunctionComponent<Props> = ({ arrow }) => (
-  <Text>Selected: {arrow}</Text>
-);
+export const SelectExample = (
+  {
+    arrow
+  }: Props
+) => <Text>Selected: {arrow}</Text>;

@@ -8,15 +8,19 @@ interface SwatchProps {
   setBackground: (background: string) => void;
 }
 
-const Swatch: FunctionComponent<SwatchProps> = ({ name, value, setBackground }) => (
-  <TouchableOpacity style={styles.container} onPress={() => setBackground(value)}>
-    <View style={[styles.color, { backgroundColor: value }]} />
-    <View style={styles.valueContainer}>
-      <Text>{name}:</Text>
-      <Text>{value}</Text>
-    </View>
-  </TouchableOpacity>
-);
+const Swatch = (
+  {
+    name,
+    value,
+    setBackground
+  }: SwatchProps
+) => <TouchableOpacity style={styles.container} onPress={() => setBackground(value)}>
+  <View style={[styles.color, { backgroundColor: value }]} />
+  <View style={styles.valueContainer}>
+    <Text>{name}:</Text>
+    <Text>{value}</Text>
+  </View>
+</TouchableOpacity>;
 
 Swatch.propTypes = {
   name: PropTypes.string.isRequired,
