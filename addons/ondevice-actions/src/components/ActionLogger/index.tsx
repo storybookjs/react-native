@@ -8,25 +8,28 @@ interface ActionLoggerProps {
   onClear: () => void;
 }
 
-export const ActionLogger: FunctionComponent<ActionLoggerProps> = ({ actions, onClear }) => (
-  <ScrollView>
-    <ScrollView horizontal>
-      <View>
-        {actions.map((action: ActionDisplay) => (
-          <View key={action.id} style={styles.row}>
-            <View>{action.count > 1 ? <Text>{action.count}</Text> : null}</View>
-            <View style={styles.grow}>
-              <Inspect name={action.data.name} value={action.data.args || action.data} />
-            </View>
-          </View>
-        ))}
-      </View>
-    </ScrollView>
+export const ActionLogger = (
+  {
+    actions,
+    onClear
+  }: ActionLoggerProps
+) => <ScrollView>
+  <ScrollView horizontal>
     <View>
-      <Button onPress={onClear} title="CLEAR" />
+      {actions.map((action: ActionDisplay) => (
+        <View key={action.id} style={styles.row}>
+          <View>{action.count > 1 ? <Text>{action.count}</Text> : null}</View>
+          <View style={styles.grow}>
+            <Inspect name={action.data.name} value={action.data.args || action.data} />
+          </View>
+        </View>
+      ))}
     </View>
   </ScrollView>
-);
+  <View>
+    <Button onPress={onClear} title="CLEAR" />
+  </View>
+</ScrollView>;
 
 export default ActionLogger;
 
