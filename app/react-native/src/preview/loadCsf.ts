@@ -244,5 +244,10 @@ export const loadCsf = ({
       );
     }
 
+    if (m && m.hot) {
+      storyStore.clearGlobalDecorators();
+      m.hot.accept();
+    }
+
     configApi.configure(loadStories(loadable, framework, { clientApi, storyStore }), m);
   };
