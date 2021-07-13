@@ -5,7 +5,7 @@ import BooleanType from './Boolean';
 import ObjectType from './Object';
 import SelectType from './Select';
 // import ArrayType from './Array';
-// import DateType from './Date';
+import DateType from './Date';
 // import ButtonType from './Button';
 // import RadioType from './Radio';
 
@@ -17,7 +17,7 @@ export default {
   object: ObjectType,
   select: SelectType,
   // array: ArrayType,
-  // date: DateType,
+  date: DateType,
   // button: ButtonType,
   // radios: RadioType,
 };
