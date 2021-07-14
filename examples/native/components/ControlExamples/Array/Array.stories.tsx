@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Array } from './Array';
 
 const ArrayMeta: ComponentMeta<typeof Array> = {
-  title: 'Array',
+  title: 'Array control',
   component: Array,
   args: {
     list: ['a', 'b', 'c'],

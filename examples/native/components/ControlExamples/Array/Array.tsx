@@ -6,14 +6,15 @@ interface ArrayProps {
 }
 
 export const Array = ({ list }: ArrayProps) => (
-  <View style={styles.container}>
-    {list.map((item) => (
-      <Text style={styles.item}>{item}</Text>
+  <View>
+    {list.map((item, index) => (
+      <Text key={index} style={styles.item}>
+        {item}
+      </Text>
     ))}
   </View>
 );
 
 const styles = StyleSheet.create({
   item: { padding: 8 },
-  container: { flexDirection: 'column' },
 });
