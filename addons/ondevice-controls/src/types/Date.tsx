@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react';
+import styled from '@emotion/native';
+import React, { useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-import styled from '@emotion/native';
 
 export interface DateProps {
-  knob: {
+  arg: {
     name: string;
-    value: number;
+    value: Date;
   };
-  onChange: (value: number) => void;
+  onChange: (value: Date) => void;
 }
 
 const Touchable = styled.TouchableOpacity(({ theme }: any) => ({
@@ -23,82 +23,52 @@ const Label = styled.Text(({ theme }: any) => ({
   color: theme.labelColor || 'black',
 }));
 
-// TODO seconds support
-class DateType extends PureComponent<
-  DateProps,
-  { isTimeVisible: boolean; isDateVisible: boolean }
-> {
-  static defaultProps = {
-    knob: {},
-    onChange: (value) => value,
+type VisiblePicker = 'date' | 'time' | 'none';
+const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
+  const [visiblePicker, setVisiblePicker] = useState<VisiblePicker>('none');
+
+  const onDatePicked = (pickedDate: Date) => {
+    onChange(pickedDate);
+    setVisiblePicker('none');
   };
 
-  static serialize = (value) => String(value);
+  const date = useMemo(() => new Date(value), [value]);
 
-  static deserialize = (value) => parseFloat(value);
+  // https://stackoverflow.com/a/30272803
+  const dateString = useMemo(
+    () =>
+      [
+        `0${date.getDate()}`.slice(-2),
+        `0${date.getMonth() + 1}`.slice(-2),
+        date.getFullYear(),
+      ].join('-'),
+    [date]
+  );
+  const timeString = useMemo(
+    () => `${`0${date.getHours()}`.slice(-2)}:${`0${date.getMinutes()}`.slice(-2)}`,
+    [date]
+  );
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isDateVisible: false,
-      isTimeVisible: false,
-    };
-  }
-
-  showDatePicker = () => {
-    this.setState({ isDateVisible: true });
-  };
-
-  showTimePicker = () => {
-    this.setState({ isTimeVisible: true });
-  };
-
-  hidePicker = () => {
-    this.setState({ isDateVisible: false, isTimeVisible: false });
-  };
-
-  onDatePicked = (date) => {
-    const value = date.valueOf();
-    const { onChange } = this.props;
-    onChange(value);
-    this.hidePicker();
-  };
-
-  render() {
-    const { knob } = this.props;
-
-    const { isTimeVisible, isDateVisible } = this.state;
-    const d = new Date(knob.value);
-
-    // https://stackoverflow.com/a/30272803
-    const dateString = [
-      `0${d.getDate()}`.slice(-2),
-      `0${d.getMonth() + 1}`.slice(-2),
-      d.getFullYear(),
-    ].join('-');
-    const timeString = `${`0${d.getHours()}`.slice(-2)}:${`0${d.getMinutes()}`.slice(-2)}`;
-
-    return (
-      <View style={styles.spacing}>
-        <View style={styles.row}>
-          <Touchable onPress={this.showDatePicker}>
-            <Label>{dateString}</Label>
-          </Touchable>
-          <Touchable style={styles.timeTouchable} onPress={this.showTimePicker}>
-            <Label>{timeString}</Label>
-          </Touchable>
-        </View>
-        <DateTimePicker
-          date={d}
-          isVisible={isTimeVisible || isDateVisible}
-          mode={isTimeVisible ? 'time' : 'date'}
-          onConfirm={this.onDatePicked}
-          onCancel={this.hidePicker}
-        />
+  return (
+    <View testID={name} style={styles.spacing}>
+      <View style={styles.row}>
+        <Touchable onPress={() => setVisiblePicker('date')}>
+          <Label>{dateString}</Label>
+        </Touchable>
+        <Touchable style={styles.timeTouchable} onPress={() => setVisiblePicker('time')}>
+          <Label>{timeString}</Label>
+        </Touchable>
       </View>
-    );
-  }
-}
+      <DateTimePicker
+        date={date}
+        isVisible={visiblePicker !== 'none'}
+        mode={visiblePicker === 'none' ? 'date' : visiblePicker}
+        onConfirm={onDatePicked}
+        onCancel={() => setVisiblePicker('none')}
+      />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   timeTouchable: {
@@ -107,5 +77,9 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row' },
   spacing: { margin: 10 },
 });
+
+DateType.serialize = (value) => String(value);
+
+DateType.deserialize = (value) => parseFloat(value);
 
 export default DateType;
