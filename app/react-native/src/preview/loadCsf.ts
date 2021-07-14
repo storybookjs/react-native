@@ -1,5 +1,6 @@
 import { ClientApi, ConfigApi, StoryStore } from '@storybook/client-api';
 import { logger } from '@storybook/client-logger';
+import { FORCE_RE_RENDER } from '@storybook/core-events';
 import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
 import './global';
 
@@ -247,6 +248,7 @@ export const loadCsf = ({
     if (m && m.hot) {
       storyStore.clearGlobalDecorators();
       m.hot.accept();
+      storyStore._channel.emit(FORCE_RE_RENDER);
     }
 
     configApi.configure(loadStories(loadable, framework, { clientApi, storyStore }), m);
