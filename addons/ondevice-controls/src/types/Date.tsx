@@ -40,7 +40,7 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
     setIsTimeVisible(false);
   };
 
-  const onDatePicked = (pickedDate) => {
+  const onDatePicked = (pickedDate: Date) => {
     // const dateValue = pickedDate.valueOf();
     onChange(pickedDate);
     hidePicker();
