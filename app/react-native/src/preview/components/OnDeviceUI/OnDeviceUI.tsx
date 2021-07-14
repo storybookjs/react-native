@@ -76,16 +76,15 @@ const useSelectedStory = (storyStore: StoryStore) => {
   const channel = useRef(addons.getChannel());
 
   useEffect(() => {
-    const handleStoryWasSet = ({ storyId: newStoryId }: { storyId: string }) =>
-      setStoryId(newStoryId);
+    const handleStoryWasSet = ({ id: newStoryId }: { id: string }) => setStoryId(newStoryId);
 
     const currentChannel = channel.current;
-    channel.current.on(Events.SET_CURRENT_STORY, handleStoryWasSet);
+    channel.current.on(Events.SELECT_STORY, handleStoryWasSet);
     //TODO: update preview without force
     channel.current.on(Events.FORCE_RE_RENDER, forceUpdate);
 
     return () => {
-      currentChannel.removeListener(Events.SET_CURRENT_STORY, handleStoryWasSet);
+      currentChannel.removeListener(Events.SELECT_STORY, handleStoryWasSet);
       currentChannel.removeListener(Events.FORCE_RE_RENDER, forceUpdate);
     };
   }, []);
