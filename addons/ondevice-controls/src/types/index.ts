@@ -4,8 +4,8 @@ import ColorType from './Color';
 import BooleanType from './Boolean';
 import ObjectType from './Object';
 import SelectType from './Select';
-// import ArrayType from './Array';
 import DateType from './Date';
+import ArrayType from './Array';
 // import ButtonType from './Button';
 // import RadioType from './Radio';
 
@@ -16,8 +16,8 @@ export default {
   boolean: BooleanType,
   object: ObjectType,
   select: SelectType,
-  // array: ArrayType,
   date: DateType,
+  array: ArrayType,
   // button: ButtonType,
   // radios: RadioType,
 };
