@@ -19,7 +19,7 @@ function formatArray(value: string, separator: string) {
 }
 
 export interface ArrayProps {
-  knob: {
+  arg: {
     name: string;
     value: string[];
     separator: string;
@@ -27,13 +27,16 @@ export interface ArrayProps {
   onChange: (value: string[]) => void;
 }
 
-const ArrayType = ({ knob, onChange = () => null }: ArrayProps) => (
+const ArrayType = ({
+  arg: { name, value, separator = ',' },
+  onChange = () => null,
+}: ArrayProps) => (
   <Input
-    testID={knob.name}
+    testID={name}
     underlineColorAndroid="transparent"
     autoCapitalize="none"
-    value={knob.value.join(knob.separator)}
-    onChangeText={(e) => onChange(formatArray(e, knob.separator))}
+    defaultValue={value.join(separator)}
+    onChangeText={(e) => onChange(formatArray(e, separator))}
   />
 );
 
