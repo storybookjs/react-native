@@ -23,27 +23,13 @@ const Label = styled.Text(({ theme }: any) => ({
   color: theme.labelColor || 'black',
 }));
 
+type VisiblePicker = 'date' | 'time' | 'none';
 const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
-  const [isDateVisible, setIsDateVisible] = useState(false);
-  const [isTimeVisible, setIsTimeVisible] = useState(false);
-
-  const showDatePicker = () => {
-    setIsDateVisible(true);
-  };
-
-  const showTimePicker = () => {
-    setIsTimeVisible(true);
-  };
-
-  const hidePicker = () => {
-    setIsDateVisible(false);
-    setIsTimeVisible(false);
-  };
+  const [visiblePicker, setVisiblePicker] = useState<VisiblePicker>('none');
 
   const onDatePicked = (pickedDate: Date) => {
-    // const dateValue = pickedDate.valueOf();
     onChange(pickedDate);
-    hidePicker();
+    setVisiblePicker('none');
   };
 
   const date = useMemo(() => new Date(value), [value]);
@@ -66,19 +52,19 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
   return (
     <View testID={name} style={styles.spacing}>
       <View style={styles.row}>
-        <Touchable onPress={showDatePicker}>
+        <Touchable onPress={() => setVisiblePicker('date')}>
           <Label>{dateString}</Label>
         </Touchable>
-        <Touchable style={styles.timeTouchable} onPress={showTimePicker}>
+        <Touchable style={styles.timeTouchable} onPress={() => setVisiblePicker('time')}>
           <Label>{timeString}</Label>
         </Touchable>
       </View>
       <DateTimePicker
         date={date}
-        isVisible={isTimeVisible || isDateVisible}
-        mode={isTimeVisible ? 'time' : 'date'}
+        isVisible={visiblePicker !== 'none'}
+        mode={visiblePicker === 'none' ? 'date' : visiblePicker}
         onConfirm={onDatePicked}
-        onCancel={hidePicker}
+        onCancel={() => setVisiblePicker('none')}
       />
     </View>
   );
