@@ -84,11 +84,12 @@ export default class Preview {
       );
     }
 
-    const { initialSelection, shouldPersistSelection } = params;
-    this._setInitialStory(initialSelection, shouldPersistSelection);
     if (params.asyncStorage) {
       this._asyncStorage = params.asyncStorage;
     }
+
+    const { initialSelection, shouldPersistSelection } = params;
+    this._setInitialStory(initialSelection, shouldPersistSelection);
 
     this._channel.on(Events.SET_CURRENT_STORY, (d: { storyId: string }) => {
       this._selectStoryEvent(d);
@@ -169,6 +170,7 @@ export default class Preview {
 
   _selectStory(story: any) {
     this._storyStore.setSelection({ storyId: story.id, viewMode: 'story' });
+    this._channel.emit(Events.SELECT_STORY, story);
   }
 
   _checkStory(storyId: string) {
