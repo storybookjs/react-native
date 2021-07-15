@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { StoreItem } from '@storybook/client-api';
 import { Text, View, StyleSheet } from 'react-native';
+import { StoryContext } from '@storybook/addons';
 
 interface Props {
-  story: StoreItem;
+  story?: StoreItem;
 }
 
 const styles = StyleSheet.create({
@@ -19,11 +20,23 @@ const styles = StyleSheet.create({
 });
 
 const StoryView = ({ story }: Props) => {
-  if (story && story.storyFn) {
-    const { id, storyFn } = story;
+  const [context, setContext] = useState<StoryContext | undefined>(undefined);
+  const id = story?.id;
+
+  useEffect(() => {
+    const loadContext = async () => {
+      if (story && story.unboundStoryFn && story.applyLoaders) {
+        setContext(await story.applyLoaders());
+      }
+    };
+    loadContext();
+  }, [story, id]);
+
+  if (story && story.unboundStoryFn) {
+    const { unboundStoryFn } = story;
     return (
       <View key={id} testID={id} style={styles.container}>
-        {storyFn()}
+        {context && context.id === story.id ? unboundStoryFn(context) : null}
       </View>
     );
   }
