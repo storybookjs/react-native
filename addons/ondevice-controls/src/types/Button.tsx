@@ -3,26 +3,22 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
 
 const Label = styled.Text(({ theme }) => ({
-  fontSize: 17,
+  fontSize: 18,
   color: theme.labelColor || 'black',
 }));
 
 export interface ButtonTypeProps {
-  knob: {
+  arg: {
     name: string;
   };
   onPress: Function;
 }
 
-const ButtonType = ({ knob, onPress }: ButtonTypeProps) => (
-  <TouchableOpacity style={styles.button} onPress={() => onPress(knob)}>
-    <Label>{knob.name}</Label>
+const ButtonType = ({ arg, onPress }: ButtonTypeProps) => (
+  <TouchableOpacity style={styles.button} onPress={() => onPress(arg)}>
+    <Label>{arg.name}</Label>
   </TouchableOpacity>
 );
-
-ButtonType.defaultProps = {
-  knob: {},
-};
 
 ButtonType.propTypes = {};
 
@@ -30,7 +26,7 @@ ButtonType.serialize = (value) => value;
 ButtonType.deserialize = (value) => value;
 
 const styles = StyleSheet.create({
-  button: { margin: 10 },
+  button: { margin: 8 },
 });
 
 export default ButtonType;

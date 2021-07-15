@@ -3,7 +3,7 @@ import React from 'react';
 import RadioSelect from '../components/RadioSelect';
 
 export interface RadioProps {
-  knob: {
+  arg: {
     name: string;
     value: string;
     options: Array<any> | Record<string, any>;
@@ -12,18 +12,8 @@ export interface RadioProps {
   isInline: boolean;
 }
 
-class RadioType extends React.Component<RadioProps> {
-  static defaultProps = {
-    knob: {},
-    onChange: (value) => value,
-    isInline: false,
-  };
-
-  static serialize = (value) => value;
-
-  static deserialize = (value) => value;
-
-  getOptions = ({ options }) => {
+const RadioType = ({ onChange, arg, isInline }: RadioProps) => {
+  const getOptions = ({ options }) => {
     if (Array.isArray(options)) {
       return options.map((val) => ({ key: val, label: val }));
     }
@@ -34,21 +24,22 @@ class RadioType extends React.Component<RadioProps> {
     }));
   };
 
-  render() {
-    const { knob, onChange } = this.props;
+  const options = getOptions(arg);
 
-    const options = this.getOptions(knob);
+  return (
+    <View>
+      <RadioSelect
+        isInline={isInline}
+        data={options}
+        initValue={arg.value}
+        onChange={(option) => onChange(option.key)}
+      />
+    </View>
+  );
+};
 
-    return (
-      <View>
-        <RadioSelect
-          data={options}
-          initValue={knob.value}
-          onChange={(option) => onChange(option.key)}
-        />
-      </View>
-    );
-  }
-}
+RadioType.serialize = (value) => value;
+
+RadioType.deserialize = (value) => value;
 
 export default RadioType;
