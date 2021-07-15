@@ -6,7 +6,6 @@ import ObjectType from './Object';
 import SelectType from './Select';
 import DateType from './Date';
 import ArrayType from './Array';
-import ButtonType from './Button';
 import RadioType from './Radio';
 
 export default {
@@ -18,6 +17,5 @@ export default {
   select: SelectType,
   date: DateType,
   array: ArrayType,
-  button: ButtonType,
   radios: RadioType,
 };
