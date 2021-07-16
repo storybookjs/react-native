@@ -2,15 +2,20 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Radio } from './Radio';
 
-const selection = ['104.8MHz', '909 kHz', '90FM'];
+const radio_stations = ['104.8MHz', '909 kHz', '90FM'];
 
 const RadioMeta: ComponentMeta<typeof Radio> = {
   title: 'Radio control',
   component: Radio,
   args: {
-    selection: selection[0],
+    selection: radio_stations[0],
   },
-  argTypes: { selection: { control: { type: 'radios' } } },
+  argTypes: {
+    selection: {
+      options: radio_stations,
+      control: { type: 'radios' },
+    },
+  },
 };
 
 export default RadioMeta;

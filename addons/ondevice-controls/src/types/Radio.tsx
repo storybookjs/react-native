@@ -31,7 +31,7 @@ const RadioType = ({ onChange, arg, isInline }: RadioProps) => {
       <RadioSelect
         isInline={isInline}
         data={options}
-        initValue={arg.value}
+        value={arg.value}
         onChange={(option) => onChange(option.key)}
       />
     </View>

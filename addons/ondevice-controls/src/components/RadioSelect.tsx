@@ -1,10 +1,10 @@
 import styled from '@emotion/native';
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 
 interface RadioProps {
   data: Array<Record<string, any>>;
-  initValue: string;
+  value: string;
   onChange: Function;
   isInline: boolean;
 }
@@ -46,14 +46,7 @@ const RadioLabel = styled.Text(() => ({
   fontSize: 13,
 }));
 
-const RadioSelect = ({
-  data = [],
-  initValue = '',
-  onChange = (value) => value,
-  isInline,
-}: RadioProps) => {
-  const [value, setValue] = useState(initValue);
-
+const RadioSelect = ({ data = [], value = '', onChange, isInline }: RadioProps) => {
   return (
     <RadioContainer isInline={isInline}>
       {data.map((item) => (
@@ -62,7 +55,6 @@ const RadioSelect = ({
           activeOpacity={0.7}
           onPress={() => {
             onChange(item);
-            setValue(item.key);
           }}
         >
           <RadioCircle>
