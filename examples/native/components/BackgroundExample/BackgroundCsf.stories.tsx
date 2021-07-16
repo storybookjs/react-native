@@ -1,16 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-import { Dimensions, Text, View, StyleSheet } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 
 const Background = () => (
-  <View style={styles.view}>
-    <Text style={styles.text}>Change background color via Addons -&gt; Background</Text>
-  </View>
+  <Text style={styles.text}>Change background color via Addons -&gt; Background</Text>
 );
 
 const styles = StyleSheet.create({
-  view: { height: Dimensions.get('window').height },
   text: { color: 'black' },
 });
 
