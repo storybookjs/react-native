@@ -114,7 +114,7 @@ const getStories = (storyStore: StoryStore): DataItem[] => {
 };
 
 const styles = StyleSheet.create({
-  sectionList: { flex: 1, marginBottom: 40 },
+  sectionList: { flex: 1 },
 });
 
 const StoryListView = ({ selectedStory, storyStore }: Props) => {
