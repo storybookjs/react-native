@@ -32,6 +32,7 @@
     "@react-native-community/slider": "^3.0.3",
     "@storybook/addon-actions": "^6.3.1",
     "@storybook/addon-links": "^6.3.1",
+    "@storybook/addon-ondevice-backgrounds": "^6.0.0-alpha.0",
     "@storybook/addon-ondevice-controls": "^6.0.0-alpha.0",
     "@storybook/addons": "^6.3.1",
     "@storybook/react-native": "^6.0.0-alpha.0",
