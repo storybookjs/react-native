@@ -10,33 +10,54 @@ import BackgroundEvents, { PARAM_KEY } from './constants';
 import { Background } from './index';
 
 const codeSample = `
-import { storiesOf } from '@storybook/react-native';
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+import { Dimensions, Text, View, StyleSheet } from 'react-native';
 
-addDecorator(withBackgrounds);
+const Background = () => (
+  <View style={styles.view}>
+    <Text style={styles.text}>Change background color via Addons -&gt; Background</Text>
+  </View>
+);
 
-storiesOf('First Component', module)
-  .addParameters({
+const styles = StyleSheet.create({
+  view: { height: Dimensions.get('window').height },
+  text: { color: 'black' },
+});
+
+const BackgroundMeta: ComponentMeta<typeof Background> = {
+  title: 'Background CSF',
+  component: Background,
+  decorators: [withBackgrounds],
+  parameters: {
     backgrounds: [
       { name: 'warm', value: 'hotpink', default: true },
       { name: 'cool', value: 'deepskyblue' },
     ],
-  })
-  .add("First Button", () => <Button>Click me</Button>);
+  },
+};
+
+export default BackgroundMeta;
+
+type BackgroundStory = ComponentStory<typeof Background>;
+
+export const Basic: BackgroundStory = () => <Background />;
 `.trim();
 
 const Instructions = () => (
   <View>
-    <Text style={styles.title}>Setup Instructions</Text>
-    <Text>
+    <Text style={[styles.paragraph, styles.title]}>Setup Instructions</Text>
+    <Text style={styles.paragraph}>
       Please add the background decorator definition to your story. The background decorate accepts
       an array of items, which should include a name for your color (preferably the css class name)
       and the corresponding color / image value.
     </Text>
-    <Text>
-      Below is an example of how to add the background decorator to your story definition.
+    <Text style={styles.paragraph}>
+      Below is an example of how to add the background decorator to your story definition. Long
+      press the example to copy it.
     </Text>
-    <Text>{codeSample}</Text>
+    <Text selectable>{codeSample}</Text>
   </View>
 );
 
@@ -76,9 +97,7 @@ export default class BackgroundPanel extends Component<BackgroundPanelProps, Bac
       return null;
     }
 
-    const story = api
-      .store()
-      .getStoryAndParameters(this.state.selection.kind, this.state.selection.name);
+    const story = api.store().getRawStory(this.state.selection.kind, this.state.selection.name);
     const backgrounds: Background[] = story.parameters[PARAM_KEY];
 
     return (
@@ -99,4 +118,5 @@ export default class BackgroundPanel extends Component<BackgroundPanelProps, Bac
 
 const styles = StyleSheet.create({
   title: { fontSize: 16 },
+  paragraph: { marginBottom: 8 },
 });
