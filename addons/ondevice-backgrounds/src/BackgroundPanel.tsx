@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Events from '@storybook/core-events';
 import { AddonStore } from '@storybook/addons';
 import { API } from '@storybook/api';
 import { StoryStore } from '@storybook/client-api';
@@ -74,30 +73,20 @@ interface BackgroundPanelState {
 }
 
 export default class BackgroundPanel extends Component<BackgroundPanelProps, BackgroundPanelState> {
-  componentDidMount() {
-    this.props.channel.on(Events.SELECT_STORY, this.onStorySelected);
-  }
-
-  componentWillUnmount() {
-    this.props.channel.removeListener(Events.SELECT_STORY, this.onStorySelected);
-  }
-
   setBackgroundFromSwatch = (background: string) => {
     this.props.channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
-  };
-
-  onStorySelected = (selection: Selection) => {
-    this.setState({ selection });
   };
 
   render() {
     const { active, api } = this.props;
 
-    if (!active || !this.state) {
+    if (!active) {
       return null;
     }
 
-    const story = api.store().getRawStory(this.state.selection.kind, this.state.selection.name);
+    const store = api.store();
+    const storyId = store.getSelection().storyId;
+    const story = store.fromId(storyId);
     const backgrounds: Background[] = story.parameters[PARAM_KEY];
 
     return (
