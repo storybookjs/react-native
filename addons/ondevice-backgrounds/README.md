@@ -2,8 +2,6 @@
 
 Storybook Backgrounds Addon for react-native can be used to change background colors of your stories right from the device.
 
-<img src="https://raw.githubusercontent.com/storybookjs/storybook/master/addons/ondevice-backgrounds/docs/demo.gif" alt="Storybook Backgrounds Addon Demo" width="400" />
-
 ## Installation
 
 ```sh
@@ -12,41 +10,16 @@ yarn add -D @storybook/addon-ondevice-backgrounds
 
 ## Configuration
 
-Create a file called `rn-addons.js` in your storybook config.
-
-Add following content to it:
+Then, add following content to `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-ondevice-backgrounds/register';
-```
-
-Then import `rn-addons.js` next to your `getStorybookUI` call.
-
-```js
-import './rn-addons';
+module.exports = {
+  addons: ['@storybook/addon-ondevice-backgrounds'],
+};
 ```
 
 ## Usage
 
-react-native users will have to import `storiesOf` from `@storybook/react-native` and are required to add the `withBackgrounds` decorator.
+See the [example of using the Backgrounds addon with Component Story Format](../../examples/native/components/BackgroundExample/BackgroundCsf.stories.tsx). You can also run the [react-native app](../../examples/native) to see it in action.
 
-Then write your stories like this:
-
-```js
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-
-addDecorator(withBackgrounds);
-
-storiesOf('Button', module)
-  .addParameters({
-    backgrounds: [
-      { name: 'dark', value: '#222222' },
-      { name: 'light', value: '#eeeeee', default: true },
-    ],
-  })
-  .add('with text', () => <Text>Click me</Text>);
-```
-
-See [web backgrounds addon](../backgrounds#usage) for detailed usage and the [crna-kitchen-sink app](../../examples/crna-kitchen-sink) for more examples.
+The [web backgrounds addon documentation](https://storybook.js.org/docs/react/essentials/backgrounds) may also be useful, but the examples there have not been tested with React-Native Storybook.
