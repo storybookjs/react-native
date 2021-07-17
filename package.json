@@ -34,11 +34,9 @@
     ]
   },
   "scripts": {
-    "await-serve-storybooks": "wait-on http://localhost:8001",
     "bootstrap": "node ./scripts/bootstrap.js",
     "bootstrap:docs": "yarn install --cwd docs",
     "build-packs": "lerna exec --scope '@storybook/*' -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
-    "build-storybooks": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true node ./scripts/build-storybooks.js",
     "changelog": "pr-log --sloppy --cherry-pick",
     "changelog:next": "pr-log --sloppy --since-prerelease",
     "coverage": "codecov",
@@ -46,10 +44,8 @@
     "dev": "concurrently --kill-others \"yarn dev:tsc\" \"yarn dev:babel\"",
     "dev:babel": "lerna exec --scope @storybook/* --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-babel.js",
     "dev:check-types": "tsc --noEmit",
-    "dev:js": "echo 'DEPRECATED: Please use yarn dev:babel' && yarn dev:babel",
-    "dev:ts": "echo 'DEPRECATED: Please use yarn dev:tsc' && yarn dev:tsc",
     "dev:tsc": "lerna exec --scope @storybook/* --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-tsc.js",
-    "prepareAll": "lerna exec --scope @storybook/* --parallel -- cross-env-shell yarn prepare",
+    "prepareAll": "lerna run prepare",
     "docs:build": "npm --prefix docs run build",
     "docs:dev": "npm --prefix docs run dev",
     "github-release": "github-release-from-changelog",
@@ -58,17 +54,12 @@
     "lint:js:fix": "yarn lint:js . --fix",
     "lint:md": "remark -q",
     "lint:package": "sort-package-json",
-    "now-build": "yarn bootstrap --core && yarn build-storybooks",
     "publish:crna": "yarn --cwd examples-native/crna-kitchen-sink expo publish",
     "publish:debug": "npm run publish:latest -- --npm-tag=debug --no-push",
     "publish:latest": "lerna publish --exact --concurrency 1 --force-publish",
     "publish:next": "npm run publish:latest -- --npm-tag=next",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
-    "serve-storybooks": "http-server ./built-storybooks -p 8001",
-    "start": "yarn --cwd examples/official-storybook storybook",
-    "test": "node ./scripts/test.js",
-    "test-latest-cra": "yarn --prefix --cwd lib/cli run test-latest-cra",
-    "test:cli": "npm --prefix lib/cli run test"
+    "test": "node ./scripts/test.js"
   },
   "husky": {
     "hooks": {

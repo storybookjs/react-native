@@ -1,12 +1,12 @@
 import styled from '@emotion/native';
-
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
 interface RadioProps {
   data: Array<Record<string, any>>;
-  initValue: string;
+  value: string;
   onChange: Function;
+  isInline: boolean;
 }
 
 const RadioContainer = styled.View(({ isInline }: any) => ({
@@ -46,46 +46,25 @@ const RadioLabel = styled.Text(() => ({
   fontSize: 13,
 }));
 
-class RadioSelect extends React.Component<RadioProps, { value: string }> {
-  static defaultProps = {
-    data: [],
-    onChange: (value) => value,
-    initValue: '',
-  };
-
-  constructor(props) {
-    super(props);
-
-    const { initValue } = this.props;
-
-    this.state = {
-      value: initValue,
-    };
-  }
-
-  render() {
-    const { data, onChange } = this.props;
-    const { value } = this.state;
-    return (
-      <RadioContainer>
-        {data.map((item) => (
-          <RadioTouchable
-            key={item.label}
-            activeOpacity={0.7}
-            onPress={() => {
-              onChange(item);
-              this.setState({ value: item.key });
-            }}
-          >
-            <RadioCircle>
-              <RadioInnerCircle selected={value === item.key} />
-            </RadioCircle>
-            <RadioLabel>{item.label}</RadioLabel>
-          </RadioTouchable>
-        ))}
-      </RadioContainer>
-    );
-  }
-}
+const RadioSelect = ({ data = [], value = '', onChange, isInline }: RadioProps) => {
+  return (
+    <RadioContainer isInline={isInline}>
+      {data.map((item) => (
+        <RadioTouchable
+          key={item.label}
+          activeOpacity={0.7}
+          onPress={() => {
+            onChange(item);
+          }}
+        >
+          <RadioCircle>
+            <RadioInnerCircle selected={value === item.key} />
+          </RadioCircle>
+          <RadioLabel>{item.label}</RadioLabel>
+        </RadioTouchable>
+      ))}
+    </RadioContainer>
+  );
+};
 
 export default RadioSelect;
