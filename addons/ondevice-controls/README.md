@@ -1,32 +1,27 @@
-# Storybook Knobs Addon for react-native
+# Storybook Controls Addon for React Native
 
-Storybook Knobs Addon allows you to edit react props using the Storybook UI using variables inside stories in [Storybook](https://storybook.js.org).
-
-[Framework Support](https://github.com/storybookjs/storybook/blob/master/ADDONS_SUPPORT.md)
-
-**This is a wrapper for the addon [@storybook/addon-knobs](https://github.com/storybookjs/storybook/blob/master/addons/knobs).
-Refer to its documentation to understand how to use knobs**
+Storybook Controls Addon for React Native allows editing a component's arguments dynamically via a graphical UI without needing to code. The Controls Addon replaces the old Knobs Addon.
 
 ## Installation
 
 ```sh
-yarn add -D @storybook/addon-ondevice-knobs @storybook/addon-knobs
+yarn add -D @storybook/addon-ondevice-controls @storybook/addons
 ```
 
 ## Configuration
 
-Create a file called `rn-addons.js` in your storybook config.
-
-Add following content to it:
+Then, add following content to `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-ondevice-knobs/register';
+module.exports = {
+  addons: ['@storybook/addon-ondevice-controls'],
+};
 ```
 
-Then import `rn-addons.js` next to your `getStorybookUI` call.
+See the [examples of using the Controls Addon with Component Story Format](../../examples/native/components/ControlExamples). You can also run the [react-native app](../../examples/native) to see it in action.
 
-```js
-import './rn-addons';
-```
+The [web Controls Addon documentation](https://storybook.js.org/docs/react/essentials/controls) may also be useful, but the examples there have not been tested with Storybook for React Native.
 
-See [@storybook/addon-knobs](https://github.com/storybookjs/storybook/blob/master/addons/knobs) to learn how to write stories with knobs and the [crna-kitchen-sink app](../../examples/crna-kitchen-sink) for more examples.
+## Migrating from Knobs
+
+See [examples for migrating from Knobs to Controls](https://github.com/storybookjs/storybook/tree/next/addons/controls#how-do-i-migrate-from-addon-knobs) in the web Controls Addon README.
