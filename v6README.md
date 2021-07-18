@@ -2,6 +2,8 @@
 
 ## Setting up a new project from scratch
 
+I've made a script version of this [here](https://gist.github.com/dannyhw/9b84973dcc6ff4fa2e86e32d571d294e)
+
 First create a react native project
 
 ```shell
@@ -47,7 +49,7 @@ echo "/**
  * @format
  */
 
-echo "module.exports = {
+module.exports = {
   transformer: {
     getTransformOptions: async () => ({
       transform: {
