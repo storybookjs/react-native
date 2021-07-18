@@ -24,7 +24,6 @@ export interface SelectProps {
   onChange: (value: any) => void;
 }
 
-//TODO: mapping
 const getOptions = ({ options, control: { labels } }: SelectProps['arg']) => {
   if (Array.isArray(options)) {
     if (labels) {
