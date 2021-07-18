@@ -61,9 +61,8 @@ if (parameters) {
 }`
     : '';
 
-  const path_array_str = `[${storyPaths
-    .map((storyPath) => `require("${storyPath}")`)
-    .join(', \n')}]`;
+  const storyRequires = storyPaths.map((storyPath) => `\t\trequire("${storyPath}")`).join(', \n');
+  const path_array_str = `[\n${storyRequires}\n\t]`;
 
   const registerAddons = addons.map((addon) => `import "${addon}/register";`).join('\n');
   let enhancers = '';
