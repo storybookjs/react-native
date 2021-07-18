@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "5.3.22-alpha.0",
+  "version": "6.0.0-alpha.0",
   "private": true,
   "description": "Storybook for React Native is an open source tool for developing UI components in isolation. It makes building stunning UIs organized and efficient.",
   "keywords": [
@@ -58,6 +58,7 @@
     "publish:debug": "npm run publish:latest -- --npm-tag=debug --no-push",
     "publish:latest": "lerna publish --exact --concurrency 1 --force-publish",
     "publish:next": "npm run publish:latest -- --npm-tag=next",
+    "publish:alpha": "npm run publish:latest -- --npm-tag=alpha",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "test": "node ./scripts/test.js"
   },
