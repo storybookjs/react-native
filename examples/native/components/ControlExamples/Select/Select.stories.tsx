@@ -16,7 +16,7 @@ const SelectExampleMeta: ComponentMeta<typeof SelectExample> = {
     },
   },
   parameters: {
-    notes: 'currently mapping is not working.',
+    notes: 'Select from mulitple options!',
   },
 };
 
