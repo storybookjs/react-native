@@ -9,6 +9,10 @@ const rawStoriesOf: ClientApi['storiesOf'] = preview.api().storiesOf.bind(previe
 export const setAddon: ClientApi['setAddon'] = preview.api().setAddon.bind(preview);
 export const addDecorator: ClientApi['addDecorator'] = preview.api().addDecorator.bind(preview);
 export const addParameters: ClientApi['addParameters'] = preview.api().addParameters.bind(preview);
+export const addArgsEnhancer: ClientApi['addArgsEnhancer'] = preview
+  .api()
+  .addArgsEnhancer.bind(preview);
+
 export const clearDecorators: ClientApi['clearDecorators'] = preview
   .api()
   .clearDecorators.bind(preview);
