@@ -4,6 +4,10 @@
 
 I've made a script version of this [here](https://gist.github.com/dannyhw/9b84973dcc6ff4fa2e86e32d571d294e)
 
+For this guide I will assume that you have yarn, node, npm and npx and they are in your path so your
+terminal can run them. These steps also assume mac or linux so if you're on windows you might need
+to do a bit more work. Happy to accept contributions for a windows guide though!
+
 First create a react native project
 
 ```shell
