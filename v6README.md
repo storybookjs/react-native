@@ -40,7 +40,7 @@ Update your metro config to have `resolver:{resolverMainFields: ['sbmodern', 'ma
 This enables us to use the modern build of storybook instead of the polyfilled versions
 
 ```shell
-/**
+echo "/**
  * Metro configuration for React Native
  * https://github.com/facebook/react-native
  *
