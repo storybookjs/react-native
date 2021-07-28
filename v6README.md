@@ -21,7 +21,6 @@ Open up your react native project in your chosen editor, here I use vscode
 code .
 ```
 
-
 Now install the react native storybook dependencies, here I'm installing all the available ondevice addons. You can just pick the addons you want to use.
 
 ```shell
@@ -34,8 +33,7 @@ yarn add @storybook/react-native@next \
             @storybook/addon-actions \
             @react-native-community/datetimepicker \
             @react-native-community/slider \
-            @storybook/addon-controls \
-            util util-deprecate
+            @storybook/addon-controls
 ```
 
 Datetime picker, slider and addon-controls are required for controls to work. If you don't want controls you don't need to install these (controls is the knobs replacement).
@@ -132,6 +130,7 @@ fs.writeFile("./package.json", JSON.stringify(packageJSON, null, 2), function wr
 ```
 
 If you're on macos then run pod install
+
 ```shell
 cd ios; pod install; cd ..;
 ```
@@ -190,10 +189,8 @@ export const Basic: MyButtonStory = args => <MyButton {...args} />;
 " > components/Button/Button.stories.tsx
 ```
 
-
-
-
 Run the stories auto detection which uses main.js to detect stories.
+
 ```shell
 yarn sbn-get-stories
 ```
