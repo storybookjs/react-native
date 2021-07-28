@@ -3,12 +3,13 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 interface ActionButtonProps {
   onPress: () => void;
+  text: string;
 }
 
-export const ActionButton = ({ onPress }: ActionButtonProps) => {
+export const ActionButton = ({ onPress, text }: ActionButtonProps) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>ActionButton</Text>
+      <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
 };

@@ -48,19 +48,19 @@ const ControlsPanel = ({ api }: { api: API }) => {
   const storyId = store.getSelection().storyId;
   const [argsfromHook, updateArgs, resetArgs] = useArgs(storyId, store);
   const { argTypes, parameters } = store.fromId(storyId);
+  const argsObject = Object.entries(argsfromHook).reduce((prev, [name, value]) => {
+    const isControl = Boolean(argTypes?.[name]?.control);
 
-  const isArgsStory = parameters.__isArgsStory;
-
-  const hasControls = Object.values(argTypes).some((arg: ArgType) => arg?.control);
-  const showWarning = !(hasControls && isArgsStory);
-  const argsObject = hasControls
-    ? Object.entries(argsfromHook).reduce((prev, [name, value]) => {
-        return {
+    return isControl
+      ? {
           ...prev,
           [name]: { ...argTypes?.[name], name, type: argTypes[name]?.control?.type, value },
-        };
-      }, {})
-    : {};
+        }
+      : prev;
+  }, {});
+  const hasControls = Object.keys(argsObject).length > 0;
+  const isArgsStory = parameters.__isArgsStory;
+  const showWarning = !(hasControls && isArgsStory);
 
   return (
     <>

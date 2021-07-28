@@ -8,6 +8,9 @@ const ActionButtonMeta: ComponentMeta<typeof ActionButton> = {
   argTypes: {
     onPress: { action: 'pressed the button' },
   },
+  args: {
+    text: 'Press me!',
+  },
 };
 export default ActionButtonMeta;
 
