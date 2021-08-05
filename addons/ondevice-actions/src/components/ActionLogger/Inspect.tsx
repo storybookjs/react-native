@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
 
 const theme = {
@@ -20,123 +20,121 @@ const theme = {
   ARROW_ANIMATION_DURATION: '0',
 };
 
-class Inspect extends Component<{ name?: string; value: any }, { expanded: boolean }> {
-  state = { expanded: false };
+interface InspectProps {
+  name?: string;
+  value: any;
+}
 
-  render() {
-    const { name, value } = this.props;
-    const { expanded } = this.state;
-    const toggle = (
-      <View style={styles.container}>
-        {name &&
-        ((Array.isArray(value) && value.length) ||
-          (value &&
-            typeof value === 'object' &&
-            !Array.isArray(value) &&
-            Object.keys(value).length)) ? (
-          <Button
-            onPress={() => this.setState((s) => ({ expanded: !s.expanded }))}
-            title={!expanded ? '▶' : '▼'}
-          />
-        ) : null}
-      </View>
-    );
+const Inspect = ({ name, value }: InspectProps) => {
+  const [expanded, setExpanded] = useState(false);
+  const toggle = (
+    <View style={styles.container}>
+      {name &&
+      ((Array.isArray(value) && value.length) ||
+        (value &&
+          typeof value === 'object' &&
+          !Array.isArray(value) &&
+          Object.keys(value).length)) ? (
+        <Button
+          onPress={() => setExpanded((wasExpanded) => !wasExpanded)}
+          title={!expanded ? '▶' : '▼'}
+        />
+      ) : null}
+    </View>
+  );
 
-    const nameComponent = name ? (
-      <Text style={{ color: theme.OBJECT_NAME_COLOR }}>{name}</Text>
-    ) : null;
+  const nameComponent = name ? (
+    <Text style={{ color: theme.OBJECT_NAME_COLOR }}>{name}</Text>
+  ) : null;
 
-    if (Array.isArray(value)) {
-      if (name) {
-        return (
-          <>
-            <View style={styles.row}>
-              {toggle}
-              {nameComponent}
-              <Text>{`: ${value.length === 0 ? '[]' : expanded ? '[' : '[...]'}`}</Text>
-            </View>
-            {expanded ? (
-              <View style={styles.expanded}>
-                {value.map((v, i) => (
-                  <View key={i} style={styles.expanded}>
-                    <Inspect value={v} />
-                  </View>
-                ))}
-                <View style={styles.spacingLeft}>
-                  <Text>]</Text>
-                </View>
-              </View>
-            ) : null}
-          </>
-        );
-      }
-      return (
-        <View>
-          <Text>[</Text>
-          {value.map((v, i) => (
-            <View key={i} style={styles.spacingLeft}>
-              <Inspect value={v} />
-            </View>
-          ))}
-          <Text>]</Text>
-        </View>
-      );
-    }
-    if (value && typeof value === 'object' && !(value instanceof RegExp)) {
-      if (name) {
-        return (
-          <>
-            <View style={styles.row}>
-              {toggle}
-              {nameComponent}
-              <Text>
-                {`: ${Object.keys(value).length === 0 ? '{}' : expanded ? '{' : '{...}'}`}
-              </Text>
-            </View>
-            {expanded ? (
-              <View style={styles.expanded}>
-                {Object.entries(value).map(([key, v]) => (
-                  <View key={key}>
-                    <Inspect name={key} value={v} />
-                  </View>
-                ))}
-                <View style={styles.spacingLeft}>
-                  <Text>{'}'}</Text>
-                </View>
-              </View>
-            ) : null}
-          </>
-        );
-      }
-      return (
-        <View>
-          <Text>{'{'}</Text>
-          {Object.entries(value).map(([key, v]) => (
-            <View key={key}>
-              <Inspect name={key} value={v} />
-            </View>
-          ))}
-          <Text>{'}'}</Text>
-        </View>
-      );
-    }
+  if (Array.isArray(value)) {
     if (name) {
       return (
-        <View style={styles.row}>
-          {toggle}
-          {nameComponent}
-          <Text>: </Text>
-          <Value value={value} />
-        </View>
+        <>
+          <View style={styles.row}>
+            {toggle}
+            {nameComponent}
+            <Text>{`: ${value.length === 0 ? '[]' : expanded ? '[' : '[...]'}`}</Text>
+          </View>
+          {expanded ? (
+            <View style={styles.expanded}>
+              {value.map((v, i) => (
+                <View key={i} style={styles.expanded}>
+                  <Inspect value={v} />
+                </View>
+              ))}
+              <View style={styles.spacingLeft}>
+                <Text>]</Text>
+              </View>
+            </View>
+          ) : null}
+        </>
       );
     }
     return (
       <View>
+        <Text>[</Text>
+        {value.map((v, i) => (
+          <View key={i} style={styles.spacingLeft}>
+            <Inspect value={v} />
+          </View>
+        ))}
+        <Text>]</Text>
+      </View>
+    );
+  }
+  if (value && typeof value === 'object' && !(value instanceof RegExp)) {
+    if (name) {
+      return (
+        <>
+          <View style={styles.row}>
+            {toggle}
+            {nameComponent}
+            <Text>{`: ${Object.keys(value).length === 0 ? '{}' : expanded ? '{' : '{...}'}`}</Text>
+          </View>
+          {expanded ? (
+            <View style={styles.expanded}>
+              {Object.entries(value).map(([key, v]) => (
+                <View key={key}>
+                  <Inspect name={key} value={v} />
+                </View>
+              ))}
+              <View style={styles.spacingLeft}>
+                <Text>{'}'}</Text>
+              </View>
+            </View>
+          ) : null}
+        </>
+      );
+    }
+    return (
+      <View>
+        <Text>{'{'}</Text>
+        {Object.entries(value).map(([key, v]) => (
+          <View key={key}>
+            <Inspect name={key} value={v} />
+          </View>
+        ))}
+        <Text>{'}'}</Text>
+      </View>
+    );
+  }
+  if (name) {
+    return (
+      <View style={styles.row}>
+        {toggle}
+        {nameComponent}
+        <Text>: </Text>
         <Value value={value} />
       </View>
     );
   }
-}
+  return (
+    <View>
+      <Value value={value} />
+    </View>
+  );
+};
 
 function Value({ value }: { value: any }) {
   if (value === null) {
