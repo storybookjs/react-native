@@ -1,7 +1,7 @@
 /**
  * mostly based on code from https://github.com/CharlesMangwa/react-native-simple-markdown
  */
-import React, { Component, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { ImageStyle, TextStyle, View, ViewStyle } from 'react-native';
 import SimpleMarkdown, { ParserRules } from 'simple-markdown';
 
@@ -20,24 +20,10 @@ export type DefaultProps = Props & {
   styles: Object;
 };
 
-class Markdown extends Component<Props> {
-  static defaultProps: DefaultProps = {
-    children: '',
-    rules: {},
-    styles: initialStyles,
-  };
-
-  shouldComponentUpdate = (nextProps: Props): boolean =>
-    this.props.children !== nextProps.children || this.props.styles !== nextProps.styles;
-
-  // @TODO: Rewrite this part to prevent text from overriding other rules
-  /** Post processes rules to strip out unwanted styling options
-   *  while keeping the default 'paragraph' and 'text' rules
-   */
-
-  _renderContent = (children: string): ReactElement => {
+const Markdown = ({ children = '', errorHandler, styles = initialStyles }: Props) => {
+  const _renderContent = (): ReactElement => {
     try {
-      const mergedStyles = { ...initialStyles, ...this.props.styles };
+      const mergedStyles = { ...initialStyles, ...styles };
 
       const rules = initialRules(mergedStyles);
 
@@ -48,14 +34,11 @@ class Markdown extends Component<Props> {
       });
       return SimpleMarkdown.outputFor(rules, 'react')(tree);
     } catch (errors) {
-      this.props.errorHandler ? this.props.errorHandler(errors, children) : console.error(errors);
+      errorHandler ? errorHandler(errors, children) : console.error(errors);
     }
     return null;
   };
+  return <View style={[styles.view]}>{_renderContent()}</View>;
+};
 
-  render() {
-    return <View style={[this.props.styles.view]}>{this._renderContent(this.props.children)}</View>;
-  }
-}
-
-export default Markdown;
+export default React.memo(Markdown);
