@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { AddonStore } from '@storybook/addons';
 import { API } from '@storybook/api';
-import { StoryStore } from '@storybook/client-api';
 
 import Swatch from './Swatch';
 import BackgroundEvents, { PARAM_KEY } from './constants';
@@ -58,49 +57,40 @@ const Instructions = () => (
 );
 
 export type Channel = ReturnType<AddonStore['getChannel']>;
-type Selection = ReturnType<StoryStore['fromId']>;
 interface BackgroundPanelProps {
   channel: Channel;
   api: API;
   active: boolean;
 }
 
-interface BackgroundPanelState {
-  selection: Selection;
-}
-
-export default class BackgroundPanel extends Component<BackgroundPanelProps, BackgroundPanelState> {
-  setBackgroundFromSwatch = (background: string) => {
-    this.props.channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
-  };
-
-  render() {
-    const { active, api } = this.props;
-
-    if (!active) {
-      return null;
-    }
-
-    const store = api.store();
-    const storyId = store.getSelection().storyId;
-    const story = store.fromId(storyId);
-    const backgrounds: Background[] = story.parameters[PARAM_KEY];
-
-    return (
-      <View>
-        {backgrounds ? (
-          backgrounds.map(({ value, name }) => (
-            <View key={`${name} ${value}`}>
-              <Swatch value={value} name={name} setBackground={this.setBackgroundFromSwatch} />
-            </View>
-          ))
-        ) : (
-          <Instructions />
-        )}
-      </View>
-    );
+const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
+  if (!active) {
+    return null;
   }
-}
+
+  const store = api.store();
+  const storyId = store.getSelection().storyId;
+  const story = store.fromId(storyId);
+  const backgrounds: Background[] = story.parameters[PARAM_KEY];
+  const setBackgroundFromSwatch = (background: string) => {
+    channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
+  };
+  return (
+    <View>
+      {backgrounds ? (
+        backgrounds.map(({ value, name }) => (
+          <View key={`${name} ${value}`}>
+            <Swatch value={value} name={name} setBackground={setBackgroundFromSwatch} />
+          </View>
+        ))
+      ) : (
+        <Instructions />
+      )}
+    </View>
+  );
+};
+
+export default BackgroundPanel;
 
 const styles = StyleSheet.create({
   title: { fontSize: 16 },

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { ReactNode, useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Constants from './constants';
 import { Channel } from './BackgroundPanel';
@@ -6,43 +6,27 @@ import { Channel } from './BackgroundPanel';
 interface ContainerProps {
   initialBackground: string;
   channel: Channel;
+  children: ReactNode;
 }
 
-interface ContainerState {
-  background: string;
-}
+const Container = ({ initialBackground, channel, children }: ContainerProps) => {
+  const [background, setBackground] = useState(initialBackground || '');
 
-export default class Container extends Component<ContainerProps, ContainerState> {
-  constructor(props: ContainerProps) {
-    super(props);
-    this.state = { background: props.initialBackground || '' };
-  }
+  useEffect(() => {
+    channel.on(Constants.UPDATE_BACKGROUND, setBackground);
+    return () => {
+      channel.removeListener(Constants.UPDATE_BACKGROUND, setBackground);
+    };
+  }, [channel]);
 
-  componentDidMount() {
-    const { channel } = this.props;
-    channel.on(Constants.UPDATE_BACKGROUND, this.onBackgroundChange);
-  }
+  return (
+    <View style={[styles.container, background && { backgroundColor: background }]}>
+      {children}
+    </View>
+  );
+};
 
-  componentWillUnmount() {
-    const { channel } = this.props;
-    channel.removeListener(Constants.UPDATE_BACKGROUND, this.onBackgroundChange);
-  }
-
-  onBackgroundChange = (background: string) => {
-    this.setState({ background });
-  };
-
-  render() {
-    const { background } = this.state;
-    const { children } = this.props;
-
-    return (
-      <View style={[styles.container, background && { backgroundColor: background }]}>
-        {children}
-      </View>
-    );
-  }
-}
+export default Container;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
