@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import css from '@emotion/css';
 import { CreateStyled, CreateStyledComponentExtrinsic } from '@emotion/styled-base';
 import ReactNative from 'react-native';
-// import { theme } from './preview/components/Shared/theme'
 
 // https://github.com/emotion-js/emotion/pull/1176/
 // meanwhile: https://github.com/emotion-js/emotion/issues/839#issuecomment-500195354
