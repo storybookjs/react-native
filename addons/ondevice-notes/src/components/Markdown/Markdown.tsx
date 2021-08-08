@@ -3,17 +3,16 @@
  */
 import React, { ReactElement } from 'react';
 import { ImageStyle, TextStyle, View, ViewStyle } from 'react-native';
-import SimpleMarkdown, { ParserRules } from 'simple-markdown';
+import SimpleMarkdown from 'simple-markdown';
 
 // @ts-ignore
 import initialRules from './rules';
 import initialStyles from './styles';
 
 export type Props = {
-  children: string;
+  children?: string;
   errorHandler?: (errors: any[], children: string) => void;
-  rules: ParserRules;
-  styles: { view?: ViewStyle; text?: TextStyle; image?: ImageStyle };
+  styles?: { view?: ViewStyle; text?: TextStyle; image?: ImageStyle };
 };
 
 export type DefaultProps = Props & {
