@@ -39,9 +39,6 @@ const Label = styled.Text(({ theme }) => ({
 interface PropFieldProps {
   onChange: (value: any) => void;
   arg: ArgType;
-  name: string;
-  type: string;
-  value: string;
 }
 
 const PropField = ({ onChange, arg }: PropFieldProps) => {

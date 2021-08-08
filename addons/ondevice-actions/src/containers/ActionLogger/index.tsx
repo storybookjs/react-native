@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import deepEqual from 'fast-deep-equal';
-
 import { addons } from '@storybook/addons';
 import { SELECT_STORY } from '@storybook/core-events';
 import { ActionDisplay, EVENT_ID } from '@storybook/addon-actions';
-
 import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
 
 interface ActionLoggerProps {
   active: boolean;
-}
-
-interface ActionLoggerState {
-  actions: ActionDisplay[];
 }
 
 const safeDeepEqual = (a: any, b: any): boolean => {
@@ -23,57 +17,50 @@ const safeDeepEqual = (a: any, b: any): boolean => {
   }
 };
 
-export default class ActionLogger extends Component<ActionLoggerProps, ActionLoggerState> {
-  private channel = addons.getChannel();
+const ActionLogger = ({ active }: ActionLoggerProps) => {
+  const [actions, setActions] = useState<ActionDisplay[]>([]);
+  const clearActions = () => setActions([]);
+  const clearActionsOnStoryChange = actions.length > 0 && actions[0].options.clearOnStoryChange;
 
-  constructor(props: ActionLoggerProps) {
-    super(props);
-
-    this.state = { actions: [] };
-  }
-
-  componentDidMount() {
-    this.channel.addListener(EVENT_ID, this.addAction);
-    this.channel.addListener(SELECT_STORY, this.handleStoryChange);
-  }
-
-  componentWillUnmount() {
-    this.channel.removeListener(SELECT_STORY, this.handleStoryChange);
-    this.channel.removeListener(EVENT_ID, this.addAction);
-  }
-
-  handleStoryChange = () => {
-    const { actions } = this.state;
-    if (actions.length > 0 && actions[0].options.clearOnStoryChange) {
-      this.clearActions();
-    }
-  };
-
-  addAction = (action: ActionDisplay) => {
-    this.setState((prevState: ActionLoggerState) => {
-      const actions = [...prevState.actions];
-      const previous = actions.length && actions[0];
-      if (previous && safeDeepEqual(previous.data, action.data)) {
-        previous.count++;
-      } else {
-        action.count = 1;
-        actions.unshift(action);
+  useEffect(() => {
+    const handleStoryChange = () => {
+      if (clearActionsOnStoryChange) {
+        clearActions();
       }
-      return { actions: actions.slice(0, action.options.limit) };
-    });
-  };
-
-  clearActions = () => {
-    this.setState({ actions: [] });
-  };
-
-  render() {
-    const { actions = [] } = this.state;
-    const { active } = this.props;
-    const props = {
-      actions,
-      onClear: this.clearActions,
     };
-    return active ? <ActionLoggerComponent {...props} /> : null;
-  }
-}
+
+    const channel = addons.getChannel();
+    channel.addListener(SELECT_STORY, handleStoryChange);
+
+    return () => {
+      channel.removeListener(SELECT_STORY, handleStoryChange);
+    };
+  }, [clearActionsOnStoryChange]);
+
+  useEffect(() => {
+    const addAction = (action: ActionDisplay) => {
+      setActions((prevState: ActionDisplay[]) => {
+        const newActions = [...prevState];
+        const previous = newActions.length && newActions[0];
+        if (previous && safeDeepEqual(previous.data, action.data)) {
+          previous.count++;
+        } else {
+          action.count = 1;
+          newActions.unshift(action);
+        }
+        return newActions.slice(0, action.options.limit);
+      });
+    };
+
+    const channel = addons.getChannel();
+    channel.addListener(EVENT_ID, addAction);
+
+    return () => {
+      channel.removeListener(EVENT_ID, addAction);
+    };
+  }, []);
+
+  return active ? <ActionLoggerComponent actions={actions} onClear={clearActions} /> : null;
+};
+
+export default ActionLogger;
