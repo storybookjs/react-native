@@ -22,8 +22,7 @@ cd RnSBSixAlpha
 
 ```shell
 npm install --global expo-cli
-expo init appName
-# select blank TypeScript template when prompted
+expo init -t expo-template-blank-typescript appName
 cd appName
 ```
 
@@ -50,8 +49,10 @@ yarn add @storybook/react-native@next \
 
 Datetime picker, slider and addon-controls are required for controls to work. If you don't want controls you don't need to install these (controls is the knobs replacement).
 
-For React Native without Expo, update your metro config to have `resolver:{resolverMainFields: ['sbmodern', 'main']}`.
-This enables us to use the modern build of storybook instead of the polyfilled versions. **Skip this step if using Expo, otherwise the app will not work. See [#247](https://github.com/storybookjs/react-native/issues/247).**
+Continue by updating your metro config to have `resolver:{resolverMainFields: ['sbmodern', 'main']}`.
+This enables us to use the modern build of storybook instead of the polyfilled versions.
+
+**Vanilla React Native**
 
 ```shell
 echo "/**
@@ -74,7 +75,27 @@ module.exports = {
     resolverMainFields: ['sbmodern', 'main'],
   },
 };" > metro.config.js
+```
 
+**Expo**
+
+```shell
+echo "const { getDefaultConfig } = require('expo/metro-config');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+defaultConfig.resolver.resolverMainFields = [
+  'sbmodern',
+  ...defaultConfig.resolver.resolverMainFields,
+];
+defaultConfig.transformer.getTransformOptions = async () => ({
+  transform: {
+    experimentalImportSupport: false,
+    inlineRequires: false,
+  },
+});
+module.exports = defaultConfig;
+" > metro.config.js;
 ```
 
 Create .storybook/main and preview.js, here we use unix commands to set this up. If you are using windows then just make the .storybook folder and components folder then add the content for main.js and preview.js from those "echo '...' >" commands
