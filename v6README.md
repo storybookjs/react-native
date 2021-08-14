@@ -104,9 +104,9 @@ const StorybookUIRoot = getStorybookUI({
   asyncStorage: AsyncStorage,
 });
 
-export default StorybookUIRoot;" > Storybook.tsx
+export default StorybookUIRoot;" >.storybook/Storybook.tsx
 
-echo "import StorybookUIRoot from './Storybook';
+echo "import StorybookUIRoot from './.storybook/Storybook';
 export { StorybookUIRoot as default };" > App.tsx
 ```
 
