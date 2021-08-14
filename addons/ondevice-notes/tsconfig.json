@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "jsx": "react-native",
+    "jsx": "react",
     "rootDir": "./src",
-    "module": "ESNext",
+    "module": "ES6",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "target": "ESNext",
-    "lib": ["ESNext"],
+    "target": "ES2016",
     "allowSyntheticDefaultImports": true,
     "outDir": "dist/",
     "moduleResolution": "node",
