@@ -2,20 +2,31 @@
 
 ## Setting up a new project from scratch
 
-I've made a script version of this [here](https://gist.github.com/dannyhw/9b84973dcc6ff4fa2e86e32d571d294e)
+**Vanilla React Native:** Run the [setup script](https://gist.github.com/dannyhw/9b84973dcc6ff4fa2e86e32d571d294e) or follow this guide to do it step-by-step.
 
-For this guide I will assume that you have yarn, node, npm and npx and they are in your path so your
-terminal can run them. These steps also assume mac or linux so if you're on windows you might need
-to do a bit more work. Happy to accept contributions for a windows guide though!
+**Expo:** Follow this guide.
 
-First create a react native project
+This guide assumes that you have yarn, node, npm and npx and they are in your path so your
+terminal can run them. The guide is for Mac/Linux, Windows might need slight adjustments. Contributions for a Windows guide are welcome!
+
+First, create the project:
+
+**Vanilla React Native**
 
 ```shell
 npx react-native init RnSBSixAlpha --template react-native-template-typescript
 cd RnSBSixAlpha
 ```
 
-Open up your react native project in your chosen editor, here I use vscode
+**Expo**
+
+```shell
+npm install --global expo-cli
+expo init -t expo-template-blank-typescript appName
+cd appName
+```
+
+Next, open the project in your chosen editor, here I use vscode
 
 ```shell
 code .
@@ -38,10 +49,10 @@ yarn add @storybook/react-native@next \
 
 Datetime picker, slider and addon-controls are required for controls to work. If you don't want controls you don't need to install these (controls is the knobs replacement).
 
-Currently there is an issue where util and util deprecate are required, this is a dependency issue and will be fixed in the next alpha
+Continue by updating your metro config to have `resolver:{resolverMainFields: ['sbmodern', 'main']}`.
+This enables us to use the modern build of storybook instead of the polyfilled versions.
 
-Update your metro config to have `resolver:{resolverMainFields: ['sbmodern', 'main']}`.
-This enables us to use the modern build of storybook instead of the polyfilled versions
+**Vanilla React Native**
 
 ```shell
 echo "/**
@@ -64,7 +75,27 @@ module.exports = {
     resolverMainFields: ['sbmodern', 'main'],
   },
 };" > metro.config.js
+```
 
+**Expo**
+
+```shell
+echo "const { getDefaultConfig } = require('expo/metro-config');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+defaultConfig.resolver.resolverMainFields = [
+  'sbmodern',
+  ...defaultConfig.resolver.resolverMainFields,
+];
+defaultConfig.transformer.getTransformOptions = async () => ({
+  transform: {
+    experimentalImportSupport: false,
+    inlineRequires: false,
+  },
+});
+module.exports = defaultConfig;
+" > metro.config.js;
 ```
 
 Create .storybook/main and preview.js, here we use unix commands to set this up. If you are using windows then just make the .storybook folder and components folder then add the content for main.js and preview.js from those "echo '...' >" commands
@@ -129,7 +160,7 @@ fs.writeFile("./package.json", JSON.stringify(packageJSON, null, 2), function wr
 });';
 ```
 
-If you're on macos then run pod install
+If you're using macOS and vanilla React Native, run pod install:
 
 ```shell
 cd ios; pod install; cd ..;
