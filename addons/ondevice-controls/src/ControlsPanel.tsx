@@ -1,8 +1,8 @@
 import styled from '@emotion/native';
 import { API } from '@storybook/api';
 import React from 'react';
-import { Linking, Text } from 'react-native';
 import { useArgs } from './hooks';
+import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';
 
 const Touchable = styled.TouchableOpacity(({ theme }) => ({
@@ -62,20 +62,12 @@ const ControlsPanel = ({ api }: { api: API }) => {
   const isArgsStory = parameters.__isArgsStory;
   const showWarning = !(hasControls && isArgsStory);
 
+  if (showWarning) {
+    return <NoControlsWarning />;
+  }
+
   return (
     <>
-      {showWarning && (
-        <Text>
-          This story is not configured to handle controls
-          <Text
-            onPress={() =>
-              Linking.openURL('https://storybook.js.org/docs/react/essentials/controls')
-            }
-          >
-            Learn how to add controls
-          </Text>
-        </Text>
-      )}
       <PropForm args={argsObject} onFieldChange={updateArgs} />
       <Touchable onPress={() => resetArgs()}>
         <ResetButton>RESET</ResetButton>
