@@ -36,15 +36,14 @@ Now install the react native storybook dependencies, here I'm installing all the
 
 ```shell
 yarn add @storybook/react-native@next \
-            @react-native-async-storage/async-storage \
             @storybook/addon-ondevice-actions@next \
             @storybook/addon-ondevice-controls@next \
             @storybook/addon-ondevice-backgrounds@next \
             @storybook/addon-ondevice-notes@next \
             @storybook/addon-actions \
-            @react-native-community/datetimepicker \
-            @react-native-community/slider \
             @storybook/addon-controls
+            
+expo install @react-native-async-storage/async-storage @react-native-community/datetimepicker @react-native-community/slider
 ```
 
 Datetime picker, slider and addon-controls are required for controls to work. If you don't want controls you don't need to install these (controls is the knobs replacement).
