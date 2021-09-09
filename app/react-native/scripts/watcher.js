@@ -10,12 +10,20 @@ const {
 
 const log = console.log.bind(console);
 
-const watchPaths = [...getGlobs(), getMainPath()];
+const watchPaths = [getMainPath()];
 if (getPreviewExists()) {
   watchPaths.push(getPreviewPath());
 }
 
-chokidar.watch(watchPaths).on('all', (event, watchPath) => {
-  log(`event ${event} for file ${path.basename(watchPath)}`);
+const updateRequires = (event, watchPath) => {
+  if (typeof watchPath === 'string') {
+    log(`event ${event} for file ${path.basename(watchPath)}`);
+  }
   writeRequires();
-});
+};
+
+chokidar.watch(watchPaths).on('change', (watchPath) => updateRequires('change', watchPath));
+chokidar
+  .watch(getGlobs())
+  .on('add', (watchPath) => updateRequires('add', watchPath))
+  .on('unlink', (watchPath) => updateRequires('unlink', watchPath));
