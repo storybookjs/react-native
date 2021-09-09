@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
+const storybookRequiresLocation = '/.storybook/storybook.requires.js';
 
 function requireUncached(module) {
   delete require.cache[require.resolve(module)];
@@ -37,7 +38,7 @@ function getAddons() {
 function getPaths() {
   return getGlobs().reduce((acc, storyGlob) => {
     const paths = glob.sync(storyGlob);
-    return [...acc, ...paths];
+    return [...acc, ...paths.map((storyPath) => `../${storyPath}`)];
   }, []);
 }
 
@@ -47,12 +48,12 @@ function writeRequires() {
   const storyPaths = getPaths();
   const addons = getAddons();
 
-  fs.writeFileSync(path.join(cwd, '/storybook.requires.js'), '');
+  fs.writeFileSync(path.join(cwd, storybookRequiresLocation), '');
 
   const previewExists = getPreviewExists();
   let previewJs = previewExists
     ? `
-import { decorators, parameters } from './.storybook/preview';
+import { decorators, parameters } from './preview';
 if (decorators) {
   decorators.forEach((decorator) => addDecorator(decorator));
 }
@@ -91,7 +92,7 @@ configure(getStories, module, false)
 
   `;
 
-  fs.writeFileSync(path.join(cwd, '/storybook.requires.js'), fileContent, {
+  fs.writeFileSync(path.join(cwd, storybookRequiresLocation), fileContent, {
     encoding: 'utf8',
     flag: 'w',
   });
