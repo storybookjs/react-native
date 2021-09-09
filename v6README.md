@@ -34,6 +34,8 @@ code .
 
 Now install the react native storybook dependencies, here I'm installing all the available ondevice addons. You can just pick the addons you want to use.
 
+**Vanilla React Native**
+
 ```shell
 yarn add @storybook/react-native@next \
             @react-native-async-storage/async-storage \
@@ -45,6 +47,22 @@ yarn add @storybook/react-native@next \
             @react-native-community/datetimepicker \
             @react-native-community/slider \
             @storybook/addon-controls
+```
+
+**Expo**
+
+For Expo, we need to separately install the react native packages so Expo can maintain the compatibility for us.
+
+```shell
+yarn add @storybook/react-native@next \
+            @storybook/addon-ondevice-actions@next \
+            @storybook/addon-ondevice-controls@next \
+            @storybook/addon-ondevice-backgrounds@next \
+            @storybook/addon-ondevice-notes@next \
+            @storybook/addon-actions \
+            @storybook/addon-controls
+            
+expo install @react-native-async-storage/async-storage @react-native-community/datetimepicker @react-native-community/slider
 ```
 
 Datetime picker, slider and addon-controls are required for controls to work. If you don't want controls you don't need to install these (controls is the knobs replacement).
