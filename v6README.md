@@ -61,7 +61,7 @@ yarn add @storybook/react-native@next \
             @storybook/addon-ondevice-notes@next \
             @storybook/addon-actions \
             @storybook/addon-controls
-            
+
 expo install @react-native-async-storage/async-storage @react-native-community/datetimepicker @react-native-community/slider
 ```
 
@@ -123,7 +123,7 @@ mkdir .storybook
 mkdir components
 echo "module.exports = {
   stories: [
-    './components/**/*.stories.?(ts|tsx|js|jsx)'
+    'components/**/*.stories.?(ts|tsx|js|jsx)'
   ],
    addons: [
     '@storybook/addon-ondevice-notes',
