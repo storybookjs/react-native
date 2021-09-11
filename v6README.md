@@ -4,7 +4,7 @@
 
 **Vanilla React Native:** Run the [setup script](https://gist.github.com/dannyhw/9b84973dcc6ff4fa2e86e32d571d294e) or follow this guide to do it step-by-step.
 
-**Expo:** Follow this guide.
+**Expo:** Run the [expo setup script](https://gist.github.com/dannyhw/92b3ff0d6ccaead9df2820a507154b87) or follow this guide to do it step-by-step.
 
 This guide assumes that you have yarn, node, npm and npx and they are in your path so your
 terminal can run them. The guide is for Mac/Linux, Windows might need slight adjustments. Contributions for a Windows guide are welcome!
@@ -54,15 +54,16 @@ yarn add @storybook/react-native@next \
 For Expo, we need to separately install the react native packages so Expo can maintain the compatibility for us.
 
 ```shell
-yarn add @storybook/react-native@next \
-            @storybook/addon-ondevice-actions@next \
-            @storybook/addon-ondevice-controls@next \
-            @storybook/addon-ondevice-backgrounds@next \
-            @storybook/addon-ondevice-notes@next \
-            @storybook/addon-actions \
-            @storybook/addon-controls
-
-expo install @react-native-async-storage/async-storage @react-native-community/datetimepicker @react-native-community/slider
+expo install @storybook/react-native@next \
+    @storybook/addon-ondevice-actions@next \
+    @storybook/addon-ondevice-controls@next \
+    @storybook/addon-ondevice-backgrounds@next \
+    @storybook/addon-ondevice-notes@next \
+    @storybook/addon-actions \
+    @storybook/addon-controls \
+    @react-native-async-storage/async-storage \
+    @react-native-community/datetimepicker \
+    @react-native-community/slider
 ```
 
 Datetime picker, slider and addon-controls are required for controls to work. If you don't want controls you don't need to install these (controls is the knobs replacement).
@@ -112,6 +113,7 @@ defaultConfig.transformer.getTransformOptions = async () => ({
     inlineRequires: false,
   },
 });
+defaultConfig.watchFolders = [...defaultConfig.watchFolders, './.storybook'];
 module.exports = defaultConfig;
 " > metro.config.js;
 ```
