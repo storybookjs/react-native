@@ -52,7 +52,7 @@
     "util": "^0.12.4"
   },
   "devDependencies": {
-    "@types/react-native": "^0.64.6"
+    "@types/react-native": "^0.65.1"
   },
   "peerDependencies": {
     "react": "*",
