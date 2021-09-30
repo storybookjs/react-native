@@ -1,13 +1,15 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
 import { ClientApi, ConfigApi, StoryStore } from '@storybook/client-api';
 import { Loadable } from '@storybook/core-client';
 import Events from '@storybook/core-events';
+import { toId } from '@storybook/csf';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
-import { loadCsf } from './loadCsf';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
+import { loadCsf } from './loadCsf';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -16,16 +18,27 @@ interface AsyncStorage {
   setItem: (key: string, value: string) => Promise<void>;
 }
 
+interface InitialSelection {
+  /**
+   * Kind is the default export name or the storiesOf("name") name
+   */
+  kind: string;
+
+  /**
+   * Name is the named export or the .add("name") name
+   */
+  name: string;
+}
+
 export type Params = {
   onDeviceUI: boolean;
-  asyncStorage: AsyncStorage | null;
   resetStorybook: boolean;
   disableWebsockets: boolean;
   query: string;
   host: string;
   port: number;
   secured: boolean;
-  initialSelection: any;
+  initialSelection: InitialSelection;
   shouldPersistSelection: boolean;
   tabOpen: number;
   isUIHidden: boolean;
@@ -45,8 +58,6 @@ export default class Preview {
   _decorators: any[];
 
   _asyncStorageStoryId: string;
-
-  _asyncStorage: AsyncStorage | null;
 
   _configApi: ConfigApi;
 
@@ -74,25 +85,11 @@ export default class Preview {
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
-    if (params.asyncStorage === undefined) {
-      console.warn(
-        `
-    Starting Storybook v5.3.0, we require you to manually pass an asyncStorage prop. Pass null to disable or use https://github.com/react-native-async-storage/async-storage.
-
-    More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-native-async-storage
-          `.trim()
-      );
-    }
-
-    if (params.asyncStorage) {
-      this._asyncStorage = params.asyncStorage;
-    }
-
     const { initialSelection, shouldPersistSelection } = params;
     this._setInitialStory(initialSelection, shouldPersistSelection);
 
     this._channel.on(Events.SET_CURRENT_STORY, (d: { storyId: string }) => {
-      this._selectStoryEvent(d);
+      this._selectStoryEvent(d, shouldPersistSelection);
     });
 
     const { _storyStore } = this;
@@ -113,7 +110,7 @@ export default class Preview {
     );
   };
 
-  _setInitialStory = async (initialSelection: any, shouldPersistSelection = true) => {
+  _setInitialStory = async (initialSelection: InitialSelection, shouldPersistSelection = true) => {
     const story = await this._getInitialStory(initialSelection, shouldPersistSelection);
 
     if (story) {
@@ -121,15 +118,17 @@ export default class Preview {
     }
   };
 
-  _getInitialStory = async (initialSelection: any, shouldPersistSelection = true) => {
-    let story = null;
-    if (initialSelection && this._checkStory(initialSelection)) {
-      story = initialSelection;
+  _getInitialStory = async (initialSelection: InitialSelection, shouldPersistSelection = true) => {
+    let story: string = null;
+    const initialSelectionId = toId(initialSelection.kind, initialSelection.name);
+
+    if (initialSelection && initialSelectionId && this._checkStory(initialSelectionId)) {
+      story = initialSelectionId;
     } else if (shouldPersistSelection) {
       try {
         let value = this._asyncStorageStoryId;
-        if (!value && this._asyncStorage) {
-          value = JSON.parse(await this._asyncStorage.getItem(STORAGE_KEY));
+        if (!value) {
+          value = JSON.parse(await AsyncStorage.getItem(STORAGE_KEY));
           this._asyncStorageStoryId = value;
         }
 
@@ -157,10 +156,10 @@ export default class Preview {
     return this._storyStore.fromId(storyId);
   }
 
-  _selectStoryEvent({ storyId }: { storyId: string }) {
+  _selectStoryEvent({ storyId }: { storyId: string }, shouldPersistSelection) {
     if (storyId) {
-      if (this._asyncStorage) {
-        this._asyncStorage.setItem(STORAGE_KEY, JSON.stringify(storyId)).catch(() => {});
+      if (shouldPersistSelection) {
+        AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(storyId)).catch(() => {});
       }
 
       const story = this._getStory(storyId);
@@ -180,7 +179,7 @@ export default class Preview {
 
     const story = this._getStory(storyId);
 
-    if (story.storyFn === null) {
+    if (story === null || story.storyFn === null) {
       return null;
     }
 

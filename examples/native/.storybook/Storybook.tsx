@@ -1,10 +1,10 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getStorybookUI } from '@storybook/react-native';
 
 import './storybook.requires';
 
 const StorybookUIRoot = getStorybookUI({
-  asyncStorage: AsyncStorage,
+  // initialSelection: { kind: 'Radio control', name: 'Basic' },
+  // shouldPersistSelection: false,
 });
 
 export default StorybookUIRoot;
