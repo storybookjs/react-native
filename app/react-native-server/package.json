@@ -38,7 +38,7 @@
     "@storybook/core": "^6",
     "@storybook/core-events": "^6",
     "@storybook/ui": "^6",
-    "commander": "8.2.0",
+    "commander": "^8.2.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "react": "^17.0.2",

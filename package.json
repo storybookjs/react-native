@@ -144,7 +144,7 @@
     "chalk": "^3.0.0",
     "codecov": "^3.5.0",
     "codelyzer": "^5.0.0",
-    "commander": "8.2.0",
+    "commander": "^8.2.0",
     "concurrently": "^5.0.0",
     "core-js": "^3.0.1",
     "corejs-upgrade-webpack-plugin": "^3.0.1",
