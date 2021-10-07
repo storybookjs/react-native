@@ -22,28 +22,20 @@ function requireUncached(module) {
   return require(module);
 }
 
-function getMainPath({ configPath }) {
-  return path.join(cwd, configPath, 'main.js');
-}
-
 function getMain({ configPath }) {
-  const mainPath = getMainPath({ configPath });
-  const main = requireUncached(mainPath);
-  return main;
-}
-
-function getPreviewPath({ configPath }) {
-  return path.join(cwd, configPath, 'preview.js');
+  const mainPath = path.join(cwd, configPath, 'main.js');
+  return requireUncached(mainPath);
 }
 
 function getPreviewExists({ configPath }) {
-  return fs.existsSync(getPreviewPath({ configPath }));
+  const previewPath = path.join(cwd, configPath, 'preview.js');
+  return fs.existsSync(previewPath);
 }
 
 function writeRequires({ configPath }) {
   const storybookRequiresLocation = path.join(cwd, configPath, 'storybook.requires.js');
-  const mainPath = getMainPath({ configPath });
-  const main = requireUncached(mainPath);
+
+  const main = getMain({ configPath });
   const storyPaths = main.stories.reduce((acc, storyGlob) => {
     const paths = glob.sync(storyGlob, { cwd: configPath });
     return [...acc, ...paths];
@@ -100,7 +92,5 @@ function writeRequires({ configPath }) {
 module.exports = {
   writeRequires,
   getMain,
-  getMainPath,
   getPreviewExists,
-  getPreviewPath,
 };

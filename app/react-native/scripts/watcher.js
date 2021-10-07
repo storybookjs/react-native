@@ -1,21 +1,17 @@
 const chokidar = require('chokidar');
 const path = require('path');
-const {
-  writeRequires,
-  getMainPath,
-  getMain,
-  getPreviewPath,
-  getPreviewExists,
-} = require('./loader');
+
+const { writeRequires, getMain, getPreviewExists } = require('./loader');
 
 const { getArguments } = require('./handle-args');
 
 const args = getArguments();
 const log = console.log.bind(console);
 
-const watchPaths = [getMainPath(args)];
-if (getPreviewExists()) {
-  watchPaths.push(getPreviewPath(args));
+const watchPaths = ['./main.js'];
+
+if (getPreviewExists(args)) {
+  watchPaths.push('./preview.js');
 }
 
 const updateRequires = (event, watchPath) => {
@@ -27,8 +23,11 @@ const updateRequires = (event, watchPath) => {
 
 const globs = getMain(args).stories;
 
-chokidar.watch(watchPaths).on('change', (watchPath) => updateRequires('change', watchPath));
 chokidar
-  .watch(globs)
+  .watch(watchPaths, { cwd: args.configPath })
+  .on('change', (watchPath) => updateRequires('change', watchPath));
+
+chokidar
+  .watch(globs, { cwd: args.configPath })
   .on('add', (watchPath) => updateRequires('add', watchPath))
   .on('unlink', (watchPath) => updateRequires('unlink', watchPath));
