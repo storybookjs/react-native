@@ -46,8 +46,10 @@
     "@storybook/core-events": "^6",
     "@storybook/csf": "0.0.1",
     "chokidar": "^3.5.1",
+    "commander": "8.2.0",
     "emotion-theming": "^10.0.19",
     "glob": "^7.1.7",
+    "prettier": "2.4.1",
     "react-native-swipe-gestures": "^1.0.5",
     "util": "^0.12.4"
   },
