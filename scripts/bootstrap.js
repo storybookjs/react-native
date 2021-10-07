@@ -179,8 +179,9 @@ function run() {
     .reduce((acc, key) => acc.option(tasks[key].option, tasks[key].name), main)
     .parse(process.argv);
 
+  const options = program.opts();
   Object.keys(tasks).forEach((key) => {
-    tasks[key].value = program[tasks[key].option.replace('--', '')] || program.all;
+    tasks[key].value = options[tasks[key].option.replace('--', '')] || options.all;
   });
 
   const createSeperator = (input) => `- ${input}${' ---------'.substr(0, 12)}`;
