@@ -31,3 +31,18 @@ chokidar
   .watch(globs, { cwd: args.configPath })
   .on('add', (watchPath) => updateRequires('add', watchPath))
   .on('unlink', (watchPath) => updateRequires('unlink', watchPath));
+
+const readline = require('readline');
+readline.emitKeypressEvents(process.stdin);
+process.stdin.setRawMode(true);
+process.stdin.on('keypress', (str, key) => {
+  if (key.ctrl && key.name === 'c') {
+    process.exit();
+  }
+  if (key.name === 'r') {
+    log('Detected "r" keypress, rewriting story imports...');
+    writeRequires(args);
+  }
+});
+
+log('Press r to manually detect changes');
