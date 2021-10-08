@@ -157,6 +157,12 @@ module.exports = __DEV__ ? StorybookUI : App;
 
 Or you could use some kind of setting/environment variable to define what renders.
 
+## Using the DEV Menu
+
+Some have opted to toggle the storybook component by using a custom option in the react native developer menu.
+
+An example of this can found in the ignite CLI boiler plate for storybook which you can see [here](https://github.com/infinitered/ignite/blob/master/boilerplate/storybook/toggle-storybook.tsx)
+
 ## React Native Navigation, or other custom approaches
 
 `StorybookUI` is a RN `View` component that can be embedded anywhere in your RN application, e.g. on a tab or within an admin screen.
