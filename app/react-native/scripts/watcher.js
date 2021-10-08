@@ -27,10 +27,26 @@ chokidar
   .watch(watchPaths, { cwd: args.configPath })
   .on('change', (watchPath) => updateRequires('change', watchPath));
 
+let isReady = false;
+
 chokidar
   .watch(globs, { cwd: args.configPath })
-  .on('add', (watchPath) => updateRequires('add', watchPath))
-  .on('unlink', (watchPath) => updateRequires('unlink', watchPath));
+  .on('ready', () => {
+    log('Watcher is ready, performing initial write');
+    writeRequires(args);
+    log('Waiting for changes, press r to manually re-write');
+    isReady = true;
+  })
+  .on('add', (watchPath) => {
+    if (isReady) {
+      updateRequires('add', watchPath);
+    }
+  })
+  .on('unlink', (watchPath) => {
+    if (isReady) {
+      updateRequires('unlink', watchPath);
+    }
+  });
 
 const readline = require('readline');
 readline.emitKeypressEvents(process.stdin);
@@ -44,5 +60,3 @@ process.stdin.on('keypress', (str, key) => {
     writeRequires(args);
   }
 });
-
-log('Press r to manually detect changes');
