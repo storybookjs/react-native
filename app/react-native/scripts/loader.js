@@ -23,17 +23,17 @@ function requireUncached(module) {
 }
 
 function getMain({ configPath }) {
-  const mainPath = path.join(cwd, configPath, 'main.js');
+  const mainPath = path.resolve(cwd, configPath, 'main.js');
   return requireUncached(mainPath);
 }
 
 function getPreviewExists({ configPath }) {
-  const previewPath = path.join(cwd, configPath, 'preview.js');
+  const previewPath = path.resolve(cwd, configPath, 'preview.js');
   return fs.existsSync(previewPath);
 }
 
 function writeRequires({ configPath }) {
-  const storybookRequiresLocation = path.join(cwd, configPath, 'storybook.requires.js');
+  const storybookRequiresLocation = path.resolve(cwd, configPath, 'storybook.requires.js');
 
   const main = getMain({ configPath });
   const storyPaths = main.stories.reduce((acc, storyGlob) => {
