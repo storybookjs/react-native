@@ -37,7 +37,7 @@ function writeRequires({ configPath, absolute = false }) {
 
   const main = getMain({ configPath });
   const storyPaths = main.stories.reduce((acc, storyGlob) => {
-    const paths = glob.sync(storyGlob, { cwd: configPath, absolute });
+    const paths = glob.sync(storyGlob, { cwd: path.resolve(cwd, configPath), absolute });
     return [...acc, ...paths];
   }, []);
 
