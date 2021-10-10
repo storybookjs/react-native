@@ -1,5 +1,6 @@
 const path = require('path');
 const { writeRequires, getMain, getPreviewExists } = require('./loader');
+const glob = require('glob');
 
 let pathMock;
 let fileContentMock;
@@ -17,6 +18,19 @@ jest.mock('prettier', () => ({
     return s;
   },
 }));
+
+// jest.mock('glob', () => {
+//   const globActual = jest.requireActual('glob');
+//   return {
+//     ...globActual,
+//     sync: (storyGlob, { cwd: configPath, absolute }) => {
+//       if(absolute){
+
+//       }
+//       globActual.sync();
+//     },
+//   };
+// });
 
 describe('loader', () => {
   describe('getMain', () => {
@@ -81,7 +95,6 @@ describe('loader', () => {
         expect(pathMock).toEqual(
           path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.js')
         );
-        console.log(fileContentMock);
         expect(fileContentMock).toMatchSnapshot();
       });
     });
@@ -101,6 +114,18 @@ describe('loader', () => {
         writeRequires({ configPath: 'scripts/mocks/no-preview' });
         expect(pathMock).toEqual(path.resolve(__dirname, 'mocks/no-preview/storybook.requires.js'));
         expect(fileContentMock).toMatchSnapshot();
+      });
+    });
+
+    describe('when the absolute option is true', () => {
+      it('should write absolute paths to the requires file', () => {
+        writeRequires({ configPath: 'scripts/mocks/all-config-files', absolute: true });
+        expect(pathMock).toEqual(
+          path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.js')
+        );
+        expect(fileContentMock).toContain(
+          path.resolve(__dirname, 'mocks/all-config-files/FakeStory.stories.tsx')
+        );
       });
     });
   });

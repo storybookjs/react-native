@@ -32,12 +32,12 @@ function getPreviewExists({ configPath }) {
   return fs.existsSync(previewPath);
 }
 
-function writeRequires({ configPath }) {
+function writeRequires({ configPath, absolute = false }) {
   const storybookRequiresLocation = path.resolve(cwd, configPath, 'storybook.requires.js');
 
   const main = getMain({ configPath });
   const storyPaths = main.stories.reduce((acc, storyGlob) => {
-    const paths = glob.sync(storyGlob, { cwd: configPath });
+    const paths = glob.sync(storyGlob, { cwd: configPath, absolute });
     return [...acc, ...paths];
   }, []);
 
