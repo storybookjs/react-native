@@ -19,19 +19,6 @@ jest.mock('prettier', () => ({
   },
 }));
 
-// jest.mock('glob', () => {
-//   const globActual = jest.requireActual('glob');
-//   return {
-//     ...globActual,
-//     sync: (storyGlob, { cwd: configPath, absolute }) => {
-//       if(absolute){
-
-//       }
-//       globActual.sync();
-//     },
-//   };
-// });
-
 describe('loader', () => {
   describe('getMain', () => {
     it('should return the main js default export as an object', () => {
