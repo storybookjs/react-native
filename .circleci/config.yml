@@ -74,11 +74,8 @@ jobs:
           at: .
       - run:
           name: Test
-          command: yarn test --coverage --w2 --core
-      - persist_to_workspace:
-          root: .
-          paths:
-            - coverage
+          command: yarn test
+
 workflows:
   test:
     jobs:

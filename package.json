@@ -60,7 +60,7 @@
     "publish:latest": "lerna publish --exact --concurrency 1 --force-publish",
     "publish:next": "npm run publish:latest -- --npm-tag=next",
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
-    "test": "node ./scripts/test.js"
+    "test": "lerna run test"
   },
   "husky": {
     "hooks": {
@@ -144,7 +144,7 @@
     "chalk": "^3.0.0",
     "codecov": "^3.5.0",
     "codelyzer": "^5.0.0",
-    "commander": "^4.0.1",
+    "commander": "^8.2.0",
     "concurrently": "^5.0.0",
     "core-js": "^3.0.1",
     "corejs-upgrade-webpack-plugin": "^3.0.1",

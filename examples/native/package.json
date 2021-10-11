@@ -10,10 +10,10 @@
     "format": "prettier --write .",
     "ios": "react-native run-ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prestart": "sbn-get-stories",
+    "prestart": "sb-rn-get-stories --config-path=./.storybook",
     "start": "react-native start",
-    "storybook-watcher": "sbn-watcher",
-    "test": "jest"
+    "storybook-watcher": "sb-rn-watcher --config-path=./.storybook",
+    "test": "jest --passWithNoTests"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -24,7 +24,11 @@
       "json",
       "node"
     ],
-    "preset": "react-native"
+    "preset": "react-native",
+    "testMatch": [
+      "**/?(*.)+(spec|test).[jt]s?(x)",
+      "!**/e2e/*"
+    ]
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.4",

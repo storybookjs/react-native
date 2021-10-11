@@ -104,9 +104,10 @@ Object.keys(tasks)
   .reduce((acc, key) => acc.option(tasks[key].option, tasks[key].name), main)
   .parse(process.argv);
 
+const options = program.opts();
 Object.keys(tasks).forEach((key) => {
   tasks[key].value =
-    program[tasks[key].option.replace('--', '')] || (program.all && tasks[key].projectLocation);
+    options[tasks[key].option.replace('--', '')] || (options.all && tasks[key].projectLocation);
 });
 
 let selection;

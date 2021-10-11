@@ -19,8 +19,8 @@
   "license": "MIT",
   "main": "dist/index.js",
   "bin": {
-    "sbn-get-stories": "./bin/get-stories.js",
-    "sbn-watcher": "./bin/watcher.js"
+    "sb-rn-get-stories": "./bin/get-stories.js",
+    "sb-rn-watcher": "./bin/watcher.js"
   },
   "files": [
     "bin/**/*",
@@ -32,7 +32,19 @@
   ],
   "scripts": {
     "preprepare": "rm -rf dist/",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "preset": "react-native"
   },
   "dependencies": {
     "@emotion/core": "^10.0.20",
@@ -46,13 +58,18 @@
     "@storybook/core-events": "^6",
     "@storybook/csf": "0.0.1",
     "chokidar": "^3.5.1",
+    "commander": "^8.2.0",
     "emotion-theming": "^10.0.19",
     "glob": "^7.1.7",
+    "prettier": "^2.4.1",
     "react-native-swipe-gestures": "^1.0.5",
     "util": "^0.12.4"
   },
   "devDependencies": {
-    "@types/react-native": "^0.65.1"
+    "@types/react-native": "^0.65.1",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
+    "react-test-renderer": "17.0.2"
   },
   "peerDependencies": {
     "@react-native-async-storage/async-storage": ">=1",

@@ -31,20 +31,20 @@ interface InitialSelection {
 }
 
 export type Params = {
-  onDeviceUI: boolean;
-  resetStorybook: boolean;
-  disableWebsockets: boolean;
-  query: string;
-  host: string;
-  port: number;
-  secured: boolean;
-  initialSelection: InitialSelection;
-  shouldPersistSelection: boolean;
-  tabOpen: number;
-  isUIHidden: boolean;
-  shouldDisableKeyboardAvoidingView: boolean;
-  keyboardAvoidingViewVerticalOffset: number;
-} & { theme: typeof theme };
+  onDeviceUI?: boolean;
+  resetStorybook?: boolean;
+  disableWebsockets?: boolean;
+  query?: string;
+  host?: string;
+  port?: number;
+  secured?: boolean;
+  initialSelection?: InitialSelection;
+  shouldPersistSelection?: boolean;
+  tabOpen?: number;
+  isUIHidden?: boolean;
+  shouldDisableKeyboardAvoidingView?: boolean;
+  keyboardAvoidingViewVerticalOffset?: number;
+} & { theme?: typeof theme };
 
 export default class Preview {
   _clientApi: ClientApi;
@@ -110,7 +110,7 @@ export default class Preview {
     );
   };
 
-  _setInitialStory = async (initialSelection: InitialSelection, shouldPersistSelection = true) => {
+  _setInitialStory = async (initialSelection?: InitialSelection, shouldPersistSelection = true) => {
     const story = await this._getInitialStory(initialSelection, shouldPersistSelection);
 
     if (story) {
@@ -118,9 +118,11 @@ export default class Preview {
     }
   };
 
-  _getInitialStory = async (initialSelection: InitialSelection, shouldPersistSelection = true) => {
+  _getInitialStory = async (initialSelection?: InitialSelection, shouldPersistSelection = true) => {
     let story: string = null;
-    const initialSelectionId = toId(initialSelection.kind, initialSelection.name);
+    const initialSelectionId = initialSelection
+      ? toId(initialSelection.kind, initialSelection.name)
+      : undefined;
 
     if (initialSelection && initialSelectionId && this._checkStory(initialSelectionId)) {
       story = initialSelectionId;

@@ -161,7 +161,7 @@ echo "import StorybookUIRoot from './.storybook/Storybook';
 export { StorybookUIRoot as default };" > App.tsx
 ```
 
-Now add `prestart: "sbn-get-stories"` and `"storybook-watcher": "sbn-watcher"` to your package json scripts.
+Now add `prestart: "sb-rn-get-stories"` and `"storybook-watcher": "sb-rn-watcher"` to your package json scripts.
 
 If you want you can use this node script to do that for you
 
@@ -170,8 +170,8 @@ node -e 'const fs = require("fs");
 const packageJSON = require("./package.json");
 packageJSON.scripts = {
     ...packageJSON.scripts,
-    prestart: "sbn-get-stories",
-    "storybook-watcher": "sbn-watcher"
+    prestart: "sb-rn-get-stories",
+    "storybook-watcher": "sb-rn-watcher"
 };
 fs.writeFile("./package.json", JSON.stringify(packageJSON, null, 2), function writeJSON(err) {
   if (err) return console.log(err);
@@ -243,7 +243,7 @@ export const Basic: MyButtonStory = args => <MyButton {...args} />;
 Run the stories auto detection which uses main.js to detect stories.
 
 ```shell
-yarn sbn-get-stories
+yarn sb-rn-get-stories
 ```
 
 Now run your app as normal with `yarn ios` or `yarn android`
