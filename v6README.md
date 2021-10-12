@@ -125,7 +125,7 @@ mkdir .storybook
 mkdir components
 echo "module.exports = {
   stories: [
-    'components/**/*.stories.?(ts|tsx|js|jsx)'
+    '../components/**/*.stories.?(ts|tsx|js|jsx)'
   ],
    addons: [
     '@storybook/addon-ondevice-notes',
