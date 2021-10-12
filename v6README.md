@@ -146,14 +146,11 @@ export const parameters = {
   ],
 };" > .storybook/preview.js
 
-echo "import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getStorybookUI } from '@storybook/react-native';
+echo "import { getStorybookUI } from '@storybook/react-native';
 
 import './storybook.requires';
 
-const StorybookUIRoot = getStorybookUI({
-  asyncStorage: AsyncStorage,
-});
+const StorybookUIRoot = getStorybookUI({});
 
 export default StorybookUIRoot;" >.storybook/Storybook.tsx
 
