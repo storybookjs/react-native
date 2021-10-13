@@ -86,6 +86,20 @@ describe('loader', () => {
       });
     });
 
+    describe('when there is a story glob and exclude paths globs', () => {
+      it('writes the story imports', () => {
+        writeRequires({ configPath: 'scripts/mocks/exclude-config-files' });
+        expect(pathMock).toEqual(
+          path.resolve(__dirname, 'mocks/exclude-config-files/storybook.requires.js')
+        );
+
+        expect(fileContentMock).toContain('include-components/FakeStory.stories.tsx');
+        expect(fileContentMock).not.toContain('exclude-components/FakeStory.stories.tsx');
+
+        expect(fileContentMock).toMatchSnapshot();
+      });
+    });
+
     describe('when there is no story glob or addons', () => {
       it('writes no story imports or addons', () => {
         writeRequires({ configPath: 'scripts/mocks/blank-config' });
