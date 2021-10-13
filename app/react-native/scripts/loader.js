@@ -17,6 +17,21 @@ const previewImports = `
   }
 `;
 
+function normalizeExcludePaths(paths) {
+  // automatically convert a string to an array of a single string
+  if (typeof paths === 'string') {
+    return [paths];
+  }
+
+  // ensure the paths is an array and if any items exists, they are strings
+  if (Array.isArray(paths) && paths.every((p) => typeof p === 'string')) {
+    return paths;
+  }
+
+  // when the paths aren't a string or an (empty) array of strings, return
+  return undefined;
+}
+
 function requireUncached(module) {
   delete require.cache[require.resolve(module)];
   return require(module);
@@ -36,8 +51,19 @@ function writeRequires({ configPath, absolute = false }) {
   const storybookRequiresLocation = path.resolve(cwd, configPath, 'storybook.requires.js');
 
   const main = getMain({ configPath });
+  const reactNativeOptions = main.reactNativeOptions;
+  const excludePaths = reactNativeOptions && reactNativeOptions.excludePaths;
+  const normalizedExcludePaths = normalizeExcludePaths(excludePaths);
+
   const storyPaths = main.stories.reduce((acc, storyGlob) => {
-    const paths = glob.sync(storyGlob, { cwd: path.resolve(cwd, configPath), absolute });
+    const paths = glob.sync(storyGlob, {
+      cwd: path.resolve(cwd, configPath),
+      absolute,
+      // default to always ignore (exclude) anything in node_modules
+      ignore: normalizedExcludePaths !== undefined
+        ? normalizedExcludePaths
+        : ['**/node_modules'],
+    });
     return [...acc, ...paths];
   }, []);
 
