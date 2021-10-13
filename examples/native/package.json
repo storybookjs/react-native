@@ -1,6 +1,6 @@
 {
   "name": "rn_example",
-  "version": "6.0.1-alpha.5",
+  "version": "6.0.1-alpha.6",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -36,13 +36,13 @@
     "@react-native-community/slider": "^3.0.3",
     "@storybook/addon-actions": "^6.3.1",
     "@storybook/addon-links": "^6.3.1",
-    "@storybook/addon-ondevice-actions": "^6.0.1-alpha.5",
-    "@storybook/addon-ondevice-backgrounds": "^6.0.1-alpha.5",
-    "@storybook/addon-ondevice-controls": "^6.0.1-alpha.5",
-    "@storybook/addon-ondevice-notes": "^6.0.1-alpha.5",
+    "@storybook/addon-ondevice-actions": "^6.0.1-alpha.6",
+    "@storybook/addon-ondevice-backgrounds": "^6.0.1-alpha.6",
+    "@storybook/addon-ondevice-controls": "^6.0.1-alpha.6",
+    "@storybook/addon-ondevice-notes": "^6.0.1-alpha.6",
     "@storybook/addons": "^6.3.1",
-    "@storybook/react-native": "^6.0.1-alpha.5",
-    "@storybook/react-native-server": "^6.0.1-alpha.5",
+    "@storybook/react-native": "^6.0.1-alpha.6",
+    "@storybook/react-native-server": "^6.0.1-alpha.6",
     "react": "^17.0.2",
     "react-native": "0.65.1"
   },
