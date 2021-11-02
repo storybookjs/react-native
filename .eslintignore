@@ -22,5 +22,6 @@ examples/native/e2e/init.ts
 examples/native/ios
 examples/native/android
 examples/native/metro.config.js
+examples/native/index.html
 storybook.requires.js
 jest.config.js

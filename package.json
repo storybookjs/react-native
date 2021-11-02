@@ -135,7 +135,7 @@
     "@types/webpack-env": "^1.15.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.7.1",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "^8.2.3",
     "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-emotion": "^10.0.20",
