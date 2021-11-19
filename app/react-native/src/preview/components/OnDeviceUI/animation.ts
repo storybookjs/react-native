@@ -7,7 +7,7 @@ const PREVIEW_WIDE_SCREEN = 0.7;
 
 const panelWidth = (width: number, wide: boolean) => {
   const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
-  return width * (1 - scale - 0.05);
+  return width * (1 - scale - 0.025);
 };
 
 export const getNavigatorPanelPosition = (
