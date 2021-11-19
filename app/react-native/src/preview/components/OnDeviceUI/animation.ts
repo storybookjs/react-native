@@ -3,37 +3,49 @@ import { PreviewDimens } from './absolute-positioned-keyboard-aware-view';
 import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
 
 const PREVIEW_SCALE = 0.3;
+const PREVIEW_WIDE_SCREEN = 0.7;
 
-const panelWidth = (width: number) => width * (1 - PREVIEW_SCALE - 0.05);
+const panelWidth = (width: number, wide: boolean) => {
+  const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
+  return width * (1 - scale - 0.05);
+};
 
-export const getNavigatorPanelPosition = (animatedValue: Animated.Value, previewWidth: number) => {
+export const getNavigatorPanelPosition = (
+  animatedValue: Animated.Value,
+  previewWidth: number,
+  wide: boolean
+) => {
   return [
     {
       transform: [
         {
           translateX: animatedValue.interpolate({
             inputRange: [NAVIGATOR, PREVIEW],
-            outputRange: [0, -panelWidth(previewWidth) - 1],
+            outputRange: [0, -panelWidth(previewWidth, wide) - 1],
           }),
         },
       ],
-      width: panelWidth(previewWidth),
+      width: panelWidth(previewWidth, wide),
     },
   ];
 };
 
-export const getAddonPanelPosition = (animatedValue: Animated.Value, previewWidth: number) => {
+export const getAddonPanelPosition = (
+  animatedValue: Animated.Value,
+  previewWidth: number,
+  wide: boolean
+) => {
   return [
     {
       transform: [
         {
           translateX: animatedValue.interpolate({
             inputRange: [PREVIEW, ADDONS],
-            outputRange: [previewWidth, previewWidth - panelWidth(previewWidth)],
+            outputRange: [previewWidth, previewWidth - panelWidth(previewWidth, wide)],
           }),
         },
       ],
-      width: panelWidth(previewWidth),
+      width: panelWidth(previewWidth, wide),
     },
   ];
 };
@@ -41,10 +53,12 @@ export const getAddonPanelPosition = (animatedValue: Animated.Value, previewWidt
 export const getPreviewPosition = (
   animatedValue: Animated.Value,
   { width: previewWidth, height: previewHeight }: PreviewDimens,
-  slideBetweenAnimation: boolean
+  slideBetweenAnimation: boolean,
+  wide: boolean
 ) => {
-  const translateX = previewWidth / 2 - (previewWidth * PREVIEW_SCALE) / 2 - 6;
-  const translateY = -(previewHeight / 2 - (previewHeight * PREVIEW_SCALE) / 2 - 12);
+  const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
+  const translateX = previewWidth / 2 - (previewWidth * scale) / 2 - 6;
+  const translateY = -(previewHeight / 2 - (previewHeight * scale) / 2 - 12);
 
   return {
     transform: [
@@ -64,13 +78,18 @@ export const getPreviewPosition = (
   };
 };
 
-export const getPreviewScale = (animatedValue: Animated.Value, slideBetweenAnimation: boolean) => {
+export const getPreviewScale = (
+  animatedValue: Animated.Value,
+  slideBetweenAnimation: boolean,
+  wide: boolean
+) => {
+  const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
   return {
     transform: [
       {
         scale: animatedValue.interpolate({
           inputRange: [NAVIGATOR, PREVIEW, ADDONS],
-          outputRange: [PREVIEW_SCALE, slideBetweenAnimation ? PREVIEW_SCALE : 1, PREVIEW_SCALE],
+          outputRange: [scale, slideBetweenAnimation ? scale : 1, scale],
         }),
       },
     ],
