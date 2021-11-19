@@ -18,6 +18,7 @@ const Input = styled.TextInput(({ theme }) => ({
   margin: 10,
   borderColor: theme.borderColor || '#e6e6e6',
   color: theme.labelColor || 'black',
+  minHeight: 60,
 }));
 
 const ObjectType = ({ arg, onChange }: ObjectProps) => {
