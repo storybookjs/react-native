@@ -4,10 +4,13 @@ import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
 
 const PREVIEW_SCALE = 0.3;
 const PREVIEW_WIDE_SCREEN = 0.7;
+const SCALE_OFFSET = 0.025;
+const TRANSLATE_X_OFFSET = 6;
+const TRANSLATE_Y_OFFSET = 12;
 
 const panelWidth = (width: number, wide: boolean) => {
   const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
-  return width * (1 - scale - 0.025);
+  return width * (1 - scale - SCALE_OFFSET);
 };
 
 export const getNavigatorPanelPosition = (
@@ -57,8 +60,8 @@ export const getPreviewPosition = (
   wide: boolean
 ) => {
   const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
-  const translateX = previewWidth / 2 - (previewWidth * scale) / 2 - 6;
-  const translateY = -(previewHeight / 2 - (previewHeight * scale) / 2 - 12);
+  const translateX = previewWidth / 2 - (previewWidth * scale) / 2 - TRANSLATE_X_OFFSET;
+  const translateY = -(previewHeight / 2 - (previewHeight * scale) / 2 - TRANSLATE_Y_OFFSET);
 
   return {
     transform: [

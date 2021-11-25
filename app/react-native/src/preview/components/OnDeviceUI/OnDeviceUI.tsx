@@ -39,7 +39,7 @@ const IS_IOS = Platform.OS === 'ios';
 const getExpoRoot = () => global.Expo || global.__expo || global.__exponent;
 export const IS_EXPO = getExpoRoot() !== undefined;
 const IS_ANDROID = Platform.OS === 'android';
-
+const BREAKPOINT = 1024;
 interface OnDeviceUIProps {
   storyStore: StoryStore;
   url?: string;
@@ -108,7 +108,7 @@ const OnDeviceUI = ({
   });
   const story = useSelectedStory(storyStore);
   const animatedValue = useRef(new Animated.Value(tabOpen));
-  const wide = useWindowDimensions().width >= 1024;
+  const wide = useWindowDimensions().width >= BREAKPOINT;
 
   const handleToggleTab = (newTabOpen: number) => {
     if (newTabOpen === tabOpen) {
