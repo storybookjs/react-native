@@ -31,6 +31,7 @@ import {
 import Navigation from './navigation';
 import { PREVIEW, ADDONS } from './navigation/constants';
 import Panel from './Panel';
+import { useWindowDimensions } from 'react-native';
 
 const ANIMATION_DURATION = 300;
 const IS_IOS = Platform.OS === 'ios';
@@ -38,7 +39,7 @@ const IS_IOS = Platform.OS === 'ios';
 const getExpoRoot = () => global.Expo || global.__expo || global.__exponent;
 export const IS_EXPO = getExpoRoot() !== undefined;
 const IS_ANDROID = Platform.OS === 'android';
-
+const BREAKPOINT = 1024;
 interface OnDeviceUIProps {
   storyStore: StoryStore;
   url?: string;
@@ -107,6 +108,7 @@ const OnDeviceUI = ({
   });
   const story = useSelectedStory(storyStore);
   const animatedValue = useRef(new Animated.Value(tabOpen));
+  const wide = useWindowDimensions().width >= BREAKPOINT;
 
   const handleToggleTab = (newTabOpen: number) => {
     if (newTabOpen === tabOpen) {
@@ -129,10 +131,10 @@ const OnDeviceUI = ({
 
   const previewWrapperStyles = [
     flex,
-    getPreviewPosition(animatedValue.current, previewDimensions, slideBetweenAnimation),
+    getPreviewPosition(animatedValue.current, previewDimensions, slideBetweenAnimation, wide),
   ];
 
-  const previewStyles = [flex, getPreviewScale(animatedValue.current, slideBetweenAnimation)];
+  const previewStyles = [flex, getPreviewScale(animatedValue.current, slideBetweenAnimation, wide)];
 
   return (
     <SafeAreaView style={[flex, IS_ANDROID && IS_EXPO && styles.expoAndroidContainer]}>
@@ -159,10 +161,14 @@ const OnDeviceUI = ({
               ) : null}
             </Animated.View>
           </Animated.View>
-          <Panel style={getNavigatorPanelPosition(animatedValue.current, previewDimensions.width)}>
+          <Panel
+            style={getNavigatorPanelPosition(animatedValue.current, previewDimensions.width, wide)}
+          >
             <StoryListView storyStore={storyStore} selectedStory={story} />
           </Panel>
-          <Panel style={getAddonPanelPosition(animatedValue.current, previewDimensions.width)}>
+          <Panel
+            style={getAddonPanelPosition(animatedValue.current, previewDimensions.width, wide)}
+          >
             <Addons active={tabOpen === ADDONS} />
           </Panel>
         </AbsolutePositionedKeyboardAwareView>
