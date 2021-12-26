@@ -17,5 +17,5 @@ export default {
   select: SelectType,
   date: DateType,
   array: ArrayType,
-  radios: RadioType,
+  radio: RadioType,
 };
