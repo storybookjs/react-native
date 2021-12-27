@@ -13,7 +13,7 @@ const RadioMeta: ComponentMeta<typeof Radio> = {
   argTypes: {
     selection: {
       options: radio_stations,
-      control: { type: 'radios' },
+      control: { type: 'radio' },
     },
   },
 };
