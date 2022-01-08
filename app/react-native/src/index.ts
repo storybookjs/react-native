@@ -3,7 +3,7 @@ import { ClientApi } from '@storybook/client-api';
 import { ReactNode } from 'react';
 import Preview from './preview';
 
-const preview = new Preview();
+export const preview = new Preview();
 
 const rawStoriesOf: ClientApi['storiesOf'] = preview.api().storiesOf.bind(preview);
 export const setAddon: ClientApi['setAddon'] = preview.api().setAddon.bind(preview);
