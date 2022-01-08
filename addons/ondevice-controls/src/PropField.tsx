@@ -14,7 +14,7 @@ type ControlTypes =
   | 'array'
   | 'date'
   | 'button'
-  | 'radios';
+  | 'radio';
 
 export interface Knob {
   name: string;
