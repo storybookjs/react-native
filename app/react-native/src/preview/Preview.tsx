@@ -85,7 +85,7 @@ export default class Preview {
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
-    const { initialSelection, shouldPersistSelection } = params;
+    const { initialSelection, shouldPersistSelection = true } = params;
     this._setInitialStory(initialSelection, shouldPersistSelection);
 
     this._channel.on(Events.SET_CURRENT_STORY, (d: { storyId: string }) => {
