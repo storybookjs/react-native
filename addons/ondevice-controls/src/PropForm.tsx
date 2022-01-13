@@ -1,7 +1,5 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { View } from 'react-native';
-import deepEqual from 'deep-equal';
-
 import { ArgTypes } from './ControlsPanel';
 import PropField from './PropField';
 
@@ -27,8 +25,4 @@ const PropForm = ({ args, onFieldChange }: FormProps) => {
   );
 };
 
-const deepStrictEqual = (a: any, b: any): boolean => {
-  return deepEqual(a, b, { strict: true });
-};
-
-export default memo(PropForm, deepStrictEqual);
+export default PropForm;
