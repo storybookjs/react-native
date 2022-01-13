@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 import styled from '@emotion/native';
@@ -26,35 +26,18 @@ export interface NumberProps {
   onChange: (value: any) => void;
 }
 
-const replaceComma = (value: number | string): string => {
-  return typeof value === 'string' ? value.trim().replace(/,/, '.') : value.toString();
-};
-
 const NumberType = ({ arg, onChange = (value) => value }: NumberProps) => {
-  const allowComma = replaceComma(arg.value);
-  const [numStr, setNumStr] = useState(allowComma);
-  const numStrRef = useRef(numStr);
-  const showError = Number.isNaN(Number(numStr));
-
-  const commitChange = () => {
-    onChange(numStr);
-  };
+  const allowComma = typeof arg.value === 'string' ? arg.value.trim().replace(/,/, '.') : arg.value;
+  const showError = Number.isNaN(Number(allowComma));
 
   const renderNormal = () => {
     return (
       <Input
         autoCapitalize="none"
         underlineColorAndroid="transparent"
-        value={numStr}
+        value={arg.value.toString()}
         keyboardType="numeric"
-        onChangeText={(text) => {
-          const commaReplaced = replaceComma(text);
-
-          setNumStr(commaReplaced);
-          numStrRef.current = commaReplaced;
-        }}
-        onSubmitEditing={commitChange}
-        onEndEditing={commitChange}
+        onChangeText={onChange}
         style={showError && styles.errorBorder}
       />
     );
@@ -71,12 +54,6 @@ const NumberType = ({ arg, onChange = (value) => value }: NumberProps) => {
       />
     );
   };
-
-  useEffect(() => {
-    return () => {
-      onChange(numStrRef.current);
-    };
-  }, [onChange]);
 
   return <View style={styles.spacing}>{arg.range ? renderRange() : renderNormal()}</View>;
 };
