@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import React from 'react';
 import ModalPicker from 'react-native-modal-selector';
 import styled from '@emotion/native';
@@ -9,6 +9,20 @@ const Input = styled.TextInput(({ theme }) => ({
   padding: 5,
   margin: 10,
   borderColor: theme.borderColor || '#e6e6e6',
+  color: theme.labelColor || 'black',
+}));
+
+const Select = (args: any) => <select {...args} />;
+const Container = styled.View(({ theme }) => ({
+  borderWidth: 1,
+  borderRadius: 2,
+  padding: 5,
+  margin: 10,
+  borderColor: theme.borderColor || '#e6e6e6',
+}));
+
+const WebSelect = styled(Select)(({ theme }) => ({
+  border: 'none',
   color: theme.labelColor || 'black',
 }));
 
@@ -45,6 +59,23 @@ const SelectType = ({ arg, onChange }: SelectProps) => {
   const active = options.find(({ key }) => value === key);
 
   const selected = active && active.label;
+
+  if (Platform.OS === 'web') {
+    const handleChange = (event) => {
+      onChange(event.target.value);
+    };
+    return (
+      <Container>
+        <WebSelect value={value} onChange={handleChange}>
+          {options.map(({ label, key }) => (
+            <option key={`${label}-${key}`} value={key}>
+              {label}
+            </option>
+          ))}
+        </WebSelect>
+      </Container>
+    );
+  }
 
   return (
     <View>

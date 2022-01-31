@@ -5,8 +5,4 @@ interface DateProps {
   date: Date;
 }
 
-export const LocalisedDate = ({ date }: DateProps) => (
-  <Text>
-    {date.toLocaleDateString()} {date.toLocaleTimeString()}
-  </Text>
-);
+export const DateString = ({ date }: DateProps) => <Text>{date.toString()}</Text>;
