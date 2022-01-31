@@ -36,8 +36,8 @@
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
-    "react-native-modal-datetime-picker": "^10.1.0",
-    "react-native-modal-selector": "^2.0.2",
+    "react-native-modal-datetime-picker": "^13.0.1",
+    "react-native-modal-selector": "^2.1.0",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {

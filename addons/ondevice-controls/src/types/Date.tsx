@@ -32,7 +32,14 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
     setVisiblePicker('none');
   };
 
-  const date = useMemo(() => new Date(value), [value]);
+  const date = useMemo(() => {
+    const dateValue = new Date(value);
+    if (isNaN(dateValue.valueOf())) {
+      return new Date();
+    }
+
+    return dateValue;
+  }, [value]);
 
   // https://stackoverflow.com/a/30272803
   const dateString = useMemo(
