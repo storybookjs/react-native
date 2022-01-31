@@ -7,9 +7,9 @@ target 'rn_example' do
   config = use_native_modules!
 
   use_react_native!(
-    :path => "../../../node_modules/react-native",
+    path: '../../../node_modules/react-native',
     # to enable hermes on iOS, change `false` to `true` and then install pods
-    :hermes_enabled => false
+    hermes_enabled: true
   )
 
   target 'rn_exampleTests' do
@@ -21,7 +21,7 @@ target 'rn_example' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-  use_flipper!()
+  use_flipper!
 
   post_install do |installer|
     react_native_post_install(installer)

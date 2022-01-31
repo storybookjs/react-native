@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { LocalisedDate } from './Date';
 
-const date = new Date('February 25, 1983');
+const date = new Date(1983, 1, 25);
 
 const DateMeta: ComponentMeta<typeof LocalisedDate> = {
   title: 'Date',
