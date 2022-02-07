@@ -68,7 +68,7 @@ expo install @storybook/react-native@next \
 
 Datetime picker, slider and addon-controls are required for controls to work. If you don't want controls you don't need to install these (controls is the knobs replacement).
 
-Continue by updating your metro config to have `resolver:{resolverMainFields: ['sbmodern', 'browser', 'main']}`.
+Continue by updating your metro config to have `resolver:{resolverMainFields: ['sbmodern', 'react-native', 'browser', 'main']}`.
 This enables us to use the modern build of storybook instead of the polyfilled versions.
 
 **Vanilla React Native**
@@ -91,7 +91,7 @@ module.exports = {
     }),
   },
   resolver: {
-    resolverMainFields: ['sbmodern', 'browser', 'main'],
+    resolverMainFields: ['sbmodern', 'react-native', 'browser', 'main'],
   },
 };" > metro.config.js
 ```
@@ -105,6 +105,7 @@ const defaultConfig = getDefaultConfig(__dirname);
 
 defaultConfig.resolver.resolverMainFields = [
   'sbmodern',
+  'react-native',
   ...defaultConfig.resolver.resolverMainFields,
 ];
 defaultConfig.transformer.getTransformOptions = async () => ({
