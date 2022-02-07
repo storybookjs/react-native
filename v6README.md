@@ -105,6 +105,7 @@ const defaultConfig = getDefaultConfig(__dirname);
 
 defaultConfig.resolver.resolverMainFields = [
   'sbmodern',
+  'react-native',
   ...defaultConfig.resolver.resolverMainFields,
 ];
 defaultConfig.transformer.getTransformOptions = async () => ({
