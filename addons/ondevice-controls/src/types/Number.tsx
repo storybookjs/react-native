@@ -34,7 +34,11 @@ const NumberType = ({ arg, onChange = (value) => value }: NumberProps) => {
     const commaReplaced = text.trim().replace(/,/, '.');
 
     setNumStr(commaReplaced);
-    onChange(Number(commaReplaced));
+    if (commaReplaced === '-') {
+      onChange(-1);
+    } else {
+      onChange(Number(commaReplaced));
+    }
   };
 
   const renderNormal = () => {
