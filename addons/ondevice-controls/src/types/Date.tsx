@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
 import React, { useMemo, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 
 export interface DateProps {
@@ -51,10 +51,35 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
       ].join('-'),
     [date]
   );
+
   const timeString = useMemo(
     () => `${`0${date.getHours()}`.slice(-2)}:${`0${date.getMinutes()}`.slice(-2)}`,
     [date]
   );
+
+  const webDateString = useMemo(
+    () =>
+      `${date.getFullYear()}-${`${date.getMonth() + 1}`.padStart(2, '0')}-${`${
+        date.getDate() + 1
+      }`.padStart(2, '0')}T${`${date.getHours()}`.padStart(
+        2,
+        '0'
+      )}:${`${date.getMinutes()}`.padStart(2, '0')}`,
+
+    [date]
+  );
+
+  if (Platform.OS === 'web') {
+    return (
+      <View testID={name} style={styles.spacing}>
+        <input
+          type="datetime-local"
+          value={webDateString}
+          onChange={(e) => onChange(new Date(e.target.value))}
+        />
+      </View>
+    );
+  }
 
   return (
     <View testID={name} style={styles.spacing}>

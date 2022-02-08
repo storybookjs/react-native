@@ -18,5 +18,5 @@ type ColorStory = ComponentStory<typeof Color>;
 
 export const ColorExample: ColorStory = (args) => <Color {...args} />;
 ColorExample.args = {
-  color: 'purple',
+  color: '#a819b9',
 };

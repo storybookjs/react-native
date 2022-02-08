@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   StyleSheet,
+  Platform,
 } from 'react-native';
 import styled from '@emotion/native';
 import { ColorPicker, fromHsv, HsvColor } from '../components/color-picker';
@@ -44,6 +45,17 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
     onChange(fromHsv(color));
   };
 
+  if (Platform.OS === 'web') {
+    return (
+      <input
+        type="color"
+        style={{ margin: 10 }}
+        value={arg.value}
+        onChange={(event) => onChange(event.target.value)}
+      />
+    );
+  }
+
   return (
     <View>
       <Touchable color={arg.value} onPress={openColorPicker} />
@@ -55,27 +67,28 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
       >
         <TouchableWithoutFeedback onPress={closeColorPicker}>
           <View style={styles.containerCenter}>
-            <TouchableWithoutFeedback>
-              <View style={styles.innerContainer}>
-                <TouchableOpacity onPress={closeColorPicker} style={styles.end}>
-                  <Text style={styles.close}>X</Text>
+            <View style={styles.innerContainer}>
+              <ColorPicker
+                onColorSelected={onChangeColor}
+                onColorChange={(color: HsvColor) => setCurrentColor(color)}
+                defaultColor={arg.value}
+                style={styles.picker}
+              />
+              <View style={styles.actionContainer}>
+                <TouchableOpacity style={styles.actionButton} onPress={closeColorPicker}>
+                  <Text style={styles.actionText}>CANCEL</Text>
                 </TouchableOpacity>
-                <ColorPicker
-                  onColorSelected={onChangeColor}
-                  onColorChange={(color: HsvColor) => setCurrentColor(color)}
-                  defaultColor={arg.value}
-                  style={styles.picker}
-                />
-                <View style={styles.applyContainer}>
-                  <TouchableOpacity
-                    style={styles.applyButton}
-                    onPress={() => onChangeColor(currentColor)}
-                  >
-                    <Text style={styles.applyText}>Apply</Text>
-                  </TouchableOpacity>
-                </View>
+                <TouchableOpacity
+                  style={styles.actionButton}
+                  onPress={() => {
+                    onChangeColor(currentColor);
+                    closeColorPicker();
+                  }}
+                >
+                  <Text style={styles.actionText}>DONE</Text>
+                </TouchableOpacity>
               </View>
-            </TouchableWithoutFeedback>
+            </View>
           </View>
         </TouchableWithoutFeedback>
       </Modal>
@@ -84,21 +97,32 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
 };
 
 const styles = StyleSheet.create({
-  applyText: { color: '#1EA7FD', fontSize: 16 },
-  applyButton: { paddingVertical: 8, paddingHorizontal: 16 },
-  applyContainer: { alignItems: 'center' },
-  picker: { flex: 1 },
+  actionText: { color: '#1EA7FD', fontSize: 16 },
+  actionButton: { paddingVertical: 8, paddingHorizontal: 8, marginTop: 16 },
+  actionContainer: {
+    alignItems: 'flex-end',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    width: '100%',
+  },
+  picker: { flex: 1, marginTop: 16 },
   close: { fontSize: 18, fontWeight: 'bold' },
   end: { alignSelf: 'flex-end', padding: 5 },
   innerContainer: {
     backgroundColor: 'white',
     borderWidth: 1,
     borderColor: 'rgb(247, 244, 244)',
-    width: 250,
-    height: 250,
-    padding: 10,
+    width: 350,
+    height: 350,
+    padding: 8,
+    borderRadius: 4,
   },
-  containerCenter: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  containerCenter: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.3)',
+  },
 });
 
 ColorType.serialize = (value) => value;
