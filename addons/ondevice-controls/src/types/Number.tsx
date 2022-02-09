@@ -21,7 +21,6 @@ export interface NumberProps {
     max: number;
     range: boolean;
     defaultValue: number;
-    isPristine: boolean;
   };
   isPristine: boolean;
 
