@@ -39,14 +39,19 @@ const Label = styled.Text(({ theme }) => ({
 interface PropFieldProps {
   onChange: (value: any) => void;
   arg: ArgType;
+  isPristine: boolean;
 }
 
-const PropField = ({ onChange, arg }: PropFieldProps) => {
+const PropField = ({ onChange, arg, isPristine }: PropFieldProps) => {
   const InputType: ComponentType<any> = TypeMap[arg.type];
   return (
     <View>
       {!arg.hideLabel ? <Label>{`${arg.label || arg.name}`}</Label> : null}
-      {InputType ? <InputType arg={arg} onChange={onChange} /> : <InvalidType arg={arg} />}
+      {InputType ? (
+        <InputType arg={arg} isPristine={isPristine} onChange={onChange} />
+      ) : (
+        <InvalidType arg={arg} />
+      )}
     </View>
   );
 };

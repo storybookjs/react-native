@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 import styled from '@emotion/native';
@@ -21,12 +21,14 @@ export interface NumberProps {
     max: number;
     range: boolean;
     defaultValue: number;
+    isPristine: boolean;
   };
+  isPristine: boolean;
 
   onChange: (value: number) => void;
 }
 
-const NumberType = ({ arg, onChange = (value) => value }: NumberProps) => {
+const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProps) => {
   const showError = Number.isNaN(arg.value);
   const [numStr, setNumStr] = useState(arg.value.toString());
 
@@ -40,6 +42,13 @@ const NumberType = ({ arg, onChange = (value) => value }: NumberProps) => {
       onChange(Number(commaReplaced));
     }
   };
+
+  // handle arg.value and numStr out of sync issue on reset
+  useEffect(() => {
+    if (isPristine) {
+      setNumStr(arg.value.toString());
+    }
+  }, [isPristine, arg.value]);
 
   const renderNormal = () => {
     return (
