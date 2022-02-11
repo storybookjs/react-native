@@ -4,17 +4,21 @@ import { PublishedStoreItem, StoreItem, StoryStore } from '@storybook/client-api
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
 import { SectionList, StyleSheet } from 'react-native';
+import { GridIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
 
 const SearchBar = styled.TextInput(
   {
-    borderRadius: 4,
+    borderRadius: 28,
+    borderWidth: 2,
     fontSize: 16,
-    margin: 5,
-    padding: 5,
+    marginVertical: 5,
+    marginHorizontal: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 15,
   },
   ({ theme }) => ({
-    backgroundColor: theme.borderColor,
+    borderColor: theme.borderColor,
     color: theme.buttonActiveTextColor,
   })
 );
@@ -22,9 +26,11 @@ const SearchBar = styled.TextInput(
 const HeaderContainer = styled.View({
   paddingVertical: 5,
   paddingHorizontal: 5,
+  flexDirection: 'row',
+  alignItems: 'center',
 });
 
-const StoryListContainer = styled.View({
+const StoryListContainer = styled.View(({ theme }) => ({
   top: 0,
   ...StyleSheet.absoluteFillObject,
 
@@ -39,9 +45,9 @@ const StoryListContainer = styled.View({
   // elevation: 2,
 
   borderRightWidth: StyleSheet.hairlineWidth,
-  borderRightColor: 'lightgrey',
-  backgroundColor: 'white',
-});
+  borderRightColor: theme.borderColor,
+  backgroundColor: theme.storyListBackgroundColor,
+}));
 
 interface SectionProps {
   title: string;
@@ -50,6 +56,7 @@ interface SectionProps {
 
 const SectionHeader = ({ title, selected }: SectionProps) => (
   <HeaderContainer key={title}>
+    <GridIcon />
     <Header selected={selected}>{title}</Header>
   </HeaderContainer>
 );
@@ -61,10 +68,13 @@ interface ListItemProps {
   onPress: () => void;
 }
 
-const ItemTouchable = styled.TouchableOpacity({
-  paddingHorizontal: 16,
-  paddingVertical: 5,
-});
+const ItemTouchable = styled.TouchableOpacity<{ selected: boolean }>(
+  {
+    padding: 5,
+    paddingLeft: 40,
+  },
+  ({ selected, theme }) => (selected ? { backgroundColor: theme.listItemActiveColor } : {})
+);
 
 const ListItem = ({ kind, title, selected, onPress }: ListItemProps) => (
   <ItemTouchable
@@ -73,6 +83,7 @@ const ListItem = ({ kind, title, selected, onPress }: ListItemProps) => (
     activeOpacity={0.8}
     testID={`Storybook.ListItem.${kind}.${title}`}
     accessibilityLabel={`Storybook.ListItem.${title}`}
+    selected={selected}
   >
     <Name selected={selected}>{title}</Name>
   </ItemTouchable>
