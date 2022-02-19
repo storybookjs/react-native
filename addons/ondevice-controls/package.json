@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-controls",
-  "version": "6.0.1-beta.2",
+  "version": "6.0.1-beta.3",
   "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
@@ -53,5 +53,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "3490aec85c84210997f38b92afa515b6dc41b8b5"
+  "gitHead": "4aa2ae40569ea7f61e438ce568a39c580b3097d8"
 }
