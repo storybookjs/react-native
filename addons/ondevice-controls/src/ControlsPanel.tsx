@@ -1,6 +1,8 @@
 import styled from '@emotion/native';
 import { API } from '@storybook/api';
-import React from 'react';
+import React, { useState, useCallback } from 'react';
+import { Args } from '@storybook/addons';
+
 import { useArgs } from './hooks';
 import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';
@@ -46,8 +48,10 @@ export interface ArgTypes {
 const ControlsPanel = ({ api }: { api: API }) => {
   const store = api.store();
   const storyId = store.getSelection().storyId;
+  const [isPristine, setIsPristine] = useState(true);
   const [argsfromHook, updateArgs, resetArgs] = useArgs(storyId, store);
   const { argTypes, parameters } = store.fromId(storyId);
+
   const argsObject = Object.entries(argsfromHook).reduce((prev, [name, value]) => {
     const isControl = Boolean(argTypes?.[name]?.control);
 
@@ -62,14 +66,27 @@ const ControlsPanel = ({ api }: { api: API }) => {
   const isArgsStory = parameters.__isArgsStory;
   const showWarning = !(hasControls && isArgsStory);
 
+  const updateArgsOnFieldChange = useCallback(
+    (args: Args) => {
+      updateArgs(args);
+      setIsPristine(false);
+    },
+    [updateArgs]
+  );
+
+  const handleReset = () => {
+    resetArgs();
+    setIsPristine(true);
+  };
+
   if (showWarning) {
     return <NoControlsWarning />;
   }
 
   return (
     <>
-      <PropForm args={argsObject} onFieldChange={updateArgs} />
-      <Touchable onPress={() => resetArgs()}>
+      <PropForm args={argsObject} isPristine={isPristine} onFieldChange={updateArgsOnFieldChange} />
+      <Touchable onPress={handleReset}>
         <ResetButton>RESET</ResetButton>
       </Touchable>
     </>

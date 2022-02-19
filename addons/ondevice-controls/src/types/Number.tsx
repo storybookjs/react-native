@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 import styled from '@emotion/native';
@@ -15,29 +15,48 @@ const Input = styled.TextInput(({ theme }) => ({
 export interface NumberProps {
   arg: {
     name: string;
-    value: any;
+    value: number;
     step: number;
     min: number;
     max: number;
     range: boolean;
     defaultValue: number;
   };
+  isPristine: boolean;
 
-  onChange: (value: any) => void;
+  onChange: (value: number) => void;
 }
 
-const NumberType = ({ arg, onChange = (value) => value }: NumberProps) => {
-  const allowComma = typeof arg.value === 'string' ? arg.value.trim().replace(/,/, '.') : arg.value;
-  const showError = Number.isNaN(Number(allowComma));
+const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProps) => {
+  const showError = Number.isNaN(arg.value);
+  const [numStr, setNumStr] = useState(arg.value.toString());
+
+  const handleNormalChangeText = (text: string) => {
+    const commaReplaced = text.trim().replace(/,/, '.');
+
+    setNumStr(commaReplaced);
+    if (commaReplaced === '-') {
+      onChange(-1);
+    } else {
+      onChange(Number(commaReplaced));
+    }
+  };
+
+  // handle arg.value and numStr out of sync issue on reset
+  useEffect(() => {
+    if (isPristine) {
+      setNumStr(arg.value.toString());
+    }
+  }, [isPristine, arg.value]);
 
   const renderNormal = () => {
     return (
       <Input
         autoCapitalize="none"
         underlineColorAndroid="transparent"
-        value={arg.value.toString()}
+        value={numStr}
         keyboardType="numeric"
-        onChangeText={onChange}
+        onChangeText={handleNormalChangeText}
         style={showError && styles.errorBorder}
       />
     );
