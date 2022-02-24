@@ -260,7 +260,7 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 }
 ```
 
-Note that intialSelection in 5.3 takes a string which corresponds to the storyID.
+Note that initialSelection in 5.3 takes a string which corresponds to the storyID.
 
 # Contributing
 
