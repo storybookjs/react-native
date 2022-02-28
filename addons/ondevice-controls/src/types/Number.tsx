@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import Slider from '@react-native-community/slider';
 import styled from '@emotion/native';
 
@@ -62,15 +62,18 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
     );
   };
 
-  const renderRange = () => {
+  const renderRange = (): React.ReactNode => {
     return (
-      <Slider
-        value={arg.value}
-        minimumValue={arg.min}
-        maximumValue={arg.max}
-        step={arg.step}
-        onSlidingComplete={(val) => onChange(val)}
-      />
+      <>
+        <Text>{arg.value}</Text>
+        <Slider
+          value={arg.value}
+          minimumValue={arg.min}
+          maximumValue={arg.max}
+          step={arg.step}
+          onValueChange={(val) => onChange(val)}
+        />
+      </>
     );
   };
 
