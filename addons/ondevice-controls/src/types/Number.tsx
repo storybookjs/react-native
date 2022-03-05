@@ -1,15 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import Slider from '@react-native-community/slider';
 import styled from '@emotion/native';
+import Slider from '@react-native-community/slider';
+import React, { useEffect, useState } from 'react';
+import { Platform, StyleSheet, View } from 'react-native';
 
 const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
   borderColor: theme.borderColor || '#e6e6e6',
   borderRadius: 2,
-  fontSize: 13,
-  padding: 5,
+  fontSize: 14,
+  paddingVertical: 4,
+  paddingHorizontal: 8,
   color: theme.labelColor || 'black',
+}));
+
+const SliderText = styled.Text(({ theme }) => ({
+  color: theme.labelColor || 'black',
+  fontSize: 14,
+}));
+
+const ValueLabelText = styled.Text(({ theme }) => ({
+  color: theme.secondaryLabelColor || '#999999',
+  fontSize: 14,
+  marginRight: 8,
+}));
+
+const ValueContainer = styled.View({ flexDirection: 'row' });
+
+const NumberSlider = styled(Slider)(() => ({
+  marginTop: Platform.OS === 'android' ? 8 : 4,
+  marginLeft: Platform.OS === 'android' ? -10 : 0,
 }));
 
 export interface NumberProps {
@@ -65,9 +84,11 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
   const renderRange = (): React.ReactNode => {
     return (
       <>
-        <Text>{arg.value}</Text>
-        <Slider
-          value={arg.value}
+        <ValueContainer>
+          <ValueLabelText>Value:</ValueLabelText>
+          <SliderText>{arg.value}</SliderText>
+        </ValueContainer>
+        <NumberSlider
           minimumValue={arg.min}
           maximumValue={arg.max}
           step={arg.step}

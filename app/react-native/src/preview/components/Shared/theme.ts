@@ -6,4 +6,5 @@ export const theme = {
   previewBorderColor: '#b3b3b3',
   buttonTextColor: '#999999',
   buttonActiveTextColor: '#444444',
+  secondaryLabelColor: '#999999',
 };

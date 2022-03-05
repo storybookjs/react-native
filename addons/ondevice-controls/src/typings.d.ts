@@ -68,6 +68,7 @@ declare module '@emotion/native' {
     previewBorderColor: string;
     buttonTextColor: string;
     buttonActiveTextColor: string;
+    secondaryLabelColor: string;
   };
 
   export interface Styled<Theme extends object = MyTheme, ExtraProps = {}>
