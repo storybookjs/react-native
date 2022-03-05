@@ -4,17 +4,21 @@ import { PublishedStoreItem, StoreItem, StoryStore } from '@storybook/client-api
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
 import { SectionList, StyleSheet } from 'react-native';
+import { GridIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
 
 const SearchBar = styled.TextInput(
   {
-    borderRadius: 4,
+    borderRadius: 16,
+    borderWidth: 2,
     fontSize: 16,
-    margin: 5,
-    padding: 5,
+    marginVertical: 4,
+    marginHorizontal: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 15,
   },
   ({ theme }) => ({
-    backgroundColor: theme.borderColor,
+    borderColor: theme.borderColor,
     color: theme.buttonActiveTextColor,
   })
 );
@@ -22,9 +26,11 @@ const SearchBar = styled.TextInput(
 const HeaderContainer = styled.View({
   paddingVertical: 5,
   paddingHorizontal: 5,
+  flexDirection: 'row',
+  alignItems: 'center',
 });
 
-const StoryListContainer = styled.View({
+const StoryListContainer = styled.View(({ theme }) => ({
   top: 0,
   ...StyleSheet.absoluteFillObject,
 
@@ -39,19 +45,23 @@ const StoryListContainer = styled.View({
   // elevation: 2,
 
   borderRightWidth: StyleSheet.hairlineWidth,
-  borderRightColor: 'lightgrey',
-  backgroundColor: 'white',
-});
+  borderRightColor: theme.borderColor,
+  backgroundColor: theme.storyListBackgroundColor,
+}));
 
 interface SectionProps {
   title: string;
   selected: boolean;
 }
 
-const SectionHeader = ({ title, selected }: SectionProps) => (
-  <HeaderContainer key={title}>
-    <Header selected={selected}>{title}</Header>
-  </HeaderContainer>
+const SectionHeader = React.memo(
+  ({ title, selected }: SectionProps) => (
+    <HeaderContainer key={title}>
+      <GridIcon />
+      <Header selected={selected}>{title}</Header>
+    </HeaderContainer>
+  ),
+  (prevProps, nextProps) => prevProps.selected === nextProps.selected
 );
 
 interface ListItemProps {
@@ -61,21 +71,31 @@ interface ListItemProps {
   onPress: () => void;
 }
 
-const ItemTouchable = styled.TouchableOpacity({
-  paddingHorizontal: 16,
-  paddingVertical: 5,
-});
+const ItemTouchable = styled.TouchableOpacity<{ selected: boolean }>(
+  {
+    padding: 5,
+    paddingLeft: 40,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  ({ selected, theme }) => (selected ? { backgroundColor: theme.listItemActiveColor } : {})
+);
 
-const ListItem = ({ kind, title, selected, onPress }: ListItemProps) => (
-  <ItemTouchable
-    key={title}
-    onPress={onPress}
-    activeOpacity={0.8}
-    testID={`Storybook.ListItem.${kind}.${title}`}
-    accessibilityLabel={`Storybook.ListItem.${title}`}
-  >
-    <Name selected={selected}>{title}</Name>
-  </ItemTouchable>
+const ListItem = React.memo(
+  ({ kind, title, selected, onPress }: ListItemProps) => (
+    <ItemTouchable
+      key={title}
+      onPress={onPress}
+      activeOpacity={0.8}
+      testID={`Storybook.ListItem.${kind}.${title}`}
+      accessibilityLabel={`Storybook.ListItem.${title}`}
+      selected={selected}
+    >
+      <StoryIcon selected={selected} />
+      <Name selected={selected}>{title}</Name>
+    </ItemTouchable>
+  ),
+  (prevProps, nextProps) => prevProps.selected === nextProps.selected
 );
 
 interface Props {
