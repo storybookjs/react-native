@@ -4,16 +4,16 @@ import { PublishedStoreItem, StoreItem, StoryStore } from '@storybook/client-api
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
 import { SectionList, StyleSheet } from 'react-native';
-import { GridIcon } from '../Shared/icons';
+import { GridIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
 
 const SearchBar = styled.TextInput(
   {
-    borderRadius: 28,
+    borderRadius: 16,
     borderWidth: 2,
     fontSize: 16,
-    marginVertical: 5,
-    marginHorizontal: 10,
+    marginVertical: 4,
+    marginHorizontal: 8,
     paddingVertical: 8,
     paddingHorizontal: 15,
   },
@@ -54,11 +54,14 @@ interface SectionProps {
   selected: boolean;
 }
 
-const SectionHeader = ({ title, selected }: SectionProps) => (
-  <HeaderContainer key={title}>
-    <GridIcon />
-    <Header selected={selected}>{title}</Header>
-  </HeaderContainer>
+const SectionHeader = React.memo(
+  ({ title, selected }: SectionProps) => (
+    <HeaderContainer key={title}>
+      <GridIcon />
+      <Header selected={selected}>{title}</Header>
+    </HeaderContainer>
+  ),
+  (prevProps, nextProps) => prevProps.selected === nextProps.selected
 );
 
 interface ListItemProps {
@@ -72,21 +75,27 @@ const ItemTouchable = styled.TouchableOpacity<{ selected: boolean }>(
   {
     padding: 5,
     paddingLeft: 40,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   ({ selected, theme }) => (selected ? { backgroundColor: theme.listItemActiveColor } : {})
 );
 
-const ListItem = ({ kind, title, selected, onPress }: ListItemProps) => (
-  <ItemTouchable
-    key={title}
-    onPress={onPress}
-    activeOpacity={0.8}
-    testID={`Storybook.ListItem.${kind}.${title}`}
-    accessibilityLabel={`Storybook.ListItem.${title}`}
-    selected={selected}
-  >
-    <Name selected={selected}>{title}</Name>
-  </ItemTouchable>
+const ListItem = React.memo(
+  ({ kind, title, selected, onPress }: ListItemProps) => (
+    <ItemTouchable
+      key={title}
+      onPress={onPress}
+      activeOpacity={0.8}
+      testID={`Storybook.ListItem.${kind}.${title}`}
+      accessibilityLabel={`Storybook.ListItem.${title}`}
+      selected={selected}
+    >
+      <StoryIcon selected={selected} />
+      <Name selected={selected}>{title}</Name>
+    </ItemTouchable>
+  ),
+  (prevProps, nextProps) => prevProps.selected === nextProps.selected
 );
 
 interface Props {
