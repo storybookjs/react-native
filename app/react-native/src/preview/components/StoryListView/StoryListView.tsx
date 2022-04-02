@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
 import { addons, StoryKind } from '@storybook/addons';
-import { PublishedStoreItem, StoreItem, StoryIndex } from '@storybook/client-api';
+import { StoreItem, StoryIndex } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
 import { SectionList, StyleSheet, View } from 'react-native';
@@ -103,7 +103,7 @@ interface Props {
 
 interface DataItem {
   title: StoryKind;
-  data: PublishedStoreItem[];
+  data: StoreItem[];
 }
 
 const getStories = (storyIndex: StoryIndex): DataItem[] => {
@@ -111,14 +111,16 @@ const getStories = (storyIndex: StoryIndex): DataItem[] => {
     return [];
   }
 
-  return Object.values(storyIndex.stories).reduce((acc, story) => {
+  storyIndex.stories;
+  const groupedStories = Object.values(storyIndex.stories).reduce((acc, story) => {
     acc[story.title] = {
       title: story.title,
-      data: (acc[story.title] ? acc[story.title].data : []).concat(story),
+      data: (acc[story.title]?.data ?? []).concat(story),
     };
-
     return acc;
-  }, {} as Record<string, { title: string; data: StoreItem[] }>);
+  }, {});
+
+  return Object.values(groupedStories);
 };
 
 const styles = StyleSheet.create({
