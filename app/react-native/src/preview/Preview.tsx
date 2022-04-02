@@ -1,16 +1,16 @@
+import React, { useEffect, useState, useReducer } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { StoryId, StoryStore, StoryIndex } from '@storybook/store';
 import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
-import { ClientApi, ConfigApi, StoryStore } from '@storybook/client-api';
 import { Loadable } from '@storybook/core-client';
 import Events from '@storybook/core-events';
 import { toId } from '@storybook/csf';
 import { ThemeProvider } from 'emotion-theming';
-import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
-import { loadCsf } from './loadCsf';
+import type { ReactFramework } from '../types-6.0';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -50,62 +50,89 @@ export type Params = {
   keyboardAvoidingViewVerticalOffset?: number;
 } & { theme?: typeof theme };
 
-export default class Preview {
-  _clientApi: ClientApi;
+export class Preview {
+  _storyStore: StoryStore<ReactFramework>;
 
-  _storyStore: StoryStore;
+  _getStoryIndex?: () => StoryIndex;
+
+  _storyId: StoryId;
+
+  _setStory: ({ id: newStoryId }: { id: string }) => void;
+  _forceRerender: () => void;
 
   _addons: any;
 
   _channel: Channel;
 
-  _decorators: any[];
+  // _decorators: any[];
 
   _asyncStorageStoryId: string;
 
-  _configApi: ConfigApi;
-
-  configure: (loadable: Loadable, m: NodeModule, showDeprecationWarning: boolean) => void;
+  configure: (loadable: Loadable, m: NodeModule) => void;
 
   constructor() {
-    const channel = new Channel({ async: true });
-    this._decorators = [];
-    this._storyStore = new StoryStore({ channel });
-    this._clientApi = new ClientApi({ storyStore: this._storyStore });
-    this._configApi = new ConfigApi({ storyStore: this._storyStore });
-    this._channel = channel;
-    const configure = loadCsf({
-      clientApi: this._clientApi,
-      storyStore: this._storyStore,
-      configApi: this._configApi,
-    });
-    this.configure = (...args) => configure('react-native', ...args);
-
-    addons.setChannel(channel);
+    this._channel = addons.getChannel();
+    // this._decorators = [];
+    this._storyStore = new StoryStore();
   }
 
-  api = () => {
-    return this._clientApi;
-  };
+  initialize({
+    getStoryIndex,
+  }: {
+    // In the case of the v6 store, we can only get the index from the facade *after*
+    // getProjectAnnotations has been run, thus this slightly awkward approach
+    getStoryIndex?: () => StoryIndex;
+  }) {
+    this._getStoryIndex = getStoryIndex;
+    this.setupListeners();
+  }
+
+  setupListeners() {
+    this._channel.on(Events.SET_CURRENT_STORY, this.onSetCurrentStory.bind(this));
+    this._channel.on(Events.UPDATE_GLOBALS, this.onUpdateGlobals.bind(this));
+    this._channel.on(Events.UPDATE_STORY_ARGS, this.onUpdateArgs.bind(this));
+    this._channel.on(Events.RESET_STORY_ARGS, this.onResetArgs.bind(this));
+    this._channel.on(Events.FORCE_RE_RENDER, this.onForceReRender.bind(this));
+    this._channel.on(Events.FORCE_REMOUNT, this.onForceRemount.bind(this));
+  }
+
+  // This happens when a glob gets HMR-ed
+  async onStoriesChanged({ storyIndex }: { storyIndex?: StoryIndex }) {
+    console.log({ storyIndex });
+  }
 
   getStorybookUI = (params: Partial<Params> = {}) => {
+    const channel = new Channel({ async: true });
+    addons.setChannel(channel);
+
     const { initialSelection, shouldPersistSelection = true } = params;
     this._setInitialStory(initialSelection, shouldPersistSelection);
 
-    this._channel.on(Events.SET_CURRENT_STORY, (d: { storyId: string }) => {
-      this._selectStoryEvent(d, shouldPersistSelection);
-    });
+    // this._channel.on(Events.SET_CURRENT_STORY, (d: { storyId: string }) => {
+    //   this._selectStoryEvent(d, shouldPersistSelection);
+    // });
+    // addons.loadAddons(this._clientApi);
 
-    const { _storyStore } = this;
+    const self = this;
+    const storyIndex = self._getStoryIndex();
+    const appliedTheme = { ...theme, ...params.theme };
+    return () => {
+      const [storyId, setStoryId] = useState(this._storyId || '');
+      const [, forceUpdate] = useReducer((x) => x + 1, 0);
+      useEffect(() => {
+        self._setStory = ({ id: newStoryId }: { id: string }) => setStoryId(newStoryId);
+        self._forceRerender = () => forceUpdate();
+      }, []);
 
-    addons.loadAddons(this._clientApi);
+      const story = self._storyStore.fromId(storyId);
 
     const appliedTheme = { ...theme, ...params.theme };
     return () => (
       <SafeAreaProvider>
         <ThemeProvider theme={appliedTheme}>
           <OnDeviceUI
-            storyStore={_storyStore}
+            story={story}
+            storyIndex={storyIndex}
             isUIHidden={params.isUIHidden}
             tabOpen={params.tabOpen}
             shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
@@ -178,7 +205,7 @@ export default class Preview {
   }
 
   _selectStory(story: any) {
-    this._storyStore.setSelection({ storyId: story.id, viewMode: 'story' });
+    this._storyId = story.id;
     this._channel.emit(Events.SELECT_STORY, story);
   }
 

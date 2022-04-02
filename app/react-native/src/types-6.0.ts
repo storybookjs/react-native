@@ -8,6 +8,11 @@ export type { Args, ArgTypes, Parameters, StoryContext } from '@storybook/addons
 type ReactComponent = ComponentType<any>;
 type ReactReturnType = StoryFnReactReturnType;
 
+export type ReactFramework = {
+  component: ComponentType<any>;
+  storyResult: StoryFnReactReturnType;
+};
+
 /**
  * Metadata to configure the stories for a component.
  *
@@ -31,9 +36,8 @@ export type Story<Args = DefaultArgs> = BaseStory<Args, ReactReturnType> &
  * export default { ... } as ComponentMeta<typeof Button>;
  * ```
  */
-export type ComponentMeta<
-  T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>
-> = Meta<ComponentProps<T>>;
+export type ComponentMeta<T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>> =
+  Meta<ComponentProps<T>>;
 
 /**
  * For the common case where a story is a simple component that receives args as props:
@@ -42,6 +46,5 @@ export type ComponentMeta<
  * const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
  * ```
  */
-export type ComponentStory<
-  T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>
-> = Story<ComponentProps<T>>;
+export type ComponentStory<T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>> =
+  Story<ComponentProps<T>>;

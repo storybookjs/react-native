@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
 import { addons, StoryKind } from '@storybook/addons';
-import { PublishedStoreItem, StoreItem, StoryStore } from '@storybook/client-api';
+import { PublishedStoreItem, StoreItem, StoryIndex } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
 import { SectionList, StyleSheet, View } from 'react-native';
@@ -55,13 +55,12 @@ interface SectionProps {
   selected: boolean;
 }
 
-const SectionHeader = React.memo(
-  ({ title, selected }: SectionProps) => (
-    <HeaderContainer key={title}>
-      <GridIcon />
-      <Header selected={selected}>{title}</Header>
-    </HeaderContainer>
-  ));
+const SectionHeader = React.memo(({ title, selected }: SectionProps) => (
+  <HeaderContainer key={title}>
+    <GridIcon />
+    <Header selected={selected}>{title}</Header>
+  </HeaderContainer>
+));
 
 interface ListItemProps {
   title: string;
@@ -98,7 +97,7 @@ const ListItem = React.memo(
 );
 
 interface Props {
-  storyStore: StoryStore;
+  storyIndex: StoryIndex;
   selectedStory: StoreItem;
 }
 
@@ -107,29 +106,19 @@ interface DataItem {
   data: PublishedStoreItem[];
 }
 
-const getStories = (storyStore: StoryStore): DataItem[] => {
-  if (!storyStore) {
+const getStories = (storyIndex: StoryIndex): DataItem[] => {
+  if (!storyIndex) {
     return [];
   }
 
-  return Object.values(
-    storyStore
-      .raw()
-      .reduce(
-        (
-          acc: { [kind: string]: { title: string; data: PublishedStoreItem[] } },
-          story: PublishedStoreItem
-        ) => {
-          acc[story.kind] = {
-            title: story.kind,
-            data: (acc[story.kind] ? acc[story.kind].data : []).concat(story),
-          };
+  return Object.values(storyIndex.stories).reduce((acc, story) => {
+    acc[story.title] = {
+      title: story.title,
+      data: (acc[story.title] ? acc[story.title].data : []).concat(story),
+    };
 
-          return acc;
-        },
-        {}
-      )
-  );
+    return acc;
+  }, {} as Record<string, { title: string; data: StoreItem[] }>);
 };
 
 const styles = StyleSheet.create({
@@ -138,9 +127,9 @@ const styles = StyleSheet.create({
 
 const tabBarHeight = 40;
 
-const StoryListView = ({ selectedStory, storyStore }: Props) => {
+const StoryListView = ({ selectedStory, storyIndex }: Props) => {
   const insets = useSafeAreaInsets();
-  const originalData = useMemo(() => getStories(storyStore), [storyStore]);
+  const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
   const [data, setData] = useState<DataItem[]>(originalData);
 
   const handleChangeSearchText = (text: string) => {
