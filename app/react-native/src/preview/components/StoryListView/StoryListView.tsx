@@ -111,7 +111,6 @@ const getStories = (storyIndex: StoryIndex): DataItem[] => {
     return [];
   }
 
-  storyIndex.stories;
   const groupedStories = Object.values(storyIndex.stories).reduce((acc, story) => {
     acc[story.title] = {
       title: story.title,
