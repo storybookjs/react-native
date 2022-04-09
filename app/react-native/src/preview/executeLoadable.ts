@@ -42,6 +42,7 @@ export function executeLoadable(loadable: Loadable) {
       exportsMap = new Map(
         csfExports.map((fileExports, index) => [`exports-map-${index}`, fileExports])
       );
+      //@ts-ignore
     } else if (exported) {
       logger.warn(
         `Loader function passed to 'configure' should return void or an array of module exports that all contain a 'default' export. Received: ${JSON.stringify(
@@ -54,6 +55,7 @@ export function executeLoadable(loadable: Loadable) {
   return exportsMap;
 }
 
+// @ts-ignore
 global.lastExportsMap = new Map<Path, ModuleExports>();
 
 /**
@@ -64,7 +66,7 @@ global.lastExportsMap = new Map<Path, ModuleExports>();
  * @param m NodeModule
  * @returns { added: Map<Path, ModuleExports>, removed: Map<Path, ModuleExports> }
  */
-export function executeLoadableForChanges(loadable: Loadable, m?: NodeModule) {
+export function executeLoadableForChanges(loadable: Loadable) {
   // if (m?.hot?.dispose) {
   //   m.hot.accept();
   //   m.hot.dispose((data) => {
@@ -73,6 +75,7 @@ export function executeLoadableForChanges(loadable: Loadable, m?: NodeModule) {
   //   });
   // }
 
+  // @ts-ignore
   const lastExportsMap = global.lastExportsMap as Map<Path, ModuleExports>;
   const exportsMap = executeLoadable(loadable);
   const added = new Map<Path, ModuleExports>();
@@ -89,6 +92,7 @@ export function executeLoadableForChanges(loadable: Loadable, m?: NodeModule) {
     .forEach((fileName) => removed.set(fileName, lastExportsMap.get(fileName)));
 
   // Save the value for the dispose() call above
+  // @ts-ignore
   global.lastExportsMap = exportsMap;
 
   return { added, removed };

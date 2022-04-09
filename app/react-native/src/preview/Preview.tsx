@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useReducer } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { StoryId, StoryStore, StoryIndex } from '@storybook/store';
+import { StoryId, StoryStore, StoryIndex, Selection } from '@storybook/store';
 import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
 import { Loadable } from '@storybook/core-client';
 import Events from '@storybook/core-events';
-import { toId } from '@storybook/csf';
+import { toId, Globals, Args } from '@storybook/csf';
 import { ThemeProvider } from 'emotion-theming';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import OnDeviceUI from './components/OnDeviceUI';
@@ -19,20 +19,22 @@ interface AsyncStorage {
   setItem: (key: string, value: string) => Promise<void>;
 }
 
-type StoryKind = string
-type StoryName = string
+type StoryKind = string;
+type StoryName = string;
 
-type InitialSelection = `${StoryKind}--${StoryName}` | {
-  /**
-   * Kind is the default export name or the storiesOf("name") name
-   */
-  kind: StoryKind;
+type InitialSelection =
+  | `${StoryKind}--${StoryName}`
+  | {
+      /**
+       * Kind is the default export name or the storiesOf("name") name
+       */
+      kind: StoryKind;
 
-  /**
-   * Name is the named export or the .add("name") name
-   */
-  name: StoryName;
-}
+      /**
+       * Name is the named export or the .add("name") name
+       */
+      name: StoryName;
+    };
 
 export type Params = {
   onDeviceUI?: boolean;
@@ -57,7 +59,7 @@ export class Preview {
 
   _storyId: StoryId;
 
-  _setStory: ({ id: newStoryId }: { id: string }) => void;
+  _setStory: ({ id }: { id: string }) => void;
   _forceRerender: () => void;
 
   _addons: any;
@@ -96,6 +98,57 @@ export class Preview {
     this._channel.on(Events.FORCE_REMOUNT, this.onForceRemount.bind(this));
   }
 
+  onSetCurrentStory(selection: Selection) {
+    console.log('onSetCurrentStory', { selection });
+    this._channel.emit(Events.CURRENT_STORY_WAS_SET, selection);
+    this._setStory({ id: selection.storyId });
+  }
+
+  async onUpdateGlobals({ globals }: { globals: Globals }) {
+    this._storyStore.globals.update(globals);
+
+    this._forceRerender();
+
+    this._channel.emit(Events.GLOBALS_UPDATED, {
+      globals: this._storyStore.globals.get(),
+      initialGlobals: this._storyStore.globals.initialGlobals,
+    });
+  }
+
+  async onUpdateArgs({ storyId, updatedArgs }: { storyId: StoryId; updatedArgs: Args }) {
+    this._storyStore.args.update(storyId, updatedArgs);
+
+    this._forceRerender();
+
+    this._channel.emit(Events.STORY_ARGS_UPDATED, {
+      storyId,
+      args: this._storyStore.args.get(storyId),
+    });
+  }
+
+  async onResetArgs({ storyId, argNames }: { storyId: string; argNames?: string[] }) {
+    const { initialArgs } = this._storyStore.fromId(storyId);
+
+    const argNamesToReset = argNames || Object.keys(this._storyStore.args.get(storyId));
+    const updatedArgs = argNamesToReset.reduce((acc, argName) => {
+      acc[argName] = initialArgs[argName];
+      return acc;
+    }, {} as Partial<Args>);
+
+    await this.onUpdateArgs({ storyId, updatedArgs });
+  }
+
+  // ForceReRender does not include a story id, so we simply must
+  // re-render all stories in case they are relevant
+  async onForceReRender() {
+    this._forceRerender();
+  }
+
+  async onForceRemount({ storyId }: { storyId: StoryId }) {
+    console.log('onForceRemount', { storyId });
+    this._forceRerender();
+  }
+
   // This happens when a glob gets HMR-ed
   async onStoriesChanged({ storyIndex }: { storyIndex?: StoryIndex }) {
     console.log({ storyIndex });
@@ -113,9 +166,10 @@ export class Preview {
     // });
     // addons.loadAddons(this._clientApi);
 
+    // eslint-disable-next-line consistent-this
     const self = this;
     const storyIndex = self._getStoryIndex();
-    const appliedTheme = { ...theme, ...params.theme };
+    // const appliedTheme = { ...theme, ...params.theme };
     return () => {
       const [storyId, setStoryId] = useState(this._storyId || '');
       const [, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -126,21 +180,22 @@ export class Preview {
 
       const story = self._storyStore.fromId(storyId);
 
-    const appliedTheme = { ...theme, ...params.theme };
-    return () => (
-      <SafeAreaProvider>
-        <ThemeProvider theme={appliedTheme}>
-          <OnDeviceUI
-            story={story}
-            storyIndex={storyIndex}
-            isUIHidden={params.isUIHidden}
-            tabOpen={params.tabOpen}
-            shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
-            keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
-          />
-        </ThemeProvider>
-      </SafeAreaProvider>
-    );
+      const appliedTheme = { ...theme, ...params.theme };
+      return () => (
+        <SafeAreaProvider>
+          <ThemeProvider theme={appliedTheme}>
+            <OnDeviceUI
+              story={story}
+              storyIndex={storyIndex}
+              isUIHidden={params.isUIHidden}
+              tabOpen={params.tabOpen}
+              shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
+              keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
+            />
+          </ThemeProvider>
+        </SafeAreaProvider>
+      );
+    };
   };
 
   _setInitialStory = async (initialSelection?: InitialSelection, shouldPersistSelection = true) => {
@@ -153,9 +208,10 @@ export class Preview {
 
   _getInitialStory = async (initialSelection?: InitialSelection, shouldPersistSelection = true) => {
     let story: string = null;
-    const initialSelectionId = initialSelection === undefined
-      ? undefined
-      : typeof initialSelection === 'string'
+    const initialSelectionId =
+      initialSelection === undefined
+        ? undefined
+        : typeof initialSelection === 'string'
         ? initialSelection
         : toId(initialSelection.kind, initialSelection.name);
 
