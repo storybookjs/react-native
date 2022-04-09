@@ -3,7 +3,7 @@ import { addons } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { Loadable } from '@storybook/core-client';
 
-import { ClientApi } from '@storybook/client-api';
+import { ClientApi, StoryStore } from '@storybook/client-api';
 import type { ReactFramework } from '../types-6.0';
 import { Preview } from './Preview';
 import { executeLoadableForChanges } from './executeLoadable';
@@ -14,8 +14,9 @@ export function start() {
   const channel = new Channel({ async: true });
   addons.setChannel(channel);
 
-  const clientApi = new ClientApi<TFramework>();
-  const preview = new Preview();
+  const storyStore = new StoryStore<TFramework>();
+  const clientApi = new ClientApi<TFramework>({ storyStore });
+  const preview = new Preview({ storyStore });
   let initialized = false;
 
   function onStoriesChanged() {
