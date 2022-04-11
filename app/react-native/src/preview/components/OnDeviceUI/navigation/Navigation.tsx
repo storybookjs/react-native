@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, SafeAreaView } from 'react-native';
+import { View, ViewProps } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import Bar from './Bar';
 import VisibilityButton from './VisibilityButton';
@@ -16,6 +17,14 @@ interface Props {
 }
 
 const Navigation = ({ tabOpen, onChangeTab, initialUiVisible }: Props) => {
+  const insets = useSafeAreaInsets();
+  const navStyle: ViewProps['style'] = {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: insets.bottom,
+  };
+
   const [isUIVisible, setIsUIVisible] = useState(
     initialUiVisible !== undefined ? initialUiVisible : true
   );
@@ -37,21 +46,17 @@ const Navigation = ({ tabOpen, onChangeTab, initialUiVisible }: Props) => {
   };
 
   return (
-    <View>
-      <SafeAreaView>
-        {isUIVisible && (
-          <GestureRecognizer
-            onSwipeLeft={handleSwipeLeft}
-            onSwipeRight={handleSwipeRight}
-            config={SWIPE_CONFIG}
-          >
-            <Bar index={tabOpen} onPress={onChangeTab} />
-          </GestureRecognizer>
-        )}
-        <View>
-          <VisibilityButton onPress={handleToggleUI} />
-        </View>
-      </SafeAreaView>
+    <View style={navStyle}>
+      {isUIVisible && (
+        <GestureRecognizer
+          onSwipeLeft={handleSwipeLeft}
+          onSwipeRight={handleSwipeRight}
+          config={SWIPE_CONFIG}
+        >
+          <Bar index={tabOpen} onPress={onChangeTab} />
+        </GestureRecognizer>
+      )}
+      <VisibilityButton onPress={handleToggleUI} />
     </View>
   );
 };

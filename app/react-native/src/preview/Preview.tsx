@@ -7,6 +7,7 @@ import Events from '@storybook/core-events';
 import { toId } from '@storybook/csf';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
 import { loadCsf } from './loadCsf';
@@ -101,15 +102,17 @@ export default class Preview {
 
     const appliedTheme = { ...theme, ...params.theme };
     return () => (
-      <ThemeProvider theme={appliedTheme}>
-        <OnDeviceUI
-          storyStore={_storyStore}
-          isUIHidden={params.isUIHidden}
-          tabOpen={params.tabOpen}
-          shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
-          keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
-        />
-      </ThemeProvider>
+      <SafeAreaProvider>
+        <ThemeProvider theme={appliedTheme}>
+          <OnDeviceUI
+            storyStore={_storyStore}
+            isUIHidden={params.isUIHidden}
+            tabOpen={params.tabOpen}
+            shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
+            keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
+          />
+        </ThemeProvider>
+      </SafeAreaProvider>
     );
   };
 

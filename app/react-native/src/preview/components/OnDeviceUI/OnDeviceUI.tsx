@@ -13,6 +13,7 @@ import {
   TouchableOpacity,
   StatusBar,
   StyleSheet,
+  View,
 } from 'react-native';
 import Events from '@storybook/core-events';
 import StoryListView from '../StoryListView';
@@ -136,49 +137,54 @@ const OnDeviceUI = ({
 
   const previewStyles = [flex, getPreviewScale(animatedValue.current, slideBetweenAnimation, wide)];
 
+  const noSafeArea = story.parameters?.noSafeArea ?? false;
+  const WrapperView = noSafeArea ? View : SafeAreaView;
+
   return (
-    <SafeAreaView style={[flex, IS_ANDROID && IS_EXPO && styles.expoAndroidContainer]}>
-      <KeyboardAvoidingView
-        enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
-        behavior={IS_IOS ? 'padding' : null}
-        keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
-        style={flex}
-      >
-        <AbsolutePositionedKeyboardAwareView
-          onLayout={setPreviewDimensions}
-          previewDimensions={previewDimensions}
+    <>
+      <WrapperView style={[flex, IS_ANDROID && IS_EXPO && styles.expoAndroidContainer]}>
+        <KeyboardAvoidingView
+          enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
+          behavior={IS_IOS ? 'padding' : null}
+          keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
+          style={flex}
         >
-          <Animated.View style={previewWrapperStyles}>
-            <Animated.View style={previewStyles}>
-              <Preview disabled={tabOpen === PREVIEW}>
-                <StoryView story={story} />
-              </Preview>
-              {tabOpen !== PREVIEW ? (
-                <TouchableOpacity
-                  style={absolutePosition}
-                  onPress={() => handleToggleTab(PREVIEW)}
-                />
-              ) : null}
+          <AbsolutePositionedKeyboardAwareView
+            onLayout={setPreviewDimensions}
+            previewDimensions={previewDimensions}
+          >
+            <Animated.View style={previewWrapperStyles}>
+              <Animated.View style={previewStyles}>
+                <Preview disabled={tabOpen === PREVIEW}>
+                  <StoryView story={story} />
+                </Preview>
+                {tabOpen !== PREVIEW ? (
+                  <TouchableOpacity
+                    style={absolutePosition}
+                    onPress={() => handleToggleTab(PREVIEW)}
+                  />
+                ) : null}
+              </Animated.View>
             </Animated.View>
-          </Animated.View>
-          <Panel
-            style={getNavigatorPanelPosition(animatedValue.current, previewDimensions.width, wide)}
-          >
-            <StoryListView storyStore={storyStore} selectedStory={story} />
-          </Panel>
-          <Panel
-            style={getAddonPanelPosition(animatedValue.current, previewDimensions.width, wide)}
-          >
-            <Addons active={tabOpen === ADDONS} />
-          </Panel>
-        </AbsolutePositionedKeyboardAwareView>
-        <Navigation
-          tabOpen={tabOpen}
-          onChangeTab={handleToggleTab}
-          initialUiVisible={!isUIHidden}
-        />
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+            <Panel
+              style={getNavigatorPanelPosition(
+                animatedValue.current,
+                previewDimensions.width,
+                wide
+              )}
+            >
+              <StoryListView storyStore={storyStore} selectedStory={story} />
+            </Panel>
+            <Panel
+              style={getAddonPanelPosition(animatedValue.current, previewDimensions.width, wide)}
+            >
+              <Addons active={tabOpen === ADDONS} />
+            </Panel>
+          </AbsolutePositionedKeyboardAwareView>
+        </KeyboardAvoidingView>
+      </WrapperView>
+      <Navigation tabOpen={tabOpen} onChangeTab={handleToggleTab} initialUiVisible={!isUIHidden} />
+    </>
   );
 };
 export default React.memo(OnDeviceUI);
