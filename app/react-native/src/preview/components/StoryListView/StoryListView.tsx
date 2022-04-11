@@ -175,9 +175,11 @@ const StoryListView = ({ selectedStory, storyStore }: Props) => {
     channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 
+  const safeStyle = { flex: 1, marginTop: insets.top, marginBottom: insets.bottom + 40 };
+
   return (
-      <StoryListContainer>
-      <View style={{flex: 1, marginTop: insets.top, marginBottom: insets.bottom + 40}}>
+    <StoryListContainer>
+      <View style={safeStyle}>
         <SearchBar
           testID="Storybook.ListView.SearchBar"
           clearButtonMode="while-editing"
@@ -204,8 +206,8 @@ const StoryListView = ({ selectedStory, storyStore }: Props) => {
           sections={data}
           stickySectionHeadersEnabled={false}
         />
-      </StoryListContainer>
       </View>
+    </StoryListContainer>
   );
 };
 
