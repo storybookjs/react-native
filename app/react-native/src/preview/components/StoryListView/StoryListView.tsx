@@ -3,7 +3,8 @@ import { addons, StoryKind } from '@storybook/addons';
 import { PublishedStoreItem, StoreItem, StoryStore } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
-import { SectionList, StyleSheet } from 'react-native';
+import { SectionList, StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GridIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
 
@@ -138,6 +139,7 @@ const styles = StyleSheet.create({
 });
 
 const StoryListView = ({ selectedStory, storyStore }: Props) => {
+  const insets = useSafeAreaInsets();
   const originalData = useMemo(() => getStories(storyStore), [storyStore]);
   const [data, setData] = useState<DataItem[]>(originalData);
 
@@ -174,34 +176,36 @@ const StoryListView = ({ selectedStory, storyStore }: Props) => {
   };
 
   return (
-    <StoryListContainer>
-      <SearchBar
-        testID="Storybook.ListView.SearchBar"
-        clearButtonMode="while-editing"
-        disableFullscreenUI
-        onChangeText={handleChangeSearchText}
-        placeholder="Filter"
-        returnKeyType="search"
-      />
-      <SectionList
-        style={styles.sectionList}
-        testID="Storybook.ListView"
-        renderItem={({ item }) => (
-          <ListItem
-            title={item.name}
-            kind={item.kind}
-            selected={selectedStory && item.id === selectedStory.id}
-            onPress={() => changeStory(item.id)}
-          />
-        )}
-        renderSectionHeader={({ section: { title } }) => (
-          <SectionHeader title={title} selected={selectedStory && title === selectedStory.kind} />
-        )}
-        keyExtractor={(item, index) => item.id + index}
-        sections={data}
-        stickySectionHeadersEnabled={false}
-      />
-    </StoryListContainer>
+      <StoryListContainer>
+      <View style={{flex: 1, marginTop: insets.top, marginBottom: insets.bottom + 40}}>
+        <SearchBar
+          testID="Storybook.ListView.SearchBar"
+          clearButtonMode="while-editing"
+          disableFullscreenUI
+          onChangeText={handleChangeSearchText}
+          placeholder="Filter"
+          returnKeyType="search"
+        />
+        <SectionList
+          style={styles.sectionList}
+          testID="Storybook.ListView"
+          renderItem={({ item }) => (
+            <ListItem
+              title={item.name}
+              kind={item.kind}
+              selected={selectedStory && item.id === selectedStory.id}
+              onPress={() => changeStory(item.id)}
+            />
+          )}
+          renderSectionHeader={({ section: { title } }) => (
+            <SectionHeader title={title} selected={selectedStory && title === selectedStory.kind} />
+          )}
+          keyExtractor={(item, index) => item.id + index}
+          sections={data}
+          stickySectionHeadersEnabled={false}
+        />
+      </StoryListContainer>
+      </View>
   );
 };
 
