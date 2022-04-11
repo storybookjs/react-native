@@ -48,7 +48,7 @@ For v6 the cli setup command is still being worked on, for now use the manual gu
 
 In v6 you can use the CSF syntax that looks like this:
 
-```
+```jsx
 import {MyButton} from './Button';
 
 export default {
@@ -69,7 +69,7 @@ Basic.args = {
 
 You should configure the path to your story files in the main.js config file from the .storybook folder.
 
-```
+```js
 module.exports = {
   stories: [
     '../components/**/*.stories.?(ts|tsx|js|jsx)'
@@ -82,7 +82,7 @@ module.exports = {
 
 For stories you can add decorators and parameters on the default export or on a specifc story 
 
-```
+```jsx
 export default {
   title: 'Button',
   component: Button,
@@ -107,7 +107,7 @@ export default {
 
 For global decorators and parameters you can add them to preview.js inside your .storybook folder.
 
-```
+```jsx
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
 export const decorators = [withBackgrounds, (Story)=> <View style={{color: 'blue'}}><Story/></View>];
 export const parameters = {
@@ -134,7 +134,7 @@ Currently the addons available are:
 
 Install each one you want to use and add them to the main.js addons list as follows:
 
-```
+```js
 addons: [
   '@storybook/addon-ondevice-notes',
   '@storybook/addon-ondevice-controls',
