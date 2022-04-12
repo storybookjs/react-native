@@ -128,8 +128,7 @@ import StorybookUIRoot from './.storybook/Storybook';
 export { StorybookUIRoot as default };"
 ```
 
-
-**Add a stories file **
+**Add a stories file**
 
 In the main.js we created the path was set as `../components/**/*.stories.?(ts|tsx|js|jsx)` which matches any .stories file inside the components folder.
 
