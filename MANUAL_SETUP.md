@@ -16,6 +16,12 @@ For react native cli you can use this [template](https://github.com/dannyhw/reac
 npx react-native init MyApp --template react-native-template-storybook
 ```
 
+You can also choose to use a bash script if you prefer, however it is more involved.
+
+- [rn-cli setup script](https://gist.github.com/dannyhw/9b84973dcc6ff4fa2e86e32d571d294e)
+
+- [expo setup script](https://gist.github.com/dannyhw/92b3ff0d6ccaead9df2820a507154b87)
+
 # Manual setup
 
 You may wish to setup everything yourself, you can use the following guide to do so.
@@ -144,4 +150,14 @@ export const Basic = args => <Button {...args} />;
 ```
 
 This is a simple example you can do more by adding addons and exploring more features of storybook.
-        
+
+
+# Run storybook
+
+To run storybook first generate the stories list:
+
+```
+yarn sb-rn-get-stories
+```
+
+Then you can run `yarn ios` or `yarn android` to run the app.
