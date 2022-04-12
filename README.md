@@ -10,6 +10,10 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 
 Work on v6 is currently underway, if you want to help out or are just curious then check out the [project board](https://github.com/storybookjs/react-native/projects/2?fullscreen=true) to see the open issues related to 6.0. If you want to work on something then assign it to yourself and drag the item to the doing column.
 
+![picture of storybook](https://user-images.githubusercontent.com/3481514/145904252-92e3dc1e-591f-410f-88a1-b4250f4ba6f2.png)
+
+Pictured is from the template mentioned in [getting started](#getting-started)
+
 # Table of contents
 
 - 🚀 [Getting Started](#getting-started)
