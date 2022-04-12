@@ -23,9 +23,9 @@ module.exports = {
 Use the `notes` parameter to add a note to stories:
 
 ```js
-const ArrayMeta: ComponentMeta<typeof Array> = {
-  title: 'Array control',
-  component: Array,
+export default {
+  title: 'My title',
+  component: MyComponent,
   parameters: {
     notes: `
      # Here I can add some markdown
