@@ -18,9 +18,8 @@ npx react-native init MyApp --template react-native-template-storybook
 
 You can also choose to use a bash script if you prefer, however it is more involved.
 
-- [rn-cli setup script](https://gist.github.com/dannyhw/9b84973dcc6ff4fa2e86e32d571d294e)
-
 - [expo setup script](https://gist.github.com/dannyhw/92b3ff0d6ccaead9df2820a507154b87)
+- [rn-cli setup script](https://gist.github.com/dannyhw/9b84973dcc6ff4fa2e86e32d571d294e)
 
 # Manual setup
 
@@ -28,16 +27,16 @@ You may wish to setup everything yourself, you can use the following guide to do
 
 # Install dependencies
 
-**React native CLI**
-
-```sh
-yarn add -D @storybook/react-native@next @react-native-async-storage/async-storage
-```
-
 **Expo**
 
 ```sh
 expo install @storybook/react-native@next @react-native-async-storage/async-storage
+```
+
+**React native CLI**
+
+```sh
+yarn add -D @storybook/react-native@next @react-native-async-storage/async-storage
 ```
 
 **IOS**
@@ -52,8 +51,12 @@ cd ios; pod install; cd ..;
 
 ## .storybook
 
-Create a folder called .storybook with files: main.js, preview.js, Storybook.tsx
+Create a folder called `.storybook` with files: `main.js`, `preview.js`, `Storybook.tsx`
 
+You can use this one-liner to quickly create those files:
+```console
+mkdir .storybook && cd .storybook && touch main.js preview.js Storybook.tsx
+```
 
 ### main.js
 
