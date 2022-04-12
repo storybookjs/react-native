@@ -172,7 +172,21 @@ An example of this can found in the ignite CLI boiler plate for storybook which 
 
 # getStorybookUI options
 
-An updated list will be added soon
+
+You can pass these parameters to getStorybookUI call in your storybook entry point:
+
+```
+{
+    tabOpen: Number (0)
+        -- which tab should be open. -1 Navigator, 0 Preview, 1 Addons
+    initialSelection: Object (null)
+        -- initialize storybook with a specific story.  eg: `{ kind: 'MyButton', name: 'LargeButton' }`
+    shouldDisableKeyboardAvoidingView: Boolean (false)
+        -- Disable KeyboardAvoidingView wrapping Storybook's view
+    keyboardAvoidingViewVerticalOffset: Number (0)
+        -- With shouldDisableKeyboardAvoidingView=true, this will set the keyboardverticaloffset (https://facebook.github.io/react-native/docs/keyboardavoidingview#keyboardverticaloffset) value for KeyboardAvoidingView wrapping Storybook's view
+}
+```
 
 # Contributing
 
