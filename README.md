@@ -41,7 +41,7 @@ npx react-native init MyApp --template react-native-template-storybook
 
 Normally to setup an existing project you would use the storybook cli to generate the files.
 
-For v6 the cli setup command is still being worked on, for now use the manual guide [here](https://github.com/storybookjs/react-native/blob/next-6.0/v6README.md).
+For v6 the cli setup command is still being worked on, for now use the manual guide [here](MANUAL_SETUP.md).
 
 
 # Writing stories
@@ -148,10 +148,10 @@ addons: [
 
 For details of each ondevice addon you can see the readme:
 
-- [actions](https://github.com/storybookjs/react-native/tree/next-6.0/addons/ondevice-actions)
-- [backgrounds](https://github.com/storybookjs/react-native/tree/next-6.0/addons/ondevice-backgrounds)
-- [controls](https://github.com/storybookjs/react-native/tree/next-6.0/addons/ondevice-controls)
-- [notes](https://github.com/storybookjs/react-native/tree/next-6.0/addons/ondevice-notes)
+- [actions](addons/ondevice-actions)
+- [backgrounds](addons/ondevice-backgrounds)
+- [controls](addons/ondevice-controls)
+- [notes](addons/ondevice-notes)
 
 # Hide/Show storybook
 
@@ -175,7 +175,7 @@ An updated list will be added soon
 We welcome contributions to Storybook!
 
 - 📥 Pull requests and 🌟 Stars are always welcome.
-- Read our [contributing guide](https://github.com/storybookjs/react-native/blob/master/CONTRIBUTING.md) to get started,
+- Read our [contributing guide](CONTRIBUTING.md) to get started,
   or find us on [Discord](https://discord.gg/sMFvFsG) and look for the react-native channel.
 
 Looking for a first issue to tackle?
