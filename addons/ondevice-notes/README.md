@@ -2,8 +2,6 @@
 
 The Notes Addon allows you to write notes (text or markdown) for your stories in [Storybook](https://storybook.js.org).
 
-![Storybook Addon Notes Demo](docs/demo.png)
-
 ## Installation
 
 ```sh
@@ -19,7 +17,6 @@ module.exports = {
   addons: ['@storybook/addon-ondevice-notes'],
 };
 ```
-
 
 ## Usage
 
