@@ -44,7 +44,7 @@ expo install @storybook/react-native@next @react-native-async-storage/async-stor
 
 If running on an IOS device make sure to run pod install first
 
-```
+```sh
 cd ios; pod install; cd ..;
 ```
 
@@ -123,7 +123,7 @@ Add the following to the scripts in your package.json, we use the name `prestart
 
 To render storybook update your App.tsx file to export the UI component.
 
-```
+```js
 import StorybookUIRoot from './.storybook/Storybook';
 export { StorybookUIRoot as default };"
 ```
@@ -155,7 +155,7 @@ This is a simple example you can do more by adding addons and exploring more fea
 
 To run storybook first generate the stories list:
 
-```
+```sh
 yarn sb-rn-get-stories
 ```
 
