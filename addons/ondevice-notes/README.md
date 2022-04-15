@@ -2,8 +2,6 @@
 
 The Notes Addon allows you to write notes (text or markdown) for your stories in [Storybook](https://storybook.js.org).
 
-![Storybook Addon Notes Demo](docs/demo.png)
-
 ## Installation
 
 ```sh
@@ -12,18 +10,12 @@ yarn add -D @storybook/addon-ondevice-notes
 
 ## Configuration
 
-Create a file called `rn-addons.js` in your storybook config.
-
-Add following content to it:
+Then, add following content to `.storybook/main.js`:
 
 ```js
-import '@storybook/addon-ondevice-notes/register';
-```
-
-Then import `rn-addons.js` next to your `getStorybookUI` call.
-
-```js
-import './rn-addons';
+module.exports = {
+  addons: ['@storybook/addon-ondevice-notes'],
+};
 ```
 
 ## Usage
@@ -31,13 +23,17 @@ import './rn-addons';
 Use the `notes` parameter to add a note to stories:
 
 ```js
-import { storiesOf } from '@storybook/react-native';
-
-import Component from './Component';
-
-storiesOf('Component', module).add('with some emoji', () => <Component />, {
-  notes: 'A small component',
-});
+export default {
+  title: 'My title',
+  component: MyComponent,
+  parameters: {
+    notes: `
+     # Here I can add some markdown
+     
+     Put a full new line between each element.
+    `,
+  },
+};
 ```
 
-See the [crna-kitchen-sink app](../../examples/crna-kitchen-sink) for more examples.
+See the [example app](../../examples/native) for more examples.
