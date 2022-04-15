@@ -22,6 +22,7 @@ Pictured is from the template mentioned in [getting started](#getting-started)
 - 📱 [Hide/Show Storybook](#hideshow-storybook)
 - 🔧 [getStorybookUI](#getstorybookui-options)
 - 🤝 [Contributing](#contributing)
+- ✨ [Examples](#examples)
 
 # Getting Started
 
@@ -200,3 +201,12 @@ Looking for a first issue to tackle?
 
 - We tag issues with [Good First Issue](https://github.com/storybookjs/react-native/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
 - [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
+
+# Examples
+
+Here are some example projects to help you get started
+
+- A mono repo setup by @axeldelafosse https://github.com/axeldelafosse/storybook-rnw-monorepo
+- Expo setup https://github.com/dannyhw/expo-storybook-starter
+- React native cli setup https://github.com/dannyhw/react-native-storybook-starter
+- Want to showcase your own project? open a PR and add it to the list!
