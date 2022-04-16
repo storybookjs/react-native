@@ -33,7 +33,7 @@ No software is bug-free. So, if you got an issue, follow these steps:
 
 The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
 
-A good way to do that is using the example `crna-kitchen-sink` app embedded in this repository:
+A good way to do that is using the example app embedded in this repository:
 
 ```sh
 # Download and build this repository:
@@ -42,15 +42,16 @@ cd react-native-storybook
 yarn bootstrap --core
 
 # make changes to try and reproduce the problem, such as adding components + stories
-cd examples/crna-kitchen-sink
-yarn install
+cd examples/native
 # for ios
 yarn ios
 # for android
 yarn android
+# for web
+yarn web
 
 # see if you can see the problem, if so, commit it:
-git checkout "branch-describing-issue"
+git checkout -b "branch-describing-issue"
 git add -A
 git commit -m "reproduction for issue #123"
 
@@ -59,9 +60,9 @@ git remote add <your-username> https://github.com/<your-username>/<fork-name>.gi
 git push -u <your-username> master
 ```
 
-_setup guide for native example (non expo) coming soon_
+_setup guide for native example coming soon_
 
-If you follow that process, you can then link to the GitHub repository in the issue. See <https://github.com/storybookjs/storybook/issues/708#issuecomment-290589886> for an example.
+If you follow that process, you can then link to the GitHub repository in the issue. 
 
 #### Outside the monorepo
 
@@ -131,7 +132,7 @@ These packages are:
 - @storybook/react-native-server
 - @storybook/addon-ondevice-actions
 - @storybook/addon-ondevice-backgrounds
-- @storybook/addon-ondevice-knobs
+- @storybook/addon-ondevice-controls
 - @storybook/addon-ondevice-notes
 
 #### @storybook/react-native
@@ -145,6 +146,8 @@ You can find this package under `app/react-native`
 This is the web server and client that are used to control the on device UI remotely. By using the server package you can control which story is shown on devices that are running @storybook/react-native.
 
 You can find this package under `app/react-native-server`
+
+The server is currently not maintained and will be tackled sometime after v6.
 
 #### Ondevice Addons
 
@@ -187,7 +190,6 @@ If this is your first time running react native from the cli follow the setup in
 
 ```
 cd examples/native
-yarn install
 
 cd ios
 pod install
