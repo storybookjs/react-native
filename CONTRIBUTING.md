@@ -6,8 +6,6 @@ Please review this document to help to streamline the process and save everyone'
 
 This repo uses yarn workspaces, so you should install `yarn` as the package manager. See [installation guide](https://classic.yarnpkg.com/en/docs/install).
 
-Content:1
-
 - [Issues](#issues)
   - [Reproductions](#reproductions)
 - [Pull requests](#pull-requests)
