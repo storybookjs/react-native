@@ -82,7 +82,11 @@ function writeRequires({ configPath, absolute = false }) {
   if (main.addons.includes('@storybook/addon-ondevice-actions')) {
     enhancersImport =
       'import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs"';
-    enhancers = 'argsEnhancers.forEach(enhancer => addArgsEnhancer(enhancer))';
+    enhancers = `// temporary fix for https://github.com/storybookjs/react-native/issues/327 whilst the issue is investigated
+      try {
+        argsEnhancers.forEach(enhancer => addArgsEnhancer(enhancer));
+      } catch{}
+    `;
   }
 
   const fileContent = `
@@ -95,11 +99,8 @@ function writeRequires({ configPath, absolute = false }) {
       ${enhancersImport}
 
       ${previewJs}
-      
-      // temporary fix for https://github.com/storybookjs/react-native/issues/327 whilst the issue is investigated
-      try {
-        ${enhancers}
-      } catch{}
+
+      ${enhancers}
 
       const getStories=() => {
         return ${path_array_str};
