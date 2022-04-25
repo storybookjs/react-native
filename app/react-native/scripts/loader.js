@@ -60,9 +60,7 @@ function writeRequires({ configPath, absolute = false }) {
       cwd: path.resolve(cwd, configPath),
       absolute,
       // default to always ignore (exclude) anything in node_modules
-      ignore: normalizedExcludePaths !== undefined
-        ? normalizedExcludePaths
-        : ['**/node_modules'],
+      ignore: normalizedExcludePaths !== undefined ? normalizedExcludePaths : ['**/node_modules'],
     });
     return [...acc, ...paths];
   }, []);
@@ -84,7 +82,11 @@ function writeRequires({ configPath, absolute = false }) {
   if (main.addons.includes('@storybook/addon-ondevice-actions')) {
     enhancersImport =
       'import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs"';
-    enhancers = 'argsEnhancers.forEach(enhancer => addArgsEnhancer(enhancer))';
+    enhancers = `// temporary fix for https://github.com/storybookjs/react-native/issues/327 whilst the issue is investigated
+      try {
+        argsEnhancers.forEach(enhancer => addArgsEnhancer(enhancer));
+      } catch{}
+    `;
   }
 
   const fileContent = `
