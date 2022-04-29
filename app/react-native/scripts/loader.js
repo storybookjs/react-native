@@ -109,7 +109,7 @@ function writeRequires({ configPath, absolute = false }) {
       configure(getStories, module, false)
   `;
 
-  const formattedFileContent = prettier.format(fileContent, { parser: 'babel' });
+  const formattedFileContent = prettier.format(fileContent, { parser: 'babel', singleQuote: true });
 
   fs.writeFileSync(storybookRequiresLocation, formattedFileContent, {
     encoding: 'utf8',
