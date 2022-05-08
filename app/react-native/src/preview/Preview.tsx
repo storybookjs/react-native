@@ -70,6 +70,8 @@ export class Preview {
 
   _channel: Channel;
 
+  _ready: boolean = false;
+
   // _decorators: any[];
 
   _asyncStorageStoryId: string;
@@ -96,7 +98,11 @@ export class Preview {
         importFn: () => Promise.resolve({}),
         cache: true,
       })
-      .then(() => this._setReady(true));
+      .then(() => {
+        console.log('ready will be set');
+        this._ready = true;
+        // this._setReady(true);
+      });
 
     this.setupListeners();
   }
@@ -183,16 +189,16 @@ export class Preview {
 
     const appliedTheme = { ...theme, ...params.theme };
     return () => {
-      const [ready, setReady] = useState(false);
+      // const [ready, setReady] = useState(false);
       const [storyId, setStoryId] = useState(this._storyId || '');
       const [, forceUpdate] = useReducer((x) => x + 1, 0);
       useEffect(() => {
-        self._setReady = setReady;
+        // self._setReady = setReady;
         self._setStory = ({ id: newStoryId }: { id: string }) => setStoryId(newStoryId);
         self._forceRerender = () => forceUpdate();
       }, []);
 
-      if (!ready) {
+      if (!self._ready) {
         return <Text>Loading</Text>;
       }
 
@@ -254,6 +260,7 @@ export class Preview {
       return this._getStory(story);
     }
 
+    await this._storyStore.cacheAllCSFFiles();
     const stories = this._storyStore.raw();
     if (stories && stories.length) {
       return this._getStory(stories[0].id);

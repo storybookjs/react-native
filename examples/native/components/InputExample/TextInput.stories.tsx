@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { StyleSheet, TextInput } from 'react-native';
 
-const TextInputMeta: ComponentMeta<typeof TextInput> = {
+export default {
   title: 'TextInput',
   component: TextInput,
   args: {
@@ -11,9 +11,7 @@ const TextInputMeta: ComponentMeta<typeof TextInput> = {
   parameters: {
     notes: 'Use this example to test the software keyboard related issues.',
   },
-};
-
-export default TextInputMeta;
+} as ComponentMeta<typeof TextInput>;
 
 type TextInputStory = ComponentStory<typeof TextInput>;
 
