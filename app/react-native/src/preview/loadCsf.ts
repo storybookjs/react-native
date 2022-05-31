@@ -68,16 +68,20 @@ const loadStories = (
       });
     });
   } else {
-    const exported = (loadable as LoadableFunction)();
-    if (Array.isArray(exported)) {
-      const csfExports = exported.filter((obj) => obj.default != null);
-      currentExports = new Map(csfExports.map((fileExports) => [fileExports, null]));
-    } else {
-      logger.warn(
-        `Loader function passed to 'configure' should return void or an array of module exports that all contain a 'default' export. Received: ${JSON.stringify(
-          exported
-        )}`
-      );
+    try {
+      const exported = (loadable as LoadableFunction)();
+      if (Array.isArray(exported)) {
+        const csfExports = exported.filter((obj) => obj.default != null);
+        currentExports = new Map(csfExports.map((fileExports) => [fileExports, null]));
+      } else {
+        logger.warn(
+          `Loader function passed to 'configure' should return void or an array of module exports that all contain a 'default' export. Received: ${JSON.stringify(
+            exported
+          )}`
+        );
+      }
+    } catch (error) {
+      logger.warn(`Unexpected error while loading stories: ${error}`);
     }
   }
   const removed = Array.from(global.previousExports.keys()).filter(
