@@ -20,7 +20,7 @@ export const Notes = ({ active, api }: NotesProps) => {
 
   const selection = api.store().getSelection();
 
-  if (!selection) {
+  if (!selection || !Object.keys(selection).length) {
     return null;
   }
 
