@@ -35,7 +35,7 @@
     "@storybook/core-events": "5.3.21",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2",
-    "react-native-simple-markdown": "^1.1.0"
+    "react-native-sm-markdown": "^0.0.1"
   },
   "peerDependencies": {
     "react": "*",
