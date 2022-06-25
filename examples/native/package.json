@@ -9,9 +9,6 @@
   },
   "scripts": {
     "android": "react-native run-android",
-    "e2e:build:dev": "detox build --configuration ios.sim.debug",
-    "e2e:dev": "yarn e2e:build:dev && yarn e2e:run:dev",
-    "e2e:run:dev": "detox test --configuration ios.sim.debug",
     "format": "prettier --write .",
     "ios": "react-native run-ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
@@ -29,6 +26,9 @@
     ],
     "preset": "react-native"
   },
+  "resolutions": {
+    "@types/react": "^18"
+  },
   "dependencies": {
     "@storybook/addon-actions": "5.3.21",
     "@storybook/addon-knobs": "5.3.21",
@@ -42,51 +42,23 @@
     "@storybook/addons": "5.3.21",
     "@storybook/react-native": "^5.3.25",
     "@storybook/react-native-server": "^5.3.23",
-    "react": "16.13.1",
-    "react-native": "0.63.0"
+    "react": "18.0.0",
+    "react-native": "0.69.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/runtime": "^7.11.1",
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
-    "@types/detox": "^16.4.1",
-    "@types/jasmine": "^2.8.7",
-    "@types/jest": "^26.0.8",
-    "@types/react-native": "^0.63.1",
-    "@types/react-test-renderer": "^16.9.2",
-    "@typescript-eslint/eslint-plugin": "^2.27.0",
-    "@typescript-eslint/parser": "^2.27.0",
-    "babel-jest": "^26.2.2",
-    "detox": "^17.3.4",
-    "eslint": "^6.5.1",
-    "jest": "^26.2.2",
-    "jest-circus": "^26.2.2",
-    "metro-react-native-babel-preset": "^0.59.0",
-    "prettier": "^2.0.5",
-    "react-test-renderer": "16.13.1",
-    "ts-jest": "^26.1.4",
-    "typescript": "^3.8.3"
-  },
-  "detox": {
-    "test-runner": "jest",
-    "runner-config": "e2e/config.json",
-    "configurations": {
-      "ios.sim.release": {
-        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/rn_example.app",
-        "build": "xcodebuild -workspace ios/rn_example.xcworkspace -scheme rn_example -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
-        "type": "ios.simulator",
-        "device": {
-          "type": "iPhone 11 Pro"
-        }
-      },
-      "ios.sim.debug": {
-        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/rn_example.app",
-        "build": "xcodebuild -workspace ios/rn_example.xcworkspace -scheme rn_example -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
-        "type": "ios.simulator",
-        "device": {
-          "type": "iPhone 11 Pro"
-        }
-      }
-    }
+    "@types/jest": "^26.0.23",
+    "@types/react-native": "^0.69.0",
+    "@types/react-test-renderer": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.70.3",
+    "react-test-renderer": "18.0.0",
+    "typescript": "^4.4.4"
   }
 }

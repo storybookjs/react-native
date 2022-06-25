@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import Markdown from 'react-native-simple-markdown';
+import Markdown from 'react-native-sm-markdown';
 import { AddonStore } from '@storybook/addons';
 import { API } from '@storybook/api';
 import { ThemeContext } from '@emotion/core';

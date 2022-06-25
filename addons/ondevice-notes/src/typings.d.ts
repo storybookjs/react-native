@@ -1,4 +1,4 @@
-declare module 'react-native-simple-markdown' {
+declare module 'react-native-sm-markdown' {
   const Markdown: any;
   export default Markdown;
 }
