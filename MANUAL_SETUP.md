@@ -128,7 +128,7 @@ To render storybook update your App.tsx file to export the UI component.
 
 ```js
 import StorybookUIRoot from './.storybook/Storybook';
-export { StorybookUIRoot as default };"
+export { StorybookUIRoot as default };
 ```
 
 **Add a stories file**
