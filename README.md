@@ -85,7 +85,7 @@ module.exports = {
 
 ## Decorators and Parameters
 
-For stories you can add decorators and parameters on the default export or on a specifc story 
+For stories you can add decorators and parameters on the default export or on a specifc story
 
 ```jsx
 export default {
@@ -180,8 +180,8 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 {
     tabOpen: Number (0)
         -- which tab should be open. -1 Navigator, 0 Preview, 1 Addons
-    initialSelection: Object (null)
-        -- initialize storybook with a specific story.  eg: `{ kind: 'MyButton', name: 'LargeButton' }`
+    initialSelection: string | Object (undefined)
+        -- initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
     shouldDisableKeyboardAvoidingView: Boolean (false)
         -- Disable KeyboardAvoidingView wrapping Storybook's view
     keyboardAvoidingViewVerticalOffset: Number (0)
