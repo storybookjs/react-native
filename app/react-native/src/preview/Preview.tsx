@@ -18,16 +18,19 @@ interface AsyncStorage {
   setItem: (key: string, value: string) => Promise<void>;
 }
 
-interface InitialSelection {
+type StoryKind = string
+type StoryName = string
+
+type InitialSelection = `${StoryKind}--${StoryName}` | {
   /**
    * Kind is the default export name or the storiesOf("name") name
    */
-  kind: string;
+  kind: StoryKind;
 
   /**
    * Name is the named export or the .add("name") name
    */
-  name: string;
+  name: StoryName;
 }
 
 export type Params = {
@@ -120,11 +123,13 @@ export default class Preview {
 
   _getInitialStory = async (initialSelection?: InitialSelection, shouldPersistSelection = true) => {
     let story: string = null;
-    const initialSelectionId = initialSelection
-      ? toId(initialSelection.kind, initialSelection.name)
-      : undefined;
+    const initialSelectionId = initialSelection === undefined
+      ? undefined
+      : typeof initialSelection === 'string'
+        ? initialSelection
+        : toId(initialSelection.kind, initialSelection.name);
 
-    if (initialSelection && initialSelectionId && this._checkStory(initialSelectionId)) {
+    if (initialSelectionId !== undefined && this._checkStory(initialSelectionId)) {
       story = initialSelectionId;
     } else if (shouldPersistSelection) {
       try {
