@@ -12,8 +12,10 @@ storiesOf('Core|Parameters', module)
   .addParameters({ chapterParameter })
   .add(
     'passed to story',
-    ({ parameters }) => <Text>Parameters are {JSON.stringify(parameters)}</Text>,
+    ({ parameters }) => (
+      <Text>Parameters are {JSON.stringify(parameters)}</Text>
+    ),
     {
       storyParameter,
-    }
+    },
   );

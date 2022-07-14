@@ -31,4 +31,4 @@ A few react native releases have come around this year and this broke a few thin
 
 - remove all deprecated components such as date time picker and use community versions or homegrown components.
 - investigate possibility of using webviews for on device ui
-    + This one deserves a bit of explanation: Basically the storybook core has a much more active development and in order to support all the addons and other features from the web the way it's currently being done we would need to rewrite every single component for react native and it's really not sustainable. If we can reuse parts of storybook for react we would be able to keep up with features much easier.
+  + This one deserves a bit of explanation: Basically the storybook core has a much more active development and in order to support all the addons and other features from the web the way it's currently being done we would need to rewrite every single component for react native and it's really not sustainable. If we can reuse parts of storybook for react we would be able to keep up with features much easier.
