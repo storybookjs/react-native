@@ -19,7 +19,7 @@ storiesOf('Button', module)
 _This component doesn't look right_
 `,
   })
-  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
   .add('with text', () => (
     <Button onPress={action('clicked-text')}>
       <Text>Hello Button</Text>

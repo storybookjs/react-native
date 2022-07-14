@@ -130,12 +130,12 @@ This repository is madeup of the various packages that are specific to react-nat
 
 These packages are:
 
- - @storybook/react-native
- - @storybook/react-native-server
- - @storybook/addon-ondevice-actions
- - @storybook/addon-ondevice-backgrounds
- - @storybook/addon-ondevice-knobs
- - @storybook/addon-ondevice-notes
+- @storybook/react-native
+- @storybook/react-native-server
+- @storybook/addon-ondevice-actions
+- @storybook/addon-ondevice-backgrounds
+- @storybook/addon-ondevice-knobs
+- @storybook/addon-ondevice-notes
 
 #### @storybook/react-native
 
