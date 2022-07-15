@@ -175,7 +175,7 @@ const StoryListView = ({ selectedStory, storyStore }: Props) => {
     channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 
-  const safeStyle = { flex: 1, marginTop: insets.top, marginBottom: insets.bottom + 40 };
+  const safeStyle = { flex: 1, marginTop: insets.top, marginBottom: insets.bottom };
 
   return (
     <StoryListContainer>
