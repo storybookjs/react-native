@@ -290,6 +290,12 @@ PODS:
   - React-jsinspector (0.67.1)
   - React-logger (0.67.1):
     - glog
+  - react-native-safe-area-context (4.3.1):
+    - RCT-Folly
+    - RCTRequired
+    - RCTTypeSafety
+    - React
+    - ReactCommon/turbomodule/core
   - react-native-slider (3.0.3):
     - React
   - React-perflogger (0.67.1)
@@ -410,6 +416,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../../../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../../../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../../../node_modules/react-native/ReactCommon/logger`)
+  - react-native-safe-area-context (from `../../../node_modules/react-native-safe-area-context`)
   - "react-native-slider (from `../../../node_modules/@react-native-community/slider`)"
   - React-perflogger (from `../../../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../../../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -482,6 +489,8 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../../../node_modules/react-native/ReactCommon/logger"
+  react-native-safe-area-context:
+    :path: "../../../node_modules/react-native-safe-area-context"
   react-native-slider:
     :path: "../../../node_modules/@react-native-community/slider"
   React-perflogger:
@@ -548,6 +557,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 1af5de75a4c834c05d53a77c1512e5aa6c18412f
   React-jsinspector: ab80bcdb02f28cdfc0dbbaea6db1241565d59002
   React-logger: b08f354e4c928ff794ca477347fea0922aaf11c3
+  react-native-safe-area-context: 6c12e3859b6f27b25de4fee8201cfb858432d8de
   react-native-slider: e99fc201cefe81270fc9d81714a7a0f5e566b168
   React-perflogger: 9a6172711d9c4c8c7ac0a426717317c3c6ecf85c
   React-RCTActionSheet: ed408b54b08278e6af8a75e08679675041da61ae
@@ -568,4 +578,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 976cd7f72d469ec4d22296916c1cce60525603b1
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
