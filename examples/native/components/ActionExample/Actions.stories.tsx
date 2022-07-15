@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { ActionButton } from './Actions';
-import { ScrollView } from 'react-native';
 
 const ActionButtonMeta: ComponentMeta<typeof ActionButton> = {
   title: 'ActionButton',
@@ -23,37 +22,3 @@ export const AnotherAction: ActionButtonStory = (args) => <ActionButton {...args
 AnotherAction.argTypes = {
   onPress: { action: 'pressed a different button' },
 };
-
-export const ListBasic: ActionButtonStory = (args) => (
-  <ScrollView>
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-    <ActionButton {...args} />
-  </ScrollView>
-);
