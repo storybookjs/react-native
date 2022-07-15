@@ -36,7 +36,7 @@ expo install @storybook/react-native@next @react-native-async-storage/async-stor
 **React native CLI**
 
 ```sh
-yarn add -D @storybook/react-native@next @react-native-async-storage/async-storage
+yarn add -D @storybook/react-native@next @react-native-async-storage/async-storage react-native-safe-area-context
 ```
 
 **IOS**
