@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from '@emotion/native';
+import { ViewStyle } from 'react-native';
 
 interface Props {
   onPress: () => void;
+  style?: ViewStyle;
 }
 
 const Touchable = styled.TouchableOpacity({
@@ -18,9 +20,10 @@ const HideIcon = styled.Text(({ theme }) => ({
   color: theme.buttonTextColor || '#999999',
 }));
 
-const VisibilityButton = ({ onPress }: Props) => (
+const VisibilityButton = ({ onPress, style }: Props) => (
   <Touchable
     onPress={onPress}
+    style={style}
     testID="Storybook.OnDeviceUI.toggleUI"
     accessibilityLabel="Storybook.OnDeviceUI.toggleUI"
     hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
