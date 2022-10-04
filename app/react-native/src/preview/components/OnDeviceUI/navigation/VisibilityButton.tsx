@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/native';
-import { ViewStyle } from 'react-native';
+import { StyleProp, View, ViewStyle } from 'react-native';
 
 interface Props {
   onPress: () => void;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }
 
 const Touchable = styled.TouchableOpacity({
@@ -15,10 +15,45 @@ const Touchable = styled.TouchableOpacity({
   zIndex: 100,
 });
 
-const HideIcon = styled.Text(({ theme }) => ({
-  fontSize: 14,
-  color: theme.buttonTextColor || '#999999',
+const HIDE_ICON_SIZE = 14;
+const HIDE_ICON_BORDER_WIDTH = 1;
+
+const Inner = styled.View(({ theme }) => ({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: HIDE_ICON_SIZE,
+  height: HIDE_ICON_SIZE,
+  borderRadius: HIDE_ICON_BORDER_WIDTH,
+  overflow: 'hidden',
+  borderColor: theme.buttonTextColor || '#999999',
+  borderWidth: HIDE_ICON_BORDER_WIDTH * 2,
 }));
+
+const Outer = styled.View({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: HIDE_ICON_SIZE,
+  height: HIDE_ICON_SIZE,
+  borderRadius: HIDE_ICON_BORDER_WIDTH,
+  overflow: 'hidden',
+  borderColor: 'white',
+  borderWidth: HIDE_ICON_BORDER_WIDTH,
+});
+
+const hideIconStyles = {
+  width: HIDE_ICON_SIZE,
+  height: HIDE_ICON_SIZE,
+  marginRight: 4,
+};
+
+const HideIcon = () => (
+  <View style={hideIconStyles}>
+    <Inner />
+    <Outer />
+  </View>
+);
 
 const VisibilityButton = ({ onPress, style }: Props) => (
   <Touchable
@@ -28,7 +63,7 @@ const VisibilityButton = ({ onPress, style }: Props) => (
     accessibilityLabel="Storybook.OnDeviceUI.toggleUI"
     hitSlop={{ top: 5, left: 5, bottom: 5, right: 5 }}
   >
-    <HideIcon>□</HideIcon>
+    <HideIcon />
   </Touchable>
 );
 export default React.memo(VisibilityButton);
