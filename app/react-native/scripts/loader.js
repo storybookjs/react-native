@@ -43,8 +43,17 @@ function getMain({ configPath }) {
 }
 
 function getPreviewExists({ configPath }) {
-  const previewPath = path.resolve(cwd, configPath, 'preview.js');
-  return fs.existsSync(previewPath);
+  const supportedExtensions = ['js', 'jsx', 'ts', 'tsx']
+
+  for (const ext of supportedExtensions) {
+    const previewPath = path.resolve(cwd, configPath, `preview.${ext}`);
+
+    if(fs.existsSync(previewPath)){
+      return true
+    }
+  }
+
+  return false
 }
 
 function writeRequires({ configPath, absolute = false }) {
