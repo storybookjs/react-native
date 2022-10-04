@@ -25,3 +25,4 @@ examples/native/metro.config.js
 examples/native/index.html
 storybook.requires.js
 jest.config.js
+app/react-native/scripts/mocks

@@ -1,6 +1,5 @@
 const path = require('path');
 const { writeRequires, getMain, getPreviewExists } = require('./loader');
-const glob = require('glob');
 
 let pathMock;
 let fileContentMock;
@@ -50,12 +49,14 @@ describe('loader', () => {
   });
 
   describe('getPreviewExists', () => {
-    const supportedExtensions = ['js', 'jsx', 'ts', 'tsx']
+    const supportedExtensions = ['js', 'jsx', 'ts', 'tsx'];
     describe('when using a relative path', () => {
       it('should return true if the preview exists', () => {
-        supportedExtensions.forEach(ext => {
-          expect(getPreviewExists({ configPath: `scripts/mocks/all-config-files/preview/${ext}` })).toBe(true);
-        })
+        supportedExtensions.forEach((ext) => {
+          expect(
+            getPreviewExists({ configPath: `scripts/mocks/all-config-files/preview/${ext}` })
+          ).toBe(true);
+        });
       });
 
       it('should return false if the preview does not exist', () => {
@@ -63,23 +64,33 @@ describe('loader', () => {
       });
 
       it('should return false if the preview does not match any of supportedExtensions values', () => {
-        expect(getPreviewExists({ configPath: './scripts/mocks/wrong-extension-preview' })).toBe(false);
+        expect(getPreviewExists({ configPath: './scripts/mocks/wrong-extension-preview' })).toBe(
+          false
+        );
       });
     });
 
     describe('when using an absolute path', () => {
       it('should return true if the preview exists', () => {
-        supportedExtensions.forEach(ext => {
-          expect(getPreviewExists({ configPath: path.resolve(__dirname, `mocks/all-config-files/${ext}`) })).toBe(true);
-        })
+        supportedExtensions.forEach((ext) => {
+          expect(
+            getPreviewExists({
+              configPath: path.resolve(__dirname, `mocks/all-config-files/${ext}`),
+            })
+          ).toBe(true);
+        });
       });
 
       it('should return false if the preview does not exist', () => {
-        expect(getPreviewExists({configPath: path.resolve(__dirname, 'mocks/no-preview')})).toBe(false);
+        expect(getPreviewExists({ configPath: path.resolve(__dirname, 'mocks/no-preview') })).toBe(
+          false
+        );
       });
 
       it('should return false if the preview does not match any of supportedExtensions values', () => {
-        expect(getPreviewExists({configPath: path.resolve(__dirname, 'mocks/wrong-extension-preview')})).toBe(false);
+        expect(
+          getPreviewExists({ configPath: path.resolve(__dirname, 'mocks/wrong-extension-preview') })
+        ).toBe(false);
       });
     });
   });
