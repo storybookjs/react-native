@@ -34,9 +34,11 @@ const StoryView = ({ story }: Props) => {
 
   if (story && story.unboundStoryFn) {
     const { unboundStoryFn } = story;
+    const StoryComponent = (context && context.id === story.id) ? unboundStoryFn : null;
     return (
       <View key={id} testID={id} style={styles.container}>
-        {context && context.id === story.id ? unboundStoryFn(context) : null}
+        {/* We need to get the result by the method of rendering a component, otherwise there will be errors if the react hooks are used */}
+        { StoryComponent && <StoryComponent {...context} /> }
       </View>
     );
   }
