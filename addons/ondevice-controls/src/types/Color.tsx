@@ -29,6 +29,8 @@ const Touchable = styled.TouchableOpacity(({ theme, color }: any) => ({
   backgroundColor: color,
 }));
 
+const webInputStyles = { margin: 10 };
+
 const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [currentColor, setCurrentColor] = useState<HsvColor | null>(null);
@@ -49,7 +51,7 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
     return (
       <input
         type="color"
-        style={{ margin: 10 }}
+        style={webInputStyles}
         value={arg.value}
         onChange={(event) => onChange(event.target.value)}
       />

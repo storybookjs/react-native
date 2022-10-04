@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/native';
 import Button from './Button';
 import { NAVIGATOR, PREVIEW, ADDONS } from './constants';
+import { ViewStyle } from 'react-native';
 
 const Container = styled.View(({ theme }) => ({
   flexDirection: 'row',
@@ -15,10 +16,11 @@ const Container = styled.View(({ theme }) => ({
 export interface Props {
   index: number;
   onPress: (id: number) => void;
+  style: ViewStyle;
 }
 
-const Bar = ({ index, onPress }: Props) => (
-  <Container>
+const Bar = ({ index, onPress, style }: Props) => (
+  <Container style={style}>
     <Button
       onPress={onPress}
       testID="BottomMenu.Navigator"

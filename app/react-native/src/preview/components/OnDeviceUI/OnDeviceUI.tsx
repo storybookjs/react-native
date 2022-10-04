@@ -33,6 +33,7 @@ import Navigation from './navigation';
 import { PREVIEW, ADDONS } from './navigation/constants';
 import Panel from './Panel';
 import { useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const ANIMATION_DURATION = 300;
 const IS_IOS = Platform.OS === 'ios';
@@ -110,6 +111,8 @@ const OnDeviceUI = ({
   const story = useSelectedStory(storyStore);
   const animatedValue = useRef(new Animated.Value(tabOpen));
   const wide = useWindowDimensions().width >= BREAKPOINT;
+  const insets = useSafeAreaInsets();
+  const [isUIVisible, setIsUIVisible] = useState(isUIHidden !== undefined ? !isUIHidden : true);
 
   const handleToggleTab = (newTabOpen: number) => {
     if (newTabOpen === tabOpen) {
@@ -139,10 +142,10 @@ const OnDeviceUI = ({
 
   const noSafeArea = story.parameters?.noSafeArea ?? false;
   const WrapperView = noSafeArea ? View : SafeAreaView;
-
+  const wrapperMargin = { marginBottom: isUIVisible ? insets.bottom + 40 : 0 };
   return (
     <>
-      <WrapperView style={[flex, IS_ANDROID && IS_EXPO && styles.expoAndroidContainer]}>
+      <View style={[flex, IS_ANDROID && IS_EXPO && styles.expoAndroidContainer]}>
         <KeyboardAvoidingView
           enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
           behavior={IS_IOS ? 'padding' : null}
@@ -156,7 +159,9 @@ const OnDeviceUI = ({
             <Animated.View style={previewWrapperStyles}>
               <Animated.View style={previewStyles}>
                 <Preview disabled={tabOpen === PREVIEW}>
-                  <StoryView story={story} />
+                  <WrapperView style={[flex, wrapperMargin]}>
+                    <StoryView story={story} />
+                  </WrapperView>
                 </Preview>
                 {tabOpen !== PREVIEW ? (
                   <TouchableOpacity
@@ -182,8 +187,13 @@ const OnDeviceUI = ({
             </Panel>
           </AbsolutePositionedKeyboardAwareView>
         </KeyboardAvoidingView>
-      </WrapperView>
-      <Navigation tabOpen={tabOpen} onChangeTab={handleToggleTab} initialUiVisible={!isUIHidden} />
+        <Navigation
+          tabOpen={tabOpen}
+          onChangeTab={handleToggleTab}
+          isUIVisible={isUIVisible}
+          setIsUIVisible={setIsUIVisible}
+        />
+      </View>
     </>
   );
 };
