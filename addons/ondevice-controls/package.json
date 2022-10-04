@@ -36,12 +36,13 @@
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
-    "react-native-modal-datetime-picker": "^13.0.1",
-    "react-native-modal-selector": "^2.1.0",
+    "react-native-modal-datetime-picker": "^14.0.0",
+    "react-native-modal-selector": "^2.1.1",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
-    "@storybook/addon-knobs": "~6.3"
+    "@storybook/addon-knobs": "~6.3",
+    "@types/react-native": "^0.70.0"
   },
   "peerDependencies": {
     "@react-native-community/datetimepicker": "*",

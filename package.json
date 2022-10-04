@@ -100,8 +100,7 @@
   "browserslist": "defaults",
   "resolutions": {
     "@typescript-eslint/parser": "^4.26.1",
-    "@typescript-eslint/typescript-estree": "^4.26.1",
-    "react": "^17.0.2"
+    "@typescript-eslint/typescript-estree": "^4.26.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -128,8 +127,8 @@
     "@types/jest": "^24.0.11",
     "@types/lodash": "^4.14.149",
     "@types/node": "^15.12.2",
-    "@types/react": "^17.0.9",
-    "@types/react-native": "^0.66.15",
+    "@types/react": "^18.0.21",
+    "@types/react-native": "^0.70.0",
     "@types/semver": "^6.0.0",
     "@types/webpack": "^4.41.0",
     "@types/webpack-env": "^1.15.0",
@@ -184,10 +183,10 @@
     "npmlog": "^4.1.2",
     "prettier": "^2.3.1",
     "raf": "^3.4.0",
-    "react": "^17.0.2",
-    "react-dom": "17.0.2",
-    "react-native": "0.67.1",
-    "react-test-renderer": "16.13.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.70.1",
+    "react-test-renderer": "18.2.0",
     "recursive-copy": "^2.0.10",
     "regenerator-runtime": "^0.13.3",
     "remark-cli": "^9.0.0",
