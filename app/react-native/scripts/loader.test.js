@@ -53,9 +53,7 @@ describe('loader', () => {
     describe('when using a relative path', () => {
       it('should return true if the preview exists', () => {
         supportedExtensions.forEach((ext) => {
-          expect(
-            getPreviewExists({ configPath: `scripts/mocks/all-config-files/preview/${ext}` })
-          ).toBe(true);
+          expect(getPreviewExists({ configPath: `scripts/mocks/preview-files/${ext}` })).toBe(true);
         });
       });
 
@@ -75,7 +73,7 @@ describe('loader', () => {
         supportedExtensions.forEach((ext) => {
           expect(
             getPreviewExists({
-              configPath: path.resolve(__dirname, `mocks/all-config-files/${ext}`),
+              configPath: path.resolve(__dirname, `mocks/preview-files/${ext}`),
             })
           ).toBe(true);
         });
