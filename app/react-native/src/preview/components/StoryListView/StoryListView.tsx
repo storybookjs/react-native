@@ -61,9 +61,7 @@ const SectionHeader = React.memo(
       <GridIcon />
       <Header selected={selected}>{title}</Header>
     </HeaderContainer>
-  ),
-  (prevProps, nextProps) => prevProps.selected === nextProps.selected
-);
+  ));
 
 interface ListItemProps {
   title: string;
