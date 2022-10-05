@@ -39,7 +39,7 @@
     "simple-markdown": "^0.7.3"
   },
   "devDependencies": {
-    "@types/react-native": "^0.70.0"
+    "@types/react-native": "^0.70.4"
   },
   "peerDependencies": {
     "react": "*",

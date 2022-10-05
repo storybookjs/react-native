@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@storybook/addon-knobs": "~6.3",
-    "@types/react-native": "^0.70.0"
+    "@types/react-native": "^0.70.4"
   },
   "peerDependencies": {
     "@react-native-community/datetimepicker": "*",
