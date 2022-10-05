@@ -37,6 +37,9 @@
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2"
   },
+  "devDependencies": {
+    "@types/react-native": "^0.70.4"
+  },
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
