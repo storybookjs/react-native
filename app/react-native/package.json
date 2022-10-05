@@ -66,10 +66,11 @@
     "util": "^0.12.4"
   },
   "devDependencies": {
+    "@types/react": "^18.0.21",
     "@types/react-native": "^0.70.0",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
-    "react-test-renderer": "18.1.0"
+    "react-test-renderer": "18.2.0"
   },
   "peerDependencies": {
     "@react-native-async-storage/async-storage": ">=1",
