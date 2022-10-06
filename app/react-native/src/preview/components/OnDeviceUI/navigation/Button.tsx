@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import { TouchableOpacity } from 'react-native';
+import React, { ReactNode, useState } from 'react';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 import styled from '@emotion/native';
 
 const ActiveBorder = styled.View<{ active: boolean }>(({ active, theme }) => ({
@@ -14,6 +14,12 @@ const ButtonText = styled.Text<{ active: boolean }>(({ theme, active }) => ({
   fontSize: 11,
 }));
 
+const styles = StyleSheet.create({
+  focussedButton: {
+    backgroundColor: 'grey',
+  },
+});
+
 interface Props {
   id: number | string;
   active: boolean;
@@ -22,10 +28,21 @@ interface Props {
   children: ReactNode;
 }
 
-const Button = ({ onPress, id, active, children, testID }: Props) => (
-  <TouchableOpacity testID={testID} onPress={() => onPress(id)} activeOpacity={0.8}>
-    <ButtonText active={active}>{children}</ButtonText>
-    <ActiveBorder active={active} />
-  </TouchableOpacity>
-);
+const Button = ({ onPress, id, active, children, testID }: Props) => {
+  const [isFocus, setIsFocus] = useState(false);
+  return (
+    <TouchableOpacity
+      testID={testID}
+      onPress={() => onPress(id)}
+      onFocus={() => setIsFocus(true)}
+      onBlur={() => setIsFocus(false)}
+      activeOpacity={0.8}
+      style={[isFocus && styles.focussedButton]}
+    >
+      <ButtonText active={active || isFocus}>{children}</ButtonText>
+      <ActiveBorder active={active} />
+    </TouchableOpacity>
+  );
+};
+
 export default React.memo(Button);
