@@ -1,5 +1,5 @@
 import styled from '@emotion/native';
-import { StoryIndex, StoryStore } from '@storybook/client-api';
+import { StoryIndex /* StoryStore */ } from '@storybook/client-api';
 import React, { useState, useRef } from 'react';
 import {
   Animated,
@@ -140,7 +140,7 @@ const OnDeviceUI = ({
 
   const previewStyles = [flex, getPreviewScale(animatedValue.current, slideBetweenAnimation, wide)];
 
-  const noSafeArea = story.parameters?.noSafeArea ?? false;
+  const noSafeArea = story?.parameters?.noSafeArea ?? false;
   const WrapperView = noSafeArea ? View : SafeAreaView;
   const wrapperMargin = { marginBottom: isUIVisible ? insets.bottom + 40 : 0 };
   return (
