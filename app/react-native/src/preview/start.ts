@@ -4,8 +4,8 @@ import Events from '@storybook/core-events';
 import { Loadable } from '@storybook/core-client';
 
 import { PreviewWeb } from '@storybook/preview-web';
-import { ClientApi, RenderContext, StoryStore } from '@storybook/client-api';
-import type { ReactFramework, Story } from '../types-6.0';
+import { ClientApi, RenderContext } from '@storybook/client-api';
+import type { ReactFramework } from '../types-6.0';
 import { Preview as PreviewNative } from './Preview';
 import { executeLoadableForChanges } from './executeLoadable';
 

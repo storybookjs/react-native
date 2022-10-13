@@ -1,24 +1,24 @@
 import React, { useEffect, useState, useReducer } from 'react';
-import { Text } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { StoryId, StoryStore, StoryIndex, Selection } from '@storybook/store';
-import { addons, StoryContext } from '@storybook/addons';
-import Channel from '@storybook/channels';
-import { Loadable } from '@storybook/core-client';
-import Events from '@storybook/core-events';
-import { toId, Globals, Args } from '@storybook/csf';
+// import { Text } from 'react-native';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+import { /* StoryId, StoryStore,  Selection, */ StoryIndex } from '@storybook/store';
+import { /* addons, */ StoryContext } from '@storybook/addons';
+// import Channel from '@storybook/channels';
+// import { Loadable } from '@storybook/core-client';
+// import Events from '@storybook/core-events';
+// import { toId, Globals, Args } from '@storybook/csf';
 import { ThemeProvider } from 'emotion-theming';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
-import type { ReactFramework, Story } from '../types-6.0';
+import type { /*ReactFramework,*/ Story } from '../types-6.0';
 
-const STORAGE_KEY = 'lastOpenedStory';
+// const STORAGE_KEY = 'lastOpenedStory';
 
-interface AsyncStorage {
-  getItem: (key: string) => Promise<string | null>;
-  setItem: (key: string, value: string) => Promise<void>;
-}
+// interface AsyncStorage {
+//   getItem: (key: string) => Promise<string | null>;
+//   setItem: (key: string, value: string) => Promise<void>;
+// }
 
 type StoryKind = string;
 type StoryName = string;

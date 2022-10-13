@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React /*, { useState, useEffect } */ from 'react';
 
-import { StoreItem } from '@storybook/client-api';
+// import { StoreItem } from '@storybook/client-api';
 import { Text, View, StyleSheet } from 'react-native';
 import { StoryContext } from '@storybook/addons';
 

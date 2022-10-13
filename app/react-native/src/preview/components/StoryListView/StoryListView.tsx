@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
 import { addons, StoryKind } from '@storybook/addons';
-import { StoreItem, StoryIndex, StoryIndexEntry } from '@storybook/client-api';
+import { /* StoreItem, */ StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import { StoryContext } from '@storybook/csf';
 import React, { useMemo, useState } from 'react';
