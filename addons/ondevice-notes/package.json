@@ -29,11 +29,11 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.20",
-    "@storybook/addons": "^6.5.0-alpha.60",
-    "@storybook/api": "^6.5.0-alpha.60",
-    "@storybook/client-api": "^6.5.0-alpha.60",
-    "@storybook/client-logger": "^6.5.0-alpha.60",
-    "@storybook/core-events": "^6.5.0-alpha.60",
+    "@storybook/addons": "^6.5",
+    "@storybook/api": "^6.5",
+    "@storybook/client-api": "^6.5",
+    "@storybook/client-logger": "^6.5",
+    "@storybook/core-events": "^6.5",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2",
     "simple-markdown": "^0.7.3"

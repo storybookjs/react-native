@@ -3,9 +3,10 @@ import { addons } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { Loadable } from '@storybook/core-client';
 
-import { ClientApi, StoryStore } from '@storybook/client-api';
-import type { ReactFramework } from '../types-6.0';
-import { Preview } from './Preview';
+import { PreviewWeb } from '@storybook/preview-web';
+import { ClientApi, RenderContext, StoryStore } from '@storybook/client-api';
+import type { ReactFramework, Story } from '../types-6.0';
+import { Preview as PreviewNative } from './Preview';
 import { executeLoadableForChanges } from './executeLoadable';
 
 type TFramework = ReactFramework;
@@ -14,17 +15,55 @@ export function start() {
   const channel = new Channel({ async: true });
   addons.setChannel(channel);
 
-  const storyStore = new StoryStore<TFramework>();
-  const clientApi = new ClientApi<TFramework>({ storyStore });
-  const preview = new Preview({ storyStore });
+  // const storyStore = new StoryStore<TFramework>();
+  const clientApi = new ClientApi<TFramework>();
+  // const preview = new Preview({ storyStore });
+  const preview = new PreviewWeb<TFramework>();
+
+  clientApi.storyStore = preview.storyStore;
+
+  preview.urlStore = {
+    selection: { storyId: '', viewMode: 'story' },
+    selectionSpecifier: null,
+    setQueryParams: () => {},
+    setSelection: (selection) => {
+      preview.urlStore.selection = selection;
+    },
+  };
+
+  // @ts-ignore
+  preview.view = {
+    ...preview.view,
+    // @ts-ignore
+    prepareForStory: () => {
+      return null;
+    },
+    showNoPreview: () => {},
+    showPreparingStory: () => {},
+    applyLayout: () => {},
+    showErrorDisplay: (e) => {
+      console.log(e);
+    },
+    showStoryDuringRender: () => {
+      console.log('showstory');
+    },
+    showMain: () => {
+      console.log('showmain');
+    },
+  };
+
   let initialized = false;
 
   function onStoriesChanged() {
     const storyIndex = clientApi.getStoryIndex();
     preview.onStoriesChanged({ storyIndex });
+    previewNative._storyIndex = storyIndex;
   }
 
+  const previewNative = new PreviewNative();
+
   return {
+    previewNative,
     forceReRender: () => channel.emit(Events.FORCE_RE_RENDER),
     clientApi,
     preview,
@@ -46,12 +85,27 @@ export function start() {
           clientApi.facade.clearFilenameExports(fileName)
         );
 
-        return clientApi.facade.projectAnnotations;
+        return {
+          ...clientApi.facade.projectAnnotations,
+          renderToDOM: (context: RenderContext) => {
+            console.log({ context: context.storyContext });
+            previewNative._setStory({ story: context.storyContext });
+          },
+        };
       };
+
+      const importFn = (path: string) => clientApi.importFn(path);
 
       if (!initialized) {
         preview.initialize({
-          getStoryIndex: () => clientApi.getStoryIndex(),
+          getStoryIndex: () => {
+            const index = clientApi.getStoryIndex();
+            previewNative._storyIndex = index;
+            return index;
+          },
+          // @ts-ignore
+          importFn,
+          getProjectAnnotations,
         });
         initialized = true;
       } else {

@@ -26,15 +26,15 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "^6.5.0-alpha.60",
-    "@storybook/core-events": "^6.5.0-alpha.60",
+    "@storybook/addons": "^6.5",
+    "@storybook/core-events": "^6.5",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.5.0-alpha.60"
+    "@storybook/addon-actions": "^6.5"
   },
   "peerDependencies": {
-    "@storybook/addon-actions": "^6.5.0-alpha.60",
+    "@storybook/addon-actions": "^6.5",
     "react": "*",
     "react-native": "*"
   },

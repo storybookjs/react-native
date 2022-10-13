@@ -6,7 +6,7 @@ import { start } from './preview/start';
 import type { ReactFramework } from './types-6.0';
 
 // export const preview = new Preview();
-const { clientApi, configure, preview } = start();
+const { clientApi, configure, previewNative } = start();
 export { configure };
 
 type C = ClientApi<ReactFramework>;
@@ -23,6 +23,6 @@ export const raw: C['raw'] = clientApi.raw.bind(clientApi);
 export const storiesOf = (kind: string, module: NodeModule) =>
   rawStoriesOf(kind, module).addParameters({ framework: 'react-native' }) as StoryApi<ReactNode>;
 
-export const getStorybookUI = preview.getStorybookUI;
+export const getStorybookUI = previewNative.getStorybookUI;
 
 export * from './types-6.0';

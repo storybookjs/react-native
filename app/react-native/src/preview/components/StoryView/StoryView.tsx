@@ -5,7 +5,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import { StoryContext } from '@storybook/addons';
 
 interface Props {
-  story?: StoreItem;
+  context?: StoryContext;
 }
 
 const styles = StyleSheet.create({
@@ -19,22 +19,23 @@ const styles = StyleSheet.create({
   },
 });
 
-const StoryView = ({ story }: Props) => {
-  const [context, setContext] = useState<StoryContext | undefined>(undefined);
-  const id = story?.id;
+const StoryView = ({ context }: Props) => {
+  // const [context,story: setContext] = useState<StoryContext | undefined>(undefined);
+  const id = context?.id;
 
-  useEffect(() => {
-    const loadContext = async () => {
-      if (story && story.unboundStoryFn && story.applyLoaders) {
-        setContext(await story.applyLoaders());
-      }
-    };
-    loadContext();
-  }, [story, id]);
+  // useEffect(() => {
+  //   const loadContext = async () => {
+  //     if (story && story.unboundStoryFn && story.applyLoaders) {
+  //       setContext(await story.applyLoaders());
+  //     }
+  //   };
+  //   loadContext();
+  // }, [story, id]);
 
-  if (story && story.unboundStoryFn) {
-    const { unboundStoryFn } = story;
-    const StoryComponent = context && context.id === story.id ? unboundStoryFn : null;
+  console.log({ context });
+  if (context && context.unboundStoryFn) {
+    const { unboundStoryFn: StoryComponent } = context;
+    // const StoryComponent = context && context.id === story.id ? unboundStoryFn : null;
     return (
       <View key={id} testID={id} style={styles.container}>
         {StoryComponent && <StoryComponent {...context} />}
