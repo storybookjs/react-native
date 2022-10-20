@@ -9,7 +9,7 @@
     "target": "ES2016",
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@emotion/native": ["src/typings.d.ts"]
+      "@emotion/native": ["src/types/emotion-native.d.ts"]
     },
     "outDir": "dist/",
     "moduleResolution": "node",

@@ -2,23 +2,19 @@ import Channel from '@storybook/channels';
 import { addons } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { Loadable } from '@storybook/core-client';
-
 import { PreviewWeb } from '@storybook/preview-web';
 import { ClientApi, RenderContext } from '@storybook/client-api';
-import type { ReactFramework } from '../types-6.0';
-import { Preview as PreviewNative } from './Preview';
+import type { ReactNativeFramework } from '../types/types-6.0';
+import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
-
-type TFramework = ReactFramework;
 
 export function start() {
   const channel = new Channel({ async: true });
   addons.setChannel(channel);
 
-  // const storyStore = new StoryStore<TFramework>();
-  const clientApi = new ClientApi<TFramework>();
-  // const preview = new Preview({ storyStore });
-  const preview = new PreviewWeb<TFramework>();
+  const clientApi = new ClientApi<ReactNativeFramework>();
+
+  const preview = new PreviewWeb<ReactNativeFramework>();
 
   clientApi.storyStore = preview.storyStore;
 
@@ -31,25 +27,26 @@ export function start() {
     },
   };
 
-  // @ts-ignore
   preview.view = {
     ...preview.view,
-    // @ts-ignore
-    prepareForStory: () => {
-      return null;
-    },
+    prepareForStory: () => null,
     showNoPreview: () => {},
     showPreparingStory: () => {},
     applyLayout: () => {},
     showErrorDisplay: (e) => {
       console.log(e);
     },
-    showStoryDuringRender: () => {
-      console.log('showstory');
-    },
-    showMain: () => {
-      console.log('showmain');
-    },
+    showStoryDuringRender: () => {},
+    showMain: () => {},
+    // these are just to make typescript happy
+    showDocs: preview.view.showDocs,
+    storyRoot: preview.view.storyRoot,
+    prepareForDocs: preview.view.prepareForDocs,
+    docsRoot: preview.view.docsRoot,
+    checkIfLayoutExists: preview.view.checkIfLayoutExists,
+    showMode: preview.view.showMode,
+    showPreparingDocs: preview.view.showPreparingDocs,
+    showStory: preview.view.showStory,
   };
 
   let initialized = false;
@@ -57,19 +54,19 @@ export function start() {
   function onStoriesChanged() {
     const storyIndex = clientApi.getStoryIndex();
     preview.onStoriesChanged({ storyIndex });
-    previewNative._storyIndex = storyIndex;
+    view._storyIndex = storyIndex;
   }
 
-  const previewNative = new PreviewNative();
+  const view = new View(preview);
 
   return {
-    previewNative,
+    view,
     forceReRender: () => channel.emit(Events.FORCE_RE_RENDER),
     clientApi,
     preview,
     // This gets called each time the user calls configure (i.e. once per HMR)
     // The first time, it constructs the preview, subsequently it updates it
-    configure(loadable: Loadable /*m?: NodeModule*/) {
+    configure(loadable: Loadable) {
       clientApi.addParameters({ framework: 'react-native' });
 
       // We need to run the `executeLoadableForChanges` function *inside* the `getProjectAnnotations
@@ -87,9 +84,8 @@ export function start() {
 
         return {
           ...clientApi.facade.projectAnnotations,
-          renderToDOM: (context: RenderContext) => {
-            console.log({ context: context.storyContext });
-            previewNative._setStory({ story: context.storyContext });
+          renderToDOM: (context: RenderContext<ReactNativeFramework>) => {
+            view._setStory(context.storyContext);
           },
         };
       };
@@ -100,10 +96,9 @@ export function start() {
         preview.initialize({
           getStoryIndex: () => {
             const index = clientApi.getStoryIndex();
-            previewNative._storyIndex = index;
+            view._storyIndex = index;
             return index;
           },
-          // @ts-ignore
           importFn,
           getProjectAnnotations,
         });

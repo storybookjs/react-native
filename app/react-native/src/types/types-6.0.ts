@@ -8,7 +8,7 @@ export type { Args, ArgTypes, Parameters, StoryContext } from '@storybook/addons
 type ReactComponent = ComponentType<any>;
 type ReactReturnType = StoryFnReactReturnType;
 
-export type ReactFramework = {
+export type ReactNativeFramework = {
   component: ComponentType<any>;
   storyResult: StoryFnReactReturnType;
 };

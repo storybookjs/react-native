@@ -3,13 +3,12 @@ import { ClientApi } from '@storybook/client-api';
 import { ReactNode } from 'react';
 
 import { start } from './preview/start';
-import type { ReactFramework } from './types-6.0';
+import type { ReactNativeFramework } from './types/types-6.0';
 
-// export const preview = new Preview();
-const { clientApi, configure, previewNative } = start();
+const { clientApi, configure, view } = start();
 export { configure };
 
-type C = ClientApi<ReactFramework>;
+type C = ClientApi<ReactNativeFramework>;
 
 const rawStoriesOf: C['storiesOf'] = clientApi.storiesOf.bind(clientApi);
 export const setAddon: C['setAddon'] = clientApi.setAddon.bind(clientApi);
@@ -23,6 +22,6 @@ export const raw: C['raw'] = clientApi.raw.bind(clientApi);
 export const storiesOf = (kind: string, module: NodeModule) =>
   rawStoriesOf(kind, module).addParameters({ framework: 'react-native' }) as StoryApi<ReactNode>;
 
-export const getStorybookUI = previewNative.getStorybookUI;
+export const getStorybookUI = view.getStorybookUI;
 
-export * from './types-6.0';
+export * from './types/types-6.0';

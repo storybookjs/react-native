@@ -21,6 +21,7 @@ const Container = styled.View(({ theme }) => ({
   borderColor: theme.borderColor || '#e6e6e6',
 }));
 
+// @ts-ignore styled is being weird ;(
 const WebSelect = styled(Select)(({ theme }) => ({
   border: 'none',
   color: theme.labelColor || 'black',

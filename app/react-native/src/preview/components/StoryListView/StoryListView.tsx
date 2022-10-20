@@ -8,6 +8,7 @@ import { SectionList, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GridIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
+import { ReactNativeFramework } from 'src/types/types-6.0';
 
 const SearchBar = styled.TextInput(
   {
@@ -99,8 +100,7 @@ const ListItem = React.memo(
 
 interface Props {
   storyIndex: StoryIndex;
-  //TODO: type properly
-  selectedStory: StoryContext;
+  selectedStoryContext: StoryContext<ReactNativeFramework>;
 }
 
 interface DataItem {
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
 
 const tabBarHeight = 40;
 
-const StoryListView = ({ selectedStory, storyIndex }: Props) => {
+const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
   const insets = useSafeAreaInsets();
   const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
   const [data, setData] = useState<DataItem[]>(originalData);
@@ -188,14 +188,14 @@ const StoryListView = ({ selectedStory, storyIndex }: Props) => {
             <ListItem
               title={item.name}
               kind={item.title}
-              selected={selectedStory && item.id === selectedStory.id}
+              selected={selectedStoryContext && item.id === selectedStoryContext.id}
               onPress={() => changeStory(item.id)}
             />
           )}
           renderSectionHeader={({ section: { title } }) => (
             <SectionHeader
               title={title}
-              selected={selectedStory && title === selectedStory.title}
+              selected={selectedStoryContext && title === selectedStoryContext.title}
             />
           )}
           keyExtractor={(item, index) => item.id + index}

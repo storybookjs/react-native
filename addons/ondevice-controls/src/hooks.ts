@@ -1,24 +1,11 @@
 import { Args } from '@storybook/addons';
 import { useState, useEffect, useCallback } from 'react';
-import Events, { FORCE_RE_RENDER } from '@storybook/core-events';
-import useDebouncedCallback from './useDebounceCallback';
+import Events from '@storybook/core-events';
 
 export const useArgs = (
   storyId: string,
   storyStore: any
 ): [Args, (args: Args) => void, (argNames?: string[]) => void] => {
-  // TODO: remove need to force re-render
-  const debouncedReRender = useDebouncedCallback(
-    () => storyStore._channel.emit(FORCE_RE_RENDER),
-    100
-  );
-
-  useEffect(() => {
-    return () => {
-      debouncedReRender.cancel();
-    };
-  }, [debouncedReRender]);
-
   const story = storyStore.fromId(storyId);
   if (!story) {
     throw new Error(`Unknown story: ${storyId}`);
@@ -38,18 +25,13 @@ export const useArgs = (
 
   const updateArgs = useCallback(
     (newArgs) => {
-      storyStore.updateStoryArgs(storyId, newArgs);
-
-      //TODO: remove this if possible
-      debouncedReRender();
+      storyStore._channel.emit(Events.UPDATE_STORY_ARGS, { storyId, updatedArgs: newArgs });
     },
-    [debouncedReRender, storyId, storyStore]
+    [storyId, storyStore]
   );
   const resetArgs = useCallback(
     (argNames?: string[]) => {
-      storyStore.resetStoryArgs(storyId, argNames);
-      //TODO: remove this if possible
-      storyStore._channel.emit(FORCE_RE_RENDER);
+      storyStore._channel.emit(Events.RESET_STORY_ARGS, { storyId, argNames });
     },
     [storyId, storyStore]
   );

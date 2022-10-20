@@ -1,7 +1,9 @@
 import { logger } from '@storybook/client-logger';
 import { Path, ModuleExports } from '@storybook/store';
-import { Loadable, RequireContext, LoaderFunction } from './types';
+import { Loadable, RequireContext, LoaderFunction } from '../types/types';
 
+declare var global: NodeJS.Global &
+  typeof globalThis & { lastExportsMap: Map<Path, ModuleExports> };
 /**
  * Executes a Loadable (function that returns exports or require context(s))
  * and returns a map of filename => module exports
@@ -42,20 +44,19 @@ export function executeLoadable(loadable: Loadable) {
       exportsMap = new Map(
         csfExports.map((fileExports, index) => [`exports-map-${index}`, fileExports])
       );
-      //@ts-ignore
-    } else if (exported) {
-      logger.warn(
-        `Loader function passed to 'configure' should return void or an array of module exports that all contain a 'default' export. Received: ${JSON.stringify(
-          exported
-        )}`
-      );
     }
+    //  else if (exported) {
+    //   logger.warn(
+    //     `Loader function passed to 'configure' should return void or an array of module exports that all contain a 'default' export. Received: ${JSON.stringify(
+    //       exported
+    //     )}`
+    //   );
+    // }
   }
 
   return exportsMap;
 }
 
-// @ts-ignore
 global.lastExportsMap = new Map<Path, ModuleExports>();
 
 /**
@@ -75,7 +76,6 @@ export function executeLoadableForChanges(loadable: Loadable, _m?: NodeModule) {
   //   });
   // }
 
-  // @ts-ignore
   const lastExportsMap = global.lastExportsMap as Map<Path, ModuleExports>;
   const exportsMap = executeLoadable(loadable);
   const added = new Map<Path, ModuleExports>();
@@ -92,7 +92,6 @@ export function executeLoadableForChanges(loadable: Loadable, _m?: NodeModule) {
     .forEach((fileName) => removed.set(fileName, lastExportsMap.get(fileName)));
 
   // Save the value for the dispose() call above
-  // @ts-ignore
   global.lastExportsMap = exportsMap;
 
   return { added, removed };

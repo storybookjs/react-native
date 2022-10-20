@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useReducer } from 'react';
 // import { Text } from 'react-native';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
-import { /* StoryId, StoryStore,  Selection, */ StoryIndex } from '@storybook/store';
-import { /* addons, */ StoryContext } from '@storybook/addons';
+import { StoryIndex, SelectionSpecifier } from '@storybook/store';
+import { StoryContext, toId } from '@storybook/csf';
+import { addons } from '@storybook/addons';
 // import Channel from '@storybook/channels';
 // import { Loadable } from '@storybook/core-client';
 // import Events from '@storybook/core-events';
@@ -11,7 +12,8 @@ import { ThemeProvider } from 'emotion-theming';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
-import type { /*ReactFramework,*/ Story } from '../types-6.0';
+import type { ReactNativeFramework } from '../types/types-6.0';
+import { PreviewWeb } from '@storybook/preview-web';
 
 // const STORAGE_KEY = 'lastOpenedStory';
 
@@ -53,24 +55,106 @@ export type Params = {
   keyboardAvoidingViewVerticalOffset?: number;
 } & { theme?: typeof theme };
 
-export class Preview {
+export class View {
+  _storyIndex: StoryIndex;
+  _setStory: (story: StoryContext<ReactNativeFramework>) => void = () => {};
+  _forceRerender: () => void;
+  _ready: boolean = false;
+  _preview: PreviewWeb<ReactNativeFramework>;
+  // _intialStory: StoryContext<ReactNativeFramework>;
+  constructor(preview: PreviewWeb<ReactNativeFramework>) {
+    this._preview = preview;
+  }
+  _getInitialStory = ({
+    initialSelection /* , shouldPersistSelection */,
+  }: Partial<Params> = {}): SelectionSpecifier => {
+    if (initialSelection) {
+      if (typeof initialSelection === 'string') {
+        return { storySpecifier: initialSelection, viewMode: 'story' };
+      } else {
+        return {
+          storySpecifier: toId(initialSelection.kind, initialSelection.name),
+          viewMode: 'story',
+        };
+      }
+    }
+
+    // if (!shouldPersistSelection) {
+    return { storySpecifier: '*', viewMode: 'story' };
+    // }
+  };
+  getStorybookUI = (params: Partial<Params> = {}) => {
+    // const channel = new Channel({ async: true });
+    // addons.setChannel(channel);
+
+    // const { initialSelection, shouldPersistSelection = true } = params;
+    const initialStory = this._getInitialStory(params);
+    console.log(initialStory);
+    // this._setInitialStory(initialSelection, shouldPersistSelection);
+
+    // this._channel.on(Events.SET_CURRENT_STORY, (d: { storyId: string }) => {
+    //   this._selectStoryEvent(d, shouldPersistSelection);
+    // });
+    addons.loadAddons({
+      store: () => ({
+        fromId: (id) =>
+          this._preview.storyStore.getStoryContext(this._preview.storyStore.fromId(id)),
+        getSelection: () => {
+          return this._preview.currentSelection;
+        },
+        _channel: this._preview.channel,
+        // resetStoryArgs: () => {},
+      }),
+    });
+
+    // eslint-disable-next-line consistent-this
+    const self = this;
+
+    const appliedTheme = { ...theme, ...params.theme };
+    return () => {
+      // const [ready, setReady] = useState(false);
+
+      const [context, setContext] = useState<StoryContext<ReactNativeFramework>>();
+      const [, forceUpdate] = useReducer((x) => x + 1, 0);
+      useEffect(() => {
+        // self._setReady = setReady;
+        self._setStory = (newStory: StoryContext<ReactNativeFramework>) => {
+          setContext(newStory);
+        };
+        self._forceRerender = () => forceUpdate();
+
+        self._preview.urlStore.selectionSpecifier = initialStory;
+        self._preview.selectSpecifiedStory();
+        console.log('render');
+      }, []);
+
+      return (
+        <SafeAreaProvider>
+          <ThemeProvider theme={appliedTheme}>
+            <OnDeviceUI
+              context={context}
+              storyIndex={self._storyIndex}
+              isUIHidden={params.isUIHidden}
+              tabOpen={params.tabOpen}
+              shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
+              keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
+            />
+          </ThemeProvider>
+        </SafeAreaProvider>
+      );
+    };
+  };
   // _storyStore: StoryStore<ReactFramework>;
 
   // _getStoryIndex?: () => StoryIndex;
 
-  _storyIndex: StoryIndex;
-
   // _storyId: StoryId;
 
   // _setReady: (ready: boolean) => void;
-  _setStory: ({ story }: { story: Story }) => void;
-  _forceRerender: () => void;
 
   // _addons: any;
 
   // _channel: Channel;
-
-  _ready: boolean = false;
 
   // // _decorators: any[];
 
@@ -171,60 +255,6 @@ export class Preview {
   // async onStoriesChanged({ storyIndex }: { storyIndex?: StoryIndex }) {
   //   console.log({ storyIndex });
   // }
-
-  getStorybookUI = (params: Partial<Params> = {}) => {
-    // const channel = new Channel({ async: true });
-    // addons.setChannel(channel);
-
-    // const { initialSelection, shouldPersistSelection = true } = params;
-    // this._setInitialStory(initialSelection, shouldPersistSelection);
-
-    // this._channel.on(Events.SET_CURRENT_STORY, (d: { storyId: string }) => {
-    //   this._selectStoryEvent(d, shouldPersistSelection);
-    // });
-    // addons.loadAddons(this._clientApi);
-
-    // eslint-disable-next-line consistent-this
-    const self = this;
-
-    const appliedTheme = { ...theme, ...params.theme };
-    return () => {
-      // const [ready, setReady] = useState(false);
-      // TODO: get story context from csf package and use ReactFramework type
-      const [context, setContext] = useState<StoryContext>();
-      const [, forceUpdate] = useReducer((x) => x + 1, 0);
-      useEffect(() => {
-        // self._setReady = setReady;
-        self._setStory = ({ story: newStory }: { story: StoryContext }) => {
-          console.log('setStory');
-          setContext(newStory);
-        };
-        self._forceRerender = () => forceUpdate();
-      }, []);
-
-      console.log('render ui');
-      // if (!self._ready) {
-      //   return <Text>Loading</Text>;
-      // }
-
-      // const story = self._storyStore.fromId(storyId);
-
-      return (
-        <SafeAreaProvider>
-          <ThemeProvider theme={appliedTheme}>
-            <OnDeviceUI
-              context={context}
-              storyIndex={self._storyIndex}
-              isUIHidden={params.isUIHidden}
-              tabOpen={params.tabOpen}
-              shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
-              keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
-            />
-          </ThemeProvider>
-        </SafeAreaProvider>
-      );
-    };
-  };
 
   // _setInitialStory = async (initialSelection?: InitialSelection, shouldPersistSelection = true) => {
   //   const story = await this._getInitialStory(initialSelection, shouldPersistSelection);

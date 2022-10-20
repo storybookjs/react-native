@@ -32,7 +32,8 @@ import { PREVIEW, ADDONS } from './navigation/constants';
 import Panel from './Panel';
 import { useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { StoryContext } from '@storybook/addons';
+import { StoryContext } from '@storybook/csf';
+import { ReactNativeFramework } from 'src/types/types-6.0';
 
 const ANIMATION_DURATION = 300;
 const IS_IOS = Platform.OS === 'ios';
@@ -42,7 +43,7 @@ export const IS_EXPO = getExpoRoot() !== undefined;
 const IS_ANDROID = Platform.OS === 'android';
 const BREAKPOINT = 1024;
 interface OnDeviceUIProps {
-  context: StoryContext;
+  context: StoryContext<ReactNativeFramework>;
   storyIndex: StoryIndex;
   url?: string;
   tabOpen?: number;
@@ -72,28 +73,6 @@ const absolutePosition: FlexStyle = {
 const styles = StyleSheet.create({
   expoAndroidContainer: { paddingTop: StatusBar.currentHeight },
 });
-
-// const useSelectedStory = (storyStore: StoryStore) => {
-//   const [storyId, setStoryId] = useState(storyStore.getSelection()?.storyId || '');
-//   const [, forceUpdate] = useReducer((x) => x + 1, 0);
-//   const channel = useRef(addons.getChannel());
-
-//   useEffect(() => {
-//     const handleStoryWasSet = ({ id: newStoryId }: { id: string }) => setStoryId(newStoryId);
-
-//     const currentChannel = channel.current;
-//     channel.current.on(Events.SELECT_STORY, handleStoryWasSet);
-//     //TODO: update preview without force
-//     channel.current.on(Events.FORCE_RE_RENDER, forceUpdate);
-
-//     return () => {
-//       currentChannel.removeListener(Events.SELECT_STORY, handleStoryWasSet);
-//       currentChannel.removeListener(Events.FORCE_RE_RENDER, forceUpdate);
-//     };
-//   }, []);
-
-//   return storyStore.fromId(storyId);
-// };
 
 const OnDeviceUI = ({
   context,
@@ -179,8 +158,7 @@ const OnDeviceUI = ({
                 wide
               )}
             >
-              {/* TODO:  selected  story context */}
-              <StoryListView storyIndex={storyIndex} selectedStory={context} />
+              <StoryListView storyIndex={storyIndex} selectedStoryContext={context} />
             </Panel>
             <Panel
               style={getAddonPanelPosition(animatedValue.current, previewDimensions.width, wide)}

@@ -25,7 +25,7 @@ const ValueLabelText = styled.Text(({ theme }) => ({
 }));
 
 const ValueContainer = styled.View({ flexDirection: 'row' });
-
+// @ts-ignore styled is being weird ;(
 const NumberSlider = styled(Slider)(() => ({
   marginTop: Platform.OS === 'android' ? 8 : 4,
   marginLeft: Platform.OS === 'android' ? -10 : 0,
