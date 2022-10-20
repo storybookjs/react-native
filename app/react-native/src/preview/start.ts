@@ -39,14 +39,14 @@ export function start() {
     showStoryDuringRender: () => {},
     showMain: () => {},
     // these are just to make typescript happy
-    showDocs: preview.view.showDocs,
-    storyRoot: preview.view.storyRoot,
-    prepareForDocs: preview.view.prepareForDocs,
-    docsRoot: preview.view.docsRoot,
-    checkIfLayoutExists: preview.view.checkIfLayoutExists,
-    showMode: preview.view.showMode,
-    showPreparingDocs: preview.view.showPreparingDocs,
-    showStory: preview.view.showStory,
+    showDocs: preview.view?.showDocs,
+    storyRoot: preview.view?.storyRoot,
+    prepareForDocs: preview.view?.prepareForDocs,
+    docsRoot: preview.view?.docsRoot,
+    checkIfLayoutExists: preview.view?.checkIfLayoutExists,
+    showMode: preview.view?.showMode,
+    showPreparingDocs: preview.view?.showPreparingDocs,
+    showStory: preview.view?.showStory,
   };
 
   let initialized = false;
