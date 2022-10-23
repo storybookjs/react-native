@@ -1,13 +1,8 @@
 import React, { useEffect, useState, useReducer } from 'react';
-// import { Text } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StoryIndex, SelectionSpecifier } from '@storybook/store';
 import { StoryContext, toId } from '@storybook/csf';
 import { addons } from '@storybook/addons';
-// import Channel from '@storybook/channels';
-// import { Loadable } from '@storybook/core-client';
-// import Events from '@storybook/core-events';
-// import { toId, Globals, Args } from '@storybook/csf';
 import { ThemeProvider } from 'emotion-theming';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import OnDeviceUI from './components/OnDeviceUI';
@@ -40,13 +35,13 @@ type InitialSelection =
     };
 
 export type Params = {
-  onDeviceUI?: boolean;
-  resetStorybook?: boolean;
-  disableWebsockets?: boolean;
-  query?: string;
-  host?: string;
-  port?: number;
-  secured?: boolean;
+  // onDeviceUI?: boolean;
+  // resetStorybook?: boolean; // TODO: access all these params to see if they
+  // disableWebsockets?: boolean;
+  // query?: string;
+  // host?: string;
+  // port?: number;
+  // secured?: boolean;
   initialSelection?: InitialSelection;
   shouldPersistSelection?: boolean;
   tabOpen?: number;
@@ -68,7 +63,7 @@ export class View {
   }
   _getInitialStory = async ({
     initialSelection,
-    shouldPersistSelection,
+    shouldPersistSelection = true,
   }: Partial<Params> = {}): Promise<SelectionSpecifier> => {
     if (initialSelection) {
       if (typeof initialSelection === 'string') {
@@ -85,24 +80,22 @@ export class View {
       try {
         let value = this._asyncStorageStoryId;
         if (!value) {
-          value = JSON.parse(await AsyncStorage.getItem(STORAGE_KEY));
+          value = await AsyncStorage.getItem(STORAGE_KEY);
           this._asyncStorageStoryId = value;
         }
+
         return { storySpecifier: value, viewMode: 'story' };
       } catch (e) {
-        console.log('storybook-log: error reading from async storage');
+        console.warn('storybook-log: error reading from async storage', e);
       }
     }
 
     return { storySpecifier: '*', viewMode: 'story' };
   };
   getStorybookUI = (params: Partial<Params> = {}) => {
-    // const { initialSelection, shouldPersistSelection = true } = params;
+    const { shouldPersistSelection = true } = params;
     const initialStory = this._getInitialStory(params);
 
-    // this._channel.on(Events.SET_CURRENT_STORY, (d: { storyId: string }) => {
-    //   this._selectStoryEvent(d, shouldPersistSelection);
-    // });
     addons.loadAddons({
       store: () => ({
         fromId: (id) =>
@@ -111,7 +104,6 @@ export class View {
           return this._preview.currentSelection;
         },
         _channel: this._preview.channel,
-        // resetStoryArgs: () => {},
       }),
     });
 
@@ -125,6 +117,11 @@ export class View {
       useEffect(() => {
         self._setStory = (newStory: StoryContext<ReactNativeFramework>) => {
           setContext(newStory);
+          if (shouldPersistSelection) {
+            AsyncStorage.setItem(STORAGE_KEY, newStory.id).catch((e) => {
+              console.warn('storybook-log: error writing to async storage', e);
+            });
+          }
         };
         self._forceRerender = () => forceUpdate();
         initialStory.then((story) => {

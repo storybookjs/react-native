@@ -7,6 +7,7 @@ import { ClientApi, RenderContext } from '@storybook/client-api';
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
+import '../document-polyfill';
 
 export function start() {
   const channel = new Channel({ async: true });
