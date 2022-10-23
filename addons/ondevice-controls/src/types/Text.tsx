@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/native';
+import { useResyncValue } from './useResyncValue';
 
 export interface TextProps {
   arg: {
@@ -8,6 +9,7 @@ export interface TextProps {
     type: string;
   };
   onChange: (value: any) => void;
+  isPristine: boolean;
 }
 
 const Input = styled.TextInput(({ theme }) => ({
@@ -20,12 +22,17 @@ const Input = styled.TextInput(({ theme }) => ({
   color: theme.labelColor || 'black',
 }));
 
-const TextType = ({ arg, onChange }: TextProps) => {
+const TextType = ({ arg, onChange, isPristine }: TextProps) => {
+  const { setCurrentValue, key } = useResyncValue(arg.value, isPristine);
   return (
     <Input
+      key={key}
       testID={arg.name}
       defaultValue={arg.value}
-      onChangeText={onChange}
+      onChangeText={(text) => {
+        onChange(text);
+        setCurrentValue(text);
+      }}
       autoCapitalize="none"
       underlineColorAndroid="transparent"
     />
