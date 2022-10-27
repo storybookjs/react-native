@@ -1,4 +1,3 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { StyleSheet, TextInput } from 'react-native';
 
@@ -15,9 +14,6 @@ export default {
   parameters: {
     notes: 'Use this example to test the software keyboard related issues.',
   },
-  render: (args) => (
-    <TextInput underlineColorAndroid="transparent" style={styles.input} {...args} />
-  ),
 } as ComponentMeta<typeof TextInput>;
 
 type TextInputStory = ComponentStory<typeof TextInput>;
@@ -25,5 +21,9 @@ type TextInputStory = ComponentStory<typeof TextInput>;
 export const Basic: TextInputStory = {
   play: (_context) => {
     console.log('play!!');
+  },
+  args: {
+    underlineColorAndroid: 'transparent',
+    style: styles.input,
   },
 };

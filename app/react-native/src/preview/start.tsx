@@ -1,13 +1,26 @@
+import React from 'react';
 import Channel from '@storybook/channels';
 import { addons } from '@storybook/addons';
 import Events from '@storybook/core-events';
 import { Loadable } from '@storybook/core-client';
 import { PreviewWeb } from '@storybook/preview-web';
-import { ClientApi, RenderContext } from '@storybook/client-api';
+import { ClientApi, RenderContext, setGlobalRender } from '@storybook/client-api';
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
 import '../document-polyfill';
+import type { ArgsStoryFn } from '@storybook/csf';
+
+export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
+  const { id, component: Component } = context;
+  if (!Component) {
+    throw new Error(
+      `Unable to render story ${id} as the component annotation is missing from the default export`
+    );
+  }
+
+  return <Component {...args} />;
+};
 
 export function start() {
   const channel = new Channel({ async: true });
@@ -18,6 +31,7 @@ export function start() {
   const preview = new PreviewWeb<ReactNativeFramework>();
 
   clientApi.storyStore = preview.storyStore;
+  setGlobalRender(render);
 
   preview.urlStore = {
     selection: { storyId: '', viewMode: 'story' },
