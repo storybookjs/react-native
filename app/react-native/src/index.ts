@@ -20,7 +20,9 @@ export const getStorybook: C['getStorybook'] = clientApi.getStorybook.bind(clien
 export const raw: C['raw'] = clientApi.raw.bind(clientApi);
 
 export const storiesOf = (kind: string, _module: NodeModule) =>
-  rawStoriesOf(kind).addParameters({ framework: 'react-native' }) as StoryApi<ReactNode>;
+  rawStoriesOf(kind, { hot: () => {} } as any).addParameters({
+    framework: 'react-native',
+  }) as StoryApi<ReactNode>;
 
 export const getStorybookUI = view.getStorybookUI;
 

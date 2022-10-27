@@ -4,7 +4,7 @@ import './storybook.requires';
 
 const StorybookUIRoot = getStorybookUI({
   // initialSelection: { kind: 'TextInput', name: 'Basic' },
-  shouldPersistSelection: false,
+  shouldPersistSelection: true,
 });
 
 export default StorybookUIRoot;
