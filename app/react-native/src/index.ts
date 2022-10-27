@@ -19,8 +19,8 @@ export const clearDecorators: C['clearDecorators'] = clientApi.clearDecorators.b
 export const getStorybook: C['getStorybook'] = clientApi.getStorybook.bind(clientApi);
 export const raw: C['raw'] = clientApi.raw.bind(clientApi);
 
-export const storiesOf = (kind: string, module: NodeModule) =>
-  rawStoriesOf(kind, module).addParameters({ framework: 'react-native' }) as StoryApi<ReactNode>;
+export const storiesOf = (kind: string, _module: NodeModule) =>
+  rawStoriesOf(kind).addParameters({ framework: 'react-native' }) as StoryApi<ReactNode>;
 
 export const getStorybookUI = view.getStorybookUI;
 

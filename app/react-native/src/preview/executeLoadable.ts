@@ -67,14 +67,8 @@ global.lastExportsMap = new Map<Path, ModuleExports>();
  * @param m NodeModule
  * @returns { added: Map<Path, ModuleExports>, removed: Map<Path, ModuleExports> }
  */
-export function executeLoadableForChanges(loadable: Loadable, _m?: NodeModule) {
-  // if (m?.hot?.dispose) {
-  //   m.hot.accept();
-  //   m.hot.dispose((data) => {
-  //     // eslint-disable-next-line no-param-reassign
-  //     data.lastExportsMap = lastExportsMap;
-  //   });
-  // }
+export function executeLoadableForChanges(loadable: Loadable, m?: NodeModule) {
+  m.hot.accept();
 
   const lastExportsMap = global.lastExportsMap as Map<Path, ModuleExports>;
   const exportsMap = executeLoadable(loadable);
