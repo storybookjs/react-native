@@ -1,5 +1,5 @@
 import styled from '@emotion/native';
-import { StoryIndex /* StoryStore */ } from '@storybook/client-api';
+import { StoryIndex } from '@storybook/client-api';
 import React, { useState, useRef } from 'react';
 import {
   Animated,
@@ -88,7 +88,6 @@ const OnDeviceUI = ({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
   });
-  // const story = useSelectedStory(storyStore);
   const animatedValue = useRef(new Animated.Value(tabOpen));
   const wide = useWindowDimensions().width >= BREAKPOINT;
   const insets = useSafeAreaInsets();
