@@ -84,7 +84,7 @@ export class View {
           this._asyncStorageStoryId = value;
         }
 
-        return { storySpecifier: value, viewMode: 'story' };
+        return { storySpecifier: value ?? '*', viewMode: 'story' };
       } catch (e) {
         console.warn('storybook-log: error reading from async storage', e);
       }
