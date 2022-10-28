@@ -1,3 +1,4 @@
+import './document-polyfill';
 import { StoryApi } from '@storybook/addons';
 import { ClientApi } from '@storybook/client-api';
 import { ReactNode } from 'react';

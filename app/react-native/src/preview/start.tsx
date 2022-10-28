@@ -8,7 +8,6 @@ import { ClientApi, RenderContext, setGlobalRender } from '@storybook/client-api
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
-import '../document-polyfill';
 import type { ArgsStoryFn } from '@storybook/csf';
 
 export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
