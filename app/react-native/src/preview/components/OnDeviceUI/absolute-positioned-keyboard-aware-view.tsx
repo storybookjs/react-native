@@ -37,7 +37,6 @@ export default class AbsolutePositionedKeyboardAwareView extends PureComponent<P
   componentWillUnmount() {
     this.keyboardDidShowListener.remove();
     this.keyboardDidHideListener.remove();
-    Dimensions.removeEventListener('change', this.removeKeyboardOnOrientationChange);
   }
 
   keyboardDidShowHandler = (e: KeyboardEvent) => {
