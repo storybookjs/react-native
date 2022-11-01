@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
 import { StyleSheet, TextInput } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -16,7 +16,7 @@ export default {
   },
 } as ComponentMeta<typeof TextInput>;
 
-type TextInputStory = ComponentStory<typeof TextInput>;
+type TextInputStory = ComponentStoryObj<typeof TextInput>;
 
 export const Basic: TextInputStory = {
   play: (_context) => {
