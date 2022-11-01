@@ -112,14 +112,21 @@ const OnDeviceUI = ({
     }
   };
 
+  const noSafeArea = context?.parameters?.noSafeArea ?? false;
   const previewWrapperStyles = [
     flex,
-    getPreviewPosition(animatedValue.current, previewDimensions, slideBetweenAnimation, wide),
+    getPreviewPosition({
+      animatedValue: animatedValue.current,
+      previewDimensions,
+      slideBetweenAnimation,
+      wide,
+      noSafeArea,
+      insets,
+    }),
   ];
 
   const previewStyles = [flex, getPreviewScale(animatedValue.current, slideBetweenAnimation, wide)];
 
-  const noSafeArea = context?.parameters?.noSafeArea ?? false;
   const WrapperView = noSafeArea ? View : SafeAreaView;
   const wrapperMargin = { marginBottom: isUIVisible ? insets.bottom + 40 : 0 };
   return (
