@@ -11,6 +11,6 @@ const styles = StyleSheet.create({
 
 export const Color = ({ color }: ButtonProps) => (
   <View style={[styles.button, { backgroundColor: color }]}>
-    <Text>Color: {color}</Text>
+    <Text>Color: {color as string}</Text>
   </View>
 );

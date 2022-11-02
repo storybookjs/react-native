@@ -378,7 +378,7 @@ PODS:
     - React-perflogger (= 0.70.2)
   - RNCAsyncStorage (1.17.10):
     - React-Core
-  - RNDateTimePicker (6.5.0):
+  - RNDateTimePicker (6.5.2):
     - React-Core
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
@@ -596,7 +596,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 80065f60af4f4b05603661070c8622bb3740bf16
   ReactCommon: 1209130f460e4aa9d255ddc75fa0a827ebf93dfb
   RNCAsyncStorage: 0c357f3156fcb16c8589ede67cc036330b6698ca
-  RNDateTimePicker: 154f8246e9c32fd663995647a7f9f667a8c6b258
+  RNDateTimePicker: 3f32aa2247836c12618d346113e5e82ea60ddd9c
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 043f8eb97345d0171f27fead4d1849cacf0472a5
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

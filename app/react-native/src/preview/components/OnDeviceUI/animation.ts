@@ -1,4 +1,5 @@
 import { Animated } from 'react-native';
+import { EdgeInsets } from 'react-native-safe-area-context';
 import { PreviewDimens } from './absolute-positioned-keyboard-aware-view';
 import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
 
@@ -53,15 +54,28 @@ export const getAddonPanelPosition = (
   ];
 };
 
-export const getPreviewPosition = (
-  animatedValue: Animated.Value,
-  { width: previewWidth, height: previewHeight }: PreviewDimens,
-  slideBetweenAnimation: boolean,
-  wide: boolean
-) => {
+type PreviewPositionArgs = {
+  animatedValue: Animated.Value;
+  previewDimensions: PreviewDimens;
+  slideBetweenAnimation: boolean;
+  wide: boolean;
+  noSafeArea: boolean;
+  insets: EdgeInsets;
+};
+
+export const getPreviewPosition = ({
+  animatedValue,
+  previewDimensions: { width: previewWidth, height: previewHeight },
+  slideBetweenAnimation,
+  wide,
+  noSafeArea,
+  insets,
+}: PreviewPositionArgs) => {
   const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
   const translateX = previewWidth / 2 - (previewWidth * scale) / 2 - TRANSLATE_X_OFFSET;
-  const translateY = -(previewHeight / 2 - (previewHeight * scale) / 2 - TRANSLATE_Y_OFFSET);
+  const marginTop = noSafeArea ? 0 : insets.top;
+  const translateY =
+    -(previewHeight / 2 - (previewHeight * scale) / 2 - TRANSLATE_Y_OFFSET) + marginTop;
 
   return {
     transform: [
@@ -74,7 +88,7 @@ export const getPreviewPosition = (
       {
         translateY: animatedValue.interpolate({
           inputRange: [NAVIGATOR, PREVIEW, ADDONS],
-          outputRange: [translateY, slideBetweenAnimation ? translateY : 0, translateY],
+          outputRange: [translateY, slideBetweenAnimation ? translateY : marginTop, translateY],
         }),
       },
     ],

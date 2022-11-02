@@ -1,7 +1,8 @@
 import styled from '@emotion/native';
 import Slider from '@react-native-community/slider';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
+import { useResyncValue } from './useResyncValue';
 
 const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
@@ -25,7 +26,7 @@ const ValueLabelText = styled.Text(({ theme }) => ({
 }));
 
 const ValueContainer = styled.View({ flexDirection: 'row' });
-
+// @ts-ignore styled is being weird ;(
 const NumberSlider = styled(Slider)(() => ({
   marginTop: Platform.OS === 'android' ? 8 : 4,
   marginLeft: Platform.OS === 'android' ? -10 : 0,
@@ -49,6 +50,8 @@ export interface NumberProps {
 const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProps) => {
   const showError = Number.isNaN(arg.value);
   const [numStr, setNumStr] = useState(arg.value.toString());
+  const updateNumstr = useCallback((value) => setNumStr(value.toString()), []);
+  const { key, setCurrentValue } = useResyncValue(arg.value, isPristine, updateNumstr);
 
   const handleNormalChangeText = (text: string) => {
     const commaReplaced = text.trim().replace(/,/, '.');
@@ -56,17 +59,12 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
     setNumStr(commaReplaced);
     if (commaReplaced === '-') {
       onChange(-1);
+      setCurrentValue(-1);
     } else {
       onChange(Number(commaReplaced));
+      setCurrentValue(Number(commaReplaced));
     }
   };
-
-  // handle arg.value and numStr out of sync issue on reset
-  useEffect(() => {
-    if (isPristine) {
-      setNumStr(arg.value.toString());
-    }
-  }, [isPristine, arg.value]);
 
   const renderNormal = () => {
     return (
@@ -83,7 +81,7 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
 
   const renderRange = (): React.ReactNode => {
     return (
-      <>
+      <View key={key}>
         <ValueContainer>
           <ValueLabelText>Value:</ValueLabelText>
           <SliderText>{arg.value}</SliderText>
@@ -92,9 +90,12 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
           minimumValue={arg.min}
           maximumValue={arg.max}
           step={arg.step}
-          onValueChange={(val) => onChange(val)}
+          onValueChange={(val) => {
+            onChange(val);
+            setCurrentValue(val);
+          }}
         />
-      </>
+      </View>
     );
   };
 

@@ -33,7 +33,7 @@ export const withBackgrounds = makeDecorator({
 
     return (
       <Container initialBackground={background} channel={addons.getChannel()}>
-        {getStory(context)}
+        {getStory(context) as React.ReactNode}
       </Container>
     );
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/native';
+import { useResyncValue } from './useResyncValue';
 
 const Input = styled.TextInput(({ theme }) => ({
   borderWidth: 1,
@@ -25,20 +26,30 @@ export interface ArrayProps {
     separator: string;
   };
   onChange: (value: string[]) => void;
+  isPristine: boolean;
 }
 
 const ArrayType = ({
   arg: { name, value, separator = ',' },
   onChange = () => null,
-}: ArrayProps) => (
-  <Input
-    testID={name}
-    underlineColorAndroid="transparent"
-    autoCapitalize="none"
-    defaultValue={value.join(separator)}
-    onChangeText={(e) => onChange(formatArray(e, separator))}
-  />
-);
+  isPristine,
+}: ArrayProps) => {
+  const { setCurrentValue, key } = useResyncValue(value, isPristine);
+  return (
+    <Input
+      key={key}
+      testID={name}
+      underlineColorAndroid="transparent"
+      autoCapitalize="none"
+      defaultValue={value.join(separator)}
+      onChangeText={(text) => {
+        const formatted = formatArray(text, separator);
+        onChange(formatted);
+        setCurrentValue(formatted);
+      }}
+    />
+  );
+};
 
 ArrayType.serialize = (value) => value;
 

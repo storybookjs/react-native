@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import styled from '@emotion/native';
 import { ViewStyle } from 'react-native';
+import { useResyncValue } from './useResyncValue';
 
 export interface ObjectProps {
   arg: {
@@ -8,6 +9,7 @@ export interface ObjectProps {
     value: Record<string, any> | Array<any>;
   };
   onChange: (value: any) => void;
+  isPristine: boolean;
 }
 
 const Input = styled.TextInput(({ theme }) => ({
@@ -21,7 +23,7 @@ const Input = styled.TextInput(({ theme }) => ({
   minHeight: 60,
 }));
 
-const ObjectType = ({ arg, onChange }: ObjectProps) => {
+const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
   const getJsonString = useCallback(() => {
     try {
       return JSON.stringify(arg.value, null, 2);
@@ -31,6 +33,7 @@ const ObjectType = ({ arg, onChange }: ObjectProps) => {
   }, [arg.value]);
 
   const [failed, setFailed] = useState(false);
+  const { key, setCurrentValue } = useResyncValue(arg.value, isPristine);
 
   const handleChange = (value) => {
     const withReplacedQuotes = value
@@ -42,6 +45,7 @@ const ObjectType = ({ arg, onChange }: ObjectProps) => {
       const json = JSON.parse(withReplacedQuotes.trim());
 
       onChange(json);
+      setCurrentValue(json);
       setFailed(false);
     } catch (err) {
       setFailed(true);
@@ -58,6 +62,7 @@ const ObjectType = ({ arg, onChange }: ObjectProps) => {
 
   return (
     <Input
+      key={key}
       testID={arg.name}
       style={extraStyle}
       defaultValue={getJsonString()}

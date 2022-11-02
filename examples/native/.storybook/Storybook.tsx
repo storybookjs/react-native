@@ -3,8 +3,8 @@ import { getStorybookUI } from '@storybook/react-native';
 import './storybook.requires';
 
 const StorybookUIRoot = getStorybookUI({
-  // initialSelection: { kind: 'Radio control', name: 'Basic' },
-  // shouldPersistSelection: false,
+  // initialSelection: { kind: 'TextInput', name: 'Basic' },
+  shouldPersistSelection: true,
 });
 
 export default StorybookUIRoot;

@@ -1,12 +1,14 @@
 import styled from '@emotion/native';
 import { addons, StoryKind } from '@storybook/addons';
-import { PublishedStoreItem, StoreItem, StoryStore } from '@storybook/client-api';
+import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 import Events from '@storybook/core-events';
+import { StoryContext } from '@storybook/csf';
 import React, { useMemo, useState } from 'react';
 import { SectionList, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GridIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
+import { ReactNativeFramework } from 'src/types/types-6.0';
 
 const SearchBar = styled.TextInput(
   {
@@ -55,13 +57,12 @@ interface SectionProps {
   selected: boolean;
 }
 
-const SectionHeader = React.memo(
-  ({ title, selected }: SectionProps) => (
-    <HeaderContainer key={title}>
-      <GridIcon />
-      <Header selected={selected}>{title}</Header>
-    </HeaderContainer>
-  ));
+const SectionHeader = React.memo(({ title, selected }: SectionProps) => (
+  <HeaderContainer key={title}>
+    <GridIcon />
+    <Header selected={selected}>{title}</Header>
+  </HeaderContainer>
+));
 
 interface ListItemProps {
   title: string;
@@ -98,38 +99,29 @@ const ListItem = React.memo(
 );
 
 interface Props {
-  storyStore: StoryStore;
-  selectedStory: StoreItem;
+  storyIndex: StoryIndex;
+  selectedStoryContext: StoryContext<ReactNativeFramework>;
 }
 
 interface DataItem {
   title: StoryKind;
-  data: PublishedStoreItem[];
+  data: StoryIndexEntry[];
 }
 
-const getStories = (storyStore: StoryStore): DataItem[] => {
-  if (!storyStore) {
+const getStories = (storyIndex: StoryIndex): DataItem[] => {
+  if (!storyIndex) {
     return [];
   }
 
-  return Object.values(
-    storyStore
-      .raw()
-      .reduce(
-        (
-          acc: { [kind: string]: { title: string; data: PublishedStoreItem[] } },
-          story: PublishedStoreItem
-        ) => {
-          acc[story.kind] = {
-            title: story.kind,
-            data: (acc[story.kind] ? acc[story.kind].data : []).concat(story),
-          };
+  const groupedStories = Object.values(storyIndex.stories).reduce((acc, story) => {
+    acc[story.title] = {
+      title: story.title,
+      data: (acc[story.title]?.data ?? []).concat(story),
+    };
+    return acc;
+  }, {} as Record<string, DataItem>);
 
-          return acc;
-        },
-        {}
-      )
-  );
+  return Object.values(groupedStories);
 };
 
 const styles = StyleSheet.create({
@@ -138,9 +130,9 @@ const styles = StyleSheet.create({
 
 const tabBarHeight = 40;
 
-const StoryListView = ({ selectedStory, storyStore }: Props) => {
+const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
   const insets = useSafeAreaInsets();
-  const originalData = useMemo(() => getStories(storyStore), [storyStore]);
+  const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
   const [data, setData] = useState<DataItem[]>(originalData);
 
   const handleChangeSearchText = (text: string) => {
@@ -195,13 +187,16 @@ const StoryListView = ({ selectedStory, storyStore }: Props) => {
           renderItem={({ item }) => (
             <ListItem
               title={item.name}
-              kind={item.kind}
-              selected={selectedStory && item.id === selectedStory.id}
+              kind={item.title}
+              selected={selectedStoryContext && item.id === selectedStoryContext.id}
               onPress={() => changeStory(item.id)}
             />
           )}
           renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader title={title} selected={selectedStory && title === selectedStory.kind} />
+            <SectionHeader
+              title={title}
+              selected={selectedStoryContext && title === selectedStoryContext.title}
+            />
           )}
           keyExtractor={(item, index) => item.id + index}
           sections={data}

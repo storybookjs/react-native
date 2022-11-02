@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { StyleSheet, Animated } from 'react-native';
 import styled from '@emotion/native';
 
+// @ts-ignore styled is being weird ;(
 const Container = styled(Animated.View)(({ theme }) => ({
   backgroundColor: theme.backgroundColor || 'white',
 }));

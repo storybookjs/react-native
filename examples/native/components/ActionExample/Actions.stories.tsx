@@ -1,5 +1,4 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
 import { ActionButton } from './Actions';
 
 const ActionButtonMeta: ComponentMeta<typeof ActionButton> = {
@@ -14,11 +13,12 @@ const ActionButtonMeta: ComponentMeta<typeof ActionButton> = {
 };
 export default ActionButtonMeta;
 
-type ActionButtonStory = ComponentStory<typeof ActionButton>;
+type ActionButtonStory = ComponentStoryObj<typeof ActionButton>;
 
-export const Basic: ActionButtonStory = (args) => <ActionButton {...args} />;
+export const Basic: ActionButtonStory = {};
 
-export const AnotherAction: ActionButtonStory = (args) => <ActionButton {...args} />;
-AnotherAction.argTypes = {
-  onPress: { action: 'pressed a different button' },
+export const AnotherAction: ActionButtonStory = {
+  argTypes: {
+    onPress: { action: 'pressed a different button' },
+  },
 };
