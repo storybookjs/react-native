@@ -1,4 +1,6 @@
-module.exports = {
+import type { StorybookConfig } from '@storybook/core-common';
+
+const config: StorybookConfig = {
   stories: ['./FakeStory.stories.tsx'],
   addons: [
     '@storybook/addon-ondevice-notes',
@@ -7,3 +9,5 @@ module.exports = {
     '@storybook/addon-ondevice-actions',
   ],
 };
+
+export default config;

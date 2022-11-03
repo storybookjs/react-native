@@ -44,6 +44,7 @@ function getMain({ configPath }) {
     throw new Error('main config file not found');
   }
   const mainPath = path.resolve(cwd, configPath, `main.${fileExtension}`);
+
   return requireUncached(mainPath);
 }
 
@@ -64,7 +65,8 @@ function getPreviewExists({ configPath }) {
 function writeRequires({ configPath, absolute = false }) {
   const storybookRequiresLocation = path.resolve(cwd, configPath, 'storybook.requires.js');
 
-  const main = getMain({ configPath });
+  const mainImport = getMain({ configPath });
+  const main = mainImport.default ?? mainImport;
   const reactNativeOptions = main.reactNativeOptions;
   const excludePaths = reactNativeOptions && reactNativeOptions.excludePaths;
   const normalizedExcludePaths = normalizeExcludePaths(excludePaths);
