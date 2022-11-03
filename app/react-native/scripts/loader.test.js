@@ -46,6 +46,18 @@ describe('loader', () => {
         ],
       });
     });
+    it('should work for any supported file extension', () => {
+      const main = getMain({ configPath: './scripts/mocks/main-extension' });
+      expect(main).toEqual({
+        stories: ['./FakeStory.stories.tsx'],
+        addons: [
+          '@storybook/addon-ondevice-notes',
+          '@storybook/addon-ondevice-controls',
+          '@storybook/addon-ondevice-backgrounds',
+          '@storybook/addon-ondevice-actions',
+        ],
+      });
+    });
   });
 
   describe('getPreviewExists', () => {

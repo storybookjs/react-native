@@ -4,6 +4,7 @@ const glob = require('glob');
 const prettier = require('prettier');
 
 const cwd = process.cwd();
+const supportedExtensions = ['js', 'jsx', 'ts', 'tsx', 'cjs', 'mjs'];
 
 const previewImports = `
   import { decorators, parameters } from './preview';
@@ -38,22 +39,26 @@ function requireUncached(module) {
 }
 
 function getMain({ configPath }) {
-  const mainPath = path.resolve(cwd, configPath, 'main.js');
+  const fileExtension = getFilePathExtension({ configPath }, 'main');
+  if (fileExtension === null) {
+    throw new Error('main config file not found');
+  }
+  const mainPath = path.resolve(cwd, configPath, `main.${fileExtension}`);
   return requireUncached(mainPath);
 }
 
-function getPreviewExists({ configPath }) {
-  const supportedExtensions = ['js', 'jsx', 'ts', 'tsx'];
-
+function getFilePathExtension({ configPath }, fileName) {
   for (const ext of supportedExtensions) {
-    const previewPath = path.resolve(cwd, configPath, `preview.${ext}`);
-
-    if (fs.existsSync(previewPath)) {
-      return true;
+    const filePath = path.resolve(cwd, configPath, `${fileName}.${ext}`);
+    if (fs.existsSync(filePath)) {
+      return ext;
     }
   }
+  return null;
+}
 
-  return false;
+function getPreviewExists({ configPath }) {
+  return !!getFilePathExtension({ configPath }, 'preview');
 }
 
 function writeRequires({ configPath, absolute = false }) {
