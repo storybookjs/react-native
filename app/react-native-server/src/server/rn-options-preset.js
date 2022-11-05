@@ -6,7 +6,7 @@ export async function managerWebpack(config, options) {
   return {
     ...config,
     plugins: [
-      ...config.plugins,
+      ...(config?.plugins ?? []),
       new webpack.DefinePlugin({
         storybookOptions: JSON.stringify(storybookOptions),
       }),

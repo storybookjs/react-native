@@ -55,7 +55,11 @@ export default class ReactProvider extends Provider {
       <Consumer filter={mapper} pure>
         {({ storiesHash, storyId, api, viewMode }) => {
           if (storiesHash[storyId]) {
-            api.emit(Events.SET_CURRENT_STORY, { storyId });
+            // {
+            //   storySpecifier: toId(initialSelection.kind, initialSelection.name),
+            //   viewMode: 'story',
+            // }
+            api.emit(Events.SET_CURRENT_STORY, { storySpecifier: storyId, viewMode: 'story' });
           }
           return viewMode === 'story' ? <PreviewHelp /> : null;
         }}
@@ -65,6 +69,5 @@ export default class ReactProvider extends Provider {
 
   handleAPI(api) {
     addons.loadAddons(api);
-    api.emit(Events.GET_STORIES);
   }
 }

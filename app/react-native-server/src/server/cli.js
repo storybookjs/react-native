@@ -29,7 +29,7 @@ function getCli() {
     .option('--quiet', 'Suppress verbose build output')
     .parse(process.argv);
 
-  const configDir = path.resolve(program.configDir || './storybook');
+  const configDir = path.resolve(program.configDir || './.storybook_server');
 
   return {
     ...program,

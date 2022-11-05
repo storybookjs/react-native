@@ -14,7 +14,9 @@ export default class Server {
   }
 
   start() {
-    return storybook(this.options);
+    console.log({ port: this.options.port, host: this.options.host });
+    return storybook({ ...this.options, port: 7007, host: '192.168.1.185' });
+    // TODO: figure out why port/host are not getting passed correctly
   }
 
   attachWS(server) {

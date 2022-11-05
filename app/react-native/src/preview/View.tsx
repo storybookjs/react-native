@@ -9,8 +9,6 @@ import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { PreviewWeb } from '@storybook/preview-web';
-import createChannel from '@storybook/channel-websocket';
-import getHost from './rn-host-detect';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -96,28 +94,8 @@ export class View {
     return { storySpecifier: '*', viewMode: 'story' };
   };
   getStorybookUI = (params: Partial<Params> = {}) => {
-    const { shouldPersistSelection = true, enableWebsockets = false } = params;
+    const { shouldPersistSelection = true } = params;
     const initialStory = this._getInitialStory(params);
-    if (enableWebsockets) {
-      const host = getHost(params.host || 'localhost');
-      const port = `:${params.port || 7007}`;
-
-      const query = params.query || '';
-      const { secured } = params;
-      const websocketType = secured ? 'wss' : 'ws';
-      const httpType = secured ? 'https' : 'http';
-      console.log({ host, port });
-
-      const url = `${websocketType}://${host}${port}/${query}`;
-      this._webUrl = `${httpType}://${host}${port}`;
-
-      const newChannel = createChannel({
-        url,
-        async: params.onDeviceUI,
-        onError: async () => {},
-      });
-      addons.setChannel(newChannel);
-    }
 
     addons.loadAddons({
       store: () => ({

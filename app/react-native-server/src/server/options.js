@@ -1,27 +1,30 @@
-import { managerPreset } from '@storybook/core/server';
 import packageJson from '../../package.json';
 
 function extendOptions(options, extendServer) {
   const { manualId, https: secured, host, port } = options;
-  const storybookOptions = { manualId, secured, host, port };
+  const storybookOptions = { manualId, secured, host: '192.168.1.185', port: 7007 };
+  // TODO: figure out port/host thing
+  const corePresets = [
+    {
+      name: '@storybook/manager-webpack4/manager-preset',
+      options: { managerEntry: require.resolve('../client/manager') },
+    },
+    {
+      name: require.resolve('./rn-options-preset.js'),
+      options: { storybookOptions },
+    },
+  ];
 
   return {
     ...options,
     framework: 'react-native',
+    // debugWebpack: true,
+    managerCache: false,
     extendServer,
     packageJson,
     mode: 'dev',
     ignorePreview: true,
-    corePresets: [
-      {
-        name: managerPreset,
-        options: { managerEntry: require.resolve('../client/manager') },
-      },
-      {
-        name: require.resolve('./rn-options-preset.js'),
-        options: { storybookOptions },
-      },
-    ],
+    corePresets,
   };
 }
 
