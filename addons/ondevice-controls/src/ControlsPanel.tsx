@@ -1,7 +1,7 @@
 import styled from '@emotion/native';
 import { API } from '@storybook/api';
 import React, { useState, useCallback } from 'react';
-import { Args } from '@storybook/addons';
+import { Args, StoryContext } from '@storybook/addons';
 
 import { useArgs } from './hooks';
 import NoControlsWarning from './NoControlsWarning';
@@ -50,19 +50,19 @@ const ControlsPanel = ({ api }: { api: API }) => {
   const storyId = store.getSelection().storyId;
   const [isPristine, setIsPristine] = useState(true);
   const [argsfromHook, updateArgs, resetArgs] = useArgs(storyId, store);
-  const { argTypes, parameters } = store.fromId(storyId);
+  const { argTypes, parameters } = store.fromId(storyId) as StoryContext;
 
-  const argsObject = Object.entries(argsfromHook).reduce((prev, [name, value]) => {
-    const isControl = Boolean(argTypes?.[name]?.control);
+  const argsObject = Object.entries(argTypes).reduce((prev, [key, argType]) => {
+    const isControl = Boolean(argType?.control);
 
     return isControl
       ? {
           ...prev,
-          [name]: { ...argTypes?.[name], name, type: argTypes[name]?.control?.type, value },
+          [key]: { ...argType, name: key, type: argType?.control?.type, value: argsfromHook[key] },
         }
       : prev;
   }, {});
-  const hasControls = Object.keys(argsObject).length > 0;
+  const hasControls = Object.keys(argTypes).length > 0;
   const isArgsStory = parameters.__isArgsStory;
   const showWarning = !(hasControls && isArgsStory);
 

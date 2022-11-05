@@ -11,8 +11,6 @@ export default BooleanExample;
 
 type BooleanStory = ComponentStory<typeof Switch>;
 
-export const Basic: BooleanStory = (args) => <Switch {...args} />;
-
-Basic.args = {
-  on: true,
+export const Basic: BooleanStory = (args) => {
+  return <Switch {...args} />;
 };
