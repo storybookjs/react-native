@@ -1,17 +1,20 @@
 const chokidar = require('chokidar');
 const path = require('path');
 
-const { writeRequires, getMain, getPreviewExists } = require('./loader');
+const { writeRequires, getMain, getPreviewExists, getFilePathExtension } = require('./loader');
 
 const { getArguments } = require('./handle-args');
 
 const args = getArguments();
 const log = console.log.bind(console);
 
-const watchPaths = ['./main.js'];
+const mainExt = getFilePathExtension(args, 'main');
+const previewExt = getFilePathExtension(args, 'main');
+
+const watchPaths = [`./main.${mainExt}`];
 
 if (getPreviewExists(args)) {
-  watchPaths.push('./preview.js');
+  watchPaths.push(`./preview.${previewExt}`);
 }
 
 const updateRequires = (event, watchPath) => {

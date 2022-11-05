@@ -137,4 +137,5 @@ module.exports = {
   writeRequires,
   getMain,
   getPreviewExists,
+  getFilePathExtension,
 };
