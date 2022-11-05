@@ -22,7 +22,7 @@ export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
 };
 
 export function start() {
-  const channel = new Channel({ async: true });
+  let channel = new Channel({ async: true });
   addons.setChannel(channel);
 
   const clientApi = new ClientApi<ReactNativeFramework>();

@@ -13,6 +13,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prestart": "yarn get-stories",
     "start": "react-native start",
+    "start-server": "react-native-storybook-server",
     "storybook-watcher": "sb-rn-watcher --config-path=./.storybook",
     "test": "jest --passWithNoTests",
     "preweb": "yarn get-stories",
