@@ -90,7 +90,7 @@ function writeRequires({ configPath, absolute = false }) {
   const storyRequires = storyPaths.map((storyPath) => `require("${storyPath}")`).join(',');
   const path_array_str = `[${storyRequires}]`;
 
-  const registerAddons = main.addons.map((addon) => `import "${addon}/register";`).join('\n');
+  const registerAddons = main.addons?.map((addon) => `import "${addon}/register";`).join('\n');
   let enhancersImport = '';
   let enhancers = '';
 
