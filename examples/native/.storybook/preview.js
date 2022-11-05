@@ -10,7 +10,15 @@ export const decorators = [
   ),
   withBackgrounds,
 ];
+
 export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
   my_param: 'anything',
   backgrounds: [
     { name: 'plain', value: 'white', default: true },

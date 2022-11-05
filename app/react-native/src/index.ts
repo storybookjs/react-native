@@ -16,6 +16,8 @@ export const setAddon: C['setAddon'] = clientApi.setAddon.bind(clientApi);
 export const addDecorator: C['addDecorator'] = clientApi.addDecorator.bind(clientApi);
 export const addParameters: C['addParameters'] = clientApi.addParameters.bind(clientApi);
 export const addArgsEnhancer: C['addArgsEnhancer'] = clientApi.addArgsEnhancer.bind(clientApi);
+export const addArgTypesEnhancer: C['addArgTypesEnhancer'] =
+  clientApi.addArgTypesEnhancer.bind(clientApi);
 export const clearDecorators: C['clearDecorators'] = clientApi.clearDecorators.bind(clientApi);
 export const getStorybook: C['getStorybook'] = clientApi.getStorybook.bind(clientApi);
 export const raw: C['raw'] = clientApi.raw.bind(clientApi);

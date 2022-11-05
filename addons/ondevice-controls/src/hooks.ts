@@ -1,4 +1,4 @@
-import { Args } from '@storybook/addons';
+import { Args, StoryContext } from '@storybook/addons';
 import { useState, useEffect, useCallback } from 'react';
 import Events from '@storybook/core-events';
 
@@ -6,7 +6,7 @@ export const useArgs = (
   storyId: string,
   storyStore: any
 ): [Args, (args: Args) => void, (argNames?: string[]) => void] => {
-  const story = storyStore.fromId(storyId);
+  const story: StoryContext = storyStore.fromId(storyId);
   if (!story) {
     throw new Error(`Unknown story: ${storyId}`);
   }
