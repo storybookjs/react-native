@@ -46,6 +46,20 @@ describe('loader', () => {
         ],
       });
     });
+    it('should work for any supported file extension', () => {
+      const main = getMain({ configPath: './scripts/mocks/file-extensions' });
+      expect(main).toEqual({
+        default: {
+          stories: ['./FakeStory.stories.tsx'],
+          addons: [
+            '@storybook/addon-ondevice-notes',
+            '@storybook/addon-ondevice-controls',
+            '@storybook/addon-ondevice-backgrounds',
+            '@storybook/addon-ondevice-actions',
+          ],
+        },
+      });
+    });
   });
 
   describe('getPreviewExists', () => {
@@ -99,6 +113,16 @@ describe('loader', () => {
         writeRequires({ configPath: 'scripts/mocks/all-config-files' });
         expect(pathMock).toEqual(
           path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.js')
+        );
+        expect(fileContentMock).toMatchSnapshot();
+      });
+    });
+
+    describe('when there are different file extensions', () => {
+      it('writes the story imports', () => {
+        writeRequires({ configPath: 'scripts/mocks/file-extensions' });
+        expect(pathMock).toEqual(
+          path.resolve(__dirname, 'mocks/file-extensions/storybook.requires.js')
         );
         expect(fileContentMock).toMatchSnapshot();
       });
