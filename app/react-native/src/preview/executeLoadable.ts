@@ -68,7 +68,9 @@ global.lastExportsMap = new Map<Path, ModuleExports>();
  * @returns { added: Map<Path, ModuleExports>, removed: Map<Path, ModuleExports> }
  */
 export function executeLoadableForChanges(loadable: Loadable, m?: NodeModule) {
-  m.hot.accept();
+  if (m?.hot?.accept) {
+    m.hot.accept();
+  }
 
   const lastExportsMap = global.lastExportsMap as Map<Path, ModuleExports>;
   const exportsMap = executeLoadable(loadable);
