@@ -16,10 +16,13 @@ const BackgroundMeta: ComponentMeta<typeof Background> = {
   component: Background,
   decorators: [withBackgrounds],
   parameters: {
-    backgrounds: [
-      { name: 'warm', value: 'hotpink', default: true },
-      { name: 'cool', value: 'deepskyblue' },
-    ],
+    backgrounds: {
+      default: 'warm',
+      values: [
+        { name: 'warm', value: 'hotpink' },
+        { name: 'cool', value: 'deepskyblue' },
+      ],
+    },
   },
 };
 
