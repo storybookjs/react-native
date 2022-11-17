@@ -59,7 +59,8 @@ export default class ReactProvider extends Provider {
             //   storySpecifier: toId(initialSelection.kind, initialSelection.name),
             //   viewMode: 'story',
             // }
-            api.emit(Events.SET_CURRENT_STORY, { storySpecifier: storyId, viewMode: 'story' });
+            // api.emit(Events.SET_CURRENT_STORY, { storySpecifier: storyId, viewMode: 'story' });
+            api.emit(Events.SET_CURRENT_STORY, { storyId });
           }
           return viewMode === 'story' ? <PreviewHelp /> : null;
         }}

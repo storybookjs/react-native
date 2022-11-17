@@ -5,5 +5,5 @@ module.exports = {
   ],
   logLevel: 'debug',
   env: () => ({}),
-  addons: [],
+  addons: ['@storybook/addon-essentials'],
 };
