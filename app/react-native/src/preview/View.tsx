@@ -9,6 +9,7 @@ import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { PreviewWeb } from '@storybook/preview-web';
+import StoryView from './components/StoryView';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -94,7 +95,7 @@ export class View {
     return { storySpecifier: '*', viewMode: 'story' };
   };
   getStorybookUI = (params: Partial<Params> = {}) => {
-    const { shouldPersistSelection = true } = params;
+    const { shouldPersistSelection = true, onDeviceUI = true } = params;
     const initialStory = this._getInitialStory(params);
 
     addons.loadAddons({
@@ -131,20 +132,24 @@ export class View {
         });
       }, []);
 
-      return (
-        <SafeAreaProvider>
-          <ThemeProvider theme={appliedTheme}>
-            <OnDeviceUI
-              context={context}
-              storyIndex={self._storyIndex}
-              isUIHidden={params.isUIHidden}
-              tabOpen={params.tabOpen}
-              shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
-              keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
-            />
-          </ThemeProvider>
-        </SafeAreaProvider>
-      );
+      if (onDeviceUI) {
+        return (
+          <SafeAreaProvider>
+            <ThemeProvider theme={appliedTheme}>
+              <OnDeviceUI
+                context={context}
+                storyIndex={self._storyIndex}
+                isUIHidden={params.isUIHidden}
+                tabOpen={params.tabOpen}
+                shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
+                keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
+              />
+            </ThemeProvider>
+          </SafeAreaProvider>
+        );
+      } else {
+        return <StoryView context={context} />;
+      }
     };
   };
 }

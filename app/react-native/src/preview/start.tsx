@@ -32,12 +32,8 @@ const getServerChannel = (
   const query = params.query || '';
 
   const websocketType = params.secured ? 'wss' : 'ws';
-  const httpType = params.secured ? 'https' : 'http';
-  console.log({ host, port });
-
   const url = `${websocketType}://${host}${port}/${query}`;
-  const webUrl = `${httpType}://${host}${port}`;
-  console.log(webUrl);
+
   return createChannel({
     url,
     async: true,
@@ -105,7 +101,7 @@ export function start() {
     clientApi,
     preview,
     // This gets called each time the user calls configure (i.e. once per HMR)
-    // The first time, it constructs the preview, subsequently it updates it
+    // The first time, it constructs thecurrentSelection preview, subsequently it updates it
     configure(loadable: Loadable, m: NodeModule) {
       clientApi.addParameters({ framework: 'react-native' });
 
