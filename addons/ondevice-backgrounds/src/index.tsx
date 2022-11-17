@@ -8,7 +8,6 @@ import Container from './container';
 export interface Background {
   name: string;
   value: string;
-  default?: boolean;
 }
 
 export const withBackgrounds = makeDecorator({
@@ -17,14 +16,19 @@ export const withBackgrounds = makeDecorator({
   skipIfNoParametersOrOptions: true,
 
   wrapper: (getStory, context, { options, parameters }) => {
-    const data = parameters || options || [];
-    const backgrounds: Background[] = Array.isArray(data) ? data : Object.values(data);
+    const data = (parameters || options || { values: [] }) as {
+      default?: string;
+      values: Background[];
+    };
+    const backgrounds: Background[] = data.values;
 
     let background = 'transparent';
     if (backgrounds.length !== 0) {
       addons.getChannel().emit(Events.SET, backgrounds);
-
-      const defaultOrFirst = backgrounds.find((x) => x.default) || backgrounds[0];
+      const defaultValue = data.default
+        ? backgrounds.find((b) => b.name === data.default)
+        : undefined;
+      const defaultOrFirst = defaultValue ? defaultValue : backgrounds[0];
 
       if (defaultOrFirst) {
         background = defaultOrFirst.value;
