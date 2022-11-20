@@ -1,5 +1,5 @@
 import path from 'path';
-import program from 'commander';
+import { program } from 'commander';
 
 export function parseList(str) {
   return str.split(',');
@@ -24,15 +24,16 @@ function getCli() {
     .option('--ssl-cert <cert>', 'Provide an SSL certificate. (Required with --https)')
     .option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)')
     .option('--smoke-test', 'Exit after successful start')
-    // eslint-disable-next-line quotes
     .option('--ci', "CI mode (skip interactive prompts, don't open browser")
-    .option('--quiet', 'Suppress verbose build output')
-    .parse(process.argv);
+    .option('--quiet', 'Suppress verbose build output');
 
-  const configDir = path.resolve(program.configDir || './.storybook_server');
+  program.parse();
+  const options = program.opts();
+
+  const configDir = path.resolve(options.configDir || './.storybook_server');
 
   return {
-    ...program,
+    ...options,
     configDir,
   };
 }

@@ -8,7 +8,6 @@ module.exports = {
   extends: ['prettier'],
   rules: {
     ...conf.rules,
-    quotes: [1, 'single'],
   },
   overrides: [...conf.overrides, { files: ['*.ts', '*.tsx'], rules: { 'no-undef': 'off' } }],
 };

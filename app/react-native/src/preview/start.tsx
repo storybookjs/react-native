@@ -26,7 +26,7 @@ export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
 const getServerChannel = (
   params: { host?: string; port?: string; query?: string; secured?: boolean } = {}
 ) => {
-  const host = getHost(params.host || '192.168.1.185');
+  const host = getHost(params.host || 'localhost');
   const port = `:${params.port || 7007}`;
 
   const query = params.query || '';

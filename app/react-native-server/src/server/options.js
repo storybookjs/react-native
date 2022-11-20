@@ -2,8 +2,7 @@ import packageJson from '../../package.json';
 
 function extendOptions(options, extendServer) {
   const { manualId, https: secured, host, port } = options;
-  const storybookOptions = { manualId, secured, host: '192.168.1.185', port: 7007 };
-  // TODO: figure out port/host thing
+  const storybookOptions = { manualId, secured, host, port };
   const corePresets = [
     {
       name: '@storybook/manager-webpack4/manager-preset',

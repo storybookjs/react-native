@@ -18,6 +18,7 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, 'components'),
     path.resolve(__dirname, 'other_components'),
     path.resolve(__dirname, './.storybook/preview.js'),
+    path.resolve(__dirname, './.storybook/Storybook.tsx'),
     ...compileNodeModules,
   ],
   use: {
