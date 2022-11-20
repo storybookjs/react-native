@@ -106,7 +106,6 @@ export class View {
 
     const websocketType = params.secured ? 'wss' : 'ws';
     const url = `${websocketType}://${host}${port}/${query}`;
-    console.log({ host, port, query, url });
     return createChannel({
       url,
       async: true,
