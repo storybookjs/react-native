@@ -10,6 +10,9 @@ import { theme } from './components/Shared/theme';
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { PreviewWeb } from '@storybook/preview-web';
 import StoryView from './components/StoryView';
+import createChannel from '@storybook/channel-websocket';
+import getHost from './rn-host-detect';
+import events from '@storybook/core-events';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -37,7 +40,7 @@ type InitialSelection =
 
 export type Params = {
   onDeviceUI?: boolean;
-  // resetStorybook?: boolean; // TODO: assess all these params to see if they
+  // resetStorybook?: boolean; // TODO: Do we need this?
   enableWebsockets?: boolean;
   query?: string;
   host?: string;
@@ -94,9 +97,36 @@ export class View {
 
     return { storySpecifier: '*', viewMode: 'story' };
   };
+
+  _getServerChannel = (params: Partial<Params> = {}) => {
+    const host = getHost(params.host || 'localhost');
+    const port = `:${params.port || 7007}`;
+
+    const query = params.query || '';
+
+    const websocketType = params.secured ? 'wss' : 'ws';
+    const url = `${websocketType}://${host}${port}/${query}`;
+    console.log({ host, port, query, url });
+    return createChannel({
+      url,
+      async: true,
+      onError: async () => {},
+    });
+  };
+
   getStorybookUI = (params: Partial<Params> = {}) => {
-    const { shouldPersistSelection = true, onDeviceUI = true } = params;
+    const { shouldPersistSelection = true, onDeviceUI = true, enableWebsockets = false } = params;
     const initialStory = this._getInitialStory(params);
+    if (enableWebsockets) {
+      const channel = this._getServerChannel(params);
+      addons.setChannel(channel);
+
+      // TODO: check this with someone who knows what they're doing
+      this._preview.channel = channel;
+      this._preview.setupListeners();
+      channel.emit(events.CHANNEL_CREATED);
+      this._preview.initializeWithStoryIndex(this._storyIndex);
+    }
 
     addons.loadAddons({
       store: () => ({

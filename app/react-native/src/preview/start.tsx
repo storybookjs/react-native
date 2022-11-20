@@ -9,8 +9,8 @@ import type { ReactNativeFramework } from '../types/types-6.0';
 import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
 import type { ArgsStoryFn } from '@storybook/csf';
-import createChannel from '@storybook/channel-websocket';
-import getHost from './rn-host-detect';
+// import createChannel from '@storybook/channel-websocket';
+// import getHost from './rn-host-detect';
 
 export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
   const { id, component: Component } = context;
@@ -23,28 +23,28 @@ export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
   return <Component {...args} />;
 };
 
-const getServerChannel = (
-  params: { host?: string; port?: string; query?: string; secured?: boolean } = {}
-) => {
-  const host = getHost(params.host || 'localhost');
-  const port = `:${params.port || 7007}`;
+// const getServerChannel = (
+//   params: { host?: string; port?: string; query?: string; secured?: boolean } = {}
+// ) => {
+//   const host = getHost(params.host || 'localhost');
+//   const port = `:${params.port || 7007}`;
 
-  const query = params.query || '';
+//   const query = params.query || '';
 
-  const websocketType = params.secured ? 'wss' : 'ws';
-  const url = `${websocketType}://${host}${port}/${query}`;
+//   const websocketType = params.secured ? 'wss' : 'ws';
+//   const url = `${websocketType}://${host}${port}/${query}`;
 
-  return createChannel({
-    url,
-    async: true,
-    onError: async () => {},
-  });
-};
+//   return createChannel({
+//     url,
+//     async: true,
+//     onError: async () => {},
+//   });
+// };
 
 export function start() {
-  const params = {} as any; // TODO: get params from main.js
-  let channel = params ? getServerChannel(params) : new Channel({ async: true });
-
+  // const params = {} as any; // TODO: can we get params from main.js
+  // let channel = params ? getServerChannel(params) : new Channel({ async: true });
+  const channel = new Channel({ async: true });
   addons.setChannel(channel);
 
   const clientApi = new ClientApi<ReactNativeFramework>();
