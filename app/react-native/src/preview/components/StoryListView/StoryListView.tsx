@@ -78,7 +78,7 @@ const ItemTouchable = styled.TouchableOpacity<{ selected: boolean }>(
     flexDirection: 'row',
     alignItems: 'center',
   },
-  ({ selected, theme }) => (selected ? { backgroundColor: theme.listItemActiveColor } : {})
+  ({ selected, theme }) => (selected ? { backgroundColor: theme?.listItemActiveColor ?? '#1ea7fd' } : {})
 );
 
 const ListItem = React.memo(
