@@ -26,4 +26,4 @@ The [web Controls Addon documentation](https://storybook.js.org/docs/react/essen
 
 ## Migrating from Knobs
 
-See [examples for migrating from Knobs to Controls](https://github.com/storybookjs/storybook/tree/next/addons/controls#how-do-i-migrate-from-addon-knobs) in the web Controls Addon README.
+See [examples for migrating from Knobs to Controls](https://github.com/storybookjs/storybook/blob/next/code/addons/controls/README.md#how-do-i-migrate-from-addon-knobs) in the web Controls Addon README.

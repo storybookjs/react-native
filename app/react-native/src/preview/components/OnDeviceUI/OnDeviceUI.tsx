@@ -166,8 +166,12 @@ const OnDeviceUI = ({
             >
               <StoryListView storyIndex={storyIndex} selectedStoryContext={context} />
             </Panel>
+
             <Panel
-              style={getAddonPanelPosition(animatedValue.current, previewDimensions.width, wide)}
+              style={[
+                getAddonPanelPosition(animatedValue.current, previewDimensions.width, wide),
+                wrapperMargin,
+              ]}
             >
               <Addons active={tabOpen === ADDONS} />
             </Panel>
