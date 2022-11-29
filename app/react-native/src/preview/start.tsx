@@ -8,9 +8,7 @@ import { ClientApi, RenderContext, setGlobalRender } from '@storybook/client-api
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
-import type { ArgsStoryFn } from '@storybook/csf';
-// import createChannel from '@storybook/channel-websocket';
-// import getHost from './rn-host-detect';
+import type { ArgsStoryFn, ViewMode } from '@storybook/csf';
 
 export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
   const { id, component: Component } = context;
@@ -23,48 +21,14 @@ export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
   return <Component {...args} />;
 };
 
-// const getServerChannel = (
-//   params: { host?: string; port?: string; query?: string; secured?: boolean } = {}
-// ) => {
-//   const host = getHost(params.host || 'localhost');
-//   const port = `:${params.port || 7007}`;
-
-//   const query = params.query || '';
-
-//   const websocketType = params.secured ? 'wss' : 'ws';
-//   const url = `${websocketType}://${host}${port}/${query}`;
-
-//   return createChannel({
-//     url,
-//     async: true,
-//     onError: async () => {},
-//   });
-// };
-
 export function start() {
-  // const params = {} as any; // TODO: can we get params from main.js
-  // let channel = params ? getServerChannel(params) : new Channel({ async: true });
+  // TODO: can we get settings from main.js and set the channel here?
   const channel = new Channel({ async: true });
   addons.setChannel(channel);
 
   const clientApi = new ClientApi<ReactNativeFramework>();
 
-  const preview = new PreviewWeb<ReactNativeFramework>();
-
-  clientApi.storyStore = preview.storyStore;
-  setGlobalRender(render);
-
-  preview.urlStore = {
-    selection: { storyId: '', viewMode: 'story' },
-    selectionSpecifier: null,
-    setQueryParams: () => {},
-    setSelection: (selection) => {
-      preview.urlStore.selection = selection;
-    },
-  };
-
-  preview.view = {
-    ...preview.view,
+  const previewView = {
     prepareForStory: () => null,
     showNoPreview: () => {},
     showPreparingStory: () => {},
@@ -74,16 +38,30 @@ export function start() {
     },
     showStoryDuringRender: () => {},
     showMain: () => {},
-    // these are just to make typescript happy
-    showDocs: preview.view?.showDocs,
-    storyRoot: preview.view?.storyRoot,
-    prepareForDocs: preview.view?.prepareForDocs,
-    docsRoot: preview.view?.docsRoot,
-    checkIfLayoutExists: preview.view?.checkIfLayoutExists,
-    showMode: preview.view?.showMode,
-    showPreparingDocs: preview.view?.showPreparingDocs,
-    showStory: preview.view?.showStory,
+    checkIfLayoutExists: () => {},
+    showStory: () => {},
+    docsRoot: null,
+    prepareForDocs: () => null,
+    showDocs: () => {},
+    preparingTimeout: setTimeout(() => {}, 0),
+    showMode: () => {},
+    showPreparingDocs: () => {},
+    storyRoot: null,
+    testing: false,
   };
+
+  const urlStore = {
+    selection: { storyId: '', viewMode: 'story' as ViewMode },
+    selectionSpecifier: null,
+    setQueryParams: () => {},
+    setSelection: (selection) => {
+      preview.urlStore.selection = selection;
+    },
+  };
+
+  const preview = new PreviewWeb<ReactNativeFramework>(urlStore, previewView);
+  clientApi.storyStore = preview.storyStore;
+  setGlobalRender(render);
 
   let initialized = false;
 

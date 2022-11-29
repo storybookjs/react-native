@@ -32,12 +32,12 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "^6.5.3",
-    "@storybook/api": "^6.5.3",
-    "@storybook/channel-websocket": "^6.5.3",
-    "@storybook/core": "^6.5.3",
-    "@storybook/core-events": "^6.5.3",
-    "@storybook/ui": "^6.5.3",
+    "@storybook/addons": "6.5.14-alpha.1",
+    "@storybook/api": "6.5.14-alpha.1",
+    "@storybook/channel-websocket": "6.5.14-alpha.1",
+    "@storybook/core": "6.5.14-alpha.1",
+    "@storybook/core-events": "6.5.14-alpha.1",
+    "@storybook/ui": "6.5.14-alpha.1",
     "commander": "^8.2.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
@@ -51,7 +51,7 @@
     "babel-loader": "^7.0.0 || ^8.0.0 || ^9.0.0"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=16.0.0"
   },
   "publishConfig": {
     "access": "public"
