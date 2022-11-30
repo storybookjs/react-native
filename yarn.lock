@@ -18962,10 +18962,10 @@ teeny-request@7.1.1:
     stream-events "^1.0.5"
     uuid "^8.0.0"
 
-telejson@^6.0.8, telejson@^7:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/telejson/-/telejson-7.0.3.tgz#61236192ac6fd0c218f45b2952a11eef9f8744b3"
-  integrity sha512-Oj9M8IYGRiJVUY6jarU8EImAqys4hCDYoeNP4r6muMZKGukbsArbv1Z9lxKQtP7eLdRJCKvwI8TNCwjZxD0ryw==
+telejson@^6.0.8, telejson@^7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/telejson/-/telejson-7.0.4.tgz#2e88c0af9566b4f687622ed490588312b2bec186"
+  integrity sha512-J4QEuCnYGXAI9KSN7RXK0a0cOW2ONpjc4IQbInGZ6c3stvplLAYyZjTnScrRd8deXVjNCFV1wXcLC7SObDuQYA==
   dependencies:
     memoizerific "^1.11.3"
 
