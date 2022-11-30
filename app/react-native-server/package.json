@@ -1,7 +1,7 @@
 {
   "name": "@storybook/react-native-server",
   "version": "6.0.1-beta.10",
-  "private": "true",
+  "private": "false",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
