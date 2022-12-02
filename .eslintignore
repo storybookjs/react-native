@@ -26,3 +26,4 @@ examples/native/index.html
 storybook.requires.js
 jest.config.js
 app/react-native/scripts/mocks
+addons/ondevice-knobs
