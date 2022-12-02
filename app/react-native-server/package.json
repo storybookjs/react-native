@@ -1,7 +1,7 @@
 {
   "name": "@storybook/react-native-server",
   "version": "6.0.1-beta.10",
-  "private": "true",
+  "private": "false",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "bin": {
-    "start-storybook": "./bin/index.js",
+    "react-native-storybook-server": "./bin/index.js",
     "storybook-server": "./bin/index.js"
   },
   "files": [
@@ -32,26 +32,26 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "^6.5",
-    "@storybook/api": "^6.5",
-    "@storybook/channel-websocket": "^6.5",
-    "@storybook/core": "^6.5",
-    "@storybook/core-events": "^6.5",
-    "@storybook/ui": "^6.5",
+    "@storybook/addons": "^6.5.14",
+    "@storybook/api": "^6.5.14",
+    "@storybook/channel-websocket": "^6.5.14",
+    "@storybook/core": "^6.5.14",
+    "@storybook/core-events": "^6.5.14",
+    "@storybook/ui": "^6.5.14",
     "commander": "^8.2.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "uuid": "^3.3.2",
-    "webpack": "^5.74.0",
+    "webpack": "^4",
     "ws": "^7.1.2"
   },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0"
+    "babel-loader": "^7.0.0 || ^8.0.0 || ^9.0.0"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=16.0.0"
   },
   "publishConfig": {
     "access": "public"

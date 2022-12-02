@@ -5,10 +5,7 @@
  * When __DEV__ === false, we can't use window.require('NativeModules')
  */
 function getByRemoteConfig(hostname) {
-  var remoteModuleConfig =
-    typeof window !== 'undefined' &&
-    window.__fbBatchedBridgeConfig &&
-    window.__fbBatchedBridgeConfig.remoteModuleConfig;
+  var remoteModuleConfig = window?.__fbBatchedBridgeConfig?.remoteModuleConfig;
   if (
     !Array.isArray(remoteModuleConfig) ||
     (hostname !== 'localhost' && hostname !== '127.0.0.1')

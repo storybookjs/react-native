@@ -26,10 +26,14 @@ const BackgroundMeta: ComponentMeta<typeof Background> = {
   component: Background,
   decorators: [withBackgrounds],
   parameters: {
-    backgrounds: [
-      { name: 'warm', value: 'hotpink', default: true },
-      { name: 'cool', value: 'deepskyblue' },
-    ],
+    backgrounds: {
+      default: 'plain',
+      values: [
+        { name: 'plain', value: 'white' },
+        { name: 'warm', value: 'hotpink' },
+        { name: 'cool', value: 'deepskyblue' },
+      ],
+    },
   },
 };
 
@@ -71,14 +75,14 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
   const store = api.store();
   const storyId = store.getSelection().storyId;
   const story = store.fromId(storyId);
-  const backgrounds: Background[] = story.parameters[PARAM_KEY];
+  const backgrounds: { default?: string; values: Background[] } = story.parameters[PARAM_KEY];
   const setBackgroundFromSwatch = (background: string) => {
     channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
   };
   return (
     <View>
       {backgrounds ? (
-        backgrounds.map(({ value, name }) => (
+        backgrounds.values.map(({ value, name }) => (
           <View key={`${name} ${value}`}>
             <Swatch value={value} name={name} setBackground={setBackgroundFromSwatch} />
           </View>

@@ -1,4 +1,3 @@
-import { managerPreset } from '@storybook/core/server';
 import packageJson from '../../package.json';
 
 function extendOptions(options, extendServer) {
@@ -14,7 +13,7 @@ function extendOptions(options, extendServer) {
     ignorePreview: true,
     corePresets: [
       {
-        name: managerPreset,
+        name: '@storybook/manager-webpack4/manager-preset',
         options: { managerEntry: require.resolve('../client/manager') },
       },
       {

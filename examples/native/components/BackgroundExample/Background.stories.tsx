@@ -8,9 +8,12 @@ addDecorator(withBackgrounds);
 
 storiesOf('Background StoriesOf', module)
   .addParameters({
-    backgrounds: [
-      { name: 'warm', value: 'hotpink', default: true },
-      { name: 'cool', value: 'deepskyblue' },
-    ],
+    backgrounds: {
+      default: 'warm',
+      values: [
+        { name: 'warm', value: 'hotpink' },
+        { name: 'cool', value: 'deepskyblue' },
+      ],
+    },
   })
   .add('Basic', () => <Text>Change background color via Addons -&gt; Background</Text>);

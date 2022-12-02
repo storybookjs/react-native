@@ -65,6 +65,5 @@ export default class ReactProvider extends Provider {
 
   handleAPI(api) {
     addons.loadAddons(api);
-    api.emit(Events.GET_STORIES);
   }
 }

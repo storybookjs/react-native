@@ -37,7 +37,6 @@ const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
 
   const handleChange = (value) => {
     const withReplacedQuotes = value
-      // eslint-disable-next-line quotes
       .replace(/[\u2018\u2019]/g, "'")
       .replace(/[\u201C\u201D]/g, '"');
 

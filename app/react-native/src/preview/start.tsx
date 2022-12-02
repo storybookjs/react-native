@@ -8,7 +8,7 @@ import { ClientApi, RenderContext, setGlobalRender } from '@storybook/client-api
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
-import type { ArgsStoryFn } from '@storybook/csf';
+import type { ArgsStoryFn, ViewMode } from '@storybook/csf';
 
 export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
   const { id, component: Component } = context;
@@ -22,27 +22,13 @@ export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
 };
 
 export function start() {
+  // TODO: can we get settings from main.js and set the channel here?
   const channel = new Channel({ async: true });
   addons.setChannel(channel);
 
   const clientApi = new ClientApi<ReactNativeFramework>();
 
-  const preview = new PreviewWeb<ReactNativeFramework>();
-
-  clientApi.storyStore = preview.storyStore;
-  setGlobalRender(render);
-
-  preview.urlStore = {
-    selection: { storyId: '', viewMode: 'story' },
-    selectionSpecifier: null,
-    setQueryParams: () => {},
-    setSelection: (selection) => {
-      preview.urlStore.selection = selection;
-    },
-  };
-
-  preview.view = {
-    ...preview.view,
+  const previewView = {
     prepareForStory: () => null,
     showNoPreview: () => {},
     showPreparingStory: () => {},
@@ -52,16 +38,30 @@ export function start() {
     },
     showStoryDuringRender: () => {},
     showMain: () => {},
-    // these are just to make typescript happy
-    showDocs: preview.view?.showDocs,
-    storyRoot: preview.view?.storyRoot,
-    prepareForDocs: preview.view?.prepareForDocs,
-    docsRoot: preview.view?.docsRoot,
-    checkIfLayoutExists: preview.view?.checkIfLayoutExists,
-    showMode: preview.view?.showMode,
-    showPreparingDocs: preview.view?.showPreparingDocs,
-    showStory: preview.view?.showStory,
+    checkIfLayoutExists: () => {},
+    showStory: () => {},
+    docsRoot: null,
+    prepareForDocs: () => null,
+    showDocs: () => {},
+    preparingTimeout: setTimeout(() => {}, 0),
+    showMode: () => {},
+    showPreparingDocs: () => {},
+    storyRoot: null,
+    testing: false,
   };
+
+  const urlStore = {
+    selection: { storyId: '', viewMode: 'story' as ViewMode },
+    selectionSpecifier: null,
+    setQueryParams: () => {},
+    setSelection: (selection) => {
+      preview.urlStore.selection = selection;
+    },
+  };
+
+  const preview = new PreviewWeb<ReactNativeFramework>(urlStore, previewView);
+  clientApi.storyStore = preview.storyStore;
+  setGlobalRender(render);
 
   let initialized = false;
 
@@ -79,7 +79,7 @@ export function start() {
     clientApi,
     preview,
     // This gets called each time the user calls configure (i.e. once per HMR)
-    // The first time, it constructs the preview, subsequently it updates it
+    // The first time, it constructs thecurrentSelection preview, subsequently it updates it
     configure(loadable: Loadable, m: NodeModule) {
       clientApi.addParameters({ framework: 'react-native' });
 

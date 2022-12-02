@@ -102,7 +102,8 @@
     "@types/react": "^18.0.21",
     "@typescript-eslint/parser": "^5.37.0",
     "@typescript-eslint/typescript-estree": "^4.26.1",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "telejson": "^7.0.4"
   },
   "dependencies": {
     "@typescript-eslint/parser": "^4.26.1",
