@@ -12,6 +12,7 @@ import {
   date,
   object,
 } from '@storybook/addon-knobs';
+
 import KnobsExample from './KnobsExample';
 
 storiesOf('Knobs Example', module)
