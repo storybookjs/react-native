@@ -114,7 +114,7 @@ For global decorators and parameters you can add them to preview.js inside your 
 
 ```jsx
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
-export const decorators = [withBackgrounds, (Story)=> <View style={{color: 'blue'}}><Story/></View>];
+export const decorators = [withBackgrounds, (Story)=> <View style={{flex: 1, color: 'blue'}}><Story/></View>];
 export const parameters = {
   backgrounds: {
     values: [
