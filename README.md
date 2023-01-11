@@ -33,7 +33,14 @@ There is some project boilerplate with @storybook/react-native and @storybook/ad
 For expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
 
 ```sh
-expo init --template expo-template-storybook AwesomeStorybook
+# With NPM
+npx create-expo-app --template expo-template-storybook AwesomeStorybook
+
+# With Yarn
+yarn create expo-app --template expo-template-storybook AwesomeStorybook
+
+# With pnpm
+pnpm create expo-app --template expo-template-storybook AwesomeStorybook
 ```
 
 For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
