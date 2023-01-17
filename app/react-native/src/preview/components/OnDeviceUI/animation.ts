@@ -1,8 +1,9 @@
-import { Animated } from 'react-native';
+import { Animated, I18nManager } from 'react-native';
 import { EdgeInsets } from 'react-native-safe-area-context';
 import { PreviewDimens } from './absolute-positioned-keyboard-aware-view';
 import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
 
+const RTL_SCALE = I18nManager.isRTL ? -1 : 1;
 const PREVIEW_SCALE = 0.3;
 const PREVIEW_WIDE_SCREEN = 0.7;
 const SCALE_OFFSET = 0.025;
@@ -25,7 +26,7 @@ export const getNavigatorPanelPosition = (
         {
           translateX: animatedValue.interpolate({
             inputRange: [NAVIGATOR, PREVIEW],
-            outputRange: [0, -panelWidth(previewWidth, wide) - 1],
+            outputRange: [0, (-panelWidth(previewWidth, wide) - 1) * RTL_SCALE],
           }),
         },
       ],
@@ -45,7 +46,7 @@ export const getAddonPanelPosition = (
         {
           translateX: animatedValue.interpolate({
             inputRange: [PREVIEW, ADDONS],
-            outputRange: [previewWidth, previewWidth - panelWidth(previewWidth, wide)],
+            outputRange: [previewWidth * RTL_SCALE, (previewWidth - panelWidth(previewWidth, wide)) * RTL_SCALE],
           }),
         },
       ],
@@ -72,7 +73,7 @@ export const getPreviewPosition = ({
   insets,
 }: PreviewPositionArgs) => {
   const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
-  const translateX = previewWidth / 2 - (previewWidth * scale) / 2 - TRANSLATE_X_OFFSET;
+  const translateX = (previewWidth / 2 - (previewWidth * scale) / 2 - TRANSLATE_X_OFFSET) * RTL_SCALE;
   const marginTop = noSafeArea ? 0 : insets.top;
   const translateY =
     -(previewHeight / 2 - (previewHeight * scale) / 2 - TRANSLATE_Y_OFFSET) + marginTop;
