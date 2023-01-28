@@ -56,7 +56,7 @@
     "@storybook/client-logger": "^6.5.14",
     "@storybook/core-client": "^6.5.14",
     "@storybook/core-events": "^6.5.14",
-    "@storybook/csf": "0.0.2--canary.7c6c115.0",
+    "@storybook/csf": "0.0.2--canary.4566f4d.1",
     "@storybook/preview-web": "^6.5.14",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",

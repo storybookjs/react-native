@@ -3805,13 +3805,6 @@
   dependencies:
     lodash "^4.17.15"
 
-"@storybook/csf@0.0.2--canary.7c6c115.0":
-  version "0.0.2--canary.7c6c115.0"
-  resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.0.2--canary.7c6c115.0.tgz#91724e34be7b168acddb8df7e7821ed371ce31ff"
-  integrity sha512-LRIDJp2JionBqZ4/c2DncDk5jGzd3sua92jGbQVRtVyIGdaAVDuNtqXY9Fh+yzO7QE03Cm+BEs59Yat5J7EdEQ==
-  dependencies:
-    lodash "^4.17.15"
-
 "@storybook/docs-tools@6.5.14", "@storybook/docs-tools@^6.5.14":
   version "6.5.14"
   resolved "https://registry.yarnpkg.com/@storybook/docs-tools/-/docs-tools-6.5.14.tgz#68d9c156cdc80a906570807f1d116be103032656"

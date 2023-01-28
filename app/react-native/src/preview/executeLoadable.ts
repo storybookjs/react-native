@@ -17,7 +17,7 @@ export function executeLoadable(loadable: Loadable) {
   if (Array.isArray(loadable)) {
     reqs = loadable;
   } else if ((loadable as RequireContext).keys) {
-    reqs = [loadable as RequireContext];
+    reqs = [loadable as RequireContext]; // todo: test with metro require context
   }
 
   let exportsMap = new Map<Path, ModuleExports>();
@@ -39,19 +39,12 @@ export function executeLoadable(loadable: Loadable) {
     });
   } else {
     const exported = (loadable as LoaderFunction)();
-    if (Array.isArray(exported) /*FIXME && exported.every((obj) => obj.default != null)*/) {
-      const csfExports = exported.filter((obj) => obj.default != null);
-      exportsMap = new Map(
-        csfExports.map((fileExports, index) => [`exports-map-${index}`, fileExports])
+    if (typeof exported === 'object') {
+      const csfExports = Object.entries(exported as Object).filter(
+        ([_key, value]) => value.default != null
       );
+      exportsMap = new Map(csfExports.map(([filePath, fileExports]) => [filePath, fileExports]));
     }
-    //  else if (exported) {
-    //   logger.warn(
-    //     `Loader function passed to 'configure' should return void or an array of module exports that all contain a 'default' export. Received: ${JSON.stringify(
-    //       exported
-    //     )}`
-    //   );
-    // }
   }
 
   return exportsMap;
