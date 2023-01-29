@@ -49,8 +49,8 @@ export interface NumberProps {
 
 const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProps) => {
   const showError = Number.isNaN(arg.value);
-  const [numStr, setNumStr] = useState(arg.value.toString());
-  const updateNumstr = useCallback((value) => setNumStr(value.toString()), []);
+  const [numStr, setNumStr] = useState(arg.value?.toString());
+  const updateNumstr = useCallback((value) => setNumStr(value?.toString()), []);
   const { key, setCurrentValue } = useResyncValue(arg.value, isPristine, updateNumstr);
 
   const handleNormalChangeText = (text: string) => {
