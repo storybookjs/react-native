@@ -3,6 +3,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <React/RCTI18nUtil.h>
 
 #import <React/RCTAppSetupUtils.h>
 
@@ -57,7 +58,19 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  // Allow RTL layouts, if the device prefers RTL then force the app into RTL layout.
+  [[RCTI18nUtil sharedInstance] allowRTL:YES];
+  if ([self isDevicePreferredLanguageRTL]) {
+    [[RCTI18nUtil sharedInstance] forceRTL:YES];
+  }
   return YES;
+}
+
+- (BOOL)isDevicePreferredLanguageRTL
+{
+  NSLocaleLanguageDirection direction =
+      [NSLocale characterDirectionForLanguage:[[NSLocale preferredLanguages] objectAtIndex:0]];
+  return direction == NSLocaleLanguageDirectionRightToLeft;
 }
 
 /// This method controls whether the `concurrentRoot`feature of React18 is turned on or off.
