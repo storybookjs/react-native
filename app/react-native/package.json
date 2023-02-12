@@ -28,7 +28,8 @@
     "README.md",
     "*.js",
     "*.d.ts",
-    "scripts/*"
+    "scripts/*",
+    "template/**/*"
   ],
   "scripts": {
     "preprepare": "rm -rf dist/",
