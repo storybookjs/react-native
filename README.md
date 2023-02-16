@@ -51,9 +51,11 @@ npx react-native init MyApp --template react-native-template-storybook
 
 ## Existing project
 
-Normally to setup an existing project you would use the storybook cli to generate the files.
+Run init to setup your project with all the dependencies and configuration files: 
 
-For v6 the cli setup command is still being worked on, for now use the manual guide [here](MANUAL_SETUP.md).
+`npx sb@next init --type react_native`
+
+If you want to add everything yourself check out the the manual guide [here](MANUAL_SETUP.md).
 
 
 # Writing stories
