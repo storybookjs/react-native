@@ -39,4 +39,4 @@ const StoryView = ({ context }: Props) => {
   );
 };
 
-export default StoryView;
+export default React.memo(StoryView);

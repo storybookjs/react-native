@@ -131,6 +131,10 @@ const styles = StyleSheet.create({
 const tabBarHeight = 40;
 
 const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
+function keyExtractor(item: any, index) {
+  return item.id + index;
+}
+
   const insets = useSafeAreaInsets();
   const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
   const [data, setData] = useState<DataItem[]>(originalData);
@@ -167,7 +171,27 @@ const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
     channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 
-  const safeStyle = { flex: 1, marginTop: insets.top, paddingBottom: insets.bottom + tabBarHeight };
+  const safeStyle = React.useMemo(() => {
+    return { flex: 1, marginTop: insets.top, paddingBottom: insets.bottom + tabBarHeight };
+  }, [insets]);
+
+  const renderItem: SectionListRenderItem<StoryIndexEntry, DataItem> = React.useCallback(({item}) => {
+    return (
+      <ListItem
+        title={item.name}
+        kind={item.title}
+        selected={selectedStoryContext && item.id === selectedStoryContext.id}
+        onPress={() => changeStory(item.id)}
+      />
+    );
+  }, []);
+
+  const renderSectionHeader = React.useCallback(({ section: { title } }) => (
+    <SectionHeader
+      title={title}
+      selected={selectedStoryContext && title === selectedStoryContext.title}
+    />
+  ), []);
 
   return (
     <StoryListContainer>
@@ -184,21 +208,9 @@ const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
           // contentInset={{ bottom: insets.bottom, top: 0 }}
           style={styles.sectionList}
           testID="Storybook.ListView"
-          renderItem={({ item }) => (
-            <ListItem
-              title={item.name}
-              kind={item.title}
-              selected={selectedStoryContext && item.id === selectedStoryContext.id}
-              onPress={() => changeStory(item.id)}
-            />
-          )}
-          renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader
-              title={title}
-              selected={selectedStoryContext && title === selectedStoryContext.title}
-            />
-          )}
-          keyExtractor={(item, index) => item.id + index}
+          renderItem={renderItem}
+          renderSectionHeader={renderSectionHeader}
+          keyExtractor={keyExtractor}
           sections={data}
           stickySectionHeadersEnabled={false}
         />
@@ -207,4 +219,4 @@ const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
   );
 };
 
-export default StoryListView;
+export default React.memo(StoryListView);

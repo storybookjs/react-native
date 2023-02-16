@@ -84,16 +84,16 @@ const OnDeviceUI = ({
 }: OnDeviceUIProps) => {
   const [tabOpen, setTabOpen] = useState(initialTabOpen || PREVIEW);
   const [slideBetweenAnimation, setSlideBetweenAnimation] = useState(false);
-  const [previewDimensions, setPreviewDimensions] = useState<PreviewDimens>({
+  const [previewDimensions, setPreviewDimensions] = useState<PreviewDimens>(() => ({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
-  });
+  }));
   const animatedValue = useRef(new Animated.Value(tabOpen));
   const wide = useWindowDimensions().width >= BREAKPOINT;
   const insets = useSafeAreaInsets();
   const [isUIVisible, setIsUIVisible] = useState(isUIHidden !== undefined ? !isUIHidden : true);
 
-  const handleToggleTab = (newTabOpen: number) => {
+  const handleToggleTab = React.useCallback((newTabOpen: number) => {
     if (newTabOpen === tabOpen) {
       return;
     }
@@ -110,7 +110,7 @@ const OnDeviceUI = ({
     if (newTabOpen === PREVIEW) {
       Keyboard.dismiss();
     }
-  };
+  }, [tabOpen]);
 
   const noSafeArea = context?.parameters?.noSafeArea ?? false;
   const previewWrapperStyles = [
