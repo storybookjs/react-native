@@ -14,6 +14,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import { useStoryContextParam } from '../../../hooks';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 import AbsolutePositionedKeyboardAwareView, {
@@ -32,8 +33,6 @@ import { PREVIEW, ADDONS } from './navigation/constants';
 import Panel from './Panel';
 import { useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { StoryContext } from '@storybook/csf';
-import { ReactNativeFramework } from 'src/types/types-6.0';
 
 const ANIMATION_DURATION = 300;
 const IS_IOS = Platform.OS === 'ios';
@@ -43,7 +42,6 @@ export const IS_EXPO = getExpoRoot() !== undefined;
 const IS_ANDROID = Platform.OS === 'android';
 const BREAKPOINT = 1024;
 interface OnDeviceUIProps {
-  context: StoryContext<ReactNativeFramework>;
   storyIndex: StoryIndex;
   url?: string;
   tabOpen?: number;
@@ -75,7 +73,6 @@ const styles = StyleSheet.create({
 });
 
 const OnDeviceUI = ({
-  context,
   storyIndex,
   isUIHidden,
   shouldDisableKeyboardAvoidingView,
@@ -112,7 +109,7 @@ const OnDeviceUI = ({
     }
   }, [tabOpen]);
 
-  const noSafeArea = context?.parameters?.noSafeArea ?? false;
+  const noSafeArea = useStoryContextParam<boolean>('noSafeArea', false);
   const previewWrapperStyles = [
     flex,
     getPreviewPosition({
@@ -146,7 +143,7 @@ const OnDeviceUI = ({
               <Animated.View style={previewStyles}>
                 <Preview disabled={tabOpen === PREVIEW}>
                   <WrapperView style={[flex, wrapperMargin]}>
-                    <StoryView context={context} />
+                    <StoryView />
                   </WrapperView>
                 </Preview>
                 {tabOpen !== PREVIEW ? (
@@ -164,7 +161,7 @@ const OnDeviceUI = ({
                 wide
               )}
             >
-              <StoryListView storyIndex={storyIndex} selectedStoryContext={context} />
+              <StoryListView storyIndex={storyIndex} />
             </Panel>
 
             <Panel

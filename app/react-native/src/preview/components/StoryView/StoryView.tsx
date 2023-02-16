@@ -1,12 +1,7 @@
 import React from 'react';
 
 import { Text, View, StyleSheet } from 'react-native';
-import type { StoryContext } from '@storybook/csf';
-import { ReactNativeFramework } from 'src/types/types-6.0';
-
-interface Props {
-  context?: StoryContext<ReactNativeFramework>;
-}
+import { useStoryContext } from '../../../hooks';
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
@@ -19,7 +14,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const StoryView = ({ context }: Props) => {
+const StoryView = () => {
+  const context = useStoryContext();
   const id = context?.id;
 
   if (context && context.unboundStoryFn) {
