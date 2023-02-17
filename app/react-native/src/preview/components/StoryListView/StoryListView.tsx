@@ -44,12 +44,6 @@ const SearchContainer = styled.View(
   })
 );
 
-const HeaderContainer = styled.View({
-  paddingVertical: 5,
-  paddingHorizontal: 5,
-  flexDirection: 'row',
-  alignItems: 'center',
-});
 const SearchBar = (props: TextInputProps) => {
   return (
     <SearchContainer>
@@ -68,6 +62,22 @@ const SearchBar = (props: TextInputProps) => {
     </SearchContainer>
   );
 };
+
+const HeaderContainer = styled.View(
+  {
+    marginTop: 8,
+    marginHorizontal: 6,
+    padding: 6,
+    paddingHorizontal: 8,
+    borderTopLeftRadius: 6,
+    borderTopRightRadius: 6,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  ({ selected, theme }) => ({
+    backgroundColor: selected ? theme.sectionActiveColor : undefined,
+  })
+);
 
 const StoryListContainer = styled.View(({ theme }) => ({
   top: 0,
@@ -95,7 +105,7 @@ interface SectionProps {
 const SectionHeader = React.memo(({ title }: SectionProps) => {
   const selected = useIsStorySectionSelected(title);
   return (
-    <HeaderContainer key={title}>
+    <HeaderContainer key={title} selected={selected}>
       <GridIcon />
       <Header selected={selected}>{title}</Header>
     </HeaderContainer>
@@ -107,21 +117,34 @@ interface ListItemProps {
   title: string;
   kind: string;
   onPress: () => void;
+  isLastItem: boolean;
 }
 
-const ItemTouchable = styled.TouchableOpacity<{ selected: boolean }>(
+const ItemTouchable = styled.TouchableOpacity<{ selected: boolean, sectionSelected: boolean, isLastItem: boolean }>(
   {
-    padding: 5,
-    paddingLeft: 40,
+    marginHorizontal: 6,
+    padding: 6,
+    paddingLeft: 24,
     flexDirection: 'row',
     alignItems: 'center',
   },
-  ({ selected, theme }) => (selected ? { backgroundColor: theme?.listItemActiveColor ?? '#1ea7fd' } : {})
+  ({ selected, sectionSelected, isLastItem, theme }) => {
+    return {
+      backgroundColor: selected
+        ? (theme?.listItemActiveColor ?? '#1ea7fd')
+        : sectionSelected
+          ? theme?.sectionActiveColor
+          : undefined,
+      borderBottomLeftRadius: isLastItem ? 6 : undefined,
+      borderBottomRightRadius: isLastItem ? 6 : undefined,
+    };
+  }
 );
 
 const ListItem = React.memo(
-  ({ storyId, kind, title, onPress }: ListItemProps) => {
+  ({ storyId, kind, title, isLastItem, onPress }: ListItemProps) => {
     const selected = useIsStorySelected(storyId);
+    const sectionSelected = useIsStorySectionSelected(kind);
     return (
       <ItemTouchable
         key={title}
@@ -130,6 +153,8 @@ const ListItem = React.memo(
         testID={`Storybook.ListItem.${kind}.${title}`}
         accessibilityLabel={`Storybook.ListItem.${title}`}
         selected={selected}
+        sectionSelected={sectionSelected}
+        isLastItem={isLastItem}
       >
         <StoryIcon selected={selected} />
         <Name selected={selected}>{title}</Name>
@@ -166,6 +191,7 @@ const getStories = (storyIndex: StoryIndex): DataItem[] => {
 
 const styles = StyleSheet.create({
   sectionList: { flex: 1 },
+  sectionListContentContainer: { paddingBottom: 6 },
 });
 
 const tabBarHeight = 40;
@@ -215,12 +241,13 @@ const StoryListView = ({ storyIndex }: Props) => {
     return { flex: 1, marginTop: insets.top, paddingBottom: insets.bottom + tabBarHeight };
   }, [insets]);
 
-  const renderItem: SectionListRenderItem<StoryIndexEntry, DataItem> = React.useCallback(({item}) => {
+  const renderItem: SectionListRenderItem<StoryIndexEntry, DataItem> = React.useCallback(({item, index, section}) => {
     return (
       <ListItem
         storyId={item.id}
         title={item.name}
         kind={item.title}
+        isLastItem={index === section.data.length - 1}
         onPress={() => changeStory(item.id)}
       />
     );
@@ -241,6 +268,7 @@ const StoryListView = ({ storyIndex }: Props) => {
         <SectionList
           // contentInset={{ bottom: insets.bottom, top: 0 }}
           style={styles.sectionList}
+          contentContainerStyle={styles.sectionListContentContainer}
           testID="Storybook.ListView"
           renderItem={renderItem}
           renderSectionHeader={renderSectionHeader}
