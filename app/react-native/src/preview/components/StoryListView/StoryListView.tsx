@@ -7,26 +7,40 @@ import {
   SectionList,
   SectionListRenderItem,
   StyleSheet,
+  TextInputProps,
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { GridIcon, StoryIcon } from '../Shared/icons';
+import { GridIcon, SearchIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
 import { useIsStorySelected, useIsStorySectionSelected } from '../../../hooks';
 
-const SearchBar = styled.TextInput(
+const SearchInput = styled.TextInput(
   {
-    borderRadius: 16,
-    borderWidth: 2,
     fontSize: 16,
+    padding: 0,
+    paddingHorizontal: 36,
+    ...StyleSheet.absoluteFillObject,
+  },
+  ({ theme }) => ({
+    color: theme.buttonActiveTextColor,
+  })
+);
+
+const SearchContainer = styled.View(
+  {
+    borderRadius: 100,
+    borderWidth: 1.5,
     marginVertical: 4,
     marginHorizontal: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 15,
+    paddingVertical: 10,
+    paddingLeft: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   ({ theme }) => ({
     borderColor: theme.borderColor,
-    color: theme.buttonActiveTextColor,
+    backgroundColor: theme.storyListBackgroundColor,
   })
 );
 
@@ -36,6 +50,24 @@ const HeaderContainer = styled.View({
   flexDirection: 'row',
   alignItems: 'center',
 });
+const SearchBar = (props: TextInputProps) => {
+  return (
+    <SearchContainer>
+      <SearchIcon />
+      <SearchInput
+        {...props}
+        autoCapitalize='none'
+        autoComplete='off'
+        autoCorrect={false}
+        spellCheck={false}
+        clearButtonMode="while-editing"
+        disableFullscreenUI
+        placeholderTextColor="#666"
+        returnKeyType="search"
+      />
+    </SearchContainer>
+  );
+};
 
 const StoryListContainer = styled.View(({ theme }) => ({
   top: 0,
@@ -203,11 +235,8 @@ const StoryListView = ({ storyIndex }: Props) => {
       <View style={safeStyle}>
         <SearchBar
           testID="Storybook.ListView.SearchBar"
-          clearButtonMode="while-editing"
-          disableFullscreenUI
           onChangeText={handleChangeSearchText}
-          placeholder="Filter"
-          returnKeyType="search"
+          placeholder="Find by name"
         />
         <SectionList
           // contentInset={{ bottom: insets.bottom, top: 0 }}
