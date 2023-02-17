@@ -58,6 +58,8 @@ const Preview = styled.View<{ disabled: boolean }>(flex, ({ disabled, theme }) =
   borderRightWidth: disabled ? 0 : 1,
   borderBottomWidth: disabled ? 0 : 1,
   borderColor: disabled ? 'transparent' : theme.previewBorderColor,
+  borderRadius: disabled ? 0 : 12,
+  overflow: 'hidden',
 }));
 
 const absolutePosition: FlexStyle = {
