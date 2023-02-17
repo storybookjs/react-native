@@ -63,7 +63,7 @@ const SearchBar = (props: TextInputProps) => {
   );
 };
 
-const HeaderContainer = styled.View(
+const HeaderContainer = styled.TouchableOpacity(
   {
     marginTop: 8,
     marginHorizontal: 6,
@@ -100,12 +100,13 @@ const StoryListContainer = styled.View(({ theme }) => ({
 
 interface SectionProps {
   title: string;
+  onPress: () => void;
 }
 
-const SectionHeader = React.memo(({ title }: SectionProps) => {
+const SectionHeader = React.memo(({ title, onPress }: SectionProps) => {
   const selected = useIsStorySectionSelected(title);
   return (
-    <HeaderContainer key={title} selected={selected}>
+    <HeaderContainer key={title} selected={selected} onPress={onPress} activeOpacity={0.8}>
       <GridIcon />
       <Header selected={selected}>{title}</Header>
     </HeaderContainer>
@@ -253,8 +254,8 @@ const StoryListView = ({ storyIndex }: Props) => {
     );
   }, []);
 
-  const renderSectionHeader = React.useCallback(({ section: { title } }) => (
-    <SectionHeader title={title} />
+  const renderSectionHeader = React.useCallback(({ section: { title, data } }) => (
+    <SectionHeader title={title} onPress={() => changeStory(data[0].id)} />
   ), []);
 
   return (
