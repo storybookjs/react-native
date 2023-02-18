@@ -2,13 +2,17 @@ import styled from '@emotion/native';
 import { addons, StoryKind } from '@storybook/addons';
 import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 import Events from '@storybook/core-events';
-import { StoryContext } from '@storybook/csf';
 import React, { useMemo, useState } from 'react';
-import { SectionList, StyleSheet, View } from 'react-native';
+import {
+  SectionList,
+  SectionListRenderItem,
+  StyleSheet,
+  View,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GridIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
-import { ReactNativeFramework } from 'src/types/types-6.0';
+import { useIsStorySelected, useIsStorySectionSelected } from '../../../hooks';
 
 const SearchBar = styled.TextInput(
   {
@@ -54,20 +58,22 @@ const StoryListContainer = styled.View(({ theme }) => ({
 
 interface SectionProps {
   title: string;
-  selected: boolean;
 }
 
-const SectionHeader = React.memo(({ title, selected }: SectionProps) => (
-  <HeaderContainer key={title}>
-    <GridIcon />
-    <Header selected={selected}>{title}</Header>
-  </HeaderContainer>
-));
+const SectionHeader = React.memo(({ title }: SectionProps) => {
+  const selected = useIsStorySectionSelected(title);
+  return (
+    <HeaderContainer key={title}>
+      <GridIcon />
+      <Header selected={selected}>{title}</Header>
+    </HeaderContainer>
+  );
+});
 
 interface ListItemProps {
+  storyId: string;
   title: string;
   kind: string;
-  selected: boolean;
   onPress: () => void;
 }
 
@@ -82,25 +88,27 @@ const ItemTouchable = styled.TouchableOpacity<{ selected: boolean }>(
 );
 
 const ListItem = React.memo(
-  ({ kind, title, selected, onPress }: ListItemProps) => (
-    <ItemTouchable
-      key={title}
-      onPress={onPress}
-      activeOpacity={0.8}
-      testID={`Storybook.ListItem.${kind}.${title}`}
-      accessibilityLabel={`Storybook.ListItem.${title}`}
-      selected={selected}
-    >
-      <StoryIcon selected={selected} />
-      <Name selected={selected}>{title}</Name>
-    </ItemTouchable>
-  ),
-  (prevProps, nextProps) => prevProps.selected === nextProps.selected
+  ({ storyId, kind, title, onPress }: ListItemProps) => {
+    const selected = useIsStorySelected(storyId);
+    return (
+      <ItemTouchable
+        key={title}
+        onPress={onPress}
+        activeOpacity={0.8}
+        testID={`Storybook.ListItem.${kind}.${title}`}
+        accessibilityLabel={`Storybook.ListItem.${title}`}
+        selected={selected}
+      >
+        <StoryIcon selected={selected} />
+        <Name selected={selected}>{title}</Name>
+      </ItemTouchable>
+    );
+  },
+  (prevProps, nextProps) => prevProps.storyId === nextProps.storyId
 );
 
 interface Props {
   storyIndex: StoryIndex;
-  selectedStoryContext: StoryContext<ReactNativeFramework>;
 }
 
 interface DataItem {
@@ -130,7 +138,11 @@ const styles = StyleSheet.create({
 
 const tabBarHeight = 40;
 
-const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
+function keyExtractor(item: any, index) {
+  return item.id + index;
+}
+
+const StoryListView = ({ storyIndex }: Props) => {
   const insets = useSafeAreaInsets();
   const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
   const [data, setData] = useState<DataItem[]>(originalData);
@@ -167,7 +179,24 @@ const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
     channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 
-  const safeStyle = { flex: 1, marginTop: insets.top, paddingBottom: insets.bottom + tabBarHeight };
+  const safeStyle = React.useMemo(() => {
+    return { flex: 1, marginTop: insets.top, paddingBottom: insets.bottom + tabBarHeight };
+  }, [insets]);
+
+  const renderItem: SectionListRenderItem<StoryIndexEntry, DataItem> = React.useCallback(({item}) => {
+    return (
+      <ListItem
+        storyId={item.id}
+        title={item.name}
+        kind={item.title}
+        onPress={() => changeStory(item.id)}
+      />
+    );
+  }, []);
+
+  const renderSectionHeader = React.useCallback(({ section: { title } }) => (
+    <SectionHeader title={title} />
+  ), []);
 
   return (
     <StoryListContainer>
@@ -184,21 +213,9 @@ const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
           // contentInset={{ bottom: insets.bottom, top: 0 }}
           style={styles.sectionList}
           testID="Storybook.ListView"
-          renderItem={({ item }) => (
-            <ListItem
-              title={item.name}
-              kind={item.title}
-              selected={selectedStoryContext && item.id === selectedStoryContext.id}
-              onPress={() => changeStory(item.id)}
-            />
-          )}
-          renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader
-              title={title}
-              selected={selectedStoryContext && title === selectedStoryContext.title}
-            />
-          )}
-          keyExtractor={(item, index) => item.id + index}
+          renderItem={renderItem}
+          renderSectionHeader={renderSectionHeader}
+          keyExtractor={keyExtractor}
           sections={data}
           stickySectionHeadersEnabled={false}
         />
@@ -207,4 +224,4 @@ const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
   );
 };
 
-export default StoryListView;
+export default React.memo(StoryListView);
