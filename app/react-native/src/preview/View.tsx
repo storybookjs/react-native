@@ -160,6 +160,8 @@ export class View {
           self._preview.urlStore.selectionSpecifier = story;
           self._preview.selectSpecifiedStory();
         });
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
       if (onDeviceUI) {
