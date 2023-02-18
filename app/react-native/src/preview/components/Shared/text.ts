@@ -2,10 +2,10 @@ import styled from '@emotion/native';
 
 export const Header = styled.Text<{ selected: boolean }>(
   ({ theme }) => ({
-    fontSize: 18,
+    fontSize: 16,
     color: theme.headerTextColor || 'black',
+    fontWeight: '500',
   }),
-  ({ selected }) => (selected ? { fontWeight: 'bold' } : {})
 );
 
 export const Name = styled.Text<{ selected: boolean }>(
@@ -13,7 +13,9 @@ export const Name = styled.Text<{ selected: boolean }>(
     fontSize: 16,
   },
   ({ selected, theme }) =>
-    selected ? { fontWeight: 'bold', color: 'white' } : { color: theme.headerTextColor || 'black' }
+    selected
+      ? { fontWeight: '700', color: theme.listItemActiveTextColor ?? 'white' }
+      : { color: theme.listItemTextColor ?? 'black' }
 );
 
 export const Label = styled.Text(({ theme }) => ({
