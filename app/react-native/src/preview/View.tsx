@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StoryIndex, SelectionSpecifier } from '@storybook/store';
 import { StoryContext, toId } from '@storybook/csf';
 import { addons } from '@storybook/addons';
 import { ThemeProvider } from 'emotion-theming';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useSetStoryContext } from '../hooks';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme } from './components/Shared/theme';
 import type { ReactNativeFramework } from '../types/types-6.0';
@@ -143,7 +144,7 @@ export class View {
 
     const appliedTheme = { ...theme, ...params.theme };
     return () => {
-      const [context, setContext] = useState<StoryContext<ReactNativeFramework>>();
+      const setContext = useSetStoryContext();
       const [, forceUpdate] = useReducer((x) => x + 1, 0);
       useEffect(() => {
         self._setStory = (newStory: StoryContext<ReactNativeFramework>) => {
@@ -159,6 +160,8 @@ export class View {
           self._preview.urlStore.selectionSpecifier = story;
           self._preview.selectSpecifiedStory();
         });
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
       if (onDeviceUI) {
@@ -166,7 +169,6 @@ export class View {
           <SafeAreaProvider>
             <ThemeProvider theme={appliedTheme}>
               <OnDeviceUI
-                context={context}
                 storyIndex={self._storyIndex}
                 isUIHidden={params.isUIHidden}
                 tabOpen={params.tabOpen}
@@ -177,7 +179,7 @@ export class View {
           </SafeAreaProvider>
         );
       } else {
-        return <StoryView context={context} />;
+        return <StoryView />;
       }
     };
   };

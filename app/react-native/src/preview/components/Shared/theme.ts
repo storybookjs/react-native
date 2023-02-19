@@ -1,8 +1,10 @@
 export const theme = {
   backgroundColor: 'white',
   storyListBackgroundColor: '#f6f9fc',
+  listItemTextColor: '#444444',
   listItemActiveColor: '#1ea7fd',
   listItemActiveTextColor: 'white',
+  sectionActiveColor: '#e0ebf5',
   headerTextColor: 'black',
   labelColor: 'black',
   borderColor: '#e6e6e6',

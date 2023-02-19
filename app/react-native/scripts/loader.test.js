@@ -171,5 +171,15 @@ describe('loader', () => {
         );
       });
     });
+
+    describe('when there is a configuration object', () => {
+      it('writes the story imports', () => {
+        writeRequires({ configPath: 'scripts/mocks/configuration-objects' });
+        expect(pathMock).toEqual(
+          path.resolve(__dirname, 'mocks/configuration-objects/storybook.requires.js')
+        );
+        expect(fileContentMock).toMatchSnapshot();
+      });
+    });
   });
 });
