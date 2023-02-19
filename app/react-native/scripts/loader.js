@@ -72,6 +72,10 @@ function getPreviewExists({ configPath }) {
   return !!getFilePathExtension({ configPath }, 'preview');
 }
 
+function ensureRelativePathHasDot(relativePath) {
+  return relativePath.startsWith('.') ? relativePath : `./${relativePath}`;
+}
+
 function writeRequires({ configPath, absolute = false }) {
   const storybookRequiresLocation = path.resolve(cwd, configPath, 'storybook.requires.js');
 
@@ -81,13 +85,30 @@ function writeRequires({ configPath, absolute = false }) {
   const excludePaths = reactNativeOptions && reactNativeOptions.excludePaths;
   const normalizedExcludePaths = normalizeExcludePaths(excludePaths);
 
-  const storyPaths = main.stories.reduce((acc, storyGlob) => {
-    const paths = glob.sync(storyGlob, {
-      cwd: path.resolve(cwd, configPath),
-      absolute,
-      // default to always ignore (exclude) anything in node_modules
-      ignore: normalizedExcludePaths !== undefined ? normalizedExcludePaths : ['**/node_modules'],
-    });
+  const storiesSpecifiers = normalizeStories(main.stories, {
+    configDir: configPath,
+    workingDir: cwd,
+  });
+
+  const storyRequires = storiesSpecifiers.reduce((acc, specifier) => {
+    const paths = glob
+      .sync(specifier.files, {
+        cwd: path.resolve(cwd, specifier.directory),
+        absolute,
+        // default to always ignore (exclude) anything in node_modules
+        ignore: normalizedExcludePaths !== undefined ? normalizedExcludePaths : ['**/node_modules'],
+      })
+      .map((storyPath) => {
+        const pathWithDirectory = path.join(specifier.directory, storyPath);
+        const requirePath = absolute
+          ? storyPath
+          : ensureRelativePathHasDot(path.relative(configPath, pathWithDirectory));
+
+        const absolutePath = absolute ? requirePath : path.resolve(configPath, requirePath);
+        const pathRelativeToCwd = path.relative(cwd, absolutePath);
+
+        return `"./${pathRelativeToCwd}": require("${requirePath}")`;
+      });
     return [...acc, ...paths];
   }, []);
 
@@ -97,15 +118,7 @@ function writeRequires({ configPath, absolute = false }) {
 
   let previewJs = previewExists ? previewImports : '';
 
-  const storyRequires = storyPaths
-    .map((storyPath) => {
-      const storyPathToAbsolute = path.resolve(configPath, storyPath);
-      const relative = path.relative(cwd, storyPathToAbsolute);
-      return `"./${relative}": require("${storyPath}")`;
-    })
-    .join(',');
-
-  const path_obj_str = `{${storyRequires}}`;
+  const path_obj_str = `{${storyRequires.join(',')}}`;
 
   const registerAddons = main.addons?.map((addon) => `import "${addon}/register";`).join('\n');
   let enhancersImport = '';
