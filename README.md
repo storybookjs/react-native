@@ -2,13 +2,13 @@
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-This readme is for the 6.0 beta documentation, [find the 5.3 readme here](https://github.com/storybookjs/react-native/tree/v5.3.25#readme)
+This readme is for the 6.5 beta documentation, [find the 5.3 readme here](https://github.com/storybookjs/react-native/tree/v5.3.25#readme)
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> NOTE: `@storybook/react-native` doesn't work yet with 6.4, please pin other storybook packages (like @storybook/addons) to `~6.3`
+> NOTE: `@storybook/react-native` requires atleast 6.5.14, please set other storybook packages (like @storybook/addons) to `^6.5.14` or newer
 
-Work on v6 is currently underway, if you want to help out or are just curious then check out the [project board](https://github.com/storybookjs/react-native/projects/2?fullscreen=true) to see the open issues related to 6.0. If you want to work on something then assign it to yourself and drag the item to the doing column.
+Version v6.5 should be coming out soon and the release candidate is ready for you to test. If you want to help out or are just curious then check out the [project board](https://github.com/storybookjs/react-native/projects/2?fullscreen=true) to see the open issues related to v6+.
 
 ![picture of storybook](https://user-images.githubusercontent.com/3481514/145904252-92e3dc1e-591f-410f-88a1-b4250f4ba6f2.png)
 
@@ -51,9 +51,11 @@ npx react-native init MyApp --template react-native-template-storybook
 
 ## Existing project
 
-Normally to setup an existing project you would use the storybook cli to generate the files.
+Run init to setup your project with all the dependencies and configuration files: 
 
-For v6 the cli setup command is still being worked on, for now use the manual guide [here](MANUAL_SETUP.md).
+`npx sb@next init --type react_native`
+
+If you want to add everything yourself check out the the manual guide [here](MANUAL_SETUP.md).
 
 
 # Writing stories

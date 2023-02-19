@@ -2,36 +2,82 @@ import styled from '@emotion/native';
 import { addons, StoryKind } from '@storybook/addons';
 import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 import Events from '@storybook/core-events';
-import { StoryContext } from '@storybook/csf';
 import React, { useMemo, useState } from 'react';
-import { SectionList, StyleSheet, View } from 'react-native';
+import {
+  SectionList,
+  SectionListRenderItem,
+  StyleSheet,
+  TextInputProps,
+  View,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { GridIcon, StoryIcon } from '../Shared/icons';
+import { GridIcon, SearchIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
-import { ReactNativeFramework } from 'src/types/types-6.0';
+import { useIsStorySelected, useIsStorySectionSelected } from '../../../hooks';
 
-const SearchBar = styled.TextInput(
+const SearchInput = styled.TextInput(
   {
-    borderRadius: 16,
-    borderWidth: 2,
     fontSize: 16,
-    marginVertical: 4,
-    marginHorizontal: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 15,
+    padding: 0,
+    paddingHorizontal: 36,
+    ...StyleSheet.absoluteFillObject,
   },
   ({ theme }) => ({
-    borderColor: theme.borderColor,
     color: theme.buttonActiveTextColor,
   })
 );
 
-const HeaderContainer = styled.View({
-  paddingVertical: 5,
-  paddingHorizontal: 5,
-  flexDirection: 'row',
-  alignItems: 'center',
-});
+const SearchContainer = styled.View(
+  {
+    borderRadius: 100,
+    borderWidth: 1.5,
+    marginVertical: 4,
+    marginHorizontal: 8,
+    paddingVertical: 10,
+    paddingLeft: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  ({ theme }) => ({
+    borderColor: theme.borderColor,
+    backgroundColor: theme.storyListBackgroundColor,
+  })
+);
+
+const SearchBar = (props: TextInputProps) => {
+  return (
+    <SearchContainer>
+      <SearchIcon />
+      <SearchInput
+        {...props}
+        autoCapitalize='none'
+        autoComplete='off'
+        autoCorrect={false}
+        spellCheck={false}
+        clearButtonMode="while-editing"
+        disableFullscreenUI
+        placeholderTextColor="#666"
+        returnKeyType="search"
+      />
+    </SearchContainer>
+  );
+};
+
+const HeaderContainer = styled.TouchableOpacity(
+  {
+    marginTop: 8,
+    marginHorizontal: 6,
+    padding: 6,
+    paddingHorizontal: 8,
+    borderTopLeftRadius: 6,
+    borderTopRightRadius: 6,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  ({ selected, theme }) => ({
+    backgroundColor: selected ? theme.sectionActiveColor : undefined,
+  })
+);
 
 const StoryListContainer = styled.View(({ theme }) => ({
   top: 0,
@@ -54,53 +100,73 @@ const StoryListContainer = styled.View(({ theme }) => ({
 
 interface SectionProps {
   title: string;
-  selected: boolean;
-}
-
-const SectionHeader = React.memo(({ title, selected }: SectionProps) => (
-  <HeaderContainer key={title}>
-    <GridIcon />
-    <Header selected={selected}>{title}</Header>
-  </HeaderContainer>
-));
-
-interface ListItemProps {
-  title: string;
-  kind: string;
-  selected: boolean;
   onPress: () => void;
 }
 
-const ItemTouchable = styled.TouchableOpacity<{ selected: boolean }>(
+const SectionHeader = React.memo(({ title, onPress }: SectionProps) => {
+  const selected = useIsStorySectionSelected(title);
+  return (
+    <HeaderContainer key={title} selected={selected} onPress={onPress} activeOpacity={0.8}>
+      <GridIcon />
+      <Header selected={selected}>{title}</Header>
+    </HeaderContainer>
+  );
+});
+
+interface ListItemProps {
+  storyId: string;
+  title: string;
+  kind: string;
+  onPress: () => void;
+  isLastItem: boolean;
+}
+
+const ItemTouchable = styled.TouchableOpacity<{ selected: boolean, sectionSelected: boolean, isLastItem: boolean }>(
   {
-    padding: 5,
-    paddingLeft: 40,
+    marginHorizontal: 6,
+    padding: 6,
+    paddingLeft: 24,
     flexDirection: 'row',
     alignItems: 'center',
   },
-  ({ selected, theme }) => (selected ? { backgroundColor: theme?.listItemActiveColor ?? '#1ea7fd' } : {})
+  ({ selected, sectionSelected, isLastItem, theme }) => {
+    return {
+      backgroundColor: selected
+        ? (theme?.listItemActiveColor ?? '#1ea7fd')
+        : sectionSelected
+          ? theme?.sectionActiveColor
+          : undefined,
+      borderBottomLeftRadius: isLastItem ? 6 : undefined,
+      borderBottomRightRadius: isLastItem ? 6 : undefined,
+    };
+  }
 );
 
 const ListItem = React.memo(
-  ({ kind, title, selected, onPress }: ListItemProps) => (
-    <ItemTouchable
-      key={title}
-      onPress={onPress}
-      activeOpacity={0.8}
-      testID={`Storybook.ListItem.${kind}.${title}`}
-      accessibilityLabel={`Storybook.ListItem.${title}`}
-      selected={selected}
-    >
-      <StoryIcon selected={selected} />
-      <Name selected={selected}>{title}</Name>
-    </ItemTouchable>
-  ),
-  (prevProps, nextProps) => prevProps.selected === nextProps.selected
+  ({ storyId, kind, title, isLastItem, onPress }: ListItemProps) => {
+    const selected = useIsStorySelected(storyId);
+    const sectionSelected = useIsStorySectionSelected(kind);
+    return (
+      <ItemTouchable
+        key={title}
+        onPress={onPress}
+        activeOpacity={0.8}
+        testID={`Storybook.ListItem.${kind}.${title}`}
+        accessibilityLabel={`Storybook.ListItem.${title}`}
+        selected={selected}
+        sectionSelected={sectionSelected}
+        isLastItem={isLastItem}
+      >
+        <StoryIcon selected={selected} />
+        <Name selected={selected}>{title}</Name>
+      </ItemTouchable>
+    );
+  },
+  (prevProps, nextProps) => prevProps.storyId === nextProps.storyId
 );
 
 interface Props {
   storyIndex: StoryIndex;
-  selectedStoryContext: StoryContext<ReactNativeFramework>;
 }
 
 interface DataItem {
@@ -126,11 +192,16 @@ const getStories = (storyIndex: StoryIndex): DataItem[] => {
 
 const styles = StyleSheet.create({
   sectionList: { flex: 1 },
+  sectionListContentContainer: { paddingBottom: 6 },
 });
 
 const tabBarHeight = 40;
 
-const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
+function keyExtractor(item: any, index) {
+  return item.id + index;
+}
+
+const StoryListView = ({ storyIndex }: Props) => {
   const insets = useSafeAreaInsets();
   const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
   const [data, setData] = useState<DataItem[]>(originalData);
@@ -167,38 +238,42 @@ const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
     channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 
-  const safeStyle = { flex: 1, marginTop: insets.top, paddingBottom: insets.bottom + tabBarHeight };
+  const safeStyle = React.useMemo(() => {
+    return { flex: 1, marginTop: insets.top, paddingBottom: insets.bottom + tabBarHeight };
+  }, [insets]);
+
+  const renderItem: SectionListRenderItem<StoryIndexEntry, DataItem> = React.useCallback(({item, index, section}) => {
+    return (
+      <ListItem
+        storyId={item.id}
+        title={item.name}
+        kind={item.title}
+        isLastItem={index === section.data.length - 1}
+        onPress={() => changeStory(item.id)}
+      />
+    );
+  }, []);
+
+  const renderSectionHeader = React.useCallback(({ section: { title, data } }) => (
+    <SectionHeader title={title} onPress={() => changeStory(data[0].id)} />
+  ), []);
 
   return (
     <StoryListContainer>
       <View style={safeStyle}>
         <SearchBar
           testID="Storybook.ListView.SearchBar"
-          clearButtonMode="while-editing"
-          disableFullscreenUI
           onChangeText={handleChangeSearchText}
-          placeholder="Filter"
-          returnKeyType="search"
+          placeholder="Find by name"
         />
         <SectionList
           // contentInset={{ bottom: insets.bottom, top: 0 }}
           style={styles.sectionList}
+          contentContainerStyle={styles.sectionListContentContainer}
           testID="Storybook.ListView"
-          renderItem={({ item }) => (
-            <ListItem
-              title={item.name}
-              kind={item.title}
-              selected={selectedStoryContext && item.id === selectedStoryContext.id}
-              onPress={() => changeStory(item.id)}
-            />
-          )}
-          renderSectionHeader={({ section: { title } }) => (
-            <SectionHeader
-              title={title}
-              selected={selectedStoryContext && title === selectedStoryContext.title}
-            />
-          )}
-          keyExtractor={(item, index) => item.id + index}
+          renderItem={renderItem}
+          renderSectionHeader={renderSectionHeader}
+          keyExtractor={keyExtractor}
           sections={data}
           stickySectionHeadersEnabled={false}
         />
@@ -207,4 +282,4 @@ const StoryListView = ({ selectedStoryContext, storyIndex }: Props) => {
   );
 };
 
-export default StoryListView;
+export default React.memo(StoryListView);

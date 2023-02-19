@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "6.0.1-beta.12",
+  "version": "6.5.0-rc.0",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -28,7 +28,8 @@
     "README.md",
     "*.js",
     "*.d.ts",
-    "scripts/*"
+    "scripts/*",
+    "template/**/*"
   ],
   "scripts": {
     "preprepare": "rm -rf dist/",
@@ -62,6 +63,7 @@
     "commander": "^8.2.0",
     "emotion-theming": "^10.0.19",
     "glob": "^7.1.7",
+    "jotai": "^2.0.2",
     "prettier": "^2.4.1",
     "react-native-swipe-gestures": "^1.0.5",
     "util": "^0.12.4"
