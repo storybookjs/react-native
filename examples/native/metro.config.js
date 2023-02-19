@@ -1,4 +1,4 @@
-const {getDefaultConfig} = require('metro-config')
+const { getDefaultConfig } = require('metro-config');
 
 /**
  * Metro configuration for React Native
@@ -7,11 +7,13 @@ const {getDefaultConfig} = require('metro-config')
  * @format
  */
 
+const path = require('path');
+
 module.exports = (async () => {
   const {
-    resolver: {resolverMainFields},
+    resolver: { resolverMainFields },
     watchFolders,
-  } = await getDefaultConfig()
+  } = await getDefaultConfig();
 
   return {
     transformer: {
@@ -22,9 +24,9 @@ module.exports = (async () => {
         },
       }),
     },
-    watchFolders: [...watchFolders, './.storybook'],
+    watchFolders: [...watchFolders, path.resolve(__dirname, '../../'), './.storybook'],
     resolver: {
-      resolverMainFields: [...resolverMainFields, 'sbmodern'],
+      resolverMainFields: ['sbmodern', ...resolverMainFields],
     },
-  }
-})()
+  };
+})();
