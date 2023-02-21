@@ -119,8 +119,6 @@ const OnDeviceUI = ({
       previewDimensions,
       slideBetweenAnimation,
       wide,
-      noSafeArea,
-      insets,
     }),
   ];
 

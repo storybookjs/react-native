@@ -1,5 +1,4 @@
 import { Animated, I18nManager } from 'react-native';
-import { EdgeInsets } from 'react-native-safe-area-context';
 import { PreviewDimens } from './absolute-positioned-keyboard-aware-view';
 import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
 
@@ -46,7 +45,10 @@ export const getAddonPanelPosition = (
         {
           translateX: animatedValue.interpolate({
             inputRange: [PREVIEW, ADDONS],
-            outputRange: [previewWidth * RTL_SCALE, (previewWidth - panelWidth(previewWidth, wide)) * RTL_SCALE],
+            outputRange: [
+              previewWidth * RTL_SCALE,
+              (previewWidth - panelWidth(previewWidth, wide)) * RTL_SCALE,
+            ],
           }),
         },
       ],
@@ -60,8 +62,6 @@ type PreviewPositionArgs = {
   previewDimensions: PreviewDimens;
   slideBetweenAnimation: boolean;
   wide: boolean;
-  noSafeArea: boolean;
-  insets: EdgeInsets;
 };
 
 export const getPreviewPosition = ({
@@ -69,14 +69,11 @@ export const getPreviewPosition = ({
   previewDimensions: { width: previewWidth, height: previewHeight },
   slideBetweenAnimation,
   wide,
-  noSafeArea,
-  insets,
 }: PreviewPositionArgs) => {
   const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
-  const translateX = (previewWidth / 2 - (previewWidth * scale) / 2 - TRANSLATE_X_OFFSET) * RTL_SCALE;
-  const marginTop = noSafeArea ? 0 : insets.top;
-  const translateY =
-    -(previewHeight / 2 - (previewHeight * scale) / 2 - TRANSLATE_Y_OFFSET) + marginTop;
+  const translateX =
+    (previewWidth / 2 - (previewWidth * scale) / 2 - TRANSLATE_X_OFFSET) * RTL_SCALE;
+  const translateY = -(previewHeight / 2 - (previewHeight * scale) / 2 - TRANSLATE_Y_OFFSET);
 
   return {
     transform: [
@@ -89,7 +86,7 @@ export const getPreviewPosition = ({
       {
         translateY: animatedValue.interpolate({
           inputRange: [NAVIGATOR, PREVIEW, ADDONS],
-          outputRange: [translateY, slideBetweenAnimation ? translateY : marginTop, translateY],
+          outputRange: [translateY, slideBetweenAnimation ? translateY : 0, translateY],
         }),
       },
     ],
