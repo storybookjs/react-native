@@ -92,24 +92,27 @@ const OnDeviceUI = ({
   const insets = useSafeAreaInsets();
   const [isUIVisible, setIsUIVisible] = useState(isUIHidden !== undefined ? !isUIHidden : true);
 
-  const handleToggleTab = React.useCallback((newTabOpen: number) => {
-    if (newTabOpen === tabOpen) {
-      return;
-    }
-    Animated.timing(animatedValue.current, {
-      toValue: newTabOpen,
-      duration: ANIMATION_DURATION,
-      useNativeDriver: true,
-    }).start();
-    setTabOpen(newTabOpen);
-    const isSwipingBetweenNavigatorAndAddons = tabOpen + newTabOpen === PREVIEW;
-    setSlideBetweenAnimation(isSwipingBetweenNavigatorAndAddons);
+  const handleToggleTab = React.useCallback(
+    (newTabOpen: number) => {
+      if (newTabOpen === tabOpen) {
+        return;
+      }
+      Animated.timing(animatedValue.current, {
+        toValue: newTabOpen,
+        duration: ANIMATION_DURATION,
+        useNativeDriver: true,
+      }).start();
+      setTabOpen(newTabOpen);
+      const isSwipingBetweenNavigatorAndAddons = tabOpen + newTabOpen === PREVIEW;
+      setSlideBetweenAnimation(isSwipingBetweenNavigatorAndAddons);
 
-    // close the keyboard opened from a TextInput from story list or knobs
-    if (newTabOpen === PREVIEW) {
-      Keyboard.dismiss();
-    }
-  }, [tabOpen]);
+      // close the keyboard opened from a TextInput from story list or knobs
+      if (newTabOpen === PREVIEW) {
+        Keyboard.dismiss();
+      }
+    },
+    [tabOpen]
+  );
 
   const noSafeArea = useStoryContextParam<boolean>('noSafeArea', false);
   const previewWrapperStyles = [
