@@ -102,9 +102,9 @@ export default {
   component: Button,
   decorators: [
     (Story) => (
-      <div style={{ margin: '3em' }}>
+      <View style={{ alignItems: "center", justifyContent: "center", flex: 1 }}>
         <Story />
-      </div>
+      </View>
     ),
   ],
   parameters: {
