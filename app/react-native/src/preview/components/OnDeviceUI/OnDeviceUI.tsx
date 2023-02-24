@@ -1,4 +1,5 @@
 import { StoryIndex } from '@storybook/client-api';
+import styled from '@emotion/native';
 import { useTheme } from 'emotion-theming';
 import React, { useState, useRef } from 'react';
 import {
@@ -80,6 +81,12 @@ const styles = StyleSheet.create({
   expoAndroidContainer: { paddingTop: StatusBar.currentHeight },
 });
 
+const Container = styled.View(({ theme }) => ({
+  flex: 1,
+  backgroundColor: theme.backgroundColor,
+  ...(IS_ANDROID && IS_EXPO ? styles.expoAndroidContainer : undefined),
+}));
+
 const OnDeviceUI = ({
   storyIndex,
   isUIHidden,
@@ -160,7 +167,7 @@ const OnDeviceUI = ({
   };
   return (
     <>
-      <View style={[flex, IS_ANDROID && IS_EXPO && styles.expoAndroidContainer]}>
+      <Container>
         <KeyboardAvoidingView
           enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
           behavior={IS_IOS ? 'padding' : null}
@@ -209,7 +216,7 @@ const OnDeviceUI = ({
           isUIVisible={isUIVisible}
           setIsUIVisible={setIsUIVisible}
         />
-      </View>
+      </Container>
     </>
   );
 };
