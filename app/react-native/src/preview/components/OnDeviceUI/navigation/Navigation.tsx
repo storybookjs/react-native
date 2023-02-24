@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { View, ViewStyle } from 'react-native';
+import { View, ViewProps, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import Bar from './Bar';
@@ -15,6 +15,7 @@ interface Props {
   onChangeTab: (index: number) => void;
   isUIVisible: boolean;
   setIsUIVisible: Dispatch<SetStateAction<boolean>>;
+  onLayout: ViewProps['onLayout'];
 }
 
 const navStyle: ViewStyle = {
@@ -24,7 +25,7 @@ const navStyle: ViewStyle = {
   bottom: 0,
 };
 
-const Navigation = ({ tabOpen, onChangeTab, isUIVisible, setIsUIVisible }: Props) => {
+const Navigation = ({ tabOpen, onChangeTab, isUIVisible, setIsUIVisible, onLayout }: Props) => {
   const insets = useSafeAreaInsets();
 
   const handleToggleUI = () => {
@@ -44,7 +45,7 @@ const Navigation = ({ tabOpen, onChangeTab, isUIVisible, setIsUIVisible }: Props
   };
 
   return (
-    <View style={navStyle}>
+    <View style={navStyle} onLayout={onLayout}>
       {isUIVisible && (
         <GestureRecognizer
           onSwipeLeft={handleSwipeLeft}
