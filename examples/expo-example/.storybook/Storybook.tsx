@@ -6,7 +6,7 @@ import './doctools';
 import './storybook.requires';
 
 const StorybookUIRoot = getStorybookUI({
-  initialSelection: { kind: 'TextInput', name: 'Basic' },
+  // initialSelection: { kind: 'TextInput', name: 'Basic' },
   shouldPersistSelection: true,
   // onDeviceUI: false,
   // enableWebsockets: true,
