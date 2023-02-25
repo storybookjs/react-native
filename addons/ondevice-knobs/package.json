@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-knobs",
-  "version": "6.5.0-rc.1",
+  "version": "6.5.0-rc.2",
   "description": "Display storybook story knobs on your deviced.",
   "keywords": [
     "addon",
