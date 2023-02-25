@@ -103,6 +103,7 @@ const OnDeviceUI = ({
   const animatedValue = useRef(new Animated.Value(tabOpen));
   const wide = useWindowDimensions().width >= BREAKPOINT;
   const insets = useSafeAreaInsets();
+  const theme: any = useTheme();
   const [isUIVisible, setIsUIVisible] = useState(isUIHidden !== undefined ? !isUIHidden : true);
 
   const handleToggleTab = React.useCallback(
@@ -162,8 +163,8 @@ const OnDeviceUI = ({
   //
   //   4. Storybook UI is not visible, and `noSafeArea` is true: No margin.
   const safeAreaMargins = {
-    marginBottom: isUIVisible ? insets.bottom + navBarHeight : noSafeArea ? 0 : insets.bottom,
-    marginTop: !noSafeArea ? insets.top : 0,
+    paddingBottom: isUIVisible ? insets.bottom + navBarHeight : noSafeArea ? 0 : insets.bottom,
+    paddingTop: !noSafeArea ? insets.top : 0,
   };
   return (
     <>
@@ -190,11 +191,11 @@ const OnDeviceUI = ({
               ) : null}
             </Animated.View>
             <Panel
-              style={getNavigatorPanelPosition(
-                animatedValue.current,
-                previewDimensions.width,
-                wide
-              )}
+              style={[
+                getNavigatorPanelPosition(animatedValue.current, previewDimensions.width, wide),
+                safeAreaMargins,
+                { backgroundColor: theme.storyListBackgroundColor },
+              ]}
             >
               <StoryListView storyIndex={storyIndex} />
             </Panel>
