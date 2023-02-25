@@ -31,15 +31,7 @@ module.exports = {
     '^.+\\.mdx$': '<rootDir>/scripts/jest-transform-mdx.js',
   },
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/dist/',
-    'addon-jest.test.js',
-    '/cli/test/',
-    '/examples/cra-kitchen-sink/src/*',
-    '/examples/cra-react15/src/*',
-    '/examples/cra-ts-kitchen-sink/src/components/*',
-  ],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', 'addon-jest.test.js', '/cli/test/'],
   collectCoverage: false,
   collectCoverageFrom: [
     'app/**/*.{js,jsx,ts,tsx}',

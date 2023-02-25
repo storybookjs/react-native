@@ -3,7 +3,7 @@ import { addDecorator, storiesOf } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import { Text } from 'react-native';
 
-// Remember to also include '@storybook/addon-ondevice-backgrounds' in your addons config: see /examples/native/.storybook/main.js
+// Remember to also include '@storybook/addon-ondevice-backgrounds' in your addons config: see /examples/expo-example/.storybook/main.js
 addDecorator(withBackgrounds);
 
 storiesOf('Background StoriesOf', module)

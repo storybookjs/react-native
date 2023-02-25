@@ -40,7 +40,7 @@ cd react-native-storybook
 yarn bootstrap --core
 
 # make changes to try and reproduce the problem, such as adding components + stories
-cd examples/native
+cd examples/expo-example
 # for ios
 yarn ios
 # for android
@@ -180,26 +180,19 @@ Once you have this running then you can run the example app to see your changes.
 
 ### Working with the example app
 
-The `examples/native` folder of the repo has an example storybook implementation built with the react-native cli. It shows many of the options and add-ons available and is automatically linked to all the development packages. We highly encourage you to use it to develop/test contributions on.
+The `examples/expo-example` folder of the repo has an example storybook implementation built with the react-native cli. It shows many of the options and add-ons available and is automatically linked to all the development packages. We highly encourage you to use it to develop/test contributions on.
 
 You still need to yarn dev or you won't see your changes reflected in the app. For example if I change an addon or app/react-native I need to rebuild the code for the changes take effect (yarn prepare) or `yarn dev` can do this automatically as I make changes.
 
 If this is your first time running react native from the cli follow the setup instructions in the [react native documentation](https://reactnative.dev/docs/environment-setup) to get everything setup correctly.
 
 ```
-cd examples/native
+cd examples/expo-example
 
-cd ios
-pod install
-cd ..
-
-# start Metro and leave it running on the background
-yarn start
-
-# for ios, run in another terminal
+# for ios
 yarn ios
 
-# for android, run in another terminal
+# for android
 yarn android
 ```
 

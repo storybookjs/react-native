@@ -14,7 +14,6 @@ junit.xml
 coverage/
 *.lerna_backup
 build
-packages/examples/automated-*
 /**/LICENSE
 docs/public
 packs/*.tgz
@@ -23,7 +22,6 @@ package-lock.json
 storybook-static
 integration/__image_snapshots__/__diff_output__
 .jest-test-results.json
-/examples/cra-kitchen-sink/src/__image_snapshots__/__diff_output__/
 lib/*.jar
 lib/**/dll
 .expo/packager-info.json
