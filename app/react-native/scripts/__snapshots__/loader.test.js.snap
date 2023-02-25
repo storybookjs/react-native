@@ -6,14 +6,14 @@ exports[`loader writeRequires when there are different file extensions writes th
 
       import { configure, addDecorator, addParameters, addArgsEnhancer, clearDecorators } from '@storybook/react-native';
 
-      global.STORIES = [{\\"titlePrefix\\":\\"\\",\\"directory\\":\\"./scripts/mocks/file-extensions\\",\\"files\\":\\"FakeStory.stories.tsx\\",\\"importPathMatcher\\":\\"^\\\\\\\\.[\\\\\\\\\\\\\\\\/](?:scripts\\\\\\\\/mocks\\\\\\\\/file-extensions\\\\\\\\/FakeStory\\\\\\\\.stories\\\\\\\\.tsx)$\\"}]
+      global.STORIES = [{"titlePrefix":"","directory":"./scripts/mocks/file-extensions","files":"FakeStory.stories.tsx","importPathMatcher":"^\\\\.[\\\\\\\\/](?:scripts\\\\/mocks\\\\/file-extensions\\\\/FakeStory\\\\.stories\\\\.tsx)$"}]
 
-      import \\"@storybook/addon-ondevice-notes/register\\";
-import \\"@storybook/addon-ondevice-controls/register\\";
-import \\"@storybook/addon-ondevice-backgrounds/register\\";
-import \\"@storybook/addon-ondevice-actions/register\\";
+      import "@storybook/addon-ondevice-notes/register";
+import "@storybook/addon-ondevice-controls/register";
+import "@storybook/addon-ondevice-backgrounds/register";
+import "@storybook/addon-ondevice-actions/register";
 
-      import { argsEnhancers } from \\"@storybook/addon-actions/dist/modern/preset/addArgs\\"
+      import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs"
 
       
   import { decorators, parameters } from './preview';
@@ -42,7 +42,7 @@ import \\"@storybook/addon-ondevice-actions/register\\";
     
 
       const getStories=() => {
-        return {\\"./scripts/mocks/file-extensions/FakeStory.stories.tsx\\": require(\\"./FakeStory.stories.tsx\\")};
+        return {"./scripts/mocks/file-extensions/FakeStory.stories.tsx": require("./FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
@@ -55,14 +55,14 @@ exports[`loader writeRequires when there is a configuration object writes the st
 
       import { configure, addDecorator, addParameters, addArgsEnhancer, clearDecorators } from '@storybook/react-native';
 
-      global.STORIES = [{\\"titlePrefix\\":\\"ComponentsPrefix\\",\\"files\\":\\"**/*.stories.tsx\\",\\"directory\\":\\"./scripts/mocks/configuration-objects/components\\",\\"importPathMatcher\\":\\"^\\\\\\\\.[\\\\\\\\\\\\\\\\/](?:scripts\\\\\\\\/mocks\\\\\\\\/configuration-objects\\\\\\\\/components(?:\\\\\\\\/(?!\\\\\\\\.)(?:(?:(?!(?:^|\\\\\\\\/)\\\\\\\\.).)*?)\\\\\\\\/|\\\\\\\\/|$)(?!\\\\\\\\.)(?=.)[^/]*?\\\\\\\\.stories\\\\\\\\.tsx)$\\"}]
+      global.STORIES = [{"titlePrefix":"ComponentsPrefix","files":"**/*.stories.tsx","directory":"./scripts/mocks/configuration-objects/components","importPathMatcher":"^\\\\.[\\\\\\\\/](?:scripts\\\\/mocks\\\\/configuration-objects\\\\/components(?:\\\\/(?!\\\\.)(?:(?:(?!(?:^|\\\\/)\\\\.).)*?)\\\\/|\\\\/|$)(?!\\\\.)(?=.)[^/]*?\\\\.stories\\\\.tsx)$"}]
 
-      import \\"@storybook/addon-ondevice-notes/register\\";
-import \\"@storybook/addon-ondevice-controls/register\\";
-import \\"@storybook/addon-ondevice-backgrounds/register\\";
-import \\"@storybook/addon-ondevice-actions/register\\";
+      import "@storybook/addon-ondevice-notes/register";
+import "@storybook/addon-ondevice-controls/register";
+import "@storybook/addon-ondevice-backgrounds/register";
+import "@storybook/addon-ondevice-actions/register";
 
-      import { argsEnhancers } from \\"@storybook/addon-actions/dist/modern/preset/addArgs\\"
+      import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs"
 
       
   import { decorators, parameters } from './preview';
@@ -91,7 +91,7 @@ import \\"@storybook/addon-ondevice-actions/register\\";
     
 
       const getStories=() => {
-        return {\\"./scripts/mocks/configuration-objects/components/FakeStory.stories.tsx\\": require(\\"./components/FakeStory.stories.tsx\\")};
+        return {"./scripts/mocks/configuration-objects/components/FakeStory.stories.tsx": require("./components/FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
@@ -104,14 +104,14 @@ exports[`loader writeRequires when there is a story glob and exclude paths globs
 
       import { configure, addDecorator, addParameters, addArgsEnhancer, clearDecorators } from '@storybook/react-native';
 
-      global.STORIES = [{\\"titlePrefix\\":\\"\\",\\"directory\\":\\"./scripts/mocks/exclude-config-files\\",\\"files\\":\\"**/*.stories.tsx\\",\\"importPathMatcher\\":\\"^\\\\\\\\.[\\\\\\\\\\\\\\\\/](?:scripts\\\\\\\\/mocks\\\\\\\\/exclude-config-files(?:\\\\\\\\/(?!\\\\\\\\.)(?:(?:(?!(?:^|\\\\\\\\/)\\\\\\\\.).)*?)\\\\\\\\/|\\\\\\\\/|$)(?!\\\\\\\\.)(?=.)[^/]*?\\\\\\\\.stories\\\\\\\\.tsx)$\\"}]
+      global.STORIES = [{"titlePrefix":"","directory":"./scripts/mocks/exclude-config-files","files":"**/*.stories.tsx","importPathMatcher":"^\\\\.[\\\\\\\\/](?:scripts\\\\/mocks\\\\/exclude-config-files(?:\\\\/(?!\\\\.)(?:(?:(?!(?:^|\\\\/)\\\\.).)*?)\\\\/|\\\\/|$)(?!\\\\.)(?=.)[^/]*?\\\\.stories\\\\.tsx)$"}]
 
-      import \\"@storybook/addon-ondevice-notes/register\\";
-import \\"@storybook/addon-ondevice-controls/register\\";
-import \\"@storybook/addon-ondevice-backgrounds/register\\";
-import \\"@storybook/addon-ondevice-actions/register\\";
+      import "@storybook/addon-ondevice-notes/register";
+import "@storybook/addon-ondevice-controls/register";
+import "@storybook/addon-ondevice-backgrounds/register";
+import "@storybook/addon-ondevice-actions/register";
 
-      import { argsEnhancers } from \\"@storybook/addon-actions/dist/modern/preset/addArgs\\"
+      import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs"
 
       
   import { decorators, parameters } from './preview';
@@ -140,7 +140,7 @@ import \\"@storybook/addon-ondevice-actions/register\\";
     
 
       const getStories=() => {
-        return {\\"./scripts/mocks/exclude-config-files/include-components/FakeStory.stories.tsx\\": require(\\"./include-components/FakeStory.stories.tsx\\")};
+        return {"./scripts/mocks/exclude-config-files/include-components/FakeStory.stories.tsx": require("./include-components/FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
@@ -153,14 +153,14 @@ exports[`loader writeRequires when there is a story glob writes the story import
 
       import { configure, addDecorator, addParameters, addArgsEnhancer, clearDecorators } from '@storybook/react-native';
 
-      global.STORIES = [{\\"titlePrefix\\":\\"\\",\\"directory\\":\\"./scripts/mocks/all-config-files\\",\\"files\\":\\"FakeStory.stories.tsx\\",\\"importPathMatcher\\":\\"^\\\\\\\\.[\\\\\\\\\\\\\\\\/](?:scripts\\\\\\\\/mocks\\\\\\\\/all-config-files\\\\\\\\/FakeStory\\\\\\\\.stories\\\\\\\\.tsx)$\\"}]
+      global.STORIES = [{"titlePrefix":"","directory":"./scripts/mocks/all-config-files","files":"FakeStory.stories.tsx","importPathMatcher":"^\\\\.[\\\\\\\\/](?:scripts\\\\/mocks\\\\/all-config-files\\\\/FakeStory\\\\.stories\\\\.tsx)$"}]
 
-      import \\"@storybook/addon-ondevice-notes/register\\";
-import \\"@storybook/addon-ondevice-controls/register\\";
-import \\"@storybook/addon-ondevice-backgrounds/register\\";
-import \\"@storybook/addon-ondevice-actions/register\\";
+      import "@storybook/addon-ondevice-notes/register";
+import "@storybook/addon-ondevice-controls/register";
+import "@storybook/addon-ondevice-backgrounds/register";
+import "@storybook/addon-ondevice-actions/register";
 
-      import { argsEnhancers } from \\"@storybook/addon-actions/dist/modern/preset/addArgs\\"
+      import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs"
 
       
   import { decorators, parameters } from './preview';
@@ -189,7 +189,7 @@ import \\"@storybook/addon-ondevice-actions/register\\";
     
 
       const getStories=() => {
-        return {\\"./scripts/mocks/all-config-files/FakeStory.stories.tsx\\": require(\\"./FakeStory.stories.tsx\\")};
+        return {"./scripts/mocks/all-config-files/FakeStory.stories.tsx": require("./FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
@@ -202,14 +202,14 @@ exports[`loader writeRequires when there is no preview does not add preview rela
 
       import { configure, addDecorator, addParameters, addArgsEnhancer, clearDecorators } from '@storybook/react-native';
 
-      global.STORIES = [{\\"titlePrefix\\":\\"\\",\\"directory\\":\\"./scripts/mocks/no-preview\\",\\"files\\":\\"FakeStory.stories.tsx\\",\\"importPathMatcher\\":\\"^\\\\\\\\.[\\\\\\\\\\\\\\\\/](?:scripts\\\\\\\\/mocks\\\\\\\\/no-preview\\\\\\\\/FakeStory\\\\\\\\.stories\\\\\\\\.tsx)$\\"}]
+      global.STORIES = [{"titlePrefix":"","directory":"./scripts/mocks/no-preview","files":"FakeStory.stories.tsx","importPathMatcher":"^\\\\.[\\\\\\\\/](?:scripts\\\\/mocks\\\\/no-preview\\\\/FakeStory\\\\.stories\\\\.tsx)$"}]
 
-      import \\"@storybook/addon-ondevice-notes/register\\";
-import \\"@storybook/addon-ondevice-controls/register\\";
-import \\"@storybook/addon-ondevice-backgrounds/register\\";
-import \\"@storybook/addon-ondevice-actions/register\\";
+      import "@storybook/addon-ondevice-notes/register";
+import "@storybook/addon-ondevice-controls/register";
+import "@storybook/addon-ondevice-backgrounds/register";
+import "@storybook/addon-ondevice-actions/register";
 
-      import { argsEnhancers } from \\"@storybook/addon-actions/dist/modern/preset/addArgs\\"
+      import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs"
 
       
 
@@ -220,7 +220,7 @@ import \\"@storybook/addon-ondevice-actions/register\\";
     
 
       const getStories=() => {
-        return {\\"./scripts/mocks/no-preview/FakeStory.stories.tsx\\": require(\\"./FakeStory.stories.tsx\\")};
+        return {"./scripts/mocks/no-preview/FakeStory.stories.tsx": require("./FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
