@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "lib": ["es6"],
+    "baseUrl": "./"
+  },
+  "extends": "expo/tsconfig.base"
+}
