@@ -1,17 +1,20 @@
-import { Animated, I18nManager } from 'react-native';
-import { EdgeInsets } from 'react-native-safe-area-context';
+import { Animated, I18nManager, Insets } from 'react-native';
 import { PreviewDimens } from './absolute-positioned-keyboard-aware-view';
 import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
 
+// Factor that will flip the animation orientation in RTL locales.
 const RTL_SCALE = I18nManager.isRTL ? -1 : 1;
+// Percentage to scale the preview area by when opening a panel.
 const PREVIEW_SCALE = 0.3;
-const PREVIEW_WIDE_SCREEN = 0.7;
+// Percentage to scale the preview area by when opening a panel, on wide screens.
+const PREVIEW_SCALE_WIDE = 0.7;
+// Percentage to shrink the visible preview by, without affecting the panel size.
+const PREVIEW_SCALE_SHRINK = 0.9;
 const SCALE_OFFSET = 0.025;
-const TRANSLATE_X_OFFSET = 6;
 const TRANSLATE_Y_OFFSET = 12;
 
 const panelWidth = (width: number, wide: boolean) => {
-  const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
+  const scale = wide ? PREVIEW_SCALE_WIDE : PREVIEW_SCALE;
   return width * (1 - scale - SCALE_OFFSET);
 };
 
@@ -46,7 +49,10 @@ export const getAddonPanelPosition = (
         {
           translateX: animatedValue.interpolate({
             inputRange: [PREVIEW, ADDONS],
-            outputRange: [previewWidth * RTL_SCALE, (previewWidth - panelWidth(previewWidth, wide)) * RTL_SCALE],
+            outputRange: [
+              previewWidth * RTL_SCALE,
+              (previewWidth - panelWidth(previewWidth, wide)) * RTL_SCALE,
+            ],
           }),
         },
       ],
@@ -58,25 +64,39 @@ export const getAddonPanelPosition = (
 type PreviewPositionArgs = {
   animatedValue: Animated.Value;
   previewDimensions: PreviewDimens;
-  slideBetweenAnimation: boolean;
   wide: boolean;
-  noSafeArea: boolean;
-  insets: EdgeInsets;
+  insets: Insets;
+  tabOpen: number;
+  lastTabOpen: number;
 };
 
-export const getPreviewPosition = ({
+/**
+ * Build the animated style for the preview container view.
+ *
+ * When the navigator or addons panel is focused, the preview container is
+ * scaled down and translated to the left (or right) of the panel.
+ */
+export const getPreviewStyle = ({
   animatedValue,
   previewDimensions: { width: previewWidth, height: previewHeight },
-  slideBetweenAnimation,
   wide,
-  noSafeArea,
   insets,
+  tabOpen,
+  lastTabOpen,
 }: PreviewPositionArgs) => {
-  const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
-  const translateX = (previewWidth / 2 - (previewWidth * scale) / 2 - TRANSLATE_X_OFFSET) * RTL_SCALE;
-  const marginTop = noSafeArea ? 0 : insets.top;
+  const scale = (wide ? PREVIEW_SCALE_WIDE : PREVIEW_SCALE) * PREVIEW_SCALE_SHRINK;
+  const scaledPreviewWidth = previewWidth * scale;
+  const scaledPreviewHeight = previewHeight * scale;
+  // Horizontally center the scaled preview in the available space beside the panel.
+  const nonPanelWidth = previewWidth - panelWidth(previewWidth, wide);
+  const translateXOffset = (nonPanelWidth - scaledPreviewWidth) / 2;
+  const translateX = (previewWidth / 2 - (previewWidth * scale) / 2 - translateXOffset) * RTL_SCALE;
+  // Translate the preview to the top edge of the screen, move it down by the
+  // safe area inset, then by the preview Y offset.
   const translateY =
-    -(previewHeight / 2 - (previewHeight * scale) / 2 - TRANSLATE_Y_OFFSET) + marginTop;
+    -(previewHeight / 2 - scaledPreviewHeight / 2) + insets.top + TRANSLATE_Y_OFFSET;
+  // Is navigation moving from one panel to another, skipping preview?
+  const skipPreview = lastTabOpen !== PREVIEW && tabOpen !== PREVIEW;
 
   return {
     transform: [
@@ -89,27 +109,33 @@ export const getPreviewPosition = ({
       {
         translateY: animatedValue.interpolate({
           inputRange: [NAVIGATOR, PREVIEW, ADDONS],
-          outputRange: [translateY, slideBetweenAnimation ? translateY : marginTop, translateY],
+          outputRange: [translateY, skipPreview ? translateY : 0, translateY],
+        }),
+      },
+      {
+        scale: animatedValue.interpolate({
+          inputRange: [NAVIGATOR, PREVIEW, ADDONS],
+          outputRange: [scale, skipPreview ? scale : 1, scale],
         }),
       },
     ],
   };
 };
 
-export const getPreviewScale = (
-  animatedValue: Animated.Value,
-  slideBetweenAnimation: boolean,
-  wide: boolean
-) => {
-  const scale = wide ? PREVIEW_WIDE_SCREEN : PREVIEW_SCALE;
-  return {
-    transform: [
-      {
-        scale: animatedValue.interpolate({
-          inputRange: [NAVIGATOR, PREVIEW, ADDONS],
-          outputRange: [scale, slideBetweenAnimation ? scale : 1, scale],
-        }),
-      },
-    ],
-  };
-};
+/**
+ * Build the animated shadow style for the preview.
+ *
+ * When the navigator or addons panel are visible the scaled preview will have
+ * a shadow, and when going to the preview tab the shadow will be invisible.
+ */
+export const getPreviewShadowStyle = (animatedValue: Animated.Value) => ({
+  elevation: 8,
+  shadowColor: '#000',
+  shadowOpacity: animatedValue.interpolate({
+    inputRange: [NAVIGATOR, PREVIEW, ADDONS],
+    outputRange: [0.25, 0, 0.25],
+  }),
+  shadowRadius: 8,
+  shadowOffset: { width: 0, height: 0 },
+  overflow: 'visible' as const,
+});

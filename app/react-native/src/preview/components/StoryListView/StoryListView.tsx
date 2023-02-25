@@ -3,13 +3,7 @@ import { addons, StoryKind } from '@storybook/addons';
 import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
-import {
-  SectionList,
-  SectionListRenderItem,
-  StyleSheet,
-  TextInputProps,
-  View,
-} from 'react-native';
+import { SectionList, SectionListRenderItem, StyleSheet, TextInputProps, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GridIcon, SearchIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
@@ -50,8 +44,8 @@ const SearchBar = (props: TextInputProps) => {
       <SearchIcon />
       <SearchInput
         {...props}
-        autoCapitalize='none'
-        autoComplete='off'
+        autoCapitalize="none"
+        autoComplete="off"
         autoCorrect={false}
         spellCheck={false}
         clearButtonMode="while-editing"
@@ -80,19 +74,7 @@ const HeaderContainer = styled.TouchableOpacity(
 );
 
 const StoryListContainer = styled.View(({ theme }) => ({
-  top: 0,
-  ...StyleSheet.absoluteFillObject,
-
-  // for this to work I need to get the top margin from safeareview context
-  // shadowColor: '#000',
-  // shadowOffset: {
-  //   width: 0,
-  //   height: 1,
-  // },
-  // shadowOpacity: 0.2,
-  // shadowRadius: 1.41,
-  // elevation: 2,
-
+  flex: 1,
   borderRightWidth: StyleSheet.hairlineWidth,
   borderRightColor: theme.borderColor,
   backgroundColor: theme.storyListBackgroundColor,
@@ -121,7 +103,11 @@ interface ListItemProps {
   isLastItem: boolean;
 }
 
-const ItemTouchable = styled.TouchableOpacity<{ selected: boolean, sectionSelected: boolean, isLastItem: boolean }>(
+const ItemTouchable = styled.TouchableOpacity<{
+  selected: boolean;
+  sectionSelected: boolean;
+  isLastItem: boolean;
+}>(
   {
     marginHorizontal: 6,
     padding: 6,
@@ -132,10 +118,10 @@ const ItemTouchable = styled.TouchableOpacity<{ selected: boolean, sectionSelect
   ({ selected, sectionSelected, isLastItem, theme }) => {
     return {
       backgroundColor: selected
-        ? (theme?.listItemActiveColor ?? '#1ea7fd')
+        ? theme?.listItemActiveColor ?? '#1ea7fd'
         : sectionSelected
-          ? theme?.sectionActiveColor
-          : undefined,
+        ? theme?.sectionActiveColor
+        : undefined,
       borderBottomLeftRadius: isLastItem ? 6 : undefined,
       borderBottomRightRadius: isLastItem ? 6 : undefined,
     };
@@ -195,14 +181,11 @@ const styles = StyleSheet.create({
   sectionListContentContainer: { paddingBottom: 6 },
 });
 
-const tabBarHeight = 40;
-
 function keyExtractor(item: any, index) {
   return item.id + index;
 }
 
 const StoryListView = ({ storyIndex }: Props) => {
-  const insets = useSafeAreaInsets();
   const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
   const [data, setData] = useState<DataItem[]>(originalData);
 
@@ -238,46 +221,45 @@ const StoryListView = ({ storyIndex }: Props) => {
     channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 
-  const safeStyle = React.useMemo(() => {
-    return { flex: 1, marginTop: insets.top, paddingBottom: insets.bottom + tabBarHeight };
-  }, [insets]);
+  const renderItem: SectionListRenderItem<StoryIndexEntry, DataItem> = React.useCallback(
+    ({ item, index, section }) => {
+      return (
+        <ListItem
+          storyId={item.id}
+          title={item.name}
+          kind={item.title}
+          isLastItem={index === section.data.length - 1}
+          onPress={() => changeStory(item.id)}
+        />
+      );
+    },
+    []
+  );
 
-  const renderItem: SectionListRenderItem<StoryIndexEntry, DataItem> = React.useCallback(({item, index, section}) => {
-    return (
-      <ListItem
-        storyId={item.id}
-        title={item.name}
-        kind={item.title}
-        isLastItem={index === section.data.length - 1}
-        onPress={() => changeStory(item.id)}
-      />
-    );
-  }, []);
-
-  const renderSectionHeader = React.useCallback(({ section: { title, data } }) => (
-    <SectionHeader title={title} onPress={() => changeStory(data[0].id)} />
-  ), []);
+  const renderSectionHeader = React.useCallback(
+    ({ section: { title, data } }) => (
+      <SectionHeader title={title} onPress={() => changeStory(data[0].id)} />
+    ),
+    []
+  );
 
   return (
     <StoryListContainer>
-      <View style={safeStyle}>
-        <SearchBar
-          testID="Storybook.ListView.SearchBar"
-          onChangeText={handleChangeSearchText}
-          placeholder="Find by name"
-        />
-        <SectionList
-          // contentInset={{ bottom: insets.bottom, top: 0 }}
-          style={styles.sectionList}
-          contentContainerStyle={styles.sectionListContentContainer}
-          testID="Storybook.ListView"
-          renderItem={renderItem}
-          renderSectionHeader={renderSectionHeader}
-          keyExtractor={keyExtractor}
-          sections={data}
-          stickySectionHeadersEnabled={false}
-        />
-      </View>
+      <SearchBar
+        testID="Storybook.ListView.SearchBar"
+        onChangeText={handleChangeSearchText}
+        placeholder="Find by name"
+      />
+      <SectionList
+        style={styles.sectionList}
+        contentContainerStyle={styles.sectionListContentContainer}
+        testID="Storybook.ListView"
+        renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+        keyExtractor={keyExtractor}
+        sections={data}
+        stickySectionHeadersEnabled={false}
+      />
     </StoryListContainer>
   );
 };
