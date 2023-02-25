@@ -38,9 +38,6 @@
     "prop-types": "^15.7.2",
     "simple-markdown": "^0.7.3"
   },
-  "devDependencies": {
-    "@types/react-native": "^0.70.4"
-  },
   "peerDependencies": {
     "react": "*",
     "react-native": "*"

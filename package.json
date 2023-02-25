@@ -135,7 +135,6 @@
     "@types/lodash": "^4.14.149",
     "@types/node": "^15.12.2",
     "@types/react": "~18.0.27",
-    "@types/react-native": "^0.70.4",
     "@types/semver": "^6.0.0",
     "@types/webpack": "^4.41.0",
     "@types/webpack-env": "^1.15.0",
