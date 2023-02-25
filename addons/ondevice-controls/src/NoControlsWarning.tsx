@@ -23,7 +23,7 @@ const NoControlsWarning = () => {
         <LinkText
           onPress={() =>
             Linking.openURL(
-              'https://github.com/storybookjs/react-native/tree/next-6.0/examples/native/components/ControlExamples'
+              'https://github.com/storybookjs/react-native/tree/next-6.0/examples/expo-example/components/ControlExamples'
             )
           }
         >

@@ -20,7 +20,7 @@ module.exports = {
 };
 ```
 
-See the [examples of using the Controls Addon with Component Story Format](../../examples/native/components/ControlExamples). You can also run the [react-native app](../../examples/native) to see it in action.
+See the [examples of using the Controls Addon with Component Story Format](../../examples/expo-example/components/ControlExamples). You can also run the [react-native app](../../examples/expo-example) to see it in action.
 
 The [web Controls Addon documentation](https://storybook.js.org/docs/react/essentials/controls) may also be useful, but the examples there have not been tested with Storybook for React Native.
 

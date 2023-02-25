@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "Expo Example",
+    "slug": "expo-example",
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

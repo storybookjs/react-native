@@ -3,11 +3,10 @@ import { addons, StoryKind } from '@storybook/addons';
 import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
-import { SectionList, SectionListRenderItem, StyleSheet, TextInputProps, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SectionList, SectionListRenderItem, StyleSheet, TextInputProps } from 'react-native';
+import { useIsStorySectionSelected, useIsStorySelected } from '../../../hooks';
 import { GridIcon, SearchIcon, StoryIcon } from '../Shared/icons';
 import { Header, Name } from '../Shared/text';
-import { useIsStorySelected, useIsStorySectionSelected } from '../../../hooks';
 
 const SearchInput = styled.TextInput(
   {

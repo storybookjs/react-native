@@ -20,6 +20,6 @@ module.exports = {
 
 ## Usage
 
-See the [example of using the Backgrounds Addon with Component Story Format](../../examples/native/components/BackgroundExample/BackgroundCsf.stories.tsx). You can also run the [react-native app](../../examples/native) to see it in action.
+See the [example of using the Backgrounds Addon with Component Story Format](../../examples/expo-example/components/BackgroundExample/BackgroundCsf.stories.tsx). You can also run the [react-native app](../../examples/expo-example) to see it in action.
 
 The [web Backgrounds Addon documentation](https://storybook.js.org/docs/react/essentials/backgrounds) may also be useful, but the examples there have not been tested with Storybook for React Native.

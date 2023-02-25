@@ -18,11 +18,7 @@ built-storybooks
 !.eslintrc-markdown.js
 !.jest.config.js
 !.storybook
-examples/native/e2e/init.ts
-examples/native/ios
-examples/native/android
-examples/native/metro.config.js
-examples/native/index.html
+examples/expo-example/metro.config.js
 storybook.requires.js
 jest.config.js
 app/react-native/scripts/mocks

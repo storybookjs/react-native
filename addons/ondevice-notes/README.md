@@ -36,4 +36,4 @@ export default {
 };
 ```
 
-See the [example app](../../examples/native) for more examples.
+See the [example app](../../examples/expo-example) for more examples.
