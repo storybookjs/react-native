@@ -148,6 +148,15 @@ export const Basic = args => <Button {...args} />;
 
 This is a simple example you can do more by adding addons and exploring more features of storybook.
 
+## Render Storybook
+
+The only thing left to do is return Storybook's UI in your app entry point (such as `App.js`) like this:
+
+```jsx
+export {default} from './.storybook'
+```
+
+If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
 # Run storybook
 
