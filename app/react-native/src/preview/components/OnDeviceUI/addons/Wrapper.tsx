@@ -1,8 +1,9 @@
-import { useTheme } from 'emotion-theming';
 import React from 'react';
 import { ScrollView } from 'react-native';
 import styled from '@emotion/native';
 import { Collection } from '@storybook/addons';
+
+import { useTheme } from '../../../../hooks';
 
 export interface Props {
   panels: Collection;
@@ -15,7 +16,7 @@ const Container = styled.View<{ selected: boolean }>(({ selected }) => ({
 }));
 
 const Wrapper = ({ panels, addonSelected }: Props) => {
-  const theme: any = useTheme();
+  const theme = useTheme();
   const addonKeys = Object.keys(panels);
   const content = addonKeys.map((id) => {
     const selected = addonSelected === id;

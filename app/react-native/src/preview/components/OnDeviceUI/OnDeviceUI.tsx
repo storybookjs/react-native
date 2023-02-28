@@ -1,6 +1,5 @@
 import { StoryIndex } from '@storybook/client-api';
 import styled from '@emotion/native';
-import { useTheme } from 'emotion-theming';
 import React, { useState, useRef } from 'react';
 import {
   Animated,
@@ -16,7 +15,7 @@ import {
   ViewStyle,
   StyleProp,
 } from 'react-native';
-import { useStoryContextParam } from '../../../hooks';
+import { useStoryContextParam, useTheme } from '../../../hooks';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 import AbsolutePositionedKeyboardAwareView, {
@@ -65,7 +64,7 @@ interface PreviewProps {
  * Story preview container.
  */
 function Preview({ animatedValue, style, children }: PreviewProps) {
-  const theme: any = useTheme();
+  const theme = useTheme();
   const containerStyle = {
     backgroundColor: theme.preview.backgroundColor,
     ...getPreviewShadowStyle(animatedValue),

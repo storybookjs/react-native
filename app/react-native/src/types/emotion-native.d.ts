@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import css from '@emotion/css';
 import { CreateStyled, CreateStyledComponentExtrinsic } from '@emotion/styled-base';
 import ReactNative from 'react-native';
-import { theme } from '../preview/components/Shared/theme';
+import type { Theme } from '../preview/components/Shared/theme';
 
 // https://github.com/emotion-js/emotion/pull/1176/
 // meanwhile: https://github.com/emotion-js/emotion/issues/839#issuecomment-500195354
@@ -61,11 +61,13 @@ declare module '@emotion/native' {
     [K in T]: CreateStyledComponentExtrinsic<typeof ReactNative[K], ExtraProps, Theme>;
   };
 
-  type MyTheme = typeof theme;
+  type MyTheme = Theme;
 
   export interface Styled<Theme extends object = MyTheme, ExtraProps = {}>
     extends CreateStyled<Theme>,
-      StyledComponentsForReactNative<StyledReactNativeComponents, ExtraProps, Theme> {}
+      StyledComponentsForReactNative<StyledReactNativeComponents, ExtraProps, Theme> {
+    (component: React.ComponentType<any>): CreateStyled<Theme>;
+  }
 
   export { css };
 

@@ -1,7 +1,8 @@
-import { useTheme } from 'emotion-theming';
 import React from 'react';
 import { ScrollView, StyleProp, View, ViewStyle } from 'react-native';
 import styled from '@emotion/native';
+
+import { useTheme } from '../../../hooks';
 
 const TabButtonText = styled.Text<{ active: boolean }>(({ theme, active }) => ({
   color: active ? theme.tabs.activeTextColor : theme.tabs.inactiveTextColor,
@@ -52,7 +53,7 @@ interface TabBarProps {
 }
 
 export const TabBar = React.memo(({ scrollable = false, style, children }: TabBarProps) => {
-  const theme: any = useTheme();
+  const theme = useTheme();
   if (scrollable) {
     children = (
       <ScrollView

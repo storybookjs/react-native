@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
 import type { StoryContext } from '@storybook/csf';
 import { atom, useAtomValue, useSetAtom } from 'jotai';
+import { useTheme as useEmotionTheme } from 'emotion-theming';
+import type { Theme } from './preview/components/Shared/theme';
 
 import type { ReactNativeFramework } from './types/types-6.0';
 
-const storyContextAtom = atom(null as (StoryContext<ReactNativeFramework> | null));
+const storyContextAtom = atom(null as StoryContext<ReactNativeFramework> | null);
 
 /**
  * Hook that returns a function to set the current story context.
@@ -24,7 +26,7 @@ export function useStoryContext() {
  * Hook that reads the value of a specific story context parameter.
  */
 export function useStoryContextParam<T = any>(name: string, defaultValue?: T): T {
-  const paramAtom = useMemo(() => atom(get => get(storyContextAtom)?.parameters?.[name]), [name]);
+  const paramAtom = useMemo(() => atom((get) => get(storyContextAtom)?.parameters?.[name]), [name]);
   return useAtomValue(paramAtom) ?? defaultValue;
 }
 
@@ -32,12 +34,23 @@ export function useStoryContextParam<T = any>(name: string, defaultValue?: T): T
  * Hook that indicates if `storyId` is the currently selected story.
  */
 export function useIsStorySelected(storyId: string) {
-  return useAtomValue(useMemo(() => atom(get => get(storyContextAtom)?.id === storyId), [storyId]));
+  return useAtomValue(
+    useMemo(() => atom((get) => get(storyContextAtom)?.id === storyId), [storyId])
+  );
 }
 
 /**
  * Hook that indicates if `title` is the currently selected story section.
  */
 export function useIsStorySectionSelected(title: string) {
-  return useAtomValue(useMemo(() => atom(get => get(storyContextAtom)?.title === title), [title]));
+  return useAtomValue(
+    useMemo(() => atom((get) => get(storyContextAtom)?.title === title), [title])
+  );
+}
+
+/**
+ * Hook that gets the current theme values.
+ */
+export function useTheme() {
+  return useEmotionTheme<Theme>();
 }
