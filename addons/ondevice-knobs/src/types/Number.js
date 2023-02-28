@@ -4,14 +4,15 @@ import Slider from '@react-native-community/slider';
 import { View } from 'react-native';
 import styled from '@emotion/native';
 
-const Input = styled.TextInput(({ theme }) => ({
-  borderWidth: 1,
-  borderColor: theme.borderColor || '#e6e6e6',
-  borderRadius: 2,
-  fontSize: 13,
-  padding: 5,
-  color: theme.labelColor || 'black',
-}));
+import { inputStyle } from './common';
+
+const Input = styled.TextInput(({ theme, showError }) => {
+  const style = inputStyle(theme);
+  return {
+    ...style,
+    borderColor: showError ? theme.inputs.errorTextColor : style.borderColor,
+  };
+});
 
 class NumberType extends React.Component {
   constructor(props) {
@@ -62,7 +63,7 @@ class NumberType extends React.Component {
         value={inputValue}
         keyboardType="numeric"
         onChangeText={this.onChangeNormal}
-        style={showError && { borderColor: '#FF4400' }}
+        showError={showError}
       />
     );
   };
@@ -83,10 +84,7 @@ class NumberType extends React.Component {
 
   render() {
     const { knob } = this.props;
-
-    return (
-      <View style={{ margin: 10 }}>{knob.range ? this.renderRange() : this.renderNormal()}</View>
-    );
+    return <View>{knob.range ? this.renderRange() : this.renderNormal()}</View>;
   }
 }
 

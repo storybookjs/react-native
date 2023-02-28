@@ -47,6 +47,8 @@ storiesOf('Knobs Example', module)
 
     const birthday = date('Birthday', new Date(2017, 0, 20));
 
+    const grouped = text('groupedKnob', '', 'More');
+
     return (
       <KnobsExample
         {...{

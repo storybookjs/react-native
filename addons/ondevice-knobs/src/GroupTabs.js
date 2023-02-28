@@ -3,9 +3,24 @@ import React, { Component } from 'react';
 import { ScrollView, Text, TouchableOpacity } from 'react-native';
 import styled from '@emotion/native';
 
-const Label = styled.Text(({ theme, active }) => ({
-  color: active ? theme.buttonActiveTextColor || '#444444' : theme.buttonTextColor || '#999999',
-  fontSize: 17,
+// const Label = styled.Text(({ theme, active }) => ({
+//   color: active ? theme.buttonActiveTextColor || '#444444' : theme.buttonTextColor || '#999999',
+//   fontSize: 17,
+// }));
+
+const TabButtonTouchable = styled.TouchableOpacity(({ theme, active }) => ({
+  borderWidth: theme.tabs.borderWidth,
+  borderColor: active ? theme.tabs.activeBorderColor : theme.tabs.inactiveBorderColor,
+  borderRadius: theme.tabs.borderRadius,
+  backgroundColor: active ? theme.tabs.activeBackgroundColor : theme.tabs.inactiveBackgroundColor,
+}));
+
+const TabButtonText = styled.Text(({ theme, active }) => ({
+  color: active ? theme.tabs.activeTextColor : theme.tabs.inactiveTextColor,
+  paddingVertical: theme.tabs.paddingVertical * 0.5,
+  paddingHorizontal: theme.tabs.paddingHorizontal,
+  fontSize: theme.tabs.fontSize,
+  fontWeight: theme.tabs.fontWeight,
 }));
 
 class GroupTabs extends Component {
@@ -17,35 +32,27 @@ class GroupTabs extends Component {
 
     const { onGroupSelect, selectedGroup } = this.props;
 
+    const active = selectedGroup === name;
     return (
-      <TouchableOpacity
-        style={{
-          marginTop: 5,
-          marginRight: 15,
-          paddingBottom: 10,
-        }}
+      <TabButtonTouchable
         key={name}
         onPress={() => onGroupSelect(name)}
+        active={active}
+        activeOpacity={0.8}
       >
-        <Label active={selectedGroup === name}>{title}</Label>
-      </TouchableOpacity>
+        <TabButtonText active={active}>{title}</TabButtonText>
+      </TabButtonTouchable>
     );
   }
 
   render() {
     const { groups } = this.props;
-
     const entries = groups ? Object.entries(groups) : null;
-
     return entries && entries.length ? (
       <ScrollView
         horizontal
         style={{
-          marginHorizontal: 10,
-          flexDirection: 'row',
-          marginBottom: 10,
-          borderBottomWidth: 1,
-          borderBottomColor: '#ccc',
+          marginBottom: 12,
         }}
       >
         {entries.map(([key, value]) => this.renderTab(key, value))}

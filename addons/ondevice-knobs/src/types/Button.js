@@ -5,7 +5,7 @@ import styled from '@emotion/native';
 
 const Label = styled.Text(({ theme }) => ({
   fontSize: 17,
-  color: theme.labelColor || 'black',
+  color: theme.inputs.labelTextColor,
 }));
 
 const ButtonType = ({ knob, onPress }) => (

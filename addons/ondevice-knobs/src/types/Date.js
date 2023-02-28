@@ -4,16 +4,15 @@ import { View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import styled from '@emotion/native';
 
+import { inputStyle } from './common';
+
 const Touchable = styled.TouchableOpacity(({ theme }) => ({
-  borderColor: theme.borderColor || '#e6e6e6',
-  borderWidth: 1,
-  borderRadius: 2,
-  padding: 5,
+  ...inputStyle(theme),
 }));
 
 const Label = styled.Text(({ theme }) => ({
-  fontSize: 13,
-  color: theme.labelColor || 'black',
+  fontSize: theme.inputs.text.fontSize,
+  color: theme.inputs.text.textColor,
 }));
 
 // TODO seconds support
@@ -63,17 +62,12 @@ class DateType extends PureComponent {
     const timeString = `${`0${d.getHours()}`.slice(-2)}:${`0${d.getMinutes()}`.slice(-2)}`;
 
     return (
-      <View style={{ margin: 10 }}>
+      <View>
         <View style={{ flexDirection: 'row' }}>
           <Touchable onPress={this.showDatePicker}>
             <Label>{dateString}</Label>
           </Touchable>
-          <Touchable
-            style={{
-              marginLeft: 5,
-            }}
-            onPress={this.showTimePicker}
-          >
+          <Touchable style={{ marginLeft: 4 }} onPress={this.showTimePicker}>
             <Label>{timeString}</Label>
           </Touchable>
         </View>
