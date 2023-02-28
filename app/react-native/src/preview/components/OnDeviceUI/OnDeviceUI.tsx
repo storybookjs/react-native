@@ -67,7 +67,7 @@ interface PreviewProps {
 function Preview({ animatedValue, style, children }: PreviewProps) {
   const theme: any = useTheme();
   const containerStyle = {
-    backgroundColor: theme.backgroundColor,
+    backgroundColor: theme.preview.backgroundColor,
     ...getPreviewShadowStyle(animatedValue),
   };
   return (
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
 
 const Container = styled.View(({ theme }) => ({
   flex: 1,
-  backgroundColor: theme.backgroundColor,
+  backgroundColor: theme.preview.containerBackgroundColor,
   ...(IS_ANDROID && IS_EXPO ? styles.expoAndroidContainer : undefined),
 }));
 
@@ -103,7 +103,6 @@ const OnDeviceUI = ({
   const animatedValue = useRef(new Animated.Value(tabOpen));
   const wide = useWindowDimensions().width >= BREAKPOINT;
   const insets = useSafeAreaInsets();
-  const theme: any = useTheme();
   const [isUIVisible, setIsUIVisible] = useState(isUIHidden !== undefined ? !isUIHidden : true);
 
   const handleToggleTab = React.useCallback(
@@ -200,6 +199,7 @@ const OnDeviceUI = ({
               ) : null}
             </Animated.View>
             <Panel
+              edge="right"
               style={[
                 getNavigatorPanelPosition(animatedValue.current, previewDimensions.width, wide),
                 panelSafeAreaMargins,
@@ -209,6 +209,7 @@ const OnDeviceUI = ({
             </Panel>
 
             <Panel
+              edge="left"
               style={[
                 getAddonPanelPosition(animatedValue.current, previewDimensions.width, wide),
                 panelSafeAreaMargins,
