@@ -3,6 +3,8 @@ import React, { useMemo, useState } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 
+import { inputStyle } from './common';
+
 export interface DateProps {
   arg: {
     name: string;
@@ -12,15 +14,12 @@ export interface DateProps {
 }
 
 const Touchable = styled.TouchableOpacity(({ theme }: any) => ({
-  borderColor: theme.borderColor || '#e6e6e6',
-  borderWidth: 1,
-  borderRadius: 2,
-  padding: 5,
+  ...inputStyle(theme, false),
 }));
 
 const Label = styled.Text(({ theme }: any) => ({
-  fontSize: 13,
-  color: theme.labelColor || 'black',
+  fontSize: theme.inputs.text.fontSize,
+  color: theme.inputs.text.textColor,
 }));
 
 type VisiblePicker = 'date' | 'time' | 'none';
@@ -71,7 +70,7 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
 
   if (Platform.OS === 'web') {
     return (
-      <View testID={name} style={styles.spacing}>
+      <View testID={name}>
         <input
           type="datetime-local"
           value={webDateString}
@@ -82,7 +81,7 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
   }
 
   return (
-    <View testID={name} style={styles.spacing}>
+    <View testID={name}>
       <View style={styles.row}>
         <Touchable onPress={() => setVisiblePicker('date')}>
           <Label>{dateString}</Label>
@@ -107,7 +106,6 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   row: { flexDirection: 'row' },
-  spacing: { margin: 10 },
 });
 
 DateType.serialize = (value) => String(value);

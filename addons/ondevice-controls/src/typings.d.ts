@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import css from '@emotion/css';
 import { CreateStyled, CreateStyledComponentExtrinsic } from '@emotion/styled-base';
 import ReactNative from 'react-native';
@@ -60,20 +60,13 @@ declare module '@emotion/native' {
     [K in T]: CreateStyledComponentExtrinsic<typeof ReactNative[K], ExtraProps, Theme>;
   };
 
-  type MyTheme = {
-    backgroundColor: string;
-    headerTextColor: string;
-    labelColor: string;
-    borderColor: string;
-    previewBorderColor: string;
-    buttonTextColor: string;
-    buttonActiveTextColor: string;
-    secondaryLabelColor: string;
-  };
+  type MyTheme = Record<string, any>;
 
   export interface Styled<Theme extends object = MyTheme, ExtraProps = {}>
     extends CreateStyled<Theme>,
-      StyledComponentsForReactNative<StyledReactNativeComponents, ExtraProps, Theme> {}
+      StyledComponentsForReactNative<StyledReactNativeComponents, ExtraProps, Theme> {
+    (component: React.ComponentType<any>): CreateStyled<Theme>;
+  }
 
   export { css };
 

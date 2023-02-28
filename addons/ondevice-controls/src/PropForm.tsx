@@ -10,7 +10,7 @@ interface FormProps {
   onFieldChange: (value: any) => void;
 }
 
-const Container = styled.View(() => ({ paddingTop: 8 }));
+const Container = styled.View(() => ({ paddingTop: 0 }));
 
 const PropForm = ({ args, isPristine, onFieldChange }: FormProps) => {
   const makeChangeHandler = (name: string) => {

@@ -1,7 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import styled from '@emotion/native';
 import { ViewStyle } from 'react-native';
+
 import { useResyncValue } from './useResyncValue';
+import { inputStyle } from './common';
 
 export interface ObjectProps {
   arg: {
@@ -13,13 +15,7 @@ export interface ObjectProps {
 }
 
 const Input = styled.TextInput(({ theme }) => ({
-  borderWidth: 1,
-  borderRadius: 2,
-  fontSize: 13,
-  padding: 5,
-  margin: 10,
-  borderColor: theme.borderColor || '#e6e6e6',
-  color: theme.labelColor || 'black',
+  ...inputStyle(theme, false),
   minHeight: 60,
 }));
 

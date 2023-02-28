@@ -1,17 +1,17 @@
 import styled from '@emotion/native';
 import React from 'react';
-import { Linking, View } from 'react-native';
+import { Linking } from 'react-native';
 
-const Paragraph = styled.Text(() => ({
-  marginBottom: 10,
+const Paragraph = styled.Text(({ theme }) => ({
+  marginBottom: theme.tokens.spacing3,
 }));
-const LinkText = styled.Text(() => ({
-  color: 'blue',
+const LinkText = styled.Text(({ theme }) => ({
+  color: theme.text.linkColor,
 }));
 
 const NoControlsWarning = () => {
   return (
-    <View>
+    <>
       <Paragraph>This story is not configured to handle controls.</Paragraph>
       <Paragraph>
         <LinkText
@@ -30,7 +30,7 @@ const NoControlsWarning = () => {
           examples in the Storybook React Native repository.
         </LinkText>
       </Paragraph>
-    </View>
+    </>
   );
 };
 

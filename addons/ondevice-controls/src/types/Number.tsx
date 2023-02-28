@@ -1,35 +1,27 @@
 import styled from '@emotion/native';
 import Slider from '@react-native-community/slider';
 import React, { useCallback, useState } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+
+import { inputStyle } from './common';
 import { useResyncValue } from './useResyncValue';
 
-const Input = styled.TextInput(({ theme }) => ({
-  borderWidth: 1,
-  borderColor: theme.borderColor || '#e6e6e6',
-  borderRadius: 2,
-  fontSize: 14,
-  paddingVertical: 4,
-  paddingHorizontal: 8,
-  color: theme.labelColor || 'black',
-}));
-
-const SliderText = styled.Text(({ theme }) => ({
-  color: theme.labelColor || 'black',
-  fontSize: 14,
-}));
-
-const ValueLabelText = styled.Text(({ theme }) => ({
-  color: theme.secondaryLabelColor || '#999999',
-  fontSize: 14,
-  marginRight: 8,
-}));
+const Input = styled.TextInput(({ theme, showError }) => {
+  const style = inputStyle(theme);
+  return {
+    ...style,
+    borderColor: showError ? theme.inputs.errorTextColor : style.borderColor,
+  };
+});
 
 const ValueContainer = styled.View({ flexDirection: 'row' });
-// @ts-ignore styled is being weird ;(
-const NumberSlider = styled(Slider)(() => ({
-  marginTop: Platform.OS === 'android' ? 8 : 4,
-  marginLeft: Platform.OS === 'android' ? -10 : 0,
+const LabelText = styled.Text(({ theme }) => ({
+  color: theme.inputs.slider.labelTextColor,
+  fontSize: theme.inputs.slider.fontSize,
+}));
+const ValueText = styled.Text(({ theme }) => ({
+  color: theme.inputs.slider.valueTextColor,
+  fontSize: theme.inputs.slider.fontSize,
 }));
 
 export interface NumberProps {
@@ -66,30 +58,18 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
     }
   };
 
-  const renderNormal = () => {
-    return (
-      <Input
-        autoCapitalize="none"
-        underlineColorAndroid="transparent"
-        value={numStr}
-        keyboardType="numeric"
-        onChangeText={handleNormalChangeText}
-        style={showError && styles.errorBorder}
-      />
-    );
-  };
-
-  const renderRange = (): React.ReactNode => {
+  if (arg.range) {
     return (
       <View key={key}>
         <ValueContainer>
-          <ValueLabelText>Value:</ValueLabelText>
-          <SliderText>{arg.value}</SliderText>
+          <LabelText>Value: </LabelText>
+          <ValueText>{arg.value}</ValueText>
         </ValueContainer>
-        <NumberSlider
+        <Slider
           minimumValue={arg.min}
           maximumValue={arg.max}
           step={arg.step}
+          value={arg.value}
           onValueChange={(val) => {
             onChange(val);
             setCurrentValue(val);
@@ -97,15 +77,19 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
         />
       </View>
     );
-  };
-
-  return <View style={styles.spacing}>{arg.range ? renderRange() : renderNormal()}</View>;
+  } else {
+    return (
+      <Input
+        autoCapitalize="none"
+        underlineColorAndroid="transparent"
+        value={numStr}
+        keyboardType="numeric"
+        onChangeText={handleNormalChangeText}
+        showError={showError}
+      />
+    );
+  }
 };
-
-const styles = StyleSheet.create({
-  spacing: { margin: 10 },
-  errorBorder: { borderColor: '#FF4400' },
-});
 
 NumberType.serialize = (value) => String(value);
 
