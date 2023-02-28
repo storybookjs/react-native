@@ -7,13 +7,13 @@ interface Props {
   style?: StyleProp<ViewStyle>;
 }
 
-const Touchable = styled.TouchableOpacity({
+const Touchable = styled.TouchableOpacity(({ theme }) => ({
   backgroundColor: 'transparent',
   position: 'absolute',
-  right: 8,
-  bottom: 12,
+  right: theme.tokens.spacing2,
+  bottom: theme.tokens.spacing4,
   zIndex: 100,
-});
+}));
 
 const HIDE_ICON_SIZE = 14;
 const HIDE_ICON_BORDER_WIDTH = 1;
@@ -24,23 +24,23 @@ const Inner = styled.View(({ theme }) => ({
   left: 0,
   width: HIDE_ICON_SIZE,
   height: HIDE_ICON_SIZE,
-  borderRadius: HIDE_ICON_BORDER_WIDTH,
+  borderRadius: theme.navigation.visibilityBorderRadius,
   overflow: 'hidden',
-  borderColor: theme.buttonTextColor || '#999999',
+  borderColor: theme.navigation.visibilityInnerBorderColor,
   borderWidth: HIDE_ICON_BORDER_WIDTH * 2,
 }));
 
-const Outer = styled.View({
+const Outer = styled.View(({ theme }) => ({
   position: 'absolute',
   top: 0,
   left: 0,
   width: HIDE_ICON_SIZE,
   height: HIDE_ICON_SIZE,
-  borderRadius: HIDE_ICON_BORDER_WIDTH,
+  borderRadius: theme.navigation.visibilityBorderRadius,
   overflow: 'hidden',
-  borderColor: 'white',
+  borderColor: theme.navigation.visibilityOuterBorderColor,
   borderWidth: HIDE_ICON_BORDER_WIDTH,
-});
+}));
 
 const hideIconStyles = {
   width: HIDE_ICON_SIZE,
