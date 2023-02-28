@@ -166,6 +166,11 @@ const OnDeviceUI = ({
     paddingBottom: isUIVisible ? insets.bottom + navBarHeight : noSafeArea ? 0 : insets.bottom,
     paddingTop: !noSafeArea ? insets.top : 0,
   };
+  // The panels always apply the safe area, regardless of the story parameters.
+  const panelSafeAreaMargins = {
+    paddingBottom: insets.bottom + navBarHeight,
+    paddingTop: insets.top,
+  };
   return (
     <>
       <Container>
@@ -193,8 +198,7 @@ const OnDeviceUI = ({
             <Panel
               style={[
                 getNavigatorPanelPosition(animatedValue.current, previewDimensions.width, wide),
-                safeAreaMargins,
-                { backgroundColor: theme.storyListBackgroundColor },
+                panelSafeAreaMargins,
               ]}
             >
               <StoryListView storyIndex={storyIndex} />
@@ -203,7 +207,7 @@ const OnDeviceUI = ({
             <Panel
               style={[
                 getAddonPanelPosition(animatedValue.current, previewDimensions.width, wide),
-                safeAreaMargins,
+                panelSafeAreaMargins,
               ]}
             >
               <Addons active={tabOpen === ADDONS} />
