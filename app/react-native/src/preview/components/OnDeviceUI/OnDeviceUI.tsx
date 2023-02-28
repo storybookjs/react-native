@@ -171,13 +171,17 @@ const OnDeviceUI = ({
     paddingBottom: insets.bottom + navBarHeight,
     paddingTop: insets.top,
   };
+  // Adjust the keyboard offset (possibly in a negative direction) to account
+  // for the safe area and navigation bar.
+  const keyboardVerticalOffset =
+    -panelSafeAreaMargins.paddingBottom + (keyboardAvoidingViewVerticalOffset ?? 0);
   return (
     <>
       <Container>
         <KeyboardAvoidingView
           enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
           behavior={IS_IOS ? 'padding' : null}
-          keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
+          keyboardVerticalOffset={keyboardVerticalOffset}
           style={flex}
         >
           <AbsolutePositionedKeyboardAwareView
