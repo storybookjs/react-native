@@ -41,5 +41,5 @@ export const Notes = ({ active, api }: NotesProps) => {
 };
 
 const styles = StyleSheet.create({
-  container: { padding: 10, flex: 1 },
+  container: { flex: 1 },
 });
