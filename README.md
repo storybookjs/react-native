@@ -186,8 +186,8 @@ Storybook on react native is a normal React Native component that can be used or
 You can also create a separate app just for storybook that also works as a package for your visual components.
 Some have opted to toggle the storybook component by using a custom option in the react native developer menu.
 
-- [Heres an article about how you can do it in expo](https://dev.to/dannyhw/multiple-entry-points-for-react-native-storybook-4dkp)
-- [Heres another with an approach for react native cli](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
+- [Heres an approach for react native cli](https://dev.to/dannyhw/multiple-entry-points-for-react-native-storybook-4dkp)
+- [Heres an article about how you can do it in expo](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
 
 
