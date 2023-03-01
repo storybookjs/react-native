@@ -61,6 +61,7 @@
     "@storybook/preview-web": "^6.5.14",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
+    "deepmerge": "^4.3.0",
     "emotion-theming": "^10.0.19",
     "glob": "^7.1.7",
     "jotai": "^2.0.2",

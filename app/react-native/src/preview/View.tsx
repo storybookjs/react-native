@@ -7,13 +7,14 @@ import { ThemeProvider } from 'emotion-theming';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useSetStoryContext } from '../hooks';
 import OnDeviceUI from './components/OnDeviceUI';
-import { theme } from './components/Shared/theme';
+import { theme, Theme } from './components/Shared/theme';
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { PreviewWeb } from '@storybook/preview-web';
 import StoryView from './components/StoryView';
 import createChannel from '@storybook/channel-websocket';
 import getHost from './rn-host-detect';
 import events from '@storybook/core-events';
+import deepmerge from 'deepmerge';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -39,6 +40,12 @@ type InitialSelection =
       name: StoryName;
     };
 
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;
+
 export type Params = {
   onDeviceUI?: boolean;
   // resetStorybook?: boolean; // TODO: Do we need this?
@@ -53,7 +60,8 @@ export type Params = {
   isUIHidden?: boolean;
   shouldDisableKeyboardAvoidingView?: boolean;
   keyboardAvoidingViewVerticalOffset?: number;
-} & { theme?: typeof theme };
+  theme: DeepPartial<Theme>;
+};
 
 export class View {
   _storyIndex: StoryIndex;
@@ -142,7 +150,7 @@ export class View {
     // eslint-disable-next-line consistent-this
     const self = this;
 
-    const appliedTheme = { ...theme, ...params.theme };
+    const appliedTheme = deepmerge(theme, params.theme ?? {});
     return () => {
       const setContext = useSetStoryContext();
       const [, forceUpdate] = useReducer((x) => x + 1, 0);

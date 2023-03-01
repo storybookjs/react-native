@@ -10,6 +10,17 @@ const StorybookUIRoot = getStorybookUI({
   shouldPersistSelection: true,
   // onDeviceUI: false,
   // enableWebsockets: true,
+  // theme: {
+  //   storyList: {
+  //     search: {
+  //       borderColor: 'red',
+  //       borderWidth: 3,
+  //     },
+  //   },
+  //   tabs: {
+  //     activeBackgroundColor: 'yellow',
+  //   },
+  // },
 });
 
 export default () => (
