@@ -1,6 +1,5 @@
 import { StoryIndex } from '@storybook/client-api';
 import styled from '@emotion/native';
-import { useTheme } from 'emotion-theming';
 import React, { useState, useRef } from 'react';
 import {
   Animated,
@@ -16,7 +15,7 @@ import {
   ViewStyle,
   StyleProp,
 } from 'react-native';
-import { useStoryContextParam } from '../../../hooks';
+import { useStoryContextParam, useTheme } from '../../../hooks';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 import AbsolutePositionedKeyboardAwareView, {
@@ -65,9 +64,9 @@ interface PreviewProps {
  * Story preview container.
  */
 function Preview({ animatedValue, style, children }: PreviewProps) {
-  const theme: any = useTheme();
+  const theme = useTheme();
   const containerStyle = {
-    backgroundColor: theme.backgroundColor,
+    backgroundColor: theme.preview.backgroundColor,
     ...getPreviewShadowStyle(animatedValue),
   };
   return (
@@ -83,8 +82,10 @@ const styles = StyleSheet.create({
 
 const Container = styled.View(({ theme }) => ({
   flex: 1,
-  backgroundColor: theme.backgroundColor,
+  backgroundColor: theme.preview.containerBackgroundColor,
   ...(IS_ANDROID && IS_EXPO ? styles.expoAndroidContainer : undefined),
+
+  ...Platform.select({ web: { overflow: 'hidden' } }),
 }));
 
 const OnDeviceUI = ({
@@ -103,7 +104,6 @@ const OnDeviceUI = ({
   const animatedValue = useRef(new Animated.Value(tabOpen));
   const wide = useWindowDimensions().width >= BREAKPOINT;
   const insets = useSafeAreaInsets();
-  const theme: any = useTheme();
   const [isUIVisible, setIsUIVisible] = useState(isUIHidden !== undefined ? !isUIHidden : true);
 
   const handleToggleTab = React.useCallback(
@@ -166,13 +166,22 @@ const OnDeviceUI = ({
     paddingBottom: isUIVisible ? insets.bottom + navBarHeight : noSafeArea ? 0 : insets.bottom,
     paddingTop: !noSafeArea ? insets.top : 0,
   };
+  // The panels always apply the safe area, regardless of the story parameters.
+  const panelSafeAreaMargins = {
+    paddingBottom: insets.bottom + navBarHeight,
+    paddingTop: insets.top,
+  };
+  // Adjust the keyboard offset (possibly in a negative direction) to account
+  // for the safe area and navigation bar.
+  const keyboardVerticalOffset =
+    -panelSafeAreaMargins.paddingBottom + (keyboardAvoidingViewVerticalOffset ?? 0);
   return (
     <>
       <Container>
         <KeyboardAvoidingView
           enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
           behavior={IS_IOS ? 'padding' : null}
-          keyboardVerticalOffset={keyboardAvoidingViewVerticalOffset}
+          keyboardVerticalOffset={keyboardVerticalOffset}
           style={flex}
         >
           <AbsolutePositionedKeyboardAwareView
@@ -191,19 +200,20 @@ const OnDeviceUI = ({
               ) : null}
             </Animated.View>
             <Panel
+              edge="right"
               style={[
                 getNavigatorPanelPosition(animatedValue.current, previewDimensions.width, wide),
-                safeAreaMargins,
-                { backgroundColor: theme.storyListBackgroundColor },
+                panelSafeAreaMargins,
               ]}
             >
               <StoryListView storyIndex={storyIndex} />
             </Panel>
 
             <Panel
+              edge="left"
               style={[
                 getAddonPanelPosition(animatedValue.current, previewDimensions.width, wide),
-                safeAreaMargins,
+                panelSafeAreaMargins,
               ]}
             >
               <Addons active={tabOpen === ADDONS} />

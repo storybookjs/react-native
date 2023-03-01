@@ -2,12 +2,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+  Text,
   TouchableOpacity,
   View,
   Image,
   StyleSheet,
   InteractionManager,
   I18nManager,
+  TextInput,
 } from 'react-native';
 import Slider from '@react-native-community/slider';
 import tinycolor from 'tinycolor2';
@@ -194,7 +196,9 @@ export class HoloColorPicker extends React.PureComponent {
         </View>
         {this.props.hideSliders ? null : (
           <View>
+            <Text style={{ paddingStart: 4, color: '#859499', fontSize: 12 }}>Saturation</Text>
             <Slider value={s} onValueChange={this._onSValueChange} />
+            <Text style={{ paddingStart: 4, color: '#859499', fontSize: 12 }}>Lightness</Text>
             <Slider value={v} onValueChange={this._onVValueChange} />
           </View>
         )}

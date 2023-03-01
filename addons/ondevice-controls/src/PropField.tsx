@@ -1,4 +1,3 @@
-import { View, Text, StyleSheet } from 'react-native';
 import React, { ComponentType } from 'react';
 import styled from '@emotion/native';
 import TypeMap from './types';
@@ -25,16 +24,26 @@ export interface Knob {
   groupId?: string;
 }
 
+const InvalidTypeText = styled.Text(({ theme }) => ({
+  color: theme.inputs.errorTextColor,
+}));
+
 const InvalidType = ({ arg }: { arg: ArgType }) => (
-  <Text style={styles.invalidType}>Invalid Type {arg.type}</Text>
+  <InvalidTypeText>Invalid type: {arg.type}</InvalidTypeText>
 );
 
 const Label = styled.Text(({ theme }) => ({
-  marginLeft: 10,
-  fontSize: 14,
-  color: theme.labelColor || 'black',
-  fontWeight: 'bold',
+  paddingBottom: theme.tokens.spacing1,
+  fontSize: theme.inputs.labelFontSize,
+  color: theme.inputs.labelTextColor,
+  fontWeight: '500',
 }));
+
+const Container = styled.View(({ theme }) => ({
+  paddingBottom: theme.tokens.spacing4,
+}));
+
+const InputContainer = styled.View();
 
 interface PropFieldProps {
   onChange: (value: any) => void;
@@ -45,19 +54,17 @@ interface PropFieldProps {
 const PropField = ({ onChange, arg, isPristine }: PropFieldProps) => {
   const InputType: ComponentType<any> = TypeMap[arg.type];
   return (
-    <View>
+    <Container>
       {!arg.hideLabel ? <Label>{`${arg.label || arg.name}`}</Label> : null}
-      {InputType ? (
-        <InputType arg={arg} isPristine={isPristine} onChange={onChange} />
-      ) : (
-        <InvalidType arg={arg} />
-      )}
-    </View>
+      <InputContainer>
+        {InputType ? (
+          <InputType arg={arg} isPristine={isPristine} onChange={onChange} />
+        ) : (
+          <InvalidType arg={arg} />
+        )}
+      </InputContainer>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  invalidType: { margin: 10 },
-});
 
 export default PropField;

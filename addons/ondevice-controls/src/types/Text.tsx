@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/native';
+
+import { inputStyle } from './common';
 import { useResyncValue } from './useResyncValue';
 
 export interface TextProps {
@@ -13,13 +15,7 @@ export interface TextProps {
 }
 
 const Input = styled.TextInput(({ theme }) => ({
-  borderWidth: 1,
-  borderColor: theme.borderColor || '#e6e6e6',
-  borderRadius: 2,
-  fontSize: 13,
-  padding: 5,
-  margin: 10,
-  color: theme.labelColor || 'black',
+  ...inputStyle(theme),
 }));
 
 const TextType = ({ arg, onChange, isPristine }: TextProps) => {

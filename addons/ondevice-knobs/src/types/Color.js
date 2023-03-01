@@ -4,13 +4,21 @@ import { Text, Modal, View, TouchableOpacity, TouchableWithoutFeedback } from 'r
 import styled from '@emotion/native';
 import { ColorPicker, fromHsv } from '../components/color-picker';
 
+const TouchableContainer = styled.View(({ theme }) => ({
+  width: theme.inputs.swatch.height,
+  height: theme.inputs.swatch.height,
+  borderWidth: theme.inputs.swatch.borderWidth,
+  borderColor: theme.inputs.swatch.borderColor,
+  borderRadius: theme.inputs.swatch.outerBorderRadius,
+  paddingVertical: theme.inputs.swatch.paddingVertical,
+  paddingHorizontal: theme.inputs.swatch.paddingHorizontal,
+  backgroundColor: theme.inputs.swatch.backgroundColor,
+}));
+
 const Touchable = styled.TouchableOpacity(({ theme, color }) => ({
-  borderColor: theme.borderColor || '#e6e6e6',
-  width: 30,
-  height: 20,
-  borderRadius: 2,
-  borderWidth: 1,
-  margin: 10,
+  width: '100%',
+  height: '100%',
+  borderRadius: theme.inputs.swatch.innerBorderRadius,
   backgroundColor: color,
 }));
 
@@ -45,7 +53,9 @@ class ColorType extends React.Component {
     const { displayColorPicker } = this.state;
     return (
       <View>
-        <Touchable color={knob.value} onPress={this.openColorPicker} />
+        <TouchableContainer>
+          <Touchable color={knob.value} onPress={this.openColorPicker} />
+        </TouchableContainer>
         <Modal
           supportedOrientations={['portrait', 'landscape']}
           transparent

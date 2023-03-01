@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction } from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import GestureRecognizer from 'react-native-swipe-gestures';
-import Bar from './Bar';
+import { NavigationBar } from './NavigationBar';
 import VisibilityButton from './VisibilityButton';
 
 const SWIPE_CONFIG = {
@@ -52,10 +52,14 @@ const Navigation = ({ tabOpen, onChangeTab, isUIVisible, setIsUIVisible, onLayou
           onSwipeRight={handleSwipeRight}
           config={SWIPE_CONFIG}
         >
-          <Bar index={tabOpen} onPress={onChangeTab} style={{ paddingBottom: insets.bottom }} />
+          <NavigationBar
+            index={tabOpen}
+            onPress={onChangeTab}
+            style={{ paddingBottom: insets.bottom }}
+          />
         </GestureRecognizer>
       )}
-      <VisibilityButton onPress={handleToggleUI} style={{ marginBottom: insets.bottom }} />
+      <VisibilityButton onPress={handleToggleUI} style={{ paddingBottom: insets.bottom }} />
     </View>
   );
 };

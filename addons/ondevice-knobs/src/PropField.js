@@ -7,20 +7,28 @@ import TypeMap from './types';
 const InvalidType = () => <Text style={{ margin: 10 }}>Invalid Type</Text>;
 
 const Label = styled.Text(({ theme }) => ({
-  marginLeft: 10,
-  fontSize: 14,
-  color: theme.labelColor || 'black',
-  fontWeight: 'bold',
+  paddingBottom: theme.tokens.spacing1,
+  fontSize: theme.inputs.labelFontSize,
+  color: theme.inputs.labelTextColor,
+  fontWeight: '500',
 }));
+
+const Container = styled.View(({ theme }) => ({
+  paddingBottom: theme.tokens.spacing4,
+}));
+
+const InputContainer = styled.View();
 
 const PropField = ({ onChange, onPress, knob }) => {
   const InputType = TypeMap[knob.type] || InvalidType;
 
   return (
-    <View>
+    <Container>
       {!knob.hideLabel ? <Label>{`${knob.label || knob.name}`}</Label> : null}
-      <InputType knob={knob} onChange={onChange} onPress={onPress} />
-    </View>
+      <InputContainer>
+        <InputType knob={knob} onChange={onChange} onPress={onPress} />
+      </InputContainer>
+    </Container>
   );
 };
 

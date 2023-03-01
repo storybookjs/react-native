@@ -18,7 +18,7 @@ export default class PropForm extends React.Component {
     const { knobs, onFieldClick } = this.props;
 
     return (
-      <View>
+      <>
         {knobs.map((knob) => {
           const changeHandler = this.makeChangeHandler(knob.name, knob.type);
           return (
@@ -33,7 +33,7 @@ export default class PropForm extends React.Component {
             />
           );
         })}
-      </View>
+      </>
     );
   }
 }

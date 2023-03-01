@@ -3,28 +3,14 @@ import React from 'react';
 import ModalPicker from 'react-native-modal-selector';
 import styled from '@emotion/native';
 
+import { inputStyle } from './common';
+
 const Input = styled.TextInput(({ theme }) => ({
-  borderWidth: 1,
-  borderRadius: 2,
-  padding: 5,
-  margin: 10,
-  borderColor: theme.borderColor || '#e6e6e6',
-  color: theme.labelColor || 'black',
+  ...inputStyle(theme),
 }));
 
-const Select = (args: any) => <select {...args} />;
-const Container = styled.View(({ theme }) => ({
-  borderWidth: 1,
-  borderRadius: 2,
-  padding: 5,
-  margin: 10,
-  borderColor: theme.borderColor || '#e6e6e6',
-}));
-
-// @ts-ignore styled is being weird ;(
-const WebSelect = styled(Select)(({ theme }) => ({
-  border: 'none',
-  color: theme.labelColor || 'black',
+const WebSelect = styled('select' as any)(({ theme }) => ({
+  ...inputStyle(theme),
 }));
 
 export interface SelectProps {
@@ -66,15 +52,13 @@ const SelectType = ({ arg, onChange }: SelectProps) => {
       onChange(event.target.value);
     };
     return (
-      <Container>
-        <WebSelect value={value} onChange={handleChange}>
-          {options.map(({ label, key }) => (
-            <option key={`${label}-${key}`} value={key}>
-              {label}
-            </option>
-          ))}
-        </WebSelect>
-      </Container>
+      <WebSelect value={value} onChange={handleChange}>
+        {options.map(({ label, key }) => (
+          <option key={`${label}-${key}`} value={key}>
+            {label}
+          </option>
+        ))}
+      </WebSelect>
     );
   }
 

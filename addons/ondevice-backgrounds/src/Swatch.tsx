@@ -1,6 +1,7 @@
+// @ts-ignore
+import styled from '@emotion/native';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface SwatchProps {
   name: string;
@@ -8,14 +9,46 @@ interface SwatchProps {
   setBackground: (background: string) => void;
 }
 
+const PressableSwatch = styled.TouchableOpacity(({ theme }: any) => ({
+  marginBottom: theme.tokens.spacing3,
+  borderWidth: theme.inputs.swatch.borderWidth,
+  borderColor: theme.inputs.swatch.borderColor,
+  borderRadius: theme.inputs.swatch.outerBorderRadius,
+  backgroundColor: theme.inputs.swatch.backgroundColor,
+  paddingVertical: theme.inputs.swatch.paddingVertical,
+  paddingHorizontal: theme.inputs.swatch.paddingHorizontal,
+}));
+
+const ColorSwatch = styled.View(({ theme, color }: any) => ({
+  height: theme.inputs.swatch.height,
+  width: '100%',
+  borderRadius: theme.inputs.swatch.innerBorderRadius,
+  backgroundColor: color,
+}));
+
+const ValueContainer = styled.View(({ theme }: any) => ({
+  flex: 1,
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  padding: theme.tokens.spacing1,
+  paddingBottom: 0,
+}));
+const NameText = styled.Text(({ theme }: any) => ({
+  fontSize: theme.inputs.swatch.fontSize,
+  fontWeight: theme.inputs.swatch.nameTextWeight,
+}));
+const ValueText = styled.Text(({ theme }: any) => ({
+  fontSize: theme.inputs.swatch.fontSize,
+}));
+
 const Swatch = ({ name, value, setBackground }: SwatchProps) => (
-  <TouchableOpacity style={styles.container} onPress={() => setBackground(value)}>
-    <View style={[styles.color, { backgroundColor: value }]} />
-    <View style={styles.valueContainer}>
-      <Text>{name}:</Text>
-      <Text>{value}</Text>
-    </View>
-  </TouchableOpacity>
+  <PressableSwatch onPress={() => setBackground(value)}>
+    <ColorSwatch color={value} />
+    <ValueContainer>
+      <NameText>{name}</NameText>
+      <ValueText>{value}</ValueText>
+    </ValueContainer>
+  </PressableSwatch>
 );
 
 Swatch.propTypes = {
@@ -25,20 +58,3 @@ Swatch.propTypes = {
 };
 
 export default Swatch;
-
-const styles = StyleSheet.create({
-  valueContainer: {
-    padding: 4,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  color: { flex: 1, height: 40 },
-  container: {
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.2)',
-    marginTop: 10,
-    marginBottom: 20,
-    marginHorizontal: 10,
-  },
-});

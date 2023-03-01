@@ -4,40 +4,50 @@ import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
 import { SectionList, SectionListRenderItem, StyleSheet, TextInputProps } from 'react-native';
-import { useIsStorySectionSelected, useIsStorySelected } from '../../../hooks';
 import { GridIcon, SearchIcon, StoryIcon } from '../Shared/icons';
-import { Header, Name } from '../Shared/text';
+import { Box } from '../Shared/layout';
+import { useIsStorySelected, useIsStorySectionSelected, useTheme } from '../../../hooks';
+
+const SectionHeaderText = styled.Text<{ selected: boolean }>(({ theme }) => ({
+  fontSize: theme.storyList.fontSize,
+  color: theme.storyList.headerTextColor,
+  fontWeight: theme.storyList.headerFontWeight,
+}));
+
+const StoryNameText = styled.Text<{ selected: boolean }>(({ selected, theme }) => ({
+  fontSize: theme.storyList.fontSize,
+  fontWeight: selected ? theme.storyList.storySelectedFontWeight : theme.storyList.storyFontWeight,
+  color: selected ? theme.storyList.storySelectedTextColor : theme.storyList.storyTextColor,
+}));
+
+const SEARCH_ICON_SIZE = 24;
 
 const SearchInput = styled.TextInput(
   {
-    fontSize: 16,
     padding: 0,
-    paddingHorizontal: 36,
     ...StyleSheet.absoluteFillObject,
   },
   ({ theme }) => ({
-    color: theme.buttonActiveTextColor,
+    fontSize: theme.storyList.search.fontSize,
+    paddingStart: theme.storyList.search.paddingHorizontal + SEARCH_ICON_SIZE,
+    color: theme.storyList.search.textColor,
   })
 );
 
-const SearchContainer = styled.View(
-  {
-    borderRadius: 100,
-    borderWidth: 1.5,
-    marginVertical: 4,
-    marginHorizontal: 8,
-    paddingVertical: 10,
-    paddingLeft: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  ({ theme }) => ({
-    borderColor: theme.borderColor,
-    backgroundColor: theme.storyListBackgroundColor,
-  })
-);
+const SearchContainer = styled.View(({ theme }) => ({
+  flexDirection: 'row',
+  alignItems: 'center',
+  margin: theme.panel.paddingHorizontal,
+  paddingVertical: theme.storyList.search.paddingVertical,
+  paddingStart: theme.storyList.search.paddingHorizontal,
+  borderColor: theme.storyList.search.borderColor,
+  borderWidth: theme.storyList.search.borderWidth,
+  borderRadius: theme.storyList.search.borderRadius,
+  backgroundColor: theme.storyList.search.backgroundColor,
+}));
 
 const SearchBar = (props: TextInputProps) => {
+  const theme = useTheme();
   return (
     <SearchContainer>
       <SearchIcon />
@@ -49,7 +59,7 @@ const SearchBar = (props: TextInputProps) => {
         spellCheck={false}
         clearButtonMode="while-editing"
         disableFullscreenUI
-        placeholderTextColor="#666"
+        placeholderTextColor={theme.storyList.search.placeholderTextColor}
         returnKeyType="search"
       />
     </SearchContainer>
@@ -58,26 +68,18 @@ const SearchBar = (props: TextInputProps) => {
 
 const HeaderContainer = styled.TouchableOpacity(
   {
-    marginTop: 8,
-    marginHorizontal: 6,
-    padding: 6,
-    paddingHorizontal: 8,
-    borderTopLeftRadius: 6,
-    borderTopRightRadius: 6,
     flexDirection: 'row',
     alignItems: 'center',
   },
   ({ selected, theme }) => ({
-    backgroundColor: selected ? theme.sectionActiveColor : undefined,
+    marginTop: theme.storyList.sectionSpacing,
+    paddingHorizontal: theme.storyList.headerPaddingHorizontal,
+    paddingVertical: theme.storyList.headerPaddingVertical,
+    backgroundColor: selected ? theme.storyList.sectionActiveBackgroundColor : undefined,
+    borderTopLeftRadius: theme.storyList.sectionBorderRadius,
+    borderTopRightRadius: theme.storyList.sectionBorderRadius,
   })
 );
-
-const StoryListContainer = styled.View(({ theme }) => ({
-  flex: 1,
-  borderRightWidth: StyleSheet.hairlineWidth,
-  borderRightColor: theme.borderColor,
-  backgroundColor: theme.storyListBackgroundColor,
-}));
 
 interface SectionProps {
   title: string;
@@ -89,7 +91,7 @@ const SectionHeader = React.memo(({ title, onPress }: SectionProps) => {
   return (
     <HeaderContainer key={title} selected={selected} onPress={onPress} activeOpacity={0.8}>
       <GridIcon />
-      <Header selected={selected}>{title}</Header>
+      <SectionHeaderText selected={selected}>{title}</SectionHeaderText>
     </HeaderContainer>
   );
 });
@@ -108,23 +110,20 @@ const ItemTouchable = styled.TouchableOpacity<{
   isLastItem: boolean;
 }>(
   {
-    marginHorizontal: 6,
-    padding: 6,
-    paddingLeft: 24,
     flexDirection: 'row',
     alignItems: 'center',
   },
-  ({ selected, sectionSelected, isLastItem, theme }) => {
-    return {
-      backgroundColor: selected
-        ? theme?.listItemActiveColor ?? '#1ea7fd'
-        : sectionSelected
-        ? theme?.sectionActiveColor
-        : undefined,
-      borderBottomLeftRadius: isLastItem ? 6 : undefined,
-      borderBottomRightRadius: isLastItem ? 6 : undefined,
-    };
-  }
+  ({ selected, sectionSelected, isLastItem, theme }) => ({
+    padding: theme.storyList.storyPaddingHorizontal,
+    paddingStart: theme.storyList.storyIndent,
+    backgroundColor: selected
+      ? theme.storyList.storySelectedBackgroundColor
+      : sectionSelected
+      ? theme.storyList.sectionActiveBackgroundColor
+      : undefined,
+    borderBottomLeftRadius: isLastItem ? theme.storyList.sectionBorderRadius : undefined,
+    borderBottomRightRadius: isLastItem ? theme.storyList.sectionBorderRadius : undefined,
+  })
 );
 
 const ListItem = React.memo(
@@ -143,7 +142,7 @@ const ListItem = React.memo(
         isLastItem={isLastItem}
       >
         <StoryIcon selected={selected} />
-        <Name selected={selected}>{title}</Name>
+        <StoryNameText selected={selected}>{title}</StoryNameText>
       </ItemTouchable>
     );
   },
@@ -187,6 +186,7 @@ function keyExtractor(item: any, index) {
 const StoryListView = ({ storyIndex }: Props) => {
   const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
   const [data, setData] = useState<DataItem[]>(originalData);
+  const theme = useTheme();
 
   const handleChangeSearchText = (text: string) => {
     const query = text.trim();
@@ -243,7 +243,7 @@ const StoryListView = ({ storyIndex }: Props) => {
   );
 
   return (
-    <StoryListContainer>
+    <Box flex>
       <SearchBar
         testID="Storybook.ListView.SearchBar"
         onChangeText={handleChangeSearchText}
@@ -251,7 +251,13 @@ const StoryListView = ({ storyIndex }: Props) => {
       />
       <SectionList
         style={styles.sectionList}
-        contentContainerStyle={styles.sectionListContentContainer}
+        contentContainerStyle={[
+          styles.sectionListContentContainer,
+          {
+            paddingVertical: theme.panel.paddingVertical,
+            paddingHorizontal: theme.panel.paddingHorizontal,
+          },
+        ]}
         testID="Storybook.ListView"
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
@@ -259,7 +265,7 @@ const StoryListView = ({ storyIndex }: Props) => {
         sections={data}
         stickySectionHeadersEnabled={false}
       />
-    </StoryListContainer>
+    </Box>
   );
 };
 

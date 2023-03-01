@@ -1,6 +1,8 @@
 # Migration
 
 - [Migration](#migration)
+  - [From version 5.3.x to 6.5.x](#from-version-53x-to-65x) 
+    - [Theming](#theming)
   - [From version 5.2.x to 5.3.x](#from-version-52x-to-53x)
     - [To main.js configuration](#to-mainjs-configuration)
     - [Create React App preset](#create-react-app-preset)
@@ -75,6 +77,36 @@
     - [Webpack upgrade](#webpack-upgrade)
     - [Packages renaming](#packages-renaming)
     - [Deprecated embedded addons](#deprecated-embedded-addons)
+
+## From version 5.3.x to 6.5.x
+
+### Theming
+
+The theme structure in Storybook 6.5 provides much more granular control over
+more of the Storybook UI, including addons, this unfortunately makes it
+difficult to provide backwards compatibility. If you were previously using a
+custom theme you will now need to migrate it to the new theme.
+
+The themeable values are comprehensively listed in the `Theme` type in
+[theme.ts](https://github.com/storybookjs/react-native/blob/next-6.0/app/react-native/src/preview/components/Shared/theme.ts).
+
+Below the old theme keys are listed against a comparable key in the new theme,
+although bear in mind that there are many more aspects of the UI that can be
+themed now, this is just to help get you started:
+
+- `backgroundColor`: `backgroundColor`
+- `storyListBackgroundColor`: `panel.backgroundColor`
+- `listItemTextColor`: `storyList.storyTextColor`
+- `listItemActiveColor`: `storyList.storySelectedBackgroundColor`
+- `listItemActiveTextColor`: `storyList.storySelectedTextColor`
+- `headerTextColor`: `storyList.headerTextColor`
+- `labelColor`: `inputs.labelTextColor`
+- `borderColor`: `panel.borderColor`, `navigation.borderColor`, `inputs.text.borderColor`, `inputs.radio.borderColor`, `inputs.swatch.borderColor`
+- `previewBorderColor`: The preview no longer has a border and uses an elevation shadow instead
+- `buttonTextColor`: `tabs.inactiveTextColor`, `button.primary.textColor`, `button.secondary.textColor`
+- `buttonActiveTextColor`: `tabs.activeTextColor`
+- `secondaryLabelColor`: `inputs.slider.valueTextColor`
+
 
 ## From version 5.2.x to 5.3.x
 

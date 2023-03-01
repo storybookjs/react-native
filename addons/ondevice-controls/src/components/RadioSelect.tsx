@@ -1,6 +1,5 @@
 import styled from '@emotion/native';
 import React from 'react';
-import { StyleSheet } from 'react-native';
 
 interface RadioProps {
   data: Array<Record<string, any>>;
@@ -13,37 +12,37 @@ const RadioContainer = styled.View(({ isInline }: any) => ({
   flexDirection: isInline ? 'row' : 'column',
   alignItems: isInline ? 'center' : 'flex-start',
   flexWrap: 'wrap',
-  margin: 10,
 }));
 
-const RadioTouchable = styled.TouchableOpacity(() => ({
-  marginRight: 8,
+const RadioTouchable = styled.TouchableOpacity(({ theme }) => ({
   alignItems: 'center',
   flexDirection: 'row',
-  padding: 4,
+  paddingVertical: theme.inputs.radio.itemSpacing,
 }));
 
 const RadioCircle = styled.View(({ theme }) => ({
-  width: 16,
-  height: 16,
-  borderRadius: 8,
+  width: theme.inputs.radio.height,
+  height: theme.inputs.radio.height,
+  borderWidth: theme.inputs.radio.borderWidth,
+  borderColor: theme.inputs.radio.borderColor,
+  borderRadius: theme.tokens.borderRadius.round,
+  backgroundColor: theme.inputs.radio.backgroundColor,
   alignItems: 'center',
   justifyContent: 'center',
-  marginRight: 4,
-  borderWidth: StyleSheet.hairlineWidth,
-  borderColor: theme.borderColor || '#e6e6e6',
+  paddingVertical: theme.inputs.radio.paddingVertical,
+  paddingHorizontal: theme.inputs.radio.paddingHorizontal,
 }));
 
-const RadioInnerCircle = styled.View(({ selected }: any) => ({
-  position: 'absolute',
-  height: 12,
-  width: 12,
-  borderRadius: 6,
-  backgroundColor: selected ? '#66bf3c' : 'transparent',
+const RadioInnerCircle = styled.View(({ theme, selected }: any) => ({
+  height: '100%',
+  width: '100%',
+  borderRadius: theme.tokens.borderRadius.round,
+  backgroundColor: selected ? theme.inputs.radio.activeBackgroundColor : 'transparent',
 }));
 
-const RadioLabel = styled.Text(() => ({
-  fontSize: 13,
+const RadioLabel = styled.Text(({ theme }) => ({
+  fontSize: theme.inputs.radio.fontSize,
+  paddingStart: theme.inputs.radio.labelSpacing,
 }));
 
 const RadioSelect = ({ data = [], value = '', onChange, isInline }: RadioProps) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import PropTypes from 'prop-types';
 import { SET_CURRENT_STORY, FORCE_RE_RENDER } from '@storybook/core-events';
 import { SET, SET_OPTIONS, RESET, CHANGE, CLICK } from '@storybook/addon-knobs';
@@ -12,17 +12,26 @@ const getTimestamp = () => +new Date();
 const DEFAULT_GROUP_ID = 'Other';
 
 const Touchable = styled.TouchableOpacity(({ theme }) => ({
-  borderRadius: 2,
-  borderWidth: 1,
-  borderColor: theme.borderColor || '#e6e6e6',
-  padding: 4,
-  margin: 10,
+  backgroundColor: theme.button.secondary.backgroundColor,
+  borderRadius: theme.button.secondary.borderRadius,
+  borderWidth: theme.button.secondary.borderWidth,
+  borderColor: theme.button.secondary.borderColor,
+  paddingVertical: theme.button.paddingVertical,
+  paddingHorizontal: theme.button.paddingHorizontal,
   justifyContent: 'center',
   alignItems: 'center',
 }));
 
 const ResetButton = styled.Text(({ theme }) => ({
-  color: theme.buttonTextColor || '#999999',
+  color: theme.button.secondary.textColor,
+  fontSize: theme.button.fontSize,
+  fontWeight: theme.button.fontWeight,
+}));
+const Paragraph = styled.Text(({ theme }) => ({
+  marginBottom: theme.tokens.spacing3,
+}));
+const LinkText = styled.Text(({ theme }) => ({
+  color: theme.text.linkColor,
 }));
 
 export default class Panel extends React.Component {
@@ -169,21 +178,43 @@ export default class Panel extends React.Component {
     knobsArray = knobsArray.map((key) => knobs[key]);
 
     if (knobsArray.length === 0) {
-      return <Text>NO KNOBS</Text>;
+      return (
+        <>
+          <Paragraph>This story is not configured to handle knobs.</Paragraph>
+          <Paragraph>
+            Knobs are deprecated, consider migrating{' '}
+            <LinkText
+              onPress={() =>
+                Linking.openURL('https://storybook.js.org/docs/react/essentials/controls')
+              }
+            >
+              to Storybook controls
+            </LinkText>{' '}
+            and see{' '}
+            <LinkText
+              onPress={() =>
+                Linking.openURL(
+                  'https://github.com/storybookjs/react-native/tree/next-6.0/examples/expo-example/components/ControlExamples'
+                )
+              }
+            >
+              examples in the Storybook React Native repository.
+            </LinkText>
+          </Paragraph>
+        </>
+      );
     }
 
     return (
-      <View style={{ flex: 1, paddingTop: 10 }}>
+      <View style={{ flex: 1 }}>
         {groupIds.length > 0 && (
           <GroupTabs groups={groups} onGroupSelect={this.onGroupSelect} selectedGroup={groupId} />
         )}
-        <View>
-          <PropForm
-            knobs={knobsArray}
-            onFieldChange={this.handleChange}
-            onFieldClick={this.handleClick}
-          />
-        </View>
+        <PropForm
+          knobs={knobsArray}
+          onFieldChange={this.handleChange}
+          onFieldClick={this.handleClick}
+        />
         <Touchable onPress={this.reset}>
           <ResetButton>RESET</ResetButton>
         </Touchable>

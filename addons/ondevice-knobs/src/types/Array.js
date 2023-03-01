@@ -2,14 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from '@emotion/native';
 
+import { inputStyle } from './common';
+
 const Input = styled.TextInput(({ theme }) => ({
-  borderWidth: 1,
-  borderColor: theme.borderColor || '#e6e6e6',
-  borderRadius: 2,
-  fontSize: 13,
-  padding: 5,
-  margin: 10,
-  color: theme.labelColor || 'black',
+  ...inputStyle(theme),
 }));
 
 function formatArray(value, separator) {

@@ -7,18 +7,21 @@ import { useArgs } from './hooks';
 import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';
 
-const Touchable = styled.TouchableOpacity(({ theme }) => ({
-  borderRadius: 2,
-  borderWidth: 1,
-  borderColor: theme.borderColor || '#e6e6e6',
-  padding: 4,
-  margin: 10,
+const ButtonTouchable = styled.TouchableOpacity(({ theme }) => ({
+  backgroundColor: theme.button.secondary.backgroundColor,
+  borderRadius: theme.button.secondary.borderRadius,
+  borderWidth: theme.button.secondary.borderWidth,
+  borderColor: theme.button.secondary.borderColor,
+  paddingVertical: theme.button.paddingVertical,
+  paddingHorizontal: theme.button.paddingHorizontal,
   justifyContent: 'center',
   alignItems: 'center',
 }));
 
-const ResetButton = styled.Text(({ theme }) => ({
-  color: theme.buttonTextColor || '#999999',
+const ButtonText = styled.Text(({ theme }) => ({
+  color: theme.button.secondary.textColor,
+  fontSize: theme.button.fontSize,
+  fontWeight: theme.button.fontWeight,
 }));
 
 export declare type SortType = 'alpha' | 'requiredFirst' | 'none';
@@ -86,9 +89,9 @@ const ControlsPanel = ({ api }: { api: API }) => {
   return (
     <>
       <PropForm args={argsObject} isPristine={isPristine} onFieldChange={updateArgsOnFieldChange} />
-      <Touchable onPress={handleReset}>
-        <ResetButton>RESET</ResetButton>
-      </Touchable>
+      <ButtonTouchable onPress={handleReset}>
+        <ButtonText>RESET</ButtonText>
+      </ButtonTouchable>
     </>
   );
 };

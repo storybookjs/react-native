@@ -1,18 +1,26 @@
-import React, { ReactNode } from 'react';
-import { StyleSheet, Animated } from 'react-native';
+import React from 'react';
+import { StyleSheet, Animated, StyleProp, ViewStyle } from 'react-native';
 import styled from '@emotion/native';
 
-// @ts-ignore styled is being weird ;(
-const Container = styled(Animated.View)(({ theme }) => ({
-  backgroundColor: theme.backgroundColor || 'white',
-}));
-
-interface Props {
-  style: any[];
-  children: ReactNode;
+interface PanelProps {
+  edge: 'left' | 'right';
+  style: StyleProp<Animated.AnimatedProps<ViewStyle>>;
+  children: React.ReactNode;
 }
 
-const Panel = ({ children, style }: Props) => (
-  <Container style={[StyleSheet.absoluteFillObject, ...style]}>{children}</Container>
-);
+const Container = styled(Animated.View)(({ theme, edge }) => ({
+  backgroundColor: theme.panel.backgroundColor,
+  borderStartWidth: edge === 'left' ? theme.panel.borderWidth : undefined,
+  borderEndWidth: edge === 'right' ? theme.panel.borderWidth : undefined,
+  borderColor: theme.panel.borderColor,
+}));
+
+const Panel = ({ edge, children, style }: PanelProps) => {
+  const containerStyle = StyleSheet.flatten([StyleSheet.absoluteFillObject, style]);
+  return (
+    <Container edge={edge} style={containerStyle}>
+      {children}
+    </Container>
+  );
+};
 export default React.memo(Panel);

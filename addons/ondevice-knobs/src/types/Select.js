@@ -6,13 +6,10 @@ import React from 'react';
 import ModalPicker from 'react-native-modal-selector';
 import styled from '@emotion/native';
 
+import { inputStyle } from './common';
+
 const Input = styled.TextInput(({ theme }) => ({
-  borderWidth: 1,
-  borderRadius: 2,
-  padding: 5,
-  margin: 10,
-  borderColor: theme.borderColor || '#e6e6e6',
-  color: theme.labelColor || 'black',
+  ...inputStyle(theme),
 }));
 
 class SelectType extends React.Component {

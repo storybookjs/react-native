@@ -1,5 +1,4 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
 import { Switch } from './Boolean';
 
 const BooleanExample: ComponentMeta<typeof Switch> = {
@@ -9,8 +8,6 @@ const BooleanExample: ComponentMeta<typeof Switch> = {
 
 export default BooleanExample;
 
-type BooleanStory = ComponentStory<typeof Switch>;
+type BooleanStory = ComponentStoryObj<typeof Switch>;
 
-export const Basic: BooleanStory = (args) => {
-  return <Switch {...args} />;
-};
+export const Basic: BooleanStory = {};
