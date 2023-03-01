@@ -20,13 +20,14 @@ const PressableSwatch = styled.TouchableOpacity(({ theme }: any) => ({
 }));
 
 const ColorSwatch = styled.View(({ theme, color }: any) => ({
-  flex: 1,
   height: theme.inputs.swatch.height,
+  width: '100%',
   borderRadius: theme.inputs.swatch.innerBorderRadius,
   backgroundColor: color,
 }));
 
 const ValueContainer = styled.View(({ theme }: any) => ({
+  flex: 1,
   flexDirection: 'row',
   justifyContent: 'space-between',
   padding: theme.tokens.spacing1,
