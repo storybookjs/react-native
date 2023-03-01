@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const theme = {
-  OBJECT_PREVIEW_ARRAY_MAX_PROPERTIES: 10,
-  OBJECT_PREVIEW_OBJECT_MAX_PROPERTIES: 5,
   OBJECT_NAME_COLOR: 'rgb(136, 19, 145)',
   OBJECT_VALUE_NULL_COLOR: 'rgb(128, 128, 128)',
   OBJECT_VALUE_UNDEFINED_COLOR: 'rgb(128, 128, 128)',
@@ -14,10 +12,7 @@ const theme = {
   OBJECT_VALUE_BOOLEAN_COLOR: 'rgb(28, 0, 207)',
   OBJECT_VALUE_FUNCTION_PREFIX_COLOR: 'rgb(13, 34, 170)',
 
-  ARROW_COLOR: '#6e6e6e',
-  ARROW_MARGIN_RIGHT: 3,
-  ARROW_FONT_SIZE: 12,
-  ARROW_ANIMATION_DURATION: '0',
+  ARROW_COLOR: '#859499',
 };
 
 interface InspectProps {
@@ -27,20 +22,20 @@ interface InspectProps {
 
 const Inspect = ({ name, value }: InspectProps) => {
   const [expanded, setExpanded] = useState(false);
+  const canExpand =
+    name &&
+    ((Array.isArray(value) && value.length) ||
+      (value && typeof value === 'object' && Object.keys(value).length));
+  const toggleExpanded = React.useCallback(() => {
+    if (canExpand) {
+      setExpanded((currentValue) => !currentValue);
+    }
+  }, [canExpand]);
+
   const toggle = (
-    <View style={styles.container}>
-      {name &&
-      ((Array.isArray(value) && value.length) ||
-        (value &&
-          typeof value === 'object' &&
-          !Array.isArray(value) &&
-          Object.keys(value).length)) ? (
-        <Button
-          onPress={() => setExpanded((wasExpanded) => !wasExpanded)}
-          title={!expanded ? '▶' : '▼'}
-        />
-      ) : null}
-    </View>
+    <Text style={{ color: canExpand ? theme.ARROW_COLOR : 'transparent', paddingRight: 8 }}>
+      {expanded ? '▼' : '▶'}
+    </Text>
   );
 
   const nameComponent = name ? (
@@ -51,11 +46,11 @@ const Inspect = ({ name, value }: InspectProps) => {
     if (name) {
       return (
         <>
-          <View style={styles.row}>
+          <TouchableOpacity onPress={toggleExpanded} style={styles.row}>
             {toggle}
             {nameComponent}
             <Text>{`: ${value.length === 0 ? '[]' : expanded ? '[' : '[...]'}`}</Text>
-          </View>
+          </TouchableOpacity>
           {expanded ? (
             <View style={styles.expanded}>
               {value.map((v, i) => (
@@ -72,7 +67,7 @@ const Inspect = ({ name, value }: InspectProps) => {
       );
     }
     return (
-      <View>
+      <>
         <Text>[</Text>
         {value.map((v, i) => (
           <View key={i} style={styles.spacingLeft}>
@@ -80,18 +75,18 @@ const Inspect = ({ name, value }: InspectProps) => {
           </View>
         ))}
         <Text>]</Text>
-      </View>
+      </>
     );
   }
   if (value && typeof value === 'object' && !(value instanceof RegExp)) {
     if (name) {
       return (
         <>
-          <View style={styles.row}>
+          <TouchableOpacity style={styles.row} onPress={toggleExpanded}>
             {toggle}
             {nameComponent}
             <Text>{`: ${Object.keys(value).length === 0 ? '{}' : expanded ? '{' : '{...}'}`}</Text>
-          </View>
+          </TouchableOpacity>
           {expanded ? (
             <View style={styles.expanded}>
               {Object.entries(value).map(([key, v]) => (
@@ -108,7 +103,7 @@ const Inspect = ({ name, value }: InspectProps) => {
       );
     }
     return (
-      <View>
+      <>
         <Text>{'{'}</Text>
         {Object.entries(value).map(([key, v]) => (
           <View key={key}>
@@ -116,7 +111,7 @@ const Inspect = ({ name, value }: InspectProps) => {
           </View>
         ))}
         <Text>{'}'}</Text>
-      </View>
+      </>
     );
   }
   if (name) {
@@ -129,11 +124,7 @@ const Inspect = ({ name, value }: InspectProps) => {
       </View>
     );
   }
-  return (
-    <View>
-      <Value value={value} />
-    </View>
-  );
+  return <Value value={value} />;
 };
 
 function Value({ value }: { value: any }) {
@@ -174,7 +165,6 @@ export default Inspect;
 
 const styles = StyleSheet.create({
   spacingLeft: { marginLeft: 20 },
-  expanded: { marginLeft: 40 },
-  row: { flexDirection: 'row', alignItems: 'center' },
-  container: { width: 40, height: 40 },
+  expanded: { marginLeft: 20 },
+  row: { paddingBottom: 8, flexDirection: 'row', alignItems: 'center' },
 });
