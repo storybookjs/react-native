@@ -28,7 +28,6 @@ const RadioCircle = styled.View(({ theme }) => ({
 }));
 
 const RadioInnerCircle = styled.View(({ theme, selected }) => ({
-  position: 'absolute',
   height: '100%',
   width: '100%',
   borderRadius: theme.tokens.borderRadius.round,
