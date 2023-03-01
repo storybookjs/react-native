@@ -41,7 +41,6 @@ interface ThemeTokens {
     large: number;
     round: number;
   };
-  // backgroundColor: string;
   borderWidthNormal: number;
   /** Elevation shadows */
   elevation: {
