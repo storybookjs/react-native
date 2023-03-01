@@ -8,7 +8,7 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 
 > NOTE: `@storybook/react-native` requires atleast 6.5.14, please set other storybook packages (like @storybook/addons) to `^6.5.14` or newer
 
-Version v6.5 should be coming out soon and the release candidate is ready for you to test. If you want to help out or are just curious then check out the [project board](https://github.com/storybookjs/react-native/projects/2?fullscreen=true) to see the open issues related to v6+.
+Version v6.5 should be coming out soon and the release candidate is ready for you to test. If you want to help out or are just curious then check out the [project board](https://github.com/orgs/storybookjs/projects/12) to see the open issues related to v6+.
 
 ![picture of storybook](https://user-images.githubusercontent.com/3481514/145904252-92e3dc1e-591f-410f-88a1-b4250f4ba6f2.png)
 
@@ -184,12 +184,11 @@ For details of each ondevice addon you can see the readme:
 Storybook on react native is a normal React Native component that can be used or hidden anywhere in your RN application based on your own logic.
 
 You can also create a separate app just for storybook that also works as a package for your visual components.
-
-## Using the DEV Menu
-
 Some have opted to toggle the storybook component by using a custom option in the react native developer menu.
 
-An example of this can found in the ignite CLI boiler plate for storybook which you can see [here](https://github.com/infinitered/ignite/blob/master/boilerplate/storybook/toggle-storybook.tsx)
+- [Heres an approach for react native cli](https://dev.to/dannyhw/multiple-entry-points-for-react-native-storybook-4dkp)
+- [Heres an article about how you can do it in expo](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
+
 
 
 # getStorybookUI options
