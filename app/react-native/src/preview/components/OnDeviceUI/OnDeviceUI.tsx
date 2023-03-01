@@ -84,6 +84,8 @@ const Container = styled.View(({ theme }) => ({
   flex: 1,
   backgroundColor: theme.preview.containerBackgroundColor,
   ...(IS_ANDROID && IS_EXPO ? styles.expoAndroidContainer : undefined),
+
+  ...Platform.select({ web: { overflow: 'hidden' } }),
 }));
 
 const OnDeviceUI = ({
