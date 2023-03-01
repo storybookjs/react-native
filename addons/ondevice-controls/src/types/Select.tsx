@@ -9,17 +9,8 @@ const Input = styled.TextInput(({ theme }) => ({
   ...inputStyle(theme),
 }));
 
-const Select = (args: any) => <select {...args} />;
-const Container = styled.View(({ theme }) => ({
-  backgroundColor: theme.inputs.text.backgroundColor,
-  borderRadius: theme.inputs.text.borderRadius,
-  paddingHorizontal: theme.inputs.text.paddingHorizontal,
-  paddingVertical: theme.inputs.text.paddingVertical,
-}));
-
-const WebSelect = styled(Select)(({ theme }) => ({
-  border: 'none',
-  color: theme.inputs.labelTextColor,
+const WebSelect = styled('select' as any)(({ theme }) => ({
+  ...inputStyle(theme),
 }));
 
 export interface SelectProps {
@@ -61,15 +52,13 @@ const SelectType = ({ arg, onChange }: SelectProps) => {
       onChange(event.target.value);
     };
     return (
-      <Container>
-        <WebSelect value={value} onChange={handleChange}>
-          {options.map(({ label, key }) => (
-            <option key={`${label}-${key}`} value={key}>
-              {label}
-            </option>
-          ))}
-        </WebSelect>
-      </Container>
+      <WebSelect value={value} onChange={handleChange}>
+        {options.map(({ label, key }) => (
+          <option key={`${label}-${key}`} value={key}>
+            {label}
+          </option>
+        ))}
+      </WebSelect>
     );
   }
 

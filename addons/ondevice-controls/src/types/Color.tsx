@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import styled from '@emotion/native';
 import { ColorPicker, fromHsv, HsvColor } from '../components/color-picker';
+import { inputStyle } from './common';
 
 export interface ColorProps {
   arg: {
@@ -36,6 +37,17 @@ const Touchable = styled.TouchableOpacity(({ theme, color }) => ({
   backgroundColor: color,
 }));
 
+const WebInput = styled('input' as any)(({ theme }) => ({
+  width: theme.inputs.swatch.height,
+  height: theme.inputs.swatch.height,
+  borderWidth: theme.inputs.swatch.borderWidth,
+  borderColor: theme.inputs.swatch.borderColor,
+  borderRadius: theme.inputs.swatch.outerBorderRadius,
+  paddingVertical: theme.inputs.swatch.paddingVertical,
+  paddingHorizontal: theme.inputs.swatch.paddingHorizontal,
+  backgroundColor: theme.inputs.swatch.backgroundColor,
+}));
+
 const ButtonTouchable = styled.TouchableOpacity(({ theme, primary }) => {
   const buttonTheme = primary ? theme.button.primary : theme.button.secondary;
   return {
@@ -59,8 +71,6 @@ const ButtonText = styled.Text(({ theme, primary }) => {
   };
 });
 
-const webInputStyles = { margin: 10 };
-
 const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [currentColor, setCurrentColor] = useState<HsvColor | null>(null);
@@ -79,12 +89,7 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
 
   if (Platform.OS === 'web') {
     return (
-      <input
-        type="color"
-        style={webInputStyles}
-        value={arg.value}
-        onChange={(event) => onChange(event.target.value)}
-      />
+      <WebInput type="color" value={arg.value} onChange={(event) => onChange(event.target.value)} />
     );
   }
 

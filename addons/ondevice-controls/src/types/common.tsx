@@ -15,6 +15,14 @@ export function inputStyle(theme: any, isTextInput = true) {
         // but not for multiline inputs.
         paddingVertical: isTextInput ? 0 : undefined,
       },
+      web: {
+        // The web (that isn't RNW) doesn't understand `paddingHorizontal` etc.
+        paddingLeft: theme.inputs.text.paddingHorizontal,
+        paddingRight: theme.inputs.text.paddingHorizontal,
+        paddingTop: theme.inputs.text.paddingVertical,
+        paddingBottom: theme.inputs.text.paddingVertical,
+        borderStyle: 'solid',
+      },
       default: {
         paddingVertical: theme.inputs.text.paddingVertical,
       },

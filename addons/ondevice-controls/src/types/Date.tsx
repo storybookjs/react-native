@@ -17,6 +17,10 @@ const Touchable = styled.TouchableOpacity(({ theme }: any) => ({
   ...inputStyle(theme, false),
 }));
 
+const WebInput = styled('input' as any)(({ theme }: any) => ({
+  ...inputStyle(theme),
+}));
+
 const Label = styled.Text(({ theme }: any) => ({
   fontSize: theme.inputs.text.fontSize,
   color: theme.inputs.text.textColor,
@@ -71,7 +75,7 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
   if (Platform.OS === 'web') {
     return (
       <View testID={name}>
-        <input
+        <WebInput
           type="datetime-local"
           value={webDateString}
           onChange={(e) => onChange(new Date(e.target.value))}
