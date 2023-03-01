@@ -6174,6 +6174,13 @@ babel-plugin-polyfill-regenerator@^0.4.1:
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.3.3"
 
+babel-plugin-react-docgen-typescript@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen-typescript/-/babel-plugin-react-docgen-typescript-1.5.1.tgz#6fbadf65172814649e8e441e17954a3515751fb1"
+  integrity sha512-gcC2Fw19ooW8U1AvyfuHTqvWOb6xi3IMNuuOgIjf0pfJwkuJFHsGW+JxWF1SKz4rFyQyWnQg3YkxMrJh45n7nA==
+  dependencies:
+    react-docgen-typescript "^1.20.4"
+
 babel-plugin-react-docgen@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen/-/babel-plugin-react-docgen-4.2.1.tgz#7cc8e2f94e8dc057a06e953162f0810e4e72257b"
@@ -16545,6 +16552,11 @@ react-devtools-core@^4.26.1:
   dependencies:
     shell-quote "^1.6.1"
     ws "^7"
+
+react-docgen-typescript@^1.20.4:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.22.0.tgz#00232c8e8e47f4437cac133b879b3e9437284bee"
+  integrity sha512-MPLbF8vzRwAG3GcjdL+OHQlhgtWsLTXs+7uJiHfEeT3Ur7IsZaNYqRTLQ9sj2nB6M6jylcPCeCmH7qbszJmecg==
 
 react-docgen-typescript@^2.1.1:
   version "2.2.2"
