@@ -152,6 +152,12 @@ export class View {
     const self = this;
 
     const appliedTheme = deepmerge(theme, params.theme ?? {});
+    // Sync the Storybook parameters (external) with app UI state (internal), to initialise them.
+    syncExternalUI({
+      isUIVisible: params.isUIHidden !== undefined ? !params.isUIHidden : undefined,
+      isSplitPanelVisible: params.isSplitPanelVisible,
+    });
+
     return () => {
       const setContext = useSetStoryContext();
       const [, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -174,11 +180,6 @@ export class View {
       }, []);
 
       if (onDeviceUI) {
-        syncExternalUI({
-          isUIVisible: params.isUIHidden !== undefined ? !params.isUIHidden : undefined,
-          isSplitPanelVisible: params.isSplitPanelVisible,
-        });
-
         return (
           <SafeAreaProvider>
             <ThemeProvider theme={appliedTheme}>
