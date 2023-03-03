@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import type { StoryContext } from '@storybook/csf';
 import { atom, useAtom, useAtomValue, useSetAtom, getDefaultStore } from 'jotai';
 import { useTheme as useEmotionTheme } from 'emotion-theming';
@@ -63,7 +63,8 @@ export function useTheme() {
 }
 
 /**
- * A boolean atom creator for an atom that can only be toggled between true/false.
+ * A boolean atom creator for an atom that can only be toggled between
+ * true/false.
  *
  * @see {@link https://jotai.org/docs/recipes/atom-creators#atomwithtoggle}
  */
@@ -78,7 +79,8 @@ export function atomWithToggle(initialValue?: boolean) {
 const isUIVisibleAtom = atomWithToggle(true);
 
 /**
- * Hook that retrieves the current state, and a setter, for the `isUIVisible` atom.
+ * Hook that retrieves the current state, and a setter, for the `isUIVisible`
+ * atom.
  */
 export function useIsUIVisible() {
   return useAtom(isUIVisibleAtom);
@@ -110,4 +112,27 @@ export function syncExternalUI({ isUIVisible, isSplitPanelVisible }: SyncExterna
   if (isSplitPanelVisible !== undefined) {
     jotaiStore.set(isSplitPanelVisibleAtom, isSplitPanelVisible);
   }
+}
+
+const selectedAddonAtom = atom(undefined as string);
+
+/**
+ * Hook that manages the state for the currently selected addon.
+ *
+ * This value persists across stories, so that the same addon will be selected
+ * when switching stories.
+ */
+export function useSelectedAddon(initialValue?: string) {
+  const result = useAtom(selectedAddonAtom);
+  const set = result[1];
+  React.useEffect(() => {
+    const jotaiStore = getDefaultStore();
+    // Only apply the initial value once, and only if the atom doesn't have a
+    // value yet.
+    if (jotaiStore.get(selectedAddonAtom) === undefined) {
+      set(initialValue);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return result;
 }
