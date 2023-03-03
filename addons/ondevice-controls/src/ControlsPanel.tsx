@@ -54,8 +54,10 @@ const ControlsPanel = ({ api }: { api: API }) => {
   const [isPristine, setIsPristine] = useState(true);
   const [argsFromHook, updateArgs, resetArgs] = useArgs(storyId, store);
   const { argsObject, argTypes, parameters } = React.useMemo(() => {
-    const { argTypes, parameters } = store.fromId(storyId) as StoryContext;
-    const argsObject = Object.entries(argTypes).reduce((prev, [key, argType]) => {
+    const { argTypes: storyArgTypes, parameters: storyParameters } = store.fromId(
+      storyId
+    ) as StoryContext;
+    const storyArgsObject = Object.entries(storyArgTypes).reduce((prev, [key, argType]) => {
       const isControl = Boolean(argType?.control);
       return isControl
         ? {
@@ -70,9 +72,9 @@ const ControlsPanel = ({ api }: { api: API }) => {
         : prev;
     }, {});
     return {
-      argTypes,
-      parameters,
-      argsObject,
+      argTypes: storyArgTypes,
+      parameters: storyParameters,
+      argsObject: storyArgsObject,
     };
   }, [store, storyId, argsFromHook]);
   const hasControls = Object.keys(argTypes).length > 0;
