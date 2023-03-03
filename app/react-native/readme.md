@@ -227,6 +227,8 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
         -- additional query string to pass to websockets
     isUIHidden: Boolean (false)
         -- should the ui be closed initially.
+    isSplitPanelVisible: Boolean (false)
+        -- should the split panel (addons on the bottom) be visible initially.
     tabOpen: Number (0)
         -- which tab should be open. -1 Navigator, 0 Preview, 1 Addons
     initialSelection: Object (null)
