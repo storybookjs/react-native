@@ -1,8 +1,24 @@
 import React from 'react';
 
-import { Text, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { Text, Keyboard } from 'react-native';
 import { useStoryContext } from '../../../hooks';
 import { Box } from '../Shared/layout';
+
+/**
+ * This is a handler for `onStartShouldSetResponder`, which dismisses the
+ * keyboard as a side effect but then responds with `false` to the responder
+ * system, so as not to start actually handling the touch.
+ *
+ * The objective here is to dismiss the keyboard when the story view is tapped,
+ * but in a way that won't interfere with presses or swipes. Using a
+ * `Touchable...` component as a wrapper will start to handle the touch, which
+ * will swallow swipe gestures that should have gone on to a child view, such
+ * as `ScrollView`.
+ */
+function dismissOnStartResponder() {
+  Keyboard.dismiss();
+  return false;
+}
 
 const StoryView = () => {
   const context = useStoryContext();
@@ -11,14 +27,10 @@ const StoryView = () => {
   if (context && context.unboundStoryFn) {
     const { unboundStoryFn: StoryComponent } = context;
 
-    // Wrapped in `TouchableWithoutFeedback` so that a tap in the story view,
-    // outside of something that handles the press, will dismiss the keyboard.
     return (
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <Box flex key={id} testID={id}>
-          {StoryComponent && <StoryComponent {...context} />}
-        </Box>
-      </TouchableWithoutFeedback>
+      <Box flex key={id} testID={id} onStartShouldSetResponder={dismissOnStartResponder}>
+        {StoryComponent && <StoryComponent {...context} />}
+      </Box>
     );
   }
 
