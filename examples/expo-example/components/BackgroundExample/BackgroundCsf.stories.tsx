@@ -21,6 +21,8 @@ const BackgroundMeta: ComponentMeta<typeof Background> = {
       values: [
         { name: 'warm', value: 'hotpink' },
         { name: 'cool', value: 'deepskyblue' },
+        { name: 'white', value: 'white' },
+        { name: 'black', value: 'black' },
       ],
     },
   },

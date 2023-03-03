@@ -37,7 +37,7 @@ const ArrayType = ({
       testID={name}
       underlineColorAndroid="transparent"
       autoCapitalize="none"
-      defaultValue={value.join(separator)}
+      defaultValue={value?.join(separator)}
       onChangeText={(text) => {
         const formatted = formatArray(text, separator);
         onChange(formatted);

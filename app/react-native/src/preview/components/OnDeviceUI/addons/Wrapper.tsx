@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 import styled from '@emotion/native';
 import { Collection } from '@storybook/addons';
 
-import { useTheme } from '../../../../hooks';
+import { useTheme, useUpdateOnStoryChanged } from '../../../../hooks';
 
 export interface Props {
   panels: Collection;
@@ -16,6 +16,9 @@ const Container = styled.View<{ selected: boolean }>(({ selected }) => ({
 }));
 
 const Wrapper = ({ panels, addonSelected }: Props) => {
+  // Force a re-render when the current story changes, to ensure that the addon
+  // panels state is not desynced.
+  useUpdateOnStoryChanged();
   const theme = useTheme();
   const addonKeys = Object.keys(panels);
   const content = addonKeys.map((id) => {

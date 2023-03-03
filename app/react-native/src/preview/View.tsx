@@ -5,7 +5,7 @@ import { StoryContext, toId } from '@storybook/csf';
 import { addons } from '@storybook/addons';
 import { ThemeProvider } from 'emotion-theming';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useSetStoryContext } from '../hooks';
+import { useSetStoryContext, syncExternalUI } from '../hooks';
 import OnDeviceUI from './components/OnDeviceUI';
 import { theme, Theme } from './components/Shared/theme';
 import type { ReactNativeFramework } from '../types/types-6.0';
@@ -58,6 +58,7 @@ export type Params = {
   shouldPersistSelection?: boolean;
   tabOpen?: number;
   isUIHidden?: boolean;
+  isSplitPanelVisible?: boolean;
   shouldDisableKeyboardAvoidingView?: boolean;
   keyboardAvoidingViewVerticalOffset?: number;
   theme: DeepPartial<Theme>;
@@ -151,6 +152,12 @@ export class View {
     const self = this;
 
     const appliedTheme = deepmerge(theme, params.theme ?? {});
+    // Sync the Storybook parameters (external) with app UI state (internal), to initialise them.
+    syncExternalUI({
+      isUIVisible: params.isUIHidden !== undefined ? !params.isUIHidden : undefined,
+      isSplitPanelVisible: params.isSplitPanelVisible,
+    });
+
     return () => {
       const setContext = useSetStoryContext();
       const [, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -178,7 +185,6 @@ export class View {
             <ThemeProvider theme={appliedTheme}>
               <OnDeviceUI
                 storyIndex={self._storyIndex}
-                isUIHidden={params.isUIHidden}
                 tabOpen={params.tabOpen}
                 shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
                 keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}

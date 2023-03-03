@@ -1,18 +1,8 @@
 import React from 'react';
 
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { useStoryContext } from '../../../hooks';
-
-const styles = StyleSheet.create({
-  container: { flex: 1 },
-  helpContainer: {
-    flex: 1,
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { Box } from '../Shared/layout';
 
 const StoryView = () => {
   const context = useStoryContext();
@@ -21,17 +11,21 @@ const StoryView = () => {
   if (context && context.unboundStoryFn) {
     const { unboundStoryFn: StoryComponent } = context;
 
+    // Wrapped in `TouchableWithoutFeedback` so that a tap in the story view,
+    // outside of something that handles the press, will dismiss the keyboard.
     return (
-      <View key={id} testID={id} style={styles.container}>
-        {StoryComponent && <StoryComponent {...context} />}
-      </View>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <Box flex key={id} testID={id}>
+          {StoryComponent && <StoryComponent {...context} />}
+        </Box>
+      </TouchableWithoutFeedback>
     );
   }
 
   return (
-    <View style={styles.helpContainer}>
+    <Box flex padding={16} alignItems="center" justifyContent="center">
       <Text>Please open navigator and select a story to preview.</Text>
-    </View>
+    </Box>
   );
 };
 

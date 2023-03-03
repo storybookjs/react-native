@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import styled from '@emotion/native';
 import { ColorPicker, fromHsv, HsvColor } from '../components/color-picker';
-import { inputStyle } from './common';
 
 export interface ColorProps {
   arg: {

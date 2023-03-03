@@ -4,7 +4,7 @@ import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
 import { SectionList, SectionListRenderItem, StyleSheet, TextInputProps } from 'react-native';
-import { GridIcon, SearchIcon, StoryIcon } from '../Shared/icons';
+import { Icon } from '../Shared/icons';
 import { Box } from '../Shared/layout';
 import { useIsStorySelected, useIsStorySectionSelected, useTheme } from '../../../hooks';
 
@@ -50,7 +50,7 @@ const SearchBar = (props: TextInputProps) => {
   const theme = useTheme();
   return (
     <SearchContainer>
-      <SearchIcon />
+      <Icon name="search" opacity={0.5} />
       <SearchInput
         {...props}
         autoCapitalize="none"
@@ -90,7 +90,7 @@ const SectionHeader = React.memo(({ title, onPress }: SectionProps) => {
   const selected = useIsStorySectionSelected(title);
   return (
     <HeaderContainer key={title} selected={selected} onPress={onPress} activeOpacity={0.8}>
-      <GridIcon />
+      <Icon name="grid" width={10} height={10} marginRight={6} />
       <SectionHeaderText selected={selected}>{title}</SectionHeaderText>
     </HeaderContainer>
   );
@@ -141,7 +141,7 @@ const ListItem = React.memo(
         sectionSelected={sectionSelected}
         isLastItem={isLastItem}
       >
-        <StoryIcon selected={selected} />
+        <Icon name={selected ? 'story-white' : 'story-blue'} marginRight={6} />
         <StoryNameText selected={selected}>{title}</StoryNameText>
       </ItemTouchable>
     );

@@ -15,7 +15,13 @@ import {
   ViewStyle,
   StyleProp,
 } from 'react-native';
-import { useStoryContextParam, useTheme } from '../../../hooks';
+import {
+  useIsSplitPanelVisible,
+  useIsUIVisible,
+  useStoryContextParam,
+  useTheme,
+} from '../../../hooks';
+import { ANIMATION_DURATION_TRANSITION } from '../../../constants';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 import AbsolutePositionedKeyboardAwareView, {
@@ -23,6 +29,7 @@ import AbsolutePositionedKeyboardAwareView, {
 } from './absolute-positioned-keyboard-aware-view';
 
 import Addons from './addons/Addons';
+import { AddonsSkeleton } from './addons/AddonsSkeleton';
 import {
   getAddonPanelPosition,
   getNavigatorPanelPosition,
@@ -35,7 +42,6 @@ import Panel from './Panel';
 import { useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-const ANIMATION_DURATION = 400;
 const IS_IOS = Platform.OS === 'ios';
 // @ts-ignore: Property 'Expo' does not exist on type 'Global'
 const getExpoRoot = () => global.Expo || global.__expo || global.__exponent;
@@ -47,7 +53,6 @@ interface OnDeviceUIProps {
   storyIndex: StoryIndex;
   url?: string;
   tabOpen?: number;
-  isUIHidden?: boolean;
   shouldDisableKeyboardAvoidingView?: boolean;
   keyboardAvoidingViewVerticalOffset?: number;
 }
@@ -90,7 +95,6 @@ const Container = styled.View(({ theme }) => ({
 
 const OnDeviceUI = ({
   storyIndex,
-  isUIHidden,
   shouldDisableKeyboardAvoidingView,
   keyboardAvoidingViewVerticalOffset,
   tabOpen: initialTabOpen,
@@ -104,7 +108,6 @@ const OnDeviceUI = ({
   const animatedValue = useRef(new Animated.Value(tabOpen));
   const wide = useWindowDimensions().width >= BREAKPOINT;
   const insets = useSafeAreaInsets();
-  const [isUIVisible, setIsUIVisible] = useState(isUIHidden !== undefined ? !isUIHidden : true);
 
   const handleToggleTab = React.useCallback(
     (newTabOpen: number) => {
@@ -114,7 +117,7 @@ const OnDeviceUI = ({
       lastTabOpen.current = tabOpen;
       Animated.timing(animatedValue.current, {
         toValue: newTabOpen,
-        duration: ANIMATION_DURATION,
+        duration: ANIMATION_DURATION_TRANSITION,
         easing: Easing.inOut(Easing.cubic),
         useNativeDriver: true,
       }).start();
@@ -141,6 +144,7 @@ const OnDeviceUI = ({
     }),
   ];
 
+  const [isUIVisible] = useIsUIVisible();
   // The initial value is just a guess until the layout calculation has been done.
   const [navBarHeight, setNavBarHeight] = React.useState(insets.bottom + 40);
   const measureNavigation = React.useCallback(
@@ -162,12 +166,13 @@ const OnDeviceUI = ({
   //      bottom safe area inset and the navigation bar height.
   //
   //   4. Storybook UI is not visible, and `noSafeArea` is true: No margin.
-  const safeAreaMargins = {
+  const safeAreaMargins: ViewStyle = {
     paddingBottom: isUIVisible ? insets.bottom + navBarHeight : noSafeArea ? 0 : insets.bottom,
     paddingTop: !noSafeArea ? insets.top : 0,
+    overflow: 'hidden',
   };
   // The panels always apply the safe area, regardless of the story parameters.
-  const panelSafeAreaMargins = {
+  const panelSafeAreaMargins: ViewStyle = {
     paddingBottom: insets.bottom + navBarHeight,
     paddingTop: insets.top,
   };
@@ -175,11 +180,15 @@ const OnDeviceUI = ({
   // for the safe area and navigation bar.
   const keyboardVerticalOffset =
     -panelSafeAreaMargins.paddingBottom + (keyboardAvoidingViewVerticalOffset ?? 0);
+
+  const [isSplitPanelVisible] = useIsSplitPanelVisible();
+  const isPreviewInactive = tabOpen !== PREVIEW;
+
   return (
     <>
       <Container>
         <KeyboardAvoidingView
-          enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
+          enabled={!shouldDisableKeyboardAvoidingView || isPreviewInactive}
           behavior={IS_IOS ? 'padding' : null}
           keyboardVerticalOffset={keyboardVerticalOffset}
           style={flex}
@@ -191,8 +200,14 @@ const OnDeviceUI = ({
             <Animated.View style={previewWrapperStyles}>
               <Preview style={safeAreaMargins} animatedValue={animatedValue.current}>
                 <StoryView />
+                {isSplitPanelVisible ? (
+                  <Panel edge="top" style={{ flex: 1 }}>
+                    <Addons active />
+                    <AddonsSkeleton visible={isPreviewInactive} />
+                  </Panel>
+                ) : null}
               </Preview>
-              {tabOpen !== PREVIEW ? (
+              {isPreviewInactive ? (
                 <TouchableOpacity
                   style={StyleSheet.absoluteFillObject}
                   onPress={() => handleToggleTab(PREVIEW)}
@@ -220,13 +235,7 @@ const OnDeviceUI = ({
             </Panel>
           </AbsolutePositionedKeyboardAwareView>
         </KeyboardAvoidingView>
-        <Navigation
-          onLayout={measureNavigation}
-          tabOpen={tabOpen}
-          onChangeTab={handleToggleTab}
-          isUIVisible={isUIVisible}
-          setIsUIVisible={setIsUIVisible}
-        />
+        <Navigation onLayout={measureNavigation} tabOpen={tabOpen} onChangeTab={handleToggleTab} />
       </Container>
     </>
   );

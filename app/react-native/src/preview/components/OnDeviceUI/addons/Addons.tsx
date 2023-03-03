@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text } from 'react-native';
 import { addons } from '@storybook/addons';
+import { useSelectedAddon } from '../../../../hooks';
 import AddonsList from './List';
 import AddonWrapper from './Wrapper';
 import { Box } from '../../Shared/layout';
@@ -11,7 +12,7 @@ interface AddonsProps {
 
 const Addons = ({ active }: AddonsProps) => {
   const panels = addons.getElements('panel');
-  const [addonSelected, setAddonSelected] = useState<string | null>(Object.keys(panels)[0] || null);
+  const [addonSelected, setAddonSelected] = useSelectedAddon(Object.keys(panels)[0]);
 
   if (Object.keys(panels).length === 0) {
     return (
