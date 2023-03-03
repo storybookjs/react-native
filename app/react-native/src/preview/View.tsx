@@ -58,6 +58,7 @@ export type Params = {
   shouldPersistSelection?: boolean;
   tabOpen?: number;
   isUIHidden?: boolean;
+  isSplitPanelVisible?: boolean;
   shouldDisableKeyboardAvoidingView?: boolean;
   keyboardAvoidingViewVerticalOffset?: number;
   theme: DeepPartial<Theme>;
@@ -175,6 +176,7 @@ export class View {
       if (onDeviceUI) {
         syncExternalUI({
           isUIVisible: params.isUIHidden !== undefined ? !params.isUIHidden : undefined,
+          isSplitPanelVisible: params.isSplitPanelVisible,
         });
 
         return (

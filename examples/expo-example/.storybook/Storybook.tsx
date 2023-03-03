@@ -9,6 +9,8 @@ const StorybookUIRoot = getStorybookUI({
   // initialSelection: { kind: 'TextInput', name: 'Basic' },
   shouldPersistSelection: true,
   // isUIHidden: true,
+  // isSplitPanelVisible: true,
+
   // onDeviceUI: false,
   // enableWebsockets: true,
   // theme: {

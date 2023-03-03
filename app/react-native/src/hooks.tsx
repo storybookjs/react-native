@@ -49,6 +49,13 @@ export function useIsStorySectionSelected(title: string) {
 }
 
 /**
+ * Hook that causes a re-render when the currently selected story is changed.
+ */
+export function useUpdateOnStoryChanged() {
+  useAtomValue(useMemo(() => atom((get) => get(storyContextAtom)?.id), []));
+}
+
+/**
  * Hook that gets the current theme values.
  */
 export function useTheme() {
@@ -77,16 +84,30 @@ export function useIsUIVisible() {
   return useAtom(isUIVisibleAtom);
 }
 
+const isSplitPanelVisibleAtom = atomWithToggle(false);
+
+/**
+ * Hook that retrieves the current state, and a setter, for the
+ * `isSplitPanelVisibleAtom` atom.
+ */
+export function useIsSplitPanelVisible() {
+  return useAtom(isSplitPanelVisibleAtom);
+}
+
 interface SyncExternalUIParams {
   isUIVisible?: boolean;
+  isSplitPanelVisible?: boolean;
 }
 
 /**
  * Sync the UI atom states with external values, such as from Story parameters.
  */
-export function syncExternalUI({ isUIVisible }: SyncExternalUIParams) {
+export function syncExternalUI({ isUIVisible, isSplitPanelVisible }: SyncExternalUIParams) {
   const jotaiStore = getDefaultStore();
   if (isUIVisible !== undefined) {
     jotaiStore.set(isUIVisibleAtom, isUIVisible);
+  }
+  if (isSplitPanelVisible !== undefined) {
+    jotaiStore.set(isSplitPanelVisibleAtom, isSplitPanelVisible);
   }
 }

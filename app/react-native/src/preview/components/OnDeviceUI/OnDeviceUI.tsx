@@ -16,6 +16,7 @@ import {
   StyleProp,
 } from 'react-native';
 import {
+  useIsSplitPanelVisible,
   useIsUIVisible,
   useStoryContextParam,
   useTheme,
@@ -28,6 +29,7 @@ import AbsolutePositionedKeyboardAwareView, {
 } from './absolute-positioned-keyboard-aware-view';
 
 import Addons from './addons/Addons';
+import { AddonsSkeleton } from './addons/AddonsSkeleton';
 import {
   getAddonPanelPosition,
   getNavigatorPanelPosition,
@@ -164,12 +166,13 @@ const OnDeviceUI = ({
   //      bottom safe area inset and the navigation bar height.
   //
   //   4. Storybook UI is not visible, and `noSafeArea` is true: No margin.
-  const safeAreaMargins = {
+  const safeAreaMargins: ViewStyle = {
     paddingBottom: isUIVisible ? insets.bottom + navBarHeight : noSafeArea ? 0 : insets.bottom,
     paddingTop: !noSafeArea ? insets.top : 0,
+    overflow: 'hidden',
   };
   // The panels always apply the safe area, regardless of the story parameters.
-  const panelSafeAreaMargins = {
+  const panelSafeAreaMargins: ViewStyle = {
     paddingBottom: insets.bottom + navBarHeight,
     paddingTop: insets.top,
   };
@@ -177,11 +180,15 @@ const OnDeviceUI = ({
   // for the safe area and navigation bar.
   const keyboardVerticalOffset =
     -panelSafeAreaMargins.paddingBottom + (keyboardAvoidingViewVerticalOffset ?? 0);
+
+  const [isSplitPanelVisible] = useIsSplitPanelVisible();
+  const isPreviewInactive = tabOpen !== PREVIEW;
+
   return (
     <>
       <Container>
         <KeyboardAvoidingView
-          enabled={!shouldDisableKeyboardAvoidingView || tabOpen !== PREVIEW}
+          enabled={!shouldDisableKeyboardAvoidingView || isPreviewInactive}
           behavior={IS_IOS ? 'padding' : null}
           keyboardVerticalOffset={keyboardVerticalOffset}
           style={flex}
@@ -193,8 +200,14 @@ const OnDeviceUI = ({
             <Animated.View style={previewWrapperStyles}>
               <Preview style={safeAreaMargins} animatedValue={animatedValue.current}>
                 <StoryView />
+                {isSplitPanelVisible ? (
+                  <Panel edge="top" style={{ flex: 1 }}>
+                    <Addons active />
+                    <AddonsSkeleton visible={isPreviewInactive} />
+                  </Panel>
+                ) : null}
               </Preview>
-              {tabOpen !== PREVIEW ? (
+              {isPreviewInactive ? (
                 <TouchableOpacity
                   style={StyleSheet.absoluteFillObject}
                   onPress={() => handleToggleTab(PREVIEW)}

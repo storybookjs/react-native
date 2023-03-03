@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import { useIsUIVisible } from '../../../../hooks';
 import { NavigationBar } from './NavigationBar';
-import { VisibilityButton } from './NavigationButton';
+import { VisibilityButton, AddonsSplitButton } from './NavigationButton';
 
 const SWIPE_CONFIG = {
   velocityThreshold: 0.2,
@@ -60,6 +60,7 @@ const Navigation = ({ tabOpen, onChangeTab, onLayout }: NavigationProps) => {
       </View>
       <NavigationShortcuts>
         <VisibilityButton />
+        <AddonsSplitButton />
       </NavigationShortcuts>
     </View>
   );

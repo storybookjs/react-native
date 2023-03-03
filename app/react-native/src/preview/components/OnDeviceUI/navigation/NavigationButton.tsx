@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
-import { useIsUIVisible } from '../../../../hooks';
+import { useIsSplitPanelVisible, useIsUIVisible } from '../../../../hooks';
 
 import { Icon, IconName } from '../../Shared/icons';
 import { Box } from '../../Shared/layout';
@@ -32,6 +32,18 @@ export function VisibilityButton() {
     <NavigationButton
       iconName="layout-bottom"
       inverseIconName="layout-bottom-inverse"
+      active={active}
+      toggle={() => toggle()}
+    />
+  );
+}
+
+export function AddonsSplitButton() {
+  const [active, toggle] = useIsSplitPanelVisible();
+  return (
+    <NavigationButton
+      iconName="layout-split"
+      inverseIconName="layout-split-inverse"
       active={active}
       toggle={() => toggle()}
     />
