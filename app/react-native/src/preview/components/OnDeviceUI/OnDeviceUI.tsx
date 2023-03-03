@@ -20,6 +20,7 @@ import {
   useStoryContextParam,
   useTheme,
 } from '../../../hooks';
+import { ANIMATION_DURATION_TRANSITION } from '../../../constants';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 import AbsolutePositionedKeyboardAwareView, {
@@ -39,7 +40,6 @@ import Panel from './Panel';
 import { useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-const ANIMATION_DURATION = 400;
 const IS_IOS = Platform.OS === 'ios';
 // @ts-ignore: Property 'Expo' does not exist on type 'Global'
 const getExpoRoot = () => global.Expo || global.__expo || global.__exponent;
@@ -115,7 +115,7 @@ const OnDeviceUI = ({
       lastTabOpen.current = tabOpen;
       Animated.timing(animatedValue.current, {
         toValue: newTabOpen,
-        duration: ANIMATION_DURATION,
+        duration: ANIMATION_DURATION_TRANSITION,
         easing: Easing.inOut(Easing.cubic),
         useNativeDriver: true,
       }).start();
