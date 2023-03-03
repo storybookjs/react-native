@@ -52,19 +52,29 @@ const ControlsPanel = ({ api }: { api: API }) => {
   const store = api.store();
   const storyId = store.getSelection().storyId;
   const [isPristine, setIsPristine] = useState(true);
-  const [argsfromHook, updateArgs, resetArgs] = useArgs(storyId, store);
-  const { argTypes, parameters } = store.fromId(storyId) as StoryContext;
-
-  const argsObject = Object.entries(argTypes).reduce((prev, [key, argType]) => {
-    const isControl = Boolean(argType?.control);
-
-    return isControl
-      ? {
-          ...prev,
-          [key]: { ...argType, name: key, type: argType?.control?.type, value: argsfromHook[key] },
-        }
-      : prev;
-  }, {});
+  const [argsFromHook, updateArgs, resetArgs] = useArgs(storyId, store);
+  const { argsObject, argTypes, parameters } = React.useMemo(() => {
+    const { argTypes, parameters } = store.fromId(storyId) as StoryContext;
+    const argsObject = Object.entries(argTypes).reduce((prev, [key, argType]) => {
+      const isControl = Boolean(argType?.control);
+      return isControl
+        ? {
+            ...prev,
+            [key]: {
+              ...argType,
+              name: key,
+              type: argType?.control?.type,
+              value: argsFromHook[key],
+            },
+          }
+        : prev;
+    }, {});
+    return {
+      argTypes,
+      parameters,
+      argsObject,
+    };
+  }, [store, storyId, argsFromHook]);
   const hasControls = Object.keys(argTypes).length > 0;
   const isArgsStory = parameters.__isArgsStory;
   const showWarning = !(hasControls && isArgsStory);
@@ -77,10 +87,10 @@ const ControlsPanel = ({ api }: { api: API }) => {
     [updateArgs]
   );
 
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     resetArgs();
     setIsPristine(true);
-  };
+  }, [resetArgs]);
 
   if (showWarning) {
     return <NoControlsWarning />;
