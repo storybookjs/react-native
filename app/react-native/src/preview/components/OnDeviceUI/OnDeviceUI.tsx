@@ -15,7 +15,11 @@ import {
   ViewStyle,
   StyleProp,
 } from 'react-native';
-import { useStoryContextParam, useTheme } from '../../../hooks';
+import {
+  useIsUIVisible,
+  useStoryContextParam,
+  useTheme,
+} from '../../../hooks';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 import AbsolutePositionedKeyboardAwareView, {
@@ -47,7 +51,6 @@ interface OnDeviceUIProps {
   storyIndex: StoryIndex;
   url?: string;
   tabOpen?: number;
-  isUIHidden?: boolean;
   shouldDisableKeyboardAvoidingView?: boolean;
   keyboardAvoidingViewVerticalOffset?: number;
 }
@@ -90,7 +93,6 @@ const Container = styled.View(({ theme }) => ({
 
 const OnDeviceUI = ({
   storyIndex,
-  isUIHidden,
   shouldDisableKeyboardAvoidingView,
   keyboardAvoidingViewVerticalOffset,
   tabOpen: initialTabOpen,
@@ -104,7 +106,6 @@ const OnDeviceUI = ({
   const animatedValue = useRef(new Animated.Value(tabOpen));
   const wide = useWindowDimensions().width >= BREAKPOINT;
   const insets = useSafeAreaInsets();
-  const [isUIVisible, setIsUIVisible] = useState(isUIHidden !== undefined ? !isUIHidden : true);
 
   const handleToggleTab = React.useCallback(
     (newTabOpen: number) => {
@@ -141,6 +142,7 @@ const OnDeviceUI = ({
     }),
   ];
 
+  const [isUIVisible] = useIsUIVisible();
   // The initial value is just a guess until the layout calculation has been done.
   const [navBarHeight, setNavBarHeight] = React.useState(insets.bottom + 40);
   const measureNavigation = React.useCallback(
@@ -220,13 +222,7 @@ const OnDeviceUI = ({
             </Panel>
           </AbsolutePositionedKeyboardAwareView>
         </KeyboardAvoidingView>
-        <Navigation
-          onLayout={measureNavigation}
-          tabOpen={tabOpen}
-          onChangeTab={handleToggleTab}
-          isUIVisible={isUIVisible}
-          setIsUIVisible={setIsUIVisible}
-        />
+        <Navigation onLayout={measureNavigation} tabOpen={tabOpen} onChangeTab={handleToggleTab} />
       </Container>
     </>
   );

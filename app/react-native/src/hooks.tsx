@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import type { StoryContext } from '@storybook/csf';
-import { atom, useAtomValue, useSetAtom } from 'jotai';
+import { atom, useAtom, useAtomValue, useSetAtom, getDefaultStore } from 'jotai';
 import { useTheme as useEmotionTheme } from 'emotion-theming';
 import type { Theme } from './preview/components/Shared/theme';
 
@@ -53,4 +53,40 @@ export function useIsStorySectionSelected(title: string) {
  */
 export function useTheme() {
   return useEmotionTheme<Theme>();
+}
+
+/**
+ * A boolean atom creator for an atom that can only be toggled between true/false.
+ *
+ * @see {@link https://jotai.org/docs/recipes/atom-creators#atomwithtoggle}
+ */
+export function atomWithToggle(initialValue?: boolean) {
+  const anAtom = atom(initialValue, (get, set, nextValue?: boolean) => {
+    const update = nextValue ?? !get(anAtom);
+    set(anAtom, update);
+  });
+  return anAtom;
+}
+
+const isUIVisibleAtom = atomWithToggle(true);
+
+/**
+ * Hook that retrieves the current state, and a setter, for the `isUIVisible` atom.
+ */
+export function useIsUIVisible() {
+  return useAtom(isUIVisibleAtom);
+}
+
+interface SyncExternalUIParams {
+  isUIVisible?: boolean;
+}
+
+/**
+ * Sync the UI atom states with external values, such as from Story parameters.
+ */
+export function syncExternalUI({ isUIVisible }: SyncExternalUIParams) {
+  const jotaiStore = getDefaultStore();
+  if (isUIVisible !== undefined) {
+    jotaiStore.set(isUIVisibleAtom, isUIVisible);
+  }
 }

@@ -1,20 +1,19 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import GestureRecognizer from 'react-native-swipe-gestures';
+import { useIsUIVisible } from '../../../../hooks';
 import { NavigationBar } from './NavigationBar';
-import VisibilityButton from './VisibilityButton';
+import { VisibilityButton } from './NavigationButton';
 
 const SWIPE_CONFIG = {
   velocityThreshold: 0.2,
   directionalOffsetThreshold: 80,
 };
 
-interface Props {
+interface NavigationProps {
   tabOpen: number;
   onChangeTab: (index: number) => void;
-  isUIVisible: boolean;
-  setIsUIVisible: Dispatch<SetStateAction<boolean>>;
   onLayout: ViewProps['onLayout'];
 }
 
@@ -25,12 +24,8 @@ const navStyle: ViewStyle = {
   bottom: 0,
 };
 
-const Navigation = ({ tabOpen, onChangeTab, isUIVisible, setIsUIVisible, onLayout }: Props) => {
+const Navigation = ({ tabOpen, onChangeTab, onLayout }: NavigationProps) => {
   const insets = useSafeAreaInsets();
-
-  const handleToggleUI = () => {
-    setIsUIVisible((oldIsUIVisible) => !oldIsUIVisible);
-  };
 
   const handleSwipeLeft = () => {
     if (tabOpen < 1) {
@@ -44,23 +39,49 @@ const Navigation = ({ tabOpen, onChangeTab, isUIVisible, setIsUIVisible, onLayou
     }
   };
 
+  const [isUIVisible] = useIsUIVisible();
+
   return (
     <View style={navStyle} onLayout={onLayout}>
-      {isUIVisible && (
-        <GestureRecognizer
-          onSwipeLeft={handleSwipeLeft}
-          onSwipeRight={handleSwipeRight}
-          config={SWIPE_CONFIG}
-        >
-          <NavigationBar
-            index={tabOpen}
-            onPress={onChangeTab}
-            style={{ paddingBottom: insets.bottom }}
-          />
-        </GestureRecognizer>
-      )}
-      <VisibilityButton onPress={handleToggleUI} style={{ paddingBottom: insets.bottom }} />
+      <View>
+        {isUIVisible && (
+          <GestureRecognizer
+            onSwipeLeft={handleSwipeLeft}
+            onSwipeRight={handleSwipeRight}
+            config={SWIPE_CONFIG}
+          >
+            <NavigationBar
+              index={tabOpen}
+              onPress={onChangeTab}
+              style={{ paddingBottom: insets.bottom }}
+            />
+          </GestureRecognizer>
+        )}
+      </View>
+      <NavigationShortcuts>
+        <VisibilityButton />
+      </NavigationShortcuts>
     </View>
   );
 };
 export default React.memo(Navigation);
+
+function NavigationShortcuts({ children }) {
+  const insets = useSafeAreaInsets();
+  return (
+    <View
+      style={{
+        zIndex: 100,
+        alignSelf: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row-reverse',
+        position: 'absolute',
+        bottom: insets.bottom + 14,
+        right: 8,
+      }}
+    >
+      {children}
+    </View>
+  );
+}
