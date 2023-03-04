@@ -2,239 +2,206 @@
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-For more information visit: [storybook.js.org](https://storybook.js.org)
+This readme is for the 6.5 release candidate, [find the 5.3 readme here](https://github.com/storybookjs/react-native/tree/v5.3.25#readme)
 
-> NOTE: `@storybook/react-native` and `@storybook/react-native-server` are now on a different release cycle from the Storybook Core packages (`@storybook/react`, `@storybook/vue`, etc.). The last stable version of `@storybook/react-native` is `5.3.25` and it should be used with `5.3` versions of Storybook Core.
+For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-_To re-iterate storybook dependencies with a version 6.0 and higher are not supported by react native storybook yet._
+> NOTE: `@storybook/react-native` requires atleast 6.5.14, please set other storybook packages (like @storybook/addons) to `^6.5.14` or newer
+
+Version v6.5 should be coming out soon and the release candidate is ready for you to test. If you want to help out or are just curious then check out the [project board](https://github.com/orgs/storybookjs/projects/12) to see the open issues related to v6+.
+
+![picture of storybook](https://user-images.githubusercontent.com/3481514/145904252-92e3dc1e-591f-410f-88a1-b4250f4ba6f2.png)
+
+Pictured is from the template mentioned in [getting started](#getting-started)
 
 # Table of contents
 
 - 🚀 [Getting Started](#getting-started)
-- 📒 [Making stories](#making-stories)
-- 🔌 [On device Addons](#ondevice-addons)
-- 📱 [Other ways to render storybook](#other-ways-to-render-storybook)
-- 🔧 [getStorybookUI Options](#getstorybookui-options)
+- 📒 [Writing stories](#writing-stories)
+- 🔌 [Addons](#addons)
+- 📱 [Hide/Show Storybook](#hideshow-storybook)
+- 🔧 [getStorybookUI](#getstorybookui-options)
 - 🤝 [Contributing](#contributing)
+- ✨ [Examples](#examples)
 
 # Getting Started
 
-To get started run this command from within the root of your react native app:
+## New project
 
-```
-npx -p @storybook/cli sb init --type react_native
-```
+There is some project boilerplate with @storybook/react-native and @storybook/addons-react-native-web both already configured with a simple example.
 
-You'll be prompted asking if you want to install @storybook/react-native-server, you can safely choose not to install this now since you can add it later and its not required.
+For expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
 
-This command will setup most things for you, now you just need to add the following to your entrypoint (usually App.js or index.js).
+```sh
+# With NPM
+npx create-expo-app --template expo-template-storybook AwesomeStorybook
 
-```
-export {default} from "./storybook";
-```
+# With Yarn
+yarn create expo-app --template expo-template-storybook AwesomeStorybook
 
-The above steps use the storybook cli to install the most useful addons and creates a few example stories in a folder called `storybook`.
-
-All the config for storybook and the entrypoint also live in the `storybook` folder by default.
-
-If you prefer to set things up yourself you can follow the [manual setup](https://github.com/storybookjs/react-native/blob/master/app/react-native/docs/manual-setup.md)
-
-If you're struggling check out this [snack](https://snack.expo.io/@dannyhw/expo-storybook-example) with a working example
-
-# OndeviceUI and React native Server
-
-The react native storybook is designed to be flexible so that you can navigate all your stories and use addons within the device ui, you also have the option to use the web ui via `@storybook/react-native-server` if thats what you prefer.
-
-The UI that allows you to navigate stories on the device is what we will call the "OnDeviceUI". When referring to features specific to this UI this term is used to distinguish it from the server ui.
-
-# Making stories
-
-The simplest type of story could look something like this
-
+# With pnpm
+pnpm create expo-app --template expo-template-storybook AwesomeStorybook
 ```
 
-  import React from 'react';
-  import { storiesOf } from '@storybook/react-native';
+For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
 
-  // I import the component I want to display here
-  import CustomButton from './CustomButton';
-
-  // here I define that I want to create stories with the label "Buttons",
-  // this will be the name in the storybook navigation
-
-  const buttonStories = storiesOf('Buttons', module);
-
-  // then I add a story with the name default view, I can add multiple stories to button stories
-  buttonStories.add('default view', () => (<CustomButton onPress={() => null} />));
+```sh
+npx react-native init MyApp --template react-native-template-storybook
 ```
 
-You can then include addons such as action and knobs to make it more interactive.
+## Existing project
 
-# Ondevice Addons
+Run init to setup your project with all the dependencies and configuration files: 
 
-The cli will install some basic addons for you such as knobs and actions.
+`npx sb@next init --type react_native`
+
+
+The only thing left to do is return Storybook's UI in your app entry point (such as `App.js`) like this:
+
+```jsx
+export {default} from './.storybook'
+```
+
+If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
+
+If you want to add everything yourself check out the the manual guide [here](MANUAL_SETUP.md).
+
+
+# Writing stories
+
+In v6 you can use the CSF syntax that looks like this:
+
+```jsx
+import {MyButton} from './Button';
+
+export default {
+  title: 'components/MyButton',
+  component: MyButton,
+};
+
+export const Basic = args => (
+  <MyButton {...args} />
+);
+
+Basic.args = {
+  text: 'Hello World',
+  color: 'purple',
+};
+
+```
+
+You should configure the path to your story files in the main.js config file from the .storybook folder.
+
+```js
+module.exports = {
+  stories: [
+    '../components/**/*.stories.?(ts|tsx|js|jsx)'
+  ],
+  addons: []
+}
+```
+
+## Decorators and Parameters
+
+For stories you can add decorators and parameters on the default export or on a specifc story
+
+```jsx
+export default {
+  title: 'Button',
+  component: Button,
+  decorators: [
+    (Story) => (
+      <View style={{ alignItems: "center", justifyContent: "center", flex: 1 }}>
+        <Story />
+      </View>
+    ),
+  ],
+  parameters: {
+    backgrounds: {
+      values: [
+        { name: 'red', value: '#f00' },
+        { name: 'green', value: '#0f0' },
+        { name: 'blue', value: '#00f' },
+      ],
+    },
+  },
+};
+```
+
+For global decorators and parameters you can add them to preview.js inside your .storybook folder.
+
+```jsx
+import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
+export const decorators = [withBackgrounds, (Story)=> <View style={{flex: 1, color: 'blue'}}><Story/></View>];
+export const parameters = {
+  backgrounds: {
+    default: 'plain',
+    values: [
+      {name: 'plain', value: 'white'},
+      {name: 'warm', value: 'hotpink'},
+      {name: 'cool', value: 'deepskyblue'},
+    ]
+  },
+};
+
+```
+
+# Addons
+
+The cli will install some basic addons for you such as controls and actions.
 Ondevice addons are addons that can render with the device ui that you see on the phone.
 
 Currently the addons available are:
 
-- @storybook/addon-ondevice-knobs: adjust your components props in realtime
+- @storybook/addon-ondevice-controls: adjust your components props in realtime
 - @storybook/addon-ondevice-actions: mock onPress calls with actions that will log information in the actions tab
 - @storybook/addon-ondevice-notes: Add some markdown to your stories to help document their usage
 - @storybook/addon-ondevice-backgrounds: change the background of storybook to compare the look of your component against different backgrounds
 
-Add each one you want to use to the rn-addons.js file in the `storybook` folder:
+Install each one you want to use and add them to the main.js addons list as follows:
 
-```
-import '@storybook/addon-ondevice-actions/register';
+```js
+addons: [
+  '@storybook/addon-ondevice-notes',
+  '@storybook/addon-ondevice-controls',
+  '@storybook/addon-ondevice-backgrounds',
+  '@storybook/addon-ondevice-actions',
+],
 ```
 
-Make sure to import the rn-addons.js file in the storybook entrypoint (index.js in the storybook folder by default):
-
-```
-import './rn-addons';
-```
 
 ### Using the addons in your story
 
-Based on the previous example heres how you could extend it to use addons.
+For details of each ondevice addon you can see the readme:
 
-```
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import CustomButton from './CustomButton';
-import { View } from 'react-native';
+- [actions](addons/ondevice-actions)
+- [backgrounds](addons/ondevice-backgrounds)
+- [controls](addons/ondevice-controls)
+- [notes](addons/ondevice-notes)
 
-// the action function has one argument which is the name of the action,
-// this will be displayed in the actions tab in the addons panel
-// action("name here")
-import { action } from '@storybook/addon-actions';
+# Hide/Show storybook
 
-// the boolean knob renders a switch which lets you toggle a value between true or false
-// you call it like boolean("name here", default_value)
-import { boolean, withKnobs } from '@storybook/addon-knobs';
+Storybook on react native is a normal React Native component that can be used or hidden anywhere in your RN application based on your own logic.
 
-const buttonStories = storiesOf('CustomButton', module);
+You can also create a separate app just for storybook that also works as a package for your visual components.
+Some have opted to toggle the storybook component by using a custom option in the react native developer menu.
 
-// lets storybook know to show the knobs addon for this story
-buttonStories.addDecorator(withKnobs);
+- [Heres an approach for react native cli](https://dev.to/dannyhw/multiple-entry-points-for-react-native-storybook-4dkp)
+- [Heres an article about how you can do it in expo](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
-// I use to boolean knob to set the disabled prop based on the knob state
-// I use the action function to log every time the button gets called
-buttonStories.add('default view', () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <CustomButton onPress={action('Button Press!')} disabled={boolean('Disabled', false)} />
-  </View>
-));
-```
 
-# Other ways to render storybook
 
-In the getting started guide we suggest that you override you change the default export to be the storybook UI, this might not be what you want depending on how you are using storybook.
+# getStorybookUI options
 
-There are a few options on how you can make the storybook render in your app so it's up to you to decide which works best for your project.
-
-## Run storybook as a separate app/component library
-
-Using the approach from the getting started setup you can make an app that just displays your storybook and then you could use this app to share your component library. Then you can export all your components from somewhere within the project and use the project as a component library/package.
-
-## Optionally run storybook or your app
-
-You could do something like this if you want to run storybook in dev mode and your app in release mode.
-
-```js
-import StorybookUI from './storybook';
-
-import App from './app';
-
-module.exports = __DEV__ ? StorybookUI : App;
-```
-
-Or you could use some kind of setting/environment variable to define what renders.
-
-## React Native Navigation, or other custom approaches
-
-`StorybookUI` is a RN `View` component that can be embedded anywhere in your RN application, e.g. on a tab or within an admin screen.
-
-You could also create a separate app just for storybook that also works as a package for your visual components.
-
-# Storybook server (optional)
-
-Storybook server is used to control the component visible on the device via a web ui. This is useful to control multiple devices at once and compare them at the same time.
-
-Install the package
-
-yarn `yarn add @storybook/react-native-server`
-
-npm `npm i --save @storybook/react-native-server`
-
-To run the server you can use `yarn start-storybook`
-or add a script to your package.json like
-
-```
-"storybook": "start-storybook"
-```
-
-_You can change "storybook" to any name you like._
-
-This will open the server web client, you will need to open storybook on the device for the stories to appear in the sidebar.
-
-To enable addons for react native server add a folder `storybook/` in the root of the project with a addons.js file inside. The server will detect this file and import it. The file should contain the addon imports similar to the rn-addons.js file but using the regular storybook (for web) addons. For example:
-
-```
-// storybook/addons.js
-require('@storybook/addon-knobs/register');
-require('@storybook/addon-actions/register');
-```
-
-If you get the error `Can't resolve 'babel-loader'` install babel-loader from npm and it should fix it.
-
-### Server cli options
-
-```
--h, --host <host>
-    host to listen on
--p, --port <port>
-    port to listen on
---https
-    whether server is running on https
--c, --config-dir [dir-name]
-    storybook config directory
--e, --environment [environment]
-    DEVELOPMENT/PRODUCTION environment for webpack
--i, --manual-id
-    allow multiple users to work with same storybook
---smoke-test
-    Exit after successful start
-```
-
-# getStorybookUI Options
 
 You can pass these parameters to getStorybookUI call in your storybook entry point:
 
 ```
 {
-    onDeviceUI: Boolean (true)
-        -- display navigator and addons on the device
-    disableWebsockets: Boolean (false)
-        -- allows to display stories without running storybook server. Should be used with onDeviceUI
-    secured: Boolean (false)
-        -- use wss/https instead of ws/http
-    host: String (NativeModules.SourceCode.scriptURL)
-        -- host to use
-    port: Number (7007)
-        -- port to use
-    query: String ("")
-        -- additional query string to pass to websockets
-    isUIHidden: Boolean (false)
-        -- should the ui be closed initially.
-    isSplitPanelVisible: Boolean (false)
-        -- should the split panel (addons on the bottom) be visible initially.
     tabOpen: Number (0)
         -- which tab should be open. -1 Navigator, 0 Preview, 1 Addons
-    initialSelection: Object (null)
-        -- initialize storybook with a specific story. In case a valid object is passed, it will take precedence over `shouldPersistSelection. ex: `{ kind: 'Knobs', story: 'with knobs' }`
-    shouldPersistSelection: Boolean (true)
-        -- initialize storybook with the last selected story.
+    initialSelection: string | Object (undefined)
+        -- initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
     shouldDisableKeyboardAvoidingView: Boolean (false)
         -- Disable KeyboardAvoidingView wrapping Storybook's view
     keyboardAvoidingViewVerticalOffset: Number (0)
@@ -247,10 +214,19 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 We welcome contributions to Storybook!
 
 - 📥 Pull requests and 🌟 Stars are always welcome.
-- Read our [contributing guide](https://github.com/storybookjs/react-native/blob/master/CONTRIBUTING.md) to get started,
+- Read our [contributing guide](CONTRIBUTING.md) to get started,
   or find us on [Discord](https://discord.gg/sMFvFsG) and look for the react-native channel.
 
 Looking for a first issue to tackle?
 
 - We tag issues with [Good First Issue](https://github.com/storybookjs/react-native/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
 - [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
+
+# Examples
+
+Here are some example projects to help you get started
+
+- A mono repo setup by @axeldelafosse https://github.com/axeldelafosse/storybook-rnw-monorepo
+- Expo setup https://github.com/dannyhw/expo-storybook-starter
+- React native cli setup https://github.com/dannyhw/react-native-storybook-starter
+- Want to showcase your own project? open a PR and add it to the list!
