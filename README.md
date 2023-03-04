@@ -2,7 +2,7 @@
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-This readme is for the 6.5 beta documentation, [find the 5.3 readme here](https://github.com/storybookjs/react-native/tree/v5.3.25#readme)
+This readme is for the 6.5 release candidate, [find the 5.3 readme here](https://github.com/storybookjs/react-native/tree/v5.3.25#readme)
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
