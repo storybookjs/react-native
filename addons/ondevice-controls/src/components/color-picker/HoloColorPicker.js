@@ -9,7 +9,6 @@ import {
   StyleSheet,
   InteractionManager,
   I18nManager,
-  TextInput,
 } from 'react-native';
 import Slider from '@react-native-community/slider';
 import tinycolor from 'tinycolor2';

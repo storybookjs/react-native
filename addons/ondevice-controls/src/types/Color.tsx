@@ -104,7 +104,7 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
         onRequestClose={closeColorPicker}
       >
         <TouchableWithoutFeedback onPress={closeColorPicker}>
-          <View style={styles.modalOverlay}></View>
+          <View style={styles.modalOverlay} />
         </TouchableWithoutFeedback>
         <View style={styles.centerContainer}>
           <InnerContainer pointerEvents="box-none">

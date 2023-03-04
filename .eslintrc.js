@@ -8,6 +8,7 @@ module.exports = {
   extends: ['prettier'],
   rules: {
     ...conf.rules,
+    'react-native/no-inline-styles': 'off',
   },
   overrides: [...conf.overrides, { files: ['*.ts', '*.tsx'], rules: { 'no-undef': 'off' } }],
 };

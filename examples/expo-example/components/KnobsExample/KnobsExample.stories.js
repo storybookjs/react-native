@@ -47,6 +47,7 @@ storiesOf('Knobs Example', module)
 
     const birthday = date('Birthday', new Date(2017, 0, 20));
 
+    // eslint-disable-next-line no-unused-vars
     const grouped = text('groupedKnob', '', 'More');
 
     return (

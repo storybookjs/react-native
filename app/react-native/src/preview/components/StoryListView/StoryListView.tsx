@@ -236,8 +236,8 @@ const StoryListView = ({ storyIndex }: Props) => {
   );
 
   const renderSectionHeader = React.useCallback(
-    ({ section: { title, data } }) => (
-      <SectionHeader title={title} onPress={() => changeStory(data[0].id)} />
+    ({ section: { title, data: sectionData } }) => (
+      <SectionHeader title={title} onPress={() => changeStory(sectionData[0].id)} />
     ),
     []
   );
