@@ -100,6 +100,27 @@ export const parameters = {
 
 We use the sbmodern resolver field in order to resolve the modern version of storybook packages. Doing this removes the polyfills that ship in commonjs modules and fixes multiple long standing issues such as the promises never resolving bug and more (caused by corejs promises polyfill).
 
+**Expo**
+
+First create metro config file if you don't have it yet. 
+```sh
+npx expo customize metro.config.js
+```
+
+Then add sbmodern to the start of the `resolver.resolverMainFields` list.
+
+```js
+const { getDefaultConfig } = require('expo/metro-config');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+defaultConfig.resolver.resolverMainFields.unshift('sbmodern');
+
+module.exports = defaultConfig;
+```
+
+**React native**
+
 ```js
 module.exports = {
   /* existing config */
