@@ -92,7 +92,26 @@ export default StorybookUIRoot;
 
 Update your metro config to include sbmodern in the resolverMainFields. 
 
-On expo you might need create the metro.config.js file.
+**Expo**
+
+First create metro config file if you don't have it yet. 
+```sh
+npx expo customize metro.config.js
+```
+
+Then add sbmodern to the start of the `resolver.resolverMainFields` list.
+
+```js
+const { getDefaultConfig } = require('expo/metro-config');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+defaultConfig.resolver.resolverMainFields.unshift('sbmodern');
+
+module.exports = defaultConfig;
+```
+
+**React native**
 
 ```js
 module.exports = {
