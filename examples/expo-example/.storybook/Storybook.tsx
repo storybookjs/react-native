@@ -12,7 +12,7 @@ const StorybookUIRoot = getStorybookUI({
   // isSplitPanelVisible: true,
 
   // onDeviceUI: false,
-  // enableWebsockets: true,
+  enableWebsockets: true,
   // theme: {
   //   storyList: {
   //     search: {

@@ -11,7 +11,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prestart": "yarn get-stories",
     "start": "expo start",
-    "start-server": "NODE_OPTIONS=--openssl-legacy-provider react-native-storybook-server",
+    "start-server": "react-native-storybook-server",
     "storybook-watcher": "sb-rn-watcher --config-path=./.storybook",
     "preweb": "yarn get-stories",
     "web": "expo start --web"
@@ -30,7 +30,9 @@
     "@storybook/addon-ondevice-knobs": "^6.5.0-rc.5",
     "@storybook/addon-ondevice-notes": "^6.5.0-rc.5",
     "@storybook/addons": "^6.5.14",
+    "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/docs-tools": "^6.5.14",
+    "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^6.5.14",
     "@storybook/react-native": "^6.5.0-rc.5",
     "@storybook/react-native-server": "^6.5.0-rc.5",

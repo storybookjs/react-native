@@ -5,5 +5,8 @@ module.exports = {
   ],
   logLevel: 'debug',
   env: () => ({}),
+  core: {
+    builder: 'webpack5',
+  },
   addons: ['@storybook/addon-essentials'],
 };

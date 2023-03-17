@@ -13,7 +13,6 @@ function extendOptions(options, extendServer) {
     framework: 'react-native',
     extendServer,
     packageJson,
-    mode: 'dev',
     ignorePreview: true,
     corePresets: [
       {
