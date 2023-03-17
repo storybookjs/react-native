@@ -43,11 +43,14 @@
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "uuid": "^3.3.2",
-    "webpack": "^4",
     "ws": "^7.1.2"
   },
+  "devDependencies": {
+    "webpack": "^5.76.2"
+  },
   "peerDependencies": {
-    "babel-loader": "^7.0.0 || ^8.0.0 || ^9.0.0"
+    "babel-loader": "^7.0.0 || ^8.0.0 || ^9.0.0",
+    "webpack": "^4 || ^5"
   },
   "engines": {
     "node": ">=16.0.0"

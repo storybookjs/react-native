@@ -29,3 +29,8 @@ export const storiesOf = (kind: string, _module: NodeModule) =>
 export const getStorybookUI = view.getStorybookUI;
 
 export * from './types/types-6.0';
+
+// @storybook/addon-storyshots v6 needs global.__STORYBOOK_STORY_STORE__.initializationPromise
+(global as any).__STORYBOOK_STORY_STORE__ = {
+  initializationPromise: clientApi.storyStore?.initializationPromise,
+};
