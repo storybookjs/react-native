@@ -107,7 +107,12 @@ function writeRequires({ configPath, absolute = false }) {
         const absolutePath = absolute ? requirePath : path.resolve(configPath, requirePath);
         const pathRelativeToCwd = path.relative(cwd, absolutePath);
 
-        return `"./${pathRelativeToCwd}": require("${requirePath}")`;
+        const normalizePathForWindows = (str) =>
+          path.sep === '\\' ? str.replace(/\\/g, '/') : str;
+
+        return `"./${normalizePathForWindows(
+          pathRelativeToCwd
+        )}": require("${normalizePathForWindows(requirePath)}")`;
       });
     return [...acc, ...paths];
   }, []);
