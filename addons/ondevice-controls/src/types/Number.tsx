@@ -70,7 +70,7 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
           maximumValue={arg.max}
           step={arg.step}
           value={arg.value}
-          onValueChange={(val) => {
+          onSlidingComplete={(val) => {
             onChange(val);
             setCurrentValue(val);
           }}

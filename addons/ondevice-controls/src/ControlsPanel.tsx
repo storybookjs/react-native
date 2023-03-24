@@ -1,8 +1,9 @@
 import styled from '@emotion/native';
+import { Channel } from '@storybook/addons';
 import { API } from '@storybook/api';
-import React, { useState, useCallback } from 'react';
-import { Args, StoryContext } from '@storybook/addons';
-
+import type { StoryContextForLoaders, Args } from '@storybook/csf';
+import type { Selection } from '@storybook/store';
+import React, { ComponentType, ReactElement, useCallback, useState } from 'react';
 import { useArgs } from './hooks';
 import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';
@@ -48,42 +49,65 @@ export interface ArgTypes {
   [key: string]: ArgType;
 }
 
+export type ReactNativeFramework = {
+  component: ComponentType<any>;
+  storyResult: ReactElement<unknown>;
+};
+
+type ApiStore = {
+  fromId: (id: any) => Omit<StoryContextForLoaders<ReactNativeFramework, Args>, 'viewMode'>;
+  getSelection: () => Selection;
+  _channel: Channel;
+};
+
 const ControlsPanel = ({ api }: { api: API }) => {
-  const store = api.store();
-  const storyId = store.getSelection().storyId;
+  const store: ApiStore = api.store();
+
+  const storyId = store.getSelection()?.storyId;
+
   const [isPristine, setIsPristine] = useState(true);
+
   const [argsFromHook, updateArgs, resetArgs] = useArgs(storyId, store);
+
   const { argsObject, argTypes, parameters } = React.useMemo(() => {
-    const { argTypes: storyArgTypes, parameters: storyParameters } = store.fromId(
-      storyId
-    ) as StoryContext;
-    const storyArgsObject = Object.entries(storyArgTypes).reduce((prev, [key, argType]) => {
-      const isControl = Boolean(argType?.control);
-      return isControl
-        ? {
-            ...prev,
-            [key]: {
-              ...argType,
-              name: key,
-              type: argType?.control?.type,
-              value: argsFromHook[key],
-            },
-          }
-        : prev;
-    }, {});
+    const { argTypes: storyArgTypes, parameters: storyParameters } = store.fromId(storyId);
+
+    const storyArgsObject = Object.entries(storyArgTypes).reduce(
+      (prev, [key, argType]: [string, ArgType]) => {
+        const isControl = Boolean(argType?.control);
+
+        return isControl
+          ? {
+              ...prev,
+              [key]: {
+                ...argType,
+                name: key,
+                type: argType?.control?.type,
+                value: argsFromHook[key],
+              },
+            }
+          : prev;
+      },
+      {}
+    );
+
     return {
       argTypes: storyArgTypes,
       parameters: storyParameters,
       argsObject: storyArgsObject,
     };
   }, [store, storyId, argsFromHook]);
+
   const hasControls = Object.keys(argTypes).length > 0;
+
   const isArgsStory = parameters.__isArgsStory;
+
   const showWarning = !(hasControls && isArgsStory);
 
   const updateArgsOnFieldChange = useCallback(
     (args: Args) => {
       updateArgs(args);
+
       setIsPristine(false);
     },
     [updateArgs]
@@ -91,6 +115,7 @@ const ControlsPanel = ({ api }: { api: API }) => {
 
   const handleReset = useCallback(() => {
     resetArgs();
+
     setIsPristine(true);
   }, [resetArgs]);
 
@@ -101,6 +126,7 @@ const ControlsPanel = ({ api }: { api: API }) => {
   return (
     <>
       <PropForm args={argsObject} isPristine={isPristine} onFieldChange={updateArgsOnFieldChange} />
+
       <ButtonTouchable onPress={handleReset}>
         <ButtonText>RESET</ButtonText>
       </ButtonTouchable>
