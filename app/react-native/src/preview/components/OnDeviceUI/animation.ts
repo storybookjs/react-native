@@ -1,6 +1,6 @@
 import { Animated, I18nManager, Insets } from 'react-native';
 import { PreviewDimens } from './absolute-positioned-keyboard-aware-view';
-import { NAVIGATOR, PREVIEW, ADDONS } from './navigation/constants';
+import { SIDEBAR, CANVAS, ADDONS } from './navigation/constants';
 
 // Factor that will flip the animation orientation in RTL locales.
 const RTL_SCALE = I18nManager.isRTL ? -1 : 1;
@@ -18,7 +18,7 @@ const panelWidth = (width: number, wide: boolean) => {
   return width * (1 - scale - SCALE_OFFSET);
 };
 
-export const getNavigatorPanelPosition = (
+export const getSidebarPanelPosition = (
   animatedValue: Animated.Value,
   previewWidth: number,
   wide: boolean
@@ -28,7 +28,7 @@ export const getNavigatorPanelPosition = (
       transform: [
         {
           translateX: animatedValue.interpolate({
-            inputRange: [NAVIGATOR, PREVIEW],
+            inputRange: [SIDEBAR, CANVAS],
             outputRange: [0, (-panelWidth(previewWidth, wide) - 1) * RTL_SCALE],
           }),
         },
@@ -48,7 +48,7 @@ export const getAddonPanelPosition = (
       transform: [
         {
           translateX: animatedValue.interpolate({
-            inputRange: [PREVIEW, ADDONS],
+            inputRange: [CANVAS, ADDONS],
             outputRange: [
               previewWidth * RTL_SCALE,
               (previewWidth - panelWidth(previewWidth, wide)) * RTL_SCALE,
@@ -73,7 +73,7 @@ type PreviewPositionArgs = {
 /**
  * Build the animated style for the preview container view.
  *
- * When the navigator or addons panel is focused, the preview container is
+ * When the sidebar or addons panel is focused, the preview container is
  * scaled down and translated to the left (or right) of the panel.
  */
 export const getPreviewStyle = ({
@@ -96,25 +96,25 @@ export const getPreviewStyle = ({
   const translateY =
     -(previewHeight / 2 - scaledPreviewHeight / 2) + insets.top + TRANSLATE_Y_OFFSET;
   // Is navigation moving from one panel to another, skipping preview?
-  const skipPreview = lastTabOpen !== PREVIEW && tabOpen !== PREVIEW;
+  const skipPreview = lastTabOpen !== CANVAS && tabOpen !== CANVAS;
 
   return {
     transform: [
       {
         translateX: animatedValue.interpolate({
-          inputRange: [NAVIGATOR, PREVIEW, ADDONS],
+          inputRange: [SIDEBAR, CANVAS, ADDONS],
           outputRange: [translateX, 0, -translateX],
         }),
       },
       {
         translateY: animatedValue.interpolate({
-          inputRange: [NAVIGATOR, PREVIEW, ADDONS],
+          inputRange: [SIDEBAR, CANVAS, ADDONS],
           outputRange: [translateY, skipPreview ? translateY : 0, translateY],
         }),
       },
       {
         scale: animatedValue.interpolate({
-          inputRange: [NAVIGATOR, PREVIEW, ADDONS],
+          inputRange: [SIDEBAR, CANVAS, ADDONS],
           outputRange: [scale, skipPreview ? scale : 1, scale],
         }),
       },
@@ -125,14 +125,14 @@ export const getPreviewStyle = ({
 /**
  * Build the animated shadow style for the preview.
  *
- * When the navigator or addons panel are visible the scaled preview will have
+ * When the sidebar or addons panel are visible the scaled preview will have
  * a shadow, and when going to the preview tab the shadow will be invisible.
  */
 export const getPreviewShadowStyle = (animatedValue: Animated.Value) => ({
   elevation: 8,
   shadowColor: '#000',
   shadowOpacity: animatedValue.interpolate({
-    inputRange: [NAVIGATOR, PREVIEW, ADDONS],
+    inputRange: [SIDEBAR, CANVAS, ADDONS],
     outputRange: [0.25, 0, 0.25],
   }),
   shadowRadius: 8,

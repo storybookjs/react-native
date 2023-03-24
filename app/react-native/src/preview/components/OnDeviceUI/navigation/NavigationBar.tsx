@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
 import styled from '@emotion/native';
 
-import { NAVIGATOR, PREVIEW, ADDONS } from './constants';
+import { SIDEBAR, CANVAS, ADDONS } from './constants';
 
 import { TabBar, TabButton } from '../../Shared/tabs';
 
@@ -23,19 +23,14 @@ export const NavigationBar = React.memo(({ index, onPress, style }: NavigationBa
   <NavigationTabBar style={style}>
     <TabButton
       onPress={onPress}
-      testID="BottomMenu.Navigator"
-      id={NAVIGATOR}
-      active={index === NAVIGATOR}
+      testID="BottomMenu.Sidebar"
+      id={SIDEBAR}
+      active={index === SIDEBAR}
     >
-      NAVIGATOR
+      SIDEBAR
     </TabButton>
-    <TabButton
-      onPress={onPress}
-      testID="BottomMenu.Preview"
-      id={PREVIEW}
-      active={index === PREVIEW}
-    >
-      PREVIEW
+    <TabButton onPress={onPress} testID="BottomMenu.Canvas" id={CANVAS} active={index === CANVAS}>
+      CANVAS
     </TabButton>
     <TabButton onPress={onPress} testID="BottomMenu.Addons" id={ADDONS} active={index === ADDONS}>
       ADDONS

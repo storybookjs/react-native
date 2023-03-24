@@ -36,7 +36,7 @@ const StoryView = () => {
 
   return (
     <Box flex padding={16} alignItems="center" justifyContent="center">
-      <Text>Please open navigator and select a story to preview.</Text>
+      <Text>Please open the sidebar and select a story to preview.</Text>
     </Box>
   );
 };

@@ -32,12 +32,12 @@ import Addons from './addons/Addons';
 import { AddonsSkeleton } from './addons/AddonsSkeleton';
 import {
   getAddonPanelPosition,
-  getNavigatorPanelPosition,
+  getSidebarPanelPosition,
   getPreviewShadowStyle,
   getPreviewStyle,
 } from './animation';
 import Navigation from './navigation';
-import { PREVIEW, ADDONS } from './navigation/constants';
+import { CANVAS, ADDONS } from './navigation/constants';
 import Panel from './Panel';
 import { useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -99,7 +99,7 @@ const OnDeviceUI = ({
   keyboardAvoidingViewVerticalOffset,
   tabOpen: initialTabOpen,
 }: OnDeviceUIProps) => {
-  const [tabOpen, setTabOpen] = useState(initialTabOpen || PREVIEW);
+  const [tabOpen, setTabOpen] = useState(initialTabOpen || CANVAS);
   const lastTabOpen = React.useRef(tabOpen);
   const [previewDimensions, setPreviewDimensions] = useState<PreviewDimens>(() => ({
     width: Dimensions.get('window').width,
@@ -124,7 +124,7 @@ const OnDeviceUI = ({
       setTabOpen(newTabOpen);
 
       // close the keyboard opened from a TextInput from story list or knobs
-      if (newTabOpen === PREVIEW) {
+      if (newTabOpen === CANVAS) {
         Keyboard.dismiss();
       }
     },
@@ -182,7 +182,7 @@ const OnDeviceUI = ({
     -panelSafeAreaMargins.paddingBottom + (keyboardAvoidingViewVerticalOffset ?? 0);
 
   const [isSplitPanelVisible] = useIsSplitPanelVisible();
-  const isPreviewInactive = tabOpen !== PREVIEW;
+  const isPreviewInactive = tabOpen !== CANVAS;
 
   return (
     <>
@@ -210,14 +210,14 @@ const OnDeviceUI = ({
               {isPreviewInactive ? (
                 <TouchableOpacity
                   style={StyleSheet.absoluteFillObject}
-                  onPress={() => handleToggleTab(PREVIEW)}
+                  onPress={() => handleToggleTab(CANVAS)}
                 />
               ) : null}
             </Animated.View>
             <Panel
               edge="right"
               style={[
-                getNavigatorPanelPosition(animatedValue.current, previewDimensions.width, wide),
+                getSidebarPanelPosition(animatedValue.current, previewDimensions.width, wide),
                 panelSafeAreaMargins,
               ]}
             >
