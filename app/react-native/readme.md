@@ -199,7 +199,7 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 ```
 {
     tabOpen: Number (0)
-        -- which tab should be open. -1 Navigator, 0 Preview, 1 Addons
+        -- which tab should be open. -1 SideBar, 0 Canvas, 1 Addons
     initialSelection: string | Object (undefined)
         -- initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
     shouldDisableKeyboardAvoidingView: Boolean (false)
