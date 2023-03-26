@@ -1,7 +1,7 @@
-import { ViewProps, FlexStyle } from 'react-native';
+import { ViewProps, ViewStyle } from 'react-native';
 import styled from '@emotion/native';
 
-interface BoxProps extends ViewProps, Omit<FlexStyle, 'flex'> {
+interface BoxProps extends ViewProps, Omit<ViewStyle, 'flex'> {
   /**
    * Flex value, can be `true` to mean the commonly used `flex={1}`.
    */

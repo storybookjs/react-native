@@ -27,6 +27,7 @@ export function useStoryContext() {
  */
 export function useStoryContextParam<T = any>(name: string, defaultValue?: T): T {
   const paramAtom = useMemo(() => atom((get) => get(storyContextAtom)?.parameters?.[name]), [name]);
+
   return useAtomValue(paramAtom) ?? defaultValue;
 }
 
@@ -71,8 +72,10 @@ export function useTheme() {
 export function atomWithToggle(initialValue?: boolean) {
   const anAtom = atom(initialValue, (get, set, nextValue?: boolean) => {
     const update = nextValue ?? !get(anAtom);
+
     set(anAtom, update);
   });
+
   return anAtom;
 }
 
@@ -106,9 +109,11 @@ interface SyncExternalUIParams {
  */
 export function syncExternalUI({ isUIVisible, isSplitPanelVisible }: SyncExternalUIParams) {
   const jotaiStore = getDefaultStore();
+
   if (isUIVisible !== undefined) {
     jotaiStore.set(isUIVisibleAtom, isUIVisible);
   }
+
   if (isSplitPanelVisible !== undefined) {
     jotaiStore.set(isSplitPanelVisibleAtom, isSplitPanelVisible);
   }
@@ -124,9 +129,12 @@ const selectedAddonAtom = atom(undefined as string);
  */
 export function useSelectedAddon(initialValue?: string) {
   const result = useAtom(selectedAddonAtom);
+
   const set = result[1];
+
   React.useEffect(() => {
     const jotaiStore = getDefaultStore();
+
     // Only apply the initial value once, and only if the atom doesn't have a
     // value yet.
     if (jotaiStore.get(selectedAddonAtom) === undefined) {
@@ -134,5 +142,6 @@ export function useSelectedAddon(initialValue?: string) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return result;
 }

@@ -3,6 +3,7 @@ import packageJson from '../../package.json';
 
 function extendOptions(options, extendServer) {
   const { manualId, https: secured, host, port } = options;
+
   const storybookOptions = { manualId, secured, host, port };
 
   const config = require(path.join(options.configDir, 'main'));

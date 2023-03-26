@@ -1,6 +1,7 @@
 import { ShadowStyleIOS, ViewStyle, TextStyle } from 'react-native';
 
 type ShadowStyle = ShadowStyleIOS | Pick<ViewStyle, 'elevation'>;
+
 type FontWeight = TextStyle['fontWeight'];
 
 /**
@@ -22,10 +23,13 @@ interface ThemeTokens {
     normal: number;
   };
   color: {
+    navy: string;
+    offBlack: string;
     black: string;
     white: string;
     grey200: string;
     grey700: string;
+    grey800: string;
     red500: string;
     blue100: string;
     blue200: string;
@@ -199,11 +203,13 @@ const tokens: ThemeTokens = {
     normal: 16,
   },
   color: {
-    black: '#001a23',
+    navy: '#001a23',
+    black: '#000',
+    offBlack: '#222',
     white: '#ffffff',
-
     grey200: '#dee2e3',
     grey700: '#859499',
+    grey800: '#575757',
     red500: '#ff4400',
     blue100: '#f6f9fc',
     blue200: '#e0eaf5',
@@ -232,9 +238,15 @@ const tokens: ThemeTokens = {
 } as const;
 
 const text: Theme['text'] = {
-  primaryColor: tokens.color.black,
+  primaryColor: tokens.color.navy,
   secondaryColor: tokens.color.grey700,
   linkColor: '#0000ff',
+};
+
+const textOnDark: Theme['text'] = {
+  primaryColor: tokens.color.white,
+  secondaryColor: tokens.color.grey200,
+  linkColor: tokens.color.blue600,
 };
 
 export const theme: Theme = {
@@ -365,6 +377,138 @@ export const theme: Theme = {
       fontSize: tokens.fontSize.smaller,
       labelTextColor: text.secondaryColor,
       valueTextColor: text.primaryColor,
+    },
+  },
+};
+
+export const darkTheme: Theme = {
+  tokens,
+  text: textOnDark,
+  backgroundColor: tokens.color.navy,
+  preview: {
+    containerBackgroundColor: tokens.color.black,
+    backgroundColor: tokens.color.offBlack,
+  },
+  navigation: {
+    backgroundColor: tokens.color.offBlack, //tokens.color.black,
+    borderColor: tokens.color.grey800,
+    borderWidth: tokens.borderWidthNormal,
+    visibilityBorderRadius: tokens.borderRadius.small,
+    visibilityInnerBorderColor: tokens.color.navy,
+    visibilityOuterBorderColor: tokens.color.navy,
+  },
+  panel: {
+    backgroundColor: tokens.color.offBlack, //tokens.color.blue100,
+    borderWidth: tokens.borderWidthNormal,
+    borderColor: tokens.color.grey800,
+    paddingVertical: 0,
+    paddingHorizontal: tokens.spacing2,
+  },
+  storyList: {
+    fontSize: tokens.fontSize.normal,
+    headerPaddingHorizontal: tokens.spacing2,
+    headerPaddingVertical: tokens.spacing2,
+    headerTextColor: textOnDark.primaryColor,
+    headerFontWeight: '500',
+    storyPaddingHorizontal: tokens.spacing2,
+    storyPaddingVertical: tokens.spacing1 * 1.5,
+    storyIndent: tokens.spacing6,
+    storyTextColor: textOnDark.primaryColor,
+    storyFontWeight: '400',
+    storySelectedBackgroundColor: tokens.color.navy,
+    storySelectedTextColor: tokens.color.white,
+    storySelectedFontWeight: '700',
+    sectionSpacing: tokens.spacing2,
+    sectionActiveBackgroundColor: tokens.color.grey800,
+    sectionBorderRadius: tokens.borderRadius.medium,
+    search: {
+      fontSize: tokens.fontSize.normal,
+      textColor: textOnDark.primaryColor,
+      placeholderTextColor: textOnDark.secondaryColor,
+      borderRadius: tokens.borderRadius.round,
+      borderColor: tokens.color.grey800, //tokens.color.blue400,
+      borderWidth: tokens.borderWidthNormal,
+      backgroundColor: tokens.color.grey800,
+      paddingVertical: tokens.spacing2,
+      paddingHorizontal: tokens.spacing3,
+    },
+  },
+  button: {
+    fontSize: tokens.fontSize.smaller,
+    fontWeight: '600',
+    paddingVertical: tokens.spacing2,
+    paddingHorizontal: tokens.spacing5,
+    primary: {
+      textColor: textOnDark.primaryColor,
+      backgroundColor: tokens.color.black,
+      borderColor: tokens.color.blue300,
+      borderWidth: tokens.borderWidthNormal,
+      borderRadius: tokens.borderRadius.medium,
+    },
+    secondary: {
+      textColor: textOnDark.primaryColor,
+      backgroundColor: 'transparent',
+      borderColor: tokens.color.blue300,
+      borderWidth: tokens.borderWidthNormal,
+      borderRadius: tokens.borderRadius.medium,
+    },
+  },
+  tabs: {
+    fontSize: tokens.fontSize.small,
+    fontWeight: '500',
+    paddingVertical: tokens.spacing2,
+    paddingHorizontal: tokens.spacing2 * 1.25,
+    borderWidth: tokens.borderWidthNormal,
+    borderRadius: tokens.borderRadius.round,
+    activeBorderColor: tokens.color.blue300,
+    activeBackgroundColor: tokens.color.navy,
+    activeTextColor: textOnDark.primaryColor,
+    inactiveBorderColor: 'transparent',
+    inactiveBackgroundColor: 'transparent',
+    inactiveTextColor: textOnDark.secondaryColor,
+  },
+  inputs: {
+    errorTextColor: tokens.color.red500,
+    labelFontSize: tokens.fontSize.smaller,
+    labelTextColor: textOnDark.primaryColor,
+    text: {
+      fontSize: tokens.fontSize.smaller,
+      textColor: textOnDark.primaryColor,
+      borderWidth: tokens.borderWidthNormal,
+      borderColor: tokens.color.blue400,
+      backgroundColor: tokens.color.black,
+      borderRadius: tokens.borderRadius.medium,
+      paddingVertical: tokens.spacing1 * 1.5,
+      paddingHorizontal: tokens.spacing1 * 1.5,
+    },
+    radio: {
+      fontSize: tokens.fontSize.smaller,
+      height: 20,
+      borderWidth: tokens.borderWidthNormal,
+      borderColor: tokens.color.blue400,
+      backgroundColor: tokens.color.black,
+      paddingVertical: 3,
+      paddingHorizontal: 3,
+      activeBackgroundColor: tokens.color.green500,
+      itemSpacing: tokens.spacing1,
+      labelSpacing: tokens.spacing2,
+    },
+    swatch: {
+      fontSize: tokens.fontSize.smaller,
+      height: 40,
+      borderWidth: tokens.borderWidthNormal,
+      borderColor: tokens.color.blue400,
+      backgroundColor: tokens.color.navy,
+      outerBorderRadius: tokens.borderRadius.medium,
+      innerBorderRadius: tokens.borderRadius.small,
+      paddingVertical: tokens.spacing1,
+      paddingHorizontal: tokens.spacing1,
+      nameTextWeight: '600',
+    },
+    slider: {
+      fontSize: tokens.fontSize.smaller,
+      labelTextColor: textOnDark.secondaryColor,
+      valueTextColor: textOnDark.primaryColor,
     },
   },
 };

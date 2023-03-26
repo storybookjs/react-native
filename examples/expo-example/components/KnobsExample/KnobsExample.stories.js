@@ -19,12 +19,15 @@ storiesOf('Knobs Example', module)
   .addDecorator(withKnobs)
   .add('with knobs', () => {
     const name = text('Name', 'Storyteller');
+
     const age = number('Age', 70, { range: true, min: 0, max: 90, step: 5 });
+
     const fruits = {
       Apple: 'apple',
       Banana: 'banana',
       Cherry: 'cherry',
     };
+
     const fruit = select('Fruit', fruits, 'apple');
 
     const otherFruits = {
@@ -32,17 +35,22 @@ storiesOf('Knobs Example', module)
       Guava: 'guava',
       Watermelon: 'watermelon',
     };
+
     const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');
+
     const dollars = number('Dollars', 12.5);
 
     // NOTE: color picker is currently broken
-    const backgroundColor = color('background', '#ffff00');
+    const backgroundColor = color('background', '#eaeaea');
+
     const items = array('Items', ['Laptop', 'Book', 'Whiskey']);
+
     const customStyles = object('Styles', {
       borderWidth: 3,
-      borderColor: '#ff00ff',
+      borderColor: '#000',
       padding: 10,
     });
+
     const nice = boolean('Nice', true);
 
     const birthday = date('Birthday', new Date(2017, 0, 20));

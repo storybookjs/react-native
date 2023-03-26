@@ -27,9 +27,12 @@ const ResetButton = styled.Text(({ theme }) => ({
   fontSize: theme.button.fontSize,
   fontWeight: theme.button.fontWeight,
 }));
+
 const Paragraph = styled.Text(({ theme }) => ({
   marginBottom: theme.tokens.spacing3,
+  color: theme.text.primaryColor,
 }));
+
 const LinkText = styled.Text(({ theme }) => ({
   color: theme.text.linkColor,
 }));

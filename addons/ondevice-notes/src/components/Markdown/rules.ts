@@ -24,6 +24,7 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.autolink,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       return createElement(
         Text,
         {
@@ -39,10 +40,12 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.blockQuote,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       const blockBar = createElement(View, {
         key: state.key,
         style: [styles.blockQuoteSectionBar, styles.blockQuoteBar],
       });
+
       const blockText = createElement(
         Text,
         {
@@ -51,6 +54,7 @@ export default (styles: Styles) => ({
         },
         output(node.content, state)
       );
+
       return createElement(
         View,
         {
@@ -78,6 +82,7 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.codeBlock,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       return createElement(
         Text,
         {
@@ -92,6 +97,7 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.del,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       return createElement(
         Text,
         {
@@ -106,6 +112,7 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.em,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       return createElement(
         Text,
         {
@@ -120,9 +127,13 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.heading,
     react: (node: SingleASTNode, output: Output<ReactElements>, parentState: State) => {
       const state = { ...parentState };
+
       state.withinText = true;
+
       const stylesToApply = [styles.heading, styles[`heading${node.level}`]];
+
       state.stylesToApply = stylesToApply;
+
       return createElement(
         Text,
         {
@@ -153,6 +164,7 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.inlineCode,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       return createElement(
         Text,
         {
@@ -167,9 +179,11 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.link,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       const openUrl = (url: string) => {
         Linking.openURL(url).catch((error) => console.warn('An error occurred: ', error));
       };
+
       return createElement(
         Text,
         {
@@ -190,6 +204,7 @@ export default (styles: Styles) => ({
     ) => {
       const items = node.items.map((item: SingleASTNode, i: number) => {
         let bullet;
+
         if (node.ordered) {
           bullet = createElement(
             Text,
@@ -205,6 +220,7 @@ export default (styles: Styles) => ({
           { key: (state.key as number) + 1, style: styles.listItemText },
           output(item, state)
         );
+
         return createElement(
           View,
           {
@@ -214,6 +230,7 @@ export default (styles: Styles) => ({
           [bullet, listItemText]
         );
       });
+
       return createElement(View, { key: state.key, style: styles.list }, items);
     },
   },
@@ -245,6 +262,7 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.strong,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       return createElement(
         Text,
         {
@@ -286,8 +304,11 @@ export default (styles: Styles) => ({
             output(content, state)
           )
         );
+
         const rowStyles = [styles.tableRow];
+
         node.cells.length - 1 === r ? rowStyles.push(styles.tableRowLast) : null;
+
         return createElement(View, { key: r, style: rowStyles }, cells);
       });
 
@@ -298,11 +319,13 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.text,
     react: (node: SingleASTNode, output: Output<ReactElements>, parentState: State) => {
       const state = { ...parentState };
+
       // Breaking words up in order to allow for text reflowing in flexbox
       // let words = node.content.split(' ');
       // words = words.map((word: string, i: number) => {
       //   i !== words.length - 1 ? (word = `${word} `) : null;
       const textStyles = [styles.text];
+
       //   !state.withinText ? textStyles.push(styles.plainText) : null;
       //   state.stylesToApply ? textStyles.push(state.stylesToApply) : null;
       return createElement(
@@ -319,6 +342,7 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.u,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       return createElement(
         Text,
         {
@@ -333,9 +357,11 @@ export default (styles: Styles) => ({
     ...SimpleMarkdown.defaultRules.url,
     react: (node: SingleASTNode, output: Output<ReactElements>, state: State) => {
       state.withinText = true;
+
       const openURL = (url: string) => {
         Linking.openURL(url).catch((error) => console.warn('An error occurred: ', error));
       };
+
       return createElement(
         Text,
         {
