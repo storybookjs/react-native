@@ -1,3 +1,38 @@
+# v6.5.0-rc.9
+
+## What's Changed
+* feat: rename tabs to sidebar, canvas, addons by @dannyhw in https://github.com/storybookjs/react-native/pull/447
+
+
+**Full Changelog**: https://github.com/storybookjs/react-native/compare/v6.5.0-rc.8...v6.5.0-rc.9
+
+# v6.5.0-rc.8
+
+## What's Changed
+* fix: dont render addons if no story selected and update number range on slide end by @dannyhw in https://github.com/storybookjs/react-native/pull/446
+
+
+**Full Changelog**: https://github.com/storybookjs/react-native/compare/v6.5.0-rc.7...v6.5.0-rc.8
+
+# v6.5.0-rc.7
+
+## What's Changed
+* fix: windows paths now generated correctly by @dannyhw in https://github.com/storybookjs/react-native/pull/445
+
+
+**Full Changelog**: https://github.com/storybookjs/react-native/compare/v6.5.0-rc.6...v6.5.0-rc.7
+
+# v6.5.0-rc.6
+
+## What's Changed
+* docs: update expo metro.config.js by @leonardo-fc in https://github.com/storybookjs/react-native/pull/441
+* Fix webpack5 and @storybook/addon-storyshots compatibility error, and a typo by @leonardo-fc in https://github.com/storybookjs/react-native/pull/442
+
+## New Contributors
+* @leonardo-fc made their first contribution in https://github.com/storybookjs/react-native/pull/441
+
+**Full Changelog**: https://github.com/storybookjs/react-native/compare/v6.5.0-rc.5...v6.5.0-rc.6
+
 # v6.5.0-rc.5
 
 ## What's Changed
