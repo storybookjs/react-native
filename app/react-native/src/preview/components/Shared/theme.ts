@@ -384,7 +384,7 @@ export const theme: Theme = {
 export const darkTheme: Theme = {
   tokens,
   text: textOnDark,
-  backgroundColor: tokens.color.navy,
+  backgroundColor: tokens.color.offBlack,
   preview: {
     containerBackgroundColor: tokens.color.black,
     backgroundColor: tokens.color.offBlack,
