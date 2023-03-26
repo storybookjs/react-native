@@ -37,6 +37,7 @@ const RadioInnerCircle = styled.View(({ theme, selected }) => ({
 const RadioLabel = styled.Text(({ theme }) => ({
   fontSize: theme.inputs.radio.fontSize,
   paddingStart: theme.inputs.radio.labelSpacing,
+  color: theme.inputs.labelTextColor,
 }));
 
 class RadioSelect extends React.Component {

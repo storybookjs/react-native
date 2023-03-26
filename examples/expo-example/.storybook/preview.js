@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Appearance } from 'react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 export const decorators = [
@@ -21,11 +21,11 @@ export const parameters = {
   },
   my_param: 'anything',
   backgrounds: {
-    default: 'plain',
+    default: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain',
     values: [
       { name: 'plain', value: 'white' },
-      { name: 'warm', value: 'hotpink' },
-      { name: 'cool', value: 'deepskyblue' },
+      { name: 'dark', value: '#333' },
+      { name: 'app', value: '#eeeeee' },
     ],
   },
 };

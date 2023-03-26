@@ -33,12 +33,16 @@ const ValueContainer = styled.View(({ theme }: any) => ({
   padding: theme.tokens.spacing1,
   paddingBottom: 0,
 }));
+
 const NameText = styled.Text(({ theme }: any) => ({
   fontSize: theme.inputs.swatch.fontSize,
+  color: theme.inputs.labelTextColor,
   fontWeight: theme.inputs.swatch.nameTextWeight,
 }));
+
 const ValueText = styled.Text(({ theme }: any) => ({
   fontSize: theme.inputs.swatch.fontSize,
+  color: theme.inputs.labelTextColor,
 }));
 
 const Swatch = ({ name, value, setBackground }: SwatchProps) => (

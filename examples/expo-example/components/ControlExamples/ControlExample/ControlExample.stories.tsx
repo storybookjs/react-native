@@ -11,11 +11,11 @@ export default {
     fruit: 'apple',
     otherFruit: 'watermelon',
     dollars: 12.5,
-    backgroundColor: '#ffff00',
+    backgroundColor: '#eaeaea',
     items: ['Laptop', 'Book', 'Whiskey'],
     customStyles: {
       borderWidth: 3,
-      borderColor: '#ff00ff',
+      borderColor: '#000',
       padding: 10,
     },
     nice: true,

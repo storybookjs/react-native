@@ -35,6 +35,7 @@
     "@storybook/client-logger": "^6.5.14",
     "@storybook/core-events": "^6.5.14",
     "core-js": "^3.0.1",
+    "emotion-theming": "^10.0.19",
     "prop-types": "^15.7.2",
     "simple-markdown": "^0.7.3"
   },

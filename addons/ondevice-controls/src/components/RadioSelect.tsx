@@ -43,6 +43,7 @@ const RadioInnerCircle = styled.View(({ theme, selected }: any) => ({
 const RadioLabel = styled.Text(({ theme }) => ({
   fontSize: theme.inputs.radio.fontSize,
   paddingStart: theme.inputs.radio.labelSpacing,
+  color: theme.inputs.labelTextColor,
 }));
 
 const RadioSelect = ({ data = [], value = '', onChange, isInline }: RadioProps) => {

@@ -3,13 +3,13 @@
 import querystring from 'querystring';
 import ws from 'ws';
 import storybook from '@storybook/core/standalone';
-
 import extendOptions from './options';
 import getCli from './cli';
 
 export default class Server {
   constructor(options) {
     this.attachWS = this.attachWS.bind(this);
+
     this.options = extendOptions(options, this.attachWS);
   }
 
@@ -19,6 +19,7 @@ export default class Server {
 
   attachWS(server) {
     this.wsServer = new ws.Server({ server });
+
     this.wsServer.on('connection', (s, req) => this.handleWS(s, req));
   }
 
@@ -42,4 +43,5 @@ export default class Server {
 }
 
 const server = new Server(getCli());
+
 server.start();

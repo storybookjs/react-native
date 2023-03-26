@@ -4,7 +4,9 @@ import { Linking } from 'react-native';
 
 const Paragraph = styled.Text(({ theme }) => ({
   marginBottom: theme.tokens.spacing3,
+  color: theme.text.primaryColor,
 }));
+
 const LinkText = styled.Text(({ theme }) => ({
   color: theme.text.linkColor,
 }));

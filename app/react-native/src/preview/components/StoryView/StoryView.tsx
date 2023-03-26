@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Text, Keyboard } from 'react-native';
-import { useStoryContext } from '../../../hooks';
+import { useStoryContext, useTheme } from '../../../hooks';
 import { Box } from '../Shared/layout';
 
 /**
@@ -17,18 +17,28 @@ import { Box } from '../Shared/layout';
  */
 function dismissOnStartResponder() {
   Keyboard.dismiss();
+
   return false;
 }
 
 const StoryView = () => {
   const context = useStoryContext();
+
   const id = context?.id;
+
+  const { backgroundColor } = useTheme();
 
   if (context && context.unboundStoryFn) {
     const { unboundStoryFn: StoryComponent } = context;
 
     return (
-      <Box flex key={id} testID={id} onStartShouldSetResponder={dismissOnStartResponder}>
+      <Box
+        flex
+        key={id}
+        testID={id}
+        onStartShouldSetResponder={dismissOnStartResponder}
+        backgroundColor={backgroundColor}
+      >
         {StoryComponent && <StoryComponent {...context} />}
       </Box>
     );

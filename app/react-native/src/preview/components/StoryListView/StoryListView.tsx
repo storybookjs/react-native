@@ -48,9 +48,10 @@ const SearchContainer = styled.View(({ theme }) => ({
 
 const SearchBar = (props: TextInputProps) => {
   const theme = useTheme();
+
   return (
     <SearchContainer>
-      <Icon name="search" opacity={0.5} />
+      <Icon name="search" opacity={0.5} color={'white'} />
       <SearchInput
         {...props}
         autoCapitalize="none"
@@ -88,6 +89,7 @@ interface SectionProps {
 
 const SectionHeader = React.memo(({ title, onPress }: SectionProps) => {
   const selected = useIsStorySectionSelected(title);
+
   return (
     <HeaderContainer key={title} selected={selected} onPress={onPress} activeOpacity={0.8}>
       <Icon name="grid" width={10} height={10} marginRight={6} />
@@ -129,7 +131,9 @@ const ItemTouchable = styled.TouchableOpacity<{
 const ListItem = React.memo(
   ({ storyId, kind, title, isLastItem, onPress }: ListItemProps) => {
     const selected = useIsStorySelected(storyId);
+
     const sectionSelected = useIsStorySectionSelected(kind);
+
     return (
       <ItemTouchable
         key={title}
@@ -168,6 +172,7 @@ const getStories = (storyIndex: StoryIndex): DataItem[] => {
       title: story.title,
       data: (acc[story.title]?.data ?? []).concat(story),
     };
+
     return acc;
   }, {} as Record<string, DataItem>);
 
@@ -185,7 +190,9 @@ function keyExtractor(item: any, index) {
 
 const StoryListView = ({ storyIndex }: Props) => {
   const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
+
   const [data, setData] = useState<DataItem[]>(originalData);
+
   const theme = useTheme();
 
   const handleChangeSearchText = (text: string) => {
@@ -193,12 +200,15 @@ const StoryListView = ({ storyIndex }: Props) => {
 
     if (!query) {
       setData(originalData);
+
       return;
     }
 
     const checkValue = (value: string) => value.toLowerCase().includes(query.toLowerCase());
+
     const filteredData = originalData.reduce((acc, story) => {
       const hasTitle = checkValue(story.title);
+
       const hasKind = story.data.some((ref) => checkValue(ref.name));
 
       if (hasTitle || hasKind) {
@@ -217,6 +227,7 @@ const StoryListView = ({ storyIndex }: Props) => {
 
   const changeStory = (storyId: string) => {
     const channel = addons.getChannel();
+
     channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 

@@ -1,17 +1,18 @@
-import React from 'react';
-import Channel from '@storybook/channels';
 import { addons } from '@storybook/addons';
-import Events from '@storybook/core-events';
-import { Loadable } from '@storybook/core-client';
-import { PreviewWeb } from '@storybook/preview-web';
+import Channel from '@storybook/channels';
 import { ClientApi, RenderContext, setGlobalRender } from '@storybook/client-api';
-import type { ReactNativeFramework } from '../types/types-6.0';
-import { View } from './View';
-import { executeLoadableForChanges } from './executeLoadable';
+import { Loadable } from '@storybook/core-client';
+import Events from '@storybook/core-events';
 import type { ArgsStoryFn, ViewMode } from '@storybook/csf';
+import { PreviewWeb } from '@storybook/preview-web';
+import React from 'react';
+import type { ReactNativeFramework } from '../types/types-6.0';
+import { executeLoadableForChanges } from './executeLoadable';
+import { View } from './View';
 
 export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
   const { id, component: Component } = context;
+
   if (!Component) {
     throw new Error(
       `Unable to render story ${id} as the component annotation is missing from the default export`
@@ -24,6 +25,7 @@ export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
 export function start() {
   // TODO: can we get settings from main.js and set the channel here?
   const channel = new Channel({ async: true });
+
   addons.setChannel(channel);
 
   const clientApi = new ClientApi<ReactNativeFramework>();
@@ -60,14 +62,18 @@ export function start() {
   };
 
   const preview = new PreviewWeb<ReactNativeFramework>(urlStore, previewView);
+
   clientApi.storyStore = preview.storyStore;
+
   setGlobalRender(render);
 
   let initialized = false;
 
   function onStoriesChanged() {
     const storyIndex = clientApi.getStoryIndex();
+
     preview.onStoriesChanged({ storyIndex });
+
     view._storyIndex = storyIndex;
   }
 
@@ -110,16 +116,20 @@ export function start() {
         preview.initialize({
           getStoryIndex: () => {
             const index = clientApi.getStoryIndex();
+
             view._storyIndex = index;
+
             return index;
           },
           importFn,
           getProjectAnnotations,
         });
+
         initialized = true;
       } else {
         // TODO -- why don't we care about the new annotations?
         getProjectAnnotations();
+
         onStoriesChanged();
       }
     },

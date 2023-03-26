@@ -15,13 +15,17 @@ interface NotesProps {
 
 export const Notes = ({ active, api }: NotesProps) => {
   const [story, setStory] = useState<any>();
+
   useEffect(() => {
     if (active) {
       const selection = api.store().getSelection();
+
       setStory(api.store().fromId(selection.storyId));
     }
+
     addons.getChannel().on(SET_CURRENT_STORY, () => {
       const selection = api.store().getSelection();
+
       setStory(api.store().fromId(selection.storyId));
     });
   }, [api, active]);
@@ -33,6 +37,7 @@ export const Notes = ({ active, api }: NotesProps) => {
   const text: string = story.parameters[PARAM_KEY];
 
   const textAfterFormatted: string = text ? text.trim() : '';
+
   return (
     <View style={styles.container}>
       <Markdown>{textAfterFormatted}</Markdown>
