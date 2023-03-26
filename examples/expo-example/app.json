@@ -4,6 +4,7 @@
     "slug": "expo-example",
     "web": {
       "bundler": "metro"
-    }
+    },
+    "userInterfaceStyle": "automatic"
   }
 }
