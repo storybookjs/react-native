@@ -92,7 +92,7 @@ const SectionHeader = React.memo(({ title, onPress }: SectionProps) => {
 
   return (
     <HeaderContainer key={title} selected={selected} onPress={onPress} activeOpacity={0.8}>
-      <Icon name="grid" width={10} height={10} marginRight={6} />
+      <Icon name="grid" width={12} height={12} marginRight={6} />
       <SectionHeaderText selected={selected}>{title}</SectionHeaderText>
     </HeaderContainer>
   );
@@ -145,7 +145,12 @@ const ListItem = React.memo(
         sectionSelected={sectionSelected}
         isLastItem={isLastItem}
       >
-        <Icon name={selected ? 'story-white' : 'story-blue'} marginRight={6} />
+        <Icon
+          width={14}
+          height={14}
+          name={selected ? 'story-white' : 'story-blue'}
+          marginRight={6}
+        />
         <StoryNameText selected={selected}>{title}</StoryNameText>
       </ItemTouchable>
     );
