@@ -10,6 +10,7 @@
     - [Update your metro config](#update-your-metro-config)
     - [Convert your stories to CSF](#convert-your-stories-to-csf)
     - [Theming](#theming)
+    - [Test ids for tabs](#test-ids-for-tabs)
     - [The server](#the-server)
 
 ## From version 5.3.x to 6.5.x
@@ -200,6 +201,14 @@ themed now, this is just to help get you started:
 - `buttonActiveTextColor`: `tabs.activeTextColor`
 - `secondaryLabelColor`: `inputs.slider.valueTextColor`
 
+
+### Test ids for tabs
+
+The tabs were renamed to Sidebar, Canvas and Addons. So the test ids for the tabs are now:
+
+BottomMenu.Sidebar, BottomMenu.Canvas, BottomMenu.Addons
+
+And their text was updated to SIDEBAR, CANVAS, ADDONS.
 
 ### The server
 
