@@ -66,14 +66,14 @@ const SelectType = ({ arg, onChange }: SelectProps) => {
     <View>
       <ModalPicker
         data={options}
-        initValue={value}
+        initValue={String(value)}
         onChange={(option) => onChange(option.key)}
         animationType="none"
         keyExtractor={({ key, label }) => `${label}-${key}`}
       >
         <Input
           editable={false}
-          value={selected}
+          value={String(selected)}
           autoCapitalize="none"
           underlineColorAndroid="transparent"
         />
