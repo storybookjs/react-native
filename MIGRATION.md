@@ -7,6 +7,7 @@
     - [.storybook Folder](#storybook-folder)
     - [Update your index.js file](#update-your-indexjs-file)
     - [Add a main.js and preview.js](#add-a-mainjs-and-previewjs)
+    - [Scripts in package.json](#scripts-in-packagejson)
     - [Update your metro config](#update-your-metro-config)
     - [Convert your stories to CSF](#convert-your-stories-to-csf)
     - [Theming](#theming)
@@ -95,6 +96,35 @@ export const decorators = [
 export const parameters = {
   my_param: 'anything',
 };
+```
+
+### Scripts in package.json
+
+In storybook 6.5 there are some new binaries that generate your story imports and one that watches for new files.
+
+You can add these scripts to your package.json file.
+
+```json
+{
+  "scripts": {
+    "storybook-generate": "sb-rn-get-stories",
+    "storybook-watch": "sb-rn-watcher",
+  }
+}
+```
+
+You'll want to run the generate script whenever you add a new story file. Alternatively you can keep the watcher running.
+
+There are some options you can pass to the both these scripts. You can see them by running `yarn  sb-rn-get-stories --help` and `sb-rn-watcher --help`.
+
+```
+  .description('Getter and watcher for react native storybook')
+  .option(
+    '-c, --config-path <path>',
+    'The path to your config folder relative to your project-dir',
+    './.storybook'
+  )
+  .option('-a, --absolute', 'Use absolute paths for story imports');
 ```
 
 ### Update your metro config
