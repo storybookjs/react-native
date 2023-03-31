@@ -41,5 +41,14 @@ interface IconProps extends React.ComponentProps<typeof StyledImage> {
 
 export function Icon({ name, background = false, ...props }: IconProps) {
   const IconComponent = background ? StyledImageBackground : StyledImage;
-  return <IconComponent source={iconSources[name]} width={16} height={16} {...props} />;
+  return (
+    <IconComponent
+      source={{
+        ...iconSources[name],
+        width: 16,
+        height: 16,
+      }}
+      {...props}
+    />
+  );
 }
