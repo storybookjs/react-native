@@ -140,14 +140,16 @@ npx expo customize metro.config.js
 
 Then add sbmodern to the start of the `resolver.resolverMainFields` list.
 
-```js
+```diff
+// metro.config.js
+
 const { getDefaultConfig } = require('expo/metro-config');
 
 const defaultConfig = getDefaultConfig(__dirname);
 
-defaultConfig.resolver.resolverMainFields.unshift('sbmodern');
+++defaultConfig.resolver.resolverMainFields.unshift('sbmodern');
 
-module.exports = defaultConfig;
+++module.exports = defaultConfig;
 ```
 
 **React native**
