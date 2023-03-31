@@ -4,6 +4,7 @@
   - [From version 5.3.x to 6.5.x](#from-version-53x-to-65x)
     - [Additional dependencies](#additional-dependencies)
       - [Controls (the new knobs)](#controls-the-new-knobs)
+      - [Actions](#actions)
     - [.storybook Folder](#storybook-folder)
     - [Update your index.js file](#update-your-indexjs-file)
     - [Add a main.js and preview.js](#add-a-mainjs-and-previewjs)
@@ -30,6 +31,14 @@ To use the controls addon you will need these dependencies
 
 ```sh
 yarn add -D @storybook/addon-ondevice-controls @storybook/addons @storybook/addon-controls @react-native-community/datetimepicker @react-native-community/slider 
+```
+
+#### Actions
+
+To use the actions addon you will need these dependencies
+
+```sh
+yarn add -D @storybook/addon-ondevice-actions @storybook/addon-actions
 ```
 
 ### .storybook Folder
