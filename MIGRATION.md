@@ -145,7 +145,8 @@ Then add sbmodern to the start of the `resolver.resolverMainFields` list.
 
 const { getDefaultConfig } = require('expo/metro-config');
 
-const defaultConfig = getDefaultConfig(__dirname);
+--module.exports = getDefaultConfig(__dirname);
+++const defaultConfig = getDefaultConfig(__dirname);
 
 ++defaultConfig.resolver.resolverMainFields.unshift('sbmodern');
 
