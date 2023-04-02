@@ -30,7 +30,7 @@ yarn add -D @storybook/react-native @storybook/core-common @react-native-async-s
 To use the controls addon you will need these dependencies
 
 ```sh
-yarn add -D @storybook/addon-ondevice-controls @storybook/addons @storybook/addon-controls @react-native-community/datetimepicker @react-native-community/slider 
+yarn add -D @storybook/addon-ondevice-controls @storybook/addons @storybook/addon-controls @react-native-community/datetimepicker @react-native-community/slider
 ```
 
 #### Actions
@@ -41,13 +41,13 @@ To use the actions addon you will need these dependencies
 yarn add -D @storybook/addon-ondevice-actions @storybook/addon-actions
 ```
 
-### .storybook Folder
+### `.storybook` folder
 
-Rename the storybook folder to .storybook
+Rename the storybook folder to `.storybook`
 
-### Update your index.js file
+### Update your `index.js` file
 
-In 6.5 we use a script to generate your imports for stories and addons. This uses the new main.js file to generate the storybook.requires.js file. This file is then imported into the index.js file.
+In 6.5 we use a script to generate your imports for stories and addons. This uses the new `main.js` file to generate the `storybook.requires.js` file. This file is then imported into the `index.js` file.
 
 Remove the configure call, story imports and addon imports and reduce the index file to have this content. The most important thing is to import the `storybook.requires` file.
 
@@ -65,9 +65,9 @@ const StorybookUIRoot = getStorybookUI({
 export default StorybookUI
 ```
 
-### Add a main.js and preview.js
+### Add a `main.js` and `preview.js`
 
-In your `.storybook` folder add the `main.js` and `preview.js` files. 
+In your `.storybook` folder add the `main.js` and `preview.js` files.
 
 In the stories field of your `main.js` file update the regex to work for your project.
 
@@ -142,7 +142,8 @@ We use the sbmodern resolver field in order to resolve the modern version of sto
 
 **Expo**
 
-First create metro config file if you don't have it yet. 
+First create metro config file if you don't have it yet.
+
 ```sh
 npx expo customize metro.config.js
 ```
@@ -173,7 +174,6 @@ module.exports = {
 };
 ```
 
-
 ### Convert your stories to CSF
 
 Whilst storiesOf will still work it is now deprecated so we recommend that you convert your stories to CSF.
@@ -184,7 +184,7 @@ There is a codemod for your convenience which should automatically make the code
 npx storybook@next migrate storiesof-to-csf --glob="src/**/*.stories.tsx"
 ```
 
-Replace the storiesOf API with a default export that defines the title and component of your stories. Replace the add method with named exports that define each story. If you have any parameters or decorators, you can add them to the default export or to stories. 
+Replace the storiesOf API with a default export that defines the title and component of your stories. Replace the add method with named exports that define each story. If you have any parameters or decorators, you can add them to the default export or to stories.
 
 ```jsx
 // Before
@@ -205,13 +205,13 @@ export default {
 
 export const Primary = { args: { primary: true, label: "button" } };
 
-export const Secondary = { 
+export const Secondary = {
   // this gives the property "label" the default value "button"
-  args: { label: "button" } 
-  
+  args: { label: "button" }
+
   // for just this story
   decorators: [(Story) => (<Wrapper><Story/></Wrapper>)],
-  parameters: {myParam: "something else"} 
+  parameters: {myParam: "something else"}
 };
 
 ```
@@ -242,7 +242,6 @@ themed now, this is just to help get you started:
 - `buttonTextColor`: `tabs.inactiveTextColor`, `button.primary.textColor`, `button.secondary.textColor`
 - `buttonActiveTextColor`: `tabs.activeTextColor`
 - `secondaryLabelColor`: `inputs.slider.valueTextColor`
-
 
 ### Test ids for tabs
 

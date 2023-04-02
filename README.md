@@ -12,9 +12,9 @@ If you want to help out or are just curious then check out the [project board](h
 
 ![picture of storybook](https://user-images.githubusercontent.com/3481514/145904252-92e3dc1e-591f-410f-88a1-b4250f4ba6f2.png)
 
-Pictured is from the template mentioned in [getting started](#getting-started)
+_Pictured is from the template mentioned in [getting started](#getting-started)_
 
-# Table of contents
+## Table of contents
 
 - 🚀 [Getting Started](#getting-started)
 - 📒 [Writing stories](#writing-stories)
@@ -24,11 +24,11 @@ Pictured is from the template mentioned in [getting started](#getting-started)
 - 🤝 [Contributing](#contributing)
 - ✨ [Examples](#examples)
 
-# Getting Started
+## Getting Started
 
-## New project
+### New project
 
-There is some project boilerplate with @storybook/react-native and @storybook/addons-react-native-web both already configured with a simple example.
+There is some project boilerplate with `@storybook/react-native` and `@storybook/addons-react-native-web` both already configured with a simple example.
 
 For expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
 
@@ -49,12 +49,13 @@ For react native cli you can use this [template](https://github.com/dannyhw/reac
 npx react-native init MyApp --template react-native-template-storybook
 ```
 
-## Existing project
+### Existing project
 
-Run init to setup your project with all the dependencies and configuration files: 
+Run init to setup your project with all the dependencies and configuration files:
 
-`npx sb@next init --type react_native`
-
+```sh
+npx sb@next init --type react_native
+```
 
 The only thing left to do is return Storybook's UI in your app entry point (such as `App.js`) like this:
 
@@ -66,8 +67,7 @@ If you want to be able to swap easily between storybook and your app, have a loo
 
 If you want to add everything yourself check out the the manual guide [here](MANUAL_SETUP.md).
 
-
-# Writing stories
+## Writing stories
 
 In v6 you can use the CSF syntax that looks like this:
 
@@ -90,9 +90,11 @@ Basic.args = {
 
 ```
 
-You should configure the path to your story files in the main.js config file from the .storybook folder.
+You should configure the path to your story files in the `main.js` config file from the `.storybook` folder.
 
 ```js
+// .storybook/main.js
+
 module.exports = {
   stories: [
     '../components/**/*.stories.?(ts|tsx|js|jsx)'
@@ -101,9 +103,9 @@ module.exports = {
 }
 ```
 
-## Decorators and Parameters
+### Decorators and Parameters
 
-For stories you can add decorators and parameters on the default export or on a specifc story
+For stories you can add decorators and parameters on the default export or on a specifc story.
 
 ```jsx
 export default {
@@ -128,9 +130,11 @@ export default {
 };
 ```
 
-For global decorators and parameters you can add them to preview.js inside your .storybook folder.
+For global decorators and parameters, you can add them to `preview.js` inside your `.storybook` folder.
 
 ```jsx
+// .storybook/preview.js
+
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
 export const decorators = [withBackgrounds, (Story)=> <View style={{flex: 1, color: 'blue'}}><Story/></View>];
 export const parameters = {
@@ -143,24 +147,25 @@ export const parameters = {
     ]
   },
 };
-
 ```
 
-# Addons
+## Addons
 
 The cli will install some basic addons for you such as controls and actions.
 Ondevice addons are addons that can render with the device ui that you see on the phone.
 
 Currently the addons available are:
 
-- @storybook/addon-ondevice-controls: adjust your components props in realtime
-- @storybook/addon-ondevice-actions: mock onPress calls with actions that will log information in the actions tab
-- @storybook/addon-ondevice-notes: Add some markdown to your stories to help document their usage
-- @storybook/addon-ondevice-backgrounds: change the background of storybook to compare the look of your component against different backgrounds
+- [`@storybook/addon-ondevice-controls`](https://storybook.js.org/addons/@storybook/addon-ondevice-controls): adjust your components props in realtime
+- [`@storybook/addon-ondevice-actions`](https://storybook.js.org/addons/@storybook/addon-ondevice-actions): mock onPress calls with actions that will log information in the actions tab
+- [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some markdown to your stories to help document their usage
+- [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
 
-Install each one you want to use and add them to the main.js addons list as follows:
+Install each one you want to use and add them to the `main.js` addons list as follows:
 
 ```js
+// .storybook/main.js
+
 addons: [
   '@storybook/addon-ondevice-notes',
   '@storybook/addon-ondevice-controls',
@@ -168,7 +173,6 @@ addons: [
   '@storybook/addon-ondevice-actions',
 ],
 ```
-
 
 ### Using the addons in your story
 
@@ -179,7 +183,7 @@ For details of each ondevice addon you can see the readme:
 - [controls](addons/ondevice-controls)
 - [notes](addons/ondevice-notes)
 
-# Hide/Show storybook
+## Hide/Show storybook
 
 Storybook on react native is a normal React Native component that can be used or hidden anywhere in your RN application based on your own logic.
 
@@ -189,10 +193,7 @@ Some have opted to toggle the storybook component by using a custom option in th
 - [Heres an approach for react native cli](https://dev.to/dannyhw/multiple-entry-points-for-react-native-storybook-4dkp)
 - [Heres an article about how you can do it in expo](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
-
-
-# getStorybookUI options
-
+## getStorybookUI options
 
 You can pass these parameters to getStorybookUI call in your storybook entry point:
 
@@ -209,7 +210,7 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 }
 ```
 
-# Contributing
+## Contributing
 
 We welcome contributions to Storybook!
 
@@ -222,7 +223,7 @@ Looking for a first issue to tackle?
 - We tag issues with [Good First Issue](https://github.com/storybookjs/react-native/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) when we think they are well suited for people who are new to the codebase or OSS in general.
 - [Talk to us](https://discord.gg/sMFvFsG), we'll find something to suits your skills and learning interest.
 
-# Examples
+## Examples
 
 Here are some example projects to help you get started
 
