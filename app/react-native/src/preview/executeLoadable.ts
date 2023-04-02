@@ -2,7 +2,7 @@ import { logger } from '@storybook/client-logger';
 import { Path, ModuleExports } from '@storybook/store';
 import { Loadable, RequireContext, LoaderFunction } from '../types/types';
 
-declare var global: NodeJS.Global &
+declare var global: typeof globalThis &
   typeof globalThis & { lastExportsMap: Map<Path, ModuleExports> };
 /**
  * Executes a Loadable (function that returns exports or require context(s))

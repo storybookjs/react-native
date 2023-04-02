@@ -6,7 +6,7 @@ import { Text } from 'react-native';
 // Remember to also include '@storybook/addon-ondevice-backgrounds' in your addons config: see /examples/expo-example/.storybook/main.js
 addDecorator(withBackgrounds);
 
-storiesOf('Chat/Message/Bubble', module)
+storiesOf('Background StoriesOf', module)
   .addParameters({
     backgrounds: {
       default: 'warm',
@@ -16,44 +16,4 @@ storiesOf('Chat/Message/Bubble', module)
       ],
     },
   })
-  .add('Basic', () => <Text>Change background color via Addons -&gt; Background</Text>)
-  .add('Basic2', () => <Text>Change background color via Addons -&gt; Background</Text>);
-
-  storiesOf('Chat/Message', module)
-  .addParameters({
-    backgrounds: {
-      default: 'warm',
-      values: [
-        { name: 'warm', value: 'hotpink' },
-        { name: 'cool', value: 'deepskyblue' },
-      ],
-    },
-  })
-  .add('Basic', () => <Text>Change background color via Addons -&gt; Background</Text>)
-  .add('Basic2', () => <Text>Change background color via Addons -&gt; Background</Text>);
-
-storiesOf('Chat/Message/Reactions', module)
-  .addParameters({
-    backgrounds: {
-      default: 'warm',
-      values: [
-        { name: 'warm', value: 'hotpink' },
-        { name: 'cool', value: 'deepskyblue' },
-      ],
-    },
-  })
-  .add('Basic', () => <Text>Change background color via Addons -&gt; Background</Text>)
-  .add('Basic2', () => <Text>Change background color via Addons -&gt; Background</Text>);
-
-  storiesOf('Chat/MessageInput', module)
-  .addParameters({
-    backgrounds: {
-      default: 'warm',
-      values: [
-        { name: 'warm', value: 'hotpink' },
-        { name: 'cool', value: 'deepskyblue' },
-      ],
-    },
-  })
-  .add('Basic', () => <Text>Change background color via Addons -&gt; Background</Text>)
-  .add('Basic2', () => <Text>Change background color via Addons -&gt; Background</Text>);
+  .add('Basic', () => <Text>Change background color via Addons -&gt; Background</Text>);
