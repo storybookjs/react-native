@@ -32,6 +32,7 @@
     "template/**/*"
   ],
   "scripts": {
+    "dev": "yarn tsc --watch",
     "preprepare": "rm -rf dist/",
     "prepare": "tsc",
     "test": "jest"

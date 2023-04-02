@@ -2,11 +2,12 @@ import styled from '@emotion/native';
 import { addons, StoryKind } from '@storybook/addons';
 import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 import Events from '@storybook/core-events';
-import React, { useMemo, useState } from 'react';
-import { SectionList, SectionListRenderItem, StyleSheet, TextInputProps } from 'react-native';
+import React, { useCallback, useMemo, useState } from 'react';
+import { Button, FlatList, StyleSheet, TextInputProps, TouchableOpacity, View } from 'react-native';
 import { Icon } from '../Shared/icons';
 import { Box } from '../Shared/layout';
-import { useIsStorySelected, useIsStorySectionSelected, useTheme } from '../../../hooks';
+import { useIsStorySelected, useTheme } from '../../../hooks';
+import { Theme } from '../Shared/theme';
 
 const SectionHeaderText = styled.Text<{ selected: boolean }>(({ theme }) => ({
   fontSize: theme.storyList.fontSize,
@@ -18,6 +19,14 @@ const StoryNameText = styled.Text<{ selected: boolean }>(({ selected, theme }) =
   fontSize: theme.storyList.fontSize,
   fontWeight: selected ? theme.storyList.storySelectedFontWeight : theme.storyList.storyFontWeight,
   color: selected ? theme.storyList.storySelectedTextColor : theme.storyList.storyTextColor,
+  marginLeft: 5,
+}));
+
+const StoryItemView = styled.View(({selected, theme}: { selected: boolean, theme: Theme }) => ({
+  backgroundColor: selected ? theme.storyList.storySelectedBackgroundColor : 'transparent',
+  borderRadius: theme.storyList.sectionBorderRadius,
+  marginRight: 10,
+  marginLeft: 20,
 }));
 
 const SEARCH_ICON_SIZE = 24;
@@ -67,116 +76,72 @@ const SearchBar = (props: TextInputProps) => {
   );
 };
 
-const HeaderContainer = styled.TouchableOpacity(
-  {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  ({ selected, theme }) => ({
-    marginTop: theme.storyList.sectionSpacing,
-    paddingHorizontal: theme.storyList.headerPaddingHorizontal,
-    paddingVertical: theme.storyList.headerPaddingVertical,
-    backgroundColor: selected ? theme.storyList.sectionActiveBackgroundColor : undefined,
-    borderTopLeftRadius: theme.storyList.sectionBorderRadius,
-    borderTopRightRadius: theme.storyList.sectionBorderRadius,
-  })
-);
-
-interface SectionProps {
-  title: string;
-  onPress: () => void;
-}
-
-const SectionHeader = React.memo(({ title, onPress }: SectionProps) => {
-  const selected = useIsStorySectionSelected(title);
-
-  return (
-    <HeaderContainer key={title} selected={selected} onPress={onPress} activeOpacity={0.8}>
-      <Icon name="grid" width={12} height={12} marginRight={6} />
-      <SectionHeaderText selected={selected}>{title}</SectionHeaderText>
-    </HeaderContainer>
-  );
-});
-
-interface ListItemProps {
-  storyId: string;
-  title: string;
-  kind: string;
-  onPress: () => void;
-  isLastItem: boolean;
-}
-
-const ItemTouchable = styled.TouchableOpacity<{
-  selected: boolean;
-  sectionSelected: boolean;
-  isLastItem: boolean;
-}>(
-  {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  ({ selected, sectionSelected, isLastItem, theme }) => ({
-    padding: theme.storyList.storyPaddingHorizontal,
-    paddingStart: theme.storyList.storyIndent,
-    backgroundColor: selected
-      ? theme.storyList.storySelectedBackgroundColor
-      : sectionSelected
-      ? theme.storyList.sectionActiveBackgroundColor
-      : undefined,
-    borderBottomLeftRadius: isLastItem ? theme.storyList.sectionBorderRadius : undefined,
-    borderBottomRightRadius: isLastItem ? theme.storyList.sectionBorderRadius : undefined,
-  })
-);
-
-const ListItem = React.memo(
-  ({ storyId, kind, title, isLastItem, onPress }: ListItemProps) => {
-    const selected = useIsStorySelected(storyId);
-
-    const sectionSelected = useIsStorySectionSelected(kind);
-
-    return (
-      <ItemTouchable
-        key={title}
-        onPress={onPress}
-        activeOpacity={0.8}
-        testID={`Storybook.ListItem.${kind}.${title}`}
-        accessibilityLabel={`Storybook.ListItem.${title}`}
-        selected={selected}
-        sectionSelected={sectionSelected}
-        isLastItem={isLastItem}
-      >
-        <Icon
-          width={14}
-          height={14}
-          name={selected ? 'story-white' : 'story-blue'}
-          marginRight={6}
-        />
-        <StoryNameText selected={selected}>{title}</StoryNameText>
-      </ItemTouchable>
-    );
-  },
-  (prevProps, nextProps) => prevProps.storyId === nextProps.storyId
-);
-
 interface Props {
   storyIndex: StoryIndex;
 }
 
+type ItemType = 'Section' | 'Feature' | 'Story' | 'Item';
+
 interface DataItem {
   title: StoryKind;
-  data: StoryIndexEntry[];
+  type: ItemType;
+  name?: string;
+  data: (StoryIndexEntry & { type?: ItemType })[];
 }
 
-const getStories = (storyIndex: StoryIndex): DataItem[] => {
+const getNestedStories = (storyIndex: StoryIndex): DataItem[] => {
   if (!storyIndex) {
     return [];
   }
 
   const groupedStories = Object.values(storyIndex.stories).reduce((acc, story) => {
-    acc[story.title] = {
-      title: story.title,
-      data: (acc[story.title]?.data ?? []).concat(story),
-    };
+    const splitTitle = story.title.split('/');
+
+    if (splitTitle.length > 1) {
+      const sectionTitle = splitTitle[0];
+      const featureTitle = splitTitle[1];
+      const storyTitle = splitTitle[2] || '';
+
+      if (!acc[sectionTitle]) {
+        acc[sectionTitle] = { title: sectionTitle, type: 'Section', data: [] };
+      }
+
+      const section = acc[sectionTitle].data.find((dataItem) => dataItem.id === featureTitle);
+
+      if (!section) {
+        acc[sectionTitle].data.push({
+          id: featureTitle,
+          title: featureTitle,
+          type: 'Feature',
+          data: [],
+        } as any);
+      }
+
+      const updatedSection: any = acc[sectionTitle].data.find((dataItem) => dataItem.id === featureTitle);
+
+      if (storyTitle) {
+        const storyItem = updatedSection.data.find((dataItem) => dataItem.id === storyTitle);
+
+        if (storyItem) {
+          storyItem.data.push({ ...story, type: 'Item' });
+        } else {
+          updatedSection.data.push({
+            id: storyTitle,
+            title: storyTitle,
+            type: 'Story',
+            data: [{ ...story, type: 'Item' }],
+          });
+        }
+      } else {
+        updatedSection.data.push({ ...story, type: 'Item' });
+      }
+    } else {
+      acc[story.title] = {
+        title: story.title,
+        type: 'Story',
+        data: (acc[story.title]?.data ?? []).concat({ ...story, type: 'Item' }),
+      };
+    }
 
     return acc;
   }, {} as Record<string, DataItem>);
@@ -184,51 +149,36 @@ const getStories = (storyIndex: StoryIndex): DataItem[] => {
   return Object.values(groupedStories);
 };
 
-const styles = StyleSheet.create({
-  sectionList: { flex: 1 },
-  sectionListContentContainer: { paddingBottom: 6 },
-});
-
-function keyExtractor(item: any, index) {
-  return item.id + index;
-}
-
 const StoryListView = ({ storyIndex }: Props) => {
-  const originalData = useMemo(() => getStories(storyIndex), [storyIndex]);
+  const newData = useMemo(() => getNestedStories(storyIndex), [storyIndex]);
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const [data, setData] = useState<DataItem[]>(originalData);
+  let filteredData = newData;
 
-  const theme = useTheme();
+  const searchQuery = searchTerm.toLowerCase().trim();
 
-  const handleChangeSearchText = (text: string) => {
-    const query = text.trim();
+  const filterData = useCallback((items: DataItem[]): DataItem[] => {
+    return items.reduce<DataItem[]>((filtered, item) => {
+      const childData = item.data && item.type !== 'Item' ? filterData(item.data as any) : [];
 
-    if (!query) {
-      setData(originalData);
+      const matchesTitle = item.title.toLowerCase().includes(searchQuery);
+      const matchesName = item.type === 'Item' && item.name && item.name.toLowerCase().includes(searchQuery);
+      const hasMatchingChild = childData.length > 0;
 
-      return;
-    }
-
-    const checkValue = (value: string) => value.toLowerCase().includes(query.toLowerCase());
-
-    const filteredData = originalData.reduce((acc, story) => {
-      const hasTitle = checkValue(story.title);
-
-      const hasKind = story.data.some((ref) => checkValue(ref.name));
-
-      if (hasTitle || hasKind) {
-        acc.push({
-          ...story,
-          // in case the query matches component's title, all of its stories will be shown
-          data: !hasTitle ? story.data.filter((ref) => checkValue(ref.name)) : story.data,
+      if (matchesTitle || matchesName || hasMatchingChild) {
+        filtered.push({
+          ...item,
+          data: hasMatchingChild ? childData : item.data as any,
         });
       }
 
-      return acc;
+      return filtered;
     }, []);
+  }, [searchQuery]);
 
-    setData(filteredData);
-  };
+  if (searchTerm && searchTerm.trim() && searchTerm.length > 0) {
+    filteredData = filterData(newData);
+  }
 
   const changeStory = (storyId: string) => {
     const channel = addons.getChannel();
@@ -236,51 +186,130 @@ const StoryListView = ({ storyIndex }: Props) => {
     channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 
-  const renderItem: SectionListRenderItem<StoryIndexEntry, DataItem> = React.useCallback(
-    ({ item, index, section }) => {
-      return (
-        <ListItem
-          storyId={item.id}
-          title={item.name}
-          kind={item.title}
-          isLastItem={index === section.data.length - 1}
-          onPress={() => changeStory(item.id)}
-        />
-      );
-    },
-    []
-  );
+  const LevelItem = React.memo(({ item, level, changeStory, expandedLevels, toggleExpand }: any) => {
+    const marginLeft = level * 10;
+    const selected = useIsStorySelected(item.id);
 
-  const renderSectionHeader = React.useCallback(
-    ({ section: { title, data: sectionData } }) => (
-      <SectionHeader title={title} onPress={() => changeStory(sectionData[0].id)} />
-    ),
-    []
-  );
+    if (item.type === 'Item') {
+      return (
+        <StoryItemView selected={selected}>
+          <TouchableOpacity style={{ flexDirection: 'row', paddingVertical: 5, paddingHorizontal: 10 }} onPress={() => changeStory( item.id)}>
+            <Icon name={selected ? 'story-white' : 'story-blue'} />
+            <StoryNameText selected={selected}>{item.name}</StoryNameText>
+          </TouchableOpacity>
+        </StoryItemView>
+      );
+    }
+
+    const isExpanded = expandedLevels[level]?.includes(item.title);
+
+    return (
+      <TouchableOpacity onPress={() => toggleExpand(level, item.title, isExpanded)} style={{ marginLeft }}>
+        <View style={{flexDirection: 'row', paddingVertical: 5, paddingHorizontal: 10}}>
+          <Icon name="grid" />
+          <SectionHeaderText style={{ marginLeft: 5 }}>
+            {item.type === 'Item' ? item.name : item.title}
+          </SectionHeaderText>
+        </View>
+        {isExpanded && item.data && (
+          <View>
+            {item.data.map((child, index) => (
+              <LevelItem
+                key={child.title + index}
+                item={child}
+                level={level + 1}
+                changeStory={changeStory}
+                expandedLevels={expandedLevels}
+                toggleExpand={toggleExpand}
+              />
+            ))}
+          </View>
+        )}
+      </TouchableOpacity>
+    );
+  });
+
+  const RenderData = React.memo(({ newData, changeStory }: any) => {
+    const [expandedLevels, setExpandedLevels] = useState({});
+
+
+    const toggleAll = (expand) => {
+      const updateLevels = (data, level = 0, prevState = {}) => {
+        data.forEach((item) => {
+          if (item.type !== 'Item' && item.data) {
+            const expandedTitles = prevState[level] || [];
+            const updatedTitles = expand
+              ? [...expandedTitles, item.title]
+              : expandedTitles.filter((t) => t !== item.title);
+
+            prevState[level] = updatedTitles;
+            updateLevels(item.data, level + 1, prevState);
+          }
+        });
+        return prevState;
+      };
+
+      setExpandedLevels((prevState) => updateLevels(newData, 0, { ...prevState }));
+    };
+
+    const toggleExpand = (level, title, isExpanded) => {
+      setExpandedLevels((prevState) => {
+        const expandedTitles = prevState[level] || [];
+        const updatedTitles = isExpanded
+          ? expandedTitles.filter((t) => t !== title)
+          : [...expandedTitles, title];
+        return { ...prevState, [level]: updatedTitles };
+      });
+    };
+
+    const flattenData = (data, level = 0) => {
+      return data.reduce((flatData, item) => {
+        flatData.push({ ...item, level });
+        if (item.type !== 'Item' && item.data && expandedLevels[level]?.includes(item.title)) {
+          flatData.push(...flattenData(item.data, level + 1));
+        }
+        return flatData;
+      }, []);
+    };
+
+    const flatData = flattenData(newData);
+
+    const renderItem = ({ item }) => (
+      <LevelItem
+        item={item}
+        level={item.level}
+        changeStory={changeStory}
+        expandedLevels={expandedLevels}
+        toggleExpand={toggleExpand}
+      />
+    );
+
+    return (
+      <>
+        <View style={{ flexDirection: 'row' }}>
+          <Button title="Expand All" onPress={() => toggleAll(true)} />
+          <Button title="Collapse All" onPress={() => toggleAll(false)} />
+        </View>
+        <FlatList
+          data={flatData}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => `${item.title}-${index}`}
+          contentContainerStyle={{ paddingBottom: 50 }}
+        />
+      </>
+    );
+  });
+
 
   return (
     <Box flex>
       <SearchBar
         testID="Storybook.ListView.SearchBar"
-        onChangeText={handleChangeSearchText}
+        onChangeText={setSearchTerm}
+        value={searchTerm}
         placeholder="Find by name"
       />
-      <SectionList
-        style={styles.sectionList}
-        contentContainerStyle={[
-          styles.sectionListContentContainer,
-          {
-            paddingVertical: theme.panel.paddingVertical,
-            paddingHorizontal: theme.panel.paddingHorizontal,
-          },
-        ]}
-        testID="Storybook.ListView"
-        renderItem={renderItem}
-        renderSectionHeader={renderSectionHeader}
-        keyExtractor={keyExtractor}
-        sections={data}
-        stickySectionHeadersEnabled={false}
-      />
+    <RenderData newData={filteredData} changeStory={changeStory} />
     </Box>
   );
 };
