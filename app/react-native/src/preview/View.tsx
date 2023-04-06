@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect, useMemo, useReducer } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StoryIndex, SelectionSpecifier } from '@storybook/store';
 import { StoryContext, toId } from '@storybook/csf';
@@ -14,7 +14,7 @@ import StoryView from './components/StoryView';
 import createChannel from '@storybook/channel-websocket';
 import getHost from './rn-host-detect';
 import events from '@storybook/core-events';
-import { Appearance } from 'react-native';
+import { useColorScheme } from 'react-native';
 import deepmerge from 'deepmerge';
 
 const STORAGE_KEY = 'lastOpenedStory';
@@ -164,10 +164,6 @@ export class View {
     // eslint-disable-next-line consistent-this
     const self = this;
 
-    const appliedTheme = deepmerge(
-      Appearance.getColorScheme() === 'dark' ? darkTheme : theme,
-      params.theme ?? {}
-    );
 
     // Sync the Storybook parameters (external) with app UI state (internal), to initialise them.
     syncExternalUI({
@@ -177,8 +173,13 @@ export class View {
 
     return () => {
       const setContext = useSetStoryContext();
-
+      const colorScheme = useColorScheme();
       const [, forceUpdate] = useReducer((x) => x + 1, 0);
+
+      const appliedTheme = useMemo(() => deepmerge(
+        colorScheme === 'dark' ? darkTheme : theme,
+        params.theme ?? {}
+      ), [colorScheme]);
 
       useEffect(() => {
         self._setStory = (newStory: StoryContext<ReactNativeFramework>) => {
