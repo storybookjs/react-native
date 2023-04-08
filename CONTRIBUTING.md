@@ -37,7 +37,7 @@ A good way to do that is using the example app embedded in this repository:
 # Download and build this repository:
 git clone https://github.com/storybookjs/react-native.git react-native-storybook
 cd react-native-storybook
-yarn bootstrap --core
+yarn build
 
 # make changes to try and reproduce the problem, such as adding components + stories
 cd examples/expo-example
@@ -169,9 +169,9 @@ If you run into trouble here, make sure your node, npm, and **_yarn_** are on th
 1.  `cd ~` (optional)
 2.  `git clone https://github.com/storybookjs/react-native.git react-native-storybook` _bonus_: use your own fork for this step
 3.  `cd react-native-storybook`
-4.  `yarn bootstrap --core`
+4.  `yarn install`
+5.  `yarn build`
 
-The command `yarn bootstrap --core` may take a long time to complete (10-20 mins) since there a lot of dependencies to install.
 
 ### Running the project
 
@@ -258,20 +258,17 @@ This sequence applies to both releases and pre-releases, but differs slightly be
 ```sh
 # make sure you current with origin/next.
 git checkout next
+git pull origin next
 git status
 
-# generate changelog and edit as appropriate
-# generates a Next section
-yarn changelog:next x.y.z-alpha.a
+# build
+yarn build
 
-# Edit the changelog/PRs as needed, then commit
-git commit -m "x.y.z-alpha.a changelog"
-
-# clean build
-yarn bootstrap --reset --core
+# tag release
+yarn version-packages
 
 # publish and tag the release
-yarn run publish:next
+yarn publish:next
 
 # update the release page
 open https://github.com/storybookjs/react-native/releases
@@ -280,22 +277,19 @@ open https://github.com/storybookjs/react-native/releases
 #### Full release:
 
 ```sh
-# make sure you current with origin/master.
-git checkout master
+# make sure you current with next.
+git checkout next
+git pull origin next
 git status
 
-# generate changelog and edit as appropriate
-# generates a vNext section
-yarn changelog x.y.z
+# build
+yarn build
 
-# Edit the changelog/PRs as needed, then commit
-git commit -m "x.y.z changelog"
-
-# clean build
-yarn bootstrap --reset --core
+# tag release
+yarn version-packages
 
 # publish and tag the release
-yarn run publish:latest
+yarn publish:latest
 
 # update the release page
 open https://github.com/storybookjs/react-native/releases

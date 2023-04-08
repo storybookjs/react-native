@@ -35,9 +35,9 @@
     "github-release": "github-release-from-changelog",
     "lint": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:fix": "yarn lint . --fix",
-    "prepareAll": "lerna run prepare",
+    "build": "lerna run prepare",
     "version-packages": "yarn lerna version --force-publish",
-    "publish-alpha": "yarn lerna publish from-git --dist-tag alpha",
+    "publish:alpha": "yarn lerna publish from-git --dist-tag alpha",
     "publish:latest": "yarn lerna publish from-git --dist-tag latest",
     "publish:next": "yarn lerna publish from-git --dist-tag next",
     "test": "lerna run test"
