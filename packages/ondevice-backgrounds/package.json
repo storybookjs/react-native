@@ -28,7 +28,7 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
+    "prepare": "tsc"
   },
   "dependencies": {
     "@storybook/addons": "^6.5.14",

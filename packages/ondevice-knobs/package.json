@@ -24,7 +24,7 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
+    "prepare": "tsc"
   },
   "dependencies": {
     "@emotion/native": "^10.0.14",
