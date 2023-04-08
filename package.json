@@ -24,13 +24,7 @@
   },
   "workspaces": {
     "packages": [
-      "addons/*",
-      "app/*",
-      "examples/*"
-    ],
-    "nohoist": [
-      "**/detox",
-      "**/detox/**"
+      "packages/*"
     ]
   },
   "scripts": {
@@ -62,42 +56,6 @@
     "repo-dirty-check": "node ./scripts/repo-dirty-check",
     "test": "lerna run test"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.html": [
-      "yarn lint:js --fix",
-      "git add"
-    ],
-    "*.js": [
-      "yarn lint:js --fix",
-      "git add"
-    ],
-    "*.jsx": [
-      "yarn lint:js --fix",
-      "git add"
-    ],
-    "*.mjs": [
-      "yarn lint:js --fix",
-      "git add"
-    ],
-    "*.ts": [
-      "yarn lint:js --fix",
-      "git add"
-    ],
-    "*.tsx": [
-      "yarn lint:js --fix",
-      "git add"
-    ],
-    "package.json": [
-      "yarn lint:package",
-      "git add"
-    ]
-  },
-  "browserslist": "defaults",
   "resolutions": {
     "@types/react": "~18.0.27",
     "@typescript-eslint/parser": "^5.37.0",
