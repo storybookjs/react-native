@@ -28,7 +28,8 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "dev": "tsc --watch"
   },
   "dependencies": {
     "@storybook/addons": "^6.5.14",

@@ -24,7 +24,8 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "dev": "tsc --watch"
   },
   "dependencies": {
     "@emotion/native": "^10.0.14",

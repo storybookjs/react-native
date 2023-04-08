@@ -25,7 +25,8 @@
   ],
   "scripts": {
     "preprepare": "rm -rf dist/",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "dev": "tsc --watch"
   },
   "dependencies": {
     "@emotion/core": "^10.0.20",

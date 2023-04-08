@@ -26,6 +26,7 @@
   "scripts": {
     "preprepare": "rm -rf dist/",
     "prepare": "tsc",
+    "dev": "tsc --watch",
     "postprepare": "cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {

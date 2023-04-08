@@ -30,10 +30,8 @@
   },
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
-    "dev": "concurrently --kill-others \"yarn dev:tsc\" \"yarn dev:babel\"",
-    "dev:babel": "lerna exec --scope @storybook/* --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-babel.js",
+    "dev": "lerna run dev",
     "dev:check-types": "tsc --noEmit",
-    "dev:tsc": "lerna exec --scope @storybook/* --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-tsc.js",
     "github-release": "github-release-from-changelog",
     "lint": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:fix": "yarn lint . --fix",
@@ -45,7 +43,8 @@
     "test": "lerna run test"
   },
   "devDependencies": {
-    "lerna": "^6.6.1"
+    "lerna": "^6.6.1",
+    "cross-env": "^7.0.3"
   },
   "resolutions": {
     "telejson": "^7.0.4"
