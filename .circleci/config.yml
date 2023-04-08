@@ -19,11 +19,8 @@ jobs:
           name: Install dependencies
           command: yarn install
       - run:
-          name: Check that yarn.lock is not corrupted
-          command: yarn repo-dirty-check
-      - run:
           name: Bootstrap
-          command: yarn bootstrap --core
+          command: yarn prepareAll
       - save_cache:
           name: Cache core dependencies
           key: core-dependencies-v4-{{ checksum "yarn.lock" }}
@@ -35,8 +32,7 @@ jobs:
           root: .
           paths:
             - node_modules
-            - addons
-            - app
+            - packages
 
   lint:
     <<: *defaults
