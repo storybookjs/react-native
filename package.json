@@ -44,7 +44,9 @@
   },
   "devDependencies": {
     "lerna": "^6.6.1",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "eslint": "8.24.0",
+    "@react-native/eslint-config": "^0.72.1"
   },
   "resolutions": {
     "telejson": "^7.0.4"
