@@ -19,8 +19,8 @@ jobs:
           name: Install dependencies
           command: yarn install
       - run:
-          name: Bootstrap
-          command: yarn prepareAll
+          name: build
+          command: yarn build
       - save_cache:
           name: Cache core dependencies
           key: core-dependencies-v4-{{ checksum "yarn.lock" }}
