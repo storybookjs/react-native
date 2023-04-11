@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist/",
+    "paths": {
+      "@emotion/native": ["src/typings.d.ts"]
+    },
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"]
+}

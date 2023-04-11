@@ -1,0 +1,58 @@
+{
+  "name": "@storybook/addon-ondevice-controls",
+  "version": "6.5.3",
+  "description": "Display storybook controls on your device.",
+  "keywords": [
+    "addon",
+    "control",
+    "ondevice",
+    "react-native",
+    "storybook"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/react-native.git",
+    "directory": "packages/ondevice-controls"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "clean": "cross-env-shell rm -rf dist/",
+    "prepare": "yarn clean && tsc && yarn copyimages",
+    "dev": "tsc --watch",
+    "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
+  },
+  "dependencies": {
+    "@emotion/native": "^10.0.14",
+    "@storybook/addons": "^6.5.14",
+    "@storybook/client-logger": "^6.5.14",
+    "@storybook/core-events": "^6.5.14",
+    "core-js": "^3.0.1",
+    "deep-equal": "^1.0.1",
+    "prop-types": "^15.7.2",
+    "react-native-modal-datetime-picker": "^14.0.0",
+    "react-native-modal-selector": "^2.1.1",
+    "tinycolor2": "^1.4.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-controls": "^6.5.14"
+  },
+  "peerDependencies": {
+    "@react-native-community/datetimepicker": "*",
+    "@react-native-community/slider": "*",
+    "@storybook/addon-controls": "^6.5.14",
+    "react": "*",
+    "react-native": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "4aa2ae40569ea7f61e438ce568a39c580b3097d8"
+}

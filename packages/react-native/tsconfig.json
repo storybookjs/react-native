@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@emotion/native": ["src/types/emotion-native.d.ts"]
+    },
+    "rootDir": "./src",
+    "outDir": "dist/"
+  },
+  "exclude": ["src/__tests__/**/*"],
+  "include": ["src/**/*"]
+}

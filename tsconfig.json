@@ -1,20 +1,18 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "incremental": false,
-    "noImplicitAny": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "declaration": true,
     "jsx": "react",
-    "module": "commonjs",
+    "lib": ["es2017"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "dist/",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "target": "es5",
-    "types": ["jest"],
-    "lib": ["es2017", "dom"]
+    "target": "es5"
   },
   "exclude": [
     "**/dist",

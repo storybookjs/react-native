@@ -4,7 +4,7 @@ aliases:
   - &defaults
     working_directory: /tmp/storybook
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:16.20.0
 
 jobs:
   build:
@@ -19,11 +19,8 @@ jobs:
           name: Install dependencies
           command: yarn install
       - run:
-          name: Check that yarn.lock is not corrupted
-          command: yarn repo-dirty-check
-      - run:
-          name: Bootstrap
-          command: yarn bootstrap --core
+          name: build
+          command: yarn build
       - save_cache:
           name: Cache core dependencies
           key: core-dependencies-v4-{{ checksum "yarn.lock" }}
@@ -35,8 +32,7 @@ jobs:
           root: .
           paths:
             - node_modules
-            - addons
-            - app
+            - packages
 
   lint:
     <<: *defaults
