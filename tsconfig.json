@@ -6,12 +6,12 @@
     "declaration": true,
     "jsx": "react-native",
     "lib": ["es2017"],
-    "module": "ES6",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "dist/",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "target": "es6"
+    "target": "es5"
   },
   "exclude": [
     "**/dist",
