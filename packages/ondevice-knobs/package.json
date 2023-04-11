@@ -24,7 +24,9 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepare": "tsc",
+    "clean": "cross-env-shell rm -rf dist/",
+    "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources",
+    "prepare": "yarn clean && tsc && yarn copyimages",
     "dev": "tsc --watch"
   },
   "dependencies": {

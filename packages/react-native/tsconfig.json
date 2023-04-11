@@ -1,21 +1,13 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "jsx": "react",
-    "allowJs": true,
-    "rootDir": "./src",
-    "module": "ES6",
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "target": "ES2016",
-    "allowSyntheticDefaultImports": true,
     "paths": {
       "@emotion/native": ["src/types/emotion-native.d.ts"]
     },
-    "outDir": "dist/",
-    "moduleResolution": "node",
-    "declaration": true
+    "rootDir": "./src",
+    "outDir": "dist/"
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/__tests__/**/*"]
+  "exclude": ["src/__tests__/**/*"],
+  "include": ["src/**/*"]
 }

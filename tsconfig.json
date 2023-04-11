@@ -1,20 +1,17 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "incremental": false,
-    "noImplicitAny": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "jsx": "react",
-    "module": "commonjs",
+    "declaration": true,
+    "jsx": "react-native",
+    "lib": ["es2017"],
+    "module": "ES6",
+    "moduleResolution": "node",
+    "outDir": "dist/",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "target": "es5",
-    "types": ["jest"],
-    "lib": ["es2017", "dom"]
+    "target": "es6"
   },
   "exclude": [
     "**/dist",

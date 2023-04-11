@@ -1,8 +1,30 @@
 {
-  "extends": "../../tsconfig.json",
+  "include": ["src/**/*"],
+  "compileOnSave": false,
   "compilerOptions": {
     "outDir": "dist/",
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl": ".",
+    "incremental": false,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "es5",
+    "types": ["jest"],
+    "lib": ["es2017", "dom"]
   },
-  "include": ["src/**/*"]
+  "exclude": [
+    "**/dist",
+    "node_modules",
+    "**/node_modules",
+    "**/*.spec.ts",
+    "**/__tests__",
+    "**/*.test.ts"
+  ]
 }

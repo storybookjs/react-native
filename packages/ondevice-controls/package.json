@@ -24,10 +24,10 @@
     "*.d.ts"
   ],
   "scripts": {
-    "preprepare": "rm -rf dist/",
-    "prepare": "tsc",
+    "clean": "cross-env-shell rm -rf dist/",
+    "prepare": "yarn clean && tsc && yarn copyimages",
     "dev": "tsc --watch",
-    "postprepare": "cp -r src/components/color-picker/resources dist/components/color-picker/resources"
+    "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
     "@emotion/native": "^10.0.14",

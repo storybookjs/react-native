@@ -1,17 +1,8 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "jsx": "react",
     "rootDir": "./src",
-    "module": "ES6",
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "target": "ES2016",
-    "allowSyntheticDefaultImports": true,
-    "outDir": "dist/",
-    "moduleResolution": "node",
-    "declaration": true,
-    "allowJs": true
+    "outDir": "dist/"
   },
   "include": ["src/**/*"]
 }
