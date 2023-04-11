@@ -15,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/storybookjs/react-native.git",
-    "directory": "addons/ondevice-backgrounds"
+    "directory": "packages/ondevice-backgrounds"
   },
   "license": "MIT",
   "main": "dist/index.js",
