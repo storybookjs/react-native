@@ -30,13 +30,13 @@ You may wish to setup everything yourself, you can use the following guide to do
 **Expo**
 
 ```sh
-expo install @storybook/react-native@next @storybook/core-common @react-native-async-storage/async-storage react-dom
+expo install @storybook/react-native @storybook/core-common@6.5.16 @react-native-async-storage/async-storage react-dom
 ```
 
 **React native CLI**
 
 ```sh
-yarn add -D @storybook/react-native@next @storybook/core-common @react-native-async-storage/async-storage react-native-safe-area-context react-dom
+yarn add -D @storybook/react-native @storybook/core-common@6.5.16 @react-native-async-storage/async-storage react-native-safe-area-context react-dom
 ```
 
 **IOS**
