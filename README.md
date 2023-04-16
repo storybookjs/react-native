@@ -230,4 +230,5 @@ Here are some example projects to help you get started
 - A mono repo setup by @axeldelafosse https://github.com/axeldelafosse/storybook-rnw-monorepo
 - Expo setup https://github.com/dannyhw/expo-storybook-starter
 - React native cli setup https://github.com/dannyhw/react-native-storybook-starter
+- Adding a separate entry point and dev menu item in native files for RN CLI project:  https://github.com/zubko/react-native-storybook-with-dev-menu
 - Want to showcase your own project? open a PR and add it to the list!
