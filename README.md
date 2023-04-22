@@ -63,6 +63,8 @@ The only thing left to do is return Storybook's UI in your app entry point (such
 export {default} from './.storybook'
 ```
 
+You should also follow the steps [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#update-your-metro-config) to adjust your metro config.
+
 If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
 If you want to add everything yourself check out the the manual guide [here](MANUAL_SETUP.md).
