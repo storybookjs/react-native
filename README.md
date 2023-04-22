@@ -63,11 +63,48 @@ The only thing left to do is return Storybook's UI in your app entry point (such
 export {default} from './.storybook'
 ```
 
-You should also follow the steps [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#update-your-metro-config) to adjust your metro config.
-
 If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
 If you want to add everything yourself check out the the manual guide [here](MANUAL_SETUP.md).
+
+
+### Additional steps: Update your metro config
+
+We use the sbmodern resolver field in order to resolve the modern version of storybook packages. Doing this removes the polyfills that ship in commonjs modules and fixes multiple long standing issues such as the promises never resolving bug and more (caused by corejs promises polyfill).
+
+**Expo**
+
+First create metro config file if you don't have it yet.
+
+```sh
+npx expo customize metro.config.js
+```
+
+Then add sbmodern to the start of the `resolver.resolverMainFields` list.
+
+```diff
+// metro.config.js
+
+const { getDefaultConfig } = require('expo/metro-config');
+
+--module.exports = getDefaultConfig(__dirname);
+++const defaultConfig = getDefaultConfig(__dirname);
+
+++defaultConfig.resolver.resolverMainFields.unshift('sbmodern');
+
+++module.exports = defaultConfig;
+```
+
+**React native**
+
+```js
+module.exports = {
+  /* existing config */
+  resolver: {
+    resolverMainFields: ['sbmodern', 'react-native', 'browser', 'main'],
+  },
+};
+```
 
 ## Writing stories
 
