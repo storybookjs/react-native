@@ -2,6 +2,7 @@ import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
 
 export interface StoryGroup {
   name: string;
+  title: string;
   children: StoryGroup[];
   stories: StoryIndexEntry[];
 }
@@ -27,6 +28,7 @@ function formGroup(nameParts: string[], story: StoryIndexEntry, group: StoryGrou
       current.stories.push(story);
     } else {
       group.push({
+        title: story.title,
         name: nameParts[0],
         children: [],
         stories: [story],
@@ -40,8 +42,9 @@ function formGroup(nameParts: string[], story: StoryIndexEntry, group: StoryGrou
   const currentListPart = group.find(({ name }) => name === nameParts[0]);
 
   if (!currentListPart) {
-    const toPush = {
+    const toPush: StoryGroup = {
       name: nameParts[0],
+      title: story.title,
       children: [],
       stories: [],
     };
@@ -57,3 +60,34 @@ function formGroup(nameParts: string[], story: StoryIndexEntry, group: StoryGrou
 
   return formGroup(newParts, story, newGroup);
 }
+
+export const filterNestedStories = (stories: StoryGroup[], filter: string) => {
+  const filteredStories: StoryGroup[] = [];
+
+  stories.forEach((story) => {
+    const filtered = filterStoryGroup(story, filter);
+    if (filtered) {
+      filteredStories.push(filtered);
+    }
+  });
+
+  return filteredStories;
+};
+
+const filterStoryGroup = (story: StoryGroup, filter: string) => {
+  const filteredStories = story.stories.filter(
+    (item) =>
+      item.title.toLowerCase().includes(filter.toLowerCase()) ||
+      item.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  const filteredChildren = filterNestedStories(story.children, filter);
+
+  if (filteredStories.length || filteredChildren.length) {
+    return {
+      ...story,
+      children: filteredChildren,
+      stories: filteredStories,
+    };
+  }
+};

@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import StoryListView from '@storybook/react-native/dist/preview/components/StoryListView/StoryListView';
-// import StoryListView from './StoryListView';
 
 export default {
   title: 'StoryListView',

@@ -14,8 +14,7 @@ built-storybooks
 .yarn
 !.remarkrc.js
 !.babelrc.js
-!.eslintrc.js
-!.eslintrc-markdown.js
+.eslintrc.js
 !.jest.config.js
 !.storybook
 examples/expo-example/metro.config.js

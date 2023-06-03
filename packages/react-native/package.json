@@ -38,6 +38,9 @@
     "test": "jest"
   },
   "jest": {
+    "modulePathIgnorePatterns": [
+      "dist/"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",

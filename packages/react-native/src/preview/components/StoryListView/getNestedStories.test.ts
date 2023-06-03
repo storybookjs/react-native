@@ -1,5 +1,5 @@
 import { StoryIndex } from '@storybook/client-api';
-import { StoryGroup, getNestedStories } from './getStories';
+import { StoryGroup, filterNestedStories, getNestedStories } from './getNestedStories';
 
 const storyIndex: StoryIndex = {
   stories: {
@@ -64,10 +64,12 @@ const storyIndex: StoryIndex = {
 const output: StoryGroup[] = [
   {
     name: 'Chat',
+    title: 'Chat',
     stories: [],
     children: [
       {
         name: 'Message',
+        title: 'Chat/Message',
         stories: [
           {
             name: 'Message First',
@@ -86,6 +88,7 @@ const output: StoryGroup[] = [
           {
             name: 'bubble',
             children: [],
+            title: 'Chat/Message/bubble',
             stories: [
               {
                 name: 'First',
@@ -103,6 +106,7 @@ const output: StoryGroup[] = [
           },
           {
             name: 'Reactions',
+            title: 'Chat/Message/bubble',
             children: [],
             stories: [
               {
@@ -123,6 +127,7 @@ const output: StoryGroup[] = [
       },
       {
         name: 'MessageInput',
+        title: 'Chat/MessageInput',
         children: [],
         stories: [
           {
@@ -137,6 +142,7 @@ const output: StoryGroup[] = [
   },
   {
     name: 'StoryListView',
+    title: 'StoryListView',
     stories: [
       {
         name: 'Basic',
@@ -148,6 +154,7 @@ const output: StoryGroup[] = [
     children: [],
   },
   {
+    title: 'Text control',
     name: 'Text control',
     stories: [
       {
@@ -163,4 +170,72 @@ const output: StoryGroup[] = [
 
 test('story index to grouped list', () => {
   expect(getNestedStories(storyIndex)).toEqual(output);
+});
+
+test('filter nested stories', () => {
+  expect(filterNestedStories(output, 'bubble')).toEqual([
+    {
+      title: 'Chat',
+      name: 'Chat',
+      stories: [],
+      children: [
+        {
+          title: 'Chat/Message',
+          name: 'Message',
+          stories: [],
+          children: [
+            {
+              title: 'Chat/Message/bubble',
+              name: 'bubble',
+              children: [],
+              stories: [
+                {
+                  name: 'First',
+                  title: 'Chat/Message/bubble',
+                  id: 'chat-message-bubble--first',
+                  importPath: './components/NestingExample/ChatMessageBubble.stories.tsx',
+                },
+                {
+                  name: 'Second Story',
+                  title: 'Chat/Message/bubble',
+                  id: 'chat-message-bubble--second',
+                  importPath: './components/NestingExample/ChatMessageBubble.stories.tsx',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ]);
+
+  expect(filterNestedStories(output, 'one')).toEqual([
+    {
+      name: 'Chat',
+      title: 'Chat',
+      stories: [],
+      children: [
+        {
+          title: 'Chat/Message',
+          name: 'Message',
+          stories: [],
+          children: [
+            {
+              name: 'Reactions',
+              title: 'Chat/Message/Reactions',
+              children: [],
+              stories: [
+                {
+                  name: 'Message One',
+                  title: 'Chat/Message/Reactions',
+                  id: 'chat-message-reactions--message-one',
+                  importPath: './components/NestingExample/ChatMessageReactions.stories.tsx',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ]);
 });
