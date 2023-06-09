@@ -7,7 +7,7 @@ Before getting into the guide consider using a template for a simpler setup proc
 For expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
 
 ```sh
-expo init --template expo-template-storybook AwesomeStorybook
+npx create-expo-app --template expo-template-storybook AwesomeStorybook
 ```
 
 For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
