@@ -60,13 +60,12 @@ npx sb init --type react_native
 The only thing left to do is return Storybook's UI in your app entry point (such as `App.js`) like this:
 
 ```jsx
-export {default} from './.storybook'
+export { default } from './.storybook';
 ```
 
 If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
-If you want to add everything yourself check out the the manual guide [here](MANUAL_SETUP.md).
-
+If you want to add everything yourself check out the the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
 
 ### Additional steps: Update your metro config
 
@@ -111,22 +110,19 @@ module.exports = {
 In v6 you can use the CSF syntax that looks like this:
 
 ```jsx
-import {MyButton} from './Button';
+import { MyButton } from './Button';
 
 export default {
   title: 'components/MyButton',
   component: MyButton,
 };
 
-export const Basic = args => (
-  <MyButton {...args} />
-);
+export const Basic = (args) => <MyButton {...args} />;
 
 Basic.args = {
   text: 'Hello World',
   color: 'purple',
 };
-
 ```
 
 You should configure the path to your story files in the `main.js` config file from the `.storybook` folder.
@@ -135,11 +131,9 @@ You should configure the path to your story files in the `main.js` config file f
 // .storybook/main.js
 
 module.exports = {
-  stories: [
-    '../components/**/*.stories.?(ts|tsx|js|jsx)'
-  ],
-  addons: []
-}
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  addons: [],
+};
 ```
 
 ### Decorators and Parameters
@@ -152,7 +146,7 @@ export default {
   component: Button,
   decorators: [
     (Story) => (
-      <View style={{ alignItems: "center", justifyContent: "center", flex: 1 }}>
+      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
         <Story />
       </View>
     ),
@@ -174,16 +168,23 @@ For global decorators and parameters, you can add them to `preview.js` inside yo
 ```jsx
 // .storybook/preview.js
 
-import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
-export const decorators = [withBackgrounds, (Story)=> <View style={{flex: 1, color: 'blue'}}><Story/></View>];
+import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+export const decorators = [
+  withBackgrounds,
+  (Story) => (
+    <View style={{ flex: 1, color: 'blue' }}>
+      <Story />
+    </View>
+  ),
+];
 export const parameters = {
   backgrounds: {
     default: 'plain',
     values: [
-      {name: 'plain', value: 'white'},
-      {name: 'warm', value: 'hotpink'},
-      {name: 'cool', value: 'deepskyblue'},
-    ]
+      { name: 'plain', value: 'white' },
+      { name: 'warm', value: 'hotpink' },
+      { name: 'cool', value: 'deepskyblue' },
+    ],
   },
 };
 ```
@@ -217,10 +218,10 @@ addons: [
 
 For details of each ondevice addon you can see the readme:
 
-- [actions](addons/ondevice-actions)
-- [backgrounds](addons/ondevice-backgrounds)
-- [controls](addons/ondevice-controls)
-- [notes](addons/ondevice-notes)
+- [actions](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-actions#readme)
+- [backgrounds](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-backgrounds#readme)
+- [controls](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-controls#readme)
+- [notes](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-notes#readme)
 
 ## Hide/Show storybook
 
@@ -269,5 +270,5 @@ Here are some example projects to help you get started
 - A mono repo setup by @axeldelafosse https://github.com/axeldelafosse/storybook-rnw-monorepo
 - Expo setup https://github.com/dannyhw/expo-storybook-starter
 - React native cli setup https://github.com/dannyhw/react-native-storybook-starter
-- Adding a separate entry point and dev menu item in native files for RN CLI project:  https://github.com/zubko/react-native-storybook-with-dev-menu
+- Adding a separate entry point and dev menu item in native files for RN CLI project: https://github.com/zubko/react-native-storybook-with-dev-menu
 - Want to showcase your own project? open a PR and add it to the list!
