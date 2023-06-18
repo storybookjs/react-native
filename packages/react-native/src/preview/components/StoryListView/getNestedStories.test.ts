@@ -64,7 +64,7 @@ const storyIndex: StoryIndex = {
 const output: StoryGroup[] = [
   {
     name: 'Chat',
-    title: 'Chat',
+    title: 'Chat/Message',
     stories: [],
     children: [
       {
@@ -106,7 +106,7 @@ const output: StoryGroup[] = [
           },
           {
             name: 'Reactions',
-            title: 'Chat/Message/bubble',
+            title: 'Chat/Message/Reactions',
             children: [],
             stories: [
               {
@@ -175,7 +175,7 @@ test('story index to grouped list', () => {
 test('filter nested stories', () => {
   expect(filterNestedStories(output, 'bubble')).toEqual([
     {
-      title: 'Chat',
+      title: 'Chat/Message',
       name: 'Chat',
       stories: [],
       children: [
@@ -212,7 +212,7 @@ test('filter nested stories', () => {
   expect(filterNestedStories(output, 'one')).toEqual([
     {
       name: 'Chat',
-      title: 'Chat',
+      title: 'Chat/Message',
       stories: [],
       children: [
         {
