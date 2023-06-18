@@ -91,3 +91,13 @@ const filterStoryGroup = (story: StoryGroup, filter: string) => {
     };
   }
 };
+
+export const findFirstChildStory = (story: StoryGroup): StoryIndexEntry | undefined => {
+  if (story.stories.length) {
+    return story.stories[0];
+  }
+
+  if (story.children.length) {
+    return findFirstChildStory(story.children[0]);
+  }
+};

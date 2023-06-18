@@ -12,7 +12,12 @@ import {
 } from '../../../hooks';
 import { Icon } from '../Shared/icons';
 import { Box } from '../Shared/layout';
-import { StoryGroup, filterNestedStories, getNestedStories } from './getNestedStories';
+import {
+  StoryGroup,
+  filterNestedStories,
+  getNestedStories,
+  findFirstChildStory,
+} from './getNestedStories';
 
 const SectionHeaderText = styled.Text<{ selected: boolean }>(({ theme }) => ({
   fontSize: theme.storyList.fontSize,
@@ -200,31 +205,45 @@ const RenderItem = ({
 }) => {
   const isChildSelected = useIsChildSelected(item.stories);
 
+  const firstChild = findFirstChildStory(item);
+
+  const firstChildSelected = useIsStorySelected(firstChild?.id);
+
+  const [showChildren, setShowChildren] = useState(true);
+
   return (
     <>
       <SectionHeader
         name={item.name}
         isChildSelected={isChildSelected}
-        onPress={() => (item.stories[0] ? changeStory(item.stories[0].id) : null)}
+        onPress={() => {
+          if (firstChildSelected) {
+            setShowChildren(!showChildren);
+          } else if (firstChild) {
+            changeStory(firstChild.id);
+          }
+        }}
       />
 
-      {item.stories?.map((story, idx) => (
-        <ListItem
-          key={story.id}
-          storyId={story.id}
-          title={story.name}
-          kind={item.name}
-          isSiblingSelected={isChildSelected}
-          isLastItem={idx === item.stories.length - 1}
-          onPress={() => changeStory(story.id)}
-        />
-      ))}
+      {showChildren &&
+        item.stories?.map((story, idx) => (
+          <ListItem
+            key={story.id}
+            storyId={story.id}
+            title={story.name}
+            kind={item.name}
+            isSiblingSelected={isChildSelected}
+            isLastItem={idx === item.stories.length - 1}
+            onPress={() => changeStory(story.id)}
+          />
+        ))}
 
-      {item.children?.map((child, idx) => (
-        <View key={`${child.title}-${idx}`} style={{ marginLeft: 8 }}>
-          <RenderItem item={child} changeStory={changeStory} />
-        </View>
-      ))}
+      {showChildren &&
+        item.children?.map((child, idx) => (
+          <View key={`${child.title}-${idx}`} style={{ marginLeft: 16 }}>
+            <RenderItem item={child} changeStory={changeStory} />
+          </View>
+        ))}
     </>
   );
 };
