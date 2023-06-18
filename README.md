@@ -54,7 +54,7 @@ npx react-native init MyApp --template react-native-template-storybook
 Run init to setup your project with all the dependencies and configuration files:
 
 ```sh
-npx sb init --type react_native
+npx sb@latest init --type react_native
 ```
 
 The only thing left to do is return Storybook's UI in your app entry point (such as `App.js`) like this:
