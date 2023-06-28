@@ -3,7 +3,7 @@ import Channel from '@storybook/channels';
 import { ClientApi, RenderContext, setGlobalRender } from '@storybook/client-api';
 import { Loadable } from '@storybook/core-client';
 import Events from '@storybook/core-events';
-import type { ArgsStoryFn, ViewMode } from '@storybook/csf';
+import type { ArgsStoryFn } from '@storybook/csf';
 import { PreviewWeb } from '@storybook/preview-web';
 import React from 'react';
 import type { ReactNativeFramework } from '../types/types-6.0';
@@ -53,7 +53,7 @@ export function start() {
   };
 
   const urlStore = {
-    selection: { storyId: '', viewMode: 'story' as ViewMode },
+    selection: null,
     selectionSpecifier: null,
     setQueryParams: () => {},
     setSelection: (selection) => {
