@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 });
 
 const BackgroundMeta: ComponentMeta<typeof Background> = {
-  title: 'Background CSF',
+  title: 'BackgroundExample/Background CSF',
   component: Background,
   decorators: [withBackgrounds],
   parameters: {

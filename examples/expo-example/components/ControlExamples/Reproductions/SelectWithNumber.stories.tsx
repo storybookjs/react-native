@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { MyButton } from './SelectWithNumber';
 
 export default {
-  title: 'SelectWithNumber',
+  title: 'ControlExamples/SelectWithNumber',
   component: MyButton,
 } as ComponentMeta<typeof MyButton>;
 

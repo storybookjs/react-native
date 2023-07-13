@@ -5,7 +5,7 @@ import React from 'react';
 const MyComponent = ({ text }) => <Text>{text}</Text>;
 
 export default {
-  title: 'Chat/Message/Reactions',
+  title: 'NestingExample/Message/Reactions',
   component: MyComponent,
 } as ComponentMeta<typeof MyComponent>;
 

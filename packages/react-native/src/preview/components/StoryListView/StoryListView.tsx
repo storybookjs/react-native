@@ -3,7 +3,7 @@ import { addons } from '@storybook/addons';
 import { StoryIndex } from '@storybook/client-api';
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
-import { FlatList, ListRenderItem, StyleSheet, TextInputProps, View } from 'react-native';
+import { FlatList, ListRenderItem, StyleSheet, Text, TextInputProps, View } from 'react-native';
 import {
   useIsChildSelected,
   useIsStorySectionSelected,
@@ -23,6 +23,7 @@ const SectionHeaderText = styled.Text<{ selected: boolean }>(({ theme }) => ({
   fontSize: theme.storyList.fontSize,
   color: theme.storyList.headerTextColor,
   fontWeight: theme.storyList.headerFontWeight,
+  flexShrink: 1,
 }));
 
 const StoryNameText = styled.Text<{ selected: boolean }>(({ selected, theme }) => ({
@@ -102,25 +103,42 @@ interface SectionProps {
   name: string;
   onPress: () => void;
   isChildSelected: boolean;
+  icon: 'grid' | 'folder';
+  expanded: boolean;
 }
 
-const SectionHeader = React.memo(({ name, onPress, isChildSelected }: SectionProps) => {
-  const selected = useIsStorySectionSelected(name) || isChildSelected;
+const SectionHeader = React.memo(
+  ({ name, onPress, isChildSelected, icon = 'grid', expanded }: SectionProps) => {
+    const selected = useIsStorySectionSelected(name) || isChildSelected;
 
-  return (
-    <HeaderContainer
-      key={name}
-      selected={selected}
-      childSelected={isChildSelected}
-      onPress={onPress}
-      activeOpacity={0.8}
-    >
-      <Icon name="grid" width={12} height={12} marginRight={6} />
+    return (
+      <HeaderContainer
+        key={name}
+        selected={selected}
+        childSelected={isChildSelected}
+        onPress={onPress}
+        activeOpacity={0.8}
+      >
+        <View
+          style={{
+            transform: [{ rotate: expanded ? '90deg' : '0deg' }],
+            marginRight: 6,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Text style={{ fontSize: 12, color: 'grey', lineHeight: 12 }}>{'➤'}</Text>
+        </View>
 
-      <SectionHeaderText selected={selected}>{name}</SectionHeaderText>
-    </HeaderContainer>
-  );
-});
+        <Icon name={icon} width={12} height={12} marginRight={6} />
+
+        <SectionHeaderText numberOfLines={2} selected={selected}>
+          {name}
+        </SectionHeaderText>
+      </HeaderContainer>
+    );
+  }
+);
 
 interface ListItemProps {
   storyId: string;
@@ -209,7 +227,7 @@ const RenderItem = ({
 
   const firstChildSelected = useIsStorySelected(firstChild?.id);
 
-  const [showChildren, setShowChildren] = useState(true);
+  const [showChildren, setShowChildren] = useState(false);
 
   return (
     <>
@@ -217,12 +235,17 @@ const RenderItem = ({
         name={item.name}
         isChildSelected={isChildSelected}
         onPress={() => {
-          if (firstChildSelected) {
-            setShowChildren(!showChildren);
-          } else if (firstChild) {
+          if (firstChildSelected && showChildren) {
+            setShowChildren(false);
+          } else if (!showChildren && firstChild) {
+            setShowChildren(true);
+            changeStory(firstChild.id);
+          } else if (showChildren && !firstChildSelected && firstChild) {
             changeStory(firstChild.id);
           }
         }}
+        icon={item.children.length ? 'folder' : 'grid'}
+        expanded={showChildren}
       />
 
       {showChildren &&

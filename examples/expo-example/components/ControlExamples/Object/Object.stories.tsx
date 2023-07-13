@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Movie } from './Object';
 
 const ObjectMeta: ComponentMeta<typeof Movie> = {
-  title: 'Object control',
+  title: 'ControlExamples/Object control',
   component: Movie,
   args: {
     filmInfo: {

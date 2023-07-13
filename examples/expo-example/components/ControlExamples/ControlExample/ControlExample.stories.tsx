@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react-native';
 import { ControlExample } from './ControlExample';
 
 export default {
-  title: 'Control Example',
+  title: 'ControlExamples/Control Example',
   component: ControlExample,
   args: {
     name: 'Storyteller',

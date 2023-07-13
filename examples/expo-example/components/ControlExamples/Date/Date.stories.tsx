@@ -5,7 +5,7 @@ import { DateString } from './Date';
 const date = new Date(1983, 1, 25);
 
 const DateMeta: ComponentMeta<typeof DateString> = {
-  title: 'Date',
+  title: 'ControlExamples/Date',
   component: DateString,
   args: { date: date },
   argTypes: { date: { control: { type: 'date' } } },

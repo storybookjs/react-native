@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Color } from './Color';
 
 const ColorMeta: ComponentMeta<typeof Color> = {
-  title: 'Color control',
+  title: 'ControlExamples/Color control',
   parameters: { notes: '- test' },
   argTypes: {
     color: {

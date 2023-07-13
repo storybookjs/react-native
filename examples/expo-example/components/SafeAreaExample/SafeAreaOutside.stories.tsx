@@ -4,7 +4,7 @@ import { AButton } from './AButton';
 import { ScrollView } from 'react-native';
 
 const SafeAreaOutsideMeta: ComponentMeta<typeof AButton> = {
-  title: 'SafeArea Outside',
+  title: 'SafeAreaExamples/SafeArea Outside',
   component: AButton,
   parameters: { noSafeArea: true },
   argTypes: {
