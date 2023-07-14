@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { View, StyleSheet, Text } from 'react-native';
 
 const UsableAreaMeta: ComponentMeta<any> = {
-  title: 'Usable Area',
+  title: 'SafeAreaExamples/Usable Area',
 };
 export default UsableAreaMeta;
 

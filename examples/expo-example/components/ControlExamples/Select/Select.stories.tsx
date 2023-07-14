@@ -5,7 +5,7 @@ import { SelectExample } from './Select';
 const arrows = { ArrowUp: '⬆', ArrowDown: '⬇', ArrowLeft: '⬅️', ArrowRight: '➡️' };
 
 const SelectExampleMeta: ComponentMeta<typeof SelectExample> = {
-  title: 'Select control',
+  title: 'ControlExamples/Select control',
   component: SelectExample,
   argTypes: {
     arrow: {

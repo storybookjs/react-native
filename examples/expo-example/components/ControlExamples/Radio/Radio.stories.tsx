@@ -5,7 +5,7 @@ import { Radio } from './Radio';
 const radio_stations = ['104.8MHz', '909 kHz', '90FM'];
 
 const RadioMeta: ComponentMeta<typeof Radio> = {
-  title: 'Radio control',
+  title: 'ControlExamples/Radio control',
   component: Radio,
   args: {
     selection: radio_stations[0],

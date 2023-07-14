@@ -6,7 +6,7 @@ import { Text } from 'react-native';
 // Remember to also include '@storybook/addon-ondevice-backgrounds' in your addons config: see /examples/expo-example/.storybook/main.js
 addDecorator(withBackgrounds);
 
-storiesOf('Background StoriesOf', module)
+storiesOf('BackgroundExample/Background StoriesOf', module)
   .addParameters({
     backgrounds: {
       default: 'warm',

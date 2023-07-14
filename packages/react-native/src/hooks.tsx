@@ -5,6 +5,7 @@ import { useTheme as useEmotionTheme } from 'emotion-theming';
 import type { Theme } from './preview/components/Shared/theme';
 
 import type { ReactNativeFramework } from './types/types-6.0';
+import { StoryIndexEntry } from '@storybook/client-api';
 
 const storyContextAtom = atom(null as StoryContext<ReactNativeFramework> | null);
 
@@ -41,11 +42,31 @@ export function useIsStorySelected(storyId: string) {
 }
 
 /**
- * Hook that indicates if `title` is the currently selected story section.
+ * Hook that indicates if story kind (title) is the currently selected story section.
  */
 export function useIsStorySectionSelected(title: string) {
   return useAtomValue(
-    useMemo(() => atom((get) => get(storyContextAtom)?.title === title), [title])
+    useMemo(
+      () =>
+        atom((get) => {
+          const contextTitle = get(storyContextAtom)?.title;
+          return contextTitle === title || contextTitle?.startsWith(`${title}/`);
+        }),
+      [title]
+    )
+  );
+}
+
+export function useIsChildSelected(entries: StoryIndexEntry[]) {
+  return useAtomValue(
+    useMemo(
+      () =>
+        atom((get) => {
+          const contextId = get(storyContextAtom)?.id;
+          return !!entries.find(({ id }) => id === contextId);
+        }),
+      [entries]
+    )
   );
 }
 
