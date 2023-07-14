@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-theming",
-  "version": "6.5.5-alpha.0",
+  "version": "6.5.5-alpha.1",
   "description": "A wrapper library around emotion 11 to provide theming support for react-native storybook",
   "keywords": [
     "react",
@@ -25,8 +25,8 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/native": "^11.11.0"
+    "@emotion/native": "^11.11.0",
+    "@emotion/react": "^11.11.1"
   },
   "peerDependencies": {
     "react": "*",
