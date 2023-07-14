@@ -127,7 +127,7 @@ const SectionHeader = React.memo(
             justifyContent: 'center',
           }}
         >
-          <Text style={{ fontSize: 12, color: 'grey', lineHeight: 12 }}>{'➤'}</Text>
+          <Text style={{ fontSize: 8, color: 'grey', lineHeight: 8 }}>{'➤'}</Text>
         </View>
 
         <Icon name={icon} width={12} height={12} marginRight={6} />
