@@ -41,7 +41,7 @@
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
-    "@storybook/addon-knobs": "^6"
+    "@storybook/addon-knobs": "^6.4.0"
   },
   "peerDependencies": {
     "@react-native-community/datetimepicker": "*",
