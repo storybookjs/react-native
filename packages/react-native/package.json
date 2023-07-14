@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "6.5.4",
+  "version": "6.5.5",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -74,8 +74,8 @@
     "util": "^0.12.4"
   },
   "devDependencies": {
-    "@types/react": "~18.0.27",
     "@types/jest": "^29.4.3",
+    "@types/react": "~18.0.27",
     "babel-jest": "^29.4.3",
     "jest": "^29.4.3",
     "react-test-renderer": "18.2.0"
