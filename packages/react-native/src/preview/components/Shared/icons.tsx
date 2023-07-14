@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground } from 'react-native';
+import { Image, ImageBackground, ImageBackgroundProps, ImageStyle } from 'react-native';
 import styled from '@emotion/native';
 
 const iconSources = {
@@ -34,18 +34,35 @@ const iconSources = {
 
 export type IconName = keyof typeof iconSources;
 
-const StyledImage = styled(Image)();
-const StyledImageBackground = styled(ImageBackground)();
+const StyledImage = styled(Image)<ImageStyle & ImageBackgroundProps>();
 
-interface IconProps extends React.ComponentProps<typeof StyledImage> {
+const StyledImageBackground = styled(ImageBackground)<ImageStyle & ImageBackgroundProps>();
+
+interface IconProps extends Omit<React.ComponentProps<typeof StyledImage>, 'source'> {
   name: IconName;
-  background?: boolean;
 }
 
-export function Icon({ name, background = false, ...props }: IconProps) {
-  const IconComponent = background ? StyledImageBackground : StyledImage;
+export function Icon({ name, ...props }: IconProps) {
   return (
-    <IconComponent
+    <StyledImage
+      source={{
+        ...iconSources[name],
+        width: 16,
+        height: 16,
+      }}
+      {...props}
+    />
+  );
+}
+
+interface BackgroungIconProps
+  extends Omit<React.ComponentProps<typeof StyledImageBackground>, 'source'> {
+  name: IconName;
+}
+
+export function BackgroundIcon({ name, ...props }: BackgroungIconProps) {
+  return (
+    <StyledImageBackground
       source={{
         ...iconSources[name],
         width: 16,

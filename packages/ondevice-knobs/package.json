@@ -30,7 +30,7 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@emotion/native": "^10.0.14",
+    "@emotion/native": "^11.11.0",
     "@storybook/addons": "^6.5.14",
     "@storybook/core-events": "^6.5.14",
     "core-js": "^3.0.1",

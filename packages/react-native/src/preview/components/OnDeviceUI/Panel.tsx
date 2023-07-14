@@ -8,7 +8,7 @@ interface PanelProps {
   children: React.ReactNode;
 }
 
-const Container = styled(Animated.View)(({ theme, edge }) => ({
+const Container = styled(Animated.View)<{ edge: 'left' | 'right' | 'top' }>(({ theme, edge }) => ({
   backgroundColor: theme.panel.backgroundColor,
   borderTopWidth: edge === 'top' ? theme.panel.borderWidth : undefined,
   borderStartWidth: edge === 'left' ? theme.panel.borderWidth : undefined,

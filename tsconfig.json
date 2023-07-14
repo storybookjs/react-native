@@ -4,7 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "declaration": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["es2017"],
     "module": "CommonJS",
     "moduleResolution": "node",

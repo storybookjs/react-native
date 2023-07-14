@@ -52,10 +52,11 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.20",
-    "@emotion/native": "^10.0.14",
     "@storybook/addons": "^6.5.14",
     "@storybook/channel-websocket": "^6.5.14",
+    "@emotion/react": "^11.11.1",
+    "@emotion/native": "^11.11.0",
+    "@storybook/react-native-theming": "6.5.5-alpha.0",
     "@storybook/channels": "^6.5.14",
     "@storybook/client-api": "^6.5.14",
     "@storybook/client-logger": "^6.5.14",
@@ -66,7 +67,6 @@
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "deepmerge": "^4.3.0",
-    "emotion-theming": "^10.0.19",
     "glob": "^7.1.7",
     "jotai": "^2.0.2",
     "prettier": "^2.4.1",

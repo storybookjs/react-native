@@ -3,11 +3,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StoryIndex, SelectionSpecifier } from '@storybook/store';
 import { StoryContext, toId } from '@storybook/csf';
 import { addons } from '@storybook/addons';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from '@emotion/react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useSetStoryContext, syncExternalUI } from '../hooks';
 import OnDeviceUI from './components/OnDeviceUI';
-import { darkTheme, theme, Theme } from './components/Shared/theme';
+import { darkTheme, theme, Theme } from '@storybook/react-native-theming';
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { PreviewWeb } from '@storybook/preview-web';
 import StoryView from './components/StoryView';
@@ -164,7 +164,6 @@ export class View {
     // eslint-disable-next-line consistent-this
     const self = this;
 
-
     // Sync the Storybook parameters (external) with app UI state (internal), to initialise them.
     syncExternalUI({
       isUIVisible: params.isUIHidden !== undefined ? !params.isUIHidden : undefined,
@@ -176,10 +175,10 @@ export class View {
       const colorScheme = useColorScheme();
       const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
-      const appliedTheme = useMemo(() => deepmerge(
-        colorScheme === 'dark' ? darkTheme : theme,
-        params.theme ?? {}
-      ), [colorScheme]);
+      const appliedTheme = useMemo(
+        () => deepmerge(colorScheme === 'dark' ? darkTheme : theme, params.theme ?? {}),
+        [colorScheme]
+      );
 
       useEffect(() => {
         self._setStory = (newStory: StoryContext<ReactNativeFramework>) => {
@@ -206,7 +205,7 @@ export class View {
       if (onDeviceUI) {
         return (
           <SafeAreaProvider>
-            <ThemeProvider theme={appliedTheme}>
+            <ThemeProvider theme={appliedTheme as Theme}>
               <OnDeviceUI
                 storyIndex={self._storyIndex}
                 tabOpen={params.tabOpen}

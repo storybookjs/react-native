@@ -19,7 +19,6 @@ interface BoxProps extends ViewProps, Omit<ViewStyle, 'flex'> {
  * </Box>
  * ```
  */
-export const Box = styled.View<BoxProps>(({ flex, ...layoutProps }) => ({
+export const Box = styled.View<BoxProps>(({ flex }) => ({
   flex: flex === true ? 1 : flex === false ? 0 : flex,
-  ...layoutProps,
 }));
