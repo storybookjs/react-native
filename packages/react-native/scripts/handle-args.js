@@ -8,7 +8,11 @@ function getArguments() {
       'The path to your config folder relative to your project-dir',
       './.storybook'
     )
-    .option('-a, --absolute', 'Use absolute paths for story imports');
+    .option('-a, --absolute', 'Use absolute paths for story imports')
+    .option(
+      '-useRequireContext, --useRequireContext',
+      'Use experimental require.context to load stories'
+    );
 
   program.parse();
 

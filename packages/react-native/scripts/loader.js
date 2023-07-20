@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 const prettier = require('prettier');
-const normalizeStories = require('@storybook/core-common').normalizeStories;
+const { normalizeStories, globToRegexp, toRequireContext } = require('@storybook/core-common');
 
 const cwd = process.cwd();
 const supportedExtensions = ['js', 'jsx', 'ts', 'tsx', 'cjs', 'mjs'];
@@ -76,7 +76,7 @@ function ensureRelativePathHasDot(relativePath) {
   return relativePath.startsWith('.') ? relativePath : `./${relativePath}`;
 }
 
-function writeRequires({ configPath, absolute = false }) {
+function writeRequires({ configPath, absolute = false, useRequireContext = false }) {
   const storybookRequiresLocation = path.resolve(cwd, configPath, 'storybook.requires.js');
 
   const mainImport = getMain({ configPath });
@@ -90,40 +90,62 @@ function writeRequires({ configPath, absolute = false }) {
     workingDir: cwd,
   });
 
-  const storyRequires = storiesSpecifiers.reduce((acc, specifier) => {
-    const paths = glob
-      .sync(specifier.files, {
-        cwd: path.resolve(cwd, specifier.directory),
-        absolute,
-        // default to always ignore (exclude) anything in node_modules
-        ignore: normalizedExcludePaths !== undefined ? normalizedExcludePaths : ['**/node_modules'],
-      })
-      .map((storyPath) => {
-        const pathWithDirectory = path.join(specifier.directory, storyPath);
-        const requirePath = absolute
-          ? storyPath
-          : ensureRelativePathHasDot(path.relative(configPath, pathWithDirectory));
+  let configure = '';
 
-        const absolutePath = absolute ? requirePath : path.resolve(configPath, requirePath);
-        const pathRelativeToCwd = path.relative(cwd, absolutePath);
+  if (useRequireContext) {
+    const contexts = storiesSpecifiers.map((specifier) => {
+      const { path: p, recursive: r, match: m } = toRequireContext(specifier);
+      // TODO: remove this dot 👇 and find actual solution
+      return `require.context('.${p}', ${r}, ${m})`;
+    });
+    configure = `
+      const stories = [${contexts.join(',')}];
+      
+      configure(stories, module, false)
+    `;
+  } else {
+    const storyRequires = storiesSpecifiers.reduce((acc, specifier) => {
+      const paths = glob
+        .sync(specifier.files, {
+          cwd: path.resolve(cwd, specifier.directory),
+          absolute,
+          // default to always ignore (exclude) anything in node_modules
+          ignore:
+            normalizedExcludePaths !== undefined ? normalizedExcludePaths : ['**/node_modules'],
+        })
+        .map((storyPath) => {
+          const pathWithDirectory = path.join(specifier.directory, storyPath);
+          const requirePath = absolute
+            ? storyPath
+            : ensureRelativePathHasDot(path.relative(configPath, pathWithDirectory));
 
-        const normalizePathForWindows = (str) =>
-          path.sep === '\\' ? str.replace(/\\/g, '/') : str;
+          const absolutePath = absolute ? requirePath : path.resolve(configPath, requirePath);
+          const pathRelativeToCwd = path.relative(cwd, absolutePath);
 
-        return `"./${normalizePathForWindows(
-          pathRelativeToCwd
-        )}": require("${normalizePathForWindows(requirePath)}")`;
-      });
-    return [...acc, ...paths];
-  }, []);
+          const normalizePathForWindows = (str) =>
+            path.sep === '\\' ? str.replace(/\\/g, '/') : str;
+
+          return `"./${normalizePathForWindows(
+            pathRelativeToCwd
+          )}": require("${normalizePathForWindows(requirePath)}")`;
+        });
+      return [...acc, ...paths];
+    }, []);
+    const path_obj_str = `{${storyRequires.join(',')}}`;
+    configure = `   
+      const getStories=() => {
+          return ${path_obj_str};
+      }
+
+      configure(getStories, module, false)
+    `;
+  }
 
   fs.writeFileSync(storybookRequiresLocation, '');
 
   const previewExists = getPreviewExists({ configPath });
 
   let previewJs = previewExists ? previewImports : '';
-
-  const path_obj_str = `{${storyRequires.join(',')}}`;
 
   const registerAddons = main.addons?.map((addon) => `import "${addon}/register";`).join('\n');
   let enhancersImport = '';
@@ -167,11 +189,8 @@ function writeRequires({ configPath, absolute = false }) {
 
       ${enhancers}
 
-      const getStories=() => {
-        return ${path_obj_str};
-      }
-
-      configure(getStories, module, false)
+      ${configure}
+      
   `;
 
   const formattedFileContent = prettier.format(fileContent, { parser: 'babel' });

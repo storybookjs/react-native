@@ -29,7 +29,9 @@ export function executeLoadable(loadable: Loadable) {
         try {
           const fileExports = req(filename) as ModuleExports;
           exportsMap.set(
-            typeof req.resolve === 'function' ? req.resolve(filename) : filename,
+            // NOTE context.resolve is not yet implemented for metro
+            // typeof req.resolve === 'function' ? req.resolve(filename) : filename,
+            filename,
             fileExports
           );
         } catch (error) {
