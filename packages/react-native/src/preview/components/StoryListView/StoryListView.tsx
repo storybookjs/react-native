@@ -63,7 +63,7 @@ const SearchBar = (props: TextInputProps) => {
 
   return (
     <SearchContainer>
-      <Icon name="search" opacity={0.5} color={'white'} />
+      <Icon name="search" opacity={0.5} />
 
       <SearchInput
         {...props}
@@ -80,7 +80,7 @@ const SearchBar = (props: TextInputProps) => {
   );
 };
 
-const HeaderContainer = styled.TouchableOpacity(
+const HeaderContainer = styled.TouchableOpacity<{ selected: boolean; childSelected: boolean }>(
   {
     flexDirection: 'row',
     alignItems: 'center',

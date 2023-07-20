@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-notes",
-  "version": "6.5.5-alpha.0",
+  "version": "6.5.5-alpha.1",
   "description": "Write notes for your react-native Storybook stories.",
   "keywords": [
     "addon",
@@ -29,14 +29,14 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.20",
+    "@emotion/react": "^11.11.1",
     "@storybook/addons": "^6.5.14",
     "@storybook/api": "^6.5.14",
     "@storybook/client-api": "^6.5.14",
     "@storybook/client-logger": "^6.5.14",
     "@storybook/core-events": "^6.5.14",
+    "@storybook/react-native-theming": "^6.5.5-alpha.1",
     "core-js": "^3.0.1",
-    "emotion-theming": "^10.0.19",
     "prop-types": "^15.7.2",
     "simple-markdown": "^0.7.3"
   },

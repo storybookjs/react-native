@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import styled from '@emotion/native';
 import { Animated, Easing, StyleSheet, View } from 'react-native';
 import { ANIMATION_DURATION_TRANSITION } from '../../../../constants';
@@ -23,14 +23,14 @@ export const AddonsSkeleton = React.memo(function AddonsSkeleton({ visible }: Ad
   }, [visible]);
 
   return (
-    <AddonsSkeletonContainer pointerEvents="none" opacity={progress.current}>
+    <AddonsSkeletonContainer pointerEvents="none" style={{ opacity: progress.current }}>
       <TabsSkeleton />
       <AddonsContentSkeleton />
     </AddonsSkeletonContainer>
   );
 });
 
-const TabSkeleton = styled.View(({ theme, active }) => ({
+const TabSkeleton = styled.View<{ active?: boolean }>(({ theme, active }) => ({
   opacity: active ? 1 : 0.5,
   backgroundColor: active ? theme.tabs.activeBackgroundColor : theme.tokens.color.grey200,
   borderRadius: theme.tokens.borderRadius.round,
@@ -39,12 +39,15 @@ const TabSkeleton = styled.View(({ theme, active }) => ({
   marginRight: 12,
 }));
 
-const BoxSkeleton = styled.View(({ theme, width, height }) => ({
-  backgroundColor: theme.tokens.color.blue200,
-  borderRadius: theme.tokens.borderRadius.large,
-  height,
-  width,
-}));
+const BoxSkeleton = styled.View<{ width: number; height: number; marginBottom?: number }>(
+  ({ theme, width, height, marginBottom }) => ({
+    backgroundColor: theme.tokens.color.blue200,
+    borderRadius: theme.tokens.borderRadius.large,
+    height,
+    marginBottom,
+    width,
+  })
+);
 
 function AddonsFieldSkeleton({ long = false }: { long?: boolean }) {
   return (
@@ -80,12 +83,14 @@ interface AddonsSkeletonProps {
   visible: boolean;
 }
 
-const AddonsSkeletonContainer = styled(Animated.View)(({ theme }) => ({
-  ...StyleSheet.absoluteFillObject,
-  flex: 1,
-  backgroundColor: theme.panel.backgroundColor,
-  borderTopWidth: theme.panel.borderWidth,
-  borderColor: theme.panel.borderColor,
-  padding: theme.panel.paddingHorizontal,
-  overflow: 'hidden',
-}));
+const AddonsSkeletonContainer = styled(Animated.View)<ComponentProps<typeof Animated.View>>(
+  ({ theme }) => ({
+    ...StyleSheet.absoluteFillObject,
+    flex: 1,
+    backgroundColor: theme.panel.backgroundColor,
+    borderTopWidth: theme.panel.borderWidth,
+    borderColor: theme.panel.borderColor,
+    padding: theme.panel.paddingHorizontal,
+    overflow: 'hidden',
+  })
+);

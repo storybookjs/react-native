@@ -6,7 +6,7 @@ import { View } from 'react-native';
 import { inputStyle } from './common';
 import { useResyncValue } from './useResyncValue';
 
-const Input = styled.TextInput(({ theme, showError }) => {
+const Input = styled.TextInput<{ showError: boolean }>(({ theme, showError }) => {
   const style = inputStyle(theme);
   return {
     ...style,

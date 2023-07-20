@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
 import type { StoryContext } from '@storybook/csf';
 import { atom, useAtom, useAtomValue, useSetAtom, getDefaultStore } from 'jotai';
-import { useTheme as useEmotionTheme } from 'emotion-theming';
-import type { Theme } from './preview/components/Shared/theme';
+import { useTheme as useSBTheme } from '@emotion/react';
 
 import type { ReactNativeFramework } from './types/types-6.0';
 import { StoryIndexEntry } from '@storybook/client-api';
@@ -81,7 +80,7 @@ export function useUpdateOnStoryChanged() {
  * Hook that gets the current theme values.
  */
 export function useTheme() {
-  return useEmotionTheme<Theme>();
+  return useSBTheme();
 }
 
 /**

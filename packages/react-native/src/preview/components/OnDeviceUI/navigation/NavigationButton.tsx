@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
 import { useIsSplitPanelVisible, useIsUIVisible } from '../../../../hooks';
 
-import { Icon, IconName } from '../../Shared/icons';
+import { BackgroundIcon, Icon, IconName } from '../../Shared/icons';
 import { Box } from '../../Shared/layout';
 
 const hitSlop = { top: 5, left: 5, right: 5, bottom: 5 };
@@ -18,9 +18,9 @@ function NavigationButton({ iconName, inverseIconName, active, toggle }: Navigat
   return (
     <TouchableWithoutFeedback onPress={toggle} hitSlop={hitSlop}>
       <Box marginHorizontal={8}>
-        <Icon flex={1} background name={inverseIconName} opacity={0.8} pointerEvents="none">
+        <BackgroundIcon flex={1} name={inverseIconName} opacity={0.8}>
           <Icon name={iconName} opacity={active ? 0.6 : 0.25} />
-        </Icon>
+        </BackgroundIcon>
       </Box>
     </TouchableWithoutFeedback>
   );

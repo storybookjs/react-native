@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "dist/",
     "paths": {
-      "@emotion/native": ["src/typings.d.ts"]
+      "@emotion/react": ["src/emotion.d.ts"]
     },
     "rootDir": "./src"
   },

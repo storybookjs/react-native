@@ -4,7 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "declaration": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["es2017"],
     "module": "CommonJS",
     "moduleResolution": "node",
@@ -12,7 +12,8 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "target": "es5"
+    "target": "es5",
+    "resolveJsonModule": true
   },
   "exclude": [
     "**/dist",

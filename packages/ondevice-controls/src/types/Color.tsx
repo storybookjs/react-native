@@ -29,7 +29,7 @@ const TouchableContainer = styled.View(({ theme }) => ({
   backgroundColor: theme.inputs.swatch.backgroundColor,
 }));
 
-const Touchable = styled.TouchableOpacity(({ theme, color }) => ({
+const Touchable = styled.TouchableOpacity<{ color: string }>(({ theme, color }) => ({
   width: '100%',
   height: '100%',
   borderRadius: theme.inputs.swatch.innerBorderRadius,
@@ -47,7 +47,7 @@ const WebInput = styled('input' as any)(({ theme }) => ({
   backgroundColor: theme.inputs.swatch.backgroundColor,
 }));
 
-const ButtonTouchable = styled.TouchableOpacity(({ theme, primary }) => {
+const ButtonTouchable = styled.TouchableOpacity<{ primary?: boolean }>(({ theme, primary }) => {
   const buttonTheme = primary ? theme.button.primary : theme.button.secondary;
   return {
     backgroundColor: buttonTheme.backgroundColor,
@@ -61,7 +61,7 @@ const ButtonTouchable = styled.TouchableOpacity(({ theme, primary }) => {
   };
 });
 
-const ButtonText = styled.Text(({ theme, primary }) => {
+const ButtonText = styled.Text<{ primary?: boolean }>(({ theme, primary }) => {
   const buttonTheme = primary ? theme.button.primary : theme.button.secondary;
   return {
     color: buttonTheme.textColor,

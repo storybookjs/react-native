@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "6.5.5-alpha.0",
+  "version": "6.5.5-alpha.1",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -52,8 +52,8 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.20",
-    "@emotion/native": "^10.0.14",
+    "@emotion/native": "^11.11.0",
+    "@emotion/react": "^11.11.1",
     "@storybook/addons": "^6.5.14",
     "@storybook/channel-websocket": "^6.5.14",
     "@storybook/channels": "^6.5.14",
@@ -63,10 +63,10 @@
     "@storybook/core-events": "^6.5.14",
     "@storybook/csf": "0.0.2--canary.4566f4d.1",
     "@storybook/preview-web": "^6.5.14",
+    "@storybook/react-native-theming": "^6.5.5-alpha.1",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "deepmerge": "^4.3.0",
-    "emotion-theming": "^10.0.19",
     "glob": "^7.1.7",
     "jotai": "^2.0.2",
     "prettier": "^2.4.1",
@@ -75,7 +75,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.4.3",
-    "@types/react": "~18.0.27",
+    "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
     "jest": "^29.4.3",
     "react-test-renderer": "18.2.0"

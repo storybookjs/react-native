@@ -22,7 +22,7 @@ interface TabButtonProps {
 
 const hitSlop = { top: 8, left: 0, right: 0, bottom: 20 };
 
-const TabButtonTouchable = styled.TouchableOpacity(({ theme, active }) => ({
+const TabButtonTouchable = styled.TouchableOpacity<{ active: boolean }>(({ theme, active }) => ({
   borderWidth: theme.tabs.borderWidth,
   borderColor: active ? theme.tabs.activeBorderColor : theme.tabs.inactiveBorderColor,
   borderRadius: theme.tabs.borderRadius,
@@ -72,8 +72,8 @@ export const TabBar = React.memo(({ scrollable = false, style, children }: TabBa
   );
 });
 
-const TabBarContainer = styled.View({
+const TabBarContainer = styled.View(() => ({
   flexDirection: 'row',
   paddingVertical: 6,
   justifyItems: 'center',
-});
+}));

@@ -1,7 +1,7 @@
 /**
  * mostly based on code from https://github.com/CharlesMangwa/react-native-simple-markdown
  */
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import { useMemo } from 'react';
 import { ImageStyle, StyleProp, TextStyle, ViewStyle } from 'react-native/types';
 
@@ -10,7 +10,7 @@ interface Styles {
 }
 
 export const useThemedStyles = (): Styles => {
-  const theme = useTheme<any>();
+  const theme = useTheme();
 
   const styles: Styles = useMemo(
     () => ({
