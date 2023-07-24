@@ -13,14 +13,12 @@ module.exports = (async () => {
   });
 
   return mergeConfig(defaultConfig, {
-    watchFolders: ['../../', '.storybook', __dirname],
     resolver: {
       resolverMainFields: ['sbmodern', ...defaultConfig.resolver.resolverMainFields],
-      // unstable_enablePackageExports: true,
-      nodeModulesPaths: ['../../node_modules', './node_modules'],
+      //   unstable_enablePackageExports: true,
       disableHierarchicalLookup: true,
       unstable_enableSymlinks: true,
-      // sourceExts: ['mjs', ...defaultConfig.resolver.sourceExts],
+      //   sourceExts: ['mjs', ...defaultConfig.resolver.sourceExts],
     },
     transformer: {
       unstable_allowRequireContext: true,
