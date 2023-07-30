@@ -1,10 +1,10 @@
 import React from 'react';
-import { Collection } from '@storybook/addons';
+import { Addon_Collection } from '@storybook/types';
 
 import { TabBar, TabButton } from '../../Shared/tabs';
 
 export interface Props {
-  panels: Collection;
+  panels: Addon_Collection;
   addonSelected: string;
   onPressAddon: (id: string) => void;
 }
@@ -16,7 +16,12 @@ const AddonList = ({ panels, addonSelected, onPressAddon }: Props) => {
     <TabBar scrollable>
       {addonKeys.map((id) => {
         const { title } = panels[id];
-        const resolvedTitle = typeof title === 'function' ? title() : title;
+        let resolvedTitle = typeof title === 'function' ? title() : title;
+
+        if (typeof resolvedTitle === 'string') {
+          resolvedTitle = resolvedTitle.toUpperCase();
+        }
+
         return (
           <TabButton
             active={id === addonSelected}
@@ -24,7 +29,7 @@ const AddonList = ({ panels, addonSelected, onPressAddon }: Props) => {
             id={id}
             onPress={() => onPressAddon(id)}
           >
-            {resolvedTitle.toUpperCase()}
+            {resolvedTitle}
           </TabButton>
         );
       })}

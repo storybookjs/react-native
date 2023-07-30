@@ -1,5 +1,5 @@
 import { logger } from '@storybook/client-logger';
-import { Path, ModuleExports } from '@storybook/store';
+import { Path, ModuleExports } from '@storybook/types';
 import { Loadable, RequireContext, LoaderFunction } from '../types/types';
 
 declare global {
@@ -22,10 +22,13 @@ export function executeLoadable(loadable: Loadable) {
     reqs = [loadable as RequireContext]; // todo: test with metro require context
   }
 
+  console.log('helloooo', reqs[0].keys());
+
   let exportsMap = new Map<Path, ModuleExports>();
   if (reqs) {
     reqs.forEach((req) => {
       req.keys().forEach((filename: string) => {
+        console.log('filename', filename);
         try {
           const fileExports = req(filename) as ModuleExports;
           exportsMap.set(
@@ -64,7 +67,11 @@ global.lastExportsMap = new Map<Path, ModuleExports>();
  * @param m NodeModule
  * @returns { added: Map<Path, ModuleExports>, removed: Map<Path, ModuleExports> }
  */
-export function executeLoadableForChanges(loadable: Loadable, m?: NodeModule) {
+export function executeLoadableForChanges(
+  loadable: Loadable,
+  // FIXME: NodeModule type?
+  m?: { hot?: { accept?: () => void } }
+) {
   if (m?.hot?.accept) {
     m.hot.accept();
   }

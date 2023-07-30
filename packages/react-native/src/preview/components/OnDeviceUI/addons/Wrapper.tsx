@@ -1,12 +1,12 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import styled from '@emotion/native';
-import { Collection } from '@storybook/addons';
+import { Addon_Collection } from '@storybook/types';
 
 import { useTheme, useUpdateOnStoryChanged } from '../../../../hooks';
 
 export interface Props {
-  panels: Collection;
+  panels: Addon_Collection;
   addonSelected: string;
 }
 

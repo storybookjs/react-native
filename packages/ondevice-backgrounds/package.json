@@ -32,9 +32,9 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/addons": "^6.5.14",
-    "@storybook/api": "^6.5.14",
-    "@storybook/client-api": "^6.5.14",
+    "@storybook/addons": "^7",
+    "@storybook/api": "^7",
+    "@storybook/client-api": "^7",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2"
   },

@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "@emotion/native": "^11.11.0",
-    "@storybook/addons": "^6.5.14",
-    "@storybook/core-events": "^6.5.14",
+    "@storybook/addons": "^7",
+    "@storybook/core-events": "^7",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -41,12 +41,12 @@
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
-    "@storybook/addon-knobs": "^6.4.0"
+    "@storybook/addon-knobs": "^7"
   },
   "peerDependencies": {
     "@react-native-community/datetimepicker": "*",
     "@react-native-community/slider": "*",
-    "@storybook/addon-knobs": "^6",
+    "@storybook/addon-knobs": "^7",
     "react": "*",
     "react-native": "*"
   },

@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useReducer } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { StoryIndex, SelectionSpecifier } from '@storybook/store';
+import type { StoryIndex } from '@storybook/types';
 import { StoryContext, toId } from '@storybook/csf';
 import { addons } from '@storybook/addons';
 import { ThemeProvider } from '@emotion/react';
@@ -9,9 +9,9 @@ import { useSetStoryContext, syncExternalUI } from '../hooks';
 import OnDeviceUI from './components/OnDeviceUI';
 import { darkTheme, theme, Theme } from '@storybook/react-native-theming';
 import type { ReactNativeFramework } from '../types/types-6.0';
-import { PreviewWeb } from '@storybook/preview-web';
+import { PreviewWeb, PreviewWithSelection } from '@storybook/preview-web';
 import StoryView from './components/StoryView';
-import createChannel from '@storybook/channel-websocket';
+import { createChannel } from '@storybook/channel-websocket';
 import getHost from './rn-host-detect';
 import events from '@storybook/core-events';
 import { useColorScheme } from 'react-native';
@@ -75,13 +75,14 @@ export class View {
   _asyncStorageStoryId: string;
   _webUrl: string;
 
-  constructor(preview: PreviewWeb<ReactNativeFramework>) {
+  constructor(preview: PreviewWithSelection<ReactNativeFramework>) {
     this._preview = preview;
   }
+
   _getInitialStory = async ({
     initialSelection,
     shouldPersistSelection = true,
-  }: Partial<Params> = {}): Promise<SelectionSpecifier> => {
+  }: Partial<Params> = {}) => {
     if (initialSelection) {
       if (typeof initialSelection === 'string') {
         return { storySpecifier: initialSelection, viewMode: 'story' };
@@ -141,6 +142,7 @@ export class View {
       addons.setChannel(channel);
 
       // TODO: check this with someone who knows what they're doing
+      // @ts-ignore #FIXME
       this._preview.channel = channel;
 
       this._preview.setupListeners();
@@ -157,6 +159,7 @@ export class View {
         getSelection: () => {
           return this._preview.currentSelection;
         },
+        // @ts-ignore :) FIXME
         _channel: this._preview.channel,
       }),
     });
@@ -194,7 +197,7 @@ export class View {
         self._forceRerender = () => forceUpdate();
 
         initialStory.then((story) => {
-          self._preview.urlStore.selectionSpecifier = story;
+          self._preview.selectionStore.selectionSpecifier = story;
 
           self._preview.selectSpecifiedStory();
         });

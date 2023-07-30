@@ -26,15 +26,15 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@storybook/addons": "^6.5.14",
-    "@storybook/core-events": "^6.5.14",
+    "@storybook/addons": "^7",
+    "@storybook/core-events": "^7",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.5.14"
+    "@storybook/addon-actions": "^7"
   },
   "peerDependencies": {
-    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-actions": "^7",
     "react": "*",
     "react-native": "*"
   },

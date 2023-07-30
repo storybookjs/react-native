@@ -1,6 +1,6 @@
 /* global storybookOptions */
 import { location, document } from 'global';
-import renderStorybookUI from '@storybook/ui';
+import { renderStorybookUI } from '@storybook/manager';
 import Provider from './provider';
 
 const rootEl = document.getElementById('root');

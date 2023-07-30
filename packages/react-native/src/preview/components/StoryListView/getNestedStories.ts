@@ -1,4 +1,4 @@
-import { StoryIndex, StoryIndexEntry } from '@storybook/client-api';
+import { StoryIndex, StoryIndexEntry } from '@storybook/types';
 
 export interface StoryGroup {
   name: string;
@@ -9,13 +9,14 @@ export interface StoryGroup {
 
 // recursive funciton that transforms storyIndex to be StoryGroup[]
 export function getNestedStories(storyIndex: StoryIndex) {
-  const stories = Object.values(storyIndex.stories);
+  console.log({ storyIndex });
+  const stories = Object.values(storyIndex?.entries ?? {});
 
   const group: StoryGroup[] = [];
 
-  stories.forEach((story) => {
+  stories?.forEach((story) => {
     const nameParts = story.title.split('/');
-    formGroup(nameParts, story, group);
+    formGroup(nameParts, story as StoryIndexEntry, group);
   });
 
   return group;

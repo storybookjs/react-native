@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
 import { addons } from '@storybook/addons';
-import { StoryIndex } from '@storybook/client-api';
+import { StoryIndex } from '@storybook/types';
 import Events from '@storybook/core-events';
 import React, { useMemo, useState } from 'react';
 import { FlatList, ListRenderItem, StyleSheet, Text, TextInputProps, View } from 'react-native';

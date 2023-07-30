@@ -1,4 +1,4 @@
-import { StoryIndex } from '@storybook/client-api';
+import { StoryIndex } from '@storybook/types';
 import styled from '@emotion/native';
 import React, { useState, useRef } from 'react';
 import {

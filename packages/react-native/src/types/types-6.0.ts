@@ -4,16 +4,17 @@ import type {
   ComponentAnnotations,
   StoryAnnotations,
   AnnotatedStoryFn,
+  Renderer,
 } from '@storybook/csf';
 
 export type StoryFnReactReturnType = ReactElement<unknown>;
 
-export type { Args, ArgTypes, Parameters, StoryContext } from '@storybook/addons';
+export type { Args, ArgTypes, Parameters, StoryContext } from '@storybook/types';
 
-export type ReactNativeFramework = {
+export interface ReactNativeFramework extends Renderer {
   component: ComponentType<any>;
   storyResult: StoryFnReactReturnType;
-};
+}
 
 /**
  * For the common case where a component's stories are simple components that receives args as props:

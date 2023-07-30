@@ -4,7 +4,7 @@ import { atom, useAtom, useAtomValue, useSetAtom, getDefaultStore } from 'jotai'
 import { useTheme as useSBTheme } from '@emotion/react';
 
 import type { ReactNativeFramework } from './types/types-6.0';
-import { StoryIndexEntry } from '@storybook/client-api';
+import type { StoryIndexEntry } from '@storybook/types';
 
 const storyContextAtom = atom(null as StoryContext<ReactNativeFramework> | null);
 

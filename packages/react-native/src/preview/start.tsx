@@ -1,14 +1,18 @@
 import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
-import { ClientApi, RenderContext, setGlobalRender } from '@storybook/client-api';
-import { Loadable } from '@storybook/core-client';
 import Events from '@storybook/core-events';
 import type { ArgsStoryFn } from '@storybook/csf';
-import { PreviewWeb } from '@storybook/preview-web';
-import React from 'react';
+import { global } from '@storybook/global';
+import { ClientApi, setGlobalRender } from '@storybook/preview-api';
+import { PreviewWithSelection } from '@storybook/preview-web';
+import { RenderContext } from '@storybook/types';
 import type { ReactNativeFramework } from '../types/types-6.0';
-import { executeLoadableForChanges } from './executeLoadable';
 import { View } from './View';
+import { executeLoadableForChanges } from './executeLoadable';
+
+global.FEATURES = {
+  storyStoreV7: false,
+};
 
 export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
   const { id, component: Component } = context;
@@ -57,13 +61,20 @@ export function start() {
     selectionSpecifier: null,
     setQueryParams: () => {},
     setSelection: (selection) => {
-      preview.urlStore.selection = selection;
+      preview.selectionStore.selection = selection;
     },
   };
 
-  const preview = new PreviewWeb<ReactNativeFramework>(urlStore, previewView);
+  const preview = new PreviewWithSelection<ReactNativeFramework>(urlStore, previewView);
 
   clientApi.storyStore = preview.storyStore;
+
+  if (global) {
+    global.__STORYBOOK_CLIENT_API__ = clientApi;
+    global.__STORYBOOK_ADDONS_CHANNEL__ = channel;
+    global.__STORYBOOK_PREVIEW__ = preview;
+    global.__STORYBOOK_STORY_STORE__ = preview.storyStore;
+  }
 
   setGlobalRender(render);
 
@@ -86,7 +97,7 @@ export function start() {
     preview,
     // This gets called each time the user calls configure (i.e. once per HMR)
     // The first time, it constructs thecurrentSelection preview, subsequently it updates it
-    configure(loadable: Loadable, m: NodeModule) {
+    configure(loadable: any, m: { hot?: { accept?: () => void } }) {
       clientApi.addParameters({ framework: 'react-native' });
 
       // We need to run the `executeLoadableForChanges` function *inside* the `getProjectAnnotations
@@ -104,7 +115,7 @@ export function start() {
 
         return {
           ...clientApi.facade.projectAnnotations,
-          renderToDOM: (context: RenderContext<ReactNativeFramework>) => {
+          renderToCanvas: (context: RenderContext<ReactNativeFramework>) => {
             view._setStory(context.storyContext);
           },
         };
