@@ -30,3 +30,10 @@ storybook-out
 /addons/docs/common/config-*
 built-storybooks
 storybook.requires.js
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
