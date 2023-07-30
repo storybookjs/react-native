@@ -194,19 +194,16 @@ test('filter nested stories', () => {
   expect(filterNestedStories(output, 'bubble')).toEqual([
     {
       title: 'Chat/Message',
-      type: 'story',
       name: 'Chat',
       stories: [],
       children: [
         {
           title: 'Chat/Message',
-          type: 'story',
           name: 'Message',
           stories: [],
           children: [
             {
               title: 'Chat/Message/bubble',
-              type: 'story',
               name: 'bubble',
               children: [],
               stories: [
@@ -236,19 +233,16 @@ test('filter nested stories', () => {
     {
       name: 'Chat',
       title: 'Chat/Message',
-      type: 'story',
       stories: [],
       children: [
         {
           title: 'Chat/Message',
-          type: 'story',
           name: 'Message',
           stories: [],
           children: [
             {
               name: 'Reactions',
               title: 'Chat/Message/Reactions',
-              type: 'story',
               children: [],
               stories: [
                 {

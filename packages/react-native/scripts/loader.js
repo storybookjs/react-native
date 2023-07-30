@@ -21,19 +21,13 @@ const toRequireContext = (specifier) => {
 const cwd = process.cwd();
 const supportedExtensions = ['js', 'jsx', 'ts', 'tsx', 'cjs', 'mjs'];
 
+// TODO check if we need clearDecorators();
+
 // we clear decorators as a workaround for global decorators getting infinitely applied on HMR
 const previewImports = `
   import { decorators, parameters } from './preview';
 
   if (decorators) {
-    if(__DEV__){
-      // stops the warning from showing on every HMR 
-      require('react-native').LogBox.ignoreLogs([
-        '\`clearDecorators\` is deprecated and will be removed in Storybook 7.0',
-      ]);
-    }
-    // workaround for global decorators getting infinitely applied on HMR, see https://github.com/storybookjs/react-native/issues/185
-    // clearDecorators();
     decorators.forEach((decorator) => addDecorator(decorator));
   }
 
