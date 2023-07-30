@@ -2,7 +2,21 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 const prettier = require('prettier');
-const { normalizeStories, toRequireContext } = require('@storybook/core-common');
+const { normalizeStories, globToRegexp } = require('@storybook/core-common');
+
+const toRequireContext = (specifier) => {
+  const { directory, files } = specifier;
+
+  // The importPathMatcher is a `./`-prefixed matcher that includes the directory
+  // For `require.context()` we want the same thing, relative to directory
+  const match = globToRegexp(`./${files}`);
+
+  return {
+    path: directory,
+    recursive: files.includes('**') || files.split('/').length > 1,
+    match,
+  };
+};
 
 const cwd = process.cwd();
 const supportedExtensions = ['js', 'jsx', 'ts', 'tsx', 'cjs', 'mjs'];
@@ -19,7 +33,7 @@ const previewImports = `
       ]);
     }
     // workaround for global decorators getting infinitely applied on HMR, see https://github.com/storybookjs/react-native/issues/185
-    clearDecorators();
+    // clearDecorators();
     decorators.forEach((decorator) => addDecorator(decorator));
   }
 

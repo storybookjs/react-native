@@ -15,6 +15,7 @@ declare global {
  */
 export function executeLoadable(loadable: Loadable) {
   let reqs = null;
+
   // todo discuss / improve type check
   if (Array.isArray(loadable)) {
     reqs = loadable;
@@ -22,13 +23,11 @@ export function executeLoadable(loadable: Loadable) {
     reqs = [loadable as RequireContext]; // todo: test with metro require context
   }
 
-  console.log('helloooo', reqs[0].keys());
-
   let exportsMap = new Map<Path, ModuleExports>();
+
   if (reqs) {
     reqs.forEach((req) => {
       req.keys().forEach((filename: string) => {
-        console.log('filename', filename);
         try {
           const fileExports = req(filename) as ModuleExports;
           exportsMap.set(
@@ -46,10 +45,12 @@ export function executeLoadable(loadable: Loadable) {
     });
   } else {
     const exported = (loadable as LoaderFunction)();
+
     if (typeof exported === 'object') {
       const csfExports = Object.entries(exported as Object).filter(
         ([_key, value]) => value.default != null
       );
+
       exportsMap = new Map(csfExports.map(([filePath, fileExports]) => [filePath, fileExports]));
     }
   }
@@ -79,6 +80,7 @@ export function executeLoadableForChanges(
   const lastExportsMap = global.lastExportsMap as Map<Path, ModuleExports>;
   const exportsMap = executeLoadable(loadable);
   const added = new Map<Path, ModuleExports>();
+
   Array.from(exportsMap.entries())
     // Ignore files that do not have a default export
     .filter(([, fileExports]) => !!fileExports.default)
@@ -87,6 +89,7 @@ export function executeLoadableForChanges(
     .forEach(([fileName, fileExports]) => added.set(fileName, fileExports));
 
   const removed = new Map<Path, ModuleExports>();
+
   Array.from(lastExportsMap.keys())
     .filter((fileName) => !exportsMap.has(fileName))
     .forEach((fileName) => removed.set(fileName, lastExportsMap.get(fileName)));
