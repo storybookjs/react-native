@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import deepEqual from 'fast-deep-equal';
-import { addons } from '@storybook/addons';
+import { addons } from '@storybook/manager-api';
 import { SELECT_STORY } from '@storybook/core-events';
 import { ActionDisplay, EVENT_ID } from '@storybook/addon-actions';
 import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
