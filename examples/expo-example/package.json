@@ -6,14 +6,12 @@
   "scripts": {
     "android": "expo start --android",
     "format": "prettier --write .",
-    "get-stories": "sb-rn-get-stories --config-path=./.storybook",
+    "storybook-generate": "sb-rn-get-stories --config-path=./.storybook --useRequireContext",
     "ios": "expo start --ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prestart": "yarn get-stories",
     "start": "expo start",
     "start-server": "react-native-storybook-server",
     "storybook-watcher": "sb-rn-watcher --config-path=./.storybook",
-    "preweb": "yarn get-stories",
     "web": "expo start --web"
   },
   "dependencies": {

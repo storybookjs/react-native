@@ -41,11 +41,14 @@ import "@storybook/addon-ondevice-actions/register";
       } catch{}
     
 
+         
       const getStories=() => {
-        return {"./scripts/mocks/file-extensions/FakeStory.stories.tsx": require("./FakeStory.stories.tsx")};
+          return {"./scripts/mocks/file-extensions/FakeStory.stories.tsx": require("./FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
+    
+      
   "
 `;
 
@@ -90,11 +93,14 @@ import "@storybook/addon-ondevice-actions/register";
       } catch{}
     
 
+         
       const getStories=() => {
-        return {"./scripts/mocks/configuration-objects/components/FakeStory.stories.tsx": require("./components/FakeStory.stories.tsx")};
+          return {"./scripts/mocks/configuration-objects/components/FakeStory.stories.tsx": require("./components/FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
+    
+      
   "
 `;
 
@@ -139,11 +145,14 @@ import "@storybook/addon-ondevice-actions/register";
       } catch{}
     
 
+         
       const getStories=() => {
-        return {"./scripts/mocks/exclude-config-files/include-components/FakeStory.stories.tsx": require("./include-components/FakeStory.stories.tsx")};
+          return {"./scripts/mocks/exclude-config-files/include-components/FakeStory.stories.tsx": require("./include-components/FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
+    
+      
   "
 `;
 
@@ -188,11 +197,14 @@ import "@storybook/addon-ondevice-actions/register";
       } catch{}
     
 
+         
       const getStories=() => {
-        return {"./scripts/mocks/all-config-files/FakeStory.stories.tsx": require("./FakeStory.stories.tsx")};
+          return {"./scripts/mocks/all-config-files/FakeStory.stories.tsx": require("./FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
+    
+      
   "
 `;
 
@@ -219,11 +231,14 @@ import "@storybook/addon-ondevice-actions/register";
       } catch{}
     
 
+         
       const getStories=() => {
-        return {"./scripts/mocks/no-preview/FakeStory.stories.tsx": require("./FakeStory.stories.tsx")};
+          return {"./scripts/mocks/no-preview/FakeStory.stories.tsx": require("./FakeStory.stories.tsx")};
       }
 
       configure(getStories, module, false)
+    
+      
   "
 `;
 
@@ -243,10 +258,13 @@ exports[`loader writeRequires when there is no story glob or addons writes no st
 
       
 
+         
       const getStories=() => {
-        return {};
+          return {};
       }
 
       configure(getStories, module, false)
+    
+      
   "
 `;
