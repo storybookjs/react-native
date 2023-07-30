@@ -1,5 +1,6 @@
 import React from 'react';
-import addons, { types } from '@storybook/addons';
+// TODO verify this
+import { addons, types } from '@storybook/manager-api';
 
 import ControlsPanel from './ControlsPanel';
 import { AddonPanel } from './Panel';

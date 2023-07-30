@@ -1,4 +1,4 @@
-import { Args, StoryContext } from '@storybook/addons';
+import { Args, StoryContext } from '@storybook/types';
 import { useState, useEffect, useCallback } from 'react';
 import Events from '@storybook/core-events';
 

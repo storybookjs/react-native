@@ -4570,8 +4570,10 @@ __metadata:
     "@emotion/native": ^11.11.0
     "@storybook/addon-controls": ^7
     "@storybook/addons": ^7
+    "@storybook/channels": ^7
     "@storybook/client-logger": ^7
     "@storybook/core-events": ^7
+    "@storybook/manager-api": ^7
     "@storybook/react-native-theming": ^6.5.5-alpha.1
     core-js: ^3.0.1
     deep-equal: ^1.0.1
@@ -5017,7 +5019,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-api@npm:7.1.1":
+"@storybook/manager-api@npm:7.1.1, @storybook/manager-api@npm:^7":
   version: 7.1.1
   resolution: "@storybook/manager-api@npm:7.1.1"
   dependencies:
