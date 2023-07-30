@@ -7,7 +7,7 @@ module.exports = {
     //   '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
     //   '@storybook/addon-ondevice-knobs',
-    //   '@storybook/addon-ondevice-backgrounds',
+    '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
   ],
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Appearance } from 'react-native';
-// import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 export const decorators = [
   (StoryFn) => (
@@ -8,7 +8,7 @@ export const decorators = [
       <StoryFn />
     </View>
   ),
-  // withBackgrounds,
+  withBackgrounds,
 ];
 
 export const parameters = {

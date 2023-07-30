@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
-// import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import { Text, StyleSheet } from 'react-native';
 
 const Background = () => (
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 const BackgroundMeta: ComponentMeta<typeof Background> = {
   title: 'BackgroundExample/Background CSF',
   component: Background,
-  // decorators: [withBackgrounds],
+  decorators: [withBackgrounds],
   parameters: {
     backgrounds: {
       default: 'warm',
