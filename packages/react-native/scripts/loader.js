@@ -183,8 +183,7 @@ function writeRequires({ configPath, absolute = false, useRequireContext = false
 
   // TODO: implement presets or something similar
   if (main.addons?.includes('@storybook/addon-ondevice-actions')) {
-    enhancersImport =
-      'import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs"';
+    enhancersImport = 'import { argsEnhancers } from "@storybook/addon-actions/dist/preview"';
 
     // try/catch is a temporary fix for https://github.com/storybookjs/react-native/issues/327 until a fix is found
     enhancers = `

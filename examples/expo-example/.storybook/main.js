@@ -8,6 +8,6 @@ module.exports = {
     '@storybook/addon-ondevice-controls',
     //   '@storybook/addon-ondevice-knobs',
     //   '@storybook/addon-ondevice-backgrounds',
-    //   '@storybook/addon-ondevice-actions',
+    '@storybook/addon-ondevice-actions',
   ],
 };
