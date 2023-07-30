@@ -1,5 +1,5 @@
 import * as React from 'react';
-import addons from '@storybook/addons';
+import { addons } from '@storybook/manager-api';
 import { Notes } from './components/Notes';
 
 export const PARAM_KEY = 'notes';

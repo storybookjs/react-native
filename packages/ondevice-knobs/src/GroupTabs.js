@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { ScrollView, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import styled from '@emotion/native';
 
 const TabButtonTouchable = styled.TouchableOpacity(({ theme, active }) => ({

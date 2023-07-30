@@ -11,7 +11,8 @@ import { darkTheme, theme, Theme } from '@storybook/react-native-theming';
 import type { ReactNativeFramework } from '../types/types-6.0';
 import { PreviewWeb, PreviewWithSelection } from '@storybook/preview-web';
 import StoryView from './components/StoryView';
-import { createChannel } from '@storybook/channel-websocket';
+// TODO check this
+import { createWebSocketChannel } from '@storybook/channels';
 import getHost from './rn-host-detect';
 import events from '@storybook/core-events';
 import { useColorScheme } from 'react-native';
@@ -124,7 +125,7 @@ export class View {
 
     const url = `${websocketType}://${host}${port}/${query}`;
 
-    return createChannel({
+    return createWebSocketChannel({
       url,
       async: true,
       onError: async () => {},
