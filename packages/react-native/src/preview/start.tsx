@@ -35,7 +35,9 @@ export function start() {
   const clientApi = new ClientApi<ReactNativeFramework>();
 
   const previewView = {
-    prepareForStory: () => null,
+    prepareForStory: () => {
+      return {};
+    },
     showNoPreview: () => {},
     showPreparingStory: () => {},
     applyLayout: () => {},
