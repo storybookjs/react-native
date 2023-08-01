@@ -29,7 +29,7 @@ htpasswd
 storybook-out
 /addons/docs/common/config-*
 built-storybooks
-storybook.requires.js
+examples/expo-example/.storybook/storybook.requires.js
 .yarn/*
 !.yarn/cache
 !.yarn/patches
