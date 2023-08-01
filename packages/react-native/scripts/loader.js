@@ -168,7 +168,7 @@ function writeRequires({ configPath, absolute = false, useRequireContext = false
   let enhancers = '';
 
   // TODO: implement presets or something similar
-  if (main.addons.includes('@storybook/addon-ondevice-actions')) {
+  if (main.addons?.includes('@storybook/addon-ondevice-actions')) {
     enhancersImport =
       'import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs"';
 
