@@ -6,7 +6,7 @@
   "scripts": {
     "android": "expo start --android",
     "format": "prettier --write .",
-    "storybook-generate": "sb-rn-get-stories --config-path=./.storybook --useRequireContext",
+    "storybook-generate": "sb-rn-get-stories --config-path=./.storybook --unstable_useRequireContext",
     "ios": "expo start --ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "start": "expo start",

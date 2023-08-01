@@ -81,7 +81,7 @@ function ensureRelativePathHasDot(relativePath) {
   return relativePath.startsWith('.') ? relativePath : `./${relativePath}`;
 }
 
-function writeRequires({ configPath, absolute = false, useRequireContext = false }) {
+function writeRequires({ configPath, absolute = false, unstable_useRequireContext = false }) {
   const storybookRequiresLocation = path.resolve(cwd, configPath, 'storybook.requires.js');
 
   const mainImport = getMain({ configPath });
@@ -101,7 +101,7 @@ function writeRequires({ configPath, absolute = false, useRequireContext = false
 
   let configure = '';
 
-  if (useRequireContext) {
+  if (unstable_useRequireContext) {
     const contexts = storiesSpecifiers.map((specifier) => {
       const { path: p, recursive: r, match: m } = toRequireContext(specifier);
       // TODO remove this dot 👇 and find actual solution
