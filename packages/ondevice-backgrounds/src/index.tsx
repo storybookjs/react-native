@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeDecorator } from '@storybook/addons';
+import { makeDecorator } from '@storybook/preview-api';
 import { addons } from '@storybook/manager-api';
 
 import Events from './constants';

@@ -1,5 +1,4 @@
 import React from 'react';
-// TODO verify this
 import { addons, types } from '@storybook/manager-api';
 
 import ControlsPanel from './ControlsPanel';

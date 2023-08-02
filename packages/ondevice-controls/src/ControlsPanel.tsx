@@ -1,5 +1,4 @@
 import styled from '@emotion/native';
-// TODO verify this
 import { Channel } from '@storybook/channels';
 import { API } from '@storybook/api';
 import type { StoryContextForLoaders, Args } from '@storybook/csf';

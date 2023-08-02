@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@emotion/native": "^11.11.0",
-    "@storybook/addons": "^7",
     "@storybook/core-events": "^7",
     "@storybook/manager-api": "^7",
     "core-js": "^3.0.1",

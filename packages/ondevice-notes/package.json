@@ -30,9 +30,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
-    "@storybook/addons": "^7",
     "@storybook/api": "^7",
-    "@storybook/client-api": "^7",
     "@storybook/client-logger": "^7",
     "@storybook/core-events": "^7",
     "@storybook/manager-api": "^7",

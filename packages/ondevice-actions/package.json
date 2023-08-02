@@ -26,8 +26,8 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@storybook/addons": "^7",
     "@storybook/core-events": "^7",
+    "@storybook/manager-api": "^7",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {

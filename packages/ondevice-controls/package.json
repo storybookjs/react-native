@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@emotion/native": "^11.11.0",
-    "@storybook/addons": "^7",
     "@storybook/channels": "^7",
     "@storybook/client-logger": "^7",
     "@storybook/core-events": "^7",
