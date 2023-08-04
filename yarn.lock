@@ -19767,16 +19767,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript@npm:^1.20.4":
-  version: 1.22.0
-  resolution: "react-docgen-typescript@npm:1.22.0"
-  peerDependencies:
-    typescript: ">= 3.x"
-  checksum: f5e5519cf3f1136b8e66bb3c459e02edf4d6c0d3bc1ee0fa848c8446f93f5332fb67c794f36e3597fd7374dea7433243537a4fd2b9311aa5d0c5a844ab8cb980
-  languageName: node
-  linkType: hard
-
-"react-docgen-typescript@npm:^2.1.1":
+"react-docgen-typescript@npm:2.2.2":
   version: 2.2.2
   resolution: "react-docgen-typescript@npm:2.2.2"
   peerDependencies:

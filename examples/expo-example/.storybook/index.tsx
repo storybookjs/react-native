@@ -1,8 +1,7 @@
 import React from 'react';
 import { getStorybookUI } from '@storybook/react-native';
 // import { SafeAreaView } from 'react-native';
-// TODO: fix this babel thing with the override
-// import './doctools';
+import './doctools';
 import './storybook.requires';
 
 const StorybookUIRoot = getStorybookUI({
