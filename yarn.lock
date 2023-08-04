@@ -4700,7 +4700,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-ondevice-actions@^6.5.5, @storybook/addon-ondevice-actions@workspace:packages/ondevice-actions":
+"@storybook/addon-ondevice-actions@^6.5.6-alpha.0, @storybook/addon-ondevice-actions@workspace:packages/ondevice-actions":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-actions@workspace:packages/ondevice-actions"
   dependencies:
@@ -4715,7 +4715,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-backgrounds@^6.5.5, @storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds":
+"@storybook/addon-ondevice-backgrounds@^6.5.6-alpha.0, @storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds"
   dependencies:
@@ -4730,7 +4730,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-controls@^6.5.5, @storybook/addon-ondevice-controls@workspace:packages/ondevice-controls":
+"@storybook/addon-ondevice-controls@^6.5.6-alpha.0, @storybook/addon-ondevice-controls@workspace:packages/ondevice-controls":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-controls@workspace:packages/ondevice-controls"
   dependencies:
@@ -4738,7 +4738,7 @@ __metadata:
     "@storybook/addons": ^6.5.14
     "@storybook/client-logger": ^6.5.14
     "@storybook/core-events": ^6.5.14
-    "@storybook/react-native-theming": ^6.5.5
+    "@storybook/react-native-theming": ^6.5.6-alpha.0
     core-js: ^3.0.1
     deep-equal: ^1.0.1
     prop-types: ^15.7.2
@@ -4754,7 +4754,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-knobs@^6.5.5, @storybook/addon-ondevice-knobs@workspace:packages/ondevice-knobs":
+"@storybook/addon-ondevice-knobs@^6.5.6-alpha.0, @storybook/addon-ondevice-knobs@workspace:packages/ondevice-knobs":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-knobs@workspace:packages/ondevice-knobs"
   dependencies:
@@ -4776,7 +4776,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-notes@^6.5.5, @storybook/addon-ondevice-notes@workspace:packages/ondevice-notes":
+"@storybook/addon-ondevice-notes@^6.5.6-alpha.0, @storybook/addon-ondevice-notes@workspace:packages/ondevice-notes":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-notes@workspace:packages/ondevice-notes"
   dependencies:
@@ -4785,7 +4785,7 @@ __metadata:
     "@storybook/client-api": ^6.5.14
     "@storybook/client-logger": ^6.5.14
     "@storybook/core-events": ^6.5.14
-    "@storybook/react-native-theming": ^6.5.5
+    "@storybook/react-native-theming": ^6.5.6-alpha.0
     core-js: ^3.0.1
     prop-types: ^15.7.2
     simple-markdown: ^0.7.3
@@ -5557,7 +5557,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-native-server@^6.5.5, @storybook/react-native-server@workspace:packages/react-native-server":
+"@storybook/react-native-server@^6.5.6-alpha.0, @storybook/react-native-server@workspace:packages/react-native-server":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-server@workspace:packages/react-native-server"
   dependencies:
@@ -5584,7 +5584,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native-theming@^6.5.5, @storybook/react-native-theming@workspace:packages/react-native-theming":
+"@storybook/react-native-theming@^6.5.6-alpha.0, @storybook/react-native-theming@workspace:packages/react-native-theming":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-theming@workspace:packages/react-native-theming"
   dependencies:
@@ -5598,7 +5598,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native@^6.5.5, @storybook/react-native@workspace:packages/react-native":
+"@storybook/react-native@^6.5.6-alpha.0, @storybook/react-native@workspace:packages/react-native":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native@workspace:packages/react-native"
   dependencies:
@@ -5611,7 +5611,7 @@ __metadata:
     "@storybook/core-events": ^6.5.14
     "@storybook/csf": 0.0.2--canary.4566f4d.1
     "@storybook/preview-web": ^6.5.14
-    "@storybook/react-native-theming": ^6.5.5
+    "@storybook/react-native-theming": ^6.5.6-alpha.0
     "@types/jest": ^29.4.3
     "@types/react": ~18.2.14
     babel-jest: ^29.4.3
@@ -11472,18 +11472,18 @@ __metadata:
     "@storybook/addon-essentials": ^6.5.14
     "@storybook/addon-knobs": ^6.4.0
     "@storybook/addon-links": ^6.5.14
-    "@storybook/addon-ondevice-actions": ^6.5.5
-    "@storybook/addon-ondevice-backgrounds": ^6.5.5
-    "@storybook/addon-ondevice-controls": ^6.5.5
-    "@storybook/addon-ondevice-knobs": ^6.5.5
-    "@storybook/addon-ondevice-notes": ^6.5.5
+    "@storybook/addon-ondevice-actions": ^6.5.6-alpha.0
+    "@storybook/addon-ondevice-backgrounds": ^6.5.6-alpha.0
+    "@storybook/addon-ondevice-controls": ^6.5.6-alpha.0
+    "@storybook/addon-ondevice-knobs": ^6.5.6-alpha.0
+    "@storybook/addon-ondevice-notes": ^6.5.6-alpha.0
     "@storybook/addons": ^6.5.14
     "@storybook/builder-webpack5": ^6.5.16
     "@storybook/docs-tools": ^6.5.14
     "@storybook/manager-webpack5": ^6.5.16
     "@storybook/react": ^6.5.14
-    "@storybook/react-native": ^6.5.5
-    "@storybook/react-native-server": ^6.5.5
+    "@storybook/react-native": ^6.5.6-alpha.0
+    "@storybook/react-native-server": ^6.5.6-alpha.0
     "@types/react": ~18.2.14
     babel-plugin-react-docgen-typescript: ^1.5.1
     expo: ^49.0.3
