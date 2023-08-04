@@ -1,6 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, ImageBackgroundProps, ImageStyle } from 'react-native';
-import { styled } from '@storybook/react-native-theming';
+import { Image, ImageBackground } from 'react-native';
 
 const iconSources = {
   grid: {
@@ -34,19 +33,13 @@ const iconSources = {
 
 export type IconName = keyof typeof iconSources;
 
-const StyledImage: typeof Image = styled(Image)<ImageStyle & ImageBackgroundProps>();
-
-const StyledImageBackground: typeof ImageBackground = styled(ImageBackground)<
-  ImageStyle & ImageBackgroundProps
->();
-
-interface IconProps extends Omit<React.ComponentProps<typeof StyledImage>, 'source'> {
+interface IconProps extends Omit<React.ComponentProps<typeof Image>, 'source'> {
   name: IconName;
 }
 
 export function Icon({ name, ...props }: IconProps) {
   return (
-    <StyledImage
+    <Image
       source={{
         ...iconSources[name],
         width: 16,
@@ -57,14 +50,13 @@ export function Icon({ name, ...props }: IconProps) {
   );
 }
 
-interface BackgroungIconProps
-  extends Omit<React.ComponentProps<typeof StyledImageBackground>, 'source'> {
+interface BackgroundIconProps extends Omit<React.ComponentProps<typeof ImageBackground>, 'source'> {
   name: IconName;
 }
 
-export function BackgroundIcon({ name, ...props }: BackgroungIconProps) {
+export function BackgroundIcon({ name, ...props }: BackgroundIconProps) {
   return (
-    <StyledImageBackground
+    <ImageBackground
       source={{
         ...iconSources[name],
         width: 16,

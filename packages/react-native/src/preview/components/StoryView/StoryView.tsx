@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { Text, Keyboard } from 'react-native';
-import { useStoryContext } from '../../../hooks';
-import { Box } from '../Shared/layout';
 import { useTheme } from '@storybook/react-native-theming';
+import { Keyboard, Text, View } from 'react-native';
+import { useStoryContext } from '../../../hooks';
 
 /**
  * This is a handler for `onStartShouldSetResponder`, which dismisses the
@@ -33,21 +32,21 @@ const StoryView = () => {
     const { unboundStoryFn: StoryComponent } = context;
 
     return (
-      <Box
+      <View
         style={{ flex: 1, backgroundColor }}
         key={id}
         testID={id}
         onStartShouldSetResponder={dismissOnStartResponder}
       >
         {StoryComponent && <StoryComponent {...context} />}
-      </Box>
+      </View>
     );
   }
 
   return (
-    <Box style={{ flex: 1, padding: 16, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, padding: 16, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Please open the sidebar and select a story to preview.</Text>
-    </Box>
+    </View>
   );
 };
 

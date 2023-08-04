@@ -1,11 +1,10 @@
-import React from 'react';
-
 import { addons } from '@storybook/addons';
+import { styled } from '@storybook/react-native-theming';
+import React from 'react';
+import { View } from 'react-native';
 import { useSelectedAddon, useStoryContext } from '../../../../hooks';
 import AddonsList from './List';
 import AddonWrapper from './Wrapper';
-import { Box } from '../../Shared/layout';
-import { styled } from '@storybook/react-native-theming';
 
 interface AddonsProps {
   active: boolean;
@@ -23,29 +22,29 @@ const Addons = ({ active }: AddonsProps) => {
 
   if (!id) {
     return (
-      <Box style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text>No Story Selected</Text>
-      </Box>
+      </View>
     );
   }
 
   if (Object.keys(panels).length === 0) {
     return (
-      <Box style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text>No addons loaded.</Text>
-      </Box>
+      </View>
     );
   }
 
   return (
-    <Box style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <AddonsList
         onPressAddon={setAddonSelected}
         panels={panels}
         addonSelected={active ? addonSelected : null}
       />
       <AddonWrapper addonSelected={active ? addonSelected : null} panels={panels} />
-    </Box>
+    </View>
   );
 };
 

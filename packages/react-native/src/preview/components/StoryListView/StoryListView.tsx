@@ -1,19 +1,17 @@
-import { styled } from '@storybook/react-native-theming';
 import { addons } from '@storybook/addons';
 import { StoryIndex } from '@storybook/client-api';
 import Events from '@storybook/core-events';
+import { styled, useTheme } from '@storybook/react-native-theming';
 import React, { useMemo, useState } from 'react';
 import { FlatList, ListRenderItem, StyleSheet, Text, TextInputProps, View } from 'react-native';
 import { useIsChildSelected, useIsStorySectionSelected, useIsStorySelected } from '../../../hooks';
 import { Icon } from '../Shared/icons';
-import { Box } from '../Shared/layout';
 import {
   StoryGroup,
   filterNestedStories,
-  getNestedStories,
   findFirstChildStory,
+  getNestedStories,
 } from './getNestedStories';
-import { useTheme } from '@storybook/react-native-theming';
 
 const SectionHeaderText = styled.Text<{ selected: boolean }>(({ theme }) => ({
   fontSize: theme.storyList.fontSize,
@@ -302,7 +300,7 @@ const StoryListView = ({ storyIndex }: Props) => {
   }, []);
 
   return (
-    <Box style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <SearchBar
         testID="Storybook.ListView.SearchBar"
         onChangeText={handleChangeSearchText}
@@ -323,7 +321,7 @@ const StoryListView = ({ storyIndex }: Props) => {
         keyExtractor={keyExtractor}
         data={data}
       />
-    </Box>
+    </View>
   );
 };
 
