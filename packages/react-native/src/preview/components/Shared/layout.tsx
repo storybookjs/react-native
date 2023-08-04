@@ -1,4 +1,4 @@
-import { ViewProps, ViewStyle } from 'react-native';
+import { View, ViewProps, ViewStyle } from 'react-native';
 import { styled } from '@storybook/react-native-theming';
 
 interface BoxProps extends ViewProps, Omit<ViewStyle, 'flex'> {
@@ -19,6 +19,6 @@ interface BoxProps extends ViewProps, Omit<ViewStyle, 'flex'> {
  * </Box>
  * ```
  */
-export const Box = styled.View<BoxProps>(({ flex }) => ({
+export const Box: typeof View = styled.View<BoxProps>(({ flex }) => ({
   flex: flex === true ? 1 : flex === false ? 0 : flex,
 }));

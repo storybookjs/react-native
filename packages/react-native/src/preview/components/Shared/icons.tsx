@@ -34,9 +34,11 @@ const iconSources = {
 
 export type IconName = keyof typeof iconSources;
 
-const StyledImage = styled(Image)<ImageStyle & ImageBackgroundProps>();
+const StyledImage: typeof Image = styled(Image)<ImageStyle & ImageBackgroundProps>();
 
-const StyledImageBackground = styled(ImageBackground)<ImageStyle & ImageBackgroundProps>();
+const StyledImageBackground: typeof ImageBackground = styled(ImageBackground)<
+  ImageStyle & ImageBackgroundProps
+>();
 
 interface IconProps extends Omit<React.ComponentProps<typeof StyledImage>, 'source'> {
   name: IconName;

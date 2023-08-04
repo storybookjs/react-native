@@ -1,8 +1,8 @@
 /// <reference path="./emotionAugmentation.d.ts" />
 export { theme, darkTheme, StorybookTheme } from './theme';
 
-import styled from '@emotion/native';
+import styled, { type StyledComponent } from '@emotion/native';
 import { useTheme } from '@emotion/react';
 import { ThemeProvider } from '@emotion/react';
 
-export { styled, useTheme, ThemeProvider };
+export { styled, useTheme, ThemeProvider, StyledComponent };

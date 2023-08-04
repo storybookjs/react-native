@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { Text, Keyboard } from 'react-native';
-import { useStoryContext, useTheme } from '../../../hooks';
+import { useStoryContext } from '../../../hooks';
 import { Box } from '../Shared/layout';
+import { useTheme } from '@storybook/react-native-theming';
 
 /**
  * This is a handler for `onStartShouldSetResponder`, which dismisses the
@@ -33,11 +34,10 @@ const StoryView = () => {
 
     return (
       <Box
-        flex
+        style={{ flex: 1, backgroundColor }}
         key={id}
         testID={id}
         onStartShouldSetResponder={dismissOnStartResponder}
-        backgroundColor={backgroundColor}
       >
         {StoryComponent && <StoryComponent {...context} />}
       </Box>
@@ -45,7 +45,7 @@ const StoryView = () => {
   }
 
   return (
-    <Box flex padding={16} alignItems="center" justifyContent="center">
+    <Box style={{ flex: 1, padding: 16, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Please open the sidebar and select a story to preview.</Text>
     </Box>
   );

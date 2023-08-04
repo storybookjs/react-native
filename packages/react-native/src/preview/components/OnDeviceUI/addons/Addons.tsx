@@ -23,7 +23,7 @@ const Addons = ({ active }: AddonsProps) => {
 
   if (!id) {
     return (
-      <Box alignItems="center" justifyContent="center">
+      <Box style={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text>No Story Selected</Text>
       </Box>
     );
@@ -31,14 +31,14 @@ const Addons = ({ active }: AddonsProps) => {
 
   if (Object.keys(panels).length === 0) {
     return (
-      <Box alignItems="center" justifyContent="center">
+      <Box style={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text>No addons loaded.</Text>
       </Box>
     );
   }
 
   return (
-    <Box flex>
+    <Box style={{ flex: 1 }}>
       <AddonsList
         onPressAddon={setAddonSelected}
         panels={panels}

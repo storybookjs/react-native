@@ -17,9 +17,9 @@ interface NavigationButtonProps {
 function NavigationButton({ iconName, inverseIconName, active, toggle }: NavigationButtonProps) {
   return (
     <TouchableWithoutFeedback onPress={toggle} hitSlop={hitSlop}>
-      <Box marginHorizontal={8}>
-        <BackgroundIcon flex={1} name={inverseIconName} opacity={0.8}>
-          <Icon name={iconName} opacity={active ? 0.6 : 0.25} />
+      <Box style={{ marginHorizontal: 8 }}>
+        <BackgroundIcon style={{ flex: 1, opacity: 0.8 }} name={inverseIconName}>
+          <Icon name={iconName} style={{ opacity: active ? 0.6 : 0.25 }} />
         </BackgroundIcon>
       </Box>
     </TouchableWithoutFeedback>
