@@ -1,6 +1,6 @@
-import { styled } from '@storybook/react-native-theming';
 import Slider from '@react-native-community/slider';
-import React, { useCallback, useState } from 'react';
+import { styled } from '@storybook/react-native-theming';
+import { useCallback, useState } from 'react';
 import { View } from 'react-native';
 
 import { inputStyle } from './common';
