@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 import { inputStyle } from './common';
 

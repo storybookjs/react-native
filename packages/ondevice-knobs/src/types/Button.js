@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 const Label = styled.Text(({ theme }) => ({
   fontSize: 17,

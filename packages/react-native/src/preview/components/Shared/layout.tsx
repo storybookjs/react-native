@@ -1,5 +1,5 @@
 import { ViewProps, ViewStyle } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 interface BoxProps extends ViewProps, Omit<ViewStyle, 'flex'> {
   /**

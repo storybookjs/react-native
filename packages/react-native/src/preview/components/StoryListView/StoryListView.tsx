@@ -1,4 +1,4 @@
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import { addons } from '@storybook/addons';
 import { StoryIndex } from '@storybook/client-api';
 import Events from '@storybook/core-events';

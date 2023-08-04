@@ -31,7 +31,6 @@ storybook-out
 built-storybooks
 examples/expo-example/.storybook/storybook.requires.js
 .yarn/*
-!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases

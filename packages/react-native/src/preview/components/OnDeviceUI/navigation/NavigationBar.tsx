@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 import { SIDEBAR, CANVAS, ADDONS } from './constants';
 

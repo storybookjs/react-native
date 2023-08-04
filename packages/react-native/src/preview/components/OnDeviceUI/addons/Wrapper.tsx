@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import { Collection } from '@storybook/addons';
 
 import { useTheme, useUpdateOnStoryChanged } from '../../../../hooks';

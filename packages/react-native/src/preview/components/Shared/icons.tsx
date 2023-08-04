@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, ImageBackground, ImageBackgroundProps, ImageStyle } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 const iconSources = {
   grid: {

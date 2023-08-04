@@ -52,8 +52,6 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@emotion/native": "^11.11.0",
-    "@emotion/react": "^11.11.1",
     "@storybook/addons": "^6.5.14",
     "@storybook/channel-websocket": "^6.5.14",
     "@storybook/channels": "^6.5.14",

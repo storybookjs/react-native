@@ -1,5 +1,5 @@
 import { StoryIndex } from '@storybook/client-api';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import React, { useState, useRef } from 'react';
 import {
   Animated,

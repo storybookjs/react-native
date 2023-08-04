@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Animated, StyleProp, ViewStyle } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 interface PanelProps {
   edge: 'left' | 'right' | 'top';

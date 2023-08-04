@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleProp, View, ViewStyle } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 import { useTheme } from '../../../hooks';
 

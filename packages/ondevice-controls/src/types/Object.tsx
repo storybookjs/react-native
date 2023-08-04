@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import { ViewStyle } from 'react-native';
 
 import { useResyncValue } from './useResyncValue';

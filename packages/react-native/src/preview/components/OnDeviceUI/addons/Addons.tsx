@@ -5,7 +5,7 @@ import { useSelectedAddon, useStoryContext } from '../../../../hooks';
 import AddonsList from './List';
 import AddonWrapper from './Wrapper';
 import { Box } from '../../Shared/layout';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 interface AddonsProps {
   active: boolean;
