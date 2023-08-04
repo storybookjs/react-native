@@ -10,7 +10,7 @@ function getArguments() {
     )
     .option('-a, --absolute', 'Use absolute paths for story imports')
     .option(
-      '-useRequireContext, --useRequireContext',
+      '-unstable_useRequireContext, --unstable_useRequireContext',
       'Use experimental require.context to load stories'
     );
 

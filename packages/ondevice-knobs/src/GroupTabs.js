@@ -1,7 +1,7 @@
+import { styled } from '@storybook/react-native-theming';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { ScrollView, Text } from 'react-native';
-import styled from '@emotion/native';
 
 const TabButtonTouchable = styled.TouchableOpacity(({ theme, active }) => ({
   borderWidth: theme.tabs.borderWidth,

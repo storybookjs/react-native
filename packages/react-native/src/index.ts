@@ -38,4 +38,4 @@ export * from './types/types-6.0';
   initializationPromise: clientApi.storyStore?.initializationPromise,
 };
 
-export { theme, darkTheme, Theme } from '@storybook/react-native-theming';
+export { theme, darkTheme, type Theme } from '@storybook/react-native-theming';

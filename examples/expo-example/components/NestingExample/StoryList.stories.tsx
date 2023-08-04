@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import StoryListView from '@storybook/react-native/dist/preview/components/StoryListView/StoryListView';
+import StoryListView from '@storybook/react-native/src/preview/components/StoryListView/StoryListView';
 
 export default {
   title: 'StoryListView',

@@ -1,8 +1,7 @@
 import { Theme } from '@storybook/react-native-theming';
-import { Platform } from 'react-native';
+import { Platform, TextStyle } from 'react-native';
 
-// TODO fix this any
-export function inputStyle(theme: Theme, isTextInput = true): any {
+export function inputStyle(theme: Theme, isTextInput = true): TextStyle {
   return {
     backgroundColor: theme.inputs.text.backgroundColor,
     borderWidth: theme.inputs.text.borderWidth,

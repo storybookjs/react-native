@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import type { StoryContext } from '@storybook/csf';
 import { atom, useAtom, useAtomValue, useSetAtom, getDefaultStore } from 'jotai';
-import { useTheme as useSBTheme } from '@emotion/react';
 
 import type { ReactNativeFramework } from './types/types-6.0';
 import type { StoryIndexEntry } from '@storybook/types';
@@ -74,13 +73,6 @@ export function useIsChildSelected(entries: StoryIndexEntry[]) {
  */
 export function useUpdateOnStoryChanged() {
   useAtomValue(useMemo(() => atom((get) => get(storyContextAtom)?.id), []));
-}
-
-/**
- * Hook that gets the current theme values.
- */
-export function useTheme() {
-  return useSBTheme();
 }
 
 /**

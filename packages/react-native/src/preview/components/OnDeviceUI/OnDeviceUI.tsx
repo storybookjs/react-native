@@ -1,6 +1,6 @@
+import { styled } from '@storybook/react-native-theming';
 import { StoryIndex } from '@storybook/types';
-import styled from '@emotion/native';
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Animated,
   Dimensions,
@@ -8,39 +8,35 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   Platform,
-  TouchableOpacity,
   StatusBar,
+  StyleProp,
   StyleSheet,
+  TouchableOpacity,
   View,
   ViewStyle,
-  StyleProp,
 } from 'react-native';
-import {
-  useIsSplitPanelVisible,
-  useIsUIVisible,
-  useStoryContextParam,
-  useTheme,
-} from '../../../hooks';
 import { ANIMATION_DURATION_TRANSITION } from '../../../constants';
+import { useIsSplitPanelVisible, useIsUIVisible, useStoryContextParam } from '../../../hooks';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 import AbsolutePositionedKeyboardAwareView, {
   PreviewDimens,
 } from './absolute-positioned-keyboard-aware-view';
 
+import { useTheme } from '@storybook/react-native-theming';
+import { useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Panel from './Panel';
 import Addons from './addons/Addons';
 import { AddonsSkeleton } from './addons/AddonsSkeleton';
 import {
   getAddonPanelPosition,
-  getSidebarPanelPosition,
   getPreviewShadowStyle,
   getPreviewStyle,
+  getSidebarPanelPosition,
 } from './animation';
 import Navigation from './navigation';
-import { CANVAS, ADDONS } from './navigation/constants';
-import Panel from './Panel';
-import { useWindowDimensions } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { ADDONS, CANVAS } from './navigation/constants';
 
 const IS_IOS = Platform.OS === 'ios';
 // @ts-ignore: Property 'Expo' does not exist on type 'Global'

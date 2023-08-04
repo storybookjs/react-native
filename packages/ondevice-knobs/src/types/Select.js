@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import React from 'react';
 import ModalPicker from 'react-native-modal-selector';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 import { inputStyle } from './common';
 

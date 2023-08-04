@@ -1,6 +1,6 @@
 import { logger } from '@storybook/client-logger';
-import { Path, ModuleExports } from '@storybook/types';
-import { Loadable, RequireContext, LoaderFunction } from '../types/types';
+import { ModuleExports, Path } from '@storybook/types';
+import { Loadable, LoaderFunction, RequireContext } from '../types/types';
 
 declare global {
   var lastExportsMap: Map<Path, ModuleExports>;
@@ -20,7 +20,7 @@ export function executeLoadable(loadable: Loadable) {
   if (Array.isArray(loadable)) {
     reqs = loadable;
   } else if ((loadable as RequireContext).keys) {
-    reqs = [loadable as RequireContext]; // todo: test with metro require context
+    reqs = [loadable as RequireContext];
   }
 
   let exportsMap = new Map<Path, ModuleExports>();

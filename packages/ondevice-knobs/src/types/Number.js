@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Slider from '@react-native-community/slider';
 import { View } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 import { inputStyle } from './common';
 

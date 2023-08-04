@@ -9,7 +9,7 @@ const { writeRequires } = require('@storybook/react-native/scripts/loader');
 module.exports = (async () => {
   writeRequires({
     configPath: path.resolve(__dirname, './.storybook'),
-    useRequireContext: true,
+    unstable_useRequireContext: true,
   });
 
   return mergeConfig(defaultConfig, {
