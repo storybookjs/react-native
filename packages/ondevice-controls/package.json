@@ -30,7 +30,6 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
-    "@emotion/native": "^11.11.0",
     "@storybook/addons": "^6.5.14",
     "@storybook/client-logger": "^6.5.14",
     "@storybook/core-events": "^6.5.14",

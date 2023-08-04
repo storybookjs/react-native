@@ -1,5 +1,5 @@
 import React, { ComponentProps } from 'react';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import { Animated, Easing, StyleSheet, View } from 'react-native';
 import { ANIMATION_DURATION_TRANSITION } from '../../../../constants';
 

@@ -29,7 +29,6 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
     "@storybook/addons": "^6.5.14",
     "@storybook/api": "^6.5.14",
     "@storybook/client-api": "^6.5.14",

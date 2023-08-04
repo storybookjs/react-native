@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 import { inputStyle } from './common';
 

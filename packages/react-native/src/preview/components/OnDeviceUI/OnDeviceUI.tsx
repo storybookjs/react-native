@@ -1,5 +1,5 @@
 import { StoryIndex } from '@storybook/client-api';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import React, { useState, useRef } from 'react';
 import {
   Animated,
@@ -15,12 +15,7 @@ import {
   ViewStyle,
   StyleProp,
 } from 'react-native';
-import {
-  useIsSplitPanelVisible,
-  useIsUIVisible,
-  useStoryContextParam,
-  useTheme,
-} from '../../../hooks';
+import { useIsSplitPanelVisible, useIsUIVisible, useStoryContextParam } from '../../../hooks';
 import { ANIMATION_DURATION_TRANSITION } from '../../../constants';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
@@ -41,6 +36,7 @@ import { CANVAS, ADDONS } from './navigation/constants';
 import Panel from './Panel';
 import { useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTheme } from '@storybook/react-native-theming';
 
 const IS_IOS = Platform.OS === 'ios';
 // @ts-ignore: Property 'Expo' does not exist on type 'Global'

@@ -1,4 +1,4 @@
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import React from 'react';
 
 import { ArgTypes } from './ControlsPanel';

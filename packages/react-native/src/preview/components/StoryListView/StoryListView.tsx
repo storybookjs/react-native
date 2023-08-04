@@ -1,22 +1,16 @@
-import styled from '@emotion/native';
 import { addons } from '@storybook/addons';
 import { StoryIndex } from '@storybook/client-api';
 import Events from '@storybook/core-events';
+import { styled, useTheme } from '@storybook/react-native-theming';
 import React, { useMemo, useState } from 'react';
 import { FlatList, ListRenderItem, StyleSheet, Text, TextInputProps, View } from 'react-native';
-import {
-  useIsChildSelected,
-  useIsStorySectionSelected,
-  useIsStorySelected,
-  useTheme,
-} from '../../../hooks';
+import { useIsChildSelected, useIsStorySectionSelected, useIsStorySelected } from '../../../hooks';
 import { Icon } from '../Shared/icons';
-import { Box } from '../Shared/layout';
 import {
   StoryGroup,
   filterNestedStories,
-  getNestedStories,
   findFirstChildStory,
+  getNestedStories,
 } from './getNestedStories';
 
 const SectionHeaderText = styled.Text<{ selected: boolean }>(({ theme }) => ({
@@ -63,7 +57,7 @@ const SearchBar = (props: TextInputProps) => {
 
   return (
     <SearchContainer>
-      <Icon name="search" opacity={0.5} />
+      <Icon name="search" style={{ opacity: 0.5 }} />
 
       <SearchInput
         {...props}
@@ -130,7 +124,7 @@ const SectionHeader = React.memo(
           <Text style={{ fontSize: 8, color: 'grey', lineHeight: 8 }}>{'➤'}</Text>
         </View>
 
-        <Icon name={icon} width={12} height={12} marginRight={6} />
+        <Icon name={icon} width={12} height={12} style={{ marginRight: 6 }} />
 
         <SectionHeaderText numberOfLines={2} selected={selected}>
           {name}
@@ -194,7 +188,12 @@ const ListItem = ({
       sectionSelected={sectionSelected}
       isLastItem={isLastItem}
     >
-      <Icon width={14} height={14} name={selected ? 'story-white' : 'story-blue'} marginRight={6} />
+      <Icon
+        width={14}
+        height={14}
+        name={selected ? 'story-white' : 'story-blue'}
+        style={{ marginRight: 6 }}
+      />
 
       <StoryNameText selected={selected}>{title}</StoryNameText>
     </ItemTouchable>
@@ -301,7 +300,7 @@ const StoryListView = ({ storyIndex }: Props) => {
   }, []);
 
   return (
-    <Box flex>
+    <View style={{ flex: 1 }}>
       <SearchBar
         testID="Storybook.ListView.SearchBar"
         onChangeText={handleChangeSearchText}
@@ -322,7 +321,7 @@ const StoryListView = ({ storyIndex }: Props) => {
         keyExtractor={keyExtractor}
         data={data}
       />
-    </Box>
+    </View>
   );
 };
 

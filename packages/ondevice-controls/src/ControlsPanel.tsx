@@ -1,4 +1,4 @@
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import { Channel } from '@storybook/addons';
 import { API } from '@storybook/api';
 import type { StoryContextForLoaders, Args } from '@storybook/csf';

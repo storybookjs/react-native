@@ -7,7 +7,7 @@ import {
   Platform,
   Dimensions,
 } from 'react-native';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import { ColorPicker, fromHsv, HsvColor } from '../components/color-picker';
 
 export interface ColorProps {

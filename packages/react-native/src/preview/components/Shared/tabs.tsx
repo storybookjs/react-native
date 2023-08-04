@@ -1,8 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleProp, View, ViewStyle } from 'react-native';
-import styled from '@emotion/native';
-
-import { useTheme } from '../../../hooks';
+import { styled } from '@storybook/react-native-theming';
+import { useTheme } from '@storybook/react-native-theming';
 
 const TabButtonText = styled.Text<{ active: boolean }>(({ theme, active }) => ({
   color: active ? theme.tabs.activeTextColor : theme.tabs.inactiveTextColor,

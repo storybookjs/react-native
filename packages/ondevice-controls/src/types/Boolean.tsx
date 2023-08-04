@@ -1,6 +1,6 @@
 import { Switch } from 'react-native';
 import React from 'react';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 
 export interface BooleanProps {
   onChange: (value: boolean) => void;

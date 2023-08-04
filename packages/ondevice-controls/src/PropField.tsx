@@ -1,5 +1,5 @@
 import React, { ComponentType } from 'react';
-import styled from '@emotion/native';
+import { styled } from '@storybook/react-native-theming';
 import TypeMap from './types';
 import { ArgType } from './ControlsPanel';
 
