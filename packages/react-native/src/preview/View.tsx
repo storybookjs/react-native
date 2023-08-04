@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StoryIndex, SelectionSpecifier } from '@storybook/store';
 import { StoryContext, toId } from '@storybook/csf';
 import { addons } from '@storybook/addons';
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@storybook/react-native-theming';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useSetStoryContext, syncExternalUI } from '../hooks';
 import OnDeviceUI from './components/OnDeviceUI';

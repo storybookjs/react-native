@@ -60,7 +60,7 @@ interface ThemeButton {
   borderRadius: number;
 }
 
-export interface Theme {
+export interface StorybookTheme {
   tokens: ThemeTokens;
   backgroundColor: string;
   text: {
@@ -237,19 +237,19 @@ const tokens: ThemeTokens = {
   },
 } as const;
 
-const text: Theme['text'] = {
+const text: StorybookTheme['text'] = {
   primaryColor: tokens.color.navy,
   secondaryColor: tokens.color.grey700,
   linkColor: '#0000ff',
 };
 
-const textOnDark: Theme['text'] = {
+const textOnDark: StorybookTheme['text'] = {
   primaryColor: tokens.color.white,
   secondaryColor: tokens.color.grey200,
   linkColor: tokens.color.blue600,
 };
 
-export const theme: Theme = {
+export const theme: StorybookTheme = {
   tokens,
   text,
   backgroundColor: tokens.color.white,
@@ -381,7 +381,7 @@ export const theme: Theme = {
   },
 };
 
-export const darkTheme: Theme = {
+export const darkTheme: StorybookTheme = {
   tokens,
   text: textOnDark,
   backgroundColor: tokens.color.offBlack,

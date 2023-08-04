@@ -1,7 +1,7 @@
 /**
  * mostly based on code from https://github.com/CharlesMangwa/react-native-simple-markdown
  */
-import { useTheme } from '@emotion/react';
+import { useTheme } from '@storybook/react-native-theming';
 import { useMemo } from 'react';
 import { ImageStyle, StyleProp, TextStyle, ViewStyle } from 'react-native/types';
 
