@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-controls",
-  "version": "6.5.6-alpha.0",
+  "version": "6.5.6-alpha.1",
   "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
@@ -34,7 +34,7 @@
     "@storybook/client-logger": "^7",
     "@storybook/core-events": "^7",
     "@storybook/manager-api": "^7",
-    "@storybook/react-native-theming": "^6.5.6-alpha.0",
+    "@storybook/react-native-theming": "^6.5.6-alpha.1",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
