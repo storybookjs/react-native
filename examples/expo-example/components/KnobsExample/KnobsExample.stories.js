@@ -1,17 +1,17 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import { withKnobs } from '@storybook/addon-ondevice-knobs';
 import {
-  text,
-  number,
+  array,
   boolean,
   color,
-  select,
-  radios,
-  array,
   date,
+  number,
   object,
+  radios,
+  select,
+  text,
 } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-ondevice-knobs';
+import { storiesOf } from '@storybook/react-native';
+import React from 'react';
 
 import KnobsExample from './KnobsExample';
 

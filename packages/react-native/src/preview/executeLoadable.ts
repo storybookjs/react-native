@@ -30,12 +30,15 @@ export function executeLoadable(loadable: Loadable) {
       req.keys().forEach((filename: string) => {
         try {
           const fileExports = req(filename) as ModuleExports;
-          exportsMap.set(
-            // NOTE context.resolve is not yet implemented for metro
-            // typeof req.resolve === 'function' ? req.resolve(filename) : filename,
-            filename,
-            fileExports
-          );
+          // TODO: should this be here?
+          if (fileExports.default) {
+            exportsMap.set(
+              // NOTE context.resolve is not yet implemented for metro
+              // typeof req.resolve === 'function' ? req.resolve(filename) : filename,
+              filename,
+              fileExports
+            );
+          }
         } catch (error) {
           const errorString =
             error.message && error.stack ? `${error.message}\n ${error.stack}` : error.toString();

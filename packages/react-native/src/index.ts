@@ -1,8 +1,51 @@
-import type { Addon_StoryApi } from '@storybook/types';
 import { ClientApi } from '@storybook/preview-api';
+import type { Addon_StoryApi } from '@storybook/types';
 import { ReactNode } from 'react';
 import { start } from './preview/start';
 import type { ReactNativeFramework } from './types/types-6.0';
+
+if (__DEV__) {
+  const primitiveTypes = ['string', 'number', 'boolean'];
+  const logLevels = ['log', 'debug', 'info', 'warn', 'error'];
+
+  const transformArgs = (args) => {
+    return args.map((arg) => {
+      if (arg === undefined) {
+        return 'undefined';
+      }
+      if (arg instanceof Error) {
+        if (arg.stack) {
+          return arg.stack;
+        }
+        return arg.toString();
+      }
+      if (arg instanceof Date) {
+        return arg.toString();
+      }
+      if (primitiveTypes.includes(typeof arg)) {
+        return arg.toString();
+      } else {
+        return JSON.stringify(arg);
+      }
+    });
+  };
+
+  const consoleProxy = new Proxy(console, {
+    get: (target, prop) => {
+      //@ts-ignore
+      if (logLevels.includes(prop)) {
+        return (...args) => {
+          // we proxy the call to itself, but we transform the arguments to strings before
+          // so that they are printed in the terminal
+          return target[prop].apply(this, transformArgs(args));
+        };
+      }
+      return target[prop];
+    },
+  });
+
+  console = consoleProxy;
+}
 
 const { clientApi, configure, view } = start();
 
@@ -23,8 +66,12 @@ export const addArgTypesEnhancer: C['addArgTypesEnhancer'] =
 
 export const raw: C['raw'] = clientApi.raw.bind(clientApi);
 
-export const storiesOf = (kind: string, _module: NodeModule) => {
-  return rawStoriesOf(kind, { hot: { accept: () => {}, dispose: () => {} } } as any).addParameters({
+export const storiesOf = (kind: string, m: any) => {
+  m.hot.dispose = (_cb) => {
+    clientApi._loadAddedExports();
+  };
+
+  return rawStoriesOf(kind, m).addParameters({
     renderer: 'react-native',
   }) as Addon_StoryApi<ReactNode>;
 };
@@ -38,4 +85,4 @@ export * from './types/types-6.0';
   initializationPromise: clientApi.storyStore?.initializationPromise,
 };
 
-export { theme, darkTheme, type Theme } from '@storybook/react-native-theming';
+export { darkTheme, theme, type Theme } from '@storybook/react-native-theming';

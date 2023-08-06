@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react-native';
+import React, { useState } from 'react';
 import { Button } from './Button';
 
 storiesOf('button promise', module)
