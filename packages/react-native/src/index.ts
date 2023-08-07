@@ -24,10 +24,6 @@ export const addArgTypesEnhancer: C['addArgTypesEnhancer'] =
 export const raw: C['raw'] = clientApi.raw.bind(clientApi);
 
 export const storiesOf = (kind: string, m: any) => {
-  m.hot.dispose = (_cb) => {
-    clientApi._loadAddedExports();
-  };
-
   return rawStoriesOf(kind, m).addParameters({
     renderer: 'react-native',
   }) as Addon_StoryApi<ReactNode>;

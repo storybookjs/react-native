@@ -100,12 +100,14 @@ export function start() {
     // This gets called each time the user calls configure (i.e. once per HMR)
     // The first time, it constructs thecurrentSelection preview, subsequently it updates it
     configure(loadable: any, m: { hot?: { accept?: () => void } }) {
-      clientApi.addParameters({ framework: 'react-native' });
+      clientApi.addParameters({ renderer: 'react-native' });
 
       // We need to run the `executeLoadableForChanges` function *inside* the `getProjectAnnotations
       // function in case it throws. So we also need to process its output there also
       const getProjectAnnotations = () => {
         const { added, removed } = executeLoadableForChanges(loadable, m);
+
+        clientApi._loadAddedExports();
 
         Array.from(added.entries()).forEach(([fileName, fileExports]) =>
           clientApi.facade.addStoriesFromExports(fileName, fileExports)
