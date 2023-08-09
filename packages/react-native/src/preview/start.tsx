@@ -1,8 +1,8 @@
-import { addons } from '@storybook/addons';
 import Channel from '@storybook/channels';
 import Events from '@storybook/core-events';
 import type { ArgsStoryFn } from '@storybook/csf';
 import { global } from '@storybook/global';
+import { addons } from '@storybook/manager-api';
 import { ClientApi, setGlobalRender } from '@storybook/preview-api';
 import { PreviewWithSelection } from '@storybook/preview-web';
 import { RenderContext } from '@storybook/types';

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { API } from '@storybook/api';
+import { SET_CURRENT_STORY } from '@storybook/core-events';
+import { AddonStore, addons } from '@storybook/manager-api';
+import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Markdown from './Markdown/Markdown';
-import { AddonStore, addons } from '@storybook/addons';
-import { SET_CURRENT_STORY } from '@storybook/core-events';
-import { API } from '@storybook/api';
 
 export const PARAM_KEY = 'notes';
 

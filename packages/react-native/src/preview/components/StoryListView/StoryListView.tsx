@@ -1,7 +1,7 @@
-import { addons } from '@storybook/addons';
-import { StoryIndex } from '@storybook/types';
 import Events from '@storybook/core-events';
+import { addons } from '@storybook/manager-api';
 import { styled, useTheme } from '@storybook/react-native-theming';
+import { StoryIndex } from '@storybook/types';
 import React, { useMemo, useState } from 'react';
 import { FlatList, ListRenderItem, StyleSheet, Text, TextInputProps, View } from 'react-native';
 import { useIsChildSelected, useIsStorySectionSelected, useIsStorySelected } from '../../../hooks';

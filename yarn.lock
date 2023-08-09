@@ -5299,7 +5299,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native@workspace:packages/react-native"
   dependencies:
-    "@storybook/addons": ^7
     "@storybook/channel-websocket": ^7
     "@storybook/channels": ^7
     "@storybook/client-logger": ^7
@@ -5307,6 +5306,7 @@ __metadata:
     "@storybook/core-events": ^7
     "@storybook/csf": ^0.1.1
     "@storybook/global": ^5.0.0
+    "@storybook/manager-api": ^7
     "@storybook/preview-api": ^7
     "@storybook/preview-web": ^7
     "@storybook/react-native-theming": ^7.0.0-alpha.2
@@ -9840,7 +9840,6 @@ __metadata:
     "@storybook/addon-ondevice-controls": ^7.0.0-alpha.2
     "@storybook/addon-ondevice-knobs": ^7.0.0-alpha.2
     "@storybook/addon-ondevice-notes": ^7.0.0-alpha.2
-    "@storybook/addons": ^7
     "@storybook/builder-webpack5": ^7
     "@storybook/docs-tools": ^7
     "@storybook/react": ^7

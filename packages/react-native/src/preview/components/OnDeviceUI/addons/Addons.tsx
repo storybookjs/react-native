@@ -1,5 +1,6 @@
-import { addons } from '@storybook/addons';
+import { addons } from '@storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
+import { Addon_TypesEnum } from '@storybook/types';
 import React from 'react';
 import { View } from 'react-native';
 import { useSelectedAddon, useStoryContext } from '../../../../hooks';
@@ -15,7 +16,7 @@ const Text = styled.Text(({ theme }: any) => ({
 }));
 
 const Addons = ({ active }: AddonsProps) => {
-  const panels = addons.getElements('panel');
+  const panels = addons.getElements(Addon_TypesEnum.PANEL);
   const [addonSelected, setAddonSelected] = useSelectedAddon(Object.keys(panels)[0]);
   const context = useStoryContext();
   const id = context?.id;

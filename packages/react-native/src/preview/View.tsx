@@ -1,22 +1,21 @@
-import React, { useEffect, useMemo, useReducer } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import type { StoryIndex } from '@storybook/types';
 import { StoryContext, toId } from '@storybook/csf';
-import { addons } from '@storybook/addons';
-import { ThemeProvider } from '@storybook/react-native-theming';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useSetStoryContext, syncExternalUI } from '../hooks';
-import OnDeviceUI from './components/OnDeviceUI';
-import { darkTheme, theme, Theme } from '@storybook/react-native-theming';
-import type { ReactNativeFramework } from '../types/types-6.0';
+import { addons } from '@storybook/manager-api';
 import { PreviewWeb, PreviewWithSelection } from '@storybook/preview-web';
+import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
+import type { StoryIndex } from '@storybook/types';
+import { useEffect, useMemo, useReducer } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { syncExternalUI, useSetStoryContext } from '../hooks';
+import type { ReactNativeFramework } from '../types/types-6.0';
+import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 // TODO check this
 import { createWebSocketChannel } from '@storybook/channels';
-import getHost from './rn-host-detect';
 import events from '@storybook/core-events';
-import { useColorScheme } from 'react-native';
 import deepmerge from 'deepmerge';
+import { useColorScheme } from 'react-native';
+import getHost from './rn-host-detect';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
