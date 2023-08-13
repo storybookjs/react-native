@@ -203,17 +203,18 @@ export class View {
           self._preview.selectSpecifiedStory();
         });
 
-        global.__STORYBOOK_ADDONS_CHANNEL__.on(Events.SET_CURRENT_STORY, ({ storyId }) => {
-          // console.log(Events.SET_CURRENT_STORY);
+        global.__STORYBOOK_ADDONS_CHANNEL__.on(Events.SET_CURRENT_STORY, async ({ storyId }) => {
+          self._preview.selectionStore.selectionSpecifier = {
+            storySpecifier: storyId,
+            viewMode: 'story',
+          };
 
-          self._preview.selectSpecifiedStory();
+          this._preview.selectionStore.selection = {
+            storyId,
+            viewMode: 'story',
+          };
 
-          const newStoryContext = this._preview.storyStore.getStoryContext(
-            this._preview.storyStore.fromId(storyId)
-          );
-
-          //@ts-ignore
-          setContext(newStoryContext);
+          await self._preview.selectSpecifiedStory();
         });
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
