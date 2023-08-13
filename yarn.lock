@@ -5034,7 +5034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-common@npm:7.2.1":
+"@storybook/core-common@npm:7.2.1, @storybook/core-common@npm:^7":
   version: 7.2.1
   resolution: "@storybook/core-common@npm:7.2.1"
   dependencies:
@@ -5303,6 +5303,7 @@ __metadata:
     "@storybook/channels": ^7
     "@storybook/client-logger": ^7
     "@storybook/core-client": ^7
+    "@storybook/core-common": ^7
     "@storybook/core-events": ^7
     "@storybook/csf": ^0.1.1
     "@storybook/global": ^5.0.0

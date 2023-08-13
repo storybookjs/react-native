@@ -12,7 +12,8 @@ import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 // TODO check this
 import { createWebSocketChannel } from '@storybook/channels';
-import events from '@storybook/core-events';
+import Events from '@storybook/core-events';
+import { global } from '@storybook/global';
 import deepmerge from 'deepmerge';
 import { useColorScheme } from 'react-native';
 import getHost from './rn-host-detect';
@@ -147,7 +148,7 @@ export class View {
 
       this._preview.setupListeners();
 
-      channel.emit(events.CHANNEL_CREATED);
+      channel.emit(Events.CHANNEL_CREATED);
 
       this._preview.initializeWithStoryIndex(this._storyIndex);
     }
@@ -200,6 +201,19 @@ export class View {
           self._preview.selectionStore.selectionSpecifier = story;
 
           self._preview.selectSpecifiedStory();
+        });
+
+        global.__STORYBOOK_ADDONS_CHANNEL__.on(Events.SET_CURRENT_STORY, ({ storyId }) => {
+          console.log(Events.SET_CURRENT_STORY);
+
+          self._preview.selectSpecifiedStory();
+
+          const newStoryContext = this._preview.storyStore.getStoryContext(
+            this._preview.storyStore.fromId(storyId)
+          );
+
+          //@ts-ignore
+          setContext(newStoryContext);
         });
 
         // eslint-disable-next-line react-hooks/exhaustive-deps

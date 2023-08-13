@@ -1,4 +1,4 @@
-import Channel from '@storybook/channels';
+import { Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import type { ArgsStoryFn } from '@storybook/csf';
 import { global } from '@storybook/global';
@@ -32,30 +32,23 @@ export function start() {
 
   addons.setChannel(channel);
 
+  channel.emit(Events.CHANNEL_CREATED);
+
   const clientApi = new ClientApi<ReactNativeFramework>();
 
   const previewView = {
     prepareForStory: () => {
-      return {};
+      return <></>;
     },
-    showNoPreview: () => {},
-    showPreparingStory: () => {},
-    applyLayout: () => {},
-    showErrorDisplay: (e) => {
-      console.log(e);
-    },
-    showStoryDuringRender: () => {},
-    showMain: () => {},
-    checkIfLayoutExists: () => {},
-    showStory: () => {},
-    docsRoot: null,
-    prepareForDocs: () => null,
+    prepareForDocs: () => {},
+    showErrorDisplay: () => {},
     showDocs: () => {},
-    preparingTimeout: setTimeout(() => {}, 0),
-    showMode: () => {},
+    showMain: () => {},
+    showNoPreview: () => {},
     showPreparingDocs: () => {},
-    storyRoot: null,
-    testing: false,
+    showPreparingStory: () => {},
+    showStory: () => {},
+    showStoryDuringRender: () => {},
   };
 
   const urlStore = {

@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "dev": "ts-node ./buildscripts/gentsdev.ts && tsup --watch",
-    "prepare": "tsup",
+    "prepare": "rm -rf dist/ && tsup",
     "test": "jest"
   },
   "jest": {
@@ -55,6 +55,7 @@
     "@storybook/channels": "^7",
     "@storybook/client-logger": "^7",
     "@storybook/core-client": "^7",
+    "@storybook/core-common": "^7",
     "@storybook/core-events": "^7",
     "@storybook/csf": "^0.1.1",
     "@storybook/global": "^5.0.0",
@@ -66,7 +67,6 @@
     "commander": "^8.2.0",
     "deepmerge": "^4.3.0",
     "glob": "^7.1.7",
-    "jotai": "^2.0.2",
     "prettier": "^2.4.1",
     "react-native-swipe-gestures": "^1.0.5",
     "util": "^0.12.4"
@@ -77,6 +77,7 @@
     "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
     "jest": "^29.4.3",
+    "jotai": "^2.0.2",
     "react-test-renderer": "18.2.0",
     "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
