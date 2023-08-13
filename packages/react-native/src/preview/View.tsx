@@ -204,7 +204,7 @@ export class View {
         });
 
         global.__STORYBOOK_ADDONS_CHANNEL__.on(Events.SET_CURRENT_STORY, ({ storyId }) => {
-          console.log(Events.SET_CURRENT_STORY);
+          // console.log(Events.SET_CURRENT_STORY);
 
           self._preview.selectSpecifiedStory();
 
