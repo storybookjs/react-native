@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
+import type { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
 import { Switch } from './Boolean';
 
 const BooleanExample: ComponentMeta<typeof Switch> = {

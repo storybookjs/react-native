@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { AButton } from './AButton';
 import { ScrollView } from 'react-native';
 

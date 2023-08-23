@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Movie } from './Object';
 
 const ObjectMeta: ComponentMeta<typeof Movie> = {

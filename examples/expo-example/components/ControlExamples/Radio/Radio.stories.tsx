@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Radio } from './Radio';
 
 const radio_stations = ['104.8MHz', '909 kHz', '90FM'];

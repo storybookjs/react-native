@@ -1,16 +1,16 @@
 // Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require('expo/metro-config');
 const { mergeConfig } = require('metro-config');
-const path = require('path');
+// const path = require('path');
 const defaultConfig = getDefaultConfig(__dirname);
 
-const { writeRequires } = require('@storybook/react-native/scripts/loader');
+// const { writeRequires } = require('@storybook/react-native/scripts/loader');
 
 module.exports = (async () => {
-  writeRequires({
-    configPath: path.resolve(__dirname, './.storybook'),
-    unstable_useRequireContext: true,
-  });
+  // writeRequires({
+  //   configPath: path.resolve(__dirname, './.storybook'),
+  //   unstable_useRequireContext: false,
+  // });
 
   return mergeConfig(defaultConfig, {
     resolver: {

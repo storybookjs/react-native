@@ -11,7 +11,7 @@ import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
 
 global.FEATURES = {
-  storyStoreV7: false,
+  storyStoreV7: true,
 };
 
 export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
@@ -34,7 +34,7 @@ export function start() {
 
   channel.emit(Events.CHANNEL_CREATED);
 
-  const clientApi = new ClientApi<ReactNativeFramework>();
+  const clientApi = global?.__STORYBOOK_CLIENT_API__ || new ClientApi<ReactNativeFramework>();
 
   const previewView = {
     prepareForStory: () => {
@@ -56,11 +56,14 @@ export function start() {
     selectionSpecifier: null,
     setQueryParams: () => {},
     setSelection: (selection) => {
+      console.log('setSelection');
       preview.selectionStore.selection = selection;
     },
   };
 
-  const preview = new PreviewWithSelection<ReactNativeFramework>(urlStore, previewView);
+  const preview =
+    global?.__STORYBOOK_PREVIEW__ ||
+    new PreviewWithSelection<ReactNativeFramework>(urlStore, previewView);
 
   clientApi.storyStore = preview.storyStore;
 

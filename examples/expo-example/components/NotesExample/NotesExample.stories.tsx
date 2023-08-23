@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { View, StyleSheet, Text } from 'react-native';
 
 const NotesExampleMeta: ComponentMeta<any> = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { DateString } from './Date';
 
 const date = new Date(1983, 1, 25);
