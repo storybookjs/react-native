@@ -76,18 +76,24 @@ import { toId, storyNameFromExport } from '@storybook/csf';
 // -- leave above
 
 const stories = [
-  // @ts-ignore
-  require.context(
-    '../components',
-    true,
-    /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?Actions\.stories\.(?:ts|tsx|js|jsx)?)$/
-  ),
-  // @ts-ignore
-  require.context(
-    '../components',
-    true,
-    /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?Array\.stories\.(?:ts|tsx|js|jsx)?)$/
-  ),
+  {
+    root: './components',
+    // @ts-ignore
+    req: require.context(
+      '../components',
+      true,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?Actions\.stories\.(?:ts|tsx|js|jsx)?)$/
+    ),
+  },
+  {
+    root: './components',
+    // @ts-ignore
+    req: require.context(
+      '../components',
+      true,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?Array\.stories\.(?:ts|tsx|js|jsx)?)$/
+    ),
+  },
 ];
 
 // "v": 4,
@@ -104,9 +110,11 @@ let index = {
   v: 4,
   entries: {},
 };
-stories.forEach((req) => {
+stories.forEach(({ req, root }) => {
   req.keys().forEach((filename: string) => {
     try {
+      // console.log('req', req.resolve(filename));
+      // console.log('filename', filename);
       const fileExports = req(filename);
       // TODO: should this be here?
       if (!fileExports.default) return;
@@ -127,7 +135,7 @@ stories.forEach((req) => {
           id,
           name,
           title,
-          importPath: `./components/${filename.substring(2)}`, // FIXME: use normalize function here
+          importPath: `${root}/${filename.substring(2)}`, // FIXME: use normalize function here
           tags: ['story'],
         };
       });
