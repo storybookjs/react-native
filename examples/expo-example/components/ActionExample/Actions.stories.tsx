@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
+import type { ComponentMeta, ComponentStoryObj } from '@storybook/react-native/types';
 import { ActionButton } from './Actions';
 
 const ActionButtonMeta: ComponentMeta<typeof ActionButton> = {
