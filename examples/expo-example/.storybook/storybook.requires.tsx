@@ -77,7 +77,8 @@ const stories = [
     req: require.context(
       '../components',
       true,
-      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?(Actions|NotesExample|Boolean)\.stories\.(?:ts|tsx|js|jsx)?)$/
+      // /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?(Actions|NotesExample|ControlExamples\/.*|BackgroundCsf)\.stories\.(?:ts|tsx|js|jsx)?)$/
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
     ),
   },
   {

@@ -3,6 +3,7 @@ import React from 'react';
 import { Multiply } from './Number';
 
 export default {
+  title: 'ControlExamples/Number',
   render: (args) => {
     return <Multiply {...args} />;
   },
@@ -11,7 +12,7 @@ export default {
 
 export const Basic: ComponentStoryObj<typeof Multiply> = {
   args: {
-    // first: 5,
+    first: 5,
     second: 3,
   },
 };
