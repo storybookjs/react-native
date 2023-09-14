@@ -1,5 +1,10 @@
-const { writeRequires } = require('./loader');
 const { getArguments } = require('./handle-args');
 const args = getArguments();
 
-writeRequires(args);
+if (args.v6Store) {
+  const { writeRequires } = require('./loader');
+  writeRequires(args);
+} else {
+  const { generate } = require('./generate');
+  generate(args);
+}

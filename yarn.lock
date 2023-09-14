@@ -5438,7 +5438,6 @@ __metadata:
     react-native: ">=0.57.0"
     react-native-safe-area-context: "*"
   bin:
-    sb-rn-generate: ./bin/generate.js
     sb-rn-get-stories: ./bin/get-stories.js
     sb-rn-watcher: ./bin/watcher.js
   languageName: unknown

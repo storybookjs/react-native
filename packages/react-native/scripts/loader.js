@@ -46,7 +46,7 @@ function getPreviewExists({ configPath }) {
   return !!getFilePathExtension({ configPath }, 'preview');
 }
 
-function writeRequires({ configPath, absolute = false, unstable_useRequireContext = false }) {
+function writeRequires({ configPath, absolute = false, v6RequireContext = false }) {
   const storybookRequiresLocation = path.resolve(cwd, configPath, 'storybook.requires.js');
 
   const mainImport = getMain({ configPath });
@@ -66,7 +66,7 @@ function writeRequires({ configPath, absolute = false, unstable_useRequireContex
 
   let configure = '';
 
-  if (unstable_useRequireContext) {
+  if (v6RequireContext) {
     const contexts = storiesSpecifiers.map((specifier) => {
       const { path: p, recursive: r, match: m } = toRequireContext(specifier);
 

@@ -9,9 +9,10 @@ function getArguments() {
       './.storybook'
     )
     .option('-a, --absolute', 'Use absolute paths for story imports')
+    .option('-v6, --v6Store', 'Use v6 store, for storiesof compatibility')
     .option(
-      '-unstable_useRequireContext, --unstable_useRequireContext',
-      'Use experimental require.context to load stories'
+      '-rc, --v6RequireContext',
+      'When using v6 store should use require.context to load stories'
     );
 
   program.parse();

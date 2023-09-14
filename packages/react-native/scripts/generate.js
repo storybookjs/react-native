@@ -76,8 +76,9 @@ function generate({ configPath, absolute = false }) {
   });
 }
 
-const args = getArguments();
-generate(args);
+module.exports = {
+  generate,
+};
 
 // TODO evaluate if this is needed
 // if (import.meta.webpackHot) {
