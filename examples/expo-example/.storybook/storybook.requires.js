@@ -14,14 +14,13 @@ const normalizedStories = [
     directory: "./components",
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher:
-      /^\.[\\/](?:components(?:\/(?!\.)(?:(?:(?!(?:^|\/)\.).)*?)\/|\/|$)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
   },
   {
     titlePrefix: "",
     directory: "./other_components/AnotherButton",
     files: "AnotherButton.stories.tsx",
-    importPathMatcher:
-      /^\.[\\/](?:other_components\/AnotherButton\/AnotherButton\.stories\.tsx)$/,
+    importPathMatcher: /^\.[\\/](?:AnotherButton\.stories\.tsx)$/,
   },
 ];
 

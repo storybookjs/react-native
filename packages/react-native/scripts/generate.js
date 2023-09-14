@@ -1,5 +1,5 @@
 const { toRequireContext, ensureRelativePathHasDot, getMain } = require('./common');
-const { normalizeStories } = require('@storybook/core-common');
+const { normalizeStories, globToRegexp } = require('@storybook/core-common');
 const fs = require('fs');
 const prettier = require('prettier');
 const path = require('path');
@@ -31,11 +31,13 @@ function generate({ configPath, absolute = false }) {
   });
 
   const normalizedStories = storiesSpecifiers.map((specifier) => {
+    // TODO why????
+    const reg = globToRegexp(`./${specifier.files}`);
     return `{
       titlePrefix: "${specifier.titlePrefix}",
       directory: "${specifier.directory}",
       files: "${specifier.files}",
-      importPathMatcher: /${specifier.importPathMatcher.source}/,
+      importPathMatcher: /${reg.source}/,
     }`;
   });
 

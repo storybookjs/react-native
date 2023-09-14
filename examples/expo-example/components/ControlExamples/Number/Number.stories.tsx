@@ -3,7 +3,7 @@ import React from 'react';
 import { Multiply } from './Number';
 
 export default {
-  title: 'ControlExamples/Number',
+  // title: 'ControlExamples/Number', relying on autotitle
   render: (args) => {
     return <Multiply {...args} />;
   },

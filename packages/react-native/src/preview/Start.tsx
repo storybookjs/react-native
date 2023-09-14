@@ -26,8 +26,21 @@ export function prepareStories({
 
   const makeTitle = (fileName: string, userTitle: string) => {
     const title = userOrAutoTitle(fileName, storyEntries, userTitle);
-    console.log({ fileName, userTitle, title, storyEntries });
-    return title;
+
+    if (title) {
+      return title.replace('./', '');
+    } else {
+      console.log({
+        fileName,
+        userTitle,
+        storyEntries: storyEntries.map((entry) => {
+          return { ...entry, importPathMatcher: entry.importPathMatcher.source };
+        }),
+        title: title ?? '',
+      });
+
+      throw new Error('Could not generate title');
+    }
   };
 
   stories.forEach(({ req, root }) => {
@@ -48,18 +61,22 @@ export function prepareStories({
           //FIXME: autotitle
           const name = storyNameFromExport(key);
           const title = makeTitle(filename, meta.title);
-          const id = toId(title, name);
+          if (title) {
+            const id = toId(title, name);
 
-          index.entries[id] = {
-            type: 'story',
-            id,
-            name,
-            title,
-            importPath: `${root}/${filename.substring(2)}`, // FIXME: use normalize function here
-            tags: ['story'],
-          };
+            index.entries[id] = {
+              type: 'story',
+              id,
+              name,
+              title,
+              importPath: `${root}/${filename.substring(2)}`, // FIXME: use normalize function here
+              tags: ['story'],
+            };
 
-          importMap[`${root}/${filename.substring(2)}`] = req(filename);
+            importMap[`${root}/${filename.substring(2)}`] = req(filename);
+          } else {
+            console.log(`Unexpected error while loading ${filename}: could not find title`);
+          }
         });
       } catch (error) {
         const errorString =
