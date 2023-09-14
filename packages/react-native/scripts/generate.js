@@ -30,6 +30,7 @@ function generate({ configPath, absolute = false }) {
     }`;
   });
 
+  // TODO refactor contexts and normalized stories to be one thing
   const normalizedStories = storiesSpecifiers.map((specifier) => {
     // TODO why????
     const reg = globToRegexp(`./${specifier.files}`);
