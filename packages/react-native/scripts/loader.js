@@ -2,24 +2,15 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 const prettier = require('prettier');
-const { normalizeStories, globToRegexp } = require('@storybook/core-common');
-
-const toRequireContext = (specifier) => {
-  const { directory, files } = specifier;
-
-  // The importPathMatcher is a `./`-prefixed matcher that includes the directory
-  // For `require.context()` we want the same thing, relative to directory
-  const match = globToRegexp(`./${files}`);
-
-  return {
-    path: directory,
-    recursive: files.includes('**') || files.split('/').length > 1,
-    match,
-  };
-};
+const { normalizeStories } = require('@storybook/core-common');
+const {
+  toRequireContext,
+  getFilePathExtension,
+  getMain,
+  ensureRelativePathHasDot,
+} = require('./common');
 
 const cwd = process.cwd();
-const supportedExtensions = ['js', 'jsx', 'ts', 'tsx', 'cjs', 'mjs'];
 
 // TODO check if we need clearDecorators();
 
@@ -51,42 +42,8 @@ function normalizeExcludePaths(paths) {
   return undefined;
 }
 
-function requireUncached(module) {
-  delete require.cache[require.resolve(module)];
-
-  return require(module);
-}
-
-function getMain({ configPath }) {
-  const fileExtension = getFilePathExtension({ configPath }, 'main');
-
-  if (fileExtension === null) {
-    throw new Error('main config file not found');
-  }
-
-  const mainPath = path.resolve(cwd, configPath, `main.${fileExtension}`);
-
-  return requireUncached(mainPath);
-}
-
-function getFilePathExtension({ configPath }, fileName) {
-  for (const ext of supportedExtensions) {
-    const filePath = path.resolve(cwd, configPath, `${fileName}.${ext}`);
-
-    if (fs.existsSync(filePath)) {
-      return ext;
-    }
-  }
-
-  return null;
-}
-
 function getPreviewExists({ configPath }) {
   return !!getFilePathExtension({ configPath }, 'preview');
-}
-
-function ensureRelativePathHasDot(relativePath) {
-  return relativePath.startsWith('.') ? relativePath : `./${relativePath}`;
 }
 
 function writeRequires({ configPath, absolute = false, unstable_useRequireContext = false }) {

@@ -11,7 +11,7 @@ import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
 
 global.FEATURES = {
-  storyStoreV7: true,
+  storyStoreV7: false,
 };
 
 export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {

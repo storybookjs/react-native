@@ -1,23 +1,34 @@
 import { toId, storyNameFromExport } from '@storybook/csf';
 import { PreviewWithSelection } from '@storybook/preview-web';
-import { addons, composeConfigs } from '@storybook/preview-api';
+import { addons, composeConfigs, userOrAutoTitle } from '@storybook/preview-api';
 import { createBrowserChannel } from '@storybook/channels';
 
 import { View } from './View';
-import { ReactNativeFramework } from '@storybook/react-native/types';
+import type { ReactNativeFramework } from '../types/types-6.0';
+import type { NormalizedStoriesSpecifier } from '@storybook/types';
 
-export function prepareStories(
+export function prepareStories({
+  stories,
+  storyEntries,
+}: {
   stories: Array<{
     root: string;
     req: any;
-  }>
-) {
+  }>;
+  storyEntries: NormalizedStoriesSpecifier[];
+}) {
   let index = {
     v: 4,
     entries: {},
   };
 
   let importMap = {};
+
+  const makeTitle = (fileName: string, userTitle: string) => {
+    const title = userOrAutoTitle(fileName, storyEntries, userTitle);
+    console.log({ fileName, userTitle, title, storyEntries });
+    return title;
+  };
 
   stories.forEach(({ req, root }) => {
     req.keys().forEach((filename: string) => {
@@ -36,7 +47,7 @@ export function prepareStories(
 
           //FIXME: autotitle
           const name = storyNameFromExport(key);
-          const title = meta.title;
+          const title = makeTitle(filename, meta.title);
           const id = toId(title, name);
 
           index.entries[id] = {
@@ -61,8 +72,19 @@ export function prepareStories(
   return { index, importMap };
 }
 
-export function initialiseV7Store(stories, annotations) {
-  const { index, importMap } = prepareStories(stories);
+export function start({
+  stories,
+  annotations,
+  storyEntries,
+}: {
+  storyEntries: NormalizedStoriesSpecifier[];
+  stories: Array<{
+    root: string;
+    req: any;
+  }>;
+  annotations: any[];
+}) {
+  const { index, importMap } = prepareStories({ stories, storyEntries });
 
   const channel = createBrowserChannel({ page: 'preview' });
   addons.setChannel(channel);

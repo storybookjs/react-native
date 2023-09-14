@@ -1,4 +1,4 @@
-import { storiesOf } from '@storybook/react-native';
+import { storiesOf } from '@storybook/react-native/V6';
 import React from 'react';
 import { Button } from './AnotherButton';
 

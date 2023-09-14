@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, Appearance } from 'react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-import { addDecorator } from '@storybook/react-native';
+// import { addDecorator } from '@storybook/react-native';
 
-type Decorator = Parameters<typeof addDecorator>[0];
+// type Decorator = Parameters<typeof addDecorator>[0];
 
-export const decorators: Decorator[] = [
+export const decorators = [
   (Story) => (
     <View style={styles.container}>
       <Story />

@@ -5438,6 +5438,7 @@ __metadata:
     react-native: ">=0.57.0"
     react-native-safe-area-context: "*"
   bin:
+    sb-rn-generate: ./bin/generate.js
     sb-rn-get-stories: ./bin/get-stories.js
     sb-rn-watcher: ./bin/watcher.js
   languageName: unknown
@@ -9977,6 +9978,7 @@ __metadata:
     "@storybook/addon-ondevice-knobs": ^7.0.0-alpha.5
     "@storybook/addon-ondevice-notes": ^7.0.0-alpha.5
     "@storybook/builder-webpack5": ^7
+    "@storybook/core-common": ^7
     "@storybook/docs-tools": ^7
     "@storybook/react": ^7
     "@storybook/react-native": ^7.0.0-alpha.5

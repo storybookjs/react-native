@@ -6,7 +6,8 @@
   "scripts": {
     "android": "expo start --android",
     "format": "prettier --write .",
-    "storybook-generate": "sb-rn-get-stories --config-path=./.storybook --unstable_useRequireContext",
+    "storybook-getstories": "sb-rn-get-stories --config-path=./.storybook --unstable_useRequireContext",
+    "storybook-generate": "sb-rn-generate --config-path=./.storybook",
     "ios": "expo start --ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "start": "expo start",
@@ -28,6 +29,7 @@
     "@storybook/addon-ondevice-knobs": "^7.0.0-alpha.5",
     "@storybook/addon-ondevice-notes": "^7.0.0-alpha.5",
     "@storybook/builder-webpack5": "^7",
+    "@storybook/core-common": "^7",
     "@storybook/docs-tools": "^7",
     "@storybook/react": "^7",
     "@storybook/react-native": "^7.0.0-alpha.5",
