@@ -1,8 +1,9 @@
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
+import type { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
 import React from 'react';
 import { Multiply } from './Number';
 
 export default {
+  // title: 'ControlExamples/Number', relying on autotitle
   render: (args) => {
     return <Multiply {...args} />;
   },
@@ -11,7 +12,7 @@ export default {
 
 export const Basic: ComponentStoryObj<typeof Multiply> = {
   args: {
-    // first: 5,
+    first: 5,
     second: 3,
   },
 };

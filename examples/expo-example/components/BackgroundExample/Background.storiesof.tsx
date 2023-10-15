@@ -1,5 +1,5 @@
 import React from 'react';
-import { addDecorator, storiesOf } from '@storybook/react-native';
+import { addDecorator, storiesOf } from '@storybook/react-native/V6';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import { Text } from 'react-native';
 

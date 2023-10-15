@@ -1,5 +1,5 @@
 import { TouchableWithoutFeedback, View } from 'react-native';
-import { useIsSplitPanelVisible, useIsUIVisible } from '../../../../hooks';
+import { useIsSplitPanelVisible, useIsUIVisible } from '../../../hooks';
 import { BackgroundIcon, Icon, IconName } from '../../Shared/icons';
 
 const hitSlop = { top: 5, left: 5, right: 5, bottom: 5 };

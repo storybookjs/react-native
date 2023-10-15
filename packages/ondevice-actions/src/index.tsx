@@ -7,7 +7,7 @@ export function register() {
     addons.add(PANEL_ID, {
       type: types.PANEL,
       title: 'Actions',
-      render: ({ active, key }) => <ActionLogger key={key} active={active} />,
+      render: ({ active }) => <ActionLogger active={active} />,
       paramKey: PARAM_KEY,
     });
   });

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useTheme } from '@storybook/react-native-theming';
 import { Keyboard, Text, View } from 'react-native';
-import { useStoryContext } from '../../../hooks';
+import { useStoryContext } from '../../hooks';
 
 /**
  * This is a handler for `onStartShouldSetResponder`, which dismisses the

@@ -1,10 +1,9 @@
 import React from 'react';
-import { getStorybookUI } from '@storybook/react-native';
+// import { getStorybookUI } from '@storybook/react-native';
 // import { SafeAreaView } from 'react-native';
-import './doctools';
-import './storybook.requires';
+import { view } from './storybook.requires';
 
-const StorybookUIRoot = getStorybookUI({
+const StorybookUIRoot = view.getStorybookUI({
   // initialSelection: { kind: 'TextInput', name: 'Basic' },
   shouldPersistSelection: true,
   // isUIHidden: true,

@@ -11,8 +11,8 @@ export function register() {
     addons.add(ADDON_ID, {
       type: types.PANEL,
       title: 'Controls',
-      render: ({ active, key }) => (
-        <AddonPanel active={active} key={key}>
+      render: ({ active }) => (
+        <AddonPanel active={active}>
           <ControlsPanel api={api} />
         </AddonPanel>
       ),

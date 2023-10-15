@@ -4,12 +4,16 @@ const { mergeConfig } = require('metro-config');
 const path = require('path');
 const defaultConfig = getDefaultConfig(__dirname);
 
-const { writeRequires } = require('@storybook/react-native/scripts/loader');
+// const { writeRequires } = require('@storybook/react-native/scripts/loader');
+const { generate } = require('@storybook/react-native/scripts/generate');
 
 module.exports = (async () => {
-  writeRequires({
+  // writeRequires({
+  //   configPath: path.resolve(__dirname, './.storybook'),
+  //   unstable_useRequireContext: false,
+  // });
+  generate({
     configPath: path.resolve(__dirname, './.storybook'),
-    unstable_useRequireContext: true,
   });
 
   return mergeConfig(defaultConfig, {

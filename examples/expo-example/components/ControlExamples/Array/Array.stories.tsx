@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { Array } from './Array';
 const ArrayMeta: ComponentMeta<typeof Array> = {
   title: 'ControlExamples/Array control',

@@ -4,7 +4,7 @@ import { styled, useTheme } from '@storybook/react-native-theming';
 import { StoryIndex } from '@storybook/types';
 import React, { useMemo, useState } from 'react';
 import { FlatList, ListRenderItem, StyleSheet, Text, TextInputProps, View } from 'react-native';
-import { useIsChildSelected, useIsStorySectionSelected, useIsStorySelected } from '../../../hooks';
+import { useIsChildSelected, useIsStorySectionSelected, useIsStorySelected } from '../../hooks';
 import { Icon } from '../Shared/icons';
 import {
   StoryGroup,

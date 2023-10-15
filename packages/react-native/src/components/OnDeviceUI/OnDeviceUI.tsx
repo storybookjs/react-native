@@ -15,8 +15,8 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import { ANIMATION_DURATION_TRANSITION } from '../../../constants';
-import { useIsSplitPanelVisible, useIsUIVisible, useStoryContextParam } from '../../../hooks';
+import { ANIMATION_DURATION_TRANSITION } from '../../constants';
+import { useIsSplitPanelVisible, useIsUIVisible, useStoryContextParam } from '../../hooks';
 import StoryListView from '../StoryListView';
 import StoryView from '../StoryView';
 import AbsolutePositionedKeyboardAwareView, {
