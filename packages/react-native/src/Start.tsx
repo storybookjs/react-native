@@ -1,6 +1,7 @@
 import { toId, storyNameFromExport } from '@storybook/csf';
 // import { PreviewWithSelection } from '@storybook/preview-web';
 import { addons, composeConfigs, userOrAutoTitle } from '@storybook/preview-api';
+// NOTE this really should be exported from preview-api, but it's not
 import { PreviewWithSelection } from '@storybook/preview-api/dist/preview-web';
 import { /* createBrowserChannel, */ Channel } from '@storybook/channels';
 import { View } from './View';
