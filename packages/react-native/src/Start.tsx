@@ -1,6 +1,7 @@
 import { toId, storyNameFromExport } from '@storybook/csf';
-import { PreviewWithSelection } from '@storybook/preview-web';
+// import { PreviewWithSelection } from '@storybook/preview-web';
 import { addons, composeConfigs, userOrAutoTitle } from '@storybook/preview-api';
+import { PreviewWithSelection } from '@storybook/preview-api/dist/preview-web';
 import { /* createBrowserChannel, */ Channel } from '@storybook/channels';
 import { View } from './View';
 import type { ReactNativeFramework } from './types/types-6.0';

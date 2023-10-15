@@ -37,7 +37,6 @@ const ActionLogger = ({ active, api }: ActionLoggerProps) => {
       }
     };
 
-    // const channel = addons.getChannel();
     channel.addListener(SELECT_STORY, handleStoryChange);
 
     return () => {

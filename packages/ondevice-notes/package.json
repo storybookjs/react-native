@@ -29,10 +29,10 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/api": "^7",
-    "@storybook/client-logger": "^7",
-    "@storybook/core-events": "^7",
-    "@storybook/manager-api": "^7",
+    "@storybook/api": "^7.4.6",
+    "@storybook/client-logger": "^7.4.6",
+    "@storybook/core-events": "^7.4.6",
+    "@storybook/manager-api": "^7.4.6",
     "@storybook/react-native-theming": "^7.0.0-alpha.5",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2",

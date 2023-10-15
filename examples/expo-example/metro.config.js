@@ -18,11 +18,10 @@ module.exports = (async () => {
 
   return mergeConfig(defaultConfig, {
     resolver: {
-      resolverMainFields: ['sbmodern', ...defaultConfig.resolver.resolverMainFields],
-      //   unstable_enablePackageExports: true,
+      // unstable_enablePackageExports: true,
       disableHierarchicalLookup: true,
       unstable_enableSymlinks: true,
-      //   sourceExts: ['mjs', ...defaultConfig.resolver.sourceExts],
+      // sourceExts: [...defaultConfig.resolver.sourceExts, 'mjs'],
     },
     transformer: {
       unstable_allowRequireContext: true,
