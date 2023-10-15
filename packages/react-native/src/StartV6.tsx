@@ -6,7 +6,7 @@ import { addons } from '@storybook/manager-api';
 import { ClientApi, setGlobalRender } from '@storybook/preview-api';
 import { PreviewWithSelection } from '@storybook/preview-web';
 import { RenderContext } from '@storybook/types';
-import type { ReactNativeFramework } from '../types/types-6.0';
+import type { ReactNativeFramework } from './types/types-6.0';
 import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
 

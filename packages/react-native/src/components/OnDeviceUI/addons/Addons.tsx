@@ -3,7 +3,7 @@ import { styled } from '@storybook/react-native-theming';
 import { Addon_TypesEnum } from '@storybook/types';
 import React from 'react';
 import { View } from 'react-native';
-import { useSelectedAddon, useStoryContext } from '../../../../hooks';
+import { useSelectedAddon, useStoryContext } from '../../../hooks';
 import AddonsList from './List';
 import AddonWrapper from './Wrapper';
 

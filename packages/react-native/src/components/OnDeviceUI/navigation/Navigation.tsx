@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import GestureRecognizer from 'react-native-swipe-gestures';
-import { useIsUIVisible } from '../../../../hooks';
+import { useIsUIVisible } from '../../../hooks';
 import { NavigationBar } from './NavigationBar';
 import { VisibilityButton, AddonsSplitButton } from './NavigationButton';
 

@@ -6,14 +6,13 @@ import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-
 import type { StoryIndex } from '@storybook/types';
 import { useEffect, useMemo, useReducer } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { syncExternalUI, useSetStoryContext } from '../hooks';
-import type { ReactNativeFramework } from '../types/types-6.0';
+import { syncExternalUI, useSetStoryContext } from './hooks';
+import type { ReactNativeFramework } from './types/types-6.0';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 // TODO check this
 import { createWebSocketChannel } from '@storybook/channels';
 import Events from '@storybook/core-events';
-import { global } from '@storybook/global';
 import deepmerge from 'deepmerge';
 import { useColorScheme } from 'react-native';
 import getHost from './rn-host-detect';
@@ -96,19 +95,19 @@ export class View {
     }
 
     if (shouldPersistSelection) {
-      // try {
-      // let value = this._asyncStorageStoryId;
+      try {
+        let value = this._asyncStorageStoryId;
 
-      // if (!value) {
-      //   value = await AsyncStorage.getItem(STORAGE_KEY);
+        if (!value) {
+          value = await AsyncStorage.getItem(STORAGE_KEY);
 
-      //   this._asyncStorageStoryId = value;
-      // }
+          this._asyncStorageStoryId = value;
+        }
 
-      return { storySpecifier: /* value ?? */ '*', viewMode: 'story' };
-      // } catch (e) {
-      //   console.warn('storybook-log: error reading from async storage', e);
-      // }
+        return { storySpecifier: value ?? '*', viewMode: 'story' };
+      } catch (e) {
+        console.warn('storybook-log: error reading from async storage', e);
+      }
     }
 
     return { storySpecifier: '*', viewMode: 'story' };
@@ -186,7 +185,6 @@ export class View {
 
       useEffect(() => {
         self._setStory = (newStory: StoryContext<ReactNativeFramework>) => {
-          console.log('_setStory');
           setContext(newStory);
 
           if (shouldPersistSelection) {
@@ -203,20 +201,6 @@ export class View {
 
           self._preview.selectSpecifiedStory();
         });
-
-        // global.__STORYBOOK_ADDONS_CHANNEL__.on(Events.SET_CURRENT_STORY, async ({ storyId }) => {
-        //   self._preview.selectionStore.selectionSpecifier = {
-        //     storySpecifier: storyId,
-        //     viewMode: 'story',
-        //   };
-
-        //   this._preview.selectionStore.selection = {
-        //     storyId,
-        //     viewMode: 'story',
-        //   };
-
-        //   await self._preview.selectSpecifiedStory();
-        // });
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);

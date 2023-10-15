@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { styled } from '@storybook/react-native-theming';
 import { Animated, Easing, StyleSheet, View } from 'react-native';
-import { ANIMATION_DURATION_TRANSITION } from '../../../../constants';
+import { ANIMATION_DURATION_TRANSITION } from '../../../constants';
 
 /**
  * Component that mimics the addons panel.

@@ -4,7 +4,7 @@ import { addons, composeConfigs, userOrAutoTitle } from '@storybook/preview-api'
 import { createBrowserChannel } from '@storybook/channels';
 
 import { View } from './View';
-import type { ReactNativeFramework } from '../types/types-6.0';
+import type { ReactNativeFramework } from './types/types-6.0';
 import type { NormalizedStoriesSpecifier } from '@storybook/types';
 
 export function prepareStories({
@@ -125,6 +125,17 @@ export function start({
   const preview = new PreviewWithSelection<ReactNativeFramework>(urlStore, previewView);
 
   const view = new View(preview);
+
+  console.log('hellooo');
+
+  // for (const annotation of annotations) {
+  //   console.log('here');
+  //   console.log(annotation);
+  // }
+
+  console.log('doctools thing', annotations[1].parameters);
+
+  // console.log('annotations here:', { annotations: Object.keys(annotations) });
 
   const getProjectAnnotations = async () =>
     composeConfigs<ReactNativeFramework>([

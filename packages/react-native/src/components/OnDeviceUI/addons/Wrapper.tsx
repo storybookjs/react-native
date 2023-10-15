@@ -2,7 +2,7 @@ import { styled, useTheme } from '@storybook/react-native-theming';
 import { Addon_BaseType, Addon_Collection } from '@storybook/types';
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { useUpdateOnStoryChanged } from '../../../../hooks';
+import { useUpdateOnStoryChanged } from '../../../hooks';
 
 export interface Props {
   panels: Addon_Collection<Addon_BaseType>;

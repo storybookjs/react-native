@@ -1,7 +1,7 @@
 import { ClientApi } from '@storybook/preview-api';
 import type { Addon_StoryApi } from '@storybook/types';
 import { ReactNode } from 'react';
-import { start } from './preview/StartV6';
+import { start } from './StartV6';
 
 import type { ReactNativeFramework } from './types/types-6.0';
 

@@ -5410,10 +5410,12 @@ __metadata:
     "@storybook/core-common": ^7
     "@storybook/core-events": ^7
     "@storybook/csf": ^0.1.1
+    "@storybook/docs-tools": ^7
     "@storybook/global": ^5.0.0
     "@storybook/manager-api": ^7
     "@storybook/preview-api": ^7
     "@storybook/preview-web": ^7
+    "@storybook/react": ^7
     "@storybook/react-native-theming": ^7.0.0-alpha.5
     "@storybook/types": ^7
     "@types/jest": ^29.4.3

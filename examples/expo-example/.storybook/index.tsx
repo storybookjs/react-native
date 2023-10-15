@@ -1,7 +1,6 @@
 import React from 'react';
 // import { getStorybookUI } from '@storybook/react-native';
 // import { SafeAreaView } from 'react-native';
-// import './doctools';
 import { view } from './storybook.requires';
 
 const StorybookUIRoot = view.getStorybookUI({
