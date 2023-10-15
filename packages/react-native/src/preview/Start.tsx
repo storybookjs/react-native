@@ -8,14 +8,9 @@ import type { ReactNativeFramework } from '../types/types-6.0';
 import type { NormalizedStoriesSpecifier } from '@storybook/types';
 
 export function prepareStories({
-  stories,
   storyEntries,
 }: {
-  stories: Array<{
-    root: string;
-    req: any;
-  }>;
-  storyEntries: NormalizedStoriesSpecifier[];
+  storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
 }) {
   let index = {
     v: 4,
@@ -43,7 +38,7 @@ export function prepareStories({
     }
   };
 
-  stories.forEach(({ req, root }) => {
+  storyEntries.forEach(({ req, directory: root }) => {
     req.keys().forEach((filename: string) => {
       try {
         // console.log('req', req.resolve(filename));
@@ -90,18 +85,13 @@ export function prepareStories({
 }
 
 export function start({
-  stories,
   annotations,
   storyEntries,
 }: {
-  storyEntries: NormalizedStoriesSpecifier[];
-  stories: Array<{
-    root: string;
-    req: any;
-  }>;
+  storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
   annotations: any[];
 }) {
-  const { index, importMap } = prepareStories({ stories, storyEntries });
+  const { index, importMap } = prepareStories({ storyEntries });
 
   const channel = createBrowserChannel({ page: 'preview' });
   addons.setChannel(channel);

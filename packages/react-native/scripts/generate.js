@@ -3,7 +3,6 @@ const { normalizeStories, globToRegexp } = require('@storybook/core-common');
 const fs = require('fs');
 const prettier = require('prettier');
 const path = require('path');
-const { getArguments } = require('./handle-args');
 
 const cwd = process.cwd();
 
@@ -14,31 +13,27 @@ function generate({ configPath, absolute = false }) {
 
   const main = mainImport.default ?? mainImport;
 
+  // const reactNativeOptions = main.reactNativeOptions;
+
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
     workingDir: cwd,
-  });
-
-  const contexts = storiesSpecifiers.map((specifier) => {
-    const { path: p, recursive: r, match: m } = toRequireContext(specifier);
-
-    const pathToStory = ensureRelativePathHasDot(path.relative(configPath, p));
-
-    return `{
-      root: "${specifier.directory}",
-      req: require.context('${pathToStory}', ${r}, ${m})
-    }`;
   });
 
   // TODO refactor contexts and normalized stories to be one thing
   const normalizedStories = storiesSpecifiers.map((specifier) => {
     // TODO why????
     const reg = globToRegexp(`./${specifier.files}`);
+
+    const { path: p, recursive: r, match: m } = toRequireContext(specifier);
+
+    const pathToStory = ensureRelativePathHasDot(path.relative(configPath, p));
     return `{
       titlePrefix: "${specifier.titlePrefix}",
       directory: "${specifier.directory}",
       files: "${specifier.files}",
       importPathMatcher: /${reg.source}/,
+      req: require.context('${pathToStory}', ${r}, ${m})
     }`;
   });
 
@@ -62,7 +57,6 @@ function generate({ configPath, absolute = false }) {
   global.STORIES = normalizedStories;
 
   export const view = start({
-    stories: [${contexts.join(',')}],
     annotations: ${annotations},
     storyEntries: normalizedStories
   });
