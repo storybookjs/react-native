@@ -86,7 +86,7 @@ export function start() {
     view._storyIndex = storyIndex;
   }
 
-  const view = new View(preview);
+  const view = new View(preview, channel);
 
   return {
     view,

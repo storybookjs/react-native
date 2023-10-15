@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import deepEqual from 'fast-deep-equal';
-import { addons } from '@storybook/manager-api';
 import { SELECT_STORY } from '@storybook/core-events';
 import { ActionDisplay, EVENT_ID } from '@storybook/addon-actions';
 import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
 
-interface ActionLoggerProps {
-  active: boolean;
-}
+import { Channel } from '@storybook/channels';
+import { RNAddonApi } from '../..';
 
 const safeDeepEqual = (a: any, b: any): boolean => {
   try {
@@ -17,7 +15,17 @@ const safeDeepEqual = (a: any, b: any): boolean => {
   }
 };
 
-const ActionLogger = ({ active }: ActionLoggerProps) => {
+interface ActionLoggerProps {
+  active: boolean;
+  api: RNAddonApi;
+}
+
+const ActionLogger = ({ active, api }: ActionLoggerProps) => {
+  const channel: Channel = useMemo(() => {
+    const store = api.store();
+    return store._channel;
+  }, [api]);
+
   const [actions, setActions] = useState<ActionDisplay[]>([]);
   const clearActions = () => setActions([]);
   const clearActionsOnStoryChange = actions.length > 0 && actions[0].options.clearOnStoryChange;
@@ -29,13 +37,13 @@ const ActionLogger = ({ active }: ActionLoggerProps) => {
       }
     };
 
-    const channel = addons.getChannel();
+    // const channel = addons.getChannel();
     channel.addListener(SELECT_STORY, handleStoryChange);
 
     return () => {
       channel.removeListener(SELECT_STORY, handleStoryChange);
     };
-  }, [clearActionsOnStoryChange]);
+  }, [clearActionsOnStoryChange, channel]);
 
   useEffect(() => {
     const addAction = (action: ActionDisplay) => {
@@ -52,13 +60,12 @@ const ActionLogger = ({ active }: ActionLoggerProps) => {
       });
     };
 
-    const channel = addons.getChannel();
     channel.addListener(EVENT_ID, addAction);
 
     return () => {
       channel.removeListener(EVENT_ID, addAction);
     };
-  }, []);
+  }, [channel]);
 
   return active ? <ActionLoggerComponent actions={actions} onClear={clearActions} /> : null;
 };

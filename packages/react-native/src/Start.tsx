@@ -1,11 +1,11 @@
 import { toId, storyNameFromExport } from '@storybook/csf';
 import { PreviewWithSelection } from '@storybook/preview-web';
 import { addons, composeConfigs, userOrAutoTitle } from '@storybook/preview-api';
-import { createBrowserChannel } from '@storybook/channels';
-
+import { /* createBrowserChannel, */ Channel } from '@storybook/channels';
 import { View } from './View';
 import type { ReactNativeFramework } from './types/types-6.0';
 import type { NormalizedStoriesSpecifier } from '@storybook/types';
+import { CHANNEL_CREATED } from '@storybook/core-events';
 
 export function prepareStories({
   storyEntries,
@@ -93,8 +93,16 @@ export function start({
 }) {
   const { index, importMap } = prepareStories({ storyEntries });
 
-  const channel = createBrowserChannel({ page: 'preview' });
+  const channel = new Channel({ async: true });
+
   addons.setChannel(channel);
+
+  channel.emit(CHANNEL_CREATED);
+  // const channel = createBrowserChannel({ page: 'preview' });
+
+  // addons.setChannel(channel);
+
+  // channel.emit(CHANNEL_CREATED);
 
   const previewView = {
     prepareForStory: () => {
@@ -124,18 +132,13 @@ export function start({
 
   const preview = new PreviewWithSelection<ReactNativeFramework>(urlStore, previewView);
 
-  const view = new View(preview);
+  const view = new View(preview, channel);
 
-  console.log('hellooo');
-
-  // for (const annotation of annotations) {
-  //   console.log('here');
-  //   console.log(annotation);
-  // }
-
-  console.log('doctools thing', annotations[1].parameters);
-
-  // console.log('annotations here:', { annotations: Object.keys(annotations) });
+  if (global) {
+    global.__STORYBOOK_ADDONS_CHANNEL__ = channel;
+    global.__STORYBOOK_PREVIEW__ = preview;
+    global.__STORYBOOK_STORY_STORE__ = preview.storyStore;
+  }
 
   const getProjectAnnotations = async () =>
     composeConfigs<ReactNativeFramework>([

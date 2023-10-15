@@ -6,8 +6,12 @@ const path = require('path');
 
 const cwd = process.cwd();
 
-function generate({ configPath, absolute = false }) {
-  const storybookRequiresLocation = path.resolve(cwd, configPath, 'storybook.requires.js');
+function generate({ configPath, absolute = false, useJs = false }) {
+  const storybookRequiresLocation = path.resolve(
+    cwd,
+    configPath,
+    `storybook.requires.${useJs ? 'js' : 'ts'}`
+  );
 
   const mainImport = getMain({ configPath });
 
@@ -33,6 +37,7 @@ function generate({ configPath, absolute = false }) {
       directory: "${specifier.directory}",
       files: "${specifier.files}",
       importPathMatcher: /${reg.source}/,
+      // @ts-ignore
       req: require.context('${pathToStory}', ${r}, ${m})
     }`;
   });
@@ -57,6 +62,7 @@ function generate({ configPath, absolute = false }) {
 
   const normalizedStories = [${normalizedStories.join(',')}]
 
+  // @ts-ignore
   global.STORIES = normalizedStories;
 
   export const view = start({

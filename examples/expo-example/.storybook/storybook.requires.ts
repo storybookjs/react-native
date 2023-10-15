@@ -15,6 +15,7 @@ const normalizedStories = [
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher:
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
+    // @ts-ignore
     req: require.context(
       "../components",
       true,
@@ -26,6 +27,7 @@ const normalizedStories = [
     directory: "./other_components/AnotherButton",
     files: "AnotherButton.stories.tsx",
     importPathMatcher: /^\.[\\/](?:AnotherButton\.stories\.tsx)$/,
+    // @ts-ignore
     req: require.context(
       "../other_components/AnotherButton",
       false,
@@ -34,6 +36,7 @@ const normalizedStories = [
   },
 ];
 
+// @ts-ignore
 global.STORIES = normalizedStories;
 
 export const view = start({

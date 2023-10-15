@@ -1,5 +1,5 @@
 import Events from '@storybook/core-events';
-import { addons } from '@storybook/manager-api';
+// import { addons } from '@storybook/manager-api';
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { StoryIndex } from '@storybook/types';
 import React, { useMemo, useState } from 'react';
@@ -290,9 +290,10 @@ const StoryListView = ({ storyIndex }: Props) => {
   };
 
   const changeStory = (storyId: string) => {
-    const channel = addons.getChannel();
+    // const channel = addons.getChannel();
+    global.__STORYBOOK_ADDONS_CHANNEL__.emit(Events.SET_CURRENT_STORY, { storyId });
 
-    channel.emit(Events.SET_CURRENT_STORY, { storyId });
+    // channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 
   const renderItem: ListRenderItem<StoryGroup> = React.useCallback(({ item }) => {
