@@ -3,6 +3,7 @@ import React from 'react';
 import { useTheme } from '@storybook/react-native-theming';
 import { Keyboard, Text, View } from 'react-native';
 import { useStoryContext } from '../../hooks';
+import { ErrorBoundary } from './ErrorBoundary';
 
 /**
  * This is a handler for `onStartShouldSetResponder`, which dismisses the
@@ -38,7 +39,7 @@ const StoryView = () => {
         testID={id}
         onStartShouldSetResponder={dismissOnStartResponder}
       >
-        {StoryComponent && <StoryComponent {...context} />}
+        <ErrorBoundary>{StoryComponent && <StoryComponent {...context} />}</ErrorBoundary>
       </View>
     );
   }

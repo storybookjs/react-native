@@ -1,46 +1,77 @@
-import { API } from '@storybook/api';
 import { SET_CURRENT_STORY } from '@storybook/core-events';
-import { AddonStore, addons } from '@storybook/manager-api';
 import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Markdown from './Markdown/Markdown';
+import Markdown from 'react-native-markdown-display';
+
+import { RNAddonApi, StoryFromId } from '../register';
+import { ErrorBoundary } from '../ErrorBoundary';
 
 export const PARAM_KEY = 'notes';
 
 interface NotesProps {
-  channel: ReturnType<AddonStore['getChannel']>;
-  api: API;
+  api: RNAddonApi;
   active: boolean;
 }
 
 export const Notes = ({ active, api }: NotesProps) => {
-  const [story, setStory] = useState<any>();
+  const [story, setStory] = useState<StoryFromId | null>();
 
   useEffect(() => {
+    const store = api?.store?.();
+
     if (active) {
-      const selection = api.store().getSelection();
+      const selection = store?.getSelection?.();
 
-      setStory(api.store().fromId(selection.storyId));
+      const storyFromId = selection?.storyId ? store?.fromId?.(selection?.storyId) : null;
+      if (storyFromId) {
+        setStory(storyFromId);
+      } else {
+        setStory(null);
+      }
     }
-
-    addons.getChannel().on(SET_CURRENT_STORY, () => {
-      const selection = api.store().getSelection();
-
-      setStory(api.store().fromId(selection.storyId));
-    });
   }, [api, active]);
+
+  useEffect(() => {
+    let mounted = true;
+
+    const store = api?.store?.();
+    store?._channel?.on(SET_CURRENT_STORY, ({ storyId }) => {
+      // const selection = store.getSelection();
+      // SET_CURRENT_STORY
+      if (mounted) {
+        const storyFromId = store?.fromId?.(storyId);
+        if (storyFromId) {
+          setStory(storyFromId);
+        } else {
+          setStory(null);
+        }
+      }
+    });
+
+    return () => {
+      mounted = false;
+    };
+  }, [api]);
 
   if (!active || !story) {
     return null;
   }
 
-  const text: string = story.parameters[PARAM_KEY];
+  const text: string =
+    story?.parameters && story.parameters[PARAM_KEY] ? story.parameters[PARAM_KEY] : '';
+
+  if (!text) return null;
 
   const textAfterFormatted: string = text ? text.trim() : '';
 
   return (
     <View style={styles.container}>
-      <Markdown>{textAfterFormatted}</Markdown>
+      {textAfterFormatted && (
+        <ErrorBoundary>
+          {/* @ts-ignore has the wrong types */}
+          <Markdown>{textAfterFormatted}</Markdown>
+        </ErrorBoundary>
+      )}
     </View>
   );
 };

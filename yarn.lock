@@ -4888,9 +4888,7 @@ __metadata:
     "@storybook/core-events": ^7.4.6
     "@storybook/manager-api": ^7.4.6
     "@storybook/react-native-theming": ^7.0.0-alpha.5
-    core-js: ^3.0.1
-    prop-types: ^15.7.2
-    simple-markdown: ^0.7.3
+    react-native-markdown-display: 6.1.6
     typescript: ^5.1.3
   peerDependencies:
     react: "*"
@@ -6288,7 +6286,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:>=16.0.0, @types/react@npm:~18.2.14":
+"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:~18.2.14":
   version: 18.2.21
   resolution: "@types/react@npm:18.2.21"
   dependencies:
@@ -9478,6 +9476,13 @@ __metadata:
   version: 2.2.0
   resolution: "entities@npm:2.2.0"
   checksum: 19010dacaf0912c895ea262b4f6128574f9ccf8d4b3b65c7e8334ad0079b3706376360e28d8843ff50a78aabcb8f08f0a32dbfacdc77e47ed77ca08b713669b3
+  languageName: node
+  linkType: hard
+
+"entities@npm:~2.0.0":
+  version: 2.0.3
+  resolution: "entities@npm:2.0.3"
+  checksum: 5a7899fcc622e0d76afdeafe4c58a6b40ae3a8ee4772e5825a648c11a2ca324a9a02515386f512e466baac4aeb551f3d3b79eaece5cd98369b9f8601be336b1a
   languageName: node
   linkType: hard
 
@@ -13679,6 +13684,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"linkify-it@npm:^2.0.0":
+  version: 2.2.0
+  resolution: "linkify-it@npm:2.2.0"
+  dependencies:
+    uc.micro: ^1.0.1
+  checksum: d198871d0b3f3cfdb745dae564bfd6743474f20cd0ef1057e6ca29451834749e7f3da52b59b4de44e98f31a1e5c71bdad160490d4ae54de251cbcde57e4d7837
+  languageName: node
+  linkType: hard
+
 "load-json-file@npm:6.2.0":
   version: 6.2.0
   resolution: "load-json-file@npm:6.2.0"
@@ -14002,6 +14016,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"markdown-it@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "markdown-it@npm:10.0.0"
+  dependencies:
+    argparse: ^1.0.7
+    entities: ~2.0.0
+    linkify-it: ^2.0.0
+    mdurl: ^1.0.1
+    uc.micro: ^1.0.5
+  bin:
+    markdown-it: bin/markdown-it.js
+  checksum: 69f5ee640cbebb451b80d3cce308fff7230767e05c0f8c206a1e413775b7a6e5a08e91e9f3ec59f9b5c5a45493f9ce7ac089379cffb60c9d3e6677ed9d535086
+  languageName: node
+  linkType: hard
+
 "markdown-to-jsx@npm:^7.1.8":
   version: 7.3.2
   resolution: "markdown-to-jsx@npm:7.3.2"
@@ -14064,6 +14093,13 @@ __metadata:
   version: 1.1.0
   resolution: "mdast-util-to-string@npm:1.1.0"
   checksum: eec1eb283f3341376c8398b67ce512a11ab3e3191e3dbd5644d32a26784eac8d5f6d0b0fb81193af00d75a2c545cde765c8b03e966bd890076efb5d357fb4fe2
+  languageName: node
+  linkType: hard
+
+"mdurl@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "mdurl@npm:1.0.1"
+  checksum: 71731ecba943926bfbf9f9b51e28b5945f9411c4eda80894221b47cc105afa43ba2da820732b436f0798fd3edbbffcd1fc1415843c41a87fea08a41cc1e3d02b
   languageName: node
   linkType: hard
 
@@ -16824,6 +16860,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-fit-image@npm:^1.5.5":
+  version: 1.5.5
+  resolution: "react-native-fit-image@npm:1.5.5"
+  dependencies:
+    prop-types: ^15.5.10
+  checksum: 2f3ce06b43191efe3a4bd0698a4117342d821455c96433e9561d50f156ee446d2c449bf9e0908f9a8b7bbb8f95c02478d4fca8d8d103f38b6ce3b8b75557af15
+  languageName: node
+  linkType: hard
+
+"react-native-markdown-display@npm:6.1.6":
+  version: 6.1.6
+  resolution: "react-native-markdown-display@npm:6.1.6"
+  dependencies:
+    css-to-react-native: ^3.0.0
+    markdown-it: ^10.0.0
+    prop-types: ^15.7.2
+    react-native-fit-image: ^1.5.5
+  peerDependencies:
+    react: ^16.2.0
+    react-native: ">=0.50.4"
+  checksum: 0d5773c1f7702d041d8428130e2d6fdb095d3eb954adf629e25e9c8499e95e5fa3af849d2bba90fb2f9bbfc361ccc599bd3ac8d74febda7c56f53fcdfc87f22a
+  languageName: node
+  linkType: hard
+
 "react-native-modal-datetime-picker@npm:^14.0.0":
   version: 14.0.1
   resolution: "react-native-modal-datetime-picker@npm:14.0.1"
@@ -18032,15 +18092,6 @@ __metadata:
   bin:
     sigstore: bin/sigstore.js
   checksum: b3f1ccf4d2d5e6af294ad851981cc9dc4c01b6b5b7aeb98582765f5d2e75aa2b9221133b8e572179bb305e16ce589339d9617b26b9fa0bea0c38c9adef792912
-  languageName: node
-  linkType: hard
-
-"simple-markdown@npm:^0.7.3":
-  version: 0.7.3
-  resolution: "simple-markdown@npm:0.7.3"
-  dependencies:
-    "@types/react": ">=16.0.0"
-  checksum: 165941899fddfaa7c398410f8ce6941109bc86fbc9abb17f8b6be7a9ac8ae36c0af643a3e0adcba60053a9f1eaecdd4016d46d79eef39b8ae04982d2bd52bbc9
   languageName: node
   linkType: hard
 
@@ -19358,6 +19409,13 @@ __metadata:
   version: 1.0.35
   resolution: "ua-parser-js@npm:1.0.35"
   checksum: 02370d38a0c8b586f2503d1c3bbba5cbc0b97d407282f9023201a99e4c03eae4357a2800fdf50cf80d73ec25c0b0cc5bfbaa03975b0add4043d6e4c86712c9c1
+  languageName: node
+  linkType: hard
+
+"uc.micro@npm:^1.0.1, uc.micro@npm:^1.0.5":
+  version: 1.0.6
+  resolution: "uc.micro@npm:1.0.6"
+  checksum: 6898bb556319a38e9cf175e3628689347bd26fec15fc6b29fa38e0045af63075ff3fea4cf1fdba9db46c9f0cbf07f2348cd8844889dd31ebd288c29fe0d27e7a
   languageName: node
   linkType: hard
 
