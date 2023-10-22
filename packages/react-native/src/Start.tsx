@@ -1,13 +1,12 @@
 import { toId, storyNameFromExport } from '@storybook/csf';
-// import { PreviewWithSelection } from '@storybook/preview-web';
-import { addons, composeConfigs, userOrAutoTitle } from '@storybook/preview-api';
+import { addons as previewAddons, composeConfigs, userOrAutoTitle } from '@storybook/preview-api';
+import { addons as managerAddons } from '@storybook/manager-api';
 // NOTE this really should be exported from preview-api, but it's not
 import { PreviewWithSelection } from '@storybook/preview-api/dist/preview-web';
-import { /* createBrowserChannel, */ Channel } from '@storybook/channels';
+import { createBrowserChannel } from '@storybook/channels';
 import { View } from './View';
 import type { ReactNativeFramework } from './types/types-6.0';
 import type { NormalizedStoriesSpecifier } from '@storybook/types';
-import { CHANNEL_CREATED } from '@storybook/core-events';
 
 export function prepareStories({
   storyEntries,
@@ -95,16 +94,10 @@ export function start({
 }) {
   const { index, importMap } = prepareStories({ storyEntries });
 
-  const channel = new Channel({ async: true });
+  const channel = createBrowserChannel({ page: 'preview' });
 
-  addons.setChannel(channel);
-
-  channel.emit(CHANNEL_CREATED);
-  // const channel = createBrowserChannel({ page: 'preview' });
-
-  // addons.setChannel(channel);
-
-  // channel.emit(CHANNEL_CREATED);
+  managerAddons.setChannel(channel);
+  previewAddons.setChannel(channel);
 
   const previewView = {
     prepareForStory: () => {

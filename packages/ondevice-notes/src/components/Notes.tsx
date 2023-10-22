@@ -5,53 +5,34 @@ import Markdown from 'react-native-markdown-display';
 
 import { RNAddonApi, StoryFromId } from '../register';
 import { ErrorBoundary } from '../ErrorBoundary';
+import { addons } from '@storybook/manager-api';
 
 export const PARAM_KEY = 'notes';
 
 interface NotesProps {
-  api: RNAddonApi;
   active: boolean;
+  api: RNAddonApi;
 }
 
 export const Notes = ({ active, api }: NotesProps) => {
   const [story, setStory] = useState<StoryFromId | null>();
 
   useEffect(() => {
-    const store = api?.store?.();
+    const selection = api.store().getSelection();
 
-    if (active) {
-      const selection = store?.getSelection?.();
-
-      const storyFromId = selection?.storyId ? store?.fromId?.(selection?.storyId) : null;
-      if (storyFromId) {
-        setStory(storyFromId);
-      } else {
-        setStory(null);
-      }
-    }
-  }, [api, active]);
-
-  useEffect(() => {
-    let mounted = true;
-
-    const store = api?.store?.();
-    store?._channel?.on(SET_CURRENT_STORY, ({ storyId }) => {
-      // const selection = store.getSelection();
-      // SET_CURRENT_STORY
-      if (mounted) {
-        const storyFromId = store?.fromId?.(storyId);
-        if (storyFromId) {
-          setStory(storyFromId);
-        } else {
-          setStory(null);
-        }
-      }
-    });
-
-    return () => {
-      mounted = false;
+    const handleSetCurrentStory = ({ storyId }) => {
+      setStory(api.store().fromId(storyId));
     };
-  }, [api]);
+
+    // set initial story
+    handleSetCurrentStory({ storyId: selection.storyId });
+
+    const channel = addons.getChannel();
+
+    channel.on(SET_CURRENT_STORY, handleSetCurrentStory);
+
+    return () => channel.off(SET_CURRENT_STORY, handleSetCurrentStory);
+  }, [api, active]);
 
   if (!active || !story) {
     return null;
