@@ -143,12 +143,8 @@ describe('loader', () => {
     });
 
     describe('when there is no story glob or addons', () => {
-      it('writes no story imports or addons', () => {
-        writeRequires({ configPath: 'scripts/mocks/blank-config' });
-        expect(pathMock).toEqual(
-          path.resolve(__dirname, 'mocks/blank-config/storybook.requires.js')
-        );
-        expect(fileContentMock).toMatchSnapshot();
+      it('throws an error', () => {
+        expect(() => writeRequires({ configPath: 'scripts/mocks/blank-config' })).toThrow();
       });
     });
 
