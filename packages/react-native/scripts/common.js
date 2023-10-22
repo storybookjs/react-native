@@ -54,10 +54,15 @@ function ensureRelativePathHasDot(relativePath) {
   return relativePath.startsWith('.') ? relativePath : `./${relativePath}`;
 }
 
+function getPreviewExists({ configPath }) {
+  return !!getFilePathExtension({ configPath }, 'preview');
+}
+
 module.exports = {
   toRequireContext,
   requireUncached,
   getFilePathExtension,
   getMain,
   ensureRelativePathHasDot,
+  getPreviewExists,
 };

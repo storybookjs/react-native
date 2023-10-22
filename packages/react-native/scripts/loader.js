@@ -8,6 +8,7 @@ const {
   getFilePathExtension,
   getMain,
   ensureRelativePathHasDot,
+  getPreviewExists,
 } = require('./common');
 
 const cwd = process.cwd();
@@ -40,10 +41,6 @@ function normalizeExcludePaths(paths) {
 
   // when the paths aren't a string or an (empty) array of strings, return
   return undefined;
-}
-
-function getPreviewExists({ configPath }) {
-  return !!getFilePathExtension({ configPath }, 'preview');
 }
 
 function writeRequires({ configPath, absolute = false, v6RequireContext = false }) {
