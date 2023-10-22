@@ -6,9 +6,6 @@ Please review this document to help to streamline the process and save everyone'
 
 This repo uses yarn workspaces, so you should install `yarn` as the package manager. See [installation guide](https://classic.yarnpkg.com/en/docs/install).
 
-
-Content:
-
 - [Issues](#issues)
   - [Reproductions](#reproductions)
 - [Pull requests](#pull-requests)
@@ -34,24 +31,25 @@ No software is bug-free. So, if you got an issue, follow these steps:
 
 The best way to help figure out an issue you are having is to produce a minimal reproduction against the `master` branch.
 
-A good way to do that is using the example `crna-kitchen-sink` app embedded in this repository:
+A good way to do that is using the example app embedded in this repository:
 
 ```sh
 # Download and build this repository:
 git clone https://github.com/storybookjs/react-native.git react-native-storybook
 cd react-native-storybook
-yarn bootstrap --core
+yarn build
 
 # make changes to try and reproduce the problem, such as adding components + stories
-cd examples/crna-kitchen-sink
-yarn install
+cd examples/expo-example
 # for ios
-yarn ios 
-# for android 
+yarn ios
+# for android
 yarn android
+# for web
+yarn web
 
 # see if you can see the problem, if so, commit it:
-git checkout "branch-describing-issue"
+git checkout -b "branch-describing-issue"
 git add -A
 git commit -m "reproduction for issue #123"
 
@@ -60,17 +58,15 @@ git remote add <your-username> https://github.com/<your-username>/<fork-name>.gi
 git push -u <your-username> master
 ```
 
-_setup guide for native example (non expo) coming soon_
+_setup guide for native example coming soon_
 
-If you follow that process, you can then link to the GitHub repository in the issue. See <https://github.com/storybookjs/storybook/issues/708#issuecomment-290589886> for an example.
-
+If you follow that process, you can then link to the GitHub repository in the issue.
 
 #### Outside the monorepo
 
-Since react-native by default doesn't support sym links we can't easily link the project like you might with web projects. 
+Since react-native by default doesn't support sym links we can't easily link the project like you might with web projects.
 
-No good solution for this currently however if you know an easy way to get symlinking working for react native + metro please open and issue explain your suggestion. 
-
+No good solution for this currently however if you know an easy way to get symlinking working for react native + metro please open and issue explain your suggestion.
 
 # Pull Requests
 
@@ -134,26 +130,28 @@ These packages are:
 - @storybook/react-native-server
 - @storybook/addon-ondevice-actions
 - @storybook/addon-ondevice-backgrounds
-- @storybook/addon-ondevice-knobs
+- @storybook/addon-ondevice-controls
 - @storybook/addon-ondevice-notes
 
 #### @storybook/react-native
 
 This is the core of the project that makes it possible to use storybook in react native and "on device" for example android/ios devices. This project uses the packages from @storybook to make a version of storybook that works for react native. You will also find here all of the UI components that you see on your device such as the sidebar and other navigation components.
 
-You can find this package under `app/react-native`
+You can find this package under `packages/react-native`
 
 #### @storybook/react-native-server
 
 This is the web server and client that are used to control the on device UI remotely. By using the server package you can control which story is shown on devices that are running @storybook/react-native.
 
-You can find this package under `app/react-native-server`
+You can find this package under `packages/react-native-server`
+
+The server is currently not maintained and will be tackled sometime after v6.
 
 #### Ondevice Addons
 
 These are the addons for storybook that have been recreated for the on device UI on react-native. The currently supported addons are actions, knobs, notes and backgrounds.
 
-You can find the addons under `addons/`
+You can find the addons under `packages/` they start with the prefix `ondevice-`
 
 ### Prerequisites
 
@@ -171,53 +169,29 @@ If you run into trouble here, make sure your node, npm, and **_yarn_** are on th
 1.  `cd ~` (optional)
 2.  `git clone https://github.com/storybookjs/react-native.git react-native-storybook` _bonus_: use your own fork for this step
 3.  `cd react-native-storybook`
-4.  `yarn bootstrap --core`
-
-The command `yarn bootstrap --core` may take a long time to complete (10-20 mins) since there a lot of dependencies to install.  
+4.  `yarn install`
+5.  `yarn build`
 
 ### Running the project
 
 To see your changes you should run `yarn dev` this starts everything in watch mode so don't need to manually build the packages.
-Once you have this running then you can run one of the example "kitchen sink apps" to see your changes.
+Once you have this running then you can run the example app to see your changes.
 
-### Working with the kitchen sink apps
+### Working with the example app
 
-Within the `examples` folder of the repo, you will two examples of storybook implementations, one which is a managed expo project and build with the react-native cli.
-
-Not only do these show many of the options and add-ons available, they are also automatically linked to all the development packages. We highly encourage you to use these to develop/test contributions on.
+The `examples/expo-example` folder of the repo has an example storybook implementation built with the react-native cli. It shows many of the options and add-ons available and is automatically linked to all the development packages. We highly encourage you to use it to develop/test contributions on.
 
 You still need to yarn dev or you won't see your changes reflected in the app. For example if I change an addon or app/react-native I need to rebuild the code for the changes take effect (yarn prepare) or `yarn dev` can do this automatically as I make changes.
-
-
-#### Expo app
-
-```
-cd examples/crna-kitchen-sink
-yarn install
-
-# for ios
-yarn ios 
-
-# for android 
-yarn android
-```
-
-#### Native app
 
 If this is your first time running react native from the cli follow the setup instructions in the [react native documentation](https://reactnative.dev/docs/environment-setup) to get everything setup correctly.
 
 ```
-cd examples/native
-yarn install
-
-cd ios
-pod install
-cd ..
+cd examples/expo-example
 
 # for ios
-yarn ios 
+yarn ios
 
-# for android 
+# for android
 yarn android
 ```
 
@@ -252,13 +226,11 @@ It can be immensely helpful to get feedback in your editor, if you're using VsCo
 
 This should enable auto-fix for all source files, and give linting warnings and errors within your editor.
 
-
 ## Release Guide
 
 This section is for Storybook maintainers who will be creating releases. It assumes:
 
 - yarn >= 1.3.2
-- you've yarn linked `pr-log` from <https://github.com/storybookjs/pr-log/pull/2>
 
 The current manual release sequence is as follows:
 
@@ -284,20 +256,17 @@ This sequence applies to both releases and pre-releases, but differs slightly be
 ```sh
 # make sure you current with origin/next.
 git checkout next
+git pull origin next
 git status
 
-# generate changelog and edit as appropriate
-# generates a Next section
-yarn changelog:next x.y.z-alpha.a
+# build
+yarn build
 
-# Edit the changelog/PRs as needed, then commit
-git commit -m "x.y.z-alpha.a changelog"
-
-# clean build
-yarn bootstrap --reset --core
+# tag release
+yarn version-packages
 
 # publish and tag the release
-yarn run publish:next
+yarn publish:next
 
 # update the release page
 open https://github.com/storybookjs/react-native/releases
@@ -306,22 +275,19 @@ open https://github.com/storybookjs/react-native/releases
 #### Full release:
 
 ```sh
-# make sure you current with origin/master.
-git checkout master
+# make sure you current with next.
+git checkout next
+git pull origin next
 git status
 
-# generate changelog and edit as appropriate
-# generates a vNext section
-yarn changelog x.y.z
+# build
+yarn build
 
-# Edit the changelog/PRs as needed, then commit
-git commit -m "x.y.z changelog"
-
-# clean build
-yarn bootstrap --reset --core
+# tag release
+yarn version-packages
 
 # publish and tag the release
-yarn run publish:latest
+yarn publish:latest
 
 # update the release page
 open https://github.com/storybookjs/react-native/releases

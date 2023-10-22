@@ -1,20 +1,19 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "incremental": false,
-    "noImplicitAny": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "jsx": "react",
-    "module": "commonjs",
+    "declaration": true,
+    "jsx": "react-jsx",
+    "lib": ["es2022"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "dist/",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "target": "es5",
-    "types": ["jest"],
-    "lib": ["es2017", "dom"]
+    "target": "es2022",
+    "resolveJsonModule": true
   },
   "exclude": [
     "**/dist",

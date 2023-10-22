@@ -4,7 +4,7 @@ aliases:
   - &defaults
     working_directory: /tmp/storybook
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:16.20.0
 
 jobs:
   build:
@@ -19,11 +19,8 @@ jobs:
           name: Install dependencies
           command: yarn install
       - run:
-          name: Check that yarn.lock is not corrupted
-          command: yarn repo-dirty-check
-      - run:
-          name: Bootstrap
-          command: yarn bootstrap --core
+          name: build
+          command: yarn build
       - save_cache:
           name: Cache core dependencies
           key: core-dependencies-v4-{{ checksum "yarn.lock" }}
@@ -35,27 +32,7 @@ jobs:
           root: .
           paths:
             - node_modules
-            - addons
-            - app
-
-  native-smoke-tests:
-    <<: *defaults
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: Bootstrap
-          command: yarn bootstrap --core
-      - run:
-          name: Run React-Native-App example
-          command: |
-            cd examples/crna-kitchen-sink
-            yarn storybook --smoke-test
-      - run:
-          name: Publish React-Native-App example
-          command: |
-            ./scripts/crna-publish.js
+            - packages
 
   lint:
     <<: *defaults
@@ -74,11 +51,8 @@ jobs:
           at: .
       - run:
           name: Test
-          command: yarn test --coverage --w2 --core
-      - persist_to_workspace:
-          root: .
-          paths:
-            - coverage
+          command: yarn test
+
 workflows:
   test:
     jobs:
