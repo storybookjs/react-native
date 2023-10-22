@@ -32,11 +32,11 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/addons": "^7.4.6",
-    "@storybook/api": "^7.4.6",
-    "@storybook/channel-websocket": "^7.4.6",
-    "@storybook/core-events": "^7.4.6",
-    "@storybook/manager": "^7.4.6",
+    "@storybook/addons": "7.6.0-alpha.2",
+    "@storybook/api": "7.6.0-alpha.2",
+    "@storybook/channel-websocket": "7.6.0-alpha.2",
+    "@storybook/core-events": "7.6.0-alpha.2",
+    "@storybook/manager": "7.6.0-alpha.2",
     "commander": "^8.2.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",

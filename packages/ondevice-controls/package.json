@@ -30,10 +30,10 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
-    "@storybook/channels": "^7.4.6",
-    "@storybook/client-logger": "^7.4.6",
-    "@storybook/core-events": "^7.4.6",
-    "@storybook/manager-api": "^7.4.6",
+    "@storybook/channels": "7.6.0-alpha.2",
+    "@storybook/client-logger": "7.6.0-alpha.2",
+    "@storybook/core-events": "7.6.0-alpha.2",
+    "@storybook/manager-api": "7.6.0-alpha.2",
     "@storybook/react-native-theming": "^7.0.0-alpha.5",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
@@ -48,7 +48,7 @@
   "peerDependencies": {
     "@react-native-community/datetimepicker": "*",
     "@react-native-community/slider": "*",
-    "@storybook/addon-controls": "^7.4.6",
+    "@storybook/addon-controls": "7.6.0-alpha.2",
     "react": "*",
     "react-native": "*"
   },
