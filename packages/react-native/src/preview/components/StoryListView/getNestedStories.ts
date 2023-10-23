@@ -9,6 +9,10 @@ export interface StoryGroup {
 
 // recursive funciton that transforms storyIndex to be StoryGroup[]
 export function getNestedStories(storyIndex: StoryIndex) {
+  if (!storyIndex || !storyIndex.stories) {
+    return [];
+  }
+
   const stories = Object.values(storyIndex.stories);
 
   const group: StoryGroup[] = [];
