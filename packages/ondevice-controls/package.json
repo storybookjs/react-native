@@ -30,6 +30,7 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
+    "@storybook/addon-controls": "7.6.0-alpha.2",
     "@storybook/channels": "7.6.0-alpha.2",
     "@storybook/client-logger": "7.6.0-alpha.2",
     "@storybook/core-events": "7.6.0-alpha.2",
@@ -42,13 +43,9 @@
     "react-native-modal-selector": "^2.1.1",
     "tinycolor2": "^1.4.1"
   },
-  "devDependencies": {
-    "@storybook/addon-controls": "7.6.0-alpha.2"
-  },
   "peerDependencies": {
     "@react-native-community/datetimepicker": "*",
     "@react-native-community/slider": "*",
-    "@storybook/addon-controls": "^7",
     "react": "*",
     "react-native": "*"
   },

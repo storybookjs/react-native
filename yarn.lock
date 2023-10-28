@@ -4962,7 +4962,6 @@ __metadata:
     fast-deep-equal: ^2.0.1
     typescript: ^5.1.3
   peerDependencies:
-    "@storybook/addon-actions": ^7
     react: "*"
     react-native: "*"
   languageName: unknown
@@ -5004,7 +5003,6 @@ __metadata:
   peerDependencies:
     "@react-native-community/datetimepicker": "*"
     "@react-native-community/slider": "*"
-    "@storybook/addon-controls": ^7
     react: "*"
     react-native: "*"
   languageName: unknown
