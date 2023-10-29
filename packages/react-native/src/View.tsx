@@ -108,7 +108,11 @@ export class View {
           this._asyncStorageStoryId = value;
         }
 
-        return { storySpecifier: value ?? '*', viewMode: 'story' };
+        const exists = value && Object.keys(this._storyIndex.entries).includes(value);
+
+        if (!exists) console.log('Storybook: could not find persisted story');
+
+        return { storySpecifier: exists ? value : '*', viewMode: 'story' };
       } catch (e) {
         console.warn('storybook-log: error reading from async storage', e);
       }
