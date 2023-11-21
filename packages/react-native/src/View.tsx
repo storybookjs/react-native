@@ -1,11 +1,10 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useEffect, useMemo, useReducer } from 'react';
 import { StoryContext, toId } from '@storybook/csf';
 import { addons as previewAddons } from '@storybook/preview-api';
 import { addons as managerAddons } from '@storybook/manager-api';
-import { type PreviewWithSelection } from '@storybook/preview-web';
+import type { PreviewWithSelection } from '@storybook/preview-web';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
 import type { StoryIndex } from '@storybook/types';
-import { useEffect, useMemo, useReducer } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { syncExternalUI, useSetStoryContext } from './hooks';
 import type { ReactRenderer } from '@storybook/react';
@@ -67,6 +66,7 @@ export type Params = {
   shouldDisableKeyboardAvoidingView?: boolean;
   keyboardAvoidingViewVerticalOffset?: number;
   theme: DeepPartial<Theme>;
+  storage?: AsyncStorage;
 };
 
 export class View {
@@ -77,6 +77,7 @@ export class View {
   _preview: PreviewWithSelection<ReactRenderer>;
   _asyncStorageStoryId: string;
   _webUrl: string;
+  _storage: AsyncStorage;
   _channel: Channel;
 
   constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel) {
@@ -103,8 +104,8 @@ export class View {
       try {
         let value = this._asyncStorageStoryId;
 
-        if (!value) {
-          value = await AsyncStorage.getItem(STORAGE_KEY);
+        if (!value && this._storage != null) {
+          value = await this._storage.getItem(STORAGE_KEY);
 
           this._asyncStorageStoryId = value;
         }
@@ -141,7 +142,14 @@ export class View {
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
-    const { shouldPersistSelection = true, onDeviceUI = true, enableWebsockets = false } = params;
+    const {
+      shouldPersistSelection = true,
+      onDeviceUI = true,
+      enableWebsockets = false,
+      storage,
+    } = params;
+
+    this._storage = storage;
 
     const initialStory = this._getInitialStory(params);
 
@@ -197,8 +205,8 @@ export class View {
         self._setStory = (newStory: StoryContext<ReactRenderer>) => {
           setContext(newStory);
 
-          if (shouldPersistSelection) {
-            AsyncStorage.setItem(STORAGE_KEY, newStory.id).catch((e) => {
+          if (shouldPersistSelection && this._storage != null) {
+            this._storage.setItem(STORAGE_KEY, newStory.id).catch((e) => {
               console.warn('storybook-log: error writing to async storage', e);
             });
           }

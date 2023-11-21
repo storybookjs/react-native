@@ -6209,7 +6209,6 @@ __metadata:
     typescript: ^5.3.3
     util: ^0.12.4
   peerDependencies:
-    "@react-native-async-storage/async-storage": ">=1"
     react: "*"
     react-native: ">=0.57.0"
     react-native-safe-area-context: "*"
