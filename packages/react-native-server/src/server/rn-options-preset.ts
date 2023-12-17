@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 
-export async function managerWebpack(config, options) {
+export async function managerWebpack(config: any, options: any) {
   const { storybookOptions } = options;
 
   return {

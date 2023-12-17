@@ -36,7 +36,9 @@
     "@storybook/api": "7.6.0-alpha.6",
     "@storybook/channel-websocket": "7.6.0-alpha.6",
     "@storybook/core-events": "7.6.0-alpha.6",
+    "@storybook/core-server": "7.6.0-alpha.6",
     "@storybook/manager": "7.6.0-alpha.6",
+    "@storybook/types": "7.6.0-alpha.6",
     "commander": "^8.2.0",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
@@ -46,11 +48,13 @@
     "ws": "^7.1.2"
   },
   "devDependencies": {
+    "@types/node": "^18",
+    "@types/ws": "^7",
     "webpack": "^5.76.2"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0 || ^9.0.0",
-    "webpack": "^4 || ^5"
+    "webpack": "^5"
   },
   "engines": {
     "node": ">=16.0.0"

@@ -4,6 +4,7 @@
   "compilerOptions": {
     "outDir": "dist/",
     "allowJs": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "incremental": false,
     "noImplicitAny": true,
@@ -16,7 +17,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "target": "es5",
-    "types": ["jest"],
+    "types": ["jest", "node"],
     "lib": ["es2017", "dom"]
   },
   "exclude": [
