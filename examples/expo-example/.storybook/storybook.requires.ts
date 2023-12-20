@@ -43,7 +43,7 @@ export const view = start({
   annotations: [
     require("./preview"),
     require("@storybook/react-native/dist/preview"),
-    require("@storybook/addon-actions/dist/preview"),
+    require("@storybook/addon-actions/preview"),
   ],
   storyEntries: normalizedStories,
 });

@@ -1,11 +1,18 @@
 import path from 'path';
 import { program } from 'commander';
+import { BuilderOptions, CLIOptions, LoadOptions } from '@storybook/types';
 
-export function parseList(str) {
+export function parseList(str: string) {
   return str.split(',');
 }
 
-function getCli() {
+export type RNServerCLIOptions = CLIOptions &
+  LoadOptions &
+  BuilderOptions & {
+    manualId: string;
+  };
+
+function getCli(): RNServerCLIOptions {
   program
     .option('-h, --host <host>', 'host to listen on', 'localhost')
     .option('-p, --port <port>', 'port to listen on', (str) => parseInt(str, 10), 7007)
@@ -28,7 +35,7 @@ function getCli() {
     .option('--quiet', 'Suppress verbose build output');
 
   program.parse();
-  const options = program.opts();
+  const options: RNServerCLIOptions = program.opts();
 
   const configDir = path.resolve(options.configDir || './.storybook_server');
 

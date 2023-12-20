@@ -53,7 +53,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   // TODO: implement presets or something similar
   const enhancer = main.addons?.includes('@storybook/addon-ondevice-actions')
-    ? "require('@storybook/addon-actions/dist/preview')"
+    ? "require('@storybook/addon-actions/preview')"
     : '';
 
   const previewExists = getPreviewExists({ configPath });
