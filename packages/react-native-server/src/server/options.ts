@@ -17,13 +17,14 @@ function extendOptions(options: RNServerCLIOptions, extendServer: LoadOptions['e
     extendServer,
     packageJson,
     ignorePreview: true,
+    previewUrl: 'https://example.com',
     corePresets: [
       // {
       //   name: `@storybook/manager-webpack${useWebpack5 ? 5 : 4}/manager-preset`,
       //   options: { managerEntry: require.resolve('../client/manager') },
       // },
       {
-        name: require.resolve('./rn-options-preset.js'),
+        name: require.resolve('./rn-options-preset'),
         options: { storybookOptions },
       },
     ],

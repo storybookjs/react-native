@@ -26,9 +26,9 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@storybook/addon-actions": "7.6.0-alpha.7",
-    "@storybook/core-events": "7.6.0-alpha.7",
-    "@storybook/manager-api": "7.6.0-alpha.7",
+    "@storybook/addon-actions": "7.6.6",
+    "@storybook/core-events": "7.6.6",
+    "@storybook/manager-api": "7.6.6",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {

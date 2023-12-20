@@ -16,6 +16,8 @@ export default class Server {
     this.attachWS = this.attachWS.bind(this);
 
     this.options = extendOptions(options, this.attachWS);
+    //@ts-ignore
+    this.options.extendedServer = this;
   }
 
   start() {
