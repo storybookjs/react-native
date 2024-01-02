@@ -30,11 +30,11 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
-    "@storybook/addon-controls": "7.6.6",
-    "@storybook/channels": "7.6.6",
-    "@storybook/client-logger": "7.6.6",
-    "@storybook/core-events": "7.6.6",
-    "@storybook/manager-api": "7.6.6",
+    "@storybook/addon-controls": "7.6.7",
+    "@storybook/channels": "7.6.7",
+    "@storybook/client-logger": "7.6.7",
+    "@storybook/core-events": "7.6.7",
+    "@storybook/manager-api": "7.6.7",
     "@storybook/react-native-theming": "^7.0.0-alpha.8",
     "core-js": "^3.0.1",
     "deep-equal": "^1.0.1",
