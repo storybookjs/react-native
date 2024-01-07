@@ -11,11 +11,11 @@ import type { ReactNativeFramework } from './types/types-6.0';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 // TODO check this
-// import { createWebSocketChannel } from '@storybook/channels';
-// import Events from '@storybook/core-events';
+import { createWebSocketChannel } from '@storybook/channels';
+import Events from '@storybook/core-events';
 import deepmerge from 'deepmerge';
 import { useColorScheme } from 'react-native';
-// import getHost from './rn-host-detect';
+import getHost from './rn-host-detect';
 // import { global } from '@storybook/global';
 import { type Channel } from '@storybook/channels';
 
@@ -121,45 +121,42 @@ export class View {
     return { storySpecifier: '*', viewMode: 'story' };
   };
 
-  // _getServerChannel = (params: Partial<Params> = {}) => {
-  //   const host = getHost(params.host || 'localhost');
+  _getServerChannel = (params: Partial<Params> = {}) => {
+    const host = getHost(params.host || 'localhost');
 
-  //   const port = `:${params.port || 7007}`;
+    const port = `:${params.port || 7007}`;
 
-  //   const query = params.query || '';
+    const query = params.query || '';
 
-  //   const websocketType = params.secured ? 'wss' : 'ws';
+    const websocketType = params.secured ? 'wss' : 'ws';
 
-  //   const url = `${websocketType}://${host}${port}/${query}`;
+    const url = `${websocketType}://${host}${port}/${query}`;
 
-  //   return createWebSocketChannel({
-  //     url,
-  //     async: true,
-  //     onError: async () => {},
-  //   });
-  // };
+    return createWebSocketChannel({
+      url,
+      async: true,
+      onError: async () => {},
+    });
+  };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
-    const { shouldPersistSelection = true, onDeviceUI = true /* enableWebsockets = false  */ } =
-      params;
+    const { shouldPersistSelection = true, onDeviceUI = true, enableWebsockets = false } = params;
 
     const initialStory = this._getInitialStory(params);
 
-    // if (enableWebsockets) {
-    //   const channel = this._getServerChannel(params);
+    if (enableWebsockets) {
+      console.log('websockets enabled');
 
-    //   addons.setChannel(channel);
-
-    //   // TODO: check this with someone who knows what they're doing
-    //   // @ts-ignore #FIXME
-    //   this._preview.channel = channel;
-
-    //   this._preview.setupListeners();
-
-    //   channel.emit(Events.CHANNEL_CREATED);
-
-    //   this._preview.initializeWithStoryIndex(this._storyIndex);
-    // }
+      const channel = this._getServerChannel(params);
+      addons.setChannel(channel);
+      this._channel = channel;
+      // TODO: check this with someone who knows what they're doing
+      // @ts-ignore #FIXME
+      this._preview.channel = channel;
+      this._preview.setupListeners();
+      channel.emit(Events.CHANNEL_CREATED);
+      this._preview.initializeWithStoryIndex(this._storyIndex);
+    }
 
     addons.loadAddons({
       store: () => ({

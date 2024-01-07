@@ -25,12 +25,15 @@ module.exports = (async () => {
       resolveRequest: (context, moduleName, platform) => {
         if (moduleName === '@storybook/addon-actions') {
           const defaultResolveResult = context.resolveRequest(context, moduleName, platform);
+
           defaultResolveResult.filePath = defaultResolveResult.filePath.replace(
             'index.js',
             'index.mjs'
           );
+
           return defaultResolveResult;
         }
+
         return context.resolveRequest(context, moduleName, platform);
       },
       // NOTE from: https://github.com/aws/aws-sdk-js-v3/issues/4877#issuecomment-1803353706
