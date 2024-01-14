@@ -32,9 +32,9 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/api": "7.6.7",
-    "@storybook/manager-api": "7.6.7",
-    "@storybook/preview-api": "7.6.7",
+    "@storybook/api": "7.6.8",
+    "@storybook/manager-api": "7.6.8",
+    "@storybook/preview-api": "7.6.8",
     "@storybook/react-native-theming": "^7.6.7-alpha.1",
     "core-js": "^3.0.1",
     "prop-types": "^15.7.2"
