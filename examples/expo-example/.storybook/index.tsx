@@ -10,6 +10,7 @@ const StorybookUIRoot = view.getStorybookUI({
   // isSplitPanelVisible: true,
 
   // onDeviceUI: false,
+  // host: '192.168.1.69',
   enableWebsockets: true,
   // theme: {
   //   storyList: {

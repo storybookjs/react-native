@@ -5458,6 +5458,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-react-native-server@npm:0.0.2--canary.1.d751593.0":
+  version: 0.0.2--canary.1.d751593.0
+  resolution: "@storybook/addon-react-native-server@npm:0.0.2--canary.1.d751593.0"
+  dependencies:
+    ws: ^8.16.0
+  checksum: a3c6abaa9d76d3b69a928a70a956f9bf1b3f7e997133a3f873457ec6278d93cf87c3ce74a18eb354e6d0a9e8d80f3a1309af6100494f64974147a72faf0fcd75
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-react-native-web@npm:^0.0.22":
   version: 0.0.22
   resolution: "@storybook/addon-react-native-web@npm:0.0.22"
@@ -11405,6 +11414,7 @@ __metadata:
     "@storybook/addon-ondevice-controls": ^7.6.7-alpha.1
     "@storybook/addon-ondevice-knobs": ^7.6.7-alpha.1
     "@storybook/addon-ondevice-notes": ^7.6.7-alpha.1
+    "@storybook/addon-react-native-server": 0.0.2--canary.1.d751593.0
     "@storybook/addon-react-native-web": ^0.0.22
     "@storybook/blocks": 7.6.8
     "@storybook/builder-webpack5": 7.6.8

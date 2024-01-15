@@ -149,7 +149,6 @@ export class View {
       console.log('websockets enabled');
 
       const channel = this._getServerChannel(params);
-
       managerAddons.setChannel(channel);
       previewAddons.setChannel(channel);
       this._channel = channel;

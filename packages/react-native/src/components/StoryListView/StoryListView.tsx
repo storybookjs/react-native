@@ -12,6 +12,7 @@ import {
   findFirstChildStory,
   getNestedStories,
 } from './getNestedStories';
+import { addons } from '@storybook/preview-api';
 
 const SectionHeaderText = styled.Text<{ selected: boolean }>(({ theme }) => ({
   fontSize: theme.storyList.fontSize,
@@ -290,10 +291,9 @@ const StoryListView = ({ storyIndex }: Props) => {
   };
 
   const changeStory = (storyId: string) => {
-    // const channel = addons.getChannel();
-    global.__STORYBOOK_ADDONS_CHANNEL__.emit(Events.SET_CURRENT_STORY, { storyId });
+    const channel = addons.getChannel();
 
-    // channel.emit(Events.SET_CURRENT_STORY, { storyId });
+    channel.emit(Events.SET_CURRENT_STORY, { storyId });
   };
 
   const renderItem: ListRenderItem<StoryGroup> = React.useCallback(({ item }) => {

@@ -30,6 +30,7 @@
     "@storybook/addon-ondevice-controls": "^7.6.7-alpha.1",
     "@storybook/addon-ondevice-knobs": "^7.6.7-alpha.1",
     "@storybook/addon-ondevice-notes": "^7.6.7-alpha.1",
+    "@storybook/addon-react-native-server": "0.0.2--canary.1.d751593.0",
     "@storybook/addon-react-native-web": "^0.0.22",
     "@storybook/blocks": "7.6.8",
     "@storybook/builder-webpack5": "7.6.8",
