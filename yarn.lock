@@ -5506,17 +5506,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addons@npm:7.6.8":
-  version: 7.6.8
-  resolution: "@storybook/addons@npm:7.6.8"
-  dependencies:
-    "@storybook/manager-api": 7.6.8
-    "@storybook/preview-api": 7.6.8
-    "@storybook/types": 7.6.8
-  checksum: 120d625c8451de11abeab98af2c3d4c1a99ac0a718b926880b197b7ea6337fc22ef4398c9e5b487d272f0d6a28822c87bcffd037f24e94192add73e105df5db7
-  languageName: node
-  linkType: hard
-
 "@storybook/api@npm:7.6.8":
   version: 7.6.8
   resolution: "@storybook/api@npm:7.6.8"
@@ -6103,37 +6092,6 @@ __metadata:
   checksum: 8b1c90710c01888aa340d07666a7032eb8d59bc4d434548e20ebdd7823f7c32a28b76fd0f721379eb16eb9a319a008a9e0f85791b1f0583ad70bdab34b189562
   languageName: node
   linkType: hard
-
-"@storybook/react-native-server@^7.6.7-alpha.1, @storybook/react-native-server@workspace:packages/react-native-server":
-  version: 0.0.0-use.local
-  resolution: "@storybook/react-native-server@workspace:packages/react-native-server"
-  dependencies:
-    "@storybook/addons": 7.6.8
-    "@storybook/api": 7.6.8
-    "@storybook/channel-websocket": 7.6.8
-    "@storybook/core-events": 7.6.8
-    "@storybook/core-server": 7.6.8
-    "@storybook/manager": 7.6.8
-    "@storybook/types": 7.6.8
-    "@types/node": ^18
-    "@types/ws": ^7
-    commander: ^8.2.0
-    core-js: ^3.0.1
-    global: ^4.3.2
-    react: ^18.2.0
-    react-dom: 18.2.0
-    typescript: ^5.1.3
-    uuid: ^3.3.2
-    webpack: ^5.76.2
-    ws: ^7.1.2
-  peerDependencies:
-    babel-loader: ^7.0.0 || ^8.0.0 || ^9.0.0
-    webpack: ^5
-  bin:
-    react-native-storybook-server: ./bin/index.js
-    storybook-server: ./bin/index.js
-  languageName: unknown
-  linkType: soft
 
 "@storybook/react-native-theming@^7.6.7-alpha.1, @storybook/react-native-theming@workspace:packages/react-native-theming":
   version: 0.0.0-use.local
@@ -6906,7 +6864,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18, @types/node@npm:^18.0.0":
+"@types/node@npm:^18.0.0":
   version: 18.19.3
   resolution: "@types/node@npm:18.19.3"
   dependencies:
@@ -7037,15 +6995,6 @@ __metadata:
   version: 9.0.7
   resolution: "@types/uuid@npm:9.0.7"
   checksum: c7321194aeba9ea173efd1e721403bdf4e7ae6945f8f8cdbc87c791f4b505ccf3dbc4a8883d90b394ef13b7c2dc778045792b05dbb23b3c746f8ea347804d448
-  languageName: node
-  linkType: hard
-
-"@types/ws@npm:^7":
-  version: 7.4.7
-  resolution: "@types/ws@npm:7.4.7"
-  dependencies:
-    "@types/node": "*"
-  checksum: b4c9b8ad209620c9b21e78314ce4ff07515c0cadab9af101c1651e7bfb992d7fd933bd8b9c99d110738fd6db523ed15f82f29f50b45510288da72e964dedb1a3
   languageName: node
   linkType: hard
 
@@ -11423,7 +11372,6 @@ __metadata:
     "@storybook/global": ^5.0.0
     "@storybook/react": 7.6.8
     "@storybook/react-native": ^7.6.7-alpha.1
-    "@storybook/react-native-server": ^7.6.7-alpha.1
     "@storybook/react-webpack5": 7.6.8
     "@storybook/test": 7.6.8
     "@types/react": ~18.2.14
@@ -12612,7 +12560,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"global@npm:^4.3.2, global@npm:^4.4.0":
+"global@npm:^4.4.0":
   version: 4.4.0
   resolution: "global@npm:4.4.0"
   dependencies:
@@ -18668,7 +18616,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.2.0, react@npm:^18.2.0":
+"react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -21437,15 +21385,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^3.3.2":
-  version: 3.4.0
-  resolution: "uuid@npm:3.4.0"
-  bin:
-    uuid: ./bin/uuid
-  checksum: 58de2feed61c59060b40f8203c0e4ed7fd6f99d42534a499f1741218a1dd0c129f4aa1de797bcf822c8ea5da7e4137aa3673431a96dae729047f7aca7b27866f
-  languageName: node
-  linkType: hard
-
 "uuid@npm:^7.0.3":
   version: 7.0.3
   resolution: "uuid@npm:7.0.3"
@@ -21673,7 +21612,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5, webpack@npm:^5.76.2":
+"webpack@npm:5":
   version: 5.89.0
   resolution: "webpack@npm:5.89.0"
   dependencies:
@@ -22003,7 +21942,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^7, ws@npm:^7.1.2, ws@npm:^7.5.1":
+"ws@npm:^7, ws@npm:^7.5.1":
   version: 7.5.9
   resolution: "ws@npm:7.5.9"
   peerDependencies:
