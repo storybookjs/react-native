@@ -10,12 +10,11 @@
     "storybook-generate": "sb-rn-get-stories --config-path=./.storybook",
     "ios": "expo start --ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "start": "expo start",
-    "start-server": "react-native-storybook-server",
+    "storybook": "expo start",
     "storybook-watcher": "sb-rn-watcher --config-path=./.storybook",
     "web": "expo start --web",
-    "storybook": "storybook dev -p 6006 -c ./.storybook-web",
-    "build-storybook": "storybook build -c ./.storybook-web"
+    "storybook:web": "storybook dev -p 6006 -c ./.storybook-web",
+    "build-web-storybook": "storybook build -c ./.storybook-web"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.21.0",
@@ -39,7 +38,6 @@
     "@storybook/global": "^5.0.0",
     "@storybook/react": "7.6.8",
     "@storybook/react-native": "^7.6.7-alpha.1",
-    "@storybook/react-native-server": "^7.6.7-alpha.1",
     "@storybook/react-webpack5": "7.6.8",
     "@storybook/test": "7.6.8",
     "expo": "^50.0.0-preview.6",
