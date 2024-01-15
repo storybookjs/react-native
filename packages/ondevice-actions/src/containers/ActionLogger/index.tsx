@@ -40,6 +40,10 @@ const ActionLogger = ({ active }: ActionLoggerProps) => {
   useEffect(() => {
     const addAction = (action: ActionDisplay) => {
       setActions((prevState: ActionDisplay[]) => {
+        if (prevState.find((a) => a.id === action.id)) {
+          return prevState;
+        }
+
         const newActions = [...prevState];
         const previous = newActions.length && newActions[0];
         if (previous && safeDeepEqual(previous.data, action.data)) {

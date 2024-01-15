@@ -63,17 +63,21 @@ const config = {
         const wss = new WebSocketServer({ port, host });
 
         wss.on('connection', function connection(ws) {
-          console.log('connection');
+          console.log('websocket connection');
 
           ws.on('error', console.error);
 
           ws.on('message', function message(data) {
-            const json = JSON.parse(data.toString());
-            console.log('type', json.type, 'args length', json.args.length);
-            if (json.args.length > 0) {
-              channel.emit(json.type, json.args[0]);
-            } else {
-              channel.emit(json.type);
+            try {
+              const json = JSON.parse(data.toString());
+
+              if (json.args.length > 0) {
+                channel.emit(json.type, json.args[0]);
+              } else {
+                channel.emit(json.type);
+              }
+            } catch (error) {
+              console.error(error);
             }
           });
 
@@ -88,10 +92,30 @@ const config = {
           // ws.send('something');
         });
 
-        Object.values(EVENTS).forEach((curEvent) => {
+        [
+          ...Object.values(EVENTS),
+          'storybook-addon-background:set',
+          'storybook-addon-background:unset',
+          'storybook-addon-background:update',
+          'storybook/actions/action-event',
+          'storybook/actions/action-clear',
+        ].forEach((curEvent) => {
           channel.on(curEvent, async (data) => {
-            console.log({ curEvent });
-            wss.clients.forEach((ws) => ws.send(JSON.stringify({ type: curEvent, args: [data] })));
+            try {
+              if (curEvent === 'storybook/actions/action-event' && data?.data?.args?.target) {
+                // fixes self referencing object error for json stringify
+                data.data.args.nativeEvent = null;
+                data.data.args.target = null;
+                data.data.args.currentTarget = null;
+                data.data.args.view = null;
+              }
+
+              const toSend = JSON.stringify({ type: curEvent, args: [data] });
+
+              wss.clients.forEach((ws) => ws.send(toSend));
+            } catch (error) {
+              console.error({ event: curEvent, error });
+            }
           });
         });
       }

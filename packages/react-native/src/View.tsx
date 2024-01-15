@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StoryContext, toId } from '@storybook/csf';
-import { addons } from '@storybook/manager-api';
+import { addons as previewAddons } from '@storybook/preview-api';
+import { addons as managerAddons } from '@storybook/manager-api';
 import { type PreviewWithSelection } from '@storybook/preview-web';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
 import type { StoryIndex } from '@storybook/types';
@@ -148,7 +149,9 @@ export class View {
       console.log('websockets enabled');
 
       const channel = this._getServerChannel(params);
-      addons.setChannel(channel);
+
+      managerAddons.setChannel(channel);
+      previewAddons.setChannel(channel);
       this._channel = channel;
       // TODO: check this with someone who knows what they're doing
       // @ts-ignore #FIXME
@@ -158,7 +161,7 @@ export class View {
       this._preview.initializeWithStoryIndex(this._storyIndex);
     }
 
-    addons.loadAddons({
+    managerAddons.loadAddons({
       store: () => ({
         fromId: (id) =>
           this._preview.storyStore.getStoryContext(this._preview.storyStore.fromId(id)),
