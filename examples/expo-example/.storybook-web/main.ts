@@ -2,7 +2,7 @@ import { join, dirname } from 'path';
 // import * as ws from 'ws';
 import { WebSocketServer } from 'ws';
 import * as querystring from 'querystring';
-import { SET_CURRENT_STORY } from '@storybook/core-events';
+import EVENTS from '@storybook/core-events';
 import { Channel } from '@storybook/channels';
 import { Options } from '@storybook/types';
 import { StorybookConfig } from '@storybook/react-webpack5';
@@ -25,7 +25,7 @@ const config = {
   addons: [
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-interactions'),
-    // getAbsolutePath('@storybook/addon-react-native-web'),
+    getAbsolutePath('@storybook/addon-react-native-web'),
   ],
 
   framework: {
@@ -44,20 +44,10 @@ const config = {
   },
 
   webpackFinal: async (config, options) => {
-    config.resolve.extensions = [
-      '.web.mjs',
-      '.web.js',
-      '.web.jsx',
-      '.web.ts',
-      '.web.tsx',
-      ...config.resolve.extensions,
-    ];
-
-    config.resolve.alias = {
-      'react-native$': 'react-native-web',
-      ...config.resolve.alias,
-    };
-
+    config.module.rules = config.module.rules.filter(
+      // @ts-ignore
+      (rule) => !rule?.use?.some?.((u) => String(u?.loader)?.includes?.('export-order-loader'))
+    );
     return config;
   },
 
@@ -70,7 +60,7 @@ const config = {
 
         const host = options.host ?? 'localhost';
 
-        const wss = new WebSocketServer({ port: 7007 });
+        const wss = new WebSocketServer({ port, host });
 
         wss.on('connection', function connection(ws) {
           console.log('connection');
@@ -79,60 +69,31 @@ const config = {
 
           ws.on('message', function message(data) {
             const json = JSON.parse(data.toString());
-            // if (data.toString().includes(SET_CURRENT_STORY))
-            if (json.type === 'currentStoryWasSet') {
-              console.log('received: %s', data);
-              channel.emit(SET_CURRENT_STORY, json.args[0]);
+            console.log('type', json.type, 'args length', json.args.length);
+            if (json.args.length > 0) {
+              channel.emit(json.type, json.args[0]);
+            } else {
+              channel.emit(json.type);
             }
           });
 
           // ws.on('message', (data) => {
           //   console.log('recieved from upstream channel:', data);
 
-          // wss.clients.forEach((c) => {
-          //   c.send(data);
-          // });
+          //   wss.clients.forEach((c) => {
+          //     c.send(data);
+          //   });
           // });
 
           // ws.send('something');
         });
 
-        // channel.on(SET_CURRENT_STORY, async (data) => {
-        //   console.log('relaying from storybook channel:', data);
-        //   wss.clients.forEach((ws) =>
-        //     ws.send(JSON.stringify({ type: SET_CURRENT_STORY, args: [data] }))
-        //   );
-        // });
-        // const wss = new WebSocketServer({
-        //   port,
-        //   host,
-        // });
-
-        // wss.on('connection', (ws, req) => () => {
-        //   console.log('connected', req.url);
-        //   // ws.on('message', (data) => {
-        //   //   console.log('recieved from upstream channel:', data);
-
-        //   //   wss.clients.forEach((c) => {
-        //   //     c.send(data);
-        //   //   });
-        //   // });
-
-        //   ws.on('error', console.error);
-
-        //   ws.on('message', function message(data) {
-        //     console.log('received: %s', data);
-        //   });
-
-        //   ws.send('something');
-        // });
-
-        // wsServer.on('connection', (s, req) => {
-        //   s.on('message', (data) => {
-        //     console.log('recieved from upstream channel:', data);
-        //     // channel.emit('', data);
-        //   });
-        // });
+        Object.values(EVENTS).forEach((curEvent) => {
+          channel.on(curEvent, async (data) => {
+            console.log({ curEvent });
+            wss.clients.forEach((ws) => ws.send(JSON.stringify({ type: curEvent, args: [data] })));
+          });
+        });
       }
     }
 
