@@ -5412,6 +5412,7 @@ __metadata:
   resolution: "@storybook/addon-ondevice-knobs@workspace:packages/ondevice-knobs"
   dependencies:
     "@storybook/addon-knobs": ^7.0.2
+    "@storybook/addons": ^7.6.8
     "@storybook/core-events": 7.6.8
     "@storybook/manager-api": 7.6.8
     "@storybook/react-native-theming": ^7.6.8-alpha.0
@@ -5458,12 +5459,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-react-native-server@npm:0.0.2--canary.1.d751593.0":
-  version: 0.0.2--canary.1.d751593.0
-  resolution: "@storybook/addon-react-native-server@npm:0.0.2--canary.1.d751593.0"
+"@storybook/addon-react-native-server@npm:0.0.5--canary.3.18ef8d7.0":
+  version: 0.0.5--canary.3.18ef8d7.0
+  resolution: "@storybook/addon-react-native-server@npm:0.0.5--canary.3.18ef8d7.0"
   dependencies:
     ws: ^8.16.0
-  checksum: a3c6abaa9d76d3b69a928a70a956f9bf1b3f7e997133a3f873457ec6278d93cf87c3ce74a18eb354e6d0a9e8d80f3a1309af6100494f64974147a72faf0fcd75
+  checksum: 91e1efcb9bd72007a261c5d7efef2a3946fd8ce6a303d1e5072ec18d08f2c3694b24c888b35853fd1a360c7d721772c50976da777e458b3473f8460eb4cb8bfd
   languageName: node
   linkType: hard
 
@@ -5503,6 +5504,17 @@ __metadata:
   dependencies:
     memoizerific: ^1.11.3
   checksum: 4b793e7ed97c4313edcad9165e2b90e08baf2df7de53281d40941ba3c394525e4af0cd25671744866ab9bf35e003aff59e84a0f0b3ec43e41944e3ed41a0c1f6
+  languageName: node
+  linkType: hard
+
+"@storybook/addons@npm:^7.6.8":
+  version: 7.6.8
+  resolution: "@storybook/addons@npm:7.6.8"
+  dependencies:
+    "@storybook/manager-api": 7.6.8
+    "@storybook/preview-api": 7.6.8
+    "@storybook/types": 7.6.8
+  checksum: 120d625c8451de11abeab98af2c3d4c1a99ac0a718b926880b197b7ea6337fc22ef4398c9e5b487d272f0d6a28822c87bcffd037f24e94192add73e105df5db7
   languageName: node
   linkType: hard
 
@@ -11363,7 +11375,7 @@ __metadata:
     "@storybook/addon-ondevice-controls": ^7.6.8-alpha.0
     "@storybook/addon-ondevice-knobs": ^7.6.8-alpha.0
     "@storybook/addon-ondevice-notes": ^7.6.8-alpha.0
-    "@storybook/addon-react-native-server": 0.0.2--canary.1.d751593.0
+    "@storybook/addon-react-native-server": 0.0.5--canary.3.18ef8d7.0
     "@storybook/addon-react-native-web": ^0.0.22
     "@storybook/blocks": 7.6.8
     "@storybook/builder-webpack5": 7.6.8

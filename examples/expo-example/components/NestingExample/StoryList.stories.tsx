@@ -7,6 +7,7 @@ export default {
 } as Meta<typeof StoryListView>;
 
 export const Basic: StoryObj<typeof StoryListView> = {
+  parameters: { deviceOnly: true },
   args: {
     storyIndex: {
       entries: {
