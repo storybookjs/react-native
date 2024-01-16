@@ -5179,7 +5179,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-actions@npm:7.6.8":
+"@storybook/addon-actions@npm:7.6.8, @storybook/addon-actions@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/addon-actions@npm:7.6.8"
   dependencies:
@@ -5204,7 +5204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-controls@npm:7.6.8":
+"@storybook/addon-controls@npm:7.6.8, @storybook/addon-controls@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/addon-controls@npm:7.6.8"
   dependencies:
@@ -5245,7 +5245,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-essentials@npm:7.6.8":
+"@storybook/addon-essentials@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/addon-essentials@npm:7.6.8"
   dependencies:
@@ -5279,7 +5279,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-interactions@npm:7.6.8":
+"@storybook/addon-interactions@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/addon-interactions@npm:7.6.8"
   dependencies:
@@ -5324,7 +5324,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:7.6.8":
+"@storybook/addon-links@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/addon-links@npm:7.6.8"
   dependencies:
@@ -5354,12 +5354,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-actions@workspace:packages/ondevice-actions"
   dependencies:
-    "@storybook/addon-actions": 7.6.8
-    "@storybook/core-events": 7.6.8
+    "@storybook/addon-actions": ^7.6.8
+    "@storybook/core-events": ^7.6.8
     "@storybook/global": ^5.0.0
-    "@storybook/manager-api": 7.6.8
+    "@storybook/manager-api": ^7.6.8
     fast-deep-equal: ^2.0.1
-    typescript: ^5.1.3
+    typescript: ^5.3.3
   peerDependencies:
     react: "*"
     react-native: "*"
@@ -5370,13 +5370,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds"
   dependencies:
-    "@storybook/api": 7.6.8
-    "@storybook/manager-api": 7.6.8
-    "@storybook/preview-api": 7.6.8
+    "@storybook/api": ^7.6.8
+    "@storybook/manager-api": ^7.6.8
+    "@storybook/preview-api": ^7.6.8
     "@storybook/react-native-theming": ^7.6.8-alpha.0
-    core-js: ^3.0.1
-    prop-types: ^15.7.2
-    typescript: ^5.1.3
+    typescript: ^5.3.3
   peerDependencies:
     react: "*"
     react-native: "*"
@@ -5387,13 +5385,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-controls@workspace:packages/ondevice-controls"
   dependencies:
-    "@storybook/addon-controls": 7.6.8
-    "@storybook/channels": 7.6.8
-    "@storybook/client-logger": 7.6.8
-    "@storybook/core-events": 7.6.8
-    "@storybook/manager-api": 7.6.8
+    "@storybook/addon-controls": ^7.6.8
+    "@storybook/channels": ^7.6.8
+    "@storybook/client-logger": ^7.6.8
+    "@storybook/core-events": ^7.6.8
+    "@storybook/manager-api": ^7.6.8
     "@storybook/react-native-theming": ^7.6.8-alpha.0
-    core-js: ^3.0.1
     deep-equal: ^1.0.1
     prop-types: ^15.7.2
     react-native-modal-datetime-picker: ^14.0.0
@@ -5413,17 +5410,16 @@ __metadata:
   dependencies:
     "@storybook/addon-knobs": ^7.0.2
     "@storybook/addons": ^7.6.8
-    "@storybook/core-events": 7.6.8
-    "@storybook/manager-api": 7.6.8
+    "@storybook/core-events": ^7.6.8
+    "@storybook/manager-api": ^7.6.8
     "@storybook/react-native-theming": ^7.6.8-alpha.0
-    core-js: ^3.0.1
     cross-env: ^7.0.3
     deep-equal: ^1.0.1
     prop-types: ^15.7.2
     react-native-modal-datetime-picker: ^14.0.0
     react-native-modal-selector: ^2.1.1
     tinycolor2: ^1.4.1
-    typescript: ^5.1.3
+    typescript: ^5.3.3
   peerDependencies:
     "@react-native-community/datetimepicker": "*"
     "@react-native-community/slider": "*"
@@ -5436,13 +5432,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-notes@workspace:packages/ondevice-notes"
   dependencies:
-    "@storybook/api": 7.6.8
-    "@storybook/client-logger": 7.6.8
-    "@storybook/core-events": 7.6.8
-    "@storybook/manager-api": 7.6.8
+    "@storybook/api": ^7.6.8
+    "@storybook/client-logger": ^7.6.8
+    "@storybook/core-events": ^7.6.8
+    "@storybook/manager-api": ^7.6.8
     "@storybook/react-native-theming": ^7.6.8-alpha.0
     react-native-markdown-display: 6.1.6
-    typescript: ^5.1.3
+    typescript: ^5.3.3
   peerDependencies:
     react: "*"
     react-native: "*"
@@ -5518,7 +5514,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/api@npm:7.6.8":
+"@storybook/api@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/api@npm:7.6.8"
   dependencies:
@@ -5528,7 +5524,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/blocks@npm:7.6.8":
+"@storybook/blocks@npm:7.6.8, @storybook/blocks@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/blocks@npm:7.6.8"
   dependencies:
@@ -5586,7 +5582,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/builder-webpack5@npm:7.6.8":
+"@storybook/builder-webpack5@npm:7.6.8, @storybook/builder-webpack5@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/builder-webpack5@npm:7.6.8"
   dependencies:
@@ -5634,7 +5630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/channel-websocket@npm:7.6.8":
+"@storybook/channel-websocket@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/channel-websocket@npm:7.6.8"
   dependencies:
@@ -5644,7 +5640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/channels@npm:7.6.8":
+"@storybook/channels@npm:7.6.8, @storybook/channels@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/channels@npm:7.6.8"
   dependencies:
@@ -5710,7 +5706,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/client-logger@npm:7.6.8":
+"@storybook/client-logger@npm:7.6.8, @storybook/client-logger@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/client-logger@npm:7.6.8"
   dependencies:
@@ -5762,7 +5758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-client@npm:7.6.8":
+"@storybook/core-client@npm:7.6.8, @storybook/core-client@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/core-client@npm:7.6.8"
   dependencies:
@@ -5772,7 +5768,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-common@npm:7.6.8":
+"@storybook/core-common@npm:7.6.8, @storybook/core-common@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/core-common@npm:7.6.8"
   dependencies:
@@ -5803,7 +5799,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-events@npm:7.6.8":
+"@storybook/core-events@npm:7.6.8, @storybook/core-events@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/core-events@npm:7.6.8"
   dependencies:
@@ -5917,7 +5913,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/docs-tools@npm:7.6.8":
+"@storybook/docs-tools@npm:7.6.8, @storybook/docs-tools@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/docs-tools@npm:7.6.8"
   dependencies:
@@ -5954,7 +5950,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-api@npm:7.6.8":
+"@storybook/manager-api@npm:7.6.8, @storybook/manager-api@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/manager-api@npm:7.6.8"
   dependencies:
@@ -6038,7 +6034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/preview-api@npm:7.6.8":
+"@storybook/preview-api@npm:7.6.8, @storybook/preview-api@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/preview-api@npm:7.6.8"
   dependencies:
@@ -6060,7 +6056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/preview-web@npm:7.6.8":
+"@storybook/preview-web@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/preview-web@npm:7.6.8"
   dependencies:
@@ -6123,21 +6119,21 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native@workspace:packages/react-native"
   dependencies:
-    "@storybook/channel-websocket": 7.6.8
-    "@storybook/channels": 7.6.8
-    "@storybook/client-logger": 7.6.8
-    "@storybook/core-client": 7.6.8
-    "@storybook/core-common": 7.6.8
-    "@storybook/core-events": 7.6.8
+    "@storybook/channel-websocket": ^7.6.8
+    "@storybook/channels": ^7.6.8
+    "@storybook/client-logger": ^7.6.8
+    "@storybook/core-client": ^7.6.8
+    "@storybook/core-common": ^7.6.8
+    "@storybook/core-events": ^7.6.8
     "@storybook/csf": ^0.1.1
-    "@storybook/docs-tools": 7.6.8
+    "@storybook/docs-tools": ^7.6.8
     "@storybook/global": ^5.0.0
-    "@storybook/manager-api": 7.6.8
-    "@storybook/preview-api": 7.6.8
-    "@storybook/preview-web": 7.6.8
-    "@storybook/react": 7.6.8
+    "@storybook/manager-api": ^7.6.8
+    "@storybook/preview-api": ^7.6.8
+    "@storybook/preview-web": ^7.6.8
+    "@storybook/react": ^7.6.8
     "@storybook/react-native-theming": ^7.6.8-alpha.0
-    "@storybook/types": 7.6.8
+    "@storybook/types": ^7.6.8
     "@types/jest": ^29.4.3
     "@types/react": ~18.2.14
     babel-jest: ^29.4.3
@@ -6152,7 +6148,7 @@ __metadata:
     react-test-renderer: 18.2.0
     ts-node: ^10.9.1
     tsup: ^7.2.0
-    typescript: ^5.1.3
+    typescript: ^5.3.3
     util: ^0.12.4
   peerDependencies:
     "@react-native-async-storage/async-storage": ">=1"
@@ -6165,7 +6161,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-webpack5@npm:7.6.8":
+"@storybook/react-webpack5@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/react-webpack5@npm:7.6.8"
   dependencies:
@@ -6187,7 +6183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:7.6.8":
+"@storybook/react@npm:7.6.8, @storybook/react@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/react@npm:7.6.8"
   dependencies:
@@ -6232,7 +6228,7 @@ __metadata:
     eslint: 8.24.0
     lerna: ^6.6.1
     ts-node: ^10.9.1
-    typescript: ^5.1.3
+    typescript: ^5.3.3
   languageName: unknown
   linkType: soft
 
@@ -6263,7 +6259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/test@npm:7.6.8":
+"@storybook/test@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/test@npm:7.6.8"
   dependencies:
@@ -6298,7 +6294,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/types@npm:7.6.8":
+"@storybook/types@npm:7.6.8, @storybook/types@npm:^7.6.8":
   version: 7.6.8
   resolution: "@storybook/types@npm:7.6.8"
   dependencies:
@@ -9674,7 +9670,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.0.1, core-js@npm:^3.29.0":
+"core-js@npm:^3.29.0":
   version: 3.34.0
   resolution: "core-js@npm:3.34.0"
   checksum: 26b0d103716b33fc660ee8737da7bc9475fbc655f93bbf1360ab692966449d18f2fc393805095937283db9f919ca2aa5c88d86d16f2846217983ad7da707e31e
@@ -11366,10 +11362,10 @@ __metadata:
     "@react-native-community/datetimepicker": 7.6.1
     "@react-native-community/slider": 4.4.2
     "@react-native/babel-preset": ^0.74.0
-    "@storybook/addon-essentials": 7.6.8
-    "@storybook/addon-interactions": 7.6.8
+    "@storybook/addon-essentials": ^7.6.8
+    "@storybook/addon-interactions": ^7.6.8
     "@storybook/addon-knobs": ^7.0.2
-    "@storybook/addon-links": 7.6.8
+    "@storybook/addon-links": ^7.6.8
     "@storybook/addon-ondevice-actions": ^7.6.8-alpha.0
     "@storybook/addon-ondevice-backgrounds": ^7.6.8-alpha.0
     "@storybook/addon-ondevice-controls": ^7.6.8-alpha.0
@@ -11377,30 +11373,29 @@ __metadata:
     "@storybook/addon-ondevice-notes": ^7.6.8-alpha.0
     "@storybook/addon-react-native-server": 0.0.5--canary.3.18ef8d7.0
     "@storybook/addon-react-native-web": ^0.0.22
-    "@storybook/blocks": 7.6.8
-    "@storybook/builder-webpack5": 7.6.8
-    "@storybook/core-common": 7.6.8
-    "@storybook/docs-tools": 7.6.8
+    "@storybook/blocks": ^7.6.8
+    "@storybook/builder-webpack5": ^7.6.8
+    "@storybook/core-common": ^7.6.8
+    "@storybook/docs-tools": ^7.6.8
     "@storybook/global": ^5.0.0
-    "@storybook/react": 7.6.8
+    "@storybook/react": ^7.6.8
     "@storybook/react-native": ^7.6.8-alpha.0
-    "@storybook/react-webpack5": 7.6.8
-    "@storybook/test": 7.6.8
+    "@storybook/react-webpack5": ^7.6.8
+    "@storybook/test": ^7.6.8
     "@types/react": ~18.2.14
     "@types/ws": ^8.5.10
     babel-plugin-react-docgen-typescript: ^1.5.1
     expo: ^50.0.0-preview.6
     metro-react-native-babel-preset: ^0.77.0
-    prop-types: ^15.8.1
     querystring: ^0.2.1
     react: 18.2.0
     react-dom: 18.2.0
     react-native: 0.73.1
     react-native-safe-area-context: 4.7.4
     react-native-web: ~0.19.6
-    storybook: 7.6.8
+    storybook: ^7.6.8
     ts-node: ^10.9.1
-    typescript: ^5.1.3
+    typescript: ^5.3.3
     ws: ^8.16.0
   languageName: unknown
   linkType: soft
@@ -19916,7 +19911,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:7.6.8":
+"storybook@npm:^7.6.8":
   version: 7.6.8
   resolution: "storybook@npm:7.6.8"
   dependencies:
@@ -20988,7 +20983,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.1.3":
+"typescript@npm:^5.3.3":
   version: 5.3.3
   resolution: "typescript@npm:5.3.3"
   bin:
@@ -21008,7 +21003,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^5.1.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@^5.3.3#~builtin<compat/typescript>":
   version: 5.3.3
   resolution: "typescript@patch:typescript@npm%3A5.3.3#~builtin<compat/typescript>::version=5.3.3&hash=14eedb"
   bin:
