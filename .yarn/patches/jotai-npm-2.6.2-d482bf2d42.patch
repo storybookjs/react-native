@@ -1,0 +1,60 @@
+diff --git a/esm/vanilla.mjs b/esm/vanilla.mjs
+index 59d78cf8e0490d98e104e4ba2ba58afb3bf97560..5f60e0f80f67546966f76333346790802b294e29 100644
+--- a/esm/vanilla.mjs
++++ b/esm/vanilla.mjs
+@@ -578,11 +578,6 @@ if ((import.meta.env ? import.meta.env.MODE : void 0) !== "production") {
+ }
+ const getDefaultStore = () => {
+   if (!defaultStore) {
+-    if ((import.meta.env ? import.meta.env.MODE : void 0) !== "production" && globalThis.__NUMBER_OF_JOTAI_INSTANCES__ !== 1) {
+-      console.warn(
+-        "Detected multiple Jotai instances. It may cause unexpected behavior with the default store. https://github.com/pmndrs/jotai/discussions/2044"
+-      );
+-    }
+     defaultStore = createStore();
+   }
+   return defaultStore;
+diff --git a/system/vanilla.development.js b/system/vanilla.development.js
+index 5045cde2971e1372ab48b82bbd161886d13eeccd..f7f3741f9cfdd9b200d0ea304a61f0d11847d013 100644
+--- a/system/vanilla.development.js
++++ b/system/vanilla.development.js
+@@ -580,11 +580,6 @@ System.register([], (function (exports) {
+       }
+       const getDefaultStore = exports("getDefaultStore", () => {
+         if (!defaultStore) {
+-          if (globalThis.__NUMBER_OF_JOTAI_INSTANCES__ !== 1) {
+-            console.warn(
+-              "Detected multiple Jotai instances. It may cause unexpected behavior with the default store. https://github.com/pmndrs/jotai/discussions/2044"
+-            );
+-          }
+           defaultStore = createStore();
+         }
+         return defaultStore;
+diff --git a/umd/vanilla.development.js b/umd/vanilla.development.js
+index d9587e70701c3a4717c6be4951a65e40d60b90b1..f9fcbefe4d53a5910edb320643f8bfb7139081b5 100644
+--- a/umd/vanilla.development.js
++++ b/umd/vanilla.development.js
+@@ -671,9 +671,6 @@
+   }
+   var getDefaultStore = function getDefaultStore() {
+     if (!defaultStore) {
+-      if (globalThis.__NUMBER_OF_JOTAI_INSTANCES__ !== 1) {
+-        console.warn('Detected multiple Jotai instances. It may cause unexpected behavior with the default store. https://github.com/pmndrs/jotai/discussions/2044');
+-      }
+       defaultStore = createStore();
+     }
+     return defaultStore;
+diff --git a/vanilla.js b/vanilla.js
+index 946fa9155cc4120bffd0022c9e50f77011dfab02..234c958df45eaa5bf5240be5d707f6d48261ab85 100644
+--- a/vanilla.js
++++ b/vanilla.js
+@@ -672,9 +672,6 @@ if (process.env.NODE_ENV !== 'production') {
+ }
+ var getDefaultStore = function getDefaultStore() {
+   if (!defaultStore) {
+-    if (process.env.NODE_ENV !== 'production' && globalThis.__NUMBER_OF_JOTAI_INSTANCES__ !== 1) {
+-      console.warn('Detected multiple Jotai instances. It may cause unexpected behavior with the default store. https://github.com/pmndrs/jotai/discussions/2044');
+-    }
+     defaultStore = createStore();
+   }
+   return defaultStore;

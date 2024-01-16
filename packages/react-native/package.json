@@ -79,7 +79,7 @@
     "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
     "jest": "^29.4.3",
-    "jotai": "^2.0.2",
+    "jotai": "^2.6.2",
     "react-test-renderer": "18.2.0",
     "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
