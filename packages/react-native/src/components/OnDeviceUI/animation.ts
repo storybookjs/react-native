@@ -1,4 +1,4 @@
-import { Animated, I18nManager, Insets } from 'react-native';
+import { Animated, I18nManager, Insets, ViewStyle } from 'react-native';
 import { PreviewDimens } from './absolute-positioned-keyboard-aware-view';
 import { SIDEBAR, CANVAS, ADDONS } from './navigation/constants';
 
@@ -83,7 +83,7 @@ export const getPreviewStyle = ({
   insets,
   tabOpen,
   lastTabOpen,
-}: PreviewPositionArgs) => {
+}: PreviewPositionArgs): ViewStyle => {
   const scale = (wide ? PREVIEW_SCALE_WIDE : PREVIEW_SCALE) * PREVIEW_SCALE_SHRINK;
   const scaledPreviewWidth = previewWidth * scale;
   const scaledPreviewHeight = previewHeight * scale;
