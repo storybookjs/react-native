@@ -21,6 +21,21 @@ module.exports = (async () => {
       // unstable_enablePackageExports: true,
       disableHierarchicalLookup: true,
       unstable_enableSymlinks: true,
+      resolveRequest: (context, moduleName, platform) => {
+        const defaultResolveResult = context.resolveRequest(context, moduleName, platform);
+
+        if (
+          process.env.STORYBOOK_ENABLED !== 'true' &&
+          defaultResolveResult?.filePath?.includes?.('.storybook/')
+        ) {
+          console.log(defaultResolveResult.filePath);
+          return {
+            type: 'empty',
+          };
+        }
+
+        return defaultResolveResult;
+      },
     },
     transformer: {
       unstable_allowRequireContext: true,
