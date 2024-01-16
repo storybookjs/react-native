@@ -28,7 +28,6 @@ module.exports = (async () => {
           process.env.STORYBOOK_ENABLED !== 'true' &&
           defaultResolveResult?.filePath?.includes?.('.storybook/')
         ) {
-          console.log(defaultResolveResult.filePath);
           return {
             type: 'empty',
           };
