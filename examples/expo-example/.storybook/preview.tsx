@@ -1,16 +1,11 @@
-import React from 'react';
-import { View, StyleSheet, Appearance } from 'react-native';
+import { View, Appearance } from 'react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import { Preview } from '@storybook/react';
 
-const styles = StyleSheet.create({
-  container: { padding: 8, flex: 1 },
-});
-
-export default {
+const preview: Preview = {
   decorators: [
     (Story) => (
-      <View style={styles.container}>
+      <View style={{ padding: 8, flex: 1 }}>
         <Story />
       </View>
     ),
@@ -34,4 +29,6 @@ export default {
       ],
     },
   },
-} satisfies Preview;
+};
+
+export default preview;

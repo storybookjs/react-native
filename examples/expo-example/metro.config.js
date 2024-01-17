@@ -7,15 +7,16 @@ const defaultConfig = getDefaultConfig(__dirname);
 // const { writeRequires } = require('@storybook/react-native/scripts/loader');
 const { generate } = require('@storybook/react-native/scripts/generate');
 
-module.exports = (async () => {
-  // writeRequires({
-  //   configPath: path.resolve(__dirname, './.storybook'),
-  //   unstable_useRequireContext: false,
-  // });
-  generate({
-    configPath: path.resolve(__dirname, './.storybook'),
-  });
+generate({
+  configPath: path.resolve(__dirname, './.storybook'),
+});
 
+// writeRequires({
+//   configPath: path.resolve(__dirname, './.storybook'),
+//   unstable_useRequireContext: false,
+// });
+
+module.exports = (async () => {
   return mergeConfig(defaultConfig, {
     resolver: {
       // unstable_enablePackageExports: true,
