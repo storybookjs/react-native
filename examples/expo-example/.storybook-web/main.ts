@@ -33,14 +33,6 @@ const config = {
     port: 7007,
   },
 
-  webpackFinal: async (config, options) => {
-    config.module.rules = config.module.rules.filter(
-      // @ts-ignore
-      (rule) => !rule?.use?.some?.((u) => String(u?.loader)?.includes?.('export-order-loader'))
-    );
-    return config;
-  },
-
   docs: {
     autodocs: 'tag',
   },

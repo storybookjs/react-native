@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "@storybook/addon-knobs": "^7.0.2",
-    "@storybook/addons": "^7.6.8",
-    "@storybook/core-events": "^7.6.8",
-    "@storybook/manager-api": "^7.6.8",
+    "@storybook/addons": "^7.6.9",
+    "@storybook/core-events": "^7.6.9",
+    "@storybook/manager-api": "^7.6.9",
     "@storybook/react-native-theming": "^7.6.8-alpha.0",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
