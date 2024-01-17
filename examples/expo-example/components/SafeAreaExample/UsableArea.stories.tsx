@@ -1,13 +1,13 @@
 import React from 'react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react-native';
 import { View, StyleSheet, Text } from 'react-native';
 
-const UsableAreaMeta: ComponentMeta<any> = {
+const UsableAreaMeta: Meta<any> = {
   title: 'SafeAreaExamples/Usable Area',
 };
 export default UsableAreaMeta;
 
-type UsableAreaStory = ComponentStory<any>;
+type UsableAreaStory = StoryObj<any>;
 
 function UsableAreaContent() {
   return (

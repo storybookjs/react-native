@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
+import type { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { Multiply } from './Number';
 
@@ -8,16 +8,16 @@ export default {
     return <Multiply {...args} />;
   },
   component: Multiply,
-} as ComponentMeta<typeof Multiply>;
+} as Meta<typeof Multiply>;
 
-export const Basic: ComponentStoryObj<typeof Multiply> = {
+export const Basic: StoryObj<typeof Multiply> = {
   args: {
     first: 5,
     second: 3,
   },
 };
 
-export const Range: ComponentStoryObj<typeof Multiply> = {
+export const Range: StoryObj<typeof Multiply> = {
   args: {
     first: 6,
     second: 7,

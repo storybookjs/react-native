@@ -2,10 +2,10 @@ import React, { useMemo } from 'react';
 import type { StoryContext } from '@storybook/csf';
 import { atom, useAtom, useAtomValue, useSetAtom, getDefaultStore } from 'jotai';
 
-import type { ReactNativeFramework } from './types/types-6.0';
+import type { ReactNativeRenderer } from './types/public-types';
 import type { StoryIndexEntry } from '@storybook/types';
 
-const storyContextAtom = atom(null as StoryContext<ReactNativeFramework> | null);
+const storyContextAtom = atom(null as StoryContext<ReactNativeRenderer> | null);
 
 /**
  * Hook that returns a function to set the current story context.

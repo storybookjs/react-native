@@ -1,10 +1,9 @@
-import React from 'react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react-native';
 import { Radio } from './Radio';
 
 const radio_stations = ['104.8MHz', '909 kHz', '90FM'];
 
-const RadioMeta: ComponentMeta<typeof Radio> = {
+const RadioMeta: Meta<typeof Radio> = {
   title: 'ControlExamples/Radio control',
   component: Radio,
   args: {
@@ -20,6 +19,6 @@ const RadioMeta: ComponentMeta<typeof Radio> = {
 
 export default RadioMeta;
 
-type RadioStory = ComponentStory<typeof Radio>;
+type RadioStory = StoryObj<typeof Radio>;
 
-export const Basic: RadioStory = (args) => <Radio {...args} />;
+export const Basic: RadioStory = {};

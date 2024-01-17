@@ -1,10 +1,9 @@
-import React from 'react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react-native';
 import { DateString } from './Date';
 
 const date = new Date(1983, 1, 25);
 
-const DateMeta: ComponentMeta<typeof DateString> = {
+const DateMeta: Meta<typeof DateString> = {
   title: 'ControlExamples/Date',
   component: DateString,
   args: { date: date },
@@ -13,6 +12,6 @@ const DateMeta: ComponentMeta<typeof DateString> = {
 
 export default DateMeta;
 
-type DateStory = ComponentStory<typeof DateString>;
+type DateStory = StoryObj<typeof DateString>;
 
-export const Basic: DateStory = (args) => <DateString {...args} />;
+export const Basic: DateStory = {};

@@ -1,10 +1,10 @@
 import React from 'react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react-native';
 import { AButton } from './AButton';
 import { ScrollView } from 'react-native';
 
-const SafeAreaOutsideMeta: ComponentMeta<typeof AButton> = {
-  title: 'SafeAreaExamples/SafeArea Outside',
+const OutsideSafeAreaMeta: Meta<typeof AButton> = {
+  title: 'SafeAreaExamples/Outside SafeArea',
   component: AButton,
   parameters: { noSafeArea: true },
   argTypes: {
@@ -14,47 +14,51 @@ const SafeAreaOutsideMeta: ComponentMeta<typeof AButton> = {
     text: 'Outside the safe area!',
   },
 };
-export default SafeAreaOutsideMeta;
+export default OutsideSafeAreaMeta;
 
-type SafeAreaOutsideStory = ComponentStory<typeof AButton>;
+type OutsideSafeAreaStory = StoryObj<typeof AButton>;
 
-export const Basic: SafeAreaOutsideStory = (args) => (
-  <>
-    <AButton {...args} />
-    <AButton {...args} />
-  </>
-);
+export const Basic: OutsideSafeAreaStory = {
+  render: (args) => (
+    <>
+      <AButton {...args} />
+      <AButton {...args} />
+    </>
+  ),
+};
 
-export const ListBasic: SafeAreaOutsideStory = (args) => (
-  <ScrollView>
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} text="Press the bottom right square button to hide the navbar" />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-  </ScrollView>
-);
+export const ListBasic: OutsideSafeAreaStory = {
+  render: (args) => (
+    <ScrollView>
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} text="Press the bottom right square button to hide the navbar" />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+    </ScrollView>
+  ),
+};

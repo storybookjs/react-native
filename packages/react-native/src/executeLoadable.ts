@@ -1,6 +1,8 @@
 import { logger } from '@storybook/client-logger';
 import { ModuleExports, Path } from '@storybook/types';
-import { Loadable, LoaderFunction, RequireContext } from './types/types';
+import { Loadable, RequireContext } from './types/public-types';
+
+type LoaderFunction = () => void | any[];
 
 declare global {
   var lastExportsMap: Map<Path, ModuleExports>;

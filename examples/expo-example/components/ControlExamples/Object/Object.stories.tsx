@@ -1,8 +1,7 @@
-import React from 'react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react-native';
 import { Movie } from './Object';
 
-const ObjectMeta: ComponentMeta<typeof Movie> = {
+const ObjectMeta: Meta<typeof Movie> = {
   title: 'ControlExamples/Object control',
   component: Movie,
   args: {
@@ -16,6 +15,6 @@ const ObjectMeta: ComponentMeta<typeof Movie> = {
 
 export default ObjectMeta;
 
-type ObjectStory = ComponentStory<typeof Movie>;
+type ObjectStory = StoryObj<typeof Movie>;
 
-export const Basic: ObjectStory = (args) => <Movie {...args} />;
+export const Basic: ObjectStory = {};

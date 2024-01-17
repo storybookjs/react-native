@@ -6148,6 +6148,7 @@ __metadata:
     react-test-renderer: 18.2.0
     ts-node: ^10.9.1
     tsup: ^7.2.0
+    type-fest: ~2.19
     typescript: ^5.3.3
     util: ^0.12.4
   peerDependencies:

@@ -1,10 +1,10 @@
 import React from 'react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react-native';
 import { SelectExample } from './Select';
 
 const arrows = { ArrowUp: '⬆', ArrowDown: '⬇', ArrowLeft: '⬅️', ArrowRight: '➡️' };
 
-const SelectExampleMeta: ComponentMeta<typeof SelectExample> = {
+const SelectExampleMeta: Meta<typeof SelectExample> = {
   title: 'ControlExamples/Select control',
   component: SelectExample,
   argTypes: {
@@ -22,7 +22,7 @@ const SelectExampleMeta: ComponentMeta<typeof SelectExample> = {
 
 export default SelectExampleMeta;
 
-type SelectExampleStory = ComponentStory<typeof SelectExample>;
+type SelectExampleStory = StoryObj<typeof SelectExample>;
 
 export const Basic: SelectExampleStory = (args) => <SelectExample {...args} />;
 

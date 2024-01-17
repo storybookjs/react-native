@@ -1,7 +1,7 @@
-import type { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
+import type { Meta, StoryObj } from '@storybook/react-native';
 import { ActionButton } from './Actions';
 
-const ActionButtonMeta: ComponentMeta<typeof ActionButton> = {
+const ActionButtonMeta: Meta<typeof ActionButton> = {
   title: 'ActionButton',
   component: ActionButton,
   argTypes: {
@@ -13,7 +13,7 @@ const ActionButtonMeta: ComponentMeta<typeof ActionButton> = {
 };
 export default ActionButtonMeta;
 
-type ActionButtonStory = ComponentStoryObj<typeof ActionButton>;
+type ActionButtonStory = StoryObj<typeof ActionButton>;
 
 export const Basic: ActionButtonStory = {};
 

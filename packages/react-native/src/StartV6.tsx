@@ -6,15 +6,15 @@ import { addons } from '@storybook/manager-api';
 import { ClientApi, setGlobalRender } from '@storybook/preview-api';
 import { PreviewWithSelection } from '@storybook/preview-web';
 import { RenderContext } from '@storybook/types';
-import type { ReactNativeFramework } from './types/types-6.0';
 import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
+import type { ReactNativeRenderer } from './types/public-types';
 
 global.FEATURES = {
   storyStoreV7: false,
 };
 
-export const render: ArgsStoryFn<ReactNativeFramework> = (args, context) => {
+export const render: ArgsStoryFn<ReactNativeRenderer> = (args, context) => {
   const { id, component: Component } = context;
 
   if (!Component) {
@@ -34,7 +34,7 @@ export function start() {
 
   channel.emit(Events.CHANNEL_CREATED);
 
-  const clientApi = global?.__STORYBOOK_CLIENT_API__ || new ClientApi<ReactNativeFramework>();
+  const clientApi = global?.__STORYBOOK_CLIENT_API__ || new ClientApi<ReactNativeRenderer>();
 
   const previewView = {
     prepareForStory: () => {
@@ -63,7 +63,7 @@ export function start() {
 
   const preview =
     global?.__STORYBOOK_PREVIEW__ ||
-    new PreviewWithSelection<ReactNativeFramework>(urlStore, previewView);
+    new PreviewWithSelection<ReactNativeRenderer>(urlStore, previewView);
 
   clientApi.storyStore = preview.storyStore;
 
@@ -115,7 +115,7 @@ export function start() {
 
         return {
           ...clientApi.facade.projectAnnotations,
-          renderToCanvas: (context: RenderContext<ReactNativeFramework>) => {
+          renderToCanvas: (context: RenderContext<ReactNativeRenderer>) => {
             view._setStory(context.storyContext);
           },
         };

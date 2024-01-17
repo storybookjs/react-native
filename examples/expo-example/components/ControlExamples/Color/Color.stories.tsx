@@ -1,8 +1,7 @@
-import React from 'react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react-native';
 import { Color } from './Color';
 
-const ColorMeta: ComponentMeta<typeof Color> = {
+const ColorMeta: Meta<typeof Color> = {
   title: 'ControlExamples/Color control',
   parameters: { notes: '- test' },
   argTypes: {
@@ -14,9 +13,10 @@ const ColorMeta: ComponentMeta<typeof Color> = {
 
 export default ColorMeta;
 
-type ColorStory = ComponentStory<typeof Color>;
+type ColorStory = StoryObj<typeof Color>;
 
-export const ColorExample: ColorStory = (args) => <Color {...args} />;
-ColorExample.args = {
-  color: '#a819b9',
+export const ColorExample: ColorStory = {
+  args: {
+    color: '#a819b9',
+  },
 };

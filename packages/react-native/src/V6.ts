@@ -3,13 +3,13 @@ import type { Addon_StoryApi } from '@storybook/types';
 import { ReactNode } from 'react';
 import { start } from './StartV6';
 
-import type { ReactNativeFramework } from './types/types-6.0';
+import type { ReactNativeRenderer } from './types/public-types';
 
 const { clientApi, configure, view } = start();
 
 export { configure };
 
-type C = ClientApi<ReactNativeFramework>;
+type C = ClientApi<ReactNativeRenderer>;
 
 const rawStoriesOf: C['storiesOf'] = clientApi.storiesOf.bind(clientApi);
 
@@ -32,7 +32,7 @@ export const storiesOf = (kind: string, m: any) => {
 
 export const getStorybookUI = view.getStorybookUI;
 
-export * from './types/types-6.0';
+export * from './types/public-types';
 
 // @storybook/addon-storyshots v6 needs global.__STORYBOOK_STORY_STORE__.initializationPromise
 (global as any).__STORYBOOK_STORY_STORE__ = {
