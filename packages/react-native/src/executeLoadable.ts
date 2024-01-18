@@ -1,6 +1,6 @@
 import { logger } from '@storybook/client-logger';
 import { ModuleExports, Path } from '@storybook/types';
-import { Loadable, RequireContext } from './types/public-types';
+import { Loadable, RequireContext } from './types';
 
 type LoaderFunction = () => void | any[];
 

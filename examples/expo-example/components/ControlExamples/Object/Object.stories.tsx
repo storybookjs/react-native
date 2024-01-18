@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { Movie } from './Object';
 
 const ObjectMeta: Meta<typeof Movie> = {

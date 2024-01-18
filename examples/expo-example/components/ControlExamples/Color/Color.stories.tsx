@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { Color } from './Color';
 
 const ColorMeta: Meta<typeof Color> = {

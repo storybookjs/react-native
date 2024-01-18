@@ -8,7 +8,7 @@ import type { StoryIndex } from '@storybook/types';
 import { useEffect, useMemo, useReducer } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { syncExternalUI, useSetStoryContext } from './hooks';
-import type { ReactNativeRenderer } from './types/public-types';
+import type { ReactRenderer } from '@storybook/react';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 // TODO check this
@@ -71,15 +71,15 @@ export type Params = {
 
 export class View {
   _storyIndex: StoryIndex;
-  _setStory: (story: StoryContext<ReactNativeRenderer>) => void = () => {};
+  _setStory: (story: StoryContext<ReactRenderer>) => void = () => {};
   _forceRerender: () => void;
   _ready: boolean = false;
-  _preview: PreviewWithSelection<ReactNativeRenderer>;
+  _preview: PreviewWithSelection<ReactRenderer>;
   _asyncStorageStoryId: string;
   _webUrl: string;
   _channel: Channel;
 
-  constructor(preview: PreviewWithSelection<ReactNativeRenderer>, channel: Channel) {
+  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel) {
     this._preview = preview;
     this._channel = channel;
   }
@@ -194,7 +194,7 @@ export class View {
       );
 
       useEffect(() => {
-        self._setStory = (newStory: StoryContext<ReactNativeRenderer>) => {
+        self._setStory = (newStory: StoryContext<ReactRenderer>) => {
           setContext(newStory);
 
           if (shouldPersistSelection) {

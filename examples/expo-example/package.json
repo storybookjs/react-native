@@ -15,7 +15,8 @@
     "storybook-watcher": "sb-rn-watcher --config-path=./.storybook",
     "disabled-example": "expo start",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.21.0",

@@ -5,7 +5,7 @@ import { addons as managerAddons } from '@storybook/manager-api';
 import { PreviewWithSelection } from '@storybook/preview-api/dist/preview-web';
 import { createBrowserChannel } from '@storybook/channels';
 import { View } from './View';
-import type { ReactNativeRenderer } from './types/public-types';
+import type { ReactRenderer } from '@storybook/react';
 import type { NormalizedStoriesSpecifier } from '@storybook/types';
 
 export function prepareStories({
@@ -103,7 +103,7 @@ export function start({
     prepareForStory: () => {
       return <></>;
     },
-    prepareForDocs: () => {},
+    prepareForDocs: (): any => {},
     showErrorDisplay: (e) => {
       console.log(e);
     },
@@ -125,7 +125,7 @@ export function start({
     },
   };
 
-  const preview = new PreviewWithSelection<ReactNativeRenderer>(urlStore, previewView);
+  const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
 
   const view = new View(preview, channel);
 
@@ -136,7 +136,7 @@ export function start({
   }
 
   const getProjectAnnotations = async () =>
-    composeConfigs<ReactNativeRenderer>([
+    composeConfigs<ReactRenderer>([
       {
         renderToCanvas: (context) => {
           view._setStory(context.storyContext);

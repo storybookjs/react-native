@@ -1,6 +1,6 @@
 import { parameters as reactParameters } from '@storybook/react/dist/entry-preview-docs';
 import { enhanceArgTypes } from '@storybook/docs-tools';
-import { type Preview } from './types/public-types';
+import { type Preview } from '@storybook/react';
 
 export default {
   argTypesEnhancers: [enhanceArgTypes],

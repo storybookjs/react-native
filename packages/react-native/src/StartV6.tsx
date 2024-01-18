@@ -8,13 +8,13 @@ import { PreviewWithSelection } from '@storybook/preview-web';
 import { RenderContext } from '@storybook/types';
 import { View } from './View';
 import { executeLoadableForChanges } from './executeLoadable';
-import type { ReactNativeRenderer } from './types/public-types';
+import type { ReactRenderer } from '@storybook/react';
 
 global.FEATURES = {
   storyStoreV7: false,
 };
 
-export const render: ArgsStoryFn<ReactNativeRenderer> = (args, context) => {
+export const render: ArgsStoryFn<ReactRenderer> = (args, context) => {
   const { id, component: Component } = context;
 
   if (!Component) {
@@ -34,13 +34,13 @@ export function start() {
 
   channel.emit(Events.CHANNEL_CREATED);
 
-  const clientApi = global?.__STORYBOOK_CLIENT_API__ || new ClientApi<ReactNativeRenderer>();
+  const clientApi = global?.__STORYBOOK_CLIENT_API__ || new ClientApi<ReactRenderer>();
 
   const previewView = {
     prepareForStory: () => {
       return <></>;
     },
-    prepareForDocs: () => {},
+    prepareForDocs: (): any => {},
     showErrorDisplay: () => {},
     showDocs: () => {},
     showMain: () => {},
@@ -62,8 +62,7 @@ export function start() {
   };
 
   const preview =
-    global?.__STORYBOOK_PREVIEW__ ||
-    new PreviewWithSelection<ReactNativeRenderer>(urlStore, previewView);
+    global?.__STORYBOOK_PREVIEW__ || new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
 
   clientApi.storyStore = preview.storyStore;
 
@@ -115,7 +114,7 @@ export function start() {
 
         return {
           ...clientApi.facade.projectAnnotations,
-          renderToCanvas: (context: RenderContext<ReactNativeRenderer>) => {
+          renderToCanvas: (context: RenderContext<ReactRenderer>) => {
             view._setStory(context.storyContext);
           },
         };

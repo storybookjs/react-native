@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react-native';
+import { Meta, StoryObj } from '@storybook/react';
 import { View, ScrollView, Text, TextInput, TouchableOpacity } from 'react-native';
 
 export default {

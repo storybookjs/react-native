@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-native';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Switch } from './Boolean';
 
 const BooleanExample: Meta<typeof Switch> = {

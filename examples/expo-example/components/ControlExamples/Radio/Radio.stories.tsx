@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { Radio } from './Radio';
 
 const radio_stations = ['104.8MHz', '909 kHz', '90FM'];

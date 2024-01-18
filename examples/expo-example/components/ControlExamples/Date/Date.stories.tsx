@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { DateString } from './Date';
 
 const date = new Date(1983, 1, 25);

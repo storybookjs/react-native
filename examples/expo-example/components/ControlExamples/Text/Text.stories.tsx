@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { Heading } from './Text';
 
 const TextMeta: Meta<typeof Heading> = {

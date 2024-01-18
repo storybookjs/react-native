@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj, Meta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import { Text, StyleSheet } from 'react-native';
 

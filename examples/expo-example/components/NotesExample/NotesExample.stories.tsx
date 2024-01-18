@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj, Meta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { View, StyleSheet, Text } from 'react-native';
 
 const NotesExampleMeta: Meta<any> = {
