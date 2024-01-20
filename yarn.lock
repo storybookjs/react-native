@@ -5606,7 +5606,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-native-server@^6.5.7, @storybook/react-native-server@workspace:packages/react-native-server":
+"@storybook/react-native-server@^6.5.8, @storybook/react-native-server@workspace:packages/react-native-server":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-server@workspace:packages/react-native-server"
   dependencies:
@@ -11532,7 +11532,7 @@ __metadata:
     "@storybook/manager-webpack5": ^6.5.16
     "@storybook/react": ^6.5.14
     "@storybook/react-native": ^6.5.6
-    "@storybook/react-native-server": ^6.5.7
+    "@storybook/react-native-server": ^6.5.8
     "@types/react": ~18.2.14
     babel-plugin-react-docgen-typescript: ^1.5.1
     expo: ^49.0.3
