@@ -25,6 +25,7 @@ function getCli() {
     .option('--ssl-key <key>', 'Provide an SSL key. (Required with --https)')
     .option('--smoke-test', 'Exit after successful start')
     .option('--ci', "CI mode (skip interactive prompts, don't open browser)")
+    .option('--open', "Whether to open Storybook automatically in the browser")
     .option('--quiet', 'Suppress verbose build output');
 
   program.parse();
