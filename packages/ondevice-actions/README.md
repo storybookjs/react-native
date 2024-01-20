@@ -2,11 +2,10 @@
 
 Storybook Actions Addon allows you to log events/actions inside stories in [Storybook](https://storybook.js.org).
 
-
 ## Installation
 
 ```sh
-yarn add -D @storybook/addon-ondevice-actions @storybook/addon-actions
+yarn add -D @storybook/addon-ondevice-actions
 ```
 
 ## Configuration

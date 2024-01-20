@@ -1,4 +1,4 @@
-# Setup for v6 React Native Storybook
+# Setup for v7 React Native Storybook
 
 Before getting into the guide consider using a template for a simpler setup process.
 
@@ -15,11 +15,6 @@ For react native cli you can use this [template](https://github.com/dannyhw/reac
 ```sh
 npx react-native init MyApp --template react-native-template-storybook
 ```
-
-You can also choose to use a bash script if you prefer, however it is more involved.
-
-- [expo setup script](https://gist.github.com/dannyhw/92b3ff0d6ccaead9df2820a507154b87)
-- [rn-cli setup script](https://gist.github.com/dannyhw/9b84973dcc6ff4fa2e86e32d571d294e)
 
 # Manual setup
 
@@ -51,7 +46,7 @@ cd ios; pod install; cd ..;
 
 ## .storybook
 
-Create a folder called `.storybook` with files: `main.js`, `preview.js`, `Storybook.tsx`
+Create a folder called `.storybook` with files: `main.js`, `preview.js`, `index.tsx`
 
 You can use this one-liner to quickly create those files:
 
@@ -71,8 +66,12 @@ module.exports = {
 ### .storybook/preview.js
 
 ```js
-export const decorators = [];
-export const parameters = {};
+const preview = {
+  parameters: {},
+  decorators: [],
+};
+
+export default preview;
 ```
 
 ## package.json

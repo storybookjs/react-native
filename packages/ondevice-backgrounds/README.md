@@ -5,7 +5,7 @@ Storybook Backgrounds Addon for React Native can be used to change background co
 ## Installation
 
 ```sh
-yarn add -D @storybook/addon-ondevice-backgrounds @storybook/addons
+yarn add -D @storybook/addon-ondevice-backgrounds
 ```
 
 ## Configuration
