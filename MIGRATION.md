@@ -29,12 +29,18 @@ Regenerate your `storybook.requires.js` file by running `yarn storybook-generate
 
 Update `.storybook/index.js` to use the new `getStorybookUI` function exported in `storybook.requires.js`.
 
+You should also now pass a storage object to the `getStorybookUI` function. This is used to persist the selected story between reloads.
+
 ```js
 // .storybook/index.js
 import { view } from './storybook.requires';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const StorybookUIRoot = view.getStorybookUI({
-  // options go here
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
 });
 
 export default StorybookUI;

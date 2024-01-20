@@ -1,6 +1,4 @@
-import type { StorybookConfig } from '@storybook/core-common';
-
-const config: StorybookConfig = {
+const config = {
   stories: ['./FakeStory.stories.tsx'],
   addons: [
     '@storybook/addon-ondevice-notes',
