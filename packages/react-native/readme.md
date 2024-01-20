@@ -256,6 +256,11 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
         -- Disable KeyboardAvoidingView wrapping Storybook's view
     keyboardAvoidingViewVerticalOffset: Number (0)
         -- With shouldDisableKeyboardAvoidingView=true, this will set the keyboardverticaloffset (https://facebook.github.io/react-native/docs/keyboardavoidingview#keyboardverticaloffset) value for KeyboardAvoidingView wrapping Storybook's view
+    storage: Object (undefined)
+        -- {getItem: (key: string) => Promise<string | null>;setItem: (key: string, value: string) => Promise<void>;}
+        -- Custom storage to be used instead of AsyncStorage
+    shouldPersistSelection: Boolean (true)
+        -- Stores last selected story in your devices storage.
 }
 ```
 

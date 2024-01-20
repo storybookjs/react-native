@@ -1,27 +1,26 @@
-import { useEffect, useMemo, useReducer } from 'react';
 import { StoryContext, toId } from '@storybook/csf';
-import { addons as previewAddons } from '@storybook/preview-api';
 import { addons as managerAddons } from '@storybook/manager-api';
+import { addons as previewAddons } from '@storybook/preview-api';
 import type { PreviewWithSelection } from '@storybook/preview-web';
+import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
 import type { StoryIndex } from '@storybook/types';
+import { useEffect, useMemo, useReducer } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { syncExternalUI, useSetStoryContext } from './hooks';
-import type { ReactRenderer } from '@storybook/react';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
+import { syncExternalUI, useSetStoryContext } from './hooks';
 // TODO check this
-import { createWebSocketChannel } from '@storybook/channels';
+import { createWebSocketChannel, type Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
+import dedent from 'dedent';
 import deepmerge from 'deepmerge';
 import { useColorScheme } from 'react-native';
 import getHost from './rn-host-detect';
-// import { global } from '@storybook/global';
-import { type Channel } from '@storybook/channels';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
-interface AsyncStorage {
+interface Storage {
   getItem: (key: string) => Promise<string | null>;
   setItem: (key: string, value: string) => Promise<void>;
 }
@@ -66,7 +65,7 @@ export type Params = {
   shouldDisableKeyboardAvoidingView?: boolean;
   keyboardAvoidingViewVerticalOffset?: number;
   theme: DeepPartial<Theme>;
-  storage?: AsyncStorage;
+  storage?: Storage;
 };
 
 export class View {
@@ -77,7 +76,7 @@ export class View {
   _preview: PreviewWithSelection<ReactRenderer>;
   _asyncStorageStoryId: string;
   _webUrl: string;
-  _storage: AsyncStorage;
+  _storage: Storage;
   _channel: Channel;
 
   constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel) {
@@ -205,7 +204,18 @@ export class View {
         self._setStory = (newStory: StoryContext<ReactRenderer>) => {
           setContext(newStory);
 
-          if (shouldPersistSelection && this._storage != null) {
+          if (shouldPersistSelection && !storage) {
+            console.warn(dedent`Please set storage in getStorybookUI like this:
+              const StorybookUIRoot = view.getStorybookUI({
+                storage: {
+                  getItem: AsyncStorage.getItem,
+                  setItem: AsyncStorage.setItem,
+                },
+              });
+            `);
+          }
+
+          if (shouldPersistSelection && !!this._storage) {
             this._storage.setItem(STORAGE_KEY, newStory.id).catch((e) => {
               console.warn('storybook-log: error writing to async storage', e);
             });
