@@ -190,6 +190,16 @@ test('story index to grouped list', () => {
   expect(getNestedStories(storyIndex)).toEqual(output);
 });
 
+test('empty stories', () => {
+  expect(getNestedStories({ entries: {}, v: 4 })).toEqual([]);
+
+  expect(getNestedStories({ entries: null, v: 4 })).toEqual([]);
+
+  expect(getNestedStories({ entries: undefined, v: 4 })).toEqual([]);
+
+  expect(getNestedStories(undefined)).toEqual([]);
+});
+
 test('filter nested stories', () => {
   expect(filterNestedStories(output, 'bubble')).toEqual([
     {
