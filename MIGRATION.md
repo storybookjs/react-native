@@ -1,19 +1,95 @@
 # Migration
 
 - [Migration](#migration)
+  - [From version 6.5.x to 7.6.x](#from-version-65x-to-76x)
+    - [Update `.storybook/index.js`](#update-storybookindexjs)
+    - [Update types to be imported from `@storybook/react`](#update-types-to-be-imported-from-storybookreact)
+    - [doctools](#doctools)
   - [From version 5.3.x to 6.5.x](#from-version-53x-to-65x)
     - [Additional dependencies](#additional-dependencies)
       - [Controls (the new knobs)](#controls-the-new-knobs)
       - [Actions](#actions)
-    - [.storybook Folder](#storybook-folder)
-    - [Update your index.js file](#update-your-indexjs-file)
-    - [Add a main.js and preview.js](#add-a-mainjs-and-previewjs)
+    - [`.storybook` folder](#storybook-folder)
+    - [Update your `index.js` file](#update-your-indexjs-file)
+    - [Add a `main.js` and `preview.js`](#add-a-mainjs-and-previewjs)
     - [Scripts in package.json](#scripts-in-packagejson)
     - [Update your metro config](#update-your-metro-config)
     - [Convert your stories to CSF](#convert-your-stories-to-csf)
     - [Theming](#theming)
     - [Test ids for tabs](#test-ids-for-tabs)
     - [The server](#the-server)
+
+## From version 6.5.x to 7.6.x
+
+Update all storybook dependencies to 7.6.10 or newer.
+
+Regenerate your `storybook.requires.js` file by running `yarn storybook-generate`.
+
+### Update `.storybook/index.js`
+
+Update `.storybook/index.js` to use the new `getStorybookUI` function exported in `storybook.requires.js`.
+
+```js
+// .storybook/index.js
+import { view } from './storybook.requires';
+
+const StorybookUIRoot = view.getStorybookUI({
+  // options go here
+});
+
+export default StorybookUI;
+```
+
+Update your `metro.config.js` to enable the `unstable_useRequireContext` option and you can now remove the sbmodern resolver.
+
+You can also add here the generate function to automatically update the `storybook.requires.js` file when you start metro.
+You only need to regenerate this file now when main.js updates since requireContext allows us to use dynamic imports.
+
+```js
+const path = require('path');
+const { generate } = require('@storybook/react-native/scripts/generate');
+
+generate({
+  // update ./.storybook to your storybook folder
+  configPath: path.resolve(__dirname, './.storybook'),
+});
+
+module.exports = {
+  /* existing config */
+  transformer: {
+    unstable_allowRequireContext: true,
+  },
+};
+```
+
+You can now also remove anything from package.json scripts which would run generate before running storybook.
+
+### Update types to be imported from `@storybook/react`
+
+We've removed the types from `@storybook/react-native` and now you should import them from `@storybook/react`. This is to remove duplication and increase compatibility with core storybook libraries.
+
+```diff
+-import { StoryObj, Meta } from '@storybook/react-native';
++import { StoryObj, Meta } from '@storybook/react';
+```
+
+### doctools
+
+If you are manually adding docs tools to do auto args you can now remove this code since its automatically added now.
+To make it work you still need babel-plugin-react-docgen-typescript though.
+
+```diff
+-import { extractArgTypes } from "@storybook/react/dist/modern/client/docs/extractArgTypes";
+-import { addArgTypesEnhancer, addParameters } from "@storybook/react-native";
+-import { enhanceArgTypes } from "@storybook/docs-tools";
+
+-addArgTypesEnhancer(enhanceArgTypes);
+-addParameters({
+-  docs: {
+-    extractArgTypes,
+-  },
+-});
+```
 
 ## From version 5.3.x to 6.5.x
 
@@ -62,7 +138,7 @@ const StorybookUIRoot = getStorybookUI({
   // options go here
 });
 
-export default StorybookUI
+export default StorybookUI;
 ```
 
 ### Add a `main.js` and `preview.js`
@@ -76,9 +152,7 @@ In the addons field list the addons you want to use, these must be compatible wi
 ```jsx
 // .storybook/main.js
 module.exports = {
-  stories: [
-    '../components/**/*.stories.?(ts|tsx|js|jsx)',
-  ],
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   addons: [
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-actions',
@@ -96,7 +170,7 @@ import { View } from 'react-native';
 export const decorators = [
   // Using a decorator to apply padding for every story
   (StoryFn) => (
-    <View style={{flex:1, padding:8}}>
+    <View style={{ flex: 1, padding: 8 }}>
       <StoryFn />
     </View>
   ),
@@ -117,7 +191,7 @@ You can add these scripts to your package.json file.
 {
   "scripts": {
     "storybook-generate": "sb-rn-get-stories",
-    "storybook-watch": "sb-rn-watcher",
+    "storybook-watch": "sb-rn-watcher"
   }
 }
 ```
@@ -261,9 +335,7 @@ Now to configure the server you'll add a `.storybook_server` folder with a `main
 
 ```jsx
 module.exports = {
-  stories: [
-    '../components/**/*.stories.?(ts|tsx|js|jsx)',
-  ],
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   env: () => ({}),
   addons: ['@storybook/addon-essentials'],
 };
