@@ -51,7 +51,6 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@storybook/channel-websocket": "^7.6.10",
     "@storybook/channels": "^7.6.10",
     "@storybook/client-logger": "^7.6.10",
     "@storybook/core-client": "^7.6.10",

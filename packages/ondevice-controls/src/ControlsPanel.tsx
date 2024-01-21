@@ -1,4 +1,3 @@
-import { API } from '@storybook/api';
 import { Channel } from '@storybook/channels';
 import type { Args, StoryContextForLoaders } from '@storybook/csf';
 import { styled } from '@storybook/react-native-theming';
@@ -7,6 +6,7 @@ import React, { ComponentType, ReactElement, useCallback, useState } from 'react
 import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';
 import { useArgs } from './hooks';
+import type { API } from '@storybook/manager-api';
 
 export interface Selection {
   storyId: string;

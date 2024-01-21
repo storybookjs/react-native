@@ -29,7 +29,6 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/api": "^7.6.10",
     "@storybook/client-logger": "^7.6.10",
     "@storybook/core-events": "^7.6.10",
     "@storybook/manager-api": "^7.6.10",

@@ -5427,7 +5427,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds"
   dependencies:
-    "@storybook/api": ^7.6.10
     "@storybook/manager-api": ^7.6.10
     "@storybook/preview-api": ^7.6.10
     "@storybook/react-native-theming": ^7.6.10-alpha.1
@@ -5489,7 +5488,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-notes@workspace:packages/ondevice-notes"
   dependencies:
-    "@storybook/api": ^7.6.10
     "@storybook/client-logger": ^7.6.10
     "@storybook/core-events": ^7.6.10
     "@storybook/manager-api": ^7.6.10
@@ -5568,16 +5566,6 @@ __metadata:
     "@storybook/preview-api": 7.6.10
     "@storybook/types": 7.6.10
   checksum: 68aff5a2510bb1f5f4bc9e5ed872c391e11f039c604d7916062ec3450c5c8f0566b6bf782c983b54f420d6d9adff849cd6382eaeefa5e92d9326294e0f8bad32
-  languageName: node
-  linkType: hard
-
-"@storybook/api@npm:^7.6.10":
-  version: 7.6.10
-  resolution: "@storybook/api@npm:7.6.10"
-  dependencies:
-    "@storybook/client-logger": 7.6.10
-    "@storybook/manager-api": 7.6.10
-  checksum: d0d7c9e490b8d961c1c7926222d4ca011c6e8baadc97f8cc35cdd3b30dab9387b2f4803934a79bf5ccc39020bfaccf71c3a58f0858a1737285a20806123cd9b3
   languageName: node
   linkType: hard
 
@@ -5685,16 +5673,6 @@ __metadata:
     typescript:
       optional: true
   checksum: 3e6c175cb9fc3105c840235b52bdd54946cf085254638716b1ae4e1db7ae6e1300ca2b6fd68f714e63c7e7e206bcfea490b0e4ea84c3a717d74a3dd9c8d28909
-  languageName: node
-  linkType: hard
-
-"@storybook/channel-websocket@npm:^7.6.10":
-  version: 7.6.10
-  resolution: "@storybook/channel-websocket@npm:7.6.10"
-  dependencies:
-    "@storybook/channels": 7.6.10
-    "@storybook/client-logger": 7.6.10
-  checksum: fb797b62aafcaa81a6484e1620f2b6cc1db61d30d229ff0ab828c40bbd812e9bb7f7217e66065acdff8ec57433fa5f56ddb18f89d13d270e1f1502eb7644b363
   languageName: node
   linkType: hard
 
@@ -6176,7 +6154,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native@workspace:packages/react-native"
   dependencies:
-    "@storybook/channel-websocket": ^7.6.10
     "@storybook/channels": ^7.6.10
     "@storybook/client-logger": ^7.6.10
     "@storybook/core-client": ^7.6.10
