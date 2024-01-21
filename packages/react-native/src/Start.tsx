@@ -2,7 +2,7 @@ import { toId, storyNameFromExport } from '@storybook/csf';
 import { addons as previewAddons, composeConfigs, userOrAutoTitle } from '@storybook/preview-api';
 import { addons as managerAddons } from '@storybook/manager-api';
 // NOTE this really should be exported from preview-api, but it's not
-import { PreviewWithSelection } from '@storybook/preview-api/dist/preview-web';
+import { PreviewWithSelection } from '@storybook/preview-api';
 import { createBrowserChannel } from '@storybook/channels';
 import { View } from './View';
 import type { ReactRenderer } from '@storybook/react';
@@ -116,7 +116,7 @@ export function start({
     showStoryDuringRender: () => {},
   };
 
-  const urlStore = {
+  const selectionStore = {
     selection: null,
     selectionSpecifier: null,
     setQueryParams: () => {},
@@ -124,16 +124,6 @@ export function start({
       preview.selectionStore.selection = selection;
     },
   };
-
-  const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
-
-  const view = new View(preview, channel);
-
-  if (global) {
-    global.__STORYBOOK_ADDONS_CHANNEL__ = channel;
-    global.__STORYBOOK_PREVIEW__ = preview;
-    global.__STORYBOOK_STORY_STORE__ = preview.storyStore;
-  }
 
   const getProjectAnnotations = async () =>
     composeConfigs<ReactRenderer>([
@@ -156,11 +146,25 @@ export function start({
       ...annotations,
     ]);
 
-  preview.initialize({
-    importFn: async (importPath: string) => importMap[importPath],
+  // const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
+  const preview = new PreviewWithSelection<ReactRenderer>(
+    async (importPath: string) => importMap[importPath],
     getProjectAnnotations,
-    getStoryIndex: () => index as any,
-  });
+    selectionStore,
+    previewView
+  );
+
+  const view = new View(preview, channel);
+
+  if (global) {
+    global.__STORYBOOK_ADDONS_CHANNEL__ = channel;
+    global.__STORYBOOK_PREVIEW__ = preview;
+  }
+
+  preview.getStoryIndexFromServer = async () => index;
+  // preview.initializeWithStoryIndex(index).catch((e) => {
+  //   console.log('error initializing preview', e);
+  // });
 
   view._storyIndex = index;
 

@@ -26,7 +26,7 @@ const Wrapper = ({ panels, addonSelected }: Props) => {
     return (
       <Container key={id} selected={selected}>
         <ScrollView contentContainerStyle={{ padding: theme.panel.paddingHorizontal }}>
-          {panels[id].render({ active: selected, key: id })}
+          {panels[id].render({ active: selected })}
         </ScrollView>
       </Container>
     );

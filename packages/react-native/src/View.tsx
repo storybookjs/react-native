@@ -1,7 +1,7 @@
 import { StoryContext, toId } from '@storybook/csf';
 import { addons as managerAddons } from '@storybook/manager-api';
-import { addons as previewAddons } from '@storybook/preview-api';
-import type { PreviewWithSelection } from '@storybook/preview-web';
+// TODO we need preview with selection
+import { addons as previewAddons, PreviewWithSelection } from '@storybook/preview-api';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
 import type { StoryIndex } from '@storybook/types';
@@ -10,8 +10,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 import { syncExternalUI, useSetStoryContext } from './hooks';
-// TODO check this
-import { createWebSocketChannel, type Channel } from '@storybook/channels';
+import { Channel, WebsocketTransport } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
@@ -133,11 +132,17 @@ export class View {
 
     const url = `${websocketType}://${host}${port}/${query}`;
 
-    return createWebSocketChannel({
-      url,
+    const channel = new Channel({
+      transport: new WebsocketTransport({
+        url,
+        onError: (e) => {
+          console.error(`WebsocketTransport error ${e}`);
+        },
+      }),
       async: true,
-      onError: async () => {},
     });
+
+    return channel;
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
@@ -150,6 +155,7 @@ export class View {
 
     this._storage = storage;
 
+    // TODO come back to this
     const initialStory = this._getInitialStory(params);
 
     if (enableWebsockets) {
@@ -169,14 +175,17 @@ export class View {
 
     managerAddons.loadAddons({
       store: () => ({
-        fromId: (id) =>
-          this._preview.storyStore.getStoryContext(this._preview.storyStore.fromId(id)),
+        fromId: async (id) => {
+          // return this._preview.storyStore.getStoryContext(this._preview.storyStore.fromId(id));
+
+          // console.log()
+          // this._preview.store
+          // console.log('fromId', id);
+          return this._preview.loadStory({ storyId: id });
+        },
         getSelection: () => {
           return this._preview.currentSelection;
         },
-        // @ts-ignore :) FIXME
-        // _channel: this._preview.channel,
-        // global.__STORYBOOK_ADDONS_CHANNEL__,
         _channel: this._channel,
       }),
     });
