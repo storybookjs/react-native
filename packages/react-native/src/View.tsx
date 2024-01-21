@@ -153,14 +153,11 @@ export class View {
     const initialStory = this._getInitialStory(params);
 
     if (enableWebsockets) {
-      console.log('websockets enabled');
-
       const channel = this._getServerChannel(params);
       managerAddons.setChannel(channel);
       previewAddons.setChannel(channel);
       this._channel = channel;
-      // TODO: check this with someone who knows what they're doing
-      // @ts-ignore #FIXME
+      // @ts-ignore FIXME
       this._preview.channel = channel;
       this._preview.setupListeners();
       channel.emit(Events.CHANNEL_CREATED);
@@ -174,9 +171,6 @@ export class View {
         getSelection: () => {
           return this._preview.currentSelection;
         },
-        // @ts-ignore :) FIXME
-        // _channel: this._preview.channel,
-        // global.__STORYBOOK_ADDONS_CHANNEL__,
         _channel: this._channel,
       }),
     });
@@ -205,6 +199,7 @@ export class View {
           setContext(newStory);
 
           if (shouldPersistSelection && !storage) {
+            // TODO: improve this warning to link to docs
             console.warn(dedent`Please set storage in getStorybookUI like this:
               const StorybookUIRoot = view.getStorybookUI({
                 storage: {

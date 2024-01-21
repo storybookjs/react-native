@@ -46,13 +46,19 @@ const StorybookUIRoot = view.getStorybookUI({
 export default StorybookUI;
 ```
 
-Update your `metro.config.js` to enable the `unstable_useRequireContext` option and you can now remove the sbmodern resolver.
+Update your `metro.config.js` to enable the `unstable_useRequireContext` option and you can now remove the sbmodern resolver if you have it.
+
+If you are using expo and you don't have a metro config file you can create one by running `npx expo customize metro.config.js`.
 
 You can also add here the generate function to automatically update the `storybook.requires.js` file when you start metro.
+
 You only need to regenerate this file now when main.js updates since requireContext allows us to use dynamic imports.
+
+**Expo**
 
 ```js
 const path = require('path');
+const { getDefaultConfig } = require('expo/metro-config');
 const { generate } = require('@storybook/react-native/scripts/generate');
 
 generate({
@@ -60,12 +66,47 @@ generate({
   configPath: path.resolve(__dirname, './.storybook'),
 });
 
-module.exports = {
-  /* existing config */
+const defaultConfig = getDefaultConfig(__dirname);
+
+defaultConfig.transformer.unstable_allowRequireContext = true;
+
+// if you are using expo 50 or newer you can safely remove this line
+defaultConfig.resolver.sourceExts.push('mjs');
+
+module.exports = defaultConfig;
+```
+
+**React Native CLI**
+
+```js
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const path = require('path');
+
+const { generate } = require('@storybook/react-native/scripts/generate');
+
+generate({
+  // update ./.storybook to your storybook folder
+  configPath: path.resolve(__dirname, './.storybook'),
+});
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+/**
+ * Metro configuration
+ * https://facebook.github.io/metro/docs/configuration
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
+const config = {
   transformer: {
     unstable_allowRequireContext: true,
   },
+  resolver: {
+    sourceExts: [...defaultConfig.resolver.sourceExts, mjs],
+  },
 };
+
+module.exports = mergeConfig(defaultConfig, config);
 ```
 
 You can now also remove anything from package.json scripts which would run generate before running storybook.
