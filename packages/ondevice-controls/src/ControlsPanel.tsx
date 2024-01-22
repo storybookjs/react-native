@@ -1,12 +1,12 @@
+import { API } from '@storybook/manager-api';
 import { Channel } from '@storybook/channels';
 import type { Args, StoryContextForLoaders } from '@storybook/csf';
 import { styled } from '@storybook/react-native-theming';
 import type { Renderer } from '@storybook/types';
-import React, { ComponentType, ReactElement, useCallback, useEffect, useState } from 'react';
+import React, { ComponentType, ReactElement, useCallback, useState } from 'react';
 import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';
 import { useArgs } from './hooks';
-import { API } from '@storybook/manager-api';
 
 export interface Selection {
   storyId: string;
@@ -60,9 +60,7 @@ export interface ReactNativeFramework extends Renderer {
 }
 
 type ApiStore = {
-  fromId: (
-    id: any
-  ) => Promise<Omit<StoryContextForLoaders<ReactNativeFramework, Args>, 'viewMode'>>;
+  fromId: (id: any) => Omit<StoryContextForLoaders<ReactNativeFramework, Args>, 'viewMode'>;
   getSelection: () => Selection;
   _channel: Channel;
 };
@@ -76,23 +74,10 @@ const ControlsPanel = ({ api }: { api: API }) => {
 
   const [argsFromHook, updateArgs, resetArgs] = useArgs(storyId, store);
 
-  const [story, setStory] = useState<Record<string, any> | undefined>(undefined);
-
-  useEffect(() => {
-    const getStory = async () => {
-      const thisStory = await store.fromId(storyId);
-      console.log('I was called', thisStory.storyArgTypes);
-      setStory(thisStory);
-    };
-    getStory();
-  }, [store, storyId]);
-
   const { argsObject, argTypes, parameters } = React.useMemo(() => {
-    // const story = store.fromId(storyId);
+    const { argTypes: storyArgTypes, parameters: storyParameters } = store.fromId(storyId);
 
-    console.log('storyArgTypes', story);
-
-    const storyArgsObject = Object.entries(story?.storyArgTypes ?? {}).reduce(
+    const storyArgsObject = Object.entries(storyArgTypes).reduce(
       (prev, [key, argType]: [string, ArgType]) => {
         const isControl = Boolean(argType?.control);
 
@@ -112,11 +97,11 @@ const ControlsPanel = ({ api }: { api: API }) => {
     );
 
     return {
-      argTypes: story?.storyArgTypes ?? {},
-      parameters: story?.storyParameters ?? {},
+      argTypes: storyArgTypes,
+      parameters: storyParameters,
       argsObject: storyArgsObject,
     };
-  }, [argsFromHook, story]);
+  }, [store, storyId, argsFromHook]);
 
   const hasControls = Object.keys(argTypes).length > 0;
 

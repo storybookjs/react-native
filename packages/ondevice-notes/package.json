@@ -29,9 +29,9 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/client-logger": "0.0.0-pr-25678-sha-c0f17d75",
-    "@storybook/core-events": "0.0.0-pr-25678-sha-c0f17d75",
-    "@storybook/manager-api": "0.0.0-pr-25678-sha-c0f17d75",
+    "@storybook/client-logger": "0.0.0-pr-25678-sha-560d4141",
+    "@storybook/core-events": "0.0.0-pr-25678-sha-560d4141",
+    "@storybook/manager-api": "0.0.0-pr-25678-sha-560d4141",
     "@storybook/react-native-theming": "^7.6.10-alpha.1",
     "react-native-markdown-display": "6.1.6"
   },

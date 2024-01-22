@@ -6,21 +6,17 @@ export const useArgs = (
   storyId: string,
   storyStore: any
 ): [Args, (args: Args) => void, (argNames?: string[]) => void] => {
-  // const story: StoryContext = storyStore.fromId(storyId);
-  // if (!story) {
-  //   throw new Error(`Unknown story: ${storyId}`);
-  // }
+  const story: StoryContext = storyStore.fromId(storyId);
+  if (!story) {
+    throw new Error(`Unknown story: ${storyId}`);
+  }
 
-  // const { args: initialArgs } = story;
-  const [args, setArgs] = useState({});
+  const { args: initialArgs } = story;
+  const [args, setArgs] = useState(initialArgs);
   useEffect(() => {
-    (async () => {
-      const story: StoryContext = await storyStore.fromId(storyId);
-      const { args: initialArgs } = story;
-      setArgs(initialArgs);
-    })();
     // Sync the args up with the initial args of the story, since the story ID
     // must have changed for this effect to run.
+    setArgs(initialArgs);
     const cb = (changed: { storyId: string; args: Args }) => {
       if (changed.storyId === storyId) {
         setArgs(changed.args);

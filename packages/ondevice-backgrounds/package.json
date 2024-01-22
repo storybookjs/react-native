@@ -32,8 +32,8 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/manager-api": "0.0.0-pr-25678-sha-c0f17d75",
-    "@storybook/preview-api": "0.0.0-pr-25678-sha-c0f17d75",
+    "@storybook/manager-api": "0.0.0-pr-25678-sha-560d4141",
+    "@storybook/preview-api": "0.0.0-pr-25678-sha-560d4141",
     "@storybook/react-native-theming": "^7.6.10-alpha.1"
   },
   "devDependencies": {

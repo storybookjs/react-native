@@ -51,16 +51,16 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@storybook/channels": "0.0.0-pr-25678-sha-c0f17d75",
-    "@storybook/client-logger": "0.0.0-pr-25678-sha-c0f17d75",
-    "@storybook/core-common": "0.0.0-pr-25678-sha-c0f17d75",
-    "@storybook/core-events": "0.0.0-pr-25678-sha-c0f17d75",
+    "@storybook/channels": "0.0.0-pr-25678-sha-560d4141",
+    "@storybook/client-logger": "0.0.0-pr-25678-sha-560d4141",
+    "@storybook/core-common": "0.0.0-pr-25678-sha-560d4141",
+    "@storybook/core-events": "0.0.0-pr-25678-sha-560d4141",
     "@storybook/csf": "^0.1.1",
-    "@storybook/docs-tools": "0.0.0-pr-25678-sha-c0f17d75",
+    "@storybook/docs-tools": "0.0.0-pr-25678-sha-560d4141",
     "@storybook/global": "^5.0.0",
-    "@storybook/manager-api": "0.0.0-pr-25678-sha-c0f17d75",
-    "@storybook/preview-api": "0.0.0-pr-25678-sha-c0f17d75",
-    "@storybook/react": "0.0.0-pr-25678-sha-c0f17d75",
+    "@storybook/manager-api": "0.0.0-pr-25678-sha-560d4141",
+    "@storybook/preview-api": "0.0.0-pr-25678-sha-560d4141",
+    "@storybook/react": "0.0.0-pr-25678-sha-560d4141",
     "@storybook/react-native-theming": "^7.6.10-alpha.1",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
@@ -73,7 +73,7 @@
     "util": "^0.12.4"
   },
   "devDependencies": {
-    "@storybook/types": "0.0.0-pr-25678-sha-c0f17d75",
+    "@storybook/types": "0.0.0-pr-25678-sha-560d4141",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
