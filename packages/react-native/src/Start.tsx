@@ -1,5 +1,9 @@
 import { toId, storyNameFromExport } from '@storybook/csf';
-import { addons as previewAddons, composeConfigs, userOrAutoTitle } from '@storybook/preview-api';
+import {
+  addons as previewAddons,
+  composeConfigs,
+  userOrAutoTitleFromSpecifier,
+} from '@storybook/preview-api';
 import { addons as managerAddons } from '@storybook/manager-api';
 // NOTE this really should be exported from preview-api, but it's not
 import { PreviewWithSelection } from '@storybook/preview-api/dist/preview-web';
@@ -20,8 +24,12 @@ export function prepareStories({
 
   let importMap = {};
 
-  const makeTitle = (fileName: string, userTitle: string) => {
-    const title = userOrAutoTitle(fileName, storyEntries, userTitle);
+  const makeTitle = (
+    fileName: string,
+    specifier: NormalizedStoriesSpecifier,
+    userTitle: string
+  ) => {
+    const title = userOrAutoTitleFromSpecifier(fileName, specifier, userTitle);
 
     if (title) {
       return title.replace('./', '');
@@ -39,7 +47,8 @@ export function prepareStories({
     }
   };
 
-  storyEntries.forEach(({ req, directory: root }) => {
+  storyEntries.forEach((specifier) => {
+    const { req, directory: root } = specifier;
     req.keys().forEach((filename: string) => {
       try {
         // console.log('req', req.resolve(filename));
@@ -56,7 +65,8 @@ export function prepareStories({
 
           //FIXME: autotitle
           const name = storyNameFromExport(key);
-          const title = makeTitle(filename, meta.title);
+          const title = makeTitle(filename, specifier, meta.title);
+
           if (title) {
             const id = toId(title, name);
 

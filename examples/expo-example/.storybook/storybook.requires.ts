@@ -23,15 +23,16 @@ const normalizedStories = [
     ),
   },
   {
-    titlePrefix: "",
-    directory: "./other_components/AnotherButton",
-    files: "AnotherButton.stories.tsx",
-    importPathMatcher: /^\.[\\/](?:AnotherButton\.stories\.tsx)$/,
+    titlePrefix: "OtherComponents",
+    directory: "./other_components",
+    files: "**/*.stories.?(ts|tsx|js|jsx)",
+    importPathMatcher:
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
     // @ts-ignore
     req: require.context(
-      "../other_components/AnotherButton",
-      false,
-      /^\.[\\/](?:AnotherButton\.stories\.tsx)$/
+      "../other_components",
+      true,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
     ),
   },
 ];
