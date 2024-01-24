@@ -10,7 +10,7 @@
     "storybook": "STORYBOOK_ENABLED=true expo start",
     "storybook:web": "storybook dev -p 6006 -c ./.storybook-web",
     "build-web-storybook": "storybook build -c ./.storybook-web",
-    "storybook-getstories": "sb-rn-get-stories --config-path=./.storybook --v6-store ",
+    "storybook-getstories": "sb-rn-get-stories --config-path=./.storybook --v6-store",
     "storybook-generate": "sb-rn-get-stories --config-path=./.storybook",
     "storybook-watcher": "sb-rn-watcher --config-path=./.storybook",
     "disabled-example": "expo start",

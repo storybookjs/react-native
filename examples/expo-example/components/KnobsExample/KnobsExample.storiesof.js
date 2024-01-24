@@ -10,7 +10,7 @@ import {
   text,
 } from '@storybook/addon-knobs';
 import { withKnobs } from '@storybook/addon-ondevice-knobs';
-import { storiesOf } from '@storybook/react-native';
+import { storiesOf } from '@storybook/react-native/V6';
 import React from 'react';
 
 import KnobsExample from './KnobsExample';

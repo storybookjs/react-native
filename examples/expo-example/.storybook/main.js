@@ -6,6 +6,12 @@ module.exports = {
       files: '**/*.stories.?(ts|tsx|js|jsx)',
       titlePrefix: 'OtherComponents',
     },
+    // {
+    //   directory: '../other_components',
+    //   files: '**/*.storiesof.?(ts|tsx|js|jsx)',
+    //   titlePrefix: 'OtherComponents',
+    // },
+    // '../components/**/*.storiesof.?(ts|tsx|js|jsx)',
   ],
   addons: [
     '@storybook/addon-ondevice-notes',

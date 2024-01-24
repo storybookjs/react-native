@@ -5,6 +5,12 @@
     - [Update `.storybook/index.js`](#update-storybookindexjs)
     - [Update types to be imported from `@storybook/react`](#update-types-to-be-imported-from-storybookreact)
     - [doctools](#doctools)
+  - [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
+    - [Update dependencies](#update-dependencies)
+    - [Update your package.json scripts](#update-your-packagejson-scripts)
+    - [Update `.storybook/index.js`](#update-storybookindexjs-1)
+    - [Update your stories](#update-your-stories)
+    - [Types](#types)
   - [From version 5.3.x to 6.5.x](#from-version-53x-to-65x)
     - [Additional dependencies](#additional-dependencies)
       - [Controls (the new knobs)](#controls-the-new-knobs)
@@ -24,6 +30,9 @@
 Update all storybook dependencies to 7.6.10 or newer.
 
 Regenerate your `storybook.requires.js` file by running `yarn storybook-generate`.
+
+> [!NOTE]  
+> You should follow a different set of changes if you need to support storiesOf, see [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
 
 ### Update `.storybook/index.js`
 
@@ -137,6 +146,87 @@ To make it work you still need babel-plugin-react-docgen-typescript though.
 -  },
 -});
 ```
+
+## 6.5.x to 7.6.x with storiesOf support
+
+Storybook v7 doesn't support storiesOf in the same way as v6, but there is a compatibility mode that allows you to continue using storiesOf whilst you migrate your stories.
+
+> [!WARNING]
+> By opting into this compatibility mode you will lose out on some features of v7. We highly recommend moving to CSF stories.
+>
+> StoriesOf will be removed in v8 along with knobs and testing on those deprecated features will be limited.
+
+### Update dependencies
+
+Update all storybook dependencies to 7.6.10 or newer.
+
+For example you may end up with something like this
+
+```json
+{
+  "@storybook/react-native": "^7.6.10",
+  "@storybook/addon-ondevice-actions": "^7.6.10",
+  "@storybook/addon-ondevice-backgrounds": "^7.6.10",
+  "@storybook/addon-ondevice-controls": "^7.6.10",
+  "@storybook/addon-ondevice-notes": "^7.6.10"
+}
+```
+
+### Update your package.json scripts
+
+To opt in you can pass --v6-store to sb-rn-get-stories in the generate script.
+
+```json
+{
+  "scripts": {
+    "storybook-generate": "sb-rn-get-stories --v6-store"
+  }
+}
+```
+
+You should also now import storiesOf from `@storybook/react-native/V6` this is necessary so that certain code paths don't run in v7 mode.
+
+### Update `.storybook/index.js`
+
+Update the import in `.storybook/index.js` from `@storybook/react-native` to `@storybook/react-native/V6`.
+
+You should also make sure to add the storage prop to the getStorybookUI call. This lets you opt into using a different storage solution like mmkv or if you put async storage there it will continue to work as it did before.
+
+```js
+import './storybook.requires';
+import { getStorybookUI } from '@storybook/react-native/V6';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const StorybookUIRoot = getStorybookUI({
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
+});
+
+export default StorybookUIRoot;
+```
+
+### Update your stories
+
+Where ever you use storiesOf you should now import it from `@storybook/react-native/V6`.
+
+```js
+import { storiesOf } from '@storybook/react-native/V6';
+import { text } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-ondevice-knobs';
+import React from 'react';
+import { Button } from './AnotherButton';
+
+storiesOf('Another Button', module)
+  .addDecorator(withKnobs)
+  .add('another button example', () => <Button text={text('text', 'test2')} onPress={() => null} />)
+  .add('again', () => <Button text={text('text', 'text2')} onPress={() => null} />);
+```
+
+### Types
+
+If you're using typescript you may notice that for v7 we've removed the types in `@storybook/react-native`. Thats part of an effort to re-use more code, you should now import them from `@storybook/react` instead.
 
 ## From version 5.3.x to 6.5.x
 
