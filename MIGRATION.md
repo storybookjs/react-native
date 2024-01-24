@@ -97,6 +97,9 @@ export default StorybookUI;
 
 Update your `metro.config.js` to enable the `unstable_useRequireContext` option and you can now remove the sbmodern resolver if you have it.
 
+> [!NOTE]
+> The unstable_useRequireContext option requires at least react native 0.72
+
 If you are using expo and you don't have a metro config file you can create one by running `npx expo customize metro.config.js`.
 
 You can also add here the generate function to automatically update the `storybook.requires.ts` file when you start metro.
