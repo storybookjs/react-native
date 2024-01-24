@@ -2,12 +2,15 @@
 
 - [Migration](#migration)
   - [From version 6.5.x to 7.6.x](#from-version-65x-to-76x)
+    - [Dependencies](#dependencies)
+    - [regenerate your requires file](#regenerate-your-requires-file)
     - [Update `.storybook/index.js`](#update-storybookindexjs)
     - [Update types to be imported from `@storybook/react`](#update-types-to-be-imported-from-storybookreact)
     - [doctools](#doctools)
   - [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
     - [Update dependencies](#update-dependencies)
     - [Update your package.json scripts](#update-your-packagejson-scripts)
+    - [regenerate your requires file](#regenerate-your-requires-file-1)
     - [Update `.storybook/index.js`](#update-storybookindexjs-1)
     - [Update your stories](#update-your-stories)
     - [Types](#types)
@@ -27,12 +30,28 @@
 
 ## From version 6.5.x to 7.6.x
 
-Update all storybook dependencies to 7.6.10 or newer.
-
-Regenerate your `storybook.requires.js` file by running `yarn storybook-generate`.
-
 > [!NOTE]  
 > You should follow a different set of changes if you need to support storiesOf, see [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
+
+### Dependencies
+
+Update all storybook dependencies to 7.6.10 or newer.
+
+For example you may end up with something like this
+
+```json
+{
+  "@storybook/react-native": "^7.6.10",
+  "@storybook/addon-ondevice-actions": "^7.6.10",
+  "@storybook/addon-ondevice-backgrounds": "^7.6.10",
+  "@storybook/addon-ondevice-controls": "^7.6.10",
+  "@storybook/addon-ondevice-notes": "^7.6.10"
+}
+```
+
+### regenerate your requires file
+
+Regenerate your `storybook.requires.js` file by running `yarn storybook-generate`.
 
 ### Update `.storybook/index.js`
 
@@ -185,6 +204,10 @@ To opt in you can pass --v6-store to sb-rn-get-stories in the generate script.
 ```
 
 You should also now import storiesOf from `@storybook/react-native/V6` this is necessary so that certain code paths don't run in v7 mode.
+
+### regenerate your requires file
+
+Now that you've updated the script you can regenerate your `storybook.requires.js` file by running `yarn storybook-generate`.
 
 ### Update `.storybook/index.js`
 
