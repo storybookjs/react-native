@@ -40,7 +40,6 @@ Here are some of the other improvements:
 - New storage option that lets you choose what storage solution you want to use (async storage/mmkv etc).
 - Dynamic imports enabled by the unstable_useRequireContext option in metro config.
   - you only need to generate your requires file when main.js changes.
-- New server addon that is no longer a separate wrapper with custom functionality and instead builds on top of existing storybook features.
 - Error boundaries for stories so your app shouldn't crash when a story throws an error.
 - Improved markdown renderer for notes addon.
 - Simpler setup for auto args.
