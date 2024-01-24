@@ -5,7 +5,10 @@
     - [Dependencies](#dependencies)
     - [Regenerate your requires file](#regenerate-your-requires-file)
     - [Update `.storybook/index.js`](#update-storybookindexjs)
-    - [Update types to be imported from `@storybook/react`](#update-types-to-be-imported-from-storybookreact)
+    - [Metro config](#metro-config)
+      - [Expo](#expo)
+      - [React Native CLI](#react-native-cli)
+    - [Types](#types)
     - [doctools](#doctools)
   - [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
     - [Update dependencies](#update-dependencies)
@@ -13,7 +16,7 @@
     - [Regenerate your requires file](#regenerate-your-requires-file-1)
     - [Update `.storybook/index.js`](#update-storybookindexjs-1)
     - [Update your stories](#update-your-stories)
-    - [Types](#types)
+    - [Types](#types-1)
   - [From version 5.3.x to 6.5.x](#from-version-53x-to-65x)
     - [Additional dependencies](#additional-dependencies)
       - [Controls (the new knobs)](#controls-the-new-knobs)
@@ -78,6 +81,8 @@ const StorybookUIRoot = view.getStorybookUI({
 export default StorybookUI;
 ```
 
+### Metro config
+
 Update your `metro.config.js` to enable the `unstable_useRequireContext` option and you can now remove the sbmodern resolver if you have it.
 
 If you are using expo and you don't have a metro config file you can create one by running `npx expo customize metro.config.js`.
@@ -86,7 +91,7 @@ You can also add here the generate function to automatically update the `storybo
 
 You only need to regenerate this file now when main.js updates since requireContext allows us to use dynamic imports.
 
-**Expo**
+#### Expo
 
 ```js
 const path = require('path');
@@ -108,7 +113,7 @@ defaultConfig.resolver.sourceExts.push('mjs');
 module.exports = defaultConfig;
 ```
 
-**React Native CLI**
+#### React Native CLI
 
 ```js
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
@@ -143,7 +148,7 @@ module.exports = mergeConfig(defaultConfig, config);
 
 You can now also remove anything from package.json scripts which would run generate before running storybook.
 
-### Update types to be imported from `@storybook/react`
+### Types
 
 We've removed the types from `@storybook/react-native` and now you should import them from `@storybook/react`. This is to remove duplication and increase compatibility with core storybook libraries.
 
@@ -154,7 +159,7 @@ We've removed the types from `@storybook/react-native` and now you should import
 
 ### doctools
 
-If you are manually adding docs tools to do auto args you can now remove this code since its automatically added now.
+If you are manually adding doctools to do auto args you can now remove this code since its automatically added now.
 To make it work you still need babel-plugin-react-docgen-typescript though.
 
 ```diff
