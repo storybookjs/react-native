@@ -3,14 +3,14 @@
 - [Migration](#migration)
   - [From version 6.5.x to 7.6.x](#from-version-65x-to-76x)
     - [Dependencies](#dependencies)
-    - [regenerate your requires file](#regenerate-your-requires-file)
+    - [Regenerate your requires file](#regenerate-your-requires-file)
     - [Update `.storybook/index.js`](#update-storybookindexjs)
     - [Update types to be imported from `@storybook/react`](#update-types-to-be-imported-from-storybookreact)
     - [doctools](#doctools)
   - [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
     - [Update dependencies](#update-dependencies)
     - [Update your package.json scripts](#update-your-packagejson-scripts)
-    - [regenerate your requires file](#regenerate-your-requires-file-1)
+    - [Regenerate your requires file](#regenerate-your-requires-file-1)
     - [Update `.storybook/index.js`](#update-storybookindexjs-1)
     - [Update your stories](#update-your-stories)
     - [Types](#types)
@@ -49,13 +49,17 @@ For example you may end up with something like this
 }
 ```
 
-### regenerate your requires file
+### Regenerate your requires file
 
-Regenerate your `storybook.requires.js` file by running `yarn storybook-generate`.
+Regenerate your `storybook.requires` file by running `yarn storybook-generate`.
+
+It should now generate a `storybook.requires.ts` file instead of a `storybook.requires.js` file.
+
+This provides the type for the new view export.
 
 ### Update `.storybook/index.js`
 
-Update `.storybook/index.js` to use the new `getStorybookUI` function exported in `storybook.requires.js`.
+Update `.storybook/index.js` to use the new `getStorybookUI` function on the `view` exported from `storybook.requires.ts`.
 
 You should also now pass a storage object to the `getStorybookUI` function. This is used to persist the selected story between reloads.
 
@@ -78,7 +82,7 @@ Update your `metro.config.js` to enable the `unstable_useRequireContext` option 
 
 If you are using expo and you don't have a metro config file you can create one by running `npx expo customize metro.config.js`.
 
-You can also add here the generate function to automatically update the `storybook.requires.js` file when you start metro.
+You can also add here the generate function to automatically update the `storybook.requires.ts` file when you start metro.
 
 You only need to regenerate this file now when main.js updates since requireContext allows us to use dynamic imports.
 
@@ -205,9 +209,11 @@ To opt in you can pass --v6-store to sb-rn-get-stories in the generate script.
 
 You should also now import storiesOf from `@storybook/react-native/V6` this is necessary so that certain code paths don't run in v7 mode.
 
-### regenerate your requires file
+### Regenerate your requires file
 
 Now that you've updated the script you can regenerate your `storybook.requires.js` file by running `yarn storybook-generate`.
+
+It should now have the updated `@storybook/react-native/V6` import in it.
 
 ### Update `.storybook/index.js`
 
