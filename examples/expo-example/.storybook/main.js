@@ -6,6 +6,11 @@ module.exports = {
       files: '**/*.stories.?(ts|tsx|js|jsx)',
       titlePrefix: 'OtherComponents',
     },
+    {
+      directory: '../many_components',
+      files: '**/*.?(ts|tsx|js|jsx)',
+      titlePrefix: 'ManyComponents',
+    },
     // {
     //   directory: '../other_components',
     //   files: '**/*.storiesof.?(ts|tsx|js|jsx)',
