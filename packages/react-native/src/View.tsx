@@ -4,8 +4,8 @@ import { addons as previewAddons } from '@storybook/preview-api';
 import type { PreviewWithSelection } from '@storybook/preview-web';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
-import type { StoryIndex } from '@storybook/types';
-import { useEffect, useMemo, useReducer } from 'react';
+import type { PreparedStory, StoryId, StoryIndex } from '@storybook/types';
+import { useEffect, useMemo, useReducer, useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
@@ -15,7 +15,7 @@ import { createWebSocketChannel, type Channel } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
-import { useColorScheme } from 'react-native';
+import { useColorScheme, ActivityIndicator, View as RNView, StyleSheet } from 'react-native';
 import getHost from './rn-host-detect';
 
 const STORAGE_KEY = 'lastOpenedStory';
@@ -78,6 +78,7 @@ export class View {
   _webUrl: string;
   _storage: Storage;
   _channel: Channel;
+  _idToPrepared: Record<string, PreparedStory<ReactRenderer>> = {};
 
   constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel) {
     this._preview = preview;
@@ -140,6 +141,16 @@ export class View {
     });
   };
 
+  createPreparedStoryMapping = async () => {
+    await Promise.all(
+      Object.keys(this._storyIndex.entries).map(async (storyId: StoryId) => {
+        this._idToPrepared[storyId] = await this._preview.storyStore.loadStory({ storyId });
+      })
+    );
+
+    console.log('Storybook: Finished building story index');
+  };
+
   getStorybookUI = (params: Partial<Params> = {}) => {
     const {
       shouldPersistSelection = true,
@@ -166,8 +177,14 @@ export class View {
 
     managerAddons.loadAddons({
       store: () => ({
-        fromId: (id) =>
-          this._preview.storyStore.getStoryContext(this._preview.storyStore.fromId(id)),
+        fromId: (id) => {
+          if (!this._ready) {
+            throw new Error('Storybook is not ready yet');
+          }
+
+          return this._preview.storyStore.getStoryContext(this._idToPrepared[id]);
+        },
+
         getSelection: () => {
           return this._preview.currentSelection;
         },
@@ -188,6 +205,7 @@ export class View {
       const setContext = useSetStoryContext();
       const colorScheme = useColorScheme();
       const [, forceUpdate] = useReducer((x) => x + 1, 0);
+      const [ready, setReady] = useState(false);
 
       const appliedTheme = useMemo(
         () => deepmerge(colorScheme === 'dark' ? darkTheme : theme, params.theme ?? {}),
@@ -195,6 +213,13 @@ export class View {
       );
 
       useEffect(() => {
+        this.createPreparedStoryMapping()
+          .then(() => {
+            this._ready = true;
+            setReady(true);
+          })
+          .catch((e) => console.error(e));
+
         self._setStory = (newStory: StoryContext<ReactRenderer>) => {
           setContext(newStory);
 
@@ -227,6 +252,20 @@ export class View {
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
+
+      if (!ready) {
+        return (
+          <RNView
+            style={{
+              ...StyleSheet.absoluteFillObject,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <ActivityIndicator animating size={'large'} />
+          </RNView>
+        );
+      }
 
       if (onDeviceUI) {
         return (
