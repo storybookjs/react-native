@@ -1,7 +1,8 @@
 If you are reporting a bug or requesting support, start here:
+
 ### Bug or support request summary
 
-_Please provide issue details here - What did you expect to happen? What happened instead?_ 
+_Please provide issue details here - What did you expect to happen? What happened instead?_
 
 ### Steps to reproduce
 
@@ -14,7 +15,7 @@ _(A screencast can be useful for visual bugs, but it is not a substitute for a t
 - @storybook/react x.x.x
 - @storybook/addon-something x.x.x
 
-### Affected platforms 
+### Affected platforms
 
 - _If UI related, please indicate browser, OS, and version_
 - _If dependency related, please include relevant version numbers_
@@ -22,16 +23,17 @@ _(A screencast can be useful for visual bugs, but it is not a substitute for a t
 
 ### Screenshots / Screencast / Code Snippets (Optional)
 
-```js
+```ts
 // code here
 ```
+
 End bug report support request - delete the rest below
 
-
 If you are creating a issue to track work to be completed, start here:
+
 ### Work summary
 
-_Please provide a description of the work to be completed here - Include some context as to why something needs to be done and link any related tickets._ 
+_Please provide a description of the work to be completed here - Include some context as to why something needs to be done and link any related tickets._
 
 ### Where to start
 

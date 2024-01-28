@@ -27,7 +27,7 @@ export const render: ArgsStoryFn<ReactRenderer> = (args, context) => {
 };
 
 export function start() {
-  // TODO: can we get settings from main.js and set the channel here?
+  // TODO: can we get settings from main.ts and set the channel here?
   const channel = new Channel({ async: true });
 
   addons.setChannel(channel);

@@ -18,13 +18,16 @@ yarn add -D @storybook/addon-ondevice-knobs @storybook/addon-knobs  @react-nativ
 
 ## Configuration
 
-Add following content to `.storybook/main.js`:
+Add following content to `.storybook/main.ts`:
 
-```js
-module.exports = {
+```ts
+import { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
   addons: ['@storybook/addon-ondevice-knobs'],
 };
+
+export default main;
 ```
 
 Make sure to use the withKnobs decorator when using knobs `import { withKnobs } from '@storybook/addon-ondevice-knobs';`
-

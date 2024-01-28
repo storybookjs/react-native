@@ -10,20 +10,27 @@ yarn add -D @storybook/addon-ondevice-notes
 
 ## Configuration
 
-Then, add following content to `.storybook/main.js`:
+Then, add following content to `.storybook/main.ts`:
 
-```js
-module.exports = {
+```ts
+import { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
   addons: ['@storybook/addon-ondevice-notes'],
 };
+
+export default main;
 ```
 
 ## Usage
 
 Use the `notes` parameter to add a note to stories:
 
-```js
-export default {
+```tsx
+import type { Meta } from '@storybook/react';
+import { MyComponent } from './MyComponent';
+
+const meta = {
   title: 'My title',
   component: MyComponent,
   parameters: {
@@ -33,7 +40,9 @@ export default {
      Put a full new line between each element.
     `,
   },
-};
+} satisfies Meta<typeof MyComponent>;
+
+export default meta;
 ```
 
 See the [example app](../../examples/expo-example) for more examples.

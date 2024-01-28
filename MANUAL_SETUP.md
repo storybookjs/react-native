@@ -46,27 +46,33 @@ cd ios; pod install; cd ..;
 
 ## .storybook
 
-Create a folder called `.storybook` with files: `main.js`, `preview.js`, `index.tsx`
+Create a folder called `.storybook` with files: `main.ts`, `preview.tsx`, `index.tsx`
 
 You can use this one-liner to quickly create those files:
 
 ```console
-mkdir .storybook && touch .storybook/main.js .storybook/preview.js .storybook/index.tsx
+mkdir .storybook && touch .storybook/main.ts .storybook/preview.tsx .storybook/index.tsx
 ```
 
-### .storybook/main.js
+### .storybook/main.ts
 
-```js
-module.exports = {
+```ts
+import { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   addons: [],
 };
+
+export default main;
 ```
 
-### .storybook/preview.js
+### .storybook/preview.tsx
 
-```js
-const preview = {
+```ts
+import type { Preview } from '@storybook/react';
+
+const preview: Preview = {
   parameters: {},
   decorators: [],
 };
@@ -86,13 +92,13 @@ Add the following to the scripts in your package.json.
 }
 ```
 
-### generate storybook.requires.js
+### generate storybook.requires.ts
 
 run `yarn storybook-generate`
 
 ### .storybook/index.tsx
 
-```jsx
+```tsx
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -155,19 +161,24 @@ module.exports = {
 
 **Add a stories file**
 
-In the main.js we created the path was set as `../components/**/*.stories.?(ts|tsx|js|jsx)` which matches any .stories file inside the components folder.
+In the `main.ts` we created the path was set as `../components/\*_/_.stories.?(ts|tsx|js|jsx)` which matches any .stories file inside the components folder.
 
 Create a file called `Button.stories.tsx` in the components folder.
 
-```jsx
+```tsx
+import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from 'react-native';
 
-export default {
+const meta = {
   title: 'React Native Button',
   component: Button,
-};
+} satisfies Meta<typeof Button>;
 
-export const Basic = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   args: {
     title: 'Hello world',
   },
@@ -178,9 +189,9 @@ This is a simple example you can do more by adding addons and exploring more fea
 
 ## Render Storybook
 
-The only thing left to do is return Storybook's UI in your app entry point (such as `App.js`) like this:
+The only thing left to do is return Storybook's UI in your app entry point (such as `App.tsx`) like this:
 
-```jsx
+```tsx
 export { default } from './.storybook';
 ```
 

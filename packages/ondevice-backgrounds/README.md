@@ -10,12 +10,16 @@ yarn add -D @storybook/addon-ondevice-backgrounds
 
 ## Configuration
 
-Then, add following content to `.storybook/main.js`:
+Then, add following content to `.storybook/main.ts`:
 
-```js
-module.exports = {
+```ts
+import { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
   addons: ['@storybook/addon-ondevice-backgrounds'],
 };
+
+export default main;
 ```
 
 ## Usage

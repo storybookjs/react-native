@@ -38,8 +38,9 @@ In this version of storybook we've a lot of changes to the internals of react na
 Here are some of the other improvements:
 
 - New storage option that lets you choose what storage solution you want to use (async storage/mmkv etc).
+- Support for main.ts
 - Dynamic imports enabled by the unstable_useRequireContext option in metro config.
-  - you only need to generate your requires file when main.js changes.
+  - you only need to generate your requires file when main.ts changes.
 - Error boundaries for stories so your app shouldn't crash when a story throws an error.
 - Improved markdown renderer for notes addon.
 - Simpler setup for auto args.
@@ -74,11 +75,12 @@ This provides the type for the new view export.
 ### Update `.storybook/index.js`
 
 Update `.storybook/index.js` to use the new `getStorybookUI` function on the `view` exported from `storybook.requires.ts`.
+You can also change this file to be called `.storybook/index.tsx`.
 
 You should also now pass a storage object to the `getStorybookUI` function. This is used to persist the selected story between reloads.
 
-```js
-// .storybook/index.js
+```tsx
+// .storybook/index.tsx
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -236,11 +238,12 @@ It should now have the updated `@storybook/react-native/V6` import in it.
 
 ### Update `.storybook/index.js`
 
-Update the import in `.storybook/index.js` from `@storybook/react-native` to `@storybook/react-native/V6`.
+Update the import in `.storybook/index.js` from `@storybook/react-native` to `@storybook/react-native/V6`. You can also change this file to be called `.storybook/index.tsx`.
 
 You should also make sure to add the storage prop to the getStorybookUI call. This lets you opt into using a different storage solution like mmkv or if you put async storage there it will continue to work as it did before.
 
-```js
+```tsx
+// .storybook/index.tsx
 import './storybook.requires';
 import { getStorybookUI } from '@storybook/react-native/V6';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -259,7 +262,7 @@ export default StorybookUIRoot;
 
 Where ever you use storiesOf you should now import it from `@storybook/react-native/V6`.
 
-```js
+```tsx
 import { storiesOf } from '@storybook/react-native/V6';
 import { text } from '@storybook/addon-knobs';
 import { withKnobs } from '@storybook/addon-ondevice-knobs';

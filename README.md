@@ -6,7 +6,7 @@ This readme is for the 7.6 version, you can find older versions by browsing the 
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> NOTE: `@storybook/react-native` requires atleast 7.6.9, if you install other storybook core packages they should be `^7.6.9` or newer.
+> NOTE: `@storybook/react-native` requires atleast 7.6.10, if you install other storybook core packages they should be `^7.6.10` or newer.
 
 If you want to help out or are just curious then check out the [project board](https://github.com/orgs/storybookjs/projects/12) to see the open issues.
 
@@ -57,9 +57,9 @@ Run init to setup your project with all the dependencies and configuration files
 npx sb@latest init --type react_native
 ```
 
-The only thing left to do is return Storybook's UI in your app entry point (such as `App.js`) like this:
+The only thing left to do is return Storybook's UI in your app entry point (such as `App.tsx`) like this:
 
-```jsx
+```tsx
 export { default } from './.storybook';
 ```
 
@@ -69,7 +69,7 @@ If you want to add everything yourself check out the the manual guide [here](htt
 
 #### Additional steps: Update your metro config
 
-We require the unstable_allowRequireContext transformer option to enable dynamic story imports based on the stories glob in `main.js`. We can also call the storybook generate function from the metro config to automatically generate the `storybook.requires.js` file when metro runs.
+We require the unstable_allowRequireContext transformer option to enable dynamic story imports based on the stories glob in `main.ts`. We can also call the storybook generate function from the metro config to automatically generate the `storybook.requires.ts` file when metro runs.
 
 **Expo**
 
@@ -120,14 +120,19 @@ module.exports = {
 
 In storybook we use a syntax called CSF that looks like this:
 
-```jsx
+```tsx
+import type { Meta, StoryObj } from '@storybook/react';
 import { MyButton } from './Button';
 
-export default {
+const meta = {
   component: MyButton,
-};
+} satisfies Meta<typeof MyButton>;
 
-export const Basic = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   args: {
     text: 'Hello World',
     color: 'purple',
@@ -135,23 +140,29 @@ export const Basic = {
 };
 ```
 
-You should configure the path to your story files in the `main.js` config file from the `.storybook` folder.
+You should configure the path to your story files in the `main.ts` config file from the `.storybook` folder.
 
-```js
-// .storybook/main.js
+```ts
+// .storybook/main.ts
+import { StorybookConfig } from '@storybook/react-native';
 
-module.exports = {
+const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   addons: [],
 };
+
+export default main;
 ```
 
 ### Decorators and Parameters
 
 For stories you can add decorators and parameters on the default export or on a specifc story.
 
-```jsx
-export default {
+```tsx
+import type { Meta } from '@storybook/react';
+import { Button } from './Button';
+
+const meta = {
   title: 'Button',
   component: Button,
   decorators: [
@@ -170,32 +181,40 @@ export default {
       ],
     },
   },
-};
+} satisfies Meta<typeof Button>;
+
+export default meta;
 ```
 
-For global decorators and parameters, you can add them to `preview.js` inside your `.storybook` folder.
+For global decorators and parameters, you can add them to `preview.tsx` inside your `.storybook` folder.
 
-```jsx
-// .storybook/preview.js
+```tsx
+// .storybook/preview.tsx
+import type { Preview } from '@storybook/react';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-export const decorators = [
-  withBackgrounds,
-  (Story) => (
-    <View style={{ flex: 1, color: 'blue' }}>
-      <Story />
-    </View>
-  ),
-];
-export const parameters = {
-  backgrounds: {
-    default: 'plain',
-    values: [
-      { name: 'plain', value: 'white' },
-      { name: 'warm', value: 'hotpink' },
-      { name: 'cool', value: 'deepskyblue' },
-    ],
+
+const preview: Preview = {
+  decorators: [
+    withBackgrounds,
+    (Story) => (
+      <View style={{ flex: 1, color: 'blue' }}>
+        <Story />
+      </View>
+    ),
+  ],
+  parameters: {
+    backgrounds: {
+      default: 'plain',
+      values: [
+        { name: 'plain', value: 'white' },
+        { name: 'warm', value: 'hotpink' },
+        { name: 'cool', value: 'deepskyblue' },
+      ],
+    },
   },
 };
+
+export default preview;
 ```
 
 ## Addons
@@ -210,17 +229,23 @@ Currently the addons available are:
 - [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some markdown to your stories to help document their usage
 - [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
 
-Install each one you want to use and add them to the `main.js` addons list as follows:
+Install each one you want to use and add them to the `main.ts` addons list as follows:
 
-```js
-// .storybook/main.js
+```ts
+// .storybook/main.ts
+import { StorybookConfig } from '@storybook/react-native';
 
-addons: [
-  '@storybook/addon-ondevice-notes',
-  '@storybook/addon-ondevice-controls',
-  '@storybook/addon-ondevice-backgrounds',
-  '@storybook/addon-ondevice-actions',
-],
+const main: StorybookConfig = {
+  // ... rest of config
+  addons: [
+    '@storybook/addon-ondevice-notes',
+    '@storybook/addon-ondevice-controls',
+    '@storybook/addon-ondevice-backgrounds',
+    '@storybook/addon-ondevice-actions',
+  ],
+};
+
+export default main;
 ```
 
 ### Using the addons in your story
