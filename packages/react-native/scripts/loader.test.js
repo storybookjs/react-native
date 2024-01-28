@@ -49,15 +49,13 @@ describe('loader', () => {
     it('should work for any supported file extension', () => {
       const main = getMain({ configPath: './scripts/mocks/file-extensions' });
       expect(main).toEqual({
-        default: {
-          stories: ['./FakeStory.stories.tsx'],
-          addons: [
-            '@storybook/addon-ondevice-notes',
-            '@storybook/addon-ondevice-controls',
-            '@storybook/addon-ondevice-backgrounds',
-            '@storybook/addon-ondevice-actions',
-          ],
-        },
+        stories: ['./FakeStory.stories.tsx'],
+        addons: [
+          '@storybook/addon-ondevice-notes',
+          '@storybook/addon-ondevice-controls',
+          '@storybook/addon-ondevice-backgrounds',
+          '@storybook/addon-ondevice-actions',
+        ],
       });
     });
   });
