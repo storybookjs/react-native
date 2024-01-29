@@ -37,12 +37,6 @@ For expo you can use this [template](https://github.com/dannyhw/expo-template-st
 ```sh
 # With NPM
 npx create-expo-app --template expo-template-storybook AwesomeStorybook
-
-# With Yarn
-yarn create expo-app --template expo-template-storybook AwesomeStorybook
-
-# With pnpm
-pnpm create expo-app --template expo-template-storybook AwesomeStorybook
 ```
 
 For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
@@ -56,7 +50,7 @@ npx react-native init MyApp --template react-native-template-storybook
 Run init to setup your project with all the dependencies and configuration files:
 
 ```sh
-npx sb@latest init --type react_native
+npx storybook@latest init
 ```
 
 The only thing left to do is return Storybook's UI in your app entry point (such as `App.tsx`) like this:
