@@ -10,6 +10,10 @@
       - [React Native CLI](#react-native-cli)
     - [Types](#types)
     - [doctools](#doctools)
+    - [(optional) react-native-server](#optional-react-native-server)
+      - [First install necessary packages](#first-install-necessary-packages)
+      - [Update package.json scripts](#update-packagejson-scripts)
+      - [Create .storybook-web config folder](#create-storybook-web-config-folder)
   - [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
     - [Update dependencies](#update-dependencies)
     - [Update your package.json scripts](#update-your-packagejson-scripts)
@@ -168,9 +172,60 @@ You can now also remove anything from package.json scripts which would run gener
 
 We've removed the types from `@storybook/react-native` and now you should import them from `@storybook/react`. This is to remove duplication and increase compatibility with core storybook libraries.
 
-```diff
--import { StoryObj, Meta } from '@storybook/react-native';
-+import { StoryObj, Meta } from '@storybook/react';
+Heres an example story in version 7:
+
+```typescript
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from './Button';
+
+const meta = {
+  component: Button,
+  argTypes: {
+    onPress: { action: 'pressed the button' },
+  },
+} satisfies Meta<typeof Button>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
+  args: {
+    text: 'Press me!',
+  },
+};
+```
+
+You can now also update main.js to main.ts and use the StorybookConfig type. This is one of the only types we export from @storybook/react-native in this version.
+
+```typescript
+// .storybook/main.ts
+import type { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
+	stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)']
+	addons: [
+    '@storybook/addon-ondevice-notes',
+    '@storybook/addon-ondevice-controls',
+    '@storybook/addon-ondevice-backgrounds',
+    '@storybook/addon-ondevice-actions',
+  ],
+}
+
+export default main;
+```
+
+To update preview.js to preview.tsx you can use the Preview type from @storybook/react
+
+```typescript
+import type { Preview } from '@storybook/react';
+
+const preview: Preview = {
+	decorators: []
+  parameters: {}
+};
+
+export default preview;
 ```
 
 ### doctools
@@ -190,6 +245,110 @@ To make it work you still need babel-plugin-react-docgen-typescript though.
 -  },
 -});
 ```
+
+### (optional) react-native-server
+
+In version 7 it wasn’t possible to update `@storybook/react-native-server` as it was. Instead we’ve released a new ReactJS addon called `@storybook/addon-react-native-server`. With this new addon you will need to setup a ReactJS storybook with a separate storybook config. The benefit of this setup is that its possible to get a web preview of the components if your components are compatible with react-native-web.
+
+There will shortly be a proper guide to setting this up, however the basics will be covered here.
+
+The setup is the same as `@storybook/addon-react-native-web` but with the reactNativeServerOptions property in the config file.
+
+#### First install necessary packages
+
+```bash
+yarn add -D @storybook/addon-react-native-web @storybook/addon-essentials storybook @storybook/react-webpack5 @storybook/react babel-plugin-react-native-web react-native-web @storybook/addon-react-native-server
+```
+
+With expo you should also add `@expo/metro-runtime`.
+i
+
+#### Update package.json scripts
+
+```json
+"storybook:web": "storybook dev -p 6006 -c .storybook-web",
+"build-storybook": "storybook build -c .storybook-web"
+```
+
+#### Create .storybook-web config folder
+
+Add a `main.ts`
+
+```typescript
+// .storybook-web/main.ts
+import type { StorybookConfig } from '@storybook/react-webpack5';
+
+type ServerStorybookConfig = StorybookConfig & {
+  reactNativeServerOptions: { host: string; port: number };
+};
+
+const main: ServerStorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-react-native-web',
+    '@storybook/addon-react-native-server',
+  ],
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
+
+  reactNativeServerOptions: {
+    // for android you should use your local ip address here
+    host: 'localhost',
+    port: 7007,
+  },
+
+  docs: {
+    autodocs: 'tag',
+  },
+};
+
+export default main;
+```
+
+Add a `preview.tsx`
+
+```tsx
+// .storybook-web/preview.tsx
+import type { Preview } from '@storybook/react';
+
+const preview: Preview = {
+  decorators: [],
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+    },
+  },
+};
+export default preview;
+```
+
+In your `.storybook/index.tsx` file where you call `view.getStorybookUI` make sure you enable Web sockets and match the host and port config from your `.storybook-web/main.ts`.
+
+```tsx
+import { view } from './storybook.requires';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const StorybookUIRoot = view.getStorybookUI({
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
+  enableWebsockets: true,
+  host: 'localhost',
+  port: 7007,
+});
+
+export default StorybookUIRoot;
+```
+
+Now just make sure you run `storybook:web` before running your React Native Storybook and you should be able to sync up your stories between web and your mobile devices.
 
 ## 6.5.x to 7.6.x with storiesOf support
 
