@@ -1,7 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { Array } from './Array';
-const ArrayMeta: ComponentMeta<typeof Array> = {
+const ArrayMeta: Meta<typeof Array> = {
   title: 'ControlExamples/Array control',
   component: Array,
   args: {
@@ -21,6 +20,6 @@ const ArrayMeta: ComponentMeta<typeof Array> = {
 
 export default ArrayMeta;
 
-type ArrayStory = ComponentStory<typeof Array>;
+type ArrayStory = StoryObj<typeof Array>;
 
-export const Basic: ArrayStory = (args) => <Array {...args} />;
+export const Basic: ArrayStory = {};

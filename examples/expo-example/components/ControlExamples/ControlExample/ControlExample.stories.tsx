@@ -1,5 +1,4 @@
-import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react-native';
+import { Meta, StoryObj } from '@storybook/react';
 import { ControlExample } from './ControlExample';
 
 export default {
@@ -64,8 +63,8 @@ export default {
       control: { type: 'nonexistent_type' },
     },
   },
-} as ComponentMeta<typeof ControlExample>;
+} as Meta<typeof ControlExample>;
 
-type ControlExampleStory = ComponentStory<typeof ControlExample>;
+type ControlExampleStory = StoryObj<typeof ControlExample>;
 
-export const Example: ControlExampleStory = (args) => <ControlExample {...args} />;
+export const Example: ControlExampleStory = {};

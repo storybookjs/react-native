@@ -49,15 +49,13 @@ describe('loader', () => {
     it('should work for any supported file extension', () => {
       const main = getMain({ configPath: './scripts/mocks/file-extensions' });
       expect(main).toEqual({
-        default: {
-          stories: ['./FakeStory.stories.tsx'],
-          addons: [
-            '@storybook/addon-ondevice-notes',
-            '@storybook/addon-ondevice-controls',
-            '@storybook/addon-ondevice-backgrounds',
-            '@storybook/addon-ondevice-actions',
-          ],
-        },
+        stories: ['./FakeStory.stories.tsx'],
+        addons: [
+          '@storybook/addon-ondevice-notes',
+          '@storybook/addon-ondevice-controls',
+          '@storybook/addon-ondevice-backgrounds',
+          '@storybook/addon-ondevice-actions',
+        ],
       });
     });
   });
@@ -143,12 +141,8 @@ describe('loader', () => {
     });
 
     describe('when there is no story glob or addons', () => {
-      it('writes no story imports or addons', () => {
-        writeRequires({ configPath: 'scripts/mocks/blank-config' });
-        expect(pathMock).toEqual(
-          path.resolve(__dirname, 'mocks/blank-config/storybook.requires.js')
-        );
-        expect(fileContentMock).toMatchSnapshot();
+      it('throws an error', () => {
+        expect(() => writeRequires({ configPath: 'scripts/mocks/blank-config' })).toThrow();
       });
     });
 

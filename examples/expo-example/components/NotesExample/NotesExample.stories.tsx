@@ -1,8 +1,8 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { View, StyleSheet, Text } from 'react-native';
 
-const NotesExampleMeta: ComponentMeta<any> = {
+const NotesExampleMeta: Meta<any> = {
   title: 'Notes example',
   parameters: {
     notes: `
@@ -76,7 +76,7 @@ Code fences are blocks of monospace text
 };
 export default NotesExampleMeta;
 
-type NotesExampleStory = ComponentStory<any>;
+type NotesExampleStory = StoryObj<any>;
 
 function NotesContent() {
   return (

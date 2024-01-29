@@ -1,12 +1,17 @@
+import { Channel } from '@storybook/channels';
+import type { Args, StoryContextForLoaders } from '@storybook/csf';
 import { styled } from '@storybook/react-native-theming';
-import { Channel } from '@storybook/addons';
-import { API } from '@storybook/api';
-import type { StoryContextForLoaders, Args } from '@storybook/csf';
-import type { Selection } from '@storybook/store';
+import type { Renderer } from '@storybook/types';
 import React, { ComponentType, ReactElement, useCallback, useState } from 'react';
-import { useArgs } from './hooks';
 import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';
+import { useArgs } from './hooks';
+import type { API } from '@storybook/manager-api';
+
+export interface Selection {
+  storyId: string;
+  viewMode: 'story';
+}
 
 const ButtonTouchable = styled.TouchableOpacity(({ theme }) => ({
   backgroundColor: theme.button.secondary.backgroundColor,
@@ -49,10 +54,10 @@ export interface ArgTypes {
   [key: string]: ArgType;
 }
 
-export type ReactNativeFramework = {
+export interface ReactNativeFramework extends Renderer {
   component: ComponentType<any>;
   storyResult: ReactElement<unknown>;
-};
+}
 
 type ApiStore = {
   fromId: (id: any) => Omit<StoryContextForLoaders<ReactNativeFramework, Args>, 'viewMode'>;

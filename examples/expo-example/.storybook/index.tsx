@@ -1,17 +1,19 @@
-import React from 'react';
-import { getStorybookUI } from '@storybook/react-native';
-// import { SafeAreaView } from 'react-native';
-import './doctools';
-import './storybook.requires';
+import { view } from './storybook.requires';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const StorybookUIRoot = getStorybookUI({
-  // initialSelection: { kind: 'TextInput', name: 'Basic' },
+const StorybookUIRoot = view.getStorybookUI({
   shouldPersistSelection: true,
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
+  enableWebsockets: true,
+
+  // initialSelection: { kind: 'TextInput', name: 'Basic' },
   // isUIHidden: true,
   // isSplitPanelVisible: true,
-
   // onDeviceUI: false,
-  enableWebsockets: true,
+  // host: '192.168.1.69',
   // theme: {
   //   storyList: {
   //     search: {
@@ -25,8 +27,4 @@ const StorybookUIRoot = getStorybookUI({
   // },
 });
 
-export default () => (
-  // <SafeAreaView style={{ flex: 1 }}>
-  <StorybookUIRoot />
-  // </SafeAreaView>
-);
+export default StorybookUIRoot;

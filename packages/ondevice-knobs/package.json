@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-knobs",
-  "version": "6.5.6",
+  "version": "7.6.10-rc.0",
   "description": "Display storybook story knobs on your deviced.",
   "keywords": [
     "addon",
@@ -30,10 +30,11 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/addons": "^6.5.14",
-    "@storybook/core-events": "^6.5.14",
-    "@storybook/react-native-theming": "^6.5.6",
-    "core-js": "^3.0.1",
+    "@storybook/addon-knobs": "^7.0.2",
+    "@storybook/addons": "^7.6.10",
+    "@storybook/core-events": "^7.6.10",
+    "@storybook/manager-api": "^7.6.10",
+    "@storybook/react-native-theming": "^7.6.10-rc.0",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
     "react-native-modal-datetime-picker": "^14.0.0",
@@ -41,12 +42,12 @@
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
-    "@storybook/addon-knobs": "^6.4.0"
+    "cross-env": "^7.0.3",
+    "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "@react-native-community/datetimepicker": "*",
     "@react-native-community/slider": "*",
-    "@storybook/addon-knobs": "^6",
     "react": "*",
     "react-native": "*"
   },

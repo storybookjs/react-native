@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import deepEqual from 'fast-deep-equal';
-import { addons } from '@storybook/addons';
-import { SELECT_STORY } from '@storybook/core-events';
+import { addons } from '@storybook/manager-api';
+import { SET_CURRENT_STORY } from '@storybook/core-events';
 import { ActionDisplay, EVENT_ID } from '@storybook/addon-actions';
 import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
 
@@ -30,16 +30,20 @@ const ActionLogger = ({ active }: ActionLoggerProps) => {
     };
 
     const channel = addons.getChannel();
-    channel.addListener(SELECT_STORY, handleStoryChange);
+    channel.addListener(SET_CURRENT_STORY, handleStoryChange);
 
     return () => {
-      channel.removeListener(SELECT_STORY, handleStoryChange);
+      channel.removeListener(SET_CURRENT_STORY, handleStoryChange);
     };
   }, [clearActionsOnStoryChange]);
 
   useEffect(() => {
     const addAction = (action: ActionDisplay) => {
       setActions((prevState: ActionDisplay[]) => {
+        if (prevState.find((a) => a.id === action.id)) {
+          return prevState;
+        }
+
         const newActions = [...prevState];
         const previous = newActions.length && newActions[0];
         if (previous && safeDeepEqual(previous.data, action.data)) {

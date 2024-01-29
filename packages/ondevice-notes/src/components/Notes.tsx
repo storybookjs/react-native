@@ -1,46 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
-import Markdown from './Markdown/Markdown';
-import { AddonStore, addons } from '@storybook/addons';
 import { SET_CURRENT_STORY } from '@storybook/core-events';
-import { API } from '@storybook/api';
+import { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import Markdown from 'react-native-markdown-display';
+
+import { RNAddonApi, StoryFromId } from '../register';
+import { ErrorBoundary } from '../ErrorBoundary';
+import { addons } from '@storybook/manager-api';
 
 export const PARAM_KEY = 'notes';
 
 interface NotesProps {
-  channel: ReturnType<AddonStore['getChannel']>;
-  api: API;
   active: boolean;
+  api: RNAddonApi;
 }
 
 export const Notes = ({ active, api }: NotesProps) => {
-  const [story, setStory] = useState<any>();
+  const [story, setStory] = useState<StoryFromId | null>();
 
   useEffect(() => {
-    if (active) {
-      const selection = api.store().getSelection();
+    const selection = api.store().getSelection();
 
-      setStory(api.store().fromId(selection.storyId));
-    }
+    const handleSetCurrentStory = ({ storyId }) => {
+      setStory(api.store().fromId(storyId));
+    };
 
-    addons.getChannel().on(SET_CURRENT_STORY, () => {
-      const selection = api.store().getSelection();
+    // set initial story
+    handleSetCurrentStory({ storyId: selection.storyId });
 
-      setStory(api.store().fromId(selection.storyId));
-    });
+    const channel = addons.getChannel();
+
+    channel.on(SET_CURRENT_STORY, handleSetCurrentStory);
+
+    return () => channel.off(SET_CURRENT_STORY, handleSetCurrentStory);
   }, [api, active]);
 
   if (!active || !story) {
     return null;
   }
 
-  const text: string = story.parameters[PARAM_KEY];
+  const text: string =
+    story?.parameters && story.parameters[PARAM_KEY] ? story.parameters[PARAM_KEY] : '';
+
+  if (!text) return null;
 
   const textAfterFormatted: string = text ? text.trim() : '';
 
   return (
     <View style={styles.container}>
-      <Markdown>{textAfterFormatted}</Markdown>
+      {textAfterFormatted && (
+        <ErrorBoundary>
+          {/* @ts-ignore has the wrong types */}
+          <Markdown>{textAfterFormatted}</Markdown>
+        </ErrorBoundary>
+      )}
     </View>
   );
 };

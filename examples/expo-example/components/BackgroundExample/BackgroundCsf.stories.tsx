@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import { Text, StyleSheet } from 'react-native';
 
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   text: { color: 'black' },
 });
 
-const BackgroundMeta: ComponentMeta<typeof Background> = {
+const BackgroundMeta: Meta<typeof Background> = {
   title: 'BackgroundExample/Background CSF',
   component: Background,
   decorators: [withBackgrounds],
@@ -30,6 +30,6 @@ const BackgroundMeta: ComponentMeta<typeof Background> = {
 
 export default BackgroundMeta;
 
-type BackgroundStory = ComponentStory<typeof Background>;
+type BackgroundStory = StoryObj<typeof Background>;
 
-export const Basic: BackgroundStory = () => <Background />;
+export const Basic: BackgroundStory = {};

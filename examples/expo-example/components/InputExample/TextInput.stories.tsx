@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './TextInput';
 
 export default {
@@ -7,9 +7,9 @@ export default {
   parameters: {
     notes: 'Use this example to test the software keyboard related issues.',
   },
-} as ComponentMeta<typeof Input>;
+} as Meta<typeof Input>;
 
-type TextInputStory = ComponentStoryObj<typeof Input>;
+type TextInputStory = StoryObj<typeof Input>;
 
 export const Basic: TextInputStory = {
   play: (_context) => {

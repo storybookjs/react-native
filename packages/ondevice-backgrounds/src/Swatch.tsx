@@ -1,7 +1,4 @@
-// @ts-ignore
 import { styled } from '@storybook/react-native-theming';
-import PropTypes from 'prop-types';
-import React from 'react';
 
 interface SwatchProps {
   name: string;
@@ -54,11 +51,5 @@ const Swatch = ({ name, value, setBackground }: SwatchProps) => (
     </ValueContainer>
   </PressableSwatch>
 );
-
-Swatch.propTypes = {
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  setBackground: PropTypes.func.isRequired,
-};
 
 export default Swatch;

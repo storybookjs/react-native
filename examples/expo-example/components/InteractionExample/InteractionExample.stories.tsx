@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react-native';
+import { Meta, StoryObj } from '@storybook/react';
 import { View, ScrollView, Text, TextInput, TouchableOpacity } from 'react-native';
 
 export default {
@@ -10,9 +10,9 @@ Use these example to test that tapping the story view will dismiss the keyboard,
 but won't interfere with scrolling or other touch interactions.
 `,
   },
-} as ComponentMeta<any>;
+} as Meta<any>;
 
-type InteractionExampleStory = ComponentStory<any>;
+type InteractionExampleStory = StoryObj<any>;
 
 function ExampleItem({ children }) {
   return (
@@ -48,53 +48,60 @@ function ExampleInput() {
   );
 }
 
-export const Static: InteractionExampleStory = () => (
-  <>
-    <ExampleInput />
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>
-        Opening the keyboard and then tapping somewhere in a story view will dismiss the keyboard.
-      </Text>
-    </View>
-  </>
-);
-
-export const Touchable: InteractionExampleStory = () => {
-  const [count, increment] = React.useReducer((state) => state + 1, 0);
-  return (
+export const Static: InteractionExampleStory = {
+  render: () => (
     <>
       <ExampleInput />
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Pressed {count} time(s)</Text>
-        <TouchableOpacity
-          style={{
-            borderWidth: 1,
-            borderRadius: 8,
-            padding: 8,
-            marginVertical: 16,
-            borderColor: '#b2cbe6',
-            backgroundColor: '#dcebf9',
-          }}
-          onPress={() => increment()}
-        >
-          <Text>This button can be tapped without the story view interfering.</Text>
-        </TouchableOpacity>
+        <Text>
+          Opening the keyboard and then tapping somewhere in a story view will dismiss the keyboard.
+        </Text>
       </View>
     </>
-  );
+  ),
 };
 
-export const Scrolling: InteractionExampleStory = () => (
-  <>
-    <ExampleInput />
-    <ScrollView>
-      <ExampleItem>This can scroll when the keyboard is closed.</ExampleItem>
-      <ExampleItem>And also when the keyboard is open.</ExampleItem>
-      {Array(25)
-        .fill(true)
-        .map((_ignored, idx) => (
-          <ExampleItem key={idx}>Item #{idx}</ExampleItem>
-        ))}
-    </ScrollView>
-  </>
-);
+export const Touchable: InteractionExampleStory = {
+  render: function InteractionRender() {
+    const [count, increment] = React.useReducer((state) => state + 1, 0);
+
+    return (
+      <>
+        <ExampleInput />
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <Text>Pressed {count} time(s)</Text>
+          <TouchableOpacity
+            style={{
+              borderWidth: 1,
+              borderRadius: 8,
+              padding: 8,
+              marginVertical: 16,
+              borderColor: '#b2cbe6',
+              backgroundColor: '#dcebf9',
+            }}
+            onPress={() => increment()}
+          >
+            <Text>This button can be tapped without the story view interfering.</Text>
+          </TouchableOpacity>
+        </View>
+      </>
+    );
+  },
+};
+
+export const Scrolling: InteractionExampleStory = {
+  render: () => (
+    <>
+      <ExampleInput />
+      <ScrollView>
+        <ExampleItem>This can scroll when the keyboard is closed.</ExampleItem>
+        <ExampleItem>And also when the keyboard is open.</ExampleItem>
+        {Array(25)
+          .fill(true)
+          .map((_ignored, idx) => (
+            <ExampleItem key={idx}>Item #{idx}</ExampleItem>
+          ))}
+      </ScrollView>
+    </>
+  ),
+};

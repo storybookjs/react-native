@@ -1,10 +1,10 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import type { StoryObj, Meta } from '@storybook/react';
 import { AButton } from './AButton';
 import { ScrollView } from 'react-native';
 
-const SafeAreaInsideMeta: ComponentMeta<typeof AButton> = {
-  title: 'SafeAreaExamples/SafeArea Inside',
+const InsideSafeAreaMeta: Meta<typeof AButton> = {
+  title: 'SafeAreaExamples/Inside SafeArea',
   component: AButton,
   argTypes: {
     onPress: { action: 'pressed the button' },
@@ -13,42 +13,44 @@ const SafeAreaInsideMeta: ComponentMeta<typeof AButton> = {
     text: 'Regular layout',
   },
 };
-export default SafeAreaInsideMeta;
+export default InsideSafeAreaMeta;
 
-type SafeAreaInsideStory = ComponentStory<typeof AButton>;
+type InsideSafeAreaStory = StoryObj<typeof AButton>;
 
-export const Basic: SafeAreaInsideStory = (args) => <AButton {...args} />;
+export const Basic: InsideSafeAreaStory = {};
 
-export const ListBasic: SafeAreaInsideStory = (args) => (
-  <ScrollView>
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-    <AButton {...args} />
-  </ScrollView>
-);
+export const ListBasic: InsideSafeAreaStory = {
+  render: (args) => (
+    <ScrollView>
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+      <AButton {...args} />
+    </ScrollView>
+  ),
+};

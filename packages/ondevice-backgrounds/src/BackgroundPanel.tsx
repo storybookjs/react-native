@@ -1,7 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { AddonStore } from '@storybook/addons';
-import { API } from '@storybook/api';
+import { AddonStore, type API } from '@storybook/manager-api';
+import { StyleSheet, Text, View } from 'react-native';
 
 import Swatch from './Swatch';
 import BackgroundEvents, { PARAM_KEY } from './constants';

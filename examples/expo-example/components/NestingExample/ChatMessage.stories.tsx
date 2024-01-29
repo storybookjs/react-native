@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStoryObj } from '@storybook/react-native';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from 'react-native';
 import React from 'react';
 
@@ -7,15 +7,15 @@ const MyComponent = ({ text }) => <Text>{text}</Text>;
 export default {
   title: 'NestingExample/Message',
   component: MyComponent,
-} as ComponentMeta<typeof MyComponent>;
+} as Meta<typeof MyComponent>;
 
-export const MessageFirst: ComponentStoryObj<typeof MyComponent> = {
+export const MessageFirst: StoryObj<typeof MyComponent> = {
   args: {
     text: 'Hello',
   },
 };
 
-export const MessageSecond: ComponentStoryObj<typeof MyComponent> = {
+export const MessageSecond: StoryObj<typeof MyComponent> = {
   args: {
     text: 'Message two',
   },

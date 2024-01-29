@@ -7,17 +7,21 @@ Storybook Controls Addon for React Native allows editing a component's arguments
 Controls has some extra dependencies needed to display the form inputs.
 
 ```sh
-yarn add -D @storybook/addon-ondevice-controls@next @storybook/addons @storybook/addon-controls @react-native-community/datetimepicker @react-native-community/slider 
+yarn add -D @storybook/addon-ondevice-controls @react-native-community/datetimepicker @react-native-community/slider
 ```
 
 ## Configuration
 
-Then, add following content to `.storybook/main.js`:
+Then, add following content to `.storybook/main.ts`:
 
-```js
-module.exports = {
+```ts
+import { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
   addons: ['@storybook/addon-ondevice-controls'],
 };
+
+export default main;
 ```
 
 See the [examples of using the Controls Addon with Component Story Format](../../examples/expo-example/components/ControlExamples). You can also run the [react-native app](../../examples/expo-example) to see it in action.

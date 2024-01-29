@@ -1,1 +1,1 @@
-export const FakeComponent = () => null;
+export const FakeComponentExcluded = () => null;

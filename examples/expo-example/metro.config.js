@@ -4,21 +4,38 @@ const { mergeConfig } = require('metro-config');
 const path = require('path');
 const defaultConfig = getDefaultConfig(__dirname);
 
-const { writeRequires } = require('@storybook/react-native/scripts/loader');
+// const { writeRequires } = require('@storybook/react-native/scripts/loader');
+const { generate } = require('@storybook/react-native/scripts/generate');
+
+generate({
+  configPath: path.resolve(__dirname, './.storybook'),
+});
+
+// writeRequires({
+//   configPath: path.resolve(__dirname, './.storybook'),
+//   unstable_useRequireContext: false,
+// });
 
 module.exports = (async () => {
-  writeRequires({
-    configPath: path.resolve(__dirname, './.storybook'),
-    unstable_useRequireContext: true,
-  });
-
   return mergeConfig(defaultConfig, {
     resolver: {
-      resolverMainFields: ['sbmodern', ...defaultConfig.resolver.resolverMainFields],
-      //   unstable_enablePackageExports: true,
+      // unstable_enablePackageExports: true,
       disableHierarchicalLookup: true,
       unstable_enableSymlinks: true,
-      //   sourceExts: ['mjs', ...defaultConfig.resolver.sourceExts],
+      resolveRequest: (context, moduleName, platform) => {
+        const defaultResolveResult = context.resolveRequest(context, moduleName, platform);
+
+        if (
+          process.env.STORYBOOK_ENABLED !== 'true' &&
+          defaultResolveResult?.filePath?.includes?.('.storybook/')
+        ) {
+          return {
+            type: 'empty',
+          };
+        }
+
+        return defaultResolveResult;
+      },
     },
     transformer: {
       unstable_allowRequireContext: true,
