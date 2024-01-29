@@ -136,7 +136,7 @@ export class View {
       transport: new WebsocketTransport({
         url,
         onError: (e) => {
-          console.error(`WebsocketTransport error ${e}`);
+          console.log(`WebsocketTransport error ${JSON.stringify(e)}`);
         },
       }),
       async: true,
