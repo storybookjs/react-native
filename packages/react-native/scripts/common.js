@@ -1,4 +1,4 @@
-const { globToRegexp } = require('@storybook/core-common');
+const { globToRegexp, serverRequire } = require('@storybook/core-common');
 const path = require('path');
 const fs = require('fs');
 
@@ -21,7 +21,7 @@ const toRequireContext = (specifier) => {
 function requireUncached(module) {
   delete require.cache[require.resolve(module)];
 
-  return require(module);
+  return serverRequire(module);
 }
 
 const supportedExtensions = ['js', 'jsx', 'ts', 'tsx', 'cjs', 'mjs'];

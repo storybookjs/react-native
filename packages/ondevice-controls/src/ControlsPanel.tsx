@@ -1,4 +1,4 @@
-import { API } from '@storybook/manager-api';
+import type { API } from '@storybook/manager-api';
 import { Channel } from '@storybook/channels';
 import type { Args, StoryContextForLoaders } from '@storybook/csf';
 import { styled } from '@storybook/react-native-theming';

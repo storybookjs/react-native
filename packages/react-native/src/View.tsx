@@ -1,6 +1,5 @@
 import { StoryContext, toId } from '@storybook/csf';
 import { addons as managerAddons } from '@storybook/manager-api';
-// TODO we need preview with selection
 import { addons as previewAddons, PreviewWithSelection } from '@storybook/preview-api';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
@@ -14,7 +13,7 @@ import { Channel, WebsocketTransport } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
-import { useColorScheme } from 'react-native';
+import { useColorScheme, ActivityIndicator, View as RNView, StyleSheet } from 'react-native';
 import getHost from './rn-host-detect';
 
 const STORAGE_KEY = 'lastOpenedStory';
@@ -166,7 +165,6 @@ export class View {
 
     this._storage = storage;
 
-    // TODO come back to this
     const initialStory = this._getInitialStory(params);
 
     if (enableWebsockets) {
@@ -176,8 +174,7 @@ export class View {
       managerAddons.setChannel(channel);
       previewAddons.setChannel(channel);
       this._channel = channel;
-      // TODO: check this with someone who knows what they're doing
-      // @ts-ignore #FIXME
+      // @ts-ignore FIXME
       this._preview.channel = channel;
       this._preview.setupListeners();
       channel.emit(Events.CHANNEL_CREATED);
@@ -260,7 +257,17 @@ export class View {
       }, []);
 
       if (!ready) {
-        return <></>;
+        return (
+          <RNView
+            style={{
+              ...StyleSheet.absoluteFillObject,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <ActivityIndicator animating size={'large'} />
+          </RNView>
+        );
       }
 
       if (onDeviceUI) {

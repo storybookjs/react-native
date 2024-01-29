@@ -2,9 +2,21 @@
 
 - [Migration](#migration)
   - [From version 6.5.x to 7.6.x](#from-version-65x-to-76x)
+    - [Dependencies](#dependencies)
+    - [Regenerate your requires file](#regenerate-your-requires-file)
     - [Update `.storybook/index.js`](#update-storybookindexjs)
-    - [Update types to be imported from `@storybook/react`](#update-types-to-be-imported-from-storybookreact)
+    - [Metro config](#metro-config)
+      - [Expo](#expo)
+      - [React Native CLI](#react-native-cli)
+    - [Types](#types)
     - [doctools](#doctools)
+  - [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
+    - [Update dependencies](#update-dependencies)
+    - [Update your package.json scripts](#update-your-packagejson-scripts)
+    - [Regenerate your requires file](#regenerate-your-requires-file-1)
+    - [Update `.storybook/index.js`](#update-storybookindexjs-1)
+    - [Update your stories](#update-your-stories)
+    - [Types](#types-1)
   - [From version 5.3.x to 6.5.x](#from-version-53x-to-65x)
     - [Additional dependencies](#additional-dependencies)
       - [Controls (the new knobs)](#controls-the-new-knobs)
@@ -21,18 +33,54 @@
 
 ## From version 6.5.x to 7.6.x
 
+In this version of storybook we've a lot of changes to the internals of react native storybook to make it more compatible with core storybook libraries. This means compatibility with the new v7 store and the api changes that comes with that.
+
+Here are some of the other improvements:
+
+- New storage option that lets you choose what storage solution you want to use (async storage/mmkv etc).
+- Support for main.ts
+- Dynamic imports enabled by the unstable_useRequireContext option in metro config.
+  - you only need to generate your requires file when main.ts changes.
+- Error boundaries for stories so your app shouldn't crash when a story throws an error.
+- Improved markdown renderer for notes addon.
+- Simpler setup for auto args.
+
+> [!NOTE]  
+> You should follow a different set of changes if you need to support storiesOf, see [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
+
+### Dependencies
+
 Update all storybook dependencies to 7.6.10 or newer.
 
-Regenerate your `storybook.requires.js` file by running `yarn storybook-generate`.
+For example you may end up with something like this
+
+```json
+{
+  "@storybook/react-native": "^7.6.10",
+  "@storybook/addon-ondevice-actions": "^7.6.10",
+  "@storybook/addon-ondevice-backgrounds": "^7.6.10",
+  "@storybook/addon-ondevice-controls": "^7.6.10",
+  "@storybook/addon-ondevice-notes": "^7.6.10"
+}
+```
+
+### Regenerate your requires file
+
+Regenerate your `storybook.requires` file by running `yarn storybook-generate`.
+
+It should now generate a `storybook.requires.ts` file instead of a `storybook.requires.js` file.
+
+This provides the type for the new view export.
 
 ### Update `.storybook/index.js`
 
-Update `.storybook/index.js` to use the new `getStorybookUI` function exported in `storybook.requires.js`.
+Update `.storybook/index.js` to use the new `getStorybookUI` function on the `view` exported from `storybook.requires.ts`.
+You can also change this file to be called `.storybook/index.tsx`.
 
 You should also now pass a storage object to the `getStorybookUI` function. This is used to persist the selected story between reloads.
 
-```js
-// .storybook/index.js
+```tsx
+// .storybook/index.tsx
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -46,13 +94,24 @@ const StorybookUIRoot = view.getStorybookUI({
 export default StorybookUI;
 ```
 
-Update your `metro.config.js` to enable the `unstable_useRequireContext` option and you can now remove the sbmodern resolver.
+### Metro config
 
-You can also add here the generate function to automatically update the `storybook.requires.js` file when you start metro.
+Update your `metro.config.js` to enable the `unstable_useRequireContext` option and you can now remove the sbmodern resolver if you have it.
+
+> [!NOTE]
+> The unstable_useRequireContext option requires at least react native 0.72
+
+If you are using expo and you don't have a metro config file you can create one by running `npx expo customize metro.config.js`.
+
+You can also add here the generate function to automatically update the `storybook.requires.ts` file when you start metro.
+
 You only need to regenerate this file now when main.js updates since requireContext allows us to use dynamic imports.
+
+#### Expo
 
 ```js
 const path = require('path');
+const { getDefaultConfig } = require('expo/metro-config');
 const { generate } = require('@storybook/react-native/scripts/generate');
 
 generate({
@@ -60,17 +119,52 @@ generate({
   configPath: path.resolve(__dirname, './.storybook'),
 });
 
-module.exports = {
-  /* existing config */
+const defaultConfig = getDefaultConfig(__dirname);
+
+defaultConfig.transformer.unstable_allowRequireContext = true;
+
+// if you are using expo 50 or newer you can safely remove this line
+defaultConfig.resolver.sourceExts.push('mjs');
+
+module.exports = defaultConfig;
+```
+
+#### React Native CLI
+
+```js
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const path = require('path');
+
+const { generate } = require('@storybook/react-native/scripts/generate');
+
+generate({
+  // update ./.storybook to your storybook folder
+  configPath: path.resolve(__dirname, './.storybook'),
+});
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+/**
+ * Metro configuration
+ * https://facebook.github.io/metro/docs/configuration
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
+const config = {
   transformer: {
     unstable_allowRequireContext: true,
   },
+  resolver: {
+    sourceExts: [...defaultConfig.resolver.sourceExts, mjs],
+  },
 };
+
+module.exports = mergeConfig(defaultConfig, config);
 ```
 
 You can now also remove anything from package.json scripts which would run generate before running storybook.
 
-### Update types to be imported from `@storybook/react`
+### Types
 
 We've removed the types from `@storybook/react-native` and now you should import them from `@storybook/react`. This is to remove duplication and increase compatibility with core storybook libraries.
 
@@ -81,7 +175,7 @@ We've removed the types from `@storybook/react-native` and now you should import
 
 ### doctools
 
-If you are manually adding docs tools to do auto args you can now remove this code since its automatically added now.
+If you are manually adding doctools to do auto args you can now remove this code since its automatically added now.
 To make it work you still need babel-plugin-react-docgen-typescript though.
 
 ```diff
@@ -96,6 +190,94 @@ To make it work you still need babel-plugin-react-docgen-typescript though.
 -  },
 -});
 ```
+
+## 6.5.x to 7.6.x with storiesOf support
+
+Storybook v7 doesn't support storiesOf in the same way as v6, but there is a compatibility mode that allows you to continue using storiesOf whilst you migrate your stories.
+
+> [!WARNING]
+> By opting into this compatibility mode you will lose out on some features of v7. We highly recommend moving to CSF stories.
+>
+> StoriesOf will be removed in v8 along with knobs and testing on those deprecated features will be limited.
+
+### Update dependencies
+
+Update all storybook dependencies to 7.6.10 or newer.
+
+For example you may end up with something like this
+
+```json
+{
+  "@storybook/react-native": "^7.6.10",
+  "@storybook/addon-ondevice-actions": "^7.6.10",
+  "@storybook/addon-ondevice-backgrounds": "^7.6.10",
+  "@storybook/addon-ondevice-controls": "^7.6.10",
+  "@storybook/addon-ondevice-notes": "^7.6.10"
+}
+```
+
+### Update your package.json scripts
+
+To opt in you can pass --v6-store to sb-rn-get-stories in the generate script.
+
+```json
+{
+  "scripts": {
+    "storybook-generate": "sb-rn-get-stories --v6-store"
+  }
+}
+```
+
+You should also now import storiesOf from `@storybook/react-native/V6` this is necessary so that certain code paths don't run in v7 mode.
+
+### Regenerate your requires file
+
+Now that you've updated the script you can regenerate your `storybook.requires.js` file by running `yarn storybook-generate`.
+
+It should now have the updated `@storybook/react-native/V6` import in it.
+
+### Update `.storybook/index.js`
+
+Update the import in `.storybook/index.js` from `@storybook/react-native` to `@storybook/react-native/V6`. You can also change this file to be called `.storybook/index.tsx`.
+
+You should also make sure to add the storage prop to the getStorybookUI call. This lets you opt into using a different storage solution like mmkv or if you put async storage there it will continue to work as it did before.
+
+```tsx
+// .storybook/index.tsx
+import './storybook.requires';
+import { getStorybookUI } from '@storybook/react-native/V6';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const StorybookUIRoot = getStorybookUI({
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
+});
+
+export default StorybookUIRoot;
+```
+
+### Update your stories
+
+Where ever you use storiesOf you should now import it from `@storybook/react-native/V6`.
+
+```tsx
+import { storiesOf } from '@storybook/react-native/V6';
+import { text } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-ondevice-knobs';
+import React from 'react';
+import { Button } from './AnotherButton';
+
+storiesOf('Another Button', module)
+  .addDecorator(withKnobs)
+  .add('another button example', () => <Button text={text('text', 'test2')} onPress={() => null} />)
+  .add('again', () => <Button text={text('text', 'text2')} onPress={() => null} />);
+```
+
+### Types
+
+If you're using typescript you may notice that for v7 we've removed the types in `@storybook/react-native`. Thats part of an effort to re-use more code, you should now import them from `@storybook/react` instead.
 
 ## From version 5.3.x to 6.5.x
 

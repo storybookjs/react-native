@@ -9,6 +9,7 @@ const ColorMeta: Meta<typeof Color> = {
       control: { type: 'color' },
     },
   },
+  component: Color,
 };
 
 export default ColorMeta;

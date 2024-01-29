@@ -241,7 +241,7 @@ The current manual release sequence is as follows:
 
 **NOTE:** The very first time you publish a scoped package (`@storybook/x`) you need to make sure that it's package.json contains the following
 
-```js
+```json
 "publishConfig": {
   "access": "public"
 }

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ActionButton } from './Actions';
 
-const ActionButtonMeta: Meta<typeof ActionButton> = {
+const meta = {
   title: 'ActionButton',
   component: ActionButton,
   argTypes: {
@@ -10,14 +10,15 @@ const ActionButtonMeta: Meta<typeof ActionButton> = {
   args: {
     text: 'Press me!',
   },
-};
-export default ActionButtonMeta;
+} satisfies Meta<typeof ActionButton>;
 
-type ActionButtonStory = StoryObj<typeof ActionButton>;
+export default meta;
 
-export const Basic: ActionButtonStory = {};
+type Story = StoryObj<typeof meta>;
 
-export const AnotherAction: ActionButtonStory = {
+export const Basic: Story = {};
+
+export const AnotherAction: Story = {
   argTypes: {
     onPress: { action: 'pressed a different button' },
   },
