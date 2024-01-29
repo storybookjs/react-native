@@ -2,7 +2,7 @@
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-This readme is for the 7.6 version, you can find older versions by browsing the different version tags.
+This readme is for the 7.6 version, you can the 6.5 docs [here](https://github.com/storybookjs/react-native/tree/v6.5-stable).
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
