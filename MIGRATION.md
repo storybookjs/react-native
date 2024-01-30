@@ -261,7 +261,6 @@ yarn add -D @storybook/addon-react-native-web @storybook/addon-essentials storyb
 ```
 
 With expo you should also add `@expo/metro-runtime`.
-i
 
 #### Update package.json scripts
 

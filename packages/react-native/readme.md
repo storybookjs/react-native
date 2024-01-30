@@ -79,7 +79,7 @@ Then set `transformer.unstable_allowRequireContext` to true and add the generate
 
 ```js
 // metro.config.js
-
+const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
 
 const { generate } = require('@storybook/react-native/scripts/generate');
@@ -98,6 +98,7 @@ module.exports = defaultConfig;
 **React native**
 
 ```js
+const path = require('path');
 const { generate } = require('@storybook/react-native/scripts/generate');
 
 generate({
