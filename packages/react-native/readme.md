@@ -2,7 +2,9 @@
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-This readme is for the 7.6 version, you can find older versions by browsing the different version tags.
+This readme is for the 7.6.10 version, you can find the 6.5 docs [here](https://github.com/storybookjs/react-native/tree/v6.5-stable).
+
+If you are migrating from 6.5 to 7.6 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-65x-to-76x)
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
@@ -35,12 +37,6 @@ For expo you can use this [template](https://github.com/dannyhw/expo-template-st
 ```sh
 # With NPM
 npx create-expo-app --template expo-template-storybook AwesomeStorybook
-
-# With Yarn
-yarn create expo-app --template expo-template-storybook AwesomeStorybook
-
-# With pnpm
-pnpm create expo-app --template expo-template-storybook AwesomeStorybook
 ```
 
 For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
@@ -54,7 +50,7 @@ npx react-native init MyApp --template react-native-template-storybook
 Run init to setup your project with all the dependencies and configuration files:
 
 ```sh
-npx sb@latest init --type react_native
+npx storybook@latest init
 ```
 
 The only thing left to do is return Storybook's UI in your app entry point (such as `App.tsx`) like this:
@@ -83,7 +79,7 @@ Then set `transformer.unstable_allowRequireContext` to true and add the generate
 
 ```js
 // metro.config.js
-
+const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
 
 const { generate } = require('@storybook/react-native/scripts/generate');
@@ -92,16 +88,18 @@ generate({
   configPath: path.resolve(__dirname, './.storybook'),
 });
 
-const defaultConfig = getDefaultConfig(__dirname);
+/** @type {import('expo/metro-config').MetroConfig} */
+const config = getDefaultConfig(__dirname);
 
-defaultConfig.transformer.unstable_allowRequireContext = true;
+config.transformer.unstable_allowRequireContext = true;
 
-module.exports = defaultConfig;
+module.exports = config;
 ```
 
 **React native**
 
 ```js
+const path = require('path');
 const { generate } = require('@storybook/react-native/scripts/generate');
 
 generate({

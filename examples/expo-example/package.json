@@ -1,6 +1,6 @@
 {
   "name": "expo-example",
-  "version": "7.6.10-rc.0",
+  "version": "7.6.11",
   "private": true,
   "main": "index.js",
   "scripts": {

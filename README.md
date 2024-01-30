@@ -2,7 +2,7 @@
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-This readme is for the 7.6.10-rc.0 version that will be stable soon, you can find the 6.5 docs [here](https://github.com/storybookjs/react-native/tree/v6.5-stable).
+This readme is for the 7.6.10 version, you can find the 6.5 docs [here](https://github.com/storybookjs/react-native/tree/v6.5-stable).
 
 If you are migrating from 6.5 to 7.6 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-65x-to-76x)
 
@@ -79,7 +79,7 @@ Then set `transformer.unstable_allowRequireContext` to true and add the generate
 
 ```js
 // metro.config.js
-
+const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
 
 const { generate } = require('@storybook/react-native/scripts/generate');
@@ -88,16 +88,20 @@ generate({
   configPath: path.resolve(__dirname, './.storybook'),
 });
 
-const defaultConfig = getDefaultConfig(__dirname);
+/** @type {import('expo/metro-config').MetroConfig} */
+const config = getDefaultConfig(__dirname);
 
-defaultConfig.transformer.unstable_allowRequireContext = true;
+config.transformer.unstable_allowRequireContext = true;
 
-module.exports = defaultConfig;
+config.resolver.sourceExts.push('mjs');
+
+module.exports = config;
 ```
 
 **React native**
 
 ```js
+const path = require('path');
 const { generate } = require('@storybook/react-native/scripts/generate');
 
 generate({
