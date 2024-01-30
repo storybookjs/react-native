@@ -2,7 +2,7 @@
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-This readme is for the 7.6.10-rc.0 version that will be stable soon, you can find the 6.5 docs [here](https://github.com/storybookjs/react-native/tree/v6.5-stable).
+This readme is for the 7.6.10 version, you can find the 6.5 docs [here](https://github.com/storybookjs/react-native/tree/v6.5-stable).
 
 If you are migrating from 6.5 to 7.6 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-65x-to-76x)
 
