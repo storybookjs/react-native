@@ -88,11 +88,14 @@ generate({
   configPath: path.resolve(__dirname, './.storybook'),
 });
 
-const defaultConfig = getDefaultConfig(__dirname);
+/** @type {import('expo/metro-config').MetroConfig} */
+const config = getDefaultConfig(__dirname);
 
-defaultConfig.transformer.unstable_allowRequireContext = true;
+config.transformer.unstable_allowRequireContext = true;
 
-module.exports = defaultConfig;
+config.resolver.sourceExts.push('mjs');
+
+module.exports = config;
 ```
 
 **React native**

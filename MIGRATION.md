@@ -114,23 +114,24 @@ You only need to regenerate this file now when main.js updates since requireCont
 #### Expo
 
 ```js
+// metro.config.js
 const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
+
 const { generate } = require('@storybook/react-native/scripts/generate');
 
 generate({
-  // update ./.storybook to your storybook folder
   configPath: path.resolve(__dirname, './.storybook'),
 });
 
-const defaultConfig = getDefaultConfig(__dirname);
+/** @type {import('expo/metro-config').MetroConfig} */
+const config = getDefaultConfig(__dirname);
 
-defaultConfig.transformer.unstable_allowRequireContext = true;
+config.transformer.unstable_allowRequireContext = true;
 
-// if you are using expo 50 or newer you can safely remove this line
-defaultConfig.resolver.sourceExts.push('mjs');
+config.resolver.sourceExts.push('mjs');
 
-module.exports = defaultConfig;
+module.exports = config;
 ```
 
 #### React Native CLI
