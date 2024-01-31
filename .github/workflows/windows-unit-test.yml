@@ -1,0 +1,23 @@
+name: Unit tests
+
+on:
+  push:
+    branches:
+      - next
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: Core Unit Tests, windows
+    strategy:
+      fail-fast: false
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set node version
+        uses: actions/setup-node@v3
+      - name: install and compile
+        run: yarn
+      - name: test
+        run: yarn test
