@@ -4474,7 +4474,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-ondevice-actions@^7.6.10-rc.0, @storybook/addon-ondevice-actions@workspace:packages/ondevice-actions":
+"@storybook/addon-ondevice-actions@^8.0.0-alpha.0, @storybook/addon-ondevice-actions@workspace:packages/ondevice-actions":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-actions@workspace:packages/ondevice-actions"
   dependencies:
@@ -4490,13 +4490,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-backgrounds@^7.6.10-rc.0, @storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds":
+"@storybook/addon-ondevice-backgrounds@^8.0.0-alpha.0, @storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds"
   dependencies:
     "@storybook/manager-api": 8.0.0-alpha.15
     "@storybook/preview-api": 8.0.0-alpha.15
-    "@storybook/react-native-theming": ^7.6.10-rc.0
+    "@storybook/react-native-theming": ^8.0.0-alpha.0
     typescript: ^5.3.3
   peerDependencies:
     react: "*"
@@ -4504,7 +4504,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-controls@^7.6.10-rc.0, @storybook/addon-ondevice-controls@workspace:packages/ondevice-controls":
+"@storybook/addon-ondevice-controls@^8.0.0-alpha.0, @storybook/addon-ondevice-controls@workspace:packages/ondevice-controls":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-controls@workspace:packages/ondevice-controls"
   dependencies:
@@ -4513,7 +4513,7 @@ __metadata:
     "@storybook/client-logger": 8.0.0-alpha.15
     "@storybook/core-events": 8.0.0-alpha.15
     "@storybook/manager-api": 8.0.0-alpha.15
-    "@storybook/react-native-theming": ^7.6.10-rc.0
+    "@storybook/react-native-theming": ^8.0.0-alpha.0
     cross-env: ^7.0.3
     deep-equal: ^1.0.1
     prop-types: ^15.7.2
@@ -4529,14 +4529,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-notes@^7.6.10-rc.0, @storybook/addon-ondevice-notes@workspace:packages/ondevice-notes":
+"@storybook/addon-ondevice-notes@^8.0.0-alpha.0, @storybook/addon-ondevice-notes@workspace:packages/ondevice-notes":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-notes@workspace:packages/ondevice-notes"
   dependencies:
     "@storybook/client-logger": 8.0.0-alpha.15
     "@storybook/core-events": 8.0.0-alpha.15
     "@storybook/manager-api": 8.0.0-alpha.15
-    "@storybook/react-native-theming": ^7.6.10-rc.0
+    "@storybook/react-native-theming": ^8.0.0-alpha.0
     react-native-markdown-display: 6.1.6
     typescript: ^5.3.3
   peerDependencies:
@@ -5139,7 +5139,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-native-theming@^7.6.10-rc.0, @storybook/react-native-theming@workspace:packages/react-native-theming":
+"@storybook/react-native-theming@^8.0.0-alpha.0, @storybook/react-native-theming@workspace:packages/react-native-theming":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-theming@workspace:packages/react-native-theming"
   dependencies:
@@ -5153,7 +5153,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native@^7.6.10-rc.0, @storybook/react-native@workspace:packages/react-native":
+"@storybook/react-native@^8.0.0-alpha.0, @storybook/react-native@workspace:packages/react-native":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native@workspace:packages/react-native"
   dependencies:
@@ -5167,7 +5167,7 @@ __metadata:
     "@storybook/manager-api": 8.0.0-alpha.15
     "@storybook/preview-api": 8.0.0-alpha.15
     "@storybook/react": 8.0.0-alpha.15
-    "@storybook/react-native-theming": ^7.6.10-rc.0
+    "@storybook/react-native-theming": ^8.0.0-alpha.0
     "@storybook/types": 8.0.0-alpha.15
     "@types/jest": ^29.4.3
     "@types/react": ~18.2.14
@@ -10116,10 +10116,10 @@ __metadata:
     "@storybook/addon-essentials": 8.0.0-alpha.15
     "@storybook/addon-interactions": 8.0.0-alpha.15
     "@storybook/addon-links": 8.0.0-alpha.15
-    "@storybook/addon-ondevice-actions": ^7.6.10-rc.0
-    "@storybook/addon-ondevice-backgrounds": ^7.6.10-rc.0
-    "@storybook/addon-ondevice-controls": ^7.6.10-rc.0
-    "@storybook/addon-ondevice-notes": ^7.6.10-rc.0
+    "@storybook/addon-ondevice-actions": ^8.0.0-alpha.0
+    "@storybook/addon-ondevice-backgrounds": ^8.0.0-alpha.0
+    "@storybook/addon-ondevice-controls": ^8.0.0-alpha.0
+    "@storybook/addon-ondevice-notes": ^8.0.0-alpha.0
     "@storybook/addon-react-native-server": 0.0.5--canary.3.18ef8d7.0
     "@storybook/addon-react-native-web": ^0.0.22
     "@storybook/blocks": 8.0.0-alpha.15
@@ -10128,7 +10128,7 @@ __metadata:
     "@storybook/docs-tools": 8.0.0-alpha.15
     "@storybook/global": ^5.0.0
     "@storybook/react": 8.0.0-alpha.15
-    "@storybook/react-native": ^7.6.10-rc.0
+    "@storybook/react-native": ^8.0.0-alpha.0
     "@storybook/react-webpack5": 8.0.0-alpha.15
     "@storybook/test": 8.0.0-alpha.15
     "@types/react": ~18.2.14
