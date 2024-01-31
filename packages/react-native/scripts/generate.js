@@ -36,7 +36,10 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
     const { path: p, recursive: r, match: m } = toRequireContext(specifier);
 
-    const pathToStory = ensureRelativePathHasDot(path.relative(configPath, p));
+    const pathToStory = ensureRelativePathHasDot(
+      path.relative(configPath, p).split(path.sep).join(path.posix.sep)
+    );
+
     return `{
       titlePrefix: "${specifier.titlePrefix}",
       directory: "${specifier.directory}",
