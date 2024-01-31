@@ -29,14 +29,13 @@ function generate({ configPath, absolute = false, useJs = false }) {
     workingDir: cwd,
   });
 
-  // TODO refactor contexts and normalized stories to be one thing
   const normalizedStories = storiesSpecifiers.map((specifier) => {
     // TODO why????
     const reg = globToRegexp(`./${specifier.files}`);
 
     const { path: p, recursive: r, match: m } = toRequireContext(specifier);
 
-    const pathToStory = ensureRelativePathHasDot(path.relative(configPath, p));
+    const pathToStory = ensureRelativePathHasDot(path.posix.relative(configPath, p));
     return `{
       titlePrefix: "${specifier.titlePrefix}",
       directory: "${specifier.directory}",
