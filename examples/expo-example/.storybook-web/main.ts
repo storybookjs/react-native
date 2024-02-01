@@ -17,18 +17,14 @@ const main: ServerStorybookConfig = {
   addons: [
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-interactions'),
-    getAbsolutePath('@storybook/addon-react-native-web'),
+    '@storybook/addon-react-native-web',
     // note why does this break with get absolute?
     '@storybook/addon-react-native-server',
   ],
   // logLevel: 'debug',
   framework: {
     name: '@storybook/react-webpack5',
-    options: {
-      builder: {
-        useSWC: true,
-      },
-    },
+    options: {},
   },
 
   reactNativeServerOptions: {
@@ -36,9 +32,9 @@ const main: ServerStorybookConfig = {
     port: 7007,
   },
 
-  docs: {
-    autodocs: 'tag',
-  },
+  // docs: {
+  //   autodocs: 'tag',
+  // },
 };
 
 export default main;
