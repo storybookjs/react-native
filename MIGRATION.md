@@ -160,7 +160,7 @@ const config = {
     unstable_allowRequireContext: true,
   },
   resolver: {
-    sourceExts: [...defaultConfig.resolver.sourceExts, mjs],
+    sourceExts: [...defaultConfig.resolver.sourceExts, 'mjs'],
   },
 };
 

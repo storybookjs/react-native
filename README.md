@@ -113,6 +113,9 @@ module.exports = {
   transformer: {
     unstable_allowRequireContext: true,
   },
+  resolver: {
+    sourceExts: [...defaultConfig.resolver.sourceExts, 'mjs'],
+  },
 };
 ```
 
