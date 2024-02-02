@@ -39,7 +39,13 @@ const StoryView = () => {
         testID={id}
         onStartShouldSetResponder={dismissOnStartResponder}
       >
-        <ErrorBoundary>{StoryComponent && <StoryComponent {...context} />}</ErrorBoundary>
+        <ErrorBoundary
+          onError={() => {
+            console.log(`Error rendering story for ${context.title} ${context.name}`);
+          }}
+        >
+          {StoryComponent && <StoryComponent {...context} />}
+        </ErrorBoundary>
       </View>
     );
   }

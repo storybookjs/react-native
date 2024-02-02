@@ -147,8 +147,6 @@ export class View {
         this._idToPrepared[storyId] = await this._preview.storyStore.loadStory({ storyId });
       })
     );
-
-    console.log('Storybook: Finished building story index');
   };
 
   getStorybookUI = (params: Partial<Params> = {}) => {
