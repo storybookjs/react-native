@@ -10,6 +10,21 @@ const meta = {
   args: {
     text: 'Press me!',
   },
+  parameters: {
+    notes: `
+# Button
+
+This is a button component.
+You use it like this:
+
+\`\`\`tsx    
+<Button 
+      text="Press me!" 
+      onPress={() => console.log('pressed')} 
+/>
+\`\`\`
+`,
+  },
 } satisfies Meta<typeof ActionButton>;
 
 export default meta;

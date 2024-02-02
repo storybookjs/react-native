@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 export class ErrorBoundary extends React.Component<
-  { children: ReactNode | ReactNode[] },
+  { children: ReactNode | ReactNode[]; onError: (error: Error, stack: string) => void },
   { hasError: boolean }
 > {
   constructor(props) {
@@ -15,15 +15,27 @@ export class ErrorBoundary extends React.Component<
     return { hasError: true };
   }
 
-  componentDidCatch(error, errorInfo) {
-    // You can also log the error to an error reporting service
-    console.warn(error, errorInfo);
+  componentDidCatch(error, info) {
+    this.props.onError(error, info.componentStack);
   }
 
   render() {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
-      return <Text>Something went wrong rendering your story</Text>;
+      return (
+        <View
+          style={{
+            margin: 16,
+            padding: 16,
+            borderColor: 'red',
+            borderWidth: 2,
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: 4,
+          }}
+        >
+          <Text style={{ fontWeight: 'bold' }}>Something went wrong rendering your story</Text>
+        </View>
+      );
     }
 
     return this.props.children;

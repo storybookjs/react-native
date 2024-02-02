@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './TextInput';
 
-export default {
+const meta = {
   title: 'TextInput',
   component: Input,
   parameters: {
     notes: 'Use this example to test the software keyboard related issues.',
   },
-} as Meta<typeof Input>;
+} satisfies Meta<typeof Input>;
 
-type TextInputStory = StoryObj<typeof Input>;
+export default meta;
 
-export const Basic: TextInputStory = {
-  play: (_context) => {
-    console.log('play!!');
-  },
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   args: {
     placeholder: 'Type something',
   },

@@ -15,6 +15,12 @@ export const ActionButton = ({ onPress, text }: ActionButtonProps) => {
 };
 
 const styles = StyleSheet.create({
-  container: { paddingHorizontal: 16, paddingVertical: 8, backgroundColor: 'violet' },
-  text: { color: 'black' },
+  container: {
+    paddingHorizontal: 32,
+    paddingVertical: 16,
+    backgroundColor: 'purple',
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  text: { color: 'white', fontWeight: 'bold', fontSize: 18 },
 });
