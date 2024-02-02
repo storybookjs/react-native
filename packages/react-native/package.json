@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "7.6.13",
+  "version": "7.6.14",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -63,7 +63,7 @@
     "@storybook/preview-api": "^7.6.10",
     "@storybook/preview-web": "^7.6.10",
     "@storybook/react": "^7.6.10",
-    "@storybook/react-native-theming": "^7.6.13",
+    "@storybook/react-native-theming": "^7.6.14",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
