@@ -12,7 +12,7 @@
     "build-web-storybook": "storybook build -c ./.storybook-web",
     "storybook-getstories": "sb-rn-get-stories --config-path=./.storybook --v6-store",
     "storybook-generate": "sb-rn-get-stories --config-path=./.storybook",
-    "storybook-watcher": "sb-rn-watcher --config-path=./.storybook",
+    "storybook-watcher": "sb-rn-watcher -v6 --config-path=./.storybook ",
     "disabled-example": "expo start",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
