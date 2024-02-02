@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-knobs",
-  "version": "7.6.12",
+  "version": "7.6.13",
   "description": "Display storybook story knobs on your deviced.",
   "keywords": [
     "addon",
@@ -34,7 +34,7 @@
     "@storybook/addons": "^7.6.10",
     "@storybook/core-events": "^7.6.10",
     "@storybook/manager-api": "^7.6.10",
-    "@storybook/react-native-theming": "^7.6.12",
+    "@storybook/react-native-theming": "^7.6.13",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
     "react-native-modal-datetime-picker": "^14.0.0",
