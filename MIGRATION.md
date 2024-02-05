@@ -95,7 +95,7 @@ const StorybookUIRoot = view.getStorybookUI({
   },
 });
 
-export default StorybookUI;
+export default StorybookUIRoot;
 ```
 
 ### Metro config
@@ -204,7 +204,7 @@ You can now also update main.js to main.ts and use the StorybookConfig type. Thi
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
-	stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)']
+	stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
 	addons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
