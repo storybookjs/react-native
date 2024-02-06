@@ -40,6 +40,7 @@
     "publish:alpha": "yarn lerna publish from-git --dist-tag alpha",
     "publish:latest": "yarn lerna publish from-git --dist-tag latest",
     "publish:next": "yarn lerna publish from-git --dist-tag next",
+    "test:ci": "lerna run test:ci",
     "test": "lerna run test",
     "check-mismatched-deps": "ts-node ./check-matching-deps.ts"
   },
