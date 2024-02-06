@@ -1,0 +1,29 @@
+name: Checks
+
+on:
+  push:
+    branches:
+      - next
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: Check everything!
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set node version
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: install and compile
+        run: yarn
+      - name: build
+        run: yarn build
+      - name: lint
+        run: yarn lint
+      - name: test
+        run: yarn test

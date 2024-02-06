@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   text: { color: 'black' },
 });
 
-const BackgroundMeta: Meta<typeof Background> = {
+const meta = {
   title: 'BackgroundExample/Background CSF',
   component: Background,
   decorators: [withBackgrounds],
@@ -26,10 +26,10 @@ const BackgroundMeta: Meta<typeof Background> = {
       ],
     },
   },
-};
+} satisfies Meta<typeof Background>;
 
-export default BackgroundMeta;
+export default meta;
 
-type BackgroundStory = StoryObj<typeof Background>;
+type Story = StoryObj<typeof meta>;
 
-export const Basic: BackgroundStory = {};
+export const Basic: Story = {};

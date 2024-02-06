@@ -34,12 +34,13 @@
     "dev:check-types": "tsc --noEmit",
     "github-release": "github-release-from-changelog",
     "lint": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
-    "lint:fix": "yarn lint . --fix",
+    "lint:fix": "lint . --fix",
     "build": "lerna run prepare",
-    "version-packages": "yarn lerna version --force-publish",
-    "publish:alpha": "yarn lerna publish from-git --dist-tag alpha",
-    "publish:latest": "yarn lerna publish from-git --dist-tag latest",
-    "publish:next": "yarn lerna publish from-git --dist-tag next",
+    "version-packages": "lerna version --force-publish",
+    "publish:alpha": "lerna publish from-git --dist-tag alpha",
+    "publish:latest": "lerna publish from-git --dist-tag latest",
+    "publish:next": "lerna publish from-git --dist-tag next",
+    "test:ci": "lerna run test:ci",
     "test": "lerna run test",
     "check-mismatched-deps": "ts-node ./check-matching-deps.ts"
   },
@@ -64,5 +65,5 @@
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@4.1.0"
 }

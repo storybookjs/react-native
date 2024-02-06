@@ -1,6 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import { Array } from './Array';
-const ArrayMeta: Meta<typeof Array> = {
+
+const meta = {
   title: 'ControlExamples/Array control',
   component: Array,
   args: {
@@ -16,10 +17,10 @@ const ArrayMeta: Meta<typeof Array> = {
     notes:
       'Seems like the array type is not distinguishable from object so you should provide the arg type in this case',
   },
-};
+} satisfies Meta<typeof Array>;
 
-export default ArrayMeta;
+export default meta;
 
-type ArrayStory = StoryObj<typeof Array>;
+type Story = StoryObj<typeof meta>;
 
-export const Basic: ArrayStory = {};
+export const Basic: Story = {};

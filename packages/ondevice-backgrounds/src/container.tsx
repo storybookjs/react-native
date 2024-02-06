@@ -20,7 +20,10 @@ const Container = ({ initialBackground, channel, children }: ContainerProps) => 
   }, [channel]);
 
   return (
-    <View style={[styles.container, background && { backgroundColor: background }]}>
+    <View
+      testID="addon-backgrounds-container"
+      style={[styles.container, background && { backgroundColor: background }]}
+    >
       {children}
     </View>
   );
