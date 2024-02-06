@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 });
 
 export const Color = ({ color }: ButtonProps) => (
-  <View style={[styles.button, { backgroundColor: color }]}>
+  <View testID="color-story-container" style={[styles.button, { backgroundColor: color }]}>
     <Text>Color: {color as string}</Text>
   </View>
 );
