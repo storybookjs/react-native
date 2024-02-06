@@ -7,11 +7,15 @@ const ActionsStory = composeStory(Basic, Meta);
 test('form submits two answers', async () => {
   jest.useFakeTimers();
 
-  render(<ActionsStory />);
+  const onPress = jest.fn();
+
+  render(<ActionsStory onPress={onPress} />);
 
   const user = userEvent.setup({});
 
   const actionButton = screen.getByText('Press me!');
 
   await user.press(actionButton);
+
+  expect(onPress).toHaveBeenCalled();
 });
