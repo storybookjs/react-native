@@ -4,7 +4,7 @@ import Meta, { Basic } from './Actions.stories';
 
 const ActionsStory = composeStory(Basic, Meta);
 
-test('form submits two answers', async () => {
+test('action story renders and onpress works', async () => {
   jest.useFakeTimers();
 
   const onPress = jest.fn();

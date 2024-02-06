@@ -4,7 +4,7 @@ import Meta, { Basic } from './Array.stories';
 
 const ArrayStory = composeStory(Basic, Meta);
 
-test('form submits two answers', () => {
+test('array story renders', () => {
   render(<ArrayStory />);
 
   expect(screen.getByTestId('array-story-container')).toHaveTextContent(/abc/);
