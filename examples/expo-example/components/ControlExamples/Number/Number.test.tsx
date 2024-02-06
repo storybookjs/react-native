@@ -5,14 +5,14 @@ import Meta, { Basic, Range } from './Number.stories';
 const BasicStory = composeStory(Basic, Meta);
 const RangeStory = composeStory(Range, Meta);
 
-test('basic story renders', () => {
+test('basic story renders', async () => {
   render(<BasicStory />);
 
-  screen.getByText(/5 x 3 = 15/);
+  await screen.findByText(/5 x 3 = 15/);
 });
 
-test('range story renders', () => {
+test('range story renders', async () => {
   render(<RangeStory />);
 
-  screen.getByText(/6 x 7 = 42/);
+  await screen.findByText(/6 x 7 = 42/);
 });
