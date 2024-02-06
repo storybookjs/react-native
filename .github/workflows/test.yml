@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Check everything
+    name: Check everything!
     strategy:
       fail-fast: false
     runs-on: ubuntu-latest
