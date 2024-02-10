@@ -7,6 +7,7 @@ import SelectType from './Select';
 import DateType from './Date';
 import ArrayType from './Array';
 import RadioType from './Radio';
+import CheckboxType from './Check';
 
 export default {
   text: TextType,
@@ -18,4 +19,5 @@ export default {
   date: DateType,
   array: ArrayType,
   radio: RadioType,
+  check: CheckboxType,
 };
