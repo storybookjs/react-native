@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { ColorExample } from './Color.stories';
+import { composeStories } from '@storybook/react';
+import * as Color from './Color.stories';
 
-const ColorStory = composeStory(ColorExample, Meta);
+const { ColorExample } = composeStories(Color);
 
 test('color story renders', () => {
-  render(<ColorStory />);
+  render(<ColorExample />);
 
   expect(screen.getByTestId('color-story-container')).toHaveStyle({ backgroundColor: '#a819b9' });
 });

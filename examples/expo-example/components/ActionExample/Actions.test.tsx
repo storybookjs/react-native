@@ -1,15 +1,15 @@
 import { render, screen, userEvent } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic } from './Actions.stories';
+import { composeStories } from '@storybook/react';
+import * as Actions from './Actions.stories';
 
-const ActionsStory = composeStory(Basic, Meta);
+const { Basic } = composeStories(Actions);
 
 test('action story renders and onpress works', async () => {
   jest.useFakeTimers();
 
   const onPress = jest.fn();
 
-  render(<ActionsStory onPress={onPress} />);
+  render(<Basic onPress={onPress} />);
 
   const user = userEvent.setup({});
 

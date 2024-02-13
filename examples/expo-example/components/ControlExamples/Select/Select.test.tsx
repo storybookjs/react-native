@@ -1,25 +1,23 @@
 import { screen, render } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic, WithLabels, WithMapping } from './Select.stories';
+import { composeStories } from '@storybook/react';
+import * as SelectStories from './Select.stories';
 
-const SelectStory = composeStory(Basic, Meta);
-const SelectWithLabelsStory = composeStory(WithLabels, Meta);
-const SelectWithMappingStory = composeStory(WithMapping, Meta);
+const { Basic, WithLabels, WithMapping } = composeStories(SelectStories);
 
 test('select story renders', () => {
-  render(<SelectStory />);
+  render(<Basic />);
 
   screen.getByText('Selected: ⬅️');
 });
 
 test('select with labels story renders', () => {
-  render(<SelectWithLabelsStory />);
+  render(<WithLabels />);
 
   screen.getByText('Selected: ⬆');
 });
 
 test('select with mapping story renders', () => {
-  render(<SelectWithMappingStory />);
+  render(<WithMapping />);
 
   screen.getByText('Selected: ⬆');
 });

@@ -1,18 +1,17 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic, On } from './Boolean.stories';
+import { composeStories } from '@storybook/react';
+import * as BooleanStories from './Boolean.stories';
 
-const BooleanStory = composeStory(Basic, Meta);
-const OnStory = composeStory(On, Meta);
+const { Basic, On } = composeStories(BooleanStories);
 
 test('boolean story renders', () => {
-  render(<BooleanStory />);
+  render(<Basic />);
 
   screen.getByText('off');
 });
 
 test('boolean story renders on', () => {
-  render(<OnStory />);
+  render(<On />);
 
   screen.getByText('on');
 });

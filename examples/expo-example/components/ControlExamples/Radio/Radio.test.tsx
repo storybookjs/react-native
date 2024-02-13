@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic } from './Radio.stories';
+import { composeStories } from '@storybook/react';
+import * as RadioStories from './Radio.stories';
 
-const RadioStory = composeStory(Basic, Meta);
+const { Basic } = composeStories(RadioStories);
 
 test('radio story renders', () => {
-  render(<RadioStory />);
+  render(<Basic />);
 
   screen.getByText('104.8MHz');
 });

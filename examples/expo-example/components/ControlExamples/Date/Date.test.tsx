@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic } from './Date.stories';
+import { composeStories } from '@storybook/react';
+import * as DateStories from './Date.stories';
 
-const DateStory = composeStory(Basic, Meta);
+const { Basic } = composeStories(DateStories);
 
 test('date story renders', () => {
-  render(<DateStory />);
+  render(<Basic />);
 
   const date = new Date(1983, 1, 25);
 
