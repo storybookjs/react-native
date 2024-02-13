@@ -1,11 +1,11 @@
 import { screen, render } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic } from './Text.stories';
+import { composeStories } from '@storybook/react';
+import * as TextStories from './Text.stories';
 
-const TextStory = composeStory(Basic, Meta);
+const { Basic } = composeStories(TextStories);
 
 test('text story renders', () => {
-  render(<TextStory />);
+  render(<Basic />);
 
   screen.getByText('Hello world!');
 });

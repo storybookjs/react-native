@@ -1,18 +1,17 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic, Range } from './Number.stories';
+import { composeStories } from '@storybook/react';
+import * as NumberStories from './Number.stories';
 
-const BasicStory = composeStory(Basic, Meta);
-const RangeStory = composeStory(Range, Meta);
+const { Basic, Range } = composeStories(NumberStories);
 
 test('basic story renders', async () => {
-  render(<BasicStory />);
+  render(<Basic />);
 
   await screen.findByText(/5 x 3 = 15/);
 });
 
 test('range story renders', async () => {
-  render(<RangeStory />);
+  render(<Range />);
 
   await screen.findByText(/6 x 7 = 42/);
 });

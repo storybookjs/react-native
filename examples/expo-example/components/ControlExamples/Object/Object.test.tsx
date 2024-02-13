@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic } from './Object.stories';
+import { composeStories } from '@storybook/react';
+import * as ObjectStory from './Object.stories';
 
-const ObjectStory = composeStory(Basic, Meta);
+const { Basic } = composeStories(ObjectStory);
 
 test('object story renders', () => {
-  render(<ObjectStory />);
+  render(<Basic />);
 
   screen.getByText('title: Blade Runner');
   screen.getByText('genre: Sci Fi');

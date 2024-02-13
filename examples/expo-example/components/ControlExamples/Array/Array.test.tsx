@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic } from './Array.stories';
+import { composeStories } from '@storybook/react';
+import * as ArrayStories from './Array.stories';
 
-const ArrayStory = composeStory(Basic, Meta);
+const { Basic } = composeStories(ArrayStories);
 
 test('array story renders', () => {
-  render(<ArrayStory />);
+  render(<Basic />);
 
   expect(screen.getByTestId('array-story-container')).toHaveTextContent(/abc/);
 });

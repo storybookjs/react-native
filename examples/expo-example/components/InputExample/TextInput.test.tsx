@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
-import Meta, { Basic } from './TextInput.stories';
+import { composeStories } from '@storybook/react';
+import * as InputStories from './TextInput.stories';
 
-const TextInputStory = composeStory(Basic, Meta);
+const { Basic } = composeStories(InputStories);
 
 test('text input story renders', () => {
-  render(<TextInputStory />);
+  render(<Basic />);
 
   screen.getByPlaceholderText('Type something');
 });
