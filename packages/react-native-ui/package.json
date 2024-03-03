@@ -1,0 +1,70 @@
+{
+  "name": "@storybook/react-native-ui",
+  "version": "8.0.0-alpha.1",
+  "description": "ui components for react native storybook",
+  "keywords": [
+    "react",
+    "react-native",
+    "storybook"
+  ],
+  "homepage": "https://storybook.js.org/",
+  "bugs": {
+    "url": "https://github.com/storybookjs/react-native/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/react-native.git",
+    "directory": "packages/react-native-ui"
+  },
+  "react-native": "src/index.tsx",
+  "main": "dist/index.js",
+  "types": "src/index.tsx",
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts",
+    "src/**/*"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "prepare": "tsup",
+    "test": "jest",
+    "test:ci": "jest"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "dist/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "preset": "react-native"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.4.3",
+    "@types/react": "~18.2.14",
+    "babel-jest": "^29.4.3",
+    "jest": "^29.7.0",
+    "react-test-renderer": "18.2.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.57.0",
+    "react-native-safe-area-context": "*"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
