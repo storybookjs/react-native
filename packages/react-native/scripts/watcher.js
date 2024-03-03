@@ -6,6 +6,15 @@ const { writeRequires, getMain, getFilePathExtension } = require('./loader');
 const { getArguments } = require('./handle-args');
 
 const args = getArguments();
+
+if (!args.v6Store) {
+  console.log(
+    "in v7 you don't need the watcher anymore, if you are using v6 compat mode then pass the -v6 flag"
+  );
+
+  process.exit(0);
+}
+
 const log = console.log.bind(console);
 
 const mainExt = getFilePathExtension(args, 'main');
@@ -17,6 +26,8 @@ if (previewExt) {
   watchPaths.push(`./preview.${previewExt}`);
 }
 
+console.log(watchPaths);
+
 const updateRequires = (event, watchPath) => {
   if (typeof watchPath === 'string') {
     log(`event ${event} for file ${path.basename(watchPath)}`);
@@ -25,6 +36,14 @@ const updateRequires = (event, watchPath) => {
 };
 
 const globs = getMain(args).stories;
+// directory
+// files
+const globsStrings = globs.map((g) => {
+  if (typeof g === 'string') return g;
+  if (g.directory && g.files) {
+    return `${g.directory}/${g.files}`;
+  }
+});
 
 chokidar
   .watch(watchPaths, { cwd: args.configPath })
@@ -33,7 +52,7 @@ chokidar
 let isReady = false;
 
 chokidar
-  .watch(globs, { cwd: args.configPath })
+  .watch(globsStrings, { cwd: args.configPath })
   .on('ready', () => {
     log('Watcher is ready, performing initial write');
     writeRequires(args);

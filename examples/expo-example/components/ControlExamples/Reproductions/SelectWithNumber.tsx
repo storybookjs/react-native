@@ -20,7 +20,7 @@ export const MyButton = ({ number }: ButtonProps) => {
   return (
     <View>
       <TouchableOpacity activeOpacity={0.8}>
-        <Text>{number}</Text>
+        <Text>num: {number}</Text>
       </TouchableOpacity>
     </View>
   );

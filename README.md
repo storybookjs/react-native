@@ -23,6 +23,7 @@ _Pictured is from the template mentioned in [getting started](#getting-started)_
 - 🔌 [Addons](#addons)
 - 📱 [Hide/Show Storybook](#hideshow-storybook)
 - 🔧 [getStorybookUI](#getstorybookui-options)
+- 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
 - ✨ [Examples](#examples)
 
@@ -112,6 +113,9 @@ module.exports = {
   /* existing config */
   transformer: {
     unstable_allowRequireContext: true,
+  },
+  resolver: {
+    sourceExts: [...defaultConfig.resolver.sourceExts, 'mjs'],
   },
 };
 ```
@@ -283,6 +287,10 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
         -- With shouldDisableKeyboardAvoidingView=true, this will set the keyboardverticaloffset (https://facebook.github.io/react-native/docs/keyboardavoidingview#keyboardverticaloffset) value for KeyboardAvoidingView wrapping Storybook's view
 }
 ```
+
+## Using stories in unit tests
+
+Storybook provides testing utilities that allow you to reuse your stories in external test environments, such as Jest. This way you can write unit tests easier and reuse the setup which is already done in Storybook, but in your unit tests. You can find more information about it in the [portable stories section](./PORTABLE_STORIES.md).
 
 ## Contributing
 

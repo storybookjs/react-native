@@ -6,7 +6,7 @@ interface ArrayProps {
 }
 
 export const Array = ({ list }: ArrayProps) => (
-  <View>
+  <View testID="array-story-container">
     {list.map((item, index) => (
       <Text key={index} style={styles.item}>
         {item}

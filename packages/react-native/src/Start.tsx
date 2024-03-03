@@ -124,7 +124,8 @@ export function start({
     showPreparingStory: () => {},
     showStory: () => {},
     showStoryDuringRender: () => {},
-  };
+    // TODO what happened to this type?
+  } as any;
 
   const selectionStore = {
     selection: null,
