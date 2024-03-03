@@ -52,16 +52,16 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@storybook/channels": "8.0.0-beta.0",
-    "@storybook/client-logger": "8.0.0-beta.0",
-    "@storybook/core-common": "8.0.0-beta.0",
-    "@storybook/core-events": "8.0.0-beta.0",
+    "@storybook/channels": "8.0.0-rc.1",
+    "@storybook/client-logger": "8.0.0-rc.1",
+    "@storybook/core-common": "8.0.0-rc.1",
+    "@storybook/core-events": "8.0.0-rc.1",
     "@storybook/csf": "^0.1.1",
-    "@storybook/docs-tools": "8.0.0-beta.0",
+    "@storybook/docs-tools": "8.0.0-rc.1",
     "@storybook/global": "^5.0.0",
-    "@storybook/manager-api": "8.0.0-beta.0",
-    "@storybook/preview-api": "8.0.0-beta.0",
-    "@storybook/react": "8.0.0-beta.0",
+    "@storybook/manager-api": "8.0.0-rc.1",
+    "@storybook/preview-api": "8.0.0-rc.1",
+    "@storybook/react": "8.0.0-rc.1",
     "@storybook/react-native-theming": "^8.0.0-alpha.0",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
@@ -74,7 +74,7 @@
     "util": "^0.12.4"
   },
   "devDependencies": {
-    "@storybook/types": "8.0.0-beta.0",
+    "@storybook/types": "8.0.0-rc.1",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
