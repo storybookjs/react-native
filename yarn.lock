@@ -5425,7 +5425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-native-theming@npm:^8.0.0-alpha.1, @storybook/react-native-theming@workspace:packages/react-native-theming":
+"@storybook/react-native-theming@npm:8.0.0-alpha.1, @storybook/react-native-theming@npm:^8.0.0-alpha.1, @storybook/react-native-theming@workspace:packages/react-native-theming":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-theming@workspace:packages/react-native-theming"
   dependencies:
@@ -5443,6 +5443,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui@workspace:packages/react-native-ui"
   dependencies:
+    "@storybook/react-native-theming": "npm:8.0.0-alpha.1"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~18.2.14"
     babel-jest: "npm:^29.4.3"

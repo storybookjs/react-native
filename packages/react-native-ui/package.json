@@ -56,6 +56,9 @@
     "tsup": "^7.2.0",
     "typescript": "^5.3.3"
   },
+  "dependencies": {
+    "@storybook/react-native-theming": "8.0.0-alpha.1"
+  },
   "peerDependencies": {
     "react": "*",
     "react-native": ">=0.57.0",
