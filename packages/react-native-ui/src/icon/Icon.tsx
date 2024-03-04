@@ -1,4 +1,4 @@
-import { Image, ImageProps } from 'react-native';
+import { Image } from 'react-native';
 
 const icons = {
   stories:
