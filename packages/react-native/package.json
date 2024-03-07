@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "8.0.0-alpha.1",
+  "version": "8.0.0-alpha.2",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -62,7 +62,7 @@
     "@storybook/manager-api": "8.0.0-rc.1",
     "@storybook/preview-api": "8.0.0-rc.1",
     "@storybook/react": "8.0.0-rc.1",
-    "@storybook/react-native-theming": "^8.0.0-alpha.1",
+    "@storybook/react-native-theming": "^8.0.0-alpha.2",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
