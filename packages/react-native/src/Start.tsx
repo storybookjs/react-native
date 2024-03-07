@@ -95,6 +95,27 @@ export function prepareStories({
   return { index, importMap };
 }
 
+export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
+  composeConfigs<ReactRenderer>([
+    {
+      renderToCanvas: (context) => {
+        view._setStory(context.storyContext);
+      },
+      render: (args, context) => {
+        const { id, component: Component } = context;
+
+        if (!Component) {
+          throw new Error(
+            `Unable to render story ${id} as the component annotation is missing from the default export`
+          );
+        }
+
+        return <Component {...args} />;
+      },
+    },
+    ...annotations,
+  ]);
+
 export function start({
   annotations,
   storyEntries,
@@ -146,30 +167,9 @@ export function start({
     global.__STORYBOOK_STORY_STORE__ = preview.storyStore;
   }
 
-  const getProjectAnnotations = async () =>
-    composeConfigs<ReactRenderer>([
-      {
-        renderToCanvas: (context) => {
-          view._setStory(context.storyContext);
-        },
-        render: (args, context) => {
-          const { id, component: Component } = context;
-
-          if (!Component) {
-            throw new Error(
-              `Unable to render story ${id} as the component annotation is missing from the default export`
-            );
-          }
-
-          return <Component {...args} />;
-        },
-      },
-      ...annotations,
-    ]);
-
   preview.initialize({
     importFn: async (importPath: string) => importMap[importPath],
-    getProjectAnnotations,
+    getProjectAnnotations: getProjectAnnotations(view, annotations),
     getStoryIndex: () => index as any,
   });
 
