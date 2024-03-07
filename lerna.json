@@ -1,7 +1,6 @@
 {
   "npmClient": "yarn",
   "registry": "https://registry.npmjs.org",
-  "version": "7.6.15",
-
+  "version": "7.6.16",
   "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
