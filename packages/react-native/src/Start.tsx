@@ -95,6 +95,27 @@ export function prepareStories({
   return { index, importMap };
 }
 
+export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
+  composeConfigs<ReactRenderer>([
+    {
+      renderToCanvas: (context) => {
+        view._setStory(context.storyContext);
+      },
+      render: (args, context) => {
+        const { id, component: Component } = context;
+
+        if (!Component) {
+          throw new Error(
+            `Unable to render story ${id} as the component annotation is missing from the default export`
+          );
+        }
+
+        return <Component {...args} />;
+      },
+    },
+    ...annotations,
+  ]);
+
 export function start({
   annotations,
   storyEntries,
@@ -136,7 +157,7 @@ export function start({
     },
   };
 
-  const getProjectAnnotations = async () =>
+  const getProjectAnnotationsInitial = async () =>
     composeConfigs<ReactRenderer>([
       {
         renderToCanvas: (context) => {
@@ -160,7 +181,7 @@ export function start({
   // const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
   const preview = new PreviewWithSelection<ReactRenderer>(
     async (importPath: string) => importMap[importPath],
-    getProjectAnnotations,
+    getProjectAnnotationsInitial,
     selectionStore,
     previewView
   );
