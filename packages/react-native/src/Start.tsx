@@ -10,19 +10,19 @@ import { PreviewWithSelection } from '@storybook/preview-api/dist/preview-web';
 import { createBrowserChannel } from '@storybook/channels';
 import { View } from './View';
 import type { ReactRenderer } from '@storybook/react';
-import type { NormalizedStoriesSpecifier } from '@storybook/types';
+import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/types';
 
 export function prepareStories({
   storyEntries,
 }: {
   storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
 }) {
-  let index = {
+  let index: StoryIndex = {
     v: 4,
     entries: {},
   };
 
-  let importMap = {};
+  let importMap: Record<string, any> = {};
 
   const makeTitle = (
     fileName: string,
