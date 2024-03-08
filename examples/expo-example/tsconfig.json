@@ -2,7 +2,9 @@
   "compilerOptions": {
     "skipLibCheck": true,
     "lib": ["es6"],
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "strict": true
   },
-  "extends": "expo/tsconfig.base"
+  "extends": "expo/tsconfig.base",
+  "include": ["./.storybook/", "./.storybook-web/", "./*"]
 }
