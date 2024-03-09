@@ -1,3 +1,5 @@
+import type { TextStyle } from 'react-native';
+
 export const color = {
   // Official color palette
   primary: '#FF4785', // coral
@@ -59,8 +61,8 @@ export const background = {
 
 export const typography = {
   weight: {
-    regular: 400,
-    bold: 700,
+    regular: '400' as TextStyle['fontWeight'],
+    bold: '700' as TextStyle['fontWeight'],
   },
   size: {
     s1: 12,

@@ -32,7 +32,7 @@
     "template/**/*"
   ],
   "scripts": {
-    "dev": "ts-node buildscripts/gendtsdev.ts && tsup --watch",
+    "dev": "npx tsx buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
     "test:ci": "jest"
@@ -62,7 +62,7 @@
     "@storybook/manager-api": "8.0.0-rc.3",
     "@storybook/preview-api": "8.0.0-rc.3",
     "@storybook/react": "8.0.0-rc.3",
-    "@storybook/react-native-theming": "^8.0.0-alpha.2",
+    "@storybook/react-native-theming": "8.0.0-alpha.2",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
@@ -81,7 +81,6 @@
     "jest": "^29.7.0",
     "jotai": "^2.6.2",
     "react-test-renderer": "18.2.0",
-    "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
     "typescript": "^5.3.3"
   },

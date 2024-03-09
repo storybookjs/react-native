@@ -1,4 +1,4 @@
-import { ShadowStyleIOS, ViewStyle, TextStyle } from 'react-native';
+import type { ShadowStyleIOS, ViewStyle, TextStyle } from 'react-native';
 import { StorybookThemeWeb, background, color, light, dark } from './newTheme';
 
 type ShadowStyle = ShadowStyleIOS | Pick<ViewStyle, 'elevation'>;
@@ -251,8 +251,8 @@ const textOnDark: StorybookTheme['text'] = {
 };
 export const typography = {
   weight: {
-    regular: 400,
-    bold: 700,
+    regular: '400' as TextStyle['fontWeight'],
+    bold: '700' as TextStyle['fontWeight'],
   },
   size: {
     s1: 12,
@@ -266,10 +266,11 @@ export const typography = {
     l3: 48,
     code: 90,
   },
-};
+} as const;
 
 export const theme: StorybookTheme = {
   base: 'light',
+  textMutedColor: color.dark,
   color: {
     primary: light.colorPrimary,
     secondary: light.colorSecondary,
@@ -498,6 +499,7 @@ export const theme: StorybookTheme = {
 
 export const darkTheme: StorybookTheme = {
   base: 'dark',
+  textMutedColor: '#798186',
   color: {
     primary: dark.colorPrimary,
     secondary: dark.colorSecondary,

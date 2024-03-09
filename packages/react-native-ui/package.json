@@ -48,6 +48,7 @@
     "preset": "react-native"
   },
   "devDependencies": {
+    "@storybook/react": "8.0.0-rc.3",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
@@ -57,15 +58,20 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@storybook/react-native-theming": "8.0.0-alpha.1"
+    "@gorhom/bottom-sheet": "^4",
+    "@storybook/react-native-theming": "8.0.0-alpha.2",
+    "polished": "^4.3.1"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": ">=0.57.0",
-    "react-native-safe-area-context": "*"
+    "react-native-gesture-handler": ">=2",
+    "react-native-reanimated": ">=3",
+    "react-native-safe-area-context": "*",
+    "react-native-svg": ">=14"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "publishConfig": {
     "access": "public"
