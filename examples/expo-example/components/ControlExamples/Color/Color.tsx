@@ -1,8 +1,8 @@
 import React from 'react';
-import { ColorValue, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 interface ButtonProps {
-  color: ColorValue;
+  color: string;
 }
 
 const styles = StyleSheet.create({

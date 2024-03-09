@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "8.0.0-alpha.1",
+  "version": "8.0.0-alpha.2",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -52,17 +52,17 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@storybook/channels": "8.0.0-rc.1",
-    "@storybook/client-logger": "8.0.0-rc.1",
-    "@storybook/core-common": "8.0.0-rc.1",
-    "@storybook/core-events": "8.0.0-rc.1",
+    "@storybook/channels": "8.0.0-rc.3",
+    "@storybook/client-logger": "8.0.0-rc.3",
+    "@storybook/core-common": "8.0.0-rc.3",
+    "@storybook/core-events": "8.0.0-rc.3",
     "@storybook/csf": "^0.1.1",
-    "@storybook/docs-tools": "8.0.0-rc.1",
+    "@storybook/docs-tools": "8.0.0-rc.3",
     "@storybook/global": "^5.0.0",
-    "@storybook/manager-api": "8.0.0-rc.1",
-    "@storybook/preview-api": "8.0.0-rc.1",
-    "@storybook/react": "8.0.0-rc.1",
-    "@storybook/react-native-theming": "^8.0.0-alpha.1",
+    "@storybook/manager-api": "8.0.0-rc.3",
+    "@storybook/preview-api": "8.0.0-rc.3",
+    "@storybook/react": "8.0.0-rc.3",
+    "@storybook/react-native-theming": "^8.0.0-alpha.2",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
@@ -74,7 +74,7 @@
     "util": "^0.12.4"
   },
   "devDependencies": {
-    "@storybook/types": "8.0.0-rc.1",
+    "@storybook/types": "8.0.0-rc.3",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
