@@ -8,7 +8,7 @@ import type {
 } from '@storybook/manager-api';
 import { useStorybookApi } from '@storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
-import React, { MutableRefObject, useCallback, useMemo, useRef } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import { IconButton } from './IconButton';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
 import { CollapseIcon } from './icon/CollapseIcon';
@@ -229,8 +229,8 @@ export const Tree = React.memo<{
   refId: string;
   data: StoriesHash;
   docsMode: boolean;
-  highlightedRef: MutableRefObject<Highlight>;
-  setHighlightedItemId: (itemId: string) => void;
+  // highlightedRef: MutableRefObject<Highlight>;
+  // setHighlightedItemId: (itemId: string) => void;
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({

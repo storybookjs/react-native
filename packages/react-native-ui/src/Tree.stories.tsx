@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import type { ComponentEntry, IndexHash } from '@storybook/manager-api';
-import { action } from '@storybook/addon-actions';
 
 import type { StoryObj, Meta } from '@storybook/react';
 import { Tree } from './Tree';
@@ -20,7 +19,7 @@ const customViewports = {
 
 const meta = {
   component: Tree,
-  title: 'Sidebar/Tree',
+  title: 'UI/Sidebar/Tree',
   excludeStories: /.*Data$/,
   parameters: {
     layout: 'fullscreen',
@@ -51,7 +50,6 @@ export const Full: Story = {
     isBrowsing: true,
     isMain: true,
     refId: DEFAULT_REF_ID,
-    setHighlightedItemId: action('setHighlightedItemId'),
   },
   render: function Render(args) {
     const [selectedId, setSelectedId] = useState(storyId);
@@ -77,7 +75,6 @@ export const SingleStoryComponents: Story = {
     isBrowsing: true,
     isMain: true,
     refId: DEFAULT_REF_ID,
-    setHighlightedItemId: action('setHighlightedItemId'),
   },
   render: function Render(args) {
     const [selectedId, setSelectedId] = useState('tooltip-tooltipbuildlist--default');

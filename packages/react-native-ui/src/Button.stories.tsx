@@ -6,7 +6,7 @@ import { Path, Svg, SvgProps } from 'react-native-svg';
 import { Button } from './Button';
 
 const meta = {
-  title: 'NewUI/Button',
+  title: 'UI/Button',
   component: Button,
   args: {},
 } satisfies Meta<typeof Button>;

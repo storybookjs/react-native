@@ -8,7 +8,7 @@ import { View } from 'react-native';
 // import { IconSymbols } from './IconSymbols';
 
 const meta = {
-  title: 'Sidebar/TreeNode',
+  title: 'UI/Sidebar/TreeNode',
   parameters: { layout: 'fullscreen' },
   component: StoryNode,
 } satisfies Meta<typeof StoryNode>;
