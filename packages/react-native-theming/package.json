@@ -24,6 +24,9 @@
     "dev": "npx tsx ./scripts/gendtsdev.ts && tsup --watch",
     "prepare": "tsup && npx tsx ./scripts/patchdts.ts"
   },
+  "dependencies": {
+    "polished": "^4.3.1"
+  },
   "devDependencies": {
     "@emotion/native": "^11.11.0",
     "@emotion/react": "^11.11.1",

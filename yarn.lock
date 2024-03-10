@@ -5218,6 +5218,7 @@ __metadata:
   dependencies:
     "@emotion/native": "npm:^11.11.0"
     "@emotion/react": "npm:^11.11.1"
+    polished: "npm:^4.3.1"
     tsup: "npm:^7.2.0"
   peerDependencies:
     react: "*"
@@ -5236,6 +5237,7 @@ __metadata:
     "@types/react": "npm:~18.2.14"
     babel-jest: "npm:^29.4.3"
     jest: "npm:^29.7.0"
+    memoizerific: "npm:^1.11.3"
     polished: "npm:^4.3.1"
     react-test-renderer: "npm:18.2.0"
     tsup: "npm:^7.2.0"

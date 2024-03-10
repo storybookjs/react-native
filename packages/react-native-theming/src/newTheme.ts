@@ -1,4 +1,5 @@
 import type { TextStyle } from 'react-native';
+import { transparentize } from 'polished';
 
 export const color = {
   // Official color palette
@@ -50,7 +51,7 @@ export const background = {
   content: color.lightest,
   preview: color.lightest,
   gridCellSize: 10,
-  hoverable: color.secondaryLighter, // hover state for items in a list
+  hoverable: transparentize(0.9, color.secondary), // hover state for items in a list
 
   // Notification, error, and warning backgrounds
   positive: '#E1FFD4',
