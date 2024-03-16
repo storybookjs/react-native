@@ -14,6 +14,7 @@ import { Tree } from './Tree';
 // import { DEFAULT_REF_ID } from './Sidebar';
 import type { RefType } from './types';
 import { getStateType } from './util/tree';
+import { DEFAULT_REF_ID } from './constants';
 // import { DEFAULT_REF_ID } from './Sidebar';
 // import { CollapseIcon } from './icon/CollapseIcon';
 
@@ -24,6 +25,7 @@ export interface RefProps {
   isLoading: boolean;
   isBrowsing: boolean;
   selectedStoryId: string | null;
+  setSelection: (selection: { refId: string; storyId: string }) => void;
   //   highlightedRef: MutableRefObject<Highlight>;
   //   setHighlighted: (highlight: Highlight) => void;
 }
@@ -90,6 +92,7 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
     expanded = true,
     indexError,
     previewInitialized,
+    setSelection,
   } = props;
   const length = useMemo(() => (index ? Object.keys(index).length : 0), [index]);
   //   const indicatorRef = useRef<HTMLElement>(null);
@@ -119,8 +122,11 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
   //   );
 
   const onSelectStoryId = useCallback(
-    (storyId: string) => api && api.selectStory(storyId, undefined),
-    [api]
+    (storyId: string) => {
+      setSelection({ refId, storyId });
+      return api && api.selectStory(storyId, DEFAULT_REF_ID);
+    },
+    [api, refId, setSelection]
   );
 
   return (
@@ -150,7 +156,7 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
               isMain={true}
               refId={refId}
               data={index}
-              docsMode={docsOptions.docsMode}
+              docsMode={docsOptions?.docsMode}
               selectedStoryId={selectedStoryId}
               onSelectStoryId={onSelectStoryId}
               //   highlightedRef={highlightedRef}

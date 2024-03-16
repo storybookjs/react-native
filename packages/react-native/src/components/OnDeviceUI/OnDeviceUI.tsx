@@ -1,6 +1,6 @@
 import { styled } from '@storybook/react-native-theming';
 import { StoryIndex } from '@storybook/types';
-import React, { useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import {
   Animated,
   Dimensions,
@@ -8,6 +8,7 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   Platform,
+  ScrollView,
   StatusBar,
   StyleProp,
   StyleSheet,
@@ -16,16 +17,24 @@ import {
   ViewStyle,
 } from 'react-native';
 import { ANIMATION_DURATION_TRANSITION } from '../../constants';
-import { useIsSplitPanelVisible, useIsUIVisible, useStoryContextParam } from '../../hooks';
-import StoryListView from '../StoryListView';
+import {
+  useIsSplitPanelVisible,
+  useIsUIVisible,
+  useStoryContext,
+  useStoryContextParam,
+} from '../../hooks';
 import StoryView from '../StoryView';
 import AbsolutePositionedKeyboardAwareView, {
   PreviewDimens,
 } from './absolute-positioned-keyboard-aware-view';
 
+import { SET_CURRENT_STORY } from '@storybook/core-events';
+import { addons } from '@storybook/manager-api';
 import { useTheme } from '@storybook/react-native-theming';
+import { Explorer, Selection, useCombination } from '@storybook/react-native-ui';
 import { useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { transformStoryIndexToStoriesHash } from '../StoryListView/StoryHash';
 import Panel from './Panel';
 import Addons from './addons/Addons';
 import { AddonsSkeleton } from './addons/AddonsSkeleton';
@@ -37,6 +46,7 @@ import {
 } from './animation';
 import Navigation from './navigation';
 import { ADDONS, CANVAS } from './navigation/constants';
+import { DEFAULT_REF_ID } from '@storybook/react-native-ui/src/constants';
 
 const IS_IOS = Platform.OS === 'ios';
 // @ts-ignore: Property 'Expo' does not exist on type 'Global'
@@ -95,6 +105,7 @@ const OnDeviceUI = ({
   keyboardAvoidingViewVerticalOffset,
   tabOpen: initialTabOpen,
 }: OnDeviceUIProps) => {
+  const story = useStoryContext();
   const [tabOpen, setTabOpen] = useState(initialTabOpen || CANVAS);
   const lastTabOpen = React.useRef(tabOpen);
   const [previewDimensions, setPreviewDimensions] = useState<PreviewDimens>(() => ({
@@ -180,6 +191,34 @@ const OnDeviceUI = ({
   const [isSplitPanelVisible] = useIsSplitPanelVisible();
   const isPreviewInactive = tabOpen !== CANVAS;
 
+  const selected: Selection = useMemo(
+    () => story?.id && { storyId: story?.id, refId: DEFAULT_REF_ID },
+    [story?.id]
+  );
+
+  const storyHash = useMemo(() => {
+    return transformStoryIndexToStoriesHash(storyIndex, {
+      docsOptions: { docsMode: false, autodocs: false, defaultName: '' },
+      filters: {},
+      status: {},
+      provider: {
+        handleAPI: () => ({}),
+        getConfig: () => ({}),
+      },
+    });
+  }, [storyIndex]);
+
+  const dataset = useCombination(
+    storyHash,
+    undefined,
+    true,
+    {}, // ???
+    {} // ??
+  );
+
+  const isLoading = false; //!index && !indexError;
+  // const lastViewedProps = useLastViewed(selected);
+
   return (
     <>
       <Container>
@@ -217,7 +256,26 @@ const OnDeviceUI = ({
                 panelSafeAreaMargins,
               ]}
             >
-              <StoryListView storyIndex={storyIndex} />
+              {/* <Provider >
+              if we can get this provider working then we can user the use storybook hooks
+                {(_combo) => {
+                  return <SidebarContainer />;
+                }}
+              </Provider> */}
+              <ScrollView style={{ paddingHorizontal: 10 }}>
+                <Explorer
+                  dataset={dataset}
+                  selected={selected}
+                  isLoading={isLoading}
+                  isBrowsing={false}
+                  setSelection={({ storyId }) => {
+                    const channel = addons.getChannel();
+
+                    channel.emit(SET_CURRENT_STORY, { storyId });
+                  }}
+                />
+              </ScrollView>
+              {/* <StoryListView storyIndex={storyIndex} /> */}
             </Panel>
 
             <Panel

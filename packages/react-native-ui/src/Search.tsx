@@ -7,7 +7,7 @@ import Fuse from 'fuse.js';
 import { global } from '@storybook/global';
 import React, { useRef, useState, useCallback } from 'react';
 import { CloseIcon, SearchIcon } from '@storybook/icons';
-import { DEFAULT_REF_ID } from './Sidebar';
+import { DEFAULT_REF_ID } from './constants';
 import type {
   CombinedDataset,
   SearchItem,
@@ -21,8 +21,6 @@ import { isSearchResult, isExpandType } from './types';
 import { scrollIntoView, searchItem } from './util/tree';
 import { getGroupStatus, getHighestStatus } from './util/status';
 import { useLayout } from './LayoutProvider';
-
-const { document } = global;
 
 const DEFAULT_MAX_SEARCH_RESULTS = 50;
 
@@ -233,7 +231,6 @@ export const Search = React.memo<{
     [allComponents, makeFuse]
   );
 
- 
   const { isMobile } = useLayout();
 
   return (

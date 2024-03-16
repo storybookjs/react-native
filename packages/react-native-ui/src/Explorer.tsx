@@ -13,6 +13,7 @@ export interface ExplorerProps {
   isBrowsing: boolean;
   dataset: CombinedDataset;
   selected: Selection;
+  setSelection: (selection: Selection) => void;
 }
 
 export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
@@ -20,6 +21,7 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
   isBrowsing,
   dataset,
   selected,
+  setSelection,
 }) {
   const containerRef = useRef<View>(null);
 
@@ -41,7 +43,8 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
           key={refId}
           isLoading={isLoading}
           isBrowsing={isBrowsing}
-          selectedStoryId={selected?.refId === ref.id ? selected.storyId : null}
+          selectedStoryId={/* selected?.refId === ref.id ? */ selected.storyId /* : null */}
+          setSelection={setSelection}
           //   highlightedRef={highlightedRef}
           //   setHighlighted={setHighlighted}
         />

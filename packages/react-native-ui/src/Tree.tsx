@@ -90,8 +90,7 @@ export const Node = React.memo<NodeProps>(function Node({
           //   href={getLink(item, refId)}
           id={id}
           depth={isOrphan ? item.depth : item.depth - 1}
-          onPress={(event) => {
-            event.preventDefault();
+          onPress={() => {
             onSelectStoryId(item.id);
             if (isMobile) closeMobileMenu();
           }}

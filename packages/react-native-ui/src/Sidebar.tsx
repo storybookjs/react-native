@@ -19,10 +19,8 @@ import { Search } from './Search';
 import { SearchResults } from './SearchResults';
 import type { CombinedDataset, Selection } from './types';
 import { useLastViewed } from './useLastViewed';
-import { MEDIA_DESKTOP_BREAKPOINT } from './constants';
+import { DEFAULT_REF_ID, MEDIA_DESKTOP_BREAKPOINT } from './constants';
 import { ScrollView, View } from 'react-native';
-
-export const DEFAULT_REF_ID = 'storybook_internal';
 
 const Container = styled.View(({ theme }) => ({
   position: 'absolute',
@@ -139,12 +137,12 @@ SidebarProps) {
     <Container /* className="container sidebar-container" */>
       <ScrollView /* vertical offset={3} scrollbarSize={6} */>
         <Top /* row={1.6} */>
-          <Explorer
+          {/* <Explorer
             dataset={dataset}
             selected={selected}
             isLoading={isLoading}
             isBrowsing={false} //todo check me
-          />
+          /> */}
           {/* <Heading
             className="sidebar-header"
             menuHighlighted={menuHighlighted}

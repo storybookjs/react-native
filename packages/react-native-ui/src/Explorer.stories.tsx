@@ -41,5 +41,6 @@ export const Simple = () => (
     selected={selected}
     isLoading={false}
     isBrowsing
+    setSelection={() => {}}
   />
 );

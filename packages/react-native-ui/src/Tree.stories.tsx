@@ -4,7 +4,7 @@ import type { ComponentEntry, IndexHash } from '@storybook/manager-api';
 import type { StoryObj, Meta } from '@storybook/react';
 import { Tree } from './Tree';
 import { index } from './mockdata.large';
-import { DEFAULT_REF_ID } from './Sidebar';
+import { DEFAULT_REF_ID } from './constants';
 import { ScrollView, Text } from 'react-native';
 
 const customViewports = {
