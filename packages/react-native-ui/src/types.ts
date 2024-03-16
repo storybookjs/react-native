@@ -1,6 +1,7 @@
 import type { StoriesHash, State } from '@storybook/manager-api';
 // import type { ControllerStateAndHelpers } from 'downshift';
 import type { API_StatusState, API_StatusValue } from '@storybook/types';
+import * as Fuse from 'fuse.js';
 
 export type Refs = State['refs'];
 export type RefType = Refs[keyof Refs] & { status?: API_StatusState };
@@ -24,12 +25,12 @@ export interface StoryRef {
 export type Highlight = ItemRef | null;
 export type Selection = StoryRef | null;
 
-export interface Match {
-  value: string;
-  indices: [number, number][];
-  key: 'name' | 'path';
-  arrayIndex: number;
-}
+// export interface Match {
+//   value: string;
+//   indices: [number, number][];
+//   key: 'name' | 'path';
+//   arrayIndex: number;
+// }
 
 export function isExpandType(x: any): x is ExpandType {
   return !!(x && x.showAll);
@@ -45,8 +46,7 @@ export interface ExpandType {
 
 export type SearchItem = Item & { refId: string; path: string[]; status?: API_StatusValue };
 
-// export type SearchResult = Fuse.FuseResultWithMatches<SearchItem> &
-//   Fuse.FuseResultWithScore<SearchItem>;
+export type SearchResult = Fuse.FuseResult<SearchItem>;
 
 // export type DownshiftItem = SearchResult | ExpandType;
 

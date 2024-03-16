@@ -1,16 +1,12 @@
 import memoize from 'memoizerific';
 import type { SyntheticEvent } from 'react';
-import type { HashEntry, IndexHash } from '@storybook/manager-api';
+import type { IndexHash } from '@storybook/manager-api';
 
 import { DEFAULT_REF_ID } from '../Sidebar';
 import type { Item, RefType, Dataset, SearchItem } from '../types';
 
 export const createId = (itemId: string, refId?: string) =>
   !refId || refId === DEFAULT_REF_ID ? itemId : `${refId}_${itemId}`;
-
-export const getLink = (item: HashEntry, refId?: string) => {
-  return `${document.location.pathname}?path=/${item.type}/${createId(item.id, refId)}`;
-};
 
 export const prevent = (e: SyntheticEvent) => {
   e.preventDefault();

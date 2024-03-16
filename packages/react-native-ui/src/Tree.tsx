@@ -20,6 +20,7 @@ import { Text, View } from 'react-native';
 import { ExpandAllIcon } from './icon/ExpandAllIcon';
 import { CollapseAllIcon } from './icon/CollapseAllIcon';
 import { Item } from './types';
+import { useLayout } from './LayoutProvider';
 
 // export type Item = StoriesHash[keyof StoriesHash];
 
@@ -67,10 +68,7 @@ export const Node = React.memo<NodeProps>(function Node({
   onSelectStoryId,
   api: _1,
 }) {
-  //   const { isDesktop, isMobile, setMobileMenuOpen } = useLayout();
-  const isDesktop = false;
-  const isMobile = true;
-  const setMobileMenuOpen = (_open: boolean) => {};
+  const { isDesktop, isMobile, closeMobileMenu } = useLayout();
 
   if (!isDisplayed) {
     return null;
@@ -95,7 +93,7 @@ export const Node = React.memo<NodeProps>(function Node({
           onPress={(event) => {
             event.preventDefault();
             onSelectStoryId(item.id);
-            if (isMobile) setMobileMenuOpen(false);
+            if (isMobile) closeMobileMenu();
           }}
         >
           {(item.renderLabel as (i: typeof item) => React.ReactNode)?.(item) || item.name}

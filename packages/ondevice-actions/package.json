@@ -27,10 +27,10 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@storybook/addon-actions": "8.0.0-rc.3",
-    "@storybook/core-events": "8.0.0-rc.3",
+    "@storybook/addon-actions": "8.0.0",
+    "@storybook/core-events": "8.0.0",
     "@storybook/global": "^5.0.0",
-    "@storybook/manager-api": "8.0.0-rc.3",
+    "@storybook/manager-api": "8.0.0",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {

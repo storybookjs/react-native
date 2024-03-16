@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui",
-  "version": "8.0.0-alpha.1",
+  "version": "8.0.0-alpha.2",
   "description": "ui components for react native storybook",
   "keywords": [
     "react",
@@ -48,7 +48,7 @@
     "preset": "react-native"
   },
   "devDependencies": {
-    "@storybook/react": "8.0.0-rc.3",
+    "@storybook/react": "8.0.0",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
@@ -60,6 +60,7 @@
   "dependencies": {
     "@gorhom/bottom-sheet": "^4",
     "@storybook/react-native-theming": "8.0.0-alpha.2",
+    "fuse.js": "^7.0.0",
     "memoizerific": "^1.11.3",
     "polished": "^4.3.1"
   },
