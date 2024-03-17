@@ -32,7 +32,7 @@
     "template/**/*"
   ],
   "scripts": {
-    "dev": "ts-node ./buildscripts/gentsdev.ts && tsup --watch",
+    "dev": "ts-node ./buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
     "test:ci": "jest"
