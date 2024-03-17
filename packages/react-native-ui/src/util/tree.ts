@@ -2,7 +2,7 @@ import memoize from 'memoizerific';
 import type { SyntheticEvent } from 'react';
 import type { IndexHash } from '@storybook/manager-api';
 
-import { DEFAULT_REF_ID } from '../Sidebar';
+import { DEFAULT_REF_ID } from '../constants';
 import type { Item, RefType, Dataset, SearchItem } from '../types';
 
 export const createId = (itemId: string, refId?: string) =>

@@ -46,18 +46,19 @@ const Top = styled.View({
   paddingBottom: 20,
   paddingTop: 16,
   flex: 1,
+  flexDirection: 'row',
 });
 
-const Bottom = styled.View(({ theme }) => ({
-  borderTopWidth: 1,
-  borderTopColor: theme.appBorderColor,
-  padding: theme.layoutMargin / 2,
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  gap: theme.layoutMargin / 2,
-  backgroundColor: theme.barBg,
-}));
+// const Bottom = styled.View(({ theme }) => ({
+//   borderTopWidth: 1,
+//   borderTopColor: theme.appBorderColor,
+//   padding: theme.layoutMargin / 2,
+//   display: 'flex',
+//   flexDirection: 'row',
+//   flexWrap: 'wrap',
+//   gap: theme.layoutMargin / 2,
+//   backgroundColor: theme.barBg,
+// }));
 
 const Swap = React.memo(function Swap({
   children,
@@ -109,6 +110,7 @@ export interface SidebarProps extends API_LoadedRefData {
   storyId?: string;
   refId?: string;
   menuHighlighted?: boolean;
+  setSelection: (selection: Selection) => void;
   // enableShortcuts?: boolean;
   // onMenuClick?: HeadingProps['onMenuClick'];
 }
@@ -122,27 +124,24 @@ export const Sidebar = React.memo(function Sidebar({
   previewInitialized,
   // menu,
   // extra,
-  bottom = [],
+  // bottom = [],
   // menuHighlighted = false,
   // enableShortcuts = true,
   refs = {},
+  setSelection,
 }: // onMenuClick,
 SidebarProps) {
   const selected: Selection = useMemo(() => storyId && { storyId, refId }, [storyId, refId]);
   const dataset = useCombination(index, indexError, previewInitialized, status, refs);
-  const isLoading = !index && !indexError;
-  // const lastViewedProps = useLastViewed(selected);
+  // const isLoading = !index && !indexError;
+  const lastViewedProps = useLastViewed(selected);
+
+  console.log(dataset);
 
   return (
     <Container /* className="container sidebar-container" */>
       <ScrollView /* vertical offset={3} scrollbarSize={6} */>
         <Top /* row={1.6} */>
-          {/* <Explorer
-            dataset={dataset}
-            selected={selected}
-            isLoading={isLoading}
-            isBrowsing={false} //todo check me
-          /> */}
           {/* <Heading
             className="sidebar-header"
             menuHighlighted={menuHighlighted}
@@ -152,46 +151,47 @@ SidebarProps) {
             isLoading={isLoading}
             onMenuClick={onMenuClick}
           /> */}
-          {/* <Search dataset={dataset} enableShortcuts={enableShortcuts} {...lastViewedProps}>
+          <Search dataset={dataset} /* enableShortcuts={enableShortcuts} */ {...lastViewedProps}>
             {({
               query,
               results,
               isBrowsing,
               closeMenu,
-              getMenuProps,
-              getItemProps,
+              // getMenuProps,
+              // getItemProps,
               highlightedIndex,
             }) => (
               <Swap condition={isBrowsing}>
                 <Explorer
                   dataset={dataset}
                   selected={selected}
-                  isLoading={isLoading}
-                  isBrowsing={isBrowsing}
+                  isLoading={false}
+                  isBrowsing={isBrowsing} //todo check me
+                  setSelection={setSelection}
                 />
                 <SearchResults
                   query={query}
                   results={results}
                   closeMenu={closeMenu}
-                  getMenuProps={getMenuProps}
-                  getItemProps={getItemProps}
+                  // getMenuProps={getMenuProps}
+                  // getItemProps={getItemProps}
                   highlightedIndex={highlightedIndex}
-                  enableShortcuts={enableShortcuts}
-                  isLoading={isLoading}
+                  // enableShortcuts={enableShortcuts}
+                  isLoading={false}
                   clearLastViewed={lastViewedProps.clearLastViewed}
                 />
               </Swap>
             )}
-          </Search> */}
+          </Search>
         </Top>
       </ScrollView>
-      {isLoading ? null : (
+      {/* {isLoading ? null : (
         <Bottom>
           {bottom.map(({ id, render: Render }) => (
             <Render key={id} />
           ))}
         </Bottom>
-      )}
+      )} */}
     </Container>
   );
 });

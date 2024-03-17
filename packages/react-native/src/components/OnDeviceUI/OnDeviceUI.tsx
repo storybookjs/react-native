@@ -31,7 +31,13 @@ import AbsolutePositionedKeyboardAwareView, {
 import { SET_CURRENT_STORY } from '@storybook/core-events';
 import { addons } from '@storybook/manager-api';
 import { useTheme } from '@storybook/react-native-theming';
-import { Explorer, Selection, useCombination } from '@storybook/react-native-ui';
+import {
+  // Explorer,
+  // LayoutProvider,
+  Selection,
+  Sidebar,
+  // useCombination,
+} from '@storybook/react-native-ui';
 import { useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { transformStoryIndexToStoriesHash } from '../StoryListView/StoryHash';
@@ -208,15 +214,15 @@ const OnDeviceUI = ({
     });
   }, [storyIndex]);
 
-  const dataset = useCombination(
-    storyHash,
-    undefined,
-    true,
-    {}, // ???
-    {} // ??
-  );
+  // const dataset = useCombination(
+  //   storyHash,
+  //   undefined,
+  //   true,
+  //   {}, // ???
+  //   {} // ??
+  // );
 
-  const isLoading = false; //!index && !indexError;
+  // const isLoading = false; //!index && !indexError;
   // const lastViewedProps = useLastViewed(selected);
 
   return (
@@ -262,8 +268,7 @@ const OnDeviceUI = ({
                   return <SidebarContainer />;
                 }}
               </Provider> */}
-              <ScrollView style={{ paddingHorizontal: 10 }}>
-                <Explorer
+              {/* <Explorer
                   dataset={dataset}
                   selected={selected}
                   isLoading={isLoading}
@@ -273,6 +278,26 @@ const OnDeviceUI = ({
 
                     channel.emit(SET_CURRENT_STORY, { storyId });
                   }}
+                /> */}
+              <ScrollView
+                style={{ paddingHorizontal: 10 }}
+                contentContainerStyle={{ flex: 1 }}
+                keyboardShouldPersistTaps="handled"
+              >
+                <Sidebar
+                  extra={[]}
+                  previewInitialized
+                  indexError={undefined}
+                  refs={{}}
+                  setSelection={({ storyId }) => {
+                    const channel = addons.getChannel();
+
+                    channel.emit(SET_CURRENT_STORY, { storyId });
+                  }}
+                  status={{}}
+                  index={storyHash}
+                  storyId={selected?.storyId}
+                  refId={DEFAULT_REF_ID}
                 />
               </ScrollView>
               {/* <StoryListView storyIndex={storyIndex} /> */}

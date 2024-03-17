@@ -43,7 +43,7 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
           key={refId}
           isLoading={isLoading}
           isBrowsing={isBrowsing}
-          selectedStoryId={/* selected?.refId === ref.id ? */ selected.storyId /* : null */}
+          selectedStoryId={selected?.refId === ref.id ? selected.storyId : null}
           setSelection={setSelection}
           //   highlightedRef={highlightedRef}
           //   setHighlighted={setHighlighted}

@@ -1,11 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { styled } from '@storybook/react-native-theming';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 // import type { ControllerStateAndHelpers } from 'downshift';
 
-import { useStorybookApi } from '@storybook/manager-api';
-import { PRELOAD_ENTRIES } from '@storybook/core-events';
+// import { useStorybookApi } from '@storybook/manager-api';
+// import { PRELOAD_ENTRIES } from '@storybook/core-events';
 import { transparentize } from 'polished';
 // import { TrashIcon } from '@storybook/icons';
 
@@ -15,7 +14,7 @@ import { isExpandType } from './types';
 import { statusMapping } from './util/status';
 import { ComponentIcon } from './icon/ComponentIcon';
 import { StoryIcon } from './icon/StoryIcon';
-import { PressableProps, Text } from 'react-native';
+import { PressableProps, Text, View } from 'react-native';
 import { FuseResultMatch } from 'fuse.js';
 import { IconButton } from './IconButton';
 import { Button } from './Button';
@@ -37,7 +36,7 @@ const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
     textAlign: 'left',
     color: 'inherit',
     fontSize: theme.typography.size.s2,
-    background: isHighlighted ? theme.background.hoverable : 'transparent',
+    backgroundColor: isHighlighted ? theme.background.hoverable : 'transparent',
     minHeight: 28,
     borderRadius: 4,
     gap: 6,
@@ -47,7 +46,7 @@ const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
     paddingRight: 8,
 
     '&:hover, &:focus': {
-      background: transparentize(0.93, theme.color.secondary),
+      backgroundColor: transparentize(0.93, theme.color.secondary),
       outline: 'none',
     },
   })
@@ -117,7 +116,7 @@ const Highlight: FC<PropsWithChildren<{ match?: FuseResultMatch }>> = React.memo
         nodes.push(<Text>{value.slice(cursor, start)}</Text>);
         nodes.push(<Mark>{value.slice(start, end + 1)}</Mark>);
         if (index === length - 1) {
-          nodes.push(<span>{value.slice(end + 1)}</span>);
+          nodes.push(<Text>{value.slice(end + 1)}</Text>);
         }
         return { cursor: end + 1, nodes };
       },
@@ -174,17 +173,17 @@ const Result: FC<
   const press: PressableProps['onPress'] = useCallback(
     (event) => {
       event.preventDefault();
-      onPress(event);
+      onPress?.(event);
     },
     [onPress]
   );
 
-  const api = useStorybookApi();
-  useEffect(() => {
-    if (api && props.isHighlighted && item.type === 'component') {
-      api.emit(PRELOAD_ENTRIES, { ids: [item.children[0]] }, { options: { target: item.refId } });
-    }
-  }, [props.isHighlighted, item]);
+  // const api = useStorybookApi();
+  // useEffect(() => {
+  //   if (api && props.isHighlighted && item.type === 'component') {
+  //     // api.emit(PRELOAD_ENTRIES, { ids: [item.children[0]] }, { options: { target: item.refId } });
+  //   }
+  // }, [props.isHighlighted, item]);
 
   const nameMatch = matches.find((match: FuseResultMatch) => match.key === 'name');
   const pathMatches = matches.filter((match: FuseResultMatch) => match.key === 'path');
@@ -203,13 +202,15 @@ const Result: FC<
         </Title>
         <Path>
           {item.path.map((group, index) => (
-            <span key={index}>
-              <Highlight
-                match={pathMatches.find((match: FuseResultMatch) => match.refIndex === index)}
-              >
-                {group}
-              </Highlight>
-            </span>
+            <View key={index}>
+              <Text>
+                <Highlight
+                  match={pathMatches.find((match: FuseResultMatch) => match.refIndex === index)}
+                >
+                  {group}
+                </Highlight>
+              </Text>
+            </View>
           ))}
         </Path>
       </ResultRowContent>
@@ -222,8 +223,8 @@ export const SearchResults: FC<{
   query: string;
   results: any[];
   closeMenu: (cb?: () => void) => void;
-  getMenuProps: any;
-  getItemProps: any;
+  // getMenuProps: any;
+  // getItemProps: any;
   highlightedIndex: number | null;
   isLoading?: boolean;
   enableShortcuts?: boolean;
@@ -232,8 +233,8 @@ export const SearchResults: FC<{
   query,
   results,
   closeMenu,
-  getMenuProps,
-  getItemProps,
+  // getMenuProps,
+  // getItemProps,
   highlightedIndex,
   // isLoading = false,
   // enableShortcuts = true,
@@ -247,7 +248,7 @@ export const SearchResults: FC<{
   };
 
   return (
-    <ResultsList {...getMenuProps()}>
+    <ResultsList /* {...getMenuProps()} */>
       {results.length > 0 && !query && (
         <RecentlyOpenedTitle /* className="search-result-recentlyOpened" */>
           Recently opened
@@ -260,13 +261,13 @@ export const SearchResults: FC<{
         </RecentlyOpenedTitle>
       )}
       {results.length === 0 && query && (
-        <li>
+        <View>
           <NoResults>
-            <strong>No components found</strong>
-            <br />
-            <small>Find components by name or path.</small>
+            <Text style={{ marginBottom: 8 }}>No components found</Text>
+            {/* <br /> */}
+            <Text>Find components by name or path.</Text>
           </NoResults>
-        </li>
+        </View>
       )}
       {results.map((result, index) => {
         if (isExpandType(result)) {
@@ -274,7 +275,7 @@ export const SearchResults: FC<{
             <MoreWrapper key="search-result-expand">
               <Button
                 {...result}
-                {...getItemProps({ key: index, index, item: result })}
+                // {...getItemProps({ key: index, index, item: result })}
                 size="small"
                 text={`Show ${result.moreCount} more results`}
               />
@@ -283,12 +284,15 @@ export const SearchResults: FC<{
         }
 
         const { item } = result;
-        const key = `${item.refId}::${item.id}`;
+        // const key = `${item.refId}::${item.id}`;
         return (
           <Result
             key={item.id}
             {...result}
-            {...getItemProps({ key, index, item: result })}
+            onPress={() => {
+              console.log('pressed');
+            }}
+            // {...getItemProps({ key, index, item: result })}
             isHighlighted={highlightedIndex === index}
             // data-id={result.item.id}
             // data-refid={result.item.refId}

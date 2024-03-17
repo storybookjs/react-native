@@ -52,7 +52,7 @@ export type SearchResult = Fuse.FuseResult<SearchItem>;
 
 export type SearchChildrenFn = (args: {
   query: string;
-  // results: DownshiftItem[];
+  results: any; // TODO fix this type
   isBrowsing: boolean;
   closeMenu: (cb?: () => void) => void;
   // getMenuProps: ControllerStateAndHelpers<DownshiftItem>['getMenuProps'];

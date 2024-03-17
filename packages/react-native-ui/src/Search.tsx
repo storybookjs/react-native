@@ -1,13 +1,13 @@
-import { useStorybookApi, shortcutToHumanString } from '@storybook/manager-api';
-import { styled } from '@storybook/theming';
+// import { useStorybookApi, shortcutToHumanString } from '@storybook/manager-api';
+import { styled } from '@storybook/react-native-theming';
 // import type { DownshiftState, StateChangeOptions } from 'downshift';
 // import Downshift from 'downshift';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
-import { global } from '@storybook/global';
+// import { global } from '@storybook/global';
 import React, { useRef, useState, useCallback } from 'react';
-import { CloseIcon, SearchIcon } from '@storybook/icons';
-import { DEFAULT_REF_ID } from './constants';
+// import { CloseIcon, SearchIcon } from '@storybook/icons';
+// import { DEFAULT_REF_ID } from './constants';
 import type {
   CombinedDataset,
   SearchItem,
@@ -16,11 +16,14 @@ import type {
   SearchChildrenFn,
   Selection,
 } from './types';
-import { isSearchResult, isExpandType } from './types';
+// import { isSearchResult, isExpandType } from './types';
 
-import { scrollIntoView, searchItem } from './util/tree';
+import { /* scrollIntoView */ searchItem } from './util/tree';
 import { getGroupStatus, getHighestStatus } from './util/status';
-import { useLayout } from './LayoutProvider';
+// import { useLayout } from './LayoutProvider';
+import { SearchIcon } from './icon/SearchIcon';
+import { CloseIcon } from './icon/CloseIcon';
+import { TextInput, View } from 'react-native';
 
 const DEFAULT_MAX_SEARCH_RESULTS = 50;
 
@@ -41,16 +44,7 @@ const options = {
   ],
 } as IFuseOptions<SearchItem>;
 
-const ScreenReaderLabel = styled.label({
-  position: 'absolute',
-  left: -10000,
-  top: 'auto',
-  width: 1,
-  height: 1,
-  overflow: 'hidden',
-});
-
-const SearchIconWrapper = styled.div(({ theme }) => ({
+const SearchIconWrapper = styled.View(({ theme }) => ({
   position: 'absolute',
   top: 0,
   left: 8,
@@ -58,121 +52,130 @@ const SearchIconWrapper = styled.div(({ theme }) => ({
   pointerEvents: 'none',
   color: theme.textMutedColor,
   display: 'flex',
+  flexDirection: 'row',
   alignItems: 'center',
   height: '100%',
 }));
 
-const SearchField = styled.div({
+const SearchField = styled.View({
   display: 'flex',
   flexDirection: 'column',
   position: 'relative',
+  // marginBottom: 16,
 });
 
-const Input = styled.input(({ theme }) => ({
-  appearance: 'none',
+const Input = styled.TextInput(({ theme }) => ({
+  // appearance: 'none',
   height: 32,
   paddingLeft: 28,
   paddingRight: 28,
-  border: `1px solid ${theme.appBorderColor}`,
-  background: 'transparent',
+  borderWidth: 1,
+  borderColor: theme.appBorderColor,
+  backgroundColor: 'transparent',
   borderRadius: 4,
-  fontSize: `${theme.typography.size.s1 + 1}px`,
-  fontFamily: 'inherit',
-  transition: 'all 150ms',
+  fontSize: theme.typography.size.s1 + 1,
+  // transition: 'all 150ms',
   color: theme.color.defaultText,
   width: '100%',
 
-  '&:focus, &:active': {
-    outline: 0,
-    borderColor: theme.color.secondary,
-    background: theme.background.app,
-  },
-  '&::placeholder': {
-    color: theme.textMutedColor,
-    opacity: 1,
-  },
-  '&:valid ~ code, &:focus ~ code': {
-    display: 'none',
-  },
-  '&:invalid ~ svg': {
-    display: 'none',
-  },
-  '&:valid ~ svg': {
-    display: 'block',
-  },
-  '&::-ms-clear': {
-    display: 'none',
-  },
-  '&::-webkit-search-decoration, &::-webkit-search-cancel-button, &::-webkit-search-results-button, &::-webkit-search-results-decoration':
-    {
-      display: 'none',
-    },
+  // '&:focus, &:active': {
+  //   outline: 0,
+  //   borderColor: theme.color.secondary,
+  //   background: theme.background.app,
+  // },
+  // '&::placeholder': {
+  //   color: theme.textMutedColor,
+  //   opacity: 1,
+  // },
+  // '&:valid ~ code, &:focus ~ code': {
+  //   display: 'none',
+  // },
+  // '&:invalid ~ svg': {
+  //   display: 'none',
+  // },
+  // '&:valid ~ svg': {
+  //   display: 'block',
+  // },
+  // '&::-ms-clear': {
+  //   display: 'none',
+  // },
+  // '&::-webkit-search-decoration, &::-webkit-search-cancel-button, &::-webkit-search-results-button, &::-webkit-search-results-decoration':
+  //   {
+  //     display: 'none',
+  //   },
 }));
 
-const FocusKey = styled.code(({ theme }) => ({
-  position: 'absolute',
-  top: 8,
-  right: 9,
-  height: 16,
-  zIndex: 1,
-  lineHeight: '16px',
-  textAlign: 'center',
-  fontSize: '11px',
-  color: theme.base === 'light' ? theme.color.dark : theme.textMutedColor,
-  userSelect: 'none',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  gap: 4,
-}));
+// const FocusKey = styled.Text(({ theme }) => ({
+//   position: 'absolute',
+//   top: 8,
+//   right: 9,
+//   height: 16,
+//   zIndex: 1,
+//   lineHeight: 16,
+//   textAlign: 'center',
+//   fontSize: 11,
+//   color: theme.base === 'light' ? theme.color.dark : theme.textMutedColor,
+//   userSelect: 'none',
+//   pointerEvents: 'none',
+//   display: 'flex',
+//   flexDirection: 'row',
+//   alignItems: 'center',
+//   gap: 4,
+// }));
 
-const FocusKeyCmd = styled.span({
-  fontSize: '14px',
-});
+// const FocusKeyCmd = styled.Text({
+//   fontSize: 14,
+// });
 
-const ClearIcon = styled.div(({ theme }) => ({
+const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
   position: 'absolute',
   top: 0,
+  bottom: 0,
   right: 8,
   zIndex: 1,
   color: theme.textMutedColor,
   cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
   height: '100%',
 }));
 
-const FocusContainer = styled.div({ outline: 0 });
+// const FocusContainer = styled.View({});
 
 export const Search = React.memo<{
   children: SearchChildrenFn;
   dataset: CombinedDataset;
-  enableShortcuts?: boolean;
+  // enableShortcuts?: boolean;
   getLastViewed: () => Selection[];
   initialQuery?: string;
 }>(function Search({
   children,
   dataset,
-  enableShortcuts = true,
+  // enableShortcuts = true,
   getLastViewed,
   initialQuery = '',
 }) {
-  const api = useStorybookApi();
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [inputPlaceholder, setPlaceholder] = useState('Find components');
+  // const api = useStorybookApi();
+  // const inputRef = useRef<HTMLInputElement>(null);
+  // const [inputPlaceholder, setPlaceholder] = useState('Find components');
+  // const isFocused = useRef(false);
+  const inputRef = useRef<TextInput>(null);
+  const [inputValue, setInputValue] = useState(initialQuery);
+  const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
-  const searchShortcut = api ? shortcutToHumanString(api.getShortcutKeys().search) : '/';
+  // const searchShortcut = api ? shortcutToHumanString(api.getShortcutKeys().search) : '/';
 
-  const selectStory = useCallback(
-    (id: string, refId: string) => {
-      if (api) {
-        api.selectStory(id, undefined, { ref: refId !== DEFAULT_REF_ID && refId });
-      }
-      inputRef.current.blur();
-      showAllComponents(false);
-    },
-    [api, inputRef, showAllComponents]
-  );
+  // const selectStory = useCallback(
+  //   (id: string, refId: string) => {
+  //     if (api) {
+  //       api.selectStory(id, undefined, { ref: refId !== DEFAULT_REF_ID && refId });
+  //     }
+  //     inputRef.current.blur();
+  //     showAllComponents(false);
+  //   },
+  //   [api, inputRef, showAllComponents]
+  // );
 
   const makeFuse = useCallback(() => {
     const list = dataset.entries.reduce<SearchItem[]>((acc, [refId, { index, status }]) => {
@@ -226,111 +229,69 @@ export const Search = React.memo<{
         }
       }
 
+      const lastViewed = !input && getLastViewed();
+      if (lastViewed && lastViewed.length) {
+        results = lastViewed.reduce((acc, { storyId, refId }) => {
+          const data = dataset.hash[refId];
+          if (data && data.index && data.index[storyId]) {
+            const story = data.index[storyId];
+            const item = story.type === 'story' ? data.index[story.parent] : story;
+            // prevent duplicates
+            if (!acc.some((res) => res.item.refId === refId && res.item.id === item.id)) {
+              acc.push({ item: searchItem(item, dataset.hash[refId]), matches: [], score: 0 });
+            }
+          }
+          return acc;
+        }, []);
+      }
+
       return results;
     },
-    [allComponents, makeFuse]
+    [allComponents, dataset.hash, getLastViewed, makeFuse]
   );
 
-  const { isMobile } = useLayout();
+  // const { isMobile } = useLayout();
+
+  const input = inputValue ? inputValue.trim() : '';
+  const results = input ? getResults(input) : [];
 
   return (
-    <Downshift<DownshiftItem>
-      initialInputValue={initialQuery}
-      stateReducer={stateReducer}
-      itemToString={(result) => result?.item?.name || ''}
-    >
-      {({
-        isOpen,
-        openMenu,
-        closeMenu,
-        inputValue,
-        clearSelection,
-        getInputProps,
-        getItemProps,
-        getLabelProps,
-        getMenuProps,
-        getRootProps,
-        highlightedIndex,
-      }) => {
-        const input = inputValue ? inputValue.trim() : '';
-        let results = input ? getResults(input) : [];
+    <View style={{ flex: 1 }}>
+      <SearchField
+      // {...getRootProps({ refKey: '' }, { suppressRefError: true })}
+      // className="search-field"
+      >
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
 
-        const lastViewed = !input && getLastViewed();
-        if (lastViewed && lastViewed.length) {
-          results = lastViewed.reduce((acc, { storyId, refId }) => {
-            const data = dataset.hash[refId];
-            if (data && data.index && data.index[storyId]) {
-              const story = data.index[storyId];
-              const item = story.type === 'story' ? data.index[story.parent] : story;
-              // prevent duplicates
-              if (!acc.some((res) => res.item.refId === refId && res.item.id === item.id)) {
-                acc.push({ item: searchItem(item, dataset.hash[refId]), matches: [], score: 0 });
-              }
-            }
-            return acc;
-          }, []);
-        }
+        <Input
+          ref={inputRef}
+          onChangeText={setInputValue}
+          onFocus={() => setIsOpen(true)}
+          onBlur={() => setIsOpen(false)}
+        />
+        {isOpen && (
+          <ClearIcon
+            onPress={() => {
+              setInputValue('');
+              inputRef.current.clear();
+            }}
+          >
+            <CloseIcon />
+          </ClearIcon>
+        )}
+      </SearchField>
 
-        const inputId = 'storybook-explorer-searchfield';
-        const inputProps = getInputProps({
-          id: inputId,
-          ref: inputRef,
-          required: true,
-          type: 'search',
-          placeholder: inputPlaceholder,
-          onFocus: () => {
-            openMenu();
-            setPlaceholder('Type to find...');
-          },
-          onBlur: () => setPlaceholder('Find components'),
-        });
-
-        const labelProps = getLabelProps({
-          htmlFor: inputId,
-        });
-
-        return (
-          <>
-            <SearchField
-              {...getRootProps({ refKey: '' }, { suppressRefError: true })}
-              className="search-field"
-            >
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              {/* @ts-expect-error (TODO) */}
-              <Input {...inputProps} />
-              {!isMobile && enableShortcuts && !isOpen && (
-                <FocusKey>
-                  {searchShortcut === '⌘ K' ? (
-                    <>
-                      <FocusKeyCmd>⌘</FocusKeyCmd>K
-                    </>
-                  ) : (
-                    searchShortcut
-                  )}
-                </FocusKey>
-              )}
-              {isOpen && (
-                <ClearIcon onClick={() => clearSelection()}>
-                  <CloseIcon />
-                </ClearIcon>
-              )}
-            </SearchField>
-            <FocusContainer tabIndex={0} id="storybook-explorer-menu">
-              {children({
-                query: input,
-                results,
-                isBrowsing: !isOpen,
-                closeMenu,
-                getMenuProps,
-                getItemProps,
-                highlightedIndex,
-              })}
-            </FocusContainer>
-          </>
-        );
-      }}
-    </Downshift>
+      {children({
+        query: input,
+        results,
+        isBrowsing: !isOpen || !inputValue.length,
+        closeMenu: () => {},
+        // getMenuProps,
+        // getItemProps,
+        highlightedIndex: 0,
+      })}
+    </View>
   );
 });

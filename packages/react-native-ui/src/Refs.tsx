@@ -11,11 +11,10 @@ import { styled } from '@storybook/react-native-theming';
 
 import { Tree } from './Tree';
 
-// import { DEFAULT_REF_ID } from './Sidebar';
 import type { RefType } from './types';
 import { getStateType } from './util/tree';
 import { DEFAULT_REF_ID } from './constants';
-// import { DEFAULT_REF_ID } from './Sidebar';
+
 // import { CollapseIcon } from './icon/CollapseIcon';
 
 // import { getStateType } from '../../utils/tree';
