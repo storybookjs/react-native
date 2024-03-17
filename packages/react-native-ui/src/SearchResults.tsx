@@ -7,22 +7,22 @@ import React, { useCallback } from 'react';
 // import { PRELOAD_ENTRIES } from '@storybook/core-events';
 import { transparentize } from 'polished';
 // import { TrashIcon } from '@storybook/icons';
-
-import type { SearchResult } from './types';
+import type { GetSearchItemProps, SearchResult, SearchResultProps } from './types';
 import { isExpandType } from './types';
 
-import { statusMapping } from './util/status';
+import { FuseResultMatch } from 'fuse.js';
+import { PressableProps, Text, View } from 'react-native';
+import { Button } from './Button';
+import { IconButton } from './IconButton';
 import { ComponentIcon } from './icon/ComponentIcon';
 import { StoryIcon } from './icon/StoryIcon';
-import { PressableProps, Text, View } from 'react-native';
-import { FuseResultMatch } from 'fuse.js';
-import { IconButton } from './IconButton';
-import { Button } from './Button';
+import { statusMapping } from './util/status';
 // import { UseSymbol } from './IconSymbols';
 
 const ResultsList = styled.View({
   margin: 0,
   padding: 0,
+  marginTop: 8,
 });
 
 const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
@@ -74,7 +74,8 @@ const NoResults = styled.View(({ theme }) => ({
 }));
 
 const Mark = styled.Text(({ theme }) => ({
-  background: 'transparent',
+  backgroundColor: 'transparent',
+  // fontSize: theme.typography.size.s1 - 1,
   color: theme.color.secondary,
 }));
 
@@ -111,18 +112,19 @@ const Highlight: FC<PropsWithChildren<{ match?: FuseResultMatch }>> = React.memo
   function Highlight({ children, match }) {
     if (!match) return children;
     const { value, indices } = match;
+
     const { nodes: result } = indices.reduce<{ cursor: number; nodes: ReactNode[] }>(
       ({ cursor, nodes }, [start, end], index, { length }) => {
-        nodes.push(<Text>{value.slice(cursor, start)}</Text>);
-        nodes.push(<Mark>{value.slice(start, end + 1)}</Mark>);
+        nodes.push(<Text key={`text-${index}`}>{value.slice(cursor, start)}</Text>);
+        nodes.push(<Mark key={`mark-${index}`}>{value.slice(start, end + 1)}</Mark>);
         if (index === length - 1) {
-          nodes.push(<Text>{value.slice(end + 1)}</Text>);
+          nodes.push(<Text key={`last-${index}`}>{value.slice(end + 1)}</Text>);
         }
         return { cursor: end + 1, nodes };
       },
       { cursor: 0, nodes: [] }
     );
-    return <Text>{result}</Text>;
+    return <Text key={`end-${match.key}`}>{result}</Text>;
   }
 );
 
@@ -132,7 +134,7 @@ const Title = styled.Text(({ theme }) => ({
   // gridAutoColumns: 'auto',
   // gridAutoFlow: 'column',
   color: theme.textMutedColor,
-
+  fontSize: theme.typography.size.s2,
   // '& > span': {
   //   display: 'block',
   //   whiteSpace: 'nowrap',
@@ -144,11 +146,12 @@ const Title = styled.Text(({ theme }) => ({
 const Path = styled.View(({ theme }) => ({
   // display: 'grid',
   justifyContent: 'flex-start',
+  marginVertical: 2,
   // gridAutoColumns: 'auto',
   // gridAutoFlow: 'column',
   color: theme.textMutedColor,
   fontSize: theme.typography.size.s1 - 1,
-
+  flexDirection: 'row',
   // '& > span': {
   //   display: 'block',
   //   whiteSpace: 'nowrap',
@@ -163,13 +166,18 @@ const Path = styled.View(({ theme }) => ({
   // },
 }));
 
-const Result: FC<
-  SearchResult & {
-    icon: string;
-    isHighlighted: boolean;
-    onPress: PressableProps['onPress'];
-  }
-> = React.memo(function Result({ item, matches, icon: _icon, onPress, ...props }) {
+const PathText = styled.Text(({ theme }) => ({
+  fontSize: theme.typography.size.s1 - 1,
+  color: theme.textMutedColor,
+}));
+
+const Result: FC<SearchResultProps> = React.memo(function Result({
+  item,
+  matches,
+  icon: _icon,
+  onPress,
+  ...props
+}) {
   const press: PressableProps['onPress'] = useCallback(
     (event) => {
       event.preventDefault();
@@ -198,18 +206,21 @@ const Result: FC<
       </IconWrapper>
       <ResultRowContent testID="search-result-item--label">
         <Title>
-          <Highlight match={nameMatch}>{item.name}</Highlight>
+          <Highlight key="search-result-item--label-highlight" match={nameMatch}>
+            {item.name}
+          </Highlight>
         </Title>
         <Path>
           {item.path.map((group, index) => (
-            <View key={index}>
-              <Text>
+            <View key={index} style={{ flexShrink: 1 }}>
+              <PathText>
                 <Highlight
                   match={pathMatches.find((match: FuseResultMatch) => match.refIndex === index)}
                 >
+                  {/* {index === 0 ? '' : '/'} */}
                   {group}
                 </Highlight>
-              </Text>
+              </PathText>
             </View>
           ))}
         </Path>
@@ -219,12 +230,14 @@ const Result: FC<
   );
 });
 
+// type SearchResult = { item: API_HashEntry; matches: FuseResultMatch[]; score: number };
+
 export const SearchResults: FC<{
   query: string;
-  results: any[];
+  results: SearchResult[];
   closeMenu: (cb?: () => void) => void;
   // getMenuProps: any;
-  // getItemProps: any;
+  getItemProps: GetSearchItemProps;
   highlightedIndex: number | null;
   isLoading?: boolean;
   enableShortcuts?: boolean;
@@ -234,7 +247,7 @@ export const SearchResults: FC<{
   results,
   closeMenu,
   // getMenuProps,
-  // getItemProps,
+  getItemProps,
   highlightedIndex,
   // isLoading = false,
   // enableShortcuts = true,
@@ -275,7 +288,7 @@ export const SearchResults: FC<{
             <MoreWrapper key="search-result-expand">
               <Button
                 {...result}
-                // {...getItemProps({ key: index, index, item: result })}
+                {...getItemProps({ key: `${index}`, index, item: result })}
                 size="small"
                 text={`Show ${result.moreCount} more results`}
               />
@@ -284,19 +297,16 @@ export const SearchResults: FC<{
         }
 
         const { item } = result;
-        // const key = `${item.refId}::${item.id}`;
+        const key = `${item.refId}::${item.id}`;
         return (
           <Result
-            key={item.id}
             {...result}
-            onPress={() => {
-              console.log('pressed');
-            }}
-            // {...getItemProps({ key, index, item: result })}
+            {...getItemProps({ key, index, item: result })}
             isHighlighted={highlightedIndex === index}
+            key={item.id}
             // data-id={result.item.id}
             // data-refid={result.item.refId}
-            className="search-result-item"
+            // className="search-result-item"
           />
         );
       })}

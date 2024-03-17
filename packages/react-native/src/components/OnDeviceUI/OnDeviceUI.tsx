@@ -8,7 +8,7 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   Platform,
-  ScrollView,
+  // ScrollView,
   StatusBar,
   StyleProp,
   StyleSheet,
@@ -279,27 +279,23 @@ const OnDeviceUI = ({
                     channel.emit(SET_CURRENT_STORY, { storyId });
                   }}
                 /> */}
-              <ScrollView
-                style={{ paddingHorizontal: 10 }}
-                contentContainerStyle={{ flex: 1 }}
-                keyboardShouldPersistTaps="handled"
-              >
-                <Sidebar
-                  extra={[]}
-                  previewInitialized
-                  indexError={undefined}
-                  refs={{}}
-                  setSelection={({ storyId }) => {
-                    const channel = addons.getChannel();
 
-                    channel.emit(SET_CURRENT_STORY, { storyId });
-                  }}
-                  status={{}}
-                  index={storyHash}
-                  storyId={selected?.storyId}
-                  refId={DEFAULT_REF_ID}
-                />
-              </ScrollView>
+              <Sidebar
+                extra={[]}
+                previewInitialized
+                indexError={undefined}
+                refs={{}}
+                setSelection={({ storyId }) => {
+                  const channel = addons.getChannel();
+
+                  channel.emit(SET_CURRENT_STORY, { storyId });
+                }}
+                status={{}}
+                index={storyHash}
+                storyId={selected?.storyId}
+                refId={DEFAULT_REF_ID}
+              />
+
               {/* <StoryListView storyIndex={storyIndex} /> */}
             </Panel>
 

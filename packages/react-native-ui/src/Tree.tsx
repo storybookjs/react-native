@@ -75,9 +75,9 @@ export const Node = React.memo<NodeProps>(function Node({
   }
 
   const id = createId(item.id, refId);
+
   if (item.type === 'story') {
     const LeafNode = StoryNode;
-
     // const statusValue = getHighestStatus(Object.values(status || {}).map((s) => s.status));
     // const [icon, textColor] = statusMapping[statusValue];
 
@@ -226,8 +226,6 @@ export const Tree = React.memo<{
   refId: string;
   data: StoriesHash;
   docsMode: boolean;
-  // highlightedRef: MutableRefObject<Highlight>;
-  // setHighlightedItemId: (itemId: string) => void;
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({
@@ -237,8 +235,6 @@ export const Tree = React.memo<{
   data,
   status,
   docsMode,
-  // highlightedRef,
-  // setHighlightedItemId,
   selectedStoryId,
   onSelectStoryId,
 }) {
@@ -344,7 +340,7 @@ export const Tree = React.memo<{
     // highlightedRef,
     // setHighlightedItemId,
     selectedStoryId,
-    // onSelectStoryId,
+    onSelectStoryId,
   });
 
   const groupStatus = useMemo(() => getGroupStatus(collapsedData, status), [collapsedData, status]);

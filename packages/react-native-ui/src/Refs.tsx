@@ -94,9 +94,7 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
     setSelection,
   } = props;
   const length = useMemo(() => (index ? Object.keys(index).length : 0), [index]);
-  //   const indicatorRef = useRef<HTMLElement>(null);
 
-  //   const isMain = refId === DEFAULT_REF_ID;
   const isLoadingInjected =
     (type === 'auto-inject' && !previewInitialized) || type === 'server-checked';
   const isLoading = isLoadingMain || isLoadingInjected || type === 'unknown';
@@ -113,13 +111,6 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
     }
   }, [setExpanded, index, selectedStoryId]);
 
-  //   const handleClick = useCallback(() => setExpanded((value) => !value), [setExpanded]);
-
-  //   const setHighlightedItemId = useCallback(
-  //     (itemId: string) => setHighlighted({ itemId, refId }),
-  //     [setHighlighted]
-  //   );
-
   const onSelectStoryId = useCallback(
     (storyId: string) => {
       setSelection({ refId, storyId });
@@ -130,24 +121,8 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
 
   return (
     <>
-      {/* {isMain || (
-        <RefHead
-          aria-label={`${isExpanded ? 'Hide' : 'Show'} ${title} stories`}
-          aria-expanded={isExpanded}
-        >
-          <CollapseButton data-action="collapse-ref" onPress={handleClick}>
-            <CollapseIcon isExpanded={isExpanded} />
-            <RefTitle>{title}</RefTitle>
-          </CollapseButton>
-          <RefIndicator {...props} state={state} ref={indicatorRef} />
-        </RefHead>
-      )} */}
       {isExpanded && (
         <Wrapper data-title={title} isMain={true}>
-          {/* {state === 'auth' && <AuthBlock id={refId} loginUrl={loginUrl} />}
-        {state === 'error' && <ErrorBlock error={indexError} />}
-        {state === 'loading' && <LoaderBlock isMain={isMain} />}
-        {state === 'empty' && <EmptyBlock isMain={isMain} />} */}
           {state === 'ready' && (
             <Tree
               status={props.status}
@@ -158,8 +133,6 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
               docsMode={docsOptions?.docsMode}
               selectedStoryId={selectedStoryId}
               onSelectStoryId={onSelectStoryId}
-              //   highlightedRef={highlightedRef}
-              //   setHighlightedItemId={setHighlightedItemId}
             />
           )}
         </Wrapper>

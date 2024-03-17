@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 
 import { styled } from '@storybook/react-native-theming';
 // import { ScrollArea, Spaced } from '@storybook/components';
@@ -19,30 +19,30 @@ import { Search } from './Search';
 import { SearchResults } from './SearchResults';
 import type { CombinedDataset, Selection } from './types';
 import { useLastViewed } from './useLastViewed';
-import { DEFAULT_REF_ID, MEDIA_DESKTOP_BREAKPOINT } from './constants';
+import { DEFAULT_REF_ID } from './constants';
 import { ScrollView, View } from 'react-native';
 
 const Container = styled.View(({ theme }) => ({
-  position: 'absolute',
-  zIndex: 1,
-  left: 0,
-  top: 0,
-  bottom: 0,
-  right: 0,
+  // position: 'absolute',
+  // zIndex: 1,
+  // left: 0,
+  // top: 0,
+  // bottom: 0,
+  // right: 0,
   width: '100%',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
   background: theme.background.content,
 
-  [MEDIA_DESKTOP_BREAKPOINT]: {
-    background: theme.background.app,
-  },
+  // [MEDIA_DESKTOP_BREAKPOINT]: {
+  //   background: theme.background.app,
+  // },
 }));
 
 const Top = styled.View({
-  paddingLeft: 12,
-  paddingRight: 12,
+  paddingLeft: 8,
+  paddingRight: 8,
   paddingBottom: 20,
   paddingTop: 16,
   flex: 1,
@@ -136,11 +136,18 @@ SidebarProps) {
   // const isLoading = !index && !indexError;
   const lastViewedProps = useLastViewed(selected);
 
-  console.log(dataset);
-
+  const scrollRef = useRef<ScrollView>(null);
+  // const insets = useSafeAreaInsets();
   return (
     <Container /* className="container sidebar-container" */>
-      <ScrollView /* vertical offset={3} scrollbarSize={6} */>
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        ref={scrollRef}
+        style={{
+          paddingHorizontal: 10,
+          // paddingTop: insets.top,
+        }} /* vertical offset={3} scrollbarSize={6} */
+      >
         <Top /* row={1.6} */>
           {/* <Heading
             className="sidebar-header"
@@ -151,14 +158,18 @@ SidebarProps) {
             isLoading={isLoading}
             onMenuClick={onMenuClick}
           /> */}
-          <Search dataset={dataset} /* enableShortcuts={enableShortcuts} */ {...lastViewedProps}>
+          <Search
+            dataset={dataset}
+            setSelection={setSelection}
+            /* enableShortcuts={enableShortcuts} */ {...lastViewedProps}
+          >
             {({
               query,
               results,
               isBrowsing,
               closeMenu,
               // getMenuProps,
-              // getItemProps,
+              getItemProps,
               highlightedIndex,
             }) => (
               <Swap condition={isBrowsing}>
@@ -169,12 +180,13 @@ SidebarProps) {
                   isBrowsing={isBrowsing} //todo check me
                   setSelection={setSelection}
                 />
+
                 <SearchResults
                   query={query}
                   results={results}
                   closeMenu={closeMenu}
                   // getMenuProps={getMenuProps}
-                  // getItemProps={getItemProps}
+                  getItemProps={getItemProps}
                   highlightedIndex={highlightedIndex}
                   // enableShortcuts={enableShortcuts}
                   isLoading={false}

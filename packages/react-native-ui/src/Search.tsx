@@ -1,4 +1,4 @@
-// import { useStorybookApi, shortcutToHumanString } from '@storybook/manager-api';
+import { useStorybookApi /* shortcutToHumanString */ } from '@storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
 // import type { DownshiftState, StateChangeOptions } from 'downshift';
 // import Downshift from 'downshift';
@@ -8,13 +8,15 @@ import Fuse from 'fuse.js';
 import React, { useRef, useState, useCallback } from 'react';
 // import { CloseIcon, SearchIcon } from '@storybook/icons';
 // import { DEFAULT_REF_ID } from './constants';
-import type {
-  CombinedDataset,
-  SearchItem,
-  SearchResult,
+import {
+  type CombinedDataset,
+  type SearchItem,
+  type SearchResult,
   // DownshiftItem,
-  SearchChildrenFn,
-  Selection,
+  type SearchChildrenFn,
+  type Selection,
+  type GetSearchItemProps,
+  isExpandType,
 } from './types';
 // import { isSearchResult, isExpandType } from './types';
 
@@ -24,6 +26,7 @@ import { getGroupStatus, getHighestStatus } from './util/status';
 import { SearchIcon } from './icon/SearchIcon';
 import { CloseIcon } from './icon/CloseIcon';
 import { TextInput, View } from 'react-native';
+import { DEFAULT_REF_ID } from './constants';
 
 const DEFAULT_MAX_SEARCH_RESULTS = 50;
 
@@ -147,16 +150,18 @@ export const Search = React.memo<{
   children: SearchChildrenFn;
   dataset: CombinedDataset;
   // enableShortcuts?: boolean;
+  setSelection: (selection: Selection) => void;
   getLastViewed: () => Selection[];
   initialQuery?: string;
 }>(function Search({
   children,
   dataset,
+  setSelection,
   // enableShortcuts = true,
   getLastViewed,
   initialQuery = '',
 }) {
-  // const api = useStorybookApi();
+  const api = useStorybookApi();
   // const inputRef = useRef<HTMLInputElement>(null);
   // const [inputPlaceholder, setPlaceholder] = useState('Find components');
   // const isFocused = useRef(false);
@@ -166,16 +171,49 @@ export const Search = React.memo<{
   const [allComponents, showAllComponents] = useState(false);
   // const searchShortcut = api ? shortcutToHumanString(api.getShortcutKeys().search) : '/';
 
-  // const selectStory = useCallback(
-  //   (id: string, refId: string) => {
-  //     if (api) {
-  //       api.selectStory(id, undefined, { ref: refId !== DEFAULT_REF_ID && refId });
-  //     }
-  //     inputRef.current.blur();
-  //     showAllComponents(false);
-  //   },
-  //   [api, inputRef, showAllComponents]
-  // );
+  const selectStory = useCallback(
+    (id: string, refId: string) => {
+      if (api) {
+        api.selectStory(id, undefined, { ref: refId !== DEFAULT_REF_ID && refId });
+      }
+      setSelection({ storyId: id, refId });
+      inputRef.current?.blur();
+      // inputRef.current?.clear();
+      // setInputValue('');
+
+      showAllComponents(false);
+    },
+    [api, setSelection]
+  );
+
+  const getItemProps: GetSearchItemProps = useCallback(
+    ({ item: result }) => {
+      return {
+        icon: result?.item?.type === 'component' ? 'component' : 'story',
+        // isHighlighted:
+        result,
+        onPress: () => {
+          if (result?.item?.type === 'story') {
+            selectStory(result.item.id, result.item.refId);
+          } else if (result?.item?.type === 'component') {
+            selectStory(result.item.children[0], result.item.refId);
+          } else if (isExpandType(result) && result.showAll) {
+            result.showAll();
+          }
+
+          // selectStory(result.item.id, result.item.refId);
+        },
+        score: result.score,
+        refIndex: result.refIndex,
+        item: result.item,
+        matches: result.matches,
+        isHighlighted: false,
+        // isHighlighted: searchItem.
+        // isHighlighted: searchItem.item.
+      };
+    },
+    [selectStory]
+  );
 
   const makeFuse = useCallback(() => {
     const list = dataset.entries.reduce<SearchItem[]>((acc, [refId, { index, status }]) => {
@@ -289,8 +327,8 @@ export const Search = React.memo<{
         isBrowsing: !isOpen || !inputValue.length,
         closeMenu: () => {},
         // getMenuProps,
-        // getItemProps,
-        highlightedIndex: 0,
+        getItemProps,
+        highlightedIndex: null,
       })}
     </View>
   );

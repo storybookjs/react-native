@@ -2,9 +2,9 @@ import type { StoriesHash } from '@storybook/manager-api';
 import { useStorybookApi } from '@storybook/manager-api';
 import { STORIES_COLLAPSE_ALL, STORIES_EXPAND_ALL } from '@storybook/core-events';
 
-import type { Dispatch, MutableRefObject, Reducer } from 'react';
+import type { Dispatch, /* MutableRefObject, */ Reducer } from 'react';
 import { useCallback, useEffect, useReducer } from 'react';
-import type { Highlight } from './types';
+// import type { Highlight } from './types';
 
 import { /* isAncestor */ getAncestorIds /* getDescendantIds */ } from './util/tree';
 
@@ -25,7 +25,7 @@ export interface ExpandedProps {
   //   highlightedRef: MutableRefObject<Highlight>;
   //   setHighlightedItemId: (storyId: string) => void;
   selectedStoryId: string | null;
-  //   onSelectStoryId: (storyId: string) => void;
+  onSelectStoryId: (storyId: string) => void;
 }
 
 const initializeExpanded = ({
@@ -59,7 +59,7 @@ export const useExpanded = ({
   rootIds,
   //   highlightedRef,
   //   setHighlightedItemId,
-  //   onSelectStoryId,
+  // onSelectStoryId,
   selectedStoryId,
 }: ExpandedProps): [ExpandedState, Dispatch<ExpandAction>] => {
   const api = useStorybookApi();
