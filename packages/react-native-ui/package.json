@@ -30,7 +30,7 @@
   "scripts": {
     "dev": "tsup --watch",
     "prepare": "tsup",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:ci": "jest"
   },
   "jest": {
