@@ -4,6 +4,7 @@ import {
   start,
   prepareStories,
   getProjectAnnotations,
+  updateView,
 } from "@storybook/react-native";
 
 import "@storybook/addon-ondevice-notes/register";
@@ -75,15 +76,7 @@ if (!global.view) {
     storyEntries: normalizedStories,
   });
 } else {
-  const { importMap } = prepareStories({ storyEntries: normalizedStories });
-
-  global.view._preview.onStoriesChanged({
-    importFn: async (importPath: string) => importMap[importPath],
-  });
-
-  global.view._preview.onGetProjectAnnotationsChanged({
-    getProjectAnnotations: getProjectAnnotations(global.view, annotations),
-  });
+  updateView(global.view, annotations, normalizedStories);
 }
 
 export const view = global.view;
