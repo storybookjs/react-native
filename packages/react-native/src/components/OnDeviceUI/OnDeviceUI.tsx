@@ -119,7 +119,7 @@ const OnDeviceUI = ({
       }).start();
       setTabOpen(newTabOpen);
 
-      // close the keyboard opened from a TextInput from story list or knobs
+      // close the keyboard opened from a TextInput from story list or controls
       if (newTabOpen === CANVAS) {
         Keyboard.dismiss();
       }

@@ -20,7 +20,7 @@ const AbsolutePositionedKeyboardAwareView = ({
   children,
 }: Props) => {
   const onLayoutHandler = ({ nativeEvent }: LayoutChangeEvent) => {
-    const {height: layoutHeight, width: layoutWidth} = nativeEvent.layout;
+    const { height: layoutHeight, width: layoutWidth } = nativeEvent.layout;
     if (layoutHeight !== height || layoutWidth !== width) {
       onLayout({
         height: layoutHeight,

@@ -17,7 +17,7 @@ export const First: StoryObj<typeof MyComponent> = {
 };
 
 export const Second: StoryObj<typeof MyComponent> = {
-  storyName: 'Second Story',
+  name: 'Second Story',
   args: {
     text: 'Second',
   },

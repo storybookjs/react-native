@@ -3,10 +3,10 @@ import {
   addons as previewAddons,
   composeConfigs,
   userOrAutoTitleFromSpecifier,
+  PreviewWithSelection,
 } from '@storybook/preview-api';
 import { addons as managerAddons } from '@storybook/manager-api';
 // NOTE this really should be exported from preview-api, but it's not
-import { PreviewWithSelection } from '@storybook/preview-api/dist/preview-web';
 import { createBrowserChannel } from '@storybook/channels';
 import { View } from './View';
 import type { ReactRenderer } from '@storybook/react';
@@ -148,7 +148,7 @@ export function start({
     // TODO what happened to this type?
   } as any;
 
-  const urlStore = {
+  const selectionStore = {
     selection: null,
     selectionSpecifier: null,
     setQueryParams: () => {},
@@ -157,21 +157,46 @@ export function start({
     },
   };
 
-  const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
+  const getProjectAnnotationsInitial = async () =>
+    composeConfigs<ReactRenderer>([
+      {
+        renderToCanvas: (context) => {
+          view._setStory(context.storyContext);
+        },
+        render: (args, context) => {
+          const { id, component: Component } = context;
+
+          if (!Component) {
+            throw new Error(
+              `Unable to render story ${id} as the component annotation is missing from the default export`
+            );
+          }
+
+          return <Component {...args} />;
+        },
+      },
+      ...annotations,
+    ]);
+
+  // const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
+  const preview = new PreviewWithSelection<ReactRenderer>(
+    async (importPath: string) => importMap[importPath],
+    getProjectAnnotationsInitial,
+    selectionStore,
+    previewView
+  );
 
   const view = new View(preview, channel);
 
   if (global) {
     global.__STORYBOOK_ADDONS_CHANNEL__ = channel;
     global.__STORYBOOK_PREVIEW__ = preview;
-    global.__STORYBOOK_STORY_STORE__ = preview.storyStore;
   }
 
-  preview.initialize({
-    importFn: async (importPath: string) => importMap[importPath],
-    getProjectAnnotations: getProjectAnnotations(view, annotations),
-    getStoryIndex: () => index as any,
-  });
+  preview.getStoryIndexFromServer = async () => index;
+  // preview.initializeWithStoryIndex(index).catch((e) => {
+  //   console.log('error initializing preview', e);
+  // });
 
   view._storyIndex = index;
 

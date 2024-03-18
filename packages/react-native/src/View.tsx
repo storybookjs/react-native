@@ -1,7 +1,6 @@
 import { StoryContext, toId } from '@storybook/csf';
 import { addons as managerAddons } from '@storybook/manager-api';
-import { addons as previewAddons } from '@storybook/preview-api';
-import type { PreviewWithSelection } from '@storybook/preview-web';
+import { addons as previewAddons, PreviewWithSelection } from '@storybook/preview-api';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
 import type { PreparedStory, StoryId, StoryIndex } from '@storybook/types';
@@ -10,8 +9,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
 import { syncExternalUI, useSetStoryContext } from './hooks';
-// TODO check this
-import { createWebSocketChannel, type Channel } from '@storybook/channels';
+import { Channel, WebsocketTransport } from '@storybook/channels';
 import Events from '@storybook/core-events';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
@@ -134,17 +132,23 @@ export class View {
 
     const url = `${websocketType}://${host}${port}/${query}`;
 
-    return createWebSocketChannel({
-      url,
+    const channel = new Channel({
+      transport: new WebsocketTransport({
+        url,
+        onError: (e) => {
+          console.log(`WebsocketTransport error ${JSON.stringify(e)}`);
+        },
+      }),
       async: true,
-      onError: async () => {},
     });
+
+    return channel;
   };
 
   createPreparedStoryMapping = async () => {
     await Promise.all(
       Object.keys(this._storyIndex.entries).map(async (storyId: StoryId) => {
-        this._idToPrepared[storyId] = await this._preview.storyStore.loadStory({ storyId });
+        this._idToPrepared[storyId] = await this._preview.loadStory({ storyId });
       })
     );
   };
@@ -162,6 +166,8 @@ export class View {
     const initialStory = this._getInitialStory(params);
 
     if (enableWebsockets) {
+      console.log('websockets enabled');
+
       const channel = this._getServerChannel(params);
       managerAddons.setChannel(channel);
       previewAddons.setChannel(channel);
@@ -179,10 +185,8 @@ export class View {
           if (!this._ready) {
             throw new Error('Storybook is not ready yet');
           }
-
-          return this._preview.storyStore.getStoryContext(this._idToPrepared[id]);
+          return this._preview.getStoryContext(this._idToPrepared[id]);
         },
-
         getSelection: () => {
           return this._preview.currentSelection;
         },
@@ -222,7 +226,6 @@ export class View {
           setContext(newStory);
 
           if (shouldPersistSelection && !storage) {
-            // TODO: improve this warning to link to docs
             console.warn(dedent`Please set storage in getStorybookUI like this:
               const StorybookUIRoot = view.getStorybookUI({
                 storage: {
