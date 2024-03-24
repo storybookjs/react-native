@@ -10,8 +10,8 @@ import {
   BottomSheetScrollView,
 } from '@gorhom/bottom-sheet';
 import { ReactNode, forwardRef, useImperativeHandle, useRef, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
-import { useReducedMotion } from 'react-native-reanimated';
+import { Keyboard, Platform, ScrollView, Text, View } from 'react-native';
+import { useAnimatedKeyboard, useReducedMotion } from 'react-native-reanimated';
 // import { Button } from './Button';
 import { IconButton } from './IconButton';
 import { MenuIcon } from './icon/MenuIcon';
@@ -61,6 +61,7 @@ export interface MobileMenuDrawerRef {
 }
 const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, { children: ReactNode | ReactNode[] }>(
   ({ children }, ref) => {
+    const keyboard = useAnimatedKeyboard();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     const reducedMotion = useReducedMotion();
 
@@ -71,8 +72,10 @@ const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, { children: ReactNode |
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
           setMobileMenuOpen(true);
+
           menuBottomSheetRef.current?.present();
         } else {
+          Keyboard.dismiss();
           setMobileMenuOpen(false);
           menuBottomSheetRef.current?.dismiss();
         }
@@ -95,7 +98,16 @@ const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, { children: ReactNode |
         stackBehavior="replace"
         backdropComponent={BottomSheetBackdropComponent}
       >
-        <BottomSheetScrollView>{children}</BottomSheetScrollView>
+        <BottomSheetScrollView
+          style={{
+            marginBottom: Platform.select({
+              ios: keyboard.height,
+            }),
+          }}
+          keyboardShouldPersistTaps="handled"
+        >
+          {children}
+        </BottomSheetScrollView>
       </BottomSheetModal>
     );
   }
