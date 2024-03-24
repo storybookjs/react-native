@@ -3,18 +3,25 @@ import { addons as managerAddons } from '@storybook/manager-api';
 import { addons as previewAddons, PreviewWithSelection } from '@storybook/preview-api';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
-import type { PreparedStory, StoryId, StoryIndex } from '@storybook/types';
+import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybook/types';
 import { useEffect, useMemo, useReducer, useState } from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import OnDeviceUI from './components/OnDeviceUI';
+// import { SafeAreaProvider } from 'react-native-safe-area-context';
+// import OnDeviceUI from './components/OnDeviceUI';
 import StoryView from './components/StoryView';
-import { syncExternalUI, useSetStoryContext } from './hooks';
+import { syncExternalUI, useSetStoryContext, useStoryContext } from './hooks';
 import { Channel, WebsocketTransport } from '@storybook/channels';
+// import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import Events from '@storybook/core-events';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
 import { useColorScheme, ActivityIndicator, View as RNView, StyleSheet } from 'react-native';
 import getHost from './rn-host-detect';
+import { Layout } from '@storybook/react-native-ui';
+import { transformStoryIndexToStoriesHash } from './components/StoryListView/StoryHash';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import OnDeviceUI from './components/OnDeviceUI';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -205,6 +212,7 @@ export class View {
 
     return () => {
       const setContext = useSetStoryContext();
+      const story = useStoryContext();
       const colorScheme = useColorScheme();
       const [, forceUpdate] = useReducer((x) => x + 1, 0);
       const [ready, setReady] = useState(false);
@@ -254,6 +262,22 @@ export class View {
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
+      const storyHash: API_IndexHash = useMemo(() => {
+        if (!ready) {
+          return {};
+        }
+
+        return transformStoryIndexToStoriesHash(this._storyIndex, {
+          docsOptions: { docsMode: false, autodocs: false, defaultName: '' },
+          filters: {},
+          status: {},
+          provider: {
+            handleAPI: () => ({}),
+            getConfig: () => ({}),
+          },
+        });
+      }, [ready]);
+
       if (!ready) {
         return (
           <RNView
@@ -270,16 +294,17 @@ export class View {
 
       if (onDeviceUI) {
         return (
-          <SafeAreaProvider>
-            <ThemeProvider theme={appliedTheme as Theme}>
-              <OnDeviceUI
-                storyIndex={self._storyIndex}
-                tabOpen={params.tabOpen}
-                shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
-                keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
-              />
-            </ThemeProvider>
-          </SafeAreaProvider>
+          <ThemeProvider theme={appliedTheme as Theme}>
+            <SafeAreaProvider>
+              <GestureHandlerRootView style={{ flex: 1 }}>
+                <BottomSheetModalProvider>
+                  <Layout storyHash={storyHash} story={story}>
+                    <StoryView />
+                  </Layout>
+                </BottomSheetModalProvider>
+              </GestureHandlerRootView>
+            </SafeAreaProvider>
+          </ThemeProvider>
         );
       } else {
         return <StoryView />;

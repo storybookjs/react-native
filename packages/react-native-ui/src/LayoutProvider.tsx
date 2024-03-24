@@ -2,11 +2,11 @@ import type { FC, PropsWithChildren } from 'react';
 import React, { createContext, useCallback, useContext, useMemo, useRef } from 'react';
 import { BREAKPOINT } from './constants';
 import { useWindowDimensions } from 'react-native';
-import {
-  BottomSheetModal,
-  BottomSheetModalProvider,
-  BottomSheetScrollView,
-} from '@gorhom/bottom-sheet';
+// import {
+// BottomSheetModal,
+// BottomSheetModalProvider,
+// BottomSheetScrollView,
+// } from '@gorhom/bottom-sheet';
 
 type LayoutContextType = {
   // isMobileMenuOpen: boolean;
@@ -41,13 +41,13 @@ export const LayoutProvider: FC<PropsWithChildren> = ({ children }) => {
   const { width } = useWindowDimensions();
   const isDesktop = width >= BREAKPOINT;
   const isMobile = !isDesktop;
-  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+  // const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
   const openMobileMenu = useCallback(() => {
-    bottomSheetModalRef.current?.present();
+    // bottomSheetModalRef.current?.present();
   }, []);
   const closeMobileMenu = useCallback(() => {
-    bottomSheetModalRef.current?.dismiss();
+    // bottomSheetModalRef.current?.dismiss();
   }, []);
 
   const contextValue = useMemo(
@@ -76,12 +76,14 @@ export const LayoutProvider: FC<PropsWithChildren> = ({ children }) => {
   );
 
   return (
-    <BottomSheetModalProvider>
+    // <BottomSheetModalProvider>
+    <>
       <LayoutContext.Provider value={contextValue}>{children}</LayoutContext.Provider>
-      <BottomSheetModal ref={bottomSheetModalRef} snapPoints={['70%', '50%']}>
+      {/* <BottomSheetModal ref={bottomSheetModalRef} snapPoints={['70%', '50%']}>
         <BottomSheetScrollView>bla</BottomSheetScrollView>
-      </BottomSheetModal>
-    </BottomSheetModalProvider>
+      </BottomSheetModal> */}
+    </>
+    // </BottomSheetModalProvider>
   );
 };
 

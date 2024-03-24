@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo } from 'react';
 
 import { styled } from '@storybook/react-native-theming';
 // import { ScrollArea, Spaced } from '@storybook/components';
@@ -20,7 +20,7 @@ import { SearchResults } from './SearchResults';
 import type { CombinedDataset, Selection } from './types';
 import { useLastViewed } from './useLastViewed';
 import { DEFAULT_REF_ID } from './constants';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
 
 const Container = styled.View(({ theme }) => ({
   // position: 'absolute',
@@ -41,9 +41,9 @@ const Container = styled.View(({ theme }) => ({
 }));
 
 const Top = styled.View({
-  paddingLeft: 8,
-  paddingRight: 8,
-  paddingBottom: 20,
+  paddingLeft: 4,
+  paddingRight: 4,
+  // paddingBottom: 20,
   paddingTop: 16,
   flex: 1,
   flexDirection: 'row',
@@ -136,20 +136,12 @@ SidebarProps) {
   // const isLoading = !index && !indexError;
   const lastViewedProps = useLastViewed(selected);
 
-  const scrollRef = useRef<ScrollView>(null);
+  // const scrollRef = useRef<ScrollView>(null);
   // const insets = useSafeAreaInsets();
   return (
-    <Container /* className="container sidebar-container" */>
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        ref={scrollRef}
-        style={{
-          paddingHorizontal: 10,
-          // paddingTop: insets.top,
-        }} /* vertical offset={3} scrollbarSize={6} */
-      >
-        <Top /* row={1.6} */>
-          {/* <Heading
+    <Container style={{ paddingHorizontal: 10 }} /* className="container sidebar-container" */>
+      <Top /* row={1.6} */>
+        {/* <Heading
             className="sidebar-header"
             menuHighlighted={menuHighlighted}
             menu={menu}
@@ -158,45 +150,44 @@ SidebarProps) {
             isLoading={isLoading}
             onMenuClick={onMenuClick}
           /> */}
-          <Search
-            dataset={dataset}
-            setSelection={setSelection}
-            /* enableShortcuts={enableShortcuts} */ {...lastViewedProps}
-          >
-            {({
-              query,
-              results,
-              isBrowsing,
-              closeMenu,
-              // getMenuProps,
-              getItemProps,
-              highlightedIndex,
-            }) => (
-              <Swap condition={isBrowsing}>
-                <Explorer
-                  dataset={dataset}
-                  selected={selected}
-                  isLoading={false}
-                  isBrowsing={isBrowsing} //todo check me
-                  setSelection={setSelection}
-                />
+        <Search
+          dataset={dataset}
+          setSelection={setSelection}
+          /* enableShortcuts={enableShortcuts} */ {...lastViewedProps}
+        >
+          {({
+            query,
+            results,
+            isBrowsing,
+            closeMenu,
+            // getMenuProps,
+            getItemProps,
+            highlightedIndex,
+          }) => (
+            <Swap condition={isBrowsing}>
+              <Explorer
+                dataset={dataset}
+                selected={selected}
+                isLoading={false}
+                isBrowsing={isBrowsing} //todo check me
+                setSelection={setSelection}
+              />
 
-                <SearchResults
-                  query={query}
-                  results={results}
-                  closeMenu={closeMenu}
-                  // getMenuProps={getMenuProps}
-                  getItemProps={getItemProps}
-                  highlightedIndex={highlightedIndex}
-                  // enableShortcuts={enableShortcuts}
-                  isLoading={false}
-                  clearLastViewed={lastViewedProps.clearLastViewed}
-                />
-              </Swap>
-            )}
-          </Search>
-        </Top>
-      </ScrollView>
+              <SearchResults
+                query={query}
+                results={results}
+                closeMenu={closeMenu}
+                // getMenuProps={getMenuProps}
+                getItemProps={getItemProps}
+                highlightedIndex={highlightedIndex}
+                // enableShortcuts={enableShortcuts}
+                isLoading={false}
+                clearLastViewed={lastViewedProps.clearLastViewed}
+              />
+            </Swap>
+          )}
+        </Search>
+      </Top>
       {/* {isLoading ? null : (
         <Bottom>
           {bottom.map(({ id, render: Render }) => (

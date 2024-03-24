@@ -6,3 +6,4 @@ export * from './LayoutProvider';
 export * from './Explorer';
 export * from './Sidebar';
 export * from './types';
+export * from './Layout';

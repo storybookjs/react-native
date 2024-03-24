@@ -48,7 +48,8 @@
     "preset": "react-native"
   },
   "devDependencies": {
-    "@storybook/react": "8.0.0",
+    "@storybook/react": "^8",
+    "@storybook/types": "^8",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
@@ -58,13 +59,15 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@gorhom/bottom-sheet": "^4",
+    "@storybook/core-events": "^8",
+    "@storybook/manager-api": "^8",
     "@storybook/react-native-theming": "8.0.0-alpha.2",
     "fuse.js": "^7.0.0",
     "memoizerific": "^1.11.3",
     "polished": "^4.3.1"
   },
   "peerDependencies": {
+    "@gorhom/bottom-sheet": ">=4",
     "react": "*",
     "react-native": ">=0.57.0",
     "react-native-gesture-handler": ">=2",
