@@ -15,8 +15,8 @@ import {
   BottomSheetScrollView,
 } from '@gorhom/bottom-sheet';
 import { ReactNode, forwardRef, useImperativeHandle, useRef, useState } from 'react';
-import { Keyboard, Platform, ScrollView, Text, View } from 'react-native';
-import { useAnimatedKeyboard, useReducedMotion } from 'react-native-reanimated';
+import { Keyboard, Text, View } from 'react-native';
+import { useReducedMotion } from 'react-native-reanimated';
 // import { Button } from './Button';
 import { IconButton } from './IconButton';
 import { MenuIcon } from './icon/MenuIcon';
@@ -27,6 +27,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ReactRenderer } from '@storybook/react';
 import { Button as Button2 } from './Button';
 import { CloseIcon } from './icon/CloseIcon';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheetBackdropProps) => (
   <BottomSheetBackdrop
@@ -66,7 +67,6 @@ export interface MobileMenuDrawerRef {
 }
 const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, { children: ReactNode | ReactNode[] }>(
   ({ children }, ref) => {
-    const keyboard = useAnimatedKeyboard();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     const reducedMotion = useReducedMotion();
 
@@ -99,18 +99,12 @@ const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, { children: ReactNode |
         enableDismissOnClose
         enableHandlePanningGesture
         enableContentPanningGesture
-        // enablePanDownToClose={false}
+        keyboardBehavior="extend"
+        keyboardBlurBehavior="restore"
         stackBehavior="replace"
         backdropComponent={BottomSheetBackdropComponent}
       >
-        <BottomSheetScrollView
-          style={{
-            marginBottom: Platform.select({
-              ios: keyboard.height,
-            }),
-          }}
-          keyboardShouldPersistTaps="handled"
-        >
+        <BottomSheetScrollView keyboardShouldPersistTaps="handled">
           {children}
         </BottomSheetScrollView>
       </BottomSheetModal>
@@ -161,14 +155,17 @@ const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>
         style={{
           paddingTop: 8,
         }}
+        containerStyle={{}}
         backgroundStyle={{
           borderRadius: 0,
           borderTopColor: 'lightgrey',
           borderTopWidth: 1,
         }}
+        keyboardBehavior="interactive"
+        keyboardBlurBehavior="restore"
         enableDismissOnClose
-        enableHandlePanningGesture
-        enableContentPanningGesture
+        enableHandlePanningGesture={true}
+        enableContentPanningGesture={true}
         // enablePanDownToClose={false}
         stackBehavior="replace"
         // backdropComponent={BottomSheetBackdropComponent}
@@ -209,6 +206,7 @@ const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>
             />
           </View>
           <BottomSheetScrollView
+            keyboardShouldPersistTaps="handled"
             contentContainerStyle={{
               paddingBottom: insets.bottom + 16,
               marginTop: 10,
@@ -255,6 +253,7 @@ export const Layout = ({
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
   // const fullStoryName = useFullStoryName();
   const insets = useSafeAreaInsets();
+
   return (
     <View style={{ flex: 1, paddingTop: insets.top }}>
       <View style={{ flex: 1 }}>{children}</View>

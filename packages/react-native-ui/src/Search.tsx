@@ -27,6 +27,7 @@ import { SearchIcon } from './icon/SearchIcon';
 import { CloseIcon } from './icon/CloseIcon';
 import { TextInput, View } from 'react-native';
 import { DEFAULT_REF_ID } from './constants';
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 
 const DEFAULT_MAX_SEARCH_RESULTS = 50;
 
@@ -67,7 +68,7 @@ const SearchField = styled.View({
   // marginBottom: 16,
 });
 
-const Input = styled.TextInput(({ theme }) => ({
+const Input = styled(BottomSheetTextInput)(({ theme }) => ({
   // appearance: 'none',
   height: 32,
   paddingLeft: 28,
@@ -304,7 +305,7 @@ export const Search = React.memo<{
         </SearchIconWrapper>
 
         <Input
-          ref={inputRef}
+          ref={inputRef as any} // TODO find solution for this
           onChangeText={setInputValue}
           onFocus={() => setIsOpen(true)}
           onBlur={() => setIsOpen(false)}

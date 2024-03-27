@@ -50,7 +50,8 @@
     "@react-native-community/datetimepicker": "*",
     "@react-native-community/slider": "*",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "@gorhom/bottom-sheet": ">=4"
   },
   "publishConfig": {
     "access": "public"

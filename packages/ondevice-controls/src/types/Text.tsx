@@ -1,5 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/react-native-theming';
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 
 import { inputStyle } from './common';
 import { useResyncValue } from './useResyncValue';
@@ -14,7 +15,7 @@ export interface TextProps {
   isPristine: boolean;
 }
 
-const Input = styled.TextInput(({ theme }) => ({
+const Input = styled(BottomSheetTextInput)(({ theme }) => ({
   ...inputStyle(theme),
 }));
 
