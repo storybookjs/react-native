@@ -21,7 +21,7 @@ import { Layout } from '@storybook/react-native-ui';
 import { transformStoryIndexToStoriesHash } from './components/StoryListView/StoryHash';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import OnDeviceUI from './components/OnDeviceUI';
+// import OnDeviceUI from './components/OnDeviceUI';
 
 const STORAGE_KEY = 'lastOpenedStory';
 

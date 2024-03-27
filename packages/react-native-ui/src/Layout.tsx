@@ -1,7 +1,12 @@
 import { Sidebar } from './Sidebar';
 import { addons /* useStorybookApi, useStorybookState */ } from '@storybook/manager-api';
 import { SET_CURRENT_STORY } from '@storybook/core-events';
-import type { API_IndexHash, Args, StoryContext } from '@storybook/types';
+import {
+  Addon_TypesEnum,
+  type API_IndexHash,
+  type Args,
+  type StoryContext,
+} from '@storybook/types';
 import { DEFAULT_REF_ID } from './constants';
 import {
   BottomSheetBackdrop,
@@ -120,12 +125,16 @@ export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
 }
 
-const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { children: ReactNode | ReactNode[] }>(
-  ({ children }, ref) => {
+const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
+  ({ storyId }, ref) => {
     const [isAddonsPanelOpen, setAddonsPanelOpen] = useState(false);
     const reducedMotion = useReducedMotion();
 
     const addonsPanelBottomSheetRef = useRef<BottomSheetModal>(null);
+    const insets = useSafeAreaInsets();
+
+    const panels = addons.getElements(Addon_TypesEnum.PANEL);
+    const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
 
     useImperativeHandle(ref, () => ({
       isAddonsPanelOpen,
@@ -149,8 +158,14 @@ const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { children: ReactNode
           setAddonsPanelOpen(false);
         }}
         snapPoints={['25%', '50%']}
-        style={{ borderTopColor: 'lightgrey', borderTopWidth: 1, paddingTop: 8 }}
-        handleComponent={null}
+        style={{
+          paddingTop: 8,
+        }}
+        backgroundStyle={{
+          borderRadius: 0,
+          borderTopColor: 'lightgrey',
+          borderTopWidth: 1,
+        }}
         enableDismissOnClose
         enableHandlePanningGesture
         enableContentPanningGesture
@@ -158,12 +173,32 @@ const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { children: ReactNode
         stackBehavior="replace"
         // backdropComponent={BottomSheetBackdropComponent}
       >
-        <View>
+        <View style={{ flex: 1 }}>
           <View style={{ flexDirection: 'row' }}>
-            <ScrollView horizontal contentContainerStyle={{ paddingHorizontal: 8, columnGap: 8 }}>
-              <Button2 size="medium" variant="outline" text="bla" />
-              <Button2 size="medium" variant="outline" text="bla2" />
-              <Button2 size="medium" variant="outline" text="bla2" />
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ paddingHorizontal: 8, columnGap: 8 }}
+            >
+              {Object.values(panels).map(({ id, title }) => {
+                let resolvedTitle = typeof title === 'function' ? title({}) : title;
+
+                if (typeof resolvedTitle === 'string') {
+                  resolvedTitle = resolvedTitle.toUpperCase();
+                }
+
+                return (
+                  <Button2
+                    size="medium"
+                    variant="outline"
+                    active={id === addonSelected}
+                    key={id}
+                    id={id}
+                    onPress={() => setAddonSelected(id)}
+                    text={resolvedTitle}
+                  />
+                );
+              })}
             </ScrollView>
             <IconButton
               Icon={CloseIcon}
@@ -173,7 +208,33 @@ const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { children: ReactNode
               }}
             />
           </View>
-          <BottomSheetScrollView>{children}</BottomSheetScrollView>
+          <BottomSheetScrollView
+            contentContainerStyle={{
+              paddingBottom: insets.bottom + 16,
+              marginTop: 10,
+              paddingHorizontal: 16,
+            }}
+          >
+            {(() => {
+              if (!storyId) {
+                return (
+                  <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                    <Text>No Story Selected</Text>
+                  </View>
+                );
+              }
+
+              if (Object.keys(panels).length === 0) {
+                return (
+                  <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                    <Text>No addons loaded.</Text>
+                  </View>
+                );
+              }
+
+              return panels[addonSelected].render({ active: true });
+            })()}
+          </BottomSheetScrollView>
         </View>
       </BottomSheetModal>
     );
@@ -214,9 +275,7 @@ export const Layout = ({
           refId={DEFAULT_REF_ID}
         />
       </MobileMenuDrawer>
-      <MobileAddonsPanel ref={addonPanelRef}>
-        <Text>Test</Text>
-      </MobileAddonsPanel>
+      <MobileAddonsPanel ref={addonPanelRef} storyId={story.id} />
       <Container style={{ marginBottom: insets.bottom }}>
         <Nav>
           <Button
