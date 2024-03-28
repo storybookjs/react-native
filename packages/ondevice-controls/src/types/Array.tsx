@@ -3,8 +3,9 @@ import { styled } from '@storybook/react-native-theming';
 
 import { inputStyle } from './common';
 import { useResyncValue } from './useResyncValue';
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 
-const Input = styled.TextInput(({ theme }) => ({
+const Input = styled(BottomSheetTextInput)(({ theme }) => ({
   ...inputStyle(theme),
 }));
 

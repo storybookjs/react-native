@@ -4,6 +4,7 @@ import { ViewStyle } from 'react-native';
 
 import { useResyncValue } from './useResyncValue';
 import { inputStyle } from './common';
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 
 export interface ObjectProps {
   arg: {
@@ -14,7 +15,7 @@ export interface ObjectProps {
   isPristine: boolean;
 }
 
-const Input = styled.TextInput(({ theme }) => ({
+const Input = styled(BottomSheetTextInput)(({ theme }) => ({
   ...inputStyle(theme, false),
   minHeight: 60,
 }));

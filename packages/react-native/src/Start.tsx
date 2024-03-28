@@ -193,12 +193,30 @@ export function start({
     global.__STORYBOOK_PREVIEW__ = preview;
   }
 
-  preview.getStoryIndexFromServer = async () => index;
-  // preview.initializeWithStoryIndex(index).catch((e) => {
-  //   console.log('error initializing preview', e);
-  // });
-
   view._storyIndex = index;
 
+  preview.getStoryIndexFromServer = async () => view._storyIndex;
+
   return view;
+}
+
+export function updateView(
+  viewInstance: View,
+  annotations: any[],
+  normalizedStories: Array<NormalizedStoriesSpecifier & { req: any }>
+) {
+  const { importMap, index } = prepareStories({ storyEntries: normalizedStories });
+
+  viewInstance._preview.onStoriesChanged({
+    importFn: async (importPath: string) => importMap[importPath],
+  });
+
+  viewInstance._preview.onGetProjectAnnotationsChanged({
+    getProjectAnnotations: getProjectAnnotations(viewInstance, annotations),
+  });
+
+  viewInstance._storyIndex = index;
+  viewInstance._preview.onStoryIndexChanged().then(() => {
+    viewInstance.createPreparedStoryMapping().then(() => viewInstance._forceRerender());
+  });
 }

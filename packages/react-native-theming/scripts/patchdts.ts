@@ -1,8 +1,12 @@
 async function run() {
-  const { appendFile } = await import('fs/promises');
+  const { readFile, writeFile } = await import('fs/promises');
   // add a string of text at the end of the dist/index.d.ts file
-  console.log('Appending to dist/index.d.ts');
-  await appendFile('dist/index.d.ts', '\n export interface Theme extends StorybookTheme {}');
+  console.log('writing to dist/index.d.ts');
+  const contents = await readFile('dist/index.d.ts', 'utf-8');
+  await writeFile(
+    'dist/index.d.ts',
+    contents.replace('interface Theme {}', 'export interface Theme extends StorybookTheme {}')
+  );
 }
 
 run().catch((e) => {

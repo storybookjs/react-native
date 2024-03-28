@@ -5,8 +5,9 @@ import { View } from 'react-native';
 
 import { inputStyle } from './common';
 import { useResyncValue } from './useResyncValue';
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 
-const Input = styled.TextInput<{ showError: boolean }>(({ theme, showError }) => {
+const Input = styled(BottomSheetTextInput)<{ showError: boolean }>(({ theme, showError }) => {
   const style = inputStyle(theme);
   return {
     ...style,

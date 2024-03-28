@@ -5,5 +5,6 @@ import '@emotion/react';
 
 declare module '@emotion/react' {
   type StorybookTheme = import('./theme').StorybookTheme;
+
   export interface Theme extends StorybookTheme {}
 }
