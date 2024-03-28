@@ -86,19 +86,17 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
                     onPress={() => setAddonSelected(id)}
                     text={resolvedTitle}
                   />
-                  // <Button2
-                  //   size="medium"
-                  //   variant="outline"
-                  //   active={id === addonSelected}
-                  //   key={id}
-                  //   id={id}
-                  //   onPress={() => setAddonSelected(id)}
-                  //   text={resolvedTitle}
-                  // />
                 );
               })}
             </ScrollView>
             <IconButton
+              style={{
+                marginRight: 4,
+                marginBottom: 4,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}
               Icon={CloseIcon}
               onPress={() => {
                 setAddonsPanelOpen(false);
