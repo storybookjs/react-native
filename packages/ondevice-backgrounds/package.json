@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-backgrounds",
-  "version": "8.0.0-alpha.3",
+  "version": "8.0.0-alpha.4",
   "description": "A react-native storybook addon to show different backgrounds for your preview",
   "keywords": [
     "addon",
@@ -34,7 +34,7 @@
   "dependencies": {
     "@storybook/manager-api": "^8",
     "@storybook/preview-api": "^8",
-    "@storybook/react-native-theming": "^8.0.0-alpha.3"
+    "@storybook/react-native-theming": "^8.0.0-alpha.4"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
