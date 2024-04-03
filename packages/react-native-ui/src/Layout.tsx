@@ -49,7 +49,7 @@ export const Layout = ({
           refId={DEFAULT_REF_ID}
         />
       </MobileMenuDrawer>
-      <MobileAddonsPanel ref={addonPanelRef} storyId={story.id} />
+      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />
       <Container style={{ marginBottom: insets.bottom }}>
         <Nav>
           <Button
@@ -58,7 +58,7 @@ export const Layout = ({
           >
             <MenuIcon color={theme.color.mediumdark} />
             <Text>
-              {story.title}/{story.name}
+              {story?.title}/{story?.name}
             </Text>
           </Button>
 
