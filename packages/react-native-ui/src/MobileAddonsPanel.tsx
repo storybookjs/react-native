@@ -1,4 +1,4 @@
-import { BottomSheetModal, BottomSheetScrollView, TouchableOpacity } from '@gorhom/bottom-sheet';
+import { BottomSheetModal, BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { addons } from '@storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import { Addon_TypesEnum } from '@storybook/types';
@@ -7,7 +7,7 @@ import { Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Button as Button2 } from './Button';
+
 import { IconButton } from './IconButton';
 import { CloseIcon } from './icon/CloseIcon';
 
@@ -82,6 +82,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
 
                 return (
                   <Tab
+                    key={id}
                     active={id === addonSelected}
                     onPress={() => setAddonSelected(id)}
                     text={resolvedTitle}
