@@ -1,27 +1,22 @@
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { Channel, WebsocketTransport } from '@storybook/channels';
+import Events from '@storybook/core-events';
 import { StoryContext, toId } from '@storybook/csf';
 import { addons as managerAddons } from '@storybook/manager-api';
-import { addons as previewAddons, PreviewWithSelection } from '@storybook/preview-api';
+import { PreviewWithSelection, addons as previewAddons } from '@storybook/preview-api';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
+import { Layout, transformStoryIndexToStoriesHash } from '@storybook/react-native-ui';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybook/types';
-import { useEffect, useMemo, useReducer, useState } from 'react';
-// import { SafeAreaProvider } from 'react-native-safe-area-context';
-// import OnDeviceUI from './components/OnDeviceUI';
-import StoryView from './components/StoryView';
-import { syncExternalUI, useSetStoryContext, useStoryContext } from './hooks';
-import { Channel, WebsocketTransport } from '@storybook/channels';
-// import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import Events from '@storybook/core-events';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
-import { useColorScheme, ActivityIndicator, View as RNView, StyleSheet } from 'react-native';
-import getHost from './rn-host-detect';
-import { Layout } from '@storybook/react-native-ui';
-import { transformStoryIndexToStoriesHash } from './components/StoryListView/StoryHash';
+import { useEffect, useMemo, useReducer, useState } from 'react';
+import { ActivityIndicator, View as RNView, StyleSheet, useColorScheme } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-// import OnDeviceUI from './components/OnDeviceUI';
+import StoryView from './components/StoryView';
+import getHost from './rn-host-detect';
+import { useSetStoryContext, useStoryContext } from './hooks';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -204,17 +199,11 @@ export class View {
     // eslint-disable-next-line consistent-this
     const self = this;
 
-    // Sync the Storybook parameters (external) with app UI state (internal), to initialise them.
-    syncExternalUI({
-      isUIVisible: params.isUIHidden !== undefined ? !params.isUIHidden : undefined,
-      isSplitPanelVisible: params.isSplitPanelVisible,
-    });
-
     return () => {
       const setContext = useSetStoryContext();
       const story = useStoryContext();
       const colorScheme = useColorScheme();
-      const [, forceUpdate] = useReducer((x) => x + 1, 0);
+      const [update, forceUpdate] = useReducer((x) => x + 1, 0);
       const [ready, setReady] = useState(false);
 
       const appliedTheme = useMemo(
@@ -276,7 +265,9 @@ export class View {
             getConfig: () => ({}),
           },
         });
-      }, [ready]);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [ready, update]);
 
       if (!ready) {
         return (

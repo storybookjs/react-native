@@ -2,7 +2,7 @@ import { View } from 'react-native';
 import type { Meta, StoryObj } from '@storybook/react';
 import { MyButton } from './Button';
 
-const MyButtonMeta: Meta<typeof MyButton> = {
+const meta = {
   title: 'MyButton',
   component: MyButton,
   argTypes: {
@@ -18,13 +18,15 @@ const MyButtonMeta: Meta<typeof MyButton> = {
       </View>
     ),
   ],
-};
+} satisfies Meta<typeof MyButton>;
 
-export default MyButtonMeta;
+export default meta;
 
-export const Basic: StoryObj<typeof MyButton> = {};
+type Story = StoryObj<typeof meta>;
 
-export const AnotherExample: StoryObj<typeof MyButton> = {
+export const Basic: Story = {};
+
+export const AnotherExample: Story = {
   args: {
     text: 'Another example',
   },
