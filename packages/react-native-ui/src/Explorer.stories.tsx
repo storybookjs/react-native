@@ -1,4 +1,3 @@
-import { ManagerContext } from '@storybook/manager-api';
 import { Explorer } from './Explorer';
 import { mockDataset } from './mockdata';
 import type { RefType } from './types';
@@ -9,11 +8,6 @@ export default {
   title: 'UI/Sidebar/Explorer',
   parameters: { layout: 'fullscreen', theme: 'side-by-side' },
   decorators: [
-    (storyFn: any) => (
-      <ManagerContext.Provider value={{ state: { docsOptions: {} } } as any}>
-        {storyFn()}
-      </ManagerContext.Provider>
-    ),
     (storyFn: any) => <View style={{ paddingHorizontal: 20 }}>{storyFn()}</View>,
     (storyFn: any) => <View style={{ paddingHorizontal: 20 }}>{storyFn()}</View>,
   ],

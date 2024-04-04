@@ -7,6 +7,7 @@ import {
 import { ReactNode, forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
 import { useReducedMotion } from 'react-native-reanimated';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
@@ -31,6 +32,7 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
   ({ children }, ref) => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     const reducedMotion = useReducedMotion();
+    const insets = useSafeAreaInsets();
 
     const menuBottomSheetRef = useRef<BottomSheetModal>(null);
 
@@ -66,7 +68,12 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
         stackBehavior="replace"
         backdropComponent={BottomSheetBackdropComponent}
       >
-        <BottomSheetScrollView keyboardShouldPersistTaps="handled">
+        <BottomSheetScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{
+            paddingBottom: insets.bottom,
+          }}
+        >
           {children}
         </BottomSheetScrollView>
       </BottomSheetModal>

@@ -1,12 +1,10 @@
 import type {
-  API,
   ComponentEntry,
   GroupEntry,
   State,
   StoriesHash,
   StoryEntry,
 } from '@storybook/manager-api';
-import { useStorybookApi } from '@storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import React, { useCallback, useMemo, useRef } from 'react';
 import { IconButton } from './IconButton';
@@ -22,20 +20,6 @@ import { CollapseAllIcon } from './icon/CollapseAllIcon';
 import { Item } from './types';
 import { useLayout } from './LayoutProvider';
 
-// export type Item = StoriesHash[keyof StoriesHash];
-
-// export const createId = (itemId: string, refId?: string) =>
-//   !refId || refId === DEFAULT_REF_ID ? itemId : `${refId}_${itemId}`;
-
-// export const statusPriority: API_StatusValue[] = ['unknown', 'pending', 'success', 'warn', 'error'];
-
-// export const getHighestStatus = (statuses: API_StatusValue[]): API_StatusValue => {
-//   return statusPriority.reduce(
-//     (acc, status) => (statuses.includes(status) ? status : acc),
-//     'unknown'
-//   );
-// };
-
 interface NodeProps {
   item: Item;
   refId: string;
@@ -50,12 +34,10 @@ interface NodeProps {
   setFullyExpanded?: () => void;
   onSelectStoryId: (itemId: string) => void;
   status: State['status'][keyof State['status']];
-  api: API;
 }
 
 export const Node = React.memo<NodeProps>(function Node({
   item,
-  //   status,
   refId,
   isOrphan,
   isDisplayed,
@@ -66,7 +48,6 @@ export const Node = React.memo<NodeProps>(function Node({
   isExpanded,
   setExpanded,
   onSelectStoryId,
-  api: _1,
 }) {
   const { isDesktop, isMobile, closeMobileMenu } = useLayout();
 
@@ -78,16 +59,12 @@ export const Node = React.memo<NodeProps>(function Node({
 
   if (item.type === 'story') {
     const LeafNode = StoryNode;
-    // const statusValue = getHighestStatus(Object.values(status || {}).map((s) => s.status));
-    // const [icon, textColor] = statusMapping[statusValue];
 
     return (
       <LeafNodeStyleWrapper>
         <LeafNode
           selected={isSelected}
-          //   style={isSelected ? {} : { color: textColor }}
           key={id}
-          //   href={getLink(item, refId)}
           id={id}
           depth={isOrphan ? item.depth : item.depth - 1}
           onPress={() => {
@@ -103,16 +80,8 @@ export const Node = React.memo<NodeProps>(function Node({
 
   if (item.type === 'root') {
     return (
-      <RootNode
-        key={id}
-        id={id}
-        // className="sidebar-subheading"
-        // data-ref-id={refId}
-        // data-item-id={item.id}
-        // data-nodetype="root"
-      >
+      <RootNode key={id} id={id}>
         <CollapseButton
-          //   type="button"
           data-action="collapse-root"
           onPress={(event) => {
             event.preventDefault();
@@ -125,7 +94,6 @@ export const Node = React.memo<NodeProps>(function Node({
         </CollapseButton>
         {isExpanded && (
           <IconButton
-            // className="sidebar-subheading-action"
             aria-label={isFullyExpanded ? 'Expand' : 'Collapse'}
             data-action="expand-all"
             data-expanded={isFullyExpanded}
@@ -147,12 +115,6 @@ export const Node = React.memo<NodeProps>(function Node({
       <BranchNode
         key={id}
         id={id}
-        // className="sidebar-item"
-        // data-ref-id={refId}
-        // data-item-id={item.id}
-        // data-parent-id={item.parent}
-        // data-nodetype={item.type === 'component' ? 'component' : 'group'}
-        // data-highlightable={isDisplayed}
         aria-controls={item.children && item.children[0]}
         aria-expanded={isExpanded}
         depth={isOrphan ? item.depth : item.depth - 1}
@@ -202,7 +164,6 @@ export const RootNodeText = styled.Text(({ theme }) => ({
   color: theme.textMutedColor,
   lineHeight: 16,
   letterSpacing: 2.5,
-  //   letterSpacing: '0.16em',
   textTransform: 'uppercase',
 }));
 
@@ -212,7 +173,6 @@ const CollapseButton = styled.TouchableOpacity(({}) => ({
   paddingVertical: 0,
   paddingHorizontal: 8,
   borderRadius: 4,
-  //   transition: 'color 150ms, box-shadow 150ms',
   gap: 6,
   alignItems: 'center',
   cursor: 'pointer',
@@ -228,18 +188,8 @@ export const Tree = React.memo<{
   docsMode: boolean;
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
-}>(function Tree({
-  // isBrowsing,
-  isMain,
-  refId,
-  data,
-  status,
-  docsMode,
-  selectedStoryId,
-  onSelectStoryId,
-}) {
+}>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
   const containerRef = useRef<View>(null);
-  const api = useStorybookApi();
 
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
   const [rootIds, orphanIds, initialExpanded] = useMemo(
@@ -331,14 +281,10 @@ export const Tree = React.memo<{
 
   // Track expanded nodes, keep it in sync with props and enable keyboard shortcuts.
   const [expanded, setExpanded] = useExpanded({
-    // containerRef,
-    // isBrowsing,
     refId,
     data: collapsedData,
     initialExpanded,
     rootIds,
-    // highlightedRef,
-    // setHighlightedItemId,
     selectedStoryId,
     onSelectStoryId,
   });
@@ -354,7 +300,6 @@ export const Tree = React.memo<{
         const descendants = expandableDescendants[item.id];
         const isFullyExpanded = descendants.every((d: string) => expanded[d]);
         return (
-          // @ts-expect-error (TODO)
           <Root
             key={id}
             item={item}
@@ -367,6 +312,9 @@ export const Tree = React.memo<{
             isFullyExpanded={isFullyExpanded}
             expandableDescendants={descendants}
             onSelectStoryId={onSelectStoryId}
+            docsMode={false}
+            color=""
+            status={{}}
           />
         );
       }
@@ -376,7 +324,6 @@ export const Tree = React.memo<{
 
       return (
         <Node
-          api={api}
           key={id}
           item={item}
           status={status?.[itemId]}
@@ -394,7 +341,6 @@ export const Tree = React.memo<{
     });
   }, [
     ancestry,
-    api,
     collapsedData,
     collapsedItems,
     docsMode,

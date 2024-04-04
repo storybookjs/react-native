@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import type { ComponentEntry, IndexHash } from '@storybook/manager-api';
-
 import type { StoryObj, Meta } from '@storybook/react';
 import { Tree } from './Tree';
 import { index } from './mockdata.large';
@@ -54,13 +53,7 @@ export const Full: Story = {
   render: function Render(args) {
     const [selectedId, setSelectedId] = useState(storyId);
     return (
-      <Tree
-        {...args}
-        data={index}
-        selectedStoryId={selectedId}
-        onSelectStoryId={setSelectedId}
-        // highlightedRef={{ current: { itemId: selectedId, refId: DEFAULT_REF_ID } }}
-      />
+      <Tree {...args} data={index} selectedStoryId={selectedId} onSelectStoryId={setSelectedId} />
     );
   },
 };
@@ -130,7 +123,6 @@ export const SingleStoryComponents: Story = {
             return acc;
           }, {} as IndexHash),
         }}
-        // highlightedRef={{ current: { itemId: selectedId, refId: DEFAULT_REF_ID } }}
         selectedStoryId={selectedId}
         onSelectStoryId={setSelectedId}
       />

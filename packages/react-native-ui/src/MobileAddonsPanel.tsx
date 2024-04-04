@@ -63,7 +63,6 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
         enableDismissOnClose
         enableHandlePanningGesture={true}
         enableContentPanningGesture={true}
-        // enablePanDownToClose={false}
         stackBehavior="replace"
       >
         <View style={{ flex: 1 }}>
@@ -73,7 +72,6 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
                 paddingHorizontal: 8,
-                // alignItems: 'center',
                 justifyContent: 'center',
               }}
             >

@@ -18,7 +18,6 @@ export interface ButtonProps extends TouchableOpacityProps {
 export const Button = forwardRef<TouchableOpacity, ButtonProps>(
   (
     {
-      // asChild = false,
       Icon,
       animation = 'none',
       size = 'small',
@@ -54,23 +53,8 @@ export const Button = forwardRef<TouchableOpacity, ButtonProps>(
       return () => clearTimeout(timer);
     }, [isAnimating]);
 
-    // Match the old API with the new API.
-    // TODO: Remove this after 9.0.
-    // if (props.primary) {
-    //   localVariant = 'solid';
-    //   localSize = 'medium';
-    // }
-
-    // Match the old API with the new API.
-    // TODO: Remove this after 9.0.
-    // if (props.secondary || props.tertiary || props.gray || props.outline || props.inForm) {
-    //   localVariant = 'outline';
-    //   localSize = 'medium';
-    // }
-
     return (
       <StyledButton
-        // as={Comp}
         ref={ref}
         variant={variant}
         size={size}
@@ -96,17 +80,9 @@ export const Button = forwardRef<TouchableOpacity, ButtonProps>(
 
 Button.displayName = 'Button';
 
-// const StyledButton = styled('TouchableOpacity', {
-//   shouldForwardProp: (prop) => isPropValid(prop),
-// })<
-//   ButtonProps & {
-//     animating: boolean;
-//     animation: ButtonProps['animation'];
-//   }
-// >(({ theme, variant, size, disabled, active, animating, animation, padding }) => ({
 const StyledButton = styled.TouchableOpacity<
   ButtonProps & { animating: boolean; animation: ButtonProps['animation'] }
->(({ theme, variant, size, disabled, active, /* animating, animation, */ padding }) => ({
+>(({ theme, variant, size, disabled, active, padding }) => ({
   border: 0,
   cursor: disabled ? 'not-allowed' : 'pointer',
   display: 'flex',
@@ -125,12 +101,9 @@ const StyledButton = styled.TouchableOpacity<
   paddingVertical: 0,
   height: size === 'small' ? 28 : 32,
   position: 'relative',
-
-  //   textDecoration: 'none',
   transitionProperty: 'background, box-shadow',
   transitionDuration: '150ms',
   transitionTimingFunction: 'ease-out',
-  // verticalAlign: 'top',
   whiteSpace: 'nowrap',
   userSelect: 'none',
   opacity: disabled ? 0.5 : 1,
@@ -148,40 +121,6 @@ const StyledButton = styled.TouchableOpacity<
   borderRadius: theme.input.borderRadius,
   // Making sure that the button never shrinks below its minimum size
   flexShrink: 0,
-
-  //   '&:hover': {
-  //     color: variant === 'ghost' ? theme.color.secondary : null,
-  //     background: (() => {
-  //       let bgColor = theme.color.secondary;
-  //       if (variant === 'solid') bgColor = theme.color.secondary;
-  //       if (variant === 'outline') bgColor = theme.button.background;
-
-  //       if (variant === 'ghost') return transparentize(0.86, theme.color.secondary);
-  //       return theme.base === 'light' ? darken(0.02, bgColor) : lighten(0.03, bgColor);
-  //     })(),
-  //   },
-
-  //   '&:active': {
-  //     color: variant === 'ghost' ? theme.color.secondary : null,
-  //     background: (() => {
-  //       let bgColor = theme.color.secondary;
-  //       if (variant === 'solid') bgColor = theme.color.secondary;
-  //       if (variant === 'outline') bgColor = theme.button.background;
-
-  //       if (variant === 'ghost') return theme.background.hoverable;
-  //       return theme.base === 'light' ? darken(0.02, bgColor) : lighten(0.03, bgColor);
-  //     })(),
-  //   },
-
-  //   '&:focus': {
-  //     boxShadow: `${rgba(theme.color.secondary, 1)} 0 0 0 1px inset`,
-  //     outline: 'none',
-  //   },
-
-  //   '> svg': {
-  //     animation:
-  //       animating && animation !== 'none' ? `${theme.animation[animation]} 1000ms ease-out` : '',
-  //   },
 }));
 
 export const ButtonText = styled.Text<{
@@ -198,7 +137,6 @@ export const ButtonText = styled.Text<{
   flexDirection: 'row',
   gap: 6,
   textAlign: 'center',
-  // lineHeight: theme.typography.size.s1,
   fontSize: theme.typography.size.s1,
   fontWeight: theme.typography.weight.bold,
 }));
@@ -231,13 +169,3 @@ export const ButtonIcon = ({
 
   return <Icon color={color} />;
 };
-
-// color: variant === 'ghost' ? theme.color.secondary : null,
-// background: (() => {
-//   let bgColor = theme.color.secondary;
-//   if (variant === 'solid') bgColor = theme.color.secondary;
-//   if (variant === 'outline') bgColor = theme.button.background;
-
-//   if (variant === 'ghost') return theme.background.hoverable;
-//   return theme.base === 'light' ? darken(0.02, bgColor) : lighten(0.03, bgColor);
-// })(),

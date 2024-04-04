@@ -1,11 +1,6 @@
-import React from 'react';
-// import { HighlightStyles } from './HighlightStyles';
-// import { LeafNodeStyleWrapper } from './Tree';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
 import { View } from 'react-native';
-
-// import { IconSymbols } from './IconSymbols';
 
 const meta = {
   title: 'UI/Sidebar/TreeNode',

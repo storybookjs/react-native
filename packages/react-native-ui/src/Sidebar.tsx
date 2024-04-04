@@ -1,21 +1,13 @@
 import React, { useMemo } from 'react';
-
 import { styled } from '@storybook/react-native-theming';
-// import { ScrollArea, Spaced } from '@storybook/components';
 import type { State } from '@storybook/manager-api';
-
 import type {
   Addon_SidebarBottomType,
   Addon_SidebarTopType,
   API_LoadedRefData,
 } from '@storybook/types';
-// import type { HeadingProps } from './Heading';
-// import { Heading } from './Heading';
-
 import { Explorer } from './Explorer';
-
 import { Search } from './Search';
-
 import { SearchResults } from './SearchResults';
 import type { CombinedDataset, Selection } from './types';
 import { useLastViewed } from './useLastViewed';
@@ -23,42 +15,20 @@ import { DEFAULT_REF_ID } from './constants';
 import { View } from 'react-native';
 
 const Container = styled.View(({ theme }) => ({
-  // position: 'absolute',
-  // zIndex: 1,
-  // left: 0,
-  // top: 0,
-  // bottom: 0,
-  // right: 0,
   width: '100%',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
   background: theme.background.content,
-
-  // [MEDIA_DESKTOP_BREAKPOINT]: {
-  //   background: theme.background.app,
-  // },
 }));
 
 const Top = styled.View({
   paddingLeft: 4,
   paddingRight: 4,
-  // paddingBottom: 20,
   paddingTop: 16,
   flex: 1,
   flexDirection: 'row',
 });
-
-// const Bottom = styled.View(({ theme }) => ({
-//   borderTopWidth: 1,
-//   borderTopColor: theme.appBorderColor,
-//   padding: theme.layoutMargin / 2,
-//   display: 'flex',
-//   flexDirection: 'row',
-//   flexWrap: 'wrap',
-//   gap: theme.layoutMargin / 2,
-//   backgroundColor: theme.barBg,
-// }));
 
 const Swap = React.memo(function Swap({
   children,
@@ -104,15 +74,12 @@ export const useCombination = (
 export interface SidebarProps extends API_LoadedRefData {
   refs: State['refs'];
   status: State['status'];
-  // menu: any[];
   extra: Addon_SidebarTopType[];
   bottom?: Addon_SidebarBottomType[];
   storyId?: string;
   refId?: string;
   menuHighlighted?: boolean;
   setSelection: (selection: Selection) => void;
-  // enableShortcuts?: boolean;
-  // onMenuClick?: HeadingProps['onMenuClick'];
 }
 
 export const Sidebar = React.memo(function Sidebar({
@@ -122,25 +89,16 @@ export const Sidebar = React.memo(function Sidebar({
   indexError,
   status,
   previewInitialized,
-  // menu,
-  // extra,
-  // bottom = [],
-  // menuHighlighted = false,
-  // enableShortcuts = true,
   refs = {},
   setSelection,
-}: // onMenuClick,
-SidebarProps) {
+}: SidebarProps) {
   const selected: Selection = useMemo(() => storyId && { storyId, refId }, [storyId, refId]);
   const dataset = useCombination(index, indexError, previewInitialized, status, refs);
-  // const isLoading = !index && !indexError;
   const lastViewedProps = useLastViewed(selected);
 
-  // const scrollRef = useRef<ScrollView>(null);
-  // const insets = useSafeAreaInsets();
   return (
-    <Container style={{ paddingHorizontal: 10 }} /* className="container sidebar-container" */>
-      <Top /* row={1.6} */>
+    <Container style={{ paddingHorizontal: 10 }}>
+      <Top>
         {/* <Heading
             className="sidebar-header"
             menuHighlighted={menuHighlighted}
@@ -150,20 +108,8 @@ SidebarProps) {
             isLoading={isLoading}
             onMenuClick={onMenuClick}
           /> */}
-        <Search
-          dataset={dataset}
-          setSelection={setSelection}
-          /* enableShortcuts={enableShortcuts} */ {...lastViewedProps}
-        >
-          {({
-            query,
-            results,
-            isBrowsing,
-            closeMenu,
-            // getMenuProps,
-            getItemProps,
-            highlightedIndex,
-          }) => (
+        <Search dataset={dataset} setSelection={setSelection} {...lastViewedProps}>
+          {({ query, results, isBrowsing, closeMenu, getItemProps, highlightedIndex }) => (
             <Swap condition={isBrowsing}>
               <Explorer
                 dataset={dataset}
@@ -177,10 +123,8 @@ SidebarProps) {
                 query={query}
                 results={results}
                 closeMenu={closeMenu}
-                // getMenuProps={getMenuProps}
                 getItemProps={getItemProps}
                 highlightedIndex={highlightedIndex}
-                // enableShortcuts={enableShortcuts}
                 isLoading={false}
                 clearLastViewed={lastViewedProps.clearLastViewed}
               />
@@ -188,13 +132,6 @@ SidebarProps) {
           )}
         </Search>
       </Top>
-      {/* {isLoading ? null : (
-        <Bottom>
-          {bottom.map(({ id, render: Render }) => (
-            <Render key={id} />
-          ))}
-        </Bottom>
-      )} */}
     </Container>
   );
 });

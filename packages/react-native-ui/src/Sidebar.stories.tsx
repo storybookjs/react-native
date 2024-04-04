@@ -1,12 +1,9 @@
 import React from 'react';
-
 import type { IndexHash, State } from '@storybook/manager-api';
-import { /* ManagerContext */ types } from '@storybook/manager-api';
+import { types } from '@storybook/manager-api';
 import type { StoryObj, Meta } from '@storybook/react';
 import type { Addon_SidebarTopType } from '@storybook/types';
-
 import { Sidebar } from './Sidebar';
-// import { standardData as standardHeaderData } from './Heading.stories';
 import { mockDataset } from './mockdata';
 import type { RefType } from './types';
 import { LayoutProvider } from './LayoutProvider';
@@ -15,17 +12,8 @@ import { IconButton } from './IconButton';
 import { FaceHappyIcon } from './icon/FaceHappyIcon';
 import { DEFAULT_REF_ID } from './constants';
 
-// const menuItems = [
-//   { title: 'Menu Item 1', onClick: () => console.log('onActivateMenuItem'), id: '1' },
-//   { title: 'Menu Item 2', onClick: () => console.log('onActivateMenuItem'), id: '2' },
-//   { title: 'Menu Item 3', onClick: () => console.log('onActivateMenuItem'), id: '3' },
-// ];
-// export const menu = menuItems;
 const index = mockDataset.withRoot as IndexHash;
 const storyId = 'root-1-child-a2--grandchild-a1-1';
-
-// export const simpleData = { menu, index, storyId };
-// export const loadingData = { menu };
 
 const meta = {
   component: Sidebar,
@@ -34,7 +22,6 @@ const meta = {
   parameters: { layout: 'fullscreen' },
   args: {
     previewInitialized: true,
-    // menu,
     extra: [] as Addon_SidebarTopType[],
     index: index,
     storyId,
@@ -43,31 +30,7 @@ const meta = {
     status: {},
     setSelection: () => {},
   },
-  decorators: [
-    (storyFn) => (
-      //   <ManagerContext.Provider
-      //     value={
-      //       {
-      //         state: {
-      //           docsOptions: {
-      //             defaultName: 'Docs',
-      //             autodocs: 'tag',
-      //             docsMode: false,
-      //           },
-      //         },
-      //         api: {
-      //           emit: () => {},
-      //           on: () => {},
-      //           off: () => {},
-      //           getShortcutKeys: () => ({ search: ['control', 'shift', 's'] }),
-      //         },
-      //       } as any
-      //     }
-      //   >
-      <LayoutProvider>{storyFn()}</LayoutProvider>
-      //   </ManagerContext.Provider>
-    ),
-  ],
+  decorators: [(storyFn) => <LayoutProvider>{storyFn()}</LayoutProvider>],
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
@@ -98,7 +61,6 @@ const refsError = {
 const refsEmpty = {
   optimized: {
     ...refs.optimized,
-    // type: 'auto-inject',
     index: {} as IndexHash,
   },
 };

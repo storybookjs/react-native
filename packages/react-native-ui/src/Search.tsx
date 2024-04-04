@@ -1,32 +1,21 @@
-import { useStorybookApi /* shortcutToHumanString */ } from '@storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
-// import type { DownshiftState, StateChangeOptions } from 'downshift';
-// import Downshift from 'downshift';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
-// import { global } from '@storybook/global';
 import React, { useRef, useState, useCallback } from 'react';
-// import { CloseIcon, SearchIcon } from '@storybook/icons';
-// import { DEFAULT_REF_ID } from './constants';
 import {
   type CombinedDataset,
   type SearchItem,
   type SearchResult,
-  // DownshiftItem,
   type SearchChildrenFn,
   type Selection,
   type GetSearchItemProps,
   isExpandType,
 } from './types';
-// import { isSearchResult, isExpandType } from './types';
-
-import { /* scrollIntoView */ searchItem } from './util/tree';
+import { searchItem } from './util/tree';
 import { getGroupStatus, getHighestStatus } from './util/status';
-// import { useLayout } from './LayoutProvider';
 import { SearchIcon } from './icon/SearchIcon';
 import { CloseIcon } from './icon/CloseIcon';
 import { TextInput, View } from 'react-native';
-import { DEFAULT_REF_ID } from './constants';
 import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 
 const DEFAULT_MAX_SEARCH_RESULTS = 50;
@@ -65,11 +54,9 @@ const SearchField = styled.View({
   display: 'flex',
   flexDirection: 'column',
   position: 'relative',
-  // marginBottom: 16,
 });
 
 const Input = styled(BottomSheetTextInput)(({ theme }) => ({
-  // appearance: 'none',
   height: 32,
   paddingLeft: 28,
   paddingRight: 28,
@@ -78,58 +65,9 @@ const Input = styled(BottomSheetTextInput)(({ theme }) => ({
   backgroundColor: 'transparent',
   borderRadius: 4,
   fontSize: theme.typography.size.s1 + 1,
-  // transition: 'all 150ms',
   color: theme.color.defaultText,
   width: '100%',
-
-  // '&:focus, &:active': {
-  //   outline: 0,
-  //   borderColor: theme.color.secondary,
-  //   background: theme.background.app,
-  // },
-  // '&::placeholder': {
-  //   color: theme.textMutedColor,
-  //   opacity: 1,
-  // },
-  // '&:valid ~ code, &:focus ~ code': {
-  //   display: 'none',
-  // },
-  // '&:invalid ~ svg': {
-  //   display: 'none',
-  // },
-  // '&:valid ~ svg': {
-  //   display: 'block',
-  // },
-  // '&::-ms-clear': {
-  //   display: 'none',
-  // },
-  // '&::-webkit-search-decoration, &::-webkit-search-cancel-button, &::-webkit-search-results-button, &::-webkit-search-results-decoration':
-  //   {
-  //     display: 'none',
-  //   },
 }));
-
-// const FocusKey = styled.Text(({ theme }) => ({
-//   position: 'absolute',
-//   top: 8,
-//   right: 9,
-//   height: 16,
-//   zIndex: 1,
-//   lineHeight: 16,
-//   textAlign: 'center',
-//   fontSize: 11,
-//   color: theme.base === 'light' ? theme.color.dark : theme.textMutedColor,
-//   userSelect: 'none',
-//   pointerEvents: 'none',
-//   display: 'flex',
-//   flexDirection: 'row',
-//   alignItems: 'center',
-//   gap: 4,
-// }));
-
-// const FocusKeyCmd = styled.Text({
-//   fontSize: 14,
-// });
 
 const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
   position: 'absolute',
@@ -145,53 +83,32 @@ const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
   height: '100%',
 }));
 
-// const FocusContainer = styled.View({});
-
 export const Search = React.memo<{
   children: SearchChildrenFn;
   dataset: CombinedDataset;
-  // enableShortcuts?: boolean;
   setSelection: (selection: Selection) => void;
   getLastViewed: () => Selection[];
   initialQuery?: string;
-}>(function Search({
-  children,
-  dataset,
-  setSelection,
-  // enableShortcuts = true,
-  getLastViewed,
-  initialQuery = '',
-}) {
-  const api = useStorybookApi();
-  // const inputRef = useRef<HTMLInputElement>(null);
-  // const [inputPlaceholder, setPlaceholder] = useState('Find components');
-  // const isFocused = useRef(false);
+}>(function Search({ children, dataset, setSelection, getLastViewed, initialQuery = '' }) {
   const inputRef = useRef<TextInput>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
-  // const searchShortcut = api ? shortcutToHumanString(api.getShortcutKeys().search) : '/';
 
   const selectStory = useCallback(
     (id: string, refId: string) => {
-      if (api) {
-        api.selectStory(id, undefined, { ref: refId !== DEFAULT_REF_ID && refId });
-      }
       setSelection({ storyId: id, refId });
       inputRef.current?.blur();
-      // inputRef.current?.clear();
-      // setInputValue('');
 
       showAllComponents(false);
     },
-    [api, setSelection]
+    [setSelection]
   );
 
   const getItemProps: GetSearchItemProps = useCallback(
     ({ item: result }) => {
       return {
         icon: result?.item?.type === 'component' ? 'component' : 'story',
-        // isHighlighted:
         result,
         onPress: () => {
           if (result?.item?.type === 'story') {
@@ -201,16 +118,12 @@ export const Search = React.memo<{
           } else if (isExpandType(result) && result.showAll) {
             result.showAll();
           }
-
-          // selectStory(result.item.id, result.item.refId);
         },
         score: result.score,
         refIndex: result.refIndex,
         item: result.item,
         matches: result.matches,
         isHighlighted: false,
-        // isHighlighted: searchItem.
-        // isHighlighted: searchItem.item.
       };
     },
     [selectStory]
@@ -289,17 +202,12 @@ export const Search = React.memo<{
     [allComponents, dataset.hash, getLastViewed, makeFuse]
   );
 
-  // const { isMobile } = useLayout();
-
   const input = inputValue ? inputValue.trim() : '';
   const results = input ? getResults(input) : [];
 
   return (
     <View style={{ flex: 1 }}>
-      <SearchField
-      // {...getRootProps({ refKey: '' }, { suppressRefError: true })}
-      // className="search-field"
-      >
+      <SearchField>
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
@@ -327,7 +235,6 @@ export const Search = React.memo<{
         results,
         isBrowsing: !isOpen || !inputValue.length,
         closeMenu: () => {},
-        // getMenuProps,
         getItemProps,
         highlightedIndex: null,
       })}

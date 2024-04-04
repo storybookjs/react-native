@@ -1,11 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-
 import { Layout } from './Layout';
-// import { mockDataset } from './mockdata';
-// import { index } from './mockdata.large';
 import { mockDataset } from './mockdata';
-// import { GestureHandlerRootView } from 'react-native-gesture-handler';
-// import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { Text } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';

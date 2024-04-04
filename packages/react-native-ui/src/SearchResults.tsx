@@ -1,12 +1,7 @@
 import { styled } from '@storybook/react-native-theming';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import React, { useCallback } from 'react';
-// import type { ControllerStateAndHelpers } from 'downshift';
-
-// import { useStorybookApi } from '@storybook/manager-api';
-// import { PRELOAD_ENTRIES } from '@storybook/core-events';
 import { transparentize } from 'polished';
-// import { TrashIcon } from '@storybook/icons';
 import type { GetSearchItemProps, SearchResult, SearchResultProps } from './types';
 import { isExpandType } from './types';
 
@@ -17,7 +12,6 @@ import { IconButton } from './IconButton';
 import { ComponentIcon } from './icon/ComponentIcon';
 import { StoryIcon } from './icon/StoryIcon';
 import { statusMapping } from './util/status';
-// import { UseSymbol } from './IconSymbols';
 
 const ResultsList = styled.View({
   margin: 0,
@@ -67,15 +61,10 @@ const NoResults = styled.View(({ theme }) => ({
   fontSize: theme.typography.size.s2,
   lineHeight: 18,
   color: theme.color.defaultText,
-  // small: {
-  //   color: theme.barTextColor,
-  //   fontSize: theme.typography.size.s1,
-  // },
 }));
 
 const Mark = styled.Text(({ theme }) => ({
   backgroundColor: 'transparent',
-  // fontSize: theme.typography.size.s1 - 1,
   color: theme.color.secondary,
 }));
 
@@ -96,16 +85,6 @@ const RecentlyOpenedTitle = styled.View(({ theme }) => ({
   marginTop: 16,
   marginBottom: 4,
   alignItems: 'center',
-
-  // '.search-result-recentlyOpened-clear': {
-  //   visibility: 'hidden',
-  // },
-
-  // '&:hover': {
-  //   '.search-result-recentlyOpened-clear': {
-  //     visibility: 'visible',
-  //   },
-  // },
 }));
 
 const Highlight: FC<PropsWithChildren<{ match?: FuseResultMatch }>> = React.memo(
@@ -129,41 +108,17 @@ const Highlight: FC<PropsWithChildren<{ match?: FuseResultMatch }>> = React.memo
 );
 
 const Title = styled.Text(({ theme }) => ({
-  // display: 'grid',
   justifyContent: 'flex-start',
-  // gridAutoColumns: 'auto',
-  // gridAutoFlow: 'column',
   color: theme.textMutedColor,
   fontSize: theme.typography.size.s2,
-  // '& > span': {
-  //   display: 'block',
-  //   whiteSpace: 'nowrap',
-  //   overflow: 'hidden',
-  //   textOverflow: 'ellipsis',
-  // },
 }));
 
 const Path = styled.View(({ theme }) => ({
-  // display: 'grid',
   justifyContent: 'flex-start',
   marginVertical: 2,
-  // gridAutoColumns: 'auto',
-  // gridAutoFlow: 'column',
   color: theme.textMutedColor,
   fontSize: theme.typography.size.s1 - 1,
   flexDirection: 'row',
-  // '& > span': {
-  //   display: 'block',
-  //   whiteSpace: 'nowrap',
-  //   overflow: 'hidden',
-  //   textOverflow: 'ellipsis',
-  // },
-
-  // '& > span + span': {
-  //   '&:before': {
-  //     content: "' / '",
-  //   },
-  // },
 }));
 
 const PathText = styled.Text(({ theme }) => ({
@@ -185,13 +140,6 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
     },
     [onPress]
   );
-
-  // const api = useStorybookApi();
-  // useEffect(() => {
-  //   if (api && props.isHighlighted && item.type === 'component') {
-  //     // api.emit(PRELOAD_ENTRIES, { ids: [item.children[0]] }, { options: { target: item.refId } });
-  //   }
-  // }, [props.isHighlighted, item]);
 
   const nameMatch = matches.find((match: FuseResultMatch) => match.key === 'name');
   const pathMatches = matches.filter((match: FuseResultMatch) => match.key === 'path');
@@ -217,7 +165,6 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
                 <Highlight
                   match={pathMatches.find((match: FuseResultMatch) => match.refIndex === index)}
                 >
-                  {/* {index === 0 ? '' : '/'} */}
                   {group}
                 </Highlight>
               </PathText>
@@ -230,13 +177,10 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
   );
 });
 
-// type SearchResult = { item: API_HashEntry; matches: FuseResultMatch[]; score: number };
-
 export const SearchResults: FC<{
   query: string;
   results: SearchResult[];
   closeMenu: (cb?: () => void) => void;
-  // getMenuProps: any;
   getItemProps: GetSearchItemProps;
   highlightedIndex: number | null;
   isLoading?: boolean;
@@ -246,38 +190,27 @@ export const SearchResults: FC<{
   query,
   results,
   closeMenu,
-  // getMenuProps,
   getItemProps,
   highlightedIndex,
-  // isLoading = false,
-  // enableShortcuts = true,
   clearLastViewed,
 }) {
-  // const api = useStorybookApi();
-
   const handleClearLastViewed = () => {
     clearLastViewed();
     closeMenu();
   };
 
   return (
-    <ResultsList /* {...getMenuProps()} */>
+    <ResultsList>
       {results.length > 0 && !query && (
-        <RecentlyOpenedTitle /* className="search-result-recentlyOpened" */>
+        <RecentlyOpenedTitle>
           Recently opened
-          <IconButton
-            // className="search-result-recentlyOpened-clear"
-            onPress={handleClearLastViewed}
-          >
-            {/* <TrashIcon /> */}
-          </IconButton>
+          <IconButton onPress={handleClearLastViewed} />
         </RecentlyOpenedTitle>
       )}
       {results.length === 0 && query && (
         <View>
           <NoResults>
             <Text style={{ marginBottom: 8 }}>No components found</Text>
-            {/* <br /> */}
             <Text>Find components by name or path.</Text>
           </NoResults>
         </View>
@@ -304,9 +237,6 @@ export const SearchResults: FC<{
             {...getItemProps({ key, index, item: result })}
             isHighlighted={highlightedIndex === index}
             key={item.id}
-            // data-id={result.item.id}
-            // data-refid={result.item.refId}
-            // className="search-result-item"
           />
         );
       })}

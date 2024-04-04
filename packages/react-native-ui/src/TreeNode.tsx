@@ -62,7 +62,6 @@ const LeafNode = styled.TouchableOpacity<{ depth?: number; selected?: boolean }>
     paddingTop: 5,
     paddingBottom: 4,
     backgroundColor: selected ? theme.color.secondary : undefined,
-    // flex: 1,
     // not sure 👇
     width: '100%',
     borderRadius: 4,
