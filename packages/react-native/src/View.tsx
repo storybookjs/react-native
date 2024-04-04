@@ -242,8 +242,8 @@ export class View {
 
         self._forceRerender = () => forceUpdate();
 
-        initialStory.then((story) => {
-          self._preview.selectionStore.selectionSpecifier = story;
+        initialStory.then((st) => {
+          self._preview.selectionStore.selectionSpecifier = st;
 
           self._preview.selectSpecifiedStory();
         });
