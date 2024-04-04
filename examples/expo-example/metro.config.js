@@ -1,44 +1,19 @@
 // Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require('expo/metro-config');
-const { mergeConfig } = require('metro-config');
 const path = require('path');
 const defaultConfig = getDefaultConfig(__dirname);
 
-// const { writeRequires } = require('@storybook/react-native/scripts/loader');
 const { generate } = require('@storybook/react-native/scripts/generate');
 
 generate({
   configPath: path.resolve(__dirname, './.storybook'),
 });
 
-// writeRequires({
-//   configPath: path.resolve(__dirname, './.storybook'),
-//   unstable_useRequireContext: false,
-// });
+defaultConfig.transformer.unstable_allowRequireContext = true;
 
-module.exports = (async () => {
-  return mergeConfig(defaultConfig, {
-    resolver: {
-      // unstable_enablePackageExports: true,
-      disableHierarchicalLookup: true,
-      unstable_enableSymlinks: true,
-      resolveRequest: (context, moduleName, platform) => {
-        const defaultResolveResult = context.resolveRequest(context, moduleName, platform);
+defaultConfig.watchFolders.push('../../packages/react-native-ui');
 
-        if (
-          process.env.STORYBOOK_ENABLED !== 'true' &&
-          defaultResolveResult?.filePath?.includes?.('.storybook/')
-        ) {
-          return {
-            type: 'empty',
-          };
-        }
+// causing breakage :(
+// defaultConfig.resolver.disableHierarchicalLookup = true;
 
-        return defaultResolveResult;
-      },
-    },
-    transformer: {
-      unstable_allowRequireContext: true,
-    },
-  });
-})();
+module.exports = defaultConfig;

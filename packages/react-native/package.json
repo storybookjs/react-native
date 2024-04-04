@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "8.0.0-alpha.2",
+  "version": "8.0.0-alpha.4",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -32,7 +32,7 @@
     "template/**/*"
   ],
   "scripts": {
-    "dev": "ts-node ./buildscripts/gentsdev.ts && tsup --watch",
+    "dev": "npx tsx buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
     "test:ci": "jest"
@@ -52,17 +52,18 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@storybook/channels": "8.0.0-rc.3",
-    "@storybook/client-logger": "8.0.0-rc.3",
-    "@storybook/core-common": "8.0.0-rc.3",
-    "@storybook/core-events": "8.0.0-rc.3",
+    "@storybook/channels": "^8",
+    "@storybook/client-logger": "^8",
+    "@storybook/core-common": "^8",
+    "@storybook/core-events": "^8",
     "@storybook/csf": "^0.1.1",
-    "@storybook/docs-tools": "8.0.0-rc.3",
+    "@storybook/docs-tools": "^8",
     "@storybook/global": "^5.0.0",
-    "@storybook/manager-api": "8.0.0-rc.3",
-    "@storybook/preview-api": "8.0.0-rc.3",
-    "@storybook/react": "8.0.0-rc.3",
-    "@storybook/react-native-theming": "^8.0.0-alpha.2",
+    "@storybook/manager-api": "^8",
+    "@storybook/preview-api": "^8",
+    "@storybook/react": "^8",
+    "@storybook/react-native-theming": "^8.0.0-alpha.4",
+    "@storybook/react-native-ui": "^8.0.0-alpha.4",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
@@ -74,20 +75,21 @@
     "util": "^0.12.4"
   },
   "devDependencies": {
-    "@storybook/types": "8.0.0-rc.3",
+    "@storybook/types": "^8",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.14",
     "babel-jest": "^29.4.3",
     "jest": "^29.7.0",
     "jotai": "^2.6.2",
     "react-test-renderer": "18.2.0",
-    "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
+    "@gorhom/bottom-sheet": ">=4",
     "react": "*",
     "react-native": ">=0.57.0",
+    "react-native-gesture-handler": ">=2",
     "react-native-safe-area-context": "*"
   },
   "engines": {

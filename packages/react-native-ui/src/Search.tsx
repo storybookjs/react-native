@@ -1,0 +1,243 @@
+import { styled } from '@storybook/react-native-theming';
+import type { IFuseOptions } from 'fuse.js';
+import Fuse from 'fuse.js';
+import React, { useRef, useState, useCallback } from 'react';
+import {
+  type CombinedDataset,
+  type SearchItem,
+  type SearchResult,
+  type SearchChildrenFn,
+  type Selection,
+  type GetSearchItemProps,
+  isExpandType,
+} from './types';
+import { searchItem } from './util/tree';
+import { getGroupStatus, getHighestStatus } from './util/status';
+import { SearchIcon } from './icon/SearchIcon';
+import { CloseIcon } from './icon/CloseIcon';
+import { TextInput, View } from 'react-native';
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
+
+const DEFAULT_MAX_SEARCH_RESULTS = 50;
+
+const options = {
+  shouldSort: true,
+  tokenize: true,
+  findAllMatches: true,
+  includeScore: true,
+  includeMatches: true,
+  threshold: 0.2,
+  location: 0,
+  distance: 100,
+  maxPatternLength: 32,
+  minMatchCharLength: 1,
+  keys: [
+    { name: 'name', weight: 0.7 },
+    { name: 'path', weight: 0.3 },
+  ],
+} as IFuseOptions<SearchItem>;
+
+const SearchIconWrapper = styled.View(({ theme }) => ({
+  position: 'absolute',
+  top: 0,
+  left: 8,
+  zIndex: 1,
+  pointerEvents: 'none',
+  color: theme.textMutedColor,
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  height: '100%',
+}));
+
+const SearchField = styled.View({
+  display: 'flex',
+  flexDirection: 'column',
+  position: 'relative',
+});
+
+const Input = styled(BottomSheetTextInput)(({ theme }) => ({
+  height: 32,
+  paddingLeft: 28,
+  paddingRight: 28,
+  borderWidth: 1,
+  borderColor: theme.appBorderColor,
+  backgroundColor: 'transparent',
+  borderRadius: 4,
+  fontSize: theme.typography.size.s1 + 1,
+  color: theme.color.defaultText,
+  width: '100%',
+}));
+
+const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  right: 8,
+  zIndex: 1,
+  color: theme.textMutedColor,
+  cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%',
+}));
+
+export const Search = React.memo<{
+  children: SearchChildrenFn;
+  dataset: CombinedDataset;
+  setSelection: (selection: Selection) => void;
+  getLastViewed: () => Selection[];
+  initialQuery?: string;
+}>(function Search({ children, dataset, setSelection, getLastViewed, initialQuery = '' }) {
+  const inputRef = useRef<TextInput>(null);
+  const [inputValue, setInputValue] = useState(initialQuery);
+  const [isOpen, setIsOpen] = useState(false);
+  const [allComponents, showAllComponents] = useState(false);
+
+  const selectStory = useCallback(
+    (id: string, refId: string) => {
+      setSelection({ storyId: id, refId });
+      inputRef.current?.blur();
+
+      showAllComponents(false);
+    },
+    [setSelection]
+  );
+
+  const getItemProps: GetSearchItemProps = useCallback(
+    ({ item: result }) => {
+      return {
+        icon: result?.item?.type === 'component' ? 'component' : 'story',
+        result,
+        onPress: () => {
+          if (result?.item?.type === 'story') {
+            selectStory(result.item.id, result.item.refId);
+          } else if (result?.item?.type === 'component') {
+            selectStory(result.item.children[0], result.item.refId);
+          } else if (isExpandType(result) && result.showAll) {
+            result.showAll();
+          }
+        },
+        score: result.score,
+        refIndex: result.refIndex,
+        item: result.item,
+        matches: result.matches,
+        isHighlighted: false,
+      };
+    },
+    [selectStory]
+  );
+
+  const makeFuse = useCallback(() => {
+    const list = dataset.entries.reduce<SearchItem[]>((acc, [refId, { index, status }]) => {
+      const groupStatus = getGroupStatus(index || {}, status);
+
+      if (index) {
+        acc.push(
+          ...Object.values(index).map((item) => {
+            const statusValue =
+              status && status[item.id]
+                ? getHighestStatus(Object.values(status[item.id] || {}).map((s) => s.status))
+                : null;
+            return {
+              ...searchItem(item, dataset.hash[refId]),
+              status: statusValue || groupStatus[item.id] || null,
+            };
+          })
+        );
+      }
+      return acc;
+    }, []);
+    return new Fuse(list, options);
+  }, [dataset]);
+
+  const getResults = useCallback(
+    (input: string) => {
+      const fuse = makeFuse();
+      if (!input) return [];
+
+      let results = [];
+      const resultIds: Set<string> = new Set();
+      const distinctResults = (fuse.search(input) as SearchResult[]).filter(({ item }) => {
+        if (
+          !(item.type === 'component' || item.type === 'docs' || item.type === 'story') ||
+          resultIds.has(item.parent)
+        ) {
+          return false;
+        }
+        resultIds.add(item.id);
+        return true;
+      });
+
+      if (distinctResults.length) {
+        results = distinctResults.slice(0, allComponents ? 1000 : DEFAULT_MAX_SEARCH_RESULTS);
+        if (distinctResults.length > DEFAULT_MAX_SEARCH_RESULTS && !allComponents) {
+          results.push({
+            showAll: () => showAllComponents(true),
+            totalCount: distinctResults.length,
+            moreCount: distinctResults.length - DEFAULT_MAX_SEARCH_RESULTS,
+          });
+        }
+      }
+
+      const lastViewed = !input && getLastViewed();
+      if (lastViewed && lastViewed.length) {
+        results = lastViewed.reduce((acc, { storyId, refId }) => {
+          const data = dataset.hash[refId];
+          if (data && data.index && data.index[storyId]) {
+            const story = data.index[storyId];
+            const item = story.type === 'story' ? data.index[story.parent] : story;
+            // prevent duplicates
+            if (!acc.some((res) => res.item.refId === refId && res.item.id === item.id)) {
+              acc.push({ item: searchItem(item, dataset.hash[refId]), matches: [], score: 0 });
+            }
+          }
+          return acc;
+        }, []);
+      }
+
+      return results;
+    },
+    [allComponents, dataset.hash, getLastViewed, makeFuse]
+  );
+
+  const input = inputValue ? inputValue.trim() : '';
+  const results = input ? getResults(input) : [];
+
+  return (
+    <View style={{ flex: 1 }}>
+      <SearchField>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
+
+        <Input
+          ref={inputRef as any} // TODO find solution for this
+          onChangeText={setInputValue}
+          onFocus={() => setIsOpen(true)}
+          onBlur={() => setIsOpen(false)}
+        />
+        {isOpen && (
+          <ClearIcon
+            onPress={() => {
+              setInputValue('');
+              inputRef.current.clear();
+            }}
+          >
+            <CloseIcon />
+          </ClearIcon>
+        )}
+      </SearchField>
+
+      {children({
+        query: input,
+        results,
+        isBrowsing: !isOpen || !inputValue.length,
+        closeMenu: () => {},
+        getItemProps,
+        highlightedIndex: null,
+      })}
+    </View>
+  );
+});
