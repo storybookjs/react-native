@@ -93,7 +93,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
     const { importMap } = prepareStories({ storyEntries: normalizedStories });
     
     global.view._preview.onStoriesChanged({
-      importFn: async (importPath: string) => importMap[importPath],
+      importFn: async (importPath) => importMap[importPath],
     });
 
     global.view._preview.onGetProjectAnnotationsChanged({

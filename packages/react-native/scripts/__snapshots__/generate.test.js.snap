@@ -43,7 +43,7 @@ import "@storybook/addon-ondevice-actions/register";
     const { importMap } = prepareStories({ storyEntries: normalizedStories });
     
     global.view._preview.onStoriesChanged({
-      importFn: async (importPath: string) => importMap[importPath],
+      importFn: async (importPath) => importMap[importPath],
     });
 
     global.view._preview.onGetProjectAnnotationsChanged({
@@ -98,7 +98,7 @@ import "@storybook/addon-ondevice-actions/register";
     const { importMap } = prepareStories({ storyEntries: normalizedStories });
     
     global.view._preview.onStoriesChanged({
-      importFn: async (importPath: string) => importMap[importPath],
+      importFn: async (importPath) => importMap[importPath],
     });
 
     global.view._preview.onGetProjectAnnotationsChanged({
@@ -153,7 +153,7 @@ import "@storybook/addon-ondevice-actions/register";
     const { importMap } = prepareStories({ storyEntries: normalizedStories });
     
     global.view._preview.onStoriesChanged({
-      importFn: async (importPath: string) => importMap[importPath],
+      importFn: async (importPath) => importMap[importPath],
     });
 
     global.view._preview.onGetProjectAnnotationsChanged({
@@ -208,7 +208,7 @@ import "@storybook/addon-ondevice-actions/register";
     const { importMap } = prepareStories({ storyEntries: normalizedStories });
     
     global.view._preview.onStoriesChanged({
-      importFn: async (importPath: string) => importMap[importPath],
+      importFn: async (importPath) => importMap[importPath],
     });
 
     global.view._preview.onGetProjectAnnotationsChanged({
