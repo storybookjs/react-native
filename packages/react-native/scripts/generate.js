@@ -41,7 +41,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
       directory: "${specifier.directory}",
       files: "${specifier.files}",
       importPathMatcher: /${reg.source}/,
-      // @ts-ignore
+      ${useJs ? '' : '// @ts-ignore'}
       req: require.context('${pathToStory}', ${r}, ${m})
     }`;
   });
@@ -81,7 +81,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   global.STORIES = normalizedStories;
   
-  // @ts-ignore
+  ${useJs ? '' : '// @ts-ignore'}
   module?.hot?.accept?.();
 
   if (!global.view) {
@@ -93,7 +93,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
     const { importMap } = prepareStories({ storyEntries: normalizedStories });
     
     global.view._preview.onStoriesChanged({
-      importFn: async (importPath: string) => importMap[importPath],
+      importFn: async (importPath${useJs ? '' : ': string'}) => importMap[importPath],
     });
 
     global.view._preview.onGetProjectAnnotationsChanged({
