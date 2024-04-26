@@ -79,7 +79,23 @@ export function prepareStories({
               tags: ['story'],
             };
 
-            importMap[`${root}/${filename.substring(2)}`] = req(filename);
+            const importedStories = req(filename);
+            const stories = Object.entries(importedStories).reduce(
+              (carry, [storyKey, story]: [string, Readonly<Record<string, unknown>>]) => {
+                if (story.play) {
+                  // play functions are not supported on native. Instead of requiring consumers to
+                  // guard their play functions with platform checks, we automatically strip any
+                  // stories of their play functions for them.
+                  carry[storyKey] = { ...story, play: undefined };
+                } else {
+                  carry[storyKey] = story;
+                }
+                return carry;
+              },
+              {}
+            );
+
+            importMap[`${root}/${filename.substring(2)}`] = stories;
           } else {
             console.log(`Unexpected error while loading ${filename}: could not find title`);
           }
