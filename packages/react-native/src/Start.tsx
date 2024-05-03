@@ -1,4 +1,4 @@
-import { toId, storyNameFromExport } from '@storybook/csf';
+import { toId, storyNameFromExport, isExportStory } from '@storybook/csf';
 import {
   addons as previewAddons,
   composeConfigs,
@@ -59,6 +59,7 @@ export function prepareStories({
         const meta = fileExports.default;
         Object.keys(fileExports).forEach((key) => {
           if (key === 'default') return;
+          if (!isExportStory(key, fileExports.default)) return;
 
           const exportValue = fileExports[key];
           if (!exportValue) return;
@@ -82,6 +83,7 @@ export function prepareStories({
             const importedStories = req(filename);
             const stories = Object.entries(importedStories).reduce(
               (carry, [storyKey, story]: [string, Readonly<Record<string, unknown>>]) => {
+                if (!isExportStory(storyKey, fileExports.default)) return carry;
                 if (story.play) {
                   // play functions are not supported on native. Instead of requiring consumers to
                   // guard their play functions with platform checks, we automatically strip any
