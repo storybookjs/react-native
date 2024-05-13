@@ -38,7 +38,7 @@ export function start() {
 
   const previewView = {
     prepareForStory: () => {
-      return <></>;
+      return (<></>) as any;
     },
     prepareForDocs: (): any => {},
     showErrorDisplay: () => {},

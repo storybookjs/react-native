@@ -34,13 +34,16 @@ import "@storybook/addon-ondevice-actions/register";
   // @ts-ignore
   module?.hot?.accept?.();
 
+  
+
   if (!global.view) {
     global.view = start({
       annotations,
-      storyEntries: normalizedStories
+      storyEntries: normalizedStories,
+      
     });
   } else {
-    const { importMap } = prepareStories({ storyEntries: normalizedStories });
+    const { importMap } = prepareStories({ storyEntries: normalizedStories,  });
     
     global.view._preview.onStoriesChanged({
       importFn: async (importPath: string) => importMap[importPath],
@@ -89,13 +92,16 @@ import "@storybook/addon-ondevice-actions/register";
   // @ts-ignore
   module?.hot?.accept?.();
 
+  
+
   if (!global.view) {
     global.view = start({
       annotations,
-      storyEntries: normalizedStories
+      storyEntries: normalizedStories,
+      
     });
   } else {
-    const { importMap } = prepareStories({ storyEntries: normalizedStories });
+    const { importMap } = prepareStories({ storyEntries: normalizedStories,  });
     
     global.view._preview.onStoriesChanged({
       importFn: async (importPath: string) => importMap[importPath],
@@ -144,13 +150,16 @@ import "@storybook/addon-ondevice-actions/register";
   // @ts-ignore
   module?.hot?.accept?.();
 
+  
+
   if (!global.view) {
     global.view = start({
       annotations,
-      storyEntries: normalizedStories
+      storyEntries: normalizedStories,
+      
     });
   } else {
-    const { importMap } = prepareStories({ storyEntries: normalizedStories });
+    const { importMap } = prepareStories({ storyEntries: normalizedStories,  });
     
     global.view._preview.onStoriesChanged({
       importFn: async (importPath: string) => importMap[importPath],
@@ -199,13 +208,16 @@ import "@storybook/addon-ondevice-actions/register";
   // @ts-ignore
   module?.hot?.accept?.();
 
+  
+
   if (!global.view) {
     global.view = start({
       annotations,
-      storyEntries: normalizedStories
+      storyEntries: normalizedStories,
+      
     });
   } else {
-    const { importMap } = prepareStories({ storyEntries: normalizedStories });
+    const { importMap } = prepareStories({ storyEntries: normalizedStories,  });
     
     global.view._preview.onStoriesChanged({
       importFn: async (importPath: string) => importMap[importPath],
@@ -249,13 +261,16 @@ import "@storybook/addon-ondevice-actions/register";
   
   module?.hot?.accept?.();
 
+  
+
   if (!global.view) {
     global.view = start({
       annotations,
-      storyEntries: normalizedStories
+      storyEntries: normalizedStories,
+      
     });
   } else {
-    const { importMap } = prepareStories({ storyEntries: normalizedStories });
+    const { importMap } = prepareStories({ storyEntries: normalizedStories,  });
     
     global.view._preview.onStoriesChanged({
       importFn: async (importPath) => importMap[importPath],

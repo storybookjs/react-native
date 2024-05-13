@@ -55,6 +55,15 @@ function generate({ configPath, absolute = false, useJs = false }) {
     ? "require('@storybook/addon-actions/preview')"
     : '';
 
+  let options = '';
+  let optionsVar = '';
+  const reactNativeOptions = main.reactNative;
+
+  if (reactNativeOptions && typeof reactNativeOptions === 'object') {
+    optionsVar = `const options = ${JSON.stringify(reactNativeOptions)}`;
+    options = 'options';
+  }
+
   const previewExists = getPreviewExists({ configPath });
 
   const annotations = `[${previewExists ? "require('./preview')," : ''}${doctools}, ${enhancer}]`;
@@ -84,13 +93,16 @@ function generate({ configPath, absolute = false, useJs = false }) {
   ${useJs ? '' : '// @ts-ignore'}
   module?.hot?.accept?.();
 
+  ${optionsVar}
+
   if (!global.view) {
     global.view = start({
       annotations,
-      storyEntries: normalizedStories
+      storyEntries: normalizedStories,
+      ${options}
     });
   } else {
-    const { importMap } = prepareStories({ storyEntries: normalizedStories });
+    const { importMap } = prepareStories({ storyEntries: normalizedStories, ${options} });
     
     global.view._preview.onStoriesChanged({
       importFn: async (importPath${useJs ? '' : ': string'}) => importMap[importPath],

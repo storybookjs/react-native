@@ -12,10 +12,20 @@ import { View } from './View';
 import type { ReactRenderer } from '@storybook/react';
 import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/types';
 
+/** Configuration options that are needed at startup, only serialisable values are possible */
+export interface ReactNativeOptions {
+  /**
+   * Note that this is for future and play functions are not yet fully supported on native.
+   */
+  playFn?: boolean;
+}
+
 export function prepareStories({
   storyEntries,
+  options,
 }: {
   storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
+  options?: ReactNativeOptions;
 }) {
   let index: StoryIndex = {
     v: 4,
@@ -84,10 +94,9 @@ export function prepareStories({
             const stories = Object.entries(importedStories).reduce(
               (carry, [storyKey, story]: [string, Readonly<Record<string, unknown>>]) => {
                 if (!isExportStory(storyKey, fileExports.default)) return carry;
-                if (story.play) {
-                  // play functions are not supported on native. Instead of requiring consumers to
-                  // guard their play functions with platform checks, we automatically strip any
-                  // stories of their play functions for them.
+                if (story.play && !options?.playFn) {
+                  // play functions are not yet fully supported on native.
+                  // There is a new option in main.js to turn them on for future use.
                   carry[storyKey] = { ...story, play: undefined };
                 } else {
                   carry[storyKey] = story;
@@ -137,11 +146,13 @@ export const getProjectAnnotations = (view: View, annotations: any[]) => async (
 export function start({
   annotations,
   storyEntries,
+  options,
 }: {
   storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
   annotations: any[];
+  options?: ReactNativeOptions;
 }) {
-  const { index, importMap } = prepareStories({ storyEntries });
+  const { index, importMap } = prepareStories({ storyEntries, options });
 
   const channel = createBrowserChannel({ page: 'preview' });
 

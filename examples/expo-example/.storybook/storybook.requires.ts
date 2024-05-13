@@ -57,13 +57,19 @@ global.STORIES = normalizedStories;
 // @ts-ignore
 module?.hot?.accept?.();
 
+const options = { playFn: false };
+
 if (!global.view) {
   global.view = start({
     annotations,
     storyEntries: normalizedStories,
+    options,
   });
 } else {
-  const { importMap } = prepareStories({ storyEntries: normalizedStories });
+  const { importMap } = prepareStories({
+    storyEntries: normalizedStories,
+    options,
+  });
 
   global.view._preview.onStoriesChanged({
     importFn: async (importPath: string) => importMap[importPath],
