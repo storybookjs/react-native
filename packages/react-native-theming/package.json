@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-theming",
-  "version": "7.6.18",
+  "version": "7.6.19",
   "description": "A wrapper library around emotion 11 to provide theming support for react-native storybook",
   "keywords": [
     "react",
