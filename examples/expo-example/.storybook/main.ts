@@ -22,6 +22,9 @@ const main: StorybookConfig = {
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
   ],
+  reactNative: {
+    playFn: false,
+  },
 };
 
 export default main;

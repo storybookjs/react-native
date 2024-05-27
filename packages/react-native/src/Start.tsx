@@ -1,4 +1,4 @@
-import { toId, storyNameFromExport } from '@storybook/csf';
+import { toId, storyNameFromExport, isExportStory } from '@storybook/csf';
 import {
   addons as previewAddons,
   composeConfigs,
@@ -12,10 +12,20 @@ import { View } from './View';
 import type { ReactRenderer } from '@storybook/react';
 import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/types';
 
+/** Configuration options that are needed at startup, only serialisable values are possible */
+export interface ReactNativeOptions {
+  /**
+   * Note that this is for future and play functions are not yet fully supported on native.
+   */
+  playFn?: boolean;
+}
+
 export function prepareStories({
   storyEntries,
+  options,
 }: {
   storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
+  options?: ReactNativeOptions;
 }) {
   let index: StoryIndex = {
     v: 4,
@@ -59,6 +69,7 @@ export function prepareStories({
         const meta = fileExports.default;
         Object.keys(fileExports).forEach((key) => {
           if (key === 'default') return;
+          if (!isExportStory(key, fileExports.default)) return;
 
           const exportValue = fileExports[key];
           if (!exportValue) return;
@@ -79,7 +90,23 @@ export function prepareStories({
               tags: ['story'],
             };
 
-            importMap[`${root}/${filename.substring(2)}`] = req(filename);
+            const importedStories = req(filename);
+            const stories = Object.entries(importedStories).reduce(
+              (carry, [storyKey, story]: [string, Readonly<Record<string, unknown>>]) => {
+                if (!isExportStory(storyKey, fileExports.default)) return carry;
+                if (story.play && !options?.playFn) {
+                  // play functions are not yet fully supported on native.
+                  // There is a new option in main.js to turn them on for future use.
+                  carry[storyKey] = { ...story, play: undefined };
+                } else {
+                  carry[storyKey] = story;
+                }
+                return carry;
+              },
+              {}
+            );
+
+            importMap[`${root}/${filename.substring(2)}`] = stories;
           } else {
             console.log(`Unexpected error while loading ${filename}: could not find title`);
           }
@@ -119,11 +146,13 @@ export const getProjectAnnotations = (view: View, annotations: any[]) => async (
 export function start({
   annotations,
   storyEntries,
+  options,
 }: {
   storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
   annotations: any[];
+  options?: ReactNativeOptions;
 }) {
-  const { index, importMap } = prepareStories({ storyEntries });
+  const { index, importMap } = prepareStories({ storyEntries, options });
 
   const channel = createBrowserChannel({ page: 'preview' });
 

@@ -37,4 +37,7 @@ export const AnotherAction: Story = {
   argTypes: {
     onPress: { action: 'pressed a different button' },
   },
+  play: () => {
+    console.log('hello');
+  },
 };
