@@ -41,7 +41,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
       directory: "${specifier.directory}",
       files: "${specifier.files}",
       importPathMatcher: /${reg.source}/,
-      // @ts-ignore
+      ${useJs ? '' : '// @ts-ignore'}
       req: require.context('${pathToStory}', ${r}, ${m})
     }`;
   });
@@ -54,6 +54,15 @@ function generate({ configPath, absolute = false, useJs = false }) {
   const enhancer = main.addons?.includes('@storybook/addon-ondevice-actions')
     ? "require('@storybook/addon-actions/preview')"
     : '';
+
+  let options = '';
+  let optionsVar = '';
+  const reactNativeOptions = main.reactNative;
+
+  if (reactNativeOptions && typeof reactNativeOptions === 'object') {
+    optionsVar = `const options = ${JSON.stringify(reactNativeOptions)}`;
+    options = 'options';
+  }
 
   const previewExists = getPreviewExists({ configPath });
 
@@ -80,17 +89,20 @@ function generate({ configPath, absolute = false, useJs = false }) {
   const annotations = ${annotations};
 
   global.STORIES = normalizedStories;
-
-  // @ts-ignore
+  
+  ${useJs ? '' : '// @ts-ignore'}
   module?.hot?.accept?.();
+
+  ${optionsVar}
 
   if (!global.view) {
     global.view = start({
       annotations,
-      storyEntries: normalizedStories
+      storyEntries: normalizedStories,
+      ${options}
     });
   } else {
-    updateView(global.view, annotations, normalizedStories);
+    updateView(global.view, annotations, normalizedStories, ${options});
   }
 
   export const view = global.view;

@@ -30,6 +30,16 @@ describe('loader', () => {
       });
     });
 
+    describe('when using js', () => {
+      it('writes the story imports without types', () => {
+        generate({ configPath: 'scripts/mocks/all-config-files', useJs: true });
+        expect(pathMock).toEqual(
+          path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.js')
+        );
+        expect(fileContentMock).toMatchSnapshot();
+      });
+    });
+
     describe('when there are different file extensions', () => {
       it('writes the story imports', () => {
         generate({ configPath: 'scripts/mocks/file-extensions' });

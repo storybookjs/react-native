@@ -38,6 +38,9 @@
     "test:ci": "jest"
   },
   "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|@react-native)"
+    ],
     "modulePathIgnorePatterns": [
       "dist/"
     ],
