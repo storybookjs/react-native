@@ -37,23 +37,6 @@
     "test": "jest",
     "test:ci": "jest"
   },
-  "jest": {
-    "transformIgnorePatterns": [
-      "node_modules/(?!react-native|@react-native)"
-    ],
-    "modulePathIgnorePatterns": [
-      "dist/"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "preset": "react-native"
-  },
   "dependencies": {
     "@storybook/channels": "^8",
     "@storybook/client-logger": "^8",
