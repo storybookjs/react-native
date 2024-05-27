@@ -112,6 +112,7 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
               onColorSelected={onChangeColor}
               onColorChange={(color: HsvColor) => setCurrentColor(color)}
               defaultColor={arg.value}
+              oldColor={arg.value}
               style={styles.picker}
             />
             <View style={styles.actionContainer}>
