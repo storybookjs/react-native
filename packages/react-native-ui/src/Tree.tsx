@@ -90,7 +90,7 @@ export const Node = React.memo<NodeProps>(function Node({
           aria-expanded={isExpanded}
         >
           <CollapseIcon isExpanded={isExpanded} />
-          <Text>{item.renderLabel?.(item) || item.name}</Text>
+          <Text>{item.renderLabel?.(item, {}) || item.name}</Text>
         </CollapseButton>
         {isExpanded && (
           <IconButton

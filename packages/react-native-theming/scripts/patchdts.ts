@@ -1,4 +1,4 @@
-async function run() {
+async function main() {
   const { readFile, writeFile } = await import('fs/promises');
   // add a string of text at the end of the dist/index.d.ts file
   console.log('writing to dist/index.d.ts');
@@ -9,7 +9,7 @@ async function run() {
   );
 }
 
-run().catch((e) => {
+main().catch((e) => {
   console.error(e);
   process.exit(1);
 });

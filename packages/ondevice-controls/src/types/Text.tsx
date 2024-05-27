@@ -36,14 +36,4 @@ const TextType = ({ arg, onChange, isPristine }: TextProps) => {
   );
 };
 
-TextType.defaultProps = {
-  arg: {},
-  onChange: (value) => value,
-};
-
-TextType.propTypes = {};
-
-TextType.serialize = (value) => value;
-TextType.deserialize = (value) => value;
-
 export default TextType;

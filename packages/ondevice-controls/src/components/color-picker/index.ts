@@ -1,6 +1,8 @@
-import * as React from 'react';
-
-type HsvColor = { h: number; s: number; v: number };
+// credit to https://github.com/instea/react-native-color-picker
+export { fromHsv, toHsv } from './utils';
+export { HoloColorPicker as ColorPicker } from './HoloColorPicker';
+export { TriangleColorPicker } from './TriangleColorPicker';
+export type HsvColor = { h: number; s: number; v: number };
 
 export interface IPicker {
   color?: string | HsvColor;
@@ -20,8 +22,3 @@ export interface SliderProps {
 export interface IHoloPicker extends IPicker {
   sliderComponent?: React.Component<SliderProps>;
 }
-
-export const ColorPicker: React.ComponentType<IHoloPicker>;
-export const TriangleColorPicker: React.ComponentType<IPicker>;
-export const toHsv: (color: string) => HsvColor;
-export const fromHsv: (hsv: HsvColor) => string;

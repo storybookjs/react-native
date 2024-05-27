@@ -1,25 +1,46 @@
-// credit to https://github.com/instea/react-native-color-picker
-import React from 'react';
-import PropTypes from 'prop-types';
+import Slider from '@react-native-community/slider';
+import { PureComponent, createRef } from 'react';
 import {
+  I18nManager,
+  Image,
+  InteractionManager,
+  LayoutChangeEvent,
+  StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Image,
-  StyleSheet,
-  InteractionManager,
-  I18nManager,
+  ViewStyle,
 } from 'react-native';
-import Slider from '@react-native-community/slider';
-import tinycolor from 'tinycolor2';
+import tinycolor, { ColorFormats } from 'tinycolor2';
 import { createPanResponder } from './utils';
 
-// TODO: Raise PR at react-native-color-picker with these fixes
+interface HoloColorPickerProps {
+  color?: string | ColorFormats.HSV;
+  defaultColor?: string;
+  oldColor?: string;
+  onColorChange?: (color: ColorFormats.HSV) => void;
+  onColorSelected?: (color: string) => void;
+  onOldColorSelected?: (color: string) => void;
+  hideSliders?: boolean;
+  style?: ViewStyle;
+}
 
-export class HoloColorPicker extends React.PureComponent {
-  constructor(props, ctx) {
-    super(props, ctx);
-    const state = {
+interface HoloColorPickerState {
+  color: ColorFormats.HSV;
+  pickerSize: number | null;
+}
+
+export class HoloColorPicker extends PureComponent<HoloColorPickerProps, HoloColorPickerState> {
+  private _layout: { width: number; height: number; x: number; y: number };
+  private _pageX: number;
+  private _pageY: number;
+  private _isRTL: boolean;
+  private _pickerResponder: any;
+  private pickerContainer = createRef<View>();
+
+  constructor(props: HoloColorPickerProps) {
+    super(props);
+    const state: HoloColorPickerState = {
       color: { h: 0, s: 1, v: 1 },
       pickerSize: null,
     };
@@ -33,71 +54,60 @@ export class HoloColorPicker extends React.PureComponent {
     this._layout = { width: 0, height: 0, x: 0, y: 0 };
     this._pageX = 0;
     this._pageY = 0;
-    this._onLayout = this._onLayout.bind(this);
-    this._onSValueChange = this._onSValueChange.bind(this);
-    this._onVValueChange = this._onVValueChange.bind(this);
-    this._onColorSelected = this._onColorSelected.bind(this);
-    this._onOldColorSelected = this._onOldColorSelected.bind(this);
     this._isRTL = I18nManager.isRTL;
     this._pickerResponder = createPanResponder({
       onStart: this._handleColorChange,
       onMove: this._handleColorChange,
     });
-
-    this.pickerContainer = React.createRef();
   }
 
   getColor() {
     return tinycolor(this._getColor()).toHexString();
   }
 
-  _handleColorChange = ({ x, y }) => {
+  _handleColorChange = ({ x, y }: { x: number; y: number }) => {
     const { s, v } = this._getColor();
-    const marginLeft = (this._layout.width - this.state.pickerSize) / 2;
-    const marginTop = (this._layout.height - this.state.pickerSize) / 2;
+    const marginLeft = (this._layout.width - (this.state.pickerSize ?? 0)) / 2;
+    const marginTop = (this._layout.height - (this.state.pickerSize ?? 0)) / 2;
     const relativeX = x - this._pageX - marginLeft;
     const relativeY = y - this._pageY - marginTop;
     const h = this._computeHValue(relativeX, relativeY);
     this._onColorChange({ h, s, v });
   };
 
-  _onSValueChange(s) {
+  _onSValueChange = (s: number) => {
     const { h, v } = this._getColor();
     this._onColorChange({ h, s, v });
-  }
+  };
 
-  _onVValueChange(v) {
+  _onVValueChange = (v: number) => {
     const { h, s } = this._getColor();
     this._onColorChange({ h, s, v });
-  }
+  };
 
-  _onColorChange(color) {
+  _onColorChange = (color: ColorFormats.HSV) => {
     this.setState({ color });
     if (this.props.onColorChange) {
       this.props.onColorChange(color);
     }
-  }
+  };
 
-  _onLayout(l) {
+  _onLayout = (l: LayoutChangeEvent) => {
     this._layout = l.nativeEvent.layout;
     const { width, height } = this._layout;
     const pickerSize = Math.min(width, height);
     if (this.state.pickerSize !== pickerSize) {
       this.setState({ pickerSize });
     }
-    // layout.x, layout.y is always 0
-    // we always measure because layout is the same even though picker is moved on the page
-    InteractionManager.runAfterInteractions(
-      () =>
-        // measure only after (possible) animation ended
-        this.pickerContainer.current &&
+    InteractionManager.runAfterInteractions(() => {
+      if (this.pickerContainer.current) {
         this.pickerContainer.current.measure((_x, _y, _width, _height, pageX, pageY) => {
-          // picker position in the screen
           this._pageX = pageX;
           this._pageY = pageY;
-        })
-    );
-  }
+        });
+      }
+    });
+  };
 
   _getColor() {
     const passedColor =
@@ -105,33 +115,33 @@ export class HoloColorPicker extends React.PureComponent {
     return passedColor || this.state.color;
   }
 
-  _onColorSelected() {
+  _onColorSelected = () => {
     const { onColorSelected } = this.props;
     const color = tinycolor(this._getColor()).toHexString();
     if (onColorSelected) {
       onColorSelected(color);
     }
-  }
+  };
 
-  _onOldColorSelected() {
+  _onOldColorSelected = () => {
     const { oldColor, onOldColorSelected } = this.props;
-    const color = tinycolor(oldColor);
+    const color = tinycolor(oldColor!);
     this.setState({ color: color.toHsv() });
     if (onOldColorSelected) {
       onOldColorSelected(color.toHexString());
     }
-  }
+  };
 
-  _computeHValue(x, y) {
-    const mx = this.state.pickerSize / 2;
-    const my = this.state.pickerSize / 2;
+  _computeHValue(x: number, y: number) {
+    const mx = (this.state.pickerSize ?? 0) / 2;
+    const my = (this.state.pickerSize ?? 0) / 2;
     const dx = x - mx;
     const dy = y - my;
     const rad = Math.atan2(dx, dy) + Math.PI + Math.PI / 2;
     return ((rad * 180) / Math.PI) % 360;
   }
 
-  _hValueToRad(deg) {
+  _hValueToRad(deg: number) {
     const rad = (deg * Math.PI) / 180;
     return rad - Math.PI - Math.PI / 2;
   }
@@ -145,7 +155,7 @@ export class HoloColorPicker extends React.PureComponent {
     const selectedColor = tinycolor(color).toHexString();
     const indicatorColor = tinycolor({ h, s: 1, v: 1 }).toHexString();
     const computed = makeComputedStyles({
-      pickerSize,
+      pickerSize: pickerSize ?? 0,
       selectedColor,
       indicatorColor,
       oldColor,
@@ -159,7 +169,7 @@ export class HoloColorPicker extends React.PureComponent {
             <View>
               <View
                 {...this._pickerResponder.panHandlers}
-                style={[styles.picker, computed.picker]}
+                style={[computed.picker]}
                 collapsable={false}
               >
                 <Image
@@ -206,24 +216,6 @@ export class HoloColorPicker extends React.PureComponent {
   }
 }
 
-HoloColorPicker.propTypes = {
-  color: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      h: PropTypes.number,
-      s: PropTypes.number,
-      v: PropTypes.number,
-    }),
-  ]),
-  defaultColor: PropTypes.string,
-  oldColor: PropTypes.string,
-  onColorChange: PropTypes.func,
-  onColorSelected: PropTypes.func,
-  onOldColorSelected: PropTypes.func,
-  hideSliders: PropTypes.bool,
-  style: PropTypes.any,
-};
-
 const makeComputedStyles = ({
   indicatorColor,
   selectedColor,
@@ -231,9 +223,16 @@ const makeComputedStyles = ({
   angle,
   pickerSize,
   isRTL,
+}: {
+  indicatorColor: string;
+  selectedColor: string;
+  oldColor?: string;
+  angle: number;
+  pickerSize: number;
+  isRTL: boolean;
 }) => {
   const summarySize = 0.5 * pickerSize;
-  const indicatorPickerRatio = 42 / 510; // computed from picker image
+  const indicatorPickerRatio = 42 / 510;
   const indicatorSize = indicatorPickerRatio * pickerSize;
   const pickerPadding = indicatorSize / 3;
   const indicatorRadius = pickerSize / 2 - indicatorSize / 2 - pickerPadding;
@@ -292,18 +291,15 @@ const styles = StyleSheet.create({
   },
   pickerImage: {
     flex: 1,
-    width: null,
-    height: null,
+    width: undefined,
+    height: undefined,
   },
   pickerIndicator: {
     position: 'absolute',
-    // Shadow only works on iOS.
     shadowColor: 'black',
     shadowOpacity: 0.3,
     shadowOffset: { width: 3, height: 3 },
     shadowRadius: 4,
-
-    // This will elevate the view on Android, causing shadow to be drawn.
     elevation: 5,
   },
   selectedPreview: {

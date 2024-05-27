@@ -80,7 +80,7 @@
   "devDependencies": {
     "@storybook/types": "^8",
     "@types/jest": "^29.4.3",
-    "@types/react": "~18.2.14",
+    "@types/react": "~18.2.79",
     "babel-jest": "^29.4.3",
     "jest": "^29.7.0",
     "jotai": "^2.6.2",

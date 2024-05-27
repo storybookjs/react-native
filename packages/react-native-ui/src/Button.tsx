@@ -84,7 +84,7 @@ const StyledButton = styled.TouchableOpacity<
   ButtonProps & { animating: boolean; animation: ButtonProps['animation'] }
 >(({ theme, variant, size, disabled, active, padding }) => ({
   border: 0,
-  cursor: disabled ? 'not-allowed' : 'pointer',
+  // cursor: disabled ? 'not-allowed' : 'pointer',
   display: 'flex',
   flexDirection: 'row',
   gap: 6,
