@@ -1,3 +1,4 @@
+// credit to https://github.com/instea/react-native-color-picker
 /* eslint-disable react/require-default-props */
 /* eslint-disable global-require */
 /* eslint-disable react/destructuring-assignment */
@@ -5,14 +6,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+  Text,
   TouchableOpacity,
-  Slider,
   View,
   Image,
   StyleSheet,
   InteractionManager,
   I18nManager,
 } from 'react-native';
+import Slider from '@react-native-community/slider';
 import tinycolor from 'tinycolor2';
 import { createPanResponder } from './utils';
 
@@ -110,14 +112,18 @@ export class HoloColorPicker extends React.PureComponent {
   _onColorSelected() {
     const { onColorSelected } = this.props;
     const color = tinycolor(this._getColor()).toHexString();
-    if (onColorSelected) onColorSelected(color);
+    if (onColorSelected) {
+      onColorSelected(color);
+    }
   }
 
   _onOldColorSelected() {
     const { oldColor, onOldColorSelected } = this.props;
     const color = tinycolor(oldColor);
     this.setState({ color: color.toHsv() });
-    if (onOldColorSelected) onOldColorSelected(color.toHexString());
+    if (onOldColorSelected) {
+      onOldColorSelected(color.toHexString());
+    }
   }
 
   _computeHValue(x, y) {
@@ -132,21 +138,6 @@ export class HoloColorPicker extends React.PureComponent {
   _hValueToRad(deg) {
     const rad = (deg * Math.PI) / 180;
     return rad - Math.PI - Math.PI / 2;
-  }
-
-  _getSlider() {
-    if (this.props.hideSliders) {
-      return undefined;
-    }
-    if (this.props.sliderComponent) {
-      return this.props.sliderComponent;
-    }
-    if (!Slider) {
-      throw new Error(
-        'You need to install `@react-native-community/slider` and pass it (or any other Slider compatible component) as `sliderComponent` prop'
-      );
-    }
-    return Slider;
   }
 
   render() {
@@ -165,7 +156,6 @@ export class HoloColorPicker extends React.PureComponent {
       angle,
       isRTL: this._isRTL,
     });
-    const SliderComp = this._getSlider();
     return (
       <View style={style}>
         <View onLayout={this._onLayout} ref={this.pickerContainer} style={styles.pickerContainer}>
@@ -209,8 +199,10 @@ export class HoloColorPicker extends React.PureComponent {
         </View>
         {this.props.hideSliders ? null : (
           <View>
-            <SliderComp value={s} onValueChange={this._onSValueChange} />
-            <SliderComp value={v} onValueChange={this._onVValueChange} />
+            <Text style={{ paddingStart: 4, color: '#859499', fontSize: 12 }}>Saturation</Text>
+            <Slider value={s} onValueChange={this._onSValueChange} />
+            <Text style={{ paddingStart: 4, color: '#859499', fontSize: 12 }}>Lightness</Text>
+            <Slider value={v} onValueChange={this._onVValueChange} />
           </View>
         )}
       </View>
@@ -221,7 +213,11 @@ export class HoloColorPicker extends React.PureComponent {
 HoloColorPicker.propTypes = {
   color: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.shape({ h: PropTypes.number, s: PropTypes.number, v: PropTypes.number }),
+    PropTypes.shape({
+      h: PropTypes.number,
+      s: PropTypes.number,
+      v: PropTypes.number,
+    }),
   ]),
   defaultColor: PropTypes.string,
   oldColor: PropTypes.string,
@@ -229,8 +225,6 @@ HoloColorPicker.propTypes = {
   onColorSelected: PropTypes.func,
   onOldColorSelected: PropTypes.func,
   hideSliders: PropTypes.bool,
-  sliderComponent: PropTypes.elementType,
-  // eslint-disable-next-line react/forbid-prop-types
   style: PropTypes.any,
 };
 

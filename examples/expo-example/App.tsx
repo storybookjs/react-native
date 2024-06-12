@@ -20,6 +20,7 @@ let AppEntryPoint = App;
 
 if (Constants.expoConfig?.extra?.storybookEnabled === 'true') {
   AppEntryPoint = require('./.storybook').default;
+  // AppEntryPoint = require('./.storybook/indexV6Mode').default;
 }
 
 export default AppEntryPoint;
