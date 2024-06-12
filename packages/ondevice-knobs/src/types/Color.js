@@ -103,6 +103,7 @@ ColorType.propTypes = {
   }),
   onChange: PropTypes.func,
 };
+
 ColorType.defaultProps = {
   knob: {},
   onChange: (value) => value,

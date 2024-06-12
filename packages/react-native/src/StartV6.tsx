@@ -56,7 +56,6 @@ export function start() {
     selectionSpecifier: null,
     setQueryParams: () => {},
     setSelection: (selection) => {
-      console.log('setSelection');
       preview.selectionStore.selection = selection;
     },
   };
