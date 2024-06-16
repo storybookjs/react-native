@@ -2,8 +2,8 @@ import { SET_CURRENT_STORY } from '@storybook/core-events';
 import { addons } from '@storybook/manager-api';
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { type API_IndexHash, type Args, type StoryContext } from '@storybook/types';
-import { ReactNode, useRef } from 'react';
-import { Text, View } from 'react-native';
+import { ReactNode, useRef, useState } from 'react';
+import { Platform, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { IconButton } from './IconButton';
 import { Sidebar } from './Sidebar';
@@ -26,13 +26,15 @@ export const Layout = ({
 }) => {
   const theme = useTheme();
   const mobileMenuDrawerRef = useRef<MobileMenuDrawerRef>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
   const insets = useSafeAreaInsets();
 
   return (
     <View style={{ flex: 1, paddingTop: insets.top }}>
       <View style={{ flex: 1 }}>{children}</View>
-      <MobileMenuDrawer ref={mobileMenuDrawerRef}>
+      <MobileMenuDrawer ref={mobileMenuDrawerRef} onStateChange={setDrawerOpen}>
         <Sidebar
           extra={[]}
           previewInitialized
@@ -49,25 +51,30 @@ export const Layout = ({
           refId={DEFAULT_REF_ID}
         />
       </MobileMenuDrawer>
-      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />
-      <Container style={{ marginBottom: insets.bottom }}>
-        <Nav>
-          <Button
-            hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
-            onPress={() => mobileMenuDrawerRef.current.setMobileMenuOpen(true)}
-          >
-            <MenuIcon color={theme.color.mediumdark} />
-            <Text>
-              {story?.title}/{story?.name}
-            </Text>
-          </Button>
+      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} onStateChange={setMenuOpen} />
+      {(Platform.OS !== 'android' || (!menuOpen && !drawerOpen)) && (
+        <Container style={{ marginBottom: insets.bottom }}>
+          <Nav>
+            <Button
+              style={{ flexShrink: 1 }}
+              hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
+              onPress={() => {
+                mobileMenuDrawerRef.current.setMobileMenuOpen(true);
+              }}
+            >
+              <MenuIcon color={theme.color.mediumdark} />
+              <Text style={{ flexShrink: 1 }} numberOfLines={1}>
+                {story?.title}/{story?.name}
+              </Text>
+            </Button>
 
-          <IconButton
-            onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
-            Icon={BottomBarToggleIcon}
-          />
-        </Nav>
-      </Container>
+            <IconButton
+              onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
+              Icon={BottomBarToggleIcon}
+            />
+          </Nav>
+        </Container>
+      )}
     </View>
   );
 };

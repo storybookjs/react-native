@@ -1,20 +1,20 @@
 import {
+  BottomSheetBackdrop,
   BottomSheetBackdropProps,
   BottomSheetModal,
   BottomSheetScrollView,
-  BottomSheetBackdrop,
 } from '@gorhom/bottom-sheet';
-import { ReactNode, forwardRef, useImperativeHandle, useRef, useState } from 'react';
+import { ReactNode, forwardRef, useImperativeHandle, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
+  onStateChange: (isOpen: boolean) => void;
 }
 
 export interface MobileMenuDrawerRef {
-  isMobileMenuOpen: boolean;
   setMobileMenuOpen: (isOpen: boolean) => void;
 }
 
@@ -29,23 +29,21 @@ export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheet
 );
 
 export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(
-  ({ children }, ref) => {
-    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  ({ children, onStateChange }, ref) => {
     const reducedMotion = useReducedMotion();
     const insets = useSafeAreaInsets();
 
     const menuBottomSheetRef = useRef<BottomSheetModal>(null);
 
     useImperativeHandle(ref, () => ({
-      isMobileMenuOpen,
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
-          setMobileMenuOpen(true);
+          onStateChange(true);
 
           menuBottomSheetRef.current?.present();
         } else {
           Keyboard.dismiss();
-          setMobileMenuOpen(false);
+          onStateChange(false);
           menuBottomSheetRef.current?.dismiss();
         }
       },
@@ -57,7 +55,7 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
         index={1}
         animateOnMount={!reducedMotion}
         onDismiss={() => {
-          setMobileMenuOpen(false);
+          onStateChange(false);
         }}
         snapPoints={['50%', '75%']}
         enableDismissOnClose
