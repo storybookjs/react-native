@@ -4,7 +4,7 @@ import type {
   State,
   StoriesHash,
   StoryEntry,
-} from '@storybook/manager-api';
+} from '@storybook/core/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import React, { useCallback, useMemo, useRef } from 'react';
 import { IconButton } from './IconButton';

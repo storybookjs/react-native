@@ -38,16 +38,10 @@
     "test:ci": "jest"
   },
   "dependencies": {
-    "@storybook/channels": "^8",
-    "@storybook/client-logger": "^8",
-    "@storybook/core-common": "^8",
-    "@storybook/core-events": "^8",
+    "@storybook/core": "0.0.0-pr-28310-sha-4e2aa1c7",
     "@storybook/csf": "^0.1.1",
-    "@storybook/docs-tools": "^8",
     "@storybook/global": "^5.0.0",
-    "@storybook/manager-api": "^8",
-    "@storybook/preview-api": "^8",
-    "@storybook/react": "^8",
+    "@storybook/react": "0.0.0-pr-28310-sha-4e2aa1c7",
     "@storybook/react-native-theming": "^8.0.0-alpha.4",
     "@storybook/react-native-ui": "^8.0.0-alpha.4",
     "chokidar": "^3.5.1",
@@ -61,7 +55,6 @@
     "util": "^0.12.4"
   },
   "devDependencies": {
-    "@storybook/types": "^8",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.79",
     "babel-jest": "^29.4.3",

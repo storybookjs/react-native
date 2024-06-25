@@ -1,8 +1,8 @@
-import type { API } from '@storybook/manager-api';
-import { Channel } from '@storybook/channels';
+import type { API } from '@storybook/core/manager-api';
+import { Channel } from '@storybook/core/channels';
 import type { Args, StoryContextForLoaders } from '@storybook/csf';
 import { styled } from '@storybook/react-native-theming';
-import type { Renderer } from '@storybook/types';
+import type { Renderer } from '@storybook/core/types';
 import React, { ComponentType, ReactElement, useCallback, useState } from 'react';
 import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';

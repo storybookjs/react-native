@@ -1,8 +1,8 @@
 import React from 'react';
-import type { IndexHash, State } from '@storybook/manager-api';
-import { types } from '@storybook/manager-api';
+import type { IndexHash, State } from '@storybook/core/manager-api';
+import { types } from '@storybook/core/manager-api';
 import type { StoryObj, Meta } from '@storybook/react';
-import type { Addon_SidebarTopType } from '@storybook/types';
+import type { Addon_SidebarTopType } from '@storybook/core/types';
 import { Sidebar } from './Sidebar';
 import { mockDataset } from './mockdata';
 import type { RefType } from './types';

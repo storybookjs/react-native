@@ -1,6 +1,6 @@
 import memoize from 'memoizerific';
 import type { SyntheticEvent } from 'react';
-import type { IndexHash } from '@storybook/manager-api';
+import type { IndexHash } from '@storybook/core/manager-api';
 
 import { DEFAULT_REF_ID } from '../constants';
 import type { Item, RefType, Dataset, SearchItem } from '../types';

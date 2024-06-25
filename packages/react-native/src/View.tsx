@@ -1,13 +1,13 @@
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { Channel, WebsocketTransport } from '@storybook/channels';
-import Events from '@storybook/core-events';
+import { Channel, WebsocketTransport } from '@storybook/core/channels';
+import Events from '@storybook/core/core-events';
 import { StoryContext, toId } from '@storybook/csf';
-import { addons as managerAddons } from '@storybook/manager-api';
-import { PreviewWithSelection, addons as previewAddons } from '@storybook/preview-api';
+import { addons as managerAddons } from '@storybook/core/manager-api';
+import { PreviewWithSelection, addons as previewAddons } from '@storybook/core/preview-api';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
 import { Layout, transformStoryIndexToStoriesHash } from '@storybook/react-native-ui';
-import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybook/types';
+import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybook/core/types';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';

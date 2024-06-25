@@ -1,5 +1,5 @@
 import { sanitize } from '@storybook/csf';
-import { type API, type State } from '@storybook/manager-api';
+import { type API, type State } from '@storybook/core/manager-api';
 import type {
   API_ComponentEntry,
   API_DocsEntry,
@@ -14,7 +14,7 @@ import type {
   IndexEntry,
   StoryIndexV2,
   StoryIndexV3,
-} from '@storybook/types';
+} from '@storybook/core/types';
 import countBy from 'lodash/countBy.js';
 import { dedent } from 'ts-dedent';
 type ToStoriesHashOptions = {
@@ -27,7 +27,7 @@ type ToStoriesHashOptions = {
 import isEqual from 'lodash/isEqual.js';
 import mergeWith from 'lodash/mergeWith.js';
 
-import { logger } from '@storybook/client-logger';
+import { logger } from '@storybook/core/client-logger';
 
 const merge = <TObj = any>(a: TObj, b: Partial<TObj>) =>
   mergeWith({}, a, b, (objValue: TObj, srcValue: Partial<TObj>) => {

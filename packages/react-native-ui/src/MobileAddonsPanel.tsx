@@ -1,7 +1,7 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
-import { addons } from '@storybook/manager-api';
+import { addons } from '@storybook/core/manager-api';
 import { styled } from '@storybook/react-native-theming';
-import { Addon_TypesEnum } from '@storybook/types';
+import { Addon_TypesEnum } from '@storybook/core/types';
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import { Text, View, useWindowDimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
