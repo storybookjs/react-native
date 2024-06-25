@@ -62,7 +62,8 @@
     "@storybook/react-native-theming": "^8.0.0-alpha.4",
     "fuse.js": "^7.0.0",
     "memoizerific": "^1.11.3",
-    "polished": "^4.3.1"
+    "polished": "^4.3.1",
+    "store2": "^2.14.3"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",

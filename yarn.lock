@@ -4765,6 +4765,7 @@ __metadata:
     memoizerific: "npm:^1.11.3"
     polished: "npm:^4.3.1"
     react-test-renderer: "npm:18.2.0"
+    store2: "npm:^2.14.3"
     tsup: "npm:^7.2.0"
     typescript: "npm:^5.3.3"
   peerDependencies:
@@ -17947,6 +17948,13 @@ __metadata:
   version: 1.5.0
   resolution: "statuses@npm:1.5.0"
   checksum: 10/c469b9519de16a4bb19600205cffb39ee471a5f17b82589757ca7bd40a8d92ebb6ed9f98b5a540c5d302ccbc78f15dc03cc0280dd6e00df1335568a5d5758a5c
+  languageName: node
+  linkType: hard
+
+"store2@npm:^2.14.3":
+  version: 2.14.3
+  resolution: "store2@npm:2.14.3"
+  checksum: 10/f95f6fbacff14cc3bb9e5e16ced2f29e2d706e30b248c16cf19abed8b2bb31d8f3907c8ccf1a5284d806fdcaf06e96710e4f4f52195e51522a452536beaf7af9
   languageName: node
   linkType: hard
 
