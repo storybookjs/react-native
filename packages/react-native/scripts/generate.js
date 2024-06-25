@@ -4,7 +4,7 @@ const {
   getMain,
   getPreviewExists,
 } = require('./common');
-const { normalizeStories, globToRegexp } = require('@storybook/core/core-common');
+const { normalizeStories, globToRegexp } = require('@storybook/core/common');
 const fs = require('fs');
 const prettier = require('prettier');
 const path = require('path');

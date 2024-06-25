@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 const prettier = require('prettier');
-const { normalizeStories } = require('@storybook/core/core-common');
+const { normalizeStories } = require('@storybook/core/common');
 const {
   toRequireContext,
   getFilePathExtension,
