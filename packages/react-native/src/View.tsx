@@ -289,6 +289,7 @@ export class View {
             <SafeAreaProvider>
               <GestureHandlerRootView style={{ flex: 1 }}>
                 <BottomSheetModalProvider>
+                  {/* @ts-ignore something weird with story type */}
                   <Layout storyHash={storyHash} story={story}>
                     <StoryView />
                   </Layout>

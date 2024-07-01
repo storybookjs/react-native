@@ -30,8 +30,8 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
-    "@storybook/addon-controls": "0.0.0-pr-28310-sha-4e2aa1c7",
-    "@storybook/core": "0.0.0-pr-28310-sha-4e2aa1c7",
+    "@storybook/addon-controls": "0.0.0-pr-27039-sha-fbc11962",
+    "@storybook/core": "0.0.0-pr-27039-sha-fbc11962",
     "@storybook/react-native-theming": "^8.0.0-alpha.4",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "typescript": "^5.3.3"
+    "typescript": "~5.3.3"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",

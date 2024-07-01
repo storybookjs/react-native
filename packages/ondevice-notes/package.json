@@ -29,12 +29,12 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/core": "0.0.0-pr-28310-sha-4e2aa1c7",
+    "@storybook/core": "0.0.0-pr-27039-sha-fbc11962",
     "@storybook/react-native-theming": "^8.0.0-alpha.4",
     "react-native-markdown-display": "^7.0.2"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "typescript": "~5.3.3"
   },
   "peerDependencies": {
     "react": "*",

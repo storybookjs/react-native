@@ -27,13 +27,13 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@storybook/addon-actions": "0.0.0-pr-28310-sha-4e2aa1c7",
-    "@storybook/core": "0.0.0-pr-28310-sha-4e2aa1c7",
+    "@storybook/addon-actions": "0.0.0-pr-27039-sha-fbc11962",
+    "@storybook/core": "0.0.0-pr-27039-sha-fbc11962",
     "@storybook/global": "^5.0.0",
     "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "typescript": "~5.3.3"
   },
   "peerDependencies": {
     "react": "*",

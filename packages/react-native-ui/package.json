@@ -48,17 +48,17 @@
     "preset": "react-native"
   },
   "devDependencies": {
-    "@storybook/react": "0.0.0-pr-28310-sha-4e2aa1c7",
+    "@storybook/react": "0.0.0-pr-27039-sha-fbc11962",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.79",
     "babel-jest": "^29.4.3",
-    "jest": "^29.7.0",
+    "jest": "29.7.0",
     "react-test-renderer": "18.2.0",
     "tsup": "^7.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "~5.3.3"
   },
   "dependencies": {
-    "@storybook/core": "0.0.0-pr-28310-sha-4e2aa1c7",
+    "@storybook/core": "0.0.0-pr-27039-sha-fbc11962",
     "@storybook/react-native-theming": "^8.0.0-alpha.4",
     "fuse.js": "^7.0.0",
     "memoizerific": "^1.11.3",

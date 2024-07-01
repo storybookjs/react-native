@@ -3,11 +3,13 @@ import { parameters as reactParameters } from '@storybook/react/dist/entry-previ
 import { enhanceArgTypes } from '@storybook/core/docs-tools';
 import { type Preview } from '@storybook/react';
 
-export default {
+const preview: Preview = {
   argTypesEnhancers: [enhanceArgTypes],
   parameters: {
     docs: {
       extractArgTypes: reactParameters.docs.extractArgTypes,
     },
   },
-} satisfies Preview;
+};
+
+export default preview;
