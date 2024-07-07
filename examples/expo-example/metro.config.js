@@ -15,28 +15,9 @@ defaultConfig.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 
-defaultConfig.resolver.resolveRequest = (context, moduleName, platform) => {
-  const defaultResolveResult = context.resolveRequest(context, moduleName, platform);
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
-  if (defaultResolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
-    return {
-      type: 'empty',
-    };
-  }
-
-  return defaultResolveResult;
-};
-
-const { generate } = require('@storybook/react-native/scripts/generate');
-
-generate({
+module.exports = withStorybook(defaultConfig, {
+  enabled: process.env.STORYBOOK_ENABLED === 'true',
   configPath: path.resolve(__dirname, './.storybook'),
 });
-
-defaultConfig.transformer.unstable_allowRequireContext = true;
-defaultConfig.resolver.unstable_enablePackageExports = true;
-
-// causing breakage :(
-// defaultConfig.resolver.disableHierarchicalLookup = true;
-
-module.exports = defaultConfig;

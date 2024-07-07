@@ -29,6 +29,7 @@
     "*.js",
     "*.d.ts",
     "scripts/*",
+    "metro/*",
     "template/**/*"
   ],
   "scripts": {
