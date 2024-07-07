@@ -11,7 +11,7 @@ import { DEFAULT_REF_ID } from './constants';
 import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { MenuIcon } from './icon/MenuIcon';
 
-import { ReactRenderer } from '@storybook/react';
+import type { ReactRenderer } from '@storybook/react';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 

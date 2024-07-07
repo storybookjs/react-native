@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Layout } from './Layout';
 import { mockDataset } from './mockdata';
 import { Text } from 'react-native';

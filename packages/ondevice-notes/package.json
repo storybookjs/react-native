@@ -29,7 +29,7 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/core": "0.0.0-pr-27039-sha-fbc11962",
+    "@storybook/core": "8.2.0-beta.0",
     "@storybook/react-native-theming": "^8.0.0-alpha.4",
     "react-native-markdown-display": "^7.0.2"
   },
