@@ -4531,7 +4531,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-ondevice-actions@npm:^8.0.0-alpha.4, @storybook/addon-ondevice-actions@workspace:packages/ondevice-actions":
+"@storybook/addon-ondevice-actions@npm:^8.2.0-alpha.0, @storybook/addon-ondevice-actions@workspace:packages/ondevice-actions":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-actions@workspace:packages/ondevice-actions"
   dependencies:
@@ -4546,12 +4546,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-backgrounds@npm:^8.0.0-alpha.4, @storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds":
+"@storybook/addon-ondevice-backgrounds@npm:^8.2.0-alpha.0, @storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds"
   dependencies:
     "@storybook/core": "npm:8.2.0-beta.0"
-    "@storybook/react-native-theming": "npm:^8.0.0-alpha.4"
+    "@storybook/react-native-theming": "npm:^8.2.0-alpha.0"
     typescript: "npm:~5.3.3"
   peerDependencies:
     react: "*"
@@ -4559,13 +4559,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-controls@npm:^8.0.0-alpha.4, @storybook/addon-ondevice-controls@workspace:packages/ondevice-controls":
+"@storybook/addon-ondevice-controls@npm:^8.2.0-alpha.0, @storybook/addon-ondevice-controls@workspace:packages/ondevice-controls":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-controls@workspace:packages/ondevice-controls"
   dependencies:
     "@storybook/addon-controls": "npm:8.2.0-beta.0"
     "@storybook/core": "npm:8.2.0-beta.0"
-    "@storybook/react-native-theming": "npm:^8.0.0-alpha.4"
+    "@storybook/react-native-theming": "npm:^8.2.0-alpha.0"
     cross-env: "npm:^7.0.3"
     deep-equal: "npm:^1.0.1"
     prop-types: "npm:^15.7.2"
@@ -4582,12 +4582,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-notes@npm:^8.0.0-alpha.4, @storybook/addon-ondevice-notes@workspace:packages/ondevice-notes":
+"@storybook/addon-ondevice-notes@npm:^8.2.0-alpha.0, @storybook/addon-ondevice-notes@workspace:packages/ondevice-notes":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-notes@workspace:packages/ondevice-notes"
   dependencies:
     "@storybook/core": "npm:8.2.0-beta.0"
-    "@storybook/react-native-theming": "npm:^8.0.0-alpha.4"
+    "@storybook/react-native-theming": "npm:^8.2.0-alpha.0"
     react-native-markdown-display: "npm:^7.0.2"
     typescript: "npm:~5.3.3"
   peerDependencies:
@@ -4891,7 +4891,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-native-theming@npm:^8.0.0-alpha.4, @storybook/react-native-theming@workspace:packages/react-native-theming":
+"@storybook/react-native-theming@npm:^8.2.0-alpha.0, @storybook/react-native-theming@workspace:packages/react-native-theming":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-theming@workspace:packages/react-native-theming"
   dependencies:
@@ -4905,13 +4905,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native-ui@npm:^8.0.0-alpha.4, @storybook/react-native-ui@workspace:packages/react-native-ui":
+"@storybook/react-native-ui@npm:^8.2.0-alpha.0, @storybook/react-native-ui@workspace:packages/react-native-ui":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui@workspace:packages/react-native-ui"
   dependencies:
     "@storybook/core": "npm:8.2.0-beta.0"
     "@storybook/react": "npm:8.2.0-beta.0"
-    "@storybook/react-native-theming": "npm:^8.0.0-alpha.4"
+    "@storybook/react-native-theming": "npm:^8.2.0-alpha.0"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~18.2.79"
     babel-jest: "npm:^29.4.3"
@@ -4934,7 +4934,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native@npm:^8.0.0-alpha.4, @storybook/react-native@workspace:packages/react-native":
+"@storybook/react-native@npm:^8.2.0-alpha.0, @storybook/react-native@workspace:packages/react-native":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native@workspace:packages/react-native"
   dependencies:
@@ -4942,8 +4942,8 @@ __metadata:
     "@storybook/csf": "npm:^0.1.1"
     "@storybook/global": "npm:^5.0.0"
     "@storybook/react": "npm:8.2.0-beta.0"
-    "@storybook/react-native-theming": "npm:^8.0.0-alpha.4"
-    "@storybook/react-native-ui": "npm:^8.0.0-alpha.4"
+    "@storybook/react-native-theming": "npm:^8.2.0-alpha.0"
+    "@storybook/react-native-ui": "npm:^8.2.0-alpha.0"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~18.2.79"
     babel-jest: "npm:^29.4.3"
@@ -9758,18 +9758,18 @@ __metadata:
     "@storybook/addon-essentials": "npm:8.2.0-beta.0"
     "@storybook/addon-interactions": "npm:8.2.0-beta.0"
     "@storybook/addon-links": "npm:8.2.0-beta.0"
-    "@storybook/addon-ondevice-actions": "npm:^8.0.0-alpha.4"
-    "@storybook/addon-ondevice-backgrounds": "npm:^8.0.0-alpha.4"
-    "@storybook/addon-ondevice-controls": "npm:^8.0.0-alpha.4"
-    "@storybook/addon-ondevice-notes": "npm:^8.0.0-alpha.4"
+    "@storybook/addon-ondevice-actions": "npm:^8.2.0-alpha.0"
+    "@storybook/addon-ondevice-backgrounds": "npm:^8.2.0-alpha.0"
+    "@storybook/addon-ondevice-controls": "npm:^8.2.0-alpha.0"
+    "@storybook/addon-ondevice-notes": "npm:^8.2.0-alpha.0"
     "@storybook/addon-react-native-server": "npm:^0.0.5"
     "@storybook/addon-react-native-web": "npm:^0.0.22"
     "@storybook/blocks": "npm:8.2.0-beta.0"
     "@storybook/builder-webpack5": "npm:8.2.0-beta.0"
     "@storybook/global": "npm:^5.0.0"
     "@storybook/react": "npm:8.2.0-beta.0"
-    "@storybook/react-native": "npm:^8.0.0-alpha.4"
-    "@storybook/react-native-theming": "npm:^8.0.0-alpha.4"
+    "@storybook/react-native": "npm:^8.2.0-alpha.0"
+    "@storybook/react-native-theming": "npm:^8.2.0-alpha.0"
     "@storybook/react-webpack5": "npm:8.2.0-beta.0"
     "@storybook/test": "npm:8.2.0-beta.0"
     "@testing-library/react-native": "npm:12.4.3"
