@@ -23,7 +23,9 @@ module.exports = (config, { configPath, enabled }) => {
       ...config.resolver,
       unstable_enablePackageExports: true,
       resolveRequest: (context, moduleName, platform) => {
-        const defaultResolveResult = context.resolveRequest(context, moduleName, platform);
+        const defaultResolveResult = config?.resolver?.resolveRequest
+          ? config?.resolver?.resolveRequest?.(context, moduleName, platform)
+          : context.resolveRequest(context, moduleName, platform);
 
         // workaround for template files with invalid imports
         if (defaultResolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
