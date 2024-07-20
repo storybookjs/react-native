@@ -4,13 +4,13 @@ import {
   composeConfigs,
   userOrAutoTitleFromSpecifier,
   PreviewWithSelection,
-} from '@storybook/preview-api';
-import { addons as managerAddons } from '@storybook/manager-api';
+} from '@storybook/core/preview-api';
+import { addons as managerAddons } from '@storybook/core/manager-api';
 // NOTE this really should be exported from preview-api, but it's not
-import { createBrowserChannel } from '@storybook/channels';
+import { createBrowserChannel } from '@storybook/core/channels';
 import { View } from './View';
 import type { ReactRenderer } from '@storybook/react';
-import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/types';
+import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/core/types';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {

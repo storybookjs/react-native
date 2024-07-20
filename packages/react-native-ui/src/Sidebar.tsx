@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import { styled } from '@storybook/react-native-theming';
-import type { State } from '@storybook/manager-api';
+import type { State } from '@storybook/core/manager-api';
 import type {
   Addon_SidebarBottomType,
   Addon_SidebarTopType,
   API_LoadedRefData,
-} from '@storybook/types';
+} from '@storybook/core/types';
 import { Explorer } from './Explorer';
 import { Search } from './Search';
 import { SearchResults } from './SearchResults';

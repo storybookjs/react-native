@@ -1,4 +1,4 @@
-import { AddonStore, type API } from '@storybook/manager-api';
+import { AddonStore, type API } from '@storybook/core/manager-api';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Swatch from './Swatch';

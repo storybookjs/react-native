@@ -42,13 +42,16 @@
     "publish:next": "lerna publish from-git --dist-tag next",
     "test:ci": "lerna run test:ci",
     "test": "lerna run test",
-    "check-mismatched-deps": "npx tsx ./check-matching-deps.ts"
+    "check-mismatched-deps": "npx tsx ./check-matching-deps.ts",
+    "lint:repo": "sherif",
+    "fix:repo": "sherif --fix"
   },
   "devDependencies": {
     "@react-native/eslint-config": "^0.72.1",
     "cross-env": "^7.0.3",
     "eslint": "8.24.0",
     "lerna": "^8.1.2",
+    "sherif": "^0.9.0",
     "typescript": "^5.3.3"
   },
   "resolutions": {

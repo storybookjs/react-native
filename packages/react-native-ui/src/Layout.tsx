@@ -1,7 +1,7 @@
-import { SET_CURRENT_STORY } from '@storybook/core-events';
-import { addons } from '@storybook/manager-api';
+import { SET_CURRENT_STORY } from '@storybook/core/core-events';
+import { addons } from '@storybook/core/manager-api';
 import { styled, useTheme } from '@storybook/react-native-theming';
-import { type API_IndexHash, type Args, type StoryContext } from '@storybook/types';
+import { type API_IndexHash, type Args, type StoryContext } from '@storybook/core/types';
 import { ReactNode, useRef, useState } from 'react';
 import { Platform, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -11,7 +11,7 @@ import { DEFAULT_REF_ID } from './constants';
 import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { MenuIcon } from './icon/MenuIcon';
 
-import { ReactRenderer } from '@storybook/react';
+import type { ReactRenderer } from '@storybook/react';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 

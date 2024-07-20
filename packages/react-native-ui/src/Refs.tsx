@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import React, { useMemo, useCallback, useEffect, useState } from 'react';
-import type { State } from '@storybook/manager-api';
+import type { State } from '@storybook/core/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import { Tree } from './Tree';
 import type { RefType } from './types';

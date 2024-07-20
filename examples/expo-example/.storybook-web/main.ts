@@ -15,6 +15,7 @@ type ServerStorybookConfig = StorybookConfig & {
 const main: ServerStorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   addons: [
+    getAbsolutePath('@storybook/addon-webpack5-compiler-babel'),
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-interactions'),
     '@storybook/addon-react-native-web',
@@ -22,19 +23,12 @@ const main: ServerStorybookConfig = {
     '@storybook/addon-react-native-server',
   ],
   // logLevel: 'debug',
-  framework: {
-    name: '@storybook/react-webpack5',
-    options: {},
-  },
+  framework: getAbsolutePath('@storybook/react-webpack5'),
 
   reactNativeServerOptions: {
     host: 'localhost',
     port: 7007,
   },
-
-  // docs: {
-  //   autodocs: 'tag',
-  // },
 };
 
 export default main;

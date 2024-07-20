@@ -1,10 +1,10 @@
-import { API, addons, types } from '@storybook/manager-api';
+import { API, addons, types } from '@storybook/core/manager-api';
 import { Notes } from './components/Notes';
 import { ComponentType, ReactElement } from 'react';
 import type { Args, StoryContextForLoaders } from '@storybook/csf';
-import type { Renderer } from '@storybook/types';
+import type { Renderer } from '@storybook/core/types';
 export const PARAM_KEY = 'notes';
-import type { Channel } from '@storybook/channels';
+import type { Channel } from '@storybook/core/channels';
 
 export interface Selection {
   storyId: string;

@@ -1,6 +1,6 @@
-import { Args, StoryContext } from '@storybook/types';
+import { Args, StoryContext } from '@storybook/core/types';
 import { useState, useEffect, useCallback } from 'react';
-import Events from '@storybook/core-events';
+import Events from '@storybook/core/core-events';
 
 export const useArgs = (
   storyId: string,

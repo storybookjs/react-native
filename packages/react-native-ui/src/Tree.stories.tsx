@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { ComponentEntry, IndexHash } from '@storybook/manager-api';
+import type { ComponentEntry, IndexHash } from '@storybook/core/manager-api';
 import type { StoryObj, Meta } from '@storybook/react';
 import { Tree } from './Tree';
 import { index } from './mockdata.large';

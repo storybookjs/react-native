@@ -1,19 +1,22 @@
 // Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
-const defaultConfig = getDefaultConfig(__dirname);
 
-const { generate } = require('@storybook/react-native/scripts/generate');
+const projectRoot = __dirname;
+const workspaceRoot = path.resolve(projectRoot, '../../');
 
-generate({
+const defaultConfig = getDefaultConfig(projectRoot);
+
+defaultConfig.watchFolders = [workspaceRoot];
+
+defaultConfig.resolver.nodeModulesPaths = [
+  path.resolve(projectRoot, 'node_modules'),
+  path.resolve(workspaceRoot, 'node_modules'),
+];
+
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+
+module.exports = withStorybook(defaultConfig, {
+  enabled: process.env.STORYBOOK_ENABLED === 'true',
   configPath: path.resolve(__dirname, './.storybook'),
 });
-
-defaultConfig.transformer.unstable_allowRequireContext = true;
-
-defaultConfig.watchFolders.push('../../packages/react-native-ui');
-
-// causing breakage :(
-// defaultConfig.resolver.disableHierarchicalLookup = true;
-
-module.exports = defaultConfig;
