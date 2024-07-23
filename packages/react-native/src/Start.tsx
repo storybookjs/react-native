@@ -11,6 +11,7 @@ import { createBrowserChannel } from '@storybook/core/channels';
 import { View } from './View';
 import type { ReactRenderer } from '@storybook/react';
 import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/core/types';
+import { PreviewReactNative } from './PreviewReactNative';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
@@ -208,7 +209,7 @@ export function start({
     ]);
 
   // const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
-  const preview = new PreviewWithSelection<ReactRenderer>(
+  const preview = new PreviewReactNative(
     async (importPath: string) => importMap[importPath],
     getProjectAnnotationsInitial,
     selectionStore,
