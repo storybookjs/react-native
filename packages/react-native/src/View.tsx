@@ -17,7 +17,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StoryView from './components/StoryView';
 import getHost from './rn-host-detect';
 import { useSetStoryContext, useStoryContext } from './hooks';
-import { PreviewReactNative } from './PreviewReactNative';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -74,14 +73,14 @@ export class View {
   _setStory: (story: StoryContext<ReactRenderer>) => void = () => {};
   _forceRerender: () => void;
   _ready: boolean = false;
-  _preview: PreviewReactNative;
+  _preview: PreviewWithSelection<ReactRenderer>;
   _asyncStorageStoryId: string;
   _webUrl: string;
   _storage: Storage;
   _channel: Channel;
   _idToPrepared: Record<string, PreparedStory<ReactRenderer>> = {};
 
-  constructor(preview: PreviewReactNative, channel: Channel) {
+  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel) {
     this._preview = preview;
     this._channel = channel;
   }
@@ -149,7 +148,7 @@ export class View {
   };
 
   createPreparedStoryMapping = async () => {
-    await this._preview.initializationPromise.then(() =>
+    await this._preview.storeInitializationPromise.then(() =>
       Promise.all(
         Object.keys(this._storyIndex.entries).map(async (storyId: StoryId) => {
           this._idToPrepared[storyId] = await this._preview.loadStory({ storyId });
@@ -181,7 +180,7 @@ export class View {
       this._preview.channel = channel;
       this._preview.setupListeners();
       channel.emit(Events.CHANNEL_CREATED);
-      this._preview.initializationPromise.then(() =>
+      this._preview.storeInitializationPromise.then(() =>
         this._preview.initializeWithStoryIndex(this._storyIndex)
       );
     }
