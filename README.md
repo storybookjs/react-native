@@ -31,7 +31,7 @@ _Pictured is from the template mentioned in [getting started](#getting-started)_
 
 ### New project
 
-There is some project boilerplate with `@storybook/react-native` and `@storybook/addons-react-native-web` both already configured with a simple example.
+There is some project boilerplate with `@storybook/react-native` and `@storybook/addon-react-native-web` both already configured with a simple example.
 
 For expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
 
