@@ -5084,6 +5084,7 @@ __metadata:
     type-fest: "npm:~2.19"
     typescript: "npm:~5.3.3"
     util: "npm:^0.12.4"
+    ws: "npm:^8.18.0"
   peerDependencies:
     "@gorhom/bottom-sheet": ">=4"
     react: "*"
@@ -20007,7 +20008,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.11.0, ws@npm:^8.12.1, ws@npm:^8.16.0, ws@npm:^8.2.3":
+"ws@npm:^8.11.0, ws@npm:^8.12.1, ws@npm:^8.16.0, ws@npm:^8.18.0, ws@npm:^8.2.3":
   version: 8.18.0
   resolution: "ws@npm:8.18.0"
   peerDependencies:
