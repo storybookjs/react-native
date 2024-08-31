@@ -30,7 +30,7 @@
   },
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
-    "dev": "lerna run dev",
+    "dev": "lerna run dev --stream --parallel",
     "dev:check-types": "tsc --noEmit",
     "github-release": "github-release-from-changelog",
     "lint": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
