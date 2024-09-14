@@ -2,18 +2,8 @@ import Slider from '@react-native-community/slider';
 import { styled } from '@storybook/react-native-theming';
 import { useCallback, useState } from 'react';
 import { View } from 'react-native';
-
-import { inputStyle } from './common';
 import { useResyncValue } from './useResyncValue';
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
-
-const Input = styled(BottomSheetTextInput)<{ showError: boolean }>(({ theme, showError }) => {
-  const style = inputStyle(theme);
-  return {
-    ...style,
-    borderColor: showError ? theme.inputs.errorTextColor : style.borderColor,
-  };
-});
+import { Input } from './common';
 
 const ValueContainer = styled.View({ flexDirection: 'row' });
 const LabelText = styled.Text(({ theme }) => ({
@@ -45,7 +35,7 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
   const [numStr, setNumStr] = useState(arg.value?.toString());
   const updateNumstr = useCallback((value) => setNumStr(value?.toString()), []);
   const { key, setCurrentValue } = useResyncValue(arg.value, isPristine, updateNumstr);
-
+  const [focused, setFocused] = useState(false);
   const handleNormalChangeText = (text: string) => {
     const commaReplaced = text.trim().replace(/,/, '.');
 
@@ -86,7 +76,10 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
         value={numStr}
         keyboardType="numeric"
         onChangeText={handleNormalChangeText}
-        showError={showError}
+        hasError={showError}
+        focused={focused}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
       />
     );
   }

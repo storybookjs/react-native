@@ -16,7 +16,7 @@ export interface ObjectProps {
 }
 
 const Input = styled(BottomSheetTextInput)(({ theme }) => ({
-  ...inputStyle(theme, false),
+  ...inputStyle({ theme, isTextInput: false }),
   minHeight: 60,
 }));
 

@@ -14,11 +14,11 @@ export interface DateProps {
 }
 
 const Touchable = styled.TouchableOpacity(({ theme }: any) => ({
-  ...inputStyle(theme, false),
+  ...inputStyle({ theme, isTextInput: false }),
 }));
 
 const WebInput = styled('input' as any)(({ theme }: any) => ({
-  ...inputStyle(theme),
+  ...inputStyle({ theme }),
 }));
 
 const Label = styled.Text(({ theme }: any) => ({
@@ -94,6 +94,7 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
           <Label>{timeString}</Label>
         </Touchable>
       </View>
+
       <DateTimePicker
         date={date}
         isVisible={visiblePicker !== 'none'}

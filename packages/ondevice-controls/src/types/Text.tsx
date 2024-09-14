@@ -1,8 +1,6 @@
-import React from 'react';
-import { styled } from '@storybook/react-native-theming';
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
+import { useState } from 'react';
 
-import { inputStyle } from './common';
+import { Input } from './common';
 import { useResyncValue } from './useResyncValue';
 
 export interface TextProps {
@@ -15,12 +13,11 @@ export interface TextProps {
   isPristine: boolean;
 }
 
-const Input = styled(BottomSheetTextInput)(({ theme }) => ({
-  ...inputStyle(theme),
-}));
-
 const TextType = ({ arg, onChange, isPristine }: TextProps) => {
   const { setCurrentValue, key } = useResyncValue(arg.value, isPristine);
+
+  const [focused, setFocused] = useState(false);
+
   return (
     <Input
       key={key}
@@ -32,6 +29,9 @@ const TextType = ({ arg, onChange, isPristine }: TextProps) => {
       }}
       autoCapitalize="none"
       underlineColorAndroid="transparent"
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
+      focused={focused}
     />
   );
 };

@@ -1,7 +1,6 @@
 import type { API } from '@storybook/core/manager-api';
 import { Channel } from '@storybook/core/channels';
 import type { Args, StoryContextForLoaders } from '@storybook/csf';
-import { styled } from '@storybook/react-native-theming';
 import type { Renderer } from '@storybook/core/types';
 import React, { ComponentType, ReactElement, useCallback, useState } from 'react';
 import NoControlsWarning from './NoControlsWarning';
@@ -12,23 +11,6 @@ export interface Selection {
   storyId: string;
   viewMode: 'story';
 }
-
-const ButtonTouchable = styled.TouchableOpacity(({ theme }) => ({
-  backgroundColor: theme.button.secondary.backgroundColor,
-  borderRadius: theme.button.secondary.borderRadius,
-  borderWidth: theme.button.secondary.borderWidth,
-  borderColor: theme.button.secondary.borderColor,
-  paddingVertical: theme.button.paddingVertical,
-  paddingHorizontal: theme.button.paddingHorizontal,
-  justifyContent: 'center',
-  alignItems: 'center',
-}));
-
-const ButtonText = styled.Text(({ theme }) => ({
-  color: theme.button.secondary.textColor,
-  fontSize: theme.button.fontSize,
-  fontWeight: theme.button.fontWeight,
-}));
 
 export declare type SortType = 'alpha' | 'requiredFirst' | 'none';
 export declare type ColorValue = string;
@@ -129,13 +111,12 @@ const ControlsPanel = ({ api }: { api: API }) => {
   }
 
   return (
-    <>
-      <PropForm args={argsObject} isPristine={isPristine} onFieldChange={updateArgsOnFieldChange} />
-
-      <ButtonTouchable onPress={handleReset}>
-        <ButtonText>RESET</ButtonText>
-      </ButtonTouchable>
-    </>
+    <PropForm
+      args={argsObject}
+      isPristine={isPristine}
+      onFieldChange={updateArgsOnFieldChange}
+      onReset={handleReset}
+    />
   );
 };
 

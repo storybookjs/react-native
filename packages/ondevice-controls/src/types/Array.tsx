@@ -1,13 +1,6 @@
-import React from 'react';
-import { styled } from '@storybook/react-native-theming';
-
-import { inputStyle } from './common';
+import { useState } from 'react';
 import { useResyncValue } from './useResyncValue';
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
-
-const Input = styled(BottomSheetTextInput)(({ theme }) => ({
-  ...inputStyle(theme),
-}));
+import { Input } from './common';
 
 function formatArray(value: string, separator: string) {
   if (value === '') {
@@ -32,6 +25,9 @@ const ArrayType = ({
   isPristine,
 }: ArrayProps) => {
   const { setCurrentValue, key } = useResyncValue(value, isPristine);
+
+  const [focused, setFocused] = useState(false);
+
   return (
     <Input
       key={key}
@@ -44,6 +40,9 @@ const ArrayType = ({
         onChange(formatted);
         setCurrentValue(formatted);
       }}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
+      focused={focused}
     />
   );
 };

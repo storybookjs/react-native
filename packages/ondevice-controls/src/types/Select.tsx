@@ -5,11 +5,11 @@ import ModalPicker from 'react-native-modal-selector';
 import { inputStyle } from './common';
 
 const Input = styled.TextInput(({ theme }) => ({
-  ...inputStyle(theme),
+  ...inputStyle({ theme }),
 }));
 
 const WebSelect = styled('select' as any)(({ theme }) => ({
-  ...inputStyle(theme),
+  ...inputStyle({ theme }),
 }));
 
 export interface SelectProps {

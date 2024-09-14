@@ -1,15 +1,32 @@
-import { Theme } from '@storybook/react-native-theming';
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
+import { styled, Theme } from '@storybook/react-native-theming';
 import { Platform, TextStyle } from 'react-native';
 
-export function inputStyle(theme: Theme, isTextInput = true): TextStyle {
+export function inputStyle({
+  theme,
+  isTextInput = true,
+  focused = false,
+  hasError = false,
+}: {
+  theme: Theme;
+  isTextInput?: boolean;
+  focused?: boolean;
+  hasError?: boolean;
+}): TextStyle {
   return {
-    backgroundColor: theme.inputs.text.backgroundColor,
-    borderWidth: theme.inputs.text.borderWidth,
-    borderColor: theme.inputs.text.borderColor,
-    borderRadius: theme.inputs.text.borderRadius,
-    fontSize: theme.inputs.text.fontSize,
-    color: theme.inputs.text.textColor,
-    paddingHorizontal: theme.inputs.text.paddingHorizontal,
+    backgroundColor: theme.input.background,
+    // TODO: border?
+    borderWidth: 1,
+    borderRadius: theme.input.borderRadius,
+    borderColor: hasError
+      ? theme.color.negative
+      : focused
+      ? theme.color.secondary
+      : theme.input.border,
+    fontSize: theme.typography.size.s2 - 1,
+    color: theme.input.color,
+    paddingHorizontal: theme.input.paddingHorizontal,
+
     ...Platform.select({
       android: {
         // Android seems to have builtin vertical padding to `TextInput`,
@@ -18,16 +35,24 @@ export function inputStyle(theme: Theme, isTextInput = true): TextStyle {
       },
       web: {
         // The web (that isn't RNW) doesn't understand `paddingHorizontal` etc.
-        paddingLeft: theme.inputs.text.paddingHorizontal,
-        paddingRight: theme.inputs.text.paddingHorizontal,
-        paddingTop: theme.inputs.text.paddingVertical,
-        paddingBottom: theme.inputs.text.paddingVertical,
+        paddingLeft: theme.input.paddingHorizontal,
+        paddingRight: theme.input.paddingHorizontal,
+        paddingTop: theme.input.paddingVertical,
+        paddingBottom: theme.input.paddingVertical,
         borderStyle: 'solid',
       },
       default: {
-        paddingVertical: theme.inputs.text.paddingVertical,
+        paddingVertical: theme.input.paddingVertical,
       },
     }),
     margin: 0,
   };
 }
+
+export const Input = styled(BottomSheetTextInput)<{
+  focused?: boolean;
+  isTextInput?: boolean;
+  hasError?: boolean;
+}>(({ theme, focused, isTextInput, hasError }) => ({
+  ...inputStyle({ theme, isTextInput, focused, hasError }),
+}));

@@ -9,7 +9,7 @@ interface ActionLoggerProps {
 }
 
 export const ActionLogger = ({ actions, onClear }: ActionLoggerProps) => (
-  <ScrollView>
+  <ScrollView contentContainerStyle={{ padding: 10 }}>
     <ScrollView horizontal>
       <View>
         {actions.map((action: ActionDisplay) => (

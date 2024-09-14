@@ -84,12 +84,13 @@ export const MobileAddonsPanel = forwardRef<
       stackBehavior="replace"
     >
       <Animated.View style={[{ flex: 1 }, adjustedBottomSheetSize]}>
-        <View style={{ flexDirection: 'row' }}>
+        <View
+          style={{ flexDirection: 'row', borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}
+        >
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{
-              paddingHorizontal: 8,
               justifyContent: 'center',
             }}
           >
@@ -106,6 +107,7 @@ export const MobileAddonsPanel = forwardRef<
               );
             })}
           </ScrollView>
+
           <IconButton
             style={{
               marginRight: 4,
@@ -123,11 +125,9 @@ export const MobileAddonsPanel = forwardRef<
         </View>
         <ScrollView
           style={{ flex: 1 }}
-          keyboardShouldPersistTaps="handled"
+          // keyboardShouldPersistTaps="handled"
           contentContainerStyle={{
             paddingBottom: insets.bottom + 16,
-            marginTop: 10,
-            paddingHorizontal: 16,
           }}
         >
           {(() => {

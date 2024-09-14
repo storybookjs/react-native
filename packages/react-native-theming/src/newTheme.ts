@@ -187,6 +187,8 @@ export interface StorybookThemeWeb {
     background: string;
     color: string;
     borderRadius: number;
+    paddingHorizontal: number;
+    paddingVertical: number;
   };
 
   // UI

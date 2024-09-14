@@ -334,6 +334,8 @@ export const theme: StorybookTheme = {
     border: light.inputBorder,
     borderRadius: light.inputBorderRadius,
     color: light.inputTextColor,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
   },
 
   button$: {
@@ -553,6 +555,7 @@ export const darkTheme: StorybookTheme = {
     warning: background.warning,
     critical: background.critical,
   },
+
   typography: {
     weight: typography.weight,
     size: typography.size,
@@ -563,6 +566,8 @@ export const darkTheme: StorybookTheme = {
     border: dark.inputBorder,
     borderRadius: dark.inputBorderRadius,
     color: dark.inputTextColor,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
   },
 
   button$: {
