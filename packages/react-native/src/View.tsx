@@ -148,10 +148,12 @@ export class View {
   };
 
   createPreparedStoryMapping = async () => {
-    await Promise.all(
-      Object.keys(this._storyIndex.entries).map(async (storyId: StoryId) => {
-        this._idToPrepared[storyId] = await this._preview.loadStory({ storyId });
-      })
+    await this._preview.ready().then(() =>
+      Promise.all(
+        Object.keys(this._storyIndex.entries).map(async (storyId: StoryId) => {
+          this._idToPrepared[storyId] = await this._preview.loadStory({ storyId });
+        })
+      )
     );
   };
 
@@ -178,7 +180,7 @@ export class View {
       this._preview.channel = channel;
       this._preview.setupListeners();
       channel.emit(Events.CHANNEL_CREATED);
-      this._preview.initializeWithStoryIndex(this._storyIndex);
+      this._preview.ready().then(() => this._preview.onStoryIndexChanged());
     }
 
     managerAddons.loadAddons({
