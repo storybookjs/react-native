@@ -1,7 +1,6 @@
 import React from 'react';
-
-import { useTheme } from '@storybook/react-native-theming';
-import { Keyboard, Text, View } from 'react-native';
+import { styled, useTheme } from '@storybook/react-native-theming';
+import { Keyboard, View } from 'react-native';
 import { useStoryContext } from '../../hooks';
 import { ErrorBoundary } from './ErrorBoundary';
 
@@ -22,19 +21,23 @@ function dismissOnStartResponder() {
   return false;
 }
 
+const Text = styled.Text(({ theme }) => ({
+  color: theme?.color?.defaultText,
+}));
+
 const StoryView = () => {
   const context = useStoryContext();
 
   const id = context?.id;
 
-  const { backgroundColor } = useTheme();
+  const theme = useTheme();
 
   if (context && context.unboundStoryFn) {
     const { unboundStoryFn: StoryComponent } = context;
 
     return (
       <View
-        style={{ flex: 1, backgroundColor }}
+        style={{ flex: 1, backgroundColor: theme.background?.content }}
         key={id}
         testID={id}
         onStartShouldSetResponder={dismissOnStartResponder}
