@@ -43,7 +43,7 @@ Here are some of the other improvements:
 
 - New storage option that lets you choose what storage solution you want to use (async storage/mmkv etc).
 - Support for main.ts
-- Dynamic imports enabled by the unstable_useRequireContext option in metro config.
+- Dynamic imports enabled by the unstable_allowRequireContext option in metro config.
   - you only need to generate your requires file when main.ts changes.
 - Error boundaries for stories so your app shouldn't crash when a story throws an error.
 - Improved markdown renderer for notes addon.
@@ -100,10 +100,10 @@ export default StorybookUIRoot;
 
 ### Metro config
 
-Update your `metro.config.js` to enable the `unstable_useRequireContext` option and you can now remove the sbmodern resolver if you have it.
+Update your `metro.config.js` to enable the `unstable_allowRequireContext` option and you can now remove the sbmodern resolver if you have it.
 
 > [!NOTE]
-> The unstable_useRequireContext option requires at least react native 0.72
+> The unstable_allowRequireContext option requires at least react native 0.72
 
 If you are using expo and you don't have a metro config file you can create one by running `npx expo customize metro.config.js`.
 
