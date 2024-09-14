@@ -111,13 +111,13 @@ const StyledButton = styled.TouchableOpacity<
 
   backgroundColor: (() => {
     if (variant === 'solid') return theme.color.secondary;
-    if (variant === 'outline') return theme.button$.background;
+    if (variant === 'outline') return theme.button.background;
     if (variant === 'ghost' && active) return theme.background.hoverable;
 
     return 'transparent';
   })(),
 
-  boxShadow: variant === 'outline' ? `${theme.button$.border} 0 0 0 1px inset` : 'none',
+  boxShadow: variant === 'outline' ? `${theme.button.border} 0 0 0 1px inset` : 'none',
   borderRadius: theme.input.borderRadius,
   // Making sure that the button never shrinks below its minimum size
   flexShrink: 0,

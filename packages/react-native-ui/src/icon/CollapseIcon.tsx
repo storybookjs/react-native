@@ -1,6 +1,5 @@
 import { styled } from '@storybook/react-native-theming';
 import type { FC } from 'react';
-import { transparentize } from 'polished';
 import Svg, { Path, SvgProps } from 'react-native-svg';
 
 interface CollapseIconProps {
@@ -14,7 +13,7 @@ export const CollapseIconWrapper = styled.View<{ isExpanded: boolean }>(
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    color: transparentize(0.4, theme.textMutedColor),
+    color: theme.textMutedColor,
     transform: isExpanded ? 'rotateZ(90deg)' : 'none',
     transition: 'transform .1s ease-out',
   })

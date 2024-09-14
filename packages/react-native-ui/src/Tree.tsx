@@ -7,18 +7,18 @@ import type {
 } from '@storybook/core/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import React, { useCallback, useMemo, useRef } from 'react';
+import { View } from 'react-native';
 import { IconButton } from './IconButton';
+import { useLayout } from './LayoutProvider';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
+import { CollapseAllIcon } from './icon/CollapseAllIcon';
 import { CollapseIcon } from './icon/CollapseIcon';
+import { ExpandAllIcon } from './icon/ExpandAllIcon';
+import { Item } from './types';
 import type { ExpandAction, ExpandedState } from './useExpanded';
 import { useExpanded } from './useExpanded';
-import { createId, getAncestorIds, getDescendantIds, isStoryHoistable } from './util/tree';
 import { getGroupStatus, statusMapping } from './util/status';
-import { Text, View } from 'react-native';
-import { ExpandAllIcon } from './icon/ExpandAllIcon';
-import { CollapseAllIcon } from './icon/CollapseAllIcon';
-import { Item } from './types';
-import { useLayout } from './LayoutProvider';
+import { createId, getAncestorIds, getDescendantIds, isStoryHoistable } from './util/tree';
 
 interface NodeProps {
   item: Item;
@@ -35,6 +35,10 @@ interface NodeProps {
   onSelectStoryId: (itemId: string) => void;
   status: State['status'][keyof State['status']];
 }
+
+const TextItem = styled.Text(({ theme }) => ({
+  color: theme.color.defaultText,
+}));
 
 export const Node = React.memo<NodeProps>(function Node({
   item,
@@ -90,7 +94,7 @@ export const Node = React.memo<NodeProps>(function Node({
           aria-expanded={isExpanded}
         >
           <CollapseIcon isExpanded={isExpanded} />
-          <Text>{item.renderLabel?.(item, {}) || item.name}</Text>
+          <TextItem>{item.renderLabel?.(item, {}) || item.name}</TextItem>
         </CollapseButton>
         {isExpanded && (
           <IconButton

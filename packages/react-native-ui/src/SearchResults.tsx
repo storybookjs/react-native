@@ -6,7 +6,7 @@ import type { GetSearchItemProps, SearchResult, SearchResultProps } from './type
 import { isExpandType } from './types';
 
 import { FuseResultMatch } from 'fuse.js';
-import { PressableProps, Text, View } from 'react-native';
+import { PressableProps, View } from 'react-native';
 import { Button } from './Button';
 import { IconButton } from './IconButton';
 import { ComponentIcon } from './icon/ComponentIcon';
@@ -28,7 +28,7 @@ const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
     flexDirection: 'row',
     alignItems: 'flex-start',
     textAlign: 'left',
-    color: 'inherit',
+    color: theme.color.defaultText,
     fontSize: theme.typography.size.s2,
     backgroundColor: isHighlighted ? theme.background.hoverable : 'transparent',
     minHeight: 28,
@@ -176,6 +176,10 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
     </ResultRow>
   );
 });
+
+const Text = styled.Text(({ theme }) => ({
+  color: theme.color.defaultText,
+}));
 
 export const SearchResults: FC<{
   query: string;

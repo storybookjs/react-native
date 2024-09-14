@@ -32,7 +32,7 @@ export const Layout = ({
   const insets = useSafeAreaInsets();
 
   return (
-    <View style={{ flex: 1, paddingTop: insets.top }}>
+    <View style={{ flex: 1, paddingTop: insets.top, backgroundColor: theme.background.content }}>
       <View style={{ flex: 1 }}>{children}</View>
       <MobileMenuDrawer ref={mobileMenuDrawerRef} onStateChange={setDrawerOpen}>
         <Sidebar
@@ -63,7 +63,7 @@ export const Layout = ({
               }}
             >
               <MenuIcon color={theme.color.mediumdark} />
-              <Text style={{ flexShrink: 1 }} numberOfLines={1}>
+              <Text style={{ flexShrink: 1, color: theme.color.defaultText }} numberOfLines={1}>
                 {story?.title}/{story?.name}
               </Text>
             </Button>

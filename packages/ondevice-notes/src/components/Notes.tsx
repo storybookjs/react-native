@@ -6,6 +6,7 @@ import Markdown from 'react-native-markdown-display';
 import { RNAddonApi, StoryFromId } from '../register';
 import { ErrorBoundary } from '../ErrorBoundary';
 import { addons } from '@storybook/core/manager-api';
+import { useTheme } from '@storybook/react-native-theming';
 
 export const PARAM_KEY = 'notes';
 
@@ -15,6 +16,7 @@ interface NotesProps {
 }
 
 export const Notes = ({ active, api }: NotesProps) => {
+  const theme = useTheme();
   const [story, setStory] = useState<StoryFromId | null>();
 
   useEffect(() => {
@@ -50,7 +52,9 @@ export const Notes = ({ active, api }: NotesProps) => {
       {textAfterFormatted && (
         <ErrorBoundary>
           {/* @ts-ignore has the wrong types */}
-          <Markdown>{textAfterFormatted}</Markdown>
+          <Markdown style={{ body: { color: theme.color.defaultText } }}>
+            {textAfterFormatted}
+          </Markdown>
         </ErrorBoundary>
       )}
     </View>

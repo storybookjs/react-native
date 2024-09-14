@@ -8,6 +8,7 @@ import { ReactNode, forwardRef, useImperativeHandle, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTheme } from '@storybook/react-native-theming';
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
@@ -32,6 +33,7 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
   ({ children, onStateChange }, ref) => {
     const reducedMotion = useReducedMotion();
     const insets = useSafeAreaInsets();
+    const theme = useTheme();
 
     const menuBottomSheetRef = useRef<BottomSheetModal>(null);
 
@@ -65,6 +67,8 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
         keyboardBlurBehavior="restore"
         stackBehavior="replace"
         backdropComponent={BottomSheetBackdropComponent}
+        backgroundStyle={{ backgroundColor: theme.background.content }}
+        handleIndicatorStyle={{ backgroundColor: theme.textMutedColor }}
       >
         <BottomSheetScrollView
           keyboardShouldPersistTaps="handled"

@@ -12,7 +12,7 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
+import { useTheme } from '@storybook/react-native-theming';
 import { IconButton } from './IconButton';
 import { CloseIcon } from './icon/CloseIcon';
 
@@ -24,6 +24,7 @@ export const MobileAddonsPanel = forwardRef<
   MobileAddonsPanelRef,
   { storyId?: string; onStateChange: (open: boolean) => void }
 >(({ storyId, onStateChange }, ref) => {
+  const theme = useTheme();
   const reducedMotion = useReducedMotion();
 
   const addonsPanelBottomSheetRef = useRef<BottomSheetModal>(null);
@@ -73,9 +74,11 @@ export const MobileAddonsPanel = forwardRef<
       containerStyle={{}}
       backgroundStyle={{
         borderRadius: 0,
-        borderTopColor: 'lightgrey',
+        borderTopColor: theme.appBorderColor,
         borderTopWidth: 1,
+        backgroundColor: theme.background.content,
       }}
+      handleIndicatorStyle={{ backgroundColor: theme.textMutedColor }}
       keyboardBehavior="extend"
       // keyboardBlurBehavior="restore"
       enableDismissOnClose

@@ -17,6 +17,7 @@ const BranchNodeText = styled.Text<{ isSelected?: boolean }>(({ theme }) => ({
   textAlign: 'left',
   fontSize: theme.typography.size.s2,
   flexShrink: 1,
+  color: theme.color.defaultText,
 }));
 
 const BranchNode = styled.TouchableOpacity<{
