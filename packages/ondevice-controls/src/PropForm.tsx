@@ -81,16 +81,11 @@ const PropForm = ({ args, isPristine, onFieldChange, onReset }: FormProps) => {
       {Object.values(args).map((arg, i) => {
         const changeHandler = makeChangeHandler(arg.name);
         return (
-          <TableRow hasBottomBorder={i !== Object.values(args).length - 1}>
+          <TableRow key={arg.name} hasBottomBorder={i !== Object.values(args).length - 1}>
             <Label style={{ width: '25%' }}>{arg.name}</Label>
 
             <View style={{ width: '75%' }}>
-              <PropField
-                key={arg.name}
-                arg={arg}
-                isPristine={isPristine}
-                onChange={changeHandler}
-              />
+              <PropField arg={arg} isPristine={isPristine} onChange={changeHandler} />
             </View>
           </TableRow>
         );

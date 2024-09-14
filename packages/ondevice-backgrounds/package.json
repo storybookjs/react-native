@@ -32,7 +32,7 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/core": "^8.2.5",
+    "@storybook/core": "^8.3.0",
     "@storybook/react-native-theming": "^8.2.0-alpha.1"
   },
   "devDependencies": {
