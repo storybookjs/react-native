@@ -1,5 +1,4 @@
 import { styled } from '@storybook/react-native-theming';
-import React from 'react';
 
 interface RadioProps {
   data: Array<Record<string, any>>;
@@ -12,38 +11,37 @@ const RadioContainer = styled.View(({ isInline }: any) => ({
   flexDirection: isInline ? 'row' : 'column',
   alignItems: isInline ? 'center' : 'flex-start',
   flexWrap: 'wrap',
+  rowGap: 10,
 }));
 
-const RadioTouchable = styled.TouchableOpacity(({ theme }) => ({
+const RadioTouchable = styled.TouchableOpacity(() => ({
   alignItems: 'center',
   flexDirection: 'row',
-  paddingVertical: theme.inputs.radio.itemSpacing,
 }));
 
 const RadioCircle = styled.View(({ theme }) => ({
-  width: theme.inputs.radio.height,
-  height: theme.inputs.radio.height,
-  borderWidth: theme.inputs.radio.borderWidth,
-  borderColor: theme.inputs.radio.borderColor,
-  borderRadius: theme.tokens.borderRadius.round,
-  backgroundColor: theme.inputs.radio.backgroundColor,
+  width: 15,
+  height: 15,
+  borderWidth: 1,
+  borderColor: theme.appBorderColor,
+  borderRadius: 15,
+  backgroundColor: theme.background.content,
   alignItems: 'center',
   justifyContent: 'center',
-  paddingVertical: theme.inputs.radio.paddingVertical,
-  paddingHorizontal: theme.inputs.radio.paddingHorizontal,
+  padding: 2,
 }));
 
 const RadioInnerCircle = styled.View(({ theme, selected }: any) => ({
   height: '100%',
   width: '100%',
-  borderRadius: theme.tokens.borderRadius.round,
-  backgroundColor: selected ? theme.inputs.radio.activeBackgroundColor : 'transparent',
+  borderRadius: 10,
+  backgroundColor: selected ? theme.color.positive : 'transparent',
 }));
 
 const RadioLabel = styled.Text(({ theme }) => ({
-  fontSize: theme.inputs.radio.fontSize,
-  paddingStart: theme.inputs.radio.labelSpacing,
-  color: theme.inputs.labelTextColor,
+  fontSize: theme.typography.size.s1,
+  paddingStart: 10,
+  color: theme.color.defaultText,
 }));
 
 const RadioSelect = ({ data = [], value = '', onChange, isInline }: RadioProps) => {

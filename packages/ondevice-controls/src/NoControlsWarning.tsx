@@ -2,12 +2,13 @@ import { styled } from '@storybook/react-native-theming';
 import { Linking, View } from 'react-native';
 
 const Paragraph = styled.Text(({ theme }) => ({
-  marginBottom: theme.tokens.spacing3,
-  color: theme.text.primaryColor,
+  marginBottom: 16,
+  color: theme.color.defaultText,
 }));
 
 const LinkText = styled.Text(({ theme }) => ({
-  color: theme.text.linkColor,
+  color: theme.color.secondary,
+  textDecorationLine: 'underline',
 }));
 
 const NoControlsWarning = () => {

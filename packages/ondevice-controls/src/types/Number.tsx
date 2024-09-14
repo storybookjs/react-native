@@ -6,13 +6,15 @@ import { useResyncValue } from './useResyncValue';
 import { Input } from './common';
 
 const ValueContainer = styled.View({ flexDirection: 'row' });
+
 const LabelText = styled.Text(({ theme }) => ({
-  color: theme.inputs.slider.labelTextColor,
-  fontSize: theme.inputs.slider.fontSize,
+  color: theme.color.mediumdark,
+  fontSize: theme.typography.size.s1,
 }));
+
 const ValueText = styled.Text(({ theme }) => ({
-  color: theme.inputs.slider.valueTextColor,
-  fontSize: theme.inputs.slider.fontSize,
+  color: theme.color.defaultText,
+  fontSize: theme.typography.size.s1,
 }));
 
 export interface NumberProps {
@@ -54,8 +56,10 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
       <View key={key}>
         <ValueContainer>
           <LabelText>Value: </LabelText>
+
           <ValueText>{arg.value}</ValueText>
         </ValueContainer>
+
         <Slider
           minimumValue={arg.min}
           maximumValue={arg.max}

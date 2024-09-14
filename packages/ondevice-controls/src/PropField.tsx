@@ -25,7 +25,7 @@ export interface Knob {
 }
 
 const InvalidTypeText = styled.Text(({ theme }) => ({
-  color: theme.inputs.errorTextColor,
+  color: theme.color.negative,
 }));
 
 const InvalidType = ({ arg }: { arg: ArgType }) => (

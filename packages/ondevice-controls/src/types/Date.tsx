@@ -13,17 +13,17 @@ export interface DateProps {
   onChange: (value: Date) => void;
 }
 
-const Touchable = styled.TouchableOpacity(({ theme }: any) => ({
+const Touchable = styled.TouchableOpacity(({ theme }) => ({
   ...inputStyle({ theme, isTextInput: false }),
 }));
 
-const WebInput = styled('input' as any)(({ theme }: any) => ({
+const WebInput = styled('input' as any)(({ theme }) => ({
   ...inputStyle({ theme }),
 }));
 
-const Label = styled.Text(({ theme }: any) => ({
-  fontSize: theme.inputs.text.fontSize,
-  color: theme.inputs.text.textColor,
+const Label = styled.Text(({ theme }) => ({
+  fontSize: theme.typography.size.s1,
+  color: theme.input.color,
 }));
 
 type VisiblePicker = 'date' | 'time' | 'none';

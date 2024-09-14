@@ -178,9 +178,12 @@ export interface Brand {
 }
 
 export interface StorybookThemeWeb {
+  base: 'light' | 'dark';
   color: Color;
   background: Background;
   typography: Typography;
+
+  textMutedColor: string;
 
   input: {
     border: string;
@@ -189,6 +192,16 @@ export interface StorybookThemeWeb {
     borderRadius: number;
     paddingHorizontal: number;
     paddingVertical: number;
+  };
+
+  button: {
+    background: string;
+    border: string;
+  };
+
+  boolean: {
+    background: string;
+    selectedBackground: string;
   };
 
   // UI
@@ -204,7 +217,7 @@ export interface StorybookThemeWeb {
 
   brand: Brand;
 
-  [key: string]: any;
+  // [key: string]: any;
 }
 
 export const dark: ThemeVars = {
