@@ -1,6 +1,5 @@
 import { styled } from '@storybook/react-native-theming';
-import React from 'react';
-import { Linking } from 'react-native';
+import { Linking, View } from 'react-native';
 
 const Paragraph = styled.Text(({ theme }) => ({
   marginBottom: theme.tokens.spacing3,
@@ -13,7 +12,7 @@ const LinkText = styled.Text(({ theme }) => ({
 
 const NoControlsWarning = () => {
   return (
-    <>
+    <View style={{ padding: 10 }}>
       <Paragraph>This story is not configured to handle controls.</Paragraph>
       <Paragraph>
         <LinkText
@@ -32,7 +31,7 @@ const NoControlsWarning = () => {
           examples in the Storybook React Native repository.
         </LinkText>
       </Paragraph>
-    </>
+    </View>
   );
 };
 
