@@ -1,5 +1,5 @@
-import { styled } from '@storybook/react-native-theming';
-import React, { useMemo, useState } from 'react';
+import { styled, useTheme } from '@storybook/react-native-theming';
+import { useMemo, useState } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 
@@ -17,10 +17,6 @@ const Touchable = styled.TouchableOpacity(({ theme }) => ({
   ...inputStyle({ theme, isTextInput: false }),
 }));
 
-const WebInput = styled('input' as any)(({ theme }) => ({
-  ...inputStyle({ theme }),
-}));
-
 const Label = styled.Text(({ theme }) => ({
   fontSize: theme.typography.size.s1,
   color: theme.input.color,
@@ -29,6 +25,8 @@ const Label = styled.Text(({ theme }) => ({
 type VisiblePicker = 'date' | 'time' | 'none';
 const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
   const [visiblePicker, setVisiblePicker] = useState<VisiblePicker>('none');
+
+  const theme = useTheme();
 
   const onDatePicked = (pickedDate: Date) => {
     onChange(pickedDate);
@@ -75,10 +73,15 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
   if (Platform.OS === 'web') {
     return (
       <View testID={name}>
-        <WebInput
+        <input
           type="datetime-local"
-          value={webDateString}
-          onChange={(e) => onChange(new Date(e.target.value))}
+          defaultValue={webDateString}
+          onChange={(e) => {
+            const newDate = new Date(e.target.value);
+            onChange(newDate);
+          }}
+          // @ts-ignore
+          style={inputStyle({ theme, isTextInput: true })}
         />
       </View>
     );

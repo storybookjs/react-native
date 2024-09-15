@@ -1,10 +1,7 @@
-import React, { useCallback, useState } from 'react';
-import { styled } from '@storybook/react-native-theming';
+import { useCallback, useState } from 'react';
 import { ViewStyle } from 'react-native';
-
+import { Input } from './common';
 import { useResyncValue } from './useResyncValue';
-import { inputStyle } from './common';
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 
 export interface ObjectProps {
   arg: {
@@ -14,11 +11,6 @@ export interface ObjectProps {
   onChange: (value: any) => void;
   isPristine: boolean;
 }
-
-const Input = styled(BottomSheetTextInput)<{ focused: boolean }>(({ theme, focused }) => ({
-  ...inputStyle({ theme, isTextInput: false, focused }),
-  minHeight: 60,
-}));
 
 const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
   const getJsonString = useCallback(() => {
@@ -53,7 +45,7 @@ const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
     }
   };
 
-  const extraStyle: ViewStyle = {};
+  const extraStyle: ViewStyle = { minHeight: 60 };
 
   if (failed) {
     extraStyle.borderWidth = 1;

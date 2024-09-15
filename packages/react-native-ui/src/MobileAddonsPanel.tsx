@@ -30,8 +30,6 @@ export const MobileAddonsPanel = forwardRef<
   const addonsPanelBottomSheetRef = useRef<BottomSheetModal>(null);
   const insets = useSafeAreaInsets();
 
-  const panels = addons.getElements(Addon_TypesEnum.PANEL);
-  const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
   const animatedPosition = useSharedValue(0);
 
   // bringing in animated keyboard disables android resizing
@@ -87,76 +85,91 @@ export const MobileAddonsPanel = forwardRef<
       stackBehavior="replace"
     >
       <Animated.View style={[{ flex: 1 }, adjustedBottomSheetSize]}>
-        <View
-          style={{ flexDirection: 'row', borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}
-        >
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{
-              justifyContent: 'center',
-            }}
-          >
-            {Object.values(panels).map(({ id, title }) => {
-              const resolvedTitle = typeof title === 'function' ? title({}) : title;
-
-              return (
-                <Tab
-                  key={id}
-                  active={id === addonSelected}
-                  onPress={() => setAddonSelected(id)}
-                  text={resolvedTitle}
-                />
-              );
-            })}
-          </ScrollView>
-
-          <IconButton
-            style={{
-              marginRight: 4,
-              marginBottom: 4,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}
-            Icon={CloseIcon}
-            onPress={() => {
-              onStateChange(false);
-              addonsPanelBottomSheetRef.current?.dismiss();
-            }}
-          />
-        </View>
-        <ScrollView
-          style={{ flex: 1 }}
-          // keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{
-            paddingBottom: insets.bottom + 16,
+        <AddonsTabs
+          onClose={() => {
+            onStateChange(false);
+            addonsPanelBottomSheetRef.current?.dismiss();
           }}
-        >
-          {(() => {
-            if (!storyId) {
-              return (
-                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Text>No Story Selected</Text>
-                </View>
-              );
-            }
-
-            if (Object.keys(panels).length === 0) {
-              return (
-                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Text>No addons loaded.</Text>
-                </View>
-              );
-            }
-
-            return panels[addonSelected].render({ active: true });
-          })()}
-        </ScrollView>
+          storyId={storyId}
+        />
       </Animated.View>
     </BottomSheetModal>
   );
 });
+
+export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId?: string }) => {
+  const panels = addons.getElements(Addon_TypesEnum.PANEL);
+
+  const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
+
+  const insets = useSafeAreaInsets();
+
+  return (
+    <View style={{ flex: 1 }}>
+      <View style={{ flexDirection: 'row', borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            justifyContent: 'center',
+          }}
+        >
+          {Object.values(panels).map(({ id, title }) => {
+            const resolvedTitle = typeof title === 'function' ? title({}) : title;
+
+            return (
+              <Tab
+                key={id}
+                active={id === addonSelected}
+                onPress={() => setAddonSelected(id)}
+                text={resolvedTitle}
+              />
+            );
+          })}
+        </ScrollView>
+
+        <IconButton
+          style={{
+            marginRight: 4,
+            marginBottom: 4,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}
+          Icon={CloseIcon}
+          onPress={() => onClose?.()}
+        />
+      </View>
+      <ScrollView
+        style={{ flex: 1 }}
+        // keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{
+          paddingBottom: insets.bottom + 16,
+        }}
+      >
+        {(() => {
+          if (!storyId) {
+            return (
+              <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                <Text>No Story Selected</Text>
+              </View>
+            );
+          }
+
+          if (Object.keys(panels).length === 0) {
+            return (
+              <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                <Text>No addons loaded.</Text>
+              </View>
+            );
+          }
+
+          return panels[addonSelected].render({ active: true });
+        })()}
+      </ScrollView>
+    </View>
+  );
+};
 
 const Tab = ({ active, onPress, text }: { active: boolean; onPress: () => void; text: string }) => {
   return (

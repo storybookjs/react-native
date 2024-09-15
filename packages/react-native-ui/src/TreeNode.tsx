@@ -36,7 +36,7 @@ const BranchNode = styled.TouchableOpacity<{
   alignSelf: 'flex-start',
   paddingLeft: (isExpandable ? 8 : 22) + depth * 18,
 
-  background: 'transparent',
+  backgroundColor: 'transparent',
   minHeight: 28,
   borderRadius: 4,
   gap: 6,
@@ -45,7 +45,7 @@ const BranchNode = styled.TouchableOpacity<{
 
   // will this actually do anything?
   '&:hover, &:focus': {
-    background: transparentize(0.93, theme.color.secondary),
+    backgroundColor: transparentize(0.93, theme.color.secondary),
     outline: 'none',
   },
 }));

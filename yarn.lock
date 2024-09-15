@@ -4103,6 +4103,7 @@ __metadata:
     "@storybook/addon-controls": "npm:^8.3.0"
     "@storybook/core": "npm:^8.3.0"
     "@storybook/react-native-theming": "npm:^8.3.0-alpha.1"
+    "@storybook/react-native-ui": "npm:^8.3.0-alpha.1"
     cross-env: "npm:^7.0.3"
     deep-equal: "npm:^1.0.1"
     prop-types: "npm:^15.7.2"

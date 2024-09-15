@@ -6,7 +6,11 @@ import { addons as managerAddons } from '@storybook/core/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from '@storybook/core/preview-api';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
-import { Layout, transformStoryIndexToStoriesHash } from '@storybook/react-native-ui';
+import {
+  Layout,
+  LayoutProvider,
+  transformStoryIndexToStoriesHash,
+} from '@storybook/react-native-ui';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybook/core/types';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
@@ -170,8 +174,6 @@ export class View {
     const initialStory = this._getInitialStory(params);
 
     if (enableWebsockets) {
-      console.log('websockets enabled');
-
       const channel = this._getServerChannel(params);
       managerAddons.setChannel(channel);
       previewAddons.setChannel(channel);
@@ -292,9 +294,11 @@ export class View {
               <GestureHandlerRootView style={{ flex: 1 }}>
                 <BottomSheetModalProvider>
                   {/* @ts-ignore something weird with story type */}
-                  <Layout storyHash={storyHash} story={story}>
-                    <StoryView />
-                  </Layout>
+                  <LayoutProvider>
+                    <Layout storyHash={storyHash} story={story}>
+                      <StoryView />
+                    </Layout>
+                  </LayoutProvider>
                 </BottomSheetModalProvider>
               </GestureHandlerRootView>
             </SafeAreaProvider>

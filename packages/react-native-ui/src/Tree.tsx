@@ -53,7 +53,7 @@ export const Node = React.memo<NodeProps>(function Node({
   setExpanded,
   onSelectStoryId,
 }) {
-  const { isDesktop, isMobile, closeMobileMenu } = useLayout();
+  const { isDesktop } = useLayout();
 
   if (!isDisplayed) {
     return null;
@@ -73,7 +73,6 @@ export const Node = React.memo<NodeProps>(function Node({
           depth={isOrphan ? item.depth : item.depth - 1}
           onPress={() => {
             onSelectStoryId(item.id);
-            if (isMobile) closeMobileMenu();
           }}
         >
           {(item.renderLabel as (i: typeof item) => React.ReactNode)?.(item) || item.name}
@@ -147,7 +146,7 @@ export const LeafNodeStyleWrapper = styled.View(({ theme }) => ({
   alignItems: 'center',
   paddingRight: 20,
   color: theme.color.defaultText,
-  background: 'transparent',
+  backgroundColor: 'transparent',
   minHeight: 28,
   borderRadius: 4,
 }));

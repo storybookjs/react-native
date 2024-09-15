@@ -1,16 +1,8 @@
-import { styled } from '@storybook/react-native-theming';
+import { useTheme } from '@storybook/react-native-theming';
 import { Platform, View } from 'react-native';
 import ModalPicker from 'react-native-modal-selector';
 
-import { inputStyle } from './common';
-
-const Input = styled.TextInput(({ theme }) => ({
-  ...inputStyle({ theme }),
-}));
-
-const WebSelect = styled('select' as any)(({ theme }) => ({
-  ...inputStyle({ theme }),
-}));
+import { Input, inputStyle } from './common';
 
 export interface SelectProps {
   arg: {
@@ -41,6 +33,7 @@ const getOptions = ({ options, control: { labels } }: SelectProps['arg']) => {
 const SelectType = ({ arg, onChange }: SelectProps) => {
   const { value } = arg;
   const options = getOptions(arg);
+  const theme = useTheme();
 
   const active = options.find(({ key }) => value === key);
 
@@ -50,14 +43,20 @@ const SelectType = ({ arg, onChange }: SelectProps) => {
     const handleChange = (event) => {
       onChange(event.target.value);
     };
+
     return (
-      <WebSelect value={value} onChange={handleChange}>
+      <select
+        value={value}
+        onChange={handleChange}
+        // @ts-ignore
+        style={inputStyle({ theme })}
+      >
         {options.map(({ label, key }) => (
           <option key={`${label}-${key}`} value={key}>
             {label}
           </option>
         ))}
-      </WebSelect>
+      </select>
     );
   }
 

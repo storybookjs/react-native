@@ -19,7 +19,7 @@ const Container = styled.View(({ theme }) => ({
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
-  background: theme.background.content,
+  backgroundColor: theme.background.content,
 }));
 
 const Top = styled.View({

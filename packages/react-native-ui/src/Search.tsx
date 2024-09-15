@@ -1,22 +1,23 @@
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { styled } from '@storybook/react-native-theming';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
+import { TextInput, View } from 'react-native';
+import { CloseIcon } from './icon/CloseIcon';
+import { SearchIcon } from './icon/SearchIcon';
+import { useLayout } from './LayoutProvider';
 import {
   type CombinedDataset,
-  type SearchItem,
-  type SearchResult,
-  type SearchChildrenFn,
-  type Selection,
   type GetSearchItemProps,
   isExpandType,
+  type SearchChildrenFn,
+  type SearchItem,
+  type SearchResult,
+  type Selection,
 } from './types';
-import { searchItem } from './util/tree';
 import { getGroupStatus, getHighestStatus } from './util/status';
-import { SearchIcon } from './icon/SearchIcon';
-import { CloseIcon } from './icon/CloseIcon';
-import { TextInput, View } from 'react-native';
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
+import { searchItem } from './util/tree';
 
 const DEFAULT_MAX_SEARCH_RESULTS = 50;
 
@@ -56,7 +57,20 @@ const SearchField = styled.View({
   position: 'relative',
 });
 
-const Input = styled(BottomSheetTextInput)(({ theme }) => ({
+const BottomSheetInput = styled(BottomSheetTextInput)(({ theme }) => ({
+  height: 32,
+  paddingLeft: 28,
+  paddingRight: 28,
+  borderWidth: 1,
+  borderColor: theme.appBorderColor,
+  backgroundColor: 'transparent',
+  borderRadius: 4,
+  fontSize: theme.typography.size.s1 + 1,
+  color: theme.color.defaultText,
+  width: '100%',
+}));
+
+const Input = styled(TextInput)(({ theme }) => ({
   height: 32,
   paddingLeft: 28,
   paddingRight: 28,
@@ -94,11 +108,15 @@ export const Search = React.memo<{
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
+  const { isMobile } = useLayout();
 
   const selectStory = useCallback(
     (id: string, refId: string) => {
       setSelection({ storyId: id, refId });
+
       inputRef.current?.blur();
+
+      setIsOpen(false);
 
       showAllComponents(false);
     },
@@ -212,12 +230,17 @@ export const Search = React.memo<{
           <SearchIcon />
         </SearchIconWrapper>
 
-        <Input
-          ref={inputRef as any} // TODO find solution for this
-          onChangeText={setInputValue}
-          onFocus={() => setIsOpen(true)}
-          onBlur={() => setIsOpen(false)}
-        />
+        {isMobile ? (
+          <BottomSheetInput
+            ref={inputRef as any} // TODO find solution for this
+            onChangeText={setInputValue}
+            onFocus={() => setIsOpen(true)}
+            onBlur={() => setIsOpen(false)}
+          />
+        ) : (
+          <Input ref={inputRef} onChangeText={setInputValue} onFocus={() => setIsOpen(true)} />
+        )}
+
         {isOpen && (
           <ClearIcon
             onPress={() => {

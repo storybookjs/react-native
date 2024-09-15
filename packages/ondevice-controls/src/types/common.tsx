@@ -1,6 +1,8 @@
 import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { styled, Theme } from '@storybook/react-native-theming';
-import { Platform, TextStyle } from 'react-native';
+import { useLayout } from '@storybook/react-native-ui';
+import { forwardRef } from 'react';
+import { Platform, TextInput, TextInputProps, TextStyle } from 'react-native';
 
 export function inputStyle({
   theme,
@@ -49,7 +51,18 @@ export function inputStyle({
   };
 }
 
-export const Input = styled(BottomSheetTextInput)<{
+const TextInputWithSwitcher = forwardRef<TextInput, TextInputProps>((props, ref) => {
+  const { isMobile } = useLayout();
+
+  return isMobile ? (
+    // @ts-ignore
+    <BottomSheetTextInput ref={ref} {...props} />
+  ) : (
+    <TextInput ref={ref} {...props} />
+  );
+});
+
+export const Input = styled(TextInputWithSwitcher)<{
   focused?: boolean;
   isTextInput?: boolean;
   hasError?: boolean;

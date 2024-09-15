@@ -33,6 +33,7 @@
     "@storybook/addon-controls": "^8.3.0",
     "@storybook/core": "^8.3.0",
     "@storybook/react-native-theming": "^8.3.0-alpha.1",
+    "@storybook/react-native-ui": "^8.3.0-alpha.1",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
     "react-native-modal-datetime-picker": "^14.0.0",

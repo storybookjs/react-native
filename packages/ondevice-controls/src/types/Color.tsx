@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Modal,
   View,
@@ -7,7 +7,7 @@ import {
   Platform,
   Dimensions,
 } from 'react-native';
-import { styled } from '@storybook/react-native-theming';
+import { styled, useTheme } from '@storybook/react-native-theming';
 import { ColorPicker, fromHsv, HsvColor } from '../components/color-picker';
 
 export interface ColorProps {
@@ -35,17 +35,6 @@ const Touchable = styled.TouchableOpacity<{ color: string }>(({ color }) => ({
   backgroundColor: color,
 }));
 
-const WebInput = styled('input' as any)(({ theme }) => ({
-  width: 40,
-  height: 40,
-  borderWidth: 1,
-  borderColor: theme.appBorderColor,
-  borderRadius: 6,
-  paddingVertical: 2,
-  paddingHorizontal: 2,
-  backgroundColor: theme.background.content,
-}));
-
 const ButtonTouchable = styled.TouchableOpacity<{ primary?: boolean }>(({ theme, primary }) => {
   return {
     backgroundColor: primary ? theme.color.secondary : theme.button.background,
@@ -70,6 +59,7 @@ const ButtonText = styled.Text<{ primary?: boolean }>(({ theme, primary }) => {
 const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [currentColor, setCurrentColor] = useState<HsvColor | null>(null);
+  const theme = useTheme();
 
   const openColorPicker = () => {
     setDisplayColorPicker(true);
@@ -85,7 +75,20 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
 
   if (Platform.OS === 'web') {
     return (
-      <WebInput type="color" value={arg.value} onChange={(event) => onChange(event.target.value)} />
+      <input
+        type="color"
+        value={arg.value}
+        onChange={(event) => onChange(event.target.value)}
+        style={{
+          width: 40,
+          height: 40,
+          borderWidth: 1,
+          borderColor: theme.appBorderColor,
+          borderRadius: 6,
+          padding: 2,
+          backgroundColor: theme.background.content,
+        }}
+      />
     );
   }
 

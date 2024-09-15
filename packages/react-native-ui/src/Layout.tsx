@@ -1,9 +1,9 @@
 import { SET_CURRENT_STORY } from '@storybook/core/core-events';
 import { addons } from '@storybook/core/manager-api';
-import { styled, useTheme } from '@storybook/react-native-theming';
 import { type API_IndexHash, type Args, type StoryContext } from '@storybook/core/types';
+import { styled, useTheme } from '@storybook/react-native-theming';
 import { ReactNode, useRef, useState } from 'react';
-import { Platform, Text, View } from 'react-native';
+import { Platform, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { IconButton } from './IconButton';
 import { Sidebar } from './Sidebar';
@@ -12,8 +12,9 @@ import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { MenuIcon } from './icon/MenuIcon';
 
 import type { ReactRenderer } from '@storybook/react';
+import { useLayout } from './LayoutProvider';
+import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
-import { MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 
 export const Layout = ({
   storyHash,
@@ -30,10 +31,71 @@ export const Layout = ({
   const [drawerOpen, setDrawerOpen] = useState(false);
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
   const insets = useSafeAreaInsets();
+  const { isDesktop } = useLayout();
+
+  if (isDesktop) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          paddingTop: insets.top,
+          backgroundColor: theme.background.content,
+          flexDirection: 'row',
+        }}
+      >
+        <View
+          style={{
+            width: 240,
+            borderColor: theme.appBorderColor,
+            borderRightWidth: 1,
+          }}
+        >
+          <ScrollView
+            keyboardShouldPersistTaps="handled"
+            contentContainerStyle={{
+              paddingBottom: insets.bottom,
+            }}
+          >
+            <Sidebar
+              extra={[]}
+              previewInitialized
+              indexError={undefined}
+              refs={{}}
+              setSelection={({ storyId: newStoryId }) => {
+                const channel = addons.getChannel();
+
+                channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
+              }}
+              status={{}}
+              index={storyHash}
+              storyId={story?.id}
+              refId={DEFAULT_REF_ID}
+            />
+          </ScrollView>
+        </View>
+
+        <View style={{ flex: 1 }}>
+          <View style={{ flex: 1 }}>{children}</View>
+
+          <View
+            style={{
+              height: 300,
+              borderTopWidth: 1,
+              borderColor: theme.appBorderColor,
+              paddingTop: 4,
+            }}
+          >
+            <AddonsTabs storyId={story?.id} />
+          </View>
+        </View>
+      </View>
+    );
+  }
 
   return (
     <View style={{ flex: 1, paddingTop: insets.top, backgroundColor: theme.background.content }}>
       <View style={{ flex: 1 }}>{children}</View>
+
       <MobileMenuDrawer ref={mobileMenuDrawerRef} onStateChange={setDrawerOpen}>
         <Sidebar
           extra={[]}
@@ -51,6 +113,7 @@ export const Layout = ({
           refId={DEFAULT_REF_ID}
         />
       </MobileMenuDrawer>
+
       <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} onStateChange={setMenuOpen} />
       {(Platform.OS !== 'android' || (!menuOpen && !drawerOpen)) && (
         <Container style={{ marginBottom: insets.bottom }}>
@@ -93,7 +156,7 @@ const Container = styled.View(({ theme }) => ({
   alignSelf: 'flex-end',
   width: '100%',
   zIndex: 10,
-  background: theme.barBg,
+  backgroundColor: theme.barBg,
   borderTopColor: theme.appBorderColor,
   borderTopWidth: 1,
 }));

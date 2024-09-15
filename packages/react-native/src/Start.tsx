@@ -7,19 +7,20 @@ if (!URLSearchParams.get) {
   setupURLPolyfill();
 }
 
-import { toId, storyNameFromExport, isExportStory } from '@storybook/csf';
-import {
-  addons as previewAddons,
-  composeConfigs,
-  userOrAutoTitleFromSpecifier,
-  PreviewWithSelection,
-} from '@storybook/core/preview-api';
 import { addons as managerAddons } from '@storybook/core/manager-api';
+import {
+  composeConfigs,
+  addons as previewAddons,
+  PreviewWithSelection,
+  userOrAutoTitleFromSpecifier,
+} from '@storybook/core/preview-api';
+import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
 // NOTE this really should be exported from preview-api, but it's not
 import { createBrowserChannel } from '@storybook/core/channels';
-import { View } from './View';
-import type { ReactRenderer } from '@storybook/react';
 import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/core/types';
+import type { ReactRenderer } from '@storybook/react';
+import { Platform } from 'react-native';
+import { View } from './View';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
@@ -27,6 +28,12 @@ export interface ReactNativeOptions {
    * Note that this is for future and play functions are not yet fully supported on native.
    */
   playFn?: boolean;
+}
+
+// Note this is a workaround for setImmediate not being defined
+if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
+  // @ts-ignore
+  globalThis.setImmediate = () => {};
 }
 
 export function prepareStories({

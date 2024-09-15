@@ -207,7 +207,7 @@ export const SearchResults: FC<{
     <ResultsList>
       {results.length > 0 && !query && (
         <RecentlyOpenedTitle>
-          Recently opened
+          <Text>Recently opened</Text>
           <IconButton onPress={handleClearLastViewed} />
         </RecentlyOpenedTitle>
       )}
