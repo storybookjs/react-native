@@ -1,3 +1,12 @@
+// @ts-ignore
+if (!URLSearchParams.get) {
+  // We polyfill URLSearchParams for React Native since URLSearchParams.get is not implemented yet is used in storybook
+  // with expo this would never run because its already polyfilled
+  const { setupURLPolyfill } = require('react-native-url-polyfill');
+
+  setupURLPolyfill();
+}
+
 import { toId, storyNameFromExport, isExportStory } from '@storybook/csf';
 import {
   addons as previewAddons,
