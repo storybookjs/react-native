@@ -1,9 +1,7 @@
 const path = require('path');
-const fs = require('fs');
+
 const { generate } = require('../scripts/generate');
 const { WebSocketServer } = require('ws');
-
-let alreadyReplaced = false;
 
 module.exports = (config, { configPath, enabled, websockets }) => {
   if (!enabled) {
@@ -57,20 +55,6 @@ module.exports = (config, { configPath, enabled, websockets }) => {
           return {
             type: 'empty',
           };
-        }
-
-        // workaround for unsupported regex
-        if (defaultResolveResult?.filePath?.includes?.('@storybook/core/dist/docs-tools/index')) {
-          if (!alreadyReplaced) {
-            const filepath = path.resolve(defaultResolveResult?.filePath);
-
-            const input = fs.readFileSync(filepath, 'utf-8');
-
-            const output = input.replace(/new RegExp\(([^)]+).*, "u"\)/g, 'new RegExp("")');
-
-            fs.writeFileSync(filepath, output);
-            alreadyReplaced = true;
-          }
         }
 
         return defaultResolveResult;

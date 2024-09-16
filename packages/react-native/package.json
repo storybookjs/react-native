@@ -39,10 +39,10 @@
     "test:ci": "jest"
   },
   "dependencies": {
-    "@storybook/core": "^8.3.0",
+    "@storybook/core": "^8.3.1",
     "@storybook/csf": "^0.1.1",
     "@storybook/global": "^5.0.0",
-    "@storybook/react": "^8.3.0",
+    "@storybook/react": "^8.3.1",
     "@storybook/react-native-theming": "^8.3.0-alpha.1",
     "@storybook/react-native-ui": "^8.3.0-alpha.1",
     "chokidar": "^3.5.1",

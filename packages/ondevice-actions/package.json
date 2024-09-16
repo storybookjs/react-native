@@ -27,8 +27,8 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^8.3.0",
-    "@storybook/core": "^8.3.0",
+    "@storybook/addon-actions": "^8.3.1",
+    "@storybook/core": "^8.3.1",
     "@storybook/global": "^5.0.0",
     "fast-deep-equal": "^2.0.1"
   },
