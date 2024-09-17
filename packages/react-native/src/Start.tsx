@@ -1,5 +1,7 @@
+import { Platform } from 'react-native';
+
 // @ts-ignore
-if (!URLSearchParams.get) {
+if (!URLSearchParams.get && Platform.OS !== 'web') {
   // We polyfill URLSearchParams for React Native since URLSearchParams.get is not implemented yet is used in storybook
   // with expo this would never run because its already polyfilled
   const { setupURLPolyfill } = require('react-native-url-polyfill');
@@ -19,7 +21,6 @@ import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
 import { createBrowserChannel } from '@storybook/core/channels';
 import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/core/types';
 import type { ReactRenderer } from '@storybook/react';
-import { Platform } from 'react-native';
 import { View } from './View';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
