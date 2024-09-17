@@ -4513,6 +4513,7 @@ __metadata:
     react-native-swipe-gestures: "npm:^1.0.5"
     react-native-url-polyfill: "npm:^2.0.0"
     react-test-renderer: "npm:18.2.0"
+    setimmediate: "npm:^1.0.5"
     tsup: "npm:^7.2.0"
     type-fest: "npm:~2.19"
     typescript: "npm:~5.3.3"

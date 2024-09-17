@@ -40,8 +40,7 @@ export interface ReactNativeOptions {
 
 // Note this is a workaround for setImmediate not being defined
 if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
-  // @ts-ignore
-  globalThis.setImmediate = () => {};
+  require('setimmediate');
 }
 
 export function prepareStories({
