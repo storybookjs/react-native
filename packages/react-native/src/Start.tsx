@@ -1,12 +1,19 @@
 import { Platform } from 'react-native';
 
 // @ts-ignore
-if (!URLSearchParams.get && Platform.OS !== 'web') {
+if (Platform.OS !== 'web') {
   // We polyfill URLSearchParams for React Native since URLSearchParams.get is not implemented yet is used in storybook
   // with expo this would never run because its already polyfilled
-  const { setupURLPolyfill } = require('react-native-url-polyfill');
+  try {
+    let params = new URLSearchParams({ test: '1' });
 
-  setupURLPolyfill();
+    // the base react native url implementation throws an error when trying to access this function
+    params.get('test');
+  } catch {
+    const { setupURLPolyfill } = require('react-native-url-polyfill');
+
+    setupURLPolyfill();
+  }
 }
 
 import { addons as managerAddons } from '@storybook/core/manager-api';
