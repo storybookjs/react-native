@@ -8,6 +8,8 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
   enableWebsockets: true,
+  // host: '192.x.x.x',
+  // port: 7007,
 
   // initialSelection: { kind: 'TextInput', name: 'Basic' },
   // isUIHidden: true,

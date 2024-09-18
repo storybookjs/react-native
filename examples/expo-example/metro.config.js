@@ -21,6 +21,7 @@ module.exports = withStorybook(defaultConfig, {
   configPath: path.resolve(__dirname, './.storybook'),
   websockets: {
     port: 7007,
+    // host: '192.x.x.x',
     host: 'localhost',
   },
 });
