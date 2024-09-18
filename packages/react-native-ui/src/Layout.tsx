@@ -33,6 +33,10 @@ export const Layout = ({
   const insets = useSafeAreaInsets();
   const { isDesktop } = useLayout();
 
+  const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
+
+  const [desktopAddonsPanelOpen, setDesktopAddonsPanelOpen] = useState(true);
+
   if (isDesktop) {
     return (
       <View
@@ -45,33 +49,52 @@ export const Layout = ({
       >
         <View
           style={{
-            width: 240,
+            width: desktopSidebarOpen ? 240 : undefined,
+            padding: desktopSidebarOpen ? 0 : 10,
             borderColor: theme.appBorderColor,
             borderRightWidth: 1,
           }}
         >
-          <ScrollView
-            keyboardShouldPersistTaps="handled"
-            contentContainerStyle={{
-              paddingBottom: insets.bottom,
-            }}
-          >
-            <Sidebar
-              extra={[]}
-              previewInitialized
-              indexError={undefined}
-              refs={{}}
-              setSelection={({ storyId: newStoryId }) => {
-                const channel = addons.getChannel();
-
-                channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
+          {desktopSidebarOpen ? (
+            <ScrollView
+              keyboardShouldPersistTaps="handled"
+              contentContainerStyle={{
+                paddingBottom: insets.bottom,
               }}
-              status={{}}
-              index={storyHash}
-              storyId={story?.id}
-              refId={DEFAULT_REF_ID}
-            />
-          </ScrollView>
+            >
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  paddingVertical: 10,
+                  paddingLeft: 16,
+                  paddingRight: 10,
+                  justifyContent: 'space-between',
+                }}
+              >
+                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Storybook</Text>
+                <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
+              </View>
+
+              <Sidebar
+                extra={[]}
+                previewInitialized
+                indexError={undefined}
+                refs={{}}
+                setSelection={({ storyId: newStoryId }) => {
+                  const channel = addons.getChannel();
+
+                  channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
+                }}
+                status={{}}
+                index={storyHash}
+                storyId={story?.id}
+                refId={DEFAULT_REF_ID}
+              />
+            </ScrollView>
+          ) : (
+            <IconButton onPress={() => setDesktopSidebarOpen(true)} Icon={MenuIcon} />
+          )}
         </View>
 
         <View style={{ flex: 1 }}>
@@ -79,13 +102,22 @@ export const Layout = ({
 
           <View
             style={{
-              height: 300,
+              height: desktopAddonsPanelOpen ? 300 : undefined,
               borderTopWidth: 1,
               borderColor: theme.appBorderColor,
-              paddingTop: 4,
+              paddingTop: desktopAddonsPanelOpen ? 4 : 0,
+              padding: desktopAddonsPanelOpen ? 0 : 10,
             }}
           >
-            <AddonsTabs storyId={story?.id} />
+            {desktopAddonsPanelOpen ? (
+              <AddonsTabs storyId={story?.id} onClose={() => setDesktopAddonsPanelOpen(false)} />
+            ) : (
+              <IconButton
+                style={{ marginLeft: 'auto' }}
+                onPress={() => setDesktopAddonsPanelOpen(true)}
+                Icon={BottomBarToggleIcon}
+              />
+            )}
           </View>
         </View>
       </View>

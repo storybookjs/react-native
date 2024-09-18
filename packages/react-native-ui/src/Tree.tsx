@@ -9,7 +9,6 @@ import { styled } from '@storybook/react-native-theming';
 import React, { useCallback, useMemo, useRef } from 'react';
 import { View } from 'react-native';
 import { IconButton } from './IconButton';
-import { useLayout } from './LayoutProvider';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
 import { CollapseAllIcon } from './icon/CollapseAllIcon';
 import { CollapseIcon } from './icon/CollapseIcon';
@@ -53,8 +52,6 @@ export const Node = React.memo<NodeProps>(function Node({
   setExpanded,
   onSelectStoryId,
 }) {
-  const { isDesktop } = useLayout();
-
   if (!isDisplayed) {
     return null;
   }
@@ -127,7 +124,6 @@ export const Node = React.memo<NodeProps>(function Node({
         onPress={(event) => {
           event.preventDefault();
           setExpanded({ ids: [item.id], value: !isExpanded });
-          if (item.type === 'component' && !isExpanded && isDesktop) onSelectStoryId(item.id);
         }}
       >
         {(item.renderLabel as (i: typeof item) => React.ReactNode)?.(item) || item.name}
