@@ -72,7 +72,10 @@ export const Layout = ({
                   justifyContent: 'space-between',
                 }}
               >
-                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Storybook</Text>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: theme.color.defaultText }}>
+                  Storybook
+                </Text>
+
                 <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
               </View>
 
