@@ -12,9 +12,7 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 
 If you want to help out or are just curious then check out the [project board](https://github.com/orgs/storybookjs/projects/12) to see the open issues.
 
-![picture of storybook](https://user-images.githubusercontent.com/3481514/145904252-92e3dc1e-591f-410f-88a1-b4250f4ba6f2.png)
-
-_Pictured is from the template mentioned in [getting started](#getting-started)_
+![picture of storybook](https://github.com/user-attachments/assets/3162c051-e6bf-4d39-8ae2-da060e1f8b78)
 
 ## Table of contents
 
