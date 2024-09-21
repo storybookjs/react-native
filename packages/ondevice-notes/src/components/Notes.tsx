@@ -1,6 +1,6 @@
 import { SET_CURRENT_STORY } from '@storybook/core-events';
 import { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Appearance, StyleSheet, View } from 'react-native';
 import Markdown from 'react-native-markdown-display';
 
 import { RNAddonApi, StoryFromId } from '../register';
@@ -45,12 +45,13 @@ export const Notes = ({ active, api }: NotesProps) => {
 
   const textAfterFormatted: string = text ? text.trim() : '';
 
+  const markdownStyles = Appearance.getColorScheme() === "dark" ? darkModeMarkdownStyles : {};
   return (
     <View style={styles.container}>
       {textAfterFormatted && (
         <ErrorBoundary>
           {/* @ts-ignore has the wrong types */}
-          <Markdown>{textAfterFormatted}</Markdown>
+          <Markdown style={markdownStyles}>{textAfterFormatted}</Markdown>
         </ErrorBoundary>
       )}
     </View>
@@ -60,3 +61,24 @@ export const Notes = ({ active, api }: NotesProps) => {
 const styles = StyleSheet.create({
   container: { flex: 1 },
 });
+
+const darkModeMarkdownStyles = {
+  body: {
+    backgroundColor: 'black',
+  },
+  hr: {
+    backgroundColor: 'white',
+  },
+  blockquote: {
+    borderColor: 'white',
+  },
+  table: {
+    borderColor: 'white',
+  },
+  tr: {
+    borderColor: 'white',
+  },
+  blocklink: {
+    borderColor: 'white',
+  },
+};
