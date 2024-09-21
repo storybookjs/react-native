@@ -48,7 +48,7 @@ export const Notes = ({ active, api }: NotesProps) => {
   const textAfterFormatted: string = text ? text.trim() : '';
 
   const themedMarkdownStyles = useMemo(
-    ()=>({
+    () => ({
       body: {
         color: theme.color.defaultText,
       },
