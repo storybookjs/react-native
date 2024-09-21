@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
 
 const darkModeMarkdownStyles = {
   body: {
-    backgroundColor: 'black',
+    color: 'white',
   },
   hr: {
     backgroundColor: 'white',
