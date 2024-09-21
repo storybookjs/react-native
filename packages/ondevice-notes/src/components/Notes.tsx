@@ -1,5 +1,5 @@
 import { SET_CURRENT_STORY } from '@storybook/core/core-events';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Markdown from 'react-native-markdown-display';
 
@@ -47,12 +47,34 @@ export const Notes = ({ active, api }: NotesProps) => {
 
   const textAfterFormatted: string = text ? text.trim() : '';
 
+  const themedMarkdownStyles = useMemo(
+    ()=>({
+      body: {
+        color: theme.color.defaultText,
+      },
+      hr: {
+        backgroundColor: theme.color.defaultText,
+      },
+      blockquote: {
+        borderColor: theme.color.defaultText,
+      },
+      table: {
+        borderColor: theme.color.defaultText,
+      },
+      tr: {
+        borderColor: theme.color.defaultText,
+      },
+      blocklink: {
+        borderColor: theme.color.defaultText,
+      }
+    }),
+    [theme.color.defaultText]);
   return (
     <View style={styles.container}>
       {textAfterFormatted && (
         <ErrorBoundary>
           {/* @ts-ignore has the wrong types */}
-          <Markdown style={{ body: { color: theme.color.defaultText } }}>
+          <Markdown style={themedMarkdownStyles}>
             {textAfterFormatted}
           </Markdown>
         </ErrorBoundary>
@@ -64,3 +86,4 @@ export const Notes = ({ active, api }: NotesProps) => {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 10 },
 });
+
