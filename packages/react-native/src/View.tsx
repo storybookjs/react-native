@@ -55,7 +55,6 @@ type DeepPartial<T> = T extends object
 
 export type Params = {
   onDeviceUI?: boolean;
-  // resetStorybook?: boolean; // TODO: Do we need this?
   enableWebsockets?: boolean;
   query?: string;
   host?: string;
@@ -63,11 +62,6 @@ export type Params = {
   secured?: boolean;
   initialSelection?: InitialSelection;
   shouldPersistSelection?: boolean;
-  tabOpen?: number;
-  isUIHidden?: boolean;
-  isSplitPanelVisible?: boolean;
-  shouldDisableKeyboardAvoidingView?: boolean;
-  keyboardAvoidingViewVerticalOffset?: number;
   theme: DeepPartial<Theme>;
   storage?: Storage;
 };

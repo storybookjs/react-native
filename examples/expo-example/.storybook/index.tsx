@@ -12,21 +12,8 @@ const StorybookUIRoot = view.getStorybookUI({
   // port: 7007,
 
   // initialSelection: { kind: 'TextInput', name: 'Basic' },
-  // isUIHidden: true,
-  // isSplitPanelVisible: true,
   // onDeviceUI: false,
   // host: '192.168.1.69',
-  // theme: {
-  //   storyList: {
-  //     search: {
-  //       borderColor: 'red',
-  //       borderWidth: 3,
-  //     },
-  //   },
-  //   tabs: {
-  //     activeBackgroundColor: 'yellow',
-  //   },
-  // },
 });
 
 export default StorybookUIRoot;

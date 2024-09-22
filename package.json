@@ -1,6 +1,6 @@
 {
   "name": "@storybook/root",
-  "version": "7.6.10",
+  "version": "8.3.1",
   "private": true,
   "description": "Storybook for React Native is an open source tool for developing UI components in isolation. It makes building stunning UIs organized and efficient.",
   "keywords": [
