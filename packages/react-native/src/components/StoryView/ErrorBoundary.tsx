@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Text, View } from 'react-native';
+import { View, Text } from 'react-native';
 
 export class ErrorBoundary extends React.Component<
   { children: ReactNode | ReactNode[]; onError: (error: Error, stack: string) => void },

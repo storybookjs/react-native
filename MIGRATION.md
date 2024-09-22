@@ -204,14 +204,14 @@ You can now also update main.js to main.ts and use the StorybookConfig type. Thi
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
-	stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-	addons: [
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  addons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
   ],
-}
+};
 
 export default main;
 ```
@@ -237,7 +237,7 @@ To make it work you still need babel-plugin-react-docgen-typescript though.
 ```diff
 -import { extractArgTypes } from "@storybook/react/dist/modern/client/docs/extractArgTypes";
 -import { addArgTypesEnhancer, addParameters } from "@storybook/react-native";
--import { enhanceArgTypes } from "@storybook/docs-tools";
+-import { enhanceArgTypes } from "@storybook/core/docs-tools";
 
 -addArgTypesEnhancer(enhanceArgTypes);
 -addParameters({
@@ -445,7 +445,7 @@ If you're using typescript you may notice that for v7 we've removed the types in
 To make storybook more compatible with core storybook libraries we are using some new dependencies. You will need to add these to your project.
 
 ```sh
-yarn add -D @storybook/react-native @storybook/core-common @react-native-async-storage/async-storage react-native-safe-area-context react-dom
+yarn add -D @storybook/react-native @storybook/core/common @react-native-async-storage/async-storage react-native-safe-area-context react-dom
 ```
 
 #### Controls (the new knobs)

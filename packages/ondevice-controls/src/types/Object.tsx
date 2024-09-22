@@ -1,9 +1,7 @@
-import React, { useCallback, useState } from 'react';
-import { styled } from '@storybook/react-native-theming';
+import { useCallback, useState } from 'react';
 import { ViewStyle } from 'react-native';
-
+import { Input } from './common';
 import { useResyncValue } from './useResyncValue';
-import { inputStyle } from './common';
 
 export interface ObjectProps {
   arg: {
@@ -13,11 +11,6 @@ export interface ObjectProps {
   onChange: (value: any) => void;
   isPristine: boolean;
 }
-
-const Input = styled.TextInput(({ theme }) => ({
-  ...inputStyle(theme, false),
-  minHeight: 60,
-}));
 
 const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
   const getJsonString = useCallback(() => {
@@ -29,7 +22,10 @@ const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
   }, [arg.value]);
 
   const [failed, setFailed] = useState(false);
+
   const { key, setCurrentValue } = useResyncValue(arg.value, isPristine);
+
+  const [focused, setFocused] = useState(false);
 
   const handleChange = (value) => {
     const withReplacedQuotes = value
@@ -40,18 +36,22 @@ const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
       const json = JSON.parse(withReplacedQuotes.trim());
 
       onChange(json);
+
       setCurrentValue(json);
+
       setFailed(false);
     } catch (err) {
       setFailed(true);
     }
   };
 
-  const extraStyle: ViewStyle = {};
+  const extraStyle: ViewStyle = { minHeight: 60 };
 
   if (failed) {
     extraStyle.borderWidth = 1;
+
     extraStyle.borderColor = '#fadddd';
+
     extraStyle.backgroundColor = '#fff5f5';
   }
 
@@ -65,6 +65,9 @@ const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
       multiline
       autoCapitalize="none"
       underlineColorAndroid="transparent"
+      focused={focused}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
     />
   );
 };

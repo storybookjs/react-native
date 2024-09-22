@@ -3,6 +3,7 @@ import { StorybookConfig } from '@storybook/react-native';
 const main: StorybookConfig = {
   stories: [
     '../components/**/*.stories.?(ts|tsx|js|jsx)',
+    '../../../packages/react-native-ui/**/*.stories.?(ts|tsx|js|jsx)',
     {
       directory: '../other_components',
       files: '**/*.stories.?(ts|tsx|js|jsx)',
@@ -16,11 +17,10 @@ const main: StorybookConfig = {
     // '../components/**/*.storiesof.?(ts|tsx|js|jsx)',
   ],
   addons: [
-    '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-knobs',
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
+    '@storybook/addon-ondevice-notes',
   ],
   reactNative: {
     playFn: false,

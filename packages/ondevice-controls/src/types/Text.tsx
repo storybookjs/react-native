@@ -1,7 +1,6 @@
-import React from 'react';
-import { styled } from '@storybook/react-native-theming';
+import { useState } from 'react';
 
-import { inputStyle } from './common';
+import { Input } from './common';
 import { useResyncValue } from './useResyncValue';
 
 export interface TextProps {
@@ -14,12 +13,11 @@ export interface TextProps {
   isPristine: boolean;
 }
 
-const Input = styled.TextInput(({ theme }) => ({
-  ...inputStyle(theme),
-}));
-
 const TextType = ({ arg, onChange, isPristine }: TextProps) => {
   const { setCurrentValue, key } = useResyncValue(arg.value, isPristine);
+
+  const [focused, setFocused] = useState(false);
+
   return (
     <Input
       key={key}
@@ -31,18 +29,11 @@ const TextType = ({ arg, onChange, isPristine }: TextProps) => {
       }}
       autoCapitalize="none"
       underlineColorAndroid="transparent"
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
+      focused={focused}
     />
   );
 };
-
-TextType.defaultProps = {
-  arg: {},
-  onChange: (value) => value,
-};
-
-TextType.propTypes = {};
-
-TextType.serialize = (value) => value;
-TextType.deserialize = (value) => value;
 
 export default TextType;

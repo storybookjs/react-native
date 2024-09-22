@@ -1,16 +1,34 @@
-import { toId, storyNameFromExport, isExportStory } from '@storybook/csf';
+import { Platform } from 'react-native';
+
+// @ts-ignore
+if (Platform.OS !== 'web') {
+  // We polyfill URLSearchParams for React Native since URLSearchParams.get is not implemented yet is used in storybook
+  // with expo this would never run because its already polyfilled
+  try {
+    let params = new URLSearchParams({ test: '1' });
+
+    // the base react native url implementation throws an error when trying to access this function
+    params.get('test');
+  } catch {
+    const { setupURLPolyfill } = require('react-native-url-polyfill');
+
+    setupURLPolyfill();
+  }
+}
+
+import { addons as managerAddons } from '@storybook/core/manager-api';
 import {
-  addons as previewAddons,
   composeConfigs,
+  addons as previewAddons,
+  PreviewWithSelection,
   userOrAutoTitleFromSpecifier,
-} from '@storybook/preview-api';
-import { addons as managerAddons } from '@storybook/manager-api';
+} from '@storybook/core/preview-api';
+import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
 // NOTE this really should be exported from preview-api, but it's not
-import { PreviewWithSelection } from '@storybook/preview-api/dist/preview-web';
-import { createBrowserChannel } from '@storybook/channels';
-import { View } from './View';
+import { createBrowserChannel } from '@storybook/core/channels';
+import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/core/types';
 import type { ReactRenderer } from '@storybook/react';
-import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/types';
+import { View } from './View';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
@@ -18,6 +36,11 @@ export interface ReactNativeOptions {
    * Note that this is for future and play functions are not yet fully supported on native.
    */
   playFn?: boolean;
+}
+
+// Note this is a workaround for setImmediate not being defined
+if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
+  require('setimmediate');
 }
 
 export function prepareStories({
@@ -177,7 +200,7 @@ export function start({
     // TODO what happened to this type?
   } as any;
 
-  const urlStore = {
+  const selectionStore = {
     selection: null,
     selectionSpecifier: null,
     setQueryParams: () => {},
@@ -186,23 +209,67 @@ export function start({
     },
   };
 
-  const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
+  const getProjectAnnotationsInitial = async () =>
+    composeConfigs<ReactRenderer>([
+      {
+        renderToCanvas: (context) => {
+          view._setStory(context.storyContext);
+        },
+        render: (args, context) => {
+          const { id, component: Component } = context;
+
+          if (!Component) {
+            throw new Error(
+              `Unable to render story ${id} as the component annotation is missing from the default export`
+            );
+          }
+
+          return <Component {...args} />;
+        },
+      },
+      ...annotations,
+    ]);
+
+  // const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
+  const preview = new PreviewWithSelection<ReactRenderer>(
+    async (importPath: string) => importMap[importPath],
+    getProjectAnnotationsInitial,
+    selectionStore,
+    previewView
+  );
 
   const view = new View(preview, channel);
 
   if (global) {
     global.__STORYBOOK_ADDONS_CHANNEL__ = channel;
     global.__STORYBOOK_PREVIEW__ = preview;
-    global.__STORYBOOK_STORY_STORE__ = preview.storyStore;
   }
-
-  preview.initialize({
-    importFn: async (importPath: string) => importMap[importPath],
-    getProjectAnnotations: getProjectAnnotations(view, annotations),
-    getStoryIndex: () => index as any,
-  });
 
   view._storyIndex = index;
 
+  preview.getStoryIndexFromServer = async () => view._storyIndex;
+
   return view;
+}
+
+export function updateView(
+  viewInstance: View,
+  annotations: any[],
+  normalizedStories: Array<NormalizedStoriesSpecifier & { req: any }>,
+  options?: ReactNativeOptions
+) {
+  const { importMap, index } = prepareStories({ storyEntries: normalizedStories, options });
+
+  viewInstance._preview.onStoriesChanged({
+    importFn: async (importPath: string) => importMap[importPath],
+  });
+
+  viewInstance._preview.onGetProjectAnnotationsChanged({
+    getProjectAnnotations: getProjectAnnotations(viewInstance, annotations),
+  });
+
+  viewInstance._storyIndex = index;
+  viewInstance._preview.onStoryIndexChanged().then(() => {
+    viewInstance.createPreparedStoryMapping().then(() => viewInstance._forceRerender());
+  });
 }

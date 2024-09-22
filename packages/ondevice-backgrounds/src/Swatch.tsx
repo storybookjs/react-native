@@ -6,40 +6,42 @@ interface SwatchProps {
   setBackground: (background: string) => void;
 }
 
-const PressableSwatch = styled.TouchableOpacity(({ theme }: any) => ({
-  marginBottom: theme.tokens.spacing3,
-  borderWidth: theme.inputs.swatch.borderWidth,
-  borderColor: theme.inputs.swatch.borderColor,
-  borderRadius: theme.inputs.swatch.outerBorderRadius,
-  backgroundColor: theme.inputs.swatch.backgroundColor,
-  paddingVertical: theme.inputs.swatch.paddingVertical,
-  paddingHorizontal: theme.inputs.swatch.paddingHorizontal,
+const PressableSwatch = styled.TouchableOpacity(({ theme }) => ({
+  marginBottom: 10,
+  borderWidth: 1,
+  borderColor: theme.appBorderColor,
+  borderRadius: 6,
+  backgroundColor: theme.background.content,
+  paddingVertical: 4,
+  paddingHorizontal: 4,
 }));
 
-const ColorSwatch = styled.View(({ theme, color }: any) => ({
-  height: theme.inputs.swatch.height,
+const ColorSwatch = styled.View<{ color: string }>(({ color, theme }) => ({
+  height: 40,
   width: '100%',
-  borderRadius: theme.inputs.swatch.innerBorderRadius,
+  borderRadius: 4,
   backgroundColor: color,
+  borderColor: theme.appBorderColor,
+  borderWidth: 1,
 }));
 
-const ValueContainer = styled.View(({ theme }: any) => ({
+const ValueContainer = styled.View(() => ({
   flex: 1,
   flexDirection: 'row',
   justifyContent: 'space-between',
-  padding: theme.tokens.spacing1,
+  padding: 4,
   paddingBottom: 0,
 }));
 
-const NameText = styled.Text(({ theme }: any) => ({
-  fontSize: theme.inputs.swatch.fontSize,
-  color: theme.inputs.labelTextColor,
-  fontWeight: theme.inputs.swatch.nameTextWeight,
+const NameText = styled.Text(({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  color: theme.color.defaultText,
+  fontWeight: theme.typography.weight.bold,
 }));
 
-const ValueText = styled.Text(({ theme }: any) => ({
-  fontSize: theme.inputs.swatch.fontSize,
-  color: theme.inputs.labelTextColor,
+const ValueText = styled.Text(({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  color: theme.color.defaultText,
 }));
 
 const Swatch = ({ name, value, setBackground }: SwatchProps) => (

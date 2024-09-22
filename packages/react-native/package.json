@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "7.6.20",
+  "version": "8.3.1-alpha.2",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -29,45 +29,22 @@
     "*.js",
     "*.d.ts",
     "scripts/*",
+    "metro/*",
     "template/**/*"
   ],
   "scripts": {
-    "dev": "ts-node ./buildscripts/gendtsdev.ts && tsup --watch",
+    "dev": "npx tsx buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
     "test:ci": "jest"
   },
-  "jest": {
-    "transformIgnorePatterns": [
-      "node_modules/(?!react-native|@react-native)"
-    ],
-    "modulePathIgnorePatterns": [
-      "dist/"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "preset": "react-native"
-  },
   "dependencies": {
-    "@storybook/channels": "^7.6.19",
-    "@storybook/client-logger": "^7.6.19",
-    "@storybook/core-client": "^7.6.19",
-    "@storybook/core-common": "^7.6.19",
-    "@storybook/core-events": "^7.6.19",
+    "@storybook/core": "^8.3.1",
     "@storybook/csf": "^0.1.1",
-    "@storybook/docs-tools": "^7.6.19",
     "@storybook/global": "^5.0.0",
-    "@storybook/manager-api": "^7.6.19",
-    "@storybook/preview-api": "^7.6.19",
-    "@storybook/preview-web": "^7.6.19",
-    "@storybook/react": "^7.6.19",
-    "@storybook/react-native-theming": "^7.6.20",
+    "@storybook/react": "^8.3.1",
+    "@storybook/react-native-theming": "^8.3.1-alpha.2",
+    "@storybook/react-native-ui": "^8.3.1-alpha.2",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
@@ -75,24 +52,27 @@
     "glob": "^7.1.7",
     "prettier": "^2.4.1",
     "react-native-swipe-gestures": "^1.0.5",
+    "react-native-url-polyfill": "^2.0.0",
+    "setimmediate": "^1.0.5",
     "type-fest": "~2.19",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
-    "@storybook/types": "^7.6.19",
     "@types/jest": "^29.4.3",
     "@types/react": "~18.2.79",
     "babel-jest": "^29.4.3",
     "jest": "29.7.0",
     "jotai": "^2.6.2",
     "react-test-renderer": "18.2.0",
-    "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "~5.3.3"
   },
   "peerDependencies": {
+    "@gorhom/bottom-sheet": ">=4",
     "react": "*",
     "react-native": ">=0.57.0",
+    "react-native-gesture-handler": ">=2",
     "react-native-safe-area-context": "*"
   },
   "engines": {

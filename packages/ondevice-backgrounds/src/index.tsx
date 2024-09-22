@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { makeDecorator } from '@storybook/preview-api';
-import { addons } from '@storybook/manager-api';
+import { makeDecorator } from '@storybook/core/preview-api';
+import { addons } from '@storybook/core/manager-api';
 
 import Events from './constants';
 import Container from './container';

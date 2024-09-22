@@ -1,11 +1,12 @@
-import { SET_CURRENT_STORY } from '@storybook/core-events';
-import { useEffect, useState } from 'react';
+import { SET_CURRENT_STORY } from '@storybook/core/core-events';
+import { useEffect, useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Markdown from 'react-native-markdown-display';
 
 import { RNAddonApi, StoryFromId } from '../register';
 import { ErrorBoundary } from '../ErrorBoundary';
-import { addons } from '@storybook/manager-api';
+import { addons } from '@storybook/core/manager-api';
+import { useTheme } from '@storybook/react-native-theming';
 
 export const PARAM_KEY = 'notes';
 
@@ -15,6 +16,7 @@ interface NotesProps {
 }
 
 export const Notes = ({ active, api }: NotesProps) => {
+  const theme = useTheme();
   const [story, setStory] = useState<StoryFromId | null>();
 
   useEffect(() => {
@@ -34,6 +36,43 @@ export const Notes = ({ active, api }: NotesProps) => {
     return () => channel.off(SET_CURRENT_STORY, handleSetCurrentStory);
   }, [api, active]);
 
+  const themedMarkdownStyles = useMemo(
+    () => ({
+      body: {
+        color: theme.color.defaultText,
+      },
+      hr: {
+        backgroundColor: theme.color.defaultText,
+      },
+      table: {
+        borderColor: theme.color.defaultText,
+      },
+      tr: {
+        borderColor: theme.color.defaultText,
+      },
+      blocklink: {
+        borderColor: theme.color.defaultText,
+      },
+      code_inline: {
+        color: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+      code_block: {
+        color: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+      fence: {
+        color: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+      blockquote: {
+        borderColor: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+    }),
+    [theme.color.defaultText, theme.background.app]
+  );
+
   if (!active || !story) {
     return null;
   }
@@ -50,7 +89,7 @@ export const Notes = ({ active, api }: NotesProps) => {
       {textAfterFormatted && (
         <ErrorBoundary>
           {/* @ts-ignore has the wrong types */}
-          <Markdown>{textAfterFormatted}</Markdown>
+          <Markdown style={themedMarkdownStyles}>{textAfterFormatted}</Markdown>
         </ErrorBoundary>
       )}
     </View>
@@ -58,5 +97,5 @@ export const Notes = ({ active, api }: NotesProps) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, padding: 10 },
 });

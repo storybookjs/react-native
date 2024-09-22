@@ -1,22 +1,26 @@
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { Channel, WebsocketTransport } from '@storybook/core/channels';
+import Events from '@storybook/core/core-events';
 import { StoryContext, toId } from '@storybook/csf';
-import { addons as managerAddons } from '@storybook/manager-api';
-import { addons as previewAddons } from '@storybook/preview-api';
-import type { PreviewWithSelection } from '@storybook/preview-web';
+import { addons as managerAddons } from '@storybook/core/manager-api';
+import { PreviewWithSelection, addons as previewAddons } from '@storybook/core/preview-api';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
-import type { PreparedStory, StoryId, StoryIndex } from '@storybook/types';
-import { useEffect, useMemo, useReducer, useState } from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import OnDeviceUI from './components/OnDeviceUI';
-import StoryView from './components/StoryView';
-import { syncExternalUI, useSetStoryContext } from './hooks';
-// TODO check this
-import { createWebSocketChannel, type Channel } from '@storybook/channels';
-import Events from '@storybook/core-events';
+import {
+  Layout,
+  LayoutProvider,
+  transformStoryIndexToStoriesHash,
+} from '@storybook/react-native-ui';
+import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybook/core/types';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
-import { useColorScheme, ActivityIndicator, View as RNView, StyleSheet } from 'react-native';
+import { useEffect, useMemo, useReducer, useState } from 'react';
+import { ActivityIndicator, View as RNView, StyleSheet, useColorScheme } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import StoryView from './components/StoryView';
 import getHost from './rn-host-detect';
+import { useSetStoryContext, useStoryContext } from './hooks';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
@@ -134,18 +138,26 @@ export class View {
 
     const url = `${websocketType}://${host}${port}/${query}`;
 
-    return createWebSocketChannel({
-      url,
+    const channel = new Channel({
+      transport: new WebsocketTransport({
+        url,
+        onError: (e) => {
+          console.log(`WebsocketTransport error ${JSON.stringify(e)}`);
+        },
+      }),
       async: true,
-      onError: async () => {},
     });
+
+    return channel;
   };
 
   createPreparedStoryMapping = async () => {
-    await Promise.all(
-      Object.keys(this._storyIndex.entries).map(async (storyId: StoryId) => {
-        this._idToPrepared[storyId] = await this._preview.storyStore.loadStory({ storyId });
-      })
+    await this._preview.ready().then(() =>
+      Promise.all(
+        Object.keys(this._storyIndex.entries).map(async (storyId: StoryId) => {
+          this._idToPrepared[storyId] = await this._preview.loadStory({ storyId });
+        })
+      )
     );
   };
 
@@ -170,7 +182,7 @@ export class View {
       this._preview.channel = channel;
       this._preview.setupListeners();
       channel.emit(Events.CHANNEL_CREATED);
-      this._preview.initializeWithStoryIndex(this._storyIndex);
+      this._preview.ready().then(() => this._preview.onStoryIndexChanged());
     }
 
     managerAddons.loadAddons({
@@ -179,10 +191,8 @@ export class View {
           if (!this._ready) {
             throw new Error('Storybook is not ready yet');
           }
-
-          return this._preview.storyStore.getStoryContext(this._idToPrepared[id]);
+          return this._preview.getStoryContext(this._idToPrepared[id]);
         },
-
         getSelection: () => {
           return this._preview.currentSelection;
         },
@@ -193,16 +203,11 @@ export class View {
     // eslint-disable-next-line consistent-this
     const self = this;
 
-    // Sync the Storybook parameters (external) with app UI state (internal), to initialise them.
-    syncExternalUI({
-      isUIVisible: params.isUIHidden !== undefined ? !params.isUIHidden : undefined,
-      isSplitPanelVisible: params.isSplitPanelVisible,
-    });
-
     return () => {
       const setContext = useSetStoryContext();
+      const story = useStoryContext();
       const colorScheme = useColorScheme();
-      const [, forceUpdate] = useReducer((x) => x + 1, 0);
+      const [update, forceUpdate] = useReducer((x) => x + 1, 0);
       const [ready, setReady] = useState(false);
 
       const appliedTheme = useMemo(
@@ -222,7 +227,6 @@ export class View {
           setContext(newStory);
 
           if (shouldPersistSelection && !storage) {
-            // TODO: improve this warning to link to docs
             console.warn(dedent`Please set storage in getStorybookUI like this:
               const StorybookUIRoot = view.getStorybookUI({
                 storage: {
@@ -242,14 +246,32 @@ export class View {
 
         self._forceRerender = () => forceUpdate();
 
-        initialStory.then((story) => {
-          self._preview.selectionStore.selectionSpecifier = story;
+        initialStory.then((st) => {
+          self._preview.selectionStore.selectionSpecifier = st;
 
           self._preview.selectSpecifiedStory();
         });
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
+
+      const storyHash: API_IndexHash = useMemo(() => {
+        if (!ready) {
+          return {};
+        }
+
+        return transformStoryIndexToStoriesHash(this._storyIndex, {
+          docsOptions: { docsMode: false, autodocs: false, defaultName: '' },
+          filters: {},
+          status: {},
+          provider: {
+            handleAPI: () => ({}),
+            getConfig: () => ({}),
+          },
+        });
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [ready, update]);
 
       if (!ready) {
         return (
@@ -267,16 +289,20 @@ export class View {
 
       if (onDeviceUI) {
         return (
-          <SafeAreaProvider>
-            <ThemeProvider theme={appliedTheme as Theme}>
-              <OnDeviceUI
-                storyIndex={self._storyIndex}
-                tabOpen={params.tabOpen}
-                shouldDisableKeyboardAvoidingView={params.shouldDisableKeyboardAvoidingView}
-                keyboardAvoidingViewVerticalOffset={params.keyboardAvoidingViewVerticalOffset}
-              />
-            </ThemeProvider>
-          </SafeAreaProvider>
+          <ThemeProvider theme={appliedTheme as Theme}>
+            <SafeAreaProvider>
+              <GestureHandlerRootView style={{ flex: 1 }}>
+                <BottomSheetModalProvider>
+                  {/* @ts-ignore something weird with story type */}
+                  <LayoutProvider>
+                    <Layout storyHash={storyHash} story={story}>
+                      <StoryView />
+                    </Layout>
+                  </LayoutProvider>
+                </BottomSheetModalProvider>
+              </GestureHandlerRootView>
+            </SafeAreaProvider>
+          </ThemeProvider>
         );
       } else {
         return <StoryView />;

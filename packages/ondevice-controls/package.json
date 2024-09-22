@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-controls",
-  "version": "7.6.20",
+  "version": "8.3.1-alpha.2",
   "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
@@ -30,19 +30,22 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
-    "@storybook/addon-controls": "^7.6.19",
-    "@storybook/channels": "^7.6.19",
-    "@storybook/client-logger": "^7.6.19",
-    "@storybook/core-events": "^7.6.19",
-    "@storybook/manager-api": "^7.6.19",
-    "@storybook/react-native-theming": "^7.6.20",
+    "@storybook/addon-controls": "^8.3.1",
+    "@storybook/core": "^8.3.1",
+    "@storybook/react-native-theming": "^8.3.1-alpha.2",
+    "@storybook/react-native-ui": "^8.3.1-alpha.2",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
     "react-native-modal-datetime-picker": "^14.0.0",
     "react-native-modal-selector": "^2.1.1",
     "tinycolor2": "^1.4.1"
   },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "typescript": "~5.3.3"
+  },
   "peerDependencies": {
+    "@gorhom/bottom-sheet": ">=4",
     "@react-native-community/datetimepicker": "*",
     "@react-native-community/slider": "*",
     "react": "*",

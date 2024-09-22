@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Modal,
   View,
@@ -7,7 +7,7 @@ import {
   Platform,
   Dimensions,
 } from 'react-native';
-import { styled } from '@storybook/react-native-theming';
+import { styled, useTheme } from '@storybook/react-native-theming';
 import { ColorPicker, fromHsv, HsvColor } from '../components/color-picker';
 
 export interface ColorProps {
@@ -19,60 +19,47 @@ export interface ColorProps {
 }
 
 const TouchableContainer = styled.View(({ theme }) => ({
-  width: theme.inputs.swatch.height,
-  height: theme.inputs.swatch.height,
-  borderWidth: theme.inputs.swatch.borderWidth,
-  borderColor: theme.inputs.swatch.borderColor,
-  borderRadius: theme.inputs.swatch.outerBorderRadius,
-  paddingVertical: theme.inputs.swatch.paddingVertical,
-  paddingHorizontal: theme.inputs.swatch.paddingHorizontal,
-  backgroundColor: theme.inputs.swatch.backgroundColor,
+  width: 40,
+  height: 40,
+  borderWidth: 1,
+  borderColor: theme.appBorderColor,
+  borderRadius: 6,
+  padding: 3,
+  backgroundColor: theme.background.content,
 }));
 
-const Touchable = styled.TouchableOpacity<{ color: string }>(({ theme, color }) => ({
+const Touchable = styled.TouchableOpacity<{ color: string }>(({ color }) => ({
   width: '100%',
   height: '100%',
-  borderRadius: theme.inputs.swatch.innerBorderRadius,
+  borderRadius: 4,
   backgroundColor: color,
 }));
 
-const WebInput = styled('input' as any)(({ theme }) => ({
-  width: theme.inputs.swatch.height,
-  height: theme.inputs.swatch.height,
-  borderWidth: theme.inputs.swatch.borderWidth,
-  borderColor: theme.inputs.swatch.borderColor,
-  borderRadius: theme.inputs.swatch.outerBorderRadius,
-  paddingVertical: theme.inputs.swatch.paddingVertical,
-  paddingHorizontal: theme.inputs.swatch.paddingHorizontal,
-  backgroundColor: theme.inputs.swatch.backgroundColor,
-}));
-
 const ButtonTouchable = styled.TouchableOpacity<{ primary?: boolean }>(({ theme, primary }) => {
-  const buttonTheme = primary ? theme.button.primary : theme.button.secondary;
   return {
-    backgroundColor: buttonTheme.backgroundColor,
-    borderRadius: buttonTheme.borderRadius,
-    borderWidth: buttonTheme.borderWidth,
-    borderColor: buttonTheme.borderColor,
-    paddingVertical: theme.button.paddingVertical,
-    paddingHorizontal: theme.button.paddingHorizontal,
+    backgroundColor: primary ? theme.color.secondary : theme.button.background,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: primary ? theme.color.secondary : theme.button.border,
+    paddingVertical: 6,
+    paddingHorizontal: 20,
     justifyContent: 'center',
     alignItems: 'center',
   };
 });
 
 const ButtonText = styled.Text<{ primary?: boolean }>(({ theme, primary }) => {
-  const buttonTheme = primary ? theme.button.primary : theme.button.secondary;
   return {
-    color: buttonTheme.textColor,
-    fontSize: theme.button.fontSize,
-    fontWeight: theme.button.fontWeight,
+    color: primary ? theme.color.inverseText : theme.color.defaultText,
+    fontSize: theme.typography.size.s2,
+    fontWeight: theme.typography.weight.bold,
   };
 });
 
 const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [currentColor, setCurrentColor] = useState<HsvColor | null>(null);
+  const theme = useTheme();
 
   const openColorPicker = () => {
     setDisplayColorPicker(true);
@@ -88,7 +75,20 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
 
   if (Platform.OS === 'web') {
     return (
-      <WebInput type="color" value={arg.value} onChange={(event) => onChange(event.target.value)} />
+      <input
+        type="color"
+        value={arg.value}
+        onChange={(event) => onChange(event.target.value)}
+        style={{
+          width: 40,
+          height: 40,
+          borderWidth: 1,
+          borderColor: theme.appBorderColor,
+          borderRadius: 6,
+          padding: 2,
+          backgroundColor: theme.background.content,
+        }}
+      />
     );
   }
 
@@ -112,11 +112,12 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
               onColorSelected={onChangeColor}
               onColorChange={(color: HsvColor) => setCurrentColor(color)}
               defaultColor={arg.value}
+              oldColor={arg.value}
               style={styles.picker}
             />
             <View style={styles.actionContainer}>
               <ButtonTouchable onPress={closeColorPicker}>
-                <ButtonText>CANCEL</ButtonText>
+                <ButtonText>Cancel</ButtonText>
               </ButtonTouchable>
               <View style={{ width: 12 }} />
               <ButtonTouchable
@@ -126,7 +127,7 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
                   closeColorPicker();
                 }}
               >
-                <ButtonText primary>SELECT</ButtonText>
+                <ButtonText primary>Select</ButtonText>
               </ButtonTouchable>
             </View>
           </InnerContainer>
@@ -137,16 +138,20 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
 };
 
 const InnerContainer = styled.View(({ theme }) => ({
-  backgroundColor: theme.panel.backgroundColor,
-  borderWidth: theme.panel.borderWidth,
-  borderColor: theme.panel.borderColor,
-  borderRadius: theme.tokens.borderRadius.large,
+  backgroundColor: theme.background.content,
+  borderWidth: 1,
+  borderColor: theme.appBorderColor,
+  borderRadius: 10,
   margin: 24,
-  padding: theme.tokens.spacing3,
+  padding: 10,
   maxWidth: 350,
   height: 400,
   maxHeight: Dimensions.get('screen').height - 24 * 2,
-  ...theme.tokens.elevation.floating,
+  shadowColor: '#000000',
+  shadowOpacity: 0.2,
+  shadowOffset: { width: 0, height: 0 },
+  shadowRadius: 16,
+  elevation: 10,
 }));
 
 const styles = StyleSheet.create({

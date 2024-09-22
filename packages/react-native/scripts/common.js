@@ -1,4 +1,4 @@
-const { globToRegexp, serverRequire } = require('@storybook/core-common');
+const { globToRegexp, serverRequire } = require('@storybook/core/common');
 const path = require('path');
 const fs = require('fs');
 

@@ -1,12 +1,18 @@
-import { parameters as reactParameters } from '@storybook/react/dist/entry-preview-docs';
-import { enhanceArgTypes } from '@storybook/docs-tools';
+import {
+  // @ts-ignore this exists but for some reason typescript doesn't want to believe it
+  parameters as reactParameters,
+  // @ts-ignore this exists but for some reason typescript doesn't want to believe it
+  argTypesEnhancers,
+} from '@storybook/react/dist/entry-preview-docs.mjs';
 import { type Preview } from '@storybook/react';
 
-export default {
-  argTypesEnhancers: [enhanceArgTypes],
+const preview: Preview = {
+  argTypesEnhancers,
   parameters: {
     docs: {
       extractArgTypes: reactParameters.docs.extractArgTypes,
     },
   },
-} satisfies Preview;
+};
+
+export default preview;

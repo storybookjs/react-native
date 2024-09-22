@@ -1,4 +1,4 @@
-import { AddonStore, type API } from '@storybook/manager-api';
+import { AddonStore, type API } from '@storybook/core/manager-api';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Swatch from './Swatch';
@@ -78,7 +78,7 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
     channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
   };
   return (
-    <View>
+    <View style={{ padding: 10 }}>
       {backgrounds ? (
         backgrounds.values.map(({ value, name }) => (
           <View key={`${name} ${value}`}>
