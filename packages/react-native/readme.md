@@ -10,9 +10,7 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 
 > NOTE: `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
 
-If you want to help out or are just curious then check out the [project board](https://github.com/orgs/storybookjs/projects/12) to see the open issues.
-
-![picture of storybook](https://user-images.githubusercontent.com/3481514/145904252-92e3dc1e-591f-410f-88a1-b4250f4ba6f2.png)
+![picture of storybook](https://github.com/user-attachments/assets/3162c051-e6bf-4d39-8ae2-da060e1f8b78)
 
 _Pictured is from the template mentioned in [getting started](#getting-started)_
 
@@ -59,6 +57,8 @@ The only thing left to do is return Storybook's UI in your app entry point (such
 export { default } from './.storybook';
 ```
 
+Then wrap your metro config with the withStorybook function as seen [below](#additional-steps-update-your-metro-config)
+
 If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
 If you want to add everything yourself check out the the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
@@ -75,7 +75,7 @@ First create metro config file if you don't have it yet.
 npx expo customize metro.config.js
 ```
 
-Then set `transformer.unstable_allowRequireContext` to true and add the generate call here.
+Then wrap your config in the withStorybook function as seen below.
 
 ```js
 // metro.config.js
@@ -124,7 +124,7 @@ const finalConfig = mergeConfig(defaultConfig, config);
 module.exports = withStorybook(finalConfig, {
   // Set to false to remove storybook specific options
   // you can also use a env variable to set this
-  enabled: process.env.STORYBOOK_ENABLED === 'true',
+  enabled: true,
   // Path to your storybook config
   configPath: path.resolve(__dirname, './.storybook'),
 

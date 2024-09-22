@@ -2,15 +2,13 @@
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-This readme is for the 7.6.10 version, you can find the 6.5 docs [here](https://github.com/storybookjs/react-native/tree/v6.5-stable).
+This readme is for the 8.3.1 version, you can find the 7.6 docs [here](https://github.com/storybookjs/react-native/tree/v7.6.20-stable).
 
-If you are migrating from 6.5 to 7.6 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-65x-to-76x)
+If you are migrating from 7.6 to 8.3 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-76x-to-83x)
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> NOTE: `@storybook/react-native` requires atleast 7.6.10, if you install other storybook core packages they should be `^7.6.10` or newer.
-
-If you want to help out or are just curious then check out the [project board](https://github.com/orgs/storybookjs/projects/12) to see the open issues.
+> NOTE: `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
 
 ![picture of storybook](https://github.com/user-attachments/assets/3162c051-e6bf-4d39-8ae2-da060e1f8b78)
 
@@ -58,6 +56,8 @@ The only thing left to do is return Storybook's UI in your app entry point (such
 export { default } from './.storybook';
 ```
 
+Then wrap your metro config with the withStorybook function as seen [below](#additional-steps-update-your-metro-config)
+
 If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
 If you want to add everything yourself check out the the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
@@ -74,7 +74,7 @@ First create metro config file if you don't have it yet.
 npx expo customize metro.config.js
 ```
 
-Then set `transformer.unstable_allowRequireContext` to true and add the generate call here.
+Then wrap your config in the withStorybook function as seen below.
 
 ```js
 // metro.config.js
@@ -275,14 +275,29 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 
 ```
 {
-    tabOpen: Number (0)
-        -- which tab should be open. -1 Sidebar, 0 Canvas, 1 Addons
-    initialSelection: string | Object (undefined)
+    initialSelection?: string | Object (undefined)
         -- initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
-    shouldDisableKeyboardAvoidingView: Boolean (false)
-        -- Disable KeyboardAvoidingView wrapping Storybook's view
-    keyboardAvoidingViewVerticalOffset: Number (0)
-        -- With shouldDisableKeyboardAvoidingView=true, this will set the keyboardverticaloffset (https://facebook.github.io/react-native/docs/keyboardavoidingview#keyboardverticaloffset) value for KeyboardAvoidingView wrapping Storybook's view
+    storage?: Object (undefined)
+        -- {getItem: (key: string) => Promise<string | null>;setItem: (key: string, value: string) => Promise<void>;}
+        -- Custom storage to be used instead of AsyncStorage
+    shouldPersistSelection: Boolean (true)
+        -- Stores last selected story in your devices storage.
+    onDeviceUI?: boolean;
+        -- show the ondevice ui
+    enableWebsockets?: boolean;
+        -- enable websockets for the storybook ui
+    query?: string;
+        -- query params for the websocket connection
+    host?: string;
+        -- host for the websocket connection
+    port?: number;
+        -- port for the websocket connection
+    secured?: boolean;
+        -- use secured websockets
+    shouldPersistSelection?: boolean;
+        -- store the last selected story in the device's storage
+    theme: Partial<Theme>;
+        -- theme for the storybook ui
 }
 ```
 
