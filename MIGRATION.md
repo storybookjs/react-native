@@ -1,9 +1,13 @@
 # Migration
 
 - [Migration](#migration)
-  - [From version 6.5.x to 7.6.x](#from-version-65x-to-76x)
+  - [From version 7.6.x to 8.3.x](#from-version-76x-to-83x)
     - [Dependencies](#dependencies)
     - [Regenerate your requires file](#regenerate-your-requires-file)
+    - [Update your metro config](#update-your-metro-config)
+  - [From version 6.5.x to 7.6.x](#from-version-65x-to-76x)
+    - [Dependencies](#dependencies-1)
+    - [Regenerate your requires file](#regenerate-your-requires-file-1)
     - [Update `.storybook/index.js`](#update-storybookindexjs)
     - [Metro config](#metro-config)
       - [Expo](#expo)
@@ -17,7 +21,7 @@
   - [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
     - [Update dependencies](#update-dependencies)
     - [Update your package.json scripts](#update-your-packagejson-scripts)
-    - [Regenerate your requires file](#regenerate-your-requires-file-1)
+    - [Regenerate your requires file](#regenerate-your-requires-file-2)
     - [Update `.storybook/index.js`](#update-storybookindexjs-1)
     - [Update your stories](#update-your-stories)
     - [Types](#types-1)
@@ -29,11 +33,63 @@
     - [Update your `index.js` file](#update-your-indexjs-file)
     - [Add a `main.js` and `preview.js`](#add-a-mainjs-and-previewjs)
     - [Scripts in package.json](#scripts-in-packagejson)
-    - [Update your metro config](#update-your-metro-config)
+    - [Update your metro config](#update-your-metro-config-1)
     - [Convert your stories to CSF](#convert-your-stories-to-csf)
     - [Theming](#theming)
     - [Test ids for tabs](#test-ids-for-tabs)
     - [The server](#the-server)
+
+## From version 7.6.x to 8.3.x
+
+In this version of storybook we've reworked the UI using some community react native packages. We've also overhauled the theme to match the web version.
+
+### Dependencies
+
+Update all storybook dependencies to 8.3.1 or newer.
+
+For example you may end up with something like this
+
+```json
+{
+  "@storybook/react-native": "^8.3.1",
+  "@storybook/react": "^8.3.1",
+  "@storybook/addon-ondevice-controls": "^8.3.1",
+  "@storybook/addon-ondevice-actions": "^8.3.1",
+  "@storybook/addon-ondevice-backgrounds": "^8.3.1",
+  "@storybook/addon-ondevice-notes": "^8.3.1"
+}
+```
+
+Add the new required dependencies to your project.
+
+```json
+{
+  "react-native-reanimated": "~3.10.1",
+  "react-native-gesture-handler": "~2.16.1",
+  "@gorhom/bottom-sheet": "^4.6.4",
+  "react-native-svg": "15.2.0"
+}
+```
+
+### Regenerate your requires file
+
+Regenerate your `storybook.requires.ts` file by running `yarn storybook-generate`.
+
+You should see a new updateView function in the file.
+
+### Update your metro config
+
+```js
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+
+module.exports = withStorybook(defaultConfig, {
+  // set to false to disable storybook specific settings
+  // you can use a env variable to toggle this
+  enabled: true,
+  // path to your storybook config folder
+  configPath: path.resolve(__dirname, './.storybook'),
+});
+```
 
 ## From version 6.5.x to 7.6.x
 
@@ -49,7 +105,7 @@ Here are some of the other improvements:
 - Improved markdown renderer for notes addon.
 - Simpler setup for auto args.
 
-> [!NOTE]  
+> [!NOTE]
 > You should follow a different set of changes if you need to support storiesOf, see [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
 
 ### Dependencies
