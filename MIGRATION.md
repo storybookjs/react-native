@@ -80,6 +80,7 @@ You should see a new updateView function in the file.
 ### Update your metro config
 
 ```js
+const path = require('path');
 const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
 module.exports = withStorybook(config, {
