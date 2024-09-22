@@ -82,7 +82,7 @@ You should see a new updateView function in the file.
 ```js
 const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
-module.exports = withStorybook(defaultConfig, {
+module.exports = withStorybook(config, {
   // set to false to disable storybook specific settings
   // you can use a env variable to toggle this
   enabled: true,
