@@ -1,5 +1,5 @@
 import { SET_CURRENT_STORY } from '@storybook/core/core-events';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Markdown from 'react-native-markdown-display';
 
@@ -36,6 +36,43 @@ export const Notes = ({ active, api }: NotesProps) => {
     return () => channel.off(SET_CURRENT_STORY, handleSetCurrentStory);
   }, [api, active]);
 
+  const themedMarkdownStyles = useMemo(
+    () => ({
+      body: {
+        color: theme.color.defaultText,
+      },
+      hr: {
+        backgroundColor: theme.color.defaultText,
+      },
+      table: {
+        borderColor: theme.color.defaultText,
+      },
+      tr: {
+        borderColor: theme.color.defaultText,
+      },
+      blocklink: {
+        borderColor: theme.color.defaultText,
+      },
+      code_inline: {
+        color: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+      code_block: {
+        color: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+      fence: {
+        color: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+      blockquote: {
+        borderColor: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+    }),
+    [theme.color.defaultText, theme.background.app]
+  );
+
   if (!active || !story) {
     return null;
   }
@@ -52,9 +89,7 @@ export const Notes = ({ active, api }: NotesProps) => {
       {textAfterFormatted && (
         <ErrorBoundary>
           {/* @ts-ignore has the wrong types */}
-          <Markdown style={{ body: { color: theme.color.defaultText } }}>
-            {textAfterFormatted}
-          </Markdown>
+          <Markdown style={themedMarkdownStyles}>{textAfterFormatted}</Markdown>
         </ErrorBoundary>
       )}
     </View>
