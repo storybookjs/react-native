@@ -84,42 +84,60 @@ Then wrap your config in the withStorybook function as seen below.
 // metro.config.js
 const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
-
-const { generate } = require('@storybook/react-native/scripts/generate');
-
-generate({
-  configPath: path.resolve(__dirname, './.storybook'),
-});
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
 /** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);
 
-config.transformer.unstable_allowRequireContext = true;
+module.exports = withStorybook(config, {
+  // Set to false to remove storybook specific options
+  // you can also use a env variable to set this
+  enabled: true,
+  // Path to your storybook config
+  configPath: path.resolve(__dirname, './.storybook'),
 
-config.resolver.sourceExts.push('mjs');
-
-module.exports = config;
+  // Optional websockets configuration
+  // Starts a websocket server on the specified port and host on metro start
+  // websockets: {
+  //   port: 7007,
+  //   host: 'localhost',
+  // },
+});
 ```
 
 **React native**
 
 ```js
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 const path = require('path');
-const { generate } = require('@storybook/react-native/scripts/generate');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const defaultConfig = getDefaultConfig(__dirname);
 
-generate({
+/**
+ * Metro configuration
+ * https://reactnative.dev/docs/metro
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
+const config = {};
+// set your own config here 👆
+
+const finalConfig = mergeConfig(defaultConfig, config);
+
+module.exports = withStorybook(finalConfig, {
+  // Set to false to remove storybook specific options
+  // you can also use a env variable to set this
+  enabled: true,
+  // Path to your storybook config
   configPath: path.resolve(__dirname, './.storybook'),
-});
 
-module.exports = {
-  /* existing config */
-  transformer: {
-    unstable_allowRequireContext: true,
-  },
-  resolver: {
-    sourceExts: [...defaultConfig.resolver.sourceExts, 'mjs'],
-  },
-};
+  // Optional websockets configuration
+  // Starts a websocket server on the specified port and host on metro start
+  // websockets: {
+  //   port: 7007,
+  //   host: 'localhost',
+  // },
+});
 ```
 
 ## Writing stories
