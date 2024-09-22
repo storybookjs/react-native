@@ -36,6 +36,43 @@ export const Notes = ({ active, api }: NotesProps) => {
     return () => channel.off(SET_CURRENT_STORY, handleSetCurrentStory);
   }, [api, active]);
 
+  const themedMarkdownStyles = useMemo(
+    () => ({
+      body: {
+        color: theme.color.defaultText,
+      },
+      hr: {
+        backgroundColor: theme.color.defaultText,
+      },
+      table: {
+        borderColor: theme.color.defaultText,
+      },
+      tr: {
+        borderColor: theme.color.defaultText,
+      },
+      blocklink: {
+        borderColor: theme.color.defaultText,
+      },
+      code_inline: {
+        color: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+      code_block: {
+        color: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+      fence: {
+        color: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+      blockquote: {
+        borderColor: theme.color.defaultText,
+        backgroundColor: theme.background.app,
+      },
+    }),
+    [theme.color.defaultText, theme.background.app]
+  );
+
   if (!active || !story) {
     return null;
   }
@@ -47,36 +84,12 @@ export const Notes = ({ active, api }: NotesProps) => {
 
   const textAfterFormatted: string = text ? text.trim() : '';
 
-  const themedMarkdownStyles = useMemo(
-    () => ({
-      body: {
-        color: theme.color.defaultText,
-      },
-      hr: {
-        backgroundColor: theme.color.defaultText,
-      },
-      blockquote: {
-        borderColor: theme.color.defaultText,
-      },
-      table: {
-        borderColor: theme.color.defaultText,
-      },
-      tr: {
-        borderColor: theme.color.defaultText,
-      },
-      blocklink: {
-        borderColor: theme.color.defaultText,
-      }
-    }),
-    [theme.color.defaultText]);
   return (
     <View style={styles.container}>
       {textAfterFormatted && (
         <ErrorBoundary>
           {/* @ts-ignore has the wrong types */}
-          <Markdown style={themedMarkdownStyles}>
-            {textAfterFormatted}
-          </Markdown>
+          <Markdown style={themedMarkdownStyles}>{textAfterFormatted}</Markdown>
         </ErrorBoundary>
       )}
     </View>
@@ -86,4 +99,3 @@ export const Notes = ({ active, api }: NotesProps) => {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 10 },
 });
-
