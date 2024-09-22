@@ -1,5 +1,8 @@
 # Storybook for React Native
 
+> [!IMPORTANT]  
+> This readme is in the process of being updated for v8 which is not yet released to stable, for v7 docs see the [v7.6 docs](https://github.com/storybookjs/react-native/tree/v7.6.20-stable).
+
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
 This readme is for the 8.3.1 version, you can find the 7.6 docs [here](https://github.com/storybookjs/react-native/tree/v7.6.20-stable).
@@ -8,7 +11,8 @@ If you are migrating from 7.6 to 8.3 you can find the migration guide [here](htt
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> NOTE: `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
+> [!NOTE]  
+> `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
 
 ![picture of storybook](https://github.com/user-attachments/assets/3162c051-e6bf-4d39-8ae2-da060e1f8b78)
 
