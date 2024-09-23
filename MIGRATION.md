@@ -50,36 +50,43 @@ Update all storybook dependencies to 8.3.1 or newer.
 For example you may end up with something like this
 
 ```json
+// package.json
 {
-  "@storybook/react-native": "^8.3.1",
-  "@storybook/react": "^8.3.1",
-  "@storybook/addon-ondevice-controls": "^8.3.1",
-  "@storybook/addon-ondevice-actions": "^8.3.1",
-  "@storybook/addon-ondevice-backgrounds": "^8.3.1",
-  "@storybook/addon-ondevice-notes": "^8.3.1"
+  "devDependencies": {
+    "@storybook/react-native": "^8.3.1",
+    "@storybook/react": "^8.3.1",
+    "@storybook/addon-ondevice-controls": "^8.3.1",
+    "@storybook/addon-ondevice-actions": "^8.3.1",
+    "@storybook/addon-ondevice-backgrounds": "^8.3.1",
+    "@storybook/addon-ondevice-notes": "^8.3.1"
+  }
 }
 ```
 
 Add the new required dependencies to your project.
 
 ```json
+// package.json
 {
-  "react-native-reanimated": "~3.10.1",
-  "react-native-gesture-handler": "~2.16.1",
-  "@gorhom/bottom-sheet": "^4.6.4",
-  "react-native-svg": "15.2.0"
+  "devDependencies": {
+    "react-native-reanimated": "~3.10.1",
+    "react-native-gesture-handler": "~2.16.1",
+    "@gorhom/bottom-sheet": "^4.6.4",
+    "react-native-svg": "15.2.0"
+  }
 }
 ```
 
 ### Regenerate your requires file
 
-Regenerate your `storybook.requires.ts` file by running `yarn storybook-generate`.
+Regenerate your `.storybook/storybook.requires.ts` file by running `yarn storybook-generate`.
 
-You should see a new updateView function in the file.
+You should see a new `updateView` function in the file.
 
 ### Update your metro config
 
 ```js
+// metro.config.js
 const path = require('path');
 const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
