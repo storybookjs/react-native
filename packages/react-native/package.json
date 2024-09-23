@@ -54,6 +54,7 @@
     "react-native-swipe-gestures": "^1.0.5",
     "react-native-url-polyfill": "^2.0.0",
     "setimmediate": "^1.0.5",
+    "storybook": "^8.3.1",
     "type-fest": "~2.19",
     "util": "^0.12.4",
     "ws": "^8.18.0"

@@ -3,7 +3,7 @@ const path = require('path');
 const { generate } = require('../scripts/generate');
 const { WebSocketServer } = require('ws');
 
-module.exports = (config, { configPath, enabled, websockets }) => {
+module.exports = (config, { configPath, enabled, websockets, useJs = false }) => {
   if (!enabled) {
     return config;
   }
@@ -34,6 +34,7 @@ module.exports = (config, { configPath, enabled, websockets }) => {
 
   generate({
     configPath: configPath ?? path.resolve(process.cwd(), './.storybook'),
+    useJs,
   });
 
   return {
