@@ -3,7 +3,10 @@ const path = require('path');
 const { generate } = require('../scripts/generate');
 const { WebSocketServer } = require('ws');
 
-module.exports = (config, { configPath, enabled, websockets, useJs = false }) => {
+module.exports = (
+  config,
+  { configPath, enabled = true, websockets, useJs = false } = { enabled: true, useJs: false }
+) => {
   if (!enabled) {
     return config;
   }
