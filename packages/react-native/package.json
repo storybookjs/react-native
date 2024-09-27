@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "8.3.1-beta.2",
+  "version": "8.3.1-beta.3",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -43,8 +43,8 @@
     "@storybook/csf": "^0.1.1",
     "@storybook/global": "^5.0.0",
     "@storybook/react": "^8.3.1",
-    "@storybook/react-native-theming": "^8.3.1-beta.2",
-    "@storybook/react-native-ui": "^8.3.1-beta.2",
+    "@storybook/react-native-theming": "^8.3.1-beta.3",
+    "@storybook/react-native-ui": "^8.3.1-beta.3",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
