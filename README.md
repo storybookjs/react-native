@@ -14,7 +14,8 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 > [!NOTE]  
 > `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
 
-![picture of storybook](https://github.com/user-attachments/assets/3162c051-e6bf-4d39-8ae2-da060e1f8b78)
+![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
+
 
 ## Table of contents
 
