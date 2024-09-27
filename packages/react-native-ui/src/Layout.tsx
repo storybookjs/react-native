@@ -1,20 +1,21 @@
 import { SET_CURRENT_STORY } from '@storybook/core/core-events';
 import { addons } from '@storybook/core/manager-api';
 import { type API_IndexHash, type Args, type StoryContext } from '@storybook/core/types';
+import type { ReactRenderer } from '@storybook/react';
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { ReactNode, useRef, useState } from 'react';
 import { Platform, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { IconButton } from './IconButton';
-import { Sidebar } from './Sidebar';
-import { DEFAULT_REF_ID } from './constants';
-import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
-import { MenuIcon } from './icon/MenuIcon';
-
-import type { ReactRenderer } from '@storybook/react';
 import { useLayout } from './LayoutProvider';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
+import { Sidebar } from './Sidebar';
+import { DEFAULT_REF_ID } from './constants';
+import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
+import { DarkLogo } from './icon/DarkLogo';
+import { Logo } from './icon/Logo';
+import { MenuIcon } from './icon/MenuIcon';
 
 export const Layout = ({
   storyHash,
@@ -66,15 +67,18 @@ export const Layout = ({
                 style={{
                   flexDirection: 'row',
                   alignItems: 'center',
-                  paddingVertical: 10,
+                  paddingTop: 10,
                   paddingLeft: 16,
+                  paddingBottom: 4,
                   paddingRight: 10,
                   justifyContent: 'space-between',
                 }}
               >
-                <Text style={{ fontSize: 20, fontWeight: 'bold', color: theme.color.defaultText }}>
-                  Storybook
-                </Text>
+                {theme.base === 'light' ? (
+                  <Logo height={25} width={125} />
+                ) : (
+                  <DarkLogo height={25} width={125} />
+                )}
 
                 <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
               </View>
@@ -132,6 +136,13 @@ export const Layout = ({
       <View style={{ flex: 1 }}>{children}</View>
 
       <MobileMenuDrawer ref={mobileMenuDrawerRef} onStateChange={setDrawerOpen}>
+        <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
+          {theme.base === 'light' ? (
+            <Logo height={25} width={125} />
+          ) : (
+            <DarkLogo height={25} width={125} />
+          )}
+        </View>
         <Sidebar
           extra={[]}
           previewInitialized
