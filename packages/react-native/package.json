@@ -67,7 +67,7 @@
     "jotai": "^2.6.2",
     "react-test-renderer": "18.2.0",
     "tsup": "^7.2.0",
-    "typescript": "~5.3.3"
+    "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",

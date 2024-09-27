@@ -34,7 +34,7 @@
     "react-native-markdown-display": "^7.0.2"
   },
   "devDependencies": {
-    "typescript": "~5.3.3"
+    "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "react": "*",

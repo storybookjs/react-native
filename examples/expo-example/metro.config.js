@@ -5,6 +5,12 @@ const path = require('path');
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(projectRoot, '../../');
 
+/**
+ * Metro configuration
+ * https://reactnative.dev/docs/metro
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
 const defaultConfig = getDefaultConfig(projectRoot);
 
 defaultConfig.watchFolders = [workspaceRoot];
@@ -16,12 +22,14 @@ defaultConfig.resolver.nodeModulesPaths = [
 
 const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
-module.exports = withStorybook(defaultConfig, {
+module.exports = withStorybook(defaultConfig);
+
+/* , {
   enabled: process.env.STORYBOOK_ENABLED === 'true',
   configPath: path.resolve(__dirname, './.storybook'),
-  websockets: {
-    port: 7007,
-    // host: '192.x.x.x',
-    host: 'localhost',
-  },
-});
+  // websockets: {
+  // port: 7007,
+  // host: '192.x.x.x',
+  // host: 'localhost',
+  // },
+} */
