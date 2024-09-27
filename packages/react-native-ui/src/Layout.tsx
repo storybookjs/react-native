@@ -136,6 +136,13 @@ export const Layout = ({
       <View style={{ flex: 1 }}>{children}</View>
 
       <MobileMenuDrawer ref={mobileMenuDrawerRef} onStateChange={setDrawerOpen}>
+        <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
+          {theme.base === 'light' ? (
+            <Logo height={25} width={125} />
+          ) : (
+            <DarkLogo height={25} width={125} />
+          )}
+        </View>
         <Sidebar
           extra={[]}
           previewInitialized
