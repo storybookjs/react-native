@@ -327,7 +327,7 @@ Whether or not to generate the `.storybook/storybook.requires` file in Javascrip
 
 Type: `string`, default: `path.resolve(process.cwd(), './.storybook')`
 
-The location of your Storybook configuration directory with `main.ts`, and o[tionally `preview.tsx` and other configuration files.
+The location of your Storybook configuration directory, including `main.ts` and other project-related files.
 
 ### websockets
 
