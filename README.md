@@ -16,13 +16,13 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 
 ![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
 
-
 ## Table of contents
 
 - 🚀 [Getting Started](#getting-started)
 - 📒 [Writing stories](#writing-stories)
 - 🔌 [Addons](#addons)
 - 📱 [Hide/Show Storybook](#hideshow-storybook)
+- ⚙️ [withStorybook wrapper](#withstorybook-wrapper)
 - 🔧 [getStorybookUI](#getstorybookui-options)
 - 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
@@ -291,6 +291,61 @@ Some have opted to toggle the storybook component by using a custom option in th
 
 - [Heres an approach for react native cli](https://dev.to/dannyhw/multiple-entry-points-for-react-native-storybook-4dkp)
 - [Heres an article about how you can do it in expo](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
+
+## withStorybook wrapper
+
+`withStorybook` is a wrapper function for your metro config. It accepts your existing [Metro config](https://metrobundler.dev/docs/configuration), and supports a variety of options for how Storybook should be started and configured.
+
+```js
+// metro.config.js
+const { getDefaultConfig } = require('expo/metro-config');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+module.exports = withStorybook(defaultConfig, {
+  enabled: true,
+  // See API section below for available options
+});
+```
+
+### Options
+
+#### enabled
+
+Type: `boolean`, default: `true`
+
+Whether or not to show Storybook in the UI. Can by dynamically configured by a `process.env` variable.
+
+#### useJs
+
+Type: `boolean`, default: `false`
+
+Whether or not to generate the `.storybook/storybook.requires` file in Javascript or TypeScript.
+
+#### configPath
+
+Type: `string`, default: `path.resolve(process.cwd(), './.storybook')`
+
+The location of your Storybook configuration directory with `main.ts`, and o[tionally `preview.tsx` and other configuration files.
+
+### websockets
+
+Type: `{ host: string?, port: number? }`, default: `undefined`
+
+Create a websocket server on startup, if specified. This allows, for example, [React Native Web Storybook](https://github.com/storybookjs/addon-react-native-web) to control RN Storybook from a web browser.
+
+### websockets.host
+
+Type: `string`, default: `'localhost'`
+
+The host on which to run the websocket, if specified.
+
+### websockets.port
+
+Type: `number`, default: `7007`
+
+The port on which to run the websocket, if specified.
 
 ## getStorybookUI options
 
