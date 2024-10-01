@@ -333,7 +333,7 @@ The location of your Storybook configuration directory, including `main.ts` and 
 
 Type: `{ host: string?, port: number? }`, default: `undefined`
 
-Create a websocket server on startup, if specified. This allows, for example, [React Native Web Storybook](https://github.com/storybookjs/addon-react-native-web) to control RN Storybook from a web browser.
+If specified, create a WebSocket server on startup. This allows you to sync up multiple devices to show the same story and [arg](https://storybook.js.org/docs/writing-stories/args) values connected to the story in the UI.
 
 ### websockets.host
 
