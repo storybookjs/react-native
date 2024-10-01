@@ -315,7 +315,20 @@ module.exports = withStorybook(defaultConfig, {
 
 Type: `boolean`, default: `true`
 
-Whether or not to show Storybook in the UI. Can by dynamically configured by a `process.env` variable.
+Determines whether the options specified are applied to the Metro config. This can be useful for project setups that use Metro both with and without Storybook and need to conditionally apply the options. In this example, it is made conditional on an environment variable:
+
+```js
+// metro.config.js
+const { getDefaultConfig } = require('expo/metro-config');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+module.exports = withStorybook(defaultConfig, {
+  enabled: process.env.WITH_STORYBOOK,
+  // ... other options
+});
+```
 
 #### useJs
 
