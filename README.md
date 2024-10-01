@@ -340,7 +340,7 @@ Generates the `.storybook/storybook.requires` file in JavaScript instead of Type
 
 Type: `string`, default: `path.resolve(process.cwd(), './.storybook')`
 
-The location of your Storybook configuration directory, including `main.ts` and other project-related files.
+The location of your Storybook configuration directory, which includes `main.ts` and other project-related files.
 
 ### websockets
 
