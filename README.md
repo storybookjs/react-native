@@ -352,7 +352,7 @@ If specified, create a WebSocket server on startup. This allows you to sync up m
 
 Type: `string`, default: `'localhost'`
 
-The host on which to run the websocket, if specified.
+The host on which to run the WebSocket, if specified.
 
 ### websockets.port
 
