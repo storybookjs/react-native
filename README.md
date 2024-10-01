@@ -294,7 +294,7 @@ Some have opted to toggle the storybook component by using a custom option in th
 
 ## withStorybook wrapper
 
-`withStorybook` is a wrapper function for your metro config. It accepts your existing [Metro config](https://metrobundler.dev/docs/configuration), and supports a variety of options for how Storybook should be started and configured.
+`withStorybook` is a wrapper function to extend your [Metro config](https://metrobundler.dev/docs/configuration) for Storybook. It accepts your existing Metro config and an object of options for how Storybook should be started and configured.
 
 ```js
 // metro.config.js
