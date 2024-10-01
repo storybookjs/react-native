@@ -334,7 +334,7 @@ module.exports = withStorybook(defaultConfig, {
 
 Type: `boolean`, default: `false`
 
-Whether or not to generate the `.storybook/storybook.requires` file in Javascript or TypeScript.
+Generates the `.storybook/storybook.requires` file in JavaScript instead of TypeScript.
 
 #### configPath
 
