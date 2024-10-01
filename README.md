@@ -358,7 +358,7 @@ The host on which to run the WebSocket, if specified.
 
 Type: `number`, default: `7007`
 
-The port on which to run the websocket, if specified.
+The port on which to run the WebSocket, if specified.
 
 ## getStorybookUI options
 
