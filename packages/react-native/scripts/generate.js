@@ -50,10 +50,26 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   const doctools = 'require("@storybook/react-native/dist/preview")';
 
-  // TODO: implement presets or something similar
-  const enhancer = main.addons?.includes('@storybook/addon-ondevice-actions')
-    ? "require('@storybook/addon-actions/preview')"
-    : '';
+  const enhancer = [];
+
+  const enhancerDependenciesMap = {
+    '@storybook/addon-ondevice-actions': '@storybook/addon-actions',
+  };
+
+  main.addons?.forEach((_addon) => {
+    const addon = enhancerDependenciesMap[_addon] || _addon;
+    let addonPath;
+    try {
+      addonPath = path.dirname(require.resolve(addon));
+    } catch (error) {
+      console.error(`Failed to resolve addon: ${addon}`, error);
+      return null; // Skip this addon if it cannot be resolved
+    }
+    const isPreviewFileExists = getPreviewExists({ configPath: addonPath });
+    if (isPreviewFileExists) {
+      enhancer.push(`require('${addon}/dist/preview')`);
+    }
+  });
 
   let options = '';
   let optionsVar = '';
