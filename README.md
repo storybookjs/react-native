@@ -315,7 +315,7 @@ module.exports = withStorybook(defaultConfig, {
 
 Type: `boolean`, default: `true`
 
-Determines whether the options specified are applied to the Metro config. This can be useful for project setups that use Metro both with and without Storybook and need to conditionally apply the options. In this example, it is made conditional on an environment variable:
+Determines whether the options specified are applied to the Metro config. This can be useful for project setups that use Metro both with and without Storybook and need to conditionally apply the options. In this example, it is made conditional using an environment variable:
 
 ```js
 // metro.config.js
