@@ -16,13 +16,13 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 
 ![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
 
-
 ## Table of contents
 
 - 🚀 [Getting Started](#getting-started)
 - 📒 [Writing stories](#writing-stories)
 - 🔌 [Addons](#addons)
 - 📱 [Hide/Show Storybook](#hideshow-storybook)
+- ⚙️ [withStorybook wrapper](#withstorybook-wrapper)
 - 🔧 [getStorybookUI](#getstorybookui-options)
 - 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
@@ -291,6 +291,74 @@ Some have opted to toggle the storybook component by using a custom option in th
 
 - [Heres an approach for react native cli](https://dev.to/dannyhw/multiple-entry-points-for-react-native-storybook-4dkp)
 - [Heres an article about how you can do it in expo](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
+
+## withStorybook wrapper
+
+`withStorybook` is a wrapper function to extend your [Metro config](https://metrobundler.dev/docs/configuration) for Storybook. It accepts your existing Metro config and an object of options for how Storybook should be started and configured.
+
+```js
+// metro.config.js
+const { getDefaultConfig } = require('expo/metro-config');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+module.exports = withStorybook(defaultConfig, {
+  enabled: true,
+  // See API section below for available options
+});
+```
+
+### Options
+
+#### enabled
+
+Type: `boolean`, default: `true`
+
+Determines whether the options specified are applied to the Metro config. This can be useful for project setups that use Metro both with and without Storybook and need to conditionally apply the options. In this example, it is made conditional using an environment variable:
+
+```js
+// metro.config.js
+const { getDefaultConfig } = require('expo/metro-config');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+module.exports = withStorybook(defaultConfig, {
+  enabled: process.env.WITH_STORYBOOK,
+  // ... other options
+});
+```
+
+#### useJs
+
+Type: `boolean`, default: `false`
+
+Generates the `.storybook/storybook.requires` file in JavaScript instead of TypeScript.
+
+#### configPath
+
+Type: `string`, default: `path.resolve(process.cwd(), './.storybook')`
+
+The location of your Storybook configuration directory, which includes `main.ts` and other project-related files.
+
+### websockets
+
+Type: `{ host: string?, port: number? }`, default: `undefined`
+
+If specified, create a WebSocket server on startup. This allows you to sync up multiple devices to show the same story and [arg](https://storybook.js.org/docs/writing-stories/args) values connected to the story in the UI.
+
+### websockets.host
+
+Type: `string`, default: `'localhost'`
+
+The host on which to run the WebSocket, if specified.
+
+### websockets.port
+
+Type: `number`, default: `7007`
+
+The port on which to run the WebSocket, if specified.
 
 ## getStorybookUI options
 
