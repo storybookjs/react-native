@@ -1,4 +1,4 @@
-# Setup for v7 React Native Storybook
+# Setup for v8 React Native Storybook
 
 Before getting into the guide consider using a template for a simpler setup process.
 
