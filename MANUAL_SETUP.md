@@ -25,13 +25,13 @@ You may wish to setup everything yourself, you can use the following guide to do
 **Expo**
 
 ```sh
-expo install @storybook/react-native @react-native-async-storage/async-storage react-dom react-native-safe-area-context
+expo install @storybook/react-native @react-native-async-storage/async-storage react-dom react-native-safe-area-context react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
 ```
 
 **React native CLI**
 
 ```sh
-yarn add -D @storybook/react-native @react-native-async-storage/async-storage react-native-safe-area-context react-dom
+yarn add -D @storybook/react-native @react-native-async-storage/async-storage react-native-safe-area-context react-dom react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
 ```
 
 **IOS**
@@ -128,35 +128,22 @@ Then set `transformer.unstable_allowRequireContext` to true
 
 ```js
 const { getDefaultConfig } = require('expo/metro-config');
-
-const { generate } = require('@storybook/react-native/scripts/generate');
-
-generate({
-  configPath: path.resolve(__dirname, './.storybook'),
-});
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 
-defaultConfig.transformer.unstable_allowRequireContext = true;
-
-module.exports = defaultConfig;
+module.exports = withStorybook(defaultConfig);
 ```
 
 **React native**
 
 ```js
-const { generate } = require('@storybook/react-native/scripts/generate');
+const { getDefaultConfig } = require('@react-native/metro-config');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
-generate({
-  configPath: path.resolve(__dirname, './.storybook'),
-});
+const defaultConfig = getDefaultConfig(__dirname);
 
-module.exports = {
-  /* existing config */
-  transformer: {
-    unstable_allowRequireContext: true,
-  },
-};
+module.exports = withStorybook(finalConfig);
 ```
 
 **Add a stories file**
