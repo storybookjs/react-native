@@ -62,7 +62,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
     }
     const isPreviewFileExists = getPreviewExists({ configPath: addonPath });
     if (isPreviewFileExists) {
-      enhancer.push(`require('${addon}/dist/preview')`);
+      enhancer.push(`require('${addon}/preview')`);
     }
   });
 
