@@ -52,12 +52,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   const enhancer = [];
 
-  const enhancerDependenciesMap = {
-    '@storybook/addon-ondevice-actions': '@storybook/addon-actions',
-  };
-
-  main.addons?.forEach((_addon) => {
-    const addon = enhancerDependenciesMap[_addon] || _addon;
+  main.addons?.forEach((addon) => {
     let addonPath;
     try {
       addonPath = path.dirname(require.resolve(addon));
