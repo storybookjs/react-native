@@ -1,5 +1,8 @@
 # Storybook for React Native
 
+> [!IMPORTANT]  
+> This readme is in the process of being updated for v8 which is not yet released to stable, for v7 docs see the [v7.6 docs](https://github.com/storybookjs/react-native/tree/v7.6.20-stable).
+
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
 This readme is for the 8.3.1 version, you can find the 7.6 docs [here](https://github.com/storybookjs/react-native/tree/v7.6.20-stable).
@@ -8,11 +11,10 @@ If you are migrating from 7.6 to 8.3 you can find the migration guide [here](htt
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> NOTE: `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
+> [!NOTE]  
+> `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
 
-![picture of storybook](https://github.com/user-attachments/assets/3162c051-e6bf-4d39-8ae2-da060e1f8b78)
-
-_Pictured is from the template mentioned in [getting started](#getting-started)_
+![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
 
 ## Table of contents
 
@@ -20,7 +22,9 @@ _Pictured is from the template mentioned in [getting started](#getting-started)_
 - 📒 [Writing stories](#writing-stories)
 - 🔌 [Addons](#addons)
 - 📱 [Hide/Show Storybook](#hideshow-storybook)
+- ⚙️ [withStorybook wrapper](#withstorybook-wrapper)
 - 🔧 [getStorybookUI](#getstorybookui-options)
+- 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
 - ✨ [Examples](#examples)
 
@@ -28,7 +32,7 @@ _Pictured is from the template mentioned in [getting started](#getting-started)_
 
 ### New project
 
-There is some project boilerplate with `@storybook/react-native` and `@storybook/addons-react-native-web` both already configured with a simple example.
+There is some project boilerplate with `@storybook/react-native` and `@storybook/addon-react-native-web` both already configured with a simple example.
 
 For expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
 
@@ -288,6 +292,74 @@ Some have opted to toggle the storybook component by using a custom option in th
 - [Heres an approach for react native cli](https://dev.to/dannyhw/multiple-entry-points-for-react-native-storybook-4dkp)
 - [Heres an article about how you can do it in expo](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
+## withStorybook wrapper
+
+`withStorybook` is a wrapper function to extend your [Metro config](https://metrobundler.dev/docs/configuration) for Storybook. It accepts your existing Metro config and an object of options for how Storybook should be started and configured.
+
+```js
+// metro.config.js
+const { getDefaultConfig } = require('expo/metro-config');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+module.exports = withStorybook(defaultConfig, {
+  enabled: true,
+  // See API section below for available options
+});
+```
+
+### Options
+
+#### enabled
+
+Type: `boolean`, default: `true`
+
+Determines whether the options specified are applied to the Metro config. This can be useful for project setups that use Metro both with and without Storybook and need to conditionally apply the options. In this example, it is made conditional using an environment variable:
+
+```js
+// metro.config.js
+const { getDefaultConfig } = require('expo/metro-config');
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+module.exports = withStorybook(defaultConfig, {
+  enabled: process.env.WITH_STORYBOOK,
+  // ... other options
+});
+```
+
+#### useJs
+
+Type: `boolean`, default: `false`
+
+Generates the `.storybook/storybook.requires` file in JavaScript instead of TypeScript.
+
+#### configPath
+
+Type: `string`, default: `path.resolve(process.cwd(), './.storybook')`
+
+The location of your Storybook configuration directory, which includes `main.ts` and other project-related files.
+
+### websockets
+
+Type: `{ host: string?, port: number? }`, default: `undefined`
+
+If specified, create a WebSocket server on startup. This allows you to sync up multiple devices to show the same story and [arg](https://storybook.js.org/docs/writing-stories/args) values connected to the story in the UI.
+
+### websockets.host
+
+Type: `string`, default: `'localhost'`
+
+The host on which to run the WebSocket, if specified.
+
+### websockets.port
+
+Type: `number`, default: `7007`
+
+The port on which to run the WebSocket, if specified.
+
 ## getStorybookUI options
 
 You can pass these parameters to getStorybookUI call in your storybook entry point:
@@ -319,6 +391,10 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
         -- theme for the storybook ui
 }
 ```
+
+## Using stories in unit tests
+
+Storybook provides testing utilities that allow you to reuse your stories in external test environments, such as Jest. This way you can write unit tests easier and reuse the setup which is already done in Storybook, but in your unit tests. You can find more information about it in the [portable stories section](./PORTABLE_STORIES.md).
 
 ## Contributing
 
