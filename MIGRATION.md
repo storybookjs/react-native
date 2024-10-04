@@ -67,12 +67,12 @@ Add the new required dependencies to your project.
 
 Expo: 
 
-```json
+```sh
 npx expo install react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
 ```
 RN Cli:
 
-```
+```sh
 npm install react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
 ```
 
