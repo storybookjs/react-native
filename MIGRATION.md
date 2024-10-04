@@ -65,17 +65,18 @@ For example you may end up with something like this
 
 Add the new required dependencies to your project.
 
+Expo: 
+
 ```json
-// package.json
-{
-  "devDependencies": {
-    "react-native-reanimated": "~3.10.1",
-    "react-native-gesture-handler": "~2.16.1",
-    "@gorhom/bottom-sheet": "^4.6.4",
-    "react-native-svg": "15.2.0"
-  }
-}
+npx expo install react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
 ```
+RN Cli:
+
+```
+npm install react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
+```
+
+Make sure you use versions of those packages supported by your version of expo/react-native
 
 ### Regenerate your requires file
 
