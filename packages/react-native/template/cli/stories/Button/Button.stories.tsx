@@ -13,7 +13,7 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+      <View style={{ padding: 16, alignItems: 'flex-start' }}>
         <Story />
       </View>
     ),

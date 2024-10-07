@@ -45,7 +45,7 @@ In this version of storybook we've reworked the UI using some community react na
 
 ### Dependencies
 
-Update all storybook dependencies to 8.3.1 or newer.
+Update all storybook dependencies to 8.3.5 or newer.
 
 For example you may end up with something like this
 
@@ -53,29 +53,30 @@ For example you may end up with something like this
 // package.json
 {
   "devDependencies": {
-    "@storybook/react-native": "^8.3.1",
-    "@storybook/react": "^8.3.1",
-    "@storybook/addon-ondevice-controls": "^8.3.1",
-    "@storybook/addon-ondevice-actions": "^8.3.1",
-    "@storybook/addon-ondevice-backgrounds": "^8.3.1",
-    "@storybook/addon-ondevice-notes": "^8.3.1"
+    "@storybook/react-native": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/addon-ondevice-controls": "^8.3.5",
+    "@storybook/addon-ondevice-actions": "^8.3.5",
+    "@storybook/addon-ondevice-backgrounds": "^8.3.5",
+    "@storybook/addon-ondevice-notes": "^8.3.5"
   }
 }
 ```
 
 Add the new required dependencies to your project.
 
-```json
-// package.json
-{
-  "devDependencies": {
-    "react-native-reanimated": "~3.10.1",
-    "react-native-gesture-handler": "~2.16.1",
-    "@gorhom/bottom-sheet": "^4.6.4",
-    "react-native-svg": "15.2.0"
-  }
-}
+Expo: 
+
+```sh
+npx expo install react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
 ```
+RN Cli:
+
+```sh
+npm install react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
+```
+
+Make sure you use versions of those packages supported by your version of expo/react-native
 
 ### Regenerate your requires file
 
@@ -98,6 +99,8 @@ module.exports = withStorybook(config, {
   configPath: path.resolve(__dirname, './.storybook'),
 });
 ```
+
+For a full list of options, see [the `withStorybook` documentation](./README.md#withstorybook-wrapper).
 
 ## From version 6.5.x to 7.6.x
 
