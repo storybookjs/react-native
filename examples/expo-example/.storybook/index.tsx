@@ -7,7 +7,7 @@ const StorybookUIRoot = view.getStorybookUI({
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,
   },
-  enableWebsockets: true,
+  enableWebsockets: false,
   // host: '192.x.x.x',
   // port: 7007,
 

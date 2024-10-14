@@ -83,6 +83,7 @@ export const MobileAddonsPanel = forwardRef<
       enableHandlePanningGesture={true}
       // enableContentPanningGesture={true}
       stackBehavior="replace"
+      enableDynamicSizing={false}
     >
       <Animated.View style={[{ flex: 1 }, adjustedBottomSheetSize]}>
         <AddonsTabs
