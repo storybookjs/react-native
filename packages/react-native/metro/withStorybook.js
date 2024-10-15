@@ -56,12 +56,15 @@ module.exports = (
         const isStorybookModule =
           moduleName.startsWith('storybook') || moduleName.startsWith('@storybook');
 
-        if (isStorybookModule) {
-          context.unstable_enablePackageExports = true;
-          context.unstable_conditionNames = ['import'];
-        }
+        const theContext = isStorybookModule
+          ? {
+              ...context,
+              unstable_enablePackageExports: true,
+              unstable_conditionNames: ['import'],
+            }
+          : context;
 
-        const resolveResult = resolveFunction(context, moduleName, platform);
+        const resolveResult = resolveFunction(theContext, moduleName, platform);
 
         // workaround for template files with invalid imports
         if (resolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
