@@ -48,20 +48,29 @@ module.exports = (
     },
     resolver: {
       ...config.resolver,
-      unstable_enablePackageExports: true,
       resolveRequest: (context, moduleName, platform) => {
-        const defaultResolveResult = config?.resolver?.resolveRequest
-          ? config?.resolver?.resolveRequest?.(context, moduleName, platform)
-          : context.resolveRequest(context, moduleName, platform);
+        const resolveFunction = config?.resolver?.resolveRequest
+          ? config?.resolver?.resolveRequest
+          : context.resolveRequest;
+
+        const isStorybookModule =
+          moduleName.startsWith('storybook') || moduleName.startsWith('@storybook');
+
+        if (isStorybookModule) {
+          context.unstable_enablePackageExports = true;
+          context.unstable_conditionNames = ['import'];
+        }
+
+        const resolveResult = resolveFunction(context, moduleName, platform);
 
         // workaround for template files with invalid imports
-        if (defaultResolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
+        if (resolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
           return {
             type: 'empty',
           };
         }
 
-        return defaultResolveResult;
+        return resolveResult;
       },
     },
   };

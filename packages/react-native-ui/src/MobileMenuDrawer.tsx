@@ -63,6 +63,7 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
         enableDismissOnClose
         enableHandlePanningGesture
         enableContentPanningGesture
+        enableDynamicSizing={false}
         keyboardBehavior="extend"
         keyboardBlurBehavior="restore"
         stackBehavior="replace"

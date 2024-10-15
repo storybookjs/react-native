@@ -214,6 +214,11 @@ export class View {
           .then(() => {
             this._ready = true;
             setReady(true);
+            initialStory.then((st) => {
+              self._preview.selectionStore.selectionSpecifier = st;
+
+              self._preview.selectSpecifiedStory();
+            });
           })
           .catch((e) => console.error(e));
 
@@ -239,12 +244,6 @@ export class View {
         };
 
         self._forceRerender = () => forceUpdate();
-
-        initialStory.then((st) => {
-          self._preview.selectionStore.selectionSpecifier = st;
-
-          self._preview.selectSpecifiedStory();
-        });
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
