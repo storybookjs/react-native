@@ -328,6 +328,13 @@ module.exports = withStorybook(defaultConfig, {
 });
 ```
 
+#### onDisabledRemoveStorybook
+
+Type: `boolean`, default: `false`
+
+If onDisabledRemoveStorybook `true` and `enabled` is `false`, the storybook package will be removed from the build.
+This is useful if you want to remove storybook from your production build.
+
 #### useJs
 
 Type: `boolean`, default: `false`
