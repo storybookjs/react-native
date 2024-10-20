@@ -56,6 +56,7 @@
     "react-native-web": "~0.19.10",
     "react-router": "^6.26.2",
     "storybook": "^8.3.5",
+    "storybook-addon-deep-controls": "^0.8.1",
     "ws": "^8.18.0"
   },
   "devDependencies": {

@@ -9730,6 +9730,7 @@ __metadata:
     react-native-web: "npm:~0.19.10"
     react-router: "npm:^6.26.2"
     storybook: "npm:^8.3.5"
+    storybook-addon-deep-controls: "npm:^0.8.1"
     typescript: "npm:^5.3.3"
     ws: "npm:^8.18.0"
   languageName: unknown
@@ -17637,6 +17638,17 @@ __metadata:
   version: 2.14.3
   resolution: "store2@npm:2.14.3"
   checksum: 10/f95f6fbacff14cc3bb9e5e16ced2f29e2d706e30b248c16cf19abed8b2bb31d8f3907c8ccf1a5284d806fdcaf06e96710e4f4f52195e51522a452536beaf7af9
+  languageName: node
+  linkType: hard
+
+"storybook-addon-deep-controls@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "storybook-addon-deep-controls@npm:0.8.1"
+  peerDependencies:
+    "@storybook/addon-controls": 7.x.x || 8.x.x
+    "@storybook/types": 7.x.x || 8.x.x
+    storybook: 7.x.x || 8.x.x
+  checksum: 10/e44e9ea8b9cb6277d8e129a9782dd32c6e814a9640324f0c852754c26467ce64ec3abc8ad7290afac240d99c349e86774012be331813b6b650e99d934b8632b9
   languageName: node
   linkType: hard
 
