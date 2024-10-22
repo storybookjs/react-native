@@ -139,6 +139,15 @@ module.exports = withStorybook(finalConfig, {
 });
 ```
 
+#### Reanimated setup
+
+Make sure you have `react-native-reanimated` in your project and the plugin setup in your babel config.
+
+```js
+// babel.config.js
+plugins: ['react-native-reanimated/plugin'];
+```
+
 ## Writing stories
 
 In storybook we use a syntax called CSF that looks like this:
