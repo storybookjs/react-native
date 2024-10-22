@@ -139,6 +139,15 @@ module.exports = withStorybook(finalConfig, {
 });
 ```
 
+#### Reanimated setup
+
+Make sure you have `react-native-reanimated` in your project and the plugin setup in your babel config.
+
+```js
+// babel.config.js
+plugins: ['react-native-reanimated/plugin'];
+```
+
 ## Writing stories
 
 In storybook we use a syntax called CSF that looks like this:
@@ -327,6 +336,13 @@ module.exports = withStorybook(defaultConfig, {
   // ... other options
 });
 ```
+
+#### onDisabledRemoveStorybook
+
+Type: `boolean`, default: `false`
+
+If onDisabledRemoveStorybook `true` and `enabled` is `false`, the storybook package will be removed from the build.
+This is useful if you want to remove storybook from your production build.
 
 #### useJs
 
