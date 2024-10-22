@@ -205,20 +205,22 @@ export const SearchResults: FC<{
 
   return (
     <ResultsList>
-      {results.length > 0 && !query && (
+      {results.length > 0 && !query ? (
         <RecentlyOpenedTitle>
           <Text>Recently opened</Text>
           <IconButton onPress={handleClearLastViewed} />
         </RecentlyOpenedTitle>
-      )}
-      {results.length === 0 && query && (
+      ) : null}
+
+      {results.length === 0 && query ? (
         <View>
           <NoResults>
             <Text style={{ marginBottom: 8 }}>No components found</Text>
             <Text>Find components by name or path.</Text>
           </NoResults>
         </View>
-      )}
+      ) : null}
+
       {results.map((result, index) => {
         if (isExpandType(result)) {
           return (
