@@ -33,7 +33,7 @@
     "template/**/*"
   ],
   "scripts": {
-    "dev": "npx tsx buildscripts/gendtsdev.ts && tsup --watch",
+    "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
     "test:ci": "jest"

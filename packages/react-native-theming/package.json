@@ -21,8 +21,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "npx tsx ./scripts/gendtsdev.ts && tsup --watch",
-    "prepare": "tsup && npx tsx ./scripts/patchdts.ts"
+    "dev": "npx --yes tsx ./scripts/gendtsdev.ts && tsup --watch",
+    "prepare": "tsup && npx --yes tsx ./scripts/patchdts.ts"
   },
   "dependencies": {
     "polished": "^4.3.1"
