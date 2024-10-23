@@ -104,8 +104,8 @@ export const Layout = ({
           )}
         </View>
 
-        <View style={{ flex: 1, overflow: 'hidden' }}>
-          <View style={{ flex: 1 }}>{children}</View>
+        <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, overflow: 'hidden' }}>{children}</View>
 
           <View
             style={{
