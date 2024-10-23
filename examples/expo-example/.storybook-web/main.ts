@@ -21,6 +21,7 @@ const main: ServerStorybookConfig = {
     '@storybook/addon-react-native-web',
     // note why does this break with get absolute?
     '@storybook/addon-react-native-server',
+    'storybook-addon-deep-controls',
   ],
   // logLevel: 'debug',
   framework: getAbsolutePath('@storybook/react-webpack5'),

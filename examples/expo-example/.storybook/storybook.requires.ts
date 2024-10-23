@@ -6,6 +6,7 @@ import "@storybook/addon-ondevice-controls/register";
 import "@storybook/addon-ondevice-backgrounds/register";
 import "@storybook/addon-ondevice-actions/register";
 import "@storybook/addon-ondevice-notes/register";
+import "storybook-addon-deep-controls/register";
 
 const normalizedStories = [
   {
@@ -57,7 +58,8 @@ declare global {
 const annotations = [
   require("./preview"),
   require("@storybook/react-native/dist/preview"),
-  require("@storybook/addon-actions/preview"),
+  require("@storybook/addon-ondevice-actions/preview"),
+  require("storybook-addon-deep-controls/preview"),
 ];
 
 global.STORIES = normalizedStories;
