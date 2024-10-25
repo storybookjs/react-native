@@ -105,7 +105,7 @@ export const Layout = ({
         </View>
 
         <View style={{ flex: 1 }}>
-          <View style={{ flex: 1 }}>{children}</View>
+          <View style={{ flex: 1, overflow: 'hidden' }}>{children}</View>
 
           <View
             style={{
@@ -133,7 +133,7 @@ export const Layout = ({
 
   return (
     <View style={{ flex: 1, paddingTop: insets.top, backgroundColor: theme.background.content }}>
-      <View style={{ flex: 1 }}>{children}</View>
+      <View style={{ flex: 1, overflow: 'hidden' }}>{children}</View>
 
       <MobileMenuDrawer ref={mobileMenuDrawerRef} onStateChange={setDrawerOpen}>
         <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>

@@ -5,9 +5,35 @@ const { WebSocketServer } = require('ws');
 
 module.exports = (
   config,
-  { configPath, enabled = true, websockets, useJs = false } = { enabled: true, useJs: false }
+  { configPath, enabled = true, websockets, useJs = false, onDisabledRemoveStorybook = false } = {
+    enabled: true,
+    useJs: false,
+    onDisabledRemoveStorybook: false,
+  }
 ) => {
   if (!enabled) {
+    if (onDisabledRemoveStorybook) {
+      return {
+        ...config,
+        resolver: {
+          ...config.resolver,
+          resolveRequest: (context, moduleName, platform) => {
+            const resolveFunction = config?.resolver?.resolveRequest
+              ? config?.resolver?.resolveRequest
+              : context.resolveRequest;
+
+            if (moduleName.startsWith('storybook') || moduleName.startsWith('@storybook')) {
+              return {
+                type: 'empty',
+              };
+            }
+
+            return resolveFunction(context, moduleName, platform);
+          },
+        },
+      };
+    }
+
     return config;
   }
 

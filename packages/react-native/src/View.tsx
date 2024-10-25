@@ -69,7 +69,7 @@ export type Params = {
 export class View {
   _storyIndex: StoryIndex;
   _setStory: (story: StoryContext<ReactRenderer>) => void = () => {};
-  _forceRerender: () => void;
+  _forceRerender: () => void = () => {};
   _ready: boolean = false;
   _preview: PreviewWithSelection<ReactRenderer>;
   _asyncStorageStoryId: string;

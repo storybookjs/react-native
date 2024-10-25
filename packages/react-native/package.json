@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "8.3.9",
+  "version": "8.3.10",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -33,7 +33,7 @@
     "template/**/*"
   ],
   "scripts": {
-    "dev": "npx tsx buildscripts/gendtsdev.ts && tsup --watch",
+    "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
     "test:ci": "jest"
@@ -43,8 +43,8 @@
     "@storybook/csf": "^0.1.1",
     "@storybook/global": "^5.0.0",
     "@storybook/react": "^8.3.5",
-    "@storybook/react-native-theming": "^8.3.9",
-    "@storybook/react-native-ui": "^8.3.9",
+    "@storybook/react-native-theming": "^8.3.10",
+    "@storybook/react-native-ui": "^8.3.10",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
