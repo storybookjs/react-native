@@ -50,7 +50,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
   let registerAddons = '';
 
   for (const addon of main.addons) {
-    const registerPath = resolveAddonFile(addon, 'register', ['js', 'mjs', 'ts', 'tsx']);
+    const registerPath = resolveAddonFile(addon, 'register', ['js', 'mjs', 'jsx', 'ts', 'tsx']);
 
     if (registerPath) {
       registerAddons += `import "${registerPath}";\n`;
