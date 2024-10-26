@@ -3,6 +3,7 @@ const {
   ensureRelativePathHasDot,
   getMain,
   getPreviewExists,
+  resolveAddonFile,
 } = require('./common');
 const { normalizeStories, globToRegexp } = require('@storybook/core/common');
 const fs = require('fs');
@@ -46,26 +47,26 @@ function generate({ configPath, absolute = false, useJs = false }) {
     }`;
   });
 
-  const registerAddons = main.addons?.map((addon) => `import "${addon}/register";`).join('\n');
+  let registerAddons = '';
+
+  for (const addon of main.addons) {
+    const registerPath = resolveAddonFile(addon, 'register', ['js', 'mjs', 'ts', 'tsx']);
+
+    if (registerPath) {
+      registerAddons += `import "${registerPath}";\n`;
+    }
+  }
 
   const docTools = 'require("@storybook/react-native/dist/preview")';
 
   const enhancers = [docTools];
 
   for (const addon of main.addons) {
-    let addonPath;
-    try {
-      addonPath = path.dirname(require.resolve(addon));
-    } catch (error) {
-      console.error(`Failed to resolve addon: ${addon}`, error);
+    const previewPath = resolveAddonFile(addon, 'preview', ['js', 'mjs', 'jsx', 'ts', 'tsx']);
 
-      return null; // Skip this addon if it cannot be resolved
-    }
-
-    const isPreviewFileExists = getPreviewExists({ configPath: addonPath });
-
-    if (isPreviewFileExists) {
-      enhancers.push(`require('${addon}/preview')`);
+    if (previewPath) {
+      enhancers.push(`require('${previewPath}')`);
+      continue;
     }
   }
 
