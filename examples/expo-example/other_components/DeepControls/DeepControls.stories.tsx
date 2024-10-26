@@ -1,9 +1,23 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
-const DeepControls = () => {
-  return <Text>Testing story with deep controls (storybook-addon-deep-controls)</Text>;
+const DeepControls = ({
+  objectArg,
+}: {
+  objectArg: {
+    string: string;
+    number: number;
+    boolean: boolean;
+    enumString: string;
+    nested: { number: number; boolean: boolean };
+  };
+}) => {
+  return (
+    <View style={{ gap: 10 }}>
+      <Text>Testing story with deep controls (storybook-addon-deep-controls)</Text>
+      <Text>{JSON.stringify(objectArg, null, 2)}</Text>
+    </View>
+  );
 };
 
 export default {
@@ -29,9 +43,30 @@ export const Basic: StoryObj<typeof DeepControls> = {
   },
   argTypes: {
     // so we define an argType for the property to use a radio control with specific values
+    // @ts-expect-error
     'objectArg.enumString': {
       control: 'radio',
       options: ['value1', 'value2', 'value3'],
+    },
+
+    'objectArg.boolean': {
+      control: 'boolean',
+    },
+
+    'objectArg.number': {
+      control: 'number',
+    },
+
+    'objectArg.string': {
+      control: 'text',
+    },
+
+    'objectArg.nested.boolean': {
+      control: 'boolean',
+    },
+
+    'objectArg.nested.number': {
+      control: 'number',
     },
   },
 };
