@@ -48,23 +48,26 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   const registerAddons = main.addons?.map((addon) => `import "${addon}/register";`).join('\n');
 
-  const doctools = 'require("@storybook/react-native/dist/preview")';
+  const docTools = 'require("@storybook/react-native/dist/preview")';
 
-  const enhancer = [];
+  const enhancers = [docTools];
 
-  main.addons?.forEach((addon) => {
+  for (const addon of main.addons) {
     let addonPath;
     try {
       addonPath = path.dirname(require.resolve(addon));
     } catch (error) {
       console.error(`Failed to resolve addon: ${addon}`, error);
+
       return null; // Skip this addon if it cannot be resolved
     }
+
     const isPreviewFileExists = getPreviewExists({ configPath: addonPath });
+
     if (isPreviewFileExists) {
-      enhancer.push(`require('${addon}/preview')`);
+      enhancers.push(`require('${addon}/preview')`);
     }
-  });
+  }
 
   let options = '';
   let optionsVar = '';
@@ -77,7 +80,11 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   const previewExists = getPreviewExists({ configPath });
 
-  const annotations = `[${previewExists ? "require('./preview')," : ''}${doctools}, ${enhancer}]`;
+  if (previewExists) {
+    enhancers.unshift("require('./preview')");
+  }
+
+  const annotations = `[${enhancers.join(', ')}]`;
 
   const globalTypes = `
     declare global {
