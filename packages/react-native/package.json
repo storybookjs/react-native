@@ -22,6 +22,11 @@
     "sb-rn-get-stories": "./bin/get-stories.js",
     "sb-rn-watcher": "./bin/watcher.js"
   },
+  "exports": {
+    ".": "./dist/index.js",
+    "./metro/withStorybook": "./dist/metro/withStorybook.js",
+    "./preview": "./dist/preview.js"
+  },
   "files": [
     "bin/**/*",
     "dist/**/*",
@@ -29,13 +34,11 @@
     "*.js",
     "*.d.ts",
     "scripts/*",
-    "metro/*",
     "template/**/*"
   ],
   "scripts": {
     "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
-    "prepare": "rm -rf dist/ && tsup && npm run prepare:withStorybook",
-    "prepare:withStorybook": "tsup metro/withStorybook.ts --dts --outDir metro/ --clean false",
+    "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
     "test:ci": "jest"
   },

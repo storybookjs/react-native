@@ -48,7 +48,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   const registerAddons = main.addons?.map((addon) => `import "${addon}/register";`).join('\n');
 
-  const doctools = 'require("@storybook/react-native/dist/preview")';
+  const doctools = 'require("@storybook/react-native/preview")';
 
   // TODO: implement presets or something similar
   const enhancer = main.addons?.includes('@storybook/addon-ondevice-actions')

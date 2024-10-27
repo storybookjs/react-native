@@ -1,6 +1,6 @@
 import * as path from 'path';
 
-import { generate } from '../scripts/generate';
+import { generate } from '../../scripts/generate';
 import { WebSocketServer, WebSocket, Data } from 'ws';
 import type { MetroConfig } from 'metro-config';
 /**
