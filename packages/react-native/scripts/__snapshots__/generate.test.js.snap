@@ -27,7 +27,7 @@ import "@storybook/addon-ondevice-actions/register";
     }
   
 
-  const annotations = [require('./preview'),require("@storybook/react-native/dist/preview"), require('@storybook/addon-actions/preview')];
+  const annotations = [require('./preview'),require("@storybook/react-native/preview"), require('@storybook/addon-actions/preview')];
 
   global.STORIES = normalizedStories;
   
@@ -77,7 +77,7 @@ import "@storybook/addon-ondevice-actions/register";
     }
   
 
-  const annotations = [require('./preview'),require("@storybook/react-native/dist/preview"), require('@storybook/addon-actions/preview')];
+  const annotations = [require('./preview'),require("@storybook/react-native/preview"), require('@storybook/addon-actions/preview')];
 
   global.STORIES = normalizedStories;
   
@@ -127,7 +127,7 @@ import "@storybook/addon-ondevice-actions/register";
     }
   
 
-  const annotations = [require('./preview'),require("@storybook/react-native/dist/preview"), require('@storybook/addon-actions/preview')];
+  const annotations = [require('./preview'),require("@storybook/react-native/preview"), require('@storybook/addon-actions/preview')];
 
   global.STORIES = normalizedStories;
   
@@ -177,7 +177,7 @@ import "@storybook/addon-ondevice-actions/register";
     }
   
 
-  const annotations = [require("@storybook/react-native/dist/preview"), require('@storybook/addon-actions/preview')];
+  const annotations = [require("@storybook/react-native/preview"), require('@storybook/addon-actions/preview')];
 
   global.STORIES = normalizedStories;
   
@@ -222,7 +222,7 @@ import "@storybook/addon-ondevice-actions/register";
 
   
 
-  const annotations = [require('./preview'),require("@storybook/react-native/dist/preview"), require('@storybook/addon-actions/preview')];
+  const annotations = [require('./preview'),require("@storybook/react-native/preview"), require('@storybook/addon-actions/preview')];
 
   global.STORIES = normalizedStories;
   
