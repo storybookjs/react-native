@@ -34,7 +34,8 @@
     "*.js",
     "*.d.ts",
     "scripts/*",
-    "template/**/*"
+    "template/**/*",
+    "metro/**/*"
   ],
   "scripts": {
     "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
