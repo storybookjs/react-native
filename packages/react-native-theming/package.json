@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-theming",
-  "version": "8.3.10",
+  "version": "8.4.0-alpha.1",
   "description": "A wrapper library around emotion 11 to provide theming support for react-native storybook",
   "keywords": [
     "react",

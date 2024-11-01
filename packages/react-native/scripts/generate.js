@@ -57,7 +57,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
     }
   }
 
-  const docTools = 'require("@storybook/react-native/dist/preview")';
+  const docTools = 'require("@storybook/react-native/preview")';
 
   const enhancers = [docTools];
 

@@ -20,83 +20,76 @@ export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
 }
 
-export const MobileAddonsPanel = forwardRef<
-  MobileAddonsPanelRef,
-  { storyId?: string; onStateChange: (open: boolean) => void }
->(({ storyId, onStateChange }, ref) => {
-  const theme = useTheme();
-  const reducedMotion = useReducedMotion();
+export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
+  ({ storyId }, ref) => {
+    const theme = useTheme();
+    const reducedMotion = useReducedMotion();
 
-  const addonsPanelBottomSheetRef = useRef<BottomSheetModal>(null);
-  const insets = useSafeAreaInsets();
+    const addonsPanelBottomSheetRef = useRef<BottomSheetModal>(null);
+    const insets = useSafeAreaInsets();
 
-  const animatedPosition = useSharedValue(0);
+    const animatedPosition = useSharedValue(0);
 
-  // bringing in animated keyboard disables android resizing
-  // TODO replicate functionality without this
-  useAnimatedKeyboard();
+    // bringing in animated keyboard disables android resizing
+    // TODO replicate functionality without this
+    useAnimatedKeyboard();
 
-  useImperativeHandle(ref, () => ({
-    setAddonsPanelOpen: (open: boolean) => {
-      if (open) {
-        onStateChange(true);
-        addonsPanelBottomSheetRef.current?.present();
-      } else {
-        onStateChange(false);
-        addonsPanelBottomSheetRef.current?.dismiss();
-      }
-    },
-  }));
+    useImperativeHandle(ref, () => ({
+      setAddonsPanelOpen: (open: boolean) => {
+        if (open) {
+          addonsPanelBottomSheetRef.current?.present();
+        } else {
+          addonsPanelBottomSheetRef.current?.dismiss();
+        }
+      },
+    }));
 
-  const { height } = useWindowDimensions();
+    const { height } = useWindowDimensions();
 
-  const adjustedBottomSheetSize = useAnimatedStyle(() => {
-    return {
-      maxHeight: height - animatedPosition.value - insets.bottom,
-    };
-  }, [animatedPosition.value, height, insets.bottom]);
+    const adjustedBottomSheetSize = useAnimatedStyle(() => {
+      return {
+        maxHeight: height - animatedPosition.value - insets.bottom,
+      };
+    }, [animatedPosition.value, height, insets.bottom]);
 
-  return (
-    <BottomSheetModal
-      ref={addonsPanelBottomSheetRef}
-      index={1}
-      animateOnMount={!reducedMotion}
-      onDismiss={() => {
-        onStateChange(false);
-      }}
-      snapPoints={['25%', '50%', '75%']}
-      style={{
-        paddingTop: 8,
-      }}
-      animatedPosition={animatedPosition}
-      containerStyle={{}}
-      backgroundStyle={{
-        borderRadius: 0,
-        borderTopColor: theme.appBorderColor,
-        borderTopWidth: 1,
-        backgroundColor: theme.background.content,
-      }}
-      handleIndicatorStyle={{ backgroundColor: theme.textMutedColor }}
-      keyboardBehavior="extend"
-      // keyboardBlurBehavior="restore"
-      enableDismissOnClose
-      enableHandlePanningGesture={true}
-      // enableContentPanningGesture={true}
-      stackBehavior="replace"
-      enableDynamicSizing={false}
-    >
-      <Animated.View style={[{ flex: 1 }, adjustedBottomSheetSize]}>
-        <AddonsTabs
-          onClose={() => {
-            onStateChange(false);
-            addonsPanelBottomSheetRef.current?.dismiss();
-          }}
-          storyId={storyId}
-        />
-      </Animated.View>
-    </BottomSheetModal>
-  );
-});
+    return (
+      <BottomSheetModal
+        ref={addonsPanelBottomSheetRef}
+        index={1}
+        animateOnMount={!reducedMotion}
+        snapPoints={['25%', '50%', '75%']}
+        style={{
+          paddingTop: 8,
+        }}
+        animatedPosition={animatedPosition}
+        containerStyle={{}}
+        backgroundStyle={{
+          borderRadius: 0,
+          borderTopColor: theme.appBorderColor,
+          borderTopWidth: 1,
+          backgroundColor: theme.background.content,
+        }}
+        handleIndicatorStyle={{ backgroundColor: theme.textMutedColor }}
+        keyboardBehavior="extend"
+        // keyboardBlurBehavior="restore"
+        enableDismissOnClose
+        enableHandlePanningGesture={true}
+        // enableContentPanningGesture={true}
+        stackBehavior="replace"
+        enableDynamicSizing={false}
+      >
+        <Animated.View style={[{ flex: 1 }, adjustedBottomSheetSize]}>
+          <AddonsTabs
+            onClose={() => {
+              addonsPanelBottomSheetRef.current?.dismiss();
+            }}
+            storyId={storyId}
+          />
+        </Animated.View>
+      </BottomSheetModal>
+    );
+  }
+);
 
 export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId?: string }) => {
   const panels = addons.getElements(Addon_TypesEnum.PANEL);

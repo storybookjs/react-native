@@ -4,7 +4,7 @@ import { type API_IndexHash, type Args, type StoryContext } from '@storybook/cor
 import type { ReactRenderer } from '@storybook/react';
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { ReactNode, useRef, useState } from 'react';
-import { Platform, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { IconButton } from './IconButton';
 import { useLayout } from './LayoutProvider';
@@ -28,8 +28,6 @@ export const Layout = ({
 }) => {
   const theme = useTheme();
   const mobileMenuDrawerRef = useRef<MobileMenuDrawerRef>(null);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
   const insets = useSafeAreaInsets();
   const { isDesktop } = useLayout();
@@ -135,7 +133,29 @@ export const Layout = ({
     <View style={{ flex: 1, paddingTop: insets.top, backgroundColor: theme.background.content }}>
       <View style={{ flex: 1, overflow: 'hidden' }}>{children}</View>
 
-      <MobileMenuDrawer ref={mobileMenuDrawerRef} onStateChange={setDrawerOpen}>
+      <Container style={{ marginBottom: insets.bottom }}>
+        <Nav>
+          <Button
+            style={{ flexShrink: 1 }}
+            hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
+            onPress={() => {
+              mobileMenuDrawerRef.current.setMobileMenuOpen(true);
+            }}
+          >
+            <MenuIcon color={theme.color.mediumdark} />
+            <Text style={{ flexShrink: 1, color: theme.color.defaultText }} numberOfLines={1}>
+              {story?.title}/{story?.name}
+            </Text>
+          </Button>
+
+          <IconButton
+            onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
+            Icon={BottomBarToggleIcon}
+          />
+        </Nav>
+      </Container>
+
+      <MobileMenuDrawer ref={mobileMenuDrawerRef}>
         <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
           {theme.base === 'light' ? (
             <Logo height={25} width={125} />
@@ -160,30 +180,7 @@ export const Layout = ({
         />
       </MobileMenuDrawer>
 
-      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} onStateChange={setMenuOpen} />
-      {(Platform.OS !== 'android' || (!menuOpen && !drawerOpen)) && (
-        <Container style={{ marginBottom: insets.bottom }}>
-          <Nav>
-            <Button
-              style={{ flexShrink: 1 }}
-              hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
-              onPress={() => {
-                mobileMenuDrawerRef.current.setMobileMenuOpen(true);
-              }}
-            >
-              <MenuIcon color={theme.color.mediumdark} />
-              <Text style={{ flexShrink: 1, color: theme.color.defaultText }} numberOfLines={1}>
-                {story?.title}/{story?.name}
-              </Text>
-            </Button>
-
-            <IconButton
-              onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
-              Icon={BottomBarToggleIcon}
-            />
-          </Nav>
-        </Container>
-      )}
+      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />
     </View>
   );
 };
@@ -201,7 +198,6 @@ const Nav = styled.View({
 const Container = styled.View(({ theme }) => ({
   alignSelf: 'flex-end',
   width: '100%',
-  zIndex: 10,
   backgroundColor: theme.barBg,
   borderTopColor: theme.appBorderColor,
   borderTopWidth: 1,
