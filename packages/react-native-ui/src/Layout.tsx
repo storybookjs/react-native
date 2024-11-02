@@ -16,6 +16,7 @@ import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { DarkLogo } from './icon/DarkLogo';
 import { Logo } from './icon/Logo';
 import { MenuIcon } from './icon/MenuIcon';
+import { useStoreState } from './hooks/useStoreState';
 
 export const Layout = ({
   storyHash,
@@ -34,9 +35,12 @@ export const Layout = ({
   const insets = useSafeAreaInsets();
   const { isDesktop } = useLayout();
 
-  const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
+  const [desktopSidebarOpen, setDesktopSidebarOpen] = useStoreState('desktopSidebarState', true);
 
-  const [desktopAddonsPanelOpen, setDesktopAddonsPanelOpen] = useState(true);
+  const [desktopAddonsPanelOpen, setDesktopAddonsPanelOpen] = useStoreState(
+    'desktopPanelState',
+    true
+  );
 
   if (isDesktop) {
     return (

@@ -14,8 +14,8 @@ import { CollapseAllIcon } from './icon/CollapseAllIcon';
 import { CollapseIcon } from './icon/CollapseIcon';
 import { ExpandAllIcon } from './icon/ExpandAllIcon';
 import { Item } from './types';
-import type { ExpandAction, ExpandedState } from './useExpanded';
-import { useExpanded } from './useExpanded';
+import type { ExpandAction, ExpandedState } from './hooks/useExpanded';
+import { useExpanded } from './hooks/useExpanded';
 import { getGroupStatus, statusMapping } from './util/status';
 import { createId, getAncestorIds, getDescendantIds, isStoryHoistable } from './util/tree';
 

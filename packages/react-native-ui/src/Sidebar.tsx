@@ -10,7 +10,7 @@ import { Explorer } from './Explorer';
 import { Search } from './Search';
 import { SearchResults } from './SearchResults';
 import type { CombinedDataset, Selection } from './types';
-import { useLastViewed } from './useLastViewed';
+import { useLastViewed } from './hooks/useLastViewed';
 import { DEFAULT_REF_ID } from './constants';
 import { View } from 'react-native';
 
