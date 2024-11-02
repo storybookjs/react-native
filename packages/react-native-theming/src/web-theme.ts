@@ -171,8 +171,11 @@ export type Typography = typeof typography;
 
 export type TextSize = number | string;
 export interface Brand {
+  // Will replace the storybook logo with this title
   title: string | undefined;
+  // This url we be opened when clicking the branded logo or title
   url: string | null | undefined;
+  // Either define a url or an image source to replace storybook logo with
   image: string | ImageSourcePropType | null | undefined;
   target: string | null | undefined;
 }
