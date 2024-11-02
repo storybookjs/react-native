@@ -50,22 +50,25 @@ const BrandTitle: FC<{ theme: Theme & { brand: NonNullable<Theme['brand']> } }> 
     };
   }, [theme]);
 
-  const title = <Text style={brandTitleStyle} numberOfLines={1} ellipsizeMode="tail">
+  const title = (
+    <Text style={brandTitleStyle} numberOfLines={1} ellipsizeMode="tail">
       {theme.brand.title}
     </Text>
-
-if (theme.brand.url) {
-  return (
-    <TouchableOpacity
-      onPress={() => {
-        if (theme.brand.url) Linking.openURL(theme.brand.url);
-      }}
-    >
-      {title}
-    </TouchableOpacity>
   );
-} else {
-  title
+
+  if (theme.brand.url) {
+    return (
+      <TouchableOpacity
+        onPress={() => {
+          if (theme.brand.url) Linking.openURL(theme.brand.url);
+        }}
+      >
+        {title}
+      </TouchableOpacity>
+    );
+  } else {
+    title;
+  }
 };
 
 export const StorybookLogo: FC<{ theme: Theme }> = ({ theme }) => {
