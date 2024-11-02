@@ -1,4 +1,4 @@
-import type { TextStyle } from 'react-native';
+import type { ImageSourcePropType, TextStyle } from 'react-native';
 import { transparentize } from 'polished';
 
 export const color = {
@@ -173,7 +173,7 @@ export type TextSize = number | string;
 export interface Brand {
   title: string | undefined;
   url: string | null | undefined;
-  image: string | null | undefined;
+  image: string | ImageSourcePropType | null | undefined;
   target: string | null | undefined;
 }
 

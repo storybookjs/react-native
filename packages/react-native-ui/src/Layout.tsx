@@ -16,6 +16,7 @@ import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { DarkLogo } from './icon/DarkLogo';
 import { Logo } from './icon/Logo';
 import { MenuIcon } from './icon/MenuIcon';
+import { StorybookLogo } from './StorybookLogo';
 
 export const Layout = ({
   storyHash,
@@ -74,11 +75,7 @@ export const Layout = ({
                   justifyContent: 'space-between',
                 }}
               >
-                {theme.base === 'light' ? (
-                  <Logo height={25} width={125} />
-                ) : (
-                  <DarkLogo height={25} width={125} />
-                )}
+                <StorybookLogo theme={theme} />
 
                 <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
               </View>
