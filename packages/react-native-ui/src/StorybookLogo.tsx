@@ -67,7 +67,7 @@ const BrandTitle: FC<{ theme: Theme & { brand: NonNullable<Theme['brand']> } }> 
       </TouchableOpacity>
     );
   } else {
-    title;
+    return title;
   }
 };
 
