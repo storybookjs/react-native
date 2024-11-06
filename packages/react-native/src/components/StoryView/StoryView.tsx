@@ -37,7 +37,7 @@ const StoryView = () => {
 
     return (
       <View
-        style={{ flex: 1, backgroundColor: theme.background?.content }}
+        style={{ flex: 1, backgroundColor: theme.background?.content, overflow: 'hidden' }}
         key={id}
         testID={id}
         onStartShouldSetResponder={dismissOnStartResponder}

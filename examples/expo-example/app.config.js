@@ -5,8 +5,5 @@ module.exports = {
   web: {
     bundler: 'metro',
   },
-  extra: {
-    storybookEnabled: process.env.STORYBOOK_ENABLED,
-  },
   userInterfaceStyle: 'automatic',
 };
