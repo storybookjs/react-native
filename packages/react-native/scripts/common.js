@@ -58,6 +58,28 @@ function getPreviewExists({ configPath }) {
   return !!getFilePathExtension({ configPath }, 'preview');
 }
 
+function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts']) {
+  try {
+    const basePath = path.join(addon, file);
+
+    require.resolve(basePath);
+
+    return basePath;
+  } catch (error) {}
+
+  for (const ext of extensions) {
+    try {
+      const filePath = path.join(addon, `${file}.${ext}`);
+
+      require.resolve(filePath);
+
+      return filePath;
+    } catch (error) {}
+  }
+
+  return null;
+}
+
 module.exports = {
   toRequireContext,
   requireUncached,
@@ -65,4 +87,5 @@ module.exports = {
   getMain,
   ensureRelativePathHasDot,
   getPreviewExists,
+  resolveAddonFile,
 };

@@ -3,6 +3,7 @@ const {
   ensureRelativePathHasDot,
   getMain,
   getPreviewExists,
+  resolveAddonFile,
 } = require('./common');
 const { normalizeStories, globToRegexp } = require('@storybook/core/common');
 const fs = require('fs');
@@ -46,14 +47,28 @@ function generate({ configPath, absolute = false, useJs = false }) {
     }`;
   });
 
-  const registerAddons = main.addons?.map((addon) => `import "${addon}/register";`).join('\n');
+  let registerAddons = '';
 
-  const doctools = 'require("@storybook/react-native/dist/preview")';
+  for (const addon of main.addons) {
+    const registerPath = resolveAddonFile(addon, 'register', ['js', 'mjs', 'jsx', 'ts', 'tsx']);
 
-  // TODO: implement presets or something similar
-  const enhancer = main.addons?.includes('@storybook/addon-ondevice-actions')
-    ? "require('@storybook/addon-actions/preview')"
-    : '';
+    if (registerPath) {
+      registerAddons += `import "${registerPath}";\n`;
+    }
+  }
+
+  const docTools = 'require("@storybook/react-native/preview")';
+
+  const enhancers = [docTools];
+
+  for (const addon of main.addons) {
+    const previewPath = resolveAddonFile(addon, 'preview', ['js', 'mjs', 'jsx', 'ts', 'tsx']);
+
+    if (previewPath) {
+      enhancers.push(`require('${previewPath}')`);
+      continue;
+    }
+  }
 
   let options = '';
   let optionsVar = '';
@@ -66,7 +81,11 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   const previewExists = getPreviewExists({ configPath });
 
-  const annotations = `[${previewExists ? "require('./preview')," : ''}${doctools}, ${enhancer}]`;
+  if (previewExists) {
+    enhancers.unshift("require('./preview')");
+  }
+
+  const annotations = `[${enhancers.join(', ')}]`;
 
   const globalTypes = `
     declare global {

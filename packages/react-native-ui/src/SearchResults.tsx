@@ -159,17 +159,20 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
           </Highlight>
         </Title>
         <Path>
-          {item.path.map((group, index) => (
-            <View key={index} style={{ flexShrink: 1 }}>
-              <PathText>
-                <Highlight
-                  match={pathMatches.find((match: FuseResultMatch) => match.refIndex === index)}
-                >
-                  {group}
-                </Highlight>
-              </PathText>
-            </View>
-          ))}
+          {item.path.map((group, index) => {
+            const pathSeparator = index === item.path.length - 1 ? '' : '/';
+            return (
+              <View key={index} style={{ flexShrink: 1 }}>
+                <PathText>
+                  <Highlight
+                    match={pathMatches.find((match: FuseResultMatch) => match.refIndex === index)}
+                  >
+                    {`${group}${pathSeparator}`}
+                  </Highlight>
+                </PathText>
+              </View>
+            );
+          })}
         </Path>
       </ResultRowContent>
       {item.status ? i : null}
