@@ -60,7 +60,7 @@ function getPreviewExists({ configPath }) {
 
 function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts']) {
   try {
-    const basePath = path.join(addon, file);
+    const basePath = `${addon}/${file}`;
 
     require.resolve(basePath);
 
@@ -69,7 +69,7 @@ function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts']) {
 
   for (const ext of extensions) {
     try {
-      const filePath = path.join(addon, `${file}.${ext}`);
+      const filePath = `${addon}/${file}.${ext}`;
 
       require.resolve(filePath);
 
