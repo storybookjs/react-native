@@ -219,7 +219,7 @@ export interface StorybookThemeWeb {
   barSelectedColor: string;
   barBg: string;
 
-  brand: Brand;
+  brand?: Brand;
 
   // [key: string]: any;
 }

@@ -18,8 +18,8 @@ const StorybookUIRoot = view.getStorybookUI({
   //   brand: {
   //     image: {
   //       uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
-  //       // width: 25,
-  //       // height: 25,
+  //       width: 25,
+  //       height: 25,
   //     },
   //   },
   // },

@@ -14,9 +14,9 @@ const NoBrandLogo: FC<{ theme: Theme }> = ({ theme }) =>
     <DarkLogo height={HEIGHT} width={WIDTH} />
   );
 
-const BrandLogo: FC<{ theme: Theme & { brand: NonNullable<Theme['brand']> } }> = ({ theme }) => {
+const BrandLogo: FC<{ theme: Theme }> = ({ theme }) => {
   const imageHasNoWidthOrHeight =
-    theme.brand.image &&
+    typeof theme.brand.image === 'object' &&
     typeof theme.brand.image === 'object' &&
     'uri' in theme.brand.image &&
     (!('height' in theme.brand.image) || !('width' in theme.brand.image));
@@ -28,6 +28,10 @@ const BrandLogo: FC<{ theme: Theme & { brand: NonNullable<Theme['brand']> } }> =
       );
     }
   }, [imageHasNoWidthOrHeight]);
+
+  if (!theme.brand.image) {
+    return null;
+  }
 
   const image = (
     <Image
@@ -52,7 +56,7 @@ const BrandLogo: FC<{ theme: Theme & { brand: NonNullable<Theme['brand']> } }> =
   }
 };
 
-const BrandTitle: FC<{ theme: Theme & { brand: NonNullable<Theme['brand']> } }> = ({ theme }) => {
+const BrandTitle: FC<{ theme: Theme }> = ({ theme }) => {
   const brandTitleStyle = useMemo<StyleProp<TextStyle>>(() => {
     return {
       width: WIDTH,
@@ -84,9 +88,9 @@ const BrandTitle: FC<{ theme: Theme & { brand: NonNullable<Theme['brand']> } }> 
 };
 
 export const StorybookLogo: FC<{ theme: Theme }> = ({ theme }) => {
-  if (theme.brand.image) {
+  if (theme.brand?.image) {
     return <BrandLogo theme={theme} />;
-  } else if (theme.brand.title) {
+  } else if (theme.brand?.title) {
     return <BrandTitle theme={theme} />;
   } else {
     return <NoBrandLogo theme={theme} />;
