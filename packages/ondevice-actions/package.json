@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-actions",
-  "version": "8.4.2",
+  "version": "8.4.3-alpha.1",
   "description": "Action Logger addon for react-native storybook",
   "keywords": [
     "storybook"

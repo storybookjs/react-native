@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-notes",
-  "version": "8.4.2",
+  "version": "8.4.3-alpha.1",
   "description": "Write notes for your react-native Storybook stories.",
   "keywords": [
     "addon",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@storybook/core": "^8.4.2",
-    "@storybook/react-native-theming": "^8.4.2",
+    "@storybook/react-native-theming": "^8.4.3-alpha.1",
     "react-native-markdown-display": "^7.0.2"
   },
   "devDependencies": {

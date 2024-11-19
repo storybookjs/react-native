@@ -50,7 +50,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
       return {
         maxHeight: height - animatedPosition.value - insets.bottom,
       };
-    }, [animatedPosition.value, height, insets.bottom]);
+    }, [animatedPosition, height, insets.bottom]);
 
     return (
       <BottomSheetModal

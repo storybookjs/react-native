@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "8.4.2",
+  "version": "8.4.3-alpha.1",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -19,13 +19,13 @@
   "license": "MIT",
   "main": "dist/index.js",
   "bin": {
-    "sb-rn-get-stories": "./bin/get-stories.js",
-    "sb-rn-watcher": "./bin/watcher.js"
+    "sb-rn-get-stories": "./bin/get-stories.js"
   },
   "exports": {
     ".": "./dist/index.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
-    "./preview": "./dist/preview.js"
+    "./preview": "./dist/preview.js",
+    "./scripts/generate": "./scripts/generate.js"
   },
   "files": [
     "bin/**/*",
@@ -49,8 +49,8 @@
     "@storybook/csf": "^0.1.1",
     "@storybook/global": "^5.0.0",
     "@storybook/react": "^8.4.2",
-    "@storybook/react-native-theming": "^8.4.2",
-    "@storybook/react-native-ui": "^8.4.2",
+    "@storybook/react-native-theming": "^8.4.3-alpha.1",
+    "@storybook/react-native-ui": "^8.4.3-alpha.1",
     "chokidar": "^3.5.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
