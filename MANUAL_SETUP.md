@@ -143,7 +143,7 @@ const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 
-module.exports = withStorybook(finalConfig);
+module.exports = withStorybook(defaultConfig);
 ```
 
 **Add a stories file**

@@ -77,6 +77,7 @@ export const SingleStoryComponents: Story = {
         data={{
           ...{
             single: {
+              tags: [],
               type: 'component',
               name: 'Single',
               id: 'single',
