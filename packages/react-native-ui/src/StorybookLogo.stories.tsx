@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import { StorybookLogo } from './StorybookLogo';
-import { useTheme } from '@storybook/react-native-theming';
+import { Theme, theme } from '@storybook/react-native-theming';
 
 const meta = {
   component: StorybookLogo,
@@ -15,67 +15,55 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const TitleLogo: Story = {
-  decorators: [
-    (Story) => {
-      const theme = useTheme();
-      return <Story args={{ theme: { ...theme, brand: { title: 'React Native' } } }} />;
-    },
-  ],
+  args: {
+    theme: {
+      ...theme,
+      brand: { title: 'React Native' },
+    } satisfies Theme,
+  },
 };
 
 export const ImageLogo: Story = {
-  decorators: [
-    (Story) => {
-      const theme = useTheme();
-      return (
-        <Story
-          args={{
-            theme: { ...theme, brand: { image: 'https://reactnative.dev/img/oss_logo.svg' } },
-          }}
-        />
-      );
-    },
-  ],
+  args: {
+    theme: {
+      ...theme,
+      brand: {
+        image: {
+          uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
+          height: 25,
+          width: 25,
+        },
+      },
+    } satisfies Theme,
+  },
 };
 
 export const ImageUrlLogo: Story = {
-  decorators: [
-    (Story) => {
-      const theme = useTheme();
-      return (
-        <Story
-          args={{
-            theme: {
-              ...theme,
-              brand: {
-                image: 'https://reactnative.dev/img/oss_logo.svg',
-                url: 'https://reactnative.dev',
-              },
-            },
-          }}
-        />
-      );
-    },
-  ],
+  args: {
+    theme: {
+      ...theme,
+      brand: {
+        image: {
+          uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
+          width: 25,
+          height: 25,
+        },
+        title: 'React Native',
+        url: 'https://reactnative.dev',
+      },
+    } satisfies Theme,
+  },
 };
 
 export const ImageSourceLogo: Story = {
-  decorators: [
-    (Story) => {
-      const theme = useTheme();
-      return (
-        <Story
-          args={{
-            theme: {
-              ...theme,
-              brand: {
-                imageSource: require('./assets/react-native-logo.png'),
-                url: 'https://reactnative.dev',
-              },
-            },
-          }}
-        />
-      );
-    },
-  ],
+  args: {
+    theme: {
+      ...theme,
+      brand: {
+        image: require('./assets/react-native-logo.png'),
+        resizeMode: 'contain',
+        url: 'https://reactnative.dev',
+      },
+    } satisfies Theme,
+  },
 };

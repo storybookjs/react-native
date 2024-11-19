@@ -1,4 +1,4 @@
-import type { ImageSourcePropType, TextStyle } from 'react-native';
+import type { ImageProps, ImageSourcePropType, TextStyle } from 'react-native';
 import { transparentize } from 'polished';
 
 export const color = {
@@ -172,12 +172,13 @@ export type Typography = typeof typography;
 export type TextSize = number | string;
 export interface Brand {
   // Will replace the storybook logo with this title
-  title: string | undefined;
+  title?: string | undefined;
   // This url we be opened when clicking the branded logo or title
-  url: string | null | undefined;
-  // Either define a url or an image source to replace storybook logo with
-  image: string | ImageSourcePropType | null | undefined;
-  target: string | null | undefined;
+  url?: string | null | undefined;
+  // Define a an image source to replace storybook logo with
+  image?: ImageSourcePropType | null | undefined;
+  resizeMode?: ImageProps['resizeMode'] | null | undefined;
+  target?: string | null | undefined;
 }
 
 export interface StorybookThemeWeb {

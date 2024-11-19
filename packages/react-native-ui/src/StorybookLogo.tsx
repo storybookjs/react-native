@@ -1,5 +1,5 @@
 import { Theme } from '@storybook/react-native-theming';
-import { FC, useMemo } from 'react';
+import { FC, useEffect, useMemo } from 'react';
 import { Image, Linking, StyleProp, Text, TextStyle, TouchableOpacity } from 'react-native';
 import { DarkLogo } from './icon/DarkLogo';
 import { Logo } from './icon/Logo';
@@ -15,13 +15,25 @@ const NoBrandLogo: FC<{ theme: Theme }> = ({ theme }) =>
   );
 
 const BrandLogo: FC<{ theme: Theme & { brand: NonNullable<Theme['brand']> } }> = ({ theme }) => {
+  const imageHasNoWidthOrHeight =
+    theme.brand.image &&
+    typeof theme.brand.image === 'object' &&
+    'uri' in theme.brand.image &&
+    (!('height' in theme.brand.image) || !('width' in theme.brand.image));
+
+  useEffect(() => {
+    if (imageHasNoWidthOrHeight) {
+      console.warn(
+        "STORYBOOK: When using a remote image as the brand logo, you must also set the width and height.\nFor example:  brand: { image: { uri: 'https://sb.com/img.png', height: 25, width: 25}}"
+      );
+    }
+  }, [imageHasNoWidthOrHeight]);
+
   const image = (
     <Image
-      source={
-        typeof theme.brand.image === 'string' ? { uri: theme.brand.image } : theme.brand.image
-      }
-      resizeMode="contain"
-      style={{ height: HEIGHT, width: WIDTH }}
+      source={theme.brand.image}
+      resizeMode={theme.brand.resizeMode ?? 'contain'}
+      style={imageHasNoWidthOrHeight ? { width: WIDTH, height: HEIGHT } : undefined}
     />
   );
 
