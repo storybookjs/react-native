@@ -1,12 +1,21 @@
 import { useEffect, useState } from 'react';
-import store from 'store2';
+import { useStorage } from '../StorageProvider';
 
-export const useStoreState = <T>(key: string, defaultValue: T): ReturnType<typeof useState<T>> => {
-  const [val, setVal] = useState<T>(store.get(key) ?? defaultValue);
+export const useStoreBooleanState = (
+  key: string,
+  defaultValue: boolean
+): ReturnType<typeof useState<boolean>> => {
+  const storage = useStorage();
+
+  const [val, setVal] = useState<boolean>(defaultValue);
 
   useEffect(() => {
-    store.set(key, val);
-  }, [key, val]);
+    storage.getItem(key).then((newVal) => setVal(newVal === 'true'));
+  }, [key, storage, defaultValue]);
+
+  useEffect(() => {
+    storage.setItem(key, val.toString());
+  }, [key, storage, val]);
 
   return [val, setVal];
 };

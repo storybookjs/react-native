@@ -3,7 +3,7 @@ import { addons } from '@storybook/core/manager-api';
 import { type API_IndexHash, type Args, type StoryContext } from '@storybook/core/types';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, useTheme } from '@storybook/react-native-theming';
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useRef } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { IconButton } from './IconButton';
@@ -16,7 +16,7 @@ import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { DarkLogo } from './icon/DarkLogo';
 import { Logo } from './icon/Logo';
 import { MenuIcon } from './icon/MenuIcon';
-import { useStoreState } from './hooks/useStoreState';
+import { useStoreBooleanState } from './hooks/useStoreState';
 
 export const Layout = ({
   storyHash,
@@ -33,9 +33,12 @@ export const Layout = ({
   const insets = useSafeAreaInsets();
   const { isDesktop } = useLayout();
 
-  const [desktopSidebarOpen, setDesktopSidebarOpen] = useStoreState('desktopSidebarState', true);
+  const [desktopSidebarOpen, setDesktopSidebarOpen] = useStoreBooleanState(
+    'desktopSidebarState',
+    true
+  );
 
-  const [desktopAddonsPanelOpen, setDesktopAddonsPanelOpen] = useStoreState(
+  const [desktopAddonsPanelOpen, setDesktopAddonsPanelOpen] = useStoreBooleanState(
     'desktopPanelState',
     true
   );
