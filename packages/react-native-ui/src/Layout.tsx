@@ -4,7 +4,7 @@ import { type API_IndexHash, type Args, type StoryContext } from '@storybook/cor
 import type { ReactRenderer } from '@storybook/react';
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { ReactNode, useRef, useState } from 'react';
-import { Platform, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { IconButton } from './IconButton';
 import { useLayout } from './LayoutProvider';
@@ -189,6 +189,7 @@ export const Layout = ({
             <DarkLogo height={25} width={125} />
           )}
         </View>
+
         <Sidebar
           extra={[]}
           previewInitialized
@@ -207,7 +208,8 @@ export const Layout = ({
       </MobileMenuDrawer>
 
       <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />
-      {!uiHidden && (Platform.OS !== 'android' || (!menuOpen && !drawerOpen)) && (
+
+      {!uiHidden ? (
         <Container style={{ marginBottom: insets.bottom }}>
           <Nav>
             <Button
@@ -229,7 +231,7 @@ export const Layout = ({
             />
           </Nav>
         </Container>
-      )}
+      ) : null}
     </View>
   );
 };
