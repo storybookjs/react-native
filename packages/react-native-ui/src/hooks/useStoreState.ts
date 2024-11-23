@@ -10,7 +10,13 @@ export const useStoreBooleanState = (
   const [val, setVal] = useState<boolean>(defaultValue);
 
   useEffect(() => {
-    storage.getItem(key).then((newVal) => setVal(newVal === 'true'));
+    storage.getItem(key).then((newVal) => {
+      if (newVal === null || newVal === undefined) {
+        setVal(defaultValue);
+      } else {
+        setVal(newVal === 'true');
+      }
+    });
   }, [key, storage, defaultValue]);
 
   useEffect(() => {
