@@ -9,6 +9,7 @@ import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-
 import {
   Layout,
   LayoutProvider,
+  StorageProvider,
   transformStoryIndexToStoriesHash,
 } from '@storybook/react-native-ui';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybook/core/types';
@@ -287,11 +288,13 @@ export class View {
               <GestureHandlerRootView style={{ flex: 1 }}>
                 <BottomSheetModalProvider>
                   {/* @ts-ignore something weird with story type */}
-                  <LayoutProvider>
-                    <Layout storyHash={storyHash} story={story}>
-                      <StoryView />
-                    </Layout>
-                  </LayoutProvider>
+                  <StorageProvider storage={storage}>
+                    <LayoutProvider>
+                      <Layout storyHash={storyHash} story={story}>
+                        <StoryView />
+                      </Layout>
+                    </LayoutProvider>
+                  </StorageProvider>
                 </BottomSheetModalProvider>
               </GestureHandlerRootView>
             </SafeAreaProvider>

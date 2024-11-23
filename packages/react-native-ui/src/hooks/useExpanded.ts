@@ -1,7 +1,7 @@
 import type { StoriesHash } from '@storybook/core/manager-api';
 import type { Dispatch, Reducer } from 'react';
 import { useCallback, useEffect, useReducer } from 'react';
-import { getAncestorIds } from './util/tree';
+import { getAncestorIds } from '../util/tree';
 
 export type ExpandedState = Record<string, boolean>;
 
