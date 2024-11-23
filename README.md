@@ -385,8 +385,6 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
     storage?: Object (undefined)
         -- {getItem: (key: string) => Promise<string | null>;setItem: (key: string, value: string) => Promise<void>;}
         -- Custom storage to be used instead of AsyncStorage
-    shouldPersistSelection: Boolean (true)
-        -- Stores last selected story in your devices storage.
     onDeviceUI?: boolean;
         -- show the ondevice ui
     enableWebsockets?: boolean;
