@@ -1,6 +1,6 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { ReactElement, forwardRef, useEffect, useMemo, useState } from 'react';
-import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import type { TouchableOpacityProps } from 'react-native';
 import { SvgProps } from 'react-native-svg';
 
 export interface ButtonProps extends TouchableOpacityProps {
@@ -15,7 +15,8 @@ export interface ButtonProps extends TouchableOpacityProps {
   Icon?: (props: SvgProps) => ReactElement;
 }
 
-export const Button = forwardRef<TouchableOpacity, ButtonProps>(
+// TODO fix this type
+export const Button = forwardRef<any, ButtonProps>(
   (
     {
       Icon,
@@ -29,7 +30,7 @@ export const Button = forwardRef<TouchableOpacity, ButtonProps>(
       children,
       text,
       ...props
-    },
+    }: ButtonProps,
     ref
   ) => {
     // let Comp: 'button' | 'a' | typeof Slot = 'button';

@@ -30,8 +30,6 @@ export const Layout = ({
 }) => {
   const theme = useTheme();
   const mobileMenuDrawerRef = useRef<MobileMenuDrawerRef>(null);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
   const insets = useSafeAreaInsets();
   const { isDesktop } = useLayout();
@@ -161,7 +159,29 @@ export const Layout = ({
         </TouchableOpacity>
       </View>
 
-      <MobileMenuDrawer ref={mobileMenuDrawerRef} onStateChange={setDrawerOpen}>
+      <Container style={{ marginBottom: insets.bottom }}>
+        <Nav>
+          <Button
+            style={{ flexShrink: 1 }}
+            hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
+            onPress={() => {
+              mobileMenuDrawerRef.current.setMobileMenuOpen(true);
+            }}
+          >
+            <MenuIcon color={theme.color.mediumdark} />
+            <Text style={{ flexShrink: 1, color: theme.color.defaultText }} numberOfLines={1}>
+              {story?.title}/{story?.name}
+            </Text>
+          </Button>
+
+          <IconButton
+            onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
+            Icon={BottomBarToggleIcon}
+          />
+        </Nav>
+      </Container>
+
+      <MobileMenuDrawer ref={mobileMenuDrawerRef}>
         <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
           {theme.base === 'light' ? (
             <Logo height={25} width={125} />
@@ -186,7 +206,7 @@ export const Layout = ({
         />
       </MobileMenuDrawer>
 
-      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} onStateChange={setMenuOpen} />
+      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />
       {!uiHidden && (Platform.OS !== 'android' || (!menuOpen && !drawerOpen)) && (
         <Container style={{ marginBottom: insets.bottom }}>
           <Nav>
@@ -227,7 +247,6 @@ const Nav = styled.View({
 const Container = styled.View(({ theme }) => ({
   alignSelf: 'flex-end',
   width: '100%',
-  zIndex: 10,
   backgroundColor: theme.barBg,
   borderTopColor: theme.appBorderColor,
   borderTopWidth: 1,

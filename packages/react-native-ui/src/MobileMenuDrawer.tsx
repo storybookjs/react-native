@@ -12,7 +12,6 @@ import { useTheme } from '@storybook/react-native-theming';
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
-  onStateChange: (isOpen: boolean) => void;
 }
 
 export interface MobileMenuDrawerRef {
@@ -30,7 +29,7 @@ export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheet
 );
 
 export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(
-  ({ children, onStateChange }, ref) => {
+  ({ children }, ref) => {
     const reducedMotion = useReducedMotion();
     const insets = useSafeAreaInsets();
     const theme = useTheme();
@@ -40,12 +39,10 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
     useImperativeHandle(ref, () => ({
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
-          onStateChange(true);
-
           menuBottomSheetRef.current?.present();
         } else {
           Keyboard.dismiss();
-          onStateChange(false);
+
           menuBottomSheetRef.current?.dismiss();
         }
       },
@@ -56,9 +53,6 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
         ref={menuBottomSheetRef}
         index={1}
         animateOnMount={!reducedMotion}
-        onDismiss={() => {
-          onStateChange(false);
-        }}
         snapPoints={['50%', '75%']}
         enableDismissOnClose
         enableHandlePanningGesture
