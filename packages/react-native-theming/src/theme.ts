@@ -114,12 +114,7 @@ export const theme: StorybookThemeWeb = {
   barBg: light.barBg,
 
   // Brand logo/text
-  brand: {
-    title: light.brandTitle,
-    url: light.brandUrl,
-    image: light.brandImage || (light.brandTitle ? null : undefined),
-    target: light.brandTarget,
-  },
+  brand: undefined,
 };
 
 export const darkTheme: StorybookThemeWeb = {
@@ -215,10 +210,5 @@ export const darkTheme: StorybookThemeWeb = {
   barBg: dark.barBg,
 
   // Brand logo/text
-  brand: {
-    title: dark.brandTitle,
-    url: dark.brandUrl,
-    image: dark.brandImage || (dark.brandTitle ? null : undefined),
-    target: dark.brandTarget,
-  },
+  brand: undefined,
 };

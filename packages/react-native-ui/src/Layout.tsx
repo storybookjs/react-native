@@ -13,9 +13,9 @@ import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { Sidebar } from './Sidebar';
 import { DEFAULT_REF_ID } from './constants';
 import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
-import { DarkLogo } from './icon/DarkLogo';
-import { Logo } from './icon/Logo';
+
 import { MenuIcon } from './icon/MenuIcon';
+import { StorybookLogo } from './StorybookLogo';
 import { useStoreBooleanState } from './hooks/useStoreState';
 
 export const Layout = ({
@@ -79,11 +79,7 @@ export const Layout = ({
                   justifyContent: 'space-between',
                 }}
               >
-                {theme.base === 'light' ? (
-                  <Logo height={25} width={125} />
-                ) : (
-                  <DarkLogo height={25} width={125} />
-                )}
+                <StorybookLogo theme={theme} />
 
                 <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
               </View>
@@ -164,11 +160,7 @@ export const Layout = ({
 
       <MobileMenuDrawer ref={mobileMenuDrawerRef}>
         <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
-          {theme.base === 'light' ? (
-            <Logo height={25} width={125} />
-          ) : (
-            <DarkLogo height={25} width={125} />
-          )}
+          <StorybookLogo theme={theme} />
         </View>
         <Sidebar
           extra={[]}
