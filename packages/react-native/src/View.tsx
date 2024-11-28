@@ -16,7 +16,7 @@ import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybo
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
-import { View as RNView, StyleSheet, useColorScheme } from 'react-native';
+import { ActivityIndicator, View as RNView, StyleSheet, useColorScheme } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StoryView from './components/StoryView';
@@ -275,7 +275,9 @@ export class View {
               alignItems: 'center',
               justifyContent: 'center',
             }}
-          />
+          >
+            <ActivityIndicator animating size={'large'} />
+          </RNView>
         );
       }
 
