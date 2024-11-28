@@ -1,6 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import { StorybookLogo } from './StorybookLogo';
 import { Theme, theme } from '@storybook/react-native-theming';
+import { Text } from 'react-native';
 
 const meta = {
   component: StorybookLogo,
@@ -65,5 +66,11 @@ export const ImageSourceLogo: Story = {
         url: 'https://reactnative.dev',
       },
     } satisfies Theme,
+  },
+};
+
+export const ImageElementLogo: Story = {
+  args: {
+    theme: { ...theme, brand: { image: <Text>Element</Text> } } satisfies Theme,
   },
 };
