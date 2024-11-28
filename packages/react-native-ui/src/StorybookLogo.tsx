@@ -1,5 +1,5 @@
 import { Theme } from '@storybook/react-native-theming';
-import { FC, useEffect, useMemo } from 'react';
+import { FC, isValidElement, ReactElement, useEffect, useMemo } from 'react';
 import { Image, Linking, StyleProp, Text, TextStyle, TouchableOpacity } from 'react-native';
 import { DarkLogo } from './icon/DarkLogo';
 import { Logo } from './icon/Logo';
@@ -13,6 +13,10 @@ const NoBrandLogo: FC<{ theme: Theme }> = ({ theme }) =>
   ) : (
     <DarkLogo height={HEIGHT} width={WIDTH} />
   );
+
+function isElement(value: unknown): value is ReactElement {
+  return isValidElement(value);
+}
 
 const BrandLogo: FC<{ theme: Theme }> = ({ theme }) => {
   const imageHasNoWidthOrHeight =
@@ -31,6 +35,10 @@ const BrandLogo: FC<{ theme: Theme }> = ({ theme }) => {
 
   if (!theme.brand.image) {
     return null;
+  }
+
+  if (isElement(theme.brand.image)) {
+    return theme.brand.image;
   }
 
   const image = (

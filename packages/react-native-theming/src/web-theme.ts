@@ -1,5 +1,6 @@
 import type { ImageProps, ImageSourcePropType, TextStyle } from 'react-native';
 import { transparentize } from 'polished';
+import { ReactElement } from 'react';
 
 export const color = {
   // Official color palette
@@ -176,7 +177,7 @@ export interface Brand {
   // This url we be opened when clicking the branded logo or title
   url?: string | null | undefined;
   // Define a an image source to replace storybook logo with
-  image?: ImageSourcePropType | null | undefined;
+  image?: ImageSourcePropType | ReactElement | null | undefined;
   resizeMode?: ImageProps['resizeMode'] | null | undefined;
   target?: string | null | undefined;
 }
