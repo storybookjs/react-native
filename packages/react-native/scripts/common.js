@@ -58,7 +58,7 @@ function getPreviewExists({ configPath }) {
   return !!getFilePathExtension({ configPath }, 'preview');
 }
 
-function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts']) {
+function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts'], configPath) {
   try {
     const basePath = `${addon}/${file}`;
 
@@ -74,6 +74,17 @@ function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts']) {
       require.resolve(filePath);
 
       return filePath;
+    } catch (error) {}
+  }
+
+  // attempt to resolve as a relative path for local addons
+  if (addon.startsWith('./') || addon.startsWith('../')) {
+    try {
+      const extension = getFilePathExtension({ configPath }, `${addon}/${file}`);
+
+      if (extension) {
+        return `${addon}/${file}`;
+      }
     } catch (error) {}
   }
 

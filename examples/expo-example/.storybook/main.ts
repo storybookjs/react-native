@@ -22,6 +22,7 @@ const main: StorybookConfig = {
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
     'storybook-addon-deep-controls',
+    './local-addon-example',
   ],
   reactNative: {
     playFn: false,
