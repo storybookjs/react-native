@@ -50,7 +50,12 @@ function generate({ configPath, absolute = false, useJs = false }) {
   let registerAddons = '';
 
   for (const addon of main.addons) {
-    const registerPath = resolveAddonFile(addon, 'register', ['js', 'mjs', 'jsx', 'ts', 'tsx']);
+    const registerPath = resolveAddonFile(
+      addon,
+      'register',
+      ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+      configPath
+    );
 
     if (registerPath) {
       registerAddons += `import "${registerPath}";\n`;
@@ -62,7 +67,12 @@ function generate({ configPath, absolute = false, useJs = false }) {
   const enhancers = [docTools];
 
   for (const addon of main.addons) {
-    const previewPath = resolveAddonFile(addon, 'preview', ['js', 'mjs', 'jsx', 'ts', 'tsx']);
+    const previewPath = resolveAddonFile(
+      addon,
+      'preview',
+      ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+      configPath
+    );
 
     if (previewPath) {
       enhancers.push(`require('${previewPath}')`);
