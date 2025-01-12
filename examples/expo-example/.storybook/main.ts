@@ -17,7 +17,7 @@ const main: StorybookConfig = {
     // '../components/**/*.storiesof.?(ts|tsx|js|jsx)',
   ],
   addons: [
-    '@storybook/addon-ondevice-controls',
+    { name: '@storybook/addon-ondevice-controls', options: { disable: true } },
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
