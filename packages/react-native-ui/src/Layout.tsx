@@ -149,7 +149,7 @@ export const Layout = ({
             borderWidth: 1,
             borderColor: theme.appBorderColor,
           }}
-          onPress={() => setUiHidden(!uiHidden)}
+          onPress={() => setUiHidden((prev) => !prev)}
         >
           {uiHidden ? (
             <CloseFullscreenIcon color={theme.color.mediumdark} />

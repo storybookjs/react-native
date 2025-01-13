@@ -2,12 +2,7 @@ import * as React from 'react';
 import Svg, { Path, SvgProps } from 'react-native-svg';
 import { useTheme } from '@storybook/react-native-theming';
 
-export function FullscreenIcon({
-  color, //= '#2E3438',
-  width = 14,
-  height = 14,
-  ...props
-}: SvgProps) {
+export function FullscreenIcon({ color, width = 14, height = 14, ...props }: SvgProps) {
   const theme = useTheme();
 
   return (
