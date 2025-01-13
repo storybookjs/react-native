@@ -4,6 +4,7 @@ const {
   getMain,
   getPreviewExists,
   resolveAddonFile,
+  getAddonName,
 } = require('./common');
 const { normalizeStories, globToRegexp } = require('@storybook/core/common');
 const fs = require('fs');
@@ -51,7 +52,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   for (const addon of main.addons) {
     const registerPath = resolveAddonFile(
-      addon,
+      getAddonName(addon),
       'register',
       ['js', 'mjs', 'jsx', 'ts', 'tsx'],
       configPath
@@ -68,7 +69,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   for (const addon of main.addons) {
     const previewPath = resolveAddonFile(
-      addon,
+      getAddonName(addon),
       'preview',
       ['js', 'mjs', 'jsx', 'ts', 'tsx'],
       configPath
