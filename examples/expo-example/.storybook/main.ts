@@ -17,11 +17,12 @@ const main: StorybookConfig = {
     // '../components/**/*.storiesof.?(ts|tsx|js|jsx)',
   ],
   addons: [
-    '@storybook/addon-ondevice-controls',
+    { name: '@storybook/addon-ondevice-controls' },
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
     'storybook-addon-deep-controls',
+    './local-addon-example',
   ],
   reactNative: {
     playFn: false,

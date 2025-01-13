@@ -11,13 +11,13 @@ import { useLayout } from './LayoutProvider';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { Sidebar } from './Sidebar';
+import { StorybookLogo } from './StorybookLogo';
 import { DEFAULT_REF_ID } from './constants';
+import { useStoreBooleanState } from './hooks/useStoreState';
 import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
-import { DarkLogo } from './icon/DarkLogo';
-import { Logo } from './icon/Logo';
-import { MenuIcon } from './icon/MenuIcon';
-import { FullscreenIcon } from './icon/FullscreenIcon';
 import { CloseFullscreenIcon } from './icon/CloseFullscreenIcon';
+import { FullscreenIcon } from './icon/FullscreenIcon';
+import { MenuIcon } from './icon/MenuIcon';
 
 export const Layout = ({
   storyHash,
@@ -34,9 +34,15 @@ export const Layout = ({
   const insets = useSafeAreaInsets();
   const { isDesktop } = useLayout();
 
-  const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
+  const [desktopSidebarOpen, setDesktopSidebarOpen] = useStoreBooleanState(
+    'desktopSidebarState',
+    true
+  );
 
-  const [desktopAddonsPanelOpen, setDesktopAddonsPanelOpen] = useState(true);
+  const [desktopAddonsPanelOpen, setDesktopAddonsPanelOpen] = useStoreBooleanState(
+    'desktopPanelState',
+    true
+  );
 
   const [uiHidden, setUiHidden] = useState(false);
 
@@ -76,11 +82,7 @@ export const Layout = ({
                   justifyContent: 'space-between',
                 }}
               >
-                {theme.base === 'light' ? (
-                  <Logo height={25} width={125} />
-                ) : (
-                  <DarkLogo height={25} width={125} />
-                )}
+                <StorybookLogo theme={theme} />
 
                 <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
               </View>
@@ -183,11 +185,7 @@ export const Layout = ({
 
       <MobileMenuDrawer ref={mobileMenuDrawerRef}>
         <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
-          {theme.base === 'light' ? (
-            <Logo height={25} width={125} />
-          ) : (
-            <DarkLogo height={25} width={125} />
-          )}
+          <StorybookLogo theme={theme} />
         </View>
 
         <Sidebar

@@ -1,5 +1,6 @@
-import type { TextStyle } from 'react-native';
+import type { ImageProps, ImageSourcePropType, TextStyle } from 'react-native';
 import { transparentize } from 'polished';
+import { ReactElement } from 'react';
 
 export const color = {
   // Official color palette
@@ -171,10 +172,14 @@ export type Typography = typeof typography;
 
 export type TextSize = number | string;
 export interface Brand {
-  title: string | undefined;
-  url: string | null | undefined;
-  image: string | null | undefined;
-  target: string | null | undefined;
+  // Will replace the storybook logo with this title
+  title?: string | undefined;
+  // This url we be opened when clicking the branded logo or title
+  url?: string | null | undefined;
+  // Define a an image source to replace storybook logo with
+  image?: ImageSourcePropType | ReactElement | null | undefined;
+  resizeMode?: ImageProps['resizeMode'] | null | undefined;
+  target?: string | null | undefined;
 }
 
 export interface StorybookThemeWeb {
@@ -215,7 +220,7 @@ export interface StorybookThemeWeb {
   barSelectedColor: string;
   barBg: string;
 
-  brand: Brand;
+  brand?: Brand;
 
   // [key: string]: any;
 }

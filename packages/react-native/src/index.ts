@@ -6,6 +6,6 @@ export { start, prepareStories, getProjectAnnotations, updateView } from './Star
 
 export interface StorybookConfig {
   stories: StorybookConfigBase['stories'];
-  addons: string[];
+  addons: Array<string | { name: string; options?: Record<string, any> }>;
   reactNative?: ReactNativeOptions;
 }

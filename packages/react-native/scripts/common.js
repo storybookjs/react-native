@@ -58,7 +58,9 @@ function getPreviewExists({ configPath }) {
   return !!getFilePathExtension({ configPath }, 'preview');
 }
 
-function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts']) {
+function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts'], configPath) {
+  if (!addon || typeof addon !== 'string') return null;
+
   try {
     const basePath = `${addon}/${file}`;
 
@@ -77,6 +79,27 @@ function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts']) {
     } catch (error) {}
   }
 
+  // attempt to resolve as a relative path for local addons
+  if (addon.startsWith('./') || addon.startsWith('../')) {
+    try {
+      const extension = getFilePathExtension({ configPath }, `${addon}/${file}`);
+
+      if (extension) {
+        return `${addon}/${file}`;
+      }
+    } catch (error) {}
+  }
+
+  return null;
+}
+
+function getAddonName(addon) {
+  if (typeof addon === 'string') return addon;
+
+  if (typeof addon === 'object' && addon.name && typeof addon.name === 'string') return addon.name;
+
+  console.error('Invalid addon configuration', addon);
+
   return null;
 }
 
@@ -88,4 +111,5 @@ module.exports = {
   ensureRelativePathHasDot,
   getPreviewExists,
   resolveAddonFile,
+  getAddonName,
 };

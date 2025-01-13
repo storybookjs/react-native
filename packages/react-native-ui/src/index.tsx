@@ -8,3 +8,4 @@ export * from './Sidebar';
 export * from './types';
 export * from './Layout';
 export * from './util/StoryHash';
+export * from './StorageProvider';
