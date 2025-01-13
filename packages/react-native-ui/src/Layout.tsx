@@ -136,7 +136,13 @@ export const Layout = ({
   }
 
   return (
-    <View style={{ flex: 1, paddingTop: insets.top, backgroundColor: theme.background.content }}>
+    <View
+      style={{
+        flex: 1,
+        paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
+        backgroundColor: theme.background.content,
+      }}
+    >
       <View style={{ flex: 1, overflow: 'hidden' }}>
         {children}
 
@@ -160,28 +166,6 @@ export const Layout = ({
           )}
         </TouchableOpacity>
       </View>
-
-      <Container style={{ marginBottom: insets.bottom }}>
-        <Nav>
-          <Button
-            style={{ flexShrink: 1 }}
-            hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
-            onPress={() => {
-              mobileMenuDrawerRef.current.setMobileMenuOpen(true);
-            }}
-          >
-            <MenuIcon color={theme.color.mediumdark} />
-            <Text style={{ flexShrink: 1, color: theme.color.defaultText }} numberOfLines={1}>
-              {story?.title}/{story?.name}
-            </Text>
-          </Button>
-
-          <IconButton
-            onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
-            Icon={BottomBarToggleIcon}
-          />
-        </Nav>
-      </Container>
 
       <MobileMenuDrawer ref={mobileMenuDrawerRef}>
         <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
@@ -211,6 +195,7 @@ export const Layout = ({
         <Container style={{ marginBottom: insets.bottom }}>
           <Nav>
             <Button
+              testID="mobile-menu-button"
               style={{ flexShrink: 1 }}
               hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
               onPress={() => {
@@ -224,6 +209,7 @@ export const Layout = ({
             </Button>
 
             <IconButton
+              testID="mobile-addons-button"
               onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
               Icon={BottomBarToggleIcon}
             />
