@@ -19,6 +19,8 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    hideFullScreenButton: false,
+    noSafeArea: false,
     my_param: 'anything',
     backgrounds: {
       default: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain',

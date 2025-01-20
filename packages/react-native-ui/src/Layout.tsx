@@ -146,25 +146,27 @@ export const Layout = ({
       <View style={{ flex: 1, overflow: 'hidden' }}>
         {children}
 
-        <TouchableOpacity
-          style={{
-            position: 'absolute',
-            bottom: uiHidden ? 56 + insets.bottom : 16,
-            right: 16,
-            backgroundColor: theme.background.content,
-            padding: 4,
-            borderRadius: 4,
-            borderWidth: 1,
-            borderColor: theme.appBorderColor,
-          }}
-          onPress={() => setUiHidden((prev) => !prev)}
-        >
-          {uiHidden ? (
-            <CloseFullscreenIcon color={theme.color.mediumdark} />
-          ) : (
-            <FullscreenIcon color={theme.color.mediumdark} />
-          )}
-        </TouchableOpacity>
+        {story.parameters.hideFullScreenButton ? null : (
+          <TouchableOpacity
+            style={{
+              position: 'absolute',
+              bottom: uiHidden ? 56 + insets.bottom : 16,
+              right: 16,
+              backgroundColor: theme.background.content,
+              padding: 4,
+              borderRadius: 4,
+              borderWidth: 1,
+              borderColor: theme.appBorderColor,
+            }}
+            onPress={() => setUiHidden((prev) => !prev)}
+          >
+            {uiHidden ? (
+              <CloseFullscreenIcon color={theme.color.mediumdark} />
+            ) : (
+              <FullscreenIcon color={theme.color.mediumdark} />
+            )}
+          </TouchableOpacity>
+        )}
       </View>
 
       <MobileMenuDrawer ref={mobileMenuDrawerRef}>
