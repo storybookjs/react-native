@@ -3,20 +3,21 @@ import { addons } from '@storybook/core/manager-api';
 import { type API_IndexHash, type Args, type StoryContext } from '@storybook/core/types';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, useTheme } from '@storybook/react-native-theming';
-import { ReactNode, useRef } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ReactNode, useRef, useState } from 'react';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { IconButton } from './IconButton';
 import { useLayout } from './LayoutProvider';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { Sidebar } from './Sidebar';
-import { DEFAULT_REF_ID } from './constants';
-import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
-
-import { MenuIcon } from './icon/MenuIcon';
 import { StorybookLogo } from './StorybookLogo';
+import { DEFAULT_REF_ID } from './constants';
 import { useStoreBooleanState } from './hooks/useStoreState';
+import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
+import { CloseFullscreenIcon } from './icon/CloseFullscreenIcon';
+import { FullscreenIcon } from './icon/FullscreenIcon';
+import { MenuIcon } from './icon/MenuIcon';
 
 export const Layout = ({
   storyHash,
@@ -42,6 +43,8 @@ export const Layout = ({
     'desktopPanelState',
     true
   );
+
+  const [uiHidden, setUiHidden] = useState(false);
 
   if (isDesktop) {
     return (
@@ -133,35 +136,44 @@ export const Layout = ({
   }
 
   return (
-    <View style={{ flex: 1, paddingTop: insets.top, backgroundColor: theme.background.content }}>
-      <View style={{ flex: 1, overflow: 'hidden' }}>{children}</View>
+    <View
+      style={{
+        flex: 1,
+        paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
+        backgroundColor: theme.background.content,
+      }}
+    >
+      <View style={{ flex: 1, overflow: 'hidden' }}>
+        {children}
 
-      <Container style={{ marginBottom: insets.bottom }}>
-        <Nav>
-          <Button
-            style={{ flexShrink: 1 }}
-            hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
-            onPress={() => {
-              mobileMenuDrawerRef.current.setMobileMenuOpen(true);
+        {story.parameters.hideFullScreenButton ? null : (
+          <TouchableOpacity
+            style={{
+              position: 'absolute',
+              bottom: uiHidden ? 56 + insets.bottom : 16,
+              right: 16,
+              backgroundColor: theme.background.content,
+              padding: 4,
+              borderRadius: 4,
+              borderWidth: 1,
+              borderColor: theme.appBorderColor,
             }}
+            onPress={() => setUiHidden((prev) => !prev)}
           >
-            <MenuIcon color={theme.color.mediumdark} />
-            <Text style={{ flexShrink: 1, color: theme.color.defaultText }} numberOfLines={1}>
-              {story?.title}/{story?.name}
-            </Text>
-          </Button>
-
-          <IconButton
-            onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
-            Icon={BottomBarToggleIcon}
-          />
-        </Nav>
-      </Container>
+            {uiHidden ? (
+              <CloseFullscreenIcon color={theme.color.mediumdark} />
+            ) : (
+              <FullscreenIcon color={theme.color.mediumdark} />
+            )}
+          </TouchableOpacity>
+        )}
+      </View>
 
       <MobileMenuDrawer ref={mobileMenuDrawerRef}>
         <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
           <StorybookLogo theme={theme} />
         </View>
+
         <Sidebar
           extra={[]}
           previewInitialized
@@ -180,6 +192,32 @@ export const Layout = ({
       </MobileMenuDrawer>
 
       <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />
+
+      {!uiHidden ? (
+        <Container style={{ marginBottom: insets.bottom }}>
+          <Nav>
+            <Button
+              testID="mobile-menu-button"
+              style={{ flexShrink: 1 }}
+              hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
+              onPress={() => {
+                mobileMenuDrawerRef.current.setMobileMenuOpen(true);
+              }}
+            >
+              <MenuIcon color={theme.color.mediumdark} />
+              <Text style={{ flexShrink: 1, color: theme.color.defaultText }} numberOfLines={1}>
+                {story?.title}/{story?.name}
+              </Text>
+            </Button>
+
+            <IconButton
+              testID="mobile-addons-button"
+              onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
+              Icon={BottomBarToggleIcon}
+            />
+          </Nav>
+        </Container>
+      ) : null}
     </View>
   );
 };
