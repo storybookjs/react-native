@@ -151,7 +151,7 @@ export const Layout = ({
             position: 'absolute',
             bottom: uiHidden ? 56 + insets.bottom : 16,
             right: 16,
-            backgroundColor: 'white',
+            backgroundColor: theme.background.content,
             padding: 4,
             borderRadius: 4,
             borderWidth: 1,
