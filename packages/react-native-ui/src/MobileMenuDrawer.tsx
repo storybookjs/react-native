@@ -2,7 +2,7 @@ import {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,
   BottomSheetModal,
-  BottomSheetScrollView,
+  BottomSheetView,
 } from '@gorhom/bottom-sheet';
 import { ReactNode, forwardRef, useImperativeHandle, useRef } from 'react';
 import { Keyboard } from 'react-native';
@@ -65,14 +65,13 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
         backgroundStyle={{ backgroundColor: theme.background.content }}
         handleIndicatorStyle={{ backgroundColor: theme.textMutedColor }}
       >
-        <BottomSheetScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{
-            paddingBottom: insets.bottom,
+        <BottomSheetView
+          style={{
+            flex: 1,
           }}
         >
           {children}
-        </BottomSheetScrollView>
+        </BottomSheetView>
       </BottomSheetModal>
     );
   }

@@ -18,6 +18,8 @@ import type { ExpandAction, ExpandedState } from './hooks/useExpanded';
 import { useExpanded } from './hooks/useExpanded';
 import { getGroupStatus, statusMapping } from './util/status';
 import { createId, getAncestorIds, getDescendantIds, isStoryHoistable } from './util/tree';
+import { BottomSheetFlatList } from '@gorhom/bottom-sheet';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface NodeProps {
   item: Item;
@@ -188,6 +190,8 @@ export const Tree = React.memo<{
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
+  const insets = useSafeAreaInsets();
+
   const containerRef = useRef<View>(null);
 
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
@@ -290,8 +294,8 @@ export const Tree = React.memo<{
 
   const groupStatus = useMemo(() => getGroupStatus(collapsedData, status), [collapsedData, status]);
 
-  const treeItems = useMemo(() => {
-    return collapsedItems.map((itemId) => {
+  const renderItem = useCallback(
+    ({ item: itemId }) => {
       const item = collapsedData[itemId];
       const id = createId(itemId, refId);
 
@@ -337,32 +341,103 @@ export const Tree = React.memo<{
           onSelectStoryId={onSelectStoryId}
         />
       );
-    });
-  }, [
-    ancestry,
-    collapsedData,
-    collapsedItems,
-    docsMode,
-    expandableDescendants,
-    expanded,
-    groupStatus,
-    onSelectStoryId,
-    orphanIds,
-    refId,
-    selectedStoryId,
-    setExpanded,
-    status,
-  ]);
+    },
+    [
+      ancestry,
+      collapsedData,
+      docsMode,
+      expandableDescendants,
+      expanded,
+      groupStatus,
+      onSelectStoryId,
+      orphanIds,
+      refId,
+      selectedStoryId,
+      setExpanded,
+      status,
+    ]
+  );
+
+  // const treeItems = useMemo(() => {
+  //   return collapsedItems.map((itemId) => {
+  //     const item = collapsedData[itemId];
+  //     const id = createId(itemId, refId);
+
+  //     if (item.type === 'root') {
+  //       const descendants = expandableDescendants[item.id];
+  //       const isFullyExpanded = descendants.every((d: string) => expanded[d]);
+  //       return (
+  //         <Root
+  //           key={id}
+  //           item={item}
+  //           refId={refId}
+  //           isOrphan={false}
+  //           isDisplayed
+  //           isSelected={selectedStoryId === itemId}
+  //           isExpanded={!!expanded[itemId]}
+  //           setExpanded={setExpanded}
+  //           isFullyExpanded={isFullyExpanded}
+  //           expandableDescendants={descendants}
+  //           onSelectStoryId={onSelectStoryId}
+  //           docsMode={false}
+  //           color=""
+  //           status={{}}
+  //         />
+  //       );
+  //     }
+
+  //     const isDisplayed = !item.parent || ancestry[itemId].every((a: string) => expanded[a]);
+  //     const color = groupStatus[itemId] ? statusMapping[groupStatus[itemId]][1] : null;
+
+  //     return (
+  //       <Node
+  //         key={id}
+  //         item={item}
+  //         status={status?.[itemId]}
+  //         refId={refId}
+  //         color={color}
+  //         docsMode={docsMode}
+  //         isOrphan={orphanIds.some((oid) => itemId === oid || itemId.startsWith(`${oid}-`))}
+  //         isDisplayed={isDisplayed}
+  //         isSelected={selectedStoryId === itemId}
+  //         isExpanded={!!expanded[itemId]}
+  //         setExpanded={setExpanded}
+  //         onSelectStoryId={onSelectStoryId}
+  //       />
+  //     );
+  //   });
+  // }, [
+  //   ancestry,
+  //   collapsedData,
+  //   collapsedItems,
+  //   docsMode,
+  //   expandableDescendants,
+  //   expanded,
+  //   groupStatus,
+  //   onSelectStoryId,
+  //   orphanIds,
+  //   refId,
+  //   selectedStoryId,
+  //   setExpanded,
+  //   status,
+  // ]);
   return (
     <Container ref={containerRef} hasOrphans={isMain && orphanIds.length > 0}>
-      {treeItems}
+      <BottomSheetFlatList
+        contentContainerStyle={{ paddingTop: 20, paddingBottom: insets.bottom + 16 }}
+        style={{ flex: 1 }}
+        keyboardShouldPersistTaps="handled"
+        data={collapsedItems}
+        renderItem={renderItem}
+      />
     </Container>
   );
 });
 
 const Container = styled.View<{ hasOrphans: boolean }>((props) => ({
-  marginTop: props.hasOrphans ? 20 : 0,
+  // marginTop: props.hasOrphans ? 20 : 0,
   marginBottom: 20,
+  flex: 1,
 }));
 
 const Root = React.memo<NodeProps & { expandableDescendants: string[] }>(function Root({

@@ -40,8 +40,12 @@ const Swap = React.memo(function Swap({
   const [a, b] = React.Children.toArray(children);
   return (
     <>
-      <View style={{ display: condition ? 'flex' : 'none' }}>{a}</View>
-      <View style={{ display: condition ? 'none' : 'flex' }}>{b}</View>
+      <View style={{ display: condition ? 'flex' : 'none', flex: condition ? 1 : undefined }}>
+        {a}
+      </View>
+      <View style={{ display: condition ? 'none' : 'flex', flex: condition ? undefined : 1 }}>
+        {b}
+      </View>
     </>
   );
 });
@@ -97,7 +101,7 @@ export const Sidebar = React.memo(function Sidebar({
   const lastViewedProps = useLastViewed(selected);
 
   return (
-    <Container style={{ paddingHorizontal: 10 }}>
+    <Container style={{ flex: 1, paddingHorizontal: 10 }}>
       <Top>
         {/* <Heading
             className="sidebar-header"
