@@ -146,7 +146,7 @@ export const Layout = ({
       <View style={{ flex: 1, overflow: 'hidden' }}>
         {children}
 
-        {story.parameters.hideFullScreenButton ? null : (
+        {story?.parameters?.hideFullScreenButton ? null : (
           <TouchableOpacity
             style={{
               position: 'absolute',
