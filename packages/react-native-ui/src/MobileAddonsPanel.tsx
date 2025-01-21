@@ -3,7 +3,7 @@ import { addons } from '@storybook/core/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import { Addon_TypesEnum } from '@storybook/core/types';
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
-import { Text, View, useWindowDimensions } from 'react-native';
+import { Platform, Text, View, useWindowDimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Animated, {
   useAnimatedKeyboard,
@@ -47,8 +47,9 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
     const { height } = useWindowDimensions();
 
     const adjustedBottomSheetSize = useAnimatedStyle(() => {
+      const extraPadding = Platform.OS === 'android' ? 32 : 16;
       return {
-        maxHeight: height - animatedPosition.value - insets.bottom,
+        maxHeight: height - animatedPosition.value - insets.bottom - extraPadding,
       };
     }, [animatedPosition, height, insets.bottom]);
 
