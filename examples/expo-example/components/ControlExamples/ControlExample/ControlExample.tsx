@@ -1,4 +1,3 @@
-import React from 'react';
 import { View, Text } from 'react-native';
 
 export interface ControlExampleProps {
@@ -12,6 +11,16 @@ export interface ControlExampleProps {
   items: string[];
   nice: boolean;
   customStyles: Record<string, any>;
+  test1: boolean;
+  test2: boolean;
+  test3: boolean;
+  test4: boolean;
+  test5: boolean;
+  test6: boolean;
+  test7: boolean;
+  test8: boolean;
+  test9: boolean;
+  test10: boolean;
 }
 
 export function ControlExample({
