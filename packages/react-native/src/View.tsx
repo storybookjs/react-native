@@ -1,9 +1,10 @@
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { Channel, WebsocketTransport } from '@storybook/core/channels';
 import Events from '@storybook/core/core-events';
-import { StoryContext, toId } from '@storybook/csf';
 import { addons as managerAddons } from '@storybook/core/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from '@storybook/core/preview-api';
+import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybook/core/types';
+import { StoryContext, toId } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
 import {
@@ -12,7 +13,6 @@ import {
   StorageProvider,
   transformStoryIndexToStoriesHash,
 } from '@storybook/react-native-ui';
-import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from '@storybook/core/types';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
@@ -20,8 +20,8 @@ import { ActivityIndicator, View as RNView, StyleSheet, useColorScheme } from 'r
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StoryView from './components/StoryView';
-import getHost from './rn-host-detect';
 import { useSetStoryContext, useStoryContext } from './hooks';
+import getHost from './rn-host-detect';
 
 const STORAGE_KEY = 'lastOpenedStory';
 

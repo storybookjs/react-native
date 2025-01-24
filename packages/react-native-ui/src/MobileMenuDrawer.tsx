@@ -1,10 +1,9 @@
-import {
+import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,
-  BottomSheetModal,
   BottomSheetScrollView,
 } from '@gorhom/bottom-sheet';
-import { ReactNode, forwardRef, useImperativeHandle, useRef } from 'react';
+import { ReactNode, forwardRef, memo, useImperativeHandle, useMemo, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -28,52 +27,67 @@ export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheet
   />
 );
 
-export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(
-  ({ children }, ref) => {
+const snapPoints = ['50%', '75%'];
+
+export const MobileMenuDrawer = memo(
+  forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(({ children }, ref) => {
     const reducedMotion = useReducedMotion();
     const insets = useSafeAreaInsets();
     const theme = useTheme();
 
-    const menuBottomSheetRef = useRef<BottomSheetModal>(null);
+    const menuBottomSheetRef = useRef<BottomSheet>(null);
 
     useImperativeHandle(ref, () => ({
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
-          menuBottomSheetRef.current?.present();
+          // menuBottomSheetRef.current?.present();
+          menuBottomSheetRef.current?.snapToIndex(1);
         } else {
           Keyboard.dismiss();
 
-          menuBottomSheetRef.current?.dismiss();
+          // menuBottomSheetRef.current?.dismiss();
+          menuBottomSheetRef.current?.close();
         }
       },
     }));
 
+    const bgColorStyle = useMemo(() => {
+      return { backgroundColor: theme.background.content };
+    }, [theme.background.content]);
+
+    const handleIndicatorStyle = useMemo(() => {
+      return { backgroundColor: theme.textMutedColor };
+    }, [theme.textMutedColor]);
+
+    const contentContainerStyle = useMemo(() => {
+      return { paddingBottom: insets.bottom };
+    }, [insets.bottom]);
+
     return (
-      <BottomSheetModal
+      <BottomSheet
         ref={menuBottomSheetRef}
-        index={1}
+        index={-1}
         animateOnMount={!reducedMotion}
-        snapPoints={['50%', '75%']}
-        enableDismissOnClose
+        snapPoints={snapPoints}
+        // enableDismissOnClose
         enableHandlePanningGesture
         enableContentPanningGesture
         enableDynamicSizing={false}
         keyboardBehavior="extend"
         keyboardBlurBehavior="restore"
-        stackBehavior="replace"
+        enablePanDownToClose
+        // stackBehavior="replace"
         backdropComponent={BottomSheetBackdropComponent}
-        backgroundStyle={{ backgroundColor: theme.background.content }}
-        handleIndicatorStyle={{ backgroundColor: theme.textMutedColor }}
+        backgroundStyle={bgColorStyle}
+        handleIndicatorStyle={handleIndicatorStyle}
       >
         <BottomSheetScrollView
           keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{
-            paddingBottom: insets.bottom,
-          }}
+          contentContainerStyle={contentContainerStyle}
         >
           {children}
         </BottomSheetScrollView>
-      </BottomSheetModal>
+      </BottomSheet>
     );
-  }
+  })
 );

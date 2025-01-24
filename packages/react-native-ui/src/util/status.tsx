@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import { useMemo, type ReactElement } from 'react';
 import type { API_HashEntry, API_StatusState, API_StatusValue } from '@storybook/core/types';
 
 import { useTheme } from '@storybook/react-native-theming';
@@ -21,12 +21,12 @@ function SmallIcons(props: SvgProps) {
 
 function LoadingIcons(props: SvgProps) {
   const theme = useTheme();
-  return (
-    <SmallIcons
-      color={theme.base === 'light' ? theme.color.mediumdark : theme.color.darker}
-      {...props}
-    />
-  );
+
+  const color = useMemo(() => {
+    return theme.base === 'light' ? theme.color.mediumdark : theme.color.darker;
+  }, [theme.base, theme.color.darker, theme.color.mediumdark]);
+
+  return <SmallIcons color={color} {...props} />;
 }
 
 export const statusPriority: API_StatusValue[] = ['unknown', 'pending', 'success', 'warn', 'error'];
