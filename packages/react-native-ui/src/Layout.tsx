@@ -169,30 +169,6 @@ export const Layout = ({
         )}
       </View>
 
-      <MobileMenuDrawer ref={mobileMenuDrawerRef}>
-        <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
-          <StorybookLogo theme={theme} />
-        </View>
-
-        <Sidebar
-          extra={[]}
-          previewInitialized
-          indexError={undefined}
-          refs={{}}
-          setSelection={({ storyId: newStoryId }) => {
-            const channel = addons.getChannel();
-
-            channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
-          }}
-          status={{}}
-          index={storyHash}
-          storyId={story?.id}
-          refId={DEFAULT_REF_ID}
-        />
-      </MobileMenuDrawer>
-
-      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />
-
       {!uiHidden ? (
         <Container style={{ marginBottom: insets.bottom }}>
           <Nav>
@@ -218,6 +194,30 @@ export const Layout = ({
           </Nav>
         </Container>
       ) : null}
+
+      <MobileMenuDrawer ref={mobileMenuDrawerRef}>
+        <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
+          <StorybookLogo theme={theme} />
+        </View>
+
+        <Sidebar
+          extra={[]}
+          previewInitialized
+          indexError={undefined}
+          refs={{}}
+          setSelection={({ storyId: newStoryId }) => {
+            const channel = addons.getChannel();
+
+            channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
+          }}
+          status={{}}
+          index={storyHash}
+          storyId={story?.id}
+          refId={DEFAULT_REF_ID}
+        />
+      </MobileMenuDrawer>
+
+      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />
     </View>
   );
 };

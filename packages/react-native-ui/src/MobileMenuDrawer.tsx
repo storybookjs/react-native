@@ -1,4 +1,4 @@
-import {
+import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,
   BottomSheetModal,
@@ -39,28 +39,30 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
     useImperativeHandle(ref, () => ({
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
-          menuBottomSheetRef.current?.present();
+          // menuBottomSheetRef.current?.present();
+          menuBottomSheetRef.current?.expand();
         } else {
           Keyboard.dismiss();
 
-          menuBottomSheetRef.current?.dismiss();
+          // menuBottomSheetRef.current?.dismiss();
+          menuBottomSheetRef.current?.close();
         }
       },
     }));
 
     return (
-      <BottomSheetModal
+      <BottomSheet
         ref={menuBottomSheetRef}
-        index={1}
+        index={-1}
         animateOnMount={!reducedMotion}
         snapPoints={['50%', '75%']}
-        enableDismissOnClose
+        // enableDismissOnClose
         enableHandlePanningGesture
         enableContentPanningGesture
         enableDynamicSizing={false}
         keyboardBehavior="extend"
         keyboardBlurBehavior="restore"
-        stackBehavior="replace"
+        // stackBehavior="replace"
         backdropComponent={BottomSheetBackdropComponent}
         backgroundStyle={{ backgroundColor: theme.background.content }}
         handleIndicatorStyle={{ backgroundColor: theme.textMutedColor }}
@@ -73,7 +75,7 @@ export const MobileMenuDrawer = forwardRef<MobileMenuDrawerRef, MobileMenuDrawer
         >
           {children}
         </BottomSheetScrollView>
-      </BottomSheetModal>
+      </BottomSheet>
     );
   }
 );
