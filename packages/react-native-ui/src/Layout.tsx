@@ -3,8 +3,8 @@ import { addons } from '@storybook/core/manager-api';
 import { type API_IndexHash, type Args, type StoryContext } from '@storybook/core/types';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, useTheme } from '@storybook/react-native-theming';
-import { ReactNode, useRef, useState } from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { ReactNode, useRef, useState, useCallback } from 'react';
+import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { IconButton } from './IconButton';
 import { useLayout } from './LayoutProvider';
@@ -18,6 +18,39 @@ import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { CloseFullscreenIcon } from './icon/CloseFullscreenIcon';
 import { FullscreenIcon } from './icon/FullscreenIcon';
 import { MenuIcon } from './icon/MenuIcon';
+import { useStyle } from './util/useStyle';
+
+const desktopLogoContainer = {
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingTop: 10,
+  paddingLeft: 16,
+  paddingBottom: 4,
+  paddingRight: 10,
+  justifyContent: 'space-between',
+} satisfies ViewStyle;
+
+const desktopContentContainerStyle = { flex: 1 } satisfies ViewStyle;
+
+const desktopContentStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
+
+const mobileContentStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
+
+const placeholderObject = {};
+
+const placeholderArray = [];
+
+const iconFloatRightStyle = { marginLeft: 'auto' } satisfies ViewStyle;
+
+const navButtonStyle = { flexShrink: 1 } satisfies ViewStyle;
+
+const navButtonHitSlop = { bottom: 10, left: 10, right: 10, top: 10 };
+
+const mobileMenuDrawerContentStyle = {
+  paddingLeft: 16,
+  paddingTop: 4,
+  paddingBottom: 4,
+} satisfies ViewStyle;
 
 export const Layout = ({
   storyHash,
@@ -46,58 +79,114 @@ export const Layout = ({
 
   const [uiHidden, setUiHidden] = useState(false);
 
+  const desktopContainerStyle = useStyle(
+    () => ({
+      flex: 1,
+      paddingTop: insets.top,
+      backgroundColor: theme.background.content,
+      flexDirection: 'row',
+    }),
+    [theme.background.content, insets.top]
+  );
+
+  const desktopSidebarStyle = useStyle(
+    () => ({
+      width: desktopSidebarOpen ? 240 : undefined,
+      padding: desktopSidebarOpen ? 0 : 10,
+      borderColor: theme.appBorderColor,
+      borderRightWidth: 1,
+    }),
+    [desktopSidebarOpen, theme.appBorderColor]
+  );
+
+  const desktopScrollViewContentContainerStyle = useStyle(
+    () => ({
+      paddingBottom: insets.bottom,
+    }),
+    [insets.bottom]
+  );
+
+  const desktopAddonsPanelStyle = useStyle(
+    () => ({
+      height: desktopAddonsPanelOpen ? 300 : undefined,
+      borderTopWidth: 1,
+      borderColor: theme.appBorderColor,
+      paddingTop: desktopAddonsPanelOpen ? 4 : 0,
+      padding: desktopAddonsPanelOpen ? 0 : 10,
+    }),
+    [desktopAddonsPanelOpen, theme.appBorderColor]
+  );
+
+  const mobileContainerStyle = useStyle(
+    () => ({
+      flex: 1,
+      paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
+      backgroundColor: theme.background.content,
+    }),
+    [theme.background.content, insets.top, story?.parameters?.noSafeArea]
+  );
+
+  const fullScreenButtonStyle = useStyle(
+    () => ({
+      position: 'absolute',
+      bottom: uiHidden ? 56 + insets.bottom : 16,
+      right: 16,
+      backgroundColor: theme.background.content,
+      padding: 4,
+      borderRadius: 4,
+      borderWidth: 1,
+      borderColor: theme.appBorderColor,
+    }),
+    [uiHidden, insets.bottom, theme.background.content, theme.appBorderColor]
+  );
+
+  const containerStyle = useStyle(
+    () => ({
+      marginBottom: insets.bottom,
+    }),
+    [insets.bottom]
+  );
+
+  const navButtonTextStyle = useStyle(
+    () => ({
+      flexShrink: 1,
+      color: theme.color.defaultText,
+    }),
+    [theme.color.defaultText]
+  );
+
+  const openMobileMenu = useCallback(() => {
+    mobileMenuDrawerRef.current.setMobileMenuOpen(true);
+  }, [mobileMenuDrawerRef]);
+
+  const setSelection = useCallback(({ storyId: newStoryId }: { storyId: string }) => {
+    const channel = addons.getChannel();
+
+    channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
+  }, []);
+
   if (isDesktop) {
     return (
-      <View
-        style={{
-          flex: 1,
-          paddingTop: insets.top,
-          backgroundColor: theme.background.content,
-          flexDirection: 'row',
-        }}
-      >
-        <View
-          style={{
-            width: desktopSidebarOpen ? 240 : undefined,
-            padding: desktopSidebarOpen ? 0 : 10,
-            borderColor: theme.appBorderColor,
-            borderRightWidth: 1,
-          }}
-        >
+      <View style={desktopContainerStyle}>
+        <View style={desktopSidebarStyle}>
           {desktopSidebarOpen ? (
             <ScrollView
               keyboardShouldPersistTaps="handled"
-              contentContainerStyle={{
-                paddingBottom: insets.bottom,
-              }}
+              contentContainerStyle={desktopScrollViewContentContainerStyle}
             >
-              <View
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  paddingTop: 10,
-                  paddingLeft: 16,
-                  paddingBottom: 4,
-                  paddingRight: 10,
-                  justifyContent: 'space-between',
-                }}
-              >
+              <View style={desktopLogoContainer}>
                 <StorybookLogo theme={theme} />
 
                 <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
               </View>
 
               <Sidebar
-                extra={[]}
+                extra={placeholderArray}
                 previewInitialized
                 indexError={undefined}
-                refs={{}}
-                setSelection={({ storyId: newStoryId }) => {
-                  const channel = addons.getChannel();
-
-                  channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
-                }}
-                status={{}}
+                refs={placeholderObject}
+                setSelection={setSelection}
+                status={placeholderObject}
                 index={storyHash}
                 storyId={story?.id}
                 refId={DEFAULT_REF_ID}
@@ -108,23 +197,15 @@ export const Layout = ({
           )}
         </View>
 
-        <View style={{ flex: 1 }}>
-          <View style={{ flex: 1, overflow: 'hidden' }}>{children}</View>
+        <View style={desktopContentContainerStyle}>
+          <View style={desktopContentStyle}>{children}</View>
 
-          <View
-            style={{
-              height: desktopAddonsPanelOpen ? 300 : undefined,
-              borderTopWidth: 1,
-              borderColor: theme.appBorderColor,
-              paddingTop: desktopAddonsPanelOpen ? 4 : 0,
-              padding: desktopAddonsPanelOpen ? 0 : 10,
-            }}
-          >
+          <View style={desktopAddonsPanelStyle}>
             {desktopAddonsPanelOpen ? (
               <AddonsTabs storyId={story?.id} onClose={() => setDesktopAddonsPanelOpen(false)} />
             ) : (
               <IconButton
-                style={{ marginLeft: 'auto' }}
+                style={iconFloatRightStyle}
                 onPress={() => setDesktopAddonsPanelOpen(true)}
                 Icon={BottomBarToggleIcon}
               />
@@ -136,28 +217,13 @@ export const Layout = ({
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
-        backgroundColor: theme.background.content,
-      }}
-    >
-      <View style={{ flex: 1, overflow: 'hidden' }}>
+    <View style={mobileContainerStyle}>
+      <View style={mobileContentStyle}>
         {children}
 
         {story?.parameters?.hideFullScreenButton ? null : (
           <TouchableOpacity
-            style={{
-              position: 'absolute',
-              bottom: uiHidden ? 56 + insets.bottom : 16,
-              right: 16,
-              backgroundColor: theme.background.content,
-              padding: 4,
-              borderRadius: 4,
-              borderWidth: 1,
-              borderColor: theme.appBorderColor,
-            }}
+            style={fullScreenButtonStyle}
             onPress={() => setUiHidden((prev) => !prev)}
           >
             {uiHidden ? (
@@ -170,18 +236,16 @@ export const Layout = ({
       </View>
 
       {!uiHidden ? (
-        <Container style={{ marginBottom: insets.bottom }}>
+        <Container style={containerStyle}>
           <Nav>
             <Button
               testID="mobile-menu-button"
-              style={{ flexShrink: 1 }}
-              hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
-              onPress={() => {
-                mobileMenuDrawerRef.current.setMobileMenuOpen(true);
-              }}
+              style={navButtonStyle}
+              hitSlop={navButtonHitSlop}
+              onPress={openMobileMenu}
             >
               <MenuIcon color={theme.color.mediumdark} />
-              <Text style={{ flexShrink: 1, color: theme.color.defaultText }} numberOfLines={1}>
+              <Text style={navButtonTextStyle} numberOfLines={1}>
                 {story?.title}/{story?.name}
               </Text>
             </Button>
@@ -196,21 +260,17 @@ export const Layout = ({
       ) : null}
 
       <MobileMenuDrawer ref={mobileMenuDrawerRef}>
-        <View style={{ paddingLeft: 16, paddingTop: 4, paddingBottom: 4 }}>
+        <View style={mobileMenuDrawerContentStyle}>
           <StorybookLogo theme={theme} />
         </View>
 
         <Sidebar
-          extra={[]}
+          extra={placeholderArray}
           previewInitialized
           indexError={undefined}
-          refs={{}}
-          setSelection={({ storyId: newStoryId }) => {
-            const channel = addons.getChannel();
-
-            channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
-          }}
-          status={{}}
+          refs={placeholderObject}
+          setSelection={setSelection}
+          status={placeholderObject}
           index={storyHash}
           storyId={story?.id}
           refId={DEFAULT_REF_ID}

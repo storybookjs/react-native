@@ -2,8 +2,8 @@ import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { addons } from '@storybook/core/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import { Addon_TypesEnum } from '@storybook/core/types';
-import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
-import { Platform, Text, View, useWindowDimensions } from 'react-native';
+import { forwardRef, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { Platform, StyleProp, Text, View, ViewStyle, useWindowDimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Animated, {
   useAnimatedKeyboard,
@@ -15,10 +15,19 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '@storybook/react-native-theming';
 import { IconButton } from './IconButton';
 import { CloseIcon } from './icon/CloseIcon';
+import { useStyle } from './util/useStyle';
 
 export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
 }
+
+const bottomSheetStyle = {
+  paddingTop: 8,
+} satisfies StyleProp<ViewStyle>;
+
+const contentStyle = {
+  flex: 1,
+} satisfies StyleProp<ViewStyle>;
 
 export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
   ({ storyId }, ref) => {
@@ -53,24 +62,31 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
       };
     }, [animatedPosition, height, insets.bottom]);
 
+    const backgroundStyle = useStyle(() => {
+      return {
+        borderRadius: 0,
+        borderTopColor: theme.appBorderColor,
+        borderTopWidth: 1,
+        backgroundColor: theme.background.content,
+      };
+    });
+
+    const handleIndicatorStyle = useStyle(() => {
+      return {
+        backgroundColor: theme.textMutedColor,
+      };
+    });
+
     return (
       <BottomSheetModal
         ref={addonsPanelBottomSheetRef}
         index={1}
         animateOnMount={!reducedMotion}
         snapPoints={['25%', '50%', '75%']}
-        style={{
-          paddingTop: 8,
-        }}
+        style={bottomSheetStyle}
         animatedPosition={animatedPosition}
-        containerStyle={{}}
-        backgroundStyle={{
-          borderRadius: 0,
-          borderTopColor: theme.appBorderColor,
-          borderTopWidth: 1,
-          backgroundColor: theme.background.content,
-        }}
-        handleIndicatorStyle={{ backgroundColor: theme.textMutedColor }}
+        backgroundStyle={backgroundStyle}
+        handleIndicatorStyle={handleIndicatorStyle}
         keyboardBehavior="extend"
         // keyboardBlurBehavior="restore"
         enableDismissOnClose
@@ -79,7 +95,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
         stackBehavior="replace"
         enableDynamicSizing={false}
       >
-        <Animated.View style={[{ flex: 1 }, adjustedBottomSheetSize]}>
+        <Animated.View style={[contentStyle, adjustedBottomSheetSize]}>
           <AddonsTabs
             onClose={() => {
               addonsPanelBottomSheetRef.current?.dismiss();
@@ -92,6 +108,38 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
   }
 );
 
+const addonsTabsContainerStyle = {
+  flex: 1,
+} satisfies StyleProp<ViewStyle>;
+
+const addonsTabsStyle = {
+  flexDirection: 'row',
+  borderBottomWidth: 1,
+  borderBottomColor: 'lightgrey',
+} satisfies StyleProp<ViewStyle>;
+
+const addonsTabsContentContainerStyle = {
+  justifyContent: 'center',
+} satisfies StyleProp<ViewStyle>;
+
+const closeIconStyle = {
+  marginRight: 4,
+  marginBottom: 4,
+  alignItems: 'center',
+  justifyContent: 'center',
+} satisfies StyleProp<ViewStyle>;
+
+const addonsScrollStyle = {
+  flex: 1,
+} satisfies StyleProp<ViewStyle>;
+
+const centeredStyle = {
+  alignItems: 'center',
+  justifyContent: 'center',
+} satisfies StyleProp<ViewStyle>;
+
+const hitSlop = { top: 10, right: 10, bottom: 10, left: 10 };
+
 export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId?: string }) => {
   const panels = addons.getElements(Addon_TypesEnum.PANEL);
 
@@ -99,15 +147,39 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
 
   const insets = useSafeAreaInsets();
 
+  const scrollContentContainerStyle = useStyle(() => {
+    return {
+      paddingBottom: insets.bottom + 16,
+    };
+  });
+
+  const panel = useMemo(() => {
+    if (!storyId) {
+      return (
+        <View style={centeredStyle}>
+          <Text>No Story Selected</Text>
+        </View>
+      );
+    }
+
+    if (Object.keys(panels).length === 0) {
+      return (
+        <View style={centeredStyle}>
+          <Text>No addons loaded.</Text>
+        </View>
+      );
+    }
+
+    return panels[addonSelected].render({ active: true });
+  }, [addonSelected, panels, storyId]);
+
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ flexDirection: 'row', borderBottomWidth: 1, borderBottomColor: 'lightgrey' }}>
+    <View style={addonsTabsContainerStyle}>
+      <View style={addonsTabsStyle}>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            justifyContent: 'center',
-          }}
+          contentContainerStyle={addonsTabsContentContainerStyle}
         >
           {Object.values(panels).map(({ id, title }) => {
             const resolvedTitle = typeof title === 'function' ? title({}) : title;
@@ -124,43 +196,18 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
         </ScrollView>
 
         <IconButton
-          style={{
-            marginRight: 4,
-            marginBottom: 4,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-          hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}
+          style={closeIconStyle}
+          hitSlop={hitSlop}
           Icon={CloseIcon}
           onPress={() => onClose?.()}
         />
       </View>
       <ScrollView
-        style={{ flex: 1 }}
+        style={addonsScrollStyle}
         // keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{
-          paddingBottom: insets.bottom + 16,
-        }}
+        contentContainerStyle={scrollContentContainerStyle}
       >
-        {(() => {
-          if (!storyId) {
-            return (
-              <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                <Text>No Story Selected</Text>
-              </View>
-            );
-          }
-
-          if (Object.keys(panels).length === 0) {
-            return (
-              <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                <Text>No addons loaded.</Text>
-              </View>
-            );
-          }
-
-          return panels[addonSelected].render({ active: true });
-        })()}
+        {panel}
       </ScrollView>
     </View>
   );

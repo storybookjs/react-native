@@ -4,7 +4,7 @@ import { GroupIcon } from './icon/GroupIcon';
 
 import { StoryIcon } from './icon/StoryIcon';
 import { CollapseIcon } from './icon/CollapseIcon';
-import React, { ComponentProps, FC } from 'react';
+import React, { ComponentProps, FC, useMemo } from 'react';
 import { transparentize } from 'polished';
 
 export interface NodeProps {
@@ -95,15 +95,15 @@ export const GroupNode: FC<
 }) {
   const theme = useTheme();
 
+  const color = useMemo(() => {
+    return theme.base === 'dark' ? theme.color.primary : theme.color.ultraviolet;
+  }, [theme.base, theme.color.primary, theme.color.ultraviolet]);
+
   return (
     <BranchNode isExpandable={isExpandable} {...props}>
       <Wrapper>
         {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
-        <GroupIcon
-          width="14"
-          height="14"
-          color={theme.base === 'dark' ? theme.color.primary : theme.color.ultraviolet}
-        />
+        <GroupIcon width={14} height={14} color={color} />
       </Wrapper>
       <BranchNodeText>{children}</BranchNodeText>
     </BranchNode>
@@ -113,11 +113,16 @@ export const GroupNode: FC<
 export const ComponentNode: FC<ComponentProps<typeof BranchNode>> = React.memo(
   function ComponentNode({ children, isExpanded, isExpandable, ...props }) {
     const theme = useTheme();
+
+    const color = useMemo(() => {
+      return theme.color.secondary;
+    }, [theme.color.secondary]);
+
     return (
       <BranchNode isExpandable={isExpandable} {...props}>
         <Wrapper>
           {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
-          <ComponentIcon width={12} height={12} color={theme.color.secondary} />
+          <ComponentIcon width={12} height={12} color={color} />
         </Wrapper>
         <BranchNodeText>{children}</BranchNodeText>
       </BranchNode>
@@ -131,14 +136,14 @@ export const StoryNode: FC<ComponentProps<typeof LeafNode>> = React.memo(functio
 }) {
   const theme = useTheme();
 
+  const color = useMemo(() => {
+    return props.selected ? theme.color.lightest : theme.color.seafoam;
+  }, [props.selected, theme.color.lightest, theme.color.seafoam]);
+
   return (
     <LeafNode {...props}>
       <Wrapper>
-        <StoryIcon
-          width={14}
-          height={14}
-          color={props.selected ? theme.color.lightest : theme.color.seafoam}
-        />
+        <StoryIcon width={14} height={14} color={color} />
       </Wrapper>
       <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
     </LeafNode>

@@ -96,9 +96,12 @@ const BrandTitle: FC<{ theme: Theme }> = ({ theme }) => {
 };
 
 export const StorybookLogo: FC<{ theme: Theme }> = ({ theme }) => {
-  if (theme.brand?.image) {
+  const image = useMemo(() => theme.brand?.image, [theme.brand?.image]);
+  const title = useMemo(() => theme.brand?.title, [theme.brand?.title]);
+
+  if (image) {
     return <BrandLogo theme={theme} />;
-  } else if (theme.brand?.title) {
+  } else if (title) {
     return <BrandTitle theme={theme} />;
   } else {
     return <NoBrandLogo theme={theme} />;

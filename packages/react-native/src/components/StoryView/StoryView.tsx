@@ -1,6 +1,6 @@
-import React from 'react';
 import { styled, useTheme } from '@storybook/react-native-theming';
-import { Keyboard, View } from 'react-native';
+import React, { useCallback, useMemo } from 'react';
+import { Keyboard, View, ViewStyle } from 'react-native';
 import { useStoryContext } from '../../hooks';
 import { ErrorBoundary } from './ErrorBoundary';
 
@@ -25,6 +25,13 @@ const Text = styled.Text(({ theme }) => ({
   color: theme?.color?.defaultText,
 }));
 
+const errorContainerStyle = {
+  flex: 1,
+  padding: 16,
+  alignItems: 'center',
+  justifyContent: 'center',
+} satisfies ViewStyle;
+
 const StoryView = () => {
   const context = useStoryContext();
 
@@ -32,21 +39,29 @@ const StoryView = () => {
 
   const theme = useTheme();
 
+  const containerStyle = useMemo(() => {
+    return {
+      flex: 1,
+      backgroundColor: theme.background?.content,
+      overflow: 'hidden',
+    } satisfies ViewStyle;
+  }, [theme.background?.content]);
+
+  const onError = useCallback(() => {
+    console.log(`Error rendering story for ${context?.title} ${context?.name}`);
+  }, [context?.title, context?.name]);
+
   if (context && context.unboundStoryFn) {
     const { unboundStoryFn: StoryComponent } = context;
 
     return (
       <View
-        style={{ flex: 1, backgroundColor: theme.background?.content, overflow: 'hidden' }}
+        style={containerStyle}
         key={id}
         testID={id}
         onStartShouldSetResponder={dismissOnStartResponder}
       >
-        <ErrorBoundary
-          onError={() => {
-            console.log(`Error rendering story for ${context.title} ${context.name}`);
-          }}
-        >
+        <ErrorBoundary onError={onError}>
           {StoryComponent && <StoryComponent {...context} />}
         </ErrorBoundary>
       </View>
@@ -54,7 +69,7 @@ const StoryView = () => {
   }
 
   return (
-    <View style={{ flex: 1, padding: 16, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={errorContainerStyle}>
       <Text>Please open the sidebar and select a story to preview.</Text>
     </View>
   );
