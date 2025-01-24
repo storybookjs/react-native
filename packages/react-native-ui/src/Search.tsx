@@ -2,7 +2,7 @@ import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { styled } from '@storybook/react-native-theming';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useDeferredValue, useRef, useState } from 'react';
 import { TextInput, View } from 'react-native';
 import { CloseIcon } from './icon/CloseIcon';
 import { SearchIcon } from './icon/SearchIcon';
@@ -219,8 +219,8 @@ export const Search = React.memo<{
     },
     [allComponents, dataset.hash, getLastViewed, makeFuse]
   );
-
-  const input = inputValue ? inputValue.trim() : '';
+  const deferredQuery = useDeferredValue(inputValue);
+  const input = deferredQuery ? deferredQuery.trim() : '';
   const results = input ? getResults(input) : [];
 
   return (
