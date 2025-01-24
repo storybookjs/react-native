@@ -75,6 +75,7 @@ export const MobileMenuDrawer = memo(
         enableDynamicSizing={false}
         keyboardBehavior="extend"
         keyboardBlurBehavior="restore"
+        enablePanDownToClose
         // stackBehavior="replace"
         backdropComponent={BottomSheetBackdropComponent}
         backgroundStyle={bgColorStyle}
