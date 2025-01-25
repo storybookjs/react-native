@@ -74,6 +74,7 @@ const LeafNode = styled.TouchableOpacity<{ depth?: number; selected?: boolean }>
 const LeafNodeText = styled.Text<{ depth?: number; selected?: boolean }>(({ theme, selected }) => ({
   fontSize: theme.typography.size.s2,
   flexShrink: 1,
+  fontWeight: selected ? 'bold' : 'normal',
   color: selected ? theme.color.lightest : theme.color.defaultText,
 }));
 
