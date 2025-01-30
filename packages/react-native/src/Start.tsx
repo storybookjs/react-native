@@ -21,12 +21,17 @@ import {
   composeConfigs,
   addons as previewAddons,
   PreviewWithSelection,
+  sortStoriesV7,
   userOrAutoTitleFromSpecifier,
 } from '@storybook/core/preview-api';
 import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
 // NOTE this really should be exported from preview-api, but it's not
 import { createBrowserChannel } from '@storybook/core/channels';
-import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/core/types';
+import type {
+  Addon_StorySortParameterV7,
+  NormalizedStoriesSpecifier,
+  StoryIndex,
+} from '@storybook/core/types';
 import type { ReactRenderer } from '@storybook/react';
 import { View } from './View';
 
@@ -51,7 +56,7 @@ export function prepareStories({
   options?: ReactNativeOptions;
 }) {
   let index: StoryIndex = {
-    v: 4,
+    v: 5,
     entries: {},
   };
 
@@ -230,7 +235,6 @@ export function start({
       ...annotations,
     ]);
 
-  // const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
   const preview = new PreviewWithSelection<ReactRenderer>(
     async (importPath: string) => importMap[importPath],
     getProjectAnnotationsInitial,
@@ -249,8 +253,33 @@ export function start({
 
   preview.getStoryIndexFromServer = async () => view._storyIndex;
 
+  Sort(view);
+
   return view;
 }
+
+const Sort = (viewInstance: View) => {
+  const projectAnnotations = viewInstance._preview.getProjectAnnotations();
+
+  if (projectAnnotations instanceof Promise) {
+    projectAnnotations.then((annotations) => {
+      console.log('projectAnnotations promise resolved');
+      const sortableStories = Object.values(viewInstance._storyIndex.entries);
+
+      sortStoriesV7(
+        sortableStories,
+        annotations?.parameters?.options?.storySort as Addon_StorySortParameterV7,
+        Object.values(viewInstance._storyIndex.entries).map((entry) => entry.importPath)
+      );
+      const sorted = sortableStories.reduce((acc, item) => {
+        acc[item.id] = item;
+        return acc;
+      }, {} as StoryIndex['entries']);
+
+      viewInstance._storyIndex = { v: 5, entries: sorted };
+    });
+  }
+};
 
 export function updateView(
   viewInstance: View,
@@ -272,4 +301,6 @@ export function updateView(
   viewInstance._preview.onStoryIndexChanged().then(() => {
     viewInstance.createPreparedStoryMapping().then(() => viewInstance._forceRerender());
   });
+
+  Sort(viewInstance);
 }

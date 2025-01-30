@@ -19,6 +19,11 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    options: {
+      storySort: {
+        method: 'alphabetical',
+      },
+    },
     hideFullScreenButton: false,
     noSafeArea: false,
     my_param: 'anything',
