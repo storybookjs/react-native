@@ -79,7 +79,7 @@ const Input = styled(TextInput)(({ theme }) => ({
   borderWidth: 1,
   borderColor: theme.appBorderColor,
   backgroundColor: 'transparent',
-  borderRadius: 4,
+  borderRadius: 6,
   fontSize: theme.typography.size.s1 + 1,
   color: theme.color.defaultText,
   width: '100%',

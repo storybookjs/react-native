@@ -289,7 +289,7 @@ const Nav = styled.View({
   justifyContent: 'space-between',
   width: '100%',
   height: 40,
-  paddingHorizontal: 12,
+  paddingHorizontal: 6,
 });
 
 const Container = styled.View(({ theme }) => ({
