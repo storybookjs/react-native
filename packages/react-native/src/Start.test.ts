@@ -37,7 +37,7 @@ describe('prepareStories', () => {
         },
       },
       index: {
-        v: 4,
+        v: 5,
         entries: {
           'textinput--basic': {
             id: 'textinput--basic',
