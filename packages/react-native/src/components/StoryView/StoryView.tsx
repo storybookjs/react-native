@@ -59,6 +59,7 @@ const StoryView = () => {
         style={containerStyle}
         key={id}
         testID={id}
+        accessibilityLabel={id}
         onStartShouldSetResponder={dismissOnStartResponder}
       >
         <ErrorBoundary onError={onError}>
