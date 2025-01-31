@@ -51,9 +51,11 @@ if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
 export function prepareStories({
   storyEntries,
   options,
+  storySort,
 }: {
   storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
   options?: ReactNativeOptions;
+  storySort?: Addon_StorySortParameterV7;
 }) {
   let index: StoryIndex = {
     v: 5,
@@ -147,7 +149,20 @@ export function prepareStories({
     });
   });
 
-  return { index, importMap };
+  const sortableStories = Object.values(index.entries);
+
+  sortStoriesV7(
+    sortableStories,
+    storySort,
+    Object.values(index.entries).map((entry) => entry.importPath)
+  );
+
+  const sorted = sortableStories.reduce((acc, item) => {
+    acc[item.id] = item;
+    return acc;
+  }, {} as StoryIndex['entries']);
+
+  return { index: { v: 5, entries: sorted }, importMap };
 }
 
 export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
@@ -180,7 +195,13 @@ export function start({
   annotations: any[];
   options?: ReactNativeOptions;
 }) {
-  const { index, importMap } = prepareStories({ storyEntries, options });
+  const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
+
+  const { index, importMap } = prepareStories({
+    storyEntries,
+    options,
+    storySort: composedAnnotations.parameters?.options?.storySort,
+  });
 
   const channel = createBrowserChannel({ page: 'preview' });
 
@@ -253,33 +274,8 @@ export function start({
 
   preview.getStoryIndexFromServer = async () => view._storyIndex;
 
-  Sort(view);
-
   return view;
 }
-
-const Sort = (viewInstance: View) => {
-  const projectAnnotations = viewInstance._preview.getProjectAnnotations();
-
-  if (projectAnnotations instanceof Promise) {
-    projectAnnotations.then((annotations) => {
-      console.log('projectAnnotations promise resolved');
-      const sortableStories = Object.values(viewInstance._storyIndex.entries);
-
-      sortStoriesV7(
-        sortableStories,
-        annotations?.parameters?.options?.storySort as Addon_StorySortParameterV7,
-        Object.values(viewInstance._storyIndex.entries).map((entry) => entry.importPath)
-      );
-      const sorted = sortableStories.reduce((acc, item) => {
-        acc[item.id] = item;
-        return acc;
-      }, {} as StoryIndex['entries']);
-
-      viewInstance._storyIndex = { v: 5, entries: sorted };
-    });
-  }
-};
 
 export function updateView(
   viewInstance: View,
@@ -287,7 +283,15 @@ export function updateView(
   normalizedStories: Array<NormalizedStoriesSpecifier & { req: any }>,
   options?: ReactNativeOptions
 ) {
-  const { importMap, index } = prepareStories({ storyEntries: normalizedStories, options });
+  const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
+
+  const storySort = composedAnnotations.parameters?.options?.storySort;
+
+  const { importMap, index } = prepareStories({
+    storyEntries: normalizedStories,
+    options,
+    storySort,
+  });
 
   viewInstance._preview.onStoriesChanged({
     importFn: async (importPath: string) => importMap[importPath],
@@ -301,6 +305,4 @@ export function updateView(
   viewInstance._preview.onStoryIndexChanged().then(() => {
     viewInstance.createPreparedStoryMapping().then(() => viewInstance._forceRerender());
   });
-
-  Sort(viewInstance);
 }
