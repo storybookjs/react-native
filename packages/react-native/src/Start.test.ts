@@ -32,7 +32,6 @@ describe('prepareStories', () => {
             parameters: {
               notes: 'Use this example to test the software keyboard related issues.',
             },
-            title: 'TextInput',
           },
         },
       },
