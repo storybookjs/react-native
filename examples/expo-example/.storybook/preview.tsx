@@ -21,8 +21,9 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        // method: 'alphabetical',
-        order: ['components'],
+        method: 'alphabetical',
+        includeNames: true,
+        order: ['ControlExamples', ['ControlExample'], 'InteractionExample', 'DeepControls'],
       },
     },
     hideFullScreenButton: false,

@@ -3,11 +3,11 @@ import { StorybookConfig } from '@storybook/react-native';
 const main: StorybookConfig = {
   stories: [
     '../components/**/*.stories.?(ts|tsx|js|jsx)',
-    '../../../packages/react-native-ui/**/*.stories.?(ts|tsx|js|jsx)',
+    '../other_components/**/*.stories.?(ts|tsx|js|jsx)',
     {
-      directory: '../other_components',
+      directory: '../../../packages/react-native-ui',
+      titlePrefix: 'react-native-ui',
       files: '**/*.stories.?(ts|tsx|js|jsx)',
-      titlePrefix: 'Other Components',
     },
   ],
   addons: [
