@@ -4,7 +4,6 @@ import { SelectExample } from './Select';
 const arrows = { ArrowUp: '⬆', ArrowDown: '⬇', ArrowLeft: '⬅️', ArrowRight: '➡️' };
 
 const meta = {
-  title: 'ControlExamples/Select control',
   component: SelectExample,
   argTypes: {
     arrow: {
@@ -21,15 +20,15 @@ const meta = {
 
 export default meta;
 
-type SelectExampleStory = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>;
 
-export const Basic: SelectExampleStory = {
+export const Basic: Story = {
   args: {
     arrow: arrows.ArrowLeft,
   },
 };
 
-export const WithLabels: SelectExampleStory = {
+export const WithLabels: Story = {
   args: {
     arrow: arrows.ArrowUp,
   },
@@ -50,7 +49,7 @@ export const WithLabels: SelectExampleStory = {
   },
 };
 
-export const WithMapping: SelectExampleStory = {
+export const WithMapping: Story = {
   args: {
     arrow: 'ArrowRight',
   },

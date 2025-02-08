@@ -35,7 +35,7 @@ const meta = {
       </ScrollView>
     ),
   ],
-} as Meta<typeof Tree>;
+} satisfies Meta<typeof Tree>;
 
 export default meta;
 
@@ -49,6 +49,10 @@ export const Full: Story = {
     isBrowsing: true,
     isMain: true,
     refId: DEFAULT_REF_ID,
+    data: undefined,
+    onSelectStoryId: () => {},
+    selectedStoryId: storyId,
+    status: undefined,
   },
   render: function Render(args) {
     const [selectedId, setSelectedId] = useState(storyId);
@@ -68,6 +72,10 @@ export const SingleStoryComponents: Story = {
     isBrowsing: true,
     isMain: true,
     refId: DEFAULT_REF_ID,
+    data: undefined,
+    onSelectStoryId: () => {},
+    selectedStoryId: storyId,
+    status: undefined,
   },
   render: function Render(args) {
     const [selectedId, setSelectedId] = useState('tooltip-tooltipbuildlist--default');

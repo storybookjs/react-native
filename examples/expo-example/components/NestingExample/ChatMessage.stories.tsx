@@ -1,21 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from 'react-native';
-import React from 'react';
 
 const MyComponent = ({ text }) => <Text>{text}</Text>;
 
-export default {
-  title: 'NestingExample/Message',
+const meta = {
   component: MyComponent,
-} as Meta<typeof MyComponent>;
+} satisfies Meta<typeof MyComponent>;
 
-export const MessageFirst: StoryObj<typeof MyComponent> = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const MessageFirst: Story = {
   args: {
     text: 'Hello',
   },
 };
 
-export const MessageSecond: StoryObj<typeof MyComponent> = {
+export const MessageSecond: Story = {
   args: {
     text: 'Message two',
   },

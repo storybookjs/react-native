@@ -1,8 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import { Color } from './Color';
 
-const ColorMeta: Meta<typeof Color> = {
-  title: 'ControlExamples/Color control',
+const meta = {
   parameters: { notes: '- test' },
   argTypes: {
     color: {
@@ -10,11 +9,11 @@ const ColorMeta: Meta<typeof Color> = {
     },
   },
   component: Color,
-};
+} satisfies Meta<typeof Color>;
 
-export default ColorMeta;
+export default meta;
 
-type ColorStory = StoryObj<typeof Color>;
+type ColorStory = StoryObj<typeof meta>;
 
 export const ColorExample: ColorStory = {
   args: {

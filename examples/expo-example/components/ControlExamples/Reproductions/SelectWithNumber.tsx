@@ -1,5 +1,4 @@
 import { Text, TouchableOpacity, View } from 'react-native';
-import React from 'react';
 
 export type ButtonProps = {
   number: keyof {
@@ -16,7 +15,6 @@ export type ButtonProps = {
 };
 
 export const MyButton = ({ number }: ButtonProps) => {
-  console.log(typeof number);
   return (
     <View>
       <TouchableOpacity activeOpacity={0.8}>

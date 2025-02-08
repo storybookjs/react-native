@@ -2,7 +2,6 @@ import type { StoryObj, Meta } from '@storybook/react';
 import { Array } from './Array';
 
 const meta = {
-  title: 'ControlExamples/Array control',
   component: Array,
   args: {
     list: ['a', 'b', 'c'],
@@ -10,12 +9,14 @@ const meta = {
   argTypes: {
     list: {
       separator: ',',
+      // @ts-expect-error
       control: { type: 'array' },
     },
   },
   parameters: {
-    notes:
-      'Seems like the array type is not distinguishable from object so you should provide the arg type in this case',
+    notes: `
+This is actually not a proper control type and should be inferred from the object type but is currently an inconsistency in the rn addon.
+    `,
   },
 } satisfies Meta<typeof Array>;
 

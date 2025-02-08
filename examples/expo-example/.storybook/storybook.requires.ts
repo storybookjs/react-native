@@ -25,19 +25,6 @@ const normalizedStories = [
   },
   {
     titlePrefix: "",
-    directory: "../../packages/react-native-ui",
-    files: "**/*.stories.?(ts|tsx|js|jsx)",
-    importPathMatcher:
-      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
-    // @ts-ignore
-    req: require.context(
-      "../../../packages/react-native-ui",
-      true,
-      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
-    ),
-  },
-  {
-    titlePrefix: "OtherComponents",
     directory: "./other_components",
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher:
@@ -45,6 +32,19 @@ const normalizedStories = [
     // @ts-ignore
     req: require.context(
       "../other_components",
+      true,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
+    ),
+  },
+  {
+    titlePrefix: "react-native-ui",
+    directory: "../../packages/react-native-ui",
+    files: "**/*.stories.?(ts|tsx|js|jsx)",
+    importPathMatcher:
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
+    // @ts-ignore
+    req: require.context(
+      "../../../packages/react-native-ui",
       true,
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
     ),

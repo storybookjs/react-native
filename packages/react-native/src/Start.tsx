@@ -21,12 +21,17 @@ import {
   composeConfigs,
   addons as previewAddons,
   PreviewWithSelection,
+  sortStoriesV7,
   userOrAutoTitleFromSpecifier,
 } from '@storybook/core/preview-api';
 import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
 // NOTE this really should be exported from preview-api, but it's not
 import { createBrowserChannel } from '@storybook/core/channels';
-import type { NormalizedStoriesSpecifier, StoryIndex } from '@storybook/core/types';
+import type {
+  Addon_StorySortParameterV7,
+  NormalizedStoriesSpecifier,
+  StoryIndex,
+} from '@storybook/core/types';
 import type { ReactRenderer } from '@storybook/react';
 import { View } from './View';
 
@@ -46,12 +51,14 @@ if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
 export function prepareStories({
   storyEntries,
   options,
+  storySort,
 }: {
   storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
   options?: ReactNativeOptions;
+  storySort?: Addon_StorySortParameterV7;
 }) {
   let index: StoryIndex = {
-    v: 4,
+    v: 5,
     entries: {},
   };
 
@@ -142,7 +149,20 @@ export function prepareStories({
     });
   });
 
-  return { index, importMap };
+  const sortableStories = Object.values(index.entries);
+
+  sortStoriesV7(
+    sortableStories,
+    storySort,
+    Object.values(index.entries).map((entry) => entry.importPath)
+  );
+
+  const sorted = sortableStories.reduce((acc, item) => {
+    acc[item.id] = item;
+    return acc;
+  }, {} as StoryIndex['entries']);
+
+  return { index: { v: 5, entries: sorted }, importMap };
 }
 
 export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
@@ -175,7 +195,13 @@ export function start({
   annotations: any[];
   options?: ReactNativeOptions;
 }) {
-  const { index, importMap } = prepareStories({ storyEntries, options });
+  const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
+
+  const { index, importMap } = prepareStories({
+    storyEntries,
+    options,
+    storySort: composedAnnotations.parameters?.options?.storySort,
+  });
 
   const channel = createBrowserChannel({ page: 'preview' });
 
@@ -230,7 +256,6 @@ export function start({
       ...annotations,
     ]);
 
-  // const preview = new PreviewWithSelection<ReactRenderer>(urlStore, previewView);
   const preview = new PreviewWithSelection<ReactRenderer>(
     async (importPath: string) => importMap[importPath],
     getProjectAnnotationsInitial,
@@ -258,7 +283,15 @@ export function updateView(
   normalizedStories: Array<NormalizedStoriesSpecifier & { req: any }>,
   options?: ReactNativeOptions
 ) {
-  const { importMap, index } = prepareStories({ storyEntries: normalizedStories, options });
+  const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
+
+  const storySort = composedAnnotations.parameters?.options?.storySort;
+
+  const { importMap, index } = prepareStories({
+    storyEntries: normalizedStories,
+    options,
+    storySort,
+  });
 
   viewInstance._preview.onStoriesChanged({
     importFn: async (importPath: string) => importMap[importPath],

@@ -3,15 +3,14 @@ import { DateString } from './Date';
 
 const date = new Date(1983, 1, 25);
 
-const DateMeta: Meta<typeof DateString> = {
-  title: 'ControlExamples/Date',
+const meta = {
   component: DateString,
   args: { date: date },
   argTypes: { date: { control: { type: 'date' } } },
-};
+} satisfies Meta<typeof DateString>;
 
-export default DateMeta;
+export default meta;
 
-type DateStory = StoryObj<typeof DateString>;
+type DateStory = StoryObj<typeof meta>;
 
 export const Basic: DateStory = {};

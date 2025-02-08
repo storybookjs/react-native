@@ -2,11 +2,16 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { MyButton } from './SelectWithNumber';
 
-export default {
-  title: 'ControlExamples/SelectWithNumber',
+const meta = {
   component: MyButton,
-} as Meta<typeof MyButton>;
+} satisfies Meta<typeof MyButton>;
 
-export const Basic: StoryObj<typeof MyButton> = {
-  args: {},
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
+  args: {
+    number: undefined,
+  },
 };

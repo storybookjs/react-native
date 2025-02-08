@@ -7,7 +7,6 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { LayoutProvider } from './LayoutProvider';
 
 const meta = {
-  title: 'components/Layout',
   component: Layout,
   decorators: [
     (Story) => (

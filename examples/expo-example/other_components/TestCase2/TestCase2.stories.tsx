@@ -5,11 +5,14 @@ const TestCase2 = () => {
   return <Text>Testing story globs and nested stories</Text>;
 };
 
-export default {
-  title: 'TestCase2',
+const meta = {
   component: TestCase2,
 } satisfies Meta<typeof TestCase2>;
 
-export const Basic: StoryObj<typeof TestCase2> = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   args: {},
 };

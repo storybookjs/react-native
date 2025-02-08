@@ -20,12 +20,15 @@ const DeepControls = ({
   );
 };
 
-export default {
-  title: 'DeepControls',
+const meta = {
   component: DeepControls,
 } satisfies Meta<typeof DeepControls>;
 
-export const Basic: StoryObj<typeof DeepControls> = {
+export default meta;
+
+type DeepControlsStory = StoryObj<typeof meta>;
+
+export const Basic: DeepControlsStory = {
   parameters: {
     deepControls: { enabled: true },
   },

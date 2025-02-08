@@ -1,10 +1,8 @@
-import React from 'react';
 import type { StoryObj, Meta } from '@storybook/react';
 import { AButton } from './AButton';
 import { ScrollView } from 'react-native';
 
 const InsideSafeAreaMeta: Meta<typeof AButton> = {
-  title: 'SafeAreaExamples/Inside SafeArea',
   component: AButton,
   argTypes: {
     onPress: { action: 'pressed the button' },

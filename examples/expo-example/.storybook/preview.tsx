@@ -19,6 +19,13 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        includeNames: true,
+        order: ['ControlExamples', ['ControlExample'], 'InteractionExample', 'DeepControls'],
+      },
+    },
     hideFullScreenButton: false,
     noSafeArea: false,
     my_param: 'anything',

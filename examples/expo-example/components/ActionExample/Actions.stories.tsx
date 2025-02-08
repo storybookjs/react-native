@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ActionButton } from './Actions';
 
 const meta = {
-  title: 'ActionButton',
   component: ActionButton,
   argTypes: {
     onPress: { action: 'pressed' },

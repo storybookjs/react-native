@@ -1,8 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import { Movie } from './Object';
 
-const ObjectMeta: Meta<typeof Movie> = {
-  title: 'ControlExamples/Object control',
+const meta = {
   component: Movie,
   args: {
     filmInfo: {
@@ -11,10 +10,10 @@ const ObjectMeta: Meta<typeof Movie> = {
       genre: 'Sci Fi',
     },
   },
-};
+} satisfies Meta<typeof Movie>;
 
-export default ObjectMeta;
+export default meta;
 
-type ObjectStory = StoryObj<typeof Movie>;
+type Story = StoryObj<typeof meta>;
 
-export const Basic: ObjectStory = {};
+export const Basic: Story = {};

@@ -32,12 +32,11 @@ describe('prepareStories', () => {
             parameters: {
               notes: 'Use this example to test the software keyboard related issues.',
             },
-            title: 'TextInput',
           },
         },
       },
       index: {
-        v: 4,
+        v: 5,
         entries: {
           'textinput--basic': {
             id: 'textinput--basic',
