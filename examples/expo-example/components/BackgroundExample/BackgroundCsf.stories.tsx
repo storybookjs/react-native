@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
 });
 
 const meta = {
-  title: 'BackgroundExample/Background CSF',
   component: Background,
   parameters: {
     backgrounds: {

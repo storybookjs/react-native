@@ -7,14 +7,8 @@ const main: StorybookConfig = {
     {
       directory: '../other_components',
       files: '**/*.stories.?(ts|tsx|js|jsx)',
-      titlePrefix: 'OtherComponents',
+      titlePrefix: 'Other Components',
     },
-    // {
-    //   directory: '../other_components',
-    //   files: '**/*.storiesof.?(ts|tsx|js|jsx)',
-    //   titlePrefix: 'OtherComponents',
-    // },
-    // '../components/**/*.storiesof.?(ts|tsx|js|jsx)',
   ],
   addons: [
     { name: '@storybook/addon-ondevice-controls' },

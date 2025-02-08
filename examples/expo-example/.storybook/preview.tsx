@@ -21,8 +21,8 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        method: 'alphabetical',
-        order: ['Notes example', 'TextInput'],
+        // method: 'alphabetical',
+        order: ['components'],
       },
     },
     hideFullScreenButton: false,

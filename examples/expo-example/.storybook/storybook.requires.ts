@@ -37,7 +37,7 @@ const normalizedStories = [
     ),
   },
   {
-    titlePrefix: "OtherComponents",
+    titlePrefix: "Other Components",
     directory: "./other_components",
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher:

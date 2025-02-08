@@ -1,13 +1,5 @@
-import React from 'react';
 import type { StoryObj, Meta } from '@storybook/react';
 import { View, StyleSheet, Text } from 'react-native';
-
-const UsableAreaMeta: Meta<any> = {
-  title: 'SafeAreaExamples/Usable Area',
-};
-export default UsableAreaMeta;
-
-type UsableAreaStory = StoryObj<any>;
 
 function UsableAreaContent() {
   return (
@@ -24,9 +16,14 @@ function UsableAreaContent() {
     </View>
   );
 }
+const meta = {
+  component: UsableAreaContent,
+} satisfies Meta<typeof UsableAreaContent>;
 
-export const SafeArea: UsableAreaStory = () => <UsableAreaContent />;
-SafeArea.parameters = { noSafeArea: false };
+export default meta;
 
-export const NoSafeArea: UsableAreaStory = () => <UsableAreaContent />;
-NoSafeArea.parameters = { noSafeArea: true };
+type UsableAreaStory = StoryObj<typeof meta>;
+
+export const SafeArea: UsableAreaStory = { parameters: { noSafeArea: false } };
+
+export const NoSafeArea: UsableAreaStory = { parameters: { noSafeArea: true } };

@@ -1,10 +1,8 @@
-import React from 'react';
 import type { StoryObj, Meta } from '@storybook/react';
 import { AButton } from './AButton';
 import { ScrollView } from 'react-native';
 
 const OutsideSafeAreaMeta: Meta<typeof AButton> = {
-  title: 'SafeAreaExamples/Outside SafeArea',
   component: AButton,
   parameters: { noSafeArea: true },
   argTypes: {

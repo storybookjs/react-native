@@ -1,18 +1,22 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import { useReducer } from 'react';
 import { View, ScrollView, Text, TextInput, TouchableOpacity } from 'react-native';
 
-export default {
-  title: 'Interaction Example',
+const Placeholder = () => <View />;
+
+const meta = {
+  component: Placeholder,
   parameters: {
     notes: `
 Use these example to test that tapping the story view will dismiss the keyboard,
 but won't interfere with scrolling or other touch interactions.
 `,
   },
-} as Meta<any>;
+} satisfies Meta<typeof Placeholder>;
 
-type InteractionExampleStory = StoryObj<any>;
+export default meta;
+
+type InteractionExampleStory = StoryObj<typeof meta>;
 
 function ExampleItem({ children }) {
   return (
@@ -63,7 +67,7 @@ export const Static: InteractionExampleStory = {
 
 export const Touchable: InteractionExampleStory = {
   render: function InteractionRender() {
-    const [count, increment] = React.useReducer((state) => state + 1, 0);
+    const [count, increment] = useReducer((state) => state + 1, 0);
 
     return (
       <>

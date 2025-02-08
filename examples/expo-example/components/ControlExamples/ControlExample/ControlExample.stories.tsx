@@ -1,8 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { ControlExample } from './ControlExample';
 
-export default {
-  title: 'ControlExamples/Control Example',
+const meta = {
   component: ControlExample,
   args: {
     name: 'Storyteller',
@@ -28,20 +27,27 @@ export default {
       range: true,
     },
     fruit: {
-      options: {
-        Apple: 'apple',
-        Banana: 'banana',
-        Cherry: 'cherry',
+      options: ['apple', 'banana', 'cherry'] as const,
+
+      control: {
+        type: 'select',
+        labels: {
+          apple: 'Apple',
+          banana: 'Banana',
+          cherry: 'Cherry',
+        } as const,
       },
-      control: { type: 'select' },
     },
     otherFruit: {
-      options: {
-        Kiwi: 'kiwi',
-        Guava: 'guava',
-        Watermelon: 'watermelon',
+      options: ['kiwi', 'guava', 'watermelon'] as const,
+      control: {
+        type: 'radio',
+        labels: {
+          kiwi: 'Kiwi',
+          guava: 'Guava',
+          watermelon: 'Watermelon',
+        } as const,
       },
-      control: { type: 'radio' },
     },
     dollars: {
       min: 0,
@@ -54,17 +60,24 @@ export default {
       control: { type: 'color' },
     },
     items: {
-      control: { type: 'array' },
+      control: {
+        // @ts-expect-error
+        type: 'array' as ControlType,
+      },
     },
     customStyles: {
       control: { type: 'object' },
     },
+    // @ts-ignore
     invalid: {
+      // @ts-ignore
       control: { type: 'nonexistent_type' },
     },
   },
-} as Meta<typeof ControlExample>;
+} satisfies Meta<typeof ControlExample>;
 
-type ControlExampleStory = StoryObj<typeof ControlExample>;
+export default meta;
+
+type ControlExampleStory = StoryObj<typeof meta>;
 
 export const Example: ControlExampleStory = {};
