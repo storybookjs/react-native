@@ -41,14 +41,21 @@ const SelectType = ({ arg, onChange }: SelectProps) => {
   const selected = active && active.label;
 
   if (Platform.OS === 'web') {
-    const handleChange = (event) => {
-      onChange(event.target.value);
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      if (arg.type === 'multi-select') {
+        const selectedOptions = Array.from(event.target.selectedOptions);
+        const selectedValues = selectedOptions.map((option) => option.value);
+        onChange(selectedValues);
+      } else {
+        onChange(event.target.value);
+      }
     };
 
     return (
       <select
         value={value}
         onChange={handleChange}
+        multiple={arg.type === 'multi-select'}
         // @ts-ignore
         style={inputStyle({ theme })}
       >
