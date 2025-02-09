@@ -20,4 +20,5 @@ export default {
   array: ArrayType,
   radio: RadioType,
   'inline-radio': RadioType,
+  'multi-select': SelectType,
 } satisfies Record<ControlTypes, React.ComponentType<any>>;

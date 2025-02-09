@@ -14,7 +14,7 @@ export interface DateProps {
 }
 
 const Touchable = styled.TouchableOpacity(({ theme }) => ({
-  ...inputStyle({ theme, isTextInput: false }),
+  ...inputStyle({ theme }),
 }));
 
 const Label = styled.Text(({ theme }) => ({
@@ -81,7 +81,7 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
             onChange(newDate);
           }}
           // @ts-ignore
-          style={inputStyle({ theme, isTextInput: true })}
+          style={inputStyle({ theme })}
         />
       </View>
     );

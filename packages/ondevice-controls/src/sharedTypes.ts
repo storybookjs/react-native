@@ -8,4 +8,5 @@ export type ControlTypes =
   | 'array'
   | 'date'
   | 'radio'
-  | 'inline-radio';
+  | 'inline-radio'
+  | 'multi-select';
