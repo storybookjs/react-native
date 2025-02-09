@@ -7,6 +7,7 @@ import SelectType from './Select';
 import DateType from './Date';
 import ArrayType from './Array';
 import RadioType from './Radio';
+import { ControlTypes } from '../sharedTypes';
 
 export default {
   text: TextType,
@@ -18,4 +19,5 @@ export default {
   date: DateType,
   array: ArrayType,
   radio: RadioType,
-};
+  'inline-radio': RadioType,
+} satisfies Record<ControlTypes, React.ComponentType<any>>;

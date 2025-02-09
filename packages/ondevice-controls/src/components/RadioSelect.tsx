@@ -11,7 +11,7 @@ const RadioContainer = styled.View(({ isInline }: any) => ({
   flexDirection: isInline ? 'row' : 'column',
   alignItems: isInline ? 'center' : 'flex-start',
   flexWrap: 'wrap',
-  rowGap: 10,
+  gap: 10,
 }));
 
 const RadioTouchable = styled.TouchableOpacity(() => ({

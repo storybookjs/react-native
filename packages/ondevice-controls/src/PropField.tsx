@@ -2,18 +2,7 @@ import React, { ComponentType } from 'react';
 import { styled } from '@storybook/react-native-theming';
 import TypeMap from './types';
 import { ArgType } from './ControlsPanel';
-
-type ControlTypes =
-  | 'text'
-  | 'number'
-  | 'color'
-  | 'boolean'
-  | 'object'
-  | 'select'
-  | 'array'
-  | 'date'
-  | 'button'
-  | 'radio';
+import { ControlTypes } from './sharedTypes';
 
 export interface Knob {
   name: string;
