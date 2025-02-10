@@ -16,8 +16,6 @@ export interface RadioProps {
   onChange: (value: any) => void;
 }
 
-// windsurf and vercel video
-
 const getOptions = (arg: RadioProps['arg']) => {
   if (arg.options) {
     return arg.options;
