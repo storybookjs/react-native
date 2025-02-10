@@ -29,10 +29,7 @@ const desktopLogoContainer = {
   paddingRight: 10,
   justifyContent: 'space-between',
 } satisfies ViewStyle;
-
-const desktopContentContainerStyle = { flex: 1 } satisfies ViewStyle;
-
-const desktopContentStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
+const contentContainerStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
 
 const mobileContentStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
 
@@ -79,16 +76,6 @@ export const Layout = ({
 
   const [uiHidden, setUiHidden] = useState(false);
 
-  const desktopContainerStyle = useStyle(
-    () => ({
-      flex: 1,
-      paddingTop: insets.top,
-      backgroundColor: theme.background.content,
-      flexDirection: 'row',
-    }),
-    [theme.background.content, insets.top]
-  );
-
   const desktopSidebarStyle = useStyle(
     () => ({
       width: desktopSidebarOpen ? 240 : undefined,
@@ -117,14 +104,22 @@ export const Layout = ({
     [desktopAddonsPanelOpen, theme.appBorderColor]
   );
 
-  const mobileContainerStyle = useStyle(
-    () => ({
+  const containerStyle = useStyle(() => {
+    if (isDesktop) {
+      return {
+        flex: 1,
+        paddingTop: insets.top,
+        backgroundColor: theme.background.content,
+        flexDirection: 'row',
+      };
+    }
+
+    return {
       flex: 1,
       paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
       backgroundColor: theme.background.content,
-    }),
-    [theme.background.content, insets.top, story?.parameters?.noSafeArea]
-  );
+    };
+  }, [theme.background.content, insets.top, story?.parameters?.noSafeArea, isDesktop]);
 
   const fullScreenButtonStyle = useStyle(
     () => ({
@@ -140,7 +135,7 @@ export const Layout = ({
     [uiHidden, insets.bottom, theme.background.content, theme.appBorderColor]
   );
 
-  const containerStyle = useStyle(
+  const menuContainerStyle = useStyle(
     () => ({
       marginBottom: insets.bottom,
     }),
@@ -165,9 +160,9 @@ export const Layout = ({
     channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
   }, []);
 
-  if (isDesktop) {
-    return (
-      <View style={desktopContainerStyle}>
+  return (
+    <View style={containerStyle}>
+      {isDesktop ? (
         <View style={desktopSidebarStyle}>
           {desktopSidebarOpen ? (
             <ScrollView
@@ -196,32 +191,12 @@ export const Layout = ({
             <IconButton onPress={() => setDesktopSidebarOpen(true)} Icon={MenuIcon} />
           )}
         </View>
+      ) : null}
 
-        <View style={desktopContentContainerStyle}>
-          <View style={desktopContentStyle}>{children}</View>
-
-          <View style={desktopAddonsPanelStyle}>
-            {desktopAddonsPanelOpen ? (
-              <AddonsTabs storyId={story?.id} onClose={() => setDesktopAddonsPanelOpen(false)} />
-            ) : (
-              <IconButton
-                style={iconFloatRightStyle}
-                onPress={() => setDesktopAddonsPanelOpen(true)}
-                Icon={BottomBarToggleIcon}
-              />
-            )}
-          </View>
-        </View>
-      </View>
-    );
-  }
-
-  return (
-    <View style={mobileContainerStyle}>
       <View style={mobileContentStyle}>
-        {children}
+        <View style={contentContainerStyle}>{children}</View>
 
-        {story?.parameters?.hideFullScreenButton ? null : (
+        {story?.parameters?.hideFullScreenButton || isDesktop ? null : (
           <TouchableOpacity
             style={fullScreenButtonStyle}
             onPress={() => setUiHidden((prev) => !prev)}
@@ -233,10 +208,24 @@ export const Layout = ({
             )}
           </TouchableOpacity>
         )}
+
+        {isDesktop ? (
+          <View style={desktopAddonsPanelStyle}>
+            {desktopAddonsPanelOpen ? (
+              <AddonsTabs storyId={story?.id} onClose={() => setDesktopAddonsPanelOpen(false)} />
+            ) : (
+              <IconButton
+                style={iconFloatRightStyle}
+                onPress={() => setDesktopAddonsPanelOpen(true)}
+                Icon={BottomBarToggleIcon}
+              />
+            )}
+          </View>
+        ) : null}
       </View>
 
-      {!uiHidden ? (
-        <Container style={containerStyle}>
+      {!uiHidden && !isDesktop ? (
+        <Container style={menuContainerStyle}>
           <Nav>
             <Button
               testID="mobile-menu-button"
@@ -259,25 +248,27 @@ export const Layout = ({
         </Container>
       ) : null}
 
-      <MobileMenuDrawer ref={mobileMenuDrawerRef}>
-        <View style={mobileMenuDrawerContentStyle}>
-          <StorybookLogo theme={theme} />
-        </View>
+      {isDesktop ? null : (
+        <MobileMenuDrawer ref={mobileMenuDrawerRef}>
+          <View style={mobileMenuDrawerContentStyle}>
+            <StorybookLogo theme={theme} />
+          </View>
 
-        <Sidebar
-          extra={placeholderArray}
-          previewInitialized
-          indexError={undefined}
-          refs={placeholderObject}
-          setSelection={setSelection}
-          status={placeholderObject}
-          index={storyHash}
-          storyId={story?.id}
-          refId={DEFAULT_REF_ID}
-        />
-      </MobileMenuDrawer>
+          <Sidebar
+            extra={placeholderArray}
+            previewInitialized
+            indexError={undefined}
+            refs={placeholderObject}
+            setSelection={setSelection}
+            status={placeholderObject}
+            index={storyHash}
+            storyId={story?.id}
+            refId={DEFAULT_REF_ID}
+          />
+        </MobileMenuDrawer>
+      )}
 
-      <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />
+      {isDesktop ? null : <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />}
     </View>
   );
 };
