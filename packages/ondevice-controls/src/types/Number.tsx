@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react';
 import { View } from 'react-native';
 import { useResyncValue } from './useResyncValue';
 import { Input } from './common';
+import { ControlTypes } from '../sharedTypes';
 
 const ValueContainer = styled.View({ flexDirection: 'row' });
 
@@ -21,16 +22,46 @@ export interface NumberProps {
   arg: {
     name: string;
     value: number;
-    step: number;
-    min: number;
-    max: number;
-    range: boolean;
+    step?: number;
+    min?: number;
+    max?: number;
+    range?: boolean;
     defaultValue: number;
+    type: ControlTypes;
+    control: {
+      min?: number;
+      max?: number;
+      step?: number;
+    };
   };
   isPristine: boolean;
 
   onChange: (value: number) => void;
 }
+
+const getRangeOptions = (arg: NumberProps['arg']) => {
+  if (arg.type === 'range') {
+    return {
+      min: arg.control?.min ?? 0,
+      max: arg.control?.max ?? 100,
+      step: arg.control?.step ?? 1,
+    };
+  }
+
+  if (arg.range === true) {
+    return {
+      min: arg.min ?? 0,
+      max: arg.max ?? 100,
+      step: arg.step ?? 1,
+    };
+  }
+
+  return {
+    min: 0,
+    max: 100,
+    step: 1,
+  };
+};
 
 const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProps) => {
   const showError = Number.isNaN(arg.value);
@@ -51,7 +82,9 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
     }
   };
 
-  if (arg.range) {
+  if (arg.range || arg.type === 'range') {
+    const { min, max, step } = getRangeOptions(arg);
+
     return (
       <View key={key}>
         <ValueContainer>
@@ -61,9 +94,9 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
         </ValueContainer>
 
         <Slider
-          minimumValue={arg.min}
-          maximumValue={arg.max}
-          step={arg.step}
+          minimumValue={min}
+          maximumValue={max}
+          step={step}
           value={arg.value}
           onSlidingComplete={(val) => {
             onChange(val);
@@ -88,9 +121,5 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
     );
   }
 };
-
-NumberType.serialize = (value) => String(value);
-
-NumberType.deserialize = (value) => parseFloat(value);
 
 export default NumberType;

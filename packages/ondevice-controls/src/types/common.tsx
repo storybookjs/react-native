@@ -6,12 +6,10 @@ import { Platform, TextInput, TextInputProps, TextStyle } from 'react-native';
 
 export function inputStyle({
   theme,
-  isTextInput = true,
   focused = false,
   hasError = false,
 }: {
   theme: Theme;
-  isTextInput?: boolean;
   focused?: boolean;
   hasError?: boolean;
 }): TextStyle {
@@ -31,9 +29,7 @@ export function inputStyle({
 
     ...Platform.select({
       android: {
-        // Android seems to have builtin vertical padding to `TextInput`,
-        // but not for multiline inputs.
-        paddingVertical: isTextInput ? 0 : undefined,
+        paddingVertical: theme.input.paddingVertical,
       },
       web: {
         // The web (that isn't RNW) doesn't understand `paddingHorizontal` etc.
@@ -64,8 +60,7 @@ const TextInputWithSwitcher = forwardRef<TextInput, TextInputProps>((props, ref)
 
 export const Input = styled(TextInputWithSwitcher)<{
   focused?: boolean;
-  isTextInput?: boolean;
   hasError?: boolean;
-}>(({ theme, focused, isTextInput, hasError }) => ({
-  ...inputStyle({ theme, isTextInput, focused, hasError }),
+}>(({ theme, focused, hasError }) => ({
+  ...inputStyle({ theme, focused, hasError }),
 }));

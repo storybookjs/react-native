@@ -11,7 +11,7 @@ const RadioContainer = styled.View(({ isInline }: any) => ({
   flexDirection: isInline ? 'row' : 'column',
   alignItems: isInline ? 'center' : 'flex-start',
   flexWrap: 'wrap',
-  rowGap: 10,
+  gap: 10,
 }));
 
 const RadioTouchable = styled.TouchableOpacity(() => ({
@@ -20,21 +20,20 @@ const RadioTouchable = styled.TouchableOpacity(() => ({
 }));
 
 const RadioCircle = styled.View(({ theme }) => ({
-  width: 15,
-  height: 15,
+  width: 16,
+  height: 16,
   borderWidth: 1,
   borderColor: theme.appBorderColor,
-  borderRadius: 15,
+  borderRadius: '100%',
   backgroundColor: theme.background.content,
   alignItems: 'center',
   justifyContent: 'center',
-  padding: 2,
 }));
 
 const RadioInnerCircle = styled.View(({ theme, selected }: any) => ({
-  height: '100%',
-  width: '100%',
-  borderRadius: 10,
+  width: 8,
+  height: 8,
+  borderRadius: '100%',
   backgroundColor: selected ? theme.color.positive : 'transparent',
 }));
 

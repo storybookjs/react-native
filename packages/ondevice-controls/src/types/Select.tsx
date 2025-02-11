@@ -1,8 +1,8 @@
 import { useTheme } from '@storybook/react-native-theming';
 import { Platform, View } from 'react-native';
-import ModalPicker from 'react-native-modal-selector';
-
+import SelectModal from '../components/SelectModal';
 import { Input, inputStyle } from './common';
+import { ControlTypes } from '../sharedTypes';
 
 export interface SelectProps {
   arg: {
@@ -12,6 +12,7 @@ export interface SelectProps {
     control: {
       labels?: Record<string, string>;
     };
+    type: ControlTypes;
   };
   onChange: (value: any) => void;
 }
@@ -40,14 +41,21 @@ const SelectType = ({ arg, onChange }: SelectProps) => {
   const selected = active && active.label;
 
   if (Platform.OS === 'web') {
-    const handleChange = (event) => {
-      onChange(event.target.value);
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      if (arg.type === 'multi-select') {
+        const selectedOptions = Array.from(event.target.selectedOptions);
+        const selectedValues = selectedOptions.map((option) => option.value);
+        onChange(selectedValues);
+      } else {
+        onChange(event.target.value);
+      }
     };
 
     return (
       <select
         value={value}
         onChange={handleChange}
+        multiple={arg.type === 'multi-select'}
         // @ts-ignore
         style={inputStyle({ theme })}
       >
@@ -62,26 +70,50 @@ const SelectType = ({ arg, onChange }: SelectProps) => {
 
   return (
     <View>
-      <ModalPicker
-        data={options}
-        initValue={String(value)}
-        onChange={(option) => onChange(option.key)}
-        animationType="none"
-        keyExtractor={({ key, label }) => `${label}-${key}`}
-      >
-        <Input
-          editable={false}
-          value={String(selected)}
-          autoCapitalize="none"
-          underlineColorAndroid="transparent"
-        />
-      </ModalPicker>
+      {arg.type === 'multi-select' ? (
+        <SelectModal
+          data={options}
+          multiselect
+          initValue={Array.isArray(value) ? value.map((v) => String(v)) : [String(value)]}
+          onChange={(selectedOptions) => {
+            if (Array.isArray(selectedOptions)) {
+              onChange(selectedOptions.map((option) => option.key));
+            }
+          }}
+          animationType="none"
+          keyExtractor={({ key, label }) => `${label}-${key}`}
+          selectedSeparator=", "
+          closeOnChange={false}
+        >
+          <Input
+            editable={false}
+            value={
+              Array.isArray(value)
+                ? value.map((v) => options.find((opt) => opt.key === v)?.label || v).join(', ')
+                : String(selected)
+            }
+            autoCapitalize="none"
+            underlineColorAndroid="transparent"
+          />
+        </SelectModal>
+      ) : (
+        <SelectModal
+          data={options}
+          initValue={String(value)}
+          onChange={(option) => onChange(option.key)}
+          animationType="none"
+          keyExtractor={({ key, label }) => `${label}-${key}`}
+        >
+          <Input
+            editable={false}
+            value={String(selected)}
+            autoCapitalize="none"
+            underlineColorAndroid="transparent"
+          />
+        </SelectModal>
+      )}
     </View>
   );
 };
-
-SelectType.serialize = (value) => value;
-
-SelectType.deserialize = (value) => value;
 
 export default SelectType;
