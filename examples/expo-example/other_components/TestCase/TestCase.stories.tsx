@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { useRef } from 'react';
 import { Text } from 'react-native';
 
 const TestCase = () => {
-  return <Text>Testing story globs and nested stories</Text>;
+  const unstableRef = useRef(Math.random().toString(36).slice(2, 11)).current;
+  return <Text>{unstableRef}</Text>;
 };
 
 const meta = {
