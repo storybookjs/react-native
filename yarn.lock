@@ -5163,7 +5163,7 @@ __metadata:
     cross-env: "npm:^7.0.3"
     deep-equal: "npm:^1.0.1"
     prop-types: "npm:^15.7.2"
-    react-native-modal-datetime-picker: "npm:^14.0.0"
+    react-native-modal-datetime-picker: "npm:^18.0.0"
     tinycolor2: "npm:^1.4.1"
     typescript: "npm:^5.3.3"
   peerDependencies:
@@ -16097,15 +16097,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-modal-datetime-picker@npm:^14.0.0":
-  version: 14.0.1
-  resolution: "react-native-modal-datetime-picker@npm:14.0.1"
+"react-native-modal-datetime-picker@npm:^18.0.0":
+  version: 18.0.0
+  resolution: "react-native-modal-datetime-picker@npm:18.0.0"
   dependencies:
     prop-types: "npm:^15.7.2"
   peerDependencies:
-    "@react-native-community/datetimepicker": ">=3.0.0"
+    "@react-native-community/datetimepicker": ">=6.7.0"
     react-native: ">=0.65.0"
-  checksum: 10/568c2d54b4b6800a125bc869ecd24c5295910b8af677a197ce003d348f652eb54839251b8b5ba3ed33395d7833212ef3dd9360c3f3cbcda04e4ff838c3119038
+  checksum: 10/8f065f4ee6572f7cd6731fb049b71653ce73dd7ce564a4cf4f310f6a25a659c388b46f8b51625ea8671c5f139439a0c1824ac0cec787832a36d799982d1e51d9
   languageName: node
   linkType: hard
 
