@@ -1,3 +1,5 @@
+// fixes fast refresh on web
+import '@expo/metro-runtime';
 import { Text, View } from 'react-native';
 
 function App() {

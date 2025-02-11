@@ -1,9 +1,11 @@
-import { Text, ScrollView } from 'react-native';
+import { Text, ScrollView, Appearance } from 'react-native';
 
 const ComponentExample = (props: any) => {
   return (
     <ScrollView>
-      <Text>{JSON.stringify(props, null, 2)}</Text>
+      <Text style={{ color: Appearance.getColorScheme() === 'dark' ? 'white' : 'black' }}>
+        {JSON.stringify(props, null, 2)}
+      </Text>
     </ScrollView>
   );
 };
