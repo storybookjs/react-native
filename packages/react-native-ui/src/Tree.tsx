@@ -6,7 +6,7 @@ import type {
   StoryEntry,
 } from '@storybook/core/manager-api';
 import { styled } from '@storybook/react-native-theming';
-import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import { View } from 'react-native';
 import { IconButton } from './IconButton';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
@@ -55,13 +55,14 @@ export const Node = React.memo<NodeProps>(function Node({
 }) {
   const { setNodeRef } = useSelectedNode();
 
-  const storyNodeRef = useRef<View>(null);
-
-  useEffect(() => {
-    if (isSelected) {
-      setNodeRef(storyNodeRef);
-    }
-  }, [isSelected, setNodeRef]);
+  const setRef = useCallback(
+    (node: View | null) => {
+      if (isSelected && node) {
+        setNodeRef(node);
+      }
+    },
+    [isSelected, setNodeRef]
+  );
 
   if (!isDisplayed) {
     return null;
@@ -73,7 +74,7 @@ export const Node = React.memo<NodeProps>(function Node({
     return (
       <LeafNodeStyleWrapper>
         <StoryNode
-          ref={storyNodeRef}
+          ref={setRef}
           selected={isSelected}
           key={id}
           id={id}
