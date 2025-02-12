@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from '@storybook/react';
+import preview from '../../../.storybook/preview';
 import { ControlExample } from './ControlExample';
 
-const meta = {
+const meta = preview.meta({
   component: ControlExample,
   args: {
     name: 'Storyteller',
@@ -74,10 +74,8 @@ const meta = {
       control: { type: 'nonexistent_type' },
     },
   },
-} satisfies Meta<typeof ControlExample>;
+});
 
 export default meta;
 
-type ControlExampleStory = StoryObj<typeof meta>;
-
-export const Example: ControlExampleStory = {};
+export const Example = meta.story({});

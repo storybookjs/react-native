@@ -1,16 +1,18 @@
-import type { StoryObj, Meta } from '@storybook/react';
 import { DateString } from './Date';
+import preview from '../../../.storybook/preview';
 
 const date = new Date(1983, 1, 25);
 
-const meta = {
+const meta = preview.meta({
   component: DateString,
-  args: { date: date },
+
   argTypes: { date: { control: { type: 'date' } } },
-} satisfies Meta<typeof DateString>;
+});
 
 export default meta;
 
-type DateStory = StoryObj<typeof meta>;
-
-export const Basic: DateStory = {};
+export const Basic = meta.story({
+  args: {
+    date,
+  },
+});

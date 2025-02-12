@@ -1,8 +1,8 @@
 import { View, Appearance } from 'react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-import type { Preview } from '@storybook/react';
+import { definePreview } from '@storybook/react/preview';
 
-const preview: Preview = {
+const preview = definePreview({
   decorators: [
     (Story) => (
       <View style={{ padding: 8, flex: 1 }}>
@@ -38,6 +38,6 @@ const preview: Preview = {
       ],
     },
   },
-};
+});
 
 export default preview;
