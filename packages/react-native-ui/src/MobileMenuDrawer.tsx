@@ -3,11 +3,13 @@ import BottomSheet, {
   BottomSheetBackdropProps,
   BottomSheetScrollView,
 } from '@gorhom/bottom-sheet';
-import { ReactNode, forwardRef, memo, useImperativeHandle, useMemo, useRef } from 'react';
+import { BottomSheetScrollViewMethods } from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheetScrollable/types';
+import { useTheme } from '@storybook/react-native-theming';
+import { forwardRef, memo, ReactNode, useImperativeHandle, useMemo, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useTheme } from '@storybook/react-native-theming';
+import { useSelectedNode } from './SelectedNodeProvider';
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
@@ -34,18 +36,29 @@ export const MobileMenuDrawer = memo(
     const reducedMotion = useReducedMotion();
     const insets = useSafeAreaInsets();
     const theme = useTheme();
-
+    const scrollRef = useRef<BottomSheetScrollViewMethods>(null);
     const menuBottomSheetRef = useRef<BottomSheet>(null);
+    const { nodeRef } = useSelectedNode();
 
     useImperativeHandle(ref, () => ({
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
-          // menuBottomSheetRef.current?.present();
           menuBottomSheetRef.current?.snapToIndex(1);
+
+          setTimeout(() => {
+            if (nodeRef?.current) {
+              // im just not sure if older versions would error here,
+              // since measure layout probably changed since new arch
+              try {
+                nodeRef.current.measureLayout?.(scrollRef.current as any, (_x, y) => {
+                  scrollRef.current?.scrollTo({ y: y - 100, animated: true });
+                });
+              } catch (error) {}
+            }
+          }, 500);
         } else {
           Keyboard.dismiss();
 
-          // menuBottomSheetRef.current?.dismiss();
           menuBottomSheetRef.current?.close();
         }
       },
@@ -82,6 +95,7 @@ export const MobileMenuDrawer = memo(
         handleIndicatorStyle={handleIndicatorStyle}
       >
         <BottomSheetScrollView
+          ref={scrollRef}
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={contentContainerStyle}
         >

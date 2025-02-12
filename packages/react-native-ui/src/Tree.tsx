@@ -6,7 +6,7 @@ import type {
   StoryEntry,
 } from '@storybook/core/manager-api';
 import { styled } from '@storybook/react-native-theming';
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { View } from 'react-native';
 import { IconButton } from './IconButton';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
@@ -18,6 +18,7 @@ import type { ExpandAction, ExpandedState } from './hooks/useExpanded';
 import { useExpanded } from './hooks/useExpanded';
 import { getGroupStatus, statusMapping } from './util/status';
 import { createId, getAncestorIds, getDescendantIds, isStoryHoistable } from './util/tree';
+import { useSelectedNode } from './SelectedNodeProvider';
 
 interface NodeProps {
   item: Item;
@@ -52,6 +53,16 @@ export const Node = React.memo<NodeProps>(function Node({
   setExpanded,
   onSelectStoryId,
 }) {
+  const { setNodeRef } = useSelectedNode();
+
+  const storyNodeRef = useRef<View>(null);
+
+  useEffect(() => {
+    if (isSelected) {
+      setNodeRef(storyNodeRef);
+    }
+  }, [isSelected, setNodeRef]);
+
   if (!isDisplayed) {
     return null;
   }
@@ -59,11 +70,10 @@ export const Node = React.memo<NodeProps>(function Node({
   const id = createId(item.id, refId);
 
   if (item.type === 'story') {
-    const LeafNode = StoryNode;
-
     return (
       <LeafNodeStyleWrapper>
-        <LeafNode
+        <StoryNode
+          ref={storyNodeRef}
           selected={isSelected}
           key={id}
           id={id}
@@ -73,7 +83,7 @@ export const Node = React.memo<NodeProps>(function Node({
           }}
         >
           {(item.renderLabel as (i: typeof item) => React.ReactNode)?.(item) || item.name}
-        </LeafNode>
+        </StoryNode>
       </LeafNodeStyleWrapper>
     );
   }

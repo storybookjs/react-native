@@ -19,6 +19,7 @@ import { CloseFullscreenIcon } from './icon/CloseFullscreenIcon';
 import { FullscreenIcon } from './icon/FullscreenIcon';
 import { MenuIcon } from './icon/MenuIcon';
 import { useStyle } from './util/useStyle';
+import { SelectedNodeProvider } from './SelectedNodeProvider';
 
 const desktopLogoContainer = {
   flexDirection: 'row',
@@ -249,23 +250,25 @@ export const Layout = ({
       ) : null}
 
       {isDesktop ? null : (
-        <MobileMenuDrawer ref={mobileMenuDrawerRef}>
-          <View style={mobileMenuDrawerContentStyle}>
-            <StorybookLogo theme={theme} />
-          </View>
+        <SelectedNodeProvider>
+          <MobileMenuDrawer ref={mobileMenuDrawerRef}>
+            <View style={mobileMenuDrawerContentStyle}>
+              <StorybookLogo theme={theme} />
+            </View>
 
-          <Sidebar
-            extra={placeholderArray}
-            previewInitialized
-            indexError={undefined}
-            refs={placeholderObject}
-            setSelection={setSelection}
-            status={placeholderObject}
-            index={storyHash}
-            storyId={story?.id}
-            refId={DEFAULT_REF_ID}
-          />
-        </MobileMenuDrawer>
+            <Sidebar
+              extra={placeholderArray}
+              previewInitialized
+              indexError={undefined}
+              refs={placeholderObject}
+              setSelection={setSelection}
+              status={placeholderObject}
+              index={storyHash}
+              storyId={story?.id}
+              refId={DEFAULT_REF_ID}
+            />
+          </MobileMenuDrawer>
+        </SelectedNodeProvider>
       )}
 
       {isDesktop ? null : <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />}
