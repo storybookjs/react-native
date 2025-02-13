@@ -18,6 +18,7 @@ import {
 } from './types';
 import { getGroupStatus, getHighestStatus } from './util/status';
 import { searchItem } from './util/tree';
+import { useSelectedNode } from './SelectedNodeProvider';
 
 const DEFAULT_MAX_SEARCH_RESULTS = 50;
 
@@ -111,6 +112,7 @@ export const Search = React.memo<{
   const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
   const { isMobile } = useLayout();
+  const { scrollToSelectedNode } = useSelectedNode();
 
   const selectStory = useCallback(
     (id: string, refId: string) => {
@@ -121,8 +123,10 @@ export const Search = React.memo<{
       setIsOpen(false);
 
       showAllComponents(false);
+
+      scrollToSelectedNode();
     },
-    [setSelection]
+    [scrollToSelectedNode, setSelection]
   );
 
   const getItemProps: GetSearchItemProps = useCallback(
