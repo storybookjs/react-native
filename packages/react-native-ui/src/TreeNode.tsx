@@ -1,11 +1,12 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { ComponentIcon } from './icon/ComponentIcon';
 import { GroupIcon } from './icon/GroupIcon';
-
 import { StoryIcon } from './icon/StoryIcon';
 import { CollapseIcon } from './icon/CollapseIcon';
-import React, { ComponentProps, FC, useMemo } from 'react';
+import { ComponentProps, FC, forwardRef, useMemo } from 'react';
 import { transparentize } from 'polished';
+import { View } from 'react-native';
+import React from 'react';
 
 export interface NodeProps {
   children: React.ReactNode | React.ReactNode[];
@@ -131,22 +132,26 @@ export const ComponentNode: FC<ComponentProps<typeof BranchNode>> = React.memo(
   }
 );
 
-export const StoryNode: FC<ComponentProps<typeof LeafNode>> = React.memo(function StoryNode({
-  children,
-  ...props
-}) {
-  const theme = useTheme();
+export const StoryNode = React.memo(
+  forwardRef<View, ComponentProps<typeof LeafNode>>(function StoryNode(
+    { children, ...props },
+    ref
+  ) {
+    const theme = useTheme();
 
-  const color = useMemo(() => {
-    return props.selected ? theme.color.lightest : theme.color.seafoam;
-  }, [props.selected, theme.color.lightest, theme.color.seafoam]);
+    const color = useMemo(() => {
+      return props.selected ? theme.color.lightest : theme.color.seafoam;
+    }, [props.selected, theme.color.lightest, theme.color.seafoam]);
 
-  return (
-    <LeafNode {...props}>
-      <Wrapper>
-        <StoryIcon width={14} height={14} color={color} />
-      </Wrapper>
-      <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
-    </LeafNode>
-  );
-});
+    return (
+      <LeafNode {...props} ref={ref}>
+        <Wrapper>
+          <StoryIcon width={14} height={14} color={color} />
+        </Wrapper>
+        <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
+      </LeafNode>
+    );
+  })
+);
+
+StoryNode.displayName = 'StoryNode';

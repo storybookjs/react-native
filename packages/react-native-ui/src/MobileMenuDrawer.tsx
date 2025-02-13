@@ -3,11 +3,12 @@ import BottomSheet, {
   BottomSheetBackdropProps,
   BottomSheetScrollView,
 } from '@gorhom/bottom-sheet';
-import { ReactNode, forwardRef, memo, useImperativeHandle, useMemo, useRef } from 'react';
+import { useTheme } from '@storybook/react-native-theming';
+import { forwardRef, memo, ReactNode, useImperativeHandle, useMemo, useRef } from 'react';
 import { Keyboard } from 'react-native';
 import { useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useTheme } from '@storybook/react-native-theming';
+import { useSelectedNode } from './SelectedNodeProvider';
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
@@ -34,18 +35,18 @@ export const MobileMenuDrawer = memo(
     const reducedMotion = useReducedMotion();
     const insets = useSafeAreaInsets();
     const theme = useTheme();
-
     const menuBottomSheetRef = useRef<BottomSheet>(null);
+    const { scrollToSelectedNode, scrollRef } = useSelectedNode();
 
     useImperativeHandle(ref, () => ({
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
-          // menuBottomSheetRef.current?.present();
           menuBottomSheetRef.current?.snapToIndex(1);
+
+          scrollToSelectedNode();
         } else {
           Keyboard.dismiss();
 
-          // menuBottomSheetRef.current?.dismiss();
           menuBottomSheetRef.current?.close();
         }
       },
@@ -82,6 +83,7 @@ export const MobileMenuDrawer = memo(
         handleIndicatorStyle={handleIndicatorStyle}
       >
         <BottomSheetScrollView
+          ref={scrollRef}
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={contentContainerStyle}
         >

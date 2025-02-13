@@ -18,6 +18,7 @@ import type { ExpandAction, ExpandedState } from './hooks/useExpanded';
 import { useExpanded } from './hooks/useExpanded';
 import { getGroupStatus, statusMapping } from './util/status';
 import { createId, getAncestorIds, getDescendantIds, isStoryHoistable } from './util/tree';
+import { useSelectedNode } from './SelectedNodeProvider';
 
 interface NodeProps {
   item: Item;
@@ -52,6 +53,17 @@ export const Node = React.memo<NodeProps>(function Node({
   setExpanded,
   onSelectStoryId,
 }) {
+  const { setNodeRef } = useSelectedNode();
+
+  const setRef = useCallback(
+    (node: View | null) => {
+      if (isSelected && node) {
+        setNodeRef(node);
+      }
+    },
+    [isSelected, setNodeRef]
+  );
+
   if (!isDisplayed) {
     return null;
   }
@@ -59,11 +71,10 @@ export const Node = React.memo<NodeProps>(function Node({
   const id = createId(item.id, refId);
 
   if (item.type === 'story') {
-    const LeafNode = StoryNode;
-
     return (
       <LeafNodeStyleWrapper>
-        <LeafNode
+        <StoryNode
+          ref={setRef}
           selected={isSelected}
           key={id}
           id={id}
@@ -73,7 +84,7 @@ export const Node = React.memo<NodeProps>(function Node({
           }}
         >
           {(item.renderLabel as (i: typeof item) => React.ReactNode)?.(item) || item.name}
-        </LeafNode>
+        </StoryNode>
       </LeafNodeStyleWrapper>
     );
   }
