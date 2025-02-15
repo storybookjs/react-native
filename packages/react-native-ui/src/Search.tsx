@@ -39,18 +39,17 @@ const options = {
   ],
 } as IFuseOptions<SearchItem>;
 
-const SearchIconWrapper = styled.View(({ theme }) => ({
+const SearchIconWrapper = styled.View({
   position: 'absolute',
   top: 0,
   left: 8,
   zIndex: 1,
   pointerEvents: 'none',
-  color: theme.textMutedColor,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   height: '100%',
-}));
+});
 
 const SearchField = styled.View({
   display: 'flex',
