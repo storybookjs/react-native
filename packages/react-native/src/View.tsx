@@ -15,8 +15,14 @@ import {
 } from '@storybook/react-native-ui';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
-import { useEffect, useMemo, useReducer, useState } from 'react';
-import { ActivityIndicator, View as RNView, StyleSheet, useColorScheme } from 'react-native';
+import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import {
+  ActivityIndicator,
+  Linking,
+  View as RNView,
+  StyleSheet,
+  useColorScheme,
+} from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StoryView from './components/StoryView';
@@ -84,6 +90,10 @@ export class View {
     this._channel = channel;
   }
 
+  _storyIdExists = (storyId: string) => {
+    return Object.keys(this._storyIndex.entries).includes(storyId);
+  };
+
   _getInitialStory = async ({
     initialSelection,
     shouldPersistSelection = true,
@@ -109,7 +119,7 @@ export class View {
           this._asyncStorageStoryId = value;
         }
 
-        const exists = value && Object.keys(this._storyIndex.entries).includes(value);
+        const exists = value && this._storyIdExists(value);
 
         if (!exists) console.log('Storybook: could not find persisted story');
 
@@ -204,11 +214,52 @@ export class View {
       const colorScheme = useColorScheme();
       const [update, forceUpdate] = useReducer((x) => x + 1, 0);
       const [ready, setReady] = useState(false);
+      const initialStorySpecifierFromUrl = useRef<{
+        storySpecifier: string;
+        viewMode: 'story';
+      } | null>(null);
 
       const appliedTheme = useMemo(
         () => deepmerge(colorScheme === 'dark' ? darkTheme : theme, params.theme ?? {}),
         [colorScheme]
       );
+
+      // deep link handling
+      useEffect(() => {
+        Linking.getInitialURL().then((url) => {
+          if (url && typeof url === 'string') {
+            const urlObj = new URL(url);
+            const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
+            console.log({ initialUrl: url, initialStoryId: storyId });
+            if (storyId && typeof storyId === 'string' && this._storyIdExists(storyId)) {
+              initialStorySpecifierFromUrl.current = {
+                storySpecifier: storyId,
+                viewMode: 'story',
+              };
+            }
+          }
+        });
+
+        const listener = Linking.addEventListener('url', ({ url }) => {
+          if (typeof url === 'string') {
+            const urlObj = new URL(url);
+            const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
+            console.log({ eventUrl: url, eventStoryId: storyId });
+            if (
+              storyId &&
+              typeof storyId === 'string' &&
+              this._storyIdExists(storyId) &&
+              this._ready
+            ) {
+              this._channel.emit(Events.SET_CURRENT_STORY, { storyId });
+            }
+          }
+        });
+
+        return () => {
+          listener.remove();
+        };
+      }, []);
 
       useEffect(() => {
         this.createPreparedStoryMapping()
@@ -216,7 +267,14 @@ export class View {
             this._ready = true;
             setReady(true);
             initialStory.then((st) => {
-              self._preview.selectionStore.selectionSpecifier = st;
+              let selectionSpecifier = st;
+
+              if (initialStorySpecifierFromUrl.current?.storySpecifier) {
+                console.log('setting initial story', initialStorySpecifierFromUrl.current);
+                selectionSpecifier = initialStorySpecifierFromUrl.current;
+              }
+
+              self._preview.selectionStore.selectionSpecifier = selectionSpecifier;
 
               self._preview.selectSpecifiedStory();
             });
@@ -280,6 +338,8 @@ export class View {
           </RNView>
         );
       }
+
+      console.log(story.id);
 
       if (onDeviceUI) {
         return (
