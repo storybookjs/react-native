@@ -15,7 +15,7 @@ import {
 } from '@storybook/react-native-ui';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
-import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { useEffect, useMemo, useReducer, useState } from 'react';
 import {
   ActivityIndicator,
   Linking,
@@ -267,21 +267,17 @@ export class View {
                   }
 
                   if (storyExists) {
-                    return { initialStoryIdFromUrl: storyId, initialUrl: urlObj };
+                    return storyId;
                   } else {
                     return null;
                   }
                 }
               })
-              .then(({ initialStoryIdFromUrl, initialUrl }) => {
+              .then((initialStoryIdFromUrl) => {
                 return initialStory.then((st) => {
                   self._preview.selectionStore.selectionSpecifier = st;
 
                   if (initialStoryIdFromUrl) {
-                    initialUrl.searchParams.delete('STORYBOOK_STORY_ID');
-
-                    Linking.openURL(initialUrl.toString());
-
                     console.log(
                       `STORYBOOK: Setting initial story from Linking event, storyId: ${initialStoryIdFromUrl}`
                     );

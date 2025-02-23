@@ -45,10 +45,10 @@
     "test:update": "jest --updateSnapshot"
   },
   "dependencies": {
-    "@storybook/core": "^8.5.1",
+    "@storybook/core": "^8.5.8",
     "@storybook/csf": "^0.1.13",
     "@storybook/global": "^5.0.0",
-    "@storybook/react": "^8.5.1",
+    "@storybook/react": "^8.5.8",
     "@storybook/react-native-theming": "^8.6.0-alpha.0",
     "@storybook/react-native-ui": "^8.6.0-alpha.0",
     "commander": "^8.2.0",
@@ -57,7 +57,7 @@
     "prettier": "^2.4.1",
     "react-native-url-polyfill": "^2.0.0",
     "setimmediate": "^1.0.5",
-    "storybook": "^8.5.1",
+    "storybook": "^8.5.8",
     "type-fest": "~2.19",
     "util": "^0.12.4",
     "ws": "^8.18.0"
