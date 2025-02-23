@@ -214,10 +214,6 @@ export class View {
       const colorScheme = useColorScheme();
       const [update, forceUpdate] = useReducer((x) => x + 1, 0);
       const [ready, setReady] = useState(false);
-      const initialStorySpecifierFromUrl = useRef<{
-        storySpecifier: string;
-        viewMode: 'story';
-      } | null>(null);
 
       const appliedTheme = useMemo(
         () => deepmerge(colorScheme === 'dark' ? darkTheme : theme, params.theme ?? {}),
@@ -226,32 +222,21 @@ export class View {
 
       // deep link handling
       useEffect(() => {
-        Linking.getInitialURL().then((url) => {
-          if (url && typeof url === 'string') {
-            const urlObj = new URL(url);
-            const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
-            console.log({ initialUrl: url, initialStoryId: storyId });
-            if (storyId && typeof storyId === 'string' && this._storyIdExists(storyId)) {
-              initialStorySpecifierFromUrl.current = {
-                storySpecifier: storyId,
-                viewMode: 'story',
-              };
-            }
-          }
-        });
-
         const listener = Linking.addEventListener('url', ({ url }) => {
           if (typeof url === 'string') {
             const urlObj = new URL(url);
             const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
-            console.log({ eventUrl: url, eventStoryId: storyId });
-            if (
-              storyId &&
-              typeof storyId === 'string' &&
-              this._storyIdExists(storyId) &&
-              this._ready
-            ) {
+
+            const hasStoryId = storyId && typeof storyId === 'string';
+            const storyExists = hasStoryId && this._storyIdExists(storyId);
+
+            if (storyExists && this._ready) {
+              console.log(`STORYBOOK: Linking event received, navigating to story: ${storyId}`);
               this._channel.emit(Events.SET_CURRENT_STORY, { storyId });
+            } else if (hasStoryId) {
+              console.log(
+                `STORYBOOK: Linking event received, but story does not exist: ${storyId}`
+              );
             }
           }
         });
@@ -266,18 +251,50 @@ export class View {
           .then(() => {
             this._ready = true;
             setReady(true);
-            initialStory.then((st) => {
-              let selectionSpecifier = st;
+            return Linking.getInitialURL()
+              .then((url) => {
+                if (url && typeof url === 'string') {
+                  const urlObj = new URL(url);
+                  const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
 
-              if (initialStorySpecifierFromUrl.current?.storySpecifier) {
-                console.log('setting initial story', initialStorySpecifierFromUrl.current);
-                selectionSpecifier = initialStorySpecifierFromUrl.current;
-              }
+                  const hasStoryId = storyId && typeof storyId === 'string';
+                  const storyExists = hasStoryId && this._storyIdExists(storyId);
 
-              self._preview.selectionStore.selectionSpecifier = selectionSpecifier;
+                  if (hasStoryId && !storyExists) {
+                    console.log(
+                      `STORYBOOK: Initial Linking event received, but story does not exist: ${storyId}`
+                    );
+                  }
 
-              self._preview.selectSpecifiedStory();
-            });
+                  if (storyExists) {
+                    return { initialStoryIdFromUrl: storyId, initialUrl: urlObj };
+                  } else {
+                    return null;
+                  }
+                }
+              })
+              .then(({ initialStoryIdFromUrl, initialUrl }) => {
+                return initialStory.then((st) => {
+                  self._preview.selectionStore.selectionSpecifier = st;
+
+                  if (initialStoryIdFromUrl) {
+                    initialUrl.searchParams.delete('STORYBOOK_STORY_ID');
+
+                    Linking.openURL(initialUrl.toString());
+
+                    console.log(
+                      `STORYBOOK: Setting initial story from Linking event, storyId: ${initialStoryIdFromUrl}`
+                    );
+
+                    self._preview.selectionStore.selectionSpecifier = {
+                      storySpecifier: initialStoryIdFromUrl,
+                      viewMode: 'story',
+                    };
+                  }
+
+                  self._preview.selectSpecifiedStory();
+                });
+              });
           })
           .catch((e) => console.error(e));
 
@@ -338,8 +355,6 @@ export class View {
           </RNView>
         );
       }
-
-      console.log(story.id);
 
       if (onDeviceUI) {
         return (
