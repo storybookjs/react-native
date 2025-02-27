@@ -30,6 +30,7 @@
   },
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
+    "example": "yarn workspace expo-example storybook",
     "dev": "lerna run dev --stream --parallel",
     "dev:check-types": "tsc --noEmit",
     "github-release": "github-release-from-changelog",
