@@ -233,7 +233,9 @@ export class View {
             if (storyExists && this._ready) {
               console.log(`STORYBOOK: Linking event received, navigating to story: ${storyId}`);
               this._channel.emit(Events.SET_CURRENT_STORY, { storyId });
-            } else if (hasStoryId) {
+            }
+
+            if (hasStoryId && !storyExists) {
               console.log(
                 `STORYBOOK: Linking event received, but story does not exist: ${storyId}`
               );
