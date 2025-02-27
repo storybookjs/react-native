@@ -16,7 +16,13 @@ import {
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
-import { ActivityIndicator, View as RNView, StyleSheet, useColorScheme } from 'react-native';
+import {
+  ActivityIndicator,
+  Linking,
+  View as RNView,
+  StyleSheet,
+  useColorScheme,
+} from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StoryView from './components/StoryView';
@@ -84,6 +90,10 @@ export class View {
     this._channel = channel;
   }
 
+  _storyIdExists = (storyId: string) => {
+    return Object.keys(this._storyIndex.entries).includes(storyId);
+  };
+
   _getInitialStory = async ({
     initialSelection,
     shouldPersistSelection = true,
@@ -109,7 +119,7 @@ export class View {
           this._asyncStorageStoryId = value;
         }
 
-        const exists = value && Object.keys(this._storyIndex.entries).includes(value);
+        const exists = value && this._storyIdExists(value);
 
         if (!exists) console.log('Storybook: could not find persisted story');
 
@@ -210,16 +220,79 @@ export class View {
         [colorScheme]
       );
 
+      // deep link handling
+      useEffect(() => {
+        const listener = Linking.addEventListener('url', ({ url }) => {
+          if (typeof url === 'string') {
+            const urlObj = new URL(url);
+            const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
+
+            const hasStoryId = storyId && typeof storyId === 'string';
+            const storyExists = hasStoryId && this._storyIdExists(storyId);
+
+            if (storyExists && this._ready) {
+              console.log(`STORYBOOK: Linking event received, navigating to story: ${storyId}`);
+              this._channel.emit(Events.SET_CURRENT_STORY, { storyId });
+            }
+
+            if (hasStoryId && !storyExists) {
+              console.log(
+                `STORYBOOK: Linking event received, but story does not exist: ${storyId}`
+              );
+            }
+          }
+        });
+
+        return () => {
+          listener.remove();
+        };
+      }, []);
+
       useEffect(() => {
         this.createPreparedStoryMapping()
           .then(() => {
             this._ready = true;
             setReady(true);
-            initialStory.then((st) => {
-              self._preview.selectionStore.selectionSpecifier = st;
+            return Linking.getInitialURL()
+              .then((url) => {
+                if (url && typeof url === 'string') {
+                  const urlObj = new URL(url);
+                  const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
 
-              self._preview.selectSpecifiedStory();
-            });
+                  const hasStoryId = storyId && typeof storyId === 'string';
+                  const storyExists = hasStoryId && this._storyIdExists(storyId);
+
+                  if (hasStoryId && !storyExists) {
+                    console.log(
+                      `STORYBOOK: Initial Linking event received, but story does not exist: ${storyId}`
+                    );
+                  }
+
+                  if (storyExists) {
+                    return storyId;
+                  } else {
+                    return null;
+                  }
+                }
+              })
+              .then((initialStoryIdFromUrl) => {
+                return initialStory.then((st) => {
+                  self._preview.selectionStore.selectionSpecifier = st;
+
+                  if (initialStoryIdFromUrl) {
+                    console.log(
+                      `STORYBOOK: Setting initial story from Linking event, storyId: ${initialStoryIdFromUrl}`
+                    );
+
+                    self._preview.selectionStore.selectionSpecifier = {
+                      storySpecifier: initialStoryIdFromUrl,
+                      viewMode: 'story',
+                    };
+                  }
+
+                  self._preview.selectSpecifiedStory();
+                });
+              });
           })
           .catch((e) => console.error(e));
 

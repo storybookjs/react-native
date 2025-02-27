@@ -1,0 +1,291 @@
+appId: host.exp.Exponent
+name: Take screenshots of all Storybook stories
+---
+- stopApp: host.exp.Exponent
+
+# Story 0
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=actionexample-actions--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'actionexample-actions--basic'
+- takeScreenshot: '.maestro/screenshots/ActionExample-Actions---Basic'
+
+# Story 1
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=actionexample-actions--another-action'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'actionexample-actions--another-action'
+- takeScreenshot: '.maestro/screenshots/ActionExample-Actions---Another-Action'
+
+# Story 2
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=backgroundexample-backgroundcsf--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'backgroundexample-backgroundcsf--basic'
+- takeScreenshot: '.maestro/screenshots/BackgroundExample-BackgroundCsf---Basic'
+
+# Story 3
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-array--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-array--basic'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Array---Basic'
+
+# Story 4
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-boolean--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-boolean--basic'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Boolean---Basic'
+
+# Story 5
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-boolean--on'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-boolean--on'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Boolean---On'
+
+# Story 6
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-color--color-example'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-color--color-example'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Color---Color-Example'
+
+# Story 7
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-controlexample--example'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-controlexample--example'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-ControlExample---Example'
+
+# Story 8
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-date--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-date--basic'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Date---Basic'
+
+# Story 9
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-number--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-number--basic'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Number---Basic'
+
+# Story 10
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-number--range'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-number--range'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Number---Range'
+
+# Story 11
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-object--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-object--basic'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Object---Basic'
+
+# Story 12
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-radio--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-radio--basic'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Radio---Basic'
+
+# Story 13
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-reproductions-selectwithnumber--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-reproductions-selectwithnumber--basic'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Reproductions-SelectWithNumber---Basic'
+
+# Story 14
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-select--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-select--basic'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Select---Basic'
+
+# Story 15
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-select--with-labels'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-select--with-labels'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Select---With-Labels'
+
+# Story 16
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-select--with-mapping'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-select--with-mapping'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Select---With-Mapping'
+
+# Story 17
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-text--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-text--basic'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-Text---Basic'
+
+# Story 18
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-webcompatibility--undefined'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-webcompatibility--undefined'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-WebCompatibility---Undefined'
+
+# Story 19
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-webcompatibility--defined'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-webcompatibility--defined'
+- takeScreenshot: '.maestro/screenshots/ControlExamples-WebCompatibility---Defined'
+
+# Story 20
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=deepcontrols--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'deepcontrols--basic'
+- takeScreenshot: '.maestro/screenshots/DeepControls---Basic'
+
+# Story 21
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=inputexample-textinput--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'inputexample-textinput--basic'
+- takeScreenshot: '.maestro/screenshots/InputExample-TextInput---Basic'
+
+# Story 22
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=interactionexample--static'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'interactionexample--static'
+- takeScreenshot: '.maestro/screenshots/InteractionExample---Static'
+
+# Story 23
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=interactionexample--touchable'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'interactionexample--touchable'
+- takeScreenshot: '.maestro/screenshots/InteractionExample---Touchable'
+
+# Story 24
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=interactionexample--scrolling'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'interactionexample--scrolling'
+- takeScreenshot: '.maestro/screenshots/InteractionExample---Scrolling'
+
+# Story 25
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-chatmessage--message-first'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'nestingexample-chatmessage--message-first'
+- takeScreenshot: '.maestro/screenshots/NestingExample-ChatMessage---Message-First'
+
+# Story 26
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-chatmessage--message-second'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'nestingexample-chatmessage--message-second'
+- takeScreenshot: '.maestro/screenshots/NestingExample-ChatMessage---Message-Second'
+
+# Story 27
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-message-bubble--first'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'nestingexample-message-bubble--first'
+- takeScreenshot: '.maestro/screenshots/NestingExample-Message-bubble---First'
+
+# Story 28
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-message-bubble--second'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'nestingexample-message-bubble--second'
+- takeScreenshot: '.maestro/screenshots/NestingExample-Message-bubble---Second-Story'
+
+# Story 29
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going--first'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'nestingexample-message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going--first'
+- takeScreenshot: '.maestro/screenshots/NestingExample-Message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going---First'
+
+# Story 30
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going--second'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'nestingexample-message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going--second'
+- takeScreenshot: '.maestro/screenshots/NestingExample-Message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going---Second-Story'
+
+# Story 31
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-messageinput--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'nestingexample-messageinput--basic'
+- takeScreenshot: '.maestro/screenshots/NestingExample-MessageInput---Basic'
+
+# Story 32
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-message-reactions--message-one'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'nestingexample-message-reactions--message-one'
+- takeScreenshot: '.maestro/screenshots/NestingExample-Message-Reactions---Message-One'
+
+# Story 33
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-message-reactions--message-two'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'nestingexample-message-reactions--message-two'
+- takeScreenshot: '.maestro/screenshots/NestingExample-Message-Reactions---Message-Two'
+
+# Story 34
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=notesexample--notes-example'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'notesexample--notes-example'
+- takeScreenshot: '.maestro/screenshots/NotesExample---Notes-Example'
+
+# Story 35
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=safeareaexample-safeareainside--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'safeareaexample-safeareainside--basic'
+- takeScreenshot: '.maestro/screenshots/SafeAreaExample-SafeAreaInside---Basic'
+
+# Story 36
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=safeareaexample-safeareainside--list-basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'safeareaexample-safeareainside--list-basic'
+- takeScreenshot: '.maestro/screenshots/SafeAreaExample-SafeAreaInside---List-Basic'
+
+# Story 37
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=safeareaexample-safeareaoutside--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'safeareaexample-safeareaoutside--basic'
+- takeScreenshot: '.maestro/screenshots/SafeAreaExample-SafeAreaOutside---Basic'
+
+# Story 38
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=safeareaexample-safeareaoutside--list-basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'safeareaexample-safeareaoutside--list-basic'
+- takeScreenshot: '.maestro/screenshots/SafeAreaExample-SafeAreaOutside---List-Basic'
+
+# Story 39
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=safeareaexample-usablearea--safe-area'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'safeareaexample-usablearea--safe-area'
+- takeScreenshot: '.maestro/screenshots/SafeAreaExample-UsableArea---Safe-Area'
+
+# Story 40
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=safeareaexample-usablearea--no-safe-area'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'safeareaexample-usablearea--no-safe-area'
+- takeScreenshot: '.maestro/screenshots/SafeAreaExample-UsableArea---No-Safe-Area'
