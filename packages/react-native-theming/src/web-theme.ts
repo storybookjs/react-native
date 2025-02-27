@@ -245,7 +245,7 @@ export const dark: ThemeVars = {
   textMutedColor: '#798186',
 
   // Toolbar default and active colors
-  barTextColor: '#798186',
+  barTextColor: color.mediumdark,
   barHoverColor: color.secondary,
   barSelectedColor: color.secondary,
   barBg: '#292C2E',

@@ -146,9 +146,9 @@ export const Layout = ({
   const navButtonTextStyle = useStyle(
     () => ({
       flexShrink: 1,
-      color: theme.color.defaultText,
+      color: theme.barTextColor,
     }),
-    [theme.color.defaultText]
+    [theme.barTextColor]
   );
 
   const openMobileMenu = useCallback(() => {
