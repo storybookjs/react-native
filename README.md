@@ -145,7 +145,7 @@ Make sure you have `react-native-reanimated` in your project and the plugin setu
 
 ```js
 // babel.config.js
-plugins: ['react-native-reanimated/plugin'];
+plugins: ['react-native-reanimated/plugin'],
 ```
 
 ## Writing stories
