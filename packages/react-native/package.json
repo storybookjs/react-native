@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "8.6.0",
+  "version": "8.6.1",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -45,19 +45,19 @@
     "test:update": "jest --updateSnapshot"
   },
   "dependencies": {
-    "@storybook/core": "8.6.4",
+    "@storybook/core": "^8.6.6",
     "@storybook/csf": "^0.1.13",
     "@storybook/global": "^5.0.0",
-    "@storybook/react": "8.6.4",
-    "@storybook/react-native-theming": "^8.6.0",
-    "@storybook/react-native-ui": "^8.6.0",
+    "@storybook/react": "^8.6.6",
+    "@storybook/react-native-theming": "^8.6.1",
+    "@storybook/react-native-ui": "^8.6.1",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
     "deepmerge": "^4.3.0",
     "prettier": "^2.4.1",
     "react-native-url-polyfill": "^2.0.0",
     "setimmediate": "^1.0.5",
-    "storybook": "8.6.4",
+    "storybook": "^8.6.6",
     "type-fest": "~2.19",
     "util": "^0.12.4",
     "ws": "^8.18.0"
