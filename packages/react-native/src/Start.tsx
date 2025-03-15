@@ -21,6 +21,8 @@ import {
   composeConfigs,
   addons as previewAddons,
   PreviewWithSelection,
+  View as PreviewView,
+  SelectionStore,
   sortStoriesV7,
   userOrAutoTitleFromSpecifier,
 } from 'storybook/preview-api';
@@ -210,7 +212,7 @@ export function start({
 
   const previewView = {
     prepareForStory: () => {
-      return <></>;
+      return (<></>) as any;
     },
     prepareForDocs: (): any => {},
     showErrorDisplay: (e) => {
@@ -223,8 +225,7 @@ export function start({
     showPreparingStory: () => {},
     showStory: () => {},
     showStoryDuringRender: () => {},
-    // TODO what happened to this type?
-  } as any;
+  } satisfies PreviewView<ReactRenderer>;
 
   const selectionStore = {
     selection: null,
@@ -233,7 +234,7 @@ export function start({
     setSelection: (selection) => {
       preview.selectionStore.selection = selection;
     },
-  };
+  } satisfies SelectionStore;
 
   const getProjectAnnotationsInitial = async () =>
     composeConfigs<ReactRenderer>([
