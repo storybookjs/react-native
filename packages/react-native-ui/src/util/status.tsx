@@ -1,5 +1,5 @@
 import { useMemo, type ReactElement } from 'react';
-import type { API_HashEntry, API_StatusState, API_StatusValue } from '@storybook/core/types';
+import type { API_HashEntry, API_StatusState, API_StatusValue } from 'storybook/internal/types';
 
 import { useTheme } from '@storybook/react-native-theming';
 

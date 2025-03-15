@@ -1,5 +1,4 @@
-import { ActionDisplay } from '@storybook/addon-actions';
-import React from 'react';
+import { ActionDisplay } from 'storybook/actions';
 import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Inspect from './Inspect';
 

@@ -1,11 +1,11 @@
-import { SET_CURRENT_STORY } from '@storybook/core/core-events';
+import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { useEffect, useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Markdown from 'react-native-markdown-display';
 
 import { RNAddonApi, StoryFromId } from '../register';
 import { ErrorBoundary } from '../ErrorBoundary';
-import { addons } from '@storybook/core/manager-api';
+import { addons } from 'storybook/manager-api';
 import { useTheme } from '@storybook/react-native-theming';
 
 export const PARAM_KEY = 'notes';

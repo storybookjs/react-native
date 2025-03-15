@@ -4,7 +4,7 @@ import type {
   State,
   StoriesHash,
   StoryEntry,
-} from '@storybook/core/manager-api';
+} from 'storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import React, { useCallback, useMemo, useRef } from 'react';
 import { View } from 'react-native';

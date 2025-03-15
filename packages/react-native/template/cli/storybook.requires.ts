@@ -29,7 +29,7 @@ declare global {
 const annotations = [
   require('./preview'),
   require('@storybook/react-native/dist/preview'),
-  require('@storybook/addon-actions/preview'),
+  require('storybook/actions/preview'),
 ];
 
 global.STORIES = normalizedStories;

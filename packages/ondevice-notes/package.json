@@ -29,7 +29,6 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/core": "^8.6.6",
     "@storybook/react-native-theming": "^8.6.1",
     "react-native-markdown-display": "^7.0.2"
   },

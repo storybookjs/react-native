@@ -16,22 +16,22 @@ if (Platform.OS !== 'web') {
   }
 }
 
-import { addons as managerAddons } from '@storybook/core/manager-api';
+import { addons as managerAddons } from 'storybook/manager-api';
 import {
   composeConfigs,
   addons as previewAddons,
   PreviewWithSelection,
   sortStoriesV7,
   userOrAutoTitleFromSpecifier,
-} from '@storybook/core/preview-api';
+} from 'storybook/preview-api';
 import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
 // NOTE this really should be exported from preview-api, but it's not
-import { createBrowserChannel } from '@storybook/core/channels';
+import { createBrowserChannel } from 'storybook/internal/channels';
 import type {
   Addon_StorySortParameterV7,
   NormalizedStoriesSpecifier,
   StoryIndex,
-} from '@storybook/core/types';
+} from 'storybook/internal/types';
 import type { ReactRenderer } from '@storybook/react';
 import { View } from './View';
 

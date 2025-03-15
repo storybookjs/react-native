@@ -1,7 +1,7 @@
-import type { API } from '@storybook/core/manager-api';
-import { Channel } from '@storybook/core/channels';
-import type { Args, StoryContextForLoaders } from '@storybook/csf';
-import type { Renderer } from '@storybook/core/types';
+import type { API } from 'storybook/manager-api';
+import { Channel } from 'storybook/internal/channels';
+import type { Args, StoryContextForLoaders } from 'storybook/internal/csf';
+import type { Renderer } from 'storybook/internal/types';
 import React, { ComponentType, ReactElement, useCallback, useState } from 'react';
 import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';

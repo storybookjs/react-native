@@ -1,4 +1,4 @@
-import type { LoaderFunction } from '@storybook/core/types';
+import type { LoaderFunction } from 'storybook/internal/types';
 
 export interface RequireContext {
   keys: () => string[];
