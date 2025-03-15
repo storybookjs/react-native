@@ -20,5 +20,3 @@ built-storybooks
 examples/expo-example/metro.config.js
 storybook.requires.js
 jest.config.js
-app/react-native/scripts/mocks
-addons/ondevice-knobs
