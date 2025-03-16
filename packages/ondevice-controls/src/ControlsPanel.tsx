@@ -1,4 +1,4 @@
-import type { API } from 'storybook/manager-api';
+import type { API } from 'storybook/internal/manager-api';
 import { Channel } from 'storybook/internal/channels';
 import type { Args, StoryContextForLoaders } from 'storybook/internal/csf';
 import type { Renderer } from 'storybook/internal/types';

@@ -1,4 +1,4 @@
-import type { StoriesHash, State } from 'storybook/manager-api';
+import type { StoriesHash, State } from 'storybook/internal/manager-api';
 import type { API_StatusState, API_StatusValue } from 'storybook/internal/types';
 import * as Fuse from 'fuse.js';
 import { PressableProps } from 'react-native';

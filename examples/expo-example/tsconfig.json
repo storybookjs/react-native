@@ -6,5 +6,5 @@
     "strict": true
   },
   "extends": "expo/tsconfig.base",
-  "include": ["./.storybook/", "./.storybook-web/", "./*"]
+  "include": [".rnstorybook", ".storybook", "./*"]
 }

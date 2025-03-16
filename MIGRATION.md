@@ -1,6 +1,7 @@
 # Migration
 
 - [Migration](#migration)
+  - [From version 8.6.x to 9.x.x](#from-version-86x-to-9xx)
   - [From version 7.6.x to 8.3.x](#from-version-76x-to-83x)
     - [Dependencies](#dependencies)
     - [Regenerate your requires file](#regenerate-your-requires-file)
@@ -39,6 +40,10 @@
     - [Test ids for tabs](#test-ids-for-tabs)
     - [The server](#the-server)
 
+## From version 8.6.x to 9.x.x
+
+Rename .storybook to .rnstorybook
+
 ## From version 7.6.x to 8.3.x
 
 In this version of storybook we've reworked the UI using some community react native packages. We've also overhauled the theme to match the web version.
@@ -65,11 +70,12 @@ For example you may end up with something like this
 
 Add the new required dependencies to your project.
 
-Expo: 
+Expo:
 
 ```sh
 npx expo install react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
 ```
+
 RN Cli:
 
 ```sh

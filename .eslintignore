@@ -17,6 +17,7 @@ built-storybooks
 .eslintrc.js
 !.jest.config.js
 !.storybook
+!.rnstorybook
 examples/expo-example/metro.config.js
 storybook.requires.js
 jest.config.js

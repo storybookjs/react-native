@@ -1,8 +1,8 @@
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { Channel, WebsocketTransport } from 'storybook/internal/channels';
 import Events from 'storybook/internal/core-events';
-import { addons as managerAddons } from 'storybook/manager-api';
-import { PreviewWithSelection, addons as previewAddons } from 'storybook/preview-api';
+import { addons as managerAddons } from 'storybook/internal/manager-api';
+import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
 import { StoryContext, toId } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';

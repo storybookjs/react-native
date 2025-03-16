@@ -1,5 +1,5 @@
 import { sanitize } from '@storybook/csf';
-import { type API, type State } from 'storybook/manager-api';
+import { type API, type State } from 'storybook/internal/manager-api';
 import type {
   API_ComponentEntry,
   API_DocsEntry,

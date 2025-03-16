@@ -16,7 +16,7 @@ if (Platform.OS !== 'web') {
   }
 }
 
-import { addons as managerAddons } from 'storybook/manager-api';
+import { addons as managerAddons } from 'storybook/internal/manager-api';
 import {
   composeConfigs,
   addons as previewAddons,
@@ -25,7 +25,7 @@ import {
   SelectionStore,
   sortStoriesV7,
   userOrAutoTitleFromSpecifier,
-} from 'storybook/preview-api';
+} from 'storybook/internal/preview-api';
 import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
 // NOTE this really should be exported from preview-api, but it's not
 import { createBrowserChannel } from 'storybook/internal/channels';
@@ -212,7 +212,13 @@ export function start({
 
   const previewView = {
     prepareForStory: () => {
-      return (<></>) as any;
+      return {
+        component: () => <></>,
+        canvasElement: null,
+        mount: () => Promise.resolve({}),
+        storyResult: null,
+        T: null,
+      };
     },
     prepareForDocs: (): any => {},
     showErrorDisplay: (e) => {
@@ -232,6 +238,7 @@ export function start({
     selectionSpecifier: null,
     setQueryParams: () => {},
     setSelection: (selection) => {
+      console.log('setSelection', selection);
       preview.selectionStore.selection = selection;
     },
   } satisfies SelectionStore;
@@ -261,7 +268,7 @@ export function start({
     async (importPath: string) => importMap[importPath],
     getProjectAnnotationsInitial,
     selectionStore,
-    previewView
+    previewView as any
   );
 
   const view = new View(preview, channel);

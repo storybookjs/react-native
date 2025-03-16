@@ -1,5 +1,5 @@
-import { ADDON_ID, PANEL_ID, PARAM_KEY } from 'storybook/actions';
-import { addons, types } from 'storybook/manager-api';
+import { ADDON_ID, PANEL_ID, PARAM_KEY } from '@storybook/addon-actions';
+import { addons, types } from 'storybook/internal/manager-api';
 import ActionLogger from './containers/ActionLogger';
 
 export function register() {

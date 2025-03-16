@@ -1,6 +1,6 @@
 import React from 'react';
-import type { IndexHash, State } from 'storybook/manager-api';
-import { types } from 'storybook/manager-api';
+import type { IndexHash, State } from 'storybook/internal/manager-api';
+import { types } from 'storybook/internal/manager-api';
 import type { StoryObj, Meta } from '@storybook/react';
 import type { Addon_SidebarTopType } from 'storybook/internal/types';
 import { Sidebar } from './Sidebar';

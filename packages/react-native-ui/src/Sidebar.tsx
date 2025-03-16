@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { styled } from '@storybook/react-native-theming';
-import type { State } from 'storybook/manager-api';
+import type { State } from 'storybook/internal/manager-api';
 import type {
   Addon_SidebarBottomType,
   Addon_SidebarTopType,

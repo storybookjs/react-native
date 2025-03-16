@@ -1,4 +1,4 @@
-import type { StoriesHash } from 'storybook/manager-api';
+import type { StoriesHash } from 'storybook/internal/manager-api';
 import type { Dispatch, Reducer } from 'react';
 import { useCallback, useEffect, useReducer } from 'react';
 import { getAncestorIds } from '../util/tree';

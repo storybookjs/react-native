@@ -1,25 +1,31 @@
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native-web-vite';
+import { join, dirname } from 'path';
 
-const main: StorybookConfig = {
-  stories: [
-    '../components/**/*.stories.?(ts|tsx|js|jsx)',
-    '../other_components/**/*.stories.?(ts|tsx|js|jsx)',
-    {
-      directory: '../../../packages/react-native-ui',
-      titlePrefix: 'react-native-ui',
-      files: '**/*.stories.?(ts|tsx|js|jsx)',
-    },
-  ],
+type ServerStorybookConfig = StorybookConfig & {
+  reactNativeServerOptions: { host: string; port: number };
+};
+
+const main: ServerStorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+
   addons: [
-    { name: '@storybook/addon-ondevice-controls' },
-    '@storybook/addon-ondevice-backgrounds',
-    '@storybook/addon-ondevice-actions',
-    '@storybook/addon-ondevice-notes',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    // note why does this break with get absolute?
+    '@storybook/addon-react-native-server',
     'storybook-addon-deep-controls',
-    './local-addon-example',
   ],
-  reactNative: {
-    playFn: false,
+
+  framework: {
+    name: '@storybook/react-native-web-vite',
+    options: {},
+  },
+
+  // logLevel: 'debug',
+
+  reactNativeServerOptions: {
+    host: 'localhost',
+    port: 7007,
   },
 };
 

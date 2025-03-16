@@ -26,7 +26,7 @@ module.exports = withStorybook(defaultConfig);
 
 /* , {
   enabled: process.env.STORYBOOK_ENABLED === 'true',
-  configPath: path.resolve(__dirname, './.storybook'),
+  configPath: path.resolve(__dirname, './.rnstorybook'),
   // websockets: {
   // port: 7007,
   // host: '192.x.x.x',
