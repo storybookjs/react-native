@@ -71,13 +71,6 @@ export const Page = () => {
           </Text>
           .
         </Text>
-        <View style={styles.tipWrapper}>
-          <View style={styles.tip}>
-            <Text style={styles.tipText}>Tip </Text>
-          </View>
-          <Text>Adjust the width of the canvas with the </Text>
-          <Text>Viewports addon in the toolbar</Text>
-        </View>
       </View>
     </View>
   );
