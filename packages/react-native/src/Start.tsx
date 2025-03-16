@@ -238,7 +238,6 @@ export function start({
     selectionSpecifier: null,
     setQueryParams: () => {},
     setSelection: (selection) => {
-      console.log('setSelection', selection);
       preview.selectionStore.selection = selection;
     },
   } satisfies SelectionStore;
