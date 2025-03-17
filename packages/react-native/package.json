@@ -47,7 +47,7 @@
   "dependencies": {
     "@storybook/csf": "^0.1.13",
     "@storybook/global": "^5.0.0",
-    "@storybook/react": "9.0.0-alpha.6",
+    "@storybook/react": "0.0.0-pr-30831-sha-94c10a14",
     "@storybook/react-native-theming": "^9.0.0-alpha.2",
     "@storybook/react-native-ui": "^9.0.0-alpha.2",
     "commander": "^8.2.0",
@@ -71,7 +71,7 @@
     "react": "18.3.1",
     "react-native": "0.76.7",
     "react-test-renderer": "^18.3.1",
-    "storybook": "9.0.0-alpha.6",
+    "storybook": "0.0.0-pr-30831-sha-94c10a14",
     "tsup": "^7.2.0",
     "typescript": "^5.3.3"
   },
@@ -81,7 +81,7 @@
     "react-native": ">=0.72.0",
     "react-native-gesture-handler": ">=2",
     "react-native-safe-area-context": "*",
-    "storybook": "9.0.0-alpha.6"
+    "storybook": "0.0.0-pr-30831-sha-94c10a14"
   },
   "engines": {
     "node": ">=8.0.0"

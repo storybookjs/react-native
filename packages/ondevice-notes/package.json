@@ -38,7 +38,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "storybook": "9.0.0-alpha.6"
+    "storybook": "0.0.0-pr-30831-sha-94c10a14"
   },
   "publishConfig": {
     "access": "public"

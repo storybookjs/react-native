@@ -30,7 +30,7 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
-    "@storybook/addon-controls": "9.0.0-alpha.6",
+    "@storybook/addon-controls": "0.0.0-pr-30831-sha-94c10a14",
     "@storybook/react-native-theming": "^9.0.0-alpha.2",
     "@storybook/react-native-ui": "^9.0.0-alpha.2",
     "deep-equal": "^1.0.1",
@@ -48,7 +48,7 @@
     "@react-native-community/slider": "*",
     "react": "*",
     "react-native": "*",
-    "storybook": "9.0.0-alpha.6"
+    "storybook": "0.0.0-pr-30831-sha-94c10a14"
   },
   "publishConfig": {
     "access": "public"
