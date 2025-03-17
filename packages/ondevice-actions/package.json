@@ -27,17 +27,16 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@storybook/addon-actions": "9.0.0-alpha.3",
     "@storybook/global": "^5.0.0",
-    "fast-deep-equal": "^2.0.1",
-    "storybook": "9.0.0-alpha.3"
+    "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "storybook": "0.0.0-pr-30831-sha-94c10a14"
   },
   "publishConfig": {
     "access": "public"

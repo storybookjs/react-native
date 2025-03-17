@@ -1,13 +1,8 @@
 /** @type {import('jest').Config} */
 const config = {
-  preset: 'react-native',
-  modulePathIgnorePatterns: ['dist/'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  transformIgnorePatterns: ['node_modules/(?!react-native|@react-native)'],
-  setupFilesAfterEnv: ['<rootDir>/../../node_modules/react-native-gesture-handler/jestSetup.js'],
-  transform: {
-    '^.+\\.(js)$': ['babel-jest', { plugins: ['babel-plugin-syntax-hermes-parser'] }],
-    '^.+\\.(ts|tsx)$': 'babel-jest',
-  },
+  preset: 'jest-expo',
+  transformIgnorePatterns: [
+    'node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg|storybook/.*|@storybook/.*|uuid)',
+  ],
 };
 module.exports = config;

@@ -1,10 +1,10 @@
 import type { StoriesHash, State } from 'storybook/internal/manager-api';
-import type { API_StatusState, API_StatusValue } from 'storybook/internal/types';
+import type { StatusValue, StatusesByStoryIdAndTypeId } from 'storybook/internal/types';
 import * as Fuse from 'fuse.js';
 import { PressableProps } from 'react-native';
 
 export type Refs = State['refs'];
-export type RefType = Refs[keyof Refs] & { status?: API_StatusState };
+export type RefType = Refs[keyof Refs] & { allStatuses?: StatusesByStoryIdAndTypeId };
 export type Item = StoriesHash[keyof StoriesHash];
 export type Dataset = Record<string, Item>;
 
@@ -38,7 +38,7 @@ export interface ExpandType {
 export type SearchItem = Item & {
   refId: string;
   path: string[];
-  status?: API_StatusValue;
+  status?: StatusValue;
   showAll?: () => void;
 };
 

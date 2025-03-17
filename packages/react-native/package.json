@@ -47,7 +47,7 @@
   "dependencies": {
     "@storybook/csf": "^0.1.13",
     "@storybook/global": "^5.0.0",
-    "@storybook/react": "9.0.0-alpha.3",
+    "@storybook/react": "0.0.0-pr-30831-sha-94c10a14",
     "@storybook/react-native-theming": "^9.0.0-alpha.2",
     "@storybook/react-native-ui": "^9.0.0-alpha.2",
     "commander": "^8.2.0",
@@ -56,7 +56,6 @@
     "prettier": "^2.4.1",
     "react-native-url-polyfill": "^2.0.0",
     "setimmediate": "^1.0.5",
-    "storybook": "9.0.0-alpha.3",
     "type-fest": "~2.19",
     "util": "^0.12.4",
     "ws": "^8.18.0"
@@ -65,12 +64,14 @@
     "@types/jest": "^29.4.3",
     "@types/react": "~18.3.12",
     "babel-jest": "^29.7.0",
-    "babel-plugin-syntax-hermes-parser": "^0.25.0",
+    "babel-preset-expo": "^12.0.9",
     "jest": "^29.7.0",
+    "jest-expo": "~52.0.6",
     "jotai": "^2.6.2",
     "react": "18.3.1",
     "react-native": "0.76.7",
     "react-test-renderer": "^18.3.1",
+    "storybook": "0.0.0-pr-30831-sha-94c10a14",
     "tsup": "^7.2.0",
     "typescript": "^5.3.3"
   },
@@ -79,7 +80,8 @@
     "react": "*",
     "react-native": ">=0.72.0",
     "react-native-gesture-handler": ">=2",
-    "react-native-safe-area-context": "*"
+    "react-native-safe-area-context": "*",
+    "storybook": "0.0.0-pr-30831-sha-94c10a14"
   },
   "engines": {
     "node": ">=8.0.0"

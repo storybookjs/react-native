@@ -37,7 +37,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "storybook": "0.0.0-pr-30831-sha-94c10a14"
   },
   "publishConfig": {
     "access": "public"
