@@ -4,6 +4,8 @@ const { generate } = require('./generate');
 let pathMock;
 let fileContentMock;
 
+global.window.navigator = {};
+
 jest.mock('fs', () => ({
   ...jest.requireActual('fs'),
   writeFileSync: (filePath, fileContent, opts) => {
