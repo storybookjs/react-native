@@ -42,7 +42,11 @@
 
 ## From version 8.6.x to 9.x.x
 
+Update storybook dependencies to 9.x
+
 Rename .storybook to .rnstorybook
+
+install the 'storybook' package if not already installed
 
 ## From version 7.6.x to 8.3.x
 
