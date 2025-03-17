@@ -47,7 +47,8 @@
     "@react-native-community/datetimepicker": "*",
     "@react-native-community/slider": "*",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "storybook": "9.0.0-alpha.6"
   },
   "publishConfig": {
     "access": "public"

@@ -5556,11 +5556,11 @@ __metadata:
   dependencies:
     "@storybook/global": "npm:^5.0.0"
     fast-deep-equal: "npm:^2.0.1"
-    storybook: "npm:9.0.0-alpha.6"
     typescript: "npm:^5.3.3"
   peerDependencies:
     react: "*"
     react-native: "*"
+    storybook: 9.0.0-alpha.6
   languageName: unknown
   linkType: soft
 
@@ -5569,11 +5569,11 @@ __metadata:
   resolution: "@storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds"
   dependencies:
     "@storybook/react-native-theming": "npm:^9.0.0-alpha.2"
-    storybook: "npm:^8.6.6"
     typescript: "npm:^5.3.3"
   peerDependencies:
     react: "*"
     react-native: "*"
+    storybook: 9.0.0-alpha.6
   languageName: unknown
   linkType: soft
 
@@ -5596,6 +5596,7 @@ __metadata:
     "@react-native-community/slider": "*"
     react: "*"
     react-native: "*"
+    storybook: 9.0.0-alpha.6
   languageName: unknown
   linkType: soft
 
@@ -5609,6 +5610,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
+    storybook: 9.0.0-alpha.6
   languageName: unknown
   linkType: soft
 
@@ -5683,30 +5685,6 @@ __metadata:
     storybook: ^9.0.0-alpha.6
     vite: ^4.0.0 || ^5.0.0 || ^6.0.0
   checksum: 10/a8d963b74aeadee2686a6f278ca8d522957a88784d2aa81c5296516c4b5e7d9c1d4ea481589c2d6df998557cc488d69827bfebe67e0fc179459bd73797a2a896
-  languageName: node
-  linkType: hard
-
-"@storybook/core@npm:8.6.6":
-  version: 8.6.6
-  resolution: "@storybook/core@npm:8.6.6"
-  dependencies:
-    "@storybook/theming": "npm:8.6.6"
-    better-opn: "npm:^3.0.2"
-    browser-assert: "npm:^1.2.1"
-    esbuild: "npm:^0.18.0 || ^0.19.0 || ^0.20.0 || ^0.21.0 || ^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0"
-    esbuild-register: "npm:^3.5.0"
-    jsdoc-type-pratt-parser: "npm:^4.0.0"
-    process: "npm:^0.11.10"
-    recast: "npm:^0.23.5"
-    semver: "npm:^7.6.2"
-    util: "npm:^0.12.5"
-    ws: "npm:^8.2.3"
-  peerDependencies:
-    prettier: ^2 || ^3
-  peerDependenciesMeta:
-    prettier:
-      optional: true
-  checksum: 10/df6139e867d49cf38eb80ec0162807b681a0126eb0fdc745a74f82825c8f22765c5367b9bd2f0a3d6788fa6347af04632bcf279a68b9a57aad2846ea95ed281a
   languageName: node
   linkType: hard
 
@@ -5798,6 +5776,7 @@ __metadata:
     react-native-reanimated: ">=3"
     react-native-safe-area-context: "*"
     react-native-svg: ">=14"
+    storybook: 9.0.0-alpha.6
   languageName: unknown
   linkType: soft
 
@@ -5839,11 +5818,12 @@ __metadata:
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~18.3.12"
     babel-jest: "npm:^29.7.0"
-    babel-plugin-syntax-hermes-parser: "npm:^0.25.0"
+    babel-preset-expo: "npm:^12.0.9"
     commander: "npm:^8.2.0"
     dedent: "npm:^1.5.1"
     deepmerge: "npm:^4.3.0"
     jest: "npm:^29.7.0"
+    jest-expo: "npm:~52.0.6"
     jotai: "npm:^2.6.2"
     prettier: "npm:^2.4.1"
     react: "npm:18.3.1"
@@ -5863,6 +5843,7 @@ __metadata:
     react-native: ">=0.72.0"
     react-native-gesture-handler: ">=2"
     react-native-safe-area-context: "*"
+    storybook: 9.0.0-alpha.6
   bin:
     sb-rn-get-stories: ./bin/get-stories.js
   languageName: unknown
@@ -5920,15 +5901,6 @@ __metadata:
     typescript: "npm:^5.3.3"
   languageName: unknown
   linkType: soft
-
-"@storybook/theming@npm:8.6.6":
-  version: 8.6.6
-  resolution: "@storybook/theming@npm:8.6.6"
-  peerDependencies:
-    storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
-  checksum: 10/fafd89ea63724c691fc901a43435760ea68247c8a4e9edc1e3b566c868304bcf2ec6c5072ae4fa3a383b56c691240c94a96b45e63775de107e6b769722bbab51
-  languageName: node
-  linkType: hard
 
 "@testing-library/dom@npm:10.4.0":
   version: 10.4.0
@@ -7216,15 +7188,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-syntax-hermes-parser@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "babel-plugin-syntax-hermes-parser@npm:0.25.0"
-  dependencies:
-    hermes-parser: "npm:0.25.0"
-  checksum: 10/63ce216cdeae19f2bb084116f7f091b9e7cb2bdaf99715c489aa70a6eec71fd3f03168aa7b53953b604ba07548454c9f72b0f8f2bdaf340933785fbbe6c4bbdd
-  languageName: node
-  linkType: hard
-
 "babel-plugin-syntax-hermes-parser@npm:^0.25.1":
   version: 0.25.1
   resolution: "babel-plugin-syntax-hermes-parser@npm:0.25.1"
@@ -7268,7 +7231,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-expo@npm:~12.0.9":
+"babel-preset-expo@npm:^12.0.9, babel-preset-expo@npm:~12.0.9":
   version: 12.0.9
   resolution: "babel-preset-expo@npm:12.0.9"
   dependencies:
@@ -11039,13 +11002,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hermes-estree@npm:0.25.0":
-  version: 0.25.0
-  resolution: "hermes-estree@npm:0.25.0"
-  checksum: 10/970abf15964ac8742071f47302d42c56ed5c6657c01ea5c59dd306f3e39814ba3ee5e860ce59f4b547a7f6ee6360ae5f6643fcae3fd374b32b1fab6dbc72e347
-  languageName: node
-  linkType: hard
-
 "hermes-estree@npm:0.25.1":
   version: 0.25.1
   resolution: "hermes-estree@npm:0.25.1"
@@ -11077,15 +11033,6 @@ __metadata:
   dependencies:
     hermes-estree: "npm:0.24.0"
   checksum: 10/c473cf2c3a4dd3fa835c52fe67b4554e88da40cecb4cfd12f0860004eea77256c34c8d5881ef3e0f8bd529edb8f71e1296296e8282b6aee2d1399a97e787ad33
-  languageName: node
-  linkType: hard
-
-"hermes-parser@npm:0.25.0":
-  version: 0.25.0
-  resolution: "hermes-parser@npm:0.25.0"
-  dependencies:
-    hermes-estree: "npm:0.25.0"
-  checksum: 10/752838dd0758af339dd4e0a36487a4dd12d5e1a7f8629c56446d5dd98010a43095c73fa3236bbd267cd1f3702bcbe58780287ea9f39275cd3c47bc2c2bc68625
   languageName: node
   linkType: hard
 
@@ -15406,13 +15353,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"process@npm:^0.11.10":
-  version: 0.11.10
-  resolution: "process@npm:0.11.10"
-  checksum: 10/dbaa7e8d1d5cf375c36963ff43116772a989ef2bb47c9bdee20f38fd8fc061119cf38140631cf90c781aca4d3f0f0d2c834711952b728953f04fd7d238f59f5b
-  languageName: node
-  linkType: hard
-
 "proggy@npm:^2.0.0":
   version: 2.0.0
   resolution: "proggy@npm:2.0.0"
@@ -17287,24 +17227,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^8.6.6":
-  version: 8.6.6
-  resolution: "storybook@npm:8.6.6"
-  dependencies:
-    "@storybook/core": "npm:8.6.6"
-  peerDependencies:
-    prettier: ^2 || ^3
-  peerDependenciesMeta:
-    prettier:
-      optional: true
-  bin:
-    getstorybook: ./bin/index.cjs
-    sb: ./bin/index.cjs
-    storybook: ./bin/index.cjs
-  checksum: 10/be32c971a48189ae26e768009084aa521275de29c626dd6a21e697199bcc47b69a16ff33771a422e33b3f943912fe8142a6e978698f610f0dcc5f63dd372d0ed
-  languageName: node
-  linkType: hard
-
 "stream-buffers@npm:2.2.x, stream-buffers@npm:~2.2.0":
   version: 2.2.0
   resolution: "stream-buffers@npm:2.2.0"
@@ -18417,7 +18339,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"util@npm:^0.12.4, util@npm:^0.12.5":
+"util@npm:^0.12.4":
   version: 0.12.5
   resolution: "util@npm:0.12.5"
   dependencies:
@@ -19024,21 +18946,6 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: 10/70dfe53f23ff4368d46e4c0b1d4ca734db2c4149c6f68bc62cb16fc21f753c47b35fcc6e582f3bdfba0eaeb1c488cddab3c2255755a5c3eecb251431e42b3ff6
-  languageName: node
-  linkType: hard
-
-"ws@npm:^8.2.3":
-  version: 8.18.1
-  resolution: "ws@npm:8.18.1"
-  peerDependencies:
-    bufferutil: ^4.0.1
-    utf-8-validate: ">=5.0.2"
-  peerDependenciesMeta:
-    bufferutil:
-      optional: true
-    utf-8-validate:
-      optional: true
-  checksum: 10/3f38e9594f2af5b6324138e86b74df7d77bbb8e310bf8188679dd80bac0d1f47e51536a1923ac3365f31f3d8b25ea0b03e4ade466aa8292a86cd5defca64b19b
   languageName: node
   linkType: hard
 

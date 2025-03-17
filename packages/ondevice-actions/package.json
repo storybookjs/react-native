@@ -28,15 +28,15 @@
   },
   "dependencies": {
     "@storybook/global": "^5.0.0",
-    "fast-deep-equal": "^2.0.1",
-    "storybook": "9.0.0-alpha.6"
+    "fast-deep-equal": "^2.0.1"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "storybook": "9.0.0-alpha.6"
   },
   "publishConfig": {
     "access": "public"
