@@ -27,10 +27,9 @@
     "prepare": "tsc"
   },
   "dependencies": {
-    "@storybook/addon-actions": "9.0.0-alpha.3",
     "@storybook/global": "^5.0.0",
     "fast-deep-equal": "^2.0.1",
-    "storybook": "9.0.0-alpha.3"
+    "storybook": "9.0.0-alpha.6"
   },
   "devDependencies": {
     "typescript": "^5.3.3"

@@ -16,7 +16,7 @@ import {
   type SearchResult,
   type Selection,
 } from './types';
-import { getGroupStatus, getHighestStatus } from './util/status';
+import { getGroupStatus, getMostCriticalStatusValue } from './util/status';
 import { searchItem } from './util/tree';
 import { useSelectedNode } from './SelectedNodeProvider';
 
@@ -153,19 +153,19 @@ export const Search = React.memo<{
   );
 
   const makeFuse = useCallback(() => {
-    const list = dataset.entries.reduce<SearchItem[]>((acc, [refId, { index, status }]) => {
-      const groupStatus = getGroupStatus(index || {}, status);
+    const list = dataset.entries.reduce<SearchItem[]>((acc, [refId, { index, allStatuses }]) => {
+      const groupStatus = getGroupStatus(index || {}, allStatuses);
 
       if (index) {
         acc.push(
           ...Object.values(index).map((item) => {
-            const statusValue =
-              status && status[item.id]
-                ? getHighestStatus(Object.values(status[item.id] || {}).map((s) => s.status))
-                : null;
+            const storyStatuses = allStatuses?.[item.id];
+            const mostCriticalStatusValue = storyStatuses
+              ? getMostCriticalStatusValue(Object.values(storyStatuses).map((s) => s.value))
+              : null;
             return {
               ...searchItem(item, dataset.hash[refId]),
-              status: statusValue || groupStatus[item.id] || null,
+              status: mostCriticalStatusValue ?? groupStatus[item.id] ?? null,
             };
           })
         );
