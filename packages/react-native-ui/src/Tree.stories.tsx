@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { ComponentEntry, IndexHash } from 'storybook/internal/manager-api';
 import type { StoryObj, Meta } from '@storybook/react';
 import { Tree } from './Tree';
+import type { Dataset } from './types';
 import { index } from './mockdata.large';
 import { DEFAULT_REF_ID } from './constants';
 import { ScrollView, Text } from 'react-native';
@@ -132,6 +133,42 @@ export const SingleStoryComponents: Story = {
             return acc;
           }, {} as IndexHash),
         }}
+        selectedStoryId={selectedId}
+        onSelectStoryId={setSelectedId}
+      />
+    );
+  },
+};
+
+const dataWithStoryName: Dataset = {
+  images: {
+    name: 'Testing storyNames support',
+    id: 'images',
+    depth: 0,
+    children: [],
+    type: 'component',
+    tags: [],
+  },
+};
+
+export const WithStoryNames: Story = {
+  storyName: 'Story with a storyName',
+  args: {
+    docsMode: false,
+    isBrowsing: true,
+    isMain: true,
+    refId: DEFAULT_REF_ID,
+    data: undefined,
+    onSelectStoryId: () => {},
+    selectedStoryId: 'some-component',
+    status: undefined,
+  },
+  render: function Render(args) {
+    const [selectedId, setSelectedId] = useState(storyId);
+    return (
+      <Tree
+        {...args}
+        data={dataWithStoryName}
         selectedStoryId={selectedId}
         onSelectStoryId={setSelectedId}
       />

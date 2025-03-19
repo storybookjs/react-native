@@ -91,14 +91,14 @@ export function prepareStories({
 
   storyEntries.forEach((specifier) => {
     const { req, directory: root } = specifier;
+
     req.keys().forEach((filename: string) => {
       try {
-        // console.log('req', req.resolve(filename));
-        // console.log('filename', filename);
         const fileExports = req(filename);
         // TODO: should this be here?
         if (!fileExports.default) return;
         const meta = fileExports.default;
+
         Object.keys(fileExports).forEach((key) => {
           if (key === 'default') return;
           if (!isExportStory(key, fileExports.default)) return;
@@ -106,12 +106,12 @@ export function prepareStories({
           const exportValue = fileExports[key];
           if (!exportValue) return;
 
-          //FIXME: autotitle
-          const name = storyNameFromExport(key);
           const title = makeTitle(filename, specifier, meta.title);
 
           if (title) {
-            const id = toId(title, name);
+            const nameFromExport = storyNameFromExport(key);
+            const id = toId(title, nameFromExport);
+            const name = exportValue.storyName || nameFromExport;
 
             index.entries[id] = {
               type: 'story',
@@ -126,6 +126,7 @@ export function prepareStories({
             const stories = Object.entries(importedStories).reduce(
               (carry, [storyKey, story]: [string, Readonly<Record<string, unknown>>]) => {
                 if (!isExportStory(storyKey, fileExports.default)) return carry;
+
                 if (story.play && !options?.playFn) {
                   // play functions are not yet fully supported on native.
                   // There is a new option in main.js to turn them on for future use.
