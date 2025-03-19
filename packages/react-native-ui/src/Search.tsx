@@ -1,8 +1,8 @@
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
+import { BottomSheetTextInput, useBottomSheetInternal } from '@gorhom/bottom-sheet';
 import { styled } from '@storybook/react-native-theming';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
-import React, { useCallback, useDeferredValue, useRef, useState } from 'react';
+import React, { useCallback, useContext, useDeferredValue, useRef, useState } from 'react';
 import { Platform, TextInput, View } from 'react-native';
 import { CloseIcon } from './icon/CloseIcon';
 import { SearchIcon } from './icon/SearchIcon';
@@ -105,6 +105,9 @@ export const Search = React.memo<{
   getLastViewed: () => Selection[];
   initialQuery?: string;
 }>(function Search({ children, dataset, setSelection, getLastViewed, initialQuery = '' }) {
+  const context = useBottomSheetInternal(true);
+  const isBottomSheet = context !== null;
+
   const inputRef = useRef<TextInput>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
@@ -225,7 +228,7 @@ export const Search = React.memo<{
           <SearchIcon />
         </SearchIconWrapper>
 
-        {isMobile ? (
+        {isBottomSheet ? (
           <BottomSheetInput
             ref={inputRef as any} // TODO find solution for this
             onChangeText={setInputValue}
