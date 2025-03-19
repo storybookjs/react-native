@@ -25,7 +25,8 @@
     ".": "./dist/index.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
     "./preview": "./dist/preview.js",
-    "./scripts/generate": "./scripts/generate.js"
+    "./scripts/generate": "./scripts/generate.js",
+    "./preset": "./preset.js"
   },
   "files": [
     "bin/**/*",

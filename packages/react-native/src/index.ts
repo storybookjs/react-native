@@ -8,4 +8,5 @@ export interface StorybookConfig {
   stories: StorybookConfigBase['stories'];
   addons: Array<string | { name: string; options?: Record<string, any> }>;
   reactNative?: ReactNativeOptions;
+  framework?: '@storybook/react-native';
 }

@@ -21,6 +21,8 @@ const main: StorybookConfig = {
   reactNative: {
     playFn: false,
   },
+
+  framework: '@storybook/react-native',
 };
 
 export default main;
