@@ -18,7 +18,7 @@
     "test": "jest",
     "test:ci": "jest --runInBand",
     "generate-maestro-tests": "ts-node scripts/generate-maestro-tests.ts",
-    "test:maestro": "maestro run .maestro/storybook-screenshots.yaml"
+    "test:maestro": "maestro test .maestro/storybook-screenshots.yaml"
   },
   "dependencies": {
     "@babel/preset-env": "^7.25.4",
