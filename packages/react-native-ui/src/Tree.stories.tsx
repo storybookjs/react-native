@@ -152,7 +152,7 @@ const dataWithStoryName: Dataset = {
 };
 
 export const WithStoryNames: Story = {
-  storyName: 'Story with a storyName',
+  name: 'Story with a storyName',
   args: {
     docsMode: false,
     isBrowsing: true,
