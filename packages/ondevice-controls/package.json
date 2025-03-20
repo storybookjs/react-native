@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-controls",
-  "version": "9.0.0-alpha.2",
+  "version": "9.0.0-alpha.8",
   "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "@storybook/addon-controls": "9.0.0-alpha.8",
-    "@storybook/react-native-theming": "^9.0.0-alpha.2",
-    "@storybook/react-native-ui": "^9.0.0-alpha.2",
+    "@storybook/react-native-theming": "^9.0.0-alpha.8",
+    "@storybook/react-native-ui": "^9.0.0-alpha.8",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
     "react-native-modal-datetime-picker": "^18.0.0",
