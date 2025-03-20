@@ -1,6 +1,8 @@
-import { Text } from 'react-native';
+import { SafeAreaView, StatusBar, Text } from 'react-native';
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { theme, ThemeProvider } from '@storybook/react-native-theming';
+const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
 
 const StorybookUIRoot = view.getStorybookUI({
   shouldPersistSelection: true,
@@ -9,6 +11,7 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
   enableWebsockets: false,
+  onDeviceUI: !isScreenshotTesting,
   // host: '192.x.x.x',
   // port: 7007,
 
@@ -26,4 +29,19 @@ const StorybookUIRoot = view.getStorybookUI({
   }, */
 });
 
-export default StorybookUIRoot;
+const StorybookUI = () => {
+  if (isScreenshotTesting) {
+    return (
+      <SafeAreaView style={{ flex: 1 }}>
+        <StatusBar hidden={isScreenshotTesting} />
+        <ThemeProvider theme={theme}>
+          <StorybookUIRoot />
+        </ThemeProvider>
+      </SafeAreaView>
+    );
+  }
+
+  return <StorybookUIRoot />;
+};
+
+export default StorybookUI;
