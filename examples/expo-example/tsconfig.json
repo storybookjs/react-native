@@ -3,7 +3,8 @@
     "skipLibCheck": true,
     "lib": ["es6"],
     "baseUrl": "./",
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true
   },
   "extends": "expo/tsconfig.base",
   "include": [".rnstorybook", ".storybook", "./*"]

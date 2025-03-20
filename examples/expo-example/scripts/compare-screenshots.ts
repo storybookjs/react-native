@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as looksSame from 'looks-same';
+import looksSame from 'looks-same';
 import { fileURLToPath } from 'url';
 
 // @ts-ignore
