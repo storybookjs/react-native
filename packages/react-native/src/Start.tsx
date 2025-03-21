@@ -109,7 +109,7 @@ export function prepareStories({
           if (title) {
             const nameFromExport = storyNameFromExport(key);
             const id = toId(title, nameFromExport);
-            const name = exportValue.storyName || nameFromExport;
+            const name = exportValue?.name || exportValue?.storyName || nameFromExport;
 
             index.entries[id] = {
               type: 'story',
