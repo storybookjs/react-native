@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Introduction
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
