@@ -1,4 +1,4 @@
-import type { StorybookConfig as StorybookConfigBase } from '@storybook/core/types';
+import type { StorybookConfig as StorybookConfigBase } from 'storybook/internal/types';
 import type { ReactNativeOptions } from './Start';
 export { darkTheme, theme, type Theme } from '@storybook/react-native-theming';
 
@@ -8,4 +8,5 @@ export interface StorybookConfig {
   stories: StorybookConfigBase['stories'];
   addons: Array<string | { name: string; options?: Record<string, any> }>;
   reactNative?: ReactNativeOptions;
+  framework?: '@storybook/react-native';
 }

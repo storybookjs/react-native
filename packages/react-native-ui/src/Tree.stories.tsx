@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { ComponentEntry, IndexHash } from '@storybook/core/manager-api';
+import type { ComponentEntry, IndexHash } from 'storybook/internal/manager-api';
 import type { StoryObj, Meta } from '@storybook/react';
 import { Tree } from './Tree';
 import type { Dataset } from './types';
@@ -152,7 +152,7 @@ const dataWithStoryName: Dataset = {
 };
 
 export const WithStoryNames: Story = {
-  storyName: 'Story with a storyName',
+  name: 'Story with a storyName',
   args: {
     docsMode: false,
     isBrowsing: true,

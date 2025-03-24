@@ -23,7 +23,7 @@ interface WebsocketsOptions {
  */
 interface WithStorybookOptions {
   /**
-   * The path to the Storybook config folder. Defaults to './.storybook'.
+   * The path to the Storybook config folder. Defaults to './.rnstorybook'.
    */
   configPath?: string;
 
@@ -68,7 +68,7 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  *
  * module.exports = withStorybook(config, {
  *   enabled: true,
- *   configPath: path.resolve(projectRoot, './.storybook'),
+ *   configPath: path.resolve(projectRoot, './.rnstorybook'),
  *   websockets: { port: 7007, host: 'localhost' },
  *   useJs: false,
  *   onDisabledRemoveStorybook: true,
@@ -140,7 +140,7 @@ function withStorybook(
   }
 
   generate({
-    configPath: configPath ?? path.resolve(process.cwd(), './.storybook'),
+    configPath: configPath ?? path.resolve(process.cwd(), './.rnstorybook'),
     useJs,
   });
 

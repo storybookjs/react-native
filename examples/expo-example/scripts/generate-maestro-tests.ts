@@ -1,24 +1,25 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
-// Read the index.json file
-const indexPath = join(__dirname, '../storybook-static/index.json');
-const indexContent = readFileSync(indexPath, 'utf-8');
-const index = JSON.parse(indexContent);
+const run = async () => {
+  const { buildIndex } = await import('storybook/internal/core-server');
+  const index = await buildIndex({
+    configDir: join(__dirname, '../.rnstorybook'),
+  });
 
-// Ensure .maestro directory exists
-const maestroDir = join(__dirname, '../.maestro');
-mkdirSync(maestroDir, { recursive: true });
+  // Ensure .maestro directory exists
+  const maestroDir = join(__dirname, '../.maestro');
+  mkdirSync(maestroDir, { recursive: true });
 
-// Generate Maestro test file content
-const stories = Object.values(index.entries)
-  .filter((entry: any) => entry.type === 'story')
-  .map((story: any) => ({
-    id: story.id,
-    name: story.title.replace(/\//g, '-') + ' - ' + story.name,
-  }));
+  // Generate Maestro test file content
+  const stories = Object.values(index.entries)
+    .filter((entry: any) => entry.type === 'story')
+    .map((story: any) => ({
+      id: story.id,
+      name: story.title.replace(/\//g, '-') + ' - ' + story.name,
+    }));
 
-const maestroContent = `appId: host.exp.Exponent
+  const maestroContent = `appId: host.exp.Exponent
 name: Take screenshots of all Storybook stories
 ---
 - stopApp: host.exp.Exponent
@@ -35,8 +36,19 @@ ${stories
   )
   .join('\n')}`;
 
-// Write the Maestro test file
-const maestroTestPath = join(maestroDir, 'storybook-screenshots.yaml');
-writeFileSync(maestroTestPath, maestroContent);
+  // Write the Maestro test file
+  const maestroTestPath = join(maestroDir, 'storybook-screenshots.yaml');
+  writeFileSync(maestroTestPath, maestroContent);
 
-console.log('Generated Maestro test file at:', maestroTestPath);
+  console.log('Generated Maestro test file at:', maestroTestPath);
+};
+
+run()
+  .then(() => {
+    console.log('Done');
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });

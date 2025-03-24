@@ -6,7 +6,7 @@ function getArguments() {
     .option(
       '-c, --config-path <path>',
       'The path to your config folder relative to your project-dir',
-      './.storybook'
+      './.rnstorybook'
     )
     .option('-js, --use-js', 'Use a js file for storybook.requires')
     .option('-a, --absolute', 'Use absolute paths for story imports');

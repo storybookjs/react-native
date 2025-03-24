@@ -1,4 +1,4 @@
-import { logger } from '@storybook/core/client-logger';
+import { logger } from 'storybook/internal/client-logger';
 
 if (__DEV__) {
   logger.log("import '@storybook/addon-ondevice-notes/register' to register the notes addon");

@@ -1,8 +1,8 @@
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
+import { BottomSheetTextInput, useBottomSheetInternal } from '@gorhom/bottom-sheet';
 import { styled } from '@storybook/react-native-theming';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
-import React, { useCallback, useDeferredValue, useRef, useState } from 'react';
+import React, { useCallback, useContext, useDeferredValue, useRef, useState } from 'react';
 import { Platform, TextInput, View } from 'react-native';
 import { CloseIcon } from './icon/CloseIcon';
 import { SearchIcon } from './icon/SearchIcon';
@@ -16,7 +16,6 @@ import {
   type SearchResult,
   type Selection,
 } from './types';
-import { getGroupStatus, getHighestStatus } from './util/status';
 import { searchItem } from './util/tree';
 import { useSelectedNode } from './SelectedNodeProvider';
 
@@ -106,6 +105,9 @@ export const Search = React.memo<{
   getLastViewed: () => Selection[];
   initialQuery?: string;
 }>(function Search({ children, dataset, setSelection, getLastViewed, initialQuery = '' }) {
+  const context = useBottomSheetInternal(true);
+  const isBottomSheet = context !== null;
+
   const inputRef = useRef<TextInput>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
@@ -153,20 +155,11 @@ export const Search = React.memo<{
   );
 
   const makeFuse = useCallback(() => {
-    const list = dataset.entries.reduce<SearchItem[]>((acc, [refId, { index, status }]) => {
-      const groupStatus = getGroupStatus(index || {}, status);
-
+    const list = dataset.entries.reduce<SearchItem[]>((acc, [refId, { index }]) => {
       if (index) {
         acc.push(
           ...Object.values(index).map((item) => {
-            const statusValue =
-              status && status[item.id]
-                ? getHighestStatus(Object.values(status[item.id] || {}).map((s) => s.status))
-                : null;
-            return {
-              ...searchItem(item, dataset.hash[refId]),
-              status: statusValue || groupStatus[item.id] || null,
-            };
+            return searchItem(item, dataset.hash[refId]);
           })
         );
       }
@@ -235,7 +228,7 @@ export const Search = React.memo<{
           <SearchIcon />
         </SearchIconWrapper>
 
-        {isMobile ? (
+        {isBottomSheet ? (
           <BottomSheetInput
             ref={inputRef as any} // TODO find solution for this
             onChangeText={setInputValue}

@@ -4,7 +4,7 @@ import type {
   State,
   StoriesHash,
   StoryEntry,
-} from '@storybook/core/manager-api';
+} from 'storybook/internal/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import React, { useCallback, useMemo, useRef } from 'react';
 import { View } from 'react-native';
@@ -299,8 +299,6 @@ export const Tree = React.memo<{
     onSelectStoryId,
   });
 
-  const groupStatus = useMemo(() => getGroupStatus(collapsedData, status), [collapsedData, status]);
-
   const treeItems = useMemo(() => {
     return collapsedItems.map((itemId) => {
       const item = collapsedData[itemId];
@@ -330,7 +328,6 @@ export const Tree = React.memo<{
       }
 
       const isDisplayed = !item.parent || ancestry[itemId].every((a: string) => expanded[a]);
-      const color = groupStatus[itemId] ? statusMapping[groupStatus[itemId]][1] : null;
 
       return (
         <Node
@@ -338,7 +335,7 @@ export const Tree = React.memo<{
           item={item}
           status={status?.[itemId]}
           refId={refId}
-          color={color}
+          color={null}
           docsMode={docsMode}
           isOrphan={orphanIds.some((oid) => itemId === oid || itemId.startsWith(`${oid}-`))}
           isDisplayed={isDisplayed}
@@ -356,7 +353,6 @@ export const Tree = React.memo<{
     docsMode,
     expandableDescendants,
     expanded,
-    groupStatus,
     onSelectStoryId,
     orphanIds,
     refId,

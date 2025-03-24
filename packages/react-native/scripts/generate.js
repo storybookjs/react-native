@@ -6,7 +6,7 @@ const {
   resolveAddonFile,
   getAddonName,
 } = require('./common');
-const { normalizeStories, globToRegexp } = require('@storybook/core/common');
+const { normalizeStories, globToRegexp } = require('storybook/internal/common');
 const fs = require('fs');
 const prettier = require('prettier');
 const path = require('path');

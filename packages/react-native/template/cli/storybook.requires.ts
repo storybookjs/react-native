@@ -8,7 +8,7 @@ import '@storybook/addon-ondevice-actions/register';
 const normalizedStories = [
   {
     titlePrefix: '',
-    directory: './.storybook/stories',
+    directory: './.rnstorybook/stories',
     files: '**/*.stories.?(ts|tsx|js|jsx)',
     importPathMatcher:
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
@@ -29,7 +29,7 @@ declare global {
 const annotations = [
   require('./preview'),
   require('@storybook/react-native/dist/preview'),
-  require('@storybook/addon-actions/preview'),
+  require('@storybook/addon-ondevice-actions/preview'),
 ];
 
 global.STORIES = normalizedStories;
