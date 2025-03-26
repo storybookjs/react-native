@@ -10,7 +10,6 @@ const main: ServerStorybookConfig = {
 
   addons: [
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
     // note why does this break with get absolute?
     '@storybook/addon-react-native-server',
     'storybook-addon-deep-controls',

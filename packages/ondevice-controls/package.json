@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-controls",
-  "version": "9.0.0-alpha.8",
+  "version": "9.0.0-alpha.11",
   "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
@@ -30,7 +30,6 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
-    "@storybook/addon-controls": "9.0.0-alpha.8",
     "@storybook/react-native-theming": "^9.0.0-alpha.8",
     "@storybook/react-native-ui": "^9.0.0-alpha.8",
     "deep-equal": "^1.0.1",
@@ -48,7 +47,7 @@
     "@react-native-community/slider": "*",
     "react": "*",
     "react-native": "*",
-    "storybook": "9.0.0-alpha.8"
+    "storybook": "9.0.0-alpha.11"
   },
   "publishConfig": {
     "access": "public"

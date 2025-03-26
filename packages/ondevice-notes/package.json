@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-notes",
-  "version": "9.0.0-alpha.8",
+  "version": "9.0.0-alpha.11",
   "description": "Write notes for your react-native Storybook stories.",
   "keywords": [
     "addon",
@@ -38,7 +38,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "storybook": "9.0.0-alpha.8"
+    "storybook": "9.0.0-alpha.11"
   },
   "publishConfig": {
     "access": "public"
