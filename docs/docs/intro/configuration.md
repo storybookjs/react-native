@@ -4,21 +4,7 @@ sidebar_position: 3
 
 # Configuration
 
-## Table of Contents
-
-- [Configuration](#configuration)
-  - [Table of Contents](#table-of-contents)
-  - [Configuration Files](#configuration-files)
-    - [main.ts](#maints)
-      - [Options](#options)
-    - [preview.tsx](#previewtsx)
-      - [Notable Parameters](#notable-parameters)
-    - [index.tsx](#indextsx)
-      - [Available Options](#available-options)
-
-## Configuration Files
-
-### main.ts
+## main.ts
 
 The `main.ts` file is your primary configuration entry point, located in the `.storybook` directory.
 
@@ -49,7 +35,7 @@ const main: StorybookConfig = {
 export default main;
 ```
 
-#### Options
+### Options
 
 - `stories`: Array of story patterns or configuration objects
   - `directory`: Base directory for stories
@@ -58,7 +44,7 @@ export default main;
 - `addons`: Array of addon packages to include
 - `reactNative.playFn`: Enable/disable story play functions
 
-### preview.tsx
+## preview.tsx
 
 The `preview.tsx` file configures the story rendering environment and global parameters.
 
@@ -111,7 +97,7 @@ const preview: Preview = {
 export default preview;
 ```
 
-#### Notable Parameters
+### Notable Parameters
 
 Other than story sort the other parameters can be overwritten per story.
 
@@ -120,7 +106,7 @@ Other than story sort the other parameters can be overwritten per story.
 - `parameters.noSafeArea`: Disable safe area insets
 - `parameters.backgrounds`: Background addon configuration
 
-### index.tsx
+## index.tsx
 
 The entry point file configures the Storybook UI and runtime behavior.
 
