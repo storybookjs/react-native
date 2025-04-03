@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "9.0.0-alpha.9",
+  "version": "9.0.0-alpha.10",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -49,8 +49,8 @@
     "@storybook/csf": "^0.1.13",
     "@storybook/global": "^5.0.0",
     "@storybook/react": "9.0.0-alpha.16",
-    "@storybook/react-native-theming": "^9.0.0-alpha.9",
-    "@storybook/react-native-ui": "^9.0.0-alpha.9",
+    "@storybook/react-native-theming": "^9.0.0-alpha.10",
+    "@storybook/react-native-ui": "^9.0.0-alpha.10",
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
     "deepmerge": "^4.3.0",
