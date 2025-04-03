@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui",
-  "version": "9.0.0-alpha.11",
+  "version": "9.0.0-alpha.8",
   "description": "ui components for react native storybook",
   "keywords": [
     "react",
@@ -58,7 +58,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@storybook/react": "9.0.0-alpha.11",
+    "@storybook/react": "9.0.0-alpha.16",
     "@storybook/react-native-theming": "^9.0.0-alpha.8",
     "fuse.js": "^7.0.0",
     "memoizerific": "^1.11.3",
@@ -73,7 +73,7 @@
     "react-native-reanimated": ">=3",
     "react-native-safe-area-context": "*",
     "react-native-svg": ">=14",
-    "storybook": "9.0.0-alpha.11"
+    "storybook": "9.0.0-alpha.16"
   },
   "engines": {
     "node": ">=18.0.0"
