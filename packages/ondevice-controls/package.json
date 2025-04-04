@@ -47,7 +47,7 @@
     "@react-native-community/slider": "*",
     "react": "*",
     "react-native": "*",
-    "storybook": "9.0.0-alpha.16"
+    "storybook": "9.0.0-alpha.17"
   },
   "publishConfig": {
     "access": "public"
