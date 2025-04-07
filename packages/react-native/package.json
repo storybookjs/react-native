@@ -54,7 +54,7 @@
     "commander": "^8.2.0",
     "dedent": "^1.5.1",
     "deepmerge": "^4.3.0",
-    "prettier": "^2.4.1",
+    "prettier": "^3.5.3",
     "react-native-url-polyfill": "^2.0.0",
     "setimmediate": "^1.0.5",
     "type-fest": "~2.19",
