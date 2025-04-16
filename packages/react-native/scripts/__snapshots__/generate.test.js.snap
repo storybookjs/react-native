@@ -47,7 +47,7 @@ import "@storybook/addon-ondevice-actions/register";
     updateView(global.view, annotations, normalizedStories, );
   }
 
-  export const view = global.view;
+  export const view: ReturnType<typeof start> = global.view;
 "
 `;
 
@@ -98,7 +98,7 @@ import "@storybook/addon-ondevice-actions/register";
     updateView(global.view, annotations, normalizedStories, );
   }
 
-  export const view = global.view;
+  export const view: ReturnType<typeof start> = global.view;
 "
 `;
 
@@ -149,7 +149,7 @@ import "@storybook/addon-ondevice-actions/register";
     updateView(global.view, annotations, normalizedStories, );
   }
 
-  export const view = global.view;
+  export const view: ReturnType<typeof start> = global.view;
 "
 `;
 
@@ -200,7 +200,7 @@ import "@storybook/addon-ondevice-actions/register";
     updateView(global.view, annotations, normalizedStories, );
   }
 
-  export const view = global.view;
+  export const view: ReturnType<typeof start> = global.view;
 "
 `;
 
@@ -246,6 +246,6 @@ import "@storybook/addon-ondevice-actions/register";
     updateView(global.view, annotations, normalizedStories, );
   }
 
-  export const view = global.view;
+  export const view: ReturnType<typeof start> = global.view;
 "
 `;
