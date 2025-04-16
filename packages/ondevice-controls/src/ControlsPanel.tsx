@@ -67,7 +67,7 @@ const ControlsPanel = ({ api }: { api: API }) => {
       (prev, [key, argType]: [string, ArgType]) => {
         const isControl = Boolean(argType?.control);
 
-        let shouldInclude = true;
+        let shouldInclude;
         try {
           shouldInclude = includeConditionalArg(argType, argsFromHook, {});
         } catch {
