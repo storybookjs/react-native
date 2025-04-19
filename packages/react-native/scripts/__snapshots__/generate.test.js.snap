@@ -246,6 +246,6 @@ import "@storybook/addon-ondevice-actions/register";
     updateView(global.view, annotations, normalizedStories, );
   }
 
-  export const view: ReturnType<typeof start> = global.view;
+  export const view = global.view;
 "
 `;

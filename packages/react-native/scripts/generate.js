@@ -135,7 +135,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
     updateView(global.view, annotations, normalizedStories, ${options});
   }
 
-  export const view: ReturnType<typeof start> = global.view;
+  export const view${useJs ? '' : ': ReturnType<typeof start>'} = global.view;
 `;
 
   const formattedFileContent = prettier.format(fileContent, { parser: 'babel-ts' });
