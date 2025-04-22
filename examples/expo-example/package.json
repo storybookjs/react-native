@@ -59,6 +59,7 @@
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@babel/plugin-transform-class-static-block": "^7.24.0",
     "@react-native/babel-preset": "^0.74.0",
     "@testing-library/react-native": "12.4.3",
     "@types/looks-same": "^4.1.0",

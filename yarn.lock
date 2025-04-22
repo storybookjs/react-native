@@ -1349,6 +1349,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/plugin-transform-class-static-block@npm:^7.24.0":
+  version: 7.26.0
+  resolution: "@babel/plugin-transform-class-static-block@npm:7.26.0"
+  dependencies:
+    "@babel/helper-create-class-features-plugin": "npm:^7.25.9"
+    "@babel/helper-plugin-utils": "npm:^7.25.9"
+  peerDependencies:
+    "@babel/core": ^7.12.0
+  checksum: 10/60cba3f125a7bc4f90706af0a011697c7ffd2eddfba336ed6f84c5f358c44c3161af18b0202475241a96dee7964d96dd3a342f46dbf85b75b38bb789326e1766
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-transform-class-static-block@npm:^7.25.7":
   version: 7.25.7
   resolution: "@babel/plugin-transform-class-static-block@npm:7.25.7"
@@ -9839,6 +9851,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.24.0"
     "@babel/plugin-proposal-export-namespace-from": "npm:^7.18.9"
+    "@babel/plugin-transform-class-static-block": "npm:^7.24.0"
     "@babel/preset-env": "npm:^7.25.4"
     "@expo/metro-runtime": "npm:~4.0.1"
     "@gorhom/bottom-sheet": "npm:^5.0.6"
