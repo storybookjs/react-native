@@ -328,7 +328,7 @@ export class View {
         }
 
         return transformStoryIndexToStoriesHash(this._storyIndex, {
-          docsOptions: { docsMode: false, autodocs: false, defaultName: '' },
+          docsOptions: { docsMode: false, defaultName: '' },
           filters: {},
           status: {},
           provider: {

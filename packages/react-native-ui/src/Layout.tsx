@@ -36,8 +36,6 @@ const mobileContentStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
 
 const placeholderObject = {};
 
-const placeholderArray = [];
-
 const iconFloatRightStyle = { marginLeft: 'auto' } satisfies ViewStyle;
 
 const navButtonStyle = { flexShrink: 1 } satisfies ViewStyle;
@@ -177,7 +175,6 @@ export const Layout = ({
               </View>
 
               <Sidebar
-                extra={placeholderArray}
                 previewInitialized
                 indexError={undefined}
                 refs={placeholderObject}
@@ -257,7 +254,6 @@ export const Layout = ({
             </View>
 
             <Sidebar
-              extra={placeholderArray}
               previewInitialized
               indexError={undefined}
               refs={placeholderObject}

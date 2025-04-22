@@ -1,11 +1,7 @@
 import React, { useMemo } from 'react';
 import { styled } from '@storybook/react-native-theming';
 import type { State } from 'storybook/internal/manager-api';
-import type {
-  Addon_SidebarBottomType,
-  Addon_SidebarTopType,
-  API_LoadedRefData,
-} from 'storybook/internal/types';
+import type { API_LoadedRefData } from 'storybook/internal/types';
 import { Explorer } from './Explorer';
 import { Search } from './Search';
 import { SearchResults } from './SearchResults';
@@ -74,8 +70,6 @@ export const useCombination = (
 export interface SidebarProps extends API_LoadedRefData {
   refs: State['refs'];
   status: State['status'];
-  extra: Addon_SidebarTopType[];
-  bottom?: Addon_SidebarBottomType[];
   storyId?: string;
   refId?: string;
   menuHighlighted?: boolean;
