@@ -11,7 +11,7 @@
     "storybook:test": "EXPO_PUBLIC_SCREENSHOT_TESTING=true EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start -c",
     "storybook:web": "storybook dev -p 6006",
     "build-web-storybook": "storybook build",
-    "storybook-generate": "sb-rn-get-stories --config-path=./.rnstorybook",
+    "storybook-generate": "sb-rn-get-stories",
     "disabled-example": "expo start",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
@@ -59,6 +59,7 @@
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@babel/plugin-transform-class-static-block": "^7.26.0",
     "@react-native/babel-preset": "^0.74.0",
     "@testing-library/react-native": "12.4.3",
     "@types/looks-same": "^4.1.0",
