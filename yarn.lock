@@ -5518,19 +5518,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:9.0.0-beta.3":
-  version: 9.0.0-beta.3
-  resolution: "@storybook/addon-links@npm:9.0.0-beta.3"
+"@storybook/addon-links@npm:9.0.0-beta.4":
+  version: 9.0.0-beta.4
+  resolution: "@storybook/addon-links@npm:9.0.0-beta.4"
   dependencies:
     "@storybook/global": "npm:^5.0.0"
     ts-dedent: "npm:^2.0.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    storybook: ^9.0.0-beta.3
+    storybook: ^9.0.0-beta.4
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 10/a84439b67c0ef88b41c2aabdaeef5ecde282f8186a2f529dd615616b21f2494ca49aba18ec2bd6f58aa8e2447176fec00df638b8d30ef07c34e317003a3945f8
+  checksum: 10/9cdc0d16835057309802806ef0b3033d51c159be7ddc44c10d952cb10a6f2d69ebd5aa77853dfdfa13b9ef9758f3efc3d211aae34343f3ef8ec598475e2aaad1
   languageName: node
   linkType: hard
 
@@ -5544,7 +5544,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-    storybook: 9.0.0-beta.3
+    storybook: 9.0.0-beta.4
   languageName: unknown
   linkType: soft
 
@@ -5557,7 +5557,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-    storybook: 9.0.0-beta.3
+    storybook: 9.0.0-beta.4
   languageName: unknown
   linkType: soft
 
@@ -5579,7 +5579,7 @@ __metadata:
     "@react-native-community/slider": "*"
     react: "*"
     react-native: "*"
-    storybook: 9.0.0-beta.3
+    storybook: 9.0.0-beta.4
   languageName: unknown
   linkType: soft
 
@@ -5593,7 +5593,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-    storybook: 9.0.0-beta.3
+    storybook: 9.0.0-beta.4
   languageName: unknown
   linkType: soft
 
@@ -5606,28 +5606,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/builder-vite@npm:9.0.0-beta.3":
-  version: 9.0.0-beta.3
-  resolution: "@storybook/builder-vite@npm:9.0.0-beta.3"
+"@storybook/builder-vite@npm:9.0.0-beta.4":
+  version: 9.0.0-beta.4
+  resolution: "@storybook/builder-vite@npm:9.0.0-beta.4"
   dependencies:
-    "@storybook/csf-plugin": "npm:9.0.0-beta.3"
+    "@storybook/csf-plugin": "npm:9.0.0-beta.4"
     browser-assert: "npm:^1.2.1"
     ts-dedent: "npm:^2.0.0"
   peerDependencies:
-    storybook: ^9.0.0-beta.3
+    storybook: ^9.0.0-beta.4
     vite: ^5.0.0 || ^6.0.0
-  checksum: 10/2e8f5c63a9b0c14454ad5d4339219175ac0415bbb0fa9edd87d2a326c139ef52636effbca57f49b3e22bb486e39ecabe3535032b00692525afa5b53a64ae72c7
+  checksum: 10/5ec7bf1be96b134974cdc72d13411245146b9f044fc59056c4fe1702de1200fa21032a84c844d839e1b7c5a460d0f3458a823f14bd9ca62d5ed7a68173bbcc3a
   languageName: node
   linkType: hard
 
-"@storybook/csf-plugin@npm:9.0.0-beta.3":
-  version: 9.0.0-beta.3
-  resolution: "@storybook/csf-plugin@npm:9.0.0-beta.3"
+"@storybook/csf-plugin@npm:9.0.0-beta.4":
+  version: 9.0.0-beta.4
+  resolution: "@storybook/csf-plugin@npm:9.0.0-beta.4"
   dependencies:
     unplugin: "npm:^1.3.1"
   peerDependencies:
-    storybook: ^9.0.0-beta.3
-  checksum: 10/b875a99b9edfa5ef38610c0800692340906da5b3c88aca848972082f1d772ca11bfa5a7830645e071c8a54d7696317fb3fc93b6df00c608f86fb1fdfc660956a
+    storybook: ^9.0.0-beta.4
+  checksum: 10/075b4f612984868f6809fef7d6cb48600f11241fdbaaf5dfec2e8efa9030ab59efeae162a205c516425cac82716badc6b4124fce592233e9ad8728476f58d90f
   languageName: node
   linkType: hard
 
@@ -5647,14 +5647,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-dom-shim@npm:9.0.0-beta.3":
-  version: 9.0.0-beta.3
-  resolution: "@storybook/react-dom-shim@npm:9.0.0-beta.3"
+"@storybook/react-dom-shim@npm:9.0.0-beta.4":
+  version: 9.0.0-beta.4
+  resolution: "@storybook/react-dom-shim@npm:9.0.0-beta.4"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    storybook: ^9.0.0-beta.3
-  checksum: 10/6cdbf309635750a2466c4eb00de80a8803d37a58f82e075cc4a96a0d80e9352423e4bda62d46293e7fcb67a282893a20fb7b8a1361bc6d6cb188bbb66e029970
+    storybook: ^9.0.0-beta.4
+  checksum: 10/4fc52f95d5949e077e308a6d86dd18e19ae8b6f986b8b4d60707bf0c1f140a6b1df7401ee90976624a2a44483714bdd88b06f082194f8ea832561cf65f025d8c
   languageName: node
   linkType: hard
 
@@ -5676,7 +5676,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui@workspace:packages/react-native-ui"
   dependencies:
-    "@storybook/react": "npm:9.0.0-beta.3"
+    "@storybook/react": "npm:9.0.0-beta.4"
     "@storybook/react-native-theming": "npm:^9.0.0-alpha.10"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~18.3.12"
@@ -5698,21 +5698,21 @@ __metadata:
     react-native-reanimated: ">=3"
     react-native-safe-area-context: "*"
     react-native-svg: ">=14"
-    storybook: 9.0.0-beta.3
+    storybook: 9.0.0-beta.4
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native-web-vite@npm:9.0.0-beta.3":
-  version: 9.0.0-beta.3
-  resolution: "@storybook/react-native-web-vite@npm:9.0.0-beta.3"
+"@storybook/react-native-web-vite@npm:9.0.0-beta.4":
+  version: 9.0.0-beta.4
+  resolution: "@storybook/react-native-web-vite@npm:9.0.0-beta.4"
   dependencies:
     "@babel/plugin-transform-modules-commonjs": "npm:^7.26.3"
     "@babel/preset-react": "npm:^7.26.3"
     "@bunchtogether/vite-plugin-flow": "npm:^1.0.2"
     "@joshwooding/vite-plugin-react-docgen-typescript": "npm:0.5.0"
-    "@storybook/builder-vite": "npm:9.0.0-beta.3"
-    "@storybook/react": "npm:9.0.0-beta.3"
-    "@storybook/react-vite": "npm:9.0.0-beta.3"
+    "@storybook/builder-vite": "npm:9.0.0-beta.4"
+    "@storybook/react": "npm:9.0.0-beta.4"
+    "@storybook/react-vite": "npm:9.0.0-beta.4"
     "@vitejs/plugin-react": "npm:^4.3.2"
     vite-plugin-babel: "npm:^1.3.0"
     vite-plugin-commonjs: "npm:^0.10.4"
@@ -5722,9 +5722,9 @@ __metadata:
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
     react-native: ">=0.74.5"
     react-native-web: ^0.19.12
-    storybook: ^9.0.0-beta.3
+    storybook: ^9.0.0-beta.4
     vite: ^5.0.0 || ^6.0.0
-  checksum: 10/3dd2a1661fc67473cbf28d73225c48c26a791dc635c2dc38da2c87b5aa152b2356403379651dd0557ac6b3051057b360848045f6887726901b57b7a92ac94f24
+  checksum: 10/5b22dee1402b6faf309e48451a1551e7e25158f659f79c4e4bdc9434e4b835536f47e6cc4558312240e94a4d0b80f70fd7bedf3f50ae32a476f93951615600a4
   languageName: node
   linkType: hard
 
@@ -5734,7 +5734,7 @@ __metadata:
   dependencies:
     "@storybook/csf": "npm:^0.1.13"
     "@storybook/global": "npm:^5.0.0"
-    "@storybook/react": "npm:9.0.0-beta.3"
+    "@storybook/react": "npm:9.0.0-beta.4"
     "@storybook/react-native-theming": "npm:^9.0.0-alpha.10"
     "@storybook/react-native-ui": "npm:^9.0.0-alpha.10"
     "@types/jest": "npm:^29.4.3"
@@ -5753,7 +5753,7 @@ __metadata:
     react-native-url-polyfill: "npm:^2.0.0"
     react-test-renderer: "npm:^18.3.1"
     setimmediate: "npm:^1.0.5"
-    storybook: "npm:9.0.0-beta.3"
+    storybook: "npm:9.0.0-beta.4"
     tsup: "npm:^7.2.0"
     type-fest: "npm:~2.19"
     typescript: "npm:^5.3.3"
@@ -5765,20 +5765,20 @@ __metadata:
     react-native: ">=0.72.0"
     react-native-gesture-handler: ">=2"
     react-native-safe-area-context: "*"
-    storybook: 9.0.0-beta.3
+    storybook: 9.0.0-beta.4
   bin:
     sb-rn-get-stories: ./bin/get-stories.js
   languageName: unknown
   linkType: soft
 
-"@storybook/react-vite@npm:9.0.0-beta.3":
-  version: 9.0.0-beta.3
-  resolution: "@storybook/react-vite@npm:9.0.0-beta.3"
+"@storybook/react-vite@npm:9.0.0-beta.4":
+  version: 9.0.0-beta.4
+  resolution: "@storybook/react-vite@npm:9.0.0-beta.4"
   dependencies:
     "@joshwooding/vite-plugin-react-docgen-typescript": "npm:0.5.0"
     "@rollup/pluginutils": "npm:^5.0.2"
-    "@storybook/builder-vite": "npm:9.0.0-beta.3"
-    "@storybook/react": "npm:9.0.0-beta.3"
+    "@storybook/builder-vite": "npm:9.0.0-beta.4"
+    "@storybook/react": "npm:9.0.0-beta.4"
     find-up: "npm:^5.0.0"
     magic-string: "npm:^0.30.0"
     react-docgen: "npm:^7.1.1"
@@ -5787,27 +5787,27 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    storybook: ^9.0.0-beta.3
+    storybook: ^9.0.0-beta.4
     vite: ^5.0.0 || ^6.0.0
-  checksum: 10/d358c9ff3660d2c5aa85e02849483812f40f8138dd703bae8c2039561b07fc004bfa50e00d0dd372fc85309e3501a51c947720c9f53bdd4d38460e36855c0f45
+  checksum: 10/70dccca02adca9931df47201ba7ab65901e159940999cac3cd9a4935f694f4f1f43a96e3db76b960fdf7446753ed43dbe4e102146324d7310e64adb3b6bf7e6f
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:9.0.0-beta.3":
-  version: 9.0.0-beta.3
-  resolution: "@storybook/react@npm:9.0.0-beta.3"
+"@storybook/react@npm:9.0.0-beta.4":
+  version: 9.0.0-beta.4
+  resolution: "@storybook/react@npm:9.0.0-beta.4"
   dependencies:
     "@storybook/global": "npm:^5.0.0"
-    "@storybook/react-dom-shim": "npm:9.0.0-beta.3"
+    "@storybook/react-dom-shim": "npm:9.0.0-beta.4"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    storybook: ^9.0.0-beta.3
+    storybook: ^9.0.0-beta.4
     typescript: ">= 4.9.x"
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/1f79fe85ad0515a385458893312046ea567a3b69949e9b490b92055d5c3c5b073390b1ecf663d36e496ab128778ab36382e354bc2cb0b6e87c7227172548e8e8
+  checksum: 10/149b32451c91bc9360d3bac6e5c25129d986244e8ebd314d388214233368bb7a34d7a80c72c5fc93194332547af23ef4f90c8409d2aa47fba019dd67dd33174c
   languageName: node
   linkType: hard
 
@@ -9959,17 +9959,17 @@ __metadata:
     "@react-native-community/datetimepicker": "npm:8.2.0"
     "@react-native-community/slider": "npm:4.5.5"
     "@react-native/babel-preset": "npm:^0.74.0"
-    "@storybook/addon-links": "npm:9.0.0-beta.3"
+    "@storybook/addon-links": "npm:9.0.0-beta.4"
     "@storybook/addon-ondevice-actions": "npm:^9.0.0-alpha.10"
     "@storybook/addon-ondevice-backgrounds": "npm:^9.0.0-alpha.10"
     "@storybook/addon-ondevice-controls": "npm:^9.0.0-alpha.10"
     "@storybook/addon-ondevice-notes": "npm:^9.0.0-alpha.10"
     "@storybook/addon-react-native-server": "npm:0.0.6"
     "@storybook/global": "npm:^5.0.0"
-    "@storybook/react": "npm:9.0.0-beta.3"
+    "@storybook/react": "npm:9.0.0-beta.4"
     "@storybook/react-native": "npm:^9.0.0-alpha.10"
     "@storybook/react-native-theming": "npm:^9.0.0-alpha.10"
-    "@storybook/react-native-web-vite": "npm:9.0.0-beta.3"
+    "@storybook/react-native-web-vite": "npm:9.0.0-beta.4"
     "@testing-library/react-native": "npm:12.4.3"
     "@types/looks-same": "npm:^4.1.0"
     "@types/react": "npm:~18.3.12"
@@ -9992,7 +9992,7 @@ __metadata:
     react-native-svg: "npm:15.8.0"
     react-native-web: "npm:~0.19.13"
     react-router: "npm:^6.26.2"
-    storybook: "npm:9.0.0-beta.3"
+    storybook: "npm:9.0.0-beta.4"
     storybook-addon-deep-controls: "npm:^0.9.2"
     typescript: "npm:^5.3.3"
     vite: "npm:^6.1.1"
@@ -17393,9 +17393,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:9.0.0-beta.3":
-  version: 9.0.0-beta.3
-  resolution: "storybook@npm:9.0.0-beta.3"
+"storybook@npm:9.0.0-beta.4":
+  version: 9.0.0-beta.4
+  resolution: "storybook@npm:9.0.0-beta.4"
   dependencies:
     "@storybook/global": "npm:^5.0.0"
     "@testing-library/dom": "npm:10.4.0"
@@ -17416,7 +17416,7 @@ __metadata:
       optional: true
   bin:
     storybook: ./bin/index.cjs
-  checksum: 10/cac1da4eb5b63ddfede03b251d62951f048ae47d25b4803fc61a1cb8f7f4f2cf5cc5fa491fc07810c870c5214b18d4dd1ec9577f0121fb3b830a8598f977d74a
+  checksum: 10/462a7b311088b999f398f2e9c2385c7c34349b809e331d1586d458892709526396cd4e0b51e107a12013a037aa81a7a8351e9a4cd44af1c9f9d3110f6cea00f4
   languageName: node
   linkType: hard
 
