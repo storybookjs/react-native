@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { ActionButton } from './Actions';
 
 const meta = {
@@ -9,6 +8,8 @@ const meta = {
   },
   args: {
     text: 'Press me!',
+    // FIXME: something is wrong with the fn() since the latest alpha
+    // onPress: fn(),
   },
   parameters: {
     notes: `
