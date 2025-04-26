@@ -1,16 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import type { IndexHash, State } from 'storybook/internal/manager-api';
-import { types } from 'storybook/internal/manager-api';
-import type { StoryObj, Meta } from '@storybook/react';
-import type { Addon_SidebarTopType } from 'storybook/internal/types';
+import { Button } from './Button';
+import { LayoutProvider } from './LayoutProvider';
 import { Sidebar } from './Sidebar';
+import { DEFAULT_REF_ID } from './constants';
 import { mockDataset } from './mockdata';
 import type { RefType } from './types';
-import { LayoutProvider } from './LayoutProvider';
-import { Button } from './Button';
-import { IconButton } from './IconButton';
-import { FaceHappyIcon } from './icon/FaceHappyIcon';
-import { DEFAULT_REF_ID } from './constants';
 
 const index = mockDataset.withRoot as IndexHash;
 const storyId = 'root-1-child-a2--grandchild-a1-1';
@@ -22,7 +18,6 @@ const meta = {
   parameters: { layout: 'fullscreen' },
   args: {
     previewInitialized: true,
-    extra: [] as Addon_SidebarTopType[],
     index: index,
     storyId,
     refId: DEFAULT_REF_ID,
@@ -157,37 +152,6 @@ export const StatusesOpen: Story = {
 export const Searching: Story = {
   ...StatusesOpen,
   parameters: { chromatic: { delay: 2200 } },
-};
-
-export const Bottom: Story = {
-  args: {
-    bottom: [
-      {
-        id: '1',
-        type: types.experimental_SIDEBAR_BOTTOM,
-        render: () => (
-          <Button>
-            <FaceHappyIcon />
-            Custom addon A
-          </Button>
-        ),
-      },
-      {
-        id: '2',
-        type: types.experimental_SIDEBAR_BOTTOM,
-        render: () => <Button text="Custom addon B" Icon={FaceHappyIcon} />,
-      },
-      {
-        id: '3',
-        type: types.experimental_SIDEBAR_BOTTOM,
-        render: () => (
-          <IconButton>
-            <FaceHappyIcon />
-          </IconButton>
-        ),
-      },
-    ],
-  },
 };
 
 /**
