@@ -16,6 +16,19 @@ if (Platform.OS !== 'web') {
   }
 }
 
+/**
+ * Since we aren't supporting  these web addons yet in react native (or reimplement them) then we should disable them
+ * to avoid running code for addons that are not supported.
+ */
+globalThis.FEATURES = {
+  measure: false,
+  outline: false,
+  interactions: false,
+  viewport: false,
+  highlight: false,
+  backgrounds: false,
+};
+
 import { addons as managerAddons } from 'storybook/internal/manager-api';
 import {
   composeConfigs,

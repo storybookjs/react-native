@@ -30,13 +30,12 @@ const desktopLogoContainer = {
   paddingRight: 10,
   justifyContent: 'space-between',
 } satisfies ViewStyle;
+
 const contentContainerStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
 
 const mobileContentStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
 
 const placeholderObject = {};
-
-const placeholderArray = [];
 
 const iconFloatRightStyle = { marginLeft: 'auto' } satisfies ViewStyle;
 
@@ -177,7 +176,6 @@ export const Layout = ({
               </View>
 
               <Sidebar
-                extra={placeholderArray}
                 previewInitialized
                 indexError={undefined}
                 refs={placeholderObject}
@@ -257,7 +255,6 @@ export const Layout = ({
             </View>
 
             <Sidebar
-              extra={placeholderArray}
               previewInitialized
               indexError={undefined}
               refs={placeholderObject}

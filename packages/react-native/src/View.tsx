@@ -31,7 +31,7 @@ import getHost from './rn-host-detect';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
-interface Storage {
+export interface Storage {
   getItem: (key: string) => Promise<string | null>;
   setItem: (key: string, value: string) => Promise<void>;
 }
@@ -40,7 +40,7 @@ type StoryKind = string;
 
 type StoryName = string;
 
-type InitialSelection =
+export type InitialSelection =
   | `${StoryKind}--${StoryName}`
   | {
       /**
@@ -60,6 +60,8 @@ type DeepPartial<T> = T extends object
     }
   : T;
 
+export type ThemePartial = DeepPartial<Theme>;
+
 export type Params = {
   onDeviceUI?: boolean;
   enableWebsockets?: boolean;
@@ -69,7 +71,7 @@ export type Params = {
   secured?: boolean;
   initialSelection?: InitialSelection;
   shouldPersistSelection?: boolean;
-  theme: DeepPartial<Theme>;
+  theme: ThemePartial;
   storage?: Storage;
 };
 
@@ -328,7 +330,7 @@ export class View {
         }
 
         return transformStoryIndexToStoriesHash(this._storyIndex, {
-          docsOptions: { docsMode: false, autodocs: false, defaultName: '' },
+          docsOptions: { docsMode: false, defaultName: '' },
           filters: {},
           status: {},
           provider: {
