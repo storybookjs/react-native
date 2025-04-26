@@ -12,6 +12,7 @@
     "storybook:web": "storybook dev -p 6006",
     "build-web-storybook": "storybook build",
     "storybook-generate": "sb-rn-get-stories",
+    "storybook-generate-js": "sb-rn-get-stories --use-js",
     "disabled-example": "expo start",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
