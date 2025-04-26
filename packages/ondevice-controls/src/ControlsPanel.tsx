@@ -1,6 +1,10 @@
 import type { API } from 'storybook/internal/manager-api';
 import { Channel } from 'storybook/internal/channels';
-import type { Args, StoryContextForLoaders } from 'storybook/internal/csf';
+import {
+  type Args,
+  type StoryContextForLoaders,
+  includeConditionalArg,
+} from 'storybook/internal/csf';
 import type { Renderer } from 'storybook/internal/types';
 import React, { ComponentType, ReactElement, useCallback, useState } from 'react';
 import NoControlsWarning from './NoControlsWarning';
@@ -47,6 +51,14 @@ type ApiStore = {
   _channel: Channel;
 };
 
+function shouldIncludeArg(argType: ArgType, args: Args) {
+  try {
+    return includeConditionalArg(argType, args, {});
+  } catch {
+    return true;
+  }
+}
+
 const ControlsPanel = ({ api }: { api: API }) => {
   const store: ApiStore = api.store();
 
@@ -63,7 +75,9 @@ const ControlsPanel = ({ api }: { api: API }) => {
       (prev, [key, argType]: [string, ArgType]) => {
         const isControl = Boolean(argType?.control);
 
-        return isControl
+        const shouldInclude = shouldIncludeArg(argType, argsFromHook);
+
+        return isControl && shouldInclude
           ? {
               ...prev,
               [key]: {
