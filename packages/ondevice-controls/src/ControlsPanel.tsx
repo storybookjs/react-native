@@ -51,6 +51,14 @@ type ApiStore = {
   _channel: Channel;
 };
 
+function shouldIncludeArg(argType: ArgType, args: Args) {
+  try {
+    return includeConditionalArg(argType, args, {});
+  } catch {
+    return true;
+  }
+}
+
 const ControlsPanel = ({ api }: { api: API }) => {
   const store: ApiStore = api.store();
 
@@ -67,12 +75,7 @@ const ControlsPanel = ({ api }: { api: API }) => {
       (prev, [key, argType]: [string, ArgType]) => {
         const isControl = Boolean(argType?.control);
 
-        let shouldInclude;
-        try {
-          shouldInclude = includeConditionalArg(argType, argsFromHook, {});
-        } catch {
-          shouldInclude = true;
-        }
+        const shouldInclude = shouldIncludeArg(argType, argsFromHook);
 
         return isControl && shouldInclude
           ? {
