@@ -1,11 +1,11 @@
 # Storybook for React Native
 
 > [!IMPORTANT]  
-> This readme is for v8, for v7 docs see the [v7.6 docs](https://github.com/storybookjs/react-native/tree/v7.6.20-stable).
+> This readme is for v9 beta, for v8 docs see the [v8.6 docs](https://github.com/storybookjs/react-native/tree/v8.6.0-stable).
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-If you are migrating from 7.6 to 8.3 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-76x-to-83x)
+If you are migrating from 8 to 9 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-8-to-9)
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 

@@ -1,7 +1,7 @@
 # Migration
 
 - [Migration](#migration)
-  - [From version 8.6.x to 9.x.x](#from-version-86x-to-9xx)
+  - [From version 8 to 9](#from-version-8-to-9)
   - [From version 7.6.x to 8.3.x](#from-version-76x-to-83x)
     - [Dependencies](#dependencies)
     - [Regenerate your requires file](#regenerate-your-requires-file)
@@ -40,13 +40,15 @@
     - [Test ids for tabs](#test-ids-for-tabs)
     - [The server](#the-server)
 
-## From version 8.6.x to 9.x.x
+## From version 8 to 9
 
 Update storybook dependencies to 9.x
 
 Rename .storybook to .rnstorybook
 
 install the 'storybook' package if not already installed
+
+Regenerate your `.storybook/storybook.requires.ts` file by running `yarn storybook-generate`.
 
 ## From version 7.6.x to 8.3.x
 
