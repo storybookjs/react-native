@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
 
-interface Props {
+export interface Props {
   arrow: string;
 }
 

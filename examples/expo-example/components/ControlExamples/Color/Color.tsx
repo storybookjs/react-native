@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-interface ButtonProps {
+export interface ButtonProps {
   color: string;
 }
 

@@ -1,6 +1,6 @@
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-interface ActionButtonProps {
+export interface ActionButtonProps {
   onPress?: () => void;
   text: string;
 }
