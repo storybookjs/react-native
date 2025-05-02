@@ -1,15 +1,13 @@
 # Storybook for React Native
 
-> [!IMPORTANT]  
-> This readme is for v8, for v7 docs see the [v7.6 docs](https://github.com/storybookjs/react-native/tree/v7.6.20-stable).
+> This readme is for v9 beta, for v8 docs see the [v8.6 docs](https://github.com/storybookjs/react-native/tree/v8.6.0-stable).
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-If you are migrating from 7.6 to 8.3 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-76x-to-83x)
+If you are migrating from 8 to 9 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-8-to-9)
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> [!NOTE]  
 > `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
 
 ![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
@@ -137,6 +135,15 @@ module.exports = withStorybook(finalConfig, {
   //   host: 'localhost',
   // },
 });
+```
+
+#### Reanimated setup
+
+Make sure you have `react-native-reanimated` in your project and the plugin setup in your babel config.
+
+```js
+// babel.config.js
+plugins: ['react-native-reanimated/plugin'],
 ```
 
 ## Writing stories
@@ -376,8 +383,6 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
     storage?: Object (undefined)
         -- {getItem: (key: string) => Promise<string | null>;setItem: (key: string, value: string) => Promise<void>;}
         -- Custom storage to be used instead of AsyncStorage
-    shouldPersistSelection: Boolean (true)
-        -- Stores last selected story in your devices storage.
     onDeviceUI?: boolean;
         -- show the ondevice ui
     enableWebsockets?: boolean;
