@@ -29,18 +29,20 @@ export const getAncestorIds = memoize(1000)((data: IndexHash, id: string): strin
   getParents(id, data).map((item) => item.id)
 );
 
-export const getDescendantIds = memoize(1000)(
-  (data: IndexHash, id: string, skipLeafs: boolean): string[] => {
-    const entry = data[id];
-    const children = entry.type === 'story' || entry.type === 'docs' ? [] : entry.children;
-    return children.reduce((acc, childId) => {
-      const child = data[childId];
-      if (!child || (skipLeafs && (child.type === 'story' || child.type === 'docs'))) return acc;
-      acc.push(childId, ...getDescendantIds(data, childId, skipLeafs));
-      return acc;
-    }, []);
-  }
-);
+export const getDescendantIds = memoize(1000)((
+  data: IndexHash,
+  id: string,
+  skipLeafs: boolean
+): string[] => {
+  const entry = data[id];
+  const children = entry.type === 'story' || entry.type === 'docs' ? [] : entry.children;
+  return children.reduce((acc, childId) => {
+    const child = data[childId];
+    if (!child || (skipLeafs && (child.type === 'story' || child.type === 'docs'))) return acc;
+    acc.push(childId, ...getDescendantIds(data, childId, skipLeafs));
+    return acc;
+  }, []);
+});
 
 export function getPath(item: Item, ref: RefType): string[] {
   const parent = item.type !== 'root' && item.parent ? ref.index[item.parent] : null;

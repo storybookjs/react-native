@@ -67,7 +67,7 @@ function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts'], configP
     require.resolve(basePath);
 
     return basePath;
-  } catch (error) {}
+  } catch (_error) {}
 
   for (const ext of extensions) {
     try {
@@ -76,7 +76,7 @@ function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts'], configP
       require.resolve(filePath);
 
       return filePath;
-    } catch (error) {}
+    } catch (_error) {}
   }
 
   // attempt to resolve as a relative path for local addons
@@ -87,7 +87,7 @@ function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts'], configP
       if (extension) {
         return `${addon}/${file}`;
       }
-    } catch (error) {}
+    } catch (_error) {}
   }
 
   return null;

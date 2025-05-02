@@ -16,7 +16,6 @@ import { ExpandAllIcon } from './icon/ExpandAllIcon';
 import { Item } from './types';
 import type { ExpandAction, ExpandedState } from './hooks/useExpanded';
 import { useExpanded } from './hooks/useExpanded';
-import { getGroupStatus, statusMapping } from './util/status';
 import { createId, getAncestorIds, getDescendantIds, isStoryHoistable } from './util/tree';
 import { useSelectedNode } from './SelectedNodeProvider';
 
@@ -158,7 +157,7 @@ export const LeafNodeStyleWrapper = styled.View(({ theme }) => ({
   borderRadius: 4,
 }));
 
-export const RootNode = styled.View(({}) => ({
+export const RootNode = styled.View(() => ({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -177,7 +176,7 @@ export const RootNodeText = styled.Text(({ theme }) => ({
   textTransform: 'uppercase',
 }));
 
-const CollapseButton = styled.TouchableOpacity(({}) => ({
+const CollapseButton = styled.TouchableOpacity(() => ({
   display: 'flex',
   flexDirection: 'row',
   paddingVertical: 0,

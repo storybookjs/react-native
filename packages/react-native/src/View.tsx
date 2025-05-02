@@ -1,6 +1,6 @@
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { Channel, WebsocketTransport } from 'storybook/internal/channels';
-import Events from 'storybook/internal/core-events';
+import { SET_CURRENT_STORY, CHANNEL_CREATED } from 'storybook/internal/core-events';
 import { addons as managerAddons } from 'storybook/internal/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
@@ -188,7 +188,7 @@ export class View {
       // @ts-ignore FIXME
       this._preview.channel = channel;
       this._preview.setupListeners();
-      channel.emit(Events.CHANNEL_CREATED);
+      channel.emit(CHANNEL_CREATED);
       this._preview.ready().then(() => this._preview.onStoryIndexChanged());
     }
 
@@ -207,9 +207,9 @@ export class View {
       }),
     });
 
-    // eslint-disable-next-line consistent-this
     const self = this;
 
+    // eslint-disable-next-line react/display-name
     return () => {
       const setContext = useSetStoryContext();
       const story = useStoryContext();
@@ -230,11 +230,11 @@ export class View {
             const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
 
             const hasStoryId = storyId && typeof storyId === 'string';
-            const storyExists = hasStoryId && this._storyIdExists(storyId);
+            const storyExists = hasStoryId && self._storyIdExists(storyId);
 
-            if (storyExists && this._ready) {
+            if (storyExists && self._ready) {
               console.log(`STORYBOOK: Linking event received, navigating to story: ${storyId}`);
-              this._channel.emit(Events.SET_CURRENT_STORY, { storyId });
+              self._channel.emit(SET_CURRENT_STORY, { storyId });
             }
 
             if (hasStoryId && !storyExists) {
@@ -251,9 +251,10 @@ export class View {
       }, []);
 
       useEffect(() => {
-        this.createPreparedStoryMapping()
+        self
+          .createPreparedStoryMapping()
           .then(() => {
-            this._ready = true;
+            self._ready = true;
             setReady(true);
             return Linking.getInitialURL()
               .then((url) => {
@@ -262,7 +263,7 @@ export class View {
                   const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
 
                   const hasStoryId = storyId && typeof storyId === 'string';
-                  const storyExists = hasStoryId && this._storyIdExists(storyId);
+                  const storyExists = hasStoryId && self._storyIdExists(storyId);
 
                   if (hasStoryId && !storyExists) {
                     console.log(
@@ -312,8 +313,8 @@ export class View {
             `);
           }
 
-          if (shouldPersistSelection && !!this._storage) {
-            this._storage.setItem(STORAGE_KEY, newStory.id).catch((e) => {
+          if (shouldPersistSelection && !!self._storage) {
+            self._storage.setItem(STORAGE_KEY, newStory.id).catch((e) => {
               console.warn('storybook-log: error writing to async storage', e);
             });
           }
@@ -329,7 +330,7 @@ export class View {
           return {};
         }
 
-        return transformStoryIndexToStoriesHash(this._storyIndex, {
+        return transformStoryIndexToStoriesHash(self._storyIndex, {
           docsOptions: { docsMode: false, defaultName: '' },
           filters: {},
           status: {},

@@ -3,8 +3,8 @@ import { Notes } from './components/Notes';
 import { ComponentType, ReactElement } from 'react';
 import type { Args, StoryContextForLoaders } from 'storybook/internal/csf';
 import type { Renderer } from 'storybook/internal/types';
-export const PARAM_KEY = 'notes';
 import type { Channel } from 'storybook/internal/channels';
+export const PARAM_KEY = 'notes';
 
 export interface Selection {
   storyId: string;
