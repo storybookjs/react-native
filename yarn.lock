@@ -5653,7 +5653,6 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-expo: "npm:~53.0.2"
     jotai: "npm:^2.6.2"
-    prettier: "npm:^2.4.1"
     react: "npm:19.0.0"
     react-native: "npm:0.79.1"
     react-native-url-polyfill: "npm:^2.0.0"
@@ -15053,15 +15052,6 @@ __metadata:
   dependencies:
     fast-diff: "npm:^1.1.2"
   checksum: 10/00ce8011cf6430158d27f9c92cfea0a7699405633f7f1d4a45f07e21bf78e99895911cbcdc3853db3a824201a7c745bd49bfea8abd5fb9883e765a90f74f8392
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.4.1":
-  version: 2.8.8
-  resolution: "prettier@npm:2.8.8"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 10/00cdb6ab0281f98306cd1847425c24cbaaa48a5ff03633945ab4c701901b8e96ad558eb0777364ffc312f437af9b5a07d0f45346266e8245beaf6247b9c62b24
   languageName: node
   linkType: hard
 
