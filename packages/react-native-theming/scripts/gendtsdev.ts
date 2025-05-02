@@ -1,4 +1,4 @@
-async function run() {
+async function runFix() {
   const { writeFile } = await import('fs/promises');
   // add a string of text at the end of the dist/index.d.ts file
   console.log('creating dev dist/index.d.ts');
@@ -10,7 +10,7 @@ async function run() {
   await writeFile('dist/index.d.ts', contents);
 }
 
-run().catch((e) => {
+runFix().catch((e) => {
   console.error(e);
   process.exit(1);
 });

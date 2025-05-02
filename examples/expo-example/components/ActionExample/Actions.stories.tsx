@@ -1,16 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ActionButton } from './Actions';
+import { fn } from 'storybook/test';
 
 const meta = {
   component: ActionButton,
-  argTypes: {
-    onPress: { action: 'pressed' },
-  },
-  args: {
-    text: 'Press me!',
-    // FIXME: something is wrong with the fn() since the latest alpha
-    // onPress: fn(),
-  },
   parameters: {
     notes: `
 # Button
@@ -32,13 +25,9 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {};
-
-export const AnotherAction: Story = {
-  argTypes: {
-    onPress: { action: 'pressed a different button' },
-  },
-  play: () => {
-    console.log('hello');
+export const Basic: Story = {
+  args: {
+    text: 'Press me!',
+    onPress: fn(),
   },
 };
