@@ -236,7 +236,7 @@ export function start({
         mount: () => Promise.resolve({}),
         storyResult: null,
         T: null,
-      };
+      } as any;
     },
     prepareForDocs: (): any => {},
     showErrorDisplay: (e) => {
