@@ -10,7 +10,7 @@ If you are migrating from 8 to 9 you can find the migration guide [here](https:/
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
 > [!NOTE]  
-> `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
+> Make sure you align your storybook dependencies to the same major version or you will see broken behaviour.
 
 ![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
 
