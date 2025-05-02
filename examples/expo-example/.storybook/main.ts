@@ -1,5 +1,4 @@
 import type { StorybookConfig } from '@storybook/react-native-web-vite';
-import { join, dirname } from 'path';
 
 type ServerStorybookConfig = StorybookConfig & {
   reactNativeServerOptions: { host: string; port: number };
@@ -10,7 +9,7 @@ const main: ServerStorybookConfig = {
 
   addons: [
     // note why does this break with get absolute?
-    '@storybook/addon-react-native-server',
+    // '@storybook/addon-react-native-server',
     'storybook-addon-deep-controls',
   ],
 
