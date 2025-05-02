@@ -21,8 +21,8 @@ export function inputStyle({
     borderColor: hasError
       ? theme.color.negative
       : focused
-      ? theme.color.secondary
-      : theme.input.border,
+        ? theme.color.secondary
+        : theme.input.border,
     fontSize: theme.typography.size.s2 - 1,
     color: theme.input.color,
     paddingHorizontal: theme.input.paddingHorizontal,
@@ -57,6 +57,8 @@ const TextInputWithSwitcher = forwardRef<TextInput, TextInputProps>((props, ref)
     <TextInput ref={ref} {...props} />
   );
 });
+
+TextInputWithSwitcher.displayName = 'TextInputWithSwitcher';
 
 export const Input = styled(TextInputWithSwitcher)<{
   focused?: boolean;

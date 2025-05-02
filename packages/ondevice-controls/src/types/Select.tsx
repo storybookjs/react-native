@@ -1,6 +1,6 @@
 import { useTheme } from '@storybook/react-native-theming';
 import { Platform, View } from 'react-native';
-import SelectModal from '../components/SelectModal';
+import { SelectModal } from '../components/SelectModal';
 import { Input, inputStyle } from './common';
 import { ControlTypes } from '../sharedTypes';
 

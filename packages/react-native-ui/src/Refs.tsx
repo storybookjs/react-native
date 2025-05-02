@@ -13,70 +13,70 @@ export interface RefProps {
   setSelection: (selection: { refId: string; storyId: string }) => void;
 }
 
-const Wrapper = styled.View<{ isMain: boolean }>(({}) => ({
+const Wrapper = styled.View<{ isMain: boolean }>(() => ({
   position: 'relative',
 }));
 
-export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.memo(function Ref(
-  props
-) {
-  const {
-    index,
-    id: refId,
-    title = refId,
-    isLoading: isLoadingMain,
-    isBrowsing,
-    selectedStoryId,
-    loginUrl,
-    type,
-    expanded = true,
-    indexError,
-    previewInitialized,
-    setSelection,
-  } = props;
-  const length = useMemo(() => (index ? Object.keys(index).length : 0), [index]);
+export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.memo(
+  function Ref(props) {
+    const {
+      index,
+      id: refId,
+      title = refId,
+      isLoading: isLoadingMain,
+      isBrowsing,
+      selectedStoryId,
+      loginUrl,
+      type,
+      expanded = true,
+      indexError,
+      previewInitialized,
+      setSelection,
+    } = props;
+    const length = useMemo(() => (index ? Object.keys(index).length : 0), [index]);
 
-  const isLoadingInjected =
-    (type === 'auto-inject' && !previewInitialized) || type === 'server-checked';
-  const isLoading = isLoadingMain || isLoadingInjected || type === 'unknown';
-  const isError = !!indexError;
-  const isEmpty = !isLoading && length === 0;
-  const isAuthRequired = !!loginUrl && length === 0;
+    const isLoadingInjected =
+      (type === 'auto-inject' && !previewInitialized) || type === 'server-checked';
+    const isLoading = isLoadingMain || isLoadingInjected || type === 'unknown';
+    const isError = !!indexError;
+    const isEmpty = !isLoading && length === 0;
+    const isAuthRequired = !!loginUrl && length === 0;
 
-  const state = getStateType(isLoading, isAuthRequired, isError, isEmpty);
-  const [isExpanded, setExpanded] = useState<boolean>(expanded);
+    const state = getStateType(isLoading, isAuthRequired, isError, isEmpty);
+    const [isExpanded, setExpanded] = useState<boolean>(expanded);
 
-  useEffect(() => {
-    if (index && selectedStoryId && index[selectedStoryId]) {
-      setExpanded(true);
-    }
-  }, [setExpanded, index, selectedStoryId]);
+    useEffect(() => {
+      if (index && selectedStoryId && index[selectedStoryId]) {
+        setExpanded(true);
+      }
+    }, [setExpanded, index, selectedStoryId]);
 
-  const onSelectStoryId = useCallback(
-    (storyId: string) => {
-      setSelection({ refId, storyId });
-    },
-    [refId, setSelection]
-  );
+    const onSelectStoryId = useCallback(
+      (storyId: string) => {
+        setSelection({ refId, storyId });
+      },
+      [refId, setSelection]
+    );
 
-  return (
-    <>
-      {isExpanded && (
-        <Wrapper data-title={title} isMain={true}>
-          {state === 'ready' && (
-            <Tree
-              status={props.status}
-              isBrowsing={isBrowsing}
-              isMain={true}
-              refId={refId}
-              data={index}
-              docsMode={false}
-              selectedStoryId={selectedStoryId}
-              onSelectStoryId={onSelectStoryId}
-            />
-          )}
-        </Wrapper>
-      )}
-    </>
-  );
-});
+    return (
+      <>
+        {isExpanded && (
+          <Wrapper data-title={title} isMain={true}>
+            {state === 'ready' && (
+              <Tree
+                status={props.status}
+                isBrowsing={isBrowsing}
+                isMain={true}
+                refId={refId}
+                data={index}
+                docsMode={false}
+                selectedStoryId={selectedStoryId}
+                onSelectStoryId={onSelectStoryId}
+              />
+            )}
+          </Wrapper>
+        )}
+      </>
+    );
+  }
+);

@@ -17,17 +17,16 @@ import type {
 } from 'storybook/internal/types';
 import countBy from 'lodash/countBy.js';
 import { dedent } from 'ts-dedent';
+import isEqual from 'lodash/isEqual.js';
+import mergeWith from 'lodash/mergeWith.js';
+import { logger } from 'storybook/internal/client-logger';
+
 type ToStoriesHashOptions = {
   provider: API_Provider<API>;
   docsOptions: DocsOptions;
   filters: State['filters'];
   status: State['status'];
 };
-
-import isEqual from 'lodash/isEqual.js';
-import mergeWith from 'lodash/mergeWith.js';
-
-import { logger } from 'storybook/internal/client-logger';
 
 const merge = <TObj = any>(a: TObj, b: Partial<TObj>) =>
   mergeWith({}, a, b, (objValue: TObj, srcValue: Partial<TObj>) => {
@@ -202,16 +201,19 @@ export const transformStoryIndexToStoriesHash = (
 export const transformStoryIndexV2toV3 = (index: StoryIndexV2): StoryIndexV3 => {
   return {
     v: 3,
-    stories: Object.values(index.stories).reduce((acc, entry) => {
-      acc[entry.id] = {
-        ...entry,
-        title: entry.kind,
-        name: entry.name || entry.story,
-        importPath: entry.parameters.fileName || '',
-      };
+    stories: Object.values(index.stories).reduce(
+      (acc, entry) => {
+        acc[entry.id] = {
+          ...entry,
+          title: entry.kind,
+          name: entry.name || entry.story,
+          importPath: entry.parameters.fileName || '',
+        };
 
-      return acc;
-    }, {} as StoryIndexV3['stories']),
+        return acc;
+      },
+      {} as StoryIndexV3['stories']
+    ),
   };
 };
 
@@ -219,26 +221,29 @@ export const transformStoryIndexV3toV4 = (index: StoryIndexV3): API_PreparedStor
   const countByTitle = countBy(Object.values(index.stories), 'title');
   return {
     v: 4,
-    entries: Object.values(index.stories).reduce((acc, entry: any) => {
-      let type: IndexEntry['type'] = 'story';
-      if (
-        entry.parameters?.docsOnly ||
-        (entry.name === 'Page' && countByTitle[entry.title] === 1)
-      ) {
-        type = 'docs';
-      }
-      acc[entry.id] = {
-        type,
-        ...(type === 'docs' && { tags: ['stories-mdx'], storiesImports: [] }),
-        ...entry,
-      };
+    entries: Object.values(index.stories).reduce(
+      (acc, entry: any) => {
+        let type: IndexEntry['type'] = 'story';
+        if (
+          entry.parameters?.docsOnly ||
+          (entry.name === 'Page' && countByTitle[entry.title] === 1)
+        ) {
+          type = 'docs';
+        }
+        acc[entry.id] = {
+          type,
+          ...(type === 'docs' && { tags: ['stories-mdx'], storiesImports: [] }),
+          ...entry,
+        };
 
-      // @ts-expect-error (we're removing something that should not be there)
-      delete acc[entry.id].story;
-      // @ts-expect-error (we're removing something that should not be there)
-      delete acc[entry.id].kind;
+        // @ts-expect-error (we're removing something that should not be there)
+        delete acc[entry.id].story;
+        // @ts-expect-error (we're removing something that should not be there)
+        delete acc[entry.id].kind;
 
-      return acc;
-    }, {} as API_PreparedStoryIndex['entries']),
+        return acc;
+      },
+      {} as API_PreparedStoryIndex['entries']
+    ),
   };
 };

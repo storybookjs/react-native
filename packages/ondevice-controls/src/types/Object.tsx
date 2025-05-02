@@ -16,7 +16,8 @@ const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
   const getJsonString = useCallback(() => {
     try {
       return JSON.stringify(arg.value, null, 2);
-    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return '';
     }
   }, [arg.value]);
@@ -40,7 +41,8 @@ const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
       setCurrentValue(json);
 
       setFailed(false);
-    } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_err) {
       setFailed(true);
     }
   };

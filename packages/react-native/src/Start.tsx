@@ -1,5 +1,26 @@
 import { Platform } from 'react-native';
 
+import { addons as managerAddons } from 'storybook/internal/manager-api';
+import {
+  composeConfigs,
+  addons as previewAddons,
+  PreviewWithSelection,
+  View as PreviewView,
+  SelectionStore,
+  sortStoriesV7,
+  userOrAutoTitleFromSpecifier,
+} from 'storybook/internal/preview-api';
+import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
+// NOTE this really should be exported from preview-api, but it's not
+import { createBrowserChannel } from 'storybook/internal/channels';
+import type {
+  Addon_StorySortParameterV7,
+  NormalizedStoriesSpecifier,
+  StoryIndex,
+} from 'storybook/internal/types';
+import type { ReactRenderer } from '@storybook/react';
+import { View } from './View';
+
 // @ts-ignore
 if (Platform.OS !== 'web') {
   // We polyfill URLSearchParams for React Native since URLSearchParams.get is not implemented yet is used in storybook
@@ -29,27 +50,6 @@ globalThis.FEATURES = {
   backgrounds: false,
 };
 
-import { addons as managerAddons } from 'storybook/internal/manager-api';
-import {
-  composeConfigs,
-  addons as previewAddons,
-  PreviewWithSelection,
-  View as PreviewView,
-  SelectionStore,
-  sortStoriesV7,
-  userOrAutoTitleFromSpecifier,
-} from 'storybook/internal/preview-api';
-import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
-// NOTE this really should be exported from preview-api, but it's not
-import { createBrowserChannel } from 'storybook/internal/channels';
-import type {
-  Addon_StorySortParameterV7,
-  NormalizedStoriesSpecifier,
-  StoryIndex,
-} from 'storybook/internal/types';
-import type { ReactRenderer } from '@storybook/react';
-import { View } from './View';
-
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
   /**
@@ -68,7 +68,7 @@ export function prepareStories({
   options,
   storySort,
 }: {
-  storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
+  storyEntries: (NormalizedStoriesSpecifier & { req: any })[];
   options?: ReactNativeOptions;
   storySort?: Addon_StorySortParameterV7;
 }) {
@@ -174,10 +174,13 @@ export function prepareStories({
     Object.values(index.entries).map((entry) => entry.importPath)
   );
 
-  const sorted = sortableStories.reduce((acc, item) => {
-    acc[item.id] = item;
-    return acc;
-  }, {} as StoryIndex['entries']);
+  const sorted = sortableStories.reduce(
+    (acc, item) => {
+      acc[item.id] = item;
+      return acc;
+    },
+    {} as StoryIndex['entries']
+  );
 
   return { index: { v: 5, entries: sorted }, importMap };
 }
@@ -208,7 +211,7 @@ export function start({
   storyEntries,
   options,
 }: {
-  storyEntries: Array<NormalizedStoriesSpecifier & { req: any }>;
+  storyEntries: (NormalizedStoriesSpecifier & { req: any })[];
   annotations: any[];
   options?: ReactNativeOptions;
 }) {
@@ -302,7 +305,7 @@ export function start({
 export function updateView(
   viewInstance: View,
   annotations: any[],
-  normalizedStories: Array<NormalizedStoriesSpecifier & { req: any }>,
+  normalizedStories: (NormalizedStoriesSpecifier & { req: any })[],
   options?: ReactNativeOptions
 ) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);

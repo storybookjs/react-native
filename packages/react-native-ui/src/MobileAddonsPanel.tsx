@@ -1,6 +1,6 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { addons } from 'storybook/internal/manager-api';
-import { styled } from '@storybook/react-native-theming';
+import { styled, useTheme } from '@storybook/react-native-theming';
 import { Addon_TypesEnum } from 'storybook/internal/types';
 import { forwardRef, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Platform, StyleProp, Text, View, ViewStyle, useWindowDimensions } from 'react-native';
@@ -12,7 +12,6 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useTheme } from '@storybook/react-native-theming';
 import { IconButton } from './IconButton';
 import { CloseIcon } from './icon/CloseIcon';
 import { useStyle } from './util/useStyle';
@@ -107,6 +106,8 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
     );
   }
 );
+
+MobileAddonsPanel.displayName = 'MobileAddonsPanel';
 
 const addonsTabsContainerStyle = {
   flex: 1,

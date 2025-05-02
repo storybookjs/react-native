@@ -6,5 +6,6 @@ import '@emotion/react';
 declare module '@emotion/react' {
   type StorybookTheme = import('./theme').StorybookTheme;
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   export interface Theme extends StorybookTheme {}
 }
