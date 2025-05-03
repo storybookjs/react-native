@@ -1,2 +1,4 @@
 .yarn
 dist/
+examples/expo-example/.expo
+examples/expo-example/.rnstorybook/storybook.requires.ts

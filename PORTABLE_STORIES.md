@@ -76,13 +76,13 @@ An object where the keys are the names of the stories and the values are the com
 
 Additionally, the composed story will have the following properties:
 
-| Property   | Type                                      | Description                  |
-| ---------- | ----------------------------------------- | ---------------------------- |
-| storyName  | `string`                                  | The story's name             |
-| args       | `Record<string, any>`                     | The story's args             |
-| argTypes   | `ArgType`                                 | The story's argTypes         |
-| id         | `string`                                  | The story's id               |
-| parameters | `Record<string, any>`                     | The story's parameters       |
+| Property   | Type                  | Description            |
+| ---------- | --------------------- | ---------------------- |
+| storyName  | `string`              | The story's name       |
+| args       | `Record<string, any>` | The story's args       |
+| argTypes   | `ArgType`             | The story's argTypes   |
+| id         | `string`              | The story's id         |
+| parameters | `Record<string, any>` | The story's parameters |
 
 ## composeStory
 
@@ -177,7 +177,6 @@ import * as previewAnnotations from './.storybook/preview';
 
 setProjectAnnotations([previewAnnotations, addonAnnotations]);
 ```
-
 
 > **Note:**
 > Sometimes a story can require an addon's [decorator](https://storybook.js.org/docs/writing-stories/decorators) or [loader](https://storybook.js.org/docs/writing-stories/loaders) to render properly. For example, an addon can apply a decorator that wraps your story in the necessary router context. In this case, you must include that addon's `preview` export in the project annotations set. See `addonAnnotations` in the example above.
