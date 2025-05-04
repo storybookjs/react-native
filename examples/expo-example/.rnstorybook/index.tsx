@@ -29,6 +29,14 @@ const StorybookUIRoot = view.getStorybookUI({
       } ,
     },
   }, */
+  // CustomUIComponent: ({ children, setStory, story, storyHash }) => {
+  //   return (
+  //     <SafeAreaView style={{ flex: 1 }}>
+  //       <Text>Custom UI</Text>
+  //       {children}
+  //     </SafeAreaView>
+  //   );
+  // },
 });
 
 const StorybookUI = () => {
