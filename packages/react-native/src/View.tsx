@@ -4,7 +4,7 @@ import { SET_CURRENT_STORY, CHANNEL_CREATED } from 'storybook/internal/core-even
 import { addons as managerAddons } from 'storybook/internal/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
-import { StoryContext, toId } from '@storybook/csf';
+import { Args, StoryContext, toId } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
 import {
@@ -15,7 +15,7 @@ import {
 } from '@storybook/react-native-ui';
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
-import { useEffect, useMemo, useReducer, useState } from 'react';
+import { ReactElement, useEffect, useMemo, useReducer, useState } from 'react';
 import {
   ActivityIndicator,
   Linking,
@@ -73,6 +73,12 @@ export type Params = {
   shouldPersistSelection?: boolean;
   theme: ThemePartial;
   storage?: Storage;
+  CustomUIComponent?: (props: {
+    story: StoryContext<ReactRenderer, Args>;
+    storyHash: API_IndexHash;
+    setStory: (storyId: string) => void;
+    children: ReactElement;
+  }) => ReactElement;
 };
 
 export class View {
@@ -174,6 +180,7 @@ export class View {
       onDeviceUI = true,
       enableWebsockets = false,
       storage,
+      CustomUIComponent,
     } = params;
 
     this._storage = storage;
@@ -375,6 +382,18 @@ export class View {
               </GestureHandlerRootView>
             </SafeAreaProvider>
           </ThemeProvider>
+        );
+      } else if (CustomUIComponent) {
+        return (
+          <CustomUIComponent
+            story={story}
+            storyHash={storyHash}
+            setStory={(newStoryId) =>
+              self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
+            }
+          >
+            <StoryView />
+          </CustomUIComponent>
         );
       } else {
         return <StoryView />;
