@@ -77,6 +77,8 @@ export type Params = {
     story: StoryContext<ReactRenderer, Args>;
     storyHash: API_IndexHash;
     setStory: (storyId: string) => void;
+    storage: Storage;
+    theme: Theme;
     children: ReactElement;
   }) => ReactElement;
 };
@@ -373,6 +375,7 @@ export class View {
                   {/* @ts-ignore something weird with story type */}
                   <StorageProvider storage={storage}>
                     <LayoutProvider>
+                      {/* @ts-ignore something weird with story type */}
                       <Layout storyHash={storyHash} story={story}>
                         <StoryView />
                       </Layout>
@@ -391,6 +394,8 @@ export class View {
             setStory={(newStoryId) =>
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }
+            storage={storage}
+            theme={appliedTheme as Theme}
           >
             <StoryView />
           </CustomUIComponent>
