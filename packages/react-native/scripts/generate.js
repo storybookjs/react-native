@@ -13,7 +13,7 @@ const path = require('path');
 
 const cwd = process.cwd();
 
-function generate({ configPath, absolute = false, useJs = false }) {
+function generate({ configPath, /* absolute = false, */ useJs = false, docTools = true }) {
   const storybookRequiresLocation = path.resolve(
     cwd,
     configPath,
@@ -63,9 +63,13 @@ function generate({ configPath, absolute = false, useJs = false }) {
     }
   }
 
-  const docTools = 'require("@storybook/react-native/preview")';
+  const docToolsAnnotation = 'require("@storybook/react-native/preview")';
 
-  const enhancers = [docTools];
+  const enhancers = [];
+
+  if (docTools) {
+    enhancers.push(docToolsAnnotation);
+  }
 
   for (const addon of main.addons) {
     const previewPath = resolveAddonFile(

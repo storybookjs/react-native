@@ -1,8 +1,8 @@
 import * as path from 'path';
-
 import { generate } from '../../scripts/generate';
 import { WebSocketServer, WebSocket, Data } from 'ws';
 import type { MetroConfig } from 'metro-config';
+
 /**
  * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
  */
@@ -46,6 +46,11 @@ interface WithStorybookOptions {
    * If enabled is false and onDisabledRemoveStorybook is true, we will attempt to remove storybook from the js bundle.
    */
   onDisabledRemoveStorybook?: boolean;
+
+  /**
+   * Whether to include doc tools in the storybook.requires file. Defaults to true.
+   */
+  docTools?: boolean;
 }
 
 type ResolveRequestFunction = (context: any, moduleName: string, platform: string | null) => any;
@@ -71,6 +76,7 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  *   configPath: path.resolve(projectRoot, './.rnstorybook'),
  *   websockets: { port: 7007, host: 'localhost' },
  *   useJs: false,
+ *   docTools: true,
  *   onDisabledRemoveStorybook: true,
  * });
  */
@@ -80,6 +86,7 @@ function withStorybook(
     enabled: true,
     useJs: false,
     onDisabledRemoveStorybook: false,
+    docTools: true,
   }
 ): MetroConfig {
   const {
@@ -88,6 +95,7 @@ function withStorybook(
     websockets,
     useJs = false,
     onDisabledRemoveStorybook = false,
+    docTools = true,
   } = options;
 
   if (!enabled) {
@@ -142,6 +150,7 @@ function withStorybook(
   generate({
     configPath: configPath ?? path.resolve(process.cwd(), './.rnstorybook'),
     useJs,
+    docTools,
   });
 
   return {
@@ -164,7 +173,6 @@ function withStorybook(
           ? {
               ...context,
               unstable_enablePackageExports: true,
-              unstable_conditionNames: ['import'],
             }
           : context;
 
