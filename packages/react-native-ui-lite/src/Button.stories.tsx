@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { View } from 'react-native';
 
 import { Button } from './Button';
-import { FaceHappyIcon } from './icon/FaceHappyIcon';
+import { FaceHappyIcon } from './icon/iconDataUris';
 
 const meta = {
   title: 'UI/Button',

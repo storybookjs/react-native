@@ -1,93 +1,73 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { forwardRef, useImperativeHandle, useMemo, useState } from 'react';
 import {
+  KeyboardAvoidingView,
   Modal,
-  // Platform,
-  // Platform,
+  Pressable,
+  SafeAreaView,
   ScrollView,
   StyleProp,
   Text,
-  // useWindowDimensions,
   View,
   ViewStyle,
 } from 'react-native';
 import { addons } from 'storybook/internal/manager-api';
 import { Addon_TypesEnum } from 'storybook/internal/types';
 import { IconButton } from './IconButton';
-import { useStyle } from './util/useStyle';
 import { CloseIcon } from './icon/iconDataUris';
 
 export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
 }
 
-const contentStyle = {
-  flex: 1,
-} satisfies StyleProp<ViewStyle>;
+export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
+  ({ storyId }, ref) => {
+    const theme = useTheme();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-// export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
-//   ({ storyId }, ref) => {
-//     const theme = useTheme();
-//     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    useImperativeHandle(ref, () => ({
+      setAddonsPanelOpen: (open: boolean) => {
+        if (open) {
+          setMobileMenuOpen(true);
+        } else {
+          setMobileMenuOpen(false);
+        }
+      },
+    }));
 
-//     // bringing in animated keyboard disables android resizing
-//     // TODO replicate functionality without this
+    return (
+      <Modal
+        visible={mobileMenuOpen}
+        onRequestClose={() => setMobileMenuOpen(false)}
+        transparent
+        animationType="slide"
+      >
+        <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
+          <SafeAreaView style={{ justifyContent: 'flex-end', flex: 1 }}>
+            <View
+              style={{ flex: 1, borderBottomColor: theme.appBorderColor, borderBottomWidth: 1 }}
+            >
+              <Pressable style={{ flex: 1 }} onPress={() => setMobileMenuOpen(false)}></Pressable>
+            </View>
 
-//     useImperativeHandle(ref, () => ({
-//       setAddonsPanelOpen: (open: boolean) => {
-//         if (open) {
-//           setMobileMenuOpen(true);
-//         } else {
-//           setMobileMenuOpen(false);
-//         }
-//       },
-//     }));
+            <View
+              style={{ height: '50%', backgroundColor: theme.background.content, paddingTop: 10 }}
+            >
+              <AddonsTabs
+                onClose={() => {
+                  setMobileMenuOpen(false);
+                }}
+                storyId={storyId}
+              />
+            </View>
+          </SafeAreaView>
+        </KeyboardAvoidingView>
+      </Modal>
+    );
+  }
+);
 
-//     // const { height } = useWindowDimensions();
-
-//     // const adjustedBottomSheetSize = useAnimatedStyle(() => {
-//     //   const extraPadding = Platform.OS === 'android' ? 32 : 16;
-//     //   return {
-//     //     maxHeight: height - animatedPosition.value - insets.bottom - extraPadding,
-//     //   };
-//     // }, [animatedPosition, height, insets.bottom]);
-
-//     const backgroundStyle = useStyle(() => {
-//       return {
-//         borderRadius: 0,
-//         borderTopColor: theme.appBorderColor,
-//         borderTopWidth: 1,
-//         backgroundColor: theme.background.content,
-//       };
-//     });
-
-//     // const handleIndicatorStyle = useStyle(() => {
-//     //   return {
-//     //     backgroundColor: theme.textMutedColor,
-//     //   };
-//     // });
-
-//     return (
-//       <Modal
-//         visible={mobileMenuOpen}
-//         onRequestClose={() => setMobileMenuOpen(false)}
-//         transparent
-//         animationType="slide"
-//       >
-//         <View style={[contentStyle, backgroundStyle]}>
-//           <AddonsTabs
-//             onClose={() => {
-//               setMobileMenuOpen(false);
-//             }}
-//             storyId={storyId}
-//           />
-//         </View>
-//       </Modal>
-//     );
-//   }
-// );
-
-// MobileAddonsPanel.displayName = 'MobileAddonsPanel';
+MobileAddonsPanel.displayName = 'MobileAddonsPanel';
 
 const addonsTabsContainerStyle = {
   flex: 1,

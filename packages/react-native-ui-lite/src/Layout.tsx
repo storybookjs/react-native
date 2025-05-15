@@ -7,16 +7,12 @@ import { ReactNode, useState, useCallback, useRef } from 'react';
 import { SafeAreaView, ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { IconButton } from './IconButton';
 import { LayoutProvider, useLayout } from './LayoutProvider';
-import { AddonsTabs, /* MobileAddonsPanel */ MobileAddonsPanelRef } from './MobileAddonsPanel';
+import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { Sidebar } from './Sidebar';
 import { StorybookLogo } from './StorybookLogo';
 import { DEFAULT_REF_ID } from './constants';
 import { useStoreBooleanState } from './hooks/useStoreState';
-// import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
-// import { CloseFullscreenIcon } from './icon/CloseFullscreenIcon';
-// import { FullscreenIcon } from './icon/FullscreenIcon';
-// import { MenuIcon } from './icon/MenuIcon';
 import { useStyle } from './util/useStyle';
 import { Storage, StorageProvider } from './StorageProvider';
 import { SelectedNodeProvider } from './SelectedNodeProvider';
@@ -166,6 +162,7 @@ export const Layout = ({
   );
 
   const mobileMenuDrawerRef = useRef<MobileMenuDrawerRef>(null);
+  const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
 
   const setSelection = useCallback(({ storyId: newStoryId }: { storyId: string }) => {
     const channel = addons.getChannel();
@@ -250,7 +247,7 @@ export const Layout = ({
 
             <IconButton
               testID="mobile-addons-button"
-              // onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
+              onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
               Icon={BottomBarToggleIcon}
             />
           </Nav>
@@ -278,7 +275,7 @@ export const Layout = ({
         </SelectedNodeProvider>
       )}
 
-      {/* {isDesktop ? null : <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />} */}
+      {isDesktop ? null : <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />}
     </SafeAreaView>
   );
 };
