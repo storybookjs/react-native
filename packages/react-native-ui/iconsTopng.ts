@@ -7,7 +7,10 @@ import { execSync } from 'child_process';
 const ICON_DIR = path.resolve(__dirname, 'src/icon');
 const OUTPUT_DIR = path.resolve(__dirname, 'png-icons');
 const SVG_OUTPUT_DIR = path.resolve(__dirname, 'svg-icons');
-const DATA_URI_OUTPUT_FILE = path.resolve(__dirname, '../react-native-ui-lite/src/icon/iconDataUris.tsx');
+const DATA_URI_OUTPUT_FILE = path.resolve(
+  __dirname,
+  '../react-native-ui-lite/src/icon/iconDataUris.tsx'
+);
 
 // Create output directories if they don't exist
 if (!fs.existsSync(OUTPUT_DIR)) {
@@ -171,9 +174,9 @@ interface IconSizeMap {
 // Special cases for icons with non-standard dimensions
 const iconSizeMap: IconSizeMap = {
   // Using the original dimensions with appropriate scale factor
-  'Logo': { width: 200, height: 40, scale: 1 }, // Use scale 1 for logos to avoid excessive padding
-  'DarkLogo': { width: 200, height: 40, scale: 1 }, // Use scale 1 for logos to avoid excessive padding
-  'CollapseIcon': { width: 8, height: 8, scale: 8 } // Increased scaling for tiny icon for better visibility
+  Logo: { width: 200, height: 40, scale: 1 }, // Use scale 1 for logos to avoid excessive padding
+  DarkLogo: { width: 200, height: 40, scale: 1 }, // Use scale 1 for logos to avoid excessive padding
+  CollapseIcon: { width: 8, height: 8, scale: 8 }, // Increased scaling for tiny icon for better visibility
 };
 
 // Default scale factor for all icons (2x)
@@ -235,7 +238,7 @@ async function generateSVGs(): Promise<Map<string, string>> {
 
 // Interface for data URIs collection
 interface IconDataURIs {
-  [iconName: string]: string;  // Base64 PNG data
+  [iconName: string]: string; // Base64 PNG data
 }
 
 // Interface for default icon sizes
@@ -246,30 +249,30 @@ interface IconDefaultSizes {
 // Function to extract default sizes from icon components
 function extractDefaultSizes(): IconDefaultSizes {
   const defaultSizes: IconDefaultSizes = {};
-  
+
   // Get all .tsx files in the icon directory
-  const files = fs.readdirSync(ICON_DIR).filter(file => file.endsWith('.tsx'));
-  
+  const files = fs.readdirSync(ICON_DIR).filter((file) => file.endsWith('.tsx'));
+
   for (const file of files) {
     const iconPath = path.join(ICON_DIR, file);
     const iconName = path.basename(file, '.tsx');
     const componentCode = fs.readFileSync(iconPath, 'utf8');
-    
+
     // Extract default width and height from component props
     let width = 24;
     let height = 24;
-    
+
     // Try to match width = X pattern
     const widthMatch = componentCode.match(/width\s*=\s*{?\s*(\d+)\s*}?/i);
     if (widthMatch) width = parseInt(widthMatch[1]);
-    
+
     // Try to match height = X pattern
     const heightMatch = componentCode.match(/height\s*=\s*{?\s*(\d+)\s*}?/i);
     if (heightMatch) height = parseInt(heightMatch[1]);
-    
+
     defaultSizes[iconName] = { width, height };
   }
-  
+
   return defaultSizes;
 }
 
@@ -334,11 +337,11 @@ async function convertWithSharp() {
           pngBuffer = await sharp(svgBuffer)
             .resize(finalWidth, finalHeight, {
               fit: 'contain',
-              background: { r: 0, g: 0, b: 0, alpha: 0 }
+              background: { r: 0, g: 0, b: 0, alpha: 0 },
             })
             .png()
             .toBuffer();
-            
+
           // Save to file
           fs.writeFileSync(outputPath, pngBuffer);
         }
@@ -389,11 +392,12 @@ async function generateDataURIsFile(dataURIs: IconDataURIs): Promise<void> {
   try {
     // Get default sizes from original icon components
     const defaultSizes = extractDefaultSizes();
-    
+
     // Create components for each icon
-    const iconComponents = Object.keys(dataURIs).map(iconName => {
-      const defaultSize = defaultSizes[iconName] || { width: 24, height: 24 };
-      return `
+    const iconComponents = Object.keys(dataURIs)
+      .map((iconName) => {
+        const defaultSize = defaultSizes[iconName] || { width: 24, height: 24 };
+        return `
 export function ${iconName}({
   color,
   width = ${defaultSize.width},
@@ -412,7 +416,8 @@ export function ${iconName}({
     />
   );
 }`;
-    }).join('\n');
+      })
+      .join('\n');
 
     // Create the TypeScript content with React components
     const tsContent = `/**
