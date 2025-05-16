@@ -173,6 +173,7 @@ function withStorybook(
           ? {
               ...context,
               unstable_enablePackageExports: true,
+              unstable_conditionNames: ['import'],
             }
           : context;
 

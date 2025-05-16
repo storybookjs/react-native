@@ -666,6 +666,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/plugin-transform-class-static-block@npm:^7.27.1":
+  version: 7.27.1
+  resolution: "@babel/plugin-transform-class-static-block@npm:7.27.1"
+  dependencies:
+    "@babel/helper-create-class-features-plugin": "npm:^7.27.1"
+    "@babel/helper-plugin-utils": "npm:^7.27.1"
+  peerDependencies:
+    "@babel/core": ^7.12.0
+  checksum: 10/2d49de0f5ffc66ae873be1d8c3bf4d22e51889cc779d534e4dbda0f91e36907479e5c650b209fcfc80f922a6c3c2d76c905fc2f5dc78cc9a836f8c31b10686c4
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-transform-classes@npm:^7.0.0-0, @babel/plugin-transform-classes@npm:^7.25.4":
   version: 7.27.1
   resolution: "@babel/plugin-transform-classes@npm:7.27.1"
@@ -8123,6 +8135,7 @@ __metadata:
   resolution: "expo-example@workspace:examples/expo-example"
   dependencies:
     "@babel/core": "npm:^7.26.0"
+    "@babel/plugin-transform-class-static-block": "npm:^7.27.1"
     "@expo/metro-runtime": "npm:~5.0.4"
     "@gorhom/bottom-sheet": "npm:^5.0.6"
     "@react-native-async-storage/async-storage": "npm:2.1.2"
