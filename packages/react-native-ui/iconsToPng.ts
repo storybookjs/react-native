@@ -264,7 +264,8 @@ function checkThemeUsage(): ThemeUsage {
     const componentCode = fs.readFileSync(iconPath, 'utf8');
 
     // Check if the component uses theming
-    const usesTheme = componentCode.includes('useTheme') ||
+    const usesTheme =
+      componentCode.includes('useTheme') ||
       componentCode.includes('theme.color') ||
       componentCode.includes('theme.') ||
       componentCode.includes('@storybook/react-native-theming');
@@ -317,8 +318,8 @@ async function convertWithSharp() {
 
     // Process each SVG
     for (const [iconName, originalSvgPath] of svgPaths.entries()) {
-    // Create a mutable copy of the path in case we need to use a fixed version
-    let svgPath = originalSvgPath;
+      // Create a mutable copy of the path in case we need to use a fixed version
+      let svgPath = originalSvgPath;
       console.log(`Converting ${iconName} to PNGs...`);
 
       // Read the SVG file
@@ -327,10 +328,10 @@ async function convertWithSharp() {
       // Create PNG at the optimal size
       // Determine the correct dimensions based on the icon
       // Use a larger size for Logo and DarkLogo
-      const iconSize = (iconName === 'Logo' || iconName === 'DarkLogo') ? 200 : SIZE;
+      const iconSize = iconName === 'Logo' || iconName === 'DarkLogo' ? 200 : SIZE;
       const { width, height } = getIconSize(iconName, iconSize);
       const outputPath = path.join(OUTPUT_DIR, `${iconName}.png`);
-      
+
       // For Logo, use the fixed SVG file
       if (iconName === 'Logo') {
         const fixedSvgPath = path.join(SVG_OUTPUT_DIR, 'Logo-fixed.svg');
@@ -373,34 +374,34 @@ async function convertWithSharp() {
           // 2. Then downscale to the final size with high-quality settings
           const upscaledWidth = finalWidth * 2;
           const upscaledHeight = finalHeight * 2;
-          
+
           // Step 1: Create higher resolution version first
           const upscaledBuffer = await sharp(svgBuffer)
             .resize(upscaledWidth, upscaledHeight, {
               fit: 'contain',
-              background: { r: 0, g: 0, b: 0, alpha: 0 }
+              background: { r: 0, g: 0, b: 0, alpha: 0 },
             })
-            .png({ 
+            .png({
               compressionLevel: 0, // No compression for interim step
-              quality: 100
+              quality: 100,
             })
             .toBuffer();
-            
+
           // Step 2: Downscale with high-quality settings
           pngBuffer = await sharp(upscaledBuffer)
             .resize(finalWidth, finalHeight, {
               fit: 'inside',
-              kernel: 'lanczos3',  // Highest quality resampling
-              background: { r: 0, g: 0, b: 0, alpha: 0 }
+              kernel: 'lanczos3', // Highest quality resampling
+              background: { r: 0, g: 0, b: 0, alpha: 0 },
             })
-            .png({ 
-              compressionLevel: 4,  // Balance between quality and size
+            .png({
+              compressionLevel: 4, // Balance between quality and size
               adaptiveFiltering: true,
-              palette: false,       // Avoid color palette optimization
-              quality: 100
+              palette: false, // Avoid color palette optimization
+              quality: 100,
             })
             .toBuffer();
-          
+
           // Save to file
           fs.writeFileSync(outputPath, pngBuffer);
         } else {
@@ -411,7 +412,7 @@ async function convertWithSharp() {
           pngBuffer = await sharp(svgBuffer)
             .resize(finalWidth, finalHeight, {
               fit: 'contain',
-              background: { r: 0, g: 0, b: 0, alpha: 0 } // Transparent background
+              background: { r: 0, g: 0, b: 0, alpha: 0 }, // Transparent background
             })
             .png({ quality: 100 }) // Use maximum quality for PNG to avoid artifacts
             .toBuffer();
@@ -454,13 +455,14 @@ async function generateDataURIsFile(dataURIs: IconDataURIs): Promise<void> {
     const themeUsage = checkThemeUsage();
 
     // Create components for each icon
-    const iconComponents = Object.keys(dataURIs).map(iconName => {
-      const defaultSize = defaultSizes[iconName] || { width: 24, height: 24 };
-      const usesTheme = themeUsage[iconName] || false;
+    const iconComponents = Object.keys(dataURIs)
+      .map((iconName) => {
+        const defaultSize = defaultSizes[iconName] || { width: 24, height: 24 };
+        const usesTheme = themeUsage[iconName] || false;
 
-      // Different component templates based on whether the original used theming
-      if (usesTheme) {
-        return `
+        // Different component templates based on whether the original used theming
+        if (usesTheme) {
+          return `
 export function ${iconName}({
   color,
   width = ${defaultSize.width},
@@ -486,8 +488,8 @@ export function ${iconName}({
     />
   );
 }`;
-      } else {
-        return `
+        } else {
+          return `
 export function ${iconName}({
   color,
   width = ${defaultSize.width},
@@ -506,8 +508,9 @@ export function ${iconName}({
     />
   );
 }`;
-      }
-    }).join('\n');
+        }
+      })
+      .join('\n');
 
     // Create the TypeScript content with React components
     const tsContent = `/**
