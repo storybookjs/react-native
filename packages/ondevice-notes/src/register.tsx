@@ -1,8 +1,9 @@
 import { type API, addons, types } from 'storybook/internal/manager-api';
 import { Notes } from './components/Notes';
-import { ComponentType, ReactElement } from 'react';
-import type { Args, StoryContextForLoaders } from 'storybook/internal/csf';
-import type { Renderer } from 'storybook/internal/types';
+
+import type { Args, StoryContext } from '@storybook/csf';
+import type { ReactRenderer } from '@storybook/react';
+
 import type { Channel } from 'storybook/internal/channels';
 export const PARAM_KEY = 'notes';
 
@@ -11,12 +12,7 @@ export interface Selection {
   viewMode: 'story';
 }
 
-export interface ReactNativeFramework extends Renderer {
-  component: ComponentType<any>;
-  storyResult: ReactElement<unknown>;
-}
-
-export type StoryFromId = Omit<StoryContextForLoaders<ReactNativeFramework, Args>, 'viewMode'>;
+export type StoryFromId = StoryContext<ReactRenderer, Args>;
 
 type ApiStore = {
   fromId: (id: any) => StoryFromId;

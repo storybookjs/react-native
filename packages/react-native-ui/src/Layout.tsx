@@ -1,6 +1,7 @@
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons } from 'storybook/internal/manager-api';
-import type { API_IndexHash, Args, StoryContext } from 'storybook/internal/types';
+import type { API_IndexHash } from 'storybook/internal/types';
+import type { Args, StoryContext } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { ReactNode, useRef, useState, useCallback } from 'react';

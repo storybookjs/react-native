@@ -1,9 +1,10 @@
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons } from 'storybook/internal/manager-api';
-import { type API_IndexHash, type Args, type StoryContext } from 'storybook/internal/types';
+import { type API_IndexHash } from 'storybook/internal/types';
+import type { Args, StoryContext } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, ThemeProvider, useTheme, Theme } from '@storybook/react-native-theming';
-import { ReactNode, useState, useCallback, useRef } from 'react';
+import { ReactNode, useState, useCallback, useRef, ReactElement } from 'react';
 import { SafeAreaView, ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { IconButton } from './IconButton';
 import { LayoutProvider, useLayout } from './LayoutProvider';
@@ -63,7 +64,7 @@ export const LiteUI = ({
   storyHash: API_IndexHash | undefined;
   story?: StoryContext<ReactRenderer, Args>;
   children: ReactNode | ReactNode[];
-}) => (
+}): ReactElement => (
   <>
     <ThemeProvider theme={theme}>
       {/* @ts-ignore something weird with story type */}

@@ -74,7 +74,7 @@ export type Params = {
   theme: ThemePartial;
   storage?: Storage;
   CustomUIComponent?: (props: {
-    story: StoryContext<ReactRenderer, Args>;
+    story?: StoryContext<ReactRenderer, Args>;
     storyHash: API_IndexHash;
     setStory: (storyId: string) => void;
     storage: Storage;

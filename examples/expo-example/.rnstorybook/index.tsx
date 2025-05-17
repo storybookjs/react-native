@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { theme, ThemeProvider } from '@storybook/react-native-theming';
-// import { LiteUI } from '@storybook/react-native-ui-lite';
+import { LiteUI } from '@storybook/react-native-ui-lite';
 import { SafeAreaView, StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { view } from './storybook.requires';
@@ -31,7 +31,7 @@ const StorybookUIRoot = view.getStorybookUI({
     },
   }, */
 
-  // CustomUIComponent: LiteUI,
+  CustomUIComponent: LiteUI,
 });
 
 const StorybookUI = () => {
