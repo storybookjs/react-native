@@ -246,6 +246,35 @@ interface IconDefaultSizes {
   [iconName: string]: { width: number; height: number };
 }
 
+// Interface for theme usage in components
+interface ThemeUsage {
+  [iconName: string]: boolean;
+}
+
+// Function to check if component uses theme
+function checkThemeUsage(): ThemeUsage {
+  const themeUsage: ThemeUsage = {};
+
+  // Get all .tsx files in the icon directory
+  const files = fs.readdirSync(ICON_DIR).filter((file) => file.endsWith('.tsx'));
+
+  for (const file of files) {
+    const iconPath = path.join(ICON_DIR, file);
+    const iconName = path.basename(file, '.tsx');
+    const componentCode = fs.readFileSync(iconPath, 'utf8');
+
+    // Check if the component uses theming
+    const usesTheme = componentCode.includes('useTheme') ||
+      componentCode.includes('theme.color') ||
+      componentCode.includes('theme.') ||
+      componentCode.includes('@storybook/react-native-theming');
+
+    themeUsage[iconName] = usesTheme;
+  }
+
+  return themeUsage;
+}
+
 // Function to extract default sizes from icon components
 function extractDefaultSizes(): IconDefaultSizes {
   const defaultSizes: IconDefaultSizes = {};
@@ -278,12 +307,6 @@ function extractDefaultSizes(): IconDefaultSizes {
 
 // Convert SVG to PNG using sharp and generate data URIs
 async function convertWithSharp() {
-  // Skip dependency check as we've installed it manually
-  // if (!ensureDependencies()) {
-  //   console.error('Required dependencies could not be installed. Exiting.');
-  //   return;
-  // }
-
   try {
     // Generate SVGs from component files
     const svgPaths = await generateSVGs();
@@ -347,16 +370,16 @@ async function convertWithSharp() {
         }
         // For all other icons, use appropriate scaling while preserving aspect ratio
         else {
-          // Scale up to 4x for high quality (384px max dimension)
+          // Scale up to appropriate quality (384px max dimension)
           finalWidth = Math.min(384, finalWidth);
           finalHeight = Math.min(384, finalHeight);
 
           pngBuffer = await sharp(svgBuffer)
             .resize(finalWidth, finalHeight, {
               fit: 'contain',
-              background: { r: 0, g: 0, b: 0, alpha: 0 }, // Transparent background
+              background: { r: 0, g: 0, b: 0, alpha: 0 } // Transparent background
             })
-            .png()
+            .png({ quality: 100 }) // Use maximum quality for PNG to avoid artifacts
             .toBuffer();
 
           // Save to file
@@ -387,16 +410,49 @@ async function convertWithSharp() {
   }
 }
 
-// Generate TypeScript file with data URIs and React components
+// Function to generate TypeScript file with data URIs and React components
 async function generateDataURIsFile(dataURIs: IconDataURIs): Promise<void> {
   try {
     // Get default sizes from original icon components
     const defaultSizes = extractDefaultSizes();
 
+    // Get theme usage information
+    const themeUsage = checkThemeUsage();
+
     // Create components for each icon
-    const iconComponents = Object.keys(dataURIs)
-      .map((iconName) => {
-        const defaultSize = defaultSizes[iconName] || { width: 24, height: 24 };
+    const iconComponents = Object.keys(dataURIs).map(iconName => {
+      const defaultSize = defaultSizes[iconName] || { width: 24, height: 24 };
+      const usesTheme = themeUsage[iconName] || false;
+
+      // Different component templates based on whether the original used theming
+      if (usesTheme) {
+        return `
+export function ${iconName}({
+  color,
+  width = ${defaultSize.width},
+  height = ${defaultSize.height},
+  size,
+}: {
+  color?: string;
+  width?: number;
+  height?: number;
+  size?: number;
+}) {
+  const theme = useTheme();
+
+  // Use theme color if no specific color provided
+  const fillColor = useMemo(() => {
+    return color ?? theme.color.defaultText;
+  }, [color, theme.color.defaultText]);
+
+  return (
+    <Image
+      source={{ uri: getIconDataURI('${iconName}') }}
+      style={{ width: size || width, height: size || height, tintColor: fillColor }}
+    />
+  );
+}`;
+      } else {
         return `
 export function ${iconName}({
   color,
@@ -416,8 +472,8 @@ export function ${iconName}({
     />
   );
 }`;
-      })
-      .join('\n');
+      }
+    }).join('\n');
 
     // Create the TypeScript content with React components
     const tsContent = `/**
@@ -425,7 +481,9 @@ export function ${iconName}({
  * Generated on: ${new Date().toISOString()}
  * Do not modify manually
  */
+import { useMemo } from 'react';
 import { Image } from 'react-native';
+import { useTheme } from '@storybook/react-native-theming';
 
 // Icon data URIs for React Native Image component
 export interface IconDataURIs {
