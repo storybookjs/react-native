@@ -14,7 +14,7 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
   enableWebsockets: false,
-  onDeviceUI: !isScreenshotTesting,
+  // onDeviceUI: !isScreenshotTesting,
   // host: '192.x.x.x',
   // port: 7007,
 
@@ -31,6 +31,7 @@ const StorybookUIRoot = view.getStorybookUI({
     },
   }, */
 
+  onDeviceUI: false,
   CustomUIComponent: LiteUI,
 });
 

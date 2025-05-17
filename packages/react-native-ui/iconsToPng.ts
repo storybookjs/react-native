@@ -174,8 +174,8 @@ interface IconSizeMap {
 // Special cases for icons with non-standard dimensions
 const iconSizeMap: IconSizeMap = {
   // Using the original dimensions with appropriate scale factor
-  Logo: { width: 200, height: 40, scale: 1 }, // Use scale 1 for logos to avoid excessive padding
-  DarkLogo: { width: 200, height: 40, scale: 1 }, // Use scale 1 for logos to avoid excessive padding
+  Logo: { width: 300, height: 60, scale: 2 }, // Increased size for Logo
+  DarkLogo: { width: 200, height: 40, scale: 1 }, // DarkLogo works fine as is
   CollapseIcon: { width: 8, height: 8, scale: 8 }, // Increased scaling for tiny icon for better visibility
 };
 
@@ -304,8 +304,6 @@ function extractDefaultSizes(): IconDefaultSizes {
 
   return defaultSizes;
 }
-
-// Convert SVG to PNG using sharp and generate data URIs
 async function convertWithSharp() {
   try {
     // Generate SVGs from component files
@@ -318,16 +316,30 @@ async function convertWithSharp() {
     const dataURIs: IconDataURIs = {};
 
     // Process each SVG
-    for (const [iconName, svgPath] of svgPaths.entries()) {
+    for (const [iconName, originalSvgPath] of svgPaths.entries()) {
+    // Create a mutable copy of the path in case we need to use a fixed version
+    let svgPath = originalSvgPath;
       console.log(`Converting ${iconName} to PNGs...`);
 
       // Read the SVG file
-      const svgBuffer = fs.readFileSync(svgPath);
+      let svgBuffer = fs.readFileSync(svgPath);
 
       // Create PNG at the optimal size
       // Determine the correct dimensions based on the icon
-      const { width, height } = getIconSize(iconName, SIZE);
+      // Use a larger size for Logo and DarkLogo
+      const iconSize = (iconName === 'Logo' || iconName === 'DarkLogo') ? 200 : SIZE;
+      const { width, height } = getIconSize(iconName, iconSize);
       const outputPath = path.join(OUTPUT_DIR, `${iconName}.png`);
+      
+      // For Logo, use the fixed SVG file
+      if (iconName === 'Logo') {
+        const fixedSvgPath = path.join(SVG_OUTPUT_DIR, 'Logo-fixed.svg');
+        if (fs.existsSync(fixedSvgPath)) {
+          console.log(`Using fixed SVG for ${iconName}`);
+          svgPath = fixedSvgPath;
+          svgBuffer = fs.readFileSync(fixedSvgPath);
+        }
+      }
 
       try {
         // Apply appropriate scaling to icons while preserving their aspect ratio
@@ -354,22 +366,44 @@ async function convertWithSharp() {
 
         let pngBuffer: Buffer;
 
-        // For special cases like CollapseIcon which is extremely small
-        if (iconName === 'CollapseIcon') {
-          // Use the original SVG but just scale it up appropriately
-          pngBuffer = await sharp(svgBuffer)
-            .resize(finalWidth, finalHeight, {
+        // Create the PNG for data URI
+        if (iconName === 'Logo' || iconName === 'DarkLogo') {
+          // Two-step approach for logos to get better quality:
+          // 1. First render at 2x the target size
+          // 2. Then downscale to the final size with high-quality settings
+          const upscaledWidth = finalWidth * 2;
+          const upscaledHeight = finalHeight * 2;
+          
+          // Step 1: Create higher resolution version first
+          const upscaledBuffer = await sharp(svgBuffer)
+            .resize(upscaledWidth, upscaledHeight, {
               fit: 'contain',
-              background: { r: 0, g: 0, b: 0, alpha: 0 },
+              background: { r: 0, g: 0, b: 0, alpha: 0 }
             })
-            .png()
+            .png({ 
+              compressionLevel: 0, // No compression for interim step
+              quality: 100
+            })
             .toBuffer();
-
+            
+          // Step 2: Downscale with high-quality settings
+          pngBuffer = await sharp(upscaledBuffer)
+            .resize(finalWidth, finalHeight, {
+              fit: 'inside',
+              kernel: 'lanczos3',  // Highest quality resampling
+              background: { r: 0, g: 0, b: 0, alpha: 0 }
+            })
+            .png({ 
+              compressionLevel: 4,  // Balance between quality and size
+              adaptiveFiltering: true,
+              palette: false,       // Avoid color palette optimization
+              quality: 100
+            })
+            .toBuffer();
+          
           // Save to file
           fs.writeFileSync(outputPath, pngBuffer);
-        }
-        // For all other icons, use appropriate scaling while preserving aspect ratio
-        else {
+        } else {
           // Scale up to appropriate quality (384px max dimension)
           finalWidth = Math.min(384, finalWidth);
           finalHeight = Math.min(384, finalHeight);
