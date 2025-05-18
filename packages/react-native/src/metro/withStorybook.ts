@@ -166,10 +166,12 @@ function withStorybook(
           ? config.resolver.resolveRequest
           : context.resolveRequest;
 
-        const isStorybookModule =
-          moduleName.startsWith('storybook') || moduleName.startsWith('@storybook');
+        const shouldUseCustomResolveConfig =
+          moduleName.startsWith('storybook') ||
+          moduleName.startsWith('@storybook') ||
+          moduleName.startsWith('uuid');
 
-        const theContext = isStorybookModule
+        const theContext = shouldUseCustomResolveConfig
           ? {
               ...context,
               unstable_enablePackageExports: true,
