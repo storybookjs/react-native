@@ -160,7 +160,7 @@ function withStorybook(
         const shouldUseCustomResolveConfig =
           moduleName.startsWith('storybook') ||
           moduleName.startsWith('@storybook') ||
-          moduleName.startsWith('uuid');
+          moduleName === 'uuid';
 
         const theContext = shouldUseCustomResolveConfig
           ? {
