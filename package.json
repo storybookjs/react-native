@@ -52,7 +52,7 @@
     "eslint": "8.24.0",
     "lerna": "^8.1.2",
     "sherif": "^1.4.0",
-    "typescript": "^5.3.3"
+    "typescript": "~5.8.3"
   },
   "resolutions": {
     "react-docgen-typescript": "2.2.2",

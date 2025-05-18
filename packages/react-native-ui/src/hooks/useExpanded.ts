@@ -44,16 +44,8 @@ export const useExpanded = ({
 }: ExpandedProps): [ExpandedState, Dispatch<ExpandAction>] => {
   // Track the set of currently expanded nodes within this tree.
   // Root nodes are expanded by default.
-  const [expanded, setExpanded] = useReducer<
-    Reducer<ExpandedState, ExpandAction>,
-    {
-      refId: string;
-      data: StoriesHash;
-      rootIds: string[];
-      initialExpanded: ExpandedState;
-    }
-  >(
-    (state, { ids, value }) =>
+  const [expanded, setExpanded] = useReducer(
+    (state: ExpandedState, { ids, value }:ExpandAction) =>
       ids.reduce((acc, id) => Object.assign(acc, { [id]: value }), { ...state }),
     { refId, data, rootIds, initialExpanded },
     initializeExpanded

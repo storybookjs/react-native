@@ -120,8 +120,8 @@ export default function useDebouncedCallback<T extends (...args: any[]) => Retur
   const lastInvokeTime = useRef(0);
   const timerId = useRef(null);
   const lastArgs = useRef<unknown[]>([]);
-  const lastThis = useRef<unknown>();
-  const result = useRef<ReturnType<T>>();
+  const lastThis = useRef<unknown>(undefined);
+  const result = useRef<ReturnType<T>>(undefined);
   const funcRef = useRef(callback);
   const mounted = useRef(true);
 
