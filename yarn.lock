@@ -5844,6 +5844,7 @@ __metadata:
     babel-jest: "npm:^29.7.0"
     fuse.js: "npm:^7.0.0"
     jest: "npm:^29.7.0"
+    lodash: "npm:^4.17.21"
     memoizerific: "npm:^1.11.3"
     polished: "npm:^4.3.1"
     react-test-renderer: "npm:^18.3.1"
