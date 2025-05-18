@@ -62,6 +62,7 @@
     "@storybook/react": "^8.6.6",
     "@storybook/react-native-theming": "^8.6.2",
     "fuse.js": "^7.0.0",
+    "lodash": "^4.17.21",
     "memoizerific": "^1.11.3",
     "polished": "^4.3.1",
     "store2": "^2.14.3"
