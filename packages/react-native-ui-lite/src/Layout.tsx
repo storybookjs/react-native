@@ -4,6 +4,7 @@ import { styled, Theme, ThemeProvider, useTheme } from '@storybook/react-native-
 import {
   IconButton,
   LayoutProvider,
+  SBUI,
   Storage,
   StorageProvider,
   useLayout,
@@ -64,19 +65,7 @@ const mobileMenuDrawerContentStyle = {
   paddingBottom: 4,
 } satisfies ViewStyle;
 
-export const LiteUI = ({
-  storage,
-  theme,
-  storyHash,
-  story,
-  children,
-}: {
-  storage: Storage;
-  theme: Theme;
-  storyHash: API_IndexHash | undefined;
-  story?: StoryContext<ReactRenderer, Args>;
-  children: ReactNode | ReactNode[];
-}): ReactElement => (
+export const LiteUI: SBUI = ({ storage, theme, storyHash, story, children }): ReactElement => (
   <>
     <ThemeProvider theme={theme}>
       {/* @ts-ignore something weird with story type */}

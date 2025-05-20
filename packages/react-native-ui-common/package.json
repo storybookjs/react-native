@@ -57,6 +57,7 @@
     "typescript": "~5.8.3"
   },
   "dependencies": {
+    "@storybook/csf": "^0.1.13",
     "@storybook/react": "0.0.0-pr-31518-sha-a4ae4499",
     "@storybook/react-native-theming": "^9.0.0-beta.15",
     "es-toolkit": "^1.38.0",

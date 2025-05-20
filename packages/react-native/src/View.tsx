@@ -1,8 +1,7 @@
-import { Args, StoryContext, toId } from '@storybook/csf';
+import { StoryContext, toId } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, darkTheme, theme } from '@storybook/react-native-theming';
-import { FullUI } from '@storybook/react-native-ui';
-import { transformStoryIndexToStoriesHash } from '@storybook/react-native-ui-common';
+import { type SBUI, transformStoryIndexToStoriesHash } from '@storybook/react-native-ui-common';
 import { Channel, WebsocketTransport } from 'storybook/internal/channels';
 import { CHANNEL_CREATED, SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons as managerAddons } from 'storybook/internal/manager-api';
@@ -11,7 +10,7 @@ import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storyboo
 
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
-import { ReactElement, useEffect, useMemo, useReducer, useState } from 'react';
+import { useEffect, useMemo, useReducer, useState } from 'react';
 import {
   ActivityIndicator,
   Linking,
@@ -67,14 +66,7 @@ export type Params = {
   shouldPersistSelection?: boolean;
   theme: ThemePartial;
   storage?: Storage;
-  CustomUIComponent?: (props: {
-    story?: StoryContext<ReactRenderer, Args>;
-    storyHash: API_IndexHash;
-    setStory: (storyId: string) => void;
-    storage: Storage;
-    theme: Theme;
-    children: ReactElement;
-  }) => ReactElement;
+  CustomUIComponent?: SBUI;
 };
 
 export class View {
@@ -178,6 +170,22 @@ export class View {
       storage,
       CustomUIComponent,
     } = params;
+
+    const getFullUI = (enabled: boolean): SBUI => {
+      if (enabled) {
+        try {
+          const { FullUI } = require('@storybook/react-native-ui');
+          return FullUI;
+        } catch (error) {
+          console.warn('storybook-log: error loading UI', error);
+        }
+      }
+
+      const PlaceholderUI: SBUI = ({ children }) => children;
+      return PlaceholderUI;
+    };
+
+    const FullUI: SBUI = getFullUI(onDeviceUI);
 
     this._storage = storage;
 
@@ -367,6 +375,9 @@ export class View {
             theme={appliedTheme as Theme}
             storyHash={storyHash}
             story={story}
+            setStory={(newStoryId) =>
+              self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
+            }
           >
             <StoryView />
           </FullUI>

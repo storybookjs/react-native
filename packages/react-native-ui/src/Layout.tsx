@@ -1,17 +1,19 @@
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import type { Args, StoryContext } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
-import { styled, Theme, ThemeProvider, useTheme } from '@storybook/react-native-theming';
+import { styled, ThemeProvider, useTheme } from '@storybook/react-native-theming';
 import {
   IconButton,
   LayoutProvider,
-  Storage,
   StorageProvider,
   useLayout,
   useStoreBooleanState,
   useStyle,
+  type SBUI,
 } from '@storybook/react-native-ui-common';
 import { ReactNode, useCallback, useRef, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons } from 'storybook/internal/manager-api';
@@ -26,8 +28,6 @@ import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { SelectedNodeProvider } from './SelectedNodeProvider';
 import { Sidebar } from './Sidebar';
 import { StorybookLogo } from './StorybookLogo';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 const desktopLogoContainer = {
   flexDirection: 'row',
@@ -59,19 +59,7 @@ const mobileMenuDrawerContentStyle = {
 
 const flex1 = { flex: 1 } satisfies ViewStyle;
 
-export const FullUI = ({
-  storage,
-  theme,
-  storyHash,
-  story,
-  children,
-}: {
-  storage: Storage;
-  theme: Theme;
-  storyHash: API_IndexHash | undefined;
-  story?: StoryContext<ReactRenderer, Args>;
-  children: ReactNode | ReactNode[];
-}) => {
+export const FullUI: SBUI = ({ storage, theme, storyHash, story, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>

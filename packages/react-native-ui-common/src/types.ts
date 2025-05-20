@@ -1,7 +1,16 @@
-import type { StoriesHash, State } from 'storybook/internal/manager-api';
-import type { StatusValue, StatusesByStoryIdAndTypeId } from 'storybook/internal/types';
+import type { Args, StoryContext } from '@storybook/csf';
+import type { ReactRenderer } from '@storybook/react';
+import { Theme } from '@storybook/react-native-theming';
+import { Storage } from './StorageProvider';
 import * as Fuse from 'fuse.js';
+import { ReactElement, ReactNode } from 'react';
 import { PressableProps } from 'react-native';
+import type { State, StoriesHash } from 'storybook/internal/manager-api';
+import type {
+  API_IndexHash,
+  StatusesByStoryIdAndTypeId,
+  StatusValue,
+} from 'storybook/internal/types';
 
 export type Refs = State['refs'];
 export type RefType = Refs[keyof Refs] & { allStatuses?: StatusesByStoryIdAndTypeId };
@@ -63,4 +72,13 @@ export type SearchChildrenFn = (args: {
   closeMenu: (cb?: () => void) => void;
   getItemProps: GetSearchItemProps;
   highlightedIndex: number | null;
-}) => React.ReactNode;
+}) => ReactNode;
+
+export type SBUI = (props: {
+  story?: StoryContext<ReactRenderer, Args>;
+  storyHash: API_IndexHash;
+  setStory: (storyId: string) => void;
+  storage: Storage;
+  theme: Theme;
+  children: ReactElement;
+}) => ReactElement;
