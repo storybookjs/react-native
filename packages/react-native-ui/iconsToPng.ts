@@ -1,7 +1,7 @@
 #!/usr/bin/env node
+// import { execSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
-import { execSync } from 'child_process';
 
 // Directory paths
 const ICON_DIR = path.resolve(__dirname, 'src/icon');
@@ -33,17 +33,17 @@ if (!fs.existsSync(path.dirname(DATA_URI_OUTPUT_FILE))) {
 const SIZE = 48; // Use a smaller optimized size that works well for all icons
 
 // Install required dependencies if not present
-function ensureDependencies() {
-  try {
-    console.log('Installing required dependencies...');
-    execSync('npm list sharp || npm install --no-save sharp', { stdio: 'inherit' });
-    console.log('Dependencies installed successfully');
-    return true;
-  } catch (error) {
-    console.error('Failed to install dependencies:', error);
-    return false;
-  }
-}
+// function ensureDependencies() {
+//   try {
+//     console.log('Installing required dependencies...');
+//     execSync('npm list sharp || npm install --no-save sharp', { stdio: 'inherit' });
+//     console.log('Dependencies installed successfully');
+//     return true;
+//   } catch (error) {
+//     console.error('Failed to install dependencies:', error);
+//     return false;
+//   }
+// }
 
 // Helper function to extract viewBox from SVG component
 function extractViewBox(componentCode: string): string {

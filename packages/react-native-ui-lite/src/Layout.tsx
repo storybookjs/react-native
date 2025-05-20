@@ -1,36 +1,34 @@
-import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
-import { addons } from 'storybook/internal/manager-api';
-import { type API_IndexHash } from 'storybook/internal/types';
 import type { Args, StoryContext } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
-import { styled, ThemeProvider, useTheme, Theme } from '@storybook/react-native-theming';
-import { ReactNode, useState, useCallback, useRef, ReactElement } from 'react';
+import { styled, Theme, ThemeProvider, useTheme } from '@storybook/react-native-theming';
+import {
+  IconButton,
+  LayoutProvider,
+  Storage,
+  StorageProvider,
+  useLayout,
+  useStoreBooleanState,
+  useStyle,
+} from '@storybook/react-native-ui-common';
+import { ReactElement, ReactNode, useCallback, useRef, useState } from 'react';
 import {
   Platform,
   SafeAreaView,
   ScrollView,
-  StatusBar,
   Text,
   TouchableOpacity,
   View,
   ViewStyle,
 } from 'react-native';
-import {
-  IconButton,
-  LayoutProvider,
-  useLayout,
-  StorageProvider,
-  Storage,
-} from '@storybook/react-native-ui-common';
-
+import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
+import { addons } from 'storybook/internal/manager-api';
+import { type API_IndexHash } from 'storybook/internal/types';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
+import { SelectedNodeProvider } from './SelectedNodeProvider';
 import { Sidebar } from './Sidebar';
 import { StorybookLogo } from './StorybookLogo';
 import { DEFAULT_REF_ID } from './constants';
-import { useStoreBooleanState } from '@storybook/react-native-ui-common';
-import { useStyle } from '@storybook/react-native-ui-common';
-import { SelectedNodeProvider } from './SelectedNodeProvider';
 import {
   BottomBarToggleIcon,
   CloseFullscreenIcon,

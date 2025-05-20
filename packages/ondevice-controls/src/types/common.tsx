@@ -56,7 +56,7 @@ try {
   } = require('@gorhom/bottom-sheet');
   BottomSheetTextInput = BottomSheetTextInput_;
   useBottomSheetInternal = useBottomSheetInternal_;
-} catch (error) {}
+} catch {}
 
 const TextInputWithSwitcher = forwardRef<TextInput, TextInputProps>((props, ref) => {
   const { isMobile } = useLayout();
