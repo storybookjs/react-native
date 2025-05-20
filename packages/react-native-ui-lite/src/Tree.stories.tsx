@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { ComponentEntry, IndexHash } from 'storybook/internal/manager-api';
 import type { StoryObj, Meta } from '@storybook/react';
 import { Tree } from './Tree';
-import type { Dataset } from './types';
+import type { Dataset } from '@storybook/react-native-ui-common';
 import { index } from './mockdata.large';
 import { DEFAULT_REF_ID } from './constants';
 import { ScrollView, Text } from 'react-native';

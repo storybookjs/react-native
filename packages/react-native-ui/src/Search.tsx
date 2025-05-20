@@ -15,8 +15,8 @@ import {
   type SearchItem,
   type SearchResult,
   type Selection,
-} from './types';
-import { searchItem } from './util/tree';
+  searchItem,
+} from '@storybook/react-native-ui-common';
 
 const DEFAULT_MAX_SEARCH_RESULTS = 50;
 

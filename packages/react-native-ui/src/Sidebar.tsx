@@ -5,8 +5,8 @@ import type { API_LoadedRefData } from 'storybook/internal/types';
 import { Explorer } from './Explorer';
 import { Search } from './Search';
 import { SearchResults } from './SearchResults';
-import type { CombinedDataset, Selection } from './types';
-import { useLastViewed } from './hooks/useLastViewed';
+import type { CombinedDataset, Selection } from '@storybook/react-native-ui-common';
+import { useLastViewed } from '@storybook/react-native-ui-common';
 import { DEFAULT_REF_ID } from './constants';
 import { View } from 'react-native';
 

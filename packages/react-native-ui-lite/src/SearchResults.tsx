@@ -1,16 +1,15 @@
 import { styled } from '@storybook/react-native-theming';
+import type {
+  GetSearchItemProps,
+  SearchResult,
+  SearchResultProps,
+} from '@storybook/react-native-ui-common';
+import { Button, IconButton, isExpandType } from '@storybook/react-native-ui-common';
+import { FuseResultMatch } from 'fuse.js';
+import { transparentize } from 'polished';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import React, { useCallback } from 'react';
-import { transparentize } from 'polished';
-import type { GetSearchItemProps, SearchResult, SearchResultProps } from './types';
-import { isExpandType } from './types';
-
-import { FuseResultMatch } from 'fuse.js';
 import { PressableProps, View } from 'react-native';
-import { Button } from './Button';
-import { IconButton } from './IconButton';
-
-import { statusMapping } from './util/status';
 import { ComponentIcon, StoryIcon } from './icon/iconDataUris';
 
 const ResultsList = styled.View({
@@ -144,8 +143,6 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
   const nameMatch = matches.find((match: FuseResultMatch) => match.key === 'name');
   const pathMatches = matches.filter((match: FuseResultMatch) => match.key === 'path');
 
-  const [i] = item.status ? statusMapping[item.status] : [];
-
   return (
     <ResultRow {...props} onPress={press}>
       <IconWrapper>
@@ -175,7 +172,6 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
           })}
         </Path>
       </ResultRowContent>
-      {item.status ? i : null}
     </ResultRow>
   );
 });

@@ -12,9 +12,8 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { IconButton } from './IconButton';
+import { IconButton, useStyle } from '@storybook/react-native-ui-common';
 import { CloseIcon } from './icon/CloseIcon';
-import { useStyle } from './util/useStyle';
 
 export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;

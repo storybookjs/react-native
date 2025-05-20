@@ -1,6 +1,6 @@
 import { BottomSheetTextInput, useBottomSheetInternal } from '@gorhom/bottom-sheet';
 import { styled, Theme } from '@storybook/react-native-theming';
-import { useLayout } from '@storybook/react-native-ui';
+import { useLayout } from '@storybook/react-native-ui-common';
 import { forwardRef } from 'react';
 import { Platform, TextInput, TextInputProps, TextStyle } from 'react-native';
 

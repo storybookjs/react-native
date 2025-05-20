@@ -1,14 +1,14 @@
-import React, { useMemo } from 'react';
 import { styled } from '@storybook/react-native-theming';
+import type { CombinedDataset, Selection } from '@storybook/react-native-ui-common';
+import { useLastViewed } from '@storybook/react-native-ui-common';
+import React, { useMemo } from 'react';
+import { View } from 'react-native';
 import type { State } from 'storybook/internal/manager-api';
 import type { API_LoadedRefData } from 'storybook/internal/types';
+import { DEFAULT_REF_ID } from './constants';
 import { Explorer } from './Explorer';
 import { Search } from './Search';
 import { SearchResults } from './SearchResults';
-import type { CombinedDataset, Selection } from './types';
-import { useLastViewed } from './hooks/useLastViewed';
-import { DEFAULT_REF_ID } from './constants';
-import { View } from 'react-native';
 
 const Container = styled.View(({ theme }) => ({
   width: '100%',

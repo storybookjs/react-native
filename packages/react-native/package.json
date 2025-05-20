@@ -78,10 +78,25 @@
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",
     "react": "*",
+    "react-native-reanimated": ">=2",
     "react-native": ">=0.72.0",
-    "react-native-gesture-handler": ">=2",
+    "react-native-gesture-handler": ">=3",
     "react-native-safe-area-context": "*",
     "storybook": "9.0.0-beta.10"
+  },
+  "peerDependenciesMeta": {
+    "@gorhom/bottom-sheet": {
+      "optional": true
+    },
+    "react-native-gesture-handler": {
+      "optional": true
+    },
+    "react-native-safe-area-context": {
+      "optional": true
+    },
+    "react-native-reanimated": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=8.0.0"

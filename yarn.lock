@@ -3879,12 +3879,39 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@storybook/react-native-ui-common@npm:^9.0.0-beta.14, @storybook/react-native-ui-common@workspace:packages/react-native-ui-common":
+  version: 0.0.0-use.local
+  resolution: "@storybook/react-native-ui-common@workspace:packages/react-native-ui-common"
+  dependencies:
+    "@storybook/react": "npm:9.0.0-beta.10"
+    "@storybook/react-native-theming": "npm:^9.0.0-beta.14"
+    "@types/jest": "npm:^29.4.3"
+    "@types/react": "npm:~19.0.10"
+    babel-jest: "npm:^29.7.0"
+    es-toolkit: "npm:^1.38.0"
+    fuse.js: "npm:^7.0.0"
+    jest: "npm:^29.7.0"
+    memoizerific: "npm:^1.11.3"
+    polished: "npm:^4.3.1"
+    react-test-renderer: "npm:^19.1.0"
+    store2: "npm:^2.14.3"
+    ts-dedent: "npm:^2.2.0"
+    tsup: "npm:^7.2.0"
+    typescript: "npm:~5.8.3"
+  peerDependencies:
+    react: "*"
+    react-native: ">=0.57.0"
+    storybook: 9.0.0-beta.10
+  languageName: unknown
+  linkType: soft
+
 "@storybook/react-native-ui-lite@npm:^9.0.0-beta.14, @storybook/react-native-ui-lite@workspace:packages/react-native-ui-lite":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui-lite@workspace:packages/react-native-ui-lite"
   dependencies:
     "@storybook/react": "npm:9.0.0-beta.10"
     "@storybook/react-native-theming": "npm:^9.0.0-beta.14"
+    "@storybook/react-native-ui-common": "npm:^9.0.0-beta.14"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.0.10"
     babel-jest: "npm:^29.7.0"
@@ -3910,9 +3937,11 @@ __metadata:
   dependencies:
     "@storybook/react": "npm:9.0.0-beta.10"
     "@storybook/react-native-theming": "npm:^9.0.0-beta.14"
+    "@storybook/react-native-ui-common": "npm:^9.0.0-beta.14"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.0.10"
     babel-jest: "npm:^29.7.0"
+    es-toolkit: "npm:^1.38.0"
     fuse.js: "npm:^7.0.0"
     jest: "npm:^29.7.0"
     memoizerific: "npm:^1.11.3"
@@ -7470,6 +7499,18 @@ __metadata:
     is-date-object: "npm:^1.0.5"
     is-symbol: "npm:^1.0.4"
   checksum: 10/17faf35c221aad59a16286cbf58ef6f080bf3c485dff202c490d074d8e74da07884e29b852c245d894eac84f73c58330ec956dfd6d02c0b449d75eb1012a3f9b
+  languageName: node
+  linkType: hard
+
+"es-toolkit@npm:^1.38.0":
+  version: 1.38.0
+  resolution: "es-toolkit@npm:1.38.0"
+  dependenciesMeta:
+    "@trivago/prettier-plugin-sort-imports@4.3.0":
+      unplugged: true
+    prettier-plugin-sort-re-exports@0.0.1:
+      unplugged: true
+  checksum: 10/7f41173001e2dc8f454752e19fc552af6ea2ec77fdecb2d04c7e04789062bed476d4fffe702ac1b7a721547f84be65312b8c3156339d08b865954b26d005b140
   languageName: node
   linkType: hard
 

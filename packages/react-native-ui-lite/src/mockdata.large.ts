@@ -11,7 +11,7 @@
  *     }, {}), null, 2)
  */
 
-import type { Dataset } from './types';
+import type { Dataset } from '@storybook/react-native-ui-common';
 
 // @ts-expect-error
 export const index = {

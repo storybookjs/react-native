@@ -4,7 +4,7 @@ import { mockDataset } from './mockdata';
 import { Text, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { LayoutProvider } from './LayoutProvider';
+import { LayoutProvider } from '@storybook/react-native-ui-common';
 
 const meta = {
   component: Layout,

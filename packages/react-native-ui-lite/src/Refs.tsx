@@ -3,8 +3,8 @@ import React, { useMemo, useCallback, useEffect, useState } from 'react';
 import type { State } from 'storybook/internal/manager-api';
 import { styled } from '@storybook/react-native-theming';
 import { Tree } from './Tree';
-import type { RefType } from './types';
-import { getStateType } from './util/tree';
+import type { RefType } from '@storybook/react-native-ui-common';
+import { getStateType } from '@storybook/react-native-ui-common';
 
 export interface RefProps {
   isLoading: boolean;

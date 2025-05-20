@@ -8,11 +8,12 @@ import { Args, StoryContext, toId } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
 import {
-  Layout,
   LayoutProvider,
   StorageProvider,
   transformStoryIndexToStoriesHash,
-} from '@storybook/react-native-ui';
+} from '@storybook/react-native-ui-common';
+import { Layout } from '@storybook/react-native-ui';
+
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
 import { ReactElement, useEffect, useMemo, useReducer, useState } from 'react';
@@ -342,7 +343,7 @@ export class View {
         return transformStoryIndexToStoriesHash(self._storyIndex, {
           docsOptions: { docsMode: false, defaultName: '' },
           filters: {},
-          status: {},
+          allStatuses: {},
           provider: {
             handleAPI: () => ({}),
             getConfig: () => ({}),

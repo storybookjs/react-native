@@ -7,19 +7,17 @@ import { styled, useTheme } from '@storybook/react-native-theming';
 import { ReactNode, useRef, useState, useCallback } from 'react';
 import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { IconButton } from './IconButton';
-import { useLayout } from './LayoutProvider';
+import { IconButton, useLayout } from '@storybook/react-native-ui-common';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { Sidebar } from './Sidebar';
 import { StorybookLogo } from './StorybookLogo';
 import { DEFAULT_REF_ID } from './constants';
-import { useStoreBooleanState } from './hooks/useStoreState';
+import { useStoreBooleanState, useStyle } from '@storybook/react-native-ui-common';
 import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { CloseFullscreenIcon } from './icon/CloseFullscreenIcon';
 import { FullscreenIcon } from './icon/FullscreenIcon';
 import { MenuIcon } from './icon/MenuIcon';
-import { useStyle } from './util/useStyle';
 import { SelectedNodeProvider } from './SelectedNodeProvider';
 
 const desktopLogoContainer = {

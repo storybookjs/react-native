@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import React, { useRef } from 'react';
 import { Ref } from './Refs';
-import type { CombinedDataset, Selection } from './types';
+import type { CombinedDataset, Selection } from '@storybook/react-native-ui-common';
 import { View } from 'react-native';
 
 export interface ExplorerProps {

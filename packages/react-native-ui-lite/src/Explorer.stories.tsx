@@ -1,6 +1,6 @@
 import { Explorer } from './Explorer';
 import { mockDataset } from './mockdata';
-import type { RefType } from './types';
+import type { RefType } from '@storybook/react-native-ui-common';
 import { View } from 'react-native';
 
 export default {

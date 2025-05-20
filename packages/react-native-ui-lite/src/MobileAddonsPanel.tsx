@@ -3,7 +3,6 @@ import { forwardRef, useImperativeHandle, useMemo, useState } from 'react';
 import {
   KeyboardAvoidingView,
   Modal,
-  Pressable,
   SafeAreaView,
   ScrollView,
   StyleProp,
@@ -13,7 +12,7 @@ import {
 } from 'react-native';
 import { addons } from 'storybook/internal/manager-api';
 import { Addon_TypesEnum } from 'storybook/internal/types';
-import { IconButton } from './IconButton';
+import { IconButton } from '@storybook/react-native-ui-common';
 import { CloseIcon } from './icon/iconDataUris';
 
 export interface MobileAddonsPanelRef {
@@ -45,13 +44,13 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
         <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
           <SafeAreaView style={{ justifyContent: 'flex-end', flex: 1 }}>
             <View
-              style={{ flex: 1, borderBottomColor: theme.appBorderColor, borderBottomWidth: 1 }}
-            >
-              <Pressable style={{ flex: 1 }} onPress={() => setMobileMenuOpen(false)}></Pressable>
-            </View>
-
-            <View
-              style={{ height: '50%', backgroundColor: theme.background.content, paddingTop: 10 }}
+              style={{
+                height: '50%',
+                backgroundColor: theme.background.content,
+                paddingTop: 10,
+                borderTopColor: theme.appBorderColor,
+                borderTopWidth: 1,
+              }}
             >
               <AddonsTabs
                 onClose={() => {
