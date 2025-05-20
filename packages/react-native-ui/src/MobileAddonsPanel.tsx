@@ -54,9 +54,9 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
     const { height } = useWindowDimensions();
 
     const adjustedBottomSheetSize = useAnimatedStyle(() => {
-      const extraPadding = Platform.OS === 'android' ? 32 : 16;
+      const extraPadding = Platform.OS === 'android' ? 32 : 16 + insets.bottom;
       return {
-        maxHeight: height - animatedPosition.value - insets.bottom - extraPadding,
+        maxHeight: height - animatedPosition.value - extraPadding,
       };
     }, [animatedPosition, height, insets.bottom]);
 
