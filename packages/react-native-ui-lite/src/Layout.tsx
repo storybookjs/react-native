@@ -5,7 +5,16 @@ import type { Args, StoryContext } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, ThemeProvider, useTheme, Theme } from '@storybook/react-native-theming';
 import { ReactNode, useState, useCallback, useRef, ReactElement } from 'react';
-import { SafeAreaView, ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import {
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from 'react-native';
 import {
   IconButton,
   LayoutProvider,
@@ -142,6 +151,7 @@ export const Layout = ({
     return {
       flex: 1,
       backgroundColor: theme.background.content,
+      paddingVertical: Platform.OS === 'android' ? 32 : 0,
     };
   }, [theme.background.content, story?.parameters?.noSafeArea, isDesktop]);
 

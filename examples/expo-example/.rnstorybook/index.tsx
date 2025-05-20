@@ -32,7 +32,7 @@ const StorybookUIRoot = view.getStorybookUI({
   }, */
 
   onDeviceUI: true,
-  CustomUIComponent: LiteUI,
+  // CustomUIComponent: LiteUI,
 });
 
 const StorybookUI = () => {
