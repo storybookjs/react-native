@@ -3787,6 +3787,9 @@ __metadata:
     react: "*"
     react-native: "*"
     storybook: 9.0.0-beta.10
+  peerDependenciesMeta:
+    "@gorhom/bottom-sheet":
+      optional: true
   languageName: unknown
   linkType: soft
 

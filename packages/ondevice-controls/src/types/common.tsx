@@ -1,4 +1,3 @@
-import { BottomSheetTextInput, useBottomSheetInternal } from '@gorhom/bottom-sheet';
 import { styled, Theme } from '@storybook/react-native-theming';
 import { useLayout } from '@storybook/react-native-ui-common';
 import { forwardRef } from 'react';
@@ -46,6 +45,18 @@ export function inputStyle({
     margin: 0,
   };
 }
+
+let BottomSheetTextInput = TextInput;
+let useBottomSheetInternal = (b: boolean) => null;
+
+try {
+  const {
+    BottomSheetTextInput: BottomSheetTextInput_,
+    useBottomSheetInternal: useBottomSheetInternal_,
+  } = require('@gorhom/bottom-sheet');
+  BottomSheetTextInput = BottomSheetTextInput_;
+  useBottomSheetInternal = useBottomSheetInternal_;
+} catch (error) {}
 
 const TextInputWithSwitcher = forwardRef<TextInput, TextInputProps>((props, ref) => {
   const { isMobile } = useLayout();

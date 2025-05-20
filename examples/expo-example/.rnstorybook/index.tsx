@@ -31,7 +31,7 @@ const StorybookUIRoot = view.getStorybookUI({
     },
   }, */
 
-  onDeviceUI: false,
+  onDeviceUI: true,
   CustomUIComponent: LiteUI,
 });
 
