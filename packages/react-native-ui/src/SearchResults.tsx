@@ -9,7 +9,6 @@ import {
   type SearchResult,
   type SearchResultProps,
   Button,
-  statusMapping,
 } from '@storybook/react-native-ui-common';
 
 import { FuseResultMatch } from 'fuse.js';
@@ -149,8 +148,6 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
   const nameMatch = matches.find((match: FuseResultMatch) => match.key === 'name');
   const pathMatches = matches.filter((match: FuseResultMatch) => match.key === 'path');
 
-  const [i] = item.status ? statusMapping[item.status] : [];
-
   return (
     <ResultRow {...props} onPress={press}>
       <IconWrapper>
@@ -180,7 +177,6 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
           })}
         </Path>
       </ResultRowContent>
-      {item.status ? i : null}
     </ResultRow>
   );
 });

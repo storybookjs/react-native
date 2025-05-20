@@ -1,18 +1,13 @@
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { Args, StoryContext, toId } from '@storybook/csf';
+import type { ReactRenderer } from '@storybook/react';
+import { Theme, darkTheme, theme } from '@storybook/react-native-theming';
+import { FullUI } from '@storybook/react-native-ui';
+import { transformStoryIndexToStoriesHash } from '@storybook/react-native-ui-common';
 import { Channel, WebsocketTransport } from 'storybook/internal/channels';
-import { SET_CURRENT_STORY, CHANNEL_CREATED } from 'storybook/internal/core-events';
+import { CHANNEL_CREATED, SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons as managerAddons } from 'storybook/internal/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
-import { Args, StoryContext, toId } from '@storybook/csf';
-import type { ReactRenderer } from '@storybook/react';
-import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
-import {
-  LayoutProvider,
-  StorageProvider,
-  transformStoryIndexToStoriesHash,
-} from '@storybook/react-native-ui-common';
-import { Layout } from '@storybook/react-native-ui';
 
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
@@ -24,8 +19,6 @@ import {
   StyleSheet,
   useColorScheme,
 } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StoryView from './components/StoryView';
 import { useSetStoryContext, useStoryContext } from './hooks';
 import getHost from './rn-host-detect';
@@ -369,23 +362,14 @@ export class View {
 
       if (onDeviceUI) {
         return (
-          <ThemeProvider theme={appliedTheme as Theme}>
-            <SafeAreaProvider>
-              <GestureHandlerRootView style={{ flex: 1 }}>
-                <BottomSheetModalProvider>
-                  {/* @ts-ignore something weird with story type */}
-                  <StorageProvider storage={storage}>
-                    <LayoutProvider>
-                      {/* @ts-ignore something weird with story type */}
-                      <Layout storyHash={storyHash} story={story}>
-                        <StoryView />
-                      </Layout>
-                    </LayoutProvider>
-                  </StorageProvider>
-                </BottomSheetModalProvider>
-              </GestureHandlerRootView>
-            </SafeAreaProvider>
-          </ThemeProvider>
+          <FullUI
+            storage={storage}
+            theme={appliedTheme as Theme}
+            storyHash={storyHash}
+            story={story}
+          >
+            <StoryView />
+          </FullUI>
         );
       } else if (CustomUIComponent) {
         return (

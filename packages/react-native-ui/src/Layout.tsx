@@ -1,15 +1,18 @@
 import type { Args, StoryContext } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
-import { styled, useTheme } from '@storybook/react-native-theming';
+import { styled, Theme, ThemeProvider, useTheme } from '@storybook/react-native-theming';
 import {
   IconButton,
+  LayoutProvider,
+  Storage,
+  StorageProvider,
   useLayout,
   useStoreBooleanState,
   useStyle,
 } from '@storybook/react-native-ui-common';
 import { ReactNode, useCallback, useRef, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons } from 'storybook/internal/manager-api';
 import type { API_IndexHash } from 'storybook/internal/types';
@@ -23,6 +26,8 @@ import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { SelectedNodeProvider } from './SelectedNodeProvider';
 import { Sidebar } from './Sidebar';
 import { StorybookLogo } from './StorybookLogo';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 const desktopLogoContainer = {
   flexDirection: 'row',
@@ -52,6 +57,38 @@ const mobileMenuDrawerContentStyle = {
   paddingBottom: 4,
 } satisfies ViewStyle;
 
+export const FullUI = ({
+  storage,
+  theme,
+  storyHash,
+  story,
+  children,
+}: {
+  storage: Storage;
+  theme: Theme;
+  storyHash: API_IndexHash | undefined;
+  story?: StoryContext<ReactRenderer, Args>;
+  children: ReactNode | ReactNode[];
+}) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <BottomSheetModalProvider>
+            <StorageProvider storage={storage}>
+              <LayoutProvider>
+                <Layout storyHash={storyHash} story={story}>
+                  {children}
+                </Layout>
+              </LayoutProvider>
+            </StorageProvider>
+          </BottomSheetModalProvider>
+        </GestureHandlerRootView>
+      </SafeAreaProvider>
+    </ThemeProvider>
+  );
+};
+
 export const Layout = ({
   storyHash,
   story,
@@ -66,6 +103,8 @@ export const Layout = ({
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
   const insets = useSafeAreaInsets();
   const { isDesktop } = useLayout();
+
+  console.log('isDesktop', isDesktop);
 
   const [desktopSidebarOpen, setDesktopSidebarOpen] = useStoreBooleanState(
     'desktopSidebarState',
