@@ -4021,8 +4021,18 @@ __metadata:
     react: "*"
     react-native: ">=0.72.0"
     react-native-gesture-handler: ">=2"
+    react-native-reanimated: ">=2"
     react-native-safe-area-context: "*"
     storybook: 9.0.0-beta.10
+  peerDependenciesMeta:
+    "@gorhom/bottom-sheet":
+      optional: true
+    react-native-gesture-handler:
+      optional: true
+    react-native-reanimated:
+      optional: true
+    react-native-safe-area-context:
+      optional: true
   bin:
     sb-rn-get-stories: ./bin/get-stories.js
   languageName: unknown
