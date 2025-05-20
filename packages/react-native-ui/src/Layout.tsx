@@ -57,6 +57,8 @@ const mobileMenuDrawerContentStyle = {
   paddingBottom: 4,
 } satisfies ViewStyle;
 
+const flex1 = { flex: 1 } satisfies ViewStyle;
+
 export const FullUI = ({
   storage,
   theme,
@@ -73,7 +75,7 @@ export const FullUI = ({
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
-        <GestureHandlerRootView style={{ flex: 1 }}>
+        <GestureHandlerRootView style={flex1}>
           <BottomSheetModalProvider>
             <StorageProvider storage={storage}>
               <LayoutProvider>
@@ -103,8 +105,6 @@ export const Layout = ({
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
   const insets = useSafeAreaInsets();
   const { isDesktop } = useLayout();
-
-  console.log('isDesktop', isDesktop);
 
   const [desktopSidebarOpen, setDesktopSidebarOpen] = useStoreBooleanState(
     'desktopSidebarState',
