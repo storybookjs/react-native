@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui",
-  "version": "9.0.0-beta.15",
+  "version": "9.0.0-rc.4",
   "description": "ui components for react native storybook",
   "keywords": [
     "react",
@@ -59,8 +59,8 @@
   },
   "dependencies": {
     "@storybook/react": "9.0.0-rc.4",
-    "@storybook/react-native-theming": "^9.0.0-beta.15",
-    "@storybook/react-native-ui-common": "^9.0.0-beta.15",
+    "@storybook/react-native-theming": "^9.0.0-rc.4",
+    "@storybook/react-native-ui-common": "^9.0.0-rc.4",
     "es-toolkit": "^1.38.0",
     "fuse.js": "^7.0.0",
     "memoizerific": "^1.11.3",
