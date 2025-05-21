@@ -1,7 +1,6 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { ReactElement, forwardRef, useEffect, useMemo, useState } from 'react';
 import type { TouchableOpacityProps } from 'react-native';
-import { SvgProps } from 'react-native-svg';
 
 export interface ButtonProps extends TouchableOpacityProps {
   asChild?: boolean;
@@ -12,7 +11,7 @@ export interface ButtonProps extends TouchableOpacityProps {
   active?: boolean;
   animation?: 'none' | 'rotate360' | 'glow' | 'jiggle';
   text?: string;
-  Icon?: (props: SvgProps) => ReactElement;
+  Icon?: (props: { color: string }) => ReactElement;
 }
 
 // TODO fix this type
@@ -147,7 +146,7 @@ export const ButtonIcon = ({
   active,
   variant,
 }: {
-  Icon: (props: SvgProps) => ReactElement;
+  Icon: (props: { color: string }) => ReactElement;
   variant: ButtonProps['variant'];
   active: ButtonProps['active'];
 }) => {

@@ -1,25 +1,33 @@
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import type { Args, StoryContext } from '@storybook/csf';
+import type { ReactRenderer } from '@storybook/react';
+import { styled, ThemeProvider, useTheme } from '@storybook/react-native-theming';
+import {
+  IconButton,
+  LayoutProvider,
+  StorageProvider,
+  useLayout,
+  useStoreBooleanState,
+  useStyle,
+  type SBUI,
+} from '@storybook/react-native-ui-common';
+import { ReactNode, useCallback, useRef, useState } from 'react';
+import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons } from 'storybook/internal/manager-api';
-import { type API_IndexHash, type Args, type StoryContext } from 'storybook/internal/types';
-import type { ReactRenderer } from '@storybook/react';
-import { styled, useTheme } from '@storybook/react-native-theming';
-import { ReactNode, useRef, useState, useCallback } from 'react';
-import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { IconButton } from './IconButton';
-import { useLayout } from './LayoutProvider';
-import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
-import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
-import { Sidebar } from './Sidebar';
-import { StorybookLogo } from './StorybookLogo';
+import type { API_IndexHash } from 'storybook/internal/types';
 import { DEFAULT_REF_ID } from './constants';
-import { useStoreBooleanState } from './hooks/useStoreState';
 import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { CloseFullscreenIcon } from './icon/CloseFullscreenIcon';
 import { FullscreenIcon } from './icon/FullscreenIcon';
 import { MenuIcon } from './icon/MenuIcon';
-import { useStyle } from './util/useStyle';
+import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
+import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { SelectedNodeProvider } from './SelectedNodeProvider';
+import { Sidebar } from './Sidebar';
+import { StorybookLogo } from './StorybookLogo';
 
 const desktopLogoContainer = {
   flexDirection: 'row',
@@ -48,6 +56,28 @@ const mobileMenuDrawerContentStyle = {
   paddingTop: 4,
   paddingBottom: 4,
 } satisfies ViewStyle;
+
+const flex1 = { flex: 1 } satisfies ViewStyle;
+
+export const FullUI: SBUI = ({ storage, theme, storyHash, story, children }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
+        <GestureHandlerRootView style={flex1}>
+          <BottomSheetModalProvider>
+            <StorageProvider storage={storage}>
+              <LayoutProvider>
+                <Layout storyHash={storyHash} story={story}>
+                  {children}
+                </Layout>
+              </LayoutProvider>
+            </StorageProvider>
+          </BottomSheetModalProvider>
+        </GestureHandlerRootView>
+      </SafeAreaProvider>
+    </ThemeProvider>
+  );
+};
 
 export const Layout = ({
   storyHash,

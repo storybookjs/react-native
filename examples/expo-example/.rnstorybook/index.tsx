@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { theme, ThemeProvider } from '@storybook/react-native-theming';
+import { LiteUI } from '@storybook/react-native-ui-lite';
 import { SafeAreaView, StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { view } from './storybook.requires';
@@ -13,12 +14,12 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
   enableWebsockets: false,
-  onDeviceUI: !isScreenshotTesting,
+  // onDeviceUI: !isScreenshotTesting,
   // host: '192.x.x.x',
   // port: 7007,
 
   // initialSelection: { kind: 'TextInput', name: 'Basic' },
-  // onDeviceUI: false,
+  // onDeviceUI: true,
   // host: '192.168.1.69',
   /*   theme: {
     brand: {
@@ -29,14 +30,9 @@ const StorybookUIRoot = view.getStorybookUI({
       } ,
     },
   }, */
-  // CustomUIComponent: ({ children, setStory, story, storyHash }) => {
-  //   return (
-  //     <SafeAreaView style={{ flex: 1 }}>
-  //       <Text>Custom UI</Text>
-  //       {children}
-  //     </SafeAreaView>
-  //   );
-  // },
+
+  onDeviceUI: false,
+  CustomUIComponent: LiteUI,
 });
 
 const StorybookUI = () => {

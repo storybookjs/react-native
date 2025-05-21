@@ -1,4 +1,4 @@
-import { Args, StoryContext } from 'storybook/internal/types';
+import type { Args, StoryContext } from '@storybook/csf';
 import { useState, useEffect, useCallback } from 'react';
 import {
   UPDATE_STORY_ARGS,

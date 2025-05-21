@@ -1,5 +1,5 @@
 import { sanitize } from '@storybook/csf';
-import { type API, type State } from 'storybook/internal/manager-api';
+import type { API, State } from 'storybook/internal/manager-api';
 import type {
   API_ComponentEntry,
   API_DocsEntry,
@@ -12,46 +12,119 @@ import type {
   API_StoryEntry,
   DocsOptions,
   IndexEntry,
+  StatusesByStoryIdAndTypeId,
   StoryIndexV2,
   StoryIndexV3,
+  Tag,
 } from 'storybook/internal/types';
-import countBy from 'lodash/countBy.js';
 import { dedent } from 'ts-dedent';
-import isEqual from 'lodash/isEqual.js';
-import mergeWith from 'lodash/mergeWith.js';
 import { logger } from 'storybook/internal/client-logger';
+import { countBy, isEqual, mergeWith } from 'es-toolkit';
 
 type ToStoriesHashOptions = {
   provider: API_Provider<API>;
   docsOptions: DocsOptions;
   filters: State['filters'];
-  status: State['status'];
+  allStatuses: StatusesByStoryIdAndTypeId;
+};
+export const intersect = <T>(a: T[], b: T[]): T[] => {
+  // no point in intersecting if one of the input is ill-defined
+  if (!Array.isArray(a) || !Array.isArray(b) || !a.length || !b.length) {
+    return [];
+  }
+
+  return a.reduce((acc: T[], aValue) => {
+    if (b.includes(aValue)) {
+      acc.push(aValue);
+    }
+
+    return acc;
+  }, []);
 };
 
-const merge = <TObj = any>(a: TObj, b: Partial<TObj>) =>
-  mergeWith({}, a, b, (objValue: TObj, srcValue: Partial<TObj>) => {
-    if (Array.isArray(srcValue) && Array.isArray(objValue)) {
-      srcValue.forEach((s) => {
-        const existing = objValue.find((o) => o === s || isEqual(o, s));
-        if (!existing) {
-          objValue.push(s);
-        }
-      });
+export const merge = <TObj = any>(a: TObj, ...b: Partial<TObj>[]): TObj => {
+  // start with empty object
+  let target = {};
 
-      return objValue;
+  // merge object a unto target
+  target = mergeWith(
+    {},
+    a as Record<PropertyKey, any>,
+    (objValue: TObj, srcValue: Partial<TObj>) => {
+      if (Array.isArray(srcValue) && Array.isArray(objValue)) {
+        srcValue.forEach((s) => {
+          const existing = objValue.find((o) => o === s || isEqual(o, s));
+          if (!existing) {
+            objValue.push(s);
+          }
+        });
+
+        return objValue;
+      }
+      if (Array.isArray(objValue)) {
+        logger.log(['the types mismatch, picking', objValue]);
+        return objValue;
+      }
     }
-    if (Array.isArray(objValue)) {
-      logger.log(['the types mismatch, picking', objValue]);
-      return objValue;
+  );
+
+  for (const obj of b) {
+    // merge object b unto target
+    target = mergeWith(target, obj, (objValue: TObj, srcValue: Partial<TObj>) => {
+      if (Array.isArray(srcValue) && Array.isArray(objValue)) {
+        srcValue.forEach((s) => {
+          const existing = objValue.find((o) => o === s || isEqual(o, s));
+          if (!existing) {
+            objValue.push(s);
+          }
+        });
+
+        return objValue;
+      }
+      if (Array.isArray(objValue)) {
+        logger.log(['the types mismatch, picking', objValue]);
+        return objValue;
+      }
+    });
+  }
+
+  return target as TObj;
+};
+
+export const noArrayMerge = <TObj = any>(a: TObj, ...b: Partial<TObj>[]): TObj => {
+  // start with empty object
+  let target = {};
+
+  // merge object a unto target
+  target = mergeWith(
+    {},
+    a as Record<PropertyKey, any>,
+    (objValue: TObj, srcValue: Partial<TObj>) => {
+      // Treat arrays as scalars:
+      if (Array.isArray(srcValue)) {
+        return srcValue;
+      }
     }
-    return undefined;
-  });
+  );
+
+  for (const obj of b) {
+    // merge object b unto target
+    target = mergeWith(target, obj, (objValue: TObj, srcValue: Partial<TObj>) => {
+      // Treat arrays as scalars:
+      if (Array.isArray(srcValue)) {
+        return srcValue;
+      }
+    });
+  }
+
+  return target as TObj;
+};
 
 const TITLE_PATH_SEPARATOR = /\s*\/\s*/;
 
 export const transformStoryIndexToStoriesHash = (
   input: API_PreparedStoryIndex | StoryIndexV2 | StoryIndexV3,
-  { provider, docsOptions, filters, status }: ToStoriesHashOptions
+  { provider, docsOptions, filters, allStatuses }: ToStoriesHashOptions
 ): API_IndexHash | any => {
   if (!input.v) {
     throw new Error('Composition: Missing stories.json version');
@@ -60,16 +133,23 @@ export const transformStoryIndexToStoriesHash = (
   let index = input;
   index = index.v === 2 ? transformStoryIndexV2toV3(index as any) : index;
   index = index.v === 3 ? transformStoryIndexV3toV4(index as any) : index;
+  index = index.v === 4 ? transformStoryIndexV4toV5(index as any) : index;
   index = index as API_PreparedStoryIndex;
 
   const entryValues = Object.values(index.entries).filter((entry: any) => {
     let result = true;
 
-    Object.values(filters).forEach((filter: any) => {
+    // All stories with a failing status should always show up, regardless of the applied filters
+    const storyStatuses = allStatuses[entry.id] ?? {};
+    if (Object.values(storyStatuses).some(({ value }) => value === 'status-value:error')) {
+      return result;
+    }
+
+    Object.values(filters).forEach((filter) => {
       if (result === false) {
         return;
       }
-      result = filter({ ...entry, status: status[entry.id] });
+      result = filter({ ...entry, statuses: storyStatuses });
     });
 
     return result;
@@ -96,11 +176,15 @@ export const transformStoryIndexToStoriesHash = (
       const parent = idx > 0 && list[idx - 1];
       const id = sanitize(parent ? `${parent}-${name}` : name!);
 
+      if (name.trim() === '') {
+        throw new Error(dedent`Invalid title ${title} ending in slash.`);
+      }
+
       if (parent === id) {
         throw new Error(
           dedent`
           Invalid part '${name}', leading to id === parentId ('${id}'), inside title '${title}'
-          
+
           Did you create a path that uses the separator char accidentally, such as 'Vue <docs/>' where '/' is a separator char? See https://github.com/storybookjs/storybook/issues/6128
           `
         );
@@ -119,6 +203,7 @@ export const transformStoryIndexToStoriesHash = (
           type: 'root',
           id,
           name: names[idx],
+          tags: [],
           depth: idx,
           renderLabel,
           startCollapsed: collapsedRoots.includes(id),
@@ -138,6 +223,7 @@ export const transformStoryIndexToStoriesHash = (
           type: 'component',
           id,
           name: names[idx],
+          tags: [],
           parent: paths[idx - 1],
           depth: idx,
           renderLabel,
@@ -150,6 +236,7 @@ export const transformStoryIndexToStoriesHash = (
           type: 'group',
           id,
           name: names[idx],
+          tags: [],
           parent: paths[idx - 1],
           depth: idx,
           renderLabel,
@@ -163,6 +250,7 @@ export const transformStoryIndexToStoriesHash = (
     // Finally add an entry for the docs/story itself
     acc[item.id] = {
       type: 'story',
+      tags: [],
       ...item,
       depth: paths.length,
       parent: paths[paths.length - 1],
@@ -181,9 +269,18 @@ export const transformStoryIndexToStoriesHash = (
     }
 
     acc[item.id] = item;
-    // Ensure we add the children depth-first *before* inserting any other entries
+    // Ensure we add the children depth-first *before* inserting any other entries,
+    // and compute tags from the children put in the accumulator afterwards, once
+    // they're all known and we can compute a sound intersection.
     if (item.type === 'root' || item.type === 'group' || item.type === 'component') {
       item.children.forEach((childId: any) => addItem(acc, storiesHashOutOfOrder[childId]));
+
+      item.tags = item.children.reduce((currentTags: Tag[] | null, childId: any): Tag[] => {
+        const child = acc[childId];
+
+        // On the first child, we have nothing to intersect against so we use it as a source of data.
+        return currentTags === null ? child.tags : intersect(currentTags, child.tags);
+      }, null);
     }
     return acc;
   }
@@ -218,7 +315,7 @@ export const transformStoryIndexV2toV3 = (index: StoryIndexV2): StoryIndexV3 => 
 };
 
 export const transformStoryIndexV3toV4 = (index: StoryIndexV3): API_PreparedStoryIndex => {
-  const countByTitle = countBy(Object.values(index.stories), 'title');
+  const countByTitle = countBy(Object.values(index.stories), (item) => item.title);
   return {
     v: 4,
     entries: Object.values(index.stories).reduce(
@@ -240,6 +337,25 @@ export const transformStoryIndexV3toV4 = (index: StoryIndexV3): API_PreparedStor
         delete acc[entry.id].story;
         // @ts-expect-error (we're removing something that should not be there)
         delete acc[entry.id].kind;
+
+        return acc;
+      },
+      {} as API_PreparedStoryIndex['entries']
+    ),
+  };
+};
+
+export const transformStoryIndexV4toV5 = (
+  index: API_PreparedStoryIndex
+): API_PreparedStoryIndex => {
+  return {
+    v: 5,
+    entries: Object.values(index.entries).reduce(
+      (acc, entry) => {
+        acc[entry.id] = {
+          ...entry,
+          tags: entry.tags ? ['dev', 'test', ...entry.tags] : ['dev'],
+        };
 
         return acc;
       },

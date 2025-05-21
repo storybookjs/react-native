@@ -1,21 +1,16 @@
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { StoryContext, toId } from '@storybook/csf';
+import type { ReactRenderer } from '@storybook/react';
+import { Theme, darkTheme, theme } from '@storybook/react-native-theming';
+import { type SBUI, transformStoryIndexToStoriesHash } from '@storybook/react-native-ui-common';
 import { Channel, WebsocketTransport } from 'storybook/internal/channels';
-import { SET_CURRENT_STORY, CHANNEL_CREATED } from 'storybook/internal/core-events';
+import { CHANNEL_CREATED, SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons as managerAddons } from 'storybook/internal/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
-import { Args, StoryContext, toId } from '@storybook/csf';
-import type { ReactRenderer } from '@storybook/react';
-import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
-import {
-  Layout,
-  LayoutProvider,
-  StorageProvider,
-  transformStoryIndexToStoriesHash,
-} from '@storybook/react-native-ui';
+
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
-import { ReactElement, useEffect, useMemo, useReducer, useState } from 'react';
+import { useEffect, useMemo, useReducer, useState } from 'react';
 import {
   ActivityIndicator,
   Linking,
@@ -23,8 +18,6 @@ import {
   StyleSheet,
   useColorScheme,
 } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StoryView from './components/StoryView';
 import { useSetStoryContext, useStoryContext } from './hooks';
 import getHost from './rn-host-detect';
@@ -73,12 +66,7 @@ export type Params = {
   shouldPersistSelection?: boolean;
   theme: ThemePartial;
   storage?: Storage;
-  CustomUIComponent?: (props: {
-    story: StoryContext<ReactRenderer, Args>;
-    storyHash: API_IndexHash;
-    setStory: (storyId: string) => void;
-    children: ReactElement;
-  }) => ReactElement;
+  CustomUIComponent?: SBUI;
 };
 
 export class View {
@@ -182,6 +170,22 @@ export class View {
       storage,
       CustomUIComponent,
     } = params;
+
+    const getFullUI = (enabled: boolean): SBUI => {
+      if (enabled) {
+        try {
+          const { FullUI } = require('@storybook/react-native-ui');
+          return FullUI;
+        } catch (error) {
+          console.warn('storybook-log: error loading UI', error);
+        }
+      }
+
+      const PlaceholderUI: SBUI = ({ children }) => children;
+      return PlaceholderUI;
+    };
+
+    const FullUI: SBUI = getFullUI(onDeviceUI);
 
     this._storage = storage;
 
@@ -340,7 +344,7 @@ export class View {
         return transformStoryIndexToStoriesHash(self._storyIndex, {
           docsOptions: { docsMode: false, defaultName: '' },
           filters: {},
-          status: {},
+          allStatuses: {},
           provider: {
             handleAPI: () => ({}),
             getConfig: () => ({}),
@@ -366,22 +370,17 @@ export class View {
 
       if (onDeviceUI) {
         return (
-          <ThemeProvider theme={appliedTheme as Theme}>
-            <SafeAreaProvider>
-              <GestureHandlerRootView style={{ flex: 1 }}>
-                <BottomSheetModalProvider>
-                  {/* @ts-ignore something weird with story type */}
-                  <StorageProvider storage={storage}>
-                    <LayoutProvider>
-                      <Layout storyHash={storyHash} story={story}>
-                        <StoryView />
-                      </Layout>
-                    </LayoutProvider>
-                  </StorageProvider>
-                </BottomSheetModalProvider>
-              </GestureHandlerRootView>
-            </SafeAreaProvider>
-          </ThemeProvider>
+          <FullUI
+            storage={storage}
+            theme={appliedTheme as Theme}
+            storyHash={storyHash}
+            story={story}
+            setStory={(newStoryId) =>
+              self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
+            }
+          >
+            <StoryView />
+          </FullUI>
         );
       } else if (CustomUIComponent) {
         return (
@@ -391,6 +390,8 @@ export class View {
             setStory={(newStoryId) =>
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }
+            storage={storage}
+            theme={appliedTheme as Theme}
           >
             <StoryView />
           </CustomUIComponent>

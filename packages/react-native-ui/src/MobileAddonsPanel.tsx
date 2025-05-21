@@ -12,9 +12,8 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { IconButton } from './IconButton';
+import { IconButton, useStyle } from '@storybook/react-native-ui-common';
 import { CloseIcon } from './icon/CloseIcon';
-import { useStyle } from './util/useStyle';
 
 export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
@@ -55,9 +54,9 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
     const { height } = useWindowDimensions();
 
     const adjustedBottomSheetSize = useAnimatedStyle(() => {
-      const extraPadding = Platform.OS === 'android' ? 32 : 16;
+      const extraPadding = Platform.OS === 'android' ? 32 : 16 + insets.bottom;
       return {
-        maxHeight: height - animatedPosition.value - insets.bottom - extraPadding,
+        maxHeight: height - animatedPosition.value - extraPadding,
       };
     }, [animatedPosition, height, insets.bottom]);
 
