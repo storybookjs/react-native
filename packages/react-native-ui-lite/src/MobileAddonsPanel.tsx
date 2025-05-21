@@ -1,12 +1,16 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
-import { forwardRef, useImperativeHandle, useMemo, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useState } from 'react';
 import {
-  KeyboardAvoidingView,
-  Modal,
+  Animated,
+  Easing,
+  Keyboard,
+  Platform,
   SafeAreaView,
   ScrollView,
   StyleProp,
   Text,
+  useAnimatedValue,
+  useWindowDimensions,
   View,
   ViewStyle,
 } from 'react-native';
@@ -23,6 +27,63 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
   ({ storyId }, ref) => {
     const theme = useTheme();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { height } = useWindowDimensions();
+    const panelHeight = useAnimatedValue(height / 2);
+    const positionBottomAnimation = useAnimatedValue(0);
+
+    useEffect(() => {
+      // Define keyboard show handler
+      const handleKeyboardShow = ({ endCoordinates, duration, easing }) => {
+        Animated.parallel([
+          Animated.timing(positionBottomAnimation, {
+            toValue: -endCoordinates.height, // Negative to move up
+            duration,
+            useNativeDriver: false,
+            easing: Easing[easing] || Easing.out(Easing.ease),
+          }),
+
+          Animated.timing(panelHeight, {
+            toValue: (height - endCoordinates.height) / 2,
+            duration: duration + 250,
+            useNativeDriver: false,
+            easing: Easing[easing] || Easing.out(Easing.ease),
+          }),
+        ]).start();
+      };
+
+      // Define keyboard hide handler
+      const handleKeyboardHide = ({ duration, easing }) => {
+        Animated.parallel([
+          Animated.timing(positionBottomAnimation, {
+            toValue: 0, // Back to original position
+            duration,
+            useNativeDriver: false,
+            easing: Easing[easing] || Easing.out(Easing.ease),
+          }),
+
+          Animated.timing(panelHeight, {
+            toValue: height / 2,
+            duration,
+            useNativeDriver: false,
+            easing: Easing[easing] || Easing.out(Easing.ease),
+          }),
+        ]).start();
+      };
+
+      // Add keyboard event listeners
+      const showSubscription = Keyboard.addListener('keyboardDidShow', handleKeyboardShow);
+      const willShowSubscription = Keyboard.addListener('keyboardWillShow', handleKeyboardShow);
+      const hideSubscription = Keyboard.addListener('keyboardWillHide', handleKeyboardHide);
+      const didHideSubscription = Keyboard.addListener('keyboardDidHide', handleKeyboardHide);
+
+      // Clean up subscriptions on unmount
+      return () => {
+        showSubscription.remove();
+        willShowSubscription.remove();
+        hideSubscription.remove();
+        didHideSubscription.remove();
+      };
+    }, [height, panelHeight, positionBottomAnimation]);
 
     useImperativeHandle(ref, () => ({
       setAddonsPanelOpen: (open: boolean) => {
@@ -34,34 +95,45 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
       },
     }));
 
+    if (!mobileMenuOpen) {
+      return null;
+    }
+
     return (
-      <Modal
-        visible={mobileMenuOpen}
-        onRequestClose={() => setMobileMenuOpen(false)}
-        transparent
-        animationType="slide"
+      <Animated.View
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: panelHeight,
+          transform: [{ translateY: positionBottomAnimation }],
+        }}
       >
-        <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
-          <SafeAreaView style={{ justifyContent: 'flex-end', flex: 1 }}>
-            <View
-              style={{
-                height: '50%',
-                backgroundColor: theme.background.content,
-                paddingTop: 10,
-                borderTopColor: theme.appBorderColor,
-                borderTopWidth: 1,
+        <SafeAreaView
+          style={{
+            justifyContent: 'flex-end',
+          }}
+        >
+          <View
+            style={{
+              height: '100%',
+              backgroundColor: theme.background.content,
+              paddingTop: 10,
+              borderTopColor: theme.appBorderColor,
+              borderTopWidth: 1,
+              paddingBottom: Platform.OS === 'android' ? 16 : 0,
+            }}
+          >
+            <AddonsTabs
+              onClose={() => {
+                setMobileMenuOpen(false);
               }}
-            >
-              <AddonsTabs
-                onClose={() => {
-                  setMobileMenuOpen(false);
-                }}
-                storyId={storyId}
-              />
-            </View>
-          </SafeAreaView>
-        </KeyboardAvoidingView>
-      </Modal>
+              storyId={storyId}
+            />
+          </View>
+        </SafeAreaView>
+      </Animated.View>
     );
   }
 );
