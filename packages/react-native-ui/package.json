@@ -58,7 +58,7 @@
     "typescript": "~5.8.3"
   },
   "dependencies": {
-    "@storybook/react": "0.0.0-pr-31518-sha-a4ae4499",
+    "@storybook/react": "9.0.0-rc.4",
     "@storybook/react-native-theming": "^9.0.0-beta.15",
     "@storybook/react-native-ui-common": "^9.0.0-beta.15",
     "es-toolkit": "^1.38.0",
@@ -75,7 +75,7 @@
     "react-native-reanimated": ">=3",
     "react-native-safe-area-context": "*",
     "react-native-svg": ">=14",
-    "storybook": "0.0.0-pr-31518-sha-a4ae4499"
+    "storybook": "9.0.0-rc.4"
   },
   "engines": {
     "node": ">=18.0.0"
