@@ -1,16 +1,18 @@
 import { useTheme } from '@storybook/react-native-theming';
-import { forwardRef, memo, ReactNode, useImperativeHandle, useMemo, useState } from 'react';
+import { forwardRef, memo, ReactNode, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import {
+  Animated,
   Keyboard,
   KeyboardAvoidingView,
   Modal,
+  PanResponder,
+  PanResponderInstance,
   Pressable,
   SafeAreaView,
   ScrollView,
-  StyleProp,
+  useAnimatedValue,
   useWindowDimensions,
   View,
-  ViewStyle,
 } from 'react-native';
 
 import { useSelectedNode } from './SelectedNodeProvider';
@@ -27,10 +29,45 @@ export const MobileMenuDrawer = memo(
   forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(({ children }, ref) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { scrollToSelectedNode, scrollRef } = useSelectedNode();
-    const { height } = useWindowDimensions();
+    const theme = useTheme();
+
+    // Create a reference for the drag handle animation
+    const dragY = useAnimatedValue(0);
+
+    // Create the pan responder for handling drag gestures
+    const panResponder = useRef<PanResponderInstance>(
+      PanResponder.create({
+        onStartShouldSetPanResponder: () => true,
+        onMoveShouldSetPanResponder: (_, gestureState) => {
+          // Only capture downward dragging motions
+          return gestureState.dy > 0;
+        },
+        onPanResponderMove: (_, gestureState) => {
+          // Update dragY based on the gesture
+          if (gestureState.dy > 0) {
+            dragY.setValue(gestureState.dy);
+          }
+        },
+        onPanResponderRelease: (_, gestureState) => {
+          // If dragged down enough, close the drawer
+          if (gestureState.dy > 50) {
+            Keyboard.dismiss();
+            setMobileMenuOpen(false);
+          }
+          // Reset the drag position
+          Animated.timing(dragY, {
+            toValue: 0,
+            duration: 300,
+            useNativeDriver: true,
+          }).start();
+        },
+      })
+    ).current;
+
     useImperativeHandle(ref, () => ({
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
+          dragY.setValue(0);
           scrollToSelectedNode();
           setMobileMenuOpen(true);
         } else {
@@ -39,41 +76,65 @@ export const MobileMenuDrawer = memo(
         }
       },
     }));
-    const theme = useTheme();
-    const bgColorStyle = useMemo(() => {
-      return {
-        marginTop: 'auto',
-        backgroundColor: theme.background.content,
-        height: height,
-        width: '100%',
-        overflow: 'hidden',
-      } satisfies StyleProp<ViewStyle>;
-    }, [height, theme.background.content]);
+
+    // Create the styles for the drag handle
+    const handleStyle = useMemo(
+      () => ({
+        width: 40,
+        height: 5,
+        backgroundColor: theme.color.mediumdark,
+        borderRadius: 2.5,
+        alignSelf: 'center' as const, // TypeScript needs this to recognize 'center' as a valid FlexAlignType
+        marginVertical: 8,
+      }),
+      [theme.color.mediumdark]
+    );
 
     return (
       <Modal
         visible={mobileMenuOpen}
-        style={bgColorStyle}
         animationType="slide"
         transparent
+        statusBarTranslucent
         onRequestClose={() => setMobileMenuOpen(false)}
       >
         <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
           <SafeAreaView style={{ justifyContent: 'flex-end', flex: 1 }}>
-            <View
-              style={{ flex: 1, borderBottomColor: theme.appBorderColor, borderBottomWidth: 1 }}
-            >
+            <View style={{ flex: 1 }}>
               <Pressable style={{ flex: 1 }} onPress={() => setMobileMenuOpen(false)}></Pressable>
             </View>
 
-            <View style={{ height: '65%' }}>
+            <Animated.View
+              style={[
+                {
+                  height: '65%',
+                  borderTopColor: theme.appBorderColor,
+                  borderTopWidth: 1,
+                  borderStyle: 'solid',
+                  backgroundColor: theme.background.content,
+                  elevation: 8,
+                },
+                { transform: [{ translateY: dragY }] },
+              ]}
+            >
+              {/* Drag handle */}
+              <View
+                {...panResponder.panHandlers}
+                style={{
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: theme.background.content,
+                }}
+              >
+                <View style={handleStyle} />
+              </View>
+
               <ScrollView
                 ref={scrollRef}
                 keyboardShouldPersistTaps="handled"
                 style={{
                   flex: 1,
                   paddingBottom: 150,
-                  paddingTop: 24,
                   alignSelf: 'flex-end',
                   width: '100%',
                   backgroundColor: theme.background.content,
@@ -81,7 +142,7 @@ export const MobileMenuDrawer = memo(
               >
                 {children}
               </ScrollView>
-            </View>
+            </Animated.View>
           </SafeAreaView>
         </KeyboardAvoidingView>
       </Modal>
