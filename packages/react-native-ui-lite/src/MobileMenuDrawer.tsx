@@ -11,7 +11,6 @@ import {
   SafeAreaView,
   ScrollView,
   useAnimatedValue,
-  useWindowDimensions,
   View,
 } from 'react-native';
 

@@ -1,11 +1,10 @@
 import type { Args, StoryContext } from '@storybook/csf';
 import type { ReactRenderer } from '@storybook/react';
-import { styled, Theme, ThemeProvider, useTheme } from '@storybook/react-native-theming';
+import { styled, ThemeProvider, useTheme } from '@storybook/react-native-theming';
 import {
   IconButton,
   LayoutProvider,
   SBUI,
-  Storage,
   StorageProvider,
   useLayout,
   useStoreBooleanState,
