@@ -47,7 +47,7 @@
     "@react-native-community/slider": "*",
     "react": "*",
     "react-native": "*",
-    "storybook": "9.0.0-rc.4"
+    "storybook": "^9"
   },
   "peerDependenciesMeta": {
     "@gorhom/bottom-sheet": {

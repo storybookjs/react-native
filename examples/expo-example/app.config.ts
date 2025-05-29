@@ -6,6 +6,9 @@ export default {
   web: {
     bundler: 'metro',
   },
+  experiments: {
+    reactCompiler: false,
+  },
   userInterfaceStyle: 'automatic',
   newArchEnabled: true,
 } satisfies ExpoConfig;

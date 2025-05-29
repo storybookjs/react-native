@@ -256,6 +256,7 @@ export const Tree = React.memo<{
   // Omit single-story components from the list of nodes.
   const collapsedItems = useMemo(
     () => Object.keys(data).filter((id) => !singleStoryComponentIds.includes(id)),
+    // eslint-disable-next-line react-compiler/react-compiler
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [singleStoryComponentIds]
   );
@@ -281,6 +282,7 @@ export const Tree = React.memo<{
       },
       { ...data }
     );
+    // eslint-disable-next-line react-compiler/react-compiler
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
