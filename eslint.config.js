@@ -1,10 +1,12 @@
 const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
 const globals = require('globals');
+const reactCompiler = require('eslint-plugin-react-compiler');
 
 module.exports = defineConfig([
   {
     ignores: [
+      '.yarn/**',
       '**/dist/**',
       'packages/react-native/template/**/*',
       'packages/react-native/src/rn-host-detect.js',
@@ -14,6 +16,7 @@ module.exports = defineConfig([
     ],
   },
   expoConfig,
+  reactCompiler.configs.recommended,
   {
     files: ['**/*.spec.js', '**/*.spec.jsx', '**/*.test.js', '**/*.test.jsx'],
     languageOptions: {
