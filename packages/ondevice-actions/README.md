@@ -10,7 +10,7 @@ yarn add -D @storybook/addon-ondevice-actions
 
 ## Configuration
 
-Then, add following content to `.storybook/main.ts`:
+Then, add following content to `.rnstorybook/main.ts`:
 
 ```ts
 import { StorybookConfig } from '@storybook/react-native';

@@ -54,7 +54,7 @@ npx storybook@latest init
 The only thing left to do is return Storybook's UI in your app entry point (such as `App.tsx`) like this:
 
 ```tsx
-export { default } from './.storybook';
+export { default } from './.rnstorybook';
 ```
 
 Then wrap your metro config with the withStorybook function as seen [below](#additional-steps-update-your-metro-config)
@@ -172,10 +172,10 @@ export const Basic: Story = {
 };
 ```
 
-You should configure the path to your story files in the `main.ts` config file from the `.storybook` folder.
+You should configure the path to your story files in the `main.ts` config file from the `.rnstorybook` folder.
 
 ```ts
-// .storybook/main.ts
+// .rnstorybook/main.ts
 import { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
@@ -218,10 +218,10 @@ const meta = {
 export default meta;
 ```
 
-For global decorators and parameters, you can add them to `preview.tsx` inside your `.storybook` folder.
+For global decorators and parameters, you can add them to `preview.tsx` inside your `.rnstorybook` folder.
 
 ```tsx
-// .storybook/preview.tsx
+// .rnstorybook/preview.tsx
 import type { Preview } from '@storybook/react';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
@@ -264,7 +264,7 @@ Currently the addons available are:
 Install each one you want to use and add them to the `main.ts` addons list as follows:
 
 ```ts
-// .storybook/main.ts
+// .rnstorybook/main.ts
 import { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
@@ -348,11 +348,11 @@ This is useful if you want to remove storybook from your production build.
 
 Type: `boolean`, default: `false`
 
-Generates the `.storybook/storybook.requires` file in JavaScript instead of TypeScript.
+Generates the `.rnstorybook/storybook.requires` file in JavaScript instead of TypeScript.
 
 #### configPath
 
-Type: `string`, default: `path.resolve(process.cwd(), './.storybook')`
+Type: `string`, default: `path.resolve(process.cwd(), './.rnstorybook')`
 
 The location of your Storybook configuration directory, which includes `main.ts` and other project-related files.
 
