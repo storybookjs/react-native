@@ -1,7 +1,7 @@
 # Storybook for React Native
 
 > [!IMPORTANT]  
-> This readme is for v9 beta, for v8 docs see the [v8.6 docs](https://github.com/storybookjs/react-native/tree/v8.6.0-stable).
+> This readme is for v9, for v8 docs see the [v8.6 docs](https://github.com/storybookjs/react-native/tree/v8.6.0-stable).
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
@@ -93,7 +93,8 @@ module.exports = withStorybook(config, {
   // you can also use a env variable to set this
   enabled: true,
   // Path to your storybook config
-  configPath: path.resolve(__dirname, './.storybook'),
+  configPath: path.resolve(__dirname, './.rnstorybook'),
+  // note that this is the default so you can the config path blank if you use .rnstorybook
 
   // Optional websockets configuration
   // Starts a websocket server on the specified port and host on metro start
@@ -128,7 +129,8 @@ module.exports = withStorybook(finalConfig, {
   // you can also use a env variable to set this
   enabled: true,
   // Path to your storybook config
-  configPath: path.resolve(__dirname, './.storybook'),
+  configPath: path.resolve(__dirname, './.rnstorybook'),
+  // note that this is the default so you can the config path blank if you use .rnstorybook
 
   // Optional websockets configuration
   // Starts a websocket server on the specified port and host on metro start
