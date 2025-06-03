@@ -368,21 +368,7 @@ export class View {
         );
       }
 
-      if (onDeviceUI) {
-        return (
-          <FullUI
-            storage={storage}
-            theme={appliedTheme as Theme}
-            storyHash={storyHash}
-            story={story}
-            setStory={(newStoryId) =>
-              self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
-            }
-          >
-            <StoryView />
-          </FullUI>
-        );
-      } else if (CustomUIComponent) {
+      if (CustomUIComponent) {
         return (
           <CustomUIComponent
             story={story}
@@ -395,6 +381,20 @@ export class View {
           >
             <StoryView />
           </CustomUIComponent>
+        );
+      } else if (onDeviceUI) {
+        return (
+          <FullUI
+            storage={storage}
+            theme={appliedTheme as Theme}
+            storyHash={storyHash}
+            story={story}
+            setStory={(newStoryId) =>
+              self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
+            }
+          >
+            <StoryView />
+          </FullUI>
         );
       } else {
         return <StoryView />;
