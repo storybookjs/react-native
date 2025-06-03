@@ -3819,12 +3819,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-react-native-server@npm:0.0.6":
-  version: 0.0.6
-  resolution: "@storybook/addon-react-native-server@npm:0.0.6"
+"@storybook/addon-react-native-server@npm:1.0.0--canary.11.2bf3922.0":
+  version: 1.0.0--canary.11.2bf3922.0
+  resolution: "@storybook/addon-react-native-server@npm:1.0.0--canary.11.2bf3922.0"
   dependencies:
     ws: "npm:^8.16.0"
-  checksum: 10/dfa2dbc119c0c9b541952d57231742526cf6aceb9dddeb0bf1f4e493aacf9fae0955c4509e86e29432d8c007e46c9fe9a2ec2fe77c42f425bc8f4126a1469bbc
+  checksum: 10/5893062cf07a42f32f709f8c2ec52a52a89c58923cb81573951f3db1db5412bde49b63d3deb25ac10047f1956b98f3fbdd5300d41b1dac9dbec16de0bc7c50e1
   languageName: node
   linkType: hard
 
@@ -8232,7 +8232,7 @@ __metadata:
     "@storybook/addon-ondevice-backgrounds": "npm:^9.0.6"
     "@storybook/addon-ondevice-controls": "npm:^9.0.6"
     "@storybook/addon-ondevice-notes": "npm:^9.0.6"
-    "@storybook/addon-react-native-server": "npm:0.0.6"
+    "@storybook/addon-react-native-server": "npm:1.0.0--canary.11.2bf3922.0"
     "@storybook/global": "npm:^5.0.0"
     "@storybook/react": "npm:^9"
     "@storybook/react-native": "npm:^9.0.6"

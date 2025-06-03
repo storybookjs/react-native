@@ -7,11 +7,7 @@ type ServerStorybookConfig = StorybookConfig & {
 const main: ServerStorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
 
-  addons: [
-    // note why does this break with get absolute?
-    // '@storybook/addon-react-native-server',
-    'storybook-addon-deep-controls',
-  ],
+  addons: ['@storybook/addon-react-native-server', 'storybook-addon-deep-controls'],
 
   framework: {
     name: '@storybook/react-native-web-vite',
