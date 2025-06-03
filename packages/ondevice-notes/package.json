@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-notes",
-  "version": "9.0.4",
+  "version": "9.0.5",
   "description": "Write notes for your react-native Storybook stories.",
   "keywords": [
     "addon",
@@ -29,7 +29,7 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@storybook/react-native-theming": "^9.0.4",
+    "@storybook/react-native-theming": "^9.0.5",
     "react-native-markdown-display": "^7.0.2"
   },
   "devDependencies": {
