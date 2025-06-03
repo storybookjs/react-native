@@ -50,7 +50,7 @@ npx react-native init MyApp --template react-native-template-storybook
 Run init to setup your project with all the dependencies and configuration files:
 
 ```sh
-npx storybook@latest init
+npm create storybook@latest
 ```
 
 The only thing left to do is return Storybook's UI in your app entry point (such as `App.tsx`) like this:
@@ -149,6 +149,39 @@ Make sure you have `react-native-reanimated` in your project and the plugin setu
 // babel.config.js
 plugins: ['react-native-reanimated/plugin'],
 ```
+
+## Expo router specific setup
+
+```bash
+npm create storybook@latest
+```
+
+choose recommended and then native
+
+```bash
+npx expo@latest customize metro.config.js
+```
+
+copy the metro config
+
+```js
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+module.exports = withStorybook(config);
+```
+
+add storybook screen to app
+
+create `app/storybook.tsx`
+
+```tsx
+export { default } from '../.rnstorybook';
+```
+
+Then add a way to navigate to your storybook route and I recommend disabling the header for the storybook route.
+
+Heres a video showing the same setup:
+
+(video here)
 
 ## Writing stories
 
