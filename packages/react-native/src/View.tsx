@@ -185,7 +185,7 @@ export class View {
       return PlaceholderUI;
     };
 
-    const FullUI: SBUI = getFullUI(onDeviceUI);
+    const FullUI: SBUI = getFullUI(onDeviceUI && !CustomUIComponent);
 
     this._storage = storage;
 
