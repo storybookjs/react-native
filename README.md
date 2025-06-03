@@ -181,7 +181,7 @@ Then add a way to navigate to your storybook route and I recommend disabling the
 
 Heres a video showing the same setup:
 
-(video here)
+https://github.com/user-attachments/assets/dea0bc93-0b6a-4668-924d-53087173090d
 
 ## Writing stories
 
