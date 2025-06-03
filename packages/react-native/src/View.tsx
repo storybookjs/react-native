@@ -368,21 +368,23 @@ export class View {
         );
       }
 
-      if (CustomUIComponent) {
-        return (
-          <CustomUIComponent
-            story={story}
-            storyHash={storyHash}
-            setStory={(newStoryId) =>
-              self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
-            }
-            storage={storage}
-            theme={appliedTheme as Theme}
-          >
-            <StoryView />
-          </CustomUIComponent>
-        );
-      } else if (onDeviceUI) {
+      if (onDeviceUI) {
+        if (CustomUIComponent) {
+          return (
+            <CustomUIComponent
+              story={story}
+              storyHash={storyHash}
+              setStory={(newStoryId) =>
+                self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
+              }
+              storage={storage}
+              theme={appliedTheme as Theme}
+            >
+              <StoryView />
+            </CustomUIComponent>
+          );
+        }
+
         return (
           <FullUI
             storage={storage}
