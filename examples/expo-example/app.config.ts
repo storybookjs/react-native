@@ -7,7 +7,7 @@ export default {
     bundler: 'metro',
   },
   experiments: {
-    reactCompiler: false,
+    reactCompiler: true,
   },
   userInterfaceStyle: 'automatic',
   newArchEnabled: true,
