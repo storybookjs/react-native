@@ -1,6 +1,5 @@
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { styled, Theme } from '@storybook/react-native-theming';
-import { useLayout } from '@storybook/react-native-ui';
+import { useLayout } from '@storybook/react-native-ui-common';
 import { forwardRef } from 'react';
 import { Platform, TextInput, TextInputProps, TextStyle } from 'react-native';
 
@@ -21,8 +20,8 @@ export function inputStyle({
     borderColor: hasError
       ? theme.color.negative
       : focused
-      ? theme.color.secondary
-      : theme.input.border,
+        ? theme.color.secondary
+        : theme.input.border,
     fontSize: theme.typography.size.s2 - 1,
     color: theme.input.color,
     paddingHorizontal: theme.input.paddingHorizontal,
@@ -47,16 +46,32 @@ export function inputStyle({
   };
 }
 
+let BottomSheetTextInput = TextInput;
+let useBottomSheetInternal = (b: boolean) => null;
+
+try {
+  const {
+    BottomSheetTextInput: BottomSheetTextInput_,
+    useBottomSheetInternal: useBottomSheetInternal_,
+  } = require('@gorhom/bottom-sheet');
+  BottomSheetTextInput = BottomSheetTextInput_;
+  useBottomSheetInternal = useBottomSheetInternal_;
+} catch {}
+
 const TextInputWithSwitcher = forwardRef<TextInput, TextInputProps>((props, ref) => {
   const { isMobile } = useLayout();
+  const context = useBottomSheetInternal(true);
+  const isBottomSheet = context !== null;
 
-  return isMobile ? (
+  return isMobile && isBottomSheet ? (
     // @ts-ignore
     <BottomSheetTextInput ref={ref} {...props} />
   ) : (
     <TextInput ref={ref} {...props} />
   );
 });
+
+TextInputWithSwitcher.displayName = 'TextInputWithSwitcher';
 
 export const Input = styled(TextInputWithSwitcher)<{
   focused?: boolean;

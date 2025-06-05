@@ -1,20 +1,9 @@
-import debounce from 'lodash/debounce.js';
-import { useCallback, useEffect, useMemo, useRef } from 'react';
-import store from 'store2';
+import { useCallback, useEffect, useRef } from 'react';
 
 import type { Selection, StoryRef } from '../types';
 
-const save = debounce((value) => store.set('lastViewedStoryIds', value), 1000);
-
 export const useLastViewed = (selection: Selection) => {
-  const initialLastViewedStoryIds = useMemo((): StoryRef[] => {
-    const items = store.get('lastViewedStoryIds');
-    if (!items || !Array.isArray(items)) return [];
-    if (!items.some((item) => typeof item === 'object' && item.storyId && item.refId)) return [];
-    return items;
-  }, []);
-
-  const lastViewedRef = useRef(initialLastViewedStoryIds);
+  const lastViewedRef = useRef([]);
 
   const updateLastViewed = useCallback(
     (story: StoryRef) => {
@@ -28,13 +17,13 @@ export const useLastViewed = (selection: Selection) => {
       } else {
         lastViewedRef.current = [story, ...items.slice(0, index), ...items.slice(index + 1)];
       }
-      save(lastViewedRef.current);
     },
     [lastViewedRef]
   );
 
   useEffect(() => {
     if (selection) updateLastViewed(selection);
+    // eslint-disable-next-line react-compiler/react-compiler
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selection]);
 
@@ -42,7 +31,6 @@ export const useLastViewed = (selection: Selection) => {
     getLastViewed: useCallback(() => lastViewedRef.current, [lastViewedRef]),
     clearLastViewed: useCallback(() => {
       lastViewedRef.current = lastViewedRef.current.slice(0, 1);
-      save(lastViewedRef.current);
     }, [lastViewedRef]),
   };
 };

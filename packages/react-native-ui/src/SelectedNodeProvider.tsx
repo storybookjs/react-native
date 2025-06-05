@@ -36,7 +36,8 @@ export const SelectedNodeProvider: FC<PropsWithChildren> = ({ children }) => {
           nodeRef.current.measureLayout?.(scrollRef.current as any, (_x, y) => {
             scrollRef.current?.scrollTo({ y: y - 100, animated: true });
           });
-        } catch (error) {}
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (_error) {}
       }
     }, 500);
   }, []);

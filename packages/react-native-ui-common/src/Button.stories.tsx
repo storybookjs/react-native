@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ReactNode } from 'react';
 
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 
 import { Button } from './Button';
-import { FaceHappyIcon } from './icon/FaceHappyIcon';
 
 const meta = {
   title: 'UI/Button',
@@ -26,7 +25,7 @@ const Row = ({ children }: { children: ReactNode }) => (
 );
 
 export const Base: Story = {};
-
+const Icon = () => <Image source={require('./assets/react-native-logo.png')} />;
 export const Variants: Story = {
   render: (args) => (
     <Stack>
@@ -36,14 +35,14 @@ export const Variants: Story = {
         <Button variant="ghost" text="Ghost" {...args} />
       </Row>
       <Row>
-        <Button variant="solid" {...args} Icon={FaceHappyIcon} text="Solid" />
-        <Button variant="outline" Icon={FaceHappyIcon} text="Outline" {...args} />
-        <Button variant="ghost" Icon={FaceHappyIcon} text="Ghost" {...args} />
+        <Button variant="solid" {...args} Icon={Icon} text="Solid" />
+        <Button variant="outline" Icon={Icon} text="Outline" {...args} />
+        <Button variant="ghost" Icon={Icon} text="Ghost" {...args} />
       </Row>
       <Row>
-        <Button variant="solid" padding="small" Icon={FaceHappyIcon} {...args} />
-        <Button variant="outline" padding="small" Icon={FaceHappyIcon} {...args} />
-        <Button variant="ghost" padding="small" Icon={FaceHappyIcon} {...args} />
+        <Button variant="solid" padding="small" Icon={Icon} {...args} />
+        <Button variant="outline" padding="small" Icon={Icon} {...args} />
+        <Button variant="ghost" padding="small" Icon={Icon} {...args} />
       </Row>
     </Stack>
   ),
@@ -53,7 +52,7 @@ export const Active: Story = {
   args: {
     active: true,
     text: 'Button',
-    Icon: FaceHappyIcon,
+    Icon,
   },
   render: (args) => (
     <Row>
@@ -66,7 +65,7 @@ export const Active: Story = {
 
 export const WithIcon: Story = {
   args: {
-    Icon: FaceHappyIcon,
+    Icon,
     text: 'Button',
   },
   render: (args) => (
@@ -81,7 +80,7 @@ export const WithIcon: Story = {
 export const IconOnly: Story = {
   args: {
     padding: 'small',
-    Icon: FaceHappyIcon,
+    Icon,
   },
   render: (args) => (
     <Row>
@@ -120,14 +119,14 @@ export const Animated: Story = {
         <Button animation="rotate360" text="Button" {...args} />
       </Row>
       <Row>
-        <Button animation="glow" text="Button" Icon={FaceHappyIcon} {...args} />
-        <Button animation="jiggle" text="Button" Icon={FaceHappyIcon} {...args} />
-        <Button animation="rotate360" Icon={FaceHappyIcon} text="Button" {...args} />
+        <Button animation="glow" text="Button" Icon={Icon} {...args} />
+        <Button animation="jiggle" text="Button" Icon={Icon} {...args} />
+        <Button animation="rotate360" Icon={Icon} text="Button" {...args} />
       </Row>
       <Row>
-        <Button animation="glow" padding="small" Icon={FaceHappyIcon} {...args} />
-        <Button animation="jiggle" padding="small" Icon={FaceHappyIcon} {...args} />
-        <Button animation="rotate360" padding="small" Icon={FaceHappyIcon} {...args} />
+        <Button animation="glow" padding="small" Icon={Icon} {...args} />
+        <Button animation="jiggle" padding="small" Icon={Icon} {...args} />
+        <Button animation="rotate360" padding="small" Icon={Icon} {...args} />
       </Row>
     </Stack>
   ),

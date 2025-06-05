@@ -1,4 +1,3 @@
-import '@testing-library/react-native/extend-expect';
 import { render, screen } from '@testing-library/react-native';
 import { composeStories } from '@storybook/react';
 import * as Backgrounds from './BackgroundCsf.stories';

@@ -44,17 +44,17 @@ cd ios; pod install; cd ..;
 
 # Configuration
 
-## .storybook
+## .rnstorybook
 
-Create a folder called `.storybook` with files: `main.ts`, `preview.tsx`, `index.tsx`
+Create a folder called `.rnstorybook` with files: `main.ts`, `preview.tsx`, `index.tsx`
 
 You can use this one-liner to quickly create those files:
 
 ```console
-mkdir .storybook && touch .storybook/main.ts .storybook/preview.tsx .storybook/index.tsx
+mkdir .rnstorybook && touch .rnstorybook/main.ts .rnstorybook/preview.tsx .rnstorybook/index.tsx
 ```
 
-### .storybook/main.ts
+### .rnstorybook/main.ts
 
 ```ts
 import { StorybookConfig } from '@storybook/react-native';
@@ -67,7 +67,7 @@ const main: StorybookConfig = {
 export default main;
 ```
 
-### .storybook/preview.tsx
+### .rnstorybook/preview.tsx
 
 ```ts
 import type { Preview } from '@storybook/react';
@@ -96,7 +96,7 @@ Add the following to the scripts in your package.json.
 
 run `yarn storybook-generate`
 
-### .storybook/index.tsx
+### .rnstorybook/index.tsx
 
 ```tsx
 import { view } from './storybook.requires';
@@ -179,7 +179,7 @@ This is a simple example you can do more by adding addons and exploring more fea
 The only thing left to do is return Storybook's UI in your app entry point (such as `App.tsx`) like this:
 
 ```tsx
-export { default } from './.storybook';
+export { default } from './.rnstorybook';
 ```
 
 If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)

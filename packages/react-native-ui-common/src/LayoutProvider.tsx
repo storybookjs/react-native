@@ -18,6 +18,8 @@ export const LayoutProvider: FC<PropsWithChildren> = ({ children }) => {
   const isDesktop = width >= BREAKPOINT;
   const isMobile = !isDesktop;
 
+  // console.log({ isDesktop, isMobile, breakpoint: BREAKPOINT, width });
+
   const contextValue = useMemo(
     () => ({
       isDesktop,

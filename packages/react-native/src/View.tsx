@@ -1,18 +1,13 @@
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { StoryContext, toId } from '@storybook/csf';
+import type { ReactRenderer } from '@storybook/react';
+import { Theme, darkTheme, theme } from '@storybook/react-native-theming';
+import { type SBUI, transformStoryIndexToStoriesHash } from '@storybook/react-native-ui-common';
 import { Channel, WebsocketTransport } from 'storybook/internal/channels';
-import Events from 'storybook/internal/core-events';
+import { CHANNEL_CREATED, SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons as managerAddons } from 'storybook/internal/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
-import { StoryContext, toId } from '@storybook/csf';
-import type { ReactRenderer } from '@storybook/react';
-import { Theme, ThemeProvider, darkTheme, theme } from '@storybook/react-native-theming';
-import {
-  Layout,
-  LayoutProvider,
-  StorageProvider,
-  transformStoryIndexToStoriesHash,
-} from '@storybook/react-native-ui';
+
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
@@ -23,8 +18,6 @@ import {
   StyleSheet,
   useColorScheme,
 } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StoryView from './components/StoryView';
 import { useSetStoryContext, useStoryContext } from './hooks';
 import getHost from './rn-host-detect';
@@ -73,6 +66,7 @@ export type Params = {
   shouldPersistSelection?: boolean;
   theme: ThemePartial;
   storage?: Storage;
+  CustomUIComponent?: SBUI;
 };
 
 export class View {
@@ -174,7 +168,24 @@ export class View {
       onDeviceUI = true,
       enableWebsockets = false,
       storage,
+      CustomUIComponent,
     } = params;
+
+    const getFullUI = (enabled: boolean): SBUI => {
+      if (enabled) {
+        try {
+          const { FullUI } = require('@storybook/react-native-ui');
+          return FullUI;
+        } catch (error) {
+          console.warn('storybook-log: error loading UI', error);
+        }
+      }
+
+      const PlaceholderUI: SBUI = ({ children }) => children;
+      return PlaceholderUI;
+    };
+
+    const FullUI: SBUI = getFullUI(onDeviceUI && !CustomUIComponent);
 
     this._storage = storage;
 
@@ -188,7 +199,7 @@ export class View {
       // @ts-ignore FIXME
       this._preview.channel = channel;
       this._preview.setupListeners();
-      channel.emit(Events.CHANNEL_CREATED);
+      channel.emit(CHANNEL_CREATED);
       this._preview.ready().then(() => this._preview.onStoryIndexChanged());
     }
 
@@ -207,9 +218,9 @@ export class View {
       }),
     });
 
-    // eslint-disable-next-line consistent-this
     const self = this;
 
+    // eslint-disable-next-line react/display-name
     return () => {
       const setContext = useSetStoryContext();
       const story = useStoryContext();
@@ -230,11 +241,11 @@ export class View {
             const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
 
             const hasStoryId = storyId && typeof storyId === 'string';
-            const storyExists = hasStoryId && this._storyIdExists(storyId);
+            const storyExists = hasStoryId && self._storyIdExists(storyId);
 
-            if (storyExists && this._ready) {
+            if (storyExists && self._ready) {
               console.log(`STORYBOOK: Linking event received, navigating to story: ${storyId}`);
-              this._channel.emit(Events.SET_CURRENT_STORY, { storyId });
+              self._channel.emit(SET_CURRENT_STORY, { storyId });
             }
 
             if (hasStoryId && !storyExists) {
@@ -251,9 +262,10 @@ export class View {
       }, []);
 
       useEffect(() => {
-        this.createPreparedStoryMapping()
+        self
+          .createPreparedStoryMapping()
           .then(() => {
-            this._ready = true;
+            self._ready = true;
             setReady(true);
             return Linking.getInitialURL()
               .then((url) => {
@@ -262,7 +274,7 @@ export class View {
                   const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
 
                   const hasStoryId = storyId && typeof storyId === 'string';
-                  const storyExists = hasStoryId && this._storyIdExists(storyId);
+                  const storyExists = hasStoryId && self._storyIdExists(storyId);
 
                   if (hasStoryId && !storyExists) {
                     console.log(
@@ -312,8 +324,8 @@ export class View {
             `);
           }
 
-          if (shouldPersistSelection && !!this._storage) {
-            this._storage.setItem(STORAGE_KEY, newStory.id).catch((e) => {
+          if (shouldPersistSelection && !!self._storage) {
+            self._storage.setItem(STORAGE_KEY, newStory.id).catch((e) => {
               console.warn('storybook-log: error writing to async storage', e);
             });
           }
@@ -329,10 +341,10 @@ export class View {
           return {};
         }
 
-        return transformStoryIndexToStoriesHash(this._storyIndex, {
+        return transformStoryIndexToStoriesHash(self._storyIndex, {
           docsOptions: { docsMode: false, defaultName: '' },
           filters: {},
-          status: {},
+          allStatuses: {},
           provider: {
             handleAPI: () => ({}),
             getConfig: () => ({}),
@@ -357,23 +369,34 @@ export class View {
       }
 
       if (onDeviceUI) {
+        if (CustomUIComponent) {
+          return (
+            <CustomUIComponent
+              story={story}
+              storyHash={storyHash}
+              setStory={(newStoryId) =>
+                self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
+              }
+              storage={storage}
+              theme={appliedTheme as Theme}
+            >
+              <StoryView />
+            </CustomUIComponent>
+          );
+        }
+
         return (
-          <ThemeProvider theme={appliedTheme as Theme}>
-            <SafeAreaProvider>
-              <GestureHandlerRootView style={{ flex: 1 }}>
-                <BottomSheetModalProvider>
-                  {/* @ts-ignore something weird with story type */}
-                  <StorageProvider storage={storage}>
-                    <LayoutProvider>
-                      <Layout storyHash={storyHash} story={story}>
-                        <StoryView />
-                      </Layout>
-                    </LayoutProvider>
-                  </StorageProvider>
-                </BottomSheetModalProvider>
-              </GestureHandlerRootView>
-            </SafeAreaProvider>
-          </ThemeProvider>
+          <FullUI
+            storage={storage}
+            theme={appliedTheme as Theme}
+            storyHash={storyHash}
+            story={story}
+            setStory={(newStoryId) =>
+              self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
+            }
+          >
+            <StoryView />
+          </FullUI>
         );
       } else {
         return <StoryView />;

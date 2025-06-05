@@ -76,13 +76,13 @@ An object where the keys are the names of the stories and the values are the com
 
 Additionally, the composed story will have the following properties:
 
-| Property   | Type                                      | Description                  |
-| ---------- | ----------------------------------------- | ---------------------------- |
-| storyName  | `string`                                  | The story's name             |
-| args       | `Record<string, any>`                     | The story's args             |
-| argTypes   | `ArgType`                                 | The story's argTypes         |
-| id         | `string`                                  | The story's id               |
-| parameters | `Record<string, any>`                     | The story's parameters       |
+| Property   | Type                  | Description            |
+| ---------- | --------------------- | ---------------------- |
+| storyName  | `string`              | The story's name       |
+| args       | `Record<string, any>` | The story's args       |
+| argTypes   | `ArgType`             | The story's argTypes   |
+| id         | `string`              | The story's id         |
+| parameters | `Record<string, any>` | The story's parameters |
 
 ## composeStory
 
@@ -173,16 +173,15 @@ This API should be called once, before the tests run, typically in a [setup file
 // setup-portable-stories.ts
 import { setProjectAnnotations } from '@storybook/react';
 import * as addonAnnotations from 'my-addon/preview';
-import * as previewAnnotations from './.storybook/preview';
+import * as previewAnnotations from './.rnstorybook/preview';
 
 setProjectAnnotations([previewAnnotations, addonAnnotations]);
 ```
 
-
 > **Note:**
 > Sometimes a story can require an addon's [decorator](https://storybook.js.org/docs/writing-stories/decorators) or [loader](https://storybook.js.org/docs/writing-stories/loaders) to render properly. For example, an addon can apply a decorator that wraps your story in the necessary router context. In this case, you must include that addon's `preview` export in the project annotations set. See `addonAnnotations` in the example above.
 
-> **Note:** If the addon doesn't automatically apply the decorator or loader itself, but instead exports them for you to apply manually in `.storybook/preview.js|ts` (e.g. using `withThemeFromJSXProvider` from [@storybook/addon-themes](https://github.com/storybookjs/storybook/blob/next/code/addons/themes/docs/api.md#withthemefromjsxprovider)), then you do not need to do anything else. They are already included in the `previewAnnotations` in the example above.
+> **Note:** If the addon doesn't automatically apply the decorator or loader itself, but instead exports them for you to apply manually in `.rnstorybook/preview.js|ts` (e.g. using `withThemeFromJSXProvider` from [@storybook/addon-themes](https://github.com/storybookjs/storybook/blob/next/code/addons/themes/docs/api.md#withthemefromjsxprovider)), then you do not need to do anything else. They are already included in the `previewAnnotations` in the example above.
 
 ### Type
 
@@ -198,7 +197,7 @@ setProjectAnnotations([previewAnnotations, addonAnnotations]);
 
 Type: `ProjectAnnotation | ProjectAnnotation[]`
 
-A set of project [annotations](#annotations) (those defined in `.storybook/preview.js|ts`) or an array of sets of project annotations, which will be applied to all composed stories.
+A set of project [annotations](#annotations) (those defined in `.rnstorybook/preview.js|ts`) or an array of sets of project annotations, which will be applied to all composed stories.
 
 ## Annotations
 

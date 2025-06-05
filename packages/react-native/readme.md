@@ -1,16 +1,14 @@
 # Storybook for React Native
 
-> [!IMPORTANT]  
-> This readme is for v8, for v7 docs see the [v7.6 docs](https://github.com/storybookjs/react-native/tree/v7.6.20-stable).
+> This readme is for v9, for v8 docs see the [v8.6 docs](https://github.com/storybookjs/react-native/tree/v8.6.0-stable).
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-If you are migrating from 7.6 to 8.3 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-76x-to-83x)
+If you are migrating from 8 to 9 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-8-to-9)
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> [!NOTE]  
-> `@storybook/react-native` requires atleast 8.3.1, if you install other storybook core packages they should be `^8.3.1` or newer.
+> Make sure you align your storybook dependencies to the same major version or you will see broken behaviour.
 
 ![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
 
@@ -56,7 +54,7 @@ npx storybook@latest init
 The only thing left to do is return Storybook's UI in your app entry point (such as `App.tsx`) like this:
 
 ```tsx
-export { default } from './.storybook';
+export { default } from './.rnstorybook';
 ```
 
 Then wrap your metro config with the withStorybook function as seen [below](#additional-steps-update-your-metro-config)
@@ -93,7 +91,8 @@ module.exports = withStorybook(config, {
   // you can also use a env variable to set this
   enabled: true,
   // Path to your storybook config
-  configPath: path.resolve(__dirname, './.storybook'),
+  configPath: path.resolve(__dirname, './.rnstorybook'),
+  // note that this is the default so you can the config path blank if you use .rnstorybook
 
   // Optional websockets configuration
   // Starts a websocket server on the specified port and host on metro start
@@ -128,7 +127,8 @@ module.exports = withStorybook(finalConfig, {
   // you can also use a env variable to set this
   enabled: true,
   // Path to your storybook config
-  configPath: path.resolve(__dirname, './.storybook'),
+  configPath: path.resolve(__dirname, './.rnstorybook'),
+  // note that this is the default so you can the config path blank if you use .rnstorybook
 
   // Optional websockets configuration
   // Starts a websocket server on the specified port and host on metro start
@@ -137,6 +137,15 @@ module.exports = withStorybook(finalConfig, {
   //   host: 'localhost',
   // },
 });
+```
+
+#### Reanimated setup
+
+Make sure you have `react-native-reanimated` in your project and the plugin setup in your babel config.
+
+```js
+// babel.config.js
+plugins: ['react-native-reanimated/plugin'],
 ```
 
 ## Writing stories
@@ -163,10 +172,10 @@ export const Basic: Story = {
 };
 ```
 
-You should configure the path to your story files in the `main.ts` config file from the `.storybook` folder.
+You should configure the path to your story files in the `main.ts` config file from the `.rnstorybook` folder.
 
 ```ts
-// .storybook/main.ts
+// .rnstorybook/main.ts
 import { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
@@ -209,10 +218,10 @@ const meta = {
 export default meta;
 ```
 
-For global decorators and parameters, you can add them to `preview.tsx` inside your `.storybook` folder.
+For global decorators and parameters, you can add them to `preview.tsx` inside your `.rnstorybook` folder.
 
 ```tsx
-// .storybook/preview.tsx
+// .rnstorybook/preview.tsx
 import type { Preview } from '@storybook/react';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
@@ -255,7 +264,7 @@ Currently the addons available are:
 Install each one you want to use and add them to the `main.ts` addons list as follows:
 
 ```ts
-// .storybook/main.ts
+// .rnstorybook/main.ts
 import { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
@@ -339,11 +348,11 @@ This is useful if you want to remove storybook from your production build.
 
 Type: `boolean`, default: `false`
 
-Generates the `.storybook/storybook.requires` file in JavaScript instead of TypeScript.
+Generates the `.rnstorybook/storybook.requires` file in JavaScript instead of TypeScript.
 
 #### configPath
 
-Type: `string`, default: `path.resolve(process.cwd(), './.storybook')`
+Type: `string`, default: `path.resolve(process.cwd(), './.rnstorybook')`
 
 The location of your Storybook configuration directory, which includes `main.ts` and other project-related files.
 
@@ -376,8 +385,6 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
     storage?: Object (undefined)
         -- {getItem: (key: string) => Promise<string | null>;setItem: (key: string, value: string) => Promise<void>;}
         -- Custom storage to be used instead of AsyncStorage
-    shouldPersistSelection: Boolean (true)
-        -- Stores last selected story in your devices storage.
     onDeviceUI?: boolean;
         -- show the ondevice ui
     enableWebsockets?: boolean;

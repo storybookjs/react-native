@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet } from 'react-native';
 
-interface ArrayProps {
+export interface ArrayProps {
   list: string[];
 }
 

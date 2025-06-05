@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
 
-interface DateProps {
+export interface DateProps {
   date: Date;
 }
 

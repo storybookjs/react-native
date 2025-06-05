@@ -1,6 +1,10 @@
-import { Args, StoryContext } from 'storybook/internal/types';
+import type { Args, StoryContext } from '@storybook/csf';
 import { useState, useEffect, useCallback } from 'react';
-import Events from 'storybook/internal/core-events';
+import {
+  UPDATE_STORY_ARGS,
+  RESET_STORY_ARGS,
+  STORY_ARGS_UPDATED,
+} from 'storybook/internal/core-events';
 
 export const useArgs = (
   storyId: string,
@@ -22,22 +26,23 @@ export const useArgs = (
         setArgs(changed.args);
       }
     };
-    storyStore._channel.on(Events.STORY_ARGS_UPDATED, cb);
-    return () => storyStore._channel.off(Events.STORY_ARGS_UPDATED, cb);
+    storyStore._channel.on(STORY_ARGS_UPDATED, cb);
+    return () => storyStore._channel.off(STORY_ARGS_UPDATED, cb);
     // Exclude `initialArgs` from the dependencies, as these are not relevant
     // until `storyId` changes.
+    // eslint-disable-next-line react-compiler/react-compiler
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storyId]);
 
   const updateArgs = useCallback(
     (newArgs) => {
-      storyStore._channel.emit(Events.UPDATE_STORY_ARGS, { storyId, updatedArgs: newArgs });
+      storyStore._channel.emit(UPDATE_STORY_ARGS, { storyId, updatedArgs: newArgs });
     },
     [storyId, storyStore]
   );
   const resetArgs = useCallback(
     (argNames?: string[]) => {
-      storyStore._channel.emit(Events.RESET_STORY_ARGS, { storyId, argNames });
+      storyStore._channel.emit(RESET_STORY_ARGS, { storyId, argNames });
     },
     [storyId, storyStore]
   );

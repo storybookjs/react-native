@@ -14,12 +14,6 @@ jest.mock('fs', () => ({
   },
 }));
 
-jest.mock('prettier', () => ({
-  format(s, opts) {
-    return s;
-  },
-}));
-
 describe('loader', () => {
   describe('writeRequires', () => {
     describe('when there is a story glob', () => {

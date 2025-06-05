@@ -1,9 +1,11 @@
-import { SafeAreaView, StatusBar, Text } from 'react-native';
-import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { theme, ThemeProvider } from '@storybook/react-native-theming';
-const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
+// import { LiteUI } from '@storybook/react-native-ui-lite';
+import { SafeAreaView, StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { view } from './storybook.requires';
+
+const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
 
 const StorybookUIRoot = view.getStorybookUI({
   shouldPersistSelection: true,
@@ -11,13 +13,15 @@ const StorybookUIRoot = view.getStorybookUI({
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,
   },
-  enableWebsockets: false,
-  onDeviceUI: !isScreenshotTesting,
+  enableWebsockets: true,
+  // onDeviceUI: !isScreenshotTesting,
+  host: 'localhost',
+  port: 7007,
   // host: '192.x.x.x',
   // port: 7007,
 
   // initialSelection: { kind: 'TextInput', name: 'Basic' },
-  // onDeviceUI: false,
+  // onDeviceUI: true,
   // host: '192.168.1.69',
   /*   theme: {
     brand: {
@@ -28,6 +32,9 @@ const StorybookUIRoot = view.getStorybookUI({
       } ,
     },
   }, */
+
+  onDeviceUI: true,
+  // CustomUIComponent: LiteUI,
 });
 
 const StorybookUI = () => {

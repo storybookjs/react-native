@@ -12,7 +12,7 @@ function App() {
         justifyContent: 'center',
       }}
     >
-      <Text>didn't get storybook enabled flag</Text>
+      <Text>{"didn't get storybook enabled flag"}</Text>
     </View>
   );
 }

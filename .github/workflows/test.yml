@@ -10,8 +10,6 @@ on:
 jobs:
   build:
     name: Check everything!
-    strategy:
-      fail-fast: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,5 +23,7 @@ jobs:
         run: yarn build
       - name: lint
         run: yarn lint
+      - name: format check
+        run: yarn format:check
       - name: test
         run: yarn test

@@ -35,8 +35,8 @@
     "dev": "lerna run dev --stream --parallel",
     "dev:check-types": "tsc --noEmit",
     "github-release": "github-release-from-changelog",
-    "lint": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
-    "lint:fix": "lint . --fix",
+    "lint": "eslint --cache -c ./eslint.config.js",
+    "lint:fix": "lint --fix",
     "build": "lerna run prepare",
     "version-packages": "lerna version --force-publish",
     "publish:alpha": "lerna publish from-git --dist-tag alpha",
@@ -45,15 +45,20 @@
     "test:ci": "lerna run test:ci",
     "test": "lerna run test",
     "repo:lint": "sherif -r unsync-similar-dependencies",
-    "repo:fix": "sherif --fix -r unsync-similar-dependencies"
+    "repo:fix": "sherif --fix -r unsync-similar-dependencies",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "devDependencies": {
-    "@react-native/eslint-config": "^0.72.1",
     "cross-env": "^7.0.3",
-    "eslint": "8.24.0",
+    "eslint": "^9.25.1",
+    "eslint-config-expo": "^9.2.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-react-compiler": "^19.1.0-rc.2",
     "lerna": "^8.1.2",
+    "prettier": "^3.5.3",
     "sherif": "^1.4.0",
-    "typescript": "^5.3.3"
+    "typescript": "~5.8.3"
   },
   "resolutions": {
     "react-docgen-typescript": "2.2.2",

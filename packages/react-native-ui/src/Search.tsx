@@ -2,11 +2,11 @@ import { BottomSheetTextInput, useBottomSheetInternal } from '@gorhom/bottom-she
 import { styled } from '@storybook/react-native-theming';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
-import React, { useCallback, useContext, useDeferredValue, useRef, useState } from 'react';
+import React, { useCallback, useDeferredValue, useRef, useState } from 'react';
 import { Platform, TextInput, View } from 'react-native';
 import { CloseIcon } from './icon/CloseIcon';
 import { SearchIcon } from './icon/SearchIcon';
-import { useLayout } from './LayoutProvider';
+import { useSelectedNode } from './SelectedNodeProvider';
 import {
   type CombinedDataset,
   type GetSearchItemProps,
@@ -15,9 +15,8 @@ import {
   type SearchItem,
   type SearchResult,
   type Selection,
-} from './types';
-import { searchItem } from './util/tree';
-import { useSelectedNode } from './SelectedNodeProvider';
+  searchItem,
+} from '@storybook/react-native-ui-common';
 
 const DEFAULT_MAX_SEARCH_RESULTS = 50;
 
@@ -112,7 +111,7 @@ export const Search = React.memo<{
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
-  const { isMobile } = useLayout();
+  // const { isMobile } = useLayout();
   const { scrollToSelectedNode } = useSelectedNode();
 
   const selectStory = useCallback(

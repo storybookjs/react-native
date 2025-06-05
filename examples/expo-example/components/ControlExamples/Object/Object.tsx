@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native';
 
-interface Props {
+export interface Props {
   filmInfo: { title: string; releaseYear: number; genre: string };
 }
 

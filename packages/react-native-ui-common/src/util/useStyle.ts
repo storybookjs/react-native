@@ -19,10 +19,11 @@ import { ImageStyle, StyleProp, TextStyle, ViewStyle } from 'react-native';
  */
 export const useStyle = <
   TStyle extends ViewStyle | TextStyle | ImageStyle,
-  TOutput extends StyleProp<TStyle>
+  TOutput extends StyleProp<TStyle>,
 >(
   styleFactory: () => TOutput,
   deps?: DependencyList
 ): TOutput =>
+  // eslint-disable-next-line react-compiler/react-compiler
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useMemo(styleFactory, deps);

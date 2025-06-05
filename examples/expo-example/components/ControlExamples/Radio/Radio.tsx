@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
 
-interface RadioProps {
+export interface RadioProps {
   selection: string;
 }
 

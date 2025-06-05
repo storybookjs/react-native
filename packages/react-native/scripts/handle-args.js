@@ -9,6 +9,7 @@ function getArguments() {
       './.rnstorybook'
     )
     .option('-js, --use-js', 'Use a js file for storybook.requires')
+    .option('-D, --no-doc-tools', 'Do not include doc tools in the storybook.requires file')
     .option('-a, --absolute', 'Use absolute paths for story imports');
 
   program.parse();

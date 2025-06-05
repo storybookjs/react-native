@@ -1,9 +1,8 @@
-import type { StoryContext } from '@storybook/csf';
+import type { Args, StoryContext } from '@storybook/csf';
 import { atom, useAtomValue, useSetAtom } from 'jotai';
-
 import type { ReactRenderer } from '@storybook/react';
 
-const storyContextAtom = atom(null as StoryContext<ReactRenderer> | null);
+const storyContextAtom = atom(null as StoryContext<ReactRenderer, Args> | null);
 
 /**
  * Hook that returns a function to set the current story context.

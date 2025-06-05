@@ -3,10 +3,9 @@ import { ComponentIcon } from './icon/ComponentIcon';
 import { GroupIcon } from './icon/GroupIcon';
 import { StoryIcon } from './icon/StoryIcon';
 import { CollapseIcon } from './icon/CollapseIcon';
-import { ComponentProps, FC, forwardRef, useMemo } from 'react';
+import React, { ComponentProps, FC, forwardRef, useMemo } from 'react';
 import { transparentize } from 'polished';
 import { View } from 'react-native';
-import React from 'react';
 
 export interface NodeProps {
   children: React.ReactNode | React.ReactNode[];
