@@ -99,38 +99,13 @@ Component-level background settings will override the global settings from previ
 
 ## Controls
 
-Controls provides a graphical UI to dynamically edit component props without code. It requires additional dependencies for form inputs:
+Controls provides a graphical UI to dynamically edit component props without code. It supports 13 different control types optimized for mobile interfaces.
 
 ```sh
 npm install --save-dev @storybook/addon-ondevice-controls @react-native-community/datetimepicker @react-native-community/slider
 ```
 
-Controls can be defined in multiple ways:
-
-1. Inferred from `args` values:
-
-```ts
-export default {
-  component: MyComponent,
-  args: {
-    text: 'Hello', // infers text control
-    enabled: true, // infers boolean control
-  },
-} satisfies Meta<typeof MyComponent>;
-```
-
-2. Inferred using TypeScript props with `babel-plugin-react-docgen-typescript`:
-
-```js
-// babel.config.js
-module.exports = {
-  plugins: [['babel-plugin-react-docgen-typescript', { exclude: 'node_modules' }]],
-};
-```
-
-This will automatically create controls based on your component's types.
-
-3. Define controls using argTypes:
+Basic usage:
 
 ```ts
 export default {
@@ -140,10 +115,11 @@ export default {
     enabled: { control: 'boolean' },
     color: { control: 'color' },
     size: { control: { type: 'range', min: 0, max: 100 } },
-    type: { control: { type: 'radio', options: ['small', 'medium', 'large'] } },
   },
 } satisfies Meta<typeof MyComponent>;
 ```
+
+For detailed information about all supported control types, configuration options, and platform-specific features, see the [Controls Addon documentation](./controls.md).
 
 ## Notes
 
