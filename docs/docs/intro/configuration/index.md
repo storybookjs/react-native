@@ -42,7 +42,6 @@ export default main;
   - `titlePrefix`: Optional prefix for story titles
   - `files`: Glob pattern for story files
 - `addons`: Array of addon packages to include
-- `reactNative.playFn`: Enable/disable story play functions
 
 ## preview.tsx
 
@@ -142,6 +141,8 @@ const StorybookUIRoot = view.getStorybookUI({
   port: 7007,
   secured: false,
   query: '',
+
+  // CustomUIComponent: MyCustomUI, // Optional custom UI component
 });
 
 export default StorybookUIRoot;
@@ -171,11 +172,31 @@ export default StorybookUIRoot;
     - `setItem`: Function to store values
 
 - **Websocket Options**
+
   - `enableWebsockets`: Enable remote control (default: false)
   - `host`: Websocket host (default: 'localhost')
   - `port`: Websocket port (default: 7007)
   - `secured`: Use WSS protocol (default: false)
   - `query`: Additional query parameters
+
+- **Custom UI Options**
+  - `CustomUIComponent`: Replace the default Storybook UI with your own implementation
+
+## Custom UI Component
+
+The `CustomUIComponent` option allows you to completely replace Storybook's default UI with your own implementation. This is useful for running storybook on unsupported platforms or for creating a custom branded experience.
+
+```typescript
+const StorybookUIRoot = view.getStorybookUI({
+  CustomUIComponent: MyCustomUI, // Your SBUI implementation
+  onDeviceUI: true, // Can be used alongside custom UI
+  // ... other options
+});
+```
+
+Your custom component must implement the `SBUI` interface and render the `children` prop (which contains the story content). The component receives props for story navigation, theme, and storage.
+
+For detailed implementation guide, examples, and advanced features, see the [Custom UI Component documentation](./custom-ui.md).
 
 ## Metro Configuration
 
