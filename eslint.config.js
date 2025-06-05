@@ -2,6 +2,7 @@ const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
 const globals = require('globals');
 const reactCompiler = require('eslint-plugin-react-compiler');
+const pluginDocusaurus = require('@docusaurus/eslint-plugin');
 
 module.exports = defineConfig([
   {
@@ -15,7 +16,10 @@ module.exports = defineConfig([
       'docs/build/**/*',
     ],
   },
-  expoConfig,
+  ...expoConfig.map((config) => ({
+    ...config,
+    ignores: [...(config.ignores || []), 'docs/**/*'],
+  })),
   reactCompiler.configs.recommended,
   {
     files: ['**/*.spec.js', '**/*.spec.jsx', '**/*.test.js', '**/*.test.jsx'],
@@ -28,5 +32,12 @@ module.exports = defineConfig([
       '@typescript-eslint/no-require-imports': 'off',
       '@typescript-eslint/array-type': 'off',
     },
+  },
+  {
+    files: ['docs/**/*.ts', 'docs/**/*.tsx'],
+    plugins: {
+      '@docusaurus': pluginDocusaurus,
+    },
+    rules: pluginDocusaurus.configs.recommended.rules,
   },
 ]);
