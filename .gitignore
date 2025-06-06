@@ -36,3 +36,5 @@ built-storybooks
 !.yarn/sdks
 !.yarn/versions
 .eslintcache
+examples/expo-example/.maestro/diffs
+examples/expo-example/.maestro/screenshots

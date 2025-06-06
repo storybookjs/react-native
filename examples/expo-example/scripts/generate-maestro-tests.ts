@@ -1,14 +1,14 @@
 import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import path from 'path';
 
 const run = async () => {
   const { buildIndex } = await import('storybook/internal/core-server');
   const index = await buildIndex({
-    configDir: join(__dirname, '../.rnstorybook'),
+    configDir: path.join(__dirname, '../.rnstorybook'),
   });
 
   // Ensure .maestro directory exists
-  const maestroDir = join(__dirname, '../.maestro');
+  const maestroDir = path.join(__dirname, '../.maestro');
   mkdirSync(maestroDir, { recursive: true });
 
   // Generate Maestro test file content
@@ -19,15 +19,18 @@ const run = async () => {
       name: story.title.replace(/\//g, '-') + ' - ' + story.name,
     }));
 
-  const maestroContent = `appId: host.exp.Exponent
+  const appId = 'host.exp.Exponent'; // Replace with your actual app ID if different
+  const uriScheme = 'exp';
+
+  const maestroContent = `appId: ${appId}
 name: Take screenshots of all Storybook stories
 ---
-- stopApp: host.exp.Exponent
+- stopApp: ${appId}
 
 ${stories
   .map(
-    (story, index) => `# Story ${index}
-- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=${story.id}'
+    (story) => `# Story ${story.name}
+- openLink: '${uriScheme}://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=${story.id}'
 - waitForAnimationToEnd
 - assertVisible:
     id: '${story.id}'
@@ -37,7 +40,7 @@ ${stories
   .join('\n')}`;
 
   // Write the Maestro test file
-  const maestroTestPath = join(maestroDir, 'storybook-screenshots.yaml');
+  const maestroTestPath = path.join(maestroDir, 'storybook-screenshots.yaml');
   writeFileSync(maestroTestPath, maestroContent);
 
   console.log('Generated Maestro test file at:', maestroTestPath);
