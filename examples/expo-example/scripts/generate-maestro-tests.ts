@@ -20,7 +20,8 @@ const run = async () => {
     }));
 
   const appId = 'host.exp.Exponent'; // Replace with your actual app ID if different
-  const uriScheme = 'exp';
+
+  const baseUri = 'exp://127.0.0.1:8081/--/'; // Replace with your actual base URI if different
 
   const maestroContent = `appId: ${appId}
 name: Take screenshots of all Storybook stories
@@ -30,7 +31,7 @@ name: Take screenshots of all Storybook stories
 ${stories
   .map(
     (story) => `# Story ${story.name}
-- openLink: '${uriScheme}://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=${story.id}'
+- openLink: '${baseUri}?STORYBOOK_STORY_ID=${story.id}'
 - waitForAnimationToEnd
 - assertVisible:
     id: '${story.id}'
