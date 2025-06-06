@@ -1,5 +1,7 @@
 ---
 sidebar_position: 5
+description: Learn how to test React Native components with Storybook using portable stories, Jest integration, and visual regression testing with Maestro.
+keywords: [react native, storybook, testing, jest, maestro, portable stories, visual testing, component testing]
 ---
 
 # Testing with Storybook

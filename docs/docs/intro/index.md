@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: Learn how Storybook for React Native helps you build bulletproof UI components in isolation, with full access to native APIs and core Storybook features.
+keywords: [react native, storybook, introduction, component development, mobile ui]
 ---
 
 # Introduction

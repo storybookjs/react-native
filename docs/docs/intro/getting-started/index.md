@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+description: Get started with Storybook for React Native. Learn how to install and configure Storybook in your React Native or Expo project with our step-by-step guide.
+keywords: [react native, storybook, getting started, installation, setup, expo, metro config]
 ---
 
 # Getting started
