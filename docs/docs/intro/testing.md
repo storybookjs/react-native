@@ -241,16 +241,16 @@ You can automatically generate Maestro test files from your stories:
 ```typescript
 // scripts/generate-maestro-tests.ts
 import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import path from 'path';
 
 const run = async () => {
   const { buildIndex } = await import('storybook/internal/core-server');
   const index = await buildIndex({
-    configDir: join(__dirname, '../.rnstorybook'),
+    configDir: path.join(__dirname, '../.rnstorybook'),
   });
 
   // Ensure .maestro directory exists
-  const maestroDir = join(__dirname, '../.maestro');
+  const maestroDir = path.join(__dirname, '../.maestro');
   mkdirSync(maestroDir, { recursive: true });
 
   // Generate Maestro test file content
@@ -262,7 +262,8 @@ const run = async () => {
     }));
 
   const appId = 'host.exp.Exponent'; // Replace with your actual app ID if different
-  const uriScheme = 'exp';
+
+  const baseUri = 'exp://127.0.0.1:8081/--/'; // Replace with your actual base URI if different
 
   const maestroContent = `appId: ${appId}
 name: Take screenshots of all Storybook stories
@@ -272,7 +273,7 @@ name: Take screenshots of all Storybook stories
 ${stories
   .map(
     (story) => `# Story ${story.name}
-- openLink: '${uriScheme}://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=${story.id}'
+- openLink: '${baseUri}?STORYBOOK_STORY_ID=${story.id}'
 - waitForAnimationToEnd
 - assertVisible:
     id: '${story.id}'
@@ -282,7 +283,7 @@ ${stories
   .join('\n')}`;
 
   // Write the Maestro test file
-  const maestroTestPath = join(maestroDir, 'storybook-screenshots.yaml');
+  const maestroTestPath = path.join(maestroDir, 'storybook-screenshots.yaml');
   writeFileSync(maestroTestPath, maestroContent);
 
   console.log('Generated Maestro test file at:', maestroTestPath);
