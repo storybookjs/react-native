@@ -44,8 +44,9 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           // TODO: Add editUrl
-          // editUrl:
-          //   "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: ({ docPath }) => {
+            return `https://github.com/storybookjs/react-native/blob/next/docs/docs/${docPath}`;
+          },
         },
         blog: {
           showReadingTime: true,
@@ -55,8 +56,9 @@ const config: Config = {
           },
           //
           // TODO: Add editUrl
-          // editUrl:
-          //   "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: ({ blogPath }) => {
+            return `https://github.com/storybookjs/react-native/blob/next/docs/blog/${blogPath}`;
+          },
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -71,6 +73,37 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/social-card.jpg',
+    // SEO metadata
+    metadata: [
+      {
+        name: 'description',
+        content:
+          'Storybook for React Native - Build bulletproof UI components faster. Develop, test, and document React Native components in isolation.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'react native, storybook, component development, ui testing, documentation, mobile development',
+      },
+      { name: 'author', content: 'Storybook' },
+      { name: 'robots', content: 'index, follow' },
+      // Open Graph
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'React Native Storybook' },
+      {
+        property: 'og:description',
+        content: 'Storybook for React Native - Build bulletproof UI components faster',
+      },
+      // Twitter Card
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@storybookjs' },
+      { name: 'twitter:creator', content: '@storybookjs' },
+      {
+        name: 'twitter:description',
+        content: 'Storybook for React Native - Build bulletproof UI components faster',
+      },
+    ],
+
     navbar: {
       title: 'React Native Storybook',
       logo: {
