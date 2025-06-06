@@ -13990,11 +13990,11 @@ __metadata:
   linkType: hard
 
 "estree-util-value-to-estree@npm:^3.0.1":
-  version: 3.3.2
-  resolution: "estree-util-value-to-estree@npm:3.3.2"
+  version: 3.4.0
+  resolution: "estree-util-value-to-estree@npm:3.4.0"
   dependencies:
     "@types/estree": "npm:^1.0.0"
-  checksum: 10/b9c7829c9cfab06e0cd1d22d0b4ce9db7a06780389b46a2d1033e84a9476a576d39f1e2dd4bf1be16ce0937c30159ce44687ed90643472dd32dd3158d504974e
+  checksum: 10/4fdb101cba7e3c8a2aaf1881c0c169218addaea0b6101e3de344c137663e4db8887da7fccd0c96939340aa13679af085a07cca05ee168d61a5fb783054bdffe5
   languageName: node
   linkType: hard
 
