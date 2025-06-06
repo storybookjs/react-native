@@ -19,9 +19,9 @@
     "check": "tsc --noEmit",
     "test": "jest",
     "test:ci": "jest --runInBand",
-    "generate-maestro-tests": "ts-node scripts/generate-maestro-tests.ts",
+    "generate-maestro-tests": "bun ./scripts/generate-maestro-tests.ts",
     "test:maestro": "maestro test .maestro/storybook-screenshots.yaml",
-    "test:compare": "node --no-warnings --experimental-strip-types scripts/compare-screenshots.ts  "
+    "test:compare": "bun scripts/compare-screenshots.ts"
   },
   "dependencies": {
     "@babel/plugin-transform-class-static-block": "^7.27.1",

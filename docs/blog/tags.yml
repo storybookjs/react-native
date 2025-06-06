@@ -1,0 +1,9 @@
+releases:
+  label: Releases
+  permalink: /releases
+  description: Release posts
+
+guides:
+  label: Guides
+  permalink: /guides
+  description: Guide posts

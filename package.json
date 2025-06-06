@@ -25,15 +25,14 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "examples/*"
+      "examples/*",
+      "docs"
     ]
   },
   "scripts": {
-    "bootstrap": "node ./scripts/bootstrap.js",
     "example": "yarn workspace expo-example storybook",
     "dev": "lerna run dev --stream --parallel",
     "dev:check-types": "tsc --noEmit",
-    "github-release": "github-release-from-changelog",
     "lint": "eslint --cache -c ./eslint.config.js",
     "lint:fix": "lint --fix",
     "build": "lerna run prepare",
@@ -49,6 +48,7 @@
     "format:fix": "prettier --write ."
   },
   "devDependencies": {
+    "@docusaurus/eslint-plugin": "^3.8.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.25.1",
     "eslint-config-expo": "^9.2.0",
