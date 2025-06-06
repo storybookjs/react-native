@@ -60,6 +60,7 @@ const StoryView = () => {
         key={id}
         testID={id}
         accessibilityLabel={id}
+        importantForAccessibility="no"
         onStartShouldSetResponder={dismissOnStartResponder}
       >
         <ErrorBoundary onError={onError}>
