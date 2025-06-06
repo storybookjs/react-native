@@ -1,5 +1,7 @@
 # Storybook for React Native
 
+A new docs site is being built for Storybook for React Native, you can find it at https://storybookjs.github.io/react-native/docs/intro/.
+
 > [!IMPORTANT]  
 > This readme is for v9, for v8 docs see the [v8.6 docs](https://github.com/storybookjs/react-native/tree/v8.6.0-stable).
 
