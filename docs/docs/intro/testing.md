@@ -428,3 +428,8 @@ compareScreenshots().catch(console.error);
 - Try using `jest --maxWorkers=1` jest tests if you encounter issues with parallel test execution
 - Mock heavy dependencies in test setup
 - Consider using `test.concurrent` for independent tests
+
+## External tools
+
+- [sherlo](https://sherlo.io/) - Visual Testing & Review Tool for React Native Storybook, similar to chromatic
+- [loki](https://loki.js.org/) - Visual Regression Testing for Storybook
