@@ -160,6 +160,23 @@ test('text input can be customized via args', () => {
 });
 ```
 
+### Test Organization
+
+```
+components/
+├── Button/
+│   ├── Button.tsx
+│   ├── Button.stories.tsx
+│   ├── Button.test.tsx          # Unit tests with portable stories
+├── TextInput/
+│   ├── TextInput.tsx
+│   ├── TextInput.stories.tsx
+│   └── TextInput.test.tsx
+└── shared/
+    ├── setup-jest.ts
+    └── setup-portable-stories.ts
+```
+
 ## Visual Testing with Maestro
 
 Right now there isn't a built-in way to do visual testing in Storybook for React Native, but you can use Maestro, Detox or other testing tools to automate testing of your Storybook stories.
@@ -377,24 +394,6 @@ compareScreenshots().catch(console.error);
 3. **Organize screenshots** - Use clear naming conventions for screenshot files
 4. **Version control baselines** - Commit baseline screenshots to track changes
 5. **Review changes** - Always review visual differences before updating baselines
-
-### Test Organization
-
-```
-components/
-├── Button/
-│   ├── Button.tsx
-│   ├── Button.stories.tsx
-│   ├── Button.test.tsx          # Unit tests with portable stories
-│   └── Button.visual.test.ts    # Visual regression tests
-├── TextInput/
-│   ├── TextInput.tsx
-│   ├── TextInput.stories.tsx
-│   └── TextInput.test.tsx
-└── shared/
-    ├── setup-jest.ts
-    └── setup-portable-stories.ts
-```
 
 ## Troubleshooting
 
