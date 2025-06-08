@@ -22,8 +22,8 @@ export const WithErrors: Story = {
 };
 
 export const Loading: Story = {
-  args: { 
-    loading: true 
+  args: {
+    loading: true,
   },
 };
 
@@ -41,7 +41,9 @@ export const PasswordErrorOnly: Story = {
 
 export const LongErrors: Story = {
   args: {
-    emailError: 'The email address you entered is not valid. Please check the format and try again.',
-    passwordError: 'Your password must be at least 8 characters long and contain both letters and numbers for security.',
+    emailError:
+      'The email address you entered is not valid. Please check the format and try again.',
+    passwordError:
+      'Your password must be at least 8 characters long and contain both letters and numbers for security.',
   },
 };

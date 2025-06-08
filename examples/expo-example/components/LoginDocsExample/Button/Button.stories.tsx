@@ -13,50 +13,50 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { 
-    title: 'Sign In' 
+  args: {
+    title: 'Sign In',
   },
 };
 
 export const Secondary: Story = {
-  args: { 
-    title: 'Create Account', 
-    variant: 'secondary' 
+  args: {
+    title: 'Create Account',
+    variant: 'secondary',
   },
 };
 
 export const Loading: Story = {
-  args: { 
-    title: 'Sign In', 
-    loading: true 
+  args: {
+    title: 'Sign In',
+    loading: true,
   },
 };
 
 export const Disabled: Story = {
-  args: { 
-    title: 'Sign In', 
-    disabled: true 
+  args: {
+    title: 'Sign In',
+    disabled: true,
   },
 };
 
 export const SecondaryLoading: Story = {
-  args: { 
-    title: 'Create Account', 
+  args: {
+    title: 'Create Account',
     variant: 'secondary',
-    loading: true 
+    loading: true,
   },
 };
 
 export const SecondaryDisabled: Story = {
-  args: { 
-    title: 'Create Account', 
+  args: {
+    title: 'Create Account',
     variant: 'secondary',
-    disabled: true 
+    disabled: true,
   },
 };
 
 export const LongTitle: Story = {
-  args: { 
-    title: 'This is a very long button title that might affect layout' 
+  args: {
+    title: 'This is a very long button title that might affect layout',
   },
 };
