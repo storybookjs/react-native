@@ -177,6 +177,12 @@ components/
     └── setup-portable-stories.ts
 ```
 
+## End to End Testing Call for contribution
+
+If you have experience with end-to-end testing in React Native using Storybook, please consider contributing to this section! We would love to include examples of using tools like Detox, Appium, or other frameworks for comprehensive E2E testing setups.
+
+Also note that these docs are a work in progress, and we welcome contributions to improve the coverage of end-to-end testing scenarios.
+
 ## Visual Testing with Maestro
 
 Right now there isn't a built-in way to do visual testing in Storybook for React Native, but you can use Maestro, Detox or other testing tools to automate testing of your Storybook stories.
