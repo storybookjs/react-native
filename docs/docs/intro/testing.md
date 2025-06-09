@@ -160,6 +160,29 @@ test('text input can be customized via args', () => {
 });
 ```
 
+### Test Organization
+
+```
+components/
+├── Button/
+│   ├── Button.tsx
+│   ├── Button.stories.tsx
+│   ├── Button.test.tsx          # Unit tests with portable stories
+├── TextInput/
+│   ├── TextInput.tsx
+│   ├── TextInput.stories.tsx
+│   └── TextInput.test.tsx
+└── shared/
+    ├── setup-jest.ts
+    └── setup-portable-stories.ts
+```
+
+## End to End Testing Call for contribution
+
+If you have experience with end-to-end testing in React Native using Storybook, please consider contributing to this section! We would love to include examples of using tools like Detox, Appium, or other frameworks for comprehensive E2E testing setups.
+
+Also note that these docs are a work in progress, and we welcome contributions to improve the coverage of end-to-end testing scenarios.
+
 ## Visual Testing with Maestro
 
 Right now there isn't a built-in way to do visual testing in Storybook for React Native, but you can use Maestro, Detox or other testing tools to automate testing of your Storybook stories.
@@ -378,24 +401,6 @@ compareScreenshots().catch(console.error);
 4. **Version control baselines** - Commit baseline screenshots to track changes
 5. **Review changes** - Always review visual differences before updating baselines
 
-### Test Organization
-
-```
-components/
-├── Button/
-│   ├── Button.tsx
-│   ├── Button.stories.tsx
-│   ├── Button.test.tsx          # Unit tests with portable stories
-│   └── Button.visual.test.ts    # Visual regression tests
-├── TextInput/
-│   ├── TextInput.tsx
-│   ├── TextInput.stories.tsx
-│   └── TextInput.test.tsx
-└── shared/
-    ├── setup-jest.ts
-    └── setup-portable-stories.ts
-```
-
 ## Troubleshooting
 
 ### Common Issues
@@ -423,3 +428,8 @@ components/
 - Try using `jest --maxWorkers=1` jest tests if you encounter issues with parallel test execution
 - Mock heavy dependencies in test setup
 - Consider using `test.concurrent` for independent tests
+
+## External tools
+
+- [sherlo](https://sherlo.io/) - Visual Testing & Review Tool for React Native Storybook, similar to chromatic
+- [loki](https://loki.js.org/) - Visual Regression Testing for Storybook
