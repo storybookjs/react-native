@@ -25,5 +25,7 @@ jobs:
         run: yarn lint
       - name: format check
         run: yarn format:check
+      - name: type check example
+        run: yarn workspace expo-example check
       - name: test
         run: yarn test

@@ -6,5 +6,5 @@
     "esModuleInterop": true
   },
   "extends": "expo/tsconfig.base",
-  "include": [".rnstorybook", ".storybook", "./*"]
+  "include": [".rnstorybook/**/*", ".storybook/**/*", "./*"]
 }
