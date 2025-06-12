@@ -1,2 +1,9 @@
-// eslint-disable-next-line import/export
-export * from 'storybook/actions/preview';
+import { definePreview } from 'storybook/internal/preview-api';
+
+import * as addArgs from './addArgs';
+import * as loaders from './loaders';
+export default () =>
+  definePreview({
+    ...loaders,
+    ...addArgs,
+  });
