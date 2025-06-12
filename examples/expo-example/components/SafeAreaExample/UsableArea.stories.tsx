@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react-native';
 import { View, StyleSheet, Text } from 'react-native';
 
 function UsableAreaContent() {

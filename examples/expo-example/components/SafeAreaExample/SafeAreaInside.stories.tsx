@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react-native';
 import { AButton } from './AButton';
 import { ScrollView } from 'react-native';
 

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-native';
 import { useReducer } from 'react';
 import { View, ScrollView, Text, TextInput, TouchableOpacity } from 'react-native';
 
