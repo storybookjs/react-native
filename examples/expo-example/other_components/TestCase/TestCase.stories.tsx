@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-native';
 import { useRef } from 'react';
 import { Text } from 'react-native';
 

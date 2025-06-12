@@ -1,2 +1,1 @@
-// eslint-disable-next-line import/export
-export * from 'storybook/actions/preview';
+module.exports = require('./dist/preview.js');

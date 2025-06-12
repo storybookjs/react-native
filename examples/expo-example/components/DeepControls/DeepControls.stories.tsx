@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-native';
 import { Text, View } from 'react-native';
 
 const DeepControls = ({

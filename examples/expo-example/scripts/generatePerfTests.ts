@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const template = (num: number) => `import { Meta, StoryObj } from '@storybook/react'
+const template = (num: number) => `import { Meta, StoryObj } from '@storybook/react-native'
 import { View } from 'react-native'
 
 const Test${num} = () => {

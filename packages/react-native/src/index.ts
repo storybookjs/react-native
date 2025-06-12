@@ -13,4 +13,14 @@ export interface StorybookConfig {
   framework?: '@storybook/react-native';
 }
 
-export type { Meta, StoryFn, StoryObj } from '@storybook/react';
+export type {
+  Meta,
+  StoryFn,
+  StoryObj,
+  Args,
+  ArgTypes,
+  Preview,
+  Decorator,
+  Loader,
+  Parameters,
+} from '@storybook/react';
