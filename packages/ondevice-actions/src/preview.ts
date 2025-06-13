@@ -1,9 +1,0 @@
-import { definePreview } from 'storybook/internal/preview-api';
-
-import * as addArgs from './addArgs';
-import * as loaders from './loaders';
-export default () =>
-  definePreview({
-    ...loaders,
-    ...addArgs,
-  });

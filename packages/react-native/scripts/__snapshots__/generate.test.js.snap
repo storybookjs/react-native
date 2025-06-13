@@ -30,8 +30,7 @@ declare global {
 
 const annotations = [
   require('./preview'),
-  require("@storybook/react-native/preview"),
-  require('@storybook/addon-ondevice-actions/preview')
+  require("@storybook/react-native/preview")
 ];
 
 global.STORIES = normalizedStories;
@@ -85,8 +84,7 @@ declare global {
 
 const annotations = [
   require('./preview'),
-  require("@storybook/react-native/preview"),
-  require('@storybook/addon-ondevice-actions/preview')
+  require("@storybook/react-native/preview")
 ];
 
 global.STORIES = normalizedStories;
@@ -140,8 +138,7 @@ declare global {
 
 const annotations = [
   require('./preview'),
-  require("@storybook/react-native/preview"),
-  require('@storybook/addon-ondevice-actions/preview')
+  require("@storybook/react-native/preview")
 ];
 
 global.STORIES = normalizedStories;
@@ -194,8 +191,7 @@ declare global {
   
 
 const annotations = [
-  require("@storybook/react-native/preview"),
-  require('@storybook/addon-ondevice-actions/preview')
+  require("@storybook/react-native/preview")
 ];
 
 global.STORIES = normalizedStories;
@@ -244,8 +240,7 @@ const normalizedStories = [
 
 const annotations = [
   require('./preview'),
-  require("@storybook/react-native/preview"),
-  require('@storybook/addon-ondevice-actions/preview')
+  require("@storybook/react-native/preview")
 ];
 
 global.STORIES = normalizedStories;
