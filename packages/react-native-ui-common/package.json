@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui-common",
-  "version": "9.0.9-alpha.0",
+  "version": "9.0.9",
   "description": "common ui components for react native storybook",
   "keywords": [
     "react",
@@ -59,7 +59,7 @@
   "dependencies": {
     "@storybook/csf": "^0.1.13",
     "@storybook/react": "^9.0.9",
-    "@storybook/react-native-theming": "^9.0.9-alpha.0",
+    "@storybook/react-native-theming": "^9.0.9",
     "es-toolkit": "^1.38.0",
     "fuse.js": "^7.0.0",
     "memoizerific": "^1.11.3",
