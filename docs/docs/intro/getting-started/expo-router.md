@@ -113,4 +113,4 @@ Navigate to `/storybook` in your app to view your stories.
 
 For a visual walkthrough of this setup process, watch this video tutorial:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/egBqrYg0AIg" title="Expo Router + Storybook Setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" style={{maxWidth:"95%"}} height="315" src="https://www.youtube.com/embed/egBqrYg0AIg" title="Expo Router + Storybook Setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
