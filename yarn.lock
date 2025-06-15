@@ -7596,7 +7596,7 @@ __metadata:
     react-native-url-polyfill: "npm:^2.0.0"
     react-test-renderer: "npm:^19.1.0"
     setimmediate: "npm:^1.0.5"
-    storybook: "npm:^9.0.9"
+    storybook: "patch:storybook@npm%3A9.0.9#~/.yarn/patches/storybook-npm-9.0.9-e896aae9bd.patch"
     tsup: "npm:^7.2.0"
     type-fest: "npm:~2.19"
     typescript: "npm:~5.8.3"
@@ -14280,7 +14280,7 @@ __metadata:
     react-native-safe-area-context: "npm:5.4.0"
     react-native-svg: "npm:15.11.2"
     react-native-web: "npm:^0.20.0"
-    storybook: "npm:^9.0.9"
+    storybook: "patch:storybook@npm%3A9.0.9#~/.yarn/patches/storybook-npm-9.0.9-e896aae9bd.patch"
     storybook-addon-deep-controls: "npm:^0.9.2"
     typescript: "npm:~5.8.3"
     universal-test-renderer: "npm:^0.6.0"
@@ -25518,7 +25518,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^9.0.9":
+"storybook@npm:9.0.9":
   version: 9.0.9
   resolution: "storybook@npm:9.0.9"
   dependencies:
@@ -25541,6 +25541,32 @@ __metadata:
   bin:
     storybook: ./bin/index.cjs
   checksum: 10/aeb4c2f378f24b80f1d7d132015208ff376188fb7c957194282d125e0449808d6b5b4a73b5d743a26a37e6f7889d6e8f9ef40cafb1eae5cdd367f650e79e863f
+  languageName: node
+  linkType: hard
+
+"storybook@patch:storybook@npm%3A9.0.9#~/.yarn/patches/storybook-npm-9.0.9-e896aae9bd.patch":
+  version: 9.0.9
+  resolution: "storybook@patch:storybook@npm%3A9.0.9#~/.yarn/patches/storybook-npm-9.0.9-e896aae9bd.patch::version=9.0.9&hash=273ec3"
+  dependencies:
+    "@storybook/global": "npm:^5.0.0"
+    "@testing-library/jest-dom": "npm:^6.6.3"
+    "@testing-library/user-event": "npm:^14.6.1"
+    "@vitest/expect": "npm:3.0.9"
+    "@vitest/spy": "npm:3.0.9"
+    better-opn: "npm:^3.0.2"
+    esbuild: "npm:^0.18.0 || ^0.19.0 || ^0.20.0 || ^0.21.0 || ^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0"
+    esbuild-register: "npm:^3.5.0"
+    recast: "npm:^0.23.5"
+    semver: "npm:^7.6.2"
+    ws: "npm:^8.18.0"
+  peerDependencies:
+    prettier: ^2 || ^3
+  peerDependenciesMeta:
+    prettier:
+      optional: true
+  bin:
+    storybook: ./bin/index.cjs
+  checksum: 10/5361149c1c7d53a76f9d75ab9f608f7577bc8ddd57d6b5fb3670b78dc4be3959ef66a78b1673b3d6efd338822d1adcad398123959a800fc9461b11b7b9c8b539
   languageName: node
   linkType: hard
 
