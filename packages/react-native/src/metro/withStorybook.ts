@@ -2,7 +2,7 @@ import * as path from 'path';
 import { generate } from '../../scripts/generate';
 
 import type { MetroConfig } from 'metro-config';
-import { setupWebsocketServer } from 'src/webserver/webserver';
+import { setupWebsocketServer } from '../webserver/webserver';
 
 /**
  * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.

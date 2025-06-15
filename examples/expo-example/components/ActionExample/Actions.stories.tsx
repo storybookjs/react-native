@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-native';
 import { ActionButton } from './Actions';
 import { fn, expect } from 'storybook/test';
 import { addons } from 'storybook/internal/preview-api';
-import Channel from 'storybook/internal/channels';
+import { Channel } from 'storybook/internal/channels';
 import { ServerEventData } from '@storybook/react-native/webserver';
 
 const meta = {

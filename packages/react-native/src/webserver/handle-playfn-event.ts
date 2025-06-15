@@ -4,7 +4,7 @@ import { execSync } from 'node:child_process';
 const tap = ({ duration, udid, x, y }: { x: number; y: number; udid: string; duration: number }) =>
   `idb ui tap --udid ${udid} --duration ${duration} ${x} ${y}`;
 
-const describe = (udid: string) => `idb ui describe-all --udid ${udid} --json --nested`;
+//const describe = (udid: string) => `idb ui describe-all --udid ${udid} --json --nested`;
 
 export const handlePlayfnEvent = ({
   json,
