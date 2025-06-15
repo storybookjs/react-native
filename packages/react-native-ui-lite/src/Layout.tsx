@@ -21,6 +21,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
+import type { Selection } from '@storybook/react-native-ui-common';
 import { addons } from 'storybook/internal/manager-api';
 import { type API_IndexHash } from 'storybook/internal/types';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
@@ -166,10 +167,12 @@ export const Layout = ({
   const mobileMenuDrawerRef = useRef<MobileMenuDrawerRef>(null);
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
 
-  const setSelection = useCallback(({ storyId: newStoryId }: { storyId: string }) => {
-    const channel = addons.getChannel();
+  const setSelection = useCallback((selection: Selection) => {
+    if (selection) {
+      const channel = addons.getChannel();
 
-    channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
+      channel.emit(SET_CURRENT_STORY, { storyId: selection.storyId });
+    }
   }, []);
 
   return (
@@ -239,7 +242,7 @@ export const Layout = ({
               testID="mobile-menu-button"
               style={navButtonStyle}
               hitSlop={navButtonHitSlop}
-              onPress={() => mobileMenuDrawerRef.current?.setMobileMenuOpen(true)}
+              onPress={() => mobileMenuDrawerRef.current?.setMobileMenuOpen?.(true)}
             >
               <MenuIcon color={theme.color.mediumdark} />
               <Text style={navButtonTextStyle} numberOfLines={1}>
@@ -249,7 +252,7 @@ export const Layout = ({
 
             <IconButton
               testID="mobile-addons-button"
-              onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
+              onPress={() => addonPanelRef.current?.setAddonsPanelOpen?.(true)}
               Icon={BottomBarToggleIcon}
             />
           </Nav>

@@ -31,6 +31,9 @@
   },
   "typesVersions": {
     "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ],
       "webserver": [
         "./dist/webserver/webserver.d.ts"
       ],
