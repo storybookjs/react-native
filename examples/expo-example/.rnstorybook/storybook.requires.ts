@@ -56,7 +56,7 @@ global.STORIES = normalizedStories;
 module?.hot?.accept?.();
 
 const options = {
-    "playFn": false
+    "playFn": true
 }
 
 if (!global.view) {

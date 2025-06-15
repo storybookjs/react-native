@@ -1,7 +1,8 @@
 import * as path from 'path';
 import { generate } from '../../scripts/generate';
-import { WebSocketServer, WebSocket, Data } from 'ws';
+
 import type { MetroConfig } from 'metro-config';
+import { setupWebsocketServer } from 'src/webserver/webserver';
 
 /**
  * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
@@ -128,23 +129,7 @@ function withStorybook(
     const port = websockets.port ?? 7007;
     const host = websockets.host ?? 'localhost';
 
-    const wss = new WebSocketServer({ port, host });
-
-    wss.on('connection', function connection(ws: WebSocket) {
-      console.log('WebSocket connection established');
-
-      ws.on('error', console.error);
-
-      ws.on('message', function message(data: Data) {
-        try {
-          const json = JSON.parse(data.toString());
-
-          wss.clients.forEach((wsClient) => wsClient.send(JSON.stringify(json)));
-        } catch (error) {
-          console.error(error);
-        }
-      });
-    });
+    setupWebsocketServer({ port, host });
   }
 
   generate({

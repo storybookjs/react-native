@@ -22,7 +22,14 @@ defaultConfig.resolver.nodeModulesPaths = [
 
 const withStorybook = require('@storybook/react-native/metro/withStorybook');
 
-module.exports = withStorybook(defaultConfig);
+const storybookOptions = {
+  websockets: {
+    port: 7007,
+    host: 'localhost',
+  },
+};
+
+module.exports = withStorybook(defaultConfig, storybookOptions);
 
 /* , {
   enabled: process.env.STORYBOOK_ENABLED === 'true',

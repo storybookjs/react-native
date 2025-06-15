@@ -1,13 +1,13 @@
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, TouchableOpacityProps } from 'react-native';
 
 export interface ActionButtonProps {
-  onPress?: () => void;
+  onPress?: TouchableOpacityProps['onPress'];
   text: string;
 }
 
 export const ActionButton = ({ onPress, text }: ActionButtonProps) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity accessibilityRole="button" style={styles.container} onPress={onPress}>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );

@@ -18,8 +18,9 @@ const main: StorybookConfig = {
     'storybook-addon-deep-controls',
     './local-addon-example',
   ],
+
   reactNative: {
-    playFn: false,
+    playFn: true,
   },
 
   framework: '@storybook/react-native',
