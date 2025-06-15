@@ -17,6 +17,11 @@ interface WebsocketsOptions {
    * The host WebSocket server will bind to. Defaults to 'localhost'.
    */
   host?: string;
+
+  /**
+   * The device ID to use for test events over the WebSocket server.
+   */
+  deviceId?: string;
 }
 
 /**
@@ -128,8 +133,9 @@ function withStorybook(
   if (websockets) {
     const port = websockets.port ?? 7007;
     const host = websockets.host ?? 'localhost';
+    const deviceId = websockets.deviceId;
 
-    setupWebsocketServer({ port, host });
+    setupWebsocketServer({ port, host, deviceId });
   }
 
   generate({

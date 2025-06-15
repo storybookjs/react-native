@@ -26,6 +26,7 @@ const storybookOptions = {
   websockets: {
     port: 7007,
     host: 'localhost',
+    deviceId: '0868A689-5B78-4F52-A63A-60CAA848BB88',
   },
 };
 

@@ -8,6 +8,7 @@ interface BaseNativeEventData {
   timestamp: number;
   // deviceId?: string;
   platform?: 'ios' | 'android';
+  sessionId: string;
 }
 
 interface TapEventData extends BaseNativeEventData {
@@ -63,10 +64,33 @@ export interface NativeEventMessage extends BaseMessage {
   args: [NativeEventData];
 }
 
-export type WebSocketMessage = BaseMessage | NativeEventMessage;
+export interface TapCompletedEventData {
+  type: 'tapCompleted';
+  success: boolean;
+  sessionId: string;
+}
+
+export interface SwipeCompletedEventData {
+  type: 'swipeCompleted';
+  success: boolean;
+  sessionId: string;
+}
+
+export type ServerEventData = TapCompletedEventData | SwipeCompletedEventData;
+
+export interface ServerEventMessage extends BaseMessage {
+  type: 'serverEvent';
+  args: [ServerEventData];
+}
+
+export type WebSocketMessage = BaseMessage | NativeEventMessage | ServerEventMessage;
 
 export const isNativeEventMessage = (message: WebSocketMessage): message is NativeEventMessage => {
   return message.type === 'nativeEvent' && message.args.length > 0;
+};
+
+export const isServerEventMessage = (message: WebSocketMessage): message is ServerEventMessage => {
+  return message.type === 'serverEvent' && message.args.length > 0;
 };
 
 export const isTapEventMessage = (event: NativeEventData): event is TapEventData => {

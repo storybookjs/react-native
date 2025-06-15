@@ -26,7 +26,21 @@
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
     "./preview": "./dist/preview.js",
     "./scripts/generate": "./scripts/generate.js",
-    "./preset": "./preset.js"
+    "./preset": "./preset.js",
+    "./webserver": "./dist/webserver/webserver.js"
+  },
+  "typesVersions": {
+    "*": {
+      "webserver": [
+        "./dist/webserver/webserver.d.ts"
+      ],
+      "metro/withStorybook": [
+        "./dist/metro/withStorybook.d.ts"
+      ],
+      "preview": [
+        "./dist/preview.d.ts"
+      ]
+    }
   },
   "files": [
     "bin/**/*",

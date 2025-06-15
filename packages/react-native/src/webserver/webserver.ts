@@ -2,7 +2,15 @@ import { WebSocketServer, WebSocket, Data } from 'ws';
 import { isNativeEventMessage, WebSocketMessage } from './types';
 import { handlePlayfnEvent } from './handle-playfn-event';
 
-export const setupWebsocketServer = ({ port, host }: { port: number; host: string }) => {
+export const setupWebsocketServer = ({
+  port,
+  host,
+  deviceId,
+}: {
+  port: number;
+  host: string;
+  deviceId?: string;
+}) => {
   const wss = new WebSocketServer({ port, host });
 
   wss.on('connection', function connection(ws: WebSocket) {
@@ -14,12 +22,14 @@ export const setupWebsocketServer = ({ port, host }: { port: number; host: strin
       try {
         const json = JSON.parse(data.toString()) as WebSocketMessage;
 
-        console.log('event type', json.type);
+        const sendEvent = (eventData) => {
+          wss.clients.forEach((wsClient) => wsClient.send(JSON.stringify(eventData)));
+        };
 
         if (isNativeEventMessage(json)) {
-          handlePlayfnEvent(json, '0868A689-5B78-4F52-A63A-60CAA848BB88');
+          handlePlayfnEvent({ json, sendEvent, deviceId });
         } else {
-          wss.clients.forEach((wsClient) => wsClient.send(JSON.stringify(json)));
+          sendEvent(json);
         }
       } catch (error) {
         console.error(error);
@@ -27,3 +37,6 @@ export const setupWebsocketServer = ({ port, host }: { port: number; host: strin
     });
   });
 };
+
+export * from './types';
+export * from './handle-playfn-event';
