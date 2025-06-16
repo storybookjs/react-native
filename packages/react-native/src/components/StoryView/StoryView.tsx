@@ -79,7 +79,7 @@ const StoryView = ({ useWrapper = true }: { useWrapper?: boolean }) => {
   }
 
   return (
-    <View style={errorContainerStyle} key={id} testID={id} accessibilityLabel={id}>
+    <View style={errorContainerStyle}>
       <Text>Please open the sidebar and select a story to preview.</Text>
     </View>
   );
