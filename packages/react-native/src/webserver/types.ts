@@ -51,13 +51,19 @@ interface OrientationChangeEventData extends BaseNativeEventData {
   orientation: 'portrait' | 'landscape';
 }
 
+interface GetByTextEventData extends BaseNativeEventData {
+  type: 'getByText';
+  text: string;
+}
+
 export type NativeEventData =
   | TapEventData
   | SwipeEventData
   | LongPressEventData
   | DoubleTapEventData
   | ScreenshotEventData
-  | OrientationChangeEventData;
+  | OrientationChangeEventData
+  | GetByTextEventData;
 
 export interface NativeEventMessage extends BaseMessage {
   type: 'nativeEvent';
@@ -76,7 +82,24 @@ export interface SwipeCompletedEventData {
   sessionId: string;
 }
 
-export type ServerEventData = TapCompletedEventData | SwipeCompletedEventData;
+export type ElementData = {
+  frame?: { x: number; y: number; width: number; height: number };
+  role?: string;
+  type?: string;
+  label?: string;
+};
+
+export interface GetByTextCompletedEventData {
+  type: 'getByTextCompleted';
+  success: boolean;
+  sessionId: string;
+  element: ElementData;
+}
+
+export type ServerEventData =
+  | TapCompletedEventData
+  | SwipeCompletedEventData
+  | GetByTextCompletedEventData;
 
 export interface ServerEventMessage extends BaseMessage {
   type: 'serverEvent';
@@ -95,4 +118,8 @@ export const isServerEventMessage = (message: WebSocketMessage): message is Serv
 
 export const isTapEventMessage = (event: NativeEventData): event is TapEventData => {
   return event?.type === 'tap';
+};
+
+export const isGetByTextEventMessage = (event: NativeEventData): event is GetByTextEventData => {
+  return event?.type === 'getByText';
 };

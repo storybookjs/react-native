@@ -27,7 +27,8 @@
     "./preview": "./dist/preview.js",
     "./scripts/generate": "./scripts/generate.js",
     "./preset": "./preset.js",
-    "./webserver": "./dist/webserver/webserver.js"
+    "./webserver": "./dist/webserver/webserver.js",
+    "./NativeEvents": "./dist/webserver/NativeEvents.js"
   },
   "typesVersions": {
     "*": {
@@ -42,6 +43,9 @@
       ],
       "preview": [
         "./dist/preview.d.ts"
+      ],
+      "NativeEvents": [
+        "./dist/webserver/NativeEvents.d.ts"
       ]
     }
   },

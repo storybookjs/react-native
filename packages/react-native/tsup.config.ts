@@ -7,6 +7,7 @@ export default defineConfig((options) => {
       'src/preview.ts',
       'src/metro/withStorybook.ts',
       'src/webserver/webserver.ts',
+      'src/webserver/NativeEvents.ts',
     ],
     // minify: !options.watch,
     clean: !options.watch,
@@ -17,6 +18,7 @@ export default defineConfig((options) => {
             'src/preview.ts',
             'src/metro/withStorybook.ts',
             'src/webserver/webserver.ts',
+            'src/webserver/NativeEvents.ts',
           ],
           resolve: true,
         }

@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-native';
+import { NativeScreen } from '@storybook/react-native/NativeEvents';
+import { expect, fn } from 'storybook/test';
 import { ActionButton } from './Actions';
-import { fn, expect } from 'storybook/test';
-import { addons } from 'storybook/internal/preview-api';
-import { Channel } from 'storybook/internal/channels';
-import { ServerEventData } from '@storybook/react-native/webserver';
 
 const meta = {
   component: ActionButton,
@@ -27,46 +25,9 @@ You use it like this:
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-
-class NativeEvents {
-  channel: Channel;
-  sessionId: string;
-  constructor() {
-    this.sessionId = Date.now().toString(36) + Math.random().toString(36).substring(2);
-    this.channel = addons.getChannel();
-  }
-
-  delay = async (ms: number) => {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  };
-
-  tap = async (x: number, y: number) => {
-    return new Promise(async (resolve) => {
-      await this.delay(500);
-
-      this.channel.emit('nativeEvent', {
-        type: 'tap',
-        x: 200,
-        y: 100,
-        duration: 0.2,
-        sessionId: this.sessionId,
-      });
-
-      this.channel.once('serverEvent', async (event: ServerEventData) => {
-        console.log('serverEvent', event);
-
-        if (event?.type === 'tapCompleted') {
-          if (event?.success) {
-            console.log('tap completed');
-            await this.delay(200);
-            resolve(true);
-          }
-        }
-      });
-    });
-  };
-}
-
+const delay = async (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
 export const Basic: Story = {
   args: {
     text: 'Press me!',
@@ -75,9 +36,13 @@ export const Basic: Story = {
     }),
   },
   play: async ({ args }) => {
-    const nativeEvents = new NativeEvents();
+    const screen = new NativeScreen();
 
-    await nativeEvents.tap(200, 100);
+    await delay(500);
+    const button = await screen.getByText('Press me!');
+    await delay(500);
+    await button.tap(0.5);
+    await delay(500);
 
     expect(args.onPress).toHaveBeenCalled();
   },
