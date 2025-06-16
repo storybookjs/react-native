@@ -296,10 +296,7 @@ const styles = StyleSheet.create({
   },
   pickerIndicator: {
     position: 'absolute',
-    shadowColor: 'black',
-    shadowOpacity: 0.3,
-    shadowOffset: { width: 3, height: 3 },
-    shadowRadius: 4,
+    boxShadow: '3px 3px 4px 0px rgba(0, 0, 0, 0.3)',
     elevation: 5,
   },
   selectedPreview: {
