@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import type { IndexHash, State } from 'storybook/internal/manager-api';
-import { Button, LayoutProvider, type RefType } from '@storybook/react-native-ui-common';
+import { Button, type RefType } from '@storybook/react-native-ui-common';
 import { Sidebar } from './Sidebar';
 import { DEFAULT_REF_ID } from './constants';
 import { mockDataset } from './mockdata';
+import { decorators } from './decorators';
 
 const index = mockDataset.withRoot as IndexHash;
 const storyId = 'root-1-child-a2--grandchild-a1-1';
@@ -23,7 +24,7 @@ const meta = {
     status: {},
     setSelection: () => {},
   },
-  decorators: [(storyFn) => <LayoutProvider>{storyFn()}</LayoutProvider>],
+  decorators,
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;

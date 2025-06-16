@@ -6,6 +6,7 @@ import type { Dataset } from '@storybook/react-native-ui-common';
 import { index } from './mockdata.large';
 import { DEFAULT_REF_ID } from './constants';
 import { ScrollView, Text } from 'react-native';
+import { decorators } from './decorators';
 
 const customViewports = {
   sized: {
@@ -35,6 +36,7 @@ const meta = {
         <Story />
       </ScrollView>
     ),
+    ...decorators,
   ],
 } satisfies Meta<typeof Tree>;
 

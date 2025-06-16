@@ -1,9 +1,11 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import { SearchResults } from './SearchResults';
+import { decorators } from './decorators';
 
 const meta = {
   component: SearchResults,
   title: 'UI/SearchResults',
+  decorators,
 } satisfies Meta<typeof SearchResults>;
 
 export default meta;
