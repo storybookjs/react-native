@@ -25,9 +25,7 @@ You use it like this:
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-const delay = async (ms: number) => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-};
+
 export const Basic: Story = {
   args: {
     text: 'Press me!',
@@ -38,11 +36,8 @@ export const Basic: Story = {
   play: async ({ args }) => {
     const screen = new NativeScreen();
 
-    await delay(500);
     const button = await screen.getByText('Press me!');
-    await delay(500);
     await button.tap(0.5);
-    await delay(500);
 
     expect(args.onPress).toHaveBeenCalled();
   },
