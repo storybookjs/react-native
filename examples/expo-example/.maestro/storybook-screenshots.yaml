@@ -178,6 +178,160 @@ name: Take screenshots of all Storybook stories
     id: 'inputexample-textinput--basic'
 - takeScreenshot: '.maestro/screenshots/InputExample-TextInput---Basic'
 
+# Story LoginDocsExample-Button - Disabled
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--disabled'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-button--disabled'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Disabled'
+
+# Story LoginDocsExample-Button - Loading
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--loading'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-button--loading'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Loading'
+
+# Story LoginDocsExample-Button - Long Title
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--long-title'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-button--long-title'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Long-Title'
+
+# Story LoginDocsExample-Button - Primary
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--primary'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-button--primary'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Primary'
+
+# Story LoginDocsExample-Button - Secondary
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--secondary'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-button--secondary'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Secondary'
+
+# Story LoginDocsExample-Button - Secondary Disabled
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--secondary-disabled'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-button--secondary-disabled'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Secondary-Disabled'
+
+# Story LoginDocsExample-Button - Secondary Loading
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--secondary-loading'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-button--secondary-loading'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Secondary-Loading'
+
+# Story LoginDocsExample-LoginForm - Default
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-loginform--default'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-loginform--default'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-LoginForm---Default'
+
+# Story LoginDocsExample-LoginForm - Email Error Only
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-loginform--email-error-only'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-loginform--email-error-only'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-LoginForm---Email-Error-Only'
+
+# Story LoginDocsExample-LoginForm - Loading
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-loginform--loading'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-loginform--loading'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-LoginForm---Loading'
+
+# Story LoginDocsExample-LoginForm - Long Errors
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-loginform--long-errors'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-loginform--long-errors'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-LoginForm---Long-Errors'
+
+# Story LoginDocsExample-LoginForm - Password Error Only
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-loginform--password-error-only'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-loginform--password-error-only'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-LoginForm---Password-Error-Only'
+
+# Story LoginDocsExample-LoginForm - With Errors
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-loginform--with-errors'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-loginform--with-errors'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-LoginForm---With-Errors'
+
+# Story LoginDocsExample-TextInput - Default
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-textinput--default'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-textinput--default'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-TextInput---Default'
+
+# Story LoginDocsExample-TextInput - Empty State
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-textinput--empty-state'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-textinput--empty-state'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-TextInput---Empty-State'
+
+# Story LoginDocsExample-TextInput - Filled
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-textinput--filled'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-textinput--filled'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-TextInput---Filled'
+
+# Story LoginDocsExample-TextInput - Long Error Message
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-textinput--long-error-message'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-textinput--long-error-message'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-TextInput---Long-Error-Message'
+
+# Story LoginDocsExample-TextInput - Long Label
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-textinput--long-label'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-textinput--long-label'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-TextInput---Long-Label'
+
+# Story LoginDocsExample-TextInput - Password
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-textinput--password'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-textinput--password'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-TextInput---Password'
+
+# Story LoginDocsExample-TextInput - Playground
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-textinput--playground'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-textinput--playground'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-TextInput---Playground'
+
+# Story LoginDocsExample-TextInput - With Error
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-textinput--with-error'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-textinput--with-error'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-TextInput---With-Error'
+
+# Story LoginDocsExample-TextInput - With Label
+- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-textinput--with-label'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'logindocsexample-textinput--with-label'
+- takeScreenshot: '.maestro/screenshots/LoginDocsExample-TextInput---With-Label'
+
 # Story NestingExample-ChatMessage - Message First
 - openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=nestingexample-chatmessage--message-first'
 - waitForAnimationToEnd

@@ -1,12 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
 import { View } from 'react-native';
+import { decorators } from './decorators';
 
 const meta = {
   title: 'UI/Sidebar/TreeNode',
   parameters: { layout: 'fullscreen' },
   component: StoryNode,
+  decorators,
 } satisfies Meta<typeof StoryNode>;
+
 export default meta;
 
 export const Types: StoryObj<typeof meta> = {

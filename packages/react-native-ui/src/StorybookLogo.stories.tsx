@@ -2,6 +2,7 @@ import type { StoryObj, Meta } from '@storybook/react';
 import { StorybookLogo } from './StorybookLogo';
 import { Theme, theme } from '@storybook/react-native-theming';
 import { Text } from 'react-native';
+import { decorators } from './decorators';
 
 const meta = {
   component: StorybookLogo,
@@ -9,6 +10,7 @@ const meta = {
   args: {
     theme: null,
   },
+  decorators,
 } satisfies Meta<typeof StorybookLogo>;
 
 export default meta;

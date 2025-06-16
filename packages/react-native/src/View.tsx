@@ -380,7 +380,7 @@ export class View {
               storage={storage}
               theme={appliedTheme as Theme}
             >
-              <StoryView />
+              <StoryView useWrapper={false} />
             </CustomUIComponent>
           );
         }
@@ -395,11 +395,11 @@ export class View {
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }
           >
-            <StoryView />
+            <StoryView useWrapper={true} />
           </FullUI>
         );
       } else {
-        return <StoryView />;
+        return <StoryView useWrapper={false} />;
       }
     };
   };
