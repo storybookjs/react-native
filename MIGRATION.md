@@ -61,7 +61,7 @@ For better compatibility with projects that includes both Storybook and Storyboo
 
 ### Regenerate your requires file
 
-Regenerate your `.storybook/storybook.requires.ts` file by running `yarn storybook-generate`.
+Regenerate your `.rnstorybook/storybook.requires.ts` file by running `yarn storybook-generate`.
 
 ## From version 7.6.x to 8.3.x
 
