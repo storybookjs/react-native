@@ -2,6 +2,9 @@
 
 - [Migration](#migration)
   - [From version 8 to 9](#from-version-8-to-9)
+    - [Update Storybook dependencies to 9.x](#update-storybook-dependencies-to-9x)
+    - [Update your `.storybook` folder](#update-your-storybook-folder)
+    - [Regenerate your requires file](#regenerate-your-requires-file)
   - [From version 7.6.x to 8.3.x](#from-version-76x-to-83x)
     - [Dependencies](#dependencies)
     - [Regenerate your requires file](#regenerate-your-requires-file)
@@ -42,11 +45,21 @@
 
 ## From version 8 to 9
 
-Update storybook dependencies to 9.x
+### Update Storybook dependencies to 9.x
 
-Rename .storybook to .rnstorybook
+You need to update all Storybook dependencies to version 9.x. This includes:
 
-install the 'storybook' package if not already installed
+- `storybook` package
+
+> Note: You can check the correct version by looking at the `peerDependencies`. Please refer to the [core Storybook migration guide](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md?#from-version-8x-to-900) for more details on the breaking changes of this package.
+
+- `@storybook/addon-ondevice-*` packages
+
+### Update your `.storybook` folder
+
+For better compatibility with projects that includes both Storybook and Storybook React Native, the default configuration folder for Storybook React Native has been renamed from `.storybook/` to `.rnstorybook/`.
+
+### Regenerate your requires file
 
 Regenerate your `.storybook/storybook.requires.ts` file by running `yarn storybook-generate`.
 
