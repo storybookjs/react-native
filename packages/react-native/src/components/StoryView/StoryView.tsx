@@ -32,7 +32,7 @@ const errorContainerStyle = {
   justifyContent: 'center',
 } satisfies ViewStyle;
 
-const StoryView = () => {
+const StoryView = ({ useWrapper = true }: { useWrapper?: boolean }) => {
   const context = useStoryContext();
 
   const id = context?.id;
@@ -54,19 +54,27 @@ const StoryView = () => {
   if (context && context.unboundStoryFn) {
     const { unboundStoryFn: StoryComponent } = context;
 
+    if (useWrapper) {
+      return (
+        <View
+          style={containerStyle}
+          key={id}
+          testID={id}
+          accessibilityLabel={id}
+          importantForAccessibility="no"
+          onStartShouldSetResponder={dismissOnStartResponder}
+        >
+          <ErrorBoundary onError={onError}>
+            {StoryComponent && <StoryComponent {...context} />}
+          </ErrorBoundary>
+        </View>
+      );
+    }
+
     return (
-      <View
-        style={containerStyle}
-        key={id}
-        testID={id}
-        accessibilityLabel={id}
-        importantForAccessibility="no"
-        onStartShouldSetResponder={dismissOnStartResponder}
-      >
-        <ErrorBoundary onError={onError}>
-          {StoryComponent && <StoryComponent {...context} />}
-        </ErrorBoundary>
-      </View>
+      <ErrorBoundary onError={onError}>
+        {StoryComponent && <StoryComponent {...context} />}
+      </ErrorBoundary>
     );
   }
 

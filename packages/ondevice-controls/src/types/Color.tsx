@@ -147,10 +147,7 @@ const InnerContainer = styled.View(({ theme }) => ({
   maxWidth: 350,
   height: 400,
   maxHeight: Dimensions.get('screen').height - 24 * 2,
-  shadowColor: '#000000',
-  shadowOpacity: 0.2,
-  shadowOffset: { width: 0, height: 0 },
-  shadowRadius: 16,
+  boxShadow: '0px 0px 16px 0px rgba(0, 0, 0, 0.2)',
   elevation: 10,
 }));
 

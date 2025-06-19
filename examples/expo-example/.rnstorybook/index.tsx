@@ -1,11 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { theme, ThemeProvider } from '@storybook/react-native-theming';
-import { LiteUI } from '@storybook/react-native-ui-lite';
-import { SafeAreaView, StatusBar } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+// import { LiteUI } from '@storybook/react-native-ui-lite';
+// import { SafeAreaView, StatusBar, View } from 'react-native';
+
 import { view } from './storybook.requires';
 
-const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
+// const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
 
 const StorybookUIRoot = view.getStorybookUI({
   shouldPersistSelection: true,
@@ -13,45 +12,24 @@ const StorybookUIRoot = view.getStorybookUI({
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,
   },
-  enableWebsockets: true,
+  enableWebsockets: false,
   // onDeviceUI: !isScreenshotTesting,
   host: 'localhost',
   port: 7007,
-  // host: '192.x.x.x',
-  // port: 7007,
 
-  // initialSelection: { kind: 'TextInput', name: 'Basic' },
-  // onDeviceUI: true,
-  // host: '192.168.1.69',
-  /*   theme: {
-    brand: {
-      image: {
-        uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
-        width: 25,
-        height: 25,
-      } ,
-    },
-  }, */
-
-  onDeviceUI: true,
-  CustomUIComponent: LiteUI,
+  // CustomUIComponent: LiteUI,
+  // CustomUIComponent: isScreenshotTesting
+  //   ? ({ children, story }) => {
+  //       return (
+  //         <SafeAreaView style={{ flex: 1 }}>
+  //           <StatusBar hidden />
+  //           <View style={{ flex: 1 }} accessibilityLabel={story?.id} testID={story?.id} accessible>
+  //             {children}
+  //           </View>
+  //         </SafeAreaView>
+  //       );
+  //     }
+  //   : undefined,
 });
 
-const StorybookUI = () => {
-  if (isScreenshotTesting) {
-    return (
-      <SafeAreaView style={{ flex: 1 }}>
-        <StatusBar hidden={isScreenshotTesting} />
-        <SafeAreaProvider style={{ flex: 1 }}>
-          <ThemeProvider theme={theme}>
-            <StorybookUIRoot />
-          </ThemeProvider>
-        </SafeAreaProvider>
-      </SafeAreaView>
-    );
-  }
-
-  return <StorybookUIRoot />;
-};
-
-export default StorybookUI;
+export default StorybookUIRoot;

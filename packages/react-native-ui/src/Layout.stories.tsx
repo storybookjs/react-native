@@ -2,23 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Layout } from './Layout';
 import { mockDataset } from './mockdata';
 import { Text, View } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { LayoutProvider } from '@storybook/react-native-ui-common';
+import { decorators } from './decorators';
 
 const meta = {
   component: Layout,
-  decorators: [
-    (Story) => (
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <BottomSheetModalProvider>
-          <LayoutProvider>
-            <Story />
-          </LayoutProvider>
-        </BottomSheetModalProvider>
-      </GestureHandlerRootView>
-    ),
-  ],
+  decorators,
 } satisfies Meta<typeof Layout>;
 
 export default meta;
