@@ -155,6 +155,8 @@ export const isTypeTextEventMessage = (event: NativeEventData): event is TypeTex
   return event?.type === 'typeText';
 };
 
-export const isGetByPlaceholderEventMessage = (event: NativeEventData): event is GetByPlaceholderEventData => {
+export const isGetByPlaceholderEventMessage = (
+  event: NativeEventData
+): event is GetByPlaceholderEventData => {
   return event?.type === 'getByPlaceholder';
 };
