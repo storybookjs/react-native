@@ -56,6 +56,16 @@ interface GetByTextEventData extends BaseNativeEventData {
   text: string;
 }
 
+interface TypeTextEventData extends BaseNativeEventData {
+  type: 'typeText';
+  text: string;
+}
+
+interface GetByPlaceholderEventData extends BaseNativeEventData {
+  type: 'getByPlaceholder';
+  placeholder: string;
+}
+
 export type NativeEventData =
   | TapEventData
   | SwipeEventData
@@ -63,7 +73,9 @@ export type NativeEventData =
   | DoubleTapEventData
   | ScreenshotEventData
   | OrientationChangeEventData
-  | GetByTextEventData;
+  | GetByTextEventData
+  | TypeTextEventData
+  | GetByPlaceholderEventData;
 
 export interface NativeEventMessage extends BaseMessage {
   type: 'nativeEvent';
@@ -96,10 +108,25 @@ export interface GetByTextCompletedEventData {
   element: ElementData;
 }
 
+export interface TypeTextCompletedEventData {
+  type: 'typeTextCompleted';
+  success: boolean;
+  sessionId: string;
+}
+
+export interface GetByPlaceholderCompletedEventData {
+  type: 'getByPlaceholderCompleted';
+  success: boolean;
+  sessionId: string;
+  element: ElementData;
+}
+
 export type ServerEventData =
   | TapCompletedEventData
   | SwipeCompletedEventData
-  | GetByTextCompletedEventData;
+  | GetByTextCompletedEventData
+  | TypeTextCompletedEventData
+  | GetByPlaceholderCompletedEventData;
 
 export interface ServerEventMessage extends BaseMessage {
   type: 'serverEvent';
@@ -122,4 +149,12 @@ export const isTapEventMessage = (event: NativeEventData): event is TapEventData
 
 export const isGetByTextEventMessage = (event: NativeEventData): event is GetByTextEventData => {
   return event?.type === 'getByText';
+};
+
+export const isTypeTextEventMessage = (event: NativeEventData): event is TypeTextEventData => {
+  return event?.type === 'typeText';
+};
+
+export const isGetByPlaceholderEventMessage = (event: NativeEventData): event is GetByPlaceholderEventData => {
+  return event?.type === 'getByPlaceholder';
 };

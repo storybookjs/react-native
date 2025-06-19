@@ -1,6 +1,8 @@
 import {
   isGetByTextEventMessage,
   isTapEventMessage,
+  isTypeTextEventMessage,
+  isGetByPlaceholderEventMessage,
   NativeEventMessage,
   ServerEventMessage,
 } from './types';
@@ -10,6 +12,9 @@ const tap = ({ duration, udid, x, y }: { x: number; y: number; udid: string; dur
   `idb ui tap --udid ${udid} --duration ${duration} ${x} ${y}`;
 
 const describe = (udid: string) => `idb ui describe-all --udid ${udid} --json --nested`;
+
+const typeText = ({ text, udid }: { text: string; udid: string }) =>
+  `idb ui text --udid ${udid} ${text}`;
 
 export type AXElement = {
   AXFrame: string;
@@ -64,9 +69,12 @@ export const handlePlayfnEvent = ({
       from: 'playfn',
     });
   }
+
   if (isGetByTextEventMessage(event)) {
     console.log('getByText event', event);
+
     const { text } = event;
+
     const command = describe(deviceId);
 
     const result = execSync(command);
@@ -89,6 +97,50 @@ export const handlePlayfnEvent = ({
       from: 'playfn',
     });
   }
+
+  if (isTypeTextEventMessage(event)) {
+    console.log('typeText event', event);
+
+    const { text } = event;
+
+    const command = typeText({ text, udid: deviceId });
+
+    console.log(command);
+
+    execSync(command);
+
+    sendEvent({
+      type: 'serverEvent',
+      args: [{ type: 'typeTextCompleted', success: true, sessionId: json.args[0].sessionId }],
+      from: 'playfn',
+    });
+  }
+
+  if (isGetByPlaceholderEventMessage(event)) {
+    console.log('getByPlaceholder event', event);
+    const { placeholder } = event;
+    const command = describe(deviceId);
+
+    const result = execSync(command);
+
+    const json = JSON.parse(result.toString());
+
+    const elements = findElementsByAXValue(json, placeholder);
+    console.log('elements', elements);
+
+    sendEvent({
+      type: 'serverEvent',
+      args: [
+        {
+          type: 'getByPlaceholderCompleted',
+          success: true,
+          sessionId: event.sessionId,
+          element: elements[0],
+        },
+      ],
+      from: 'playfn',
+    });
+  }
 };
 
 export function findElementsByAXLabel(elements: AXElement[], text: string): AXElement[] {
@@ -100,6 +152,22 @@ export function findElementsByAXLabel(elements: AXElement[], text: string): AXEl
     }
     if (el.children && el.children.length > 0) {
       matches.push(...findElementsByAXLabel(el.children, text));
+    }
+  }
+
+  return matches;
+}
+
+export function findElementsByAXValue(elements: AXElement[], value: string): AXElement[] {
+  const matches: AXElement[] = [];
+
+  for (const el of elements) {
+    if (el.AXValue === value) {
+      matches.push(el);
+    }
+
+    if (el.children && el.children.length > 0) {
+      matches.push(...findElementsByAXValue(el.children, value));
     }
   }
 

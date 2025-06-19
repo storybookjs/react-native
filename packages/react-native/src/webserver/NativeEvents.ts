@@ -34,6 +34,14 @@ export class NativeElement {
       duration: duration,
     });
   };
+
+  type = async (text: string) => {
+    return typeText({
+      text: text,
+      channel: this.channel,
+      sessionId: this.sessionId,
+    });
+  };
 }
 
 const tap = ({
@@ -69,6 +77,33 @@ const tap = ({
     });
   });
 
+const typeText = ({
+  text,
+  channel,
+  sessionId,
+}: {
+  text: string;
+  channel: Channel;
+  sessionId: string;
+}) =>
+  new Promise(async (resolve) => {
+    channel.emit('nativeEvent', {
+      type: 'typeText',
+      text: text,
+      sessionId: sessionId,
+    });
+
+    channel.once('serverEvent', async (event: ServerEventData) => {
+      console.log('serverEvent', event);
+
+      if (event?.type === 'typeTextCompleted') {
+        if (event?.success) {
+          resolve(true);
+        }
+      }
+    });
+  });
+
 export class NativeScreen {
   channel: Channel;
   sessionId: string;
@@ -85,6 +120,14 @@ export class NativeScreen {
       channel: this.channel,
       sessionId: this.sessionId,
       duration: duration,
+    });
+  };
+
+  type = async (text: string) => {
+    return typeText({
+      text: text,
+      channel: this.channel,
+      sessionId: this.sessionId,
     });
   };
 
@@ -106,6 +149,30 @@ export class NativeScreen {
             resolve(new NativeElement(this.channel, this.sessionId, event.element));
           } else {
             reject(new Error('Failed to get element by text'));
+          }
+        }
+      });
+    });
+  };
+
+  getByPlaceholder = async (placeholder: string): Promise<NativeElement> => {
+    return new Promise(async (resolve, reject) => {
+      this.channel.emit('nativeEvent', {
+        type: 'getByPlaceholder',
+        placeholder: placeholder,
+        sessionId: this.sessionId,
+      });
+
+      this.channel.once('serverEvent', async (event: ServerEventData) => {
+        console.log('serverEvent', event);
+
+        if (event?.type === 'getByPlaceholderCompleted') {
+          if (event?.success) {
+            console.log('getByPlaceholder completed');
+
+            resolve(new NativeElement(this.channel, this.sessionId, event.element));
+          } else {
+            reject(new Error('Failed to get element by placeholder'));
           }
         }
       });

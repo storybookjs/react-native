@@ -27,6 +27,7 @@ export const TextInput: React.FC<TextInputProps> = ({
         value={value}
         onChangeText={onChangeText}
         secureTextEntry={secureTextEntry}
+        autoCapitalize="none"
       />
       {error && <Text style={styles.error}>{error}</Text>}
     </View>
