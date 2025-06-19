@@ -57,15 +57,31 @@ export type ThemePartial = DeepPartial<Theme>;
 
 export type Params = {
   onDeviceUI?: boolean;
+  /**
+   * Set as false to disable the wrapper around the story view.
+   * NOTE We may remove this in the future for a better solution.
+   * default: true
+   */
+  hasStoryWrapper?: boolean;
+  /**
+   * Enable websockets for the storybook server to remotely control the storybook
+   * default: false
+   */
   enableWebsockets?: boolean;
   query?: string;
+  /** The host for the websocket server. default: localhost */
   host?: string;
+  /** The port for the websocket server. default: 7007 */
   port?: number;
   secured?: boolean;
+  /** The initial story */
   initialSelection?: InitialSelection;
+  /** Whether to persist story selection. default: true */
   shouldPersistSelection?: boolean;
   theme: ThemePartial;
+  /** Used for persisting story selection. required. */
   storage?: Storage;
+  /** The custom UI component to use instead of the default UI */
   CustomUIComponent?: SBUI;
 };
 
@@ -169,6 +185,7 @@ export class View {
       enableWebsockets = false,
       storage,
       CustomUIComponent,
+      hasStoryWrapper: storyViewWrapper = true,
     } = params;
 
     const getFullUI = (enabled: boolean): SBUI => {
@@ -380,7 +397,7 @@ export class View {
               storage={storage}
               theme={appliedTheme as Theme}
             >
-              <StoryView useWrapper={false} />
+              <StoryView useWrapper={storyViewWrapper} />
             </CustomUIComponent>
           );
         }
@@ -395,11 +412,11 @@ export class View {
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }
           >
-            <StoryView useWrapper={true} />
+            <StoryView useWrapper={storyViewWrapper} />
           </FullUI>
         );
       } else {
-        return <StoryView useWrapper={false} />;
+        return <StoryView useWrapper={storyViewWrapper} />;
       }
     };
   };
