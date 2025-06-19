@@ -93,7 +93,7 @@
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-test-renderer": "^19.1.0",
-    "storybook": "patch:storybook@npm%3A9.0.9#~/.yarn/patches/storybook-npm-9.0.9-e896aae9bd.patch",
+    "storybook": "^9.0.12",
     "tsup": "^7.2.0",
     "typescript": "~5.8.3"
   },

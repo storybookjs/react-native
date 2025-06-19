@@ -53,7 +53,7 @@
     "react-native-safe-area-context": "5.4.0",
     "react-native-svg": "15.11.2",
     "react-native-web": "^0.20.0",
-    "storybook": "patch:storybook@npm%3A9.0.9#~/.yarn/patches/storybook-npm-9.0.9-e896aae9bd.patch",
+    "storybook": "^9.0.12",
     "storybook-addon-deep-controls": "^0.9.2",
     "ws": "^8.18.0"
   },
