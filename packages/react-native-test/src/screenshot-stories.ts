@@ -5,7 +5,10 @@ import { existsSync, mkdirSync } from 'fs';
 import path from 'path';
 import { buildIndex } from 'storybook/internal/core-server';
 import { generateMaestroTest } from './utils/maestro-generator.js';
-import { compareScreenshots, updateBaseline as updateBaselineUtil } from './utils/screenshot-comparison.js';
+import {
+  compareScreenshots,
+  updateBaseline as updateBaselineUtil,
+} from './utils/screenshot-comparison.js';
 
 function showHelp() {
   console.log(`
@@ -219,11 +222,11 @@ const run = async () => {
     // Step 4: Update baseline if requested
     if (updateBaseline) {
       console.log('\n📋 Updating baseline screenshots...');
-      
+
       const resolvedScreenshotsDir = path.isAbsolute(screenshotsDir)
         ? screenshotsDir
         : path.join(process.cwd(), screenshotsDir);
-      
+
       const resolvedBaselineDir = path.isAbsolute(baselineDir)
         ? baselineDir
         : path.join(process.cwd(), baselineDir);
@@ -242,7 +245,6 @@ const run = async () => {
         process.exit(1);
       }
     }
-
   } catch (err: any) {
     console.error('Error:', err.message);
     process.exit(1);

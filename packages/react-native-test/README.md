@@ -21,6 +21,7 @@ npx @storybook/react-native-test gen-maestro [options]
 ```
 
 Options:
+
 - `-c, --config-dir <path>` - Path to Storybook config directory (default: ./.rnstorybook)
 - `-o, --output-dir <path>` - Output directory for maestro files (default: ./.maestro)
 - `-a, --app-id <id>` - App ID for maestro tests (default: host.exp.Exponent)
@@ -36,6 +37,7 @@ npx @storybook/react-native-test screenshot-stories [options]
 ```
 
 Options:
+
 - All options from `gen-maestro` plus:
 - `-b, --baseline-dir <path>` - Directory containing baseline screenshots (default: ./.maestro/baseline)
 - `-s, --screenshots-dir <path>` - Directory for new screenshots (default: ./.maestro/screenshots)
@@ -56,6 +58,7 @@ npx @storybook/react-native-test compare-screenshots [options]
 ```
 
 Options:
+
 - `-s, --screenshots-dir <path>` - Directory containing new screenshots (default: ./.maestro/screenshots)
 - `-b, --baseline-dir <path>` - Directory containing baseline screenshots (default: ./.maestro/baseline)
 - `-d, --diffs-dir <path>` - Directory for diff images (default: ./.maestro/diffs)
@@ -66,30 +69,35 @@ Options:
 ## Example Workflow
 
 1. Take screenshots of all stories and set them as baseline:
+
 ```bash
 npx @storybook/react-native-test screenshot-stories --update-baseline
 ```
 
 2. After making changes, take new screenshots and compare against baseline:
+
 ```bash
 npx @storybook/react-native-test screenshot-stories
 ```
 
 3. If changes are intentional, update the baseline:
+
 ```bash
 npx @storybook/react-native-test screenshot-stories --update-baseline
 ```
 
 4. For CI, you might want to skip generation if test files already exist:
+
 ```bash
 npx @storybook/react-native-test screenshot-stories --skip-generate
 ```
 
 Alternative workflow using separate commands:
+
 ```bash
 # Take screenshots
 npx @storybook/react-native-test screenshot-stories --skip-compare
 
-# Update baseline separately  
+# Update baseline separately
 npx @storybook/react-native-test compare-screenshots --update-baseline
 ```

@@ -23,13 +23,7 @@ export interface ComparisonResult {
 }
 
 export async function compareScreenshots(options: ComparisonOptions): Promise<ComparisonResult> {
-  const {
-    screenshotsDir,
-    baselineDir,
-    diffsDir,
-    tolerance = 2.5,
-    strict = false,
-  } = options;
+  const { screenshotsDir, baselineDir, diffsDir, tolerance = 2.5, strict = false } = options;
 
   // Ensure diffs directory exists
   mkdirSync(diffsDir, { recursive: true });
@@ -43,10 +37,10 @@ export async function compareScreenshots(options: ComparisonOptions): Promise<Co
   };
 
   try {
-    const screenshots = readdirSync(screenshotsDir).filter((file) => 
-      file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.jpeg')
+    const screenshots = readdirSync(screenshotsDir).filter(
+      (file) => file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.jpeg')
     );
-    
+
     result.total = screenshots.length;
 
     for (const screenshot of screenshots) {
@@ -107,22 +101,22 @@ export async function compareScreenshots(options: ComparisonOptions): Promise<Co
 
 export async function updateBaseline(screenshotsDir: string, baselineDir: string): Promise<void> {
   console.log('Updating baseline screenshots...');
-  
+
   mkdirSync(baselineDir, { recursive: true });
-  
-  const screenshots = readdirSync(screenshotsDir).filter((file) => 
-    file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.jpeg')
+
+  const screenshots = readdirSync(screenshotsDir).filter(
+    (file) => file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.jpeg')
   );
 
   for (const screenshot of screenshots) {
     const sourcePath = path.join(screenshotsDir, screenshot);
     const destPath = path.join(baselineDir, screenshot);
-    
+
     // Use native Node.js copy
     const { copyFileSync } = await import('fs');
     copyFileSync(sourcePath, destPath);
     console.log(`📋 Copied: ${screenshot}`);
   }
-  
+
   console.log(`✅ Updated ${screenshots.length} baseline screenshots`);
 }

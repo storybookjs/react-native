@@ -70,7 +70,7 @@ const run = async () => {
     const resolvedScreenshotsDir = path.isAbsolute(screenshotsDir)
       ? screenshotsDir
       : path.join(process.cwd(), screenshotsDir);
-    
+
     const resolvedBaselineDir = path.isAbsolute(baselineDir)
       ? baselineDir
       : path.join(process.cwd(), baselineDir);
