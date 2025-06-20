@@ -1,8 +1,8 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import path from 'path';
+import { buildIndex } from 'storybook/internal/core-server';
 
 const run = async () => {
-  const { buildIndex } = await import('storybook/internal/core-server');
   const index = await buildIndex({
     configDir: path.join(__dirname, '../.rnstorybook'),
   });

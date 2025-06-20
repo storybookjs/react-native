@@ -1,0 +1,62 @@
+{
+  "name": "@storybook/react-native-test",
+  "version": "9.0.9",
+  "type": "commonjs",
+  "description": "test utilities for react native storybook",
+  "keywords": [
+    "react",
+    "react-native",
+    "storybook",
+    "test"
+  ],
+  "homepage": "https://storybook.js.org/",
+  "bugs": {
+    "url": "https://github.com/storybookjs/react-native/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/react-native.git",
+    "directory": "packages/react-native-test"
+  },
+  "react-native": "src/index.tsx",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "bin": {
+    "compare-screenshots": "./dist/compare-screenshots.js",
+    "gen-maestro": "./dist/gen-maestro.js",
+    "screenshot-stories": "./dist/screenshot-stories.js"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts",
+    "src/**/*",
+    "bin/**/*"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "prepare": "tsup"
+  },
+  "devDependencies": {
+    "@types/react": "~19.0.10",
+    "tsup": "^7.2.0",
+    "typescript": "~5.8.3"
+  },
+  "dependencies": {
+    "arg": "^5.0.2",
+    "looks-same": "^9.0.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.57.0",
+    "storybook": "^9.0.12"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

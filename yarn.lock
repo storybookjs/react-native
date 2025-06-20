@@ -7434,6 +7434,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/react-native-test@workspace:packages/react-native-test":
+  version: 0.0.0-use.local
+  resolution: "@storybook/react-native-test@workspace:packages/react-native-test"
+  dependencies:
+    "@types/react": "npm:~19.0.10"
+    arg: "npm:^5.0.2"
+    looks-same: "npm:^9.0.1"
+    tsup: "npm:^7.2.0"
+    typescript: "npm:~5.8.3"
+  peerDependencies:
+    react: "*"
+    react-native: ">=0.57.0"
+    storybook: ^9.0.12
+  bin:
+    compare-screenshots: ./dist/compare-screenshots.js
+    gen-maestro: ./dist/gen-maestro.js
+    run-maestro: ./dist/run-maestro.js
+  languageName: unknown
+  linkType: soft
+
 "@storybook/react-native-theming@npm:^9.0.9, @storybook/react-native-theming@workspace:packages/react-native-theming":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-theming@workspace:packages/react-native-theming"

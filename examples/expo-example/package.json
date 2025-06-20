@@ -19,7 +19,7 @@
     "check": "tsc --noEmit",
     "test": "jest",
     "test:ci": "jest --runInBand",
-    "generate-maestro-tests": "bun ./scripts/generate-maestro-tests.ts",
+    "generate-maestro-tests": "node --experimental-strip-types ./scripts/generate-maestro-tests.ts",
     "test:maestro": "maestro test .maestro/storybook-screenshots.yaml",
     "test:compare": "bun scripts/compare-screenshots.ts"
   },
