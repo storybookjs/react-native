@@ -7450,7 +7450,7 @@ __metadata:
   bin:
     compare-screenshots: ./dist/compare-screenshots.js
     gen-maestro: ./dist/gen-maestro.js
-    run-maestro: ./dist/run-maestro.js
+    screenshot-stories: ./dist/screenshot-stories.js
   languageName: unknown
   linkType: soft
 
