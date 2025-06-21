@@ -165,8 +165,35 @@ const run = async () => {
       }
     }
 
-    // Step 3: Compare screenshots
-    if (!skipCompare) {
+    // Step 3: Update baseline if requested (do this before comparison)
+    if (updateBaseline) {
+      console.log('\n📋 Updating baseline screenshots...');
+      
+      const resolvedScreenshotsDir = path.isAbsolute(screenshotsDir)
+        ? screenshotsDir
+        : path.join(process.cwd(), screenshotsDir);
+      
+      const resolvedBaselineDir = path.isAbsolute(baselineDir)
+        ? baselineDir
+        : path.join(process.cwd(), baselineDir);
+
+      if (!existsSync(resolvedScreenshotsDir)) {
+        console.error(`Screenshots directory not found: ${resolvedScreenshotsDir}`);
+        console.error('Run without --skip-test to generate screenshots first');
+        process.exit(1);
+      }
+
+      try {
+        await updateBaselineUtil(resolvedScreenshotsDir, resolvedBaselineDir);
+        console.log('✅ Baseline screenshots updated successfully!');
+      } catch (error) {
+        console.error('❌ Failed to update baseline screenshots:', error);
+        process.exit(1);
+      }
+    }
+
+    // Step 4: Compare screenshots (skip if we just updated baseline)
+    if (!skipCompare && !updateBaseline) {
       console.log('\n🔍 Comparing screenshots...');
 
       const resolvedScreenshotsDir = path.isAbsolute(screenshotsDir)
@@ -219,32 +246,6 @@ const run = async () => {
       console.log('\n✅ All screenshots match!');
     }
 
-    // Step 4: Update baseline if requested
-    if (updateBaseline) {
-      console.log('\n📋 Updating baseline screenshots...');
-
-      const resolvedScreenshotsDir = path.isAbsolute(screenshotsDir)
-        ? screenshotsDir
-        : path.join(process.cwd(), screenshotsDir);
-
-      const resolvedBaselineDir = path.isAbsolute(baselineDir)
-        ? baselineDir
-        : path.join(process.cwd(), baselineDir);
-
-      if (!existsSync(resolvedScreenshotsDir)) {
-        console.error(`Screenshots directory not found: ${resolvedScreenshotsDir}`);
-        console.error('Run without --skip-test to generate screenshots first');
-        process.exit(1);
-      }
-
-      try {
-        await updateBaselineUtil(resolvedScreenshotsDir, resolvedBaselineDir);
-        console.log('✅ Baseline screenshots updated successfully!');
-      } catch (error) {
-        console.error('❌ Failed to update baseline screenshots:', error);
-        process.exit(1);
-      }
-    }
   } catch (err: any) {
     console.error('Error:', err.message);
     process.exit(1);
