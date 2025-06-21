@@ -7,6 +7,7 @@ export default defineConfig((options) => {
       'src/gen-maestro.ts',
       'src/screenshot-stories.ts',
       'src/compare-screenshots.ts',
+      'src/detect-ignore-regions.ts',
     ],
     clean: !options.watch,
     dts: !options.watch
@@ -16,6 +17,7 @@ export default defineConfig((options) => {
             'src/gen-maestro.ts',
             'src/screenshot-stories.ts',
             'src/compare-screenshots.ts',
+            'src/detect-ignore-regions.ts',
           ],
           resolve: true,
         }

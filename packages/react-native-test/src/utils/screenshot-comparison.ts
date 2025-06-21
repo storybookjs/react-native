@@ -1,6 +1,7 @@
-import { mkdirSync, readdirSync, existsSync, rmSync } from 'fs';
+import { mkdirSync, readdirSync, existsSync, rmSync, readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import looksSame from 'looks-same';
+import { PNG } from 'pngjs';
 
 export interface ComparisonOptions {
   screenshotsDir: string;
@@ -8,6 +9,12 @@ export interface ComparisonOptions {
   diffsDir: string;
   tolerance?: number;
   strict?: boolean;
+  ignoreRegions?: Array<{
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  }>;
 }
 
 export interface ComparisonResult {
@@ -22,8 +29,45 @@ export interface ComparisonResult {
   }>;
 }
 
+async function maskIgnoreRegions(
+  imagePath: string, 
+  ignoreRegions: Array<{ x: number; y: number; width: number; height: number }>
+): Promise<string> {
+  const data = readFileSync(imagePath);
+  const png = PNG.sync.read(data);
+  
+  // Fill ignore regions with a neutral gray color
+  ignoreRegions.forEach(region => {
+    for (let y = region.y; y < region.y + region.height && y < png.height; y++) {
+      for (let x = region.x; x < region.x + region.width && x < png.width; x++) {
+        if (x >= 0 && y >= 0) {
+          const idx = (png.width * y + x) << 2;
+          png.data[idx] = 128;     // R - neutral gray
+          png.data[idx + 1] = 128; // G - neutral gray  
+          png.data[idx + 2] = 128; // B - neutral gray
+          png.data[idx + 3] = 255; // A - fully opaque
+        }
+      }
+    }
+  });
+  
+  // Create temp file path
+  const tempPath = imagePath.replace('.png', '_masked.png');
+  const buffer = PNG.sync.write(png);
+  writeFileSync(tempPath, buffer);
+  
+  return tempPath;
+}
+
 export async function compareScreenshots(options: ComparisonOptions): Promise<ComparisonResult> {
-  const { screenshotsDir, baselineDir, diffsDir, tolerance = 2.5, strict = false } = options;
+  const {
+    screenshotsDir,
+    baselineDir,
+    diffsDir,
+    tolerance = 2.5,
+    strict = false,
+    ignoreRegions,
+  } = options;
 
   // Ensure diffs directory exists
   mkdirSync(diffsDir, { recursive: true });
@@ -59,15 +103,69 @@ export async function compareScreenshots(options: ComparisonOptions): Promise<Co
       }
 
       try {
-        const comparisonResult = await looksSame(baselinePath, currentPath, {
+        const comparisonOptions = {
           strict,
           tolerance,
-          createDiffImage: true,
-        });
+          createDiffImage: true as const,
+        };
+
+        // First pass: normal comparison
+        let comparisonResult = await looksSame(baselinePath, currentPath, comparisonOptions);
+
+        // Second pass: if failed and we have ignore regions, try with masking
+        if (!comparisonResult.equal && ignoreRegions && ignoreRegions.length > 0) {
+          // Validate regions
+          const validRegions = ignoreRegions.filter((region) => {
+            const isValid = region.x >= 0 && region.y >= 0 && region.width > 0 && region.height > 0;
+            if (!isValid) {
+              console.warn(
+                `⚠️  Invalid ignore region: x=${region.x}, y=${region.y}, w=${region.width}, h=${region.height}`
+              );
+            }
+            return isValid;
+          });
+
+          if (validRegions.length > 0) {
+            console.log(`🔄 Re-comparing ${screenshot} with ${validRegions.length} ignore regions masked:`);
+            validRegions.forEach((region, index) => {
+              console.log(
+                `   Region ${index + 1}: x=${region.x}, y=${region.y}, w=${region.width}, h=${region.height}`
+              );
+            });
+
+            // Create masked versions of both images
+            const maskedBaselinePath = await maskIgnoreRegions(baselinePath, validRegions);
+            const maskedCurrentPath = await maskIgnoreRegions(currentPath, validRegions);
+
+            try {
+              // Re-compare with masked images
+              comparisonResult = await looksSame(maskedBaselinePath, maskedCurrentPath, comparisonOptions);
+              
+              if (comparisonResult.equal) {
+                console.log(`✅ ${screenshot}: Match (after ignoring regions)`);
+              } else {
+                console.log(`❌ ${screenshot}: Still differs (even with ignore regions)`);
+              }
+            } finally {
+              // Clean up temporary files
+              try {
+                rmSync(maskedBaselinePath, { force: true });
+                rmSync(maskedCurrentPath, { force: true });
+              } catch {
+                console.warn(`⚠️  Could not clean up temp files for ${screenshot}`);
+              }
+            }
+          } else {
+            console.warn(`⚠️  No valid ignore regions found for ${screenshot}`);
+          }
+        }
 
         if (!comparisonResult.equal) {
-          await comparisonResult.diffImage?.save(diffPath);
-          console.log(`❌ ${screenshot}: Differs`);
+          await (comparisonResult as any).diffImage?.save(diffPath);
+          // Only log if we haven't already logged during re-comparison
+          if (!ignoreRegions || ignoreRegions.length === 0) {
+            console.log(`❌ ${screenshot}: Differs`);
+          }
           result.differences++;
           result.details.push({
             filename: screenshot,
@@ -119,6 +217,43 @@ export async function updateBaseline(screenshotsDir: string, baselineDir: string
   }
 
   console.log(`✅ Updated ${screenshots.length} baseline screenshots`);
+}
+
+export function parseIgnoreRegions(
+  regionsStr: string
+): Array<{ x: number; y: number; width: number; height: number }> {
+  if (!regionsStr || regionsStr.trim() === '') {
+    return [];
+  }
+
+  try {
+    const regions = regionsStr.split(';').map((regionStr) => {
+      const parts = regionStr
+        .trim()
+        .split(',')
+        .map((part) => parseInt(part.trim(), 10));
+
+      if (parts.length !== 4 || parts.some(isNaN)) {
+        throw new Error(`Invalid region format: "${regionStr}". Expected "x,y,width,height"`);
+      }
+
+      const [x, y, width, height] = parts;
+      return { x, y, width, height };
+    });
+
+    console.log(`🎯 Parsed ${regions.length} custom ignore regions:`);
+    regions.forEach((region, index) => {
+      console.log(
+        `   Region ${index + 1}: x=${region.x}, y=${region.y}, w=${region.width}, h=${region.height}`
+      );
+    });
+
+    return regions;
+  } catch (error) {
+    console.error(`❌ Error parsing ignore regions: ${error}`);
+    console.error(`💡 Expected format: "x,y,w,h;x2,y2,w2,h2" (semicolon-separated regions)`);
+    return [];
+  }
 }
 
 export function clearDirectory(dirPath: string): void {
@@ -506,7 +641,9 @@ export async function generateHtmlReport(
             // Convert absolute paths to relative paths for HTML
             const relativeBaseline = path.relative(path.dirname(reportPath), baselinePath);
             const relativeCurrent = path.relative(path.dirname(reportPath), currentPath);
-            const relativeDiff = diffPath ? path.relative(path.dirname(reportPath), diffPath) : null;
+            const relativeDiff = diffPath
+              ? path.relative(path.dirname(reportPath), diffPath)
+              : null;
 
             let statusClass: string;
             let statusText: string;

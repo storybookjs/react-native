@@ -7441,6 +7441,7 @@ __metadata:
     "@types/react": "npm:~19.0.10"
     arg: "npm:^5.0.2"
     looks-same: "npm:^9.0.1"
+    pngjs: "npm:^7.0.0"
     tsup: "npm:^7.2.0"
     typescript: "npm:~5.8.3"
   peerDependencies:
@@ -7449,6 +7450,7 @@ __metadata:
     storybook: ^9.0.12
   bin:
     compare-screenshots: ./dist/compare-screenshots.js
+    detect-ignore-regions: ./dist/detect-ignore-regions.js
     gen-maestro: ./dist/gen-maestro.js
     screenshot-stories: ./dist/screenshot-stories.js
   languageName: unknown
@@ -21814,6 +21816,13 @@ __metadata:
   version: 3.4.0
   resolution: "pngjs@npm:3.4.0"
   checksum: 10/0e9227a413ce4b4f5ebae4465b366efc9ca545c74304f3cc30ba2075159eb12f01a6a821c4f61f2b048bd85356abbe6d2109df7052a9030ef4d7a42d99760af6
+  languageName: node
+  linkType: hard
+
+"pngjs@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "pngjs@npm:7.0.0"
+  checksum: 10/e843ebbb0df092ee0f3a3e7dbd91ff87a239a4e4c4198fff202916bfb33b67622f4b83b3c29f3ccae94fcb97180c289df06068624554f61686fe6b9a4811f7db
   languageName: node
   linkType: hard
 

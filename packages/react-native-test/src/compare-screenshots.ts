@@ -5,6 +5,7 @@ import {
   compareScreenshots,
   updateBaseline,
   generateHtmlReport,
+  parseIgnoreRegions,
 } from './utils/screenshot-comparison.js';
 
 function showHelp() {
@@ -21,6 +22,7 @@ Options:
   --strict                       Use strict image comparison
   --update-baseline              Copy current screenshots to baseline directory
   --html-report                  Generate HTML comparison report
+  --ignore-regions <regions>     Ignore custom regions (format: "x,y,w,h;x2,y2,w2,h2")
   -h, --help                     Show this help message
 
 Examples:
@@ -28,6 +30,7 @@ Examples:
   npx @storybook/react-native-test compare-screenshots --tolerance 5 --strict
   npx @storybook/react-native-test compare-screenshots --update-baseline
   npx @storybook/react-native-test compare-screenshots --html-report
+  npx @storybook/react-native-test compare-screenshots --ignore-regions "0,800,390,44;10,10,50,50"
 `);
 }
 
@@ -45,6 +48,7 @@ const run = async () => {
       '--strict': Boolean,
       '--update-baseline': Boolean,
       '--html-report': Boolean,
+      '--ignore-regions': String,
 
       // Aliases
       '-h': '--help',
@@ -73,6 +77,7 @@ const run = async () => {
   const strict = args['--strict'] || false;
   const updateBaselineFlag = args['--update-baseline'] || false;
   const htmlReport = args['--html-report'] || false;
+  const ignoreRegionsStr = args['--ignore-regions'];
 
   try {
     const resolvedScreenshotsDir = path.isAbsolute(screenshotsDir)
@@ -102,12 +107,20 @@ const run = async () => {
     console.log(`Strict mode: ${strict}`);
     console.log();
 
+    // Parse custom ignore regions if provided
+    let ignoreRegions: Array<{ x: number; y: number; width: number; height: number }> | undefined;
+    
+    if (ignoreRegionsStr) {
+      ignoreRegions = parseIgnoreRegions(ignoreRegionsStr);
+    }
+
     const results = await compareScreenshots({
       screenshotsDir: resolvedScreenshotsDir,
       baselineDir: resolvedBaselineDir,
       diffsDir: resolvedDiffsDir,
       tolerance,
       strict,
+      ...(ignoreRegions && { ignoreRegions }),
     });
 
     console.log('\n📊 Comparison Results:');
@@ -124,6 +137,7 @@ const run = async () => {
         diffsDir: resolvedDiffsDir,
         tolerance,
         strict,
+        ...(ignoreRegions && { ignoreRegions }),
       });
       console.log(`\n📄 HTML report generated: ${reportPath}`);
     }

@@ -24,6 +24,7 @@
   "license": "MIT",
   "bin": {
     "compare-screenshots": "./dist/compare-screenshots.js",
+    "detect-ignore-regions": "./dist/detect-ignore-regions.js",
     "gen-maestro": "./dist/gen-maestro.js",
     "screenshot-stories": "./dist/screenshot-stories.js"
   },
@@ -46,7 +47,8 @@
   },
   "dependencies": {
     "arg": "^5.0.2",
-    "looks-same": "^9.0.1"
+    "looks-same": "^9.0.1",
+    "pngjs": "^7.0.0"
   },
   "peerDependencies": {
     "react": "*",
