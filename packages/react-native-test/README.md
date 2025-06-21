@@ -133,6 +133,7 @@ npx @storybook/react-native-test compare-screenshots --html-report
 ```
 
 The HTML report shows:
+
 - Summary statistics (total, matches, differences, missing baselines)
 - Side-by-side comparison of baseline, current, and diff images
 - Status badges for each screenshot (match, different, missing baseline)
@@ -156,16 +157,19 @@ npx @storybook/react-native-test compare-screenshots --ignore-regions "0,800,390
 ```
 
 **Region Format:**
+
 - Each region is specified as `x,y,width,height` (all in pixels)
 - Multiple regions are separated by semicolons (`;`)
 - Coordinates start from top-left (0,0)
 
 **Common Use Cases:**
+
 - **iOS Home Indicator**: `"0,800,390,44"` (adjust y-coordinate and width based on your device)
 - **Status Bar**: `"0,0,390,47"` (top of screen)
 - **Navigation Bar**: `"0,750,390,94"` (bottom area)
 
 **Example Output:**
+
 ```bash
 🎯 Parsed 2 custom ignore regions:
    Region 1: x=0, y=800, w=390, h=44
@@ -179,15 +183,17 @@ This approach gives you complete control over which areas to ignore, making it p
 If you're seeing false positives from system UI differences, you can use the `detect-ignore-regions` command to extract exact coordinates from a diff image:
 
 1. **First, run comparison without ignore regions to generate diff images:**
+
    ```bash
    npx @storybook/react-native-test screenshot-stories
    ```
 
 2. **Interactively select and analyze a diff image:**
+
    ```bash
    npx @storybook/react-native-test detect-ignore-regions
    ```
-   
+
    This will show you a list of available diff images. Choose one that shows the system UI differences you want to ignore (like a home indicator or status bar). The tool will analyze the colored diff pixels and extract rectangular regions.
 
 3. **Use the suggested regions in future comparisons:**
@@ -196,6 +202,7 @@ If you're seeing false positives from system UI differences, you can use the `de
    ```
 
 **Example interaction:**
+
 ```
 📁 Found 5 diff images:
 

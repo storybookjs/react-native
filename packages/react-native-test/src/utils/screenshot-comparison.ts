@@ -30,32 +30,32 @@ export interface ComparisonResult {
 }
 
 async function maskIgnoreRegions(
-  imagePath: string, 
+  imagePath: string,
   ignoreRegions: Array<{ x: number; y: number; width: number; height: number }>
 ): Promise<string> {
   const data = readFileSync(imagePath);
   const png = PNG.sync.read(data);
-  
+
   // Fill ignore regions with a neutral gray color
-  ignoreRegions.forEach(region => {
+  ignoreRegions.forEach((region) => {
     for (let y = region.y; y < region.y + region.height && y < png.height; y++) {
       for (let x = region.x; x < region.x + region.width && x < png.width; x++) {
         if (x >= 0 && y >= 0) {
           const idx = (png.width * y + x) << 2;
-          png.data[idx] = 128;     // R - neutral gray
-          png.data[idx + 1] = 128; // G - neutral gray  
+          png.data[idx] = 128; // R - neutral gray
+          png.data[idx + 1] = 128; // G - neutral gray
           png.data[idx + 2] = 128; // B - neutral gray
           png.data[idx + 3] = 255; // A - fully opaque
         }
       }
     }
   });
-  
+
   // Create temp file path
   const tempPath = imagePath.replace('.png', '_masked.png');
   const buffer = PNG.sync.write(png);
   writeFileSync(tempPath, buffer);
-  
+
   return tempPath;
 }
 
@@ -126,7 +126,9 @@ export async function compareScreenshots(options: ComparisonOptions): Promise<Co
           });
 
           if (validRegions.length > 0) {
-            console.log(`🔄 Re-comparing ${screenshot} with ${validRegions.length} ignore regions masked:`);
+            console.log(
+              `🔄 Re-comparing ${screenshot} with ${validRegions.length} ignore regions masked:`
+            );
             validRegions.forEach((region, index) => {
               console.log(
                 `   Region ${index + 1}: x=${region.x}, y=${region.y}, w=${region.width}, h=${region.height}`
@@ -139,8 +141,12 @@ export async function compareScreenshots(options: ComparisonOptions): Promise<Co
 
             try {
               // Re-compare with masked images
-              comparisonResult = await looksSame(maskedBaselinePath, maskedCurrentPath, comparisonOptions);
-              
+              comparisonResult = await looksSame(
+                maskedBaselinePath,
+                maskedCurrentPath,
+                comparisonOptions
+              );
+
               if (comparisonResult.equal) {
                 console.log(`✅ ${screenshot}: Match (after ignoring regions)`);
               } else {

@@ -109,7 +109,7 @@ const run = async () => {
 
     // Parse custom ignore regions if provided
     let ignoreRegions: Array<{ x: number; y: number; width: number; height: number }> | undefined;
-    
+
     if (ignoreRegionsStr) {
       ignoreRegions = parseIgnoreRegions(ignoreRegionsStr);
     }
