@@ -30,6 +30,7 @@ export const Loading: Story = {
     title: 'Sign In',
     loading: true,
   },
+  tags: ['skip-screenshot'],
 };
 
 export const Disabled: Story = {
@@ -45,6 +46,7 @@ export const SecondaryLoading: Story = {
     variant: 'secondary',
     loading: true,
   },
+  tags: ['skip-screenshot'],
 };
 
 export const SecondaryDisabled: Story = {

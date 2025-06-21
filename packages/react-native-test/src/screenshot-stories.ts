@@ -8,6 +8,8 @@ import { generateMaestroTest } from './utils/maestro-generator.js';
 import {
   compareScreenshots,
   updateBaseline as updateBaselineUtil,
+  clearDirectory,
+  generateHtmlReport,
 } from './utils/screenshot-comparison.js';
 
 function showHelp() {
@@ -31,6 +33,7 @@ Options:
   --skip-test                    Skip running maestro tests
   --skip-compare                 Skip comparing screenshots
   --update-baseline              Copy current screenshots to baseline directory
+  --html-report                  Generate HTML comparison report (when comparing)
   -h, --help                     Show this help message
 
 Examples:
@@ -38,48 +41,42 @@ Examples:
   npx @storybook/react-native-test screenshot-stories --app-id com.myapp --tolerance 5
   npx @storybook/react-native-test screenshot-stories --skip-generate --skip-test
   npx @storybook/react-native-test screenshot-stories --update-baseline
+  npx @storybook/react-native-test screenshot-stories --html-report
 `);
 }
 
 const run = async () => {
-  let args;
+  const args = arg({
+    // Types
+    '--help': Boolean,
+    '--config-dir': String,
+    '--output-dir': String,
+    '--app-id': String,
+    '--base-uri': String,
+    '--test-name': String,
+    '--baseline-dir': String,
+    '--screenshots-dir': String,
+    '--diffs-dir': String,
+    '--tolerance': Number,
+    '--strict': Boolean,
+    '--skip-generate': Boolean,
+    '--skip-test': Boolean,
+    '--skip-compare': Boolean,
+    '--update-baseline': Boolean,
+    '--html-report': Boolean,
 
-  try {
-    args = arg({
-      // Types
-      '--help': Boolean,
-      '--config-dir': String,
-      '--output-dir': String,
-      '--app-id': String,
-      '--base-uri': String,
-      '--test-name': String,
-      '--baseline-dir': String,
-      '--screenshots-dir': String,
-      '--diffs-dir': String,
-      '--tolerance': Number,
-      '--strict': Boolean,
-      '--skip-generate': Boolean,
-      '--skip-test': Boolean,
-      '--skip-compare': Boolean,
-      '--update-baseline': Boolean,
-
-      // Aliases
-      '-h': '--help',
-      '-c': '--config-dir',
-      '-o': '--output-dir',
-      '-a': '--app-id',
-      '-u': '--base-uri',
-      '-n': '--test-name',
-      '-b': '--baseline-dir',
-      '-s': '--screenshots-dir',
-      '-d': '--diffs-dir',
-      '-t': '--tolerance',
-    });
-  } catch (err: any) {
-    console.error(err.message);
-    showHelp();
-    process.exit(1);
-  }
+    // Aliases
+    '-h': '--help',
+    '-c': '--config-dir',
+    '-o': '--output-dir',
+    '-a': '--app-id',
+    '-u': '--base-uri',
+    '-n': '--test-name',
+    '-b': '--baseline-dir',
+    '-s': '--screenshots-dir',
+    '-d': '--diffs-dir',
+    '-t': '--tolerance',
+  });
 
   if (args['--help']) {
     showHelp();
@@ -101,6 +98,7 @@ const run = async () => {
   const skipTest = args['--skip-test'] || false;
   const skipCompare = args['--skip-compare'] || false;
   const updateBaseline = args['--update-baseline'] || false;
+  const htmlReport = args['--html-report'] || false;
 
   try {
     const resolvedOutputDir = path.isAbsolute(outputDir)
@@ -146,11 +144,13 @@ const run = async () => {
         process.exit(1);
       }
 
-      // Ensure screenshots directory exists
+      // Ensure screenshots directory exists and is clean
       const resolvedScreenshotsDir = path.isAbsolute(screenshotsDir)
         ? screenshotsDir
         : path.join(process.cwd(), screenshotsDir);
 
+      // Clear old screenshots before taking new ones
+      clearDirectory(resolvedScreenshotsDir);
       mkdirSync(resolvedScreenshotsDir, { recursive: true });
 
       try {
@@ -159,7 +159,7 @@ const run = async () => {
           env: { ...process.env },
         });
         console.log('✅ Maestro tests completed successfully');
-      } catch (error) {
+      } catch {
         console.error('❌ Maestro tests failed');
         // Continue to comparison even if tests fail (might still have some screenshots)
       }
@@ -168,11 +168,11 @@ const run = async () => {
     // Step 3: Update baseline if requested (do this before comparison)
     if (updateBaseline) {
       console.log('\n📋 Updating baseline screenshots...');
-      
+
       const resolvedScreenshotsDir = path.isAbsolute(screenshotsDir)
         ? screenshotsDir
         : path.join(process.cwd(), screenshotsDir);
-      
+
       const resolvedBaselineDir = path.isAbsolute(baselineDir)
         ? baselineDir
         : path.join(process.cwd(), baselineDir);
@@ -208,6 +208,9 @@ const run = async () => {
         ? diffsDir
         : path.join(process.cwd(), diffsDir);
 
+      // Clear old diffs before comparing
+      clearDirectory(resolvedDiffsDir);
+
       if (!existsSync(resolvedScreenshotsDir)) {
         console.error(`Screenshots directory not found: ${resolvedScreenshotsDir}`);
         console.error('Run without --skip-test to generate screenshots first');
@@ -237,15 +240,29 @@ const run = async () => {
       console.log(`  Differences: ${results.differences}`);
       console.log(`  Missing baselines: ${results.missingBaselines}`);
 
+      // Generate HTML report if requested
+      if (htmlReport) {
+        const reportPath = await generateHtmlReport(results, {
+          screenshotsDir: resolvedScreenshotsDir,
+          baselineDir: resolvedBaselineDir,
+          diffsDir: resolvedDiffsDir,
+          tolerance,
+          strict,
+        });
+        console.log(`\n📄 HTML report generated: ${reportPath}`);
+      }
+
       if (results.differences > 0) {
         console.log(`\n⚠️  ${results.differences} screenshots have differences`);
         console.log(`Diff images saved to: ${resolvedDiffsDir}`);
+        if (htmlReport) {
+          console.log('Open the HTML report to view detailed comparisons');
+        }
         process.exit(1);
       }
 
       console.log('\n✅ All screenshots match!');
     }
-
   } catch (err: any) {
     console.error('Error:', err.message);
     process.exit(1);

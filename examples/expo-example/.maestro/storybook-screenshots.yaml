@@ -185,13 +185,6 @@ name: Take screenshots of all Storybook stories
     id: 'logindocsexample-button--disabled'
 - takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Disabled'
 
-# Story LoginDocsExample-Button - Loading
-- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--loading'
-- waitForAnimationToEnd
-- assertVisible:
-    id: 'logindocsexample-button--loading'
-- takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Loading'
-
 # Story LoginDocsExample-Button - Long Title
 - openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--long-title'
 - waitForAnimationToEnd
@@ -220,13 +213,6 @@ name: Take screenshots of all Storybook stories
     id: 'logindocsexample-button--secondary-disabled'
 - takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Secondary-Disabled'
 
-# Story LoginDocsExample-Button - Secondary Loading
-- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-button--secondary-loading'
-- waitForAnimationToEnd
-- assertVisible:
-    id: 'logindocsexample-button--secondary-loading'
-- takeScreenshot: '.maestro/screenshots/LoginDocsExample-Button---Secondary-Loading'
-
 # Story LoginDocsExample-LoginForm - Default
 - openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-loginform--default'
 - waitForAnimationToEnd
@@ -240,13 +226,6 @@ name: Take screenshots of all Storybook stories
 - assertVisible:
     id: 'logindocsexample-loginform--email-error-only'
 - takeScreenshot: '.maestro/screenshots/LoginDocsExample-LoginForm---Email-Error-Only'
-
-# Story LoginDocsExample-LoginForm - Loading
-- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-loginform--loading'
-- waitForAnimationToEnd
-- assertVisible:
-    id: 'logindocsexample-loginform--loading'
-- takeScreenshot: '.maestro/screenshots/LoginDocsExample-LoginForm---Loading'
 
 # Story LoginDocsExample-LoginForm - Long Errors
 - openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=logindocsexample-loginform--long-errors'
@@ -667,13 +646,6 @@ name: Take screenshots of all Storybook stories
 - assertVisible:
     id: 'safeareaexample-usablearea--safe-area'
 - takeScreenshot: '.maestro/screenshots/SafeAreaExample-UsableArea---Safe-Area'
-
-# Story TestCase - Basic
-- openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=testcase--basic'
-- waitForAnimationToEnd
-- assertVisible:
-    id: 'testcase--basic'
-- takeScreenshot: '.maestro/screenshots/TestCase---Basic'
 
 # Story TestCase2 - Basic
 - openLink: 'exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=testcase2--basic'

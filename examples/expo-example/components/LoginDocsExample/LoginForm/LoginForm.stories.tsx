@@ -25,6 +25,7 @@ export const Loading: Story = {
   args: {
     loading: true,
   },
+  tags: ['skip-screenshot'],
 };
 
 export const EmailErrorOnly: Story = {

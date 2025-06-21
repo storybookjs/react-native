@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 import path from 'path';
 import arg from 'arg';
-import { compareScreenshots, updateBaseline } from './utils/screenshot-comparison.js';
+import {
+  compareScreenshots,
+  updateBaseline,
+  generateHtmlReport,
+} from './utils/screenshot-comparison.js';
 
 function showHelp() {
   console.log(`
@@ -16,12 +20,14 @@ Options:
   -t, --tolerance <number>       Tolerance for image comparison (default: 2.5)
   --strict                       Use strict image comparison
   --update-baseline              Copy current screenshots to baseline directory
+  --html-report                  Generate HTML comparison report
   -h, --help                     Show this help message
 
 Examples:
   npx @storybook/react-native-test compare-screenshots
   npx @storybook/react-native-test compare-screenshots --tolerance 5 --strict
   npx @storybook/react-native-test compare-screenshots --update-baseline
+  npx @storybook/react-native-test compare-screenshots --html-report
 `);
 }
 
@@ -38,6 +44,7 @@ const run = async () => {
       '--tolerance': Number,
       '--strict': Boolean,
       '--update-baseline': Boolean,
+      '--html-report': Boolean,
 
       // Aliases
       '-h': '--help',
@@ -65,6 +72,7 @@ const run = async () => {
   const tolerance = args['--tolerance'] || 2.5;
   const strict = args['--strict'] || false;
   const updateBaselineFlag = args['--update-baseline'] || false;
+  const htmlReport = args['--html-report'] || false;
 
   try {
     const resolvedScreenshotsDir = path.isAbsolute(screenshotsDir)
@@ -108,6 +116,18 @@ const run = async () => {
     console.log(`  Differences: ${results.differences}`);
     console.log(`  Missing baselines: ${results.missingBaselines}`);
 
+    // Generate HTML report if requested
+    if (htmlReport) {
+      const reportPath = await generateHtmlReport(results, {
+        screenshotsDir: resolvedScreenshotsDir,
+        baselineDir: resolvedBaselineDir,
+        diffsDir: resolvedDiffsDir,
+        tolerance,
+        strict,
+      });
+      console.log(`\n📄 HTML report generated: ${reportPath}`);
+    }
+
     if (results.missingBaselines > 0) {
       console.log('\n💡 Tip: Run with --update-baseline to set current screenshots as baseline');
     }
@@ -115,6 +135,9 @@ const run = async () => {
     if (results.differences > 0) {
       console.log(`\n⚠️  ${results.differences} screenshots have differences`);
       console.log(`Diff images saved to: ${resolvedDiffsDir}`);
+      if (htmlReport) {
+        console.log('Open the HTML report to view detailed comparisons');
+      }
       process.exit(1);
     }
 

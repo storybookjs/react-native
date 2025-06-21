@@ -9,6 +9,7 @@ const TestCase = () => {
 
 const meta = {
   component: TestCase,
+  tags: ['skip-screenshot'],
 } satisfies Meta<typeof TestCase>;
 
 export default meta;

@@ -1,5 +1,6 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import path from 'path';
+import { IndexEntry } from 'storybook/internal/types';
 
 export interface MaestroGeneratorOptions {
   index: any;
@@ -26,8 +27,10 @@ export async function generateMaestroTest(options: MaestroGeneratorOptions): Pro
 
     // Generate Maestro test file content
     const stories = Object.values(index.entries)
-      .filter((entry: any) => entry.type === 'story')
-      .map((story: any) => ({
+      .filter(
+        (entry: IndexEntry) => entry.type === 'story' && !entry.tags?.includes('skip-screenshot')
+      )
+      .map((story: IndexEntry) => ({
         id: story.id,
         name: story.title.replace(/\//g, '-') + ' - ' + story.name,
       }));

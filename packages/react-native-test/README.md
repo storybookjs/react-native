@@ -48,6 +48,7 @@ Options:
 - `--skip-test` - Skip running maestro tests
 - `--skip-compare` - Skip comparing screenshots
 - `--update-baseline` - Copy current screenshots to baseline directory
+- `--html-report` - Generate HTML comparison report (when comparing)
 
 ### `compare-screenshots`
 
@@ -65,6 +66,7 @@ Options:
 - `-t, --tolerance <number>` - Tolerance for image comparison (default: 2.5)
 - `--strict` - Use strict image comparison
 - `--update-baseline` - Copy current screenshots to baseline directory
+- `--html-report` - Generate HTML comparison report
 
 ## Example Workflow
 
@@ -101,3 +103,23 @@ npx @storybook/react-native-test screenshot-stories --skip-compare
 # Update baseline separately
 npx @storybook/react-native-test compare-screenshots --update-baseline
 ```
+
+## HTML Reports
+
+Both `screenshot-stories` and `compare-screenshots` commands support generating detailed HTML comparison reports with the `--html-report` flag:
+
+```bash
+# Generate HTML report when comparing screenshots
+npx @storybook/react-native-test screenshot-stories --html-report
+
+# Or when running comparison separately
+npx @storybook/react-native-test compare-screenshots --html-report
+```
+
+The HTML report shows:
+- Summary statistics (total, matches, differences, missing baselines)
+- Side-by-side comparison of baseline, current, and diff images
+- Status badges for each screenshot (match, different, missing baseline)
+- Mobile-responsive layout for easy viewing
+
+The report is saved as `screenshot-comparison-report.html` in the output directory (usually `.maestro/`).
