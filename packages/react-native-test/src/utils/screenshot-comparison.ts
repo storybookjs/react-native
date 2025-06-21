@@ -252,37 +252,13 @@ export async function generateHtmlReport(
         }
 
         .filter-btn:hover {
-            background: var(--color-light);
-            border-color: var(--color-secondary);
+            background: rgba(30, 167, 253, 0.1);
         }
 
         .filter-btn.active {
             background: var(--color-secondary);
             color: var(--color-lightest);
             border-color: var(--color-secondary);
-        }
-
-        .toggle-btn {
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border: 1px solid var(--color-mediumlight);
-            border-radius: var(--border-radius);
-            background: var(--color-lightest);
-            cursor: pointer;
-            font-size: var(--typography-size-s1);
-            font-weight: var(--typography-weight-bold);
-            transition: all 0.15s ease;
-            color: var(--color-dark);
-        }
-
-        .toggle-btn:hover {
-            background: var(--color-light);
-            border-color: var(--color-positive);
-        }
-
-        .toggle-btn.active {
-            background: var(--color-positive);
-            color: var(--color-lightest);
-            border-color: var(--color-positive);
         }
 
         .navigation {
@@ -316,8 +292,7 @@ export async function generateHtmlReport(
         }
 
         .nav-btn:hover:not(:disabled) {
-            background: var(--color-light);
-            border-color: var(--color-primary);
+            background: rgba(30, 167, 253, 0.1);
         }
 
         .nav-btn:disabled {
@@ -447,10 +422,6 @@ export async function generateHtmlReport(
             display: flex;
         }
 
-        .diff-section.hidden {
-            display: none;
-        }
-
         .hidden {
             display: none !important;
         }
@@ -508,12 +479,9 @@ export async function generateHtmlReport(
         <div class="controls">
             <div class="control-group">
                 <label>Filter:</label>
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="differ">Differences Only</button>
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn active" data-filter="differ">Differences Only</button>
                 <button class="filter-btn" data-filter="missing">Missing Baselines</button>
-            </div>
-            <div class="control-group">
-                <button class="toggle-btn active" id="toggleDiffs">Hide Diff Images</button>
             </div>
             <div class="navigation">
                 <div class="nav-info">
@@ -564,7 +532,7 @@ export async function generateHtmlReport(
             const hasDiff = detail.status === 'differ' && diffPath && existsSync(diffPath);
 
             return `
-            <div class="comparison-item ${index === 0 ? '' : 'hidden'}" data-status="${detail.status}" data-index="${index}">
+            <div class="comparison-item hidden" data-status="${detail.status}" data-index="${index}">
                 <div class="comparison-header">
                     <div class="filename">${detail.filename}</div>
                     <div class="status-badge ${statusClass}">${statusText}</div>
@@ -611,7 +579,6 @@ export async function generateHtmlReport(
     <script>
         let currentIndex = 0;
         let filteredItems = [];
-        let showDiffs = true;
         
         function updateFilteredItems() {
             const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
@@ -619,6 +586,8 @@ export async function generateHtmlReport(
             
             filteredItems = allItems.filter(item => {
                 if (activeFilter === 'all') return true;
+                if (activeFilter === 'differ') return item.dataset.status === 'differ';
+                if (activeFilter === 'missing') return item.dataset.status === 'missing-baseline';
                 return item.dataset.status === activeFilter;
             });
             
@@ -641,22 +610,6 @@ export async function generateHtmlReport(
             document.getElementById('nextBtn').disabled = currentIndex >= filteredItems.length - 1;
         }
         
-        function toggleDiffs() {
-            showDiffs = !showDiffs;
-            const diffSections = document.querySelectorAll('.diff-section');
-            const toggleBtn = document.getElementById('toggleDiffs');
-            
-            diffSections.forEach(section => {
-                if (showDiffs) {
-                    section.classList.remove('hidden');
-                } else {
-                    section.classList.add('hidden');
-                }
-            });
-            
-            toggleBtn.textContent = showDiffs ? 'Hide Diff Images' : 'Show Diff Images';
-            toggleBtn.classList.toggle('active', showDiffs);
-        }
         
         // Event listeners
         document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -666,8 +619,6 @@ export async function generateHtmlReport(
                 updateFilteredItems();
             });
         });
-        
-        document.getElementById('toggleDiffs').addEventListener('click', toggleDiffs);
         
         document.getElementById('prevBtn').addEventListener('click', () => {
             if (currentIndex > 0) {
@@ -691,9 +642,6 @@ export async function generateHtmlReport(
             } else if (e.key === 'ArrowRight' && currentIndex < filteredItems.length - 1) {
                 currentIndex++;
                 updateDisplay();
-            } else if (e.key === ' ') {
-                e.preventDefault();
-                toggleDiffs();
             }
         });
         

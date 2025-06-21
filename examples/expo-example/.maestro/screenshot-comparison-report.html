@@ -110,37 +110,13 @@
         }
 
         .filter-btn:hover {
-            background: var(--color-light);
-            border-color: var(--color-secondary);
+            background: rgba(30, 167, 253, 0.1);
         }
 
         .filter-btn.active {
             background: var(--color-secondary);
             color: var(--color-lightest);
             border-color: var(--color-secondary);
-        }
-
-        .toggle-btn {
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border: 1px solid var(--color-mediumlight);
-            border-radius: var(--border-radius);
-            background: var(--color-lightest);
-            cursor: pointer;
-            font-size: var(--typography-size-s1);
-            font-weight: var(--typography-weight-bold);
-            transition: all 0.15s ease;
-            color: var(--color-dark);
-        }
-
-        .toggle-btn:hover {
-            background: var(--color-light);
-            border-color: var(--color-positive);
-        }
-
-        .toggle-btn.active {
-            background: var(--color-positive);
-            color: var(--color-lightest);
-            border-color: var(--color-positive);
         }
 
         .navigation {
@@ -174,8 +150,7 @@
         }
 
         .nav-btn:hover:not(:disabled) {
-            background: var(--color-light);
-            border-color: var(--color-primary);
+            background: rgba(30, 167, 253, 0.1);
         }
 
         .nav-btn:disabled {
@@ -305,10 +280,6 @@
             display: flex;
         }
 
-        .diff-section.hidden {
-            display: none;
-        }
-
         .hidden {
             display: none !important;
         }
@@ -361,17 +332,14 @@
     <div class="header">
         <div class="header-left">
             <h1>Screenshot Comparison Report</h1>
-            <p>Generated on 6/21/2025, 1:57:41 AM</p>
+            <p>Generated on 6/21/2025, 2:13:43 AM</p>
         </div>
         <div class="controls">
             <div class="control-group">
                 <label>Filter:</label>
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="differ">Differences Only</button>
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn active" data-filter="differ">Differences Only</button>
                 <button class="filter-btn" data-filter="missing">Missing Baselines</button>
-            </div>
-            <div class="control-group">
-                <button class="toggle-btn active" id="toggleDiffs">Hide Diff Images</button>
             </div>
             <div class="navigation">
                 <div class="nav-info">
@@ -388,7 +356,7 @@
     <div class="main-content">
         <div id="comparisonContainer">
         
-            <div class="comparison-item " data-status="match" data-index="0">
+            <div class="comparison-item hidden" data-status="match" data-index="0">
                 <div class="comparison-header">
                     <div class="filename">ActionExample-Actions---Basic.png</div>
                     <div class="status-badge status-match">✅ Match</div>
@@ -2521,7 +2489,6 @@
     <script>
         let currentIndex = 0;
         let filteredItems = [];
-        let showDiffs = true;
         
         function updateFilteredItems() {
             const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
@@ -2529,6 +2496,8 @@
             
             filteredItems = allItems.filter(item => {
                 if (activeFilter === 'all') return true;
+                if (activeFilter === 'differ') return item.dataset.status === 'differ';
+                if (activeFilter === 'missing') return item.dataset.status === 'missing-baseline';
                 return item.dataset.status === activeFilter;
             });
             
@@ -2551,22 +2520,6 @@
             document.getElementById('nextBtn').disabled = currentIndex >= filteredItems.length - 1;
         }
         
-        function toggleDiffs() {
-            showDiffs = !showDiffs;
-            const diffSections = document.querySelectorAll('.diff-section');
-            const toggleBtn = document.getElementById('toggleDiffs');
-            
-            diffSections.forEach(section => {
-                if (showDiffs) {
-                    section.classList.remove('hidden');
-                } else {
-                    section.classList.add('hidden');
-                }
-            });
-            
-            toggleBtn.textContent = showDiffs ? 'Hide Diff Images' : 'Show Diff Images';
-            toggleBtn.classList.toggle('active', showDiffs);
-        }
         
         // Event listeners
         document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -2576,8 +2529,6 @@
                 updateFilteredItems();
             });
         });
-        
-        document.getElementById('toggleDiffs').addEventListener('click', toggleDiffs);
         
         document.getElementById('prevBtn').addEventListener('click', () => {
             if (currentIndex > 0) {
@@ -2601,9 +2552,6 @@
             } else if (e.key === 'ArrowRight' && currentIndex < filteredItems.length - 1) {
                 currentIndex++;
                 updateDisplay();
-            } else if (e.key === ' ') {
-                e.preventDefault();
-                toggleDiffs();
             }
         });
         
