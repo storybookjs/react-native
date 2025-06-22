@@ -48,6 +48,7 @@
   "dependencies": {
     "arg": "^5.0.2",
     "looks-same": "^9.0.1",
+    "odiff-bin": "^3.2.1",
     "pngjs": "^7.0.0"
   },
   "peerDependencies": {

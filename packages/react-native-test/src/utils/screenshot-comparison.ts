@@ -1,7 +1,6 @@
-import { mkdirSync, readdirSync, existsSync, rmSync, readFileSync, writeFileSync } from 'fs';
+import { mkdirSync, readdirSync, existsSync, rmSync } from 'fs';
 import path from 'path';
-import looksSame from 'looks-same';
-import { PNG } from 'pngjs';
+import { compare as odiffCompare } from 'odiff-bin';
 
 export interface ComparisonOptions {
   screenshotsDir: string;
@@ -29,34 +28,51 @@ export interface ComparisonResult {
   }>;
 }
 
-async function maskIgnoreRegions(
-  imagePath: string,
-  ignoreRegions: Array<{ x: number; y: number; width: number; height: number }>
-): Promise<string> {
-  const data = readFileSync(imagePath);
-  const png = PNG.sync.read(data);
+// Convert ignore regions from x,y,width,height to x1,y1,x2,y2 format for odiff
+function convertIgnoreRegions(
+  regions: Array<{ x: number; y: number; width: number; height: number }>
+) {
+  return regions.map((region) => ({
+    x1: region.x,
+    y1: region.y,
+    x2: region.x + region.width,
+    y2: region.y + region.height,
+  }));
+}
 
-  // Fill ignore regions with a neutral gray color
-  ignoreRegions.forEach((region) => {
-    for (let y = region.y; y < region.y + region.height && y < png.height; y++) {
-      for (let x = region.x; x < region.x + region.width && x < png.width; x++) {
-        if (x >= 0 && y >= 0) {
-          const idx = (png.width * y + x) << 2;
-          png.data[idx] = 128; // R - neutral gray
-          png.data[idx + 1] = 128; // G - neutral gray
-          png.data[idx + 2] = 128; // B - neutral gray
-          png.data[idx + 3] = 255; // A - fully opaque
-        }
-      }
-    }
-  });
+// Fast comparison using odiff with native ignore regions support
+async function compareWithOdiff(
+  baselinePath: string,
+  currentPath: string,
+  diffPath: string,
+  options: {
+    tolerance: number;
+    strict: boolean;
+    ignoreRegions?: Array<{ x: number; y: number; width: number; height: number }>;
+  }
+): Promise<{ equal: boolean; diffPath?: string }> {
+  try {
+    const odiffOptions = {
+      threshold: options.tolerance / 100, // Convert percentage to 0-1 range
+      antialiasing: !options.strict,
+      diffColor: '#ff0000',
+      outputDiffMask: true,
+      ...(options.ignoreRegions &&
+        options.ignoreRegions.length > 0 && {
+          ignoreRegions: convertIgnoreRegions(options.ignoreRegions),
+        }),
+    };
 
-  // Create temp file path
-  const tempPath = imagePath.replace('.png', '_masked.png');
-  const buffer = PNG.sync.write(png);
-  writeFileSync(tempPath, buffer);
+    const result = await odiffCompare(baselinePath, currentPath, diffPath, odiffOptions);
 
-  return tempPath;
+    return {
+      equal: result.match,
+      diffPath: result.match ? undefined : diffPath,
+    };
+  } catch (error) {
+    console.warn(`⚠️ ODiff comparison failed, error:`, error);
+    throw error;
+  }
 }
 
 export async function compareScreenshots(options: ComparisonOptions): Promise<ComparisonResult> {
@@ -80,6 +96,8 @@ export async function compareScreenshots(options: ComparisonOptions): Promise<Co
     details: [],
   };
 
+  // Using optimized parallel processing without workers
+
   try {
     const screenshots = readdirSync(screenshotsDir).filter(
       (file) => file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.jpeg')
@@ -87,19 +105,17 @@ export async function compareScreenshots(options: ComparisonOptions): Promise<Co
 
     result.total = screenshots.length;
 
-    for (const screenshot of screenshots) {
+    const compareImage = async (screenshot: string) => {
       const currentPath = path.join(screenshotsDir, screenshot);
       const baselinePath = path.join(baselineDir, screenshot);
       const diffPath = path.join(diffsDir, `diff_${screenshot}`);
 
       if (!existsSync(baselinePath)) {
         console.log(`⚠️  No baseline for: ${screenshot}`);
-        result.missingBaselines++;
-        result.details.push({
+        return {
           filename: screenshot,
-          status: 'missing-baseline',
-        });
-        continue;
+          status: 'missing-baseline' as const,
+        };
       }
 
       try {
@@ -109,92 +125,62 @@ export async function compareScreenshots(options: ComparisonOptions): Promise<Co
           createDiffImage: true as const,
         };
 
-        // First pass: normal comparison
-        let comparisonResult = await looksSame(baselinePath, currentPath, comparisonOptions);
-
-        // Second pass: if failed and we have ignore regions, try with masking
-        if (!comparisonResult.equal && ignoreRegions && ignoreRegions.length > 0) {
-          // Validate regions
-          const validRegions = ignoreRegions.filter((region) => {
-            const isValid = region.x >= 0 && region.y >= 0 && region.width > 0 && region.height > 0;
-            if (!isValid) {
-              console.warn(
-                `⚠️  Invalid ignore region: x=${region.x}, y=${region.y}, w=${region.width}, h=${region.height}`
-              );
-            }
-            return isValid;
-          });
-
-          if (validRegions.length > 0) {
-            console.log(
-              `🔄 Re-comparing ${screenshot} with ${validRegions.length} ignore regions masked:`
-            );
-            validRegions.forEach((region, index) => {
-              console.log(
-                `   Region ${index + 1}: x=${region.x}, y=${region.y}, w=${region.width}, h=${region.height}`
-              );
-            });
-
-            // Create masked versions of both images
-            const maskedBaselinePath = await maskIgnoreRegions(baselinePath, validRegions);
-            const maskedCurrentPath = await maskIgnoreRegions(currentPath, validRegions);
-
-            try {
-              // Re-compare with masked images
-              comparisonResult = await looksSame(
-                maskedBaselinePath,
-                maskedCurrentPath,
-                comparisonOptions
-              );
-
-              if (comparisonResult.equal) {
-                console.log(`✅ ${screenshot}: Match (after ignoring regions)`);
-              } else {
-                console.log(`❌ ${screenshot}: Still differs (even with ignore regions)`);
+        // Use odiff for fast comparison with native ignore regions support
+        const validRegions = ignoreRegions
+          ? ignoreRegions.filter((region) => {
+              const isValid =
+                region.x >= 0 && region.y >= 0 && region.width > 0 && region.height > 0;
+              if (!isValid) {
+                console.warn(
+                  `⚠️  Invalid ignore region: x=${region.x}, y=${region.y}, w=${region.width}, h=${region.height}`
+                );
               }
-            } finally {
-              // Clean up temporary files
-              try {
-                rmSync(maskedBaselinePath, { force: true });
-                rmSync(maskedCurrentPath, { force: true });
-              } catch {
-                console.warn(`⚠️  Could not clean up temp files for ${screenshot}`);
-              }
-            }
-          } else {
-            console.warn(`⚠️  No valid ignore regions found for ${screenshot}`);
-          }
-        }
+              return isValid;
+            })
+          : [];
+
+        const comparisonResult = await compareWithOdiff(baselinePath, currentPath, diffPath, {
+          tolerance: comparisonOptions.tolerance,
+          strict: comparisonOptions.strict,
+          ignoreRegions: validRegions.length > 0 ? validRegions : undefined,
+        });
 
         if (!comparisonResult.equal) {
-          await (comparisonResult as any).diffImage?.save(diffPath);
-          // Only log if we haven't already logged during re-comparison
-          if (!ignoreRegions || ignoreRegions.length === 0) {
-            console.log(`❌ ${screenshot}: Differs`);
-          }
-          result.differences++;
-          result.details.push({
+          console.log(`❌ ${screenshot}: Differs`);
+          return {
             filename: screenshot,
-            status: 'differ',
-            diffPath,
-          });
+            status: 'differ' as const,
+            diffPath: comparisonResult.diffPath,
+          };
         } else {
           console.log(`✅ ${screenshot}: Match`);
-          result.matches++;
-          result.details.push({
+          return {
             filename: screenshot,
-            status: 'match',
-          });
+            status: 'match' as const,
+          };
         }
       } catch (error) {
         console.error(`Error comparing ${screenshot}:`, error);
-        result.differences++;
-        result.details.push({
+        return {
           filename: screenshot,
-          status: 'differ',
-        });
+          status: 'differ' as const,
+        };
       }
-    }
+    };
+
+    const comparisonResults = await Promise.all(screenshots.map(compareImage));
+
+    // Process results
+    comparisonResults.forEach((detail) => {
+      result.details.push(detail);
+      if (detail.status === 'match') {
+        result.matches++;
+      } else if (detail.status === 'differ') {
+        result.differences++;
+      } else if (detail.status === 'missing-baseline') {
+        result.missingBaselines++;
+      }
+    });
   } catch (error) {
     console.error('Error reading screenshots:', error);
     throw error;
