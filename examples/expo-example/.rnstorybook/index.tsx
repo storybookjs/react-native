@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { LiteUI } from '@storybook/react-native-ui-lite';
 import { StatusBar, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { view } from './storybook.requires';
 
 const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
@@ -31,4 +31,10 @@ const StorybookUIRoot = view.getStorybookUI({
     : undefined,
 });
 
-export default StorybookUIRoot;
+export default function StorybookUIRootWrapper() {
+  return (
+    <SafeAreaProvider>
+      <StorybookUIRoot />
+    </SafeAreaProvider>
+  );
+}
