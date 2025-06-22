@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { LiteUI } from '@storybook/react-native-ui-lite';
-import { SafeAreaView, StatusBar, View } from 'react-native';
-
+import { StatusBar, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { view } from './storybook.requires';
 
 const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
