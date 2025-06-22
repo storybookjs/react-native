@@ -1,6 +1,6 @@
 import { mkdirSync, readdirSync, existsSync, rmSync } from 'fs';
 import path from 'path';
-import { compare as odiffCompare } from 'odiff-bin';
+import { compare as odiffCompare, ODiffOptions } from 'odiff-bin';
 
 export interface ComparisonOptions {
   screenshotsDir: string;
@@ -55,13 +55,13 @@ async function compareWithOdiff(
     const odiffOptions = {
       threshold: options.tolerance / 100, // Convert percentage to 0-1 range
       antialiasing: !options.strict,
-      diffColor: '#ff0000',
-      outputDiffMask: true,
+      diffColor: '#F0F',
+      outputDiffMask: false,
       ...(options.ignoreRegions &&
         options.ignoreRegions.length > 0 && {
           ignoreRegions: convertIgnoreRegions(options.ignoreRegions),
         }),
-    };
+    } satisfies ODiffOptions;
 
     const result = await odiffCompare(baselinePath, currentPath, diffPath, odiffOptions);
 
