@@ -1,9 +1,9 @@
-import type { AddonStore, API } from 'storybook/internal/manager-api';
 import { StyleSheet, Text, View } from 'react-native';
+import type { AddonStore, API } from 'storybook/internal/manager-api';
 
+import { useGlobals } from 'storybook/internal/preview-api';
 import Swatch from './Swatch';
-import BackgroundEvents, { PARAM_KEY } from './constants';
-import { Background } from './index';
+import { PARAM_KEY } from './constants';
 
 const codeSample = `
 import React from 'react';
@@ -24,13 +24,14 @@ const BackgroundMeta: ComponentMeta<typeof Background> = {
   component: Background,
   decorators: [withBackgrounds],
   parameters: {
-    backgrounds: {
-      default: 'plain',
-      values: [
-        { name: 'plain', value: 'white' },
-        { name: 'warm', value: 'hotpink' },
-        { name: 'cool', value: 'deepskyblue' },
-      ],
+     backgrounds: {
+      options: {
+        // 👇 Default options
+        dark: { name: 'Dark', value: '#333' },
+        light: { name: 'Light', value: '#F7F9F2' },
+        // 👇 Add your own
+        maroon: { name: 'Maroon', value: '#400' },
+      },
     },
   },
 };
@@ -60,27 +61,38 @@ const Instructions = () => (
 
 export type Channel = ReturnType<AddonStore['getChannel']>;
 interface BackgroundPanelProps {
-  channel: Channel;
   api: API;
   active: boolean;
 }
 
-const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
+interface BackgroundOptions {
+  [key: string]: {
+    name: string;
+    value: string;
+  };
+}
+
+const BackgroundPanel = ({ active, api }: BackgroundPanelProps) => {
+  const [, updateGlobals] = useGlobals();
+  const store = api.store();
+  const storyId = store.getSelection().storyId;
+  const story = store.fromId(storyId);
+
   if (!active) {
     return null;
   }
 
-  const store = api.store();
-  const storyId = store.getSelection().storyId;
-  const story = store.fromId(storyId);
-  const backgrounds: { default?: string; values: Background[] } = story.parameters[PARAM_KEY];
+  const backgrounds: BackgroundOptions = story.parameters[PARAM_KEY]?.options;
   const setBackgroundFromSwatch = (background: string) => {
-    channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
+    updateGlobals({
+      [PARAM_KEY]: { value: background },
+    });
   };
+
   return (
     <View style={{ padding: 10 }}>
       {backgrounds ? (
-        backgrounds.values.map(({ value, name }) => (
+        Object.entries(backgrounds).map(([name, { value }]) => (
           <View key={`${name} ${value}`}>
             <Swatch value={value} name={name} setBackground={setBackgroundFromSwatch} />
           </View>

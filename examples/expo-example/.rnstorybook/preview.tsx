@@ -29,14 +29,28 @@ const preview: Preview = {
     hideFullScreenButton: false,
     noSafeArea: false,
     my_param: 'anything',
+    // backgrounds: {
+    //   default: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain',
+    //   values: [
+    //     { name: 'plain', value: 'white' },
+    //     { name: 'dark', value: '#333' },
+    //     { name: 'app', value: '#eeeeee' },
+    //   ],
+    // },
     backgrounds: {
-      default: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain',
-      values: [
-        { name: 'plain', value: 'white' },
-        { name: 'dark', value: '#333' },
-        { name: 'app', value: '#eeeeee' },
-      ],
+      options: {
+        // 👇 Default options
+        dark: { name: 'Dark', value: '#333' },
+        light: { name: 'Light', value: '#F7F9F2' },
+        // 👇 Add your own
+        maroon: { name: 'Maroon', value: '#400' },
+      },
     },
+  },
+
+  initialGlobals: {
+    // 👇 Set the initial background color
+    backgrounds: { value: 'light' },
   },
 };
 

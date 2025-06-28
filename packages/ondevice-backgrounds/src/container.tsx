@@ -1,23 +1,16 @@
-import React, { ReactNode, useState, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Constants from './constants';
-import { Channel } from './BackgroundPanel';
+import { PARAM_KEY } from './constants';
+
+import { useGlobals } from 'storybook/internal/preview-api';
 
 interface ContainerProps {
-  initialBackground: string;
-  channel: Channel;
   children: ReactNode;
 }
 
-const Container = ({ initialBackground, channel, children }: ContainerProps) => {
-  const [background, setBackground] = useState(initialBackground || '');
-
-  useEffect(() => {
-    channel.on(Constants.UPDATE_BACKGROUND, setBackground);
-    return () => {
-      channel.removeListener(Constants.UPDATE_BACKGROUND, setBackground);
-    };
-  }, [channel]);
+const Container = ({ children }: ContainerProps) => {
+  const [globals] = useGlobals();
+  const background = globals[PARAM_KEY]?.value;
 
   return (
     <View
