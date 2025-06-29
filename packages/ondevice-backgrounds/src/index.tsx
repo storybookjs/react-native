@@ -1,7 +1,7 @@
-import * as React from 'react';
 import Container from './container';
+import { DecoratorFunction } from 'storybook/internal/csf';
 
-export const withBackgrounds = (Story: React.ComponentType<any>) => (
+export const withBackgrounds: DecoratorFunction = (Story) => (
   <Container>
     <Story />
   </Container>
