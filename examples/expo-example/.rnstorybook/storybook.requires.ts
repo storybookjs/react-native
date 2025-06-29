@@ -8,7 +8,6 @@ import "@storybook/addon-ondevice-notes/register";
 import "storybook-addon-deep-controls/register";
 import "./local-addon-example/register";
 
-
 const normalizedStories = [
   {
     titlePrefix: "",
@@ -16,23 +15,35 @@ const normalizedStories = [
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher: /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
     // @ts-ignore
-    req: require.context('../components', true, /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/)
+    req: require.context(
+      '../components',
+      true,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
+    ),
   },
-  {
+{
     titlePrefix: "",
     directory: "./other_components",
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher: /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
     // @ts-ignore
-    req: require.context('../other_components', true, /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/)
+    req: require.context(
+      '../other_components',
+      true,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
+    ),
   },
-  {
+{
     titlePrefix: "react-native-ui",
     directory: "../../packages/react-native-ui",
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher: /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
     // @ts-ignore
-    req: require.context('../../../packages/react-native-ui', true, /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/)
+    req: require.context(
+      '../../../packages/react-native-ui',
+      true,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
+    ),
   }
 ];
 
@@ -41,7 +52,7 @@ declare global {
   var view: View;
   var STORIES: typeof normalizedStories;
 }
-  
+
 
 const annotations = [
   require('./preview'),
@@ -63,7 +74,7 @@ if (!global.view) {
   global.view = start({
     annotations,
     storyEntries: normalizedStories,
-    options
+    options,
   });
 } else {
   updateView(global.view, annotations, normalizedStories, options);
