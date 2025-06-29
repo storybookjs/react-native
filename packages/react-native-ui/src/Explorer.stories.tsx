@@ -2,6 +2,7 @@ import { Explorer } from './Explorer';
 import { mockDataset } from './mockdata';
 import type { RefType } from '@storybook/react-native-ui-common';
 import { View } from 'react-native';
+import { decorators } from './decorators';
 
 export default {
   component: Explorer,
@@ -10,6 +11,7 @@ export default {
   decorators: [
     (storyFn: any) => <View style={{ paddingHorizontal: 20 }}>{storyFn()}</View>,
     (storyFn: any) => <View style={{ paddingHorizontal: 20 }}>{storyFn()}</View>,
+    ...decorators,
   ],
 };
 
