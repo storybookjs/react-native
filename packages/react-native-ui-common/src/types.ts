@@ -1,4 +1,4 @@
-import type { Args, StoryContext } from '@storybook/csf';
+import type { Args, StoryContext } from 'storybook/internal/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme } from '@storybook/react-native-theming';
 import { Storage } from './StorageProvider';
