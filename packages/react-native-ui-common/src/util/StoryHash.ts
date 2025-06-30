@@ -1,4 +1,4 @@
-import { sanitize } from '@storybook/csf';
+import { sanitize } from 'storybook/internal/csf';
 import type { API, State } from 'storybook/internal/manager-api';
 import type {
   API_ComponentEntry,

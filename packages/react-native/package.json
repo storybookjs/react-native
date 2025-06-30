@@ -46,7 +46,6 @@
     "test:update": "jest --updateSnapshot"
   },
   "dependencies": {
-    "@storybook/csf": "^0.1.13",
     "@storybook/global": "^5.0.0",
     "@storybook/react": "^9.0.12",
     "@storybook/react-native-theming": "^9.0.9",

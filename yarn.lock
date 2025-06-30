@@ -7407,15 +7407,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/csf@npm:^0.1.13":
-  version: 0.1.13
-  resolution: "@storybook/csf@npm:0.1.13"
-  dependencies:
-    type-fest: "npm:^2.19.0"
-  checksum: 10/8a590703c44180798869fd12c1f314cb96de18349415a33bcfe30ef6af11fdc1cdb755ea620dedfd5eb7666cf05af5647b77fe28b63000aa52b53b0dc3c77bb5
-  languageName: node
-  linkType: hard
-
 "@storybook/global@npm:^5.0.0":
   version: 5.0.0
   resolution: "@storybook/global@npm:5.0.0"
@@ -7452,7 +7443,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui-common@workspace:packages/react-native-ui-common"
   dependencies:
-    "@storybook/csf": "npm:^0.1.13"
     "@storybook/react": "npm:^9.0.12"
     "@storybook/react-native-theming": "npm:^9.0.9"
     "@types/jest": "npm:^29.4.3"
@@ -7560,7 +7550,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native@workspace:packages/react-native"
   dependencies:
-    "@storybook/csf": "npm:^0.1.13"
     "@storybook/global": "npm:^5.0.0"
     "@storybook/react": "npm:^9.0.12"
     "@storybook/react-native-theming": "npm:^9.0.9"
@@ -26646,7 +26635,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^2.13.0, type-fest@npm:^2.19.0, type-fest@npm:^2.5.0, type-fest@npm:~2.19":
+"type-fest@npm:^2.13.0, type-fest@npm:^2.5.0, type-fest@npm:~2.19":
   version: 2.19.0
   resolution: "type-fest@npm:2.19.0"
   checksum: 10/7bf9e8fdf34f92c8bb364c0af14ca875fac7e0183f2985498b77be129dc1b3b1ad0a6b3281580f19e48c6105c037fb966ad9934520c69c6434d17fd0af4eed78
