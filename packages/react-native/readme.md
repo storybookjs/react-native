@@ -176,7 +176,7 @@ You should configure the path to your story files in the `main.ts` config file f
 
 ```ts
 // .rnstorybook/main.ts
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
@@ -265,7 +265,7 @@ Install each one you want to use and add them to the `main.ts` addons list as fo
 
 ```ts
 // .rnstorybook/main.ts
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   // ... rest of config

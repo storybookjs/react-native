@@ -16,7 +16,7 @@ The addons made available by us are the following. There are more addons availab
 To use these addons, add them to your `.storybook/main.ts`:
 
 ```ts
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   addons: [
