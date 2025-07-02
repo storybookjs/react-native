@@ -40,7 +40,7 @@ npx create-expo-app --template expo-template-storybook AwesomeStorybook
 For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
 
 ```sh
-npx react-native init MyApp --template react-native-template-storybook
+npx @react-native-community/cli init MyApp --template react-native-template-storybook
 ```
 
 ### Existing project
