@@ -13,7 +13,7 @@ yarn add -D @storybook/addon-ondevice-notes
 Then, add following content to `.rnstorybook/main.ts`:
 
 ```ts
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   addons: ['@storybook/addon-ondevice-notes'],

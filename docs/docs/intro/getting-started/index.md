@@ -123,7 +123,7 @@ npx create-expo-app --template expo-template-storybook AwesomeStorybook
 For React Native cli you can use this template
 
 ```bash
-npx react-native init MyApp --template react-native-template-storybook
+npx @react-native-community/cli init MyApp --template react-native-template-storybook
 ```
 
 ## Starter projects

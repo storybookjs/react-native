@@ -105,7 +105,7 @@ The CLI looks for these files in your config path:
 Defines stories location and addons:
 
 ```typescript
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],

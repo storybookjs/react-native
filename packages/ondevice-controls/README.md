@@ -15,7 +15,7 @@ yarn add -D @storybook/addon-ondevice-controls @react-native-community/datetimep
 Then, add following content to `.rnstorybook/main.ts`:
 
 ```ts
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   addons: ['@storybook/addon-ondevice-controls'],

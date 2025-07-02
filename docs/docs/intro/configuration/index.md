@@ -20,7 +20,7 @@ The storybook configuration consists of several key files:
 The `main.ts` file is your primary configuration entry point, located in the `.storybook` directory.
 
 ```typescript
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: [
