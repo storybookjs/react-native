@@ -147,11 +147,11 @@ function withStorybook(
     });
   }
 
-  // generate({
-  //   configPath: configPath ?? path.resolve(process.cwd(), './.rnstorybook'),
-  //   useJs,
-  //   docTools,
-  // });
+  generate({
+    configPath: configPath ?? path.resolve(process.cwd(), './.rnstorybook'),
+    useJs,
+    docTools,
+  });
 
   return {
     ...config,
