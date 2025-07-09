@@ -1,6 +1,7 @@
-const { globToRegexp, serverRequire } = require('storybook/internal/common');
+const { globToRegexp } = require('storybook/internal/common');
 const path = require('path');
 const fs = require('fs');
+const { serverRequire } = require('./require-interop');
 
 const cwd = process.cwd();
 

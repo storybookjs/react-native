@@ -7548,6 +7548,7 @@ __metadata:
     commander: "npm:^8.2.0"
     dedent: "npm:^1.5.1"
     deepmerge: "npm:^4.3.0"
+    esbuild-register: "npm:^3.6.0"
     jest: "npm:^29.7.0"
     jest-expo: "npm:~53.0.5"
     jotai: "npm:^2.6.2"
@@ -13388,7 +13389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-register@npm:^3.5.0":
+"esbuild-register@npm:^3.5.0, esbuild-register@npm:^3.6.0":
   version: 3.6.0
   resolution: "esbuild-register@npm:3.6.0"
   dependencies:
