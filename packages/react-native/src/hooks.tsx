@@ -1,4 +1,4 @@
-import type { Args, StoryContext } from '@storybook/csf';
+import type { Args, StoryContext } from 'storybook/internal/csf';
 import { atom, useAtomValue, useSetAtom } from 'jotai';
 import type { ReactRenderer } from '@storybook/react';
 

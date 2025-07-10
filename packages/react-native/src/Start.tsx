@@ -10,7 +10,7 @@ import {
   sortStoriesV7,
   userOrAutoTitleFromSpecifier,
 } from 'storybook/internal/preview-api';
-import { isExportStory, storyNameFromExport, toId } from '@storybook/csf';
+import { isExportStory, storyNameFromExport, toId } from 'storybook/internal/csf';
 // NOTE this really should be exported from preview-api, but it's not
 import { createBrowserChannel } from 'storybook/internal/channels';
 import type {

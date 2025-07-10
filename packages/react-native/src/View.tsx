@@ -1,4 +1,4 @@
-import { StoryContext, toId } from '@storybook/csf';
+import { StoryContext, toId } from 'storybook/internal/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, darkTheme, theme } from '@storybook/react-native-theming';
 import { type SBUI, transformStoryIndexToStoriesHash } from '@storybook/react-native-ui-common';
