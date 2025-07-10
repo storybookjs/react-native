@@ -13,7 +13,7 @@ npx create-expo-app --template expo-template-storybook AwesomeStorybook
 For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
 
 ```sh
-npx react-native init MyApp --template react-native-template-storybook
+npx @react-native-community/cli init MyApp --template react-native-template-storybook
 ```
 
 # Manual setup
@@ -57,7 +57,7 @@ mkdir .rnstorybook && touch .rnstorybook/main.ts .rnstorybook/preview.tsx .rnsto
 ### .rnstorybook/main.ts
 
 ```ts
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],

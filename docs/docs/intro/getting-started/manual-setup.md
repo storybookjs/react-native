@@ -36,7 +36,7 @@ touch .rnstorybook/main.ts .rnstorybook/preview.tsx .rnstorybook/index.tsx
 In `main.ts`, configure the location of your stories:
 
 ```ts
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],

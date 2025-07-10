@@ -60,12 +60,10 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
 
   const webDateString = useMemo(
     () =>
-      `${date.getFullYear()}-${`${date.getMonth() + 1}`.padStart(2, '0')}-${`${
-        date.getDate() + 1
-      }`.padStart(2, '0')}T${`${date.getHours()}`.padStart(
+      `${date.getFullYear()}-${`${date.getMonth() + 1}`.padStart(2, '0')}-${`${date.getDate()}`.padStart(
         2,
         '0'
-      )}:${`${date.getMinutes()}`.padStart(2, '0')}`,
+      )}T${`${date.getHours()}`.padStart(2, '0')}:${`${date.getMinutes()}`.padStart(2, '0')}`,
 
     [date]
   );

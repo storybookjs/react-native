@@ -44,7 +44,7 @@ npx create-expo-app --template expo-template-storybook AwesomeStorybook
 For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
 
 ```sh
-npx react-native init MyApp --template react-native-template-storybook
+npx @react-native-community/cli init MyApp --template react-native-template-storybook
 ```
 
 ### Existing project
@@ -213,7 +213,7 @@ You should configure the path to your story files in the `main.ts` config file f
 
 ```ts
 // .rnstorybook/main.ts
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
@@ -302,7 +302,7 @@ Install each one you want to use and add them to the `main.ts` addons list as fo
 
 ```ts
 // .rnstorybook/main.ts
-import { StorybookConfig } from '@storybook/react-native';
+import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   // ... rest of config
