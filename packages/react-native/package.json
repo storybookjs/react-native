@@ -41,9 +41,11 @@
   "scripts": {
     "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
-    "test": "jest",
-    "test:ci": "jest",
-    "test:update": "jest --updateSnapshot"
+    "test": "jest && yarn test:generate",
+    "test:ci": "jest && yarn test:generate",
+    "test:update": "jest --updateSnapshot",
+    "test:generate": "node --test scripts/generate.test.js",
+    "test:generate:update": "node --test --test-update-snapshots scripts/generate.test.js"
   },
   "dependencies": {
     "@storybook/global": "^5.0.0",
