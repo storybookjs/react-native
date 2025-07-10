@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@storybook/global": "^5.0.0",
-    "@storybook/react": "0.0.0-pr-31819-sha-dff3e61f",
+    "@storybook/react": "0.0.0-pr-31819-sha-dcea463b",
     "@storybook/react-native-theming": "^9.0.14",
     "@storybook/react-native-ui": "^9.0.14",
     "@storybook/react-native-ui-common": "^9.0.14",
@@ -73,7 +73,7 @@
     "react": "19.0.0",
     "react-native": "0.79.5",
     "react-test-renderer": "^19.1.0",
-    "storybook": "0.0.0-pr-31819-sha-dff3e61f",
+    "storybook": "0.0.0-pr-31819-sha-dcea463b",
     "tsup": "^8.5.0",
     "typescript": "~5.8.3"
   },
@@ -84,7 +84,7 @@
     "react-native-gesture-handler": ">=2",
     "react-native-reanimated": ">=2",
     "react-native-safe-area-context": "*",
-    "storybook": "0.0.0-pr-31819-sha-dff3e61f"
+    "storybook": "0.0.0-pr-31819-sha-dcea463b"
   },
   "peerDependenciesMeta": {
     "@gorhom/bottom-sheet": {

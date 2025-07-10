@@ -21,7 +21,7 @@ const normalizedStories = [
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
     ),
   },
-{
+  {
     titlePrefix: "",
     directory: "./other_components",
     files: "**/*.stories.?(ts|tsx|js|jsx)",
@@ -33,7 +33,7 @@ const normalizedStories = [
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
     ),
   },
-{
+  {
     titlePrefix: "react-native-ui",
     directory: "../../packages/react-native-ui",
     files: "**/*.stories.?(ts|tsx|js|jsx)",

@@ -17,8 +17,8 @@ jest.mock('fs', () => ({
 describe('loader', () => {
   describe('writeRequires', () => {
     describe('when there is a story glob', () => {
-      it('writes the story imports', () => {
-        generate({ configPath: 'scripts/mocks/all-config-files' });
+      it('writes the story imports', async () => {
+        await generate({ configPath: 'scripts/mocks/all-config-files' });
         expect(pathMock).toEqual(
           path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.ts')
         );
@@ -27,8 +27,8 @@ describe('loader', () => {
     });
 
     describe('when using js', () => {
-      it('writes the story imports without types', () => {
-        generate({ configPath: 'scripts/mocks/all-config-files', useJs: true });
+      it('writes the story imports without types', async () => {
+        await generate({ configPath: 'scripts/mocks/all-config-files', useJs: true });
         expect(pathMock).toEqual(
           path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.js')
         );
@@ -37,8 +37,8 @@ describe('loader', () => {
     });
 
     describe('when there are different file extensions', () => {
-      it('writes the story imports', () => {
-        generate({ configPath: 'scripts/mocks/file-extensions' });
+      it('writes the story imports', async () => {
+        await generate({ configPath: 'scripts/mocks/file-extensions' });
         expect(pathMock).toEqual(
           path.resolve(__dirname, 'mocks/file-extensions/storybook.requires.ts')
         );
@@ -62,14 +62,14 @@ describe('loader', () => {
     // });
 
     describe('when there is no story glob or addons', () => {
-      it('throws an error', () => {
-        expect(() => generate({ configPath: 'scripts/mocks/blank-config' })).toThrow();
+      it('throws an error', async () => {
+        expect(async () => await generate({ configPath: 'scripts/mocks/blank-config' })).toThrow();
       });
     });
 
     describe('when there is no preview', () => {
-      it('does not add preview related stuff', () => {
-        generate({ configPath: 'scripts/mocks/no-preview' });
+      it('does not add preview related stuff', async () => {
+        await generate({ configPath: 'scripts/mocks/no-preview' });
         expect(pathMock).toEqual(path.resolve(__dirname, 'mocks/no-preview/storybook.requires.ts'));
         expect(fileContentMock).toMatchSnapshot();
       });
@@ -89,8 +89,8 @@ describe('loader', () => {
     // });
 
     describe('when there is a configuration object', () => {
-      it('writes the story imports', () => {
-        generate({ configPath: 'scripts/mocks/configuration-objects' });
+      it('writes the story imports', async () => {
+        await generate({ configPath: 'scripts/mocks/configuration-objects' });
         expect(pathMock).toEqual(
           path.resolve(__dirname, 'mocks/configuration-objects/storybook.requires.ts')
         );
