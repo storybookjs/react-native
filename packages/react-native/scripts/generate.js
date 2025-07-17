@@ -94,7 +94,7 @@ function generate({ configPath, /* absolute = false, */ useJs = false, docTools 
   const reactNativeOptions = main.reactNative;
 
   if (reactNativeOptions && typeof reactNativeOptions === 'object') {
-    optionsVar = `const options = ${JSON.stringify(reactNativeOptions, null, 4)}`;
+    optionsVar = `const options = ${JSON.stringify(reactNativeOptions, null, 2)}`;
     options = 'options';
   }
 
@@ -121,7 +121,7 @@ import { start, updateView${useJs ? '' : ', View'} } from '@storybook/react-nati
 ${registeredAddons.join('\n')}
 
 const normalizedStories = [
-  ${normalizedStories.join(',\n')}
+  ${normalizedStories.join(',\n  ')}
 ];
 
 ${useJs ? '' : globalTypes}
