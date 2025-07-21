@@ -196,16 +196,15 @@ function withStorybook(
           };
         }
 
-        if (liteMode) {
-          if (
-            resolveResult?.filePath?.includes?.('@storybook/react-native-ui') &&
-            !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-lite') &&
-            !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-common')
-          ) {
-            return {
-              type: 'empty',
-            };
-          }
+        if (
+          liteMode &&
+          resolveResult?.filePath?.includes?.('@storybook/react-native-ui') &&
+          !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-lite') &&
+          !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-common')
+        ) {
+          return {
+            type: 'empty',
+          };
         }
 
         return resolveResult;
