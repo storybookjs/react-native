@@ -12,7 +12,7 @@ _(A screencast can be useful for visual bugs, but it is not a substitute for a t
 
 ### Please specify which version of Storybook and optionally any affected addons that you're running
 
-- @storybook/react x.x.x
+- @storybook/react-native x.x.x
 - @storybook/addon-something x.x.x
 
 ### Affected platforms
