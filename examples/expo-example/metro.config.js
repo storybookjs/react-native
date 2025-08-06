@@ -20,7 +20,7 @@ defaultConfig.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook_preview');
 
 module.exports = withStorybook(defaultConfig);
 
