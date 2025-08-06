@@ -59,6 +59,7 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
 /**
  * Configures Metro bundler to work with Storybook in React Native.
  * This function wraps a Metro configuration to enable Storybook usage.
+ * This is intended to replace the withStorybook function in the future.
  *
  * @param config - The Metro bundler configuration to be modified. This should be a valid Metro config object
  *                 that includes resolver, transformer, and other Metro-specific options.
@@ -123,7 +124,7 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  * });
  * ```
  */
-export function withStorybook(
+export function withStorybookConfig(
   config: MetroConfig,
   options: WithStorybookOptions = {
     useJs: false,
@@ -252,3 +253,5 @@ export function withStorybook(
     },
   };
 }
+
+export default withStorybookConfig;
