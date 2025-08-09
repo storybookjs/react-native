@@ -57,6 +57,12 @@ interface WithStorybookOptions {
    * Whether to include doc tools in the storybook.requires file. Defaults to true.
    */
   docTools?: boolean;
+
+  /**
+   * Whether to use lite mode for the storybook. Defaults to false.
+   * This will mock out the default storybook ui so you don't need to install all its dependencies like reanimated etc.
+   */
+  liteMode?: boolean;
 }
 
 type ResolveRequestFunction = (context: any, moduleName: string, platform: string | null) => any;
@@ -93,6 +99,7 @@ function withStorybook(
     useJs: false,
     onDisabledRemoveStorybook: false,
     docTools: true,
+    liteMode: false,
   }
 ): MetroConfig {
   const {
@@ -102,6 +109,7 @@ function withStorybook(
     useJs = false,
     onDisabledRemoveStorybook = false,
     docTools = true,
+    liteMode = false,
   } = options;
 
   if (!enabled) {
@@ -174,6 +182,17 @@ function withStorybook(
 
         // Workaround for template files with invalid imports
         if (resolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
+          return {
+            type: 'empty',
+          };
+        }
+
+        if (
+          liteMode &&
+          resolveResult?.filePath?.includes?.('@storybook/react-native-ui') &&
+          !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-lite') &&
+          !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-common')
+        ) {
           return {
             type: 'empty',
           };

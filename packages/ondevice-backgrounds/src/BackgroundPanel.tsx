@@ -79,7 +79,7 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
   };
   return (
     <View style={{ padding: 10 }}>
-      {backgrounds ? (
+      {backgrounds?.values ? (
         backgrounds.values.map(({ value, name }) => (
           <View key={`${name} ${value}`}>
             <Swatch value={value} name={name} setBackground={setBackgroundFromSwatch} />

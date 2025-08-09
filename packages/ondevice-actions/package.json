@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-actions",
-  "version": "9.0.14",
+  "version": "9.1.0",
   "description": "Action Logger addon for react-native storybook",
   "keywords": [
     "storybook"
@@ -36,7 +36,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "storybook": "9.0.14"
+    "storybook": ">=9"
   },
   "publishConfig": {
     "access": "public"
