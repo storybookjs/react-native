@@ -157,7 +157,8 @@ For android you can make either an internal testing build available on the play 
         "simulator": false
       },
       "env": {
-        "EXPO_PUBLIC_ENVIRONMENT": "storybook"
+        "EXPO_PUBLIC_ENVIRONMENT": "storybook",
+        "EXPO_PUBLIC_STORYBOOK_ENABLED": "true"
       }
     },
     // 👇 for internal sharing of apk builds
@@ -166,7 +167,7 @@ For android you can make either an internal testing build available on the play 
       "distribution": "internal",
       "android": { "buildType": "apk" }
     }
-  },
+  }
 }
 ```
 
@@ -186,7 +187,7 @@ function config({ config }: ConfigContext): Partial<ExpoConfig> {
 }
 ```
 
-Now to create an internal build run 
+Now to create an internal build run
 
 ```bash
 eas build -p android --profile storybook-internal
