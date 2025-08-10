@@ -134,4 +134,81 @@ You will be asked to confirm a few things but you can usually just press enter t
 
 If all goes well you should get an email saying your app is ready to be installed through TestFlight.
 
+<img  height="400" alt="tfinvitesb" src="https://github.com/user-attachments/assets/aacd14aa-bf60-4f23-b78a-9418cc77407c" />
+
 From here just install the app and you should see storybook.
+
+https://github.com/user-attachments/assets/7d8d3970-8c46-4a74-822d-0abe35cfb98b
+
+## Android
+
+For android you can make either an internal testing build available on the play store or you can create an internal distribution with an apk buildType
+
+```json
+{
+  "build": {
+    // other build types...
+
+    "storybook": {
+      "distribution": "store",
+      "channel": "storybook",
+      "autoIncrement": true,
+      "ios": {
+        "simulator": false
+      },
+      "env": {
+        "EXPO_PUBLIC_ENVIRONMENT": "storybook"
+      }
+    },
+    // 👇 for internal sharing of apk builds
+    "storybook-internal": {
+      "extends": "storybook",
+      "distribution": "internal",
+      "android": { "buildType": "apk" }
+    }
+  },
+}
+```
+
+Then update your `app.config.ts`
+
+```tsx
+function config({ config }: ConfigContext): Partial<ExpoConfig> {
+  return {
+    // this is the config from app.json
+    ...config,
+    // rest of the config...
+    android: {
+      ...config.android,
+      package: getBundleIdentifier(),
+    },
+  };
+}
+```
+
+Now to create an internal build run 
+
+```bash
+eas build -p android --profile storybook-internal
+```
+
+When you open up the build in eas you’ll see a button to install that will give you a QR code and a link that you can use to download the apk directly.
+<img width="1170" height="344" alt="sbandr" src="https://github.com/user-attachments/assets/cdc3a11b-2422-4378-be2b-1f9233283c4b" />
+
+**Publishing on the Web**
+
+The React Native Storybook UI is compatible with React Native Web so if you are supporting the web with your components then you’ll be able to use `expo export` and `eas deploy` to deploy your stories on the web.
+
+First build your app for web:
+
+```tsx
+ EXPO_PUBLIC_ENVIRONMENT=storybook bun expo export --platform web
+```
+
+Then deploy:
+
+```tsx
+eas deploy
+```
+
+Heres one I deployed earlier: https://sharestorybook--qclgxuc645.expo.app/
