@@ -8,9 +8,7 @@ Storybook is a great tool for sharing your components with your team. It's a gre
 
 ## Share on iOS via TestFlight
 
-On iOS internal builds are often shared via ad hoc provisioning. The problem with this is that you need to create a new build anytime you want to give a new team member access to the app. Not only that but they will need to have their own device in developer mode in order to install it.
-
-Using TestFlight to share your app is a much easier way that requires much less work and you can share with up to 10k people.
+On iOS internal builds are often shared via ad hoc provisioning. The problem with this is that you need to create a new build anytime you want to give a new team member access to the app. Not only that but they will need to have their own device in developer mode in order to install it. Using TestFlight enables you to share your app with up to 10k without the need to rebuild each time you want to give someone access.
 
 The one complication is that usually your TestFlight build is a production build of your app, this means you can't usually use this for a developer preview. However what you can do is create a separate app in App Center that is specifically used for preview builds and won't ever ship to the App Store.
 
@@ -42,214 +40,94 @@ npm install -g eas-cli
 
 Then lets have it setup the project for us.
 
-```bash
-eas build:configure -p all
-```
-
-You might find that you are asked to manually edit the app.config.ts file since we're using dynamic config.
-
-Add copy the config it gives you to the app.config.ts file.
-
-```ts
-const config: ExpoConfig = {
-  name: "ExpoRouterStorybook",
-  slug: "ExpoRouterStorybook",
-  // ...
-  // add this 👇
-  extra: {
-    eas: {
-      // replace this with the project id in your terminal
-      projectId: "111a11a1-1111-1111-1111-111111111111",
-    },
-  },
-```
-
-Now re-run the command to configure eas.
+If you run each of these commands you'll end up with a project setup for eas builds and updates.
 
 ```bash
+eas login
+eas init
 eas build:configure -p all
+eas update:configure
 ```
 
 You should now have an eas.json file in your project.
 
 We're going to want to make a few tweaks to setup the preview builds I mentioned earlier.
 
-First lets make the preview build channel use the store distribution and auto increment.
+Lets add a storybook build type and use the store distribution with auto increment. We'll set this up as a preview environment with a different bundle identifier and app name than your production app.
 
 ```json
 {
   "build": {
-    "preview": {
+    // other build types...
+
+    // add storybook build type here
+    "storybook": {
       "distribution": "store",
-      "autoIncrement": true
-    }
-  }
-}
-```
-
-Then we want to define a environment variable that will be used to determine if we're in a preview build or not.
-
-```json
-{
-  "build": {
-    "preview": {
-      "distribution": "store",
-      "autoIncrement": true,
-      "env": {
-        "EXPO_PUBLIC_ENVIRONMENT": "preview"
-      }
-    }
-  }
-}
-```
-
-We'll also want to add the environment variable to the production build but set it to production.
-
-```json
-{
-  "build": {
-    "production": {
-      "env": {
-        "EXPO_PUBLIC_ENVIRONMENT": "production"
-      }
-    }
-  }
-}
-```
-
-Then lets update the submit section to use different bundle identifiers and app names for the preview and production builds.
-Make sure to replace the bundle identifier and app name with your own.
-
-```json
-{
-  "submit": {
-    "production": {
-      "ios": {
-        "bundleIdentifier": "com.example.myapp"
-      },
-      "appName": "My App"
-    },
-    "preview": {
-      "ios": {
-        "bundleIdentifier": "com.example.myapp-preview",
-        "appName": "My App Preview"
-      }
-    }
-  }
-}
-```
-
-Heres the full eas.json file with all the changes.
-
-```json
-{
-  "cli": {
-    "version": ">= 16.17.4",
-    "appVersionSource": "remote"
-  },
-  "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal",
-      "channel": "development",
-      "env": {
-        "EXPO_PUBLIC_ENVIRONMENT": "development"
-      }
-    },
-    "preview": {
-      "distribution": "store",
-      "channel": "preview",
+      "channel": "storybook",
       "autoIncrement": true,
       "ios": {
         "simulator": false
       },
       "env": {
-        "EXPO_PUBLIC_ENVIRONMENT": "preview"
-      }
-    },
-    "production": {
-      "autoIncrement": true,
-      "channel": "production",
-      "env": {
-        "EXPO_PUBLIC_ENVIRONMENT": "production"
+        "EXPO_PUBLIC_ENVIRONMENT": "storybook",
+        "EXPO_PUBLIC_STORYBOOK_ENABLED": "true"
       }
     }
   },
   "submit": {
-    "production": {
+    // other submit types...
+
+    // add storybook submit type here
+    "storybook": {
       "ios": {
-        "bundleIdentifier": "com.example.myapp",
-        "appName": "My App"
-      }
-    },
-    "preview": {
-      "ios": {
-        "bundleIdentifier": "com.example.myapp-preview",
-        "appName": "My App Preview"
+        "bundleIdentifier": "com.example.myapp-storybook",
+        "appName": "My App Storybook"
       }
     }
   }
 }
 ```
 
-Make sure not to forget to replace "com.example.myapp" and "My App" with your own bundle identifier and app name.
+Make sure to replace `com.example.myapp-storybook` and `My App` with your own bundle identifier and app name.
 
-Now lets update the app.config.ts file to use the environment variable too.
+Now lets add an `app.config.ts` file to use the environment variable to change the bundle identifier.
+Note that when you have an app.json and app.config.ts file you can extend the app.json config since its passed to the config function.
 
 ```ts
+// CREATE THIS FILE
 // app.config.ts
+import { type ExpoConfig, ConfigContext } from 'expo/config';
 
-const BUNDLE_MAPPING = {
-  development: 'com.dannyhw.blogexample-development',
-  preview: 'com.dannyhw.blogexample-preview',
-  production: 'com.dannyhw.blogexample',
-};
+function getBundleIdentifier() {
+  const isStorybook = process.env.EXPO_PUBLIC_ENVIRONMENT === 'storybook';
 
-const environment = process.env.EXPO_PUBLIC_ENVIRONMENT as keyof typeof BUNDLE_MAPPING;
+  if (isStorybook) {
+    return 'com.example.myapp.storybook';
+  }
 
-if ((!environment || !BUNDLE_MAPPING[environment]) && process.env.NODE_ENV === 'production') {
-  throw new Error(`EXPO_PUBLIC_ENVIRONMENT is not set`);
+  return 'com.example.myapp';
 }
 
-const bundleId = BUNDLE_MAPPING[environment ?? 'development'];
+function config({ config }: ConfigContext): Partial<ExpoConfig> {
+  return {
+    // this is the config from app.json
+    ...config,
+    ios: {
+      ...config.ios,
+      bundleIdentifier: getBundleIdentifier(),
+      infoPlist: {
+        ...config.ios?.infoPlist,
+        ITSAppUsesNonExemptEncryption: false,
+      },
+    },
+  };
+}
 
-const config: ExpoConfig = {
-  // ...
-  ios: {
-    // add this 👇
-    bundleIdentifier: bundleId,
-  },
-};
+export default config;
 ```
-
-Next thing we should do is setup eas updates so we can easily update the app without needing to make a new build everytime.
 
 ```bash
-eas update:configure
-```
-
-Again if you're asked to manually edit app.config.ts then follow the instructions and run again.
-
-```ts
-// app.config.ts
-
-const config: ExpoConfig = {
-  // ...
-  // add these 👇
-  updates: {
-    // replace this with the url in your terminal
-    url: 'https://u.expo.dev/111a11a1-1111-1111-1111-111111111111',
-  },
-  runtimeVersion: {
-    policy: 'appVersion',
-  },
-};
-```
-
-Now that we're setup for eas updates and we've configured eas build lets do our first build and submit it app center.
-
-```bash
-EXPO_PUBLIC_ENVIRONMENT=preview eas build -p ios --submit --profile preview
+eas build -p ios --submit --profile storybook
 ```
 
 You will be asked to confirm a few things but you can usually just press enter to accept the defaults.
