@@ -196,7 +196,7 @@ eas build -p android --profile storybook-internal
 When you open up the build in eas you’ll see a button to install that will give you a QR code and a link that you can use to download the apk directly.
 <img width="1170" height="344" alt="sbandr" src="https://github.com/user-attachments/assets/cdc3a11b-2422-4378-be2b-1f9233283c4b" />
 
-**Publishing on the Web**
+## Publishing on the Web
 
 The React Native Storybook UI is compatible with React Native Web so if you are supporting the web with your components then you’ll be able to use `expo export` and `eas deploy` to deploy your stories on the web.
 
