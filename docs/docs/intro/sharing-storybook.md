@@ -14,7 +14,7 @@ The one complication is that usually your TestFlight build is a production build
 
 The following guide will be written for expo because its simpler to get setup, but the same principles apply to other frameworks. The important part will be having a preview version of your app that you ship only internally.
 
-## Get setup
+### Get setup
 
 If you don't already have an app, lets create one to get started with.
 
@@ -28,7 +28,7 @@ This will create a new expo app with storybook already setup.
 cd AwesomeStorybook
 ```
 
-## Configure eas
+### Configure eas
 
 Next we'll want to configure eas and setup eas updates.
 
