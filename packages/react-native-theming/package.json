@@ -30,7 +30,7 @@
   "devDependencies": {
     "@emotion/native": "^11.11.0",
     "@emotion/react": "^11.11.1",
-    "tsup": "^7.2.0"
+    "tsup": "^8.5.0"
   },
   "peerDependencies": {
     "react": "*",
