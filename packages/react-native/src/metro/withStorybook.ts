@@ -196,6 +196,13 @@ function withStorybook(
           };
         }
 
+        // workaround for node imports in instrumentor.cjs which shouldn't be loaded anyway
+        if (moduleName === 'tty' || moduleName === 'os') {
+          return {
+            type: 'empty',
+          };
+        }
+
         if (
           liteMode &&
           resolveResult?.filePath?.includes?.('@storybook/react-native-ui') &&
