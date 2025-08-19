@@ -62,7 +62,9 @@
   "resolutions": {
     "react-docgen-typescript": "2.2.2",
     "jotai@^2.6.2": "patch:jotai@npm%3A2.6.2#./.yarn/patches/jotai-npm-2.6.2-d482bf2d42.patch",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-dev-server": "^5.2.2",
+    "markdown-it": "^14.0.0",
+    "@types/markdown-it": "^14.0.1"
   },
   "engines": {
     "node": ">=16",

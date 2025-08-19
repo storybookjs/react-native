@@ -25,14 +25,15 @@
   ],
   "scripts": {
     "preprepare": "rm -rf dist/",
-    "prepare": "tsc",
-    "dev": "tsc --watch"
+    "prepare": "tsup",
+    "dev": "tsup --watch"
   },
   "dependencies": {
-    "@storybook/react-native-theming": "^9.1.1-alpha.0",
-    "react-native-markdown-display": "^7.0.2"
+    "@storybook/react-native-theming": "^9.1.1-alpha.0"
   },
   "devDependencies": {
+    "react-native-markdown-display": "^7.0.2",
+    "tsup": "^8.5.0",
     "typescript": "~5.8.3"
   },
   "peerDependencies": {
