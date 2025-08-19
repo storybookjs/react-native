@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui-lite",
-  "version": "9.1.1-alpha.0",
+  "version": "9.1.1-alpha.1",
   "description": "lightweight ui components for react native storybook",
   "keywords": [
     "react",
@@ -59,8 +59,8 @@
   },
   "dependencies": {
     "@storybook/react": "^9.1.2",
-    "@storybook/react-native-theming": "^9.1.1-alpha.0",
-    "@storybook/react-native-ui-common": "^9.1.1-alpha.0",
+    "@storybook/react-native-theming": "^9.1.1-alpha.1",
+    "@storybook/react-native-ui-common": "^9.1.1-alpha.1",
     "fuse.js": "^7.0.0",
     "memoizerific": "^1.11.3",
     "polished": "^4.3.1",
