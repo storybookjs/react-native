@@ -125,7 +125,13 @@ export function prepareStories({
             const nameFromExport = storyNameFromExport(key);
             const id = toId(title, nameFromExport);
 
-            const name = exportValue?.name || exportValue?.storyName || nameFromExport;
+            let name = nameFromExport;
+
+            if (typeof exportValue === 'function') {
+              name = exportValue?.storyName || nameFromExport;
+            } else {
+              name = exportValue?.name || exportValue?.storyName || nameFromExport;
+            }
 
             index.entries[id] = {
               type: 'story',
