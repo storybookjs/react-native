@@ -61,7 +61,8 @@
   },
   "resolutions": {
     "react-docgen-typescript": "2.2.2",
-    "jotai@^2.6.2": "patch:jotai@npm%3A2.6.2#./.yarn/patches/jotai-npm-2.6.2-d482bf2d42.patch"
+    "jotai@^2.6.2": "patch:jotai@npm%3A2.6.2#./.yarn/patches/jotai-npm-2.6.2-d482bf2d42.patch",
+    "webpack-dev-server": "^5.2.2"
   },
   "engines": {
     "node": ">=16",
