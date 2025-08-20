@@ -1,8 +1,5 @@
 import { prepareStories } from './Start';
 
-// @ts-ignore
-global.window.navigator = {};
-
 describe('prepareStories', () => {
   test('prepares a standard CSF story file', () => {
     const req = () => {

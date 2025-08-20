@@ -71,10 +71,10 @@
     "jotai": "^2.6.2",
     "react": "19.1.0",
     "react-native": "0.81.0",
-    "react-test-renderer": "^19.1.0",
     "storybook": "^9.1.2",
     "tsup": "^8.5.0",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "universal-test-renderer": "^0.6.0"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",
@@ -100,7 +100,7 @@
     }
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=20"
   },
   "publishConfig": {
     "access": "public"

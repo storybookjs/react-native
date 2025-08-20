@@ -7970,12 +7970,12 @@ __metadata:
     react: "npm:19.1.0"
     react-native: "npm:0.81.0"
     react-native-url-polyfill: "npm:^2.0.0"
-    react-test-renderer: "npm:^19.1.0"
     setimmediate: "npm:^1.0.5"
     storybook: "npm:^9.1.2"
     tsup: "npm:^8.5.0"
     type-fest: "npm:~2.19"
     typescript: "npm:~5.9.2"
+    universal-test-renderer: "npm:^0.6.0"
     util: "npm:^0.12.4"
     ws: "npm:^8.18.0"
   peerDependencies:
