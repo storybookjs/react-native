@@ -1,28 +1,25 @@
 const {
   toRequireContext,
   ensureRelativePathHasDot,
-  getMain,
   getPreviewExists,
   resolveAddonFile,
   getAddonName,
 } = require('./common');
-const { normalizeStories, globToRegexp } = require('storybook/internal/common');
+const { normalizeStories, globToRegexp, loadMainConfig } = require('storybook/internal/common');
 const fs = require('fs');
 
 const path = require('path');
 
 const cwd = process.cwd();
 
-function generate({ configPath, /* absolute = false, */ useJs = false, docTools = true }) {
+async function generate({ configPath, /* absolute = false, */ useJs = false, docTools = true }) {
   const storybookRequiresLocation = path.resolve(
     cwd,
     configPath,
     `storybook.requires.${useJs ? 'js' : 'ts'}`
   );
 
-  const mainImport = getMain({ configPath });
-
-  const main = mainImport.default ?? mainImport;
+  const main = await loadMainConfig({ configDir: configPath, cwd });
 
   // const reactNativeOptions = main.reactNativeOptions;
 

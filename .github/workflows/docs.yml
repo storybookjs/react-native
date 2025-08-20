@@ -22,7 +22,7 @@ jobs:
       - name: Set node version
         uses: actions/setup-node@v4
         with:
-          node-version: 22.18.0
+          node-version: 24
 
       - name: Install
         shell: 'bash'

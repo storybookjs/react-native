@@ -1,46 +1,59 @@
-const path = require('path');
+const { describe, it, beforeEach, mock } = require('node:test');
+const assert = require('node:assert');
+const path = require('node:path');
 const { generate } = require('./generate');
 
 let pathMock;
 let fileContentMock;
 
-jest.mock('fs', () => ({
-  ...jest.requireActual('fs'),
+global.window = { navigator: {} };
+
+const mockFs = {
   writeFileSync: (filePath, fileContent, opts) => {
     pathMock = filePath;
     fileContentMock = fileContent;
   },
-}));
+};
+
+mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
 
 describe('loader', () => {
+  beforeEach(() => {
+    pathMock = undefined;
+    fileContentMock = undefined;
+  });
+
   describe('writeRequires', () => {
     describe('when there is a story glob', () => {
-      it('writes the story imports', () => {
-        generate({ configPath: 'scripts/mocks/all-config-files' });
-        expect(pathMock).toEqual(
+      it('writes the story imports', async (t) => {
+        await generate({ configPath: 'scripts/mocks/all-config-files' });
+        assert.strictEqual(
+          pathMock,
           path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.ts')
         );
-        expect(fileContentMock).toMatchSnapshot();
+        t.assert.snapshot(fileContentMock);
       });
     });
 
     describe('when using js', () => {
-      it('writes the story imports without types', () => {
-        generate({ configPath: 'scripts/mocks/all-config-files', useJs: true });
-        expect(pathMock).toEqual(
+      it('writes the story imports without types', async (t) => {
+        await generate({ configPath: 'scripts/mocks/all-config-files', useJs: true });
+        assert.strictEqual(
+          pathMock,
           path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.js')
         );
-        expect(fileContentMock).toMatchSnapshot();
+        t.assert.snapshot(fileContentMock);
       });
     });
 
     describe('when there are different file extensions', () => {
-      it('writes the story imports', () => {
-        generate({ configPath: 'scripts/mocks/file-extensions' });
-        expect(pathMock).toEqual(
+      it('writes the story imports', async (t) => {
+        await generate({ configPath: 'scripts/mocks/file-extensions' });
+        assert.strictEqual(
+          pathMock,
           path.resolve(__dirname, 'mocks/file-extensions/storybook.requires.ts')
         );
-        expect(fileContentMock).toMatchSnapshot();
+        t.assert.snapshot(fileContentMock);
       });
     });
 
@@ -48,28 +61,35 @@ describe('loader', () => {
     // describe('when there is a story glob and exclude paths globs', () => {
     //   it('writes the story imports', () => {
     //     generate({ configPath: 'scripts/mocks/exclude-config-files' });
-    //     expect(pathMock).toEqual(
+    //     assert.strictEqual(
+    //       pathMock,
     //       path.resolve(__dirname, 'mocks/exclude-config-files/storybook.requires.ts')
     //     );
 
-    //     expect(fileContentMock).toContain('include-components/FakeStory.stories.tsx');
-    //     expect(fileContentMock).not.toContain('exclude-components/FakeStory.stories.tsx');
+    //     assert.ok(fileContentMock.includes('include-components/FakeStory.stories.tsx'));
+    //     assert.ok(!fileContentMock.includes('exclude-components/FakeStory.stories.tsx'));
 
-    //     expect(fileContentMock).toMatchSnapshot();
+    //     t.assert.snapshot(fileContentMock);
     //   });
     // });
 
     describe('when there is no story glob or addons', () => {
-      it('throws an error', () => {
-        expect(() => generate({ configPath: 'scripts/mocks/blank-config' })).toThrow();
+      it('throws an error', async () => {
+        await assert.rejects(
+          async () => await generate({ configPath: 'scripts/mocks/blank-config' }),
+          Error
+        );
       });
     });
 
     describe('when there is no preview', () => {
-      it('does not add preview related stuff', () => {
-        generate({ configPath: 'scripts/mocks/no-preview' });
-        expect(pathMock).toEqual(path.resolve(__dirname, 'mocks/no-preview/storybook.requires.ts'));
-        expect(fileContentMock).toMatchSnapshot();
+      it('does not add preview related stuff', async (t) => {
+        await generate({ configPath: 'scripts/mocks/no-preview' });
+        assert.strictEqual(
+          pathMock,
+          path.resolve(__dirname, 'mocks/no-preview/storybook.requires.ts')
+        );
+        t.assert.snapshot(fileContentMock);
       });
     });
 
@@ -77,22 +97,24 @@ describe('loader', () => {
     // describe('when the absolute option is true', () => {
     //   it('should write absolute paths to the requires file', () => {
     //     generate({ configPath: 'scripts/mocks/all-config-files', absolute: true });
-    //     expect(pathMock).toEqual(
+    //     assert.strictEqual(
+    //       pathMock,
     //       path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.ts')
     //     );
 
-    //     // expect(fileContentMock).toContain(`FakeStory.stories.tsx`);
-    //     expect(fileContentMock).toContain(path.resolve(__dirname, 'mocks/all-config-files'));
+    //     // assert.ok(fileContentMock.includes(`FakeStory.stories.tsx`));
+    //     assert.ok(fileContentMock.includes(path.resolve(__dirname, 'mocks/all-config-files')));
     //   });
     // });
 
     describe('when there is a configuration object', () => {
-      it('writes the story imports', () => {
-        generate({ configPath: 'scripts/mocks/configuration-objects' });
-        expect(pathMock).toEqual(
+      it('writes the story imports', async (t) => {
+        await generate({ configPath: 'scripts/mocks/configuration-objects' });
+        assert.strictEqual(
+          pathMock,
           path.resolve(__dirname, 'mocks/configuration-objects/storybook.requires.ts')
         );
-        expect(fileContentMock).toMatchSnapshot();
+        t.assert.snapshot(fileContentMock);
       });
     });
   });
