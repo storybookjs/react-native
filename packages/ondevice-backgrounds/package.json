@@ -35,7 +35,7 @@
     "@storybook/react-native-theming": "^9.1.1"
   },
   "devDependencies": {
-    "typescript": "~5.8.3"
+    "typescript": "~5.9.2"
   },
   "peerDependencies": {
     "react": "*",

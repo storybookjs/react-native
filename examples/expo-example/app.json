@@ -1,0 +1,13 @@
+{
+  "name": "Expo Example",
+  "slug": "expo-example",
+  "web": {
+    "bundler": "metro",
+    "output": "single"
+  },
+  "experiments": {
+    "reactCompiler": true
+  },
+  "userInterfaceStyle": "automatic",
+  "newArchEnabled": true
+}

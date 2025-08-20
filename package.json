@@ -57,7 +57,7 @@
     "lerna": "^8.2.3",
     "prettier": "^3.5.3",
     "sherif": "^1.4.0",
-    "typescript": "~5.8.3"
+    "typescript": "~5.9.2"
   },
   "resolutions": {
     "react-docgen-typescript": "2.2.2",
