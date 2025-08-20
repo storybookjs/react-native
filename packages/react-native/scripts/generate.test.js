@@ -15,8 +15,6 @@ const mockFs = {
   },
 };
 
-mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-
 describe('loader', () => {
   beforeEach(() => {
     pathMock = undefined;
@@ -26,7 +24,10 @@ describe('loader', () => {
   describe('writeRequires', () => {
     describe('when there is a story glob', () => {
       it('writes the story imports', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({ configPath: 'scripts/mocks/all-config-files' });
+        mock.reset();
+
         assert.strictEqual(
           pathMock,
           path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.ts')
@@ -37,7 +38,10 @@ describe('loader', () => {
 
     describe('when using js', () => {
       it('writes the story imports without types', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({ configPath: 'scripts/mocks/all-config-files', useJs: true });
+        mock.reset();
+
         assert.strictEqual(
           pathMock,
           path.resolve(__dirname, 'mocks/all-config-files/storybook.requires.js')
@@ -48,7 +52,10 @@ describe('loader', () => {
 
     describe('when there are different file extensions', () => {
       it('writes the story imports', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({ configPath: 'scripts/mocks/file-extensions' });
+        mock.reset();
+
         assert.strictEqual(
           pathMock,
           path.resolve(__dirname, 'mocks/file-extensions/storybook.requires.ts')
@@ -75,16 +82,21 @@ describe('loader', () => {
 
     describe('when there is no story glob or addons', () => {
       it('throws an error', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await assert.rejects(
           async () => await generate({ configPath: 'scripts/mocks/blank-config' }),
           Error
         );
+        mock.reset();
       });
     });
 
     describe('when there is no preview', () => {
       it('does not add preview related stuff', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({ configPath: 'scripts/mocks/no-preview' });
+        mock.reset();
+
         assert.strictEqual(
           pathMock,
           path.resolve(__dirname, 'mocks/no-preview/storybook.requires.ts')
@@ -109,7 +121,10 @@ describe('loader', () => {
 
     describe('when there is a configuration object', () => {
       it('writes the story imports', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({ configPath: 'scripts/mocks/configuration-objects' });
+        mock.reset();
+
         assert.strictEqual(
           pathMock,
           path.resolve(__dirname, 'mocks/configuration-objects/storybook.requires.ts')
