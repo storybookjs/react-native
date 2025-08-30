@@ -174,21 +174,25 @@ export function prepareStories({
 
   const sortableStories = Object.values(index.entries);
 
-  sortStoriesV7(
-    sortableStories,
-    storySort,
-    Object.values(index.entries).map((entry) => entry.importPath)
-  );
+  if (storySort) {
+    sortStoriesV7(
+      sortableStories,
+      storySort,
+      Object.values(index.entries).map((entry) => entry.importPath)
+    );
 
-  const sorted = sortableStories.reduce(
-    (acc, item) => {
-      acc[item.id] = item;
-      return acc;
-    },
-    {} as StoryIndex['entries']
-  );
+    const sorted = sortableStories.reduce(
+      (acc, item) => {
+        acc[item.id] = item;
+        return acc;
+      },
+      {} as StoryIndex['entries']
+    );
 
-  return { index: { v: 5, entries: sorted }, importMap };
+    return { index: { v: 5, entries: sorted }, importMap };
+  }
+
+  return { index, importMap };
 }
 
 export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
