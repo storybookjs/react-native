@@ -8,6 +8,7 @@
   "experiments": {
     "reactCompiler": true
   },
+  "icon": "./assets/icon.png",
   "userInterfaceStyle": "automatic",
   "newArchEnabled": true
 }
