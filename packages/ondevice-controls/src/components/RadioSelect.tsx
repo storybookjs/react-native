@@ -55,7 +55,7 @@ const RadioSelect = ({ data = [], value = '', onChange, isInline }: RadioProps) 
           }}
         >
           <RadioCircle>
-            <RadioInnerCircle selected={value === item.key} style={{ borderRadius: 4 }} />
+            <RadioInnerCircle selected={value === item.key} />
           </RadioCircle>
           <RadioLabel>{item.label}</RadioLabel>
         </RadioTouchable>
