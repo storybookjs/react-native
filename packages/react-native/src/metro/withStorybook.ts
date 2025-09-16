@@ -2,6 +2,8 @@ import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import { WebSocketServer, WebSocket, Data } from 'ws';
 import type { MetroConfig } from 'metro-config';
+import { optionalEnvToBoolean } from 'storybook/internal/common';
+import { telemetry } from 'storybook/internal/telemetry';
 
 /**
  * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
@@ -105,6 +107,12 @@ function withStorybook(
     docTools = true,
     liteMode = false,
   } = options;
+
+  const disableTelemetry = optionalEnvToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY);
+  if (!disableTelemetry && enabled) {
+    const event = process.env.NODE_ENV === 'production' ? 'build' : 'dev';
+    telemetry(event, {}).catch((e) => {});
+  }
 
   if (!enabled) {
     if (onDisabledRemoveStorybook) {
