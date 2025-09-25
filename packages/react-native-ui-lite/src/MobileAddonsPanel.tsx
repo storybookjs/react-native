@@ -1,4 +1,5 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
+import { IconButton } from '@storybook/react-native-ui-common';
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useState } from 'react';
 import {
   Animated,
@@ -9,15 +10,14 @@ import {
   ScrollView,
   StyleProp,
   Text,
-  useAnimatedValue,
   useWindowDimensions,
   View,
   ViewStyle,
 } from 'react-native';
 import { addons } from 'storybook/internal/manager-api';
 import { Addon_TypesEnum } from 'storybook/internal/types';
-import { IconButton } from '@storybook/react-native-ui-common';
 import { CloseIcon } from './icon/iconDataUris';
+import useAnimatedValue from './useAnimatedValue';
 
 export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;

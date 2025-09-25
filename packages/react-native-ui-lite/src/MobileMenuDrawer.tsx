@@ -10,11 +10,11 @@ import {
   Pressable,
   SafeAreaView,
   ScrollView,
-  useAnimatedValue,
   View,
 } from 'react-native';
 
 import { useSelectedNode } from './SelectedNodeProvider';
+import useAnimatedValue from './useAnimatedValue';
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
