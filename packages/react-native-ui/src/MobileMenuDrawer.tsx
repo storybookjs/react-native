@@ -5,8 +5,8 @@ import BottomSheet, {
 } from '@gorhom/bottom-sheet';
 import { useTheme } from '@storybook/react-native-theming';
 import { forwardRef, memo, ReactNode, useImperativeHandle, useMemo, useRef } from 'react';
-import { Keyboard } from 'react-native';
-import { useReducedMotion } from 'react-native-reanimated';
+import { Keyboard, Platform, StyleSheet } from 'react-native';
+import { useAnimatedStyle, useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
 
@@ -18,15 +18,33 @@ export interface MobileMenuDrawerRef {
   setMobileMenuOpen: (isOpen: boolean) => void;
 }
 
-export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheetBackdropProps) => (
-  <BottomSheetBackdrop
-    {...backdropComponentProps}
-    appearsOnIndex={0}
-    disappearsOnIndex={-1}
-    pressBehavior={'close'}
-    style={[backdropComponentProps.style, { backgroundColor: 'rgba(0,0,0,0.5)' }]}
-  />
-);
+export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheetBackdropProps) => {
+  const androidTouchEventFix = useAnimatedStyle(() => {
+    if (Platform.OS === 'android') {
+      return {
+        zIndex: backdropComponentProps.animatedIndex.value >= 0 ? 0 : -1,
+      };
+    }
+    return {};
+  });
+
+  return (
+    <BottomSheetBackdrop
+      {...backdropComponentProps}
+      appearsOnIndex={0}
+      disappearsOnIndex={-1}
+      pressBehavior={'close'}
+      style={[
+        backdropComponentProps.style,
+        androidTouchEventFix,
+        {
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          paddingTop: Platform.OS === 'android' ? 1 : undefined,
+        },
+      ]}
+    />
+  );
+};
 
 const snapPoints = ['50%', '75%'];
 

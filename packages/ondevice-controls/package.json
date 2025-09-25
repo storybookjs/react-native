@@ -38,7 +38,7 @@
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.0.0",
     "typescript": "~5.9.2"
   },
   "peerDependencies": {

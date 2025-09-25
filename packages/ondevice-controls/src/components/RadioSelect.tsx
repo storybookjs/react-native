@@ -7,7 +7,7 @@ interface RadioProps {
   isInline: boolean;
 }
 
-const RadioContainer = styled.View(({ isInline }: any) => ({
+const RadioContainer = styled.View<{ isInline: boolean }>(({ isInline }) => ({
   flexDirection: isInline ? 'row' : 'column',
   alignItems: isInline ? 'center' : 'flex-start',
   flexWrap: 'wrap',
@@ -24,17 +24,17 @@ const RadioCircle = styled.View(({ theme }) => ({
   height: 16,
   borderWidth: 1,
   borderColor: theme.appBorderColor,
-  borderRadius: '100%',
+  borderRadius: 8,
   backgroundColor: theme.background.content,
   alignItems: 'center',
   justifyContent: 'center',
 }));
 
-const RadioInnerCircle = styled.View(({ theme, selected }: any) => ({
+const RadioInnerCircle = styled.View<{ selected: boolean }>(({ theme, selected }) => ({
   width: 8,
   height: 8,
-  borderRadius: '100%',
-  backgroundColor: selected ? theme.color.positive : 'transparent',
+  borderRadius: 4,
+  backgroundColor: selected ? theme.color.positive : theme.background.content,
 }));
 
 const RadioLabel = styled.Text(({ theme }) => ({

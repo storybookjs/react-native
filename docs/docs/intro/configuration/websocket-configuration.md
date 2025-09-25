@@ -170,14 +170,12 @@ ws.onopen = () => {
 ### Common Issues
 
 1. **Connection Refused**
-
    - Check if port is already in use: `lsof -i :7007`
    - Ensure Metro is running with WebSocket enabled
    - Verify firewall settings
    - make sure the host and port match in both the `withStorybook` configuration and the `getStorybookUI` call in your app code
 
 2. **Cannot Connect from Device**
-
    - Use machine's IP instead of localhost
    - Ensure device is on same network
    - Check device's network permissions

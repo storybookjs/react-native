@@ -160,28 +160,23 @@ export default StorybookUIRoot;
 #### Available Options
 
 - **UI Options**
-
   - `onDeviceUI`: Enable/disable on-device UI (default: true)
   - `shouldPersistSelection`: Persist last viewed story (default: true)
 
 - **Theme Options**
-
   - `theme`: Customize UI theme and branding
 
 - **Story Selection**
-
   - `initialSelection`: Set initial story to display
     - String format: `'kind--story'`
     - Object format: `{ kind: string, name: string }`
 
 - **Storage Options**
-
   - `storage`: Implementation for story persistence
     - `getItem`: Function to retrieve stored values
     - `setItem`: Function to store values
 
 - **Websocket Options**
-
   - `enableWebsockets`: Enable remote control (default: false)
   - `host`: Websocket host (default: 'localhost')
   - `port`: Websocket port (default: 7007)
