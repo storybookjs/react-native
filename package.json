@@ -48,15 +48,15 @@
     "format:fix": "prettier --write ."
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^3.8.0",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.25.1",
-    "eslint-config-expo": "^9.2.0",
-    "eslint-config-prettier": "^10.1.2",
+    "@docusaurus/eslint-plugin": "^3.8.1",
+    "cross-env": "^10.0.0",
+    "eslint": "^9.35.0",
+    "eslint-config-expo": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-compiler": "^19.1.0-rc.2",
     "lerna": "^8.2.3",
-    "prettier": "^3.5.3",
-    "sherif": "^1.4.0",
+    "prettier": "^3.6.2",
+    "sherif": "^1.6.1",
     "typescript": "~5.9.2"
   },
   "resolutions": {
@@ -64,7 +64,8 @@
     "jotai@^2.6.2": "patch:jotai@npm%3A2.6.2#./.yarn/patches/jotai-npm-2.6.2-d482bf2d42.patch",
     "webpack-dev-server": "^5.2.2",
     "markdown-it": "^14.0.0",
-    "@types/markdown-it": "^14.0.1"
+    "@types/markdown-it": "^14.0.1",
+    "react-native-web": "^0.21.0"
   },
   "engines": {
     "node": ">=22.18.0"
@@ -73,5 +74,5 @@
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.9.4"
 }

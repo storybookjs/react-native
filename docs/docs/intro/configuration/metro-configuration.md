@@ -144,13 +144,11 @@ export default AppEntryPoint;
 ### Common Issues
 
 1. **Stories not found**
-
    - Verify `configPath` points to correct directory
    - Check story patterns in `main.ts`
    - Ensure Metro cache is cleared: `npx react-native start --reset-cache`
 
 2. **WebSocket connection failed**
-
    - Check if port is already in use
    - Verify `host` matches your development setup
    - verify that host and port match in both the `withStorybook` configuration and the `getStorybookUI` call in your app code
