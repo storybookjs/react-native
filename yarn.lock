@@ -5244,7 +5244,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/code-signing-certificates@npm:^0.0.5":
+"@expo/code-signing-certificates@npm:0.0.5, @expo/code-signing-certificates@npm:^0.0.5":
   version: 0.0.5
   resolution: "@expo/code-signing-certificates@npm:0.0.5"
   dependencies:
@@ -5283,7 +5283,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/config@npm:~12.0.9":
+"@expo/config@npm:~12.0.8, @expo/config@npm:~12.0.9":
   version: 12.0.9
   resolution: "@expo/config@npm:12.0.9"
   dependencies:
@@ -9607,18 +9607,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/expect@npm:3.0.9":
-  version: 3.0.9
-  resolution: "@vitest/expect@npm:3.0.9"
-  dependencies:
-    "@vitest/spy": "npm:3.0.9"
-    "@vitest/utils": "npm:3.0.9"
-    chai: "npm:^5.2.0"
-    tinyrainbow: "npm:^2.0.0"
-  checksum: 10/09fc02ae3a639d5db23705a393ef571001f7f1006f7527529ec7807699b739788d5b54b71cb917c56379874b006f2de49933585694927b23c0d50787f96b9e94
-  languageName: node
-  linkType: hard
-
 "@vitest/expect@npm:3.2.4":
   version: 3.2.4
   resolution: "@vitest/expect@npm:3.2.4"
@@ -9651,15 +9639,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/pretty-format@npm:3.0.9":
-  version: 3.0.9
-  resolution: "@vitest/pretty-format@npm:3.0.9"
-  dependencies:
-    tinyrainbow: "npm:^2.0.0"
-  checksum: 10/cfcdda2c72cf16a5e76ad2c9b014a4e36fea3988389613497cad5a2491ebc380ded4397afc95c32a2bd2734b0386996df76f6c5cbfc6be561262b8d112fb7a27
-  languageName: node
-  linkType: hard
-
 "@vitest/pretty-format@npm:3.2.4":
   version: 3.2.4
   resolution: "@vitest/pretty-format@npm:3.2.4"
@@ -9669,32 +9648,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/spy@npm:3.0.9":
-  version: 3.0.9
-  resolution: "@vitest/spy@npm:3.0.9"
-  dependencies:
-    tinyspy: "npm:^3.0.2"
-  checksum: 10/967b403293c9325292be4843753bf8ae516ec158df2372a14bec98c9bfb233fa6bbf76cb319cf1a9ea1b5ab795e3abff68ca66fa7523045562d7449a95ed8bf9
-  languageName: node
-  linkType: hard
-
 "@vitest/spy@npm:3.2.4":
   version: 3.2.4
   resolution: "@vitest/spy@npm:3.2.4"
   dependencies:
     tinyspy: "npm:^4.0.3"
   checksum: 10/7d38c299f42a8c7e5e41652b203af98ca54e63df69c3b072d0e401d5a57fbbba3e39d8538ac1b3022c26718a6388d0bcc222bc2f07faab75942543b9247c007d
-  languageName: node
-  linkType: hard
-
-"@vitest/utils@npm:3.0.9":
-  version: 3.0.9
-  resolution: "@vitest/utils@npm:3.0.9"
-  dependencies:
-    "@vitest/pretty-format": "npm:3.0.9"
-    loupe: "npm:^3.1.3"
-    tinyrainbow: "npm:^2.0.0"
-  checksum: 10/c77e2a4a5c62dabc57c0d27536428e6b4f9a7998b59161deb82cf797e1d6cb61a7531bef19f079c4bdca7b48fd656b48e4d1bcfb4a5bdf3c177931670a287163
   languageName: node
   linkType: hard
 
@@ -10303,6 +10262,13 @@ __metadata:
   version: 2.0.0
   resolution: "aproba@npm:2.0.0"
   checksum: 10/c2b9a631298e8d6f3797547e866db642f68493808f5b37cd61da778d5f6ada890d16f668285f7d60bd4fc3b03889bd590ffe62cf81b700e9bb353431238a0a7b
+  languageName: node
+  linkType: hard
+
+"arg@npm:4.1.0":
+  version: 4.1.0
+  resolution: "arg@npm:4.1.0"
+  checksum: 10/dc0e1ea7f0adee7871c456bd57f06fb9f8c2ccd91fd0537c73b66f3fa0c9697ccdfc25b358a417a3ab263c062aac0ef2df3a5523433861fe6277cb2ff769a9bc
   languageName: node
   linkType: hard
 
@@ -13857,7 +13823,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-register@npm:^3.5.0, esbuild-register@npm:^3.6.0":
+"esbuild-register@npm:^3.6.0":
   version: 3.6.0
   resolution: "esbuild-register@npm:3.6.0"
   dependencies:
@@ -14742,6 +14708,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-eas-client@npm:~1.0.7":
+  version: 1.0.7
+  resolution: "expo-eas-client@npm:1.0.7"
+  checksum: 10/53c08d87938cdcb3b6a06f5184366312d9e370d431cba00299c88146f6d93d3b8a945c280ef07f5a9ccc7c29c484414230fc0ff54c95d79341d893903454ccf8
+  languageName: node
+  linkType: hard
+
 "expo-example@workspace:examples/expo-example":
   version: 0.0.0-use.local
   resolution: "expo-example@workspace:examples/expo-example"
@@ -14770,6 +14743,7 @@ __metadata:
     babel-plugin-react-compiler: "npm:^19.1.0-rc.2"
     babel-plugin-react-docgen-typescript: "npm:^1.5.1"
     expo: "npm:^54.0.10"
+    expo-updates: "npm:~29.0.11"
     jest: "npm:^29.7.0"
     jest-expo: "npm:~54.0.12"
     react: "npm:19.1.0"
@@ -14782,7 +14756,6 @@ __metadata:
     react-native-svg: "npm:15.12.1"
     react-native-web: "npm:^0.21.0"
     react-native-worklets: "npm:^0.5.1"
-    rn-storybook-test: "npm:^0.0.1"
     storybook: "npm:10.0.0-beta.0"
     storybook-addon-deep-controls: "npm:^0.9.3"
     typescript: "npm:~5.9.2"
@@ -14815,6 +14788,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-json-utils@npm:~0.15.0":
+  version: 0.15.0
+  resolution: "expo-json-utils@npm:0.15.0"
+  checksum: 10/f514aef7000dd785b5f8e85cbeb809aef6eeaff4877e25e0ae2770db6a3b41f8813a60f13eb821cbf827407cfa0f20a5a2e8d6f18aff7ee20bd51c003af1c7c7
+  languageName: node
+  linkType: hard
+
 "expo-keep-awake@npm:~15.0.7":
   version: 15.0.7
   resolution: "expo-keep-awake@npm:15.0.7"
@@ -14822,6 +14802,18 @@ __metadata:
     expo: "*"
     react: "*"
   checksum: 10/574f3932356a23b3ee5f415115f95884d146cfd8d62bc19cdca463639c2d0941df01f7b82b489df8bdcd40e77fb088bcdd1724b001b157e25e2f97311f2c9ad1
+  languageName: node
+  linkType: hard
+
+"expo-manifests@npm:~1.0.8":
+  version: 1.0.8
+  resolution: "expo-manifests@npm:1.0.8"
+  dependencies:
+    "@expo/config": "npm:~12.0.8"
+    expo-json-utils: "npm:~0.15.0"
+  peerDependencies:
+    expo: "*"
+  checksum: 10/cac38d3c37e6b9c18604512bd1009ec8523c29774ac748826294f9fb3f85cbda6606ccdd06a2088b77566a0634babcef6c52fe50cca16a725f0f8beb361aa44a
   languageName: node
   linkType: hard
 
@@ -14850,6 +14842,50 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10/460861d2e35db8273b49b2e98a4c2830cec730c771093112f4e7c7fd3b661caadf526b048bbe5791cd56f1e460457351ff7d0ebdad2308590a32e571f087b38b
+  languageName: node
+  linkType: hard
+
+"expo-structured-headers@npm:~5.0.0":
+  version: 5.0.0
+  resolution: "expo-structured-headers@npm:5.0.0"
+  checksum: 10/948e392b3b1231c92df83a74fc5268fbcdbe141814aa1651a1c128fc008c46dbc5d39edf5dadf76dd68fa4f47c9ebe97039d2b6081b6ed84f58059c44da1162e
+  languageName: node
+  linkType: hard
+
+"expo-updates-interface@npm:~2.0.0":
+  version: 2.0.0
+  resolution: "expo-updates-interface@npm:2.0.0"
+  peerDependencies:
+    expo: "*"
+  checksum: 10/018b174fc15a769f11fa9bf1dbbca28872dad84e3fe3c385b02b7220d25764d4dad39705e31a89ca10432586251f406e56d428362ac723a1ece34dab98c798c0
+  languageName: node
+  linkType: hard
+
+"expo-updates@npm:~29.0.11":
+  version: 29.0.11
+  resolution: "expo-updates@npm:29.0.11"
+  dependencies:
+    "@expo/code-signing-certificates": "npm:0.0.5"
+    "@expo/plist": "npm:^0.4.7"
+    "@expo/spawn-async": "npm:^1.7.2"
+    arg: "npm:4.1.0"
+    chalk: "npm:^4.1.2"
+    debug: "npm:^4.3.4"
+    expo-eas-client: "npm:~1.0.7"
+    expo-manifests: "npm:~1.0.8"
+    expo-structured-headers: "npm:~5.0.0"
+    expo-updates-interface: "npm:~2.0.0"
+    getenv: "npm:^2.0.0"
+    glob: "npm:^10.4.2"
+    ignore: "npm:^5.3.1"
+    resolve-from: "npm:^5.0.0"
+  peerDependencies:
+    expo: "*"
+    react: "*"
+    react-native: "*"
+  bin:
+    expo-updates: bin/cli.js
+  checksum: 10/70f49bf496d68222d4e03364d16fdf2a79efb9508ea57a95a1cbbba689b7aed7a1efa2a277547a3ffae92a62ff6311b990bd4af0e5bb39ab668aa9e0626ea669
   languageName: node
   linkType: hard
 
@@ -19122,7 +19158,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loupe@npm:^3.1.0, loupe@npm:^3.1.3":
+"loupe@npm:^3.1.0":
   version: 3.1.3
   resolution: "loupe@npm:3.1.3"
   checksum: 10/9e98c34daf0eba48ccc603595e51f2ae002110982d84879cf78c51de2c632f0c571dfe82ce4210af60c32203d06b443465c269bda925076fe6d9b612cc65c321
@@ -21496,15 +21532,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"odiff-bin@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "odiff-bin@npm:3.2.1"
-  bin:
-    odiff: bin/odiff.exe
-  checksum: 10/edb5be8d72c3a4f5c3bd1c9611ac71d72bf81839f5b3506a80d359bfd1a4a370d554e0a2aea6425ea33e83e3e155e155a341ab4cafa1d6c2aff442e55fdd4a64
-  languageName: node
-  linkType: hard
-
 "on-finished@npm:2.4.1, on-finished@npm:^2.4.1":
   version: 2.4.1
   resolution: "on-finished@npm:2.4.1"
@@ -22321,13 +22348,6 @@ __metadata:
   version: 3.4.0
   resolution: "pngjs@npm:3.4.0"
   checksum: 10/0e9227a413ce4b4f5ebae4465b366efc9ca545c74304f3cc30ba2075159eb12f01a6a821c4f61f2b048bd85356abbe6d2109df7052a9030ef4d7a42d99760af6
-  languageName: node
-  linkType: hard
-
-"pngjs@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "pngjs@npm:7.0.0"
-  checksum: 10/e843ebbb0df092ee0f3a3e7dbd91ff87a239a4e4c4198fff202916bfb33b67622f4b83b3c29f3ccae94fcb97180c289df06068624554f61686fe6b9a4811f7db
   languageName: node
   linkType: hard
 
@@ -24838,23 +24858,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rn-storybook-test@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "rn-storybook-test@npm:0.0.1"
-  dependencies:
-    arg: "npm:^5.0.2"
-    odiff-bin: "npm:^3.2.1"
-    pngjs: "npm:^7.0.0"
-    storybook: "npm:^9.0.12"
-  bin:
-    compare-screenshots: dist/compare-screenshots.js
-    detect-ignore-regions: dist/detect-ignore-regions.js
-    gen-maestro: dist/gen-maestro.js
-    screenshot-stories: dist/screenshot-stories.js
-  checksum: 10/2a0dfee46feeeed8c82a489e1c7d7af7eff4bedd0d6a93101df0ca71cc791169dd5a77c78585b48fd220abbf392c6328f74e6ac4172a2249db9b95204b38a5ad
-  languageName: node
-  linkType: hard
-
 "rollup-pluginutils@npm:^2.8.2":
   version: 2.8.2
   resolution: "rollup-pluginutils@npm:2.8.2"
@@ -26148,32 +26151,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^9.0.12":
-  version: 9.0.12
-  resolution: "storybook@npm:9.0.12"
-  dependencies:
-    "@storybook/global": "npm:^5.0.0"
-    "@testing-library/jest-dom": "npm:^6.6.3"
-    "@testing-library/user-event": "npm:^14.6.1"
-    "@vitest/expect": "npm:3.0.9"
-    "@vitest/spy": "npm:3.0.9"
-    better-opn: "npm:^3.0.2"
-    esbuild: "npm:^0.18.0 || ^0.19.0 || ^0.20.0 || ^0.21.0 || ^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0"
-    esbuild-register: "npm:^3.5.0"
-    recast: "npm:^0.23.5"
-    semver: "npm:^7.6.2"
-    ws: "npm:^8.18.0"
-  peerDependencies:
-    prettier: ^2 || ^3
-  peerDependenciesMeta:
-    prettier:
-      optional: true
-  bin:
-    storybook: ./bin/index.cjs
-  checksum: 10/488084811bf359d12025ee0c72b937d51b8e3c239dd1f85359ff94b880cade4615e410c42a8408f95f250d90ac9cd93a8ab9e0fe382cb3deaa655c13d01b1e6c
-  languageName: node
-  linkType: hard
-
 "stream-buffers@npm:2.2.x":
   version: 2.2.0
   resolution: "stream-buffers@npm:2.2.0"
@@ -26867,13 +26844,6 @@ __metadata:
   version: 2.0.0
   resolution: "tinyrainbow@npm:2.0.0"
   checksum: 10/94d4e16246972614a5601eeb169ba94f1d49752426312d3cf8cc4f2cc663a2e354ffc653aa4de4eebccbf9eeebdd0caef52d1150271fdfde65d7ae7f3dcb9eb5
-  languageName: node
-  linkType: hard
-
-"tinyspy@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "tinyspy@npm:3.0.2"
-  checksum: 10/5db671b2ff5cd309de650c8c4761ca945459d7204afb1776db9a04fb4efa28a75f08517a8620c01ee32a577748802231ad92f7d5b194dc003ee7f987a2a06337
   languageName: node
   linkType: hard
 
