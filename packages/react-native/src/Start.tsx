@@ -140,6 +140,7 @@ export function prepareStories({
               title,
               importPath: `${root}/${filename.substring(2)}`, // FIXME: use normalize function here
               tags: ['story'],
+              subtype: 'story',
             };
 
             const importedStories = req(filename);
