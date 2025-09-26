@@ -17,10 +17,23 @@ function App() {
   );
 }
 
-let AppEntryPoint = App;
+const StorybookSwitcher = ({
+  enabled,
+  requireFunction,
+  App,
+}: {
+  requireFunction: () => ReturnType<typeof require>;
+  enabled: boolean;
+  App: React.ComponentType<any>;
+}) => {
+  if (enabled) {
+    return requireFunction().default;
+  }
+  return App;
+};
 
-if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true') {
-  AppEntryPoint = require('./.rnstorybook').default;
-}
-
-export default AppEntryPoint;
+export default StorybookSwitcher({
+  App,
+  requireFunction: () => require('./.rnstorybook'),
+  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+});

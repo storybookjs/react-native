@@ -9,7 +9,10 @@
   "icon": "./assets/icon.png",
   "ios": {
     "bundleIdentifier": "com.storybook.example",
-    "icon": "./assets/storybook.icon"
+    "icon": "./assets/storybook.icon",
+    "infoPlist": {
+      "ITSAppUsesNonExemptEncryption": false
+    }
   },
   "android": {
     "package": "com.storybook.example",
