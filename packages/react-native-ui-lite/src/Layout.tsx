@@ -21,7 +21,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
-import { addons } from 'storybook/internal/manager-api';
+import { addons } from 'storybook/manager-api';
 import { type API_IndexHash } from 'storybook/internal/types';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';

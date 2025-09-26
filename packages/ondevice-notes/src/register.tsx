@@ -1,4 +1,4 @@
-import { type API, addons, types } from 'storybook/internal/manager-api';
+import { type API, addons, types } from 'storybook/manager-api';
 import { Notes } from './components/Notes';
 
 import type { Args, StoryContext } from 'storybook/internal/csf';

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import type { RefType } from '@storybook/react-native-ui-common';
 import { Button, LayoutProvider } from '@storybook/react-native-ui-common';
 import React from 'react';
-import type { IndexHash, State } from 'storybook/internal/manager-api';
+import type { IndexHash, State } from 'storybook/manager-api';
 import { Sidebar } from './Sidebar';
 import { DEFAULT_REF_ID } from './constants';
 import { mockDataset } from './mockdata';

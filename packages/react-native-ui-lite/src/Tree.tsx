@@ -17,7 +17,7 @@ import type {
   State,
   StoriesHash,
   StoryEntry,
-} from 'storybook/internal/manager-api';
+} from 'storybook/manager-api';
 import { useSelectedNode } from './SelectedNodeProvider';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
 import { CollapseAllIcon, CollapseIcon, ExpandAllIcon } from './icon/iconDataUris';

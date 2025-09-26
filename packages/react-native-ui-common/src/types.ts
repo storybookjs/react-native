@@ -5,7 +5,7 @@ import { Storage } from './StorageProvider';
 import * as Fuse from 'fuse.js';
 import { ReactElement, ReactNode } from 'react';
 import { PressableProps } from 'react-native';
-import type { State, StoriesHash } from 'storybook/internal/manager-api';
+import type { State, StoriesHash } from 'storybook/manager-api';
 import type {
   API_IndexHash,
   StatusesByStoryIdAndTypeId,
