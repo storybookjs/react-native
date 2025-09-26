@@ -1,14 +1,39 @@
 {
   "name": "Expo Example",
   "slug": "expo-example",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "scheme": "storybook",
+  "userInterfaceStyle": "automatic",
+  "newArchEnabled": true,
+  "icon": "./assets/icon.png",
+  "ios": {
+    "bundleIdentifier": "com.storybook.example",
+    "icon": "./assets/storybook.icon"
+  },
+  "android": {
+    "package": "com.storybook.example",
+    "edgeToEdgeEnabled": true
+  },
   "web": {
     "bundler": "metro",
-    "output": "single"
+    "output": "single",
+    "favicon": "./assets/icon.png"
   },
   "experiments": {
-    "reactCompiler": true
+    "reactCompiler": true,
+    "tsconfigPaths": true
   },
-  "icon": "./assets/icon.png",
-  "userInterfaceStyle": "automatic",
-  "newArchEnabled": true
+  "owner": "react-native-storybook",
+  "runtimeVersion": {
+    "policy": "appVersion"
+  },
+  "extra": {
+    "eas": {
+      "projectId": "ebfab020-5dff-44a5-a29e-a0a6e6c175b9"
+    }
+  },
+  "updates": {
+    "url": "https://u.expo.dev/ebfab020-5dff-44a5-a29e-a0a6e6c175b9"
+  }
 }
