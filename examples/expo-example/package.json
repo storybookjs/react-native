@@ -19,7 +19,8 @@
     "check": "tsc --noEmit",
     "test": "jest",
     "test:ci": "jest --runInBand",
-    "test:screenshots": "screenshot-stories --ignore-regions '376,2512,428,24' --html-report"
+    "test:screenshots": "screenshot-stories --ignore-regions '376,2512,428,24' --html-report",
+    "postinstall": "cd ../.. && yarn build"
   },
   "dependencies": {
     "@babel/plugin-transform-class-static-block": "^7.27.1",
