@@ -7,6 +7,7 @@ export default defineConfig((options) => {
       'src/preview.ts',
       'src/metro/withStorybook.ts',
       'src/metro/withStorybookConfig.ts',
+      'src/switcher.tsx',
     ],
     // minify: !options.watch,
     clean: !options.watch,
@@ -17,6 +18,7 @@ export default defineConfig((options) => {
             'src/preview.ts',
             'src/metro/withStorybook.ts',
             'src/metro/withStorybookConfig.ts',
+            'src/switcher.tsx',
           ],
           resolve: true,
         }

@@ -1,9 +1,12 @@
 // fixes fast refresh on web
 import '@expo/metro-runtime';
+
+import { storybookSwitcher } from '@storybook/react-native/switcher';
 import { Text, View } from 'react-native';
 
-function App() {
-  return (
+export default storybookSwitcher({
+  requireStorybook: () => require('./.rnstorybook'),
+  Alternate: () => (
     <View
       style={{
         flex: 1,
@@ -14,26 +17,5 @@ function App() {
     >
       <Text>{"didn't get storybook enabled flag"}</Text>
     </View>
-  );
-}
-
-const StorybookSwitcher = ({
-  enabled,
-  requireFunction,
-  App,
-}: {
-  requireFunction: () => ReturnType<typeof require>;
-  enabled: boolean;
-  App: React.ComponentType<any>;
-}) => {
-  if (enabled) {
-    return requireFunction().default;
-  }
-  return App;
-};
-
-export default StorybookSwitcher({
-  App,
-  requireFunction: () => require('./.rnstorybook'),
-  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+  ),
 });

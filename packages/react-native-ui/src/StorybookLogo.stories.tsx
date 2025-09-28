@@ -72,7 +72,7 @@ export const ImageSourceLogo: Story = {
 };
 
 export const ImageElementLogo: Story = {
-  args: {
-    theme: { ...theme, brand: { image: <Text>Element</Text> } } satisfies Theme,
-  },
+  render: (args) => (
+    <StorybookLogo {...args} theme={{ ...theme, brand: { image: <Text>Element</Text> } }} />
+  ),
 };

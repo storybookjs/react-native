@@ -20,9 +20,7 @@ export const Types: StoryObj<typeof meta> = {
       <StoryNode>Story</StoryNode>
     </View>
   ),
-  args: {
-    children: <></>,
-  },
+  args: {},
 };
 
 export const Expandable = () => (
