@@ -6,6 +6,9 @@ import {
 } from '@storybook/react/dist/entry-preview-docs.mjs';
 import { type Preview } from '@storybook/react';
 
+import './core-addons/actions/register';
+import './core-addons/backgrounds/register';
+
 const preview: Preview = {
   argTypesEnhancers,
   parameters: {

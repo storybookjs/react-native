@@ -27,7 +27,8 @@
     "./metro/withStorybookConfig": "./dist/metro/withStorybookConfig.js",
     "./preview": "./dist/preview.js",
     "./scripts/generate": "./scripts/generate.js",
-    "./preset": "./preset.js"
+    "./preset": "./preset.js",
+    "./backgrounds": "./dist/backgrounds.js"
   },
   "files": [
     "bin/**/*",
