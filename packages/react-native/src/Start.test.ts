@@ -45,6 +45,7 @@ describe('prepareStories', () => {
             tags: ['story'],
             title: 'TextInput',
             type: 'story',
+            subtype: 'story',
           },
         },
       },
