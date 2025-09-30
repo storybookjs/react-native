@@ -1,15 +1,5 @@
 import { Platform } from 'react-native-web';
 
-// if (Platform.OS !== 'web') {
-//   globalThis.document = {
-//     // @ts-expect-error
-//     querySelectorAll: () => {
-//       console.trace('querySelectorAll is not supported on React Native');
-//       return [];
-//     },
-//   };
-// }
-
 if (Platform.OS !== 'web') {
   // We polyfill URLSearchParams for React Native since URLSearchParams.get is not implemented yet is used in storybook
   // with expo this would never run because its already polyfilled
