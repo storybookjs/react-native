@@ -14,7 +14,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import { addons } from 'storybook/internal/manager-api';
+import { addons } from 'storybook/manager-api';
 import { Addon_TypesEnum } from 'storybook/internal/types';
 import { CloseIcon } from './icon/iconDataUris';
 import useAnimatedValue from './useAnimatedValue';

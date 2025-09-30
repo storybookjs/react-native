@@ -5,7 +5,7 @@ import Markdown from 'react-native-markdown-display';
 
 import { RNAddonApi, StoryFromId } from '../register';
 import { ErrorBoundary } from '../ErrorBoundary';
-import { addons } from 'storybook/internal/manager-api';
+import { addons } from 'storybook/manager-api';
 import { useTheme } from '@storybook/react-native-theming';
 
 export const PARAM_KEY = 'notes';

@@ -3,7 +3,7 @@ import type { CombinedDataset, Selection } from '@storybook/react-native-ui-comm
 import { useLastViewed } from '@storybook/react-native-ui-common';
 import React, { useMemo } from 'react';
 import { View } from 'react-native';
-import type { State } from 'storybook/internal/manager-api';
+import type { State } from 'storybook/manager-api';
 import type { API_LoadedRefData } from 'storybook/internal/types';
 import { DEFAULT_REF_ID } from './constants';
 import { Explorer } from './Explorer';

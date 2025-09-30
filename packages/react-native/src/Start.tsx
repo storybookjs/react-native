@@ -1,6 +1,6 @@
+import './polyfill';
 import { Platform } from 'react-native';
-
-import { addons as managerAddons } from 'storybook/internal/manager-api';
+import { addons as managerAddons } from 'storybook/manager-api';
 import {
   composeConfigs,
   addons as previewAddons,
@@ -20,22 +20,6 @@ import type {
 } from 'storybook/internal/types';
 import type { ReactRenderer } from '@storybook/react';
 import { View } from './View';
-
-// @ts-ignore
-if (Platform.OS !== 'web') {
-  // We polyfill URLSearchParams for React Native since URLSearchParams.get is not implemented yet is used in storybook
-  // with expo this would never run because its already polyfilled
-  try {
-    let params = new URLSearchParams({ test: '1' });
-
-    // the base react native url implementation throws an error when trying to access this function
-    params.get('test');
-  } catch {
-    const { setupURLPolyfill } = require('react-native-url-polyfill');
-
-    setupURLPolyfill();
-  }
-}
 
 /**
  * Since we aren't supporting  these web addons yet in react native (or reimplement them) then we should disable them
@@ -140,6 +124,7 @@ export function prepareStories({
               title,
               importPath: `${root}/${filename.substring(2)}`, // FIXME: use normalize function here
               tags: ['story'],
+              subtype: 'story',
             };
 
             const importedStories = req(filename);

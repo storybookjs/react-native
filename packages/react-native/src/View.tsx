@@ -4,7 +4,7 @@ import { Theme, darkTheme, theme } from '@storybook/react-native-theming';
 import { type SBUI, transformStoryIndexToStoriesHash } from '@storybook/react-native-ui-common';
 import { Channel, WebsocketTransport } from 'storybook/internal/channels';
 import { CHANNEL_CREATED, SET_CURRENT_STORY } from 'storybook/internal/core-events';
-import { addons as managerAddons } from 'storybook/internal/manager-api';
+import { addons as managerAddons } from 'storybook/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
 
