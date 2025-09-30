@@ -12,7 +12,7 @@ import {
 } from 'storybook/internal/preview-api';
 import { isExportStory, storyNameFromExport, toId } from 'storybook/internal/csf';
 // NOTE this really should be exported from preview-api, but it's not
-import { createBrowserChannel } from 'storybook/internal/channels';
+import { Channel } from 'storybook/internal/channels';
 import type {
   Addon_StorySortParameterV7,
   NormalizedStoriesSpecifier,
@@ -214,7 +214,8 @@ export function start({
     storySort: composedAnnotations.parameters?.options?.storySort,
   });
 
-  const channel = createBrowserChannel({ page: 'preview' });
+  // const channel = createBrowserChannel({ page: 'preview' });
+  const channel = new Channel({});
 
   managerAddons.setChannel(channel);
   previewAddons.setChannel(channel);
