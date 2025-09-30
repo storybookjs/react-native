@@ -14754,7 +14754,7 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-expo: "npm:~54.0.12"
     react: "npm:19.1.0"
-    react-compiler-runtime: "npm:^19.1.0-rc.2"
+    react-compiler-runtime: "npm:^19.1.0-rc.3"
     react-dom: "npm:19.1.0"
     react-native: "npm:0.81.4"
     react-native-gesture-handler: "npm:~2.28.0"
@@ -14764,7 +14764,7 @@ __metadata:
     react-native-web: "npm:^0.21.0"
     react-native-worklets: "npm:^0.5.1"
     storybook: "npm:10.0.0-beta.8"
-    storybook-addon-deep-controls: "npm:^0.9.3"
+    storybook-addon-deep-controls: "npm:^0.9.5"
     typescript: "npm:~5.9.2"
     universal-test-renderer: "npm:^0.6.0"
     vite: "npm:^7.1.5"
@@ -23628,12 +23628,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-compiler-runtime@npm:^19.1.0-rc.2":
-  version: 19.1.0-rc.2
-  resolution: "react-compiler-runtime@npm:19.1.0-rc.2"
+"react-compiler-runtime@npm:^19.1.0-rc.3":
+  version: 19.1.0-rc.3
+  resolution: "react-compiler-runtime@npm:19.1.0-rc.3"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0 || ^19.0.0 || ^0.0.0-experimental
-  checksum: 10/81ded46aa183512698dccb2f272d3ed278a865c7b40c3644281e06a9d67a8967dff5f3da2a8e93db485193dd62e1764eec3e67872780b67660ecda7a1d6f3960
+  checksum: 10/ee9085e070eec4135bad982f47a82a4fc28c0c6d7111b3ec93354dab61bd56f9da0bde18af2ab0ee84f5ff9e71026cbfa58513ce8ac7c0290979a84199970ab6
   languageName: node
   linkType: hard
 
@@ -26109,14 +26109,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-addon-deep-controls@npm:^0.9.3":
-  version: 0.9.3
-  resolution: "storybook-addon-deep-controls@npm:0.9.3"
+"storybook-addon-deep-controls@npm:^0.9.5":
+  version: 0.9.5
+  resolution: "storybook-addon-deep-controls@npm:0.9.5"
   peerDependencies:
-    "@storybook/addon-controls": 7.x.x || 8.x.x
-    "@storybook/types": 7.x.x || 8.x.x
-    storybook: 7.x.x || 8.x.x
-  checksum: 10/c70faf5139b0c209c7abe7cfa0aacbdd93f86f7b44818067efb1d760176df0b55895e4bad5b434830c6826d247ab96ba4ef2ad990d7e8fbf59e013d351269a4e
+    storybook: ">= 7.0.0 < 8.5.0 || >= 9.0.0 < 10.0.0"
+  checksum: 10/55a755416d1f0b7a2ad3e8fa245b168244e88e86fff0c45194ee1f1ac7799b0687a75f9e24b3c6758a2afa1359a6a0a8cb9c36f3aa0cdeb503fc09aaa8a0c9eb
   languageName: node
   linkType: hard
 
