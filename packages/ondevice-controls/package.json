@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-controls",
-  "version": "10.0.0-beta.5",
+  "version": "10.0.0-beta.8",
   "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
@@ -30,8 +30,8 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
-    "@storybook/react-native-theming": "^10.0.0-beta.5",
-    "@storybook/react-native-ui-common": "^10.0.0-beta.5",
+    "@storybook/react-native-theming": "^10.0.0-beta.8",
+    "@storybook/react-native-ui-common": "^10.0.0-beta.8",
     "deep-equal": "^1.0.1",
     "prop-types": "^15.7.2",
     "react-native-modal-datetime-picker": "^18.0.0",
