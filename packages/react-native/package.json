@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@storybook/global": "^5.0.0",
-    "@storybook/react": "10.0.0-beta.8",
+    "@storybook/react": "10.0.0-beta.9",
     "@storybook/react-native-theming": "^10.0.0-beta.8",
     "@storybook/react-native-ui": "^10.0.0-beta.8",
     "@storybook/react-native-ui-common": "^10.0.0-beta.8",
@@ -74,7 +74,7 @@
     "jotai": "^2.6.2",
     "react": "19.1.0",
     "react-native": "0.81.4",
-    "storybook": "10.0.0-beta.8",
+    "storybook": "10.0.0-beta.9",
     "tsup": "^8.5.0",
     "typescript": "~5.9.2",
     "universal-test-renderer": "^0.6.0"
