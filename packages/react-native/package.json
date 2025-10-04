@@ -24,10 +24,10 @@
   "exports": {
     ".": "./dist/index.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
-    "./metro/withStorybookConfig": "./dist/metro/withStorybookConfig.js",
     "./preview": "./dist/preview.js",
     "./scripts/generate": "./scripts/generate.js",
-    "./preset": "./preset.js"
+    "./preset": "./preset.js",
+    "./stub": "./dist/stub.js"
   },
   "files": [
     "bin/**/*",
