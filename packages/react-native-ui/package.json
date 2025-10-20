@@ -58,7 +58,7 @@
     "typescript": "~5.9.2"
   },
   "dependencies": {
-    "@storybook/react": "10.0.0-beta.9",
+    "@storybook/react": "10.0.0-beta.13",
     "@storybook/react-native-theming": "^10.0.0-beta.9",
     "@storybook/react-native-ui-common": "^10.0.0-beta.9",
     "es-toolkit": "^1.38.0",
