@@ -2,7 +2,7 @@ import { styled } from '@storybook/react-native-theming';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
 import React, { useCallback, useDeferredValue, useRef, useState } from 'react';
-import { TextInput, View } from 'react-native';
+import { Platform, TextInput, View } from 'react-native';
 import { useSelectedNode } from './SelectedNodeProvider';
 import {
   type CombinedDataset,
@@ -54,7 +54,8 @@ const SearchField = styled.View({
 });
 
 const Input = styled(TextInput)(({ theme }) => ({
-  height: 32,
+  height: Platform.OS === 'android' ? 'auto' : 32,
+  minHeight: 32,
   paddingLeft: 28,
   paddingRight: 28,
   borderWidth: 1,
@@ -207,7 +208,12 @@ export const Search = React.memo<{
           <SearchIcon />
         </SearchIconWrapper>
 
-        <Input ref={inputRef} onChangeText={setInputValue} onFocus={() => setIsOpen(true)} />
+        <Input
+          ref={inputRef}
+          onChangeText={setInputValue}
+          onFocus={() => setIsOpen(true)}
+          returnKeyType="search"
+        />
 
         {isOpen && (
           <ClearIcon

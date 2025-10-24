@@ -8,11 +8,9 @@ import {
   PanResponder,
   PanResponderInstance,
   Pressable,
-  SafeAreaView,
   ScrollView,
   View,
 } from 'react-native';
-
 import { useSelectedNode } from './SelectedNodeProvider';
 import useAnimatedValue from './useAnimatedValue';
 
@@ -98,51 +96,49 @@ export const MobileMenuDrawer = memo(
         onRequestClose={() => setMobileMenuOpen(false)}
       >
         <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
-          <SafeAreaView style={{ justifyContent: 'flex-end', flex: 1 }}>
-            <View style={{ flex: 1 }}>
-              <Pressable style={{ flex: 1 }} onPress={() => setMobileMenuOpen(false)}></Pressable>
+          <View style={{ flex: 1 }}>
+            <Pressable style={{ flex: 1 }} onPress={() => setMobileMenuOpen(false)}></Pressable>
+          </View>
+
+          <Animated.View
+            style={[
+              {
+                height: '65%',
+                borderTopColor: theme.appBorderColor,
+                borderTopWidth: 1,
+                borderStyle: 'solid',
+                backgroundColor: theme.background.content,
+                elevation: 8,
+              },
+              { transform: [{ translateY: dragY }] },
+            ]}
+          >
+            {/* Drag handle */}
+            <View
+              {...panResponder.panHandlers}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: theme.background.content,
+              }}
+            >
+              <View style={handleStyle} />
             </View>
 
-            <Animated.View
-              style={[
-                {
-                  height: '65%',
-                  borderTopColor: theme.appBorderColor,
-                  borderTopWidth: 1,
-                  borderStyle: 'solid',
-                  backgroundColor: theme.background.content,
-                  elevation: 8,
-                },
-                { transform: [{ translateY: dragY }] },
-              ]}
+            <ScrollView
+              ref={scrollRef}
+              keyboardShouldPersistTaps="handled"
+              style={{
+                flex: 1,
+                paddingBottom: 150,
+                alignSelf: 'flex-end',
+                width: '100%',
+                backgroundColor: theme.background.content,
+              }}
             >
-              {/* Drag handle */}
-              <View
-                {...panResponder.panHandlers}
-                style={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  backgroundColor: theme.background.content,
-                }}
-              >
-                <View style={handleStyle} />
-              </View>
-
-              <ScrollView
-                ref={scrollRef}
-                keyboardShouldPersistTaps="handled"
-                style={{
-                  flex: 1,
-                  paddingBottom: 150,
-                  alignSelf: 'flex-end',
-                  width: '100%',
-                  backgroundColor: theme.background.content,
-                }}
-              >
-                {children}
-              </ScrollView>
-            </Animated.View>
-          </SafeAreaView>
+              {children}
+            </ScrollView>
+          </Animated.View>
         </KeyboardAvoidingView>
       </Modal>
     );

@@ -11,15 +11,7 @@ import {
   useStyle,
 } from '@storybook/react-native-ui-common';
 import { ReactElement, ReactNode, useCallback, useRef, useState } from 'react';
-import {
-  Platform,
-  SafeAreaView,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-  ViewStyle,
-} from 'react-native';
+import { Platform, ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons } from 'storybook/manager-api';
 import { type API_IndexHash } from 'storybook/internal/types';
@@ -35,6 +27,7 @@ import {
   FullscreenIcon,
   MenuIcon,
 } from './icon/iconDataUris';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const desktopLogoContainer = {
   flexDirection: 'row',
@@ -65,9 +58,8 @@ const mobileMenuDrawerContentStyle = {
 } satisfies ViewStyle;
 
 export const LiteUI: SBUI = ({ storage, theme, storyHash, story, children }): ReactElement => (
-  <>
+  <SafeAreaProvider style={{ flex: 1 }}>
     <ThemeProvider theme={theme}>
-      {/* @ts-ignore something weird with story type */}
       <StorageProvider storage={storage}>
         <LayoutProvider>
           <Layout storyHash={storyHash} story={story}>
@@ -76,7 +68,7 @@ export const LiteUI: SBUI = ({ storage, theme, storyHash, story, children }): Re
         </LayoutProvider>
       </StorageProvider>
     </ThemeProvider>
-  </>
+  </SafeAreaProvider>
 );
 
 export const Layout = ({
@@ -91,6 +83,8 @@ export const Layout = ({
   const theme = useTheme();
 
   const { isDesktop } = useLayout();
+
+  const insets = useSafeAreaInsets();
 
   const [desktopSidebarOpen, setDesktopSidebarOpen] = useStoreBooleanState(
     'desktopSidebarState',
@@ -137,9 +131,16 @@ export const Layout = ({
     return {
       flex: 1,
       backgroundColor: theme.background.content,
-      paddingVertical: Platform.OS === 'android' ? 32 : 0,
+      paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
     };
   }, [theme.background.content, story?.parameters?.noSafeArea, isDesktop]);
+
+  const navContainerStyle = useStyle(
+    () => ({
+      paddingBottom: insets.bottom,
+    }),
+    [insets.bottom]
+  );
 
   const fullScreenButtonStyle = useStyle(
     () => ({
@@ -173,7 +174,7 @@ export const Layout = ({
   }, []);
 
   return (
-    <SafeAreaView style={containerStyle}>
+    <View style={containerStyle}>
       {isDesktop ? (
         <View style={desktopSidebarStyle}>
           {desktopSidebarOpen ? (
@@ -233,7 +234,7 @@ export const Layout = ({
       </View>
 
       {!uiHidden && !isDesktop ? (
-        <Container>
+        <Container style={navContainerStyle}>
           <Nav>
             <Button
               testID="mobile-menu-button"
@@ -278,7 +279,7 @@ export const Layout = ({
       )}
 
       {isDesktop ? null : <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />}
-    </SafeAreaView>
+    </View>
   );
 };
 
