@@ -34,11 +34,11 @@ module.exports = withStorybook(config, {
   // Use JavaScript instead of TypeScript for generated files - defaults to false
   useJs: false,
 
-  // Remove Storybook from bundle when the enabled flag is false
-  onDisabledRemoveStorybook: false,
-
   // Include doc tools for automatic args - defaults to true
   docTools: true,
+
+  // Use lite mode (mocks out default Storybook UI dependencies) - defaults to false
+  liteMode: false,
 
   // WebSocket server configuration - defaults to undefined
   websockets: {
@@ -53,8 +53,10 @@ module.exports = withStorybook(config, {
 #### `enabled` (boolean)
 
 - **Default**: `true`
-- **Purpose**: Controls whether Storybook specific metro configuration is applied
-- **Behavior**: When `false`, prevents generation of `storybook.requires` file and disabled storybook specific metro resolver logic
+- **Purpose**: Controls whether Storybook is included in your app bundle
+- **Behavior**:
+  - When `true`: Enables Storybook metro configuration and generates `storybook.requires` file
+  - When `false`: Removes all Storybook code from the bundle by replacing imports with empty modules
 
 #### `configPath` (string)
 
@@ -66,19 +68,22 @@ module.exports = withStorybook(config, {
 
 - **Default**: `false`
 - **Purpose**: Generate JavaScript files instead of TypeScript
-- **Note**: Useful for projects not using TypeScript
-
-#### `onDisabledRemoveStorybook` (boolean)
-
-- **Default**: `false`
-- **Purpose**: Completely remove Storybook code from production bundles when `enabled` is set to `false`
-- **Requirements**: Must be used with `enabled: false` to take effect, also make sure you don't attempt to import Storybook in your app code when disabled
+- **Note**: Useful for projects not using TypeScript. Generates `storybook.requires.js` instead of `storybook.requires.ts`
 
 #### `docTools` (boolean)
 
 - **Default**: `true`
 - **Purpose**: Include utilities for automatic arg extraction
 - **Related**: Works with `babel-plugin-react-docgen-typescript`
+
+#### `liteMode` (boolean)
+
+- **Default**: `false`
+- **Purpose**: Use lite mode to reduce bundle size by mocking out the default Storybook UI
+- **Benefits**: Removes dependencies like react-native-reanimated, reducing app bundle size
+- **Note**: Only affects the on-device UI components from `@storybook/react-native-ui`
+
+Use this when using @storybook/react-native-ui-lite instead of @storybook/react-native-ui.
 
 #### `websockets` (object)
 
@@ -112,7 +117,7 @@ The wrapper modifies Metro's resolver to:
 
 ### Removing Storybook from Production
 
-For production builds, completely remove Storybook code:
+For production builds, you can completely remove Storybook code by setting `enabled: false`:
 
 ```js
 // metro.config.js
@@ -120,11 +125,17 @@ const STORYBOOK_ENABLED = process.env.STORYBOOK_ENABLED === 'true';
 
 module.exports = withStorybook(config, {
   enabled: STORYBOOK_ENABLED,
-  onDisabledRemoveStorybook: true,
 });
 ```
 
-Should be used in conjunction with excluding Storybook imports in your app code otherwise metro could crash:
+When storybook is disabled the withStorybook wrapper will:
+
+- Replace all `@storybook/*` and `storybook/*` imports with empty modules
+- Stub out your Storybook config directory imports
+
+Note that if you try to render Storybook when it is disabled you will get a blank screen with a warning message.
+
+If you want to conditionally swap between your app and Storybook you can use the following pattern:
 
 ```tsx
 // App.tsx
@@ -138,6 +149,8 @@ if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true') {
 
 export default AppEntryPoint;
 ```
+
+Or alternatively put storybook in its own screen that you can only access when Storybook is enabled.
 
 ## Troubleshooting
 
@@ -155,5 +168,5 @@ export default AppEntryPoint;
    - For physical devices, use machine's IP instead of `localhost`
 
 3. **Production bundle includes Storybook**
-   - Ensure both `enabled: false` and `onDisabledRemoveStorybook: true`
-   - Conditionally import Storybook UI in your app code
+   - Set `enabled: false` in your metro config
+   - Conditionally import Storybook UI in your app code based on environment variables

@@ -111,6 +111,8 @@ export const SingleStoryComponents: Story = {
               parent: 'single',
               renderLabel: () => <Text>🔥 Single</Text>,
               importPath: './single.stories.js',
+              subtype: 'story',
+              exportName: 'Single',
             },
           },
           ...Object.keys(index).reduce((acc, key) => {

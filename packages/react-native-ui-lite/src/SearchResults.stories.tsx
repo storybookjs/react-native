@@ -30,6 +30,8 @@ export const Default: Story = {
           refId: 'storybook_internal',
           path: ['NestingExample', 'Message', 'bubble'],
           status: null,
+          subtype: 'story',
+          exportName: 'First',
         },
         refIndex: 46,
         matches: [
@@ -86,6 +88,8 @@ export const Default: Story = {
         refId: 'storybook_internal',
         path: ['NestingExample', 'Message', 'bubble'],
         status: null,
+        subtype: 'story',
+        exportName: 'First',
       },
       matches: [
         {

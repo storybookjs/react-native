@@ -322,7 +322,9 @@ module.exports = withStorybook(defaultConfig, {
 
 Type: `boolean`, default: `true`
 
-Determines whether the options specified are applied to the Metro config. This can be useful for project setups that use Metro both with and without Storybook and need to conditionally apply the options. In this example, it is made conditional using an environment variable:
+Controls whether Storybook is included in your app bundle. When `true`, enables Storybook metro configuration and generates the `storybook.requires` file. When `false`, removes all Storybook code from the bundle by replacing imports with empty modules.
+
+This is useful for conditionally including Storybook in development but excluding it from production builds:
 
 ```js
 // metro.config.js
@@ -332,17 +334,10 @@ const withStorybook = require('@storybook/react-native/metro/withStorybook');
 const defaultConfig = getDefaultConfig(__dirname);
 
 module.exports = withStorybook(defaultConfig, {
-  enabled: process.env.WITH_STORYBOOK,
+  enabled: process.env.STORYBOOK_ENABLED === 'true',
   // ... other options
 });
 ```
-
-#### onDisabledRemoveStorybook
-
-Type: `boolean`, default: `false`
-
-If onDisabledRemoveStorybook `true` and `enabled` is `false`, the storybook package will be removed from the build.
-This is useful if you want to remove storybook from your production build.
 
 #### useJs
 
@@ -355,6 +350,18 @@ Generates the `.rnstorybook/storybook.requires` file in JavaScript instead of Ty
 Type: `string`, default: `path.resolve(process.cwd(), './.rnstorybook')`
 
 The location of your Storybook configuration directory, which includes `main.ts` and other project-related files.
+
+#### docTools
+
+Type: `boolean`, default: `true`
+
+Whether to include doc tools in the storybook.requires file. Doc tools provide additional documentation features and work with `babel-plugin-react-docgen-typescript`.
+
+#### liteMode
+
+Type: `boolean`, default: `false`
+
+Whether to use lite mode for Storybook. In lite mode, the default Storybook UI is mocked out so you don't need to install all its dependencies like react-native-reanimated. This is useful for reducing bundle size and dependencies. Use this when using @storybook/react-native-ui-lite instead of @storybook/react-native-ui.
 
 ### websockets
 

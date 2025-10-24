@@ -75,9 +75,8 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  * @param options.useJs - Whether to use JavaScript files for Storybook configuration instead of TypeScript.
  *                       When true, generates storybook.requires.js instead of storybook.requires.ts.
  *                       Defaults to false.
- * @param options.removeStorybook - If enabled is false and this is true, attempts to remove
- *                                          storybook modules from the JavaScript bundle to reduce bundle size.
- *                                          Defaults to false.
+ * @param options.enabled - If false, attempts to remove storybook modules from the JavaScript
+ *                         bundle to reduce bundle size. Defaults to true.
  * @param options.docTools - Whether to include doc tools in the storybook.requires file.
  *                          Doc tools provide additional documentation features. Defaults to true.
  * @param options.liteMode - Whether to use lite mode for the storybook. In lite mode, the default
@@ -122,7 +121,7 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  *
  * const config = getDefaultConfig(__dirname);
  * module.exports = withStorybook(config, {
- *   removeStorybook: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED !== "true",
+ *   enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === "true",
  * });
  * ```
  */
