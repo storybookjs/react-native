@@ -1,4 +1,4 @@
-const { globToRegexp, serverRequire } = require('storybook/internal/common');
+const { globToRegexp } = require('storybook/internal/common');
 const path = require('path');
 const fs = require('fs');
 
@@ -18,12 +18,6 @@ const toRequireContext = (specifier) => {
   };
 };
 
-function requireUncached(module) {
-  delete require.cache[require.resolve(module)];
-
-  return serverRequire(module);
-}
-
 const supportedExtensions = ['js', 'jsx', 'ts', 'tsx', 'cjs', 'mjs'];
 
 function getFilePathExtension({ configPath }, fileName) {
@@ -36,18 +30,6 @@ function getFilePathExtension({ configPath }, fileName) {
   }
 
   return null;
-}
-
-function getMain({ configPath }) {
-  const fileExtension = getFilePathExtension({ configPath }, 'main');
-
-  if (fileExtension === null) {
-    throw new Error('main config file not found');
-  }
-
-  const mainPath = path.resolve(cwd, configPath, `main.${fileExtension}`);
-
-  return requireUncached(mainPath);
 }
 
 function ensureRelativePathHasDot(relativePath) {
@@ -105,9 +87,7 @@ function getAddonName(addon) {
 
 module.exports = {
   toRequireContext,
-  requireUncached,
   getFilePathExtension,
-  getMain,
   ensureRelativePathHasDot,
   getPreviewExists,
   resolveAddonFile,

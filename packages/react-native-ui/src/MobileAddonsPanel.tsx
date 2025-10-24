@@ -1,5 +1,5 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
-import { addons } from 'storybook/internal/manager-api';
+import { addons } from 'storybook/manager-api';
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { Addon_TypesEnum } from 'storybook/internal/types';
 import { forwardRef, useImperativeHandle, useMemo, useRef, useState } from 'react';

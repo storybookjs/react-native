@@ -20,9 +20,11 @@ defaultConfig.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 
-const { withStorybookConfig } = require('@storybook/react-native/metro/withStorybookConfig');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
-module.exports = withStorybookConfig(defaultConfig);
+module.exports = withStorybook(defaultConfig, {
+  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+});
 
 /* , {
   enabled: process.env.STORYBOOK_ENABLED === 'true',

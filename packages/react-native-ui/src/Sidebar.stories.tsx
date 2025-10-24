@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import type { IndexHash, State } from 'storybook/internal/manager-api';
+import type { IndexHash, State } from 'storybook/manager-api';
 import { Button, type RefType } from '@storybook/react-native-ui-common';
 import { Sidebar } from './Sidebar';
 import { DEFAULT_REF_ID } from './constants';

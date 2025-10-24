@@ -1,17 +1,23 @@
 # Migration
 
 - [Migration](#migration)
+  - [From version 9 to 10](#from-version-9-to-10)
+    - [Update Storybook dependencies to 10.x](#update-storybook-dependencies-to-10x)
+    - [Update your metro config](#update-your-metro-config)
+    - [Simplify your App.tsx](#simplify-your-apptsx)
+    - [Regenerate your requires file](#regenerate-your-requires-file)
+    - [Summary of breaking changes](#summary-of-breaking-changes)
   - [From version 8 to 9](#from-version-8-to-9)
     - [Update Storybook dependencies to 9.x](#update-storybook-dependencies-to-9x)
     - [Update your `.storybook` folder](#update-your-storybook-folder)
-    - [Regenerate your requires file](#regenerate-your-requires-file)
+    - [Regenerate your requires file](#regenerate-your-requires-file-1)
   - [From version 7.6.x to 8.3.x](#from-version-76x-to-83x)
     - [Dependencies](#dependencies)
-    - [Regenerate your requires file](#regenerate-your-requires-file)
-    - [Update your metro config](#update-your-metro-config)
+    - [Regenerate your requires file](#regenerate-your-requires-file-2)
+    - [Update your metro config](#update-your-metro-config-1)
   - [From version 6.5.x to 7.6.x](#from-version-65x-to-76x)
     - [Dependencies](#dependencies-1)
-    - [Regenerate your requires file](#regenerate-your-requires-file-1)
+    - [Regenerate your requires file](#regenerate-your-requires-file-3)
     - [Update `.storybook/index.js`](#update-storybookindexjs)
     - [Metro config](#metro-config)
       - [Expo](#expo)
@@ -25,7 +31,7 @@
   - [6.5.x to 7.6.x with storiesOf support](#65x-to-76x-with-storiesof-support)
     - [Update dependencies](#update-dependencies)
     - [Update your package.json scripts](#update-your-packagejson-scripts)
-    - [Regenerate your requires file](#regenerate-your-requires-file-2)
+    - [Regenerate your requires file](#regenerate-your-requires-file-4)
     - [Update `.storybook/index.js`](#update-storybookindexjs-1)
     - [Update your stories](#update-your-stories)
     - [Types](#types-1)
@@ -37,11 +43,163 @@
     - [Update your `index.js` file](#update-your-indexjs-file)
     - [Add a `main.js` and `preview.js`](#add-a-mainjs-and-previewjs)
     - [Scripts in package.json](#scripts-in-packagejson)
-    - [Update your metro config](#update-your-metro-config-1)
+    - [Update your metro config](#update-your-metro-config-2)
     - [Convert your stories to CSF](#convert-your-stories-to-csf)
     - [Theming](#theming)
     - [Test ids for tabs](#test-ids-for-tabs)
     - [The server](#the-server)
+
+## From version 9 to 10
+
+Version 10 brings Storybook React Native in sync with Storybook core v10, introducing improved Metro configuration and a simplified API.
+
+### Update Storybook dependencies to 10.x
+
+You need to update all Storybook dependencies to version 10.x. This includes:
+
+- `storybook` package (core)
+- `@storybook/react` package
+- `@storybook/react-native` package
+- All `@storybook/addon-ondevice-*` packages
+
+> Note: You can check the correct version by looking at the `peerDependencies`. Please refer to the [core Storybook migration guide](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-9x-to-1000) for more details on the breaking changes in Storybook core v10.
+
+**Example package.json after upgrade:**
+
+```json
+{
+  "devDependencies": {
+    "@storybook/react-native": "^10.0.0",
+    "@storybook/react": "^10.0.0",
+    "@storybook/addon-ondevice-controls": "^10.0.0",
+    "@storybook/addon-ondevice-actions": "^10.0.0",
+    "@storybook/addon-ondevice-backgrounds": "^10.0.0",
+    "@storybook/addon-ondevice-notes": "^10.0.0",
+    "storybook": "^10.0.0"
+  }
+}
+```
+
+### Update your metro config
+
+The `withStorybook` metro wrapper has been significantly simplified in v10. The key changes are:
+
+1. **Import path unified** - In v9, `withStorybookConfig` (from `metro/withStorybookConfig`) was a preview of the simplified API. In v10, this is now the standard behavior when importing `withStorybook` from `metro/withStorybook`
+2. **`onDisabledRemoveStorybook` is removed** - When `enabled: false`, Storybook is automatically removed from the bundle (no separate flag needed)
+3. **Simpler defaults** - Works out of the box with sensible defaults
+
+**Before (v9):**
+
+When using `withStorybook` with the old API:
+
+```js
+const withStorybook = require('@storybook/react-native/metro/withStorybook');
+
+module.exports = withStorybook(defaultConfig, {
+  enabled: process.env.STORYBOOK_ENABLED === 'true',
+  onDisabledRemoveStorybook: true, // This option no longer exists in v10
+  configPath: path.resolve(__dirname, './.rnstorybook'),
+});
+```
+
+**After (v10):**
+
+```js
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+
+// Basic usage - works out of the box with defaults
+module.exports = withStorybook(defaultConfig);
+
+// Or with options
+module.exports = withStorybook(defaultConfig, {
+  // When false, automatically removes Storybook from bundle
+  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+  configPath: path.resolve(__dirname, './.rnstorybook'),
+});
+```
+
+**Key improvements:**
+
+- `withStorybookConfig` functionality is now the default behavior of `withStorybook` (just change the import path)
+- When `enabled: false`, Storybook packages are automatically stubbed out (no need for `onDisabledRemoveStorybook`)
+- Default `configPath` is `./.rnstorybook`
+
+### Simplify your App.tsx (or Expo Router routes)
+
+In v10, you can now directly import and export Storybook without worrying about bundle size or conditional imports. The metro config automatically handles everything.
+
+**Before (v9):**
+
+You had to use conditional imports to avoid including Storybook in production bundles:
+
+```tsx
+// App.tsx
+let AppEntryPoint = App;
+
+if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true') {
+  // Conditional import to avoid bundling Storybook in production
+  AppEntryPoint = require('./.rnstorybook').default;
+}
+
+export default AppEntryPoint;
+```
+
+**After (v10):**
+
+```tsx
+// App.tsx
+export { default } from './.rnstorybook';
+```
+
+Or with Expo Router:
+
+```tsx
+// app/storybook.tsx
+export { default } from '../.rnstorybook';
+```
+
+That's it! You can now directly import Storybook anywhere without worrying about production bundles. The metro config (`enabled` flag) automatically handles bundle inclusion:
+
+- When `enabled: true` - Storybook is included in the bundle
+- When `enabled: false` - The `.rnstorybook` import is automatically stubbed out as an empty module, and all Storybook dependencies are removed
+
+**Key benefits:**
+
+- ✅ No more conditional imports or environment checks in your app code
+- ✅ Works seamlessly with Expo Router - just create a `/storybook` route
+- ✅ Simpler code with less boilerplate
+- ✅ Metro handles all the complexity of including/excluding Storybook
+
+### Regenerate your requires file
+
+After updating dependencies and configuration, regenerate your `.rnstorybook/storybook.requires.ts` file:
+
+```bash
+yarn storybook-generate
+```
+
+Or if you have the generate call in your metro config (recommended), just restart metro:
+
+```bash
+yarn start --reset-cache
+```
+
+### Summary of breaking changes
+
+1. **Metro config import path changed:**
+   - `withStorybookConfig` from `metro/withStorybookConfig` is removed
+   - Use `withStorybook` from `metro/withStorybook` instead (the simplified API is now standard)
+   - `onDisabledRemoveStorybook` option removed (automatic when `enabled: false`)
+
+2. **Default config folder:**
+   - Confirmed as `./.rnstorybook` (to avoid conflicts with web Storybook)
+
+3. **Storybook core updated to v10:**
+   - See [Storybook v10 migration guide](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-9x-to-1000) for core breaking changes
+
+4. **Simplified app entry:**
+   - Custom switcher components no longer needed for bundle optimization
+   - Metro config handles conditional inclusion automatically
 
 ## From version 8 to 9
 

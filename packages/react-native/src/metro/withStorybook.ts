@@ -30,11 +30,6 @@ interface WithStorybookOptions {
   configPath?: string;
 
   /**
-   * Whether Storybook is enabled. Defaults to true.
-   */
-  enabled?: boolean;
-
-  /**
    * WebSocket configuration for syncing storybook instances or sending events to storybook.
    */
   websockets?: WebsocketsOptions;
@@ -45,9 +40,9 @@ interface WithStorybookOptions {
   useJs?: boolean;
 
   /**
-   * If enabled is false and onDisabledRemoveStorybook is true, we will attempt to remove storybook from the js bundle.
+   * if false, we will attempt to remove storybook from the js bundle.
    */
-  onDisabledRemoveStorybook?: boolean;
+  enabled?: boolean;
 
   /**
    * Whether to include doc tools in the storybook.requires file. Defaults to true.
@@ -66,12 +61,32 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
 /**
  * Configures Metro bundler to work with Storybook in React Native.
  * This function wraps a Metro configuration to enable Storybook usage.
+ * This is intended to replace the withStorybook function in the future.
  *
- * @param config - The Metro bundler configuration to be modified.
+ * @param config - The Metro bundler configuration to be modified. This should be a valid Metro config object
+ *                 that includes resolver, transformer, and other Metro-specific options.
  * @param options - Options to customize the Storybook configuration.
- * @returns The modified Metro configuration.
+ * @param options.configPath - The path to the Storybook config folder. Defaults to './.rnstorybook'.
+ *                            This is where your main.js/ts and preview.js/ts files are located.
+ * @param options.websockets - WebSocket configuration for syncing storybook instances or sending events.
+ *                            When provided, creates a WebSocket server for real-time communication.
+ * @param options.websockets.port - The port WebSocket server will listen on. Defaults to 7007.
+ * @param options.websockets.host - The host WebSocket server will bind to. Defaults to 'localhost'.
+ * @param options.useJs - Whether to use JavaScript files for Storybook configuration instead of TypeScript.
+ *                       When true, generates storybook.requires.js instead of storybook.requires.ts.
+ *                       Defaults to false.
+ * @param options.enabled - If false, attempts to remove storybook modules from the JavaScript
+ *                         bundle to reduce bundle size. Defaults to true.
+ * @param options.docTools - Whether to include doc tools in the storybook.requires file.
+ *                          Doc tools provide additional documentation features. Defaults to true.
+ * @param options.liteMode - Whether to use lite mode for the storybook. In lite mode, the default
+ *                          storybook UI is mocked out so you don't need to install all its dependencies
+ *                          like reanimated etc. This is useful for reducing bundle size and dependencies.
+ *                          Defaults to false.
+ * @returns The modified Metro configuration with Storybook support enabled.
  *
  * @example
+ * ```javascript
  * const { getDefaultConfig } = require('expo/metro-config');
  * const withStorybook = require('@storybook/react-native/metro/withStorybook');
  * const path = require('path');
@@ -80,30 +95,51 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  * const config = getDefaultConfig(projectRoot);
  *
  * module.exports = withStorybook(config, {
- *   enabled: true,
  *   configPath: path.resolve(projectRoot, './.rnstorybook'),
  *   websockets: { port: 7007, host: 'localhost' },
  *   useJs: false,
  *   docTools: true,
- *   onDisabledRemoveStorybook: true,
+ *   liteMode: false,
  * });
+ * ```
+ *
+ * @example
+ * ```javascript
+ * // Minimal configuration
+ * const { getDefaultConfig } = require('expo/metro-config');
+ * const withStorybook = require('@storybook/react-native/metro/withStorybook');
+ *
+ * const config = getDefaultConfig(__dirname);
+ * module.exports = withStorybook(config);
+ * ```
+ *
+ * @example
+ * ```javascript
+ * // Disable Storybook in production
+ * const { getDefaultConfig } = require('expo/metro-config');
+ * const withStorybook = require('@storybook/react-native/metro/withStorybook');
+ *
+ * const config = getDefaultConfig(__dirname);
+ * module.exports = withStorybook(config, {
+ *   enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === "true",
+ * });
+ * ```
  */
-function withStorybook(
+export function withStorybook(
   config: MetroConfig,
   options: WithStorybookOptions = {
-    enabled: true,
     useJs: false,
-    onDisabledRemoveStorybook: false,
+    enabled: true,
     docTools: true,
     liteMode: false,
+    configPath: path.resolve(process.cwd(), './.rnstorybook'),
   }
 ): MetroConfig {
   const {
-    configPath,
-    enabled = true,
+    configPath = path.resolve(process.cwd(), './.rnstorybook'),
     websockets,
     useJs = false,
-    onDisabledRemoveStorybook = false,
+    enabled = true,
     docTools = true,
     liteMode = false,
   } = options;
@@ -117,29 +153,46 @@ function withStorybook(
   }
 
   if (!enabled) {
-    if (onDisabledRemoveStorybook) {
-      return {
-        ...config,
-        resolver: {
-          ...config.resolver,
-          resolveRequest: (context: any, moduleName: string, platform: string | null) => {
-            const resolveFunction: ResolveRequestFunction = config?.resolver?.resolveRequest
-              ? config.resolver.resolveRequest
-              : context.resolveRequest;
+    return {
+      ...config,
+      resolver: {
+        ...config.resolver,
+        resolveRequest: (context: any, moduleName: string, platform: string | null) => {
+          const resolveFunction: ResolveRequestFunction = config?.resolver?.resolveRequest
+            ? config.resolver.resolveRequest
+            : context.resolveRequest;
 
-            if (moduleName.startsWith('storybook') || moduleName.startsWith('@storybook')) {
-              return {
-                type: 'empty',
-              };
-            }
+          if (moduleName.startsWith('storybook') || moduleName.startsWith('@storybook')) {
+            return {
+              type: 'empty',
+            };
+          }
 
-            return resolveFunction(context, moduleName, platform);
-          },
+          // workaround for node imports in instrumentor.cjs
+          if (moduleName === 'tty' || moduleName === 'os') {
+            return {
+              type: 'empty',
+            };
+          }
+
+          const resolved = resolveFunction(context, moduleName, platform);
+
+          // TODO do i need to account for jsx/js/ts file
+          if (resolved.filePath?.includes?.(`${configPath}/index.tsx`)) {
+            return {
+              filePath: path.resolve(__dirname, '../stub.js'),
+              type: 'sourceFile',
+            };
+          }
+
+          if (resolved.filePath?.includes?.(configPath)) {
+            return { type: 'empty' };
+          }
+
+          return resolved;
         },
-      };
-    }
-
-    return config;
+      },
+    };
   }
 
   if (websockets) {
@@ -166,7 +219,7 @@ function withStorybook(
   }
 
   generate({
-    configPath: configPath ?? path.resolve(process.cwd(), './.rnstorybook'),
+    configPath,
     useJs,
     docTools,
   });
@@ -206,13 +259,14 @@ function withStorybook(
           };
         }
 
-        // workaround for node imports in instrumentor.cjs which shouldn't be loaded anyway
+        // workaround for node imports in instrumentor.cjs
         if (moduleName === 'tty' || moduleName === 'os') {
           return {
             type: 'empty',
           };
         }
 
+        // to remove any dependencies of the storybook ui related to @storybook/react-native-ui
         if (
           liteMode &&
           resolveResult?.filePath?.includes?.('@storybook/react-native-ui') &&
@@ -229,5 +283,3 @@ function withStorybook(
     },
   };
 }
-
-export = withStorybook;

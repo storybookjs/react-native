@@ -16,7 +16,7 @@ import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-nativ
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
-import { addons } from 'storybook/internal/manager-api';
+import { addons } from 'storybook/manager-api';
 import type { API_IndexHash } from 'storybook/internal/types';
 import { DEFAULT_REF_ID } from './constants';
 import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';

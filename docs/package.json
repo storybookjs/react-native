@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "9.1.4",
+  "version": "10.0.0-rc.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -44,6 +44,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=22.18.0"
   }
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { ComponentEntry, IndexHash } from 'storybook/internal/manager-api';
+import type { ComponentEntry, IndexHash } from 'storybook/manager-api';
 import type { StoryObj, Meta } from '@storybook/react';
 import { Tree } from './Tree';
 import type { Dataset } from '@storybook/react-native-ui-common';
@@ -105,8 +105,10 @@ export const SingleStoryComponents: Story = {
               args: {},
               argTypes: {},
               initialArgs: {},
+              exportName: 'Single',
               depth: 1,
               parent: 'single',
+              subtype: 'story',
               renderLabel: () => <Text>🔥 Single</Text>,
               importPath: './single.stories.js',
             },
