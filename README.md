@@ -83,23 +83,23 @@ Then wrap your config in the withStorybook function as seen below.
 
 ```js
 // metro.config.js
-const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
-/** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);
 
-module.exports = withStorybook(config, {
-  // Set to false to remove storybook specific options
-  // you can also use a env variable to set this
-  enabled: true,
-  // Path to your storybook config
-  configPath: path.resolve(__dirname, './.rnstorybook'),
-  // note that this is the default so you can the config path blank if you use .rnstorybook
+// For basic usage with all defaults, this is all you need
+module.exports = withStorybook(config);
 
-  // Optional websockets configuration
-  // Starts a websocket server on the specified port and host on metro start
+// Or customize the options
+module.exports = withStorybook(config, {
+  // When false, removes Storybook from bundle (useful for production)
+  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+
+  // Path to your storybook config (default: './.rnstorybook')
+  configPath: './.rnstorybook',
+
+  // Optional websockets configuration for syncing between devices
   // websockets: {
   //   port: 7007,
   //   host: 'localhost',
@@ -111,8 +111,8 @@ module.exports = withStorybook(config, {
 
 ```js
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
-const path = require('path');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+
 const defaultConfig = getDefaultConfig(__dirname);
 
 /**
@@ -126,15 +126,19 @@ const config = {};
 
 const finalConfig = mergeConfig(defaultConfig, config);
 
+// For basic usage with all defaults
+module.exports = withStorybook(finalConfig);
+
+// Or customize the options
 module.exports = withStorybook(finalConfig, {
-  // Set to false to remove storybook specific options
-  // you can also use a env variable to set this
-  enabled: true,
-  // Path to your storybook config
+  // When false, removes Storybook from bundle (useful for production)
+  enabled: process.env.STORYBOOK_ENABLED === 'true',
+
+  // Path to your storybook config (default: './.rnstorybook')
   configPath: path.resolve(__dirname, './.rnstorybook'),
   // note that this is the default so you can the config path blank if you use .rnstorybook
 
-  // Optional websockets configuration
+  // Optional websockets configuration for syncing between devices
   // Starts a websocket server on the specified port and host on metro start
   // websockets: {
   //   port: 7007,
@@ -328,13 +332,52 @@ For details of each ondevice addon you can see the readme:
 
 ## Hide/Show storybook
 
-Storybook on react native is a normal React Native component that can be used or hidden anywhere in your RN application based on your own logic.
+In v10, you have flexible options for integrating Storybook into your app:
 
-You can also create a separate app just for storybook that also works as a package for your visual components.
-Some have opted to toggle the storybook component by using a custom option in the react native developer menu.
+### Option 1: Direct export (simplest)
 
-- [Heres an approach for react native cli](https://dev.to/dannyhw/multiple-entry-points-for-react-native-storybook-4dkp)
-- [Heres an article about how you can do it in expo](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
+Just export Storybook directly. Control inclusion via the metro config `enabled` flag:
+
+```tsx
+// App.tsx
+export { default } from './.rnstorybook';
+```
+
+```js
+// metro.config.js
+module.exports = withStorybook(config, {
+  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+});
+```
+
+When `enabled: false`, Metro automatically removes Storybook from your bundle.
+
+### Option 2: Conditional rendering
+
+If you want to switch between your app and Storybook at runtime:
+
+```tsx
+// App.tsx
+import StorybookUI from './.rnstorybook';
+import { MyApp } from './MyApp';
+
+const isStorybook = process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true';
+
+export default function App() {
+  return isStorybook ? <StorybookUI /> : <MyApp />;
+}
+```
+
+### Option 3: Expo Router (recommended for Expo)
+
+Create a dedicated route for Storybook:
+
+```tsx
+// app/storybook.tsx
+export { default } from '../.rnstorybook';
+```
+
+Then navigate to `/storybook` in your app to view stories.
 
 ## withStorybook wrapper
 

@@ -4,7 +4,7 @@
   - [From version 9 to 10](#from-version-9-to-10)
     - [Update Storybook dependencies to 10.x](#update-storybook-dependencies-to-10x)
     - [Update your metro config](#update-your-metro-config)
-    - [Simplify your App.tsx](#simplify-your-apptsx)
+    - [Simplify your App.tsx (or Expo Router routes)](#simplify-your-apptsx-or-expo-router-routes)
     - [Regenerate your requires file](#regenerate-your-requires-file)
     - [Summary of breaking changes](#summary-of-breaking-changes)
   - [From version 8 to 9](#from-version-8-to-9)
@@ -130,7 +130,7 @@ In v10, you can now directly import and export Storybook without worrying about 
 
 **Before (v9):**
 
-You had to use conditional imports to avoid including Storybook in production bundles:
+You couldn't safely import Storybook at the top level because it would be included in your production bundle, even when disabled. Then even if you used the onDisabledRemoveStorybook option you would still need to conditionally import Storybook in your app code to not cause a crash.
 
 ```tsx
 // App.tsx
@@ -146,29 +146,51 @@ export default AppEntryPoint;
 
 **After (v10):**
 
+Now you can safely import Storybook at the top level - metro will automatically remove it when `enabled: false`:
+
 ```tsx
 // App.tsx
-export { default } from './.rnstorybook';
+import StorybookUI from './.rnstorybook'; // ✅ Safe! Metro stubs this out when enabled: false
+import { Text, View } from 'react-native';
+
+const isStorybook = process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true';
+
+// this could be your app entrypoint
+const AppComponent = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Hello World</Text>
+    </View>
+  );
+};
+
+export default function App() {
+  return isStorybook ? <StorybookUI /> : <AppComponent />;
+}
 ```
 
-Or with Expo Router:
+The key difference: the top-level `import` is now safe! Metro automatically stubs out the `.rnstorybook` import when `enabled: false`, removing all Storybook code from your production bundle.
+
+Or even simpler, with Expo Router, you can create a dedicated route and now not worry about conditional inline requires.
 
 ```tsx
 // app/storybook.tsx
 export { default } from '../.rnstorybook';
 ```
 
-That's it! You can now directly import Storybook anywhere without worrying about production bundles. The metro config (`enabled` flag) automatically handles bundle inclusion:
+**How it works:**
+
+The metro config (`enabled` flag) automatically handles bundle inclusion:
 
 - When `enabled: true` - Storybook is included in the bundle
 - When `enabled: false` - The `.rnstorybook` import is automatically stubbed out as an empty module, and all Storybook dependencies are removed
 
 **Key benefits:**
 
-- ✅ No more conditional imports or environment checks in your app code
+- ✅ Import Storybook anywhere without bundle size concerns
 - ✅ Works seamlessly with Expo Router - just create a `/storybook` route
-- ✅ Simpler code with less boilerplate
-- ✅ Metro handles all the complexity of including/excluding Storybook
+- ✅ No more worrying about top-level imports bloating your production bundle
+- ✅ Metro handles all the complexity automatically
 
 ### Regenerate your requires file
 
