@@ -2,12 +2,12 @@
 
 A new docs site is being built for Storybook for React Native, you can find it at https://storybookjs.github.io/react-native/docs/intro/.
 
-> [!IMPORTANT]  
-> This readme is for v9, for v8 docs see the [v8.6 docs](https://github.com/storybookjs/react-native/tree/v8.6.0-stable).
+> [!IMPORTANT]
+> This readme is for v10, for v9 docs see the [v9.1 docs](https://github.com/storybookjs/react-native/tree/v9.1.4).
 
 With Storybook for React Native you can design and develop individual React Native components without running your app.
 
-If you are migrating from 8 to 9 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-8-to-9)
+If you are migrating from 9 to 10 you can find the migration guide [here](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#from-version-9-to-10)
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 

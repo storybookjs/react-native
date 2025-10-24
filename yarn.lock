@@ -7829,7 +7829,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-    storybook: ">=10 || 10.0.0-beta.0 || ^10"
+    storybook: ">=10 || 10.0.0-rc.1 || ^10"
   languageName: unknown
   linkType: soft
 
@@ -7842,7 +7842,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-    storybook: ">=10 || 10.0.0-beta.0 || ^10"
+    storybook: ">=10 || 10.0.0-rc.1 || ^10"
   languageName: unknown
   linkType: soft
 
@@ -7864,7 +7864,7 @@ __metadata:
     "@react-native-community/slider": "*"
     react: "*"
     react-native: "*"
-    storybook: ">=10 || 10.0.0-beta.0 || ^10"
+    storybook: ">=10 || 10.0.0-rc.1 || ^10"
   peerDependenciesMeta:
     "@gorhom/bottom-sheet":
       optional: true
@@ -7882,7 +7882,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-    storybook: ">=10 || 10.0.0-beta.0 || ^10"
+    storybook: ">=10 || 10.0.0-rc.1 || ^10"
   languageName: unknown
   linkType: soft
 
@@ -7996,7 +7996,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: ">=0.57.0"
-    storybook: ">=10 || 10.0.0-beta.0 || ^10"
+    storybook: ">=10 || 10.0.0-rc.1 || ^10"
   languageName: unknown
   linkType: soft
 
@@ -8023,7 +8023,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: ">=0.57.0"
-    storybook: ">=10 || 10.0.0-beta.0 || ^10"
+    storybook: ">=10 || 10.0.0-rc.1 || ^10"
   languageName: unknown
   linkType: soft
 
@@ -8055,7 +8055,7 @@ __metadata:
     react-native-reanimated: ">=3"
     react-native-safe-area-context: "*"
     react-native-svg: ">=14"
-    storybook: ">=10 || 10.0.0-beta.0 || ^10"
+    storybook: ">=10 || 10.0.0-rc.1 || ^10"
   languageName: unknown
   linkType: soft
 
@@ -8118,7 +8118,7 @@ __metadata:
     react-native-gesture-handler: ">=2"
     react-native-reanimated: ">=2"
     react-native-safe-area-context: "*"
-    storybook: ">=10 || 10.0.0-beta.0 || ^10"
+    storybook: ">=10 || 10.0.0-rc.1 || ^10"
   peerDependenciesMeta:
     "@gorhom/bottom-sheet":
       optional: true

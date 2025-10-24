@@ -70,7 +70,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": ">=0.57.0",
-    "storybook": ">=10 || 10.0.0-beta.0 || ^10"
+    "storybook": ">=10 || 10.0.0-rc.1 || ^10"
   },
   "engines": {
     "node": ">=20.0.0"

@@ -7,7 +7,7 @@ keywords: [react native, storybook, getting started, installation, setup, expo, 
 # Getting started
 
 There are a few different ways to get started, the main recommendation is to use the CLI init.
-This guide is intended for v9 of storybook.
+This guide is intended for v10 of storybook. For v9 docs see the [v9.1 docs](https://github.com/storybookjs/react-native/tree/v9.1.4).
 
 React Native Storybook works with both plain React Native and Expo but examples are using Expo for brevity since Expo is officially recommended by Meta. For plain React Native projects there should be minimal differences.
 
