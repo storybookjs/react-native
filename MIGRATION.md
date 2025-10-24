@@ -84,16 +84,25 @@ You need to update all Storybook dependencies to version 10.x. This includes:
 
 The `withStorybook` metro wrapper has been significantly simplified in v10. The key changes are:
 
-1. **Import path unified** - In v9, `withStorybookConfig` (from `metro/withStorybookConfig`) was a preview of the simplified API. In v10, this is now the standard behavior when importing `withStorybook` from `metro/withStorybook`
-2. **`onDisabledRemoveStorybook` is removed** - When `enabled: false`, Storybook is automatically removed from the bundle (no separate flag needed)
-3. **Simpler defaults** - Works out of the box with sensible defaults
+1. **BREAKING: Named import required** - `withStorybook` is now a named export instead of a default export
+2. **Import path unified** - In v9, `withStorybookConfig` (from `metro/withStorybookConfig`) was a preview of the simplified API. In v10, this is now the standard behavior when importing `withStorybook` from `metro/withStorybook`
+3. **`onDisabledRemoveStorybook` is removed** - When `enabled: false`, Storybook is automatically removed from the bundle (no separate flag needed)
+4. **Simpler defaults** - Works out of the box with sensible defaults
 
 **Before (v9):**
 
-When using `withStorybook` with the old API:
+If you were using the preview `withStorybookConfig` (recommended approach in v9):
 
 ```js
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybookConfig } = require('@storybook/react-native/metro/withStorybookConfig');
+
+module.exports = withStorybookConfig(defaultConfig);
+```
+
+Or if you were using `withStorybook` with the old API (default export):
+
+```js
+const withStorybook = require('@storybook/react-native/metro/withStorybook'); // ❌ Default export
 
 module.exports = withStorybook(defaultConfig, {
   enabled: process.env.STORYBOOK_ENABLED === 'true',
@@ -105,7 +114,7 @@ module.exports = withStorybook(defaultConfig, {
 **After (v10):**
 
 ```js
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook'); // ✅ Named export
 
 // Basic usage - works out of the box with defaults
 module.exports = withStorybook(defaultConfig);
@@ -120,7 +129,8 @@ module.exports = withStorybook(defaultConfig, {
 
 **Key improvements:**
 
-- `withStorybookConfig` functionality is now the default behavior of `withStorybook` (just change the import path)
+- **BREAKING:** Must use named import: `const { withStorybook } = require(...)` instead of default import
+- `withStorybookConfig` functionality is now the default behavior of `withStorybook`
 - When `enabled: false`, Storybook packages are automatically stubbed out (no need for `onDisabledRemoveStorybook`)
 - Default `configPath` is `./.rnstorybook`
 
@@ -208,7 +218,8 @@ yarn start --reset-cache
 
 ### Summary of breaking changes
 
-1. **Metro config import path changed:**
+1. **Metro config API changes:**
+   - **BREAKING:** `withStorybook` is now a named export - use `const { withStorybook } = require(...)` instead of default import
    - `withStorybookConfig` from `metro/withStorybookConfig` is removed
    - Use `withStorybook` from `metro/withStorybook` instead (the simplified API is now standard)
    - `onDisabledRemoveStorybook` option removed (automatic when `enabled: false`)
