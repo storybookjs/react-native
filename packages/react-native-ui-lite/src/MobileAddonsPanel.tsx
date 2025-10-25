@@ -1,12 +1,11 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
-import { IconButton } from '@storybook/react-native-ui-common';
+import { IconButton, useStyle } from '@storybook/react-native-ui-common';
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useState } from 'react';
 import {
   Animated,
   Easing,
   Keyboard,
   Platform,
-  SafeAreaView,
   ScrollView,
   StyleProp,
   Text,
@@ -18,6 +17,7 @@ import { addons } from 'storybook/manager-api';
 import { Addon_TypesEnum } from 'storybook/internal/types';
 import { CloseIcon } from './icon/iconDataUris';
 import useAnimatedValue from './useAnimatedValue';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
@@ -110,7 +110,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
           transform: [{ translateY: positionBottomAnimation }],
         }}
       >
-        <SafeAreaView
+        <View
           style={{
             justifyContent: 'flex-end',
           }}
@@ -132,7 +132,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
               storyId={storyId}
             />
           </View>
-        </SafeAreaView>
+        </View>
       </Animated.View>
     );
   }
@@ -170,14 +170,11 @@ const centeredStyle = {
   justifyContent: 'center',
 } satisfies StyleProp<ViewStyle>;
 
-const scrollContentContainerStyle = {
-  paddingBottom: 16,
-} satisfies StyleProp<ViewStyle>;
 const hitSlop = { top: 10, right: 10, bottom: 10, left: 10 };
 
 export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId?: string }) => {
   const panels = addons.getElements(Addon_TypesEnum.PANEL);
-
+  const insets = useSafeAreaInsets();
   const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
 
   const panel = useMemo(() => {
@@ -199,6 +196,13 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
 
     return panels[addonSelected].render({ active: true });
   }, [addonSelected, panels, storyId]);
+
+  const scrollContentContainerStyle = useStyle(
+    () => ({
+      paddingBottom: insets.bottom + 16,
+    }),
+    [insets]
+  );
 
   return (
     <View style={addonsTabsContainerStyle}>
