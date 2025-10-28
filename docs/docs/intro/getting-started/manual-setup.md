@@ -93,7 +93,7 @@ Update `metro.config.js`:
 
 ```js
 const { getDefaultConfig } = require('expo/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 
@@ -104,7 +104,7 @@ For React Native CLI projects:
 
 ```js
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 

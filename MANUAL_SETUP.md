@@ -128,7 +128,7 @@ Then set `transformer.unstable_allowRequireContext` to true
 
 ```js
 const { getDefaultConfig } = require('expo/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 
@@ -139,7 +139,7 @@ module.exports = withStorybook(defaultConfig);
 
 ```js
 const { getDefaultConfig } = require('@react-native/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 

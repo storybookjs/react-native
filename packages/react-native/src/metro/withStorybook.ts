@@ -88,7 +88,7 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  * @example
  * ```javascript
  * const { getDefaultConfig } = require('expo/metro-config');
- * const withStorybook = require('@storybook/react-native/metro/withStorybook');
+ * const {withStorybook} = require('@storybook/react-native/metro/withStorybook');
  * const path = require('path');
  *
  * const projectRoot = __dirname;
@@ -107,7 +107,7 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  * ```javascript
  * // Minimal configuration
  * const { getDefaultConfig } = require('expo/metro-config');
- * const withStorybook = require('@storybook/react-native/metro/withStorybook');
+ * const {withStorybook} = require('@storybook/react-native/metro/withStorybook');
  *
  * const config = getDefaultConfig(__dirname);
  * module.exports = withStorybook(config);
@@ -117,7 +117,7 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  * ```javascript
  * // Disable Storybook in production
  * const { getDefaultConfig } = require('expo/metro-config');
- * const withStorybook = require('@storybook/react-native/metro/withStorybook');
+ * const {withStorybook} = require('@storybook/react-native/metro/withStorybook');
  *
  * const config = getDefaultConfig(__dirname);
  * module.exports = withStorybook(config, {

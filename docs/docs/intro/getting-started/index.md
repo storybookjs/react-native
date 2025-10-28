@@ -36,7 +36,7 @@ If you have other config wrapper functions like `withNativeWind` you will want t
 ```js
 // metro.config.js
 const { getDefaultConfig } = require('expo/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook'); // <-- add this
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook'); // <-- add this
 
 /** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);

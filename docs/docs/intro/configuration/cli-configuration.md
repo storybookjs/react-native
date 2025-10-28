@@ -155,7 +155,7 @@ The `withStorybook` Metro wrapper automatically runs story generation:
 
 ```js
 // metro.config.js
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 module.exports = withStorybook(config, {
   configPath: './.rnstorybook', // Must match CLI --config-path

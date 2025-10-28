@@ -28,7 +28,7 @@ Then update your `metro.config.js` file to include the Storybook wrapper:
 
 ```js
 const { getDefaultConfig } = require('expo/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 /** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);

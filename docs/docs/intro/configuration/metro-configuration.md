@@ -10,7 +10,7 @@ The `withStorybook` function is a Metro configuration wrapper that enables Story
 
 ```js
 const { getDefaultConfig } = require('expo/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 const config = getDefaultConfig(__dirname);
 

@@ -171,7 +171,7 @@ npx expo@latest customize metro.config.js
 copy the metro config
 
 ```js
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 module.exports = withStorybook(config);
 ```
 
@@ -386,7 +386,7 @@ Then navigate to `/storybook` in your app to view stories.
 ```js
 // metro.config.js
 const { getDefaultConfig } = require('expo/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 
@@ -409,7 +409,7 @@ This is useful for conditionally including Storybook in development but excludin
 ```js
 // metro.config.js
 const { getDefaultConfig } = require('expo/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 

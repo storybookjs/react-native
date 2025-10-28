@@ -34,7 +34,7 @@ const StorybookUIRoot = view.getStorybookUI({
 
 ```js
 // metro.config.js
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 module.exports = withStorybook(config, {
   websockets: {
