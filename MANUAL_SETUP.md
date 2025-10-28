@@ -70,7 +70,7 @@ export default main;
 ### .rnstorybook/preview.tsx
 
 ```ts
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-native';
 
 const preview: Preview = {
   parameters: {},
@@ -153,7 +153,7 @@ In the `main.ts` we created the path was set as `../components/\*_/_.stories.?(t
 Create a file called `Button.stories.tsx` in the components folder.
 
 ```tsx
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-native';
 import { Button } from 'react-native';
 
 const meta = {

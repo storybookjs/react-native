@@ -120,7 +120,7 @@ export default main;
 Global decorators and parameters:
 
 ```typescript
-import { Preview } from '@storybook/react';
+import { Preview } from '@storybook/react-native';
 
 const preview: Preview = {
   decorators: [

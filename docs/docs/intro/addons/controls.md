@@ -291,7 +291,7 @@ export default {
 ### Complete Story with Multiple Control Types
 
 ```typescript
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-native';
 import { MyComponent } from './MyComponent';
 
 const meta = {

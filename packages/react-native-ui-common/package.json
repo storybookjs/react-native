@@ -57,7 +57,7 @@
     "typescript": "~5.9.2"
   },
   "dependencies": {
-    "@storybook/react": "10.0.0",
+    "@storybook/react": "^10.0.0",
     "@storybook/react-native-theming": "^10.0.0-rc.2",
     "es-toolkit": "^1.38.0",
     "fuse.js": "^7.0.0",
@@ -69,7 +69,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": ">=0.57.0",
-    "storybook": ">=10 || 10.0.0-rc.1 || ^10"
+    "storybook": ">=10 || ^10"
   },
   "engines": {
     "node": ">=20.0.0"

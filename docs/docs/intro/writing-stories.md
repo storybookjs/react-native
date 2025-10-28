@@ -31,7 +31,7 @@ The default export metadata controls how Storybook lists your stories and provid
 
 ```tsx
 // Button.stories.tsx
-import type { Meta } from '@storybook/react';
+import type { Meta } from '@storybook/react-native';
 
 import { Button } from './Button';
 
@@ -47,7 +47,7 @@ export default meta;
 Use the named exports of a CSF file to define your component’s stories. We recommend you use UpperCamelCase for your story exports. Here’s how to render Button in the “primary” state and export a story called Primary.
 
 ```tsx
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-native';
 
 import { Button } from './Button';
 
@@ -72,7 +72,7 @@ A story is an object that describes how to render a component. You can have mult
 
 ```tsx
 // Button.stories.tsx
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-native';
 
 import { Button } from './Button';
 
@@ -141,7 +141,7 @@ A simple example is adding padding to a component’s stories. Accomplish this u
 
 ```tsx
 // Button.stories.tsx
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-native';
 
 import { View } from 'react-native';
 import { Button } from './Button';

@@ -194,7 +194,7 @@ https://www.youtube.com/watch?v=egBqrYg0AIg
 In storybook we use a syntax called CSF that looks like this:
 
 ```tsx
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-native';
 import { MyButton } from './Button';
 
 const meta = {
@@ -263,7 +263,7 @@ For global decorators and parameters, you can add them to `preview.tsx` inside y
 
 ```tsx
 // .rnstorybook/preview.tsx
-import type { Preview } from '@storybook/react';
+import type {
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 const preview: Preview = {

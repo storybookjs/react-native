@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 
 ```typescript
 // components/TextInput/TextInput.stories.tsx
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-native';
 import { TextInput } from './TextInput';
 
 const meta = {

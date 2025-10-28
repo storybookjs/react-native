@@ -59,7 +59,7 @@ export default main;
 The `preview.tsx` file configures the story rendering environment and global parameters.
 
 ```typescript
-import { Preview } from '@storybook/react';
+import { Preview } from '@storybook/react-native';
 import { View } from 'react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 

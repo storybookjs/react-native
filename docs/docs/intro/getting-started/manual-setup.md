@@ -51,7 +51,7 @@ export default main;
 In `preview.tsx`, set up any decorators or parameters:
 
 ```tsx
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-native';
 
 const preview: Preview = {
   parameters: {},
