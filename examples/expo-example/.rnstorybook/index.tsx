@@ -16,7 +16,7 @@ const StorybookUIRoot = view.getStorybookUI({
   host: 'localhost',
   port: 7007,
 
-  CustomUIComponent: LiteUI,
+  // CustomUIComponent: LiteUI,
   // CustomUIComponent: isScreenshotTesting
   //   ? ({ children, story }) => {
   //       return (
