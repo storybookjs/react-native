@@ -15053,7 +15053,6 @@ __metadata:
   resolution: "expo-example@workspace:examples/expo-example"
   dependencies:
     "@babel/core": "npm:^7.26.0"
-    "@babel/plugin-transform-class-static-block": "npm:^7.27.1"
     "@expo/metro-runtime": "npm:~6.1.2"
     "@gorhom/bottom-sheet": "npm:^5.2.6"
     "@react-native-async-storage/async-storage": "npm:2.2.0"
@@ -15066,7 +15065,6 @@ __metadata:
     "@storybook/addon-react-native-server": "npm:^1.0.1"
     "@storybook/react": "npm:^10.0.1"
     "@storybook/react-native": "npm:^10.0.0"
-    "@storybook/react-native-theming": "npm:^10.0.0"
     "@storybook/react-native-ui-lite": "npm:^10.0.0"
     "@storybook/react-native-web-vite": "npm:^10.0.1"
     "@testing-library/react-native": "npm:14.0.0-alpha.1"
