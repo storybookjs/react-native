@@ -45,19 +45,20 @@
     "repo:lint": "sherif -r unsync-similar-dependencies",
     "repo:fix": "sherif --fix -r unsync-similar-dependencies",
     "format:check": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "format:fix": "prettier --write .",
+    "update-storybook-deps": "node scripts/update-external-storybook-deps.mts"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^3.8.1",
-    "cross-env": "^10.0.0",
-    "eslint": "^9.35.0",
+    "@docusaurus/eslint-plugin": "^3.9.2",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.38.0",
     "eslint-config-expo": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-compiler": "^19.1.0-rc.2",
-    "lerna": "^8.2.3",
+    "lerna": "^9.0.0",
     "prettier": "^3.6.2",
-    "sherif": "^1.6.1",
-    "typescript": "~5.9.2"
+    "sherif": "^1.7.0",
+    "typescript": "~5.9.3"
   },
   "resolutions": {
     "react-docgen-typescript": "2.2.2",

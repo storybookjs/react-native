@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@emotion/native": "^11.11.0",
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.14.0",
     "tsup": "^8.5.0"
   },
   "peerDependencies": {
