@@ -11,7 +11,7 @@ import {
   useStyle,
 } from '@storybook/react-native-ui-common';
 import { ReactElement, ReactNode, useCallback, useRef, useState } from 'react';
-import { Platform, ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import { addons } from 'storybook/manager-api';
 import { type API_IndexHash } from 'storybook/internal/types';
@@ -145,7 +145,7 @@ export const Layout = ({
   const fullScreenButtonStyle = useStyle(
     () => ({
       position: 'absolute',
-      bottom: uiHidden ? 56 : 16,
+      bottom: uiHidden ? insets.bottom + 56 : 16,
       right: 16,
       backgroundColor: theme.background.content,
       padding: 4,

@@ -1,15 +1,26 @@
 import { useTheme } from '@storybook/react-native-theming';
-import { forwardRef, memo, ReactNode, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import {
+  forwardRef,
+  memo,
+  ReactNode,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {
   Animated,
   Keyboard,
-  KeyboardAvoidingView,
+  useWindowDimensions,
   Modal,
   PanResponder,
   PanResponderInstance,
   Pressable,
   ScrollView,
   View,
+  KeyboardEventListener,
+  Platform,
 } from 'react-native';
 import { useSelectedNode } from './SelectedNodeProvider';
 import useAnimatedValue from './useAnimatedValue';
@@ -22,11 +33,73 @@ export interface MobileMenuDrawerRef {
   setMobileMenuOpen: (isOpen: boolean) => void;
 }
 
+export const useAnimatedModalHeight = () => {
+  const { height } = useWindowDimensions();
+  const animatedHeight = useAnimatedValue(0.65 * height);
+
+  useEffect(() => {
+    const modalHeight = 0.65 * height;
+    const maxModalHeight = 0.85 * height;
+
+    const expand = (duration: number = 250) =>
+      Animated.timing(animatedHeight, {
+        toValue: maxModalHeight,
+        duration,
+        useNativeDriver: false,
+      }).start();
+
+    const collapse = (duration: number = 250) =>
+      Animated.timing(animatedHeight, {
+        toValue: modalHeight,
+        duration,
+        useNativeDriver: false,
+      }).start();
+
+    const handleKeyboardWillShow: KeyboardEventListener = (e) => {
+      if (Platform.OS === 'ios') {
+        expand(e.duration);
+      }
+    };
+
+    const handleKeyboardDidShow: KeyboardEventListener = (e) => {
+      if (Platform.OS === 'android') {
+        expand();
+      }
+    };
+
+    const handleKeyboardWillHide: KeyboardEventListener = (e) => {
+      if (Platform.OS === 'ios') {
+        collapse(e.duration);
+      }
+    };
+
+    const handleKeyboardDidHide: KeyboardEventListener = (e) => {
+      if (Platform.OS === 'android') {
+        collapse();
+      }
+    };
+
+    const subscriptions = [
+      Keyboard.addListener('keyboardWillShow', handleKeyboardWillShow),
+      Keyboard.addListener('keyboardDidShow', handleKeyboardDidShow),
+      Keyboard.addListener('keyboardWillHide', handleKeyboardWillHide),
+      Keyboard.addListener('keyboardDidHide', handleKeyboardDidHide),
+    ];
+
+    return () => {
+      subscriptions.forEach((subscription) => subscription.remove());
+    };
+  }, [animatedHeight, height]);
+
+  return animatedHeight;
+};
+
 export const MobileMenuDrawer = memo(
   forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(({ children }, ref) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { scrollToSelectedNode, scrollRef } = useSelectedNode();
     const theme = useTheme();
+    const animatedHeight = useAnimatedModalHeight();
 
     // Create a reference for the drag handle animation
     const dragY = useAnimatedValue(0);
@@ -95,51 +168,55 @@ export const MobileMenuDrawer = memo(
         statusBarTranslucent
         onRequestClose={() => setMobileMenuOpen(false)}
       >
-        <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
+        <Animated.View style={{ flex: 1 }}>
           <View style={{ flex: 1 }}>
             <Pressable style={{ flex: 1 }} onPress={() => setMobileMenuOpen(false)}></Pressable>
           </View>
 
           <Animated.View
-            style={[
-              {
-                height: '65%',
-                borderTopColor: theme.appBorderColor,
-                borderTopWidth: 1,
-                borderStyle: 'solid',
-                backgroundColor: theme.background.content,
-                elevation: 8,
-              },
-              { transform: [{ translateY: dragY }] },
-            ]}
+            style={{ backgroundColor: theme.background.content, height: animatedHeight }}
           >
-            {/* Drag handle */}
-            <View
-              {...panResponder.panHandlers}
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: theme.background.content,
-              }}
+            <Animated.View
+              style={[
+                {
+                  flex: 1,
+                  borderTopColor: theme.appBorderColor,
+                  borderTopWidth: 1,
+                  borderStyle: 'solid',
+                  backgroundColor: theme.background.content,
+                  elevation: 8,
+                },
+                { transform: [{ translateY: dragY }] },
+              ]}
             >
-              <View style={handleStyle} />
-            </View>
+              {/* Drag handle */}
+              <View
+                {...panResponder.panHandlers}
+                style={{
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: theme.background.content,
+                }}
+              >
+                <View style={handleStyle} />
+              </View>
 
-            <ScrollView
-              ref={scrollRef}
-              keyboardShouldPersistTaps="handled"
-              style={{
-                flex: 1,
-                paddingBottom: 150,
-                alignSelf: 'flex-end',
-                width: '100%',
-                backgroundColor: theme.background.content,
-              }}
-            >
-              {children}
-            </ScrollView>
+              <ScrollView
+                ref={scrollRef}
+                keyboardShouldPersistTaps="handled"
+                style={{
+                  flex: 1,
+                  paddingBottom: 150,
+                  alignSelf: 'flex-end',
+                  width: '100%',
+                  backgroundColor: theme.background.content,
+                }}
+              >
+                {children}
+              </ScrollView>
+            </Animated.View>
           </Animated.View>
-        </KeyboardAvoidingView>
+        </Animated.View>
       </Modal>
     );
   })
