@@ -2,7 +2,7 @@ import { styled, useTheme } from '@storybook/react-native-theming';
 
 import React, { ComponentProps, FC, forwardRef, useMemo } from 'react';
 import { transparentize } from 'polished';
-import { Platform, View } from 'react-native';
+import { View } from 'react-native';
 import { CollapseIcon, ComponentIcon, GroupIcon, StoryIcon } from './icon/iconDataUris';
 
 export interface NodeProps {
