@@ -1,6 +1,15 @@
 // NOTE This is adapted from react-native-modal-selector https://github.com/peacechen/react-native-modal-selector/blob/master/index.js
 
-import { useState, useCallback, useRef, ReactNode, ComponentType, useMemo } from 'react';
+import { Portal } from '@gorhom/portal';
+import {
+  useState,
+  useCallback,
+  useRef,
+  ReactNode,
+  ComponentType,
+  useMemo,
+  useImperativeHandle,
+} from 'react';
 
 import {
   View,
@@ -15,6 +24,8 @@ import {
   TextStyle,
   StyleProp,
   ViewProps,
+  ModalProps,
+  Platform,
 } from 'react-native';
 
 const PADDING = 8;
@@ -278,7 +289,6 @@ export const SelectModal = ({
     const initialItem = data.find((item) => String(keyExtractor(item)) === String(initValue));
     return initialItem ? [initialItem] : [];
   });
-  const modalRef = useRef<Modal>(null);
 
   const selectedItemsMap = useMemo(() => {
     if (multiselect) {
@@ -584,17 +594,17 @@ export const SelectModal = ({
 
   return (
     <View style={style} {...passThruProps}>
-      <Modal
+      <ModalPortal
         transparent
-        ref={modalRef}
         supportedOrientations={supportedOrientations}
         visible={modalVisible}
         onRequestClose={close}
         animationType={animationType}
         onDismiss={() => selectedItems.length > 0 && onChange?.(selectedItems)}
+        usePortal={Platform.OS === 'macos'}
       >
         {renderOptionList()}
-      </Modal>
+      </ModalPortal>
 
       {customSelector || (
         <TouchableOpacity
@@ -612,6 +622,32 @@ export const SelectModal = ({
         </TouchableOpacity>
       )}
     </View>
+  );
+};
+
+const ModalPortal = ({
+  children,
+  visible,
+  usePortal,
+
+  ...props
+}: ModalProps & { usePortal?: boolean }) => {
+  if (!usePortal) {
+    return (
+      <Modal visible={visible} {...props}>
+        {children}
+      </Modal>
+    );
+  }
+
+  if (!visible) return null;
+
+  return (
+    <Portal hostName="storybook-lite-ui-root">
+      <View style={{ flex: 1, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
+        {children}
+      </View>
+    </Portal>
   );
 };
 

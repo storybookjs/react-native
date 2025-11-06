@@ -273,6 +273,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
         />
       </View>
       <ScrollView
+        key={`addons-scroll-${storyId}`}
         style={addonsScrollStyle}
         // keyboardShouldPersistTaps="handled"
         contentContainerStyle={scrollContentContainerStyle}

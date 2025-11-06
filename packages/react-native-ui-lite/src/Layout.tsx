@@ -28,6 +28,7 @@ import {
   MenuIcon,
 } from './icon/iconDataUris';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Portal, PortalHost, PortalProvider } from '@gorhom/portal';
 
 const desktopLogoContainer = {
   flexDirection: 'row',
@@ -62,9 +63,12 @@ export const LiteUI: SBUI = ({ storage, theme, storyHash, story, children }): Re
     <ThemeProvider theme={theme}>
       <StorageProvider storage={storage}>
         <LayoutProvider>
-          <Layout storyHash={storyHash} story={story}>
-            {children}
-          </Layout>
+          <PortalProvider shouldAddRootHost={false}>
+            <Layout storyHash={storyHash} story={story}>
+              {children}
+            </Layout>
+            <PortalHost name="storybook-lite-ui-root" />
+          </PortalProvider>
         </LayoutProvider>
       </StorageProvider>
     </ThemeProvider>

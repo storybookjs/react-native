@@ -30,6 +30,7 @@
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
+    "@gorhom/portal": "^1.0.14",
     "@storybook/react-native-theming": "^10.0.1",
     "@storybook/react-native-ui-common": "^10.0.1",
     "polished": "^4.3.1",
