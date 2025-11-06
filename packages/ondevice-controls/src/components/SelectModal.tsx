@@ -1,31 +1,19 @@
 // NOTE This is adapted from react-native-modal-selector https://github.com/peacechen/react-native-modal-selector/blob/master/index.js
 
-import { Portal } from '@gorhom/portal';
-import {
-  useState,
-  useCallback,
-  useRef,
-  ReactNode,
-  ComponentType,
-  useMemo,
-  useImperativeHandle,
-} from 'react';
+import { ComponentType, ReactNode, useCallback, useMemo, useState } from 'react';
 
 import {
-  View,
-  Modal,
-  Text,
   FlatList,
   ScrollView,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
   TouchableOpacity,
   TouchableWithoutFeedback,
-  StyleSheet,
-  ViewStyle,
-  TextStyle,
-  StyleProp,
+  View,
   ViewProps,
-  ModalProps,
-  Platform,
+  ViewStyle,
 } from 'react-native';
 import { ModalPortal } from './ModalPortal';
 
