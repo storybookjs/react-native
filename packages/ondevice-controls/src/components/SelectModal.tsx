@@ -27,6 +27,7 @@ import {
   ModalProps,
   Platform,
 } from 'react-native';
+import { ModalPortal } from './ModalPortal';
 
 const PADDING = 8;
 const BORDER_RADIUS = 5;
@@ -601,7 +602,6 @@ export const SelectModal = ({
         onRequestClose={close}
         animationType={animationType}
         onDismiss={() => selectedItems.length > 0 && onChange?.(selectedItems)}
-        usePortal={Platform.OS === 'macos'}
       >
         {renderOptionList()}
       </ModalPortal>
@@ -622,32 +622,6 @@ export const SelectModal = ({
         </TouchableOpacity>
       )}
     </View>
-  );
-};
-
-const ModalPortal = ({
-  children,
-  visible,
-  usePortal,
-
-  ...props
-}: ModalProps & { usePortal?: boolean }) => {
-  if (!usePortal) {
-    return (
-      <Modal visible={visible} {...props}>
-        {children}
-      </Modal>
-    );
-  }
-
-  if (!visible) return null;
-
-  return (
-    <Portal hostName="storybook-lite-ui-root">
-      <View style={{ flex: 1, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
-        {children}
-      </View>
-    </Portal>
   );
 };
 

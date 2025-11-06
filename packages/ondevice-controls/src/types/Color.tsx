@@ -1,14 +1,8 @@
 import { useState } from 'react';
-import {
-  Modal,
-  View,
-  TouchableWithoutFeedback,
-  StyleSheet,
-  Platform,
-  Dimensions,
-} from 'react-native';
+import { View, TouchableWithoutFeedback, StyleSheet, Platform, Dimensions } from 'react-native';
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { ColorPicker, fromHsv, HsvColor } from '../components/color-picker';
+import { ModalPortal } from '../components/ModalPortal';
 
 export interface ColorProps {
   arg: {
@@ -97,7 +91,7 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
       <TouchableContainer>
         <Touchable color={arg.value} onPress={openColorPicker} />
       </TouchableContainer>
-      <Modal
+      <ModalPortal
         supportedOrientations={['portrait', 'landscape']}
         transparent
         visible={displayColorPicker}
@@ -132,7 +126,7 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
             </View>
           </InnerContainer>
         </View>
-      </Modal>
+      </ModalPortal>
     </View>
   );
 };

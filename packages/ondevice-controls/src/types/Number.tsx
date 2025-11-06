@@ -1,10 +1,10 @@
-import Slider from '@react-native-community/slider';
 import { styled } from '@storybook/react-native-theming';
 import { useCallback, useState } from 'react';
 import { View } from 'react-native';
 import { useResyncValue } from './useResyncValue';
 import { Input } from './common';
 import { ControlTypes } from '../sharedTypes';
+import SliderWrapper from '../components/SliderWrapper';
 
 const ValueContainer = styled.View({ flexDirection: 'row' });
 
@@ -93,7 +93,7 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
           <ValueText>{arg.value}</ValueText>
         </ValueContainer>
 
-        <Slider
+        <SliderWrapper
           minimumValue={min}
           maximumValue={max}
           step={step}

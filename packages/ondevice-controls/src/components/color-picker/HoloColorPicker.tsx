@@ -1,4 +1,3 @@
-import Slider from '@react-native-community/slider';
 import { PureComponent, createRef } from 'react';
 import {
   I18nManager,
@@ -13,6 +12,7 @@ import {
 } from 'react-native';
 import tinycolor, { ColorFormats } from 'tinycolor2';
 import { createPanResponder } from './utils';
+import SliderWrapper from '../SliderWrapper';
 
 interface HoloColorPickerProps {
   color?: string | ColorFormats.HSV;
@@ -206,9 +206,9 @@ export class HoloColorPicker extends PureComponent<HoloColorPickerProps, HoloCol
         {this.props.hideSliders ? null : (
           <View>
             <Text style={{ paddingStart: 4, color: '#859499', fontSize: 12 }}>Saturation</Text>
-            <Slider value={s} onValueChange={this._onSValueChange} />
+            <SliderWrapper value={s} onValueChange={this._onSValueChange} />
             <Text style={{ paddingStart: 4, color: '#859499', fontSize: 12 }}>Lightness</Text>
-            <Slider value={v} onValueChange={this._onVValueChange} />
+            <SliderWrapper value={v} onValueChange={this._onVValueChange} />
           </View>
         )}
       </View>
