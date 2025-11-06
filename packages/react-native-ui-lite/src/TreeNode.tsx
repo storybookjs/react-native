@@ -98,12 +98,9 @@ export const GroupNode: FC<
     return theme.base === 'dark' ? theme.color.primary : theme.color.ultraviolet;
   }, [theme.base, theme.color.primary, theme.color.ultraviolet]);
 
-  const wrapperProps = Platform.OS === 'macos' ? { key: `${props.id}-${color}` } : {};
-
   return (
     <BranchNode isExpandable={isExpandable} {...props}>
-      {/* workaround for macos icon color bug */}
-      <Wrapper {...wrapperProps}>
+      <Wrapper key={`group-${props.id}-${color}`}>
         {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
         <GroupIcon width={14} height={14} color={color} />
       </Wrapper>
@@ -120,12 +117,10 @@ export const ComponentNode: FC<ComponentProps<typeof BranchNode>> = React.memo(
       return theme.color.secondary;
     }, [theme.color.secondary]);
 
-    const wrapperProps = Platform.OS === 'macos' ? { key: `${props.id}-${color}` } : {};
-
     return (
       <BranchNode isExpandable={isExpandable} {...props}>
         {/* workaround for macos icon color bug */}
-        <Wrapper {...wrapperProps}>
+        <Wrapper key={`component-${props.id}-${color}`}>
           {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
           <ComponentIcon width={12} height={12} color={color} />
         </Wrapper>
@@ -146,12 +141,9 @@ export const StoryNode = React.memo(
       return props.selected ? theme.color.lightest : theme.color.seafoam;
     }, [props.selected, theme.color.lightest, theme.color.seafoam]);
 
-    const wrapperProps = Platform.OS === 'macos' ? { key: `${props.id}-${color}` } : {};
-
     return (
       <LeafNode {...props} ref={ref}>
-        {/* workaround for macos icon color bug */}
-        <Wrapper {...wrapperProps}>
+        <Wrapper key={`story-${props.id}-${color}`}>
           <StoryIcon width={14} height={14} color={color} />
         </Wrapper>
         <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
