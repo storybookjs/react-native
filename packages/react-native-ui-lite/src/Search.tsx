@@ -53,9 +53,21 @@ const SearchField = styled.View({
   position: 'relative',
 });
 
+const inputPlatformSpecificStyles = Platform.select({
+  macos: {
+    paddingVertical: 6,
+  },
+  android: {
+    minHeight: 32,
+  },
+  default: {
+    minHeight: 32,
+    height: 32,
+  },
+});
+
 const Input = styled(TextInput)(({ theme }) => ({
-  height: Platform.OS === 'android' ? 'auto' : 32,
-  minHeight: 32,
+  ...inputPlatformSpecificStyles,
   paddingLeft: 28,
   paddingRight: 28,
   borderWidth: 1,

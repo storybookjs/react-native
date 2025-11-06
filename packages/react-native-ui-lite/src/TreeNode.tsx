@@ -2,7 +2,7 @@ import { styled, useTheme } from '@storybook/react-native-theming';
 
 import React, { ComponentProps, FC, forwardRef, useMemo } from 'react';
 import { transparentize } from 'polished';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { CollapseIcon, ComponentIcon, GroupIcon, StoryIcon } from './icon/iconDataUris';
 
 export interface NodeProps {
@@ -98,9 +98,12 @@ export const GroupNode: FC<
     return theme.base === 'dark' ? theme.color.primary : theme.color.ultraviolet;
   }, [theme.base, theme.color.primary, theme.color.ultraviolet]);
 
+  const wrapperProps = Platform.OS === 'macos' ? { key: `${props.id}-${color}` } : {};
+
   return (
     <BranchNode isExpandable={isExpandable} {...props}>
-      <Wrapper>
+      {/* workaround for macos icon color bug */}
+      <Wrapper {...wrapperProps}>
         {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
         <GroupIcon width={14} height={14} color={color} />
       </Wrapper>
@@ -117,9 +120,12 @@ export const ComponentNode: FC<ComponentProps<typeof BranchNode>> = React.memo(
       return theme.color.secondary;
     }, [theme.color.secondary]);
 
+    const wrapperProps = Platform.OS === 'macos' ? { key: `${props.id}-${color}` } : {};
+
     return (
       <BranchNode isExpandable={isExpandable} {...props}>
-        <Wrapper>
+        {/* workaround for macos icon color bug */}
+        <Wrapper {...wrapperProps}>
           {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
           <ComponentIcon width={12} height={12} color={color} />
         </Wrapper>
@@ -140,9 +146,12 @@ export const StoryNode = React.memo(
       return props.selected ? theme.color.lightest : theme.color.seafoam;
     }, [props.selected, theme.color.lightest, theme.color.seafoam]);
 
+    const wrapperProps = Platform.OS === 'macos' ? { key: `${props.id}-${color}` } : {};
+
     return (
       <LeafNode {...props} ref={ref}>
-        <Wrapper>
+        {/* workaround for macos icon color bug */}
+        <Wrapper {...wrapperProps}>
           <StoryIcon width={14} height={14} color={color} />
         </Wrapper>
         <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
