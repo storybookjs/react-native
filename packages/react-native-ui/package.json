@@ -57,6 +57,7 @@
     "typescript": "~5.9.3"
   },
   "dependencies": {
+    "@gorhom/portal": "^1.0.14",
     "@storybook/react": "^10.0.1",
     "@storybook/react-native-theming": "^10.0.2-alpha.0",
     "@storybook/react-native-ui-common": "^10.0.2-alpha.0",

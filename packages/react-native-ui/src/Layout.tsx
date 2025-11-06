@@ -1,5 +1,5 @@
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import type { Args, StoryContext } from 'storybook/internal/csf';
+import { PortalHost, PortalProvider } from '@gorhom/portal';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, ThemeProvider, useTheme } from '@storybook/react-native-theming';
 import {
@@ -16,8 +16,9 @@ import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-nativ
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
-import { addons } from 'storybook/manager-api';
+import type { Args, StoryContext } from 'storybook/internal/csf';
 import type { API_IndexHash } from 'storybook/internal/types';
+import { addons } from 'storybook/manager-api';
 import { DEFAULT_REF_ID } from './constants';
 import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
 import { CloseFullscreenIcon } from './icon/CloseFullscreenIcon';
@@ -70,6 +71,7 @@ export const FullUI: SBUI = ({ storage, theme, storyHash, story, children }) => 
                 <Layout storyHash={storyHash} story={story}>
                   {children}
                 </Layout>
+                <PortalHost name="storybook-lite-ui-root" />
               </LayoutProvider>
             </StorageProvider>
           </BottomSheetModalProvider>

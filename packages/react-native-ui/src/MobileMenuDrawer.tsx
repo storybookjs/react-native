@@ -5,7 +5,7 @@ import BottomSheet, {
 } from '@gorhom/bottom-sheet';
 import { useTheme } from '@storybook/react-native-theming';
 import { forwardRef, memo, ReactNode, useImperativeHandle, useMemo, useRef } from 'react';
-import { Keyboard, Platform, StyleSheet } from 'react-native';
+import { Keyboard, Platform } from 'react-native';
 import { useAnimatedStyle, useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';

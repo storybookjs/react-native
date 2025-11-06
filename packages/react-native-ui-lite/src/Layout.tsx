@@ -1,4 +1,4 @@
-import type { Args, StoryContext } from 'storybook/internal/csf';
+import { PortalHost, PortalProvider } from '@gorhom/portal';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, ThemeProvider, useTheme } from '@storybook/react-native-theming';
 import {
@@ -12,9 +12,11 @@ import {
 } from '@storybook/react-native-ui-common';
 import { ReactElement, ReactNode, useCallback, useRef, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
-import { addons } from 'storybook/manager-api';
+import type { Args, StoryContext } from 'storybook/internal/csf';
 import { type API_IndexHash } from 'storybook/internal/types';
+import { addons } from 'storybook/manager-api';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { SelectedNodeProvider } from './SelectedNodeProvider';
@@ -27,8 +29,6 @@ import {
   FullscreenIcon,
   MenuIcon,
 } from './icon/iconDataUris';
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Portal, PortalHost, PortalProvider } from '@gorhom/portal';
 
 const desktopLogoContainer = {
   flexDirection: 'row',
