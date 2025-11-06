@@ -173,9 +173,7 @@ export const MobileMenuDrawer = memo(
             <Pressable style={{ flex: 1 }} onPress={() => setMobileMenuOpen(false)}></Pressable>
           </View>
 
-          <Animated.View
-            style={{ backgroundColor: theme.background.content, height: animatedHeight }}
-          >
+          <Animated.View style={{ height: animatedHeight }}>
             <Animated.View
               style={[
                 {
