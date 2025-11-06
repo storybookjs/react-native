@@ -1,21 +1,21 @@
 // NOTE This is adapted from react-native-modal-selector https://github.com/peacechen/react-native-modal-selector/blob/master/index.js
 
-import { useState, useCallback, useRef, ReactNode, ComponentType, useMemo } from 'react';
+import { ComponentType, ReactNode, useCallback, useMemo, useState } from 'react';
 
 import {
-  View,
-  Modal,
-  Text,
   FlatList,
   ScrollView,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
   TouchableOpacity,
   TouchableWithoutFeedback,
-  StyleSheet,
-  ViewStyle,
-  TextStyle,
-  StyleProp,
+  View,
   ViewProps,
+  ViewStyle,
 } from 'react-native';
+import { ModalPortal } from './ModalPortal';
 
 const PADDING = 8;
 const BORDER_RADIUS = 5;
@@ -278,7 +278,6 @@ export const SelectModal = ({
     const initialItem = data.find((item) => String(keyExtractor(item)) === String(initValue));
     return initialItem ? [initialItem] : [];
   });
-  const modalRef = useRef<Modal>(null);
 
   const selectedItemsMap = useMemo(() => {
     if (multiselect) {
@@ -584,9 +583,8 @@ export const SelectModal = ({
 
   return (
     <View style={style} {...passThruProps}>
-      <Modal
+      <ModalPortal
         transparent
-        ref={modalRef}
         supportedOrientations={supportedOrientations}
         visible={modalVisible}
         onRequestClose={close}
@@ -594,7 +592,7 @@ export const SelectModal = ({
         onDismiss={() => selectedItems.length > 0 && onChange?.(selectedItems)}
       >
         {renderOptionList()}
-      </Modal>
+      </ModalPortal>
 
       {customSelector || (
         <TouchableOpacity

@@ -1,4 +1,4 @@
-import type { Args, StoryContext } from 'storybook/internal/csf';
+import { PortalHost, PortalProvider } from '@gorhom/portal';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, ThemeProvider, useTheme } from '@storybook/react-native-theming';
 import {
@@ -11,10 +11,12 @@ import {
   useStyle,
 } from '@storybook/react-native-ui-common';
 import { ReactElement, ReactNode, useCallback, useRef, useState } from 'react';
-import { Platform, ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
-import { addons } from 'storybook/manager-api';
+import type { Args, StoryContext } from 'storybook/internal/csf';
 import { type API_IndexHash } from 'storybook/internal/types';
+import { addons } from 'storybook/manager-api';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
 import { SelectedNodeProvider } from './SelectedNodeProvider';
@@ -27,7 +29,6 @@ import {
   FullscreenIcon,
   MenuIcon,
 } from './icon/iconDataUris';
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const desktopLogoContainer = {
   flexDirection: 'row',
@@ -62,9 +63,12 @@ export const LiteUI: SBUI = ({ storage, theme, storyHash, story, children }): Re
     <ThemeProvider theme={theme}>
       <StorageProvider storage={storage}>
         <LayoutProvider>
-          <Layout storyHash={storyHash} story={story}>
-            {children}
-          </Layout>
+          <PortalProvider shouldAddRootHost={false}>
+            <Layout storyHash={storyHash} story={story}>
+              {children}
+            </Layout>
+            <PortalHost name="storybook-lite-ui-root" />
+          </PortalProvider>
         </LayoutProvider>
       </StorageProvider>
     </ThemeProvider>
@@ -145,7 +149,7 @@ export const Layout = ({
   const fullScreenButtonStyle = useStyle(
     () => ({
       position: 'absolute',
-      bottom: uiHidden ? 56 : 16,
+      bottom: uiHidden ? insets.bottom + 56 : 16,
       right: 16,
       backgroundColor: theme.background.content,
       padding: 4,

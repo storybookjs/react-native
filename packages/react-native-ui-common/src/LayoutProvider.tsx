@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useMemo } from 'react';
-import { useWindowDimensions } from 'react-native';
+import { Platform, useWindowDimensions } from 'react-native';
 import { BREAKPOINT } from './constants';
 
 type LayoutContextType = {
@@ -15,10 +15,8 @@ const LayoutContext = createContext<LayoutContextType>({
 
 export const LayoutProvider: FC<PropsWithChildren> = ({ children }) => {
   const { width } = useWindowDimensions();
-  const isDesktop = width >= BREAKPOINT;
+  const isDesktop = Platform.OS === 'macos' || Platform.OS === 'windows' || width >= BREAKPOINT;
   const isMobile = !isDesktop;
-
-  // console.log({ isDesktop, isMobile, breakpoint: BREAKPOINT, width });
 
   const contextValue = useMemo(
     () => ({

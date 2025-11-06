@@ -1,6 +1,6 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { IconButton, useStyle } from '@storybook/react-native-ui-common';
-import { forwardRef, useEffect, useImperativeHandle, useMemo, useState } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useState } from 'react';
 import {
   Animated,
   Easing,
@@ -26,48 +26,91 @@ export interface MobileAddonsPanelRef {
 export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
   ({ storyId }, ref) => {
     const theme = useTheme();
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { height } = useWindowDimensions();
-    const panelHeight = useAnimatedValue(height / 2);
-    const positionBottomAnimation = useAnimatedValue(0);
+    const panelHeight = useAnimatedValue(0);
+    const positionBottomAnimation = useAnimatedValue(height / 2);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const setMobileMenuOpen = useCallback(
+      (open: boolean) => {
+        setIsOpen(open);
+
+        if (open) {
+          Animated.parallel([
+            Animated.timing(positionBottomAnimation, {
+              toValue: 0, // Negative to move up
+              duration: 350,
+              useNativeDriver: false,
+              easing: Easing.inOut(Easing.cubic),
+            }),
+
+            Animated.timing(panelHeight, {
+              toValue: height / 2,
+              duration: 350,
+              useNativeDriver: false,
+              easing: Easing.inOut(Easing.cubic),
+            }),
+          ]).start();
+        } else {
+          Animated.parallel([
+            Animated.timing(positionBottomAnimation, {
+              toValue: height / 2,
+              duration: 350,
+              useNativeDriver: false,
+              easing: Easing.inOut(Easing.cubic),
+            }),
+            Animated.timing(panelHeight, {
+              toValue: 0,
+              duration: 350,
+              useNativeDriver: false,
+              easing: Easing.inOut(Easing.cubic),
+            }),
+          ]).start();
+        }
+      },
+      [height, positionBottomAnimation, panelHeight]
+    );
 
     useEffect(() => {
       // Define keyboard show handler
       const handleKeyboardShow = ({ endCoordinates, duration, easing }) => {
-        Animated.parallel([
-          Animated.timing(positionBottomAnimation, {
-            toValue: -endCoordinates.height, // Negative to move up
-            duration,
-            useNativeDriver: false,
-            easing: Easing[easing] || Easing.out(Easing.ease),
-          }),
-
-          Animated.timing(panelHeight, {
-            toValue: (height - endCoordinates.height) / 2,
-            duration: duration + 250,
-            useNativeDriver: false,
-            easing: Easing[easing] || Easing.out(Easing.ease),
-          }),
-        ]).start();
+        if (isOpen) {
+          Animated.parallel([
+            Animated.timing(panelHeight, {
+              toValue: (height - endCoordinates.height) / 2,
+              duration,
+              useNativeDriver: false,
+              easing: Easing[easing] || Easing.out(Easing.ease),
+            }),
+            Animated.timing(positionBottomAnimation, {
+              toValue: -endCoordinates.height, // Negative to move up
+              duration,
+              useNativeDriver: false,
+              easing: Easing[easing] || Easing.out(Easing.ease),
+            }),
+          ]).start();
+        }
       };
 
       // Define keyboard hide handler
       const handleKeyboardHide = ({ duration, easing }) => {
-        Animated.parallel([
-          Animated.timing(positionBottomAnimation, {
-            toValue: 0, // Back to original position
-            duration,
-            useNativeDriver: false,
-            easing: Easing[easing] || Easing.out(Easing.ease),
-          }),
+        if (isOpen) {
+          Animated.parallel([
+            Animated.timing(positionBottomAnimation, {
+              toValue: 0, // Back to original position
+              duration,
+              useNativeDriver: false,
+              easing: Easing[easing] || Easing.out(Easing.ease),
+            }),
 
-          Animated.timing(panelHeight, {
-            toValue: height / 2,
-            duration,
-            useNativeDriver: false,
-            easing: Easing[easing] || Easing.out(Easing.ease),
-          }),
-        ]).start();
+            Animated.timing(panelHeight, {
+              toValue: height / 2,
+              duration,
+              useNativeDriver: false,
+              easing: Easing[easing] || Easing.out(Easing.ease),
+            }),
+          ]).start();
+        }
       };
 
       // Add keyboard event listeners
@@ -83,7 +126,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
         hideSubscription.remove();
         didHideSubscription.remove();
       };
-    }, [height, panelHeight, positionBottomAnimation]);
+    }, [height, panelHeight, positionBottomAnimation, isOpen]);
 
     useImperativeHandle(ref, () => ({
       setAddonsPanelOpen: (open: boolean) => {
@@ -94,10 +137,6 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
         }
       },
     }));
-
-    if (!mobileMenuOpen) {
-      return null;
-    }
 
     return (
       <Animated.View
@@ -234,6 +273,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
         />
       </View>
       <ScrollView
+        key={`addons-scroll-${storyId}`}
         style={addonsScrollStyle}
         // keyboardShouldPersistTaps="handled"
         contentContainerStyle={scrollContentContainerStyle}

@@ -100,7 +100,7 @@ export const GroupNode: FC<
 
   return (
     <BranchNode isExpandable={isExpandable} {...props}>
-      <Wrapper>
+      <Wrapper key={`group-${props.id}-${color}`}>
         {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
         <GroupIcon width={14} height={14} color={color} />
       </Wrapper>
@@ -119,7 +119,8 @@ export const ComponentNode: FC<ComponentProps<typeof BranchNode>> = React.memo(
 
     return (
       <BranchNode isExpandable={isExpandable} {...props}>
-        <Wrapper>
+        {/* workaround for macos icon color bug */}
+        <Wrapper key={`component-${props.id}-${color}`}>
           {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
           <ComponentIcon width={12} height={12} color={color} />
         </Wrapper>
@@ -142,7 +143,7 @@ export const StoryNode = React.memo(
 
     return (
       <LeafNode {...props} ref={ref}>
-        <Wrapper>
+        <Wrapper key={`story-${props.id}-${color}`}>
           <StoryIcon width={14} height={14} color={color} />
         </Wrapper>
         <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
