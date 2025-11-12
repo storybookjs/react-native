@@ -14,6 +14,38 @@ interface DependencyLocation {
   location: string;
 }
 
+const ALWAYS_LATEST_PACKAGES = new Set(['@storybook/addon-react-native-server']);
+
+function getTargetVersionFromArgs(): string | undefined {
+  const args = process.argv.slice(2);
+  let targetVersion: string | undefined;
+
+  for (let i = 0; i < args.length; i += 1) {
+    const arg = args[i];
+
+    if (arg === '--version' || arg === '-v') {
+      const nextArg = args[i + 1];
+      if (!nextArg || nextArg.startsWith('-')) {
+        console.error('❌ Expected a version after --version/-v');
+        process.exit(1);
+      }
+      targetVersion = nextArg;
+      i += 1;
+    } else if (arg.startsWith('--version=')) {
+      targetVersion = arg.slice('--version='.length);
+    } else if (arg.startsWith('-v=')) {
+      targetVersion = arg.slice('-v='.length);
+    }
+  }
+
+  if (targetVersion === '') {
+    console.error('❌ Version cannot be empty.');
+    process.exit(1);
+  }
+
+  return targetVersion;
+}
+
 /**
  * Get all internal package names from the monorepo
  */
@@ -81,6 +113,11 @@ function main(): void {
   console.log('🔍 Identifying internal packages...\n');
   const internalPackages = getInternalPackageNames();
 
+  const targetVersion = getTargetVersionFromArgs();
+  if (targetVersion) {
+    console.log(`🎯 Target version: ${targetVersion}\n`);
+  }
+
   console.log('Internal packages (will NOT be updated):');
   internalPackages.forEach((pkg) => console.log(`  - ${pkg}`));
   console.log('');
@@ -118,7 +155,13 @@ function main(): void {
   console.log('\n📦 Updating external Storybook dependencies...\n');
 
   // Get the list of dependencies to update
-  const depsToUpdate = Array.from(allExternalDeps.keys());
+  const depsToUpdate = Array.from(allExternalDeps.keys()).map((depName) => {
+    if (ALWAYS_LATEST_PACKAGES.has(depName)) {
+      return `${depName}@latest`;
+    }
+
+    return targetVersion ? `${depName}@${targetVersion}` : depName;
+  });
 
   try {
     // Use yarn up to update all external Storybook dependencies at once
