@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
-    "@storybook/react": "^10.0.5",
+    "@storybook/react": "^10.0.6",
     "@storybook/react-native-theming": "^10.0.5",
     "@storybook/react-native-ui-common": "^10.0.5",
     "fuse.js": "^7.1.0",
