@@ -32,6 +32,7 @@ globalThis.FEATURES = {
   viewport: false,
   highlight: false,
   backgrounds: false,
+  userEventSetup: false,
 };
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
