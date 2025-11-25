@@ -8252,7 +8252,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-ondevice-actions@npm:^10.0.7, @storybook/addon-ondevice-actions@workspace:packages/ondevice-actions":
+"@storybook/addon-ondevice-actions@npm:^10.1.0-beta.5, @storybook/addon-ondevice-actions@workspace:packages/ondevice-actions":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-actions@workspace:packages/ondevice-actions"
   dependencies:
@@ -8265,11 +8265,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-backgrounds@npm:^10.0.7, @storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds":
+"@storybook/addon-ondevice-backgrounds@npm:^10.1.0-beta.5, @storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-backgrounds@workspace:packages/ondevice-backgrounds"
   dependencies:
-    "@storybook/react-native-theming": "npm:^10.0.7"
+    "@storybook/react-native-theming": "npm:^10.1.0-beta.5"
     typescript: "npm:~5.9.3"
   peerDependencies:
     react: "*"
@@ -8278,13 +8278,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-controls@npm:^10.0.7, @storybook/addon-ondevice-controls@workspace:packages/ondevice-controls":
+"@storybook/addon-ondevice-controls@npm:^10.1.0-beta.5, @storybook/addon-ondevice-controls@workspace:packages/ondevice-controls":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-controls@workspace:packages/ondevice-controls"
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
-    "@storybook/react-native-theming": "npm:^10.0.7"
-    "@storybook/react-native-ui-common": "npm:^10.0.7"
+    "@storybook/react-native-theming": "npm:^10.1.0-beta.5"
+    "@storybook/react-native-ui-common": "npm:^10.1.0-beta.5"
     cross-env: "npm:^10.1.0"
     polished: "npm:^4.3.1"
     react-native-modal-datetime-picker: "npm:^18.0.0"
@@ -8303,11 +8303,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/addon-ondevice-notes@npm:^10.0.7, @storybook/addon-ondevice-notes@workspace:packages/ondevice-notes":
+"@storybook/addon-ondevice-notes@npm:^10.1.0-beta.5, @storybook/addon-ondevice-notes@workspace:packages/ondevice-notes":
   version: 0.0.0-use.local
   resolution: "@storybook/addon-ondevice-notes@workspace:packages/ondevice-notes"
   dependencies:
-    "@storybook/react-native-theming": "npm:^10.0.7"
+    "@storybook/react-native-theming": "npm:^10.1.0-beta.5"
     react-native-markdown-display: "npm:^7.0.2"
     tsup: "npm:^8.5.0"
     typescript: "npm:~5.9.3"
@@ -8394,7 +8394,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-native-theming@npm:^10.0.7, @storybook/react-native-theming@workspace:packages/react-native-theming":
+"@storybook/react-native-theming@npm:^10.1.0-beta.5, @storybook/react-native-theming@workspace:packages/react-native-theming":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-theming@workspace:packages/react-native-theming"
   dependencies:
@@ -8408,12 +8408,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native-ui-common@npm:^10.0.7, @storybook/react-native-ui-common@workspace:packages/react-native-ui-common":
+"@storybook/react-native-ui-common@npm:^10.1.0-beta.5, @storybook/react-native-ui-common@workspace:packages/react-native-ui-common":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui-common@workspace:packages/react-native-ui-common"
   dependencies:
     "@storybook/react": "npm:10.1.0-beta.5"
-    "@storybook/react-native-theming": "npm:^10.0.7"
+    "@storybook/react-native-theming": "npm:^10.1.0-beta.5"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.1.10"
     babel-jest: "npm:^29.7.0"
@@ -8432,14 +8432,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native-ui-lite@npm:^10.0.7, @storybook/react-native-ui-lite@workspace:packages/react-native-ui-lite":
+"@storybook/react-native-ui-lite@npm:^10.1.0-beta.5, @storybook/react-native-ui-lite@workspace:packages/react-native-ui-lite":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui-lite@workspace:packages/react-native-ui-lite"
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
     "@storybook/react": "npm:10.1.0-beta.5"
-    "@storybook/react-native-theming": "npm:^10.0.7"
-    "@storybook/react-native-ui-common": "npm:^10.0.7"
+    "@storybook/react-native-theming": "npm:^10.1.0-beta.5"
+    "@storybook/react-native-ui-common": "npm:^10.1.0-beta.5"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.1.10"
     babel-jest: "npm:^29.7.0"
@@ -8458,14 +8458,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native-ui@npm:^10.0.7, @storybook/react-native-ui@workspace:packages/react-native-ui":
+"@storybook/react-native-ui@npm:^10.1.0-beta.5, @storybook/react-native-ui@workspace:packages/react-native-ui":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui@workspace:packages/react-native-ui"
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
     "@storybook/react": "npm:10.1.0-beta.5"
-    "@storybook/react-native-theming": "npm:^10.0.7"
-    "@storybook/react-native-ui-common": "npm:^10.0.7"
+    "@storybook/react-native-theming": "npm:^10.1.0-beta.5"
+    "@storybook/react-native-ui-common": "npm:^10.1.0-beta.5"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.1.10"
     babel-jest: "npm:^29.7.0"
@@ -8507,14 +8507,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-native@npm:^10.0.7, @storybook/react-native@workspace:packages/react-native":
+"@storybook/react-native@npm:^10.1.0-beta.5, @storybook/react-native@workspace:packages/react-native":
   version: 0.0.0-use.local
   resolution: "@storybook/react-native@workspace:packages/react-native"
   dependencies:
     "@storybook/react": "npm:10.1.0-beta.5"
-    "@storybook/react-native-theming": "npm:^10.0.7"
-    "@storybook/react-native-ui": "npm:^10.0.7"
-    "@storybook/react-native-ui-common": "npm:^10.0.7"
+    "@storybook/react-native-theming": "npm:^10.1.0-beta.5"
+    "@storybook/react-native-ui": "npm:^10.1.0-beta.5"
+    "@storybook/react-native-ui-common": "npm:^10.1.0-beta.5"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.1.10"
     babel-jest: "npm:^29.7.0"
@@ -15207,14 +15207,14 @@ __metadata:
     "@react-native-async-storage/async-storage": "npm:2.2.0"
     "@react-native-community/datetimepicker": "npm:8.4.4"
     "@react-native-community/slider": "npm:5.0.1"
-    "@storybook/addon-ondevice-actions": "npm:^10.0.7"
-    "@storybook/addon-ondevice-backgrounds": "npm:^10.0.7"
-    "@storybook/addon-ondevice-controls": "npm:^10.0.7"
-    "@storybook/addon-ondevice-notes": "npm:^10.0.7"
+    "@storybook/addon-ondevice-actions": "npm:^10.1.0-beta.5"
+    "@storybook/addon-ondevice-backgrounds": "npm:^10.1.0-beta.5"
+    "@storybook/addon-ondevice-controls": "npm:^10.1.0-beta.5"
+    "@storybook/addon-ondevice-notes": "npm:^10.1.0-beta.5"
     "@storybook/addon-react-native-server": "npm:^1.0.1"
     "@storybook/react": "npm:10.1.0-beta.5"
-    "@storybook/react-native": "npm:^10.0.7"
-    "@storybook/react-native-ui-lite": "npm:^10.0.7"
+    "@storybook/react-native": "npm:^10.1.0-beta.5"
+    "@storybook/react-native-ui-lite": "npm:^10.1.0-beta.5"
     "@storybook/react-native-web-vite": "npm:10.1.0-beta.5"
     "@testing-library/react-native": "npm:14.0.0-alpha.1"
     "@types/react": "npm:~19.1.10"

@@ -1,5 +1,5 @@
 {
   "npmClient": "yarn",
   "registry": "https://registry.npmjs.org",
-  "version": "10.0.7"
+  "version": "10.1.0-beta.5"
 }
