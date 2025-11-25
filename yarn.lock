@@ -15164,6 +15164,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-clipboard@npm:^8.0.7":
+  version: 8.0.7
+  resolution: "expo-clipboard@npm:8.0.7"
+  peerDependencies:
+    expo: "*"
+    react: "*"
+    react-native: "*"
+  checksum: 10/9927cfb5c51f6a6dd490f1753d56981bcdd64722ed04ec9abf4b469139a23f3337e8e41008faafaa7c5a72abdb83e0fd9c5a2f6e0f18af342bd2c4ef6a871dd6
+  languageName: node
+  linkType: hard
+
 "expo-constants@npm:~18.0.10":
   version: 18.0.10
   resolution: "expo-constants@npm:18.0.10"
@@ -15222,6 +15233,7 @@ __metadata:
     babel-plugin-react-compiler: "npm:^1.0.0"
     babel-plugin-react-docgen-typescript: "npm:^1.5.1"
     expo: "npm:^54.0.21"
+    expo-clipboard: "npm:^8.0.7"
     expo-updates: "npm:~29.0.12"
     jest: "npm:^29.7.0"
     jest-expo: "npm:~54.0.13"

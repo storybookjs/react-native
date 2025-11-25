@@ -41,6 +41,7 @@
     "@storybook/react-native-web-vite": "0.0.0-pr-33108-sha-827e9314",
     "babel-plugin-react-compiler": "^1.0.0",
     "expo": "^54.0.21",
+    "expo-clipboard": "^8.0.7",
     "expo-updates": "~29.0.12",
     "react": "19.1.0",
     "react-compiler-runtime": "^1.0.0",
