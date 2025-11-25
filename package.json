@@ -55,7 +55,7 @@
     "eslint-config-expo": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-compiler": "^19.1.0-rc.2",
-    "lerna": "^9.0.0",
+    "lerna": "^9.0.1",
     "prettier": "^3.6.2",
     "sherif": "^1.7.0",
     "typescript": "~5.9.3"
