@@ -137,11 +137,11 @@ This parameter would instruct the backgrounds addon to reconfigure itself whenev
 
 React Native Storybook provides several built-in parameters to control the on-device UI behavior:
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `noSafeArea` | `boolean` | When `true`, removes the top safe area padding, allowing your story to render edge-to-edge |
-| `fullscreenDefaultValue` | `boolean` | When `true`, the story will start in fullscreen mode with the UI hidden |
-| `hideFullScreenButton` | `boolean` | When `true`, hides the fullscreen toggle button |
+| Parameter                | Type      | Description                                                                                |
+| ------------------------ | --------- | ------------------------------------------------------------------------------------------ |
+| `noSafeArea`             | `boolean` | When `true`, removes the top safe area padding, allowing your story to render edge-to-edge |
+| `fullscreenDefaultValue` | `boolean` | When `true`, the story will start in fullscreen mode with the UI hidden                    |
+| `hideFullScreenButton`   | `boolean` | When `true`, hides the fullscreen toggle button                                            |
 
 ```tsx
 // Button.stories.tsx
