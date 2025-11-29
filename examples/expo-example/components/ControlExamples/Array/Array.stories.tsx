@@ -17,6 +17,7 @@ const meta = {
     notes: `
 This is actually not a proper control type and should be inferred from the object type but is currently an inconsistency in the rn addon.
     `,
+    fullscreenDefaultValue: true,
   },
 } satisfies Meta<typeof Array>;
 
