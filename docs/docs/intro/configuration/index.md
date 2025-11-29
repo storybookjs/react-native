@@ -114,6 +114,7 @@ Other than story sort the other parameters can be overwritten per story.
 - `parameters.options.storySort`: Story sorting configuration
 - `parameters.hideFullScreenButton`: Toggle fullscreen button visibility
 - `parameters.noSafeArea`: Disable safe area insets
+- `parameters.fullscreenDefaultValue`: When `true`, the story starts in fullscreen mode with the UI hidden
 - `parameters.backgrounds`: Background addon configuration
 
 ## index.tsx
