@@ -11,7 +11,7 @@ import {
   useStyle,
   type SBUI,
 } from '@storybook/react-native-ui-common';
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode, useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -108,14 +108,14 @@ export const Layout = ({
 
   const [uiHidden, setUiHidden] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (
       story?.parameters?.fullscreenDefaultValue !== undefined &&
       typeof story?.parameters?.fullscreenDefaultValue === 'boolean'
     ) {
       setUiHidden(story.parameters.fullscreenDefaultValue);
     }
-  }, [story.id, story.parameters.fullscreenDefaultValue]);
+  }, [story?.id, story?.parameters?.fullscreenDefaultValue]);
 
   const desktopSidebarStyle = useStyle(
     () => ({
