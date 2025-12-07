@@ -103,13 +103,8 @@ export const Layout = ({
   const [uiHidden, setUiHidden] = useState(false);
 
   useLayoutEffect(() => {
-    if (
-      story?.parameters?.fullscreenDefaultValue !== undefined &&
-      typeof story?.parameters?.fullscreenDefaultValue === 'boolean'
-    ) {
-      setUiHidden(story.parameters.fullscreenDefaultValue);
-    }
-  }, [story?.id, story?.parameters?.fullscreenDefaultValue]);
+    setUiHidden(story?.parameters?.storybookUIVisibility === 'hidden');
+  }, [story?.parameters?.storybookUIVisibility]);
 
   const desktopSidebarStyle = useStyle(
     () => ({

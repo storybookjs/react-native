@@ -17,7 +17,8 @@ const meta = {
     notes: `
 This is actually not a proper control type and should be inferred from the object type but is currently an inconsistency in the rn addon.
     `,
-    fullscreenDefaultValue: true,
+    storybookUIVisibility: 'hidden', // visible, hidden
+    layout: 'centered', // fullscreen, centered, padded
   },
 } satisfies Meta<typeof Array>;
 
