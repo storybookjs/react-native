@@ -1,16 +1,9 @@
-import { View, Appearance } from 'react-native';
+import { Appearance } from 'react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import type { Preview } from '@storybook/react-native';
 
 const preview: Preview = {
-  decorators: [
-    (Story) => (
-      <View style={{ padding: 8, flex: 1 }}>
-        <Story />
-      </View>
-    ),
-    withBackgrounds,
-  ],
+  decorators: [withBackgrounds],
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -29,6 +22,8 @@ const preview: Preview = {
     hideFullScreenButton: false,
     noSafeArea: false,
     my_param: 'anything',
+    layout: 'padded', // fullscreen, centered, padded
+    storybookUIVisibility: 'visible', // visible, hidden
     backgrounds: {
       default: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain',
       values: [

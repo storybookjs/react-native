@@ -133,6 +133,61 @@ export default meta;
 
 This parameter would instruct the backgrounds addon to reconfigure itself whenever a Button story is selected. Most addons are configured via a parameter-based API and can be influenced at a global, component and story level.
 
+#### UI-related parameters
+
+React Native Storybook provides several built-in parameters to control the on-device UI behavior:
+
+| Parameter               | Type                                         | Description                                                                                                                                       |
+| ----------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `noSafeArea`            | `boolean`                                    | When `true`, removes the top safe area padding, allowing your story to render edge-to-edge                                                        |
+| `storybookUIVisibility` | `'visible'` \| `'hidden'`                    | Controls the initial visibility of the Storybook UI. When `'hidden'`, the story starts in fullscreen mode                                         |
+| `hideFullScreenButton`  | `boolean`                                    | When `true`, hides the fullscreen toggle button                                                                                                   |
+| `layout`                | `'padded'` \| `'centered'` \| `'fullscreen'` | Controls the layout of the story container. `'padded'` adds padding, `'centered'` centers the content, `'fullscreen'` removes any default spacing |
+
+```tsx
+// Button.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react-native';
+
+import { Button } from './Button';
+
+const meta: Meta<typeof Button> = {
+  component: Button,
+};
+
+export default meta;
+type Story = StoryObj<typeof Button>;
+
+// Story that starts with the UI hidden
+export const UIHidden: Story = {
+  args: {
+    label: 'Button',
+  },
+  parameters: {
+    storybookUIVisibility: 'hidden',
+  },
+};
+
+// Story with centered layout
+export const Centered: Story = {
+  args: {
+    label: 'Button',
+  },
+  parameters: {
+    layout: 'centered',
+  },
+};
+
+// Story without safe area padding (edge-to-edge)
+export const EdgeToEdge: Story = {
+  args: {
+    label: 'Button',
+  },
+  parameters: {
+    noSafeArea: true,
+  },
+};
+```
+
 ### Using decorators
 
 Decorators are a mechanism to wrap a component in arbitrary markup when rendering a story. Components are often created with assumptions about ‘where’ they render. Your styles might expect a theme or layout wrapper, or your UI might expect specific context or data providers.

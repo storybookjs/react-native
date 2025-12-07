@@ -32,6 +32,12 @@ const errorContainerStyle = {
   justifyContent: 'center',
 } satisfies ViewStyle;
 
+const layoutStyles = {
+  padded: { padding: 8 },
+  centered: { alignItems: 'center', justifyContent: 'center' },
+  fullscreen: {},
+} satisfies Record<string, ViewStyle>;
+
 const StoryView = ({ useWrapper = true }: { useWrapper?: boolean }) => {
   const context = useStoryContext();
 
@@ -40,12 +46,15 @@ const StoryView = ({ useWrapper = true }: { useWrapper?: boolean }) => {
   const theme = useTheme();
 
   const containerStyle = useMemo(() => {
+    const layout = context?.parameters?.layout;
+    const layoutStyle = layout ? layoutStyles[layout] : {};
     return {
       flex: 1,
       backgroundColor: theme.background?.content,
       overflow: 'hidden',
+      ...layoutStyle,
     } satisfies ViewStyle;
-  }, [theme.background?.content]);
+  }, [theme.background?.content, context?.parameters?.layout]);
 
   const onError = useCallback(() => {
     console.log(`Error rendering story for ${context?.title} ${context?.name}`);
@@ -80,7 +89,7 @@ const StoryView = ({ useWrapper = true }: { useWrapper?: boolean }) => {
 
   return (
     <View style={errorContainerStyle}>
-      <Text>Please open the sidebar and select a story to preview.</Text>
+      <Text>Please select a story to preview.</Text>
     </View>
   );
 };
