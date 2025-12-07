@@ -28,7 +28,7 @@ ws.on('message', (data) => {
   const raw = data.toString();
   try {
     const parsed = JSON.parse(raw);
-    if (parsed.from === 'test-script' || parsed.type !== 'RN_INDEX_RESPONSE') {
+    if (parsed.from === 'test-script' || parsed.type !== 'RN_GET_INDEX_RESPONSE') {
       return;
     }
     fs.writeFileSync('index.json', JSON.stringify(parsed.args[0].index, null, 2));
