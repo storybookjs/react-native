@@ -21,7 +21,6 @@ import {
 } from 'react-native';
 import StoryView from './components/StoryView';
 import { useSetStoryContext, useStoryContext } from './hooks';
-import getHost from './rn-host-detect';
 
 const STORAGE_KEY = 'lastOpenedStory';
 
