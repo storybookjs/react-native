@@ -137,11 +137,12 @@ This parameter would instruct the backgrounds addon to reconfigure itself whenev
 
 React Native Storybook provides several built-in parameters to control the on-device UI behavior:
 
-| Parameter                | Type      | Description                                                                                |
-| ------------------------ | --------- | ------------------------------------------------------------------------------------------ |
-| `noSafeArea`             | `boolean` | When `true`, removes the top safe area padding, allowing your story to render edge-to-edge |
-| `fullscreenDefaultValue` | `boolean` | When `true`, the story will start in fullscreen mode with the UI hidden                    |
-| `hideFullScreenButton`   | `boolean` | When `true`, hides the fullscreen toggle button                                            |
+| Parameter               | Type                                         | Description                                                                                                                                       |
+| ----------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `noSafeArea`            | `boolean`                                    | When `true`, removes the top safe area padding, allowing your story to render edge-to-edge                                                        |
+| `storybookUIVisibility` | `'visible'` \| `'hidden'`                    | Controls the initial visibility of the Storybook UI. When `'hidden'`, the story starts in fullscreen mode                                         |
+| `hideFullScreenButton`  | `boolean`                                    | When `true`, hides the fullscreen toggle button                                                                                                   |
+| `layout`                | `'padded'` \| `'centered'` \| `'fullscreen'` | Controls the layout of the story container. `'padded'` adds padding, `'centered'` centers the content, `'fullscreen'` removes any default spacing |
 
 ```tsx
 // Button.stories.tsx
@@ -156,13 +157,23 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-// Story that starts in fullscreen mode
-export const Fullscreen: Story = {
+// Story that starts with the UI hidden
+export const UIHidden: Story = {
   args: {
     label: 'Button',
   },
   parameters: {
-    fullscreenDefaultValue: true,
+    storybookUIVisibility: 'hidden',
+  },
+};
+
+// Story with centered layout
+export const Centered: Story = {
+  args: {
+    label: 'Button',
+  },
+  parameters: {
+    layout: 'centered',
   },
 };
 

@@ -60,18 +60,10 @@ The `preview.tsx` file configures the story rendering environment and global par
 
 ```typescript
 import { Preview } from '@storybook/react-native';
-import { View } from 'react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 const preview: Preview = {
   decorators: [
-    // Global wrapper for all stories
-    (Story) => (
-      <View style={{ padding: 8 }}>
-        <Story />
-      </View>
-    ),
-
     // backgrounds addon decorator
     withBackgrounds,
   ],
@@ -89,6 +81,8 @@ const preview: Preview = {
     // UI Configuration
     hideFullScreenButton: false,
     noSafeArea: false,
+    storybookUIVisibility: 'visible', // 'visible' | 'hidden'
+    layout: 'padded', // 'fullscreen' | 'centered' | 'padded'
 
     // Background Configuration
     backgrounds: {
@@ -114,7 +108,8 @@ Other than story sort the other parameters can be overwritten per story.
 - `parameters.options.storySort`: Story sorting configuration
 - `parameters.hideFullScreenButton`: Toggle fullscreen button visibility
 - `parameters.noSafeArea`: Disable safe area insets
-- `parameters.fullscreenDefaultValue`: When `true`, the story starts in fullscreen mode with the UI hidden
+- `parameters.storybookUIVisibility`: Controls UI visibility (`'visible'` | `'hidden'`)
+- `parameters.layout`: Controls story container layout (`'fullscreen'` | `'centered'` | `'padded'`)
 - `parameters.backgrounds`: Background addon configuration
 
 ## index.tsx
