@@ -31,7 +31,7 @@ ws.on('message', (data) => {
     if (parsed.from === 'test-script' || parsed.type !== 'RN_INDEX_RESPONSE') {
       return;
     }
-    fs.writeFileSync('index.json', JSON.stringify(parsed, null, 2));
+    fs.writeFileSync('index.json', JSON.stringify(parsed.args[0].index, null, 2));
     process.exit(0);
   } catch {
     console.log('Received (raw):', raw);
