@@ -1,10 +1,27 @@
 import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import { WebSocketServer, WebSocket, Data } from 'ws';
+import { networkInterfaces } from 'node:os';
 import type { MetroConfig } from 'metro-config';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
 import { telemetry } from 'storybook/internal/telemetry';
 
+/**
+ * Get the local IP address of the machine.
+ * @returns The local IP address of the machine.
+ */
+function getLocalIPAddress(): string | undefined {
+  const nets = networkInterfaces();
+  for (const name of Object.keys(nets)) {
+    for (const net of nets[name]!) {
+      const familyV4Value = typeof net.family === 'string' ? 'IPv4' : 4;
+      if (net.family === familyV4Value && !net.internal) {
+        return net.address;
+      }
+    }
+  }
+  return '0.0.0.0';
+}
 /**
  * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
  */
@@ -32,7 +49,7 @@ interface WithStorybookOptions {
   /**
    * WebSocket configuration for syncing storybook instances or sending events to storybook.
    */
-  websockets?: WebsocketsOptions;
+  websockets?: WebsocketsOptions | 'auto';
 
   /**
    * Whether to use JavaScript files for Storybook configuration instead of TypeScript. Defaults to false.
@@ -195,9 +212,13 @@ export function withStorybook(
     };
   }
 
+  let websocketOptions: WebsocketsOptions | undefined;
+
   if (websockets) {
-    const port = websockets.port ?? 7007;
-    const host = websockets.host ?? 'localhost';
+    const port = websockets === 'auto' ? 7007 : websockets.port;
+    const host = websockets === 'auto' ? getLocalIPAddress() : websockets.host;
+
+    websocketOptions = { port, host };
 
     const wss = new WebSocketServer({ port, host });
 
@@ -215,6 +236,12 @@ export function withStorybook(
           console.error(error);
         }
       });
+
+      setInterval(function ping() {
+        wss.clients.forEach(function each(ws) {
+          ws.send(JSON.stringify({ type: 'ping', args: [] }));
+        });
+      }, 10000);
     });
   }
 
@@ -222,6 +249,8 @@ export function withStorybook(
     configPath,
     useJs,
     docTools,
+    host: websocketOptions?.host,
+    port: websocketOptions?.port,
   });
 
   return {

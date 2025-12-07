@@ -14,6 +14,7 @@ import { useEffect, useMemo, useReducer, useState } from 'react';
 import {
   ActivityIndicator,
   Linking,
+  Platform,
   View as RNView,
   StyleSheet,
   useColorScheme,
@@ -144,10 +145,34 @@ export class View {
     return { storySpecifier: '*', viewMode: 'story' };
   };
 
-  _getServerChannel = (params: Partial<Params> = {}) => {
-    const host = getHost(params.host || 'localhost');
+  _getHost = (params: Partial<Params> = {}) => {
+    if (params.host) {
+      return params.host;
+    }
 
-    const port = `:${params.port || 7007}`;
+    if (globalThis.STORYBOOK_WEBSOCKET?.host) {
+      return globalThis.STORYBOOK_WEBSOCKET.host;
+    }
+
+    return Platform.OS === 'android' ? '10.0.2.2' : 'localhost';
+  };
+
+  __getPort = (params: Partial<Params> = {}) => {
+    if (params.port) {
+      return params.port;
+    }
+
+    if (globalThis.STORYBOOK_WEBSOCKET?.port) {
+      return globalThis.STORYBOOK_WEBSOCKET.port;
+    }
+
+    return 7007;
+  };
+
+  _getServerChannel = (params: Partial<Params> = {}) => {
+    const host = this._getHost(params);
+
+    const port = `:${this.__getPort(params)}`;
 
     const query = params.query || '';
 
@@ -219,6 +244,11 @@ export class View {
       channel.emit(CHANNEL_CREATED);
       this._preview.ready().then(() => this._preview.onStoryIndexChanged());
     }
+
+    this._channel.on('RN_GET_INDEX', () => {
+      // TODO: define response payload
+      this._channel.emit('RN_INDEX_RESPONSE', { index: this._storyIndex });
+    });
 
     managerAddons.loadAddons({
       store: () => ({

@@ -10,7 +10,9 @@ function getArguments() {
     )
     .option('-j, --use-js', 'Use a js file for storybook.requires')
     .option('-D, --no-doc-tools', 'Do not include doc tools in the storybook.requires file')
-    .option('-a, --absolute', 'Use absolute paths for story imports');
+    .option('-a, --absolute', 'Use absolute paths for story imports')
+    .option('-w, --host <host>', 'Host for websockets')
+    .option('-p, --port <port>', 'Port for websockets');
 
   program.parse();
 

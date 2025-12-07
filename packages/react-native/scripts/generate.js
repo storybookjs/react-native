@@ -12,7 +12,13 @@ const path = require('path');
 
 const cwd = process.cwd();
 
-async function generate({ configPath, /* absolute = false, */ useJs = false, docTools = true }) {
+async function generate({
+  configPath,
+  /* absolute = false, */ useJs = false,
+  docTools = true,
+  host,
+  port,
+}) {
   const storybookRequiresLocation = path.resolve(
     cwd,
     configPath,
@@ -109,6 +115,7 @@ async function generate({ configPath, /* absolute = false, */ useJs = false, doc
 declare global {
   var view: View;
   var STORIES: typeof normalizedStories;
+  var STORYBOOK_WEBSOCKET: { host: string; port: number } | undefined;
 }
 `;
 
@@ -125,24 +132,25 @@ ${useJs ? '' : globalTypes}
 
 const annotations = ${annotations};
 
-global.STORIES = normalizedStories;
+globalThis.STORIES = normalizedStories;
+${host ? `globalThis.STORYBOOK_WEBSOCKET = { host: '${host}', port: ${port ?? 7007} };` : ''}
 
 ${useJs ? '' : '// @ts-ignore'}
 module?.hot?.accept?.();
 
 ${optionsVar}
 
-if (!global.view) {
-  global.view = start({
+if (!globalThis.view) {
+  globalThis.view = start({
     annotations,
     storyEntries: normalizedStories,
 ${options ? `    ${options},` : ''}
   });
 } else {
-  updateView(global.view, annotations, normalizedStories${options ? `, ${options}` : ''});
+  updateView(globalThis.view, annotations, normalizedStories${options ? `, ${options}` : ''});
 }
 
-export const view${useJs ? '' : ': View'} = global.view;
+export const view${useJs ? '' : ': View'} = globalThis.view;
 `;
 
   fs.writeFileSync(storybookRequiresLocation, fileContent, {
