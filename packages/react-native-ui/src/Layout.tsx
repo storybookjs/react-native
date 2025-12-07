@@ -1,5 +1,5 @@
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { PortalHost, PortalProvider } from '@gorhom/portal';
+import { PortalHost } from '@gorhom/portal';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, ThemeProvider, useTheme } from '@storybook/react-native-theming';
 import {
@@ -11,7 +11,7 @@ import {
   useStyle,
   type SBUI,
 } from '@storybook/react-native-ui-common';
-import { ReactNode, useCallback, useRef, useState } from 'react';
+import { ReactNode, useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -107,6 +107,10 @@ export const Layout = ({
   );
 
   const [uiHidden, setUiHidden] = useState(false);
+
+  useLayoutEffect(() => {
+    setUiHidden(story?.parameters?.storybookUIVisibility === 'hidden');
+  }, [story?.id, story?.parameters?.storybookUIVisibility]);
 
   const desktopSidebarStyle = useStyle(
     () => ({

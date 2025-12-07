@@ -10,7 +10,7 @@ import {
   useStoreBooleanState,
   useStyle,
 } from '@storybook/react-native-ui-common';
-import { ReactElement, ReactNode, useCallback, useRef, useState } from 'react';
+import { ReactElement, ReactNode, useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
@@ -101,6 +101,10 @@ export const Layout = ({
   );
 
   const [uiHidden, setUiHidden] = useState(false);
+
+  useLayoutEffect(() => {
+    setUiHidden(story?.parameters?.storybookUIVisibility === 'hidden');
+  }, [story?.parameters?.storybookUIVisibility]);
 
   const desktopSidebarStyle = useStyle(
     () => ({

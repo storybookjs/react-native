@@ -167,6 +167,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
             <AddonsTabs
               onClose={() => {
                 setMobileMenuOpen(false);
+                Keyboard.dismiss();
               }}
               storyId={storyId}
             />
@@ -250,6 +251,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={addonsTabsContentContainerStyle}
+          keyboardShouldPersistTaps="handled"
         >
           {Object.values(panels).map(({ id, title }) => {
             const resolvedTitle = typeof title === 'function' ? title({}) : title;
