@@ -110,7 +110,7 @@ export const Layout = ({
 
   useLayoutEffect(() => {
     setUiHidden(story?.parameters?.storybookUIVisibility === 'hidden');
-  }, [story?.id, story?.parameters?.storybookUIVisibility]);
+  }, [story?.parameters?.storybookUIVisibility]);
 
   const desktopSidebarStyle = useStyle(
     () => ({
