@@ -1,26 +1,20 @@
-import type { StorybookConfig as StorybookConfigBase } from 'storybook/internal/types';
-import type { ReactNativeOptions } from './Start';
 export { darkTheme, theme, type Theme } from '@storybook/react-native-theming';
 
-export { start, prepareStories, getProjectAnnotations, updateView } from './Start';
-export type { View, Storage, InitialSelection, ThemePartial, Params } from './View';
+export { getProjectAnnotations, prepareStories, start, updateView } from './Start';
+export type { InitialSelection, Params, Storage, ThemePartial, View } from './View';
 
-export interface StorybookConfig {
-  stories: StorybookConfigBase['stories'];
-  addons: Array<string | { name: string; options?: Record<string, any> }>;
-  // TODO move this to params
-  reactNative?: ReactNativeOptions;
-  framework?: '@storybook/react-native';
-}
+export type { StorybookConfig } from './types/config';
 
 export type {
-  Meta,
-  StoryFn,
-  StoryObj,
   Args,
   ArgTypes,
-  Preview,
   Decorator,
   Loader,
+  Meta,
   Parameters,
+  Preview,
+  StoryFn,
+  StoryObj,
 } from '@storybook/react';
+
+export { __definePreview as definePreview } from '@storybook/react';

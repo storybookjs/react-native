@@ -1,9 +1,11 @@
 import { Appearance } from 'react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-import type { Preview } from '@storybook/react-native';
+import { definePreview } from '@storybook/react-native';
 
-const preview: Preview = {
+export default definePreview({
+  addons: [],
   decorators: [withBackgrounds],
+
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -26,6 +28,7 @@ const preview: Preview = {
     storybookUIVisibility: 'visible', // visible, hidden
     backgrounds: {
       default: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain',
+      // @ts-expect-error - backgrounds not compatible yet
       values: [
         { name: 'plain', value: 'white' },
         { name: 'dark', value: '#333' },
@@ -33,6 +36,4 @@ const preview: Preview = {
       ],
     },
   },
-};
-
-export default preview;
+});

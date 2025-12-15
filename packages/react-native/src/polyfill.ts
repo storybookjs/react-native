@@ -1,4 +1,4 @@
-import { Platform } from 'react-native-web';
+import { Platform } from 'react-native';
 
 if (Platform.OS !== 'web') {
   // We polyfill URLSearchParams for React Native since URLSearchParams.get is not implemented yet is used in storybook

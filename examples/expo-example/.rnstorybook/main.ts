@@ -1,6 +1,6 @@
-import type { StorybookConfig } from '@storybook/react-native';
+import { defineMain } from '@storybook/react-native/node';
 
-const main: StorybookConfig = {
+export default defineMain({
   stories: [
     '../components/**/*.stories.?(ts|tsx|js|jsx)',
     '../other_components/**/*.stories.?(ts|tsx|js|jsx)',
@@ -23,6 +23,4 @@ const main: StorybookConfig = {
   },
 
   framework: '@storybook/react-native',
-};
-
-export default main;
+});
