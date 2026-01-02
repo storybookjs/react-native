@@ -1,10 +1,10 @@
 import * as path from 'path';
 import { generate } from '../../scripts/generate';
-import { WebSocketServer, WebSocket, Data } from 'ws';
 import { networkInterfaces } from 'node:os';
 import type { MetroConfig } from 'metro-config';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
 import { telemetry } from 'storybook/internal/telemetry';
+import { createChannelServer } from './channelServer';
 
 /**
  * Get the local IP address of the machine.
@@ -220,29 +220,7 @@ export function withStorybook(
 
     websocketOptions = { port, host };
 
-    const wss = new WebSocketServer({ port, host });
-
-    wss.on('connection', function connection(ws: WebSocket) {
-      console.log('WebSocket connection established');
-
-      ws.on('error', console.error);
-
-      ws.on('message', function message(data: Data) {
-        try {
-          const json = JSON.parse(data.toString());
-
-          wss.clients.forEach((wsClient) => wsClient.send(JSON.stringify(json)));
-        } catch (error) {
-          console.error(error);
-        }
-      });
-
-      setInterval(function ping() {
-        wss.clients.forEach(function each(ws) {
-          ws.send(JSON.stringify({ type: 'ping', args: [] }));
-        });
-      }, 10000);
-    });
+    createChannelServer({ port, host, configPath });
   }
 
   generate({

@@ -8451,6 +8451,7 @@ __metadata:
     commander: "npm:^14.0.2"
     dedent: "npm:^1.7.0"
     deepmerge: "npm:^4.3.1"
+    glob: "npm:^13.0.0"
     jest: "npm:^29.7.0"
     jest-expo: "npm:~54.0.13"
     jotai: "npm:^2.6.2"

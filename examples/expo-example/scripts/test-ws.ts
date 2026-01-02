@@ -24,7 +24,7 @@ ws.on('open', () => {
   ws.send(message);
 });
 
-ws.on('message', (data) => {
+ws.on('message', async (data) => {
   const raw = data.toString();
   try {
     const parsed = JSON.parse(raw);
@@ -32,6 +32,11 @@ ws.on('message', (data) => {
       return;
     }
     fs.writeFileSync('index.json', JSON.stringify(parsed.args[0].index, null, 2));
+
+    // const restIndex = await fetch(`http://${host}:${port}/index.json`);
+    // const indexJson = await restIndex.json();
+    // fs.writeFileSync('index-rest.json', JSON.stringify(indexJson, null, 2));
+
     process.exit(0);
   } catch {
     console.log('Received (raw):', raw);
