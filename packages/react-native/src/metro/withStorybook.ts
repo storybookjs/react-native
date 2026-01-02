@@ -215,7 +215,7 @@ export function withStorybook(
   let websocketOptions: WebsocketsOptions | undefined;
 
   if (websockets) {
-    const port = websockets === 'auto' ? 7007 : websockets.port;
+    const port = websockets === 'auto' ? 7007 : (websockets.port ?? 7007);
     const host = websockets === 'auto' ? getLocalIPAddress() : websockets.host;
 
     websocketOptions = { port, host };
