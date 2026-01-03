@@ -24,10 +24,8 @@ const loadMain = async ({ configPath, cwd }) => {
   const mainPathTs = path.resolve(cwd, configPath, `main.ts`);
   const mainPathJs = path.resolve(cwd, configPath, `main.js`);
   if (fs.existsSync(mainPathTs)) {
-    console.log('mainPathTs', mainPathTs);
     return interopRequireDefault(mainPathTs);
   } else if (fs.existsSync(mainPathJs)) {
-    console.log('mainPathJs', mainPathJs);
     return interopRequireDefault(mainPathJs);
   } else {
     throw new Error(`Main config file not found at ${mainPathTs} or ${mainPathJs}`);
