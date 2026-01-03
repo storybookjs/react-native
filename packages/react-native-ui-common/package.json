@@ -57,7 +57,7 @@
     "typescript": "~5.9.3"
   },
   "dependencies": {
-    "@storybook/react": "^10.1.3",
+    "@storybook/react": "^10.1.2",
     "@storybook/react-native-theming": "^10.1.1",
     "es-toolkit": "^1.41.0",
     "fuse.js": "^7.1.0",
