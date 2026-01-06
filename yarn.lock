@@ -8279,7 +8279,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui-common@workspace:packages/react-native-ui-common"
   dependencies:
-    "@storybook/react": "npm:^10.1.2"
+    "@storybook/react": "npm:^10.1.3"
     "@storybook/react-native-theming": "npm:^10.1.2"
     "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.1.10"
@@ -8304,7 +8304,7 @@ __metadata:
   resolution: "@storybook/react-native-ui-lite@workspace:packages/react-native-ui-lite"
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
-    "@storybook/react": "npm:^10.1.2"
+    "@storybook/react": "npm:^10.1.3"
     "@storybook/react-native-theming": "npm:^10.1.2"
     "@storybook/react-native-ui-common": "npm:^10.1.2"
     "@types/jest": "npm:^29.4.3"
@@ -8330,7 +8330,7 @@ __metadata:
   resolution: "@storybook/react-native-ui@workspace:packages/react-native-ui"
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
-    "@storybook/react": "npm:^10.1.2"
+    "@storybook/react": "npm:^10.1.3"
     "@storybook/react-native-theming": "npm:^10.1.2"
     "@storybook/react-native-ui-common": "npm:^10.1.2"
     "@types/jest": "npm:^29.4.3"
@@ -8354,7 +8354,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@storybook/react-native-web-vite@npm:^10.1.2":
+"@storybook/react-native-web-vite@npm:^10.1.3":
   version: 10.1.11
   resolution: "@storybook/react-native-web-vite@npm:10.1.11"
   dependencies:
@@ -8378,7 +8378,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native@workspace:packages/react-native"
   dependencies:
-    "@storybook/react": "npm:^10.1.2"
+    "@storybook/react": "npm:^10.1.3"
     "@storybook/react-native-theming": "npm:^10.1.2"
     "@storybook/react-native-ui": "npm:^10.1.2"
     "@storybook/react-native-ui-common": "npm:^10.1.2"
@@ -8397,7 +8397,7 @@ __metadata:
     react-native: "npm:0.81.5"
     react-native-url-polyfill: "npm:^3.0.0"
     setimmediate: "npm:^1.0.5"
-    storybook: "npm:^10.1.2"
+    storybook: "npm:^10.1.3"
     tsup: "npm:^8.5.0"
     typescript: "npm:~5.9.3"
     universal-test-renderer: "npm:^0.6.0"
@@ -8446,7 +8446,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:10.1.11, @storybook/react@npm:^10.1.2":
+"@storybook/react@npm:10.1.11, @storybook/react@npm:^10.1.3":
   version: 10.1.11
   resolution: "@storybook/react@npm:10.1.11"
   dependencies:
@@ -15084,10 +15084,10 @@ __metadata:
     "@storybook/addon-ondevice-controls": "npm:^10.1.2"
     "@storybook/addon-ondevice-notes": "npm:^10.1.2"
     "@storybook/addon-react-native-server": "npm:^1.0.1"
-    "@storybook/react": "npm:^10.1.2"
+    "@storybook/react": "npm:^10.1.3"
     "@storybook/react-native": "npm:^10.1.2"
     "@storybook/react-native-ui-lite": "npm:^10.1.2"
-    "@storybook/react-native-web-vite": "npm:^10.1.2"
+    "@storybook/react-native-web-vite": "npm:^10.1.3"
     "@testing-library/react-native": "npm:14.0.0-alpha.1"
     "@types/react": "npm:~19.1.10"
     "@types/ws": "npm:^8.18.1"
@@ -15107,7 +15107,7 @@ __metadata:
     react-native-svg: "npm:15.12.1"
     react-native-web: "npm:^0.21.2"
     react-native-worklets: "npm:0.5.1"
-    storybook: "npm:^10.1.2"
+    storybook: "npm:^10.1.3"
     storybook-addon-deep-controls: "npm:^0.9.5"
     typescript: "npm:~5.9.3"
     universal-test-renderer: "npm:^0.6.0"
@@ -26702,7 +26702,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^10.1.2":
+"storybook@npm:^10.1.3":
   version: 10.1.11
   resolution: "storybook@npm:10.1.11"
   dependencies:
