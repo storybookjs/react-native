@@ -6,11 +6,31 @@ const {
   getAddonName,
 } = require('./common');
 const { normalizeStories, globToRegexp, loadMainConfig } = require('storybook/internal/common');
+const { interopRequireDefault } = require('./require-interop');
 const fs = require('fs');
 
 const path = require('path');
 
 const cwd = process.cwd();
+
+const loadMain = async ({ configPath, cwd }) => {
+  try {
+    const main = await loadMainConfig({ configDir: configPath, cwd });
+    return main;
+  } catch {
+    console.error('Error loading main config, trying fallback');
+  }
+
+  const mainPathTs = path.resolve(cwd, configPath, `main.ts`);
+  const mainPathJs = path.resolve(cwd, configPath, `main.js`);
+  if (fs.existsSync(mainPathTs)) {
+    return interopRequireDefault(mainPathTs);
+  } else if (fs.existsSync(mainPathJs)) {
+    return interopRequireDefault(mainPathJs);
+  } else {
+    throw new Error(`Main config file not found at ${mainPathTs} or ${mainPathJs}`);
+  }
+};
 
 async function generate({ configPath, /* absolute = false, */ useJs = false, docTools = true }) {
   const storybookRequiresLocation = path.resolve(
@@ -19,9 +39,7 @@ async function generate({ configPath, /* absolute = false, */ useJs = false, doc
     `storybook.requires.${useJs ? 'js' : 'ts'}`
   );
 
-  const main = await loadMainConfig({ configDir: configPath, cwd });
-
-  // const reactNativeOptions = main.reactNativeOptions;
+  const main = await loadMain({ configPath, cwd });
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
