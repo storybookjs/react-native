@@ -34,14 +34,14 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 
 There is some project boilerplate with `@storybook/react-native` and `@storybook/addon-react-native-web` both already configured with a simple example.
 
-For expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
+For Expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
 
 ```sh
 # With NPM
 npx create-expo-app --template expo-template-storybook AwesomeStorybook
 ```
 
-For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
+For React Native CLI you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
 
 ```sh
 npx @react-native-community/cli init MyApp --template react-native-template-storybook
@@ -107,7 +107,7 @@ module.exports = withStorybook(config, {
 });
 ```
 
-**React native**
+**React Native**
 
 ```js
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
@@ -263,7 +263,6 @@ For global decorators and parameters, you can add them to `preview.tsx` inside y
 
 ```tsx
 // .rnstorybook/preview.tsx
-import type {
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 const preview: Preview = {
@@ -465,29 +464,31 @@ The port on which to run the WebSocket, if specified.
 
 You can pass these parameters to getStorybookUI call in your storybook entry point:
 
-```
+```ts
 {
-    initialSelection?: string | Object (undefined)
-        -- initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
-    storage?: Object (undefined)
-        -- {getItem: (key: string) => Promise<string | null>;setItem: (key: string, value: string) => Promise<void>;}
-        -- Custom storage to be used instead of AsyncStorage
+    // initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
+    initialSelection?: string | Object;
+    // Custom storage to be used instead of AsyncStorage
+    storage?: {
+        getItem: (key: string) => Promise<string | null>;
+        setItem: (key: string, value: string) => Promise<void>;
+    };
+    // show the onDevice UI
     onDeviceUI?: boolean;
-        -- show the ondevice ui
+    // enable websockets for the Storybook UI
     enableWebsockets?: boolean;
-        -- enable websockets for the storybook ui
+    // query params for the websocket connection
     query?: string;
-        -- query params for the websocket connection
+    // host for the websocket connection
     host?: string;
-        -- host for the websocket connection
+    // port for the websocket connection
     port?: number;
-        -- port for the websocket connection
+    // use secured websockets
     secured?: boolean;
-        -- use secured websockets
+    // store the last selected story in the device's storage
     shouldPersistSelection?: boolean;
-        -- store the last selected story in the device's storage
+    // theme for the Storybook UI
     theme: Partial<Theme>;
-        -- theme for the storybook ui
 }
 ```
 
@@ -514,6 +515,6 @@ Here are some example projects to help you get started
 
 - A mono repo setup by @axeldelafosse https://github.com/axeldelafosse/storybook-rnw-monorepo
 - Expo setup https://github.com/dannyhw/expo-storybook-starter
-- React native cli setup https://github.com/dannyhw/react-native-storybook-starter
+- React Native CLI setup https://github.com/dannyhw/react-native-storybook-starter
 - Adding a separate entry point and dev menu item in native files for RN CLI project: https://github.com/zubko/react-native-storybook-with-dev-menu
 - Want to showcase your own project? open a PR and add it to the list!
