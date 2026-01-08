@@ -11,7 +11,7 @@ If you are migrating from 9 to 10 you can find the migration guide [here](https:
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> [!NOTE]  
+> [!NOTE]
 > Make sure you align your storybook dependencies to the same major version or you will see broken behaviour.
 
 ![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
@@ -65,7 +65,7 @@ Then wrap your metro config with the withStorybook function as seen [below](#add
 
 If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
-If you want to add everything yourself check out the the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
+If you want to add everything yourself check out the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
 
 #### Additional steps: Update your metro config
 
@@ -185,13 +185,13 @@ export { default } from '../.rnstorybook';
 
 Then add a way to navigate to your storybook route and I recommend disabling the header for the storybook route.
 
-Heres a video showing the same setup:
+Here's a video showing the same setup:
 
 https://www.youtube.com/watch?v=egBqrYg0AIg
 
 ## Writing stories
 
-In storybook we use a syntax called CSF that looks like this:
+In Storybook we use a syntax called CSF that looks like this:
 
 ```tsx
 import type { Meta, StoryObj } from '@storybook/react-native';
@@ -229,7 +229,7 @@ export default main;
 
 ### Decorators and Parameters
 
-For stories you can add decorators and parameters on the default export or on a specifc story.
+For stories you can add decorators and parameters on the default export or on a specific story.
 
 ```tsx
 import type { Meta } from '@storybook/react';
@@ -263,6 +263,7 @@ For global decorators and parameters, you can add them to `preview.tsx` inside y
 
 ```tsx
 // .rnstorybook/preview.tsx
+import type { Preview } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 const preview: Preview = {
@@ -294,11 +295,11 @@ export default preview;
 The cli will install some basic addons for you such as controls and actions.
 Ondevice addons are addons that can render with the device ui that you see on the phone.
 
-Currently the addons available are:
+Currently, the addons available are:
 
 - [`@storybook/addon-ondevice-controls`](https://storybook.js.org/addons/@storybook/addon-ondevice-controls): adjust your components props in realtime
 - [`@storybook/addon-ondevice-actions`](https://storybook.js.org/addons/@storybook/addon-ondevice-actions): mock onPress calls with actions that will log information in the actions tab
-- [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some markdown to your stories to help document their usage
+- [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some Markdown to your stories to help document their usage
 - [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
 
 Install each one you want to use and add them to the `main.ts` addons list as follows:
@@ -501,7 +502,7 @@ Storybook provides testing utilities that allow you to reuse your stories in ext
 We welcome contributions to Storybook!
 
 - 📥 Pull requests and 🌟 Stars are always welcome.
-- Read our [contributing guide](CONTRIBUTING.md) to get started,
+- Read our [contributing guide](../../CONTRIBUTING.md) to get started,
   or find us on [Discord](https://discord.gg/sMFvFsG) and look for the react-native channel.
 
 Looking for a first issue to tackle?
