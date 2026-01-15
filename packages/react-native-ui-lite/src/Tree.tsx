@@ -399,6 +399,7 @@ export const Tree = React.memo<{
     () => ({
       marginTop: isMain && orphanIds.length > 0 ? 20 : 0,
       paddingBottom: insets.bottom + 20,
+      paddingLeft: 6,
     }),
     [isMain, orphanIds.length, insets.bottom]
   );
