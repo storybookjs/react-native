@@ -14,8 +14,8 @@ import { ComponentIcon, StoryIcon } from './icon/iconDataUris';
 
 const ResultsList = styled.View({
   margin: 0,
-  padding: 0,
   marginTop: 8,
+  paddingHorizontal: 10,
 });
 
 const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
@@ -56,10 +56,16 @@ const ResultRowContent = styled.View(() => ({
 
 const NoResults = styled.View(({ theme }) => ({
   marginTop: 20,
-  textAlign: 'center',
+  alignItems: 'center',
   fontSize: theme.typography.size.s2,
   lineHeight: 18,
   color: theme.color.defaultText,
+}));
+
+const NoResultsText = styled.Text(({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  color: theme.textMutedColor,
+  textAlign: 'center',
 }));
 
 const Mark = styled.Text(({ theme }) => ({
@@ -212,12 +218,10 @@ export const SearchResults: FC<{
       ) : null}
 
       {results.length === 0 && query ? (
-        <View>
-          <NoResults>
-            <Text style={{ marginBottom: 8 }}>No components found</Text>
-            <Text>Find components by name or path.</Text>
-          </NoResults>
-        </View>
+        <NoResults>
+          <NoResultsText style={{ marginBottom: 4 }}>No components found</NoResultsText>
+          <NoResultsText>Find components by name or path.</NoResultsText>
+        </NoResults>
       ) : null}
 
       {results.map((result, index) => {
