@@ -59,7 +59,6 @@
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
-    "@legendapp/list": "3.0.0-beta.20",
     "@storybook/react": "^10.1.11",
     "@storybook/react-native-theming": "^10.1.11",
     "@storybook/react-native-ui-common": "^10.1.11",

@@ -10,7 +10,7 @@ import {
 } from '@storybook/react-native-ui-common';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { View, ViewStyle } from 'react-native';
-import { LegendList } from '@legendapp/list';
+import { ScrollProtectedFlatList } from './ScrollProtectedFlatList';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
 import type {
@@ -406,6 +406,17 @@ export const Tree = React.memo<{
     [isMain, orphanIds.length, insets.bottom]
   );
 
+  // getItemLayout enables efficient scrollToIndex by providing item dimensions upfront
+  const ITEM_HEIGHT = 28;
+  const getItemLayout = useCallback(
+    (_data: any, index: number) => ({
+      length: ITEM_HEIGHT,
+      offset: ITEM_HEIGHT * index,
+      index,
+    }),
+    []
+  );
+
   // Register scroll callback for SelectedNodeProvider
   useEffect(() => {
     const scrollToSelected = () => {
@@ -434,17 +445,18 @@ export const Tree = React.memo<{
 
   return (
     <View style={flexStyle}>
-      <LegendList
+      <ScrollProtectedFlatList
         ref={containerRef}
         style={flexStyle}
         data={treeData}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         contentContainerStyle={contentContainerStyle}
-        estimatedItemSize={28}
-        recycleItems
+        getItemLayout={getItemLayout}
         keyboardShouldPersistTaps="handled"
-        waitForInitialLayout
+        initialNumToRender={20}
+        maxToRenderPerBatch={20}
+        windowSize={8}
       />
     </View>
   );

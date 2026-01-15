@@ -6474,22 +6474,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@legendapp/list@npm:3.0.0-beta.20":
-  version: 3.0.0-beta.20
-  resolution: "@legendapp/list@npm:3.0.0-beta.20"
-  dependencies:
-    use-sync-external-store: "npm:^1.5.0"
-  peerDependencies:
-    react: "*"
-  peerDependenciesMeta:
-    react-dom:
-      optional: true
-    react-native:
-      optional: true
-  checksum: 10/b1e39a041298c99de115b8ae8e5eb633a61869326cb50886468ca9e493c0d5be2300f3460cfef029dd1ff3894f649f890037f7cc9560454055af87111b571051
-  languageName: node
-  linkType: hard
-
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.5
   resolution: "@leichtgewicht/ip-codec@npm:2.0.5"
@@ -8320,7 +8304,6 @@ __metadata:
   resolution: "@storybook/react-native-ui-lite@workspace:packages/react-native-ui-lite"
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
-    "@legendapp/list": "npm:3.0.0-beta.20"
     "@storybook/react": "npm:^10.1.11"
     "@storybook/react-native-theming": "npm:^10.1.11"
     "@storybook/react-native-ui-common": "npm:^10.1.11"
