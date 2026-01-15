@@ -1,37 +1,50 @@
+import { LegendListRef } from '@legendapp/list';
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useRef } from 'react';
-
-type ScrollToSelectedCallback = () => void;
+import { createContext, useCallback, useContext, useRef, useState } from 'react';
+type CallbackOptions = { id?: string; animated?: boolean };
 
 type SelectedNodeContextType = {
-  scrollToSelectedNode: () => void;
-  registerScrollCallback: (callback: ScrollToSelectedCallback | null) => void;
+  registerCallback: (callback: (options: CallbackOptions) => void) => void;
+  scrollCallback: (options: CallbackOptions) => void;
+
+  idToScrolllOnMount: string | null;
+  setIdToScrolllOnMount: (id: string | null) => void;
 };
 
 const SelectedNodeContext = createContext<SelectedNodeContextType>({
-  scrollToSelectedNode: () => {},
-  registerScrollCallback: () => {},
+  registerCallback: () => {},
+  scrollCallback: () => {},
+
+  idToScrolllOnMount: null,
+  setIdToScrolllOnMount: () => {},
 });
 
 export const SelectedNodeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const scrollCallbackRef = useRef<ScrollToSelectedCallback | null>(null);
+  const [scrollCallbackValue, setScrollCallback] = useState<
+    ((options: CallbackOptions) => void) | null
+  >(null);
 
-  const registerScrollCallback = useCallback((callback: ScrollToSelectedCallback | null) => {
-    scrollCallbackRef.current = callback;
+  const [idToScrolllOnMount, setIdToScrolllOnMount] = useState<string | null>(null);
+
+  const registerCallback = useCallback((callback: (options: CallbackOptions) => void) => {
+    setScrollCallback(() => callback);
   }, []);
 
-  const scrollToSelectedNode = useCallback(() => {
-    // Small delay to ensure list is rendered after drawer opens
-    setTimeout(() => {
-      scrollCallbackRef.current?.();
-    }, 100);
-  }, []);
+  const scrollCallback = useCallback(
+    (options: CallbackOptions) => {
+      scrollCallbackValue?.(options);
+    },
+    [scrollCallbackValue]
+  );
 
   return (
     <SelectedNodeContext.Provider
       value={{
-        scrollToSelectedNode,
-        registerScrollCallback,
+        scrollCallback,
+        registerCallback,
+
+        idToScrolllOnMount,
+        setIdToScrolllOnMount,
       }}
     >
       {children}

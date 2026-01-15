@@ -1,21 +1,20 @@
+import { Portal } from '@gorhom/portal';
 import { useTheme } from '@storybook/react-native-theming';
 import {
   forwardRef,
   memo,
   ReactNode,
+  useCallback,
   useEffect,
   useImperativeHandle,
   useMemo,
-  useRef,
   useState,
 } from 'react';
 import {
   Animated,
   Keyboard,
   useWindowDimensions,
-  Modal,
   PanResponder,
-  PanResponderInstance,
   Pressable,
   View,
   ViewStyle,
@@ -27,6 +26,16 @@ import { useSelectedNode } from './SelectedNodeProvider';
 import useAnimatedValue from './useAnimatedValue';
 
 const flexStyle: ViewStyle = { flex: 1 };
+
+const portalContainerStyle: ViewStyle = {
+  flex: 1,
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  zIndex: 1000,
+};
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
@@ -99,53 +108,86 @@ export const useAnimatedModalHeight = () => {
 
 export const MobileMenuDrawer = memo(
   forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(({ children }, ref) => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const { scrollToSelectedNode } = useSelectedNode();
+    // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    const { scrollCallback } = useSelectedNode();
     const theme = useTheme();
+    const { height } = useWindowDimensions();
     const animatedHeight = useAnimatedModalHeight();
+
+    // Slide animation for drawer entrance/exit
+    const slideAnim = useAnimatedValue(height);
 
     // Create a reference for the drag handle animation
     const dragY = useAnimatedValue(0);
 
+    const openDrawer = useCallback(() => {
+      dragY.setValue(0);
+      slideAnim.setValue(height);
+      setIsVisible(true);
+      // setMobileMenuOpen(true);
+      Animated.timing(slideAnim, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start(({ finished }) => {
+        if (finished) {
+          scrollCallback({ animated: false });
+        }
+      });
+    }, [dragY, height, scrollCallback, slideAnim]);
+
+    const closeDrawer = useCallback(() => {
+      Keyboard.dismiss();
+      // setMobileMenuOpen(false);
+      Animated.timing(slideAnim, {
+        toValue: height,
+        duration: 300,
+        useNativeDriver: true,
+      }).start(({ finished }) => {
+        if (finished) {
+          setIsVisible(false);
+        }
+      });
+    }, [height, slideAnim]);
+
     // Create the pan responder for handling drag gestures
-    const panResponder = useRef<PanResponderInstance>(
-      PanResponder.create({
-        onStartShouldSetPanResponder: () => true,
-        onMoveShouldSetPanResponder: (_, gestureState) => {
-          // Only capture downward dragging motions
-          return gestureState.dy > 0;
-        },
-        onPanResponderMove: (_, gestureState) => {
-          // Update dragY based on the gesture
-          if (gestureState.dy > 0) {
-            dragY.setValue(gestureState.dy);
-          }
-        },
-        onPanResponderRelease: (_, gestureState) => {
-          // If dragged down enough, close the drawer
-          if (gestureState.dy > 50) {
-            Keyboard.dismiss();
-            setMobileMenuOpen(false);
-          }
-          // Reset the drag position
-          Animated.timing(dragY, {
-            toValue: 0,
-            duration: 300,
-            useNativeDriver: true,
-          }).start();
-        },
-      })
-    ).current;
+    const panResponder = useMemo(
+      () =>
+        PanResponder.create({
+          onStartShouldSetPanResponder: () => true,
+          onMoveShouldSetPanResponder: (_, gestureState) => {
+            // Only capture downward dragging motions
+            return gestureState.dy > 0;
+          },
+          onPanResponderMove: (_, gestureState) => {
+            // Update dragY based on the gesture
+            if (gestureState.dy > 0) {
+              dragY.setValue(gestureState.dy);
+            }
+          },
+          onPanResponderRelease: (_, gestureState) => {
+            // If dragged down enough, close the drawer
+            if (gestureState.dy > 50) {
+              closeDrawer();
+            }
+            // Reset the drag position
+            Animated.timing(dragY, {
+              toValue: 0,
+              duration: 300,
+              useNativeDriver: true,
+            }).start();
+          },
+        }),
+      [closeDrawer, dragY]
+    );
 
     useImperativeHandle(ref, () => ({
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
-          dragY.setValue(0);
-          scrollToSelectedNode();
-          setMobileMenuOpen(true);
+          openDrawer();
         } else {
-          Keyboard.dismiss();
-          setMobileMenuOpen(false);
+          closeDrawer();
         }
       },
     }));
@@ -193,16 +235,13 @@ export const MobileMenuDrawer = memo(
     );
 
     return (
-      <Modal
-        visible={mobileMenuOpen}
-        animationType="slide"
-        transparent
-        statusBarTranslucent
-        onRequestClose={() => setMobileMenuOpen(false)}
-      >
-        <Animated.View style={flexStyle}>
+      <Portal hostName="storybook-lite-ui-root">
+        <Animated.View
+          style={[portalContainerStyle, { transform: [{ translateY: slideAnim }] }]}
+          pointerEvents={isVisible ? 'auto' : 'none'}
+        >
           <View style={flexStyle}>
-            <Pressable style={flexStyle} onPress={() => setMobileMenuOpen(false)}></Pressable>
+            <Pressable style={flexStyle} onPress={closeDrawer} />
           </View>
 
           <Animated.View style={{ height: animatedHeight }}>
@@ -216,7 +255,7 @@ export const MobileMenuDrawer = memo(
             </Animated.View>
           </Animated.View>
         </Animated.View>
-      </Modal>
+      </Portal>
     );
   })
 );

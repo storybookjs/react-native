@@ -1,25 +1,28 @@
+import { LegendList } from '@legendapp/list';
 import { styled } from '@storybook/react-native-theming';
 import type {
   GetSearchItemProps,
   SearchResult,
   SearchResultProps,
 } from '@storybook/react-native-ui-common';
-import { Button, IconButton, isExpandType } from '@storybook/react-native-ui-common';
+import { Button, IconButton, isExpandType, ExpandType } from '@storybook/react-native-ui-common';
 import { FuseResultMatch } from 'fuse.js';
 import { transparentize } from 'polished';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { PressableProps, View, ViewStyle, TextStyle } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ComponentIcon, StoryIcon } from './icon/iconDataUris';
 
 const pathGroupStyle: ViewStyle = { flexShrink: 1 };
 const noResultsFirstLineStyle: TextStyle = { marginBottom: 4 };
+const flexStyle: ViewStyle = { flex: 1 };
 
-const ResultsList = styled.View({
-  margin: 0,
-  marginTop: 8,
-  paddingHorizontal: 10,
-});
+type ListItemType =
+  | { type: 'header'; clearLastViewed: () => void }
+  | { type: 'noResults' }
+  | { type: 'result'; result: SearchResult; index: number }
+  | { type: 'expand'; result: ExpandType; index: number };
 
 const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
   ({ theme, isHighlighted }) => ({
@@ -206,52 +209,122 @@ export const SearchResults: FC<{
   highlightedIndex,
   clearLastViewed,
 }) {
-  const handleClearLastViewed = () => {
+  const insets = useSafeAreaInsets();
+
+  const handleClearLastViewed = useCallback(() => {
     clearLastViewed();
     closeMenu();
-  };
+  }, [clearLastViewed, closeMenu]);
 
-  return (
-    <ResultsList>
-      {results.length > 0 && !query ? (
-        <RecentlyOpenedTitle>
-          <Text>Recently opened</Text>
-          <IconButton onPress={handleClearLastViewed} />
-        </RecentlyOpenedTitle>
-      ) : null}
+  const contentContainerStyle = useMemo(
+    () => ({
+      paddingHorizontal: 10,
+      paddingTop: 8,
+      paddingBottom: insets.bottom + 20,
+    }),
+    [insets.bottom]
+  );
 
-      {results.length === 0 && query ? (
-        <NoResults>
-          <NoResultsText style={noResultsFirstLineStyle}>No components found</NoResultsText>
-          <NoResultsText>Find components by name or path.</NoResultsText>
-        </NoResults>
-      ) : null}
+  const listData = useMemo<ListItemType[]>(() => {
+    const items: ListItemType[] = [];
 
-      {results.map((result, index) => {
-        if (isExpandType(result)) {
+    // Add header for recently opened
+    if (results.length > 0 && !query) {
+      items.push({ type: 'header', clearLastViewed: handleClearLastViewed });
+    }
+
+    // Add no results message
+    if (results.length === 0 && query) {
+      items.push({ type: 'noResults' });
+    }
+
+    // Add results
+    results.forEach((result, index) => {
+      if (isExpandType(result)) {
+        items.push({ type: 'expand', result: result as unknown as ExpandType, index });
+      } else {
+        items.push({ type: 'result', result, index });
+      }
+    });
+
+    return items;
+  }, [results, query, handleClearLastViewed]);
+
+  const keyExtractor = useCallback((item: ListItemType) => {
+    switch (item.type) {
+      case 'header':
+        return 'header';
+      case 'noResults':
+        return 'no-results';
+      case 'expand':
+        return 'expand';
+      case 'result': {
+        const { item: resultItem } = item.result as { item: { refId: string; id: string } };
+        return `${resultItem.refId}::${resultItem.id}`;
+      }
+    }
+  }, []);
+
+  const renderItem = useCallback(
+    ({ item: listItem }: { item: ListItemType }) => {
+      switch (listItem.type) {
+        case 'header':
           return (
-            <MoreWrapper key="search-result-expand">
+            <RecentlyOpenedTitle>
+              <Text>Recently opened</Text>
+              <IconButton onPress={listItem.clearLastViewed} />
+            </RecentlyOpenedTitle>
+          );
+        case 'noResults':
+          return (
+            <NoResults>
+              <NoResultsText style={noResultsFirstLineStyle}>No components found</NoResultsText>
+              <NoResultsText>Find components by name or path.</NoResultsText>
+            </NoResults>
+          );
+        case 'expand': {
+          return (
+            <MoreWrapper>
               <Button
-                {...result}
-                {...getItemProps({ key: `${index}`, index, item: result })}
+                {...listItem.result}
+                {...getItemProps({
+                  key: `${listItem.index}`,
+                  index: listItem.index,
+                  item: listItem.result as unknown as SearchResult,
+                })}
                 size="small"
-                text={`Show ${result.moreCount} more results`}
+                text={`Show ${listItem.result.moreCount} more results`}
               />
             </MoreWrapper>
           );
         }
+        case 'result': {
+          const { item: resultItem } = listItem.result as { item: { refId: string; id: string } };
+          const key = `${resultItem.refId}::${resultItem.id}`;
+          return (
+            <Result
+              {...listItem.result}
+              {...getItemProps({ key, index: listItem.index, item: listItem.result })}
+              isHighlighted={highlightedIndex === listItem.index}
+            />
+          );
+        }
+      }
+    },
+    [getItemProps, highlightedIndex]
+  );
 
-        const { item } = result;
-        const key = `${item.refId}::${item.id}`;
-        return (
-          <Result
-            {...result}
-            {...getItemProps({ key, index, item: result })}
-            isHighlighted={highlightedIndex === index}
-            key={item.id}
-          />
-        );
-      })}
-    </ResultsList>
+  return (
+    <View style={flexStyle}>
+      <LegendList
+        style={flexStyle}
+        data={listData}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        contentContainerStyle={contentContainerStyle}
+        estimatedItemSize={50}
+        keyboardShouldPersistTaps="handled"
+      />
+    </View>
   );
 });

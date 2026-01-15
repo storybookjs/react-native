@@ -2,15 +2,16 @@ import { styled } from '@storybook/react-native-theming';
 import type { ExpandAction, ExpandedState } from '@storybook/react-native-ui-common';
 import {
   createId,
+  getAncestorIds,
   getDescendantIds,
   IconButton,
   isStoryHoistable,
   Item,
   useExpanded,
 } from '@storybook/react-native-ui-common';
-import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 import { View, ViewStyle } from 'react-native';
-import { ScrollProtectedFlatList } from './ScrollProtectedFlatList';
+import { LegendList, LegendListRef } from '@legendapp/list';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
 import type {
@@ -178,6 +179,12 @@ const CollapseButton = styled.TouchableOpacity(() => ({
 
 const flexStyle: ViewStyle = { flex: 1 };
 
+// getEstimatedItemSize provides item size estimates for LegendList
+// Root items have marginTop (16) + marginBottom (4) + minHeight (28) = 48px
+// All other items have minHeight = 28px
+const ITEM_HEIGHT = 28;
+const ROOT_ITEM_HEIGHT = 48; // 28 + 16 (marginTop) + 4 (marginBottom)
+
 export const Tree = React.memo<{
   isBrowsing: boolean;
   isMain: boolean;
@@ -188,10 +195,9 @@ export const Tree = React.memo<{
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
-  const containerRef = useRef<any>(null);
-  const { registerScrollCallback } = useSelectedNode();
+  const { registerCallback, idToScrolllOnMount, setIdToScrolllOnMount } = useSelectedNode();
   const insets = useSafeAreaInsets();
-
+  const listRef = useRef<LegendListRef | null>(null);
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
   const [rootIds, orphanIds, initialExpanded] = useMemo(
     () =>
@@ -406,57 +412,78 @@ export const Tree = React.memo<{
     [isMain, orphanIds.length, insets.bottom]
   );
 
-  // getItemLayout enables efficient scrollToIndex by providing item dimensions upfront
-  const ITEM_HEIGHT = 28;
-  const getItemLayout = useCallback(
-    (_data: any, index: number) => ({
-      length: ITEM_HEIGHT,
-      offset: ITEM_HEIGHT * index,
-      index,
-    }),
-    []
-  );
+  const getEstimatedItemSize = useCallback((item: (typeof treeData)[number], _index: number) => {
+    return item?.isRoot ? ROOT_ITEM_HEIGHT : ITEM_HEIGHT;
+  }, []);
 
-  // Register scroll callback for SelectedNodeProvider
+  useLayoutEffect(() => {
+    registerCallback(({ nextId, animated }: { nextId?: string; animated?: boolean }) => {
+      const targetId = nextId ?? selectedStoryId;
+
+      // Expand ancestors so the item is visible in the tree
+      if (targetId) {
+        const ancestorIds = getAncestorIds(collapsedData, targetId);
+        if (ancestorIds.length > 0) {
+          setExpanded({ ids: [...ancestorIds, targetId], value: true });
+        } else {
+          setExpanded({ ids: [targetId], value: true });
+        }
+      }
+
+      const index = treeData.findIndex((item) => {
+        return item.itemId === targetId;
+      });
+
+      listRef.current?.scrollToIndex({
+        index,
+        animated: animated ?? false,
+        viewPosition: 0.5,
+      });
+    });
+  }, [collapsedData, listRef, registerCallback, selectedStoryId, setExpanded, treeData]);
+
   useEffect(() => {
-    const scrollToSelected = () => {
-      if (!selectedStoryId || !containerRef.current) return;
+    if (idToScrolllOnMount) {
+      // Expand ancestors so the item is visible in the tree
+      const ancestorIds = getAncestorIds(collapsedData, idToScrolllOnMount);
+      if (ancestorIds.length > 0) {
+        setExpanded({ ids: [...ancestorIds, idToScrolllOnMount], value: true });
+      } else {
+        setExpanded({ ids: [idToScrolllOnMount], value: true });
+      }
 
-      const index = treeData.findIndex((item) => item.itemId === selectedStoryId);
-      if (index === -1) return;
+      const index = treeData.findIndex((item) => {
+        return item.itemId === idToScrolllOnMount;
+      });
 
-      try {
-        containerRef.current.scrollToIndex({
+      if (index >= 0) {
+        listRef.current?.scrollToIndex({
           index,
-          animated: true,
+          animated: false,
           viewPosition: 0.5,
         });
-      } catch {
-        // Ignore errors - scrollToIndex can fail if item isn't rendered yet
+        setIdToScrolllOnMount(null);
+      } else {
+        console.log('index not found', idToScrolllOnMount);
       }
-    };
-
-    registerScrollCallback(scrollToSelected);
-
-    return () => {
-      registerScrollCallback(null);
-    };
-  }, [selectedStoryId, treeData, registerScrollCallback]);
+    }
+  }, [collapsedData, idToScrolllOnMount, listRef, setExpanded, setIdToScrolllOnMount, treeData]);
 
   return (
     <View style={flexStyle}>
-      <ScrollProtectedFlatList
-        ref={containerRef}
+      <LegendList
+        ref={listRef}
         style={flexStyle}
         data={treeData}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         contentContainerStyle={contentContainerStyle}
-        getItemLayout={getItemLayout}
+        // getFixedItemSize={getEstimatedItemSize}
+        getEstimatedItemSize={getEstimatedItemSize}
+        // estimatedItemSize={28}
         keyboardShouldPersistTaps="handled"
-        initialNumToRender={20}
-        maxToRenderPerBatch={20}
-        windowSize={8}
+        recycleItems
+        waitForInitialLayout
       />
     </View>
   );

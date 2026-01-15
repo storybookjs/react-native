@@ -1,6 +1,6 @@
 import { styled } from '@storybook/react-native-theming';
 import type { CombinedDataset, Selection } from '@storybook/react-native-ui-common';
-import { useLastViewed } from '@storybook/react-native-ui-common';
+import { useLastViewed, useStyle } from '@storybook/react-native-ui-common';
 import React, { useMemo } from 'react';
 import { View, ViewStyle } from 'react-native';
 import type { State } from 'storybook/manager-api';
@@ -22,6 +22,7 @@ const Top = styled.View({
 });
 
 const flexStyle: ViewStyle = { flex: 1 };
+const noneStyle: ViewStyle = { display: 'none' };
 
 const Swap = React.memo(function Swap({
   children,
@@ -31,7 +32,16 @@ const Swap = React.memo(function Swap({
   condition: boolean;
 }) {
   const [a, b] = React.Children.toArray(children);
-  return <View style={flexStyle}>{condition ? a : b}</View>;
+
+  const aStyle = useMemo(() => (condition ? flexStyle : noneStyle), [condition]);
+  const bStyle = useMemo(() => (condition ? noneStyle : flexStyle), [condition]);
+  // // NOTE: its important not to completely hide items so that we don't lose the state of our list items
+  return (
+    <>
+      <View style={aStyle}>{a}</View>
+      <View style={bStyle}>{b}</View>
+    </>
+  );
 });
 
 export const useCombination = (

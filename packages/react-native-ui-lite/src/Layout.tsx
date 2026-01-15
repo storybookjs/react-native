@@ -62,18 +62,20 @@ const flexStyle = { flex: 1 } satisfies ViewStyle;
 
 export const LiteUI: SBUI = ({ storage, theme, storyHash, story, children }): ReactElement => (
   <SafeAreaProvider style={flexStyle}>
-    <ThemeProvider theme={theme}>
-      <StorageProvider storage={storage}>
-        <LayoutProvider>
-          <PortalProvider shouldAddRootHost={false}>
-            <Layout storyHash={storyHash} story={story}>
-              {children}
-            </Layout>
-            <PortalHost name="storybook-lite-ui-root" />
-          </PortalProvider>
-        </LayoutProvider>
-      </StorageProvider>
-    </ThemeProvider>
+    <SelectedNodeProvider>
+      <ThemeProvider theme={theme}>
+        <StorageProvider storage={storage}>
+          <LayoutProvider>
+            <PortalProvider shouldAddRootHost={false}>
+              <Layout storyHash={storyHash} story={story}>
+                {children}
+              </Layout>
+              <PortalHost name="storybook-lite-ui-root" />
+            </PortalProvider>
+          </LayoutProvider>
+        </StorageProvider>
+      </ThemeProvider>
+    </SelectedNodeProvider>
   </SafeAreaProvider>
 );
 
@@ -196,18 +198,16 @@ export const Layout = ({
               </View>
 
               <View style={flexStyle}>
-                <SelectedNodeProvider>
-                  <Sidebar
-                    previewInitialized
-                    indexError={undefined}
-                    refs={placeholderObject}
-                    setSelection={setSelection}
-                    status={placeholderObject}
-                    index={storyHash}
-                    storyId={story?.id}
-                    refId={DEFAULT_REF_ID}
-                  />
-                </SelectedNodeProvider>
+                <Sidebar
+                  previewInitialized
+                  indexError={undefined}
+                  refs={placeholderObject}
+                  setSelection={setSelection}
+                  status={placeholderObject}
+                  index={storyHash}
+                  storyId={story?.id}
+                  refId={DEFAULT_REF_ID}
+                />
               </View>
             </>
           ) : (
@@ -272,24 +272,22 @@ export const Layout = ({
       ) : null}
 
       {isDesktop ? null : (
-        <SelectedNodeProvider>
-          <MobileMenuDrawer ref={mobileMenuDrawerRef}>
-            <View style={mobileMenuDrawerContentStyle}>
-              <StorybookLogo theme={theme} />
-            </View>
+        <MobileMenuDrawer ref={mobileMenuDrawerRef}>
+          <View style={mobileMenuDrawerContentStyle}>
+            <StorybookLogo theme={theme} />
+          </View>
 
-            <Sidebar
-              previewInitialized
-              indexError={undefined}
-              refs={placeholderObject}
-              setSelection={setSelection}
-              status={placeholderObject}
-              index={storyHash}
-              storyId={story?.id}
-              refId={DEFAULT_REF_ID}
-            />
-          </MobileMenuDrawer>
-        </SelectedNodeProvider>
+          <Sidebar
+            previewInitialized
+            indexError={undefined}
+            refs={placeholderObject}
+            setSelection={setSelection}
+            status={placeholderObject}
+            index={storyHash}
+            storyId={story?.id}
+            refId={DEFAULT_REF_ID}
+          />
+        </MobileMenuDrawer>
       )}
 
       {isDesktop ? null : <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />}

@@ -106,7 +106,7 @@ export const Search = React.memo<{
   const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
   // const { isMobile } = useLayout();
-  const { scrollToSelectedNode } = useSelectedNode();
+  const { scrollCallback, setIdToScrolllOnMount } = useSelectedNode();
 
   const selectStory = useCallback(
     (id: string, refId: string) => {
@@ -118,9 +118,10 @@ export const Search = React.memo<{
 
       showAllComponents(false);
 
-      scrollToSelectedNode();
+      scrollCallback({ id, animated: false });
+      setIdToScrolllOnMount(id);
     },
-    [scrollToSelectedNode, setSelection]
+    [scrollCallback, setIdToScrolllOnMount, setSelection]
   );
 
   const getItemProps: GetSearchItemProps = useCallback(
