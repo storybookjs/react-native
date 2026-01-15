@@ -21,7 +21,6 @@ import {
   KeyboardEventListener,
   Platform,
 } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
 import useAnimatedValue from './useAnimatedValue';
 
@@ -99,7 +98,6 @@ export const MobileMenuDrawer = memo(
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { scrollToSelectedNode } = useSelectedNode();
     const theme = useTheme();
-    const insets = useSafeAreaInsets();
     const animatedHeight = useAnimatedModalHeight();
 
     // Create a reference for the drag handle animation
