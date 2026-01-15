@@ -418,7 +418,7 @@ export const Tree = React.memo<{
           animated: true,
           viewPosition: 0.5,
         });
-      } catch (e) {
+      } catch {
         // Ignore errors - scrollToIndex can fail if item isn't rendered yet
       }
     };
