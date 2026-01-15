@@ -11,19 +11,14 @@ import { Search } from './Search';
 import { SearchResults } from './SearchResults';
 
 const Container = styled.View(({ theme }) => ({
-  width: '100%',
-  height: '100%',
-  display: 'flex',
+  flex: 1,
   flexDirection: 'column',
   backgroundColor: theme.background.content,
 }));
 
 const Top = styled.View({
-  paddingLeft: 4,
-  paddingRight: 4,
-  paddingTop: 16,
+  paddingTop: 8,
   flex: 1,
-  flexDirection: 'row',
 });
 
 const Swap = React.memo(function Swap({
@@ -34,12 +29,7 @@ const Swap = React.memo(function Swap({
   condition: boolean;
 }) {
   const [a, b] = React.Children.toArray(children);
-  return (
-    <>
-      <View style={{ display: condition ? 'flex' : 'none' }}>{a}</View>
-      <View style={{ display: condition ? 'none' : 'flex' }}>{b}</View>
-    </>
-  );
+  return <View style={{ flex: 1 }}>{condition ? a : b}</View>;
 });
 
 export const useCombination = (
@@ -91,7 +81,7 @@ export const Sidebar = React.memo(function Sidebar({
   const lastViewedProps = useLastViewed(selected);
 
   return (
-    <Container style={{ paddingHorizontal: 10 }}>
+    <Container>
       <Top>
         {/* <Heading
             className="sidebar-header"

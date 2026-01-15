@@ -11,7 +11,7 @@ import {
   useStyle,
 } from '@storybook/react-native-ui-common';
 import { ReactElement, ReactNode, useCallback, useLayoutEffect, useRef, useState } from 'react';
-import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import type { Args, StoryContext } from 'storybook/internal/csf';
@@ -186,24 +186,28 @@ export const Layout = ({
       {isDesktop ? (
         <View style={desktopSidebarStyle}>
           {desktopSidebarOpen ? (
-            <ScrollView keyboardShouldPersistTaps="handled">
+            <>
               <View style={desktopLogoContainer}>
                 <StorybookLogo theme={theme} />
 
                 <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
               </View>
 
-              <Sidebar
-                previewInitialized
-                indexError={undefined}
-                refs={placeholderObject}
-                setSelection={setSelection}
-                status={placeholderObject}
-                index={storyHash}
-                storyId={story?.id}
-                refId={DEFAULT_REF_ID}
-              />
-            </ScrollView>
+              <View style={{ flex: 1 }}>
+                <SelectedNodeProvider>
+                  <Sidebar
+                    previewInitialized
+                    indexError={undefined}
+                    refs={placeholderObject}
+                    setSelection={setSelection}
+                    status={placeholderObject}
+                    index={storyHash}
+                    storyId={story?.id}
+                    refId={DEFAULT_REF_ID}
+                  />
+                </SelectedNodeProvider>
+              </View>
+            </>
           ) : (
             <IconButton onPress={() => setDesktopSidebarOpen(true)} Icon={MenuIcon} />
           )}

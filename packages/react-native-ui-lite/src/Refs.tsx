@@ -14,7 +14,7 @@ export interface RefProps {
 }
 
 const Wrapper = styled.View<{ isMain: boolean }>(() => ({
-  position: 'relative',
+  flex: 1,
 }));
 
 export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.memo(

@@ -2,15 +2,17 @@ import { styled } from '@storybook/react-native-theming';
 import type { ExpandAction, ExpandedState } from '@storybook/react-native-ui-common';
 import {
   createId,
-  getAncestorIds,
   getDescendantIds,
   IconButton,
   isStoryHoistable,
   Item,
   useExpanded,
 } from '@storybook/react-native-ui-common';
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { View } from 'react-native';
+import { LegendList } from '@legendapp/list';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useSelectedNode } from './SelectedNodeProvider';
 import type {
   ComponentEntry,
   GroupEntry,
@@ -18,7 +20,6 @@ import type {
   StoriesHash,
   StoryEntry,
 } from 'storybook/manager-api';
-import { useSelectedNode } from './SelectedNodeProvider';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
 import { CollapseAllIcon, CollapseIcon, ExpandAllIcon } from './icon/iconDataUris';
 
@@ -46,7 +47,7 @@ export const Node = React.memo<NodeProps>(function Node({
   item,
   refId,
   isOrphan,
-  isDisplayed,
+  isDisplayed: _isDisplayed,
   isSelected,
   isFullyExpanded,
   color: _2,
@@ -55,28 +56,12 @@ export const Node = React.memo<NodeProps>(function Node({
   setExpanded,
   onSelectStoryId,
 }) {
-  const { setNodeRef } = useSelectedNode();
-
-  const setRef = useCallback(
-    (node: View | null) => {
-      if (isSelected && node) {
-        setNodeRef(node);
-      }
-    },
-    [isSelected, setNodeRef]
-  );
-
-  if (!isDisplayed) {
-    return null;
-  }
-
   const id = createId(item.id, refId);
 
   if (item.type === 'story') {
     return (
       <LeafNodeStyleWrapper>
         <StoryNode
-          ref={setRef}
           selected={isSelected}
           key={id}
           id={id}
@@ -201,7 +186,9 @@ export const Tree = React.memo<{
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
-  const containerRef = useRef<View>(null);
+  const containerRef = useRef<any>(null);
+  const { registerScrollCallback } = useSelectedNode();
+  const insets = useSafeAreaInsets();
 
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
   const [rootIds, orphanIds, initialExpanded] = useMemo(
@@ -256,9 +243,8 @@ export const Tree = React.memo<{
   // Omit single-story components from the list of nodes.
   const collapsedItems = useMemo(
     () => Object.keys(data).filter((id) => !singleStoryComponentIds.includes(id)),
-    // eslint-disable-next-line react-compiler/react-compiler
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [singleStoryComponentIds]
+
+    [singleStoryComponentIds, data]
   );
 
   // Rewrite the dataset to place the child story in place of the component.
@@ -282,16 +268,7 @@ export const Tree = React.memo<{
       },
       { ...data }
     );
-    // eslint-disable-next-line react-compiler/react-compiler
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
-
-  const ancestry = useMemo(() => {
-    return collapsedItems.reduce(
-      (acc, id) => Object.assign(acc, { [id]: getAncestorIds(collapsedData, id) }),
-      {} as { [key: string]: string[] }
-    );
-  }, [collapsedItems, collapsedData]);
+  }, [data, singleStoryComponentIds]);
 
   // Track expanded nodes, keep it in sync with props and enable keyboard shortcuts.
   const [expanded, setExpanded] = useExpanded({
@@ -303,14 +280,74 @@ export const Tree = React.memo<{
     onSelectStoryId,
   });
 
-  const treeItems = useMemo(() => {
-    return collapsedItems.map((itemId) => {
+  // Optimized: Build a simple parent map instead of full ancestry for each item
+  // This is much faster than calling getAncestorIds for every item
+  const parentMap = useMemo(() => {
+    const map: Record<string, string | null> = {};
+    collapsedItems.forEach((id) => {
+      const item = collapsedData[id];
+      map[id] = ('parent' in item && item.parent) || null;
+    });
+    return map;
+  }, [collapsedItems, collapsedData]);
+
+  // Helper function to check if all ancestors are expanded (inline traversal)
+  const isItemVisible = useCallback(
+    (itemId: string) => {
       const item = collapsedData[itemId];
+      if (item.type === 'root') return true;
+      if (!('parent' in item) || !item.parent) return true;
+
+      // Traverse up the parent chain checking if each is expanded
+      let currentId: string | null = item.parent;
+      while (currentId) {
+        if (!expanded[currentId]) return false;
+        currentId = parentMap[currentId];
+      }
+      return true;
+    },
+    [collapsedData, expanded, parentMap]
+  );
+
+  // Convert to data array for LegendList, filtering only displayed items
+  const treeData = useMemo(() => {
+    return collapsedItems
+      .map((itemId) => {
+        const item = collapsedData[itemId];
+
+        // Use optimized visibility check
+        if (!isItemVisible(itemId)) {
+          return null;
+        }
+
+        if (item.type === 'root') {
+          const descendants = expandableDescendants[item.id];
+          const isFullyExpanded = descendants.every((d: string) => expanded[d]);
+          return {
+            itemId,
+            item,
+            isRoot: true,
+            isFullyExpanded,
+            descendants,
+          };
+        }
+
+        return {
+          itemId,
+          item,
+          isRoot: false,
+          isOrphan: orphanIds.some((oid) => itemId === oid || itemId.startsWith(`${oid}-`)),
+        };
+      })
+      .filter(Boolean);
+  }, [collapsedData, collapsedItems, expandableDescendants, expanded, isItemVisible, orphanIds]);
+
+  const renderItem = useCallback(
+    ({ item: treeItem }) => {
+      const { itemId, item, isRoot } = treeItem;
       const id = createId(itemId, refId);
 
-      if (item.type === 'root') {
-        const descendants = expandableDescendants[item.id];
-        const isFullyExpanded = descendants.every((d: string) => expanded[d]);
+      if (isRoot) {
         return (
           <Root
             key={id}
@@ -321,8 +358,8 @@ export const Tree = React.memo<{
             isSelected={selectedStoryId === itemId}
             isExpanded={!!expanded[itemId]}
             setExpanded={setExpanded}
-            isFullyExpanded={isFullyExpanded}
-            expandableDescendants={descendants}
+            isFullyExpanded={treeItem.isFullyExpanded}
+            expandableDescendants={treeItem.descendants}
             onSelectStoryId={onSelectStoryId}
             docsMode={false}
             color=""
@@ -330,8 +367,6 @@ export const Tree = React.memo<{
           />
         );
       }
-
-      const isDisplayed = !item.parent || ancestry[itemId].every((a: string) => expanded[a]);
 
       return (
         <Node
@@ -341,40 +376,75 @@ export const Tree = React.memo<{
           refId={refId}
           color={null}
           docsMode={docsMode}
-          isOrphan={orphanIds.some((oid) => itemId === oid || itemId.startsWith(`${oid}-`))}
-          isDisplayed={isDisplayed}
+          isOrphan={treeItem.isOrphan}
+          isDisplayed
           isSelected={selectedStoryId === itemId}
           isExpanded={!!expanded[itemId]}
           setExpanded={setExpanded}
           onSelectStoryId={onSelectStoryId}
         />
       );
-    });
-  }, [
-    ancestry,
-    collapsedData,
-    collapsedItems,
-    docsMode,
-    expandableDescendants,
-    expanded,
-    onSelectStoryId,
-    orphanIds,
-    refId,
-    selectedStoryId,
-    setExpanded,
-    status,
-  ]);
+    },
+    [docsMode, expanded, onSelectStoryId, refId, selectedStoryId, setExpanded, status]
+  );
+
+  const keyExtractor = useCallback(
+    (item: any) => {
+      return createId(item.itemId, refId);
+    },
+    [refId]
+  );
+
+  const contentContainerStyle = useMemo(
+    () => ({
+      marginTop: isMain && orphanIds.length > 0 ? 20 : 0,
+      paddingBottom: insets.bottom + 20,
+    }),
+    [isMain, orphanIds.length, insets.bottom]
+  );
+
+  // Register scroll callback for SelectedNodeProvider
+  useEffect(() => {
+    const scrollToSelected = () => {
+      if (!selectedStoryId || !containerRef.current) return;
+
+      const index = treeData.findIndex((item) => item.itemId === selectedStoryId);
+      if (index === -1) return;
+
+      try {
+        containerRef.current.scrollToIndex({
+          index,
+          animated: true,
+          viewPosition: 0.5,
+        });
+      } catch (e) {
+        // Ignore errors - scrollToIndex can fail if item isn't rendered yet
+      }
+    };
+
+    registerScrollCallback(scrollToSelected);
+
+    return () => {
+      registerScrollCallback(null);
+    };
+  }, [selectedStoryId, treeData, registerScrollCallback]);
+
   return (
-    <Container ref={containerRef} hasOrphans={isMain && orphanIds.length > 0}>
-      {treeItems}
-    </Container>
+    <View style={{ flex: 1 }}>
+      <LegendList
+        ref={containerRef}
+        style={{ flex: 1 }}
+        data={treeData}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        contentContainerStyle={contentContainerStyle}
+        estimatedItemSize={28}
+        recycleItems
+        keyboardShouldPersistTaps="handled"
+      />
+    </View>
   );
 });
-
-const Container = styled.View<{ hasOrphans: boolean }>((props) => ({
-  marginTop: props.hasOrphans ? 20 : 0,
-  marginBottom: 20,
-}));
 
 const Root = React.memo<NodeProps & { expandableDescendants: string[] }>(function Root({
   setExpanded,

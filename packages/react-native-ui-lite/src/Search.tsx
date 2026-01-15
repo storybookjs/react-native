@@ -1,7 +1,7 @@
 import { styled } from '@storybook/react-native-theming';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
-import React, { useCallback, useDeferredValue, useRef, useState } from 'react';
+import React, { useCallback, useDeferredValue, useMemo, useRef, useState } from 'react';
 import { Platform, TextInput, View } from 'react-native';
 import { useSelectedNode } from './SelectedNodeProvider';
 import {
@@ -48,9 +48,7 @@ const SearchIconWrapper = styled.View({
 });
 
 const SearchField = styled.View({
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'relative',
+  flexShrink: 0,
 });
 
 const inputPlatformSpecificStyles = Platform.select({
@@ -146,23 +144,26 @@ export const Search = React.memo<{
     [selectStory]
   );
 
-  const makeFuse = useCallback(() => {
-    const list = dataset.entries.reduce<SearchItem[]>((acc, [refId, { index }]) => {
+  // Defer dataset updates to prevent blocking during data changes
+  const deferredDataset = useDeferredValue(dataset);
+
+  // Memoize the Fuse instance - only recreate when dataset changes
+  const fuse = useMemo(() => {
+    const list = deferredDataset.entries.reduce<SearchItem[]>((acc, [refId, { index }]) => {
       if (index) {
         acc.push(
           ...Object.values(index).map((item) => {
-            return searchItem(item, dataset.hash[refId]);
+            return searchItem(item, deferredDataset.hash[refId]);
           })
         );
       }
       return acc;
     }, []);
     return new Fuse(list, options);
-  }, [dataset]);
+  }, [deferredDataset]);
 
   const getResults = useCallback(
     (input: string) => {
-      const fuse = makeFuse();
       if (!input) return [];
 
       let results = [];
@@ -192,13 +193,17 @@ export const Search = React.memo<{
       const lastViewed = !input && getLastViewed();
       if (lastViewed && lastViewed.length) {
         results = lastViewed.reduce((acc, { storyId, refId }) => {
-          const data = dataset.hash[refId];
+          const data = deferredDataset.hash[refId];
           if (data && data.index && data.index[storyId]) {
             const story = data.index[storyId];
             const item = story.type === 'story' ? data.index[story.parent] : story;
             // prevent duplicates
             if (!acc.some((res) => res.item.refId === refId && res.item.id === item.id)) {
-              acc.push({ item: searchItem(item, dataset.hash[refId]), matches: [], score: 0 });
+              acc.push({
+                item: searchItem(item, deferredDataset.hash[refId]),
+                matches: [],
+                score: 0,
+              });
             }
           }
           return acc;
@@ -207,46 +212,56 @@ export const Search = React.memo<{
 
       return results;
     },
-    [allComponents, dataset.hash, getLastViewed, makeFuse]
+    [allComponents, deferredDataset.hash, getLastViewed, fuse]
   );
+
+  // Defer query input to prevent blocking typing
   const deferredQuery = useDeferredValue(inputValue);
   const input = deferredQuery ? deferredQuery.trim() : '';
-  const results = input ? getResults(input) : [];
+
+  // Memoize results calculation
+  const results = useMemo(() => {
+    return input ? getResults(input) : [];
+  }, [input, getResults]);
 
   return (
     <View style={{ flex: 1 }}>
-      <SearchField>
-        <SearchIconWrapper>
-          <SearchIcon />
-        </SearchIconWrapper>
+      <View style={{ paddingHorizontal: 10, marginBottom: 4 }}>
+        <SearchField>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
 
-        <Input
-          ref={inputRef}
-          onChangeText={setInputValue}
-          onFocus={() => setIsOpen(true)}
-          returnKeyType="search"
-        />
+          <Input
+            ref={inputRef}
+            onChangeText={setInputValue}
+            onFocus={() => setIsOpen(true)}
+            returnKeyType="search"
+          />
 
-        {isOpen && (
-          <ClearIcon
-            onPress={() => {
-              setInputValue('');
-              inputRef.current.clear();
-            }}
-          >
-            <CloseIcon />
-          </ClearIcon>
-        )}
-      </SearchField>
+          {isOpen && (
+            <ClearIcon
+              onPress={() => {
+                setInputValue('');
+                inputRef.current.clear();
+              }}
+            >
+              <CloseIcon />
+            </ClearIcon>
+          )}
+        </SearchField>
+      </View>
 
-      {children({
-        query: input,
-        results,
-        isBrowsing: !isOpen || !inputValue.length,
-        closeMenu: () => {},
-        getItemProps,
-        highlightedIndex: null,
-      })}
+      <View style={{ flex: 1 }}>
+        {children({
+          query: input,
+          results,
+          isBrowsing: !isOpen || !inputValue.length,
+          closeMenu: () => {},
+          getItemProps,
+          highlightedIndex: null,
+        })}
+      </View>
     </View>
   );
 });

@@ -17,11 +17,11 @@ import {
   PanResponder,
   PanResponderInstance,
   Pressable,
-  ScrollView,
   View,
   KeyboardEventListener,
   Platform,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
 import useAnimatedValue from './useAnimatedValue';
 
@@ -97,8 +97,9 @@ export const useAnimatedModalHeight = () => {
 export const MobileMenuDrawer = memo(
   forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(({ children }, ref) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const { scrollToSelectedNode, scrollRef } = useSelectedNode();
+    const { scrollToSelectedNode } = useSelectedNode();
     const theme = useTheme();
+    const insets = useSafeAreaInsets();
     const animatedHeight = useAnimatedModalHeight();
 
     // Create a reference for the drag handle animation
@@ -199,19 +200,14 @@ export const MobileMenuDrawer = memo(
                 <View style={handleStyle} />
               </View>
 
-              <ScrollView
-                ref={scrollRef}
-                keyboardShouldPersistTaps="handled"
+              <View
                 style={{
                   flex: 1,
-                  paddingBottom: 150,
-                  alignSelf: 'flex-end',
-                  width: '100%',
                   backgroundColor: theme.background.content,
                 }}
               >
                 {children}
-              </ScrollView>
+              </View>
             </Animated.View>
           </Animated.View>
         </Animated.View>

@@ -1,53 +1,37 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useContext, useRef } from 'react';
-import type { ScrollView, View } from 'react-native';
+
+type ScrollToSelectedCallback = () => void;
 
 type SelectedNodeContextType = {
-  nodeRef: React.RefObject<View>;
-  setNodeRef: (node: View | null) => void;
   scrollToSelectedNode: () => void;
-  scrollRef: React.RefObject<ScrollView>;
+  registerScrollCallback: (callback: ScrollToSelectedCallback | null) => void;
 };
 
 const SelectedNodeContext = createContext<SelectedNodeContextType>({
-  nodeRef: { current: null },
-  setNodeRef: () => {},
   scrollToSelectedNode: () => {},
-  scrollRef: null,
+  registerScrollCallback: () => {},
 });
 
 export const SelectedNodeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const nodeRef = useRef<View | null>(null);
+  const scrollCallbackRef = useRef<ScrollToSelectedCallback | null>(null);
 
-  const setNodeRef = useCallback((node: View | null) => {
-    nodeRef.current = node;
+  const registerScrollCallback = useCallback((callback: ScrollToSelectedCallback | null) => {
+    scrollCallbackRef.current = callback;
   }, []);
 
-  const scrollRef = useRef<ScrollView>(null);
-
   const scrollToSelectedNode = useCallback(() => {
-    // maybe later we can improve on this to not use setTimeout but right now it seems like the simplest solution
+    // Small delay to ensure list is rendered after drawer opens
     setTimeout(() => {
-      if (nodeRef?.current && scrollRef?.current) {
-        // im just not sure if older versions would error here,
-        // since measure layout probably changed since new arch
-        try {
-          nodeRef.current.measureLayout?.(scrollRef.current as any, (_x, y) => {
-            scrollRef.current?.scrollTo({ y: y - 100, animated: true });
-          });
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        } catch (_error) {}
-      }
-    }, 500);
+      scrollCallbackRef.current?.();
+    }, 100);
   }, []);
 
   return (
     <SelectedNodeContext.Provider
       value={{
-        nodeRef,
-        setNodeRef,
         scrollToSelectedNode,
-        scrollRef,
+        registerScrollCallback,
       }}
     >
       {children}

@@ -37,3 +37,4 @@ built-storybooks
 .eslintcache
 examples/expo-example/.maestro/diffs
 examples/expo-example/.maestro/screenshots
+examples/expo-example/components/PerfTesting/*.stories.tsx

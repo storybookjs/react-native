@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+Always check first if the react-native-best-practices skill can be used
+
 ## Development Commands
 
 ```bash
@@ -15,9 +17,12 @@ yarn example    # Run the expo example app with Storybook
 
 # Testing
 yarn test       # Run unit tests across all packages
+yarn test:ci    # Run tests in CI mode
 
 # Code Quality
 yarn lint       # Run ESLint across the codebase
+yarn format:check   # Check Prettier formatting
+yarn format:fix     # Auto-fix Prettier formatting
 
 # Documentation (from docs/ directory)
 cd docs
@@ -63,7 +68,14 @@ The `withStorybook` Metro wrapper:
 - Enables `unstable_allowRequireContext` for dynamic story imports
 - Automatically generates `storybook.requires.ts` file
 - Optional WebSocket server for remote control
-- Can be conditionally enabled/disabled via options
+- Can be conditionally enabled/disabled via `enabled` option
+- Supports `liteMode` for reduced bundle size
+
+### Testing
+
+- Uses **jest** with `jest-expo` preset
+- `universal-test-renderer` for portable story testing
+- Story generation tested with Node's native test runner
 
 ### Key Concepts
 
@@ -72,3 +84,4 @@ The `withStorybook` Metro wrapper:
 3. **Story requires generation** - Automatic generation of story imports via Metro
 4. **Portable stories** - Reuse stories in unit tests
 5. **WebSocket support** - Remote control stories from external devices
+6. **Lite mode** - Alternative UI without heavy dependencies (reanimated, etc.)
