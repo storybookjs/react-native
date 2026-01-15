@@ -132,7 +132,7 @@ export const MobileMenuDrawer = memo(
         useNativeDriver: true,
       }).start(({ finished }) => {
         if (finished) {
-          scrollCallback({ animated: false });
+          scrollCallback({ animated: true });
         }
       });
     }, [dragY, height, scrollCallback, slideAnim]);

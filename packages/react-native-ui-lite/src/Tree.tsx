@@ -11,7 +11,7 @@ import {
 } from '@storybook/react-native-ui-common';
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 import { View, ViewStyle } from 'react-native';
-import { LegendList, LegendListRef } from '@legendapp/list';
+import { LegendList, LegendListRef, LegendListRenderItemProps } from '@legendapp/list';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
 import type {
@@ -351,7 +351,7 @@ export const Tree = React.memo<{
   }, [collapsedData, collapsedItems, expandableDescendants, expanded, isItemVisible, orphanIds]);
 
   const renderItem = useCallback(
-    ({ item: treeItem }) => {
+    ({ item: treeItem }: LegendListRenderItemProps<(typeof treeData)[number]>) => {
       const { itemId, item, isRoot } = treeItem;
       const id = createId(itemId, refId);
 
@@ -416,6 +416,7 @@ export const Tree = React.memo<{
     return item?.isRoot ? ROOT_ITEM_HEIGHT : ITEM_HEIGHT;
   }, []);
 
+  // so we can call the scroll to function in the search component
   useLayoutEffect(() => {
     registerCallback(({ nextId, animated }: { nextId?: string; animated?: boolean }) => {
       const targetId = nextId ?? selectedStoryId;
@@ -442,6 +443,7 @@ export const Tree = React.memo<{
     });
   }, [collapsedData, listRef, registerCallback, selectedStoryId, setExpanded, treeData]);
 
+  // a workaround for the fact that we need to expand and scroll to an item that is not in the tree yet
   useEffect(() => {
     if (idToScrolllOnMount) {
       // Expand ancestors so the item is visible in the tree
@@ -461,10 +463,9 @@ export const Tree = React.memo<{
           index,
           animated: false,
           viewPosition: 0.5,
+          viewOffset: 100,
         });
         setIdToScrolllOnMount(null);
-      } else {
-        console.log('index not found', idToScrolllOnMount);
       }
     }
   }, [collapsedData, idToScrolllOnMount, listRef, setExpanded, setIdToScrolllOnMount, treeData]);

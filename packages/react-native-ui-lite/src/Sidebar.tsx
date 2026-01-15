@@ -22,7 +22,14 @@ const Top = styled.View({
 });
 
 const flexStyle: ViewStyle = { flex: 1 };
-const noneStyle: ViewStyle = { display: 'none' };
+
+// legend list print a warning if the items height is 0
+const noneStyle: ViewStyle = {
+  // display: 'none',
+  height: 1,
+  width: 0,
+  opacity: 0,
+};
 
 const Swap = React.memo(function Swap({
   children,

@@ -8,6 +8,11 @@ export interface LoginFormProps {
   loading?: boolean;
   emailError?: string;
   passwordError?: string;
+  emailLabel?: string;
+  emailPlaceholder?: string;
+  passwordLabel?: string;
+  passwordPlaceholder?: string;
+  submitButtonTitle?: string;
 }
 
 export const LoginForm: React.FC<LoginFormProps> = ({
@@ -15,6 +20,11 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   loading = false,
   emailError,
   passwordError,
+  emailLabel = 'Email Address',
+  emailPlaceholder = 'Enter your email',
+  passwordLabel = 'Password',
+  passwordPlaceholder = 'Enter your password',
+  submitButtonTitle = 'Sign In',
 }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,22 +36,22 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   return (
     <View style={styles.container}>
       <TextInput
-        label="Email Address"
-        placeholder="Enter your email"
+        label={emailLabel}
+        placeholder={emailPlaceholder}
         value={email}
         onChangeText={setEmail}
         error={emailError}
       />
       <TextInput
-        label="Password"
-        placeholder="Enter your password"
+        label={passwordLabel}
+        placeholder={passwordPlaceholder}
         value={password}
         onChangeText={setPassword}
         secureTextEntry
         error={passwordError}
       />
       <Button
-        title="Sign In"
+        title={submitButtonTitle}
         onPress={handleSubmit}
         loading={loading}
         disabled={!email || !password}
