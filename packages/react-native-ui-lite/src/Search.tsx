@@ -2,7 +2,7 @@ import { styled } from '@storybook/react-native-theming';
 import type { IFuseOptions } from 'fuse.js';
 import Fuse from 'fuse.js';
 import React, { useCallback, useDeferredValue, useMemo, useRef, useState } from 'react';
-import { Platform, TextInput, View } from 'react-native';
+import { Platform, TextInput, View, ViewStyle } from 'react-native';
 import { useSelectedNode } from './SelectedNodeProvider';
 import {
   type CombinedDataset,
@@ -90,6 +90,9 @@ const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
   justifyContent: 'center',
   height: '100%',
 }));
+
+const flexStyle: ViewStyle = { flex: 1 };
+const searchFieldWrapperStyle: ViewStyle = { paddingHorizontal: 10, marginBottom: 4 };
 
 export const Search = React.memo<{
   children: SearchChildrenFn;
@@ -225,8 +228,8 @@ export const Search = React.memo<{
   }, [input, getResults]);
 
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ paddingHorizontal: 10, marginBottom: 4 }}>
+    <View style={flexStyle}>
+      <View style={searchFieldWrapperStyle}>
         <SearchField>
           <SearchIconWrapper>
             <SearchIcon />
@@ -252,7 +255,7 @@ export const Search = React.memo<{
         </SearchField>
       </View>
 
-      <View style={{ flex: 1 }}>
+      <View style={flexStyle}>
         {children({
           query: input,
           results,

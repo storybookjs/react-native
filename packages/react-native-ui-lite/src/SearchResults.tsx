@@ -9,8 +9,11 @@ import { FuseResultMatch } from 'fuse.js';
 import { transparentize } from 'polished';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import React, { useCallback } from 'react';
-import { PressableProps, View } from 'react-native';
+import { PressableProps, View, ViewStyle, TextStyle } from 'react-native';
 import { ComponentIcon, StoryIcon } from './icon/iconDataUris';
+
+const pathGroupStyle: ViewStyle = { flexShrink: 1 };
+const noResultsFirstLineStyle: TextStyle = { marginBottom: 4 };
 
 const ResultsList = styled.View({
   margin: 0,
@@ -165,7 +168,7 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
           {item.path.map((group, index) => {
             const pathSeparator = index === item.path.length - 1 ? '' : '/';
             return (
-              <View key={index} style={{ flexShrink: 1 }}>
+              <View key={index} style={pathGroupStyle}>
                 <PathText>
                   <Highlight
                     match={pathMatches.find((match: FuseResultMatch) => match.refIndex === index)}
@@ -219,7 +222,7 @@ export const SearchResults: FC<{
 
       {results.length === 0 && query ? (
         <NoResults>
-          <NoResultsText style={{ marginBottom: 4 }}>No components found</NoResultsText>
+          <NoResultsText style={noResultsFirstLineStyle}>No components found</NoResultsText>
           <NoResultsText>Find components by name or path.</NoResultsText>
         </NoResults>
       ) : null}

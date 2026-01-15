@@ -18,11 +18,15 @@ import {
   PanResponderInstance,
   Pressable,
   View,
+  ViewStyle,
   KeyboardEventListener,
   Platform,
 } from 'react-native';
+
 import { useSelectedNode } from './SelectedNodeProvider';
 import useAnimatedValue from './useAnimatedValue';
+
+const flexStyle: ViewStyle = { flex: 1 };
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
@@ -153,10 +157,39 @@ export const MobileMenuDrawer = memo(
         height: 5,
         backgroundColor: theme.color.mediumdark,
         borderRadius: 2.5,
-        alignSelf: 'center' as const, // TypeScript needs this to recognize 'center' as a valid FlexAlignType
+        alignSelf: 'center' as const,
         marginVertical: 8,
       }),
       [theme.color.mediumdark]
+    );
+
+    const drawerContainerStyle = useMemo(
+      () => ({
+        flex: 1,
+        borderTopColor: theme.appBorderColor,
+        borderTopWidth: 1,
+        borderStyle: 'solid' as const,
+        backgroundColor: theme.background.content,
+        elevation: 8,
+      }),
+      [theme.appBorderColor, theme.background.content]
+    );
+
+    const dragHandleWrapperStyle = useMemo(
+      () => ({
+        alignItems: 'center' as const,
+        justifyContent: 'center' as const,
+        backgroundColor: theme.background.content,
+      }),
+      [theme.background.content]
+    );
+
+    const childrenWrapperStyle = useMemo(
+      () => ({
+        flex: 1,
+        backgroundColor: theme.background.content,
+      }),
+      [theme.background.content]
     );
 
     return (
@@ -167,45 +200,19 @@ export const MobileMenuDrawer = memo(
         statusBarTranslucent
         onRequestClose={() => setMobileMenuOpen(false)}
       >
-        <Animated.View style={{ flex: 1 }}>
-          <View style={{ flex: 1 }}>
-            <Pressable style={{ flex: 1 }} onPress={() => setMobileMenuOpen(false)}></Pressable>
+        <Animated.View style={flexStyle}>
+          <View style={flexStyle}>
+            <Pressable style={flexStyle} onPress={() => setMobileMenuOpen(false)}></Pressable>
           </View>
 
           <Animated.View style={{ height: animatedHeight }}>
-            <Animated.View
-              style={[
-                {
-                  flex: 1,
-                  borderTopColor: theme.appBorderColor,
-                  borderTopWidth: 1,
-                  borderStyle: 'solid',
-                  backgroundColor: theme.background.content,
-                  elevation: 8,
-                },
-                { transform: [{ translateY: dragY }] },
-              ]}
-            >
+            <Animated.View style={[drawerContainerStyle, { transform: [{ translateY: dragY }] }]}>
               {/* Drag handle */}
-              <View
-                {...panResponder.panHandlers}
-                style={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  backgroundColor: theme.background.content,
-                }}
-              >
+              <View {...panResponder.panHandlers} style={dragHandleWrapperStyle}>
                 <View style={handleStyle} />
               </View>
 
-              <View
-                style={{
-                  flex: 1,
-                  backgroundColor: theme.background.content,
-                }}
-              >
-                {children}
-              </View>
+              <View style={childrenWrapperStyle}>{children}</View>
             </Animated.View>
           </Animated.View>
         </Animated.View>

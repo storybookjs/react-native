@@ -58,8 +58,10 @@ const mobileMenuDrawerContentStyle = {
   paddingBottom: 4,
 } satisfies ViewStyle;
 
+const flexStyle = { flex: 1 } satisfies ViewStyle;
+
 export const LiteUI: SBUI = ({ storage, theme, storyHash, story, children }): ReactElement => (
-  <SafeAreaProvider style={{ flex: 1 }}>
+  <SafeAreaProvider style={flexStyle}>
     <ThemeProvider theme={theme}>
       <StorageProvider storage={storage}>
         <LayoutProvider>
@@ -193,7 +195,7 @@ export const Layout = ({
                 <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
               </View>
 
-              <View style={{ flex: 1 }}>
+              <View style={flexStyle}>
                 <SelectedNodeProvider>
                   <Sidebar
                     previewInitialized

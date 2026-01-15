@@ -6474,15 +6474,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@legendapp/list@npm:^2.0.19":
-  version: 2.0.19
-  resolution: "@legendapp/list@npm:2.0.19"
+"@legendapp/list@npm:3.0.0-beta.20":
+  version: 3.0.0-beta.20
+  resolution: "@legendapp/list@npm:3.0.0-beta.20"
   dependencies:
     use-sync-external-store: "npm:^1.5.0"
   peerDependencies:
     react: "*"
-    react-native: "*"
-  checksum: 10/f59312533adebbb668a48505d397962f4fecd1c96737a93a42aa0192d53e9cd30bbf1f5fa92ed0eeb13907ba22d2a99e25708de71491700462241638a7f83380
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 10/b1e39a041298c99de115b8ae8e5eb633a61869326cb50886468ca9e493c0d5be2300f3460cfef029dd1ff3894f649f890037f7cc9560454055af87111b571051
   languageName: node
   linkType: hard
 
@@ -8316,7 +8320,7 @@ __metadata:
   resolution: "@storybook/react-native-ui-lite@workspace:packages/react-native-ui-lite"
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
-    "@legendapp/list": "npm:^2.0.19"
+    "@legendapp/list": "npm:3.0.0-beta.20"
     "@storybook/react": "npm:^10.1.11"
     "@storybook/react-native-theming": "npm:^10.1.11"
     "@storybook/react-native-ui-common": "npm:^10.1.11"

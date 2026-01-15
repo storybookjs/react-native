@@ -9,7 +9,7 @@ import {
   useExpanded,
 } from '@storybook/react-native-ui-common';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
-import { View } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 import { LegendList } from '@legendapp/list';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
@@ -175,6 +175,8 @@ const CollapseButton = styled.TouchableOpacity(() => ({
   cursor: 'pointer',
   height: 28,
 }));
+
+const flexStyle: ViewStyle = { flex: 1 };
 
 export const Tree = React.memo<{
   isBrowsing: boolean;
@@ -431,10 +433,10 @@ export const Tree = React.memo<{
   }, [selectedStoryId, treeData, registerScrollCallback]);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={flexStyle}>
       <LegendList
         ref={containerRef}
-        style={{ flex: 1 }}
+        style={flexStyle}
         data={treeData}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
@@ -442,6 +444,7 @@ export const Tree = React.memo<{
         estimatedItemSize={28}
         recycleItems
         keyboardShouldPersistTaps="handled"
+        waitForInitialLayout
       />
     </View>
   );
