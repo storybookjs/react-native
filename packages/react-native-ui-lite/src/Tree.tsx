@@ -438,36 +438,21 @@ export const Tree = React.memo<{
     registerCallback(({ id: nextId, animated }) => {
       const targetId = nextId ?? selectedStoryId;
 
-      // Expand ancestors so the item is visible in the tree
-      if (targetId && !expanded[targetId]) {
-        const ancestorIds = getAncestorIds(collapsedData, targetId);
-        if (ancestorIds.length > 0) {
-          setExpanded({ ids: [...ancestorIds, targetId], value: true });
-        } else {
-          setExpanded({ ids: [targetId], value: true });
-        }
-        setIdToScrolllOnMount(targetId);
-      } else {
-        const index = treeData.findIndex((item) => {
-          return item.itemId === targetId;
-        });
+      const ancestorIds = getAncestorIds(collapsedData, targetId);
 
-        listRef.current?.scrollToIndex({
-          index,
-          animated: animated ?? false,
-          viewPosition: 0.5,
-        });
-      }
+      setExpanded({ ids: [...ancestorIds, targetId], value: true });
+
+      setIdToScrolllOnMount(targetId);
     });
-  }, [collapsedData, expanded, registerCallback, selectedStoryId, setExpanded, treeData]);
+  }, [collapsedData, registerCallback, selectedStoryId, setExpanded]);
 
   // a workaround for the fact that we need to expand and scroll to an item that is not in the tree yet
   useEffect(() => {
     if (idToScrolllOnMount) {
       // Expand ancestors so the item is visible in the tree
-      if (!expanded[idToScrolllOnMount]) {
+      const ancestorIds = getAncestorIds(collapsedData, idToScrolllOnMount);
+      if (!expanded[idToScrolllOnMount] || ancestorIds.some((id) => !expanded[id])) {
         // technically this might not be needed since we are expanding the item in the registerCallback function
-        const ancestorIds = getAncestorIds(collapsedData, idToScrolllOnMount);
         if (ancestorIds.length > 0) {
           setExpanded({ ids: [...ancestorIds, idToScrolllOnMount], value: true });
         } else {

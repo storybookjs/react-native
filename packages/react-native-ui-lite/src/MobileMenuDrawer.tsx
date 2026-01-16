@@ -132,7 +132,8 @@ export const MobileMenuDrawer = memo(
         useNativeDriver: true,
       }).start(({ finished }) => {
         if (finished) {
-          scrollCallback({ animated: false });
+          // go to the selected story and don't animate
+          scrollCallback({ animated: false, id: undefined });
         }
       });
     }, [dragY, height, scrollCallback, slideAnim]);

@@ -104,7 +104,7 @@ export const GroupNode: FC<
         {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
         <GroupIcon width={14} height={14} color={color} />
       </Wrapper>
-      <BranchNodeText>{children}</BranchNodeText>
+      <BranchNodeText numberOfLines={1}>{children}</BranchNodeText>
     </BranchNode>
   );
 });
@@ -124,7 +124,7 @@ export const ComponentNode: FC<ComponentProps<typeof BranchNode>> = React.memo(
           {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
           <ComponentIcon width={12} height={12} color={color} />
         </Wrapper>
-        <BranchNodeText>{children}</BranchNodeText>
+        <BranchNodeText numberOfLines={1}>{children}</BranchNodeText>
       </BranchNode>
     );
   }
@@ -146,7 +146,9 @@ export const StoryNode = React.memo(
         <Wrapper key={`story-${props.id}-${color}`}>
           <StoryIcon width={14} height={14} color={color} />
         </Wrapper>
-        <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
+        <LeafNodeText selected={props.selected} numberOfLines={1}>
+          {children}
+        </LeafNodeText>
       </LeafNode>
     );
   })

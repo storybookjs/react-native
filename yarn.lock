@@ -6780,6 +6780,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nozbe/microfuzz@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@nozbe/microfuzz@npm:1.0.0"
+  checksum: 10/bddbf6ddc94675f32c9ac07a347bccfb5a58ed4a6f8115e5c58a9c4e9e3a11c751053d1c55fe37aaff62e154cc0a211d69813f64157131431b841a409b5166ca
+  languageName: node
+  linkType: hard
+
 "@npmcli/agent@npm:^3.0.0":
   version: 3.0.0
   resolution: "@npmcli/agent@npm:3.0.0"
@@ -8321,6 +8328,7 @@ __metadata:
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
     "@legendapp/list": "npm:3.0.0-beta.20"
+    "@nozbe/microfuzz": "npm:^1.0.0"
     "@storybook/react": "npm:^10.1.11"
     "@storybook/react-native-theming": "npm:^10.1.11"
     "@storybook/react-native-ui-common": "npm:^10.1.11"

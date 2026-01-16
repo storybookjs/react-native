@@ -1,6 +1,5 @@
 import { styled } from '@storybook/react-native-theming';
-import type { IFuseOptions } from 'fuse.js';
-import Fuse from 'fuse.js';
+import { useFuzzySearchList } from '@nozbe/microfuzz/react';
 import React, { useCallback, useDeferredValue, useMemo, useRef, useState } from 'react';
 import { Platform, TextInput, View, ViewStyle } from 'react-native';
 import { useSelectedNode } from './SelectedNodeProvider';
@@ -16,24 +15,11 @@ import {
 } from '@storybook/react-native-ui-common';
 import { CloseIcon, SearchIcon } from './icon/iconDataUris';
 
-const DEFAULT_MAX_SEARCH_RESULTS = 50;
+// Microfuzz highlight types
+type HighlightRange = [number, number];
+type HighlightRanges = HighlightRange[];
 
-const options = {
-  shouldSort: true,
-  tokenize: true,
-  findAllMatches: true,
-  includeScore: true,
-  includeMatches: true,
-  threshold: 0.2,
-  location: 0,
-  distance: 100,
-  maxPatternLength: 32,
-  minMatchCharLength: 1,
-  keys: [
-    { name: 'name', weight: 0.7 },
-    { name: 'path', weight: 0.3 },
-  ],
-} as IFuseOptions<SearchItem>;
+const DEFAULT_MAX_SEARCH_RESULTS = 50;
 
 const SearchIconWrapper = styled.View({
   position: 'absolute',
@@ -127,7 +113,6 @@ export const Search = React.memo<{
     ({ item: result }) => {
       return {
         icon: result?.item?.type === 'component' ? 'component' : 'story',
-        result,
         onPress: () => {
           if (result?.item?.type === 'story') {
             selectStory(result.item.id, result.item.refId);
@@ -138,7 +123,6 @@ export const Search = React.memo<{
           }
         },
         score: result.score,
-        refIndex: result.refIndex,
         item: result.item,
         matches: result.matches,
         isHighlighted: false,
@@ -150,9 +134,9 @@ export const Search = React.memo<{
   // Defer dataset updates to prevent blocking during data changes
   const deferredDataset = useDeferredValue(dataset);
 
-  // Memoize the Fuse instance - only recreate when dataset changes
-  const fuse = useMemo(() => {
-    const list = deferredDataset.entries.reduce<SearchItem[]>((acc, [refId, { index }]) => {
+  // Build the search list - memoized
+  const searchList = useMemo(() => {
+    return deferredDataset.entries.reduce<SearchItem[]>((acc, [refId, { index }]) => {
       if (index) {
         acc.push(
           ...Object.values(index).map((item) => {
@@ -162,67 +146,88 @@ export const Search = React.memo<{
       }
       return acc;
     }, []);
-    return new Fuse(list, options);
   }, [deferredDataset]);
-
-  const getResults = useCallback(
-    (input: string) => {
-      if (!input) return [];
-
-      const maxResults = allComponents ? 1000 : DEFAULT_MAX_SEARCH_RESULTS;
-      const results = [];
-      const resultIds = new Set<string>();
-      const searchResults = fuse.search(input) as SearchResult[];
-
-      let totalDistinctCount = 0;
-
-      for (const result of searchResults) {
-        const { item } = result;
-
-        // Skip invalid types or duplicates
-        if (
-          !(item.type === 'component' || item.type === 'docs' || item.type === 'story') ||
-          resultIds.has(item.parent)
-        ) {
-          continue;
-        }
-
-        resultIds.add(item.id);
-        totalDistinctCount++;
-
-        // Only add to results if we haven't reached the limit
-        if (results.length < maxResults) {
-          results.push(result);
-        }
-
-        // Early exit when showing all components and we have enough
-        if (allComponents && results.length >= maxResults) {
-          break;
-        }
-      }
-
-      // Add "show all" option if there are more results than displayed
-      if (!allComponents && totalDistinctCount > DEFAULT_MAX_SEARCH_RESULTS) {
-        results.push({
-          showAll: () => showAllComponents(true),
-          totalCount: totalDistinctCount,
-          moreCount: totalDistinctCount - DEFAULT_MAX_SEARCH_RESULTS,
-        });
-      }
-
-      return results;
-    },
-    [allComponents, fuse]
-  );
 
   // Defer query input to prevent blocking typing
   const deferredQuery = useDeferredValue(inputValue);
+  const queryText = useMemo(() => (deferredQuery ? deferredQuery.trim() : ''), [deferredQuery]);
 
-  // Memoize results calculation
-  const input = useMemo(() => (deferredQuery ? deferredQuery.trim() : ''), [deferredQuery]);
+  // getText function for microfuzz - memoized for performance
+  // Returns [name, path] - matches[0] will be name highlights, matches[1] will be path highlights
+  const getText = useCallback((item: SearchItem) => [item.name, item.path?.join(' ') ?? ''], []);
+
+  // Map microfuzz result to our SearchResult type (native format)
+  const mapResultItem = useCallback(
+    ({
+      item,
+      score,
+      matches,
+    }: {
+      item: SearchItem;
+      score: number | null;
+      matches: HighlightRanges[];
+    }): SearchResult => ({
+      item,
+      score,
+      matches: matches ?? [],
+    }),
+    []
+  );
+
+  // Use microfuzz's React hook with built-in memoization
+  const fuzzyResults = useFuzzySearchList({
+    list: searchList,
+    queryText,
+    getText,
+    mapResultItem,
+  });
+
+  // Process results: filter, deduplicate, and limit
   const results = useMemo(() => {
-    return input ? getResults(input) : [];
-  }, [input, getResults]);
+    if (!queryText) return [];
+
+    const maxResults = allComponents ? 1000 : DEFAULT_MAX_SEARCH_RESULTS;
+    const processedResults = [];
+    const resultIds = new Set<string>();
+
+    let totalDistinctCount = 0;
+
+    for (const result of fuzzyResults) {
+      const { item } = result;
+
+      // Skip invalid types or duplicates
+      if (
+        !(item.type === 'component' || item.type === 'docs' || item.type === 'story') ||
+        resultIds.has(item.parent)
+      ) {
+        continue;
+      }
+
+      resultIds.add(item.id);
+      totalDistinctCount++;
+
+      // Only add to results if we haven't reached the limit
+      if (processedResults.length < maxResults) {
+        processedResults.push(result);
+      }
+
+      // Early exit when showing all components and we have enough
+      if (allComponents && processedResults.length >= maxResults) {
+        break;
+      }
+    }
+
+    // Add "show all" option if there are more results than displayed
+    if (!allComponents && totalDistinctCount > DEFAULT_MAX_SEARCH_RESULTS) {
+      processedResults.push({
+        showAll: () => showAllComponents(true),
+        totalCount: totalDistinctCount,
+        moreCount: totalDistinctCount - DEFAULT_MAX_SEARCH_RESULTS,
+      });
+    }
+
+    return processedResults;
+  }, [queryText, fuzzyResults, allComponents]);
 
   return (
     <View style={flexStyle}>
@@ -254,7 +259,7 @@ export const Search = React.memo<{
 
       <View style={flexStyle}>
         {children({
-          query: input,
+          query: queryText,
           results,
           isBrowsing: !isOpen || !inputValue.length,
           closeMenu: () => {},
