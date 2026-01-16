@@ -200,13 +200,13 @@ export function withStorybook(
     const host = websockets === 'auto' ? 'auto' : websockets.host;
 
     // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
+    // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
     createChannelServer({ port, host: host === 'auto' ? undefined : host, configPath });
 
     generate({
       configPath,
       useJs,
       docTools,
-      // here we want to get the ip address so that devices can connect over lan
       host,
       port,
     });

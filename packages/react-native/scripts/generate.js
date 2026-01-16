@@ -37,6 +37,7 @@ async function generate({
   host = undefined,
   port = 7007,
 }) {
+  // here we want to get the ip address and pass it to rn storybook so that devices can connect over lan easily
   const channelHost = host === 'auto' ? getLocalIPAddress() : host;
   const storybookRequiresLocation = path.resolve(
     cwd,
