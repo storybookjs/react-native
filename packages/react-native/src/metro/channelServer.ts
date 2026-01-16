@@ -93,6 +93,15 @@ export function createChannelServer({
 
   const wss = new WebSocketServer({ server: httpServer });
 
+  // Single global ping interval for all clients
+  setInterval(function ping() {
+    wss.clients.forEach(function each(client) {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(JSON.stringify({ type: 'ping', args: [] }));
+      }
+    });
+  }, 10000);
+
   wss.on('connection', function connection(ws: WebSocket) {
     console.log('WebSocket connection established');
 
@@ -107,12 +116,6 @@ export function createChannelServer({
         console.error(error);
       }
     });
-
-    setInterval(function ping() {
-      wss.clients.forEach(function each(ws) {
-        ws.send(JSON.stringify({ type: 'ping', args: [] }));
-      });
-    }, 10000);
   });
 
   httpServer.listen(port, host, () => {
