@@ -1,27 +1,10 @@
 import * as path from 'path';
 import { generate } from '../../scripts/generate';
-import { networkInterfaces } from 'node:os';
 import type { MetroConfig } from 'metro-config';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
 import { telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
 
-/**
- * Get the local IP address of the machine.
- * @returns The local IP address of the machine.
- */
-function getLocalIPAddress(): string | undefined {
-  const nets = networkInterfaces();
-  for (const name of Object.keys(nets)) {
-    for (const net of nets[name]!) {
-      const familyV4Value = typeof net.family === 'string' ? 'IPv4' : 4;
-      if (net.family === familyV4Value && !net.internal) {
-        return net.address;
-      }
-    }
-  }
-  return '0.0.0.0';
-}
 /**
  * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
  */
@@ -212,26 +195,28 @@ export function withStorybook(
     };
   }
 
-  let websocketOptions: WebsocketsOptions | undefined;
-
   if (websockets) {
     const port = websockets === 'auto' ? 7007 : (websockets.port ?? 7007);
+    const host = websockets === 'auto' ? 'auto' : websockets.host;
+
     // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
-    const host = websockets === 'auto' ? undefined : websockets.host;
+    createChannelServer({ port, host: host === 'auto' ? undefined : host, configPath });
 
-    websocketOptions = { port, host };
-
-    createChannelServer({ port, host, configPath });
+    generate({
+      configPath,
+      useJs,
+      docTools,
+      // here we want to get the ip address so that devices can connect over lan
+      host,
+      port,
+    });
+  } else {
+    generate({
+      configPath,
+      useJs,
+      docTools,
+    });
   }
-
-  generate({
-    configPath,
-    useJs,
-    docTools,
-    // here we want to get the ip address so that devices can connect over lan
-    host: websockets === 'auto' ? getLocalIPAddress() : websocketOptions?.host,
-    port: websocketOptions?.port,
-  });
 
   return {
     ...config,

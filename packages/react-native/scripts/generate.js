@@ -12,13 +12,32 @@ const path = require('path');
 
 const cwd = process.cwd();
 
+const { networkInterfaces } = require('node:os');
+/**
+ * Get the local IP address of the machine.
+ * @returns The local IP address of the machine.
+ */
+function getLocalIPAddress() {
+  const nets = networkInterfaces();
+  for (const name of Object.keys(nets)) {
+    for (const net of nets[name]) {
+      const familyV4Value = typeof net.family === 'string' ? 'IPv4' : 4;
+      if (net.family === familyV4Value && !net.internal) {
+        return net.address;
+      }
+    }
+  }
+  return '0.0.0.0';
+}
+
 async function generate({
   configPath,
   /* absolute = false, */ useJs = false,
   docTools = true,
-  host,
-  port,
+  host = undefined,
+  port = 7007,
 }) {
+  const channelHost = host === 'auto' ? getLocalIPAddress() : host;
   const storybookRequiresLocation = path.resolve(
     cwd,
     configPath,
@@ -133,7 +152,7 @@ ${useJs ? '' : globalTypes}
 const annotations = ${annotations};
 
 globalThis.STORIES = normalizedStories;
-${host ? `globalThis.STORYBOOK_WEBSOCKET = { host: '${host}', port: ${port ?? 7007} };` : ''}
+${channelHost ? `globalThis.STORYBOOK_WEBSOCKET = { host: '${channelHost}', port: ${port ?? 7007} };` : ''}
 
 ${useJs ? '' : '// @ts-ignore'}
 module?.hot?.accept?.();
