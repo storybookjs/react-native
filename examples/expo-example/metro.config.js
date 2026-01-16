@@ -1,7 +1,7 @@
 // Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
-
+const { withRozenite } = require('@rozenite/metro');
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(projectRoot, '../../');
 
@@ -22,10 +22,17 @@ defaultConfig.resolver.nodeModulesPaths = [
 
 const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
-module.exports = withStorybook(defaultConfig, {
-  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
-  websockets: 'auto',
-});
+module.exports = withRozenite(
+  withStorybook(defaultConfig, {
+    enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+    websockets: "auto",
+  }),
+  {
+    enabled: true,
+
+    include: ['@storybook/react-native-dev-tools'],
+  }
+);
 
 /* , {
   enabled: process.env.STORYBOOK_ENABLED === 'true',
