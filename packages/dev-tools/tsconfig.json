@@ -16,10 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src/**/*",
-    "react-native.ts",
-    "rozenite.config.ts"
-  ],
+  "include": ["src/**/*", "react-native.ts", "rozenite.config.ts"],
   "exclude": ["node_modules", "dist", "build"]
 }

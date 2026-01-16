@@ -27,15 +27,8 @@ export default function StorybookDevToolsPanel() {
   const [searchQuery, setSearchQuery] = useState('');
 
   // WebSocket connection
-  const {
-    status,
-    storyIndex,
-    selectedStoryId,
-    errorMessage,
-    connect,
-    disconnect,
-    selectStory,
-  } = useWebSocket(host, port);
+  const { status, storyIndex, selectedStoryId, errorMessage, connect, disconnect, selectStory } =
+    useWebSocket(host, port);
 
   // Animations
   const pulseAnim = usePulseAnimation(status === 'connected');
@@ -46,10 +39,7 @@ export default function StorybookDevToolsPanel() {
     return buildTree(Object.values(storyIndex.entries));
   }, [storyIndex]);
 
-  const filteredTree = useMemo(
-    () => filterTree(tree, searchQuery),
-    [tree, searchQuery]
-  );
+  const filteredTree = useMemo(() => filterTree(tree, searchQuery), [tree, searchQuery]);
 
   // Story counts
   const storyCount = useMemo(() => countStories(filteredTree), [filteredTree]);
@@ -108,10 +98,7 @@ export default function StorybookDevToolsPanel() {
 
     if (filteredTree.length === 0) {
       return (
-        <EmptyState
-          message={searchQuery ? 'No stories found' : 'No stories available'}
-          showIcon
-        />
+        <EmptyState message={searchQuery ? 'No stories found' : 'No stories available'} showIcon />
       );
     }
 
@@ -159,10 +146,7 @@ export default function StorybookDevToolsPanel() {
           onClear={() => setSearchQuery('')}
         />
 
-        <ScrollView
-          style={styles.treeScrollView}
-          contentContainerStyle={styles.treeScrollContent}
-        >
+        <ScrollView style={styles.treeScrollView} contentContainerStyle={styles.treeScrollContent}>
           {renderContent()}
         </ScrollView>
       </View>

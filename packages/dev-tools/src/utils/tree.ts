@@ -64,9 +64,7 @@ export function filterTree(nodes: TreeNode[], query: string): TreeNode[] {
 
   function filterNode(node: TreeNode): TreeNode | null {
     const nameMatches = node.name.toLowerCase().includes(lowerQuery);
-    const filteredChildren = node.children
-      .map(filterNode)
-      .filter((n): n is TreeNode => n !== null);
+    const filteredChildren = node.children.map(filterNode).filter((n): n is TreeNode => n !== null);
 
     if (nameMatches) {
       return { ...node, children: node.children };

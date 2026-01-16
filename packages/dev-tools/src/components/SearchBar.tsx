@@ -17,10 +17,7 @@ export const SearchBar: FC<SearchBarProps> = ({ value, onChange, onClear }) => {
   return (
     <Pressable
       onPress={() => inputRef.current?.focus()}
-      style={[
-        styles.searchContainer,
-        isFocused && styles.searchContainerFocused,
-      ]}
+      style={[styles.searchContainer, isFocused && styles.searchContainerFocused]}
     >
       <View style={styles.searchIconWrapper}>
         <SearchIcon color={isFocused ? colors.secondary : colors.mediumdark} />

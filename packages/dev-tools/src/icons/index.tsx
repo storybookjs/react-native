@@ -70,7 +70,10 @@ export const ChevronIcon: FC<{ isExpanded?: boolean; color?: string }> = ({
     height={8}
     viewBox="0 0 8 8"
     fill="none"
-    style={{ transform: isExpanded ? 'rotate(90deg)' : 'none', transition: 'transform 0.1s ease-out' }}
+    style={{
+      transform: isExpanded ? 'rotate(90deg)' : 'none',
+      transition: 'transform 0.1s ease-out',
+    }}
   >
     <path
       fill={color}

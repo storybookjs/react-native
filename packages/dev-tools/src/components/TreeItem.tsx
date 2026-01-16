@@ -60,11 +60,7 @@ export const TreeItem: FC<TreeItemProps> = ({
       <Pressable
         onHoverIn={() => setIsHovered(true)}
         onHoverOut={() => setIsHovered(false)}
-        style={[
-          styles.treeItem,
-          { paddingLeft },
-          isHovered && styles.treeItemHover,
-        ]}
+        style={[styles.treeItem, { paddingLeft }, isHovered && styles.treeItemHover]}
         onPress={() => onToggle(node)}
       >
         {hasChildren ? (
@@ -82,9 +78,7 @@ export const TreeItem: FC<TreeItemProps> = ({
         <Text style={styles.treeItemText} numberOfLines={1}>
           {node.name}
         </Text>
-        {hasChildren && (
-          <Text style={styles.treeItemCount}>{countStories([node])}</Text>
-        )}
+        {hasChildren && <Text style={styles.treeItemCount}>{countStories([node])}</Text>}
       </Pressable>
 
       {isExpanded && hasChildren && (
