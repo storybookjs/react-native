@@ -105,8 +105,8 @@ export const Search = React.memo<{
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
-  // const { isMobile } = useLayout();
-  const { scrollCallback, setIdToScrolllOnMount } = useSelectedNode();
+
+  const { scrollCallback } = useSelectedNode();
 
   const selectStory = useCallback(
     (id: string, refId: string) => {
@@ -119,9 +119,8 @@ export const Search = React.memo<{
       showAllComponents(false);
 
       scrollCallback({ id, animated: false });
-      setIdToScrolllOnMount(id);
     },
-    [scrollCallback, setIdToScrolllOnMount, setSelection]
+    [scrollCallback, setSelection]
   );
 
   const getItemProps: GetSearchItemProps = useCallback(
@@ -170,60 +169,57 @@ export const Search = React.memo<{
     (input: string) => {
       if (!input) return [];
 
-      let results = [];
-      const resultIds: Set<string> = new Set();
-      const distinctResults = (fuse.search(input) as SearchResult[]).filter(({ item }) => {
+      const maxResults = allComponents ? 1000 : DEFAULT_MAX_SEARCH_RESULTS;
+      const results = [];
+      const resultIds = new Set<string>();
+      const searchResults = fuse.search(input) as SearchResult[];
+
+      let totalDistinctCount = 0;
+
+      for (const result of searchResults) {
+        const { item } = result;
+
+        // Skip invalid types or duplicates
         if (
           !(item.type === 'component' || item.type === 'docs' || item.type === 'story') ||
           resultIds.has(item.parent)
         ) {
-          return false;
+          continue;
         }
-        resultIds.add(item.id);
-        return true;
-      });
 
-      if (distinctResults.length) {
-        results = distinctResults.slice(0, allComponents ? 1000 : DEFAULT_MAX_SEARCH_RESULTS);
-        if (distinctResults.length > DEFAULT_MAX_SEARCH_RESULTS && !allComponents) {
-          results.push({
-            showAll: () => showAllComponents(true),
-            totalCount: distinctResults.length,
-            moreCount: distinctResults.length - DEFAULT_MAX_SEARCH_RESULTS,
-          });
+        resultIds.add(item.id);
+        totalDistinctCount++;
+
+        // Only add to results if we haven't reached the limit
+        if (results.length < maxResults) {
+          results.push(result);
+        }
+
+        // Early exit when showing all components and we have enough
+        if (allComponents && results.length >= maxResults) {
+          break;
         }
       }
 
-      const lastViewed = !input && getLastViewed();
-      if (lastViewed && lastViewed.length) {
-        results = lastViewed.reduce((acc, { storyId, refId }) => {
-          const data = deferredDataset.hash[refId];
-          if (data && data.index && data.index[storyId]) {
-            const story = data.index[storyId];
-            const item = story.type === 'story' ? data.index[story.parent] : story;
-            // prevent duplicates
-            if (!acc.some((res) => res.item.refId === refId && res.item.id === item.id)) {
-              acc.push({
-                item: searchItem(item, deferredDataset.hash[refId]),
-                matches: [],
-                score: 0,
-              });
-            }
-          }
-          return acc;
-        }, []);
+      // Add "show all" option if there are more results than displayed
+      if (!allComponents && totalDistinctCount > DEFAULT_MAX_SEARCH_RESULTS) {
+        results.push({
+          showAll: () => showAllComponents(true),
+          totalCount: totalDistinctCount,
+          moreCount: totalDistinctCount - DEFAULT_MAX_SEARCH_RESULTS,
+        });
       }
 
       return results;
     },
-    [allComponents, deferredDataset.hash, getLastViewed, fuse]
+    [allComponents, fuse]
   );
 
   // Defer query input to prevent blocking typing
   const deferredQuery = useDeferredValue(inputValue);
-  const input = deferredQuery ? deferredQuery.trim() : '';
 
   // Memoize results calculation
+  const input = useMemo(() => (deferredQuery ? deferredQuery.trim() : ''), [deferredQuery]);
   const results = useMemo(() => {
     return input ? getResults(input) : [];
   }, [input, getResults]);

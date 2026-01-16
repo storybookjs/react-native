@@ -324,6 +324,7 @@ export const SearchResults: FC<{
         contentContainerStyle={contentContainerStyle}
         estimatedItemSize={50}
         keyboardShouldPersistTaps="handled"
+        recycleItems
       />
     </View>
   );

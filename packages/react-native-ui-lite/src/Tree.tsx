@@ -9,7 +9,7 @@ import {
   Item,
   useExpanded,
 } from '@storybook/react-native-ui-common';
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { View, ViewStyle } from 'react-native';
 import { LegendList, LegendListRef, LegendListRenderItemProps } from '@legendapp/list';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -185,6 +185,25 @@ const flexStyle: ViewStyle = { flex: 1 };
 const ITEM_HEIGHT = 28;
 const ROOT_ITEM_HEIGHT = 48; // 28 + 16 (marginTop) + 4 (marginBottom)
 
+const getEstimatedItemSize = (
+  item: {
+    itemId: string;
+    item: {
+      type: 'root' | 'component' | 'story' | 'docs';
+      id: string;
+      name: string;
+      children: string[];
+      parent: string | null;
+      depth: number;
+    };
+    isRoot: boolean;
+    isOrphan: boolean;
+  },
+  _index: number
+) => {
+  return item?.isRoot ? ROOT_ITEM_HEIGHT : ITEM_HEIGHT;
+};
+
 export const Tree = React.memo<{
   isBrowsing: boolean;
   isMain: boolean;
@@ -195,7 +214,9 @@ export const Tree = React.memo<{
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
-  const { registerCallback, idToScrolllOnMount, setIdToScrolllOnMount } = useSelectedNode();
+  const { registerCallback } = useSelectedNode();
+  const [idToScrolllOnMount, setIdToScrolllOnMount] = useState<string | null>(null);
+
   const insets = useSafeAreaInsets();
   const listRef = useRef<LegendListRef | null>(null);
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
@@ -412,63 +433,63 @@ export const Tree = React.memo<{
     [isMain, orphanIds.length, insets.bottom]
   );
 
-  const getEstimatedItemSize = useCallback((item: (typeof treeData)[number], _index: number) => {
-    return item?.isRoot ? ROOT_ITEM_HEIGHT : ITEM_HEIGHT;
-  }, []);
-
   // so we can call the scroll to function in the search component
   useLayoutEffect(() => {
-    registerCallback(({ nextId, animated }: { nextId?: string; animated?: boolean }) => {
+    registerCallback(({ id: nextId, animated }) => {
       const targetId = nextId ?? selectedStoryId;
 
       // Expand ancestors so the item is visible in the tree
-      if (targetId) {
+      if (targetId && !expanded[targetId]) {
         const ancestorIds = getAncestorIds(collapsedData, targetId);
         if (ancestorIds.length > 0) {
           setExpanded({ ids: [...ancestorIds, targetId], value: true });
         } else {
           setExpanded({ ids: [targetId], value: true });
         }
+        setIdToScrolllOnMount(targetId);
+      } else {
+        const index = treeData.findIndex((item) => {
+          return item.itemId === targetId;
+        });
+
+        listRef.current?.scrollToIndex({
+          index,
+          animated: animated ?? false,
+          viewPosition: 0.5,
+        });
       }
-
-      const index = treeData.findIndex((item) => {
-        return item.itemId === targetId;
-      });
-
-      listRef.current?.scrollToIndex({
-        index,
-        animated: animated ?? false,
-        viewPosition: 0.5,
-      });
     });
-  }, [collapsedData, listRef, registerCallback, selectedStoryId, setExpanded, treeData]);
+  }, [collapsedData, expanded, registerCallback, selectedStoryId, setExpanded, treeData]);
 
   // a workaround for the fact that we need to expand and scroll to an item that is not in the tree yet
   useEffect(() => {
     if (idToScrolllOnMount) {
       // Expand ancestors so the item is visible in the tree
-      const ancestorIds = getAncestorIds(collapsedData, idToScrolllOnMount);
-      if (ancestorIds.length > 0) {
-        setExpanded({ ids: [...ancestorIds, idToScrolllOnMount], value: true });
+      if (!expanded[idToScrolllOnMount]) {
+        // technically this might not be needed since we are expanding the item in the registerCallback function
+        const ancestorIds = getAncestorIds(collapsedData, idToScrolllOnMount);
+        if (ancestorIds.length > 0) {
+          setExpanded({ ids: [...ancestorIds, idToScrolllOnMount], value: true });
+        } else {
+          setExpanded({ ids: [idToScrolllOnMount], value: true });
+        }
       } else {
-        setExpanded({ ids: [idToScrolllOnMount], value: true });
-      }
-
-      const index = treeData.findIndex((item) => {
-        return item.itemId === idToScrolllOnMount;
-      });
-
-      if (index >= 0) {
-        listRef.current?.scrollToIndex({
-          index,
-          animated: false,
-          viewPosition: 0.5,
-          viewOffset: 100,
+        const index = treeData.findIndex((item) => {
+          return item.itemId === idToScrolllOnMount;
         });
-        setIdToScrolllOnMount(null);
+
+        if (index >= 0) {
+          listRef.current?.scrollToIndex({
+            index,
+            animated: false,
+            viewPosition: 0.5,
+            viewOffset: 100,
+          });
+          setIdToScrolllOnMount(null);
+        }
       }
     }
-  }, [collapsedData, idToScrolllOnMount, listRef, setExpanded, setIdToScrolllOnMount, treeData]);
+  }, [collapsedData, expanded, idToScrolllOnMount, setExpanded, treeData]);
 
   return (
     <View style={flexStyle}>
@@ -479,12 +500,9 @@ export const Tree = React.memo<{
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         contentContainerStyle={contentContainerStyle}
-        // getFixedItemSize={getEstimatedItemSize}
-        getEstimatedItemSize={getEstimatedItemSize}
-        // estimatedItemSize={28}
+        getFixedItemSize={getEstimatedItemSize}
         keyboardShouldPersistTaps="handled"
         recycleItems
-        waitForInitialLayout
       />
     </View>
   );
