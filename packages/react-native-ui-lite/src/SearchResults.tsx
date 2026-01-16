@@ -9,9 +9,11 @@ import { Button, IconButton, isExpandType, ExpandType } from '@storybook/react-n
 import { transparentize } from 'polished';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import React, { useCallback, useMemo } from 'react';
-import { PressableProps, View, ViewStyle, TextStyle } from 'react-native';
+import { Platform, PressableProps, View, ViewStyle, TextStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ComponentIcon, StoryIcon } from './icon/iconDataUris';
+
+const isWeb = Platform.OS === 'web';
 
 // Microfuzz highlight types
 type HighlightRange = [number, number];
@@ -316,6 +318,19 @@ export const SearchResults: FC<{
     },
     [getItemProps, highlightedIndex]
   );
+
+  // On web, use a simple scrollable div to avoid LegendList web infinite update stack
+  if (isWeb) {
+    return (
+      <View style={flexStyle}>
+        <div style={{ flex: 1, overflow: 'auto', ...contentContainerStyle }}>
+          {listData.map((item) => (
+            <div key={keyExtractor(item)}>{renderItem({ item })}</div>
+          ))}
+        </div>
+      </View>
+    );
+  }
 
   return (
     <View style={flexStyle}>
