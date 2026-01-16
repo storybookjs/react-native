@@ -1,9 +1,9 @@
 import * as path from 'path';
 import { generate } from '../../scripts/generate';
-import { WebSocketServer, WebSocket, Data } from 'ws';
 import type { MetroConfig } from 'metro-config';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
 import { telemetry } from 'storybook/internal/telemetry';
+import { createChannelServer } from './channelServer';
 
 /**
  * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
@@ -32,7 +32,7 @@ interface WithStorybookOptions {
   /**
    * WebSocket configuration for syncing storybook instances or sending events to storybook.
    */
-  websockets?: WebsocketsOptions;
+  websockets?: WebsocketsOptions | 'auto';
 
   /**
    * Whether to use JavaScript files for Storybook configuration instead of TypeScript. Defaults to false.
@@ -196,33 +196,27 @@ export function withStorybook(
   }
 
   if (websockets) {
-    const port = websockets.port ?? 7007;
-    const host = websockets.host ?? 'localhost';
+    const port = websockets === 'auto' ? 7007 : (websockets.port ?? 7007);
+    const host = websockets === 'auto' ? 'auto' : websockets.host;
 
-    const wss = new WebSocketServer({ port, host });
+    // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
+    // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
+    createChannelServer({ port, host: host === 'auto' ? undefined : host, configPath });
 
-    wss.on('connection', function connection(ws: WebSocket) {
-      console.log('WebSocket connection established');
-
-      ws.on('error', console.error);
-
-      ws.on('message', function message(data: Data) {
-        try {
-          const json = JSON.parse(data.toString());
-
-          wss.clients.forEach((wsClient) => wsClient.send(JSON.stringify(json)));
-        } catch (error) {
-          console.error(error);
-        }
-      });
+    generate({
+      configPath,
+      useJs,
+      docTools,
+      host,
+      port,
+    });
+  } else {
+    generate({
+      configPath,
+      useJs,
+      docTools,
     });
   }
-
-  generate({
-    configPath,
-    useJs,
-    docTools,
-  });
 
   return {
     ...config,

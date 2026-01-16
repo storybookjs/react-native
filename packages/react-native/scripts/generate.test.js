@@ -132,5 +132,87 @@ describe('loader', () => {
         t.assert.snapshot(fileContentMock);
       });
     });
+
+    describe('when host and port are provided', () => {
+      it('includes STORYBOOK_WEBSOCKET with host and port', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({
+          configPath: 'scripts/mocks/all-config-files',
+          host: '192.168.1.100',
+          port: 8080,
+        });
+        mock.reset();
+
+        assert.ok(
+          fileContentMock.includes(
+            "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
+          )
+        );
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('when only host is provided', () => {
+      it('includes STORYBOOK_WEBSOCKET with host and default port', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({
+          configPath: 'scripts/mocks/all-config-files',
+          host: 'localhost',
+        });
+        mock.reset();
+
+        assert.ok(
+          fileContentMock.includes(
+            "globalThis.STORYBOOK_WEBSOCKET = { host: 'localhost', port: 7007 };"
+          )
+        );
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('when host is not provided', () => {
+      it('does not include STORYBOOK_WEBSOCKET assignment', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/all-config-files' });
+        mock.reset();
+
+        assert.ok(!fileContentMock.includes('globalThis.STORYBOOK_WEBSOCKET ='));
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('when only port is provided without host', () => {
+      it('does not include STORYBOOK_WEBSOCKET assignment', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({
+          configPath: 'scripts/mocks/all-config-files',
+          port: 8080,
+        });
+        mock.reset();
+
+        assert.ok(!fileContentMock.includes('globalThis.STORYBOOK_WEBSOCKET ='));
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('when host and port are provided with useJs', () => {
+      it('includes STORYBOOK_WEBSOCKET in JS file', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({
+          configPath: 'scripts/mocks/all-config-files',
+          useJs: true,
+          host: '192.168.1.100',
+          port: 8080,
+        });
+        mock.reset();
+
+        assert.ok(
+          fileContentMock.includes(
+            "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
+          )
+        );
+        t.assert.snapshot(fileContentMock);
+      });
+    });
   });
 });

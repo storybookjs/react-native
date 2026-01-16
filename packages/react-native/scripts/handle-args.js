@@ -10,7 +10,17 @@ function getArguments() {
     )
     .option('-j, --use-js', 'Use a js file for storybook.requires')
     .option('-D, --no-doc-tools', 'Do not include doc tools in the storybook.requires file')
-    .option('-a, --absolute', 'Use absolute paths for story imports');
+    .option(
+      '-w, --host <host>',
+      "Host for websockets, the value 'auto' will tell storybook to use your local ip address"
+    )
+    .option('-p, --port <port>', 'Port for websockets', (value) => {
+      const port = parseInt(value, 10);
+      if (isNaN(port)) {
+        throw new Error(`Invalid port number: "${value}"`);
+      }
+      return port;
+    });
 
   program.parse();
 

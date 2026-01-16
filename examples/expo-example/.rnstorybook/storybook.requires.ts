@@ -51,6 +51,7 @@ const normalizedStories = [
 declare global {
   var view: View;
   var STORIES: typeof normalizedStories;
+  var STORYBOOK_WEBSOCKET: { host: string; port: number } | undefined;
 }
 
 
@@ -61,7 +62,8 @@ const annotations = [
   require('./local-addon-example/preview')
 ];
 
-global.STORIES = normalizedStories;
+globalThis.STORIES = normalizedStories;
+globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.172', port: 7007 };
 
 // @ts-ignore
 module?.hot?.accept?.();
@@ -70,14 +72,14 @@ const options = {
   "playFn": false
 }
 
-if (!global.view) {
-  global.view = start({
+if (!globalThis.view) {
+  globalThis.view = start({
     annotations,
     storyEntries: normalizedStories,
     options,
   });
 } else {
-  updateView(global.view, annotations, normalizedStories, options);
+  updateView(globalThis.view, annotations, normalizedStories, options);
 }
 
-export const view: View = global.view;
+export const view: View = globalThis.view;

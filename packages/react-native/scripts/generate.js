@@ -8,6 +8,7 @@ const {
 const { normalizeStories, globToRegexp, loadMainConfig } = require('storybook/internal/common');
 const { interopRequireDefault } = require('./require-interop');
 const fs = require('fs');
+const { networkInterfaces } = require('node:os');
 
 const path = require('path');
 
@@ -32,7 +33,32 @@ const loadMain = async ({ configPath, cwd }) => {
   }
 };
 
-async function generate({ configPath, /* absolute = false, */ useJs = false, docTools = true }) {
+/**
+ * Get the local IP address of the machine.
+ * @returns The local IP address of the machine.
+ */
+function getLocalIPAddress() {
+  const nets = networkInterfaces();
+  for (const name of Object.keys(nets)) {
+    for (const net of nets[name]) {
+      const familyV4Value = typeof net.family === 'string' ? 'IPv4' : 4;
+      if (net.family === familyV4Value && !net.internal) {
+        return net.address;
+      }
+    }
+  }
+  return '0.0.0.0';
+}
+
+async function generate({
+  configPath,
+  useJs = false,
+  docTools = true,
+  host = undefined,
+  port = 7007,
+}) {
+  // here we want to get the ip address and pass it to rn storybook so that devices can connect over lan easily
+  const channelHost = host === 'auto' ? getLocalIPAddress() : host;
   const storybookRequiresLocation = path.resolve(
     cwd,
     configPath,
@@ -127,6 +153,7 @@ async function generate({ configPath, /* absolute = false, */ useJs = false, doc
 declare global {
   var view: View;
   var STORIES: typeof normalizedStories;
+  var STORYBOOK_WEBSOCKET: { host: string; port: number } | undefined;
 }
 `;
 
@@ -143,24 +170,25 @@ ${useJs ? '' : globalTypes}
 
 const annotations = ${annotations};
 
-global.STORIES = normalizedStories;
+globalThis.STORIES = normalizedStories;
+${channelHost ? `globalThis.STORYBOOK_WEBSOCKET = { host: '${channelHost}', port: ${port ?? 7007} };` : ''}
 
 ${useJs ? '' : '// @ts-ignore'}
 module?.hot?.accept?.();
 
 ${optionsVar}
 
-if (!global.view) {
-  global.view = start({
+if (!globalThis.view) {
+  globalThis.view = start({
     annotations,
     storyEntries: normalizedStories,
 ${options ? `    ${options},` : ''}
   });
 } else {
-  updateView(global.view, annotations, normalizedStories${options ? `, ${options}` : ''});
+  updateView(globalThis.view, annotations, normalizedStories${options ? `, ${options}` : ''});
 }
 
-export const view${useJs ? '' : ': View'} = global.view;
+export const view${useJs ? '' : ': View'} = globalThis.view;
 `;
 
   fs.writeFileSync(storybookRequiresLocation, fileContent, {
