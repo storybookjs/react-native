@@ -449,32 +449,22 @@ export const Tree = React.memo<{
   // a workaround for the fact that we need to expand and scroll to an item that is not in the tree yet
   useEffect(() => {
     if (idToScrolllOnMount) {
-      // Expand ancestors so the item is visible in the tree
-      const ancestorIds = getAncestorIds(collapsedData, idToScrolllOnMount);
-      if (!expanded[idToScrolllOnMount] || ancestorIds.some((id) => !expanded[id])) {
-        // technically this might not be needed since we are expanding the item in the registerCallback function
-        if (ancestorIds.length > 0) {
-          setExpanded({ ids: [...ancestorIds, idToScrolllOnMount], value: true });
-        } else {
-          setExpanded({ ids: [idToScrolllOnMount], value: true });
-        }
-      } else {
-        const index = treeData.findIndex((item) => {
-          return item.itemId === idToScrolllOnMount;
+      const index = treeData.findIndex((item) => {
+        return item.itemId === idToScrolllOnMount;
+      });
+
+      if (index >= 0) {
+        listRef.current?.scrollToIndex({
+          index,
+          animated: false,
+          viewPosition: 0.5,
+          viewOffset: 100,
         });
 
-        if (index >= 0) {
-          listRef.current?.scrollToIndex({
-            index,
-            animated: false,
-            viewPosition: 0.5,
-            viewOffset: 100,
-          });
-          setIdToScrolllOnMount(null);
-        }
+        setIdToScrolllOnMount(null);
       }
     }
-  }, [collapsedData, expanded, idToScrolllOnMount, setExpanded, treeData]);
+  }, [idToScrolllOnMount, treeData]);
 
   return (
     <View style={flexStyle}>
