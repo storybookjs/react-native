@@ -32,7 +32,7 @@ function getLocalIPAddress() {
 
 async function generate({
   configPath,
-  /* absolute = false, */ useJs = false,
+  useJs = false,
   docTools = true,
   host = undefined,
   port = 7007,
