@@ -32,6 +32,18 @@ function getFilePathExtension({ configPath }, fileName) {
   return null;
 }
 
+function getFilePathWithExtension({ configPath }, fileName) {
+  for (const ext of supportedExtensions) {
+    const filePath = path.resolve(cwd, configPath, `${fileName}.${ext}`);
+
+    if (fs.existsSync(filePath)) {
+      return filePath;
+    }
+  }
+
+  return null;
+}
+
 function ensureRelativePathHasDot(relativePath) {
   return relativePath.startsWith('.') ? relativePath : `./${relativePath}`;
 }
@@ -92,4 +104,5 @@ module.exports = {
   getPreviewExists,
   resolveAddonFile,
   getAddonName,
+  getFilePathWithExtension,
 };

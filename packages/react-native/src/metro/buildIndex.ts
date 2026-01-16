@@ -2,14 +2,15 @@ import { normalizeStories, loadMainConfig } from 'storybook/internal/common';
 import { readFileSync } from 'node:fs';
 import { sync as globSync } from 'glob';
 import path from 'path';
-import { CsfFile, loadCsf } from 'storybook/internal/csf-tools';
+import { CsfFile, getStorySortParameter, loadCsf } from 'storybook/internal/csf-tools';
 import { toId } from 'storybook/internal/csf';
 import {
   type StoryIndex,
   type IndexedCSFFile,
   type NormalizedStoriesSpecifier,
 } from 'storybook/internal/types';
-import { userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
+import { sortStoriesV7, userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
+import { getFilePathWithExtension } from 'scripts/common';
 
 const cwd = process.cwd();
 
@@ -109,5 +110,29 @@ export async function buildIndex({ configPath }: { configPath: string }): Promis
     }
   }
 
-  return index;
+  try {
+    const previewPath = getFilePathWithExtension({ configPath }, 'preview');
+    const previewSourceCode = readFileSync(previewPath, { encoding: 'utf-8' }).toString();
+    const storySort = getStorySortParameter(previewSourceCode);
+    const sortableStories = Object.values(index.entries);
+
+    sortStoriesV7(
+      sortableStories,
+      storySort,
+      sortableStories.map((entry) => entry.importPath)
+    );
+
+    const sorted = sortableStories.reduce(
+      (acc, item) => {
+        acc[item.id] = item;
+        return acc;
+      },
+      {} as StoryIndex['entries']
+    );
+
+    return { v: 5, entries: sorted };
+  } catch {
+    console.warn('Failed to sort stories, using unordered index');
+    return index;
+  }
 }
