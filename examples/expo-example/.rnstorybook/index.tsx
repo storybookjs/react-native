@@ -13,9 +13,7 @@ const StorybookUIRoot = view.getStorybookUI({
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,
   },
-  enableWebsockets: false,
-  host: 'localhost',
-  port: 7007,
+  enableWebsockets: true,
 
   CustomUIComponent: isScreenshotTesting
     ? ({ children, story }) => {

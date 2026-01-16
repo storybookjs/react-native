@@ -7,22 +7,24 @@ import { CHANNEL_CREATED, SET_CURRENT_STORY } from 'storybook/internal/core-even
 import { addons as managerAddons } from 'storybook/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
-
 import dedent from 'dedent';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
 import {
   ActivityIndicator,
   Linking,
+  Platform,
   View as RNView,
   StyleSheet,
   useColorScheme,
 } from 'react-native';
 import StoryView from './components/StoryView';
 import { useSetStoryContext, useStoryContext } from './hooks';
-import getHost from './rn-host-detect';
-
-const STORAGE_KEY = 'lastOpenedStory';
+import {
+  RN_STORYBOOK_EVENTS,
+  RN_STORYBOOK_STORAGE_KEY,
+  STORYBOOK_STORY_ID_PARAM,
+} from './constants';
 
 export interface Storage {
   getItem: (key: string) => Promise<string | null>;
@@ -126,7 +128,7 @@ export class View {
         let value = this._asyncStorageStoryId;
 
         if (!value && this._storage != null) {
-          value = await this._storage.getItem(STORAGE_KEY);
+          value = await this._storage.getItem(RN_STORYBOOK_STORAGE_KEY);
 
           this._asyncStorageStoryId = value;
         }
@@ -144,10 +146,34 @@ export class View {
     return { storySpecifier: '*', viewMode: 'story' };
   };
 
-  _getServerChannel = (params: Partial<Params> = {}) => {
-    const host = getHost(params.host || 'localhost');
+  _getHost = (params: Partial<Params> = {}) => {
+    if (params.host) {
+      return params.host;
+    }
 
-    const port = `:${params.port || 7007}`;
+    if (globalThis.STORYBOOK_WEBSOCKET?.host) {
+      return globalThis.STORYBOOK_WEBSOCKET.host;
+    }
+
+    return Platform.OS === 'android' ? '10.0.2.2' : 'localhost';
+  };
+
+  __getPort = (params: Partial<Params> = {}) => {
+    if (params.port) {
+      return params.port;
+    }
+
+    if (globalThis.STORYBOOK_WEBSOCKET?.port) {
+      return globalThis.STORYBOOK_WEBSOCKET.port;
+    }
+
+    return 7007;
+  };
+
+  _getServerChannel = (params: Partial<Params> = {}) => {
+    const host = this._getHost(params);
+
+    const port = `:${this.__getPort(params)}`;
 
     const query = params.query || '';
 
@@ -220,6 +246,11 @@ export class View {
       this._preview.ready().then(() => this._preview.onStoryIndexChanged());
     }
 
+    this._channel.on(RN_STORYBOOK_EVENTS.RN_GET_INDEX, () => {
+      // TODO: define response payload
+      this._channel.emit(RN_STORYBOOK_EVENTS.RN_GET_INDEX_RESPONSE, { index: this._storyIndex });
+    });
+
     managerAddons.loadAddons({
       store: () => ({
         fromId: (id) => {
@@ -255,7 +286,7 @@ export class View {
         const listener = Linking.addEventListener('url', ({ url }) => {
           if (typeof url === 'string') {
             const urlObj = new URL(url);
-            const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
+            const storyId = urlObj.searchParams.get(STORYBOOK_STORY_ID_PARAM);
 
             const hasStoryId = storyId && typeof storyId === 'string';
             const storyExists = hasStoryId && self._storyIdExists(storyId);
@@ -288,7 +319,7 @@ export class View {
               .then((url) => {
                 if (url && typeof url === 'string') {
                   const urlObj = new URL(url);
-                  const storyId = urlObj.searchParams.get('STORYBOOK_STORY_ID');
+                  const storyId = urlObj.searchParams.get(STORYBOOK_STORY_ID_PARAM);
 
                   const hasStoryId = storyId && typeof storyId === 'string';
                   const storyExists = hasStoryId && self._storyIdExists(storyId);
@@ -342,7 +373,7 @@ export class View {
           }
 
           if (shouldPersistSelection && !!self._storage) {
-            self._storage.setItem(STORAGE_KEY, newStory.id).catch((e) => {
+            self._storage.setItem(RN_STORYBOOK_STORAGE_KEY, newStory.id).catch((e) => {
               console.warn('storybook-log: error writing to async storage', e);
             });
           }

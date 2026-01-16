@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "10.1.11",
+  "version": "10.2.0-beta.1",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -24,6 +24,7 @@
   "exports": {
     ".": "./dist/index.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
+    "./node": "./dist/node.js",
     "./preview": "./dist/preview.js",
     "./scripts/generate": "./scripts/generate.js",
     "./preset": "./preset.js",
@@ -48,14 +49,15 @@
     "test:generate:update": "node --test --test-update-snapshots scripts/generate.test.js"
   },
   "dependencies": {
-    "@storybook/react": "^10.1.11",
-    "@storybook/react-native-theming": "^10.1.11",
-    "@storybook/react-native-ui": "^10.1.11",
-    "@storybook/react-native-ui-common": "^10.1.11",
+    "@storybook/react": "10.2.0-beta.1",
+    "@storybook/react-native-theming": "^10.2.0-beta.1",
+    "@storybook/react-native-ui": "^10.2.0-beta.1",
+    "@storybook/react-native-ui-common": "^10.2.0-beta.1",
     "commander": "^14.0.2",
     "dedent": "^1.7.0",
     "deepmerge": "^4.3.1",
     "esbuild-register": "^3.6.0",
+    "glob": "^13.0.0",
     "react-native-url-polyfill": "^3.0.0",
     "setimmediate": "^1.0.5",
     "ws": "^8.18.3"
@@ -70,7 +72,7 @@
     "jotai": "^2.6.2",
     "react": "19.1.0",
     "react-native": "0.81.5",
-    "storybook": "^10.1.11",
+    "storybook": "10.2.0-beta.1",
     "tsup": "^8.5.0",
     "typescript": "~5.9.3",
     "universal-test-renderer": "^0.6.0"
