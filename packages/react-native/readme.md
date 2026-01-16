@@ -11,7 +11,7 @@ If you are migrating from 9 to 10 you can find the migration guide [here](https:
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> [!NOTE]  
+> [!NOTE]
 > Make sure you align your storybook dependencies to the same major version or you will see broken behaviour.
 
 ![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
@@ -34,14 +34,14 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 
 There is some project boilerplate with `@storybook/react-native` and `@storybook/addon-react-native-web` both already configured with a simple example.
 
-For expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
+For Expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
 
 ```sh
 # With NPM
 npx create-expo-app --template expo-template-storybook AwesomeStorybook
 ```
 
-For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
+For React Native CLI you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
 
 ```sh
 npx @react-native-community/cli init MyApp --template react-native-template-storybook
@@ -65,7 +65,7 @@ Then wrap your metro config with the withStorybook function as seen [below](#add
 
 If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
-If you want to add everything yourself check out the the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
+If you want to add everything yourself check out the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
 
 #### Additional steps: Update your metro config
 
@@ -107,7 +107,7 @@ module.exports = withStorybook(config, {
 });
 ```
 
-**React native**
+**React Native**
 
 ```js
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
@@ -185,13 +185,13 @@ export { default } from '../.rnstorybook';
 
 Then add a way to navigate to your storybook route and I recommend disabling the header for the storybook route.
 
-Heres a video showing the same setup:
+Here's a video showing the same setup:
 
 https://www.youtube.com/watch?v=egBqrYg0AIg
 
 ## Writing stories
 
-In storybook we use a syntax called CSF that looks like this:
+In Storybook we use a syntax called CSF that looks like this:
 
 ```tsx
 import type { Meta, StoryObj } from '@storybook/react-native';
@@ -229,7 +229,7 @@ export default main;
 
 ### Decorators and Parameters
 
-For stories you can add decorators and parameters on the default export or on a specifc story.
+For stories you can add decorators and parameters on the default export or on a specific story.
 
 ```tsx
 import type { Meta } from '@storybook/react';
@@ -263,7 +263,7 @@ For global decorators and parameters, you can add them to `preview.tsx` inside y
 
 ```tsx
 // .rnstorybook/preview.tsx
-import type {
+import type { Preview } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 const preview: Preview = {
@@ -295,11 +295,11 @@ export default preview;
 The cli will install some basic addons for you such as controls and actions.
 Ondevice addons are addons that can render with the device ui that you see on the phone.
 
-Currently the addons available are:
+Currently, the addons available are:
 
 - [`@storybook/addon-ondevice-controls`](https://storybook.js.org/addons/@storybook/addon-ondevice-controls): adjust your components props in realtime
 - [`@storybook/addon-ondevice-actions`](https://storybook.js.org/addons/@storybook/addon-ondevice-actions): mock onPress calls with actions that will log information in the actions tab
-- [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some markdown to your stories to help document their usage
+- [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some Markdown to your stories to help document their usage
 - [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
 
 Install each one you want to use and add them to the `main.ts` addons list as follows:
@@ -465,29 +465,31 @@ The port on which to run the WebSocket, if specified.
 
 You can pass these parameters to getStorybookUI call in your storybook entry point:
 
-```
+```ts
 {
-    initialSelection?: string | Object (undefined)
-        -- initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
-    storage?: Object (undefined)
-        -- {getItem: (key: string) => Promise<string | null>;setItem: (key: string, value: string) => Promise<void>;}
-        -- Custom storage to be used instead of AsyncStorage
+    // initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
+    initialSelection?: string | Object;
+    // Custom storage to be used instead of AsyncStorage
+    storage?: {
+        getItem: (key: string) => Promise<string | null>;
+        setItem: (key: string, value: string) => Promise<void>;
+    };
+    // show the onDevice UI
     onDeviceUI?: boolean;
-        -- show the ondevice ui
+    // enable websockets for the Storybook UI
     enableWebsockets?: boolean;
-        -- enable websockets for the storybook ui
+    // query params for the websocket connection
     query?: string;
-        -- query params for the websocket connection
+    // host for the websocket connection
     host?: string;
-        -- host for the websocket connection
+    // port for the websocket connection
     port?: number;
-        -- port for the websocket connection
+    // use secured websockets
     secured?: boolean;
-        -- use secured websockets
+    // store the last selected story in the device's storage
     shouldPersistSelection?: boolean;
-        -- store the last selected story in the device's storage
+    // theme for the Storybook UI
     theme: Partial<Theme>;
-        -- theme for the storybook ui
 }
 ```
 
@@ -500,7 +502,7 @@ Storybook provides testing utilities that allow you to reuse your stories in ext
 We welcome contributions to Storybook!
 
 - 📥 Pull requests and 🌟 Stars are always welcome.
-- Read our [contributing guide](CONTRIBUTING.md) to get started,
+- Read our [contributing guide](../../CONTRIBUTING.md) to get started,
   or find us on [Discord](https://discord.gg/sMFvFsG) and look for the react-native channel.
 
 Looking for a first issue to tackle?
@@ -514,6 +516,6 @@ Here are some example projects to help you get started
 
 - A mono repo setup by @axeldelafosse https://github.com/axeldelafosse/storybook-rnw-monorepo
 - Expo setup https://github.com/dannyhw/expo-storybook-starter
-- React native cli setup https://github.com/dannyhw/react-native-storybook-starter
+- React Native CLI setup https://github.com/dannyhw/react-native-storybook-starter
 - Adding a separate entry point and dev menu item in native files for RN CLI project: https://github.com/zubko/react-native-storybook-with-dev-menu
 - Want to showcase your own project? open a PR and add it to the list!

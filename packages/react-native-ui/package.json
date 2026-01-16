@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui",
-  "version": "10.1.0",
+  "version": "10.1.11",
   "description": "ui components for react native storybook",
   "keywords": [
     "react",
@@ -58,9 +58,9 @@
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
-    "@storybook/react": "^10.1.1",
-    "@storybook/react-native-theming": "^10.1.0",
-    "@storybook/react-native-ui-common": "^10.1.0",
+    "@storybook/react": "^10.1.11",
+    "@storybook/react-native-theming": "^10.1.11",
+    "@storybook/react-native-ui-common": "^10.1.11",
     "fuse.js": "^7.1.0",
     "polished": "^4.3.1"
   },
