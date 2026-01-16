@@ -216,7 +216,8 @@ export function withStorybook(
 
   if (websockets) {
     const port = websockets === 'auto' ? 7007 : (websockets.port ?? 7007);
-    const host = websockets === 'auto' ? getLocalIPAddress() : websockets.host;
+    // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
+    const host = websockets === 'auto' ? undefined : websockets.host;
 
     websocketOptions = { port, host };
 
@@ -227,7 +228,8 @@ export function withStorybook(
     configPath,
     useJs,
     docTools,
-    host: websocketOptions?.host,
+    // here we want to get the ip address so that devices can connect over lan
+    host: websockets === 'auto' ? getLocalIPAddress() : websocketOptions?.host,
     port: websocketOptions?.port,
   });
 

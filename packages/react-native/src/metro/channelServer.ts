@@ -1,7 +1,6 @@
 import { WebSocketServer, WebSocket, Data } from 'ws';
 import { createServer, IncomingMessage, ServerResponse } from 'node:http';
 import { buildIndex } from './buildIndex';
-import { RN_STORYBOOK_EVENTS } from '../constants';
 
 /**
  * Options for creating a channel server.
@@ -10,12 +9,12 @@ interface ChannelServerOptions {
   /**
    * The port the server will listen on.
    */
-  port: number;
+  port?: number;
 
   /**
    * The host the server will bind to.
    */
-  host: string;
+  host?: string;
 
   /**
    * The path to the Storybook config folder.
@@ -23,18 +22,12 @@ interface ChannelServerOptions {
   configPath: string;
 }
 
-// Pending requests waiting for WebSocket index responses
-const pendingIndexRequests: Array<{
-  resolve: (value: unknown) => void;
-  reject: (reason: unknown) => void;
-}> = [];
-
 /**
  * Creates a channel server for syncing storybook instances and sending events.
  * The server provides both WebSocket and REST endpoints:
  * - WebSocket: broadcasts all received messages to all connected clients
  * - POST /send-event: sends an event to all WebSocket clients
- * - GET /index.json: returns the story index (via WebSocket if clients connected, otherwise built from files)
+ * - GET /index.json: returns the story index built from story files
  *
  * @param options - Configuration options for the channel server.
  * @param options.port - The port to listen on.
@@ -43,8 +36,8 @@ const pendingIndexRequests: Array<{
  * @returns The created WebSocketServer instance.
  */
 export function createChannelServer({
-  port,
-  host,
+  port = 7007,
+  host = undefined,
   configPath,
 }: ChannelServerOptions): WebSocketServer {
   const httpServer = createServer(async (req: IncomingMessage, res: ServerResponse) => {
@@ -55,42 +48,6 @@ export function createChannelServer({
     }
 
     if (req.method === 'GET' && req.url === '/index.json') {
-      // Try to get index via WebSocket if clients are connected
-      if (wss.clients.size > 0) {
-        try {
-          const indexPromise = new Promise((resolve, reject) => {
-            const timeout = setTimeout(() => {
-              const idx = pendingIndexRequests.findIndex((r) => r.resolve === resolve);
-              if (idx !== -1) pendingIndexRequests.splice(idx, 1);
-              reject(new Error('Timeout waiting for index response'));
-            }, 5000);
-
-            pendingIndexRequests.push({
-              resolve: (value) => {
-                clearTimeout(timeout);
-                resolve(value);
-              },
-              reject,
-            });
-          });
-
-          // Send RN_GET_INDEX event to all clients
-          wss.clients.forEach((wsClient) =>
-            wsClient.send(JSON.stringify({ type: RN_STORYBOOK_EVENTS.RN_GET_INDEX, args: [] }))
-          );
-
-          const index = await indexPromise;
-
-          res.writeHead(200, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify(index));
-          return;
-        } catch (error) {
-          console.log('WebSocket index request failed, falling back to buildIndex:', error);
-          // Fall through to buildIndex
-        }
-      }
-
-      // Fallback: build index from files
       try {
         const index = await buildIndex({ configPath });
 
@@ -145,17 +102,6 @@ export function createChannelServer({
       try {
         const json = JSON.parse(data.toString());
 
-        // Handle RN_GET_INDEX_RESPONSE for pending REST requests
-        if (
-          json.type === RN_STORYBOOK_EVENTS.RN_GET_INDEX_RESPONSE &&
-          pendingIndexRequests.length > 0
-        ) {
-          const pending = pendingIndexRequests.shift();
-          if (pending) {
-            pending.resolve(json.args?.[0]?.index ?? json.args?.[0] ?? {});
-          }
-        }
-
         wss.clients.forEach((wsClient) => wsClient.send(JSON.stringify(json)));
       } catch (error) {
         console.error(error);
@@ -170,7 +116,7 @@ export function createChannelServer({
   });
 
   httpServer.listen(port, host, () => {
-    console.log(`WebSocket server listening on ${host}:${port}`);
+    console.log(`WebSocket server listening on ${host ?? 'localhost'}:${port}`);
   });
 
   return wss;
