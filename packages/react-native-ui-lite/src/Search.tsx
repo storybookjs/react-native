@@ -1,4 +1,4 @@
-import { styled } from '@storybook/react-native-theming';
+import { styled, useTheme } from '@storybook/react-native-theming';
 import { useFuzzySearchList } from '@nozbe/microfuzz/react';
 import React, { useCallback, useDeferredValue, useMemo, useRef, useState } from 'react';
 import { Platform, TextInput, View, ViewStyle } from 'react-native';
@@ -87,6 +87,7 @@ export const Search = React.memo<{
   getLastViewed: () => Selection[];
   initialQuery?: string;
 }>(function Search({ children, dataset, setSelection, getLastViewed, initialQuery = '' }) {
+  const theme = useTheme();
   const inputRef = useRef<TextInput>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
@@ -251,7 +252,7 @@ export const Search = React.memo<{
                 inputRef.current.clear();
               }}
             >
-              <CloseIcon />
+              <CloseIcon color={theme.textMutedColor} />
             </ClearIcon>
           )}
         </SearchField>
