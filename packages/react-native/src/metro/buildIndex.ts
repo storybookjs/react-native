@@ -10,7 +10,7 @@ import {
   type NormalizedStoriesSpecifier,
 } from 'storybook/internal/types';
 import { sortStoriesV7, userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
-import { getFilePathWithExtension } from 'scripts/common';
+import { getFilePathWithExtension } from '../../scripts/common';
 
 const cwd = process.cwd();
 
