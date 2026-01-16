@@ -1,5 +1,5 @@
 import { LegendList } from '@legendapp/list';
-import { styled } from '@storybook/react-native-theming';
+import { styled, useTheme } from '@storybook/react-native-theming';
 import type {
   GetSearchItemProps,
   SearchResult,
@@ -152,6 +152,7 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
   onPress,
   ...props
 }) {
+  const theme = useTheme();
   const press: PressableProps['onPress'] = useCallback(
     (event) => {
       event.preventDefault();
@@ -167,8 +168,10 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
   return (
     <ResultRow {...props} onPress={press}>
       <IconWrapper>
-        {item.type === 'component' && <ComponentIcon width={14} height={14} />}
-        {item.type === 'story' && <StoryIcon width={14} height={14} />}
+        {item.type === 'component' && (
+          <ComponentIcon width={14} height={14} color={theme.color.secondary} />
+        )}
+        {item.type === 'story' && <StoryIcon width={14} height={14} color={theme.color.seafoam} />}
       </IconWrapper>
       <ResultRowContent testID="search-result-item--label">
         <Title>

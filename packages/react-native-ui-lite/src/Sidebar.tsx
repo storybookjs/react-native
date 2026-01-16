@@ -1,6 +1,6 @@
 import { styled } from '@storybook/react-native-theming';
 import type { CombinedDataset, Selection } from '@storybook/react-native-ui-common';
-import { useLastViewed, useStyle } from '@storybook/react-native-ui-common';
+import { useLastViewed } from '@storybook/react-native-ui-common';
 import React, { useMemo } from 'react';
 import { View, ViewStyle } from 'react-native';
 import type { State } from 'storybook/manager-api';
