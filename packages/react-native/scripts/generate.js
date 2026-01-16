@@ -33,7 +33,6 @@ const loadMain = async ({ configPath, cwd }) => {
   }
 };
 
-
 /**
  * Get the local IP address of the machine.
  * @returns The local IP address of the machine.
