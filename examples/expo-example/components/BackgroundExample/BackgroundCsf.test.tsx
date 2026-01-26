@@ -5,8 +5,8 @@ import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 const { Basic } = composeStories(Backgrounds, { decorators: [withBackgrounds] });
 
-test('Background colour is hotpink', () => {
-  render(<Basic />);
+test('Background colour is hotpink', async () => {
+  await render(<Basic />);
 
   expect(screen.getByTestId('addon-backgrounds-container')).toHaveStyle({
     backgroundColor: 'hotpink',

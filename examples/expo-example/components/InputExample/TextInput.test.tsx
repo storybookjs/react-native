@@ -4,8 +4,8 @@ import * as InputStories from './TextInput.stories';
 
 const { Basic } = composeStories(InputStories);
 
-test('text input story renders', () => {
-  render(<Basic />);
+test('text input story renders', async () => {
+  await render(<Basic />);
 
   screen.getByPlaceholderText('Type something');
 });
