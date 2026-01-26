@@ -4,21 +4,21 @@ import * as SelectStories from './Select.stories';
 
 const { Basic, WithLabels, WithMapping } = composeStories(SelectStories);
 
-test('select story renders', () => {
-  render(<Basic />);
+test('select story renders', async () => {
+  await render(<Basic />);
 
   screen.getByText('Selected: ⬅️');
 });
 
-test('select with labels story renders', () => {
-  render(<WithLabels />);
+test('select with labels story renders', async () => {
+  await render(<WithLabels />);
 
   screen.getByText('Selected: ⬆');
 });
 
 // TODO: Fix this test
 test.skip('select with mapping story renders', async () => {
-  render(<WithMapping />);
+  await render(<WithMapping />);
 
   await screen.findByText('Selected: ➡️');
 });

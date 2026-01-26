@@ -8281,14 +8281,10 @@ __metadata:
   dependencies:
     "@storybook/react": "npm:10.2.0-beta.1"
     "@storybook/react-native-theming": "npm:^10.2.0-beta.1"
-    "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.1.10"
-    babel-jest: "npm:^29.7.0"
     es-toolkit: "npm:^1.41.0"
     fuse.js: "npm:^7.1.0"
-    jest: "npm:^29.7.0"
     memoizerific: "npm:^1.11.3"
-    react-test-renderer: "npm:^19.1.0"
     ts-dedent: "npm:^2.2.0"
     tsup: "npm:^8.5.0"
     typescript: "npm:~5.9.3"
@@ -8307,14 +8303,10 @@ __metadata:
     "@storybook/react": "npm:10.2.0-beta.1"
     "@storybook/react-native-theming": "npm:^10.2.0-beta.1"
     "@storybook/react-native-ui-common": "npm:^10.2.0-beta.1"
-    "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.1.10"
-    babel-jest: "npm:^29.7.0"
     fuse.js: "npm:^7.1.0"
-    jest: "npm:^29.7.0"
     polished: "npm:^4.3.1"
     react-native-safe-area-context: "npm:^5"
-    react-test-renderer: "npm:^19.1.0"
     ts-dedent: "npm:^2.2.0"
     tsup: "npm:^8.5.0"
     typescript: "npm:~5.9.3"
@@ -8333,13 +8325,9 @@ __metadata:
     "@storybook/react": "npm:10.2.0-beta.1"
     "@storybook/react-native-theming": "npm:^10.2.0-beta.1"
     "@storybook/react-native-ui-common": "npm:^10.2.0-beta.1"
-    "@types/jest": "npm:^29.4.3"
     "@types/react": "npm:~19.1.10"
-    babel-jest: "npm:^29.7.0"
     fuse.js: "npm:^7.1.0"
-    jest: "npm:^29.7.0"
     polished: "npm:^4.3.1"
-    react-test-renderer: "npm:^19.1.0"
     tsup: "npm:^8.5.0"
     typescript: "npm:~5.9.3"
   peerDependencies:
@@ -8399,9 +8387,9 @@ __metadata:
     react-native-url-polyfill: "npm:^3.0.0"
     setimmediate: "npm:^1.0.5"
     storybook: "npm:10.2.0-beta.1"
+    test-renderer: "npm:^0.14.0"
     tsup: "npm:^8.5.0"
     typescript: "npm:~5.9.3"
-    universal-test-renderer: "npm:^0.6.0"
     ws: "npm:^8.18.3"
   peerDependencies:
     "@gorhom/bottom-sheet": ">=4"
@@ -8905,23 +8893,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react-native@npm:14.0.0-alpha.1":
-  version: 14.0.0-alpha.1
-  resolution: "@testing-library/react-native@npm:14.0.0-alpha.1"
+"@testing-library/react-native@npm:14.0.0-beta.0":
+  version: 14.0.0-beta.0
+  resolution: "@testing-library/react-native@npm:14.0.0-beta.0"
   dependencies:
-    chalk: "npm:^4.1.2"
-    jest-matcher-utils: "npm:^29.7.0"
-    pretty-format: "npm:^29.7.0"
+    jest-matcher-utils: "npm:^30.2.0"
+    picocolors: "npm:^1.1.1"
+    pretty-format: "npm:^30.2.0"
     redent: "npm:^3.0.0"
   peerDependencies:
     jest: ">=29.0.0"
     react: ">=19.0.0"
-    react-native: ">=0.77"
-    universal-test-renderer: 0.6.0
+    react-native: ">=0.78"
+    test-renderer: ^0.14.0
   peerDependenciesMeta:
     jest:
       optional: true
-  checksum: 10/7a6a148610d7d5e58b2b34908e9531e0c650b36c6739c46647a4587713275fcc7e3295713f6f0ca325750536b7abf41597b2fd1b746ed95d4832ea2f7bc4ee41
+  checksum: 10/8bd7b235ec1684752511086aa4ce488b4672f228796fc9fc64e7d5bf1600608e3767dc5d1eca7bb48adc2e8dbad2ae351b3924e758a1d45715951929152f86aa
   languageName: node
   linkType: hard
 
@@ -9430,6 +9418,15 @@ __metadata:
   version: 1.2.7
   resolution: "@types/range-parser@npm:1.2.7"
   checksum: 10/95640233b689dfbd85b8c6ee268812a732cf36d5affead89e806fe30da9a430767af8ef2cd661024fd97e19d61f3dec75af2df5e80ec3bea000019ab7028629a
+  languageName: node
+  linkType: hard
+
+"@types/react-reconciler@npm:~0.31.0":
+  version: 0.31.0
+  resolution: "@types/react-reconciler@npm:0.31.0"
+  peerDependencies:
+    "@types/react": "*"
+  checksum: 10/28930cc1627d46ab90fe2e9cf54cab7d28f60387ab5833d13841cbf88bdbba202c49e282bd94c579f1a6f6a4493015562088df90cb087cb9a8f837fbb5f9f212
   languageName: node
   linkType: hard
 
@@ -15089,7 +15086,7 @@ __metadata:
     "@storybook/react-native": "npm:^10.2.0-beta.1"
     "@storybook/react-native-ui-lite": "npm:^10.2.0-beta.1"
     "@storybook/react-native-web-vite": "npm:10.2.0-beta.1"
-    "@testing-library/react-native": "npm:14.0.0-alpha.1"
+    "@testing-library/react-native": "npm:14.0.0-beta.0"
     "@types/react": "npm:~19.1.10"
     "@types/ws": "npm:^8.18.1"
     babel-plugin-react-compiler: "npm:^1.0.0"
@@ -15110,8 +15107,8 @@ __metadata:
     react-native-worklets: "npm:0.5.1"
     storybook: "npm:10.2.0-beta.1"
     storybook-addon-deep-controls: "npm:^0.9.5"
+    test-renderer: "npm:^0.14.0"
     typescript: "npm:~5.9.3"
-    universal-test-renderer: "npm:^0.6.0"
     vite: "npm:^7.1.12"
     ws: "npm:^8.18.3"
   languageName: unknown
@@ -18161,7 +18158,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:>=30.0.0 < 31, jest-diff@npm:^30.0.2":
+"jest-diff@npm:30.2.0, jest-diff@npm:>=30.0.0 < 31, jest-diff@npm:^30.0.2":
   version: 30.2.0
   resolution: "jest-diff@npm:30.2.0"
   dependencies:
@@ -18322,6 +18319,18 @@ __metadata:
     jest-get-type: "npm:^29.6.3"
     pretty-format: "npm:^29.7.0"
   checksum: 10/981904a494299cf1e3baed352f8a3bd8b50a8c13a662c509b6a53c31461f94ea3bfeffa9d5efcfeb248e384e318c87de7e3baa6af0f79674e987482aa189af40
+  languageName: node
+  linkType: hard
+
+"jest-matcher-utils@npm:^30.2.0":
+  version: 30.2.0
+  resolution: "jest-matcher-utils@npm:30.2.0"
+  dependencies:
+    "@jest/get-type": "npm:30.1.0"
+    chalk: "npm:^4.1.2"
+    jest-diff: "npm:30.2.0"
+    pretty-format: "npm:30.2.0"
+  checksum: 10/f3f1ecf68ca63c9d1d80a175637a8fc655edfd1ee83220f6e3f6bd464ecbe2f93148fdd440a5a5e5a2b0b2cc8ee84ddc3dcef58a6dbc66821c792f48d260c6d4
   languageName: node
   linkType: hard
 
@@ -23879,7 +23888,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:30.2.0":
+"pretty-format@npm:30.2.0, pretty-format@npm:^30.2.0":
   version: 30.2.0
   resolution: "pretty-format@npm:30.2.0"
   dependencies:
@@ -24665,7 +24674,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-test-renderer@npm:19.1.0, react-test-renderer@npm:^19.1.0":
+"react-test-renderer@npm:19.1.0":
   version: 19.1.0
   resolution: "react-test-renderer@npm:19.1.0"
   dependencies:
@@ -27306,6 +27315,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"test-renderer@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "test-renderer@npm:0.14.0"
+  dependencies:
+    "@types/react-reconciler": "npm:~0.31.0"
+    react-reconciler: "npm:~0.31.0"
+  peerDependencies:
+    react: ^19.0.0
+  checksum: 10/46a62d42c32dc73da8c948ec6caec1594bd6c1c50c9d6a7dd790286957d6855774ecd82212ccca366bc2a76e83d9d6b3e03e0244d2a18cb6b8c2a409aff4e1d3
+  languageName: node
+  linkType: hard
+
 "text-extensions@npm:^1.0.0":
   version: 1.9.0
   resolution: "text-extensions@npm:1.9.0"
@@ -28142,17 +28163,6 @@ __metadata:
     unist-util-is: "npm:^6.0.0"
     unist-util-visit-parents: "npm:^6.0.0"
   checksum: 10/f2bbde23641e9ade7640358c06ddeec0f38342322eb8e7819d9ee380b0f859d25d084dde22bf63db0280b3b2f36575f15aa1d6c23acf276c91c2493cf799e3b0
-  languageName: node
-  linkType: hard
-
-"universal-test-renderer@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "universal-test-renderer@npm:0.6.0"
-  dependencies:
-    react-reconciler: "npm:~0.31.0"
-  peerDependencies:
-    react: ^19.0.0
-  checksum: 10/e8583a1a56880ebd5a71b2c71076e469e5a7dbb4f2bb16a714a52a860be363505ec486752abefa07a916ba7efd27d67e04d3ec4fe40db93856f3bdf4cdc0bc60
   languageName: node
   linkType: hard
 

@@ -4,8 +4,8 @@ import * as DateStories from './Date.stories';
 
 const { Basic } = composeStories(DateStories);
 
-test('date story renders', () => {
-  render(<Basic />);
+test('date story renders', async () => {
+  await render(<Basic />);
 
   const date = new Date(1983, 1, 25);
 
