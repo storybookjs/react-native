@@ -58,6 +58,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
+    "@dannyhw/rozenite-storybook": "0.0.2",
+    "@rozenite/metro": "^1.2.0",
     "@testing-library/react-native": "14.0.0-beta.0",
     "@types/react": "~19.1.10",
     "@types/ws": "^8.18.1",
