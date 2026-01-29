@@ -178,12 +178,12 @@ argTypes: {
 
 TypeScript prop types are automatically mapped:
 
-| Prop Type             | Control    |
-| --------------------- | ---------- |
-| `string`              | text       |
-| `number`              | number     |
-| `boolean`             | boolean    |
-| `'a' \| 'b' \| 'c'`  | select     |
+| Prop Type                | Control |
+| ------------------------ | ------- |
+| `string`                 | text    |
+| `number`                 | number  |
+| `boolean`                | boolean |
+| `'a' \| 'b' \| 'c'`      | select  |
 | prop matching `/color/i` | color   |
 | prop matching `/Date$/`  | date    |
 

@@ -160,12 +160,12 @@ parameters: {
 
 ### RN-specific UI parameters
 
-| Parameter               | Type                                          | Description                    |
-| ----------------------- | --------------------------------------------- | ------------------------------ |
-| `noSafeArea`            | `boolean`                                     | Remove top safe area padding. **When using this, the component itself must handle safe areas** since Storybook will no longer provide safe area padding. Prefer `useSafeAreaInsets()` over `SafeAreaView` — apply insets as `paddingTop`/`paddingBottom` on the container, and for scrollable content use `contentContainerStyle` padding instead of wrapping in `SafeAreaView`. |
-| `storybookUIVisibility` | `'visible'` \| `'hidden'`                     | Initial UI visibility          |
-| `hideFullScreenButton`  | `boolean`                                     | Hide fullscreen toggle         |
-| `layout`                | `'padded'` \| `'centered'` \| `'fullscreen'`  | Story container layout         |
+| Parameter               | Type                                         | Description                                                                                                                                                                                                                                                                                                                                                                      |
+| ----------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `noSafeArea`            | `boolean`                                    | Remove top safe area padding. **When using this, the component itself must handle safe areas** since Storybook will no longer provide safe area padding. Prefer `useSafeAreaInsets()` over `SafeAreaView` — apply insets as `paddingTop`/`paddingBottom` on the container, and for scrollable content use `contentContainerStyle` padding instead of wrapping in `SafeAreaView`. |
+| `storybookUIVisibility` | `'visible'` \| `'hidden'`                    | Initial UI visibility                                                                                                                                                                                                                                                                                                                                                            |
+| `hideFullScreenButton`  | `boolean`                                    | Hide fullscreen toggle                                                                                                                                                                                                                                                                                                                                                           |
+| `layout`                | `'padded'` \| `'centered'` \| `'fullscreen'` | Story container layout                                                                                                                                                                                                                                                                                                                                                           |
 
 Parameters can be set at story, meta (component), or global (preview.tsx) level.
 
@@ -288,9 +288,9 @@ setProjectAnnotations(previewAnnotations);
 
 ## Addons Summary
 
-| Addon       | Package                               | Purpose                           |
-| ----------- | ------------------------------------- | --------------------------------- |
-| Controls    | `@storybook/addon-ondevice-controls`  | Edit props interactively          |
-| Actions     | `@storybook/addon-ondevice-actions`   | Log component interactions        |
-| Backgrounds | `@storybook/addon-ondevice-backgrounds` | Change story backgrounds        |
-| Notes       | `@storybook/addon-ondevice-notes`     | Add markdown documentation        |
+| Addon       | Package                                 | Purpose                    |
+| ----------- | --------------------------------------- | -------------------------- |
+| Controls    | `@storybook/addon-ondevice-controls`    | Edit props interactively   |
+| Actions     | `@storybook/addon-ondevice-actions`     | Log component interactions |
+| Backgrounds | `@storybook/addon-ondevice-backgrounds` | Change story backgrounds   |
+| Notes       | `@storybook/addon-ondevice-notes`       | Add markdown documentation |
