@@ -4,7 +4,7 @@ import BottomSheet, {
   BottomSheetScrollView,
 } from '@gorhom/bottom-sheet';
 import { useTheme } from '@storybook/react-native-theming';
-import { forwardRef, memo, ReactNode, useImperativeHandle, useMemo, useRef } from 'react';
+import { forwardRef, memo, ReactNode, useCallback, useImperativeHandle, useMemo, useRef } from 'react';
 import { Keyboard, Platform } from 'react-native';
 import { useAnimatedStyle, useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -55,13 +55,23 @@ export const MobileMenuDrawer = memo(
     const theme = useTheme();
     const menuBottomSheetRef = useRef<BottomSheet>(null);
     const { scrollToSelectedNode, scrollRef } = useSelectedNode();
+    const shouldScrollOnOpen = useRef(false);
+
+    const handleSheetChange = useCallback(
+      (index: number) => {
+        if (index >= 0 && shouldScrollOnOpen.current) {
+          shouldScrollOnOpen.current = false;
+          scrollToSelectedNode();
+        }
+      },
+      [scrollToSelectedNode]
+    );
 
     useImperativeHandle(ref, () => ({
       setMobileMenuOpen: (open: boolean) => {
         if (open) {
+          shouldScrollOnOpen.current = true;
           menuBottomSheetRef.current?.snapToIndex(1);
-
-          scrollToSelectedNode();
         } else {
           Keyboard.dismiss();
 
@@ -99,6 +109,7 @@ export const MobileMenuDrawer = memo(
         backdropComponent={BottomSheetBackdropComponent}
         backgroundStyle={bgColorStyle}
         handleIndicatorStyle={handleIndicatorStyle}
+        onChange={handleSheetChange}
       >
         <BottomSheetScrollView
           ref={scrollRef}
