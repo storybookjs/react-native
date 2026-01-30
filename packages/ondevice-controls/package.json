@@ -38,6 +38,7 @@
     "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
+    "@gorhom/bottom-sheet": "*",
     "cross-env": "^10.1.0",
     "typescript": "~5.9.3"
   },
