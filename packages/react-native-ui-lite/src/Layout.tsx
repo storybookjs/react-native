@@ -223,6 +223,7 @@ export const Layout = ({
         {story?.parameters?.hideFullScreenButton || isDesktop ? null : (
           <TouchableOpacity
             style={fullScreenButtonStyle}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
             onPress={() => setUiHidden((prev) => !prev)}
           >
             {uiHidden ? (

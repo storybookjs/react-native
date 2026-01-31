@@ -82,6 +82,7 @@ export const Node = React.memo<NodeProps>(function Node({
       <RootNode key={id} id={id}>
         <CollapseButton
           data-action="collapse-root"
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           onPress={(event) => {
             event.preventDefault();
             setExpanded({ ids: [item.id], value: !isExpanded });
@@ -96,6 +97,7 @@ export const Node = React.memo<NodeProps>(function Node({
             aria-label={isFullyExpanded ? 'Expand' : 'Collapse'}
             data-action="expand-all"
             data-expanded={isFullyExpanded}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
             onPress={(event) => {
               event.preventDefault();
               setFullyExpanded();
@@ -142,7 +144,7 @@ export const LeafNodeStyleWrapper = styled.View(({ theme }) => ({
   paddingRight: 20,
   color: theme.color.defaultText,
   backgroundColor: 'transparent',
-  minHeight: 28,
+  minHeight: 34,
   borderRadius: 4,
 }));
 
@@ -153,7 +155,7 @@ export const RootNode = styled.View(() => ({
   justifyContent: 'space-between',
   marginTop: 16,
   marginBottom: 4,
-  minHeight: 28,
+  minHeight: 34,
 }));
 
 export const RootNodeText = styled.Text(({ theme }) => ({
@@ -174,7 +176,7 @@ const CollapseButton = styled.TouchableOpacity(() => ({
   gap: 6,
   alignItems: 'center',
   cursor: 'pointer',
-  height: 28,
+  height: 34,
 }));
 
 const flexStyle: ViewStyle = { flex: 1 };
@@ -182,8 +184,8 @@ const flexStyle: ViewStyle = { flex: 1 };
 // getEstimatedItemSize provides item size estimates for LegendList
 // Root items have marginTop (16) + marginBottom (4) + minHeight (28) = 48px
 // All other items have minHeight = 28px
-const ITEM_HEIGHT = 28;
-const ROOT_ITEM_HEIGHT = 48; // 28 + 16 (marginTop) + 4 (marginBottom)
+const ITEM_HEIGHT = 34;
+const ROOT_ITEM_HEIGHT = 54; // 34 + 16 (marginTop) + 4 (marginBottom)
 
 const getEstimatedItemSize = (
   item: {

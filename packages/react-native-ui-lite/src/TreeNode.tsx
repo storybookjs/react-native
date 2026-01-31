@@ -13,7 +13,7 @@ export interface NodeProps {
 
 const BranchNodeText = styled.Text<{ isSelected?: boolean }>(({ theme }) => ({
   textAlign: 'left',
-  fontSize: theme.typography.size.s2,
+  fontSize: theme.typography.size.s2 + 1,
   flexShrink: 1,
   color: theme.color.defaultText,
 }));
@@ -30,16 +30,16 @@ const BranchNode = styled.TouchableOpacity<{
   cursor: 'pointer',
   display: 'flex',
   flexDirection: 'row',
-  alignItems: 'flex-start',
+  alignItems: 'center',
   alignSelf: 'flex-start',
   paddingLeft: (isExpandable ? 8 : 22) + depth * 18,
 
   backgroundColor: 'transparent',
-  minHeight: 28,
+  minHeight: 34,
   borderRadius: 4,
   gap: 6,
-  paddingTop: 5,
-  paddingBottom: 4,
+  paddingTop: 8,
+  paddingBottom: 7,
 
   // will this actually do anything?
   '&:hover, &:focus': {
@@ -56,21 +56,21 @@ const LeafNode = styled.TouchableOpacity<{ depth?: number; selected?: boolean }>
     display: 'flex',
     gap: 6,
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     paddingLeft: 22 + depth * 18,
-    paddingTop: 5,
-    paddingBottom: 4,
+    paddingTop: 8,
+    paddingBottom: 7,
     backgroundColor: selected ? theme.color.secondary : undefined,
     // not sure 👇
     width: '100%',
     borderRadius: 4,
     paddingRight: 20,
-    minHeight: 28,
+    minHeight: 34,
   })
 );
 
 const LeafNodeText = styled.Text<{ depth?: number; selected?: boolean }>(({ theme, selected }) => ({
-  fontSize: theme.typography.size.s2,
+  fontSize: theme.typography.size.s2 + 1,
   flexShrink: 1,
   fontWeight: selected ? 'bold' : 'normal',
   color: selected ? theme.color.lightest : theme.color.defaultText,
@@ -81,7 +81,6 @@ const Wrapper = styled.View({
   flexDirection: 'row',
   alignItems: 'center',
   gap: 6,
-  marginTop: 2,
 });
 
 export const GroupNode: FC<

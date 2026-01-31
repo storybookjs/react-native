@@ -40,10 +40,10 @@ const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
     color: theme.color.defaultText,
     fontSize: theme.typography.size.s2,
     backgroundColor: isHighlighted ? theme.background.hoverable : 'transparent',
-    minHeight: 28,
+    minHeight: 34,
     borderRadius: 4,
     gap: 6,
-    paddingTop: 7,
+    paddingTop: 8,
     paddingBottom: 7,
     paddingLeft: 8,
     paddingRight: 8,
@@ -93,7 +93,7 @@ const RecentlyOpenedTitle = styled.View(({ theme }) => ({
   justifyContent: 'space-between',
   fontSize: theme.typography.size.s1 - 1,
   fontWeight: theme.typography.weight.bold,
-  minHeight: 28,
+  minHeight: 34,
   // letterSpacing: '0.16em', <-- todo
   textTransform: 'uppercase',
   color: theme.textMutedColor,
@@ -131,7 +131,7 @@ const Highlight: FC<PropsWithChildren<{ text: string; ranges?: HighlightRanges }
 const Title = styled.Text(({ theme }) => ({
   justifyContent: 'flex-start',
   color: theme.textMutedColor,
-  fontSize: theme.typography.size.s2,
+  fontSize: theme.typography.size.s2 + 1,
 }));
 
 const Path = styled.View(({ theme }) => ({
