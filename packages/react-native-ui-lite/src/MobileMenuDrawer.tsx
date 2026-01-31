@@ -12,6 +12,7 @@ import {
 } from 'react';
 import {
   Animated,
+  Easing,
   Keyboard,
   useWindowDimensions,
   PanResponder,
@@ -57,6 +58,7 @@ export const useAnimatedModalHeight = () => {
       Animated.timing(animatedHeight, {
         toValue: maxModalHeight,
         duration,
+        easing: Easing.out(Easing.quad),
         useNativeDriver: false,
       }).start();
 
@@ -64,6 +66,7 @@ export const useAnimatedModalHeight = () => {
       Animated.timing(animatedHeight, {
         toValue: modalHeight,
         duration,
+        easing: Easing.out(Easing.quad),
         useNativeDriver: false,
       }).start();
 
@@ -129,6 +132,7 @@ export const MobileMenuDrawer = memo(
       Animated.timing(slideAnim, {
         toValue: 0,
         duration: 300,
+        easing: Easing.out(Easing.quad),
         useNativeDriver: true,
       }).start(({ finished }) => {
         if (finished) {
@@ -144,6 +148,7 @@ export const MobileMenuDrawer = memo(
       Animated.timing(slideAnim, {
         toValue: height,
         duration: 300,
+        easing: Easing.in(Easing.quad),
         useNativeDriver: true,
       }).start(({ finished }) => {
         if (finished) {
@@ -168,16 +173,17 @@ export const MobileMenuDrawer = memo(
             }
           },
           onPanResponderRelease: (_, gestureState) => {
-            // If dragged down enough, close the drawer
             if (gestureState.dy > 50) {
               closeDrawer();
+            } else {
+              // Only snap back if not closing
+              Animated.timing(dragY, {
+                toValue: 0,
+                duration: 300,
+                easing: Easing.out(Easing.quad),
+                useNativeDriver: true,
+              }).start();
             }
-            // Reset the drag position
-            Animated.timing(dragY, {
-              toValue: 0,
-              duration: 300,
-              useNativeDriver: true,
-            }).start();
           },
         }),
       [closeDrawer, dragY]
