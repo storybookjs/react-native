@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "Radon IDE panel",
+      "type": "radon-ide",
+      "request": "launch",
+      "appRoot": "./examples/expo-example",
+      "env": {
+        "EXPO_PUBLIC_STORYBOOK_ENABLED": "true",
+        "EXPO_PUBLIC_LITE_UI": "true"
+      },
+      "ios": {},
+      "android": {},
+      "usePrebuild": false
+    }
+  ]
+}
