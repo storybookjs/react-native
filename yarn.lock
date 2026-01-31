@@ -6495,6 +6495,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@legendapp/list@npm:3.0.0-beta.31":
+  version: 3.0.0-beta.31
+  resolution: "@legendapp/list@npm:3.0.0-beta.31"
+  dependencies:
+    use-sync-external-store: "npm:^1.5.0"
+  peerDependencies:
+    react: "*"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 10/7d9faa330912ea81af1855e5d0c245f0ee357877eaf874b93b5305e1d15cee2ccd364e6f12e7beba17fcb41019aeecad2769cd77eddf0e4a17cf80b7e4ec570b
+  languageName: node
+  linkType: hard
+
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.5
   resolution: "@leichtgewicht/ip-codec@npm:2.0.5"
@@ -6782,6 +6798,13 @@ __metadata:
   version: 1.0.39
   resolution: "@nolyfill/is-core-module@npm:1.0.39"
   checksum: 10/0d6e098b871eca71d875651288e1f0fa770a63478b0b50479c99dc760c64175a56b5b04f58d5581bbcc6b552b8191ab415eada093d8df9597ab3423c8cac1815
+  languageName: node
+  linkType: hard
+
+"@nozbe/microfuzz@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@nozbe/microfuzz@npm:1.0.0"
+  checksum: 10/bddbf6ddc94675f32c9ac07a347bccfb5a58ed4a6f8115e5c58a9c4e9e3a11c751053d1c55fe37aaff62e154cc0a211d69813f64157131431b841a409b5166ca
   languageName: node
   linkType: hard
 
@@ -8351,11 +8374,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@storybook/react-native-ui-common@workspace:packages/react-native-ui-common"
   dependencies:
+    "@nozbe/microfuzz": "npm:^1.0.0"
     "@storybook/react": "npm:^10.2.2"
     "@storybook/react-native-theming": "npm:^10.2.1"
     "@types/react": "npm:~19.1.10"
     es-toolkit: "npm:^1.41.0"
-    fuse.js: "npm:^7.1.0"
     memoizerific: "npm:^1.11.3"
     ts-dedent: "npm:^2.2.0"
     tsup: "npm:^8.5.0"
@@ -8372,11 +8395,12 @@ __metadata:
   resolution: "@storybook/react-native-ui-lite@workspace:packages/react-native-ui-lite"
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
+    "@legendapp/list": "npm:3.0.0-beta.31"
+    "@nozbe/microfuzz": "npm:^1.0.0"
     "@storybook/react": "npm:^10.2.2"
     "@storybook/react-native-theming": "npm:^10.2.1"
     "@storybook/react-native-ui-common": "npm:^10.2.1"
     "@types/react": "npm:~19.1.10"
-    fuse.js: "npm:^7.1.0"
     polished: "npm:^4.3.1"
     react-native-safe-area-context: "npm:^5"
     ts-dedent: "npm:^2.2.0"
@@ -8394,11 +8418,11 @@ __metadata:
   resolution: "@storybook/react-native-ui@workspace:packages/react-native-ui"
   dependencies:
     "@gorhom/portal": "npm:^1.0.14"
+    "@nozbe/microfuzz": "npm:^1.0.0"
     "@storybook/react": "npm:^10.2.2"
     "@storybook/react-native-theming": "npm:^10.2.1"
     "@storybook/react-native-ui-common": "npm:^10.2.1"
     "@types/react": "npm:~19.1.10"
-    fuse.js: "npm:^7.1.0"
     polished: "npm:^4.3.1"
     tsup: "npm:^8.5.0"
     typescript: "npm:~5.9.3"
@@ -16070,13 +16094,6 @@ __metadata:
   version: 1.2.3
   resolution: "functions-have-names@npm:1.2.3"
   checksum: 10/0ddfd3ed1066a55984aaecebf5419fbd9344a5c38dd120ffb0739fac4496758dcf371297440528b115e4367fc46e3abc86a2cc0ff44612181b175ae967a11a05
-  languageName: node
-  linkType: hard
-
-"fuse.js@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "fuse.js@npm:7.1.0"
-  checksum: 10/9f9105e54372897a46cb3e04074f0db5bd0a428320d4618276a57e6142d7502235a556f05cf87aa3c5d6d9c6fdfa06b901b78379c48aa0951672ccbc4a1bfe70
   languageName: node
   linkType: hard
 
