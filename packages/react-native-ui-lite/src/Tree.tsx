@@ -41,13 +41,14 @@ interface NodeProps {
 }
 
 const TextItem = styled.Text(({ theme }) => ({
+  fontSize: theme.typography.size.s2 + 1,
   color: theme.color.defaultText,
 }));
 
 export const Node = React.memo<NodeProps>(function Node({
   item,
   refId,
-  isOrphan,
+  isOrphan: _isOrphan,
   isDisplayed: _isDisplayed,
   isSelected,
   isFullyExpanded,
@@ -66,7 +67,7 @@ export const Node = React.memo<NodeProps>(function Node({
           selected={isSelected}
           key={id}
           id={id}
-          depth={isOrphan ? item.depth : item.depth - 1}
+          depth={item.depth}
           onPress={() => {
             onSelectStoryId(item.id);
           }}
@@ -118,7 +119,7 @@ export const Node = React.memo<NodeProps>(function Node({
         id={id}
         aria-controls={item.children && item.children[0]}
         aria-expanded={isExpanded}
-        depth={isOrphan ? item.depth : item.depth - 1}
+        depth={item.depth}
         isComponent={item.type === 'component'}
         isExpandable={item.children && item.children.length > 0}
         isExpanded={isExpanded}
@@ -168,15 +169,17 @@ export const RootNodeText = styled.Text(({ theme }) => ({
 }));
 
 const CollapseButton = styled.TouchableOpacity(() => ({
+  flex: 1,
   display: 'flex',
   flexDirection: 'row',
-  paddingVertical: 0,
   paddingHorizontal: 8,
+  paddingTop: 8,
+  paddingBottom: 7,
   borderRadius: 4,
   gap: 6,
   alignItems: 'center',
   cursor: 'pointer',
-  height: 34,
+  minHeight: 34,
 }));
 
 const flexStyle: ViewStyle = { flex: 1 };

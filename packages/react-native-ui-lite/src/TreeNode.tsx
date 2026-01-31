@@ -31,7 +31,6 @@ const BranchNode = styled.TouchableOpacity<{
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  alignSelf: 'flex-start',
   paddingLeft: (isExpandable ? 8 : 22) + depth * 18,
 
   backgroundColor: 'transparent',
@@ -50,7 +49,6 @@ const BranchNode = styled.TouchableOpacity<{
 
 const LeafNode = styled.TouchableOpacity<{ depth?: number; selected?: boolean }>(
   ({ depth = 0, selected, theme }) => ({
-    alignSelf: 'flex-start',
     cursor: 'pointer',
     color: 'inherit',
     display: 'flex',

@@ -5220,9 +5220,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/cli@npm:54.0.22":
-  version: 54.0.22
-  resolution: "@expo/cli@npm:54.0.22"
+"@expo/cli@npm:54.0.23":
+  version: 54.0.23
+  resolution: "@expo/cli@npm:54.0.23"
   dependencies:
     "@0no-co/graphql.web": "npm:^1.0.8"
     "@expo/code-signing-certificates": "npm:^0.0.6"
@@ -5298,7 +5298,7 @@ __metadata:
       optional: true
   bin:
     expo-internal: build/bin/cli
-  checksum: 10/c20c89f5737e1f5b055567d6b560a920ea52ed17cab73fd5ab59d8f1640c62f7a9915d9d69eb0c5ebc85bd04505e3ac32ba329ab8f1e15da8a9fcd6c6dd8d808
+  checksum: 10/9a41c55aa7f628ad44048c9f41cd8d7f4f73a8bfc01adaa956ddaae87d332ae979eadb52bdab894ef5b1c9b5722486ccdb999057d8b9eed392c827f476feb79f
   languageName: node
   linkType: hard
 
@@ -15200,10 +15200,10 @@ __metadata:
     "@types/ws": "npm:^8.18.1"
     babel-plugin-react-compiler: "npm:^1.0.0"
     babel-plugin-react-docgen-typescript: "npm:^1.5.1"
-    expo: "npm:^54.0.32"
+    expo: "npm:~54.0.33"
     expo-updates: "npm:~29.0.16"
     jest: "npm:^29.7.0"
-    jest-expo: "npm:~54.0.16"
+    jest-expo: "npm:~54.0.17"
     react: "npm:19.1.0"
     react-compiler-runtime: "npm:^1.0.0"
     react-dom: "npm:19.1.0"
@@ -15353,12 +15353,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo@npm:^54.0.32":
-  version: 54.0.32
-  resolution: "expo@npm:54.0.32"
+"expo@npm:~54.0.33":
+  version: 54.0.33
+  resolution: "expo@npm:54.0.33"
   dependencies:
     "@babel/runtime": "npm:^7.20.0"
-    "@expo/cli": "npm:54.0.22"
+    "@expo/cli": "npm:54.0.23"
     "@expo/config": "npm:~12.0.13"
     "@expo/config-plugins": "npm:~54.0.4"
     "@expo/devtools": "npm:0.1.8"
@@ -15395,7 +15395,7 @@ __metadata:
     expo: bin/cli
     expo-modules-autolinking: bin/autolinking
     fingerprint: bin/fingerprint
-  checksum: 10/78c9b88b98bcf424c00ffdd399b77e6fbf34f2c26a3d420e731bfccd9cdfb54e95f27b539d071155c4144ae7157e2700f9d22d4b2816974b20f8fcf0675bbb05
+  checksum: 10/ed672f78333cf50545ea1cca8181506604150cca01a8aae782da30ddcba185d68f2d48f2ca10dee575a7abbc7913cca3f4c3d34d98373b0e9706b344030fa929
   languageName: node
   linkType: hard
 
@@ -18414,6 +18414,37 @@ __metadata:
   bin:
     jest: bin/jest.js
   checksum: 10/eaddd54c171918da8450eefc5268c7b2db446a3c27d4dc35f6169611e423381ffa44fa6fe751600fa7e9dbd7a62a00e21856d92099a7206f0acb0470b28fb755
+  languageName: node
+  linkType: hard
+
+"jest-expo@npm:~54.0.17":
+  version: 54.0.17
+  resolution: "jest-expo@npm:54.0.17"
+  dependencies:
+    "@expo/config": "npm:~12.0.13"
+    "@expo/json-file": "npm:^10.0.8"
+    "@jest/create-cache-key-function": "npm:^29.2.1"
+    "@jest/globals": "npm:^29.2.1"
+    babel-jest: "npm:^29.2.1"
+    jest-environment-jsdom: "npm:^29.2.1"
+    jest-snapshot: "npm:^29.2.1"
+    jest-watch-select-projects: "npm:^2.0.0"
+    jest-watch-typeahead: "npm:2.2.1"
+    json5: "npm:^2.2.3"
+    lodash: "npm:^4.17.19"
+    react-test-renderer: "npm:19.1.0"
+    server-only: "npm:^0.0.1"
+    stacktrace-js: "npm:^2.0.2"
+  peerDependencies:
+    expo: "*"
+    react-native: "*"
+    react-server-dom-webpack: ~19.0.4 || ~19.1.5 || ~19.2.4
+  peerDependenciesMeta:
+    react-server-dom-webpack:
+      optional: true
+  bin:
+    jest: bin/jest.js
+  checksum: 10/c1e68acc59edafd93c0aae4af8d69c1f8823eef3ca81329f5f2790d7cfd13dfd695a50eeeaf22c707b88069bb6cb26e9518c6cb8b327d8475886899c4a2b78b6
   languageName: node
   linkType: hard
 
