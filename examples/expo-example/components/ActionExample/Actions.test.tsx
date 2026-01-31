@@ -9,7 +9,7 @@ test('action story renders and onpress works', async () => {
 
   const onPress = jest.fn();
 
-  render(<Basic onPress={onPress} />);
+  await render(<Basic onPress={onPress} />);
 
   const user = userEvent.setup({});
 

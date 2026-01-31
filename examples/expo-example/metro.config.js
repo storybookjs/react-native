@@ -21,11 +21,18 @@ defaultConfig.resolver.nodeModulesPaths = [
 ];
 
 const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
-
-module.exports = withStorybook(defaultConfig, {
-  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
-  websockets: 'auto',
-});
+const { withRozenite } = require('@rozenite/metro');
+module.exports = withRozenite(
+  withStorybook(defaultConfig, {
+    enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+    websockets: 'auto',
+  }),
+  {
+    include: ['@dannyhw/rozenite-storybook'],
+    enabled: true,
+    projectType: 'expo',
+  }
+);
 
 /* , {
   enabled: process.env.STORYBOOK_ENABLED === 'true',

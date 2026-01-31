@@ -27,6 +27,7 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 - 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
 - ✨ [Examples](#examples)
+- 🤖 [Claude Code Plugin](#claude-code-plugin)
 
 ## Getting Started
 
@@ -519,3 +520,26 @@ Here are some example projects to help you get started
 - React Native CLI setup https://github.com/dannyhw/react-native-storybook-starter
 - Adding a separate entry point and dev menu item in native files for RN CLI project: https://github.com/zubko/react-native-storybook-with-dev-menu
 - Want to showcase your own project? open a PR and add it to the list!
+
+## Claude Code Plugin
+
+This repo includes a [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that helps you write Storybook stories for React Native components. It provides guidance on CSF syntax, controls, addons, decorators, parameters, and portable stories. (More coming soon)
+
+### Installation
+
+Add the marketplace and install the plugin:
+
+```sh
+/plugin marketplace add storybookjs/react-native
+/plugin install react-native-storybook@react-native-storybook
+```
+
+Then restart Claude Code to load the plugin.
+
+### Usage
+
+Once installed, Claude Code will automatically use the skill when you ask it to create or edit story files. For example:
+
+- "Write stories for my Button component"
+- "Add controls to this story"
+- "Set up the backgrounds addon"

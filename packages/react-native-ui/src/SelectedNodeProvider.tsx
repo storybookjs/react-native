@@ -39,7 +39,7 @@ export const SelectedNodeProvider: FC<PropsWithChildren> = ({ children }) => {
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (_error) {}
       }
-    }, 500);
+    }, 100);
   }, []);
 
   return (

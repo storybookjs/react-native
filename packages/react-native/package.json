@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "10.2.0-beta.1",
+  "version": "10.2.0",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -50,9 +50,9 @@
   },
   "dependencies": {
     "@storybook/react": "10.2.0-beta.1",
-    "@storybook/react-native-theming": "^10.2.0-beta.1",
-    "@storybook/react-native-ui": "^10.2.0-beta.1",
-    "@storybook/react-native-ui-common": "^10.2.0-beta.1",
+    "@storybook/react-native-theming": "^10.2.0",
+    "@storybook/react-native-ui": "^10.2.0",
+    "@storybook/react-native-ui-common": "^10.2.0",
     "commander": "^14.0.2",
     "dedent": "^1.7.0",
     "deepmerge": "^4.3.1",
@@ -73,9 +73,9 @@
     "react": "19.1.0",
     "react-native": "0.81.5",
     "storybook": "10.2.0-beta.1",
+    "test-renderer": "^0.14.0",
     "tsup": "^8.5.0",
-    "typescript": "~5.9.3",
-    "universal-test-renderer": "^0.6.0"
+    "typescript": "~5.9.3"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",
