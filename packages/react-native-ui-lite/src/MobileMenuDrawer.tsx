@@ -207,7 +207,6 @@ export const MobileMenuDrawer = memo(
         backgroundColor: theme.color.mediumdark,
         borderRadius: 2.5,
         alignSelf: 'center' as const,
-        marginVertical: 8,
       }),
       [theme.color.mediumdark]
     );
@@ -228,6 +227,8 @@ export const MobileMenuDrawer = memo(
       () => ({
         alignItems: 'center' as const,
         justifyContent: 'center' as const,
+        paddingBottom: 16,
+        paddingTop: 10,
         backgroundColor: theme.background.content,
       }),
       [theme.background.content]

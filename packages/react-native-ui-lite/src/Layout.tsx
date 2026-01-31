@@ -54,7 +54,6 @@ const navButtonHitSlop = { bottom: 10, left: 10, right: 10, top: 10 };
 
 const mobileMenuDrawerContentStyle = {
   paddingLeft: 16,
-  paddingTop: 4,
   paddingBottom: 4,
 } satisfies ViewStyle;
 
