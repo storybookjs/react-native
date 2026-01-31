@@ -212,15 +212,17 @@ export const MobileMenuDrawer = memo(
     );
 
     const drawerContainerStyle = useMemo(
-      () => ({
-        flex: 1,
-        borderTopColor: theme.appBorderColor,
-        borderTopWidth: 1,
-        borderStyle: 'solid' as const,
-        backgroundColor: theme.background.content,
-        elevation: 8,
-      }),
-      [theme.appBorderColor, theme.background.content]
+      () =>
+        ({
+          flex: 1,
+          borderTopColor: theme.appBorderColor,
+          borderTopWidth: 1,
+          borderStyle: 'solid' as const,
+          backgroundColor: theme.background.content,
+          elevation: 8,
+          boxShadow: `0 16px 32px 0 ${theme.color.border}`,
+        }) satisfies ViewStyle,
+      [theme.appBorderColor, theme.background.content, theme.color.border]
     );
 
     const dragHandleWrapperStyle = useMemo(
@@ -252,7 +254,11 @@ export const MobileMenuDrawer = memo(
             <Pressable style={flexStyle} onPress={closeDrawer} />
           </View>
 
-          <Animated.View style={{ height: animatedHeight }}>
+          <Animated.View
+            style={{
+              height: animatedHeight,
+            }}
+          >
             <Animated.View style={[drawerContainerStyle, { transform: [{ translateY: dragY }] }]}>
               {/* Drag handle */}
               <View {...panResponder.panHandlers} style={dragHandleWrapperStyle}>
