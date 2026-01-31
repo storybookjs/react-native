@@ -48,9 +48,11 @@ const placeholderObject = {};
 
 const iconFloatRightStyle = { marginLeft: 'auto' } satisfies ViewStyle;
 
-const navButtonStyle = { flexShrink: 1 } satisfies ViewStyle;
+const navButtonStyle = { flex: 1 } satisfies ViewStyle;
 
-const navButtonHitSlop = { bottom: 10, left: 10, right: 10, top: 10 };
+const navButtonHitSlop = { bottom: 10, left: 10, top: 10 };
+
+const addonButtonHitSlop = { bottom: 10, left: 10, right: 10, top: 10 };
 
 const mobileMenuDrawerContentStyle = {
   paddingLeft: 16,
@@ -263,6 +265,7 @@ export const Layout = ({
 
             <IconButton
               testID="mobile-addons-button"
+              hitSlop={addonButtonHitSlop}
               onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
               Icon={BottomBarToggleIcon}
             />
