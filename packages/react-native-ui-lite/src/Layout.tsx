@@ -8,10 +8,11 @@ import {
   StorageProvider,
   useLayout,
   useStoreBooleanState,
+  useStoreNumberState,
   useStyle,
 } from '@storybook/react-native-ui-common';
 import { ReactElement, ReactNode, useCallback, useLayoutEffect, useRef, useState } from 'react';
-import { Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Text, TouchableOpacity, useWindowDimensions, View, ViewStyle } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import type { Args, StoryContext } from 'storybook/internal/csf';
@@ -19,6 +20,7 @@ import { type API_IndexHash } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
+import { ResizeHandle } from './ResizeHandle';
 import { SelectedNodeProvider } from './SelectedNodeProvider';
 import { Sidebar } from './Sidebar';
 import { StorybookLogo } from './StorybookLogo';
@@ -105,6 +107,34 @@ export const Layout = ({
     true
   );
 
+  const [sidebarWidth, setSidebarWidth] = useStoreNumberState('desktopSidebarWidth', 240);
+  const [addonsPanelHeight, setAddonsPanelHeight] = useStoreNumberState(
+    'desktopAddonsPanelHeight',
+    300
+  );
+
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+
+  const handleSidebarResize = useCallback(
+    (delta: number) => {
+      setSidebarWidth((prev) => Math.min(Math.max(prev + delta, 180), windowWidth * 0.5));
+    },
+    [setSidebarWidth, windowWidth]
+  );
+
+  const handleAddonsPanelResize = useCallback(
+    (delta: number) => {
+      // Negative delta = dragging up = panel gets larger
+      setAddonsPanelHeight((prev) => Math.min(Math.max(prev - delta, 100), windowHeight * 0.6));
+    },
+    [setAddonsPanelHeight, windowHeight]
+  );
+
+  const [isResizing, setIsResizing] = useState(false);
+
+  const onResizeStart = useCallback(() => setIsResizing(true), []);
+  const onResizeEnd = useCallback(() => setIsResizing(false), []);
+
   const [uiHidden, setUiHidden] = useState(false);
 
   useLayoutEffect(() => {
@@ -113,23 +143,23 @@ export const Layout = ({
 
   const desktopSidebarStyle = useStyle(
     () => ({
-      width: desktopSidebarOpen ? 240 : undefined,
+      width: desktopSidebarOpen ? sidebarWidth : undefined,
       padding: desktopSidebarOpen ? 0 : 10,
       borderColor: theme.appBorderColor,
-      borderRightWidth: 1,
+      borderRightWidth: desktopSidebarOpen ? 0 : 1,
     }),
-    [desktopSidebarOpen, theme.appBorderColor]
+    [desktopSidebarOpen, sidebarWidth, theme.appBorderColor]
   );
 
   const desktopAddonsPanelStyle = useStyle(
     () => ({
-      height: desktopAddonsPanelOpen ? 300 : undefined,
-      borderTopWidth: 1,
+      height: desktopAddonsPanelOpen ? addonsPanelHeight : undefined,
+      borderTopWidth: desktopAddonsPanelOpen ? 0 : 1,
       borderColor: theme.appBorderColor,
       paddingTop: desktopAddonsPanelOpen ? 4 : 0,
       padding: desktopAddonsPanelOpen ? 0 : 10,
     }),
-    [desktopAddonsPanelOpen, theme.appBorderColor]
+    [desktopAddonsPanelOpen, addonsPanelHeight, theme.appBorderColor]
   );
 
   const containerStyle = useStyle(() => {
@@ -189,36 +219,48 @@ export const Layout = ({
   return (
     <View style={containerStyle}>
       {isDesktop ? (
-        <View style={desktopSidebarStyle}>
+        <>
+          <View style={desktopSidebarStyle} pointerEvents={isResizing ? 'none' : 'auto'}>
+            {desktopSidebarOpen ? (
+              <>
+                <View style={desktopLogoContainer}>
+                  <StorybookLogo theme={theme} />
+
+                  <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
+                </View>
+
+                <View style={flexStyle}>
+                  <Sidebar
+                    previewInitialized
+                    indexError={undefined}
+                    refs={placeholderObject}
+                    setSelection={setSelection}
+                    status={placeholderObject}
+                    index={storyHash}
+                    storyId={story?.id}
+                    refId={DEFAULT_REF_ID}
+                  />
+                </View>
+              </>
+            ) : (
+              <IconButton onPress={() => setDesktopSidebarOpen(true)} Icon={MenuIcon} />
+            )}
+          </View>
           {desktopSidebarOpen ? (
-            <>
-              <View style={desktopLogoContainer}>
-                <StorybookLogo theme={theme} />
-
-                <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
-              </View>
-
-              <View style={flexStyle}>
-                <Sidebar
-                  previewInitialized
-                  indexError={undefined}
-                  refs={placeholderObject}
-                  setSelection={setSelection}
-                  status={placeholderObject}
-                  index={storyHash}
-                  storyId={story?.id}
-                  refId={DEFAULT_REF_ID}
-                />
-              </View>
-            </>
-          ) : (
-            <IconButton onPress={() => setDesktopSidebarOpen(true)} Icon={MenuIcon} />
-          )}
-        </View>
+            <ResizeHandle
+              direction="horizontal"
+              onResize={handleSidebarResize}
+              onResizeStart={onResizeStart}
+              onResizeEnd={onResizeEnd}
+            />
+          ) : null}
+        </>
       ) : null}
 
       <View style={mobileContentStyle}>
-        <View style={contentContainerStyle}>{children}</View>
+        <View style={contentContainerStyle} pointerEvents={isResizing ? 'none' : 'auto'}>
+          {children}
+        </View>
 
         {story?.parameters?.hideFullScreenButton || isDesktop ? null : (
           <TouchableOpacity
@@ -235,17 +277,27 @@ export const Layout = ({
         )}
 
         {isDesktop ? (
-          <View style={desktopAddonsPanelStyle}>
+          <>
             {desktopAddonsPanelOpen ? (
-              <AddonsTabs storyId={story?.id} onClose={() => setDesktopAddonsPanelOpen(false)} />
-            ) : (
-              <IconButton
-                style={iconFloatRightStyle}
-                onPress={() => setDesktopAddonsPanelOpen(true)}
-                Icon={BottomBarToggleIcon}
+              <ResizeHandle
+                direction="vertical"
+                onResize={handleAddonsPanelResize}
+                onResizeStart={onResizeStart}
+                onResizeEnd={onResizeEnd}
               />
-            )}
-          </View>
+            ) : null}
+            <View style={desktopAddonsPanelStyle} pointerEvents={isResizing ? 'none' : 'auto'}>
+              {desktopAddonsPanelOpen ? (
+                <AddonsTabs storyId={story?.id} onClose={() => setDesktopAddonsPanelOpen(false)} />
+              ) : (
+                <IconButton
+                  style={iconFloatRightStyle}
+                  onPress={() => setDesktopAddonsPanelOpen(true)}
+                  Icon={BottomBarToggleIcon}
+                />
+              )}
+            </View>
+          </>
         ) : null}
       </View>
 
