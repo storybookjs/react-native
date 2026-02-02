@@ -115,6 +115,7 @@ import { Stack } from 'expo-router';
 const storybookEnabled = process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true';
 
 export const unstable_settings = {
+  anchor: storybookEnabled ? '(storybook)' : '(tabs)',
   initialRouteName: storybookEnabled ? '(storybook)' : '(tabs)',
 };
 
