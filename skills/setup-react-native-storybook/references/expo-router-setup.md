@@ -10,10 +10,10 @@ npm create storybook -- --type react_native --yes
 
 ## Step 2: Ensure react-native-worklets is installed
 
-Storybook's default UI depends on `react-native-reanimated`, which requires `react-native-worklets`. If it's not already installed:
+Storybook's default UI depends on `react-native-reanimated` and `react-native-worklets`. If they're not already installed:
 
 ```bash
-npx expo install react-native-worklets
+npx expo install react-native-reanimated react-native-worklets
 ```
 
 Expo handles the babel plugin automatically.

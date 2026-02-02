@@ -8,12 +8,12 @@ For plain React Native projects using `@react-native-community/cli`.
 npm create storybook -- --type react_native --yes
 ```
 
-## Step 2: Install react-native-worklets
+## Step 2: Install react-native-reanimated and react-native-worklets
 
-Storybook's default UI depends on `react-native-reanimated`, which requires the worklets babel plugin:
+Storybook's default UI depends on `react-native-reanimated` and `react-native-worklets`:
 
 ```bash
-npm install react-native-worklets
+npm install react-native-reanimated react-native-worklets
 ```
 
 ## Step 3: Install babel-plugin-transform-inline-environment-variables
