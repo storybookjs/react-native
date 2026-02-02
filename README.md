@@ -544,7 +544,8 @@ This works with any agent harness that supports skills (Claude Code, Cursor, Win
 
 ```sh
 /plugin marketplace add storybookjs/react-native
-/plugin install react-native-storybook@react-native-storybook
+/plugin install react-native-storybook@setup-react-native-storybook
+/plugin install react-native-storybook@writing-react-native-storybook-stories
 ```
 
 Then restart Claude Code to load the plugin.
