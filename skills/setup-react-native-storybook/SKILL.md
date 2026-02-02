@@ -9,7 +9,7 @@ Add `@storybook/react-native` v10 to a React Native project.
 
 **Important:** Detect the project's package manager (look for `yarn.lock`, `pnpm-lock.yaml`, or `bun.lockb`) and use it for all install/run commands instead of `npm`. The examples below use `npm` but substitute accordingly (e.g. `yarn add` instead of `npm install`, `yarn storybook` instead of `npm run storybook`).
 
-For the init command, use the `create` subcommand of the project's package manager (`npm create storybook@latest`, `pnpm create storybook@latest`, `bun create storybook@latest`). Never use `npx`/`bunx` etc for this.
+For the init command, use `<pm> create storybook` with the flags shown below. Only npm needs `--` before the flags. Never use `npx`/`bunx` etc for this.
 
 Three setup flows based on project type:
 
@@ -28,10 +28,12 @@ Three setup flows based on project type:
 ### 1. Run CLI Init
 
 ```bash
-npm create storybook@latest
+npm create storybook -- --type react_native --yes
+# or: pnpm create storybook --type react_native --yes
+# or: bun create storybook --type react_native --yes
 ```
 
-Choose **recommended** then **native** when prompted. This installs dependencies and creates `.rnstorybook/` with `main.ts`, `preview.tsx`, and `index.tsx`.
+This installs dependencies and creates `.rnstorybook/` with `main.ts`, `preview.tsx`, and `index.tsx`.
 
 ### 2. Configure Metro
 

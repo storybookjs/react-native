@@ -5,10 +5,8 @@ For Expo projects that do **not** use Expo Router.
 ## Step 1: Run CLI Init
 
 ```bash
-npm create storybook@latest
+npm create storybook -- --type react_native --yes
 ```
-
-Choose **recommended** then **native**.
 
 ## Step 2: Install react-native-worklets
 
