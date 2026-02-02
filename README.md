@@ -523,11 +523,24 @@ Here are some example projects to help you get started
 
 ## Claude Code Plugin
 
-This repo includes a [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that helps you write Storybook stories for React Native components. It provides guidance on CSF syntax, controls, addons, decorators, parameters, and portable stories. (More coming soon)
+This repo includes a [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin with skills for setting up and working with Storybook for React Native.
+
+### Skills
+
+- **writing-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
+- **setup** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, and React Native CLI setups
 
 ### Installation
 
-Add the marketplace and install the plugin:
+#### Any AI agent or IDE (universal)
+
+```sh
+npx skills add storybookjs/react-native
+```
+
+This works with any agent harness that supports skills (Claude Code, Cursor, Windsurf, etc.).
+
+#### Claude Code plugin
 
 ```sh
 /plugin marketplace add storybookjs/react-native
@@ -538,8 +551,9 @@ Then restart Claude Code to load the plugin.
 
 ### Usage
 
-Once installed, Claude Code will automatically use the skill when you ask it to create or edit story files. For example:
+Once installed, Claude Code will automatically use the relevant skill. For example:
 
+- "Add Storybook to my Expo project"
+- "Set up Storybook with Expo Router"
 - "Write stories for my Button component"
 - "Add controls to this story"
-- "Set up the backgrounds addon"
