@@ -35,15 +35,31 @@ npm create storybook -- --type react_native --yes
 
 This installs dependencies and creates `.rnstorybook/` with `main.ts`, `preview.tsx`, and `index.tsx`.
 
-### 2. Configure Metro
+### 2. Update Story Globs in main.ts
+
+The CLI generates a default `stories` glob in `.rnstorybook/main.ts`. Update it to match where UI components actually live in the project. Look for directories like `components/`, `src/components/`, `src/`, `ui/`, etc. and set the glob accordingly:
+
+```ts
+// .rnstorybook/main.ts
+const main: StorybookConfig = {
+  stories: [
+    '../components/**/*.stories.?(ts|tsx|js|jsx)',
+    // or '../src/components/**/*.stories.?(ts|tsx|js|jsx)',
+    // or '../src/**/*.stories.?(ts|tsx|js|jsx)',
+  ],
+  // ...
+};
+```
+
+### 3. Configure Metro
 
 Wrap the metro config with `withStorybook`. The specific metro config differs per flow - see the relevant reference file.
 
-### 3. Create Entrypoint
+### 4. Create Entrypoint
 
 How Storybook is rendered differs per flow - see the relevant reference file.
 
-### 4. Run
+### 5. Run
 
 ```bash
 npm run start

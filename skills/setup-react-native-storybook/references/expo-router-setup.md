@@ -8,26 +8,15 @@ For Expo projects using Expo Router file-based navigation.
 npm create storybook -- --type react_native --yes
 ```
 
-## Step 2: Install react-native-worklets
+## Step 2: Ensure react-native-worklets is installed
 
-Storybook's default UI depends on `react-native-reanimated`, which requires the worklets babel plugin:
+Storybook's default UI depends on `react-native-reanimated`, which requires `react-native-worklets`. If it's not already installed:
 
 ```bash
 npm install react-native-worklets
 ```
 
-Ensure `react-native-worklets/plugin` is in your babel config (must be last):
-
-```js
-// babel.config.js
-module.exports = function (api) {
-  api.cache(true);
-  return {
-    presets: ['babel-preset-expo'],
-    plugins: ['react-native-worklets/plugin'],
-  };
-};
-```
+Expo handles the babel plugin automatically.
 
 ## Step 3: Configure Metro
 
