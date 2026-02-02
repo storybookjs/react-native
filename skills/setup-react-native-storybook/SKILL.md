@@ -37,15 +37,14 @@ This installs dependencies and creates `.rnstorybook/` with `main.ts`, `preview.
 
 ### 2. Update Story Globs in main.ts
 
-The CLI generates a default `stories` glob in `.rnstorybook/main.ts`. Update it to match where UI components actually live in the project. Look for directories like `components/`, `src/components/`, `src/`, `ui/`, etc. and set the glob accordingly:
+The CLI generates a default `stories` glob in `.rnstorybook/main.ts`. Keep the existing glob and add an additional entry pointing to where UI components actually live in the project. Look for directories like `components/`, `src/components/`, `src/`, `ui/`, etc.:
 
 ```ts
 // .rnstorybook/main.ts
 const main: StorybookConfig = {
   stories: [
-    '../components/**/*.stories.?(ts|tsx|js|jsx)',
-    // or '../src/components/**/*.stories.?(ts|tsx|js|jsx)',
-    // or '../src/**/*.stories.?(ts|tsx|js|jsx)',
+    './stories/**/*.stories.?(ts|tsx|js|jsx)', // example stories from init
+    '../src/components/**/*.stories.?(ts|tsx|js|jsx)', // add based on project structure
   ],
   // ...
 };
