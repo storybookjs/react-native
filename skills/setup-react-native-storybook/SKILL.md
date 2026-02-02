@@ -1,5 +1,5 @@
 ---
-name: setup
+name: setup-react-native-storybook
 description: Set up Storybook for React Native in Expo or React Native CLI projects. Use when adding Storybook to a project, configuring metro.config.js with withStorybook, creating .rnstorybook configuration files, setting up Storybook routes in Expo Router, or configuring getStorybookUI. Covers Expo, Expo Router, and plain React Native CLI setups.
 ---
 
@@ -8,6 +8,8 @@ description: Set up Storybook for React Native in Expo or React Native CLI proje
 Add `@storybook/react-native` v10 to a React Native project.
 
 **Important:** Detect the project's package manager (look for `yarn.lock`, `pnpm-lock.yaml`, or `bun.lockb`) and use it for all install/run commands instead of `npm`. The examples below use `npm` but substitute accordingly (e.g. `yarn add` instead of `npm install`, `yarn storybook` instead of `npm run storybook`).
+
+For the init command, use the `create` subcommand of the project's package manager (`npm create storybook@latest`, `pnpm create storybook@latest`, `bun create storybook@latest`). Never use `npx`/`bunx` etc for this.
 
 Three setup flows based on project type:
 
@@ -50,11 +52,11 @@ npm run ios     # or npm run android
 
 ```js
 module.exports = withStorybook(config, {
-  enabled: true,                    // Remove Storybook from bundle when false
-  configPath: './.rnstorybook',     // Storybook config directory
-  useJs: false,                     // Generate .js instead of .ts
-  docTools: true,                   // Auto arg extraction
-  liteMode: false,                  // Mock default UI deps (use with react-native-ui-lite)
+  enabled: true, // Remove Storybook from bundle when false
+  configPath: './.rnstorybook', // Storybook config directory
+  useJs: false, // Generate .js instead of .ts
+  docTools: true, // Auto arg extraction
+  liteMode: false, // Mock default UI deps (use with react-native-ui-lite)
   websockets: { port: 7007, host: 'localhost' }, // Remote control
 });
 ```

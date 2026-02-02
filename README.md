@@ -527,8 +527,8 @@ This repo includes a [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 
 ### Skills
 
-- **writing-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
-- **setup** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, and React Native CLI setups
+- **writing-react-native-storybook-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
+- **setup-react-native-storybook** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, and React Native CLI setups
 
 ### Installation
 
