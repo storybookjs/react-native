@@ -521,9 +521,9 @@ Here are some example projects to help you get started
 - Adding a separate entry point and dev menu item in native files for RN CLI project: https://github.com/zubko/react-native-storybook-with-dev-menu
 - Want to showcase your own project? open a PR and add it to the list!
 
-## Claude Code Plugin
+## Agent skills
 
-This repo includes a [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin with skills for setting up and working with Storybook for React Native.
+This repo includes agent skills for setting up and working with Storybook for React Native.
 
 ### Skills
 
@@ -539,22 +539,3 @@ npx skills add storybookjs/react-native
 ```
 
 This works with any agent harness that supports skills (Claude Code, Cursor, Windsurf, etc.).
-
-#### Claude Code plugin
-
-```sh
-/plugin marketplace add storybookjs/react-native
-/plugin install react-native-storybook@setup-react-native-storybook
-/plugin install react-native-storybook@writing-react-native-storybook-stories
-```
-
-Then restart Claude Code to load the plugin.
-
-### Usage
-
-Once installed, Claude Code will automatically use the relevant skill. For example:
-
-- "Add Storybook to my Expo project"
-- "Set up Storybook with Expo Router"
-- "Write stories for my Button component"
-- "Add controls to this story"
