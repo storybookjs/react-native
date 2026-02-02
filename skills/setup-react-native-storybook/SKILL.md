@@ -7,7 +7,7 @@ description: Set up Storybook for React Native in Expo or React Native CLI proje
 
 Add `@storybook/react-native` v10 to a React Native project.
 
-**Important:** Detect the project's package manager (look for `yarn.lock`, `pnpm-lock.yaml`, or `bun.lockb`) and use it for all install/run commands instead of `npm`. The examples below use `npm` but substitute accordingly (e.g. `yarn add` instead of `npm install`, `yarn storybook` instead of `npm run storybook`).
+**Important:** Detect the project's package manager (look for `yarn.lock`, `pnpm-lock.yaml`, or `bun.lockb`) and use it for all install/run commands instead of `npm`. The examples below use `npm` but substitute accordingly (e.g. `yarn add` instead of `npm install`, `yarn storybook` instead of `npm run storybook`). For Expo projects, use `npx expo install` (or `bunx expo install`, etc.) to install dependencies so Expo can resolve compatible versions.
 
 For the init command, use `<pm> create storybook` with the flags shown below. Only npm needs `--` before the flags. Never use `npx`/`bunx` etc for this.
 
