@@ -1,5 +1,5 @@
 ---
-name: react-native-storybook
+name: writing-stories
 description: Create and edit React Native Storybook stories using Component Story Format (CSF). Use when writing .stories.tsx files, adding stories to React Native components, configuring Storybook addons (controls, actions, backgrounds, notes), setting up argTypes, decorators, parameters, or working with portable stories for testing. Applies to any task involving @storybook/react-native story authoring.
 ---
 
