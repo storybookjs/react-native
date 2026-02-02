@@ -13,7 +13,7 @@ npm create storybook -- --type react_native --yes
 Storybook's default UI depends on `react-native-reanimated` and `react-native-worklets`. If they're not already installed:
 
 ```bash
-npx expo install react-native-reanimated react-native-worklets
+npx expo install --fix react-native-reanimated react-native-worklets
 ```
 
 Expo handles the babel plugin automatically.
