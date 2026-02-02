@@ -8,7 +8,7 @@ For Expo projects using Expo Router file-based navigation.
 npm create storybook -- --type react_native --yes
 ```
 
-## Step 2: Ensure react-native-worklets is installed
+## Step 2: Ensure dependencies are installed
 
 Storybook's default UI depends on `react-native-reanimated` and `react-native-worklets`. If they're not already installed:
 
@@ -43,16 +43,31 @@ module.exports = withStorybook(config, {
 
 ## Step 4: Create Storybook Route
 
-Create a route file:
+Create a route group for Storybook:
 
 ```tsx
-// app/storybook.tsx
-export { default } from '../.rnstorybook';
+// app/(storybook)/index.tsx
+export { default } from '../../.rnstorybook';
 ```
 
-## Step 5: Add Protected Route
+## Step 5: Configure Layout
 
-Add the Storybook screen to the layout with a protected route gated on the env variable, and disable the header:
+The layout configuration depends on the project's navigation structure. Check whether the project uses **Stack** or **Tabs** navigation and follow the matching pattern below.
+
+### Stack-based layout
+
+Move the existing app routes into a route group (e.g. `app/(pages)/`):
+
+```
+app/
+├── _layout.tsx
+├── (storybook)/
+│   └── index.tsx
+└── (pages)/
+    └── index.tsx    # existing app entry point moved here
+```
+
+Update the root layout:
 
 ```tsx
 // app/_layout.tsx
@@ -60,19 +75,62 @@ import { Stack } from 'expo-router';
 
 const storybookEnabled = process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true';
 
+export const unstable_settings = {
+  initialRouteName: storybookEnabled ? '(storybook)/index' : '(pages)/index',
+};
+
+export default function RootLayout() {
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Protected guard={storybookEnabled}>
+        <Stack.Screen name="(storybook)/index" />
+      </Stack.Protected>
+      <Stack.Screen name="(pages)/index" />
+    </Stack>
+  );
+}
+```
+
+### Tabs-based layout
+
+Keep the existing `(tabs)/` group and add the `(storybook)/` group alongside it:
+
+```
+app/
+├── _layout.tsx
+├── (storybook)/
+│   └── index.tsx
+└── (tabs)/
+    ├── _layout.tsx
+    ├── index.tsx
+    └── ...
+```
+
+Update the root layout:
+
+```tsx
+// app/_layout.tsx
+import { Stack } from 'expo-router';
+
+const storybookEnabled = process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true';
+
+export const unstable_settings = {
+  initialRouteName: storybookEnabled ? '(storybook)' : '(tabs)',
+};
+
 export default function RootLayout() {
   return (
     <Stack>
-      <Stack.Screen name="index" />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Protected guard={storybookEnabled}>
-        <Stack.Screen name="storybook" options={{ headerShown: false }} />
+        <Stack.Screen name="(storybook)/index" options={{ headerShown: false }} />
       </Stack.Protected>
     </Stack>
   );
 }
 ```
 
-Add navigation to `/storybook` in the app (tab, button, or dev menu).
+In both cases, `unstable_settings` ensures the app opens directly to Storybook when `EXPO_PUBLIC_STORYBOOK_ENABLED` is set.
 
 ## Step 6: Add Scripts
 
@@ -91,5 +149,3 @@ Add navigation to `/storybook` in the app (tab, button, or dev menu).
 ```bash
 npm run storybook
 ```
-
-Navigate to `/storybook` in the app to view stories.
