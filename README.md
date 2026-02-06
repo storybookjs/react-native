@@ -26,8 +26,8 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 - 🔧 [getStorybookUI](#getstorybookui-options)
 - 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
-- ✨ [Examples](#examples)
-- 🤖 [Claude Code Plugin](#claude-code-plugin)
+- ✨ [Examples](#examples)- [Storybook for React Native](#storybook-for-react-native)
+- 🤖 [Agent skills](#agent-skills)
 
 ## Getting Started
 
