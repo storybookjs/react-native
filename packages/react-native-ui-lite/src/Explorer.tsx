@@ -24,7 +24,12 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
   const containerRef = useRef<View>(null);
 
   return (
-    <View ref={containerRef} style={containerStyle}>
+    <View
+      ref={containerRef}
+      style={containerStyle}
+      id="storybook-explorer-tree"
+      testID="storybook-explorer-tree"
+    >
       {dataset.entries.map(([refId, ref]) => (
         <Ref
           {...ref}
