@@ -6,6 +6,7 @@ export default defineConfig((options) => {
       'src/index.ts',
       'src/preview.ts',
       'src/metro/withStorybook.ts',
+      'src/repack/withStorybook.ts',
       'src/stub.tsx',
       'src/node.ts',
     ],
@@ -13,7 +14,7 @@ export default defineConfig((options) => {
     clean: !options.watch,
     dts: !options.watch
       ? {
-          entry: ['src/index.ts', 'src/preview.ts', 'src/metro/withStorybook.ts', 'src/node.ts'],
+          entry: ['src/index.ts', 'src/preview.ts', 'src/metro/withStorybook.ts', 'src/repack/withStorybook.ts', 'src/node.ts'],
           resolve: true,
         }
       : false,
