@@ -18,6 +18,22 @@ npm install react-native-reanimated react-native-worklets
 
 Verify both are in `package.json` dependencies before proceeding.
 
+Then ensure the worklets babel plugin is in `babel.config.js`. It **must** be the last plugin in the list:
+
+```js
+// babel.config.js
+module.exports = {
+  presets: [
+    // your existing preset, e.g.:
+    'module:@react-native/babel-preset',
+  ],
+  plugins: [
+    // ... any other plugins
+    'react-native-worklets/plugin', // must be last
+  ],
+};
+```
+
 ## Step 3: Configure the Rspack/Webpack Config
 
 Instead of wrapping Metro with `withStorybook`, add the `StorybookPlugin` to your rspack/webpack config plugins array.
