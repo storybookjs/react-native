@@ -50,6 +50,11 @@ const storybookEnabled = process.env.STORYBOOK_ENABLED === 'true';
 
 export default Repack.defineRspackConfig({
   // ... your existing config
+  resolve: {
+    ...Repack.getResolveOptions({
+      enablePackageExports: true, // required for storybook package resolution
+    }),
+  },
   plugins: [
     new Repack.RepackPlugin(),
     new rspack.DefinePlugin({
@@ -64,7 +69,9 @@ export default Repack.defineRspackConfig({
 });
 ```
 
-**Note:** Unlike the Metro setup, there is no need to configure `require.context` support or package exports — rspack handles both natively.
+**Important:** `enablePackageExports: true` is required so rspack can correctly resolve Storybook's package exports (e.g. `@storybook/react-native/preview`). Without it, imports from Storybook packages will fail.
+
+**Note:** Unlike the Metro setup, there is no need to configure `require.context` support — rspack handles it natively.
 
 ## Step 4: Create Entrypoint
 
