@@ -148,6 +148,8 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
           height: panelHeight,
           transform: [{ translateY: positionBottomAnimation }],
         }}
+        accessibilityElementsHidden={!isOpen}
+        importantForAccessibility={isOpen ? 'auto' : 'no-hide-descendants'}
       >
         <View
           style={{

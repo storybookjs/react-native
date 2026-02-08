@@ -248,6 +248,8 @@ export const MobileMenuDrawer = memo(
         <Animated.View
           style={[portalContainerStyle, { transform: [{ translateY: slideAnim }] }]}
           pointerEvents={isVisible ? 'auto' : 'none'}
+          accessibilityElementsHidden={!isVisible}
+          importantForAccessibility={isVisible ? 'auto' : 'no-hide-descendants'}
         >
           <View style={flexStyle}>
             <Pressable style={flexStyle} onPress={closeDrawer} />
