@@ -231,7 +231,11 @@ export const Layout = ({
                 <View style={desktopLogoContainer}>
                   <StorybookLogo theme={theme} />
 
-                  <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} accessibilityLabel="Close sidebar" />
+                  <IconButton
+                    onPress={() => setDesktopSidebarOpen(false)}
+                    Icon={MenuIcon}
+                    accessibilityLabel="Close sidebar"
+                  />
                 </View>
 
                 <View style={flexStyle}>
@@ -248,7 +252,11 @@ export const Layout = ({
                 </View>
               </>
             ) : (
-              <IconButton onPress={() => setDesktopSidebarOpen(true)} Icon={MenuIcon} accessibilityLabel="Open sidebar" />
+              <IconButton
+                onPress={() => setDesktopSidebarOpen(true)}
+                Icon={MenuIcon}
+                accessibilityLabel="Open sidebar"
+              />
             )}
           </View>
           {desktopSidebarOpen ? (
