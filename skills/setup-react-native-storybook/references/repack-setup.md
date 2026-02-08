@@ -8,13 +8,15 @@ For React Native projects using [Re.Pack](https://re-pack.dev/) instead of Metro
 npm create storybook -- --type react_native --yes
 ```
 
-## Step 2: Ensure react-native-worklets is installed
+## Step 2: Install react-native-reanimated and react-native-worklets
 
-Storybook's default UI depends on `react-native-reanimated` and `react-native-worklets`. If they're not already installed:
+Storybook's default UI requires both `react-native-reanimated` and `react-native-worklets`. Re.Pack projects often already have `react-native-reanimated` but **`react-native-worklets` must also be installed separately** — it is not bundled with reanimated:
 
 ```bash
 npm install react-native-reanimated react-native-worklets
 ```
+
+Verify both are in `package.json` dependencies before proceeding.
 
 ## Step 3: Configure the Rspack/Webpack Config
 
