@@ -177,8 +177,9 @@ export function withStorybook(
 
           const resolved = resolveFunction(context, moduleName, platform);
 
-          // TODO do i need to account for jsx/js/ts file
-          if (resolved.filePath?.includes?.(`${configPath}/index.tsx`)) {
+          // Match the config folder's index file regardless of extension (ts, tsx, js, jsx)
+          const configIndexRegex = new RegExp(`${configPath}/index\\.(tsx?|jsx?)$`);
+          if (resolved.filePath && configIndexRegex.test(resolved.filePath)) {
             return {
               filePath: path.resolve(__dirname, '../stub.js'),
               type: 'sourceFile',
