@@ -111,175 +111,177 @@ export const useAnimatedModalHeight = () => {
 };
 
 export const MobileMenuDrawer = memo(
-  forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(({ children, onVisibilityChange }, ref) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const { scrollCallback } = useSelectedNode();
-    const theme = useTheme();
-    const { height } = useWindowDimensions();
-    const animatedHeight = useAnimatedModalHeight();
+  forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(
+    ({ children, onVisibilityChange }, ref) => {
+      const [isVisible, setIsVisible] = useState(false);
+      const { scrollCallback } = useSelectedNode();
+      const theme = useTheme();
+      const { height } = useWindowDimensions();
+      const animatedHeight = useAnimatedModalHeight();
 
-    // Slide animation for drawer entrance/exit
-    const slideAnim = useAnimatedValue(height);
+      // Slide animation for drawer entrance/exit
+      const slideAnim = useAnimatedValue(height);
 
-    // Create a reference for the drag handle animation
-    const dragY = useAnimatedValue(0);
+      // Create a reference for the drag handle animation
+      const dragY = useAnimatedValue(0);
 
-    const openDrawer = useCallback(() => {
-      dragY.setValue(0);
-      slideAnim.setValue(height);
-      setIsVisible(true);
-      onVisibilityChange?.(true);
+      const openDrawer = useCallback(() => {
+        dragY.setValue(0);
+        slideAnim.setValue(height);
+        setIsVisible(true);
+        onVisibilityChange?.(true);
 
-      Animated.timing(slideAnim, {
-        toValue: 0,
-        duration: 300,
-        easing: Easing.out(Easing.quad),
-        useNativeDriver: true,
-      }).start(({ finished }) => {
-        if (finished) {
-          // go to the selected story and don't animate
-          scrollCallback({ animated: false, id: undefined });
-        }
-      });
-    }, [dragY, height, onVisibilityChange, scrollCallback, slideAnim]);
+        Animated.timing(slideAnim, {
+          toValue: 0,
+          duration: 300,
+          easing: Easing.out(Easing.quad),
+          useNativeDriver: true,
+        }).start(({ finished }) => {
+          if (finished) {
+            // go to the selected story and don't animate
+            scrollCallback({ animated: false, id: undefined });
+          }
+        });
+      }, [dragY, height, onVisibilityChange, scrollCallback, slideAnim]);
 
-    const closeDrawer = useCallback(() => {
-      Keyboard.dismiss();
-      onVisibilityChange?.(false);
+      const closeDrawer = useCallback(() => {
+        Keyboard.dismiss();
+        onVisibilityChange?.(false);
 
-      Animated.timing(slideAnim, {
-        toValue: height,
-        duration: 300,
-        easing: Easing.in(Easing.quad),
-        useNativeDriver: true,
-      }).start(({ finished }) => {
-        if (finished) {
-          setIsVisible(false);
-        }
-      });
-    }, [height, onVisibilityChange, slideAnim]);
+        Animated.timing(slideAnim, {
+          toValue: height,
+          duration: 300,
+          easing: Easing.in(Easing.quad),
+          useNativeDriver: true,
+        }).start(({ finished }) => {
+          if (finished) {
+            setIsVisible(false);
+          }
+        });
+      }, [height, onVisibilityChange, slideAnim]);
 
-    // Create the pan responder for handling drag gestures
-    const panResponder = useMemo(
-      () =>
-        PanResponder.create({
-          onStartShouldSetPanResponder: () => true,
-          onMoveShouldSetPanResponder: (_, gestureState) => {
-            // Only capture downward dragging motions
-            return gestureState.dy > 0;
-          },
-          onPanResponderMove: (_, gestureState) => {
-            // Update dragY based on the gesture
-            if (gestureState.dy > 0) {
-              dragY.setValue(gestureState.dy);
-            }
-          },
-          onPanResponderRelease: (_, gestureState) => {
-            if (gestureState.dy > 50) {
-              closeDrawer();
-            } else {
-              // Only snap back if not closing
-              Animated.timing(dragY, {
-                toValue: 0,
-                duration: 300,
-                easing: Easing.out(Easing.quad),
-                useNativeDriver: true,
-              }).start();
-            }
-          },
+      // Create the pan responder for handling drag gestures
+      const panResponder = useMemo(
+        () =>
+          PanResponder.create({
+            onStartShouldSetPanResponder: () => true,
+            onMoveShouldSetPanResponder: (_, gestureState) => {
+              // Only capture downward dragging motions
+              return gestureState.dy > 0;
+            },
+            onPanResponderMove: (_, gestureState) => {
+              // Update dragY based on the gesture
+              if (gestureState.dy > 0) {
+                dragY.setValue(gestureState.dy);
+              }
+            },
+            onPanResponderRelease: (_, gestureState) => {
+              if (gestureState.dy > 50) {
+                closeDrawer();
+              } else {
+                // Only snap back if not closing
+                Animated.timing(dragY, {
+                  toValue: 0,
+                  duration: 300,
+                  easing: Easing.out(Easing.quad),
+                  useNativeDriver: true,
+                }).start();
+              }
+            },
+          }),
+        [closeDrawer, dragY]
+      );
+
+      useImperativeHandle(ref, () => ({
+        setMobileMenuOpen: (open: boolean) => {
+          if (open) {
+            openDrawer();
+          } else {
+            closeDrawer();
+          }
+        },
+      }));
+
+      // Create the styles for the drag handle
+      const handleStyle = useMemo(
+        () => ({
+          width: 40,
+          height: 5,
+          backgroundColor: theme.color.mediumdark,
+          borderRadius: 2.5,
+          alignSelf: 'center' as const,
         }),
-      [closeDrawer, dragY]
-    );
+        [theme.color.mediumdark]
+      );
 
-    useImperativeHandle(ref, () => ({
-      setMobileMenuOpen: (open: boolean) => {
-        if (open) {
-          openDrawer();
-        } else {
-          closeDrawer();
-        }
-      },
-    }));
+      const drawerContainerStyle = useMemo(
+        () =>
+          ({
+            flex: 1,
+            borderTopColor: theme.appBorderColor,
+            borderTopWidth: 1,
+            borderStyle: 'solid' as const,
+            backgroundColor: theme.background.content,
+            elevation: 8,
+            boxShadow: `0 16px 32px 0 ${theme.color.border}`,
+          }) satisfies ViewStyle,
+        [theme.appBorderColor, theme.background.content, theme.color.border]
+      );
 
-    // Create the styles for the drag handle
-    const handleStyle = useMemo(
-      () => ({
-        width: 40,
-        height: 5,
-        backgroundColor: theme.color.mediumdark,
-        borderRadius: 2.5,
-        alignSelf: 'center' as const,
-      }),
-      [theme.color.mediumdark]
-    );
-
-    const drawerContainerStyle = useMemo(
-      () =>
-        ({
-          flex: 1,
-          borderTopColor: theme.appBorderColor,
-          borderTopWidth: 1,
-          borderStyle: 'solid' as const,
+      const dragHandleWrapperStyle = useMemo(
+        () => ({
+          alignItems: 'center' as const,
+          justifyContent: 'center' as const,
+          paddingBottom: 16,
+          paddingTop: 10,
           backgroundColor: theme.background.content,
-          elevation: 8,
-          boxShadow: `0 16px 32px 0 ${theme.color.border}`,
-        }) satisfies ViewStyle,
-      [theme.appBorderColor, theme.background.content, theme.color.border]
-    );
+        }),
+        [theme.background.content]
+      );
 
-    const dragHandleWrapperStyle = useMemo(
-      () => ({
-        alignItems: 'center' as const,
-        justifyContent: 'center' as const,
-        paddingBottom: 16,
-        paddingTop: 10,
-        backgroundColor: theme.background.content,
-      }),
-      [theme.background.content]
-    );
+      const childrenWrapperStyle = useMemo(
+        () => ({
+          flex: 1,
+          backgroundColor: theme.background.content,
+        }),
+        [theme.background.content]
+      );
 
-    const childrenWrapperStyle = useMemo(
-      () => ({
-        flex: 1,
-        backgroundColor: theme.background.content,
-      }),
-      [theme.background.content]
-    );
-
-    return (
-      <Portal hostName="storybook-lite-ui-root">
-        <Animated.View
-          style={[portalContainerStyle, { transform: [{ translateY: slideAnim }] }]}
-          pointerEvents={isVisible ? 'auto' : 'none'}
-          accessibilityElementsHidden={!isVisible}
-          importantForAccessibility={isVisible ? 'auto' : 'no-hide-descendants'}
-          accessibilityViewIsModal={isVisible}
-        >
-          <View style={flexStyle}>
-            <Pressable
-              style={flexStyle}
-              onPress={closeDrawer}
-              accessibilityRole="button"
-              accessibilityLabel="Close story list"
-            />
-          </View>
-
+      return (
+        <Portal hostName="storybook-lite-ui-root">
           <Animated.View
-            style={{
-              height: animatedHeight,
-            }}
+            style={[portalContainerStyle, { transform: [{ translateY: slideAnim }] }]}
+            pointerEvents={isVisible ? 'auto' : 'none'}
+            accessibilityElementsHidden={!isVisible}
+            importantForAccessibility={isVisible ? 'auto' : 'no-hide-descendants'}
+            accessibilityViewIsModal={isVisible}
           >
-            <Animated.View style={[drawerContainerStyle, { transform: [{ translateY: dragY }] }]}>
-              {/* Drag handle */}
-              <View {...panResponder.panHandlers} style={dragHandleWrapperStyle}>
-                <View style={handleStyle} />
-              </View>
+            <View style={flexStyle}>
+              <Pressable
+                style={flexStyle}
+                onPress={closeDrawer}
+                accessibilityRole="button"
+                accessibilityLabel="Close story list"
+              />
+            </View>
 
-              <View style={childrenWrapperStyle}>{children}</View>
+            <Animated.View
+              style={{
+                height: animatedHeight,
+              }}
+            >
+              <Animated.View style={[drawerContainerStyle, { transform: [{ translateY: dragY }] }]}>
+                {/* Drag handle */}
+                <View {...panResponder.panHandlers} style={dragHandleWrapperStyle}>
+                  <View style={handleStyle} />
+                </View>
+
+                <View style={childrenWrapperStyle}>{children}</View>
+              </Animated.View>
             </Animated.View>
           </Animated.View>
-        </Animated.View>
-      </Portal>
-    );
-  })
+        </Portal>
+      );
+    }
+  )
 );
