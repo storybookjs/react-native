@@ -62,7 +62,7 @@ export const Node = React.memo<NodeProps>(function Node({
 
   if (item.type === 'story') {
     return (
-      <LeafNodeStyleWrapper>
+      <LeafNodeStyleWrapper accessible={false}>
         <StoryNode
           selected={isSelected}
           key={id}
@@ -88,6 +88,7 @@ export const Node = React.memo<NodeProps>(function Node({
             event.preventDefault();
             setExpanded({ ids: [item.id], value: !isExpanded });
           }}
+          accessibilityRole="button"
           aria-expanded={isExpanded}
         >
           <CollapseIcon isExpanded={isExpanded} />

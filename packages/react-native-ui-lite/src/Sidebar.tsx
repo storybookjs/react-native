@@ -45,8 +45,20 @@ const Swap = React.memo(function Swap({
   // // NOTE: its important not to completely hide items so that we don't lose the state of our list items
   return (
     <>
-      <View style={aStyle}>{a}</View>
-      <View style={bStyle}>{b}</View>
+      <View
+        style={aStyle}
+        accessibilityElementsHidden={!condition}
+        importantForAccessibility={condition ? 'auto' : 'no-hide-descendants'}
+      >
+        {a}
+      </View>
+      <View
+        style={bStyle}
+        accessibilityElementsHidden={condition}
+        importantForAccessibility={condition ? 'no-hide-descendants' : 'auto'}
+      >
+        {b}
+      </View>
     </>
   );
 });

@@ -96,7 +96,7 @@ export const GroupNode: FC<
   }, [theme.base, theme.color.primary, theme.color.ultraviolet]);
 
   return (
-    <BranchNode isExpandable={isExpandable} {...props}>
+    <BranchNode isExpandable={isExpandable} accessibilityRole="button" {...props}>
       <Wrapper key={`group-${props.id}-${color}`}>
         {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
         <GroupIcon width={14} height={14} color={color} />
@@ -115,7 +115,7 @@ export const ComponentNode: FC<ComponentProps<typeof BranchNode>> = React.memo(
     }, [theme.color.secondary]);
 
     return (
-      <BranchNode isExpandable={isExpandable} {...props}>
+      <BranchNode isExpandable={isExpandable} accessibilityRole="button" {...props}>
         {/* workaround for macos icon color bug */}
         <Wrapper key={`component-${props.id}-${color}`}>
           {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
@@ -139,7 +139,7 @@ export const StoryNode = React.memo(
     }, [props.selected, theme.color.lightest, theme.color.seafoam]);
 
     return (
-      <LeafNode {...props} ref={ref}>
+      <LeafNode {...props} ref={ref} accessibilityRole="button">
         <Wrapper key={`story-${props.id}-${color}`}>
           <StoryIcon width={14} height={14} color={color} />
         </Wrapper>

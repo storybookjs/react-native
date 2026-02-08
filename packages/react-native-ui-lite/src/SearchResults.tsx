@@ -168,7 +168,7 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
   const pathString = item.path?.join(' ') ?? '';
 
   return (
-    <ResultRow {...props} onPress={press}>
+    <ResultRow {...props} onPress={press} accessibilityRole="button">
       <IconWrapper>
         {item.type === 'component' && (
           <ComponentIcon width={14} height={14} color={theme.color.secondary} />

@@ -111,7 +111,6 @@ export const useAnimatedModalHeight = () => {
 
 export const MobileMenuDrawer = memo(
   forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(({ children }, ref) => {
-    // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const { scrollCallback } = useSelectedNode();
     const theme = useTheme();
@@ -128,7 +127,7 @@ export const MobileMenuDrawer = memo(
       dragY.setValue(0);
       slideAnim.setValue(height);
       setIsVisible(true);
-      // setMobileMenuOpen(true);
+
       Animated.timing(slideAnim, {
         toValue: 0,
         duration: 300,
@@ -144,7 +143,7 @@ export const MobileMenuDrawer = memo(
 
     const closeDrawer = useCallback(() => {
       Keyboard.dismiss();
-      // setMobileMenuOpen(false);
+
       Animated.timing(slideAnim, {
         toValue: height,
         duration: 300,

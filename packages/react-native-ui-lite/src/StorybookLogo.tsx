@@ -54,6 +54,7 @@ const BrandLogo: FC<{ theme: Theme }> = ({ theme }) => {
         onPress={() => {
           if (theme.brand.url) Linking.openURL(theme.brand.url);
         }}
+        accessibilityRole="link"
       >
         {image}
       </TouchableOpacity>
@@ -85,6 +86,7 @@ const BrandTitle: FC<{ theme: Theme }> = ({ theme }) => {
         onPress={() => {
           if (theme.brand.url) Linking.openURL(theme.brand.url);
         }}
+        accessibilityRole="link"
       >
         {title}
       </TouchableOpacity>

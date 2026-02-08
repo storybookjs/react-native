@@ -248,6 +248,8 @@ export const Search = React.memo<{
 
           {isOpen && (
             <ClearIcon
+              accessibilityRole="button"
+              accessibilityLabel="Clear search"
               onPress={() => {
                 setInputValue('');
                 inputRef.current.clear();

@@ -64,6 +64,7 @@ export const Button = forwardRef<any, ButtonProps>(
         animating={isAnimating}
         animation={animation}
         onPress={handleClick}
+        accessibilityRole="button"
         {...props}
       >
         {Icon && <ButtonIcon Icon={Icon} variant={variant} active={active} />}

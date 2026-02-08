@@ -288,7 +288,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
 
 const Tab = ({ active, onPress, text }: { active: boolean; onPress: () => void; text: string }) => {
   return (
-    <TabButton active={active} onPress={onPress}>
+    <TabButton active={active} onPress={onPress} accessibilityRole="tab" accessibilityState={{ selected: active }}>
       <TabText active={active}>{text}</TabText>
     </TabButton>
   );

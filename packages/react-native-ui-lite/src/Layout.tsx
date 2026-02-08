@@ -267,6 +267,8 @@ export const Layout = ({
             style={fullScreenButtonStyle}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
             onPress={() => setUiHidden((prev) => !prev)}
+            accessibilityRole="button"
+            accessibilityLabel={uiHidden ? 'Exit fullscreen' : 'Enter fullscreen'}
           >
             {uiHidden ? (
               <CloseFullscreenIcon color={theme.color.mediumdark} />
@@ -309,6 +311,8 @@ export const Layout = ({
               style={navButtonStyle}
               hitSlop={navButtonHitSlop}
               onPress={() => mobileMenuDrawerRef.current?.setMobileMenuOpen(true)}
+              accessibilityRole="button"
+              accessibilityLabel="Open story list"
             >
               <MenuIcon color={theme.color.mediumdark} />
               <Text style={navButtonTextStyle} numberOfLines={1}>
