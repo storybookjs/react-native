@@ -37,7 +37,33 @@ npm create storybook -- --type react_native --yes
 
 This installs dependencies and creates `.rnstorybook/` with `main.ts`, `preview.tsx`, and `index.tsx`.
 
-### 2. Update Story Globs in main.ts
+### 2. Enable WebSockets in .rnstorybook/index.tsx
+
+Update the generated `.rnstorybook/index.tsx` to enable WebSocket support. This is required for remote control and syncing with the Storybook web companion:
+
+```tsx
+// .rnstorybook/index.tsx
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { view } from './storybook.requires';
+
+const StorybookUIRoot = view.getStorybookUI({
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
+  enableWebsockets: true,
+});
+
+export default StorybookUIRoot;
+```
+
+If the project doesn't have `@react-native-async-storage/async-storage`, install it:
+
+```bash
+npm install @react-native-async-storage/async-storage
+```
+
+### 3. Update Story Globs in main.ts
 
 The CLI generates a default `stories` glob in `.rnstorybook/main.ts`. Keep the existing glob and add an additional entry pointing to where UI components actually live in the project. Look for directories like `components/`, `src/components/`, `src/`, `ui/`, etc.:
 
@@ -52,15 +78,15 @@ const main: StorybookConfig = {
 };
 ```
 
-### 3. Configure Bundler
+### 4. Configure Bundler
 
 For Metro projects, wrap the metro config with `withStorybook`. For Re.Pack projects, add the `StorybookPlugin` to your rspack/webpack config. See the relevant reference file for details.
 
-### 4. Create Entrypoint
+### 5. Create Entrypoint
 
 How Storybook is rendered differs per flow - see the relevant reference file.
 
-### 5. Run
+### 6. Run
 
 ```bash
 npm run start
