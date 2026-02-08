@@ -9,8 +9,11 @@ import {
   Item,
   useExpanded,
 } from '@storybook/react-native-ui-common';
-import React, { useCallback, useMemo, useRef } from 'react';
-import { View } from 'react-native';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { View, ViewStyle } from 'react-native';
+import { LegendList, LegendListRef, LegendListRenderItemProps } from '@legendapp/list';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useSelectedNode } from './SelectedNodeProvider';
 import type {
   ComponentEntry,
   GroupEntry,
@@ -18,7 +21,6 @@ import type {
   StoriesHash,
   StoryEntry,
 } from 'storybook/manager-api';
-import { useSelectedNode } from './SelectedNodeProvider';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
 import { CollapseAllIcon, CollapseIcon, ExpandAllIcon } from './icon/iconDataUris';
 
@@ -39,14 +41,15 @@ interface NodeProps {
 }
 
 const TextItem = styled.Text(({ theme }) => ({
+  fontSize: theme.typography.size.s2 + 1,
   color: theme.color.defaultText,
 }));
 
 export const Node = React.memo<NodeProps>(function Node({
   item,
   refId,
-  isOrphan,
-  isDisplayed,
+  isOrphan: _isOrphan,
+  isDisplayed: _isDisplayed,
   isSelected,
   isFullyExpanded,
   color: _2,
@@ -55,32 +58,16 @@ export const Node = React.memo<NodeProps>(function Node({
   setExpanded,
   onSelectStoryId,
 }) {
-  const { setNodeRef } = useSelectedNode();
-
-  const setRef = useCallback(
-    (node: View | null) => {
-      if (isSelected && node) {
-        setNodeRef(node);
-      }
-    },
-    [isSelected, setNodeRef]
-  );
-
-  if (!isDisplayed) {
-    return null;
-  }
-
   const id = createId(item.id, refId);
 
   if (item.type === 'story') {
     return (
-      <LeafNodeStyleWrapper>
+      <LeafNodeStyleWrapper accessible={false}>
         <StoryNode
-          ref={setRef}
           selected={isSelected}
           key={id}
           id={id}
-          depth={isOrphan ? item.depth : item.depth - 1}
+          depth={item.depth}
           onPress={() => {
             onSelectStoryId(item.id);
           }}
@@ -96,10 +83,12 @@ export const Node = React.memo<NodeProps>(function Node({
       <RootNode key={id} id={id}>
         <CollapseButton
           data-action="collapse-root"
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           onPress={(event) => {
             event.preventDefault();
             setExpanded({ ids: [item.id], value: !isExpanded });
           }}
+          accessibilityRole="button"
           aria-expanded={isExpanded}
         >
           <CollapseIcon isExpanded={isExpanded} />
@@ -110,6 +99,7 @@ export const Node = React.memo<NodeProps>(function Node({
             aria-label={isFullyExpanded ? 'Expand' : 'Collapse'}
             data-action="expand-all"
             data-expanded={isFullyExpanded}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
             onPress={(event) => {
               event.preventDefault();
               setFullyExpanded();
@@ -130,7 +120,7 @@ export const Node = React.memo<NodeProps>(function Node({
         id={id}
         aria-controls={item.children && item.children[0]}
         aria-expanded={isExpanded}
-        depth={isOrphan ? item.depth : item.depth - 1}
+        depth={item.depth}
         isComponent={item.type === 'component'}
         isExpandable={item.children && item.children.length > 0}
         isExpanded={isExpanded}
@@ -156,7 +146,7 @@ export const LeafNodeStyleWrapper = styled.View(({ theme }) => ({
   paddingRight: 20,
   color: theme.color.defaultText,
   backgroundColor: 'transparent',
-  minHeight: 28,
+  minHeight: 34,
   borderRadius: 4,
 }));
 
@@ -167,7 +157,7 @@ export const RootNode = styled.View(() => ({
   justifyContent: 'space-between',
   marginTop: 16,
   marginBottom: 4,
-  minHeight: 28,
+  minHeight: 34,
 }));
 
 export const RootNodeText = styled.Text(({ theme }) => ({
@@ -180,16 +170,45 @@ export const RootNodeText = styled.Text(({ theme }) => ({
 }));
 
 const CollapseButton = styled.TouchableOpacity(() => ({
+  flex: 1,
   display: 'flex',
   flexDirection: 'row',
-  paddingVertical: 0,
   paddingHorizontal: 8,
+  paddingTop: 8,
+  paddingBottom: 7,
   borderRadius: 4,
   gap: 6,
   alignItems: 'center',
   cursor: 'pointer',
-  height: 28,
+  minHeight: 34,
 }));
+
+const flexStyle: ViewStyle = { flex: 1 };
+
+// getEstimatedItemSize provides item size estimates for LegendList
+// Root items have marginTop (16) + marginBottom (4) + minHeight (28) = 48px
+// All other items have minHeight = 28px
+const ITEM_HEIGHT = 34;
+const ROOT_ITEM_HEIGHT = 54; // 34 + 16 (marginTop) + 4 (marginBottom)
+
+const getEstimatedItemSize = (
+  item: {
+    itemId: string;
+    item: {
+      type: 'root' | 'component' | 'story' | 'docs';
+      id: string;
+      name: string;
+      children: string[];
+      parent: string | null;
+      depth: number;
+    };
+    isRoot: boolean;
+    isOrphan: boolean;
+  },
+  _index: number
+) => {
+  return item?.isRoot ? ROOT_ITEM_HEIGHT : ITEM_HEIGHT;
+};
 
 export const Tree = React.memo<{
   isBrowsing: boolean;
@@ -201,8 +220,11 @@ export const Tree = React.memo<{
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
-  const containerRef = useRef<View>(null);
+  const { registerCallback } = useSelectedNode();
+  const [idToScrolllOnMount, setIdToScrolllOnMount] = useState<string | null>(null);
 
+  const insets = useSafeAreaInsets();
+  const listRef = useRef<LegendListRef | null>(null);
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
   const [rootIds, orphanIds, initialExpanded] = useMemo(
     () =>
@@ -256,9 +278,8 @@ export const Tree = React.memo<{
   // Omit single-story components from the list of nodes.
   const collapsedItems = useMemo(
     () => Object.keys(data).filter((id) => !singleStoryComponentIds.includes(id)),
-    // eslint-disable-next-line react-compiler/react-compiler
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [singleStoryComponentIds]
+
+    [singleStoryComponentIds, data]
   );
 
   // Rewrite the dataset to place the child story in place of the component.
@@ -282,16 +303,7 @@ export const Tree = React.memo<{
       },
       { ...data }
     );
-    // eslint-disable-next-line react-compiler/react-compiler
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
-
-  const ancestry = useMemo(() => {
-    return collapsedItems.reduce(
-      (acc, id) => Object.assign(acc, { [id]: getAncestorIds(collapsedData, id) }),
-      {} as { [key: string]: string[] }
-    );
-  }, [collapsedItems, collapsedData]);
+  }, [data, singleStoryComponentIds]);
 
   // Track expanded nodes, keep it in sync with props and enable keyboard shortcuts.
   const [expanded, setExpanded] = useExpanded({
@@ -303,14 +315,74 @@ export const Tree = React.memo<{
     onSelectStoryId,
   });
 
-  const treeItems = useMemo(() => {
-    return collapsedItems.map((itemId) => {
+  // Optimized: Build a simple parent map instead of full ancestry for each item
+  // This is much faster than calling getAncestorIds for every item
+  const parentMap = useMemo(() => {
+    const map: Record<string, string | null> = {};
+    collapsedItems.forEach((id) => {
+      const item = collapsedData[id];
+      map[id] = ('parent' in item && item.parent) || null;
+    });
+    return map;
+  }, [collapsedItems, collapsedData]);
+
+  // Helper function to check if all ancestors are expanded (inline traversal)
+  const isItemVisible = useCallback(
+    (itemId: string) => {
       const item = collapsedData[itemId];
+      if (item.type === 'root') return true;
+      if (!('parent' in item) || !item.parent) return true;
+
+      // Traverse up the parent chain checking if each is expanded
+      let currentId: string | null = item.parent;
+      while (currentId) {
+        if (!expanded[currentId]) return false;
+        currentId = parentMap[currentId];
+      }
+      return true;
+    },
+    [collapsedData, expanded, parentMap]
+  );
+
+  // Convert to data array for LegendList, filtering only displayed items
+  const treeData = useMemo(() => {
+    return collapsedItems
+      .map((itemId) => {
+        const item = collapsedData[itemId];
+
+        // Use optimized visibility check
+        if (!isItemVisible(itemId)) {
+          return null;
+        }
+
+        if (item.type === 'root') {
+          const descendants = expandableDescendants[item.id];
+          const isFullyExpanded = descendants.every((d: string) => expanded[d]);
+          return {
+            itemId,
+            item,
+            isRoot: true,
+            isFullyExpanded,
+            descendants,
+          };
+        }
+
+        return {
+          itemId,
+          item,
+          isRoot: false,
+          isOrphan: orphanIds.some((oid) => itemId === oid || itemId.startsWith(`${oid}-`)),
+        };
+      })
+      .filter(Boolean);
+  }, [collapsedData, collapsedItems, expandableDescendants, expanded, isItemVisible, orphanIds]);
+
+  const renderItem = useCallback(
+    ({ item: treeItem }: LegendListRenderItemProps<(typeof treeData)[number]>) => {
+      const { itemId, item, isRoot } = treeItem;
       const id = createId(itemId, refId);
 
-      if (item.type === 'root') {
-        const descendants = expandableDescendants[item.id];
-        const isFullyExpanded = descendants.every((d: string) => expanded[d]);
+      if (isRoot) {
         return (
           <Root
             key={id}
@@ -321,8 +393,8 @@ export const Tree = React.memo<{
             isSelected={selectedStoryId === itemId}
             isExpanded={!!expanded[itemId]}
             setExpanded={setExpanded}
-            isFullyExpanded={isFullyExpanded}
-            expandableDescendants={descendants}
+            isFullyExpanded={treeItem.isFullyExpanded}
+            expandableDescendants={treeItem.descendants}
             onSelectStoryId={onSelectStoryId}
             docsMode={false}
             color=""
@@ -330,8 +402,6 @@ export const Tree = React.memo<{
           />
         );
       }
-
-      const isDisplayed = !item.parent || ancestry[itemId].every((a: string) => expanded[a]);
 
       return (
         <Node
@@ -341,40 +411,83 @@ export const Tree = React.memo<{
           refId={refId}
           color={null}
           docsMode={docsMode}
-          isOrphan={orphanIds.some((oid) => itemId === oid || itemId.startsWith(`${oid}-`))}
-          isDisplayed={isDisplayed}
+          isOrphan={treeItem.isOrphan}
+          isDisplayed
           isSelected={selectedStoryId === itemId}
           isExpanded={!!expanded[itemId]}
           setExpanded={setExpanded}
           onSelectStoryId={onSelectStoryId}
         />
       );
+    },
+    [docsMode, expanded, onSelectStoryId, refId, selectedStoryId, setExpanded, status]
+  );
+
+  const keyExtractor = useCallback(
+    (item: any) => {
+      return createId(item.itemId, refId);
+    },
+    [refId]
+  );
+
+  const contentContainerStyle = useMemo(
+    () => ({
+      marginTop: isMain && orphanIds.length > 0 ? 20 : 0,
+      paddingBottom: insets.bottom + 20,
+      paddingLeft: 6,
+    }),
+    [isMain, orphanIds.length, insets.bottom]
+  );
+
+  // so we can call the scroll to function in the search component
+  useLayoutEffect(() => {
+    registerCallback(({ id: nextId, animated }) => {
+      const targetId = nextId ?? selectedStoryId;
+
+      const ancestorIds = getAncestorIds(collapsedData, targetId);
+
+      setExpanded({ ids: [...ancestorIds, targetId], value: true });
+
+      setIdToScrolllOnMount(targetId);
     });
-  }, [
-    ancestry,
-    collapsedData,
-    collapsedItems,
-    docsMode,
-    expandableDescendants,
-    expanded,
-    onSelectStoryId,
-    orphanIds,
-    refId,
-    selectedStoryId,
-    setExpanded,
-    status,
-  ]);
+  }, [collapsedData, registerCallback, selectedStoryId, setExpanded]);
+
+  // a workaround for the fact that we need to expand and scroll to an item that is not in the tree yet
+  useEffect(() => {
+    if (idToScrolllOnMount) {
+      const index = treeData.findIndex((item) => {
+        return item.itemId === idToScrolllOnMount;
+      });
+
+      if (index >= 0) {
+        listRef.current?.scrollToIndex({
+          index,
+          animated: false,
+          viewPosition: 0.5,
+          viewOffset: 100,
+        });
+
+        setIdToScrolllOnMount(null);
+      }
+    }
+  }, [idToScrolllOnMount, treeData]);
+
   return (
-    <Container ref={containerRef} hasOrphans={isMain && orphanIds.length > 0}>
-      {treeItems}
-    </Container>
+    <View style={flexStyle}>
+      <LegendList
+        ref={listRef}
+        style={flexStyle}
+        data={treeData}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        contentContainerStyle={contentContainerStyle}
+        getFixedItemSize={getEstimatedItemSize}
+        keyboardShouldPersistTaps="handled"
+        recycleItems
+      />
+    </View>
   );
 });
-
-const Container = styled.View<{ hasOrphans: boolean }>((props) => ({
-  marginTop: props.hasOrphans ? 20 : 0,
-  marginBottom: 20,
-}));
 
 const Root = React.memo<NodeProps & { expandableDescendants: string[] }>(function Root({
   setExpanded,

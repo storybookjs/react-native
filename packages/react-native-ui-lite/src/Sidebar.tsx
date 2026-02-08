@@ -2,7 +2,7 @@ import { styled } from '@storybook/react-native-theming';
 import type { CombinedDataset, Selection } from '@storybook/react-native-ui-common';
 import { useLastViewed } from '@storybook/react-native-ui-common';
 import React, { useMemo } from 'react';
-import { View } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 import type { State } from 'storybook/manager-api';
 import type { API_LoadedRefData } from 'storybook/internal/types';
 import { DEFAULT_REF_ID } from './constants';
@@ -11,20 +11,25 @@ import { Search } from './Search';
 import { SearchResults } from './SearchResults';
 
 const Container = styled.View(({ theme }) => ({
-  width: '100%',
-  height: '100%',
-  display: 'flex',
+  flex: 1,
   flexDirection: 'column',
   backgroundColor: theme.background.content,
 }));
 
 const Top = styled.View({
-  paddingLeft: 4,
-  paddingRight: 4,
-  paddingTop: 16,
+  paddingTop: 8,
   flex: 1,
-  flexDirection: 'row',
 });
+
+const flexStyle: ViewStyle = { flex: 1 };
+
+// legend list print a warning if the items height is 0
+const noneStyle: ViewStyle = {
+  // display: 'none',
+  height: 1,
+  width: 0,
+  opacity: 0,
+};
 
 const Swap = React.memo(function Swap({
   children,
@@ -34,10 +39,26 @@ const Swap = React.memo(function Swap({
   condition: boolean;
 }) {
   const [a, b] = React.Children.toArray(children);
+
+  const aStyle = useMemo(() => (condition ? flexStyle : noneStyle), [condition]);
+  const bStyle = useMemo(() => (condition ? noneStyle : flexStyle), [condition]);
+  // // NOTE: its important not to completely hide items so that we don't lose the state of our list items
   return (
     <>
-      <View style={{ display: condition ? 'flex' : 'none' }}>{a}</View>
-      <View style={{ display: condition ? 'none' : 'flex' }}>{b}</View>
+      <View
+        style={aStyle}
+        accessibilityElementsHidden={!condition}
+        importantForAccessibility={condition ? 'auto' : 'no-hide-descendants'}
+      >
+        {a}
+      </View>
+      <View
+        style={bStyle}
+        accessibilityElementsHidden={condition}
+        importantForAccessibility={condition ? 'no-hide-descendants' : 'auto'}
+      >
+        {b}
+      </View>
     </>
   );
 });
@@ -91,7 +112,7 @@ export const Sidebar = React.memo(function Sidebar({
   const lastViewedProps = useLastViewed(selected);
 
   return (
-    <Container style={{ paddingHorizontal: 10 }}>
+    <Container>
       <Top>
         {/* <Heading
             className="sidebar-header"

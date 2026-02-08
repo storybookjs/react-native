@@ -11,11 +11,14 @@ import {
   Button,
 } from '@storybook/react-native-ui-common';
 
-import { FuseResultMatch } from 'fuse.js';
 import { PressableProps, View } from 'react-native';
 
 import { ComponentIcon } from './icon/ComponentIcon';
 import { StoryIcon } from './icon/StoryIcon';
+
+// Microfuzz highlight types
+type HighlightRange = [number, number];
+type HighlightRanges = HighlightRange[];
 
 const ResultsList = styled.View({
   margin: 0,
@@ -91,23 +94,29 @@ const RecentlyOpenedTitle = styled.View(({ theme }) => ({
   alignItems: 'center',
 }));
 
-const Highlight: FC<PropsWithChildren<{ match?: FuseResultMatch }>> = React.memo(
-  function Highlight({ children, match }) {
-    if (!match) return children;
-    const { value, indices } = match;
+// Highlight component using native microfuzz format
+// ranges is an array of [start, end] tuples (end is inclusive in microfuzz)
+const Highlight: FC<PropsWithChildren<{ text: string; ranges?: HighlightRanges }>> = React.memo(
+  function Highlight({ children, text, ranges }) {
+    if (!ranges || ranges.length === 0) return <Text>{children ?? text}</Text>;
 
-    const { nodes: result } = indices.reduce<{ cursor: number; nodes: ReactNode[] }>(
+    const { nodes: result } = ranges.reduce<{ cursor: number; nodes: ReactNode[] }>(
       ({ cursor, nodes }, [start, end], index, { length }) => {
-        nodes.push(<Text key={`text-${index}`}>{value.slice(cursor, start)}</Text>);
-        nodes.push(<Mark key={`mark-${index}`}>{value.slice(start, end + 1)}</Mark>);
-        if (index === length - 1) {
-          nodes.push(<Text key={`last-${index}`}>{value.slice(end + 1)}</Text>);
+        // Add text before the highlight
+        if (cursor < start) {
+          nodes.push(<Text key={`text-${index}`}>{text.slice(cursor, start)}</Text>);
+        }
+        // Add highlighted text (end is inclusive in microfuzz)
+        nodes.push(<Mark key={`mark-${index}`}>{text.slice(start, end + 1)}</Mark>);
+        // Add remaining text after last highlight
+        if (index === length - 1 && end + 1 < text.length) {
+          nodes.push(<Text key={`last-${index}`}>{text.slice(end + 1)}</Text>);
         }
         return { cursor: end + 1, nodes };
       },
       { cursor: 0, nodes: [] }
     );
-    return <Text key={`end-${match.key}`}>{result}</Text>;
+    return <Text>{result}</Text>;
   }
 );
 
@@ -145,8 +154,9 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
     [onPress]
   );
 
-  const nameMatch = matches.find((match: FuseResultMatch) => match.key === 'name');
-  const pathMatches = matches.filter((match: FuseResultMatch) => match.key === 'path');
+  // matches[0] = name highlights, matches[1] = path highlights (as joined string)
+  const nameHighlights = matches?.[0];
+  const pathString = item.path?.join(' ') ?? '';
 
   return (
     <ResultRow {...props} onPress={press}>
@@ -156,25 +166,16 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
       </IconWrapper>
       <ResultRowContent testID="search-result-item--label">
         <Title>
-          <Highlight key="search-result-item--label-highlight" match={nameMatch}>
+          <Highlight text={item.name} ranges={nameHighlights}>
             {item.name}
           </Highlight>
         </Title>
         <Path>
-          {item.path.map((group, index) => {
-            const pathSeparator = index === item.path.length - 1 ? '' : '/';
-            return (
-              <View key={index} style={{ flexShrink: 1 }}>
-                <PathText>
-                  <Highlight
-                    match={pathMatches.find((match: FuseResultMatch) => match.refIndex === index)}
-                  >
-                    {`${group}${pathSeparator}`}
-                  </Highlight>
-                </PathText>
-              </View>
-            );
-          })}
+          <PathText>
+            <Highlight text={pathString} ranges={matches?.[1]}>
+              {item.path?.join(' / ')}
+            </Highlight>
+          </PathText>
         </Path>
       </ResultRowContent>
     </ResultRow>
