@@ -40,6 +40,7 @@ const portalContainerStyle: ViewStyle = {
 
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
+  onVisibilityChange?: (visible: boolean) => void;
 }
 
 export interface MobileMenuDrawerRef {
@@ -110,7 +111,7 @@ export const useAnimatedModalHeight = () => {
 };
 
 export const MobileMenuDrawer = memo(
-  forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(({ children }, ref) => {
+  forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(({ children, onVisibilityChange }, ref) => {
     const [isVisible, setIsVisible] = useState(false);
     const { scrollCallback } = useSelectedNode();
     const theme = useTheme();
@@ -127,6 +128,7 @@ export const MobileMenuDrawer = memo(
       dragY.setValue(0);
       slideAnim.setValue(height);
       setIsVisible(true);
+      onVisibilityChange?.(true);
 
       Animated.timing(slideAnim, {
         toValue: 0,
@@ -139,10 +141,11 @@ export const MobileMenuDrawer = memo(
           scrollCallback({ animated: false, id: undefined });
         }
       });
-    }, [dragY, height, scrollCallback, slideAnim]);
+    }, [dragY, height, onVisibilityChange, scrollCallback, slideAnim]);
 
     const closeDrawer = useCallback(() => {
       Keyboard.dismiss();
+      onVisibilityChange?.(false);
 
       Animated.timing(slideAnim, {
         toValue: height,
@@ -154,7 +157,7 @@ export const MobileMenuDrawer = memo(
           setIsVisible(false);
         }
       });
-    }, [height, slideAnim]);
+    }, [height, onVisibilityChange, slideAnim]);
 
     // Create the pan responder for handling drag gestures
     const panResponder = useMemo(
@@ -250,9 +253,15 @@ export const MobileMenuDrawer = memo(
           pointerEvents={isVisible ? 'auto' : 'none'}
           accessibilityElementsHidden={!isVisible}
           importantForAccessibility={isVisible ? 'auto' : 'no-hide-descendants'}
+          accessibilityViewIsModal={isVisible}
         >
           <View style={flexStyle}>
-            <Pressable style={flexStyle} onPress={closeDrawer} />
+            <Pressable
+              style={flexStyle}
+              onPress={closeDrawer}
+              accessibilityRole="button"
+              accessibilityLabel="Close story list"
+            />
           </View>
 
           <Animated.View

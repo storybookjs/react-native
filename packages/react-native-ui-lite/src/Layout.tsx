@@ -11,7 +11,15 @@ import {
   useStoreNumberState,
   useStyle,
 } from '@storybook/react-native-ui-common';
-import { ReactElement, ReactNode, useCallback, useLayoutEffect, useRef, useState } from 'react';
+import {
+  ReactElement,
+  ReactNode,
+  useCallback,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { Text, TouchableOpacity, useWindowDimensions, View, ViewStyle } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
@@ -209,6 +217,7 @@ export const Layout = ({
 
   const mobileMenuDrawerRef = useRef<MobileMenuDrawerRef>(null);
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const setSelection = useCallback(({ storyId: newStoryId }: { storyId: string }) => {
     const channel = addons.getChannel();
@@ -217,7 +226,11 @@ export const Layout = ({
   }, []);
 
   return (
-    <View style={containerStyle}>
+    <View
+      style={containerStyle}
+      accessibilityElementsHidden={isDrawerOpen}
+      importantForAccessibility={isDrawerOpen ? 'no-hide-descendants' : 'auto'}
+    >
       {isDesktop ? (
         <>
           <View style={desktopSidebarStyle} pointerEvents={isResizing ? 'none' : 'auto'}>
@@ -331,7 +344,7 @@ export const Layout = ({
       ) : null}
 
       {isDesktop ? null : (
-        <MobileMenuDrawer ref={mobileMenuDrawerRef}>
+        <MobileMenuDrawer ref={mobileMenuDrawerRef} onVisibilityChange={setIsDrawerOpen}>
           <View style={mobileMenuDrawerContentStyle}>
             <StorybookLogo theme={theme} />
           </View>
