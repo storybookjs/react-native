@@ -275,6 +275,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
           hitSlop={hitSlop}
           Icon={CloseIcon}
           onPress={() => onClose?.()}
+          accessibilityLabel="Close addons panel"
         />
       </View>
       <ScrollView

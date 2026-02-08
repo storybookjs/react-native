@@ -231,7 +231,7 @@ export const Layout = ({
                 <View style={desktopLogoContainer}>
                   <StorybookLogo theme={theme} />
 
-                  <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} />
+                  <IconButton onPress={() => setDesktopSidebarOpen(false)} Icon={MenuIcon} accessibilityLabel="Close sidebar" />
                 </View>
 
                 <View style={flexStyle}>
@@ -248,7 +248,7 @@ export const Layout = ({
                 </View>
               </>
             ) : (
-              <IconButton onPress={() => setDesktopSidebarOpen(true)} Icon={MenuIcon} />
+              <IconButton onPress={() => setDesktopSidebarOpen(true)} Icon={MenuIcon} accessibilityLabel="Open sidebar" />
             )}
           </View>
           {desktopSidebarOpen ? (
@@ -301,6 +301,7 @@ export const Layout = ({
                   style={iconFloatRightStyle}
                   onPress={() => setDesktopAddonsPanelOpen(true)}
                   Icon={BottomBarToggleIcon}
+                  accessibilityLabel="Open addons panel"
                 />
               )}
             </View>
@@ -330,6 +331,7 @@ export const Layout = ({
               hitSlop={addonButtonHitSlop}
               onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
               Icon={BottomBarToggleIcon}
+              accessibilityLabel="Open addons panel"
             />
           </Nav>
         </Container>

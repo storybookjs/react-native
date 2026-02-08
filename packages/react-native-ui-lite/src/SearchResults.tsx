@@ -168,7 +168,7 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
   const pathString = item.path?.join(' ') ?? '';
 
   return (
-    <ResultRow {...props} onPress={press} accessibilityRole="button">
+    <ResultRow {...props} onPress={press} accessibilityRole="button" accessibilityLabel={`${item.name}, ${item.path?.join(' / ') ?? ''}`}>
       <IconWrapper>
         {item.type === 'component' && (
           <ComponentIcon width={14} height={14} color={theme.color.secondary} />
@@ -277,7 +277,7 @@ export const SearchResults: FC<{
           return (
             <RecentlyOpenedTitle>
               <Text>Recently opened</Text>
-              <IconButton onPress={listItem.clearLastViewed} />
+              <IconButton onPress={listItem.clearLastViewed} accessibilityLabel="Clear recently opened" />
             </RecentlyOpenedTitle>
           );
         case 'noResults':
