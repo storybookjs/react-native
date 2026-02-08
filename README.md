@@ -26,8 +26,8 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 - 🔧 [getStorybookUI](#getstorybookui-options)
 - 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
-- ✨ [Examples](#examples)
-- 🤖 [Claude Code Plugin](#claude-code-plugin)
+- ✨ [Examples](#examples)- [Storybook for React Native](#storybook-for-react-native)
+- 🤖 [Agent skills](#agent-skills)
 
 ## Getting Started
 
@@ -521,25 +521,21 @@ Here are some example projects to help you get started
 - Adding a separate entry point and dev menu item in native files for RN CLI project: https://github.com/zubko/react-native-storybook-with-dev-menu
 - Want to showcase your own project? open a PR and add it to the list!
 
-## Claude Code Plugin
+## Agent skills
 
-This repo includes a [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that helps you write Storybook stories for React Native components. It provides guidance on CSF syntax, controls, addons, decorators, parameters, and portable stories. (More coming soon)
+This repo includes agent skills for setting up and working with Storybook for React Native.
+
+### Skills
+
+- **writing-react-native-storybook-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
+- **setup-react-native-storybook** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, and React Native CLI setups
 
 ### Installation
 
-Add the marketplace and install the plugin:
+#### Any AI agent or IDE (universal)
 
 ```sh
-/plugin marketplace add storybookjs/react-native
-/plugin install react-native-storybook@react-native-storybook
+npx skills add storybookjs/react-native
 ```
 
-Then restart Claude Code to load the plugin.
-
-### Usage
-
-Once installed, Claude Code will automatically use the skill when you ask it to create or edit story files. For example:
-
-- "Write stories for my Button component"
-- "Add controls to this story"
-- "Set up the backgrounds addon"
+This works with any agent harness that supports skills (Claude Code, Cursor, Windsurf, etc.).

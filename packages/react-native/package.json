@@ -24,6 +24,7 @@
   "exports": {
     ".": "./dist/index.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
+    "./repack/withStorybook": "./dist/repack/withStorybook.js",
     "./node": "./dist/node.js",
     "./preview": "./dist/preview.js",
     "./scripts/generate": "./scripts/generate.js",
