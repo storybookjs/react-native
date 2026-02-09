@@ -17,6 +17,7 @@ import {
   getAncestorIds,
   getDescendantIds,
   isStoryHoistable,
+  startCase,
 } from '@storybook/react-native-ui-common';
 import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
 import { CollapseAllIcon } from './icon/CollapseAllIcon';
@@ -40,10 +41,6 @@ interface NodeProps {
   onSelectStoryId: (itemId: string) => void;
   status: State['status'][keyof State['status']];
 }
-
-const TextItem = styled.Text(({ theme }) => ({
-  color: theme.color.defaultText,
-}));
 
 export const Node = React.memo<NodeProps>(function Node({
   item,
@@ -106,7 +103,7 @@ export const Node = React.memo<NodeProps>(function Node({
           aria-expanded={isExpanded}
         >
           <CollapseIcon isExpanded={isExpanded} />
-          <TextItem>{item.renderLabel?.(item, {}) || item.name}</TextItem>
+          <RootNodeText>{startCase(item.name)}</RootNodeText>
         </CollapseButton>
         {isExpanded && (
           <IconButton
@@ -142,7 +139,7 @@ export const Node = React.memo<NodeProps>(function Node({
           setExpanded({ ids: [item.id], value: !isExpanded });
         }}
       >
-        {(item.renderLabel as (i: typeof item) => React.ReactNode)?.(item) || item.name}
+        {startCase(item.name)}
       </BranchNode>
     );
   }
@@ -174,7 +171,7 @@ export const RootNode = styled.View(() => ({
 }));
 
 export const RootNodeText = styled.Text(({ theme }) => ({
-  fontSize: theme.typography.size.s1 - 1,
+  fontSize: theme.typography.size.s1,
   fontWeight: theme.typography.weight.bold,
   color: theme.textMutedColor,
   lineHeight: 16,

@@ -8,6 +8,7 @@ import {
   isStoryHoistable,
   Item,
   useExpanded,
+  startCase,
 } from '@storybook/react-native-ui-common';
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { View, ViewStyle } from 'react-native';
@@ -38,27 +39,6 @@ interface NodeProps {
   setFullyExpanded?: () => void;
   onSelectStoryId: (itemId: string) => void;
   status: State['status'][keyof State['status']];
-}
-
-// from estookit/string
-const CASE_SPLIT_PATTERN =
-  /\p{Lu}?\p{Ll}+|[0-9]+|\p{Lu}+(?!\p{Ll})|\p{Emoji_Presentation}|\p{Extended_Pictographic}|\p{L}+/gu;
-// from estookit/string
-function words(str: string) {
-  return Array.from(str.match(CASE_SPLIT_PATTERN) ?? []);
-}
-// from estookit/string
-function startCase(str: string) {
-  const words$1 = words(str.trim());
-  let result = '';
-  for (let i = 0; i < words$1.length; i++) {
-    const word = words$1[i];
-    if (result) {
-      result += ' ';
-    }
-    result += word[0].toUpperCase() + word.slice(1).toLowerCase();
-  }
-  return result;
 }
 
 export const Node = React.memo<NodeProps>(function Node({
