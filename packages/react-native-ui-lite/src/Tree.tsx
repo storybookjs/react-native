@@ -40,10 +40,26 @@ interface NodeProps {
   status: State['status'][keyof State['status']];
 }
 
-const TextItem = styled.Text(({ theme }) => ({
-  fontSize: theme.typography.size.s2 + 1,
-  color: theme.color.defaultText,
-}));
+// from estookit/string
+const CASE_SPLIT_PATTERN =
+  /\p{Lu}?\p{Ll}+|[0-9]+|\p{Lu}+(?!\p{Ll})|\p{Emoji_Presentation}|\p{Extended_Pictographic}|\p{L}+/gu;
+// from estookit/string
+function words(str: string) {
+  return Array.from(str.match(CASE_SPLIT_PATTERN) ?? []);
+}
+// from estookit/string
+function startCase(str: string) {
+  const words$1 = words(str.trim());
+  let result = '';
+  for (let i = 0; i < words$1.length; i++) {
+    const word = words$1[i];
+    if (result) {
+      result += ' ';
+    }
+    result += word[0].toUpperCase() + word.slice(1).toLowerCase();
+  }
+  return result;
+}
 
 export const Node = React.memo<NodeProps>(function Node({
   item,
@@ -92,7 +108,7 @@ export const Node = React.memo<NodeProps>(function Node({
           aria-expanded={isExpanded}
         >
           <CollapseIcon isExpanded={isExpanded} />
-          <TextItem>{item.renderLabel?.(item, {}) || item.name}</TextItem>
+          <RootNodeText>{startCase(item.name)}</RootNodeText>
         </CollapseButton>
         {isExpanded && (
           <IconButton
@@ -129,7 +145,7 @@ export const Node = React.memo<NodeProps>(function Node({
           setExpanded({ ids: [item.id], value: !isExpanded });
         }}
       >
-        {(item.renderLabel as (i: typeof item) => React.ReactNode)?.(item) || item.name}
+        {startCase(item.name)}
       </BranchNode>
     );
   }
@@ -161,7 +177,7 @@ export const RootNode = styled.View(() => ({
 }));
 
 export const RootNodeText = styled.Text(({ theme }) => ({
-  fontSize: theme.typography.size.s1 - 1,
+  fontSize: theme.typography.size.s2,
   fontWeight: theme.typography.weight.bold,
   color: theme.textMutedColor,
   lineHeight: 16,
