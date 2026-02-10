@@ -157,7 +157,7 @@ export const RootNode = styled.View(() => ({
 }));
 
 export const RootNodeText = styled.Text(({ theme }) => ({
-  fontSize: theme.typography.size.s2,
+  fontSize: theme.typography.size.s2 - 1,
   fontWeight: theme.typography.weight.bold,
   color: theme.textMutedColor,
   lineHeight: 16,
