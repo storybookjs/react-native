@@ -7,6 +7,10 @@ import { view } from './storybook.requires';
 const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
 const isLiteUI = process.env.EXPO_PUBLIC_LITE_UI === 'true';
 
+export const showStorybook = (v: boolean = true) => {
+  view.showStorybook(v);
+};
+
 const StorybookUIRoot = view.getStorybookUI({
   shouldPersistSelection: true,
   storage: {

@@ -58,7 +58,11 @@ async function generate({
   port = 7007,
 }) {
   // here we want to get the ip address and pass it to rn storybook so that devices can connect over lan easily
-  const channelHost = host === 'auto' ? getLocalIPAddress() : host;
+  const envChannelHost = process.env.STORYBOOK_CHANNEL_HOST;
+  const envChannelPort = process.env.STORYBOOK_CHANNEL_PORT;
+
+  const channelHost = envChannelHost || (host === 'auto' ? getLocalIPAddress() : host);
+  const channelPort = envChannelPort || port;
   const storybookRequiresLocation = path.resolve(
     cwd,
     configPath,
@@ -154,6 +158,7 @@ declare global {
   var view: View;
   var STORIES: typeof normalizedStories;
   var STORYBOOK_WEBSOCKET: { host: string; port: number } | undefined;
+  var STORYBOOK_FORCE_ENABLED: boolean | undefined;
 }
 `;
 
@@ -170,9 +175,10 @@ ${useJs ? '' : globalTypes}
 
 const annotations = ${annotations};
 
-globalThis.STORIES = normalizedStories;
-${channelHost ? `globalThis.STORYBOOK_WEBSOCKET = { host: '${channelHost}', port: ${port ?? 7007} };` : ''}
 
+globalThis.STORIES = normalizedStories;
+${channelHost ? `globalThis.STORYBOOK_WEBSOCKET = { host: '${channelHost}', port: ${channelPort} };` : ''}
+${process.env.STORYBOOK_FORCE_ENABLED ? `globalThis.STORYBOOK_FORCE_ENABLED = true;` : ''}
 ${useJs ? '' : '// @ts-ignore'}
 module?.hot?.accept?.();
 

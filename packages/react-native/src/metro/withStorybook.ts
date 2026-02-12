@@ -139,12 +139,15 @@ export function withStorybook(
     configPath = path.resolve(process.cwd(), './.rnstorybook'),
     websockets,
     useJs = false,
-    enabled = true,
     docTools = true,
     liteMode = false,
   } = options;
 
   const disableTelemetry = optionalEnvToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY);
+
+  // the user might have set 'false' chromatic capture would have to override this
+  const enabled =
+    optionalEnvToBoolean(process.env.STORYBOOK_FORCE_ENABLED) || (options.enabled ?? true);
 
   if (!disableTelemetry && enabled) {
     const event = process.env.NODE_ENV === 'production' ? 'build' : 'dev';

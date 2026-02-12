@@ -194,6 +194,10 @@ export class View {
     return channel;
   };
 
+  showStorybook = (v: boolean = true) => {
+    this._channel.emit('SHOW_STORYBOOK', v);
+  };
+
   createPreparedStoryMapping = async () => {
     await this._preview.ready().then(() =>
       Promise.all(
@@ -269,7 +273,11 @@ export class View {
     const self = this;
 
     // eslint-disable-next-line react/display-name
-    return () => {
+    return ({ children }: { children: React.ReactNode }) => {
+      const isShownInitially =
+        !children || !!self._channel.last('SHOW_STORYBOOK') || !!globalThis.STORYBOOK_FORCE_ENABLED;
+      const [isShown, setIsShown] = useState(isShownInitially);
+
       const setContext = useSetStoryContext();
       const story = useStoryContext();
       const colorScheme = useColorScheme();
@@ -280,6 +288,13 @@ export class View {
         () => deepmerge(colorScheme === 'dark' ? darkTheme : theme, params.theme ?? {}),
         [colorScheme]
       );
+
+      // activate the storybook
+      useEffect(() => {
+        self._channel.on('SHOW_STORYBOOK', (v = true) => {
+          setIsShown(v);
+        });
+      }, []);
 
       // deep link handling
       useEffect(() => {
@@ -401,6 +416,10 @@ export class View {
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [ready, update]);
+
+      if (!isShown) {
+        return children || null;
+      }
 
       if (!ready) {
         return (
