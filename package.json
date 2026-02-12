@@ -38,6 +38,7 @@
     "build": "lerna run prepare",
     "version-packages": "lerna version --force-publish",
     "publish:alpha": "lerna publish from-git --dist-tag alpha",
+    "publish:canary": "lerna publish from-git --dist-tag canary",
     "publish:latest": "lerna publish from-git --dist-tag latest",
     "publish:next": "lerna publish from-git --dist-tag next",
     "test:ci": "lerna run test:ci",
