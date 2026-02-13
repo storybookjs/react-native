@@ -275,7 +275,7 @@ export class View {
     // eslint-disable-next-line react/display-name
     return ({ children }: { children: React.ReactNode }) => {
       const isShownInitially =
-        !children || !!self._channel.last('SHOW_STORYBOOK') || !!globalThis.STORYBOOK_FORCE_ENABLED;
+        !children || !!self._channel.last('SHOW_STORYBOOK') || !!globalThis.STORYBOOK_FORCE_OPEN;
       const [isShown, setIsShown] = useState(isShownInitially);
 
       const setContext = useSetStoryContext();

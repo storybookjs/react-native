@@ -1,3 +1,7 @@
+const fs = require('node:fs');
+const { networkInterfaces } = require('node:os');
+const path = require('node:path');
+
 const {
   toRequireContext,
   ensureRelativePathHasDot,
@@ -5,12 +9,13 @@ const {
   resolveAddonFile,
   getAddonName,
 } = require('./common');
-const { normalizeStories, globToRegexp, loadMainConfig } = require('storybook/internal/common');
+const {
+  normalizeStories,
+  globToRegexp,
+  loadMainConfig,
+  optionalEnvToBoolean,
+} = require('storybook/internal/common');
 const { interopRequireDefault } = require('./require-interop');
-const fs = require('fs');
-const { networkInterfaces } = require('node:os');
-
-const path = require('path');
 
 const cwd = process.cwd();
 
@@ -52,22 +57,46 @@ function getLocalIPAddress() {
 
 async function generate({
   configPath,
+  enabled = true,
   useJs = false,
   docTools = true,
+  forceOpen = false,
   host = undefined,
   port = 7007,
 }) {
-  // here we want to get the ip address and pass it to rn storybook so that devices can connect over lan easily
-  const envChannelHost = process.env.STORYBOOK_CHANNEL_HOST;
-  const envChannelPort = process.env.STORYBOOK_CHANNEL_PORT;
-
-  const channelHost = envChannelHost || (host === 'auto' ? getLocalIPAddress() : host);
-  const channelPort = envChannelPort || port;
   const storybookRequiresLocation = path.resolve(
     cwd,
     configPath,
     `storybook.requires.${useJs ? 'js' : 'ts'}`
   );
+
+  const storybookEnabled = optionalEnvToBoolean(process.env.STORYBOOK_FORCE_ENABLED) || enabled;
+  const storybookOpen = optionalEnvToBoolean(process.env.STORYBOOK_FORCE_OPEN) || forceOpen;
+
+  if (!storybookEnabled) {
+    const assetsPath = path.join(
+      path.dirname(require.resolve('@storybook/react-native/package.json')),
+      'assets',
+      'generate'
+    );
+    const content = fs.readFileSync(path.join(assetsPath, 'empty.js'), { encoding: 'utf8' });
+
+    fs.writeFileSync(storybookRequiresLocation, content, {
+      encoding: 'utf8',
+      flag: 'w',
+    });
+    return;
+  }
+
+  // here we want to get the ip address and pass it to rn storybook so that devices can connect over lan easily
+  const envChannelHost = process.env.STORYBOOK_CHANNEL_HOST;
+  const envChannelPort = process.env.STORYBOOK_CHANNEL_PORT;
+
+  const registeredAddons = [];
+  const enhancers = [];
+
+  const channelHost = envChannelHost || (host === 'auto' ? getLocalIPAddress() : host);
+  const channelPort = envChannelPort || port;
 
   const main = await loadMain({ configPath, cwd });
 
@@ -97,8 +126,6 @@ async function generate({
   }`;
   });
 
-  const registeredAddons = [];
-
   for (const addon of main.addons) {
     const registerPath = resolveAddonFile(
       getAddonName(addon),
@@ -112,12 +139,8 @@ async function generate({
     }
   }
 
-  const docToolsAnnotation = 'require("@storybook/react-native/preview")';
-
-  const enhancers = [];
-
   if (docTools) {
-    enhancers.push(docToolsAnnotation);
+    enhancers.push('require("@storybook/react-native/preview")');
   }
 
   for (const addon of main.addons) {
@@ -158,7 +181,7 @@ declare global {
   var view: View;
   var STORIES: typeof normalizedStories;
   var STORYBOOK_WEBSOCKET: { host: string; port: number } | undefined;
-  var STORYBOOK_FORCE_ENABLED: boolean | undefined;
+  var STORYBOOK_FORCE_OPEN: boolean | undefined;
 }
 `;
 
@@ -178,7 +201,7 @@ const annotations = ${annotations};
 
 globalThis.STORIES = normalizedStories;
 ${channelHost ? `globalThis.STORYBOOK_WEBSOCKET = { host: '${channelHost}', port: ${channelPort} };` : ''}
-${process.env.STORYBOOK_FORCE_ENABLED ? `globalThis.STORYBOOK_FORCE_ENABLED = true;` : ''}
+${storybookOpen ? `globalThis.STORYBOOK_FORCE_OPEN = true;` : ''}
 ${useJs ? '' : '// @ts-ignore'}
 module?.hot?.accept?.();
 

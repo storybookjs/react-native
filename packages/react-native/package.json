@@ -29,7 +29,8 @@
     "./preview": "./dist/preview.js",
     "./scripts/generate": "./scripts/generate.js",
     "./preset": "./preset.js",
-    "./stub": "./dist/stub.js"
+    "./stub": "./dist/stub.js",
+    "./package.json": "./package.json"
   },
   "files": [
     "bin/**/*",

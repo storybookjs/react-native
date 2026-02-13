@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import { createChannelServer } from '../metro/channelServer';
+import { optionalEnvToBoolean } from 'storybook/internal/common';
 
 /**
  * Minimal compiler types for webpack/rspack compatibility.
@@ -105,7 +106,7 @@ export interface StorybookPluginOptions {
  * ```javascript
  * // Disable Storybook in production builds:
  * new StorybookPlugin({
- *   enabled: process.env.STORYBOOK_ENABLED !== 'false',
+ *   enabled: process.env.STORYBOOK_FORCE_ENABLED !== 'false',
  *   websockets: 'auto',
  * })
  * ```
@@ -116,7 +117,6 @@ export class StorybookPlugin {
   > &
     Pick<StorybookPluginOptions, 'websockets'>;
 
-  private generated = false;
   private serverStarted = false;
 
   constructor(options: StorybookPluginOptions = {}) {
@@ -133,12 +133,37 @@ export class StorybookPlugin {
   apply(compiler: Compiler): void {
     const { configPath, enabled, websockets, useJs, docTools, liteMode } = this.options;
 
-    if (!enabled) {
+    const storybookEnabled = optionalEnvToBoolean(process.env.STORYBOOK_FORCE_ENABLED) || enabled;
+    const storybookOpen = optionalEnvToBoolean(process.env.STORYBOOK_FORCE_OPEN);
+
+    generate({
+      configPath,
+      useJs,
+      docTools,
+      enabled: storybookEnabled,
+      forceOpen: storybookOpen,
+    });
+
+    if (!storybookEnabled) {
       this.applyDisabled(compiler, configPath);
       return;
-    }
+    } else {
+      // Start the WebSocket channel server once (on first apply, not per-compilation)
+      if (websockets && !this.serverStarted) {
+        this.serverStarted = true;
 
-    this.applyEnabled(compiler, { configPath, websockets, useJs, docTools, liteMode });
+        const port = websockets === 'auto' ? 7007 : (websockets.port ?? 7007);
+        const host = websockets === 'auto' ? 'auto' : websockets.host;
+
+        // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
+        // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
+        createChannelServer({ port, host: host === 'auto' ? undefined : host, configPath });
+      }
+
+      this.applyEnabled(compiler, {
+        liteMode,
+      });
+    }
   }
 
   /**
@@ -148,48 +173,11 @@ export class StorybookPlugin {
   private applyEnabled(
     compiler: Compiler,
     {
-      configPath,
-      websockets,
-      useJs,
-      docTools,
       liteMode,
     }: {
-      configPath: string;
-      websockets?: WebsocketsOptions | 'auto';
-      useJs: boolean;
-      docTools: boolean;
       liteMode: boolean;
     }
   ): void {
-    const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
-    const host = websockets === 'auto' ? 'auto' : websockets?.host;
-
-    // Start the WebSocket channel server once (on first apply, not per-compilation)
-    if (websockets && !this.serverStarted) {
-      this.serverStarted = true;
-
-      createChannelServer({
-        port,
-        host: host === 'auto' ? undefined : host,
-        configPath,
-      });
-    }
-
-    // Generate storybook.requires before first compilation
-    compiler.hooks.beforeCompile.tapPromise('StorybookPlugin', async () => {
-      if (this.generated) return;
-      this.generated = true;
-
-      await generate({
-        configPath,
-        useJs,
-        docTools,
-        ...(websockets ? { host, port } : {}),
-      });
-
-      console.log('[StorybookPlugin] Generated storybook.requires');
-    });
-
     // liteMode: alias @storybook/react-native-ui to false (empty module)
     // but keep @storybook/react-native-ui-lite and @storybook/react-native-ui-common
     if (liteMode) {

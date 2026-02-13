@@ -138,65 +138,33 @@ export function withStorybook(
   const {
     configPath = path.resolve(process.cwd(), './.rnstorybook'),
     websockets,
+    enabled = true,
     useJs = false,
     docTools = true,
     liteMode = false,
   } = options;
 
+  const storybookEnabled = optionalEnvToBoolean(process.env.STORYBOOK_FORCE_ENABLED) || enabled;
+  const storybookOpen = optionalEnvToBoolean(process.env.STORYBOOK_FORCE_OPEN);
+
+  if (!storybookEnabled) {
+    generate({
+      configPath,
+      useJs,
+      enabled: false,
+    });
+
+    return config;
+  }
+
   const disableTelemetry = optionalEnvToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY);
 
   // the user might have set 'false' chromatic capture would have to override this
-  const enabled =
-    optionalEnvToBoolean(process.env.STORYBOOK_FORCE_ENABLED) || (options.enabled ?? true);
 
-  if (!disableTelemetry && enabled) {
+  if (!disableTelemetry) {
     const event = process.env.NODE_ENV === 'production' ? 'build' : 'dev';
 
     telemetry(event, {}).catch((e) => {});
-  }
-
-  if (!enabled) {
-    return {
-      ...config,
-      resolver: {
-        ...config.resolver,
-        resolveRequest: (context: any, moduleName: string, platform: string | null) => {
-          const resolveFunction: ResolveRequestFunction = config?.resolver?.resolveRequest
-            ? config.resolver.resolveRequest
-            : context.resolveRequest;
-
-          if (moduleName.startsWith('storybook') || moduleName.startsWith('@storybook')) {
-            return {
-              type: 'empty',
-            };
-          }
-
-          // workaround for node imports in instrumentor.cjs
-          if (moduleName === 'tty' || moduleName === 'os') {
-            return {
-              type: 'empty',
-            };
-          }
-
-          const resolved = resolveFunction(context, moduleName, platform);
-
-          // Match the config folder's index file regardless of extension (ts, tsx, js, jsx)
-          const configIndexRegex = new RegExp(`${configPath}/index\\.(tsx?|jsx?)$`);
-          if (resolved.filePath && configIndexRegex.test(resolved.filePath)) {
-            return {
-              filePath: path.resolve(__dirname, '../stub.js'),
-              type: 'sourceFile',
-            };
-          }
-
-          if (resolved.filePath?.includes?.(configPath)) {
-            return { type: 'empty' };
-          }
-
-          return resolved;
-        },
-      },
-    };
   }
 
   if (websockets) {
@@ -213,12 +181,16 @@ export function withStorybook(
       docTools,
       host,
       port,
+      enabled: storybookEnabled,
+      forceOpen: storybookOpen,
     });
   } else {
     generate({
       configPath,
       useJs,
       docTools,
+      enabled: storybookEnabled,
+      forceOpen: storybookOpen,
     });
   }
 

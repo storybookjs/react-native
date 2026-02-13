@@ -1,6 +1,7 @@
+const path = require('node:path');
+
 // Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require('expo/metro-config');
-const path = require('path');
 
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(projectRoot, '../../');
@@ -36,7 +37,7 @@ module.exports = withRozenite(
 );
 
 /* , {
-  enabled: process.env.STORYBOOK_ENABLED === 'true',
+  enabled: process.env.STORYBOOK_FORCE_ENABLED === 'true',
   configPath: path.resolve(__dirname, './.rnstorybook'),
   // websockets: {
   // port: 7007,
