@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "10.2.2-alpha.5",
+  "version": "10.2.2-canary.1",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -52,9 +52,9 @@
   },
   "dependencies": {
     "@storybook/react": "^10.2.2",
-    "@storybook/react-native-theming": "^10.2.2-alpha.5",
-    "@storybook/react-native-ui": "^10.2.2-alpha.5",
-    "@storybook/react-native-ui-common": "^10.2.2-alpha.5",
+    "@storybook/react-native-theming": "^10.2.2-canary.1",
+    "@storybook/react-native-ui": "^10.2.2-canary.1",
+    "@storybook/react-native-ui-common": "^10.2.2-canary.1",
     "commander": "^14.0.2",
     "dedent": "^1.7.0",
     "deepmerge": "^4.3.1",
