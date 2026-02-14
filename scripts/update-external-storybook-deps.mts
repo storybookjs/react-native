@@ -136,11 +136,7 @@ function resolveVersion(depName: string, targetVersion: string | undefined): str
 /**
  * Update a dependency version in a package.json file, preserving the range prefix
  */
-function updateDepInPackageJson(
-  pkgPath: string,
-  depName: string,
-  newVersion: string
-): boolean {
+function updateDepInPackageJson(pkgPath: string, depName: string, newVersion: string): boolean {
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
   let changed = false;
 
