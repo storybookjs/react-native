@@ -828,7 +828,7 @@ You can add these scripts to your package.json file.
 
 You'll want to run the generate script whenever you add a new story file. Alternatively you can keep the watcher running.
 
-There are some options you can pass to the both these scripts. You can see them by running `yarn  sb-rn-get-stories --help` and `sb-rn-watcher --help`.
+There are some options you can pass to the both these scripts. You can see them by running `yarn sb-rn-get-stories --help` and `sb-rn-watcher --help`.
 
 ```
   .description('Getter and watcher for react native storybook')

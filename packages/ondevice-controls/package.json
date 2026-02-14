@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "clean": "cross-env-shell rm -rf dist/",
-    "prepare": "yarn clean && tsc && yarn copyimages",
+    "prepare": "pnpm clean && tsc && pnpm copyimages",
     "dev": "tsc --watch",
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },

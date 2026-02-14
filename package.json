@@ -22,15 +22,8 @@
     "type": "git",
     "url": "https://github.com/storybookjs/react-native.git"
   },
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "examples/*",
-      "docs"
-    ]
-  },
   "scripts": {
-    "example": "yarn workspace expo-example storybook",
+    "example": "pnpm --filter expo-example storybook",
     "dev": "lerna run dev --stream --parallel",
     "dev:check-types": "tsc --noEmit",
     "lint": "eslint --cache -c ./eslint.config.js",
@@ -60,13 +53,13 @@
     "sherif": "^1.7.0",
     "typescript": "~5.9.3"
   },
-  "resolutions": {
-    "react-docgen-typescript": "2.2.2",
-    "jotai@^2.6.2": "patch:jotai@npm%3A2.6.2#./.yarn/patches/jotai-npm-2.6.2-d482bf2d42.patch",
-    "webpack-dev-server": "^5.2.2",
-    "markdown-it": "^14.0.0",
-    "@types/markdown-it": "^14.0.1",
-    "react-native-web": "^0.21.0"
+  "pnpm": {
+    "overrides": {
+      "react-docgen-typescript": "2.2.2",
+      "webpack-dev-server": "^5.2.2",
+      "markdown-it": "^14.0.0",
+      "@types/markdown-it": "^14.0.1"
+    }
   },
   "engines": {
     "node": ">=22.18.0"
@@ -75,5 +68,5 @@
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
   },
-  "packageManager": "yarn@4.9.4"
+  "packageManager": "pnpm@10.29.3"
 }

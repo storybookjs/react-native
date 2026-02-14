@@ -4,7 +4,7 @@ Thanks for your interest in improving Storybook! We are a community-driven proje
 
 Please review this document to help to streamline the process and save everyone's precious time.
 
-This repo uses yarn workspaces, so you should install `yarn` as the package manager. See [installation guide](https://classic.yarnpkg.com/en/docs/install).
+This repo uses pnpm workspaces, so you should install `pnpm` as the package manager. See [installation guide](https://pnpm.io/installation).
 
 - [Issues](#issues)
   - [Reproductions](#reproductions)
@@ -37,16 +37,16 @@ A good way to do that is using the example app embedded in this repository:
 # Download and build this repository:
 git clone https://github.com/storybookjs/react-native.git react-native-storybook
 cd react-native-storybook
-yarn build
+pnpm build
 
 # make changes to try and reproduce the problem, such as adding components + stories
 cd examples/expo-example
 # for ios
-yarn ios
+pnpm ios
 # for android
-yarn android
+pnpm android
 # for web
-yarn web
+pnpm web
 
 # see if you can see the problem, if so, commit it:
 git checkout -b "branch-describing-issue"
@@ -158,30 +158,30 @@ You can find the addons under `packages/` they start with the prefix `ondevice-`
 Please have the **_latest_** stable versions of the following on your machine
 
 - node
-- yarn
+- pnpm
 
 If this is your first time running react native follow the setup instructions in the [react native documentation](https://reactnative.dev/docs/environment-setup) to get everything setup correctly.
 
 ### Initial Setup
 
-If you run into trouble here, make sure your node, npm, and **_yarn_** are on the latest versions.
+If you run into trouble here, make sure your node and **_pnpm_** are on the latest versions.
 
 1.  `cd ~` (optional)
 2.  `git clone https://github.com/storybookjs/react-native.git react-native-storybook` _bonus_: use your own fork for this step
 3.  `cd react-native-storybook`
-4.  `yarn install`
-5.  `yarn build`
+4.  `pnpm install`
+5.  `pnpm build`
 
 ### Running the project
 
-To see your changes you should run `yarn dev` this starts everything in watch mode so don't need to manually build the packages.
+To see your changes you should run `pnpm dev` this starts everything in watch mode so don't need to manually build the packages.
 Once you have this running then you can run the example app to see your changes.
 
 ### Working with the example app
 
 The `examples/expo-example` folder of the repo has an example storybook implementation built with the react-native cli. It shows many of the options and add-ons available and is automatically linked to all the development packages. We highly encourage you to use it to develop/test contributions on.
 
-You still need to yarn dev or you won't see your changes reflected in the app. For example if I change an addon or app/react-native I need to rebuild the code for the changes take effect (yarn prepare) or `yarn dev` can do this automatically as I make changes.
+You still need to pnpm dev or you won't see your changes reflected in the app. For example if I change an addon or app/react-native I need to rebuild the code for the changes take effect (pnpm prepare) or `pnpm dev` can do this automatically as I make changes.
 
 If this is your first time running react native from the cli follow the setup instructions in the [react native documentation](https://reactnative.dev/docs/environment-setup) to get everything setup correctly.
 
@@ -189,10 +189,10 @@ If this is your first time running react native from the cli follow the setup in
 cd examples/expo-example
 
 # for ios
-yarn ios
+pnpm ios
 
 # for android
-yarn android
+pnpm android
 ```
 
 ### Run Linter
@@ -202,14 +202,14 @@ We use eslint as a linter for all code (including typescript code).
 All you have to run is:
 
 ```sh
-yarn lint
+pnpm lint
 ```
 
 It can be immensely helpful to get feedback in your editor, if you're using VsCode, you should install the `eslint` plugin and configure it with these settings:
 
 ```plaintext
 "eslint.autoFixOnSave": true,
-"eslint.packageManager": "yarn",
+"eslint.packageManager": "pnpm",
 "eslint.options": {
   "cache": true,
   "cacheLocation": ".cache/eslint",
@@ -230,7 +230,7 @@ This should enable auto-fix for all source files, and give linting warnings and 
 
 This section is for Storybook maintainers who will be creating releases. It assumes:
 
-- yarn >= 1.3.2
+- pnpm >= 10
 
 The current manual release sequence is as follows:
 
@@ -260,13 +260,13 @@ git pull origin next
 git status
 
 # build
-yarn build
+pnpm build
 
 # tag release
-yarn version-packages
+pnpm version-packages
 
 # publish and tag the release
-yarn publish:next
+pnpm publish:next
 
 # update the release page
 open https://github.com/storybookjs/react-native/releases
@@ -281,13 +281,13 @@ git pull origin next
 git status
 
 # build
-yarn build
+pnpm build
 
 # tag release
-yarn version-packages
+pnpm version-packages
 
 # publish and tag the release
-yarn publish:latest
+pnpm publish:latest
 
 # update the release page
 open https://github.com/storybookjs/react-native/releases

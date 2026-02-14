@@ -21,7 +21,7 @@
     "test": "jest",
     "test:ci": "jest --runInBand",
     "test:screenshots": "screenshot-stories --ignore-regions '376,2512,428,24' --html-report",
-    "eas-build-post-install": "cd ../.. && yarn build",
+    "eas-build-post-install": "cd ../.. && pnpm build",
     "update-expo": "npx expo@latest install expo@latest --fix"
   },
   "dependencies": {

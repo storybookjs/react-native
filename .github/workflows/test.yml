@@ -13,19 +13,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
       - name: Set node version
         uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: 'pnpm'
       - name: install and compile
-        run: yarn
+        run: pnpm install
       - name: build
-        run: yarn build
+        run: pnpm build
       - name: lint
-        run: yarn lint
+        run: pnpm lint
       - name: format check
-        run: yarn format:check
+        run: pnpm format:check
       - name: type check example
-        run: yarn workspace expo-example check
+        run: pnpm --filter expo-example check
       - name: test
-        run: yarn test
+        run: pnpm test
