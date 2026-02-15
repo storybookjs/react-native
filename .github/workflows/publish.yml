@@ -31,7 +31,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
 
@@ -53,8 +53,6 @@ jobs:
       - name: Publish (canary)
         if: inputs.release_type == 'canary'
         run: pnpm changeset publish --tag canary
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # --- Next Release ---
       - name: Enter pre-release mode (next)
@@ -70,8 +68,6 @@ jobs:
       - name: Publish (next)
         if: inputs.release_type == 'next'
         run: pnpm changeset publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit & push version changes (next)
         if: inputs.release_type == 'next'
@@ -98,8 +94,6 @@ jobs:
       - name: Publish (latest)
         if: inputs.release_type == 'latest'
         run: pnpm changeset publish --tag latest
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit, tag & push version changes (latest)
         if: inputs.release_type == 'latest'
