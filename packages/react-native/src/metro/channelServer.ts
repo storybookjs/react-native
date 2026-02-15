@@ -93,6 +93,11 @@ export function createChannelServer({
 
   const wss = new WebSocketServer({ server: httpServer });
 
+  wss.on('error', () => {
+    // Handled by httpServer 'error' listener — this prevents the WSS
+    // from re-throwing and crashing the process.
+  });
+
   // Single global ping interval for all clients
   setInterval(function ping() {
     wss.clients.forEach(function each(client) {
@@ -116,6 +121,17 @@ export function createChannelServer({
         console.error(error);
       }
     });
+  });
+
+  httpServer.on('error', (error: NodeJS.ErrnoException) => {
+    if (error.code === 'EADDRINUSE') {
+      console.warn(
+        `[Storybook] Port ${port} is already in use. The channel server will not start. ` +
+          `Another instance may already be running.`
+      );
+    } else {
+      console.error(`[Storybook] Channel server error:`, error);
+    }
   });
 
   httpServer.listen(port, host, () => {
