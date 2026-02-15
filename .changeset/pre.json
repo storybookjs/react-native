@@ -12,7 +12,11 @@
     "@storybook/react-native-theming": "10.2.2-alpha.5",
     "@storybook/react-native-ui": "10.2.2-alpha.5",
     "@storybook/react-native-ui-common": "10.2.2-alpha.5",
-    "@storybook/react-native-ui-lite": "10.2.2-alpha.5"
+    "@storybook/react-native-ui-lite": "10.2.2-alpha.5",
+    "@storybook/tests": "0.0.0"
   },
-  "changesets": ["wet-steaks-smoke"]
+  "changesets": [
+    "gold-snakes-float",
+    "wet-steaks-smoke"
+  ]
 }
