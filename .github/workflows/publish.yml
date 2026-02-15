@@ -53,11 +53,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # --- Next Release ---
+      - name: Enter pre-release mode (next)
+        if: inputs.release_type == 'next' && !hashFiles('.changeset/pre.json')
+        run: pnpm changeset pre enter next
+
       - name: Version (next)
         if: inputs.release_type == 'next'
-        run: |
-          pnpm changeset pre enter next
-          pnpm changeset version
+        run: pnpm changeset version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -77,6 +79,10 @@ jobs:
           git push
 
       # --- Latest (stable) Release ---
+      - name: Exit pre-release mode (latest)
+        if: inputs.release_type == 'latest' && hashFiles('.changeset/pre.json')
+        run: pnpm changeset pre exit
+
       - name: Version (latest)
         if: inputs.release_type == 'latest'
         run: pnpm changeset version

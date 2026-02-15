@@ -228,67 +228,64 @@ This should enable auto-fix for all source files, and give linting warnings and 
 
 ## Release Guide
 
-This section is for Storybook maintainers who will be creating releases. It assumes:
+This section is for Storybook maintainers who will be creating releases.
 
-- pnpm >= 10
+We use [Changesets](https://github.com/changesets/changesets) for versioning and publishing. All public packages are versioned together (fixed versioning).
 
-The current manual release sequence is as follows:
+### Adding a changeset
 
-- Generate a changelog and verify the release by hand
-- Push the changelog to master or the release branch
-- Clean, build and publish the release
-- Cut and paste the changelog to the github release page, and mark it as a (pre-) release
-
-**NOTE:** The very first time you publish a scoped package (`@storybook/x`) you need to make sure that it's package.json contains the following
-
-```json
-"publishConfig": {
-  "access": "public"
-}
-```
-
-This sequence applies to both releases and pre-releases, but differs slightly between the two.
-
-**NOTE: This is a work in progress. Don't try this unless you know what you're doing. We hope to automate this in CI, so this process is designed with that in mind.**
-
-#### Prerelease:
+When you make a change that should be released, add a changeset to your PR:
 
 ```sh
-# make sure you current with origin/next.
-git checkout next
-git pull origin next
-git status
-
-# build
-pnpm build
-
-# tag release
-pnpm version-packages
-
-# publish and tag the release
-pnpm publish:next
-
-# update the release page
-open https://github.com/storybookjs/react-native/releases
+pnpm changeset
 ```
 
-#### Full release:
+This will prompt you to select the packages affected and the bump type (patch/minor/major). Since all packages are fixed together, the highest bump type across all changesets will be applied to every package.
+
+Not all PRs need a changeset — skip it for documentation, CI, or other non-publishable changes. The [changeset bot](https://github.com/apps/changeset-bot) will comment on PRs to remind contributors.
+
+### Publishing via GitHub Actions (recommended)
+
+Publishing is done via a manually-triggered GitHub Action. Go to **Actions > Publish Packages** and select the release type:
+
+| Release type | npm tag | Version example | Consumes changesets? |
+|---|---|---|---|
+| **canary** | `canary` | `10.3.0-canary-20260215T120000` | No |
+| **next** | `next` | `10.3.0-next.0` | Yes |
+| **latest** | `latest` | `10.3.0` | Yes |
+
+- **Canary**: Snapshot release for testing. Does not consume changesets or commit back to the repo.
+- **Next**: Pre-release for the upcoming version. Consumes changesets and commits version bumps back.
+- **Latest**: Stable release. Consumes changesets, commits version bumps, and pushes git tags.
+
+### Publishing locally
+
+If you need to publish from your local machine:
 
 ```sh
-# make sure you current with next.
+# make sure you're up to date
 git checkout next
 git pull origin next
-git status
 
-# build
+# build all packages
 pnpm build
 
-# tag release
-pnpm version-packages
+# version packages (requires GITHUB_TOKEN for changelog generation)
+GITHUB_TOKEN=your_token pnpm changeset version
 
-# publish and tag the release
-pnpm publish:latest
+# publish with your chosen tag
+pnpm changeset publish --tag next     # or --tag latest, --tag canary
 
-# update the release page
-open https://github.com/storybookjs/react-native/releases
+# commit and push version changes
+git add .
+git commit -m "chore: version packages"
+git push --follow-tags
+```
+
+For canary (snapshot) releases locally:
+
+```sh
+pnpm changeset version --snapshot canary
+pnpm changeset publish --tag canary
+# no need to commit — snapshot versions are disposable
 ```
