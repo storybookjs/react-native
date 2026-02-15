@@ -3,3 +3,6 @@ packages:
   - 'examples/*'
   - 'docs'
 linkWorkspacePackages: true
+ignoreScripts: true
+nodeLinker: hoisted
+shamefullyHoist: true

@@ -21,7 +21,7 @@ jobs:
           node-version: 24
           cache: 'pnpm'
       - name: install and compile
-        run: pnpm install --frozen-lockfile --ignore-scripts
+        run: pnpm install --frozen-lockfile
       - name: build
         run: pnpm build
       - name: lint
