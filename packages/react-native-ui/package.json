@@ -39,7 +39,7 @@
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "^10.2.2",
+    "@storybook/react": "^10.2.3",
     "@storybook/react-native-theming": "^10.2.2",
     "@storybook/react-native-ui-common": "^10.2.2",
     "polished": "^4.3.1"

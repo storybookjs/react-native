@@ -48,7 +48,7 @@
     "test:ci": "jest"
   },
   "dependencies": {
-    "@storybook/react": "^10.2.2",
+    "@storybook/react": "^10.2.3",
     "@storybook/react-native-theming": "^10.2.2",
     "@storybook/react-native-ui": "^10.2.2",
     "@storybook/react-native-ui-common": "^10.2.2",
@@ -71,7 +71,7 @@
     "jotai": "^2.17.1",
     "react": "19.1.0",
     "react-native": "0.81.5",
-    "storybook": "^10.2.2",
+    "storybook": "^10.2.3",
     "test-renderer": "^0.14.0",
     "tsup": "^8.5.0",
     "typescript": "~5.9.3"
