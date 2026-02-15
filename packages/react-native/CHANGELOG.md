@@ -1,5 +1,16 @@
 # @storybook/react-native
 
+## 10.2.2-next.8
+
+### Patch Changes
+
+- [`f7cba17`](https://github.com/storybookjs/react-native/commit/f7cba17598c8dd4aa045a27bc58127d32abe832e) Thanks [@dannyhw](https://github.com/dannyhw)! - release workflow test :)
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.2.2-next.8
+  - @storybook/react-native-ui-common@10.2.2-next.8
+  - @storybook/react-native-theming@10.2.2-next.8
+
 ## 10.2.2-next.7
 
 ### Patch Changes
