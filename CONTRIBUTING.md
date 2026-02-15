@@ -248,11 +248,11 @@ Not all PRs need a changeset — skip it for documentation, CI, or other non-pub
 
 Publishing is done via a manually-triggered GitHub Action. Go to **Actions > Publish Packages** and select the release type:
 
-| Release type | npm tag | Version example | Consumes changesets? |
-|---|---|---|---|
-| **canary** | `canary` | `10.3.0-canary-20260215T120000` | No |
-| **next** | `next` | `10.3.0-next.0` | Yes |
-| **latest** | `latest` | `10.3.0` | Yes |
+| Release type | npm tag  | Version example                 | Consumes changesets? |
+| ------------ | -------- | ------------------------------- | -------------------- |
+| **canary**   | `canary` | `10.3.0-canary-20260215T120000` | No                   |
+| **next**     | `next`   | `10.3.0-next.0`                 | Yes                  |
+| **latest**   | `latest` | `10.3.0`                        | Yes                  |
 
 - **Canary**: Snapshot release for testing. Does not consume changesets or commit back to the repo.
 - **Next**: Pre-release for the upcoming version. Consumes changesets and commits version bumps back.

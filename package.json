@@ -29,6 +29,7 @@
     "lint": "eslint --cache -c ./eslint.config.js",
     "lint:fix": "lint --fix",
     "build": "pnpm -r run prepare",
+    "check": "pnpm build && pnpm lint && pnpm format:check && pnpm --filter expo-example check && pnpm test",
     "test:ci": "pnpm -r run test:ci",
     "version:canary": "pnpm changeset version --snapshot canary",
     "publish:canary": "pnpm changeset publish --tag canary",
