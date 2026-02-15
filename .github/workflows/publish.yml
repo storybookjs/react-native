@@ -77,15 +77,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "chore: version packages (next)" --allow-empty
+          git commit -m "chore: version packages (next)"
           git push
 
       - name: Create GitHub release (next)
         if: inputs.release_type == 'next'
         run: |
           VERSION=$(node -p "require('./packages/react-native/package.json').version")
-          git tag -f "v${VERSION}"
-          git push origin "v${VERSION}" --force
+          git tag "v${VERSION}"
+          git push origin "v${VERSION}"
           gh release create "v${VERSION}" \
             --title "v${VERSION}" \
             --generate-notes \
@@ -116,15 +116,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "chore: version packages (latest)" --allow-empty
+          git commit -m "chore: version packages (latest)"
           git push
 
       - name: Create GitHub release (latest)
         if: inputs.release_type == 'latest'
         run: |
           VERSION=$(node -p "require('./packages/react-native/package.json').version")
-          git tag -f "v${VERSION}"
-          git push origin "v${VERSION}" --force
+          git tag "v${VERSION}"
+          git push origin "v${VERSION}"
           gh release create "v${VERSION}" \
             --title "v${VERSION}" \
             --generate-notes
