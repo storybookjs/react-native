@@ -3,5 +3,6 @@
   "tabWidth": 2,
   "bracketSpacing": true,
   "trailingComma": "es5",
-  "singleQuote": true
+  "singleQuote": true,
+  "plugins": ["@prettier/plugin-oxc"]
 }

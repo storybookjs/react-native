@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-controls",
-  "version": "10.2.2-alpha.5",
+  "version": "10.2.2-next.7",
   "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
@@ -25,14 +25,14 @@
   ],
   "scripts": {
     "clean": "cross-env-shell rm -rf dist/",
-    "prepare": "yarn clean && tsc && yarn copyimages",
+    "prepare": "pnpm clean && tsc && pnpm copyimages",
     "dev": "tsc --watch",
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
-    "@storybook/react-native-theming": "^10.2.2-alpha.5",
-    "@storybook/react-native-ui-common": "^10.2.2-alpha.5",
+    "@storybook/react-native-theming": "^10.2.2-next.7",
+    "@storybook/react-native-ui-common": "^10.2.2-next.7",
     "polished": "^4.3.1",
     "react-native-modal-datetime-picker": "^18.0.0",
     "tinycolor2": "^1.6.0"

@@ -1,7 +1,7 @@
 const { describe, it, beforeEach, mock } = require('node:test');
 const assert = require('node:assert');
 const path = require('node:path');
-const { generate } = require('./generate');
+const { generate } = require('@storybook/react-native/scripts/generate');
 
 let pathMock;
 let fileContentMock;

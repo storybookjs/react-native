@@ -1,0 +1,17 @@
+{
+  "name": "@storybook/tests",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test scripts/generate.test.js",
+    "test:ci": "node --test scripts/generate.test.js",
+    "test:update": "node --test --test-update-snapshots scripts/generate.test.js"
+  },
+  "dependencies": {
+    "@storybook/react-native": "workspace:*",
+    "@storybook/addon-ondevice-actions": "workspace:*",
+    "@storybook/addon-ondevice-backgrounds": "workspace:*",
+    "@storybook/addon-ondevice-controls": "workspace:*",
+    "@storybook/addon-ondevice-notes": "workspace:*"
+  }
+}

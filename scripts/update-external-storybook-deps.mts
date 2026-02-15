@@ -107,6 +107,57 @@ function getExternalStorybookDeps(
 }
 
 /**
+ * Look up the latest version of a package from the npm registry
+ */
+function getLatestVersion(packageName: string): string {
+  const result = execSync(`npm view ${packageName} version`, { encoding: 'utf-8' }).trim();
+  return result;
+}
+
+/**
+ * Resolve the target version for a package
+ */
+function resolveVersion(depName: string, targetVersion: string | undefined): string {
+  if (ALWAYS_LATEST_PACKAGES.has(depName)) {
+    const latest = getLatestVersion(depName);
+    console.log(`  ${depName}: resolved latest → ${latest}`);
+    return latest;
+  }
+
+  if (targetVersion) {
+    return targetVersion;
+  }
+
+  const latest = getLatestVersion(depName);
+  console.log(`  ${depName}: resolved latest → ${latest}`);
+  return latest;
+}
+
+/**
+ * Update a dependency version in a package.json file, preserving the range prefix
+ */
+function updateDepInPackageJson(pkgPath: string, depName: string, newVersion: string): boolean {
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
+  let changed = false;
+
+  for (const depType of ['dependencies', 'devDependencies'] as const) {
+    if (pkg[depType]?.[depName]) {
+      const current = pkg[depType][depName] as string;
+      if (current !== newVersion) {
+        pkg[depType][depName] = newVersion;
+        changed = true;
+      }
+    }
+  }
+
+  if (changed) {
+    fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+  }
+
+  return changed;
+}
+
+/**
  * Main execution
  */
 function main(): void {
@@ -152,31 +203,50 @@ function main(): void {
     });
   });
 
-  console.log('\n📦 Updating external Storybook dependencies...\n');
+  console.log('\n📦 Resolving versions...\n');
 
-  // Get the list of dependencies to update
-  const depsToUpdate = Array.from(allExternalDeps.keys()).map((depName) => {
-    if (ALWAYS_LATEST_PACKAGES.has(depName)) {
-      return `${depName}@latest`;
+  // Resolve target versions for each unique dep
+  const resolvedVersions = new Map<string, string>();
+  for (const depName of allExternalDeps.keys()) {
+    resolvedVersions.set(depName, resolveVersion(depName, targetVersion));
+  }
+
+  console.log('\n📝 Updating package.json files...\n');
+
+  // Update each package.json that contains these deps
+  let totalChanges = 0;
+  for (const pkgPath of allPackageJsons) {
+    const relativePath = path.relative(path.join(__dirname, '..'), pkgPath);
+    const externalDeps = getExternalStorybookDeps(pkgPath, internalPackages);
+
+    for (const dep of externalDeps) {
+      const newVersion = resolvedVersions.get(dep.name);
+      if (newVersion) {
+        const changed = updateDepInPackageJson(pkgPath, dep.name, newVersion);
+        if (changed) {
+          console.log(`  Updated ${dep.name} in ${relativePath}`);
+          totalChanges++;
+        }
+      }
     }
+  }
 
-    return targetVersion ? `${depName}@${targetVersion}` : depName;
-  });
+  if (totalChanges === 0) {
+    console.log('  No changes needed — all versions are already up to date.');
+    return;
+  }
+
+  console.log(`\n📦 Running pnpm install to update lockfile...\n`);
 
   try {
-    // Use yarn up to update all external Storybook dependencies at once
-    // Note: yarn up is the command for Yarn 2+
-    const command = `yarn up ${depsToUpdate.join(' ')}`;
-    console.log(`Running: ${command}\n`);
-
-    execSync(command, {
+    execSync('pnpm install', {
       cwd: path.join(__dirname, '..'),
       stdio: 'inherit',
     });
 
     console.log('\n✅ Successfully updated external Storybook dependencies!');
   } catch (error) {
-    console.error('\n❌ Error updating dependencies:', (error as Error).message);
+    console.error('\n❌ Error running pnpm install:', (error as Error).message);
     process.exit(1);
   }
 }

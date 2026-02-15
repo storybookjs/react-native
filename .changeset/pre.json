@@ -1,0 +1,22 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "docs": "10.2.2-alpha.5",
+    "expo-example": "10.2.2-alpha.5",
+    "@storybook/addon-ondevice-actions": "10.2.2-alpha.5",
+    "@storybook/addon-ondevice-backgrounds": "10.2.2-alpha.5",
+    "@storybook/addon-ondevice-controls": "10.2.2-alpha.5",
+    "@storybook/addon-ondevice-notes": "10.2.2-alpha.5",
+    "@storybook/react-native": "10.2.2-alpha.5",
+    "@storybook/react-native-theming": "10.2.2-alpha.5",
+    "@storybook/react-native-ui": "10.2.2-alpha.5",
+    "@storybook/react-native-ui-common": "10.2.2-alpha.5",
+    "@storybook/react-native-ui-lite": "10.2.2-alpha.5",
+    "@storybook/tests": "0.0.0"
+  },
+  "changesets": [
+    "gold-snakes-float",
+    "wet-steaks-smoke"
+  ]
+}
