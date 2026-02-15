@@ -1,5 +1,18 @@
 # @storybook/react-native
 
+## 10.2.3
+
+### Patch Changes
+
+- [`769f13e`](https://github.com/storybookjs/react-native/commit/769f13e80d925c7f88ae878dd8566534f1db4588) Thanks [@dannyhw](https://github.com/dannyhw)! - bump storybook deps
+
+- [#847](https://github.com/storybookjs/react-native/pull/847) [`4f50496`](https://github.com/storybookjs/react-native/commit/4f50496b5f38fa8eaad0731f08ecd3647ce727a3) Thanks [@dannyhw](https://github.com/dannyhw)! - fix: prevent crash when websocket port is in use
+
+- Updated dependencies [[`769f13e`](https://github.com/storybookjs/react-native/commit/769f13e80d925c7f88ae878dd8566534f1db4588)]:
+  - @storybook/react-native-ui-common@10.2.3
+  - @storybook/react-native-ui@10.2.3
+  - @storybook/react-native-theming@10.2.3
+
 ## 10.2.2
 
 ### Patch Changes
