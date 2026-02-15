@@ -121,7 +121,7 @@ importers:
         specifier: ^10.2.2
         version: link:../../packages/ondevice-notes
       '@storybook/addon-react-native-server':
-        specifier: 1.0.1
+        specifier: ^1.0.1
         version: 1.0.1
       '@storybook/react':
         specifier: ^10.2.3
