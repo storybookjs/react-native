@@ -590,6 +590,24 @@ importers:
         specifier: ~5.9.3
         version: 5.9.3
 
+  tests:
+    dependencies:
+      '@storybook/addon-ondevice-actions':
+        specifier: workspace:*
+        version: link:../packages/ondevice-actions
+      '@storybook/addon-ondevice-backgrounds':
+        specifier: workspace:*
+        version: link:../packages/ondevice-backgrounds
+      '@storybook/addon-ondevice-controls':
+        specifier: workspace:*
+        version: link:../packages/ondevice-controls
+      '@storybook/addon-ondevice-notes':
+        specifier: workspace:*
+        version: link:../packages/ondevice-notes
+      '@storybook/react-native':
+        specifier: workspace:*
+        version: link:../packages/react-native
+
 packages:
 
   '@0no-co/graphql.web@1.2.0':
