@@ -1,8 +1,10 @@
-.yarn
+patches/
+pnpm-lock.yaml
 dist/
 examples/expo-example/.expo
 examples/expo-example/.rnstorybook/storybook.requires.ts
 docs/.docusaurus
 docs/build
 .claude/
+.changeset/
 examples/expo-example/assets

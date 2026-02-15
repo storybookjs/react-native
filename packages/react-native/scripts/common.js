@@ -55,10 +55,12 @@ function getPreviewExists({ configPath }) {
 function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts'], configPath) {
   if (!addon || typeof addon !== 'string') return null;
 
+  const resolvePaths = { paths: [cwd] };
+
   try {
     const basePath = `${addon}/${file}`;
 
-    require.resolve(basePath);
+    require.resolve(basePath, resolvePaths);
 
     return basePath;
   } catch (_error) {}
@@ -67,7 +69,7 @@ function resolveAddonFile(addon, file, extensions = ['js', 'mjs', 'ts'], configP
     try {
       const filePath = `${addon}/${file}.${ext}`;
 
-      require.resolve(filePath);
+      require.resolve(filePath, resolvePaths);
 
       return filePath;
     } catch (_error) {}

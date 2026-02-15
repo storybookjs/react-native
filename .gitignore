@@ -28,12 +28,7 @@ htpasswd
 storybook-out
 /addons/docs/common/config-*
 built-storybooks
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+.pnpm-store/
 .eslintcache
 examples/expo-example/.maestro/diffs
 examples/expo-example/.maestro/screenshots

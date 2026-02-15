@@ -11,6 +11,7 @@ module.exports = defineConfig([
       '**/dist/**',
       'packages/react-native/template/**/*',
       'packages/react-native/src/rn-host-detect.js',
+      'packages/react-native/scripts/mocks/**/*',
       '**/storybook.requires.ts',
       'examples/expo-example/.expo/**/*',
       'docs/build/**/*',

@@ -8,32 +8,32 @@ Always check first if the react-native-best-practices skill can be used
 
 ```bash
 # Initial Setup
-yarn install
-yarn build
+pnpm install
+pnpm build
 
 # Development
-yarn dev        # Watch all packages for changes
-yarn example    # Run the expo example app with Storybook
+pnpm dev        # Watch all packages for changes
+pnpm example    # Run the expo example app with Storybook
 
 # Testing
-yarn test       # Run unit tests across all packages
-yarn test:ci    # Run tests in CI mode
+pnpm test       # Run unit tests across all packages
+pnpm test:ci    # Run tests in CI mode
 
 # Code Quality
-yarn lint       # Run ESLint across the codebase
-yarn format:check   # Check Prettier formatting
-yarn format:fix     # Auto-fix Prettier formatting
+pnpm lint       # Run ESLint across the codebase
+pnpm format:check   # Check Prettier formatting
+pnpm format:fix     # Auto-fix Prettier formatting
 
 # Documentation (from docs/ directory)
 cd docs
-yarn start      # Start development server
-yarn build      # Build documentation
-yarn serve      # Serve built documentation
+pnpm start      # Start development server
+pnpm build      # Build documentation
+pnpm serve      # Serve built documentation
 ```
 
 ## Architecture Overview
 
-**Yarn workspaces monorepo** managed by Lerna containing React Native Storybook packages.
+**pnpm workspaces monorepo** managed by Lerna containing React Native Storybook packages.
 
 ### Packages
 
@@ -61,7 +61,7 @@ yarn serve      # Serve built documentation
 
 - Uses **tsup** for TypeScript compilation (ES2022, CommonJS output)
 - Each package has its own `tsup.config.ts`
-- `yarn prepare` in a package builds it
+- `pnpm prepare` in a package builds it
 
 The `withStorybook` Metro wrapper:
 
