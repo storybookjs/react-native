@@ -1,5 +1,21 @@
 # @storybook/react-native
 
+## 10.2.2
+
+### Patch Changes
+
+- [#846](https://github.com/storybookjs/react-native/pull/846) [`eeab1bc`](https://github.com/storybookjs/react-native/commit/eeab1bc31ee5f791677280ae35120c2660184e90) Thanks [@dannyhw](https://github.com/dannyhw)! - fix: linked addon packages should still resolve for generate script
+
+- [`f7cba17`](https://github.com/storybookjs/react-native/commit/f7cba17598c8dd4aa045a27bc58127d32abe832e) Thanks [@dannyhw](https://github.com/dannyhw)! - release workflow test :)
+
+- [#846](https://github.com/storybookjs/react-native/pull/846) [`eeab1bc`](https://github.com/storybookjs/react-native/commit/eeab1bc31ee5f791677280ae35120c2660184e90) Thanks [@dannyhw](https://github.com/dannyhw)! - feat: add Repack/rspack plugin for React Native Storybook
+  feat: virtualize sidebar tree with LegendList for performance
+  fix: root node style and text sizing adjustments
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.2.2
+  - @storybook/react-native-ui-common@10.2.2
+  - @storybook/react-native-theming@10.2.2
+
 ## 10.2.2-next.8
 
 ### Patch Changes
