@@ -1,5 +1,5 @@
 ---
-'@storybook/react-native': minor
+'@storybook/react-native': patch
 ---
 
 feat: add Repack/rspack plugin for React Native Storybook
