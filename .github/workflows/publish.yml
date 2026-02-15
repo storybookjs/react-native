@@ -43,6 +43,8 @@ jobs:
       - name: Version (canary snapshot)
         if: inputs.release_type == 'canary'
         run: pnpm changeset version --snapshot canary
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish (canary)
         if: inputs.release_type == 'canary'
@@ -56,6 +58,8 @@ jobs:
         run: |
           pnpm changeset pre enter next
           pnpm changeset version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish (next)
         if: inputs.release_type == 'next'
@@ -76,6 +80,8 @@ jobs:
       - name: Version (latest)
         if: inputs.release_type == 'latest'
         run: pnpm changeset version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish (latest)
         if: inputs.release_type == 'latest'
