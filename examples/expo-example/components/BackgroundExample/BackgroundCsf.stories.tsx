@@ -11,15 +11,27 @@ const styles = StyleSheet.create({
 
 const meta = {
   component: Background,
+  // parameters: {
+  //   backgrounds: {
+  //     default: 'warm',
+  //     values: [
+  //       { name: 'warm', value: 'hotpink' },
+  //       { name: 'cool', value: 'deepskyblue' },
+  //       { name: 'white', value: 'white' },
+  //       { name: 'black', value: 'black' },
+  //     ],
+  //   },
+  // },
   parameters: {
     backgrounds: {
-      default: 'warm',
-      values: [
-        { name: 'warm', value: 'hotpink' },
-        { name: 'cool', value: 'deepskyblue' },
-        { name: 'white', value: 'white' },
-        { name: 'black', value: 'black' },
-      ],
+      options: {
+        // 👇 Override the default `dark` option
+        warm: { name: 'Warm', value: 'hotpink' },
+        // 👇 Add a new option
+        cool: { name: 'Cool', value: 'deepskyblue' },
+        white: { name: 'White', value: 'white' },
+        black: { name: 'Black', value: 'black' },
+      },
     },
   },
 } satisfies Meta<typeof Background>;
@@ -28,4 +40,9 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {};
+export const Basic: Story = {
+  globals: {
+    // 👇 Override background value for this story
+    backgrounds: { value: 'warm' },
+  },
+};
