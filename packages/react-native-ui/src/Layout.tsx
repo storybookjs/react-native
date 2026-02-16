@@ -60,7 +60,7 @@ const mobileMenuDrawerContentStyle = {
 
 const flex1 = { flex: 1 } satisfies ViewStyle;
 
-export const FullUI: SBUI = ({ storage, theme, storyHash, story, children }) => {
+export const FullUI: SBUI = ({ storage, theme, storyHash, story, storyBackgroundColor, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
@@ -68,7 +68,7 @@ export const FullUI: SBUI = ({ storage, theme, storyHash, story, children }) => 
           <BottomSheetModalProvider>
             <StorageProvider storage={storage}>
               <LayoutProvider>
-                <Layout storyHash={storyHash} story={story}>
+                <Layout storyHash={storyHash} story={story} storyBackgroundColor={storyBackgroundColor}>
                   {children}
                 </Layout>
                 <PortalHost name="storybook-lite-ui-root" />
@@ -84,10 +84,12 @@ export const FullUI: SBUI = ({ storage, theme, storyHash, story, children }) => 
 export const Layout = ({
   storyHash,
   story,
+  storyBackgroundColor,
   children,
 }: {
   storyHash: API_IndexHash | undefined;
   story?: StoryContext<ReactRenderer, Args>;
+  storyBackgroundColor?: string;
   children: ReactNode | ReactNode[];
 }) => {
   const theme = useTheme();
@@ -141,11 +143,13 @@ export const Layout = ({
   );
 
   const containerStyle = useStyle(() => {
+    const backgroundColor = storyBackgroundColor || theme.background.content;
+
     if (isDesktop) {
       return {
         flex: 1,
         paddingTop: insets.top,
-        backgroundColor: theme.background.content,
+        backgroundColor,
         flexDirection: 'row',
       };
     }
@@ -153,9 +157,9 @@ export const Layout = ({
     return {
       flex: 1,
       paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
-      backgroundColor: theme.background.content,
+      backgroundColor,
     };
-  }, [theme.background.content, insets.top, story?.parameters?.noSafeArea, isDesktop]);
+  }, [storyBackgroundColor, theme.background.content, insets.top, story?.parameters?.noSafeArea, isDesktop]);
 
   const fullScreenButtonStyle = useStyle(
     () => ({

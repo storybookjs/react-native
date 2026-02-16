@@ -1,58 +1,43 @@
 import type { AddonStore, API } from 'storybook/manager-api';
 import { StyleSheet, Text, View } from 'react-native';
+import { useCallback } from 'react';
+import { UPDATE_GLOBALS } from 'storybook/internal/core-events';
 
 import Swatch from './Swatch';
-import BackgroundEvents, { PARAM_KEY } from './constants';
-import { Background } from './index';
+import { PARAM_KEY } from './constants';
 
 const codeSample = `
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-import { Text, StyleSheet } from 'react-native';
+// In your preview config (.storybook/preview.tsx):
+import type { Preview } from '@storybook/react-native';
 
-const Background = () => (
-  <Text style={styles.text}>Change background color via Addons -&gt; Background</Text>
-);
-
-const styles = StyleSheet.create({
-  text: { color: 'black' },
-});
-
-const BackgroundMeta: ComponentMeta<typeof Background> = {
-  title: 'Background CSF',
-  component: Background,
-  decorators: [withBackgrounds],
+const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: 'plain',
-      values: [
-        { name: 'plain', value: 'white' },
-        { name: 'warm', value: 'hotpink' },
-        { name: 'cool', value: 'deepskyblue' },
-      ],
+      options: {
+        dark: { name: 'Dark', value: '#333' },
+        light: { name: 'Light', value: '#F7F9F2' },
+        maroon: { name: 'Maroon', value: '#400' },
+      },
     },
+  },
+  initialGlobals: {
+    backgrounds: { value: 'light' },
   },
 };
 
-export default BackgroundMeta;
-
-type BackgroundStory = ComponentStory<typeof Background>;
-
-export const Basic: BackgroundStory = () => <Background />;
+export default preview;
 `.trim();
 
 const Instructions = () => (
   <View>
     <Text style={[styles.paragraph, styles.title]}>Setup Instructions</Text>
     <Text style={styles.paragraph}>
-      Please add the background decorator definition to your story. The background decorate accepts
-      an array of items, which should include a name for your color (preferably the css class name)
-      and the corresponding color / image value.
+      Add background options to your preview parameters. Each option should include a name and the
+      corresponding color value.
     </Text>
     <Text style={styles.paragraph}>
-      Below is an example of how to add the background decorator to your story definition. Long
-      press the example to copy it.
+      Below is an example of how to configure backgrounds in your preview config. Long press the
+      example to copy it.
     </Text>
     <Text selectable>{codeSample}</Text>
   </View>
@@ -65,29 +50,66 @@ interface BackgroundPanelProps {
   active: boolean;
 }
 
+interface BackgroundOptions {
+  [key: string]: {
+    name: string;
+    value: string;
+  };
+}
+
+interface LegacyBackground {
+  name: string;
+  value: string;
+}
+
 const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
+  const store = api.store();
+  const storyId = store.getSelection().storyId;
+  const story = store.fromId(storyId);
+
+  const setBackground = useCallback(
+    (name: string) => {
+      channel.emit(UPDATE_GLOBALS, { globals: { [PARAM_KEY]: { value: name } } });
+    },
+    [channel]
+  );
+
   if (!active) {
     return null;
   }
 
-  const store = api.store();
-  const storyId = store.getSelection().storyId;
-  const story = store.fromId(storyId);
-  const backgrounds: { default?: string; values: Background[] } = story.parameters[PARAM_KEY];
-  const setBackgroundFromSwatch = (background: string) => {
-    channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
-  };
+  const bgParams = story.parameters[PARAM_KEY];
+  const options: BackgroundOptions | undefined = bgParams?.options;
+  const values: LegacyBackground[] | undefined = bgParams?.values;
+
+  // Support both new API (options object) and old API (values array)
+  if (options && Object.keys(options).length > 0) {
+    return (
+      <View style={{ padding: 10 }}>
+        {Object.entries(options).map(([key, { name, value }]) => (
+          <View key={`${key} ${value}`}>
+            <Swatch value={value} name={name || key} setBackground={() => setBackground(key)} />
+          </View>
+        ))}
+      </View>
+    );
+  }
+
+  if (values && values.length > 0) {
+    return (
+      <View style={{ padding: 10 }}>
+        {values.map(({ name, value }) => (
+          <View key={`${name} ${value}`}>
+            <Swatch value={value} name={name} setBackground={() => setBackground(name)} />
+          </View>
+        ))}
+      </View>
+    );
+  }
+
   return (
     <View style={{ padding: 10 }}>
-      {backgrounds?.values ? (
-        backgrounds.values.map(({ value, name }) => (
-          <View key={`${name} ${value}`}>
-            <Swatch value={value} name={name} setBackground={setBackgroundFromSwatch} />
-          </View>
-        ))
-      ) : (
-        <Instructions />
-      )}
+      <Instructions />
     </View>
   );
 };

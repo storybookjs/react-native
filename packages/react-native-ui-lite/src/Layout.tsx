@@ -63,14 +63,14 @@ const mobileMenuDrawerContentStyle = {
 
 const flexStyle = { flex: 1 } satisfies ViewStyle;
 
-export const LiteUI: SBUI = ({ storage, theme, storyHash, story, children }): ReactElement => (
+export const LiteUI: SBUI = ({ storage, theme, storyHash, story, storyBackgroundColor, children }): ReactElement => (
   <SafeAreaProvider style={flexStyle}>
     <SelectedNodeProvider>
       <ThemeProvider theme={theme}>
         <StorageProvider storage={storage}>
           <LayoutProvider>
             <PortalProvider shouldAddRootHost={false}>
-              <Layout storyHash={storyHash} story={story}>
+              <Layout storyHash={storyHash} story={story} storyBackgroundColor={storyBackgroundColor}>
                 {children}
               </Layout>
               <PortalHost name="storybook-lite-ui-root" />
@@ -85,10 +85,12 @@ export const LiteUI: SBUI = ({ storage, theme, storyHash, story, children }): Re
 export const Layout = ({
   storyHash,
   story,
+  storyBackgroundColor,
   children,
 }: {
   storyHash: API_IndexHash | undefined;
   story?: StoryContext<ReactRenderer, Args>;
+  storyBackgroundColor?: string;
   children: ReactNode | ReactNode[];
 }) => {
   const theme = useTheme();
@@ -163,20 +165,22 @@ export const Layout = ({
   );
 
   const containerStyle = useStyle(() => {
+    const backgroundColor = storyBackgroundColor || theme.background.content;
+
     if (isDesktop) {
       return {
         flex: 1,
-        backgroundColor: theme.background.content,
+        backgroundColor,
         flexDirection: 'row',
       };
     }
 
     return {
       flex: 1,
-      backgroundColor: theme.background.content,
+      backgroundColor,
       paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
     };
-  }, [theme.background.content, story?.parameters?.noSafeArea, isDesktop]);
+  }, [storyBackgroundColor, theme.background.content, story?.parameters?.noSafeArea, isDesktop]);
 
   const navContainerStyle = useStyle(
     () => ({

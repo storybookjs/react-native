@@ -26,6 +26,33 @@ import {
   STORYBOOK_STORY_ID_PARAM,
 } from './constants';
 
+function resolveStoryBackgroundColor(
+  story?: StoryContext<ReactRenderer> | null
+): string | undefined {
+  const backgroundGlobal = story?.globals?.backgrounds?.value;
+  const bgParams = story?.parameters?.backgrounds;
+
+  if (!backgroundGlobal) return undefined;
+
+  // New API: options object keyed by name
+  if (bgParams?.options?.[backgroundGlobal]?.value) {
+    return bgParams.options[backgroundGlobal].value;
+  }
+
+  // Old API: values array with { name, value }
+  if (bgParams?.values) {
+    const match = bgParams.values.find(
+      (bg: { name: string; value: string }) => bg.name === backgroundGlobal
+    );
+    if (match) return match.value;
+  }
+
+  // Direct color value (e.g. hex)
+  if (backgroundGlobal.startsWith('#')) return backgroundGlobal;
+
+  return undefined;
+}
+
 export interface Storage {
   getItem: (key: string) => Promise<string | null>;
   setItem: (key: string, value: string) => Promise<void>;
@@ -416,6 +443,8 @@ export class View {
         );
       }
 
+      const storyBackgroundColor = resolveStoryBackgroundColor(story);
+
       if (onDeviceUI) {
         if (CustomUIComponent) {
           return (
@@ -427,8 +456,9 @@ export class View {
               }
               storage={storage}
               theme={appliedTheme as Theme}
+              storyBackgroundColor={storyBackgroundColor}
             >
-              <StoryView useWrapper={storyViewWrapper} />
+              <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
             </CustomUIComponent>
           );
         }
@@ -442,12 +472,13 @@ export class View {
             setStory={(newStoryId) =>
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }
+            storyBackgroundColor={storyBackgroundColor}
           >
-            <StoryView useWrapper={storyViewWrapper} />
+            <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
           </FullUI>
         );
       } else {
-        return <StoryView useWrapper={storyViewWrapper} />;
+        return <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />;
       }
     };
   };
