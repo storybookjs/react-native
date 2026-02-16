@@ -32,23 +32,26 @@ function resolveStoryBackgroundColor(
   const backgroundGlobal = story?.globals?.backgrounds?.value;
   const bgParams = story?.parameters?.backgrounds;
 
-  if (!backgroundGlobal) return undefined;
+  // Resolve the background name: use the global if set, otherwise fall back to the default parameter
+  const backgroundName = backgroundGlobal || bgParams?.default;
+
+  if (!backgroundName) return undefined;
 
   // New API: options object keyed by name
-  if (bgParams?.options?.[backgroundGlobal]?.value) {
-    return bgParams.options[backgroundGlobal].value;
+  if (bgParams?.options?.[backgroundName]?.value) {
+    return bgParams.options[backgroundName].value;
   }
 
   // Old API: values array with { name, value }
   if (bgParams?.values) {
     const match = bgParams.values.find(
-      (bg: { name: string; value: string }) => bg.name === backgroundGlobal
+      (bg: { name: string; value: string }) => bg.name === backgroundName
     );
     if (match) return match.value;
   }
 
   // Direct color value (e.g. hex)
-  if (backgroundGlobal.startsWith('#')) return backgroundGlobal;
+  if (backgroundName.startsWith('#')) return backgroundName;
 
   return undefined;
 }
