@@ -109,16 +109,16 @@ importers:
         specifier: 5.0.1
         version: 5.0.1
       '@storybook/addon-ondevice-actions':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../../packages/ondevice-actions
       '@storybook/addon-ondevice-backgrounds':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../../packages/ondevice-backgrounds
       '@storybook/addon-ondevice-controls':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../../packages/ondevice-controls
       '@storybook/addon-ondevice-notes':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../../packages/ondevice-notes
       '@storybook/addon-react-native-server':
         specifier: ^1.0.1
@@ -127,10 +127,10 @@ importers:
         specifier: ^10.2.3
         version: 10.2.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@10.2.8(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3)
       '@storybook/react-native':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../../packages/react-native
       '@storybook/react-native-ui-lite':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../../packages/react-native-ui-lite
       '@storybook/react-native-web-vite':
         specifier: ^10.2.3
@@ -243,7 +243,7 @@ importers:
   packages/ondevice-backgrounds:
     dependencies:
       '@storybook/react-native-theming':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-theming
       react:
         specifier: '*'
@@ -271,10 +271,10 @@ importers:
         specifier: '*'
         version: 5.0.1
       '@storybook/react-native-theming':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-theming
       '@storybook/react-native-ui-common':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-ui-common
       polished:
         specifier: ^4.3.1
@@ -311,7 +311,7 @@ importers:
         specifier: ^10
         version: 10.2.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@10.2.8(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3)
       '@storybook/react-native-theming':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-theming
       react:
         specifier: '*'
@@ -342,13 +342,13 @@ importers:
         specifier: ^10.2.3
         version: 10.2.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@10.2.8(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3)
       '@storybook/react-native-theming':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-theming
       '@storybook/react-native-ui':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-ui
       '@storybook/react-native-ui-common':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-ui-common
       commander:
         specifier: ^14.0.2
@@ -461,10 +461,10 @@ importers:
         specifier: ^10.2.3
         version: 10.2.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@10.2.8(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3)
       '@storybook/react-native-theming':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-theming
       '@storybook/react-native-ui-common':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-ui-common
       polished:
         specifier: ^4.3.1
@@ -510,7 +510,7 @@ importers:
         specifier: ^10.2.3
         version: 10.2.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@10.2.8(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3)
       '@storybook/react-native-theming':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-theming
       es-toolkit:
         specifier: ^1.41.0
@@ -556,10 +556,10 @@ importers:
         specifier: ^10.2.3
         version: 10.2.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@10.2.8(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3)
       '@storybook/react-native-theming':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-theming
       '@storybook/react-native-ui-common':
-        specifier: ^10.2.2
+        specifier: ^10.2.3
         version: link:../react-native-ui-common
       polished:
         specifier: ^4.3.1
