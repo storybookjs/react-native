@@ -461,7 +461,10 @@ export class View {
               theme={appliedTheme as Theme}
               storyBackgroundColor={storyBackgroundColor}
             >
-              <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
+              <StoryView
+                useWrapper={storyViewWrapper}
+                storyBackgroundColor={storyBackgroundColor}
+              />
             </CustomUIComponent>
           );
         }
@@ -481,7 +484,9 @@ export class View {
           </FullUI>
         );
       } else {
-        return <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />;
+        return (
+          <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
+        );
       }
     };
   };

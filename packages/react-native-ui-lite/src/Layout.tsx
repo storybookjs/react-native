@@ -63,14 +63,25 @@ const mobileMenuDrawerContentStyle = {
 
 const flexStyle = { flex: 1 } satisfies ViewStyle;
 
-export const LiteUI: SBUI = ({ storage, theme, storyHash, story, storyBackgroundColor, children }): ReactElement => (
+export const LiteUI: SBUI = ({
+  storage,
+  theme,
+  storyHash,
+  story,
+  storyBackgroundColor,
+  children,
+}): ReactElement => (
   <SafeAreaProvider style={flexStyle}>
     <SelectedNodeProvider>
       <ThemeProvider theme={theme}>
         <StorageProvider storage={storage}>
           <LayoutProvider>
             <PortalProvider shouldAddRootHost={false}>
-              <Layout storyHash={storyHash} story={story} storyBackgroundColor={storyBackgroundColor}>
+              <Layout
+                storyHash={storyHash}
+                story={story}
+                storyBackgroundColor={storyBackgroundColor}
+              >
                 {children}
               </Layout>
               <PortalHost name="storybook-lite-ui-root" />
