@@ -36,7 +36,7 @@ const preview: Preview = {
         dark: { name: 'dark', value: '#333' },
         light: { name: 'plain', value: '#fff' },
         // 👇 Add your own
-        maroon: { name: 'app', value: '#eeeeee' },
+        app: { name: 'app', value: '#eeeeee' },
       },
     },
   },
