@@ -154,13 +154,11 @@ export const Layout = ({
   );
 
   const containerStyle = useStyle(() => {
-    const backgroundColor = storyBackgroundColor || theme.background.content;
-
     if (isDesktop) {
       return {
         flex: 1,
         paddingTop: insets.top,
-        backgroundColor,
+        backgroundColor: theme.background.content,
         flexDirection: 'row',
       };
     }
@@ -168,15 +166,18 @@ export const Layout = ({
     return {
       flex: 1,
       paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
-      backgroundColor,
+      backgroundColor: storyBackgroundColor || theme.background.content,
     };
-  }, [
-    storyBackgroundColor,
-    theme.background.content,
-    insets.top,
-    story?.parameters?.noSafeArea,
-    isDesktop,
-  ]);
+  }, [storyBackgroundColor, theme.background.content, insets.top, story?.parameters?.noSafeArea, isDesktop]);
+
+  const storyContentStyle = useStyle(
+    () => ({
+      flex: 1,
+      overflow: 'hidden' as const,
+      backgroundColor: storyBackgroundColor || theme.background.content,
+    }),
+    [storyBackgroundColor, theme.background.content]
+  );
 
   const fullScreenButtonStyle = useStyle(
     () => ({
@@ -194,7 +195,7 @@ export const Layout = ({
 
   const menuContainerStyle = useStyle(
     () => ({
-      marginBottom: insets.bottom,
+      paddingBottom: insets.bottom,
     }),
     [insets.bottom]
   );
@@ -250,7 +251,7 @@ export const Layout = ({
       ) : null}
 
       <View style={mobileContentStyle}>
-        <View style={contentContainerStyle}>{children}</View>
+        <View style={storyContentStyle}>{children}</View>
 
         {story?.parameters?.hideFullScreenButton || isDesktop ? null : (
           <TouchableOpacity

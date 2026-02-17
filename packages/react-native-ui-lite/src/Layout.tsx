@@ -176,22 +176,29 @@ export const Layout = ({
   );
 
   const containerStyle = useStyle(() => {
-    const backgroundColor = storyBackgroundColor || theme.background.content;
-
     if (isDesktop) {
       return {
         flex: 1,
-        backgroundColor,
+        backgroundColor: theme.background.content,
         flexDirection: 'row',
       };
     }
 
     return {
       flex: 1,
-      backgroundColor,
+      backgroundColor: storyBackgroundColor || theme.background.content,
       paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
     };
   }, [storyBackgroundColor, theme.background.content, story?.parameters?.noSafeArea, isDesktop]);
+
+  const storyContentStyle = useStyle(
+    () => ({
+      flex: 1,
+      overflow: 'hidden' as const,
+      backgroundColor: storyBackgroundColor || theme.background.content,
+    }),
+    [storyBackgroundColor, theme.background.content]
+  );
 
   const navContainerStyle = useStyle(
     () => ({
@@ -286,7 +293,10 @@ export const Layout = ({
       ) : null}
 
       <View style={mobileContentStyle}>
-        <View style={contentContainerStyle} pointerEvents={isResizing ? 'none' : 'auto'}>
+        <View
+          style={isDesktop ? storyContentStyle : contentContainerStyle}
+          pointerEvents={isResizing ? 'none' : 'auto'}
+        >
           {children}
         </View>
 
