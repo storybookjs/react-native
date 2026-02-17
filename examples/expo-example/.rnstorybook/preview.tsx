@@ -1,6 +1,6 @@
 import { Appearance } from 'react-native';
 import type { Preview } from '@storybook/react-native';
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+// import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 const preview: Preview = {
   // decorators: [withBackgrounds],

@@ -40,8 +40,6 @@ const desktopLogoContainer = {
   justifyContent: 'space-between',
 } satisfies ViewStyle;
 
-const contentContainerStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
-
 const mobileContentStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
 
 const placeholderObject = {};
