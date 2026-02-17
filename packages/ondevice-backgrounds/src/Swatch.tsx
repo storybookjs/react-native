@@ -46,7 +46,11 @@ const ValueText = styled.Text(({ theme }) => ({
 }));
 
 const Swatch = ({ name, value, setBackground, disabled }: SwatchProps) => (
-  <PressableSwatch onPress={() => setBackground(value)} disabled={disabled} style={{ opacity: disabled ? 0.5 : 1 }}>
+  <PressableSwatch
+    onPress={() => setBackground(value)}
+    disabled={disabled}
+    style={{ opacity: disabled ? 0.5 : 1 }}
+  >
     <ColorSwatch color={value} />
     <ValueContainer>
       <NameText>{name}</NameText>

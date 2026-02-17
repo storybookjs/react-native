@@ -168,7 +168,13 @@ export const Layout = ({
       paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
       backgroundColor: storyBackgroundColor || theme.background.content,
     };
-  }, [storyBackgroundColor, theme.background.content, insets.top, story?.parameters?.noSafeArea, isDesktop]);
+  }, [
+    storyBackgroundColor,
+    theme.background.content,
+    insets.top,
+    story?.parameters?.noSafeArea,
+    isDesktop,
+  ]);
 
   const storyContentStyle = useStyle(
     () => ({
