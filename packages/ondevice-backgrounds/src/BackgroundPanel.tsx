@@ -67,6 +67,9 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
   const storyId = store.getSelection().storyId;
   const story = store.fromId(storyId);
 
+  // storyGlobals comes from PreparedStory spread in getStoryContext
+  const isLocked = !!story?.storyGlobals?.[PARAM_KEY];
+
   const setBackground = useCallback(
     (name: string) => {
       channel.emit(UPDATE_GLOBALS, { globals: { [PARAM_KEY]: { value: name } } });
@@ -86,9 +89,15 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
   if (options && Object.keys(options).length > 0) {
     return (
       <View style={{ padding: 10 }}>
+        {isLocked && <Text style={styles.lockedText}>Background is set at the story level</Text>}
         {Object.entries(options).map(([key, { name, value }]) => (
           <View key={`${key} ${value}`}>
-            <Swatch value={value} name={name || key} setBackground={() => setBackground(key)} />
+            <Swatch
+              value={value}
+              name={name || key}
+              setBackground={() => setBackground(key)}
+              disabled={isLocked}
+            />
           </View>
         ))}
       </View>
@@ -98,9 +107,15 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
   if (values && values.length > 0) {
     return (
       <View style={{ padding: 10 }}>
+        {isLocked && <Text style={styles.lockedText}>Background is set at the story level</Text>}
         {values.map(({ name, value }) => (
           <View key={`${name} ${value}`}>
-            <Swatch value={value} name={name} setBackground={() => setBackground(name)} />
+            <Swatch
+              value={value}
+              name={name}
+              setBackground={() => setBackground(name)}
+              disabled={isLocked}
+            />
           </View>
         ))}
       </View>
@@ -119,4 +134,5 @@ export default BackgroundPanel;
 const styles = StyleSheet.create({
   title: { fontSize: 16 },
   paragraph: { marginBottom: 8 },
+  lockedText: { marginBottom: 10, fontStyle: 'italic', opacity: 0.7 },
 });
