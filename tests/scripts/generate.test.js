@@ -221,9 +221,7 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/with-features' });
         mock.reset();
 
-        assert.ok(
-          fileContentMock.includes('globalThis.FEATURES.ondeviceBackgrounds = true;')
-        );
+        assert.ok(fileContentMock.includes('globalThis.FEATURES.ondeviceBackgrounds = true;'));
         t.assert.snapshot(fileContentMock);
       });
     });

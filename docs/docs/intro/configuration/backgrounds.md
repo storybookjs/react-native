@@ -90,10 +90,10 @@ When a background is set via `globals` at the story or component level, the Back
 
 ## Differences from `@storybook/addon-ondevice-backgrounds`
 
-| | Feature flag | Separate addon package |
-|---|---|---|
-| Install | No extra package needed | `npm install @storybook/addon-ondevice-backgrounds` |
-| Decorator | Not required | `withBackgrounds` decorator required |
-| Parameter format | `options` object with `initialGlobals` | `values` array with `default` |
-| Background scope | Full screen including safe areas | Story view only |
-| Story locking | `globals` on meta/story | Not supported |
+|                  | Feature flag                           | Separate addon package                              |
+| ---------------- | -------------------------------------- | --------------------------------------------------- |
+| Install          | No extra package needed                | `npm install @storybook/addon-ondevice-backgrounds` |
+| Decorator        | Not required                           | `withBackgrounds` decorator required                |
+| Parameter format | `options` object with `initialGlobals` | `values` array with `default`                       |
+| Background scope | Full screen including safe areas       | Story view only                                     |
+| Story locking    | `globals` on meta/story                | Not supported                                       |

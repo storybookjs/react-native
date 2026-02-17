@@ -16,10 +16,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [
-    '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-actions',
-  ],
+  addons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
   features: {
     ondeviceBackgrounds: true,
   },
@@ -32,6 +29,6 @@ Feature flags are set on `globalThis.FEATURES` via the generated `storybook.requ
 
 ## Available Flags
 
-| Flag | Description | Guide |
-|---|---|---|
+| Flag                  | Description                                                                           | Guide                           |
+| --------------------- | ------------------------------------------------------------------------------------- | ------------------------------- |
 | `ondeviceBackgrounds` | Backgrounds panel integrated into core with full-screen support and globals-based API | [Backgrounds](./backgrounds.md) |

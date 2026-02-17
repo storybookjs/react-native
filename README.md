@@ -514,8 +514,8 @@ const main: StorybookConfig = {
 export default main;
 ```
 
-| Flag | Description |
-|---|---|
+| Flag                  | Description                                                                                         |
+| --------------------- | --------------------------------------------------------------------------------------------------- |
 | `ondeviceBackgrounds` | Backgrounds panel integrated into core — no need to install `@storybook/addon-ondevice-backgrounds` |
 
 For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
