@@ -15,6 +15,9 @@ pnpm build
 pnpm dev        # Watch all packages for changes
 pnpm example    # Run the expo example app with Storybook
 
+# Story Generation
+pnpm -F expo-example storybook-generate # Regenerate storybook.requires.ts
+
 # Testing
 pnpm test       # Run unit tests across all packages
 pnpm test:ci    # Run tests in CI mode

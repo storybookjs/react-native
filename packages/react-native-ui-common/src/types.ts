@@ -90,5 +90,6 @@ export type SBUI = (props: {
   setStory: (storyId: string) => void;
   storage: Storage;
   theme: Theme;
+  storyBackgroundColor?: string;
   children: ReactElement;
 }) => ReactElement;

@@ -10,11 +10,17 @@ export {
   STORYBOOK_STORY_ID_PARAM,
 } from './constants';
 
+export interface Features {
+  /** Enable the built-in on-device backgrounds addon panel. */
+  ondeviceBackgrounds?: boolean;
+}
+
 export interface StorybookConfig {
   stories: StorybookConfigBase['stories'];
   addons: Array<string | { name: string; options?: Record<string, any> }>;
   // TODO move this to params
   reactNative?: ReactNativeOptions;
+  features?: Features;
   framework?: '@storybook/react-native';
 }
 

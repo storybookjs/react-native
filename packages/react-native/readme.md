@@ -24,6 +24,7 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 - 📱 [Hide/Show Storybook](#hideshow-storybook)
 - ⚙️ [withStorybook wrapper](#withstorybook-wrapper)
 - 🔧 [getStorybookUI](#getstorybookui-options)
+- 🏁 [Feature Flags](#feature-flags)
 - 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
 - ✨ [Examples](#examples)
@@ -492,6 +493,33 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
     theme: Partial<Theme>;
 }
 ```
+
+## Feature Flags
+
+Feature flags let you opt into new functionality without breaking existing behavior. In the next major version, the behavior behind these flags will become the default and the flags will no longer be needed.
+
+Add them to the `features` object in `main.ts`:
+
+```ts
+// .rnstorybook/main.ts
+import type { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  addons: ['@storybook/addon-ondevice-controls'],
+  features: {
+    ondeviceBackgrounds: true,
+  },
+};
+
+export default main;
+```
+
+| Flag                  | Description                                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------ |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed |
+
+For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
 
 ## Using stories in unit tests
 
