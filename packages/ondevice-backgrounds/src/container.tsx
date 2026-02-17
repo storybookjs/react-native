@@ -1,24 +1,36 @@
-import { ReactNode, useEffect } from 'react';
-import { PARAM_KEY } from './constants';
-import type { Args } from 'storybook/internal/types';
+import React, { ReactNode, useState, useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
+import Constants from './constants';
+import { Channel } from './BackgroundPanel';
 
 interface ContainerProps {
   initialBackground: string;
-  globals: Args;
-  updateGlobals: (newGlobals: Args) => void;
+  channel: Channel;
   children: ReactNode;
 }
 
-const Container = ({ initialBackground, globals, updateGlobals, children }: ContainerProps) => {
-  const globalsBackground = globals[PARAM_KEY]?.value;
+const Container = ({ initialBackground, channel, children }: ContainerProps) => {
+  const [background, setBackground] = useState(initialBackground || '');
 
   useEffect(() => {
-    if (globalsBackground == null && initialBackground !== 'transparent') {
-      updateGlobals({ [PARAM_KEY]: { value: initialBackground } });
-    }
-  }, [initialBackground, globalsBackground, updateGlobals]);
+    channel.on(Constants.UPDATE_BACKGROUND, setBackground);
+    return () => {
+      channel.removeListener(Constants.UPDATE_BACKGROUND, setBackground);
+    };
+  }, [channel]);
 
-  return children;
+  return (
+    <View
+      testID="addon-backgrounds-container"
+      style={[styles.container, background && { backgroundColor: background }]}
+    >
+      {children}
+    </View>
+  );
 };
 
 export default Container;
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: 'transparent' },
+});

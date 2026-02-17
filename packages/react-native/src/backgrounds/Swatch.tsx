@@ -4,6 +4,7 @@ interface SwatchProps {
   name: string;
   value: string;
   setBackground: (background: string) => void;
+  disabled?: boolean;
 }
 
 const PressableSwatch = styled.TouchableOpacity(({ theme }) => ({
@@ -44,8 +45,12 @@ const ValueText = styled.Text(({ theme }) => ({
   color: theme.color.defaultText,
 }));
 
-const Swatch = ({ name, value, setBackground }: SwatchProps) => (
-  <PressableSwatch onPress={() => setBackground(value)}>
+const Swatch = ({ name, value, setBackground, disabled }: SwatchProps) => (
+  <PressableSwatch
+    onPress={() => setBackground(value)}
+    disabled={disabled}
+    style={{ opacity: disabled ? 0.5 : 1 }}
+  >
     <ColorSwatch color={value} />
     <ValueContainer>
       <NameText>{name}</NameText>

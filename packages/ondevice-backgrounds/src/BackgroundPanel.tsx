@@ -1,43 +1,58 @@
 import type { AddonStore, API } from 'storybook/manager-api';
 import { StyleSheet, Text, View } from 'react-native';
-import { useCallback } from 'react';
-import { UPDATE_GLOBALS } from 'storybook/internal/core-events';
 
 import Swatch from './Swatch';
-import { PARAM_KEY } from './constants';
+import BackgroundEvents, { PARAM_KEY } from './constants';
+import { Background } from './index';
 
 const codeSample = `
-// In your preview config (.storybook/preview.tsx):
-import type { Preview } from '@storybook/react-native';
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react-native';
+import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+import { Text, StyleSheet } from 'react-native';
 
-const preview: Preview = {
+const Background = () => (
+  <Text style={styles.text}>Change background color via Addons -&gt; Background</Text>
+);
+
+const styles = StyleSheet.create({
+  text: { color: 'black' },
+});
+
+const BackgroundMeta: ComponentMeta<typeof Background> = {
+  title: 'Background CSF',
+  component: Background,
+  decorators: [withBackgrounds],
   parameters: {
     backgrounds: {
-      options: {
-        dark: { name: 'Dark', value: '#333' },
-        light: { name: 'Light', value: '#F7F9F2' },
-        maroon: { name: 'Maroon', value: '#400' },
-      },
+      default: 'plain',
+      values: [
+        { name: 'plain', value: 'white' },
+        { name: 'warm', value: 'hotpink' },
+        { name: 'cool', value: 'deepskyblue' },
+      ],
     },
-  },
-  initialGlobals: {
-    backgrounds: { value: 'light' },
   },
 };
 
-export default preview;
+export default BackgroundMeta;
+
+type BackgroundStory = ComponentStory<typeof Background>;
+
+export const Basic: BackgroundStory = () => <Background />;
 `.trim();
 
 const Instructions = () => (
   <View>
     <Text style={[styles.paragraph, styles.title]}>Setup Instructions</Text>
     <Text style={styles.paragraph}>
-      Add background options to your preview parameters. Each option should include a name and the
-      corresponding color value.
+      Please add the background decorator definition to your story. The background decorate accepts
+      an array of items, which should include a name for your color (preferably the css class name)
+      and the corresponding color / image value.
     </Text>
     <Text style={styles.paragraph}>
-      Below is an example of how to configure backgrounds in your preview config. Long press the
-      example to copy it.
+      Below is an example of how to add the background decorator to your story definition. Long
+      press the example to copy it.
     </Text>
     <Text selectable>{codeSample}</Text>
   </View>
@@ -50,81 +65,29 @@ interface BackgroundPanelProps {
   active: boolean;
 }
 
-interface BackgroundOptions {
-  [key: string]: {
-    name: string;
-    value: string;
-  };
-}
-
-interface LegacyBackground {
-  name: string;
-  value: string;
-}
-
 const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
-  const store = api.store();
-  const storyId = store.getSelection().storyId;
-  const story = store.fromId(storyId);
-
-  // storyGlobals comes from PreparedStory spread in getStoryContext
-  const isLocked = !!story?.storyGlobals?.[PARAM_KEY];
-
-  const setBackground = useCallback(
-    (name: string) => {
-      channel.emit(UPDATE_GLOBALS, { globals: { [PARAM_KEY]: { value: name } } });
-    },
-    [channel]
-  );
-
   if (!active) {
     return null;
   }
 
-  const bgParams = story.parameters[PARAM_KEY];
-  const options: BackgroundOptions | undefined = bgParams?.options;
-  const values: LegacyBackground[] | undefined = bgParams?.values;
-
-  // Support both new API (options object) and old API (values array)
-  if (options && Object.keys(options).length > 0) {
-    return (
-      <View style={{ padding: 10 }}>
-        {isLocked && <Text style={styles.lockedText}>Background is set at the story level</Text>}
-        {Object.entries(options).map(([key, { name, value }]) => (
-          <View key={`${key} ${value}`}>
-            <Swatch
-              value={value}
-              name={name || key}
-              setBackground={() => setBackground(key)}
-              disabled={isLocked}
-            />
-          </View>
-        ))}
-      </View>
-    );
-  }
-
-  if (values && values.length > 0) {
-    return (
-      <View style={{ padding: 10 }}>
-        {isLocked && <Text style={styles.lockedText}>Background is set at the story level</Text>}
-        {values.map(({ name, value }) => (
-          <View key={`${name} ${value}`}>
-            <Swatch
-              value={value}
-              name={name}
-              setBackground={() => setBackground(name)}
-              disabled={isLocked}
-            />
-          </View>
-        ))}
-      </View>
-    );
-  }
-
+  const store = api.store();
+  const storyId = store.getSelection().storyId;
+  const story = store.fromId(storyId);
+  const backgrounds: { default?: string; values: Background[] } = story.parameters[PARAM_KEY];
+  const setBackgroundFromSwatch = (background: string) => {
+    channel.emit(BackgroundEvents.UPDATE_BACKGROUND, background);
+  };
   return (
     <View style={{ padding: 10 }}>
-      <Instructions />
+      {backgrounds?.values ? (
+        backgrounds.values.map(({ value, name }) => (
+          <View key={`${name} ${value}`}>
+            <Swatch value={value} name={name} setBackground={setBackgroundFromSwatch} />
+          </View>
+        ))
+      ) : (
+        <Instructions />
+      )}
     </View>
   );
 };
@@ -134,5 +97,4 @@ export default BackgroundPanel;
 const styles = StyleSheet.create({
   title: { fontSize: 16 },
   paragraph: { marginBottom: 8 },
-  lockedText: { marginBottom: 10, fontStyle: 'italic', opacity: 0.7 },
 });

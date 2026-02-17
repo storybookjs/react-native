@@ -220,6 +220,11 @@ export function start({
   managerAddons.setChannel(channel);
   previewAddons.setChannel(channel);
 
+  if (globalThis.FEATURES?.ondeviceBackgrounds) {
+    const { registerBackgroundsAddon } = require('./backgrounds/register');
+    registerBackgroundsAddon();
+  }
+
   const previewView = {
     prepareForStory: () => {
       return {
