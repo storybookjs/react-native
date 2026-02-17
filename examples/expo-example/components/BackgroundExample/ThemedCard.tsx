@@ -45,7 +45,10 @@ export const ThemedCard = ({ title, description }: { title: string; description:
 
   return (
     <View
-      style={[styles.card, { backgroundColor: theme.colors.card, borderColor: theme.colors.border }]}
+      style={[
+        styles.card,
+        { backgroundColor: theme.colors.card, borderColor: theme.colors.border },
+      ]}
     >
       <Text style={[styles.title, { color: theme.colors.accent }]}>{title}</Text>
       <Text style={[styles.description, { color: theme.colors.text }]}>{description}</Text>

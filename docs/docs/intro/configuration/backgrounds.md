@@ -106,16 +106,8 @@ const themes = {
 const ThemeContext = createContext(themes.light);
 const useAppTheme = () => useContext(ThemeContext);
 
-const AppThemeProvider = ({
-  name,
-  children,
-}: {
-  name: 'light' | 'dark';
-  children: ReactNode;
-}) => (
-  <ThemeContext.Provider value={themes[name] ?? themes.light}>
-    {children}
-  </ThemeContext.Provider>
+const AppThemeProvider = ({ name, children }: { name: 'light' | 'dark'; children: ReactNode }) => (
+  <ThemeContext.Provider value={themes[name] ?? themes.light}>{children}</ThemeContext.Provider>
 );
 
 // A component that reads the theme

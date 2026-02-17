@@ -43,6 +43,7 @@ export const DarkLocked: Story = {
   },
   args: {
     title: 'Dark Theme Locked',
-    description: 'This story locks the background to dark via globals, so the card always uses the dark theme.',
+    description:
+      'This story locks the background to dark via globals, so the card always uses the dark theme.',
   },
 };
