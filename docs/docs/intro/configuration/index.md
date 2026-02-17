@@ -53,6 +53,7 @@ export default main;
   - `titlePrefix`: Optional prefix for story titles
   - `files`: Glob pattern for story files
 - `addons`: Array of addon packages to include
+- `features`: Enable new functionality (see [Feature Flags](./feature-flags.md))
 
 ## preview.tsx
 
@@ -223,7 +224,13 @@ Configure the `getStorybookUI` function to customize the appearance and behavior
 
 Use the `sb-rn-get-stories` command and understand all available CLI options for story generation and doc tools.
 
-### Advanced Features
+### [Feature Flags](./feature-flags.md)
+
+Enable new functionality via the `features` config in `main.ts`.
+
+### [Backgrounds](./backgrounds.md)
+
+Configure the new globals-based backgrounds feature with full-screen support.
 
 ### [WebSocket Configuration](./websocket-configuration.md)
 

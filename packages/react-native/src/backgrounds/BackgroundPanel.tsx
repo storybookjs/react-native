@@ -14,9 +14,9 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       options: {
-        dark: { name: 'Dark', value: '#333' },
+        dark: { name: 'Dark', value: '#333333' },
         light: { name: 'Light', value: '#F7F9F2' },
-        maroon: { name: 'Maroon', value: '#400' },
+        maroon: { name: 'Maroon', value: '#400000' },
       },
     },
   },
