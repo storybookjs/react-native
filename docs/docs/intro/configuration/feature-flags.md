@@ -31,6 +31,6 @@ Feature flags are set on `globalThis.FEATURES` via the generated `storybook.requ
 
 ## Available Flags
 
-| Flag                  | Description                                                                                                                                         | Guide                           |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Will become the default in the next major version. | [Backgrounds](./backgrounds.md) |
+| Flag                  | Description                                                                                                                                                               | Guide                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Available from v10.3. Will become the default in the next major version. | [Backgrounds](./backgrounds.md) |

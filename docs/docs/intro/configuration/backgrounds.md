@@ -6,7 +6,7 @@ sidebar_position: 7
 
 The `ondeviceBackgrounds` [feature flag](./feature-flags.md) enables the new backgrounds API with a Backgrounds panel integrated into core. It uses a globals-based configuration that aligns with Storybook web and lets you switch background colors directly on the device, with the background filling the entire screen including safe areas.
 
-This flag was introduced as a non-breaking way to opt into the new syntax. **In the next major version this will be the default behavior and the flag will no longer be needed.**
+This flag was introduced in v10.3 as a non-breaking way to opt into the new syntax. **In the next major version this will be the default behavior and the flag will no longer be needed.**
 
 When this flag is enabled you do **not** need to install `@storybook/addon-ondevice-backgrounds` or add it to your `addons` array.
 
