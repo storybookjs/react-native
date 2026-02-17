@@ -4,7 +4,9 @@ sidebar_position: 6
 
 # Feature Flags
 
-Feature flags let you enable new functionality in `@storybook/react-native`. They are configured in your `main.ts` file under the `features` key.
+Feature flags let you opt into new functionality in `@storybook/react-native` without breaking existing behavior. They are configured in your `main.ts` file under the `features` key.
+
+Flags are introduced so you can adopt new APIs at your own pace. In the next major version, the behavior behind these flags will become the default and the flags will no longer be needed.
 
 ## Configuration
 
@@ -29,6 +31,6 @@ Feature flags are set on `globalThis.FEATURES` via the generated `storybook.requ
 
 ## Available Flags
 
-| Flag                  | Description                                                                           | Guide                           |
-| --------------------- | ------------------------------------------------------------------------------------- | ------------------------------- |
-| `ondeviceBackgrounds` | Backgrounds panel integrated into core with full-screen support and globals-based API | [Backgrounds](./backgrounds.md) |
+| Flag                  | Description                                                                                                                                         | Guide                           |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Will become the default in the next major version. | [Backgrounds](./backgrounds.md) |

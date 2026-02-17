@@ -496,7 +496,9 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 
 ## Feature Flags
 
-Feature flags let you enable new functionality in Storybook. Add them to the `features` object in `main.ts`:
+Feature flags let you opt into new functionality without breaking existing behavior. In the next major version, the behavior behind these flags will become the default and the flags will no longer be needed.
+
+Add them to the `features` object in `main.ts`:
 
 ```ts
 // .rnstorybook/main.ts
@@ -513,9 +515,9 @@ const main: StorybookConfig = {
 export default main;
 ```
 
-| Flag                  | Description                                                                                         |
-| --------------------- | --------------------------------------------------------------------------------------------------- |
-| `ondeviceBackgrounds` | Backgrounds panel integrated into core — no need to install `@storybook/addon-ondevice-backgrounds` |
+| Flag                  | Description                                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------ |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed |
 
 For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
 

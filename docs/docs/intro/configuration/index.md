@@ -226,11 +226,11 @@ Use the `sb-rn-get-stories` command and understand all available CLI options for
 
 ### [Feature Flags](./feature-flags.md)
 
-Enable new functionality via the `features` config in `main.ts`.
+Opt into new functionality via the `features` config in `main.ts`. Flags let you adopt new APIs at your own pace — they will become the default in the next major version.
 
 ### [Backgrounds](./backgrounds.md)
 
-Configure the new globals-based backgrounds feature with full-screen support.
+The new globals-based backgrounds API with full-screen support, available now behind a feature flag.
 
 ### [WebSocket Configuration](./websocket-configuration.md)
 
