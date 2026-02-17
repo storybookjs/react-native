@@ -66,13 +66,22 @@ pnpm serve      # Serve built documentation
 - Each package has its own `tsup.config.ts`
 - `pnpm prepare` in a package builds it
 
-The `withStorybook` Metro wrapper:
+The `withStorybook` Metro wrapper (for Metro-based projects):
 
 - Enables `unstable_allowRequireContext` for dynamic story imports
 - Automatically generates `storybook.requires.ts` file
 - Optional WebSocket server for remote control
 - Can be conditionally enabled/disabled via `enabled` option
 - Supports `liteMode` for reduced bundle size
+
+The `StorybookPlugin` (for Re.Pack/Rspack/Webpack projects):
+
+- Alternative to `withStorybook` for non-Metro bundlers
+- Imported from `@storybook/react-native/repack/withStorybook`
+- Requires `enablePackageExports: true` in rspack resolve options
+- Uses `DefinePlugin` for build-time `STORYBOOK_ENABLED` constant
+- No `require.context` configuration needed (rspack handles it natively)
+- Same options as `withStorybook` (enabled, configPath, useJs, docTools, liteMode, websockets)
 
 ### Testing
 

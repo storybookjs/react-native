@@ -15,6 +15,16 @@ React Native Storybook works with both plain React Native and Expo but examples 
 If you're using **Expo Router** for file-based navigation, follow our dedicated [Expo Router Setup guide](./expo-router.md) instead of the standard setup below. Expo Router benefits from a specific configuration for routing integration.
 :::
 
+:::tip AI-Assisted Setup
+If you're using an AI coding agent (Claude Code, Cursor, Windsurf, etc.), you can install our agent skills to get guided setup assistance:
+
+```bash
+npx skills add storybookjs/react-native
+```
+
+The **setup-react-native-storybook** skill walks your agent through the full setup for Expo, Expo Router, React Native CLI, and Re.Pack projects.
+:::
+
 ## Recommended setup
 
 For most existing projects we recommend adding Storybook via the CLI.
@@ -139,4 +149,5 @@ https://github.com/dannyhw/react-native-storybook-starter
 Depending on your project setup and requirements, you may need different installation approaches:
 
 - **[Expo Router Setup](./expo-router.md)** - For projects using Expo Router file-based navigation
+- **[Re.Pack Setup](./repack.md)** - For projects using Re.Pack (Rspack/Webpack) instead of Metro
 - **[Manual Setup](./manual-setup.md)** - For full control over the setup process or when the CLI doesn't work for your specific configuration

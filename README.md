@@ -158,6 +158,10 @@ Make sure you have `react-native-reanimated` in your project and the plugin setu
 plugins: ['react-native-reanimated/plugin'],
 ```
 
+## Re.Pack setup
+
+For projects using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of Metro, see the full [Re.Pack Setup guide](https://storybookjs.github.io/react-native/docs/intro/getting-started/repack). You can also reference the [RepackStorybookStarter](https://github.com/dannyhw/RepackStorybookStarter) project.
+
 ## Expo router specific setup
 
 ```bash
@@ -547,6 +551,7 @@ Here are some example projects to help you get started
 - Expo setup https://github.com/dannyhw/expo-storybook-starter
 - React Native CLI setup https://github.com/dannyhw/react-native-storybook-starter
 - Adding a separate entry point and dev menu item in native files for RN CLI project: https://github.com/zubko/react-native-storybook-with-dev-menu
+- Re.Pack setup https://github.com/dannyhw/RepackStorybookStarter
 - Want to showcase your own project? open a PR and add it to the list!
 
 ## Agent skills
@@ -556,7 +561,7 @@ This repo includes agent skills for setting up and working with Storybook for Re
 ### Skills
 
 - **writing-react-native-storybook-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
-- **setup-react-native-storybook** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, and React Native CLI setups
+- **setup-react-native-storybook** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, React Native CLI, and Re.Pack setups
 
 ### Installation
 
