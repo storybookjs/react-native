@@ -241,7 +241,7 @@ export const Search = React.memo<{
           <SearchIcon />
         </SearchIconWrapper>
 
-        {isBottomSheet ? (
+        {isBottomSheet && (Platform.OS === 'ios' || Platform.OS === 'android') ? (
           <BottomSheetInput
             ref={inputRef as any} // TODO find solution for this
             onChangeText={setInputValue}

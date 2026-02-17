@@ -305,7 +305,7 @@ export const Layout = ({
         </Container>
       ) : null}
 
-      {isDesktop ? null : (
+      {!isDesktop ? (
         <SelectedNodeProvider>
           <MobileMenuDrawer ref={mobileMenuDrawerRef}>
             <View style={mobileMenuDrawerContentStyle}>
@@ -324,9 +324,9 @@ export const Layout = ({
             />
           </MobileMenuDrawer>
         </SelectedNodeProvider>
-      )}
+      ) : null}
 
-      {isDesktop ? null : <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />}
+      {!isDesktop ? <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} /> : null}
     </View>
   );
 };
