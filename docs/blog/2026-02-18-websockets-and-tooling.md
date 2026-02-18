@@ -1,6 +1,6 @@
 ---
 slug: websockets-and-tooling
-title: "WebSockets, Auto-Connect, and New Developer Tools"
+title: 'WebSockets, Auto-Connect, and New Developer Tools'
 authors: [dannyhw]
 tags: [guides]
 ---
@@ -76,10 +76,12 @@ const ws = new WebSocket('ws://localhost:7007');
 
 ws.on('open', () => {
   // Navigate to a story
-  ws.send(JSON.stringify({
-    type: 'setCurrentStory',
-    args: [{ viewMode: 'story', storyId: 'button--primary' }],
-  }));
+  ws.send(
+    JSON.stringify({
+      type: 'setCurrentStory',
+      args: [{ viewMode: 'story', storyId: 'button--primary' }],
+    })
+  );
 
   // Wait for render and take a screenshot
   setTimeout(() => {
