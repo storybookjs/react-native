@@ -1,7 +1,8 @@
 import type { AddonStore, API } from 'storybook/manager-api';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { useCallback } from 'react';
 import { UPDATE_GLOBALS } from 'storybook/internal/core-events';
+import { styled } from '@storybook/react-native-theming';
 
 import Swatch from './Swatch';
 import { PARAM_KEY } from './constants';
@@ -28,18 +29,40 @@ const preview: Preview = {
 export default preview;
 `.trim();
 
+const ThemedText = styled.Text(({ theme }) => ({
+  color: theme.color.defaultText,
+}));
+
+const TitleText = styled.Text(({ theme }) => ({
+  color: theme.color.defaultText,
+  fontSize: 16,
+  marginBottom: 8,
+}));
+
+const ParagraphText = styled.Text(({ theme }) => ({
+  color: theme.color.defaultText,
+  marginBottom: 8,
+}));
+
+const LockedText = styled.Text(({ theme }) => ({
+  color: theme.color.defaultText,
+  marginBottom: 10,
+  fontStyle: 'italic',
+  opacity: 0.7,
+}));
+
 const Instructions = () => (
   <View>
-    <Text style={[styles.paragraph, styles.title]}>Setup Instructions</Text>
-    <Text style={styles.paragraph}>
+    <TitleText>Setup Instructions</TitleText>
+    <ParagraphText>
       Add background options to your preview parameters. Each option should include a name and the
       corresponding color value.
-    </Text>
-    <Text style={styles.paragraph}>
+    </ParagraphText>
+    <ParagraphText>
       Below is an example of how to configure backgrounds in your preview config. Long press the
       example to copy it.
-    </Text>
-    <Text selectable>{codeSample}</Text>
+    </ParagraphText>
+    <ThemedText selectable>{codeSample}</ThemedText>
   </View>
 );
 
@@ -82,7 +105,7 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
   if (options && Object.keys(options).length > 0) {
     return (
       <View style={{ padding: 10 }}>
-        {isLocked && <Text style={styles.lockedText}>Background is set at the story level</Text>}
+        {isLocked && <LockedText>Background is set at the story level</LockedText>}
         {Object.entries(options).map(([key, { name, value }]) => (
           <View key={`${key} ${value}`}>
             <Swatch
@@ -105,9 +128,3 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
 };
 
 export default BackgroundPanel;
-
-const styles = StyleSheet.create({
-  title: { fontSize: 16 },
-  paragraph: { marginBottom: 8 },
-  lockedText: { marginBottom: 10, fontStyle: 'italic', opacity: 0.7 },
-});
