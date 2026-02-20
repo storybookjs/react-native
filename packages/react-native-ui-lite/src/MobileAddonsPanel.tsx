@@ -154,6 +154,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
       >
         <View
           style={{
+            flex: 1,
             justifyContent: 'flex-end',
           }}
         >

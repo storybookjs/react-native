@@ -24,6 +24,7 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 - 📱 [Hide/Show Storybook](#hideshow-storybook)
 - ⚙️ [withStorybook wrapper](#withstorybook-wrapper)
 - 🔧 [getStorybookUI](#getstorybookui-options)
+- 🏁 [Feature Flags](#feature-flags)
 - 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
 - ✨ [Examples](#examples)
@@ -155,6 +156,10 @@ Make sure you have `react-native-reanimated` in your project and the plugin setu
 // babel.config.js
 plugins: ['react-native-reanimated/plugin'],
 ```
+
+## Re.Pack setup
+
+For projects using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of Metro, see the full [Re.Pack Setup guide](https://storybookjs.github.io/react-native/docs/intro/getting-started/repack). You can also reference the [RepackStorybookStarter](https://github.com/dannyhw/RepackStorybookStarter) project.
 
 ## Expo router specific setup
 
@@ -493,6 +498,33 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 }
 ```
 
+## Feature Flags
+
+Feature flags let you opt into new functionality without breaking existing behavior. In the next major version, the behavior behind these flags will become the default and the flags will no longer be needed.
+
+Add them to the `features` object in `main.ts`:
+
+```ts
+// .rnstorybook/main.ts
+import type { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  addons: ['@storybook/addon-ondevice-controls'],
+  features: {
+    ondeviceBackgrounds: true,
+  },
+};
+
+export default main;
+```
+
+| Flag                  | Description                                                                                                                   |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3. |
+
+For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
+
 ## Using stories in unit tests
 
 Storybook provides testing utilities that allow you to reuse your stories in external test environments, such as Jest. This way you can write unit tests easier and reuse the setup which is already done in Storybook, but in your unit tests. You can find more information about it in the [portable stories section](./PORTABLE_STORIES.md).
@@ -518,4 +550,24 @@ Here are some example projects to help you get started
 - Expo setup https://github.com/dannyhw/expo-storybook-starter
 - React Native CLI setup https://github.com/dannyhw/react-native-storybook-starter
 - Adding a separate entry point and dev menu item in native files for RN CLI project: https://github.com/zubko/react-native-storybook-with-dev-menu
+- Re.Pack setup https://github.com/dannyhw/RepackStorybookStarter
 - Want to showcase your own project? open a PR and add it to the list!
+
+## Agent skills
+
+This repo includes agent skills for setting up and working with Storybook for React Native.
+
+### Skills
+
+- **writing-react-native-storybook-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
+- **setup-react-native-storybook** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, React Native CLI, and Re.Pack setups
+
+### Installation
+
+#### Any AI agent or IDE (universal)
+
+```sh
+npx skills add storybookjs/react-native
+```
+
+This works with any agent harness that supports skills (Claude Code, Cursor, Windsurf, etc.).

@@ -14,7 +14,7 @@ interface DependencyLocation {
   location: string;
 }
 
-const ALWAYS_LATEST_PACKAGES = new Set(['@storybook/addon-react-native-server']);
+const IGNORED_PACKAGES = new Set(['@storybook/addon-react-native-server']);
 
 function getTargetVersionFromArgs(): string | undefined {
   const args = process.argv.slice(2);
@@ -97,7 +97,8 @@ function getExternalStorybookDeps(
     // Check if it's a Storybook package and NOT an internal package
     if (
       (depName.startsWith('@storybook/') || depName === 'storybook') &&
-      !internalPackages.has(depName)
+      !internalPackages.has(depName) &&
+      !IGNORED_PACKAGES.has(depName)
     ) {
       externalDeps.push({ name: depName, version: version as string, packageJsonPath });
     }
@@ -118,12 +119,6 @@ function getLatestVersion(packageName: string): string {
  * Resolve the target version for a package
  */
 function resolveVersion(depName: string, targetVersion: string | undefined): string {
-  if (ALWAYS_LATEST_PACKAGES.has(depName)) {
-    const latest = getLatestVersion(depName);
-    console.log(`  ${depName}: resolved latest → ${latest}`);
-    return latest;
-  }
-
   if (targetVersion) {
     return targetVersion;
   }

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "10.2.3",
+  "version": "10.3.0-next.0",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -49,10 +49,10 @@
     "test:ci": "jest"
   },
   "dependencies": {
-    "@storybook/react": "^10.2.3",
-    "@storybook/react-native-theming": "^10.2.3",
-    "@storybook/react-native-ui": "^10.2.3",
-    "@storybook/react-native-ui-common": "^10.2.3",
+    "@storybook/react": "10.3.0-alpha.7",
+    "@storybook/react-native-theming": "^10.3.0-next.0",
+    "@storybook/react-native-ui": "^10.3.0-next.0",
+    "@storybook/react-native-ui-common": "^10.3.0-next.0",
     "commander": "^14.0.2",
     "dedent": "^1.7.0",
     "deepmerge": "^4.3.1",
@@ -72,7 +72,7 @@
     "jotai": "^2.17.1",
     "react": "19.1.0",
     "react-native": "0.81.5",
-    "storybook": "^10.2.3",
+    "storybook": "10.3.0-alpha.7",
     "test-renderer": "^0.14.0",
     "tsup": "^8.5.0",
     "typescript": "~5.9.3"

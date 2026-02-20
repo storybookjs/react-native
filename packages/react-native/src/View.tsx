@@ -26,6 +26,26 @@ import {
   STORYBOOK_STORY_ID_PARAM,
 } from './constants';
 
+function resolveStoryBackgroundColor(
+  story?: StoryContext<ReactRenderer> | null
+): string | undefined {
+  const backgroundGlobal = story?.globals?.backgrounds?.value;
+  const bgParams = story?.parameters?.backgrounds;
+
+  const backgroundName = backgroundGlobal;
+
+  if (!backgroundName) return undefined;
+
+  if (bgParams?.options?.[backgroundName]?.value) {
+    return bgParams.options[backgroundName].value;
+  }
+
+  // Direct color value (e.g. hex)
+  if (backgroundName.startsWith('#')) return backgroundName;
+
+  return undefined;
+}
+
 export interface Storage {
   getItem: (key: string) => Promise<string | null>;
   setItem: (key: string, value: string) => Promise<void>;
@@ -416,6 +436,10 @@ export class View {
         );
       }
 
+      const storyBackgroundColor = globalThis.FEATURES?.ondeviceBackgrounds
+        ? resolveStoryBackgroundColor(story)
+        : undefined;
+
       if (onDeviceUI) {
         if (CustomUIComponent) {
           return (
@@ -427,8 +451,12 @@ export class View {
               }
               storage={storage}
               theme={appliedTheme as Theme}
+              storyBackgroundColor={storyBackgroundColor}
             >
-              <StoryView useWrapper={storyViewWrapper} />
+              <StoryView
+                useWrapper={storyViewWrapper}
+                storyBackgroundColor={storyBackgroundColor}
+              />
             </CustomUIComponent>
           );
         }
@@ -442,12 +470,15 @@ export class View {
             setStory={(newStoryId) =>
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }
+            storyBackgroundColor={storyBackgroundColor}
           >
-            <StoryView useWrapper={storyViewWrapper} />
+            <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
           </FullUI>
         );
       } else {
-        return <StoryView useWrapper={storyViewWrapper} />;
+        return (
+          <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
+        );
       }
     };
   };

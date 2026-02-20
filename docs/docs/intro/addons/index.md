@@ -53,6 +53,8 @@ export default {
 
 The Backgrounds addon allows you to change background colors of your stories directly on the device. Perfect for testing components against different backgrounds.
 
+> **New:** A new globals-based backgrounds API is available behind a feature flag — no extra package required, full-screen support, and alignment with Storybook web. This will become the default in the next major version. See the [Backgrounds guide](../configuration/backgrounds.md) to opt in now.
+
 ```sh
 npm install --save-dev @storybook/addon-ondevice-backgrounds
 ```

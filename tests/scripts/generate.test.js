@@ -214,5 +214,27 @@ describe('loader', () => {
         t.assert.snapshot(fileContentMock);
       });
     });
+
+    describe('when features are provided', () => {
+      it('sets feature flags on globalThis.FEATURES', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-features' });
+        mock.reset();
+
+        assert.ok(fileContentMock.includes('globalThis.FEATURES.ondeviceBackgrounds = true;'));
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('when no features are provided', () => {
+      it('does not include FEATURES assignments', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/all-config-files' });
+        mock.reset();
+
+        assert.ok(!fileContentMock.includes('globalThis.FEATURES.'));
+        t.assert.snapshot(fileContentMock);
+      });
+    });
   });
 });
