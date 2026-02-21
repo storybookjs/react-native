@@ -8,10 +8,10 @@
     "test:update": "node --test --test-update-snapshots scripts/generate.test.js"
   },
   "dependencies": {
-    "@storybook/react-native": "workspace:*",
     "@storybook/addon-ondevice-actions": "workspace:*",
     "@storybook/addon-ondevice-backgrounds": "workspace:*",
     "@storybook/addon-ondevice-controls": "workspace:*",
-    "@storybook/addon-ondevice-notes": "workspace:*"
+    "@storybook/addon-ondevice-notes": "workspace:*",
+    "@storybook/react-native": "workspace:*"
   }
 }

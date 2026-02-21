@@ -30,7 +30,6 @@ export const useArgs = (
     return () => storyStore._channel.off(STORY_ARGS_UPDATED, cb);
     // Exclude `initialArgs` from the dependencies, as these are not relevant
     // until `storyId` changes.
-    // eslint-disable-next-line react-compiler/react-compiler
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storyId]);
 

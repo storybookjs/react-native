@@ -49,9 +49,9 @@
     "eslint": "^9.38.0",
     "eslint-config-expo": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-react-compiler": "^19.1.0-rc.2",
+    "eslint-plugin-react-hooks": "7.0.1",
     "prettier": "^3.8.1",
-    "sherif": "^1.7.0",
+    "sherif": "^1.10.0",
     "typescript": "~5.9.3"
   },
   "pnpm": {
@@ -59,7 +59,8 @@
       "react-docgen-typescript": "2.2.2",
       "webpack-dev-server": "^5.2.2",
       "markdown-it": "^14.0.0",
-      "@types/markdown-it": "^14.0.1"
+      "@types/markdown-it": "^14.0.1",
+      "zod-validation-error": "^4.0.0"
     }
   },
   "engines": {
