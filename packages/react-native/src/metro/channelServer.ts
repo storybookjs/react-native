@@ -1,7 +1,7 @@
 import { WebSocketServer, WebSocket, Data } from 'ws';
 import { createServer, IncomingMessage, ServerResponse } from 'node:http';
-import { buffer } from 'node:stream/consumers';
 import { buildIndex } from './buildIndex';
+import { createMcpHandler } from './mcpServer';
 
 /**
  * Options for creating a channel server.
@@ -30,52 +30,6 @@ interface ChannelServerOptions {
 }
 
 /**
- * Converts a Node.js IncomingMessage to a Web Request object.
- */
-async function incomingMessageToWebRequest(req: IncomingMessage): Promise<Request> {
-  const host = req.headers.host || 'localhost';
-  const protocol = 'encrypted' in req.socket && (req.socket as any).encrypted ? 'https' : 'http';
-  const url = new URL(req.url || '/', `${protocol}://${host}`);
-
-  const bodyBuffer = await buffer(req);
-
-  return new Request(url, {
-    method: req.method,
-    headers: req.headers as HeadersInit,
-    body: bodyBuffer.length > 0 ? new Uint8Array(bodyBuffer) : undefined,
-  });
-}
-
-/**
- * Converts a Web Response to a Node.js ServerResponse.
- */
-async function webResponseToServerResponse(
-  webResponse: Response,
-  nodeResponse: ServerResponse
-): Promise<void> {
-  nodeResponse.statusCode = webResponse.status;
-
-  webResponse.headers.forEach((value, key) => {
-    nodeResponse.setHeader(key, value);
-  });
-
-  if (webResponse.body) {
-    const reader = webResponse.body.getReader();
-    try {
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        nodeResponse.write(value);
-      }
-    } finally {
-      reader.releaseLock();
-    }
-  }
-
-  nodeResponse.end();
-}
-
-/**
  * Creates a channel server for syncing storybook instances and sending events.
  * The server provides both WebSocket and REST endpoints:
  * - WebSocket: broadcasts all received messages to all connected clients
@@ -97,54 +51,7 @@ export function createChannelServer({
   configPath,
   mcp = false,
 }: ChannelServerOptions): WebSocketServer {
-  // Lazily initialized MCP handler and manifest cache
-  let mcpHandler: ((req: Request) => Promise<Response>) | null = null;
-  let mcpInitPromise: Promise<void> | null = null;
-  let cachedManifest: string | null = null;
-  let manifestBuildPromise: Promise<string> | null = null;
-
-  async function initMcp() {
-    if (mcpHandler) return;
-    if (mcpInitPromise) {
-      await mcpInitPromise;
-      return;
-    }
-
-    mcpInitPromise = (async () => {
-      try {
-        const { createStorybookMcpHandler } = await import('@storybook/mcp');
-        mcpHandler = await createStorybookMcpHandler({
-          manifestProvider: async (_request, manifestPath) => {
-            // Only serve component manifests (not docs manifests)
-            if (manifestPath.includes('docs.json')) {
-              throw new Error('Docs manifest not available in React Native Storybook');
-            }
-            return getOrBuildManifest();
-          },
-        });
-        console.log('[Storybook] MCP server initialized');
-      } catch (error) {
-        console.error('[Storybook] Failed to initialize MCP server:', error);
-        throw error;
-      }
-    })();
-
-    await mcpInitPromise;
-  }
-
-  async function getOrBuildManifest(): Promise<string> {
-    if (cachedManifest) return cachedManifest;
-    if (manifestBuildPromise) return manifestBuildPromise;
-
-    manifestBuildPromise = (async () => {
-      const { buildManifest } = await import('./manifest/buildManifest.js');
-      const manifest = await buildManifest({ configPath });
-      cachedManifest = JSON.stringify(manifest);
-      return cachedManifest;
-    })();
-
-    return manifestBuildPromise;
-  }
+  const mcpServer = mcp ? createMcpHandler(configPath) : null;
 
   const httpServer = createServer(async (req: IncomingMessage, res: ServerResponse) => {
     if (req.method === 'OPTIONS') {
@@ -194,37 +101,14 @@ export function createChannelServer({
     }
 
     // MCP endpoints
-    if (mcp) {
+    if (mcpServer) {
       if (req.url === '/manifests/components.json' && req.method === 'GET') {
-        try {
-          const manifestJson = await getOrBuildManifest();
-          res.writeHead(200, { 'Content-Type': 'application/json' });
-          res.end(manifestJson);
-        } catch (error) {
-          console.error('[Storybook] Failed to build manifest:', error);
-          res.writeHead(500, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ error: 'Failed to build component manifest' }));
-        }
+        await mcpServer.handleManifestRequest(req, res);
         return;
       }
 
       if (req.url === '/mcp' && (req.method === 'POST' || req.method === 'GET')) {
-        try {
-          await initMcp();
-          if (!mcpHandler) {
-            res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: 'MCP handler not initialized' }));
-            return;
-          }
-
-          const webRequest = await incomingMessageToWebRequest(req);
-          const webResponse = await mcpHandler(webRequest);
-          await webResponseToServerResponse(webResponse, res);
-        } catch (error) {
-          console.error('[Storybook] MCP request failed:', error);
-          res.writeHead(500, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ error: 'MCP request failed' }));
-        }
+        await mcpServer.handleMcpRequest(req, res);
         return;
       }
     }
@@ -281,11 +165,7 @@ export function createChannelServer({
   });
 
   // Pre-initialize MCP if enabled (non-blocking)
-  if (mcp) {
-    initMcp().catch((e) =>
-      console.warn('[Storybook] MCP pre-initialization failed (will retry on first request):', e)
-    );
-  }
+  mcpServer?.preInit();
 
   return wss;
 }

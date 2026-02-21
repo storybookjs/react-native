@@ -354,6 +354,12 @@ importers:
       '@storybook/react-native-ui-common':
         specifier: ^10.3.0-next.0
         version: link:../react-native-ui-common
+      '@tmcp/adapter-valibot':
+        specifier: ^0.1.4
+        version: 0.1.5(tmcp@1.19.2(typescript@5.9.3))(valibot@1.2.0(typescript@5.9.3))
+      '@tmcp/transport-http':
+        specifier: ^0.8.0
+        version: 0.8.4(tmcp@1.19.2(typescript@5.9.3))
       commander:
         specifier: ^14.0.2
         version: 14.0.3
@@ -396,9 +402,15 @@ importers:
       setimmediate:
         specifier: ^1.0.5
         version: 1.0.5
+      tmcp:
+        specifier: ^1.16.0
+        version: 1.19.2(typescript@5.9.3)
       tsconfig-paths:
         specifier: ^4.2.0
         version: 4.2.0
+      valibot:
+        specifier: ^1.2.0
+        version: 1.2.0(typescript@5.9.3)
       ws:
         specifier: ^8.18.3
         version: 8.19.0
