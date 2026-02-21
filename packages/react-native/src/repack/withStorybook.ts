@@ -120,7 +120,10 @@ export interface StorybookPluginOptions {
  */
 export class StorybookPlugin {
   private options: Required<
-    Pick<StorybookPluginOptions, 'configPath' | 'enabled' | 'useJs' | 'docTools' | 'liteMode' | 'mcp'>
+    Pick<
+      StorybookPluginOptions,
+      'configPath' | 'enabled' | 'useJs' | 'docTools' | 'liteMode' | 'mcp'
+    >
   > &
     Pick<StorybookPluginOptions, 'websockets'>;
 

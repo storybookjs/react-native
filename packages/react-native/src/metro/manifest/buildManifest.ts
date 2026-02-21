@@ -160,29 +160,24 @@ export async function buildManifest({
 
         const packageName = getPackageInfo(component?.path, storyPath);
         const fallbackImport =
-          packageName && componentName
-            ? `import { ${componentName} } from "${packageName}";`
-            : '';
+          packageName && componentName ? `import { ${componentName} } from "${packageName}";` : '';
         const imports =
-          getImports({ components: allComponents, packageName }).join('\n').trim() || fallbackImport;
+          getImports({ components: allComponents, packageName }).join('\n').trim() ||
+          fallbackImport;
 
         // Extract stories with snippets
-        const storyEntries: Story[] = Object.entries((csf as any)._stories)
-          .map(([storyExport, story]: [string, any]) => {
+        const storyEntries: Story[] = Object.entries((csf as any)._stories).map(
+          ([storyExport, story]: [string, any]) => {
             try {
               const jsdocComment = extractDescription((csf as any)._storyStatements[storyExport]);
-              const { tags = {}, description } = jsdocComment
-                ? extractJSDocInfo(jsdocComment)
-                : {};
-              const finalDescription =
-                (tags?.describe?.[0] || tags?.desc?.[0]) ?? description;
+              const { tags = {}, description } = jsdocComment ? extractJSDocInfo(jsdocComment) : {};
+              const finalDescription = (tags?.describe?.[0] || tags?.desc?.[0]) ?? description;
 
               return {
                 id: story.id,
                 name: story.name ?? storyNameFromExport(storyExport),
-                snippet: recast.print(
-                  getCodeSnippet(csf, storyExport, component?.componentName)
-                ).code,
+                snippet: recast.print(getCodeSnippet(csf, storyExport, component?.componentName))
+                  .code,
                 description: finalDescription?.trim(),
                 summary: tags.summary?.[0],
               };
@@ -194,20 +189,21 @@ export async function buildManifest({
                 error: { name: err.name, message: err.message },
               };
             }
-          });
+          }
+        );
 
         // Extract component-level description
         const hasDocgen = component?.reactDocgen;
-        const docgen =
-          hasDocgen && hasDocgen.type === 'success' ? hasDocgen.data : undefined;
+        const docgen = hasDocgen && hasDocgen.type === 'success' ? hasDocgen.data : undefined;
 
-        const jsdocComment =
-          extractDescription((csf as any)._metaStatement) || docgen?.description;
+        const jsdocComment = extractDescription((csf as any)._metaStatement) || docgen?.description;
         const { tags = {}, description: descriptionFromJsDoc } = jsdocComment
           ? extractJSDocInfo(jsdocComment)
           : {};
-        const componentDescription =
-          ((tags?.describe?.[0] || tags?.desc?.[0]) ?? descriptionFromJsDoc)?.trim();
+        const componentDescription = (
+          (tags?.describe?.[0] || tags?.desc?.[0]) ??
+          descriptionFromJsDoc
+        )?.trim();
 
         const entry: ComponentManifestEntry = {
           id,
@@ -245,7 +241,9 @@ export async function buildManifest({
   }
 
   const durationMs = Math.round(performance.now() - startTime);
-  console.log(`[Storybook MCP] Generated manifest for ${Object.keys(components).length} components in ${durationMs}ms`);
+  console.log(
+    `[Storybook MCP] Generated manifest for ${Object.keys(components).length} components in ${durationMs}ms`
+  );
 
   return {
     v: 0,

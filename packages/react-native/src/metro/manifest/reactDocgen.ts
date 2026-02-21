@@ -219,10 +219,7 @@ export const getReactDocgen = cached(
       const error = {
         name: errors.at(-1)?.name ?? 'No component definition found',
         message: errors
-          .map(
-            (e) =>
-              `File: ${e.path}\nError:\n${e.message}\nCode:\n${e.code}`
-          )
+          .map((e) => `File: ${e.path}\nError:\n${e.message}\nCode:\n${e.code}`)
           .join('\n\n'),
       };
       return { type: 'error', error };
