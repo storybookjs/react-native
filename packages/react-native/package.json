@@ -60,7 +60,13 @@
     "glob": "^13.0.0",
     "react-native-url-polyfill": "^3.0.0",
     "setimmediate": "^1.0.5",
-    "ws": "^8.18.3"
+    "ws": "^8.18.3",
+    "@storybook/mcp": "^0.4.0",
+    "react-docgen": "^8.0.2",
+    "comment-parser": "^1.4.5",
+    "empathic": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "resolve": "^1.22.11"
   },
   "devDependencies": {
     "@types/jest": "^29.4.3",

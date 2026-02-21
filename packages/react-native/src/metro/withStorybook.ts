@@ -54,6 +54,14 @@ interface WithStorybookOptions {
    * This will mock out the default storybook ui so you don't need to install all its dependencies like reanimated etc.
    */
   liteMode?: boolean;
+
+  /**
+   * Whether to enable MCP (Model Context Protocol) server support. Defaults to false.
+   * When enabled, adds /mcp and /manifests/components.json endpoints to the channel server,
+   * allowing AI agents (Claude Code, Cursor, etc.) to query component documentation.
+   * Requires websockets to be enabled.
+   */
+  mcp?: boolean;
 }
 
 type ResolveRequestFunction = (context: any, moduleName: string, platform: string | null) => any;
@@ -142,6 +150,7 @@ export function withStorybook(
     enabled = true,
     docTools = true,
     liteMode = false,
+    mcp = false,
   } = options;
 
   const disableTelemetry = optionalEnvToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY);
@@ -202,7 +211,7 @@ export function withStorybook(
 
     // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
     // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
-    createChannelServer({ port, host: host === 'auto' ? undefined : host, configPath });
+    createChannelServer({ port, host: host === 'auto' ? undefined : host, configPath, mcp });
 
     generate({
       configPath,
