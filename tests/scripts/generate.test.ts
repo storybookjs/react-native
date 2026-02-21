@@ -1,15 +1,20 @@
-const { describe, it, beforeEach, mock } = require('node:test');
-const assert = require('node:assert');
-const path = require('node:path');
-const { generate } = require('@storybook/react-native/scripts/generate');
+import { describe, it, beforeEach, mock } from 'node:test';
+import assert from 'node:assert';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
+import { generate } from '@storybook/react-native/scripts/generate';
 
-let pathMock;
-let fileContentMock;
+const require = createRequire(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-global.window = { navigator: {} };
+let pathMock: string | undefined;
+let fileContentMock: string | undefined;
+
+(globalThis as any).window = { navigator: {} };
 
 const mockFs = {
-  writeFileSync: (filePath, fileContent, opts) => {
+  writeFileSync: (filePath: string, fileContent: string, opts: any) => {
     pathMock = filePath;
     fileContentMock = fileContent;
   },
@@ -144,7 +149,7 @@ describe('loader', () => {
         mock.reset();
 
         assert.ok(
-          fileContentMock.includes(
+          fileContentMock!.includes(
             "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
           )
         );
@@ -162,7 +167,7 @@ describe('loader', () => {
         mock.reset();
 
         assert.ok(
-          fileContentMock.includes(
+          fileContentMock!.includes(
             "globalThis.STORYBOOK_WEBSOCKET = { host: 'localhost', port: 7007 };"
           )
         );
@@ -176,7 +181,7 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/all-config-files' });
         mock.reset();
 
-        assert.ok(!fileContentMock.includes('globalThis.STORYBOOK_WEBSOCKET ='));
+        assert.ok(!fileContentMock!.includes('globalThis.STORYBOOK_WEBSOCKET ='));
         t.assert.snapshot(fileContentMock);
       });
     });
@@ -190,7 +195,7 @@ describe('loader', () => {
         });
         mock.reset();
 
-        assert.ok(!fileContentMock.includes('globalThis.STORYBOOK_WEBSOCKET ='));
+        assert.ok(!fileContentMock!.includes('globalThis.STORYBOOK_WEBSOCKET ='));
         t.assert.snapshot(fileContentMock);
       });
     });
@@ -207,7 +212,7 @@ describe('loader', () => {
         mock.reset();
 
         assert.ok(
-          fileContentMock.includes(
+          fileContentMock!.includes(
             "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
           )
         );
@@ -221,7 +226,7 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/with-features' });
         mock.reset();
 
-        assert.ok(fileContentMock.includes('globalThis.FEATURES.ondeviceBackgrounds = true;'));
+        assert.ok(fileContentMock!.includes('globalThis.FEATURES.ondeviceBackgrounds = true;'));
         t.assert.snapshot(fileContentMock);
       });
     });
@@ -232,7 +237,7 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/all-config-files' });
         mock.reset();
 
-        assert.ok(!fileContentMock.includes('globalThis.FEATURES.'));
+        assert.ok(!fileContentMock!.includes('globalThis.FEATURES.'));
         t.assert.snapshot(fileContentMock);
       });
     });
