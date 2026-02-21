@@ -1,19 +1,36 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
+import type { TLSSocket } from 'node:tls';
 import { buffer } from 'node:stream/consumers';
+
+/**
+ * Converts Node.js IncomingHttpHeaders to a format compatible with the Web Headers API.
+ * Handles multi-value headers by joining them with commas per HTTP spec.
+ */
+function toHeaderEntries(nodeHeaders: IncomingMessage['headers']): Array<[string, string]> {
+  const entries: Array<[string, string]> = [];
+
+  for (const [key, value] of Object.entries(nodeHeaders)) {
+    if (value === undefined) continue;
+    entries.push([key, Array.isArray(value) ? value.join(', ') : value]);
+  }
+
+  return entries;
+}
 
 /**
  * Converts a Node.js IncomingMessage to a Web Request object.
  */
 async function incomingMessageToWebRequest(req: IncomingMessage): Promise<Request> {
   const host = req.headers.host || 'localhost';
-  const protocol = 'encrypted' in req.socket && (req.socket as any).encrypted ? 'https' : 'http';
+  const isTLS = 'encrypted' in req.socket && (req.socket as TLSSocket).encrypted;
+  const protocol = isTLS ? 'https' : 'http';
   const url = new URL(req.url || '/', `${protocol}://${host}`);
 
   const bodyBuffer = await buffer(req);
 
   return new Request(url, {
     method: req.method,
-    headers: req.headers as HeadersInit,
+    headers: toHeaderEntries(req.headers),
     body: bodyBuffer.length > 0 ? new Uint8Array(bodyBuffer) : undefined,
   });
 }
@@ -102,7 +119,12 @@ export function createMcpHandler(configPath: string) {
           import('./manifest/storyInstructions.js'),
         ]);
 
-        const manifestProvider = async (_request: Request | undefined, manifestPath: string) => {
+        type StorybookContext = Awaited<typeof import('@storybook/mcp')>['StorybookContext'];
+
+        const manifestProvider: NonNullable<StorybookContext['manifestProvider']> = async (
+          _request,
+          manifestPath
+        ) => {
           if (manifestPath.includes('docs.json')) {
             throw new Error('Docs manifest not available in React Native Storybook');
           }
@@ -121,11 +143,11 @@ export function createMcpHandler(configPath: string) {
               tools: { listChanged: true },
             },
           }
-        ).withContext<{ request?: Request; manifestProvider: typeof manifestProvider }>();
+        ).withContext<StorybookContext>();
 
-        await addListAllDocumentationTool(server as any);
-        await addGetDocumentationTool(server as any);
-        await addGetComponentStoryDocumentationTool(server as any);
+        addListAllDocumentationTool(server);
+        addGetDocumentationTool(server);
+        addGetComponentStoryDocumentationTool(server);
 
         server.tool(
           {
@@ -142,12 +164,11 @@ export function createMcpHandler(configPath: string) {
 
         const transport = new HttpTransport(server, { path: null });
 
-        handler = async (req: Request) => {
-          return await transport.respond(req, {
+        handler = (req) =>
+          transport.respond(req, {
             request: req,
             manifestProvider,
           });
-        };
 
         console.log('[Storybook] MCP server initialized');
       } catch (error) {

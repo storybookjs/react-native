@@ -2,7 +2,6 @@ import { recast } from 'storybook/internal/babel';
 import { normalizeStories, loadMainConfig } from 'storybook/internal/common';
 import { storyNameFromExport, toId } from 'storybook/internal/csf';
 import { extractDescription, loadCsf } from 'storybook/internal/csf-tools';
-import type { NormalizedStoriesSpecifier } from 'storybook/internal/types';
 import { readFileSync } from 'node:fs';
 import { sync as globSync } from 'glob';
 import path from 'path';
@@ -11,7 +10,7 @@ import { getCodeSnippet } from './generateCodeSnippet';
 import { getComponents, getImports } from './getComponentImports';
 import { extractJSDocInfo } from './jsdocTags';
 import type { DocObj } from './reactDocgen';
-import { cachedFindUp, cachedReadFileSync, invalidateCache, invariant } from './utils';
+import { cachedFindUp, cachedReadFileSync, invalidateCache } from './utils';
 
 const cwd = process.cwd();
 
@@ -144,7 +143,7 @@ export async function buildManifest({
         }
         seenTitles.add(id);
 
-        const componentName = (csf as any)._meta?.component;
+        const componentName = csf._meta?.component;
         const title = meta.title.split('/').at(-1)!.replace(/\s+/g, '');
 
         const allComponents = getComponents({
@@ -166,37 +165,35 @@ export async function buildManifest({
           fallbackImport;
 
         // Extract stories with snippets
-        const storyEntries: Story[] = Object.entries((csf as any)._stories).map(
-          ([storyExport, story]: [string, any]) => {
-            try {
-              const jsdocComment = extractDescription((csf as any)._storyStatements[storyExport]);
-              const { tags = {}, description } = jsdocComment ? extractJSDocInfo(jsdocComment) : {};
-              const finalDescription = (tags?.describe?.[0] || tags?.desc?.[0]) ?? description;
+        const storyEntries: Story[] = Object.entries(csf._stories).map(([storyExport, story]) => {
+          try {
+            const jsdocComment = extractDescription(csf._storyStatements[storyExport]);
+            const { tags = {}, description } = jsdocComment ? extractJSDocInfo(jsdocComment) : {};
+            const finalDescription = (tags?.describe?.[0] || tags?.desc?.[0]) ?? description;
 
-              return {
-                id: story.id,
-                name: story.name ?? storyNameFromExport(storyExport),
-                snippet: recast.print(getCodeSnippet(csf, storyExport, component?.componentName))
-                  .code,
-                description: finalDescription?.trim(),
-                summary: tags.summary?.[0],
-              };
-            } catch (e) {
-              const err = e instanceof Error ? e : new Error(String(e));
-              return {
-                id: story.id,
-                name: story.name ?? storyNameFromExport(storyExport),
-                error: { name: err.name, message: err.message },
-              };
-            }
+            return {
+              id: story.id,
+              name: story.name ?? storyNameFromExport(storyExport),
+              snippet: recast.print(getCodeSnippet(csf, storyExport, component?.componentName))
+                .code,
+              description: finalDescription?.trim(),
+              summary: tags.summary?.[0],
+            };
+          } catch (e) {
+            const err = e instanceof Error ? e : new Error(String(e));
+            return {
+              id: story.id,
+              name: story.name ?? storyNameFromExport(storyExport),
+              error: { name: err.name, message: err.message },
+            };
           }
-        );
+        });
 
         // Extract component-level description
         const hasDocgen = component?.reactDocgen;
         const docgen = hasDocgen && hasDocgen.type === 'success' ? hasDocgen.data : undefined;
 
-        const jsdocComment = extractDescription((csf as any)._metaStatement) || docgen?.description;
+        const jsdocComment = extractDescription(csf._metaStatement) || docgen?.description;
         const { tags = {}, description: descriptionFromJsDoc } = jsdocComment
           ? extractJSDocInfo(jsdocComment)
           : {};

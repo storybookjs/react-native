@@ -7,12 +7,12 @@ export function getCodeSnippet(
   storyName: string,
   componentName?: string
 ): t.VariableDeclaration | t.FunctionDeclaration {
-  const storyDeclaration = (csf as any)._storyDeclarationPath[storyName];
-  const metaObj = (csf as any)._metaNode;
+  const storyDeclaration = csf._storyDeclarationPath[storyName];
+  const metaObj = csf._metaNode;
 
   if (!storyDeclaration) {
     const message = 'Expected story to be a function or variable declaration';
-    throw (csf as any)._storyPaths[storyName]?.buildCodeFrameError(message) ?? message;
+    throw csf._storyPaths[storyName]?.buildCodeFrameError(message) ?? message;
   }
 
   let storyPath: NodePath<t.FunctionDeclaration | t.Expression>;
@@ -105,7 +105,7 @@ export function getCodeSnippet(
     ? normalizedPath.get('properties').filter((p) => p.isObjectProperty())
     : [];
 
-  const metaPath = pathForNode((csf as any)._file.path, metaObj);
+  const metaPath = pathForNode(csf._file.path, metaObj);
   const metaProps = metaPath?.isObjectExpression()
     ? metaPath.get('properties').filter((p) => p.isObjectProperty())
     : [];
@@ -139,7 +139,7 @@ export function getCodeSnippet(
     .map((p) => p.get('value'))
     .find((v) => v.isObjectExpression());
   const storyArgs = argsRecordFromObjectPath(storyArgsPath);
-  const storyAssignedArgsPath = storyArgsAssignmentPath((csf as any)._file.path, storyName);
+  const storyAssignedArgsPath = storyArgsAssignmentPath(csf._file.path, storyName);
   const storyAssignedArgs = argsRecordFromObjectPath(storyAssignedArgsPath);
   const merged: Record<string, t.Node> = { ...metaArgs, ...storyArgs, ...storyAssignedArgs };
 

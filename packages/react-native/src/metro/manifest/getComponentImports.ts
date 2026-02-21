@@ -1,9 +1,8 @@
 import { dirname } from 'node:path';
-import { type NodePath, babelParse, recast, types as t } from 'storybook/internal/babel';
+import { babelParse, recast, types as t } from 'storybook/internal/babel';
 import { type CsfFile } from 'storybook/internal/csf-tools';
 
 import { getImportTag, getReactDocgen, matchPath } from './reactDocgen';
-import type { DocObj } from './reactDocgen';
 import { cachedResolveImport } from './utils';
 
 export type ComponentRef = {
@@ -44,7 +43,7 @@ export const getComponents = ({
   csf: CsfFile;
   storyFilePath?: string;
 }): ComponentRef[] => {
-  const program: NodePath<t.Program> = (csf as any)._file.path;
+  const program = csf._file.path;
 
   const componentSet = new Set<string>();
   const localToImport = new Map<string, { importId: string; importName: string }>();
@@ -68,7 +67,7 @@ export const getComponents = ({
     },
   });
 
-  const metaComp = (csf as any)._meta?.component;
+  const metaComp = csf._meta?.component;
   if (metaComp) {
     componentSet.add(metaComp);
   }
@@ -170,7 +169,7 @@ export const getComponents = ({
             basedir: dirname(storyFilePath),
           });
         }
-      } catch (e) {
+      } catch {
         // Could not resolve import path
       }
 
@@ -287,7 +286,7 @@ export const getImports = ({
         if (!decl) {
           return undefined;
         }
-        const spec = (decl.specifiers ?? []).find((s) => !isTypeSpecifier(s as any));
+        const spec = (decl.specifiers ?? []).find((s) => !isTypeSpecifier(s));
         if (!spec) {
           return undefined;
         }

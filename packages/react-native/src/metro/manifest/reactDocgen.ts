@@ -93,7 +93,7 @@ const getExportPaths = cached(
     let ast;
     try {
       ast = babelParse(code);
-    } catch (_) {
+    } catch {
       return [];
     }
 
@@ -111,7 +111,7 @@ const getExportPaths = cached(
       .flatMap((id) => {
         try {
           return [cachedResolveImport(id, { basedir })];
-        } catch (e) {
+        } catch {
           return [];
         }
       });
