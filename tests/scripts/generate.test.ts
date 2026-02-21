@@ -149,7 +149,7 @@ describe('loader', () => {
         mock.reset();
 
         assert.ok(
-          fileContentMock!.includes(
+          fileContentMock.includes(
             "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
           )
         );
@@ -167,7 +167,7 @@ describe('loader', () => {
         mock.reset();
 
         assert.ok(
-          fileContentMock!.includes(
+          fileContentMock.includes(
             "globalThis.STORYBOOK_WEBSOCKET = { host: 'localhost', port: 7007 };"
           )
         );
@@ -181,7 +181,7 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/all-config-files' });
         mock.reset();
 
-        assert.ok(!fileContentMock!.includes('globalThis.STORYBOOK_WEBSOCKET ='));
+        assert.ok(!fileContentMock.includes('globalThis.STORYBOOK_WEBSOCKET ='));
         t.assert.snapshot(fileContentMock);
       });
     });
@@ -195,7 +195,7 @@ describe('loader', () => {
         });
         mock.reset();
 
-        assert.ok(!fileContentMock!.includes('globalThis.STORYBOOK_WEBSOCKET ='));
+        assert.ok(!fileContentMock.includes('globalThis.STORYBOOK_WEBSOCKET ='));
         t.assert.snapshot(fileContentMock);
       });
     });
@@ -212,7 +212,7 @@ describe('loader', () => {
         mock.reset();
 
         assert.ok(
-          fileContentMock!.includes(
+          fileContentMock.includes(
             "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
           )
         );
@@ -226,7 +226,7 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/with-features' });
         mock.reset();
 
-        assert.ok(fileContentMock!.includes('globalThis.FEATURES.ondeviceBackgrounds = true;'));
+        assert.ok(fileContentMock.includes('globalThis.FEATURES.ondeviceBackgrounds = true;'));
         t.assert.snapshot(fileContentMock);
       });
     });
@@ -237,7 +237,7 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/all-config-files' });
         mock.reset();
 
-        assert.ok(!fileContentMock!.includes('globalThis.FEATURES.'));
+        assert.ok(!fileContentMock.includes('globalThis.FEATURES.'));
         t.assert.snapshot(fileContentMock);
       });
     });
