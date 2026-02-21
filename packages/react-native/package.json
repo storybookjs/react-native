@@ -46,7 +46,8 @@
     "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
-    "test:ci": "jest"
+    "test:ci": "jest",
+    "check:types": "tsc --noEmit"
   },
   "dependencies": {
     "@storybook/react": "10.3.0-alpha.7",

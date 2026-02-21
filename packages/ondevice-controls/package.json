@@ -27,7 +27,8 @@
     "clean": "cross-env-shell rm -rf dist/",
     "prepare": "pnpm clean && tsc && pnpm copyimages",
     "dev": "tsc --watch",
-    "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources"
+    "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources",
+    "check:types": "tsc --noEmit"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",

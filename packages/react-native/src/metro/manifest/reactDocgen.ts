@@ -1,3 +1,12 @@
+/**
+ * React-docgen integration for extracting component prop information.
+ *
+ * Adapted from @storybook/react's internal componentManifest utilities,
+ * which are not exported as public API (bundled into preset.js).
+ *
+ * Key difference from the web version: the docgen importer does NOT remap
+ * `react-native` imports to `react-native-web`, since stories run on-device.
+ */
 import { dirname } from 'node:path';
 import { babelParse, types as t } from 'storybook/internal/babel';
 import { supportedExtensions } from 'storybook/internal/common';
@@ -160,6 +169,7 @@ const gatherDocgensForPath = cached(
       };
     }
 
+    // Guard against infinite loops from circular re-exports
     if (depth > 5) {
       return {
         docgens: [],

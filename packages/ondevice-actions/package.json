@@ -24,7 +24,8 @@
   ],
   "scripts": {
     "dev": "tsc --watch",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "check:types": "tsc --noEmit"
   },
   "dependencies": {
     "fast-deep-equal": "^3.1.3"

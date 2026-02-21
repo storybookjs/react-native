@@ -1,20 +1,12 @@
+/**
+ * Shared utilities for the manifest generation pipeline.
+ *
+ * These are adapted from @storybook/react's internal componentManifest utilities,
+ * which are not exported as public API (bundled into preset.js).
+ */
 import { readFileSync } from 'node:fs';
 import { resolveImport } from 'storybook/internal/common';
 import * as find from 'empathic/find';
-
-export const groupBy = <K extends PropertyKey, T>(
-  items: T[],
-  keySelector: (item: T, index: number) => K
-) => {
-  return items.reduce<Partial<Record<K, T[]>>>((acc = {}, item, index) => {
-    const key = keySelector(item, index);
-    if (!Array.isArray(acc[key])) {
-      acc[key] = [];
-    }
-    acc[key]!.push(item);
-    return acc;
-  }, {});
-};
 
 export function invariant(
   condition: unknown,
@@ -69,7 +61,12 @@ export const cachedReadFileSync = cached(readFileSync, { name: 'cachedReadFile' 
 
 export const cachedFindUp = cached(find.up, { name: 'findUp' });
 
-export const cachedResolveImport: any = cached(resolveImport, { name: 'resolveImport' });
+// Explicit return type needed because `resolveImport`'s parameter types reference
+// unexportable internal types from storybook/internal/common (ToString, BaseSyncOpts).
+export const cachedResolveImport: (id: string, options: { basedir: string }) => string = cached(
+  resolveImport,
+  { name: 'resolveImport' }
+);
 
 export const findTsconfigPath = cached(
   (cwd: string): string | undefined => {

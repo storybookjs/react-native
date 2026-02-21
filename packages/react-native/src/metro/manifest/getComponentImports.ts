@@ -1,3 +1,9 @@
+/**
+ * Discovers component references in CSF story files and resolves their imports.
+ *
+ * Adapted from @storybook/react's internal componentManifest utilities,
+ * which are not exported as public API (bundled into preset.js).
+ */
 import { dirname } from 'node:path';
 import { babelParse, recast, types as t } from 'storybook/internal/babel';
 import { type CsfFile } from 'storybook/internal/csf-tools';

@@ -1,3 +1,9 @@
+/**
+ * Module resolution for react-docgen's importer.
+ *
+ * Adapted from @storybook/react's internal componentManifest utilities,
+ * which are not exported as public API (bundled into preset.js).
+ */
 import { extname } from 'node:path';
 import { supportedExtensions } from 'storybook/internal/common';
 import resolve from 'resolve';
@@ -20,6 +26,7 @@ export function defaultLookupModule(filename: string, basedir: string): string {
   try {
     return resolve.sync(filename, resolveOptions);
   } catch (error) {
+    // Fallback: try resolving .js/.jsx as .ts/.tsx for TypeScript source files
     const ext = extname(filename);
     let newFilename: string;
 

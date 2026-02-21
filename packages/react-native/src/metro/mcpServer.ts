@@ -1,6 +1,7 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import type { TLSSocket } from 'node:tls';
 import { buffer } from 'node:stream/consumers';
+import type { StorybookContext } from '@storybook/mcp';
 
 /**
  * Converts Node.js IncomingHttpHeaders to a format compatible with the Web Headers API.
@@ -118,8 +119,6 @@ export function createMcpHandler(configPath: string) {
           import('@storybook/mcp'),
           import('./manifest/storyInstructions.js'),
         ]);
-
-        type StorybookContext = Awaited<typeof import('@storybook/mcp')>['StorybookContext'];
 
         const manifestProvider: NonNullable<StorybookContext['manifestProvider']> = async (
           _request,

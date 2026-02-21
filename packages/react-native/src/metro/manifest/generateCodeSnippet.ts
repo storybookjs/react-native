@@ -1,3 +1,9 @@
+/**
+ * Extracts story source code snippets from the Babel AST.
+ *
+ * Adapted from @storybook/react's internal componentManifest utilities,
+ * which are not exported as public API (bundled into preset.js).
+ */
 import { type NodePath, types as t } from 'storybook/internal/babel';
 import { type CsfFile } from 'storybook/internal/csf-tools';
 import { invariant } from './utils';
@@ -110,7 +116,9 @@ export function getCodeSnippet(
     ? metaPath.get('properties').filter((p) => p.isObjectProperty())
     : [];
 
-  const getRenderPath = (object: NodePath<t.ObjectProperty>[]) => {
+  const getRenderPath = (
+    object: NodePath<t.ObjectProperty>[]
+  ): NodePath<t.ArrowFunctionExpression | t.FunctionExpression> | undefined => {
     const renderPath = object.find((p) => keyOf(p.node) === 'render')?.get('value');
 
     if (renderPath?.isIdentifier()) {
@@ -125,7 +133,7 @@ export function getCodeSnippet(
       );
     }
 
-    return renderPath;
+    return renderPath as NodePath<t.ArrowFunctionExpression | t.FunctionExpression> | undefined;
   };
 
   const metaRenderPath = getRenderPath(metaProps);

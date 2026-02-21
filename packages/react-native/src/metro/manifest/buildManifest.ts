@@ -1,3 +1,9 @@
+/**
+ * Generates the component manifest consumed by @storybook/mcp.
+ *
+ * For each story file: parses CSF → resolves component → runs react-docgen → extracts snippets.
+ * The output format matches what @storybook/mcp expects for its documentation tools.
+ */
 import { recast } from 'storybook/internal/babel';
 import { normalizeStories, loadMainConfig } from 'storybook/internal/common';
 import { storyNameFromExport, toId } from 'storybook/internal/csf';

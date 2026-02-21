@@ -26,7 +26,8 @@
   "scripts": {
     "preprepare": "rm -rf dist/",
     "prepare": "tsup",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "check:types": "tsc --noEmit"
   },
   "dependencies": {
     "@storybook/react-native-theming": "^10.3.0-next.0"

@@ -29,7 +29,8 @@
   ],
   "scripts": {
     "dev": "tsup --watch",
-    "prepare": "tsup"
+    "prepare": "tsup",
+    "check:types": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/react": "~19.1.10",
