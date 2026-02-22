@@ -2,6 +2,7 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import type { TLSSocket } from 'node:tls';
 import { buffer } from 'node:stream/consumers';
 import type { StorybookContext } from '@storybook/mcp';
+import { experimental_manifests } from '@storybook/react/preset';
 import type { WebSocketServer, WebSocket } from 'ws';
 
 /**
@@ -77,21 +78,15 @@ async function webResponseToServerResponse(
 export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
   let handler: ((req: Request) => Promise<Response>) | null = null;
   let initPromise: Promise<void> | null = null;
-  let cachedManifest: string | null = null;
-  let manifestBuildPromise: Promise<string> | null = null;
 
   async function getOrBuildManifest(): Promise<string> {
-    if (cachedManifest) return cachedManifest;
-    if (manifestBuildPromise) return manifestBuildPromise;
-
-    manifestBuildPromise = (async () => {
-      const { buildManifest } = await import('./manifest/buildManifest.js');
-      const manifest = await buildManifest({ configPath });
-      cachedManifest = JSON.stringify(manifest);
-      return cachedManifest;
-    })();
-
-    return manifestBuildPromise;
+    const { buildIndex } = await import('./buildIndex.js');
+    const index = await buildIndex({ configPath });
+    const manifest = await experimental_manifests(
+      {},
+      { manifestEntries: Object.values(index.entries) }
+    );
+    return JSON.stringify(manifest.components);
   }
 
   async function init() {
@@ -128,6 +123,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
           if (manifestPath.includes('docs.json')) {
             throw new Error('Docs manifest not available in React Native Storybook');
           }
+
           return getOrBuildManifest();
         };
 
