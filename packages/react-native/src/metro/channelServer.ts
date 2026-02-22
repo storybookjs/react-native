@@ -102,17 +102,10 @@ export function createChannelServer({
       return;
     }
 
-    // MCP endpoints
-    if (mcpServer) {
-      if (req.url === '/manifests/components.json' && req.method === 'GET') {
-        await mcpServer.handleManifestRequest(req, res);
-        return;
-      }
-
-      if (req.url === '/mcp' && (req.method === 'POST' || req.method === 'GET')) {
-        await mcpServer.handleMcpRequest(req, res);
-        return;
-      }
+    // MCP endpoint
+    if (mcpServer && req.url === '/mcp' && (req.method === 'POST' || req.method === 'GET')) {
+      await mcpServer.handleMcpRequest(req, res);
+      return;
     }
 
     res.writeHead(404, { 'Content-Type': 'application/json' });

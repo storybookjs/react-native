@@ -79,16 +79,6 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
   let handler: ((req: Request) => Promise<Response>) | null = null;
   let initPromise: Promise<void> | null = null;
 
-  async function getOrBuildManifest(): Promise<string> {
-    const { buildIndex } = await import('./buildIndex.js');
-    const index = await buildIndex({ configPath });
-    const manifest = await experimental_manifests(
-      {},
-      { manifestEntries: Object.values(index.entries) }
-    );
-    return JSON.stringify(manifest.components);
-  }
-
   async function init() {
     if (handler) return;
     if (initPromise) {
@@ -108,12 +98,16 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
             addGetComponentStoryDocumentationTool,
           },
           { storyInstructions },
+          { buildIndex },
+          valibot,
         ] = await Promise.all([
           import('tmcp'),
           import('@tmcp/adapter-valibot'),
           import('@tmcp/transport-http'),
           import('@storybook/mcp'),
           import('./manifest/storyInstructions.js'),
+          import('./buildIndex.js'),
+          import('valibot'),
         ]);
 
         const manifestProvider: NonNullable<StorybookContext['manifestProvider']> = async (
@@ -124,7 +118,29 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
             throw new Error('Docs manifest not available in React Native Storybook');
           }
 
-          return getOrBuildManifest();
+          const index = await buildIndex({ configPath });
+          const entries = Object.values(index.entries);
+          const manifest = await experimental_manifests({}, { manifestEntries: entries });
+
+          // Workaround for https://github.com/storybookjs/storybook/pull/33878: experimental_manifests
+          // React: Fix manifest stories empty when meta has no explicit title #33878
+          // re-parses story files with makeTitle: (t) => t ?? "No title" instead
+          // of using the entry's title, causing ID mismatches for auto-titled
+          // stories and empty stories arrays. Fixed upstream but not yet released.
+          // Remove this workaround once @storybook/react includes the fix.
+          const componentsManifest = manifest.components as {
+            v: number;
+            components: Record<string, { stories: Array<{ id: string; name: string }> }>;
+          };
+          for (const [compId, comp] of Object.entries(componentsManifest.components)) {
+            if (comp.stories?.length === 0) {
+              comp.stories = entries
+                .filter((e) => e.id.startsWith(`${compId}--`))
+                .map((e) => ({ id: e.id, name: e.name }));
+            }
+          }
+
+          return JSON.stringify(manifest.components);
         };
 
         const server = new McpServer(
@@ -159,9 +175,6 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
         );
 
         if (wss) {
-          const { buildIndex } = await import('./buildIndex.js');
-          const { object, string } = await import('valibot');
-
           const broadcastEvent = (event: Record<string, unknown>) => {
             const message = JSON.stringify(event);
 
@@ -180,7 +193,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
                 'Select and display a story on the connected device. ' +
                 'Use the story ID in the format "title--name" (e.g. "button--primary"). ' +
                 'Use the list-all-documentation tool to discover available components and stories.',
-              schema: object({ storyId: string() }),
+              schema: valibot.object({ storyId: valibot.string() }),
             },
             async ({ storyId }: { storyId: string }) => {
               try {
@@ -274,21 +287,6 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
   }
 
   /**
-   * Handles a GET /manifests/components.json request.
-   */
-  async function handleManifestRequest(_req: IncomingMessage, res: ServerResponse): Promise<void> {
-    try {
-      const manifestJson = await getOrBuildManifest();
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(manifestJson);
-    } catch (error) {
-      console.error('[Storybook] Failed to build manifest:', error);
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: 'Failed to build component manifest' }));
-    }
-  }
-
-  /**
    * Pre-initializes the MCP server (non-blocking).
    */
   function preInit() {
@@ -297,5 +295,5 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
     );
   }
 
-  return { handleMcpRequest, handleManifestRequest, preInit };
+  return { handleMcpRequest, preInit };
 }
