@@ -64,6 +64,7 @@
     "@types/react": "~19.1.10",
     "@types/ws": "^8.18.1",
     "babel-plugin-react-docgen-typescript": "^1.5.1",
+    "expo-atlas": "^0.4.3",
     "jest": "^29.7.0",
     "jest-expo": "~54.0.17",
     "test-renderer": "^0.14.0",
