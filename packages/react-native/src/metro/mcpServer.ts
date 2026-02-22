@@ -2,7 +2,6 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import type { TLSSocket } from 'node:tls';
 import { buffer } from 'node:stream/consumers';
 import type { StorybookContext } from '@storybook/mcp';
-import { experimental_manifests } from '@storybook/react/preset';
 import type { WebSocketServer, WebSocket } from 'ws';
 
 /**
@@ -100,6 +99,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
           { storyInstructions },
           { buildIndex },
           valibot,
+          { experimental_manifests },
         ] = await Promise.all([
           import('tmcp'),
           import('@tmcp/adapter-valibot'),
@@ -108,6 +108,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
           import('./manifest/storyInstructions.js'),
           import('./buildIndex.js'),
           import('valibot'),
+          import('@storybook/react/preset'),
         ]);
 
         const manifestProvider: NonNullable<StorybookContext['manifestProvider']> = async (
@@ -256,6 +257,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
 
         console.log('[Storybook] MCP server initialized');
       } catch (error) {
+        initPromise = null;
         console.error('[Storybook] Failed to initialize MCP server:', error);
         throw error;
       }

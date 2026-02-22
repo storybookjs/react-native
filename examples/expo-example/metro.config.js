@@ -26,7 +26,7 @@ module.exports = withRozenite(
   withStorybook(defaultConfig, {
     enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
     websockets: 'auto',
-    mcp: true,
+    experimental_mcp: true,
   }),
   {
     include: ['@dannyhw/rozenite-storybook'],

@@ -24,9 +24,9 @@ interface ChannelServerOptions {
 
   /**
    * Whether to enable MCP (Model Context Protocol) server support.
-   * When enabled, adds /mcp and /manifests/components.json endpoints.
+   * When enabled, adds an /mcp endpoint.
    */
-  mcp?: boolean;
+  experimental_mcp?: boolean;
 }
 
 /**
@@ -35,25 +35,24 @@ interface ChannelServerOptions {
  * - WebSocket: broadcasts all received messages to all connected clients
  * - POST /send-event: sends an event to all WebSocket clients
  * - GET /index.json: returns the story index built from story files
- * - POST /mcp: MCP endpoint for AI agent integration (when mcp option is enabled)
- * - GET /manifests/components.json: component manifest endpoint (when mcp option is enabled)
+ * - POST /mcp: MCP endpoint for AI agent integration (when experimental_mcp option is enabled)
  *
  * @param options - Configuration options for the channel server.
  * @param options.port - The port to listen on.
  * @param options.host - The host to bind to.
  * @param options.configPath - The path to the Storybook config folder.
- * @param options.mcp - Whether to enable MCP server support.
+ * @param options.experimental_mcp - Whether to enable MCP server support.
  * @returns The created WebSocketServer instance.
  */
 export function createChannelServer({
   port = 7007,
   host = undefined,
   configPath,
-  mcp = false,
+  experimental_mcp = false,
 }: ChannelServerOptions): WebSocketServer {
   const httpServer = createServer();
   const wss = new WebSocketServer({ server: httpServer });
-  const mcpServer = mcp ? createMcpHandler(configPath, wss) : null;
+  const mcpServer = experimental_mcp ? createMcpHandler(configPath, wss) : null;
 
   httpServer.on('request', async (req: IncomingMessage, res: ServerResponse) => {
     if (req.method === 'OPTIONS') {

@@ -82,11 +82,11 @@ export interface StorybookPluginOptions {
 
   /**
    * Whether to enable MCP (Model Context Protocol) server support. Defaults to false.
-   * When enabled, adds /mcp and /manifests/components.json endpoints to the channel server,
+   * When enabled, adds an /mcp endpoint to the channel server,
    * allowing AI agents (Claude Code, Cursor, etc.) to query component documentation.
    * Requires websockets to be enabled.
    */
-  mcp?: boolean;
+  experimental_mcp?: boolean;
 }
 
 /**
@@ -122,7 +122,7 @@ export class StorybookPlugin {
   private options: Required<
     Pick<
       StorybookPluginOptions,
-      'configPath' | 'enabled' | 'useJs' | 'docTools' | 'liteMode' | 'mcp'
+      'configPath' | 'enabled' | 'useJs' | 'docTools' | 'liteMode' | 'experimental_mcp'
     >
   > &
     Pick<StorybookPluginOptions, 'websockets'>;
@@ -137,20 +137,28 @@ export class StorybookPlugin {
       useJs: false,
       docTools: true,
       liteMode: false,
-      mcp: false,
+      experimental_mcp: false,
       ...options,
     };
   }
 
   apply(compiler: Compiler): void {
-    const { configPath, enabled, websockets, useJs, docTools, liteMode, mcp } = this.options;
+    const { configPath, enabled, websockets, useJs, docTools, liteMode, experimental_mcp } =
+      this.options;
 
     if (!enabled) {
       this.applyDisabled(compiler, configPath);
       return;
     }
 
-    this.applyEnabled(compiler, { configPath, websockets, useJs, docTools, liteMode, mcp });
+    this.applyEnabled(compiler, {
+      configPath,
+      websockets,
+      useJs,
+      docTools,
+      liteMode,
+      experimental_mcp,
+    });
   }
 
   /**
@@ -165,14 +173,14 @@ export class StorybookPlugin {
       useJs,
       docTools,
       liteMode,
-      mcp,
+      experimental_mcp,
     }: {
       configPath: string;
       websockets?: WebsocketsOptions | 'auto';
       useJs: boolean;
       docTools: boolean;
       liteMode: boolean;
-      mcp: boolean;
+      experimental_mcp: boolean;
     }
   ): void {
     const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
@@ -186,7 +194,7 @@ export class StorybookPlugin {
         port,
         host: host === 'auto' ? undefined : host,
         configPath,
-        mcp,
+        experimental_mcp,
       });
     }
 
