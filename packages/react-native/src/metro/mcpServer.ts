@@ -2,6 +2,7 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import type { TLSSocket } from 'node:tls';
 import { buffer } from 'node:stream/consumers';
 import type { StorybookContext } from '@storybook/mcp';
+import type { WebSocketServer, WebSocket } from 'ws';
 
 /**
  * Converts Node.js IncomingHttpHeaders to a format compatible with the Web Headers API.
@@ -73,7 +74,7 @@ async function webResponseToServerResponse(
  *
  * @param configPath - Path to the Storybook config folder, used for building the component manifest.
  */
-export function createMcpHandler(configPath: string) {
+export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
   let handler: ((req: Request) => Promise<Response>) | null = null;
   let initPromise: Promise<void> | null = null;
   let cachedManifest: string | null = null;
@@ -160,6 +161,81 @@ export function createMcpHandler(configPath: string) {
             content: [{ type: 'text' as const, text: storyInstructions }],
           })
         );
+
+        if (wss) {
+          const { buildIndex } = await import('./buildIndex.js');
+          const { object, string } = await import('valibot');
+
+          const broadcastEvent = (event: Record<string, unknown>) => {
+            const message = JSON.stringify(event);
+
+            wss.clients.forEach((client: WebSocket) => {
+              if (client.readyState === 1 /* WebSocket.OPEN */) {
+                client.send(message);
+              }
+            });
+          };
+
+          server.tool(
+            {
+              name: 'select-story',
+              title: 'Select Story',
+              description:
+                'Select and display a story on the connected device. ' +
+                'Use the story ID in the format "title--name" (e.g. "button--primary"). ' +
+                'Use the list-all-documentation tool to discover available components and stories.',
+              schema: object({ storyId: string() }),
+            },
+            async ({ storyId }: { storyId: string }) => {
+              try {
+                const index = await buildIndex({ configPath });
+
+                if (!index.entries[storyId]) {
+                  const availableIds = Object.keys(index.entries).slice(0, 10);
+
+                  return {
+                    content: [
+                      {
+                        type: 'text' as const,
+                        text:
+                          `Story "${storyId}" not found. ` +
+                          `Available stories include: ${availableIds.join(', ')}` +
+                          (Object.keys(index.entries).length > 10 ? ', ...' : ''),
+                      },
+                    ],
+                    isError: true,
+                  };
+                }
+
+                broadcastEvent({
+                  type: 'setCurrentStory',
+                  args: [{ storyId, viewMode: 'story' }],
+                });
+
+                const entry = index.entries[storyId];
+
+                return {
+                  content: [
+                    {
+                      type: 'text' as const,
+                      text: `Selected story "${entry.name}" (${entry.title}) on connected devices.`,
+                    },
+                  ],
+                };
+              } catch (error) {
+                return {
+                  content: [
+                    {
+                      type: 'text' as const,
+                      text: `Failed to select story: ${error instanceof Error ? error.message : String(error)}`,
+                    },
+                  ],
+                  isError: true,
+                };
+              }
+            }
+          );
+        }
 
         const transport = new HttpTransport(server, { path: null });
 

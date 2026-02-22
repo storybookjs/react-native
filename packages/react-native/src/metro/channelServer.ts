@@ -51,9 +51,11 @@ export function createChannelServer({
   configPath,
   mcp = false,
 }: ChannelServerOptions): WebSocketServer {
-  const mcpServer = mcp ? createMcpHandler(configPath) : null;
+  const httpServer = createServer();
+  const wss = new WebSocketServer({ server: httpServer });
+  const mcpServer = mcp ? createMcpHandler(configPath, wss) : null;
 
-  const httpServer = createServer(async (req: IncomingMessage, res: ServerResponse) => {
+  httpServer.on('request', async (req: IncomingMessage, res: ServerResponse) => {
     if (req.method === 'OPTIONS') {
       res.writeHead(204);
       res.end();
@@ -116,8 +118,6 @@ export function createChannelServer({
     res.writeHead(404, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ error: 'Not found' }));
   });
-
-  const wss = new WebSocketServer({ server: httpServer });
 
   wss.on('error', () => {
     // Handled by httpServer 'error' listener — this prevents the WSS
