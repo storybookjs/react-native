@@ -123,24 +123,6 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
           const entries = Object.values(index.entries);
           const manifest = await experimental_manifests({}, { manifestEntries: entries });
 
-          // Workaround for https://github.com/storybookjs/storybook/pull/33878: experimental_manifests
-          // React: Fix manifest stories empty when meta has no explicit title #33878
-          // re-parses story files with makeTitle: (t) => t ?? "No title" instead
-          // of using the entry's title, causing ID mismatches for auto-titled
-          // stories and empty stories arrays. Fixed upstream but not yet released.
-          // Remove this workaround once @storybook/react includes the fix.
-          const componentsManifest = manifest.components as {
-            v: number;
-            components: Record<string, { stories: Array<{ id: string; name: string }> }>;
-          };
-          for (const [compId, comp] of Object.entries(componentsManifest.components)) {
-            if (comp.stories?.length === 0) {
-              comp.stories = entries
-                .filter((e) => e.id.startsWith(`${compId}--`))
-                .map((e) => ({ id: e.id, name: e.name }));
-            }
-          }
-
           return JSON.stringify(manifest.components);
         };
 
