@@ -29,7 +29,8 @@
   ],
   "scripts": {
     "dev": "tsup --watch",
-    "prepare": "tsup"
+    "prepare": "tsup",
+    "check:types": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/react": "~19.1.10",
@@ -39,7 +40,7 @@
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "10.3.0-alpha.7",
+    "@storybook/react": "10.3.0-alpha.9",
     "@storybook/react-native-theming": "^10.3.0-next.0",
     "@storybook/react-native-ui-common": "^10.3.0-next.0",
     "polished": "^4.3.1"

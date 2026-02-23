@@ -22,7 +22,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "npx --yes tsx ./scripts/gendtsdev.ts && tsup --watch",
-    "prepare": "tsup && npx --yes tsx ./scripts/patchdts.ts"
+    "prepare": "tsup && npx --yes tsx ./scripts/patchdts.ts",
+    "check:types": "tsc --noEmit"
   },
   "dependencies": {
     "polished": "^4.3.1"

@@ -29,7 +29,8 @@
   ],
   "scripts": {
     "dev": "tsup --watch",
-    "prepare": "tsup"
+    "prepare": "tsup",
+    "check:types": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/react": "~19.1.10",
@@ -38,7 +39,7 @@
   },
   "dependencies": {
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "10.3.0-alpha.7",
+    "@storybook/react": "10.3.0-alpha.9",
     "@storybook/react-native-theming": "^10.3.0-next.0",
     "es-toolkit": "^1.41.0",
     "memoizerific": "^1.11.3",
