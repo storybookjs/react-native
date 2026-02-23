@@ -43,6 +43,7 @@ const deferredQuery = useDeferredValue(query);
 ## Concept Overview
 
 **Concurrent React** allows updates to be:
+
 - **Paused**: Low-priority work can wait
 - **Interrupted**: User input takes priority
 - **Abandoned**: Outdated updates can be skipped
@@ -59,17 +60,13 @@ import { useState, useDeferredValue } from 'react';
 const SearchScreen = () => {
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
-  
+
   // query updates immediately (input stays responsive)
   // deferredQuery updates when React has time
-  
+
   return (
     <View>
-      <TextInput
-        value={query}
-        onChangeText={setQuery}
-        placeholder="Search..."
-      />
+      <TextInput value={query} onChangeText={setQuery} placeholder="Search..." />
       {/* ExpensiveList receives deferred value */}
       <ExpensiveList query={deferredQuery} />
     </View>
@@ -84,7 +81,7 @@ const SearchWithStaleIndicator = () => {
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
   const isStale = query !== deferredQuery;
-  
+
   return (
     <View>
       <TextInput value={query} onChangeText={setQuery} />
@@ -108,17 +105,17 @@ const TransitionExample = () => {
   const [count, setCount] = useState(0);
   const [heavyData, setHeavyData] = useState(null);
   const [isPending, startTransition] = useTransition();
-  
+
   const handleIncrement = () => {
     // High priority - updates immediately
-    setCount(c => c + 1);
-    
+    setCount((c) => c + 1);
+
     // Low priority - can be interrupted
     startTransition(() => {
       setHeavyData(computeExpensiveData());
     });
   };
-  
+
   return (
     <View>
       <Text>Count: {count}</Text>
@@ -137,7 +134,7 @@ import { Suspense, useDeferredValue } from 'react';
 const DataScreen = () => {
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
-  
+
   return (
     <View>
       <TextInput value={query} onChangeText={setQuery} />
@@ -157,7 +154,7 @@ const DataScreen = () => {
 // Without Concurrent React - UI freezes
 const SlowSearch = () => {
   const [query, setQuery] = useState('');
-  
+
   return (
     <>
       <TextInput value={query} onChangeText={setQuery} />
@@ -166,11 +163,11 @@ const SlowSearch = () => {
   );
 };
 
-// With Concurrent React - UI stays responsive  
+// With Concurrent React - UI stays responsive
 const FastSearch = () => {
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
-  
+
   return (
     <>
       <TextInput value={query} onChangeText={setQuery} />
@@ -192,28 +189,28 @@ React 18 automatically batches state updates:
 ```jsx
 // Before React 18 - 2 re-renders
 setTimeout(() => {
-  setCount(c => c + 1);
-  setFlag(f => !f);
+  setCount((c) => c + 1);
+  setFlag((f) => !f);
   // Rendered twice
 }, 1000);
 
 // React 18+ - 1 re-render (automatic batching)
 setTimeout(() => {
-  setCount(c => c + 1);
-  setFlag(f => !f);
+  setCount((c) => c + 1);
+  setFlag((f) => !f);
   // Rendered once!
 }, 1000);
 ```
 
 ## When to Use Which
 
-| Scenario | Solution |
-|----------|----------|
-| Single value drives expensive render | `useDeferredValue` |
-| Multiple state updates, some non-critical | `useTransition` |
-| Need loading indicator for transition | `useTransition` (has `isPending`) |
-| Data fetching with loading states | `Suspense` + `useDeferredValue` |
-| Simple parent-to-child value deferral | `useDeferredValue` |
+| Scenario                                  | Solution                          |
+| ----------------------------------------- | --------------------------------- |
+| Single value drives expensive render      | `useDeferredValue`                |
+| Multiple state updates, some non-critical | `useTransition`                   |
+| Need loading indicator for transition     | `useTransition` (has `isPending`) |
+| Data fetching with loading states         | `Suspense` + `useDeferredValue`   |
+| Simple parent-to-child value deferral     | `useDeferredValue`                |
 
 ## Important Considerations
 

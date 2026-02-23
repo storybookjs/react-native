@@ -26,12 +26,7 @@ config.transformer.getTransformOptions = async () => ({
 ```javascript
 // babel.config.js (non-Expo projects must set `disableImportExportTransform`)
 module.exports = {
-  presets: [
-    [
-      'module:@react-native/babel-preset',
-      { disableImportExportTransform: true },
-    ],
-  ],
+  presets: [['module:@react-native/babel-preset', { disableImportExportTransform: true }]],
 };
 ```
 
@@ -135,6 +130,7 @@ if (RN.Platform.OS === 'ios') {
 For non-Expo projects, requires both `experimentalImportSupport: true` in Metro config and `disableImportExportTransform: true` in Babel config.
 
 Impact: Savings from enabling platform shaking on a bare React Native Community CLI project are:
+
 - 5% smaller Hermes bytecode (2.79 MB → 2.64 MB)
 - 15% smaller minified JS bundle (1 MB → 0.85 MB)
 

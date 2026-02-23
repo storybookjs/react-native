@@ -39,12 +39,14 @@ Android compresses most files in APK/AAB by default, including `index.android.bu
 ## How Hermes Memory Mapping Works
 
 Without compression:
+
 1. Hermes opens bytecode file
 2. OS memory-maps directly to disk
 3. Only pages actually accessed are loaded
 4. **Result**: Fast startup, low memory
 
 With compression:
+
 1. Android decompresses entire bundle
 2. Loaded into memory
 3. Then Hermes processes
@@ -73,11 +75,11 @@ android {
         applicationId "com.myapp"
         // ...
     }
-    
+
     androidResources {
         noCompress += ["bundle"]
     }
-    
+
     buildTypes {
         release {
             minifyEnabled true
@@ -99,11 +101,11 @@ cd android
 
 ## Trade-offs
 
-| Metric | Without Change | With Change |
-|--------|----------------|-------------|
-| Download size | Same | Same |
-| Install size | Smaller | **+8% larger** |
-| TTI | Slower | **-16% faster** |
+| Metric        | Without Change | With Change     |
+| ------------- | -------------- | --------------- |
+| Download size | Same           | Same            |
+| Install size  | Smaller        | **+8% larger**  |
+| TTI           | Slower         | **-16% faster** |
 
 **Real example**: 75.9 MB install → 82 MB install, but 450ms faster startup.
 
@@ -153,12 +155,12 @@ For Expo projects, run `npx expo prebuild` first to generate `android/` folder, 
 
 ## Should You Enable This?
 
-| Scenario | Recommendation |
-|----------|---------------|
-| Startup-critical app | ✅ Enable |
-| Storage-sensitive users | ⚠️ Test impact |
-| Already fast TTI | Maybe not worth it |
-| Large JS bundle | ✅ Bigger benefit |
+| Scenario                | Recommendation     |
+| ----------------------- | ------------------ |
+| Startup-critical app    | ✅ Enable          |
+| Storage-sensitive users | ⚠️ Test impact     |
+| Already fast TTI        | Maybe not worth it |
+| Large JS bundle         | ✅ Bigger benefit  |
 
 ## Related Skills
 

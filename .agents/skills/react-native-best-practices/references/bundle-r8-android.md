@@ -33,6 +33,7 @@ android {
 ## What is R8?
 
 R8 replaces ProGuard in Android:
+
 - **Shrinks**: Removes unused code
 - **Optimizes**: Improves bytecode
 - **Obfuscates**: Renames classes/methods
@@ -61,7 +62,7 @@ android {
         release {
             minifyEnabled true
             shrinkResources true  // Requires minifyEnabled
-            
+
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -103,13 +104,13 @@ cd android
 
 ## ProGuard Rules Reference
 
-| Rule | Effect |
-|------|--------|
-| `-keep class X` | Don't remove class X |
-| `-keepclassmembers` | Keep members but allow rename |
-| `-keepnames` | Keep names but allow removal if unused |
-| `-dontwarn X` | Suppress warnings for X |
-| `-dontobfuscate` | Disable obfuscation |
+| Rule                | Effect                                 |
+| ------------------- | -------------------------------------- |
+| `-keep class X`     | Don't remove class X                   |
+| `-keepclassmembers` | Keep members but allow rename          |
+| `-keepnames`        | Keep names but allow removal if unused |
+| `-dontwarn X`       | Suppress warnings for X                |
+| `-dontobfuscate`    | Disable obfuscation                    |
 
 ### Keep Entire Package
 
@@ -135,12 +136,14 @@ cd android
 ```
 
 Use when:
+
 - Debugging crashes (stack traces more readable)
 - Library requires class names
 
 ## Size Impact
 
 Example from guide:
+
 - **Without R8**: 9.5 MB
 - **With R8**: 6.3 MB
 - **Savings**: 33%
@@ -165,6 +168,7 @@ Usually means needed class was removed.
 ### Library Specific Rules
 
 Many libraries provide ProGuard rules. Check:
+
 - Library README
 - Library's `consumer-proguard-rules.pro`
 - Stack Overflow for library + proguard

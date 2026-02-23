@@ -19,18 +19,19 @@ import SettingsScreen from './screens/SettingsScreen';
 **After (lazy loaded chunk):**
 
 ```jsx
-const SettingsScreen = React.lazy(() =>
-  import(/* webpackChunkName: "settings" */ './screens/SettingsScreen')
+const SettingsScreen = React.lazy(
+  () => import(/* webpackChunkName: "settings" */ './screens/SettingsScreen')
 );
 
 <Suspense fallback={<Loading />}>
   <SettingsScreen />
-</Suspense>
+</Suspense>;
 ```
 
 ## When to Use
 
 Consider code splitting when:
+
 - **Not using Hermes** (JSC/V8 benefits more)
 - App size exceeds 200 MB (Play Store limit)
 - Building micro-frontend architecture
@@ -64,8 +65,8 @@ Follow prompts to migrate from Metro. Check [migration guide](https://re-pack.de
 import SettingsScreen from './screens/SettingsScreen';
 
 // AFTER: Dynamic import (creates split point)
-const SettingsScreen = React.lazy(() =>
-  import(/* webpackChunkName: "settings" */ './screens/SettingsScreen')
+const SettingsScreen = React.lazy(
+  () => import(/* webpackChunkName: "settings" */ './screens/SettingsScreen')
 );
 ```
 
@@ -91,8 +92,8 @@ import { ScriptManager, Script } from '@callstack/repack/client';
 
 ScriptManager.shared.addResolver((scriptId) => ({
   url: __DEV__
-    ? Script.getDevServerURL(scriptId)  // Dev server
-    : `https://my-cdn.com/assets/${scriptId}`,  // Production CDN
+    ? Script.getDevServerURL(scriptId) // Dev server
+    : `https://my-cdn.com/assets/${scriptId}`, // Production CDN
 }));
 
 AppRegistry.registerComponent(appName, () => App);
@@ -101,6 +102,7 @@ AppRegistry.registerComponent(appName, () => App);
 ### 5. Build and Deploy Chunks
 
 Build generates:
+
 - `index.bundle` - Main bundle
 - `settings.chunk.bundle` - Lazy-loaded chunk
 
@@ -114,20 +116,17 @@ import React, { Suspense, useState } from 'react';
 import { Button, View, ActivityIndicator } from 'react-native';
 
 // Lazy load heavy feature
-const HeavyFeature = React.lazy(() =>
-  import(/* webpackChunkName: "heavy-feature" */ './HeavyFeature')
+const HeavyFeature = React.lazy(
+  () => import(/* webpackChunkName: "heavy-feature" */ './HeavyFeature')
 );
 
 const App = () => {
   const [showFeature, setShowFeature] = useState(false);
-  
+
   return (
     <View>
-      <Button 
-        title="Load Feature" 
-        onPress={() => setShowFeature(true)} 
-      />
-      
+      <Button title="Load Feature" onPress={() => setShowFeature(true)} />
+
       {showFeature && (
         <Suspense fallback={<ActivityIndicator />}>
           <HeavyFeature />
@@ -144,12 +143,11 @@ For micro-frontend architecture:
 
 ```tsx
 // Host app loads remote module
-const RemoteModule = React.lazy(() =>
-  import('remote-app/Module')
-);
+const RemoteModule = React.lazy(() => import('remote-app/Module'));
 ```
 
 Enables:
+
 - Independent team deployments
 - Shared dependencies
 - Runtime composition
@@ -159,6 +157,7 @@ Enables:
 ### Version Management
 
 Consider [Zephyr Cloud](https://zephyr-cloud.io/) for:
+
 - Sub-second deployments
 - Version management
 - Re.Pack integration
@@ -179,16 +178,17 @@ ScriptManager.shared.addResolver((scriptId) => ({
 
 ## When NOT to Use
 
-| Scenario | Why Not |
-|----------|---------|
-| Using Hermes | mmap already efficient |
-| Small app | Overhead not worth it |
-| Simple navigation | Native navigation better |
-| Quick iteration needed | Added complexity |
+| Scenario               | Why Not                  |
+| ---------------------- | ------------------------ |
+| Using Hermes           | mmap already efficient   |
+| Small app              | Overhead not worth it    |
+| Simple navigation      | Native navigation better |
+| Quick iteration needed | Added complexity         |
 
 ## Hermes Memory Mapping
 
 Hermes reads bytecode lazily via mmap:
+
 - Only loads executed code into memory
 - No parse step needed
 - Code splitting provides marginal benefit

@@ -10,11 +10,11 @@ Navigate iOS and Android tooling, dependency management, and build systems in Re
 
 ## Quick Reference
 
-| Platform | IDE | Package Manager | Build System |
-|----------|-----|-----------------|--------------|
-| JavaScript | VS Code | npm/yarn/pnpm/bun | Metro |
-| iOS | Xcode | CocoaPods | xcodebuild |
-| Android | Android Studio | Gradle | Gradle |
+| Platform   | IDE            | Package Manager   | Build System |
+| ---------- | -------------- | ----------------- | ------------ |
+| JavaScript | VS Code        | npm/yarn/pnpm/bun | Metro        |
+| iOS        | Xcode          | CocoaPods         | xcodebuild   |
+| Android    | Android Studio | Gradle            | Gradle       |
 
 ```bash
 # Common commands
@@ -51,7 +51,6 @@ ios/*.xcworkspace     # Open this in Xcode (not .xcodeproj)
 Gemfile               # Ruby/CocoaPods version
 ```
 
-
 ### Android (Gradle)
 
 ```bash
@@ -73,7 +72,7 @@ bundle install                         # Install ruby bundler
 cd ios && bundle exec pod install      # Install pods
 xcrun simctl list                      # List simulators
 
-# Android  
+# Android
 cd android && ./gradlew clean          # Clean build
 ./gradlew tasks                        # List available tasks
 ./gradlew assembleRelease              # Build release APK
@@ -94,14 +93,14 @@ npx expo prebuild                      # Generate native projects
 
 ## Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| Pod install fails | `cd ios && bundle exec pod install --repo-update` |
-| Xcode build fails | `cd ios && xcodebuild clean` |
-| Android Gradle sync fails | `./gradlew clean` then sync |
-| Can't find simulator | `xcrun simctl list` to verify name |
-| Metro cache issues | `npx react-native start --reset-cache` |
-| React Native cache issues | `npx react-native clean` |
+| Issue                     | Solution                                          |
+| ------------------------- | ------------------------------------------------- |
+| Pod install fails         | `cd ios && bundle exec pod install --repo-update` |
+| Xcode build fails         | `cd ios && xcodebuild clean`                      |
+| Android Gradle sync fails | `./gradlew clean` then sync                       |
+| Can't find simulator      | `xcrun simctl list` to verify name                |
+| Metro cache issues        | `npx react-native start --reset-cache`            |
+| React Native cache issues | `npx react-native clean`                          |
 
 ## Related Skills
 

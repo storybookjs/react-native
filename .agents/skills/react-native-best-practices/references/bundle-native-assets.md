@@ -49,11 +49,13 @@ Android handles this automatically.
 ### How It Works
 
 1. Build AAB:
+
    ```bash
    cd android && ./gradlew bundleRelease
    ```
 
 2. Metro places images in density folders:
+
    ```
    android/app/build/outputs/bundle/release/
    └── base/
@@ -86,6 +88,7 @@ ios/RNAssets.xcassets/
 ### Step 2: Configure Build Phase
 
 In Xcode:
+
 1. Open project settings
 2. Go to **Build Phases**
 3. Find **"Bundle React Native code and images"**
@@ -166,12 +169,12 @@ npx sharp-cli input.jpg -o output.jpg --quality 80
 
 ### 2. Use Appropriate Formats
 
-| Format | Best For |
-|--------|----------|
-| JPEG | Photos |
-| PNG | Icons, transparency |
-| WebP | Both (smaller) |
-| SVG | Vector icons |
+| Format | Best For            |
+| ------ | ------------------- |
+| JPEG   | Photos              |
+| PNG    | Icons, transparency |
+| WebP   | Both (smaller)      |
+| SVG    | Vector icons        |
 
 ### 3. Consider react-native-fast-image
 

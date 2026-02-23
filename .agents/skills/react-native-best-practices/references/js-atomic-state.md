@@ -51,7 +51,7 @@ With traditional React state or Context:
 const App = () => {
   const [filter, setFilter] = useState('all');
   const [todos, setTodos] = useState([]);
-  
+
   return (
     <>
       <FilterMenu filter={filter} setFilter={setFilter} />
@@ -80,9 +80,9 @@ const todosAtom = atom([]);
 const filteredTodosAtom = atom((get) => {
   const filter = get(filterAtom);
   const todos = get(todosAtom);
-  
-  if (filter === 'active') return todos.filter(t => !t.completed);
-  if (filter === 'completed') return todos.filter(t => t.completed);
+
+  if (filter === 'active') return todos.filter((t) => !t.completed);
+  if (filter === 'completed') return todos.filter((t) => t.completed);
   return todos;
 });
 ```
@@ -95,7 +95,7 @@ import { useAtom, useAtomValue, useSetAtom } from 'jotai';
 // Only re-renders when filterAtom changes
 const FilterMenu = () => {
   const [filter, setFilter] = useAtom(filterAtom);
-  
+
   return (
     <View>
       {['all', 'active', 'completed'].map((f) => (
@@ -109,14 +109,12 @@ const FilterMenu = () => {
 
 // Only re-renders when todosAtom changes
 const TodoItem = ({ id }) => {
-  const setTodos = useSetAtom(todosAtom);  // Only setter, no re-render on read
-  
+  const setTodos = useSetAtom(todosAtom); // Only setter, no re-render on read
+
   const toggleTodo = () => {
-    setTodos((prev) => 
-      prev.map((t) => t.id === id ? { ...t, completed: !t.completed } : t)
-    );
+    setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)));
   };
-  
+
   return <Pressable onPress={toggleTodo}>...</Pressable>;
 };
 ```
@@ -131,20 +129,19 @@ import { create } from 'zustand';
 const useTodoStore = create((set, get) => ({
   filter: 'all',
   todos: [],
-  
+
   setFilter: (filter) => set({ filter }),
-  
-  toggleTodo: (id) => set((state) => ({
-    todos: state.todos.map((t) =>
-      t.id === id ? { ...t, completed: !t.completed } : t
-    ),
-  })),
-  
+
+  toggleTodo: (id) =>
+    set((state) => ({
+      todos: state.todos.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)),
+    })),
+
   // Selector for derived state
   getFilteredTodos: () => {
     const { filter, todos } = get();
-    if (filter === 'active') return todos.filter(t => !t.completed);
-    if (filter === 'completed') return todos.filter(t => t.completed);
+    if (filter === 'active') return todos.filter((t) => !t.completed);
+    if (filter === 'completed') return todos.filter((t) => t.completed);
     return todos;
   },
 }));
@@ -157,7 +154,7 @@ const useTodoStore = create((set, get) => ({
 const FilterMenu = () => {
   const filter = useTodoStore((state) => state.filter);
   const setFilter = useTodoStore((state) => state.setFilter);
-  
+
   return (
     <View>
       {['all', 'active', 'completed'].map((f) => (
@@ -185,11 +182,7 @@ const TodoContext = createContext();
 
 const TodoProvider = ({ children }) => {
   const [state, setState] = useState({ filter: 'all', todos: [] });
-  return (
-    <TodoContext.Provider value={{ state, setState }}>
-      {children}
-    </TodoContext.Provider>
-  );
+  return <TodoContext.Provider value={{ state, setState }}>{children}</TodoContext.Provider>;
 };
 
 // Every component using this context re-renders on ANY state change
@@ -219,13 +212,13 @@ const TodoList = () => {
 
 ## Comparison
 
-| Feature | Context | Jotai | Zustand |
-|---------|---------|-------|---------|
-| Re-render scope | All consumers | Atom subscribers | Selector subscribers |
-| Derived state | Manual | Built-in atoms | Selectors |
-| DevTools | React DevTools | Jotai DevTools | Zustand DevTools |
-| Bundle size | 0 KB | ~3 KB | ~2 KB |
-| Learning curve | Low | Medium | Low |
+| Feature         | Context        | Jotai            | Zustand              |
+| --------------- | -------------- | ---------------- | -------------------- |
+| Re-render scope | All consumers  | Atom subscribers | Selector subscribers |
+| Derived state   | Manual         | Built-in atoms   | Selectors            |
+| DevTools        | React DevTools | Jotai DevTools   | Zustand DevTools     |
+| Bundle size     | 0 KB           | ~3 KB            | ~2 KB                |
+| Learning curve  | Low            | Medium           | Low                  |
 
 ## When to Use Which
 

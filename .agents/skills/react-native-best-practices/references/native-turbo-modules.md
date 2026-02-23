@@ -58,6 +58,7 @@ npx create-react-native-library@latest awesome-library
 ```
 
 Creates ready-to-publish library with:
+
 - iOS (Obj-C/Swift) support
 - Android (Kotlin) support
 - TypeScript definitions
@@ -156,9 +157,9 @@ RCT_EXTERN_METHOD(multiply:(double)a b:(double)b);
 ```kotlin
 class AwesomeLibraryModule(reactContext: ReactApplicationContext) :
     NativeAwesomeLibrarySpec(reactContext) {
-    
+
     private val moduleScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
-    
+
     override fun heavyOperation(input: Double, promise: Promise?) {
         moduleScope.launch {
             // Heavy work on coroutine
@@ -166,7 +167,7 @@ class AwesomeLibraryModule(reactContext: ReactApplicationContext) :
             promise?.resolve(result)
         }
     }
-    
+
     override fun invalidate() {
         super.invalidate()
         moduleScope.cancel()  // Prevent memory leaks!
@@ -189,7 +190,7 @@ namespace facebook::react {
 class MyCppModule : public TurboModule {
 public:
     MyCppModule(std::shared_ptr<CallInvoker> jsInvoker);
-    
+
     double multiply(double a, double b);
 };
 
@@ -218,20 +219,20 @@ Register for iOS auto-linking:
 
 ## Threading Summary
 
-| Method Type | Default Thread | Best Practice |
-|-------------|----------------|---------------|
-| Sync | JS thread | Keep fast (<16ms) |
-| Async | Native modules thread | OK for moderate work |
-| Heavy async | Custom background | Use DispatchQueue/Coroutines |
+| Method Type | Default Thread        | Best Practice                |
+| ----------- | --------------------- | ---------------------------- |
+| Sync        | JS thread             | Keep fast (<16ms)            |
+| Async       | Native modules thread | OK for moderate work         |
+| Heavy async | Custom background     | Use DispatchQueue/Coroutines |
 
 ## Language Interop Costs
 
-| Interface | Overhead | Notes |
-|-----------|----------|-------|
-| Obj-C ↔ C++ | ~0 | Compile-time |
-| Swift ↔ C++ | ~0 | Swift 5.9+ interop |
-| Kotlin ↔ C++ (JNI) | Medium | Per-call lookup |
-| C++ Turbo Module | Low | JSI direct access |
+| Interface          | Overhead | Notes              |
+| ------------------ | -------- | ------------------ |
+| Obj-C ↔ C++        | ~0       | Compile-time       |
+| Swift ↔ C++        | ~0       | Swift 5.9+ interop |
+| Kotlin ↔ C++ (JNI) | Medium   | Per-call lookup    |
+| C++ Turbo Module   | Low      | JSI direct access  |
 
 **Tip**: C++ Turbo Modules skip JNI at runtime since JS holds direct C++ function references via JSI.
 
@@ -240,8 +241,8 @@ Register for iOS auto-linking:
 ```typescript
 // TypeScript interface
 export interface Spec extends TurboModule {
-    multiply(a: number, b: number): number;  // Sync
-    heavyOperation(input: number): Promise<number>;  // Async
+  multiply(a: number, b: number): number; // Sync
+  heavyOperation(input: number): Promise<number>; // Async
 }
 ```
 

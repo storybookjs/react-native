@@ -65,7 +65,7 @@ import { Button } from './components';
 // JavaScript must evaluate:
 // - Button.tsx
 // - Card.tsx
-// - Modal.tsx  
+// - Modal.tsx
 // - Sidebar.tsx
 // Even though you only use Button
 ```
@@ -172,12 +172,13 @@ Some libraries provide Babel plugins:
 // babel.config.js
 module.exports = {
   plugins: [
-    'react-native-paper/babel',  // Auto-transforms imports
+    'react-native-paper/babel', // Auto-transforms imports
   ],
 };
 ```
 
 Transforms:
+
 ```tsx
 import { Button } from 'react-native-paper';
 // Into:

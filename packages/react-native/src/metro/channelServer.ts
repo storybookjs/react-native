@@ -27,6 +27,12 @@ interface ChannelServerOptions {
    * When enabled, adds an /mcp endpoint.
    */
   experimental_mcp?: boolean;
+
+  /**
+   * Whether to enable WebSocket support.
+   * When false, starts only the HTTP server endpoints.
+   */
+  websockets?: boolean;
 }
 
 /**
@@ -42,17 +48,19 @@ interface ChannelServerOptions {
  * @param options.host - The host to bind to.
  * @param options.configPath - The path to the Storybook config folder.
  * @param options.experimental_mcp - Whether to enable MCP server support.
- * @returns The created WebSocketServer instance.
+ * @param options.websockets - Whether to enable WebSocket server support.
+ * @returns The created WebSocketServer instance, or null when websockets are disabled.
  */
 export function createChannelServer({
   port = 7007,
   host = undefined,
   configPath,
   experimental_mcp = false,
-}: ChannelServerOptions): WebSocketServer {
+  websockets = true,
+}: ChannelServerOptions): WebSocketServer | null {
   const httpServer = createServer();
-  const wss = new WebSocketServer({ server: httpServer });
-  const mcpServer = experimental_mcp ? createMcpHandler(configPath, wss) : null;
+  const wss = websockets ? new WebSocketServer({ server: httpServer }) : null;
+  const mcpServer = experimental_mcp ? createMcpHandler(configPath, wss ?? undefined) : null;
 
   httpServer.on('request', async (req: IncomingMessage, res: ServerResponse) => {
     if (req.method === 'OPTIONS') {
@@ -77,6 +85,12 @@ export function createChannelServer({
     }
 
     if (req.method === 'POST' && req.url === '/send-event') {
+      if (!wss) {
+        res.writeHead(503, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: 'WebSockets are disabled' }));
+        return;
+      }
+
       let body = '';
 
       req.on('data', (chunk) => {
@@ -111,35 +125,37 @@ export function createChannelServer({
     res.end(JSON.stringify({ error: 'Not found' }));
   });
 
-  wss.on('error', () => {
-    // Handled by httpServer 'error' listener — this prevents the WSS
-    // from re-throwing and crashing the process.
-  });
-
-  // Single global ping interval for all clients
-  setInterval(function ping() {
-    wss.clients.forEach(function each(client) {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(JSON.stringify({ type: 'ping', args: [] }));
-      }
+  if (wss) {
+    wss.on('error', () => {
+      // Handled by httpServer 'error' listener — this prevents the WSS
+      // from re-throwing and crashing the process.
     });
-  }, 10000);
 
-  wss.on('connection', function connection(ws: WebSocket) {
-    console.log('WebSocket connection established');
+    // Single global ping interval for all clients
+    setInterval(function ping() {
+      wss.clients.forEach(function each(client) {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify({ type: 'ping', args: [] }));
+        }
+      });
+    }, 10000);
 
-    ws.on('error', console.error);
+    wss.on('connection', function connection(ws: WebSocket) {
+      console.log('WebSocket connection established');
 
-    ws.on('message', function message(data: Data) {
-      try {
-        const json = JSON.parse(data.toString());
+      ws.on('error', console.error);
 
-        wss.clients.forEach((wsClient) => wsClient.send(JSON.stringify(json)));
-      } catch (error) {
-        console.error(error);
-      }
+      ws.on('message', function message(data: Data) {
+        try {
+          const json = JSON.parse(data.toString());
+
+          wss.clients.forEach((wsClient) => wsClient.send(JSON.stringify(json)));
+        } catch (error) {
+          console.error(error);
+        }
+      });
     });
-  });
+  }
 
   httpServer.on('error', (error: NodeJS.ErrnoException) => {
     if (error.code === 'EADDRINUSE') {
@@ -153,7 +169,8 @@ export function createChannelServer({
   });
 
   httpServer.listen(port, host, () => {
-    console.log(`WebSocket server listening on ${host ?? 'localhost'}:${port}`);
+    const protocol = wss ? 'WebSocket' : 'HTTP';
+    console.log(`${protocol} server listening on ${host ?? 'localhost'}:${port}`);
   });
 
   // Pre-initialize MCP if enabled (non-blocking)

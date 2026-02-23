@@ -46,12 +46,12 @@ npm install react-native-performance
 
 ### Startup Types
 
-| Type | Description | Measure? |
-|------|-------------|----------|
-| Cold | App not in memory, full init | ✅ Yes |
-| Warm | Process exists, activity recreated | ❌ Skip |
-| Hot | App in background, resumed | ❌ Skip |
-| Prewarmed (iOS) | iOS pre-initialized app | ❌ Filter out |
+| Type            | Description                        | Measure?      |
+| --------------- | ---------------------------------- | ------------- |
+| Cold            | App not in memory, full init       | ✅ Yes        |
+| Warm            | Process exists, activity recreated | ❌ Skip       |
+| Hot             | App in background, resumed         | ❌ Skip       |
+| Prewarmed (iOS) | iOS pre-initialized app            | ❌ Filter out |
 
 **Only measure cold starts** for consistent metrics.
 
@@ -62,17 +62,20 @@ npm install react-native-performance
 The diagram shows a warm start (app was in memory):
 
 **UI Thread:**
+
 1. `init native process` → `init native app`
 2. Gap while user is away (e.g., "5h break from using the app")
 3. `JS bundle load` → `RootView render`
 
 **JS Thread (runs in parallel):**
+
 - `init entrypoint` → `registerComponent`
 
 **Pipeline markers:**
+
 ```
 1. Native Process Init     (nativeLaunchStart → nativeLaunchEnd)
-2. Native App Init         (appCreationStart → appCreationEnd)  
+2. Native App Init         (appCreationStart → appCreationEnd)
 3. JS Bundle Load          (runJSBundleStart → runJSBundleEnd)
 4. RN Root View Render     (contentAppeared)
 5. React App Interactive   (screenInteractive) ← This is TTI
@@ -93,13 +96,13 @@ let isColdStart = ProcessInfo.processInfo.environment["ActivePrewarm"] != "1"
 ```kotlin
 class MainApplication : Application() {
     var isColdStart = false
-    
+
     override fun onCreate() {
         super.onCreate()
-        
+
         var firstPostEnqueued = true
         Handler().post { firstPostEnqueued = false }
-        
+
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                 unregisterActivityLifecycleCallbacks(this)
@@ -122,7 +125,7 @@ Only measure when app starts in foreground.
 ```swift
 var isForegroundProcess = false
 
-override func application(_ application: UIApplication, 
+override func application(_ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     if application.applicationState == .active {
         isForegroundProcess = true
@@ -171,12 +174,12 @@ RNPerformance.getInstance().mark("appCreationEnd")
 import performance from 'react-native-performance';
 
 export default function HomeScreen() {
-    useEffect(() => {
-        // Mark when meaningful content is displayed
-        performance.mark('screenInteractive');
-    }, []);
-    
-    return <TabNavigator />;
+  useEffect(() => {
+    // Mark when meaningful content is displayed
+    performance.mark('screenInteractive');
+  }, []);
+
+  return <TabNavigator />;
 }
 ```
 
@@ -186,18 +189,18 @@ export default function HomeScreen() {
 import performance from 'react-native-performance';
 
 const collectTTIMetrics = () => {
-    const entries = performance.getEntriesByType('mark');
-    
-    // Calculate durations
-    const metrics = {
-        nativeInit: getMarkDuration('nativeLaunchStart', 'nativeLaunchEnd'),
-        appCreation: getMarkDuration('appCreationStart', 'appCreationEnd'),
-        jsBundleLoad: getMarkDuration('runJSBundleStart', 'runJSBundleEnd'),
-        tti: getMarkDuration('nativeLaunchStart', 'screenInteractive'),
-    };
-    
-    // Send to analytics
-    analytics.track('app_performance', metrics);
+  const entries = performance.getEntriesByType('mark');
+
+  // Calculate durations
+  const metrics = {
+    nativeInit: getMarkDuration('nativeLaunchStart', 'nativeLaunchEnd'),
+    appCreation: getMarkDuration('appCreationStart', 'appCreationEnd'),
+    jsBundleLoad: getMarkDuration('runJSBundleStart', 'runJSBundleEnd'),
+    tti: getMarkDuration('nativeLaunchStart', 'screenInteractive'),
+  };
+
+  // Send to analytics
+  analytics.track('app_performance', metrics);
 };
 ```
 
@@ -205,13 +208,13 @@ const collectTTIMetrics = () => {
 
 `react-native-performance` provides automatic markers:
 
-| Marker | Description |
-|--------|-------------|
+| Marker              | Description              |
+| ------------------- | ------------------------ |
 | `nativeLaunchStart` | Process start (pre-main) |
-| `nativeLaunchEnd` | Native init complete |
-| `runJSBundleStart` | JS bundle loading starts |
-| `runJSBundleEnd` | JS bundle loaded |
-| `contentAppeared` | RN root view rendered |
+| `nativeLaunchEnd`   | Native init complete     |
+| `runJSBundleStart`  | JS bundle loading starts |
+| `runJSBundleEnd`    | JS bundle loaded         |
+| `contentAppeared`   | RN root view rendered    |
 
 ## Listening to Native Events
 
@@ -240,11 +243,11 @@ ReactMarker.addListener { name ->
 
 ## Target Metrics
 
-| Metric | Good | Acceptable | Needs Work |
-|--------|------|------------|------------|
-| TTI | < 2s | 2-4s | > 4s |
-| JS Bundle Load | < 500ms | 500ms-1s | > 1s |
-| Native Init | < 500ms | 500ms-1s | > 1s |
+| Metric         | Good    | Acceptable | Needs Work |
+| -------------- | ------- | ---------- | ---------- |
+| TTI            | < 2s    | 2-4s       | > 4s       |
+| JS Bundle Load | < 500ms | 500ms-1s   | > 1s       |
+| Native Init    | < 500ms | 500ms-1s   | > 1s       |
 
 **Note**: Targets vary by app complexity and device tier.
 

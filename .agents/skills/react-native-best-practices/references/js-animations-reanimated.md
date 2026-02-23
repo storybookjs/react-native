@@ -44,7 +44,7 @@ Add to `babel.config.js`:
 
 ```javascript
 module.exports = {
-  plugins: ['react-native-worklets/plugin'],  // Must be last
+  plugins: ['react-native-worklets/plugin'], // Must be last
 };
 ```
 
@@ -66,11 +66,7 @@ module.exports = {
 ### 1. Basic Animated Style (UI Thread)
 
 ```jsx
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming
-} from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 
 const FadeInView = () => {
   const opacity = useSharedValue(0);
@@ -140,15 +136,11 @@ const AnimatedButton = () => {
   };
 
   const handlePress = () => {
-    scale.value = withTiming(
-      1.2,
-      { duration: 200 },
-      (finished) => {
-        if (finished) {
-          scheduleOnRN(onComplete);
-        }
+    scale.value = withTiming(1.2, { duration: 200 }, (finished) => {
+      if (finished) {
+        scheduleOnRN(onComplete);
       }
-    );
+    });
   };
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -167,17 +159,17 @@ const AnimatedButton = () => {
 
 ## When to Use What
 
-| Thread | Best For |
-|--------|----------|
-| **UI Thread** (worklets) | Visual animations, transforms, gestures |
-| **JS Thread** | State updates, data processing, API calls |
+| Thread                   | Best For                                  |
+| ------------------------ | ----------------------------------------- |
+| **UI Thread** (worklets) | Visual animations, transforms, gestures   |
+| **JS Thread**            | State updates, data processing, API calls |
 
-| Hook/API | Use Case |
-|----------|----------|
-| `useAnimatedStyle` | Animated styles (auto UI thread) |
-| `scheduleOnUI` | Manual UI thread execution (from `react-native-worklets`) |
-| `scheduleOnRN` | Call JS functions from worklets (from `react-native-worklets`) |
-| `useTransition` | Alternative for React state-driven delays |
+| Hook/API           | Use Case                                                       |
+| ------------------ | -------------------------------------------------------------- |
+| `useAnimatedStyle` | Animated styles (auto UI thread)                               |
+| `scheduleOnUI`     | Manual UI thread execution (from `react-native-worklets`)      |
+| `scheduleOnRN`     | Call JS functions from worklets (from `react-native-worklets`) |
+| `useTransition`    | Alternative for React state-driven delays                      |
 
 ## Common Pitfalls
 
@@ -189,13 +181,13 @@ const AnimatedButton = () => {
 ```jsx
 // BAD: Regular function in useAnimatedStyle
 const style = useAnimatedStyle(() => {
-  heavyComputation();  // Blocks UI thread!
+  heavyComputation(); // Blocks UI thread!
   return { opacity: 1 };
 });
 
 // GOOD: Keep worklets fast
 const style = useAnimatedStyle(() => {
-  return { opacity: opacity.value };  // Just read value
+  return { opacity: opacity.value }; // Just read value
 });
 ```
 
@@ -207,14 +199,14 @@ If you're upgrading from Reanimated 3.x, here are the key changes.
 
 ### Breaking Changes
 
-| Old API (v3) | New API (v4) | Package |
-|--------------|--------------|---------|
-| `runOnUI(() => {...})()` | `scheduleOnUI(() => {...})` | `react-native-worklets` |
-| `runOnJS(fn)(args)` | `scheduleOnRN(fn, args)` | `react-native-worklets` |
-| `executeOnUIRuntimeSync` | `runOnUISync` | `react-native-worklets` |
-| `runOnRuntime` | `scheduleOnRuntime` | `react-native-worklets` |
-| `useScrollViewOffset` | `useScrollOffset` | `react-native-reanimated` |
-| `useWorkletCallback` | Use `useCallback` with `'worklet';` directive | React |
+| Old API (v3)             | New API (v4)                                  | Package                   |
+| ------------------------ | --------------------------------------------- | ------------------------- |
+| `runOnUI(() => {...})()` | `scheduleOnUI(() => {...})`                   | `react-native-worklets`   |
+| `runOnJS(fn)(args)`      | `scheduleOnRN(fn, args)`                      | `react-native-worklets`   |
+| `executeOnUIRuntimeSync` | `runOnUISync`                                 | `react-native-worklets`   |
+| `runOnRuntime`           | `scheduleOnRuntime`                           | `react-native-worklets`   |
+| `useScrollViewOffset`    | `useScrollOffset`                             | `react-native-reanimated` |
+| `useWorkletCallback`     | Use `useCallback` with `'worklet';` directive | React                     |
 
 ### Removed APIs
 
@@ -234,8 +226,8 @@ withSpring(value, {
 
 // After (v4)
 withSpring(value, {
-  energyThreshold: 0.01,  // Replaces both threshold parameters
-  duration: 200,          // Duration is now "perceptual" (~1.5x actual time)
+  energyThreshold: 0.01, // Replaces both threshold parameters
+  duration: 200, // Duration is now "perceptual" (~1.5x actual time)
 });
 ```
 

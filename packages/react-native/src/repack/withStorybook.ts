@@ -84,7 +84,7 @@ export interface StorybookPluginOptions {
    * Whether to enable MCP (Model Context Protocol) server support. Defaults to false.
    * When enabled, adds an /mcp endpoint to the channel server,
    * allowing AI agents (Claude Code, Cursor, etc.) to query component documentation.
-   * Requires websockets to be enabled.
+   * If websockets are disabled, MCP documentation tools still work but story selection is unavailable.
    */
   experimental_mcp?: boolean;
 }
@@ -186,8 +186,8 @@ export class StorybookPlugin {
     const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
     const host = websockets === 'auto' ? 'auto' : websockets?.host;
 
-    // Start the WebSocket channel server once (on first apply, not per-compilation)
-    if (websockets && !this.serverStarted) {
+    // Start the channel server once (on first apply, not per-compilation)
+    if ((websockets || experimental_mcp) && !this.serverStarted) {
       this.serverStarted = true;
 
       createChannelServer({
@@ -195,6 +195,7 @@ export class StorybookPlugin {
         host: host === 'auto' ? undefined : host,
         configPath,
         experimental_mcp,
+        websockets: Boolean(websockets),
       });
     }
 

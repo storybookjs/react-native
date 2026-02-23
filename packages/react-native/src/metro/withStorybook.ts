@@ -59,7 +59,7 @@ interface WithStorybookOptions {
    * Whether to enable MCP (Model Context Protocol) server support. Defaults to false.
    * When enabled, adds an /mcp endpoint to the channel server,
    * allowing AI agents (Claude Code, Cursor, etc.) to query component documentation.
-   * Requires websockets to be enabled.
+   * If websockets are disabled, MCP documentation tools still work but story selection is unavailable.
    */
   experimental_mcp?: boolean;
 }
@@ -205,9 +205,9 @@ export function withStorybook(
     };
   }
 
-  if (websockets) {
-    const port = websockets === 'auto' ? 7007 : (websockets.port ?? 7007);
-    const host = websockets === 'auto' ? 'auto' : websockets.host;
+  if (websockets || experimental_mcp) {
+    const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
+    const host = websockets === 'auto' ? 'auto' : websockets?.host;
 
     // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
     // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
@@ -216,15 +216,24 @@ export function withStorybook(
       host: host === 'auto' ? undefined : host,
       configPath,
       experimental_mcp,
+      websockets: Boolean(websockets),
     });
 
-    generate({
-      configPath,
-      useJs,
-      docTools,
-      host,
-      port,
-    });
+    if (websockets) {
+      generate({
+        configPath,
+        useJs,
+        docTools,
+        host,
+        port,
+      });
+    } else {
+      generate({
+        configPath,
+        useJs,
+        docTools,
+      });
+    }
   } else {
     generate({
       configPath,

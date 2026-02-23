@@ -10,13 +10,13 @@ Understand which threads Turbo Modules and Fabric use for initialization, method
 
 ## Quick Reference
 
-| Action | iOS Thread | Android Thread |
-|--------|------------|----------------|
-| Module init | Main | JS (lazy) / Native (eager) |
-| Sync method | JS | JS |
-| Async method | Native modules | Native modules |
-| View init/props | Main | Main |
-| Yoga layout | JS | JS |
+| Action          | iOS Thread     | Android Thread             |
+| --------------- | -------------- | -------------------------- |
+| Module init     | Main           | JS (lazy) / Native (eager) |
+| Sync method     | JS             | JS                         |
+| Async method    | Native modules | Native modules             |
+| View init/props | Main           | Main                       |
+| Yoga layout     | JS             | JS                         |
 
 **Key rule**: Sync methods block JS thread. Keep under 16ms or make async.
 
@@ -29,21 +29,21 @@ Understand which threads Turbo Modules and Fabric use for initialization, method
 
 ## Available Threads
 
-| Thread | Name in Debugger | Purpose |
-|--------|------------------|---------|
-| Main/UI | Main thread | UI rendering, UIKit/Android Views |
-| JavaScript | `mqt_v_js` | JS execution, React |
-| Native Modules | `mqt_v_native` | Async Turbo Module calls |
-| Custom | Various | Your background threads |
+| Thread         | Name in Debugger | Purpose                           |
+| -------------- | ---------------- | --------------------------------- |
+| Main/UI        | Main thread      | UI rendering, UIKit/Android Views |
+| JavaScript     | `mqt_v_js`       | JS execution, React               |
+| Native Modules | `mqt_v_native`   | Async Turbo Module calls          |
+| Custom         | Various          | Your background threads           |
 
 ## Turbo Modules Threading
 
 ### Initialization
 
-| Platform | Thread | Notes |
-|----------|--------|-------|
-| iOS | Main thread | Assumes UIKit access needed |
-| Android (lazy) | JS thread | Default behavior |
+| Platform        | Thread                | Notes                        |
+| --------------- | --------------------- | ---------------------------- |
+| iOS             | Main thread           | Assumes UIKit access needed  |
+| Android (lazy)  | JS thread             | Default behavior             |
 | Android (eager) | Native modules thread | When `needsEagerInit = true` |
 
 **iOS**: React Native runs `init` on main thread assuming UIKit access.
@@ -113,10 +113,10 @@ override fun asyncOperation(a: Double, promise: Promise?) {
 
 Called when React Native instance is torn down (e.g., Metro reload):
 
-| Platform | Thread |
-|----------|--------|
-| iOS | Native modules thread |
-| Android | ReactHost thread pool |
+| Platform | Thread                |
+| -------- | --------------------- |
+| iOS      | Native modules thread |
+| Android  | ReactHost thread pool |
 
 **iOS**: Implement `RCTInvalidating` protocol.
 
@@ -124,11 +124,11 @@ Called when React Native instance is torn down (e.g., Metro reload):
 
 ### View Lifecycle
 
-| Operation | Thread |
-|-----------|--------|
-| View init | Main thread |
-| Prop updates | Main thread |
-| Layout (Yoga) | JS thread |
+| Operation     | Thread      |
+| ------------- | ----------- |
+| View init     | Main thread |
+| Prop updates  | Main thread |
+| Layout (Yoga) | JS thread   |
 
 Views always manipulate UI on main thread (UIKit/Android requirement).
 
@@ -163,9 +163,9 @@ Main Thread: Apply layout to native views
 ```kotlin
 class MyModule(reactContext: ReactApplicationContext) :
     NativeMyModuleSpec(reactContext) {
-    
+
     private val moduleScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
-    
+
     override fun heavyWork(promise: Promise?) {
         moduleScope.launch {
             // Heavy computation here
@@ -173,7 +173,7 @@ class MyModule(reactContext: ReactApplicationContext) :
             promise?.resolve(result)
         }
     }
-    
+
     override fun invalidate() {
         super.invalidate()
         moduleScope.cancel()  // Important: cancel to prevent leaks
@@ -183,19 +183,19 @@ class MyModule(reactContext: ReactApplicationContext) :
 
 ## Thread Safety Checklist
 
-| Scenario | Safe? | Solution |
-|----------|-------|----------|
-| Sync method accessing shared state | ⚠️ | Use locks/synchronized |
-| Async method accessing UI | ❌ | Dispatch to main thread |
-| Multiple async calls to same resource | ⚠️ | Queue or mutex |
-| Accessing JS from background | ❌ | Use CallInvoker |
+| Scenario                              | Safe? | Solution                |
+| ------------------------------------- | ----- | ----------------------- |
+| Sync method accessing shared state    | ⚠️    | Use locks/synchronized  |
+| Async method accessing UI             | ❌    | Dispatch to main thread |
+| Multiple async calls to same resource | ⚠️    | Queue or mutex          |
+| Accessing JS from background          | ❌    | Use CallInvoker         |
 
 ### Accessing UI from Background (iOS)
 
 ```swift
 DispatchQueue.global().async {
     let result = self.heavyComputation()
-    
+
     DispatchQueue.main.async {
         // Safe to update UI here
         self.updateUI(with: result)
@@ -208,7 +208,7 @@ DispatchQueue.global().async {
 ```kotlin
 moduleScope.launch(Dispatchers.Default) {
     val result = heavyComputation()
-    
+
     withContext(Dispatchers.Main) {
         // Safe to update UI here
         updateUI(result)
@@ -218,15 +218,15 @@ moduleScope.launch(Dispatchers.Default) {
 
 ## Summary Table
 
-| Action | iOS Thread | Android Thread |
-|--------|------------|----------------|
-| Module init | Main | JS (lazy) / Native (eager) |
-| Sync method | JS | JS |
-| Async method | Native modules | Native modules |
-| View init | Main | Main |
-| Prop update | Main | Main |
-| Yoga layout | JS | JS |
-| Invalidate | Native modules | ReactHost pool |
+| Action       | iOS Thread     | Android Thread             |
+| ------------ | -------------- | -------------------------- |
+| Module init  | Main           | JS (lazy) / Native (eager) |
+| Sync method  | JS             | JS                         |
+| Async method | Native modules | Native modules             |
+| View init    | Main           | Main                       |
+| Prop update  | Main           | Main                       |
+| Yoga layout  | JS             | JS                         |
+| Invalidate   | Native modules | ReactHost pool             |
 
 ## Related Skills
 

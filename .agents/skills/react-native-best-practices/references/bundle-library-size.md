@@ -27,10 +27,10 @@ npx bundle-phobia-cli <package-name>
 
 ## Tools Overview
 
-| Tool | Type | Best For |
-|------|------|----------|
-| bundlephobia.com | Web | Quick size check |
-| pkg-size.dev | Web | Backup/alternative |
+| Tool                  | Type          | Best For           |
+| --------------------- | ------------- | ------------------ |
+| bundlephobia.com      | Web           | Quick size check   |
+| pkg-size.dev          | Web           | Backup/alternative |
 | Import Cost (VS Code) | IDE extension | Real-time feedback |
 
 ## bundlephobia.com
@@ -82,10 +82,10 @@ code --install-extension wix.vscode-import-cost
 Shows inline size next to imports:
 
 ```tsx
-import React from 'react';           // 6.5K (gzipped)
-import { View, Text } from 'react-native';  // 0B (native)
-import lodash from 'lodash';         // 71.5K (gzipped: 24.7K)
-import get from 'lodash/get';        // 8K (gzipped: 2.9K)
+import React from 'react'; // 6.5K (gzipped)
+import { View, Text } from 'react-native'; // 0B (native)
+import lodash from 'lodash'; // 71.5K (gzipped: 24.7K)
+import get from 'lodash/get'; // 8K (gzipped: 2.9K)
 ```
 
 ### Limitations
@@ -99,11 +99,13 @@ import get from 'lodash/get';        // 8K (gzipped: 2.9K)
 ### Before Adding Dependency
 
 1. Check on bundlephobia:
+
    ```
    https://bundlephobia.com/package/[package-name]
    ```
 
 2. Compare alternatives:
+
    ```
    moment (289 kB) vs date-fns (75 kB) vs dayjs (6 kB)
    ```
@@ -120,21 +122,21 @@ import get from 'lodash/get';        // 8K (gzipped: 2.9K)
 
 ## Size Guidelines
 
-| Size (gzipped) | Assessment | Action |
-|----------------|------------|--------|
-| < 5 KB | Small | Generally fine |
-| 5-20 KB | Medium | Evaluate necessity |
-| 20-50 KB | Large | Look for alternatives |
-| > 50 KB | Very large | Strong justification needed |
+| Size (gzipped) | Assessment | Action                      |
+| -------------- | ---------- | --------------------------- |
+| < 5 KB         | Small      | Generally fine              |
+| 5-20 KB        | Medium     | Evaluate necessity          |
+| 20-50 KB       | Large      | Look for alternatives       |
+| > 50 KB        | Very large | Strong justification needed |
 
 ## Common Large Dependencies
 
-| Library | Size (gzipped) | Alternative |
-|---------|----------------|-------------|
-| moment | ~70 KB | dayjs (~3 KB) |
-| lodash (full) | ~25 KB | lodash-es + direct imports |
-| aws-sdk (full) | 200+ KB | @aws-sdk/client-* |
-| crypto-js | ~15 KB | react-native-quick-crypto |
+| Library        | Size (gzipped) | Alternative                |
+| -------------- | -------------- | -------------------------- |
+| moment         | ~70 KB         | dayjs (~3 KB)              |
+| lodash (full)  | ~25 KB         | lodash-es + direct imports |
+| aws-sdk (full) | 200+ KB        | @aws-sdk/client-\*         |
+| crypto-js      | ~15 KB         | react-native-quick-crypto  |
 
 ## Quick Size Check Script
 
@@ -148,12 +150,12 @@ npm pack <package-name> --dry-run 2>&1 | grep "total files"
 
 ## Decision Matrix
 
-| Factor | Keep JS Library | Use Native Alternative |
-|--------|-----------------|------------------------|
-| Size | > 50 KB | < 50 KB |
-| Platform coverage | Both platforms | Single platform OK |
-| Performance | Not critical | Critical path |
-| Functionality | Simple | Complex computation |
+| Factor            | Keep JS Library | Use Native Alternative |
+| ----------------- | --------------- | ---------------------- |
+| Size              | > 50 KB         | < 50 KB                |
+| Platform coverage | Both platforms  | Single platform OK     |
+| Performance       | Not critical    | Critical path          |
+| Functionality     | Simple          | Complex computation    |
 
 ## Code Example: Optimizing Imports
 

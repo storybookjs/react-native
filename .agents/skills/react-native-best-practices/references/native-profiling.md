@@ -50,16 +50,19 @@ Use Xcode Instruments and Android Studio Profiler to identify native performance
 ### Analyzing Time Profiler Results
 
 **Key views:**
+
 - **Flame Graph**: Visual call stack over time
 - **Call Tree**: Hierarchical function breakdown
 - **Ranked**: Functions sorted by time (Bottom-Up)
 
 **Useful filters:**
+
 - Hide System Libraries
 - Invert Call Tree (bottom-up view)
 - Filter by thread (main, JS, etc.)
 
 **Identifying problems:**
+
 - **Microhang**: Brief UI unresponsiveness
 - **Hang**: Full UI thread block (critical)
 - Yellow = most time spent
@@ -67,6 +70,7 @@ Use Xcode Instruments and Android Studio Profiler to identify native performance
 ### Thread Breakdown
 
 Pin threads to compare:
+
 - **Main thread** (SampleApp): UI rendering
 - **JavaScript thread**: React/JS execution
 - **Background threads**: Native modules
@@ -90,11 +94,13 @@ Pin threads to compare:
 ### Analyzing Results
 
 **Flame Graph:**
+
 - Zoom with scroll/pinch
 - Click to expand call stacks
 - Filter by keyword (e.g., "hermes")
 
 **Views:**
+
 - **Top Down**: From entry points down
 - **Bottom Up**: From slowest functions up
 - **Flame Chart**: Timeline visualization
@@ -102,6 +108,7 @@ Pin threads to compare:
 ### Reading the Call Stack
 
 Example analysis:
+
 ```
 JS Thread activity after button press:
 - Event handler on main thread
@@ -115,6 +122,7 @@ JS Thread activity after button press:
 ### 5000 Views in ScrollView (Bad)
 
 Profiler shows:
+
 - 240ms+ JS thread work
 - Many 1ms Hermes spikes
 - Exceeds 16.6ms frame budget
@@ -123,20 +131,21 @@ Profiler shows:
 ### Using FlatList (Better)
 
 Profiler shows:
+
 - Minimal JS work (windowed rendering)
 - Smooth main thread
 - Stays within frame budget
 
 ## Platform Tools Summary
 
-| Tool | Platform | Use Case |
-|------|----------|----------|
-| Time Profiler | iOS | CPU hotspots |
-| Leaks | iOS | Memory leaks |
-| Hangs | iOS | UI thread blocks |
-| CPU Profiler | Android | CPU hotspots |
-| Memory Profiler | Android | Memory tracking |
-| Perfetto | Android | Advanced trace analysis |
+| Tool            | Platform | Use Case                |
+| --------------- | -------- | ----------------------- |
+| Time Profiler   | iOS      | CPU hotspots            |
+| Leaks           | iOS      | Memory leaks            |
+| Hangs           | iOS      | UI thread blocks        |
+| CPU Profiler    | Android  | CPU hotspots            |
+| Memory Profiler | Android  | Memory tracking         |
+| Perfetto        | Android  | Advanced trace analysis |
 
 ## Perfetto (Advanced Android)
 
@@ -162,12 +171,12 @@ Export traces from Android Studio and analyze at [ui.perfetto.dev](https://ui.pe
 
 ## Common Findings
 
-| Symptom | Likely Cause |
-|---------|--------------|
-| Main thread hangs | Heavy UI work, blocked operations |
-| JS thread spikes | React re-renders, heavy computation |
-| Background thread busy | Native module work |
-| Memory climbing | Leak (see memory profiling skills) |
+| Symptom                | Likely Cause                        |
+| ---------------------- | ----------------------------------- |
+| Main thread hangs      | Heavy UI work, blocked operations   |
+| JS thread spikes       | React re-renders, heavy computation |
+| Background thread busy | Native module work                  |
+| Memory climbing        | Leak (see memory profiling skills)  |
 
 ## Related Skills
 

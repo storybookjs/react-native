@@ -33,10 +33,10 @@ cd ios && xcodebuild -exportArchive \
 
 ## Key Metrics
 
-| Metric | Description | User Impact |
-|--------|-------------|-------------|
+| Metric        | Description                          | User Impact               |
+| ------------- | ------------------------------------ | ------------------------- |
 | Download Size | Compressed, transferred over network | Download time, data usage |
-| Install Size | Uncompressed, on device storage | Storage space |
+| Install Size  | Uncompressed, on device storage      | Storage space             |
 
 **Google finding**: Every 6 MB increase reduces installs by 1%.
 
@@ -75,6 +75,7 @@ cd android
 ```
 
 Opens HTML report with:
+
 - Download size
 - Install size
 - Component breakdown (biggest → smallest)
@@ -97,6 +98,7 @@ Build fails if thresholds exceeded.
 ### Via App Store Connect (Most Accurate)
 
 After uploading to TestFlight:
+
 1. Open App Store Connect
 2. Go to your build
 3. View size table by device variant
@@ -120,6 +122,7 @@ Or in `ExportOptions.plist`:
 ### Output
 
 Creates folder with:
+
 - **Universal IPA**: All variants combined
 - **Thinned IPAs**: One per device variant
 - **App Thinning Size Report.txt**:
@@ -156,32 +159,32 @@ Upload IPA, APK, or AAB through their web interface or CI integration.
 
 ## Size Comparison
 
-| Tool | Platform | Accuracy | CI Integration |
-|------|----------|----------|----------------|
-| Ruler | Android | High | Yes (Gradle) |
-| App Store Connect | iOS | Highest | No |
-| Xcode Export | iOS | High | Yes (xcodebuild) |
-| Emerge Tools | Both | High | Yes (API) |
+| Tool              | Platform | Accuracy | CI Integration   |
+| ----------------- | -------- | -------- | ---------------- |
+| Ruler             | Android  | High     | Yes (Gradle)     |
+| App Store Connect | iOS      | Highest  | No               |
+| Xcode Export      | iOS      | High     | Yes (xcodebuild) |
+| Emerge Tools      | Both     | High     | Yes (API)        |
 
 ## Typical React Native App Sizes
 
-| Component | Approximate Size |
-|-----------|------------------|
-| Hermes engine | ~2-3 MB |
-| React Native core | ~3-5 MB |
-| JavaScript bundle | 1-10 MB |
-| Assets (images, etc.) | Varies |
+| Component             | Approximate Size |
+| --------------------- | ---------------- |
+| Hermes engine         | ~2-3 MB          |
+| React Native core     | ~3-5 MB          |
+| JavaScript bundle     | 1-10 MB          |
+| Assets (images, etc.) | Varies           |
 
 **Baseline empty app**: ~6-10 MB download
 
 ## Optimization Impact Example
 
-| Optimization | Size Reduction |
-|--------------|----------------|
-| Enable R8 (Android) | ~30% |
-| Remove unused polyfills | 400+ KB |
-| Asset catalog (iOS) | 10-50% of assets |
-| Tree shaking | 10-15% |
+| Optimization            | Size Reduction   |
+| ----------------------- | ---------------- |
+| Enable R8 (Android)     | ~30%             |
+| Remove unused polyfills | 400+ KB          |
+| Asset catalog (iOS)     | 10-50% of assets |
+| Tree shaking            | 10-15%           |
 
 ## Quick Commands
 
