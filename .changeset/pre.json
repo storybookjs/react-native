@@ -16,6 +16,8 @@
     "@storybook/tests": "0.0.0"
   },
   "changesets": [
-    "eleven-colts-brush"
+    "cool-tigers-type",
+    "eleven-colts-brush",
+    "heavy-peas-throw"
   ]
 }

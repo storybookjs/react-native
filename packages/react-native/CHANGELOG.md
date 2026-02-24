@@ -1,5 +1,18 @@
 # @storybook/react-native
 
+## 10.3.0-next.1
+
+### Patch Changes
+
+- [#832](https://github.com/storybookjs/react-native/pull/832) [`d2f2d99`](https://github.com/storybookjs/react-native/commit/d2f2d9994f98c29c07bf1fe0108134c3bec094f9) Thanks [@YevheniiKotyrlo](https://github.com/YevheniiKotyrlo)! - fix: replace @ts-ignore with Metro-specific type definitions
+
+- [#849](https://github.com/storybookjs/react-native/pull/849) [`c0b14e8`](https://github.com/storybookjs/react-native/commit/c0b14e842f17a3e8d56501e08f59a771431946de) Thanks [@dannyhw](https://github.com/dannyhw)! - adds an mcp option to withStorybook that enables an mcp endpoint in the channel server
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.3.0-next.1
+  - @storybook/react-native-ui-common@10.3.0-next.1
+  - @storybook/react-native-theming@10.3.0-next.1
+
 ## 10.3.0-next.0
 
 ### Minor Changes
