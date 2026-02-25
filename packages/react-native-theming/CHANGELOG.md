@@ -1,5 +1,7 @@
 # @storybook/react-native-theming
 
+## 10.3.0-next.2
+
 ## 10.3.0-next.1
 
 ## 10.3.0-next.0

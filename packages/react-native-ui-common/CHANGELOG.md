@@ -1,5 +1,14 @@
 # @storybook/react-native-ui-common
 
+## 10.3.0-next.2
+
+### Patch Changes
+
+- [#851](https://github.com/storybookjs/react-native/pull/851) [`f74c577`](https://github.com/storybookjs/react-native/commit/f74c577ff040c5039024ab9c5fc63fae0eec0a91) Thanks [@andre-krueger](https://github.com/andre-krueger)! - fix: png included in npm publish
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.3.0-next.2
+
 ## 10.3.0-next.1
 
 ### Patch Changes
