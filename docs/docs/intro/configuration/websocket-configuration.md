@@ -75,6 +75,16 @@ module.exports = withStorybook(config, {
 });
 ```
 
+Or use auto host detection:
+
+```js
+module.exports = withStorybook(config, {
+  websockets: 'auto',
+});
+```
+
+`'auto'` support is available from v10.2.
+
 ## Platform-Specific Setup
 
 ### iOS Physical Device

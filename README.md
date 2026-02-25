@@ -449,11 +449,24 @@ Type: `boolean`, default: `false`
 
 Whether to use lite mode for Storybook. In lite mode, the default Storybook UI is mocked out so you don't need to install all its dependencies like react-native-reanimated. This is useful for reducing bundle size and dependencies. Use this when using @storybook/react-native-ui-lite instead of @storybook/react-native-ui.
 
+#### experimental_mcp
+
+Type: `boolean`, default: `false`
+
+Enables an experimental MCP (Model Context Protocol) endpoint at `/mcp` on the Storybook channel server. This can be used by AI tooling to query Storybook documentation and component/story metadata. Available from v10.3 onwards.
+
+You can enable MCP with or without websockets:
+
+- `experimental_mcp: true` starts the HTTP MCP endpoint
+- adding `websockets` also enables story selection tools over the same channel server
+
 ### websockets
 
-Type: `{ host: string?, port: number? }`, default: `undefined`
+Type: `'auto' | { host: string?, port: number? }`, default: `undefined`
 
 If specified, create a WebSocket server on startup. This allows you to sync up multiple devices to show the same story and [arg](https://storybook.js.org/docs/writing-stories/args) values connected to the story in the UI.
+
+Use `'auto'` to automatically detect your LAN IP and inject host/port into the generated `storybook.requires` file.
 
 ### websockets.host
 

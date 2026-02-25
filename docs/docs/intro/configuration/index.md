@@ -235,3 +235,7 @@ The new globals-based backgrounds API with full-screen support, available now be
 ### [WebSocket Configuration](./websocket-configuration.md)
 
 Enable remote control of Storybook from external tools, browsers, or other devices for testing and automation.
+
+### [MCP Configuration](./mcp-configuration.md)
+
+Enable the experimental MCP endpoint (`/mcp`) for AI tooling to query Storybook docs and metadata (available from v10.3).

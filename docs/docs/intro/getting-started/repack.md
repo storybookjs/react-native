@@ -129,11 +129,12 @@ npm run storybook
 
 ## StorybookPlugin Options
 
-| Option       | Type               | Default            | Description                                                       |
-| ------------ | ------------------ | ------------------ | ----------------------------------------------------------------- |
-| `enabled`    | `boolean`          | `true`             | Strip Storybook from bundle when `false`                          |
-| `configPath` | `string`           | `'./.rnstorybook'` | Storybook config directory                                        |
-| `useJs`      | `boolean`          | `false`            | Generate `.js` instead of `.ts`                                   |
-| `docTools`   | `boolean`          | `true`             | Auto arg extraction                                               |
-| `liteMode`   | `boolean`          | `false`            | Mock default UI deps (use with `@storybook/react-native-ui-lite`) |
-| `websockets` | `'auto' \| object` | `undefined`        | `'auto'` detects LAN IP, or `{ port: 7007, host: 'localhost' }`   |
+| Option             | Type               | Default            | Description                                                       |
+| ------------------ | ------------------ | ------------------ | ----------------------------------------------------------------- |
+| `enabled`          | `boolean`          | `true`             | Strip Storybook from bundle when `false`                          |
+| `configPath`       | `string`           | `'./.rnstorybook'` | Storybook config directory                                        |
+| `useJs`            | `boolean`          | `false`            | Generate `.js` instead of `.ts`                                   |
+| `docTools`         | `boolean`          | `true`             | Auto arg extraction                                               |
+| `liteMode`         | `boolean`          | `false`            | Mock default UI deps (use with `@storybook/react-native-ui-lite`) |
+| `websockets`       | `'auto' \| object` | `undefined`        | `'auto'` detects LAN IP, or `{ port: 7007, host: 'localhost' }`   |
+| `experimental_mcp` | `boolean`          | `false`            | Enable experimental MCP endpoint (`/mcp`) for AI tooling (v10.3+) |
