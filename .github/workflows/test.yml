@@ -31,4 +31,4 @@ jobs:
       - name: type check example
         run: pnpm --filter expo-example check
       - name: test
-        run: pnpm test
+        run: pnpm test:ci

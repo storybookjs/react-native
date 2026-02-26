@@ -30,7 +30,7 @@
     "lint:fix": "lint --fix",
     "build": "pnpm -r run prepare",
     "check": "pnpm check:types && pnpm lint && pnpm format:check && pnpm --filter expo-example check && pnpm test",
-    "test:ci": "pnpm -r run test:ci",
+    "test:ci": "pnpm -r --workspace-concurrency=1 run test:ci",
     "version:canary": "pnpm changeset version --snapshot canary",
     "publish:canary": "pnpm changeset publish --tag canary",
     "test": "pnpm -r run test",
