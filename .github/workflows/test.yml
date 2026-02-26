@@ -30,5 +30,14 @@ jobs:
         run: pnpm format:check
       - name: type check example
         run: pnpm --filter expo-example check
+      - name: Restore Jest cache
+        uses: actions/cache@v4
+        with:
+          path: /tmp/jest_cache
+          key: jest-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            jest-${{ runner.os }}-
       - name: test
         run: pnpm test
+        env:
+          JEST_CACHE_DIRECTORY: /tmp/jest_cache
