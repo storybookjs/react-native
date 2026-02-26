@@ -33,14 +33,14 @@
     "check:types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/react": "~19.1.10",
+    "@types/react": "~19.2.14",
     "tsup": "^8.5.0",
     "typescript": "~5.9.3"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "10.3.0-alpha.9",
+    "@storybook/react": "10.3.0-alpha.12",
     "@storybook/react-native-theming": "^10.3.0-next.2",
     "@storybook/react-native-ui-common": "^10.3.0-next.2",
     "polished": "^4.3.1"
