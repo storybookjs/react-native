@@ -46,7 +46,7 @@
     "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
-    "test:ci": "jest --runInBand",
+    "test:ci": "jest",
     "check:types": "tsc --noEmit"
   },
   "dependencies": {

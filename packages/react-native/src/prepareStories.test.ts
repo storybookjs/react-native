@@ -1,4 +1,4 @@
-import { prepareStories } from './Start';
+import { prepareStories } from './prepareStories';
 
 describe('prepareStories', () => {
   test('prepares a standard CSF story file', () => {
