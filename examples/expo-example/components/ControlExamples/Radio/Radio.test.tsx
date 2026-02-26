@@ -7,5 +7,5 @@ const { Basic } = composeStories(RadioStories);
 test('radio story renders', async () => {
   await render(<Basic />);
 
-  screen.getByText('104.8ZHz');
+  screen.getByText('104.8MHz');
 });
