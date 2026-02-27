@@ -1,6 +1,5 @@
 import { ActionButton } from './Actions';
-import { action } from 'storybook/actions';
-// import { fn } from 'storybook/test';
+import { fn } from 'storybook/test';
 import preview from '../../.rnstorybook/preview';
 
 const meta = preview.meta({
@@ -27,7 +26,6 @@ export default meta;
 export const Basic = meta.story({
   args: {
     text: 'Press me!',
-    onPress: action('onPress'),
-    // onPress: fn(),
+    onPress: fn(),
   },
 });

@@ -242,6 +242,8 @@ export function withStorybook(
     });
   }
 
+  let storybookTestPath: string | undefined;
+
   return {
     ...config,
     transformer: {
@@ -267,6 +269,28 @@ export function withStorybook(
               unstable_conditionNames: ['import'],
             }
           : context;
+
+        // Pin storybook/test to a single resolved copy so that all modules
+        // share the same listeners Set (needed for fn() → actions bridge).
+        // Without this, different copies in node_modules each get their own
+        // module-scoped listeners, and onMockCall registered in one copy
+        // never sees fn() calls from another.
+        if (moduleName === 'storybook/test') {
+          if (!storybookTestPath) {
+            const resolved = resolveFunction(
+              {
+                ...context,
+                unstable_enablePackageExports: true,
+                unstable_conditionNames: ['import'],
+              },
+              'storybook/test',
+              platform
+            );
+            storybookTestPath = resolved.filePath;
+          }
+
+          return { filePath: storybookTestPath, type: 'sourceFile' };
+        }
 
         const resolveResult = resolveFunction(theContext, moduleName, platform);
 
