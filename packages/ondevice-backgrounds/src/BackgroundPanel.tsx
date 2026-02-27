@@ -66,10 +66,6 @@ interface BackgroundPanelProps {
 }
 
 const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
-  if (!active) {
-    return null;
-  }
-
   const store = api.store();
   const storyId = store.getSelection().storyId;
   const story = store.fromId(storyId);

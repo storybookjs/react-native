@@ -8,6 +8,7 @@ import { addons as managerAddons } from 'storybook/manager-api';
 import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
 import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
 import dedent from 'dedent';
+import { patchChannelForRN } from './patchChannelForRN';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
 import {
@@ -202,6 +203,7 @@ export class View {
     const url = `${websocketType}://${host}${port}/${query}`;
 
     const channel = new Channel({
+      async: true,
       transport: new WebsocketTransport({
         url,
         onError: (e) => {
@@ -209,6 +211,7 @@ export class View {
         },
       }),
     });
+    patchChannelForRN(channel);
 
     return channel;
   };

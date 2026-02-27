@@ -28,6 +28,23 @@ globalThis.FEATURES = {
   backgrounds: false,
 };
 
+/**
+ * If an annotation module's default export is a Preview object (from definePreview),
+ * extract the user's plain config so composeConfigs can merge parameters properly.
+ * definePreview wraps config in an opaque object that composeConfigs can't read.
+ */
+function resolveAnnotations(annotations: any[]): any[] {
+  return annotations.map((mod) => {
+    const defaultExport = mod?.default ?? mod;
+    if (defaultExport?._tag === 'Preview' && defaultExport.input) {
+      // Extract user config fields, excluding addons (which definePreview handles internally)
+      const { addons: _addons, ...userConfig } = defaultExport.input;
+      return { default: userConfig };
+    }
+    return mod;
+  });
+}
+
 export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
   composeConfigs<ReactRenderer>([
     {
@@ -46,7 +63,7 @@ export const getProjectAnnotations = (view: View, annotations: any[]) => async (
         return <Component {...args} />;
       },
     },
-    ...annotations,
+    ...resolveAnnotations(annotations),
   ]);
 
 export function start({
@@ -127,7 +144,7 @@ export function start({
           return <Component {...args} />;
         },
       },
-      ...annotations,
+      ...resolveAnnotations(annotations),
     ]);
 
   const preview = new PreviewWithSelection<ReactRenderer>(

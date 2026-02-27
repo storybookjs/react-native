@@ -237,10 +237,10 @@ importers:
       react-native:
         specifier: '*'
         version: 0.83.2(@babel/core@7.29.0)(@types/react@19.2.14)(react@19.2.0)
-      storybook:
-        specifier: '>=10 || ^10'
-        version: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
+      storybook:
+        specifier: 10.3.0-alpha.12
+        version: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -256,10 +256,10 @@ importers:
       react-native:
         specifier: '*'
         version: 0.83.2(@babel/core@7.29.0)(@types/react@19.2.14)(react@19.2.0)
-      storybook:
-        specifier: '>=10 || ^10'
-        version: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
+      storybook:
+        specifier: 10.3.0-alpha.12
+        version: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -293,9 +293,6 @@ importers:
       react-native-modal-datetime-picker:
         specifier: ^18.0.0
         version: 18.0.0(@react-native-community/datetimepicker@8.6.0(expo@55.0.2)(react-native@0.83.2(@babel/core@7.29.0)(@types/react@19.2.14)(react@19.2.0))(react@19.2.0))(react-native@0.83.2(@babel/core@7.29.0)(@types/react@19.2.14)(react@19.2.0))
-      storybook:
-        specifier: '>=10 || ^10'
-        version: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       tinycolor2:
         specifier: ^1.6.0
         version: 1.6.0
@@ -306,6 +303,9 @@ importers:
       cross-env:
         specifier: ^10.1.0
         version: 10.1.0
+      storybook:
+        specifier: 10.3.0-alpha.12
+        version: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -314,7 +314,7 @@ importers:
     dependencies:
       '@storybook/react':
         specifier: ^10
-        version: 10.2.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
+        version: 10.2.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
       '@storybook/react-native-theming':
         specifier: ^10.3.0-next.2
         version: link:../react-native-theming
@@ -324,13 +324,13 @@ importers:
       react-native:
         specifier: '*'
         version: 0.83.2(@babel/core@7.29.0)(@types/react@19.2.14)(react@19.2.0)
-      storybook:
-        specifier: '>=10 || ^10'
-        version: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       react-native-markdown-display:
         specifier: ^7.0.2
         version: 7.0.2(react-native@0.83.2(@babel/core@7.29.0)(@types/react@19.2.14)(react@19.2.0))(react@19.2.0)
+      storybook:
+        specifier: 10.3.0-alpha.12
+        version: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       tsup:
         specifier: ^8.5.0
         version: 8.5.1(@swc/core@1.15.13)(jiti@1.21.7)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.2)
@@ -479,7 +479,7 @@ importers:
         version: 1.0.0
       '@storybook/react':
         specifier: 10.3.0-alpha.12
-        version: 10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
+        version: 10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
       '@storybook/react-native-theming':
         specifier: ^10.3.0-next.2
         version: link:../react-native-theming
@@ -507,13 +507,13 @@ importers:
       react-native-svg:
         specifier: '>=14'
         version: 15.15.3(react-native@0.83.2(@babel/core@7.29.0)(@types/react@19.2.14)(react@19.2.0))(react@19.2.0)
-      storybook:
-        specifier: '>=10 || ^10'
-        version: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       '@types/react':
         specifier: ~19.2.14
         version: 19.2.14
+      storybook:
+        specifier: 10.3.0-alpha.12
+        version: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       tsup:
         specifier: ^8.5.0
         version: 8.5.1(@swc/core@1.15.13)(jiti@1.21.7)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.2)
@@ -528,7 +528,7 @@ importers:
         version: 1.0.0
       '@storybook/react':
         specifier: 10.3.0-alpha.12
-        version: 10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
+        version: 10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
       '@storybook/react-native-theming':
         specifier: ^10.3.0-next.2
         version: link:../react-native-theming
@@ -544,9 +544,6 @@ importers:
       react-native:
         specifier: '>=0.57.0'
         version: 0.83.2(@babel/core@7.29.0)(@types/react@19.2.14)(react@19.2.0)
-      storybook:
-        specifier: '>=10 || ^10'
-        version: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       ts-dedent:
         specifier: ^2.2.0
         version: 2.2.0
@@ -554,6 +551,9 @@ importers:
       '@types/react':
         specifier: ~19.2.14
         version: 19.2.14
+      storybook:
+        specifier: 10.3.0-alpha.12
+        version: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       tsup:
         specifier: ^8.5.0
         version: 8.5.1(@swc/core@1.15.13)(jiti@1.21.7)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.2)
@@ -574,7 +574,7 @@ importers:
         version: 1.0.0
       '@storybook/react':
         specifier: 10.3.0-alpha.12
-        version: 10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
+        version: 10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
       '@storybook/react-native-theming':
         specifier: ^10.3.0-next.2
         version: link:../react-native-theming
@@ -593,13 +593,13 @@ importers:
       react-native-safe-area-context:
         specifier: ^5
         version: 5.7.0(react-native@0.83.2(@babel/core@7.29.0)(@types/react@19.2.14)(react@19.2.0))(react@19.2.0)
-      storybook:
-        specifier: '>=10 || ^10'
-        version: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       '@types/react':
         specifier: ~19.2.14
         version: 19.2.14
+      storybook:
+        specifier: 10.3.0-alpha.12
+        version: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       ts-dedent:
         specifier: ^2.2.0
         version: 2.2.0
@@ -9494,15 +9494,6 @@ packages:
     peerDependencies:
       storybook: '>= 7.0.0 < 8.5.0 || >= 9.0.0 < 10.0.0'
 
-  storybook@10.2.13:
-    resolution: {integrity: sha512-heMfJjOfbHvL+wlCAwFZlSxcakyJ5yQDam6e9k2RRArB1veJhRnsjO6lO1hOXjJYrqxfHA/ldIugbBVlCDqfvQ==}
-    hasBin: true
-    peerDependencies:
-      prettier: ^2 || ^3
-    peerDependenciesMeta:
-      prettier:
-        optional: true
-
   storybook@10.3.0-alpha.12:
     resolution: {integrity: sha512-DX/AtoRxT44bpQKmLHywLIS7MVV3IE2Iep60Ylk8ciUFhVKhhYP3E6xF4Vn+3HUK1eTkDuEl1EnYyVKUVgboTw==}
     hasBin: true
@@ -14484,17 +14475,11 @@ snapshots:
       - '@tmcp/auth'
       - typescript
 
-  '@storybook/react-dom-shim@10.2.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
+  '@storybook/react-dom-shim@10.2.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
     dependencies:
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-      storybook: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-
-  '@storybook/react-dom-shim@10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
-    dependencies:
-      react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
-      storybook: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      storybook: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
 
   '@storybook/react-dom-shim@10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
     dependencies:
@@ -14544,28 +14529,14 @@ snapshots:
       - typescript
       - webpack
 
-  '@storybook/react@10.2.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)':
+  '@storybook/react@10.2.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)':
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.2.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+      '@storybook/react-dom-shim': 10.2.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       react: 19.2.0
       react-docgen: 8.0.2
       react-dom: 19.2.0(react@19.2.0)
-      storybook: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-    optionalDependencies:
-      typescript: 5.9.3
-    transitivePeerDependencies:
-      - supports-color
-
-  '@storybook/react@10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)':
-    dependencies:
-      '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.3.0-alpha.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
-      react: 19.2.0
-      react-docgen: 8.0.2
-      react-docgen-typescript: 2.2.2(typescript@5.9.3)
-      react-dom: 19.2.0(react@19.2.0)
-      storybook: 10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      storybook: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     optionalDependencies:
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -22161,29 +22132,6 @@ snapshots:
   storybook-addon-deep-controls@0.9.5(storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)):
     dependencies:
       storybook: 10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-
-  storybook@10.2.13(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
-    dependencies:
-      '@storybook/global': 5.0.0
-      '@storybook/icons': 2.0.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@testing-library/jest-dom': 6.9.1
-      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
-      '@vitest/expect': 3.2.4
-      '@vitest/spy': 3.2.4
-      esbuild: 0.27.3
-      open: 10.2.0
-      recast: 0.23.11
-      semver: 7.7.4
-      use-sync-external-store: 1.6.0(react@19.2.0)
-      ws: 8.19.0
-    optionalDependencies:
-      prettier: 3.8.1
-    transitivePeerDependencies:
-      - '@testing-library/dom'
-      - bufferutil
-      - react
-      - react-dom
-      - utf-8-validate
 
   storybook@10.3.0-alpha.12(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
