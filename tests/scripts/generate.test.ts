@@ -41,6 +41,20 @@ describe('loader', () => {
       });
     });
 
+    describe('when the main config is a cjs file', () => {
+      it('writes the story imports', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/cjs-config' });
+        mock.reset();
+
+        assert.strictEqual(
+          pathMock,
+          path.resolve(__dirname, 'mocks/cjs-config/storybook.requires.ts')
+        );
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
     describe('when using js', () => {
       it('writes the story imports without types', async (t) => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);

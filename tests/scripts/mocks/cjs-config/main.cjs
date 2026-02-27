@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   stories: ['./FakeStory.stories.tsx'],
   addons: [
     '@storybook/addon-ondevice-notes',

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   stories: ['**/*.stories.tsx'],
   reactNativeOptions: {
     excludePaths: '**/exclude-components/**',
