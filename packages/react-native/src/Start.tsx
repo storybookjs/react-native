@@ -86,7 +86,7 @@ export function start({
   storyEntries,
   options,
 }: {
-  storyEntries: (NormalizedStoriesSpecifier & { req: Record<string, unknown> })[];
+  storyEntries: (NormalizedStoriesSpecifier & { req: unknown })[];
   annotations: ModuleExports[];
   options?: ReactNativeOptions;
 }) {
@@ -186,7 +186,7 @@ export function start({
 export function updateView(
   viewInstance: View,
   annotations: ModuleExports[],
-  normalizedStories: (NormalizedStoriesSpecifier & { req: Record<string, unknown> })[],
+  normalizedStories: (NormalizedStoriesSpecifier & { req: unknown })[],
   options?: ReactNativeOptions
 ) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
