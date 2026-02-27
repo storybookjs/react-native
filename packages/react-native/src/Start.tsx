@@ -9,7 +9,7 @@ import {
 } from 'storybook/internal/preview-api';
 // NOTE this really should be exported from preview-api, but it's not
 import { Channel } from 'storybook/internal/channels';
-import type { NormalizedStoriesSpecifier } from 'storybook/internal/types';
+import type { ModuleExports, NormalizedStoriesSpecifier } from 'storybook/internal/types';
 import type { ReactRenderer } from '@storybook/react';
 import { View } from './View';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
@@ -28,16 +28,31 @@ globalThis.FEATURES = {
   backgrounds: false,
 };
 
+/** Shape of the opaque object returned by definePreview(). */
+interface PreviewObject {
+  _tag: 'Preview';
+  input: Record<string, unknown> & { addons?: unknown[] };
+}
+
+function isPreviewObject(value: unknown): value is PreviewObject {
+  return (
+    value != null &&
+    typeof value === 'object' &&
+    '_tag' in value &&
+    value._tag === 'Preview' &&
+    'input' in value
+  );
+}
+
 /**
  * If an annotation module's default export is a Preview object (from definePreview),
  * extract the user's plain config so composeConfigs can merge parameters properly.
  * definePreview wraps config in an opaque object that composeConfigs can't read.
  */
-function resolveAnnotations(annotations: any[]): any[] {
+function resolveAnnotations(annotations: ModuleExports[]): ModuleExports[] {
   return annotations.map((mod) => {
     const defaultExport = mod?.default ?? mod;
-    if (defaultExport?._tag === 'Preview' && defaultExport.input) {
-      // Extract user config fields, excluding addons (which definePreview handles internally)
+    if (isPreviewObject(defaultExport)) {
       const { addons: _addons, ...userConfig } = defaultExport.input;
       return { default: userConfig };
     }
@@ -45,7 +60,7 @@ function resolveAnnotations(annotations: any[]): any[] {
   });
 }
 
-export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
+export const getProjectAnnotations = (view: View, annotations: ModuleExports[]) => async () =>
   composeConfigs<ReactRenderer>([
     {
       renderToCanvas: (context) => {
@@ -71,8 +86,8 @@ export function start({
   storyEntries,
   options,
 }: {
-  storyEntries: (NormalizedStoriesSpecifier & { req: any })[];
-  annotations: any[];
+  storyEntries: (NormalizedStoriesSpecifier & { req: Record<string, unknown> })[];
+  annotations: ModuleExports[];
   options?: ReactNativeOptions;
 }) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
@@ -170,8 +185,8 @@ export function start({
 
 export function updateView(
   viewInstance: View,
-  annotations: any[],
-  normalizedStories: (NormalizedStoriesSpecifier & { req: any })[],
+  annotations: ModuleExports[],
+  normalizedStories: (NormalizedStoriesSpecifier & { req: Record<string, unknown> })[],
   options?: ReactNativeOptions
 ) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
