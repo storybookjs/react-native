@@ -1,0 +1,15 @@
+import { addons, types } from 'storybook/manager-api';
+import BackgroundPanel from './BackgroundPanel';
+import { ADDON_ID, PANEL_ID, PARAM_KEY } from './constants';
+
+export function registerBackgroundsAddon() {
+  addons.register(ADDON_ID, (api) => {
+    const channel = addons.getChannel();
+    addons.add(PANEL_ID, {
+      type: types.PANEL,
+      title: 'Backgrounds',
+      render: ({ active }) => <BackgroundPanel channel={channel} api={api} active={active} />,
+      paramKey: PARAM_KEY,
+    });
+  });
+}

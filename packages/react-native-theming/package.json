@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-theming",
-  "version": "10.1.1",
+  "version": "10.3.0-next.2",
   "description": "A wrapper library around emotion 11 to provide theming support for react-native storybook",
   "keywords": [
     "react",
@@ -22,7 +22,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "npx --yes tsx ./scripts/gendtsdev.ts && tsup --watch",
-    "prepare": "tsup && npx --yes tsx ./scripts/patchdts.ts"
+    "prepare": "tsup && npx --yes tsx ./scripts/patchdts.ts",
+    "check:types": "tsc --noEmit"
   },
   "dependencies": {
     "polished": "^4.3.1"

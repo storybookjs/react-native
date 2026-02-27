@@ -26,4 +26,9 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {};
+export const Basic: Story = {
+  globals: {
+    // 👇 Override background value for this story
+    backgrounds: { value: 'dark' },
+  },
+};

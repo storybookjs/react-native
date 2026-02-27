@@ -6,6 +6,11 @@ const meta = {
   component: LoginForm,
   args: {
     onSubmit: fn(),
+    emailLabel: 'Email Address',
+    emailPlaceholder: 'Enter your email',
+    passwordLabel: 'Password',
+    passwordPlaceholder: 'Enter your password',
+    submitButtonTitle: 'Sign In',
   },
 } satisfies Meta<typeof LoginForm>;
 

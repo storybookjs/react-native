@@ -213,11 +213,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <TouchableOpacity
-      style={[
-        styles.button,
-        styles[variant],
-        (disabled || loading) && styles.disabled,
-      ]}
+      style={[styles.button, styles[variant], (disabled || loading) && styles.disabled]}
       onPress={onPress}
       disabled={disabled || loading}
     >

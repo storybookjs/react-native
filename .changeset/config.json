@@ -1,0 +1,31 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.1.2/schema.json",
+  "changelog": ["@changesets/changelog-github", { "repo": "storybookjs/react-native" }],
+  "commit": false,
+  "fixed": [
+    [
+      "@storybook/react-native",
+      "@storybook/react-native-ui",
+      "@storybook/react-native-ui-lite",
+      "@storybook/react-native-ui-common",
+      "@storybook/react-native-theming",
+      "@storybook/addon-ondevice-actions",
+      "@storybook/addon-ondevice-backgrounds",
+      "@storybook/addon-ondevice-controls",
+      "@storybook/addon-ondevice-notes"
+    ]
+  ],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "next",
+  "updateInternalDependencies": "patch",
+  "ignore": [],
+  "privatePackages": {
+    "version": false,
+    "tag": false
+  },
+  "snapshot": {
+    "useCalculatedVersion": true,
+    "prereleaseTemplate": "{tag}-{datetime}"
+  }
+}

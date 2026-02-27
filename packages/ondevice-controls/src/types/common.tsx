@@ -58,12 +58,14 @@ try {
   useBottomSheetInternal = useBottomSheetInternal_;
 } catch {}
 
+const IsNative = Platform.OS === 'ios' || Platform.OS === 'android';
+
 const TextInputWithSwitcher = forwardRef<TextInput, TextInputProps>((props, ref) => {
   const { isMobile } = useLayout();
   const context = useBottomSheetInternal(true);
   const isBottomSheet = context !== null;
 
-  return isMobile && isBottomSheet ? (
+  return isMobile && IsNative && isBottomSheet ? (
     // @ts-ignore
     <BottomSheetTextInput ref={ref} {...props} />
   ) : (

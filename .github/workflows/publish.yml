@@ -1,0 +1,132 @@
+name: Publish Packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'Release type'
+        required: true
+        type: choice
+        options:
+          - canary
+          - next
+          - latest
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      # --- Canary Release ---
+      - name: Exit pre-release mode (canary)
+        if: inputs.release_type == 'canary' && hashFiles('.changeset/pre.json')
+        run: pnpm changeset pre exit
+
+      - name: Version (canary snapshot)
+        if: inputs.release_type == 'canary'
+        run: pnpm changeset version --snapshot canary
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish (canary)
+        if: inputs.release_type == 'canary'
+        run: pnpm changeset publish --tag canary
+
+      # --- Next Release ---
+      - name: Enter pre-release mode (next)
+        if: inputs.release_type == 'next' && !hashFiles('.changeset/pre.json')
+        run: pnpm changeset pre enter next
+
+      - name: Version (next)
+        if: inputs.release_type == 'next'
+        run: pnpm changeset version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish (next)
+        if: inputs.release_type == 'next'
+        run: pnpm changeset publish
+
+      - name: Commit & push version changes (next)
+        if: inputs.release_type == 'next'
+        run: |
+          # update lockfile
+          pnpm install --no-frozen-lockfile
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: version packages (next)"
+          git push
+
+      - name: Create GitHub release (next)
+        if: inputs.release_type == 'next'
+        run: |
+          VERSION=$(node -p "require('./packages/react-native/package.json').version")
+          git tag "v${VERSION}"
+          git push origin "v${VERSION}"
+          gh release create "v${VERSION}" \
+            --title "v${VERSION}" \
+            --generate-notes \
+            --prerelease
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # --- Latest (stable) Release ---
+      - name: Exit pre-release mode (latest)
+        if: inputs.release_type == 'latest' && hashFiles('.changeset/pre.json')
+        run: pnpm changeset pre exit
+
+      - name: Version (latest)
+        if: inputs.release_type == 'latest'
+        run: pnpm changeset version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish (latest)
+        if: inputs.release_type == 'latest'
+        run: pnpm changeset publish --tag latest
+
+      - name: Commit, tag & push version changes (latest)
+        if: inputs.release_type == 'latest'
+        run: |
+          # update lockfile
+          pnpm install --no-frozen-lockfile
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: version packages (latest)"
+          git push
+
+      - name: Create GitHub release (latest)
+        if: inputs.release_type == 'latest'
+        run: |
+          VERSION=$(node -p "require('./packages/react-native/package.json').version")
+          git tag "v${VERSION}"
+          git push origin "v${VERSION}"
+          gh release create "v${VERSION}" \
+            --title "v${VERSION}" \
+            --generate-notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -13,7 +13,7 @@ export interface NodeProps {
 
 const BranchNodeText = styled.Text<{ isSelected?: boolean }>(({ theme }) => ({
   textAlign: 'left',
-  fontSize: theme.typography.size.s2,
+  fontSize: theme.typography.size.s2 + 1,
   flexShrink: 1,
   color: theme.color.defaultText,
 }));
@@ -30,16 +30,15 @@ const BranchNode = styled.TouchableOpacity<{
   cursor: 'pointer',
   display: 'flex',
   flexDirection: 'row',
-  alignItems: 'flex-start',
-  alignSelf: 'flex-start',
+  alignItems: 'center',
   paddingLeft: (isExpandable ? 8 : 22) + depth * 18,
 
   backgroundColor: 'transparent',
-  minHeight: 28,
+  minHeight: 34,
   borderRadius: 4,
   gap: 6,
-  paddingTop: 5,
-  paddingBottom: 4,
+  paddingTop: 8,
+  paddingBottom: 7,
 
   // will this actually do anything?
   '&:hover, &:focus': {
@@ -50,27 +49,26 @@ const BranchNode = styled.TouchableOpacity<{
 
 const LeafNode = styled.TouchableOpacity<{ depth?: number; selected?: boolean }>(
   ({ depth = 0, selected, theme }) => ({
-    alignSelf: 'flex-start',
     cursor: 'pointer',
     color: 'inherit',
     display: 'flex',
     gap: 6,
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     paddingLeft: 22 + depth * 18,
-    paddingTop: 5,
-    paddingBottom: 4,
+    paddingTop: 8,
+    paddingBottom: 7,
     backgroundColor: selected ? theme.color.secondary : undefined,
     // not sure 👇
     width: '100%',
     borderRadius: 4,
     paddingRight: 20,
-    minHeight: 28,
+    minHeight: 34,
   })
 );
 
 const LeafNodeText = styled.Text<{ depth?: number; selected?: boolean }>(({ theme, selected }) => ({
-  fontSize: theme.typography.size.s2,
+  fontSize: theme.typography.size.s2 + 1,
   flexShrink: 1,
   fontWeight: selected ? 'bold' : 'normal',
   color: selected ? theme.color.lightest : theme.color.defaultText,
@@ -81,7 +79,6 @@ const Wrapper = styled.View({
   flexDirection: 'row',
   alignItems: 'center',
   gap: 6,
-  marginTop: 2,
 });
 
 export const GroupNode: FC<
@@ -99,12 +96,12 @@ export const GroupNode: FC<
   }, [theme.base, theme.color.primary, theme.color.ultraviolet]);
 
   return (
-    <BranchNode isExpandable={isExpandable} {...props}>
+    <BranchNode isExpandable={isExpandable} accessibilityRole="button" {...props}>
       <Wrapper key={`group-${props.id}-${color}`}>
         {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
         <GroupIcon width={14} height={14} color={color} />
       </Wrapper>
-      <BranchNodeText>{children}</BranchNodeText>
+      <BranchNodeText numberOfLines={1}>{children}</BranchNodeText>
     </BranchNode>
   );
 });
@@ -118,13 +115,13 @@ export const ComponentNode: FC<ComponentProps<typeof BranchNode>> = React.memo(
     }, [theme.color.secondary]);
 
     return (
-      <BranchNode isExpandable={isExpandable} {...props}>
+      <BranchNode isExpandable={isExpandable} accessibilityRole="button" {...props}>
         {/* workaround for macos icon color bug */}
         <Wrapper key={`component-${props.id}-${color}`}>
           {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
           <ComponentIcon width={12} height={12} color={color} />
         </Wrapper>
-        <BranchNodeText>{children}</BranchNodeText>
+        <BranchNodeText numberOfLines={1}>{children}</BranchNodeText>
       </BranchNode>
     );
   }
@@ -142,11 +139,13 @@ export const StoryNode = React.memo(
     }, [props.selected, theme.color.lightest, theme.color.seafoam]);
 
     return (
-      <LeafNode {...props} ref={ref}>
+      <LeafNode {...props} ref={ref} accessibilityRole="button">
         <Wrapper key={`story-${props.id}-${color}`}>
           <StoryIcon width={14} height={14} color={color} />
         </Wrapper>
-        <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
+        <LeafNodeText selected={props.selected} numberOfLines={1}>
+          {children}
+        </LeafNodeText>
       </LeafNode>
     );
   })

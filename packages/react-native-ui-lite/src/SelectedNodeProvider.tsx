@@ -1,53 +1,38 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useRef } from 'react';
-import type { ScrollView, View } from 'react-native';
+import { createContext, useCallback, useContext, useState } from 'react';
+type CallbackOptions = { id?: string; animated?: boolean };
 
 type SelectedNodeContextType = {
-  nodeRef: React.RefObject<View>;
-  setNodeRef: (node: View | null) => void;
-  scrollToSelectedNode: () => void;
-  scrollRef: React.RefObject<ScrollView>;
+  registerCallback: (callback: (options: CallbackOptions) => void) => void;
+  scrollCallback: (options: CallbackOptions) => void;
 };
 
 const SelectedNodeContext = createContext<SelectedNodeContextType>({
-  nodeRef: { current: null },
-  setNodeRef: () => {},
-  scrollToSelectedNode: () => {},
-  scrollRef: null,
+  registerCallback: () => {},
+  scrollCallback: () => {},
 });
 
 export const SelectedNodeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const nodeRef = useRef<View | null>(null);
+  const [scrollCallbackValue, setScrollCallback] = useState<
+    ((options: CallbackOptions) => void) | null
+  >(null);
 
-  const setNodeRef = useCallback((node: View | null) => {
-    nodeRef.current = node;
+  const registerCallback = useCallback((callback: (options: CallbackOptions) => void) => {
+    setScrollCallback(() => callback);
   }, []);
 
-  const scrollRef = useRef<ScrollView>(null);
-
-  const scrollToSelectedNode = useCallback(() => {
-    // maybe later we can improve on this to not use setTimeout but right now it seems like the simplest solution
-    setTimeout(() => {
-      if (nodeRef?.current && scrollRef?.current) {
-        // im just not sure if older versions would error here,
-        // since measure layout probably changed since new arch
-        try {
-          nodeRef.current.measureLayout?.(scrollRef.current as any, (_x, y) => {
-            scrollRef.current?.scrollTo({ y: y - 100, animated: true });
-          });
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        } catch (_error) {}
-      }
-    }, 500);
-  }, []);
+  const scrollCallback = useCallback(
+    (options: CallbackOptions) => {
+      scrollCallbackValue?.(options);
+    },
+    [scrollCallbackValue]
+  );
 
   return (
     <SelectedNodeContext.Provider
       value={{
-        nodeRef,
-        setNodeRef,
-        scrollToSelectedNode,
-        scrollRef,
+        scrollCallback,
+        registerCallback,
       }}
     >
       {children}

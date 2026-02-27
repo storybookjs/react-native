@@ -1,0 +1,19 @@
+{
+  "name": "@storybook/tests",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/generate.test.ts scripts/docgen.test.ts",
+    "test:ci": "node --test scripts/generate.test.ts scripts/docgen.test.ts",
+    "test:update": "node --test --test-update-snapshots scripts/generate.test.ts scripts/docgen.test.ts",
+    "check:types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@storybook/addon-ondevice-actions": "workspace:*",
+    "@storybook/addon-ondevice-backgrounds": "workspace:*",
+    "@storybook/addon-ondevice-controls": "workspace:*",
+    "@storybook/addon-ondevice-notes": "workspace:*",
+    "@storybook/react-native": "workspace:*"
+  }
+}

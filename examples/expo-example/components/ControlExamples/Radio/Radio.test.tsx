@@ -4,8 +4,8 @@ import * as RadioStories from './Radio.stories';
 
 const { Basic } = composeStories(RadioStories);
 
-test('radio story renders', () => {
-  render(<Basic />);
+test('radio story renders', async () => {
+  await render(<Basic />);
 
   screen.getByText('104.8MHz');
 });

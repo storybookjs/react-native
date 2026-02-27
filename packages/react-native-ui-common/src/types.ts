@@ -2,7 +2,6 @@ import type { Args, StoryContext } from 'storybook/internal/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme } from '@storybook/react-native-theming';
 import { Storage } from './StorageProvider';
-import * as Fuse from 'fuse.js';
 import { ReactElement, ReactNode } from 'react';
 import { PressableProps } from 'react-native';
 import type { State, StoriesHash } from 'storybook/manager-api';
@@ -11,6 +10,11 @@ import type {
   StatusesByStoryIdAndTypeId,
   StatusValue,
 } from 'storybook/internal/types';
+
+// Microfuzz highlight range: [startIndex, endIndex] (inclusive)
+export type HighlightRange = [number, number];
+// Array of highlight ranges per getText field
+export type HighlightRanges = HighlightRange[];
 
 export type Refs = State['refs'];
 export type RefType = Refs[keyof Refs] & { allStatuses?: StatusesByStoryIdAndTypeId };
@@ -51,7 +55,13 @@ export type SearchItem = Item & {
   showAll?: () => void;
 };
 
-export type SearchResult = Fuse.FuseResult<SearchItem>;
+// Native microfuzz result format
+export interface SearchResult {
+  item: SearchItem;
+  score: number | null;
+  // matches[0] = name highlights, matches[1] = path highlights
+  matches: HighlightRanges[];
+}
 
 export type SearchResultProps = SearchResult & {
   icon: string;
@@ -67,7 +77,7 @@ export type GetSearchItemProps = (args: {
 
 export type SearchChildrenFn = (args: {
   query: string;
-  results: SearchResult[]; // TODO fix this type
+  results: SearchResult[];
   isBrowsing: boolean;
   closeMenu: (cb?: () => void) => void;
   getItemProps: GetSearchItemProps;
@@ -80,5 +90,6 @@ export type SBUI = (props: {
   setStory: (storyId: string) => void;
   storage: Storage;
   theme: Theme;
+  storyBackgroundColor?: string;
   children: ReactElement;
 }) => ReactElement;

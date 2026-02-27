@@ -19,19 +19,23 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Set node version
         uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: 'pnpm'
 
       - name: Install
         shell: 'bash'
-        run: yarn install
+        run: pnpm install
 
       - name: Build
         shell: 'bash'
         working-directory: docs
-        run: yarn build
+        run: pnpm build
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,5 @@
+{
+  "name": "react-native-storybook",
+  "description": "Create and edit React Native Storybook stories using Component Story Format (CSF). Includes controls reference, addon configuration, and portable story patterns.",
+  "version": "1.1.0"
+}

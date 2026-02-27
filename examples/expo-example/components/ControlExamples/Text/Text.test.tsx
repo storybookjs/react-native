@@ -4,8 +4,8 @@ import * as TextStories from './Text.stories';
 
 const { Basic } = composeStories(TextStories);
 
-test('text story renders', () => {
-  render(<Basic />);
+test('text story renders', async () => {
+  await render(<Basic />);
 
   screen.getByText('Hello world!');
 });

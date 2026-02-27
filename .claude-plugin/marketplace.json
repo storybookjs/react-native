@@ -1,0 +1,21 @@
+{
+  "name": "react-native-storybook",
+  "owner": {
+    "name": "Storybook Community"
+  },
+  "metadata": {
+    "description": "Storybook for React Native plugins",
+    "version": "1.1.0"
+  },
+  "plugins": [
+    {
+      "name": "react-native-storybook",
+      "source": {
+        "source": "github",
+        "repo": "storybookjs/react-native"
+      },
+      "description": "Create and edit React Native Storybook stories using Component Story Format (CSF). Includes controls reference, addon configuration, and portable story patterns.",
+      "version": "1.1.0"
+    }
+  ]
+}

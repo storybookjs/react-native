@@ -4,8 +4,8 @@ import * as ObjectStory from './Object.stories';
 
 const { Basic } = composeStories(ObjectStory);
 
-test('object story renders', () => {
-  render(<Basic />);
+test('object story renders', async () => {
+  await render(<Basic />);
 
   screen.getByText('title: Blade Runner');
   screen.getByText('genre: Sci Fi');

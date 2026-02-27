@@ -11,7 +11,7 @@ If you are migrating from 9 to 10 you can find the migration guide [here](https:
 
 For more information about storybook visit: [storybook.js.org](https://storybook.js.org)
 
-> [!NOTE]  
+> [!NOTE]
 > Make sure you align your storybook dependencies to the same major version or you will see broken behaviour.
 
 ![picture of storybook](https://github.com/user-attachments/assets/cf98766d-8b90-44ab-b718-94ab16e63205)
@@ -24,9 +24,11 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 - 📱 [Hide/Show Storybook](#hideshow-storybook)
 - ⚙️ [withStorybook wrapper](#withstorybook-wrapper)
 - 🔧 [getStorybookUI](#getstorybookui-options)
+- 🏁 [Feature Flags](#feature-flags)
 - 🧪 [Using stories in unit tests](#using-stories-in-unit-tests)
 - 🤝 [Contributing](#contributing)
-- ✨ [Examples](#examples)
+- ✨ [Examples](#examples)- [Storybook for React Native](#storybook-for-react-native)
+- 🤖 [Agent skills](#agent-skills)
 
 ## Getting Started
 
@@ -34,14 +36,14 @@ For more information about storybook visit: [storybook.js.org](https://storybook
 
 There is some project boilerplate with `@storybook/react-native` and `@storybook/addon-react-native-web` both already configured with a simple example.
 
-For expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
+For Expo you can use this [template](https://github.com/dannyhw/expo-template-storybook) with the following command
 
 ```sh
 # With NPM
 npx create-expo-app --template expo-template-storybook AwesomeStorybook
 ```
 
-For react native cli you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
+For React Native CLI you can use this [template](https://github.com/dannyhw/react-native-template-storybook)
 
 ```sh
 npx @react-native-community/cli init MyApp --template react-native-template-storybook
@@ -65,7 +67,7 @@ Then wrap your metro config with the withStorybook function as seen [below](#add
 
 If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
 
-If you want to add everything yourself check out the the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
+If you want to add everything yourself check out the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
 
 #### Additional steps: Update your metro config
 
@@ -107,7 +109,7 @@ module.exports = withStorybook(config, {
 });
 ```
 
-**React native**
+**React Native**
 
 ```js
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
@@ -156,6 +158,10 @@ Make sure you have `react-native-reanimated` in your project and the plugin setu
 plugins: ['react-native-reanimated/plugin'],
 ```
 
+## Re.Pack setup
+
+For projects using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of Metro, see the full [Re.Pack Setup guide](https://storybookjs.github.io/react-native/docs/intro/getting-started/repack). You can also reference the [RepackStorybookStarter](https://github.com/dannyhw/RepackStorybookStarter) project.
+
 ## Expo router specific setup
 
 ```bash
@@ -185,13 +191,13 @@ export { default } from '../.rnstorybook';
 
 Then add a way to navigate to your storybook route and I recommend disabling the header for the storybook route.
 
-Heres a video showing the same setup:
+Here's a video showing the same setup:
 
 https://www.youtube.com/watch?v=egBqrYg0AIg
 
 ## Writing stories
 
-In storybook we use a syntax called CSF that looks like this:
+In Storybook we use a syntax called CSF that looks like this:
 
 ```tsx
 import type { Meta, StoryObj } from '@storybook/react-native';
@@ -229,7 +235,7 @@ export default main;
 
 ### Decorators and Parameters
 
-For stories you can add decorators and parameters on the default export or on a specifc story.
+For stories you can add decorators and parameters on the default export or on a specific story.
 
 ```tsx
 import type { Meta } from '@storybook/react';
@@ -295,11 +301,11 @@ export default preview;
 The cli will install some basic addons for you such as controls and actions.
 Ondevice addons are addons that can render with the device ui that you see on the phone.
 
-Currently the addons available are:
+Currently, the addons available are:
 
 - [`@storybook/addon-ondevice-controls`](https://storybook.js.org/addons/@storybook/addon-ondevice-controls): adjust your components props in realtime
 - [`@storybook/addon-ondevice-actions`](https://storybook.js.org/addons/@storybook/addon-ondevice-actions): mock onPress calls with actions that will log information in the actions tab
-- [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some markdown to your stories to help document their usage
+- [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some Markdown to your stories to help document their usage
 - [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
 
 Install each one you want to use and add them to the `main.ts` addons list as follows:
@@ -443,11 +449,24 @@ Type: `boolean`, default: `false`
 
 Whether to use lite mode for Storybook. In lite mode, the default Storybook UI is mocked out so you don't need to install all its dependencies like react-native-reanimated. This is useful for reducing bundle size and dependencies. Use this when using @storybook/react-native-ui-lite instead of @storybook/react-native-ui.
 
+#### experimental_mcp
+
+Type: `boolean`, default: `false`
+
+Enables an experimental MCP (Model Context Protocol) endpoint at `/mcp` on the Storybook channel server. This can be used by AI tooling to query Storybook documentation and component/story metadata. Available from v10.3 onwards.
+
+You can enable MCP with or without websockets:
+
+- `experimental_mcp: true` starts the HTTP MCP endpoint
+- adding `websockets` also enables story selection tools over the same channel server
+
 ### websockets
 
-Type: `{ host: string?, port: number? }`, default: `undefined`
+Type: `'auto' | { host: string?, port: number? }`, default: `undefined`
 
 If specified, create a WebSocket server on startup. This allows you to sync up multiple devices to show the same story and [arg](https://storybook.js.org/docs/writing-stories/args) values connected to the story in the UI.
+
+Use `'auto'` to automatically detect your LAN IP and inject host/port into the generated `storybook.requires` file.
 
 ### websockets.host
 
@@ -465,31 +484,60 @@ The port on which to run the WebSocket, if specified.
 
 You can pass these parameters to getStorybookUI call in your storybook entry point:
 
-```
+```ts
 {
-    initialSelection?: string | Object (undefined)
-        -- initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
-    storage?: Object (undefined)
-        -- {getItem: (key: string) => Promise<string | null>;setItem: (key: string, value: string) => Promise<void>;}
-        -- Custom storage to be used instead of AsyncStorage
+    // initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
+    initialSelection?: string | Object;
+    // Custom storage to be used instead of AsyncStorage
+    storage?: {
+        getItem: (key: string) => Promise<string | null>;
+        setItem: (key: string, value: string) => Promise<void>;
+    };
+    // show the onDevice UI
     onDeviceUI?: boolean;
-        -- show the ondevice ui
+    // enable websockets for the Storybook UI
     enableWebsockets?: boolean;
-        -- enable websockets for the storybook ui
+    // query params for the websocket connection
     query?: string;
-        -- query params for the websocket connection
+    // host for the websocket connection
     host?: string;
-        -- host for the websocket connection
+    // port for the websocket connection
     port?: number;
-        -- port for the websocket connection
+    // use secured websockets
     secured?: boolean;
-        -- use secured websockets
+    // store the last selected story in the device's storage
     shouldPersistSelection?: boolean;
-        -- store the last selected story in the device's storage
+    // theme for the Storybook UI
     theme: Partial<Theme>;
-        -- theme for the storybook ui
 }
 ```
+
+## Feature Flags
+
+Feature flags let you opt into new functionality without breaking existing behavior. In the next major version, the behavior behind these flags will become the default and the flags will no longer be needed.
+
+Add them to the `features` object in `main.ts`:
+
+```ts
+// .rnstorybook/main.ts
+import type { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  addons: ['@storybook/addon-ondevice-controls'],
+  features: {
+    ondeviceBackgrounds: true,
+  },
+};
+
+export default main;
+```
+
+| Flag                  | Description                                                                                                                   |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3. |
+
+For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
 
 ## Using stories in unit tests
 
@@ -514,6 +562,26 @@ Here are some example projects to help you get started
 
 - A mono repo setup by @axeldelafosse https://github.com/axeldelafosse/storybook-rnw-monorepo
 - Expo setup https://github.com/dannyhw/expo-storybook-starter
-- React native cli setup https://github.com/dannyhw/react-native-storybook-starter
+- React Native CLI setup https://github.com/dannyhw/react-native-storybook-starter
 - Adding a separate entry point and dev menu item in native files for RN CLI project: https://github.com/zubko/react-native-storybook-with-dev-menu
+- Re.Pack setup https://github.com/dannyhw/RepackStorybookStarter
 - Want to showcase your own project? open a PR and add it to the list!
+
+## Agent skills
+
+This repo includes agent skills for setting up and working with Storybook for React Native.
+
+### Skills
+
+- **writing-react-native-storybook-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
+- **setup-react-native-storybook** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, React Native CLI, and Re.Pack setups
+
+### Installation
+
+#### Any AI agent or IDE (universal)
+
+```sh
+npx skills add storybookjs/react-native
+```
+
+This works with any agent harness that supports skills (Claude Code, Cursor, Windsurf, etc.).

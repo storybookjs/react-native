@@ -1,34 +1,40 @@
-# CLAUDE.md
+This file provides guidance to agents when working with code in this repository.
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Always check first if the react-native-best-practices skill can be used
 
 ## Development Commands
 
 ```bash
 # Initial Setup
-yarn install
-yarn build
+pnpm install
+pnpm build
 
 # Development
-yarn dev        # Watch all packages for changes
-yarn example    # Run the expo example app with Storybook
+pnpm dev        # Watch all packages for changes
+pnpm example    # Run the expo example app with Storybook
+
+# Story Generation
+pnpm -F expo-example storybook-generate # Regenerate storybook.requires.ts
 
 # Testing
-yarn test       # Run unit tests across all packages
+pnpm test       # Run unit tests across all packages
+pnpm test:ci    # Run tests in CI mode
 
 # Code Quality
-yarn lint       # Run ESLint across the codebase
+pnpm lint       # Run ESLint across the codebase
+pnpm format:check   # Check Prettier formatting
+pnpm format:fix     # Auto-fix Prettier formatting
 
 # Documentation (from docs/ directory)
 cd docs
-yarn start      # Start development server
-yarn build      # Build documentation
-yarn serve      # Serve built documentation
+pnpm start      # Start development server
+pnpm build      # Build documentation
+pnpm serve      # Serve built documentation
 ```
 
 ## Architecture Overview
 
-**Yarn workspaces monorepo** managed by Lerna containing React Native Storybook packages.
+**pnpm workspaces monorepo** managed by Lerna containing React Native Storybook packages.
 
 ### Packages
 
@@ -56,14 +62,30 @@ yarn serve      # Serve built documentation
 
 - Uses **tsup** for TypeScript compilation (ES2022, CommonJS output)
 - Each package has its own `tsup.config.ts`
-- `yarn prepare` in a package builds it
+- `pnpm prepare` in a package builds it
 
-The `withStorybook` Metro wrapper:
+The `withStorybook` Metro wrapper (for Metro-based projects):
 
 - Enables `unstable_allowRequireContext` for dynamic story imports
 - Automatically generates `storybook.requires.ts` file
 - Optional WebSocket server for remote control
-- Can be conditionally enabled/disabled via options
+- Can be conditionally enabled/disabled via `enabled` option
+- Supports `liteMode` for reduced bundle size
+
+The `StorybookPlugin` (for Re.Pack/Rspack/Webpack projects):
+
+- Alternative to `withStorybook` for non-Metro bundlers
+- Imported from `@storybook/react-native/repack/withStorybook`
+- Requires `enablePackageExports: true` in rspack resolve options
+- Uses `DefinePlugin` for build-time `STORYBOOK_ENABLED` constant
+- No `require.context` configuration needed (rspack handles it natively)
+- Same options as `withStorybook` (enabled, configPath, useJs, docTools, liteMode, websockets)
+
+### Testing
+
+- Uses **jest** with `jest-expo` preset
+- `universal-test-renderer` for portable story testing
+- Story generation tested with Node's native test runner
 
 ### Key Concepts
 
@@ -72,3 +94,4 @@ The `withStorybook` Metro wrapper:
 3. **Story requires generation** - Automatic generation of story imports via Metro
 4. **Portable stories** - Reuse stories in unit tests
 5. **WebSocket support** - Remote control stories from external devices
+6. **Lite mode** - Alternative UI without heavy dependencies (reanimated, etc.)

@@ -1,8 +1,7 @@
-import { styled } from '@storybook/react-native-theming';
-import type { IFuseOptions } from 'fuse.js';
-import Fuse from 'fuse.js';
-import React, { useCallback, useDeferredValue, useRef, useState } from 'react';
-import { Platform, TextInput, View } from 'react-native';
+import { styled, useTheme } from '@storybook/react-native-theming';
+import { useFuzzySearchList } from '@nozbe/microfuzz/react';
+import React, { useCallback, useDeferredValue, useMemo, useRef, useState } from 'react';
+import { Platform, TextInput, View, ViewStyle } from 'react-native';
 import { useSelectedNode } from './SelectedNodeProvider';
 import {
   type CombinedDataset,
@@ -16,24 +15,11 @@ import {
 } from '@storybook/react-native-ui-common';
 import { CloseIcon, SearchIcon } from './icon/iconDataUris';
 
-const DEFAULT_MAX_SEARCH_RESULTS = 50;
+// Microfuzz highlight types
+type HighlightRange = [number, number];
+type HighlightRanges = HighlightRange[];
 
-const options = {
-  shouldSort: true,
-  tokenize: true,
-  findAllMatches: true,
-  includeScore: true,
-  includeMatches: true,
-  threshold: 0.2,
-  location: 0,
-  distance: 100,
-  maxPatternLength: 32,
-  minMatchCharLength: 1,
-  keys: [
-    { name: 'name', weight: 0.7 },
-    { name: 'path', weight: 0.3 },
-  ],
-} as IFuseOptions<SearchItem>;
+const DEFAULT_MAX_SEARCH_RESULTS = 50;
 
 const SearchIconWrapper = styled.View({
   position: 'absolute',
@@ -48,9 +34,7 @@ const SearchIconWrapper = styled.View({
 });
 
 const SearchField = styled.View({
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'relative',
+  flexShrink: 0,
 });
 
 const inputPlatformSpecificStyles = Platform.select({
@@ -83,7 +67,7 @@ const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
   position: 'absolute',
   top: 0,
   bottom: 0,
-  right: 8,
+  right: 0,
   zIndex: 1,
   color: theme.textMutedColor,
   cursor: 'pointer',
@@ -91,7 +75,11 @@ const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   height: '100%',
+  paddingHorizontal: 12,
 }));
+
+const flexStyle: ViewStyle = { flex: 1 };
+const searchFieldWrapperStyle: ViewStyle = { paddingHorizontal: 10, marginBottom: 4 };
 
 export const Search = React.memo<{
   children: SearchChildrenFn;
@@ -100,12 +88,13 @@ export const Search = React.memo<{
   getLastViewed: () => Selection[];
   initialQuery?: string;
 }>(function Search({ children, dataset, setSelection, getLastViewed, initialQuery = '' }) {
+  const theme = useTheme();
   const inputRef = useRef<TextInput>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
-  // const { isMobile } = useLayout();
-  const { scrollToSelectedNode } = useSelectedNode();
+
+  const { scrollCallback } = useSelectedNode();
 
   const selectStory = useCallback(
     (id: string, refId: string) => {
@@ -117,16 +106,15 @@ export const Search = React.memo<{
 
       showAllComponents(false);
 
-      scrollToSelectedNode();
+      scrollCallback({ id, animated: false });
     },
-    [scrollToSelectedNode, setSelection]
+    [scrollCallback, setSelection]
   );
 
   const getItemProps: GetSearchItemProps = useCallback(
     ({ item: result }) => {
       return {
         icon: result?.item?.type === 'component' ? 'component' : 'story',
-        result,
         onPress: () => {
           if (result?.item?.type === 'story') {
             selectStory(result.item.id, result.item.refId);
@@ -137,7 +125,6 @@ export const Search = React.memo<{
           }
         },
         score: result.score,
-        refIndex: result.refIndex,
         item: result.item,
         matches: result.matches,
         isHighlighted: false,
@@ -146,107 +133,144 @@ export const Search = React.memo<{
     [selectStory]
   );
 
-  const makeFuse = useCallback(() => {
-    const list = dataset.entries.reduce<SearchItem[]>((acc, [refId, { index }]) => {
+  // Defer dataset updates to prevent blocking during data changes
+  const deferredDataset = useDeferredValue(dataset);
+
+  // Build the search list - memoized
+  const searchList = useMemo(() => {
+    return deferredDataset.entries.reduce<SearchItem[]>((acc, [refId, { index }]) => {
       if (index) {
         acc.push(
           ...Object.values(index).map((item) => {
-            return searchItem(item, dataset.hash[refId]);
+            return searchItem(item, deferredDataset.hash[refId]);
           })
         );
       }
       return acc;
     }, []);
-    return new Fuse(list, options);
-  }, [dataset]);
+  }, [deferredDataset]);
 
-  const getResults = useCallback(
-    (input: string) => {
-      const fuse = makeFuse();
-      if (!input) return [];
-
-      let results = [];
-      const resultIds: Set<string> = new Set();
-      const distinctResults = (fuse.search(input) as SearchResult[]).filter(({ item }) => {
-        if (
-          !(item.type === 'component' || item.type === 'docs' || item.type === 'story') ||
-          resultIds.has(item.parent)
-        ) {
-          return false;
-        }
-        resultIds.add(item.id);
-        return true;
-      });
-
-      if (distinctResults.length) {
-        results = distinctResults.slice(0, allComponents ? 1000 : DEFAULT_MAX_SEARCH_RESULTS);
-        if (distinctResults.length > DEFAULT_MAX_SEARCH_RESULTS && !allComponents) {
-          results.push({
-            showAll: () => showAllComponents(true),
-            totalCount: distinctResults.length,
-            moreCount: distinctResults.length - DEFAULT_MAX_SEARCH_RESULTS,
-          });
-        }
-      }
-
-      const lastViewed = !input && getLastViewed();
-      if (lastViewed && lastViewed.length) {
-        results = lastViewed.reduce((acc, { storyId, refId }) => {
-          const data = dataset.hash[refId];
-          if (data && data.index && data.index[storyId]) {
-            const story = data.index[storyId];
-            const item = story.type === 'story' ? data.index[story.parent] : story;
-            // prevent duplicates
-            if (!acc.some((res) => res.item.refId === refId && res.item.id === item.id)) {
-              acc.push({ item: searchItem(item, dataset.hash[refId]), matches: [], score: 0 });
-            }
-          }
-          return acc;
-        }, []);
-      }
-
-      return results;
-    },
-    [allComponents, dataset.hash, getLastViewed, makeFuse]
-  );
+  // Defer query input to prevent blocking typing
   const deferredQuery = useDeferredValue(inputValue);
-  const input = deferredQuery ? deferredQuery.trim() : '';
-  const results = input ? getResults(input) : [];
+  const queryText = useMemo(() => (deferredQuery ? deferredQuery.trim() : ''), [deferredQuery]);
+
+  // getText function for microfuzz - memoized for performance
+  // Returns [name, path] - matches[0] will be name highlights, matches[1] will be path highlights
+  const getText = useCallback((item: SearchItem) => [item.name, item.path?.join(' ') ?? ''], []);
+
+  // Map microfuzz result to our SearchResult type (native format)
+  const mapResultItem = useCallback(
+    ({
+      item,
+      score,
+      matches,
+    }: {
+      item: SearchItem;
+      score: number | null;
+      matches: HighlightRanges[];
+    }): SearchResult => ({
+      item,
+      score,
+      matches: matches ?? [],
+    }),
+    []
+  );
+
+  // Use microfuzz's React hook with built-in memoization
+  const fuzzyResults = useFuzzySearchList({
+    list: searchList,
+    queryText,
+    getText,
+    mapResultItem,
+  });
+
+  // Process results: filter, deduplicate, and limit
+  const results = useMemo(() => {
+    if (!queryText) return [];
+
+    const maxResults = allComponents ? 1000 : DEFAULT_MAX_SEARCH_RESULTS;
+    const processedResults = [];
+    const resultIds = new Set<string>();
+
+    let totalDistinctCount = 0;
+
+    for (const result of fuzzyResults) {
+      const { item } = result;
+
+      // Skip invalid types or duplicates
+      if (
+        !(item.type === 'component' || item.type === 'docs' || item.type === 'story') ||
+        resultIds.has(item.parent)
+      ) {
+        continue;
+      }
+
+      resultIds.add(item.id);
+      totalDistinctCount++;
+
+      // Only add to results if we haven't reached the limit
+      if (processedResults.length < maxResults) {
+        processedResults.push(result);
+      }
+
+      // Early exit when showing all components and we have enough
+      if (allComponents && processedResults.length >= maxResults) {
+        break;
+      }
+    }
+
+    // Add "show all" option if there are more results than displayed
+    if (!allComponents && totalDistinctCount > DEFAULT_MAX_SEARCH_RESULTS) {
+      processedResults.push({
+        showAll: () => showAllComponents(true),
+        totalCount: totalDistinctCount,
+        moreCount: totalDistinctCount - DEFAULT_MAX_SEARCH_RESULTS,
+      });
+    }
+
+    return processedResults;
+  }, [queryText, fuzzyResults, allComponents]);
 
   return (
-    <View style={{ flex: 1 }}>
-      <SearchField>
-        <SearchIconWrapper>
-          <SearchIcon />
-        </SearchIconWrapper>
+    <View style={flexStyle}>
+      <View style={searchFieldWrapperStyle}>
+        <SearchField>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
 
-        <Input
-          ref={inputRef}
-          onChangeText={setInputValue}
-          onFocus={() => setIsOpen(true)}
-          returnKeyType="search"
-        />
+          <Input
+            ref={inputRef}
+            onChangeText={setInputValue}
+            onFocus={() => setIsOpen(true)}
+            returnKeyType="search"
+          />
 
-        {isOpen && (
-          <ClearIcon
-            onPress={() => {
-              setInputValue('');
-              inputRef.current.clear();
-            }}
-          >
-            <CloseIcon />
-          </ClearIcon>
-        )}
-      </SearchField>
+          {isOpen && (
+            <ClearIcon
+              accessibilityRole="button"
+              accessibilityLabel="Clear search"
+              onPress={() => {
+                setInputValue('');
+                inputRef.current.clear();
+              }}
+            >
+              <CloseIcon color={theme.textMutedColor} />
+            </ClearIcon>
+          )}
+        </SearchField>
+      </View>
 
-      {children({
-        query: input,
-        results,
-        isBrowsing: !isOpen || !inputValue.length,
-        closeMenu: () => {},
-        getItemProps,
-        highlightedIndex: null,
-      })}
+      <View style={flexStyle}>
+        {children({
+          query: queryText,
+          results,
+          isBrowsing: !isOpen || !inputValue.length,
+          closeMenu: () => {},
+          getItemProps,
+          highlightedIndex: null,
+        })}
+      </View>
     </View>
   );
 });

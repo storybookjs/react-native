@@ -1,22 +1,32 @@
-import { styled } from '@storybook/react-native-theming';
+import { LegendList } from '@legendapp/list';
+import { styled, useTheme } from '@storybook/react-native-theming';
 import type {
   GetSearchItemProps,
   SearchResult,
   SearchResultProps,
 } from '@storybook/react-native-ui-common';
-import { Button, IconButton, isExpandType } from '@storybook/react-native-ui-common';
-import { FuseResultMatch } from 'fuse.js';
+import { Button, IconButton, isExpandType, ExpandType } from '@storybook/react-native-ui-common';
 import { transparentize } from 'polished';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
-import React, { useCallback } from 'react';
-import { PressableProps, View } from 'react-native';
+import React, { useCallback, useMemo } from 'react';
+import { Platform, PressableProps, View, ViewStyle, TextStyle } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ComponentIcon, StoryIcon } from './icon/iconDataUris';
 
-const ResultsList = styled.View({
-  margin: 0,
-  padding: 0,
-  marginTop: 8,
-});
+const isWeb = Platform.OS === 'web';
+
+// Microfuzz highlight types
+type HighlightRange = [number, number];
+type HighlightRanges = HighlightRange[];
+
+const noResultsFirstLineStyle: TextStyle = { marginBottom: 4 };
+const flexStyle: ViewStyle = { flex: 1 };
+
+type ListItemType =
+  | { type: 'header'; clearLastViewed: () => void }
+  | { type: 'noResults' }
+  | { type: 'result'; result: SearchResult; index: number }
+  | { type: 'expand'; result: ExpandType; index: number };
 
 const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
   ({ theme, isHighlighted }) => ({
@@ -30,10 +40,10 @@ const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
     color: theme.color.defaultText,
     fontSize: theme.typography.size.s2,
     backgroundColor: isHighlighted ? theme.background.hoverable : 'transparent',
-    minHeight: 28,
+    minHeight: 34,
     borderRadius: 4,
     gap: 6,
-    paddingTop: 7,
+    paddingTop: 8,
     paddingBottom: 7,
     paddingLeft: 8,
     paddingRight: 8,
@@ -56,10 +66,16 @@ const ResultRowContent = styled.View(() => ({
 
 const NoResults = styled.View(({ theme }) => ({
   marginTop: 20,
-  textAlign: 'center',
+  alignItems: 'center',
   fontSize: theme.typography.size.s2,
   lineHeight: 18,
   color: theme.color.defaultText,
+}));
+
+const NoResultsText = styled.Text(({ theme }) => ({
+  fontSize: theme.typography.size.s2,
+  color: theme.textMutedColor,
+  textAlign: 'center',
 }));
 
 const Mark = styled.Text(({ theme }) => ({
@@ -77,7 +93,7 @@ const RecentlyOpenedTitle = styled.View(({ theme }) => ({
   justifyContent: 'space-between',
   fontSize: theme.typography.size.s1 - 1,
   fontWeight: theme.typography.weight.bold,
-  minHeight: 28,
+  minHeight: 34,
   // letterSpacing: '0.16em', <-- todo
   textTransform: 'uppercase',
   color: theme.textMutedColor,
@@ -86,30 +102,36 @@ const RecentlyOpenedTitle = styled.View(({ theme }) => ({
   alignItems: 'center',
 }));
 
-const Highlight: FC<PropsWithChildren<{ match?: FuseResultMatch }>> = React.memo(
-  function Highlight({ children, match }) {
-    if (!match) return children;
-    const { value, indices } = match;
+// Highlight component using native microfuzz format
+// ranges is an array of [start, end] tuples (end is inclusive in microfuzz)
+const Highlight: FC<PropsWithChildren<{ text: string; ranges?: HighlightRanges }>> = React.memo(
+  function Highlight({ children, text, ranges }) {
+    if (!ranges || ranges.length === 0) return <Text>{children ?? text}</Text>;
 
-    const { nodes: result } = indices.reduce<{ cursor: number; nodes: ReactNode[] }>(
+    const { nodes: result } = ranges.reduce<{ cursor: number; nodes: ReactNode[] }>(
       ({ cursor, nodes }, [start, end], index, { length }) => {
-        nodes.push(<Text key={`text-${index}`}>{value.slice(cursor, start)}</Text>);
-        nodes.push(<Mark key={`mark-${index}`}>{value.slice(start, end + 1)}</Mark>);
-        if (index === length - 1) {
-          nodes.push(<Text key={`last-${index}`}>{value.slice(end + 1)}</Text>);
+        // Add text before the highlight
+        if (cursor < start) {
+          nodes.push(<Text key={`text-${index}`}>{text.slice(cursor, start)}</Text>);
+        }
+        // Add highlighted text (end is inclusive in microfuzz)
+        nodes.push(<Mark key={`mark-${index}`}>{text.slice(start, end + 1)}</Mark>);
+        // Add remaining text after last highlight
+        if (index === length - 1 && end + 1 < text.length) {
+          nodes.push(<Text key={`last-${index}`}>{text.slice(end + 1)}</Text>);
         }
         return { cursor: end + 1, nodes };
       },
       { cursor: 0, nodes: [] }
     );
-    return <Text key={`end-${match.key}`}>{result}</Text>;
+    return <Text>{result}</Text>;
   }
 );
 
 const Title = styled.Text(({ theme }) => ({
   justifyContent: 'flex-start',
   color: theme.textMutedColor,
-  fontSize: theme.typography.size.s2,
+  fontSize: theme.typography.size.s2 + 1,
 }));
 
 const Path = styled.View(({ theme }) => ({
@@ -132,6 +154,7 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
   onPress,
   ...props
 }) {
+  const theme = useTheme();
   const press: PressableProps['onPress'] = useCallback(
     (event) => {
       event.preventDefault();
@@ -140,36 +163,35 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
     [onPress]
   );
 
-  const nameMatch = matches.find((match: FuseResultMatch) => match.key === 'name');
-  const pathMatches = matches.filter((match: FuseResultMatch) => match.key === 'path');
+  // matches[0] = name highlights, matches[1] = path highlights (as joined string)
+  const nameHighlights = matches?.[0];
+  const pathString = item.path?.join(' ') ?? '';
 
   return (
-    <ResultRow {...props} onPress={press}>
+    <ResultRow
+      {...props}
+      onPress={press}
+      accessibilityRole="button"
+      accessibilityLabel={`${item.name}, ${item.path?.join(' / ') ?? ''}`}
+    >
       <IconWrapper>
-        {item.type === 'component' && <ComponentIcon width={14} height={14} />}
-        {item.type === 'story' && <StoryIcon width={14} height={14} />}
+        {item.type === 'component' && (
+          <ComponentIcon width={14} height={14} color={theme.color.secondary} />
+        )}
+        {item.type === 'story' && <StoryIcon width={14} height={14} color={theme.color.seafoam} />}
       </IconWrapper>
       <ResultRowContent testID="search-result-item--label">
         <Title>
-          <Highlight key="search-result-item--label-highlight" match={nameMatch}>
+          <Highlight text={item.name} ranges={nameHighlights}>
             {item.name}
           </Highlight>
         </Title>
         <Path>
-          {item.path.map((group, index) => {
-            const pathSeparator = index === item.path.length - 1 ? '' : '/';
-            return (
-              <View key={index} style={{ flexShrink: 1 }}>
-                <PathText>
-                  <Highlight
-                    match={pathMatches.find((match: FuseResultMatch) => match.refIndex === index)}
-                  >
-                    {`${group}${pathSeparator}`}
-                  </Highlight>
-                </PathText>
-              </View>
-            );
-          })}
+          <PathText>
+            <Highlight text={pathString} ranges={matches?.[1]}>
+              {item.path?.join(' / ')}
+            </Highlight>
+          </PathText>
         </Path>
       </ResultRowContent>
     </ResultRow>
@@ -197,54 +219,139 @@ export const SearchResults: FC<{
   highlightedIndex,
   clearLastViewed,
 }) {
-  const handleClearLastViewed = () => {
+  const insets = useSafeAreaInsets();
+
+  const handleClearLastViewed = useCallback(() => {
     clearLastViewed();
     closeMenu();
-  };
+  }, [clearLastViewed, closeMenu]);
 
-  return (
-    <ResultsList>
-      {results.length > 0 && !query ? (
-        <RecentlyOpenedTitle>
-          <Text>Recently opened</Text>
-          <IconButton onPress={handleClearLastViewed} />
-        </RecentlyOpenedTitle>
-      ) : null}
+  const contentContainerStyle = useMemo(
+    () => ({
+      paddingHorizontal: 10,
+      paddingTop: 8,
+      paddingBottom: insets.bottom + 20,
+    }),
+    [insets.bottom]
+  );
 
-      {results.length === 0 && query ? (
-        <View>
-          <NoResults>
-            <Text style={{ marginBottom: 8 }}>No components found</Text>
-            <Text>Find components by name or path.</Text>
-          </NoResults>
-        </View>
-      ) : null}
+  const listData = useMemo<ListItemType[]>(() => {
+    const items: ListItemType[] = [];
 
-      {results.map((result, index) => {
-        if (isExpandType(result)) {
+    // Add header for recently opened
+    if (results.length > 0 && !query) {
+      items.push({ type: 'header', clearLastViewed: handleClearLastViewed });
+    }
+
+    // Add no results message
+    if (results.length === 0 && query) {
+      items.push({ type: 'noResults' });
+    }
+
+    // Add results
+    results.forEach((result, index) => {
+      if (isExpandType(result)) {
+        items.push({ type: 'expand', result: result as unknown as ExpandType, index });
+      } else {
+        items.push({ type: 'result', result, index });
+      }
+    });
+
+    return items;
+  }, [results, query, handleClearLastViewed]);
+
+  const keyExtractor = useCallback((item: ListItemType) => {
+    switch (item.type) {
+      case 'header':
+        return 'header';
+      case 'noResults':
+        return 'no-results';
+      case 'expand':
+        return 'expand';
+      case 'result': {
+        const { item: resultItem } = item.result as { item: { refId: string; id: string } };
+        return `${resultItem.refId}::${resultItem.id}`;
+      }
+    }
+  }, []);
+
+  const renderItem = useCallback(
+    ({ item: listItem }: { item: ListItemType }) => {
+      switch (listItem.type) {
+        case 'header':
           return (
-            <MoreWrapper key="search-result-expand">
+            <RecentlyOpenedTitle>
+              <Text>Recently opened</Text>
+              <IconButton
+                onPress={listItem.clearLastViewed}
+                accessibilityLabel="Clear recently opened"
+              />
+            </RecentlyOpenedTitle>
+          );
+        case 'noResults':
+          return (
+            <NoResults>
+              <NoResultsText style={noResultsFirstLineStyle}>No components found</NoResultsText>
+              <NoResultsText>Find components by name or path.</NoResultsText>
+            </NoResults>
+          );
+        case 'expand': {
+          return (
+            <MoreWrapper>
               <Button
-                {...result}
-                {...getItemProps({ key: `${index}`, index, item: result })}
+                {...listItem.result}
+                {...getItemProps({
+                  key: `${listItem.index}`,
+                  index: listItem.index,
+                  item: listItem.result as unknown as SearchResult,
+                })}
                 size="small"
-                text={`Show ${result.moreCount} more results`}
+                text={`Show ${listItem.result.moreCount} more results`}
               />
             </MoreWrapper>
           );
         }
+        case 'result': {
+          const { item: resultItem } = listItem.result as { item: { refId: string; id: string } };
+          const key = `${resultItem.refId}::${resultItem.id}`;
+          return (
+            <Result
+              {...listItem.result}
+              {...getItemProps({ key, index: listItem.index, item: listItem.result })}
+              isHighlighted={highlightedIndex === listItem.index}
+            />
+          );
+        }
+      }
+    },
+    [getItemProps, highlightedIndex]
+  );
 
-        const { item } = result;
-        const key = `${item.refId}::${item.id}`;
-        return (
-          <Result
-            {...result}
-            {...getItemProps({ key, index, item: result })}
-            isHighlighted={highlightedIndex === index}
-            key={item.id}
-          />
-        );
-      })}
-    </ResultsList>
+  // On web, use a simple scrollable div to avoid LegendList web infinite update stack
+  if (isWeb) {
+    return (
+      <View style={flexStyle}>
+        <div style={{ flex: 1, overflow: 'auto', ...contentContainerStyle }}>
+          {listData.map((item) => (
+            <div key={keyExtractor(item)}>{renderItem({ item })}</div>
+          ))}
+        </div>
+      </View>
+    );
+  }
+
+  return (
+    <View style={flexStyle}>
+      <LegendList
+        style={flexStyle}
+        data={listData}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        contentContainerStyle={contentContainerStyle}
+        estimatedItemSize={50}
+        keyboardShouldPersistTaps="handled"
+        recycleItems
+      />
+    </View>
   );
 });

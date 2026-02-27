@@ -13,19 +13,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
       - name: Set node version
         uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: 'pnpm'
       - name: install and compile
-        run: yarn
+        run: pnpm install --frozen-lockfile
       - name: build
-        run: yarn build
+        run: pnpm build
       - name: lint
-        run: yarn lint
+        run: pnpm lint
       - name: format check
-        run: yarn format:check
+        run: pnpm format:check
       - name: type check example
-        run: yarn workspace expo-example check
+        run: pnpm --filter expo-example check
+      - name: Restore Jest cache
+        uses: actions/cache@v4
+        with:
+          path: /tmp/jest_cache
+          key: jest-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            jest-${{ runner.os }}-
       - name: test
-        run: yarn test
+        run: pnpm test
+        env:
+          JEST_CACHE_DIRECTORY: /tmp/jest_cache

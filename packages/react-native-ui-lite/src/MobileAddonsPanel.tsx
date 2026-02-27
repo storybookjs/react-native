@@ -148,9 +148,13 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
           height: panelHeight,
           transform: [{ translateY: positionBottomAnimation }],
         }}
+        pointerEvents={isOpen ? 'auto' : 'none'}
+        accessibilityElementsHidden={!isOpen}
+        importantForAccessibility={isOpen ? 'auto' : 'no-hide-descendants'}
       >
         <View
           style={{
+            flex: 1,
             justifyContent: 'flex-end',
           }}
         >
@@ -272,6 +276,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
           hitSlop={hitSlop}
           Icon={CloseIcon}
           onPress={() => onClose?.()}
+          accessibilityLabel="Close addons panel"
         />
       </View>
       <ScrollView
@@ -288,7 +293,12 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
 
 const Tab = ({ active, onPress, text }: { active: boolean; onPress: () => void; text: string }) => {
   return (
-    <TabButton active={active} onPress={onPress}>
+    <TabButton
+      active={active}
+      onPress={onPress}
+      accessibilityRole="tab"
+      accessibilityState={{ selected: active }}
+    >
       <TabText active={active}>{text}</TabText>
     </TabButton>
   );

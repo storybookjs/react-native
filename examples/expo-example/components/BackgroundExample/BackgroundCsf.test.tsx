@@ -1,14 +1,12 @@
-import { render, screen } from '@testing-library/react-native';
 import { composeStories } from '@storybook/react';
 import * as Backgrounds from './BackgroundCsf.stories';
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
-const { Basic } = composeStories(Backgrounds, { decorators: [withBackgrounds] });
+const { Basic } = composeStories(Backgrounds);
 
-test('Background colour is hotpink', () => {
-  render(<Basic />);
+test('Background colour defaults to hotpink', () => {
+  const backgroundName = Basic.globals?.backgrounds?.value;
+  const backgroundOptions = Basic.parameters?.backgrounds?.options;
 
-  expect(screen.getByTestId('addon-backgrounds-container')).toHaveStyle({
-    backgroundColor: 'hotpink',
-  });
+  expect(backgroundName).toBe('warm');
+  expect(backgroundOptions?.[backgroundName]?.value).toBe('hotpink');
 });

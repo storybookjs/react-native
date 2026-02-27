@@ -2,7 +2,9 @@ import type { FC } from 'react';
 import React, { useRef } from 'react';
 import { Ref } from './Refs';
 import type { CombinedDataset, Selection } from '@storybook/react-native-ui-common';
-import { View } from 'react-native';
+import { View, ViewStyle } from 'react-native';
+
+const containerStyle: ViewStyle = { flex: 1 };
 
 export interface ExplorerProps {
   isLoading: boolean;
@@ -22,7 +24,12 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
   const containerRef = useRef<View>(null);
 
   return (
-    <View ref={containerRef} id="storybook-explorer-tree">
+    <View
+      ref={containerRef}
+      style={containerStyle}
+      id="storybook-explorer-tree"
+      testID="storybook-explorer-tree"
+    >
       {dataset.entries.map(([refId, ref]) => (
         <Ref
           {...ref}

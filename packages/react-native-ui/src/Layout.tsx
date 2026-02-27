@@ -40,8 +40,6 @@ const desktopLogoContainer = {
   justifyContent: 'space-between',
 } satisfies ViewStyle;
 
-const contentContainerStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
-
 const mobileContentStyle = { flex: 1, overflow: 'hidden' } satisfies ViewStyle;
 
 const placeholderObject = {};
@@ -60,7 +58,14 @@ const mobileMenuDrawerContentStyle = {
 
 const flex1 = { flex: 1 } satisfies ViewStyle;
 
-export const FullUI: SBUI = ({ storage, theme, storyHash, story, children }) => {
+export const FullUI: SBUI = ({
+  storage,
+  theme,
+  storyHash,
+  story,
+  storyBackgroundColor,
+  children,
+}) => {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
@@ -68,7 +73,11 @@ export const FullUI: SBUI = ({ storage, theme, storyHash, story, children }) => 
           <BottomSheetModalProvider>
             <StorageProvider storage={storage}>
               <LayoutProvider>
-                <Layout storyHash={storyHash} story={story}>
+                <Layout
+                  storyHash={storyHash}
+                  story={story}
+                  storyBackgroundColor={storyBackgroundColor}
+                >
                   {children}
                 </Layout>
                 <PortalHost name="storybook-lite-ui-root" />
@@ -84,10 +93,12 @@ export const FullUI: SBUI = ({ storage, theme, storyHash, story, children }) => 
 export const Layout = ({
   storyHash,
   story,
+  storyBackgroundColor,
   children,
 }: {
   storyHash: API_IndexHash | undefined;
   story?: StoryContext<ReactRenderer, Args>;
+  storyBackgroundColor?: string;
   children: ReactNode | ReactNode[];
 }) => {
   const theme = useTheme();
@@ -153,9 +164,24 @@ export const Layout = ({
     return {
       flex: 1,
       paddingTop: story?.parameters?.noSafeArea ? 0 : insets.top,
-      backgroundColor: theme.background.content,
+      backgroundColor: storyBackgroundColor || theme.background.content,
     };
-  }, [theme.background.content, insets.top, story?.parameters?.noSafeArea, isDesktop]);
+  }, [
+    storyBackgroundColor,
+    theme.background.content,
+    insets.top,
+    story?.parameters?.noSafeArea,
+    isDesktop,
+  ]);
+
+  const storyContentStyle = useStyle(
+    () => ({
+      flex: 1,
+      overflow: 'hidden' as const,
+      backgroundColor: storyBackgroundColor || theme.background.content,
+    }),
+    [storyBackgroundColor, theme.background.content]
+  );
 
   const fullScreenButtonStyle = useStyle(
     () => ({
@@ -173,7 +199,7 @@ export const Layout = ({
 
   const menuContainerStyle = useStyle(
     () => ({
-      marginBottom: insets.bottom,
+      paddingBottom: insets.bottom,
     }),
     [insets.bottom]
   );
@@ -229,7 +255,7 @@ export const Layout = ({
       ) : null}
 
       <View style={mobileContentStyle}>
-        <View style={contentContainerStyle}>{children}</View>
+        <View style={storyContentStyle}>{children}</View>
 
         {story?.parameters?.hideFullScreenButton || isDesktop ? null : (
           <TouchableOpacity
@@ -283,7 +309,7 @@ export const Layout = ({
         </Container>
       ) : null}
 
-      {isDesktop ? null : (
+      {!isDesktop ? (
         <SelectedNodeProvider>
           <MobileMenuDrawer ref={mobileMenuDrawerRef}>
             <View style={mobileMenuDrawerContentStyle}>
@@ -302,9 +328,9 @@ export const Layout = ({
             />
           </MobileMenuDrawer>
         </SelectedNodeProvider>
-      )}
+      ) : null}
 
-      {isDesktop ? null : <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />}
+      {!isDesktop ? <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} /> : null}
     </View>
   );
 };

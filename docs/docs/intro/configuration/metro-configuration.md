@@ -41,10 +41,12 @@ module.exports = withStorybook(config, {
   liteMode: false,
 
   // WebSocket server configuration - defaults to undefined
-  websockets: {
-    port: 7007,
-    host: 'localhost',
-  },
+  // Use 'auto' to detect LAN IP and inject host/port into storybook.requires
+  // You can also use { host, port }. 'auto' is available from v10.2.
+  websockets: 'auto',
+
+  // Enable experimental MCP endpoint (/mcp) - defaults to false
+  experimental_mcp: false,
 });
 ```
 
@@ -85,14 +87,28 @@ module.exports = withStorybook(config, {
 
 Use this when using @storybook/react-native-ui-lite instead of @storybook/react-native-ui.
 
-#### `websockets` (object)
+#### `websockets` (`'auto' | object`)
 
-- **Default**: `{ port: 7007, host: 'localhost' }`
+- **Default**: `undefined`
 - **Purpose**: Configure WebSocket server for remote control
 - **Properties**:
   - `port`: WebSocket server port number
   - `host`: WebSocket server hostname
+- **Manual mode**:
+  - You can always pass `{ host, port }` explicitly.
+- **Special value**:
+  - `'auto'`: Detects LAN IP automatically and injects host/port into generated `storybook.requires` (available from `v10.2`)
 - **Requirements**: Make sure you use the same port in the getStorybookUI configuration. On android you must use your machine's IP address instead of `localhost` if running on a physical device.
+
+#### `experimental_mcp` (boolean)
+
+- **Default**: `false`
+- **Purpose**: Enables an experimental MCP (Model Context Protocol) endpoint at `/mcp` on the Storybook channel server
+- **Available from**: `v10.3`
+- **Behavior**:
+  - Can run without websockets for MCP documentation/query tooling
+  - Story selection MCP tools require `websockets` to be enabled
+- **Related**: See [MCP Configuration](./mcp-configuration.md)
 
 ## How It Works
 

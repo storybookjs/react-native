@@ -1,0 +1,9 @@
+packages:
+  - 'packages/*'
+  - 'examples/*'
+  - 'docs'
+  - 'tests'
+linkWorkspacePackages: true
+ignoreScripts: true
+nodeLinker: hoisted
+shamefullyHoist: true

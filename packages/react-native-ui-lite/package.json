@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui-lite",
-  "version": "10.1.1",
+  "version": "10.3.0-next.2",
   "description": "lightweight ui components for react native storybook",
   "keywords": [
     "react",
@@ -30,39 +30,21 @@
   "scripts": {
     "dev": "tsup --watch",
     "prepare": "tsup",
-    "test": "jest --passWithNoTests",
-    "test:ci": "jest"
-  },
-  "jest": {
-    "modulePathIgnorePatterns": [
-      "dist/"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "preset": "react-native"
+    "check:types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/jest": "^29.4.3",
-    "@types/react": "~19.1.10",
-    "babel-jest": "^29.7.0",
-    "jest": "^29.7.0",
-    "react-test-renderer": "^19.1.0",
+    "@types/react": "~19.2.14",
     "ts-dedent": "^2.2.0",
     "tsup": "^8.5.0",
     "typescript": "~5.9.3"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
-    "@storybook/react": "^10.1.2",
-    "@storybook/react-native-theming": "^10.1.1",
-    "@storybook/react-native-ui-common": "^10.1.1",
-    "fuse.js": "^7.1.0",
+    "@legendapp/list": "3.0.0-beta.31",
+    "@nozbe/microfuzz": "^1.0.0",
+    "@storybook/react": "10.3.0-alpha.12",
+    "@storybook/react-native-theming": "^10.3.0-next.2",
+    "@storybook/react-native-ui-common": "^10.3.0-next.2",
     "polished": "^4.3.1",
     "react-native-safe-area-context": "^5"
   },

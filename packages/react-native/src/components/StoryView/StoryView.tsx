@@ -38,7 +38,13 @@ const layoutStyles = {
   fullscreen: {},
 } satisfies Record<string, ViewStyle>;
 
-const StoryView = ({ useWrapper = true }: { useWrapper?: boolean }) => {
+const StoryView = ({
+  useWrapper = true,
+  storyBackgroundColor,
+}: {
+  useWrapper?: boolean;
+  storyBackgroundColor?: string;
+}) => {
   const context = useStoryContext();
 
   const id = context?.id;
@@ -48,13 +54,14 @@ const StoryView = ({ useWrapper = true }: { useWrapper?: boolean }) => {
   const containerStyle = useMemo(() => {
     const layout = context?.parameters?.layout;
     const layoutStyle = layout ? layoutStyles[layout] : {};
+
     return {
       flex: 1,
-      backgroundColor: theme.background?.content,
+      backgroundColor: storyBackgroundColor || theme.background?.content,
       overflow: 'hidden',
       ...layoutStyle,
     } satisfies ViewStyle;
-  }, [theme.background?.content, context?.parameters?.layout]);
+  }, [theme.background?.content, context?.parameters?.layout, storyBackgroundColor]);
 
   const onError = useCallback(() => {
     console.log(`Error rendering story for ${context?.title} ${context?.name}`);

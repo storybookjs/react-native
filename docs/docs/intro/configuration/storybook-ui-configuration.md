@@ -386,11 +386,7 @@ const MyCustomUI: SBUI = ({ story, storyHash, setStory, children }) => {
   return (
     <SafeAreaView style={{ flex: 1, flexDirection: 'column' }}>
       {/* Story Navigation Modal */}
-      <Modal
-        visible={showModal}
-        onRequestClose={() => setShowModal(false)}
-        animationType="slide"
-      >
+      <Modal visible={showModal} onRequestClose={() => setShowModal(false)} animationType="slide">
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
           <ScrollView style={{ backgroundColor: '#f5f5f5' }}>
             <Text style={{ fontSize: 18, padding: 16 }}>Stories</Text>
