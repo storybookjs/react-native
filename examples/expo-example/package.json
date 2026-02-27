@@ -10,6 +10,7 @@
     "storybook": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start",
     "storybook:lite": "EXPO_PUBLIC_STORYBOOK_ENABLED=true EXPO_PUBLIC_LITE_UI=true expo start",
     "storybook:test": "EXPO_PUBLIC_SCREENSHOT_TESTING=true EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start",
+    "storybook:nofactories": "EXPO_PUBLIC_STORYBOOK_ENABLED=true EXPO_PUBLIC_NO_FACTORIES=true expo start",
     "storybook:web": "storybook dev -p 6006",
     "build-web-storybook": "storybook build",
     "storybook-generate": "sb-rn-get-stories --host auto",
