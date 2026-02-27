@@ -9,7 +9,6 @@ export interface Features {
 export interface StorybookConfig {
   stories: StorybookConfigBase['stories'];
   addons: Preset[];
-  // TODO move this to params
   reactNative?: ReactNativeOptions;
   features?: Features;
   framework?: '@storybook/react-native';
