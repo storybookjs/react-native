@@ -208,7 +208,6 @@ export class View {
           console.log(`WebsocketTransport error ${JSON.stringify(e)}`);
         },
       }),
-      async: true,
     });
 
     return channel;

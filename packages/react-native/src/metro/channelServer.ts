@@ -148,8 +148,13 @@ export function createChannelServer({
       ws.on('message', function message(data: Data) {
         try {
           const json = JSON.parse(data.toString());
+          const msg = JSON.stringify(json);
 
-          wss.clients.forEach((wsClient) => wsClient.send(JSON.stringify(json)));
+          wss.clients.forEach((wsClient) => {
+            if (wsClient !== ws && wsClient.readyState === WebSocket.OPEN) {
+              wsClient.send(msg);
+            }
+          });
         } catch (error) {
           console.error(error);
         }

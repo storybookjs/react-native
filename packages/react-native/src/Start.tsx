@@ -1,5 +1,4 @@
 import './polyfill';
-import { Platform } from 'react-native';
 import { addons as managerAddons } from 'storybook/manager-api';
 import {
   composeConfigs,
@@ -28,11 +27,6 @@ globalThis.FEATURES = {
   highlight: false,
   backgrounds: false,
 };
-
-// Note this is a workaround for setImmediate not being defined
-if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
-  require('setimmediate');
-}
 
 export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
   composeConfigs<ReactRenderer>([

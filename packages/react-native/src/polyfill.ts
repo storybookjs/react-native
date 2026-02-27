@@ -14,3 +14,8 @@ if (Platform.OS !== 'web') {
     setupURLPolyfill();
   }
 }
+
+// Note this is a workaround for setImmediate not being defined
+if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
+  require('setimmediate');
+}
