@@ -45,9 +45,17 @@ function isPreviewObject(value: unknown): value is PreviewObject {
 }
 
 /**
- * If an annotation module's default export is a Preview object (from definePreview),
- * extract the user's plain config so composeConfigs can merge parameters properly.
- * definePreview wraps config in an opaque object that composeConfigs can't read.
+ * definePreview() wraps the user's config in an opaque Preview object that
+ * composeConfigs can't read (it looks for top-level fields like `parameters`
+ * but Preview stores them inside `.input`).
+ *
+ * We can't use the Preview's `.composed` getter because it includes web-specific
+ * core annotations (test loaders, component-testing, measure, highlight, etc.)
+ * that depend on a browser/testing environment with act() support — none of
+ * which is available on-device in React Native.
+ *
+ * Instead we extract `.input` (the user's plain config) so composeConfigs
+ * can read the fields directly.
  */
 function resolveAnnotations(annotations: ModuleExports[]): ModuleExports[] {
   return annotations.map((mod) => {
