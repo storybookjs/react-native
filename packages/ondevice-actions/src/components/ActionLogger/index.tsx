@@ -1,6 +1,11 @@
 import { ActionDisplay } from 'storybook/actions';
-import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, ScrollView, StyleSheet, View } from 'react-native';
+import { styled } from '@storybook/react-native-theming';
 import Inspect from './Inspect';
+
+const CountText = styled.Text(({ theme }) => ({
+  color: theme.color.defaultText,
+}));
 
 interface ActionLoggerProps {
   actions: ActionDisplay[];
@@ -13,7 +18,7 @@ export const ActionLogger = ({ actions, onClear }: ActionLoggerProps) => (
       <View>
         {actions.map((action: ActionDisplay) => (
           <View key={action.id} style={styles.row}>
-            <View>{action.count > 1 ? <Text>{action.count}</Text> : null}</View>
+            <View>{action.count > 1 ? <CountText>{action.count}</CountText> : null}</View>
             <View style={styles.grow}>
               <Inspect name={action.data.name} value={action.data.args || action.data} />
             </View>

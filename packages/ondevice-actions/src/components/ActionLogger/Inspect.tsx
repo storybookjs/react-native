@@ -1,19 +1,39 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { styled } from '@storybook/react-native-theming';
 
-const theme = {
-  OBJECT_NAME_COLOR: 'rgb(136, 19, 145)',
-  OBJECT_VALUE_NULL_COLOR: 'rgb(128, 128, 128)',
-  OBJECT_VALUE_UNDEFINED_COLOR: 'rgb(128, 128, 128)',
-  OBJECT_VALUE_REGEXP_COLOR: 'rgb(196, 26, 22)',
-  OBJECT_VALUE_STRING_COLOR: 'rgb(196, 26, 22)',
-  OBJECT_VALUE_SYMBOL_COLOR: 'rgb(196, 26, 22)',
-  OBJECT_VALUE_NUMBER_COLOR: 'rgb(28, 0, 207)',
-  OBJECT_VALUE_BOOLEAN_COLOR: 'rgb(28, 0, 207)',
-  OBJECT_VALUE_FUNCTION_PREFIX_COLOR: 'rgb(13, 34, 170)',
+const DefaultText = styled.Text(({ theme }) => ({
+  color: theme.color.defaultText,
+}));
 
-  ARROW_COLOR: '#859499',
-};
+const ObjectNameText = styled.Text(({ theme }) => ({
+  color: theme.color.secondary,
+}));
+
+const MutedText = styled.Text(({ theme }) => ({
+  color: theme.textMutedColor,
+}));
+
+const StringText = styled.Text(({ theme }) => ({
+  color: theme.color.orange,
+}));
+
+const NumberText = styled.Text(({ theme }) => ({
+  color: theme.color.green,
+}));
+
+const BooleanText = styled.Text(({ theme }) => ({
+  color: theme.color.seafoam,
+}));
+
+const FunctionText = styled.Text(({ theme }) => ({
+  color: theme.color.purple,
+}));
+
+const ArrowText = styled.Text<{ visible: boolean }>(({ theme, visible }) => ({
+  color: visible ? theme.textMutedColor : 'transparent',
+  paddingRight: 8,
+}));
 
 interface InspectProps {
   name?: string;
@@ -32,15 +52,9 @@ const Inspect = ({ name, value }: InspectProps) => {
     }
   }, [canExpand]);
 
-  const toggle = (
-    <Text style={{ color: canExpand ? theme.ARROW_COLOR : 'transparent', paddingRight: 8 }}>
-      {expanded ? '▼' : '▶'}
-    </Text>
-  );
+  const toggle = <ArrowText visible={!!canExpand}>{expanded ? '▼' : '▶'}</ArrowText>;
 
-  const nameComponent = name ? (
-    <Text style={{ color: theme.OBJECT_NAME_COLOR }}>{name}</Text>
-  ) : null;
+  const nameComponent = name ? <ObjectNameText>{name}</ObjectNameText> : null;
 
   if (Array.isArray(value)) {
     if (name) {
@@ -49,7 +63,7 @@ const Inspect = ({ name, value }: InspectProps) => {
           <TouchableOpacity onPress={toggleExpanded} style={styles.row}>
             {toggle}
             {nameComponent}
-            <Text>{`: ${value.length === 0 ? '[]' : expanded ? '[' : '[...]'}`}</Text>
+            <DefaultText>{`: ${value.length === 0 ? '[]' : expanded ? '[' : '[...]'}`}</DefaultText>
           </TouchableOpacity>
           {expanded ? (
             <View style={styles.expanded}>
@@ -59,7 +73,7 @@ const Inspect = ({ name, value }: InspectProps) => {
                 </View>
               ))}
               <View style={styles.spacingLeft}>
-                <Text>]</Text>
+                <DefaultText>]</DefaultText>
               </View>
             </View>
           ) : null}
@@ -68,13 +82,13 @@ const Inspect = ({ name, value }: InspectProps) => {
     }
     return (
       <>
-        <Text>[</Text>
+        <DefaultText>[</DefaultText>
         {value.map((v, i) => (
           <View key={i} style={styles.spacingLeft}>
             <Inspect value={v} />
           </View>
         ))}
-        <Text>]</Text>
+        <DefaultText>]</DefaultText>
       </>
     );
   }
@@ -85,7 +99,7 @@ const Inspect = ({ name, value }: InspectProps) => {
           <TouchableOpacity style={styles.row} onPress={toggleExpanded}>
             {toggle}
             {nameComponent}
-            <Text>{`: ${Object.keys(value).length === 0 ? '{}' : expanded ? '{' : '{...}'}`}</Text>
+            <DefaultText>{`: ${Object.keys(value).length === 0 ? '{}' : expanded ? '{' : '{...}'}`}</DefaultText>
           </TouchableOpacity>
           {expanded ? (
             <View style={styles.expanded}>
@@ -95,7 +109,7 @@ const Inspect = ({ name, value }: InspectProps) => {
                 </View>
               ))}
               <View style={styles.spacingLeft}>
-                <Text>{'}'}</Text>
+                <DefaultText>{'}'}</DefaultText>
               </View>
             </View>
           ) : null}
@@ -104,13 +118,13 @@ const Inspect = ({ name, value }: InspectProps) => {
     }
     return (
       <>
-        <Text>{'{'}</Text>
+        <DefaultText>{'{'}</DefaultText>
         {Object.entries(value).map(([key, v]) => (
           <View key={key}>
             <Inspect name={key} value={v} />
           </View>
         ))}
-        <Text>{'}'}</Text>
+        <DefaultText>{'}'}</DefaultText>
       </>
     );
   }
@@ -119,7 +133,7 @@ const Inspect = ({ name, value }: InspectProps) => {
       <View style={styles.row}>
         {toggle}
         {nameComponent}
-        <Text>: </Text>
+        <DefaultText>: </DefaultText>
         <Value value={value} />
       </View>
     );
@@ -129,35 +143,25 @@ const Inspect = ({ name, value }: InspectProps) => {
 
 function Value({ value }: { value: any }) {
   if (value === null) {
-    return <Text style={{ color: theme.OBJECT_VALUE_NULL_COLOR }}>null</Text>;
+    return <MutedText>null</MutedText>;
   }
   if (value === undefined) {
-    return <Text style={{ color: theme.OBJECT_VALUE_UNDEFINED_COLOR }}>undefined</Text>;
+    return <MutedText>undefined</MutedText>;
   }
   if (value instanceof RegExp) {
-    return (
-      <Text style={{ color: theme.OBJECT_VALUE_REGEXP_COLOR }}>
-        {`/${value.source}/${value.flags}`}
-      </Text>
-    );
+    return <StringText>{`/${value.source}/${value.flags}`}</StringText>;
   }
   switch (typeof value) {
     case 'string':
-      return (
-        <Text style={{ color: theme.OBJECT_VALUE_STRING_COLOR }}>{JSON.stringify(value)}</Text>
-      );
+      return <StringText>{JSON.stringify(value)}</StringText>;
     case 'number':
-      return (
-        <Text style={{ color: theme.OBJECT_VALUE_NUMBER_COLOR }}>{JSON.stringify(value)}</Text>
-      );
+      return <NumberText>{JSON.stringify(value)}</NumberText>;
     case 'boolean':
-      return (
-        <Text style={{ color: theme.OBJECT_VALUE_BOOLEAN_COLOR }}>{JSON.stringify(value)}</Text>
-      );
+      return <BooleanText>{JSON.stringify(value)}</BooleanText>;
     case 'function':
-      return <Text style={{ color: theme.OBJECT_VALUE_FUNCTION_PREFIX_COLOR }}>[Function]</Text>;
+      return <FunctionText>[Function]</FunctionText>;
     default:
-      return <Text>{JSON.stringify(value)}</Text>;
+      return <DefaultText>{JSON.stringify(value)}</DefaultText>;
   }
 }
 
