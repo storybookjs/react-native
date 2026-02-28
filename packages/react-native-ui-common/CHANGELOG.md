@@ -1,5 +1,14 @@
 # @storybook/react-native-ui-common
 
+## 10.3.0-next.3
+
+### Patch Changes
+
+- [#855](https://github.com/storybookjs/react-native/pull/855) [`6b85c99`](https://github.com/storybookjs/react-native/commit/6b85c9934532ade16f854b07084566d08693965a) Thanks [@dannyhw](https://github.com/dannyhw)! - update dev deps and lock to fix duplicate deps
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.3.0-next.3
+
 ## 10.3.0-next.2
 
 ### Patch Changes
