@@ -41,6 +41,7 @@
   "devDependencies": {
     "@gorhom/bottom-sheet": "*",
     "cross-env": "^10.1.0",
+    "storybook": "10.3.0-alpha.12",
     "typescript": "~5.9.3"
   },
   "peerDependencies": {
