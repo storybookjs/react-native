@@ -1,4 +1,4 @@
-import { Platform } from 'react-native-web';
+import { Platform } from 'react-native';
 
 if (Platform.OS !== 'web') {
   // We polyfill URLSearchParams for React Native since URLSearchParams.get is not implemented yet is used in storybook
@@ -13,4 +13,9 @@ if (Platform.OS !== 'web') {
 
     setupURLPolyfill();
   }
+}
+
+// Note this is a workaround for setImmediate not being defined
+if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
+  require('setimmediate');
 }
