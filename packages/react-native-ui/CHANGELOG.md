@@ -1,5 +1,17 @@
 # @storybook/react-native-ui
 
+## 10.3.0-next.3
+
+### Patch Changes
+
+- [#857](https://github.com/storybookjs/react-native/pull/857) [`32b4cee`](https://github.com/storybookjs/react-native/commit/32b4cee543b92128fd52b996eba66a48fbcdd3e3) Thanks [@dannyhw](https://github.com/dannyhw)! - fix: addon panels only update when active
+
+- [#855](https://github.com/storybookjs/react-native/pull/855) [`6b85c99`](https://github.com/storybookjs/react-native/commit/6b85c9934532ade16f854b07084566d08693965a) Thanks [@dannyhw](https://github.com/dannyhw)! - update dev deps and lock to fix duplicate deps
+
+- Updated dependencies [[`6b85c99`](https://github.com/storybookjs/react-native/commit/6b85c9934532ade16f854b07084566d08693965a)]:
+  - @storybook/react-native-ui-common@10.3.0-next.3
+  - @storybook/react-native-theming@10.3.0-next.3
+
 ## 10.3.0-next.2
 
 ### Patch Changes
