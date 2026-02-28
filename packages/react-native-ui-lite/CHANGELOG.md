@@ -1,5 +1,15 @@
 # @storybook/react-native-ui-lite
 
+## 10.3.0-next.4
+
+### Patch Changes
+
+- [#859](https://github.com/storybookjs/react-native/pull/859) [`a13f421`](https://github.com/storybookjs/react-native/commit/a13f4212d4233ca4ff9b27eb037bdf20cc0fa13d) Thanks [@dannyhw](https://github.com/dannyhw)! - feat: use legend list react for web
+
+- Updated dependencies []:
+  - @storybook/react-native-ui-common@10.3.0-next.4
+  - @storybook/react-native-theming@10.3.0-next.4
+
 ## 10.3.0-next.3
 
 ### Patch Changes
