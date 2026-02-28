@@ -1,7 +1,11 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { addons } from 'storybook/manager-api';
 import { styled, useTheme } from '@storybook/react-native-theming';
-import { Addon_TypesEnum } from 'storybook/internal/types';
+import {
+  Addon_TypesEnum,
+  type Addon_BaseType,
+  type Addon_Collection,
+} from 'storybook/internal/types';
 import { forwardRef, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Platform, StyleProp, Text, View, ViewStyle, useWindowDimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -138,10 +142,14 @@ const centeredStyle = {
   justifyContent: 'center',
 } satisfies StyleProp<ViewStyle>;
 
+const hiddenStyle = {
+  display: 'none',
+} satisfies StyleProp<ViewStyle>;
+
 const hitSlop = { top: 10, right: 10, bottom: 10, left: 10 };
 
 export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId?: string }) => {
-  const panels = addons.getElements(Addon_TypesEnum.PANEL);
+  const panels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
 
   const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
 
@@ -153,25 +161,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
     };
   });
 
-  const panel = useMemo(() => {
-    if (!storyId) {
-      return (
-        <View style={centeredStyle}>
-          <Text>No Story Selected</Text>
-        </View>
-      );
-    }
-
-    if (Object.keys(panels).length === 0) {
-      return (
-        <View style={centeredStyle}>
-          <Text>No addons loaded.</Text>
-        </View>
-      );
-    }
-
-    return panels[addonSelected].render({ active: true });
-  }, [addonSelected, panels, storyId]);
+  const panelEntries = useMemo(() => Object.entries(panels), [panels]);
 
   return (
     <View style={addonsTabsContainerStyle}>
@@ -189,7 +179,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
                 key={id}
                 active={id === addonSelected}
                 onPress={() => setAddonSelected(id)}
-                text={resolvedTitle}
+                text={String(resolvedTitle)}
               />
             );
           })}
@@ -207,10 +197,28 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
         // keyboardShouldPersistTaps="handled"
         contentContainerStyle={scrollContentContainerStyle}
       >
-        {panel}
+        {!storyId ? (
+          <View style={centeredStyle}>
+            <Text>No Story Selected</Text>
+          </View>
+        ) : panelEntries.length === 0 ? (
+          <View style={centeredStyle}>
+            <Text>No addons loaded.</Text>
+          </View>
+        ) : (
+          panelEntries.map(([id, p]) => (
+            <View key={id} style={id === addonSelected ? undefined : hiddenStyle}>
+              <PanelRenderer panel={p} />
+            </View>
+          ))
+        )}
       </ScrollView>
     </View>
   );
+};
+
+const PanelRenderer = ({ panel }: { panel: Addon_BaseType }) => {
+  return panel.render({ active: true });
 };
 
 const Tab = ({ active, onPress, text }: { active: boolean; onPress: () => void; text: string }) => {

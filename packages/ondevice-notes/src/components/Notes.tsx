@@ -73,7 +73,7 @@ export const Notes = ({ active, api }: NotesProps) => {
     [theme.color.defaultText, theme.background.app]
   );
 
-  if (!active || !story) {
+  if (!story) {
     return null;
   }
 
