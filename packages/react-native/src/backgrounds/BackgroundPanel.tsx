@@ -82,8 +82,8 @@ interface BackgroundOptions {
 
 const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
   const store = api.store();
-  const storyId = store.getSelection().storyId;
-  const story = store.fromId(storyId);
+  const storyId = store.getSelection()?.storyId;
+  const story = storyId ? store.fromId(storyId) : null;
 
   // storyGlobals comes from PreparedStory spread in getStoryContext
   const isLocked = !!story?.storyGlobals?.[PARAM_KEY];
@@ -95,13 +95,8 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
     [channel]
   );
 
-  if (!active) {
-    return null;
-  }
-
-  const bgParams = story.parameters[PARAM_KEY];
+  const bgParams = story?.parameters?.[PARAM_KEY];
   const options: BackgroundOptions | undefined = bgParams?.options;
-
   if (options && Object.keys(options).length > 0) {
     return (
       <View style={{ padding: 10 }}>
