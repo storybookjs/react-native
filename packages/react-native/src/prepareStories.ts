@@ -70,7 +70,8 @@ export function prepareStories({
           const exportValue = fileExports[key];
           if (!exportValue) return;
 
-          const title = makeTitle(filename, specifier, meta.title);
+          // CSF factories: preview.meta() stores title in meta.input.title, not meta.title
+          const title = makeTitle(filename, specifier, meta.title ?? meta.input?.title);
 
           if (title) {
             const nameFromExport = storyNameFromExport(key);

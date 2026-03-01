@@ -1,18 +1,17 @@
-import { Meta, StoryObj } from '@storybook/react-native';
+import preview from '../../.rnstorybook/preview';
 import { Text } from 'react-native';
 
 const TestCase2 = () => {
   return <Text>Testing story globs and nested stories</Text>;
 };
 
-const meta = {
+const meta = preview.meta({
+  title: 'TestCase/Nested stories',
   component: TestCase2,
-} satisfies Meta<typeof TestCase2>;
+});
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
-
-export const Basic: Story = {
+export const Basic = meta.story({
   args: {},
-};
+});
