@@ -3,7 +3,7 @@ import {
   composeConfigs,
   normalizeProjectAnnotations,
 } from 'storybook/internal/preview-api';
-import { combineTags } from 'storybook/internal/csf';
+import { combineTags, getCoreAnnotations } from 'storybook/internal/csf';
 import type {
   ProjectAnnotations,
   NormalizedProjectAnnotations,
@@ -265,6 +265,9 @@ export function definePreview(input: PreviewInput): RNPreview {
         composeConfigs<ReactRenderer>([
           // RN-specific annotations (renderer, argTypes enhancers, etc.)
           rnEntryPreview,
+          // Core addon annotations (actions, backgrounds, etc.)
+          // Web-only addons are disabled via globalThis.FEATURES flags
+          ...getCoreAnnotations(),
           // Include render function so composeStory works
           { render },
           // User-supplied addons
