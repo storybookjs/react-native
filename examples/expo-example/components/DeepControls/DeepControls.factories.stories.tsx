@@ -42,8 +42,8 @@ export const Basic = meta.story({
       },
     },
   },
+  // Deep controls currently broken for factories
   argTypes: {
-    // @ts-expect-error
     'objectArg.enumString': {
       control: 'radio',
       options: ['value1', 'value2', 'value3'],
@@ -63,5 +63,5 @@ export const Basic = meta.story({
     'objectArg.nested.number': {
       control: 'number',
     },
-  },
+  } as any,
 });
