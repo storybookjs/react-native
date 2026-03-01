@@ -28,46 +28,6 @@ globalThis.FEATURES = {
   backgrounds: false,
 };
 
-/** Shape of the opaque object returned by definePreview(). */
-interface PreviewObject {
-  _tag: 'Preview';
-  input: Record<string, unknown> & { addons?: unknown[] };
-}
-
-function isPreviewObject(value: unknown): value is PreviewObject {
-  return (
-    value != null &&
-    typeof value === 'object' &&
-    '_tag' in value &&
-    value._tag === 'Preview' &&
-    'input' in value
-  );
-}
-
-/**
- * definePreview() wraps the user's config in an opaque Preview object that
- * composeConfigs can't read (it looks for top-level fields like `parameters`
- * but Preview stores them inside `.input`).
- *
- * We can't use the Preview's `.composed` getter because it includes web-specific
- * core annotations (test loaders, component-testing, measure, highlight, etc.)
- * that depend on a browser/testing environment with act() support — none of
- * which is available on-device in React Native.
- *
- * Instead we extract `.input` (the user's plain config) so composeConfigs
- * can read the fields directly.
- */
-function resolveAnnotations(annotations: ModuleExports[]): ModuleExports[] {
-  return annotations.map((mod) => {
-    const defaultExport = mod?.default ?? mod;
-    if (isPreviewObject(defaultExport)) {
-      const { addons: _addons, ...userConfig } = defaultExport.input;
-      return { default: userConfig };
-    }
-    return mod;
-  });
-}
-
 export const getProjectAnnotations = (view: View, annotations: ModuleExports[]) => async () =>
   composeConfigs<ReactRenderer>([
     {
@@ -86,7 +46,7 @@ export const getProjectAnnotations = (view: View, annotations: ModuleExports[]) 
         return <Component {...args} />;
       },
     },
-    ...resolveAnnotations(annotations),
+    ...annotations,
   ]);
 
 export function start({
@@ -167,7 +127,7 @@ export function start({
           return <Component {...args} />;
         },
       },
-      ...resolveAnnotations(annotations),
+      ...annotations,
     ]);
 
   const preview = new PreviewWithSelection<ReactRenderer>(

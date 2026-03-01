@@ -20,4 +20,4 @@ export type {
   StoryObj,
 } from '@storybook/react';
 
-export { __definePreview as definePreview } from '@storybook/react';
+export { definePreview } from './definePreview';

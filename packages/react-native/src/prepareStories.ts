@@ -59,28 +59,30 @@ export function prepareStories({
     req.keys().forEach((filename: string) => {
       try {
         const fileExports = req(filename);
-        // TODO: should this be here?
         if (!fileExports.default) return;
         const meta = fileExports.default;
 
         Object.keys(fileExports).forEach((key) => {
           if (key === 'default') return;
-          if (!isExportStory(key, fileExports.default)) return;
+          if (!isExportStory(key, meta)) return;
 
           const exportValue = fileExports[key];
           if (!exportValue) return;
 
-          // CSF factories: preview.meta() stores title in meta.input.title, not meta.title
-          const title = makeTitle(filename, specifier, meta.title ?? meta.input?.title);
+          const title = makeTitle(filename, specifier, meta.title);
 
           if (title) {
             const nameFromExport = storyNameFromExport(key);
             const id = toId(title, nameFromExport);
 
-            let name = nameFromExport;
-
-            if (typeof exportValue === 'function') {
-              name = exportValue?.storyName || nameFromExport;
+            // For CSF factories, read the explicit name from input (avoids triggering
+            // composeStory which doesn't have the export name). For plain CSF, fall
+            // back to .name / .storyName / the export-derived name.
+            let name: string;
+            if (exportValue?._tag === 'Story') {
+              name = exportValue.input?.name ?? nameFromExport;
+            } else if (typeof exportValue === 'function') {
+              name = exportValue.storyName || nameFromExport;
             } else {
               name = exportValue?.name || exportValue?.storyName || nameFromExport;
             }
@@ -98,9 +100,9 @@ export function prepareStories({
             const importedStories = req(filename);
             const stories = Object.entries(importedStories).reduce(
               (carry, [storyKey, story]: [string, Readonly<Record<string, unknown>>]) => {
-                if (!isExportStory(storyKey, fileExports.default)) return carry;
+                if (!isExportStory(storyKey, meta)) return carry;
 
-                if (story.play && !options?.playFn) {
+                if (typeof story.play === 'function' && !options?.playFn) {
                   // play functions are not yet fully supported on native.
                   // There is a new option in main.js to turn them on for future use.
                   carry[storyKey] = { ...story, play: undefined };

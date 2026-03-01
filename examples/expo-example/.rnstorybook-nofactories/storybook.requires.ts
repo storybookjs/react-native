@@ -2,18 +2,17 @@
 /// <reference types="@storybook/react-native/metro-env" />
 import { start, updateView, View, type Features } from '@storybook/react-native';
 
-import '@storybook/addon-ondevice-controls/register';
-import '@storybook/addon-ondevice-actions/register';
-import '@storybook/addon-ondevice-notes/register';
-import 'storybook-addon-deep-controls/register';
+import "@storybook/addon-ondevice-controls/register";
+import "@storybook/addon-ondevice-actions/register";
+import "@storybook/addon-ondevice-notes/register";
+import "storybook-addon-deep-controls/register";
 
 const normalizedStories = [
   {
-    titlePrefix: '',
-    directory: './components',
-    files: '**/!(*.factories).stories.?(ts|tsx|js|jsx)',
-    importPathMatcher:
-      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?:(?!(?:[^/]*?\.factories))[^/]*?)\.stories\.(?:ts|tsx|js|jsx)?)$/,
+    titlePrefix: "",
+    directory: "./components",
+    files: "**/!(*.factories).stories.?(ts|tsx|js|jsx)",
+    importPathMatcher: /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?:(?!(?:[^/]*?\.factories))[^/]*?)\.stories\.(?:ts|tsx|js|jsx)?)$/,
     req: require.context(
       '../components',
       true,
@@ -21,11 +20,10 @@ const normalizedStories = [
     ),
   },
   {
-    titlePrefix: '',
-    directory: './other_components',
-    files: '**/!(*.factories).stories.?(ts|tsx|js|jsx)',
-    importPathMatcher:
-      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?:(?!(?:[^/]*?\.factories))[^/]*?)\.stories\.(?:ts|tsx|js|jsx)?)$/,
+    titlePrefix: "",
+    directory: "./other_components",
+    files: "**/!(*.factories).stories.?(ts|tsx|js|jsx)",
+    importPathMatcher: /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?:(?!(?:[^/]*?\.factories))[^/]*?)\.stories\.(?:ts|tsx|js|jsx)?)$/,
     req: require.context(
       '../other_components',
       true,
@@ -33,18 +31,18 @@ const normalizedStories = [
     ),
   },
   {
-    titlePrefix: 'react-native-ui',
-    directory: '../../packages/react-native-ui',
-    files: '**/!(*.factories).stories.?(ts|tsx|js|jsx)',
-    importPathMatcher:
-      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?:(?!(?:[^/]*?\.factories))[^/]*?)\.stories\.(?:ts|tsx|js|jsx)?)$/,
+    titlePrefix: "react-native-ui",
+    directory: "../../packages/react-native-ui",
+    files: "**/!(*.factories).stories.?(ts|tsx|js|jsx)",
+    importPathMatcher: /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?:(?!(?:[^/]*?\.factories))[^/]*?)\.stories\.(?:ts|tsx|js|jsx)?)$/,
     req: require.context(
       '../../../packages/react-native-ui',
       true,
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?:(?!(?:[^/]*?\.factories))[^/]*?)\.stories\.(?:ts|tsx|js|jsx)?)$/
     ),
-  },
+  }
 ];
+
 
 declare global {
   var view: View;
@@ -53,10 +51,11 @@ declare global {
   var FEATURES: Features;
 }
 
+
 const annotations = [
   require('./preview'),
-  require('@storybook/react-native/preview'),
-  require('storybook-addon-deep-controls/preview'),
+  require("@storybook/react-native/preview"),
+  require('storybook-addon-deep-controls/preview')
 ];
 
 globalThis.STORIES = normalizedStories;
@@ -67,8 +66,8 @@ module?.hot?.accept?.();
 globalThis.FEATURES.ondeviceBackgrounds = true;
 
 const options = {
-  playFn: false,
-};
+  "playFn": false
+}
 
 if (!globalThis.view) {
   globalThis.view = start({
