@@ -6,15 +6,25 @@ use pnpm for commands, check package.json for scripts
 
 ## On-Device Testing Tools
 
-- use agent-device to control a simulator
-  - check `agent-device --help`
-- use rn-logs to get metro logs
-  - check `rn-logs logs --help`
+- use agent-device to control a simulator `agent-device --help`
+- use rn-logs to get metro logs `rn-logs logs --help`
 - use the storybook mcp to select stories and get story list
 
-### agent-device (iOS/Android Simulator Control)
+use curl to send events to channel server, such as to update the args:
 
-Use `agent-device` to interact with iOS/Android simulators for testing the Storybook app:
+```sh
+curl -X POST http://localhost:7007/send-event \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "updateStoryArgs",
+    "args": [{
+      "storyId": "controlexamples-controlexample--example",
+      "updatedArgs": { "name": "Alice", "age": 25 }
+    }]
+  }'
+```
+
+### agent-device (iOS/Android Simulator Control)
 
 ```bash
 agent-device open host.exp.Exponent --relaunch  # Relaunch Expo Go
@@ -32,11 +42,7 @@ rn-logs apps                              # List running apps
 rn-logs logs --app "host.exp.Exponent"    # Stream logs from Expo Go
 ```
 
-## Architecture Overview
-
-**pnpm workspaces monorepo** managed by Lerna containing React Native Storybook packages.
-
-### Key Concepts
+## Key Concepts
 
 1. **CSF (Component Story Format)** - Standard story syntax
 2. **On-device UI** - Native UI that runs directly on mobile devices
