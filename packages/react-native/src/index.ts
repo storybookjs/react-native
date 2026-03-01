@@ -21,3 +21,4 @@ export type {
 } from '@storybook/react';
 
 export { definePreview } from './definePreview';
+export type { RNPreview, RNMeta, RNStory } from './definePreview';

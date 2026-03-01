@@ -401,6 +401,9 @@ importers:
       tmcp:
         specifier: ^1.16.0
         version: 1.19.2(typescript@5.9.3)
+      type-fest:
+        specifier: ~2.19
+        version: 2.19.0
       valibot:
         specifier: ^1.2.0
         version: 1.2.0(typescript@5.9.3)
