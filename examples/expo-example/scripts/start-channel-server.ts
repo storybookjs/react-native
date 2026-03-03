@@ -4,7 +4,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { createChannelServer } from '@storybook/react-native/node';
 
-// @ts-expect-error we run with esm
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const configPath = path.resolve(__dirname, '../.rnstorybook');
@@ -22,5 +21,6 @@ console.log(`\n✅ Channel server running at http://${host}:${port}`);
 console.log('   Endpoints:');
 console.log('   - GET  /index.json   - Get story index');
 console.log('   - POST /send-event   - Send event to WebSocket clients');
+console.log('   - POST /select-story-sync/{story-id} - Set story and wait for render (500ms timeout)');
 console.log('   - WS   /             - WebSocket connection');
 console.log('\nPress Ctrl+C to stop');

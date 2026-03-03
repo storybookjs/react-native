@@ -2,6 +2,7 @@ import { WebSocketServer, WebSocket, Data } from 'ws';
 import { createServer, IncomingMessage, ServerResponse } from 'node:http';
 import { buildIndex } from './buildIndex';
 import { createMcpHandler } from './mcpServer';
+import { createSelectStorySyncEndpoint, SELECT_STORY_SYNC_ROUTE } from './selectStorySyncEndpoint';
 
 /**
  * Options for creating a channel server.
@@ -40,6 +41,7 @@ interface ChannelServerOptions {
  * The server provides both WebSocket and REST endpoints:
  * - WebSocket: broadcasts all received messages to all connected clients
  * - POST /send-event: sends an event to all WebSocket clients
+ * - POST /select-story-sync/{storyId}: sets the current story and waits for a storyRendered event
  * - GET /index.json: returns the story index built from story files
  * - POST /mcp: MCP endpoint for AI agent integration (when experimental_mcp option is enabled)
  *
@@ -61,15 +63,18 @@ export function createChannelServer({
   const httpServer = createServer();
   const wss = websockets ? new WebSocketServer({ server: httpServer }) : null;
   const mcpServer = experimental_mcp ? createMcpHandler(configPath, wss ?? undefined) : null;
+  const selectStorySyncEndpoint = wss ? createSelectStorySyncEndpoint(wss) : null;
 
   httpServer.on('request', async (req: IncomingMessage, res: ServerResponse) => {
+    const requestUrl = new URL(req.url ?? '/', `http://${req.headers.host ?? 'localhost'}`);
+
     if (req.method === 'OPTIONS') {
       res.writeHead(204);
       res.end();
       return;
     }
 
-    if (req.method === 'GET' && req.url === '/index.json') {
+    if (req.method === 'GET' && requestUrl.pathname === '/index.json') {
       try {
         const index = await buildIndex({ configPath });
 
@@ -84,7 +89,7 @@ export function createChannelServer({
       return;
     }
 
-    if (req.method === 'POST' && req.url === '/send-event') {
+    if (req.method === 'POST' && requestUrl.pathname === '/send-event') {
       if (!wss) {
         res.writeHead(503, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ success: false, error: 'WebSockets are disabled' }));
@@ -115,8 +120,23 @@ export function createChannelServer({
       return;
     }
 
+    if (req.method === 'POST' && requestUrl.pathname.startsWith(SELECT_STORY_SYNC_ROUTE)) {
+      if (!selectStorySyncEndpoint) {
+        res.writeHead(503, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: 'WebSockets are disabled' }));
+        return;
+      }
+
+      await selectStorySyncEndpoint.handleRequest(requestUrl.pathname, res);
+      return;
+    }
+
     // MCP endpoint
-    if (mcpServer && req.url === '/mcp' && (req.method === 'POST' || req.method === 'GET')) {
+    if (
+      mcpServer &&
+      requestUrl.pathname === '/mcp' &&
+      (req.method === 'POST' || req.method === 'GET')
+    ) {
       await mcpServer.handleMcpRequest(req, res);
       return;
     }
@@ -132,13 +152,14 @@ export function createChannelServer({
     });
 
     // Single global ping interval for all clients
-    setInterval(function ping() {
+    const pingInterval = setInterval(function ping() {
       wss.clients.forEach(function each(client) {
         if (client.readyState === WebSocket.OPEN) {
           client.send(JSON.stringify({ type: 'ping', args: [] }));
         }
       });
     }, 10000);
+    pingInterval.unref?.();
 
     wss.on('connection', function connection(ws: WebSocket) {
       console.log('WebSocket connection established');
@@ -148,6 +169,8 @@ export function createChannelServer({
       ws.on('message', function message(data: Data) {
         try {
           const json = JSON.parse(data.toString());
+          selectStorySyncEndpoint?.onSocketMessage(json);
+
           const msg = JSON.stringify(json);
 
           wss.clients.forEach((wsClient) => {
