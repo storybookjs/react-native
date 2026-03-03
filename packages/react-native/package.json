@@ -64,6 +64,7 @@
     "glob": "^13.0.0",
     "react-native-url-polyfill": "^3.0.0",
     "setimmediate": "^1.0.5",
+    "type-fest": "~2.19",
     "tmcp": "^1.16.0",
     "valibot": "^1.2.0",
     "ws": "^8.18.3"

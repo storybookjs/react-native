@@ -4,7 +4,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { createChannelServer } from '@storybook/react-native/node';
 
-// @ts-expect-error we run with esm
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const configPath = path.resolve(__dirname, '../.rnstorybook');

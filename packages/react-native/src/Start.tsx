@@ -1,5 +1,4 @@
 import './polyfill';
-import { Platform } from 'react-native';
 import { addons as managerAddons } from 'storybook/manager-api';
 import {
   composeConfigs,
@@ -10,7 +9,7 @@ import {
 } from 'storybook/internal/preview-api';
 // NOTE this really should be exported from preview-api, but it's not
 import { Channel } from 'storybook/internal/channels';
-import type { NormalizedStoriesSpecifier } from 'storybook/internal/types';
+import type { ModuleExports, NormalizedStoriesSpecifier } from 'storybook/internal/types';
 import type { ReactRenderer } from '@storybook/react';
 import { View } from './View';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
@@ -29,12 +28,7 @@ globalThis.FEATURES = {
   backgrounds: false,
 };
 
-// Note this is a workaround for setImmediate not being defined
-if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
-  require('setimmediate');
-}
-
-export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
+export const getProjectAnnotations = (view: View, annotations: ModuleExports[]) => async () =>
   composeConfigs<ReactRenderer>([
     {
       renderToCanvas: (context) => {
@@ -60,8 +54,8 @@ export function start({
   storyEntries,
   options,
 }: {
-  storyEntries: (NormalizedStoriesSpecifier & { req: any })[];
-  annotations: any[];
+  storyEntries: (NormalizedStoriesSpecifier & { req: unknown })[];
+  annotations: ModuleExports[];
   options?: ReactNativeOptions;
 }) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
@@ -159,8 +153,8 @@ export function start({
 
 export function updateView(
   viewInstance: View,
-  annotations: any[],
-  normalizedStories: (NormalizedStoriesSpecifier & { req: any })[],
+  annotations: ModuleExports[],
+  normalizedStories: (NormalizedStoriesSpecifier & { req: unknown })[],
   options?: ReactNativeOptions
 ) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);

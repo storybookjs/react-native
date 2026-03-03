@@ -37,7 +37,6 @@ export const seventeen: StoryObj<typeof Test${num}> = {}
 export const eighteen: StoryObj<typeof Test${num}> = {}
 export const nineteen: StoryObj<typeof Test${num}> = {}`;
 // ESM doesn't provide __dirname natively, so use import.meta.url workaround
-// @ts-expect-error - import meta is here but sigh...
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

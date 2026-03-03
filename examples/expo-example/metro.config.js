@@ -22,9 +22,16 @@ defaultConfig.resolver.nodeModulesPaths = [
 
 const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 const { withRozenite } = require('@rozenite/metro');
+
+const configPath =
+  process.env.EXPO_PUBLIC_NO_FACTORIES === 'true'
+    ? path.resolve(projectRoot, './.rnstorybook-nofactories')
+    : undefined;
+
 module.exports = withRozenite(
   withStorybook(defaultConfig, {
     enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+    ...(configPath && { configPath }),
     websockets: 'auto',
     experimental_mcp: true,
   }),

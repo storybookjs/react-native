@@ -5,7 +5,6 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { buildIndex } from '@storybook/react-native/node';
 
-// @ts-expect-error - import.meta.url is supported at runtime with tsx
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const configPath = path.resolve(__dirname, '../.rnstorybook');

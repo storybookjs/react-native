@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-native';
+import preview from '../../.rnstorybook/preview';
 import { useRef } from 'react';
 import { Text } from 'react-native';
 
@@ -7,14 +7,13 @@ const TestCase = () => {
   return <Text>{unstableRef}</Text>;
 };
 
-const meta = {
+const meta = preview.meta({
+  title: 'TestCase/Re-rendering',
   component: TestCase,
-} satisfies Meta<typeof TestCase>;
+});
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
-
-export const Basic: Story = {
+export const Basic = meta.story({
   args: {},
-};
+});
