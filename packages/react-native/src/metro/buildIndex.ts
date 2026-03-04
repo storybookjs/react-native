@@ -93,7 +93,11 @@ export async function buildIndex({ configPath }: { configPath: string }): Promis
 
     if (stories && stories.length > 0) {
       for (const story of stories) {
-        const id = toId(meta.title, story.name);
+        const id = story.id ?? toId(meta.title, story.name);
+
+        if (!id) {
+          throw new Error(`Failed to generate id for story ${story.name} in file ${fileName}`);
+        }
 
         index.entries[id] = {
           type: 'story',
