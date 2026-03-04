@@ -189,7 +189,7 @@ describe('channel server select-story-sync endpoint', () => {
     expect(response.json).toEqual({ success: true, storyId });
   });
 
-  test('returns timeout error when story is not rendered within 500ms', async () => {
+  test('returns success when story is not rendered within 500ms', async () => {
     const storyId = 'button--timeout';
     ws = await connectWebSocket(port);
 
@@ -201,12 +201,12 @@ describe('channel server select-story-sync endpoint', () => {
     });
     const duration = Date.now() - start;
 
-    expect(response.statusCode).toBe(504);
+    expect(response.statusCode).toBe(200);
     expect(response.json).toEqual(
       expect.objectContaining({
-        success: false,
+        success: true,
         storyId,
-        error: 'Story was not rendered within 500ms',
+        rendered: false,
       })
     );
     expect(duration).toBeGreaterThanOrEqual(450);

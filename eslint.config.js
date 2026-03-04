@@ -13,6 +13,7 @@ module.exports = defineConfig([
       'packages/react-native/scripts/mocks/**/*',
       '**/storybook.requires.ts',
       'examples/expo-example/.expo/**/*',
+      'examples/expo-example/.maestro/**/*',
       'docs/build/**/*',
     ],
   },

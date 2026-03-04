@@ -116,12 +116,14 @@ export function createSelectStorySyncEndpoint(wss: WebSocketServer) {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ success: true, storyId }));
     } catch {
-      res.writeHead(504, { 'Content-Type': 'application/json' });
+      // If no render event arrives we still return success, because the requested
+      // story may already be selected and therefore not emit storyRendered again.
+      res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(
         JSON.stringify({
-          success: false,
+          success: true,
           storyId,
-          error: `Story was not rendered within ${SELECT_STORY_SYNC_TIMEOUT_MS}ms`,
+          rendered: false,
         })
       );
     }
