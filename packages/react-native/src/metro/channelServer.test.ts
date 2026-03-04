@@ -209,6 +209,6 @@ describe('channel server select-story-sync endpoint', () => {
         rendered: false,
       })
     );
-    expect(duration).toBeGreaterThanOrEqual(450);
+    expect(duration).toBeGreaterThanOrEqual(950);
   });
 });

@@ -2,7 +2,7 @@ import type { ServerResponse } from 'node:http';
 import { WebSocket, type WebSocketServer } from 'ws';
 
 export const SELECT_STORY_SYNC_ROUTE = '/select-story-sync/';
-const SELECT_STORY_SYNC_TIMEOUT_MS = 500;
+const SELECT_STORY_SYNC_TIMEOUT_MS = 1000;
 
 interface PendingStorySelection {
   resolve: () => void;

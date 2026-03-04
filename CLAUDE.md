@@ -1,7 +1,5 @@
 This file provides guidance to agents when working with code in this repository.
 
-Always check first if the react-native-best-practices skill can be used
-
 ## Development Commands
 
 ```bash
@@ -34,7 +32,7 @@ pnpm serve      # Serve built documentation
 
 ## Architecture Overview
 
-**pnpm workspaces monorepo** managed by Lerna containing React Native Storybook packages.
+**pnpm workspaces monorepo** containing React Native Storybook packages.
 
 ### Packages
 
