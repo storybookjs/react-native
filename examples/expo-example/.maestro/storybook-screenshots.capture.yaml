@@ -1,5 +1,5 @@
 appId: host.exp.Exponent
-name: Take screenshots of all Storybook stories
+name: Capture baseline screenshots of all Storybook stories
 ---
 - stopApp: host.exp.Exponent
 - openLink: 'exp://127.0.0.1:8081/--/'
@@ -17,7 +17,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-controlexample--example'
-- assertScreenshot: 'ControlExamples-ControlExample---Example.png'
+- takeScreenshot: 'ControlExamples-ControlExample---Example'
 
 # Story ControlExamples-Array - Basic
 - runScript:
@@ -27,7 +27,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-array--basic'
-- assertScreenshot: 'ControlExamples-Array---Basic.png'
+- takeScreenshot: 'ControlExamples-Array---Basic'
 
 # Story ControlExamples-Boolean - Basic
 - runScript:
@@ -37,7 +37,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-boolean--basic'
-- assertScreenshot: 'ControlExamples-Boolean---Basic.png'
+- takeScreenshot: 'ControlExamples-Boolean---Basic'
 
 # Story ControlExamples-Boolean - On
 - runScript:
@@ -47,7 +47,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-boolean--on'
-- assertScreenshot: 'ControlExamples-Boolean---On.png'
+- takeScreenshot: 'ControlExamples-Boolean---On'
 
 # Story ControlExamples-Color - Color Example
 - runScript:
@@ -57,7 +57,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-color--color-example'
-- assertScreenshot: 'ControlExamples-Color---Color-Example.png'
+- takeScreenshot: 'ControlExamples-Color---Color-Example'
 
 # Story ControlExamples-Date - Basic
 - runScript:
@@ -67,7 +67,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-date--basic'
-- assertScreenshot: 'ControlExamples-Date---Basic.png'
+- takeScreenshot: 'ControlExamples-Date---Basic'
 
 # Story ControlExamples-Number - Basic
 - runScript:
@@ -77,7 +77,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-number--basic'
-- assertScreenshot: 'ControlExamples-Number---Basic.png'
+- takeScreenshot: 'ControlExamples-Number---Basic'
 
 # Story ControlExamples-Number - Range
 - runScript:
@@ -87,7 +87,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-number--range'
-- assertScreenshot: 'ControlExamples-Number---Range.png'
+- takeScreenshot: 'ControlExamples-Number---Range'
 
 # Story ControlExamples-Object - Basic
 - runScript:
@@ -97,7 +97,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-object--basic'
-- assertScreenshot: 'ControlExamples-Object---Basic.png'
+- takeScreenshot: 'ControlExamples-Object---Basic'
 
 # Story ControlExamples-Radio - Basic
 - runScript:
@@ -107,7 +107,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-radio--basic'
-- assertScreenshot: 'ControlExamples-Radio---Basic.png'
+- takeScreenshot: 'ControlExamples-Radio---Basic'
 
 # Story ControlExamples-Reproductions-SelectWithNumber - Basic
 - runScript:
@@ -117,7 +117,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-reproductions-selectwithnumber--basic'
-- assertScreenshot: 'ControlExamples-Reproductions-SelectWithNumber---Basic.png'
+- takeScreenshot: 'ControlExamples-Reproductions-SelectWithNumber---Basic'
 
 # Story ControlExamples-Select - Basic
 - runScript:
@@ -127,7 +127,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-select--basic'
-- assertScreenshot: 'ControlExamples-Select---Basic.png'
+- takeScreenshot: 'ControlExamples-Select---Basic'
 
 # Story ControlExamples-Select - With Labels
 - runScript:
@@ -137,7 +137,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-select--with-labels'
-- assertScreenshot: 'ControlExamples-Select---With-Labels.png'
+- takeScreenshot: 'ControlExamples-Select---With-Labels'
 
 # Story ControlExamples-Select - With Mapping
 - runScript:
@@ -147,7 +147,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-select--with-mapping'
-- assertScreenshot: 'ControlExamples-Select---With-Mapping.png'
+- takeScreenshot: 'ControlExamples-Select---With-Mapping'
 
 # Story ControlExamples-Text - Basic
 - runScript:
@@ -157,7 +157,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-text--basic'
-- assertScreenshot: 'ControlExamples-Text---Basic.png'
+- takeScreenshot: 'ControlExamples-Text---Basic'
 
 # Story ControlExamples-WebCompatibility - Defined
 - runScript:
@@ -167,7 +167,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-webcompatibility--defined'
-- assertScreenshot: 'ControlExamples-WebCompatibility---Defined.png'
+- takeScreenshot: 'ControlExamples-WebCompatibility---Defined'
 
 # Story ControlExamples-WebCompatibility - Undefined
 - runScript:
@@ -177,7 +177,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'controlexamples-webcompatibility--undefined'
-- assertScreenshot: 'ControlExamples-WebCompatibility---Undefined.png'
+- takeScreenshot: 'ControlExamples-WebCompatibility---Undefined'
 
 # Story InteractionExample - Scrolling
 - runScript:
@@ -187,7 +187,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'interactionexample--scrolling'
-- assertScreenshot: 'InteractionExample---Scrolling.png'
+- takeScreenshot: 'InteractionExample---Scrolling'
 
 # Story InteractionExample - Static
 - runScript:
@@ -197,7 +197,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'interactionexample--static'
-- assertScreenshot: 'InteractionExample---Static.png'
+- takeScreenshot: 'InteractionExample---Static'
 
 # Story InteractionExample - Touchable
 - runScript:
@@ -207,7 +207,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'interactionexample--touchable'
-- assertScreenshot: 'InteractionExample---Touchable.png'
+- takeScreenshot: 'InteractionExample---Touchable'
 
 # Story DeepControls - Basic
 - runScript:
@@ -217,7 +217,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'deepcontrols--basic'
-- assertScreenshot: 'DeepControls---Basic.png'
+- takeScreenshot: 'DeepControls---Basic'
 
 # Story ActionExample-Actions - Basic
 - runScript:
@@ -227,7 +227,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'actionexample-actions--basic'
-- assertScreenshot: 'ActionExample-Actions---Basic.png'
+- takeScreenshot: 'ActionExample-Actions---Basic'
 
 # Story BackgroundExample-BackgroundCsf - Basic
 - runScript:
@@ -237,7 +237,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'backgroundexample-backgroundcsf--basic'
-- assertScreenshot: 'BackgroundExample-BackgroundCsf---Basic.png'
+- takeScreenshot: 'BackgroundExample-BackgroundCsf---Basic'
 
 # Story BackgroundExample-ThemedCard - Dark Locked
 - runScript:
@@ -247,7 +247,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'backgroundexample-themedcard--dark-locked'
-- assertScreenshot: 'BackgroundExample-ThemedCard---Dark-Locked.png'
+- takeScreenshot: 'BackgroundExample-ThemedCard---Dark-Locked'
 
 # Story BackgroundExample-ThemedCard - Default
 - runScript:
@@ -257,7 +257,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'backgroundexample-themedcard--default'
-- assertScreenshot: 'BackgroundExample-ThemedCard---Default.png'
+- takeScreenshot: 'BackgroundExample-ThemedCard---Default'
 
 # Story HiddenControls - Basic
 - runScript:
@@ -267,7 +267,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'hiddencontrols--basic'
-- assertScreenshot: 'HiddenControls---Basic.png'
+- takeScreenshot: 'HiddenControls---Basic'
 
 # Story InputExample-TextInput - Basic
 - runScript:
@@ -277,7 +277,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'inputexample-textinput--basic'
-- assertScreenshot: 'InputExample-TextInput---Basic.png'
+- takeScreenshot: 'InputExample-TextInput---Basic'
 
 # Story LoginDocsExample-Button - Disabled
 - runScript:
@@ -287,7 +287,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-button--disabled'
-- assertScreenshot: 'LoginDocsExample-Button---Disabled.png'
+- takeScreenshot: 'LoginDocsExample-Button---Disabled'
 
 # Story LoginDocsExample-Button - Loading
 - runScript:
@@ -297,7 +297,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-button--loading'
-- assertScreenshot: 'LoginDocsExample-Button---Loading.png'
+- takeScreenshot: 'LoginDocsExample-Button---Loading'
 
 # Story LoginDocsExample-Button - Long Title
 - runScript:
@@ -307,7 +307,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-button--long-title'
-- assertScreenshot: 'LoginDocsExample-Button---Long-Title.png'
+- takeScreenshot: 'LoginDocsExample-Button---Long-Title'
 
 # Story LoginDocsExample-Button - Primary
 - runScript:
@@ -317,7 +317,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-button--primary'
-- assertScreenshot: 'LoginDocsExample-Button---Primary.png'
+- takeScreenshot: 'LoginDocsExample-Button---Primary'
 
 # Story LoginDocsExample-Button - Secondary
 - runScript:
@@ -327,7 +327,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-button--secondary'
-- assertScreenshot: 'LoginDocsExample-Button---Secondary.png'
+- takeScreenshot: 'LoginDocsExample-Button---Secondary'
 
 # Story LoginDocsExample-Button - Secondary Disabled
 - runScript:
@@ -337,7 +337,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-button--secondary-disabled'
-- assertScreenshot: 'LoginDocsExample-Button---Secondary-Disabled.png'
+- takeScreenshot: 'LoginDocsExample-Button---Secondary-Disabled'
 
 # Story LoginDocsExample-Button - Secondary Loading
 - runScript:
@@ -347,7 +347,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-button--secondary-loading'
-- assertScreenshot: 'LoginDocsExample-Button---Secondary-Loading.png'
+- takeScreenshot: 'LoginDocsExample-Button---Secondary-Loading'
 
 # Story LoginDocsExample-LoginForm - Default
 - runScript:
@@ -357,7 +357,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-loginform--default'
-- assertScreenshot: 'LoginDocsExample-LoginForm---Default.png'
+- takeScreenshot: 'LoginDocsExample-LoginForm---Default'
 
 # Story LoginDocsExample-LoginForm - Email Error Only
 - runScript:
@@ -367,7 +367,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-loginform--email-error-only'
-- assertScreenshot: 'LoginDocsExample-LoginForm---Email-Error-Only.png'
+- takeScreenshot: 'LoginDocsExample-LoginForm---Email-Error-Only'
 
 # Story LoginDocsExample-LoginForm - Loading
 - runScript:
@@ -377,7 +377,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-loginform--loading'
-- assertScreenshot: 'LoginDocsExample-LoginForm---Loading.png'
+- takeScreenshot: 'LoginDocsExample-LoginForm---Loading'
 
 # Story LoginDocsExample-LoginForm - Long Errors
 - runScript:
@@ -387,7 +387,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-loginform--long-errors'
-- assertScreenshot: 'LoginDocsExample-LoginForm---Long-Errors.png'
+- takeScreenshot: 'LoginDocsExample-LoginForm---Long-Errors'
 
 # Story LoginDocsExample-LoginForm - Password Error Only
 - runScript:
@@ -397,7 +397,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-loginform--password-error-only'
-- assertScreenshot: 'LoginDocsExample-LoginForm---Password-Error-Only.png'
+- takeScreenshot: 'LoginDocsExample-LoginForm---Password-Error-Only'
 
 # Story LoginDocsExample-LoginForm - With Errors
 - runScript:
@@ -407,7 +407,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-loginform--with-errors'
-- assertScreenshot: 'LoginDocsExample-LoginForm---With-Errors.png'
+- takeScreenshot: 'LoginDocsExample-LoginForm---With-Errors'
 
 # Story LoginDocsExample-TextInput - Default
 - runScript:
@@ -417,7 +417,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-textinput--default'
-- assertScreenshot: 'LoginDocsExample-TextInput---Default.png'
+- takeScreenshot: 'LoginDocsExample-TextInput---Default'
 
 # Story LoginDocsExample-TextInput - Empty State
 - runScript:
@@ -427,7 +427,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-textinput--empty-state'
-- assertScreenshot: 'LoginDocsExample-TextInput---Empty-State.png'
+- takeScreenshot: 'LoginDocsExample-TextInput---Empty-State'
 
 # Story LoginDocsExample-TextInput - Filled
 - runScript:
@@ -437,7 +437,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-textinput--filled'
-- assertScreenshot: 'LoginDocsExample-TextInput---Filled.png'
+- takeScreenshot: 'LoginDocsExample-TextInput---Filled'
 
 # Story LoginDocsExample-TextInput - Long Error Message
 - runScript:
@@ -447,7 +447,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-textinput--long-error-message'
-- assertScreenshot: 'LoginDocsExample-TextInput---Long-Error-Message.png'
+- takeScreenshot: 'LoginDocsExample-TextInput---Long-Error-Message'
 
 # Story LoginDocsExample-TextInput - Long Label
 - runScript:
@@ -457,7 +457,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-textinput--long-label'
-- assertScreenshot: 'LoginDocsExample-TextInput---Long-Label.png'
+- takeScreenshot: 'LoginDocsExample-TextInput---Long-Label'
 
 # Story LoginDocsExample-TextInput - Password
 - runScript:
@@ -467,7 +467,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-textinput--password'
-- assertScreenshot: 'LoginDocsExample-TextInput---Password.png'
+- takeScreenshot: 'LoginDocsExample-TextInput---Password'
 
 # Story LoginDocsExample-TextInput - Playground
 - runScript:
@@ -477,7 +477,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-textinput--playground'
-- assertScreenshot: 'LoginDocsExample-TextInput---Playground.png'
+- takeScreenshot: 'LoginDocsExample-TextInput---Playground'
 
 # Story LoginDocsExample-TextInput - With Error
 - runScript:
@@ -487,7 +487,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-textinput--with-error'
-- assertScreenshot: 'LoginDocsExample-TextInput---With-Error.png'
+- takeScreenshot: 'LoginDocsExample-TextInput---With-Error'
 
 # Story LoginDocsExample-TextInput - With Label
 - runScript:
@@ -497,7 +497,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'logindocsexample-textinput--with-label'
-- assertScreenshot: 'LoginDocsExample-TextInput---With-Label.png'
+- takeScreenshot: 'LoginDocsExample-TextInput---With-Label'
 
 # Story NestingExample-ChatMessage - Message First
 - runScript:
@@ -507,7 +507,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'nestingexample-chatmessage--message-first'
-- assertScreenshot: 'NestingExample-ChatMessage---Message-First.png'
+- takeScreenshot: 'NestingExample-ChatMessage---Message-First'
 
 # Story NestingExample-ChatMessage - Message Second
 - runScript:
@@ -517,7 +517,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'nestingexample-chatmessage--message-second'
-- assertScreenshot: 'NestingExample-ChatMessage---Message-Second.png'
+- takeScreenshot: 'NestingExample-ChatMessage---Message-Second'
 
 # Story NestingExample-Message-bubble-a very long name for a title that just keeps going and going - First
 - runScript:
@@ -527,7 +527,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'nestingexample-message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going--first'
-- assertScreenshot: 'NestingExample-Message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going---First.png'
+- takeScreenshot: 'NestingExample-Message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going---First'
 
 # Story NestingExample-Message-bubble-a very long name for a title that just keeps going and going - Second Story
 - runScript:
@@ -537,7 +537,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'nestingexample-message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going--second'
-- assertScreenshot: 'NestingExample-Message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going---Second-Story.png'
+- takeScreenshot: 'NestingExample-Message-bubble-a-very-long-name-for-a-title-that-just-keeps-going-and-going---Second-Story'
 
 # Story NestingExample-Message-bubble - First
 - runScript:
@@ -547,7 +547,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'nestingexample-message-bubble--first'
-- assertScreenshot: 'NestingExample-Message-bubble---First.png'
+- takeScreenshot: 'NestingExample-Message-bubble---First'
 
 # Story NestingExample-Message-bubble - Second Story
 - runScript:
@@ -557,7 +557,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'nestingexample-message-bubble--second'
-- assertScreenshot: 'NestingExample-Message-bubble---Second-Story.png'
+- takeScreenshot: 'NestingExample-Message-bubble---Second-Story'
 
 # Story NestingExample-Message-Reactions - Message One
 - runScript:
@@ -567,7 +567,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'nestingexample-message-reactions--message-one'
-- assertScreenshot: 'NestingExample-Message-Reactions---Message-One.png'
+- takeScreenshot: 'NestingExample-Message-Reactions---Message-One'
 
 # Story NestingExample-Message-Reactions - Message Two
 - runScript:
@@ -577,7 +577,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'nestingexample-message-reactions--message-two'
-- assertScreenshot: 'NestingExample-Message-Reactions---Message-Two.png'
+- takeScreenshot: 'NestingExample-Message-Reactions---Message-Two'
 
 # Story NestingExample-MessageInput - Basic
 - runScript:
@@ -587,7 +587,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'nestingexample-messageinput--basic'
-- assertScreenshot: 'NestingExample-MessageInput---Basic.png'
+- takeScreenshot: 'NestingExample-MessageInput---Basic'
 
 # Story NotesExample - Notes Example
 - runScript:
@@ -597,7 +597,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'notesexample--notes-example'
-- assertScreenshot: 'NotesExample---Notes-Example.png'
+- takeScreenshot: 'NotesExample---Notes-Example'
 
 # Story react-native-ui-src-Layout - Basic
 - runScript:
@@ -607,7 +607,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-src-layout--basic'
-- assertScreenshot: 'react-native-ui-src-Layout---Basic.png'
+- takeScreenshot: 'react-native-ui-src-Layout---Basic'
 
 # Story react-native-ui-src-Layout - Overflow Addons Example
 - runScript:
@@ -617,7 +617,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-src-layout--overflow-addons-example'
-- assertScreenshot: 'react-native-ui-src-Layout---Overflow-Addons-Example.png'
+- takeScreenshot: 'react-native-ui-src-Layout---Overflow-Addons-Example'
 
 # Story react-native-ui-src-Layout - Overflow Sidebar Example
 - runScript:
@@ -627,7 +627,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-src-layout--overflow-sidebar-example'
-- assertScreenshot: 'react-native-ui-src-Layout---Overflow-Sidebar-Example.png'
+- takeScreenshot: 'react-native-ui-src-Layout---Overflow-Sidebar-Example'
 
 # Story react-native-ui-UI-SearchResults - Default
 - runScript:
@@ -637,7 +637,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-searchresults--default'
-- assertScreenshot: 'react-native-ui-UI-SearchResults---Default.png'
+- takeScreenshot: 'react-native-ui-UI-SearchResults---Default'
 
 # Story react-native-ui-UI-Sidebar-Explorer - Simple
 - runScript:
@@ -647,7 +647,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-explorer--simple'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Explorer---Simple.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Explorer---Simple'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Empty
 - runScript:
@@ -657,7 +657,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--empty'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Empty.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Empty'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Index Error
 - runScript:
@@ -667,7 +667,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--index-error'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Index-Error.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Index-Error'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Loading
 - runScript:
@@ -677,7 +677,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--loading'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Loading.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Loading'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Loading With Ref Error
 - runScript:
@@ -687,7 +687,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--loading-with-ref-error'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Loading-With-Ref-Error.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Loading-With-Ref-Error'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Loading With Refs
 - runScript:
@@ -697,7 +697,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--loading-with-refs'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Loading-With-Refs.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Loading-With-Refs'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Scrolled
 - runScript:
@@ -707,7 +707,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--scrolled'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Scrolled.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Scrolled'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Searching
 - runScript:
@@ -717,7 +717,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--searching'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Searching.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Searching'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Simple
 - runScript:
@@ -727,7 +727,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--simple'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Simple.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Simple'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Statuses Collapsed
 - runScript:
@@ -737,7 +737,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--statuses-collapsed'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Statuses-Collapsed.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Statuses-Collapsed'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - Statuses Open
 - runScript:
@@ -747,7 +747,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--statuses-open'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Statuses-Open.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---Statuses-Open'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - With Ref Empty
 - runScript:
@@ -757,7 +757,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--with-ref-empty'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---With-Ref-Empty.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---With-Ref-Empty'
 
 # Story react-native-ui-UI-Sidebar-Sidebar - With Refs
 - runScript:
@@ -767,7 +767,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-sidebar--with-refs'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---With-Refs.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Sidebar---With-Refs'
 
 # Story react-native-ui-UI-Sidebar-Tree - Dark
 - runScript:
@@ -777,7 +777,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-tree--dark'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Tree---Dark.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Tree---Dark'
 
 # Story react-native-ui-UI-Sidebar-Tree - Full
 - runScript:
@@ -787,7 +787,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-tree--full'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Tree---Full.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Tree---Full'
 
 # Story react-native-ui-UI-Sidebar-Tree - Single Story Components
 - runScript:
@@ -797,7 +797,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-tree--single-story-components'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Tree---Single-Story-Components.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Tree---Single-Story-Components'
 
 # Story react-native-ui-UI-Sidebar-Tree - Story with a storyName
 - runScript:
@@ -807,7 +807,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-tree--with-story-names'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-Tree---Story-with-a-storyName.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-Tree---Story-with-a-storyName'
 
 # Story react-native-ui-UI-Sidebar-TreeNode - Expandable
 - runScript:
@@ -817,7 +817,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-treenode--expandable'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Expandable.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Expandable'
 
 # Story react-native-ui-UI-Sidebar-TreeNode - Expandable Long Name
 - runScript:
@@ -827,7 +827,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-treenode--expandable-long-name'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Expandable-Long-Name.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Expandable-Long-Name'
 
 # Story react-native-ui-UI-Sidebar-TreeNode - Nested
 - runScript:
@@ -837,7 +837,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-treenode--nested'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Nested.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Nested'
 
 # Story react-native-ui-UI-Sidebar-TreeNode - Selection
 - runScript:
@@ -847,7 +847,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-treenode--selection'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Selection.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Selection'
 
 # Story react-native-ui-UI-Sidebar-TreeNode - Selection With Long Name
 - runScript:
@@ -857,7 +857,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-treenode--selection-with-long-name'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Selection-With-Long-Name.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Selection-With-Long-Name'
 
 # Story react-native-ui-UI-Sidebar-TreeNode - Types
 - runScript:
@@ -867,7 +867,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-sidebar-treenode--types'
-- assertScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Types.png'
+- takeScreenshot: 'react-native-ui-UI-Sidebar-TreeNode---Types'
 
 # Story react-native-ui-UI-StorybookLogo - Image Element Logo
 - runScript:
@@ -877,7 +877,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-storybooklogo--image-element-logo'
-- assertScreenshot: 'react-native-ui-UI-StorybookLogo---Image-Element-Logo.png'
+- takeScreenshot: 'react-native-ui-UI-StorybookLogo---Image-Element-Logo'
 
 # Story react-native-ui-UI-StorybookLogo - Image Logo
 - runScript:
@@ -887,7 +887,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-storybooklogo--image-logo'
-- assertScreenshot: 'react-native-ui-UI-StorybookLogo---Image-Logo.png'
+- takeScreenshot: 'react-native-ui-UI-StorybookLogo---Image-Logo'
 
 # Story react-native-ui-UI-StorybookLogo - Image Source Logo
 - runScript:
@@ -897,7 +897,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-storybooklogo--image-source-logo'
-- assertScreenshot: 'react-native-ui-UI-StorybookLogo---Image-Source-Logo.png'
+- takeScreenshot: 'react-native-ui-UI-StorybookLogo---Image-Source-Logo'
 
 # Story react-native-ui-UI-StorybookLogo - Image Url Logo
 - runScript:
@@ -907,7 +907,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-storybooklogo--image-url-logo'
-- assertScreenshot: 'react-native-ui-UI-StorybookLogo---Image-Url-Logo.png'
+- takeScreenshot: 'react-native-ui-UI-StorybookLogo---Image-Url-Logo'
 
 # Story react-native-ui-UI-StorybookLogo - Title Logo
 - runScript:
@@ -917,7 +917,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'react-native-ui-ui-storybooklogo--title-logo'
-- assertScreenshot: 'react-native-ui-UI-StorybookLogo---Title-Logo.png'
+- takeScreenshot: 'react-native-ui-UI-StorybookLogo---Title-Logo'
 
 # Story SafeAreaExample-SafeAreaInside - Basic
 - runScript:
@@ -927,7 +927,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'safeareaexample-safeareainside--basic'
-- assertScreenshot: 'SafeAreaExample-SafeAreaInside---Basic.png'
+- takeScreenshot: 'SafeAreaExample-SafeAreaInside---Basic'
 
 # Story SafeAreaExample-SafeAreaInside - List Basic
 - runScript:
@@ -937,7 +937,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'safeareaexample-safeareainside--list-basic'
-- assertScreenshot: 'SafeAreaExample-SafeAreaInside---List-Basic.png'
+- takeScreenshot: 'SafeAreaExample-SafeAreaInside---List-Basic'
 
 # Story SafeAreaExample-SafeAreaOutside - Basic
 - runScript:
@@ -947,7 +947,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'safeareaexample-safeareaoutside--basic'
-- assertScreenshot: 'SafeAreaExample-SafeAreaOutside---Basic.png'
+- takeScreenshot: 'SafeAreaExample-SafeAreaOutside---Basic'
 
 # Story SafeAreaExample-SafeAreaOutside - List Basic
 - runScript:
@@ -957,7 +957,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'safeareaexample-safeareaoutside--list-basic'
-- assertScreenshot: 'SafeAreaExample-SafeAreaOutside---List-Basic.png'
+- takeScreenshot: 'SafeAreaExample-SafeAreaOutside---List-Basic'
 
 # Story SafeAreaExample-UsableArea - No Safe Area
 - runScript:
@@ -967,7 +967,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'safeareaexample-usablearea--no-safe-area'
-- assertScreenshot: 'SafeAreaExample-UsableArea---No-Safe-Area.png'
+- takeScreenshot: 'SafeAreaExample-UsableArea---No-Safe-Area'
 
 # Story SafeAreaExample-UsableArea - Safe Area
 - runScript:
@@ -977,7 +977,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'safeareaexample-usablearea--safe-area'
-- assertScreenshot: 'SafeAreaExample-UsableArea---Safe-Area.png'
+- takeScreenshot: 'SafeAreaExample-UsableArea---Safe-Area'
 
 # Story StoryName - CSF 2 Example
 - runScript:
@@ -987,7 +987,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'storyname--csf-2-example'
-- assertScreenshot: 'StoryName---CSF-2-Example.png'
+- takeScreenshot: 'StoryName---CSF-2-Example'
 
 # Story StoryName - csf2 with name
 - runScript:
@@ -997,7 +997,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'storyname--csf-2-example-with-name'
-- assertScreenshot: 'StoryName---csf2-with-name.png'
+- takeScreenshot: 'StoryName---csf2-with-name'
 
 # Story StoryName - With Name
 - runScript:
@@ -1007,7 +1007,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'storyname--with-name'
-- assertScreenshot: 'StoryName---With-Name.png'
+- takeScreenshot: 'StoryName---With-Name'
 
 # Story StoryName - With No Name
 - runScript:
@@ -1017,7 +1017,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'storyname--with-no-name'
-- assertScreenshot: 'StoryName---With-No-Name.png'
+- takeScreenshot: 'StoryName---With-No-Name'
 
 # Story StoryName - With Story Name
 - runScript:
@@ -1027,7 +1027,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'storyname--with-story-name'
-- assertScreenshot: 'StoryName---With-Story-Name.png'
+- takeScreenshot: 'StoryName---With-Story-Name'
 
 # Story TestCase - Basic
 - runScript:
@@ -1037,7 +1037,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'testcase--basic'
-- assertScreenshot: 'TestCase---Basic.png'
+- takeScreenshot: 'TestCase---Basic'
 
 # Story TestCase2 - Basic
 - runScript:
@@ -1047,7 +1047,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'testcase2--basic'
-- assertScreenshot: 'TestCase2---Basic.png'
+- takeScreenshot: 'TestCase2---Basic'
 
 # Story UserProfileCard - Default
 - runScript:
@@ -1057,7 +1057,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'userprofilecard--default'
-- assertScreenshot: 'UserProfileCard---Default.png'
+- takeScreenshot: 'UserProfileCard---Default'
 
 # Story UserProfileCard - Following
 - runScript:
@@ -1067,7 +1067,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'userprofilecard--following'
-- assertScreenshot: 'UserProfileCard---Following.png'
+- takeScreenshot: 'UserProfileCard---Following'
 
 # Story UserProfileCard - Long Content
 - runScript:
@@ -1077,7 +1077,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'userprofilecard--long-content'
-- assertScreenshot: 'UserProfileCard---Long-Content.png'
+- takeScreenshot: 'UserProfileCard---Long-Content'
 
 # Story UserProfileCard - Minimal Card
 - runScript:
@@ -1087,7 +1087,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'userprofilecard--minimal-card'
-- assertScreenshot: 'UserProfileCard---Minimal-Card.png'
+- takeScreenshot: 'UserProfileCard---Minimal-Card'
 
 # Story UserProfileCard - Online User
 - runScript:
@@ -1097,7 +1097,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'userprofilecard--online-user'
-- assertScreenshot: 'UserProfileCard---Online-User.png'
+- takeScreenshot: 'UserProfileCard---Online-User'
 
 # Story UserProfileCard - Popular User
 - runScript:
@@ -1107,7 +1107,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'userprofilecard--popular-user'
-- assertScreenshot: 'UserProfileCard---Popular-User.png'
+- takeScreenshot: 'UserProfileCard---Popular-User'
 
 # Story UserProfileCard - Verified User
 - runScript:
@@ -1117,7 +1117,7 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'userprofilecard--verified-user'
-- assertScreenshot: 'UserProfileCard---Verified-User.png'
+- takeScreenshot: 'UserProfileCard---Verified-User'
 
 # Story UserProfileCard - With Avatar
 - runScript:
@@ -1127,4 +1127,4 @@ name: Take screenshots of all Storybook stories
 - waitForAnimationToEnd
 - assertVisible:
     id: 'userprofilecard--with-avatar'
-- assertScreenshot: 'UserProfileCard---With-Avatar.png'
+- takeScreenshot: 'UserProfileCard---With-Avatar'
