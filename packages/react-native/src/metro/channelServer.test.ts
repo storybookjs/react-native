@@ -189,7 +189,28 @@ describe('channel server select-story-sync endpoint', () => {
     expect(response.json).toEqual({ success: true, storyId });
   });
 
-  test('returns success when story is not rendered within 500ms', async () => {
+  test('returns success after 500ms when selecting the last rendered story', async () => {
+    const storyId = 'button--already-rendered';
+    ws = await connectWebSocket(port);
+
+    ws.send(JSON.stringify({ type: 'storyRendered', args: [storyId] }));
+    await delay(20);
+
+    const start = Date.now();
+    const response = await httpRequest({
+      port,
+      method: 'POST',
+      path: `/select-story-sync/${storyId}`,
+    });
+    const duration = Date.now() - start;
+
+    expect(response.statusCode).toBe(200);
+    expect(response.json).toEqual({ success: true, storyId });
+    expect(duration).toBeGreaterThanOrEqual(450);
+    expect(duration).toBeLessThan(950);
+  });
+
+  test('returns error when story is not rendered within 1000ms', async () => {
     const storyId = 'button--timeout';
     ws = await connectWebSocket(port);
 
@@ -201,12 +222,12 @@ describe('channel server select-story-sync endpoint', () => {
     });
     const duration = Date.now() - start;
 
-    expect(response.statusCode).toBe(200);
+    expect(response.statusCode).toBe(408);
     expect(response.json).toEqual(
       expect.objectContaining({
-        success: true,
+        success: false,
         storyId,
-        rendered: false,
+        error: `Story "${storyId}" did not render in time`,
       })
     );
     expect(duration).toBeGreaterThanOrEqual(950);

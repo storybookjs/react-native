@@ -22,7 +22,7 @@ console.log('   Endpoints:');
 console.log('   - GET  /index.json   - Get story index');
 console.log('   - POST /send-event   - Send event to WebSocket clients');
 console.log(
-  '   - POST /select-story-sync/{story-id} - Set story and wait for render (500ms timeout)'
+  '   - POST /select-story-sync/{story-id} - Set story and wait for render (500ms fallback for last render, 1000ms hard timeout)'
 );
 console.log('   - WS   /             - WebSocket connection');
 console.log('\nPress Ctrl+C to stop');

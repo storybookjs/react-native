@@ -3,10 +3,17 @@ import { WebSocket, type WebSocketServer } from 'ws';
 
 export const SELECT_STORY_SYNC_ROUTE = '/select-story-sync/';
 const SELECT_STORY_SYNC_TIMEOUT_MS = 1000;
+const LAST_RENDERED_STORY_TIMEOUT_MS = 500;
 
 interface PendingStorySelection {
   resolve: () => void;
   timeout: ReturnType<typeof setTimeout>;
+  settled: boolean;
+}
+
+interface StoryRenderWait {
+  promise: Promise<void>;
+  cancel: () => void;
 }
 
 function getRenderedStoryId(event: unknown): string | null {
@@ -51,35 +58,65 @@ function parseStoryIdFromPath(pathname: string): string | null {
 
 export function createSelectStorySyncEndpoint(wss: WebSocketServer) {
   const pendingStorySelections = new Map<string, Set<PendingStorySelection>>();
+  let lastRenderedStoryId: string | null = null;
 
-  const waitForStoryRender = (storyId: string, timeoutMs: number): Promise<void> =>
-    new Promise((resolve, reject) => {
+  const waitForStoryRender = (storyId: string, timeoutMs: number): StoryRenderWait => {
+    let cancelSelection = () => {};
+    let resolveWait = () => {};
+
+    const promise = new Promise<void>((resolve, reject) => {
+      resolveWait = resolve;
+
       let selections = pendingStorySelections.get(storyId);
       if (!selections) {
         selections = new Set<PendingStorySelection>();
         pendingStorySelections.set(storyId, selections);
       }
 
+      const cleanup = () => {
+        clearTimeout(selection.timeout);
+        selections.delete(selection);
+        if (selections.size === 0) {
+          pendingStorySelections.delete(storyId);
+        }
+      };
+
       const selection: PendingStorySelection = {
         resolve: () => {
-          clearTimeout(selection.timeout);
-          selections.delete(selection);
-          if (selections.size === 0) {
-            pendingStorySelections.delete(storyId);
+          if (selection.settled) {
+            return;
           }
+          selection.settled = true;
+          cleanup();
           resolve();
         },
         timeout: setTimeout(() => {
-          selections.delete(selection);
-          if (selections.size === 0) {
-            pendingStorySelections.delete(storyId);
+          if (selection.settled) {
+            return;
           }
+          selection.settled = true;
+          cleanup();
           reject(new Error(`Story "${storyId}" did not render in time`));
         }, timeoutMs),
+        settled: false,
+      };
+
+      cancelSelection = () => {
+        if (selection.settled) {
+          return;
+        }
+        selection.settled = true;
+        cleanup();
+        resolveWait();
       };
 
       selections.add(selection);
     });
+    return {
+      promise,
+      cancel: cancelSelection,
+    };
+  };
 
   const resolveStorySelection = (storyId: string) => {
     const selections = pendingStorySelections.get(storyId);
@@ -112,18 +149,30 @@ export function createSelectStorySyncEndpoint(wss: WebSocketServer) {
     });
 
     try {
-      await waitForRender;
+      if (lastRenderedStoryId === storyId) {
+        const raceResult = await Promise.race([
+          waitForRender.promise.then(() => 'rendered' as const),
+          new Promise<'alreadyRendered'>((resolve) => {
+            setTimeout(() => resolve('alreadyRendered'), LAST_RENDERED_STORY_TIMEOUT_MS);
+          }),
+        ]);
+
+        if (raceResult === 'alreadyRendered') {
+          waitForRender.cancel();
+        }
+      } else {
+        await waitForRender.promise;
+      }
+
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ success: true, storyId }));
-    } catch {
-      // If no render event arrives we still return success, because the requested
-      // story may already be selected and therefore not emit storyRendered again.
-      res.writeHead(200, { 'Content-Type': 'application/json' });
+    } catch (error) {
+      res.writeHead(408, { 'Content-Type': 'application/json' });
       res.end(
         JSON.stringify({
-          success: true,
+          success: false,
           storyId,
-          rendered: false,
+          error: error instanceof Error ? error.message : String(error),
         })
       );
     }
@@ -132,6 +181,7 @@ export function createSelectStorySyncEndpoint(wss: WebSocketServer) {
   const onSocketMessage = (event: unknown) => {
     const renderedStoryId = getRenderedStoryId(event);
     if (renderedStoryId) {
+      lastRenderedStoryId = renderedStoryId;
       resolveStorySelection(renderedStoryId);
     }
   };
