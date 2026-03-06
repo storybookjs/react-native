@@ -23,7 +23,8 @@
     "test:screenshots": "screenshot-stories --ignore-regions '376,2512,428,24' --html-report",
     "eas-build-post-install": "cd ../.. && pnpm build",
     "update-expo": "npx expo@latest install expo@latest --fix",
-    "e2e": "maestro test .maestro/storybook-screenshots.capture.yaml --test-output-dir .maestro/screenshots"
+    "e2e:baseline": "maestro test .maestro/storybook-screenshots.capture.yaml --test-output-dir .maestro/output",
+    "e2e": "maestro test .maestro/storybook-screenshots.yaml --test-output-dir .maestro/output"
   },
   "dependencies": {
     "@expo/metro-runtime": "~55.0.6",
