@@ -151,7 +151,8 @@ export function createSelectStorySyncEndpoint(wss: WebSocketServer) {
     try {
       const hasConnectedClientWithRenderedStory = [...wss.clients].some(
         (client) =>
-          client.readyState === WebSocket.OPEN && lastRenderedStoryIdByClient.get(client) === storyId
+          client.readyState === WebSocket.OPEN &&
+          lastRenderedStoryIdByClient.get(client) === storyId
       );
 
       if (hasConnectedClientWithRenderedStory) {
