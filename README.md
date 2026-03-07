@@ -575,6 +575,7 @@ This repo includes agent skills for setting up and working with Storybook for Re
 
 - **writing-react-native-storybook-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
 - **setup-react-native-storybook** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, React Native CLI, and Re.Pack setups
+- **upgrading-react-native-storybook** - Guides Claude through incremental React Native Storybook upgrades, split by supported migration paths from 5.3.x through 10.x, including converting remaining `storiesOf` stories to CSF during the 6.5.x to 7.6.x migration
 
 ### Installation
 
