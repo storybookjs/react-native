@@ -38,7 +38,13 @@ const SegmentedControl = ({ items, selectedIndex, onChange }: SegmentedControlPr
   );
 };
 
-const StorySurface = ({ title, description, items, selectedIndex, onChange }: StorySurfaceProps) => {
+const StorySurface = ({
+  title,
+  description,
+  items,
+  selectedIndex,
+  onChange,
+}: StorySurfaceProps) => {
   return (
     <View style={styles.surface}>
       <Text style={styles.title}>{title}</Text>
@@ -109,13 +115,7 @@ export const LocalStateOnly: Story = {
       setSelectedIndex(props.selectedIndex);
     }, [props.selectedIndex]);
 
-    return (
-      <StorySurface
-        {...props}
-        selectedIndex={selectedIndex}
-        onChange={setSelectedIndex}
-      />
-    );
+    return <StorySurface {...props} selectedIndex={selectedIndex} onChange={setSelectedIndex} />;
   },
 };
 
@@ -127,12 +127,7 @@ export const UseArgsOnly: Story = {
   render: function UseArgsOnlyRender(props) {
     const [, updateArgs] = useArgs<SegmentedControlProps>();
 
-    return (
-      <StorySurface
-        {...props}
-        onChange={(index) => updateArgs({ selectedIndex: index })}
-      />
-    );
+    return <StorySurface {...props} onChange={(index) => updateArgs({ selectedIndex: index })} />;
   },
 };
 
