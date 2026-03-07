@@ -1,6 +1,9 @@
 /** @jest-environment node */
 
-import { request, createServer, type Server } from 'node:http';
+import { readFileSync } from 'node:fs';
+import { request as httpRequestImpl, createServer, type Server as HttpServer } from 'node:http';
+import { request as httpsRequestImpl, type Server as HttpsServer } from 'node:https';
+import * as path from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 import { WebSocket, type WebSocketServer } from 'ws';
 
@@ -14,6 +17,9 @@ interface JsonResponse {
   statusCode: number;
   json: Record<string, unknown>;
 }
+
+const TEST_TLS_KEY = readFileSync(path.join(__dirname, '__fixtures__/test-tls-key.pem'));
+const TEST_TLS_CERT = readFileSync(path.join(__dirname, '__fixtures__/test-tls-cert.pem'));
 
 async function getFreePort(): Promise<number> {
   const server = createServer();
@@ -37,40 +43,60 @@ async function getFreePort(): Promise<number> {
   });
 }
 
-async function httpRequest({
+async function channelRequest({
   port,
   path,
   method,
+  body,
+  secured = false,
 }: {
   port: number;
   path: string;
   method: 'GET' | 'POST';
+  body?: unknown;
+  secured?: boolean;
 }): Promise<JsonResponse> {
   return new Promise((resolve, reject) => {
-    const req = request(
+    const requestImpl = secured ? httpsRequestImpl : httpRequestImpl;
+    const serializedBody = body !== undefined ? JSON.stringify(body) : undefined;
+    const req = requestImpl(
       {
         host: '127.0.0.1',
         port,
         path,
         method,
+        ...(serializedBody
+          ? {
+              headers: {
+                'Content-Type': 'application/json',
+                'Content-Length': Buffer.byteLength(serializedBody),
+              },
+            }
+          : {}),
+        ...(secured ? { rejectUnauthorized: false } : {}),
       },
       (res) => {
-        let body = '';
+        let responseBody = '';
 
         res.on('data', (chunk) => {
-          body += chunk.toString();
+          responseBody += chunk.toString();
         });
 
         res.on('end', () => {
           resolve({
             statusCode: res.statusCode ?? 0,
-            json: body ? JSON.parse(body) : {},
+            json: responseBody ? JSON.parse(responseBody) : {},
           });
         });
       }
     );
 
     req.on('error', reject);
+
+    if (serializedBody) {
+      req.write(serializedBody);
+    }
+
     req.end();
   });
 }
@@ -80,7 +106,7 @@ async function waitForServer(port: number): Promise<void> {
 
   while (Date.now() - start < 3000) {
     try {
-      await httpRequest({ port, path: '/', method: 'GET' });
+      await channelRequest({ port, path: '/', method: 'GET' });
       return;
     } catch {
       await delay(20);
@@ -90,9 +116,11 @@ async function waitForServer(port: number): Promise<void> {
   throw new Error('Channel server did not become ready in time');
 }
 
-async function connectWebSocket(port: number): Promise<WebSocket> {
+async function connectWebSocket(port: number, secured = false): Promise<WebSocket> {
   return new Promise((resolve, reject) => {
-    const ws = new WebSocket(`ws://127.0.0.1:${port}`);
+    const ws = new WebSocket(`${secured ? 'wss' : 'ws'}://127.0.0.1:${port}`, {
+      ...(secured ? { rejectUnauthorized: false } : {}),
+    });
 
     ws.once('open', () => resolve(ws));
     ws.once('error', reject);
@@ -115,7 +143,7 @@ async function closeChannelServer(wss: WebSocketServer | null): Promise<void> {
     return;
   }
 
-  const server = wss.options.server as Server | undefined;
+  const server = wss.options.server as HttpServer | HttpsServer | undefined;
 
   await new Promise<void>((resolve, reject) => {
     wss.close((error) => {
@@ -179,7 +207,7 @@ describe('channel server select-story-sync endpoint', () => {
       }
     });
 
-    const response = await httpRequest({
+    const response = await channelRequest({
       port,
       method: 'POST',
       path: `/select-story-sync/${storyId}`,
@@ -197,7 +225,7 @@ describe('channel server select-story-sync endpoint', () => {
     await delay(20);
 
     const start = Date.now();
-    const response = await httpRequest({
+    const response = await channelRequest({
       port,
       method: 'POST',
       path: `/select-story-sync/${storyId}`,
@@ -215,7 +243,7 @@ describe('channel server select-story-sync endpoint', () => {
     ws = await connectWebSocket(port);
 
     const start = Date.now();
-    const response = await httpRequest({
+    const response = await channelRequest({
       port,
       method: 'POST',
       path: `/select-story-sync/${storyId}`,
@@ -244,7 +272,7 @@ describe('channel server select-story-sync endpoint', () => {
     ws = await connectWebSocket(port);
 
     const start = Date.now();
-    const response = await httpRequest({
+    const response = await channelRequest({
       port,
       method: 'POST',
       path: `/select-story-sync/${storyId}`,
@@ -260,5 +288,95 @@ describe('channel server select-story-sync endpoint', () => {
       })
     );
     expect(duration).toBeGreaterThanOrEqual(950);
+  });
+});
+
+describe('secure channel server', () => {
+  let wss: WebSocketServer | null = null;
+  let ws: WebSocket | null = null;
+  let port = 0;
+
+  beforeEach(async () => {
+    port = await getFreePort();
+    wss = createChannelServer({
+      port,
+      host: '127.0.0.1',
+      configPath: process.cwd(),
+      websockets: true,
+      secured: true,
+      ssl: {
+        key: TEST_TLS_KEY,
+        cert: TEST_TLS_CERT,
+      },
+    });
+
+    const start = Date.now();
+    while (Date.now() - start < 3000) {
+      try {
+        await channelRequest({ port, path: '/', method: 'GET', secured: true });
+        return;
+      } catch {
+        await delay(20);
+      }
+    }
+
+    throw new Error('Secure channel server did not become ready in time');
+  });
+
+  afterEach(async () => {
+    if (ws) {
+      await closeWebSocket(ws);
+      ws = null;
+    }
+
+    await closeChannelServer(wss);
+    wss = null;
+  });
+
+  test('serves index.json over https and accepts wss connections', async () => {
+    const indexResponse = await channelRequest({
+      port,
+      method: 'GET',
+      path: '/index.json',
+      secured: true,
+    });
+
+    expect(indexResponse.statusCode).toBe(200);
+    expect(indexResponse.json).toEqual({ entries: {} });
+
+    ws = await connectWebSocket(port, true);
+
+    const receivedMessage = new Promise<Record<string, unknown>>((resolve) => {
+      ws?.once('message', (data) => resolve(JSON.parse(data.toString())));
+    });
+
+    const payload = {
+      type: 'secure-test-event',
+      args: [{ value: 'hello' }],
+      from: 'secure-test-client',
+    };
+
+    const sendResponse = await channelRequest({
+      port,
+      method: 'POST',
+      path: '/send-event',
+      body: payload,
+      secured: true,
+    });
+
+    expect(sendResponse.statusCode).toBe(200);
+    await expect(receivedMessage).resolves.toEqual(payload);
+  });
+
+  test('throws when secure mode is enabled without key and cert', () => {
+    expect(() =>
+      createChannelServer({
+        port,
+        host: '127.0.0.1',
+        configPath: process.cwd(),
+        websockets: true,
+        secured: true,
+      })
+    ).toThrow('[Storybook] Secure channel server requires both `ssl.key` and `ssl.cert`.');
   });
 });

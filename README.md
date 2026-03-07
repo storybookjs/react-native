@@ -462,7 +462,7 @@ You can enable MCP with or without websockets:
 
 ### websockets
 
-Type: `'auto' | { host: string?, port: number? }`, default: `undefined`
+Type: `'auto' | { host?: string, port?: number, secured?: boolean, key?: string | Buffer, cert?: string | Buffer, ca?: string | Buffer | Array<string | Buffer>, passphrase?: string }`, default: `undefined`
 
 If specified, create a WebSocket server on startup. This allows you to sync up multiple devices to show the same story and [arg](https://storybook.js.org/docs/writing-stories/args) values connected to the story in the UI.
 
@@ -479,6 +479,18 @@ The host on which to run the WebSocket, if specified.
 Type: `number`, default: `7007`
 
 The port on which to run the WebSocket, if specified.
+
+### websockets.secured
+
+Type: `boolean`, default: `false`
+
+When `true`, the channel server starts on `https` and upgrades WebSocket clients over `wss`.
+
+### websockets.key / websockets.cert
+
+Type: `string | Buffer`, default: `undefined`
+
+TLS private key and certificate used when `secured` is `true`.
 
 ## getStorybookUI options
 

@@ -1,8 +1,16 @@
 import { WebSocketServer, WebSocket, Data } from 'ws';
-import { createServer, IncomingMessage, ServerResponse } from 'node:http';
+import { createServer as createHttpServer, IncomingMessage, ServerResponse } from 'node:http';
+import { createServer as createHttpsServer } from 'node:https';
 import { buildIndex } from './buildIndex';
 import { createMcpHandler } from './mcpServer';
 import { createSelectStorySyncEndpoint, SELECT_STORY_SYNC_ROUTE } from './selectStorySyncEndpoint';
+
+interface ChannelServerSecureOptions {
+  ca?: string | Buffer | Array<string | Buffer>;
+  cert?: string | Buffer | Array<string | Buffer>;
+  key?: string | Buffer | Array<string | Buffer>;
+  passphrase?: string;
+}
 
 /**
  * Options for creating a channel server.
@@ -34,6 +42,17 @@ interface ChannelServerOptions {
    * When false, starts only the HTTP server endpoints.
    */
   websockets?: boolean;
+
+  /**
+   * Whether to use HTTPS/WSS for the channel server.
+   * When true, valid TLS credentials must be provided via `ssl`.
+   */
+  secured?: boolean;
+
+  /**
+   * TLS credentials used when `secured` is true.
+   */
+  ssl?: ChannelServerSecureOptions;
 }
 
 /**
@@ -51,6 +70,8 @@ interface ChannelServerOptions {
  * @param options.configPath - The path to the Storybook config folder.
  * @param options.experimental_mcp - Whether to enable MCP server support.
  * @param options.websockets - Whether to enable WebSocket server support.
+ * @param options.secured - Whether to use HTTPS/WSS for the channel server.
+ * @param options.ssl - TLS credentials used when `secured` is true.
  * @returns The created WebSocketServer instance, or null when websockets are disabled.
  */
 export function createChannelServer({
@@ -59,14 +80,21 @@ export function createChannelServer({
   configPath,
   experimental_mcp = false,
   websockets = true,
+  secured = false,
+  ssl,
 }: ChannelServerOptions): WebSocketServer | null {
-  const httpServer = createServer();
+  if (secured && (!ssl?.key || !ssl?.cert)) {
+    throw new Error('[Storybook] Secure channel server requires both `ssl.key` and `ssl.cert`.');
+  }
+
+  const httpServer = secured ? createHttpsServer(ssl) : createHttpServer();
   const wss = websockets ? new WebSocketServer({ server: httpServer }) : null;
   const mcpServer = experimental_mcp ? createMcpHandler(configPath, wss ?? undefined) : null;
   const selectStorySyncEndpoint = wss ? createSelectStorySyncEndpoint(wss) : null;
 
   httpServer.on('request', async (req: IncomingMessage, res: ServerResponse) => {
-    const requestUrl = new URL(req.url ?? '/', `http://${req.headers.host ?? 'localhost'}`);
+    const protocol = 'encrypted' in req.socket && req.socket.encrypted ? 'https' : 'http';
+    const requestUrl = new URL(req.url ?? '/', `${protocol}://${req.headers.host ?? 'localhost'}`);
 
     if (req.method === 'OPTIONS') {
       res.writeHead(204);
@@ -201,7 +229,7 @@ export function createChannelServer({
   });
 
   httpServer.listen(port, host, () => {
-    const protocol = wss ? 'WebSocket' : 'HTTP';
+    const protocol = wss ? (secured ? 'WSS' : 'WebSocket') : secured ? 'HTTPS' : 'HTTP';
     console.log(`${protocol} server listening on ${host ?? 'localhost'}:${port}`);
   });
 

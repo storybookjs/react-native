@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import { createChannelServer } from '../metro/channelServer';
+import type { WebsocketsOptions } from '../types';
 
 /**
  * Minimal compiler types for webpack/rspack compatibility.
@@ -23,21 +24,6 @@ interface Compiler {
       fn: (resource: { request?: string }) => void
     ) => { apply: (compiler: Compiler) => void };
   };
-}
-
-/**
- * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
- */
-interface WebsocketsOptions {
-  /**
-   * The port WebSocket server will listen on. Defaults to 7007.
-   */
-  port?: number;
-
-  /**
-   * The host WebSocket server will bind to. Defaults to 'localhost'.
-   */
-  host?: string;
 }
 
 /**
@@ -185,6 +171,7 @@ export class StorybookPlugin {
   ): void {
     const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
     const host = websockets === 'auto' ? 'auto' : websockets?.host;
+    const secured = Boolean(websockets && websockets !== 'auto' && websockets.secured);
 
     // Start the channel server once (on first apply, not per-compilation)
     if ((websockets || experimental_mcp) && !this.serverStarted) {
@@ -196,6 +183,16 @@ export class StorybookPlugin {
         configPath,
         experimental_mcp,
         websockets: Boolean(websockets),
+        secured,
+        ssl:
+          websockets && websockets !== 'auto'
+            ? {
+                key: websockets.key,
+                cert: websockets.cert,
+                ca: websockets.ca,
+                passphrase: websockets.passphrase,
+              }
+            : undefined,
       });
     }
 
@@ -208,7 +205,7 @@ export class StorybookPlugin {
         configPath,
         useJs,
         docTools,
-        ...(websockets ? { host, port } : {}),
+        ...(websockets ? { host, port, secured } : {}),
       });
 
       console.log('[StorybookPlugin] Generated storybook.requires');
@@ -232,7 +229,10 @@ export class StorybookPlugin {
    * and replace the config folder index with a stub component.
    */
   private applyDisabled(compiler: Compiler, configPath: string): void {
-    const stubPath = require.resolve('@storybook/react-native/stub');
+    const stubPath = path.resolve(
+      __dirname,
+      __dirname.includes(`${path.sep}src${path.sep}`) ? '../stub.tsx' : '../stub.js'
+    );
     const normalizedConfigPath = path.resolve(configPath);
 
     // Use NormalModuleReplacementPlugin to intercept storybook module requests

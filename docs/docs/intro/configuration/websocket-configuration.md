@@ -85,6 +85,20 @@ module.exports = withStorybook(config, {
 
 `'auto'` support is available from v10.2.
 
+To enable `https` and `wss`, pass TLS credentials:
+
+```js
+const fs = require('fs');
+
+module.exports = withStorybook(config, {
+  websockets: {
+    secured: true,
+    key: fs.readFileSync('./certs/storybook-key.pem'),
+    cert: fs.readFileSync('./certs/storybook-cert.pem'),
+  },
+});
+```
+
 ## Platform-Specific Setup
 
 ### iOS Physical Device

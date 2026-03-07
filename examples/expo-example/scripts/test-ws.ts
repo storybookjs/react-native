@@ -3,13 +3,17 @@
 import WebSocket from 'ws';
 import fs from 'fs';
 
-const host = process.argv[2] || 'localhost';
-const port = process.argv[3] || 7007;
-const url = `ws://${host}:${port}`;
+const positionalArgs = process.argv.slice(2).filter((arg) => !arg.startsWith('--'));
+const secured =
+  process.argv.includes('--secure') || process.env.EXPO_PUBLIC_STORYBOOK_WS_SECURED === 'true';
+const host = positionalArgs[0] || 'localhost';
+const port = parseInt(positionalArgs[1] || '7007', 10);
+const protocol = secured ? 'wss' : 'ws';
+const url = `${protocol}://${host}:${port}`;
 
 console.log(`Connecting to ${url}...`);
 
-const ws = new WebSocket(url);
+const ws = new WebSocket(url, secured ? { rejectUnauthorized: false } : undefined);
 
 ws.on('open', () => {
   console.log('Connected!');
@@ -33,7 +37,7 @@ ws.on('message', async (data) => {
     }
     fs.writeFileSync('index.json', JSON.stringify(parsed.args[0].index, null, 2));
 
-    // const restIndex = await fetch(`http://${host}:${port}/index.json`);
+    // const restIndex = await fetch(`${secured ? 'https' : 'http'}://${host}:${port}/index.json`);
     // const indexJson = await restIndex.json();
     // fs.writeFileSync('index-rest.json', JSON.stringify(indexJson, null, 2));
 

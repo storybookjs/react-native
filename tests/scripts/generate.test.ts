@@ -164,7 +164,11 @@ describe('loader', () => {
 
         assert.ok(
           fileContentMock.includes(
-            "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
+            `globalThis.STORYBOOK_WEBSOCKET = {
+  host: '192.168.1.100',
+  port: 8080,
+  secured: false,
+};`
           )
         );
         t.assert.snapshot(fileContentMock);
@@ -182,7 +186,11 @@ describe('loader', () => {
 
         assert.ok(
           fileContentMock.includes(
-            "globalThis.STORYBOOK_WEBSOCKET = { host: 'localhost', port: 7007 };"
+            `globalThis.STORYBOOK_WEBSOCKET = {
+  host: 'localhost',
+  port: 7007,
+  secured: false,
+};`
           )
         );
         t.assert.snapshot(fileContentMock);
@@ -201,7 +209,7 @@ describe('loader', () => {
     });
 
     describe('when only port is provided without host', () => {
-      it('does not include STORYBOOK_WEBSOCKET assignment', async (t) => {
+      it('includes STORYBOOK_WEBSOCKET with port and secured flag', async (t) => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({
           configPath: 'scripts/mocks/all-config-files',
@@ -209,7 +217,14 @@ describe('loader', () => {
         });
         mock.reset();
 
-        assert.ok(!fileContentMock.includes('globalThis.STORYBOOK_WEBSOCKET ='));
+        assert.ok(
+          fileContentMock.includes(
+            `globalThis.STORYBOOK_WEBSOCKET = {
+  port: 8080,
+  secured: false,
+};`
+          )
+        );
         t.assert.snapshot(fileContentMock);
       });
     });
@@ -227,7 +242,11 @@ describe('loader', () => {
 
         assert.ok(
           fileContentMock.includes(
-            "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
+            `globalThis.STORYBOOK_WEBSOCKET = {
+  host: '192.168.1.100',
+  port: 8080,
+  secured: false,
+};`
           )
         );
         t.assert.snapshot(fileContentMock);
