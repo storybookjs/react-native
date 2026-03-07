@@ -65,4 +65,5 @@ declare namespace NodeJS {
   }
 }
 
+// eslint-disable-next-line no-var -- ambient global declaration must merge with Node's `var module`
 declare var module: NodeJS.Module;
