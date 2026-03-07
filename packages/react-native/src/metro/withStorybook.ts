@@ -4,46 +4,7 @@ import type { MetroConfig } from 'metro-config';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
 import { telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
-
-/**
- * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
- */
-interface WebsocketsOptions {
-  /**
-   * The port WebSocket server will listen on. Defaults to 7007.
-   */
-  port?: number;
-
-  /**
-   * The host WebSocket server will bind to. Defaults to 'localhost'.
-   */
-  host?: string;
-
-  /**
-   * Whether to use WSS/HTTPS for the channel server.
-   */
-  secured?: boolean;
-
-  /**
-   * TLS private key used when `secured` is true.
-   */
-  key?: string | Buffer;
-
-  /**
-   * TLS certificate used when `secured` is true.
-   */
-  cert?: string | Buffer;
-
-  /**
-   * Optional certificate authority chain used when `secured` is true.
-   */
-  ca?: string | Buffer | Array<string | Buffer>;
-
-  /**
-   * Optional TLS passphrase used when `secured` is true.
-   */
-  passphrase?: string;
-}
+import type { WebsocketsOptions } from '../types';
 
 /**
  * Options for configuring Storybook with React Native.

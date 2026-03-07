@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import { createChannelServer } from '../metro/channelServer';
+import type { WebsocketsOptions } from '../types';
 
 /**
  * Minimal compiler types for webpack/rspack compatibility.
@@ -23,46 +24,6 @@ interface Compiler {
       fn: (resource: { request?: string }) => void
     ) => { apply: (compiler: Compiler) => void };
   };
-}
-
-/**
- * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
- */
-interface WebsocketsOptions {
-  /**
-   * The port WebSocket server will listen on. Defaults to 7007.
-   */
-  port?: number;
-
-  /**
-   * The host WebSocket server will bind to. Defaults to 'localhost'.
-   */
-  host?: string;
-
-  /**
-   * Whether to use WSS/HTTPS for the channel server.
-   */
-  secured?: boolean;
-
-  /**
-   * TLS private key used when `secured` is true.
-   */
-  key?: string | Buffer;
-
-  /**
-   * TLS certificate used when `secured` is true.
-   */
-  cert?: string | Buffer;
-
-  /**
-   * Optional certificate authority chain used when `secured` is true.
-   */
-  ca?: string | Buffer | Array<string | Buffer>;
-
-  /**
-   * Optional TLS passphrase used when `secured` is true.
-   */
-  passphrase?: string;
 }
 
 /**
