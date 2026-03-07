@@ -92,8 +92,6 @@ const fs = require('fs');
 
 module.exports = withStorybook(config, {
   websockets: {
-    host: 'localhost',
-    port: 7443,
     secured: true,
     key: fs.readFileSync('./certs/storybook-key.pem'),
     cert: fs.readFileSync('./certs/storybook-cert.pem'),

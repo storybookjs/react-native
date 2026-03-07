@@ -34,8 +34,6 @@ defaultConfig.resolver.nodeModulesPaths = [
 const storybookSecured = process.env.EXPO_PUBLIC_STORYBOOK_WS_SECURED === 'true';
 const storybookWebsockets = storybookSecured
   ? {
-      host: 'localhost',
-      port: 7443,
       secured: true,
       key: readRequiredTlsFile(secureKeyPath, 'key'),
       cert: readRequiredTlsFile(secureCertPath, 'cert'),

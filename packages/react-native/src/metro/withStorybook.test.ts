@@ -77,7 +77,7 @@ describe('withStorybook experimental_mcp', () => {
       enabled: true,
       websockets: {
         host: '127.0.0.1',
-        port: 7443,
+        port: 7007,
         secured: true,
         cert: 'cert',
         key: 'key',
@@ -100,7 +100,7 @@ describe('withStorybook experimental_mcp', () => {
       expect.objectContaining({
         configPath: '/tmp/.rnstorybook',
         host: '127.0.0.1',
-        port: 7443,
+        port: 7007,
         secured: true,
       })
     );
