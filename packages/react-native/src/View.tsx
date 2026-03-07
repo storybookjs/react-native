@@ -191,6 +191,14 @@ export class View {
     return 7007;
   };
 
+  _isSecureConnection = (params: Partial<Params> = {}) => {
+    if (typeof params.secured === 'boolean') {
+      return params.secured;
+    }
+
+    return globalThis.STORYBOOK_WEBSOCKET?.secured ?? false;
+  };
+
   _getServerChannel = (params: Partial<Params> = {}) => {
     const host = this._getHost(params);
 
@@ -198,7 +206,7 @@ export class View {
 
     const query = params.query || '';
 
-    const websocketType = params.secured ? 'wss' : 'ws';
+    const websocketType = this._isSecureConnection(params) ? 'wss' : 'ws';
 
     const url = `${websocketType}://${host}${port}/${query}`;
 

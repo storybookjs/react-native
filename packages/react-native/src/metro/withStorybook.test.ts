@@ -71,6 +71,41 @@ describe('withStorybook experimental_mcp', () => {
     expect(generate).toHaveBeenCalled();
   });
 
+  test('passes secure websocket options through to the channel server and generator', () => {
+    withStorybook(config, {
+      configPath: '/tmp/.rnstorybook',
+      enabled: true,
+      websockets: {
+        host: '127.0.0.1',
+        port: 7443,
+        secured: true,
+        cert: 'cert',
+        key: 'key',
+      },
+    });
+
+    expect(createChannelServer).toHaveBeenCalledWith(
+      expect.objectContaining({
+        configPath: '/tmp/.rnstorybook',
+        websockets: true,
+        secured: true,
+        ssl: expect.objectContaining({
+          cert: 'cert',
+          key: 'key',
+        }),
+      })
+    );
+
+    expect(generate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        configPath: '/tmp/.rnstorybook',
+        host: '127.0.0.1',
+        port: 7443,
+        secured: true,
+      })
+    );
+  });
+
   test('does not throw when storybook is disabled', () => {
     expect(() =>
       withStorybook(config, {

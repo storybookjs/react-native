@@ -8,6 +8,8 @@
     "ios": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start --ios",
     "web": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start --web",
     "storybook": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start",
+    "storybook:secure:cert": "./scripts/generate-dev-cert.sh",
+    "storybook:secure": "pnpm storybook:secure:cert && EXPO_PUBLIC_STORYBOOK_ENABLED=true EXPO_PUBLIC_STORYBOOK_WS_SECURED=true expo start --port 8091",
     "storybook:lite": "EXPO_PUBLIC_STORYBOOK_ENABLED=true EXPO_PUBLIC_LITE_UI=true expo start",
     "storybook:test": "EXPO_PUBLIC_SCREENSHOT_TESTING=true EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start",
     "storybook:web": "storybook dev -p 6006",

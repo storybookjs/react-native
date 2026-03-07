@@ -1,11 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LiteUI } from '@storybook/react-native-ui-lite';
-import { StatusBar, View } from 'react-native';
+import { Platform, StatusBar, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { view } from './storybook.requires';
 
 const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
 const isLiteUI = process.env.EXPO_PUBLIC_LITE_UI === 'true';
+const isSecureWebsocket = process.env.EXPO_PUBLIC_STORYBOOK_WS_SECURED === 'true';
 
 const StorybookUIRoot = view.getStorybookUI({
   shouldPersistSelection: true,
@@ -14,6 +15,13 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
   enableWebsockets: true,
+  ...(isSecureWebsocket
+    ? {
+        host: Platform.OS === 'android' ? '10.0.2.2' : 'localhost',
+        port: 7443,
+        secured: true,
+      }
+    : {}),
 
   CustomUIComponent: isScreenshotTesting
     ? ({ children, story }) => {

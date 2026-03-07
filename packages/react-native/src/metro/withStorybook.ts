@@ -18,6 +18,31 @@ interface WebsocketsOptions {
    * The host WebSocket server will bind to. Defaults to 'localhost'.
    */
   host?: string;
+
+  /**
+   * Whether to use WSS/HTTPS for the channel server.
+   */
+  secured?: boolean;
+
+  /**
+   * TLS private key used when `secured` is true.
+   */
+  key?: string | Buffer;
+
+  /**
+   * TLS certificate used when `secured` is true.
+   */
+  cert?: string | Buffer;
+
+  /**
+   * Optional certificate authority chain used when `secured` is true.
+   */
+  ca?: string | Buffer | Array<string | Buffer>;
+
+  /**
+   * Optional TLS passphrase used when `secured` is true.
+   */
+  passphrase?: string;
 }
 
 /**
@@ -80,6 +105,9 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  *                            When provided, creates a WebSocket server for real-time communication.
  * @param options.websockets.port - The port WebSocket server will listen on. Defaults to 7007.
  * @param options.websockets.host - The host WebSocket server will bind to. Defaults to 'localhost'.
+ * @param options.websockets.secured - Whether to use WSS/HTTPS for the channel server.
+ * @param options.websockets.key - TLS private key used when `secured` is true.
+ * @param options.websockets.cert - TLS certificate used when `secured` is true.
  * @param options.useJs - Whether to use JavaScript files for Storybook configuration instead of TypeScript.
  *                       When true, generates storybook.requires.js instead of storybook.requires.ts.
  *                       Defaults to false.
@@ -208,6 +236,7 @@ export function withStorybook(
   if (websockets || experimental_mcp) {
     const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
     const host = websockets === 'auto' ? 'auto' : websockets?.host;
+    const secured = Boolean(websockets && websockets !== 'auto' && websockets.secured);
 
     // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
     // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
@@ -217,6 +246,16 @@ export function withStorybook(
       configPath,
       experimental_mcp,
       websockets: Boolean(websockets),
+      secured,
+      ssl:
+        websockets && websockets !== 'auto'
+          ? {
+              key: websockets.key,
+              cert: websockets.cert,
+              ca: websockets.ca,
+              passphrase: websockets.passphrase,
+            }
+          : undefined,
     });
 
     if (websockets) {
@@ -226,6 +265,7 @@ export function withStorybook(
         docTools,
         host,
         port,
+        secured,
       });
     } else {
       generate({

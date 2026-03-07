@@ -55,7 +55,8 @@ async function generate({
   useJs = false,
   docTools = true,
   host = undefined,
-  port = 7007,
+  port = undefined,
+  secured = false,
 }) {
   // here we want to get the ip address and pass it to rn storybook so that devices can connect over lan easily
   const channelHost = host === 'auto' ? getLocalIPAddress() : host;
@@ -169,7 +170,9 @@ async function generate({
 declare global {
   var view: View;
   var STORIES: typeof normalizedStories;
-  var STORYBOOK_WEBSOCKET: { host: string; port: number } | undefined;
+  var STORYBOOK_WEBSOCKET:
+    | { host?: string; port?: number; secured?: boolean }
+    | undefined;
   var FEATURES: Features;
 }
 `;
@@ -188,7 +191,15 @@ ${useJs ? '' : globalTypes}
 const annotations = ${annotations};
 
 globalThis.STORIES = normalizedStories;
-${channelHost ? `globalThis.STORYBOOK_WEBSOCKET = { host: '${channelHost}', port: ${port ?? 7007} };` : ''}
+${
+  host !== undefined || port !== undefined || secured
+    ? `globalThis.STORYBOOK_WEBSOCKET = {
+  ${channelHost ? `host: '${channelHost}',` : ''}
+  port: ${port ?? 7007},
+  secured: ${Boolean(secured)},
+};`
+    : ''
+}
 
 module?.hot?.accept?.();
 ${featuresAssignment ? `\n${featuresAssignment}\n` : ''}

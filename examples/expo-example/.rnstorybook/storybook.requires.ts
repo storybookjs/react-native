@@ -48,7 +48,9 @@ const normalizedStories = [
 declare global {
   var view: View;
   var STORIES: typeof normalizedStories;
-  var STORYBOOK_WEBSOCKET: { host: string; port: number } | undefined;
+  var STORYBOOK_WEBSOCKET:
+    | { host?: string; port?: number; secured?: boolean }
+    | undefined;
   var FEATURES: Features;
 }
 
@@ -61,7 +63,11 @@ const annotations = [
 ];
 
 globalThis.STORIES = normalizedStories;
-globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.172', port: 7007 };
+globalThis.STORYBOOK_WEBSOCKET = {
+  host: 'localhost',
+  port: 7443,
+  secured: true,
+};
 
 module?.hot?.accept?.();
 
