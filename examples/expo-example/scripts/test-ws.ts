@@ -3,10 +3,11 @@
 import WebSocket from 'ws';
 import fs from 'fs';
 
+const positionalArgs = process.argv.slice(2).filter((arg) => !arg.startsWith('--'));
 const secured =
   process.argv.includes('--secure') || process.env.EXPO_PUBLIC_STORYBOOK_WS_SECURED === 'true';
-const host = 'localhost';
-const port = secured ? 7443 : 7007;
+const host = positionalArgs[0] || 'localhost';
+const port = parseInt(positionalArgs[1] || (secured ? '7443' : '7007'), 10);
 const protocol = secured ? 'wss' : 'ws';
 const url = `${protocol}://${host}:${port}`;
 
