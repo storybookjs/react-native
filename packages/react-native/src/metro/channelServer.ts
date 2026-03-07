@@ -169,7 +169,7 @@ export function createChannelServer({
       ws.on('message', function message(data: Data) {
         try {
           const json = JSON.parse(data.toString());
-          selectStorySyncEndpoint?.onSocketMessage(json);
+          selectStorySyncEndpoint?.onSocketMessage(json, ws);
 
           const msg = JSON.stringify(json);
 
@@ -181,6 +181,10 @@ export function createChannelServer({
         } catch (error) {
           console.error(error);
         }
+      });
+
+      ws.on('close', () => {
+        selectStorySyncEndpoint?.onSocketClose(ws);
       });
     });
   }

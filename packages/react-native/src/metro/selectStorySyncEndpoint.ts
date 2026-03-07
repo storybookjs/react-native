@@ -58,7 +58,7 @@ function parseStoryIdFromPath(pathname: string): string | null {
 
 export function createSelectStorySyncEndpoint(wss: WebSocketServer) {
   const pendingStorySelections = new Map<string, Set<PendingStorySelection>>();
-  let lastRenderedStoryId: string | null = null;
+  const lastRenderedStoryIdByClient = new Map<WebSocket, string>();
 
   const waitForStoryRender = (storyId: string, timeoutMs: number): StoryRenderWait => {
     let cancelSelection = () => {};
@@ -149,7 +149,12 @@ export function createSelectStorySyncEndpoint(wss: WebSocketServer) {
     });
 
     try {
-      if (lastRenderedStoryId === storyId) {
+      const hasConnectedClientWithRenderedStory = [...wss.clients].some(
+        (client) =>
+          client.readyState === WebSocket.OPEN && lastRenderedStoryIdByClient.get(client) === storyId
+      );
+
+      if (hasConnectedClientWithRenderedStory) {
         const raceResult = await Promise.race([
           waitForRender.promise.then(() => 'rendered' as const),
           new Promise<'alreadyRendered'>((resolve) => {
@@ -178,16 +183,21 @@ export function createSelectStorySyncEndpoint(wss: WebSocketServer) {
     }
   };
 
-  const onSocketMessage = (event: unknown) => {
+  const onSocketMessage = (event: unknown, ws: WebSocket) => {
     const renderedStoryId = getRenderedStoryId(event);
     if (renderedStoryId) {
-      lastRenderedStoryId = renderedStoryId;
+      lastRenderedStoryIdByClient.set(ws, renderedStoryId);
       resolveStorySelection(renderedStoryId);
     }
+  };
+
+  const onSocketClose = (ws: WebSocket) => {
+    lastRenderedStoryIdByClient.delete(ws);
   };
 
   return {
     handleRequest,
     onSocketMessage,
+    onSocketClose,
   };
 }

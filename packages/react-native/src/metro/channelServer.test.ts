@@ -232,4 +232,33 @@ describe('channel server select-story-sync endpoint', () => {
     );
     expect(duration).toBeGreaterThanOrEqual(950);
   });
+
+  test('does not reuse a disconnected client render for the 500ms fast path', async () => {
+    const storyId = 'button--stale-render';
+    ws = await connectWebSocket(port);
+
+    ws.send(JSON.stringify({ type: 'storyRendered', args: [storyId] }));
+    await delay(20);
+
+    await closeWebSocket(ws);
+    ws = await connectWebSocket(port);
+
+    const start = Date.now();
+    const response = await httpRequest({
+      port,
+      method: 'POST',
+      path: `/select-story-sync/${storyId}`,
+    });
+    const duration = Date.now() - start;
+
+    expect(response.statusCode).toBe(408);
+    expect(response.json).toEqual(
+      expect.objectContaining({
+        success: false,
+        storyId,
+        error: `Story "${storyId}" did not render in time`,
+      })
+    );
+    expect(duration).toBeGreaterThanOrEqual(950);
+  });
 });
