@@ -166,6 +166,18 @@ async function generate({
   ${enhancers.join(',\n  ')}
 ]`;
 
+  const hasWebsocketConfig = host !== undefined || port !== undefined || secured;
+  const websocketAssignmentLines = [];
+
+  if (channelHost) {
+    websocketAssignmentLines.push(`host: '${channelHost}',`);
+  }
+
+  if (hasWebsocketConfig) {
+    websocketAssignmentLines.push(`port: ${port ?? 7007},`);
+    websocketAssignmentLines.push(`secured: ${Boolean(secured)},`);
+  }
+
   const globalTypes = `
 declare global {
   var view: View;
@@ -192,11 +204,9 @@ const annotations = ${annotations};
 
 globalThis.STORIES = normalizedStories;
 ${
-  host !== undefined || port !== undefined || secured
+  hasWebsocketConfig
     ? `globalThis.STORYBOOK_WEBSOCKET = {
-  ${channelHost ? `host: '${channelHost}',` : ''}
-  port: ${port ?? 7007},
-  secured: ${Boolean(secured)},
+  ${websocketAssignmentLines.join('\n  ')}
 };`
     : ''
 }
