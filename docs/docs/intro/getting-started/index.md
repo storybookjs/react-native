@@ -23,6 +23,7 @@ npx skills add storybookjs/react-native
 ```
 
 The **setup-react-native-storybook** skill walks your agent through the full setup for Expo, Expo Router, React Native CLI, and Re.Pack projects.
+The **upgrading-react-native-storybook** skill handles supported version-to-version migrations one hop at a time instead of attempting a full jump in one pass.
 :::
 
 ## Recommended setup
