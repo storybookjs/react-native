@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "10.3.0-next.4",
+  "version": "10.3.0-next.5",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -52,9 +52,9 @@
   "dependencies": {
     "@storybook/mcp": "^0.4.1",
     "@storybook/react": "10.3.0-alpha.14",
-    "@storybook/react-native-theming": "^10.3.0-next.4",
-    "@storybook/react-native-ui": "^10.3.0-next.4",
-    "@storybook/react-native-ui-common": "^10.3.0-next.4",
+    "@storybook/react-native-theming": "^10.3.0-next.5",
+    "@storybook/react-native-ui": "^10.3.0-next.5",
+    "@storybook/react-native-ui-common": "^10.3.0-next.5",
     "@tmcp/adapter-valibot": "^0.1.4",
     "@tmcp/transport-http": "^0.8.0",
     "commander": "^14.0.2",

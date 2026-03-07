@@ -1,5 +1,16 @@
 # @storybook/react-native
 
+## 10.3.0-next.5
+
+### Patch Changes
+
+- [#860](https://github.com/storybookjs/react-native/pull/860) [`794f4f0`](https://github.com/storybookjs/react-native/commit/794f4f03c6c5e77752ae1838901e620b8f0f21a3) Thanks [@dannyhw](https://github.com/dannyhw)! - Added a new channel server endpoint: `POST /select-story-sync/:storyId`
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.3.0-next.5
+  - @storybook/react-native-ui-common@10.3.0-next.5
+  - @storybook/react-native-theming@10.3.0-next.5
+
 ## 10.3.0-next.4
 
 ### Patch Changes
