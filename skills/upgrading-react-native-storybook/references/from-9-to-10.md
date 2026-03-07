@@ -67,14 +67,14 @@ module.exports = withStorybook(defaultConfig, {
 
 Only include `configPath` when the project uses a non-default Storybook config folder.
 
-Example with a custom folder:
+If you keep the option for clarity while still using the default folder, it should still point at `.rnstorybook`, but it is redundant:
 
 ```js
 const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 module.exports = withStorybook(defaultConfig, {
   enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
-  configPath: path.resolve(__dirname, './storybook-native'),
+  configPath: path.resolve(__dirname, './.rnstorybook'),
 });
 ```
 
@@ -87,21 +87,30 @@ const withStorybook = require('@storybook/react-native/metro/withStorybook');
 module.exports = withStorybook(defaultConfig, {
   enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
   onDisabledRemoveStorybook: true,
-  configPath: path.resolve(__dirname, './storybook-native'),
+  configPath: path.resolve(__dirname, './.rnstorybook'),
 });
 ```
 
 ```js
-// After
+// After (preferred)
 const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 module.exports = withStorybook(defaultConfig, {
   enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
-  configPath: path.resolve(__dirname, './storybook-native'),
 });
 ```
 
-If the project already uses the default `.rnstorybook` folder, the after version should omit `configPath` entirely.
+```js
+// After (equivalent but redundant when using the default folder)
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+
+module.exports = withStorybook(defaultConfig, {
+  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+  configPath: path.resolve(__dirname, './.rnstorybook'),
+});
+```
+
+If the project already uses the default `.rnstorybook` folder, prefer omitting `configPath` entirely.
 
 ## App Entry
 

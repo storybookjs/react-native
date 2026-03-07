@@ -98,7 +98,7 @@ npm run ios     # or npm run android
 ```js
 module.exports = withStorybook(config, {
   enabled: true, // Remove Storybook from bundle when false
-  configPath: './storybook-native', // Optional: only set this when not using the default ./.rnstorybook folder
+  configPath: './.rnstorybook', // Optional and redundant when using the default ./.rnstorybook folder
   useJs: false, // Generate .js instead of .ts
   docTools: true, // Auto arg extraction
   liteMode: false, // Mock default UI deps (use with react-native-ui-lite)
@@ -111,7 +111,7 @@ module.exports = withStorybook(config, {
 ```js
 new StorybookPlugin({
   enabled: true, // Strip Storybook from bundle when false
-  configPath: './storybook-native', // Optional: only set this when not using the default ./.rnstorybook folder
+  configPath: './.rnstorybook', // Optional and redundant when using the default ./.rnstorybook folder
   useJs: false, // Generate .js instead of .ts
   docTools: true, // Auto arg extraction
   liteMode: false, // Mock default UI deps (use with react-native-ui-lite)
