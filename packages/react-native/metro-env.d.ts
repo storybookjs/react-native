@@ -57,13 +57,13 @@ declare namespace __MetroModuleApi {
   }
 }
 
-declare const module: NodeModule;
-
 declare namespace NodeJS {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type -- Intentional declaration merging to extend NodeJS.Require
   interface Require extends __MetroModuleApi.RequireFunction {}
+  interface Module {
+    hot?: __MetroModuleApi.Hot;
+  }
 }
 
-interface NodeModule {
-  hot?: __MetroModuleApi.Hot;
-}
+// eslint-disable-next-line no-var -- ambient global declaration must merge with Node's `var module`
+declare var module: NodeJS.Module;
