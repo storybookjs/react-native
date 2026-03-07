@@ -16,6 +16,7 @@
     "@storybook/tests": "0.0.0"
   },
   "changesets": [
+    "big-symbols-see",
     "cool-tigers-type",
     "eleven-colts-brush",
     "good-peaches-doubt",

@@ -1,5 +1,16 @@
 # @storybook/react-native
 
+## 10.3.0-next.6
+
+### Patch Changes
+
+- [#863](https://github.com/storybookjs/react-native/pull/863) [`47e0d9d`](https://github.com/storybookjs/react-native/commit/47e0d9d2eaddba52619b9581a8993bcd0ea4cd3f) Thanks [@dannyhw](https://github.com/dannyhw)! - fix types for metro require
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.3.0-next.6
+  - @storybook/react-native-ui-common@10.3.0-next.6
+  - @storybook/react-native-theming@10.3.0-next.6
+
 ## 10.3.0-next.5
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @storybook/addon-ondevice-backgrounds
 
+## 10.3.0-next.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.3.0-next.6
+
 ## 10.3.0-next.5
 
 ### Patch Changes
