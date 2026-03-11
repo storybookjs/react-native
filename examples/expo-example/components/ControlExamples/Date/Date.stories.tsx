@@ -5,6 +5,7 @@ const date = new Date(1983, 1, 25);
 
 const meta = {
   component: DateString,
+  tags: ['controls', 'date'],
   args: { date: date },
   argTypes: { date: { control: { type: 'date' } } },
 } satisfies Meta<typeof DateString>;

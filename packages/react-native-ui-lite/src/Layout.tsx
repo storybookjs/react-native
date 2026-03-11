@@ -16,7 +16,7 @@ import { Text, TouchableOpacity, useWindowDimensions, View, ViewStyle } from 're
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import type { Args, StoryContext } from 'storybook/internal/csf';
-import { type API_IndexHash } from 'storybook/internal/types';
+import type { API_IndexHash } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';

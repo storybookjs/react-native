@@ -20,6 +20,7 @@ const HiddenControls = ({ value, padding }: HiddenControlsProps) => {
 
 const meta = {
   component: HiddenControls,
+  tags: ['controls', 'conditional'],
 } satisfies Meta<typeof HiddenControls>;
 
 export default meta;

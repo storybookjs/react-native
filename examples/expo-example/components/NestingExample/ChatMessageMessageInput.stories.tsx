@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
 const meta = {
   title: 'NestingExample/MessageInput',
   component: InputDemo,
+  tags: ['chat', 'input'],
   argTypes: {
     disabled: { control: 'boolean' },
   },

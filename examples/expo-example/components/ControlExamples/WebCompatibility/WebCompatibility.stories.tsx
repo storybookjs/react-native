@@ -12,6 +12,7 @@ const ComponentExample = (props: any) => {
 
 export default {
   component: ComponentExample,
+  tags: ['controls', 'web'],
   argTypes: {
     boolean: { control: 'boolean' },
     color: { control: 'color' },

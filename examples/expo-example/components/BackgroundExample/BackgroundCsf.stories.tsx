@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
 
 const meta = {
   component: Background,
+  tags: ['backgrounds'],
   // parameters: {
   //   backgrounds: {
   //     default: 'warm',

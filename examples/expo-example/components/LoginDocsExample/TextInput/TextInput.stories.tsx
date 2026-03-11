@@ -3,6 +3,7 @@ import { TextInput } from './TextInput';
 
 const meta = {
   component: TextInput,
+  tags: ['docs', 'forms', 'input'],
   args: {
     placeholder: 'Enter text...',
   },

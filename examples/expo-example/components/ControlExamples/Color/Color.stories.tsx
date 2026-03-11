@@ -9,6 +9,7 @@ const meta = {
     },
   },
   component: Color,
+  tags: ['controls', 'color'],
 } satisfies Meta<typeof Color>;
 
 export default meta;

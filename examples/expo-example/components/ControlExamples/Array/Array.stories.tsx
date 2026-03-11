@@ -3,6 +3,7 @@ import { Array } from './Array';
 
 const meta = {
   component: Array,
+  tags: ['controls', 'array'],
   args: {
     list: ['a', 'b', 'c'],
   },

@@ -3,6 +3,7 @@ import { Multiply } from './Number';
 
 const meta = {
   component: Multiply,
+  tags: ['controls', 'number'],
 } satisfies Meta<typeof Multiply>;
 
 export default meta;

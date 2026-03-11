@@ -4,6 +4,7 @@ import { Button } from './Button';
 
 const meta = {
   component: Button,
+  tags: ['docs', 'forms', 'button'],
   args: {
     onPress: fn(),
   },

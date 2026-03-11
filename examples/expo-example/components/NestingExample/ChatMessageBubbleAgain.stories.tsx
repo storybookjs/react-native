@@ -39,6 +39,7 @@ const meta = {
   title:
     'NestingExample/Message/bubble/a very long name for a title that just keeps going and going',
   component: BubbleWithReactions,
+  tags: ['chat', 'bubble'],
   argTypes: {
     isOwn: { control: 'boolean' },
     showReactions: { control: 'boolean' },

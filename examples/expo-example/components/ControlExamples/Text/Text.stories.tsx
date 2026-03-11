@@ -3,6 +3,7 @@ import { Heading } from './Text';
 
 const meta = {
   component: Heading,
+  tags: ['controls', 'text'],
   args: { text: 'Hello world!' },
 } satisfies Meta<typeof Heading>;
 

@@ -18,6 +18,7 @@ function UsableAreaContent() {
 }
 const meta = {
   component: UsableAreaContent,
+  tags: ['safe-area', 'layout'],
 } satisfies Meta<typeof UsableAreaContent>;
 
 export default meta;

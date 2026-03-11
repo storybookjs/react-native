@@ -23,6 +23,7 @@ const withAppTheme: Meta<typeof ThemedCard>['decorators'] = [
 const meta = {
   title: 'BackgroundExample/ThemedCard',
   component: ThemedCard,
+  tags: ['backgrounds', 'theme'],
   decorators: withAppTheme,
   args: {
     title: 'Themed Card',

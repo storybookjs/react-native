@@ -3,6 +3,7 @@ import { ChatMessage, ChatMessageProps } from './ChatComponents';
 
 const meta = {
   component: ChatMessage,
+  tags: ['chat', 'message'],
   argTypes: {
     isOwn: { control: 'boolean' },
     showAvatar: { control: 'boolean' },

@@ -4,6 +4,7 @@ import { LoginForm } from './LoginForm';
 
 const meta = {
   component: LoginForm,
+  tags: ['docs', 'forms', 'login'],
   args: {
     onSubmit: fn(),
     emailLabel: 'Email Address',

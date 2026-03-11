@@ -42,7 +42,7 @@ describe('prepareStories', () => {
             id: 'textinput--basic',
             importPath: './src/TextInput.stories.tsx',
             name: 'Basic',
-            tags: ['story'],
+            tags: ['dev', 'test'],
             title: 'TextInput',
             type: 'story',
             subtype: 'story',
@@ -131,5 +131,43 @@ describe('prepareStories', () => {
       ],
     });
     expect(result.importMap['./src/TextInput.stories.tsx'].Basic.play).toBeUndefined();
+    expect(result.index.entries['textinput--basic'].tags).toEqual(['dev', 'test']);
+  });
+
+  test('includes meta, story, and play tags in the generated index', () => {
+    const req = () => ({
+      default: {
+        title: 'Tagged/Button',
+        tags: ['autodocs', 'meta-tag'],
+      },
+      Basic: {
+        tags: ['story-tag'],
+        play: () => {},
+      },
+    });
+    req.keys = () => ['./Tagged.stories.tsx'];
+
+    const result = prepareStories({
+      options: { playFn: true },
+      storyEntries: [
+        {
+          titlePrefix: '',
+          directory: './src',
+          files: '**/*.stories.?(ts|tsx|js|jsx)',
+          importPathMatcher:
+            /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
+          req,
+        },
+      ],
+    });
+
+    expect(result.index.entries['tagged-button--basic'].tags).toEqual([
+      'dev',
+      'test',
+      'autodocs',
+      'meta-tag',
+      'play-fn',
+      'story-tag',
+    ]);
   });
 });

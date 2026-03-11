@@ -5,6 +5,7 @@ import { UserProfileCard } from './UserProfileCard';
 const meta = {
   title: 'UserProfileCard',
   component: UserProfileCard,
+  tags: ['profile', 'card'],
   args: {
     name: 'Jane Doe',
     email: 'jane.doe@example.com',

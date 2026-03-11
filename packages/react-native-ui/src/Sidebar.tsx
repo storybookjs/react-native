@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { styled } from '@storybook/react-native-theming';
 import type { State } from 'storybook/manager-api';
 import type { API_LoadedRefData } from 'storybook/internal/types';
@@ -6,9 +6,16 @@ import { Explorer } from './Explorer';
 import { Search } from './Search';
 import { SearchResults } from './SearchResults';
 import type { CombinedDataset, Selection } from '@storybook/react-native-ui-common';
-import { useLastViewed } from '@storybook/react-native-ui-common';
+import {
+  createEmptySidebarTagSelection,
+  filterStoriesHashByTags,
+  hasActiveSidebarTagSelection,
+  TagsFilter,
+  useLastViewed,
+} from '@storybook/react-native-ui-common';
 import { DEFAULT_REF_ID } from './constants';
 import { View } from 'react-native';
+import { FilterIcon } from './icon/FilterIcon';
 
 const Container = styled.View(({ theme }) => ({
   width: '100%',
@@ -23,7 +30,7 @@ const Top = styled.View({
   paddingRight: 4,
   paddingTop: 16,
   flex: 1,
-  flexDirection: 'row',
+  flexDirection: 'column',
 });
 
 const Swap = React.memo(function Swap({
@@ -87,7 +94,15 @@ export const Sidebar = React.memo(function Sidebar({
   setSelection,
 }: SidebarProps) {
   const selected: Selection = useMemo(() => storyId && { storyId, refId }, [storyId, refId]);
-  const dataset = useCombination(index, indexError, previewInitialized, status, refs);
+  const [tagSelection, setTagSelection] = useState(createEmptySidebarTagSelection);
+  const filteredIndex = useMemo(() => {
+    if (!index || !hasActiveSidebarTagSelection(tagSelection)) {
+      return index;
+    }
+
+    return filterStoriesHashByTags(index, tagSelection);
+  }, [index, tagSelection]);
+  const dataset = useCombination(filteredIndex, indexError, previewInitialized, status, refs);
   const lastViewedProps = useLastViewed(selected);
 
   return (
@@ -102,7 +117,22 @@ export const Sidebar = React.memo(function Sidebar({
             isLoading={isLoading}
             onMenuClick={onMenuClick}
           /> */}
-        <Search dataset={dataset} setSelection={setSelection} {...lastViewedProps}>
+        <Search
+          dataset={dataset}
+          setSelection={setSelection}
+          searchFieldContent={
+            index ? (
+              <TagsFilter
+                compact
+                storiesHash={index}
+                selection={tagSelection}
+                onSelectionChange={setTagSelection}
+                TriggerIcon={FilterIcon}
+              />
+            ) : null
+          }
+          {...lastViewedProps}
+        >
           {({ query, results, isBrowsing, closeMenu, getItemProps, highlightedIndex }) => (
             <Swap condition={isBrowsing}>
               <Explorer

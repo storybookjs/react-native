@@ -3,6 +3,7 @@ import { Movie } from './Object';
 
 const meta = {
   component: Movie,
+  tags: ['controls', 'object'],
   args: {
     filmInfo: {
       releaseYear: 1982,

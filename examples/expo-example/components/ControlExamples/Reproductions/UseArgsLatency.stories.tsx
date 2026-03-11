@@ -59,6 +59,7 @@ const StorySurface = ({
 const meta = {
   title: 'ControlExamples/Reproductions/UseArgsLatency',
   component: StorySurface,
+  tags: ['controls', 'reproduction', 'useargs'],
   args: {
     title: 'useArgs latency repro',
     description: 'Compare how this segmented control feels under different update strategies.',

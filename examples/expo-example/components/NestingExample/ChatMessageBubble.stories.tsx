@@ -4,6 +4,7 @@ import { ChatBubble, ChatBubbleProps } from './ChatComponents';
 const meta = {
   title: 'NestingExample/Message/bubble',
   component: ChatBubble,
+  tags: ['chat', 'bubble'],
   argTypes: {
     isOwn: { control: 'boolean' },
     status: {

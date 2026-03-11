@@ -5,6 +5,7 @@ import type {
   NormalizedStoriesSpecifier,
   StoryIndex,
 } from 'storybook/internal/types';
+import { getStoryEntryTags } from './storyTags';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
@@ -90,7 +91,11 @@ export function prepareStories({
               name,
               title,
               importPath: `${root}/${filename.substring(2)}`, // FIXME: use normalize function here
-              tags: ['story'],
+              tags: getStoryEntryTags({
+                metaTags: meta.tags,
+                storyTags: exportValue?.tags,
+                hasPlayFn: !!(exportValue?.play && options?.playFn),
+              }),
               subtype: 'story',
             };
 

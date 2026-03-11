@@ -3,6 +3,7 @@ import { ControlExample } from './ControlExample';
 
 const meta = {
   component: ControlExample,
+  tags: ['controls'],
   args: {
     name: 'Storyteller',
     age: 70,

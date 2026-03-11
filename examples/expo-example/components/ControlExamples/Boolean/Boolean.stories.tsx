@@ -3,6 +3,7 @@ import { Switch } from './Boolean';
 
 const meta = {
   component: Switch,
+  tags: ['controls', 'boolean'],
 } satisfies Meta<typeof Switch>;
 
 export default meta;

@@ -1,5 +1,5 @@
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { PortalHost } from '@gorhom/portal';
+import { PortalHost, PortalProvider } from '@gorhom/portal';
 import type { ReactRenderer } from '@storybook/react';
 import { styled, ThemeProvider, useTheme } from '@storybook/react-native-theming';
 import {
@@ -73,14 +73,16 @@ export const FullUI: SBUI = ({
           <BottomSheetModalProvider>
             <StorageProvider storage={storage}>
               <LayoutProvider>
-                <Layout
-                  storyHash={storyHash}
-                  story={story}
-                  storyBackgroundColor={storyBackgroundColor}
-                >
-                  {children}
-                </Layout>
-                <PortalHost name="storybook-lite-ui-root" />
+                <PortalProvider shouldAddRootHost={false}>
+                  <Layout
+                    storyHash={storyHash}
+                    story={story}
+                    storyBackgroundColor={storyBackgroundColor}
+                  >
+                    {children}
+                  </Layout>
+                  <PortalHost name="storybook-lite-ui-root" />
+                </PortalProvider>
               </LayoutProvider>
             </StorageProvider>
           </BottomSheetModalProvider>

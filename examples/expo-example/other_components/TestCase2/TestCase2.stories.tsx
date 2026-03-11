@@ -7,6 +7,7 @@ const TestCase2 = () => {
 
 const meta = {
   component: TestCase2,
+  tags: ['testing', 'globs'],
 } satisfies Meta<typeof TestCase2>;
 
 export default meta;

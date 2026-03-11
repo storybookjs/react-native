@@ -5,6 +5,7 @@ const arrows = { ArrowUp: '⬆', ArrowDown: '⬇', ArrowLeft: '⬅️', ArrowRig
 
 const meta = {
   component: SelectExample,
+  tags: ['controls', 'select'],
   argTypes: {
     arrow: {
       options: Object.values(arrows),

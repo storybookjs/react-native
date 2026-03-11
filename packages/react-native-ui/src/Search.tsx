@@ -41,6 +41,18 @@ const SearchField = styled.View({
   position: 'relative',
 });
 
+const SearchActions = styled.View({
+  position: 'absolute',
+  top: 0,
+  right: 8,
+  bottom: 0,
+  zIndex: 1,
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 4,
+});
+
 const BottomSheetInput = styled(BottomSheetTextInput)(({ theme }) => ({
   height: 32,
   paddingLeft: 28,
@@ -70,17 +82,13 @@ const Input = styled(TextInput)(({ theme }) => ({
 }));
 
 const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
-  position: 'absolute',
-  top: 0,
-  bottom: 0,
-  right: 8,
-  zIndex: 1,
   color: theme.textMutedColor,
   cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  height: '100%',
+  width: 28,
+  height: 28,
 }));
 
 export const Search = React.memo<{
@@ -89,7 +97,15 @@ export const Search = React.memo<{
   setSelection: (selection: Selection) => void;
   getLastViewed: () => Selection[];
   initialQuery?: string;
-}>(function Search({ children, dataset, setSelection, getLastViewed, initialQuery = '' }) {
+  searchFieldContent?: React.ReactNode;
+}>(function Search({
+  children,
+  dataset,
+  setSelection,
+  getLastViewed,
+  initialQuery = '',
+  searchFieldContent,
+}) {
   const context = useBottomSheetInternal(true);
   const isBottomSheet = context !== null;
 
@@ -247,21 +263,31 @@ export const Search = React.memo<{
             onChangeText={setInputValue}
             onFocus={() => setIsOpen(true)}
             onBlur={() => setIsOpen(false)}
+            style={{ paddingRight: 72 }}
           />
         ) : (
-          <Input ref={inputRef} onChangeText={setInputValue} onFocus={() => setIsOpen(true)} />
+          <Input
+            ref={inputRef}
+            onChangeText={setInputValue}
+            onFocus={() => setIsOpen(true)}
+            onBlur={() => setIsOpen(false)}
+            style={{ paddingRight: 72 }}
+          />
         )}
 
-        {isOpen && (
-          <ClearIcon
-            onPress={() => {
-              setInputValue('');
-              inputRef.current.clear();
-            }}
-          >
-            <CloseIcon />
-          </ClearIcon>
-        )}
+        <SearchActions pointerEvents="box-none">
+          {isOpen ? (
+            <ClearIcon
+              onPress={() => {
+                setInputValue('');
+                inputRef.current?.clear();
+              }}
+            >
+              <CloseIcon />
+            </ClearIcon>
+          ) : null}
+          {searchFieldContent}
+        </SearchActions>
       </SearchField>
 
       {children({

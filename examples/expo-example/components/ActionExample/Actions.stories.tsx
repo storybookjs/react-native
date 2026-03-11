@@ -4,6 +4,7 @@ import { fn } from 'storybook/test';
 
 const meta = {
   component: ActionButton,
+  tags: ['actions'],
   parameters: {
     notes: `
 # Button

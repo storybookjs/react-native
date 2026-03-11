@@ -5,6 +5,7 @@ const StoryName = ({ name }: { name: string }) => <Text>{name}</Text>;
 
 const meta = {
   component: StoryName,
+  tags: ['story-name'],
 } satisfies Meta<typeof StoryName>;
 
 export default meta;

@@ -6,6 +6,7 @@ const Placeholder = () => <View />;
 
 const meta = {
   component: Placeholder,
+  tags: ['interaction', 'keyboard'],
   parameters: {
     notes: `
 Use these example to test that tapping the story view will dismiss the keyboard,

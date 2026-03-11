@@ -11,6 +11,7 @@ import {
 } from 'storybook/internal/types';
 import { sortStoriesV7, userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
 import { getFilePathWithExtension } from '../../scripts/common';
+import { getStoryEntryTags } from '../storyTags';
 
 const cwd = process.cwd();
 
@@ -36,6 +37,15 @@ export async function buildIndex({ configPath }: { configPath: string }): Promis
   if (!main.stories || !Array.isArray(main.stories)) {
     throw new Error('No stories found');
   }
+  const mainWithReactNative = main as typeof main & {
+    reactNative?: {
+      playFn?: boolean;
+    };
+  };
+  const reactNativeOptions =
+    mainWithReactNative.reactNative && typeof mainWithReactNative.reactNative === 'object'
+      ? mainWithReactNative.reactNative
+      : undefined;
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
@@ -106,7 +116,11 @@ export async function buildIndex({ configPath }: { configPath: string }): Promis
           name: story.name,
           title: meta.title,
           importPath: `${specifier.directory}/${path.posix.relative(specifier.directory, fileName)}`,
-          tags: ['story'],
+          tags: getStoryEntryTags({
+            metaTags: meta.tags,
+            storyTags: story.tags,
+            hasPlayFn: !!(story.__stats?.play && reactNativeOptions?.playFn),
+          }),
         };
       }
     } else {

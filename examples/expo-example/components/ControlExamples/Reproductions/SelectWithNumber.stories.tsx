@@ -4,6 +4,7 @@ import { MyButton } from './SelectWithNumber';
 
 const meta = {
   component: MyButton,
+  tags: ['controls', 'reproduction'],
 } satisfies Meta<typeof MyButton>;
 
 export default meta;

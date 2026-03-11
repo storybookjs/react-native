@@ -35,6 +35,19 @@ const SearchIconWrapper = styled.View({
 
 const SearchField = styled.View({
   flexShrink: 0,
+  position: 'relative',
+});
+
+const SearchActions = styled.View({
+  position: 'absolute',
+  top: 0,
+  right: 8,
+  bottom: 0,
+  zIndex: 1,
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 4,
 });
 
 const inputPlatformSpecificStyles = Platform.select({
@@ -64,18 +77,13 @@ const Input = styled(TextInput)(({ theme }) => ({
 }));
 
 const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
-  position: 'absolute',
-  top: 0,
-  bottom: 0,
-  right: 0,
-  zIndex: 1,
   color: theme.textMutedColor,
   cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  height: '100%',
-  paddingHorizontal: 12,
+  width: 28,
+  height: 28,
 }));
 
 const flexStyle: ViewStyle = { flex: 1 };
@@ -87,7 +95,15 @@ export const Search = React.memo<{
   setSelection: (selection: Selection) => void;
   getLastViewed: () => Selection[];
   initialQuery?: string;
-}>(function Search({ children, dataset, setSelection, getLastViewed, initialQuery = '' }) {
+  searchFieldContent?: React.ReactNode;
+}>(function Search({
+  children,
+  dataset,
+  setSelection,
+  getLastViewed,
+  initialQuery = '',
+  searchFieldContent,
+}) {
   const theme = useTheme();
   const inputRef = useRef<TextInput>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
@@ -243,21 +259,26 @@ export const Search = React.memo<{
             ref={inputRef}
             onChangeText={setInputValue}
             onFocus={() => setIsOpen(true)}
+            onBlur={() => setIsOpen(false)}
             returnKeyType="search"
+            style={{ paddingRight: 72 }}
           />
 
-          {isOpen && (
-            <ClearIcon
-              accessibilityRole="button"
-              accessibilityLabel="Clear search"
-              onPress={() => {
-                setInputValue('');
-                inputRef.current.clear();
-              }}
-            >
-              <CloseIcon color={theme.textMutedColor} />
-            </ClearIcon>
-          )}
+          <SearchActions pointerEvents="box-none">
+            {isOpen ? (
+              <ClearIcon
+                accessibilityRole="button"
+                accessibilityLabel="Clear search"
+                onPress={() => {
+                  setInputValue('');
+                  inputRef.current?.clear();
+                }}
+              >
+                <CloseIcon color={theme.textMutedColor} />
+              </ClearIcon>
+            ) : null}
+            {searchFieldContent}
+          </SearchActions>
         </SearchField>
       </View>
 

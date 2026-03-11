@@ -5,6 +5,7 @@ const radio_stations = ['104.8MHz', '909 kHz', '90FM'];
 
 const meta = {
   component: Radio,
+  tags: ['controls', 'radio'],
 
   argTypes: {
     selection: {

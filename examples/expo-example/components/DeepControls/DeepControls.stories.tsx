@@ -22,6 +22,7 @@ const DeepControls = ({
 
 const meta = {
   component: DeepControls,
+  tags: ['controls', 'deep-controls'],
 } satisfies Meta<typeof DeepControls>;
 
 export default meta;
@@ -72,4 +73,5 @@ export const Basic: DeepControlsStory = {
       control: 'number',
     },
   },
+  tags: ['controls', 'deep-controls'],
 };

@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
 const meta = {
   title: 'NestingExample/Message/Reactions',
   component: ReactionsDemo,
+  tags: ['chat', 'reactions'],
 } satisfies Meta<ChatReactionsProps>;
 
 export default meta;

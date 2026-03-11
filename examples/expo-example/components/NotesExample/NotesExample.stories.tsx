@@ -2,6 +2,7 @@ import type { StoryObj, Meta } from '@storybook/react-native';
 import { View, StyleSheet, Text } from 'react-native';
 
 const NotesExampleMeta: Meta<any> = {
+  tags: ['notes'],
   parameters: {
     notes: `
 # H1
