@@ -98,14 +98,7 @@ export const Search = React.memo<{
   getLastViewed: () => Selection[];
   initialQuery?: string;
   searchFieldContent?: React.ReactNode;
-}>(function Search({
-  children,
-  dataset,
-  setSelection,
-  getLastViewed,
-  initialQuery = '',
-  searchFieldContent,
-}) {
+}>(function Search({ children, dataset, setSelection, initialQuery = '', searchFieldContent }) {
   const context = useBottomSheetInternal(true);
   const isBottomSheet = context !== null;
 
@@ -262,7 +255,6 @@ export const Search = React.memo<{
             ref={inputRef as any} // TODO find solution for this
             onChangeText={setInputValue}
             onFocus={() => setIsOpen(true)}
-            onBlur={() => setIsOpen(false)}
             style={{ paddingRight: 72 }}
           />
         ) : (
@@ -270,22 +262,22 @@ export const Search = React.memo<{
             ref={inputRef}
             onChangeText={setInputValue}
             onFocus={() => setIsOpen(true)}
-            onBlur={() => setIsOpen(false)}
             style={{ paddingRight: 72 }}
           />
         )}
 
         <SearchActions pointerEvents="box-none">
-          {isOpen ? (
+          {isOpen && inputValue.length > 0 && (
             <ClearIcon
               onPress={() => {
                 setInputValue('');
-                inputRef.current?.clear();
+                inputRef.current.clear();
               }}
+              accessibilityLabel="Clear search"
             >
               <CloseIcon />
             </ClearIcon>
-          ) : null}
+          )}
           {searchFieldContent}
         </SearchActions>
       </SearchField>

@@ -96,14 +96,7 @@ export const Search = React.memo<{
   getLastViewed: () => Selection[];
   initialQuery?: string;
   searchFieldContent?: React.ReactNode;
-}>(function Search({
-  children,
-  dataset,
-  setSelection,
-  getLastViewed,
-  initialQuery = '',
-  searchFieldContent,
-}) {
+}>(function Search({ children, dataset, setSelection, initialQuery = '', searchFieldContent }) {
   const theme = useTheme();
   const inputRef = useRef<TextInput>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
@@ -259,24 +252,23 @@ export const Search = React.memo<{
             ref={inputRef}
             onChangeText={setInputValue}
             onFocus={() => setIsOpen(true)}
-            onBlur={() => setIsOpen(false)}
             returnKeyType="search"
             style={{ paddingRight: 72 }}
           />
 
-          <SearchActions pointerEvents="box-none">
-            {isOpen ? (
+          <SearchActions>
+            {isOpen && inputValue.length > 0 && (
               <ClearIcon
                 accessibilityRole="button"
                 accessibilityLabel="Clear search"
                 onPress={() => {
                   setInputValue('');
-                  inputRef.current?.clear();
+                  inputRef.current.clear();
                 }}
               >
                 <CloseIcon color={theme.textMutedColor} />
               </ClearIcon>
-            ) : null}
+            )}
             {searchFieldContent}
           </SearchActions>
         </SearchField>

@@ -159,7 +159,7 @@ const PANEL_GAP = 8;
 const SCREEN_PADDING = 8;
 const PANEL_WIDTH = 300;
 const COMPACT_TRIGGER_SIZE = 24;
-const compactTriggerHitSlop = { top: 6, right: 6, bottom: 6, left: 6 };
+const compactTriggerHitSlop = { top: 6, right: 6, bottom: 6, left: 0 };
 const filtersScrollViewStyle = {
   marginRight: -6,
 } satisfies ViewStyle;
