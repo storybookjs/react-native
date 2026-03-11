@@ -143,7 +143,6 @@ export const Sidebar = React.memo(function Sidebar({
           searchFieldContent={
             index ? (
               <TagsFilter
-                compact
                 storiesHash={index}
                 selection={tagSelection}
                 onSelectionChange={setTagSelection}

@@ -11,9 +11,9 @@ import {
   hasActiveSidebarTagSelection,
 } from './util/tags';
 
-const Wrapper = styled.View<{ compact?: boolean }>(({ compact }) => ({
-  marginBottom: compact ? 0 : 8,
-}));
+const Wrapper = styled.View({
+  marginBottom: 0,
+});
 
 const TriggerWrapper = styled.View({
   alignItems: 'flex-start',
@@ -176,7 +176,6 @@ type TagsFilterProps = {
   storiesHash?: API_IndexHash;
   selection: SidebarTagSelection;
   onSelectionChange: (selection: SidebarTagSelection) => void;
-  compact?: boolean;
   TriggerIcon?: (props: {
     color?: string;
     width?: number;
@@ -189,7 +188,6 @@ export const TagsFilter = React.memo(function TagsFilter({
   storiesHash,
   selection,
   onSelectionChange,
-  compact = false,
   TriggerIcon,
 }: TagsFilterProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -288,7 +286,7 @@ export const TagsFilter = React.memo(function TagsFilter({
   }, [anchorRect, windowHeight, windowWidth]);
 
   return (
-    <Wrapper compact={compact}>
+    <Wrapper>
       <TriggerWrapper ref={triggerRef} collapsable={false}>
         <Button
           active={hasActiveSelection}
@@ -299,14 +297,13 @@ export const TagsFilter = React.memo(function TagsFilter({
             setIsOpen((current) => !current);
           }}
           accessibilityLabel="Tag filters"
-          Icon={compact ? TriggerIcon : undefined}
-          text={compact ? undefined : activeCount > 0 ? `Tags (${activeCount})` : 'Tags'}
-          hitSlop={compact ? compactTriggerHitSlop : undefined}
-          padding={compact ? 'small' : 'medium'}
-          style={compact ? compactTriggerStyle : undefined}
-          variant={compact ? 'ghost' : hasActiveSelection ? 'ghost' : 'outline'}
+          Icon={TriggerIcon}
+          hitSlop={compactTriggerHitSlop}
+          padding="small"
+          style={compactTriggerStyle}
+          variant="ghost"
         >
-          {compact && activeCount > 0 ? <SelectedDot /> : null}
+          {activeCount > 0 ? <SelectedDot /> : null}
         </Button>
       </TriggerWrapper>
 
