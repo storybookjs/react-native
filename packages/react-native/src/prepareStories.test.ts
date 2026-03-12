@@ -32,6 +32,7 @@ describe('prepareStories', () => {
             parameters: {
               notes: 'Use this example to test the software keyboard related issues.',
             },
+            tags: ['forms', 'input'],
           },
         },
       },
@@ -42,7 +43,7 @@ describe('prepareStories', () => {
             id: 'textinput--basic',
             importPath: './src/TextInput.stories.tsx',
             name: 'Basic',
-            tags: ['dev', 'test'],
+            tags: ['dev', 'test', 'forms', 'input'],
             title: 'TextInput',
             type: 'story',
             subtype: 'story',
@@ -130,8 +131,14 @@ describe('prepareStories', () => {
         },
       ],
     });
+    // @ts-expect-error
     expect(result.importMap['./src/TextInput.stories.tsx'].Basic.play).toBeUndefined();
-    expect(result.index.entries['textinput--basic'].tags).toEqual(['dev', 'test']);
+    expect(result.index.entries['textinput--basic'].tags).toEqual([
+      'dev',
+      'test',
+      'forms',
+      'input',
+    ]);
   });
 
   test('includes meta, story, and play tags in the generated index', () => {

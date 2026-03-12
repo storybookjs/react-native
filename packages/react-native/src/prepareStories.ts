@@ -7,6 +7,13 @@ import type {
 } from 'storybook/internal/types';
 import { getStoryEntryTags } from './storyTags';
 
+type StoryModuleExport = Readonly<Record<string, unknown>> & {
+  play?: unknown;
+  name?: string;
+  storyName?: string;
+  tags?: unknown;
+};
+
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
   /**
@@ -29,7 +36,7 @@ export function prepareStories({
     entries: {},
   };
 
-  let importMap: Record<string, any> = {};
+  let importMap: Record<string, Record<string, unknown>> = {};
 
   const makeTitle = (
     fileName: string,
@@ -99,17 +106,19 @@ export function prepareStories({
               subtype: 'story',
             };
 
-            const importedStories = req(filename);
-            const stories = Object.entries(importedStories).reduce(
-              (carry, [storyKey, story]: [string, Readonly<Record<string, unknown>>]) => {
+            const importedStories = req(filename) as Record<string, unknown>;
+            const stories = Object.entries(importedStories).reduce<Record<string, unknown>>(
+              (carry, [storyKey, story]) => {
                 if (!isExportStory(storyKey, fileExports.default)) return carry;
 
-                if (story.play && !options?.playFn) {
+                const typedStory = story as StoryModuleExport;
+
+                if (typedStory.play && !options?.playFn) {
                   // play functions are not yet fully supported on native.
                   // There is a new option in main.js to turn them on for future use.
-                  carry[storyKey] = { ...story, play: undefined };
+                  carry[storyKey] = { ...typedStory, play: undefined };
                 } else {
-                  carry[storyKey] = story;
+                  carry[storyKey] = typedStory;
                 }
                 return carry;
               },
@@ -123,7 +132,9 @@ export function prepareStories({
         });
       } catch (error) {
         const errorString =
-          error.message && error.stack ? `${error.message}\n ${error.stack}` : error.toString();
+          error instanceof Error && error.message && error.stack
+            ? `${error.message}\n ${error.stack}`
+            : String(error);
         console.error(`Unexpected error while loading ${filename}: ${errorString}`);
       }
     });

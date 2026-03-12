@@ -16,6 +16,11 @@ import { View } from './View';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
 export { prepareStories, type ReactNativeOptions } from './prepareStories';
 
+type StorybookGlobals = typeof globalThis & {
+  __STORYBOOK_ADDONS_CHANNEL__?: Channel;
+  __STORYBOOK_PREVIEW__?: PreviewWithSelection<ReactRenderer>;
+};
+
 /**
  * Since we aren't supporting  these web addons yet in react native (or reimplement them) then we should disable them
  * to avoid running code for addons that are not supported.
@@ -37,10 +42,10 @@ if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
 export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
   composeConfigs<ReactRenderer>([
     {
-      renderToCanvas: (context) => {
+      renderToCanvas: (context: any) => {
         view._setStory(context.storyContext);
       },
-      render: (args, context) => {
+      render: (args: any, context: any) => {
         const { id, component: Component } = context;
 
         if (!Component) {
@@ -107,10 +112,10 @@ export function start({
   } satisfies PreviewView<ReactRenderer>;
 
   const selectionStore = {
-    selection: null,
+    selection: undefined,
     selectionSpecifier: null,
     setQueryParams: () => {},
-    setSelection: (selection) => {
+    setSelection: (selection: NonNullable<SelectionStore['selection']>) => {
       preview.selectionStore.selection = selection;
     },
   } satisfies SelectionStore;
@@ -118,10 +123,10 @@ export function start({
   const getProjectAnnotationsInitial = async () =>
     composeConfigs<ReactRenderer>([
       {
-        renderToCanvas: (context) => {
+        renderToCanvas: (context: any) => {
           view._setStory(context.storyContext);
         },
-        render: (args, context) => {
+        render: (args: any, context: any) => {
           const { id, component: Component } = context;
 
           if (!Component) {
@@ -145,10 +150,9 @@ export function start({
 
   const view = new View(preview, channel);
 
-  if (global) {
-    global.__STORYBOOK_ADDONS_CHANNEL__ = channel;
-    global.__STORYBOOK_PREVIEW__ = preview;
-  }
+  const globalScope = globalThis as StorybookGlobals;
+  globalScope.__STORYBOOK_ADDONS_CHANNEL__ = channel;
+  globalScope.__STORYBOOK_PREVIEW__ = preview;
 
   view._storyIndex = index;
 

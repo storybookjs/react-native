@@ -52,7 +52,7 @@ const StoryView = ({
   const theme = useTheme();
 
   const containerStyle = useMemo(() => {
-    const layout = context?.parameters?.layout;
+    const layout = context?.parameters?.layout as keyof typeof layoutStyles | undefined;
     const layoutStyle = layout ? layoutStyles[layout] : {};
 
     return {

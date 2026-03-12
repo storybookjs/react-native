@@ -5,17 +5,20 @@ export class ErrorBoundary extends React.Component<
   { children: ReactNode | ReactNode[]; onError: (error: Error, stack: string) => void },
   { hasError: boolean }
 > {
-  constructor(props) {
+  constructor(props: {
+    children: ReactNode | ReactNode[];
+    onError: (error: Error, stack: string) => void;
+  }) {
     super(props);
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(_error) {
+  static getDerivedStateFromError(_error: Error) {
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: Error, info: React.ErrorInfo) {
     this.props.onError(error, info.componentStack);
   }
 

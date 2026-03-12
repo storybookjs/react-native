@@ -27,6 +27,22 @@ import {
   STORYBOOK_STORY_ID_PARAM,
 } from './constants';
 
+type StorybookGlobals = typeof globalThis & {
+  STORYBOOK_WEBSOCKET?: {
+    host?: string;
+    port?: number;
+    secured?: boolean;
+  };
+  FEATURES?: {
+    ondeviceBackgrounds?: boolean;
+  };
+};
+
+const defaultStorage: Storage = {
+  getItem: async () => null,
+  setItem: async () => {},
+};
+
 function resolveStoryBackgroundColor(
   story?: StoryContext<ReactRenderer> | null
 ): string | undefined {
@@ -109,14 +125,14 @@ export type Params = {
 };
 
 export class View {
-  _storyIndex: StoryIndex;
+  _storyIndex: StoryIndex = { v: 5, entries: {} };
   _setStory: (story: StoryContext<ReactRenderer>) => void = () => {};
   _forceRerender: () => void = () => {};
   _ready: boolean = false;
   _preview: PreviewWithSelection<ReactRenderer>;
-  _asyncStorageStoryId: string;
-  _webUrl: string;
-  _storage: Storage;
+  _asyncStorageStoryId: string | null = null;
+  _webUrl: string = '';
+  _storage: Storage = defaultStorage;
   _channel: Channel;
   _idToPrepared: Record<string, PreparedStory<ReactRenderer>> = {};
 
@@ -168,35 +184,41 @@ export class View {
   };
 
   _getHost = (params: Partial<Params> = {}) => {
+    const globalScope = globalThis as StorybookGlobals;
+
     if (params.host) {
       return params.host;
     }
 
-    if (globalThis.STORYBOOK_WEBSOCKET?.host) {
-      return globalThis.STORYBOOK_WEBSOCKET.host;
+    if (globalScope.STORYBOOK_WEBSOCKET?.host) {
+      return globalScope.STORYBOOK_WEBSOCKET.host;
     }
 
     return Platform.OS === 'android' ? '10.0.2.2' : 'localhost';
   };
 
   __getPort = (params: Partial<Params> = {}) => {
+    const globalScope = globalThis as StorybookGlobals;
+
     if (params.port) {
       return params.port;
     }
 
-    if (globalThis.STORYBOOK_WEBSOCKET?.port) {
-      return globalThis.STORYBOOK_WEBSOCKET.port;
+    if (globalScope.STORYBOOK_WEBSOCKET?.port) {
+      return globalScope.STORYBOOK_WEBSOCKET.port;
     }
 
     return 7007;
   };
 
   _isSecureConnection = (params: Partial<Params> = {}) => {
+    const globalScope = globalThis as StorybookGlobals;
+
     if (typeof params.secured === 'boolean') {
       return params.secured;
     }
 
-    return globalThis.STORYBOOK_WEBSOCKET?.secured ?? false;
+    return globalScope.STORYBOOK_WEBSOCKET?.secured ?? false;
   };
 
   _getServerChannel = (params: Partial<Params> = {}) => {
@@ -260,7 +282,7 @@ export class View {
 
     const FullUI: SBUI = getFullUI(onDeviceUI && !CustomUIComponent);
 
-    this._storage = storage;
+    this._storage = storage ?? defaultStorage;
 
     const initialStory = this._getInitialStory(params);
 
@@ -283,7 +305,7 @@ export class View {
 
     managerAddons.loadAddons({
       store: () => ({
-        fromId: (id) => {
+        fromId: (id: string) => {
           if (!this._ready) {
             throw new Error('Storybook is not ready yet');
           }
@@ -446,7 +468,7 @@ export class View {
         );
       }
 
-      const storyBackgroundColor = globalThis.FEATURES?.ondeviceBackgrounds
+      const storyBackgroundColor = (globalThis as StorybookGlobals).FEATURES?.ondeviceBackgrounds
         ? resolveStoryBackgroundColor(story)
         : undefined;
 
@@ -454,12 +476,12 @@ export class View {
         if (CustomUIComponent) {
           return (
             <CustomUIComponent
-              story={story}
+              story={story ?? undefined}
               storyHash={storyHash}
               setStory={(newStoryId) =>
                 self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
               }
-              storage={storage}
+              storage={self._storage}
               theme={appliedTheme as Theme}
               storyBackgroundColor={storyBackgroundColor}
             >
@@ -473,10 +495,10 @@ export class View {
 
         return (
           <FullUI
-            storage={storage}
+            storage={self._storage}
             theme={appliedTheme as Theme}
             storyHash={storyHash}
-            story={story}
+            story={story ?? undefined}
             setStory={(newStoryId) =>
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }
