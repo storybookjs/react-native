@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-actions",
-  "version": "10.3.0-next.6",
+  "version": "10.3.0",
   "description": "Action Logger addon for react-native storybook",
   "keywords": [
     "storybook"
@@ -28,7 +28,7 @@
     "check:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@storybook/react-native-theming": "^10.3.0-next.6",
+    "@storybook/react-native-theming": "^10.3.0",
     "fast-deep-equal": "^3.1.3"
   },
   "devDependencies": {
