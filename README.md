@@ -453,12 +453,20 @@ Whether to use lite mode for Storybook. In lite mode, the default Storybook UI i
 
 Type: `boolean`, default: `false`
 
-Enables an experimental MCP (Model Context Protocol) endpoint at `/mcp` on the Storybook channel server. This can be used by AI tooling to query Storybook documentation and component/story metadata. Available from v10.3 onwards.
+Enables an experimental MCP (Model Context Protocol) server for AI tooling to query Storybook documentation and component/story metadata.
 
 You can enable MCP with or without websockets:
 
 - `experimental_mcp: true` starts the HTTP MCP endpoint
 - adding `websockets` also enables story selection tools over the same channel server
+
+The MCP server is available at the `/mcp` endpoint on the Storybook channel server. Configure your MCP client via its settings UI, or use:
+
+```sh
+npx mcp-add --type http --url "http://localhost:7007/mcp" --scope project
+```
+
+You'll need to adjust the URL accordingly if you're using non-default `websockets.(host|port|secured)` [properties](#websockets).
 
 ### websockets
 
