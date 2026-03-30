@@ -1,5 +1,15 @@
 # @storybook/react-native-ui
 
+## 10.3.1
+
+### Patch Changes
+
+- [#870](https://github.com/storybookjs/react-native/pull/870) [`7456b7f`](https://github.com/storybookjs/react-native/commit/7456b7fb858a13df814289a39bd4a7fa4a5e31c2) Thanks [@dannyhw](https://github.com/dannyhw)! - update storybook dependencies and fix mcp tool name change
+
+- Updated dependencies [[`7456b7f`](https://github.com/storybookjs/react-native/commit/7456b7fb858a13df814289a39bd4a7fa4a5e31c2)]:
+  - @storybook/react-native-ui-common@10.3.1
+  - @storybook/react-native-theming@10.3.1
+
 ## 10.3.0
 
 ### Minor Changes
