@@ -91,11 +91,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
           { McpServer },
           { ValibotJsonSchemaAdapter },
           { HttpTransport },
-          {
-            addListAllDocumentationTool,
-            addGetDocumentationTool,
-            addGetComponentStoryDocumentationTool,
-          },
+          { addListAllDocumentationTool, addGetDocumentationTool, addGetStoryDocumentationTool },
           { storyInstructions },
           { buildIndex },
           valibot,
@@ -142,7 +138,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
 
         addListAllDocumentationTool(server);
         addGetDocumentationTool(server);
-        addGetComponentStoryDocumentationTool(server);
+        addGetStoryDocumentationTool(server);
 
         server.tool(
           {

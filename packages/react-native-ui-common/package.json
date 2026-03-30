@@ -34,15 +34,15 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.14",
-    "storybook": "10.3.0-alpha.14",
+    "storybook": "^10.3.1",
     "tsup": "^8.5.0",
     "typescript": "~5.9.3"
   },
   "dependencies": {
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "10.3.0-alpha.14",
+    "@storybook/react": "^10.3.1",
     "@storybook/react-native-theming": "^10.3.0",
-    "es-toolkit": "^1.41.0",
+    "es-toolkit": "^1.45.1",
     "memoizerific": "^1.11.3",
     "ts-dedent": "^2.2.0"
   },
