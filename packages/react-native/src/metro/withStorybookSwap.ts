@@ -8,8 +8,6 @@ import {
 } from './withStorybook';
 import type { WithStorybookOptions, ResolveRequestFunction } from './withStorybook';
 
-export { resolveEntryPoint, resolveStorybookEntry, applyWebsocketEnvOverrides };
-
 /**
  * Configures Metro bundler to work with Storybook using entry-point swapping.
  *
