@@ -7,58 +7,14 @@ import { telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
 import type { WebsocketsOptions } from '../types';
 
-/**
- * Options for configuring Storybook with React Native.
- */
-interface WithStorybookOptions {
-  /**
-   * The path to the Storybook config folder. Defaults to './.rnstorybook'.
-   */
-  configPath?: string;
-
-  /**
-   * WebSocket configuration for syncing storybook instances or sending events to storybook.
-   */
-  websockets?: WebsocketsOptions | 'auto';
-
-  /**
-   * Whether to use JavaScript files for Storybook configuration instead of TypeScript. Defaults to false.
-   */
-  useJs?: boolean;
-
-  /**
-   * if false, we will attempt to remove storybook from the js bundle.
-   */
-  enabled?: boolean;
-
-  /**
-   * Whether to include doc tools in the storybook.requires file. Defaults to true.
-   */
-  docTools?: boolean;
-
-  /**
-   * Whether to use lite mode for the storybook. Defaults to false.
-   * This will mock out the default storybook ui so you don't need to install all its dependencies like reanimated etc.
-   */
-  liteMode?: boolean;
-
-  /**
-   * Whether to enable MCP (Model Context Protocol) server support. Defaults to false.
-   * When enabled, adds an /mcp endpoint to the channel server,
-   * allowing AI agents (Claude Code, Cursor, etc.) to query component documentation.
-   * If websockets are disabled, MCP documentation tools still work but story selection is unavailable.
-   */
-  experimental_mcp?: boolean;
-}
-
-const ENTRY_EXTENSIONS = ['js', 'jsx', 'ts', 'tsx'];
+export const ENTRY_EXTENSIONS = ['js', 'jsx', 'ts', 'tsx'];
 
 /**
  * Resolves the application entry point for entry-point swapping.
  *
  * Detection order:
- * 1. Expo Router: checks for `expo-router` in package.json dependencies and
- *    looks for `expo-router/entry` as the main field.
+ * 1. Expo Router: checks for `expo-router/entry` as the main field in package.json
+ *    and resolves it from node_modules.
  * 2. Expo / RN CLI: reads `package.json#main` and resolves it relative to the project root.
  * 3. Fallback: defaults to `index.js` in the project root.
  *
@@ -114,7 +70,7 @@ export function resolveEntryPoint(projectRoot: string = process.cwd()): string |
  * Resolves a file path by trying the given path as-is first, then appending each
  * of the provided extensions. Returns the first path that exists on disk, or undefined.
  */
-function resolveFileWithExtensions(
+export function resolveFileWithExtensions(
   basePath: string,
   extensions: string[]
 ): string | undefined {
@@ -142,7 +98,7 @@ function resolveFileWithExtensions(
  * Resolves the Storybook config entry point (the file that will replace the app entry).
  * Looks for index.(ts|tsx|js|jsx) in the config folder.
  */
-function resolveStorybookEntry(configPath: string): string | undefined {
+export function resolveStorybookEntry(configPath: string): string | undefined {
   return resolveFileWithExtensions(
     path.resolve(configPath, 'index'),
     ENTRY_EXTENSIONS
@@ -158,7 +114,7 @@ function resolveStorybookEntry(configPath: string): string | undefined {
  * - STORYBOOK_WS_PORT: WebSocket server port
  * - STORYBOOK_WS_SECURED: Whether to use WSS (true/false)
  */
-function applyWebsocketEnvOverrides(
+export function applyWebsocketEnvOverrides(
   websockets: WebsocketsOptions | 'auto' | undefined
 ): WebsocketsOptions | 'auto' | undefined {
   const envHost = process.env.STORYBOOK_WS_HOST;
@@ -193,7 +149,51 @@ function applyWebsocketEnvOverrides(
   return base;
 }
 
-type ResolveRequestFunction = (context: any, moduleName: string, platform: string | null) => any;
+/**
+ * Options for configuring Storybook with React Native.
+ */
+export interface WithStorybookOptions {
+  /**
+   * The path to the Storybook config folder. Defaults to './.rnstorybook'.
+   */
+  configPath?: string;
+
+  /**
+   * WebSocket configuration for syncing storybook instances or sending events to storybook.
+   */
+  websockets?: WebsocketsOptions | 'auto';
+
+  /**
+   * Whether to use JavaScript files for Storybook configuration instead of TypeScript. Defaults to false.
+   */
+  useJs?: boolean;
+
+  /**
+   * if false, we will attempt to remove storybook from the js bundle.
+   */
+  enabled?: boolean;
+
+  /**
+   * Whether to include doc tools in the storybook.requires file. Defaults to true.
+   */
+  docTools?: boolean;
+
+  /**
+   * Whether to use lite mode for the storybook. Defaults to false.
+   * This will mock out the default storybook ui so you don't need to install all its dependencies like reanimated etc.
+   */
+  liteMode?: boolean;
+
+  /**
+   * Whether to enable MCP (Model Context Protocol) server support. Defaults to false.
+   * When enabled, adds an /mcp endpoint to the channel server,
+   * allowing AI agents (Claude Code, Cursor, etc.) to query component documentation.
+   * If websockets are disabled, MCP documentation tools still work but story selection is unavailable.
+   */
+  experimental_mcp?: boolean;
+}
+
+export type ResolveRequestFunction = (context: any, moduleName: string, platform: string | null) => any;
 
 /**
  * Configures Metro bundler to work with Storybook in React Native.
@@ -277,6 +277,7 @@ export function withStorybook(
 ): MetroConfig {
   const {
     configPath = path.resolve(process.cwd(), './.rnstorybook'),
+    websockets,
     useJs = false,
     enabled = true,
     docTools = true,
@@ -284,28 +285,12 @@ export function withStorybook(
     experimental_mcp = false,
   } = options;
 
-  // Apply websocket env variable overrides
-  const websockets = applyWebsocketEnvOverrides(options.websockets);
-
   const disableTelemetry = optionalEnvToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY);
 
   if (!disableTelemetry && enabled) {
     const event = process.env.NODE_ENV === 'production' ? 'build' : 'dev';
 
     telemetry(event, {}).catch((e) => {});
-  }
-
-  // Determine if entry-point swapping is active.
-  // This is gated behind the STORYBOOK_ENABLED env variable.
-  const storybookEnabled = process.env.STORYBOOK_ENABLED === 'true';
-
-  // Resolve entry points for swapping (only when storybook is actively enabled)
-  let appEntryPoint: string | undefined;
-  let storybookEntryPoint: string | undefined;
-
-  if (storybookEnabled && enabled) {
-    appEntryPoint = resolveEntryPoint();
-    storybookEntryPoint = resolveStorybookEntry(configPath);
   }
 
   if (!enabled) {
@@ -428,20 +413,6 @@ export function withStorybook(
           : context;
 
         const resolveResult = resolveFunction(theContext, moduleName, platform);
-
-        // Entry-point swapping: when STORYBOOK_ENABLED is set, redirect the app entry to the storybook entry
-        if (
-          storybookEnabled &&
-          appEntryPoint &&
-          storybookEntryPoint &&
-          resolveResult?.filePath &&
-          path.resolve(resolveResult.filePath) === appEntryPoint
-        ) {
-          return {
-            filePath: storybookEntryPoint,
-            type: 'sourceFile',
-          };
-        }
 
         // Workaround for template files with invalid imports
         if (resolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
