@@ -2,6 +2,7 @@ import type { MetroConfig } from 'metro-config';
 import { createChannelServer } from './channelServer';
 import { generate } from '../../scripts/generate';
 import * as fs from 'fs';
+import * as os from 'os';
 import * as path from 'path';
 
 jest.mock('./channelServer', () => ({
@@ -124,7 +125,7 @@ describe('resolveEntryPoint', () => {
   let tmpDir: string;
 
   beforeEach(() => {
-    tmpDir = fs.mkdtempSync(path.join('/tmp', 'sb-entry-test-'));
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'sb-entry-test-'));
   });
 
   afterEach(() => {
@@ -219,7 +220,7 @@ describe('withStorybook entry-point swapping', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    tmpDir = fs.mkdtempSync(path.join('/tmp', 'sb-swap-test-'));
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'sb-swap-test-'));
     process.env.STORYBOOK_DISABLE_TELEMETRY = 'true';
   });
 

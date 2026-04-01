@@ -119,8 +119,12 @@ function resolveFileWithExtensions(
   extensions: string[]
 ): string | undefined {
   // Try the path as-is (might already have an extension)
-  if (fs.existsSync(basePath) && fs.statSync(basePath).isFile()) {
-    return basePath;
+  try {
+    if (fs.statSync(basePath).isFile()) {
+      return basePath;
+    }
+  } catch {
+    // Path doesn't exist or is inaccessible — try extensions
   }
 
   for (const ext of extensions) {
