@@ -23,6 +23,7 @@
   },
   "exports": {
     ".": "./dist/index.js",
+    "./withStorybook": "./dist/withStorybook.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
     "./metro/withStorybookSwap": "./dist/metro/withStorybookSwap.js",
     "./repack/withStorybook": "./dist/repack/withStorybook.js",

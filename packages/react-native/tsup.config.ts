@@ -5,6 +5,7 @@ export default defineConfig((options) => {
     entry: [
       'src/index.ts',
       'src/preview.ts',
+      'src/withStorybook.ts',
       'src/metro/withStorybook.ts',
       'src/metro/withStorybookSwap.ts',
       'src/repack/withStorybook.ts',
@@ -18,6 +19,7 @@ export default defineConfig((options) => {
           entry: [
             'src/index.ts',
             'src/preview.ts',
+            'src/withStorybook.ts',
             'src/metro/withStorybook.ts',
             'src/metro/withStorybookSwap.ts',
             'src/repack/withStorybook.ts',
