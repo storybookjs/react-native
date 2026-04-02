@@ -3,14 +3,6 @@ import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
 
-jest.mock('./metro/channelServer', () => ({
-  createChannelServer: jest.fn(),
-}));
-
-jest.mock('../scripts/generate', () => ({
-  generate: jest.fn(),
-}));
-
 describe('enhanceMetroConfig', () => {
   const config = { resolver: {}, transformer: {} } as MetroConfig;
 
@@ -24,16 +16,12 @@ describe('enhanceMetroConfig', () => {
 
   test('returns metro config with transformer and resolver', () => {
     const { enhanceMetroConfig } = require('./enhanceMetroConfig');
-    const { generate } = require('../scripts/generate');
 
-    const result = enhanceMetroConfig(config, {
-      configPath: '/tmp/.rnstorybook',
-    });
+    const result = enhanceMetroConfig(config);
 
     expect(result.transformer).toBeDefined();
     expect(result.transformer.unstable_allowRequireContext).toBe(true);
     expect(result.resolver).toBeDefined();
-    expect(generate).toHaveBeenCalled();
   });
 
   test('swaps entry point when swap data is provided', () => {
@@ -51,7 +39,7 @@ describe('enhanceMetroConfig', () => {
 
     const result = enhanceMetroConfig(
       config,
-      { configPath: path.join(tmpDir, '.rnstorybook') },
+      {},
       { appEntryPoint: appEntry, storybookEntryPoint: sbEntry }
     );
 
@@ -83,9 +71,7 @@ describe('enhanceMetroConfig', () => {
 
     const { enhanceMetroConfig } = require('./enhanceMetroConfig');
 
-    const result = enhanceMetroConfig(config, {
-      configPath: '/tmp/.rnstorybook',
-    });
+    const result = enhanceMetroConfig(config);
 
     const mockResolveRequest = jest.fn(() => ({
       filePath: appEntry,
@@ -107,20 +93,22 @@ describe('enhanceMetroConfig', () => {
     fs.rmSync(tmpDir, { recursive: true, force: true });
   });
 
-  test('creates channel server when websockets provided', () => {
+  test('applies liteMode when set', () => {
     const { enhanceMetroConfig } = require('./enhanceMetroConfig');
-    const { createChannelServer } = require('./metro/channelServer');
 
-    enhanceMetroConfig(config, {
-      configPath: '/tmp/.rnstorybook',
-      websockets: { host: '10.0.0.5', port: 9999 },
-    });
+    const result = enhanceMetroConfig(config, { liteMode: true });
 
-    expect(createChannelServer).toHaveBeenCalledWith(
-      expect.objectContaining({
-        host: '10.0.0.5',
-        port: 9999,
-      })
+    const mockResolveRequest = jest.fn(() => ({
+      filePath: '/node_modules/@storybook/react-native-ui/dist/index.js',
+      type: 'sourceFile',
+    }));
+
+    const resolverResult = result.resolver.resolveRequest(
+      { resolveRequest: mockResolveRequest },
+      '@storybook/react-native-ui',
+      'ios'
     );
+
+    expect(resolverResult).toEqual({ type: 'empty' });
   });
 });

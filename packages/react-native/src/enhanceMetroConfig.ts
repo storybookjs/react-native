@@ -1,59 +1,22 @@
 import * as path from 'path';
 import type { MetroConfig } from 'metro-config';
-import { generate } from '../scripts/generate';
-import { createChannelServer } from './metro/channelServer';
-import type { WithStorybookOptions, ResolveRequestFunction } from './metro/utils';
+import type { ResolveRequestFunction } from './metro/utils';
 
 interface EntrySwap {
   appEntryPoint: string;
   storybookEntryPoint: string;
 }
 
+interface EnhanceMetroOptions {
+  liteMode?: boolean;
+}
+
 export function enhanceMetroConfig(
   config: MetroConfig,
-  options: WithStorybookOptions,
+  options: EnhanceMetroOptions = {},
   swap?: EntrySwap
 ): MetroConfig {
-  const {
-    configPath = path.resolve(process.cwd(), './.rnstorybook'),
-    websockets,
-    useJs = false,
-    docTools = true,
-    liteMode = false,
-    experimental_mcp = false,
-  } = options;
-
-  if (websockets || experimental_mcp) {
-    const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
-    const host = websockets === 'auto' ? 'auto' : websockets?.host;
-    const secured = Boolean(websockets && websockets !== 'auto' && websockets.secured);
-
-    createChannelServer({
-      port,
-      host: host === 'auto' ? undefined : host,
-      configPath,
-      experimental_mcp,
-      websockets: Boolean(websockets),
-      secured,
-      ssl:
-        websockets && websockets !== 'auto'
-          ? {
-              key: websockets.key,
-              cert: websockets.cert,
-              ca: websockets.ca,
-              passphrase: websockets.passphrase,
-            }
-          : undefined,
-    });
-
-    if (websockets) {
-      generate({ configPath, useJs, docTools, host, port, secured });
-    } else {
-      generate({ configPath, useJs, docTools });
-    }
-  } else {
-    generate({ configPath, useJs, docTools });
-  }
+  const { liteMode = false } = options;
 
   return {
     ...config,

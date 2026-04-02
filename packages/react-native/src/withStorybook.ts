@@ -62,11 +62,7 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
       ? { appEntryPoint, storybookEntryPoint }
       : undefined;
 
-  if (isMetroConfig(config)) {
-    return enhanceMetroConfig(config, resolvedOptions, swap) as unknown as T;
-  }
-
-  // Repack/Rspack/Webpack path: handle common setup before delegating
+  // Shared setup: generate + createChannelServer (used by both Metro and Repack)
   const {
     useJs = false,
     docTools = true,
@@ -98,6 +94,10 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
     docTools,
     ...(websockets ? { host, port, secured } : {}),
   });
+
+  if (isMetroConfig(config)) {
+    return enhanceMetroConfig(config, { liteMode: resolvedOptions.liteMode }, swap) as unknown as T;
+  }
 
   return enhanceRepackConfig(config as Record<string, any>, swap) as T;
 }
