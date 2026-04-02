@@ -1,67 +1,68 @@
+import * as path from 'path';
 import type { MetroConfig } from 'metro-config';
-import { withStorybookSwap } from './metro/withStorybookSwap';
-import { StorybookPlugin } from './repack/withStorybook';
-import { applyWebsocketEnvOverrides } from './metro/utils';
+import { enhanceMetroConfig } from './enhanceMetroConfig';
+import { enhanceRepackConfig } from './enhanceRepackConfig';
+import { resolveEntryPoint, resolveStorybookEntry } from './metro/utils';
 import type { WithStorybookOptions } from './metro/utils';
+import type { WebsocketsOptions } from './types';
 
-/**
- * Detects whether the given config object is a Metro bundler configuration.
- * Metro configs are identified by the presence of a `transformer` property,
- * which is unique to Metro and not found in webpack/rspack configurations.
- */
 function isMetroConfig(config: unknown): config is MetroConfig {
   return config != null && typeof config === 'object' && 'transformer' in config;
 }
 
-/**
- * Universal Storybook config wrapper that works with both Metro and Repack (webpack/rspack).
- *
- * Automatically detects the bundler type from the config object and applies the
- * appropriate Storybook integration:
- *
- * - **Metro**: Applies Storybook Metro configuration including entry-point swapping
- *   (when `STORYBOOK_ENABLED=true`) and WebSocket env variable overrides.
- * - **Repack/Rspack/Webpack**: Adds a `StorybookPlugin` to the config's `plugins` array
- *   with WebSocket env variable overrides applied.
- *
- * @param config - The bundler configuration (Metro or Rspack/Webpack).
- * @param options - Options to customize Storybook behavior.
- * @returns The modified config with Storybook support enabled.
- *
- * @example
- * ```javascript
- * // metro.config.js
- * const { getDefaultConfig } = require('expo/metro-config');
- * const { withStorybook } = require('@storybook/react-native/withStorybook');
- *
- * const config = getDefaultConfig(__dirname);
- * module.exports = withStorybook(config);
- * ```
- *
- * @example
- * ```javascript
- * // rspack.config.mjs
- * import { withStorybook } from '@storybook/react-native/withStorybook';
- *
- * export default withStorybook({
- *   entry: './index.js',
- *   plugins: [],
- * });
- * ```
- */
-export function withStorybook<T>(config: T, options: WithStorybookOptions = {}): T {
-  if (isMetroConfig(config)) {
-    return withStorybookSwap(config, options) as unknown as T;
+function loadWebsocketEnvOverrides(
+  websockets: WebsocketsOptions | 'auto' | undefined
+): WebsocketsOptions | 'auto' | undefined {
+  const envHost = process.env.STORYBOOK_WS_HOST;
+  const envPort = process.env.STORYBOOK_WS_PORT;
+  const envSecured = process.env.STORYBOOK_WS_SECURED;
+
+  if (!envHost && !envPort && !envSecured) {
+    return websockets;
   }
 
-  // Repack/webpack/rspack path: apply ws env overrides and add StorybookPlugin
-  const websockets = applyWebsocketEnvOverrides(options.websockets);
-  const repackOptions = { ...options, ...(websockets !== undefined ? { websockets } : {}) };
+  const base: WebsocketsOptions =
+    websockets === 'auto' || websockets === undefined ? {} : { ...websockets };
 
-  const bundlerConfig = config as Record<string, any>;
+  if (envHost) {
+    base.host = envHost;
+  }
 
-  return {
-    ...bundlerConfig,
-    plugins: [...(bundlerConfig.plugins || []), new StorybookPlugin(repackOptions)],
-  } as T;
+  if (envPort) {
+    const parsed = parseInt(envPort, 10);
+
+    if (!isNaN(parsed)) {
+      base.port = parsed;
+    }
+  }
+
+  if (envSecured) {
+    base.secured = envSecured === 'true';
+  }
+
+  return base;
+}
+
+export function withStorybook<T>(config: T, options: WithStorybookOptions = {}): T {
+  if (process.env.STORYBOOK_ENABLED !== 'true') {
+    return config;
+  }
+
+  const defaultConfigPath = path.resolve(process.cwd(), './.rnstorybook');
+  const configPath = options.configPath || defaultConfigPath;
+  const websockets = loadWebsocketEnvOverrides(options.websockets);
+  const resolvedOptions: WithStorybookOptions = { ...options, configPath, websockets };
+
+  if (isMetroConfig(config)) {
+    const appEntryPoint = resolveEntryPoint();
+    const storybookEntryPoint = resolveStorybookEntry(configPath);
+    const swap =
+      appEntryPoint && storybookEntryPoint
+        ? { appEntryPoint, storybookEntryPoint }
+        : undefined;
+
+    return enhanceMetroConfig(config, resolvedOptions, swap) as unknown as T;
+  }
+
+  return enhanceRepackConfig(config as Record<string, any>, resolvedOptions) as T;
 }

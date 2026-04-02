@@ -1,51 +1,15 @@
 import * as path from 'path';
 import * as fs from 'fs';
-import type { WebsocketsOptions } from '../types';
 
 export const ENTRY_EXTENSIONS = ['js', 'jsx', 'ts', 'tsx'];
 
-/**
- * Options for configuring Storybook with React Native.
- * Shared between the unified wrapper and the metro-specific wrappers.
- */
 export interface WithStorybookOptions {
-  /**
-   * The path to the Storybook config folder. Defaults to './.rnstorybook'.
-   */
   configPath?: string;
-
-  /**
-   * WebSocket configuration for syncing storybook instances or sending events to storybook.
-   */
-  websockets?: WebsocketsOptions | 'auto';
-
-  /**
-   * Whether to use JavaScript files for Storybook configuration instead of TypeScript. Defaults to false.
-   */
+  websockets?: import('../types').WebsocketsOptions | 'auto';
   useJs?: boolean;
-
-  /**
-   * if false, we will attempt to remove storybook from the js bundle.
-   */
   enabled?: boolean;
-
-  /**
-   * Whether to include doc tools in the storybook.requires file. Defaults to true.
-   */
   docTools?: boolean;
-
-  /**
-   * Whether to use lite mode for the storybook. Defaults to false.
-   * This will mock out the default storybook ui so you don't need to install all its dependencies like reanimated etc.
-   */
   liteMode?: boolean;
-
-  /**
-   * Whether to enable MCP (Model Context Protocol) server support. Defaults to false.
-   * When enabled, adds an /mcp endpoint to the channel server,
-   * allowing AI agents (Claude Code, Cursor, etc.) to query component documentation.
-   * If websockets are disabled, MCP documentation tools still work but story selection is unavailable.
-   */
   experimental_mcp?: boolean;
 }
 
@@ -63,9 +27,6 @@ export type ResolveRequestFunction = (
  *    and resolves it from node_modules.
  * 2. Expo / RN CLI: reads `package.json#main` and resolves it relative to the project root.
  * 3. Fallback: defaults to `index.js` in the project root.
- *
- * @param projectRoot - The root directory of the React Native project. Defaults to `process.cwd()`.
- * @returns The absolute path to the resolved application entry point, or `undefined` if no entry file exists.
  */
 export function resolveEntryPoint(projectRoot: string = process.cwd()): string | undefined {
   const pkgJsonPath = path.resolve(projectRoot, 'package.json');
@@ -146,48 +107,4 @@ export function resolveFileWithExtensions(
  */
 export function resolveStorybookEntry(configPath: string): string | undefined {
   return resolveFileWithExtensions(path.resolve(configPath, 'index'), ENTRY_EXTENSIONS);
-}
-
-/**
- * Reads websocket configuration from environment variables, merging with any
- * provided options. Environment variables take precedence.
- *
- * Supported environment variables:
- * - STORYBOOK_WS_HOST: WebSocket server host
- * - STORYBOOK_WS_PORT: WebSocket server port
- * - STORYBOOK_WS_SECURED: Whether to use WSS (true/false)
- */
-export function applyWebsocketEnvOverrides(
-  websockets: WebsocketsOptions | 'auto' | undefined
-): WebsocketsOptions | 'auto' | undefined {
-  const envHost = process.env.STORYBOOK_WS_HOST;
-  const envPort = process.env.STORYBOOK_WS_PORT;
-  const envSecured = process.env.STORYBOOK_WS_SECURED;
-
-  // If no env overrides are set, return original value unchanged
-  if (!envHost && !envPort && !envSecured) {
-    return websockets;
-  }
-
-  // Start from existing config or empty object
-  const base: WebsocketsOptions =
-    websockets === 'auto' || websockets === undefined ? {} : { ...websockets };
-
-  if (envHost) {
-    base.host = envHost;
-  }
-
-  if (envPort) {
-    const parsed = parseInt(envPort, 10);
-
-    if (!isNaN(parsed)) {
-      base.port = parsed;
-    }
-  }
-
-  if (envSecured) {
-    base.secured = envSecured === 'true';
-  }
-
-  return base;
 }
