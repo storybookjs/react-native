@@ -1,6 +1,4 @@
 import type { MetroConfig } from 'metro-config';
-import { createChannelServer } from './metro/channelServer';
-import { generate } from '../scripts/generate';
 
 jest.mock('./metro/channelServer', () => ({
   createChannelServer: jest.fn(),
@@ -96,7 +94,7 @@ describe('withStorybook (unified)', () => {
     expect(mockGenerate).toHaveBeenCalled();
   });
 
-  test('detects rspack/webpack config and adds StorybookPlugin', () => {
+  test('detects rspack/webpack config and calls generate', () => {
     process.env.STORYBOOK_ENABLED = 'true';
 
     jest.resetModules();
@@ -107,6 +105,7 @@ describe('withStorybook (unified)', () => {
       telemetry: jest.fn(() => Promise.resolve()),
     }));
 
+    const { generate: mockGenerate } = require('../scripts/generate');
     const { withStorybook } = require('./withStorybook');
     const rspackConfig = { plugins: [], module: { rules: [] } };
 
@@ -114,8 +113,9 @@ describe('withStorybook (unified)', () => {
       configPath: '/tmp/.rnstorybook',
     });
 
-    expect(result.plugins).toHaveLength(1);
-    expect(typeof result.plugins[0].apply).toBe('function');
+    expect(mockGenerate).toHaveBeenCalled();
+    // No StorybookPlugin added — config plugins preserved as-is
+    expect(result.plugins).toHaveLength(0);
   });
 
   test('applies ws env overrides for metro config', () => {
@@ -165,22 +165,10 @@ describe('withStorybook (unified)', () => {
 
     const rspackConfig = { plugins: [] };
 
-    const compiler = {
-      options: { resolve: {} },
-      hooks: { beforeCompile: { tapPromise: jest.fn() } },
-      webpack: {
-        NormalModuleReplacementPlugin: class {
-          apply() {}
-        },
-      },
-    };
-
-    const result = withStorybook(rspackConfig, {
+    withStorybook(rspackConfig, {
       configPath: '/tmp/.rnstorybook',
       websockets: { port: 7007 },
     });
-
-    result.plugins[0].apply(compiler);
 
     expect(mockCreateChannelServer).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -209,7 +197,8 @@ describe('withStorybook (unified)', () => {
       configPath: '/tmp/.rnstorybook',
     });
 
-    expect(result.plugins).toHaveLength(2);
+    // No swap files found in test env, so config returned as-is with plugins preserved
+    expect(result.plugins).toHaveLength(1);
     expect(result.plugins[0]).toBe(existingPlugin);
   });
 });

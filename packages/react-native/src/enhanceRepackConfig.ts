@@ -1,12 +1,18 @@
-import { StorybookPlugin } from './repack/withStorybook';
-import type { WithStorybookOptions } from './metro/utils';
+interface EntrySwap {
+  appEntryPoint: string;
+  storybookEntryPoint: string;
+}
 
 export function enhanceRepackConfig<T extends Record<string, any>>(
   config: T,
-  options: WithStorybookOptions
+  swap?: EntrySwap
 ): T {
+  if (!swap) {
+    return config;
+  }
+
   return {
     ...config,
-    plugins: [...(config.plugins || []), new StorybookPlugin(options)],
+    entry: swap.storybookEntryPoint,
   } as T;
 }

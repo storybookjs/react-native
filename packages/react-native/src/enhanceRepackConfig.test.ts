@@ -1,91 +1,54 @@
-jest.mock('./metro/channelServer', () => ({
-  createChannelServer: jest.fn(),
-}));
-
-jest.mock('../scripts/generate', () => ({
-  generate: jest.fn(),
-}));
-
-jest.mock('storybook/internal/common', () => ({
-  optionalEnvToBoolean: jest.fn(() => true),
-}));
-
-jest.mock('storybook/internal/telemetry', () => ({
-  telemetry: jest.fn(() => Promise.resolve()),
-}));
-
 describe('enhanceRepackConfig', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
-  afterEach(() => {
-    jest.resetModules();
-  });
-
-  test('adds StorybookPlugin to plugins array', () => {
+  test('swaps entry when swap data is provided', () => {
     const { enhanceRepackConfig } = require('./enhanceRepackConfig');
-    const rspackConfig = { plugins: [], module: { rules: [] } };
+    const rspackConfig = { entry: './src/index.js', plugins: [] };
 
     const result = enhanceRepackConfig(rspackConfig, {
-      configPath: '/tmp/.rnstorybook',
+      appEntryPoint: '/project/src/index.js',
+      storybookEntryPoint: '/project/.rnstorybook/index.tsx',
     });
 
-    expect(result.plugins).toHaveLength(1);
-    expect(typeof result.plugins[0].apply).toBe('function');
+    expect(result.entry).toBe('/project/.rnstorybook/index.tsx');
   });
 
-  test('preserves existing plugins', () => {
+  test('returns config unchanged when no swap data', () => {
+    const { enhanceRepackConfig } = require('./enhanceRepackConfig');
+    const rspackConfig = { entry: './src/index.js', plugins: [] };
+
+    const result = enhanceRepackConfig(rspackConfig);
+
+    expect(result).toBe(rspackConfig);
+  });
+
+  test('preserves other config properties', () => {
     const { enhanceRepackConfig } = require('./enhanceRepackConfig');
     const existingPlugin = { apply: jest.fn() };
-    const rspackConfig = { plugins: [existingPlugin] };
-
-    const result = enhanceRepackConfig(rspackConfig, {
-      configPath: '/tmp/.rnstorybook',
-    });
-
-    expect(result.plugins).toHaveLength(2);
-    expect(result.plugins[0]).toBe(existingPlugin);
-  });
-
-  test('handles config without plugins array', () => {
-    const { enhanceRepackConfig } = require('./enhanceRepackConfig');
-    const rspackConfig = { module: { rules: [] } };
-
-    const result = enhanceRepackConfig(rspackConfig, {
-      configPath: '/tmp/.rnstorybook',
-    });
-
-    expect(result.plugins).toHaveLength(1);
-  });
-
-  test('passes options to StorybookPlugin', () => {
-    const { enhanceRepackConfig } = require('./enhanceRepackConfig');
-    const { createChannelServer } = require('./metro/channelServer');
-
-    const rspackConfig = { plugins: [] };
-    const compiler = {
-      options: { resolve: {} },
-      hooks: { beforeCompile: { tapPromise: jest.fn() } },
-      webpack: {
-        NormalModuleReplacementPlugin: class {
-          apply() {}
-        },
-      },
+    const rspackConfig = {
+      entry: './src/index.js',
+      plugins: [existingPlugin],
+      module: { rules: [] },
     };
 
     const result = enhanceRepackConfig(rspackConfig, {
-      configPath: '/tmp/.rnstorybook',
-      websockets: { host: '10.0.0.5', port: 9999 },
+      appEntryPoint: '/project/src/index.js',
+      storybookEntryPoint: '/project/.rnstorybook/index.tsx',
     });
 
-    result.plugins[0].apply(compiler);
+    expect(result.entry).toBe('/project/.rnstorybook/index.tsx');
+    expect(result.plugins).toHaveLength(1);
+    expect(result.plugins[0]).toBe(existingPlugin);
+    expect(result.module).toEqual({ rules: [] });
+  });
 
-    expect(createChannelServer).toHaveBeenCalledWith(
-      expect.objectContaining({
-        host: '10.0.0.5',
-        port: 9999,
-      })
-    );
+  test('handles config without entry field', () => {
+    const { enhanceRepackConfig } = require('./enhanceRepackConfig');
+    const rspackConfig = { plugins: [] };
+
+    const result = enhanceRepackConfig(rspackConfig, {
+      appEntryPoint: '/project/src/index.js',
+      storybookEntryPoint: '/project/.rnstorybook/index.tsx',
+    });
+
+    expect(result.entry).toBe('/project/.rnstorybook/index.tsx');
   });
 });

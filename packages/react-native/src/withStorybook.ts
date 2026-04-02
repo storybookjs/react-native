@@ -5,6 +5,8 @@ import { enhanceRepackConfig } from './enhanceRepackConfig';
 import { resolveEntryPoint, resolveStorybookEntry } from './metro/utils';
 import type { WithStorybookOptions } from './metro/utils';
 import type { WebsocketsOptions } from './types';
+import { generate } from '../scripts/generate';
+import { createChannelServer } from './metro/channelServer';
 
 function isMetroConfig(config: unknown): config is MetroConfig {
   return config != null && typeof config === 'object' && 'transformer' in config;
@@ -53,16 +55,49 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
   const websockets = loadWebsocketEnvOverrides(options.websockets);
   const resolvedOptions: WithStorybookOptions = { ...options, configPath, websockets };
 
-  if (isMetroConfig(config)) {
-    const appEntryPoint = resolveEntryPoint();
-    const storybookEntryPoint = resolveStorybookEntry(configPath);
-    const swap =
-      appEntryPoint && storybookEntryPoint
-        ? { appEntryPoint, storybookEntryPoint }
-        : undefined;
+  const appEntryPoint = resolveEntryPoint();
+  const storybookEntryPoint = resolveStorybookEntry(configPath);
+  const swap =
+    appEntryPoint && storybookEntryPoint
+      ? { appEntryPoint, storybookEntryPoint }
+      : undefined;
 
+  if (isMetroConfig(config)) {
     return enhanceMetroConfig(config, resolvedOptions, swap) as unknown as T;
   }
 
-  return enhanceRepackConfig(config as Record<string, any>, resolvedOptions) as T;
+  // Repack/Rspack/Webpack path: handle common setup before delegating
+  const {
+    useJs = false,
+    docTools = true,
+    experimental_mcp = false,
+  } = resolvedOptions;
+
+  const wsOpts = websockets && websockets !== 'auto' ? websockets : undefined;
+  const port = websockets === 'auto' ? 7007 : (wsOpts?.port ?? 7007);
+  const host = websockets === 'auto' ? 'auto' : wsOpts?.host;
+  const secured = Boolean(wsOpts?.secured);
+
+  if (websockets || experimental_mcp) {
+    createChannelServer({
+      port,
+      host: host === 'auto' ? undefined : host,
+      configPath,
+      experimental_mcp,
+      websockets: Boolean(websockets),
+      secured,
+      ssl: wsOpts
+        ? { key: wsOpts.key, cert: wsOpts.cert, ca: wsOpts.ca, passphrase: wsOpts.passphrase }
+        : undefined,
+    });
+  }
+
+  generate({
+    configPath,
+    useJs,
+    docTools,
+    ...(websockets ? { host, port, secured } : {}),
+  });
+
+  return enhanceRepackConfig(config as Record<string, any>, swap) as T;
 }
