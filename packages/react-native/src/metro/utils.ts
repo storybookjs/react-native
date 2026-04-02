@@ -1,11 +1,12 @@
 import * as path from 'path';
 import * as fs from 'fs';
+import type { WebsocketsOptions } from '../types';
 
 export const ENTRY_EXTENSIONS = ['js', 'jsx', 'ts', 'tsx'];
 
 export interface WithStorybookOptions {
   configPath?: string;
-  websockets?: import('../types').WebsocketsOptions | 'auto';
+  websockets?: WebsocketsOptions | 'auto';
   useJs?: boolean;
   enabled?: boolean;
   docTools?: boolean;
