@@ -3,6 +3,7 @@ interface EnhanceRepackOptions {
     appEntryPoint: string;
     storybookEntryPoint: string;
   };
+  liteMode?: boolean;
 }
 
 export function enhanceRepackConfig<T extends Record<string, any>>(

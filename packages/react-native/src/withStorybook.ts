@@ -8,96 +8,133 @@ import type { WebsocketsOptions } from './types';
 import { generate } from '../scripts/generate';
 import { createChannelServer } from './metro/channelServer';
 
+function envVariableToBoolean(value: string | undefined, defaultValue: any = false): boolean {
+  switch (value) {
+    case 'true':
+      return true;
+    case 'false':
+      return false;
+    default:
+      return !!defaultValue;
+  }
+}
+function envVariableToString(
+  value: string | undefined,
+  defaultValue: string | undefined
+): string | undefined {
+  return value ?? defaultValue;
+}
+function envVariableToNumber(value: string | undefined, defaultValue: number): number {
+  const parsed = parseInt(value ?? '', 10);
+  if (!isNaN(parsed)) {
+    return parsed;
+  }
+  return defaultValue;
+}
+
 function isMetroConfig(config: unknown): config is MetroConfig {
   return config != null && typeof config === 'object' && 'transformer' in config;
 }
 
 function loadWebsocketEnvOverrides(
   websockets: WebsocketsOptions | 'auto' | undefined
-): WebsocketsOptions | 'auto' | undefined {
-  const envHost = process.env.STORYBOOK_WS_HOST;
-  const envPort = process.env.STORYBOOK_WS_PORT;
-  const envSecured = process.env.STORYBOOK_WS_SECURED;
+): WebsocketsOptions {
+  const envHost = envVariableToString(
+    process.env.STORYBOOK_WS_HOST,
+    websockets === 'auto' ? undefined : (websockets?.host ?? undefined)
+  );
+  const envPort = envVariableToNumber(
+    process.env.STORYBOOK_WS_PORT,
+    websockets === 'auto' ? 7007 : (websockets?.port ?? 7007)
+  );
+  const envSecured = envVariableToBoolean(process.env.STORYBOOK_WS_SECURED);
 
-  if (!envHost && !envPort && !envSecured) {
-    return websockets;
+  if (websockets === undefined && !envHost) {
+    return {
+      host: undefined,
+      port: undefined,
+      secured: false,
+    };
   }
 
-  const base: WebsocketsOptions =
+  const config: WebsocketsOptions =
     websockets === 'auto' || websockets === undefined ? {} : { ...websockets };
 
   if (envHost) {
-    base.host = envHost;
+    config.host = envHost;
   }
 
   if (envPort) {
-    const parsed = parseInt(envPort, 10);
-
-    if (!isNaN(parsed)) {
-      base.port = parsed;
-    }
+    config.port = envPort;
   }
 
   if (envSecured) {
-    base.secured = envSecured === 'true';
+    config.secured = true;
   }
 
-  return base;
+  return config;
 }
 
 export function withStorybook<T>(config: T, options: WithStorybookOptions = {}): T {
-  if (process.env.STORYBOOK_ENABLED !== 'true') {
+  const enabled = envVariableToBoolean(process.env.STORYBOOK_ENABLED, false);
+  if (!enabled) {
     return config;
+  }
+  const server = envVariableToBoolean(process.env.STORYBOOK_SERVER, true);
+  const liteMode = envVariableToBoolean(process.env.STORYBOOK_LITE_MODE, options.liteMode ?? false);
+  const settings = { ...options };
+
+  if (server) {
+    settings.experimental_mcp = false;
+  }
+
+  if (liteMode) {
+    settings.docTools = false;
   }
 
   const defaultConfigPath = path.resolve(process.cwd(), './.rnstorybook');
   const configPath = options.configPath || defaultConfigPath;
   const websockets = loadWebsocketEnvOverrides(options.websockets);
-  const resolvedOptions: WithStorybookOptions = { ...options, configPath, websockets };
 
   const appEntryPoint = resolveEntryPoint();
   const storybookEntryPoint = resolveStorybookEntry(configPath);
   const swap =
-    appEntryPoint && storybookEntryPoint
-      ? { appEntryPoint, storybookEntryPoint }
-      : undefined;
+    appEntryPoint && storybookEntryPoint ? { appEntryPoint, storybookEntryPoint } : undefined;
 
   // Shared setup: generate + createChannelServer (used by both Metro and Repack)
-  const {
-    useJs = false,
-    docTools = true,
-    experimental_mcp = false,
-  } = resolvedOptions;
+  const { useJs = false, docTools = true, experimental_mcp = false } = settings;
 
-  const wsOpts = websockets && websockets !== 'auto' ? websockets : undefined;
-  const port = websockets === 'auto' ? 7007 : (wsOpts?.port ?? 7007);
-  const host = websockets === 'auto' ? 'auto' : wsOpts?.host;
-  const secured = Boolean(wsOpts?.secured);
-
-  if (websockets || experimental_mcp) {
+  if (server || experimental_mcp) {
     createChannelServer({
-      port,
-      host: host === 'auto' ? undefined : host,
+      port: websockets.port,
+      host: websockets.host,
       configPath,
       experimental_mcp,
-      websockets: Boolean(websockets),
-      secured,
-      ssl: wsOpts
-        ? { key: wsOpts.key, cert: wsOpts.cert, ca: wsOpts.ca, passphrase: wsOpts.passphrase }
+      websockets: Boolean(websockets.host),
+      secured: websockets.secured,
+      ssl: websockets.secured
+        ? {
+            key: websockets.key,
+            cert: websockets.cert,
+            ca: websockets.ca,
+            passphrase: websockets.passphrase,
+          }
         : undefined,
     });
   }
+
+  const host: string = websockets.host as any as string;
 
   generate({
     configPath,
     useJs,
     docTools,
-    ...(websockets ? { host, port, secured } : {}),
-  });
+    ...(!!host ? { host: host, port: websockets.port, secured: !websockets.secured } : {}),
+  } as any);
 
   if (isMetroConfig(config)) {
-    return enhanceMetroConfig(config, { liteMode: resolvedOptions.liteMode, swap }) as unknown as T;
+    return enhanceMetroConfig(config, { liteMode, swap }) as unknown as T;
   }
 
-  return enhanceRepackConfig(config as Record<string, any>, { swap }) as T;
+  return enhanceRepackConfig(config as Record<string, any>, { liteMode, swap }) as T;
 }
