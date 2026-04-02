@@ -58,10 +58,10 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
   const websockets = applyWebsocketEnvOverrides(options.websockets);
   const repackOptions = { ...options, ...(websockets !== undefined ? { websockets } : {}) };
 
-  const rspackConfig = config as Record<string, any>;
+  const bundlerConfig = config as Record<string, any>;
 
   return {
-    ...rspackConfig,
-    plugins: [...(rspackConfig.plugins || []), new StorybookPlugin(repackOptions)],
+    ...bundlerConfig,
+    plugins: [...(bundlerConfig.plugins || []), new StorybookPlugin(repackOptions)],
   } as T;
 }
