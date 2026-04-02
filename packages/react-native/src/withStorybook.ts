@@ -1,8 +1,8 @@
 import type { MetroConfig } from 'metro-config';
 import { withStorybookSwap } from './metro/withStorybookSwap';
 import { StorybookPlugin } from './repack/withStorybook';
-import { applyWebsocketEnvOverrides } from './metro/withStorybook';
-import type { WithStorybookOptions } from './metro/withStorybook';
+import { applyWebsocketEnvOverrides } from './metro/utils';
+import type { WithStorybookOptions } from './metro/utils';
 
 /**
  * Detects whether the given config object is a Metro bundler configuration.

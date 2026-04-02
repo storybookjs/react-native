@@ -1,12 +1,12 @@
 import * as path from 'path';
 import type { MetroConfig } from 'metro-config';
+import { withStorybook } from './withStorybook';
 import {
-  withStorybook,
   resolveEntryPoint,
   resolveStorybookEntry,
   applyWebsocketEnvOverrides,
-} from './withStorybook';
-import type { WithStorybookOptions, ResolveRequestFunction } from './withStorybook';
+} from './utils';
+import type { WithStorybookOptions, ResolveRequestFunction } from './utils';
 
 /**
  * Configures Metro bundler to work with Storybook using entry-point swapping.

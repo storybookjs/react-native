@@ -22,7 +22,7 @@ jest.mock('storybook/internal/telemetry', () => ({
 }));
 
 describe('resolveEntryPoint', () => {
-  const { resolveEntryPoint } = require('./withStorybook');
+  const { resolveEntryPoint } = require('./utils');
   let tmpDir: string;
 
   beforeEach(() => {
