@@ -16,6 +16,8 @@ export function enhanceRepackConfig<T extends Record<string, any>>(
     return config;
   }
 
+  // TODO support liteMode
+
   return {
     ...config,
     entry: swap.storybookEntryPoint,
