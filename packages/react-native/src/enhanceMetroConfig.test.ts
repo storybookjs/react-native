@@ -11,28 +11,18 @@ jest.mock('../scripts/generate', () => ({
   generate: jest.fn(),
 }));
 
-jest.mock('storybook/internal/common', () => ({
-  optionalEnvToBoolean: jest.fn(() => true),
-}));
-
-jest.mock('storybook/internal/telemetry', () => ({
-  telemetry: jest.fn(() => Promise.resolve()),
-}));
-
 describe('enhanceMetroConfig', () => {
   const config = { resolver: {}, transformer: {} } as MetroConfig;
 
   beforeEach(() => {
     jest.clearAllMocks();
-    process.env.STORYBOOK_DISABLE_TELEMETRY = 'true';
   });
 
   afterEach(() => {
-    delete process.env.STORYBOOK_DISABLE_TELEMETRY;
     jest.resetModules();
   });
 
-  test('delegates to base withStorybook and returns metro config', () => {
+  test('returns metro config with transformer and resolver', () => {
     const { enhanceMetroConfig } = require('./enhanceMetroConfig');
     const { generate } = require('../scripts/generate');
 
@@ -41,6 +31,7 @@ describe('enhanceMetroConfig', () => {
     });
 
     expect(result.transformer).toBeDefined();
+    expect(result.transformer.unstable_allowRequireContext).toBe(true);
     expect(result.resolver).toBeDefined();
     expect(generate).toHaveBeenCalled();
   });
@@ -116,7 +107,7 @@ describe('enhanceMetroConfig', () => {
     fs.rmSync(tmpDir, { recursive: true, force: true });
   });
 
-  test('passes websocket options to base withStorybook', () => {
+  test('creates channel server when websockets provided', () => {
     const { enhanceMetroConfig } = require('./enhanceMetroConfig');
     const { createChannelServer } = require('./metro/channelServer');
 
