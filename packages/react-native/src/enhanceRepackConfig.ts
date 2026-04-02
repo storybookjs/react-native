@@ -22,14 +22,14 @@ export function enhanceRepackConfig<T extends Record<string, any>>(
   } as T;
 
   if (liteMode) {
-    const resolve = (result as any).resolve ?? {};
+    const resolve = result.resolve ?? {};
     const alias = resolve.alias ?? {};
 
     // rspack/webpack supports `false` as an alias value to produce an empty module.
     // The `$` suffix ensures exact match so -lite and -common variants are not affected.
     alias['@storybook/react-native-ui$'] = false;
 
-    (result as any).resolve = { ...resolve, alias };
+    result.resolve = { ...resolve, alias };
   }
 
   return result;
