@@ -4,8 +4,10 @@ describe('enhanceRepackConfig', () => {
     const rspackConfig = { entry: './src/index.js', plugins: [] };
 
     const result = enhanceRepackConfig(rspackConfig, {
-      appEntryPoint: '/project/src/index.js',
-      storybookEntryPoint: '/project/.rnstorybook/index.tsx',
+      swap: {
+        appEntryPoint: '/project/src/index.js',
+        storybookEntryPoint: '/project/.rnstorybook/index.tsx',
+      },
     });
 
     expect(result.entry).toBe('/project/.rnstorybook/index.tsx');
@@ -30,8 +32,10 @@ describe('enhanceRepackConfig', () => {
     };
 
     const result = enhanceRepackConfig(rspackConfig, {
-      appEntryPoint: '/project/src/index.js',
-      storybookEntryPoint: '/project/.rnstorybook/index.tsx',
+      swap: {
+        appEntryPoint: '/project/src/index.js',
+        storybookEntryPoint: '/project/.rnstorybook/index.tsx',
+      },
     });
 
     expect(result.entry).toBe('/project/.rnstorybook/index.tsx');
@@ -45,8 +49,10 @@ describe('enhanceRepackConfig', () => {
     const rspackConfig = { plugins: [] };
 
     const result = enhanceRepackConfig(rspackConfig, {
-      appEntryPoint: '/project/src/index.js',
-      storybookEntryPoint: '/project/.rnstorybook/index.tsx',
+      swap: {
+        appEntryPoint: '/project/src/index.js',
+        storybookEntryPoint: '/project/.rnstorybook/index.tsx',
+      },
     });
 
     expect(result.entry).toBe('/project/.rnstorybook/index.tsx');

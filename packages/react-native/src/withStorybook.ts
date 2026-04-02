@@ -96,8 +96,8 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
   });
 
   if (isMetroConfig(config)) {
-    return enhanceMetroConfig(config, { liteMode: resolvedOptions.liteMode }, swap) as unknown as T;
+    return enhanceMetroConfig(config, { liteMode: resolvedOptions.liteMode, swap }) as unknown as T;
   }
 
-  return enhanceRepackConfig(config as Record<string, any>, swap) as T;
+  return enhanceRepackConfig(config as Record<string, any>, { swap }) as T;
 }

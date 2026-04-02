@@ -39,8 +39,7 @@ describe('enhanceMetroConfig', () => {
 
     const result = enhanceMetroConfig(
       config,
-      {},
-      { appEntryPoint: appEntry, storybookEntryPoint: sbEntry }
+      { swap: { appEntryPoint: appEntry, storybookEntryPoint: sbEntry } }
     );
 
     const mockResolveRequest = jest.fn(() => ({

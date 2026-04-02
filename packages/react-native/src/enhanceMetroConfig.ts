@@ -2,21 +2,19 @@ import * as path from 'path';
 import type { MetroConfig } from 'metro-config';
 import type { ResolveRequestFunction } from './metro/utils';
 
-interface EntrySwap {
-  appEntryPoint: string;
-  storybookEntryPoint: string;
-}
-
 interface EnhanceMetroOptions {
   liteMode?: boolean;
+  swap?: {
+    appEntryPoint: string;
+    storybookEntryPoint: string;
+  };
 }
 
 export function enhanceMetroConfig(
   config: MetroConfig,
-  options: EnhanceMetroOptions = {},
-  swap?: EntrySwap
+  options: EnhanceMetroOptions = {}
 ): MetroConfig {
-  const { liteMode = false } = options;
+  const { liteMode = false, swap } = options;
 
   return {
     ...config,

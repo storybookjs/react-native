@@ -1,12 +1,16 @@
-interface EntrySwap {
-  appEntryPoint: string;
-  storybookEntryPoint: string;
+interface EnhanceRepackOptions {
+  swap?: {
+    appEntryPoint: string;
+    storybookEntryPoint: string;
+  };
 }
 
 export function enhanceRepackConfig<T extends Record<string, any>>(
   config: T,
-  swap?: EntrySwap
+  options: EnhanceRepackOptions = {}
 ): T {
+  const { swap } = options;
+
   if (!swap) {
     return config;
   }
