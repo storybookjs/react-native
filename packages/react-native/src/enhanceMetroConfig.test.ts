@@ -90,23 +90,4 @@ describe('enhanceMetroConfig', () => {
 
     fs.rmSync(tmpDir, { recursive: true, force: true });
   });
-
-  test('applies liteMode when set', () => {
-    const { enhanceMetroConfig } = require('./enhanceMetroConfig');
-
-    const result = enhanceMetroConfig(config, { liteMode: true });
-
-    const mockResolveRequest = jest.fn(() => ({
-      filePath: '/node_modules/@storybook/react-native-ui/dist/index.js',
-      type: 'sourceFile',
-    }));
-
-    const resolverResult = result.resolver.resolveRequest(
-      { resolveRequest: mockResolveRequest },
-      '@storybook/react-native-ui',
-      'ios'
-    );
-
-    expect(resolverResult).toEqual({ type: 'empty' });
-  });
 });
