@@ -66,10 +66,7 @@ export function resolveEntryPoint(projectRoot: string = process.cwd()): string |
   }
 
   // Fallback: index.js in project root (standard RN CLI convention)
-  const fallback = resolveFileWithExtensions(
-    path.resolve(projectRoot, 'index'),
-    ENTRY_EXTENSIONS
-  );
+  const fallback = resolveFileWithExtensions(path.resolve(projectRoot, 'index'), ENTRY_EXTENSIONS);
 
   return fallback;
 }

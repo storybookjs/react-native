@@ -29,8 +29,8 @@ export function enhanceRepackConfig<T extends Record<string, any>>(
     // The `$` suffix ensures exact match so -lite and -common variants are not affected.
     alias['@storybook/react-native-ui$'] = false;
 
-    result.resolve = { ...resolve, alias };
+    (result as any).resolve = { ...resolve, alias };
   }
 
-  return result;
+  return result as T;
 }

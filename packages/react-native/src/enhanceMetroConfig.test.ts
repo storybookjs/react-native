@@ -37,10 +37,9 @@ describe('enhanceMetroConfig', () => {
 
     const { enhanceMetroConfig } = require('./enhanceMetroConfig');
 
-    const result = enhanceMetroConfig(
-      config,
-      { swap: { appEntryPoint: appEntry, storybookEntryPoint: sbEntry } }
-    );
+    const result = enhanceMetroConfig(config, {
+      swap: { appEntryPoint: appEntry, storybookEntryPoint: sbEntry },
+    });
 
     const mockResolveRequest = jest.fn(() => ({
       filePath: appEntry,
