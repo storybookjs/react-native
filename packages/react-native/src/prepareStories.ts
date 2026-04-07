@@ -12,6 +12,7 @@ export interface ReactNativeOptions {
    * Note that this is for future and play functions are not yet fully supported on native.
    */
   playFn?: boolean;
+  liteMode?: boolean;
 }
 
 export function prepareStories({

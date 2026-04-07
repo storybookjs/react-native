@@ -3,7 +3,6 @@ import type { MetroConfig } from 'metro-config';
 import type { ResolveRequestFunction } from './metro/utils';
 
 interface EnhanceMetroOptions {
-  liteMode?: boolean;
   swap?: {
     appEntryPoint: string;
     storybookEntryPoint: string;
@@ -14,7 +13,7 @@ export function enhanceMetroConfig(
   config: MetroConfig,
   options: EnhanceMetroOptions = {}
 ): MetroConfig {
-  const { liteMode = false, swap } = options;
+  const { swap } = options;
 
   return {
     ...config,
@@ -49,15 +48,6 @@ export function enhanceMetroConfig(
         }
 
         if (moduleName === 'tty' || moduleName === 'os') {
-          return { type: 'empty' };
-        }
-
-        if (
-          liteMode &&
-          resolveResult?.filePath?.includes?.('@storybook/react-native-ui') &&
-          !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-lite') &&
-          !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-common')
-        ) {
           return { type: 'empty' };
         }
 

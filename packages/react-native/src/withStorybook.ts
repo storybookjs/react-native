@@ -130,11 +130,12 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
     useJs,
     docTools,
     ...(!!host ? { host: host, port: websockets.port, secured: !websockets.secured } : {}),
+    liteMode,
   } as any);
 
   if (isMetroConfig(config)) {
-    return enhanceMetroConfig(config, { liteMode, swap }) as unknown as T;
+    return enhanceMetroConfig(config, { swap }) as unknown as T;
   }
 
-  return enhanceRepackConfig(config as Record<string, any>, { liteMode, swap }) as T;
+  return enhanceRepackConfig(config as Record<string, any>, { swap }) as T;
 }

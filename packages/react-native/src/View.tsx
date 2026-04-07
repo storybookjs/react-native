@@ -118,11 +118,13 @@ export class View {
   _webUrl: string;
   _storage: Storage;
   _channel: Channel;
+  _options: any;
   _idToPrepared: Record<string, PreparedStory<ReactRenderer>> = {};
 
-  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel) {
+  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel, options: any) {
     this._preview = preview;
     this._channel = channel;
+    this._options = options;
   }
 
   _storyIdExists = (storyId: string) => {
@@ -237,12 +239,13 @@ export class View {
   getStorybookUI = (params: Partial<Params> = {}) => {
     const {
       shouldPersistSelection = true,
-      onDeviceUI = true,
       enableWebsockets = false,
       storage,
       CustomUIComponent,
       hasStoryWrapper: storyViewWrapper = true,
     } = params;
+
+    const onDeviceUI = this._options.liteMode ? false : params.onDeviceUI ?? true;
 
     const getFullUI = (enabled: boolean): SBUI => {
       if (enabled) {
@@ -260,7 +263,10 @@ export class View {
 
     const FullUI: SBUI = getFullUI(onDeviceUI && !CustomUIComponent);
 
-    this._storage = storage;
+    this._storage = storage ?? {
+      getItem: async (key) => null,
+      setItem: async (key, value) => {},
+    };
 
     const initialStory = this._getInitialStory(params);
 
