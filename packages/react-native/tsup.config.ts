@@ -6,8 +6,6 @@ export default defineConfig((options) => {
       'src/index.ts',
       'src/preview.ts',
       'src/withStorybook.ts',
-      'src/enhanceMetroConfig.ts',
-      'src/enhanceRepackConfig.ts',
       'src/metro/withStorybook.ts',
       'src/repack/withStorybook.ts',
       'src/stub.tsx',
