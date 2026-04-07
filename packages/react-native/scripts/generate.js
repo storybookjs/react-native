@@ -133,7 +133,7 @@ async function generate({
 
   let options = '';
   let optionsVar = '';
-  const reactNativeOptions = main.reactNative;
+  const reactNativeOptions = main.reactNative ?? {};
 
   if (liteMode) {
     reactNativeOptions.liteMode = true;

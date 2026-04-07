@@ -11,6 +11,9 @@ import dedent from 'dedent';
 import { patchChannelForRN } from './patchChannelForRN';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
+import { StatusBar } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+
 import {
   ActivityIndicator,
   Linking,
@@ -245,7 +248,7 @@ export class View {
       hasStoryWrapper: storyViewWrapper = true,
     } = params;
 
-    const onDeviceUI = this._options.liteMode ? false : params.onDeviceUI ?? true;
+    const onDeviceUI = this._options.liteMode ? false : (params.onDeviceUI ?? true);
 
     const getFullUI = (enabled: boolean): SBUI => {
       if (enabled) {
@@ -493,7 +496,22 @@ export class View {
         );
       } else {
         return (
-          <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
+          <SafeAreaProvider>
+            <SafeAreaView style={{ flex: 1 }}>
+              <StatusBar hidden />
+              <RNView
+                style={{ flex: 1 }}
+                accessibilityLabel={story?.id}
+                testID={story?.id}
+                accessible
+              >
+                <StoryView
+                  useWrapper={storyViewWrapper}
+                  storyBackgroundColor={storyBackgroundColor}
+                />
+              </RNView>
+            </SafeAreaView>
+          </SafeAreaProvider>
         );
       }
     };
