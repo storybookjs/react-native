@@ -10,13 +10,12 @@ const main: StorybookConfig = {
       files: '**/*.stories.?(ts|tsx|js|jsx)',
     },
   ],
-  addons: [
+  addons: ['storybook-addon-deep-controls', './local-addon-example'],
+  deviceAddons: [
     { name: '@storybook/addon-ondevice-controls' },
     '@storybook/addon-ondevice-actions',
     // '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-notes',
-    'storybook-addon-deep-controls',
-    './local-addon-example',
   ],
   reactNative: {
     playFn: false,

@@ -96,7 +96,9 @@ async function generate({
 
   const registeredAddons = [];
 
-  for (const addon of main.addons) {
+  const allAddons = [...(main.addons ?? []), ...(main.deviceAddons ?? [])];
+
+  for (const addon of allAddons) {
     const registerPath = resolveAddonFile(
       getAddonName(addon),
       'register',
@@ -117,7 +119,7 @@ async function generate({
     enhancers.push(docToolsAnnotation);
   }
 
-  for (const addon of main.addons) {
+  for (const addon of allAddons) {
     const previewPath = resolveAddonFile(
       getAddonName(addon),
       'preview',

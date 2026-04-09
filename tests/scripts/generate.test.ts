@@ -274,5 +274,33 @@ describe('loader', () => {
         t.assert.snapshot(fileContentMock);
       });
     });
+
+    describe('when addons are in deviceAddons', () => {
+      it('writes the addon imports from deviceAddons', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/device-addons' });
+        mock.reset();
+
+        assert.strictEqual(
+          pathMock,
+          path.resolve(__dirname, 'mocks/device-addons/storybook.requires.ts')
+        );
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('when addons are split between addons and deviceAddons', () => {
+      it('writes imports from both addons and deviceAddons', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/mixed-addons' });
+        mock.reset();
+
+        assert.strictEqual(
+          pathMock,
+          path.resolve(__dirname, 'mocks/mixed-addons/storybook.requires.ts')
+        );
+        t.assert.snapshot(fileContentMock);
+      });
+    });
   });
 });
