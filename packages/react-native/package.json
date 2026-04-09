@@ -23,6 +23,7 @@
   },
   "exports": {
     ".": "./dist/index.js",
+    "./withStorybook": "./dist/withStorybook.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
     "./repack/withStorybook": "./dist/repack/withStorybook.js",
     "./metro-env": "./metro-env.d.ts",

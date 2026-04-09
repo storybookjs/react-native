@@ -143,7 +143,7 @@ export function start({
     previewView as any
   );
 
-  const view = new View(preview, channel);
+  const view = new View(preview, channel, options);
 
   if (global) {
     global.__STORYBOOK_ADDONS_CHANNEL__ = channel;

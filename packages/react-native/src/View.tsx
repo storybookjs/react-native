@@ -11,6 +11,9 @@ import dedent from 'dedent';
 import { patchChannelForRN } from './patchChannelForRN';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
+import { StatusBar } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+
 import {
   ActivityIndicator,
   Linking,
@@ -118,11 +121,13 @@ export class View {
   _webUrl: string;
   _storage: Storage;
   _channel: Channel;
+  _options: any;
   _idToPrepared: Record<string, PreparedStory<ReactRenderer>> = {};
 
-  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel) {
+  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel, options: any) {
     this._preview = preview;
     this._channel = channel;
+    this._options = options;
   }
 
   _storyIdExists = (storyId: string) => {
@@ -237,12 +242,13 @@ export class View {
   getStorybookUI = (params: Partial<Params> = {}) => {
     const {
       shouldPersistSelection = true,
-      onDeviceUI = true,
       enableWebsockets = false,
       storage,
       CustomUIComponent,
       hasStoryWrapper: storyViewWrapper = true,
     } = params;
+
+    const onDeviceUI = this._options.liteMode ? false : (params.onDeviceUI ?? true);
 
     const getFullUI = (enabled: boolean): SBUI => {
       if (enabled) {
@@ -260,7 +266,10 @@ export class View {
 
     const FullUI: SBUI = getFullUI(onDeviceUI && !CustomUIComponent);
 
-    this._storage = storage;
+    this._storage = storage ?? {
+      getItem: async (key) => null,
+      setItem: async (key, value) => {},
+    };
 
     const initialStory = this._getInitialStory(params);
 
@@ -487,7 +496,22 @@ export class View {
         );
       } else {
         return (
-          <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
+          <SafeAreaProvider>
+            <SafeAreaView style={{ flex: 1 }}>
+              <StatusBar hidden />
+              <RNView
+                style={{ flex: 1 }}
+                accessibilityLabel={story?.id}
+                testID={story?.id}
+                accessible
+              >
+                <StoryView
+                  useWrapper={storyViewWrapper}
+                  storyBackgroundColor={storyBackgroundColor}
+                />
+              </RNView>
+            </SafeAreaView>
+          </SafeAreaProvider>
         );
       }
     };
