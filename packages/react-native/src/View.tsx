@@ -161,7 +161,9 @@ export class View {
 
         const exists = value && this._storyIdExists(value);
 
-        if (!exists) console.log('Storybook: could not find persisted story');
+        if (!exists) {
+          console.log('Storybook: could not find persisted story');
+        }
 
         return { storySpecifier: exists ? value : '*', viewMode: 'story' };
       } catch (e) {
@@ -241,7 +243,6 @@ export class View {
 
   getStorybookUI = (params: Partial<Params> = {}) => {
     const {
-      shouldPersistSelection = true,
       enableWebsockets = false,
       storage,
       CustomUIComponent,
@@ -249,6 +250,9 @@ export class View {
     } = params;
 
     const onDeviceUI = this._options.liteMode ? false : (params.onDeviceUI ?? true);
+    const shouldPersistSelection = this._options.liteMode
+      ? false
+      : (params.shouldPersistSelection ?? true);
 
     const getFullUI = (enabled: boolean): SBUI => {
       if (enabled) {

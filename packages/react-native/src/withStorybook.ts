@@ -81,7 +81,10 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
     return config;
   }
   const server = envVariableToBoolean(process.env.STORYBOOK_SERVER, true);
-  const liteMode = envVariableToBoolean(process.env.STORYBOOK_LITE_MODE, options.liteMode ?? false);
+  const liteMode = envVariableToBoolean(
+    process.env.STORYBOOK_DISABLE_UI,
+    options.liteMode ?? false
+  );
   const settings = { ...options };
 
   if (server) {
