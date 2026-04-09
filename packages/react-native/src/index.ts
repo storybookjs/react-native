@@ -15,9 +15,20 @@ export interface Features {
   ondeviceBackgrounds?: boolean;
 }
 
+type Addon = string | { name: string; options?: Record<string, any> };
+
 export interface StorybookConfig {
   stories: StorybookConfigBase['stories'];
-  addons: Array<string | { name: string; options?: Record<string, any> }>;
+  addons?: Addon[];
+  /**
+   * On-device addons that should only be loaded at runtime on the device.
+   * These are not evaluated as presets by Storybook Core, avoiding issues
+   * with server-side operations like extract.
+   *
+   * Addons listed in `addons` with "ondevice" in their name still work
+   * for backwards compatibility.
+   */
+  deviceAddons?: Addon[];
   // TODO move this to params
   reactNative?: ReactNativeOptions;
   features?: Features;
