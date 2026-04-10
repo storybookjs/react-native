@@ -208,13 +208,9 @@ export class View {
 
   _getServerChannel = (params: Partial<Params> = {}) => {
     const host = this._getHost(params);
-
     const port = `:${this.__getPort(params)}`;
-
     const query = params.query || '';
-
     const websocketType = this._isSecureConnection(params) ? 'wss' : 'ws';
-
     const url = `${websocketType}://${host}${port}/${query}`;
 
     const channel = new Channel({
@@ -244,10 +240,14 @@ export class View {
   getStorybookUI = (params: Partial<Params> = {}) => {
     const {
       enableWebsockets = false,
-      storage,
       CustomUIComponent,
       hasStoryWrapper: storyViewWrapper = true,
     } = params;
+
+    const storage = params.storage ?? {
+      getItem: async (key) => null,
+      setItem: async (key, value) => {},
+    };
 
     const onDeviceUI = this._options.liteMode ? false : (params.onDeviceUI ?? true);
     const shouldPersistSelection = this._options.liteMode
@@ -472,7 +472,7 @@ export class View {
               setStory={(newStoryId) =>
                 self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
               }
-              storage={storage}
+              storage={this._storage}
               theme={appliedTheme as Theme}
               storyBackgroundColor={storyBackgroundColor}
             >
@@ -486,7 +486,7 @@ export class View {
 
         return (
           <FullUI
-            storage={storage}
+            storage={this._storage}
             theme={appliedTheme as Theme}
             storyHash={storyHash}
             story={story}
