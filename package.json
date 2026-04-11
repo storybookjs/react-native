@@ -24,6 +24,7 @@
   },
   "scripts": {
     "example": "pnpm --filter expo-example storybook",
+    "example:lite": "pnpm --filter expo-example storybook:lite",
     "dev": "pnpm -r --parallel run dev",
     "check:types": "pnpm -r run check:types",
     "lint": "eslint --cache -c ./eslint.config.js",
