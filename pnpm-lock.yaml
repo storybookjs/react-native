@@ -27,7 +27,7 @@ importers:
         specifier: ^2.30.0
         version: 2.30.0(@types/node@25.6.0)
       '@docusaurus/eslint-plugin':
-        specifier: ^3.9.2
+        specifier: ^3.10.0
         version: 3.10.0(eslint@9.39.4(jiti@1.21.7))(typescript@5.9.3)
       '@prettier/plugin-oxc':
         specifier: ^0.1.3
