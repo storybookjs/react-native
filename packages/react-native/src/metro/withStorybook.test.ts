@@ -116,3 +116,38 @@ describe('withStorybook experimental_mcp', () => {
     ).not.toThrow();
   });
 });
+
+describe('withStorybook node built-in resolution', () => {
+  const resolveRequest = jest.fn((_ctx: any, name: string) => ({
+    filePath: `/node_modules/${name}/index.js`,
+    type: 'sourceFile',
+  }));
+
+  const config = {
+    resolver: { resolveRequest },
+    transformer: {},
+  } as unknown as MetroConfig;
+
+  const { withStorybook } = require('./withStorybook');
+
+  test.each(['os', 'tty'])('replaces %s with empty on native platforms', (mod) => {
+    const result = withStorybook(config, { configPath: '/tmp/.rnstorybook', enabled: true });
+
+    expect(result.resolver.resolveRequest({}, mod, 'ios')).toEqual({ type: 'empty' });
+    expect(result.resolver.resolveRequest({}, mod, 'android')).toEqual({ type: 'empty' });
+  });
+
+  test.each(['os', 'tty'])('preserves real %s on web for Expo API Routes', (mod) => {
+    const result = withStorybook(config, { configPath: '/tmp/.rnstorybook', enabled: true });
+    expect(result.resolver.resolveRequest({}, mod, 'web')).not.toEqual({ type: 'empty' });
+  });
+
+  test.each(['os', 'tty'])('does not replace %s when storybook is disabled', (mod) => {
+    const result = withStorybook(config, { configPath: '/tmp/.rnstorybook', enabled: false });
+    const ctx = { resolveRequest };
+
+    expect(result.resolver.resolveRequest(ctx, mod, 'ios')).not.toEqual({ type: 'empty' });
+    expect(result.resolver.resolveRequest(ctx, mod, 'android')).not.toEqual({ type: 'empty' });
+    expect(result.resolver.resolveRequest(ctx, mod, 'web')).not.toEqual({ type: 'empty' });
+  });
+});

@@ -166,13 +166,6 @@ export function withStorybook(
             };
           }
 
-          // workaround for node imports in instrumentor.cjs
-          if (moduleName === 'tty' || moduleName === 'os') {
-            return {
-              type: 'empty',
-            };
-          }
-
           const resolved = resolveFunction(context, moduleName, platform);
 
           // Match the config folder's index file regardless of extension (ts, tsx, js, jsx)
@@ -278,8 +271,9 @@ export function withStorybook(
           };
         }
 
-        // workaround for node imports in instrumentor.cjs
-        if (moduleName === 'tty' || moduleName === 'os') {
+        // workaround for node imports in instrumentor.cjs (only on native platforms;
+        // web/server bundles like Expo API Routes need the real Node built-ins)
+        if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
           return {
             type: 'empty',
           };
