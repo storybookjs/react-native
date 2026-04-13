@@ -48,6 +48,7 @@
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
     "test:ci": "jest",
+    "ws-smoke-server": "node ./scripts/ws-smoke-server.mjs",
     "check:types": "tsc --noEmit"
   },
   "dependencies": {

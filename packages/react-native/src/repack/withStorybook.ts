@@ -3,6 +3,69 @@ import { generate } from '../../scripts/generate';
 import { createChannelServer } from '../metro/channelServer';
 import type { WebsocketsOptions } from '../types';
 
+function envVariableToBoolean(value: string | undefined, defaultValue: any = false): boolean {
+  switch (value) {
+    case 'true':
+      return true;
+    case 'false':
+      return false;
+    default:
+      return !!defaultValue;
+  }
+}
+function envVariableToString(
+  value: string | undefined,
+  defaultValue: string | undefined
+): string | undefined {
+  return value ?? defaultValue;
+}
+function envVariableToNumber(value: string | undefined, defaultValue: number): number {
+  const parsed = parseInt(value ?? '', 10);
+  if (!isNaN(parsed)) {
+    return parsed;
+  }
+  return defaultValue;
+}
+
+function loadWebsocketEnvOverrides(
+  websockets: WebsocketsOptions | 'auto' | undefined
+): WebsocketsOptions {
+  const envHost = envVariableToString(
+    process.env.STORYBOOK_WS_HOST,
+    websockets === 'auto' ? undefined : (websockets?.host ?? undefined)
+  );
+  const envPort = envVariableToNumber(
+    process.env.STORYBOOK_WS_PORT,
+    websockets === 'auto' ? 7007 : (websockets?.port ?? 7007)
+  );
+  const envSecured = envVariableToBoolean(process.env.STORYBOOK_WS_SECURED);
+
+  if (websockets === undefined && !envHost) {
+    return {
+      host: undefined,
+      port: undefined,
+      secured: false,
+    };
+  }
+
+  const config: WebsocketsOptions =
+    websockets === 'auto' || websockets === undefined ? {} : { ...websockets };
+
+  if (envHost) {
+    config.host = envHost;
+  }
+
+  if (envPort) {
+    config.port = envPort;
+  }
+
+  if (envSecured) {
+    config.secured = true;
+  }
+
+  return config;
+}
+
 /**
  * Minimal compiler types for webpack/rspack compatibility.
  * We define these inline to avoid requiring @rspack/core or webpack as dependencies.
@@ -169,20 +232,30 @@ export class StorybookPlugin {
       experimental_mcp: boolean;
     }
   ): void {
-    const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
-    const host = websockets === 'auto' ? 'auto' : websockets?.host;
-    const secured = Boolean(websockets && websockets !== 'auto' && websockets.secured);
+    const resolvedWs = loadWebsocketEnvOverrides(websockets);
+    const bindHost =
+      websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? undefined : resolvedWs.host;
+    const generateHost =
+      resolvedWs.host ??
+      (websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? 'auto' : undefined);
+    const port = resolvedWs.port ?? 7007;
+    const secured = resolvedWs.secured;
+    const channelWebsocketsEnabled =
+      Boolean(websockets) || Boolean(process.env.STORYBOOK_WS_HOST) || Boolean(resolvedWs.host);
 
     // Start the channel server once (on first apply, not per-compilation)
-    if ((websockets || experimental_mcp) && !this.serverStarted) {
+    if (
+      (experimental_mcp || websockets != null || process.env.STORYBOOK_WS_HOST) &&
+      !this.serverStarted
+    ) {
       this.serverStarted = true;
 
       createChannelServer({
         port,
-        host: host === 'auto' ? undefined : host,
+        host: bindHost,
         configPath,
         experimental_mcp,
-        websockets: Boolean(websockets),
+        websockets: channelWebsocketsEnabled,
         secured,
         ssl:
           websockets && websockets !== 'auto'
@@ -205,7 +278,9 @@ export class StorybookPlugin {
         configPath,
         useJs,
         docTools,
-        ...(websockets ? { host, port, secured } : {}),
+        ...(websockets != null || process.env.STORYBOOK_WS_HOST
+          ? { host: generateHost, port, secured }
+          : {}),
       });
 
       console.log('[StorybookPlugin] Generated storybook.requires');

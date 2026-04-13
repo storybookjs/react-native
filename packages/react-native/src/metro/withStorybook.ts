@@ -6,6 +6,69 @@ import { telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
 import type { WebsocketsOptions } from '../types';
 
+function envVariableToBoolean(value: string | undefined, defaultValue: any = false): boolean {
+  switch (value) {
+    case 'true':
+      return true;
+    case 'false':
+      return false;
+    default:
+      return !!defaultValue;
+  }
+}
+function envVariableToString(
+  value: string | undefined,
+  defaultValue: string | undefined
+): string | undefined {
+  return value ?? defaultValue;
+}
+function envVariableToNumber(value: string | undefined, defaultValue: number): number {
+  const parsed = parseInt(value ?? '', 10);
+  if (!isNaN(parsed)) {
+    return parsed;
+  }
+  return defaultValue;
+}
+
+function loadWebsocketEnvOverrides(
+  websockets: WebsocketsOptions | 'auto' | undefined
+): WebsocketsOptions {
+  const envHost = envVariableToString(
+    process.env.STORYBOOK_WS_HOST,
+    websockets === 'auto' ? undefined : (websockets?.host ?? undefined)
+  );
+  const envPort = envVariableToNumber(
+    process.env.STORYBOOK_WS_PORT,
+    websockets === 'auto' ? 7007 : (websockets?.port ?? 7007)
+  );
+  const envSecured = envVariableToBoolean(process.env.STORYBOOK_WS_SECURED);
+
+  if (websockets === undefined && !envHost) {
+    return {
+      host: undefined,
+      port: undefined,
+      secured: false,
+    };
+  }
+
+  const config: WebsocketsOptions =
+    websockets === 'auto' || websockets === undefined ? {} : { ...websockets };
+
+  if (envHost) {
+    config.host = envHost;
+  }
+
+  if (envPort) {
+    config.port = envPort;
+  }
+
+  if (envSecured) {
+    config.secured = true;
+  }
+
+  return config;
+}
+
 /**
  * Options for configuring Storybook with React Native.
  */
@@ -194,19 +257,26 @@ export function withStorybook(
     };
   }
 
-  if (websockets || experimental_mcp) {
-    const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
-    const host = websockets === 'auto' ? 'auto' : websockets?.host;
-    const secured = Boolean(websockets && websockets !== 'auto' && websockets.secured);
+  if (experimental_mcp || websockets != null || process.env.STORYBOOK_WS_HOST) {
+    const resolvedWs = loadWebsocketEnvOverrides(websockets);
+    const bindHost =
+      websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? undefined : resolvedWs.host;
+    const generateHost =
+      resolvedWs.host ??
+      (websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? 'auto' : undefined);
+    const port = resolvedWs.port ?? 7007;
+    const secured = resolvedWs.secured;
+    const channelWebsocketsEnabled =
+      Boolean(websockets) || Boolean(process.env.STORYBOOK_WS_HOST) || Boolean(resolvedWs.host);
 
     // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
     // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
     createChannelServer({
       port,
-      host: host === 'auto' ? undefined : host,
+      host: bindHost,
       configPath,
       experimental_mcp,
-      websockets: Boolean(websockets),
+      websockets: channelWebsocketsEnabled,
       secured,
       ssl:
         websockets && websockets !== 'auto'
@@ -219,12 +289,12 @@ export function withStorybook(
           : undefined,
     });
 
-    if (websockets) {
+    if (websockets != null || process.env.STORYBOOK_WS_HOST) {
       generate({
         configPath,
         useJs,
         docTools,
-        host,
+        host: generateHost,
         port,
         secured,
       });
