@@ -4,53 +4,41 @@ sidebar_position: 3
 
 # Re.Pack Setup
 
-This guide covers setting up Storybook with [Re.Pack](https://re-pack.dev/) projects that use Rspack or Webpack instead of Metro as the bundler.
-
-:::tip Bundler-agnostic wrapper
-The `withStorybook` function from `@storybook/react-native/withStorybook` auto-detects Re.Pack configs and can be used as a simpler alternative to the `StorybookPlugin` approach documented below. See the [Getting Started guide](./index.md) for the recommended setup.
-
-The `StorybookPlugin` approach below gives you more fine-grained control over Re.Pack-specific options.
-:::
+This guide covers what's different when using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of Metro. The Storybook configuration (`.rnstorybook` folder, stories, addons) is identical regardless of bundler — only the bundler config itself changes.
 
 For a ready-to-go starter project, check out the [RepackStorybookStarter](https://github.com/dannyhw/RepackStorybookStarter) repository.
 
-## Installation
+## Entry-point swapping (recommended)
 
-Use the Storybook CLI to initialize your project:
-
-```bash
-npm create storybook -- --type react_native --yes
-```
-
-## Install Reanimated and Worklets
-
-Storybook's default UI requires `react-native-reanimated` and `react-native-worklets`:
-
-```bash
-npm install react-native-reanimated react-native-worklets
-```
-
-Then ensure the worklets babel plugin is in `babel.config.js`. It **must** be the last plugin in the list:
+The bundler-agnostic `withStorybook` wrapper auto-detects Re.Pack and handles everything — entry-point swapping, story generation, and WebSocket setup. Follow the standard [Getting Started guide](./index.md) for the full walkthrough; the only difference is your bundler config file:
 
 ```js
-// babel.config.js
-module.exports = {
-  presets: [
-    // your existing preset, e.g.:
-    'module:@react-native/babel-preset',
-  ],
-  plugins: [
-    // ... any other plugins
-    'react-native-worklets/plugin', // must be last
-  ],
-};
+// rspack.config.mjs
+import * as Repack from '@callstack/repack';
+import { withStorybook } from '@storybook/react-native/withStorybook';
+
+export default withStorybook(
+  Repack.defineRspackConfig({
+    // ... your existing config
+    resolve: {
+      ...Repack.getResolveOptions({
+        enablePackageExports: true, // required for Storybook package resolution
+      }),
+    },
+    plugins: [new Repack.RepackPlugin()],
+  })
+);
 ```
 
-## Configure Rspack/Webpack
+Then run with `STORYBOOK_ENABLED=true` as described in the Getting Started guide. No changes to `App.tsx` needed.
 
-Instead of wrapping Metro with `withStorybook`, add the `StorybookPlugin` to your rspack/webpack config plugins array.
+:::warning
+`enablePackageExports: true` is required so Rspack can correctly resolve Storybook's package exports. Without it, imports from Storybook packages will fail.
+:::
 
-Use an environment variable (`STORYBOOK_ENABLED`) to control both the plugin behavior and a build-time constant for your app code:
+## In-app integration (StorybookPlugin)
+
+If you prefer to render Storybook inside your app rather than using entry-point swapping, use the `StorybookPlugin` directly. This is the Re.Pack equivalent of the Metro-specific `withStorybook` wrapper described in the [Manual Setup](./manual-setup.md) guide.
 
 ```js
 // rspack.config.mjs
@@ -64,7 +52,7 @@ export default Repack.defineRspackConfig({
   // ... your existing config
   resolve: {
     ...Repack.getResolveOptions({
-      enablePackageExports: true, // required for storybook package resolution
+      enablePackageExports: true,
     }),
   },
   plugins: [
@@ -74,24 +62,12 @@ export default Repack.defineRspackConfig({
     }),
     new StorybookPlugin({
       enabled: storybookEnabled,
-      websockets: 'auto',
     }),
-    // ... your other plugins
   ],
 });
 ```
 
-:::warning Important
-`enablePackageExports: true` is required so rspack can correctly resolve Storybook's package exports (e.g. `@storybook/react-native/preview`). Without it, imports from Storybook packages will fail.
-:::
-
-:::info
-Unlike the Metro setup, there is no need to configure `require.context` support — rspack handles it natively.
-:::
-
-## Create Entrypoint
-
-Conditionally render Storybook based on the `STORYBOOK_ENABLED` build-time constant. Since `StorybookPlugin` replaces Storybook imports with empty modules when disabled, you can import Storybook at the top level safely:
+Then conditionally render Storybook in your app using the build-time constant:
 
 ```tsx
 // App.tsx
@@ -104,34 +80,20 @@ export default function App() {
     return <StorybookUI />;
   }
 
-  // Your existing app code here
   return (
-    // ...
+    // ... your existing app
   );
 }
 ```
 
-The `declare const` tells TypeScript about the global that rspack's `DefinePlugin` injects. When `STORYBOOK_ENABLED` is `false`, rspack dead-code-eliminates the Storybook branch entirely.
+The `declare const` tells TypeScript about the global that Rspack's `DefinePlugin` injects. When `STORYBOOK_ENABLED` is `false`, Rspack dead-code-eliminates the Storybook branch entirely.
 
-## Add Scripts
+For the rest of the setup (`.rnstorybook` folder, dependencies, running scripts), follow the [Manual Setup](./manual-setup.md) guide — everything except the bundler config is identical.
 
-```json
-{
-  "scripts": {
-    "storybook": "STORYBOOK_ENABLED='true' react-native start",
-    "storybook:ios": "STORYBOOK_ENABLED='true' react-native run-ios",
-    "storybook:android": "STORYBOOK_ENABLED='true' react-native run-android"
-  }
-}
-```
+## Re.Pack notes
 
-Replace `react-native` with `rock` if your project uses Rock CLI.
-
-## Run
-
-```bash
-npm run storybook
-```
+- Unlike Metro, there is no need to configure `require.context` support — Rspack handles it natively.
+- Replace `react-native` with `rock` in your scripts if your project uses Rock CLI.
 
 ## StorybookPlugin Options
 
