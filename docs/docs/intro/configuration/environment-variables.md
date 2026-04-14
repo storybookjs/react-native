@@ -30,6 +30,8 @@ Sets the WebSocket server hostname. Overrides any `websockets.host` value passed
 - **Default:** value from config options, or `undefined`
 - **Used by:** `withStorybook` WebSocket configuration
 
+`auto` is **not** a valid value for `STORYBOOK_WS_HOST`. Use an explicit hostname or IP address.
+
 ```bash
 STORYBOOK_WS_HOST=192.168.1.100 expo start
 ```
@@ -108,7 +110,7 @@ STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=192.168.1.100 STORYBOOK_WS_PORT=7007 ex
 {
   "scripts": {
     "storybook": "STORYBOOK_ENABLED=true expo start",
-    "storybook:device": "STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=auto expo start"
+    "storybook:device": "STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=192.168.1.100 expo start"
   }
 }
 ```

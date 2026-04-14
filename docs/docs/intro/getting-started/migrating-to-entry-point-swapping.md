@@ -172,7 +172,7 @@ If you were manually configuring WebSocket host/port in both your metro config a
 **Option A: Use env vars**
 
 ```bash
-STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=auto STORYBOOK_WS_PORT=7007 expo start
+STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=192.168.1.100 STORYBOOK_WS_PORT=7007 expo start
 ```
 
 **Option B: Configure in metro config**
