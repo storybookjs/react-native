@@ -38,42 +38,13 @@ Use the storybook cli to add Storybook to your project
 npm create storybook@latest
 ```
 
-### Configure your bundler
-
-Wrap your bundler config with the `withStorybook` function. This wrapper auto-detects whether you're using Metro or Re.Pack and configures everything automatically — including entry-point swapping, story generation, and optional WebSocket setup.
-
-If you have other config wrapper functions like `withNativeWind` you will want to chain these functions like `withStorybook(withNativeWind(config))` since they are composable (the order may be important).
-
-**Expo:**
-
-```js
-// metro.config.js
-const { getDefaultConfig } = require('expo/metro-config');
-const { withStorybook } = require('@storybook/react-native/withStorybook');
-
-const config = getDefaultConfig(__dirname);
-
-module.exports = withStorybook(config);
-```
-
-**React Native CLI:**
-
-```js
-// metro.config.js
-const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
-const { withStorybook } = require('@storybook/react-native/withStorybook');
-
-const defaultConfig = getDefaultConfig(__dirname);
-const config = {};
-
-module.exports = withStorybook(mergeConfig(defaultConfig, config));
-```
-
 ### Run Storybook
 
-That's it — no changes to `App.tsx` are needed. When you set `STORYBOOK_ENABLED=true`, the wrapper automatically swaps your app's entry point with Storybook's entry point. When the variable is not set, your app runs normally with zero Storybook code in the bundle.
+The CLI sets everything up for you — it wraps your bundler config with `withStorybook`, generates the Storybook entry point, and adds convenience scripts to your `package.json`. No changes to `App.tsx` are needed.
 
-Add convenience scripts to your `package.json`:
+When you set `STORYBOOK_ENABLED=true`, the wrapper automatically swaps your app's entry point with Storybook's entry point. When the variable is not set, your app runs normally with zero Storybook code in the bundle.
+
+The CLI adds these scripts to your `package.json`:
 
 ```json
 {
@@ -100,6 +71,10 @@ Use `cross-env` to set environment variables on Windows:
 
 :::
 
+:::tip Bundler configuration
+The CLI automatically wraps your `metro.config.js` with `withStorybook`. If you need to customize this — for example to chain it with other wrappers like `withNativeWind` — see [Metro Configuration](../configuration/metro-configuration.md) or [Manual Setup](./manual-setup.md).
+:::
+
 <details>
   <summary>Alternative: In-app integration (without entry-point swapping)</summary>
 
@@ -124,7 +99,18 @@ export default function App() {
 }
 ```
 
-Note that with this approach you'll need to manage the `enabled` option in your metro config yourself. See [Metro Configuration](../configuration/metro-configuration.md) for details.
+With this approach, use the Metro-specific `withStorybook` wrapper instead of the bundler-agnostic one, so you can control the `enabled` option directly:
+
+```js
+// metro.config.js
+const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+
+module.exports = withStorybook(config, {
+  enabled: process.env.STORYBOOK_ENABLED === 'true',
+});
+```
+
+See [Metro Configuration](../configuration/metro-configuration.md) for the full options reference.
 
 </details>
 
