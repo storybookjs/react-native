@@ -1,5 +1,7 @@
 # Setup for v8 React Native Storybook
 
+> **This guide is for v8.** For v10 manual setup instructions, see the [manual setup docs](https://storybookjs.github.io/react-native/docs/intro/getting-started/manual-setup).
+
 Before getting into the guide consider using a template for a simpler setup process.
 
 **Prebuilt Templates:**

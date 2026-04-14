@@ -38,88 +38,94 @@ Use the storybook cli to add Storybook to your project
 npm create storybook@latest
 ```
 
-### Update Metro Config
+### Configure your bundler
 
-You should then wrap your metro config with the `withStorybook` function that will return an updated config object with the necessary options for Storybook.
+Wrap your bundler config with the `withStorybook` function. This wrapper auto-detects whether you're using Metro or Re.Pack and configures everything automatically — including entry-point swapping, story generation, and optional WebSocket setup.
 
 If you have other config wrapper functions like `withNativeWind` you will want to chain these functions like `withStorybook(withNativeWind(config))` since they are composable (the order may be important).
+
+**Expo:**
 
 ```js
 // metro.config.js
 const { getDefaultConfig } = require('expo/metro-config');
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook'); // <-- add this
+const { withStorybook } = require('@storybook/react-native/withStorybook');
 
-/** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);
 
-module.exports = withStorybook(config); // <-- add this
+module.exports = withStorybook(config);
 ```
 
-### Render storybook
+**React Native CLI:**
 
-Now you need to update your app to render the Storybook component. One way to get storybook to render is to export the Storybook UI from the app entrypoint (usually `App.tsx`). Expand the section below for more information.
+```js
+// metro.config.js
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const { withStorybook } = require('@storybook/react-native/withStorybook');
 
-The Storybook component is in `.rnstorybook/index.tsx`
+const defaultConfig = getDefaultConfig(__dirname);
+const config = {};
 
-> Note the config folder changed to .rnstorybook starting in v9
+module.exports = withStorybook(mergeConfig(defaultConfig, config));
+```
 
-```ts
+### Run Storybook
+
+That's it — no changes to `App.tsx` are needed. When you set `STORYBOOK_ENABLED=true`, the wrapper automatically swaps your app's entry point with Storybook's entry point. When the variable is not set, your app runs normally with zero Storybook code in the bundle.
+
+Add convenience scripts to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "storybook": "STORYBOOK_ENABLED=true expo start",
+    "storybook:ios": "STORYBOOK_ENABLED=true expo start --ios",
+    "storybook:android": "STORYBOOK_ENABLED=true expo start --android"
+  }
+}
+```
+
+Then run:
+
+```bash
+npm run storybook
+```
+
+:::note Windows
+Use `cross-env` to set environment variables on Windows:
+
+```json
+"storybook": "cross-env STORYBOOK_ENABLED=true expo start"
+```
+:::
+
+<details>
+  <summary>Alternative: In-app integration (without entry-point swapping)</summary>
+
+If you prefer to control how Storybook renders in your app (for example, to render it alongside your app or behind a toggle), you can import the Storybook UI directly in your `App.tsx`. This approach is fully supported:
+
+```tsx
 // App.tsx
 import StorybookUI from './.rnstorybook';
 export default StorybookUI;
 ```
 
-<details>
-  <summary>Rendering Storybook</summary>
-
-You don't have to replace your app entry point to render storybook this is just one way to get started.
-
-Other methods involve using env variables or application state to decide if Storybook should render. You can use any logic that you normally would in React to optionally render a component.
-
-Heres one example:
+Or conditionally:
 
 ```tsx
-function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
+import StorybookUI from './.rnstorybook';
+import { MyApp } from './MyApp';
+
+const isStorybook = process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true';
+
+export default function App() {
+  return isStorybook ? <StorybookUI /> : <MyApp />;
 }
-
-let AppEntryPoint = App;
-
-if (Constants.expoConfig?.extra?.storybookEnabled === 'true') {
-  AppEntryPoint = require('./.rnstorybook').default;
-}
-
-export default AppEntryPoint;
 ```
+
+Note that with this approach you'll need to manage the `enabled` option in your metro config yourself. See [Metro Configuration](../configuration/metro-configuration.md) for details.
 
 </details>
-
-### Run storybook
-
-You can then run your app using the normal commands for react native.
-
-```bash
-# to run metro
-npm run start
-# to run launch ios
-npm run ios
-# to launch android
-npm run android
-```
-
-Storybook will render where you have placed it. If you have used an env variable to enable Storybook you will want to make sure that is set when running metro.
-
-If you're using an env variable you can setup some commands like this to run Storybook conditionally.
-
-```json
-"storybook": "STORYBOOK_ENABLED='true' expo start",
-"storybook:ios": "STORYBOOK_ENABLED='true' expo start --ios",
-"storybook:android": "STORYBOOK_ENABLED='true' expo start --android"
-```
 
 ## Project Template
 
@@ -152,3 +158,7 @@ Depending on your project setup and requirements, you may need different install
 - **[Expo Router Setup](./expo-router.md)** - For projects using Expo Router file-based navigation
 - **[Re.Pack Setup](./repack.md)** - For projects using Re.Pack (Rspack/Webpack) instead of Metro
 - **[Manual Setup](./manual-setup.md)** - For full control over the setup process or when the CLI doesn't work for your specific configuration
+
+## Migrating from an older setup?
+
+If you set up Storybook before entry-point swapping was available and want to switch from the deep app integration approach, see the [Migration Guide](./migrating-to-entry-point-swapping.md).

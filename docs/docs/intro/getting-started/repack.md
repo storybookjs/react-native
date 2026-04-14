@@ -6,6 +6,12 @@ sidebar_position: 3
 
 This guide covers setting up Storybook with [Re.Pack](https://re-pack.dev/) projects that use Rspack or Webpack instead of Metro as the bundler.
 
+:::tip Bundler-agnostic wrapper
+The `withStorybook` function from `@storybook/react-native/withStorybook` auto-detects Re.Pack configs and can be used as a simpler alternative to the `StorybookPlugin` approach documented below. See the [Getting Started guide](./index.md) for the recommended setup.
+
+The `StorybookPlugin` approach below gives you more fine-grained control over Re.Pack-specific options.
+:::
+
 For a ready-to-go starter project, check out the [RepackStorybookStarter](https://github.com/dannyhw/RepackStorybookStarter) repository.
 
 ## Installation

@@ -4,7 +4,13 @@ sidebar_position: 3
 
 # Metro Configuration
 
-The `withStorybook` function is a Metro configuration wrapper that enables Storybook functionality in your React Native app. It handles automatic story discovery, file generation, and optional WebSocket server setup.
+:::tip Recommended: Bundler-agnostic wrapper
+Starting with v10.4, the bundler-agnostic `withStorybook` from `@storybook/react-native/withStorybook` is the recommended default — it auto-detects Metro vs Re.Pack and handles entry-point swapping via environment variables. See the [Getting Started guide](../getting-started/index.md).
+
+This page documents the **Metro-specific** `withStorybook` for projects that use in-app integration or need direct control over Metro configuration options. This approach is fully supported.
+:::
+
+The Metro-specific `withStorybook` function is a configuration wrapper that enables Storybook functionality in your React Native app. It handles automatic story discovery, file generation, and optional WebSocket server setup.
 
 ## Basic Setup
 
@@ -133,7 +139,9 @@ The wrapper modifies Metro's resolver to:
 
 ### Removing Storybook from Production
 
-For production builds, you can completely remove Storybook code by setting `enabled: false`:
+**If you're using the bundler-agnostic `withStorybook`:** Storybook is automatically excluded when `STORYBOOK_ENABLED` is not set. No additional configuration needed.
+
+**If you're using the Metro-specific `withStorybook`:** Set `enabled: false` to completely remove Storybook code:
 
 ```js
 // metro.config.js
@@ -150,23 +158,6 @@ When storybook is disabled the withStorybook wrapper will:
 - Stub out your Storybook config directory imports
 
 Note that if you try to render Storybook when it is disabled you will get a blank screen with a warning message.
-
-If you want to conditionally swap between your app and Storybook you can use the following pattern:
-
-```tsx
-// App.tsx
-import { AppRegistry } from 'react-native';
-
-let AppEntryPoint = App;
-
-if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true') {
-  AppEntryPoint = require('./.rnstorybook').default;
-}
-
-export default AppEntryPoint;
-```
-
-Or alternatively put storybook in its own screen that you can only access when Storybook is enabled.
 
 ## Troubleshooting
 

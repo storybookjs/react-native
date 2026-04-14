@@ -16,6 +16,10 @@ npm create storybook@latest
 
 When prompted, choose **recommended** and then **native**.
 
+:::tip Entry-point swapping alternative
+If you don't need Storybook as a route inside your app and prefer a dedicated Storybook build, you can use the entry-point swapping approach instead. Just wrap your metro config with `withStorybook` from `@storybook/react-native/withStorybook` and run with `STORYBOOK_ENABLED=true`. See the [Getting Started guide](./index.md) for details.
+:::
+
 ## Metro Configuration
 
 Customize your Metro config to work with Storybook:
@@ -28,7 +32,7 @@ Then update your `metro.config.js` file to include the Storybook wrapper:
 
 ```js
 const { getDefaultConfig } = require('expo/metro-config');
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/withStorybook');
 
 /** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);

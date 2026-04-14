@@ -216,6 +216,51 @@ Or if you have the generate call in your metro config (recommended), just restar
 yarn start --reset-cache
 ```
 
+### Move on-device addons to `deviceAddons`
+
+On-device addons should now be listed in the `deviceAddons` property instead of `addons` in your `.rnstorybook/main.ts`. This prevents errors during server-side operations like `extract`, where Storybook Core would try to evaluate React Native code as Node.js presets.
+
+**Before:**
+
+```ts
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  addons: [
+    '@storybook/addon-ondevice-controls',
+    '@storybook/addon-ondevice-actions',
+  ],
+};
+```
+
+**After:**
+
+```ts
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  deviceAddons: [
+    '@storybook/addon-ondevice-controls',
+    '@storybook/addon-ondevice-actions',
+  ],
+};
+```
+
+For backwards compatibility, on-device addons in the `addons` array still work — they're detected by the "ondevice" substring in their name. If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` automigration handles this step automatically.
+
+### Entry-point swapping (new in v10.4)
+
+v10.4 introduces a new bundler-agnostic `withStorybook` wrapper that handles entry-point swapping automatically. Instead of importing Storybook in your `App.tsx`, you set `STORYBOOK_ENABLED=true` and the wrapper swaps your app's entry point with Storybook's entry point at the bundler level.
+
+```js
+// metro.config.js — new recommended import
+const { withStorybook } = require('@storybook/react-native/withStorybook');
+
+module.exports = withStorybook(config);
+```
+
+Then run with `STORYBOOK_ENABLED=true expo start`. No changes to `App.tsx` needed.
+
+This is the recommended approach for new projects. Existing projects can migrate at their own pace — see [Migrating to Entry-Point Swapping](https://storybookjs.github.io/react-native/docs/intro/getting-started/migrating-to-entry-point-swapping) for a step-by-step guide.
+
 ### Summary of breaking changes
 
 1. **Metro config API changes:**
@@ -223,6 +268,7 @@ yarn start --reset-cache
    - `withStorybookConfig` from `metro/withStorybookConfig` is removed
    - Use `withStorybook` from `metro/withStorybook` instead (the simplified API is now standard)
    - `onDisabledRemoveStorybook` option removed (automatic when `enabled: false`)
+   - **New (v10.4):** Bundler-agnostic `withStorybook` from `@storybook/react-native/withStorybook` (auto-detects Metro/Re.Pack, env-var driven)
 
 2. **Default config folder:**
    - Confirmed as `./.rnstorybook` (to avoid conflicts with web Storybook)
@@ -232,7 +278,12 @@ yarn start --reset-cache
 
 4. **Simplified app entry:**
    - Custom switcher components no longer needed for bundle optimization
-   - Metro config handles conditional inclusion automatically
+   - Entry-point swapping (v10.4): bundler swaps app entry for Storybook entry when `STORYBOOK_ENABLED=true`
+   - In-app integration (importing Storybook in App.tsx) continues to work and is fully supported
+
+5. **`deviceAddons` property:**
+   - On-device addons should use the new `deviceAddons` property in `main.ts`
+   - Backwards compatible — `addons` still works for on-device addons
 
 ## From version 8 to 9
 
