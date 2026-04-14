@@ -4,15 +4,15 @@ sidebar_position: 5
 
 # CLI Configuration
 
-React Native Storybook provides CLI commands to help with setup and story generation. This page covers all available commands and their options.
+:::info You probably don't need this
+If you're using the `withStorybook` bundler wrapper (the recommended setup), the `storybook.requires.ts` file is generated and updated automatically every time your bundler starts. You don't need to run any CLI commands for story generation.
 
-## Installation
+The `sb-rn-get-stories` command documented here is only needed if you've chosen **not** to use a `withStorybook` wrapper at all — for example, in a fully custom build pipeline.
+:::
 
-The CLI is included when you install `@storybook/react-native`
+React Native Storybook provides the `sb-rn-get-stories` CLI command for manual story generation. The CLI is included when you install `@storybook/react-native`.
 
-## Available Commands
-
-### `sb-rn-get-stories`
+## `sb-rn-get-stories`
 
 Generates the `storybook.requires.ts` file that imports all your stories and configurations.
 
@@ -109,7 +109,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
 };
 
 export default main;
@@ -147,25 +147,17 @@ Auto-generated file containing:
 
 **Important**: Never edit this file manually - it's regenerated automatically.
 
-## Integration with Build Tools
+## When the CLI is needed
 
-### Metro Integration
+### With a `withStorybook` wrapper (you don't need the CLI)
 
-The `withStorybook` Metro wrapper automatically runs story generation:
+Both the bundler-agnostic wrapper (`@storybook/react-native/withStorybook`) and the Metro-specific wrapper (`@storybook/react-native/metro/withStorybook`) automatically generate and update `storybook.requires.ts` on every bundler start. If you're using either wrapper, you can skip the CLI entirely.
 
-```js
-// metro.config.js
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+If you've customized `configPath` or `useJs` in your wrapper, the generated file will respect those options automatically.
 
-module.exports = withStorybook(config, {
-  configPath: './.rnstorybook', // Must match CLI --config-path
-  useJs: false, // Must match CLI --use-js
-});
-```
+### Without a wrapper (you need the CLI)
 
-### Manual Integration
-
-For custom build setups, run the CLI before building:
+If you're not using a `withStorybook` wrapper — for example, in a fully custom build pipeline — run `sb-rn-get-stories` manually whenever you add, remove, or rename story files:
 
 ```json
 {
@@ -268,12 +260,4 @@ npx react-native start --reset-cache
 ## Best Practices
 
 1. **Add to git**: Commit the generated `storybook.requires.ts` file
-2. **Consistent configuration**: Ensure CLI options match Metro wrapper options:
-
-```js
-// metro.config.js
-module.exports = withStorybook(config, {
-  configPath: './.storybook', // Matches: sb-rn-get-stories -c ./.storybook
-  useJs: true, // Matches: sb-rn-get-stories --use-js
-});
-```
+2. **Consistent configuration**: If you use the CLI alongside a `withStorybook` wrapper, ensure the CLI options match the wrapper options (`configPath`, `useJs`, `docTools`)
