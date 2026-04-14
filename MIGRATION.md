@@ -503,7 +503,7 @@ We've removed the types from `@storybook/react-native` and now you should import
 
 Heres an example story in version 7:
 
-```typescript
+```ts
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 
@@ -527,7 +527,7 @@ export const Basic: Story = {
 
 You can now also update main.js to main.ts and use the StorybookConfig type. This is one of the only types we export from @storybook/react-native in this version.
 
-```typescript
+```ts
 // .storybook/main.ts
 import type { StorybookConfig } from '@storybook/react-native';
 
@@ -546,7 +546,7 @@ export default main;
 
 To update preview.js to preview.tsx you can use the Preview type from @storybook/react
 
-```typescript
+```ts
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
@@ -602,7 +602,7 @@ With expo you should also add `@expo/metro-runtime`.
 
 Add a `main.ts`
 
-```typescript
+```ts
 // .storybook-web/main.ts
 import type { StorybookConfig } from '@storybook/react-webpack5';
 

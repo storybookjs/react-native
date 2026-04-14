@@ -19,7 +19,7 @@ The storybook configuration consists of several key files:
 
 The `main.ts` file is your primary configuration entry point, located in the `.rnstorybook` directory.
 
-```typescript
+```ts
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
@@ -67,7 +67,7 @@ export default main;
 
 The `preview.tsx` file configures the story rendering environment and global parameters.
 
-```typescript
+```ts
 import { Preview } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
@@ -125,7 +125,7 @@ Other than story sort the other parameters can be overwritten per story.
 
 The entry point file configures the Storybook UI and runtime behavior.
 
-```typescript
+```ts
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 

@@ -51,7 +51,7 @@ module.exports = config;
 
 Create a `setup-jest.ts` file for test configuration:
 
-```typescript
+```ts
 // setup-jest.ts
 import 'react-native-gesture-handler/jestSetup';
 ```
@@ -60,7 +60,7 @@ import 'react-native-gesture-handler/jestSetup';
 
 The `composeStories` utility processes all stories from a CSF file and returns them as testable components:
 
-```typescript
+```ts
 // Button.test.tsx
 import { render, screen } from '@testing-library/react-native';
 import { composeStories } from '@storybook/react';
@@ -93,7 +93,7 @@ test('renders disabled button correctly', () => {
 
 For testing individual stories, use `composeStory`:
 
-```typescript
+```ts
 // Button.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react-native';
 import { composeStory } from '@storybook/react';
@@ -116,7 +116,7 @@ test('button click handler is called', () => {
 
 For stories that use global decorators or parameters, set up project annotations:
 
-```typescript
+```ts
 // setup-portable-stories.ts
 import { setProjectAnnotations } from '@storybook/react';
 import * as previewAnnotations from '../.rnstorybook/preview';
@@ -137,7 +137,7 @@ const config = {
 
 #### Testing Controls
 
-```typescript
+```ts
 // TextInput.test.tsx
 import { render, screen } from '@testing-library/react-native';
 import { composeStories } from '@storybook/react';
@@ -261,7 +261,7 @@ npm run test:maestro
 
 You can automatically generate Maestro test files from your stories:
 
-```typescript
+```ts
 // scripts/generate-maestro-tests.ts
 import { writeFileSync, mkdirSync } from 'fs';
 import path from 'path';
@@ -327,7 +327,7 @@ run()
 
 Heres an example of how you can set up screenshot comparison to detect visual regressions:
 
-```typescript
+```ts
 // scripts/compare-screenshots.ts
 import * as fs from 'fs';
 import * as path from 'path';

@@ -104,7 +104,7 @@ The CLI looks for these files in your config path:
 
 Defines stories location and addons:
 
-```typescript
+```ts
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
@@ -119,7 +119,7 @@ export default main;
 
 Global decorators and parameters:
 
-```typescript
+```ts
 import { Preview } from '@storybook/react-native';
 
 const preview: Preview = {
@@ -237,7 +237,7 @@ ls -la ./.rnstorybook
 
 2. **Check story patterns**:
 
-```typescript
+```ts
 // main.ts - ensure patterns match your file structure
 stories: [
   '../components/**/*.stories.tsx', // More specific
