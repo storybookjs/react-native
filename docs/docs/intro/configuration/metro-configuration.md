@@ -35,10 +35,10 @@ The bundler-agnostic wrapper accepts an optional second argument for options tha
 ```js
 module.exports = withStorybook(config, {
   configPath: './.rnstorybook', // Storybook config directory (default: './.rnstorybook')
-  useJs: false,                 // Generate .js instead of .ts (default: false)
-  docTools: true,               // Auto arg extraction (default: true)
-  websockets: 'auto',           // 'auto' detects LAN IP, or { host, port }
-  experimental_mcp: false,      // Enable MCP endpoint at /mcp (default: false)
+  useJs: false, // Generate .js instead of .ts (default: false)
+  docTools: true, // Auto arg extraction (default: true)
+  websockets: 'auto', // 'auto' detects LAN IP, or { host, port }
+  experimental_mcp: false, // Enable MCP endpoint at /mcp (default: false)
 });
 ```
 
@@ -70,13 +70,13 @@ module.exports = withStorybook(config, {
 
 ```js
 module.exports = withStorybook(config, {
-  enabled: true,              // Include Storybook in the bundle (default: true)
+  enabled: true, // Include Storybook in the bundle (default: true)
   configPath: './.rnstorybook', // Storybook config directory (default: './.rnstorybook')
-  useJs: false,               // Generate .js instead of .ts (default: false)
-  docTools: true,             // Auto arg extraction (default: true)
-  liteMode: false,            // Mock default UI deps (default: false)
-  websockets: 'auto',         // WebSocket config (default: undefined)
-  experimental_mcp: false,    // Enable MCP endpoint (default: false)
+  useJs: false, // Generate .js instead of .ts (default: false)
+  docTools: true, // Auto arg extraction (default: true)
+  liteMode: false, // Mock default UI deps (default: false)
+  websockets: 'auto', // WebSocket config (default: undefined)
+  experimental_mcp: false, // Enable MCP endpoint (default: false)
 });
 ```
 

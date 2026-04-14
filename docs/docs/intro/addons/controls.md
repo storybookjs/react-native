@@ -12,13 +12,13 @@ The `@storybook/addon-ondevice-controls` addon provides interactive controls for
 npm install @storybook/addon-ondevice-controls
 ```
 
-Add it to your addons list in `.rnstorybook/main.ts`:
+Add it to your `deviceAddons` list in `.rnstorybook/main.ts`:
 
 ```typescript
 const main: StorybookConfig = {
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-controls',
-    // ... other addons
+    // ... other on-device addons
   ],
 };
 ```

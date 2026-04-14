@@ -16,7 +16,7 @@ Then, add following content to `.rnstorybook/main.ts`:
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
-  addons: ['@storybook/addon-ondevice-actions'],
+  deviceAddons: ['@storybook/addon-ondevice-actions'],
 };
 
 export default main;

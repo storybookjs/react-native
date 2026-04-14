@@ -8,7 +8,7 @@ The `ondeviceBackgrounds` [feature flag](./feature-flags.md) enables the new bac
 
 This flag was introduced in v10.3 as a non-breaking way to opt into the new syntax. **In the next major version this will be the default behavior and the flag will no longer be needed.**
 
-When this flag is enabled you do **not** need to install `@storybook/addon-ondevice-backgrounds` or add it to your `addons` array.
+When this flag is enabled you do **not** need to install `@storybook/addon-ondevice-backgrounds` or add it to your `deviceAddons` array.
 
 ## Setup
 
@@ -20,7 +20,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-ondevice-controls'],
+  deviceAddons: ['@storybook/addon-ondevice-controls'],
   features: {
     ondeviceBackgrounds: true,
   },

@@ -7,7 +7,7 @@ sidebar_position: 2
 This guide covers integrating Storybook directly into your app — rendering it inside your `App.tsx`, behind a toggle, or on a dedicated screen. This gives you full control over when and how Storybook appears.
 
 :::tip Recommended: Automated setup with entry-point swapping
-For most projects, the [Getting Started guide](./index.md) is the easier path. The CLI sets everything up automatically, and Storybook runs as its own entry point — no changes to your app code needed. 
+For most projects, the [Getting Started guide](./index.md) is the easier path. The CLI sets everything up automatically, and Storybook runs as its own entry point — no changes to your app code needed.
 
 The approach described on this page is fully supported but requires more manual work to set up and maintain.
 :::
@@ -54,10 +54,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  deviceAddons: [
-    '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-actions',
-  ],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
 };
 
 export default main;
@@ -196,7 +193,7 @@ Or add convenience scripts to your `package.json`:
 ```json
 {
   "scripts": {
-    "storybook": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start",
+    "storybook": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start"
   }
 }
 ```
