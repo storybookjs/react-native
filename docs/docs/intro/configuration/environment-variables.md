@@ -18,7 +18,7 @@ Controls whether Storybook is active. When set to `true`, the wrapper swaps your
 - **Default:** `false`
 - **Used by:** `withStorybook` (bundler-agnostic wrapper)
 
-```bash
+```sh
 STORYBOOK_ENABLED=true expo start
 ```
 
@@ -32,7 +32,7 @@ Sets the WebSocket server hostname. Overrides any `websockets.host` value passed
 
 `auto` is **not** a valid value for `STORYBOOK_WS_HOST`. Use an explicit hostname or IP address.
 
-```bash
+```sh
 STORYBOOK_WS_HOST=192.168.1.100 expo start
 ```
 
@@ -44,7 +44,7 @@ Sets the WebSocket server port. Overrides any `websockets.port` value passed in 
 - **Default:** value from config options, or `7007`
 - **Used by:** `withStorybook` WebSocket configuration
 
-```bash
+```sh
 STORYBOOK_WS_PORT=8080 expo start
 ```
 
@@ -56,7 +56,7 @@ Enables TLS for the WebSocket server (`wss://` instead of `ws://`) and HTTPS for
 - **Default:** `false`
 - **Used by:** `withStorybook` WebSocket configuration
 
-```bash
+```sh
 STORYBOOK_WS_SECURED=true expo start
 ```
 
@@ -84,7 +84,7 @@ Enables lite mode, which mocks out the default Storybook UI dependencies (like `
 
 ### Basic Storybook startup
 
-```bash
+```sh
 STORYBOOK_ENABLED=true expo start
 ```
 
@@ -92,7 +92,7 @@ STORYBOOK_ENABLED=true expo start
 
 If your metro/bundler config has `websockets: 'auto'`, you only need `STORYBOOK_ENABLED`:
 
-```bash
+```sh
 STORYBOOK_ENABLED=true expo start
 ```
 
@@ -100,7 +100,7 @@ The LAN IP and port are detected automatically.
 
 ### Override WebSocket host for physical devices
 
-```bash
+```sh
 STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=192.168.1.100 STORYBOOK_WS_PORT=7007 expo start
 ```
 
