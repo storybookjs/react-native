@@ -14,8 +14,6 @@ import { view } from './storybook.requires';
 const StorybookUIRoot = view.getStorybookUI({
   // Options go here
 });
-
-export default StorybookUIRoot;
 ```
 
 ## Complete Options Reference
@@ -244,8 +242,6 @@ const StorybookUIRoot = view.getStorybookUI({
     },
   },
 });
-
-export default StorybookUIRoot;
 ```
 
 ### Storage Configuration
@@ -274,8 +270,6 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
 });
-
-export default StorybookUIRoot;
 ```
 
 #### MMKV (High Performance)
@@ -294,13 +288,17 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: async (key, value) => storage.set(key, value),
   },
 });
-
-export default StorybookUIRoot;
 ```
 
 ### WebSocket Options
 
-Enable remote control of Storybook from external tools:
+Enable remote control of Storybook from external tools. See [WebSocket Configuration](./websocket-configuration.md) for the full guide.
+
+:::tip Auto-injected by the bundler wrapper
+When you configure `websockets: 'auto'` (or `{ host, port }`) in your `withStorybook` bundler wrapper, the WebSocket settings are automatically injected into the generated `storybook.requires` file. You do **not** need to set `enableWebsockets`, `host`, or `port` in `getStorybookUI` — they're already wired up. This applies to both the bundler-agnostic and Metro-specific wrappers.
+
+The options below are only needed if you're not using a `withStorybook` wrapper at all, or if you want to override the auto-injected values.
+:::
 
 #### `enableWebsockets` (boolean)
 
@@ -319,6 +317,7 @@ Enable remote control of Storybook from external tools:
 - **Purpose**: WebSocket server port
 
 ```typescript
+// Only needed without a withStorybook wrapper, or to override auto-injected values
 const StorybookUIRoot = view.getStorybookUI({
   enableWebsockets: true,
   host: '192.168.1.100', // Your machine's IP
@@ -439,8 +438,6 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
 });
-
-export default StorybookUIRoot;
 ```
 
 #### Alternative Approaches
@@ -457,8 +454,6 @@ const StorybookUIRoot = view.getStorybookUI({
   CustomUIComponent: LiteUI, // Lightweight alternative to full UI
   // ... other options
 });
-
-export default StorybookUIRoot;
 ```
 
 ##### Conditional Custom UI
@@ -472,8 +467,6 @@ const StorybookUIRoot = view.getStorybookUI({
   CustomUIComponent: Platform.OS === 'windows' ? MyCustomUI : undefined,
   // ... other options
 });
-
-export default StorybookUIRoot;
 ```
 
 #### Important Notes
@@ -499,26 +492,36 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
 });
-
-export default StorybookUIRoot;
 ```
 
-### Testing Setup
+### Testing Setup (WebSocket-controlled)
+
+If you're using the `withStorybook` wrapper with `websockets: 'auto'`, you only need to disable the on-device UI — the WebSocket connection is already configured:
 
 ```typescript
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const StorybookUIRoot = view.getStorybookUI({
-  onDeviceUI: false, // No UI for automated tests
+  onDeviceUI: false, // No UI — controlled via WebSocket
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
+});
+```
+
+Without a `withStorybook` wrapper, you'll need to set the WebSocket options manually:
+
+```typescript
+const StorybookUIRoot = view.getStorybookUI({
+  onDeviceUI: false,
   enableWebsockets: true,
-  host: 'localhost', // use websocket server to control storybook
+  host: 'localhost',
   port: 7007,
   storage: {
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,
   },
 });
-
-export default StorybookUIRoot;
 ```
