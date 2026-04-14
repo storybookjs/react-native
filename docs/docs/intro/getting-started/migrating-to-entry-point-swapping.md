@@ -85,7 +85,31 @@ export default function App() {
 
 When `STORYBOOK_ENABLED=true` is set, the wrapper automatically swaps your app's entry point to `.rnstorybook/index`, so Storybook renders instead of your app. When it's not set, your app runs normally with zero Storybook code in the bundle.
 
-## Step 3: Move on-device addons to `deviceAddons`
+## Step 3: Ensure `.rnstorybook/index.tsx` is a valid entry point
+
+With entry-point swapping, `.rnstorybook/index.tsx` becomes your app's entry point when Storybook is enabled. It needs to register a root component — not just export one.
+
+If your `index.tsx` currently just exports a component (common in the in-app integration setup), update it to register itself:
+
+```tsx
+// .rnstorybook/index.tsx
+import { view } from './storybook.requires';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AppRegistry } from 'react-native';
+
+const StorybookUIRoot = view.getStorybookUI({
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
+});
+
+AppRegistry.registerComponent('main', () => StorybookUIRoot);
+
+export default StorybookUIRoot;
+```
+
+## Step 4: Move on-device addons to `deviceAddons`
 
 In your `.rnstorybook/main.ts`, move any on-device addons from `addons` to the new `deviceAddons` property:
 
@@ -126,7 +150,7 @@ npx storybook automigrate
 
 **Why?** On-device addons contain React Native code that can't be evaluated on the server. When they're listed in `addons`, Storybook Core tries to load them as presets during operations like `extract`, which fails. The `deviceAddons` property ensures they're only loaded at runtime on the device.
 
-## Step 4: Update your scripts
+## Step 5: Update your scripts
 
 Update your `package.json` scripts to use the `STORYBOOK_ENABLED` environment variable:
 
@@ -165,48 +189,15 @@ On Windows, use `cross-env` to set environment variables:
 
 :::
 
-## Step 5: Simplify WebSocket configuration
+After making all changes, restart Metro with a cache clear (`npx expo start --clear` or `npx react-native start --reset-cache`) and run your storybook script to verify everything works.
 
-If you were manually configuring WebSocket host/port in both your metro config and `getStorybookUI`, you can now remove the duplication. The new `withStorybook` injects WebSocket settings into the generated `storybook.requires` file automatically.
-
-**Option A: Use env vars**
-
-```bash
-STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=192.168.1.100 STORYBOOK_WS_PORT=7007 expo start
-```
-
-**Option B: Configure in metro config**
-
-```js
-module.exports = withStorybook(config, {
-  websockets: 'auto',
-});
-```
-
-Either way, you can remove `enableWebsockets`, `host`, and `port` from your `getStorybookUI` call in `.rnstorybook/index.tsx` — they're injected automatically.
-
-## Step 6: Restart Metro
-
-After making these changes, restart Metro with a cache clear:
-
-```bash
-npx react-native start --reset-cache
-# or for Expo:
-npx expo start --clear
-```
-
-## Verify
-
-Run your storybook script and confirm:
-
-- Storybook renders when `STORYBOOK_ENABLED=true` is set
-- Your normal app renders when the variable is not set
-- Stories load correctly
-- On-device addon panels (controls, actions, etc.) work as before
+:::tip WebSocket configuration
+If you were manually configuring WebSocket host/port in both your metro config and `getStorybookUI`, you can now remove that duplication. The new `withStorybook` auto-injects WebSocket settings. See [Environment Variables](../configuration/environment-variables.md) for how to override them.
+:::
 
 ## Expo Router projects
 
-If you're using Expo Router with a dedicated `/storybook` route, the entry-point swapping approach works alongside it. You have two choices:
+If you're using Expo Router with a dedicated `/storybook` route, you have two choices:
 
-1. **Keep the route approach** — your `/storybook` route still works as before. Just update the bundler import and move addons to `deviceAddons`.
-2. **Switch to entry-point swapping** — remove the route and use env-var-driven swapping instead. This gives you a dedicated Storybook build with no app code in the bundle.
+1. **Keep the route approach** — your `/storybook` route still works. Move addons to `deviceAddons`, but **stay on the Metro-specific wrapper** (`@storybook/react-native/metro/withStorybook`) since the route approach needs your app to remain the entry point. See the [Expo Router Setup](./expo-router.md) guide.
+2. **Switch to entry-point swapping** — remove the `/storybook` route, switch to the bundler-agnostic wrapper, and use `STORYBOOK_ENABLED=true` instead. This gives you a dedicated Storybook build with no app code in the bundle.
