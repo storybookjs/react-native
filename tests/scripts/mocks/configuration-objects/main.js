@@ -6,7 +6,7 @@ export default {
       titlePrefix: 'ComponentsPrefix',
     },
   ],
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',

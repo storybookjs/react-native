@@ -14,6 +14,33 @@ const path = require('path');
 
 const cwd = process.cwd();
 
+const ON_DEVICE_ADDONS_MIGRATION_URL =
+  'https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-native-on-device-addons-moved-to-deviceaddons';
+
+/**
+ * @param {{ addons?: unknown[] }} main
+ * @param {string} configPath
+ *
+ * @todo This should be removed in v11.
+ */
+function warnOnDeviceAddonsStillInMainAddons(main, configPath) {
+  const legacyNames = (main.addons ?? [])
+    .map((addon) => getAddonName(addon))
+    .filter((name) => typeof name === 'string' && name.toLowerCase().includes('ondevice'));
+
+  if (legacyNames.length === 0) {
+    return;
+  }
+
+  const unique = [...new Set(legacyNames)];
+  const list = unique.join(', ');
+  console.warn(
+    `[Storybook React Native] On-device addons belong in \`deviceAddons\`, not \`addons\`, in your main config (${configPath}).\n` +
+      `Still listed under \`addons\`: ${list}.\n` +
+      `Run your Storybook upgrade/automigrate or move them manually. Details: ${ON_DEVICE_ADDONS_MIGRATION_URL}`
+  );
+}
+
 const loadMain = async ({ configPath, cwd }) => {
   try {
     const main = await loadMainConfig({ configDir: configPath, cwd });
@@ -24,12 +51,17 @@ const loadMain = async ({ configPath, cwd }) => {
 
   const mainPathTs = path.resolve(cwd, configPath, `main.ts`);
   const mainPathJs = path.resolve(cwd, configPath, `main.js`);
+  const mainPathCjs = path.resolve(cwd, configPath, `main.cjs`);
   if (fs.existsSync(mainPathTs)) {
     return interopRequireDefault(mainPathTs);
   } else if (fs.existsSync(mainPathJs)) {
     return interopRequireDefault(mainPathJs);
+  } else if (fs.existsSync(mainPathCjs)) {
+    return interopRequireDefault(mainPathCjs);
   } else {
-    throw new Error(`Main config file not found at ${mainPathTs} or ${mainPathJs}`);
+    throw new Error(
+      `Main config file not found at ${mainPathTs}, ${mainPathJs}, or ${mainPathCjs}`
+    );
   }
 };
 
@@ -69,6 +101,8 @@ async function generate({
 
   const main = await loadMain({ configPath, cwd });
 
+  warnOnDeviceAddonsStillInMainAddons(main, configPath);
+
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
     workingDir: cwd,
@@ -96,7 +130,10 @@ async function generate({
 
   const registeredAddons = [];
 
-  const allAddons = [...(main.addons ?? []), ...(main.deviceAddons ?? [])];
+  const allAddons = [
+    ...(main.addons ?? []), // TODO remove in v11
+    ...(main.deviceAddons ?? []),
+  ];
 
   for (const addon of allAddons) {
     const registerPath = resolveAddonFile(

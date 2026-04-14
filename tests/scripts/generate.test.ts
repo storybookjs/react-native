@@ -302,5 +302,29 @@ describe('loader', () => {
         t.assert.snapshot(fileContentMock);
       });
     });
+
+    describe('legacy on-device addons under main.addons', () => {
+      it('logs a migration warning', async () => {
+        const warn = mock.method(console, 'warn', mock.fn());
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/legacy-ondevice-in-addons' });
+        mock.reset();
+
+        assert.strictEqual(warn.mock.callCount(), 1);
+        const msg = String(warn.mock.calls[0].arguments[0]);
+        assert.ok(msg.includes('deviceAddons'));
+        assert.ok(msg.includes('@storybook/addon-ondevice-controls'));
+        assert.ok(msg.includes('react-native-on-device-addons-moved-to-deviceaddons'));
+      });
+
+      it('does not warn when on-device addons are only in deviceAddons', async () => {
+        const warn = mock.method(console, 'warn', mock.fn());
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/device-addons' });
+        mock.reset();
+
+        assert.strictEqual(warn.mock.callCount(), 0);
+      });
+    });
   });
 });

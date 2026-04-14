@@ -24,10 +24,10 @@
     "*.d.ts"
   ],
   "scripts": {
-    "preprepare": "rm -rf dist/",
-    "prepare": "tsup",
+    "check:types": "tsc --noEmit",
     "dev": "tsup --watch",
-    "check:types": "tsc --noEmit"
+    "preprepare": "rm -rf dist/",
+    "prepare": "tsup"
   },
   "dependencies": {
     "@storybook/react-native-theming": "^10.3.1"
