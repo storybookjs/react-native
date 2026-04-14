@@ -12,13 +12,13 @@ This guide walks you through the migration.
 
 ## What changes
 
-| Aspect | Old setup | New setup |
-|---|---|---|
-| **Bundler wrapper** | `require('@storybook/react-native/metro/withStorybook')` | `require('@storybook/react-native/withStorybook')` |
-| **Enabling Storybook** | `enabled` option in metro config | `STORYBOOK_ENABLED=true` environment variable |
-| **App.tsx** | Conditional import/render of StorybookUI | No changes needed — entry point is swapped automatically |
-| **On-device addons** | Listed in `addons` array in `main.ts` | Listed in `deviceAddons` array in `main.ts` |
-| **WebSocket config** | Manually matched in metro config + `getStorybookUI` | Auto-injected via `withStorybook` or env vars |
+| Aspect                 | Old setup                                                | New setup                                                |
+| ---------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| **Bundler wrapper**    | `require('@storybook/react-native/metro/withStorybook')` | `require('@storybook/react-native/withStorybook')`       |
+| **Enabling Storybook** | `enabled` option in metro config                         | `STORYBOOK_ENABLED=true` environment variable            |
+| **App.tsx**            | Conditional import/render of StorybookUI                 | No changes needed — entry point is swapped automatically |
+| **On-device addons**   | Listed in `addons` array in `main.ts`                    | Listed in `deviceAddons` array in `main.ts`              |
+| **WebSocket config**   | Manually matched in metro config + `getStorybookUI`      | Auto-injected via `withStorybook` or env vars            |
 
 ## Step 1: Update your bundler config
 
@@ -96,10 +96,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [
-    '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-actions',
-  ],
+  addons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
 };
 
 export default main;
@@ -112,10 +109,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  deviceAddons: [
-    '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-actions',
-  ],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
 };
 
 export default main;
@@ -127,6 +121,7 @@ If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` aut
 ```bash
 npx storybook automigrate
 ```
+
 :::
 
 **Why?** On-device addons contain React Native code that can't be evaluated on the server. When they're listed in `addons`, Storybook Core tries to load them as presets during operations like `extract`, which fails. The `deviceAddons` property ensures they're only loaded at runtime on the device.
@@ -167,6 +162,7 @@ On Windows, use `cross-env` to set environment variables:
   }
 }
 ```
+
 :::
 
 ## Step 5: Simplify WebSocket configuration
@@ -202,6 +198,7 @@ npx expo start --clear
 ## Verify
 
 Run your storybook script and confirm:
+
 - Storybook renders when `STORYBOOK_ENABLED=true` is set
 - Your normal app renders when the variable is not set
 - Stories load correctly

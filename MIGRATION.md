@@ -225,10 +225,7 @@ On-device addons should now be listed in the `deviceAddons` property instead of 
 ```ts
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [
-    '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-actions',
-  ],
+  addons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
 };
 ```
 
@@ -237,10 +234,7 @@ const main: StorybookConfig = {
 ```ts
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  deviceAddons: [
-    '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-actions',
-  ],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
 };
 ```
 
