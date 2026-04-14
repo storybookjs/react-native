@@ -87,7 +87,7 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
   );
   const settings = { ...options };
 
-  if (server) {
+  if (!server) {
     settings.experimental_mcp = false;
   }
 
