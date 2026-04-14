@@ -29,7 +29,9 @@ function warnDeprecatedMainAddonsField(main, configPath) {
     return;
   }
 
-  const names = addons.map((addon) => getAddonName(addon)).filter((name) => typeof name === 'string');
+  const names = addons
+    .map((addon) => getAddonName(addon))
+    .filter((name) => typeof name === 'string');
   const list = [...new Set(names)].join(', ');
   console.warn(
     `[Storybook React Native] The \`addons\` field in your main config (${configPath}) is deprecated and will be removed in a future major version.\n` +
