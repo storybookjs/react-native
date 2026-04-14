@@ -8,7 +8,7 @@ The `@storybook/addon-ondevice-controls` addon provides interactive controls for
 
 ## Installation
 
-```bash
+```sh
 npm install @storybook/addon-ondevice-controls
 ```
 
@@ -402,7 +402,7 @@ Some controls require additional React Native dependencies:
 
 Install these as needed:
 
-```bash
+```sh
 npm install @react-native-community/slider @react-native-community/datetimepicker
 ```
 

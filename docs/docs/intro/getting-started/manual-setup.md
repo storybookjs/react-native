@@ -99,7 +99,7 @@ Since this approach renders Storybook inside your app (not as a separate entry p
 
 If you are using Expo and don't have a metro config, generate one first:
 
-```bash
+```sh
 npx expo customize metro.config.js
 ```
 
@@ -184,7 +184,7 @@ export default function App() {
 
 Start your app with the environment variable set:
 
-```bash
+```sh
 STORYBOOK_ENABLED=true expo start
 ```
 

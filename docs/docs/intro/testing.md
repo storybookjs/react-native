@@ -26,7 +26,7 @@ Portable stories allow you to reuse your Storybook stories in external testing e
 
 Install the required testing dependencies:
 
-```bash
+```sh
 npm install --save-dev @testing-library/react-native @testing-library/jest-native jest
 ```
 
@@ -195,7 +195,7 @@ I also recommend setting onDeviceUI to false in your Storybook config to avoid i
 
 Install Maestro CLI:
 
-```bash
+```sh
 # macOS
 brew tap mobile-dev-inc/tap
 brew install maestro
@@ -249,7 +249,7 @@ Note I highly recommend using [Bun](https://bun.sh/) for running scripts, since 
 
 Run the tests:
 
-```bash
+```sh
 # Start your Expo/React Native app with Storybook
 npm run start
 

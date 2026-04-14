@@ -18,7 +18,7 @@ Generates the `storybook.requires.ts` file that imports all your stories and con
 
 #### Basic Usage
 
-```bash
+```sh
 # Generate with default options
 npx sb-rn-get-stories
 
@@ -39,7 +39,7 @@ Specify the path to your Storybook configuration folder.
 - **Default**: `./.rnstorybook`
 - **Type**: string
 
-```bash
+```sh
 # Custom config location
 npx sb-rn-get-stories --config-path ./.storybook
 npx sb-rn-get-stories -c ./src/storybook
@@ -52,7 +52,7 @@ Generate JavaScript files instead of TypeScript.
 - **Default**: `false` (generates TypeScript)
 - **Type**: boolean
 
-```bash
+```sh
 # Generate storybook.requires.js instead of .ts
 npx sb-rn-get-stories --use-js
 npx sb-rn-get-stories -js
@@ -67,7 +67,7 @@ Exclude documentation tools from the generated file.
 - **Default**: includes doc tools
 - **Type**: boolean
 
-```bash
+```sh
 # Exclude doc tools to reduce bundle size
 npx sb-rn-get-stories --no-doc-tools
 npx sb-rn-get-stories -D
@@ -79,14 +79,14 @@ npx sb-rn-get-stories -D
 
 Display help information.
 
-```bash
+```sh
 npx sb-rn-get-stories --help
 npx sb-rn-get-stories -h
 ```
 
 #### Complete Example
 
-```bash
+```sh
 # Generate with all options
 npx sb-rn-get-stories \
   --config-path ./src/.storybook \
@@ -178,7 +178,7 @@ Doc tools enable automatic extraction of component props to generate controls. T
 
 1. **Install the babel plugin**:
 
-```bash
+```sh
 npm install --save-dev babel-plugin-react-docgen-typescript
 ```
 
@@ -194,7 +194,7 @@ module.exports = {
 
 3. **Ensure doc tools are enabled** (default behavior):
 
-```bash
+```sh
 npx sb-rn-get-stories
 # Doc tools included by default
 ```
@@ -207,7 +207,7 @@ Disable doc tools to reduce bundle size when:
 - Not using automatic controls
 - Manually defining all argTypes
 
-```bash
+```sh
 npx sb-rn-get-stories --no-doc-tools
 ```
 
@@ -230,7 +230,7 @@ npx sb-rn-get-stories --no-doc-tools
 
 1. **Check config path**:
 
-```bash
+```sh
 # Verify path exists
 ls -la ./.rnstorybook
 ```
@@ -247,7 +247,7 @@ stories: [
 
 3. **Clear Metro cache**:
 
-```bash
+```sh
 npx react-native start --reset-cache
 ```
 

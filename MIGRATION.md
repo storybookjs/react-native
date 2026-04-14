@@ -206,13 +206,13 @@ The metro config (`enabled` flag) automatically handles bundle inclusion:
 
 After updating dependencies and configuration, regenerate your `.rnstorybook/storybook.requires.ts` file:
 
-```bash
+```sh
 yarn storybook-generate
 ```
 
 Or if you have the generate call in your metro config (recommended), just restart metro:
 
-```bash
+```sh
 yarn start --reset-cache
 ```
 
@@ -585,7 +585,7 @@ The setup is the same as `@storybook/addon-react-native-web` but with the reactN
 
 #### First install necessary packages
 
-```bash
+```sh
 yarn add -D @storybook/addon-react-native-web @storybook/addon-essentials storybook @storybook/react-webpack5 @storybook/react babel-plugin-react-native-web react-native-web @storybook/addon-react-native-server
 ```
 

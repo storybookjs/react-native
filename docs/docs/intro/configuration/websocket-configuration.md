@@ -35,7 +35,7 @@ The wrapper auto-detects your LAN IP, starts the WebSocket server, and injects t
 
 You can also configure WebSockets via environment variables:
 
-```bash
+```sh
 STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=192.168.1.100 STORYBOOK_WS_PORT=7007 expo start
 ```
 

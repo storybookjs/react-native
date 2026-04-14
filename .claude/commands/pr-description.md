@@ -5,7 +5,7 @@ Generate a pull request description based on the changes in the current branch.
 ## Instructions
 
 1. First, determine the base branch by checking for a PR or using `next` as default:
-   ```bash
+   ```sh
    gh pr view --json baseRefName --jq '.baseRefName' 2>/dev/null || echo "next"
    ```
 
@@ -23,7 +23,7 @@ Generate a pull request description based on the changes in the current branch.
    - Answer the template questions about examples and documentation
 
 5. Check if a PR exists for this branch:
-   ```bash
+   ```sh
    gh pr view --json number 2>/dev/null
    ```
 

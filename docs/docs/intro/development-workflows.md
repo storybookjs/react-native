@@ -147,7 +147,7 @@ Now open Storybook to see your component in action:
 
 If you have a Storybook route in your app for example you could use deep linking
 
-```bash
+```sh
 npx uri-scheme open "myapp://storybook?STORYBOOK_STORY_ID=components-textinput--default" --ios
 ```
 
@@ -266,7 +266,7 @@ export const Disabled: Story = {
 
 Test each state:
 
-```bash
+```sh
 # Jump directly to the loading state
 npx uri-scheme open "myapp://storybook?STORYBOOK_STORY_ID=components-button--loading" --ios
 ```

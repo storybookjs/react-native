@@ -163,13 +163,13 @@ For projects using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of M
 
 ## Expo router specific setup
 
-```bash
+```sh
 npm create storybook@latest
 ```
 
 choose recommended and then native
 
-```bash
+```sh
 npx expo@latest customize metro.config.js
 ```
 

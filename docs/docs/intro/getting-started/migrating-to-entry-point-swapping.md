@@ -142,7 +142,7 @@ export default main;
 :::tip Automigration available
 If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` automigration handles this step automatically. Any addon with "ondevice" in its name is moved to `deviceAddons`.
 
-```bash
+```sh
 npx storybook automigrate
 ```
 

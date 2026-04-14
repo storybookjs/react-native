@@ -16,7 +16,7 @@ The Expo Router approach documented here is fully supported but not the preferre
 
 Generate a metro config if you don't have one:
 
-```bash
+```sh
 npx expo@latest customize metro.config.js
 ```
 
@@ -111,7 +111,7 @@ This ensures that the Storybook route is only available during development and w
 
 Once set up, start your app and navigate to the `/storybook` route:
 
-```bash
+```sh
 npm run start
 npm run ios    # or npm run android
 ```

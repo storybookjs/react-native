@@ -18,7 +18,7 @@ If you're using **Expo Router** for file-based navigation, follow our dedicated 
 :::tip AI-Assisted Setup
 If you're using an AI coding agent (Claude Code, Cursor, Windsurf, etc.), you can install our agent skills to get guided setup assistance:
 
-```bash
+```sh
 npx skills add storybookjs/react-native
 ```
 
@@ -34,7 +34,7 @@ For most existing projects we recommend adding Storybook via the CLI.
 
 Use the storybook cli to add Storybook to your project
 
-```bash
+```sh
 npm create storybook@latest
 ```
 
@@ -58,7 +58,7 @@ The CLI adds these scripts to your `package.json`:
 
 Then run:
 
-```bash
+```sh
 npm run storybook
 ```
 
@@ -120,13 +120,13 @@ If you are starting a fresh project and you want to get setup with Storybook fro
 
 For Expo you can use this template with the following command:
 
-```bash
+```sh
 npx create-expo-app --template expo-template-storybook AwesomeStorybook
 ```
 
 For React Native cli you can use this template
 
-```bash
+```sh
 npx @react-native-community/cli init MyApp --template react-native-template-storybook
 ```
 
