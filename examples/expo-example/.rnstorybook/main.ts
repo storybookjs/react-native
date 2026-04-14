@@ -10,8 +10,9 @@ const main: StorybookConfig = {
       files: '**/*.stories.?(ts|tsx|js|jsx)',
     },
   ],
-  addons: ['storybook-addon-deep-controls', './local-addon-example'],
   deviceAddons: [
+    'storybook-addon-deep-controls',
+    './local-addon-example',
     { name: '@storybook/addon-ondevice-controls' },
     '@storybook/addon-ondevice-actions',
     // '@storybook/addon-ondevice-backgrounds',

@@ -301,10 +301,23 @@ describe('loader', () => {
         );
         t.assert.snapshot(fileContentMock);
       });
+
+      it('logs a deprecation warning when addons is non-empty', async () => {
+        const warn = mock.method(console, 'warn', mock.fn());
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/mixed-addons' });
+        mock.reset();
+
+        assert.strictEqual(warn.mock.callCount(), 1);
+        const msg = String(warn.mock.calls[0].arguments[0]);
+        assert.ok(msg.includes('deprecated'));
+        assert.ok(msg.includes('deviceAddons'));
+        assert.ok(msg.includes('deprecating-addons-in-rnstorybook-main'));
+      });
     });
 
     describe('legacy on-device addons under main.addons', () => {
-      it('logs a migration warning', async () => {
+      it('logs a deprecation warning', async () => {
         const warn = mock.method(console, 'warn', mock.fn());
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({ configPath: 'scripts/mocks/legacy-ondevice-in-addons' });
@@ -312,9 +325,10 @@ describe('loader', () => {
 
         assert.strictEqual(warn.mock.callCount(), 1);
         const msg = String(warn.mock.calls[0].arguments[0]);
+        assert.ok(msg.includes('deprecated'));
         assert.ok(msg.includes('deviceAddons'));
         assert.ok(msg.includes('@storybook/addon-ondevice-controls'));
-        assert.ok(msg.includes('react-native-on-device-addons-moved-to-deviceaddons'));
+        assert.ok(msg.includes('deprecating-addons-in-rnstorybook-main'));
       });
 
       it('does not warn when on-device addons are only in deviceAddons', async () => {

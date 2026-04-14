@@ -14,30 +14,28 @@ const path = require('path');
 
 const cwd = process.cwd();
 
-const ON_DEVICE_ADDONS_MIGRATION_URL =
-  'https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-native-on-device-addons-moved-to-deviceaddons';
+const MAIN_ADDONS_DEPRECATION_URL =
+  'https://github.com/storybookjs/react-native/blob/main/MIGRATION.md#deprecating-addons-in-rnstorybook-main';
 
 /**
  * @param {{ addons?: unknown[] }} main
  * @param {string} configPath
  *
- * @todo This should be removed in v11.
+ * @todo Remove support for `main.addons` in a future major version.
  */
-function warnOnDeviceAddonsStillInMainAddons(main, configPath) {
-  const legacyNames = (main.addons ?? [])
-    .map((addon) => getAddonName(addon))
-    .filter((name) => typeof name === 'string' && name.toLowerCase().includes('ondevice'));
-
-  if (legacyNames.length === 0) {
+function warnDeprecatedMainAddonsField(main, configPath) {
+  const addons = main.addons ?? [];
+  if (addons.length === 0) {
     return;
   }
 
-  const unique = [...new Set(legacyNames)];
-  const list = unique.join(', ');
+  const names = addons.map((addon) => getAddonName(addon)).filter((name) => typeof name === 'string');
+  const list = [...new Set(names)].join(', ');
   console.warn(
-    `[Storybook React Native] On-device addons belong in \`deviceAddons\`, not \`addons\`, in your main config (${configPath}).\n` +
-      `Still listed under \`addons\`: ${list}.\n` +
-      `Run your Storybook upgrade/automigrate or move them manually. Details: ${ON_DEVICE_ADDONS_MIGRATION_URL}`
+    `[Storybook React Native] The \`addons\` field in your main config (${configPath}) is deprecated and will be removed in a future major version.\n` +
+      `Move every entry to \`deviceAddons\` instead. That includes on-device UI packages (\`@storybook/addon-ondevice-*\`), other addons you bundle with the app (for example storybook-addon-deep-controls), and local paths such as ./my-addon. Entries in \`deviceAddons\` are written into storybook.requires without being evaluated as Storybook Core presets.\n` +
+      (list ? `Still listed under \`addons\`: ${list}.\n` : '') +
+      `Details: ${MAIN_ADDONS_DEPRECATION_URL}`
   );
 }
 
@@ -101,7 +99,7 @@ async function generate({
 
   const main = await loadMain({ configPath, cwd });
 
-  warnOnDeviceAddonsStillInMainAddons(main, configPath);
+  warnDeprecatedMainAddonsField(main, configPath);
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
