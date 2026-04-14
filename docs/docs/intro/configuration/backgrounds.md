@@ -56,15 +56,18 @@ export default preview;
 - `parameters.backgrounds.options` — an object keyed by identifier. Each entry has a `name` (display label) and `value` (hex color).
 - `initialGlobals.backgrounds.value` — sets the initially selected background by its key.
 
-### 3. Regenerate the requires file
+After changing `main.ts`, restart your bundler so the flag takes effect. The `withStorybook` wrapper regenerates `storybook.requires.ts` automatically on start.
 
-After changing `main.ts`, regenerate `storybook.requires.ts` so the flag takes effect:
+<details>
+<summary>Not using a <code>withStorybook</code> wrapper?</summary>
+
+If you're not using the `withStorybook` wrapper, regenerate the requires file manually:
 
 ```sh
-npm run storybook-generate
+npx sb-rn-get-stories
 ```
 
-Or restart Metro, which regenerates the file automatically.
+</details>
 
 ## Overriding at the story level
 
