@@ -402,7 +402,7 @@ export class View {
         self._setStory = (newStory: StoryContext<ReactRenderer>) => {
           setContext(newStory);
 
-          if (shouldPersistSelection && !storage) {
+          if (shouldPersistSelection && !params.storage) {
             console.warn(dedent`Please set storage in getStorybookUI like this:
               const StorybookUIRoot = view.getStorybookUI({
                 storage: {
