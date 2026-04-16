@@ -2,46 +2,7 @@ import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import { createChannelServer } from '../metro/channelServer';
 import type { WebsocketsOptions } from '../types';
-import { envVariableToBoolean, envVariableToNumber, envVariableToString } from '../env-tools';
-
-function loadWebsocketEnvOverrides(
-  websockets: WebsocketsOptions | 'auto' | undefined
-): WebsocketsOptions {
-  const envHost = envVariableToString(
-    process.env.STORYBOOK_WS_HOST,
-    websockets === 'auto' ? undefined : (websockets?.host ?? undefined)
-  );
-  const envPort = envVariableToNumber(
-    process.env.STORYBOOK_WS_PORT,
-    websockets === 'auto' ? 7007 : (websockets?.port ?? 7007)
-  );
-  const envSecured = envVariableToBoolean(process.env.STORYBOOK_WS_SECURED);
-
-  if (websockets === undefined && !envHost) {
-    return {
-      host: undefined,
-      port: undefined,
-      secured: false,
-    };
-  }
-
-  const config: WebsocketsOptions =
-    websockets === 'auto' || websockets === undefined ? {} : { ...websockets };
-
-  if (envHost) {
-    config.host = envHost;
-  }
-
-  if (envPort) {
-    config.port = envPort;
-  }
-
-  if (envSecured) {
-    config.secured = true;
-  }
-
-  return config;
-}
+import { loadWebsocketEnvOverrides } from '../env-tools';
 
 /**
  * Minimal compiler types for webpack/rspack compatibility.

@@ -4,52 +4,12 @@ import { enhanceMetroConfig } from './enhanceMetroConfig';
 import { enhanceRepackConfig } from './enhanceRepackConfig';
 import { resolveEntryPoint, resolveStorybookEntry } from './metro/utils';
 import type { WithStorybookOptions } from './metro/utils';
-import type { WebsocketsOptions } from './types';
 import { generate } from '../scripts/generate';
 import { createChannelServer } from './metro/channelServer';
-import { envVariableToBoolean, envVariableToNumber, envVariableToString } from './env-tools';
+import { envVariableToBoolean, loadWebsocketEnvOverrides } from './env-tools';
 
 function isMetroConfig(config: unknown): config is MetroConfig {
   return config != null && typeof config === 'object' && 'transformer' in config;
-}
-
-function loadWebsocketEnvOverrides(
-  websockets: WebsocketsOptions | 'auto' | undefined
-): WebsocketsOptions {
-  const envHost = envVariableToString(
-    process.env.STORYBOOK_WS_HOST,
-    websockets === 'auto' ? undefined : (websockets?.host ?? undefined)
-  );
-  const envPort = envVariableToNumber(
-    process.env.STORYBOOK_WS_PORT,
-    websockets === 'auto' ? 7007 : (websockets?.port ?? 7007)
-  );
-  const envSecured = envVariableToBoolean(process.env.STORYBOOK_WS_SECURED);
-
-  if (websockets === undefined && !envHost) {
-    return {
-      host: undefined,
-      port: undefined,
-      secured: false,
-    };
-  }
-
-  const config: WebsocketsOptions =
-    websockets === 'auto' || websockets === undefined ? {} : { ...websockets };
-
-  if (envHost) {
-    config.host = envHost;
-  }
-
-  if (envPort) {
-    config.port = envPort;
-  }
-
-  if (envSecured) {
-    config.secured = true;
-  }
-
-  return config;
 }
 
 export function withStorybook<T>(config: T, options: WithStorybookOptions = {}): T {
@@ -58,9 +18,9 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
     return config;
   }
   const server = envVariableToBoolean(process.env.STORYBOOK_SERVER, true);
-  const liteMode = envVariableToBoolean(
+  const disableUI = envVariableToBoolean(
     process.env.STORYBOOK_DISABLE_UI,
-    options.liteMode ?? false
+    options.disableUI ?? false
   );
   const settings = { ...options };
 
@@ -68,7 +28,7 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
     settings.experimental_mcp = false;
   }
 
-  if (liteMode) {
+  if (disableUI) {
     settings.docTools = false;
   }
 
@@ -119,7 +79,7 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
     configPath,
     useJs,
     docTools,
-    liteMode,
+    disableUI,
     ...(websocketsOption != null || process.env.STORYBOOK_WS_HOST
       ? { host: generateHost, port, secured }
       : {}),

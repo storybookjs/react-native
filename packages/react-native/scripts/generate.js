@@ -90,7 +90,7 @@ function getLocalIPAddress() {
  *   host?: string;
  *   port?: number;
  *   secured?: boolean;
- *   liteMode?: boolean;
+ *   disableUI?: boolean;
  * }} generateOptions
  */
 async function generate(generateOptions) {
@@ -101,7 +101,7 @@ async function generate(generateOptions) {
     host = undefined,
     port = undefined,
     secured = false,
-    liteMode = false,
+    disableUI = false,
   } = generateOptions;
   // here we want to get the ip address and pass it to rn storybook so that devices can connect over lan easily
   const channelHost = host === 'auto' ? getLocalIPAddress() : host;
@@ -186,8 +186,8 @@ async function generate(generateOptions) {
   let optionsVar = '';
   const reactNativeOptions = main.reactNative ?? {};
 
-  if (liteMode) {
-    reactNativeOptions.liteMode = true;
+  if (disableUI) {
+    reactNativeOptions.disableUI = true;
   }
 
   if (reactNativeOptions && typeof reactNativeOptions === 'object') {
