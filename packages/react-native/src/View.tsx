@@ -247,8 +247,8 @@ export class View {
       setItem: async (key, value) => {},
     };
 
-    const onDeviceUI = this._options.liteMode ? false : (params.onDeviceUI ?? true);
-    const shouldPersistSelection = this._options.liteMode
+    const onDeviceUI = this._options.disableUI ? false : (params.onDeviceUI ?? true);
+    const shouldPersistSelection = this._options.disableUI
       ? false
       : (params.shouldPersistSelection ?? true);
 

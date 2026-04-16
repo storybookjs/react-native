@@ -11,6 +11,7 @@ export interface WithStorybookOptions {
   enabled?: boolean;
   docTools?: boolean;
   liteMode?: boolean;
+  disableUI?: boolean;
   experimental_mcp?: boolean;
 }
 

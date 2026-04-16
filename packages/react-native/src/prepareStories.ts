@@ -13,6 +13,7 @@ export interface ReactNativeOptions {
    */
   playFn?: boolean;
   liteMode?: boolean;
+  disableUI?: boolean;
 }
 
 export function prepareStories({
