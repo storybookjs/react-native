@@ -11,10 +11,10 @@ import dedent from 'dedent';
 import { patchChannelForRN } from './patchChannelForRN';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
-import { StatusBar } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 import {
+  StatusBar,
   ActivityIndicator,
   Linking,
   Platform,
