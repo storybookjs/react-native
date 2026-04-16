@@ -7,12 +7,14 @@ keywords: [react native, storybook, getting started, installation, setup, expo, 
 # Getting started
 
 There are a few different ways to get started, the main recommendation is to use the CLI init.
-This guide is intended for v10 of storybook. For v9 docs see the [v9.1 docs](https://github.com/storybookjs/react-native/tree/v9.1.4).
+This guide is intended for Storybook version 10+. For v9 docs see the [v9.1 docs](https://github.com/storybookjs/react-native/tree/v9.1.4).
 
 React Native Storybook works with both plain React Native and Expo but examples are using Expo for brevity since Expo is officially recommended by Meta. For plain React Native projects there should be minimal differences.
 
 :::info Expo Router Users
-If you're using **Expo Router** for file-based navigation, follow our dedicated [Expo Router Setup guide](./expo-router.md) instead of the standard setup below. Expo Router benefits from a specific configuration for routing integration.
+For most projects, the simplest approach is entry-point swapping: the bundler swaps your app’s entire entry point for Storybook when `STORYBOOK_ENABLED=true` is set. No route setup needed, and no Storybook code ships to production.
+
+However, if you’re using **Expo Router** and want to render Storybook within your app’s navigation (instead of as a separate entry point), follow our dedicated [Expo Router Setup guide](./expo-router.md). This approach is fully supported, but not recommended, because it embeds Storybook into your app’s bundle and navigation.
 :::
 
 :::tip AI-Assisted Setup

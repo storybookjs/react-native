@@ -25,6 +25,7 @@ Since this approach renders Storybook inside your app (not as a separate entry p
 ```js
 // metro.config.js
 const { getDefaultConfig } = require('expo/metro-config');
+// Use the Metro-specific wrapper for route-based setup
 const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 /** @type {import('expo/metro-config').MetroConfig} */

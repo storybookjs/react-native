@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Re.Pack Setup
 
-This guide covers what's different when using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of Metro. The Storybook configuration (`.rnstorybook` folder, stories, addons) is identical regardless of bundler — only the bundler config itself changes.
+This guide covers what's different when using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of Metro. The Storybook configuration (`.rnstorybook` folder, stories, addons) is identical regardless of bundler, only the bundler config itself changes.
 
 For a ready-to-go starter project, check out the [RepackStorybookStarter](https://github.com/dannyhw/RepackStorybookStarter) repository.
 

@@ -6,7 +6,7 @@ keywords: [react native, storybook, migration, entry point swapping, withStorybo
 
 # Migrating to Entry-Point Swapping
 
-Starting with v10.4, entry-point swapping is the default setup for new Storybook React Native projects. If your project uses the in-app integration approach — importing Storybook inside `App.tsx` and conditionally rendering it — that setup continues to work and is fully supported. However, entry-point swapping is simpler: the bundler swaps your app's entry point for Storybook's entry point automatically, so you don't need to touch your app code at all.
+Starting with v10.4, entry-point swapping is the default setup for new Storybook React Native projects. If your project uses the in-app integration approach, importing Storybook inside `App.tsx` and conditionally rendering it, that setup continues to work and is fully supported. However, entry-point swapping is simpler: the bundler swaps your app's entry point for Storybook's entry point automatically, so you don't need to touch your app code at all.
 
 This guide walks you through the migration.
 

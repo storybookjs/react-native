@@ -182,7 +182,7 @@ export default StorybookUIRoot;
     - `getItem`: Function to retrieve stored values
     - `setItem`: Function to store values
 
-- **Websocket Options** (auto-injected when using the bundler-agnostic `withStorybook` — only needed for manual setups)
+- **Websocket Options** (only needed for manual setups. These are auto-injected when using the bundler-agnostic `withStorybook` wrapper)
   - `enableWebsockets`: Enable remote control (default: false)
   - `host`: Websocket host (default: 'localhost')
   - `port`: Websocket port (default: 7007)

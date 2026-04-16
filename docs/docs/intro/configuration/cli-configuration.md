@@ -147,7 +147,7 @@ Auto-generated file containing:
 
 **Important**: Never edit this file manually - it's regenerated automatically.
 
-## When the CLI is needed
+## CLI usage requirements
 
 ### With a `withStorybook` wrapper (you don't need the CLI)
 
