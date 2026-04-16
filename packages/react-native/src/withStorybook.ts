@@ -132,7 +132,7 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
     configPath,
     useJs,
     docTools,
-    ...(!!host ? { host: host, port: websockets.port, secured: !websockets.secured } : {}),
+    ...(!!host ? { host: host, port: websockets.port, secured: websockets.secured ?? false } : {}),
     liteMode,
   } as any);
 
