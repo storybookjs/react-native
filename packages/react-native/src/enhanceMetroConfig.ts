@@ -24,6 +24,10 @@ export function enhanceMetroConfig(
     resolver: {
       ...config.resolver,
       resolveRequest: (context: any, moduleName: string, platform: string | null) => {
+        if (moduleName === 'tty' || moduleName === 'os') {
+          return { type: 'empty' };
+        }
+
         const resolveFunction: ResolveRequestFunction = config?.resolver?.resolveRequest
           ? config.resolver.resolveRequest
           : context.resolveRequest;
@@ -44,10 +48,6 @@ export function enhanceMetroConfig(
         const resolveResult = resolveFunction(theContext, moduleName, platform);
 
         if (resolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
-          return { type: 'empty' };
-        }
-
-        if (moduleName === 'tty' || moduleName === 'os') {
           return { type: 'empty' };
         }
 
