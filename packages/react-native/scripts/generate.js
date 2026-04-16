@@ -91,9 +91,9 @@ function getLocalIPAddress() {
  *   port?: number;
  *   secured?: boolean;
  *   liteMode?: boolean;
- * }} options
+ * }} generateOptions
  */
-async function generate(options) {
+async function generate(generateOptions) {
   const {
     configPath,
     useJs = false,
@@ -102,7 +102,7 @@ async function generate(options) {
     port = undefined,
     secured = false,
     liteMode = false,
-  } = options;
+  } = generateOptions;
   // here we want to get the ip address and pass it to rn storybook so that devices can connect over lan easily
   const channelHost = host === 'auto' ? getLocalIPAddress() : host;
   const storybookRequiresLocation = path.resolve(

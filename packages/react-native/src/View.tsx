@@ -484,7 +484,7 @@ export class View {
 
         return (
           <FullUI
-            storage={this._storage}
+            storage={storage}
             theme={appliedTheme as Theme}
             storyHash={storyHash}
             story={story}

@@ -31,7 +31,7 @@
     "format:check": "prettier --check --experimental-cli .",
     "format:fix": "prettier --write --experimental-cli .",
     "lint": "eslint --cache -c ./eslint.config.js",
-    "lint:fix": "lint --fix",
+    "lint:fix": "pnpm lint --fix",
     "publish:canary": "pnpm changeset publish --tag canary",
     "repo:fix": "sherif --fix -r unsync-similar-dependencies",
     "repo:lint": "sherif -r unsync-similar-dependencies",
