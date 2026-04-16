@@ -97,7 +97,8 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
 
   const defaultConfigPath = path.resolve(process.cwd(), './.rnstorybook');
   const configPath = options.configPath || defaultConfigPath;
-  const websockets = loadWebsocketEnvOverrides(options.websockets);
+  const websocketsOption = options.websockets;
+  const resolvedWs = loadWebsocketEnvOverrides(websocketsOption);
 
   const appEntryPoint = resolveEntryPoint();
   const storybookEntryPoint = resolveStorybookEntry(configPath);
@@ -107,33 +108,48 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
   // Shared setup: generate + createChannelServer (used by both Metro and Repack)
   const { useJs = false, docTools = true, experimental_mcp = false } = settings;
 
+  const bindHost =
+    websocketsOption === 'auto' && !process.env.STORYBOOK_WS_HOST ? undefined : resolvedWs.host;
+  const generateHost =
+    resolvedWs.host ??
+    (websocketsOption === 'auto' && !process.env.STORYBOOK_WS_HOST ? 'auto' : undefined);
+  const port = resolvedWs.port ?? 7007;
+  const secured = resolvedWs.secured;
+  const channelWebsocketsEnabled =
+    Boolean(websocketsOption) ||
+    Boolean(process.env.STORYBOOK_WS_HOST) ||
+    Boolean(resolvedWs.host);
+
   if (server || experimental_mcp) {
     createChannelServer({
-      port: websockets.port,
-      host: websockets.host,
+      port,
+      host: bindHost,
       configPath,
       experimental_mcp,
-      websockets: Boolean(websockets.host),
-      secured: websockets.secured,
-      ssl: websockets.secured
-        ? {
-            key: websockets.key,
-            cert: websockets.cert,
-            ca: websockets.ca,
-            passphrase: websockets.passphrase,
-          }
-        : undefined,
+      websockets: channelWebsocketsEnabled,
+      secured,
+      ssl:
+        websocketsOption &&
+        websocketsOption !== 'auto' &&
+        secured
+          ? {
+              key: websocketsOption.key,
+              cert: websocketsOption.cert,
+              ca: websocketsOption.ca,
+              passphrase: websocketsOption.passphrase,
+            }
+          : undefined,
     });
   }
-
-  const host = websockets.host;
 
   generate({
     configPath,
     useJs,
     docTools,
-    ...(host ? { host, port: websockets.port, secured: websockets.secured ?? false } : {}),
     liteMode,
+    ...(websocketsOption != null || process.env.STORYBOOK_WS_HOST
+      ? { host: generateHost, port, secured }
+      : {}),
   });
 
   if (isMetroConfig(config)) {
