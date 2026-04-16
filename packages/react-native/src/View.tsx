@@ -161,9 +161,7 @@ export class View {
 
         const exists = value && this._storyIdExists(value);
 
-        if (!exists) {
-          console.log('Storybook: could not find persisted story');
-        }
+        if (!exists) console.log('Storybook: could not find persisted story');
 
         return { storySpecifier: exists ? value : '*', viewMode: 'story' };
       } catch (e) {
