@@ -24,11 +24,11 @@
     "*.d.ts"
   ],
   "scripts": {
+    "check:types": "tsc --noEmit",
     "clean": "cross-env-shell rm -rf dist/",
-    "prepare": "pnpm clean && tsc && pnpm copyimages",
-    "dev": "tsc --watch",
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources",
-    "check:types": "tsc --noEmit"
+    "dev": "tsc --watch",
+    "prepare": "pnpm clean && tsc && pnpm copyimages"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
