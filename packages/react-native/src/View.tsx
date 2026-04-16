@@ -470,7 +470,7 @@ export class View {
               setStory={(newStoryId) =>
                 self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
               }
-              storage={this._storage}
+              storage={storage}
               theme={appliedTheme as Theme}
               storyBackgroundColor={storyBackgroundColor}
             >
