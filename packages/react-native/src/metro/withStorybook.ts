@@ -5,30 +5,7 @@ import { optionalEnvToBoolean } from 'storybook/internal/common';
 import { telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
 import type { WebsocketsOptions } from '../types';
-
-function envVariableToBoolean(value: string | undefined, defaultValue: any = false): boolean {
-  switch (value) {
-    case 'true':
-      return true;
-    case 'false':
-      return false;
-    default:
-      return !!defaultValue;
-  }
-}
-function envVariableToString(
-  value: string | undefined,
-  defaultValue: string | undefined
-): string | undefined {
-  return value ?? defaultValue;
-}
-function envVariableToNumber(value: string | undefined, defaultValue: number): number {
-  const parsed = parseInt(value ?? '', 10);
-  if (!isNaN(parsed)) {
-    return parsed;
-  }
-  return defaultValue;
-}
+import { envVariableToBoolean, envVariableToNumber, envVariableToString } from '../env-tools';
 
 function loadWebsocketEnvOverrides(
   websockets: WebsocketsOptions | 'auto' | undefined
