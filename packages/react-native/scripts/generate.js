@@ -35,7 +35,7 @@ function warnDeprecatedMainAddonsField(main, configPath) {
   const list = [...new Set(names)].join(', ');
   console.warn(
     `[Storybook React Native] The \`addons\` field in your main config (${configPath}) is deprecated and will be removed in a future major version.\n` +
-      `Move every entry to \`deviceAddons\` instead. That includes on-device UI packages (\`@storybook/addon-ondevice-*\`), other addons you bundle with the app (for example storybook-addon-deep-controls), and local paths such as ./my-addon. Entries in \`deviceAddons\` are written into storybook.requires without being evaluated as Storybook Core presets.\n` +
+      `Move every entry to \`deviceAddons\` instead. That includes on-device UI packages (\`@storybook/addon-ondevice-*\`), other addons you bundle with the app (for example storybook-addon-deep-controls), and local paths such as ./my-addon.\n` +
       (list ? `Still listed under \`addons\`: ${list}.\n` : '') +
       `Details: ${MAIN_ADDONS_DEPRECATION_URL}`
   );
