@@ -116,9 +116,7 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
   const port = resolvedWs.port ?? 7007;
   const secured = resolvedWs.secured;
   const channelWebsocketsEnabled =
-    Boolean(websocketsOption) ||
-    Boolean(process.env.STORYBOOK_WS_HOST) ||
-    Boolean(resolvedWs.host);
+    Boolean(websocketsOption) || Boolean(process.env.STORYBOOK_WS_HOST) || Boolean(resolvedWs.host);
 
   if (server || experimental_mcp) {
     createChannelServer({
@@ -129,9 +127,7 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
       websockets: channelWebsocketsEnabled,
       secured,
       ssl:
-        websocketsOption &&
-        websocketsOption !== 'auto' &&
-        secured
+        websocketsOption && websocketsOption !== 'auto' && secured
           ? {
               key: websocketsOption.key,
               cert: websocketsOption.cert,
