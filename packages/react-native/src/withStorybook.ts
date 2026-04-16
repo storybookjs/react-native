@@ -126,15 +126,15 @@ export function withStorybook<T>(config: T, options: WithStorybookOptions = {}):
     });
   }
 
-  const host: string = websockets.host as any as string;
+  const host = websockets.host;
 
   generate({
     configPath,
     useJs,
     docTools,
-    ...(!!host ? { host: host, port: websockets.port, secured: websockets.secured ?? false } : {}),
+    ...(host ? { host, port: websockets.port, secured: websockets.secured ?? false } : {}),
     liteMode,
-  } as any);
+  });
 
   if (isMetroConfig(config)) {
     return enhanceMetroConfig(config, { swap }) as unknown as T;
