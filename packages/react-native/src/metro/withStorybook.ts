@@ -166,6 +166,14 @@ export function withStorybook(
             };
           }
 
+          // workaround for node imports in instrumentor.cjs
+          // this is here because of a weird edge case where this would crash metro even with storybook disabled
+          if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
+            return {
+              type: 'empty',
+            };
+          }
+
           const resolved = resolveFunction(context, moduleName, platform);
 
           // Match the config folder's index file regardless of extension (ts, tsx, js, jsx)
