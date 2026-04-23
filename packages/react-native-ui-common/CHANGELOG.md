@@ -1,5 +1,16 @@
 # @storybook/react-native-ui-common
 
+## 10.3.2
+
+### Patch Changes
+
+- [#875](https://github.com/storybookjs/react-native/pull/875) [`609c1fe`](https://github.com/storybookjs/react-native/commit/609c1fe3996be28184054d9413f2404400d77e52) Thanks [@dannyhw](https://github.com/dannyhw)! - update storybook versions
+
+- [#880](https://github.com/storybookjs/react-native/pull/880) [`b3e2164`](https://github.com/storybookjs/react-native/commit/b3e2164f33988b7b1cb7046eeb46cce79f2273e1) Thanks [@dannyhw](https://github.com/dannyhw)! - fix dom exception error from es-toolkit
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.3.2
+
 ## 10.3.1
 
 ### Patch Changes
