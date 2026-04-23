@@ -142,12 +142,12 @@ describe('withStorybook node built-in resolution', () => {
     expect(result.resolver.resolveRequest({}, mod, 'web')).not.toEqual({ type: 'empty' });
   });
 
-  test.each(['os', 'tty'])('does not replace %s when storybook is disabled', (mod) => {
+  test.each(['os', 'tty'])('also replaces %s when storybook is disabled', (mod) => {
     const result = withStorybook(config, { configPath: '/tmp/.rnstorybook', enabled: false });
     const ctx = { resolveRequest };
 
-    expect(result.resolver.resolveRequest(ctx, mod, 'ios')).not.toEqual({ type: 'empty' });
-    expect(result.resolver.resolveRequest(ctx, mod, 'android')).not.toEqual({ type: 'empty' });
+    expect(result.resolver.resolveRequest(ctx, mod, 'ios')).toEqual({ type: 'empty' });
+    expect(result.resolver.resolveRequest(ctx, mod, 'android')).toEqual({ type: 'empty' });
     expect(result.resolver.resolveRequest(ctx, mod, 'web')).not.toEqual({ type: 'empty' });
   });
 });
