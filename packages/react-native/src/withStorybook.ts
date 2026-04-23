@@ -12,8 +12,8 @@ function isMetroConfig(config: unknown): config is MetroConfig {
   return config != null && typeof config === 'object' && 'transformer' in config;
 }
 
-export function withStorybook<T>(config: T, options: WithStorybookOptions = {}): T {
-  const enabled = envVariableToBoolean(process.env.STORYBOOK_ENABLED, false);
+export function withStorybook<T extends unknown>(config: T, options: WithStorybookOptions = {}): T {
+  const enabled = envVariableToBoolean(process.env.STORYBOOK_ENABLED, options.enabled ?? false);
   if (!enabled) {
     return config;
   }
