@@ -167,7 +167,8 @@ export function withStorybook(
           }
 
           // workaround for node imports in instrumentor.cjs
-          if (moduleName === 'tty' || moduleName === 'os') {
+          // this is here because of a weird edge case where this would crash metro even with storybook disabled
+          if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
             return {
               type: 'empty',
             };
@@ -278,8 +279,9 @@ export function withStorybook(
           };
         }
 
-        // workaround for node imports in instrumentor.cjs
-        if (moduleName === 'tty' || moduleName === 'os') {
+        // workaround for node imports in instrumentor.cjs (only on native platforms;
+        // web/server bundles like Expo API Routes need the real Node built-ins)
+        if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
           return {
             type: 'empty',
           };
