@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "packages-dev-watch",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev"],
+      "port": 0
+    },
+    {
+      "name": "expo-example-storybook",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "expo-example", "storybook"],
+      "port": 8081
+    },
+    {
+      "name": "expo-example-storybook-lite",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "expo-example", "storybook:lite"],
+      "port": 8081
+    },
+    {
+      "name": "docs",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "docs", "start"],
+      "port": 3000
+    }
+  ]
+}
