@@ -23,9 +23,9 @@
     "*.d.ts"
   ],
   "scripts": {
+    "check:types": "tsc --noEmit",
     "dev": "tsc --watch",
-    "prepare": "tsc",
-    "check:types": "tsc --noEmit"
+    "prepare": "tsc"
   },
   "dependencies": {
     "@storybook/react-native-theming": "^10.3.1",

@@ -16,10 +16,10 @@
     "url": "https://github.com/storybookjs/react-native.git",
     "directory": "packages/react-native-ui-common"
   },
-  "react-native": "src/index.tsx",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "license": "MIT",
+  "main": "dist/index.js",
+  "react-native": "src/index.tsx",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*",
     "README.md",
@@ -28,15 +28,9 @@
     "src/**/*"
   ],
   "scripts": {
+    "check:types": "tsc --noEmit",
     "dev": "tsup --watch",
-    "prepare": "tsup",
-    "check:types": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@types/react": "~19.2.14",
-    "storybook": "^10.3.1",
-    "tsup": "^8.5.0",
-    "typescript": "~5.9.3"
+    "prepare": "tsup"
   },
   "dependencies": {
     "@nozbe/microfuzz": "^1.0.0",
@@ -45,6 +39,12 @@
     "es-toolkit": "^1.45.1",
     "memoizerific": "^1.11.3",
     "ts-dedent": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.14",
+    "storybook": "^10.3.1",
+    "tsup": "^8.5.0",
+    "typescript": "~5.9.3"
   },
   "peerDependencies": {
     "react": "*",

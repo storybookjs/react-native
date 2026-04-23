@@ -17,10 +17,6 @@
     "directory": "packages/react-native"
   },
   "license": "MIT",
-  "main": "dist/index.js",
-  "bin": {
-    "sb-rn-get-stories": "./bin/get-stories.js"
-  },
   "exports": {
     ".": "./dist/index.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
@@ -31,6 +27,10 @@
     "./scripts/generate": "./scripts/generate.js",
     "./preset": "./preset.js",
     "./stub": "./dist/stub.js"
+  },
+  "main": "dist/index.js",
+  "bin": {
+    "sb-rn-get-stories": "./bin/get-stories.js"
   },
   "files": [
     "bin/**/*",
@@ -43,11 +43,11 @@
     "metro/**/*"
   ],
   "scripts": {
+    "check:types": "tsc --noEmit",
     "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
     "prepare": "rm -rf dist/ && tsup",
     "test": "jest",
-    "test:ci": "jest",
-    "check:types": "tsc --noEmit"
+    "test:ci": "jest"
   },
   "dependencies": {
     "@storybook/mcp": "^0.6.1",
