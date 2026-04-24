@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native",
-  "version": "10.3.1",
+  "version": "10.3.2",
   "description": "A better way to develop React Native Components for your app",
   "keywords": [
     "react",
@@ -53,10 +53,10 @@
   },
   "dependencies": {
     "@storybook/mcp": "^0.6.1",
-    "@storybook/react": "^10.3.1",
-    "@storybook/react-native-theming": "^10.3.1",
-    "@storybook/react-native-ui": "^10.3.1",
-    "@storybook/react-native-ui-common": "^10.3.1",
+    "@storybook/react": "^10.3.2",
+    "@storybook/react-native-theming": "^10.3.2",
+    "@storybook/react-native-ui": "^10.3.2",
+    "@storybook/react-native-ui-common": "^10.3.2",
     "@tmcp/adapter-valibot": "^0.1.4",
     "@tmcp/transport-http": "^0.8.5",
     "commander": "^14.0.2",
@@ -80,7 +80,7 @@
     "jotai": "^2.19.0",
     "react": "19.2.0",
     "react-native": "0.83.4",
-    "storybook": "^10.3.1",
+    "storybook": "^10.3.2",
     "test-renderer": "^0.15.0",
     "tsup": "^8.5.0",
     "typescript": "~5.9.3"

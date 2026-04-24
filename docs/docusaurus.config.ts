@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   future: {
-    experimental_faster: true,
+    faster: true,
     v4: true,
   },
 

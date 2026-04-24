@@ -1,5 +1,18 @@
 # @storybook/react-native
 
+## 10.3.2
+
+### Patch Changes
+
+- [#876](https://github.com/storybookjs/react-native/pull/876) [`95d4211`](https://github.com/storybookjs/react-native/commit/95d4211abc85244c64af63ec8e1381a036a5025c) Thanks [@Nezz](https://github.com/Nezz)! - fix os/tty removed in server of expo router
+
+- [#875](https://github.com/storybookjs/react-native/pull/875) [`609c1fe`](https://github.com/storybookjs/react-native/commit/609c1fe3996be28184054d9413f2404400d77e52) Thanks [@dannyhw](https://github.com/dannyhw)! - update storybook versions
+
+- Updated dependencies [[`609c1fe`](https://github.com/storybookjs/react-native/commit/609c1fe3996be28184054d9413f2404400d77e52), [`b3e2164`](https://github.com/storybookjs/react-native/commit/b3e2164f33988b7b1cb7046eeb46cce79f2273e1)]:
+  - @storybook/react-native-ui-common@10.3.2
+  - @storybook/react-native-ui@10.3.2
+  - @storybook/react-native-theming@10.3.2
+
 ## 10.3.1
 
 ### Patch Changes

@@ -19,7 +19,9 @@ import type {
 } from 'storybook/internal/types';
 import { dedent } from 'ts-dedent';
 import { logger } from 'storybook/internal/client-logger';
-import { countBy, isEqual, mergeWith } from 'es-toolkit';
+import { countBy } from 'es-toolkit/array';
+import { mergeWith } from 'es-toolkit/object';
+import { isEqual } from 'es-toolkit/predicate';
 
 type ToStoriesHashOptions = {
   provider: API_Provider<API>;

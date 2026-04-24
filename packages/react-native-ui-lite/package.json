@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui-lite",
-  "version": "10.3.1",
+  "version": "10.3.2",
   "description": "lightweight ui components for react native storybook",
   "keywords": [
     "react",
@@ -36,15 +36,15 @@
     "@gorhom/portal": "^1.0.14",
     "@legendapp/list": "3.0.0-beta.38",
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "^10.3.1",
-    "@storybook/react-native-theming": "^10.3.1",
-    "@storybook/react-native-ui-common": "^10.3.1",
+    "@storybook/react": "^10.3.2",
+    "@storybook/react-native-theming": "^10.3.2",
+    "@storybook/react-native-ui-common": "^10.3.2",
     "polished": "^4.3.1",
     "react-native-safe-area-context": "^5"
   },
   "devDependencies": {
     "@types/react": "~19.2.14",
-    "storybook": "^10.3.1",
+    "storybook": "^10.3.2",
     "ts-dedent": "^2.2.0",
     "tsup": "^8.5.0",
     "typescript": "~5.9.3"
