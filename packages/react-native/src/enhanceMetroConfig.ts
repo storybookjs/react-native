@@ -7,13 +7,19 @@ interface EnhanceMetroOptions {
     appEntryPoint: string;
     storybookEntryPoint: string;
   };
+  /**
+   * When true, removes the default Storybook UI (`@storybook/react-native-ui`)
+   * from the bundle so it can be used without its full dependency set.
+   * The `-lite` and `-common` variants remain available.
+   */
+  liteMode?: boolean;
 }
 
 export function enhanceMetroConfig(
   config: MetroConfig,
   options: EnhanceMetroOptions = {}
 ): MetroConfig {
-  const { swap } = options;
+  const { swap, liteMode = false } = options;
 
   return {
     ...config,
@@ -48,6 +54,17 @@ export function enhanceMetroConfig(
         const resolveResult = resolveFunction(theContext, moduleName, platform);
 
         if (resolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
+          return { type: 'empty' };
+        }
+
+        // liteMode: remove the default storybook UI from the bundle, but
+        // keep the -lite and -common variants which provide the minimal UI.
+        if (
+          liteMode &&
+          resolveResult?.filePath?.includes?.('@storybook/react-native-ui') &&
+          !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-lite') &&
+          !resolveResult?.filePath?.includes?.('@storybook/react-native-ui-common')
+        ) {
           return { type: 'empty' };
         }
 
