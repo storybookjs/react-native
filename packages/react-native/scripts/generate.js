@@ -5,7 +5,12 @@ const {
   resolveAddonFile,
   getAddonName,
 } = require('./common');
-const { normalizeStories, globToRegexp, loadMainConfig } = require('storybook/internal/common');
+const {
+  normalizeStories,
+  globToRegexp,
+  loadMainConfig,
+  getInterpretedFile,
+} = require('storybook/internal/common');
 const { interopRequireDefault } = require('./require-interop');
 const fs = require('fs');
 const { networkInterfaces } = require('node:os');
@@ -49,20 +54,11 @@ const loadMain = async ({ configPath, cwd }) => {
     console.error('Error loading main config, trying fallback');
   }
 
-  const mainPathTs = path.resolve(cwd, configPath, `main.ts`);
-  const mainPathJs = path.resolve(cwd, configPath, `main.js`);
-  const mainPathCjs = path.resolve(cwd, configPath, `main.cjs`);
-  if (fs.existsSync(mainPathTs)) {
-    return interopRequireDefault(mainPathTs);
-  } else if (fs.existsSync(mainPathJs)) {
-    return interopRequireDefault(mainPathJs);
-  } else if (fs.existsSync(mainPathCjs)) {
-    return interopRequireDefault(mainPathCjs);
-  } else {
-    throw new Error(
-      `Main config file not found at ${mainPathTs}, ${mainPathJs}, or ${mainPathCjs}`
-    );
+  const mainPath = getInterpretedFile(path.resolve(cwd, configPath, 'main'));
+  if (!mainPath) {
+    throw new Error(`Main config file not found in ${path.resolve(cwd, configPath)}`);
   }
+  return interopRequireDefault(mainPath);
 };
 
 /**
