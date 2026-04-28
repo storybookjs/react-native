@@ -127,7 +127,7 @@ export class View {
   constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel, options: any) {
     this._preview = preview;
     this._channel = channel;
-    this._options = options;
+    this._options = options ?? {};
   }
 
   _storyIdExists = (storyId: string) => {
@@ -247,7 +247,7 @@ export class View {
       setItem: async (key, value) => {},
     };
 
-    const onDeviceUI = this._options.disableUI ? false : (params.onDeviceUI ?? true);
+    const onDeviceUI = this._options?.disableUI ? false : (params.onDeviceUI ?? true);
     const shouldPersistSelection = this._options.disableUI
       ? false
       : (params.shouldPersistSelection ?? true);
