@@ -43,12 +43,7 @@ export function withStorybook<T extends unknown>(config: T, options: WithStorybo
     appEntryPoint && storybookEntryPoint ? { appEntryPoint, storybookEntryPoint } : undefined;
 
   // Shared setup: generate + createChannelServer (used by both Metro and Repack)
-  const {
-    useJs = false,
-    docTools = true,
-    experimental_mcp = false,
-    liteMode = false,
-  } = settings;
+  const { useJs = false, docTools = true, experimental_mcp = false, liteMode = false } = settings;
 
   const bindHost =
     websocketsOption === 'auto' && !process.env.STORYBOOK_WS_HOST ? undefined : resolvedWs.host;
