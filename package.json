@@ -29,6 +29,7 @@
     "dev": "pnpm -r --parallel run dev",
     "example": "pnpm --filter expo-example storybook",
     "example:lite": "pnpm --filter expo-example storybook:lite",
+    "example-new-wrapper": "pnpm --filter expo-new-wrapper-example storybook",
     "format:check": "prettier --check --experimental-cli .",
     "format:fix": "prettier --write --experimental-cli .",
     "lint": "eslint --cache -c ./eslint.config.js",

@@ -2,11 +2,12 @@
 /// <reference types="@storybook/react-native/metro-env" />
 import { start, updateView, View, type Features } from '@storybook/react-native';
 
+
+import "storybook-addon-deep-controls/register";
+import "./local-addon-example/register";
 import "@storybook/addon-ondevice-controls/register";
 import "@storybook/addon-ondevice-actions/register";
 import "@storybook/addon-ondevice-notes/register";
-import "storybook-addon-deep-controls/register";
-import "./local-addon-example/register";
 
 const normalizedStories = [
   {
@@ -64,7 +65,7 @@ const annotations = [
 
 globalThis.STORIES = normalizedStories;
 globalThis.STORYBOOK_WEBSOCKET = {
-  host: '192.168.1.171',
+  host: '192.168.86.21',
   port: 7007,
   secured: false,
 };
