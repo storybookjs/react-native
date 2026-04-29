@@ -494,9 +494,9 @@ const StorybookUIRoot = view.getStorybookUI({
 });
 ```
 
-### Testing Setup (WebSocket-controlled)
+### WebSocket-controlled Testing Setup
 
-If you're using the `withStorybook` wrapper with `websockets: 'auto'`, you only need to disable the on-device UI — the WebSocket connection is already configured:
+This option is for testing tools such as Chromatic, enabling the tool to drive the UI via WebSockets. If you're using the `withStorybook` wrapper with `websockets: 'auto'`, you only need to disable the on-device UI since the WebSocket connection is already configured:
 
 ```ts
 import { view } from './storybook.requires';
