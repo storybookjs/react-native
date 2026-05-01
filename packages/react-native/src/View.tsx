@@ -11,7 +11,7 @@ import dedent from 'dedent';
 import { patchChannelForRN } from './patchChannelForRN';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView, SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import {
   StatusBar,
@@ -499,23 +499,45 @@ export class View {
       } else {
         return (
           <SafeAreaProvider>
-            <SafeAreaView style={{ flex: 1 }}>
-              <StatusBar hidden />
-              <RNView
-                style={{ flex: 1 }}
-                accessibilityLabel={story?.id}
-                testID={story?.id}
-                accessible
-              >
-                <StoryView
-                  useWrapper={storyViewWrapper}
-                  storyBackgroundColor={storyBackgroundColor}
-                />
-              </RNView>
-            </SafeAreaView>
+            <StatusBar hidden />
+            <WithSafeArea
+              id={story?.id ?? ''}
+              safeAreaEnabled={!(story?.parameters?.noSafeArea ?? false)}
+            >
+              <StoryView
+                useWrapper={storyViewWrapper}
+                storyBackgroundColor={storyBackgroundColor}
+              />
+            </WithSafeArea>
           </SafeAreaProvider>
         );
       }
     };
   };
 }
+
+const WithSafeArea = ({
+  children,
+  id,
+  safeAreaEnabled,
+}: {
+  children: React.ReactNode;
+  id: string;
+  safeAreaEnabled: boolean;
+}) => {
+  const insets = useSafeAreaInsets();
+  return (
+    <RNView
+      style={{
+        flex: 1,
+        paddingTop: safeAreaEnabled ? insets.top : 0,
+        paddingBottom: safeAreaEnabled ? insets.bottom : 0,
+      }}
+      accessibilityLabel={id}
+      testID={id}
+      accessible
+    >
+      {children}
+    </RNView>
+  );
+};
