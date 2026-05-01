@@ -41,10 +41,7 @@ export function resolveEntryPoint(projectRoot: string = process.cwd()): string |
 
     // Expo Router detection: if main points to expo-router/entry, resolve from node_modules
     if (mainField === 'expo-router/entry') {
-      const expoRouterEntry = resolveFileWithExtensions(
-        path.resolve(projectRoot, 'node_modules', 'expo-router', 'entry'),
-        ENTRY_EXTENSIONS
-      );
+      const expoRouterEntry = require.resolve('expo-router/entry');
 
       if (expoRouterEntry) {
         return expoRouterEntry;
