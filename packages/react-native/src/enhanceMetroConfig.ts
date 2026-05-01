@@ -30,7 +30,7 @@ export function enhanceMetroConfig(
     resolver: {
       ...config.resolver,
       resolveRequest: (context: any, moduleName: string, platform: string | null) => {
-        if (moduleName === 'tty' || moduleName === 'os') {
+        if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
           return { type: 'empty' };
         }
 

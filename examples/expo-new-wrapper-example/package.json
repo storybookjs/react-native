@@ -10,7 +10,7 @@
     "storybook:ios": "STORYBOOK_ENABLED=true expo start --ios",
     "storybook": "STORYBOOK_ENABLED=true expo start",
     "storybook:android": "STORYBOOK_ENABLED=true expo start --android",
-    "check": "tsc --noEmit"
+    "check:types": "tsc --noEmit"
   },
   "dependencies": {
     "@expo/metro-runtime": "~55.0.7",

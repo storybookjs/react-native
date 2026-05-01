@@ -22,4 +22,7 @@ defaultConfig.resolver.nodeModulesPaths = [
 
 const { withStorybook } = require('@storybook/react-native/withStorybook');
 
-module.exports = withStorybook(defaultConfig, {});
+module.exports = withStorybook(defaultConfig, {
+  websockets: 'auto',
+  experimental_mcp: true,
+});
