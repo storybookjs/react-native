@@ -9,7 +9,7 @@
     "ios": "react-native run-ios --no-packager",
     "lint": "eslint .",
     "start": "react-native webpack-start",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "pods": "(cd ios && bundle install && (bundle exec pod install || bundle exec pod update))",
     "pods:update": "(cd ios && bundle install && bundle exec pod update)"
   },
