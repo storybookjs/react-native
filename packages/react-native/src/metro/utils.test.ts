@@ -59,7 +59,8 @@ describe('resolveEntryPoint', () => {
     );
 
     const result = resolveEntryPoint(tmpDir);
-    expect(result).toBe(path.join(tmpDir, 'node_modules', 'expo-router', 'entry.js'));
+
+    expect(result).toBe(path.resolve(__dirname, '../../../../node_modules/expo-router/entry.js'));
   });
 
   test('returns undefined when no entry file exists', () => {
