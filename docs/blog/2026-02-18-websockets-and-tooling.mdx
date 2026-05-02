@@ -7,7 +7,7 @@ tags: [guides]
 
 React Native Storybook v10.2 introduced automatic WebSocket configuration that removes the hassle of finding and hardcoding IP addresses. Combined with new external tools, this turns your Storybook setup into something you can control from your editor, an in-app dev panel, or your own custom scripts.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## The Problem with Manual WebSocket Setup
 
