@@ -35,18 +35,11 @@ const main: StorybookConfig = {
     },
   ],
 
-  // On-device addons — loaded only at runtime on the device
   deviceAddons: [
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
-  ],
-
-  // Regular addons — evaluated as presets by Storybook Core
-  addons: [
-    // Non-ondevice addons go here, e.g.:
-    // 'storybook-addon-deep-controls',
   ],
 };
 
