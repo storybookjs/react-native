@@ -284,7 +284,6 @@ You need to update all Storybook dependencies to version 10.x. This includes:
 }
 ```
 
-
 ## From version 8 to 9
 
 ### Update Storybook dependencies to 9.x
