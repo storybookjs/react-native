@@ -49,7 +49,10 @@ const { withStorybook } = require('@storybook/react-native/withStorybook');
 
 const config = getDefaultConfig(__dirname);
 
-module.exports = withStorybook(config);
+module.exports = withStorybook(config, {
+  configPath: './.rnstorybook',
+  websockets: { port: 7007, host: 'localhost' },
+});
 ```
 
 The new `withStorybook` reads configuration from environment variables, so you don't need to pass options. It also auto-detects whether you're using Metro or Re.Pack.
