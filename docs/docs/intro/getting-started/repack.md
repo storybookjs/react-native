@@ -98,6 +98,7 @@ The `declare const` tells TypeScript about the global that Rspack's `DefinePlugi
     "storybook:android": "STORYBOOK_ENABLED='true' react-native run-android"
   }
 }
+```
 
 ## Re.Pack notes
 
