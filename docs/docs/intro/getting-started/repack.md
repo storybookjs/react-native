@@ -88,7 +88,16 @@ export default function App() {
 
 The `declare const` tells TypeScript about the global that Rspack's `DefinePlugin` injects. When `STORYBOOK_ENABLED` is `false`, Rspack dead-code-eliminates the Storybook branch entirely.
 
-For the rest of the setup (`.rnstorybook` folder, dependencies, running scripts), follow the [Manual Setup](./manual-setup.md) guide — everything except the bundler config is identical.
+## Add Scripts
+
+```json
+{
+  "scripts": {
+    "storybook": "STORYBOOK_ENABLED='true' react-native start",
+    "storybook:ios": "STORYBOOK_ENABLED='true' react-native run-ios",
+    "storybook:android": "STORYBOOK_ENABLED='true' react-native run-android"
+  }
+}
 
 ## Re.Pack notes
 
