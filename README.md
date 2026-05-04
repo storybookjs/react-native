@@ -327,7 +327,7 @@ Whether to include doc tools in the storybook.requires file. Doc tools provide a
 
 Type: `boolean`, default: `false`
 
-Whether to use lite mode for Storybook. In lite mode, the default Storybook UI is mocked out so you don't need to install all its dependencies like react-native-reanimated. This is useful for reducing bundle size and dependencies. Use this when using @storybook/react-native-ui-lite instead of @storybook/react-native-ui. Can also be set via `STORYBOOK_DISABLE_UI=true`.
+Whether to use lite mode for Storybook. In lite mode, the default Storybook UI is mocked out so you don't need to install all its dependencies like react-native-reanimated. This is useful for reducing bundle size and dependencies. Use this when using @storybook/react-native-ui-lite instead of @storybook/react-native-ui. Note: `STORYBOOK_DISABLE_UI=true` is equivalent to `onDeviceUI: false`, not `liteMode: true`.
 
 #### experimental_mcp
 
