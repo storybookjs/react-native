@@ -163,13 +163,13 @@ For projects using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of M
 
 ## Expo router specific setup
 
-```bash
+```sh
 npm create storybook@latest
 ```
 
 choose recommended and then native
 
-```bash
+```sh
 npx expo@latest customize metro.config.js
 ```
 
@@ -226,7 +226,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [],
+  deviceAddons: [],
 };
 
 export default main;
@@ -307,7 +307,7 @@ Currently, the addons available are:
 - [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some Markdown to your stories to help document their usage
 - [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
 
-Install each one you want to use and add them to the `main.ts` addons list as follows:
+Install each one you want to use and add them to the `deviceAddons` list in `main.ts` as follows:
 
 ```ts
 // .rnstorybook/main.ts
@@ -315,7 +315,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   // ... rest of config
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
@@ -535,7 +535,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-ondevice-controls'],
+  deviceAddons: ['@storybook/addon-ondevice-controls'],
   features: {
     ondeviceBackgrounds: true,
   },

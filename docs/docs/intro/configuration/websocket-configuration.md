@@ -18,24 +18,36 @@ When WebSocket is enabled, Storybook creates a server that allows bidirectional 
 
 ## Basic Setup
 
-### Enable WebSocket in UI
+### Recommended: Bundler-agnostic wrapper
 
-```typescript
-import { view } from './storybook.requires';
+If you're using the bundler-agnostic `withStorybook` (from `@storybook/react-native/withStorybook`), WebSocket configuration is handled automatically. Pass `websockets: 'auto'` in your config or set environment variables:
 
-const StorybookUIRoot = view.getStorybookUI({
-  enableWebsockets: true,
-  host: 'localhost',
-  port: 7007,
-});
-```
-
-### Enable WebSocket in Metro
-
-```js
+```ts
 // metro.config.js
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/withStorybook');
 
+module.exports = withStorybook(config, {
+  websockets: 'auto',
+});
+```
+
+The wrapper auto-detects your LAN IP, starts the WebSocket server, and injects the connection settings into the generated `storybook.requires` file — no manual matching needed in `getStorybookUI`.
+
+You can also configure WebSockets via environment variables:
+
+```sh
+STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=192.168.1.100 STORYBOOK_WS_PORT=7007 expo start
+```
+
+See [Environment Variables](./environment-variables.md) for all supported variables.
+
+### Metro-specific setup
+
+If you're using the Metro-specific `withStorybook` (from `@storybook/react-native/metro/withStorybook`), you need to configure WebSockets in two places:
+
+**Metro config:**
+
+```ts
 module.exports = withStorybook(config, {
   websockets: {
     port: 7007,
@@ -44,38 +56,7 @@ module.exports = withStorybook(config, {
 });
 ```
 
-## Configuration Options
-
-### UI Configuration (`getStorybookUI`)
-
-```typescript
-const StorybookUIRoot = view.getStorybookUI({
-  // Enable WebSocket server
-  enableWebsockets: true,
-
-  // Server hostname
-  host: 'localhost', // or '192.168.1.100' for network access
-
-  // Server port
-  port: 7007,
-});
-```
-
-### Metro Configuration (`withStorybook`)
-
-```js
-module.exports = withStorybook(config, {
-  websockets: {
-    // Server port (should match UI config)
-    port: 7007,
-
-    // Server hostname
-    host: 'localhost',
-  },
-});
-```
-
-Or use auto host detection:
+Or use auto host detection (`'auto'` support is available from v10.2):
 
 ```js
 module.exports = withStorybook(config, {
@@ -83,11 +64,19 @@ module.exports = withStorybook(config, {
 });
 ```
 
-`'auto'` support is available from v10.2.
+**Storybook UI (`getStorybookUI`):**
+
+```ts
+const StorybookUIRoot = view.getStorybookUI({
+  enableWebsockets: true,
+  host: 'localhost',
+  port: 7007,
+});
+```
 
 To enable `https` and `wss`, pass TLS credentials:
 
-```js
+```ts
 const fs = require('fs');
 
 module.exports = withStorybook(config, {
@@ -103,9 +92,15 @@ module.exports = withStorybook(config, {
 
 ### iOS Physical Device
 
-For iOS devices, use your machine's IP address:
+For iOS devices, use your machine's IP address. With the bundler-agnostic wrapper, use `websockets: 'auto'` or set `STORYBOOK_WS_HOST`:
 
-```typescript
+```sh
+STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=192.168.1.100 expo start
+```
+
+With the Metro-specific wrapper, set the host in both config and UI:
+
+```ts
 const StorybookUIRoot = view.getStorybookUI({
   enableWebsockets: true,
   host: '192.168.1.100', // Your machine's IP
@@ -115,21 +110,17 @@ const StorybookUIRoot = view.getStorybookUI({
 
 ### Android Emulator
 
-For Android emulator, use the special IP address:
+For Android emulator, use the special IP address `10.0.2.2`. With the bundler-agnostic wrapper, set it via env var:
 
-```typescript
-const StorybookUIRoot = view.getStorybookUI({
-  enableWebsockets: true,
-  host: Platform.OS === 'android' ? '10.0.2.2' : 'localhost',
-  port: 7007,
-});
+```sh
+STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=10.0.2.2 expo start
 ```
 
 ## Remote Control API
 
 ### Connecting from External Client
 
-```javascript
+```ts
 // Node.js client example
 const WebSocket = require('ws');
 
@@ -155,8 +146,9 @@ You can find all the events in `storybook/internal/core-events`
 
 #### Select Story
 
-```javascript
-import {SET_CURRENT_STORY} from `storybook/internal/core-events`
+```ts
+import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
+
 // Select a story by ID
 ws.send(
   JSON.stringify({
@@ -168,24 +160,22 @@ ws.send(
 
 ## Simple Screenshot Example
 
-```javascript
-const ws = new WebSocket("ws://localhost:7007");
+```ts
+const ws = new WebSocket('ws://localhost:7007');
 
 async function takeScreenshot(name: string) {
-  execSync(
-    `xcrun simctl io booted screenshot --type png screenshots/${name}.png`,
-  );
+  execSync(`xcrun simctl io booted screenshot --type png screenshots/${name}.png`);
 }
 
 ws.onopen = () => {
-  console.log("connected");
+  console.log('connected');
   ws.send(
     JSON.stringify({
-      type: "setCurrentStory",
-      args: [{ viewMode: "story", storyId: "button--basic" }],
-    }),
+      type: 'setCurrentStory',
+      args: [{ viewMode: 'story', storyId: 'button--basic' }],
+    })
   );
-  takeScreenshot("button-basic");
+  takeScreenshot('button-basic');
 };
 ```
 

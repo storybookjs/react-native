@@ -37,7 +37,7 @@ Begin with the `TextInput` component since it's used by multiple parts of the fo
 
 #### Create the Component Shell
 
-```typescript
+```ts
 // components/TextInput/TextInput.tsx
 import React from 'react';
 import { TextInput as RNTextInput, View, Text, StyleSheet } from 'react-native';
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
 
 #### Create the Story
 
-```typescript
+```ts
 // components/TextInput/TextInput.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react-native';
 import { TextInput } from './TextInput';
@@ -147,7 +147,7 @@ Now open Storybook to see your component in action:
 
 If you have a Storybook route in your app for example you could use deep linking
 
-```bash
+```sh
 npx uri-scheme open "myapp://storybook?STORYBOOK_STORY_ID=components-textinput--default" --ios
 ```
 
@@ -165,7 +165,7 @@ Use Storybook to iterate on your component:
 
 Use the Controls addon to experiment with different props without editing code:
 
-```typescript
+```ts
 // Enhanced story with controls
 export const Playground: Story = {
   args: {
@@ -191,7 +191,7 @@ Update your component and see changes instantly thanks to hot reloading.
 
 Once `TextInput` is solid, move to the `Button` component:
 
-```typescript
+```ts
 // components/Button/Button.tsx
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, ActivityIndicator } from 'react-native';
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
 
 Create stories for all button states:
 
-```typescript
+```ts
 // components/Button/Button.stories.tsx
 export const Primary: Story = {
   args: { title: 'Sign In' },
@@ -266,7 +266,7 @@ export const Disabled: Story = {
 
 Test each state:
 
-```bash
+```sh
 # Jump directly to the loading state
 npx uri-scheme open "myapp://storybook?STORYBOOK_STORY_ID=components-button--loading" --ios
 ```
@@ -275,7 +275,7 @@ npx uri-scheme open "myapp://storybook?STORYBOOK_STORY_ID=components-button--loa
 
 Finally, build the complete login form using your tested components:
 
-```typescript
+```ts
 // components/LoginForm/LoginForm.tsx
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
@@ -336,7 +336,7 @@ const styles = StyleSheet.create({
 
 Create stories for the complete form:
 
-```typescript
+```ts
 // components/LoginForm/LoginForm.stories.tsx
 export const Default: Story = {};
 
@@ -380,7 +380,7 @@ Test your components on different screen sizes, and platforms (iOS/Android) runn
 
 Create stories for edge cases you discover:
 
-```typescript
+```ts
 export const LongLabel: Story = {
   args: {
     label: 'This is a very long label that might wrap to multiple lines and affect layout',

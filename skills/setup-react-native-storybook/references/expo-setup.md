@@ -4,7 +4,7 @@ For Expo projects that do **not** use Expo Router.
 
 ## Step 1: Run CLI Init
 
-```bash
+```sh
 npm create storybook -- --type react_native --yes
 ```
 
@@ -12,7 +12,7 @@ npm create storybook -- --type react_native --yes
 
 Storybook's default UI depends on `react-native-reanimated` and `react-native-worklets`. If they're not already installed:
 
-```bash
+```sh
 npx expo install --fix react-native-reanimated react-native-worklets
 ```
 
@@ -22,7 +22,7 @@ Expo handles the babel plugin automatically.
 
 Generate metro config if needed:
 
-```bash
+```sh
 npx expo@latest customize metro.config.js
 ```
 
@@ -79,6 +79,6 @@ export default function App() {
 
 ## Step 6: Run
 
-```bash
+```sh
 npm run storybook
 ```

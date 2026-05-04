@@ -4,59 +4,69 @@ sidebar_position: 1
 
 # Expo Router Setup
 
-This guide covers setting up Storybook with Expo Router projects. Expo Router uses file-based routing, so the setup is slightly different from standard Expo projects.
+This guide covers setting up Storybook as a route inside an Expo Router app. This approach renders Storybook within your app's navigation — useful if you want Storybook accessible alongside your app screens during development.
 
-## Installation
+:::tip Recommended: Entry-point swapping
+For most projects, the simpler approach is **entry-point swapping** — the bundler swaps your entire app entry point for Storybook when `STORYBOOK_ENABLED=true` is set. No route setup needed, no Storybook code in production. See the [Getting Started guide](./index.md).
 
-Use the Storybook CLI to add Storybook to your Expo Router project:
-
-```bash
-npm create storybook@latest
-```
-
-When prompted, choose **recommended** and then **native**.
+The Expo Router approach documented here is fully supported but not the preferred setup, because it embeds Storybook into your app's bundle and navigation.
+:::
 
 ## Metro Configuration
 
-Customize your Metro config to work with Storybook:
+Generate a metro config if you don't have one:
 
-```bash
+```sh
 npx expo@latest customize metro.config.js
 ```
 
-Then update your `metro.config.js` file to include the Storybook wrapper:
+Since this approach renders Storybook inside your app (not as a separate entry point), use the **Metro-specific** `withStorybook` wrapper with the `enabled` option:
 
 ```js
+// metro.config.js
 const { getDefaultConfig } = require('expo/metro-config');
+// Use the Metro-specific wrapper for route-based setup
 const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 /** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);
 
-module.exports = withStorybook(config);
+module.exports = withStorybook(config, {
+  enabled: true,
+});
 ```
+
+:::warning Don't use the bundler-agnostic wrapper here
+The bundler-agnostic `withStorybook` from `@storybook/react-native/withStorybook` performs entry-point swapping, which replaces your entire app with Storybook. For the Expo Router route approach, you need the Metro-specific wrapper from `@storybook/react-native/metro/withStorybook` so your app's routing stays intact.
+:::
 
 ## Creating the Storybook Route
 
-Create a new route file for Storybook in your `app` directory:
+Create a route file that sets up the Storybook UI directly. You'll import `view` from the generated `storybook.requires` file in your `.rnstorybook` folder:
 
 **app/storybook.tsx**
 
 ```tsx
-export { default } from '../.rnstorybook';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { view } from '../.rnstorybook/storybook.requires';
+
+const StorybookUIRoot = view.getStorybookUI({
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
+});
+
+export default StorybookUIRoot;
 ```
 
 ## Navigation Setup
 
-Add navigation to your Storybook route. You can do this through:
-
-1. **Tab navigation** - Add a tab for Storybook in your tab navigator
-2. **Stack navigation** - Add a button or link that navigates to `/storybook`
-3. **Dev menu** - Create a development-only way to access Storybook
+Add navigation to your Storybook route. You can do this through tab navigation, stack navigation, or a dev menu.
 
 ### Recommended Route Configuration
 
-For the best Storybook experience, disable the header for the Storybook route. You can do this in your root layout file by configuring the screen options for the storybook route:
+For the best Storybook experience, disable the header for the Storybook route in your root layout:
 
 **app/\_layout.tsx**
 
@@ -100,9 +110,9 @@ This ensures that the Storybook route is only available during development and w
 
 ## Running Your App
 
-Once set up, you can navigate to your Storybook route within your Expo Router app:
+Once set up, start your app and navigate to the `/storybook` route:
 
-```bash
+```sh
 npm run start
 npm run ios    # or npm run android
 ```

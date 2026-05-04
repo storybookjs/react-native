@@ -8,19 +8,17 @@ The `getStorybookUI` function configures how Storybook renders and behaves in yo
 
 ## Basic Usage
 
-```typescript
+```ts
 import { view } from './storybook.requires';
 
 const StorybookUIRoot = view.getStorybookUI({
   // Options go here
 });
-
-export default StorybookUIRoot;
 ```
 
 ## Complete Options Reference
 
-```typescript
+```ts
 const StorybookUIRoot = view.getStorybookUI({
   // UI Behavior
   onDeviceUI: true,
@@ -62,7 +60,7 @@ const StorybookUIRoot = view.getStorybookUI({
 - **Purpose**: Enable or disable the on-device UI (story navigator, addons panel)
 - **Use Case**: Set to `false` when using only WebSocket control or custom UI
 
-```typescript
+```ts
 // Story-only mode (no UI controls)
 const StorybookUIRoot = view.getStorybookUI({
   onDeviceUI: false,
@@ -75,7 +73,7 @@ const StorybookUIRoot = view.getStorybookUI({
 - **Purpose**: Remember the last viewed story between app launches
 - **Storage**: Requires a storage implementation
 
-```typescript
+```ts
 const StorybookUIRoot = view.getStorybookUI({
   shouldPersistSelection: true,
   storage: {
@@ -95,7 +93,7 @@ const StorybookUIRoot = view.getStorybookUI({
   - Object: `{ kind: string, name: string }`
   - String: `'kind--name'`
 
-```typescript
+```ts
 // Object format (recommended)
 const StorybookUIRoot = view.getStorybookUI({
   initialSelection: {
@@ -120,7 +118,7 @@ const StorybookUIRoot = view.getStorybookUI({
 
 #### Using Built-in Themes
 
-```typescript
+```ts
 import { theme, darkTheme } from '@storybook/react-native-theming';
 
 // Use built-in light theme
@@ -136,7 +134,7 @@ const StorybookUIRoot = view.getStorybookUI({
 
 #### Custom Theme Structure
 
-```typescript
+```ts
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -244,8 +242,6 @@ const StorybookUIRoot = view.getStorybookUI({
     },
   },
 });
-
-export default StorybookUIRoot;
 ```
 
 ### Storage Configuration
@@ -255,7 +251,7 @@ export default StorybookUIRoot;
 - **Default**: No storage (selection not persisted)
 - **Purpose**: Persist UI state between sessions
 - **Interface**:
-  ```typescript
+  ```ts
   interface Storage {
     getItem: (key: string) => Promise<string | null>;
     setItem: (key: string, value: string) => Promise<void>;
@@ -264,7 +260,7 @@ export default StorybookUIRoot;
 
 #### AsyncStorage (Most Common)
 
-```typescript
+```ts
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -274,15 +270,13 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
 });
-
-export default StorybookUIRoot;
 ```
 
 #### MMKV (High Performance)
 
 If you prefer using MMKV for better performance:
 
-```typescript
+```ts
 import { view } from './storybook.requires';
 import { MMKV } from 'react-native-mmkv';
 
@@ -294,13 +288,17 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: async (key, value) => storage.set(key, value),
   },
 });
-
-export default StorybookUIRoot;
 ```
 
 ### WebSocket Options
 
-Enable remote control of Storybook from external tools:
+Enable remote control of Storybook from external tools. See [WebSocket Configuration](./websocket-configuration.md) for the full guide.
+
+:::tip Auto-injected by the bundler wrapper
+When you configure `websockets: 'auto'` (or `{ host, port }`) in your `withStorybook` bundler wrapper, the WebSocket settings are automatically injected into the generated `storybook.requires` file. You do **not** need to set `enableWebsockets`, `host`, or `port` in `getStorybookUI` — they're already wired up. This applies to both the bundler-agnostic and Metro-specific wrappers.
+
+The options below are only needed if you're not using a `withStorybook` wrapper at all, or if you want to override the auto-injected values.
+:::
 
 #### `enableWebsockets` (boolean)
 
@@ -318,7 +316,8 @@ Enable remote control of Storybook from external tools:
 - **Default**: `7007`
 - **Purpose**: WebSocket server port
 
-```typescript
+```ts
+// Only needed without a withStorybook wrapper, or to override auto-injected values
 const StorybookUIRoot = view.getStorybookUI({
   enableWebsockets: true,
   host: '192.168.1.100', // Your machine's IP
@@ -340,7 +339,7 @@ The `CustomUIComponent` option allows you to completely replace Storybook's defa
 
 Your custom UI component must implement the `SBUI` interface:
 
-```typescript
+```ts
 type SBUI = (props: {
   story?: StoryContext<ReactRenderer, Args>;
   storyHash: API_IndexHash;
@@ -364,7 +363,7 @@ type SBUI = (props: {
 
 This example shows a basic custom UI with a modal-based story selector:
 
-```typescript
+```ts
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   Button,
@@ -439,8 +438,6 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
 });
-
-export default StorybookUIRoot;
 ```
 
 #### Alternative Approaches
@@ -449,7 +446,7 @@ export default StorybookUIRoot;
 
 You can also use the CustomUIComponent property to pass the lite ui for a ui that requires less dependencies and is more compatible with other platforms.
 
-```typescript
+```ts
 import { view } from './storybook.requires';
 import { LiteUI } from '@storybook/react-native-ui-lite';
 
@@ -457,23 +454,19 @@ const StorybookUIRoot = view.getStorybookUI({
   CustomUIComponent: LiteUI, // Lightweight alternative to full UI
   // ... other options
 });
-
-export default StorybookUIRoot;
 ```
 
 ##### Conditional Custom UI
 
 You can conditionally use custom UI based on environment or user preferences:
 
-```typescript
+```ts
 import { view } from './storybook.requires';
 
 const StorybookUIRoot = view.getStorybookUI({
   CustomUIComponent: Platform.OS === 'windows' ? MyCustomUI : undefined,
   // ... other options
 });
-
-export default StorybookUIRoot;
 ```
 
 #### Important Notes
@@ -489,7 +482,7 @@ export default StorybookUIRoot;
 
 ### Standard Setup
 
-```typescript
+```ts
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -499,26 +492,36 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
 });
-
-export default StorybookUIRoot;
 ```
 
-### Testing Setup
+### WebSocket-controlled Testing Setup
 
-```typescript
+This option is for testing tools such as Chromatic, enabling the tool to drive the UI via WebSockets. If you're using the `withStorybook` wrapper with `websockets: 'auto'`, you only need to disable the on-device UI since the WebSocket connection is already configured:
+
+```ts
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const StorybookUIRoot = view.getStorybookUI({
-  onDeviceUI: false, // No UI for automated tests
+  onDeviceUI: false, // No UI — controlled via WebSocket
+  storage: {
+    getItem: AsyncStorage.getItem,
+    setItem: AsyncStorage.setItem,
+  },
+});
+```
+
+Without a `withStorybook` wrapper, you'll need to set the WebSocket options manually:
+
+```ts
+const StorybookUIRoot = view.getStorybookUI({
+  onDeviceUI: false,
   enableWebsockets: true,
-  host: 'localhost', // use websocket server to control storybook
+  host: 'localhost',
   port: 7007,
   storage: {
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,
   },
 });
-
-export default StorybookUIRoot;
 ```

@@ -29,7 +29,7 @@ Four setup flows based on project type:
 
 ### 1. Run CLI Init
 
-```bash
+```sh
 npm create storybook -- --type react_native --yes
 # or: pnpm create storybook --type react_native --yes
 # or: bun create storybook --type react_native --yes
@@ -59,7 +59,7 @@ export default StorybookUIRoot;
 
 If the project doesn't have `@react-native-async-storage/async-storage`, install it:
 
-```bash
+```sh
 npm install @react-native-async-storage/async-storage
 ```
 
@@ -88,7 +88,7 @@ How Storybook is rendered differs per flow - see the relevant reference file.
 
 ### 6. Run
 
-```bash
+```sh
 npm run start
 npm run ios     # or npm run android
 ```

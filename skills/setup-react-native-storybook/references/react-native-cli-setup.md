@@ -4,7 +4,7 @@ For plain React Native projects using `@react-native-community/cli`.
 
 ## Step 1: Run CLI Init
 
-```bash
+```sh
 npm create storybook -- --type react_native --yes
 ```
 
@@ -12,7 +12,7 @@ npm create storybook -- --type react_native --yes
 
 Storybook's default UI depends on `react-native-reanimated` and `react-native-worklets`:
 
-```bash
+```sh
 npm install react-native-reanimated react-native-worklets
 ```
 
@@ -20,7 +20,7 @@ npm install react-native-reanimated react-native-worklets
 
 This allows using `process.env.STORYBOOK_ENABLED` in app code:
 
-```bash
+```sh
 npm install --save-dev babel-plugin-transform-inline-environment-variables
 ```
 
@@ -78,7 +78,7 @@ export default function App() {
 
 ## Step 6: Install Pods
 
-```bash
+```sh
 cd ios && pod install && cd ..
 ```
 
@@ -96,6 +96,6 @@ cd ios && pod install && cd ..
 
 ## Step 8: Run
 
-```bash
+```sh
 npm run storybook
 ```
