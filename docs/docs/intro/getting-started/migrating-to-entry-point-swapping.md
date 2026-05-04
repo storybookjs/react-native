@@ -105,8 +105,6 @@ const StorybookUIRoot = view.getStorybookUI({
 });
 
 AppRegistry.registerComponent('main', () => StorybookUIRoot);
-
-export default StorybookUIRoot;
 ```
 
 ## Step 4: Move on-device addons to `deviceAddons`
