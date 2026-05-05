@@ -115,7 +115,7 @@ STORYBOOK_ENABLED=true STORYBOOK_WS_HOST=192.168.1.100 STORYBOOK_WS_PORT=7007 ex
 }
 ```
 
-:::note Windows
+:::note[Windows]
 Use `cross-env` to set environment variables on Windows:
 
 ```json

@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # CLI Configuration
 
-:::info You probably don't need this
+:::info[You probably don't need this]
 If you're using the `withStorybook` bundler wrapper (the recommended setup), the `storybook.requires.ts` file is generated and updated automatically every time your bundler starts. You don't need to run any CLI commands for story generation.
 
 The `sb-rn-get-stories` command documented here is only needed if you've chosen **not** to use a `withStorybook` wrapper at all — for example, in a fully custom build pipeline.

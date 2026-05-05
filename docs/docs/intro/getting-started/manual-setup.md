@@ -6,7 +6,7 @@ sidebar_position: 2
 
 This guide covers integrating Storybook directly into your app — rendering it inside your `App.tsx`, behind a toggle, or on a dedicated screen. This gives you full control over when and how Storybook appears.
 
-:::tip Recommended: Automated setup with entry-point swapping
+:::tip[Recommended: Automated setup with entry-point swapping]
 For most projects, the [Getting Started guide](./index.md) is the easier path. The CLI sets everything up automatically, and Storybook runs as its own entry point — no changes to your app code needed.
 
 The approach described on this page is fully supported but requires more manual work to set up and maintain.
@@ -132,7 +132,7 @@ module.exports = withStorybook(mergeConfig(defaultConfig, config), {
 });
 ```
 
-:::warning Don't use the bundler-agnostic wrapper here
+:::warning[Don't use the bundler-agnostic wrapper here]
 The bundler-agnostic `withStorybook` from `@storybook/react-native/withStorybook` performs entry-point swapping, which replaces your entire app entry point with Storybook. For in-app integration, you need the Metro-specific wrapper from `@storybook/react-native/metro/withStorybook` so your app remains the entry point and you control where Storybook renders.
 :::
 
