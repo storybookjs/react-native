@@ -1,5 +1,20 @@
 # @storybook/react-native
 
+## 10.4.0
+
+### Minor Changes
+
+- [#871](https://github.com/storybookjs/react-native/pull/871) [`08f59a6`](https://github.com/storybookjs/react-native/commit/08f59a620b8a8d3d20fe8d57c2317bc529c0f22b) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Add `deviceAddons` property to `StorybookConfig` for separating on-device addons from core addons. On-device addons listed in `deviceAddons` are only consumed at runtime by the code generator, not evaluated as presets by Storybook Core. This prevents `extract` failures caused by loading React Native code in a Node.js context. Backwards compatible: addons in the `addons` field continue to work.
+
+- [#871](https://github.com/storybookjs/react-native/pull/871) [`08f59a6`](https://github.com/storybookjs/react-native/commit/08f59a620b8a8d3d20fe8d57c2317bc529c0f22b) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Add unified bundler-agnostic withStorybook wrapper at @storybook/react-native/withStorybook
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.4.0
+  - @storybook/react-native-ui-common@10.4.0
+  - @storybook/react-native-theming@10.4.0
+
 ## 10.3.2
 
 ### Patch Changes
