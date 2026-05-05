@@ -11,7 +11,10 @@ import dedent from 'dedent';
 import { patchChannelForRN } from './patchChannelForRN';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+
 import {
+  StatusBar,
   ActivityIndicator,
   Linking,
   Platform,
@@ -118,11 +121,13 @@ export class View {
   _webUrl: string;
   _storage: Storage;
   _channel: Channel;
+  _options: any;
   _idToPrepared: Record<string, PreparedStory<ReactRenderer>> = {};
 
-  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel) {
+  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel, options: any) {
     this._preview = preview;
     this._channel = channel;
+    this._options = options ?? {};
   }
 
   _storyIdExists = (storyId: string) => {
@@ -201,13 +206,9 @@ export class View {
 
   _getServerChannel = (params: Partial<Params> = {}) => {
     const host = this._getHost(params);
-
     const port = `:${this.__getPort(params)}`;
-
     const query = params.query || '';
-
     const websocketType = this._isSecureConnection(params) ? 'wss' : 'ws';
-
     const url = `${websocketType}://${host}${port}/${query}`;
 
     const channel = new Channel({
@@ -236,13 +237,20 @@ export class View {
 
   getStorybookUI = (params: Partial<Params> = {}) => {
     const {
-      shouldPersistSelection = true,
-      onDeviceUI = true,
       enableWebsockets = false,
-      storage,
       CustomUIComponent,
       hasStoryWrapper: storyViewWrapper = true,
     } = params;
+
+    const storage = params.storage ?? {
+      getItem: async (key) => null,
+      setItem: async (key, value) => {},
+    };
+
+    const onDeviceUI = this._options?.disableUI ? false : (params.onDeviceUI ?? true);
+    const shouldPersistSelection = this._options.disableUI
+      ? false
+      : (params.shouldPersistSelection ?? true);
 
     const getFullUI = (enabled: boolean): SBUI => {
       if (enabled) {
@@ -260,7 +268,10 @@ export class View {
 
     const FullUI: SBUI = getFullUI(onDeviceUI && !CustomUIComponent);
 
-    this._storage = storage;
+    this._storage = storage ?? {
+      getItem: async (key) => null,
+      setItem: async (key, value) => {},
+    };
 
     const initialStory = this._getInitialStory(params);
 
@@ -391,7 +402,7 @@ export class View {
         self._setStory = (newStory: StoryContext<ReactRenderer>) => {
           setContext(newStory);
 
-          if (shouldPersistSelection && !storage) {
+          if (shouldPersistSelection && !params.storage) {
             console.warn(dedent`Please set storage in getStorybookUI like this:
               const StorybookUIRoot = view.getStorybookUI({
                 storage: {
@@ -487,9 +498,46 @@ export class View {
         );
       } else {
         return (
-          <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
+          <SafeAreaProvider>
+            <StatusBar hidden />
+            <WithSafeArea
+              id={story?.id ?? ''}
+              safeAreaEnabled={!(story?.parameters?.noSafeArea ?? false)}
+            >
+              <StoryView
+                useWrapper={storyViewWrapper}
+                storyBackgroundColor={storyBackgroundColor}
+              />
+            </WithSafeArea>
+          </SafeAreaProvider>
         );
       }
     };
   };
 }
+
+const WithSafeArea = ({
+  children,
+  id,
+  safeAreaEnabled,
+}: {
+  children: React.ReactNode;
+  id: string;
+  safeAreaEnabled: boolean;
+}) => {
+  const insets = useSafeAreaInsets();
+  return (
+    <RNView
+      style={{
+        flex: 1,
+        paddingTop: safeAreaEnabled ? insets.top : 0,
+        paddingBottom: safeAreaEnabled ? insets.bottom : 0,
+      }}
+      accessibilityLabel={id}
+      testID={id}
+      accessible
+    >
+      {children}
+    </RNView>
+  );
+};

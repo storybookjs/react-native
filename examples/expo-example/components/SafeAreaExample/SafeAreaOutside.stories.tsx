@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 
 const OutsideSafeAreaMeta: Meta<typeof AButton> = {
   component: AButton,
-  parameters: { noSafeArea: true },
+  parameters: { noSafeArea: true, layout: 'fullscreen' },
   argTypes: {
     onPress: { action: 'pressed the button' },
   },

@@ -4,21 +4,21 @@ sidebar_position: 5
 
 # CLI Configuration
 
-React Native Storybook provides CLI commands to help with setup and story generation. This page covers all available commands and their options.
+:::info You probably don't need this
+If you're using the `withStorybook` bundler wrapper (the recommended setup), the `storybook.requires.ts` file is generated and updated automatically every time your bundler starts. You don't need to run any CLI commands for story generation.
 
-## Installation
+The `sb-rn-get-stories` command documented here is only needed if you've chosen **not** to use a `withStorybook` wrapper at all — for example, in a fully custom build pipeline.
+:::
 
-The CLI is included when you install `@storybook/react-native`
+React Native Storybook provides the `sb-rn-get-stories` CLI command for manual story generation. The CLI is included when you install `@storybook/react-native`.
 
-## Available Commands
-
-### `sb-rn-get-stories`
+## `sb-rn-get-stories`
 
 Generates the `storybook.requires.ts` file that imports all your stories and configurations.
 
 #### Basic Usage
 
-```bash
+```sh
 # Generate with default options
 npx sb-rn-get-stories
 
@@ -39,7 +39,7 @@ Specify the path to your Storybook configuration folder.
 - **Default**: `./.rnstorybook`
 - **Type**: string
 
-```bash
+```sh
 # Custom config location
 npx sb-rn-get-stories --config-path ./.storybook
 npx sb-rn-get-stories -c ./src/storybook
@@ -52,7 +52,7 @@ Generate JavaScript files instead of TypeScript.
 - **Default**: `false` (generates TypeScript)
 - **Type**: boolean
 
-```bash
+```sh
 # Generate storybook.requires.js instead of .ts
 npx sb-rn-get-stories --use-js
 npx sb-rn-get-stories -js
@@ -67,7 +67,7 @@ Exclude documentation tools from the generated file.
 - **Default**: includes doc tools
 - **Type**: boolean
 
-```bash
+```sh
 # Exclude doc tools to reduce bundle size
 npx sb-rn-get-stories --no-doc-tools
 npx sb-rn-get-stories -D
@@ -79,14 +79,14 @@ npx sb-rn-get-stories -D
 
 Display help information.
 
-```bash
+```sh
 npx sb-rn-get-stories --help
 npx sb-rn-get-stories -h
 ```
 
 #### Complete Example
 
-```bash
+```sh
 # Generate with all options
 npx sb-rn-get-stories \
   --config-path ./src/.storybook \
@@ -104,12 +104,12 @@ The CLI looks for these files in your config path:
 
 Defines stories location and addons:
 
-```typescript
+```ts
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
 };
 
 export default main;
@@ -119,7 +119,7 @@ export default main;
 
 Global decorators and parameters:
 
-```typescript
+```ts
 import { Preview } from '@storybook/react-native';
 
 const preview: Preview = {
@@ -147,25 +147,17 @@ Auto-generated file containing:
 
 **Important**: Never edit this file manually - it's regenerated automatically.
 
-## Integration with Build Tools
+## CLI usage requirements
 
-### Metro Integration
+### With a `withStorybook` wrapper (you don't need the CLI)
 
-The `withStorybook` Metro wrapper automatically runs story generation:
+Both the bundler-agnostic wrapper (`@storybook/react-native/withStorybook`) and the Metro-specific wrapper (`@storybook/react-native/metro/withStorybook`) automatically generate and update `storybook.requires.ts` on every bundler start. If you're using either wrapper, you can skip the CLI entirely.
 
-```js
-// metro.config.js
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+If you've customized `configPath` or `useJs` in your wrapper, the generated file will respect those options automatically.
 
-module.exports = withStorybook(config, {
-  configPath: './.rnstorybook', // Must match CLI --config-path
-  useJs: false, // Must match CLI --use-js
-});
-```
+### Without a wrapper (you need the CLI)
 
-### Manual Integration
-
-For custom build setups, run the CLI before building:
+If you're not using a `withStorybook` wrapper — for example, in a fully custom build pipeline — run `sb-rn-get-stories` manually whenever you add, remove, or rename story files:
 
 ```json
 {
@@ -186,7 +178,7 @@ Doc tools enable automatic extraction of component props to generate controls. T
 
 1. **Install the babel plugin**:
 
-```bash
+```sh
 npm install --save-dev babel-plugin-react-docgen-typescript
 ```
 
@@ -202,7 +194,7 @@ module.exports = {
 
 3. **Ensure doc tools are enabled** (default behavior):
 
-```bash
+```sh
 npx sb-rn-get-stories
 # Doc tools included by default
 ```
@@ -215,7 +207,7 @@ Disable doc tools to reduce bundle size when:
 - Not using automatic controls
 - Manually defining all argTypes
 
-```bash
+```sh
 npx sb-rn-get-stories --no-doc-tools
 ```
 
@@ -238,14 +230,14 @@ npx sb-rn-get-stories --no-doc-tools
 
 1. **Check config path**:
 
-```bash
+```sh
 # Verify path exists
 ls -la ./.rnstorybook
 ```
 
 2. **Check story patterns**:
 
-```typescript
+```ts
 // main.ts - ensure patterns match your file structure
 stories: [
   '../components/**/*.stories.tsx', // More specific
@@ -255,7 +247,7 @@ stories: [
 
 3. **Clear Metro cache**:
 
-```bash
+```sh
 npx react-native start --reset-cache
 ```
 
@@ -268,12 +260,4 @@ npx react-native start --reset-cache
 ## Best Practices
 
 1. **Add to git**: Commit the generated `storybook.requires.ts` file
-2. **Consistent configuration**: Ensure CLI options match Metro wrapper options:
-
-```js
-// metro.config.js
-module.exports = withStorybook(config, {
-  configPath: './.storybook', // Matches: sb-rn-get-stories -c ./.storybook
-  useJs: true, // Matches: sb-rn-get-stories --use-js
-});
-```
+2. **Consistent configuration**: If you use the CLI alongside a `withStorybook` wrapper, ensure the CLI options match the wrapper options (`configPath`, `useJs`, `docTools`)

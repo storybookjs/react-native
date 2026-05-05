@@ -18,13 +18,13 @@ The following guide will be written for expo because its simpler to get setup, b
 
 If you don't already have an app, lets create one to get started with.
 
-```bash
+```sh
 npx create-expo-app --template expo-template-storybook@next AwesomeStorybook
 ```
 
 This will create a new expo app with storybook already setup.
 
-```bash
+```sh
 cd AwesomeStorybook
 ```
 
@@ -34,7 +34,7 @@ Next we'll want to configure eas and setup eas updates.
 
 if you don't already have it then install the eas cli
 
-```bash
+```sh
 npm install -g eas-cli
 ```
 
@@ -42,7 +42,7 @@ Then lets have it setup the project for us.
 
 If you run each of these commands you'll end up with a project setup for eas builds and updates.
 
-```bash
+```sh
 eas login
 eas init
 eas build:configure -p all
@@ -126,7 +126,7 @@ function config({ config }: ConfigContext): Partial<ExpoConfig> {
 export default config;
 ```
 
-```bash
+```sh
 eas build -p ios --submit --profile storybook
 ```
 
@@ -189,7 +189,7 @@ function config({ config }: ConfigContext): Partial<ExpoConfig> {
 
 Now to create an internal build run
 
-```bash
+```sh
 eas build -p android --profile storybook-internal
 ```
 

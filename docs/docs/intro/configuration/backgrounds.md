@@ -8,7 +8,7 @@ The `ondeviceBackgrounds` [feature flag](./feature-flags.md) enables the new bac
 
 This flag was introduced in v10.3 as a non-breaking way to opt into the new syntax. **In the next major version this will be the default behavior and the flag will no longer be needed.**
 
-When this flag is enabled you do **not** need to install `@storybook/addon-ondevice-backgrounds` or add it to your `addons` array.
+When this flag is enabled you do **not** need to install `@storybook/addon-ondevice-backgrounds` or add it to your `deviceAddons` array.
 
 ## Setup
 
@@ -20,7 +20,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-ondevice-controls'],
+  deviceAddons: ['@storybook/addon-ondevice-controls'],
   features: {
     ondeviceBackgrounds: true,
   },
@@ -56,15 +56,18 @@ export default preview;
 - `parameters.backgrounds.options` — an object keyed by identifier. Each entry has a `name` (display label) and `value` (hex color).
 - `initialGlobals.backgrounds.value` — sets the initially selected background by its key.
 
-### 3. Regenerate the requires file
+After changing `main.ts`, restart your bundler so the flag takes effect. The `withStorybook` wrapper regenerates `storybook.requires.ts` automatically on start.
 
-After changing `main.ts`, regenerate `storybook.requires.ts` so the flag takes effect:
+<details>
+<summary>Not using a <code>withStorybook</code> wrapper?</summary>
+
+If you're not using the `withStorybook` wrapper, regenerate the requires file manually:
 
 ```sh
-npm run storybook-generate
+npx sb-rn-get-stories
 ```
 
-Or restart Metro, which regenerates the file automatically.
+</details>
 
 ## Overriding at the story level
 

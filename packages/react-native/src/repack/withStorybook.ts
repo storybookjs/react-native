@@ -2,6 +2,7 @@ import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import { createChannelServer } from '../metro/channelServer';
 import type { WebsocketsOptions } from '../types';
+import { loadWebsocketEnvOverrides } from '../env-tools';
 
 /**
  * Minimal compiler types for webpack/rspack compatibility.
@@ -169,20 +170,30 @@ export class StorybookPlugin {
       experimental_mcp: boolean;
     }
   ): void {
-    const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
-    const host = websockets === 'auto' ? 'auto' : websockets?.host;
-    const secured = Boolean(websockets && websockets !== 'auto' && websockets.secured);
+    const resolvedWs = loadWebsocketEnvOverrides(websockets);
+    const bindHost =
+      websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? undefined : resolvedWs.host;
+    const generateHost =
+      resolvedWs.host ??
+      (websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? 'auto' : undefined);
+    const port = resolvedWs.port ?? 7007;
+    const secured = resolvedWs.secured;
+    const channelWebsocketsEnabled =
+      Boolean(websockets) || Boolean(process.env.STORYBOOK_WS_HOST) || Boolean(resolvedWs.host);
 
     // Start the channel server once (on first apply, not per-compilation)
-    if ((websockets || experimental_mcp) && !this.serverStarted) {
+    if (
+      (experimental_mcp || websockets != null || process.env.STORYBOOK_WS_HOST) &&
+      !this.serverStarted
+    ) {
       this.serverStarted = true;
 
       createChannelServer({
         port,
-        host: host === 'auto' ? undefined : host,
+        host: bindHost,
         configPath,
         experimental_mcp,
-        websockets: Boolean(websockets),
+        websockets: channelWebsocketsEnabled,
         secured,
         ssl:
           websockets && websockets !== 'auto'
@@ -205,7 +216,9 @@ export class StorybookPlugin {
         configPath,
         useJs,
         docTools,
-        ...(websockets ? { host, port, secured } : {}),
+        ...(websockets != null || process.env.STORYBOOK_WS_HOST
+          ? { host: generateHost, port, secured }
+          : {}),
       });
 
       console.log('[StorybookPlugin] Generated storybook.requires');

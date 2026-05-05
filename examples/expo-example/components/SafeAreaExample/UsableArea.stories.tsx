@@ -18,6 +18,7 @@ function UsableAreaContent() {
 }
 const meta = {
   component: UsableAreaContent,
+  parameters: { layout: 'fullscreen' },
 } satisfies Meta<typeof UsableAreaContent>;
 
 export default meta;

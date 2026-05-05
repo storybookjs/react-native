@@ -2,53 +2,67 @@
 sidebar_position: 2
 ---
 
-# Manual Setup
+# Manual Setup (In-App Integration)
 
-This guide covers setting up Storybook manually without using the CLI. This is useful if you want full control over the setup process or if the CLI doesn't work for your specific project configuration.
+This guide covers integrating Storybook directly into your app — rendering it inside your `App.tsx`, behind a toggle, or on a dedicated screen. This gives you full control over when and how Storybook appears.
 
-You can swap out npm for any other package manager.
+:::tip Recommended: Automated setup with entry-point swapping
+For most projects, the [Getting Started guide](./index.md) is the easier path. The CLI sets everything up automatically, and Storybook runs as its own entry point — no changes to your app code needed.
+
+The approach described on this page is fully supported but requires more manual work to set up and maintain.
+:::
+
+## When to use this approach
+
+Use manual in-app integration when you want to:
+
+- Render Storybook behind a toggle or dev menu inside your app
+- Control exactly where and how Storybook appears in your navigation
+- Avoid entry-point swapping for architectural reasons
+
+If you're using **Expo Router** and want Storybook as a route (e.g. `/storybook`), see the dedicated [Expo Router Setup](./expo-router.md) guide instead.
 
 ## Dependencies
 
-Install the required dependencies:
+Install the required dependencies (swap `npm` for your preferred package manager):
 
-```bash
+```sh
 npm install storybook @storybook/react-native @react-native-async-storage/async-storage react-dom react-native-safe-area-context react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
 ```
 
 If you are working with dev clients or React Native CLI, make sure to install pods or run prebuild:
 
-```bash
+```sh
 cd ios; pod install; cd ..;
 ```
 
-## Files and Folders
+## Storybook Configuration
 
 Create a folder called `.rnstorybook` with the required configuration files:
 
-```bash
+```sh
 mkdir .rnstorybook
 touch .rnstorybook/main.ts .rnstorybook/preview.tsx .rnstorybook/index.tsx
 ```
 
-### Main Configuration
+### main.ts
 
-In `main.ts`, configure the location of your stories:
+Configure the location of your stories and on-device addons:
 
 ```ts
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
 };
 
 export default main;
 ```
 
-### Preview Configuration
+### preview.tsx
 
-In `preview.tsx`, set up any decorators or parameters:
+Set up any global decorators or parameters:
 
 ```tsx
 import type { Preview } from '@storybook/react-native';
@@ -61,9 +75,9 @@ const preview: Preview = {
 export default preview;
 ```
 
-### Storybook UI Export
+### index.tsx
 
-In `index.tsx`, export the Storybook UI:
+Export the Storybook UI. This is the component you'll render in your app:
 
 ```tsx
 import { view } from './storybook.requires';
@@ -81,52 +95,54 @@ export default StorybookUIRoot;
 
 ## Metro Configuration
 
-Update `metro.config.js` to use our `withStorybook` wrapper function.
+Since this approach renders Storybook inside your app (not as a separate entry point), use the **Metro-specific** `withStorybook` wrapper. This gives you direct control over the `enabled` option without triggering entry-point swapping.
 
 If you are using Expo and don't have a metro config, generate one first:
 
-```bash
+```sh
 npx expo customize metro.config.js
 ```
 
-Update `metro.config.js`:
+**Expo:**
 
 ```js
+// metro.config.js
 const { getDefaultConfig } = require('expo/metro-config');
 const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
-const defaultConfig = getDefaultConfig(__dirname);
+const config = getDefaultConfig(__dirname);
 
-module.exports = withStorybook(defaultConfig);
+module.exports = withStorybook(config, {
+  enabled: process.env.STORYBOOK_ENABLED === 'true',
+});
 ```
 
-For React Native CLI projects:
+**React Native CLI:**
 
 ```js
+// metro.config.js
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
-
-/**
- * Metro configuration
- * https://reactnative.dev/docs/metro
- *
- * @type {import('metro-config').MetroConfig}
- */
 const config = {};
-// set your own config here 👆
 
-const finalConfig = mergeConfig(defaultConfig, config);
-
-module.exports = withStorybook(finalConfig);
+module.exports = withStorybook(mergeConfig(defaultConfig, config), {
+  enabled: process.env.STORYBOOK_ENABLED === 'true',
+});
 ```
+
+:::warning Don't use the bundler-agnostic wrapper here
+The bundler-agnostic `withStorybook` from `@storybook/react-native/withStorybook` performs entry-point swapping, which replaces your entire app entry point with Storybook. For in-app integration, you need the Metro-specific wrapper from `@storybook/react-native/metro/withStorybook` so your app remains the entry point and you control where Storybook renders.
+:::
+
+See [Metro Configuration](../configuration/metro-configuration.md) for the full options reference.
 
 ## storybook.requires.ts
 
-You should also add a storybook-generate script to your project.
+The `withStorybook` wrapper automatically generates and updates the `storybook.requires.ts` file whenever your app starts. You don't need to do anything extra.
 
-In your `package.json` add the following script:
+If you choose **not** to use the `withStorybook` wrapper at all, you'll need to generate/update this file manually by adding and triggering a script to your `package.json`:
 
 ```json
 {
@@ -136,11 +152,13 @@ In your `package.json` add the following script:
 }
 ```
 
-You can use this for when you want to manually generate the `storybook.requires.ts` file. However the withStorybook function will automatically generate this file for you when you run your app.
+Run `npm run storybook-generate` whenever you add, remove, or rename story files.
 
-## Rendering Storybook
+## Rendering Storybook in Your App
 
-Update your app to render the Storybook component. One way to get Storybook to render is to export the Storybook UI from the app entry point (usually `App.tsx`):
+Import `StorybookUIRoot` from `.rnstorybook` and render it somewhere in your app.
+
+**Always show Storybook** (simplest for development):
 
 ```tsx
 // App.tsx
@@ -148,49 +166,38 @@ import StorybookUI from './.rnstorybook';
 export default StorybookUI;
 ```
 
-### Conditional Rendering
-
-You don't have to replace your app entry point to render Storybook. You can use any logic that you normally would in React to optionally render a component.
-
-Here's an example using environment variables:
+**Conditionally toggle** between your app and Storybook:
 
 ```tsx
-function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
+// App.tsx
+import StorybookUI from './.rnstorybook';
+import { MyApp } from './MyApp';
+
+const isStorybook = process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true';
+
+export default function App() {
+  return isStorybook ? <StorybookUI /> : <MyApp />;
 }
-
-let AppEntryPoint = App;
-
-if (Constants.expoConfig?.extra?.storybookEnabled === 'true') {
-  AppEntryPoint = require('./.rnstorybook').default;
-}
-
-export default AppEntryPoint;
 ```
 
 ## Running Storybook
 
-You can then run your app as normal:
+Start your app with the environment variable set:
 
-```bash
-npm run start
-npm run ios     # or npm run android
+```sh
+STORYBOOK_ENABLED=true expo start
 ```
 
-Storybook will render where you have placed it. If you have used an environment variable to enable Storybook, you will want to make sure that is set when running Metro.
-
-If you're using an environment variable, you can set up some commands like this to run Storybook conditionally:
+Or add convenience scripts to your `package.json`:
 
 ```json
 {
   "scripts": {
-    "storybook": "STORYBOOK_ENABLED='true' expo start",
-    "storybook:ios": "STORYBOOK_ENABLED='true' expo start --ios",
-    "storybook:android": "STORYBOOK_ENABLED='true' expo start --android"
+    "storybook": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start"
   }
 }
 ```
+
+## Migrating to entry-point swapping
+
+If you later decide to switch to the recommended entry-point swapping approach, see the [Migration Guide](./migrating-to-entry-point-swapping.md) for step-by-step instructions.

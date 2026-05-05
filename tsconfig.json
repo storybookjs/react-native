@@ -3,7 +3,6 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "declaration": true,
     "jsx": "react-jsx",
     "lib": ["es2022"],

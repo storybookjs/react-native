@@ -13,13 +13,14 @@ The addons made available by us are the following. There are more addons availab
 
 ## Configuration
 
-To use these addons, add them to your `.storybook/main.ts`:
+To use on-device addons, add them to the `deviceAddons` property in your `.rnstorybook/main.ts`:
 
 ```ts
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
-  addons: [
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  deviceAddons: [
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
@@ -29,6 +30,12 @@ const main: StorybookConfig = {
 
 export default main;
 ```
+
+:::info Why `deviceAddons`?
+On-device addons contain React Native code that can only run on the device. When listed in the regular `addons` array, Storybook Core tries to evaluate them as presets during server-side operations (like `extract` or `build`), which fails because Node.js can't load React Native modules. The `deviceAddons` property ensures they're only loaded at runtime on the device.
+
+For backwards compatibility, on-device addons in the `addons` array still work — they're detected by the "ondevice" substring in their name and handled correctly. However, `deviceAddons` is the recommended approach.
+:::
 
 ## Actions
 

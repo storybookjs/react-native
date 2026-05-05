@@ -3,7 +3,7 @@ export default {
   reactNativeOptions: {
     excludePaths: '**/exclude-components/**',
   },
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',

@@ -19,6 +19,7 @@
   "license": "MIT",
   "exports": {
     ".": "./dist/index.js",
+    "./withStorybook": "./dist/withStorybook.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
     "./repack/withStorybook": "./dist/repack/withStorybook.js",
     "./metro-env": "./metro-env.d.ts",
@@ -51,6 +52,7 @@
   },
   "dependencies": {
     "@storybook/mcp": "^0.6.1",
+    "react-native-safe-area-context": "^5",
     "@storybook/react": "^10.3.2",
     "@storybook/react-native-theming": "^10.3.2",
     "@storybook/react-native-ui": "^10.3.2",
@@ -89,7 +91,6 @@
     "react-native": ">=0.72.0",
     "react-native-gesture-handler": ">=2",
     "react-native-reanimated": ">=2",
-    "react-native-safe-area-context": "*",
     "storybook": ">=10 || ^10"
   },
   "peerDependenciesMeta": {

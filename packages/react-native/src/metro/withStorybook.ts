@@ -5,6 +5,7 @@ import { optionalEnvToBoolean } from 'storybook/internal/common';
 import { telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
 import type { WebsocketsOptions } from '../types';
+import { loadWebsocketEnvOverrides } from '../env-tools';
 
 /**
  * Options for configuring Storybook with React Native.
@@ -195,19 +196,26 @@ export function withStorybook(
     };
   }
 
-  if (websockets || experimental_mcp) {
-    const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
-    const host = websockets === 'auto' ? 'auto' : websockets?.host;
-    const secured = Boolean(websockets && websockets !== 'auto' && websockets.secured);
+  if (experimental_mcp || websockets != null || process.env.STORYBOOK_WS_HOST) {
+    const resolvedWs = loadWebsocketEnvOverrides(websockets);
+    const bindHost =
+      websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? undefined : resolvedWs.host;
+    const generateHost =
+      resolvedWs.host ??
+      (websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? 'auto' : undefined);
+    const port = resolvedWs.port ?? 7007;
+    const secured = resolvedWs.secured;
+    const channelWebsocketsEnabled =
+      Boolean(websockets) || Boolean(process.env.STORYBOOK_WS_HOST) || Boolean(resolvedWs.host);
 
     // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
     // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
     createChannelServer({
       port,
-      host: host === 'auto' ? undefined : host,
+      host: bindHost,
       configPath,
       experimental_mcp,
-      websockets: Boolean(websockets),
+      websockets: channelWebsocketsEnabled,
       secured,
       ssl:
         websockets && websockets !== 'auto'
@@ -220,12 +228,12 @@ export function withStorybook(
           : undefined,
     });
 
-    if (websockets) {
+    if (websockets != null || process.env.STORYBOOK_WS_HOST) {
       generate({
         configPath,
         useJs,
         docTools,
-        host,
+        host: generateHost,
         port,
         secured,
       });

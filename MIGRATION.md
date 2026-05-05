@@ -1,12 +1,15 @@
 # Migration
 
 - [Migration](#migration)
-  - [From version 9 to 10](#from-version-9-to-10)
-    - [Update Storybook dependencies to 10.x](#update-storybook-dependencies-to-10x)
+  - [From version 10.3 to 10.4](#from-version-103-to-104)
     - [Update your metro config](#update-your-metro-config)
     - [Simplify your App.tsx (or Expo Router routes)](#simplify-your-apptsx-or-expo-router-routes)
     - [Regenerate your requires file](#regenerate-your-requires-file)
+    - [Move on-device addons to `deviceAddons`](#move-on-device-addons-to-deviceaddons)
     - [Summary of breaking changes](#summary-of-breaking-changes)
+    - [Migrate to entry-point swapping](#migrate-to-entry-point-swapping)
+  - [From version 9 to 10](#from-version-9-to-10)
+    - [Update Storybook dependencies to 10.x](#update-storybook-dependencies-to-10x)
   - [From version 8 to 9](#from-version-8-to-9)
     - [Update Storybook dependencies to 9.x](#update-storybook-dependencies-to-9x)
     - [Update your `.storybook` folder](#update-your-storybook-folder)
@@ -49,36 +52,7 @@
     - [Test ids for tabs](#test-ids-for-tabs)
     - [The server](#the-server)
 
-## From version 9 to 10
-
-Version 10 brings Storybook React Native in sync with Storybook core v10, introducing improved Metro configuration and a simplified API.
-
-### Update Storybook dependencies to 10.x
-
-You need to update all Storybook dependencies to version 10.x. This includes:
-
-- `storybook` package (core)
-- `@storybook/react` package
-- `@storybook/react-native` package
-- All `@storybook/addon-ondevice-*` packages
-
-> Note: You can check the correct version by looking at the `peerDependencies`. Please refer to the [core Storybook migration guide](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-9x-to-1000) for more details on the breaking changes in Storybook core v10.
-
-**Example package.json after upgrade:**
-
-```json
-{
-  "devDependencies": {
-    "@storybook/react-native": "^10.0.0",
-    "@storybook/react": "^10.0.0",
-    "@storybook/addon-ondevice-controls": "^10.0.0",
-    "@storybook/addon-ondevice-actions": "^10.0.0",
-    "@storybook/addon-ondevice-backgrounds": "^10.0.0",
-    "@storybook/addon-ondevice-notes": "^10.0.0",
-    "storybook": "^10.0.0"
-  }
-}
-```
+## From version 10.3 to 10.4
 
 ### Update your metro config
 
@@ -206,15 +180,39 @@ The metro config (`enabled` flag) automatically handles bundle inclusion:
 
 After updating dependencies and configuration, regenerate your `.rnstorybook/storybook.requires.ts` file:
 
-```bash
+```sh
 yarn storybook-generate
 ```
 
 Or if you have the generate call in your metro config (recommended), just restart metro:
 
-```bash
+```sh
 yarn start --reset-cache
 ```
+
+### Move on-device addons to `deviceAddons`
+
+On-device addons should now be listed in the `deviceAddons` property instead of `addons` in your `.rnstorybook/main.ts`. This prevents errors during server-side operations like `extract`, where Storybook Core would try to evaluate React Native code as Node.js presets.
+
+**Before:**
+
+```ts
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  addons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+};
+```
+
+**After:**
+
+```ts
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+};
+```
+
+For backwards compatibility, on-device addons in the `addons` array still work — they're detected by the "ondevice" substring in their name. If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` automigration handles this step automatically.
 
 ### Summary of breaking changes
 
@@ -232,7 +230,59 @@ yarn start --reset-cache
 
 4. **Simplified app entry:**
    - Custom switcher components no longer needed for bundle optimization
-   - Metro config handles conditional inclusion automatically
+   - In-app integration (importing Storybook in App.tsx) continues to work and is fully supported
+
+5. **`deviceAddons` property:**
+   - On-device addons should use the new `deviceAddons` property in `main.ts`
+   - Backwards compatible — `addons` still works for on-device addons
+
+Version 10.4 introduces entry-point swapping through a bundler-agnostic `withStorybook` wrapper. This lets you switch between your app and Storybook at the bundler entry level, without importing Storybook inside `App.tsx`.
+
+### Migrate to entry-point swapping
+
+Instead of importing Storybook in your `App.tsx`, set `STORYBOOK_ENABLED=true` and use the new wrapper:
+
+```js
+// metro.config.js — new recommended import
+const { withStorybook } = require('@storybook/react-native/withStorybook');
+
+module.exports = withStorybook(config);
+```
+
+Then run with `STORYBOOK_ENABLED=true expo start`. No changes to `App.tsx` are required.
+
+This is the recommended approach for new projects. Existing projects can migrate at their own pace — see [Migrating to Entry-Point Swapping](https://storybookjs.github.io/react-native/docs/intro/getting-started/migrating-to-entry-point-swapping) for a step-by-step guide.
+
+Version 10 brings Storybook React Native in sync with Storybook core v10, introducing improved Metro configuration and a simplified API.
+
+## From version 9 to 10
+
+### Update Storybook dependencies to 10.x
+
+You need to update all Storybook dependencies to version 10.x. This includes:
+
+- `storybook` package (core)
+- `@storybook/react` package
+- `@storybook/react-native` package
+- All `@storybook/addon-ondevice-*` packages
+
+> Note: You can check the correct version by looking at the `peerDependencies`. Please refer to the [core Storybook migration guide](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-9x-to-1000) for more details on the breaking changes in Storybook core v10.
+
+**Example package.json after upgrade:**
+
+```json
+{
+  "devDependencies": {
+    "@storybook/react-native": "^10.0.0",
+    "@storybook/react": "^10.0.0",
+    "@storybook/addon-ondevice-controls": "^10.0.0",
+    "@storybook/addon-ondevice-actions": "^10.0.0",
+    "@storybook/addon-ondevice-backgrounds": "^10.0.0",
+    "@storybook/addon-ondevice-notes": "^10.0.0",
+    "storybook": "^10.0.0"
+  }
+}
+```
 
 ## From version 8 to 9
 
@@ -458,7 +508,7 @@ We've removed the types from `@storybook/react-native` and now you should import
 
 Heres an example story in version 7:
 
-```typescript
+```ts
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 
@@ -482,13 +532,13 @@ export const Basic: Story = {
 
 You can now also update main.js to main.ts and use the StorybookConfig type. This is one of the only types we export from @storybook/react-native in this version.
 
-```typescript
+```ts
 // .storybook/main.ts
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
@@ -501,7 +551,7 @@ export default main;
 
 To update preview.js to preview.tsx you can use the Preview type from @storybook/react
 
-```typescript
+```ts
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
@@ -540,7 +590,7 @@ The setup is the same as `@storybook/addon-react-native-web` but with the reactN
 
 #### First install necessary packages
 
-```bash
+```sh
 yarn add -D @storybook/addon-react-native-web @storybook/addon-essentials storybook @storybook/react-webpack5 @storybook/react babel-plugin-react-native-web react-native-web @storybook/addon-react-native-server
 ```
 
@@ -557,7 +607,7 @@ With expo you should also add `@expo/metro-runtime`.
 
 Add a `main.ts`
 
-```typescript
+```ts
 // .storybook-web/main.ts
 import type { StorybookConfig } from '@storybook/react-webpack5';
 

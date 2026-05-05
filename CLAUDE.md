@@ -2,7 +2,7 @@ This file provides guidance to agents when working with code in this repository.
 
 ## Development Commands
 
-```bash
+```sh
 # Initial Setup
 pnpm install
 pnpm build

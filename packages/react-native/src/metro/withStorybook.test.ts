@@ -29,6 +29,9 @@ describe('withStorybook experimental_mcp', () => {
 
   afterEach(() => {
     delete process.env.STORYBOOK_DISABLE_TELEMETRY;
+    delete process.env.STORYBOOK_WS_HOST;
+    delete process.env.STORYBOOK_WS_PORT;
+    delete process.env.STORYBOOK_WS_SECURED;
   });
 
   test('starts MCP server when enabled without websockets', () => {
@@ -114,6 +117,32 @@ describe('withStorybook experimental_mcp', () => {
         experimental_mcp: true,
       })
     ).not.toThrow();
+  });
+
+  test('applies STORYBOOK_WS_* env when websockets option is omitted', () => {
+    process.env.STORYBOOK_WS_HOST = '192.168.1.10';
+    process.env.STORYBOOK_WS_PORT = '8123';
+
+    withStorybook(config, {
+      configPath: '/tmp/.rnstorybook',
+      enabled: true,
+    });
+
+    expect(createChannelServer).toHaveBeenCalledWith(
+      expect.objectContaining({
+        host: '192.168.1.10',
+        port: 8123,
+        websockets: true,
+      })
+    );
+
+    expect(generate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        configPath: '/tmp/.rnstorybook',
+        host: '192.168.1.10',
+        port: 8123,
+      })
+    );
   });
 });
 
