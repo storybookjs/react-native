@@ -49,37 +49,55 @@ export interface MobileMenuDrawerRef {
 
 export const useAnimatedModalHeight = () => {
   const { height } = useWindowDimensions();
-  const animatedHeight = useAnimatedValue(0.65 * height);
+  const modalHeight = 0.65 * height;
+  const maxModalHeight = 0.85 * height;
+  const [sheetHeight, setSheetHeight] = useState(modalHeight);
+  const [keyboardInset, setKeyboardInset] = useState(0);
+  const keyboardOffset = useAnimatedValue(0);
 
   useEffect(() => {
-    const modalHeight = 0.65 * height;
-    const maxModalHeight = 0.85 * height;
+    setSheetHeight(modalHeight);
+    setKeyboardInset(0);
+    keyboardOffset.setValue(0);
+  }, [keyboardOffset, modalHeight]);
 
-    const expand = (duration: number = 250) =>
-      Animated.timing(animatedHeight, {
-        toValue: maxModalHeight,
+  useEffect(() => {
+    const expand = (duration: number = 250, keyboardHeight: number = 0) => {
+      const maxKeyboardOffset = maxModalHeight - modalHeight;
+      const keyboardAvoidanceOffset = Math.min(keyboardHeight, maxKeyboardOffset);
+
+      setKeyboardInset(Math.max(keyboardHeight - keyboardAvoidanceOffset, 0));
+
+      Animated.timing(keyboardOffset, {
+        toValue: -keyboardAvoidanceOffset,
         duration,
         easing: Easing.out(Easing.quad),
-        useNativeDriver: false,
+        useNativeDriver: true,
       }).start();
+    };
 
-    const collapse = (duration: number = 250) =>
-      Animated.timing(animatedHeight, {
-        toValue: modalHeight,
+    const collapse = (duration: number = 250) => {
+      Animated.timing(keyboardOffset, {
+        toValue: 0,
         duration,
         easing: Easing.out(Easing.quad),
-        useNativeDriver: false,
-      }).start();
+        useNativeDriver: true,
+      }).start(({ finished }) => {
+        if (finished) {
+          setKeyboardInset(0);
+        }
+      });
+    };
 
     const handleKeyboardWillShow: KeyboardEventListener = (e) => {
       if (Platform.OS === 'ios') {
-        expand(e.duration);
+        expand(e.duration, e.endCoordinates.height);
       }
     };
 
     const handleKeyboardDidShow: KeyboardEventListener = (e) => {
       if (Platform.OS === 'android') {
-        expand();
+        expand(undefined, e.endCoordinates.height);
       }
     };
 
@@ -105,9 +123,14 @@ export const useAnimatedModalHeight = () => {
     return () => {
       subscriptions.forEach((subscription) => subscription.remove());
     };
-  }, [animatedHeight, height]);
+  }, [keyboardOffset, maxModalHeight, modalHeight]);
 
-  return animatedHeight;
+  return {
+    height: sheetHeight,
+    keyboardOffset,
+    keyboardInset,
+    sheetExtensionHeight: maxModalHeight - modalHeight,
+  };
 };
 
 export const MobileMenuDrawer = memo(
@@ -117,7 +140,12 @@ export const MobileMenuDrawer = memo(
       const { scrollCallback } = useSelectedNode();
       const theme = useTheme();
       const { height } = useWindowDimensions();
-      const animatedHeight = useAnimatedModalHeight();
+      const {
+        height: sheetHeight,
+        keyboardOffset,
+        keyboardInset,
+        sheetExtensionHeight,
+      } = useAnimatedModalHeight();
 
       // Slide animation for drawer entrance/exit
       const slideAnim = useAnimatedValue(height);
@@ -148,17 +176,25 @@ export const MobileMenuDrawer = memo(
         Keyboard.dismiss();
         onVisibilityChange?.(false);
 
-        Animated.timing(slideAnim, {
-          toValue: height,
-          duration: 300,
-          easing: Easing.in(Easing.quad),
-          useNativeDriver: true,
-        }).start(({ finished }) => {
+        Animated.parallel([
+          Animated.timing(slideAnim, {
+            toValue: height,
+            duration: 300,
+            easing: Easing.in(Easing.quad),
+            useNativeDriver: true,
+          }),
+          Animated.timing(keyboardOffset, {
+            toValue: 0,
+            duration: 300,
+            easing: Easing.in(Easing.quad),
+            useNativeDriver: true,
+          }),
+        ]).start(({ finished }) => {
           if (finished) {
             setIsVisible(false);
           }
         });
-      }, [height, onVisibilityChange, slideAnim]);
+      }, [height, keyboardOffset, onVisibilityChange, slideAnim]);
 
       // Create the pan responder for handling drag gestures
       const panResponder = useMemo(
@@ -190,6 +226,11 @@ export const MobileMenuDrawer = memo(
             },
           }),
         [closeDrawer, dragY]
+      );
+
+      const sheetTranslateY = useMemo(
+        () => Animated.add(Animated.add(slideAnim, keyboardOffset), dragY),
+        [dragY, keyboardOffset, slideAnim]
       );
 
       useImperativeHandle(ref, () => ({
@@ -243,14 +284,28 @@ export const MobileMenuDrawer = memo(
         () => ({
           flex: 1,
           backgroundColor: theme.background.content,
+          paddingBottom: keyboardInset,
         }),
-        [theme.background.content]
+        [keyboardInset, theme.background.content]
+      );
+
+      const sheetBackgroundExtensionStyle = useMemo(
+        () =>
+          ({
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: -sheetExtensionHeight,
+            height: sheetExtensionHeight,
+            backgroundColor: theme.background.content,
+          }) satisfies ViewStyle,
+        [sheetExtensionHeight, theme.background.content]
       );
 
       return (
         <Portal hostName="storybook-lite-ui-root">
           <Animated.View
-            style={[portalContainerStyle, { transform: [{ translateY: slideAnim }] }]}
+            style={portalContainerStyle}
             pointerEvents={isVisible ? 'auto' : 'none'}
             accessibilityElementsHidden={!isVisible}
             importantForAccessibility={isVisible ? 'auto' : 'no-hide-descendants'}
@@ -267,10 +322,12 @@ export const MobileMenuDrawer = memo(
 
             <Animated.View
               style={{
-                height: animatedHeight,
+                height: sheetHeight,
+                transform: [{ translateY: sheetTranslateY }],
               }}
             >
-              <Animated.View style={[drawerContainerStyle, { transform: [{ translateY: dragY }] }]}>
+              <View pointerEvents="none" style={sheetBackgroundExtensionStyle} />
+              <Animated.View style={drawerContainerStyle}>
                 {/* Drag handle */}
                 <View {...panResponder.panHandlers} style={dragHandleWrapperStyle}>
                   <View style={handleStyle} />
