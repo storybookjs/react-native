@@ -140,7 +140,7 @@ const main: StorybookConfig = {
 export default main;
 ```
 
-:::tip Automigration available
+:::tip[Automigration available]
 If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` automigration handles this step automatically. Any addon with "ondevice" in its name is moved to `deviceAddons`.
 
 ```sh
@@ -177,7 +177,7 @@ For React Native CLI projects:
 }
 ```
 
-:::note Windows users
+:::note[Windows users]
 On Windows, use `cross-env` to set environment variables:
 
 ```json
@@ -192,7 +192,7 @@ On Windows, use `cross-env` to set environment variables:
 
 After making all changes, restart Metro with a cache clear (`npx expo start --clear` or `npx react-native start --reset-cache`) and run your storybook script to verify everything works.
 
-:::tip WebSocket configuration
+:::tip[WebSocket configuration]
 If you were manually configuring WebSocket host/port in both your metro config and `getStorybookUI`, you can now remove that duplication. The new `withStorybook` auto-injects WebSocket settings. See [Environment Variables](../configuration/environment-variables.md) for how to override them.
 :::
 

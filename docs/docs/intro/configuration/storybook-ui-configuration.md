@@ -294,7 +294,7 @@ const StorybookUIRoot = view.getStorybookUI({
 
 Enable remote control of Storybook from external tools. See [WebSocket Configuration](./websocket-configuration.md) for the full guide.
 
-:::tip Auto-injected by the bundler wrapper
+:::tip[Auto-injected by the bundler wrapper]
 When you configure `websockets: 'auto'` (or `{ host, port }`) in your `withStorybook` bundler wrapper, the WebSocket settings are automatically injected into the generated `storybook.requires` file. You do **not** need to set `enableWebsockets`, `host`, or `port` in `getStorybookUI` — they're already wired up. This applies to both the bundler-agnostic and Metro-specific wrappers.
 
 The options below are only needed if you're not using a `withStorybook` wrapper at all, or if you want to override the auto-injected values.

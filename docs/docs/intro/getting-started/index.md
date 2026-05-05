@@ -11,13 +11,13 @@ This guide is intended for Storybook version 10+. For v9 docs see the [v9.1 docs
 
 React Native Storybook works with both plain React Native and Expo but examples are using Expo for brevity since Expo is officially recommended by Meta. For plain React Native projects there should be minimal differences.
 
-:::info Expo Router Users
+:::info[Expo Router Users]
 For most projects, the simplest approach is entry-point swapping: the bundler swaps your app’s entire entry point for Storybook when `STORYBOOK_ENABLED=true` is set. No route setup needed, and no Storybook code ships to production.
 
 However, if you’re using **Expo Router** and want to render Storybook within your app’s navigation (instead of as a separate entry point), follow our dedicated [Expo Router Setup guide](./expo-router.md). This approach is fully supported, but not recommended, because it embeds Storybook into your app’s bundle and navigation.
 :::
 
-:::tip AI-Assisted Setup
+:::tip[AI-Assisted Setup]
 If you're using an AI coding agent (Claude Code, Cursor, Windsurf, etc.), you can install our agent skills to get guided setup assistance:
 
 ```sh
@@ -64,7 +64,7 @@ Then run:
 npm run storybook
 ```
 
-:::note Windows
+:::note[Windows]
 Use `cross-env` to set environment variables on Windows:
 
 ```json
@@ -73,7 +73,7 @@ Use `cross-env` to set environment variables on Windows:
 
 :::
 
-:::tip Bundler configuration
+:::tip[Bundler configuration]
 The CLI automatically wraps your `metro.config.js` with `withStorybook`. If you need to customize this — for example to chain it with other wrappers like `withNativeWind` — see [Metro Configuration](../configuration/metro-configuration.md) or [Manual Setup](./manual-setup.md).
 :::
 
