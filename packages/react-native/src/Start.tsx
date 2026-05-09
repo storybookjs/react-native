@@ -1,22 +1,22 @@
-import './polyfill';
 import { Platform } from 'react-native';
-import { addons as managerAddons } from 'storybook/manager-api';
 import {
   composeConfigs,
   addons as previewAddons,
-  PreviewWithSelection,
   View as PreviewView,
+  PreviewWithSelection,
   SelectionStore,
 } from 'storybook/internal/preview-api';
+import { addons as managerAddons } from 'storybook/manager-api';
+import './polyfill';
 
+import type { ReactRenderer } from '@storybook/react';
 import { Channel } from 'storybook/internal/channels';
 import type {
   ModuleExports,
-  NormalizedStoriesSpecifier,
   NormalizedProjectAnnotations,
+  NormalizedStoriesSpecifier,
   ProjectAnnotations,
 } from 'storybook/internal/types';
-import type { ReactRenderer } from '@storybook/react';
 import { View } from './View';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
 export { prepareStories, type ReactNativeOptions } from './prepareStories';
@@ -59,14 +59,14 @@ const getReactNativeProjectAnnotations = (getView: () => View | undefined) =>
  * Since we aren't supporting  these web addons yet in react native (or reimplement them) then we should disable them
  * to avoid running code for addons that are not supported.
  */
-globalThis.FEATURES = {
+globalThis.FEATURES = Object.assign(globalThis.FEATURES ?? {}, {
   measure: false,
   outline: false,
   interactions: false,
   viewport: false,
   highlight: false,
   backgrounds: false,
-};
+});
 
 // Note this is a workaround for setImmediate not being defined
 if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {

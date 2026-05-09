@@ -10,7 +10,7 @@ export const useStoreBooleanState = (
   const [val, setVal] = useState<boolean>(defaultValue);
 
   useEffect(() => {
-    storage.getItem(key).then((newVal) => {
+    Promise.resolve(storage.getItem(key)).then((newVal) => {
       if (newVal === null || newVal === undefined) {
         setVal(defaultValue);
       } else {
@@ -35,7 +35,7 @@ export const useStoreNumberState = (
   const [val, setVal] = useState<number>(defaultValue);
 
   useEffect(() => {
-    storage.getItem(key).then((newVal) => {
+    Promise.resolve(storage.getItem(key)).then((newVal) => {
       if (newVal === null || newVal === undefined) {
         setVal(defaultValue);
       } else {
