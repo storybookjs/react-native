@@ -36,3 +36,5 @@ examples/expo-example/.maestro/output/*
 
 examples/expo-example/components/PerfTesting/*.stories.tsx
 examples/expo-example/.certs/
+examples/expo-example/android
+examples/expo-example/ios
