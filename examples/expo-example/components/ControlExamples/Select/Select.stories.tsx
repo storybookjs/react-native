@@ -87,3 +87,18 @@ export const ManyOptions: Story = {
     },
   },
 };
+
+export const MultiSelect: Story = {
+  args: {
+    arrow: [manyArrows[0], manyArrows[1], manyArrows[2]],
+  },
+
+  argTypes: {
+    arrow: {
+      options: manyArrows,
+      control: {
+        type: 'multi-select',
+      },
+    },
+  },
+};

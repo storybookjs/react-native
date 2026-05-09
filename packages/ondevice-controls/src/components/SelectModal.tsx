@@ -1,5 +1,6 @@
 // NOTE This is adapted from react-native-modal-selector https://github.com/peacechen/react-native-modal-selector/blob/master/index.js
 
+import { useTheme } from '@storybook/react-native-theming';
 import { ComponentType, ReactNode, useCallback, useMemo, useState } from 'react';
 
 import {
@@ -21,7 +22,7 @@ import { ModalPortal } from './ModalPortal';
 const PADDING = 8;
 const BORDER_RADIUS = 5;
 const FONT_SIZE = 16;
-const HIGHLIGHT_COLOR = 'rgba(0,118,255,0.9)';
+const MODAL_HORIZONTAL_MARGIN = 24;
 
 type SupportedOrientation =
   | 'portrait'
@@ -178,7 +179,7 @@ const styles = StyleSheet.create({
 
   checkmark: {
     fontSize: FONT_SIZE,
-    color: HIGHLIGHT_COLOR,
+    color: '#333',
   },
 
   optionRow: {
@@ -201,7 +202,7 @@ const styles = StyleSheet.create({
   doneButtonText: {
     textAlign: 'center',
     fontSize: FONT_SIZE,
-    color: HIGHLIGHT_COLOR,
+    color: '#333',
   },
 });
 
@@ -260,10 +261,11 @@ export const SelectModal = ({
   selectedSeparator = ', ',
   maxSelectedItems,
   selectedItemIndicatorStyle,
-  selectedItemIndicatorColor = HIGHLIGHT_COLOR,
+  selectedItemIndicatorColor,
   doneText = 'Done',
   onDone,
 }: SelectModalProps) => {
+  const theme = useTheme();
   const { height: windowHeight } = useWindowDimensions();
   const [modalVisible, setModalVisible] = useState(false);
   const [selected, setSelected] = useState<string | string[]>(
@@ -293,6 +295,98 @@ export const SelectModal = ({
       return selectedItem ? { [keyExtractor(selectedItem)]: true } : {};
     }
   }, [selectedItems, keyExtractor, multiselect, selected, data, labelExtractor]);
+
+  const themedStyles = useMemo(
+    () => ({
+      modalContent: {
+        maxHeight: windowHeight * 0.75,
+        marginHorizontal: MODAL_HORIZONTAL_MARGIN,
+        backgroundColor: theme.background.content,
+        borderColor: theme.appBorderColor,
+        borderWidth: 1,
+        borderRadius: 8,
+        overflow: 'hidden' as const,
+        boxShadow: `0px 8px 24px 0px ${theme.color.border}`,
+        elevation: 10,
+      } satisfies ViewStyle,
+      optionContainer: {
+        backgroundColor: theme.background.content,
+        borderRadius: 0,
+        borderBottomColor: theme.appBorderColor,
+        borderBottomWidth: 1,
+        marginBottom: 0,
+      } satisfies ViewStyle,
+      optionStyle: {
+        minHeight: 34,
+        borderBottomColor: theme.appBorderColor,
+      } satisfies ViewStyle,
+      selectedOptionStyle: {
+        backgroundColor: theme.color.secondary,
+      } satisfies ViewStyle,
+      optionTextStyle: {
+        color: theme.color.defaultText,
+        fontSize: theme.typography.size.s2,
+      } satisfies TextStyle,
+      selectedOptionTextStyle: {
+        color: theme.color.lightest,
+        fontWeight: theme.typography.weight.bold,
+      } satisfies TextStyle,
+      cancelContainer: {
+        marginTop: 0,
+        padding: 8,
+        backgroundColor: theme.barBg,
+      } satisfies ViewStyle,
+      doneContainer: {
+        paddingBottom: 4,
+      } satisfies ViewStyle,
+      cancelAfterDoneContainer: {
+        paddingTop: 4,
+      } satisfies ViewStyle,
+      actionButton: {
+        minHeight: 32,
+        borderRadius: theme.input.borderRadius,
+        backgroundColor: theme.button.background,
+        borderColor: theme.button.border,
+        borderWidth: 1,
+        alignItems: 'center' as const,
+        justifyContent: 'center' as const,
+        paddingHorizontal: 12,
+        paddingVertical: 0,
+      } satisfies ViewStyle,
+      primaryActionButton: {
+        backgroundColor: theme.color.secondary,
+        borderColor: theme.color.secondary,
+      } satisfies ViewStyle,
+      actionText: {
+        color: theme.input.color,
+        fontSize: theme.typography.size.s1,
+        fontWeight: theme.typography.weight.bold,
+      } satisfies TextStyle,
+      primaryActionText: {
+        color: theme.color.lightest,
+      } satisfies TextStyle,
+      checkmark: {
+        color: theme.color.lightest,
+      } satisfies TextStyle,
+    }),
+    [
+      theme.appBorderColor,
+      theme.background.content,
+      theme.barBg,
+      theme.button.background,
+      theme.button.border,
+      theme.color.border,
+      theme.color.defaultText,
+      theme.color.lightest,
+      theme.color.secondary,
+      theme.input.borderRadius,
+      theme.input.color,
+      theme.typography.size.s1,
+      theme.typography.size.s2,
+      theme.typography.weight.bold,
+      windowHeight,
+    ]
+  );
 
   const open = useCallback(() => {
     if (!disabled) {
@@ -368,34 +462,52 @@ export const SelectModal = ({
       const optionKey = keyExtractor(option);
       const isSelected = selectedItemsMap[optionKey];
 
-      const content = (
-        <>
-          <Text style={[styles.optionTextStyle, optionTextStyleProp]} {...optionTextPassThruProps}>
-            {optionLabel}
-          </Text>
-          <View style={[styles.selectedItemIndicator, selectedItemIndicatorStyle]}>
-            {isSelected && (
-              <Text style={[styles.checkmark, { color: selectedItemIndicatorColor }]}>✓</Text>
-            )}
-          </View>
-        </>
-      );
-
       return (
         <TouchableOpacity
           key={optionKey}
           testID={`${optionsTestIDPrefix}-${optionLabel}`}
           onPress={() => handleChange(option)}
-          activeOpacity={touchableActiveOpacity}
+          activeOpacity={multiselect ? 1 : touchableActiveOpacity}
           accessible={listItemAccessible}
           accessibilityLabel={option.accessibilityLabel}
           importantForAccessibility={isFirstItem ? 'yes' : 'no'}
           {...passThruProps}
         >
           <View
-            style={[styles.optionStyle, optionStyleProp, isLastItem && { borderBottomWidth: 0 }]}
+            style={[
+              styles.optionStyle,
+              themedStyles.optionStyle,
+              optionStyleProp,
+              isSelected && themedStyles.selectedOptionStyle,
+              isLastItem && { borderBottomWidth: 0 },
+            ]}
           >
-            <View style={styles.optionRow}>{content}</View>
+            <View style={styles.optionRow}>
+              <Text
+                style={[
+                  styles.optionTextStyle,
+                  themedStyles.optionTextStyle,
+                  optionTextStyleProp,
+                  isSelected && themedStyles.selectedOptionTextStyle,
+                ]}
+                {...optionTextPassThruProps}
+              >
+                {optionLabel}
+              </Text>
+              <View style={[styles.selectedItemIndicator, selectedItemIndicatorStyle]}>
+                {isSelected && (
+                  <Text
+                    style={[
+                      styles.checkmark,
+                      themedStyles.checkmark,
+                      selectedItemIndicatorColor && { color: selectedItemIndicatorColor },
+                    ]}
+                  >
+                    ✓
+                  </Text>
+                )}
+              </View>
+            </View>
           </View>
         </TouchableOpacity>
       );
@@ -405,6 +517,7 @@ export const SelectModal = ({
       labelExtractor,
       handleChange,
       touchableActiveOpacity,
+      multiselect,
       listItemAccessible,
       passThruProps,
       optionStyleProp,
@@ -414,6 +527,7 @@ export const SelectModal = ({
       selectedItemsMap,
       selectedItemIndicatorStyle,
       selectedItemIndicatorColor,
+      themedStyles,
     ]
   );
 
@@ -461,15 +575,13 @@ export const SelectModal = ({
       ...(scrollViewPassThruProps?.horizontal && { flexDirection: 'row' as const }),
     };
 
-    const modalContentStyle = {
-      maxHeight: windowHeight * 0.75,
-    } satisfies ViewStyle;
-
     return (
       <OverlayComponent key={key} {...overlayProps}>
         <View style={[styles.overlayStyle, overlayStyleProp]}>
-          <View style={modalContentStyle}>
-            <View style={[styles.optionContainer, optionContainerStyle]}>
+          <View style={themedStyles.modalContent}>
+            <View
+              style={[styles.optionContainer, themedStyles.optionContainer, optionContainerStyle]}
+            >
               {header}
               {listType === 'FLATLIST' ? (
                 <FlatList
@@ -500,27 +612,52 @@ export const SelectModal = ({
             </View>
 
             {multiselect && (
-              <View style={[styles.doneContainer]}>
+              <View
+                style={[
+                  styles.doneContainer,
+                  themedStyles.cancelContainer,
+                  themedStyles.doneContainer,
+                ]}
+              >
                 <TouchableOpacity
-                  style={styles.doneButton}
+                  style={[
+                    styles.doneButton,
+                    themedStyles.actionButton,
+                    themedStyles.primaryActionButton,
+                  ]}
                   onPress={handleDone}
                   activeOpacity={touchableActiveOpacity}
                 >
-                  <Text style={styles.doneButtonText}>{doneText}</Text>
+                  <Text
+                    style={[
+                      styles.doneButtonText,
+                      themedStyles.actionText,
+                      themedStyles.primaryActionText,
+                    ]}
+                  >
+                    {doneText}
+                  </Text>
                 </TouchableOpacity>
               </View>
             )}
 
-            <View style={[styles.cancelContainer, cancelContainerStyle]}>
+            <View
+              style={[
+                styles.cancelContainer,
+                themedStyles.cancelContainer,
+                multiselect && themedStyles.cancelAfterDoneContainer,
+                cancelContainerStyle,
+              ]}
+            >
               <TouchableOpacity
                 onPress={close}
                 activeOpacity={touchableActiveOpacity}
                 accessible={cancelButtonAccessible}
                 accessibilityLabel={cancelButtonAccessibilityLabel}
               >
-                <View style={[styles.cancelStyle, cancelStyleProp]}>
+                <View style={[styles.cancelStyle, themedStyles.actionButton, cancelStyleProp]}>
                   <Text
-                    style={[styles.cancelTextStyle, cancelTextStyleProp]}
+                    style={[styles.cancelTextStyle, themedStyles.actionText, cancelTextStyleProp]}
                     {...cancelTextPassThruProps}
                   >
                     {cancelText}
@@ -560,7 +697,7 @@ export const SelectModal = ({
     multiselect,
     handleDone,
     doneText,
-    windowHeight,
+    themedStyles,
   ]);
 
   const renderChildren = useCallback(() => {

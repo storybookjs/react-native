@@ -1,7 +1,9 @@
 import { Text } from 'react-native';
 
 export interface Props {
-  arrow: string;
+  arrow: string | string[];
 }
 
-export const SelectExample = ({ arrow }: Props) => <Text>Selected: {arrow}</Text>;
+export const SelectExample = ({ arrow }: Props) => (
+  <Text>Selected: {Array.isArray(arrow) ? arrow.join(', ') : arrow}</Text>
+);
