@@ -11,6 +11,7 @@ import {
   TextStyle,
   TouchableOpacity,
   TouchableWithoutFeedback,
+  useWindowDimensions,
   View,
   ViewProps,
   ViewStyle,
@@ -263,6 +264,7 @@ export const SelectModal = ({
   doneText = 'Done',
   onDone,
 }: SelectModalProps) => {
+  const { height: windowHeight } = useWindowDimensions();
   const [modalVisible, setModalVisible] = useState(false);
   const [selected, setSelected] = useState<string | string[]>(
     multiselect ? (Array.isArray(initValue) ? initValue : []) : initValue || ''
@@ -459,67 +461,73 @@ export const SelectModal = ({
       ...(scrollViewPassThruProps?.horizontal && { flexDirection: 'row' as const }),
     };
 
+    const modalContentStyle = {
+      maxHeight: windowHeight * 0.75,
+    } satisfies ViewStyle;
+
     return (
       <OverlayComponent key={key} {...overlayProps}>
         <View style={[styles.overlayStyle, overlayStyleProp]}>
-          <View style={[styles.optionContainer, optionContainerStyle]}>
-            {header}
-            {listType === 'FLATLIST' ? (
-              <FlatList
-                data={data}
-                keyboardShouldPersistTaps={keyboardShouldPersistTaps}
-                accessible={scrollViewAccessible}
-                accessibilityLabel={scrollViewAccessibilityLabel}
-                keyExtractor={keyExtractor}
-                renderItem={renderFlatlistOption}
-                onEndReached={onEndReached}
-              />
-            ) : (
-              <ScrollView
-                keyboardShouldPersistTaps={keyboardShouldPersistTaps}
-                accessible={scrollViewAccessible}
-                accessibilityLabel={scrollViewAccessibilityLabel}
-                {...scrollViewPassThruProps}
-              >
-                <View style={optionsContainerStyle}>
-                  {data.map((item, index) =>
-                    item.section
-                      ? renderSection(item)
-                      : renderOption(item, index === data.length - 1, index === 0)
-                  )}
-                </View>
-              </ScrollView>
-            )}
-          </View>
+          <View style={modalContentStyle}>
+            <View style={[styles.optionContainer, optionContainerStyle]}>
+              {header}
+              {listType === 'FLATLIST' ? (
+                <FlatList
+                  data={data}
+                  keyboardShouldPersistTaps={keyboardShouldPersistTaps}
+                  accessible={scrollViewAccessible}
+                  accessibilityLabel={scrollViewAccessibilityLabel}
+                  keyExtractor={keyExtractor}
+                  renderItem={renderFlatlistOption}
+                  onEndReached={onEndReached}
+                />
+              ) : (
+                <ScrollView
+                  keyboardShouldPersistTaps={keyboardShouldPersistTaps}
+                  accessible={scrollViewAccessible}
+                  accessibilityLabel={scrollViewAccessibilityLabel}
+                  {...scrollViewPassThruProps}
+                >
+                  <View style={optionsContainerStyle}>
+                    {data.map((item, index) =>
+                      item.section
+                        ? renderSection(item)
+                        : renderOption(item, index === data.length - 1, index === 0)
+                    )}
+                  </View>
+                </ScrollView>
+              )}
+            </View>
 
-          {multiselect && (
-            <View style={[styles.doneContainer]}>
+            {multiselect && (
+              <View style={[styles.doneContainer]}>
+                <TouchableOpacity
+                  style={styles.doneButton}
+                  onPress={handleDone}
+                  activeOpacity={touchableActiveOpacity}
+                >
+                  <Text style={styles.doneButtonText}>{doneText}</Text>
+                </TouchableOpacity>
+              </View>
+            )}
+
+            <View style={[styles.cancelContainer, cancelContainerStyle]}>
               <TouchableOpacity
-                style={styles.doneButton}
-                onPress={handleDone}
+                onPress={close}
                 activeOpacity={touchableActiveOpacity}
+                accessible={cancelButtonAccessible}
+                accessibilityLabel={cancelButtonAccessibilityLabel}
               >
-                <Text style={styles.doneButtonText}>{doneText}</Text>
+                <View style={[styles.cancelStyle, cancelStyleProp]}>
+                  <Text
+                    style={[styles.cancelTextStyle, cancelTextStyleProp]}
+                    {...cancelTextPassThruProps}
+                  >
+                    {cancelText}
+                  </Text>
+                </View>
               </TouchableOpacity>
             </View>
-          )}
-
-          <View style={[styles.cancelContainer, cancelContainerStyle]}>
-            <TouchableOpacity
-              onPress={close}
-              activeOpacity={touchableActiveOpacity}
-              accessible={cancelButtonAccessible}
-              accessibilityLabel={cancelButtonAccessibilityLabel}
-            >
-              <View style={[styles.cancelStyle, cancelStyleProp]}>
-                <Text
-                  style={[styles.cancelTextStyle, cancelTextStyleProp]}
-                  {...cancelTextPassThruProps}
-                >
-                  {cancelText}
-                </Text>
-              </View>
-            </TouchableOpacity>
           </View>
         </View>
       </OverlayComponent>
@@ -552,6 +560,7 @@ export const SelectModal = ({
     multiselect,
     handleDone,
     doneText,
+    windowHeight,
   ]);
 
   const renderChildren = useCallback(() => {

@@ -53,11 +53,13 @@ export const useAnimatedModalHeight = () => {
   const maxModalHeight = 0.85 * height;
   const [sheetHeight, setSheetHeight] = useState(modalHeight);
   const [keyboardInset, setKeyboardInset] = useState(0);
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
   const keyboardOffset = useAnimatedValue(0);
 
   useEffect(() => {
     setSheetHeight(modalHeight);
     setKeyboardInset(0);
+    setIsKeyboardVisible(false);
     keyboardOffset.setValue(0);
   }, [keyboardOffset, modalHeight]);
 
@@ -66,6 +68,7 @@ export const useAnimatedModalHeight = () => {
       const maxKeyboardOffset = maxModalHeight - modalHeight;
       const keyboardAvoidanceOffset = Math.min(keyboardHeight, maxKeyboardOffset);
 
+      setIsKeyboardVisible(true);
       setKeyboardInset(Math.max(keyboardHeight - keyboardAvoidanceOffset, 0));
 
       Animated.timing(keyboardOffset, {
@@ -85,6 +88,7 @@ export const useAnimatedModalHeight = () => {
       }).start(({ finished }) => {
         if (finished) {
           setKeyboardInset(0);
+          setIsKeyboardVisible(false);
         }
       });
     };
@@ -129,6 +133,7 @@ export const useAnimatedModalHeight = () => {
     height: sheetHeight,
     keyboardOffset,
     keyboardInset,
+    isKeyboardVisible,
     sheetExtensionHeight: maxModalHeight - modalHeight,
   };
 };
@@ -144,6 +149,7 @@ export const MobileMenuDrawer = memo(
         height: sheetHeight,
         keyboardOffset,
         keyboardInset,
+        isKeyboardVisible,
         sheetExtensionHeight,
       } = useAnimatedModalHeight();
 
@@ -212,6 +218,21 @@ export const MobileMenuDrawer = memo(
               }
             },
             onPanResponderRelease: (_, gestureState) => {
+              if (isKeyboardVisible) {
+                if (gestureState.dy > 20) {
+                  Keyboard.dismiss();
+                }
+
+                Animated.timing(dragY, {
+                  toValue: 0,
+                  duration: 250,
+                  easing: Easing.out(Easing.quad),
+                  useNativeDriver: true,
+                }).start();
+
+                return;
+              }
+
               if (gestureState.dy > 50) {
                 closeDrawer();
               } else {
@@ -225,7 +246,7 @@ export const MobileMenuDrawer = memo(
               }
             },
           }),
-        [closeDrawer, dragY]
+        [closeDrawer, dragY, isKeyboardVisible]
       );
 
       const sheetTranslateY = useMemo(
