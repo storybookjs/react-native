@@ -56,60 +56,44 @@ export const useAnimatedModalHeight = () => {
   const [sheetHeight, setSheetHeight] = useState(modalHeight);
   const [keyboardInset, setKeyboardInset] = useState(0);
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
-  const keyboardOffset = useAnimatedValue(0);
 
   useEffect(() => {
     setSheetHeight(modalHeight);
     setKeyboardInset(0);
     setIsKeyboardVisible(false);
-    keyboardOffset.setValue(0);
-  }, [keyboardOffset, modalHeight]);
+  }, [modalHeight]);
 
   useEffect(() => {
-    const expand = (duration: number = 250, keyboardHeight: number = 0) => {
+    const expand = (keyboardHeight: number = 0) => {
       const maxKeyboardOffset = maxModalHeight - modalHeight;
       const keyboardAvoidanceOffset = Math.min(keyboardHeight, maxKeyboardOffset);
 
       setIsKeyboardVisible(true);
+      setSheetHeight(modalHeight + keyboardAvoidanceOffset);
       setKeyboardInset(Math.max(keyboardHeight - keyboardAvoidanceOffset, 0));
-
-      Animated.timing(keyboardOffset, {
-        toValue: -keyboardAvoidanceOffset,
-        duration,
-        easing: Easing.out(Easing.quad),
-        useNativeDriver: true,
-      }).start();
     };
 
-    const collapse = (duration: number = 250) => {
-      Animated.timing(keyboardOffset, {
-        toValue: 0,
-        duration,
-        easing: Easing.out(Easing.quad),
-        useNativeDriver: true,
-      }).start(({ finished }) => {
-        if (finished) {
-          setKeyboardInset(0);
-          setIsKeyboardVisible(false);
-        }
-      });
+    const collapse = () => {
+      setSheetHeight(modalHeight);
+      setKeyboardInset(0);
+      setIsKeyboardVisible(false);
     };
 
     const handleKeyboardWillShow: KeyboardEventListener = (e) => {
       if (Platform.OS === 'ios') {
-        expand(e.duration, e.endCoordinates.height);
+        expand(e.endCoordinates.height);
       }
     };
 
     const handleKeyboardDidShow: KeyboardEventListener = (e) => {
       if (Platform.OS === 'android') {
-        expand(undefined, e.endCoordinates.height);
+        expand(e.endCoordinates.height);
       }
     };
 
     const handleKeyboardWillHide: KeyboardEventListener = (e) => {
       if (Platform.OS === 'ios') {
-        collapse(e.duration);
+        collapse();
       }
     };
 
@@ -129,14 +113,12 @@ export const useAnimatedModalHeight = () => {
     return () => {
       subscriptions.forEach((subscription) => subscription.remove());
     };
-  }, [keyboardOffset, maxModalHeight, modalHeight]);
+  }, [maxModalHeight, modalHeight]);
 
   return {
     height: sheetHeight,
-    keyboardOffset,
     keyboardInset,
     isKeyboardVisible,
-    sheetExtensionHeight: maxModalHeight - modalHeight,
   };
 };
 
@@ -147,13 +129,7 @@ export const MobileMenuDrawer = memo(
       const { scrollCallback } = useSelectedNode();
       const theme = useTheme();
       const { height } = useWindowDimensions();
-      const {
-        height: sheetHeight,
-        keyboardOffset,
-        keyboardInset,
-        isKeyboardVisible,
-        sheetExtensionHeight,
-      } = useAnimatedModalHeight();
+      const { height: sheetHeight, keyboardInset, isKeyboardVisible } = useAnimatedModalHeight();
 
       // Slide animation for drawer entrance/exit
       const slideAnim = useAnimatedValue(height);
@@ -183,25 +159,17 @@ export const MobileMenuDrawer = memo(
         Keyboard.dismiss();
         onVisibilityChange?.(false);
 
-        Animated.parallel([
-          Animated.timing(slideAnim, {
-            toValue: height,
-            duration: 300,
-            easing: Easing.in(Easing.quad),
-            useNativeDriver: true,
-          }),
-          Animated.timing(keyboardOffset, {
-            toValue: 0,
-            duration: 300,
-            easing: Easing.in(Easing.quad),
-            useNativeDriver: true,
-          }),
-        ]).start(({ finished }) => {
+        Animated.timing(slideAnim, {
+          toValue: height,
+          duration: 300,
+          easing: Easing.in(Easing.quad),
+          useNativeDriver: true,
+        }).start(({ finished }) => {
           if (finished) {
             setIsVisible(false);
           }
         });
-      }, [height, keyboardOffset, onVisibilityChange, slideAnim]);
+      }, [height, onVisibilityChange, slideAnim]);
 
       // Create the pan responder for handling drag gestures
       const panResponder = useMemo(
@@ -250,10 +218,7 @@ export const MobileMenuDrawer = memo(
         [closeDrawer, dragY, isKeyboardVisible]
       );
 
-      const sheetTranslateY = useMemo(
-        () => Animated.add(Animated.add(slideAnim, keyboardOffset), dragY),
-        [dragY, keyboardOffset, slideAnim]
-      );
+      const sheetTranslateY = useMemo(() => Animated.add(slideAnim, dragY), [dragY, slideAnim]);
 
       useImperativeHandle(ref, () => ({
         setMobileMenuOpen: (open: boolean) => {
@@ -311,19 +276,6 @@ export const MobileMenuDrawer = memo(
         [keyboardInset, theme.background.content]
       );
 
-      const sheetBackgroundExtensionStyle = useMemo(
-        () =>
-          ({
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            bottom: -sheetExtensionHeight,
-            height: sheetExtensionHeight,
-            backgroundColor: theme.background.content,
-          }) satisfies ViewStyle,
-        [sheetExtensionHeight, theme.background.content]
-      );
-
       const scrollToSelectedButtonWrapperStyle = useMemo(
         () =>
           ({
@@ -362,7 +314,6 @@ export const MobileMenuDrawer = memo(
                 transform: [{ translateY: sheetTranslateY }],
               }}
             >
-              <View pointerEvents="none" style={sheetBackgroundExtensionStyle} />
               <Animated.View style={drawerContainerStyle}>
                 {/* Drag handle */}
                 <View {...panResponder.panHandlers} style={dragHandleWrapperStyle}>
