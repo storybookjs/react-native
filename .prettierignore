@@ -9,5 +9,6 @@ examples/repack-example/.rnstorybook/storybook.requires.ts
 docs/.docusaurus
 docs/build
 .claude/
+.zed/
 .changeset/
 examples/expo-example/assets
