@@ -45,8 +45,8 @@
   ],
   "scripts": {
     "check:types": "tsc --noEmit",
-    "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
-    "prepare": "rm -rf dist/ && tsup",
+    "dev": "node buildscripts/gendtsdev.ts && tsdown --watch",
+    "prepare": "tsdown",
     "test": "jest",
     "test:ci": "jest"
   },
@@ -82,8 +82,9 @@
     "react": "19.2.3",
     "react-native": "0.85.3",
     "storybook": "^10.3.2",
+    "sucrase": "^3.35.1",
     "test-renderer": "^0.15.0",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.22.0",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {

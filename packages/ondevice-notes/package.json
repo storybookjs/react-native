@@ -25,9 +25,9 @@
   ],
   "scripts": {
     "check:types": "tsc --noEmit",
-    "dev": "tsup --watch",
+    "dev": "tsdown --watch",
     "preprepare": "rm -rf dist/",
-    "prepare": "tsup"
+    "prepare": "tsdown"
   },
   "dependencies": {
     "@storybook/react-native-theming": "^10.4.0"
@@ -35,7 +35,7 @@
   "devDependencies": {
     "react-native-markdown-display": "^7.0.2",
     "storybook": "^10.3.2",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.22.0",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {

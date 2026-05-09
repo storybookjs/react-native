@@ -37,10 +37,10 @@ const createPreviewRoot = (): ReactRenderer['canvasElement'] =>
     T: null,
   }) as unknown as ReactRenderer['canvasElement'];
 
-const getReactNativeProjectAnnotations = (view: View) =>
+const getReactNativeProjectAnnotations = (getView: () => View | undefined) =>
   ({
     renderToCanvas: (context) => {
-      view._setStory(context.storyContext);
+      getView()?._setStory(context.storyContext);
     },
     render: (args, context) => {
       const { id, component: Component } = context;
@@ -76,7 +76,7 @@ if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
 export const getProjectAnnotations =
   (view: View, annotations: ModuleExports[]) =>
   async (): Promise<NormalizedProjectAnnotations<ReactRenderer>> =>
-    composeConfigs<ReactRenderer>([getReactNativeProjectAnnotations(view), ...annotations]);
+    composeConfigs<ReactRenderer>([getReactNativeProjectAnnotations(() => view), ...annotations]);
 
 export function start({
   annotations,
@@ -138,7 +138,8 @@ export function start({
 
   const getProjectAnnotationsInitial = async (): Promise<
     NormalizedProjectAnnotations<ReactRenderer>
-  > => composeConfigs<ReactRenderer>([getReactNativeProjectAnnotations(view), ...annotations]);
+  > =>
+    composeConfigs<ReactRenderer>([getReactNativeProjectAnnotations(() => view), ...annotations]);
 
   const preview: PreviewWithSelection<ReactRenderer> = new PreviewWithSelection<ReactRenderer>(
     async (importPath: string) => importMap[importPath],

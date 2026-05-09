@@ -29,8 +29,8 @@
   ],
   "scripts": {
     "check:types": "tsc --noEmit",
-    "dev": "tsup --watch",
-    "prepare": "tsup"
+    "dev": "tsdown --watch",
+    "prepare": "tsdown"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
@@ -46,7 +46,7 @@
     "@types/react": "~19.2.14",
     "storybook": "^10.3.2",
     "ts-dedent": "^2.2.0",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.22.0",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
