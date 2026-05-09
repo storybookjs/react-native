@@ -62,7 +62,7 @@ export type Channel = ReturnType<AddonStore['getChannel']>;
 interface BackgroundPanelProps {
   channel: Channel;
   api: API;
-  active: boolean;
+  active?: boolean;
 }
 
 const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {

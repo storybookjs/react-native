@@ -63,7 +63,7 @@ export function patchChannelForRN(channel: Channel): void {
    * when action args contain React fiber nodes or other deep object graphs.
    * The default maxDepth of 15 is too deep and causes blocking + crashes.
    */
-  globalThis.CHANNEL_OPTIONS = {
+  (globalThis as typeof globalThis & { CHANNEL_OPTIONS?: { maxDepth: number } }).CHANNEL_OPTIONS = {
     maxDepth: 5,
   };
 

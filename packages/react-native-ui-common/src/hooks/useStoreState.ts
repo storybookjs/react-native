@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useCallback, useEffect, useState } from 'react';
 import { useStorage } from '../StorageProvider';
 
 export const useStoreBooleanState = (
   key: string,
   defaultValue: boolean
-): ReturnType<typeof useState<boolean>> => {
+): [boolean, Dispatch<SetStateAction<boolean>>] => {
   const storage = useStorage();
 
   const [val, setVal] = useState<boolean>(defaultValue);

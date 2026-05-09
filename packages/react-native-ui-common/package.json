@@ -43,8 +43,8 @@
   "devDependencies": {
     "@types/react": "~19.2.14",
     "storybook": "^10.3.2",
-    "tsup": "^8.5.0",
-    "typescript": "~5.9.3"
+    "tsup": "^8.5.1",
+    "typescript": "~6.0.3"
   },
   "peerDependencies": {
     "react": "*",

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import type { Selection, StoryRef } from '../types';
 
 export const useLastViewed = (selection: Selection) => {
-  const lastViewedRef = useRef([]);
+  const lastViewedRef = useRef<StoryRef[]>([]);
 
   const updateLastViewed = useCallback(
     (story: StoryRef) => {

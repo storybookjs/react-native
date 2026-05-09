@@ -72,7 +72,10 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
       <input
         type="color"
         value={arg.value}
-        onChange={(event) => onChange(event.target.value)}
+        onChange={(event) => {
+          const target = event.currentTarget as EventTarget & { value: string };
+          onChange(target.value);
+        }}
         style={{
           width: 40,
           height: 40,

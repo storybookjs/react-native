@@ -8,13 +8,52 @@ import {
   View as PreviewView,
   SelectionStore,
 } from 'storybook/internal/preview-api';
-// NOTE this really should be exported from preview-api, but it's not
+
 import { Channel } from 'storybook/internal/channels';
-import type { NormalizedStoriesSpecifier } from 'storybook/internal/types';
+import type {
+  ModuleExports,
+  NormalizedStoriesSpecifier,
+  NormalizedProjectAnnotations,
+  ProjectAnnotations,
+} from 'storybook/internal/types';
 import type { ReactRenderer } from '@storybook/react';
 import { View } from './View';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
 export { prepareStories, type ReactNativeOptions } from './prepareStories';
+
+type StoryEntry = NormalizedStoriesSpecifier & {
+  req: {
+    keys(): string[];
+    (id: string): unknown;
+  };
+};
+
+const createPreviewRoot = (): ReactRenderer['canvasElement'] =>
+  ({
+    component: () => <></>,
+    canvasElement: null,
+    mount: () => Promise.resolve({}),
+    storyResult: null,
+    T: null,
+  }) as unknown as ReactRenderer['canvasElement'];
+
+const getReactNativeProjectAnnotations = (view: View) =>
+  ({
+    renderToCanvas: (context) => {
+      view._setStory(context.storyContext);
+    },
+    render: (args, context) => {
+      const { id, component: Component } = context;
+
+      if (!Component) {
+        throw new Error(
+          `Unable to render story ${id} as the component annotation is missing from the default export`
+        );
+      }
+
+      return <Component {...args} />;
+    },
+  }) satisfies ProjectAnnotations<ReactRenderer>;
 
 /**
  * Since we aren't supporting  these web addons yet in react native (or reimplement them) then we should disable them
@@ -34,34 +73,18 @@ if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
   require('setimmediate');
 }
 
-export const getProjectAnnotations = (view: View, annotations: any[]) => async () =>
-  composeConfigs<ReactRenderer>([
-    {
-      renderToCanvas: (context) => {
-        view._setStory(context.storyContext);
-      },
-      render: (args, context) => {
-        const { id, component: Component } = context;
-
-        if (!Component) {
-          throw new Error(
-            `Unable to render story ${id} as the component annotation is missing from the default export`
-          );
-        }
-
-        return <Component {...args} />;
-      },
-    },
-    ...annotations,
-  ]);
+export const getProjectAnnotations =
+  (view: View, annotations: ModuleExports[]) =>
+  async (): Promise<NormalizedProjectAnnotations<ReactRenderer>> =>
+    composeConfigs<ReactRenderer>([getReactNativeProjectAnnotations(view), ...annotations]);
 
 export function start({
   annotations,
   storyEntries,
   options,
 }: {
-  storyEntries: (NormalizedStoriesSpecifier & { req: any })[];
-  annotations: any[];
+  storyEntries: StoryEntry[];
+  annotations: ModuleExports[];
   options?: ReactNativeOptions;
 }) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
@@ -85,16 +108,12 @@ export function start({
 
   const previewView = {
     prepareForStory: () => {
-      return {
-        component: () => <></>,
-        canvasElement: null,
-        mount: () => Promise.resolve({}),
-        storyResult: null,
-        T: null,
-      } as any;
+      return createPreviewRoot();
     },
-    prepareForDocs: (): any => {},
-    showErrorDisplay: (e) => {
+    prepareForDocs: () => {
+      return createPreviewRoot();
+    },
+    showErrorDisplay: (e: { message?: string; stack?: string }) => {
       console.log(e);
     },
     showDocs: () => {},
@@ -104,50 +123,40 @@ export function start({
     showPreparingStory: () => {},
     showStory: () => {},
     showStoryDuringRender: () => {},
-  } satisfies PreviewView<ReactRenderer>;
+  } satisfies PreviewView<ReactRenderer['canvasElement']>;
 
   const selectionStore = {
-    selection: null,
+    selection: null as unknown as SelectionStore['selection'],
     selectionSpecifier: null,
     setQueryParams: () => {},
-    setSelection: (selection) => {
+    setSelection: (selection: NonNullable<SelectionStore['selection']>) => {
       preview.selectionStore.selection = selection;
     },
   } satisfies SelectionStore;
 
-  const getProjectAnnotationsInitial = async () =>
-    composeConfigs<ReactRenderer>([
-      {
-        renderToCanvas: (context) => {
-          view._setStory(context.storyContext);
-        },
-        render: (args, context) => {
-          const { id, component: Component } = context;
+  let view: View;
 
-          if (!Component) {
-            throw new Error(
-              `Unable to render story ${id} as the component annotation is missing from the default export`
-            );
-          }
+  const getProjectAnnotationsInitial = async (): Promise<
+    NormalizedProjectAnnotations<ReactRenderer>
+  > => composeConfigs<ReactRenderer>([getReactNativeProjectAnnotations(view), ...annotations]);
 
-          return <Component {...args} />;
-        },
-      },
-      ...annotations,
-    ]);
-
-  const preview = new PreviewWithSelection<ReactRenderer>(
+  const preview: PreviewWithSelection<ReactRenderer> = new PreviewWithSelection<ReactRenderer>(
     async (importPath: string) => importMap[importPath],
     getProjectAnnotationsInitial,
     selectionStore,
-    previewView as any
+    previewView
   );
 
-  const view = new View(preview, channel, options);
+  view = new View(preview, channel, options);
 
   if (global) {
-    global.__STORYBOOK_ADDONS_CHANNEL__ = channel;
-    global.__STORYBOOK_PREVIEW__ = preview;
+    const storybookGlobal = global as typeof globalThis & {
+      __STORYBOOK_ADDONS_CHANNEL__?: Channel;
+      __STORYBOOK_PREVIEW__?: PreviewWithSelection<ReactRenderer>;
+    };
+
+    storybookGlobal.__STORYBOOK_ADDONS_CHANNEL__ = channel;
+    storybookGlobal.__STORYBOOK_PREVIEW__ = preview;
   }
 
   view._storyIndex = index;
@@ -159,8 +168,8 @@ export function start({
 
 export function updateView(
   viewInstance: View,
-  annotations: any[],
-  normalizedStories: (NormalizedStoriesSpecifier & { req: any })[],
+  annotations: ModuleExports[],
+  normalizedStories: StoryEntry[],
   options?: ReactNativeOptions
 ) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);

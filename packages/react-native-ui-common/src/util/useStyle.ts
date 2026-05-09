@@ -25,4 +25,4 @@ export const useStyle = <
   deps?: DependencyList
 ): TOutput =>
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useMemo(styleFactory, deps);
+  useMemo(styleFactory, deps as DependencyList);

@@ -40,7 +40,7 @@ export const Button = forwardRef<any, ButtonProps>(
 
     const [isAnimating, setIsAnimating] = useState(false);
 
-    const handleClick = (event) => {
+    const handleClick: NonNullable<TouchableOpacityProps['onPress']> = (event) => {
       if (onPress) onPress(event);
       if (animation === 'none') return;
       setIsAnimating(true);

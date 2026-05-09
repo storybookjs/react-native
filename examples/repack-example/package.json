@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",
-    "@react-native-community/datetimepicker": "8.6.0",
-    "@react-native-community/slider": "5.1.2",
+    "@react-native-community/datetimepicker": "9.1.0",
+    "@react-native-community/slider": "5.2.0",
     "@react-native/new-app-screen": "0.83.4",
     "@storybook/addon-ondevice-actions": "^10.4.0",
     "@storybook/addon-ondevice-backgrounds": "^10.4.0",
@@ -25,9 +25,9 @@
     "@storybook/react": "^10.3.2",
     "@storybook/react-native": "^10.4.0",
     "@storybook/react-native-ui-lite": "^10.4.0",
-    "react": "19.2.0",
-    "react-native": "0.83.6",
-    "react-native-safe-area-context": "^5.6.2",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-safe-area-context": "^5.7.0",
     "storybook": "^10.3.2"
   },
   "devDependencies": {
@@ -53,7 +53,7 @@
     "prettier": "^3.8.1",
     "react-native-test-app": "^5.1.4",
     "react-test-renderer": "19.2.0",
-    "typescript": "~5.9.3"
+    "typescript": "~6.0.3"
   },
   "engines": {
     "node": ">=20"

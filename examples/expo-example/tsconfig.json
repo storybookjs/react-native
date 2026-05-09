@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "skipLibCheck": true,
-    "baseUrl": "./",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["jest"]
   },
   "extends": "expo/tsconfig.base",
   "include": [".rnstorybook/**/*", ".storybook/**/*", "./*"]
