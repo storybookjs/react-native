@@ -332,12 +332,10 @@ export const MobileMenuDrawer = memo(
             bottom: keyboardInset + 16,
             zIndex: 1,
             borderRadius: theme.input.borderRadius,
-            borderWidth: 1,
-            borderColor: theme.background.content,
-            boxShadow: `0 6px 16px 0 ${theme.color.border}`,
-            elevation: 5,
+            boxShadow: `0 2px 5px 0 ${theme.color.border}`,
+            elevation: 1,
           }) satisfies ViewStyle,
-        [keyboardInset, theme.background.content, theme.color.border, theme.input.borderRadius]
+        [keyboardInset, theme.color.border, theme.input.borderRadius]
       );
 
       return (
@@ -376,7 +374,7 @@ export const MobileMenuDrawer = memo(
                   <View style={scrollToSelectedButtonWrapperStyle}>
                     <Button
                       text="Scroll to selected"
-                      variant="solid"
+                      variant="outline"
                       size="medium"
                       onPress={scrollToSelectedStory}
                       accessibilityLabel="Scroll to selected story"

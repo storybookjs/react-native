@@ -5,6 +5,7 @@ import {
   Animated,
   Easing,
   Keyboard,
+  KeyboardEvent,
   Platform,
   ScrollView,
   StyleProp,
@@ -31,106 +32,72 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
   ({ storyId }, ref) => {
     const theme = useTheme();
     const { height } = useWindowDimensions();
-    const panelHeight = useAnimatedValue(0);
+    const defaultPanelHeight = height / 2;
     const positionBottomAnimation = useAnimatedValue(height / 2);
+    const [panelHeight, setPanelHeight] = useState(defaultPanelHeight);
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+      setPanelHeight(defaultPanelHeight);
+    }, [defaultPanelHeight]);
 
     const setMobileMenuOpen = useCallback(
       (open: boolean) => {
         setIsOpen(open);
 
         if (open) {
-          Animated.parallel([
-            Animated.timing(positionBottomAnimation, {
-              toValue: 0, // Negative to move up
-              duration: 350,
-              useNativeDriver: false,
-              easing: Easing.inOut(Easing.cubic),
-            }),
-
-            Animated.timing(panelHeight, {
-              toValue: height / 2,
-              duration: 350,
-              useNativeDriver: false,
-              easing: Easing.inOut(Easing.cubic),
-            }),
-          ]).start();
+          setPanelHeight(defaultPanelHeight);
+          positionBottomAnimation.setValue(defaultPanelHeight);
+          Animated.timing(positionBottomAnimation, {
+            toValue: 0,
+            duration: 350,
+            useNativeDriver: true,
+            easing: Easing.inOut(Easing.cubic),
+          }).start();
         } else {
-          Animated.parallel([
-            Animated.timing(positionBottomAnimation, {
-              toValue: height / 2,
-              duration: 350,
-              useNativeDriver: false,
-              easing: Easing.inOut(Easing.cubic),
-            }),
-            Animated.timing(panelHeight, {
-              toValue: 0,
-              duration: 350,
-              useNativeDriver: false,
-              easing: Easing.inOut(Easing.cubic),
-            }),
-          ]).start();
+          Animated.timing(positionBottomAnimation, {
+            toValue: defaultPanelHeight,
+            duration: 350,
+            useNativeDriver: true,
+            easing: Easing.inOut(Easing.cubic),
+          }).start(() => {
+            setPanelHeight(defaultPanelHeight);
+          });
         }
       },
-      [height, positionBottomAnimation, panelHeight]
+      [defaultPanelHeight, positionBottomAnimation]
     );
 
     useEffect(() => {
-      // Define keyboard show handler
-      const handleKeyboardShow = ({ endCoordinates, duration, easing }) => {
+      const handleKeyboardShow = ({ endCoordinates }: KeyboardEvent) => {
         if (isOpen) {
-          Animated.parallel([
-            Animated.timing(panelHeight, {
-              toValue: (height - endCoordinates.height) / 2,
-              duration,
-              useNativeDriver: false,
-              easing: Easing[easing] || Easing.out(Easing.ease),
-            }),
-            Animated.timing(positionBottomAnimation, {
-              toValue: -endCoordinates.height, // Negative to move up
-              duration,
-              useNativeDriver: false,
-              easing: Easing[easing] || Easing.out(Easing.ease),
-            }),
-          ]).start();
+          setPanelHeight((height - endCoordinates.height) / 2);
+          positionBottomAnimation.setValue(-endCoordinates.height);
         }
       };
 
-      // Define keyboard hide handler
-      const handleKeyboardHide = ({ duration, easing }) => {
+      const handleKeyboardHide = () => {
         if (isOpen) {
-          Animated.parallel([
-            Animated.timing(positionBottomAnimation, {
-              toValue: 0, // Back to original position
-              duration,
-              useNativeDriver: false,
-              easing: Easing[easing] || Easing.out(Easing.ease),
-            }),
-
-            Animated.timing(panelHeight, {
-              toValue: height / 2,
-              duration,
-              useNativeDriver: false,
-              easing: Easing[easing] || Easing.out(Easing.ease),
-            }),
-          ]).start();
+          setPanelHeight(defaultPanelHeight);
+          positionBottomAnimation.setValue(0);
         }
       };
 
-      // Add keyboard event listeners
-      const showSubscription = Keyboard.addListener('keyboardDidShow', handleKeyboardShow);
-      const willShowSubscription = Keyboard.addListener('keyboardWillShow', handleKeyboardShow);
-      const hideSubscription = Keyboard.addListener('keyboardWillHide', handleKeyboardHide);
-      const didHideSubscription = Keyboard.addListener('keyboardDidHide', handleKeyboardHide);
+      const showSubscription = Keyboard.addListener(
+        Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow',
+        handleKeyboardShow
+      );
+      const hideSubscription = Keyboard.addListener(
+        Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide',
+        handleKeyboardHide
+      );
 
       // Clean up subscriptions on unmount
       return () => {
         showSubscription.remove();
-        willShowSubscription.remove();
         hideSubscription.remove();
-        didHideSubscription.remove();
       };
-    }, [height, panelHeight, positionBottomAnimation, isOpen]);
+    }, [defaultPanelHeight, height, positionBottomAnimation, isOpen]);
 
     useImperativeHandle(ref, () => ({
       setAddonsPanelOpen: (open: boolean) => {

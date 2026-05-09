@@ -31,6 +31,7 @@
     "web": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start --web"
   },
   "dependencies": {
+    "@expo/dom-webview": "^56.0.4",
     "@expo/metro-runtime": "~56.0.5",
     "@gorhom/bottom-sheet": "^5.2.8",
     "@react-native-async-storage/async-storage": "2.2.0",
