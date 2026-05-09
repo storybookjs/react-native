@@ -40,7 +40,7 @@
     "@storybook/react-native-theming": "^10.4.0",
     "@storybook/react-native-ui-common": "^10.4.0",
     "polished": "^4.3.1",
-    "react-native-safe-area-context": "^5"
+    "react-native-safe-area-context": "^5.6.2"
   },
   "devDependencies": {
     "@types/react": "~19.2.14",
