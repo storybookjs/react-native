@@ -6,7 +6,7 @@ import { ActionDisplay, EVENT_ID } from 'storybook/actions';
 import { ActionLogger as ActionLoggerComponent } from '../../components/ActionLogger';
 
 interface ActionLoggerProps {
-  active: boolean;
+  active?: boolean;
 }
 
 const safeDeepEqual = (a: any, b: any): boolean => {

@@ -1,6 +1,6 @@
 /** @type {import('jest').Config} */
 const config = {
-  preset: 'jest-expo',
+  preset: '@react-native/jest-preset',
   setupFiles: ['<rootDir>/setup.js'],
   ...(process.env.JEST_CACHE_DIRECTORY && { cacheDirectory: process.env.JEST_CACHE_DIRECTORY }),
 

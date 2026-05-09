@@ -53,7 +53,10 @@ const StoryView = ({
 
   const containerStyle = useMemo(() => {
     const layout = context?.parameters?.layout;
-    const layoutStyle = layout ? layoutStyles[layout] : {};
+    const layoutStyle =
+      typeof layout === 'string' && layout in layoutStyles
+        ? layoutStyles[layout as keyof typeof layoutStyles]
+        : {};
 
     return {
       flex: 1,

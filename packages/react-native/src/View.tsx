@@ -112,14 +112,14 @@ export type Params = {
 };
 
 export class View {
-  _storyIndex: StoryIndex;
+  _storyIndex!: StoryIndex;
   _setStory: (story: StoryContext<ReactRenderer>) => void = () => {};
   _forceRerender: () => void = () => {};
   _ready: boolean = false;
   _preview: PreviewWithSelection<ReactRenderer>;
-  _asyncStorageStoryId: string;
-  _webUrl: string;
-  _storage: Storage;
+  _asyncStorageStoryId: string | null = null;
+  _webUrl?: string;
+  _storage!: Storage;
   _channel: Channel;
   _options: any;
   _idToPrepared: Record<string, PreparedStory<ReactRenderer>> = {};
@@ -294,7 +294,7 @@ export class View {
 
     managerAddons.loadAddons({
       store: () => ({
-        fromId: (id) => {
+        fromId: (id: string) => {
           if (!this._ready) {
             throw new Error('Storybook is not ready yet');
           }
@@ -447,7 +447,11 @@ export class View {
         return (
           <RNView
             style={{
-              ...StyleSheet.absoluteFillObject,
+              ...(
+                StyleSheet as typeof StyleSheet & {
+                  absoluteFillObject: Record<string, unknown>;
+                }
+              ).absoluteFillObject,
               alignItems: 'center',
               justifyContent: 'center',
             }}
@@ -465,7 +469,7 @@ export class View {
         if (CustomUIComponent) {
           return (
             <CustomUIComponent
-              story={story}
+              story={story as Parameters<SBUI>[0]['story']}
               storyHash={storyHash}
               setStory={(newStoryId) =>
                 self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
@@ -487,7 +491,7 @@ export class View {
             storage={storage}
             theme={appliedTheme as Theme}
             storyHash={storyHash}
-            story={story}
+            story={story as Parameters<SBUI>[0]['story']}
             setStory={(newStoryId) =>
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }

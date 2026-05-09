@@ -10,10 +10,10 @@ export {
   STORYBOOK_STORY_ID_PARAM,
 } from './constants';
 
-export interface Features {
+export type Features = {
   /** Enable the built-in on-device backgrounds addon panel. */
   ondeviceBackgrounds?: boolean;
-}
+};
 
 type Addon = string | { name: string; options?: Record<string, any> };
 

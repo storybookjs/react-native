@@ -11,7 +11,7 @@ import { useTheme } from '@storybook/react-native-theming';
 export const PARAM_KEY = 'notes';
 
 interface NotesProps {
-  active: boolean;
+  active?: boolean;
   api: RNAddonApi;
 }
 
@@ -22,7 +22,7 @@ export const Notes = ({ active, api }: NotesProps) => {
   useEffect(() => {
     const selection = api.store().getSelection();
 
-    const handleSetCurrentStory = ({ storyId }) => {
+    const handleSetCurrentStory = ({ storyId }: { storyId: string }) => {
       setStory(api.store().fromId(storyId));
     };
 

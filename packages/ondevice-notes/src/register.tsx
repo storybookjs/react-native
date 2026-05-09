@@ -22,11 +22,13 @@ type ApiStore = {
 
 export type RNAddonApi = API & { store: () => ApiStore };
 
-addons.register('storybook/notes', (api: RNAddonApi) => {
+addons.register('storybook/notes', (api) => {
+  const rnApi = api as RNAddonApi;
+
   addons.add('storybook/notes/panel', {
     type: types.PANEL,
     title: 'Notes',
-    render: ({ active }) => <Notes api={api} active={active} />,
+    render: ({ active }) => <Notes api={rnApi} active={active} />,
     paramKey: PARAM_KEY,
   });
 });

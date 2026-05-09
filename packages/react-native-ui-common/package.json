@@ -29,8 +29,8 @@
   ],
   "scripts": {
     "check:types": "tsc --noEmit",
-    "dev": "tsup --watch",
-    "prepare": "tsup"
+    "dev": "tsdown --watch",
+    "prepare": "tsdown"
   },
   "dependencies": {
     "@nozbe/microfuzz": "^1.0.0",
@@ -43,8 +43,8 @@
   "devDependencies": {
     "@types/react": "~19.2.14",
     "storybook": "^10.3.2",
-    "tsup": "^8.5.0",
-    "typescript": "~5.9.3"
+    "tsdown": "^0.22.0",
+    "typescript": "~6.0.3"
   },
   "peerDependencies": {
     "react": "*",

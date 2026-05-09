@@ -186,7 +186,7 @@ export function createChannelServer({
           client.send(JSON.stringify({ type: 'ping', args: [] }));
         }
       });
-    }, 10000);
+    }, 10000) as { unref?: () => void };
     pingInterval.unref?.();
 
     wss.on('connection', function connection(ws: WebSocket) {

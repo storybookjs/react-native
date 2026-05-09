@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { View, TouchableWithoutFeedback, StyleSheet, Platform, Dimensions } from 'react-native';
 import { styled, useTheme } from '@storybook/react-native-theming';
-import { ColorPicker, fromHsv, HsvColor } from '../components/color-picker';
+import { ColorPicker, fromHsv, HsvColor, toHsv } from '../components/color-picker';
 import { ModalPortal } from '../components/ModalPortal';
 
 export interface ColorProps {
@@ -12,19 +12,21 @@ export interface ColorProps {
   onChange: (value: string) => void;
 }
 
-const TouchableContainer = styled.View(({ theme }) => ({
-  width: 40,
-  height: 40,
+const TouchableContainer = styled.TouchableOpacity(({ theme }) => ({
+  width: 44,
+  height: 44,
   borderWidth: 1,
   borderColor: theme.appBorderColor,
   borderRadius: 6,
   padding: 3,
   backgroundColor: theme.background.content,
+  justifyContent: 'center',
+  alignItems: 'center',
 }));
 
-const Touchable = styled.TouchableOpacity<{ color: string }>(({ color }) => ({
-  width: '100%',
-  height: '100%',
+const Touchable = styled.View<{ color: string }>(({ color }) => ({
+  width: 38,
+  height: 38,
   borderRadius: 4,
   backgroundColor: color,
 }));
@@ -35,8 +37,9 @@ const ButtonTouchable = styled.TouchableOpacity<{ primary?: boolean }>(({ theme,
     borderRadius: 6,
     borderWidth: 1,
     borderColor: primary ? theme.color.secondary : theme.button.border,
-    paddingVertical: 6,
-    paddingHorizontal: 20,
+    minHeight: 40,
+    paddingVertical: 10,
+    paddingHorizontal: 28,
     justifyContent: 'center',
     alignItems: 'center',
   };
@@ -44,18 +47,22 @@ const ButtonTouchable = styled.TouchableOpacity<{ primary?: boolean }>(({ theme,
 
 const ButtonText = styled.Text<{ primary?: boolean }>(({ theme, primary }) => {
   return {
-    color: primary ? theme.color.inverseText : theme.color.defaultText,
+    color: primary ? theme.color.lightest : theme.input.color,
     fontSize: theme.typography.size.s2,
     fontWeight: theme.typography.weight.bold,
   };
 });
 
+const controlHitSlop = { top: 16, right: 16, bottom: 16, left: 16 };
+const buttonHitSlop = { top: 10, right: 10, bottom: 10, left: 10 };
+
 const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
-  const [currentColor, setCurrentColor] = useState<HsvColor | null>(null);
+  const [currentColor, setCurrentColor] = useState<HsvColor>(() => toHsv(arg.value));
   const theme = useTheme();
 
   const openColorPicker = () => {
+    setCurrentColor(toHsv(arg.value));
     setDisplayColorPicker(true);
   };
 
@@ -63,7 +70,7 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
     setDisplayColorPicker(false);
   };
 
-  const onChangeColor = (color) => {
+  const onChangeColor = (color: HsvColor) => {
     onChange(fromHsv(color));
   };
 
@@ -72,7 +79,10 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
       <input
         type="color"
         value={arg.value}
-        onChange={(event) => onChange(event.target.value)}
+        onChange={(event) => {
+          const target = event.currentTarget as EventTarget & { value: string };
+          onChange(target.value);
+        }}
         style={{
           width: 40,
           height: 40,
@@ -88,14 +98,15 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
 
   return (
     <View>
-      <TouchableContainer>
-        <Touchable color={arg.value} onPress={openColorPicker} />
+      <TouchableContainer onPress={openColorPicker} hitSlop={controlHitSlop} activeOpacity={0.7}>
+        <Touchable color={arg.value} />
       </TouchableContainer>
       <ModalPortal
         supportedOrientations={['portrait', 'landscape']}
         transparent
         visible={displayColorPicker}
         onRequestClose={closeColorPicker}
+        animationType="fade"
       >
         <TouchableWithoutFeedback onPress={closeColorPicker}>
           <View style={styles.modalOverlay} />
@@ -103,19 +114,19 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
         <View style={styles.centerContainer}>
           <InnerContainer pointerEvents="box-none">
             <ColorPicker
-              onColorSelected={onChangeColor}
               onColorChange={(color: HsvColor) => setCurrentColor(color)}
               defaultColor={arg.value}
               oldColor={arg.value}
               style={styles.picker}
             />
             <View style={styles.actionContainer}>
-              <ButtonTouchable onPress={closeColorPicker}>
+              <ButtonTouchable onPress={closeColorPicker} hitSlop={buttonHitSlop}>
                 <ButtonText>Cancel</ButtonText>
               </ButtonTouchable>
               <View style={{ width: 12 }} />
               <ButtonTouchable
                 primary
+                hitSlop={buttonHitSlop}
                 onPress={() => {
                   onChangeColor(currentColor);
                   closeColorPicker();

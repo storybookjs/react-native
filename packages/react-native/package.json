@@ -45,8 +45,8 @@
   ],
   "scripts": {
     "check:types": "tsc --noEmit",
-    "dev": "npx --yes tsx buildscripts/gendtsdev.ts && tsup --watch",
-    "prepare": "rm -rf dist/ && tsup",
+    "dev": "node buildscripts/gendtsdev.ts && tsdown --watch",
+    "prepare": "tsdown",
     "test": "jest",
     "test:ci": "jest"
   },
@@ -63,7 +63,7 @@
     "deepmerge": "^4.3.1",
     "esbuild-register": "^3.6.0",
     "glob": "^13.0.0",
-    "react-native-safe-area-context": "^5.6.2",
+    "react-native-safe-area-context": "^5.7.0",
     "react-native-url-polyfill": "^3.0.0",
     "setimmediate": "^1.0.5",
     "tmcp": "^1.19.3",
@@ -71,19 +71,21 @@
     "ws": "^8.20.0"
   },
   "devDependencies": {
+    "@react-native/jest-preset": "0.85.3",
     "@types/jest": "^29.5.13",
     "@types/react": "~19.2.14",
     "babel-jest": "^29.7.0",
     "babel-preset-expo": "^55.0.13",
     "jest": "^29.7.0",
-    "jest-expo": "~55.0.17",
+    "jest-expo": "~56.0.0",
     "jotai": "^2.19.0",
-    "react": "19.2.0",
-    "react-native": "0.83.6",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
     "storybook": "^10.3.2",
+    "sucrase": "^3.35.1",
     "test-renderer": "^0.15.0",
-    "tsup": "^8.5.0",
-    "typescript": "~5.9.3"
+    "tsdown": "^0.22.0",
+    "typescript": "~6.0.3"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",

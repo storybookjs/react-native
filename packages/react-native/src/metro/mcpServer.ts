@@ -30,7 +30,7 @@ async function incomingMessageToWebRequest(req: IncomingMessage): Promise<Reques
 
   const bodyBuffer = await buffer(req);
 
-  return new Request(url, {
+  return new Request(url as unknown as string, {
     method: req.method,
     headers: toHeaderEntries(req.headers),
     body: bodyBuffer.length > 0 ? new Uint8Array(bodyBuffer) : undefined,
