@@ -48,6 +48,7 @@
     "@storybook/react-native-web-vite": "^10.3.2",
     "babel-plugin-react-compiler": "^1.0.0",
     "expo": "56.0.0-preview.7",
+    "expo-sqlite": "~56.0.3",
     "expo-updates": "~56.0.6",
     "react": "19.2.3",
     "react-compiler-runtime": "^1.0.0",
