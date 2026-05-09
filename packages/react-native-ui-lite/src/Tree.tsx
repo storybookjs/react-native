@@ -206,6 +206,11 @@ const getEstimatedItemSize = (
   return item?.isRoot ? ROOT_ITEM_HEIGHT : ITEM_HEIGHT;
 };
 
+type PendingScrollTarget = {
+  id: string;
+  animated: boolean;
+};
+
 export const Tree = React.memo<{
   isBrowsing: boolean;
   isMain: boolean;
@@ -217,7 +222,7 @@ export const Tree = React.memo<{
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
   const { registerCallback } = useSelectedNode();
-  const [idToScrolllOnMount, setIdToScrolllOnMount] = useState<string | null>(null);
+  const [pendingScrollTarget, setPendingScrollTarget] = useState<PendingScrollTarget | null>(null);
 
   const insets = useSafeAreaInsets();
   const listRef = useRef<LegendListRef | null>(null);
@@ -444,29 +449,29 @@ export const Tree = React.memo<{
 
       setExpanded({ ids: [...ancestorIds, targetId], value: true });
 
-      setIdToScrolllOnMount(targetId);
+      setPendingScrollTarget({ id: targetId, animated: animated ?? false });
     });
   }, [collapsedData, registerCallback, selectedStoryId, setExpanded]);
 
   // a workaround for the fact that we need to expand and scroll to an item that is not in the tree yet
   useEffect(() => {
-    if (idToScrolllOnMount) {
+    if (pendingScrollTarget) {
       const index = treeData.findIndex((item) => {
-        return item.itemId === idToScrolllOnMount;
+        return item.itemId === pendingScrollTarget.id;
       });
 
       if (index >= 0) {
         listRef.current?.scrollToIndex({
           index,
-          animated: false,
+          animated: pendingScrollTarget.animated,
           viewPosition: 0.5,
           viewOffset: 100,
         });
 
-        setIdToScrolllOnMount(null);
+        setPendingScrollTarget(null);
       }
     }
-  }, [idToScrolllOnMount, treeData]);
+  }, [pendingScrollTarget, treeData]);
 
   return (
     <View style={flexStyle}>

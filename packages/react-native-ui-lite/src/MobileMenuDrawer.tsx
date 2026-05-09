@@ -1,4 +1,5 @@
 import { Portal } from '@gorhom/portal';
+import { Button } from '@storybook/react-native-ui-common';
 import { useTheme } from '@storybook/react-native-theming';
 import {
   forwardRef,
@@ -41,6 +42,7 @@ const portalContainerStyle: ViewStyle = {
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
   onVisibilityChange?: (visible: boolean) => void;
+  showScrollToSelected?: boolean;
 }
 
 export interface MobileMenuDrawerRef {
@@ -140,7 +142,7 @@ export const useAnimatedModalHeight = () => {
 
 export const MobileMenuDrawer = memo(
   forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(
-    ({ children, onVisibilityChange }, ref) => {
+    ({ children, onVisibilityChange, showScrollToSelected = true }, ref) => {
       const [isVisible, setIsVisible] = useState(false);
       const { scrollCallback } = useSelectedNode();
       const theme = useTheme();
@@ -170,13 +172,12 @@ export const MobileMenuDrawer = memo(
           duration: 300,
           easing: Easing.out(Easing.quad),
           useNativeDriver: true,
-        }).start(({ finished }) => {
-          if (finished) {
-            // go to the selected story and don't animate
-            scrollCallback({ animated: false, id: undefined });
-          }
-        });
-      }, [dragY, height, onVisibilityChange, scrollCallback, slideAnim]);
+        }).start();
+      }, [dragY, height, onVisibilityChange, slideAnim]);
+
+      const scrollToSelectedStory = useCallback(() => {
+        scrollCallback({ animated: true, id: undefined });
+      }, [scrollCallback]);
 
       const closeDrawer = useCallback(() => {
         Keyboard.dismiss();
@@ -323,6 +324,22 @@ export const MobileMenuDrawer = memo(
         [sheetExtensionHeight, theme.background.content]
       );
 
+      const scrollToSelectedButtonWrapperStyle = useMemo(
+        () =>
+          ({
+            position: 'absolute',
+            right: 16,
+            bottom: keyboardInset + 16,
+            zIndex: 1,
+            borderRadius: theme.input.borderRadius,
+            borderWidth: 1,
+            borderColor: theme.background.content,
+            boxShadow: `0 6px 16px 0 ${theme.color.border}`,
+            elevation: 5,
+          }) satisfies ViewStyle,
+        [keyboardInset, theme.background.content, theme.color.border, theme.input.borderRadius]
+      );
+
       return (
         <Portal hostName="storybook-lite-ui-root">
           <Animated.View
@@ -355,6 +372,17 @@ export const MobileMenuDrawer = memo(
                 </View>
 
                 <View style={childrenWrapperStyle}>{children}</View>
+                {showScrollToSelected ? (
+                  <View style={scrollToSelectedButtonWrapperStyle}>
+                    <Button
+                      text="Scroll to selected"
+                      variant="solid"
+                      size="medium"
+                      onPress={scrollToSelectedStory}
+                      accessibilityLabel="Scroll to selected story"
+                    />
+                  </View>
+                ) : null}
               </Animated.View>
             </Animated.View>
           </Animated.View>

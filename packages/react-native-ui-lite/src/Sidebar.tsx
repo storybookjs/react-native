@@ -95,6 +95,7 @@ export interface SidebarProps extends API_LoadedRefData {
   refId?: string;
   menuHighlighted?: boolean;
   setSelection: (selection: Selection) => void;
+  onSearchActiveChange?: (active: boolean) => void;
 }
 
 export const Sidebar = React.memo(function Sidebar({
@@ -106,6 +107,7 @@ export const Sidebar = React.memo(function Sidebar({
   previewInitialized,
   refs = {},
   setSelection,
+  onSearchActiveChange,
 }: SidebarProps) {
   const selected: Selection = useMemo(() => storyId && { storyId, refId }, [storyId, refId]);
   const dataset = useCombination(index, indexError, previewInitialized, status, refs);
@@ -123,7 +125,12 @@ export const Sidebar = React.memo(function Sidebar({
             isLoading={isLoading}
             onMenuClick={onMenuClick}
           /> */}
-        <Search dataset={dataset} setSelection={setSelection} {...lastViewedProps}>
+        <Search
+          dataset={dataset}
+          setSelection={setSelection}
+          onSearchActiveChange={onSearchActiveChange}
+          {...lastViewedProps}
+        >
           {({ query, results, isBrowsing, closeMenu, getItemProps, highlightedIndex }) => (
             <Swap condition={isBrowsing}>
               <Explorer
