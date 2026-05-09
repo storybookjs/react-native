@@ -233,6 +233,7 @@ export const Layout = ({
   const mobileMenuDrawerRef = useRef<MobileMenuDrawerRef>(null);
   const addonPanelRef = useRef<MobileAddonsPanelRef>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [mobileDrawerScrollPaddingBottom, setMobileDrawerScrollPaddingBottom] = useState(0);
 
   const setSelection = useCallback(({ storyId: newStoryId }: { storyId: string }) => {
     const channel = addons.getChannel();
@@ -375,6 +376,7 @@ export const Layout = ({
         <MobileMenuDrawer
           ref={mobileMenuDrawerRef}
           onVisibilityChange={setIsDrawerOpen}
+          onKeyboardPaddingChange={setMobileDrawerScrollPaddingBottom}
           showScrollToSelected={!isMobileSearchActive}
         >
           <View style={mobileMenuDrawerContentStyle}>
@@ -391,6 +393,7 @@ export const Layout = ({
             storyId={story?.id}
             refId={DEFAULT_REF_ID}
             onSearchActiveChange={setIsMobileSearchActive}
+            scrollPaddingBottom={mobileDrawerScrollPaddingBottom}
           />
         </MobileMenuDrawer>
       )}

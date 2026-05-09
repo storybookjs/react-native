@@ -11,6 +11,7 @@ export interface RefProps {
   isBrowsing: boolean;
   selectedStoryId: string | null;
   setSelection: (selection: { refId: string; storyId: string }) => void;
+  scrollPaddingBottom?: number;
 }
 
 const Wrapper = styled.View<{ isMain: boolean }>(() => ({
@@ -32,6 +33,7 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
       indexError,
       previewInitialized,
       setSelection,
+      scrollPaddingBottom = 0,
     } = props;
     const length = useMemo(() => (index ? Object.keys(index).length : 0), [index]);
 
@@ -72,6 +74,7 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
                 docsMode={false}
                 selectedStoryId={selectedStoryId}
                 onSelectStoryId={onSelectStoryId}
+                scrollPaddingBottom={scrollPaddingBottom}
               />
             )}
           </Wrapper>

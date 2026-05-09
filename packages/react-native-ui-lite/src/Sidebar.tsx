@@ -96,6 +96,7 @@ export interface SidebarProps extends API_LoadedRefData {
   menuHighlighted?: boolean;
   setSelection: (selection: Selection) => void;
   onSearchActiveChange?: (active: boolean) => void;
+  scrollPaddingBottom?: number;
 }
 
 export const Sidebar = React.memo(function Sidebar({
@@ -108,6 +109,7 @@ export const Sidebar = React.memo(function Sidebar({
   refs = {},
   setSelection,
   onSearchActiveChange,
+  scrollPaddingBottom = 0,
 }: SidebarProps) {
   const selected: Selection = useMemo(() => storyId && { storyId, refId }, [storyId, refId]);
   const dataset = useCombination(index, indexError, previewInitialized, status, refs);
@@ -139,6 +141,7 @@ export const Sidebar = React.memo(function Sidebar({
                 isLoading={false}
                 isBrowsing={isBrowsing} //todo check me
                 setSelection={setSelection}
+                scrollPaddingBottom={scrollPaddingBottom}
               />
 
               <SearchResults
@@ -149,6 +152,7 @@ export const Sidebar = React.memo(function Sidebar({
                 highlightedIndex={highlightedIndex}
                 isLoading={false}
                 clearLastViewed={lastViewedProps.clearLastViewed}
+                scrollPaddingBottom={scrollPaddingBottom}
               />
             </Swap>
           )}

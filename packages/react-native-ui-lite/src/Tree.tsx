@@ -220,7 +220,17 @@ export const Tree = React.memo<{
   docsMode: boolean;
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
-}>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
+  scrollPaddingBottom?: number;
+}>(function Tree({
+  isMain,
+  refId,
+  data,
+  status,
+  docsMode,
+  selectedStoryId,
+  onSelectStoryId,
+  scrollPaddingBottom = 0,
+}) {
   const { registerCallback } = useSelectedNode();
   const [pendingScrollTarget, setPendingScrollTarget] = useState<PendingScrollTarget | null>(null);
 
@@ -434,10 +444,10 @@ export const Tree = React.memo<{
   const contentContainerStyle = useMemo(
     () => ({
       marginTop: isMain && orphanIds.length > 0 ? 20 : 0,
-      paddingBottom: insets.bottom + 20,
+      paddingBottom: insets.bottom + 20 + scrollPaddingBottom,
       paddingLeft: 6,
     }),
-    [isMain, orphanIds.length, insets.bottom]
+    [isMain, orphanIds.length, insets.bottom, scrollPaddingBottom]
   );
 
   // so we can call the scroll to function in the search component

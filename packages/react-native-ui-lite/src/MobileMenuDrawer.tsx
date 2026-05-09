@@ -39,9 +39,13 @@ const portalContainerStyle: ViewStyle = {
   zIndex: 1000,
 };
 
+const keyboardClearance = 12;
+const scrollToSelectedBottomOffset = 24;
+
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
   onVisibilityChange?: (visible: boolean) => void;
+  onKeyboardPaddingChange?: (paddingBottom: number) => void;
   showScrollToSelected?: boolean;
 }
 
@@ -56,12 +60,14 @@ export const useAnimatedModalHeight = () => {
   const [sheetHeight, setSheetHeight] = useState(modalHeight);
   const [keyboardInset, setKeyboardInset] = useState(0);
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const keyboardOffset = useAnimatedValue(0);
 
   useEffect(() => {
     setSheetHeight(modalHeight);
     setKeyboardInset(0);
     setIsKeyboardVisible(false);
-  }, [modalHeight]);
+    keyboardOffset.setValue(0);
+  }, [keyboardOffset, modalHeight]);
 
   useEffect(() => {
     const expand = (keyboardHeight: number = 0) => {
@@ -69,14 +75,16 @@ export const useAnimatedModalHeight = () => {
       const keyboardAvoidanceOffset = Math.min(keyboardHeight, maxKeyboardOffset);
 
       setIsKeyboardVisible(true);
-      setSheetHeight(modalHeight + keyboardAvoidanceOffset);
+      setSheetHeight(modalHeight);
       setKeyboardInset(Math.max(keyboardHeight - keyboardAvoidanceOffset, 0));
+      keyboardOffset.setValue(-keyboardAvoidanceOffset);
     };
 
     const collapse = () => {
       setSheetHeight(modalHeight);
       setKeyboardInset(0);
       setIsKeyboardVisible(false);
+      keyboardOffset.setValue(0);
     };
 
     const handleKeyboardWillShow: KeyboardEventListener = (e) => {
@@ -113,10 +121,11 @@ export const useAnimatedModalHeight = () => {
     return () => {
       subscriptions.forEach((subscription) => subscription.remove());
     };
-  }, [maxModalHeight, modalHeight]);
+  }, [keyboardOffset, maxModalHeight, modalHeight]);
 
   return {
     height: sheetHeight,
+    keyboardOffset,
     keyboardInset,
     isKeyboardVisible,
   };
@@ -124,12 +133,20 @@ export const useAnimatedModalHeight = () => {
 
 export const MobileMenuDrawer = memo(
   forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(
-    ({ children, onVisibilityChange, showScrollToSelected = true }, ref) => {
+    (
+      { children, onVisibilityChange, onKeyboardPaddingChange, showScrollToSelected = true },
+      ref
+    ) => {
       const [isVisible, setIsVisible] = useState(false);
       const { scrollCallback } = useSelectedNode();
       const theme = useTheme();
       const { height } = useWindowDimensions();
-      const { height: sheetHeight, keyboardInset, isKeyboardVisible } = useAnimatedModalHeight();
+      const {
+        height: sheetHeight,
+        keyboardOffset,
+        keyboardInset,
+        isKeyboardVisible,
+      } = useAnimatedModalHeight();
 
       // Slide animation for drawer entrance/exit
       const slideAnim = useAnimatedValue(height);
@@ -169,7 +186,8 @@ export const MobileMenuDrawer = memo(
             setIsVisible(false);
           }
         });
-      }, [height, onVisibilityChange, slideAnim]);
+        keyboardOffset.setValue(0);
+      }, [height, keyboardOffset, onVisibilityChange, slideAnim]);
 
       // Create the pan responder for handling drag gestures
       const panResponder = useMemo(
@@ -218,7 +236,14 @@ export const MobileMenuDrawer = memo(
         [closeDrawer, dragY, isKeyboardVisible]
       );
 
-      const sheetTranslateY = useMemo(() => Animated.add(slideAnim, dragY), [dragY, slideAnim]);
+      const sheetTranslateY = useMemo(
+        () => Animated.add(Animated.add(slideAnim, keyboardOffset), dragY),
+        [dragY, keyboardOffset, slideAnim]
+      );
+
+      useEffect(() => {
+        onKeyboardPaddingChange?.(keyboardInset + (isKeyboardVisible ? keyboardClearance : 0));
+      }, [isKeyboardVisible, keyboardInset, onKeyboardPaddingChange]);
 
       useImperativeHandle(ref, () => ({
         setMobileMenuOpen: (open: boolean) => {
@@ -271,9 +296,8 @@ export const MobileMenuDrawer = memo(
         () => ({
           flex: 1,
           backgroundColor: theme.background.content,
-          paddingBottom: keyboardInset,
         }),
-        [keyboardInset, theme.background.content]
+        [theme.background.content]
       );
 
       const scrollToSelectedButtonWrapperStyle = useMemo(
@@ -281,13 +305,16 @@ export const MobileMenuDrawer = memo(
           ({
             position: 'absolute',
             right: 16,
-            bottom: keyboardInset + 16,
+            bottom:
+              keyboardInset +
+              scrollToSelectedBottomOffset +
+              (isKeyboardVisible ? keyboardClearance : 0),
             zIndex: 1,
             borderRadius: theme.input.borderRadius,
             boxShadow: `0 2px 5px 0 ${theme.color.border}`,
             elevation: 1,
           }) satisfies ViewStyle,
-        [keyboardInset, theme.color.border, theme.input.borderRadius]
+        [isKeyboardVisible, keyboardInset, theme.color.border, theme.input.borderRadius]
       );
 
       return (
@@ -321,7 +348,7 @@ export const MobileMenuDrawer = memo(
                 </View>
 
                 <View style={childrenWrapperStyle}>{children}</View>
-                {showScrollToSelected ? (
+                {showScrollToSelected && !isKeyboardVisible ? (
                   <View style={scrollToSelectedButtonWrapperStyle}>
                     <Button
                       text="Scroll to selected"

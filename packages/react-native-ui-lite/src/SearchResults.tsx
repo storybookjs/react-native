@@ -209,6 +209,7 @@ export const SearchResults: FC<{
   isLoading?: boolean;
   enableShortcuts?: boolean;
   clearLastViewed?: () => void;
+  scrollPaddingBottom?: number;
 }> = React.memo(function SearchResults({
   query,
   results,
@@ -216,6 +217,7 @@ export const SearchResults: FC<{
   getItemProps,
   highlightedIndex,
   clearLastViewed,
+  scrollPaddingBottom = 0,
 }) {
   const insets = useSafeAreaInsets();
 
@@ -228,9 +230,9 @@ export const SearchResults: FC<{
     () => ({
       paddingHorizontal: 10,
       paddingTop: 8,
-      paddingBottom: insets.bottom + 20,
+      paddingBottom: insets.bottom + 20 + scrollPaddingBottom,
     }),
-    [insets.bottom]
+    [insets.bottom, scrollPaddingBottom]
   );
 
   const listData = useMemo<ListItemType[]>(() => {

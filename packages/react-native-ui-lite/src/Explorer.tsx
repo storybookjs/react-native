@@ -12,6 +12,7 @@ export interface ExplorerProps {
   dataset: CombinedDataset;
   selected: Selection;
   setSelection: (selection: Selection) => void;
+  scrollPaddingBottom?: number;
 }
 
 export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
@@ -20,6 +21,7 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
   dataset,
   selected,
   setSelection,
+  scrollPaddingBottom = 0,
 }) {
   const containerRef = useRef<View>(null);
 
@@ -38,6 +40,7 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
           isBrowsing={isBrowsing}
           selectedStoryId={selected?.refId === ref.id ? selected.storyId : null}
           setSelection={setSelection}
+          scrollPaddingBottom={scrollPaddingBottom}
         />
       ))}
     </View>
