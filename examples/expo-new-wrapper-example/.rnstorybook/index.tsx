@@ -4,6 +4,7 @@
 // and ../README.md for the full picture.
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { registerRootComponent } from 'expo';
+import { LiteUI } from '@storybook/react-native-ui-lite';
 
 import { view } from './storybook.requires';
 
@@ -14,6 +15,7 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
   enableWebsockets: true,
+  CustomUIComponent: LiteUI,
 });
 
 registerRootComponent(StorybookUIRoot);
