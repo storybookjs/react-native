@@ -53,6 +53,13 @@ interface ChannelServerOptions {
    * TLS credentials used when `secured` is true.
    */
   ssl?: ChannelServerSecureOptions;
+
+  /**
+   * Whether the channel server should keep the Node.js process alive.
+   * When false, the server is unref'd.
+   * Defaults to false.
+   */
+  keepNodeProcessAlive?: boolean;
 }
 
 /**
@@ -72,6 +79,7 @@ interface ChannelServerOptions {
  * @param options.websockets - Whether to enable WebSocket server support.
  * @param options.secured - Whether to use HTTPS/WSS for the channel server.
  * @param options.ssl - TLS credentials used when `secured` is true.
+ * @param options.keepAlive - Whether the channel server should keep the Node.js process alive.
  * @returns The created WebSocketServer instance, or null when websockets are disabled.
  */
 export function createChannelServer({
@@ -82,6 +90,7 @@ export function createChannelServer({
   websockets = true,
   secured = false,
   ssl,
+  keepNodeProcessAlive = false,
 }: ChannelServerOptions): WebSocketServer | null {
   if (secured && (!ssl?.key || !ssl?.cert)) {
     throw new Error('[Storybook] Secure channel server requires both `ssl.key` and `ssl.cert`.');
@@ -187,6 +196,7 @@ export function createChannelServer({
         }
       });
     }, 10000) as { unref?: () => void };
+    // node timeers have unref
     pingInterval.unref?.();
 
     wss.on('connection', function connection(ws: WebSocket) {
@@ -232,6 +242,13 @@ export function createChannelServer({
     const protocol = wss ? (secured ? 'WSS' : 'WebSocket') : secured ? 'HTTPS' : 'HTTP';
     console.log(`${protocol} server listening on ${host ?? 'localhost'}:${port}`);
   });
+
+  // by default keepNodeProcessAlive is false to make sure we don't cause bundling to hang
+  if (!keepNodeProcessAlive) {
+    httpServer.unref();
+  }
+
+  process.once('beforeExit', () => httpServer.close());
 
   // Pre-initialize MCP if enabled (non-blocking)
   mcpServer?.preInit();
