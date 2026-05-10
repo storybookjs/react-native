@@ -50,6 +50,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Update lockfile (canary)
+        if: inputs.release_type == 'canary'
+        run: pnpm install --no-frozen-lockfile
+
       - name: Publish (canary)
         if: inputs.release_type == 'canary'
         run: pnpm changeset publish --tag canary
