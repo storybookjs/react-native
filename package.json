@@ -49,16 +49,16 @@
     "@prettier/plugin-oxc": "^0.1.3",
     "cross-env": "^10.1.0",
     "eslint": "^9.39.4",
-    "eslint-config-expo": "^55.0.0",
+    "eslint-config-expo": "^56.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "7.0.1",
     "prettier": "^3.8.1",
     "sherif": "^1.11.0",
-    "typescript": "~5.9.3"
+    "typescript": "~6.0.3"
   },
-  "packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017",
+  "packageManager": "pnpm@11.0.9+sha512.34ce82e6780233cf9cad8685029a8f81d2e06196c5a9bad98879f7424940c6817c4e4524fb7d38b8553ceed48b9758b8ebaf1abd3600c232c4c8cf7366086f38",
   "engines": {
-    "node": ">=22.18.0"
+    "node": ">=26.0.0"
   },
   "pnpm": {
     "overrides": {

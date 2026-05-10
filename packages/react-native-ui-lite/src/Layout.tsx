@@ -119,6 +119,7 @@ export const Layout = ({
     'desktopPanelState',
     true
   );
+  const [isMobileSearchActive, setIsMobileSearchActive] = useState(false);
 
   const [sidebarWidth, setSidebarWidth] = useStoreNumberState('desktopSidebarWidth', 240);
   const [addonsPanelHeight, setAddonsPanelHeight] = useStoreNumberState(
@@ -371,7 +372,11 @@ export const Layout = ({
       ) : null}
 
       {isDesktop ? null : (
-        <MobileMenuDrawer ref={mobileMenuDrawerRef} onVisibilityChange={setIsDrawerOpen}>
+        <MobileMenuDrawer
+          ref={mobileMenuDrawerRef}
+          onVisibilityChange={setIsDrawerOpen}
+          showScrollToSelected={!isMobileSearchActive}
+        >
           <View style={mobileMenuDrawerContentStyle}>
             <StorybookLogo theme={theme} />
           </View>
@@ -385,6 +390,7 @@ export const Layout = ({
             index={storyHash}
             storyId={story?.id}
             refId={DEFAULT_REF_ID}
+            onSearchActiveChange={setIsMobileSearchActive}
           />
         </MobileMenuDrawer>
       )}

@@ -75,7 +75,8 @@ const DateType = ({ onChange, arg: { name, value } }: DateProps) => {
           type="datetime-local"
           defaultValue={webDateString}
           onChange={(e) => {
-            const newDate = new Date(e.target.value);
+            const target = e.currentTarget as EventTarget & { value: string };
+            const newDate = new Date(target.value);
             onChange(newDate);
           }}
           // @ts-ignore

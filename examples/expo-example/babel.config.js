@@ -5,7 +5,13 @@ module.exports = function (api) {
   return {
     presets: [['babel-preset-expo']],
     plugins: [
-      ['babel-plugin-react-docgen-typescript', { exclude: 'node_modules' }],
+      [
+        'babel-plugin-react-docgen-typescript',
+        {
+          include: 'examples/expo-example/.*\\.tsx$',
+          exclude: 'node_modules',
+        },
+      ],
       'react-native-worklets/plugin',
     ],
   };

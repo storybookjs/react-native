@@ -17,7 +17,7 @@ export const get = memoize(1000)((id: string, dataset: Dataset) => dataset[id]);
 
 export const getParent = memoize(1000)((id: string, dataset: Dataset) => {
   const item = get(id, dataset);
-  return item && item.type !== 'root' ? get(item.parent, dataset) : undefined;
+  return item && item.type !== 'root' ? get(item.parent as string, dataset) : undefined;
 });
 
 export const getParents = memoize(1000)((id: string, dataset: Dataset): Item[] => {
@@ -25,8 +25,8 @@ export const getParents = memoize(1000)((id: string, dataset: Dataset): Item[] =
   return parent ? [parent, ...getParents(parent.id, dataset)] : [];
 });
 
-export const getAncestorIds = memoize(1000)((data: IndexHash, id: string): string[] =>
-  getParents(id, data).map((item) => item.id)
+export const getAncestorIds = memoize(1000)((data: IndexHash, id: string | null): string[] =>
+  getParents(id as string, data).map((item) => item.id)
 );
 
 export const getDescendantIds = memoize(1000)((
@@ -34,9 +34,9 @@ export const getDescendantIds = memoize(1000)((
   id: string,
   skipLeafs: boolean
 ): string[] => {
-  const entry = data[id];
+  const entry = data[id]!;
   const children = entry.type === 'story' || entry.type === 'docs' ? [] : entry.children;
-  return children.reduce((acc, childId) => {
+  return children.reduce<string[]>((acc, childId) => {
     const child = data[childId];
     if (!child || (skipLeafs && (child.type === 'story' || child.type === 'docs'))) return acc;
     acc.push(childId, ...getDescendantIds(data, childId, skipLeafs));
@@ -45,7 +45,7 @@ export const getDescendantIds = memoize(1000)((
 });
 
 export function getPath(item: Item, ref: RefType): string[] {
-  const parent = item.type !== 'root' && item.parent ? ref.index[item.parent] : null;
+  const parent = item.type !== 'root' && item.parent ? ref.index![item.parent] : null;
   if (parent) return [...getPath(parent, ref), parent.name];
   return ref.id === DEFAULT_REF_ID ? [] : [ref.title || ref.id];
 }
@@ -81,7 +81,12 @@ export const getStateType = (
   }
 };
 
-export const isAncestor = (element?: Element, maybeAncestor?: Element): boolean => {
+type ElementLike = { parentElement?: ElementLike | null };
+
+export const isAncestor = (
+  element?: ElementLike | null,
+  maybeAncestor?: ElementLike | null
+): boolean => {
   if (!element || !maybeAncestor) return false;
   if (element === maybeAncestor) return true;
   return isAncestor(element.parentElement, maybeAncestor);

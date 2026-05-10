@@ -2,8 +2,8 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext } from 'react';
 
 export interface Storage {
-  getItem: (key: string) => Promise<string | null>;
-  setItem: (key: string, value: string) => Promise<void>;
+  getItem: (key: string) => Promise<string | null> | string | null;
+  setItem: (key: string, value: string) => Promise<void> | void;
 }
 
 const StorageContext = createContext<Storage>({

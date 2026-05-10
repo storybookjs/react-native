@@ -28,9 +28,11 @@ const initializeExpanded = ({
   initialExpanded?: ExpandedState;
   rootIds: string[];
 }) => {
-  const highlightedAncestors = [];
+  const highlightedAncestors: string[] = [];
+  const expandedState = initialExpanded as ExpandedState;
+
   return [...rootIds, ...highlightedAncestors].reduce<ExpandedState>(
-    (acc, id) => Object.assign(acc, { [id]: id in initialExpanded ? initialExpanded[id] : true }),
+    (acc, id) => Object.assign(acc, { [id]: id in expandedState ? expandedState[id] : true }),
     {}
   );
 };

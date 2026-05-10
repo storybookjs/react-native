@@ -1,4 +1,5 @@
 import { Portal } from '@gorhom/portal';
+import { Button } from '@storybook/react-native-ui-common';
 import { useTheme } from '@storybook/react-native-theming';
 import {
   forwardRef,
@@ -41,6 +42,7 @@ const portalContainerStyle: ViewStyle = {
 interface MobileMenuDrawerProps {
   children: ReactNode | ReactNode[];
   onVisibilityChange?: (visible: boolean) => void;
+  showScrollToSelected?: boolean;
 }
 
 export interface MobileMenuDrawerRef {
@@ -49,43 +51,49 @@ export interface MobileMenuDrawerRef {
 
 export const useAnimatedModalHeight = () => {
   const { height } = useWindowDimensions();
-  const animatedHeight = useAnimatedValue(0.65 * height);
+  const modalHeight = 0.65 * height;
+  const maxModalHeight = 0.85 * height;
+  const [sheetHeight, setSheetHeight] = useState(modalHeight);
+  const [keyboardInset, setKeyboardInset] = useState(0);
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
 
   useEffect(() => {
-    const modalHeight = 0.65 * height;
-    const maxModalHeight = 0.85 * height;
+    setSheetHeight(modalHeight);
+    setKeyboardInset(0);
+    setIsKeyboardVisible(false);
+  }, [modalHeight]);
 
-    const expand = (duration: number = 250) =>
-      Animated.timing(animatedHeight, {
-        toValue: maxModalHeight,
-        duration,
-        easing: Easing.out(Easing.quad),
-        useNativeDriver: false,
-      }).start();
+  useEffect(() => {
+    const expand = (keyboardHeight: number = 0) => {
+      const maxKeyboardOffset = maxModalHeight - modalHeight;
+      const keyboardAvoidanceOffset = Math.min(keyboardHeight, maxKeyboardOffset);
 
-    const collapse = (duration: number = 250) =>
-      Animated.timing(animatedHeight, {
-        toValue: modalHeight,
-        duration,
-        easing: Easing.out(Easing.quad),
-        useNativeDriver: false,
-      }).start();
+      setIsKeyboardVisible(true);
+      setSheetHeight(modalHeight + keyboardAvoidanceOffset);
+      setKeyboardInset(Math.max(keyboardHeight - keyboardAvoidanceOffset, 0));
+    };
+
+    const collapse = () => {
+      setSheetHeight(modalHeight);
+      setKeyboardInset(0);
+      setIsKeyboardVisible(false);
+    };
 
     const handleKeyboardWillShow: KeyboardEventListener = (e) => {
       if (Platform.OS === 'ios') {
-        expand(e.duration);
+        expand(e.endCoordinates.height);
       }
     };
 
     const handleKeyboardDidShow: KeyboardEventListener = (e) => {
       if (Platform.OS === 'android') {
-        expand();
+        expand(e.endCoordinates.height);
       }
     };
 
     const handleKeyboardWillHide: KeyboardEventListener = (e) => {
       if (Platform.OS === 'ios') {
-        collapse(e.duration);
+        collapse();
       }
     };
 
@@ -105,19 +113,23 @@ export const useAnimatedModalHeight = () => {
     return () => {
       subscriptions.forEach((subscription) => subscription.remove());
     };
-  }, [animatedHeight, height]);
+  }, [maxModalHeight, modalHeight]);
 
-  return animatedHeight;
+  return {
+    height: sheetHeight,
+    keyboardInset,
+    isKeyboardVisible,
+  };
 };
 
 export const MobileMenuDrawer = memo(
   forwardRef<MobileMenuDrawerRef, MobileMenuDrawerProps>(
-    ({ children, onVisibilityChange }, ref) => {
+    ({ children, onVisibilityChange, showScrollToSelected = true }, ref) => {
       const [isVisible, setIsVisible] = useState(false);
       const { scrollCallback } = useSelectedNode();
       const theme = useTheme();
       const { height } = useWindowDimensions();
-      const animatedHeight = useAnimatedModalHeight();
+      const { height: sheetHeight, keyboardInset, isKeyboardVisible } = useAnimatedModalHeight();
 
       // Slide animation for drawer entrance/exit
       const slideAnim = useAnimatedValue(height);
@@ -136,13 +148,12 @@ export const MobileMenuDrawer = memo(
           duration: 300,
           easing: Easing.out(Easing.quad),
           useNativeDriver: true,
-        }).start(({ finished }) => {
-          if (finished) {
-            // go to the selected story and don't animate
-            scrollCallback({ animated: false, id: undefined });
-          }
-        });
-      }, [dragY, height, onVisibilityChange, scrollCallback, slideAnim]);
+        }).start();
+      }, [dragY, height, onVisibilityChange, slideAnim]);
+
+      const scrollToSelectedStory = useCallback(() => {
+        scrollCallback({ animated: true, id: undefined });
+      }, [scrollCallback]);
 
       const closeDrawer = useCallback(() => {
         Keyboard.dismiss();
@@ -176,6 +187,21 @@ export const MobileMenuDrawer = memo(
               }
             },
             onPanResponderRelease: (_, gestureState) => {
+              if (isKeyboardVisible) {
+                if (gestureState.dy > 20) {
+                  Keyboard.dismiss();
+                }
+
+                Animated.timing(dragY, {
+                  toValue: 0,
+                  duration: 250,
+                  easing: Easing.out(Easing.quad),
+                  useNativeDriver: true,
+                }).start();
+
+                return;
+              }
+
               if (gestureState.dy > 50) {
                 closeDrawer();
               } else {
@@ -189,8 +215,10 @@ export const MobileMenuDrawer = memo(
               }
             },
           }),
-        [closeDrawer, dragY]
+        [closeDrawer, dragY, isKeyboardVisible]
       );
+
+      const sheetTranslateY = useMemo(() => Animated.add(slideAnim, dragY), [dragY, slideAnim]);
 
       useImperativeHandle(ref, () => ({
         setMobileMenuOpen: (open: boolean) => {
@@ -243,14 +271,29 @@ export const MobileMenuDrawer = memo(
         () => ({
           flex: 1,
           backgroundColor: theme.background.content,
+          paddingBottom: keyboardInset,
         }),
-        [theme.background.content]
+        [keyboardInset, theme.background.content]
+      );
+
+      const scrollToSelectedButtonWrapperStyle = useMemo(
+        () =>
+          ({
+            position: 'absolute',
+            right: 16,
+            bottom: keyboardInset + 16,
+            zIndex: 1,
+            borderRadius: theme.input.borderRadius,
+            boxShadow: `0 2px 5px 0 ${theme.color.border}`,
+            elevation: 1,
+          }) satisfies ViewStyle,
+        [keyboardInset, theme.color.border, theme.input.borderRadius]
       );
 
       return (
         <Portal hostName="storybook-lite-ui-root">
           <Animated.View
-            style={[portalContainerStyle, { transform: [{ translateY: slideAnim }] }]}
+            style={portalContainerStyle}
             pointerEvents={isVisible ? 'auto' : 'none'}
             accessibilityElementsHidden={!isVisible}
             importantForAccessibility={isVisible ? 'auto' : 'no-hide-descendants'}
@@ -267,16 +310,28 @@ export const MobileMenuDrawer = memo(
 
             <Animated.View
               style={{
-                height: animatedHeight,
+                height: sheetHeight,
+                transform: [{ translateY: sheetTranslateY }],
               }}
             >
-              <Animated.View style={[drawerContainerStyle, { transform: [{ translateY: dragY }] }]}>
+              <Animated.View style={drawerContainerStyle}>
                 {/* Drag handle */}
                 <View {...panResponder.panHandlers} style={dragHandleWrapperStyle}>
                   <View style={handleStyle} />
                 </View>
 
                 <View style={childrenWrapperStyle}>{children}</View>
+                {showScrollToSelected ? (
+                  <View style={scrollToSelectedButtonWrapperStyle}>
+                    <Button
+                      text="Scroll to selected"
+                      variant="outline"
+                      size="medium"
+                      onPress={scrollToSelectedStory}
+                      accessibilityLabel="Scroll to selected story"
+                    />
+                  </View>
+                ) : null}
               </Animated.View>
             </Animated.View>
           </Animated.View>

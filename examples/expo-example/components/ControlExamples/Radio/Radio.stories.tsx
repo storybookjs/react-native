@@ -23,3 +23,15 @@ export const Basic: Story = {
     selection: radio_stations[0],
   },
 };
+
+export const Inline: Story = {
+  argTypes: {
+    selection: {
+      options: radio_stations,
+      control: { type: 'inline-radio' },
+    },
+  },
+  args: {
+    selection: radio_stations[1],
+  },
+};

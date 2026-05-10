@@ -42,7 +42,7 @@
     "@gorhom/bottom-sheet": "*",
     "cross-env": "^10.1.0",
     "storybook": "^10.3.2",
-    "typescript": "~5.9.3"
+    "typescript": "~6.0.3"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",

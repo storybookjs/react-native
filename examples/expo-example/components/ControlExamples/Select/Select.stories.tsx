@@ -3,6 +3,8 @@ import { SelectExample } from './Select';
 
 const arrows = { ArrowUp: '⬆', ArrowDown: '⬇', ArrowLeft: '⬅️', ArrowRight: '➡️' };
 
+const manyArrows = Array.from({ length: 40 }, (_, index) => `Option ${index + 1}`);
+
 const meta = {
   component: SelectExample,
   argTypes: {
@@ -66,6 +68,36 @@ export const WithMapping: Story = {
           ArrowLeft: 'Left',
           ArrowRight: 'Right',
         },
+      },
+    },
+  },
+};
+
+export const ManyOptions: Story = {
+  args: {
+    arrow: manyArrows[0],
+  },
+
+  argTypes: {
+    arrow: {
+      options: manyArrows,
+      control: {
+        type: 'select',
+      },
+    },
+  },
+};
+
+export const MultiSelect: Story = {
+  args: {
+    arrow: [manyArrows[0], manyArrows[1], manyArrows[2]],
+  },
+
+  argTypes: {
+    arrow: {
+      options: manyArrows,
+      control: {
+        type: 'multi-select',
       },
     },
   },

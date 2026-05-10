@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 export default defineConfig((options) => {
   return {
@@ -11,6 +11,14 @@ export default defineConfig((options) => {
       'src/stub.tsx',
       'src/node.ts',
     ],
+    format: ['cjs'],
+    fixedExtension: false,
+    deps: {
+      onlyBundle: false,
+    },
+    define: {
+      'import.meta': '{}',
+    },
     // minify: !options.watch,
     clean: !options.watch,
     dts: !options.watch

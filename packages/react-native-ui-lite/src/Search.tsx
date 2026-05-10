@@ -1,6 +1,6 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { useFuzzySearchList } from '@nozbe/microfuzz/react';
-import React, { useCallback, useDeferredValue, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { Platform, TextInput, View, ViewStyle } from 'react-native';
 import { useSelectedNode } from './SelectedNodeProvider';
 import {
@@ -87,7 +87,15 @@ export const Search = React.memo<{
   setSelection: (selection: Selection) => void;
   getLastViewed: () => Selection[];
   initialQuery?: string;
-}>(function Search({ children, dataset, setSelection, getLastViewed, initialQuery = '' }) {
+  onSearchActiveChange?: (active: boolean) => void;
+}>(function Search({
+  children,
+  dataset,
+  setSelection,
+  getLastViewed,
+  initialQuery = '',
+  onSearchActiveChange,
+}) {
   const theme = useTheme();
   const inputRef = useRef<TextInput>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
@@ -153,6 +161,11 @@ export const Search = React.memo<{
   // Defer query input to prevent blocking typing
   const deferredQuery = useDeferredValue(inputValue);
   const queryText = useMemo(() => (deferredQuery ? deferredQuery.trim() : ''), [deferredQuery]);
+  const isBrowsing = !isOpen || !inputValue.length;
+
+  useEffect(() => {
+    onSearchActiveChange?.(!isBrowsing);
+  }, [isBrowsing, onSearchActiveChange]);
 
   // getText function for microfuzz - memoized for performance
   // Returns [name, path] - matches[0] will be name highlights, matches[1] will be path highlights
@@ -265,7 +278,7 @@ export const Search = React.memo<{
         {children({
           query: queryText,
           results,
-          isBrowsing: !isOpen || !inputValue.length,
+          isBrowsing,
           closeMenu: () => {},
           getItemProps,
           highlightedIndex: null,
