@@ -4,13 +4,14 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "expo start",
-    "ios": "expo start --ios",
-    "android": "expo start --android",
-    "storybook:ios": "STORYBOOK_ENABLED=true expo start --ios",
-    "storybook": "STORYBOOK_ENABLED=true expo start",
-    "storybook:android": "STORYBOOK_ENABLED=true expo start --android",
-    "check:types": "tsc --noEmit"
+    "start": "expo start --dev-client",
+    "ios": "expo run:ios",
+    "android": "expo run:android",
+    "storybook": "STORYBOOK_ENABLED=true expo start --dev-client",
+    "storybook:ios": "STORYBOOK_ENABLED=true expo run:ios",
+    "storybook:android": "STORYBOOK_ENABLED=true expo run:android",
+    "check:types": "tsc --noEmit",
+    "prebuild": "expo prebuild"
   },
   "dependencies": {
     "@expo/metro-runtime": "~56.0.5",
