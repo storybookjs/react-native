@@ -11,6 +11,7 @@ import type { FC, PropsWithChildren, ReactNode } from 'react';
 import React, { useCallback, useMemo } from 'react';
 import { PressableProps, View, ViewStyle, TextStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useDrawerKeyboardInset } from './DrawerKeyboardInsetContext';
 import { ComponentIcon, StoryIcon } from './icon/iconDataUris';
 
 // Microfuzz highlight types
@@ -218,6 +219,7 @@ export const SearchResults: FC<{
   clearLastViewed,
 }) {
   const insets = useSafeAreaInsets();
+  const drawerKeyboardInset = useDrawerKeyboardInset();
 
   const handleClearLastViewed = useCallback(() => {
     clearLastViewed();
@@ -228,9 +230,9 @@ export const SearchResults: FC<{
     () => ({
       paddingHorizontal: 10,
       paddingTop: 8,
-      paddingBottom: insets.bottom + 20,
+      paddingBottom: insets.bottom + drawerKeyboardInset + 20,
     }),
-    [insets.bottom]
+    [insets.bottom, drawerKeyboardInset]
   );
 
   const listData = useMemo<ListItemType[]>(() => {

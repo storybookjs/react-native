@@ -15,6 +15,7 @@ import { View, ViewStyle } from 'react-native';
 import { LegendList, LegendListRef, LegendListRenderItemProps } from './LegendList';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
+import { useDrawerKeyboardInset } from './DrawerKeyboardInsetContext';
 import type {
   ComponentEntry,
   GroupEntry,
@@ -225,6 +226,7 @@ export const Tree = React.memo<{
   const [pendingScrollTarget, setPendingScrollTarget] = useState<PendingScrollTarget | null>(null);
 
   const insets = useSafeAreaInsets();
+  const drawerKeyboardInset = useDrawerKeyboardInset();
   const listRef = useRef<LegendListRef | null>(null);
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
   const [rootIds, orphanIds, initialExpanded] = useMemo(
@@ -434,10 +436,10 @@ export const Tree = React.memo<{
   const contentContainerStyle = useMemo(
     () => ({
       marginTop: isMain && orphanIds.length > 0 ? 20 : 0,
-      paddingBottom: insets.bottom + 20,
+      paddingBottom: insets.bottom + drawerKeyboardInset + 20,
       paddingLeft: 6,
     }),
-    [isMain, orphanIds.length, insets.bottom]
+    [isMain, orphanIds.length, insets.bottom, drawerKeyboardInset]
   );
 
   // so we can call the scroll to function in the search component
