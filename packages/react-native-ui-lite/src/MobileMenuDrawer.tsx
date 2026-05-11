@@ -25,6 +25,7 @@ import {
 } from 'react-native';
 
 import { useSelectedNode } from './SelectedNodeProvider';
+import { DrawerKeyboardInsetContext } from './DrawerKeyboardInsetContext';
 import useAnimatedValue from './useAnimatedValue';
 
 const flexStyle: ViewStyle = { flex: 1 };
@@ -52,68 +53,47 @@ export interface MobileMenuDrawerRef {
 export const useAnimatedModalHeight = () => {
   const { height } = useWindowDimensions();
   const modalHeight = 0.65 * height;
-  const maxModalHeight = 0.85 * height;
-  const [sheetHeight, setSheetHeight] = useState(modalHeight);
-  const [keyboardInset, setKeyboardInset] = useState(0);
-  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
-
-  useEffect(() => {
-    setSheetHeight(modalHeight);
-    setKeyboardInset(0);
-    setIsKeyboardVisible(false);
-  }, [modalHeight]);
+  const maxKeyboardModalHeight = 0.75 * height;
+  const [keyboardHeight, setKeyboardHeight] = useState(0);
+  const isKeyboardVisible = keyboardHeight > 0;
+  const keyboardAvoidanceOffset = isKeyboardVisible
+    ? Math.min(keyboardHeight, maxKeyboardModalHeight - modalHeight)
+    : 0;
+  const sheetHeight = modalHeight + keyboardAvoidanceOffset;
+  const keyboardInset = isKeyboardVisible ? keyboardHeight : 0;
 
   useEffect(() => {
     const expand = (keyboardHeight: number = 0) => {
-      const maxKeyboardOffset = maxModalHeight - modalHeight;
-      const keyboardAvoidanceOffset = Math.min(keyboardHeight, maxKeyboardOffset);
-
-      setIsKeyboardVisible(true);
-      setSheetHeight(modalHeight + keyboardAvoidanceOffset);
-      setKeyboardInset(Math.max(keyboardHeight - keyboardAvoidanceOffset, 0));
+      setKeyboardHeight(keyboardHeight);
     };
 
     const collapse = () => {
-      setSheetHeight(modalHeight);
-      setKeyboardInset(0);
-      setIsKeyboardVisible(false);
+      setKeyboardHeight(0);
     };
 
-    const handleKeyboardWillShow: KeyboardEventListener = (e) => {
-      if (Platform.OS === 'ios') {
-        expand(e.endCoordinates.height);
-      }
+    const handleKeyboardShow: KeyboardEventListener = (e) => {
+      expand(e.endCoordinates.height);
     };
 
-    const handleKeyboardDidShow: KeyboardEventListener = (e) => {
-      if (Platform.OS === 'android') {
-        expand(e.endCoordinates.height);
-      }
-    };
-
-    const handleKeyboardWillHide: KeyboardEventListener = (e) => {
-      if (Platform.OS === 'ios') {
-        collapse();
-      }
-    };
-
-    const handleKeyboardDidHide: KeyboardEventListener = (e) => {
-      if (Platform.OS === 'android') {
-        collapse();
-      }
+    const handleKeyboardHide: KeyboardEventListener = () => {
+      collapse();
     };
 
     const subscriptions = [
-      Keyboard.addListener('keyboardWillShow', handleKeyboardWillShow),
-      Keyboard.addListener('keyboardDidShow', handleKeyboardDidShow),
-      Keyboard.addListener('keyboardWillHide', handleKeyboardWillHide),
-      Keyboard.addListener('keyboardDidHide', handleKeyboardDidHide),
+      Keyboard.addListener(
+        Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow',
+        handleKeyboardShow
+      ),
+      Keyboard.addListener(
+        Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide',
+        handleKeyboardHide
+      ),
     ];
 
     return () => {
       subscriptions.forEach((subscription) => subscription.remove());
     };
-  }, [maxModalHeight, modalHeight]);
+  }, []);
 
   return {
     height: sheetHeight,
@@ -271,9 +251,8 @@ export const MobileMenuDrawer = memo(
         () => ({
           flex: 1,
           backgroundColor: theme.background.content,
-          paddingBottom: keyboardInset,
         }),
-        [keyboardInset, theme.background.content]
+        [theme.background.content]
       );
 
       const scrollToSelectedButtonWrapperStyle = useMemo(
@@ -320,8 +299,10 @@ export const MobileMenuDrawer = memo(
                   <View style={handleStyle} />
                 </View>
 
-                <View style={childrenWrapperStyle}>{children}</View>
-                {showScrollToSelected ? (
+                <DrawerKeyboardInsetContext.Provider value={keyboardInset}>
+                  <View style={childrenWrapperStyle}>{children}</View>
+                </DrawerKeyboardInsetContext.Provider>
+                {showScrollToSelected && !isKeyboardVisible ? (
                   <View style={scrollToSelectedButtonWrapperStyle}>
                     <Button
                       text="Scroll to selected"
