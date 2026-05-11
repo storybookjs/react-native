@@ -1,5 +1,15 @@
 # @storybook/react-native-ui-lite
 
+## 10.4.2-next.0
+
+### Patch Changes
+
+- [#887](https://github.com/storybookjs/react-native/pull/887) [`5530e44`](https://github.com/storybookjs/react-native/commit/5530e4493f6f9051b3475cfedc3c7f849c4ead39) Thanks [@dannyhw](https://github.com/dannyhw)! - fix: content below keyboard not reachable, sheet too tall
+
+- Updated dependencies []:
+  - @storybook/react-native-ui-common@10.4.2-next.0
+  - @storybook/react-native-theming@10.4.2-next.0
+
 ## 10.4.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui-common",
-  "version": "10.4.1",
+  "version": "10.4.2-next.0",
   "description": "common ui components for react native storybook",
   "keywords": [
     "react",
@@ -35,7 +35,7 @@
   "dependencies": {
     "@nozbe/microfuzz": "^1.0.0",
     "@storybook/react": "^10.3.2",
-    "@storybook/react-native-theming": "^10.4.1",
+    "@storybook/react-native-theming": "^10.4.2-next.0",
     "es-toolkit": "^1.45.1",
     "memoizerific": "^1.11.3",
     "ts-dedent": "^2.2.0"
