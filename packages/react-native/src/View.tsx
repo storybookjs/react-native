@@ -264,7 +264,7 @@ export class View {
 
   getStorybookUI = (params: Partial<Params> = {}) => {
     const {
-      enableWebsockets = false,
+      enableWebsockets = !!globalThis.STORYBOOK_WEBSOCKET,
       CustomUIComponent,
       hasStoryWrapper: storyViewWrapper = true,
     } = params;
