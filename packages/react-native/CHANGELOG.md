@@ -1,5 +1,14 @@
 # @storybook/react-native
 
+## 10.4.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.4.2
+  - @storybook/react-native-ui-common@10.4.2
+  - @storybook/react-native-theming@10.4.2
+
 ## 10.4.2-next.0
 
 ### Patch Changes
