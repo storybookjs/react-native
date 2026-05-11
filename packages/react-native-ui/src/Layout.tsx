@@ -17,7 +17,12 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import type { Args, StoryContext } from 'storybook/internal/csf';
-import type { API_IndexHash } from 'storybook/internal/types';
+import {
+  Addon_TypesEnum,
+  type Addon_BaseType,
+  type Addon_Collection,
+  type API_IndexHash,
+} from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
 import { DEFAULT_REF_ID } from './constants';
 import { BottomBarToggleIcon } from './icon/BottomBarToggleIcon';
@@ -115,6 +120,11 @@ export const Layout = ({
   const [desktopAddonsPanelOpen, setDesktopAddonsPanelOpen] = useStoreBooleanState(
     'desktopPanelState',
     true
+  );
+
+  const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+  const hasEnabledPanels = Object.values(allPanels).some(
+    (p) => !p.paramKey || !story?.parameters?.[p.paramKey]?.disable
   );
 
   const [uiHidden, setUiHidden] = useState(false);
@@ -270,10 +280,14 @@ export const Layout = ({
           </TouchableOpacity>
         )}
 
-        {isDesktop ? (
+        {isDesktop && hasEnabledPanels ? (
           <View style={desktopAddonsPanelStyle}>
             {desktopAddonsPanelOpen ? (
-              <AddonsTabs storyId={story?.id} onClose={() => setDesktopAddonsPanelOpen(false)} />
+              <AddonsTabs
+                storyId={story?.id}
+                parameters={story?.parameters}
+                onClose={() => setDesktopAddonsPanelOpen(false)}
+              />
             ) : (
               <IconButton
                 style={iconFloatRightStyle}
@@ -300,11 +314,13 @@ export const Layout = ({
               </Text>
             </Button>
 
-            <IconButton
-              testID="mobile-addons-button"
-              onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
-              Icon={BottomBarToggleIcon}
-            />
+            {hasEnabledPanels && (
+              <IconButton
+                testID="mobile-addons-button"
+                onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
+                Icon={BottomBarToggleIcon}
+              />
+            )}
           </Nav>
         </Container>
       ) : null}
@@ -330,7 +346,9 @@ export const Layout = ({
         </SelectedNodeProvider>
       ) : null}
 
-      {!isDesktop ? <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} /> : null}
+      {!isDesktop && hasEnabledPanels ? (
+        <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} parameters={story?.parameters} />
+      ) : null}
     </View>
   );
 };

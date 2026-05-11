@@ -1,5 +1,6 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { IconButton, useStyle } from '@storybook/react-native-ui-common';
+import type { Parameters } from 'storybook/internal/csf';
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useState } from 'react';
 import {
   Animated,
@@ -28,130 +29,132 @@ export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
 }
 
-export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
-  ({ storyId }, ref) => {
-    const theme = useTheme();
-    const { height } = useWindowDimensions();
-    const defaultPanelHeight = height / 2;
-    const positionBottomAnimation = useAnimatedValue(height / 2);
-    const [panelHeight, setPanelHeight] = useState(defaultPanelHeight);
-    const [isOpen, setIsOpen] = useState(false);
+export const MobileAddonsPanel = forwardRef<
+  MobileAddonsPanelRef,
+  { storyId?: string; parameters?: Parameters }
+>(({ storyId, parameters }, ref) => {
+  const theme = useTheme();
+  const { height } = useWindowDimensions();
+  const defaultPanelHeight = height / 2;
+  const positionBottomAnimation = useAnimatedValue(height / 2);
+  const [panelHeight, setPanelHeight] = useState(defaultPanelHeight);
+  const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-      setPanelHeight(defaultPanelHeight);
-    }, [defaultPanelHeight]);
+  useEffect(() => {
+    setPanelHeight(defaultPanelHeight);
+  }, [defaultPanelHeight]);
 
-    const setMobileMenuOpen = useCallback(
-      (open: boolean) => {
-        setIsOpen(open);
+  const setMobileMenuOpen = useCallback(
+    (open: boolean) => {
+      setIsOpen(open);
 
-        if (open) {
+      if (open) {
+        setPanelHeight(defaultPanelHeight);
+        positionBottomAnimation.setValue(defaultPanelHeight);
+        Animated.timing(positionBottomAnimation, {
+          toValue: 0,
+          duration: 350,
+          useNativeDriver: true,
+          easing: Easing.inOut(Easing.cubic),
+        }).start();
+      } else {
+        Animated.timing(positionBottomAnimation, {
+          toValue: defaultPanelHeight,
+          duration: 350,
+          useNativeDriver: true,
+          easing: Easing.inOut(Easing.cubic),
+        }).start(() => {
           setPanelHeight(defaultPanelHeight);
-          positionBottomAnimation.setValue(defaultPanelHeight);
-          Animated.timing(positionBottomAnimation, {
-            toValue: 0,
-            duration: 350,
-            useNativeDriver: true,
-            easing: Easing.inOut(Easing.cubic),
-          }).start();
-        } else {
-          Animated.timing(positionBottomAnimation, {
-            toValue: defaultPanelHeight,
-            duration: 350,
-            useNativeDriver: true,
-            easing: Easing.inOut(Easing.cubic),
-          }).start(() => {
-            setPanelHeight(defaultPanelHeight);
-          });
-        }
-      },
-      [defaultPanelHeight, positionBottomAnimation]
+        });
+      }
+    },
+    [defaultPanelHeight, positionBottomAnimation]
+  );
+
+  useEffect(() => {
+    const handleKeyboardShow = ({ endCoordinates }: KeyboardEvent) => {
+      if (isOpen) {
+        setPanelHeight((height - endCoordinates.height) / 2);
+        positionBottomAnimation.setValue(-endCoordinates.height);
+      }
+    };
+
+    const handleKeyboardHide = () => {
+      if (isOpen) {
+        setPanelHeight(defaultPanelHeight);
+        positionBottomAnimation.setValue(0);
+      }
+    };
+
+    const showSubscription = Keyboard.addListener(
+      Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow',
+      handleKeyboardShow
+    );
+    const hideSubscription = Keyboard.addListener(
+      Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide',
+      handleKeyboardHide
     );
 
-    useEffect(() => {
-      const handleKeyboardShow = ({ endCoordinates }: KeyboardEvent) => {
-        if (isOpen) {
-          setPanelHeight((height - endCoordinates.height) / 2);
-          positionBottomAnimation.setValue(-endCoordinates.height);
-        }
-      };
+    // Clean up subscriptions on unmount
+    return () => {
+      showSubscription.remove();
+      hideSubscription.remove();
+    };
+  }, [defaultPanelHeight, height, positionBottomAnimation, isOpen]);
 
-      const handleKeyboardHide = () => {
-        if (isOpen) {
-          setPanelHeight(defaultPanelHeight);
-          positionBottomAnimation.setValue(0);
-        }
-      };
+  useImperativeHandle(ref, () => ({
+    setAddonsPanelOpen: (open: boolean) => {
+      if (open) {
+        setMobileMenuOpen(true);
+      } else {
+        setMobileMenuOpen(false);
+      }
+    },
+  }));
 
-      const showSubscription = Keyboard.addListener(
-        Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow',
-        handleKeyboardShow
-      );
-      const hideSubscription = Keyboard.addListener(
-        Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide',
-        handleKeyboardHide
-      );
-
-      // Clean up subscriptions on unmount
-      return () => {
-        showSubscription.remove();
-        hideSubscription.remove();
-      };
-    }, [defaultPanelHeight, height, positionBottomAnimation, isOpen]);
-
-    useImperativeHandle(ref, () => ({
-      setAddonsPanelOpen: (open: boolean) => {
-        if (open) {
-          setMobileMenuOpen(true);
-        } else {
-          setMobileMenuOpen(false);
-        }
-      },
-    }));
-
-    return (
-      <Animated.View
+  return (
+    <Animated.View
+      style={{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: panelHeight,
+        transform: [{ translateY: positionBottomAnimation }],
+      }}
+      pointerEvents={isOpen ? 'auto' : 'none'}
+      accessibilityElementsHidden={!isOpen}
+      importantForAccessibility={isOpen ? 'auto' : 'no-hide-descendants'}
+    >
+      <View
         style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: panelHeight,
-          transform: [{ translateY: positionBottomAnimation }],
+          flex: 1,
+          justifyContent: 'flex-end',
         }}
-        pointerEvents={isOpen ? 'auto' : 'none'}
-        accessibilityElementsHidden={!isOpen}
-        importantForAccessibility={isOpen ? 'auto' : 'no-hide-descendants'}
       >
         <View
           style={{
-            flex: 1,
-            justifyContent: 'flex-end',
+            height: '100%',
+            backgroundColor: theme.background.content,
+            paddingTop: 10,
+            borderTopColor: theme.appBorderColor,
+            borderTopWidth: 1,
+            paddingBottom: Platform.OS === 'android' ? 16 : 0,
           }}
         >
-          <View
-            style={{
-              height: '100%',
-              backgroundColor: theme.background.content,
-              paddingTop: 10,
-              borderTopColor: theme.appBorderColor,
-              borderTopWidth: 1,
-              paddingBottom: Platform.OS === 'android' ? 16 : 0,
+          <AddonsTabs
+            onClose={() => {
+              setMobileMenuOpen(false);
+              Keyboard.dismiss();
             }}
-          >
-            <AddonsTabs
-              onClose={() => {
-                setMobileMenuOpen(false);
-                Keyboard.dismiss();
-              }}
-              storyId={storyId}
-            />
-          </View>
+            storyId={storyId}
+            parameters={parameters}
+          />
         </View>
-      </Animated.View>
-    );
-  }
-);
+      </View>
+    </Animated.View>
+  );
+});
 
 MobileAddonsPanel.displayName = 'MobileAddonsPanel';
 
@@ -191,10 +194,35 @@ const hiddenStyle = {
 
 const hitSlop = { top: 10, right: 10, bottom: 10, left: 10 };
 
-export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId?: string }) => {
-  const panels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+export const AddonsTabs = ({
+  onClose,
+  storyId,
+  parameters,
+}: {
+  onClose?: () => void;
+  storyId?: string;
+  parameters?: Parameters;
+}) => {
+  const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+
+  const panels = useMemo<Addon_Collection<Addon_BaseType>>(
+    () =>
+      Object.fromEntries(
+        Object.entries(allPanels).filter(
+          ([, p]) => !p.paramKey || !parameters?.[p.paramKey]?.disable
+        )
+      ),
+    [allPanels, parameters]
+  );
+
   const insets = useSafeAreaInsets();
   const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
+
+  useEffect(() => {
+    if (!panels[addonSelected] && Object.keys(panels).length > 0) {
+      setAddonSelected(Object.keys(panels)[0]);
+    }
+  }, [panels, addonSelected]);
 
   const panelEntries = useMemo(() => Object.entries(panels), [panels]);
 
