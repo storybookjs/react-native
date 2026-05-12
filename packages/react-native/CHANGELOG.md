@@ -1,5 +1,16 @@
 # @storybook/react-native
 
+## 10.4.3
+
+### Patch Changes
+
+- [#890](https://github.com/storybookjs/react-native/pull/890) [`511bca0`](https://github.com/storybookjs/react-native/commit/511bca0fdd6aaa2018f4f265cef6d91836a3d5cb) Thanks [@ndelangen](https://github.com/ndelangen)! - auto-detect websocket enabling
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.4.3
+  - @storybook/react-native-ui-common@10.4.3
+  - @storybook/react-native-theming@10.4.3
+
 ## 10.4.2
 
 ### Patch Changes
