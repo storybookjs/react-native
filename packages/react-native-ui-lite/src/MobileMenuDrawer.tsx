@@ -27,6 +27,7 @@ import {
 import { useSelectedNode } from './SelectedNodeProvider';
 import { DrawerKeyboardInsetContext } from './DrawerKeyboardInsetContext';
 import useAnimatedValue from './useAnimatedValue';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const flexStyle: ViewStyle = { flex: 1 };
 
@@ -108,8 +109,9 @@ export const MobileMenuDrawer = memo(
       const [isVisible, setIsVisible] = useState(false);
       const { scrollCallback } = useSelectedNode();
       const theme = useTheme();
+      const insets = useSafeAreaInsets();
       const { height } = useWindowDimensions();
-      const { height: sheetHeight, keyboardInset, isKeyboardVisible } = useAnimatedModalHeight();
+      const { height: sheetHeight, isKeyboardVisible, keyboardInset } = useAnimatedModalHeight();
 
       // Slide animation for drawer entrance/exit
       const slideAnim = useAnimatedValue(height);
@@ -260,13 +262,13 @@ export const MobileMenuDrawer = memo(
           ({
             position: 'absolute',
             right: 16,
-            bottom: keyboardInset + 16,
+            bottom: insets.bottom + 16,
             zIndex: 1,
             borderRadius: theme.input.borderRadius,
             boxShadow: `0 2px 5px 0 ${theme.color.border}`,
             elevation: 1,
           }) satisfies ViewStyle,
-        [keyboardInset, theme.color.border, theme.input.borderRadius]
+        [insets.bottom, theme.color.border, theme.input.borderRadius]
       );
 
       return (
