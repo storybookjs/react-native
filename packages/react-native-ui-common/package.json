@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "^10.3.2",
+    "@storybook/react": "^10.3.6",
     "@storybook/react-native-theming": "^10.4.3",
     "es-toolkit": "^1.45.1",
     "memoizerific": "^1.11.3",
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.14",
-    "storybook": "^10.3.2",
+    "storybook": "^10.3.6",
     "tsdown": "^0.22.0",
     "typescript": "~6.0.3"
   },
