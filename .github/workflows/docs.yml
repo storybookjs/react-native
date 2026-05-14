@@ -17,30 +17,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
 
       - name: Set node version
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 26
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install
-        shell: 'bash'
+        shell: "bash"
         run: pnpm install
 
       - name: Build
-        shell: 'bash'
+        shell: "bash"
         working-directory: docs
         run: pnpm build
 
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
-          path: 'docs/build/'
+          path: "docs/build/"
 
   deploy:
     needs: build
@@ -51,4 +51,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
