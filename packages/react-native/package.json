@@ -51,7 +51,7 @@
     "test:ci": "jest"
   },
   "dependencies": {
-    "@storybook/mcp": "^0.6.1",
+    "@storybook/mcp": "^0.7.0",
     "@storybook/react": "^10.4.0",
     "@storybook/react-native-theming": "^10.4.3",
     "@storybook/react-native-ui": "^10.4.3",
