@@ -1,5 +1,14 @@
 # @storybook/addon-ondevice-actions
 
+## 10.4.4
+
+### Patch Changes
+
+- [#891](https://github.com/storybookjs/react-native/pull/891) [`e785fc5`](https://github.com/storybookjs/react-native/commit/e785fc528a68163d49a8662fcaab27a8753b9521) Thanks [@dannyhw](https://github.com/dannyhw)! - update storybook dependencies and fixes for color control
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.4.4
+
 ## 10.4.3
 
 ### Patch Changes
