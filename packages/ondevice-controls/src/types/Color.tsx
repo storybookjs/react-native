@@ -112,7 +112,7 @@ const ColorType = ({ arg, onChange = (value) => value }: ColorProps) => {
           <View style={styles.modalOverlay} />
         </TouchableWithoutFeedback>
         <View style={styles.centerContainer}>
-          <InnerContainer pointerEvents="box-none">
+          <InnerContainer>
             <ColorPicker
               onColorChange={(color: HsvColor) => setCurrentColor(color)}
               defaultColor={arg.value}
