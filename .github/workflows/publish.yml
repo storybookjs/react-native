@@ -55,7 +55,7 @@ jobs:
 
       - name: Publish (canary)
         if: inputs.release_type == 'canary'
-        run: pnpm changeset publish --tag canary
+        run: node node_modules/@changesets/cli/bin.js publish --tag canary
 
       # --- Next Release ---
       - name: Enter pre-release mode (next)
@@ -74,7 +74,7 @@ jobs:
 
       - name: Publish (next)
         if: inputs.release_type == 'next'
-        run: pnpm changeset publish
+        run: node node_modules/@changesets/cli/bin.js publish
 
       - name: Commit & push version changes (next)
         if: inputs.release_type == 'next'
@@ -115,7 +115,7 @@ jobs:
 
       - name: Publish (latest)
         if: inputs.release_type == 'latest'
-        run: pnpm changeset publish --tag latest
+        run: node node_modules/@changesets/cli/bin.js publish --tag latest
 
       - name: Commit, tag & push version changes (latest)
         if: inputs.release_type == 'latest'
