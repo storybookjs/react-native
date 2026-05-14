@@ -56,13 +56,13 @@ export function createPanResponder({
     onMoveShouldSetPanResponderCapture: fn,
     onPanResponderTerminationRequest: fn,
     onPanResponderGrant: (evt: GestureResponderEvent, state: PanResponderGestureState) => {
-      return onStart({ x: evt.nativeEvent.locationX, y: evt.nativeEvent.locationY }, evt, state);
+      return onStart({ x: evt.nativeEvent.pageX, y: evt.nativeEvent.pageY }, evt, state);
     },
     onPanResponderMove: (evt: GestureResponderEvent, state: PanResponderGestureState) => {
-      return onMove({ x: evt.nativeEvent.locationX, y: evt.nativeEvent.locationY }, evt, state);
+      return onMove({ x: evt.nativeEvent.pageX, y: evt.nativeEvent.pageY }, evt, state);
     },
     onPanResponderRelease: (evt: GestureResponderEvent, state: PanResponderGestureState) => {
-      return onEnd({ x: evt.nativeEvent.locationX, y: evt.nativeEvent.locationY }, evt, state);
+      return onEnd({ x: evt.nativeEvent.pageX, y: evt.nativeEvent.pageY }, evt, state);
     },
   });
 }
