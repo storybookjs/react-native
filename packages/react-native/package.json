@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@storybook/mcp": "^0.6.1",
-    "@storybook/react": "^10.3.6",
+    "@storybook/react": "^10.4.0",
     "@storybook/react-native-theming": "^10.4.3",
     "@storybook/react-native-ui": "^10.4.3",
     "@storybook/react-native-ui-common": "^10.4.3",
@@ -80,7 +80,7 @@
     "jotai": "^2.19.0",
     "react": "19.2.3",
     "react-native": "0.85.3",
-    "storybook": "^10.3.6",
+    "storybook": "^10.4.0",
     "sucrase": "^3.35.1",
     "test-renderer": "^0.15.0",
     "tsdown": "^0.22.0",
