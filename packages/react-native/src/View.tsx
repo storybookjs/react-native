@@ -94,7 +94,7 @@ export type Params = {
   hasStoryWrapper?: boolean;
   /**
    * Enable websockets for the storybook server to remotely control the storybook
-   * default: false
+   * default: automatically enabled when a websocket config is injected via storybook.requires (i.e. when STORYBOOK_WS_HOST is set), otherwise false
    */
   enableWebsockets?: boolean;
   query?: string;
@@ -264,7 +264,7 @@ export class View {
 
   getStorybookUI = (params: Partial<Params> = {}) => {
     const {
-      enableWebsockets = false,
+      enableWebsockets = !!globalThis.STORYBOOK_WEBSOCKET,
       CustomUIComponent,
       hasStoryWrapper: storyViewWrapper = true,
     } = params;

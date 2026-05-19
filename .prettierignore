@@ -12,3 +12,4 @@ docs/build
 .zed/
 .changeset/
 examples/expo-example/assets
+.github/

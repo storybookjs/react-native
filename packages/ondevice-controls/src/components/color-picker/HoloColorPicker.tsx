@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   I18nManager,
   Image,
@@ -29,13 +29,20 @@ export function HoloColorPicker({
 }: HoloColorPickerProps) {
   const [color, setColor] = useState(() => getHsv(defaultColor));
   const [pickerSize, setPickerSize] = useState(0);
+  const colorRef = useRef(color);
+  const pickerSizeRef = useRef(pickerSize);
+  const pickerRef = useRef<View>(null);
+  const pickerPageOffsetRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    setColor(getHsv(defaultColor));
+    const nextColor = getHsv(defaultColor);
+    colorRef.current = nextColor;
+    setColor(nextColor);
   }, [defaultColor]);
 
   const updateColor = useCallback(
     (nextColor: ColorFormats.HSV) => {
+      colorRef.current = nextColor;
       setColor(nextColor);
       onColorChange(nextColor);
     },
@@ -44,14 +51,17 @@ export function HoloColorPicker({
 
   const handleHueChange = useCallback(
     ({ x, y }: { x: number; y: number }) => {
-      if (!pickerSize) {
+      const currentPickerSize = pickerSizeRef.current;
+      if (!currentPickerSize) {
         return;
       }
 
-      const h = computeHue(x, y, pickerSize);
-      updateColor({ ...color, h });
+      const relativeX = x - pickerPageOffsetRef.current.x;
+      const relativeY = y - pickerPageOffsetRef.current.y;
+      const h = computeHue(relativeX, relativeY, currentPickerSize);
+      updateColor({ ...colorRef.current, h });
     },
-    [color, pickerSize, updateColor]
+    [updateColor]
   );
 
   const pickerResponder = useMemo(
@@ -65,7 +75,17 @@ export function HoloColorPicker({
 
   const onLayout = (event: LayoutChangeEvent) => {
     const { width, height } = event.nativeEvent.layout;
-    setPickerSize(Math.min(width, height));
+    const nextPickerSize = Math.min(width, height);
+    pickerSizeRef.current = nextPickerSize;
+    setPickerSize(nextPickerSize);
+  };
+
+  const onPickerLayout = () => {
+    requestAnimationFrame(() => {
+      pickerRef.current?.measure((_x, _y, _width, _height, pageX, pageY) => {
+        pickerPageOffsetRef.current = { x: pageX, y: pageY };
+      });
+    });
   };
 
   const selectedColor = tinycolor(color).toHexString();
@@ -84,30 +104,54 @@ export function HoloColorPicker({
       <View onLayout={onLayout} style={styles.pickerContainer}>
         {!pickerSize ? null : (
           <View>
-            <View {...pickerResponder.panHandlers} style={computed.picker} collapsable={false}>
+            <View
+              ref={pickerRef}
+              onLayout={onPickerLayout}
+              {...pickerResponder.panHandlers}
+              style={computed.picker}
+              collapsable={false}
+            >
               <Image
                 source={require('./resources/color-circle.png')}
                 resizeMode="contain"
                 style={styles.pickerImage}
               />
-              <View style={[styles.pickerIndicator, computed.pickerIndicator]} />
+              <View
+                style={[styles.pickerIndicator, computed.pickerIndicator]}
+                pointerEvents="none"
+              />
             </View>
             {oldColor ? (
               <>
-                <View style={[styles.selectedPreview, computed.selectedPreview]} />
-                <View style={[styles.originalPreview, computed.originalPreview]} />
+                <View
+                  style={[styles.selectedPreview, computed.selectedPreview]}
+                  pointerEvents="none"
+                />
+                <View
+                  style={[styles.originalPreview, computed.originalPreview]}
+                  pointerEvents="none"
+                />
               </>
             ) : (
-              <View style={[styles.selectedFullPreview, computed.selectedFullPreview]} />
+              <View
+                style={[styles.selectedFullPreview, computed.selectedFullPreview]}
+                pointerEvents="none"
+              />
             )}
           </View>
         )}
       </View>
       <View>
         <Text style={styles.sliderLabel}>Saturation</Text>
-        <SliderWrapper value={color.s} onValueChange={(s) => updateColor({ ...color, s })} />
+        <SliderWrapper
+          value={color.s}
+          onValueChange={(s) => updateColor({ ...colorRef.current, s })}
+        />
         <Text style={styles.sliderLabel}>Lightness</Text>
-        <SliderWrapper value={color.v} onValueChange={(v) => updateColor({ ...color, v })} />
+        <SliderWrapper
+          value={color.v}
+          onValueChange={(v) => updateColor({ ...colorRef.current, v })}
+        />
       </View>
     </View>
   );

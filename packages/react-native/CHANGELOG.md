@@ -1,5 +1,45 @@
 # @storybook/react-native
 
+## 10.4.4
+
+### Patch Changes
+
+- [#891](https://github.com/storybookjs/react-native/pull/891) [`e785fc5`](https://github.com/storybookjs/react-native/commit/e785fc528a68163d49a8662fcaab27a8753b9521) Thanks [@dannyhw](https://github.com/dannyhw)! - update storybook dependencies and fixes for color control
+
+- Updated dependencies [[`e785fc5`](https://github.com/storybookjs/react-native/commit/e785fc528a68163d49a8662fcaab27a8753b9521)]:
+  - @storybook/react-native-ui-common@10.4.4
+  - @storybook/react-native-ui@10.4.4
+  - @storybook/react-native-theming@10.4.4
+
+## 10.4.3
+
+### Patch Changes
+
+- [#890](https://github.com/storybookjs/react-native/pull/890) [`511bca0`](https://github.com/storybookjs/react-native/commit/511bca0fdd6aaa2018f4f265cef6d91836a3d5cb) Thanks [@ndelangen](https://github.com/ndelangen)! - auto-detect websocket enabling
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.4.3
+  - @storybook/react-native-ui-common@10.4.3
+  - @storybook/react-native-theming@10.4.3
+
+## 10.4.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.4.2
+  - @storybook/react-native-ui-common@10.4.2
+  - @storybook/react-native-theming@10.4.2
+
+## 10.4.2-next.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.4.2-next.0
+  - @storybook/react-native-ui-common@10.4.2-next.0
+  - @storybook/react-native-theming@10.4.2-next.0
+
 ## 10.4.1
 
 ### Patch Changes

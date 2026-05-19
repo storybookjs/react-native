@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "10.2.3",
+  "version": "10.2.4",
   "private": true,
   "scripts": {
     "build": "docusaurus build",
