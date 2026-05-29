@@ -2,7 +2,7 @@ import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import { createChannelServer } from '../metro/channelServer';
 import type { WebsocketsOptions } from '../types';
-import { loadWebsocketEnvOverrides } from '../env-tools';
+import { envVariableToBoolean, loadWebsocketEnvOverrides } from '../env-tools';
 
 /**
  * Minimal compiler types for webpack/rspack compatibility.
@@ -171,6 +171,7 @@ export class StorybookPlugin {
     }
   ): void {
     const resolvedWs = loadWebsocketEnvOverrides(websockets);
+    const server = envVariableToBoolean(process.env.STORYBOOK_SERVER, true);
     const bindHost =
       websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? undefined : resolvedWs.host;
     const generateHost =
@@ -184,7 +185,8 @@ export class StorybookPlugin {
     // Start the channel server once (on first apply, not per-compilation)
     if (
       (experimental_mcp || websockets != null || process.env.STORYBOOK_WS_HOST) &&
-      !this.serverStarted
+      !this.serverStarted &&
+      server
     ) {
       this.serverStarted = true;
 

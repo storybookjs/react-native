@@ -5,7 +5,7 @@ import { optionalEnvToBoolean } from 'storybook/internal/common';
 import { telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
 import type { WebsocketsOptions } from '../types';
-import { loadWebsocketEnvOverrides } from '../env-tools';
+import { envVariableToBoolean, loadWebsocketEnvOverrides } from '../env-tools';
 
 /**
  * Options for configuring Storybook with React Native.
@@ -144,6 +144,7 @@ export function withStorybook(
   } = options;
 
   const disableTelemetry = optionalEnvToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY);
+  const server = envVariableToBoolean(process.env.STORYBOOK_SERVER, true);
 
   if (!disableTelemetry && enabled) {
     const event = process.env.NODE_ENV === 'production' ? 'build' : 'dev';
@@ -208,25 +209,27 @@ export function withStorybook(
     const channelWebsocketsEnabled =
       Boolean(websockets) || Boolean(process.env.STORYBOOK_WS_HOST) || Boolean(resolvedWs.host);
 
-    // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
-    // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
-    createChannelServer({
-      port,
-      host: bindHost,
-      configPath,
-      experimental_mcp,
-      websockets: channelWebsocketsEnabled,
-      secured,
-      ssl:
-        websockets && websockets !== 'auto'
-          ? {
-              key: websockets.key,
-              cert: websockets.cert,
-              ca: websockets.ca,
-              passphrase: websockets.passphrase,
-            }
-          : undefined,
-    });
+    if (server) {
+      // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
+      // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
+      createChannelServer({
+        port,
+        host: bindHost,
+        configPath,
+        experimental_mcp,
+        websockets: channelWebsocketsEnabled,
+        secured,
+        ssl:
+          websockets && websockets !== 'auto'
+            ? {
+                key: websockets.key,
+                cert: websockets.cert,
+                ca: websockets.ca,
+                passphrase: websockets.passphrase,
+              }
+            : undefined,
+      });
+    }
 
     if (websockets != null || process.env.STORYBOOK_WS_HOST) {
       generate({
