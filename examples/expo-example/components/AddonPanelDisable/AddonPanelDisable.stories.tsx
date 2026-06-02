@@ -9,17 +9,15 @@ type AddonPanelDisableDemoProps = {
   onPress: () => void;
 };
 
-const AddonPanelDisableDemo = ({
-  label,
-  count,
-  enabled,
-  onPress,
-}: AddonPanelDisableDemoProps) => (
+const AddonPanelDisableDemo = ({ label, count, enabled, onPress }: AddonPanelDisableDemoProps) => (
   <View style={styles.container}>
     <Text style={styles.heading}>{label}</Text>
     <Text style={styles.body}>Count: {count}</Text>
     <Text style={styles.body}>Enabled: {enabled ? 'true' : 'false'}</Text>
-    <Pressable style={styles.button} onPress={onPress}>
+    <Pressable
+      style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
+      onPress={onPress}
+    >
       <Text style={styles.buttonText}>Log action</Text>
     </Pressable>
   </View>
@@ -132,5 +130,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#ffffff',
     fontWeight: '700',
+  },
+  buttonPressed: {
+    opacity: 0.8,
   },
 });
