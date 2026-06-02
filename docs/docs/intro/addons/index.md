@@ -35,7 +35,31 @@ export default main;
 On-device addons contain React Native code that can only run on the device. When listed in the regular `addons` array, Storybook Core tries to evaluate them as presets during server-side operations (like `extract` or `build`), which fails because Node.js can't load React Native modules. The `deviceAddons` property ensures they're only loaded at runtime on the device.
 
 For backwards compatibility, on-device addons in the `addons` array still work — they're detected by the "ondevice" substring in their name and handled correctly. However, `deviceAddons` is the recommended approach.
+
+
+
 :::
+
+## Hiding addon panels per story
+
+On-device addon panels can be hidden for a story with the same `parameters[addonKey].disable` convention used by Storybook web. When every registered panel is disabled for the selected story, the addons button and panel are hidden.
+
+```ts
+export const WithoutControls = {
+  parameters: {
+    controls: { disable: true },
+  },
+};
+
+export const WithoutAnyAddonPanels = {
+  parameters: {
+    actions: { disable: true },
+    backgrounds: { disable: true },
+    controls: { disable: true },
+    notes: { disable: true },
+  },
+};
+```
 
 ## Actions
 
