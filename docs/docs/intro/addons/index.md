@@ -36,8 +36,6 @@ On-device addons contain React Native code that can only run on the device. When
 
 For backwards compatibility, on-device addons in the `addons` array still work — they're detected by the "ondevice" substring in their name and handled correctly. However, `deviceAddons` is the recommended approach.
 
-
-
 :::
 
 ## Hiding addon panels per story
