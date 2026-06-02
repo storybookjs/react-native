@@ -146,9 +146,7 @@ export function withStorybook(
   const disableTelemetry = optionalEnvToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY);
 
   if (!disableTelemetry && enabled) {
-    const event = process.env.NODE_ENV === 'production' ? 'build' : 'dev';
-
-    telemetry(event, {}).catch((e) => {});
+    telemetry('dev', {}).catch((e) => {});
   }
 
   if (!enabled) {
