@@ -16,6 +16,10 @@ jest.mock('storybook/internal/telemetry', () => ({
   telemetry: jest.fn(() => Promise.resolve()),
 }));
 
+jest.mock('storybook/internal/telemetry', () => ({
+  telemetry: jest.fn(() => Promise.resolve()),
+}));
+
 describe('withStorybook (unified)', () => {
   const metroConfig = { resolver: {}, transformer: {} } as MetroConfig;
 
