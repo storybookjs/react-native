@@ -13,7 +13,7 @@ import {
   useMemo,
   useRef,
 } from 'react';
-import { Keyboard, Platform } from 'react-native';
+import { Keyboard, Platform, type ViewStyle } from 'react-native';
 import { useAnimatedStyle, useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
@@ -44,7 +44,7 @@ export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheet
       pressBehavior={'close'}
       style={[
         backdropComponentProps.style,
-        androidTouchEventFix,
+        androidTouchEventFix as unknown as ViewStyle,
         {
           backgroundColor: 'rgba(0,0,0,0.5)',
           paddingTop: Platform.OS === 'android' ? 1 : undefined,

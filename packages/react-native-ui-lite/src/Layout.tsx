@@ -11,12 +11,25 @@ import {
   useStoreNumberState,
   useStyle,
 } from '@storybook/react-native-ui-common';
-import { ReactElement, ReactNode, useCallback, useLayoutEffect, useRef, useState } from 'react';
+import {
+  ReactElement,
+  ReactNode,
+  useCallback,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { Text, TouchableOpacity, useWindowDimensions, View, ViewStyle } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import type { Args, StoryContext } from 'storybook/internal/csf';
-import { type API_IndexHash } from 'storybook/internal/types';
+import {
+  Addon_TypesEnum,
+  type Addon_BaseType,
+  type Addon_Collection,
+  type API_IndexHash,
+} from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
 import { AddonsTabs, MobileAddonsPanel, MobileAddonsPanelRef } from './MobileAddonsPanel';
 import { MobileMenuDrawer, MobileMenuDrawerRef } from './MobileMenuDrawer';
@@ -119,6 +132,14 @@ export const Layout = ({
     'desktopPanelState',
     true
   );
+
+  const hasEnabledPanels = useMemo(() => {
+    const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+    return Object.values(allPanels).some(
+      (p) => !p.paramKey || !story?.parameters?.[p.paramKey]?.disable
+    );
+  }, [story?.parameters]);
+
   const [isMobileSearchActive, setIsMobileSearchActive] = useState(false);
 
   const [sidebarWidth, setSidebarWidth] = useStoreNumberState('desktopSidebarWidth', 240);
@@ -317,7 +338,7 @@ export const Layout = ({
           </TouchableOpacity>
         )}
 
-        {isDesktop ? (
+        {isDesktop && hasEnabledPanels ? (
           <>
             {desktopAddonsPanelOpen ? (
               <ResizeHandle
@@ -329,7 +350,11 @@ export const Layout = ({
             ) : null}
             <View style={desktopAddonsPanelStyle} pointerEvents={isResizing ? 'none' : 'auto'}>
               {desktopAddonsPanelOpen ? (
-                <AddonsTabs storyId={story?.id} onClose={() => setDesktopAddonsPanelOpen(false)} />
+                <AddonsTabs
+                  storyId={story?.id}
+                  parameters={story?.parameters}
+                  onClose={() => setDesktopAddonsPanelOpen(false)}
+                />
               ) : (
                 <IconButton
                   style={iconFloatRightStyle}
@@ -360,13 +385,15 @@ export const Layout = ({
               </Text>
             </Button>
 
-            <IconButton
-              testID="mobile-addons-button"
-              hitSlop={addonButtonHitSlop}
-              onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
-              Icon={BottomBarToggleIcon}
-              accessibilityLabel="Open addons panel"
-            />
+            {hasEnabledPanels && (
+              <IconButton
+                testID="mobile-addons-button"
+                hitSlop={addonButtonHitSlop}
+                onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
+                Icon={BottomBarToggleIcon}
+                accessibilityLabel="Open addons panel"
+              />
+            )}
           </Nav>
         </Container>
       ) : null}
@@ -395,7 +422,9 @@ export const Layout = ({
         </MobileMenuDrawer>
       )}
 
-      {isDesktop ? null : <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} />}
+      {!isDesktop && hasEnabledPanels ? (
+        <MobileAddonsPanel ref={addonPanelRef} storyId={story?.id} parameters={story?.parameters} />
+      ) : null}
     </View>
   );
 };

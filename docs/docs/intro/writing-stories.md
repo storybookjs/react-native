@@ -144,6 +144,8 @@ React Native Storybook provides several built-in parameters to control the on-de
 | `hideFullScreenButton`  | `boolean`                                    | When `true`, hides the fullscreen toggle button                                                                                                   |
 | `layout`                | `'padded'` \| `'centered'` \| `'fullscreen'` | Controls the layout of the story container. `'padded'` adds padding, `'centered'` centers the content, `'fullscreen'` removes any default spacing |
 
+On-device addon panels can also be hidden per story with `parameters[addonKey].disable`. This follows the same convention as Storybook web. For example, `parameters: { controls: { disable: true } }` hides the Controls panel for that story. When every addon panel is disabled for the selected story, the addons UI is hidden.
+
 ```tsx
 // Button.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react-native';
@@ -184,6 +186,16 @@ export const EdgeToEdge: Story = {
   },
   parameters: {
     noSafeArea: true,
+  },
+};
+
+// Story without the Controls addon panel
+export const WithoutControls: Story = {
+  args: {
+    label: 'Button',
+  },
+  parameters: {
+    controls: { disable: true },
   },
 };
 ```
