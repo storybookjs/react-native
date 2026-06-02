@@ -202,17 +202,13 @@ type AddonsTabsProps = {
 };
 
 export const AddonsTabs = ({ onClose, storyId, parameters }: AddonsTabsProps) => {
-  const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+  const panels = useMemo<Addon_Collection<Addon_BaseType>>(() => {
+    const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
 
-  const panels = useMemo<Addon_Collection<Addon_BaseType>>(
-    () =>
-      Object.fromEntries(
-        Object.entries(allPanels).filter(
-          ([, p]) => !p.paramKey || !parameters?.[p.paramKey]?.disable
-        )
-      ),
-    [allPanels, parameters]
-  );
+    return Object.fromEntries(
+      Object.entries(allPanels).filter(([, p]) => !p.paramKey || !parameters?.[p.paramKey]?.disable)
+    );
+  }, [parameters]);
 
   const insets = useSafeAreaInsets();
   const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
