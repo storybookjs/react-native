@@ -11,7 +11,15 @@ import {
   useStoreNumberState,
   useStyle,
 } from '@storybook/react-native-ui-common';
-import { ReactElement, ReactNode, useCallback, useLayoutEffect, useRef, useState } from 'react';
+import {
+  ReactElement,
+  ReactNode,
+  useCallback,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { Text, TouchableOpacity, useWindowDimensions, View, ViewStyle } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
@@ -125,10 +133,12 @@ export const Layout = ({
     true
   );
 
-  const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
-  const hasEnabledPanels = Object.values(allPanels).some(
-    (p) => !p.paramKey || !story?.parameters?.[p.paramKey]?.disable
-  );
+  const hasEnabledPanels = useMemo(() => {
+    const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+    return Object.values(allPanels).some(
+      (p) => !p.paramKey || !story?.parameters?.[p.paramKey]?.disable
+    );
+  }, [story?.parameters]);
 
   const [isMobileSearchActive, setIsMobileSearchActive] = useState(false);
 

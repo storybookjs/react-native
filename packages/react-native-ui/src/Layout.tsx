@@ -11,7 +11,7 @@ import {
   useStyle,
   type SBUI,
 } from '@storybook/react-native-ui-common';
-import { ReactNode, useCallback, useLayoutEffect, useRef, useState } from 'react';
+import { ReactNode, useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -122,10 +122,13 @@ export const Layout = ({
     true
   );
 
-  const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
-  const hasEnabledPanels = Object.values(allPanels).some(
-    (p) => !p.paramKey || !story?.parameters?.[p.paramKey]?.disable
-  );
+  const hasEnabledPanels = useMemo(() => {
+    const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+
+    return Object.values(allPanels).some(
+      (p) => !p.paramKey || !story?.parameters?.[p.paramKey]?.disable
+    );
+  }, [story?.parameters]);
 
   const [uiHidden, setUiHidden] = useState(false);
 
