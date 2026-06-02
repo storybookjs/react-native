@@ -1,6 +1,7 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { addons } from 'storybook/manager-api';
 import { styled, useTheme } from '@storybook/react-native-theming';
+import type { Parameters } from 'storybook/internal/csf';
 import {
   Addon_TypesEnum,
   type Addon_BaseType,
@@ -31,8 +32,10 @@ const contentStyle = {
   flex: 1,
 } satisfies StyleProp<ViewStyle>;
 
-export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
-  ({ storyId }, ref) => {
+type MobileAddonsPanelProps = { storyId?: string; parameters?: Parameters };
+
+export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, MobileAddonsPanelProps>(
+  ({ storyId, parameters }, ref) => {
     const theme = useTheme();
     const reducedMotion = useReducedMotion();
 
@@ -103,6 +106,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
               addonsPanelBottomSheetRef.current?.dismiss();
             }}
             storyId={storyId}
+            parameters={parameters}
           />
         </Animated.View>
       </BottomSheetModal>
@@ -148,8 +152,22 @@ const hiddenStyle = {
 
 const hitSlop = { top: 10, right: 10, bottom: 10, left: 10 };
 
-export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId?: string }) => {
-  const panels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+export const AddonsTabs = ({
+  onClose,
+  storyId,
+  parameters,
+}: {
+  onClose?: () => void;
+  storyId?: string;
+  parameters?: Parameters;
+}) => {
+  const panels = useMemo<Addon_Collection<Addon_BaseType>>(() => {
+    const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+
+    return Object.fromEntries(
+      Object.entries(allPanels).filter(([, p]) => !p.paramKey || !parameters?.[p.paramKey]?.disable)
+    );
+  }, [parameters]);
 
   const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
 
@@ -162,6 +180,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
   });
 
   const panelEntries = useMemo(() => Object.entries(panels), [panels]);
+  const activeAddonId = panels[addonSelected] ? addonSelected : panelEntries[0]?.[0];
 
   return (
     <View style={addonsTabsContainerStyle}>
@@ -177,7 +196,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
             return (
               <Tab
                 key={id}
-                active={id === addonSelected}
+                active={id === activeAddonId}
                 onPress={() => setAddonSelected(id)}
                 text={String(resolvedTitle)}
               />
@@ -207,7 +226,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
           </View>
         ) : (
           panelEntries.map(([id, p]) => (
-            <View key={id} style={id === addonSelected ? undefined : hiddenStyle}>
+            <View key={id} style={id === activeAddonId ? undefined : hiddenStyle}>
               <PanelRenderer panel={p} />
             </View>
           ))

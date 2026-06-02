@@ -1,5 +1,6 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { IconButton, useStyle } from '@storybook/react-native-ui-common';
+import type { Parameters } from 'storybook/internal/csf';
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useState } from 'react';
 import {
   Animated,
@@ -28,8 +29,10 @@ export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
 }
 
-export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
-  ({ storyId }, ref) => {
+type MobileAddonsPanelProps = { storyId?: string; parameters?: Parameters };
+
+export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, MobileAddonsPanelProps>(
+  ({ storyId, parameters }, ref) => {
     const theme = useTheme();
     const { height } = useWindowDimensions();
     const defaultPanelHeight = height / 2;
@@ -145,6 +148,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
                 Keyboard.dismiss();
               }}
               storyId={storyId}
+              parameters={parameters}
             />
           </View>
         </View>
@@ -191,12 +195,25 @@ const hiddenStyle = {
 
 const hitSlop = { top: 10, right: 10, bottom: 10, left: 10 };
 
-export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId?: string }) => {
-  const panels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+type AddonsTabsProps = {
+  onClose?: () => void;
+  storyId?: string;
+  parameters?: Parameters;
+};
+
+export const AddonsTabs = ({ onClose, storyId, parameters }: AddonsTabsProps) => {
+  const panels = useMemo<Addon_Collection<Addon_BaseType>>(() => {
+    const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+
+    return Object.fromEntries(
+      Object.entries(allPanels).filter(([, p]) => !p.paramKey || !parameters?.[p.paramKey]?.disable)
+    );
+  }, [parameters]);
+
   const insets = useSafeAreaInsets();
   const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
-
   const panelEntries = useMemo(() => Object.entries(panels), [panels]);
+  const activeAddonId = panels[addonSelected] ? addonSelected : panelEntries[0]?.[0];
 
   const scrollContentContainerStyle = useStyle(
     () => ({
@@ -220,7 +237,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
             return (
               <Tab
                 key={id}
-                active={id === addonSelected}
+                active={id === activeAddonId}
                 onPress={() => setAddonSelected(id)}
                 text={String(resolvedTitle)}
               />
@@ -252,7 +269,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
           </View>
         ) : (
           panelEntries.map(([id, p]) => (
-            <View key={id} style={id === addonSelected ? undefined : hiddenStyle}>
+            <View key={id} style={id === activeAddonId ? undefined : hiddenStyle}>
               <PanelRenderer panel={p} />
             </View>
           ))
