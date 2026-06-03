@@ -76,7 +76,7 @@
     "babel-jest": "^29.7.0",
     "babel-preset-expo": "^55.0.13",
     "jest": "^29.7.0",
-    "jest-expo": "~56.0.1",
+    "jest-expo": "~56.0.4",
     "jotai": "^2.19.0",
     "react": "19.2.3",
     "react-native": "0.85.3",
