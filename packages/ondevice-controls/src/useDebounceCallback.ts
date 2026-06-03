@@ -126,12 +126,14 @@ export default function useDebouncedCallback<T extends (...args: any[]) => Retur
   const funcRef = useRef(callback);
   const mounted = useRef(true);
 
+  // eslint-disable-next-line react-hooks/refs
   funcRef.current = callback;
 
   if (typeof callback !== 'function') {
     throw new TypeError('Expected a function');
   }
 
+  // eslint-disable-next-line react-hooks/immutability
   wait = +wait || 0;
   options = options || {};
 
@@ -203,6 +205,7 @@ export default function useDebouncedCallback<T extends (...args: any[]) => Retur
     };
 
     const timerExpired = () => {
+      // eslint-disable-next-line react-hooks/purity
       const time = Date.now();
       if (shouldInvoke(time)) {
         return trailingEdge(time);
@@ -224,6 +227,7 @@ export default function useDebouncedCallback<T extends (...args: any[]) => Retur
     };
 
     const func: DebouncedState<T> = (...args: Parameters<T>): ReturnType<T> => {
+      // eslint-disable-next-line react-hooks/purity
       const time = Date.now();
       const isInvoking = shouldInvoke(time);
 

@@ -22,11 +22,11 @@ import {
   ViewStyle,
   KeyboardEventListener,
   Platform,
+  useAnimatedValue,
 } from 'react-native';
 
 import { useSelectedNode } from './SelectedNodeProvider';
 import { DrawerKeyboardInsetContext } from './DrawerKeyboardInsetContext';
-import useAnimatedValue from './useAnimatedValue';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const flexStyle: ViewStyle = { flex: 1 };
