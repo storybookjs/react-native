@@ -14,7 +14,7 @@
     "prebuild": "expo prebuild"
   },
   "dependencies": {
-    "@expo/metro-runtime": "~56.0.13",
+    "@expo/metro-runtime": "~56.0.14",
     "@gorhom/bottom-sheet": "^5.2.8",
     "@react-native-async-storage/async-storage": "2.2.0",
     "@react-native-community/datetimepicker": "9.1.0",
@@ -29,9 +29,9 @@
     "@storybook/react-native-ui-lite": "^10.4.4",
     "@storybook/react-native-web-vite": "^10.4.0",
     "babel-plugin-react-compiler": "^1.0.0",
-    "expo": "56.0.8",
-    "expo-modules-core": "56.0.14",
-    "expo-updates": "~56.0.17",
+    "expo": "56.0.9",
+    "expo-modules-core": "56.0.15",
+    "expo-updates": "~56.0.18",
     "react": "19.2.3",
     "react-compiler-runtime": "^1.0.0",
     "react-dom": "19.2.3",
