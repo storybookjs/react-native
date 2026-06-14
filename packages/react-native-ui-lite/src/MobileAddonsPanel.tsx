@@ -14,7 +14,6 @@ import {
   useWindowDimensions,
   View,
   ViewStyle,
-  useAnimatedValue,
 } from 'react-native';
 import { addons } from 'storybook/manager-api';
 import {
@@ -24,6 +23,7 @@ import {
 } from 'storybook/internal/types';
 import { CloseIcon } from './icon/iconDataUris';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useAnimatedValue } from './useAnimatedValue';
 
 export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
