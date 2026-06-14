@@ -22,8 +22,8 @@ import {
   type Addon_Collection,
 } from 'storybook/internal/types';
 import { CloseIcon } from './icon/iconDataUris';
-import useAnimatedValue from './useAnimatedValue';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useAnimatedValue } from './useAnimatedValue';
 
 export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;

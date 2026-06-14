@@ -34,7 +34,7 @@ export default withStorybook(
             options: {},
           },
         },
-        ...Repack.getAssetTransformRules(),
+        ...(Repack.getAssetTransformRules() || ([] as any[])),
       ],
     },
     plugins: [
