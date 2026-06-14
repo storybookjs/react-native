@@ -23,6 +23,8 @@ for example in expo-example expo-new-wrapper-example expo-router-example; do
   )
 done
 
+cd "$REPO_ROOT"
+pnpm build
 # pnpm --dir examples/expo-example ios
 # pnpm --dir examples/expo-new-wrapper-example ios
 # pnpm --dir examples/expo-router-example ios
