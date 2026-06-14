@@ -6,7 +6,7 @@
     "android": "react-native run-android --no-packager",
     "bundle:android": "react-native webpack-bundle --platform android --entry-file index.js --dev=false --bundle-output build/output/android/index.android.bundle --assets-dest build/output/android/res",
     "bundle:ios": "react-native webpack-bundle --platform ios --entry-file index.js --dev=false --bundle-output build/output/ios/main.jsbundle --assets-dest build/output/ios",
-    "ios": "react-native run-ios --no-packager",
+    "ios": "STORYBOOK_ENABLED=true react-native run-ios --no-packager",
     "lint": "eslint .",
     "start": "react-native webpack-start",
     "storybook": "STORYBOOK_ENABLED=true react-native webpack-start",
