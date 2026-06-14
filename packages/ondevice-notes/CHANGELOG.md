@@ -1,5 +1,16 @@
 # @storybook/addon-ondevice-notes
 
+## 10.4.5
+
+### Patch Changes
+
+- [#896](https://github.com/storybookjs/react-native/pull/896) [`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b) Thanks [@dannyhw](https://github.com/dannyhw)! - fix being broken by incompatible legend list versions by bundling it in
+
+- [#896](https://github.com/storybookjs/react-native/pull/896) [`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b) Thanks [@dannyhw](https://github.com/dannyhw)! - bump package versions
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.4.5
+
 ## 10.4.4
 
 ### Patch Changes

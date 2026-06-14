@@ -1,5 +1,24 @@
 # @storybook/react-native
 
+## 10.4.5
+
+### Patch Changes
+
+- [#893](https://github.com/storybookjs/react-native/pull/893) [`cd00a0c`](https://github.com/storybookjs/react-native/commit/cd00a0cba7adf733a05f90db6c99a948d19088e7) Thanks [@ndelangen](https://github.com/ndelangen)! - Add Storybook telemetry when on-device Storybook is enabled, with opt-out via `STORYBOOK_DISABLE_TELEMETRY`. Telemetry runs from the unified `withStorybook` wrapper and the Re.Pack plugin.
+
+- [#892](https://github.com/storybookjs/react-native/pull/892) [`18af09e`](https://github.com/storybookjs/react-native/commit/18af09e609e97c1609b48dda19400938db32c8f8) Thanks [@Arunsiva003](https://github.com/Arunsiva003)! - Align the React Native Page story template with the other CLI example stories.
+
+- [#896](https://github.com/storybookjs/react-native/pull/896) [`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b) Thanks [@dannyhw](https://github.com/dannyhw)! - fix being broken by incompatible legend list versions by bundling it in
+
+- [#896](https://github.com/storybookjs/react-native/pull/896) [`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b) Thanks [@dannyhw](https://github.com/dannyhw)! - bump package versions
+
+- [#895](https://github.com/storybookjs/react-native/pull/895) [`ce3eb7b`](https://github.com/storybookjs/react-native/commit/ce3eb7b494aacb40dd2fcd9f473a7ccb16302e4d) Thanks [@saseungmin](https://github.com/saseungmin)! - Mark the generated Storybook `View` import as type-only for TypeScript `verbatimModuleSyntax` compatibility.
+
+- Updated dependencies [[`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b), [`092e9f0`](https://github.com/storybookjs/react-native/commit/092e9f09096d5000543ddda5a9acd34ebbadfa07), [`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b)]:
+  - @storybook/react-native-ui-common@10.4.5
+  - @storybook/react-native-ui@10.4.5
+  - @storybook/react-native-theming@10.4.5
+
 ## 10.4.4
 
 ### Patch Changes
