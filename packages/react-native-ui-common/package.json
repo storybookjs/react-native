@@ -34,16 +34,16 @@
   },
   "dependencies": {
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "^10.4.4",
+    "@storybook/react": "^10.4.6",
     "@storybook/react-native-theming": "^10.4.5",
-    "es-toolkit": "^1.45.1",
+    "es-toolkit": "^1.47.1",
     "memoizerific": "^1.11.3",
-    "ts-dedent": "^2.2.0"
+    "ts-dedent": "^2.3.0"
   },
   "devDependencies": {
     "@types/react": "~19.2.14",
-    "storybook": "^10.4.4",
-    "tsdown": "^0.22.0",
+    "storybook": "^10.4.6",
+    "tsdown": "^0.22.3",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {

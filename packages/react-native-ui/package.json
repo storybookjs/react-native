@@ -35,15 +35,15 @@
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "^10.4.4",
+    "@storybook/react": "^10.4.6",
     "@storybook/react-native-theming": "^10.4.5",
     "@storybook/react-native-ui-common": "^10.4.5",
     "polished": "^4.3.1"
   },
   "devDependencies": {
     "@types/react": "~19.2.14",
-    "storybook": "^10.4.4",
-    "tsdown": "^0.22.0",
+    "storybook": "^10.4.6",
+    "tsdown": "^0.22.3",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {

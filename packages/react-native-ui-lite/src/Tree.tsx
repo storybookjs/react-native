@@ -12,7 +12,7 @@ import {
 } from '@storybook/react-native-ui-common';
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { View, ViewStyle } from 'react-native';
-import { LegendList, LegendListRef, LegendListRenderItemProps } from './LegendList';
+import { LegendList, LegendListRef, LegendListRenderItemProps } from '@legendapp/list/react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
 import { useDrawerKeyboardInset } from './DrawerKeyboardInsetContext';

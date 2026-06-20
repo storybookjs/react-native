@@ -10,8 +10,7 @@
     "bundleIdentifier": "com.storybook.newwrapperexample"
   },
   "android": {
-    "package": "com.storybook.newwrapperexample",
-    "edgeToEdgeEnabled": true
+    "package": "com.storybook.newwrapperexample"
   },
   "experiments": {
     "tsconfigPaths": true
