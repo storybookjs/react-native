@@ -24,6 +24,7 @@ overrides:
   postcss: 8.5.14
   react-docgen-typescript: 2.2.2
   serialize-javascript: 7.0.5
+  shell-quote: 1.8.4
   svgo: 3.3.3
   webpack-dev-server: ^5.2.2
   zod-validation-error: ^4.0.0
