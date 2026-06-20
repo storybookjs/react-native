@@ -15,8 +15,7 @@
     }
   },
   "android": {
-    "package": "com.storybook.example",
-    "edgeToEdgeEnabled": true
+    "package": "com.storybook.example"
   },
   "web": {
     "bundler": "metro",
