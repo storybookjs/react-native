@@ -32,7 +32,7 @@
     "storybook": "^10.4.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
+    "@babel/core": "^8.0.0",
     "@babel/preset-env": "^7.29.7",
     "@babel/runtime": "^7.29.7",
     "@callstack/repack": "^5.2.5",
