@@ -1,4 +1,4 @@
-import { LegendList } from './LegendList';
+import { LegendList } from '@legendapp/list/react-native';
 import { styled, useTheme } from '@storybook/react-native-theming';
 import type {
   GetSearchItemProps,

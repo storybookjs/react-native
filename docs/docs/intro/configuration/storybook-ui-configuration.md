@@ -446,6 +446,8 @@ const StorybookUIRoot = view.getStorybookUI({
 
 You can also use the CustomUIComponent property to pass the lite ui for a ui that requires less dependencies and is more compatible with other platforms.
 
+Note that `@storybook/react-native-ui-lite` uses Legend List 3 for virtualized story lists. If your project is on version 2 you might have some issues.
+
 ```ts
 import { view } from './storybook.requires';
 import { LiteUI } from '@storybook/react-native-ui-lite';

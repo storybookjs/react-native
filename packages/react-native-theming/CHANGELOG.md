@@ -1,5 +1,13 @@
 # @storybook/react-native-theming
 
+## 10.4.6
+
+### Patch Changes
+
+- [#900](https://github.com/storybookjs/react-native/pull/900) [`494c1b7`](https://github.com/storybookjs/react-native/commit/494c1b715194a71df18ac7d3f8fe08501b436cba) Thanks [@dannyhw](https://github.com/dannyhw)! - bump dependencies
+
+## 10.4.5
+
 ## 10.4.4
 
 ## 10.4.3

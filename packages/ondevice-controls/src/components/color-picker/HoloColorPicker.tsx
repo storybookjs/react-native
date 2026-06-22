@@ -66,6 +66,7 @@ export function HoloColorPicker({
 
   const pickerResponder = useMemo(
     () =>
+      // eslint-disable-next-line react-hooks/refs
       createPanResponder({
         onStart: handleHueChange,
         onMove: handleHueChange,

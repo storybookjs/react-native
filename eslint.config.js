@@ -32,6 +32,7 @@ module.exports = defineConfig([
     rules: {
       '@typescript-eslint/no-require-imports': 'off',
       '@typescript-eslint/array-type': 'off',
+      'react-hooks/set-state-in-effect': 'warn',
     },
   },
   {

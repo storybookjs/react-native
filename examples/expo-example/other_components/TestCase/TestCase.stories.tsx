@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { Text } from 'react-native';
 
 const TestCase = () => {
+  // eslint-disable-next-line react-hooks/refs, react-hooks/purity
   const unstableRef = useRef(Math.random().toString(36).slice(2, 11)).current;
   return <Text>{unstableRef}</Text>;
 };

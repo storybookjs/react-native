@@ -1,5 +1,29 @@
 # @storybook/react-native-ui
 
+## 10.4.6
+
+### Patch Changes
+
+- [#900](https://github.com/storybookjs/react-native/pull/900) [`494c1b7`](https://github.com/storybookjs/react-native/commit/494c1b715194a71df18ac7d3f8fe08501b436cba) Thanks [@dannyhw](https://github.com/dannyhw)! - bump dependencies
+
+- Updated dependencies [[`494c1b7`](https://github.com/storybookjs/react-native/commit/494c1b715194a71df18ac7d3f8fe08501b436cba)]:
+  - @storybook/react-native-ui-common@10.4.6
+  - @storybook/react-native-theming@10.4.6
+
+## 10.4.5
+
+### Patch Changes
+
+- [#896](https://github.com/storybookjs/react-native/pull/896) [`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b) Thanks [@dannyhw](https://github.com/dannyhw)! - fix being broken by incompatible legend list versions by bundling it in
+
+- [#889](https://github.com/storybookjs/react-native/pull/889) [`092e9f0`](https://github.com/storybookjs/react-native/commit/092e9f09096d5000543ddda5a9acd34ebbadfa07) Thanks [@Mathbl](https://github.com/Mathbl)! - feat: honor `parameters[paramKey].disable` on addon panels — matches web Storybook. When every panel is disabled for the current story, the addons UI is hidden.
+
+- [#896](https://github.com/storybookjs/react-native/pull/896) [`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b) Thanks [@dannyhw](https://github.com/dannyhw)! - bump package versions
+
+- Updated dependencies [[`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b), [`922c104`](https://github.com/storybookjs/react-native/commit/922c104819152d0af56224ad8daa8dba6ad7f66b)]:
+  - @storybook/react-native-ui-common@10.4.5
+  - @storybook/react-native-theming@10.4.5
+
 ## 10.4.4
 
 ### Patch Changes

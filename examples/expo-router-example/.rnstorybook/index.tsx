@@ -6,13 +6,22 @@ import Storage from 'expo-sqlite/kv-store';
 import { registerRootComponent } from 'expo';
 import { LiteUI } from '@storybook/react-native-ui-lite';
 import { view } from './storybook.requires';
+import { Platform } from 'react-native';
+
+const storage =
+  Platform.OS === 'web'
+    ? {
+        getItem: (s: string) => localStorage.getItem(s),
+        setItem: (s: string, v: string) => localStorage.setItem(s, v),
+      }
+    : {
+        getItem: (s: string) => Storage.getItem(s),
+        setItem: (s: string, v: string) => Storage.setItem(s, v),
+      };
 
 const StorybookUIRoot = view.getStorybookUI({
   shouldPersistSelection: true,
-  storage: {
-    getItem: (s) => Storage.getItem(s),
-    setItem: (s, v) => Storage.setItem(s, v),
-  },
+  storage,
   enableWebsockets: true,
   CustomUIComponent: LiteUI,
 });
