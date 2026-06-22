@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui-lite",
-  "version": "10.4.6",
+  "version": "10.4.7",
   "description": "lightweight ui components for react native storybook",
   "keywords": [
     "react",
@@ -37,8 +37,8 @@
     "@nozbe/microfuzz": "^1.0.0",
     "@legendapp/list": "^3.0.6",
     "@storybook/react": "^10.4.6",
-    "@storybook/react-native-theming": "^10.4.6",
-    "@storybook/react-native-ui-common": "^10.4.6",
+    "@storybook/react-native-theming": "^10.4.7",
+    "@storybook/react-native-ui-common": "^10.4.7",
     "polished": "^4.3.1"
   },
   "devDependencies": {

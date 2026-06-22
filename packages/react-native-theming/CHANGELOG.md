@@ -1,5 +1,7 @@
 # @storybook/react-native-theming
 
+## 10.4.7
+
 ## 10.4.6
 
 ### Patch Changes

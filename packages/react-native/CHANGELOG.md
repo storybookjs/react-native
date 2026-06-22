@@ -1,5 +1,16 @@
 # @storybook/react-native
 
+## 10.4.7
+
+### Patch Changes
+
+- [#894](https://github.com/storybookjs/react-native/pull/894) [`f1371a3`](https://github.com/storybookjs/react-native/commit/f1371a3fca389b500af9363bd90a9972e55a59e2) Thanks [@ndelangen](https://github.com/ndelangen)! - respect STORYBOOK_SERVER env variable in legacy metro and repack withStorybook wrappers
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.4.7
+  - @storybook/react-native-ui-common@10.4.7
+  - @storybook/react-native-theming@10.4.7
+
 ## 10.4.6
 
 ### Patch Changes
