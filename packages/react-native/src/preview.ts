@@ -2,7 +2,7 @@ import { Platform } from 'react-native';
 import {
   parameters as reactParameters,
   argTypesEnhancers,
-} from '@storybook/react/entry-preview-docs';
+} from '@storybook/react/entry-preview-argtypes';
 import { type Preview } from '@storybook/react';
 
 // Workaround for Reanimated globals not being available on web.
