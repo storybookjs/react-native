@@ -6,6 +6,9 @@ import {
   STORY_ARGS_UPDATED,
 } from 'storybook/internal/core-events';
 
+const getControlArgs = (story: StoryContext): Args =>
+  (story as StoryContext & { unmappedArgs?: Args }).unmappedArgs ?? story.args;
+
 export const useArgs = (
   storyId: string,
   storyStore: any
@@ -15,20 +18,24 @@ export const useArgs = (
     throw new Error(`Unknown story: ${storyId}`);
   }
 
-  const { args: initialArgs } = story;
-  const [args, setArgs] = useState(initialArgs);
+  const [args, setArgs] = useState(() => getControlArgs(story));
   useEffect(() => {
+    const currentStory: StoryContext | undefined = storyStore.fromId(storyId);
+    if (!currentStory) {
+      return;
+    }
     // Sync the args up with the initial args of the story, since the story ID
     // must have changed for this effect to run.
-    setArgs(initialArgs);
+    setArgs(getControlArgs(currentStory));
     const cb = (changed: { storyId: string; args: Args }) => {
       if (changed.storyId === storyId) {
-        setArgs(changed.args);
+        const updatedStory: StoryContext | undefined = storyStore.fromId(storyId);
+        setArgs(updatedStory ? getControlArgs(updatedStory) : changed.args);
       }
     };
     storyStore._channel.on(STORY_ARGS_UPDATED, cb);
     return () => storyStore._channel.off(STORY_ARGS_UPDATED, cb);
-    // Exclude `initialArgs` from the dependencies, as these are not relevant
+    // Exclude `story` from the dependencies, as these are not relevant
     // until `storyId` changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storyId]);
