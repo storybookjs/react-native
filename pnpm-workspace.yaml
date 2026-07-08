@@ -7,7 +7,8 @@ linkWorkspacePackages: true
 ignoreScripts: true
 nodeLinker: hoisted
 shamefullyHoist: true
-minimumReleaseAge: 1340
+# minimumReleaseAge: 1340
+minimumReleaseAge: 0
 overrides:
   # Required for notes security: react-native-markdown-display@7.0.2 is latest and still resolves markdown-it@10 by default.
   markdown-it: 14.3.0
@@ -19,3 +20,5 @@ overrides:
   sockjs>uuid: 11.1.1
   # Required until Expo's xcode dependency updates: xcode@3.0.1 pins uuid@^7, but the uuid advisory is only patched in 11.1.1+.
   xcode>uuid: 11.1.1
+  # we are getting 5.8 from expo-router and 5.7 otherwise, we need to override to not get duplicate native deps
+  react-native-safe-area-context: '5.8.0'
