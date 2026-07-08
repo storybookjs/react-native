@@ -37,6 +37,7 @@ export function HoloColorPicker({
   useEffect(() => {
     const nextColor = getHsv(defaultColor);
     colorRef.current = nextColor;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setColor(nextColor);
   }, [defaultColor]);
 
