@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const storyId = STORY_ID;
 const host = typeof STORYBOOK_HOST === 'undefined' ? 'localhost' : STORYBOOK_HOST;
 const port = typeof STORYBOOK_PORT === 'undefined' ? '7007' : STORYBOOK_PORT;
