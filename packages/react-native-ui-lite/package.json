@@ -51,7 +51,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": ">=0.57.0",
-    "react-native-safe-area-context": "5.8.0",
+    "react-native-safe-area-context": "*",
     "storybook": ">=10 || ^10"
   },
   "engines": {

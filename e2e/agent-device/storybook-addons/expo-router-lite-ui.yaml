@@ -10,37 +10,35 @@ name: Expo router Storybook lite UI addons
     env:
       STORY_ID: 'actionexample-actions--basic'
 - waitForAnimationToEnd
-- assertVisible:
-    id: 'actionexample-actions--basic'
+- assertVisible: 'ActionExample/Actions/Basic'
 
 # Actions: lite UI logs the button action in its Actions panel.
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-actions"'
+      notVisible: 'Actions'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-actions"'
+      notVisible: 'Actions'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-actions"'
+      notVisible: 'Actions'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - extendedWaitUntil:
-    visible:
-      id: 'addon-tab-actions'
+    visible: 'Actions'
     timeout: 10000
 - tapOn:
-    id: 'addon-tab-actions'
+    label: 'Actions'
 - assertVisible: 'CLEAR'
 - tapOn:
     label: 'Press me!'
@@ -49,7 +47,7 @@ name: Expo router Storybook lite UI addons
 
 # Controls: this app registers Controls and Actions only.
 - tapOn:
-    id: 'addon-tab-controls'
+    label: 'Controls'
 - assertVisible: 'text'
 - assertVisible: 'Press me!'
 - assertNotVisible: 'Backgrounds'

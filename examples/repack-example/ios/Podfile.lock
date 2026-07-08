@@ -1986,7 +1986,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - ReactTestApp-DevSupport (5.3.2):
+  - ReactTestApp-DevSupport (5.4.4):
     - React-Core
     - React-jsi
   - ReactTestApp-Resources (1.0.0-dev)
@@ -2379,7 +2379,7 @@ SPEC CHECKSUMS:
   ReactCommon: d5c1bb4427bf51c443de5926aac332c89ddd9363
   ReactNativeDependencies: fa0a54b3f5319ae0e3b9aff32bfee7a424b88e66
   ReactNativeHost: f5cd5ffbfb7c6eda04b5b40d3de4e09ccec2c108
-  ReactTestApp-DevSupport: 6bc62ff813f8545246817323c36ec84c2319eb90
+  ReactTestApp-DevSupport: 371844dc09a55f6bd4d599d2ea17f89d003eb73d
   ReactTestApp-Resources: 1bd9ff10e4c24f2ad87101a32023721ae923bccf
   RNCAsyncStorage: 2ad919e88b8bc2cd80e8697ce66d04d006743283
   RNDateTimePicker: 7b2738f1e595f83c14580a11c476872755c5befc

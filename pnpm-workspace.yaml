@@ -19,5 +19,7 @@ overrides:
   sockjs>uuid: 11.1.1
   # Required until Expo's xcode dependency updates: xcode@3.0.1 pins uuid@^7, but the uuid advisory is only patched in 11.1.1+.
   xcode>uuid: 11.1.1
+  # Reanimated must be a singleton in React Native apps; mixed versions crash at runtime.
+  react-native-reanimated: 4.5.1
   # we are getting 5.8 from expo-router and 5.7 otherwise, we need to override to not get duplicate native deps
   react-native-safe-area-context: '5.8.0'

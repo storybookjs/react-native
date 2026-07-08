@@ -11,35 +11,33 @@ name: Repack example Storybook full UI addons
     env:
       STORY_ID: 'actionexample-actions--basic'
 - waitForAnimationToEnd
-- assertVisible:
-    id: 'actionexample-actions--basic'
+- assertVisible: 'ActionExample/Actions/Basic'
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-actions"'
+      notVisible: 'Actions'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-actions"'
+      notVisible: 'Actions'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-actions"'
+      notVisible: 'Actions'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - extendedWaitUntil:
-    visible:
-      id: 'addon-tab-actions'
+    visible: 'Actions'
     timeout: 10000
 - tapOn:
-    id: 'addon-tab-actions'
+    label: 'Actions'
 - assertVisible: 'CLEAR'
 - tapOn:
     label: 'Press me!'
@@ -54,35 +52,33 @@ name: Repack example Storybook full UI addons
     env:
       STORY_ID: 'controlexamples-controlexample--example'
 - waitForAnimationToEnd
-- assertVisible:
-    id: 'controlexamples-controlexample--example'
+- assertVisible: 'ControlExamples/ControlExample/Example'
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-controls"'
+      notVisible: 'Controls'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-controls"'
+      notVisible: 'Controls'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-controls"'
+      notVisible: 'Controls'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - extendedWaitUntil:
-    visible:
-      id: 'addon-tab-controls'
+    visible: 'Controls'
     timeout: 10000
 - tapOn:
-    id: 'addon-tab-controls'
+    label: 'Controls'
 - assertVisible: 'otherFruit'
 - tapOn:
     label: 'kiwi'
@@ -97,35 +93,33 @@ name: Repack example Storybook full UI addons
     env:
       STORY_ID: 'backgroundexample-backgroundcsf--basic'
 - waitForAnimationToEnd
-- assertVisible:
-    id: 'backgroundexample-backgroundcsf--basic'
+- assertVisible: 'BackgroundExample/BackgroundCsf/Basic'
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-backgrounds"'
+      notVisible: 'Backgrounds'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-backgrounds"'
+      notVisible: 'Backgrounds'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - runFlow:
     when:
-      notVisible: 'id="addon-tab-backgrounds"'
+      notVisible: 'Backgrounds'
     commands:
       - tapOn:
-          id: 'mobile-addons-button'
+          label: 'Open addons panel'
       - waitForAnimationToEnd
 - extendedWaitUntil:
-    visible:
-      id: 'addon-tab-backgrounds'
+    visible: 'Backgrounds'
     timeout: 10000
 - tapOn:
-    id: 'addon-tab-backgrounds'
+    label: 'Backgrounds'
 - assertVisible: 'dark'
 - assertVisible: 'plain'
 - assertVisible: 'app'

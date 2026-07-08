@@ -323,6 +323,7 @@ export const Layout = ({
                 testID="mobile-addons-button"
                 onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
                 Icon={BottomBarToggleIcon}
+                accessibilityLabel="Open addons panel"
               />
             )}
           </Nav>
