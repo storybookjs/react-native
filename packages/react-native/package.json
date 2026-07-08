@@ -75,7 +75,7 @@
     "@types/jest": "^29.5.13",
     "@types/react": "~19.2.14",
     "babel-jest": "^29.7.0",
-    "babel-preset-expo": "^55.0.23",
+    "babel-preset-expo": "^57.0.2",
     "jest": "^29.7.0",
     "jest-expo": "~57.0.1",
     "jotai": "^2.20.1",

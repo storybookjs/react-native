@@ -10,7 +10,15 @@ name: Expo new wrapper Storybook lite UI addons
     env:
       STORY_ID: 'button--default'
 - waitForAnimationToEnd
-- assertVisible: 'Button/Default'
+- runFlow:
+    when:
+      visible: 'Close story list'
+    commands:
+      - tapOn:
+          label: 'Close story list'
+      - waitForAnimationToEnd
+- assertVisible:
+    id: 'button--default'
 
 # Actions: lite UI logs the button action in its Actions panel.
 - runFlow:
