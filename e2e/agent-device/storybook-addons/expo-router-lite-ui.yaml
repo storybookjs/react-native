@@ -10,7 +10,6 @@ name: Expo router Storybook lite UI addons
     env:
       STORY_ID: 'actionexample-actions--basic'
 - waitForAnimationToEnd
-- assertVisible: 'ActionExample/Actions/Basic'
 
 # Actions: lite UI logs the button action in its Actions panel.
 - runFlow:

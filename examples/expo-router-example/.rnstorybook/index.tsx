@@ -6,7 +6,9 @@ import Storage from 'expo-sqlite/kv-store';
 import { registerRootComponent } from 'expo';
 import { LiteUI } from '@storybook/react-native-ui-lite';
 import { view } from './storybook.requires';
-import { Platform } from 'react-native';
+import { LogBox, Platform } from 'react-native';
+
+LogBox.ignoreLogs(['Addon controls: Control of type color only supports string']);
 
 const storage =
   Platform.OS === 'web'

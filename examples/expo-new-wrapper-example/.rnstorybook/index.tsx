@@ -5,8 +5,11 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { registerRootComponent } from 'expo';
 import { LiteUI } from '@storybook/react-native-ui-lite';
+import { LogBox } from 'react-native';
 
 import { view } from './storybook.requires';
+
+LogBox.ignoreLogs(['Addon controls: Control of type color only supports string']);
 
 const StorybookUIRoot = view.getStorybookUI({
   shouldPersistSelection: true,
