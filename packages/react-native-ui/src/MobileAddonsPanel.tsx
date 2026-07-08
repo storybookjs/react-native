@@ -244,11 +244,23 @@ const PanelRenderer = ({ panel }: { panel: Addon_BaseType }) => {
   return panel.render({ active: true });
 };
 
-const Tab = ({ active, onPress, text }: { active: boolean; onPress: () => void; text: string }) => {
+const Tab = ({
+  active,
+  onPress,
+  text,
+}: {
+  active: boolean;
+  onPress: () => void;
+  text: string;
+}) => {
+  const testID = `addon-tab-${text.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
   return (
     <TabButton
       active={active}
       onPress={onPress}
+      testID={testID}
+      accessible
       accessibilityRole="tab"
       accessibilityState={{ selected: active }}
       accessibilityLabel={text}

@@ -1,0 +1,132 @@
+appId: com.storybook.example
+name: Expo example Storybook full UI addons
+---
+- stopApp: com.storybook.example
+- openLink: ${OPEN_LINK}
+- waitForAnimationToEnd
+
+# Actions: full UI only logs while the Actions panel is open.
+- runScript:
+    file: 'select-story-sync.js'
+    env:
+      STORY_ID: 'actionexample-actions--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'actionexample-actions--basic'
+- runFlow:
+    when:
+      notVisible: 'id="addon-tab-actions"'
+    commands:
+      - tapOn:
+          id: 'mobile-addons-button'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'id="addon-tab-actions"'
+    commands:
+      - tapOn:
+          id: 'mobile-addons-button'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'id="addon-tab-actions"'
+    commands:
+      - tapOn:
+          id: 'mobile-addons-button'
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: 'addon-tab-actions'
+    timeout: 10000
+- tapOn:
+    id: 'addon-tab-actions'
+- assertVisible: 'CLEAR'
+- tapOn:
+    label: 'Press me!'
+- assertVisible: '▶, onPress, : [...]'
+- takeScreenshot: 'expo-example-actions'
+- tapOn:
+    label: 'Close addons panel'
+
+# Controls: change a radio control and verify the rendered story updates.
+- runScript:
+    file: 'select-story-sync.js'
+    env:
+      STORY_ID: 'controlexamples-controlexample--example'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'controlexamples-controlexample--example'
+- runFlow:
+    when:
+      notVisible: 'id="addon-tab-controls"'
+    commands:
+      - tapOn:
+          id: 'mobile-addons-button'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'id="addon-tab-controls"'
+    commands:
+      - tapOn:
+          id: 'mobile-addons-button'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'id="addon-tab-controls"'
+    commands:
+      - tapOn:
+          id: 'mobile-addons-button'
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: 'addon-tab-controls'
+    timeout: 10000
+- tapOn:
+    id: 'addon-tab-controls'
+- assertVisible: 'otherFruit'
+- tapOn:
+    label: 'kiwi'
+- tapOn:
+    label: 'Close addons panel'
+- assertVisible: 'kiwi'
+- takeScreenshot: 'expo-example-controls'
+
+# Backgrounds: story-level backgrounds expose configured options.
+- runScript:
+    file: 'select-story-sync.js'
+    env:
+      STORY_ID: 'backgroundexample-backgroundcsf--basic'
+- waitForAnimationToEnd
+- assertVisible:
+    id: 'backgroundexample-backgroundcsf--basic'
+- runFlow:
+    when:
+      notVisible: 'id="addon-tab-backgrounds"'
+    commands:
+      - tapOn:
+          id: 'mobile-addons-button'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'id="addon-tab-backgrounds"'
+    commands:
+      - tapOn:
+          id: 'mobile-addons-button'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'id="addon-tab-backgrounds"'
+    commands:
+      - tapOn:
+          id: 'mobile-addons-button'
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: 'addon-tab-backgrounds'
+    timeout: 10000
+- tapOn:
+    id: 'addon-tab-backgrounds'
+- assertVisible: 'dark'
+- assertVisible: 'plain'
+- assertVisible: 'app'
+- takeScreenshot: 'expo-example-backgrounds'
