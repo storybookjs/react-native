@@ -99,6 +99,9 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, MobileAddonsPa
         // enableContentPanningGesture={true}
         stackBehavior="replace"
         enableDynamicSizing={false}
+        accessible={false}
+        accessibilityLabel={null}
+        accessibilityRole={null}
       >
         <Animated.View style={[contentStyle, adjustedBottomSheetSize]}>
           <AddonsTabs
@@ -209,6 +212,7 @@ export const AddonsTabs = ({
           hitSlop={hitSlop}
           Icon={CloseIcon}
           onPress={() => onClose?.()}
+          accessibilityLabel="Close addons panel"
         />
       </View>
       <ScrollView
@@ -242,7 +246,13 @@ const PanelRenderer = ({ panel }: { panel: Addon_BaseType }) => {
 
 const Tab = ({ active, onPress, text }: { active: boolean; onPress: () => void; text: string }) => {
   return (
-    <TabButton active={active} onPress={onPress}>
+    <TabButton
+      active={active}
+      onPress={onPress}
+      accessibilityRole="tab"
+      accessibilityState={{ selected: active }}
+      accessibilityLabel={text}
+    >
       <TabText active={active}>{text}</TabText>
     </TabButton>
   );
