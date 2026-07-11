@@ -1,10 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LiteUI } from '@storybook/react-native-ui-lite';
-import { LogBox, StatusBar, View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { view } from './storybook.requires';
-
-LogBox.ignoreLogs(['Addon controls: Control of type color only supports string']);
 
 const isScreenshotTesting = process.env.EXPO_PUBLIC_SCREENSHOT_TESTING === 'true';
 const isLiteUI = process.env.EXPO_PUBLIC_LITE_UI === 'true';
