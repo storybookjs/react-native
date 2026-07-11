@@ -1,5 +1,11 @@
 # @storybook/react-native-theming
 
+## 10.5.0
+
+### Minor Changes
+
+- [`40f25fa`](https://github.com/storybookjs/react-native/commit/40f25fad669a5034b119e07669e7287c9f51c9bc) Thanks [@dannyhw](https://github.com/dannyhw)! - update deps for compatibility with 10.5 and for audit fixes
+
 ## 10.4.7
 
 ## 10.4.6
