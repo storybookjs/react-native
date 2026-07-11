@@ -4,6 +4,9 @@ name: Expo new wrapper Storybook lite UI addons
 - stopApp: com.storybook.newwrapperexample
 - openLink: ${OPEN_LINK}
 - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Open addons panel'
+    timeout: 30000
 
 - runScript:
     file: 'select-story-sync.js'

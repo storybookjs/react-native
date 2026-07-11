@@ -4,6 +4,9 @@ name: Expo router Storybook lite UI addons
 - stopApp: com.dannyhw.exporouterexample
 - openLink: ${OPEN_LINK}
 - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Open addons panel'
+    timeout: 30000
 
 - runScript:
     file: 'select-story-sync.js'

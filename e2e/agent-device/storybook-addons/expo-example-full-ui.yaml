@@ -4,6 +4,9 @@ name: Expo example Storybook full UI addons
 - stopApp: com.storybook.example
 - openLink: ${OPEN_LINK}
 - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Open addons panel'
+    timeout: 30000
 
 # Actions: full UI only logs while the Actions panel is open.
 - runScript:

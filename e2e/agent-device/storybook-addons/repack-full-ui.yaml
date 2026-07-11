@@ -4,6 +4,9 @@ name: Repack example Storybook full UI addons
 - stopApp: ${APP_ID}
 - launchApp
 - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Open addons panel'
+    timeout: 30000
 
 # Actions: full UI only logs while the Actions panel is open.
 - runScript:
