@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@storybook/mcp": "^0.8.0",
-    "@storybook/react": "10.5.0-beta.2",
+    "@storybook/react": "^10.5.0",
     "@storybook/react-native-theming": "^10.4.7",
     "@storybook/react-native-ui": "^10.4.7",
     "@storybook/react-native-ui-common": "^10.4.7",
@@ -81,7 +81,7 @@
     "jotai": "^2.20.1",
     "react": "19.2.3",
     "react-native": "0.86.0",
-    "storybook": "10.5.0-beta.2",
+    "storybook": "^10.5.0",
     "sucrase": "^3.35.1",
     "test-renderer": "^0.15.0",
     "tsdown": "^0.22.4",
@@ -92,8 +92,8 @@
     "react": "*",
     "react-native": ">=0.72.0",
     "react-native-gesture-handler": ">=2",
-    "react-native-reanimated": ">=2",
-    "react-native-safe-area-context": "*",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "5.8.0",
     "storybook": ">=10 || ^10"
   },
   "peerDependenciesMeta": {
