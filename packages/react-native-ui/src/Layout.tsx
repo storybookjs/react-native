@@ -133,6 +133,7 @@ export const Layout = ({
   const [uiHidden, setUiHidden] = useState(false);
 
   useLayoutEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setUiHidden(story?.parameters?.storybookUIVisibility === 'hidden');
   }, [story?.parameters?.storybookUIVisibility]);
 
@@ -322,6 +323,7 @@ export const Layout = ({
                 testID="mobile-addons-button"
                 onPress={() => addonPanelRef.current.setAddonsPanelOpen(true)}
                 Icon={BottomBarToggleIcon}
+                accessibilityLabel="Open addons panel"
               />
             )}
           </Nav>
