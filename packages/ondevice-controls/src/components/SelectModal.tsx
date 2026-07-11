@@ -146,6 +146,7 @@ export const SelectModal = ({
   const [selectedKeys, setSelectedKeys] = useState(() => valueKeys(value, multiple));
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedKeys(valueKeys(value, multiple));
   }, [multiple, value]);
 

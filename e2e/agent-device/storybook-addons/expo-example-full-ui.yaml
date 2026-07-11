@@ -1,0 +1,126 @@
+appId: com.storybook.example
+name: Expo example Storybook full UI addons
+---
+- stopApp: com.storybook.example
+- openLink: ${OPEN_LINK}
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Open addons panel'
+    timeout: 30000
+
+# Actions: full UI only logs while the Actions panel is open.
+- runScript:
+    file: 'select-story-sync.js'
+    env:
+      STORY_ID: 'actionexample-actions--basic'
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Actions'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Actions'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Actions'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Actions'
+    timeout: 10000
+- tapOn:
+    label: 'Actions'
+- assertVisible: 'CLEAR'
+- tapOn:
+    label: 'Press me!'
+- assertVisible: '▶, onPress, : [...]'
+- takeScreenshot: 'expo-example-actions'
+- tapOn:
+    label: 'Close addons panel'
+
+# Controls: change a radio control and verify the rendered story updates.
+- runScript:
+    file: 'select-story-sync.js'
+    env:
+      STORY_ID: 'controlexamples-controlexample--example'
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Controls'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Controls'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Controls'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Controls'
+    timeout: 10000
+- tapOn:
+    label: 'Controls'
+- assertVisible: 'otherFruit'
+- tapOn:
+    label: 'kiwi'
+- tapOn:
+    label: 'Close addons panel'
+- assertVisible: 'kiwi'
+- takeScreenshot: 'expo-example-controls'
+
+# Backgrounds: story-level backgrounds expose configured options.
+- runScript:
+    file: 'select-story-sync.js'
+    env:
+      STORY_ID: 'backgroundexample-backgroundcsf--basic'
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Backgrounds'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Backgrounds'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Backgrounds'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Backgrounds'
+    timeout: 10000
+- tapOn:
+    label: 'Backgrounds'
+- assertVisible: 'dark'
+- assertVisible: 'plain'
+- assertVisible: 'app'
+- takeScreenshot: 'expo-example-backgrounds'

@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../../expo-example/components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [
+  deviceAddons: [
     { name: '@storybook/addon-ondevice-controls' },
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',

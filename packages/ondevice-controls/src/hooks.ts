@@ -26,6 +26,7 @@ export const useArgs = (
     }
     // Sync the args up with the initial args of the story, since the story ID
     // must have changed for this effect to run.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setArgs(getControlArgs(currentStory));
     const cb = (changed: { storyId: string; args: Args }) => {
       if (changed.storyId === storyId) {

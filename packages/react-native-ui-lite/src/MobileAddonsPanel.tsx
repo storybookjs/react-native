@@ -41,6 +41,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, MobileAddonsPa
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPanelHeight(defaultPanelHeight);
     }, [defaultPanelHeight]);
 
@@ -284,12 +285,17 @@ const PanelRenderer = ({ panel }: { panel: Addon_BaseType }) => {
 };
 
 const Tab = ({ active, onPress, text }: { active: boolean; onPress: () => void; text: string }) => {
+  const testID = `addon-tab-${text.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
   return (
     <TabButton
       active={active}
       onPress={onPress}
+      testID={testID}
+      accessible
       accessibilityRole="tab"
       accessibilityState={{ selected: active }}
+      accessibilityLabel={text}
     >
       <TabText active={active}>{text}</TabText>
     </TabButton>

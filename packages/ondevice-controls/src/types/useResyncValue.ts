@@ -12,6 +12,7 @@ export function useResyncValue(
 
   useEffect(() => {
     if (isPristine && value !== currentValue) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setKey((cur) => cur + 1);
       resyncCallback?.(value);
     }
