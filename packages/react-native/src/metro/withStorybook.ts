@@ -2,7 +2,7 @@ import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import type { MetroConfig } from 'metro-config';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
-import { telemetry } from 'storybook/internal/telemetry';
+import { setTelemetryEnabled, telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
 import type { WebsocketsOptions } from '../types';
 import { envVariableToBoolean, loadWebsocketEnvOverrides } from '../env-tools';
@@ -147,6 +147,7 @@ export function withStorybook(
   const server = envVariableToBoolean(process.env.STORYBOOK_SERVER, true);
 
   if (!disableTelemetry && enabled) {
+    setTelemetryEnabled(true);
     telemetry('dev', {}, { configDir: configPath }).catch((e) => {});
   }
 
