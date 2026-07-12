@@ -142,7 +142,7 @@ export class StorybookPlugin {
     const disableTelemetry = envVariableToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY, false);
 
     if (!disableTelemetry && enabled) {
-      telemetry('dev', {}).catch((e) => {});
+      telemetry('dev', {}, { configDir: configPath }).catch((e) => {});
     }
 
     this.applyEnabled(compiler, {

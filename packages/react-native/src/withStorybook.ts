@@ -27,8 +27,11 @@ export function withStorybook<T extends unknown>(config: T, options: WithStorybo
   );
   const settings = { ...options };
 
+  const defaultConfigPath = path.resolve(process.cwd(), './.rnstorybook');
+  const configPath = options.configPath || defaultConfigPath;
+
   if (!disableTelemetry && enabled) {
-    telemetry('dev', {}).catch((e) => {});
+    telemetry('dev', {}, { configDir: configPath }).catch((e) => {});
   }
 
   if (!server) {
@@ -39,8 +42,6 @@ export function withStorybook<T extends unknown>(config: T, options: WithStorybo
     settings.docTools = false;
   }
 
-  const defaultConfigPath = path.resolve(process.cwd(), './.rnstorybook');
-  const configPath = options.configPath || defaultConfigPath;
   const websocketsOption = options.websockets;
   const resolvedWs = loadWebsocketEnvOverrides(websocketsOption);
 

@@ -1,6 +1,8 @@
 import type { MetroConfig } from 'metro-config';
 import { createChannelServer } from './channelServer';
 import { generate } from '../../scripts/generate';
+import { optionalEnvToBoolean } from 'storybook/internal/common';
+import { telemetry } from 'storybook/internal/telemetry';
 
 jest.mock('./channelServer', () => ({
   createChannelServer: jest.fn(),
@@ -58,6 +60,20 @@ describe('withStorybook experimental_mcp', () => {
     );
     expect(generateArgs.host).toBeUndefined();
     expect(generateArgs.port).toBeUndefined();
+  });
+
+  test('reports telemetry with the resolved configDir so framework metadata is captured', () => {
+    (optionalEnvToBoolean as jest.Mock).mockReturnValue(false);
+
+    withStorybook(config, {
+      configPath: '/tmp/.rnstorybook',
+      enabled: true,
+    });
+    expect(telemetry).toHaveBeenCalledWith(
+      'dev',
+      {},
+      expect.objectContaining({ configDir: '/tmp/.rnstorybook' })
+    );
   });
 
   test('passes experimental_mcp to channel server when websockets are configured', () => {
