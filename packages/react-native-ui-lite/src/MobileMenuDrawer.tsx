@@ -273,8 +273,7 @@ export const MobileMenuDrawer = memo(
       return (
         <Portal hostName="storybook-lite-ui-root">
           <Animated.View
-            style={portalContainerStyle}
-            pointerEvents={isVisible ? 'auto' : 'none'}
+            style={[portalContainerStyle, { pointerEvents: isVisible ? 'auto' : 'none' }]}
             accessibilityElementsHidden={!isVisible}
             importantForAccessibility={isVisible ? 'auto' : 'no-hide-descendants'}
             accessibilityViewIsModal={isVisible}

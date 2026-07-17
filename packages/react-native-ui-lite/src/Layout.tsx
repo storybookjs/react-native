@@ -270,7 +270,7 @@ export const Layout = ({
     >
       {isDesktop ? (
         <>
-          <View style={desktopSidebarStyle} pointerEvents={isResizing ? 'none' : 'auto'}>
+          <View style={[desktopSidebarStyle, { pointerEvents: isResizing ? 'none' : 'auto' }]}>
             {desktopSidebarOpen ? (
               <>
                 <View style={desktopLogoContainer}>
@@ -317,8 +317,10 @@ export const Layout = ({
 
       <View style={mobileContentStyle}>
         <View
-          style={isDesktop ? storyContentStyle : contentContainerStyle}
-          pointerEvents={isResizing ? 'none' : 'auto'}
+          style={[
+            isDesktop ? storyContentStyle : contentContainerStyle,
+            { pointerEvents: isResizing ? 'none' : 'auto' },
+          ]}
         >
           {children}
         </View>
@@ -349,7 +351,9 @@ export const Layout = ({
                 onResizeEnd={onResizeEnd}
               />
             ) : null}
-            <View style={desktopAddonsPanelStyle} pointerEvents={isResizing ? 'none' : 'auto'}>
+            <View
+              style={[desktopAddonsPanelStyle, { pointerEvents: isResizing ? 'none' : 'auto' }]}
+            >
               {desktopAddonsPanelOpen ? (
                 <AddonsTabs
                   storyId={story?.id}
