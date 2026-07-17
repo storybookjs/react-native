@@ -74,6 +74,9 @@ const styles = StyleSheet.create({
   buttonText: {
     textAlign: 'center',
   },
+  triggerContent: {
+    pointerEvents: 'none',
+  },
 });
 
 const Dialog = styled.View<{ maxHeight: number }>(({ theme, maxHeight }) => ({
@@ -260,7 +263,7 @@ export const SelectModal = ({
       </ModalPortal>
 
       <TouchableOpacity activeOpacity={0.7} onPress={open}>
-        <View pointerEvents="none">{children}</View>
+        <View style={styles.triggerContent}>{children}</View>
       </TouchableOpacity>
     </View>
   );

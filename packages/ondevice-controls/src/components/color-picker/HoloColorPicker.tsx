@@ -118,27 +118,15 @@ export function HoloColorPicker({
                 resizeMode="contain"
                 style={styles.pickerImage}
               />
-              <View
-                style={[styles.pickerIndicator, computed.pickerIndicator]}
-                pointerEvents="none"
-              />
+              <View style={[styles.pickerIndicator, computed.pickerIndicator]} />
             </View>
             {oldColor ? (
               <>
-                <View
-                  style={[styles.selectedPreview, computed.selectedPreview]}
-                  pointerEvents="none"
-                />
-                <View
-                  style={[styles.originalPreview, computed.originalPreview]}
-                  pointerEvents="none"
-                />
+                <View style={[styles.selectedPreview, computed.selectedPreview]} />
+                <View style={[styles.originalPreview, computed.originalPreview]} />
               </>
             ) : (
-              <View
-                style={[styles.selectedFullPreview, computed.selectedFullPreview]}
-                pointerEvents="none"
-              />
+              <View style={[styles.selectedFullPreview, computed.selectedFullPreview]} />
             )}
           </View>
         )}
@@ -251,19 +239,23 @@ const styles = StyleSheet.create({
   },
   pickerIndicator: {
     position: 'absolute',
+    pointerEvents: 'none',
     boxShadow: '3px 3px 4px 0px rgba(0, 0, 0, 0.3)',
     elevation: 5,
   },
   selectedPreview: {
     position: 'absolute',
     borderLeftWidth: 0,
+    pointerEvents: 'none',
   },
   originalPreview: {
     position: 'absolute',
     borderRightWidth: 0,
+    pointerEvents: 'none',
   },
   selectedFullPreview: {
     position: 'absolute',
+    pointerEvents: 'none',
   },
   sliderLabel: {
     paddingStart: 4,
