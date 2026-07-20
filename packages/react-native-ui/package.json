@@ -35,15 +35,15 @@
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "^10.5.0",
+    "@storybook/react": "^10.5.2",
     "@storybook/react-native-theming": "^10.5.1",
     "@storybook/react-native-ui-common": "^10.5.1",
     "polished": "^4.3.1"
   },
   "devDependencies": {
     "@types/react": "~19.2.14",
-    "storybook": "^10.5.0",
-    "tsdown": "^0.22.4",
+    "storybook": "^10.5.2",
+    "tsdown": "^0.22.12",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
@@ -51,8 +51,8 @@
     "react": "*",
     "react-native": ">=0.57.0",
     "react-native-gesture-handler": ">=2",
-    "react-native-reanimated": ">=3",
-    "react-native-safe-area-context": "*",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "5.8.0",
     "react-native-svg": ">=14",
     "storybook": ">=10 || ^10"
   },
