@@ -23,9 +23,3 @@ overrides:
   react-native-reanimated: 4.5.1
   # we are getting 5.8 from expo-router and 5.7 otherwise, we need to override to not get duplicate native deps
   react-native-safe-area-context: '5.8.0'
-  brace-expansion@<1.1.16: ^1.1.16
-  brace-expansion@>=3.0.0 <5.0.7: ^5.0.7
-  websocket-driver@<0.7.5: ^0.7.5
-minimumReleaseAgeExclude:
-  - websocket-driver@0.7.5
-  - brace-expansion@1.1.16 || 5.0.7
