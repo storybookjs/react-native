@@ -1,5 +1,38 @@
 # @storybook/react-native
 
+## 10.5.1
+
+### Patch Changes
+
+- [#907](https://github.com/storybookjs/react-native/pull/907) [`e74641b`](https://github.com/storybookjs/react-native/commit/e74641b6f35c5005a348b1fd1f982e76ed47f04b) Thanks [@yatishgoel](https://github.com/yatishgoel)! - Telemetry: actually send the `dev` event and report framework metadata
+
+  React Native runs through Metro/Re.Pack rather than the Storybook core-server, so two things were missing from the `dev` telemetry event:
+
+  - The telemetry module's enabled state was never resolved (that normally happens in the core-server), so the event was queued and never sent. `withStorybook` now calls `setTelemetryEnabled(true)` when telemetry is enabled, flushing the event.
+  - The event was sent without a `configDir`, so `getStorybookMetadata` defaulted to `.storybook` and could not read React Native's `.rnstorybook` config, leaving `metadata.framework` empty. The resolved config path is now passed through.
+
+  Applied to the Metro, Re.Pack, and shared `withStorybook` entry points.
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.5.1
+  - @storybook/react-native-ui-common@10.5.1
+  - @storybook/react-native-theming@10.5.1
+
+## 10.5.0
+
+### Minor Changes
+
+- [`40f25fa`](https://github.com/storybookjs/react-native/commit/40f25fad669a5034b119e07669e7287c9f51c9bc) Thanks [@dannyhw](https://github.com/dannyhw)! - update deps for compatibility with 10.5 and for audit fixes
+
+### Patch Changes
+
+- [#903](https://github.com/storybookjs/react-native/pull/903) [`44e3413`](https://github.com/storybookjs/react-native/commit/44e34137552a211c9c15570330c42480f2c5abfb) Thanks [@ndelangen](https://github.com/ndelangen)! - Fix docgen-based auto argTypes (controls) that were silently disabled. `preview.ts` imported `argTypesEnhancers` and `parameters.docs.extractArgTypes` from `@storybook/react/entry-preview-docs`, which does not export them, so both resolved to `undefined`. They are now imported from `@storybook/react/entry-preview-argtypes`, restoring auto-generated controls from component `__docgenInfo`.
+
+- Updated dependencies [[`40f25fa`](https://github.com/storybookjs/react-native/commit/40f25fad669a5034b119e07669e7287c9f51c9bc)]:
+  - @storybook/react-native-theming@10.5.0
+  - @storybook/react-native-ui@10.5.0
+  - @storybook/react-native-ui-common@10.5.0
+
 ## 10.4.7
 
 ### Patch Changes

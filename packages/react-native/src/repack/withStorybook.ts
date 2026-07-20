@@ -3,7 +3,7 @@ import { generate } from '../../scripts/generate';
 import { createChannelServer } from '../metro/channelServer';
 import type { WebsocketsOptions } from '../types';
 import { envVariableToBoolean, loadWebsocketEnvOverrides } from '../env-tools';
-import { telemetry } from 'storybook/internal/telemetry';
+import { setTelemetryEnabled, telemetry } from 'storybook/internal/telemetry';
 
 /**
  * Minimal compiler types for webpack/rspack compatibility.
@@ -142,7 +142,8 @@ export class StorybookPlugin {
     const disableTelemetry = envVariableToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY, false);
 
     if (!disableTelemetry && enabled) {
-      telemetry('dev', {}).catch((e) => {});
+      setTelemetryEnabled(true);
+      telemetry('dev', {}, { configDir: configPath }).catch((e) => {});
     }
 
     this.applyEnabled(compiler, {

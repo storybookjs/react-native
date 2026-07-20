@@ -122,8 +122,8 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, MobileAddonsPa
           right: 0,
           height: panelHeight,
           transform: [{ translateY: positionBottomAnimation }],
+          pointerEvents: isOpen ? 'auto' : 'none',
         }}
-        pointerEvents={isOpen ? 'auto' : 'none'}
         accessibilityElementsHidden={!isOpen}
         importantForAccessibility={isOpen ? 'auto' : 'no-hide-descendants'}
       >

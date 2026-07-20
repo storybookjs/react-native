@@ -14,10 +14,12 @@ jest.mock('storybook/internal/common', () => ({
 
 jest.mock('storybook/internal/telemetry', () => ({
   telemetry: jest.fn(() => Promise.resolve()),
+  setTelemetryEnabled: jest.fn(() => Promise.resolve()),
 }));
 
 jest.mock('storybook/internal/telemetry', () => ({
   telemetry: jest.fn(() => Promise.resolve()),
+  setTelemetryEnabled: jest.fn(() => Promise.resolve()),
 }));
 
 describe('withStorybook (unified)', () => {
@@ -46,6 +48,7 @@ describe('withStorybook (unified)', () => {
     jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
     jest.mock('storybook/internal/telemetry', () => ({
       telemetry: jest.fn(() => Promise.resolve()),
+      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
     }));
 
     const { withStorybook } = require('./withStorybook');
@@ -66,6 +69,7 @@ describe('withStorybook (unified)', () => {
     jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
     jest.mock('storybook/internal/telemetry', () => ({
       telemetry: jest.fn(() => Promise.resolve()),
+      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
     }));
 
     const { withStorybook } = require('./withStorybook');
@@ -84,6 +88,7 @@ describe('withStorybook (unified)', () => {
     jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
     jest.mock('storybook/internal/telemetry', () => ({
       telemetry: jest.fn(() => Promise.resolve()),
+      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
     }));
 
     const { generate: mockGenerate } = require('../scripts/generate');
@@ -107,6 +112,7 @@ describe('withStorybook (unified)', () => {
     jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
     jest.mock('storybook/internal/telemetry', () => ({
       telemetry: jest.fn(() => Promise.resolve()),
+      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
     }));
 
     const { generate: mockGenerate } = require('../scripts/generate');
@@ -133,6 +139,7 @@ describe('withStorybook (unified)', () => {
     jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
     jest.mock('storybook/internal/telemetry', () => ({
       telemetry: jest.fn(() => Promise.resolve()),
+      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
     }));
 
     const { createChannelServer: mockCreateChannelServer } = require('./metro/channelServer');
@@ -162,6 +169,7 @@ describe('withStorybook (unified)', () => {
     jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
     jest.mock('storybook/internal/telemetry', () => ({
       telemetry: jest.fn(() => Promise.resolve()),
+      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
     }));
 
     const { createChannelServer: mockCreateChannelServer } = require('./metro/channelServer');
@@ -191,6 +199,7 @@ describe('withStorybook (unified)', () => {
     jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
     jest.mock('storybook/internal/telemetry', () => ({
       telemetry: jest.fn(() => Promise.resolve()),
+      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
     }));
 
     const { withStorybook } = require('./withStorybook');
