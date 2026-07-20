@@ -1,5 +1,16 @@
 # @storybook/react-native-ui-common
 
+## 10.5.2
+
+### Patch Changes
+
+- [#911](https://github.com/storybookjs/react-native/pull/911) [`c0da377`](https://github.com/storybookjs/react-native/commit/c0da37774a1318c152daa8f4b159d79e64c2f565) Thanks [@dannyhw](https://github.com/dannyhw)! - address npm audit issues
+
+- [#910](https://github.com/storybookjs/react-native/pull/910) [`2e0f148`](https://github.com/storybookjs/react-native/commit/2e0f148ecfa3a346965129f156dcdb1575d3f1fd) Thanks [@dannyhw](https://github.com/dannyhw)! - update storybook deps
+
+- Updated dependencies [[`c0da377`](https://github.com/storybookjs/react-native/commit/c0da37774a1318c152daa8f4b159d79e64c2f565), [`2e0f148`](https://github.com/storybookjs/react-native/commit/2e0f148ecfa3a346965129f156dcdb1575d3f1fd)]:
+  - @storybook/react-native-theming@10.5.2
+
 ## 10.5.1
 
 ### Patch Changes
