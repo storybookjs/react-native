@@ -43,7 +43,7 @@
   "devDependencies": {
     "@types/react": "~19.2.14",
     "storybook": "^10.5.2",
-    "tsdown": "^0.22.4",
+    "tsdown": "^0.22.12",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
@@ -51,8 +51,8 @@
     "react": "*",
     "react-native": ">=0.57.0",
     "react-native-gesture-handler": ">=2",
-    "react-native-reanimated": ">=3",
-    "react-native-safe-area-context": "*",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "5.8.0",
     "react-native-svg": ">=14",
     "storybook": ">=10 || ^10"
   },
