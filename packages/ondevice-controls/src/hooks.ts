@@ -6,31 +6,46 @@ import {
   STORY_ARGS_UPDATED,
 } from 'storybook/internal/core-events';
 
+// `prepareContext` adds `unmappedArgs` (the raw option keys, before mapping and
+// conditional filtering) to every prepared story context at runtime, but core's
+// StoryContext type doesn't declare it.
+type PreparedStoryContext = StoryContext & { unmappedArgs?: Args };
+
+// Controls must work with the unmapped values, same as web: `story.args` holds
+// the mapped values, so a mapped `select` can't match them back to its options.
+const getControlArgs = (story: PreparedStoryContext): Args => story.unmappedArgs ?? story.args;
+
 export const useArgs = (
   storyId: string,
   storyStore: any
 ): [Args, (args: Args) => void, (argNames?: string[]) => void] => {
-  const story: StoryContext = storyStore.fromId(storyId);
-  if (!story) {
-    throw new Error(`Unknown story: ${storyId}`);
-  }
+  // Reading a story runs `prepareContext` (arg mapping, conditional filtering),
+  // so only do it when the args state needs (re)initializing, not every render.
+  const getStoryControlArgs = useCallback(() => {
+    const story: PreparedStoryContext | undefined = storyStore.fromId(storyId);
+    if (!story) {
+      throw new Error(`Unknown story: ${storyId}`);
+    }
+    return getControlArgs(story);
+  }, [storyId, storyStore]);
 
-  const { args: initialArgs } = story;
-  const [args, setArgs] = useState(initialArgs);
+  const [args, setArgs] = useState(getStoryControlArgs);
   useEffect(() => {
     // Sync the args up with the initial args of the story, since the story ID
     // must have changed for this effect to run.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setArgs(initialArgs);
+    setArgs(getStoryControlArgs());
     const cb = (changed: { storyId: string; args: Args }) => {
       if (changed.storyId === storyId) {
+        // The STORY_ARGS_UPDATED payload comes straight from the ArgsStore,
+        // which holds unmapped args — no need to re-read the story here.
         setArgs(changed.args);
       }
     };
     storyStore._channel.on(STORY_ARGS_UPDATED, cb);
     return () => storyStore._channel.off(STORY_ARGS_UPDATED, cb);
-    // Exclude `initialArgs` from the dependencies, as these are not relevant
-    // until `storyId` changes.
+    // Exclude `getStoryControlArgs` from the dependencies; it only varies with
+    // `storyId`.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storyId]);
 
