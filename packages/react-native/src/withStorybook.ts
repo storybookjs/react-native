@@ -7,7 +7,7 @@ import type { WithStorybookOptions } from './metro/utils';
 import { generate } from '../scripts/generate';
 import { createChannelServer } from './metro/channelServer';
 import { envVariableToBoolean, loadWebsocketEnvOverrides } from './env-tools';
-import { setTelemetryEnabled, telemetry } from 'storybook/internal/telemetry';
+import { sendDevTelemetry } from './telemetry/sendDevTelemetry';
 
 function isMetroConfig(config: unknown): config is MetroConfig {
   return config != null && typeof config === 'object' && 'transformer' in config;
@@ -31,8 +31,7 @@ export function withStorybook<T extends unknown>(config: T, options: WithStorybo
   const configPath = options.configPath || defaultConfigPath;
 
   if (!disableTelemetry && enabled) {
-    setTelemetryEnabled(true);
-    telemetry('dev', {}, { configDir: configPath }).catch((e) => {});
+    void sendDevTelemetry(configPath);
   }
 
   if (!server) {

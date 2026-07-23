@@ -12,14 +12,8 @@ jest.mock('storybook/internal/common', () => ({
   optionalEnvToBoolean: jest.fn(() => true),
 }));
 
-jest.mock('storybook/internal/telemetry', () => ({
-  telemetry: jest.fn(() => Promise.resolve()),
-  setTelemetryEnabled: jest.fn(() => Promise.resolve()),
-}));
-
-jest.mock('storybook/internal/telemetry', () => ({
-  telemetry: jest.fn(() => Promise.resolve()),
-  setTelemetryEnabled: jest.fn(() => Promise.resolve()),
+jest.mock('./telemetry/sendDevTelemetry', () => ({
+  sendDevTelemetry: jest.fn(() => Promise.resolve()),
 }));
 
 describe('withStorybook (unified)', () => {
@@ -39,17 +33,20 @@ describe('withStorybook (unified)', () => {
     jest.resetModules();
   });
 
-  test('returns config unchanged when STORYBOOK_ENABLED is not set', () => {
-    delete process.env.STORYBOOK_ENABLED;
-
+  function remock() {
     jest.resetModules();
     jest.mock('./metro/channelServer', () => ({ createChannelServer: jest.fn() }));
     jest.mock('../scripts/generate', () => ({ generate: jest.fn() }));
     jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
-    jest.mock('storybook/internal/telemetry', () => ({
-      telemetry: jest.fn(() => Promise.resolve()),
-      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
+    jest.mock('./telemetry/sendDevTelemetry', () => ({
+      sendDevTelemetry: jest.fn(() => Promise.resolve()),
     }));
+  }
+
+  test('returns config unchanged when STORYBOOK_ENABLED is not set', () => {
+    delete process.env.STORYBOOK_ENABLED;
+
+    remock();
 
     const { withStorybook } = require('./withStorybook');
     const { generate: mockGenerate } = require('../scripts/generate');
@@ -63,14 +60,7 @@ describe('withStorybook (unified)', () => {
   test('returns config unchanged when STORYBOOK_ENABLED is false', () => {
     process.env.STORYBOOK_ENABLED = 'false';
 
-    jest.resetModules();
-    jest.mock('./metro/channelServer', () => ({ createChannelServer: jest.fn() }));
-    jest.mock('../scripts/generate', () => ({ generate: jest.fn() }));
-    jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
-    jest.mock('storybook/internal/telemetry', () => ({
-      telemetry: jest.fn(() => Promise.resolve()),
-      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
-    }));
+    remock();
 
     const { withStorybook } = require('./withStorybook');
 
@@ -82,14 +72,7 @@ describe('withStorybook (unified)', () => {
   test('detects Metro config and delegates when STORYBOOK_ENABLED=true', () => {
     process.env.STORYBOOK_ENABLED = 'true';
 
-    jest.resetModules();
-    jest.mock('./metro/channelServer', () => ({ createChannelServer: jest.fn() }));
-    jest.mock('../scripts/generate', () => ({ generate: jest.fn() }));
-    jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
-    jest.mock('storybook/internal/telemetry', () => ({
-      telemetry: jest.fn(() => Promise.resolve()),
-      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
-    }));
+    remock();
 
     const { generate: mockGenerate } = require('../scripts/generate');
     const { withStorybook } = require('./withStorybook');
@@ -106,14 +89,7 @@ describe('withStorybook (unified)', () => {
   test('detects rspack/webpack config and calls generate', () => {
     process.env.STORYBOOK_ENABLED = 'true';
 
-    jest.resetModules();
-    jest.mock('./metro/channelServer', () => ({ createChannelServer: jest.fn() }));
-    jest.mock('../scripts/generate', () => ({ generate: jest.fn() }));
-    jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
-    jest.mock('storybook/internal/telemetry', () => ({
-      telemetry: jest.fn(() => Promise.resolve()),
-      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
-    }));
+    remock();
 
     const { generate: mockGenerate } = require('../scripts/generate');
     const { withStorybook } = require('./withStorybook');
@@ -133,14 +109,7 @@ describe('withStorybook (unified)', () => {
     process.env.STORYBOOK_WS_HOST = '10.0.0.5';
     process.env.STORYBOOK_WS_PORT = '9999';
 
-    jest.resetModules();
-    jest.mock('./metro/channelServer', () => ({ createChannelServer: jest.fn() }));
-    jest.mock('../scripts/generate', () => ({ generate: jest.fn() }));
-    jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
-    jest.mock('storybook/internal/telemetry', () => ({
-      telemetry: jest.fn(() => Promise.resolve()),
-      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
-    }));
+    remock();
 
     const { createChannelServer: mockCreateChannelServer } = require('./metro/channelServer');
     const { withStorybook } = require('./withStorybook');
@@ -163,14 +132,7 @@ describe('withStorybook (unified)', () => {
     process.env.STORYBOOK_WS_HOST = '10.0.0.5';
     process.env.STORYBOOK_WS_PORT = '9999';
 
-    jest.resetModules();
-    jest.mock('./metro/channelServer', () => ({ createChannelServer: jest.fn() }));
-    jest.mock('../scripts/generate', () => ({ generate: jest.fn() }));
-    jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
-    jest.mock('storybook/internal/telemetry', () => ({
-      telemetry: jest.fn(() => Promise.resolve()),
-      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
-    }));
+    remock();
 
     const { createChannelServer: mockCreateChannelServer } = require('./metro/channelServer');
     const { withStorybook } = require('./withStorybook');
@@ -193,14 +155,7 @@ describe('withStorybook (unified)', () => {
   test('preserves existing rspack plugins', () => {
     process.env.STORYBOOK_ENABLED = 'true';
 
-    jest.resetModules();
-    jest.mock('./metro/channelServer', () => ({ createChannelServer: jest.fn() }));
-    jest.mock('../scripts/generate', () => ({ generate: jest.fn() }));
-    jest.mock('storybook/internal/common', () => ({ optionalEnvToBoolean: jest.fn(() => true) }));
-    jest.mock('storybook/internal/telemetry', () => ({
-      telemetry: jest.fn(() => Promise.resolve()),
-      setTelemetryEnabled: jest.fn(() => Promise.resolve()),
-    }));
+    remock();
 
     const { withStorybook } = require('./withStorybook');
     const existingPlugin = { apply: jest.fn() };

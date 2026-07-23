@@ -2,10 +2,10 @@ import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import type { MetroConfig } from 'metro-config';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
-import { setTelemetryEnabled, telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
 import type { WebsocketsOptions } from '../types';
 import { envVariableToBoolean, loadWebsocketEnvOverrides } from '../env-tools';
+import { sendDevTelemetry } from '../telemetry/sendDevTelemetry';
 
 /**
  * Options for configuring Storybook with React Native.
@@ -147,8 +147,7 @@ export function withStorybook(
   const server = envVariableToBoolean(process.env.STORYBOOK_SERVER, true);
 
   if (!disableTelemetry && enabled) {
-    setTelemetryEnabled(true);
-    telemetry('dev', {}, { configDir: configPath }).catch((e) => {});
+    void sendDevTelemetry(configPath);
   }
 
   if (!enabled) {

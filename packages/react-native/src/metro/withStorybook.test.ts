@@ -2,7 +2,7 @@ import type { MetroConfig } from 'metro-config';
 import { createChannelServer } from './channelServer';
 import { generate } from '../../scripts/generate';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
-import { setTelemetryEnabled, telemetry } from 'storybook/internal/telemetry';
+import { sendDevTelemetry } from '../telemetry/sendDevTelemetry';
 
 jest.mock('./channelServer', () => ({
   createChannelServer: jest.fn(),
@@ -16,9 +16,8 @@ jest.mock('storybook/internal/common', () => ({
   optionalEnvToBoolean: jest.fn(() => true),
 }));
 
-jest.mock('storybook/internal/telemetry', () => ({
-  telemetry: jest.fn(() => Promise.resolve()),
-  setTelemetryEnabled: jest.fn(() => Promise.resolve()),
+jest.mock('../telemetry/sendDevTelemetry', () => ({
+  sendDevTelemetry: jest.fn(() => Promise.resolve()),
 }));
 
 describe('withStorybook experimental_mcp', () => {
@@ -63,7 +62,7 @@ describe('withStorybook experimental_mcp', () => {
     expect(generateArgs.port).toBeUndefined();
   });
 
-  test('enables telemetry and reports the resolved configDir so framework metadata is sent', () => {
+  test('sends dev telemetry with the resolved configPath when enabled', () => {
     (optionalEnvToBoolean as jest.Mock).mockReturnValue(false);
 
     withStorybook(config, {
@@ -71,12 +70,7 @@ describe('withStorybook experimental_mcp', () => {
       enabled: true,
     });
 
-    expect(setTelemetryEnabled).toHaveBeenCalledWith(true);
-    expect(telemetry).toHaveBeenCalledWith(
-      'dev',
-      {},
-      expect.objectContaining({ configDir: '/tmp/.rnstorybook' })
-    );
+    expect(sendDevTelemetry).toHaveBeenCalledWith('/tmp/.rnstorybook');
   });
 
   test('passes experimental_mcp to channel server when websockets are configured', () => {

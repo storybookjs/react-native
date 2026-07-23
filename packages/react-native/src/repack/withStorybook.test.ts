@@ -9,9 +9,8 @@ jest.mock('../../scripts/generate', () => ({
   generate: jest.fn(),
 }));
 
-jest.mock('storybook/internal/telemetry', () => ({
-  telemetry: jest.fn(() => Promise.resolve()),
-  setTelemetryEnabled: jest.fn(() => Promise.resolve()),
+jest.mock('../telemetry/sendDevTelemetry', () => ({
+  sendDevTelemetry: jest.fn(() => Promise.resolve()),
 }));
 
 const { generate } = require('../../scripts/generate') as typeof import('../../scripts/generate');
