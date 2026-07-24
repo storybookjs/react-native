@@ -8,6 +8,10 @@ ignoreScripts: true
 nodeLinker: hoisted
 shamefullyHoist: true
 minimumReleaseAge: 1340
+# First-party Storybook releases are intentionally adopted before minimumReleaseAge elapses.
+minimumReleaseAgeExclude:
+  - storybook
+  - '@storybook/*'
 overrides:
   # Required for notes security: react-native-markdown-display@7.0.2 is latest and still resolves markdown-it@10 by default.
   markdown-it: 14.3.0
