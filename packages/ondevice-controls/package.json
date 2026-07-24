@@ -50,7 +50,7 @@
     "@react-native-community/slider": "*",
     "react": "*",
     "react-native": "*",
-    "storybook": ">=10 || ^10"
+    "storybook": "^10.5.4"
   },
   "peerDependenciesMeta": {
     "@gorhom/bottom-sheet": {

@@ -10,4 +10,4 @@
 '@storybook/react-native-theming': patch
 ---
 
-update storybook deps
+Require storybook ^10.5.4 so RN picks up core telemetry framework inference

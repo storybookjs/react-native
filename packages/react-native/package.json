@@ -94,7 +94,7 @@
     "react-native-gesture-handler": ">=2",
     "react-native-reanimated": "4.5.1",
     "react-native-safe-area-context": "5.8.0",
-    "storybook": ">=10 || ^10"
+    "storybook": "^10.5.4"
   },
   "peerDependenciesMeta": {
     "@gorhom/bottom-sheet": {

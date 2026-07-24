@@ -52,7 +52,7 @@
     "react": "*",
     "react-native": ">=0.57.0",
     "react-native-safe-area-context": "5.8.0",
-    "storybook": ">=10 || ^10"
+    "storybook": "^10.5.4"
   },
   "engines": {
     "node": ">=20.0.0"
