@@ -36,13 +36,13 @@
     "@storybook/react-native-theming": "^10.5.2"
   },
   "devDependencies": {
-    "storybook": "^10.5.2",
+    "storybook": "10.5.4",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "storybook": ">=10 || ^10"
+    "storybook": "^10.5.4"
   },
   "publishConfig": {
     "access": "public"
