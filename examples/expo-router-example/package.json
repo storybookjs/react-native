@@ -52,7 +52,7 @@
     "react-native-svg": "15.15.4",
     "react-native-web": "^0.21.2",
     "react-native-worklets": "0.10.0",
-    "storybook": "10.5.4",
+    "storybook": "^10.5.4",
     "ws": "^8.21.1"
   },
   "devDependencies": {
