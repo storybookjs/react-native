@@ -130,7 +130,7 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@storybook/react':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(supports-color@8.1.1)(typescript@6.0.3)
       '@storybook/react-native':
         specifier: ^10.5.3
@@ -139,7 +139,7 @@ importers:
         specifier: ^10.5.3
         version: link:../../packages/react-native-ui-lite
       '@storybook/react-native-web-vite':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(bae18e9861a1fb02860ecf33416a494d)
       babel-plugin-react-compiler:
         specifier: ^1.0.0
@@ -190,7 +190,7 @@ importers:
         specifier: 0.10.0
         version: 0.10.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(react-native@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.14)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1)
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       storybook-addon-deep-controls:
         specifier: ^0.10.0
@@ -272,7 +272,7 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@storybook/react':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(supports-color@8.1.1)(typescript@6.0.3)
       '@storybook/react-native':
         specifier: ^10.5.3
@@ -281,7 +281,7 @@ importers:
         specifier: ^10.5.3
         version: link:../../packages/react-native-ui-lite
       '@storybook/react-native-web-vite':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(11c2a07902a5824a5ef12d366ce556fb)
       babel-plugin-react-compiler:
         specifier: ^1.0.0
@@ -329,7 +329,7 @@ importers:
         specifier: 0.10.0
         version: 0.10.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(react-native@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.14)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1)
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       storybook-addon-deep-controls:
         specifier: ^0.10.0
@@ -405,7 +405,7 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@storybook/react':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(supports-color@8.1.1)(typescript@6.0.3)
       '@storybook/react-native':
         specifier: ^10.5.3
@@ -414,7 +414,7 @@ importers:
         specifier: ^10.5.3
         version: link:../../packages/react-native-ui-lite
       '@storybook/react-native-web-vite':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(136215fb95795635fc5df287c1aa2e30)
       expo:
         specifier: 57.0.7
@@ -489,7 +489,7 @@ importers:
         specifier: 0.10.0
         version: 0.10.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(react-native@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.14)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1)
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       ws:
         specifier: ^8.21.1
@@ -538,7 +538,7 @@ importers:
         specifier: ^10.5.3
         version: link:../../packages/ondevice-notes
       '@storybook/react':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(supports-color@8.1.1)(typescript@6.0.3)
       '@storybook/react-native':
         specifier: workspace:^
@@ -556,7 +556,7 @@ importers:
         specifier: 5.8.0
         version: 5.8.0(react-native@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.85.3(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.14)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
     devDependencies:
       '@babel/core':
@@ -645,7 +645,7 @@ importers:
         version: 0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.17)(react@19.2.3)(supports-color@8.1.1)
     devDependencies:
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.17)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       typescript:
         specifier: ~6.0.3
@@ -664,7 +664,7 @@ importers:
         version: 0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.17)(react@19.2.3)(supports-color@8.1.1)
     devDependencies:
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.17)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       typescript:
         specifier: ~6.0.3
@@ -710,7 +710,7 @@ importers:
         specifier: ^10.1.0
         version: 10.1.0
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.17)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       typescript:
         specifier: ~6.0.3
@@ -735,7 +735,7 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2(react-native@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.17)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.17)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       tsdown:
         specifier: ^0.22.12
@@ -753,7 +753,7 @@ importers:
         specifier: ^0.8.0
         version: 0.8.0(typescript@6.0.3)
       '@storybook/react':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(supports-color@8.1.1)(typescript@6.0.3)
       '@storybook/react-native-theming':
         specifier: ^10.5.3
@@ -844,7 +844,7 @@ importers:
         specifier: 0.86.0
         version: 0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.85.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.14)(react@19.2.3)(supports-color@8.1.1)
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       sucrase:
         specifier: ^3.35.1
@@ -893,7 +893,7 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@storybook/react':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(supports-color@8.1.1)(typescript@6.0.3)
       '@storybook/react-native-theming':
         specifier: ^10.5.3
@@ -927,7 +927,7 @@ importers:
         specifier: ~19.2.14
         version: 19.2.14
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       tsdown:
         specifier: ^0.22.12
@@ -942,7 +942,7 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@storybook/react':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(supports-color@8.1.1)(typescript@6.0.3)
       '@storybook/react-native-theming':
         specifier: ^10.5.3
@@ -967,7 +967,7 @@ importers:
         specifier: 0.86.0
         version: 0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.86.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.14)(react@19.2.3)(supports-color@8.1.1)
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       tsdown:
         specifier: ^0.22.12
@@ -988,7 +988,7 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@storybook/react':
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(supports-color@8.1.1)(typescript@6.0.3)
       '@storybook/react-native-theming':
         specifier: ^10.5.3
@@ -1013,7 +1013,7 @@ importers:
         specifier: ~19.2.14
         version: 19.2.14
       storybook:
-        specifier: 10.5.4
+        specifier: ^10.5.4
         version: 10.5.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/react@19.2.14)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       ts-dedent:
         specifier: ^2.3.0
