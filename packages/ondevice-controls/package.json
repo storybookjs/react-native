@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-controls",
-  "version": "10.5.2",
+  "version": "10.5.3",
   "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
-    "@storybook/react-native-theming": "^10.5.2",
-    "@storybook/react-native-ui-common": "^10.5.2",
+    "@storybook/react-native-theming": "^10.5.3",
+    "@storybook/react-native-ui-common": "^10.5.3",
     "polished": "^4.3.1",
     "react-native-modal-datetime-picker": "^18.0.0",
     "tinycolor2": "^1.6.0"
@@ -41,7 +41,7 @@
   "devDependencies": {
     "@gorhom/bottom-sheet": "*",
     "cross-env": "^10.1.0",
-    "storybook": "^10.5.4",
+    "storybook": "10.5.4",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {

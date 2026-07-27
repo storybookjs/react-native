@@ -1,5 +1,15 @@
 # @storybook/react-native-ui
 
+## 10.5.3
+
+### Patch Changes
+
+- [#913](https://github.com/storybookjs/react-native/pull/913) [`38ce5e6`](https://github.com/storybookjs/react-native/commit/38ce5e6d02fb09cfd365335b7c102241b8cf34d6) Thanks [@ndelangen](https://github.com/ndelangen)! - Require storybook ^10.5.4 so RN picks up core telemetry framework inference
+
+- Updated dependencies [[`38ce5e6`](https://github.com/storybookjs/react-native/commit/38ce5e6d02fb09cfd365335b7c102241b8cf34d6)]:
+  - @storybook/react-native-ui-common@10.5.3
+  - @storybook/react-native-theming@10.5.3
+
 ## 10.5.2
 
 ### Patch Changes
