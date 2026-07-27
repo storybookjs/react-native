@@ -1,5 +1,14 @@
 # @storybook/addon-ondevice-backgrounds
 
+## 10.5.4
+
+### Patch Changes
+
+- [#915](https://github.com/storybookjs/react-native/pull/915) [`612b47a`](https://github.com/storybookjs/react-native/commit/612b47a1014e4c07e65cecb2b9a78cb685b6fa39) Thanks [@ndelangen](https://github.com/ndelangen)! - Require storybook ^10.5.4 so RN picks up core telemetry framework inference
+
+- Updated dependencies [[`612b47a`](https://github.com/storybookjs/react-native/commit/612b47a1014e4c07e65cecb2b9a78cb685b6fa39)]:
+  - @storybook/react-native-theming@10.5.4
+
 ## 10.5.3
 
 ### Patch Changes
