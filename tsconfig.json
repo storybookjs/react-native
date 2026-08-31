@@ -3,16 +3,17 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "declaration": true,
     "jsx": "react-jsx",
     "lib": ["es2022"],
     "module": "es2022",
     "moduleResolution": "bundler",
+    "ignoreDeprecations": "6.0",
     "outDir": "dist/",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "strict": false,
     "target": "es2022",
     "resolveJsonModule": true
   },

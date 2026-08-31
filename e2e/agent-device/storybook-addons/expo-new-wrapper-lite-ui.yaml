@@ -1,0 +1,65 @@
+appId: com.storybook.newwrapperexample
+name: Expo new wrapper Storybook lite UI addons
+---
+- stopApp: com.storybook.newwrapperexample
+- openLink: ${OPEN_LINK}
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Open addons panel'
+    timeout: 30000
+
+- runScript:
+    file: 'select-story-sync.js'
+    env:
+      STORY_ID: 'button--default'
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: 'Close story list'
+    commands:
+      - tapOn:
+          label: 'Close story list'
+      - waitForAnimationToEnd
+- assertVisible:
+    id: 'button--default'
+
+# Actions: lite UI logs the button action in its Actions panel.
+- runFlow:
+    when:
+      notVisible: 'Actions'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Actions'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Actions'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Actions'
+    timeout: 10000
+- tapOn:
+    label: 'Actions'
+- assertVisible: 'CLEAR'
+- tapOn:
+    label: 'Press me'
+- assertVisible: '▶, onPress, : [...]'
+- takeScreenshot: 'expo-new-wrapper-actions'
+
+# Controls: this app registers Controls and Actions only.
+- tapOn:
+    label: 'Controls'
+- assertVisible: 'title'
+- assertVisible: 'Press me'
+- assertNotVisible: 'Backgrounds'
+- takeScreenshot: 'expo-new-wrapper-controls'

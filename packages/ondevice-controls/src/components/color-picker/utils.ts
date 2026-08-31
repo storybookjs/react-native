@@ -66,29 +66,3 @@ export function createPanResponder({
     },
   });
 }
-
-/**
- * Rotates point around given center in 2d.
- * Point is object literal { x: number, y: number }
- * @param {point} point to be rotated
- * @param {number} angle in radians
- * @param {point} center to be rotated around
- * @return {point} rotated point
- */
-export function rotatePoint(point: Point, angle: number, center: Point = { x: 0, y: 0 }): Point {
-  // translation to origin
-  const transOriginX = point.x - center.x;
-  const transOriginY = point.y - center.y;
-
-  // rotation around origin
-  const rotatedX = transOriginX * Math.cos(angle) - transOriginY * Math.sin(angle);
-  const rotatedY = transOriginY * Math.cos(angle) + transOriginX * Math.sin(angle);
-
-  // translate back from origin
-  const normalizedX = rotatedX + center.x;
-  const normalizedY = rotatedY + center.y;
-  return {
-    x: normalizedX,
-    y: normalizedY,
-  };
-}

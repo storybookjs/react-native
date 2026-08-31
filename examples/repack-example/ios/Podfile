@@ -1,0 +1,23 @@
+ws_dir = Pathname.new(__dir__)
+ws_dir = ws_dir.parent until
+  File.exist?("#{ws_dir}/node_modules/react-native-test-app/test_app.rb") ||
+  ws_dir.expand_path.to_s == '/'
+require "#{ws_dir}/node_modules/react-native-test-app/test_app.rb"
+
+workspace 'repack-example.xcworkspace'
+
+fmt_cxx17_workaround = lambda do |installer|
+  installer.pods_project.targets.each do |target|
+    next unless target.name == 'fmt'
+
+    target.build_configurations.each do |config|
+      config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+    end
+  end
+end
+
+use_test_app!(
+  :hermes_enabled => true,
+  :fabric_enabled => true,
+  :post_install => fmt_cxx17_workaround
+)

@@ -97,22 +97,21 @@ export function prepareStories({
               subtype: 'story',
             };
 
-            const importedStories = req(filename);
-            const stories = Object.entries(importedStories).reduce(
-              (carry, [storyKey, story]: [string, Readonly<Record<string, unknown>>]) => {
-                if (!isExportStory(storyKey, meta)) return carry;
+            const importedStories = req(filename) as Record<string, Readonly<Record<string, any>>>;
+            const stories = Object.entries(importedStories).reduce<
+              Record<string, Readonly<Record<string, any>>>
+            >((carry, [storyKey, story]) => {
+              if (!isExportStory(storyKey, meta)) return carry;
 
-                if (typeof story.play === 'function' && !options?.playFn) {
-                  // play functions are not yet fully supported on native.
-                  // There is a new option in main.js to turn them on for future use.
-                  carry[storyKey] = { ...story, play: undefined };
-                } else {
-                  carry[storyKey] = story;
-                }
-                return carry;
-              },
-              {}
-            );
+              if (typeof story.play === 'function' && !options?.playFn) {
+                // play functions are not yet fully supported on native.
+                // There is a new option in main.js to turn them on for future use.
+                carry[storyKey] = { ...story, play: undefined };
+              } else {
+                carry[storyKey] = story;
+              }
+              return carry;
+            }, {});
 
             importMap[`${root}/${filename.substring(2)}`] = stories;
           } else {
@@ -120,8 +119,11 @@ export function prepareStories({
           }
         });
       } catch (error) {
+        const typedError = error as Error;
         const errorString =
-          error.message && error.stack ? `${error.message}\n ${error.stack}` : error.toString();
+          typedError.message && typedError.stack
+            ? `${typedError.message}\n ${typedError.stack}`
+            : typedError.toString();
         console.error(`Unexpected error while loading ${filename}: ${errorString}`);
       }
     });
@@ -131,7 +133,7 @@ export function prepareStories({
 
   sortStoriesV7(
     sortableStories,
-    storySort,
+    storySort as Addon_StorySortParameterV7,
     Object.values(index.entries).map((entry) => entry.importPath)
   );
 

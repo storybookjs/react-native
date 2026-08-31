@@ -9,6 +9,13 @@ jest.mock('../../scripts/generate', () => ({
   generate: jest.fn(),
 }));
 
+jest.mock('storybook/internal/telemetry', () => ({
+  telemetry: jest.fn(() => Promise.resolve()),
+  setTelemetryEnabled: jest.fn(() => Promise.resolve()),
+}));
+
+const { generate } = require('../../scripts/generate') as typeof import('../../scripts/generate');
+
 function createCompilerMock() {
   return {
     options: {
@@ -59,6 +66,47 @@ describe('StorybookPlugin experimental_mcp', () => {
     expect(() => plugin.apply(createCompilerMock() as any)).not.toThrow();
     expect(createChannelServer).toHaveBeenCalledWith(
       expect.objectContaining({ experimental_mcp: true, websockets: true })
+    );
+  });
+
+  test('passes secure websocket options through to the channel server and generator', async () => {
+    const compiler = createCompilerMock() as any;
+    const plugin = new StorybookPlugin({
+      configPath: '/tmp/.rnstorybook',
+      enabled: true,
+      websockets: {
+        host: '127.0.0.1',
+        port: 7007,
+        secured: true,
+        cert: 'cert',
+        key: 'key',
+      },
+    });
+
+    plugin.apply(compiler);
+
+    expect(createChannelServer).toHaveBeenCalledWith(
+      expect.objectContaining({
+        configPath: '/tmp/.rnstorybook',
+        websockets: true,
+        secured: true,
+        ssl: expect.objectContaining({
+          cert: 'cert',
+          key: 'key',
+        }),
+      })
+    );
+
+    const beforeCompile = compiler.hooks.beforeCompile.tapPromise.mock.calls[0][1];
+    await beforeCompile();
+
+    expect(generate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        configPath: '/tmp/.rnstorybook',
+        host: '127.0.0.1',
+        port: 7007,
+        secured: true,
+      })
     );
   });
 

@@ -57,97 +57,27 @@ Run init to setup your project with all the dependencies and configuration files
 npm create storybook@latest
 ```
 
-The only thing left to do is return Storybook's UI in your app entry point (such as `App.tsx`) like this:
-
-```tsx
-export { default } from './.rnstorybook';
-```
-
-Then wrap your metro config with the withStorybook function as seen [below](#additional-steps-update-your-metro-config)
-
-If you want to be able to swap easily between storybook and your app, have a look at this [blog post](https://dev.to/dannyhw/how-to-swap-between-react-native-storybook-and-your-app-p3o)
-
-If you want to add everything yourself check out the manual guide [here](https://github.com/storybookjs/react-native/blob/next/MANUAL_SETUP.md).
-
-#### Additional steps: Update your metro config
-
-We require the unstable_allowRequireContext transformer option to enable dynamic story imports based on the stories glob in `main.ts`. We can also call the storybook generate function from the metro config to automatically generate the `storybook.requires.ts` file when metro runs.
-
-**Expo**
-
-First create metro config file if you don't have it yet.
-
-```sh
-npx expo customize metro.config.js
-```
-
-Then wrap your config in the withStorybook function as seen below.
+Then wrap your bundler config with the `withStorybook` function. It auto-detects Metro vs Re.Pack and handles everything — entry-point swapping, story generation, and optional WebSocket setup.
 
 ```js
 // metro.config.js
 const { getDefaultConfig } = require('expo/metro-config');
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/withStorybook');
 
 const config = getDefaultConfig(__dirname);
 
-// For basic usage with all defaults, this is all you need
 module.exports = withStorybook(config);
-
-// Or customize the options
-module.exports = withStorybook(config, {
-  // When false, removes Storybook from bundle (useful for production)
-  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
-
-  // Path to your storybook config (default: './.rnstorybook')
-  configPath: './.rnstorybook',
-
-  // Optional websockets configuration for syncing between devices
-  // websockets: {
-  //   port: 7007,
-  //   host: 'localhost',
-  // },
-});
 ```
 
-**React Native**
+No changes to `App.tsx` are needed. Set `STORYBOOK_ENABLED=true` and run:
 
-```js
-const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
-
-const defaultConfig = getDefaultConfig(__dirname);
-
-/**
- * Metro configuration
- * https://reactnative.dev/docs/metro
- *
- * @type {import('metro-config').MetroConfig}
- */
-const config = {};
-// set your own config here 👆
-
-const finalConfig = mergeConfig(defaultConfig, config);
-
-// For basic usage with all defaults
-module.exports = withStorybook(finalConfig);
-
-// Or customize the options
-module.exports = withStorybook(finalConfig, {
-  // When false, removes Storybook from bundle (useful for production)
-  enabled: process.env.STORYBOOK_ENABLED === 'true',
-
-  // Path to your storybook config (default: './.rnstorybook')
-  configPath: path.resolve(__dirname, './.rnstorybook'),
-  // note that this is the default so you can the config path blank if you use .rnstorybook
-
-  // Optional websockets configuration for syncing between devices
-  // Starts a websocket server on the specified port and host on metro start
-  // websockets: {
-  //   port: 7007,
-  //   host: 'localhost',
-  // },
-});
+```sh
+STORYBOOK_ENABLED=true expo start
 ```
+
+The wrapper automatically swaps your app's entry point with Storybook's entry point. When the variable is not set, your app runs normally with zero Storybook code in the bundle.
+
+If you want to add everything yourself check out the [manual setup guide](https://storybookjs.github.io/react-native/docs/intro/getting-started/manual-setup).
 
 #### Reanimated setup
 
@@ -164,36 +94,9 @@ For projects using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of M
 
 ## Expo router specific setup
 
-```bash
-npm create storybook@latest
-```
+For Expo Router projects, you can either use entry-point swapping (recommended) or create a dedicated Storybook route.
 
-choose recommended and then native
-
-```bash
-npx expo@latest customize metro.config.js
-```
-
-copy the metro config
-
-```js
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
-module.exports = withStorybook(config);
-```
-
-add storybook screen to app
-
-create `app/storybook.tsx`
-
-```tsx
-export { default } from '../.rnstorybook';
-```
-
-Then add a way to navigate to your storybook route and I recommend disabling the header for the storybook route.
-
-Here's a video showing the same setup:
-
-https://www.youtube.com/watch?v=egBqrYg0AIg
+See the full [Expo Router Setup guide](https://storybookjs.github.io/react-native/docs/intro/getting-started/expo-router) for details.
 
 ## Writing stories
 
@@ -227,7 +130,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
 };
 
 export default main;
@@ -308,7 +211,7 @@ Currently, the addons available are:
 - [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some Markdown to your stories to help document their usage
 - [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
 
-Install each one you want to use and add them to the `main.ts` addons list as follows:
+Install each one you want to use and add them to the `deviceAddons` list in your `main.ts`:
 
 ```ts
 // .rnstorybook/main.ts
@@ -316,7 +219,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   // ... rest of config
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
@@ -326,6 +229,9 @@ const main: StorybookConfig = {
 
 export default main;
 ```
+
+> [!NOTE]
+> `deviceAddons` ensures on-device addons are only loaded at runtime on the device, avoiding errors during server-side operations. For backwards compatibility, listing them in `addons` still works.
 
 ### Using the addons in your story
 
@@ -338,43 +244,22 @@ For details of each ondevice addon you can see the readme:
 
 ## Hide/Show storybook
 
-In v10, you have flexible options for integrating Storybook into your app:
+Starting with v10.4, entry-point swapping is the default setup. Your existing in-app integration setup continues to work and is fully supported, but entry-point swapping is the recommended approach for new projects.
 
-### Option 1: Direct export (simplest)
+### Entry-point swapping (recommended, v10.4+)
 
-Just export Storybook directly. Control inclusion via the metro config `enabled` flag:
+When using the bundler-agnostic `withStorybook` wrapper, set `STORYBOOK_ENABLED=true` to run Storybook. The wrapper swaps your app's entry point with Storybook's entry point automatically. When the variable is not set, your app runs normally with zero Storybook code in the bundle.
 
-```tsx
-// App.tsx
-export { default } from './.rnstorybook';
-```
-
-```js
-// metro.config.js
-module.exports = withStorybook(config, {
-  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
-});
-```
-
-When `enabled: false`, Metro automatically removes Storybook from your bundle.
-
-### Option 2: Conditional rendering
-
-If you want to switch between your app and Storybook at runtime:
-
-```tsx
-// App.tsx
-import StorybookUI from './.rnstorybook';
-import { MyApp } from './MyApp';
-
-const isStorybook = process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true';
-
-export default function App() {
-  return isStorybook ? <StorybookUI /> : <MyApp />;
+```json
+{
+  "scripts": {
+    "storybook": "STORYBOOK_ENABLED=true expo start",
+    "storybook:ios": "STORYBOOK_ENABLED=true expo start --ios"
+  }
 }
 ```
 
-### Option 3: Expo Router (recommended for Expo)
+### Expo Router
 
 Create a dedicated route for Storybook:
 
@@ -385,57 +270,52 @@ export { default } from '../.rnstorybook';
 
 Then navigate to `/storybook` in your app to view stories.
 
+### In-app integration (fully supported)
+
+You can also import Storybook directly in your `App.tsx`. This approach continues to work and is fully supported:
+
+```tsx
+import StorybookUI from './.rnstorybook';
+import { MyApp } from './MyApp';
+
+const isStorybook = process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true';
+
+export default function App() {
+  return isStorybook ? <StorybookUI /> : <MyApp />;
+}
+```
+
 ## withStorybook wrapper
 
-`withStorybook` is a wrapper function to extend your [Metro config](https://metrobundler.dev/docs/configuration) for Storybook. It accepts your existing Metro config and an object of options for how Storybook should be started and configured.
+`withStorybook` is a bundler-agnostic wrapper that configures your project for Storybook. It auto-detects whether you're using Metro or Re.Pack and handles entry-point swapping, story generation, and WebSocket setup.
 
 ```js
 // metro.config.js
 const { getDefaultConfig } = require('expo/metro-config');
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 
-module.exports = withStorybook(defaultConfig, {
-  enabled: true,
-  // See API section below for available options
-});
+module.exports = withStorybook(defaultConfig);
 ```
+
+When `STORYBOOK_ENABLED=true` is set, the wrapper activates. When it's not set, the wrapper is a no-op and your app runs normally.
 
 ### Options
 
-#### enabled
-
-Type: `boolean`, default: `true`
-
-Controls whether Storybook is included in your app bundle. When `true`, enables Storybook metro configuration and generates the `storybook.requires` file. When `false`, removes all Storybook code from the bundle by replacing imports with empty modules.
-
-This is useful for conditionally including Storybook in development but excluding it from production builds:
-
-```js
-// metro.config.js
-const { getDefaultConfig } = require('expo/metro-config');
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
-
-const defaultConfig = getDefaultConfig(__dirname);
-
-module.exports = withStorybook(defaultConfig, {
-  enabled: process.env.STORYBOOK_ENABLED === 'true',
-  // ... other options
-});
-```
-
-#### useJs
-
-Type: `boolean`, default: `false`
-
-Generates the `.rnstorybook/storybook.requires` file in JavaScript instead of TypeScript.
+Options can be passed as a second argument. Most settings can also be controlled via environment variables (see [Environment Variables](https://storybookjs.github.io/react-native/docs/intro/configuration/environment-variables)).
 
 #### configPath
 
 Type: `string`, default: `path.resolve(process.cwd(), './.rnstorybook')`
 
 The location of your Storybook configuration directory, which includes `main.ts` and other project-related files.
+
+#### useJs
+
+Type: `boolean`, default: `false`
+
+Generates the `.rnstorybook/storybook.requires` file in JavaScript instead of TypeScript.
 
 #### docTools
 
@@ -447,38 +327,29 @@ Whether to include doc tools in the storybook.requires file. Doc tools provide a
 
 Type: `boolean`, default: `false`
 
-Whether to use lite mode for Storybook. In lite mode, the default Storybook UI is mocked out so you don't need to install all its dependencies like react-native-reanimated. This is useful for reducing bundle size and dependencies. Use this when using @storybook/react-native-ui-lite instead of @storybook/react-native-ui.
+Whether to use lite mode for Storybook. In lite mode, the default Storybook UI is mocked out so you don't need to install all its dependencies like react-native-reanimated. This is useful for reducing bundle size and dependencies. Use this when using @storybook/react-native-ui-lite instead of @storybook/react-native-ui. Note: `STORYBOOK_DISABLE_UI=true` is equivalent to `onDeviceUI: false`, not `liteMode: true`.
 
 #### experimental_mcp
 
 Type: `boolean`, default: `false`
 
-Enables an experimental MCP (Model Context Protocol) endpoint at `/mcp` on the Storybook channel server. This can be used by AI tooling to query Storybook documentation and component/story metadata. Available from v10.3 onwards.
+Enables an experimental MCP (Model Context Protocol) server for AI tooling to query Storybook documentation and component/story metadata.
 
-You can enable MCP with or without websockets:
+The MCP server is available at the `/mcp` endpoint on the Storybook channel server. Configure your MCP client via its settings UI, or use:
 
-- `experimental_mcp: true` starts the HTTP MCP endpoint
-- adding `websockets` also enables story selection tools over the same channel server
+```sh
+npx mcp-add --type http --url "http://localhost:7007/mcp" --scope project
+```
 
 ### websockets
 
-Type: `'auto' | { host: string?, port: number? }`, default: `undefined`
+Type: `'auto' | { host?: string, port?: number, secured?: boolean, key?: string | Buffer, cert?: string | Buffer, ca?: string | Buffer | Array<string | Buffer>, passphrase?: string }`, default: `undefined`
 
 If specified, create a WebSocket server on startup. This allows you to sync up multiple devices to show the same story and [arg](https://storybook.js.org/docs/writing-stories/args) values connected to the story in the UI.
 
-Use `'auto'` to automatically detect your LAN IP and inject host/port into the generated `storybook.requires` file.
+Use `'auto'` to automatically detect your LAN IP and inject host/port into the generated `storybook.requires` file. WebSocket settings can also be overridden via `STORYBOOK_WS_HOST`, `STORYBOOK_WS_PORT`, and `STORYBOOK_WS_SECURED` environment variables.
 
-### websockets.host
-
-Type: `string`, default: `'localhost'`
-
-The host on which to run the WebSocket, if specified.
-
-### websockets.port
-
-Type: `number`, default: `7007`
-
-The port on which to run the WebSocket, if specified.
+> **Note:** A Metro-specific `withStorybook` is also available at `@storybook/react-native/metro/withStorybook` for advanced Metro configuration. See the [Metro Configuration docs](https://storybookjs.github.io/react-native/docs/intro/configuration/metro-configuration) for details.
 
 ## getStorybookUI options
 
@@ -486,31 +357,18 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 
 ```ts
 {
-    // initialize storybook with a specific story.  eg: `mybutton--largebutton` or `{ kind: 'MyButton', name: 'LargeButton' }`
     initialSelection?: string | Object;
-    // Custom storage to be used instead of AsyncStorage
     storage?: {
         getItem: (key: string) => Promise<string | null>;
         setItem: (key: string, value: string) => Promise<void>;
     };
-    // show the onDevice UI
     onDeviceUI?: boolean;
-    // enable websockets for the Storybook UI
-    enableWebsockets?: boolean;
-    // query params for the websocket connection
-    query?: string;
-    // host for the websocket connection
-    host?: string;
-    // port for the websocket connection
-    port?: number;
-    // use secured websockets
-    secured?: boolean;
-    // store the last selected story in the device's storage
     shouldPersistSelection?: boolean;
-    // theme for the Storybook UI
     theme: Partial<Theme>;
 }
 ```
+
+> **Note:** WebSocket options (`enableWebsockets`, `host`, `port`, `secured`) are auto-injected when using the bundler-agnostic `withStorybook` wrapper. You only need to set them manually if you're using the Metro-specific wrapper or a custom setup.
 
 ## Feature Flags
 
@@ -524,7 +382,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-ondevice-controls'],
+  deviceAddons: ['@storybook/addon-ondevice-controls'],
   features: {
     ondeviceBackgrounds: true,
   },
@@ -575,6 +433,7 @@ This repo includes agent skills for setting up and working with Storybook for Re
 
 - **writing-react-native-storybook-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
 - **setup-react-native-storybook** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, React Native CLI, and Re.Pack setups
+- **upgrading-react-native-storybook** - Guides Claude through incremental React Native Storybook upgrades, split by supported migration paths from 5.3.x through 10.x, including converting remaining `storiesOf` stories to CSF during the 6.5.x to 7.6.x migration
 
 ### Installation
 

@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui",
-  "version": "10.3.0-next.4",
+  "version": "10.5.4",
   "description": "ui components for react native storybook",
   "keywords": [
     "react",
@@ -16,10 +16,10 @@
     "url": "https://github.com/storybookjs/react-native.git",
     "directory": "packages/react-native-ui"
   },
-  "react-native": "src/index.tsx",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "license": "MIT",
+  "main": "dist/index.js",
+  "react-native": "src/index.tsx",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*",
     "README.md",
@@ -28,33 +28,33 @@
     "src/**/*"
   ],
   "scripts": {
-    "dev": "tsup --watch",
-    "prepare": "tsup",
-    "check:types": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@types/react": "~19.2.14",
-    "storybook": "10.3.0-alpha.12",
-    "tsup": "^8.5.0",
-    "typescript": "~5.9.3"
+    "check:types": "tsc --noEmit",
+    "dev": "tsdown --watch",
+    "prepare": "tsdown"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "10.3.0-alpha.12",
-    "@storybook/react-native-theming": "^10.3.0-next.4",
-    "@storybook/react-native-ui-common": "^10.3.0-next.4",
+    "@storybook/react": "^10.5.4",
+    "@storybook/react-native-theming": "^10.5.4",
+    "@storybook/react-native-ui-common": "^10.5.4",
     "polished": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.14",
+    "storybook": "^10.5.4",
+    "tsdown": "^0.22.12",
+    "typescript": "~6.0.3"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",
     "react": "*",
     "react-native": ">=0.57.0",
     "react-native-gesture-handler": ">=2",
-    "react-native-reanimated": ">=3",
-    "react-native-safe-area-context": "*",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "5.8.0",
     "react-native-svg": ">=14",
-    "storybook": ">=10 || ^10"
+    "storybook": "^10.5.4"
   },
   "engines": {
     "node": ">=20.0.0"

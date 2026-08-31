@@ -29,6 +29,11 @@ storybook-out
 built-storybooks
 .pnpm-store/
 .eslintcache
-examples/expo-example/.maestro/diffs
-examples/expo-example/.maestro/screenshots
+examples/expo-example/.maestro/output/*
+!examples/expo-example/.maestro/output/screenshots/
+!examples/expo-example/.maestro/output/screenshots/**
+
 examples/expo-example/components/PerfTesting/*.stories.tsx
+examples/expo-example/.certs/
+examples/expo-*/android
+examples/expo-*/ios

@@ -1,0 +1,63 @@
+appId: com.dannyhw.exporouterexample
+name: Expo router Storybook lite UI addons
+---
+- stopApp: com.dannyhw.exporouterexample
+- openLink: ${OPEN_LINK}
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Open addons panel'
+    timeout: 30000
+
+- runScript:
+    file: 'select-story-sync.js'
+    env:
+      STORY_ID: 'actionexample-actions--basic'
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: 'Close story list'
+    commands:
+      - tapOn:
+          label: 'Close story list'
+      - waitForAnimationToEnd
+
+# Actions: lite UI logs the button action in its Actions panel.
+- runFlow:
+    when:
+      notVisible: 'Actions'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Actions'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      notVisible: 'Actions'
+    commands:
+      - tapOn:
+          label: 'Open addons panel'
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: 'Actions'
+    timeout: 10000
+- tapOn:
+    label: 'Actions'
+- assertVisible: 'CLEAR'
+- tapOn:
+    label: 'Press me!'
+- assertVisible: '▶, onPress, : [...]'
+- takeScreenshot: 'expo-router-actions'
+
+# Controls: this app registers Controls and Actions only.
+- tapOn:
+    label: 'Controls'
+- assertVisible: 'text'
+- assertVisible: 'Press me!'
+- assertNotVisible: 'Backgrounds'
+- takeScreenshot: 'expo-router-controls'

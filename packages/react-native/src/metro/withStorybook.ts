@@ -2,23 +2,10 @@ import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import type { MetroConfig } from 'metro-config';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
-import { telemetry } from 'storybook/internal/telemetry';
+import { setTelemetryEnabled, telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
-
-/**
- * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
- */
-interface WebsocketsOptions {
-  /**
-   * The port WebSocket server will listen on. Defaults to 7007.
-   */
-  port?: number;
-
-  /**
-   * The host WebSocket server will bind to. Defaults to 'localhost'.
-   */
-  host?: string;
-}
+import type { WebsocketsOptions } from '../types';
+import { envVariableToBoolean, loadWebsocketEnvOverrides } from '../env-tools';
 
 /**
  * Options for configuring Storybook with React Native.
@@ -80,6 +67,9 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  *                            When provided, creates a WebSocket server for real-time communication.
  * @param options.websockets.port - The port WebSocket server will listen on. Defaults to 7007.
  * @param options.websockets.host - The host WebSocket server will bind to. Defaults to 'localhost'.
+ * @param options.websockets.secured - Whether to use WSS/HTTPS for the channel server.
+ * @param options.websockets.key - TLS private key used when `secured` is true.
+ * @param options.websockets.cert - TLS certificate used when `secured` is true.
  * @param options.useJs - Whether to use JavaScript files for Storybook configuration instead of TypeScript.
  *                       When true, generates storybook.requires.js instead of storybook.requires.ts.
  *                       Defaults to false.
@@ -154,11 +144,11 @@ export function withStorybook(
   } = options;
 
   const disableTelemetry = optionalEnvToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY);
+  const server = envVariableToBoolean(process.env.STORYBOOK_SERVER, true);
 
   if (!disableTelemetry && enabled) {
-    const event = process.env.NODE_ENV === 'production' ? 'build' : 'dev';
-
-    telemetry(event, {}).catch((e) => {});
+    setTelemetryEnabled(true);
+    telemetry('dev', {}, { configDir: configPath }).catch((e) => {});
   }
 
   if (!enabled) {
@@ -178,7 +168,8 @@ export function withStorybook(
           }
 
           // workaround for node imports in instrumentor.cjs
-          if (moduleName === 'tty' || moduleName === 'os') {
+          // this is here because of a weird edge case where this would crash metro even with storybook disabled
+          if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
             return {
               type: 'empty',
             };
@@ -205,27 +196,48 @@ export function withStorybook(
     };
   }
 
-  if (websockets || experimental_mcp) {
-    const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
-    const host = websockets === 'auto' ? 'auto' : websockets?.host;
+  if (experimental_mcp || websockets != null || process.env.STORYBOOK_WS_HOST) {
+    const resolvedWs = loadWebsocketEnvOverrides(websockets);
+    const bindHost =
+      websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? undefined : resolvedWs.host;
+    const generateHost =
+      resolvedWs.host ??
+      (websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? 'auto' : undefined);
+    const port = resolvedWs.port ?? 7007;
+    const secured = resolvedWs.secured;
+    const channelWebsocketsEnabled =
+      Boolean(websockets) || Boolean(process.env.STORYBOOK_WS_HOST) || Boolean(resolvedWs.host);
 
-    // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
-    // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
-    createChannelServer({
-      port,
-      host: host === 'auto' ? undefined : host,
-      configPath,
-      experimental_mcp,
-      websockets: Boolean(websockets),
-    });
+    if (server) {
+      // note that in this case by passing an undefined host we only bind to the port and allow any connections i.e localhost, 127.0.0.1, 0.0.0.0, etc.
+      // in the generate function we try to get the ip address from the os and write it to the requires file for easier lan connection
+      createChannelServer({
+        port,
+        host: bindHost,
+        configPath,
+        experimental_mcp,
+        websockets: channelWebsocketsEnabled,
+        secured,
+        ssl:
+          websockets && websockets !== 'auto'
+            ? {
+                key: websockets.key,
+                cert: websockets.cert,
+                ca: websockets.ca,
+                passphrase: websockets.passphrase,
+              }
+            : undefined,
+      });
+    }
 
-    if (websockets) {
+    if (websockets != null || process.env.STORYBOOK_WS_HOST) {
       generate({
         configPath,
         useJs,
         docTools,
-        host,
+        host: generateHost,
         port,
+        secured,
       });
     } else {
       generate({
@@ -277,8 +289,9 @@ export function withStorybook(
           };
         }
 
-        // workaround for node imports in instrumentor.cjs
-        if (moduleName === 'tty' || moduleName === 'os') {
+        // workaround for node imports in instrumentor.cjs (only on native platforms;
+        // web/server bundles like Expo API Routes need the real Node built-ins)
+        if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
           return {
             type: 'empty',
           };

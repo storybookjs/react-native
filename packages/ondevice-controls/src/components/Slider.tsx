@@ -77,8 +77,10 @@ const Slider = ({
   const isRTL = I18nManager.isRTL;
   const initialValueRef = useRef(value ?? minimumValue);
   const [trackWidth, setTrackWidth] = useState(0);
+  // eslint-disable-next-line react-hooks/refs
   const [displayValue, setDisplayValue] = useState(initialValueRef.current);
 
+  // eslint-disable-next-line react-hooks/refs
   const translateX = useRef(new Animated.Value(0)).current;
   const currentTranslateRef = useRef(0);
   const startTranslateRef = useRef(0);
@@ -180,6 +182,7 @@ const Slider = ({
 
   const panResponder = useMemo(
     () =>
+      // eslint-disable-next-line react-hooks/refs
       PanResponder.create({
         onStartShouldSetPanResponder: () => !disabled,
         onMoveShouldSetPanResponder: () => !disabled,
@@ -261,10 +264,7 @@ const Slider = ({
       >
         <Track>
           <Fill style={fillStyle} />
-          <Animated.View
-            style={[styles.thumbWrapper, { transform: [{ translateX }] }]}
-            pointerEvents="none"
-          >
+          <Animated.View style={[styles.thumbWrapper, { transform: [{ translateX }] }]}>
             <Thumb />
           </Animated.View>
         </Track>
@@ -284,6 +284,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -THUMB_RADIUS,
     left: -THUMB_RADIUS,
+    pointerEvents: 'none',
   },
   fillBase: {
     position: 'absolute',

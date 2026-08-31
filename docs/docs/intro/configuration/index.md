@@ -17,9 +17,9 @@ The storybook configuration consists of several key files:
 
 ### main.ts
 
-The `main.ts` file is your primary configuration entry point, located in the `.storybook` directory.
+The `main.ts` file is your primary configuration entry point, located in the `.rnstorybook` directory.
 
-```typescript
+```ts
 import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
@@ -35,7 +35,7 @@ const main: StorybookConfig = {
     },
   ],
 
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
@@ -52,14 +52,15 @@ export default main;
   - `directory`: Base directory for stories
   - `titlePrefix`: Optional prefix for story titles
   - `files`: Glob pattern for story files
-- `addons`: Array of addon packages to include
+- `deviceAddons`: Array of on-device addon packages (recommended for `@storybook/addon-ondevice-*` packages). These are loaded only at runtime on the device and are not evaluated as presets by Storybook Core, avoiding errors during server-side operations like `extract`.
+- `addons`: Array of addon packages evaluated as Storybook presets. On-device addons listed here still work for backwards compatibility, but `deviceAddons` is preferred.
 - `features`: Enable new functionality (see [Feature Flags](./feature-flags.md))
 
 ## preview.tsx
 
 The `preview.tsx` file configures the story rendering environment and global parameters.
 
-```typescript
+```ts
 import { Preview } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
@@ -117,7 +118,7 @@ Other than story sort the other parameters can be overwritten per story.
 
 The entry point file configures the Storybook UI and runtime behavior.
 
-```typescript
+```ts
 import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -143,10 +144,11 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
 
-  // Websocket Options
-  enableWebsockets: false,
-  host: 'localhost',
-  port: 7007,
+  // Websocket Options (auto-injected when using the bundler-agnostic withStorybook)
+  // You only need these if you're NOT using the bundler-agnostic wrapper:
+  // enableWebsockets: false,
+  // host: 'localhost',
+  // port: 7007,
 
   // CustomUIComponent: MyCustomUI, // Optional custom UI component
 });
@@ -173,7 +175,7 @@ export default StorybookUIRoot;
     - `getItem`: Function to retrieve stored values
     - `setItem`: Function to store values
 
-- **Websocket Options**
+- **Websocket Options** (only needed for manual setups. These are auto-injected when using the bundler-agnostic `withStorybook` wrapper)
   - `enableWebsockets`: Enable remote control (default: false)
   - `host`: Websocket host (default: 'localhost')
   - `port`: Websocket port (default: 7007)
@@ -181,19 +183,21 @@ export default StorybookUIRoot;
 - **Custom UI Options**
   - `CustomUIComponent`: Replace the default Storybook UI with your own implementation
 
-## Metro Configuration
+## Bundler Configuration
 
-Wrap your Metro config with the `withStorybook` function:
+Wrap your bundler config with the `withStorybook` function. This wrapper auto-detects whether you're using Metro or Re.Pack:
 
 ```js
 const { getDefaultConfig } = require('expo/metro-config');
-const { withStorybook } = require('@storybook/react-native/metro/withStorybook');
+const { withStorybook } = require('@storybook/react-native/withStorybook');
 
 const config = getDefaultConfig(__dirname);
 module.exports = withStorybook(config);
 ```
 
-For detailed Metro configuration options, see the [Metro Configuration guide](./metro-configuration.md).
+When `STORYBOOK_ENABLED=true` is set, the wrapper automatically swaps your app's entry point with Storybook's entry point, generates the `storybook.requires` file, and configures WebSocket connections. See [Environment Variables](./environment-variables.md) for all supported variables.
+
+For Metro-specific options (advanced), see the [Metro Configuration guide](./metro-configuration.md).
 
 ## Generated Files
 
@@ -235,6 +239,10 @@ The new globals-based backgrounds API with full-screen support, available now be
 ### [WebSocket Configuration](./websocket-configuration.md)
 
 Enable remote control of Storybook from external tools, browsers, or other devices for testing and automation.
+
+### [Environment Variables](./environment-variables.md)
+
+Reference for all environment variables supported by the `withStorybook` wrapper, including `STORYBOOK_ENABLED`, WebSocket overrides, and more.
 
 ### [MCP Configuration](./mcp-configuration.md)
 

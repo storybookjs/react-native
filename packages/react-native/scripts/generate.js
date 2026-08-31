@@ -5,7 +5,12 @@ const {
   resolveAddonFile,
   getAddonName,
 } = require('./common');
-const { normalizeStories, globToRegexp, loadMainConfig } = require('storybook/internal/common');
+const {
+  normalizeStories,
+  globToRegexp,
+  loadMainConfig,
+  getInterpretedFile,
+} = require('storybook/internal/common');
 const { interopRequireDefault } = require('./require-interop');
 const fs = require('fs');
 const { networkInterfaces } = require('node:os');
@@ -13,6 +18,33 @@ const { networkInterfaces } = require('node:os');
 const path = require('path');
 
 const cwd = process.cwd();
+
+const MAIN_ADDONS_DEPRECATION_URL =
+  'https://github.com/storybookjs/react-native/blob/main/MIGRATION.md#deprecating-addons-in-rnstorybook-main';
+
+/**
+ * @param {{ addons?: unknown[] }} main
+ * @param {string} configPath
+ *
+ * @todo Remove support for `main.addons` in a future major version.
+ */
+function warnDeprecatedMainAddonsField(main, configPath) {
+  const addons = main.addons ?? [];
+  if (addons.length === 0) {
+    return;
+  }
+
+  const names = addons
+    .map((addon) => getAddonName(addon))
+    .filter((name) => typeof name === 'string');
+  const list = [...new Set(names)].join(', ');
+  console.warn(
+    `[Storybook React Native] The \`addons\` field in your main config (${configPath}) is deprecated and will be removed in a future major version.\n` +
+      `Move every entry to \`deviceAddons\` instead. That includes on-device UI packages (\`@storybook/addon-ondevice-*\`), other addons you bundle with the app (for example storybook-addon-deep-controls), and local paths such as ./my-addon.\n` +
+      (list ? `Still listed under \`addons\`: ${list}.\n` : '') +
+      `Details: ${MAIN_ADDONS_DEPRECATION_URL}`
+  );
+}
 
 const loadMain = async ({ configPath, cwd }) => {
   try {
@@ -22,15 +54,11 @@ const loadMain = async ({ configPath, cwd }) => {
     console.error('Error loading main config, trying fallback');
   }
 
-  const mainPathTs = path.resolve(cwd, configPath, `main.ts`);
-  const mainPathJs = path.resolve(cwd, configPath, `main.js`);
-  if (fs.existsSync(mainPathTs)) {
-    return interopRequireDefault(mainPathTs);
-  } else if (fs.existsSync(mainPathJs)) {
-    return interopRequireDefault(mainPathJs);
-  } else {
-    throw new Error(`Main config file not found at ${mainPathTs} or ${mainPathJs}`);
+  const mainPath = getInterpretedFile(path.resolve(cwd, configPath, 'main'));
+  if (!mainPath) {
+    throw new Error(`Main config file not found in ${path.resolve(cwd, configPath)}`);
   }
+  return interopRequireDefault(mainPath);
 };
 
 /**
@@ -50,13 +78,27 @@ function getLocalIPAddress() {
   return '0.0.0.0';
 }
 
-async function generate({
-  configPath,
-  useJs = false,
-  docTools = true,
-  host = undefined,
-  port = 7007,
-}) {
+/**
+ * @param {{
+ *   configPath: string;
+ *   useJs?: boolean;
+ *   docTools?: boolean;
+ *   host?: string;
+ *   port?: number;
+ *   secured?: boolean;
+ *   disableUI?: boolean;
+ * }} generateOptions
+ */
+async function generate(generateOptions) {
+  const {
+    configPath,
+    useJs = false,
+    docTools = true,
+    host = undefined,
+    port = undefined,
+    secured = false,
+    disableUI = false,
+  } = generateOptions;
   // here we want to get the ip address and pass it to rn storybook so that devices can connect over lan easily
   const channelHost = host === 'auto' ? getLocalIPAddress() : host;
   const storybookRequiresLocation = path.resolve(
@@ -66,6 +108,8 @@ async function generate({
   );
 
   const main = await loadMain({ configPath, cwd });
+
+  warnDeprecatedMainAddonsField(main, configPath);
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
@@ -94,7 +138,12 @@ async function generate({
 
   const registeredAddons = [];
 
-  for (const addon of main.addons) {
+  const allAddons = [
+    ...(main.addons ?? []), // TODO remove in v11
+    ...(main.deviceAddons ?? []),
+  ];
+
+  for (const addon of allAddons) {
     const registerPath = resolveAddonFile(
       getAddonName(addon),
       'register',
@@ -115,7 +164,7 @@ async function generate({
     enhancers.push(docToolsAnnotation);
   }
 
-  for (const addon of main.addons) {
+  for (const addon of allAddons) {
     const previewPath = resolveAddonFile(
       getAddonName(addon),
       'preview',
@@ -131,7 +180,11 @@ async function generate({
 
   let options = '';
   let optionsVar = '';
-  const reactNativeOptions = main.reactNative;
+  const reactNativeOptions = main.reactNative ?? {};
+
+  if (disableUI) {
+    reactNativeOptions.disableUI = true;
+  }
 
   if (reactNativeOptions && typeof reactNativeOptions === 'object') {
     optionsVar = `const options = ${JSON.stringify(reactNativeOptions, null, 2)}`;
@@ -165,17 +218,32 @@ async function generate({
   ${enhancers.join(',\n  ')}
 ]`;
 
+  const hasWebsocketConfig = host !== undefined || port !== undefined || secured;
+  const websocketAssignmentLines = [];
+
+  if (channelHost) {
+    websocketAssignmentLines.push(`host: '${channelHost}',`);
+  }
+
+  if (hasWebsocketConfig) {
+    websocketAssignmentLines.push(`port: ${port ?? 7007},`);
+    websocketAssignmentLines.push(`secured: ${Boolean(secured)},`);
+  }
+
   const globalTypes = `
 declare global {
   var view: View;
   var STORIES: typeof normalizedStories;
-  var STORYBOOK_WEBSOCKET: { host: string; port: number } | undefined;
+  var STORYBOOK_WEBSOCKET:
+    | { host?: string; port?: number; secured?: boolean }
+    | undefined;
   var FEATURES: Features;
 }
 `;
 
   const fileContent = `/* do not change this file, it is auto generated by storybook. */
-${useJs ? '' : '/// <reference types="@storybook/react-native/metro-env" />\n'}import { start, updateView${useJs ? '' : ', View, type Features'} } from '@storybook/react-native';
+${useJs ? '' : '/// <reference types="@storybook/react-native/metro-env" />\n'}import { start, updateView${useJs ? '' : ', type View, type Features'} } from '@storybook/react-native';
+
 
 ${registeredAddons.join('\n')}
 
@@ -188,7 +256,13 @@ ${useJs ? '' : globalTypes}
 const annotations = ${annotations};
 
 globalThis.STORIES = normalizedStories;
-${channelHost ? `globalThis.STORYBOOK_WEBSOCKET = { host: '${channelHost}', port: ${port ?? 7007} };` : ''}
+${
+  hasWebsocketConfig
+    ? `globalThis.STORYBOOK_WEBSOCKET = {
+  ${websocketAssignmentLines.join('\n  ')}
+};`
+    : ''
+}
 
 module?.hot?.accept?.();
 ${featuresAssignment ? `\n${featuresAssignment}\n` : ''}

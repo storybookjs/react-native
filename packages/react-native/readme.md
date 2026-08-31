@@ -163,13 +163,13 @@ For projects using [Re.Pack](https://re-pack.dev/) (Rspack/Webpack) instead of M
 
 ## Expo router specific setup
 
-```bash
+```sh
 npm create storybook@latest
 ```
 
 choose recommended and then native
 
-```bash
+```sh
 npx expo@latest customize metro.config.js
 ```
 
@@ -226,7 +226,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [],
+  deviceAddons: [],
 };
 
 export default main;
@@ -307,7 +307,7 @@ Currently, the addons available are:
 - [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some Markdown to your stories to help document their usage
 - [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
 
-Install each one you want to use and add them to the `main.ts` addons list as follows:
+Install each one you want to use and add them to the `deviceAddons` list in `main.ts` as follows:
 
 ```ts
 // .rnstorybook/main.ts
@@ -315,7 +315,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   // ... rest of config
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
@@ -461,7 +461,7 @@ You can enable MCP with or without websockets:
 
 ### websockets
 
-Type: `'auto' | { host: string?, port: number? }`, default: `undefined`
+Type: `'auto' | { host?: string, port?: number, secured?: boolean, key?: string | Buffer, cert?: string | Buffer, ca?: string | Buffer | Array<string | Buffer>, passphrase?: string }`, default: `undefined`
 
 If specified, create a WebSocket server on startup. This allows you to sync up multiple devices to show the same story and [arg](https://storybook.js.org/docs/writing-stories/args) values connected to the story in the UI.
 
@@ -478,6 +478,18 @@ The host on which to run the WebSocket, if specified.
 Type: `number`, default: `7007`
 
 The port on which to run the WebSocket, if specified.
+
+### websockets.secured
+
+Type: `boolean`, default: `false`
+
+When `true`, the channel server starts on `https` and upgrades WebSocket clients over `wss`.
+
+### websockets.key / websockets.cert
+
+Type: `string | Buffer`, default: `undefined`
+
+TLS private key and certificate used when `secured` is `true`.
 
 ## getStorybookUI options
 
@@ -523,7 +535,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-ondevice-controls'],
+  deviceAddons: ['@storybook/addon-ondevice-controls'],
   features: {
     ondeviceBackgrounds: true,
   },
@@ -574,6 +586,7 @@ This repo includes agent skills for setting up and working with Storybook for Re
 
 - **writing-react-native-storybook-stories** - Guides Claude on writing stories using Component Story Format (CSF), including controls, addons, decorators, parameters, and portable stories
 - **setup-react-native-storybook** - Guides Claude through adding Storybook to your project, covering Expo, Expo Router, React Native CLI, and Re.Pack setups
+- **upgrading-react-native-storybook** - Guides Claude through incremental React Native Storybook upgrades, split by supported migration paths from 5.3.x through 10.x, including converting remaining `storiesOf` stories to CSF during the 6.5.x to 7.6.x migration
 
 ### Installation
 

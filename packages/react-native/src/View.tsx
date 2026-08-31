@@ -1,31 +1,37 @@
-import { StoryContext, toId } from 'storybook/internal/csf';
 import type { ReactRenderer } from '@storybook/react';
 import { Theme, darkTheme, theme } from '@storybook/react-native-theming';
 import { type SBUI, transformStoryIndexToStoriesHash } from '@storybook/react-native-ui-common';
-import { Channel, WebsocketTransport } from 'storybook/internal/channels';
-import { CHANNEL_CREATED, SET_CURRENT_STORY } from 'storybook/internal/core-events';
-import { addons as managerAddons } from 'storybook/manager-api';
-import { PreviewWithSelection, addons as previewAddons } from 'storybook/internal/preview-api';
-import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
 import dedent from 'dedent';
-import { patchChannelForRN } from './patchChannelForRN';
 import deepmerge from 'deepmerge';
 import { useEffect, useMemo, useReducer, useState } from 'react';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Channel, WebsocketTransport } from 'storybook/internal/channels';
+import { CHANNEL_CREATED, SET_CURRENT_STORY } from 'storybook/internal/core-events';
+import { StoryContext, toId } from 'storybook/internal/csf';
+import {
+  PreviewWithSelection,
+  type SelectionStore,
+  addons as previewAddons,
+} from 'storybook/internal/preview-api';
+import type { API_IndexHash, PreparedStory, StoryId, StoryIndex } from 'storybook/internal/types';
+import { addons as managerAddons } from 'storybook/manager-api';
+import { patchChannelForRN } from './patchChannelForRN';
+
 import {
   ActivityIndicator,
   Linking,
   Platform,
   View as RNView,
-  StyleSheet,
+  StatusBar,
   useColorScheme,
 } from 'react-native';
 import StoryView from './components/StoryView';
-import { useSetStoryContext, useStoryContext } from './hooks';
 import {
   RN_STORYBOOK_EVENTS,
   RN_STORYBOOK_STORAGE_KEY,
   STORYBOOK_STORY_ID_PARAM,
 } from './constants';
+import { useSetStoryContext, useStoryContext } from './hooks';
 
 function resolveStoryBackgroundColor(
   story?: StoryContext<ReactRenderer> | null
@@ -48,8 +54,8 @@ function resolveStoryBackgroundColor(
 }
 
 export interface Storage {
-  getItem: (key: string) => Promise<string | null>;
-  setItem: (key: string, value: string) => Promise<void>;
+  getItem: (key: string) => Promise<string | null> | string | null;
+  setItem: (key: string, value: string) => Promise<void> | void;
 }
 
 type StoryKind = string;
@@ -88,7 +94,7 @@ export type Params = {
   hasStoryWrapper?: boolean;
   /**
    * Enable websockets for the storybook server to remotely control the storybook
-   * default: false
+   * default: automatically enabled when a websocket config is injected via storybook.requires (i.e. when STORYBOOK_WS_HOST is set), otherwise false
    */
   enableWebsockets?: boolean;
   query?: string;
@@ -109,30 +115,51 @@ export type Params = {
 };
 
 export class View {
-  _storyIndex: StoryIndex;
+  _storyIndex!: StoryIndex;
   _setStory: (story: StoryContext<ReactRenderer>) => void = () => {};
   _forceRerender: () => void = () => {};
   _ready: boolean = false;
   _preview: PreviewWithSelection<ReactRenderer>;
-  _asyncStorageStoryId: string;
-  _webUrl: string;
-  _storage: Storage;
+  _asyncStorageStoryId: string | null = null;
+  _webUrl?: string;
+  _storage!: Storage;
   _channel: Channel;
+  _options: any;
   _idToPrepared: Record<string, PreparedStory<ReactRenderer>> = {};
 
-  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel) {
+  constructor(preview: PreviewWithSelection<ReactRenderer>, channel: Channel, options: any) {
     this._preview = preview;
     this._channel = channel;
+    this._options = options ?? {};
   }
 
   _storyIdExists = (storyId: string) => {
     return Object.keys(this._storyIndex.entries).includes(storyId);
   };
 
+  _selectInitialStory = async ({
+    selectionSpecifier,
+    storyIdFromUrl,
+  }: {
+    selectionSpecifier: NonNullable<SelectionStore['selectionSpecifier']>;
+    storyIdFromUrl?: string | null;
+  }) => {
+    this._preview.selectionStore.selectionSpecifier = storyIdFromUrl
+      ? { storySpecifier: storyIdFromUrl, viewMode: 'story' }
+      : selectionSpecifier;
+
+    // The preview can survive Metro refreshes through globalThis.view. Storybook's
+    // selectSpecifiedStory returns early when a selection already exists, so clear
+    // the stale selection before applying the specifier from storage or a deep link.
+    this._preview.selectionStore.selection = undefined;
+
+    await this._preview.selectSpecifiedStory();
+  };
+
   _getInitialStory = async ({
     initialSelection,
     shouldPersistSelection = true,
-  }: Partial<Params> = {}) => {
+  }: Partial<Params> = {}): Promise<NonNullable<SelectionStore['selectionSpecifier']>> => {
     if (initialSelection) {
       if (typeof initialSelection === 'string') {
         return { storySpecifier: initialSelection, viewMode: 'story' };
@@ -151,14 +178,19 @@ export class View {
         if (!value && this._storage != null) {
           value = await this._storage.getItem(RN_STORYBOOK_STORAGE_KEY);
 
+          if (!value) {
+            // Native storage can report null during process startup before its
+            // persisted state is fully available.
+            await new Promise((resolve) => setTimeout(resolve, 100));
+            value = await this._storage.getItem(RN_STORYBOOK_STORAGE_KEY);
+          }
+
           this._asyncStorageStoryId = value;
         }
 
-        const exists = value && this._storyIdExists(value);
+        const persistedStoryId = value && this._storyIdExists(value) ? value : undefined;
 
-        if (!exists) console.log('Storybook: could not find persisted story');
-
-        return { storySpecifier: exists ? value : '*', viewMode: 'story' };
+        return { storySpecifier: persistedStoryId ?? '*', viewMode: 'story' };
       } catch (e) {
         console.warn('storybook-log: error reading from async storage', e);
       }
@@ -191,15 +223,19 @@ export class View {
     return 7007;
   };
 
+  _isSecureConnection = (params: Partial<Params> = {}) => {
+    if (typeof params.secured === 'boolean') {
+      return params.secured;
+    }
+
+    return globalThis.STORYBOOK_WEBSOCKET?.secured ?? false;
+  };
+
   _getServerChannel = (params: Partial<Params> = {}) => {
     const host = this._getHost(params);
-
     const port = `:${this.__getPort(params)}`;
-
     const query = params.query || '';
-
-    const websocketType = params.secured ? 'wss' : 'ws';
-
+    const websocketType = this._isSecureConnection(params) ? 'wss' : 'ws';
     const url = `${websocketType}://${host}${port}/${query}`;
 
     const channel = new Channel({
@@ -228,13 +264,22 @@ export class View {
 
   getStorybookUI = (params: Partial<Params> = {}) => {
     const {
-      shouldPersistSelection = true,
-      onDeviceUI = true,
-      enableWebsockets = false,
-      storage,
+      enableWebsockets = !!globalThis.STORYBOOK_WEBSOCKET,
       CustomUIComponent,
       hasStoryWrapper: storyViewWrapper = true,
     } = params;
+
+    const storage =
+      params.storage ??
+      ({
+        getItem: async (key) => null,
+        setItem: async (key, value) => {},
+      } as Storage);
+
+    const onDeviceUI = this._options?.disableUI ? false : (params.onDeviceUI ?? true);
+    const shouldPersistSelection = this._options.disableUI
+      ? false
+      : (params.shouldPersistSelection ?? true);
 
     const getFullUI = (enabled: boolean): SBUI => {
       if (enabled) {
@@ -252,9 +297,10 @@ export class View {
 
     const FullUI: SBUI = getFullUI(onDeviceUI && !CustomUIComponent);
 
-    this._storage = storage;
-
-    const initialStory = this._getInitialStory(params);
+    this._storage = storage ?? {
+      getItem: async (key) => null,
+      setItem: async (key, value) => {},
+    };
 
     if (enableWebsockets) {
       const channel = this._getServerChannel(params);
@@ -275,7 +321,7 @@ export class View {
 
     managerAddons.loadAddons({
       store: () => ({
-        fromId: (id) => {
+        fromId: (id: string) => {
           if (!this._ready) {
             throw new Error('Storybook is not ready yet');
           }
@@ -334,56 +380,64 @@ export class View {
       useEffect(() => {
         self
           .createPreparedStoryMapping()
+          .then(() =>
+            Linking.getInitialURL().then((url) => {
+              if (url && typeof url === 'string') {
+                const urlObj = new URL(url);
+                const storyId = urlObj.searchParams.get(STORYBOOK_STORY_ID_PARAM);
+
+                const hasStoryId = typeof storyId === 'string';
+                const storyExists = hasStoryId && self._storyIdExists(storyId);
+
+                if (hasStoryId && !storyExists) {
+                  console.log(
+                    `STORYBOOK: Initial Linking event received, but story does not exist: ${storyId}`
+                  );
+                }
+
+                if (storyExists) {
+                  return storyId;
+                }
+              }
+
+              return null;
+            })
+          )
+          .then((initialStoryIdFromUrl) =>
+            self._getInitialStory(params).then((st) => {
+              if (initialStoryIdFromUrl) {
+                console.log(
+                  `STORYBOOK: Setting initial story from Linking event, storyId: ${initialStoryIdFromUrl}`
+                );
+              }
+
+              return self._selectInitialStory({
+                selectionSpecifier: st,
+                storyIdFromUrl: initialStoryIdFromUrl,
+              });
+            })
+          )
           .then(() => {
+            const currentStoryId = self._preview.currentSelection?.storyId;
+            const preparedStory = currentStoryId ? self._idToPrepared[currentStoryId] : undefined;
+
+            if (preparedStory) {
+              setContext(
+                self._preview.getStoryContext(
+                  preparedStory
+                ) as unknown as StoryContext<ReactRenderer>
+              );
+            }
+
             self._ready = true;
             setReady(true);
-            return Linking.getInitialURL()
-              .then((url) => {
-                if (url && typeof url === 'string') {
-                  const urlObj = new URL(url);
-                  const storyId = urlObj.searchParams.get(STORYBOOK_STORY_ID_PARAM);
-
-                  const hasStoryId = storyId && typeof storyId === 'string';
-                  const storyExists = hasStoryId && self._storyIdExists(storyId);
-
-                  if (hasStoryId && !storyExists) {
-                    console.log(
-                      `STORYBOOK: Initial Linking event received, but story does not exist: ${storyId}`
-                    );
-                  }
-
-                  if (storyExists) {
-                    return storyId;
-                  } else {
-                    return null;
-                  }
-                }
-              })
-              .then((initialStoryIdFromUrl) => {
-                return initialStory.then((st) => {
-                  self._preview.selectionStore.selectionSpecifier = st;
-
-                  if (initialStoryIdFromUrl) {
-                    console.log(
-                      `STORYBOOK: Setting initial story from Linking event, storyId: ${initialStoryIdFromUrl}`
-                    );
-
-                    self._preview.selectionStore.selectionSpecifier = {
-                      storySpecifier: initialStoryIdFromUrl,
-                      viewMode: 'story',
-                    };
-                  }
-
-                  self._preview.selectSpecifiedStory();
-                });
-              });
           })
           .catch((e) => console.error(e));
 
         self._setStory = (newStory: StoryContext<ReactRenderer>) => {
           setContext(newStory);
 
-          if (shouldPersistSelection && !storage) {
+          if (shouldPersistSelection && !params.storage) {
             console.warn(dedent`Please set storage in getStorybookUI like this:
               const StorybookUIRoot = view.getStorybookUI({
                 storage: {
@@ -394,10 +448,18 @@ export class View {
             `);
           }
 
-          if (shouldPersistSelection && !!self._storage) {
-            self._storage.setItem(RN_STORYBOOK_STORAGE_KEY, newStory.id).catch((e) => {
+          if (shouldPersistSelection && !!self._storage && self._ready) {
+            try {
+              self._asyncStorageStoryId = newStory.id;
+              const ret = self._storage.setItem(RN_STORYBOOK_STORAGE_KEY, newStory.id);
+              if (ret && typeof (ret as Promise<void>).then === 'function') {
+                (ret as Promise<void>).catch((e) => {
+                  console.warn('storybook-log: error writing to async storage', e);
+                });
+              }
+            } catch (e) {
               console.warn('storybook-log: error writing to async storage', e);
-            });
+            }
           }
         };
 
@@ -428,7 +490,11 @@ export class View {
         return (
           <RNView
             style={{
-              ...StyleSheet.absoluteFillObject,
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
               alignItems: 'center',
               justifyContent: 'center',
             }}
@@ -446,7 +512,7 @@ export class View {
         if (CustomUIComponent) {
           return (
             <CustomUIComponent
-              story={story}
+              story={story as Parameters<SBUI>[0]['story']}
               storyHash={storyHash}
               setStory={(newStoryId) =>
                 self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
@@ -468,7 +534,7 @@ export class View {
             storage={storage}
             theme={appliedTheme as Theme}
             storyHash={storyHash}
-            story={story}
+            story={story as Parameters<SBUI>[0]['story']}
             setStory={(newStoryId) =>
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }
@@ -479,9 +545,46 @@ export class View {
         );
       } else {
         return (
-          <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
+          <SafeAreaProvider>
+            <StatusBar hidden />
+            <WithSafeArea
+              id={story?.id ?? ''}
+              safeAreaEnabled={!(story?.parameters?.noSafeArea ?? false)}
+            >
+              <StoryView
+                useWrapper={storyViewWrapper}
+                storyBackgroundColor={storyBackgroundColor}
+              />
+            </WithSafeArea>
+          </SafeAreaProvider>
         );
       }
     };
   };
 }
+
+const WithSafeArea = ({
+  children,
+  id,
+  safeAreaEnabled,
+}: {
+  children: React.ReactNode;
+  id: string;
+  safeAreaEnabled: boolean;
+}) => {
+  const insets = useSafeAreaInsets();
+  return (
+    <RNView
+      style={{
+        flex: 1,
+        paddingTop: safeAreaEnabled ? insets.top : 0,
+        paddingBottom: safeAreaEnabled ? insets.bottom : 0,
+      }}
+      accessibilityLabel={id}
+      testID={id}
+      accessible
+    >
+      {children}
+    </RNView>
+  );
+};

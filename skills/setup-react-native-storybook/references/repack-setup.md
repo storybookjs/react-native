@@ -4,7 +4,7 @@ For React Native projects using [Re.Pack](https://re-pack.dev/) instead of Metro
 
 ## Step 1: Run CLI Init
 
-```bash
+```sh
 npm create storybook -- --type react_native --yes
 ```
 
@@ -12,7 +12,7 @@ npm create storybook -- --type react_native --yes
 
 Storybook's default UI requires both `react-native-reanimated` and `react-native-worklets`. Re.Pack projects often already have `react-native-reanimated` but **`react-native-worklets` must also be installed separately** — it is not bundled with reanimated:
 
-```bash
+```sh
 npm install react-native-reanimated react-native-worklets
 ```
 
@@ -113,7 +113,7 @@ Replace `rock` with `react-native` or your project's CLI if not using Rock.
 
 ## Step 6: Run
 
-```bash
+```sh
 npm run storybook
 ```
 

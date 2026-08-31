@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "check:types": "tsc --noEmit",
     "test": "node --test scripts/generate.test.ts scripts/docgen.test.ts",
     "test:ci": "node --test scripts/generate.test.ts scripts/docgen.test.ts",
-    "test:update": "node --test --test-update-snapshots scripts/generate.test.ts scripts/docgen.test.ts",
-    "check:types": "tsc --noEmit"
+    "test:update": "node --test --test-update-snapshots scripts/generate.test.ts scripts/docgen.test.ts"
   },
   "dependencies": {
     "@storybook/addon-ondevice-actions": "workspace:*",

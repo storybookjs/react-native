@@ -1,6 +1,6 @@
 {
   "name": "@storybook/addon-ondevice-controls",
-  "version": "10.3.0-next.4",
+  "version": "10.5.4",
   "description": "Display storybook controls on your device.",
   "keywords": [
     "addon",
@@ -24,16 +24,16 @@
     "*.d.ts"
   ],
   "scripts": {
+    "check:types": "tsc --noEmit",
     "clean": "cross-env-shell rm -rf dist/",
-    "prepare": "pnpm clean && tsc && pnpm copyimages",
-    "dev": "tsc --watch",
     "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources",
-    "check:types": "tsc --noEmit"
+    "dev": "tsc --watch",
+    "prepare": "pnpm clean && tsc && pnpm copyimages"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
-    "@storybook/react-native-theming": "^10.3.0-next.4",
-    "@storybook/react-native-ui-common": "^10.3.0-next.4",
+    "@storybook/react-native-theming": "^10.5.4",
+    "@storybook/react-native-ui-common": "^10.5.4",
     "polished": "^4.3.1",
     "react-native-modal-datetime-picker": "^18.0.0",
     "tinycolor2": "^1.6.0"
@@ -41,8 +41,8 @@
   "devDependencies": {
     "@gorhom/bottom-sheet": "*",
     "cross-env": "^10.1.0",
-    "storybook": "10.3.0-alpha.12",
-    "typescript": "~5.9.3"
+    "storybook": "^10.5.4",
+    "typescript": "~6.0.3"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",
@@ -50,7 +50,7 @@
     "@react-native-community/slider": "*",
     "react": "*",
     "react-native": "*",
-    "storybook": ">=10 || ^10"
+    "storybook": "^10.5.4"
   },
   "peerDependenciesMeta": {
     "@gorhom/bottom-sheet": {

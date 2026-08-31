@@ -7,3 +7,23 @@ linkWorkspacePackages: true
 ignoreScripts: true
 nodeLinker: hoisted
 shamefullyHoist: true
+minimumReleaseAge: 1340
+# First-party Storybook releases are intentionally adopted before minimumReleaseAge elapses.
+minimumReleaseAgeExclude:
+  - storybook
+  - '@storybook/*'
+overrides:
+  # Required for notes security: react-native-markdown-display@7.0.2 is latest and still resolves markdown-it@10 by default.
+  markdown-it: 14.3.0
+  # Required for Storybook docgen behavior; newer react-docgen-typescript versions change functionality.
+  react-docgen-typescript: 2.2.2
+  # Required until Docusaurus updates its webpack plugins: copy-webpack-plugin@11 and css-minimizer-webpack-plugin@5 only allow serialize-javascript@^6.
+  serialize-javascript: 7.0.5
+  # Required until webpack-dev-server drops sockjs: sockjs@0.3.24 pins uuid@^8, but the uuid advisory is only patched in 11.1.1+.
+  sockjs>uuid: 11.1.1
+  # Required until Expo's xcode dependency updates: xcode@3.0.1 pins uuid@^7, but the uuid advisory is only patched in 11.1.1+.
+  xcode>uuid: 11.1.1
+  # Reanimated must be a singleton in React Native apps; mixed versions crash at runtime.
+  react-native-reanimated: 4.5.1
+  # we are getting 5.8 from expo-router and 5.7 otherwise, we need to override to not get duplicate native deps
+  react-native-safe-area-context: '5.8.0'

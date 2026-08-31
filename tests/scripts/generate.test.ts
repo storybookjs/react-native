@@ -164,7 +164,11 @@ describe('loader', () => {
 
         assert.ok(
           fileContentMock.includes(
-            "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
+            `globalThis.STORYBOOK_WEBSOCKET = {
+  host: '192.168.1.100',
+  port: 8080,
+  secured: false,
+};`
           )
         );
         t.assert.snapshot(fileContentMock);
@@ -182,7 +186,11 @@ describe('loader', () => {
 
         assert.ok(
           fileContentMock.includes(
-            "globalThis.STORYBOOK_WEBSOCKET = { host: 'localhost', port: 7007 };"
+            `globalThis.STORYBOOK_WEBSOCKET = {
+  host: 'localhost',
+  port: 7007,
+  secured: false,
+};`
           )
         );
         t.assert.snapshot(fileContentMock);
@@ -201,7 +209,7 @@ describe('loader', () => {
     });
 
     describe('when only port is provided without host', () => {
-      it('does not include STORYBOOK_WEBSOCKET assignment', async (t) => {
+      it('includes STORYBOOK_WEBSOCKET with port and secured flag', async (t) => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({
           configPath: 'scripts/mocks/all-config-files',
@@ -209,7 +217,14 @@ describe('loader', () => {
         });
         mock.reset();
 
-        assert.ok(!fileContentMock.includes('globalThis.STORYBOOK_WEBSOCKET ='));
+        assert.ok(
+          fileContentMock.includes(
+            `globalThis.STORYBOOK_WEBSOCKET = {
+  port: 8080,
+  secured: false,
+};`
+          )
+        );
         t.assert.snapshot(fileContentMock);
       });
     });
@@ -227,7 +242,11 @@ describe('loader', () => {
 
         assert.ok(
           fileContentMock.includes(
-            "globalThis.STORYBOOK_WEBSOCKET = { host: '192.168.1.100', port: 8080 };"
+            `globalThis.STORYBOOK_WEBSOCKET = {
+  host: '192.168.1.100',
+  port: 8080,
+  secured: false,
+};`
           )
         );
         t.assert.snapshot(fileContentMock);
@@ -253,6 +272,72 @@ describe('loader', () => {
 
         assert.ok(!fileContentMock.includes('globalThis.FEATURES.'));
         t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('when addons are in deviceAddons', () => {
+      it('writes the addon imports from deviceAddons', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/device-addons' });
+        mock.reset();
+
+        assert.strictEqual(
+          pathMock,
+          path.resolve(__dirname, 'mocks/device-addons/storybook.requires.ts')
+        );
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('when addons are split between addons and deviceAddons', () => {
+      it('writes imports from both addons and deviceAddons', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/mixed-addons' });
+        mock.reset();
+
+        assert.strictEqual(
+          pathMock,
+          path.resolve(__dirname, 'mocks/mixed-addons/storybook.requires.ts')
+        );
+        t.assert.snapshot(fileContentMock);
+      });
+
+      it('logs a deprecation warning when addons is non-empty', async () => {
+        const warn = mock.method(console, 'warn', mock.fn());
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/mixed-addons' });
+        mock.reset();
+
+        assert.strictEqual(warn.mock.callCount(), 1);
+        const msg = String(warn.mock.calls[0].arguments[0]);
+        assert.ok(msg.includes('deprecated'));
+        assert.ok(msg.includes('deviceAddons'));
+        assert.ok(msg.includes('deprecating-addons-in-rnstorybook-main'));
+      });
+    });
+
+    describe('legacy on-device addons under main.addons', () => {
+      it('logs a deprecation warning', async () => {
+        const warn = mock.method(console, 'warn', mock.fn());
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/legacy-ondevice-in-addons' });
+        mock.reset();
+
+        assert.strictEqual(warn.mock.callCount(), 1);
+        const msg = String(warn.mock.calls[0].arguments[0]);
+        assert.ok(msg.includes('deprecated'));
+        assert.ok(msg.includes('deviceAddons'));
+        assert.ok(msg.includes('@storybook/addon-ondevice-controls'));
+        assert.ok(msg.includes('deprecating-addons-in-rnstorybook-main'));
+      });
+
+      it('does not warn when on-device addons are only in deviceAddons', async () => {
+        const warn = mock.method(console, 'warn', mock.fn());
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/device-addons' });
+        mock.reset();
+
+        assert.strictEqual(warn.mock.callCount(), 0);
       });
     });
   });

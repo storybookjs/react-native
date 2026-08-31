@@ -41,6 +41,13 @@ export default {
 
 export const Undefined = {
   args: {},
+  // Color controls only accept strings, so leave them disabled in the story that intentionally
+  // exercises undefined args. The Defined story below covers the color controls themselves.
+  argTypes: {
+    color: { control: false },
+    colorWithPresets: { control: false },
+    colorStartOpen: { control: false },
+  },
 };
 
 const DEFAULT_NESTED_OBJECT = {

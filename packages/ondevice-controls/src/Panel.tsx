@@ -1,6 +1,11 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-export const AddonPanel = ({ active, children }) => {
+interface AddonPanelProps {
+  active?: boolean;
+  children: ReactNode;
+}
+
+export const AddonPanel = ({ children }: AddonPanelProps) => {
   return <>{children}</>;
 };
 

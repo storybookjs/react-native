@@ -1,6 +1,9 @@
 import * as path from 'path';
 import { generate } from '../../scripts/generate';
 import { createChannelServer } from '../metro/channelServer';
+import type { WebsocketsOptions } from '../types';
+import { envVariableToBoolean, loadWebsocketEnvOverrides } from '../env-tools';
+import { setTelemetryEnabled, telemetry } from 'storybook/internal/telemetry';
 
 /**
  * Minimal compiler types for webpack/rspack compatibility.
@@ -23,21 +26,6 @@ interface Compiler {
       fn: (resource: { request?: string }) => void
     ) => { apply: (compiler: Compiler) => void };
   };
-}
-
-/**
- * Options for configuring WebSockets used for syncing storybook instances or sending events to storybook.
- */
-interface WebsocketsOptions {
-  /**
-   * The port WebSocket server will listen on. Defaults to 7007.
-   */
-  port?: number;
-
-  /**
-   * The host WebSocket server will bind to. Defaults to 'localhost'.
-   */
-  host?: string;
 }
 
 /**
@@ -151,6 +139,13 @@ export class StorybookPlugin {
       return;
     }
 
+    const disableTelemetry = envVariableToBoolean(process.env.STORYBOOK_DISABLE_TELEMETRY, false);
+
+    if (!disableTelemetry && enabled) {
+      setTelemetryEnabled(true);
+      telemetry('dev', {}, { configDir: configPath }).catch((e) => {});
+    }
+
     this.applyEnabled(compiler, {
       configPath,
       websockets,
@@ -183,19 +178,42 @@ export class StorybookPlugin {
       experimental_mcp: boolean;
     }
   ): void {
-    const port = websockets === 'auto' ? 7007 : (websockets?.port ?? 7007);
-    const host = websockets === 'auto' ? 'auto' : websockets?.host;
+    const resolvedWs = loadWebsocketEnvOverrides(websockets);
+    const server = envVariableToBoolean(process.env.STORYBOOK_SERVER, true);
+    const bindHost =
+      websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? undefined : resolvedWs.host;
+    const generateHost =
+      resolvedWs.host ??
+      (websockets === 'auto' && !process.env.STORYBOOK_WS_HOST ? 'auto' : undefined);
+    const port = resolvedWs.port ?? 7007;
+    const secured = resolvedWs.secured;
+    const channelWebsocketsEnabled =
+      Boolean(websockets) || Boolean(process.env.STORYBOOK_WS_HOST) || Boolean(resolvedWs.host);
 
     // Start the channel server once (on first apply, not per-compilation)
-    if ((websockets || experimental_mcp) && !this.serverStarted) {
+    if (
+      (experimental_mcp || websockets != null || process.env.STORYBOOK_WS_HOST) &&
+      !this.serverStarted &&
+      server
+    ) {
       this.serverStarted = true;
 
       createChannelServer({
         port,
-        host: host === 'auto' ? undefined : host,
+        host: bindHost,
         configPath,
         experimental_mcp,
-        websockets: Boolean(websockets),
+        websockets: channelWebsocketsEnabled,
+        secured,
+        ssl:
+          websockets && websockets !== 'auto'
+            ? {
+                key: websockets.key,
+                cert: websockets.cert,
+                ca: websockets.ca,
+                passphrase: websockets.passphrase,
+              }
+            : undefined,
       });
     }
 
@@ -208,7 +226,9 @@ export class StorybookPlugin {
         configPath,
         useJs,
         docTools,
-        ...(websockets ? { host, port } : {}),
+        ...(websockets != null || process.env.STORYBOOK_WS_HOST
+          ? { host: generateHost, port, secured }
+          : {}),
       });
 
       console.log('[StorybookPlugin] Generated storybook.requires');
@@ -232,7 +252,10 @@ export class StorybookPlugin {
    * and replace the config folder index with a stub component.
    */
   private applyDisabled(compiler: Compiler, configPath: string): void {
-    const stubPath = require.resolve('@storybook/react-native/stub');
+    const stubPath = path.resolve(
+      __dirname,
+      __dirname.includes(`${path.sep}src${path.sep}`) ? '../stub.tsx' : '../stub.js'
+    );
     const normalizedConfigPath = path.resolve(configPath);
 
     // Use NormalModuleReplacementPlugin to intercept storybook module requests

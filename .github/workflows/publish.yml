@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       release_type:
-        description: 'Release type'
+        description: "Release type"
         required: true
         type: choice
         options:
@@ -23,17 +23,16 @@ jobs:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 24
-          cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 26
+          registry-url: "https://registry.npmjs.org"
 
       - run: pnpm install --frozen-lockfile
 
@@ -50,9 +49,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Update lockfile (canary)
+        if: inputs.release_type == 'canary'
+        run: pnpm install --lockfile-only --ignore-scripts
+
       - name: Publish (canary)
         if: inputs.release_type == 'canary'
-        run: pnpm changeset publish --tag canary
+        run: node node_modules/@changesets/cli/bin.js publish --tag canary
 
       # --- Next Release ---
       - name: Enter pre-release mode (next)
@@ -65,15 +68,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Update lockfile (next)
+        if: inputs.release_type == 'next'
+        run: pnpm install --lockfile-only --ignore-scripts
+
       - name: Publish (next)
         if: inputs.release_type == 'next'
-        run: pnpm changeset publish
+        run: node node_modules/@changesets/cli/bin.js publish
 
       - name: Commit & push version changes (next)
         if: inputs.release_type == 'next'
         run: |
-          # update lockfile
-          pnpm install --no-frozen-lockfile
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
@@ -104,15 +109,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Update lockfile (latest)
+        if: inputs.release_type == 'latest'
+        run: pnpm install --lockfile-only --ignore-scripts
+
       - name: Publish (latest)
         if: inputs.release_type == 'latest'
-        run: pnpm changeset publish --tag latest
+        run: node node_modules/@changesets/cli/bin.js publish --tag latest
 
       - name: Commit, tag & push version changes (latest)
         if: inputs.release_type == 'latest'
         run: |
-          # update lockfile
-          pnpm install --no-frozen-lockfile
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .

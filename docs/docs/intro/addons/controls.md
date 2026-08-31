@@ -8,17 +8,17 @@ The `@storybook/addon-ondevice-controls` addon provides interactive controls for
 
 ## Installation
 
-```bash
+```sh
 npm install @storybook/addon-ondevice-controls
 ```
 
-Add it to your addons list in `.rnstorybook/main.ts`:
+Add it to your `deviceAddons` list in `.rnstorybook/main.ts`:
 
-```typescript
+```ts
 const main: StorybookConfig = {
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-controls',
-    // ... other addons
+    // ... other on-device addons
   ],
 };
 ```
@@ -33,7 +33,7 @@ The React Native controls addon supports **13 different control types** optimize
 
 Basic text input control for string values.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -48,7 +48,7 @@ export default {
 
 Numeric input with optional range slider functionality.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -75,7 +75,7 @@ export default {
 
 Dedicated slider control for numeric ranges.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -97,7 +97,7 @@ export default {
 
 Toggle switch using React Native's native Switch component.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -114,7 +114,7 @@ export default {
 
 Dropdown selection with support for custom labels.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -143,7 +143,7 @@ export default {
 
 Radio button selection for exclusive choices.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -159,7 +159,7 @@ export default {
 
 Inline radio button layout for horizontal display.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -177,7 +177,7 @@ export default {
 
 Multiple selection control returning an array of values.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -195,7 +195,7 @@ export default {
 
 Full-featured color picker with mobile-optimized interface.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -215,7 +215,7 @@ export default {
 
 Date and time picker with native mobile interfaces.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -234,7 +234,7 @@ export default {
 
 Array input control that parses comma-separated values.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -252,7 +252,7 @@ export default {
 
 JSON object editor with syntax validation.
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -270,7 +270,7 @@ export default {
 
 Controls can be automatically inferred from your component's prop types:
 
-```typescript
+```ts
 // TypeScript component
 interface ButtonProps {
   label: string; // → text control
@@ -290,7 +290,7 @@ export default {
 
 ### Complete Story with Multiple Control Types
 
-```typescript
+```ts
 import type { Meta, StoryObj } from '@storybook/react-native';
 import { MyComponent } from './MyComponent';
 
@@ -369,7 +369,7 @@ export const Interactive: Story = {
 
 ### Conditional Controls
 
-```typescript
+```ts
 export default {
   component: MyComponent,
   argTypes: {
@@ -402,7 +402,7 @@ Some controls require additional React Native dependencies:
 
 Install these as needed:
 
-```bash
+```sh
 npm install @react-native-community/slider @react-native-community/datetimepicker
 ```
 

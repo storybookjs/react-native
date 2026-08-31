@@ -1,10 +1,12 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 import { IconButton, useStyle } from '@storybook/react-native-ui-common';
+import type { Parameters } from 'storybook/internal/csf';
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useState } from 'react';
 import {
   Animated,
   Easing,
   Keyboard,
+  KeyboardEvent,
   Platform,
   ScrollView,
   StyleProp,
@@ -20,117 +22,86 @@ import {
   type Addon_Collection,
 } from 'storybook/internal/types';
 import { CloseIcon } from './icon/iconDataUris';
-import useAnimatedValue from './useAnimatedValue';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useAnimatedValue } from './useAnimatedValue';
 
 export interface MobileAddonsPanelRef {
   setAddonsPanelOpen: (isOpen: boolean) => void;
 }
 
-export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: string }>(
-  ({ storyId }, ref) => {
+type MobileAddonsPanelProps = { storyId?: string; parameters?: Parameters };
+
+export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, MobileAddonsPanelProps>(
+  ({ storyId, parameters }, ref) => {
     const theme = useTheme();
     const { height } = useWindowDimensions();
-    const panelHeight = useAnimatedValue(0);
+    const defaultPanelHeight = height / 2;
     const positionBottomAnimation = useAnimatedValue(height / 2);
+    const [panelHeight, setPanelHeight] = useState(defaultPanelHeight);
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setPanelHeight(defaultPanelHeight);
+    }, [defaultPanelHeight]);
 
     const setMobileMenuOpen = useCallback(
       (open: boolean) => {
         setIsOpen(open);
 
         if (open) {
-          Animated.parallel([
-            Animated.timing(positionBottomAnimation, {
-              toValue: 0, // Negative to move up
-              duration: 350,
-              useNativeDriver: false,
-              easing: Easing.inOut(Easing.cubic),
-            }),
-
-            Animated.timing(panelHeight, {
-              toValue: height / 2,
-              duration: 350,
-              useNativeDriver: false,
-              easing: Easing.inOut(Easing.cubic),
-            }),
-          ]).start();
+          setPanelHeight(defaultPanelHeight);
+          positionBottomAnimation.setValue(defaultPanelHeight);
+          Animated.timing(positionBottomAnimation, {
+            toValue: 0,
+            duration: 350,
+            useNativeDriver: true,
+            easing: Easing.inOut(Easing.cubic),
+          }).start();
         } else {
-          Animated.parallel([
-            Animated.timing(positionBottomAnimation, {
-              toValue: height / 2,
-              duration: 350,
-              useNativeDriver: false,
-              easing: Easing.inOut(Easing.cubic),
-            }),
-            Animated.timing(panelHeight, {
-              toValue: 0,
-              duration: 350,
-              useNativeDriver: false,
-              easing: Easing.inOut(Easing.cubic),
-            }),
-          ]).start();
+          Animated.timing(positionBottomAnimation, {
+            toValue: defaultPanelHeight,
+            duration: 350,
+            useNativeDriver: true,
+            easing: Easing.inOut(Easing.cubic),
+          }).start(() => {
+            setPanelHeight(defaultPanelHeight);
+          });
         }
       },
-      [height, positionBottomAnimation, panelHeight]
+      [defaultPanelHeight, positionBottomAnimation]
     );
 
     useEffect(() => {
-      // Define keyboard show handler
-      const handleKeyboardShow = ({ endCoordinates, duration, easing }) => {
+      const handleKeyboardShow = ({ endCoordinates }: KeyboardEvent) => {
         if (isOpen) {
-          Animated.parallel([
-            Animated.timing(panelHeight, {
-              toValue: (height - endCoordinates.height) / 2,
-              duration,
-              useNativeDriver: false,
-              easing: Easing[easing] || Easing.out(Easing.ease),
-            }),
-            Animated.timing(positionBottomAnimation, {
-              toValue: -endCoordinates.height, // Negative to move up
-              duration,
-              useNativeDriver: false,
-              easing: Easing[easing] || Easing.out(Easing.ease),
-            }),
-          ]).start();
+          setPanelHeight((height - endCoordinates.height) / 2);
+          positionBottomAnimation.setValue(-endCoordinates.height);
         }
       };
 
-      // Define keyboard hide handler
-      const handleKeyboardHide = ({ duration, easing }) => {
+      const handleKeyboardHide = () => {
         if (isOpen) {
-          Animated.parallel([
-            Animated.timing(positionBottomAnimation, {
-              toValue: 0, // Back to original position
-              duration,
-              useNativeDriver: false,
-              easing: Easing[easing] || Easing.out(Easing.ease),
-            }),
-
-            Animated.timing(panelHeight, {
-              toValue: height / 2,
-              duration,
-              useNativeDriver: false,
-              easing: Easing[easing] || Easing.out(Easing.ease),
-            }),
-          ]).start();
+          setPanelHeight(defaultPanelHeight);
+          positionBottomAnimation.setValue(0);
         }
       };
 
-      // Add keyboard event listeners
-      const showSubscription = Keyboard.addListener('keyboardDidShow', handleKeyboardShow);
-      const willShowSubscription = Keyboard.addListener('keyboardWillShow', handleKeyboardShow);
-      const hideSubscription = Keyboard.addListener('keyboardWillHide', handleKeyboardHide);
-      const didHideSubscription = Keyboard.addListener('keyboardDidHide', handleKeyboardHide);
+      const showSubscription = Keyboard.addListener(
+        Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow',
+        handleKeyboardShow
+      );
+      const hideSubscription = Keyboard.addListener(
+        Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide',
+        handleKeyboardHide
+      );
 
       // Clean up subscriptions on unmount
       return () => {
         showSubscription.remove();
-        willShowSubscription.remove();
         hideSubscription.remove();
-        didHideSubscription.remove();
       };
-    }, [height, panelHeight, positionBottomAnimation, isOpen]);
+    }, [defaultPanelHeight, height, positionBottomAnimation, isOpen]);
 
     useImperativeHandle(ref, () => ({
       setAddonsPanelOpen: (open: boolean) => {
@@ -151,8 +122,8 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
           right: 0,
           height: panelHeight,
           transform: [{ translateY: positionBottomAnimation }],
+          pointerEvents: isOpen ? 'auto' : 'none',
         }}
-        pointerEvents={isOpen ? 'auto' : 'none'}
         accessibilityElementsHidden={!isOpen}
         importantForAccessibility={isOpen ? 'auto' : 'no-hide-descendants'}
       >
@@ -178,6 +149,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, { storyId?: st
                 Keyboard.dismiss();
               }}
               storyId={storyId}
+              parameters={parameters}
             />
           </View>
         </View>
@@ -224,12 +196,25 @@ const hiddenStyle = {
 
 const hitSlop = { top: 10, right: 10, bottom: 10, left: 10 };
 
-export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId?: string }) => {
-  const panels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+type AddonsTabsProps = {
+  onClose?: () => void;
+  storyId?: string;
+  parameters?: Parameters;
+};
+
+export const AddonsTabs = ({ onClose, storyId, parameters }: AddonsTabsProps) => {
+  const panels = useMemo<Addon_Collection<Addon_BaseType>>(() => {
+    const allPanels: Addon_Collection<Addon_BaseType> = addons.getElements(Addon_TypesEnum.PANEL);
+
+    return Object.fromEntries(
+      Object.entries(allPanels).filter(([, p]) => !p.paramKey || !parameters?.[p.paramKey]?.disable)
+    );
+  }, [parameters]);
+
   const insets = useSafeAreaInsets();
   const [addonSelected, setAddonSelected] = useState(Object.keys(panels)[0]);
-
   const panelEntries = useMemo(() => Object.entries(panels), [panels]);
+  const activeAddonId = panels[addonSelected] ? addonSelected : panelEntries[0]?.[0];
 
   const scrollContentContainerStyle = useStyle(
     () => ({
@@ -253,7 +238,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
             return (
               <Tab
                 key={id}
-                active={id === addonSelected}
+                active={id === activeAddonId}
                 onPress={() => setAddonSelected(id)}
                 text={String(resolvedTitle)}
               />
@@ -285,7 +270,7 @@ export const AddonsTabs = ({ onClose, storyId }: { onClose?: () => void; storyId
           </View>
         ) : (
           panelEntries.map(([id, p]) => (
-            <View key={id} style={id === addonSelected ? undefined : hiddenStyle}>
+            <View key={id} style={id === activeAddonId ? undefined : hiddenStyle}>
               <PanelRenderer panel={p} />
             </View>
           ))
@@ -300,12 +285,17 @@ const PanelRenderer = ({ panel }: { panel: Addon_BaseType }) => {
 };
 
 const Tab = ({ active, onPress, text }: { active: boolean; onPress: () => void; text: string }) => {
+  const testID = `addon-tab-${text.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
   return (
     <TabButton
       active={active}
       onPress={onPress}
+      testID={testID}
+      accessible
       accessibilityRole="tab"
       accessibilityState={{ selected: active }}
+      accessibilityLabel={text}
     >
       <TabText active={active}>{text}</TabText>
     </TabButton>

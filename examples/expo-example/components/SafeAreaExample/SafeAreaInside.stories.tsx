@@ -10,6 +10,7 @@ const InsideSafeAreaMeta: Meta<typeof AButton> = {
   args: {
     text: 'Regular layout',
   },
+  parameters: { layout: 'fullscreen' },
 };
 export default InsideSafeAreaMeta;
 

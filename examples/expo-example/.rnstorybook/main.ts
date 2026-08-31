@@ -10,13 +10,13 @@ export default defineMain({
       files: '**/*.stories.?(ts|tsx|js|jsx)',
     },
   ],
-  addons: [
+  deviceAddons: [
+    'storybook-addon-deep-controls',
+    './local-addon-example',
     { name: '@storybook/addon-ondevice-controls' },
     '@storybook/addon-ondevice-actions',
     // '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-notes',
-    'storybook-addon-deep-controls',
-    './local-addon-example',
   ],
   reactNative: {
     playFn: false,

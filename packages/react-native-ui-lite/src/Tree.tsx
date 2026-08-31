@@ -12,9 +12,10 @@ import {
 } from '@storybook/react-native-ui-common';
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { View, ViewStyle } from 'react-native';
-import { LegendList, LegendListRef, LegendListRenderItemProps } from './LegendList';
+import { LegendList, LegendListRef, LegendListRenderItemProps } from '@legendapp/list/react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
+import { useDrawerKeyboardInset } from './DrawerKeyboardInsetContext';
 import type {
   ComponentEntry,
   GroupEntry,
@@ -206,6 +207,11 @@ const getEstimatedItemSize = (
   return item?.isRoot ? ROOT_ITEM_HEIGHT : ITEM_HEIGHT;
 };
 
+type PendingScrollTarget = {
+  id: string;
+  animated: boolean;
+};
+
 export const Tree = React.memo<{
   isBrowsing: boolean;
   isMain: boolean;
@@ -217,9 +223,10 @@ export const Tree = React.memo<{
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
   const { registerCallback } = useSelectedNode();
-  const [idToScrolllOnMount, setIdToScrolllOnMount] = useState<string | null>(null);
+  const [pendingScrollTarget, setPendingScrollTarget] = useState<PendingScrollTarget | null>(null);
 
   const insets = useSafeAreaInsets();
+  const drawerKeyboardInset = useDrawerKeyboardInset();
   const listRef = useRef<LegendListRef | null>(null);
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
   const [rootIds, orphanIds, initialExpanded] = useMemo(
@@ -429,10 +436,10 @@ export const Tree = React.memo<{
   const contentContainerStyle = useMemo(
     () => ({
       marginTop: isMain && orphanIds.length > 0 ? 20 : 0,
-      paddingBottom: insets.bottom + 20,
+      paddingBottom: insets.bottom + drawerKeyboardInset + 20,
       paddingLeft: 6,
     }),
-    [isMain, orphanIds.length, insets.bottom]
+    [isMain, orphanIds.length, insets.bottom, drawerKeyboardInset]
   );
 
   // so we can call the scroll to function in the search component
@@ -444,29 +451,29 @@ export const Tree = React.memo<{
 
       setExpanded({ ids: [...ancestorIds, targetId], value: true });
 
-      setIdToScrolllOnMount(targetId);
+      setPendingScrollTarget({ id: targetId, animated: animated ?? false });
     });
   }, [collapsedData, registerCallback, selectedStoryId, setExpanded]);
 
   // a workaround for the fact that we need to expand and scroll to an item that is not in the tree yet
   useEffect(() => {
-    if (idToScrolllOnMount) {
+    if (pendingScrollTarget) {
       const index = treeData.findIndex((item) => {
-        return item.itemId === idToScrolllOnMount;
+        return item.itemId === pendingScrollTarget.id;
       });
 
       if (index >= 0) {
         listRef.current?.scrollToIndex({
           index,
-          animated: false,
+          animated: pendingScrollTarget.animated,
           viewPosition: 0.5,
           viewOffset: 100,
         });
 
-        setIdToScrolllOnMount(null);
+        setPendingScrollTarget(null);
       }
     }
-  }, [idToScrolllOnMount, treeData]);
+  }, [pendingScrollTarget, treeData]);
 
   return (
     <View style={flexStyle}>

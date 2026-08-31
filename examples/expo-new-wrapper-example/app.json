@@ -1,0 +1,19 @@
+{
+  "name": "ExpoNewWrapperExample",
+  "slug": "expo-new-wrapper-example",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "scheme": "storybook-newwrapper",
+  "userInterfaceStyle": "automatic",
+  "newArchEnabled": true,
+  "ios": {
+    "bundleIdentifier": "com.storybook.newwrapperexample"
+  },
+  "android": {
+    "package": "com.storybook.newwrapperexample"
+  },
+  "experiments": {
+    "tsconfigPaths": true
+  },
+  "plugins": ["@react-native-community/datetimepicker"]
+}

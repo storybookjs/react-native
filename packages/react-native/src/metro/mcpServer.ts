@@ -3,6 +3,7 @@ import type { TLSSocket } from 'node:tls';
 import { buffer } from 'node:stream/consumers';
 import type { StorybookContext } from '@storybook/mcp';
 import type { WebSocketServer, WebSocket } from 'ws';
+import { buildIndex } from './buildIndex';
 
 /**
  * Converts Node.js IncomingHttpHeaders to a format compatible with the Web Headers API.
@@ -30,7 +31,7 @@ async function incomingMessageToWebRequest(req: IncomingMessage): Promise<Reques
 
   const bodyBuffer = await buffer(req);
 
-  return new Request(url, {
+  return new Request(url as unknown as string, {
     method: req.method,
     headers: toHeaderEntries(req.headers),
     body: bodyBuffer.length > 0 ? new Uint8Array(bodyBuffer) : undefined,
@@ -91,13 +92,8 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
           { McpServer },
           { ValibotJsonSchemaAdapter },
           { HttpTransport },
-          {
-            addListAllDocumentationTool,
-            addGetDocumentationTool,
-            addGetComponentStoryDocumentationTool,
-          },
+          { addListAllDocumentationTool, addGetDocumentationTool, addGetStoryDocumentationTool },
           { storyInstructions },
-          { buildIndex },
           valibot,
           { experimental_manifests },
         ] = await Promise.all([
@@ -106,7 +102,6 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
           import('@tmcp/transport-http'),
           import('@storybook/mcp'),
           import('./manifest/storyInstructions.js'),
-          import('./buildIndex.js'),
           import('valibot'),
           import('@storybook/react/preset'),
         ]);
@@ -142,7 +137,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
 
         addListAllDocumentationTool(server);
         addGetDocumentationTool(server);
-        addGetComponentStoryDocumentationTool(server);
+        addGetStoryDocumentationTool(server);
 
         server.tool(
           {

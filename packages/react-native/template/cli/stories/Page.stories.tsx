@@ -1,10 +1,14 @@
-import type { Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-native';
 
 import { Page } from './Page';
 
-export default {
+const meta = {
   title: 'Example/Page',
   component: Page,
-} as Meta<typeof Page>;
+} satisfies Meta<typeof Page>;
 
-export const Default = {};
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};

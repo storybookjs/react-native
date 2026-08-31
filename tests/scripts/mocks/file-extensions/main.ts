@@ -1,6 +1,6 @@
 const config = {
   stories: ['./FakeStory.stories.tsx'],
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
