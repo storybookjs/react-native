@@ -10,7 +10,7 @@ const main: StorybookConfig = {
       files: '**/!(*.factories).stories.?(ts|tsx|js|jsx)',
     },
   ],
-  addons: [
+  deviceAddons: [
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
