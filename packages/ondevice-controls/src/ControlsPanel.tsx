@@ -1,15 +1,14 @@
 import type { API } from 'storybook/manager-api';
 import { Channel } from 'storybook/internal/channels';
-import {
-  type Args,
-  type StoryContextForLoaders,
-  includeConditionalArg,
-} from 'storybook/internal/csf';
+import type { Args, StoryContextForLoaders } from 'storybook/internal/csf';
 import type { Renderer } from 'storybook/internal/types';
 import React, { ComponentType, ReactElement, useCallback, useState } from 'react';
 import NoControlsWarning from './NoControlsWarning';
 import PropForm from './PropForm';
+import { getControlArgTypes } from './controlArgTypes';
 import { useArgs } from './hooks';
+
+export type { ArgType, ArgTypes } from './controlArgTypes';
 
 export interface Selection {
   storyId: string;
@@ -30,16 +29,6 @@ export interface ControlsParameters {
   presetColors?: PresetColor[];
   hideNoControlsWarning?: boolean;
 }
-export interface ArgType {
-  name?: string;
-  description?: string;
-  defaultValue?: any;
-  [key: string]: any;
-}
-export interface ArgTypes {
-  [key: string]: ArgType;
-}
-
 export interface ReactNativeFramework extends Renderer {
   component: ComponentType<any>;
   storyResult: ReactElement<unknown>;
@@ -51,14 +40,6 @@ type ApiStore = {
   _channel: Channel;
 };
 
-function shouldIncludeArg(argType: ArgType, args: Args) {
-  try {
-    return includeConditionalArg(argType, args, {});
-  } catch {
-    return true;
-  }
-}
-
 const ControlsPanel = ({ api }: { api: API }) => {
   const store: ApiStore = api.store();
 
@@ -68,38 +49,19 @@ const ControlsPanel = ({ api }: { api: API }) => {
 
   const [argsFromHook, updateArgs, resetArgs] = useArgs(storyId, store);
 
-  const { argsObject, argTypes, parameters } = React.useMemo(() => {
-    const { argTypes: storyArgTypes, parameters: storyParameters } = store.fromId(storyId);
-
-    const storyArgsObject = Object.entries(storyArgTypes).reduce(
-      (prev, [key, argType]: [string, ArgType]) => {
-        const isControl = Boolean(argType?.control);
-
-        const shouldInclude = shouldIncludeArg(argType, argsFromHook);
-
-        return isControl && shouldInclude
-          ? {
-              ...prev,
-              [key]: {
-                ...argType,
-                name: key,
-                type: argType?.control?.type,
-                value: argsFromHook[key],
-              },
-            }
-          : prev;
-      },
-      {}
-    );
+  const { argsObject, parameters } = React.useMemo(() => {
+    const { argTypes, parameters: storyParameters } = store.fromId(storyId);
 
     return {
-      argTypes: storyArgTypes,
       parameters: storyParameters,
-      argsObject: storyArgsObject,
+      argsObject: getControlArgTypes(argTypes, argsFromHook),
     };
   }, [store, storyId, argsFromHook]);
 
-  const hasControls = Object.keys(argTypes).length > 0;
+  // Match the web Controls panel: an arg only counts once its control is enabled (not `control:
+  // false`, `control.disable` or `table.disable`) and its `if` condition passes, so a story whose
+  // controls are all hidden shows the warning instead of an empty table.
+  const hasControls = Object.keys(argsObject).length > 0;
 
   const isArgsStory = parameters.__isArgsStory;
 
