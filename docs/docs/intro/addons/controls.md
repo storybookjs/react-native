@@ -386,6 +386,39 @@ export default {
 };
 ```
 
+### Disabling Controls
+
+To hide a single prop from the Controls panel, use any of the same `argTypes` annotations as Storybook web:
+
+```ts
+export default {
+  component: MyComponent,
+  argTypes: {
+    // Hide the control for `internalId`
+    internalId: { control: false },
+
+    // Equivalent explicit form
+    trackingId: { control: { disable: true } },
+
+    // Hide the whole row
+    debugFlag: { table: { disable: true } },
+  },
+};
+```
+
+To filter by name, use `include` or `exclude` in the `controls` parameter. Both accept either an array of prop names or a regular expression:
+
+```ts
+export default {
+  component: MyComponent,
+  parameters: {
+    controls: { exclude: /^on[A-Z].*/ },
+  },
+};
+```
+
+These can also be set on an individual story. To hide the Controls panel entirely for a story, set `parameters.controls.disable` to `true`.
+
 ## Best Practices
 
 1. **Use descriptive labels**: Provide clear labels for select and radio options
