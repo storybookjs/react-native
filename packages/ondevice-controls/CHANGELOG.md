@@ -1,5 +1,19 @@
 # @storybook/addon-ondevice-controls
 
+## 10.6.0
+
+### Minor Changes
+
+- [#922](https://github.com/storybookjs/react-native/pull/922) [`93574f3`](https://github.com/storybookjs/react-native/commit/93574f3bb745a423170b7b6e5a1be7cb7f6137a0) Thanks [@dannyhw](https://github.com/dannyhw)! - update storybook versions
+
+### Patch Changes
+
+- [#920](https://github.com/storybookjs/react-native/pull/920) [`526d613`](https://github.com/storybookjs/react-native/commit/526d6131bc14da683679bb26941e4571d37cf902) Thanks [@dannyhw](https://github.com/dannyhw)! - Honor `control: false`, `control: { disable: true }` and `table: { disable: true }` argType annotations in the on-device Controls panel, matching Storybook web. Previously only `parameters.controls.exclude` and `include` could hide a control on device, and a disabled control would still render as editable.
+
+- Updated dependencies [[`93574f3`](https://github.com/storybookjs/react-native/commit/93574f3bb745a423170b7b6e5a1be7cb7f6137a0)]:
+  - @storybook/react-native-ui-common@10.6.0
+  - @storybook/react-native-theming@10.6.0
+
 ## 10.5.4
 
 ### Patch Changes
