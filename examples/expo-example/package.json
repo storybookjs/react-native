@@ -21,6 +21,7 @@
     "storybook:secure": "pnpm storybook:secure:cert && EXPO_PUBLIC_STORYBOOK_ENABLED=true EXPO_PUBLIC_STORYBOOK_WS_SECURED=true expo start --dev-client",
     "storybook:secure:cert": "./scripts/generate-dev-cert.sh",
     "storybook:test": "EXPO_PUBLIC_SCREENSHOT_TESTING=true EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start",
+    "storybook:nofactories": "EXPO_PUBLIC_STORYBOOK_ENABLED=true EXPO_PUBLIC_NO_FACTORIES=true expo start",
     "storybook:web": "storybook dev -p 6006",
     "storybook-generate": "sb-rn-get-stories --host auto",
     "storybook-generate-js": "sb-rn-get-stories --use-js",
