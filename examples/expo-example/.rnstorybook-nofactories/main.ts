@@ -1,0 +1,28 @@
+import type { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
+  stories: [
+    '../components/**/!(*.factories).stories.?(ts|tsx|js|jsx)',
+    '../other_components/**/!(*.factories).stories.?(ts|tsx|js|jsx)',
+    {
+      directory: '../../../packages/react-native-ui',
+      titlePrefix: 'react-native-ui',
+      files: '**/!(*.factories).stories.?(ts|tsx|js|jsx)',
+    },
+  ],
+  deviceAddons: [
+    '@storybook/addon-ondevice-controls',
+    '@storybook/addon-ondevice-actions',
+    '@storybook/addon-ondevice-notes',
+    'storybook-addon-deep-controls',
+  ],
+  reactNative: {
+    playFn: false,
+  },
+  features: {
+    ondeviceBackgrounds: true,
+  },
+  framework: '@storybook/react-native',
+};
+
+export default main;

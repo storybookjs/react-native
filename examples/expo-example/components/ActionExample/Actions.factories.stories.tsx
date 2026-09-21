@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-native';
 import { ActionButton } from './Actions';
 import { fn } from 'storybook/test';
+import preview from '../../.rnstorybook/preview';
 
-const meta = {
+const meta = preview.meta({
   component: ActionButton,
   parameters: {
     notes: `
@@ -19,15 +19,13 @@ You use it like this:
 \`\`\`
 `,
   },
-} satisfies Meta<typeof ActionButton>;
+});
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
-
-export const Basic: Story = {
+export const Basic = meta.story({
   args: {
     text: 'Press me!',
     onPress: fn(),
   },
-};
+});

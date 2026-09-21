@@ -1,11 +1,6 @@
 import { Appearance } from 'react-native';
-// import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-import { definePreview } from '@storybook/react-native';
 
-export default definePreview({
-  addons: [],
-  // decorators: [withBackgrounds],
-
+const preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -16,7 +11,7 @@ export default definePreview({
     },
     options: {
       storySort: {
-        method: 'alphabetical',
+        method: 'alphabetical' as const,
         includeNames: true,
         order: ['ControlExamples', ['ControlExample'], 'InteractionExample', 'DeepControls'],
       },
@@ -24,20 +19,19 @@ export default definePreview({
     hideFullScreenButton: false,
     noSafeArea: false,
     my_param: 'anything',
-    layout: 'padded', // fullscreen, centered, padded
-    storybookUIVisibility: 'visible', // visible, hidden
+    layout: 'padded',
+    storybookUIVisibility: 'visible',
     backgrounds: {
       options: {
-        // 👇 Default options
         dark: { name: 'dark', value: '#333' },
         light: { name: 'plain', value: '#fff' },
-        // 👇 Add your own
         app: { name: 'app', value: '#eeeeee' },
       },
     },
   },
   initialGlobals: {
-    // 👇 Set the initial background color
     backgrounds: { value: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain' },
   },
-});
+};
+
+export default preview;

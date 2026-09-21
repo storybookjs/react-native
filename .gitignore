@@ -10,7 +10,6 @@ dist
 .cache
 junit.xml
 coverage/
-*.lerna_backup
 build
 /**/LICENSE
 docs/public
