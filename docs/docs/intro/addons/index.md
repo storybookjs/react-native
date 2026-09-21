@@ -157,7 +157,20 @@ For detailed information about all supported control types, configuration option
 The Notes addon enables you to write additional documentation (text or markdown) for your stories.
 
 ```sh
-npm install --save-dev @storybook/addon-ondevice-notes
+npm install --save-dev @storybook/addon-ondevice-notes react-native-enriched-markdown
+```
+
+Notes are rendered with [react-native-enriched-markdown](https://github.com/software-mansion/enriched-markdown), a native Markdown renderer that requires the New Architecture. It is a peer dependency, so install it in your app and rebuild your native app afterwards (`npx expo prebuild` for Expo, or `pod install` for bare React Native).
+
+Code blocks in notes are syntax highlighted when the renderer is built with highlighting enabled (its default). Highlighting and LaTeX math each add native code to your app, so if you only need plain notes you can leave them out by adding this to your app's `package.json`:
+
+```json
+{
+  "enriched-markdown": {
+    "enableCodeHighlight": false,
+    "enableMath": false
+  }
+}
 ```
 
 Add notes using the parameters field:

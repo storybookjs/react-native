@@ -33,7 +33,7 @@
     "@storybook/react-native-theming": "^10.6.0"
   },
   "devDependencies": {
-    "react-native-markdown-display": "^7.0.2",
+    "react-native-enriched-markdown": "^1.0.2",
     "storybook": "^10.6.0",
     "tsdown": "^0.22.12",
     "typescript": "~6.0.3"
@@ -42,6 +42,7 @@
     "@storybook/react": "^10",
     "react": "*",
     "react-native": "*",
+    "react-native-enriched-markdown": "^1.0.2",
     "storybook": "^10.5.4"
   },
   "publishConfig": {

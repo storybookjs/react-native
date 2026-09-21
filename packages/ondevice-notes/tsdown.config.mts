@@ -15,9 +15,5 @@ export default defineConfig((options) => {
           resolve: true,
         }
       : false,
-    // needed to pre-bundle the markdown package
-    loader: {
-      '.js': 'jsx',
-    },
   };
 });
