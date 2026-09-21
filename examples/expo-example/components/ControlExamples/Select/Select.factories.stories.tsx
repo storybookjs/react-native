@@ -1,5 +1,5 @@
 import { SelectExample } from './Select';
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const arrows = {
   ArrowUp: '\u2B06',

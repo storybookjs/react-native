@@ -1,4 +1,4 @@
-import preview from '../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 import { View, StyleSheet, Text } from 'react-native';
 
 function NotesContent() {

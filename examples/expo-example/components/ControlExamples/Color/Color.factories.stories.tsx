@@ -1,5 +1,5 @@
 import { Color } from './Color';
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const meta = preview.meta({
   parameters: { notes: '- test' },

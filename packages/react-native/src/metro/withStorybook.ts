@@ -6,6 +6,7 @@ import { setTelemetryEnabled, telemetry } from 'storybook/internal/telemetry';
 import { createChannelServer } from './channelServer';
 import type { WebsocketsOptions } from '../types';
 import { envVariableToBoolean, loadWebsocketEnvOverrides } from '../env-tools';
+import { rewriteDocumentedPreviewImport } from './previewAlias';
 
 /**
  * Options for configuring Storybook with React Native.
@@ -63,6 +64,7 @@ type ResolveRequestFunction = (context: any, moduleName: string, platform: strin
  * @param options - Options to customize the Storybook configuration.
  * @param options.configPath - The path to the Storybook config folder. Defaults to './.rnstorybook'.
  *                            This is where your main.js/ts and preview.js/ts files are located.
+ *                            `#.storybook/preview` imports are rewritten to this folder.
  * @param options.websockets - WebSocket configuration for syncing storybook instances or sending events.
  *                            When provided, creates a WebSocket server for real-time communication.
  * @param options.websockets.port - The port WebSocket server will listen on. Defaults to 7007.
@@ -161,7 +163,9 @@ export function withStorybook(
             ? config.resolver.resolveRequest
             : context.resolveRequest;
 
-          if (moduleName.startsWith('storybook') || moduleName.startsWith('@storybook')) {
+          const requestName = rewriteDocumentedPreviewImport(moduleName, configPath);
+
+          if (requestName.startsWith('storybook') || requestName.startsWith('@storybook')) {
             return {
               type: 'empty',
             };
@@ -169,13 +173,13 @@ export function withStorybook(
 
           // workaround for node imports in instrumentor.cjs
           // this is here because of a weird edge case where this would crash metro even with storybook disabled
-          if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
+          if (platform !== 'web' && (requestName === 'tty' || requestName === 'os')) {
             return {
               type: 'empty',
             };
           }
 
-          const resolved = resolveFunction(context, moduleName, platform);
+          const resolved = resolveFunction(context, requestName, platform);
 
           // Match the config folder's index file regardless of extension (ts, tsx, js, jsx)
           const configIndexRegex = new RegExp(`${configPath}/index\\.(tsx?|jsx?)$`);
@@ -267,10 +271,12 @@ export function withStorybook(
           ? config.resolver.resolveRequest
           : context.resolveRequest;
 
+        const requestName = rewriteDocumentedPreviewImport(moduleName, configPath);
+
         const shouldUseCustomResolveConfig =
-          moduleName.startsWith('storybook') ||
-          moduleName.startsWith('@storybook') ||
-          moduleName.startsWith('uuid');
+          requestName.startsWith('storybook') ||
+          requestName.startsWith('@storybook') ||
+          requestName.startsWith('uuid');
 
         const theContext = shouldUseCustomResolveConfig
           ? {
@@ -280,7 +286,7 @@ export function withStorybook(
             }
           : context;
 
-        const resolveResult = resolveFunction(theContext, moduleName, platform);
+        const resolveResult = resolveFunction(theContext, requestName, platform);
 
         // Workaround for template files with invalid imports
         if (resolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
@@ -291,7 +297,7 @@ export function withStorybook(
 
         // workaround for node imports in instrumentor.cjs (only on native platforms;
         // web/server bundles like Expo API Routes need the real Node built-ins)
-        if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
+        if (platform !== 'web' && (requestName === 'tty' || requestName === 'os')) {
           return {
             type: 'empty',
           };

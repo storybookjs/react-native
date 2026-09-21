@@ -125,7 +125,7 @@ Both wrappers modify your Metro config in the same way under the hood:
 
 **File generation** — Automatically generates `storybook.requires.ts` (or `.js`) containing story imports, addon registration, preview configuration, and hot module reloading support.
 
-**Custom resolver** — Enables package exports for Storybook's ESM-based packages, handles platform-specific modules (like `uuid`), and filters out template files that can cause Metro to crash.
+**Custom resolver** — Enables package exports for Storybook's ESM-based packages, handles platform-specific modules (like `uuid`), filters out template files that can cause Metro to crash, and rewrites the CSF Next import `#.storybook/preview` to `{configPath}/preview` so the same story files work in RN-only and dual RN+RNW setups.
 
 **Composition** — Both wrappers are composable with other config wrappers. Chain them like `withStorybook(withNativeWind(config))`. The order may matter depending on the other wrappers.
 
