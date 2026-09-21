@@ -1,5 +1,20 @@
 # @storybook/react-native
 
+## 10.6.0
+
+### Minor Changes
+
+- [#922](https://github.com/storybookjs/react-native/pull/922) [`93574f3`](https://github.com/storybookjs/react-native/commit/93574f3bb745a423170b7b6e5a1be7cb7f6137a0) Thanks [@dannyhw](https://github.com/dannyhw)! - update storybook versions
+
+### Patch Changes
+
+- [#921](https://github.com/storybookjs/react-native/pull/921) [`b726795`](https://github.com/storybookjs/react-native/commit/b7267955afc75a569f167f9d73eb150f7e717dfe) Thanks [@dannyhw](https://github.com/dannyhw)! - Update `@storybook/mcp` to ^10.6.0 so the MCP server no longer pins a vulnerable `valibot` release (GHSA-5qjj-4xww-7phc), and refresh transitive dependencies to patched versions.
+
+- Updated dependencies [[`93574f3`](https://github.com/storybookjs/react-native/commit/93574f3bb745a423170b7b6e5a1be7cb7f6137a0)]:
+  - @storybook/react-native-ui-common@10.6.0
+  - @storybook/react-native-ui@10.6.0
+  - @storybook/react-native-theming@10.6.0
+
 ## 10.5.4
 
 ### Patch Changes
