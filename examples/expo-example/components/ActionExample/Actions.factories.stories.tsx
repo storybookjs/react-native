@@ -1,6 +1,6 @@
 import { ActionButton } from './Actions';
 import { fn } from 'storybook/test';
-import preview from '../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const meta = preview.meta({
   component: ActionButton,

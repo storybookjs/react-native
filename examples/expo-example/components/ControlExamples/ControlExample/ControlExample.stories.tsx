@@ -1,5 +1,5 @@
 import { ControlExample } from './ControlExample';
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const meta = preview.meta({
   component: ControlExample,

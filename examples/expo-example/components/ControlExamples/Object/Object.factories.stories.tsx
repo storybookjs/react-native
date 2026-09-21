@@ -1,5 +1,5 @@
 import { Movie } from './Object';
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const meta = preview.meta({
   component: Movie,

@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "main": "index.js",
+  "imports": {
+    "#.storybook/preview": "./.rnstorybook/preview.tsx"
+  },
   "scripts": {
     "prebuild": "expo prebuild",
     "android": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo run:android",
