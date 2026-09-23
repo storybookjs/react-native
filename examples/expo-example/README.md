@@ -1,3 +1,5 @@
+Notes addon: this example enables code highlighting for `react-native-enriched-markdown`, which needs grammar sources that the workspace does not download automatically (`ignoreScripts` is on). Run `pnpm enriched-markdown:assets` from the repo root once before `expo prebuild` / `pod install`; EAS builds run it automatically via `eas-build-post-install`.
+
 Try this:
 `npx uri-scheme open "exp://127.0.0.1:8081/--/?STORYBOOK_STORY_ID=controlexamples-boolean--basic" --ios`
 or this:

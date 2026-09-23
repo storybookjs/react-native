@@ -33,6 +33,7 @@
     "@storybook/react-native-theming": "^10.6.0"
   },
   "devDependencies": {
+    "react-native-enriched-markdown": "^1.0.2",
     "react-native-markdown-display": "^7.0.2",
     "storybook": "^10.6.0",
     "tsdown": "^0.22.12",
@@ -42,7 +43,13 @@
     "@storybook/react": "^10",
     "react": "*",
     "react-native": "*",
+    "react-native-enriched-markdown": "^1.0.2",
     "storybook": "^10.5.4"
+  },
+  "peerDependenciesMeta": {
+    "react-native-enriched-markdown": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"
