@@ -35,7 +35,7 @@ const NotesExampleMeta: Meta<typeof Counter> = {
 
 The pressable counter rendered in this story. Open the addons panel to read these notes. Notes are rendered natively by
 [react-native-enriched-markdown](https://github.com/software-mansion/enriched-markdown), so
-headings, lists, tables, task lists and syntax-highlighted code all work out of the box.
+headings, lists, tables and task lists all work, and code blocks are highlighted when highlighting is enabled.
 
 ## Usage
 

@@ -5,12 +5,18 @@ The Notes Addon allows you to write notes (text or markdown) for your stories in
 ## Installation
 
 ```sh
-yarn add -D @storybook/addon-ondevice-notes react-native-enriched-markdown
+yarn add -D @storybook/addon-ondevice-notes
 ```
 
-Notes are rendered with [react-native-enriched-markdown](https://github.com/software-mansion/enriched-markdown), a native Markdown renderer. It is a peer dependency, so it has to be installed in your app, and it requires the New Architecture (Fabric).
+### Native rendering (optional)
 
-Because it contains native code, rebuild your app after installing it:
+Notes are rendered with a JavaScript Markdown renderer by default. For native rendering, GitHub Flavored Markdown (tables, task lists), highlight, superscript, subscript and syntax-highlighted code blocks, also install [react-native-enriched-markdown](https://github.com/software-mansion/enriched-markdown):
+
+```sh
+yarn add react-native-enriched-markdown
+```
+
+It contains native code and requires the New Architecture (Fabric), so rebuild your app after installing it:
 
 ```sh
 # Expo
@@ -20,7 +26,9 @@ npx expo prebuild
 cd ios && bundle exec pod install
 ```
 
-Code blocks in notes are syntax highlighted when the renderer is built with highlighting enabled (its default). Highlighting and LaTeX math each add native code to your app, so if you only need plain notes you can leave them out by adding this to your app's `package.json`:
+The addon detects it at runtime: when the package is installed and its native component is available, notes use it; otherwise (not installed, Expo Go, tvOS, old architecture) they fall back to the JavaScript renderer.
+
+Code blocks are syntax highlighted when the renderer is built with highlighting enabled (its default). Highlighting and LaTeX math each add native code to your app, so if you only need plain notes you can leave them out by adding this to your app's `package.json`:
 
 ```json
 {

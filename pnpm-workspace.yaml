@@ -13,6 +13,8 @@ minimumReleaseAgeExclude:
   - storybook
   - '@storybook/*'
 overrides:
+  # Required for notes security: react-native-markdown-display@7.0.2 is latest and still resolves markdown-it@10 by default.
+  markdown-it: 14.3.0
   # Required for Storybook docgen behavior; newer react-docgen-typescript versions change functionality.
   react-docgen-typescript: 2.2.2
   # Required until Docusaurus updates its webpack plugins: copy-webpack-plugin@11 and css-minimizer-webpack-plugin@5 only allow serialize-javascript@^6.
