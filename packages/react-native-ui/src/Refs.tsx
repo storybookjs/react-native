@@ -11,6 +11,7 @@ export interface RefProps {
   isBrowsing: boolean;
   selectedStoryId: string | null;
   setSelection: (selection: { refId: string; storyId: string }) => void;
+  preserveTreeDepth?: boolean;
 }
 
 const Wrapper = styled.View<{ isMain: boolean }>(() => ({
@@ -72,6 +73,7 @@ export const Ref: FC<RefType & RefProps & { status?: State['status'] }> = React.
                 docsMode={false}
                 selectedStoryId={selectedStoryId}
                 onSelectStoryId={onSelectStoryId}
+                preserveTreeDepth={props.preserveTreeDepth}
               />
             )}
           </Wrapper>

@@ -23,6 +23,7 @@ const StorybookUIRoot = view.getStorybookUI({
   // UI Behavior
   onDeviceUI: true,
   shouldPersistSelection: true,
+  preserveTreeDepth: false,
 
   // Initial Story
   initialSelection: {
@@ -80,6 +81,18 @@ const StorybookUIRoot = view.getStorybookUI({
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,
   },
+});
+```
+
+#### `preserveTreeDepth` (boolean)
+
+- **Default**: `false`
+- **Purpose**: Retain the story index's top-level depth in the on-device tree.
+- **Use Case**: Use when the full hierarchy inset, including the first visible level, should be shown.
+
+```ts
+const StorybookUIRoot = view.getStorybookUI({
+  preserveTreeDepth: true,
 });
 ```
 

@@ -86,6 +86,8 @@ export type ThemePartial = DeepPartial<Theme>;
 
 export type Params = {
   onDeviceUI?: boolean;
+  /** Retain the index's top-level depth instead of normalizing it to zero. */
+  preserveTreeDepth?: boolean;
   /**
    * Set as false to disable the wrapper around the story view.
    * NOTE We may remove this in the future for a better solution.
@@ -520,6 +522,7 @@ export class View {
               storage={storage}
               theme={appliedTheme as Theme}
               storyBackgroundColor={storyBackgroundColor}
+              preserveTreeDepth={params.preserveTreeDepth}
             >
               <StoryView
                 useWrapper={storyViewWrapper}
@@ -539,6 +542,7 @@ export class View {
               self._channel.emit(SET_CURRENT_STORY, { storyId: newStoryId })
             }
             storyBackgroundColor={storyBackgroundColor}
+            preserveTreeDepth={params.preserveTreeDepth}
           >
             <StoryView useWrapper={storyViewWrapper} storyBackgroundColor={storyBackgroundColor} />
           </FullUI>
