@@ -80,7 +80,7 @@ export const Node = React.memo<NodeProps>(function Node({
           selected={isSelected}
           key={id}
           id={id}
-          depth={isOrphan ? item.depth : item.depth - 1}
+          depth={item.depth}
           onPress={() => {
             onSelectStoryId(item.id);
           }}
@@ -130,7 +130,7 @@ export const Node = React.memo<NodeProps>(function Node({
         id={id}
         aria-controls={item.children && item.children[0]}
         aria-expanded={isExpanded}
-        depth={isOrphan ? item.depth : item.depth - 1}
+        depth={item.depth}
         isComponent={item.type === 'component'}
         isExpandable={item.children && item.children.length > 0}
         isExpanded={isExpanded}
