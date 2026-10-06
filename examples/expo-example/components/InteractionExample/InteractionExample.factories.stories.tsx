@@ -1,4 +1,4 @@
-import preview from '../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 import { useReducer } from 'react';
 import { View, ScrollView, Text, TextInput, TouchableOpacity } from 'react-native';
 

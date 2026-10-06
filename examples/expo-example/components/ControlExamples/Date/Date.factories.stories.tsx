@@ -1,5 +1,5 @@
 import { DateString } from './Date';
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const date = new Date(1983, 1, 25);
 

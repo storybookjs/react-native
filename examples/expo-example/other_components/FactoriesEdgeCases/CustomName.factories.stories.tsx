@@ -1,4 +1,4 @@
-import preview from '../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 import { Text, View } from 'react-native';
 
 const CustomNameComponent = ({ label }: { label: string }) => (

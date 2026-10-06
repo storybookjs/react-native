@@ -1,7 +1,9 @@
 import { ControlExample } from './ControlExample';
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const meta = preview.meta({
+  // keeps the story id stable (controlexamples-controlexample--example) for e2e flows
+  title: 'ControlExamples/ControlExample',
   component: ControlExample,
   args: {
     name: 'Storyteller',

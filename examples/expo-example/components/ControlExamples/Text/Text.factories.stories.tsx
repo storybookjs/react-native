@@ -1,5 +1,5 @@
 import { Heading } from './Text';
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const meta = preview.meta({
   component: Heading,

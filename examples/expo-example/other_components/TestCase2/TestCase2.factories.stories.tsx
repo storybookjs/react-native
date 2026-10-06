@@ -1,4 +1,4 @@
-import preview from '../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 import { Text } from 'react-native';
 
 const TestCase2 = () => {

@@ -1,4 +1,4 @@
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 import { Text, ScrollView, Appearance } from 'react-native';
 
 const ComponentExample = (props: any) => {

@@ -1,4 +1,4 @@
-import preview from '../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 import { Input } from './TextInput';
 
 const meta = preview.meta({

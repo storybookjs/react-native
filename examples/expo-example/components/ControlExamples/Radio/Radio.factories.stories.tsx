@@ -1,5 +1,5 @@
 import { Radio } from './Radio';
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const radio_stations = ['104.8MHz', '909 kHz', '90FM'];
 

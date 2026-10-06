@@ -1,8 +1,11 @@
 import * as path from 'path';
 import type { MetroConfig } from 'metro-config';
 import type { ResolveRequestFunction } from './metro/utils';
+import { rewriteDocumentedPreviewImport } from './metro/previewAlias';
 
 interface EnhanceMetroOptions {
+  /** Storybook config directory. `#.storybook/preview` is rewritten here. */
+  configPath?: string;
   swap?: {
     appEntryPoint: string;
     storybookEntryPoint: string;
@@ -19,7 +22,11 @@ export function enhanceMetroConfig(
   config: MetroConfig,
   options: EnhanceMetroOptions = {}
 ): MetroConfig {
-  const { swap, liteMode = false } = options;
+  const {
+    swap,
+    liteMode = false,
+    configPath = path.resolve(process.cwd(), './.rnstorybook'),
+  } = options;
 
   return {
     ...config,
@@ -30,7 +37,9 @@ export function enhanceMetroConfig(
     resolver: {
       ...config.resolver,
       resolveRequest: (context: any, moduleName: string, platform: string | null) => {
-        if (platform !== 'web' && (moduleName === 'tty' || moduleName === 'os')) {
+        const requestName = rewriteDocumentedPreviewImport(moduleName, configPath);
+
+        if (platform !== 'web' && (requestName === 'tty' || requestName === 'os')) {
           return { type: 'empty' };
         }
 
@@ -39,9 +48,9 @@ export function enhanceMetroConfig(
           : context.resolveRequest;
 
         const shouldUseCustomResolveConfig =
-          moduleName.startsWith('storybook') ||
-          moduleName.startsWith('@storybook') ||
-          moduleName.startsWith('uuid');
+          requestName.startsWith('storybook') ||
+          requestName.startsWith('@storybook') ||
+          requestName.startsWith('uuid');
 
         const theContext = shouldUseCustomResolveConfig
           ? {
@@ -51,7 +60,7 @@ export function enhanceMetroConfig(
             }
           : context;
 
-        const resolveResult = resolveFunction(theContext, moduleName, platform);
+        const resolveResult = resolveFunction(theContext, requestName, platform);
 
         if (resolveResult?.filePath?.includes?.('@storybook/react/template/cli')) {
           return { type: 'empty' };

@@ -1,5 +1,5 @@
 import { Switch } from './Boolean';
-import preview from '../../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 
 const meta = preview.meta({
   component: Switch,

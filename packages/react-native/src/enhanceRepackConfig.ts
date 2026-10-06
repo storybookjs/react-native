@@ -1,4 +1,9 @@
+import * as path from 'path';
+import { DOCUMENTED_PREVIEW_IMPORT } from './metro/previewAlias';
+
 interface EnhanceRepackOptions {
+  /** Storybook config directory. `#.storybook/preview` is aliased here. */
+  configPath?: string;
   swap?: {
     appEntryPoint: string;
     storybookEntryPoint: string;
@@ -15,27 +20,30 @@ export function enhanceRepackConfig<T extends Record<string, any>>(
   config: T,
   options: EnhanceRepackOptions = {}
 ): T {
-  const { swap, liteMode = false } = options;
-
-  if (!swap && !liteMode) {
-    return config;
-  }
+  const {
+    swap,
+    liteMode = false,
+    configPath = path.resolve(process.cwd(), './.rnstorybook'),
+  } = options;
 
   const result: Record<string, any> = { ...config };
-
-  if (swap) {
-    result.entry = swap.storybookEntryPoint;
-  }
+  const resolve = { ...(result.resolve ?? {}) };
+  const alias = {
+    ...(resolve.alias ?? {}),
+    [DOCUMENTED_PREVIEW_IMPORT]: path.join(configPath, 'preview'),
+  };
 
   if (liteMode) {
     // rspack/webpack supports `false` as an alias value to produce an empty module.
     // The `$` suffix ensures exact match so -lite and -common variants are not affected.
-    const resolve = { ...(result.resolve ?? {}) };
-    resolve.alias = {
-      ...(resolve.alias ?? {}),
-      '@storybook/react-native-ui$': false,
-    };
-    result.resolve = resolve;
+    alias['@storybook/react-native-ui$'] = false;
+  }
+
+  resolve.alias = alias;
+  result.resolve = resolve;
+
+  if (swap) {
+    result.entry = swap.storybookEntryPoint;
   }
 
   return result as T;

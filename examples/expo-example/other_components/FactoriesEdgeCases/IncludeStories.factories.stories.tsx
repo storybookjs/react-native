@@ -1,4 +1,4 @@
-import preview from '../../.rnstorybook/preview';
+import preview from '#.storybook/preview';
 import { Text, View } from 'react-native';
 
 const IncludeComponent = ({ label }: { label: string }) => (

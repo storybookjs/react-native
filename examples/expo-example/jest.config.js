@@ -5,6 +5,10 @@ const config = {
   preset: 'jest-expo',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
 
+  moduleNameMapper: {
+    '^#\\.storybook/preview$': '<rootDir>/.rnstorybook/preview',
+  },
+
   ...(process.env.JEST_CACHE_DIRECTORY && { cacheDirectory: process.env.JEST_CACHE_DIRECTORY }),
 
   transform: {
