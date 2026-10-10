@@ -1,7 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react-native';
 import { ControlExample } from './ControlExample';
+import preview from '#.storybook/preview';
 
-const meta = {
+const meta = preview.meta({
+  // keeps the story id stable (controlexamples-controlexample--example) for e2e flows
+  title: 'ControlExamples/ControlExample',
   component: ControlExample,
   args: {
     name: 'Storyteller',
@@ -74,10 +76,8 @@ const meta = {
       control: { type: 'nonexistent_type' },
     },
   },
-} satisfies Meta<typeof ControlExample>;
+});
 
 export default meta;
 
-type ControlExampleStory = StoryObj<typeof meta>;
-
-export const Example: ControlExampleStory = {};
+export const Example = meta.story({});

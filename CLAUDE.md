@@ -93,3 +93,41 @@ The `StorybookPlugin` (for Re.Pack/Rspack/Webpack projects):
 4. **Portable stories** - Reuse stories in unit tests
 5. **WebSocket support** - Remote control stories from external devices
 6. **Lite mode** - Alternative UI without heavy dependencies (reanimated, etc.)
+
+## On-Device Testing Tools
+
+- use agent-device to control a simulator `agent-device --help`
+- use rn-logs to get metro logs `rn-logs logs --help`
+- use the storybook mcp to select stories and get story list
+
+use curl to send events to channel server, such as to update the args:
+
+```sh
+curl -X POST http://localhost:7007/send-event \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "updateStoryArgs",
+    "args": [{
+      "storyId": "controlexamples-controlexample--example",
+      "updatedArgs": { "name": "Alice", "age": 25 }
+    }]
+  }'
+```
+
+### agent-device (iOS/Android Simulator Control)
+
+```bash
+agent-device open host.exp.Exponent --relaunch  # Relaunch Expo Go
+agent-device snapshot -c                         # Take accessibility snapshot (shows @refs)
+agent-device click @e14                          # Click element by ref from snapshot
+agent-device find "Press me" click               # Find text and click it
+```
+
+After relaunching, you need to press the "Expo Example" to go to it.
+
+### rn-logs (React Native Log Streaming)
+
+```bash
+rn-logs apps                              # List running apps
+rn-logs logs --app "host.exp.Exponent"    # Stream logs from Expo Go
+```
