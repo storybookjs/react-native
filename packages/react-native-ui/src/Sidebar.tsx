@@ -74,6 +74,8 @@ export interface SidebarProps extends API_LoadedRefData {
   refId?: string;
   menuHighlighted?: boolean;
   setSelection: (selection: Selection) => void;
+  /** Retain the index's top-level depth instead of normalizing it to zero. */
+  preserveTreeDepth?: boolean;
 }
 
 export const Sidebar = React.memo(function Sidebar({
@@ -85,6 +87,7 @@ export const Sidebar = React.memo(function Sidebar({
   previewInitialized,
   refs = {},
   setSelection,
+  preserveTreeDepth = false,
 }: SidebarProps) {
   const selected: Selection = useMemo(() => storyId && { storyId, refId }, [storyId, refId]);
   const dataset = useCombination(index, indexError, previewInitialized, status, refs);
@@ -111,6 +114,7 @@ export const Sidebar = React.memo(function Sidebar({
                 isLoading={false}
                 isBrowsing={isBrowsing} //todo check me
                 setSelection={setSelection}
+                preserveTreeDepth={preserveTreeDepth}
               />
 
               <SearchResults

@@ -40,6 +40,7 @@ interface NodeProps {
   setFullyExpanded?: () => void;
   onSelectStoryId: (itemId: string) => void;
   status: State['status'][keyof State['status']];
+  preserveTreeDepth: boolean;
 }
 
 export const Node = React.memo<NodeProps>(function Node({
@@ -54,6 +55,7 @@ export const Node = React.memo<NodeProps>(function Node({
   isExpanded,
   setExpanded,
   onSelectStoryId,
+  preserveTreeDepth,
 }) {
   const { setNodeRef } = useSelectedNode();
 
@@ -71,6 +73,7 @@ export const Node = React.memo<NodeProps>(function Node({
   }
 
   const id = createId(item.id, refId);
+  const depth = isOrphan || preserveTreeDepth ? item.depth : item.depth - 1;
 
   if (item.type === 'story') {
     return (
@@ -80,7 +83,7 @@ export const Node = React.memo<NodeProps>(function Node({
           selected={isSelected}
           key={id}
           id={id}
-          depth={isOrphan ? item.depth : item.depth - 1}
+          depth={depth}
           onPress={() => {
             onSelectStoryId(item.id);
           }}
@@ -130,7 +133,7 @@ export const Node = React.memo<NodeProps>(function Node({
         id={id}
         aria-controls={item.children && item.children[0]}
         aria-expanded={isExpanded}
-        depth={isOrphan ? item.depth : item.depth - 1}
+        depth={depth}
         isComponent={item.type === 'component'}
         isExpandable={item.children && item.children.length > 0}
         isExpanded={isExpanded}
@@ -200,7 +203,18 @@ export const Tree = React.memo<{
   docsMode: boolean;
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
-}>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
+  /** Retain the index's top-level depth instead of normalizing it to zero. */
+  preserveTreeDepth?: boolean;
+}>(function Tree({
+  isMain,
+  refId,
+  data,
+  status,
+  docsMode,
+  selectedStoryId,
+  onSelectStoryId,
+  preserveTreeDepth = false,
+}) {
   const containerRef = useRef<View>(null);
 
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
@@ -327,6 +341,7 @@ export const Tree = React.memo<{
             docsMode={false}
             color=""
             status={{}}
+            preserveTreeDepth={preserveTreeDepth}
           />
         );
       }
@@ -347,6 +362,7 @@ export const Tree = React.memo<{
           isExpanded={!!expanded[itemId]}
           setExpanded={setExpanded}
           onSelectStoryId={onSelectStoryId}
+          preserveTreeDepth={preserveTreeDepth}
         />
       );
     });
@@ -359,6 +375,7 @@ export const Tree = React.memo<{
     expanded,
     onSelectStoryId,
     orphanIds,
+    preserveTreeDepth,
     refId,
     selectedStoryId,
     setExpanded,

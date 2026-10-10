@@ -91,5 +91,6 @@ export type SBUI = (props: {
   storage: Storage;
   theme: Theme;
   storyBackgroundColor?: string;
+  preserveTreeDepth?: boolean;
   children: ReactElement;
 }) => ReactElement;
