@@ -28,6 +28,7 @@
     "@storybook/react-native-ui-lite": "workspace:^",
     "react": "19.2.3",
     "react-native": "0.86.3",
+    "react-native-enriched-markdown": "^1.0.2",
     "react-native-safe-area-context": "5.8.0",
     "storybook": "^10.6.0"
   },
@@ -58,5 +59,9 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "enriched-markdown": {
+    "enableCodeHighlight": false,
+    "enableMath": false
   }
 }

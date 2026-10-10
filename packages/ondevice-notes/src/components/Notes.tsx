@@ -1,12 +1,13 @@
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Markdown from 'react-native-markdown-display';
 
 import { RNAddonApi, StoryFromId } from '../register';
 import { ErrorBoundary } from '../ErrorBoundary';
 import { addons } from 'storybook/manager-api';
-import { useTheme } from '@storybook/react-native-theming';
+import { getEnrichedMarkdown } from '../enrichedMarkdown';
+import { EnrichedMarkdownNotes } from './EnrichedMarkdownNotes';
+import { MarkdownDisplayNotes } from './MarkdownDisplayNotes';
 
 export const PARAM_KEY = 'notes';
 
@@ -16,7 +17,6 @@ interface NotesProps {
 }
 
 export const Notes = ({ active, api }: NotesProps) => {
-  const theme = useTheme();
   const [story, setStory] = useState<StoryFromId | null>();
 
   useEffect(() => {
@@ -36,62 +36,31 @@ export const Notes = ({ active, api }: NotesProps) => {
     return () => channel.off(SET_CURRENT_STORY, handleSetCurrentStory);
   }, [api, active]);
 
-  const themedMarkdownStyles = useMemo(
-    () => ({
-      body: {
-        color: theme.color.defaultText,
-      },
-      hr: {
-        backgroundColor: theme.color.defaultText,
-      },
-      table: {
-        borderColor: theme.color.defaultText,
-      },
-      tr: {
-        borderColor: theme.color.defaultText,
-      },
-      blocklink: {
-        borderColor: theme.color.defaultText,
-      },
-      code_inline: {
-        color: theme.color.defaultText,
-        backgroundColor: theme.background.app,
-      },
-      code_block: {
-        color: theme.color.defaultText,
-        backgroundColor: theme.background.app,
-      },
-      fence: {
-        color: theme.color.defaultText,
-        backgroundColor: theme.background.app,
-      },
-      blockquote: {
-        borderColor: theme.color.defaultText,
-        backgroundColor: theme.background.app,
-      },
-    }),
-    [theme.color.defaultText, theme.background.app]
-  );
+  // Prefer the native renderer, fall back to the JS one where it is unavailable (cached lookup).
+  const enriched = getEnrichedMarkdown();
 
   if (!story) {
     return null;
   }
 
-  const text: string =
-    story?.parameters && story.parameters[PARAM_KEY] ? story.parameters[PARAM_KEY] : '';
+  const notes = story.parameters?.[PARAM_KEY];
+
+  const text = typeof notes === 'string' ? notes.trim() : '';
 
   if (!text) return null;
 
-  const textAfterFormatted: string = text ? text.trim() : '';
-
   return (
     <View style={styles.container}>
-      {textAfterFormatted && (
-        <ErrorBoundary>
-          {/* @ts-ignore has the wrong types */}
-          <Markdown style={themedMarkdownStyles}>{textAfterFormatted}</Markdown>
-        </ErrorBoundary>
-      )}
+      <ErrorBoundary>
+        {enriched ? (
+          <EnrichedMarkdownNotes
+            markdown={text}
+            EnrichedMarkdownText={enriched.EnrichedMarkdownText}
+          />
+        ) : (
+          <MarkdownDisplayNotes markdown={text} />
+        )}
+      </ErrorBoundary>
     </View>
   );
 };

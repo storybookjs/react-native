@@ -41,7 +41,8 @@
     "test:ci": "pnpm -r run test:ci",
     "update-storybook-deps": "node scripts/update-external-storybook-deps.mts",
     "update-examples": "bash ./scripts/update-examples.sh",
-    "version:canary": "pnpm changeset version --snapshot canary"
+    "version:canary": "pnpm changeset version --snapshot canary",
+    "enriched-markdown:assets": "node node_modules/react-native-enriched-markdown/postinstall.mjs"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.7.0",
@@ -64,5 +65,9 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/storybook"
+  },
+  "enriched-markdown": {
+    "enableCodeHighlight": true,
+    "enableMath": false
   }
 }
