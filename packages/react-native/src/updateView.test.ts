@@ -116,4 +116,27 @@ describe('updateView', () => {
     expect(lastRendered()).toEqual({ id: basicId, label: 'd' });
     expect(preview.storyRenders).toHaveLength(1);
   });
+
+  // Expo provides window.location.reload, which restarts the app
+  it('does not reload when a story is replaced while its loaders are running', async () => {
+    const reload = jest.fn();
+    Object.defineProperty(window, 'location', { value: { reload }, configurable: true });
+
+    try {
+      const loaders = [() => wait(200).then(() => ({}))];
+      const { view, preview, lastRendered } = await setup({ loaders });
+      await wait(250);
+
+      updateView(view, createAnnotations(), createStoryEntries('b', { loaders }));
+      await wait(50);
+      preview.onSetCurrentStory({ storyId: secondId });
+      await wait(600);
+
+      expect(lastRendered()).toEqual({ id: secondId, label: 'b' });
+      expect(preview.storyRenders).toHaveLength(1);
+      expect(reload).not.toHaveBeenCalled();
+    } finally {
+      delete (window as { location?: unknown }).location;
+    }
+  });
 });

@@ -85,11 +85,15 @@ class ReactNativePreview extends PreviewWithSelection<ReactRenderer> {
     return run;
   }
 
-  // Tearing down a story that is still rendering (e.g. its loaders are running) falls back to reloading the page,
-  // which never resolves in React Native. The render is aborted at that point and won't draw, so don't wait for it.
+  // Storybook tears down a story that is still rendering (e.g. its loaders are running) by waiting briefly and then
+  // reloading the page, which restarts the app in Expo and never resolves elsewhere in React Native. Abort the render
+  // instead: once its loaders finish it sees the abort and doesn't draw.
   async teardownRender(...[render, options]: TeardownRenderArgs) {
     if (render && 'isPending' in render && render.isPending()) {
-      void super.teardownRender(render, options);
+      this.storyRenders = this.storyRenders.filter((r) => r !== render);
+      render.torndown = true;
+      render.cancelRender();
+      if (render.story) await this.storyStoreValue?.cleanupStory(render.story);
       return;
     }
 
