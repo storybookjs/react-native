@@ -69,7 +69,7 @@ globalThis.FEATURES = Object.assign(globalThis.FEATURES ?? {}, {
   backgrounds: false,
 });
 
-const RENDER_TIMEOUT_MS = 10_000;
+const RENDER_WAIT_MS = 2_000;
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -85,12 +85,11 @@ class ReactNativePreview extends PreviewWithSelection<ReactRenderer> {
   private renderSelectionQueue: Promise<unknown> = Promise.resolve();
 
   protected renderSelection(options?: { persistedArgs?: Args }): Promise<void> {
-    const run = this.renderSelectionQueue
-      .then(() => this.waitForCurrentRender())
-      .then(() => super.renderSelection(options));
+    const settled = this.renderSelectionQueue.then(() => this.waitForCurrentRender());
+    const run = settled.then(() => super.renderSelection(options));
 
-    // A render that never settles shouldn't block every later one
-    this.renderSelectionQueue = Promise.race([run, delay(RENDER_TIMEOUT_MS)]).catch(() => {});
+    // Tearing down a render that is still pending never resolves, so don't let it block later ones
+    this.renderSelectionQueue = settled.then((ok) => (ok ? run : undefined)).catch(() => {});
 
     return run;
   }
@@ -98,11 +97,14 @@ class ReactNativePreview extends PreviewWithSelection<ReactRenderer> {
   // Tearing down a story that is still rendering (e.g. its loaders are running) never resolves in React Native,
   // because Storybook falls back to reloading the page, so give it a chance to finish first.
   private async waitForCurrentRender() {
-    const deadline = Date.now() + RENDER_TIMEOUT_MS;
+    const deadline = Date.now() + RENDER_WAIT_MS;
 
-    while (isRendering(this.currentRender) && Date.now() < deadline) {
+    while (isRendering(this.currentRender)) {
+      if (Date.now() >= deadline) return false;
       await delay(10);
     }
+
+    return true;
   }
 }
 
