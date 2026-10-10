@@ -69,12 +69,7 @@ globalThis.FEATURES = Object.assign(globalThis.FEATURES ?? {}, {
   backgrounds: false,
 });
 
-const RENDER_WAIT_MS = 2_000;
-
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-const isRendering = (render: PreviewWithSelection<ReactRenderer>['currentRender']) =>
-  !!render && 'isPending' in render && render.isPending();
+type TeardownRenderArgs = Parameters<PreviewWithSelection<ReactRenderer>['teardownRender']>;
 
 /**
  * Storybook's renderSelection is not safe to run concurrently: when Fast Refresh updates, story selection or
@@ -85,26 +80,20 @@ class ReactNativePreview extends PreviewWithSelection<ReactRenderer> {
   private renderSelectionQueue: Promise<unknown> = Promise.resolve();
 
   protected renderSelection(options?: { persistedArgs?: Args }): Promise<void> {
-    const settled = this.renderSelectionQueue.then(() => this.waitForCurrentRender());
-    const run = settled.then(() => super.renderSelection(options));
-
-    // Tearing down a render that is still pending never resolves, so don't let it block later ones
-    this.renderSelectionQueue = settled.then((ok) => (ok ? run : undefined)).catch(() => {});
-
+    const run = this.renderSelectionQueue.then(() => super.renderSelection(options));
+    this.renderSelectionQueue = run.catch(() => {});
     return run;
   }
 
-  // Tearing down a story that is still rendering (e.g. its loaders are running) never resolves in React Native,
-  // because Storybook falls back to reloading the page, so give it a chance to finish first.
-  private async waitForCurrentRender() {
-    const deadline = Date.now() + RENDER_WAIT_MS;
-
-    while (isRendering(this.currentRender)) {
-      if (Date.now() >= deadline) return false;
-      await delay(10);
+  // Tearing down a story that is still rendering (e.g. its loaders are running) falls back to reloading the page,
+  // which never resolves in React Native. The render is aborted at that point and won't draw, so don't wait for it.
+  async teardownRender(...[render, options]: TeardownRenderArgs) {
+    if (render && 'isPending' in render && render.isPending()) {
+      void super.teardownRender(render, options);
+      return;
     }
 
-    return true;
+    await super.teardownRender(render, options);
   }
 }
 
