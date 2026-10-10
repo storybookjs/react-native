@@ -1,5 +1,13 @@
 # @storybook/react-native-ui-lite
 
+## 10.6.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-ui-common@10.6.1
+  - @storybook/react-native-theming@10.6.1
+
 ## 10.6.0
 
 ### Minor Changes

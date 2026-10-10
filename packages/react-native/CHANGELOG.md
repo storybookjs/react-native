@@ -1,5 +1,16 @@
 # @storybook/react-native
 
+## 10.6.1
+
+### Patch Changes
+
+- [#929](https://github.com/storybookjs/react-native/pull/929) [`beecf7c`](https://github.com/storybookjs/react-native/commit/beecf7c098a232b9e12702a1197064bb54beb7a7) Thanks [@dannyhw](https://github.com/dannyhw)! - Fix on-device Controls breaking after Fast Refresh with "cannot render when canvasElement is unset". Story renders now run one at a time, so overlapping Fast Refresh updates, story selection or remote control no longer leave a stale render behind.
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.6.1
+  - @storybook/react-native-ui-common@10.6.1
+  - @storybook/react-native-theming@10.6.1
+
 ## 10.6.0
 
 ### Minor Changes
