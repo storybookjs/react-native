@@ -1,5 +1,27 @@
 # @storybook/react-native
 
+## 10.6.2
+
+### Patch Changes
+
+- [#930](https://github.com/storybookjs/react-native/pull/930) [`2456fa6`](https://github.com/storybookjs/react-native/commit/2456fa6809e8c94b3d5a61426b9c42d49db60a48) Thanks [@dannyhw](https://github.com/dannyhw)! - Restore the `react-native-reanimated` and `react-native-safe-area-context` peer dependency ranges that were accidentally pinned to the monorepo's exact versions (`4.5.1` and `5.8.0`). `@storybook/react-native` now requires `react-native-reanimated@>=3`, matching `@storybook/react-native-ui`.
+
+- Updated dependencies [[`2456fa6`](https://github.com/storybookjs/react-native/commit/2456fa6809e8c94b3d5a61426b9c42d49db60a48)]:
+  - @storybook/react-native-ui@10.6.2
+  - @storybook/react-native-ui-common@10.6.2
+  - @storybook/react-native-theming@10.6.2
+
+## 10.6.1
+
+### Patch Changes
+
+- [#929](https://github.com/storybookjs/react-native/pull/929) [`beecf7c`](https://github.com/storybookjs/react-native/commit/beecf7c098a232b9e12702a1197064bb54beb7a7) Thanks [@dannyhw](https://github.com/dannyhw)! - Fix on-device Controls breaking after Fast Refresh with "cannot render when canvasElement is unset". Story renders now run one at a time, so overlapping Fast Refresh updates, story selection or remote control no longer leave a stale render behind.
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.6.1
+  - @storybook/react-native-ui-common@10.6.1
+  - @storybook/react-native-theming@10.6.1
+
 ## 10.6.0
 
 ### Minor Changes
