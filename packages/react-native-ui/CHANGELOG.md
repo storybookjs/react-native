@@ -1,5 +1,15 @@
 # @storybook/react-native-ui
 
+## 10.6.2
+
+### Patch Changes
+
+- [#930](https://github.com/storybookjs/react-native/pull/930) [`2456fa6`](https://github.com/storybookjs/react-native/commit/2456fa6809e8c94b3d5a61426b9c42d49db60a48) Thanks [@dannyhw](https://github.com/dannyhw)! - Restore the `react-native-reanimated` and `react-native-safe-area-context` peer dependency ranges that were accidentally pinned to the monorepo's exact versions (`4.5.1` and `5.8.0`). `@storybook/react-native` now requires `react-native-reanimated@>=3`, matching `@storybook/react-native-ui`.
+
+- Updated dependencies []:
+  - @storybook/react-native-ui-common@10.6.2
+  - @storybook/react-native-theming@10.6.2
+
 ## 10.6.1
 
 ### Patch Changes

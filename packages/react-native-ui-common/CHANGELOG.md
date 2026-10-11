@@ -1,5 +1,12 @@
 # @storybook/react-native-ui-common
 
+## 10.6.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.6.2
+
 ## 10.6.1
 
 ### Patch Changes
