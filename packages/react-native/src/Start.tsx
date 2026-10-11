@@ -12,6 +12,7 @@ import './polyfill';
 import type { ReactRenderer } from '@storybook/react';
 import { Channel } from 'storybook/internal/channels';
 import type {
+  Args,
   ModuleExports,
   NormalizedProjectAnnotations,
   NormalizedStoriesSpecifier,
@@ -67,6 +68,38 @@ globalThis.FEATURES = Object.assign(globalThis.FEATURES ?? {}, {
   highlight: false,
   backgrounds: false,
 });
+
+type TeardownRenderArgs = Parameters<PreviewWithSelection<ReactRenderer>['teardownRender']>;
+
+/**
+ * Storybook's renderSelection is not safe to run concurrently: when Fast Refresh updates, story selection or
+ * remote control overlap, a torn-down render can be left in `storyRenders`, which then breaks args updates.
+ * This runs them one at a time.
+ */
+class ReactNativePreview extends PreviewWithSelection<ReactRenderer> {
+  private renderSelectionQueue: Promise<unknown> = Promise.resolve();
+
+  protected renderSelection(options?: { persistedArgs?: Args }): Promise<void> {
+    const run = this.renderSelectionQueue.then(() => super.renderSelection(options));
+    this.renderSelectionQueue = run.catch(() => {});
+    return run;
+  }
+
+  // Storybook tears down a story that is still rendering (e.g. its loaders are running) by waiting briefly and then
+  // reloading the page, which restarts the app in Expo and never resolves elsewhere in React Native. Abort the render
+  // instead: once its loaders finish it sees the abort and doesn't draw.
+  async teardownRender(...[render, options]: TeardownRenderArgs) {
+    if (render && 'isPending' in render && render.isPending()) {
+      this.storyRenders = this.storyRenders.filter((r) => r !== render);
+      render.torndown = true;
+      render.cancelRender();
+      if (render.story) await this.storyStoreValue?.cleanupStory(render.story);
+      return;
+    }
+
+    await super.teardownRender(render, options);
+  }
+}
 
 // Note this is a workaround for setImmediate not being defined
 if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
@@ -141,7 +174,7 @@ export function start({
   > =>
     composeConfigs<ReactRenderer>([getReactNativeProjectAnnotations(() => view), ...annotations]);
 
-  const preview: PreviewWithSelection<ReactRenderer> = new PreviewWithSelection<ReactRenderer>(
+  const preview: PreviewWithSelection<ReactRenderer> = new ReactNativePreview(
     async (importPath: string) => importMap[importPath],
     getProjectAnnotationsInitial,
     selectionStore,
@@ -182,6 +215,9 @@ export function updateView(
     options,
     storySort,
   });
+
+  // Like Storybook's web builders on HMR, stop any running play function so the story can re-render
+  viewInstance._preview.onStoryHotUpdated();
 
   viewInstance._preview.onStoriesChanged({
     importFn: async (importPath: string) => importMap[importPath],

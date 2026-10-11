@@ -1,6 +1,6 @@
 {
   "name": "@storybook/react-native-ui",
-  "version": "10.6.0",
+  "version": "10.6.2",
   "description": "ui components for react native storybook",
   "keywords": [
     "react",
@@ -36,8 +36,8 @@
     "@gorhom/portal": "^1.0.14",
     "@nozbe/microfuzz": "^1.0.0",
     "@storybook/react": "^10.6.0",
-    "@storybook/react-native-theming": "^10.6.0",
-    "@storybook/react-native-ui-common": "^10.6.0",
+    "@storybook/react-native-theming": "^10.6.2",
+    "@storybook/react-native-ui-common": "^10.6.2",
     "polished": "^4.3.1"
   },
   "devDependencies": {
@@ -51,8 +51,8 @@
     "react": "*",
     "react-native": ">=0.57.0",
     "react-native-gesture-handler": ">=2",
-    "react-native-reanimated": "4.5.1",
-    "react-native-safe-area-context": "5.8.0",
+    "react-native-reanimated": ">=3",
+    "react-native-safe-area-context": "*",
     "react-native-svg": ">=14",
     "storybook": "^10.5.4"
   },
