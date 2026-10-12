@@ -4,17 +4,17 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "prebuild": "expo prebuild",
-    "android": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo run:android",
+    "prebuild": "pnpm -w enriched-markdown:assets && expo prebuild",
+    "android": "pnpm -w enriched-markdown:assets && EXPO_PUBLIC_STORYBOOK_ENABLED=true expo run:android",
     "build-web-storybook": "storybook build",
     "check": "tsc --noEmit",
     "disabled-example": "expo start --dev-client",
     "e2e": "maestro test .maestro/storybook-screenshots.yaml --test-output-dir .maestro/output",
     "e2e:baseline": "maestro test .maestro/storybook-screenshots.capture.yaml --test-output-dir .maestro/output",
-    "eas-build-post-install": "cd ../.. && pnpm build",
+    "eas-build-post-install": "cd ../.. && pnpm enriched-markdown:assets && pnpm build",
     "format": "prettier --write .",
     "gen-maestro": "npx rn-storybook-test@alpha gen-maestro",
-    "ios": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo run:ios",
+    "ios": "pnpm -w enriched-markdown:assets && EXPO_PUBLIC_STORYBOOK_ENABLED=true expo run:ios",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "storybook": "EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start --dev-client",
     "storybook:lite": "EXPO_PUBLIC_STORYBOOK_ENABLED=true EXPO_PUBLIC_LITE_UI=true expo start --dev-client",
@@ -56,6 +56,7 @@
     "react-compiler-runtime": "^1.0.0",
     "react-dom": "19.2.3",
     "react-native": "0.86.3",
+    "react-native-enriched-markdown": "^1.0.2",
     "react-native-gesture-handler": "~2.32.0",
     "react-native-reanimated": "4.5.1",
     "react-native-safe-area-context": "5.8.0",
@@ -80,5 +81,16 @@
     "test-renderer": "^0.15.0",
     "typescript": "~6.0.3",
     "vite": "^8.1.5"
+  },
+  "enriched-markdown": {
+    "enableCodeHighlight": true,
+    "codeHighlightLanguages": [
+      "typescript",
+      "tsx",
+      "javascript",
+      "json",
+      "bash"
+    ],
+    "enableMath": false
   }
 }

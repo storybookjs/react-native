@@ -15,7 +15,7 @@ export default defineConfig((options) => {
           resolve: true,
         }
       : false,
-    // needed to pre-bundle the markdown package
+    // needed to pre-bundle react-native-markdown-display (the JS fallback renderer)
     loader: {
       '.js': 'jsx',
     },
