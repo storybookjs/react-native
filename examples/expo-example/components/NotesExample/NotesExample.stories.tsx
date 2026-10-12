@@ -1,67 +1,136 @@
 import type { StoryObj, Meta } from '@storybook/react-native';
-import { View, StyleSheet, Text } from 'react-native';
+import { useState } from 'react';
+import { Pressable, StyleSheet, Text } from 'react-native';
 
-const NotesExampleMeta: Meta<any> = {
+interface CounterProps {
+  /** Value the counter starts from */
+  initial?: number;
+  /** Called after every increment */
+  onPress?: () => void;
+}
+
+function Counter({ initial = 0, onPress }: CounterProps) {
+  const [count, setCount] = useState(initial);
+
+  return (
+    <Pressable
+      accessibilityRole="button"
+      style={styles.button}
+      onPress={() => {
+        setCount((value) => value + 1);
+        onPress?.();
+      }}
+    >
+      <Text style={styles.label}>Pressed {count} times</Text>
+    </Pressable>
+  );
+}
+
+const NotesExampleMeta: Meta<typeof Counter> = {
+  component: Counter,
+  args: { initial: 0 },
   parameters: {
     notes: `
-# H1
+# Counter
 
-## H2
+The pressable counter rendered in this story. Open the addons panel to read these notes. Notes are rendered natively by
+[react-native-enriched-markdown](https://github.com/software-mansion/enriched-markdown), so
+headings, lists, tables and task lists all work, and code blocks are highlighted when highlighting is enabled.
 
-### H3
+## Usage
 
-#### H4
+\`\`\`tsx
+import { useState } from 'react';
+import { Pressable, Text } from 'react-native';
 
-##### H5
+interface CounterProps {
+  initial?: number;
+  onPress?: () => void;
+}
 
-###### H6
+export function Counter({ initial = 0, onPress }: CounterProps) {
+  const [count, setCount] = useState(initial);
 
-This is a paragraph that can span multiple lines. It should be line-wrapped
-but not contain any paragraph breaks.
+  // Each press increments the counter and notifies the parent
+  return (
+    <Pressable
+      accessibilityRole="button"
+      onPress={() => {
+        setCount((value) => value + 1);
+        onPress?.();
+      }}
+    >
+      <Text>Pressed {count} times</Text>
+    </Pressable>
+  );
+}
+\`\`\`
 
-Unless a paragraph break is explicitly used.
+### Props
 
-Inline content can be **strong**, _emphasized_, ~~struck out~~, \`code\`, or a [hyperlink](http://example.com).
+| Prop      | Type         | Default | Description                     |
+| --------- | ------------ | ------- | ------------------------------- |
+| \`initial\` | \`number\`     | \`0\`     | Value the counter starts from   |
+| \`onPress\` | \`() => void\` | –       | Called after every increment    |
+
+### Installation
+
+\`\`\`bash
+npx expo install react-native-enriched-markdown
+npx expo prebuild
+\`\`\`
+
+Enable syntax highlighting for the languages you need in \`package.json\`:
+
+\`\`\`json
+{
+  "enriched-markdown": {
+    "enableCodeHighlight": true,
+    "codeHighlightLanguages": ["tsx", "bash", "json"]
+  }
+}
+\`\`\`
+
+## Formatting reference
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+Inline content can be **strong**, _emphasized_, ~~struck out~~, ==highlighted==, \`code\`, or a [hyperlink](http://example.com).
+
+Superscript and subscript work too: E = mc^2^ and H~2~O.
+
+![Storybook logo](https://raw.githubusercontent.com/storybookjs/brand/main/icon/icon-storybook-default.png)
 
 ---
 
 - Unordered lists are not numbered
-
 - And can be nested
-
-    + As deeply as desired
-    
+  - As deeply as desired
 - And then resume afterwards
 
----
-
 1. Ordered lists are numbered
-
 2. And can be nested too
-
    1. Also as deeply as desired
-   
 3. And then resume afterwards
 
----
-
-\`\`\`tsx
-Code fences are blocks of monospace text
-
-  where leading whitespace is preserved,
-
-    and **inline** markup is not supported.
-\`\`\`
+- [x] Task lists render native checkboxes
+- [x] Checked items can be styled
+- [ ] Unchecked items too
 
 ---
 
-    Code blocks are blocks of monospace text
-
-      where leading whitespace is preserved,
-
-        and **inline** markup is not supported.
-
----
+    Indented code blocks are monospace text
+      where leading whitespace is preserved
 
 > Block quotes are blocks of normal text
 > where **inline** markup is possible and
@@ -74,22 +143,20 @@ Code fences are blocks of monospace text
 };
 export default NotesExampleMeta;
 
-type NotesExampleStory = StoryObj<any>;
+type NotesExampleStory = StoryObj<typeof Counter>;
 
-function NotesContent() {
-  return (
-    <View
-      style={{
-        ...StyleSheet.absoluteFillObject,
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 16,
-      }}
-    >
-      <Text>This story exercises the notes addon, see the addons panel.</Text>
-    </View>
-  );
-}
+export const NotesExample: NotesExampleStory = {
+  parameters: { noSafeArea: false },
+};
 
-export const NotesExample: NotesExampleStory = () => <NotesContent />;
-NotesExample.parameters = { noSafeArea: false };
+const styles = StyleSheet.create({
+  button: {
+    alignSelf: 'center',
+    marginTop: 16,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 8,
+    backgroundColor: '#1EA7FD',
+  },
+  label: { color: '#FFFFFF', fontWeight: '600' },
+});
