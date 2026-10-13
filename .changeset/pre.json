@@ -1,0 +1,26 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "docs": "10.2.4",
+    "expo-example": "0.0.0",
+    "expo-new-wrapper-example": "0.0.0",
+    "expo-router-example": "1.0.0",
+    "repack-example": "0.0.1",
+    "@storybook/addon-ondevice-actions": "10.6.2",
+    "@storybook/addon-ondevice-backgrounds": "10.6.2",
+    "@storybook/addon-ondevice-controls": "10.6.2",
+    "@storybook/addon-ondevice-notes": "10.6.2",
+    "@storybook/react-native": "10.6.2",
+    "@storybook/react-native-theming": "10.6.2",
+    "@storybook/react-native-ui": "10.6.2",
+    "@storybook/react-native-ui-common": "10.6.2",
+    "@storybook/react-native-ui-lite": "10.6.2",
+    "@storybook/tests": "0.0.0"
+  },
+  "changesets": [
+    "csf-preview-alias",
+    "flat-impalas-press",
+    "notes-enriched-markdown"
+  ]
+}

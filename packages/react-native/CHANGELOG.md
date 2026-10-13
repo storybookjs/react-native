@@ -1,5 +1,20 @@
 # @storybook/react-native
 
+## 11.0.0-next.0
+
+### Major Changes
+
+- [#919](https://github.com/storybookjs/react-native/pull/919) [`01d4ec2`](https://github.com/storybookjs/react-native/commit/01d4ec2877ede9d0ea5db5b01ae217bb3da0bfa3) Thanks [@kasperpeulen](https://github.com/kasperpeulen)! - feat: adds csf next support
+
+### Patch Changes
+
+- [#919](https://github.com/storybookjs/react-native/pull/919) [`01d4ec2`](https://github.com/storybookjs/react-native/commit/01d4ec2877ede9d0ea5db5b01ae217bb3da0bfa3) Thanks [@kasperpeulen](https://github.com/kasperpeulen)! - Metro and Repack now rewrite `#.storybook/preview` to `{configPath}/preview` so CSF Next stories can use the documented specifier on native.
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@11.0.0-next.0
+  - @storybook/react-native-ui-common@11.0.0-next.0
+  - @storybook/react-native-theming@11.0.0-next.0
+
 ## 10.6.2
 
 ### Patch Changes
