@@ -1,5 +1,5 @@
 ---
-'@storybook/react-native': major
+'@storybook/react-native': patch
 ---
 
 Storybook React Native now requires Storybook 11. Update `storybook`, `@storybook/react` and the other Storybook packages to 11.x.
