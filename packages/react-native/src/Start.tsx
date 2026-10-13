@@ -12,6 +12,7 @@ import './polyfill';
 import type { ReactRenderer } from '@storybook/react';
 import { Channel } from 'storybook/internal/channels';
 import type {
+  Addon_StorySortParameterV7,
   Args,
   ModuleExports,
   NormalizedProjectAnnotations,
@@ -115,10 +116,13 @@ export function start({
   annotations,
   storyEntries,
   options,
+  storySorts,
 }: {
   storyEntries: StoryEntry[];
   annotations: ModuleExports[];
   options?: ReactNativeOptions;
+  /** The `storySorts` from main, written into the requires file by the generator. */
+  storySorts?: Addon_StorySortParameterV7[];
 }) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
 
@@ -126,6 +130,7 @@ export function start({
     storyEntries,
     options,
     storySort: composedAnnotations.parameters?.options?.storySort,
+    storySorts,
   });
 
   // const channel = createBrowserChannel({ page: 'preview' });
@@ -204,7 +209,8 @@ export function updateView(
   viewInstance: View,
   annotations: ModuleExports[],
   normalizedStories: StoryEntry[],
-  options?: ReactNativeOptions
+  options?: ReactNativeOptions,
+  storySorts?: Addon_StorySortParameterV7[]
 ) {
   const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
 
@@ -214,6 +220,7 @@ export function updateView(
     storyEntries: normalizedStories,
     options,
     storySort,
+    storySorts,
   });
 
   // Like Storybook's web builders on HMR, stop any running play function so the story can re-render

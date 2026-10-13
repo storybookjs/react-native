@@ -41,6 +41,15 @@ const main: StorybookConfig = {
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
   ],
+
+  // story sorting configuration
+  storySorts: [
+    {
+      method: 'alphabetical',
+      includeNames: true,
+      order: ['Components', 'Examples'],
+    },
+  ],
 };
 
 export default main;
@@ -55,6 +64,7 @@ export default main;
 - `deviceAddons`: Array of on-device addon packages (recommended for `@storybook/addon-ondevice-*` packages). These are loaded only at runtime on the device and are not evaluated as presets by Storybook Core, avoiding errors during server-side operations like `extract`.
 - `addons`: Array of addon packages evaluated as Storybook presets. On-device addons listed here still work for backwards compatibility, but `deviceAddons` is preferred.
 - `features`: Enable new functionality (see [Feature Flags](./feature-flags.md))
+- `storySorts`: Array of story sorters, each an object with `method`, `order`, `includeNames` and `locales`, an `order` array, or a comparator function `(a, b) => number`. Each sorter only orders the stories that the sorters before it consider equal. Comparator functions are copied into `storybook.requires` from their source, so they can't use imports or variables from outside their own body. This replaces `parameters.options.storySort` in `preview.tsx`, which still works but is deprecated.
 
 ## preview.tsx
 
@@ -71,15 +81,6 @@ const preview: Preview = {
   ],
 
   parameters: {
-    // story sorting configuration, should only be configured in preview file.
-    options: {
-      storySort: {
-        method: 'alphabetical',
-        includeNames: true,
-        order: ['Components', 'Examples'],
-      },
-    },
-
     // UI Configuration
     hideFullScreenButton: false,
     noSafeArea: false,
@@ -105,9 +106,8 @@ export default preview;
 
 ### Notable Parameters
 
-Other than story sort the other parameters can be overwritten per story.
+These parameters can be overwritten per story.
 
-- `parameters.options.storySort`: Story sorting configuration
 - `parameters.hideFullScreenButton`: Toggle fullscreen button visibility
 - `parameters.noSafeArea`: Disable safe area insets
 - `parameters.storybookUIVisibility`: Controls UI visibility (`'visible'` | `'hidden'`)
