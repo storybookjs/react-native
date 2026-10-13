@@ -1,5 +1,5 @@
 import type { IndexEntry, StoryIndex } from 'storybook/internal/types';
-import { resolveStorySorts, sortIndexEntries } from './sortStories';
+import { sortIndexEntries } from './sortStories';
 
 const entry = (title: string, name: string, importPath: string): IndexEntry => ({
   type: 'story',
@@ -23,26 +23,6 @@ const entries = toEntries([
   entry('Components/Avatar', 'Basic', './Avatar.stories.tsx'),
   entry('Hooks', 'Basic', './Hooks.stories.tsx'),
 ]);
-
-describe('resolveStorySorts', () => {
-  test('uses storySorts from main over the preview storySort', () => {
-    expect(resolveStorySorts([{ method: 'alphabetical' }], { order: ['A'] })).toEqual([
-      { method: 'alphabetical' },
-    ]);
-  });
-
-  test('falls back to the preview storySort', () => {
-    expect(resolveStorySorts(undefined, { order: ['A'] })).toEqual([{ order: ['A'] }]);
-  });
-
-  test('keeps an empty storySorts from main', () => {
-    expect(resolveStorySorts([], { order: ['A'] })).toEqual([]);
-  });
-
-  test('returns no sorters when neither is set', () => {
-    expect(resolveStorySorts(undefined, undefined)).toEqual([]);
-  });
-});
 
 describe('sortIndexEntries', () => {
   test('keeps file order without sorters', () => {

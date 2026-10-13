@@ -124,12 +124,9 @@ export function start({
   /** The `storySorts` from main, written into the requires file by the generator. */
   storySorts?: Addon_StorySortParameterV7[];
 }) {
-  const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
-
   const { index, importMap } = prepareStories({
     storyEntries,
     options,
-    storySort: composedAnnotations.parameters?.options?.storySort,
     storySorts,
   });
 
@@ -212,14 +209,9 @@ export function updateView(
   options?: ReactNativeOptions,
   storySorts?: Addon_StorySortParameterV7[]
 ) {
-  const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
-
-  const storySort = composedAnnotations.parameters?.options?.storySort;
-
   const { importMap, index } = prepareStories({
     storyEntries: normalizedStories,
     options,
-    storySort,
     storySorts,
   });
 

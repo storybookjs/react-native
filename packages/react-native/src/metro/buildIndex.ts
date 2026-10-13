@@ -10,9 +10,7 @@ import {
   type NormalizedStoriesSpecifier,
 } from 'storybook/internal/types';
 import { userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
-import { getFilePathWithExtension } from '../../scripts/common';
-import { resolveStorySorts, sortIndexEntries } from '../sortStories';
-import { getStorySortParameter } from './getStorySortParameter';
+import { sortIndexEntries } from '../sortStories';
 
 const cwd = process.cwd();
 
@@ -117,25 +115,12 @@ export async function buildIndex({ configPath }: { configPath: string }): Promis
   }
 
   try {
-    // Mirror the device: `storySorts` from main, falling back to the deprecated preview `storySort`
     const storySorts =
       typeof main.storySorts === 'function'
         ? await main.storySorts([], {} as Parameters<typeof main.storySorts>[1])
         : main.storySorts;
 
-    let storySort;
-    if (!storySorts) {
-      const previewPath = getFilePathWithExtension({ configPath }, 'preview');
-      const previewSourceCode = previewPath
-        ? readFileSync(previewPath, { encoding: 'utf-8' }).toString()
-        : '';
-      storySort = getStorySortParameter(previewSourceCode);
-    }
-
-    return {
-      v: 5,
-      entries: sortIndexEntries(index.entries, resolveStorySorts(storySorts, storySort)),
-    };
+    return { v: 5, entries: sortIndexEntries(index.entries, storySorts ?? []) };
   } catch {
     console.warn('Failed to sort stories, using unordered index');
     return index;

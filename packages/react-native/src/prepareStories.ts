@@ -5,7 +5,7 @@ import type {
   NormalizedStoriesSpecifier,
   StoryIndex,
 } from 'storybook/internal/types';
-import { resolveStorySorts, sortIndexEntries } from './sortStories';
+import { sortIndexEntries } from './sortStories';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
@@ -18,14 +18,11 @@ export interface ReactNativeOptions {
 export function prepareStories({
   storyEntries,
   options,
-  storySort,
-  storySorts,
+  storySorts = [],
 }: {
   storyEntries: (NormalizedStoriesSpecifier & { req: any })[];
   options?: ReactNativeOptions;
-  /** @deprecated Use `storySorts`, which Storybook 11 reads from main instead of preview. */
-  storySort?: Addon_StorySortParameterV7;
-  /** The `storySorts` from main, chained in order. Takes precedence over `storySort`. */
+  /** The `storySorts` from main, chained in order. */
   storySorts?: Addon_StorySortParameterV7[];
 }) {
   let index: StoryIndex = {
@@ -134,7 +131,7 @@ export function prepareStories({
     });
   });
 
-  const sorted = sortIndexEntries(index.entries, resolveStorySorts(storySorts, storySort));
+  const sorted = sortIndexEntries(index.entries, storySorts);
 
   return { index: { v: 5, entries: sorted }, importMap };
 }

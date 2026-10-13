@@ -17,9 +17,9 @@ export interface StorybookConfig {
    */
   deviceAddons?: Addon[];
   /**
-   * Sorts the stories, replacing `parameters.options.storySort` in preview. Each sorter only orders
-   * the stories that the sorters before it consider equal. Comparator functions are copied into
-   * `storybook.requires` from their source, so they can't use anything from outside their own body.
+   * Sorts the stories. Each sorter only orders the stories that the sorters before it consider
+   * equal. Comparator functions are copied into `storybook.requires` from their source, so they
+   * can't use anything from outside their own body.
    */
   storySorts?: StorybookConfigBase['storySorts'];
   // TODO move this to params
