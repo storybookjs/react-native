@@ -2,7 +2,6 @@ const {
   toRequireContext,
   ensureRelativePathHasDot,
   getPreviewExists,
-  getFilePathWithExtension,
   resolveAddonFile,
   getAddonName,
 } = require('./common');
@@ -62,9 +61,6 @@ const loadMain = async ({ configPath, cwd }) => {
   return interopRequireDefault(mainPath);
 };
 
-const STORY_SORTS_MIGRATION_URL =
-  'https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#move-storysort-to-storysorts-in-main';
-
 /**
  * Resolves `main.storySorts`, which can be an array or a preset function that returns one.
  * @param {{ storySorts?: unknown }} main
@@ -76,24 +72,6 @@ async function resolveMainStorySorts(main) {
   }
 
   return main.storySorts;
-}
-
-/**
- * Warns when the preview still sets `parameters.options.storySort`, which Storybook 11 replaced with
- * `storySorts` in main. The device keeps applying it until then.
- * @todo Remove support for preview `storySort` in a future major version.
- */
-function warnDeprecatedPreviewStorySort(configPath) {
-  const previewPath = getFilePathWithExtension({ configPath }, 'preview');
-  if (!previewPath || !fs.readFileSync(previewPath, 'utf-8').includes('storySort')) {
-    return;
-  }
-
-  console.warn(
-    `[Storybook React Native] \`parameters.options.storySort\` in your preview (${previewPath}) is deprecated and will be removed in a future major version.\n` +
-      `Move it to \`storySorts\` in your main config instead, for example \`storySorts: [{ order: ['Introduction', 'Components'] }]\`.\n` +
-      `See ${STORY_SORTS_MIGRATION_URL}`
-  );
 }
 
 /**
@@ -172,10 +150,6 @@ async function generate(generateOptions) {
   warnDeprecatedMainAddonsField(main, configPath);
 
   const storySorts = await resolveMainStorySorts(main);
-
-  if (!storySorts) {
-    warnDeprecatedPreviewStorySort(configPath);
-  }
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,

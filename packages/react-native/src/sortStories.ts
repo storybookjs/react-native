@@ -2,21 +2,6 @@ import { sortStoriesV7 } from 'storybook/internal/preview-api';
 import type { Addon_StorySortParameterV7, StoryIndex } from 'storybook/internal/types';
 
 /**
- * The sorters to apply: `storySorts` from main when it is set, otherwise the deprecated
- * `parameters.options.storySort` from preview.
- */
-export function resolveStorySorts(
-  storySorts: Addon_StorySortParameterV7[] | undefined,
-  storySort: Addon_StorySortParameterV7 | undefined
-): Addon_StorySortParameterV7[] {
-  if (storySorts) {
-    return storySorts;
-  }
-
-  return storySort ? [storySort] : [];
-}
-
-/**
  * Sorts index entries like Storybook 11 chains `storySorts`: each sorter only orders the entries
  * that the sorters before it consider equal. Storybook doesn't export its chained comparator, so
  * this applies the sorters as stable sorts from last to first, which gives the same order.

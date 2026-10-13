@@ -86,9 +86,13 @@ You need to update all Storybook dependencies to version 11.x. This includes:
 
 ### Move `storySort` to `storySorts` in main
 
-Storybook 11 replaced `parameters.options.storySort` in preview with a `storySorts` array in main. Each sorter only orders the stories that the sorters before it consider equal.
+Storybook 11 no longer reads `parameters.options.storySort` from preview. Configure story sorting with the `storySorts` array in main instead. Each sorter only orders the stories that the sorters before it consider equal. See the [core Storybook migration guide](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#storysort-in-the-preview-replaced-by-storysorts-in-main).
 
-`storySort` in `.rnstorybook/preview.tsx` still works on device for now, but it is deprecated and the requires generator logs a warning. Once `storySorts` is set in main, the preview `storySort` is ignored.
+Storybook's automigration moves statically readable object and array configurations for you:
+
+```sh
+npx storybook automigrate story-sort-to-main --config-dir .rnstorybook
+```
 
 Before:
 
@@ -114,7 +118,7 @@ export default defineMain({
 });
 ```
 
-Comparator functions work too, but they are copied into `storybook.requires` from their source, so they can't use imports or variables from outside their own body.
+Comparator functions need to be moved by hand. They work in `storySorts`, but they are copied into `storybook.requires` from their source, so they can't use imports or variables from outside their own body.
 
 ## From version 10.3 to 10.4
 

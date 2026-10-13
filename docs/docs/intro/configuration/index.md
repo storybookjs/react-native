@@ -64,7 +64,7 @@ export default main;
 - `deviceAddons`: Array of on-device addon packages (recommended for `@storybook/addon-ondevice-*` packages). These are loaded only at runtime on the device and are not evaluated as presets by Storybook Core, avoiding errors during server-side operations like `extract`.
 - `addons`: Array of addon packages evaluated as Storybook presets. On-device addons listed here still work for backwards compatibility, but `deviceAddons` is preferred.
 - `features`: Enable new functionality (see [Feature Flags](./feature-flags.md))
-- `storySorts`: Array of story sorters, each an object with `method`, `order`, `includeNames` and `locales`, an `order` array, or a comparator function `(a, b) => number`. Each sorter only orders the stories that the sorters before it consider equal. Comparator functions are copied into `storybook.requires` from their source, so they can't use imports or variables from outside their own body. This replaces `parameters.options.storySort` in `preview.tsx`, which still works but is deprecated.
+- `storySorts`: Array of story sorters, each an object with `method`, `order`, `includeNames` and `locales`, an `order` array, or a comparator function `(a, b) => number`. Each sorter only orders the stories that the sorters before it consider equal. Comparator functions are copied into `storybook.requires` from their source, so they can't use imports or variables from outside their own body. This replaces `parameters.options.storySort` in `preview.tsx`, which Storybook 11 no longer reads.
 
 ## preview.tsx
 

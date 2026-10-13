@@ -301,22 +301,6 @@ describe('loader', () => {
       });
     });
 
-    describe('when storySort is set in preview', () => {
-      it('logs a deprecation warning and does not write storySorts', async () => {
-        const warn = mock.method(console, 'warn', mock.fn());
-        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-        await generate({ configPath: 'scripts/mocks/preview-story-sort' });
-        mock.reset();
-
-        assert.ok(!fileContentMock.includes('storySorts'));
-        assert.strictEqual(warn.mock.callCount(), 1);
-        const msg = String(warn.mock.calls[0].arguments[0]);
-        assert.ok(msg.includes('deprecated'));
-        assert.ok(msg.includes('storySorts'));
-        assert.ok(msg.includes('move-storysort-to-storysorts-in-main'));
-      });
-    });
-
     describe('when addons are in deviceAddons', () => {
       it('writes the addon imports from deviceAddons', async (t) => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
