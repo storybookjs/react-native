@@ -1,5 +1,7 @@
 # @storybook/react-native-theming
 
+## 10.7.0
+
 ## 10.6.2
 
 ## 10.6.1

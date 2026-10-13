@@ -1,5 +1,20 @@
 # @storybook/addon-ondevice-notes
 
+## 10.7.0
+
+### Minor Changes
+
+- [#927](https://github.com/storybookjs/react-native/pull/927) [`3e4b969`](https://github.com/storybookjs/react-native/commit/3e4b96911eca3c94aece2e36caf1baf4d2aa07b4) Thanks [@hryhoriiK97](https://github.com/hryhoriiK97)! - Notes can now be rendered natively with `react-native-enriched-markdown`.
+
+  Install `react-native-enriched-markdown` in your app and rebuild it (`npx expo prebuild` or `pod install`); the addon picks it up automatically and renders notes as native text with support for GitHub Flavored Markdown tables, task lists, `==highlight==`, superscript, subscript and syntax-highlighted code blocks. Without it, or where its native module is unavailable (Expo Go, tvOS, old architecture), notes keep using the previous JavaScript renderer, so nothing changes for existing setups.
+
+  Highlighting and LaTeX math add native code to your app; if you only need plain notes, add `"enriched-markdown": { "enableCodeHighlight": false, "enableMath": false }` to your app's `package.json`.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.7.0
+
 ## 10.6.2
 
 ### Patch Changes
