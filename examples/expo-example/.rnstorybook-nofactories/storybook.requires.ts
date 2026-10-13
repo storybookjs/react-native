@@ -76,14 +76,17 @@ const options = {
   "playFn": false
 }
 
+const storySorts: NonNullable<Parameters<typeof start>[0]['storySorts']> = [{ "method": "alphabetical", "includeNames": true, "order": ["ControlExamples", ["ControlExample"], "InteractionExample", "DeepControls"] }];
+
 if (!globalThis.view) {
   globalThis.view = start({
     annotations,
     storyEntries: normalizedStories,
     options,
+    storySorts,
   });
 } else {
-  updateView(globalThis.view, annotations, normalizedStories, options);
+  updateView(globalThis.view, annotations, normalizedStories, options, storySorts);
 }
 
 export const view: View = globalThis.view;

@@ -2,7 +2,9 @@
 
 - [Migration](#migration)
   - [From version 10 to 11](#from-version-10-to-11)
+    - [Update Storybook dependencies to 11.x](#update-storybook-dependencies-to-11x)
     - [On-device addons must be listed in `deviceAddons`](#on-device-addons-must-be-listed-in-deviceaddons)
+    - [Move `storySort` to `storySorts` in main](#move-storysort-to-storysorts-in-main)
   - [From version 10.3 to 10.4](#from-version-103-to-104)
     - [Update your metro config](#update-your-metro-config)
     - [Simplify your App.tsx (or Expo Router routes)](#simplify-your-apptsx-or-expo-router-routes)
@@ -56,6 +58,33 @@
 
 ## From version 10 to 11
 
+### Update Storybook dependencies to 11.x
+
+You need to update all Storybook dependencies to version 11.x. This includes:
+
+- `storybook` package (core)
+- `@storybook/react` package
+- `@storybook/react-native` package
+- All `@storybook/addon-ondevice-*` packages
+
+> Note: You can check the correct version by looking at the `peerDependencies`. Please refer to the [core Storybook migration guide](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md) for more details on the breaking changes in Storybook core v11.
+
+**Example package.json after upgrade:**
+
+```json
+{
+  "devDependencies": {
+    "@storybook/react-native": "^11.0.0",
+    "@storybook/react": "^11.0.0",
+    "@storybook/addon-ondevice-controls": "^11.0.0",
+    "@storybook/addon-ondevice-actions": "^11.0.0",
+    "@storybook/addon-ondevice-backgrounds": "^11.0.0",
+    "@storybook/addon-ondevice-notes": "^11.0.0",
+    "storybook": "^11.0.0"
+  }
+}
+```
+
 ### On-device addons must be listed in `deviceAddons`
 
 `.rnstorybook/main.ts` no longer reads `addons`. Entries left there are ignored and are not written into `storybook.requires`.
@@ -83,6 +112,38 @@ npx storybook automigrate
 ```
 
 When both fields are already set, that automigration leaves the file alone so it does not overwrite `deviceAddons`. Move the remaining `addons` entries yourself.
+
+### Move `storySort` to `storySorts` in main
+
+Storybook 11 replaced `parameters.options.storySort` in preview with a `storySorts` array in main. Each sorter only orders the stories that the sorters before it consider equal.
+
+`storySort` in `.rnstorybook/preview.tsx` still works on device for now, but it is deprecated and the requires generator logs a warning. Once `storySorts` is set in main, the preview `storySort` is ignored.
+
+Before:
+
+```ts
+// .rnstorybook/preview.tsx
+export default definePreview({
+  addons: [],
+  parameters: {
+    options: {
+      storySort: { order: ['Introduction', 'Components'] },
+    },
+  },
+});
+```
+
+After:
+
+```ts
+// .rnstorybook/main.ts
+export default defineMain({
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  storySorts: [{ order: ['Introduction', 'Components'] }],
+});
+```
+
+Comparator functions work too, but they are copied into `storybook.requires` from their source, so they can't use imports or variables from outside their own body.
 
 ## From version 10.3 to 10.4
 

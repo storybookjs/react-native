@@ -18,6 +18,13 @@ export default defineMain({
     // '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-notes',
   ],
+  storySorts: [
+    {
+      method: 'alphabetical',
+      includeNames: true,
+      order: ['ControlExamples', ['ControlExample'], 'InteractionExample', 'DeepControls'],
+    },
+  ],
   reactNative: {
     playFn: false,
   },

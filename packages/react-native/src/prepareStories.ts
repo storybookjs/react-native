@@ -1,10 +1,11 @@
-import { sortStoriesV7, userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
+import { userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
 import { isExportStory, storyNameFromExport, toId } from 'storybook/internal/csf';
 import type {
   Addon_StorySortParameterV7,
   NormalizedStoriesSpecifier,
   StoryIndex,
 } from 'storybook/internal/types';
+import { resolveStorySorts, sortIndexEntries } from './sortStories';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
@@ -18,10 +19,14 @@ export function prepareStories({
   storyEntries,
   options,
   storySort,
+  storySorts,
 }: {
   storyEntries: (NormalizedStoriesSpecifier & { req: any })[];
   options?: ReactNativeOptions;
+  /** @deprecated Use `storySorts`, which Storybook 11 reads from main instead of preview. */
   storySort?: Addon_StorySortParameterV7;
+  /** The `storySorts` from main, chained in order. Takes precedence over `storySort`. */
+  storySorts?: Addon_StorySortParameterV7[];
 }) {
   let index: StoryIndex = {
     v: 5,
@@ -129,21 +134,7 @@ export function prepareStories({
     });
   });
 
-  const sortableStories = Object.values(index.entries);
-
-  sortStoriesV7(
-    sortableStories,
-    storySort as Addon_StorySortParameterV7,
-    Object.values(index.entries).map((entry) => entry.importPath)
-  );
-
-  const sorted = sortableStories.reduce(
-    (acc, item) => {
-      acc[item.id] = item;
-      return acc;
-    },
-    {} as StoryIndex['entries']
-  );
+  const sorted = sortIndexEntries(index.entries, resolveStorySorts(storySorts, storySort));
 
   return { index: { v: 5, entries: sorted }, importMap };
 }

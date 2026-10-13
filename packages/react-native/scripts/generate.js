@@ -2,6 +2,7 @@ const {
   toRequireContext,
   ensureRelativePathHasDot,
   getPreviewExists,
+  getFilePathWithExtension,
   resolveAddonFile,
   getAddonName,
 } = require('./common');
@@ -33,6 +34,65 @@ const loadMain = async ({ configPath, cwd }) => {
   }
   return interopRequireDefault(mainPath);
 };
+
+const STORY_SORTS_MIGRATION_URL =
+  'https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#move-storysort-to-storysorts-in-main';
+
+/**
+ * Resolves `main.storySorts`, which can be an array or a preset function that returns one.
+ * @param {{ storySorts?: unknown }} main
+ * @returns {Promise<unknown[] | undefined>}
+ */
+async function resolveMainStorySorts(main) {
+  if (typeof main.storySorts === 'function') {
+    return main.storySorts([], {});
+  }
+
+  return main.storySorts;
+}
+
+/**
+ * Warns when the preview still sets `parameters.options.storySort`, which Storybook 11 replaced with
+ * `storySorts` in main. The device keeps applying it until then.
+ * @todo Remove support for preview `storySort` in a future major version.
+ */
+function warnDeprecatedPreviewStorySort(configPath) {
+  const previewPath = getFilePathWithExtension({ configPath }, 'preview');
+  if (!previewPath || !fs.readFileSync(previewPath, 'utf-8').includes('storySort')) {
+    return;
+  }
+
+  console.warn(
+    `[Storybook React Native] \`parameters.options.storySort\` in your preview (${previewPath}) is deprecated and will be removed in a future major version.\n` +
+      `Move it to \`storySorts\` in your main config instead, for example \`storySorts: [{ order: ['Introduction', 'Components'] }]\`.\n` +
+      `See ${STORY_SORTS_MIGRATION_URL}`
+  );
+}
+
+/**
+ * Serializes `storySorts` into source for the requires file. Comparator functions are written out
+ * from their source, so they can't use anything from outside their own body.
+ * @param {unknown} value
+ * @returns {string}
+ */
+function serializeStorySorts(value) {
+  if (typeof value === 'function') {
+    return `(${value.toString()})`;
+  }
+
+  if (Array.isArray(value)) {
+    return `[${value.map(serializeStorySorts).join(', ')}]`;
+  }
+
+  if (value && typeof value === 'object') {
+    const entries = Object.entries(value).map(
+      ([key, entry]) => `${JSON.stringify(key)}: ${serializeStorySorts(entry)}`
+    );
+    return `{ ${entries.join(', ')} }`;
+  }
+
+  return JSON.stringify(value);
+}
 
 /**
  * Get the local IP address of the machine.
@@ -81,6 +141,12 @@ async function generate(generateOptions) {
   );
 
   const main = await loadMain({ configPath, cwd });
+
+  const storySorts = await resolveMainStorySorts(main);
+
+  if (!storySorts) {
+    warnDeprecatedPreviewStorySort(configPath);
+  }
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
@@ -235,15 +301,15 @@ ${
 module?.hot?.accept?.();
 ${featuresAssignment ? `\n${featuresAssignment}\n` : ''}
 ${optionsVar}
-
+${storySorts ? `\nconst storySorts${useJs ? '' : ": NonNullable<Parameters<typeof start>[0]['storySorts']>"} = ${serializeStorySorts(storySorts)};\n` : ''}
 if (!globalThis.view) {
   globalThis.view = start({
     annotations,
     storyEntries: normalizedStories,
-${options ? `    ${options},` : ''}
+${options ? `    ${options},` : ''}${storySorts ? '\n    storySorts,' : ''}
   });
 } else {
-  updateView(globalThis.view, annotations, normalizedStories${options ? `, ${options}` : ''});
+  updateView(globalThis.view, annotations, normalizedStories${options ? `, ${options}` : storySorts ? ', undefined' : ''}${storySorts ? ', storySorts' : ''});
 }
 
 export const view${useJs ? '' : ': View'} = globalThis.view;
