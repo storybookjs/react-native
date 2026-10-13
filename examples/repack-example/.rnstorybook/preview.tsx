@@ -1,7 +1,8 @@
 import { Appearance } from 'react-native';
-import type { Preview } from '@storybook/react-native';
+import { definePreview } from '@storybook/react-native';
 
-const preview: Preview = {
+export default definePreview({
+  addons: [],
   parameters: {
     options: {
       storySort: {
@@ -29,6 +30,4 @@ const preview: Preview = {
     // 👇 Set the initial background color
     backgrounds: { value: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain' },
   },
-};
-
-export default preview;
+});

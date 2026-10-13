@@ -3,7 +3,10 @@
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
-    "types": ["jest"]
+    "types": ["jest"],
+    "paths": {
+      "#.storybook/preview": ["./.rnstorybook/preview.tsx"]
+    }
   },
   "extends": "expo/tsconfig.base",
   "include": [".rnstorybook/**/*", ".storybook/**/*", "./*"]

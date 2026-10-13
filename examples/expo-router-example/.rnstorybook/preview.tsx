@@ -1,6 +1,7 @@
-import type { Preview } from '@storybook/react-native';
+import { definePreview } from '@storybook/react-native';
 
-const preview: Preview = {
+export default definePreview({
+  addons: [],
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -11,6 +12,4 @@ const preview: Preview = {
     },
     layout: 'padded',
   },
-};
-
-export default preview;
+});

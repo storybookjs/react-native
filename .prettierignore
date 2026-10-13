@@ -3,6 +3,7 @@ pnpm-lock.yaml
 dist/
 examples/expo-example/.expo
 examples/expo-example/.rnstorybook/storybook.requires.ts
+examples/expo-example/.rnstorybook-nofactories/storybook.requires.ts
 examples/expo-new-wrapper-example/.rnstorybook/storybook.requires.ts
 examples/expo-router-example/.rnstorybook/storybook.requires.ts
 examples/repack-example/.rnstorybook/storybook.requires.ts

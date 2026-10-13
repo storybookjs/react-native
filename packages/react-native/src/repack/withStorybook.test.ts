@@ -1,5 +1,6 @@
 import { StorybookPlugin } from './withStorybook';
 import { createChannelServer } from '../metro/channelServer';
+import * as path from 'path';
 
 jest.mock('../metro/channelServer', () => ({
   createChannelServer: jest.fn(),
@@ -111,12 +112,28 @@ describe('StorybookPlugin experimental_mcp', () => {
   });
 
   test('does not throw when storybook is disabled', () => {
+    const compiler = createCompilerMock() as any;
     const plugin = new StorybookPlugin({
       configPath: '/tmp/.rnstorybook',
       enabled: false,
       experimental_mcp: true,
     });
 
-    expect(() => plugin.apply(createCompilerMock() as any)).not.toThrow();
+    expect(() => plugin.apply(compiler)).not.toThrow();
+    expect(compiler.options.resolve.alias['#.storybook/preview']).toBeDefined();
+  });
+
+  test('aliases #.storybook/preview to {configPath}/preview when enabled', () => {
+    const compiler = createCompilerMock() as any;
+    const plugin = new StorybookPlugin({
+      configPath: '/tmp/.rnstorybook',
+      enabled: true,
+    });
+
+    plugin.apply(compiler);
+
+    expect(compiler.options.resolve.alias['#.storybook/preview']).toBe(
+      path.join('/tmp/.rnstorybook', 'preview')
+    );
   });
 });

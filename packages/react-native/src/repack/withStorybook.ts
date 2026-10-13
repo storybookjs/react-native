@@ -4,6 +4,7 @@ import { createChannelServer } from '../metro/channelServer';
 import type { WebsocketsOptions } from '../types';
 import { envVariableToBoolean, loadWebsocketEnvOverrides } from '../env-tools';
 import { setTelemetryEnabled, telemetry } from 'storybook/internal/telemetry';
+import { DOCUMENTED_PREVIEW_IMPORT } from '../metro/previewAlias';
 
 /**
  * Minimal compiler types for webpack/rspack compatibility.
@@ -234,17 +235,18 @@ export class StorybookPlugin {
       console.log('[StorybookPlugin] Generated storybook.requires');
     });
 
+    const alias = compiler.options.resolve.alias ?? {};
+    alias[DOCUMENTED_PREVIEW_IMPORT] = path.join(configPath, 'preview');
+
     // liteMode: alias @storybook/react-native-ui to false (empty module)
     // but keep @storybook/react-native-ui-lite and @storybook/react-native-ui-common
     if (liteMode) {
-      const alias = compiler.options.resolve.alias ?? {};
-
       // rspack/webpack supports `false` as an alias value to produce an empty module.
       // The `$` suffix ensures exact match so -lite and -common variants are not affected.
       alias['@storybook/react-native-ui$'] = false;
-
-      compiler.options.resolve.alias = alias;
     }
+
+    compiler.options.resolve.alias = alias;
   }
 
   /**
@@ -273,6 +275,7 @@ export class StorybookPlugin {
     // Alias the config folder's index to the stub component
     const alias = compiler.options.resolve.alias ?? {};
     alias[normalizedConfigPath] = stubPath;
+    alias[DOCUMENTED_PREVIEW_IMPORT] = stubPath;
     compiler.options.resolve.alias = alias;
   }
 }

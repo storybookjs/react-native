@@ -95,8 +95,8 @@ export function withStorybook<T extends unknown>(config: T, options: WithStorybo
   });
 
   if (isMetroConfig(config)) {
-    return enhanceMetroConfig(config, { swap, liteMode }) as unknown as T;
+    return enhanceMetroConfig(config, { swap, liteMode, configPath }) as unknown as T;
   }
 
-  return enhanceRepackConfig(config as Record<string, any>, { swap, liteMode }) as T;
+  return enhanceRepackConfig(config as Record<string, any>, { swap, liteMode, configPath }) as T;
 }
