@@ -62,6 +62,44 @@ const loadMain = async ({ configPath, cwd }) => {
 };
 
 /**
+ * Resolves `main.storySorts`, which can be an array or a preset function that returns one.
+ * @param {{ storySorts?: unknown }} main
+ * @returns {Promise<unknown[] | undefined>}
+ */
+async function resolveMainStorySorts(main) {
+  if (typeof main.storySorts === 'function') {
+    return main.storySorts([], {});
+  }
+
+  return main.storySorts;
+}
+
+/**
+ * Serializes `storySorts` into source for the requires file. Comparator functions are written out
+ * from their source, so they can't use anything from outside their own body.
+ * @param {unknown} value
+ * @returns {string}
+ */
+function serializeStorySorts(value) {
+  if (typeof value === 'function') {
+    return `(${value.toString()})`;
+  }
+
+  if (Array.isArray(value)) {
+    return `[${value.map(serializeStorySorts).join(', ')}]`;
+  }
+
+  if (value && typeof value === 'object') {
+    const entries = Object.entries(value).map(
+      ([key, entry]) => `${JSON.stringify(key)}: ${serializeStorySorts(entry)}`
+    );
+    return `{ ${entries.join(', ')} }`;
+  }
+
+  return JSON.stringify(value);
+}
+
+/**
  * Get the local IP address of the machine.
  * @returns The local IP address of the machine.
  */
@@ -110,6 +148,8 @@ async function generate(generateOptions) {
   const main = await loadMain({ configPath, cwd });
 
   warnDeprecatedMainAddonsField(main, configPath);
+
+  const storySorts = await resolveMainStorySorts(main);
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
@@ -267,15 +307,15 @@ ${
 module?.hot?.accept?.();
 ${featuresAssignment ? `\n${featuresAssignment}\n` : ''}
 ${optionsVar}
-
+${storySorts ? `\nconst storySorts${useJs ? '' : ": NonNullable<Parameters<typeof start>[0]['storySorts']>"} = ${serializeStorySorts(storySorts)};\n` : ''}
 if (!globalThis.view) {
   globalThis.view = start({
     annotations,
     storyEntries: normalizedStories,
-${options ? `    ${options},` : ''}
+${options ? `    ${options},` : ''}${storySorts ? '\n    storySorts,' : ''}
   });
 } else {
-  updateView(globalThis.view, annotations, normalizedStories${options ? `, ${options}` : ''});
+  updateView(globalThis.view, annotations, normalizedStories${options ? `, ${options}` : storySorts ? ', undefined' : ''}${storySorts ? ', storySorts' : ''});
 }
 
 export const view${useJs ? '' : ': View'} = globalThis.view;

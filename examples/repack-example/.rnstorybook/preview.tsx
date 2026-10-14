@@ -4,13 +4,6 @@ import { definePreview } from '@storybook/react-native';
 export default definePreview({
   addons: [],
   parameters: {
-    options: {
-      storySort: {
-        method: 'alphabetical',
-        includeNames: true,
-        order: ['ControlExamples', ['ControlExample'], 'InteractionExample', 'DeepControls'],
-      },
-    },
     hideFullScreenButton: false,
     noSafeArea: false,
     my_param: 'anything',

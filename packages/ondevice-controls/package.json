@@ -41,7 +41,7 @@
   "devDependencies": {
     "@gorhom/bottom-sheet": "*",
     "cross-env": "^10.1.0",
-    "storybook": "^10.6.0",
+    "storybook": "^11.0.0-alpha.6",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
@@ -50,7 +50,7 @@
     "@react-native-community/slider": "*",
     "react": "*",
     "react-native": "*",
-    "storybook": "^10.5.4"
+    "storybook": "^11.0.0-alpha.6"
   },
   "peerDependenciesMeta": {
     "@gorhom/bottom-sheet": {

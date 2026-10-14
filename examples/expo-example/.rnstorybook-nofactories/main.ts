@@ -16,6 +16,13 @@ const main: StorybookConfig = {
     '@storybook/addon-ondevice-notes',
     'storybook-addon-deep-controls',
   ],
+  storySorts: [
+    {
+      method: 'alphabetical',
+      includeNames: true,
+      order: ['ControlExamples', ['ControlExample'], 'InteractionExample', 'DeepControls'],
+    },
+  ],
   reactNative: {
     playFn: false,
   },

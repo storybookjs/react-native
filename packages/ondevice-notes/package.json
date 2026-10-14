@@ -35,16 +35,16 @@
   "devDependencies": {
     "react-native-enriched-markdown": "^1.0.2",
     "react-native-markdown-display": "^7.0.2",
-    "storybook": "^10.6.0",
+    "storybook": "^11.0.0-alpha.6",
     "tsdown": "^0.22.12",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
-    "@storybook/react": "^10",
+    "@storybook/react": "^11.0.0-alpha.6",
     "react": "*",
     "react-native": "*",
     "react-native-enriched-markdown": "^1.0.2",
-    "storybook": "^10.5.4"
+    "storybook": "^11.0.0-alpha.6"
   },
   "peerDependenciesMeta": {
     "react-native-enriched-markdown": {
