@@ -19,28 +19,6 @@ const path = require('path');
 
 const cwd = process.cwd();
 
-const MAIN_ADDONS_URL =
-  'https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#on-device-addons-must-be-listed-in-deviceaddons';
-
-function rejectLegacyMainAddons(main, configPath) {
-  const addons = Array.isArray(main.addons) ? main.addons : [];
-  if (addons.length === 0) {
-    return;
-  }
-
-  const names = addons
-    .map((addon) => getAddonName(addon))
-    .filter((name) => typeof name === 'string');
-  const list = [...new Set(names)].join(', ');
-  throw new Error(
-    `[Storybook React Native] The \`addons\` field in ${configPath} is no longer read.\n` +
-      `Move every entry into \`deviceAddons\`, including \`@storybook/addon-ondevice-*\`, other addons bundled with the app, and local paths.\n` +
-      `The Storybook CLI automigration \`rn-ondevice-addons-to-device-addons\` renames \`addons\` when \`deviceAddons\` is not already set.\n` +
-      (list ? `Still listed under \`addons\`: ${list}.\n` : '') +
-      `Details: ${MAIN_ADDONS_URL}`
-  );
-}
-
 const loadMain = async ({ configPath, cwd }) => {
   try {
     const main = await loadMainConfig({ configDir: configPath, cwd });
@@ -103,8 +81,6 @@ async function generate(generateOptions) {
   );
 
   const main = await loadMain({ configPath, cwd });
-
-  rejectLegacyMainAddons(main, configPath);
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,

@@ -290,36 +290,21 @@ describe('loader', () => {
     });
 
     describe('when main.addons is set', () => {
-      it('throws before writing when addons is the only list', async () => {
+      it('does not import entries from addons', async () => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-        await assert.rejects(
-          () => generate({ configPath: 'scripts/mocks/legacy-ondevice-in-addons' }),
-          (error) => {
-            assert.match(error.message, /no longer read/);
-            assert.match(error.message, /deviceAddons/);
-            assert.match(error.message, /rn-ondevice-addons-to-device-addons/);
-            assert.match(error.message, /@storybook\/addon-ondevice-controls/);
-            return true;
-          }
-        );
+        await generate({ configPath: 'scripts/mocks/legacy-ondevice-in-addons' });
         mock.reset();
 
-        assert.strictEqual(pathMock, undefined);
+        assert.ok(!fileContentMock.includes('@storybook/addon-ondevice-controls'));
       });
 
-      it('throws before writing when addons and deviceAddons are both set', async () => {
+      it('imports deviceAddons and ignores addons when both are set', async () => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-        await assert.rejects(
-          () => generate({ configPath: 'scripts/mocks/mixed-addons' }),
-          (error) => {
-            assert.match(error.message, /no longer read/);
-            assert.match(error.message, /__storybook_generate_test_nonexistent_addon__/);
-            return true;
-          }
-        );
+        await generate({ configPath: 'scripts/mocks/mixed-addons' });
         mock.reset();
 
-        assert.strictEqual(pathMock, undefined);
+        assert.ok(fileContentMock.includes('@storybook/addon-ondevice-controls/register'));
+        assert.ok(!fileContentMock.includes('@storybook/addon-ondevice-notes'));
       });
     });
   });

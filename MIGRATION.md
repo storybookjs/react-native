@@ -58,7 +58,7 @@
 
 ### On-device addons must be listed in `deviceAddons`
 
-`.rnstorybook/main.ts` no longer reads `addons`. Generation fails while that field still contains entries, and those addons are not written into `storybook.requires`.
+`.rnstorybook/main.ts` no longer reads `addons`. Entries left there are ignored and are not written into `storybook.requires`.
 
 Move every entry into `deviceAddons`. That includes `@storybook/addon-ondevice-*`, other addons you bundle with the app, and local paths. A web Storybook config, such as `@storybook/react-native-web-vite` in `.storybook/main.ts`, keeps its own `addons` field. `definePreview({ addons })` is also unchanged: that array is preview annotations, not the main-config list.
 
