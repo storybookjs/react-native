@@ -52,8 +52,7 @@ export default main;
   - `directory`: Base directory for stories
   - `titlePrefix`: Optional prefix for story titles
   - `files`: Glob pattern for story files
-- `deviceAddons`: Array of on-device addon packages (recommended for `@storybook/addon-ondevice-*` packages). These are loaded only at runtime on the device and are not evaluated as presets by Storybook Core, avoiding errors during server-side operations like `extract`.
-- `addons`: Array of addon packages evaluated as Storybook presets. On-device addons listed here still work for backwards compatibility, but `deviceAddons` is preferred.
+- `deviceAddons`: Array of on-device addon packages (`@storybook/addon-ondevice-*` and any other addon bundled with the app). These are loaded only at runtime on the device and are not evaluated as presets by Storybook Core, avoiding errors during server-side operations like `extract`.
 - `features`: Enable new functionality (see [Feature Flags](./feature-flags.md))
 
 ## preview.tsx

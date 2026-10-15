@@ -141,7 +141,7 @@ export default main;
 ```
 
 :::tip[Automigration available]
-If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` automigration handles this step automatically. Any addon with "ondevice" in its name is moved to `deviceAddons`.
+If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` automigration renames the `addons` field to `deviceAddons` when `deviceAddons` is not already set. Version 11 does not read `addons` in `.rnstorybook`.
 
 ```sh
 npx storybook automigrate
