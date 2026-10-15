@@ -1,6 +1,8 @@
 # Migration
 
 - [Migration](#migration)
+  - [From version 10 to 11](#from-version-10-to-11)
+    - [On-device addons must be listed in `deviceAddons`](#on-device-addons-must-be-listed-in-deviceaddons)
   - [From version 10.3 to 10.4](#from-version-103-to-104)
     - [Update your metro config](#update-your-metro-config)
     - [Simplify your App.tsx (or Expo Router routes)](#simplify-your-apptsx-or-expo-router-routes)
@@ -51,6 +53,36 @@
     - [Theming](#theming)
     - [Test ids for tabs](#test-ids-for-tabs)
     - [The server](#the-server)
+
+## From version 10 to 11
+
+### On-device addons must be listed in `deviceAddons`
+
+`.rnstorybook/main.ts` no longer reads `addons`. Generation fails while that field still contains entries, and those addons are not written into `storybook.requires`.
+
+Move every entry into `deviceAddons`. That includes `@storybook/addon-ondevice-*`, other addons you bundle with the app, and local paths. A web Storybook config, such as `@storybook/react-native-web-vite` in `.storybook/main.ts`, keeps its own `addons` field. `definePreview({ addons })` is also unchanged: that array is preview annotations, not the main-config list.
+
+```ts
+// Before (.rnstorybook/main.ts)
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  addons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+};
+
+// After
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+};
+```
+
+If `deviceAddons` is not set yet, the Storybook CLI automigration `rn-ondevice-addons-to-device-addons` renames the field for you:
+
+```sh
+npx storybook automigrate
+```
+
+When both fields are already set, that automigration leaves the file alone so it does not overwrite `deviceAddons`. Move the remaining `addons` entries yourself.
 
 ## From version 10.3 to 10.4
 
@@ -212,7 +244,7 @@ const main: StorybookConfig = {
 };
 ```
 
-For backwards compatibility, on-device addons in the `addons` array still work — they're detected by the "ondevice" substring in their name. If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` automigration handles this step automatically.
+In 10.4, entries left in `addons` were still loaded. Version 11 [stops reading that field](#on-device-addons-must-be-listed-in-deviceaddons). The Storybook CLI automigration `rn-ondevice-addons-to-device-addons` renames the whole `addons` key to `deviceAddons` when `deviceAddons` is not already set.
 
 ### Summary of breaking changes
 
@@ -234,7 +266,7 @@ For backwards compatibility, on-device addons in the `addons` array still work �
 
 5. **`deviceAddons` property:**
    - On-device addons should use the new `deviceAddons` property in `main.ts`
-   - Backwards compatible — `addons` still works for on-device addons
+   - In 10.4, `addons` was still loaded. Version 11 no longer reads it.
 
 Version 10.4 introduces entry-point swapping through a bundler-agnostic `withStorybook` wrapper. This lets you switch between your app and Storybook at the bundler entry level, without importing Storybook inside `App.tsx`.
 

@@ -19,17 +19,11 @@ const path = require('path');
 
 const cwd = process.cwd();
 
-const MAIN_ADDONS_DEPRECATION_URL =
-  'https://github.com/storybookjs/react-native/blob/main/MIGRATION.md#deprecating-addons-in-rnstorybook-main';
+const MAIN_ADDONS_URL =
+  'https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#on-device-addons-must-be-listed-in-deviceaddons';
 
-/**
- * @param {{ addons?: unknown[] }} main
- * @param {string} configPath
- *
- * @todo Remove support for `main.addons` in a future major version.
- */
-function warnDeprecatedMainAddonsField(main, configPath) {
-  const addons = main.addons ?? [];
+function rejectLegacyMainAddons(main, configPath) {
+  const addons = Array.isArray(main.addons) ? main.addons : [];
   if (addons.length === 0) {
     return;
   }
@@ -38,11 +32,12 @@ function warnDeprecatedMainAddonsField(main, configPath) {
     .map((addon) => getAddonName(addon))
     .filter((name) => typeof name === 'string');
   const list = [...new Set(names)].join(', ');
-  console.warn(
-    `[Storybook React Native] The \`addons\` field in your main config (${configPath}) is deprecated and will be removed in a future major version.\n` +
-      `Move every entry to \`deviceAddons\` instead. That includes on-device UI packages (\`@storybook/addon-ondevice-*\`), other addons you bundle with the app (for example storybook-addon-deep-controls), and local paths such as ./my-addon.\n` +
+  throw new Error(
+    `[Storybook React Native] The \`addons\` field in ${configPath} is no longer read.\n` +
+      `Move every entry into \`deviceAddons\`, including \`@storybook/addon-ondevice-*\`, other addons bundled with the app, and local paths.\n` +
+      `The Storybook CLI automigration \`rn-ondevice-addons-to-device-addons\` renames \`addons\` when \`deviceAddons\` is not already set.\n` +
       (list ? `Still listed under \`addons\`: ${list}.\n` : '') +
-      `Details: ${MAIN_ADDONS_DEPRECATION_URL}`
+      `Details: ${MAIN_ADDONS_URL}`
   );
 }
 
@@ -109,7 +104,7 @@ async function generate(generateOptions) {
 
   const main = await loadMain({ configPath, cwd });
 
-  warnDeprecatedMainAddonsField(main, configPath);
+  rejectLegacyMainAddons(main, configPath);
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
@@ -138,10 +133,7 @@ async function generate(generateOptions) {
 
   const registeredAddons = [];
 
-  const allAddons = [
-    ...(main.addons ?? []), // TODO remove in v11
-    ...(main.deviceAddons ?? []),
-  ];
+  const allAddons = main.deviceAddons ?? [];
 
   for (const addon of allAddons) {
     const registerPath = resolveAddonFile(
