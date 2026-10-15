@@ -506,6 +506,8 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
     };
     // show the onDevice UI
     onDeviceUI?: boolean;
+    // retain the story index's top-level depth in the on-device tree
+    preserveTreeDepth?: boolean;
     // enable websockets for the Storybook UI
     enableWebsockets?: boolean;
     // query params for the websocket connection
