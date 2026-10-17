@@ -12,8 +12,6 @@ import {
 import { sortStoriesV7, userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
 import { getFilePathWithExtension } from '../../scripts/common';
 
-const cwd = process.cwd();
-
 const makeTitle = (fileName: string, specifier: NormalizedStoriesSpecifier, userTitle: string) => {
   const title = userOrAutoTitleFromSpecifier(fileName, specifier, userTitle);
 
@@ -32,6 +30,8 @@ function ensureRelativePathHasDot(relativePath: string) {
 }
 
 export async function buildIndex({ configPath }: { configPath: string }): Promise<StoryIndex> {
+  // Read per call rather than at import time so a CLI can change directory first.
+  const cwd = process.cwd();
   const main = await loadMainConfig({ configDir: configPath, cwd });
   if (!main.stories || !Array.isArray(main.stories)) {
     throw new Error('No stories found');
@@ -44,7 +44,7 @@ export async function buildIndex({ configPath }: { configPath: string }): Promis
 
   const specifierStoryPaths = storiesSpecifiers.map((specifier) => {
     return globSync(specifier.files, {
-      cwd: path.resolve(process.cwd(), specifier.directory),
+      cwd: path.resolve(cwd, specifier.directory),
       absolute: true,
       // default to always ignore (exclude) anything in node_modules
       ignore: ['**/node_modules'],
