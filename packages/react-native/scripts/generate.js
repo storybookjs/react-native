@@ -19,33 +19,6 @@ const path = require('path');
 
 const cwd = process.cwd();
 
-const MAIN_ADDONS_DEPRECATION_URL =
-  'https://github.com/storybookjs/react-native/blob/main/MIGRATION.md#deprecating-addons-in-rnstorybook-main';
-
-/**
- * @param {{ addons?: unknown[] }} main
- * @param {string} configPath
- *
- * @todo Remove support for `main.addons` in a future major version.
- */
-function warnDeprecatedMainAddonsField(main, configPath) {
-  const addons = main.addons ?? [];
-  if (addons.length === 0) {
-    return;
-  }
-
-  const names = addons
-    .map((addon) => getAddonName(addon))
-    .filter((name) => typeof name === 'string');
-  const list = [...new Set(names)].join(', ');
-  console.warn(
-    `[Storybook React Native] The \`addons\` field in your main config (${configPath}) is deprecated and will be removed in a future major version.\n` +
-      `Move every entry to \`deviceAddons\` instead. That includes on-device UI packages (\`@storybook/addon-ondevice-*\`), other addons you bundle with the app (for example storybook-addon-deep-controls), and local paths such as ./my-addon.\n` +
-      (list ? `Still listed under \`addons\`: ${list}.\n` : '') +
-      `Details: ${MAIN_ADDONS_DEPRECATION_URL}`
-  );
-}
-
 const loadMain = async ({ configPath, cwd }) => {
   try {
     const main = await loadMainConfig({ configDir: configPath, cwd });
@@ -109,8 +82,6 @@ async function generate(generateOptions) {
 
   const main = await loadMain({ configPath, cwd });
 
-  warnDeprecatedMainAddonsField(main, configPath);
-
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
     workingDir: cwd,
@@ -138,10 +109,7 @@ async function generate(generateOptions) {
 
   const registeredAddons = [];
 
-  const allAddons = [
-    ...(main.addons ?? []), // TODO remove in v11
-    ...(main.deviceAddons ?? []),
-  ];
+  const allAddons = main.deviceAddons ?? [];
 
   for (const addon of allAddons) {
     const registerPath = resolveAddonFile(

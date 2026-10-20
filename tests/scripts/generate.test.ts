@@ -289,55 +289,22 @@ describe('loader', () => {
       });
     });
 
-    describe('when addons are split between addons and deviceAddons', () => {
-      it('writes imports from both addons and deviceAddons', async (t) => {
-        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-        await generate({ configPath: 'scripts/mocks/mixed-addons' });
-        mock.reset();
-
-        assert.strictEqual(
-          pathMock,
-          path.resolve(__dirname, 'mocks/mixed-addons/storybook.requires.ts')
-        );
-        t.assert.snapshot(fileContentMock);
-      });
-
-      it('logs a deprecation warning when addons is non-empty', async () => {
-        const warn = mock.method(console, 'warn', mock.fn());
-        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-        await generate({ configPath: 'scripts/mocks/mixed-addons' });
-        mock.reset();
-
-        assert.strictEqual(warn.mock.callCount(), 1);
-        const msg = String(warn.mock.calls[0].arguments[0]);
-        assert.ok(msg.includes('deprecated'));
-        assert.ok(msg.includes('deviceAddons'));
-        assert.ok(msg.includes('deprecating-addons-in-rnstorybook-main'));
-      });
-    });
-
-    describe('legacy on-device addons under main.addons', () => {
-      it('logs a deprecation warning', async () => {
-        const warn = mock.method(console, 'warn', mock.fn());
+    describe('when main.addons is set', () => {
+      it('does not import entries from addons', async () => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({ configPath: 'scripts/mocks/legacy-ondevice-in-addons' });
         mock.reset();
 
-        assert.strictEqual(warn.mock.callCount(), 1);
-        const msg = String(warn.mock.calls[0].arguments[0]);
-        assert.ok(msg.includes('deprecated'));
-        assert.ok(msg.includes('deviceAddons'));
-        assert.ok(msg.includes('@storybook/addon-ondevice-controls'));
-        assert.ok(msg.includes('deprecating-addons-in-rnstorybook-main'));
+        assert.ok(!fileContentMock.includes('@storybook/addon-ondevice-controls'));
       });
 
-      it('does not warn when on-device addons are only in deviceAddons', async () => {
-        const warn = mock.method(console, 'warn', mock.fn());
+      it('imports deviceAddons and ignores addons when both are set', async () => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-        await generate({ configPath: 'scripts/mocks/device-addons' });
+        await generate({ configPath: 'scripts/mocks/mixed-addons' });
         mock.reset();
 
-        assert.strictEqual(warn.mock.callCount(), 0);
+        assert.ok(fileContentMock.includes('@storybook/addon-ondevice-controls/register'));
+        assert.ok(!fileContentMock.includes('@storybook/addon-ondevice-notes'));
       });
     });
   });
