@@ -1,5 +1,22 @@
 # @storybook/react-native
 
+## 11.0.0-next.1
+
+### Major Changes
+
+- [#932](https://github.com/storybookjs/react-native/pull/932) [`ae7bf63`](https://github.com/storybookjs/react-native/commit/ae7bf6380244d1bc348283815a19892bcf4f3e2c) Thanks [@ndelangen](https://github.com/ndelangen)! - `.rnstorybook` main configs no longer load addons from `addons`. List them in `deviceAddons`. The Storybook CLI automigration `rn-ondevice-addons-to-device-addons` renames the field when `deviceAddons` is not already set. `definePreview({ addons })` is unchanged.
+
+### Patch Changes
+
+- [#931](https://github.com/storybookjs/react-native/pull/931) [`daf48e2`](https://github.com/storybookjs/react-native/commit/daf48e203854b00385d37c2c11f5db9f6ce64fa6) Thanks [@dannyhw](https://github.com/dannyhw)! - Storybook React Native now requires Storybook 11. Update `storybook`, `@storybook/react` and the other Storybook packages to 11.x.
+
+  Story sorting moves to `storySorts` in `.rnstorybook/main.ts`, following Storybook 11. Each sorter only orders the stories that the sorters before it consider equal. `parameters.options.storySort` in preview is no longer read; run `npx storybook automigrate story-sort-to-main --config-dir .rnstorybook` to move it. See the migration guide for details.
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@11.0.0-next.1
+  - @storybook/react-native-ui-common@11.0.0-next.1
+  - @storybook/react-native-theming@11.0.0-next.1
+
 ## 11.0.0-next.0
 
 ### Major Changes
