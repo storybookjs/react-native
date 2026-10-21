@@ -9,6 +9,13 @@ export default defineMain({
     'storybook-addon-deep-controls',
   ],
 
+  storySorts: [
+    {
+      method: 'alphabetical',
+      includeNames: true,
+      order: ['ControlExamples', ['ControlExample'], 'InteractionExample', 'DeepControls'],
+    },
+  ],
   features: {
     ondeviceBackgrounds: true,
   },

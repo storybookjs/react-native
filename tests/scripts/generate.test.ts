@@ -275,6 +275,141 @@ describe('loader', () => {
       });
     });
 
+    describe('when storySorts are provided in main', () => {
+      it('writes storySorts and passes them to start and updateView', async (t) => {
+        const warn = mock.method(console, 'warn', mock.fn());
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-story-sorts' });
+        mock.reset();
+
+        assert.ok(fileContentMock.includes('const storySorts'));
+        assert.ok(fileContentMock.includes('"order": ["Introduction", "Components"]'));
+        assert.ok(fileContentMock.includes('localeCompare'));
+        assert.ok(fileContentMock.includes('    storySorts,'));
+        assert.ok(fileContentMock.includes(', options, storySorts);'));
+        assert.strictEqual(warn.mock.callCount(), 0);
+        t.assert.snapshot(fileContentMock);
+      });
+
+      it('writes storySorts without types in js', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-story-sorts', useJs: true });
+        mock.reset();
+
+        assert.ok(fileContentMock.includes('const storySorts = ['));
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('storySorts serialization', () => {
+      // Evaluates the `storySorts` the requires file declares, as the device would.
+      const evaluateStorySorts = (fileContent: string) => {
+        const match = fileContent.match(
+          /const storySorts = ([\s\S]*?);\n\nif \(!globalThis\.view\)/
+        );
+        assert.ok(match, 'storySorts declaration not found');
+        return new Function(`return ${match[1]};`)();
+      };
+
+      const story = (title: string, name: string) => ({
+        id: `${title}--${name}`.toLowerCase(),
+        title,
+        name,
+      });
+
+      it('round-trips objects, arrays and comparator functions', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/story-sorts-variants', useJs: true });
+        mock.reset();
+
+        const { default: main } = await import('./mocks/story-sorts-variants/main.js');
+        const storySorts = evaluateStorySorts(fileContentMock);
+
+        assert.strictEqual(storySorts.length, main.storySorts.length);
+        assert.deepStrictEqual(storySorts[0], main.storySorts[0]);
+        assert.deepStrictEqual(storySorts[1], main.storySorts[1]);
+
+        const pairs = [
+          [story('Components/Button', 'Primary'), story('Intro', 'Welcome')],
+          [story('Intro', 'Welcome'), story('Components/Button', 'Primary')],
+          [story('Hooks', 'Basic'), story('Hooks', 'Advanced')],
+        ];
+        for (const index of [2, 3, 4]) {
+          assert.strictEqual(typeof storySorts[index], 'function');
+          for (const [a, b] of pairs) {
+            assert.strictEqual(storySorts[index](a, b), main.storySorts[index](a, b));
+          }
+        }
+      });
+
+      it('types comparator parameters in the ts requires file', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/story-sorts-variants' });
+        mock.reset();
+
+        const declaration = fileContentMock.match(/const storySorts: [\s\S]*?;\n\nif/)?.[0];
+        assert.ok(declaration, 'typed storySorts declaration not found');
+
+        const ts = require('typescript');
+        const fileName = path.resolve(__dirname, 'mocks/story-sorts-variants/storySorts.check.ts');
+        const source = `import { start } from '@storybook/react-native';\n${declaration.replace(/\n\nif$/, '')}\nexport { storySorts };\n`;
+        const host = ts.createCompilerHost({});
+        const readFile = host.readFile;
+        host.readFile = (file: string) => (file === fileName ? source : readFile(file));
+        host.fileExists = (
+          (fileExists) => (file: string) =>
+            file === fileName || fileExists(file)
+        )(host.fileExists);
+        const program = ts.createProgram(
+          [fileName],
+          {
+            strict: true,
+            noEmit: true,
+            skipLibCheck: true,
+            jsx: ts.JsxEmit.ReactNative,
+            module: ts.ModuleKind.ESNext,
+            moduleResolution: ts.ModuleResolutionKind.Bundler,
+            target: ts.ScriptTarget.ESNext,
+          },
+          host
+        );
+        const diagnostics = ts
+          .getPreEmitDiagnostics(program)
+          .filter(
+            (diagnostic: { file?: { fileName: string } }) => diagnostic.file?.fileName === fileName
+          )
+          .map((diagnostic: { messageText: unknown }) =>
+            ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n')
+          );
+
+        assert.deepStrictEqual(diagnostics, []);
+      });
+
+      it('resolves a preset function in main', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/story-sorts-preset', useJs: true });
+        mock.reset();
+
+        assert.deepStrictEqual(evaluateStorySorts(fileContentMock), [
+          { order: ['Intro'] },
+          { method: 'alphabetical' },
+        ]);
+      });
+
+      it('does not declare storySorts when main has none', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/all-config-files' });
+        mock.reset();
+
+        assert.ok(!fileContentMock.includes('storySorts'));
+        assert.ok(
+          fileContentMock.includes(
+            'updateView(globalThis.view, annotations, normalizedStories, options);'
+          )
+        );
+      });
+    });
+
     describe('when addons are in deviceAddons', () => {
       it('writes the addon imports from deviceAddons', async (t) => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
