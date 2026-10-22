@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "^11.0.0-alpha.6",
+    "@storybook/react": "^11.0.0-alpha.7",
     "@storybook/react-native-theming": "^11.0.0-next.1",
     "es-toolkit": "^1.49.0",
     "memoizerific": "^1.11.3",
@@ -43,14 +43,14 @@
   "devDependencies": {
     "@types/react": "~19.2.14",
     "react-native": "0.86.3",
-    "storybook": "^11.0.0-alpha.6",
+    "storybook": "^11.0.0-alpha.7",
     "tsdown": "^0.22.12",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": ">=0.57.0",
-    "storybook": "^11.0.0-alpha.6"
+    "storybook": "^11.0.0-alpha.7"
   },
   "engines": {
     "node": ">=20.0.0"

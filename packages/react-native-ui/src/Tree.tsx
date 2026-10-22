@@ -2,7 +2,7 @@ import type {
   ComponentEntry,
   GroupEntry,
   State,
-  StoriesHash,
+  IndexHash,
   StoryEntry,
 } from 'storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
@@ -196,7 +196,7 @@ export const Tree = React.memo<{
   isMain: boolean;
   status?: State['status'];
   refId: string;
-  data: StoriesHash;
+  data: IndexHash;
   docsMode: boolean;
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
