@@ -13,7 +13,6 @@ import type {
   DocsOptions,
   IndexEntry,
   StatusesByStoryIdAndTypeId,
-  StoryIndexV2,
   StoryIndexV3,
   Tag,
 } from 'storybook/internal/types';
@@ -125,15 +124,19 @@ export const noArrayMerge = <TObj = any>(a: TObj, ...b: Partial<TObj>[]): TObj =
 const TITLE_PATH_SEPARATOR = /\s*\/\s*/;
 
 export const transformStoryIndexToStoriesHash = (
-  input: API_PreparedStoryIndex | StoryIndexV2 | StoryIndexV3,
+  input: API_PreparedStoryIndex | StoryIndexV3,
   { provider, docsOptions, filters, allStatuses }: ToStoriesHashOptions
 ): API_IndexHash | any => {
   if (!input.v) {
     throw new Error('Composition: Missing stories.json version');
   }
+  if (input.v < 3) {
+    throw new Error(
+      `Unsupported story index version: v${input.v}. Storybook 11 requires index version 3 or later.`
+    );
+  }
 
   let index = input;
-  index = index.v === 2 ? transformStoryIndexV2toV3(index as any) : index;
   index = index.v === 3 ? transformStoryIndexV3toV4(index as any) : index;
   index = index.v === 4 ? transformStoryIndexV4toV5(index as any) : index;
   index = index as API_PreparedStoryIndex;
@@ -295,25 +298,6 @@ export const transformStoryIndexToStoriesHash = (
   return Object.values(storiesHashOutOfOrder)
     .filter((i: any) => i.type === 'root')
     .reduce(addItem, orphanHash);
-};
-
-export const transformStoryIndexV2toV3 = (index: StoryIndexV2): StoryIndexV3 => {
-  return {
-    v: 3,
-    stories: Object.values(index.stories).reduce(
-      (acc, entry) => {
-        acc[entry.id] = {
-          ...entry,
-          title: entry.kind,
-          name: entry.name || entry.story,
-          importPath: entry.parameters.fileName || '',
-        };
-
-        return acc;
-      },
-      {} as StoryIndexV3['stories']
-    ),
-  };
 };
 
 export const transformStoryIndexV3toV4 = (index: StoryIndexV3): API_PreparedStoryIndex => {
