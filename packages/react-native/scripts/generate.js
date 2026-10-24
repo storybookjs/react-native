@@ -61,6 +61,17 @@ const loadMain = async ({ configPath, cwd }) => {
   return interopRequireDefault(mainPath);
 };
 
+const identifierPattern = /^[A-Za-z_$][A-Za-z0-9_$]*$/;
+
+/**
+ * Write a feature flag key so it cannot break out of the object literal it is written into.
+ * @param {string} key
+ * @returns The key as it should appear in the generated source.
+ */
+function featureKey(key) {
+  return identifierPattern.test(key) ? key : JSON.stringify(key);
+}
+
 /**
  * Get the local IP address of the machine.
  * @returns The local IP address of the machine.
@@ -191,7 +202,7 @@ async function generate(generateOptions) {
     options = 'options';
   }
 
-  // Collect features from main config to set on globalThis.FEATURES
+  // Collect features from main config to merge into globalThis.FEATURES
   let featuresAssignment = '';
   const features = main.features;
 
@@ -201,10 +212,15 @@ async function generate(generateOptions) {
     );
 
     if (featureEntries.length > 0) {
-      const assignments = featureEntries
-        .map(([key, value]) => `globalThis.FEATURES.${key} = ${value};`)
+      const entries = featureEntries
+        .map(([key, value]) => `  ${featureKey(key)}: ${value},`)
         .join('\n');
-      featuresAssignment = assignments;
+      // The object is replaced rather than written into because with inlineRequires this file is
+      // evaluated before @storybook/react-native creates the FEATURES object
+      featuresAssignment = `globalThis.FEATURES = {
+  ...globalThis.FEATURES,
+${entries}
+};`;
     }
   }
 
