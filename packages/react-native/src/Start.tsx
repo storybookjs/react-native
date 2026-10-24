@@ -11,6 +11,7 @@ import './polyfill';
 
 import type { ReactRenderer } from '@storybook/react';
 import { Channel } from 'storybook/internal/channels';
+import { STORY_RENDER_PHASE_CHANGED } from 'storybook/internal/core-events';
 import type {
   Addon_StorySortParameterV7,
   Args,
@@ -20,6 +21,7 @@ import type {
   ProjectAnnotations,
 } from 'storybook/internal/types';
 import { View } from './View';
+import { remountStoryRoot, waitForStoryRoot } from './components/StoryView/storyRoot';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
 export { prepareStories, type ReactNativeOptions } from './prepareStories';
 
@@ -42,6 +44,9 @@ const createPreviewRoot = (): ReactRenderer['canvasElement'] =>
 const getReactNativeProjectAnnotations = (getView: () => View | undefined) =>
   ({
     renderToCanvas: (context) => {
+      if (globalThis.FEATURES?.ondeviceInteractions && context.forceRemount) {
+        remountStoryRoot();
+      }
       getView()?._setStory(context.storyContext);
     },
     render: (args, context) => {
@@ -57,6 +62,29 @@ const getReactNativeProjectAnnotations = (getView: () => View | undefined) =>
     },
   }) satisfies ProjectAnnotations<ReactRenderer>;
 
+type Mount = NonNullable<ProjectAnnotations<ReactRenderer>['mount']>;
+
+/**
+ * Gives play functions the story's root host element as `canvasElement`, so they can query it and
+ * dispatch events on it. `mount()` resolves with the same element: React Native has no DOM for
+ * Testing Library's `within(canvasElement)` queries, which the web returns.
+ */
+const interactionsProjectAnnotations = {
+  mount: ((context) => async () => {
+    await context.renderToCanvas();
+    const root = await waitForStoryRoot(context.id);
+    // The ref attaches before the story's effects run, so wait a tick for them.
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    context.canvasElement = root as ReactRenderer['canvasElement'];
+    return root;
+  }) as Mount,
+} satisfies ProjectAnnotations<ReactRenderer>;
+
+const getBuiltInProjectAnnotations = (getView: () => View | undefined) =>
+  globalThis.FEATURES?.ondeviceInteractions
+    ? [getReactNativeProjectAnnotations(getView), interactionsProjectAnnotations]
+    : [getReactNativeProjectAnnotations(getView)];
+
 /**
  * Since we aren't supporting  these web addons yet in react native (or reimplement them) then we should disable them
  * to avoid running code for addons that are not supported.
@@ -69,6 +97,13 @@ globalThis.FEATURES = Object.assign(globalThis.FEATURES ?? {}, {
   highlight: false,
   backgrounds: false,
 });
+
+/** The parts of Storybook's `StoryRender`, which isn't exported, that cancelling a run uses. */
+type RunnableRender = {
+  renderId: number;
+  isPending: () => boolean;
+  cancelRender: () => void;
+};
 
 type TeardownRenderArgs = Parameters<PreviewWithSelection<ReactRenderer>['teardownRender']>;
 
@@ -100,6 +135,48 @@ class ReactNativePreview extends PreviewWithSelection<ReactRenderer> {
 
     await super.teardownRender(render, options);
   }
+
+  private forceRemountId = 0;
+
+  // Storybook's `StoryRender.remount()` waits for a running play function by reloading the page, so
+  // pressing Rerun in the Interactions panel during a run would wait forever. Cancel the run, wait
+  // for it to end and then remount. When remounts come in quick succession, only the last one runs.
+  async onForceRemount({ storyId }: { storyId: string }) {
+    if (!globalThis.FEATURES?.ondeviceInteractions) {
+      return super.onForceRemount({ storyId });
+    }
+
+    const forceRemountId = ++this.forceRemountId;
+    // Docs renders don't have play functions, so only story renders are rerun.
+    const renders = this.storyRenders.flatMap((render) =>
+      render.id === storyId && 'remount' in render ? [render] : []
+    );
+    await Promise.all(renders.map((render) => cancelRun(this.channel, render)));
+    if (forceRemountId !== this.forceRemountId) return;
+    await Promise.all(renders.map((render) => render.remount()));
+  }
+}
+
+/**
+ * Cancels a story's run and resolves once it has ended. A cancelled run ends with an "aborted",
+ * "errored" or "finished" phase change as soon as its play function returns.
+ */
+function cancelRun(channel: Channel, render: RunnableRender) {
+  if (!render.isPending()) return Promise.resolve();
+
+  return new Promise<void>((resolve) => {
+    const onPhaseChanged = ({ renderId, newPhase }: { renderId: number; newPhase: string }) => {
+      if (renderId !== render.renderId || !['aborted', 'errored', 'finished'].includes(newPhase)) {
+        return;
+      }
+      channel.off(STORY_RENDER_PHASE_CHANGED, onPhaseChanged);
+      // The phase change is emitted from inside `StoryRender.render()`, which still updates the
+      // render before returning, so remount after it.
+      setTimeout(resolve, 0);
+    };
+    channel.on(STORY_RENDER_PHASE_CHANGED, onPhaseChanged);
+    render.cancelRender();
+  });
 }
 
 // Note this is a workaround for setImmediate not being defined
@@ -110,7 +187,7 @@ if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
 export const getProjectAnnotations =
   (view: View, annotations: ModuleExports[]) =>
   async (): Promise<NormalizedProjectAnnotations<ReactRenderer>> =>
-    composeConfigs<ReactRenderer>([getReactNativeProjectAnnotations(() => view), ...annotations]);
+    composeConfigs<ReactRenderer>([...getBuiltInProjectAnnotations(() => view), ...annotations]);
 
 export function start({
   annotations,
@@ -139,6 +216,11 @@ export function start({
   if (globalThis.FEATURES?.ondeviceBackgrounds) {
     const { registerBackgroundsAddon } = require('./backgrounds/register');
     registerBackgroundsAddon();
+  }
+
+  if (globalThis.FEATURES?.ondeviceInteractions) {
+    const { registerInteractionsAddon } = require('./interactions/register');
+    registerInteractionsAddon();
   }
 
   const previewView = {
@@ -173,8 +255,7 @@ export function start({
 
   const getProjectAnnotationsInitial = async (): Promise<
     NormalizedProjectAnnotations<ReactRenderer>
-  > =>
-    composeConfigs<ReactRenderer>([getReactNativeProjectAnnotations(() => view), ...annotations]);
+  > => composeConfigs<ReactRenderer>([...getBuiltInProjectAnnotations(() => view), ...annotations]);
 
   const preview: PreviewWithSelection<ReactRenderer> = new ReactNativePreview(
     async (importPath: string) => importMap[importPath],

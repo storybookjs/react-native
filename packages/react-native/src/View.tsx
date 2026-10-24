@@ -239,7 +239,10 @@ export class View {
     const url = `${websocketType}://${host}${port}/${query}`;
 
     const channel = new Channel({
-      async: true,
+      // The Interactions panel needs events delivered to local listeners synchronously, like on the
+      // web. Otherwise the instrumenter sees the "playing" phase after the play function has
+      // started, and drops its first calls.
+      async: !globalThis.FEATURES?.ondeviceInteractions,
       transport: new WebsocketTransport({
         url,
         onError: (e) => {
