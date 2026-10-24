@@ -9,5 +9,6 @@ module.exports = {
   __esModule: true,
   default: renderChildren(),
   BottomSheetBackdrop: jest.fn(() => null),
+  BottomSheetModal: jest.fn(() => null),
   BottomSheetScrollView: jest.fn(() => null),
 };
