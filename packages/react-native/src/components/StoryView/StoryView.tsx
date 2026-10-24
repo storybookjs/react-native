@@ -3,6 +3,7 @@ import React, { useCallback, useMemo } from 'react';
 import { Keyboard, View, ViewStyle } from 'react-native';
 import { useStoryContext } from '../../hooks';
 import { ErrorBoundary } from './ErrorBoundary';
+import { getStoryMountKey, setStoryRoot } from './storyRoot';
 
 /**
  * This is a handler for `onStartShouldSetResponder`, which dismisses the
@@ -66,6 +67,11 @@ const StoryView = ({
     } satisfies ViewStyle;
   }, [theme.background?.content, context?.parameters?.layout, storyBackgroundColor]);
 
+  const interactions = !!globalThis.FEATURES?.ondeviceInteractions;
+
+  // Lets play functions use the wrapper as `canvasElement`.
+  const storyRootRef = useCallback((element: unknown) => setStoryRoot(id, element), [id]);
+
   const onError = useCallback(() => {
     console.log(`Error rendering story for ${context?.title} ${context?.name}`);
   }, [context?.title, context?.name]);
@@ -76,8 +82,9 @@ const StoryView = ({
     if (useWrapper) {
       return (
         <View
+          ref={interactions ? storyRootRef : undefined}
           style={containerStyle}
-          key={id}
+          key={interactions ? `${id}-${getStoryMountKey()}` : id}
           testID={id}
           accessibilityLabel={id}
           importantForAccessibility="no"

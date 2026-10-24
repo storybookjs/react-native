@@ -73,6 +73,7 @@ globalThis.STORYBOOK_WEBSOCKET = {
 module?.hot?.accept?.();
 
 globalThis.FEATURES.ondeviceBackgrounds = true;
+globalThis.FEATURES.ondeviceInteractions = true;
 
 const options = {
   "playFn": false

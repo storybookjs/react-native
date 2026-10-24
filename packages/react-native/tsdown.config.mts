@@ -1,16 +1,22 @@
 import { defineConfig } from 'tsdown';
 
+const entry = {
+  index: 'src/index.ts',
+  preview: 'src/preview.ts',
+  test: 'src/test/index.ts',
+  withStorybook: 'src/withStorybook.ts',
+  'metro/withStorybook': 'src/metro/withStorybook.ts',
+  'repack/withStorybook': 'src/repack/withStorybook.ts',
+  stub: 'src/stub.tsx',
+  node: 'src/node.ts',
+};
+
+// Type declarations for every entry except the stub.
+const { stub: _stub, ...typedEntry } = entry;
+
 export default defineConfig((options) => {
   return {
-    entry: [
-      'src/index.ts',
-      'src/preview.ts',
-      'src/withStorybook.ts',
-      'src/metro/withStorybook.ts',
-      'src/repack/withStorybook.ts',
-      'src/stub.tsx',
-      'src/node.ts',
-    ],
+    entry,
     format: ['cjs'],
     fixedExtension: false,
     deps: {
@@ -23,14 +29,7 @@ export default defineConfig((options) => {
     clean: !options.watch,
     dts: !options.watch
       ? {
-          entry: [
-            'src/index.ts',
-            'src/preview.ts',
-            'src/withStorybook.ts',
-            'src/metro/withStorybook.ts',
-            'src/repack/withStorybook.ts',
-            'src/node.ts',
-          ],
+          entry: Object.values(typedEntry),
           resolve: true,
         }
       : false,
