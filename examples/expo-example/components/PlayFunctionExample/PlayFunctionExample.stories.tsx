@@ -26,12 +26,13 @@ const meta = {
   parameters: {
     notes: `
 With \`features.ondeviceInteractions\` enabled, play functions run and the
-Interactions panel lists their \`step\` and \`expect\` calls. Press the rerun
-button in the panel to run the play function again.
+Interactions panel lists their queries, \`step\` and \`expect\` calls. Press the
+rerun button in the panel to run the play function again.
 
-\`canvasElement\` is the story's root element. On React Native versions with
-\`EventTarget\` support on elements (currently Canary), play functions can also
-call \`dispatchEvent\` on elements to press buttons and type into inputs.
+Like on the web, the play function gets \`canvas\`, with Testing Library-style
+queries scoped to the story, and \`userEvent\`. \`userEvent\` needs a React
+Native version with \`EventTarget\` support on elements, currently the Canary
+release channel, so this example only queries and asserts.
 `,
   },
 } satisfies Meta<typeof Counter>;
@@ -41,15 +42,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Assertions: Story = {
-  play: async ({ canvasElement, args, step }) => {
-    const root = canvasElement as unknown as { textContent: string };
-
+  play: async ({ canvas, args, step }) => {
     await step('Check the initial count', async () => {
-      await expect(root.textContent).toContain(`Count: ${args.initialCount}`);
+      await expect(canvas.getByText(`Count: ${args.initialCount}`)).toBeTruthy();
     });
 
-    await step('Check the button label', async () => {
-      await expect(root.textContent).toContain('Increment');
+    await step('Check the button', async () => {
+      await expect(canvas.getByRole('button', { name: 'Increment' })).toBeTruthy();
     });
   },
 };

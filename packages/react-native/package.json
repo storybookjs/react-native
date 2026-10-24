@@ -25,6 +25,7 @@
     "./metro-env": "./metro-env.d.ts",
     "./node": "./dist/node.js",
     "./preview": "./dist/preview.js",
+    "./test": "./dist/test.js",
     "./scripts/generate": "./scripts/generate.js",
     "./preset": "./preset.js",
     "./stub": "./dist/stub.js"

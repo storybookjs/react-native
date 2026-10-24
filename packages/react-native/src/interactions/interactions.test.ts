@@ -1,8 +1,14 @@
-import { FORCE_REMOUNT, STORY_RENDER_PHASE_CHANGED } from 'storybook/internal/core-events';
-import type { Call } from 'storybook/internal/instrumenter';
+import { Channel } from 'storybook/internal/channels';
+import {
+  FORCE_REMOUNT,
+  SET_CURRENT_STORY,
+  STORY_RENDER_PHASE_CHANGED,
+} from 'storybook/internal/core-events';
+import { EVENTS, type Call } from 'storybook/internal/instrumenter';
 import { setStoryRoot } from '../components/StoryView/storyRoot';
 import { start } from '../Start';
 import { formatCall } from './format';
+import { createInteractionsStore } from './store';
 
 jest.mock('storybook/manager-api', () => ({
   addons: {
@@ -19,7 +25,9 @@ const storyId = 'example-form--filled';
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const setup = async (play: (context: { canvasElement: unknown }) => Promise<void>) => {
+type PlayContext = { canvasElement: unknown; canvas?: unknown; userEvent?: unknown };
+
+const setup = async (play: (context: PlayContext) => Promise<void>) => {
   delete (globalThis as { view?: unknown }).view;
 
   const storyFile = {
@@ -67,14 +75,16 @@ describe('ondeviceInteractions', () => {
     globalThis.FEATURES = { ...globalThis.FEATURES, ondeviceInteractions: false };
   });
 
-  it('runs play functions with the story root as canvasElement', async () => {
-    const canvasElements: unknown[] = [];
-    const { roots, phases } = await setup(async ({ canvasElement }) => {
-      canvasElements.push(canvasElement);
+  it('runs play functions with the story root as canvasElement, and canvas and userEvent', async () => {
+    const contexts: PlayContext[] = [];
+    const { roots, phases } = await setup(async (context) => {
+      contexts.push(context);
     });
     await wait(100);
 
-    expect(canvasElements).toEqual([roots[0]]);
+    expect(contexts.map((context) => context.canvasElement)).toEqual([roots[0]]);
+    expect(contexts[0].canvas).toMatchObject({ getByRole: expect.any(Function) });
+    expect(contexts[0].userEvent).toMatchObject({ click: expect.any(Function) });
     expect(phases).toContain('finished');
   });
 
@@ -100,6 +110,54 @@ describe('ondeviceInteractions', () => {
     } finally {
       delete (window as { location?: unknown }).location;
     }
+  });
+});
+
+describe('createInteractionsStore', () => {
+  const storyId = 'example-form--filled';
+  const call = { id: `${storyId} [0] expect`, method: 'expect' } as Call;
+  const logItem = { callId: call.id, status: 'done', ancestors: [] };
+
+  const runStory = (channel: Channel) => {
+    channel.emit(SET_CURRENT_STORY, { storyId });
+    for (const newPhase of ['preparing', 'loading', 'rendering', 'playing']) {
+      channel.emit(STORY_RENDER_PHASE_CHANGED, { storyId, newPhase });
+    }
+    channel.emit(EVENTS.CALL, call);
+    channel.emit(STORY_RENDER_PHASE_CHANGED, { storyId, newPhase: 'finished' });
+    channel.emit(EVENTS.SYNC, { logItems: [logItem] });
+  };
+
+  it('keeps the log when the story that is already shown is selected again', () => {
+    const channel = new Channel({});
+    const store = createInteractionsStore(channel);
+    runStory(channel);
+
+    // Storybook prepares a render for the reselected story, then drops it.
+    channel.emit(SET_CURRENT_STORY, { storyId });
+    channel.emit(STORY_RENDER_PHASE_CHANGED, { storyId, newPhase: 'preparing' });
+    channel.emit(EVENTS.SYNC, { logItems: [logItem] });
+
+    expect(store.getState()).toMatchObject({
+      renderPhase: 'finished',
+      calls: { [call.id]: call },
+      logItems: [logItem],
+    });
+  });
+
+  it('clears the log when another story is selected', () => {
+    const channel = new Channel({});
+    const store = createInteractionsStore(channel);
+    runStory(channel);
+
+    channel.emit(SET_CURRENT_STORY, { storyId: 'example-form--empty' });
+
+    expect(store.getState()).toEqual({
+      storyId: 'example-form--empty',
+      renderPhase: undefined,
+      calls: {},
+      logItems: [],
+    });
   });
 });
 

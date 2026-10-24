@@ -23,13 +23,19 @@ export function createInteractionsStore(channel: Channel) {
     listeners.forEach((listener) => listener());
   };
 
+  // Selecting the story that's already shown doesn't run it again, so keep its log.
   channel.on(SET_CURRENT_STORY, ({ storyId }: { storyId: string }) => {
-    update({ ...initialState, storyId });
+    if (storyId !== state.storyId) update({ ...initialState, storyId, renderPhase: undefined });
   });
   channel.on(
     STORY_RENDER_PHASE_CHANGED,
     ({ storyId, newPhase }: { storyId: string; newPhase: string }) => {
-      update({ storyId, renderPhase: newPhase });
+      // Storybook drops a render after "preparing" when the story is already rendered, so only
+      // later phases say a run is happening.
+      if (newPhase === 'preparing') return;
+      // A new run starts with "loading": clear the previous run's calls.
+      const calls = newPhase === 'loading' ? {} : state.calls;
+      update({ storyId, renderPhase: newPhase, calls });
     }
   );
   channel.on(EVENTS.CALL, (call: Call) => {

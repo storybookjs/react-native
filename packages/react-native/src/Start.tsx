@@ -22,6 +22,7 @@ import type {
 } from 'storybook/internal/types';
 import { View } from './View';
 import { remountStoryRoot, waitForStoryRoot } from './components/StoryView/storyRoot';
+import type { RNElement } from './test/elements';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
 export { prepareStories, type ReactNativeOptions } from './prepareStories';
 
@@ -65,9 +66,9 @@ const getReactNativeProjectAnnotations = (getView: () => View | undefined) =>
 type Mount = NonNullable<ProjectAnnotations<ReactRenderer>['mount']>;
 
 /**
- * Gives play functions the story's root host element as `canvasElement`, so they can query it and
- * dispatch events on it. `mount()` resolves with the same element: React Native has no DOM for
- * Testing Library's `within(canvasElement)` queries, which the web returns.
+ * Gives play functions the story's root host element as `canvasElement`, and like the web, `canvas`
+ * (queries scoped to it) and `userEvent` from `@storybook/react-native/test`. `mount()` resolves
+ * with `canvas`, as it does on the web.
  */
 const interactionsProjectAnnotations = {
   mount: ((context) => async () => {
@@ -76,7 +77,13 @@ const interactionsProjectAnnotations = {
     // The ref attaches before the story's effects run, so wait a tick for them.
     await new Promise((resolve) => setTimeout(resolve, 0));
     context.canvasElement = root as ReactRenderer['canvasElement'];
-    return root;
+    if (!root) return root;
+
+    const { createInstrumentedCanvas, createInstrumentedUserEvent } =
+      require('./test') as typeof import('./test');
+    const canvas = createInstrumentedCanvas(root as RNElement);
+    Object.assign(context, { canvas, userEvent: createInstrumentedUserEvent() });
+    return canvas;
   }) as Mount,
 } satisfies ProjectAnnotations<ReactRenderer>;
 
@@ -220,7 +227,9 @@ export function start({
 
   if (globalThis.FEATURES?.ondeviceInteractions) {
     const { registerInteractionsAddon } = require('./interactions/register');
+    const { patchElementsForInstrumenter } = require('./interactions/patchElements');
     registerInteractionsAddon();
+    patchElementsForInstrumenter();
   }
 
   const previewView = {
