@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "check:types": "tsc --noEmit",
-    "test": "node --test scripts/generate.test.ts scripts/docgen.test.ts",
-    "test:ci": "node --test scripts/generate.test.ts scripts/docgen.test.ts",
-    "test:update": "node --test --test-update-snapshots scripts/generate.test.ts scripts/docgen.test.ts"
+    "test": "node --test scripts/generate.test.ts scripts/docgen.test.ts scripts/bundleEntrySwap.test.ts",
+    "test:ci": "node --test scripts/generate.test.ts scripts/docgen.test.ts scripts/bundleEntrySwap.test.ts",
+    "test:update": "node --test --test-update-snapshots scripts/generate.test.ts scripts/docgen.test.ts scripts/bundleEntrySwap.test.ts"
   },
   "dependencies": {
     "@storybook/addon-ondevice-actions": "workspace:*",
@@ -15,5 +15,9 @@
     "@storybook/addon-ondevice-controls": "workspace:*",
     "@storybook/addon-ondevice-notes": "workspace:*",
     "@storybook/react-native": "workspace:*"
+  },
+  "devDependencies": {
+    "metro": "0.84.6",
+    "metro-babel-transformer": "0.84.6"
   }
 }
