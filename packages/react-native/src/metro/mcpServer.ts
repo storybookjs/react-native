@@ -2,8 +2,8 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import type { TLSSocket } from 'node:tls';
 import { buffer } from 'node:stream/consumers';
 import type { StorybookContext } from '@storybook/mcp';
-import type { WebSocketServer, WebSocket } from 'ws';
-import { buildIndex } from './buildIndex';
+import type { DeviceControl } from './deviceControl';
+import { createManifestProvider } from './manifestProvider';
 
 /**
  * Converts Node.js IncomingHttpHeaders to a format compatible with the Web Headers API.
@@ -67,15 +67,28 @@ async function webResponseToServerResponse(
   nodeResponse.end();
 }
 
+function textResult(text: string, isError = false) {
+  return {
+    content: [{ type: 'text' as const, text }],
+    ...(isError ? { isError: true } : {}),
+  };
+}
+
+function errorResult(error: unknown) {
+  return textResult(error instanceof Error ? error.message : String(error), true);
+}
+
 /**
  * Creates an MCP (Model Context Protocol) request handler for AI agent integration.
  *
  * Provides tools for querying component documentation, props, and story snippets,
- * plus React Native-specific story writing instructions.
+ * React Native-specific story writing instructions, and, when websockets are enabled,
+ * tools that drive the connected devices.
  *
  * @param configPath - Path to the Storybook config folder, used for building the component manifest.
+ * @param deviceControl - Device control of the channel server, when websockets are enabled.
  */
-export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
+export function createMcpHandler(configPath: string, deviceControl?: DeviceControl) {
   let handler: ((req: Request) => Promise<Response>) | null = null;
   let initPromise: Promise<void> | null = null;
 
@@ -94,8 +107,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
           { HttpTransport },
           { addListAllDocumentationTool, addGetDocumentationTool, addGetStoryDocumentationTool },
           { storyInstructions },
-          valibot,
-          { experimental_manifests },
+          v,
         ] = await Promise.all([
           import('tmcp'),
           import('@tmcp/adapter-valibot'),
@@ -103,23 +115,9 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
           import('@storybook/mcp'),
           import('./manifest/storyInstructions.js'),
           import('valibot'),
-          import('@storybook/react/preset'),
         ]);
 
-        const manifestProvider: NonNullable<StorybookContext['manifestProvider']> = async (
-          _request,
-          manifestPath
-        ) => {
-          if (manifestPath.includes('docs.json')) {
-            throw new Error('Docs manifest not available in React Native Storybook');
-          }
-
-          const index = await buildIndex({ configPath });
-          const entries = Object.values(index.entries);
-          const manifest = await experimental_manifests({}, { manifestEntries: entries });
-
-          return JSON.stringify(manifest.components);
-        };
+        const manifestProvider = createManifestProvider(configPath);
 
         const server = new McpServer(
           {
@@ -147,78 +145,116 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
               'Get instructions for writing React Native Storybook stories. ' +
               'Call this before creating or modifying story files (.stories.tsx, .stories.ts).',
           },
-          async () => ({
-            content: [{ type: 'text' as const, text: storyInstructions }],
-          })
+          async () => textResult(storyInstructions)
         );
 
-        if (wss) {
-          const broadcastEvent = (event: Record<string, unknown>) => {
-            const message = JSON.stringify(event);
-
-            wss.clients.forEach((client: WebSocket) => {
-              if (client.readyState === 1 /* WebSocket.OPEN */) {
-                client.send(message);
-              }
-            });
-          };
+        if (deviceControl) {
+          const storyIdField = v.optional(
+            v.pipe(
+              v.string(),
+              v.description(
+                'The story ID, e.g. "button--primary". Defaults to the story currently rendered on the device.'
+              )
+            )
+          );
 
           server.tool(
             {
               name: 'select-story',
               title: 'Select Story',
               description:
-                'Select and display a story on the connected device. ' +
+                'Select and display a story on the connected device, and wait until it has rendered. ' +
                 'Use the story ID in the format "title--name" (e.g. "button--primary"). ' +
-                'Use the list-all-documentation tool to discover available components and stories.',
-              schema: valibot.object({ storyId: valibot.string() }),
+                'Story IDs come from docs-list with `withStoryIds: true` or from docs-show; never guess them.',
+              schema: v.object({ storyId: v.string() }),
             },
-            async ({ storyId }: { storyId: string }) => {
+            async ({ storyId }) => {
               try {
-                const index = await buildIndex({ configPath });
-
-                if (!index.entries[storyId]) {
-                  const availableIds = Object.keys(index.entries).slice(0, 10);
-
-                  return {
-                    content: [
-                      {
-                        type: 'text' as const,
-                        text:
-                          `Story "${storyId}" not found. ` +
-                          `Available stories include: ${availableIds.join(', ')}` +
-                          (Object.keys(index.entries).length > 10 ? ', ...' : ''),
-                      },
-                    ],
-                    isError: true,
-                  };
-                }
-
-                broadcastEvent({
-                  type: 'setCurrentStory',
-                  args: [{ storyId, viewMode: 'story' }],
-                });
-
-                const entry = index.entries[storyId];
-
-                return {
-                  content: [
-                    {
-                      type: 'text' as const,
-                      text: `Selected story "${entry.name}" (${entry.title}) on connected devices.`,
-                    },
-                  ],
-                };
+                await deviceControl.selectStory(storyId);
+                return textResult(`Story "${storyId}" is rendered on the connected device.`);
               } catch (error) {
-                return {
-                  content: [
-                    {
-                      type: 'text' as const,
-                      text: `Failed to select story: ${error instanceof Error ? error.message : String(error)}`,
-                    },
-                  ],
-                  isError: true,
-                };
+                return errorResult(error);
+              }
+            }
+          );
+
+          server.tool(
+            {
+              name: 'get-device-state',
+              title: 'Get Device State',
+              description:
+                'Get the devices connected to Storybook with the story each one renders, its current args and globals, and the last render error.',
+            },
+            async () => textResult(JSON.stringify(deviceControl.getState(), null, 2))
+          );
+
+          server.tool(
+            {
+              name: 'update-story-args',
+              title: 'Update Story Args',
+              description:
+                'Update the args (props) of a story on the connected device and return the resulting args. ' +
+                'Use docs-show to find the props a component accepts.',
+              schema: v.object({
+                storyId: storyIdField,
+                args: v.pipe(
+                  v.record(v.string(), v.unknown()),
+                  v.description('The args to change, e.g. { "label": "Save", "disabled": true }')
+                ),
+              }),
+            },
+            async ({ storyId, args }) => {
+              try {
+                const result = await deviceControl.updateArgs({ storyId, args });
+                return textResult(JSON.stringify(result, null, 2));
+              } catch (error) {
+                return errorResult(error);
+              }
+            }
+          );
+
+          server.tool(
+            {
+              name: 'reset-story-args',
+              title: 'Reset Story Args',
+              description:
+                'Reset the args of a story on the connected device to the values its story file defines.',
+              schema: v.object({
+                storyId: storyIdField,
+                argNames: v.optional(
+                  v.pipe(
+                    v.array(v.string()),
+                    v.description('Only reset these args. Resets every arg when omitted.')
+                  )
+                ),
+              }),
+            },
+            async ({ storyId, argNames }) => {
+              try {
+                const result = await deviceControl.resetArgs({ storyId, argNames });
+                return textResult(JSON.stringify(result, null, 2));
+              } catch (error) {
+                return errorResult(error);
+              }
+            }
+          );
+
+          server.tool(
+            {
+              name: 'update-globals',
+              title: 'Update Globals',
+              description:
+                'Update Storybook globals on the connected device, such as a theme or locale toolbar value, and return the resulting globals.',
+              schema: v.object({
+                globals: v.record(v.string(), v.unknown()),
+              }),
+            },
+            async ({ globals }) => {
+              try {
+                const result = await deviceControl.updateGlobals({ globals });
+                return textResult(JSON.stringify(result, null, 2));
+              } catch (error) {
+                return errorResult(error);
               }
             }
           );

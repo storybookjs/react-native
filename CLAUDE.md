@@ -98,21 +98,17 @@ The `StorybookPlugin` (for Re.Pack/Rspack/Webpack projects):
 
 - use agent-device to control a simulator `agent-device --help`
 - use rn-logs to get metro logs `rn-logs logs --help`
-- use the storybook mcp to select stories and get story list
-
-use curl to send events to channel server, such as to update the args:
+- use `sb-rn` to look up component docs and drive Storybook on the device (`npx sb-rn --help`, run from the example app directory)
+- the storybook mcp offers the same tools over MCP
 
 ```sh
-curl -X POST http://localhost:7007/send-event \
-  -H "Content-Type: application/json" \
-  -d '{
-    "type": "updateStoryArgs",
-    "args": [{
-      "storyId": "controlexamples-controlexample--example",
-      "updatedArgs": { "name": "Alice", "age": 25 }
-    }]
-  }'
+npx sb-rn status                                   # connected devices, current story, args, globals
+npx sb-rn stories select --storyId controlexamples-controlexample--example
+npx sb-rn args update --args '{"name":"Alice","age":25}'
+npx sb-rn docs show --id controlexamples-controlexample
 ```
+
+`sb-rn` finds the channel server Metro started in that app; pass `--port` if it runs on another port. Raw events can still be sent to the channel server with `curl -X POST http://localhost:7007/send-event -H "Content-Type: application/json" -d '{"type":"...","args":[...]}'`.
 
 ### agent-device (iOS/Android Simulator Control)
 
