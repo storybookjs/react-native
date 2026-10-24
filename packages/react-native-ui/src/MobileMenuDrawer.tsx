@@ -12,6 +12,7 @@ import {
   useImperativeHandle,
   useMemo,
   useRef,
+  useState,
 } from 'react';
 import { Keyboard, Platform, type ViewStyle } from 'react-native';
 import { useAnimatedStyle, useReducedMotion } from 'react-native-reanimated';
@@ -64,9 +65,12 @@ export const MobileMenuDrawer = memo(
     const menuBottomSheetRef = useRef<BottomSheet>(null);
     const { scrollToSelectedNode, scrollRef } = useSelectedNode();
     const shouldScrollOnOpen = useRef(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleSheetChange = useCallback(
       (index: number) => {
+        setIsOpen(index >= 0);
+
         if (index >= 0 && shouldScrollOnOpen.current) {
           shouldScrollOnOpen.current = false;
           scrollToSelectedNode();
@@ -118,11 +122,16 @@ export const MobileMenuDrawer = memo(
         backgroundStyle={bgColorStyle}
         handleIndicatorStyle={handleIndicatorStyle}
         onChange={handleSheetChange}
+        accessible={false}
+        accessibilityLabel={null}
+        accessibilityRole={null}
       >
         <BottomSheetScrollView
           ref={scrollRef}
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={contentContainerStyle}
+          accessibilityElementsHidden={!isOpen}
+          importantForAccessibility={isOpen ? 'auto' : 'no-hide-descendants'}
         >
           {children}
         </BottomSheetScrollView>
