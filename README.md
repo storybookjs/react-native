@@ -391,9 +391,10 @@ const main: StorybookConfig = {
 export default main;
 ```
 
-| Flag                  | Description                                                                                                                   |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3. |
+| Flag                   | Description                                                                                                                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ondeviceBackgrounds`  | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3.                                                         |
+| `ondeviceInteractions` | Experimental. Built-in Interactions panel that lists the steps and assertions from play functions and can rerun them. Play functions get the story's root element as `canvasElement`. |
 
 For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
 
