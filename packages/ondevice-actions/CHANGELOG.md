@@ -1,5 +1,14 @@
 # @storybook/addon-ondevice-actions
 
+## 10.7.1
+
+### Patch Changes
+
+- [#934](https://github.com/storybookjs/react-native/pull/934) [`bf1bfca`](https://github.com/storybookjs/react-native/commit/bf1bfca0f4910d0859d85ed72d9067883ecfdf2a) Thanks [@dannyhw](https://github.com/dannyhw)! - Keep the Actions log when the addon panel unmounts. Actions are now recorded from when the addon registers, so actions fired while the panel is closed, collapsed or rendered in a sheet that unmounts its content show up when it opens again. Repeated identical actions no longer mutate the previous log entry when bumping its count.
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.7.1
+
 ## 10.7.0
 
 ### Patch Changes
