@@ -1063,6 +1063,13 @@ importers:
       '@storybook/react-native':
         specifier: workspace:*
         version: link:../packages/react-native
+    devDependencies:
+      metro:
+        specifier: 0.84.6
+        version: 0.84.6(supports-color@8.1.1)
+      metro-babel-transformer:
+        specifier: 0.84.6
+        version: 0.84.6(supports-color@8.1.1)
 
 packages:
 
