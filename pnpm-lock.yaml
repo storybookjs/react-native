@@ -944,12 +944,24 @@ importers:
         specifier: '>=14'
         version: 15.15.4(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/jest-preset@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(react@19.2.3)(supports-color@8.1.1))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.2.17)(react@19.2.3)(supports-color@8.1.1))(react@19.2.3)
     devDependencies:
+      '@types/jest':
+        specifier: ^29.5.13
+        version: 29.5.14
       '@types/react':
         specifier: ~19.2.14
         version: 19.2.17
+      jest:
+        specifier: ^29.7.0
+        version: 29.7.0(@types/node@26.1.1)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)
       storybook:
         specifier: ^11.0.0-alpha.7
         version: 11.0.0-alpha.7(@types/react@19.2.17)(prettier@3.9.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      sucrase:
+        specifier: ^3.35.1
+        version: 3.35.1
+      test-renderer:
+        specifier: ^0.15.0
+        version: 0.15.0(@types/react@19.2.17)(react@19.2.3)
       tsdown:
         specifier: ^0.22.12
         version: 0.22.12(oxc-resolver@11.21.2)(typescript@6.0.3)
