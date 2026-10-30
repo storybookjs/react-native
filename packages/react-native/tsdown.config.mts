@@ -10,6 +10,7 @@ export default defineConfig((options) => {
       'src/repack/withStorybook.ts',
       'src/stub.tsx',
       'src/node.ts',
+      'src/cli/index.ts',
     ],
     format: ['cjs'],
     fixedExtension: false,
