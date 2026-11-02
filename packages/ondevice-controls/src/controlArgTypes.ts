@@ -84,6 +84,15 @@ export interface ControlSections {
 }
 
 /**
+ * Category and subcategory names are arbitrary strings, so the records keyed by them have no
+ * prototype: a group called `constructor`, `toString` or `__proto__` must not resolve to a property
+ * inherited from `Object.prototype`.
+ */
+function createRecord<T>(): Record<string, T> {
+  return Object.create(null);
+}
+
+/**
  * Groups the panel's rows (from `getControlArgTypes`) by `table.category` and `table.subcategory`,
  * the same way the web Controls panel does:
  *
@@ -95,13 +104,17 @@ export interface ControlSections {
  * Rows, sections and subsections keep the order in which they first appear in the argTypes.
  */
 export function groupControlArgTypes(args: ArgTypes): ControlSections {
-  const groups: ControlSections = { ungrouped: [], ungroupedSubsections: {}, sections: {} };
+  const groups: ControlSections = {
+    ungrouped: [],
+    ungroupedSubsections: createRecord(),
+    sections: createRecord(),
+  };
 
   Object.values(args ?? {}).forEach((row) => {
     const { category, subcategory } = row?.table ?? {};
 
     if (category) {
-      const section = groups.sections[category] ?? { ungrouped: [], subsections: {} };
+      const section = groups.sections[category] ?? { ungrouped: [], subsections: createRecord() };
 
       if (subcategory) {
         const subsection = section.subsections[subcategory] ?? [];

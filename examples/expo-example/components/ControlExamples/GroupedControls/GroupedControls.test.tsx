@@ -115,6 +115,30 @@ test('subsections with the same name in different sections collapse independentl
   expect(new Set(ids).size).toBe(ids.length);
 });
 
+test('categories and subcategories can use names of Object.prototype properties', () => {
+  const rows = getFormRows(
+    {
+      a: { name: 'a', control: { type: 'text' }, table: { category: 'constructor' } },
+      b: {
+        name: 'b',
+        control: { type: 'text' },
+        table: { category: 'constructor', subcategory: 'toString' },
+      },
+      c: { name: 'c', control: { type: 'text' }, table: { subcategory: '__proto__' } },
+    },
+    {}
+  );
+
+  expect(describeRows(rows)).toEqual([
+    'subsection: __proto__',
+    'c',
+    'section: constructor',
+    'a',
+    'subsection: toString',
+    'b',
+  ]);
+});
+
 test('a story without categories is laid out as a flat list', () => {
   const rows = getFormRows(
     {
