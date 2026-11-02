@@ -71,3 +71,118 @@ export function getControlArgTypes(argTypes: ArgTypes, args: Args): ArgTypes {
     };
   }, {});
 }
+
+export interface ControlSection {
+  ungrouped: ArgType[];
+  subsections: Record<string, ArgType[]>;
+}
+
+export interface ControlSections {
+  ungrouped: ArgType[];
+  ungroupedSubsections: Record<string, ArgType[]>;
+  sections: Record<string, ControlSection>;
+}
+
+/**
+ * Groups the panel's rows (from `getControlArgTypes`) by `table.category` and `table.subcategory`,
+ * the same way the web Controls panel does:
+ *
+ * - rows without a category or subcategory come first, ungrouped
+ * - rows with only a subcategory are grouped into subsections at the top level
+ * - rows with a category are grouped into a section, and within it into subsections when they also
+ *   have a subcategory
+ *
+ * Rows, sections and subsections keep the order in which they first appear in the argTypes.
+ */
+export function groupControlArgTypes(args: ArgTypes): ControlSections {
+  const groups: ControlSections = { ungrouped: [], ungroupedSubsections: {}, sections: {} };
+
+  Object.values(args ?? {}).forEach((row) => {
+    const { category, subcategory } = row?.table ?? {};
+
+    if (category) {
+      const section = groups.sections[category] ?? { ungrouped: [], subsections: {} };
+
+      if (subcategory) {
+        const subsection = section.subsections[subcategory] ?? [];
+        subsection.push(row);
+        section.subsections[subcategory] = subsection;
+      } else {
+        section.ungrouped.push(row);
+      }
+
+      groups.sections[category] = section;
+    } else if (subcategory) {
+      const subsection = groups.ungroupedSubsections[subcategory] ?? [];
+      subsection.push(row);
+      groups.ungroupedSubsections[subcategory] = subsection;
+    } else {
+      groups.ungrouped.push(row);
+    }
+  });
+
+  return groups;
+}
+
+export type SectionLevel = 'section' | 'subsection';
+
+export type FormRow =
+  | { kind: 'arg'; arg: ArgType }
+  | { kind: 'section'; id: string; label: string; level: SectionLevel; itemCount: number };
+
+/**
+ * Lays out the grouped args as the flat list of rows the panel renders: ungrouped args, then
+ * subsections without a category, then each category with its own ungrouped args and subsections.
+ * Each section and subsection gets a header row with a stable `id`; the args of a group whose id is
+ * collapsed are left out.
+ */
+export function getFormRows(args: ArgTypes, collapsed: Record<string, boolean>): FormRow[] {
+  const { ungrouped, ungroupedSubsections, sections } = groupControlArgTypes(args);
+  const rows: FormRow[] = [];
+
+  const addArgs = (groupArgs: ArgType[]) => {
+    groupArgs.forEach((arg) => rows.push({ kind: 'arg', arg }));
+  };
+
+  const addSubsections = (subsections: Record<string, ArgType[]>, category?: string) => {
+    Object.entries(subsections).forEach(([subcategory, subsectionArgs]) => {
+      const id = JSON.stringify([category ?? null, subcategory]);
+
+      rows.push({
+        kind: 'section',
+        id,
+        label: subcategory,
+        level: 'subsection',
+        itemCount: subsectionArgs.length,
+      });
+
+      if (!collapsed[id]) {
+        addArgs(subsectionArgs);
+      }
+    });
+  };
+
+  addArgs(ungrouped);
+  addSubsections(ungroupedSubsections);
+
+  Object.entries(sections).forEach(([category, section]) => {
+    const id = JSON.stringify([category]);
+
+    rows.push({
+      kind: 'section',
+      id,
+      label: category,
+      level: 'section',
+      itemCount:
+        section.ungrouped.length +
+        Object.values(section.subsections).reduce((count, sub) => count + sub.length, 0),
+    });
+
+    if (!collapsed[id]) {
+      addArgs(section.ungrouped);
+      addSubsections(section.subsections, category);
+    }
+  });
+
+  return rows;
+}

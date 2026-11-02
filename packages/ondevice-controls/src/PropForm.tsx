@@ -1,7 +1,10 @@
 import { styled } from '@storybook/react-native-theming';
 import { transparentize } from 'polished';
+import { useState } from 'react';
 import { ArgTypes } from './ControlsPanel';
 import PropField from './PropField';
+import SectionRow from './components/SectionRow';
+import { getFormRows } from './controlArgTypes';
 import { Image, TouchableOpacity, View } from 'react-native';
 
 interface FormProps {
@@ -38,6 +41,14 @@ const TableRow = styled.View<{ hasBottomBorder?: boolean }>(({ theme, hasBottomB
 }));
 
 const PropForm = ({ args, isPristine, onFieldChange, onReset }: FormProps) => {
+  const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
+
+  const toggleSection = (id: string) => {
+    setCollapsed((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  const rows = getFormRows(args, collapsed);
+
   const makeChangeHandler = (name: string) => {
     return (value) => {
       onFieldChange({ [name]: value });
@@ -78,10 +89,27 @@ const PropForm = ({ args, isPristine, onFieldChange, onReset }: FormProps) => {
         </View>
       </TableRow>
 
-      {Object.values(args).map((arg, i) => {
+      {rows.map((row, i) => {
+        const hasBottomBorder = i !== rows.length - 1;
+
+        if (row.kind === 'section') {
+          return (
+            <SectionRow
+              key={row.id}
+              label={row.label}
+              level={row.level}
+              itemCount={row.itemCount}
+              expanded={!collapsed[row.id]}
+              hasBottomBorder={hasBottomBorder}
+              onToggle={() => toggleSection(row.id)}
+            />
+          );
+        }
+
+        const { arg } = row;
         const changeHandler = makeChangeHandler(arg.name);
         return (
-          <TableRow key={arg.name} hasBottomBorder={i !== Object.values(args).length - 1}>
+          <TableRow key={arg.name} hasBottomBorder={hasBottomBorder}>
             <Label style={{ width: '25%' }}>{arg.name}</Label>
 
             <View style={{ width: '75%' }}>
