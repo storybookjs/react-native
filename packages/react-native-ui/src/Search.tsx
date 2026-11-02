@@ -76,7 +76,6 @@ const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
   right: 8,
   zIndex: 1,
   color: theme.textMutedColor,
-  cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

@@ -29,7 +29,6 @@ const BranchNode = styled.TouchableOpacity<{
 }>(({ depth = 0, isExpandable = false, theme }) => ({
   width: '100%',
   border: 'none',
-  cursor: 'pointer',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'flex-start',
@@ -53,7 +52,6 @@ const BranchNode = styled.TouchableOpacity<{
 const LeafNode = styled.TouchableOpacity<{ depth?: number; selected?: boolean }>(
   ({ depth = 0, selected, theme }) => ({
     alignSelf: 'flex-start',
-    cursor: 'pointer',
     color: 'inherit',
     display: 'flex',
     gap: 6,
