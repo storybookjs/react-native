@@ -42,7 +42,7 @@
     "polished": "^4.3.1"
   },
   "devDependencies": {
-    "@types/react": "~19.2.14",
+    "@types/react": "~19.3.0",
     "storybook": "^11.0.0-beta.0",
     "ts-dedent": "^2.3.0",
     "tsdown": "^0.22.12",

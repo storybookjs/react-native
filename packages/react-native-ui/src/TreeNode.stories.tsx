@@ -3,12 +3,12 @@ import { ComponentNode, GroupNode, StoryNode } from './TreeNode';
 import { View } from 'react-native';
 import { decorators } from './decorators';
 
-const meta = {
+const meta: Meta<typeof StoryNode> = {
   title: 'UI/Sidebar/TreeNode',
   parameters: { layout: 'fullscreen' },
   component: StoryNode,
   decorators,
-} satisfies Meta<typeof StoryNode>;
+};
 
 export default meta;
 
