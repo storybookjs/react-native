@@ -7,9 +7,11 @@ import React, { FC, forwardRef, useMemo } from 'react';
 import { transparentize } from 'polished';
 import { TouchableOpacityProps, View } from 'react-native';
 
-// Spelled out rather than inferred from the styled components, because react-native 0.88's types for those
-// can't be named in the emitted declarations.
-export type ViewRef = React.ComponentRef<typeof View>;
+// Spelled out rather than inferred from the styled components: react-native 0.88's types for those live in
+// paths its package exports don't expose, so TypeScript can't name them in the emitted declarations.
+// StoryNodeRef is an interface so it keeps its name instead of expanding to one of those types.
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface StoryNodeRef extends React.ComponentRef<typeof View> {}
 
 export interface BranchNodeProps extends TouchableOpacityProps {
   depth?: number;
@@ -143,24 +145,25 @@ export const ComponentNode: FC<BranchNodeProps> = React.memo(function ComponentN
   );
 });
 
-export const StoryNode: React.NamedExoticComponent<LeafNodeProps & React.RefAttributes<ViewRef>> =
-  React.memo(
-    forwardRef<ViewRef, LeafNodeProps>(function StoryNode({ children, ...props }, ref) {
-      const theme = useTheme();
+export const StoryNode: React.NamedExoticComponent<
+  LeafNodeProps & React.RefAttributes<StoryNodeRef>
+> = React.memo(
+  forwardRef<StoryNodeRef, LeafNodeProps>(function StoryNode({ children, ...props }, ref) {
+    const theme = useTheme();
 
-      const color = useMemo(() => {
-        return props.selected ? theme.color.lightest : theme.color.seafoam;
-      }, [props.selected, theme.color.lightest, theme.color.seafoam]);
+    const color = useMemo(() => {
+      return props.selected ? theme.color.lightest : theme.color.seafoam;
+    }, [props.selected, theme.color.lightest, theme.color.seafoam]);
 
-      return (
-        <LeafNode {...props} ref={ref}>
-          <Wrapper>
-            <StoryIcon width={14} height={14} color={color} />
-          </Wrapper>
-          <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
-        </LeafNode>
-      );
-    })
-  );
+    return (
+      <LeafNode {...props} ref={ref}>
+        <Wrapper>
+          <StoryIcon width={14} height={14} color={color} />
+        </Wrapper>
+        <LeafNodeText selected={props.selected}>{children}</LeafNodeText>
+      </LeafNode>
+    );
+  })
+);
 
 StoryNode.displayName = 'StoryNode';
