@@ -5,9 +5,10 @@ import { transparentize } from 'polished';
 import { TouchableOpacityProps, View } from 'react-native';
 import { CollapseIcon, ComponentIcon, GroupIcon, StoryIcon } from './icon/iconDataUris';
 
-// Spelled out rather than inferred from the styled components: react-native 0.88's types for those live in
-// paths its package exports don't expose, so TypeScript can't name them in the emitted declarations.
-// StoryNodeRef is an interface so it keeps its name instead of expanding to one of those types.
+// Declared here rather than inferred from the styled components. Since react-native 0.88 its default types are the
+// generated ones, where TouchableOpacityProps and View's ref expand into types react-native doesn't export
+// (WithAnimatedValue, ____ViewStyleProp_Internal, ReactNativeElement), so TypeScript can't name them in our emitted
+// declarations. An interface keeps its own name, so these don't expand.
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface StoryNodeRef extends React.ComponentRef<typeof View> {}
 
@@ -141,9 +142,7 @@ export const ComponentNode: FC<BranchNodeProps> = React.memo(function ComponentN
   );
 });
 
-export const StoryNode: React.NamedExoticComponent<
-  LeafNodeProps & React.RefAttributes<StoryNodeRef>
-> = React.memo(
+export const StoryNode = React.memo(
   forwardRef<StoryNodeRef, LeafNodeProps>(function StoryNode({ children, ...props }, ref) {
     const theme = useTheme();
 
