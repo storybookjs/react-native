@@ -235,6 +235,10 @@ Opt into new functionality via the `features` config in `main.ts`. Flags let you
 
 The new globals-based backgrounds API with full-screen support, available now behind a feature flag.
 
+### [Actions](./actions.md)
+
+The Actions panel built into `@storybook/react-native`, available now behind a feature flag.
+
 ### [WebSocket Configuration](./websocket-configuration.md)
 
 Enable remote control of Storybook from external tools, browsers, or other devices for testing and automation.

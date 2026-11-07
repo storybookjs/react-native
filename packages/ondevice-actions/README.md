@@ -2,6 +2,8 @@
 
 Storybook Actions Addon allows you to log events/actions inside stories in [Storybook](https://storybook.js.org).
 
+> **Note:** The Actions panel is also built into `@storybook/react-native` behind the `ondeviceActions` feature flag. If you enable `features: { ondeviceActions: true }` in `.rnstorybook/main.ts`, you don't need this package and should remove it from `deviceAddons`. See the [Actions guide](https://storybookjs.github.io/react-native/docs/intro/configuration/actions).
+
 ## Installation
 
 ```sh

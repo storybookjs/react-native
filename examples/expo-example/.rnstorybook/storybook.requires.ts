@@ -6,7 +6,6 @@ import { start, updateView, type View, type Features } from '@storybook/react-na
 import "storybook-addon-deep-controls/register";
 import "./local-addon-example/register";
 import "@storybook/addon-ondevice-controls/register";
-import "@storybook/addon-ondevice-actions/register";
 import "@storybook/addon-ondevice-notes/register";
 
 const normalizedStories = [
@@ -65,7 +64,7 @@ const annotations = [
 
 globalThis.STORIES = normalizedStories;
 globalThis.STORYBOOK_WEBSOCKET = {
-  host: '172.16.44.123',
+  host: '192.168.1.249',
   port: 7007,
   secured: false,
 };
@@ -75,6 +74,7 @@ module?.hot?.accept?.();
 globalThis.FEATURES = {
   ...globalThis.FEATURES,
   ondeviceBackgrounds: true,
+  ondeviceActions: true,
 };
 
 const options = {

@@ -4,6 +4,11 @@ import type { ReactNativeOptions } from '../Start';
 export type Features = {
   /** Enable the built-in on-device backgrounds addon panel. */
   ondeviceBackgrounds?: boolean;
+  /**
+   * Enable the built-in on-device actions addon panel. Replaces
+   * `@storybook/addon-ondevice-actions`, which you can remove from `deviceAddons`.
+   */
+  ondeviceActions?: boolean;
 };
 
 type Addon = string | { name: string; options?: Record<string, any> };
