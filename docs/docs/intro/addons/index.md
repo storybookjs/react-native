@@ -61,6 +61,8 @@ export const WithoutAnyAddonPanels = {
 
 The Actions addon lets you log events and actions inside your stories. It's useful for verifying component interactions and event handling.
 
+> **New:** The Actions panel is now built into `@storybook/react-native` behind the `ondeviceActions` feature flag, so no extra package is required. This will become the default in the next major version. See the [Actions guide](../configuration/actions.md) to opt in now.
+
 ```sh
 npm install --save-dev @storybook/addon-ondevice-actions
 ```

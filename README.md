@@ -385,6 +385,7 @@ const main: StorybookConfig = {
   deviceAddons: ['@storybook/addon-ondevice-controls'],
   features: {
     ondeviceBackgrounds: true,
+    ondeviceActions: true,
   },
 };
 
@@ -394,6 +395,7 @@ export default main;
 | Flag                  | Description                                                                                                                   |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3. |
+| `ondeviceActions`     | Built-in Actions panel, so `@storybook/addon-ondevice-actions` is no longer needed. Available from v11.                       |
 
 For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
 

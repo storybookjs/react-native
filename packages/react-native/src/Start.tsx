@@ -137,6 +137,11 @@ export function start({
     registerBackgroundsAddon();
   }
 
+  if (globalThis.FEATURES?.ondeviceActions) {
+    const { registerActionsAddon } = require('./actions/register');
+    registerActionsAddon();
+  }
+
   const previewView = {
     prepareForStory: () => {
       return createPreviewRoot();
