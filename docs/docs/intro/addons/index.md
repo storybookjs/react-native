@@ -8,10 +8,10 @@ The addons made available by us are the following. There are more addons availab
 | ----------- | ------------------------------------- |
 | actions     | @storybook/addon-ondevice-actions     |
 | backgrounds | @storybook/addon-ondevice-backgrounds |
-| controls    | @storybook/addon-ondevice-controls    |
+| controls    | built into `@storybook/react-native`  |
 | notes       | @storybook/addon-ondevice-notes       |
 
-Backgrounds and controls are also built into `@storybook/react-native` behind feature flags, so you don't need their packages: see [Backgrounds](../configuration/backgrounds.md) and [Controls](../configuration/controls.md).
+Controls are built into `@storybook/react-native` and on by default, so there's no package to install; see [Controls](../configuration/controls.md). Backgrounds can also be built in behind a feature flag; see [Backgrounds](../configuration/backgrounds.md).
 
 ## Configuration
 
@@ -23,7 +23,6 @@ import type { StorybookConfig } from '@storybook/react-native';
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   deviceAddons: [
-    '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
@@ -132,10 +131,10 @@ Component-level background settings will override the global settings from previ
 
 Controls provides a graphical UI to dynamically edit component props without code. It supports 13 different control types optimized for mobile interfaces.
 
-Enable the [`ondeviceControls` feature flag](../configuration/controls.md) to use the built-in Controls panel instead of installing the package. The native date picker and slider are then optional.
+Controls are built into `@storybook/react-native` and on by default, so there's nothing to install. For the native date picker and slider, optionally install these and rebuild your app:
 
 ```sh
-npm install --save-dev @storybook/addon-ondevice-controls @react-native-community/datetimepicker @react-native-community/slider
+npx expo install @react-native-community/datetimepicker @react-native-community/slider
 ```
 
 Basic usage:
@@ -152,7 +151,7 @@ export default {
 } satisfies Meta<typeof MyComponent>;
 ```
 
-For detailed information about all supported control types, configuration options, and platform-specific features, see the [Controls Addon documentation](./controls.md).
+For detailed information about all supported control types, configuration options, and platform-specific features, see the [Controls documentation](./controls.md).
 
 ## Notes
 

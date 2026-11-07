@@ -36,7 +36,6 @@ const main: StorybookConfig = {
   ],
 
   deviceAddons: [
-    '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
@@ -237,7 +236,7 @@ The new globals-based backgrounds API with full-screen support, available now be
 
 ### [Controls](./controls.md)
 
-The Controls panel built into `@storybook/react-native`, with optional native date picker and slider, available now behind a feature flag.
+The Controls panel is built into `@storybook/react-native` and on by default, with an optional native date picker and slider.
 
 ### [WebSocket Configuration](./websocket-configuration.md)
 

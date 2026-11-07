@@ -5,6 +5,7 @@
     - [Update Storybook dependencies to 11.x](#update-storybook-dependencies-to-11x)
     - [On-device addons must be listed in `deviceAddons`](#on-device-addons-must-be-listed-in-deviceaddons)
     - [Move `storySort` to `storySorts` in main](#move-storysort-to-storysorts-in-main)
+    - [Controls are built in](#controls-are-built-in)
   - [From version 10.3 to 10.4](#from-version-103-to-104)
     - [Update your metro config](#update-your-metro-config)
     - [Simplify your App.tsx (or Expo Router routes)](#simplify-your-apptsx-or-expo-router-routes)
@@ -76,7 +77,6 @@ You need to update all Storybook dependencies to version 11.x. This includes:
   "devDependencies": {
     "@storybook/react-native": "^11.0.0",
     "@storybook/react": "^11.0.0",
-    "@storybook/addon-ondevice-controls": "^11.0.0",
     "@storybook/addon-ondevice-actions": "^11.0.0",
     "@storybook/addon-ondevice-backgrounds": "^11.0.0",
     "@storybook/addon-ondevice-notes": "^11.0.0",
@@ -95,13 +95,13 @@ Move every entry into `deviceAddons`. That includes `@storybook/addon-ondevice-*
 // Before (.rnstorybook/main.ts)
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+  addons: ['@storybook/addon-ondevice-actions', '@storybook/addon-ondevice-notes'],
 };
 
 // After
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+  deviceAddons: ['@storybook/addon-ondevice-actions', '@storybook/addon-ondevice-notes'],
 };
 ```
 
@@ -148,6 +148,42 @@ export default defineMain({
 ```
 
 Comparator functions need to be moved by hand. They work in `storySorts`, but they are copied into `storybook.requires` from their source, so they can't use imports or variables from outside their own body.
+
+### Controls are built in
+
+The Controls panel is now part of `@storybook/react-native` and is **on by default**. You no longer need `@storybook/addon-ondevice-controls`.
+
+1. Remove `@storybook/addon-ondevice-controls` from `deviceAddons` in `.rnstorybook/main.ts` and uninstall it.
+2. Restart your bundler so `storybook.requires.ts` is regenerated.
+
+```diff
+ const main: StorybookConfig = {
+   deviceAddons: [
+-    '@storybook/addon-ondevice-controls',
+     '@storybook/addon-ondevice-actions',
+   ],
+ };
+```
+
+If you leave it in place, nothing breaks: `@storybook/addon-ondevice-controls` v11 is an empty stub whose `register` does nothing, so you still get exactly one Controls panel, plus a warning in development asking you to remove it.
+
+`@react-native-community/datetimepicker` and `@react-native-community/slider` are now **optional**:
+
+- Install and link them (rebuild the app) if you want the native date/time pickers and the native slider.
+- Without them, or in Expo Go, on tvOS/macOS or before a rebuild, the `date` control uses `YYYY-MM-DD` and `HH:mm` text inputs and range controls use a JavaScript slider. A package that's installed but not linked falls back too, with a warning in development.
+- `react-native-modal-datetime-picker` is no longer used; uninstall it if nothing else needs it.
+
+To turn the built-in panel off, set the feature flag to `false`:
+
+```ts
+const main: StorybookConfig = {
+  features: {
+    ondeviceControls: false,
+  },
+};
+```
+
+If you imported internals such as `getControlArgTypes` from `@storybook/addon-ondevice-controls/dist/controlArgTypes`, import them from `@storybook/react-native/controls`.
 
 ## From version 10.3 to 10.4
 

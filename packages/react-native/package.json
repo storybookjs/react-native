@@ -19,6 +19,7 @@
   "license": "MIT",
   "exports": {
     ".": "./dist/index.js",
+    "./controls": "./dist/controls/index.js",
     "./withStorybook": "./dist/withStorybook.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
     "./repack/withStorybook": "./dist/repack/withStorybook.js",

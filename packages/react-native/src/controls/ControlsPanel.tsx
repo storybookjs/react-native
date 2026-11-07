@@ -45,7 +45,10 @@ const ControlsPanel = ({ api }: { api: API }) => {
 
   const storyId = store.getSelection()?.storyId;
 
-  const [isPristine, setIsPristine] = useState(true);
+  // Pristine is per story: an edit on one story shouldn't stop the next story's controls resyncing.
+  const [pristine, setPristine] = useState({ storyId, value: true });
+  const isPristine = pristine.storyId !== storyId || pristine.value;
+  const setIsPristine = useCallback((value: boolean) => setPristine({ storyId, value }), [storyId]);
 
   const [argsFromHook, updateArgs, resetArgs] = useArgs(storyId, store);
 
@@ -73,14 +76,14 @@ const ControlsPanel = ({ api }: { api: API }) => {
 
       setIsPristine(false);
     },
-    [updateArgs]
+    [updateArgs, setIsPristine]
   );
 
   const handleReset = useCallback(() => {
     resetArgs();
 
     setIsPristine(true);
-  }, [resetArgs]);
+  }, [resetArgs, setIsPristine]);
 
   if (showWarning) {
     return <NoControlsWarning />;
@@ -88,6 +91,8 @@ const ControlsPanel = ({ api }: { api: API }) => {
 
   return (
     <PropForm
+      // A fresh form per story, so field state from the previous story isn't carried over.
+      key={storyId}
       args={argsObject}
       isPristine={isPristine}
       onFieldChange={updateArgsOnFieldChange}

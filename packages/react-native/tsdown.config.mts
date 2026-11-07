@@ -26,6 +26,7 @@ export default defineConfig((options) => {
       'src/repack/withStorybook.ts',
       'src/stub.tsx',
       'src/node.ts',
+      'src/controls/index.ts',
     ],
     format: ['cjs'],
     fixedExtension: false,
@@ -53,6 +54,7 @@ export default defineConfig((options) => {
             'src/metro/withStorybook.ts',
             'src/repack/withStorybook.ts',
             'src/node.ts',
+            'src/controls/index.ts',
           ],
           resolve: true,
         }

@@ -41,32 +41,61 @@ const NativeDateTime = ({
   onChange,
   picker,
 }: ControlProps & { picker: DateTimePickerModule }) => {
-  const [visiblePicker, setVisiblePicker] = useState<PickerMode | 'none'>('none');
+  // The mode is kept after the sheet closes so it doesn't switch pickers while fading out.
+  const [mode, setMode] = useState<PickerMode>('date');
+  const [visible, setVisible] = useState(false);
+  const androidDialogOpen = useRef(false);
 
-  const open = (mode: PickerMode) => {
+  const dateLabel = formatDateLabel(date);
+  const timeLabel = formatTimeInput(date);
+
+  const open = (nextMode: PickerMode) => {
     if (Platform.OS === 'android') {
+      // A second tap while the dialog is opening would otherwise stack a second dialog.
+      if (androidDialogOpen.current) return;
+      androidDialogOpen.current = true;
+
       picker.DateTimePickerAndroid.open({
         value: date,
-        mode,
+        mode: nextMode,
         is24Hour: true,
         onChange: (event, picked) => {
+          androidDialogOpen.current = false;
+          // 'dismissed' (cancel or back) leaves the arg alone.
           if (event.type === 'set' && picked) onChange(picked);
+        },
+        onError: () => {
+          androidDialogOpen.current = false;
         },
       });
       return;
     }
 
-    setVisiblePicker(mode);
+    setMode(nextMode);
+    setVisible(true);
   };
 
   return (
     <View testID={name}>
       <View style={styles.row}>
-        <Touchable testID={`${name}-date`} onPress={() => open('date')}>
-          <Label>{formatDateLabel(date)}</Label>
+        <Touchable
+          testID={`${name}-date`}
+          accessibilityRole="button"
+          accessibilityLabel={`${name} date, ${dateLabel}`}
+          accessibilityHint="Opens a date picker"
+          onPress={() => open('date')}
+        >
+          <Label>{dateLabel}</Label>
         </Touchable>
-        <Touchable testID={`${name}-time`} style={styles.timeField} onPress={() => open('time')}>
-          <Label>{formatTimeInput(date)}</Label>
+        <Touchable
+          testID={`${name}-time`}
+          accessibilityRole="button"
+          accessibilityLabel={`${name} time, ${timeLabel}`}
+          accessibilityHint="Opens a time picker"
+          style={styles.timeField}
+          onPress={() => open('time')}
+        >
+          <Label>{timeLabel}</Label>
         </Touchable>
       </View>
 
@@ -74,13 +103,13 @@ const NativeDateTime = ({
         <DateTimePickerModal
           Picker={picker.default}
           date={date}
-          mode={visiblePicker === 'none' ? 'date' : visiblePicker}
-          visible={visiblePicker !== 'none'}
+          mode={mode}
+          visible={visible}
           onConfirm={(picked) => {
+            setVisible(false);
             onChange(picked);
-            setVisiblePicker('none');
           }}
-          onCancel={() => setVisiblePicker('none')}
+          onCancel={() => setVisible(false)}
         />
       )}
     </View>

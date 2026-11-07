@@ -29,7 +29,6 @@ export default defineMain({
   },
   features: {
     ondeviceBackgrounds: true,
-    ondeviceControls: true,
   },
 
   framework: '@storybook/react-native',

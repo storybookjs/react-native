@@ -130,7 +130,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+  deviceAddons: ['@storybook/addon-ondevice-actions'],
 };
 
 export default main;
@@ -201,12 +201,11 @@ export default preview;
 
 ## Addons
 
-The cli will install some basic addons for you such as controls and actions.
+The cli will install some basic addons for you such as actions. Controls are built into `@storybook/react-native` and on by default, so there's nothing to install for them.
 Ondevice addons are addons that can render with the device ui that you see on the phone.
 
 Currently, the addons available are:
 
-- [`@storybook/addon-ondevice-controls`](https://storybook.js.org/addons/@storybook/addon-ondevice-controls): adjust your components props in realtime
 - [`@storybook/addon-ondevice-actions`](https://storybook.js.org/addons/@storybook/addon-ondevice-actions): mock onPress calls with actions that will log information in the actions tab
 - [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some Markdown to your stories to help document their usage
 - [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
@@ -221,7 +220,6 @@ const main: StorybookConfig = {
   // ... rest of config
   deviceAddons: [
     '@storybook/addon-ondevice-notes',
-    '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
   ],
@@ -239,7 +237,7 @@ For details of each ondevice addon you can see the readme:
 
 - [actions](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-actions#readme)
 - [backgrounds](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-backgrounds#readme)
-- [controls](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-controls#readme)
+- [controls](https://storybookjs.github.io/react-native/docs/intro/configuration/controls) (built in)
 - [notes](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-notes#readme)
 
 ## Hide/Show storybook
@@ -382,7 +380,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  deviceAddons: ['@storybook/addon-ondevice-controls'],
+  deviceAddons: ['@storybook/addon-ondevice-actions'],
   features: {
     ondeviceBackgrounds: true,
   },
@@ -391,10 +389,10 @@ const main: StorybookConfig = {
 export default main;
 ```
 
-| Flag                  | Description                                                                                                                                                             |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3.                                           |
-| `ondeviceControls`    | Built-in Controls panel, no `@storybook/addon-ondevice-controls` needed. The native date picker and slider are optional, with JavaScript fallbacks. Available from v11. |
+| Flag                  | Description                                                                                                                                                                                                                              |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3.                                                                                                            |
+| `ondeviceControls`    | The built-in Controls panel. **On by default**; set `false` to turn it off. `@storybook/addon-ondevice-controls` is no longer needed, and the native date picker and slider are optional, with JavaScript fallbacks. Available from v11. |
 
 For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
 

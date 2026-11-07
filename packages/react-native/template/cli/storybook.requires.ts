@@ -2,7 +2,6 @@
 
 import { start, updateView } from '@storybook/react-native';
 
-import '@storybook/addon-ondevice-controls/register';
 import '@storybook/addon-ondevice-actions/register';
 
 const normalizedStories = [

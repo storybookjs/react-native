@@ -141,7 +141,8 @@ export function start({
     registerBackgroundsAddon();
   }
 
-  if (globalThis.FEATURES?.ondeviceControls) {
+  // Built in and on by default; `features.ondeviceControls: false` turns it off.
+  if (globalThis.FEATURES?.ondeviceControls !== false) {
     const { registerControlsAddon } = require('./controls/register');
     registerControlsAddon();
   }

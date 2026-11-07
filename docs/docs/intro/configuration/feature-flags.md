@@ -6,7 +6,7 @@ sidebar_position: 6
 
 Feature flags let you opt into new functionality in `@storybook/react-native` without breaking existing behavior. They are configured in your `main.ts` file under the `features` key.
 
-Flags are introduced so you can adopt new APIs at your own pace. In the next major version, the behavior behind these flags will become the default and the flags will no longer be needed.
+Most flags are introduced so you can adopt new APIs at your own pace; in the next major version their behavior becomes the default. Some flags, like `ondeviceControls`, are on by default and let you opt out.
 
 ## Configuration
 
@@ -21,7 +21,8 @@ const main: StorybookConfig = {
   deviceAddons: ['@storybook/addon-ondevice-actions'],
   features: {
     ondeviceBackgrounds: true,
-    ondeviceControls: true,
+    // On by default; set to false to turn off the built-in Controls panel.
+    // ondeviceControls: false,
   },
 };
 
@@ -32,7 +33,7 @@ Feature flags are set on `globalThis.FEATURES` via the generated `storybook.requ
 
 ## Available Flags
 
-| Flag                  | Description                                                                                                                                                                                                                        | Guide                           |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Available from v10.3. Will become the default in the next major version.                                                          | [Backgrounds](./backgrounds.md) |
-| `ondeviceControls`    | Built-in Controls panel, so you don't need `@storybook/addon-ondevice-controls`. The native date picker and slider are optional, with JavaScript fallbacks. Available from v11. Will become the default in the next major version. | [Controls](./controls.md)       |
+| Flag                  | Description                                                                                                                                                                                                                      | Guide                           |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Available from v10.3. Will become the default in the next major version.                                                        | [Backgrounds](./backgrounds.md) |
+| `ondeviceControls`    | The built-in Controls panel. **On by default** from v11; set to `false` to turn it off. `@storybook/addon-ondevice-controls` is no longer needed, and the native date picker and slider are optional, with JavaScript fallbacks. | [Controls](./controls.md)       |

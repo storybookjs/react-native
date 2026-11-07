@@ -1,6 +1,6 @@
 # Controls Reference
 
-Complete reference for all control types supported by `@storybook/addon-ondevice-controls`.
+Complete reference for all control types supported by the Controls panel built into `@storybook/react-native` (on by default from v11; `@storybook/addon-ondevice-controls` is no longer needed).
 
 ## Control Types
 
@@ -28,7 +28,7 @@ argTypes: {
 
 ### range
 
-Dedicated slider control. Requires `@react-native-community/slider`.
+Dedicated slider control. Uses `@react-native-community/slider` when it's installed and linked, otherwise a JavaScript slider.
 
 ```tsx
 argTypes: {
@@ -108,7 +108,7 @@ argTypes: {
 
 ### date
 
-Date/time picker. The addon package requires `@react-native-community/datetimepicker`; with the built-in controls (`features.ondeviceControls`) it's optional and falls back to `YYYY-MM-DD` / `HH:mm` text inputs.
+Date/time picker. Uses `@react-native-community/datetimepicker` when it's installed and linked; otherwise `YYYY-MM-DD` / `HH:mm` text inputs.
 
 ```tsx
 argTypes: {
@@ -242,7 +242,7 @@ export const Interactive: Story = {
 
 ## Dependencies
 
-Some controls use additional native packages (optional with `features.ondeviceControls`, which falls back to JavaScript controls):
+Two controls can use native packages. Both are optional; without them (or before a rebuild) the controls fall back to JavaScript:
 
 - **Range/slider**: `@react-native-community/slider`
 - **Date picker**: `@react-native-community/datetimepicker`

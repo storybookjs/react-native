@@ -30,6 +30,8 @@ Install the required dependencies (swap `npm` for your preferred package manager
 npm install storybook @storybook/react-native @react-native-async-storage/async-storage react-dom react-native-safe-area-context react-native-reanimated react-native-gesture-handler @gorhom/bottom-sheet react-native-svg
 ```
 
+Controls are built in. If you want the native date picker and slider in the Controls panel, optionally add `@react-native-community/datetimepicker` and `@react-native-community/slider`; without them, JavaScript controls are used.
+
 If you are working with dev clients or React Native CLI, make sure to install pods or run prebuild:
 
 ```sh
@@ -54,7 +56,7 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+  deviceAddons: ['@storybook/addon-ondevice-actions'],
 };
 
 export default main;
