@@ -6,6 +6,7 @@ import { styled } from '@storybook/react-native-theming';
 
 import Swatch from './Swatch';
 import { PARAM_KEY } from './constants';
+import { normalizeBackgrounds } from './utils';
 
 const codeSample = `
 // In your preview config (.storybook/preview.tsx):
@@ -73,13 +74,6 @@ interface BackgroundPanelProps {
   active?: boolean;
 }
 
-interface BackgroundOptions {
-  [key: string]: {
-    name: string;
-    value: string;
-  };
-}
-
 const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
   const store = api.store();
   const storyId = store.getSelection()?.storyId;
@@ -95,9 +89,9 @@ const BackgroundPanel = ({ active, api, channel }: BackgroundPanelProps) => {
     [channel]
   );
 
-  const bgParams = story?.parameters?.[PARAM_KEY];
-  const options: BackgroundOptions | undefined = bgParams?.options;
-  if (options && Object.keys(options).length > 0) {
+  // Accepts both `options` and the legacy `values` array
+  const { options } = normalizeBackgrounds(story?.parameters?.[PARAM_KEY]);
+  if (Object.keys(options).length > 0) {
     return (
       <View style={{ padding: 10 }}>
         {isLocked && <LockedText>Background is set at the story level</LockedText>}
