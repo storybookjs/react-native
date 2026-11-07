@@ -5,8 +5,9 @@ export type Features = {
   /** Enable the built-in on-device backgrounds addon panel. */
   ondeviceBackgrounds?: boolean;
   /**
-   * Enable the built-in on-device actions addon panel. Replaces
-   * `@storybook/addon-ondevice-actions`, which you can remove from `deviceAddons`.
+   * The built-in on-device actions addon panel. Enabled by default; set to `false` to disable it.
+   * Replaces `@storybook/addon-ondevice-actions`, which you can remove from `deviceAddons`.
+   * @default true
    */
   ondeviceActions?: boolean;
 };

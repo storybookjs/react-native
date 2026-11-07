@@ -21,7 +21,6 @@ const main: StorybookConfig = {
   deviceAddons: ['@storybook/addon-ondevice-controls'],
   features: {
     ondeviceBackgrounds: true,
-    ondeviceActions: true,
   },
 };
 
@@ -32,7 +31,7 @@ Feature flags are set on `globalThis.FEATURES` via the generated `storybook.requ
 
 ## Available Flags
 
-| Flag                  | Description                                                                                                                                                                             | Guide                           |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Available from v10.3. Will become the default in the next major version.               | [Backgrounds](./backgrounds.md) |
-| `ondeviceActions`     | Built-in Actions panel in `@storybook/react-native`, so `@storybook/addon-ondevice-actions` is no longer needed. Available from v11. Will become the default in the next major version. | [Actions](./actions.md)         |
+| Flag                  | Description                                                                                                                                                               | Guide                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Available from v10.3. Will become the default in the next major version. | [Backgrounds](./backgrounds.md) |
+| `ondeviceActions`     | Built-in Actions panel in `@storybook/react-native`. **On by default** from v11; set to `false` to disable it. Replaces `@storybook/addon-ondevice-actions`.              | [Actions](./actions.md)         |
