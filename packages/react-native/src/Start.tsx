@@ -137,7 +137,8 @@ export function start({
     registerBackgroundsAddon();
   }
 
-  if (globalThis.FEATURES?.ondeviceActions) {
+  // On by default; set `features.ondeviceActions: false` to disable.
+  if (globalThis.FEATURES?.ondeviceActions !== false) {
     const { registerActionsAddon } = require('./actions/register');
     registerActionsAddon();
   }

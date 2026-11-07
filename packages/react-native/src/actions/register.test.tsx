@@ -11,35 +11,33 @@ jest.mock('storybook/actions', () => ({
 
 jest.mock('./containers/ActionLogger', () => () => null);
 
-const { registerActionsAddon } = require('./register');
+const actionPanels = () =>
+  Object.values(addons.getElements(types.PANEL)).filter(
+    (panel) => panel.id === 'storybook/actions/panel'
+  );
 
-describe('registerActionsAddon', () => {
-  beforeEach(() => {
+describe('built-in actions with the @storybook/addon-ondevice-actions stub', () => {
+  it('leaves exactly one Actions panel and warns once in development', () => {
     addons.setChannel(new Channel({}));
-  });
-
-  it('replaces a loader registered by @storybook/addon-ondevice-actions under the same id', () => {
     const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
-    const packageLoader = jest.fn(() => {
-      addons.add('storybook/actions/panel', {
-        type: types.PANEL,
-        title: 'Actions (package)',
-        render: () => null,
-      });
-    });
-    // What `import '@storybook/addon-ondevice-actions/register'` does in storybook.requires.
-    addons.register('storybook/actions', packageLoader);
 
-    registerActionsAddon();
+    // What `import '@storybook/addon-ondevice-actions/register'` does in storybook.requires,
+    // which runs before `start()` registers the built-in addon.
+    const stub = require('../../../ondevice-actions/src');
+    stub.register();
+    stub.register();
+    expect(addons.experimental_getRegisteredAddons()).not.toContain('storybook/actions');
+
+    require('./register').registerActionsAddon();
     addons.loadAddons({} as any);
 
-    expect(packageLoader).not.toHaveBeenCalled();
-    const panels = Object.values(addons.getElements(types.PANEL)).filter(
-      (panel) => panel.id === 'storybook/actions/panel'
-    );
+    const panels = actionPanels();
     expect(panels).toHaveLength(1);
     expect(panels[0].title).toBe('Actions');
-    expect(warn).toHaveBeenCalledWith(expect.stringContaining('Remove it from deviceAddons'));
+    expect(warn).toHaveBeenCalledTimes(1);
+    expect(warn).toHaveBeenCalledWith(
+      expect.stringContaining('built into @storybook/react-native')
+    );
 
     warn.mockRestore();
   });

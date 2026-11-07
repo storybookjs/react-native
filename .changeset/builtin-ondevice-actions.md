@@ -1,5 +1,5 @@
 ---
-'@storybook/react-native': minor
+'@storybook/react-native': major
 ---
 
-Add a built-in on-device Actions panel behind the `ondeviceActions` feature flag. Set `features: { ondeviceActions: true }` in `.rnstorybook/main.ts` and remove `@storybook/addon-ondevice-actions` from `deviceAddons`; the separate package is no longer needed. The built-in panel uses the same addon id as the package, so if both are enabled the built-in one replaces the package's panel instead of adding a second one, and a warning is logged in development.
+The on-device Actions panel is now built into `@storybook/react-native` and enabled by default. Remove `@storybook/addon-ondevice-actions` from `deviceAddons` and uninstall it. To turn the panel off, set `features: { ondeviceActions: false }` in `.rnstorybook/main.ts`.

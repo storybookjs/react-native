@@ -51,7 +51,7 @@ pnpm serve      # Serve built documentation
 
 **On-Device Addons:**
 
-- `@storybook/addon-ondevice-actions` - Log component interactions
+- `@storybook/addon-ondevice-actions` - Deprecated stub; actions are built into `@storybook/react-native` (`src/actions/`)
 - `@storybook/addon-ondevice-backgrounds` - Change story backgrounds
 - `@storybook/addon-ondevice-controls` - Dynamically edit component props
 - `@storybook/addon-ondevice-notes` - Add markdown documentation to stories

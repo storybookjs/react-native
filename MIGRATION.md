@@ -77,7 +77,6 @@ You need to update all Storybook dependencies to version 11.x. This includes:
     "@storybook/react-native": "^11.0.0",
     "@storybook/react": "^11.0.0",
     "@storybook/addon-ondevice-controls": "^11.0.0",
-    "@storybook/addon-ondevice-actions": "^11.0.0",
     "@storybook/addon-ondevice-backgrounds": "^11.0.0",
     "@storybook/addon-ondevice-notes": "^11.0.0",
     "storybook": "^11.0.0"
@@ -148,6 +147,34 @@ export default defineMain({
 ```
 
 Comparator functions need to be moved by hand. They work in `storySorts`, but they are copied into `storybook.requires` from their source, so they can't use imports or variables from outside their own body.
+
+### Actions is built into `@storybook/react-native`
+
+The on-device Actions panel now ships with `@storybook/react-native` and is enabled by default. `@storybook/addon-ondevice-actions` is deprecated and is now an empty stub: its `register` adds nothing, so the panel you see comes from `@storybook/react-native`.
+
+Remove the package from `deviceAddons` and uninstall it:
+
+```ts
+// Before (.rnstorybook/main.ts)
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+};
+
+// After
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  deviceAddons: ['@storybook/addon-ondevice-controls'],
+};
+```
+
+```sh
+npm uninstall @storybook/addon-ondevice-actions
+```
+
+If you leave it listed, nothing breaks: you still get a single Actions panel, and a warning is logged once in development. Your stories don't need to change.
+
+To turn the Actions panel off, set `features: { ondeviceActions: false }` in `.rnstorybook/main.ts`.
 
 ## From version 10.3 to 10.4
 
