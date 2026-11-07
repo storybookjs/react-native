@@ -141,6 +141,11 @@ export function start({
     registerBackgroundsAddon();
   }
 
+  if (globalThis.FEATURES?.ondeviceControls) {
+    const { registerControlsAddon } = require('./controls/register');
+    registerControlsAddon();
+  }
+
   const previewView = {
     prepareForStory: () => {
       return createPreviewRoot();

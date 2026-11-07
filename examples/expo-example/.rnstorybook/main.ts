@@ -13,7 +13,6 @@ export default defineMain({
   deviceAddons: [
     'storybook-addon-deep-controls',
     './local-addon-example',
-    { name: '@storybook/addon-ondevice-controls' },
     '@storybook/addon-ondevice-actions',
     // '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-notes',
@@ -30,6 +29,7 @@ export default defineMain({
   },
   features: {
     ondeviceBackgrounds: true,
+    ondeviceControls: true,
   },
 
   framework: '@storybook/react-native',

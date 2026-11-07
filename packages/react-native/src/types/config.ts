@@ -4,6 +4,11 @@ import type { ReactNativeOptions } from '../Start';
 export type Features = {
   /** Enable the built-in on-device backgrounds addon panel. */
   ondeviceBackgrounds?: boolean;
+  /**
+   * Enable the built-in on-device controls addon panel, which replaces
+   * `@storybook/addon-ondevice-controls`. The native date picker and slider are optional.
+   */
+  ondeviceControls?: boolean;
 };
 
 type Addon = string | { name: string; options?: Record<string, any> };

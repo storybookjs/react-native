@@ -108,7 +108,7 @@ argTypes: {
 
 ### date
 
-Date/time picker. Requires `@react-native-community/datetimepicker`.
+Date/time picker. The addon package requires `@react-native-community/datetimepicker`; with the built-in controls (`features.ondeviceControls`) it's optional and falls back to `YYYY-MM-DD` / `HH:mm` text inputs.
 
 ```tsx
 argTypes: {
@@ -242,7 +242,7 @@ export const Interactive: Story = {
 
 ## Dependencies
 
-Some controls require additional native packages:
+Some controls use additional native packages (optional with `features.ondeviceControls`, which falls back to JavaScript controls):
 
 - **Range/slider**: `@react-native-community/slider`
 - **Date picker**: `@react-native-community/datetimepicker`

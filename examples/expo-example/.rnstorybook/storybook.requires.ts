@@ -5,7 +5,6 @@ import { start, updateView, type View, type Features } from '@storybook/react-na
 
 import "storybook-addon-deep-controls/register";
 import "./local-addon-example/register";
-import "@storybook/addon-ondevice-controls/register";
 import "@storybook/addon-ondevice-actions/register";
 import "@storybook/addon-ondevice-notes/register";
 
@@ -75,6 +74,7 @@ module?.hot?.accept?.();
 globalThis.FEATURES = {
   ...globalThis.FEATURES,
   ondeviceBackgrounds: true,
+  ondeviceControls: true,
 };
 
 const options = {

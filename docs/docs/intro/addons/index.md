@@ -11,6 +11,8 @@ The addons made available by us are the following. There are more addons availab
 | controls    | @storybook/addon-ondevice-controls    |
 | notes       | @storybook/addon-ondevice-notes       |
 
+Backgrounds and controls are also built into `@storybook/react-native` behind feature flags, so you don't need their packages: see [Backgrounds](../configuration/backgrounds.md) and [Controls](../configuration/controls.md).
+
 ## Configuration
 
 To use on-device addons, add them to the `deviceAddons` property in your `.rnstorybook/main.ts`:
@@ -129,6 +131,8 @@ Component-level background settings will override the global settings from previ
 ## Controls
 
 Controls provides a graphical UI to dynamically edit component props without code. It supports 13 different control types optimized for mobile interfaces.
+
+Enable the [`ondeviceControls` feature flag](../configuration/controls.md) to use the built-in Controls panel instead of installing the package. The native date picker and slider are then optional.
 
 ```sh
 npm install --save-dev @storybook/addon-ondevice-controls @react-native-community/datetimepicker @react-native-community/slider

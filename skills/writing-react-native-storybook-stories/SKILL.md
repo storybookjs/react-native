@@ -294,3 +294,5 @@ setProjectAnnotations(previewAnnotations);
 | Actions     | `@storybook/addon-ondevice-actions`     | Log component interactions |
 | Backgrounds | `@storybook/addon-ondevice-backgrounds` | Change story backgrounds   |
 | Notes       | `@storybook/addon-ondevice-notes`       | Add markdown documentation |
+
+Controls and backgrounds can instead be built in with `features: { ondeviceControls: true, ondeviceBackgrounds: true }` in `main.ts`; then leave their packages out of `deviceAddons`.

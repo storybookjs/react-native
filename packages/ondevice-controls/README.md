@@ -2,6 +2,8 @@
 
 Storybook Controls Addon for React Native allows editing a component's arguments dynamically via a graphical UI without needing to code. The Controls Addon replaces the old Knobs Addon.
 
+> **Tip:** Controls are also built into `@storybook/react-native` behind the `ondeviceControls` feature flag. With it you don't need this package, and `@react-native-community/datetimepicker` and `@react-native-community/slider` are optional. See the [Controls guide](https://storybookjs.github.io/react-native/docs/intro/configuration/controls).
+
 ## Installation
 
 Controls has some extra dependencies needed to display the form inputs.

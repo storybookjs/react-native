@@ -391,9 +391,10 @@ const main: StorybookConfig = {
 export default main;
 ```
 
-| Flag                  | Description                                                                                                                   |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3. |
+| Flag                  | Description                                                                                                                                                             |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3.                                           |
+| `ondeviceControls`    | Built-in Controls panel, no `@storybook/addon-ondevice-controls` needed. The native date picker and slider are optional, with JavaScript fallbacks. Available from v11. |
 
 For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
 

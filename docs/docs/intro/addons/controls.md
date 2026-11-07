@@ -6,6 +6,10 @@ sidebar_position: 1
 
 The `@storybook/addon-ondevice-controls` addon provides interactive controls for dynamically editing component props directly on your device. This allows you to experiment with different component states without modifying code.
 
+:::tip[Built-in controls]
+With the [`ondeviceControls` feature flag](../configuration/controls.md) the Controls panel is built into `@storybook/react-native`, so you don't need this package, and the native date picker and slider are optional. Everything on this page about control types and `argTypes` applies to both.
+:::
+
 ## Installation
 
 ```sh
@@ -226,7 +230,7 @@ export default {
 };
 ```
 
-**Dependencies:** Requires `@react-native-community/datetimepicker` for React Native projects.
+**Dependencies:** The addon package requires `@react-native-community/datetimepicker`. With the [`ondeviceControls` flag](../configuration/controls.md) it's optional, and without it the date and time are edited in text inputs (`YYYY-MM-DD` and `HH:mm`).
 
 ### Complex Data Controls
 
@@ -433,6 +437,8 @@ Some controls require additional React Native dependencies:
 - **Range controls**: `@react-native-community/slider`
 - **Date controls**: `@react-native-community/datetimepicker`
 
+With the [`ondeviceControls` flag](../configuration/controls.md) both are optional and fall back to JavaScript controls when they aren't installed or linked.
+
 Install these as needed:
 
 ```sh
@@ -443,7 +449,7 @@ npm install @react-native-community/slider @react-native-community/datetimepicke
 
 ### Controls Not Appearing
 
-- Ensure the addon is installed and added to `main.ts`
+- Ensure the addon is installed and added to `main.ts`, or `features.ondeviceControls` is enabled
 - Check that `argTypes` are properly configured
 - Verify component props are typed correctly for auto-detection
 

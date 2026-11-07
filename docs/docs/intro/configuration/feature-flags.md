@@ -18,9 +18,10 @@ import type { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
+  deviceAddons: ['@storybook/addon-ondevice-actions'],
   features: {
     ondeviceBackgrounds: true,
+    ondeviceControls: true,
   },
 };
 
@@ -31,6 +32,7 @@ Feature flags are set on `globalThis.FEATURES` via the generated `storybook.requ
 
 ## Available Flags
 
-| Flag                  | Description                                                                                                                                                               | Guide                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Available from v10.3. Will become the default in the next major version. | [Backgrounds](./backgrounds.md) |
+| Flag                  | Description                                                                                                                                                                                                                        | Guide                           |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Available from v10.3. Will become the default in the next major version.                                                          | [Backgrounds](./backgrounds.md) |
+| `ondeviceControls`    | Built-in Controls panel, so you don't need `@storybook/addon-ondevice-controls`. The native date picker and slider are optional, with JavaScript fallbacks. Available from v11. Will become the default in the next major version. | [Controls](./controls.md)       |
