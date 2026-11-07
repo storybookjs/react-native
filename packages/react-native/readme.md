@@ -252,11 +252,11 @@ const meta = {
   ],
   parameters: {
     backgrounds: {
-      values: [
-        { name: 'red', value: '#f00' },
-        { name: 'green', value: '#0f0' },
-        { name: 'blue', value: '#00f' },
-      ],
+      options: {
+        red: { name: 'Red', value: '#f00' },
+        green: { name: 'Green', value: '#0f0' },
+        blue: { name: 'Blue', value: '#00f' },
+      },
     },
   },
 } satisfies Meta<typeof Button>;
@@ -269,11 +269,9 @@ For global decorators and parameters, you can add them to `preview.tsx` inside y
 ```tsx
 // .rnstorybook/preview.tsx
 import type { Preview } from '@storybook/react-native';
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 const preview: Preview = {
   decorators: [
-    withBackgrounds,
     (Story) => (
       <View style={{ flex: 1, color: 'blue' }}>
         <Story />
@@ -282,13 +280,15 @@ const preview: Preview = {
   ],
   parameters: {
     backgrounds: {
-      default: 'plain',
-      values: [
-        { name: 'plain', value: 'white' },
-        { name: 'warm', value: 'hotpink' },
-        { name: 'cool', value: 'deepskyblue' },
-      ],
+      options: {
+        plain: { name: 'Plain', value: 'white' },
+        warm: { name: 'Warm', value: 'hotpink' },
+        cool: { name: 'Cool', value: 'deepskyblue' },
+      },
     },
+  },
+  initialGlobals: {
+    backgrounds: { value: 'plain' },
   },
 };
 
@@ -305,7 +305,8 @@ Currently, the addons available are:
 - [`@storybook/addon-ondevice-controls`](https://storybook.js.org/addons/@storybook/addon-ondevice-controls): adjust your components props in realtime
 - [`@storybook/addon-ondevice-actions`](https://storybook.js.org/addons/@storybook/addon-ondevice-actions): mock onPress calls with actions that will log information in the actions tab
 - [`@storybook/addon-ondevice-notes`](https://storybook.js.org/addons/@storybook/addon-ondevice-notes): Add some Markdown to your stories to help document their usage
-- [`@storybook/addon-ondevice-backgrounds`](https://storybook.js.org/addons/@storybook/addon-ondevice-backgrounds): change the background of storybook to compare the look of your component against different backgrounds
+
+Backgrounds are built into `@storybook/react-native`, so there's no package to install. See the [Backgrounds guide](https://storybookjs.github.io/react-native/docs/intro/configuration/backgrounds). `@storybook/addon-ondevice-backgrounds` is deprecated and can be removed.
 
 Install each one you want to use and add them to the `deviceAddons` list in `main.ts` as follows:
 
@@ -318,7 +319,6 @@ const main: StorybookConfig = {
   deviceAddons: [
     '@storybook/addon-ondevice-notes',
     '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
   ],
 };
@@ -331,7 +331,6 @@ export default main;
 For details of each ondevice addon you can see the readme:
 
 - [actions](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-actions#readme)
-- [backgrounds](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-backgrounds#readme)
 - [controls](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-controls#readme)
 - [notes](https://github.com/storybookjs/react-native/tree/next/packages/ondevice-notes#readme)
 
@@ -525,9 +524,7 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
 
 ## Feature Flags
 
-Feature flags let you opt into new functionality without breaking existing behavior. In the next major version, the behavior behind these flags will become the default and the flags will no longer be needed.
-
-Add them to the `features` object in `main.ts`:
+Feature flags turn built-in functionality on or off. Add them to the `features` object in `main.ts`:
 
 ```ts
 // .rnstorybook/main.ts
@@ -537,16 +534,17 @@ const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   deviceAddons: ['@storybook/addon-ondevice-controls'],
   features: {
-    ondeviceBackgrounds: true,
+    // Turn off the built-in Backgrounds panel
+    ondeviceBackgrounds: false,
   },
 };
 
 export default main;
 ```
 
-| Flag                  | Description                                                                                                                   |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package needed. Available from v10.3. |
+| Flag                  | Default | Description                                                                                                                            |
+| --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `ondeviceBackgrounds` | `true`  | Built-in Backgrounds panel with globals-based configuration and full-screen backgrounds. Set to `false` to disable it. Added in v10.3. |
 
 For full documentation including configuration examples, see the [Feature Flags guide](https://storybookjs.github.io/react-native/docs/intro/configuration/feature-flags).
 

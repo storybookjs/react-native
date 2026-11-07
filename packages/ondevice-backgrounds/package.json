@@ -1,11 +1,12 @@
 {
   "name": "@storybook/addon-ondevice-backgrounds",
   "version": "11.0.0-next.1",
-  "description": "A react-native storybook addon to show different backgrounds for your preview",
+  "description": "Deprecated: backgrounds are built into @storybook/react-native. This package is a no-op compatibility stub.",
   "keywords": [
     "addon",
     "background",
-    "react",
+    "deprecated",
+    "react-native",
     "storybook"
   ],
   "homepage": "https://storybook.js.org",
@@ -30,18 +31,16 @@
   "scripts": {
     "check:types": "tsc --noEmit",
     "dev": "tsc --watch",
+    "preprepare": "rm -rf dist/",
     "prepare": "tsc"
   },
-  "dependencies": {
-    "@storybook/react-native-theming": "^11.0.0-next.1"
-  },
   "devDependencies": {
+    "@storybook/react-native": "^11.0.0-next.1",
     "storybook": "^11.0.0-alpha.7",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*",
+    "@storybook/react-native": "^11.0.0-next.1",
     "storybook": "^11.0.0-alpha.7"
   },
   "publishConfig": {

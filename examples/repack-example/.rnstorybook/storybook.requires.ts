@@ -48,11 +48,6 @@ globalThis.STORYBOOK_WEBSOCKET = {
 
 module?.hot?.accept?.();
 
-globalThis.FEATURES = {
-  ...globalThis.FEATURES,
-  ondeviceBackgrounds: true,
-};
-
 const options = {}
 
 const storySorts: NonNullable<Parameters<typeof start>[0]['storySorts']> = [{ "method": "alphabetical", "includeNames": true, "order": ["ControlExamples", ["ControlExample"], "InteractionExample", "DeepControls"] }];

@@ -4,32 +4,13 @@ sidebar_position: 7
 
 # Backgrounds
 
-The `ondeviceBackgrounds` [feature flag](./feature-flags.md) enables the new backgrounds API with a Backgrounds panel integrated into core. It uses a globals-based configuration that aligns with Storybook web and lets you switch background colors directly on the device, with the background filling the entire screen including safe areas.
+`@storybook/react-native` includes a Backgrounds panel. It uses a globals-based configuration that aligns with Storybook web and lets you switch background colors directly on the device, with the background filling the entire screen including safe areas.
 
-This flag was introduced in v10.3 as a non-breaking way to opt into the new syntax. **In the next major version this will be the default behavior and the flag will no longer be needed.**
-
-When this flag is enabled you do **not** need to install `@storybook/addon-ondevice-backgrounds` or add it to your `deviceAddons` array.
+It's enabled by default since v11. You don't need to install `@storybook/addon-ondevice-backgrounds` or add it to `deviceAddons`. Stories without backgrounds parameters aren't affected: no background is applied until you configure options.
 
 ## Setup
 
-### 1. Enable the feature flag in `main.ts`
-
-```ts
-// .storybook/main.ts
-import type { StorybookConfig } from '@storybook/react-native';
-
-const main: StorybookConfig = {
-  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  deviceAddons: ['@storybook/addon-ondevice-controls'],
-  features: {
-    ondeviceBackgrounds: true,
-  },
-};
-
-export default main;
-```
-
-### 2. Define background options in `preview.tsx`
+Define background options in `preview.tsx`:
 
 ```tsx
 // .storybook/preview.tsx
@@ -55,19 +36,6 @@ export default preview;
 
 - `parameters.backgrounds.options` — an object keyed by identifier. Each entry has a `name` (display label) and `value` (hex color).
 - `initialGlobals.backgrounds.value` — sets the initially selected background by its key.
-
-After changing `main.ts`, restart your bundler so the flag takes effect. The `withStorybook` wrapper regenerates `storybook.requires.ts` automatically on start.
-
-<details>
-<summary>Not using a <code>withStorybook</code> wrapper?</summary>
-
-If you're not using the `withStorybook` wrapper, regenerate the requires file manually:
-
-```sh
-npx sb-rn-get-stories
-```
-
-</details>
 
 ## Overriding at the story level
 
@@ -154,12 +122,73 @@ export const Default: Story = {};
 
 When you switch the background in the Backgrounds panel, the decorator picks up the new global and passes the corresponding theme to `AppThemeProvider`, updating the card's colors.
 
-## Differences from `@storybook/addon-ondevice-backgrounds`
+## Disabling backgrounds
 
-|                  | Feature flag                           | Separate addon package                              |
-| ---------------- | -------------------------------------- | --------------------------------------------------- |
-| Install          | No extra package needed                | `npm install @storybook/addon-ondevice-backgrounds` |
-| Decorator        | Not required                           | `withBackgrounds` decorator required                |
-| Parameter format | `options` object with `initialGlobals` | `values` array with `default`                       |
-| Background scope | Full screen including safe areas       | Story view only                                     |
-| Story locking    | `globals` on meta/story                | Not supported                                       |
+To hide the panel for a single story, set `parameters.backgrounds.disable`. No background is applied to that story:
+
+```tsx
+export const NoBackgrounds: Story = {
+  parameters: {
+    backgrounds: { disable: true },
+  },
+};
+```
+
+To turn the built-in Backgrounds panel off everywhere, set the `ondeviceBackgrounds` [feature flag](./feature-flags.md) to `false` in `main.ts` and restart your bundler:
+
+```ts
+// .rnstorybook/main.ts
+import type { StorybookConfig } from '@storybook/react-native';
+
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  features: {
+    ondeviceBackgrounds: false,
+  },
+};
+
+export default main;
+```
+
+## Migrating from `@storybook/addon-ondevice-backgrounds`
+
+`@storybook/addon-ondevice-backgrounds` is deprecated. Its `register` entry is a no-op that logs a warning in development, and `withBackgrounds` renders the story unchanged, so existing projects keep working with one Backgrounds panel. To finish migrating:
+
+1. Remove `'@storybook/addon-ondevice-backgrounds'` from `deviceAddons` in `.rnstorybook/main.ts`.
+2. Remove `withBackgrounds` from your preview `decorators`.
+3. Uninstall the package: `npm uninstall @storybook/addon-ondevice-backgrounds`.
+4. Optionally move to the `options` shape, shown below.
+
+The built-in panel still reads the legacy `values` array and `default` name. Legacy values are keyed by `name`, `default` (or the first value when there's no default) is applied while no `backgrounds` global is set, and picking a swatch sets `globals.backgrounds.value` to the value's name.
+
+```diff
+ const preview: Preview = {
+-  decorators: [withBackgrounds],
+   parameters: {
+     backgrounds: {
+-      default: 'plain',
+-      values: [
+-        { name: 'plain', value: 'white' },
+-        { name: 'dark', value: '#333' },
+-      ],
++      options: {
++        plain: { name: 'Plain', value: 'white' },
++        dark: { name: 'Dark', value: '#333' },
++      },
+     },
+   },
++  initialGlobals: {
++    backgrounds: { value: 'plain' },
++  },
+ };
+```
+
+A story-level `default` becomes `globals: { backgrounds: { value: 'dark' } }` on the story, which also locks the panel for that story.
+
+|                  | Built in                               | Deprecated addon package                   |
+| ---------------- | -------------------------------------- | ------------------------------------------ |
+| Install          | No extra package needed                | `@storybook/addon-ondevice-backgrounds`    |
+| Decorator        | Not required                           | `withBackgrounds` (now a no-op)            |
+| Parameter format | `options` object with `initialGlobals` | `values` array with `default` (still read) |
+| Background scope | Full screen including safe areas       | Story view only                            |
+| Story locking    | `globals` on meta/story                | Not supported                              |

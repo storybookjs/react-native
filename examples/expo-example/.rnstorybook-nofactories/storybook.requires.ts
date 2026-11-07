@@ -5,6 +5,7 @@ import { start, updateView, type View, type Features } from '@storybook/react-na
 
 import "@storybook/addon-ondevice-controls/register";
 import "@storybook/addon-ondevice-actions/register";
+import "@storybook/addon-ondevice-backgrounds/register";
 import "@storybook/addon-ondevice-notes/register";
 import "storybook-addon-deep-controls/register";
 
@@ -69,11 +70,6 @@ globalThis.STORYBOOK_WEBSOCKET = {
 };
 
 module?.hot?.accept?.();
-
-globalThis.FEATURES = {
-  ...globalThis.FEATURES,
-  ondeviceBackgrounds: true,
-};
 
 const options = {
   "playFn": false

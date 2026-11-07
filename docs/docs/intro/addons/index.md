@@ -4,12 +4,12 @@ Since react native storybook has a react native UI the web based addon panels ne
 
 The addons made available by us are the following. There are more addons available via the community and you can also write your own addons.
 
-| Addon       | Package                               |
-| ----------- | ------------------------------------- |
-| actions     | @storybook/addon-ondevice-actions     |
-| backgrounds | @storybook/addon-ondevice-backgrounds |
-| controls    | @storybook/addon-ondevice-controls    |
-| notes       | @storybook/addon-ondevice-notes       |
+| Addon       | Package                                                 |
+| ----------- | ------------------------------------------------------- |
+| actions     | @storybook/addon-ondevice-actions                       |
+| backgrounds | Built into `@storybook/react-native`, no package needed |
+| controls    | @storybook/addon-ondevice-controls                      |
+| notes       | @storybook/addon-ondevice-notes                         |
 
 ## Configuration
 
@@ -22,7 +22,6 @@ const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   deviceAddons: [
     '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
   ],
@@ -78,53 +77,31 @@ export default {
 
 ## Backgrounds
 
-The Backgrounds addon allows you to change background colors of your stories directly on the device. Perfect for testing components against different backgrounds.
-
-> **New:** A new globals-based backgrounds API is available behind a feature flag — no extra package required, full-screen support, and alignment with Storybook web. This will become the default in the next major version. See the [Backgrounds guide](../configuration/backgrounds.md) to opt in now.
-
-```sh
-npm install --save-dev @storybook/addon-ondevice-backgrounds
-```
-
-First, add the required decorator in `.storybook/preview.tsx`:
+Backgrounds are built into `@storybook/react-native` and enabled by default, so there's nothing to install. Define the background options in `.rnstorybook/preview.tsx` and pick one from the Backgrounds panel on the device:
 
 ```ts
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-
 const preview: Preview = {
-  decorators: [withBackgrounds], // This decorator is required
   parameters: {
     backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: 'white' },
-        { name: 'dark', value: '#333' },
-      ],
+      options: {
+        light: { name: 'Light', value: 'white' },
+        dark: { name: 'Dark', value: '#333' },
+      },
     },
+  },
+  initialGlobals: {
+    backgrounds: { value: 'light' },
   },
 };
 
 export default preview;
 ```
 
-You can then override these background options in individual stories:
+See the [Backgrounds guide](../configuration/backgrounds.md) for story-level overrides, theming and how to turn the panel off.
 
-```ts
-export default {
-  component: MyComponent,
-  parameters: {
-    backgrounds: {
-      default: 'warm',
-      values: [
-        { name: 'warm', value: 'hotpink' },
-        { name: 'cool', value: 'deepskyblue' },
-      ],
-    },
-  },
-} satisfies Meta<typeof MyComponent>;
-```
-
-Component-level background settings will override the global settings from preview.tsx, but the decorator is still required.
+:::note[`@storybook/addon-ondevice-backgrounds` is deprecated]
+The standalone package is now a no-op kept for compatibility. Remove it from `deviceAddons`, remove the `withBackgrounds` decorator and uninstall it. The legacy `values` and `default` parameters still work, but we recommend moving to `options` and `initialGlobals`. See [Migrating from `@storybook/addon-ondevice-backgrounds`](../configuration/backgrounds.md#migrating-from-storybookaddon-ondevice-backgrounds).
+:::
 
 ## Controls
 

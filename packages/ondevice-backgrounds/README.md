@@ -1,29 +1,68 @@
-# Storybook Backgrounds Addon for React Native
+# @storybook/addon-ondevice-backgrounds (deprecated)
 
-Storybook Backgrounds Addon for React Native can be used to change background colors of your stories right from the device.
+> [!WARNING]
+> Backgrounds are built into `@storybook/react-native` and enabled by default since v11. This package is a compatibility stub that does nothing. Remove it from your project.
 
-## Installation
+## What the stub does
 
-```sh
-yarn add -D @storybook/addon-ondevice-backgrounds
-```
+- `@storybook/addon-ondevice-backgrounds/register` registers nothing. In development it logs one warning asking you to remove the package. The built-in Backgrounds panel stays enabled, so you get exactly one panel.
+- `withBackgrounds` renders the story unchanged, so backgrounds aren't applied twice. The built-in panel applies them without a decorator.
+- The `Background` type is still exported.
 
-## Configuration
+The built-in panel also reads the legacy parameters this addon used (`values` and `default`), so existing stories keep their backgrounds.
 
-Then, add following content to `.rnstorybook/main.ts`:
+## Migrating
 
-```ts
-import type { StorybookConfig } from '@storybook/react-native';
+1. Remove the addon from `deviceAddons` in `.rnstorybook/main.ts`:
 
-const main: StorybookConfig = {
-  deviceAddons: ['@storybook/addon-ondevice-backgrounds'],
-};
+   ```diff
+    const main: StorybookConfig = {
+      deviceAddons: [
+        '@storybook/addon-ondevice-controls',
+   -    '@storybook/addon-ondevice-backgrounds',
+      ],
+    };
+   ```
 
-export default main;
-```
+2. Remove `withBackgrounds` from your preview decorators.
 
-## Usage
+3. Uninstall the package:
 
-See the [example of using the Backgrounds Addon with Component Story Format](../../examples/expo-example/components/BackgroundExample/BackgroundCsf.stories.tsx). You can also run the [react-native app](../../examples/expo-example) to see it in action.
+   ```sh
+   npm uninstall @storybook/addon-ondevice-backgrounds
+   ```
 
-The [web Backgrounds Addon documentation](https://storybook.js.org/docs/react/essentials/backgrounds) may also be useful, but the examples there have not been tested with Storybook for React Native.
+4. Optionally move from `values` and `default` to `options` and `initialGlobals`, the same format Storybook web uses:
+
+   ```diff
+    // .rnstorybook/preview.tsx
+   -import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+
+    const preview: Preview = {
+   -  decorators: [withBackgrounds],
+      parameters: {
+        backgrounds: {
+   -      default: 'plain',
+   -      values: [
+   -        { name: 'plain', value: 'white' },
+   -        { name: 'dark', value: '#333' },
+   -      ],
+   +      options: {
+   +        plain: { name: 'Plain', value: 'white' },
+   +        dark: { name: 'Dark', value: '#333' },
+   +      },
+        },
+      },
+   +  initialGlobals: {
+   +    backgrounds: { value: 'plain' },
+   +  },
+    };
+   ```
+
+   A story-level `default` becomes `globals: { backgrounds: { value: 'dark' } }` on that story, which also locks the panel for it.
+
+Until you migrate, legacy `values` are keyed by their `name`, and `default` (or the first value when there's no default) is applied while no `backgrounds` global is set.
+
+To turn the built-in panel off, set `features: { ondeviceBackgrounds: false }` in `.rnstorybook/main.ts`.
+
+See the [Backgrounds guide](https://storybookjs.github.io/react-native/docs/intro/configuration/backgrounds) for the full documentation.

@@ -5,7 +5,10 @@ jest.mock('storybook/manager-api', () => ({
   addons: {
     loadAddons: jest.fn(),
     setChannel: jest.fn(),
+    // start() registers the built-in Backgrounds addon
+    register: jest.fn(),
   },
+  types: { PANEL: 'panel' },
 }));
 
 const basicId = 'example-button--basic';
