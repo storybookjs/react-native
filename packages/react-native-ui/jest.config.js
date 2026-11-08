@@ -1,11 +1,13 @@
 /** @type {import('jest').Config} */
 const config = {
-  testEnvironment: 'node',
+  preset: '@react-native/jest-preset',
   setupFiles: ['<rootDir>/jest.setup.js'],
+  // Reanimated and worklets ship this so jest loads their JS implementations instead of
+  // the native ones.
+  resolver: 'react-native-reanimated/jest/resolver',
   ...(process.env.JEST_CACHE_DIRECTORY && { cacheDirectory: process.env.JEST_CACHE_DIRECTORY }),
-  transform: {
-    '\\.[jt]sx?$': '<rootDir>/jest-sucrase-transformer.js',
-  },
-  transformIgnorePatterns: ['node_modules/(?!(storybook)/)'],
+  transformIgnorePatterns: [
+    'node_modules/(?!((jest-)?react-native|@react-native(-community)?|@gorhom|@storybook))',
+  ],
 };
 module.exports = config;
