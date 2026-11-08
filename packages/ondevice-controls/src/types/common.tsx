@@ -1,6 +1,12 @@
 import { styled, Theme } from '@storybook/react-native-theming';
 import { useLayout } from '@storybook/react-native-ui-common';
-import { forwardRef } from 'react';
+import {
+  type ComponentRef,
+  type FC,
+  type ForwardRefExoticComponent,
+  type RefAttributes,
+  forwardRef,
+} from 'react';
 import { Platform, TextInput, TextInputProps, TextStyle } from 'react-native';
 
 export function inputStyle({
@@ -60,7 +66,11 @@ try {
 
 const IsNative = Platform.OS === 'ios' || Platform.OS === 'android';
 
-const TextInputWithSwitcher = forwardRef<TextInput, TextInputProps>((props, ref) => {
+export type TextInputRef = ComponentRef<typeof TextInput>;
+
+const TextInputWithSwitcher: ForwardRefExoticComponent<
+  TextInputProps & RefAttributes<TextInputRef>
+> = forwardRef<TextInputRef, TextInputProps>((props, ref) => {
   const { isMobile } = useLayout();
   const context = useBottomSheetInternal(true);
   const isBottomSheet = context !== null;
@@ -75,7 +85,13 @@ const TextInputWithSwitcher = forwardRef<TextInput, TextInputProps>((props, ref)
 
 TextInputWithSwitcher.displayName = 'TextInputWithSwitcher';
 
-export const Input = styled(TextInputWithSwitcher)<{
+type InputProps = TextInputProps &
+  RefAttributes<TextInputRef> & {
+    focused?: boolean;
+    hasError?: boolean;
+  };
+
+export const Input: FC<InputProps> = styled(TextInputWithSwitcher)<{
   focused?: boolean;
   hasError?: boolean;
 }>(({ theme, focused, hasError }) => ({
