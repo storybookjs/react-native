@@ -1,5 +1,18 @@
 # @storybook/react-native
 
+## 10.7.1
+
+### Patch Changes
+
+- [#946](https://github.com/storybookjs/react-native/pull/946) [`1aa9e4b`](https://github.com/storybookjs/react-native/commit/1aa9e4bf67e5d391c65e5442b6517026301dd640) Thanks [@dannyhw](https://github.com/dannyhw)! - Generated `storybook.requires` no longer crashes on startup when `features` is set in `main`. Feature flags are now merged into `globalThis.FEATURES` instead of written onto it, so the file no longer throws `TypeError: Cannot set property 'ondeviceBackgrounds' of undefined` when Metro's `inlineRequires` evaluates it before Storybook has created that object.
+
+- [#954](https://github.com/storybookjs/react-native/pull/954) [`0758645`](https://github.com/storybookjs/react-native/commit/0758645cc213237e65f543d9b11be080d66280e4) Thanks [@dannyhw](https://github.com/dannyhw)! - Allow `react-native-url-polyfill` v4. The dependency range is now `^3.0.0 || ^4.0.0`, so an app that uses v4 no longer gets a second, nested v3 copy for Storybook.
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@10.7.1
+  - @storybook/react-native-ui-common@10.7.1
+  - @storybook/react-native-theming@10.7.1
+
 ## 10.7.0
 
 ### Patch Changes
