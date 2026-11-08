@@ -133,13 +133,18 @@ const FallbackField = ({
 }) => {
   // Uncontrolled like the other text controls; the typed text is only read on commit.
   const text = useRef(value);
+  // The text this field last applied. Submitting also blurs the input, and both commit; without
+  // this the blur would apply the same value a second time.
+  const committedText = useRef(value);
   const [focused, setFocused] = useState(false);
   const [hasError, setHasError] = useState(false);
 
   const commit = () => {
     const parsed = parse(text.current);
     setHasError(parsed === null);
-    if (parsed) onChange(parsed);
+    if (!parsed || text.current === committedText.current) return;
+    committedText.current = text.current;
+    onChange(parsed);
   };
 
   return (
