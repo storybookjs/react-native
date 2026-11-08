@@ -15,7 +15,6 @@ export default defineMain({
     './local-addon-example',
     { name: '@storybook/addon-ondevice-controls' },
     '@storybook/addon-ondevice-actions',
-    // '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-notes',
   ],
   storySorts: [
@@ -27,9 +26,6 @@ export default defineMain({
   ],
   reactNative: {
     playFn: false,
-  },
-  features: {
-    ondeviceBackgrounds: true,
   },
 
   framework: '@storybook/react-native',

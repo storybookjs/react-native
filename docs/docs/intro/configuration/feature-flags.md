@@ -4,9 +4,7 @@ sidebar_position: 6
 
 # Feature Flags
 
-Feature flags let you opt into new functionality in `@storybook/react-native` without breaking existing behavior. They are configured in your `main.ts` file under the `features` key.
-
-Flags are introduced so you can adopt new APIs at your own pace. In the next major version, the behavior behind these flags will become the default and the flags will no longer be needed.
+Feature flags turn functionality in `@storybook/react-native` on or off. They are configured in your `main.ts` file under the `features` key.
 
 ## Configuration
 
@@ -20,7 +18,8 @@ const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   deviceAddons: ['@storybook/addon-ondevice-controls', '@storybook/addon-ondevice-actions'],
   features: {
-    ondeviceBackgrounds: true,
+    // Turn off the built-in Backgrounds panel
+    ondeviceBackgrounds: false,
   },
 };
 
@@ -31,6 +30,6 @@ Feature flags are set on `globalThis.FEATURES` via the generated `storybook.requ
 
 ## Available Flags
 
-| Flag                  | Description                                                                                                                                                               | Guide                           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| `ondeviceBackgrounds` | New backgrounds API with globals-based configuration, full-screen support, and no extra package. Available from v10.3. Will become the default in the next major version. | [Backgrounds](./backgrounds.md) |
+| Flag                  | Default | Description                                                                                                                                                     | Guide                           |
+| --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `ondeviceBackgrounds` | `true`  | Built-in Backgrounds panel with globals-based configuration and full-screen backgrounds. Set to `false` to disable it. Added in v10.3, on by default since v11. | [Backgrounds](./backgrounds.md) |

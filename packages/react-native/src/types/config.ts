@@ -2,7 +2,10 @@ import type { StorybookConfig as StorybookConfigBase } from 'storybook/internal/
 import type { ReactNativeOptions } from '../Start';
 
 export type Features = {
-  /** Enable the built-in on-device backgrounds addon panel. */
+  /**
+   * The built-in on-device Backgrounds panel. On by default; set to `false` to disable it.
+   * @default true
+   */
   ondeviceBackgrounds?: boolean;
 };
 

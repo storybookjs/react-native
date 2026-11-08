@@ -31,27 +31,8 @@ import {
   RN_STORYBOOK_STORAGE_KEY,
   STORYBOOK_STORY_ID_PARAM,
 } from './constants';
+import { resolveStoryBackgroundColor } from './backgrounds/utils';
 import { useSetStoryContext, useStoryContext } from './hooks';
-
-function resolveStoryBackgroundColor(
-  story?: StoryContext<ReactRenderer> | null
-): string | undefined {
-  const backgroundGlobal = story?.globals?.backgrounds?.value;
-  const bgParams = story?.parameters?.backgrounds;
-
-  const backgroundName = backgroundGlobal;
-
-  if (!backgroundName) return undefined;
-
-  if (bgParams?.options?.[backgroundName]?.value) {
-    return bgParams.options[backgroundName].value;
-  }
-
-  // Direct color value (e.g. hex)
-  if (backgroundName.startsWith('#')) return backgroundName;
-
-  return undefined;
-}
 
 export interface Storage {
   getItem: (key: string) => Promise<string | null> | string | null;
@@ -504,9 +485,10 @@ export class View {
         );
       }
 
-      const storyBackgroundColor = globalThis.FEATURES?.ondeviceBackgrounds
-        ? resolveStoryBackgroundColor(story)
-        : undefined;
+      const storyBackgroundColor =
+        globalThis.FEATURES?.ondeviceBackgrounds !== false
+          ? resolveStoryBackgroundColor(story)
+          : undefined;
 
       if (onDeviceUI) {
         if (CustomUIComponent) {

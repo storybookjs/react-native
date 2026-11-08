@@ -1,6 +1,9 @@
+import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import { Appearance } from 'react-native';
 
 const preview = {
+  // Legacy decorator from the deprecated addon. It renders the story unchanged now.
+  decorators: [withBackgrounds],
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -14,16 +17,16 @@ const preview = {
     my_param: 'anything',
     layout: 'padded',
     storybookUIVisibility: 'visible',
+    // Legacy backgrounds shape, still understood by the built-in Backgrounds panel.
+    // The current shape is `options` plus `initialGlobals.backgrounds`, see ../.rnstorybook/preview.tsx.
     backgrounds: {
-      options: {
-        dark: { name: 'dark', value: '#333' },
-        light: { name: 'plain', value: '#fff' },
-        app: { name: 'app', value: '#eeeeee' },
-      },
+      default: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain',
+      values: [
+        { name: 'dark', value: '#333' },
+        { name: 'plain', value: '#fff' },
+        { name: 'app', value: '#eeeeee' },
+      ],
     },
-  },
-  initialGlobals: {
-    backgrounds: { value: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain' },
   },
 };
 

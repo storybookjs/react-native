@@ -13,6 +13,9 @@ const main: StorybookConfig = {
   deviceAddons: [
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-actions',
+    // Backgrounds are built in. The deprecated stub is listed to exercise the legacy
+    // `values`/`default` parameters in preview.tsx; it registers nothing.
+    '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-notes',
     'storybook-addon-deep-controls',
   ],
@@ -25,9 +28,6 @@ const main: StorybookConfig = {
   ],
   reactNative: {
     playFn: false,
-  },
-  features: {
-    ondeviceBackgrounds: true,
   },
   framework: '@storybook/react-native',
 };

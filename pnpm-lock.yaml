@@ -667,17 +667,10 @@ importers:
         version: 6.0.3
 
   packages/ondevice-backgrounds:
-    dependencies:
-      '@storybook/react-native-theming':
-        specifier: ^11.0.0-next.1
-        version: link:../react-native-theming
-      react:
-        specifier: '*'
-        version: 19.3.0
-      react-native:
-        specifier: '*'
-        version: 0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1)
     devDependencies:
+      '@storybook/react-native':
+        specifier: ^11.0.0-next.1
+        version: link:../react-native
       storybook:
         specifier: ^11.0.0-beta.0
         version: 11.0.0-beta.0(@types/react@19.3.0)(prettier@3.9.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
