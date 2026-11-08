@@ -93,7 +93,7 @@ export const Search = React.memo<{
   const context = useBottomSheetInternal(true);
   const isBottomSheet = context !== null;
 
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<React.ComponentRef<typeof TextInput>>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
