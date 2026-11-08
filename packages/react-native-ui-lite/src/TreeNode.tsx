@@ -1,9 +1,29 @@
 import { styled, useTheme } from '@storybook/react-native-theming';
 
-import React, { ComponentProps, FC, forwardRef, useMemo } from 'react';
+import React, { FC, forwardRef, useMemo } from 'react';
 import { transparentize } from 'polished';
-import { View } from 'react-native';
+import { TouchableOpacityProps, View } from 'react-native';
 import { CollapseIcon, ComponentIcon, GroupIcon, StoryIcon } from './icon/iconDataUris';
+
+// Declared here rather than inferred from the styled components. Since react-native 0.88 its default types are the
+// generated ones, where TouchableOpacityProps and View's ref expand into types react-native doesn't export
+// (WithAnimatedValue, ____ViewStyleProp_Internal, ReactNativeElement), so TypeScript can't name them in our emitted
+// declarations. An interface keeps its own name, so these don't expand.
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface StoryNodeRef extends React.ComponentRef<typeof View> {}
+
+export interface BranchNodeProps extends TouchableOpacityProps {
+  depth?: number;
+  isExpandable?: boolean;
+  isExpanded?: boolean;
+  isComponent?: boolean;
+  isSelected?: boolean;
+}
+
+export interface LeafNodeProps extends TouchableOpacityProps {
+  depth?: number;
+  selected?: boolean;
+}
 
 export interface NodeProps {
   children: React.ReactNode | React.ReactNode[];
@@ -18,54 +38,48 @@ const BranchNodeText = styled.Text<{ isSelected?: boolean }>(({ theme }) => ({
   color: theme.color.defaultText,
 }));
 
-const BranchNode = styled.TouchableOpacity<{
-  depth?: number;
-  isExpandable?: boolean;
-  isExpanded?: boolean;
-  isComponent?: boolean;
-  isSelected?: boolean;
-}>(({ depth = 0, isExpandable = false, theme }) => ({
-  width: '100%',
-  border: 'none',
-  cursor: 'pointer',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  paddingLeft: (isExpandable ? 8 : 22) + depth * 18,
-
-  backgroundColor: 'transparent',
-  minHeight: 34,
-  borderRadius: 4,
-  gap: 6,
-  paddingTop: 8,
-  paddingBottom: 7,
-
-  // will this actually do anything?
-  '&:hover, &:focus': {
-    backgroundColor: transparentize(0.93, theme.color.secondary),
-    outline: 'none',
-  },
-}));
-
-const LeafNode = styled.TouchableOpacity<{ depth?: number; selected?: boolean }>(
-  ({ depth = 0, selected, theme }) => ({
+const BranchNode = styled.TouchableOpacity<BranchNodeProps>(
+  ({ depth = 0, isExpandable = false, theme }) => ({
+    width: '100%',
+    border: 'none',
     cursor: 'pointer',
-    color: 'inherit',
     display: 'flex',
-    gap: 6,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingLeft: 22 + depth * 18,
+    paddingLeft: (isExpandable ? 8 : 22) + depth * 18,
+
+    backgroundColor: 'transparent',
+    minHeight: 34,
+    borderRadius: 4,
+    gap: 6,
     paddingTop: 8,
     paddingBottom: 7,
-    backgroundColor: selected ? theme.color.secondary : undefined,
-    // not sure 👇
-    width: '100%',
-    borderRadius: 4,
-    paddingRight: 20,
-    minHeight: 34,
+
+    // will this actually do anything?
+    '&:hover, &:focus': {
+      backgroundColor: transparentize(0.93, theme.color.secondary),
+      outline: 'none',
+    },
   })
 );
+
+const LeafNode = styled.TouchableOpacity<LeafNodeProps>(({ depth = 0, selected, theme }) => ({
+  cursor: 'pointer',
+  color: 'inherit',
+  display: 'flex',
+  gap: 6,
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingLeft: 22 + depth * 18,
+  paddingTop: 8,
+  paddingBottom: 7,
+  backgroundColor: selected ? theme.color.secondary : undefined,
+  // not sure 👇
+  width: '100%',
+  borderRadius: 4,
+  paddingRight: 20,
+  minHeight: 34,
+}));
 
 const LeafNodeText = styled.Text<{ depth?: number; selected?: boolean }>(({ theme, selected }) => ({
   fontSize: theme.typography.size.s2 + 1,
@@ -81,9 +95,7 @@ const Wrapper = styled.View({
   gap: 6,
 });
 
-export const GroupNode: FC<
-  ComponentProps<typeof BranchNode> & { isExpanded?: boolean; isExpandable?: boolean }
-> = React.memo(function GroupNode({
+export const GroupNode: FC<BranchNodeProps> = React.memo(function GroupNode({
   children,
   isExpanded = false,
   isExpandable = false,
@@ -106,32 +118,32 @@ export const GroupNode: FC<
   );
 });
 
-export const ComponentNode: FC<ComponentProps<typeof BranchNode>> = React.memo(
-  function ComponentNode({ children, isExpanded, isExpandable, ...props }) {
-    const theme = useTheme();
+export const ComponentNode: FC<BranchNodeProps> = React.memo(function ComponentNode({
+  children,
+  isExpanded,
+  isExpandable,
+  ...props
+}) {
+  const theme = useTheme();
 
-    const color = useMemo(() => {
-      return theme.color.secondary;
-    }, [theme.color.secondary]);
+  const color = useMemo(() => {
+    return theme.color.secondary;
+  }, [theme.color.secondary]);
 
-    return (
-      <BranchNode isExpandable={isExpandable} accessibilityRole="button" {...props}>
-        {/* workaround for macos icon color bug */}
-        <Wrapper key={`component-${props.id}-${color}`}>
-          {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
-          <ComponentIcon width={12} height={12} color={color} />
-        </Wrapper>
-        <BranchNodeText numberOfLines={1}>{children}</BranchNodeText>
-      </BranchNode>
-    );
-  }
-);
+  return (
+    <BranchNode isExpandable={isExpandable} accessibilityRole="button" {...props}>
+      {/* workaround for macos icon color bug */}
+      <Wrapper key={`component-${props.id}-${color}`}>
+        {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
+        <ComponentIcon width={12} height={12} color={color} />
+      </Wrapper>
+      <BranchNodeText numberOfLines={1}>{children}</BranchNodeText>
+    </BranchNode>
+  );
+});
 
 export const StoryNode = React.memo(
-  forwardRef<View, ComponentProps<typeof LeafNode>>(function StoryNode(
-    { children, ...props },
-    ref
-  ) {
+  forwardRef<StoryNodeRef, LeafNodeProps>(function StoryNode({ children, ...props }, ref) {
     const theme = useTheme();
 
     const color = useMemo(() => {
