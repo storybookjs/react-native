@@ -36,6 +36,23 @@ module.exports = defineConfig([
     },
   },
   {
+    // On iOS 17+, `cursor: 'pointer'` gives a view a UIKit pointer hover effect. On iPadOS with a
+    // mouse or trackpad that inserts views Fabric doesn't know about, and unmounting a sibling then
+    // crashes debug builds (facebook/react-native#55489). On web, TouchableOpacity and Pressable
+    // already show a pointer cursor.
+    files: ['packages/*/src/**/*.ts', 'packages/*/src/**/*.tsx'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: "Property[key.name='cursor'][value.value='pointer']",
+          message:
+            "Don't set `cursor: 'pointer'`: on iPadOS it crashes debug builds when sibling views unmount (facebook/react-native#55489), and touchables already show a pointer cursor on web.",
+        },
+      ],
+    },
+  },
+  {
     files: ['docs/**/*.ts', 'docs/**/*.tsx'],
     plugins: {
       '@docusaurus': pluginDocusaurus,
