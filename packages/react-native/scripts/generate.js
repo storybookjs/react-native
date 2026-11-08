@@ -19,33 +19,6 @@ const path = require('path');
 
 const cwd = process.cwd();
 
-const MAIN_ADDONS_DEPRECATION_URL =
-  'https://github.com/storybookjs/react-native/blob/main/MIGRATION.md#deprecating-addons-in-rnstorybook-main';
-
-/**
- * @param {{ addons?: unknown[] }} main
- * @param {string} configPath
- *
- * @todo Remove support for `main.addons` in a future major version.
- */
-function warnDeprecatedMainAddonsField(main, configPath) {
-  const addons = main.addons ?? [];
-  if (addons.length === 0) {
-    return;
-  }
-
-  const names = addons
-    .map((addon) => getAddonName(addon))
-    .filter((name) => typeof name === 'string');
-  const list = [...new Set(names)].join(', ');
-  console.warn(
-    `[Storybook React Native] The \`addons\` field in your main config (${configPath}) is deprecated and will be removed in a future major version.\n` +
-      `Move every entry to \`deviceAddons\` instead. That includes on-device UI packages (\`@storybook/addon-ondevice-*\`), other addons you bundle with the app (for example storybook-addon-deep-controls), and local paths such as ./my-addon.\n` +
-      (list ? `Still listed under \`addons\`: ${list}.\n` : '') +
-      `Details: ${MAIN_ADDONS_DEPRECATION_URL}`
-  );
-}
-
 const loadMain = async ({ configPath, cwd }) => {
   try {
     const main = await loadMainConfig({ configDir: configPath, cwd });
@@ -60,6 +33,55 @@ const loadMain = async ({ configPath, cwd }) => {
   }
   return interopRequireDefault(mainPath);
 };
+
+/**
+ * Resolves `main.storySorts`, which can be an array or a preset function that returns one.
+ * @param {{ storySorts?: unknown }} main
+ * @returns {Promise<unknown[] | undefined>}
+ */
+async function resolveMainStorySorts(main) {
+  if (typeof main.storySorts === 'function') {
+    return main.storySorts([], {});
+  }
+
+  return main.storySorts;
+}
+
+/**
+ * Serializes `storySorts` into source for the requires file. Comparator functions are written out
+ * from their source, so they can't use anything from outside their own body.
+ * @param {unknown} value
+ * @returns {string}
+ */
+function serializeStorySorts(value) {
+  if (typeof value === 'function') {
+    return `(${value.toString()})`;
+  }
+
+  if (Array.isArray(value)) {
+    return `[${value.map(serializeStorySorts).join(', ')}]`;
+  }
+
+  if (value && typeof value === 'object') {
+    const entries = Object.entries(value).map(
+      ([key, entry]) => `${JSON.stringify(key)}: ${serializeStorySorts(entry)}`
+    );
+    return `{ ${entries.join(', ')} }`;
+  }
+
+  return JSON.stringify(value);
+}
+
+const identifierPattern = /^[A-Za-z_$][A-Za-z0-9_$]*$/;
+
+/**
+ * Write a feature flag key so it cannot break out of the object literal it is written into.
+ * @param {string} key
+ * @returns The key as it should appear in the generated source.
+ */
+function featureKey(key) {
+  return identifierPattern.test(key) ? key : JSON.stringify(key);
+}
 
 /**
  * Get the local IP address of the machine.
@@ -109,7 +131,7 @@ async function generate(generateOptions) {
 
   const main = await loadMain({ configPath, cwd });
 
-  warnDeprecatedMainAddonsField(main, configPath);
+  const storySorts = await resolveMainStorySorts(main);
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
@@ -138,10 +160,7 @@ async function generate(generateOptions) {
 
   const registeredAddons = [];
 
-  const allAddons = [
-    ...(main.addons ?? []), // TODO remove in v11
-    ...(main.deviceAddons ?? []),
-  ];
+  const allAddons = main.deviceAddons ?? [];
 
   for (const addon of allAddons) {
     const registerPath = resolveAddonFile(
@@ -191,7 +210,7 @@ async function generate(generateOptions) {
     options = 'options';
   }
 
-  // Collect features from main config to set on globalThis.FEATURES
+  // Collect features from main config to merge into globalThis.FEATURES
   let featuresAssignment = '';
   const features = main.features;
 
@@ -201,10 +220,15 @@ async function generate(generateOptions) {
     );
 
     if (featureEntries.length > 0) {
-      const assignments = featureEntries
-        .map(([key, value]) => `globalThis.FEATURES.${key} = ${value};`)
+      const entries = featureEntries
+        .map(([key, value]) => `  ${featureKey(key)}: ${value},`)
         .join('\n');
-      featuresAssignment = assignments;
+      // The object is replaced rather than written into because with inlineRequires this file is
+      // evaluated before @storybook/react-native creates the FEATURES object
+      featuresAssignment = `globalThis.FEATURES = {
+  ...globalThis.FEATURES,
+${entries}
+};`;
     }
   }
 
@@ -267,15 +291,15 @@ ${
 module?.hot?.accept?.();
 ${featuresAssignment ? `\n${featuresAssignment}\n` : ''}
 ${optionsVar}
-
+${storySorts ? `\nconst storySorts${useJs ? '' : ": NonNullable<Parameters<typeof start>[0]['storySorts']>"} = ${serializeStorySorts(storySorts)};\n` : ''}
 if (!globalThis.view) {
   globalThis.view = start({
     annotations,
     storyEntries: normalizedStories,
-${options ? `    ${options},` : ''}
+${options ? `    ${options},` : ''}${storySorts ? '\n    storySorts,' : ''}
   });
 } else {
-  updateView(globalThis.view, annotations, normalizedStories${options ? `, ${options}` : ''});
+  updateView(globalThis.view, annotations, normalizedStories${options ? `, ${options}` : storySorts ? ', undefined' : ''}${storySorts ? ', storySorts' : ''});
 }
 
 export const view${useJs ? '' : ': View'} = globalThis.view;

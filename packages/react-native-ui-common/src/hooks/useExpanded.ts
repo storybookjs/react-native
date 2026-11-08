@@ -1,4 +1,4 @@
-import type { StoriesHash } from 'storybook/manager-api';
+import type { IndexHash } from 'storybook/manager-api';
 import type { Dispatch } from 'react';
 import { useCallback, useEffect, useReducer } from 'react';
 import { getAncestorIds } from '../util/tree';
@@ -12,7 +12,7 @@ export interface ExpandAction {
 
 export interface ExpandedProps {
   refId: string;
-  data: StoriesHash;
+  data: IndexHash;
   initialExpanded?: ExpandedState;
   rootIds: string[];
   selectedStoryId: string | null;
@@ -24,7 +24,7 @@ const initializeExpanded = ({
   rootIds,
 }: {
   refId: string;
-  data: StoriesHash;
+  data: IndexHash;
   initialExpanded?: ExpandedState;
   rootIds: string[];
 }) => {

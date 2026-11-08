@@ -12,6 +12,7 @@ import './polyfill';
 import type { ReactRenderer } from '@storybook/react';
 import { Channel } from 'storybook/internal/channels';
 import type {
+  Addon_StorySortParameterV7,
   Args,
   ModuleExports,
   NormalizedProjectAnnotations,
@@ -79,6 +80,26 @@ type TeardownRenderArgs = Parameters<PreviewWithSelection<ReactRenderer>['teardo
 class ReactNativePreview extends PreviewWithSelection<ReactRenderer> {
   private renderSelectionQueue: Promise<unknown> = Promise.resolve();
 
+  // Since Storybook 11.0.0-alpha.9, PreviewWithSelection listens for React Aria landmark navigation with
+  // `window.addEventListener`, which React Native's global doesn't have. Stub it only while the listeners are set
+  // up, so feature detection elsewhere still sees that there is no DOM window.
+  // TODO: remove this override once a Storybook release includes storybookjs/storybook#37183 (merged into `next` as
+  // e11b1afb), which makes that call `addEventListener?.(...)`, and raise the `storybook` peer floor to that release.
+  setupListeners() {
+    const target = globalThis as { addEventListener?: unknown };
+    if (typeof target.addEventListener === 'function') {
+      super.setupListeners();
+      return;
+    }
+
+    target.addEventListener = () => {};
+    try {
+      super.setupListeners();
+    } finally {
+      delete target.addEventListener;
+    }
+  }
+
   protected renderSelection(options?: { persistedArgs?: Args }): Promise<void> {
     const run = this.renderSelectionQueue.then(() => super.renderSelection(options));
     this.renderSelectionQueue = run.catch(() => {});
@@ -115,17 +136,18 @@ export function start({
   annotations,
   storyEntries,
   options,
+  storySorts,
 }: {
   storyEntries: StoryEntry[];
   annotations: ModuleExports[];
   options?: ReactNativeOptions;
+  /** The `storySorts` from main, written into the requires file by the generator. */
+  storySorts?: Addon_StorySortParameterV7[];
 }) {
-  const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
-
   const { index, importMap } = prepareStories({
     storyEntries,
     options,
-    storySort: composedAnnotations.parameters?.options?.storySort,
+    storySorts,
   });
 
   // const channel = createBrowserChannel({ page: 'preview' });
@@ -204,16 +226,13 @@ export function updateView(
   viewInstance: View,
   annotations: ModuleExports[],
   normalizedStories: StoryEntry[],
-  options?: ReactNativeOptions
+  options?: ReactNativeOptions,
+  storySorts?: Addon_StorySortParameterV7[]
 ) {
-  const composedAnnotations = composeConfigs<ReactRenderer>(annotations);
-
-  const storySort = composedAnnotations.parameters?.options?.storySort;
-
   const { importMap, index } = prepareStories({
     storyEntries: normalizedStories,
     options,
-    storySort,
+    storySorts,
   });
 
   // Like Storybook's web builders on HMR, stop any running play function so the story can re-render

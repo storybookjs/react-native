@@ -19,8 +19,11 @@
     "@storybook/tests": "0.0.0"
   },
   "changesets": [
+    "actions-log-outlives-panel",
     "csf-preview-alias",
     "flat-impalas-press",
-    "notes-enriched-markdown"
+    "notes-enriched-markdown",
+    "require-device-addons",
+    "storybook-11"
   ]
 }

@@ -2,7 +2,7 @@ import type {
   ComponentEntry,
   GroupEntry,
   State,
-  StoriesHash,
+  IndexHash,
   StoryEntry,
 } from 'storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
@@ -58,7 +58,7 @@ export const Node = React.memo<NodeProps>(function Node({
   const { setNodeRef } = useSelectedNode();
 
   const setRef = useCallback(
-    (node: View | null) => {
+    (node: React.ComponentRef<typeof View> | null) => {
       if (isSelected && node) {
         setNodeRef(node);
       }
@@ -196,12 +196,12 @@ export const Tree = React.memo<{
   isMain: boolean;
   status?: State['status'];
   refId: string;
-  data: StoriesHash;
+  data: IndexHash;
   docsMode: boolean;
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
 }>(function Tree({ isMain, refId, data, status, docsMode, selectedStoryId, onSelectStoryId }) {
-  const containerRef = useRef<View>(null);
+  const containerRef = useRef<React.ComponentRef<typeof View>>(null);
 
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
   const [rootIds, orphanIds, initialExpanded] = useMemo(

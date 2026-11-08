@@ -1,6 +1,6 @@
 import type { API } from 'storybook/manager-api';
 import { Channel } from 'storybook/internal/channels';
-import type { Args, StoryContextForLoaders } from 'storybook/internal/csf';
+import type { Args, StoryContext } from 'storybook/internal/csf';
 import type { Renderer } from 'storybook/internal/types';
 import React, { ComponentType, ReactElement, useCallback, useState } from 'react';
 import NoControlsWarning from './NoControlsWarning';
@@ -35,7 +35,7 @@ export interface ReactNativeFramework extends Renderer {
 }
 
 type ApiStore = {
-  fromId: (id: any) => Omit<StoryContextForLoaders<ReactNativeFramework, Args>, 'viewMode'>;
+  fromId: (id: any) => Omit<StoryContext<ReactNativeFramework, Args>, 'viewMode'>;
   getSelection: () => Selection;
   _channel: Channel;
 };

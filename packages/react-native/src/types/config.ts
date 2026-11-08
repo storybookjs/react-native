@@ -11,21 +11,17 @@ type Addon = string | { name: string; options?: Record<string, any> };
 export interface StorybookConfig {
   stories: StorybookConfigBase['stories'];
   /**
-   * @deprecated Use `deviceAddons` for every addon that should be bundled with
-   * the on-device preview (including `@storybook/addon-ondevice-*`, other
-   * RN-side addons, and local paths). This field will be removed in a future
-   * major version. A separate web or Node Storybook `main` file (for example
-   * for `@storybook/react-native-web-vite`) follows that package’s own API;
-   * this deprecation applies to `.rnstorybook` config typed as
-   * `StorybookConfig` from `@storybook/react-native`.
-   */
-  addons?: Addon[];
-  /**
    * Addons loaded only at runtime on the device and merged into
    * `storybook.requires`. Not evaluated as presets by Storybook Core, which
    * avoids failures during server-side operations like `extract`.
    */
   deviceAddons?: Addon[];
+  /**
+   * Sorts the stories. Each sorter only orders the stories that the sorters before it consider
+   * equal. Comparator functions are copied into `storybook.requires` from their source, so they
+   * can't use anything from outside their own body.
+   */
+  storySorts?: StorybookConfigBase['storySorts'];
   // TODO move this to params
   reactNative?: ReactNativeOptions;
   features?: Features;

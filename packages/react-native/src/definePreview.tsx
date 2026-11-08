@@ -2,24 +2,26 @@ import type { ComponentType } from 'react';
 
 import { definePreview as definePreviewBase } from 'storybook/internal/csf';
 import type {
-  PreviewAddon,
   AddonTypes,
   InferTypes,
   Meta,
+  MetaInput,
+  MetaTypes,
   Preview,
+  PreviewAddonEntry,
   Story,
+  StoryArgs,
+  TypedMetaArgKeys,
 } from 'storybook/internal/csf';
 import type {
   Args,
   ArgsStoryFn,
-  ComponentAnnotations,
   DecoratorFunction,
   ProjectAnnotations,
-  Renderer,
   StoryAnnotations,
 } from 'storybook/internal/types';
 
-import type { SetOptional, Simplify, UnionToIntersection, RemoveIndexSignature } from 'type-fest';
+import type { Simplify } from 'type-fest';
 
 import type { ReactRenderer } from '@storybook/react';
 
@@ -32,49 +34,28 @@ import * as rnEntryPreview from './entry-preview';
 // React Native uses ReactRenderer as its renderer type
 type RNRenderer = ReactRenderer;
 
-/** Extracts and unions all args types from an array of decorators. */
-type DecoratorsArgs<TRenderer extends Renderer, Decorators> = UnionToIntersection<
-  Decorators extends DecoratorFunction<TRenderer, infer TArgs> ? TArgs : unknown
->;
-
-type InferArgs<TArgs, T, Decorators> = Simplify<
-  TArgs & Simplify<RemoveIndexSignature<DecoratorsArgs<RNRenderer & T, Decorators>>>
->;
-
-type InferRNTypes<T, TArgs, Decorators> = RNRenderer &
-  T & { args: Simplify<InferArgs<TArgs, T, Decorators>> };
-
-// @ts-ignore meta() return type is intentionally narrowed from base Preview
-export interface RNPreview<T extends AddonTypes> extends Preview<RNRenderer & T> {
+export interface RNPreview<T extends AddonTypes> extends Omit<
+  Preview<RNRenderer & T>,
+  'meta' | 'type'
+> {
   type<R>(): RNPreview<T & R>;
 
   meta<
     TArgs extends Args,
     Decorators extends DecoratorFunction<RNRenderer & T, any>,
-    TMetaArgs extends Partial<TArgs & T['args']>,
+    TMetaArgKeys extends PropertyKey = never,
   >(
     meta: {
       render?: ArgsStoryFn<RNRenderer & T, TArgs & T['args']>;
       component?: ComponentType<TArgs>;
-      decorators?: Decorators | Decorators[];
-      args?: TMetaArgs;
-    } & Omit<
-      ComponentAnnotations<RNRenderer & T, TArgs>,
-      'decorators' | 'component' | 'args' | 'render'
-    >
-  ): RNMeta<
-    InferRNTypes<T, TArgs, Decorators>,
-    Omit<ComponentAnnotations<InferRNTypes<T, TArgs, Decorators>>, 'args'> & {
-      // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-      args: Partial<TArgs> extends TMetaArgs ? {} : TMetaArgs;
-    }
-  >;
+    } & MetaInput<RNRenderer & T, TArgs, Decorators, TMetaArgKeys>
+  ): RNMeta<MetaTypes<RNRenderer & T, TArgs, Decorators, TMetaArgKeys>, TMetaArgKeys>;
 }
 
 export interface RNMeta<
   T extends RNRenderer,
-  MetaInput extends ComponentAnnotations<T>,
-> extends Meta<T, MetaInput> {
+  TMetaArgKeys extends PropertyKey = never,
+> extends Meta<T, TMetaArgKeys> {
   // Overload: render function (no args needed)
   story<
     TInput extends
@@ -88,32 +69,26 @@ export interface RNMeta<
 
   // Overload: story with args/config
   story<
-    TInput extends Simplify<
-      StoryAnnotations<
-        T,
-        T['args'],
-        SetOptional<T['args'], keyof T['args'] & keyof MetaInput['args']>
-      >
-    >,
+    TInput extends Simplify<StoryAnnotations<T, T['args'], StoryArgs<T['args'], TMetaArgKeys>>>,
   >(
     story: TInput
   ): RNStory<T, TInput>;
 
   // Overload: no-arg story (only when all required args are in meta)
   story(
-    ..._args: Partial<T['args']> extends SetOptional<
-      T['args'],
-      keyof T['args'] & keyof MetaInput['args']
-    >
-      ? []
-      : [never]
+    ..._args: Partial<T['args']> extends StoryArgs<T['args'], TMetaArgKeys> ? [] : [never]
     // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   ): RNStory<T, {}>;
+
+  type<S>(): RNMeta<T & S, TypedMetaArgKeys<TMetaArgKeys, S>>;
 }
 
 export interface RNStory<
   T extends RNRenderer,
-  TInput extends StoryAnnotations<T, T['args']>,
+  TInput extends {
+    play?: (...args: never[]) => void;
+    render?: (...args: never[]) => T['storyResult'];
+  },
 > extends Story<T, TInput> {
   Component: ComponentType<Partial<T['args']>>;
 }
@@ -136,7 +111,7 @@ const render = (args: any, context: any) => {
 // ---------------------------------------------------------------------------
 // definePreview – RN-specific wrapper around base definePreview
 // ---------------------------------------------------------------------------
-export function definePreview<Addons extends PreviewAddon<never>[]>(
+export function definePreview<Addons extends PreviewAddonEntry[]>(
   input: { addons: Addons } & ProjectAnnotations<RNRenderer & InferTypes<Addons>>
 ): RNPreview<RNRenderer & InferTypes<Addons>> {
   const preview = definePreviewBase({

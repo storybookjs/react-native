@@ -231,7 +231,7 @@ export default main;
 ```
 
 > [!NOTE]
-> `deviceAddons` ensures on-device addons are only loaded at runtime on the device, avoiding errors during server-side operations. For backwards compatibility, listing them in `addons` still works.
+> `deviceAddons` ensures on-device addons are only loaded at runtime on the device, avoiding errors during server-side operations. `.rnstorybook` does not read `addons`.
 
 ### Using the addons in your story
 
