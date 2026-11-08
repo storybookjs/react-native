@@ -3,7 +3,8 @@ import { addons, types } from 'storybook/manager-api';
 import ActionLogger from './containers/ActionLogger';
 import { actionStore } from './containers/ActionLogger/actionStore';
 
-export function register() {
+/** Registers the built-in Actions panel. */
+export function registerActionsAddon() {
   addons.register(ADDON_ID, (_api) => {
     // Record actions from the start, not only while the panel is mounted.
     actionStore.listen();

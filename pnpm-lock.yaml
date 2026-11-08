@@ -637,31 +637,10 @@ importers:
 
   packages/ondevice-actions:
     dependencies:
-      '@storybook/react-native-theming':
+      '@storybook/react-native':
         specifier: ^11.0.0-next.1
-        version: link:../react-native-theming
-      fast-deep-equal:
-        specifier: ^3.1.3
-        version: 3.1.3
-      react:
-        specifier: '*'
-        version: 19.3.0
-      react-native:
-        specifier: '*'
-        version: 0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1)
+        version: link:../react-native
     devDependencies:
-      '@types/jest':
-        specifier: ^30.0.0
-        version: 30.0.0
-      jest:
-        specifier: ^30.5.2
-        version: 30.5.2(@types/node@26.1.1)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.1)(supports-color@8.1.1))(supports-color@8.1.1)
-      storybook:
-        specifier: ^11.0.0-beta.0
-        version: 11.0.0-beta.0(@types/react@19.3.0)(prettier@3.9.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
-      sucrase:
-        specifier: ^3.35.1
-        version: 3.35.1
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -800,6 +779,9 @@ importers:
       esbuild-register:
         specifier: ^3.6.0
         version: 3.6.0(esbuild@0.28.1)(supports-color@8.1.1)
+      fast-deep-equal:
+        specifier: ^3.1.3
+        version: 3.1.3
       glob:
         specifier: ^14.0.2
         version: 14.0.2
