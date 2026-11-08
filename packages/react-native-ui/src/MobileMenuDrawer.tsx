@@ -1,6 +1,9 @@
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,
+  type BottomSheetBackgroundProps,
+  BottomSheetHandle,
+  type BottomSheetHandleProps,
   BottomSheetScrollView,
 } from '@gorhom/bottom-sheet';
 import { useTheme } from '@storybook/react-native-theming';
@@ -12,8 +15,9 @@ import {
   useImperativeHandle,
   useMemo,
   useRef,
+  useState,
 } from 'react';
-import { Keyboard, Platform, type ViewStyle } from 'react-native';
+import { Keyboard, Platform, View, type ViewStyle } from 'react-native';
 import { useAnimatedStyle, useReducedMotion } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSelectedNode } from './SelectedNodeProvider';
@@ -25,6 +29,17 @@ interface MobileMenuDrawerProps {
 export interface MobileMenuDrawerRef {
   setMobileMenuOpen: (isOpen: boolean) => void;
 }
+
+// @gorhom/bottom-sheet marks the sheet's content, handle, background and backdrop as accessible
+// elements labelled "Bottom Sheet" (or similar) with no actions behind them. On iOS that
+// collapses the story list into one element and leaves extra empty elements in the tree.
+// @see https://github.com/storybookjs/react-native/issues/942
+const hiddenFromAccessibility = {
+  accessible: false,
+  accessibilityLabel: null,
+  accessibilityRole: null,
+  accessibilityHint: null,
+} as const;
 
 export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheetBackdropProps) => {
   const androidTouchEventFix = useAnimatedStyle(() => {
@@ -42,6 +57,7 @@ export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheet
       appearsOnIndex={0}
       disappearsOnIndex={-1}
       pressBehavior={'close'}
+      {...hiddenFromAccessibility}
       style={[
         backdropComponentProps.style,
         androidTouchEventFix as unknown as ViewStyle,
@@ -54,6 +70,15 @@ export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheet
   );
 };
 
+const BottomSheetHandleComponent = (handleProps: BottomSheetHandleProps) => (
+  <BottomSheetHandle {...handleProps} {...hiddenFromAccessibility} />
+);
+
+// Same look as the library's default background, which hardcodes its accessibility props.
+const BottomSheetBackgroundComponent = ({ pointerEvents, style }: BottomSheetBackgroundProps) => (
+  <View pointerEvents={pointerEvents} style={[{ borderRadius: 15 }, style]} />
+);
+
 const snapPoints = ['50%', '75%'];
 
 export const MobileMenuDrawer = memo(
@@ -64,9 +89,12 @@ export const MobileMenuDrawer = memo(
     const menuBottomSheetRef = useRef<BottomSheet>(null);
     const { scrollToSelectedNode, scrollRef } = useSelectedNode();
     const shouldScrollOnOpen = useRef(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleSheetChange = useCallback(
       (index: number) => {
+        setIsOpen(index >= 0);
+
         if (index >= 0 && shouldScrollOnOpen.current) {
           shouldScrollOnOpen.current = false;
           scrollToSelectedNode();
@@ -115,14 +143,19 @@ export const MobileMenuDrawer = memo(
         enablePanDownToClose
         // stackBehavior="replace"
         backdropComponent={BottomSheetBackdropComponent}
+        handleComponent={BottomSheetHandleComponent}
+        backgroundComponent={BottomSheetBackgroundComponent}
         backgroundStyle={bgColorStyle}
         handleIndicatorStyle={handleIndicatorStyle}
         onChange={handleSheetChange}
+        {...hiddenFromAccessibility}
       >
         <BottomSheetScrollView
           ref={scrollRef}
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={contentContainerStyle}
+          accessibilityElementsHidden={!isOpen}
+          importantForAccessibility={isOpen ? 'auto' : 'no-hide-descendants'}
         >
           {children}
         </BottomSheetScrollView>

@@ -23,7 +23,7 @@ module.exports = defineConfig([
     ignores: [...(config.ignores || []), 'docs/**/*'],
   })),
   {
-    files: ['**/*.spec.js', '**/*.spec.jsx', '**/*.test.js', '**/*.test.jsx'],
+    files: ['**/*.spec.js', '**/*.spec.jsx', '**/*.test.js', '**/*.test.jsx', '**/jest.setup.js'],
     languageOptions: {
       globals: { ...globals.jest, ...globals.node },
     },

@@ -904,9 +904,6 @@ importers:
 
   packages/react-native-ui:
     dependencies:
-      '@gorhom/bottom-sheet':
-        specifier: '>=4'
-        version: 5.2.14(c1827ef9f277554c0581ddf2e4456a01)
       '@gorhom/portal':
         specifier: ^1.0.14
         version: 1.0.14(react-native@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)
@@ -925,14 +922,42 @@ importers:
       polished:
         specifier: ^4.3.1
         version: 4.3.1
+      react-native-svg:
+        specifier: '>=14'
+        version: 15.16.0(react-native@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)
+    devDependencies:
+      '@gorhom/bottom-sheet':
+        specifier: ^5.2.8
+        version: 5.2.14(c1827ef9f277554c0581ddf2e4456a01)
+      '@react-native/jest-preset':
+        specifier: 0.88.1
+        version: 0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1)
+      '@testing-library/react-native':
+        specifier: 14.0.0-beta.0
+        version: 14.0.0-beta.0(jest@30.5.2(@types/node@26.1.1)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.1)(supports-color@8.1.1))(supports-color@8.1.1))(react-native@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)(test-renderer@0.14.0(@types/react@19.3.0)(react@19.3.0))
+      '@types/jest':
+        specifier: ^30.0.0
+        version: 30.0.0
+      '@types/react':
+        specifier: ~19.3.0
+        version: 19.3.0
+      babel-jest:
+        specifier: ^29.7.0
+        version: 29.7.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1)
+      babel-preset-expo:
+        specifier: ^58.0.24
+        version: 58.0.24(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(expo@58.0.23)(react-refresh@0.18.0)(supports-color@8.1.1)
+      jest:
+        specifier: ^30.5.2
+        version: 30.5.2(@types/node@26.1.1)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.1)(supports-color@8.1.1))(supports-color@8.1.1)
       react:
-        specifier: '*'
+        specifier: 19.3.0
         version: 19.3.0
       react-native:
-        specifier: '>=0.57.0'
+        specifier: 0.88.1
         version: 0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1)
       react-native-gesture-handler:
-        specifier: '>=2'
+        specifier: ~3.3.0
         version: 3.3.0(react-native@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)
       react-native-reanimated:
         specifier: 4.7.1
@@ -940,13 +965,9 @@ importers:
       react-native-safe-area-context:
         specifier: 5.11.1
         version: 5.11.1(react-native@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)
-      react-native-svg:
-        specifier: '>=14'
-        version: 15.16.0(react-native@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)
-    devDependencies:
-      '@types/react':
-        specifier: ~19.3.0
-        version: 19.3.0
+      react-native-worklets:
+        specifier: 0.13.0
+        version: 0.13.0(@babel/core@7.29.7(supports-color@8.1.1))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(react-native@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1)
       storybook:
         specifier: ^11.0.0-beta.0
         version: 11.0.0-beta.0(@types/react@19.3.0)(prettier@3.9.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -11964,6 +11985,11 @@ packages:
     resolution: {integrity: sha512-u9E6A+ZDYdp7a4WnarkXPZOx8Ilz46+kby6p1yZ8zsGTz9gYa6FIS7lj2oezzNKmtdyyJNNmmXDppga5GB7kSw==}
     engines: {node: '>=18'}
 
+  test-renderer@0.14.0:
+    resolution: {integrity: sha512-6ZeO+onFgHJMiAnmSYnAstPxD+igzn7cOKJGoFffWj8I5O6DnEe5rfvKd3gI1NS05JjshDnP4GlsTemqAr7QDw==}
+    peerDependencies:
+      react: ^19.0.0
+
   test-renderer@0.15.0:
     resolution: {integrity: sha512-aal2p2pO+xJBUUqralQ/mClS+wEXj+QHTh7Q4bRYCNIBC5Evr60BS/jBQgJUsNkwNe46IbGqBX6wkzgdoGqVMA==}
     peerDependencies:
@@ -18271,6 +18297,18 @@ snapshots:
       dom-accessibility-api: 0.6.3
       picocolors: 1.1.1
       redent: 3.0.0
+
+  '@testing-library/react-native@14.0.0-beta.0(jest@30.5.2(@types/node@26.1.1)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.1)(supports-color@8.1.1))(supports-color@8.1.1))(react-native@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)(test-renderer@0.14.0(@types/react@19.3.0)(react@19.3.0))':
+    dependencies:
+      jest-matcher-utils: 30.5.2
+      picocolors: 1.1.1
+      pretty-format: 30.5.1
+      react: 19.3.0
+      react-native: 0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1)
+      redent: 3.0.0
+      test-renderer: 0.14.0(@types/react@19.3.0)(react@19.3.0)
+    optionalDependencies:
+      jest: 30.5.2(@types/node@26.1.1)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.1)(supports-color@8.1.1))(supports-color@8.1.1)
 
   '@testing-library/react-native@14.0.0-beta.0(jest@30.5.2(@types/node@26.1.1)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.1)(supports-color@8.1.1))(supports-color@8.1.1))(react-native@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(@react-native-community/cli@20.2.0(supports-color@8.1.1)(typescript@6.0.3))(@react-native/metro-config@0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)(test-renderer@0.15.0(@types/react@19.3.0)(react@19.3.0))':
     dependencies:
@@ -26512,6 +26550,14 @@ snapshots:
       '@istanbuljs/schema': 0.1.6
       glob: 10.5.0
       minimatch: 10.2.5
+
+  test-renderer@0.14.0(@types/react@19.3.0)(react@19.3.0):
+    dependencies:
+      '@types/react-reconciler': 0.31.0(@types/react@19.3.0)
+      react: 19.3.0
+      react-reconciler: 0.31.0(react@19.3.0)
+    transitivePeerDependencies:
+      - '@types/react'
 
   test-renderer@0.15.0(@types/react@19.3.0)(react@19.3.0):
     dependencies:
