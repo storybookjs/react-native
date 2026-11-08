@@ -17,7 +17,7 @@
     "@storybook/react-native": "workspace:*"
   },
   "devDependencies": {
-    "metro": "0.84.6",
-    "metro-babel-transformer": "0.84.6"
+    "metro": "0.87.1",
+    "metro-babel-transformer": "0.87.1"
   }
 }

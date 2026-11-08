@@ -1065,11 +1065,11 @@ importers:
         version: link:../packages/react-native
     devDependencies:
       metro:
-        specifier: 0.84.6
-        version: 0.84.6(supports-color@8.1.1)
+        specifier: 0.87.1
+        version: 0.87.1(supports-color@8.1.1)
       metro-babel-transformer:
-        specifier: 0.84.6
-        version: 0.84.6(supports-color@8.1.1)
+        specifier: 0.87.1
+        version: 0.87.1(supports-color@8.1.1)
 
 packages:
 
@@ -8488,6 +8488,7 @@ packages:
   image-size@2.0.2:
     resolution: {integrity: sha512-IRqXKlaXwgSMAMtpNzZa1ZAe8m+Sa1770Dhk8VkSsP9LS+iHD62Zd8FQKs8fbPiagBE7BzoFX23cxFnwshpV6w==}
     engines: {node: '>=16.x'}
+    deprecated: Use latest 2.x please
     hasBin: true
 
   import-fresh@3.3.1:
