@@ -20,7 +20,7 @@ import {
   Pressable,
   View,
   ViewStyle,
-  KeyboardEventListener,
+  KeyboardEvent,
   Platform,
 } from 'react-native';
 import { useSelectedNode } from './SelectedNodeProvider';
@@ -71,11 +71,11 @@ export const useAnimatedModalHeight = () => {
       setKeyboardHeight(0);
     };
 
-    const handleKeyboardShow: KeyboardEventListener = (e) => {
+    const handleKeyboardShow = (e: KeyboardEvent) => {
       expand(e.endCoordinates.height);
     };
 
-    const handleKeyboardHide: KeyboardEventListener = () => {
+    const handleKeyboardHide = () => {
       collapse();
     };
 

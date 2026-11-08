@@ -1,5 +1,10 @@
 import tinycolor, { ColorFormats } from 'tinycolor2';
-import { PanResponder, GestureResponderEvent, PanResponderGestureState } from 'react-native';
+import {
+  PanResponder,
+  GestureResponderEvent,
+  PanResponderGestureState,
+  PanResponderInstance,
+} from 'react-native';
 
 type Point = { x: number; y: number };
 
@@ -48,7 +53,7 @@ export function createPanResponder({
   onStart = fn,
   onMove = fn,
   onEnd = fn,
-}: PanResponderCallbacks) {
+}: PanResponderCallbacks): PanResponderInstance {
   return PanResponder.create({
     onStartShouldSetPanResponder: fn,
     onStartShouldSetPanResponderCapture: fn,
