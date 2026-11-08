@@ -40,9 +40,11 @@ You can also set `websockets` manually with `{ host, port }`. `'auto'` is availa
 
 - `experimental_mcp: true` enables MCP HTTP endpoints.
 - `websockets` is optional for MCP docs/query tools.
-- Story selection tools are only available when `websockets` is enabled.
+- Device tools are only available when `websockets` is enabled: `select-story`, `get-device-state`, `update-story-args`, `reset-story-args` and `update-globals`. Each waits for the device to confirm and returns the result.
 
-If you enable MCP without `websockets`, Storybook still serves documentation tools, but cannot push story selection events to connected devices.
+If you enable MCP without `websockets`, Storybook still serves documentation tools, but cannot drive connected devices.
+
+Coding agents that can run shell commands can use the same tools without an MCP client through the [`sb-rn` CLI](./agent-cli.md).
 
 ## MCP Client Example
 
@@ -62,7 +64,7 @@ If you enable MCP without `websockets`, Storybook still serves documentation too
 1. `404` on `/mcp`
    - Ensure `experimental_mcp: true` is set in Metro/Re.Pack config.
    - Restart bundler after config changes.
-2. Story selection tool unavailable
+2. Device tools unavailable
    - Enable `websockets` in Metro/Re.Pack config.
 3. Connection issues from physical devices
    - Prefer `websockets: 'auto'` or use your machine LAN IP and ensure network/firewall access.

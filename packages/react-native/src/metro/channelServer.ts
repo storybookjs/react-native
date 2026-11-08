@@ -2,8 +2,10 @@ import { WebSocketServer, WebSocket, Data } from 'ws';
 import { createServer as createHttpServer, IncomingMessage, ServerResponse } from 'node:http';
 import { createServer as createHttpsServer } from 'node:https';
 import { buildIndex } from './buildIndex';
+import { writeChannelServerRecord } from './channelServerRecord';
+import { createDeviceControl, DeviceControlError } from './deviceControl';
+import { handleDeviceControlRequest, isDeviceControlRoute } from './deviceControlEndpoints';
 import { createMcpHandler } from './mcpServer';
-import { createSelectStorySyncEndpoint, SELECT_STORY_SYNC_ROUTE } from './selectStorySyncEndpoint';
 
 interface ChannelServerSecureOptions {
   ca?: string | Buffer | Array<string | Buffer>;
@@ -68,6 +70,8 @@ interface ChannelServerOptions {
  * - WebSocket: broadcasts all received messages to all connected clients
  * - POST /send-event: sends an event to all WebSocket clients
  * - POST /select-story-sync/{storyId}: sets the current story and waits for a storyRendered event
+ * - GET /state, POST /update-args-sync, /reset-args-sync, /update-globals-sync: device control
+ *   endpoints that wait for the device to answer (see deviceControlEndpoints.ts)
  * - GET /index.json: returns the story index built from story files
  * - POST /mcp: MCP endpoint for AI agent integration (when experimental_mcp option is enabled)
  *
@@ -98,8 +102,14 @@ export function createChannelServer({
 
   const httpServer = secured ? createHttpsServer(ssl) : createHttpServer();
   const wss = websockets ? new WebSocketServer({ server: httpServer }) : null;
-  const mcpServer = experimental_mcp ? createMcpHandler(configPath, wss ?? undefined) : null;
-  const selectStorySyncEndpoint = wss ? createSelectStorySyncEndpoint(wss) : null;
+  const deviceControl = wss
+    ? createDeviceControl(wss, {
+        explainSelectFailure: (storyId) => explainMissingStory(configPath, storyId),
+      })
+    : null;
+  const mcpServer = experimental_mcp
+    ? createMcpHandler(configPath, deviceControl ?? undefined)
+    : null;
 
   httpServer.on('request', async (req: IncomingMessage, res: ServerResponse) => {
     const protocol = 'encrypted' in req.socket && req.socket.encrypted ? 'https' : 'http';
@@ -157,14 +167,8 @@ export function createChannelServer({
       return;
     }
 
-    if (req.method === 'POST' && requestUrl.pathname.startsWith(SELECT_STORY_SYNC_ROUTE)) {
-      if (!selectStorySyncEndpoint) {
-        res.writeHead(503, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: false, error: 'WebSockets are disabled' }));
-        return;
-      }
-
-      await selectStorySyncEndpoint.handleRequest(requestUrl.pathname, res);
+    if (isDeviceControlRoute(req.method, requestUrl.pathname)) {
+      await handleDeviceControlRequest(deviceControl, req, res, requestUrl);
       return;
     }
 
@@ -201,13 +205,14 @@ export function createChannelServer({
 
     wss.on('connection', function connection(ws: WebSocket) {
       console.log('WebSocket connection established');
+      deviceControl?.onSocketConnect(ws);
 
       ws.on('error', console.error);
 
       ws.on('message', function message(data: Data) {
         try {
           const json = JSON.parse(data.toString());
-          selectStorySyncEndpoint?.onSocketMessage(json, ws);
+          deviceControl?.onSocketMessage(json, ws);
 
           const msg = JSON.stringify(json);
 
@@ -222,7 +227,7 @@ export function createChannelServer({
       });
 
       ws.on('close', () => {
-        selectStorySyncEndpoint?.onSocketClose(ws);
+        deviceControl?.onSocketClose(ws);
       });
     });
   }
@@ -241,6 +246,18 @@ export function createChannelServer({
   httpServer.listen(port, host, () => {
     const protocol = wss ? (secured ? 'WSS' : 'WebSocket') : secured ? 'HTTPS' : 'HTTP';
     console.log(`${protocol} server listening on ${host ?? 'localhost'}:${port}`);
+
+    const urlHost = !host || host === '0.0.0.0' || host === '::' ? 'localhost' : host;
+    const removeRecord = writeChannelServerRecord({
+      url: `${secured ? 'https' : 'http'}://${urlHost.includes(':') ? `[${urlHost}]` : urlHost}:${port}`,
+      port,
+      host,
+      secured,
+      websockets: Boolean(wss),
+      mcp: experimental_mcp,
+      configPath,
+    });
+    httpServer.once('close', removeRecord);
   });
 
   // by default keepNodeProcessAlive is false to make sure we don't cause bundling to hang
@@ -248,10 +265,41 @@ export function createChannelServer({
     httpServer.unref();
   }
 
-  process.once('beforeExit', () => httpServer.close());
+  const closeOnExit = () => httpServer.close();
+  process.once('beforeExit', closeOnExit);
+  httpServer.once('close', () => process.off('beforeExit', closeOnExit));
 
   // Pre-initialize MCP if enabled (non-blocking)
   mcpServer?.preInit();
 
   return wss;
+}
+
+const MAX_SUGGESTED_STORY_IDS = 10;
+
+/**
+ * Turns a failed selection into a not-found error when the story id is not in the index, with the
+ * closest ids so an agent can correct itself.
+ */
+async function explainMissingStory(
+  configPath: string,
+  storyId: string
+): Promise<DeviceControlError | undefined> {
+  const index = await buildIndex({ configPath });
+  const ids = Object.keys(index.entries);
+
+  // An empty index says more about the project setup than about this story id.
+  if (ids.length === 0 || ids.includes(storyId)) {
+    return undefined;
+  }
+
+  const [componentPart] = storyId.split('--');
+  const related = ids.filter((id) => id.startsWith(`${componentPart}--`));
+  const suggestions = (related.length > 0 ? related : ids).slice(0, MAX_SUGGESTED_STORY_IDS);
+
+  return new DeviceControlError(
+    'story-not-found',
+    `Story "${storyId}" not found. ` +
+      `${related.length > 0 ? 'Stories of the same component' : 'Available stories include'}: ${suggestions.join(', ')}`
+  );
 }
