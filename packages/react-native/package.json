@@ -19,6 +19,7 @@
   "license": "MIT",
   "exports": {
     ".": "./dist/index.js",
+    "./controls": "./dist/controls/index.js",
     "./withStorybook": "./dist/withStorybook.js",
     "./metro/withStorybook": "./dist/metro/withStorybook.js",
     "./repack/withStorybook": "./dist/repack/withStorybook.js",
@@ -51,6 +52,7 @@
     "test:ci": "jest"
   },
   "dependencies": {
+    "@gorhom/portal": "^1.0.14",
     "@storybook/mcp": "^10.6.0",
     "@storybook/react": "^11.0.0-beta.0",
     "@storybook/react-native-theming": "^11.0.0-next.1",
@@ -63,8 +65,10 @@
     "deepmerge": "^4.3.1",
     "esbuild-register": "^3.6.0",
     "glob": "^14.0.2",
+    "polished": "^4.3.1",
     "react-native-url-polyfill": "^3.0.0 || ^4.0.0",
     "setimmediate": "^1.0.5",
+    "tinycolor2": "^1.6.0",
     "tmcp": "^1.19.4",
     "type-fest": "~2.19",
     "valibot": "^1.4.2",
@@ -72,9 +76,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
+    "@react-native-community/datetimepicker": "9.2.1",
+    "@react-native-community/slider": "5.2.1",
     "@react-native/jest-preset": "0.88.1",
     "@types/jest": "^30.0.0",
     "@types/react": "~19.3.0",
+    "@types/tinycolor2": "^1.4.6",
     "babel-jest": "^29.7.0",
     "babel-preset-expo": "^58.0.24",
     "jest": "^30.5.2",
@@ -90,6 +97,8 @@
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": ">=4",
+    "@react-native-community/datetimepicker": ">=8",
+    "@react-native-community/slider": "*",
     "react": "*",
     "react-native": ">=0.72.0",
     "react-native-gesture-handler": ">=2",
@@ -99,6 +108,12 @@
   },
   "peerDependenciesMeta": {
     "@gorhom/bottom-sheet": {
+      "optional": true
+    },
+    "@react-native-community/datetimepicker": {
+      "optional": true
+    },
+    "@react-native-community/slider": {
       "optional": true
     },
     "react-native-gesture-handler": {

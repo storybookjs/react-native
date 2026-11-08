@@ -1,5 +1,5 @@
 import { composeStories } from '@storybook/react';
-import { getControlArgTypes } from '@storybook/addon-ondevice-controls/dist/controlArgTypes';
+import { getControlArgTypes } from '@storybook/react-native/controls';
 import * as DisabledControlsStories from './DisabledControls.stories';
 
 const { OnlyLabelEditable, AllDisabled } = composeStories(DisabledControlsStories);

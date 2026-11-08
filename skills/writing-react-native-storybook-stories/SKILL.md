@@ -225,7 +225,6 @@ import type { StorybookConfig } from '@storybook/react-native';
 const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   deviceAddons: [
-    '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
@@ -290,7 +289,9 @@ setProjectAnnotations(previewAnnotations);
 
 | Addon       | Package                                 | Purpose                    |
 | ----------- | --------------------------------------- | -------------------------- |
-| Controls    | `@storybook/addon-ondevice-controls`    | Edit props interactively   |
+| Controls    | built into `@storybook/react-native`    | Edit props interactively   |
 | Actions     | `@storybook/addon-ondevice-actions`     | Log component interactions |
 | Backgrounds | `@storybook/addon-ondevice-backgrounds` | Change story backgrounds   |
 | Notes       | `@storybook/addon-ondevice-notes`       | Add markdown documentation |
+
+Controls are built in and on by default (v11+): don't install `@storybook/addon-ondevice-controls` or list it in `deviceAddons` (it's a deprecated no-op stub). Turn them off with `features: { ondeviceControls: false }`. Backgrounds can be built in with `features: { ondeviceBackgrounds: true }`.

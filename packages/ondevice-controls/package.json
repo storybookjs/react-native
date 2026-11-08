@@ -1,7 +1,7 @@
 {
   "name": "@storybook/addon-ondevice-controls",
   "version": "11.0.0-next.1",
-  "description": "Display storybook controls on your device.",
+  "description": "Deprecated: Controls are built into @storybook/react-native. This package is a no-op kept for compatibility.",
   "keywords": [
     "addon",
     "control",
@@ -26,36 +26,16 @@
   "scripts": {
     "check:types": "tsc --noEmit",
     "clean": "cross-env-shell rm -rf dist/",
-    "copyimages": "cross-env-shell cp -r src/components/color-picker/resources dist/components/color-picker/resources",
     "dev": "tsc --watch",
-    "prepare": "pnpm clean && tsc && pnpm copyimages"
-  },
-  "dependencies": {
-    "@gorhom/portal": "^1.0.14",
-    "@storybook/react-native-theming": "^11.0.0-next.1",
-    "@storybook/react-native-ui-common": "^11.0.0-next.1",
-    "polished": "^4.3.1",
-    "react-native-modal-datetime-picker": "^18.0.0",
-    "tinycolor2": "^1.6.0"
+    "prepare": "pnpm clean && tsc"
   },
   "devDependencies": {
-    "@gorhom/bottom-sheet": "*",
+    "@storybook/react-native": "^11.0.0-next.1",
     "cross-env": "^10.1.0",
-    "storybook": "^11.0.0-beta.0",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
-    "@gorhom/bottom-sheet": ">=4",
-    "@react-native-community/datetimepicker": "*",
-    "@react-native-community/slider": "*",
-    "react": "*",
-    "react-native": "*",
-    "storybook": "^11.0.0-beta.0"
-  },
-  "peerDependenciesMeta": {
-    "@gorhom/bottom-sheet": {
-      "optional": true
-    }
+    "@storybook/react-native": "^11.0.0-next.1"
   },
   "publishConfig": {
     "access": "public"

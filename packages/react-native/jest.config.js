@@ -5,13 +5,17 @@ const config = {
   ...(process.env.JEST_CACHE_DIRECTORY && { cacheDirectory: process.env.JEST_CACHE_DIRECTORY }),
 
   transform: {
-    'node_modules/(storybook|@storybook/react)/.+\\.[jt]sx?$':
+    'node_modules/(storybook|@storybook/react|@storybook/icons)/.+\\.[jt]sx?$':
       '<rootDir>/jest-sucrase-transformer.js',
   },
 
   transformIgnorePatterns: [
-    'node_modules/(?!((jest-)?react-native|@react-native(-community)?)|jest-expo|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg|storybook|@storybook/react|uuid|@react-native/.*)',
+    'node_modules/(?!((jest-)?react-native|@react-native(-community)?)|jest-expo|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg|storybook|@storybook/react|@storybook/icons|uuid|@react-native/.*)',
   ],
+  moduleNameMapper: {
+    // The addon-ondevice-controls stub (tested from here) imports this entry; use the source.
+    '^@storybook/react-native/controls$': '<rootDir>/src/controls/index.ts',
+  },
   testPathIgnorePatterns: ['/node_modules/', '/scripts/generate\\.test\\.js$'],
 };
 module.exports = config;
