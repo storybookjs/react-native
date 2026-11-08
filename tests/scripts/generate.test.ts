@@ -3,6 +3,7 @@ import assert from 'node:assert';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import vm from 'node:vm';
 import { generate } from '@storybook/react-native/scripts/generate';
 
 const require = createRequire(import.meta.url);
@@ -18,6 +19,34 @@ const mockFs = {
     pathMock = filePath;
     fileContentMock = fileContent;
   },
+};
+
+/**
+ * Pull the globalThis.FEATURES statements out of a generated requires file so they can be run on
+ * their own, either before or after @storybook/react-native creates the object. Both the merged
+ * object form and the older per-flag form are matched so this keeps reporting on a generator that
+ * still writes the broken version instead of passing on nothing.
+ */
+const getFeaturesStatements = (content: string) =>
+  [
+    ...(content.match(/globalThis\.FEATURES\.[A-Za-z_$][\w$]* = [^;]+;/g) ?? []),
+    ...(content.match(/globalThis\.FEATURES = \{[\s\S]*?\n\};/g) ?? []),
+  ].join('\n');
+
+const runFeaturesStatements = (
+  statements: string,
+  initialFeatures?: Record<string, unknown>
+): Record<string, unknown> => {
+  const sandbox: { FEATURES?: Record<string, unknown> } = {};
+  const context = vm.createContext(sandbox);
+
+  if (initialFeatures !== undefined) {
+    vm.runInContext(`globalThis.FEATURES = ${JSON.stringify(initialFeatures)}`, context);
+  }
+
+  vm.runInContext(statements, context);
+  // copy out of the vm realm so the result has this realm's Object.prototype
+  return { ...sandbox.FEATURES };
 };
 
 describe('loader', () => {
@@ -259,8 +288,68 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/with-features' });
         mock.reset();
 
-        assert.ok(fileContentMock.includes('globalThis.FEATURES.ondeviceBackgrounds = true;'));
+        assert.ok(
+          fileContentMock.includes(
+            `globalThis.FEATURES = {
+  ...globalThis.FEATURES,
+  ondeviceBackgrounds: true,
+};`
+          )
+        );
         t.assert.snapshot(fileContentMock);
+      });
+
+      it('does not read globalThis.FEATURES before it exists', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-features' });
+        mock.reset();
+
+        // with inlineRequires the generated file runs before @storybook/react-native creates
+        // globalThis.FEATURES, so the statements must not read from a missing object
+        const features = runFeaturesStatements(getFeaturesStatements(fileContentMock));
+
+        assert.deepStrictEqual(features, { ondeviceBackgrounds: true });
+      });
+
+      it('keeps feature flags that were already set', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-features' });
+        mock.reset();
+
+        const features = runFeaturesStatements(getFeaturesStatements(fileContentMock), {
+          measure: false,
+          backgrounds: false,
+        });
+
+        assert.deepStrictEqual(features, {
+          measure: false,
+          backgrounds: false,
+          ondeviceBackgrounds: true,
+        });
+      });
+
+      it('quotes feature keys that are not valid identifiers', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-non-identifier-feature-key' });
+        mock.reset();
+
+        assert.ok(
+          fileContentMock.includes(
+            `globalThis.FEATURES = {
+  ...globalThis.FEATURES,
+  "foo-bar": true,
+  ondeviceBackgrounds: false,
+};`
+          )
+        );
+
+        const statements = getFeaturesStatements(fileContentMock);
+        assert.ok(statements, 'no FEATURES statements were generated');
+
+        assert.deepStrictEqual(runFeaturesStatements(statements), {
+          'foo-bar': true,
+          ondeviceBackgrounds: false,
+        });
       });
     });
 
@@ -270,7 +359,7 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/all-config-files' });
         mock.reset();
 
-        assert.ok(!fileContentMock.includes('globalThis.FEATURES.'));
+        assert.ok(!fileContentMock.includes('globalThis.FEATURES'));
         t.assert.snapshot(fileContentMock);
       });
     });

@@ -1,6 +1,13 @@
 // taken from https://github.com/react-native-community/hooks/blob/main/src/useKeyboard.ts
 import { useEffect, useState } from 'react';
-import { Keyboard, KeyboardEventListener, KeyboardMetrics } from 'react-native';
+import { Keyboard, KeyboardEvent, KeyboardMetrics } from 'react-native';
+
+// react-native 0.88 no longer exports KeyboardEventListener
+type KeyboardEventListener = (event: KeyboardEvent) => void;
+
+// Only iOS keyboard events have startCoordinates
+const startCoordinates = (e: KeyboardEvent): KeyboardMetrics | undefined =>
+  'startCoordinates' in e ? e.startCoordinates : undefined;
 
 const emptyCoordinates = Object.freeze({
   screenX: 0,
@@ -22,20 +29,20 @@ export function useKeyboard() {
   const [keyboardHeight, setKeyboardHeight] = useState<number>(0);
 
   const handleKeyboardWillShow: KeyboardEventListener = (e) => {
-    setCoordinates({ start: e.startCoordinates, end: e.endCoordinates });
+    setCoordinates({ start: startCoordinates(e), end: e.endCoordinates });
   };
   const handleKeyboardDidShow: KeyboardEventListener = (e) => {
     setShown(true);
-    setCoordinates({ start: e.startCoordinates, end: e.endCoordinates });
+    setCoordinates({ start: startCoordinates(e), end: e.endCoordinates });
     setKeyboardHeight(e.endCoordinates.height);
   };
   const handleKeyboardWillHide: KeyboardEventListener = (e) => {
-    setCoordinates({ start: e.startCoordinates, end: e.endCoordinates });
+    setCoordinates({ start: startCoordinates(e), end: e.endCoordinates });
   };
   const handleKeyboardDidHide: KeyboardEventListener = (e) => {
     setShown(false);
     if (e) {
-      setCoordinates({ start: e.startCoordinates, end: e.endCoordinates });
+      setCoordinates({ start: startCoordinates(e), end: e.endCoordinates });
     } else {
       setCoordinates(initialValue);
       setKeyboardHeight(0);
