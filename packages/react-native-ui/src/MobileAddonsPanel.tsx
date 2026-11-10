@@ -32,6 +32,11 @@ const contentStyle = {
   flex: 1,
 } satisfies StyleProp<ViewStyle>;
 
+// Read outside the worklet below: a worklet captures what it references and copies it to the UI
+// runtime, and `Platform` (the whole `react-native` module in the CommonJS build) can't be copied.
+// @see https://github.com/storybookjs/react-native/issues/935
+const isAndroid = Platform.OS === 'android';
+
 type MobileAddonsPanelProps = { storyId?: string; parameters?: Parameters };
 
 export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, MobileAddonsPanelProps>(
@@ -61,7 +66,7 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, MobileAddonsPa
     const { height } = useWindowDimensions();
 
     const adjustedBottomSheetSize = useAnimatedStyle(() => {
-      const extraPadding = Platform.OS === 'android' ? 32 : 16 + insets.bottom;
+      const extraPadding = isAndroid ? 32 : 16 + insets.bottom;
       return {
         maxHeight: height - animatedPosition.value - extraPadding,
       };
