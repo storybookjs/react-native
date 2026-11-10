@@ -768,8 +768,8 @@ importers:
         specifier: '>=4'
         version: 5.2.14(c1827ef9f277554c0581ddf2e4456a01)
       '@storybook/mcp':
-        specifier: ^10.6.0
-        version: 10.6.0(typescript@6.0.3)
+        specifier: ^11.0.0-beta.1
+        version: 11.0.0-beta.1(typescript@6.0.3)
       '@storybook/react':
         specifier: ^11.0.0-beta.1
         version: 11.0.0-beta.1(@types/react@19.3.0)(react-docgen-typescript@2.2.2(typescript@6.0.3))(react-docgen@8.0.3(supports-color@8.1.1))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@11.0.0-beta.1(@types/react@19.3.0)(prettier@3.9.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@6.0.3)
@@ -4928,8 +4928,8 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@storybook/mcp@10.6.0':
-    resolution: {integrity: sha512-TXcZkE8NxtFKl8dgRbAf/aOLlBqNffzAi9WVX5A6OoESAmyAuEzGslnRdHMcOwTtzxkcFFQLIzPOK7HStBQ3/Q==}
+  '@storybook/mcp@11.0.0-beta.1':
+    resolution: {integrity: sha512-aJGakDtK8P8nu5J8UyIrCUJsPz5qIx6NBLZWsFc7nPr/as6Dt2YSmpHILCxmhUMNiCAP8CClBt/1bR5aImPeCQ==}
 
   '@storybook/react-native-web-vite@11.0.0-beta.1':
     resolution: {integrity: sha512-EpE3o2ZwQGAILWpgp82HJIqtS56Yoxu/u58GEfowakxBCZzJdnbU/lTtfcJUSqteiCflU11g6I47jpM7KG4B4Q==}
@@ -17901,7 +17901,7 @@ snapshots:
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
 
-  '@storybook/mcp@10.6.0(typescript@6.0.3)':
+  '@storybook/mcp@11.0.0-beta.1(typescript@6.0.3)':
     dependencies:
       '@tmcp/adapter-valibot': 0.1.6(tmcp@1.19.4(typescript@6.0.3))(valibot@1.4.2(typescript@6.0.3))
       '@tmcp/transport-http': 0.8.6(tmcp@1.19.4(typescript@6.0.3))
