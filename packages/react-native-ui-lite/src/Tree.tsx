@@ -176,7 +176,6 @@ const CollapseButton = styled.TouchableOpacity(() => ({
   borderRadius: 4,
   gap: 6,
   alignItems: 'center',
-  cursor: 'pointer',
   minHeight: 34,
 }));
 
