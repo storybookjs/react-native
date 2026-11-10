@@ -177,6 +177,8 @@ For React Native CLI projects:
 }
 ```
 
+Release builds of Storybook in React Native CLI projects also need `ENTRY_FILE=.rnstorybook/index.tsx`. See [Storybook release builds on React Native CLI](../configuration/metro-configuration.md#storybook-release-builds-on-react-native-cli).
+
 :::note[Windows users]
 On Windows, use `cross-env` to set environment variables:
 
