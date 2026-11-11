@@ -34,8 +34,8 @@ describe('View story selection persistence', () => {
     const view = new View(preview as any, {} as any, {});
     view._storyIndex = {
       entries: {
-        'first--story': { id: 'first--story', type: 'story' },
-        'second--story': { id: 'second--story', type: 'story' },
+        'first--story': { id: 'first--story', type: 'story', tags: ['dev', 'test'] },
+        'second--story': { id: 'second--story', type: 'story', tags: ['dev', 'test'] },
       },
     } as any;
 
@@ -64,5 +64,22 @@ describe('View story selection persistence', () => {
     });
 
     expect(selectionStore.selection).toEqual({ storyId: 'first--story', viewMode: 'story' });
+  });
+
+  it('selects the first story shown in the sidebar when there is no saved selection', async () => {
+    const { view } = createView();
+
+    expect(await view._getInitialStory({ shouldPersistSelection: false })).toEqual({
+      storySpecifier: 'first--story',
+      viewMode: 'story',
+    });
+
+    // a story tagged `!dev` is hidden from the sidebar, so it isn't opened by default
+    view._storyIndex.entries['first--story'].tags = ['test'];
+
+    expect(await view._getInitialStory({ shouldPersistSelection: false })).toEqual({
+      storySpecifier: 'second--story',
+      viewMode: 'story',
+    });
   });
 });
