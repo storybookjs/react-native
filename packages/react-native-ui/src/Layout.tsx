@@ -234,6 +234,10 @@ export const Layout = ({
     const channel = addons.getChannel();
 
     channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
+
+    // As on Storybook for the web, the mobile story list closes once a story is chosen from it.
+    // The drawer isn't rendered on desktop, where the ref stays empty.
+    mobileMenuDrawerRef.current?.setMobileMenuOpen(false);
   }, []);
 
   return (
