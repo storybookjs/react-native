@@ -51,8 +51,8 @@
     "test:ci": "jest"
   },
   "dependencies": {
-    "@storybook/mcp": "^11.0.0-beta.1",
-    "@storybook/react": "^11.0.0-beta.1",
+    "@storybook/mcp": "^11.0.0-beta.2",
+    "@storybook/react": "^11.0.0-beta.2",
     "@storybook/react-native-theming": "^11.0.0-next.1",
     "@storybook/react-native-ui": "^11.0.0-next.1",
     "@storybook/react-native-ui-common": "^11.0.0-next.1",
@@ -82,7 +82,7 @@
     "jotai": "^2.20.2",
     "react": "19.3.0",
     "react-native": "0.88.1",
-    "storybook": "^11.0.0-beta.1",
+    "storybook": "^11.0.0-beta.2",
     "sucrase": "^3.35.1",
     "test-renderer": "^0.15.0",
     "tsdown": "^0.22.12",
