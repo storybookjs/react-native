@@ -60,12 +60,16 @@ export const MobileAddonsPanel = forwardRef<MobileAddonsPanelRef, MobileAddonsPa
 
     const { height } = useWindowDimensions();
 
-    const adjustedBottomSheetSize = useAnimatedStyle(() => {
-      const extraPadding = Platform.OS === 'android' ? 32 : 16 + insets.bottom;
-      return {
-        maxHeight: height - animatedPosition.value - extraPadding,
-      };
-    }, [animatedPosition, height, insets.bottom]);
+    const adjustedBottomSheetSize = useAnimatedStyle(
+      () => {
+        const extraPadding = Platform.OS === 'android' ? 32 : 16 + insets.bottom;
+        return {
+          maxHeight: height - animatedPosition.value - extraPadding,
+        };
+      },
+      // ignored (and warned about) on native; web without the babel plugin needs them
+      Platform.OS === 'web' ? [animatedPosition, height, insets.bottom] : undefined
+    );
 
     const backgroundStyle = useStyle(() => {
       return {
