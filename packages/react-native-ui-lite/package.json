@@ -36,14 +36,14 @@
     "@gorhom/portal": "^1.0.14",
     "@legendapp/list": "^3.7.2",
     "@nozbe/microfuzz": "^1.0.0",
-    "@storybook/react": "^11.0.0-beta.1",
+    "@storybook/react": "^11.0.0-beta.2",
     "@storybook/react-native-theming": "^11.0.0-next.1",
     "@storybook/react-native-ui-common": "^11.0.0-next.1",
     "polished": "^4.3.1"
   },
   "devDependencies": {
     "@types/react": "~19.3.0",
-    "storybook": "^11.0.0-beta.1",
+    "storybook": "^11.0.0-beta.2",
     "ts-dedent": "^2.3.0",
     "tsdown": "^0.23.7",
     "typescript": "~6.0.3"
