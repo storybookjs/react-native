@@ -6,6 +6,7 @@ import type {
   StoryIndex,
 } from 'storybook/internal/types';
 import { sortIndexEntries } from './sortStories';
+import { PLAY_FN_TAG, combineStoryTags } from './storyTags';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
@@ -15,15 +16,29 @@ export interface ReactNativeOptions {
   playFn?: boolean;
 }
 
+/**
+ * The tags of a meta or story, followed by `play-fn` when it has a play function, like the tags
+ * Storybook reads from a CSF file. CSF factories keep their annotations on `input`.
+ */
+const getAnnotationTags = (annotations: any): unknown[] => {
+  const input = annotations?._tag ? annotations.input : annotations;
+  const tags = Array.isArray(input?.tags) ? input.tags : [];
+
+  return typeof input?.play === 'function' ? [...tags, PLAY_FN_TAG] : tags;
+};
+
 export function prepareStories({
   storyEntries,
   options,
   storySorts = [],
+  projectTags = [],
 }: {
   storyEntries: (NormalizedStoriesSpecifier & { req: any })[];
   options?: ReactNativeOptions;
   /** The `storySorts` from main, chained in order. */
   storySorts?: Addon_StorySortParameterV7[];
+  /** The `tags` from the project annotations, applied to every story before its meta and story tags. */
+  projectTags?: string[];
 }) {
   let index: StoryIndex = {
     v: 5,
@@ -63,6 +78,7 @@ export function prepareStories({
         const fileExports = req(filename);
         if (!fileExports.default) return;
         const meta = fileExports.default;
+        const metaTags = getAnnotationTags(meta);
 
         Object.keys(fileExports).forEach((key) => {
           if (key === 'default') return;
@@ -95,7 +111,11 @@ export function prepareStories({
               name,
               title,
               importPath: `${root}/${filename.substring(2)}`, // FIXME: use normalize function here
-              tags: ['story'],
+              tags: combineStoryTags({
+                projectTags,
+                metaTags,
+                storyTags: getAnnotationTags(exportValue),
+              }),
               subtype: 'story',
             };
 

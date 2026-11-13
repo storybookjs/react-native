@@ -230,3 +230,50 @@ export default meta;
 ```
 
 Decorators can be more complex and are often provided by addons. You can also configure decorators at the story, component and global level.
+
+### Using tags
+
+Tags are labels that describe a story, such as `beta` or `deprecated`. They work the same way as [tags in Storybook for the web](https://storybook.js.org/docs/writing-stories/tags): you can set them in `preview`, in the default export and on each story, and a story gets the tags from all three levels. Prefix a tag with `!` to remove a tag that was applied at a higher level.
+
+Every story starts with the built-in `dev`, `test` and `manifest` tags, and stories with a play function also get `play-fn`. Only stories with the `dev` tag are listed in the on-device sidebar, so remove it to hide a story you don't want to browse on the device, for example one that only exists for your tests. Stories hidden this way can still be opened by their id, for example with a deep link or `initialSelection`.
+
+```tsx
+// Button.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react-native';
+
+import { Button } from './Button';
+
+const meta: Meta<typeof Button> = {
+  component: Button,
+  //👇 Applies to every story in this file
+  tags: ['beta'],
+};
+
+export default meta;
+type Story = StoryObj<typeof Button>;
+
+export const Primary: Story = {
+  args: { label: 'Button' },
+};
+
+//👇 Hidden from the sidebar
+export const ForTestsOnly: Story = {
+  args: { label: 'Button' },
+  tags: ['!dev'],
+};
+```
+
+Tags set in `preview` apply to every story. The Metro channel server reads them from the preview file without running it, so they need to be a static array of strings there, as in Storybook for the web.
+
+```tsx
+// .rnstorybook/preview.tsx
+import type { Preview } from '@storybook/react-native';
+
+const preview: Preview = {
+  tags: ['internal'],
+};
+
+export default preview;
+```
+
+Tags are included in the story index, so tools that read it, such as the `/index.json` endpoint of the channel server, can filter stories by tag.
