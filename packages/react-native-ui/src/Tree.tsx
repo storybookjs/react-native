@@ -100,6 +100,7 @@ export const Node = React.memo<NodeProps>(function Node({
             event.preventDefault();
             setExpanded({ ids: [item.id], value: !isExpanded });
           }}
+          accessibilityRole="button"
           aria-expanded={isExpanded}
         >
           <CollapseIcon isExpanded={isExpanded} />
@@ -107,7 +108,7 @@ export const Node = React.memo<NodeProps>(function Node({
         </CollapseButton>
         {isExpanded && (
           <IconButton
-            aria-label={isFullyExpanded ? 'Expand' : 'Collapse'}
+            aria-label={isFullyExpanded ? 'Collapse all' : 'Expand all'}
             data-action="expand-all"
             data-expanded={isFullyExpanded}
             onPress={(event) => {

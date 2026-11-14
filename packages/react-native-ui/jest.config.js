@@ -7,7 +7,7 @@ const config = {
   resolver: 'react-native-reanimated/jest/resolver',
   ...(process.env.JEST_CACHE_DIRECTORY && { cacheDirectory: process.env.JEST_CACHE_DIRECTORY }),
   transformIgnorePatterns: [
-    'node_modules/(?!((jest-)?react-native|@react-native(-community)?|@gorhom|@storybook))',
+    'node_modules/(?!((jest-)?react-native|@react-native(-community)?|@gorhom|@storybook|storybook/))',
   ],
 };
 module.exports = config;

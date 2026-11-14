@@ -256,6 +256,7 @@ export const Search = React.memo<{
             onChangeText={setInputValue}
             onFocus={() => setIsOpen(true)}
             returnKeyType="search"
+            accessibilityLabel="Find components"
           />
 
           {isOpen && (
