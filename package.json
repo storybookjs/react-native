@@ -54,7 +54,7 @@
     "eslint-config-expo": "^58.0.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "7.1.1",
-    "prettier": "^3.9.5",
+    "prettier": "^3.10.0",
     "sherif": "^1.13.0",
     "typescript": "~6.0.3"
   },

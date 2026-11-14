@@ -29,10 +29,10 @@
     "@storybook/react-native-ui-lite": "^11.0.0-next.1",
     "@storybook/react-native-web-vite": "^11.0.0-beta.2",
     "babel-plugin-react-compiler": "^1.0.0",
-    "expo": "58.0.23",
-    "expo-modules-core": "58.0.30",
+    "expo": "58.0.24",
+    "expo-modules-core": "58.1.0",
     "expo-system-ui": "~58.0.7",
-    "expo-updates": "~58.0.21",
+    "expo-updates": "~58.0.22",
     "react": "19.3.0",
     "react-compiler-runtime": "^1.0.0",
     "react-dom": "19.3.0",
@@ -45,7 +45,7 @@
     "react-native-worklets": "0.13.0",
     "storybook": "^11.0.0-beta.2",
     "storybook-addon-deep-controls": "^0.10.0",
-    "ws": "^8.21.1"
+    "ws": "^8.22.2"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
@@ -53,12 +53,12 @@
     "@rozenite/metro": "^1.13.0",
     "@testing-library/react-native": "14.0.0-beta.0",
     "@types/react": "~19.3.0",
-    "@types/ws": "^8.18.1",
+    "@types/ws": "^8.18.2",
     "babel-plugin-react-docgen-typescript": "^1.5.1",
     "jest": "^30.5.2",
     "jest-expo": "~58.0.14",
     "test-renderer": "^0.15.0",
     "typescript": "~6.0.3",
-    "vite": "^8.1.6"
+    "vite": "^8.3.8"
   }
 }
