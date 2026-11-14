@@ -96,6 +96,23 @@ argTypes: {
 }
 ```
 
+### check
+
+Checkbox list returning an array of the checked options. Use `inline-check` for horizontal layout.
+
+```tsx
+argTypes: {
+  toppings: {
+    options: ['cheese', 'mushrooms', 'olives'],
+    control: { type: 'check' },
+  },
+  days: {
+    options: ['mon', 'tue', 'wed'],
+    control: { type: 'inline-check' },
+  },
+}
+```
+
 ### color
 
 Color picker (modal on native, HTML input on web).

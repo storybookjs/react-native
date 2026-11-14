@@ -30,7 +30,6 @@ const ResultRow = styled.TouchableOpacity<{ isHighlighted: boolean }>(
   ({ theme, isHighlighted }) => ({
     width: '100%',
     border: 'none',
-    cursor: 'pointer',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
@@ -159,7 +158,12 @@ const Result: FC<SearchResultProps> = React.memo(function Result({
   const pathString = item.path?.join(' ') ?? '';
 
   return (
-    <ResultRow {...props} onPress={press}>
+    <ResultRow
+      {...props}
+      onPress={press}
+      accessibilityRole="button"
+      accessibilityLabel={`${item.name}, ${item.path?.join(' / ') ?? ''}`}
+    >
       <IconWrapper>
         {item.type === 'component' && <ComponentIcon width="14" height="14" />}
         {item.type === 'story' && <StoryIcon width="14" height="14" />}
@@ -213,7 +217,7 @@ export const SearchResults: FC<{
       {results.length > 0 && !query ? (
         <RecentlyOpenedTitle>
           <Text>Recently opened</Text>
-          <IconButton onPress={handleClearLastViewed} />
+          <IconButton onPress={handleClearLastViewed} accessibilityLabel="Clear recently opened" />
         </RecentlyOpenedTitle>
       ) : null}
 

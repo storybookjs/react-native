@@ -1,7 +1,7 @@
 PODS:
   - boost (1.84.0):
     - ReactNativeDependencies
-  - callstack-repack (5.2.5):
+  - callstack-repack (5.4.3):
     - hermes-engine
     - JWTDecode (~> 3.0.0)
     - RCTRequired
@@ -1886,7 +1886,7 @@ PODS:
     - React-utils (= 0.88.1)
     - ReactNativeDependencies
   - ReactNativeDependencies (0.88.1)
-  - ReactNativeEnrichedMarkdown (1.0.2):
+  - ReactNativeEnrichedMarkdown (1.1.1):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1909,7 +1909,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - ReactNativeHost (0.5.21):
+  - ReactNativeHost (0.5.23):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1934,7 +1934,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - ReactTestApp-DevSupport (5.4.16):
+  - ReactTestApp-DevSupport (5.4.17):
     - React-Core
     - React-jsi
   - ReactTestApp-Resources (1.0.0-dev)
@@ -2290,7 +2290,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 8502bfdc46e2804408af2e163049ece181009af4
-  callstack-repack: 298ebe95ae2411511dbc1f6e35001a1c61c9e3b6
+  callstack-repack: f1a00c4ba77cf5b6f914ca694f82f1224c94b7b2
   DoubleConversion: 501a575c40c0b50c89685762dd3e415e6bb26fb0
   fast_float: 7c925d1cebf8328d4018d061f49377e9f887e3b4
   FBLazyVector: 07cb4c5b92110c132f2bb73b908e87f35cbe0a19
@@ -2377,9 +2377,9 @@ SPEC CHECKSUMS:
   ReactCodegen: 670bfd7c360cad80ab1451a1a3d163110d8ecc04
   ReactCommon: b63ce798b898ed77c6cfdeb80b18080161f52ed5
   ReactNativeDependencies: a5164c3ebbe90d992022b5d9cbabbf770a6d7d05
-  ReactNativeEnrichedMarkdown: 28c76c29e53fe792c9f06347396ea0ff4bbc8fbb
-  ReactNativeHost: 12775fd18bc0260080b2a4196dc0522476dde0ce
-  ReactTestApp-DevSupport: 8ad6dea2b1b7212362826a7548a57b7d660f1b4d
+  ReactNativeEnrichedMarkdown: 765b3444b9d6e523cc75d83e2fb40236f2f9f79f
+  ReactNativeHost: f7120f0a75150bb8fa3bd309b60e98aa8e025147
+  ReactTestApp-DevSupport: 8c34bc3b9ee42c553e27be2172ac331d414fc852
   ReactTestApp-Resources: 1bd9ff10e4c24f2ad87101a32023721ae923bccf
   RNCAsyncStorage: 9aad1f18e1b3d98690ae696b01bd984054108916
   RNDateTimePicker: 5ddeb7b9142ea2b53386cf9e1737fd0ddc5a186f
