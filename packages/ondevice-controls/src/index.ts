@@ -2,7 +2,9 @@ import { ADDON_ID, PARAM_KEY } from '@storybook/react-native/controls';
 
 export { ADDON_ID, PARAM_KEY };
 
+// Provided by React Native at runtime; this package has no react-native or DOM types.
 declare const __DEV__: boolean | undefined;
+declare const console: { warn(...data: unknown[]): void };
 
 let warned = false;
 
