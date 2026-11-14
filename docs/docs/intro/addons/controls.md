@@ -419,6 +419,24 @@ export default {
 
 These can also be set on an individual story. To hide the Controls panel entirely for a story, set `parameters.controls.disable` to `true`.
 
+### Grouping Controls
+
+Group related controls into collapsible sections with `table.category`, and into subsections with `table.subcategory`, the same as Storybook web:
+
+```ts
+export default {
+  component: MyComponent,
+  argTypes: {
+    label: { control: 'text', table: { category: 'Text' } },
+    color: { control: 'color', table: { category: 'Appearance', subcategory: 'Colors' } },
+    borderColor: { control: 'color', table: { category: 'Appearance', subcategory: 'Colors' } },
+    rounded: { control: 'boolean', table: { category: 'Appearance' } },
+  },
+};
+```
+
+Controls without a category are shown first. Tap a section or subsection header to collapse or expand it.
+
 ## Best Practices
 
 1. **Use descriptive labels**: Provide clear labels for select and radio options
