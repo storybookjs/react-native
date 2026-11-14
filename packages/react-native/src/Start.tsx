@@ -21,6 +21,7 @@ import type {
 } from 'storybook/internal/types';
 import { View } from './View';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
+import { getProjectTags } from './storyTags';
 export { prepareStories, type ReactNativeOptions } from './prepareStories';
 
 type StoryEntry = NormalizedStoriesSpecifier & {
@@ -128,6 +129,7 @@ export function start({
     storyEntries,
     options,
     storySorts,
+    projectTags: getProjectTags(annotations),
   });
 
   // const channel = createBrowserChannel({ page: 'preview' });
@@ -213,6 +215,7 @@ export function updateView(
     storyEntries: normalizedStories,
     options,
     storySorts,
+    projectTags: getProjectTags(annotations),
   });
 
   // Like Storybook's web builders on HMR, stop any running play function so the story can re-render
