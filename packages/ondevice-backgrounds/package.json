@@ -36,7 +36,7 @@
     "@storybook/react-native-theming": "^11.0.0-next.1"
   },
   "devDependencies": {
-    "storybook": "^11.0.0-beta.2",
+    "storybook": "^11.0.0-beta.3",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
