@@ -3,7 +3,9 @@
  * Backgrounds panel stays enabled unless `features.ondeviceBackgrounds` is `false`.
  */
 
+// Provided by React Native at runtime; this package has no react-native or DOM types.
 declare const __DEV__: boolean | undefined;
+declare const console: { warn(...data: unknown[]): void };
 
 const WARNED_KEY = '__STORYBOOK_ADDON_ONDEVICE_BACKGROUNDS_DEPRECATION_WARNED__';
 
