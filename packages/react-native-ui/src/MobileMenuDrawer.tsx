@@ -26,11 +26,18 @@ export interface MobileMenuDrawerRef {
   setMobileMenuOpen: (isOpen: boolean) => void;
 }
 
+// Read outside the worklet below: a worklet captures what it references and copies it to the UI
+// runtime, and `Platform` (the whole `react-native` module in the CommonJS build) can't be copied.
+// @see https://github.com/storybookjs/react-native/issues/935
+const isAndroid = Platform.OS === 'android';
+
 export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheetBackdropProps) => {
+  const { animatedIndex } = backdropComponentProps;
+
   const androidTouchEventFix = useAnimatedStyle(() => {
-    if (Platform.OS === 'android') {
+    if (isAndroid) {
       return {
-        zIndex: backdropComponentProps.animatedIndex.value >= 0 ? 0 : -1,
+        zIndex: animatedIndex.value >= 0 ? 0 : -1,
       };
     }
     return {};
@@ -47,7 +54,7 @@ export const BottomSheetBackdropComponent = (backdropComponentProps: BottomSheet
         androidTouchEventFix as unknown as ViewStyle,
         {
           backgroundColor: 'rgba(0,0,0,0.5)',
-          paddingTop: Platform.OS === 'android' ? 1 : undefined,
+          paddingTop: isAndroid ? 1 : undefined,
         },
       ]}
     />
