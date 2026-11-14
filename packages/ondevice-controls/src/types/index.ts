@@ -7,6 +7,7 @@ import SelectType from './Select';
 import DateType from './Date';
 import ArrayType from './Array';
 import RadioType from './Radio';
+import CheckType from './Check';
 import { ControlTypes } from '../sharedTypes';
 
 export default {
@@ -21,5 +22,7 @@ export default {
   radio: RadioType,
   'inline-radio': RadioType,
   'multi-select': SelectType,
+  check: CheckType,
+  'inline-check': CheckType,
   range: NumberType,
 } satisfies Record<ControlTypes, React.ComponentType<any>>;
