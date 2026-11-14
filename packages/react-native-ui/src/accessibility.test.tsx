@@ -60,12 +60,15 @@ const story = {
   parameters: {},
 } as StoryContext<ReactRenderer, Args>;
 
-const renderUI = async () => {
+const renderUI = async ({ withStory = true } = {}) => {
   await render(
     <ThemeProvider theme={theme}>
       <StorageProvider storage={storage}>
         <LayoutProvider>
-          <Layout storyHash={mockDataset.withRoot as API_IndexHash} story={story}>
+          <Layout
+            storyHash={mockDataset.withRoot as API_IndexHash}
+            story={withStory ? story : undefined}
+          >
             <Text>Story content</Text>
           </Layout>
         </LayoutProvider>
@@ -89,6 +92,22 @@ describe('on-device UI accessibility', () => {
 
       expect(screen.getByRole('button', { name: 'Open story list' })).toBeOnTheScreen();
       expect(screen.getByRole('button', { name: 'Open addons panel' })).toBeOnTheScreen();
+    });
+
+    it('exposes the open story as the story list button value', async () => {
+      await renderUI();
+
+      expect(
+        screen.getByRole('button', { name: 'Open story list', value: { text: 'Group 1/Child B1' } })
+      ).toBeOnTheScreen();
+    });
+
+    it('sets no story list button value when no story is open', async () => {
+      await renderUI({ withStory: false });
+
+      const button = screen.getByRole('button', { name: 'Open story list' });
+
+      expect(button.props.accessibilityValue?.text).toBeUndefined();
     });
 
     it('labels the fullscreen button with what pressing it does', async () => {

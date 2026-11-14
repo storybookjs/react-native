@@ -236,6 +236,9 @@ export const Layout = ({
     channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
   }, []);
 
+  // The story list button's label replaces its text on iOS, so expose the open story as its value.
+  const storyPath = story ? `${story.title}/${story.name}` : undefined;
+
   return (
     <View style={containerStyle}>
       {isDesktop ? (
@@ -324,6 +327,7 @@ export const Layout = ({
               onPress={openMobileMenu}
               accessibilityRole="button"
               accessibilityLabel="Open story list"
+              accessibilityValue={storyPath ? { text: storyPath } : undefined}
             >
               <MenuIcon color={theme.color.mediumdark} />
               <Text style={navButtonTextStyle} numberOfLines={1}>
