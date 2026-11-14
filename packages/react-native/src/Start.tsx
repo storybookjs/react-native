@@ -24,6 +24,7 @@ import { View } from './View';
 import { remountStoryRoot, waitForStoryRoot } from './components/StoryView/storyRoot';
 import type { RNElement } from './test/elements';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
+import { getProjectTags } from './storyTags';
 export { prepareStories, type ReactNativeOptions } from './prepareStories';
 
 type StoryEntry = NormalizedStoriesSpecifier & {
@@ -122,26 +123,6 @@ type TeardownRenderArgs = Parameters<PreviewWithSelection<ReactRenderer>['teardo
 class ReactNativePreview extends PreviewWithSelection<ReactRenderer> {
   private renderSelectionQueue: Promise<unknown> = Promise.resolve();
 
-  // Since Storybook 11.0.0-alpha.9, PreviewWithSelection listens for React Aria landmark navigation with
-  // `window.addEventListener`, which React Native's global doesn't have. Stub it only while the listeners are set
-  // up, so feature detection elsewhere still sees that there is no DOM window.
-  // TODO: remove this override once a Storybook release includes storybookjs/storybook#37183 (merged into `next` as
-  // e11b1afb), which makes that call `addEventListener?.(...)`, and raise the `storybook` peer floor to that release.
-  setupListeners() {
-    const target = globalThis as { addEventListener?: unknown };
-    if (typeof target.addEventListener === 'function') {
-      super.setupListeners();
-      return;
-    }
-
-    target.addEventListener = () => {};
-    try {
-      super.setupListeners();
-    } finally {
-      delete target.addEventListener;
-    }
-  }
-
   protected renderSelection(options?: { persistedArgs?: Args }): Promise<void> {
     const run = this.renderSelectionQueue.then(() => super.renderSelection(options));
     this.renderSelectionQueue = run.catch(() => {});
@@ -232,6 +213,7 @@ export function start({
     storyEntries,
     options,
     storySorts,
+    projectTags: getProjectTags(annotations),
   });
 
   // const channel = createBrowserChannel({ page: 'preview' });
@@ -323,6 +305,7 @@ export function updateView(
     storyEntries: normalizedStories,
     options,
     storySorts,
+    projectTags: getProjectTags(annotations),
   });
 
   // Like Storybook's web builders on HMR, stop any running play function so the story can re-render

@@ -76,7 +76,6 @@ const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
   right: 8,
   zIndex: 1,
   color: theme.textMutedColor,
-  cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -244,16 +243,24 @@ export const Search = React.memo<{
         {isBottomSheet && (Platform.OS === 'ios' || Platform.OS === 'android') ? (
           <BottomSheetInput
             ref={inputRef as any} // TODO find solution for this
+            accessibilityLabel="Find components"
             onChangeText={setInputValue}
             onFocus={() => setIsOpen(true)}
             onBlur={() => setIsOpen(false)}
           />
         ) : (
-          <Input ref={inputRef} onChangeText={setInputValue} onFocus={() => setIsOpen(true)} />
+          <Input
+            ref={inputRef}
+            accessibilityLabel="Find components"
+            onChangeText={setInputValue}
+            onFocus={() => setIsOpen(true)}
+          />
         )}
 
         {isOpen && (
           <ClearIcon
+            accessibilityRole="button"
+            accessibilityLabel="Clear search"
             onPress={() => {
               setInputValue('');
               inputRef.current.clear();
