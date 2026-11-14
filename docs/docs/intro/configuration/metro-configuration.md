@@ -141,10 +141,33 @@ module.exports = withStorybook(config, {
 });
 ```
 
+## Storybook release builds on React Native CLI
+
+Entry-point swapping happens in Metro's resolver, which the dev server uses to find the entry file. `react-native bundle` does not: it takes the entry file as given. Xcode and Gradle run `react-native bundle` for release builds, so in a React Native CLI project `STORYBOOK_ENABLED=true` alone produces a release build of your app, not of Storybook.
+
+For those builds, also point the entry file at Storybook with `ENTRY_FILE`, relative to your project root:
+
+```sh
+# Android
+cd android && STORYBOOK_ENABLED=true ENTRY_FILE=.rnstorybook/index.tsx ./gradlew assembleRelease
+
+# iOS
+STORYBOOK_ENABLED=true ENTRY_FILE=.rnstorybook/index.tsx npx react-native run-ios --mode Release
+
+# Bundling directly
+STORYBOOK_ENABLED=true npx react-native bundle --entry-file .rnstorybook/index.tsx --platform ios --dev false --bundle-output main.jsbundle
+```
+
+Keep `STORYBOOK_ENABLED=true` as well: it generates `storybook.requires` and applies the resolver settings Storybook needs. When building from the Xcode app rather than the command line, export both variables from `ios/.xcode.env.local`.
+
+This only applies to React Native CLI release builds. The dev server (`react-native start`, debug builds) and Expo (`expo start`, `expo export`, EAS builds) swap the entry point on their own.
+
 ## Troubleshooting
 
 **Stories not found** — Verify `configPath` points to the correct directory, check story patterns in `main.ts`, and clear the Metro cache: `npx react-native start --reset-cache` or `npx expo start --clear`.
 
 **WebSocket connection failed** — Check if the port is already in use, verify the host matches your setup, and use your machine's IP instead of `localhost` for physical devices. With the bundler-agnostic wrapper, WebSocket settings are auto-injected; with the Metro-specific wrapper, ensure host/port match between `withStorybook` options and your `getStorybookUI` call.
+
+**Release build shows the app instead of Storybook** — In React Native CLI projects, release builds need `ENTRY_FILE` as well as `STORYBOOK_ENABLED=true`. See [Storybook release builds on React Native CLI](#storybook-release-builds-on-react-native-cli).
 
 **Production bundle includes Storybook** — With the bundler-agnostic wrapper, ensure you're not setting `STORYBOOK_ENABLED=true` in production builds. With the Metro-specific wrapper, set `enabled: false`.
