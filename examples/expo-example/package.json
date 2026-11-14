@@ -75,6 +75,7 @@
     "@babel/core": "^7.29.7",
     "@dannyhw/rozenite-storybook": "0.0.2",
     "@rozenite/metro": "^1.13.0",
+    "@storybook/react-native-theming": "^11.0.0-next.1",
     "@testing-library/react-native": "14.0.0-beta.0",
     "@types/jest": "^30.0.0",
     "@types/react": "~19.3.0",

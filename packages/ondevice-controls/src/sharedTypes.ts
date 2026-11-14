@@ -10,4 +10,6 @@ export type ControlTypes =
   | 'radio'
   | 'inline-radio'
   | 'multi-select'
+  | 'check'
+  | 'inline-check'
   | 'range';

@@ -25,7 +25,7 @@ const main: StorybookConfig = {
 
 ## Supported Control Types
 
-The React Native controls addon supports **13 different control types** optimized for mobile interfaces:
+The React Native controls addon supports **14 different control types** optimized for mobile interfaces:
 
 ### Text Input Controls
 
@@ -184,6 +184,47 @@ export default {
     features: {
       options: ['feature1', 'feature2', 'feature3'],
       control: { type: 'multi-select' },
+    },
+  },
+};
+```
+
+#### `check`
+
+Checkbox list for choosing any number of options. The value is an array of the checked options, in the same order as `options`.
+
+```ts
+export default {
+  component: MyComponent,
+  argTypes: {
+    toppings: {
+      options: ['cheese', 'mushrooms', 'olives'],
+      control: { type: 'check' },
+    },
+
+    // With custom labels
+    extras: {
+      options: ['bacon', 'egg'],
+      control: {
+        type: 'check',
+        labels: { bacon: 'Bacon 🥓', egg: 'Egg 🍳' },
+      },
+    },
+  },
+};
+```
+
+#### `inline-check`
+
+Inline checkbox layout for horizontal display.
+
+```ts
+export default {
+  component: MyComponent,
+  argTypes: {
+    days: {
+      options: ['mon', 'tue', 'wed', 'thu', 'fri'],
+      control: { type: 'inline-check' },
     },
   },
 };
