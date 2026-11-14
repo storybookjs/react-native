@@ -191,7 +191,7 @@ export default {
 
 #### `check`
 
-Checkbox list for choosing any number of options. The value is an array of the checked options, in the same order as `options`.
+Checkbox list for choosing any number of options. The value is an array of the checked options: checking an option adds it to the end and unchecking removes it, as on web. Set `table: { readonly: true }` on the argType to show the checkboxes without letting them be changed.
 
 ```ts
 export default {

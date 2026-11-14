@@ -1,15 +1,11 @@
 import { styled } from '@storybook/react-native-theming';
 
-export interface CheckboxOption {
-  key: any;
-  label: string;
-}
-
 interface CheckboxSelectProps {
-  data: Array<CheckboxOption>;
-  value: Array<any>;
-  onChange: (option: CheckboxOption) => void;
+  labels: Array<string>;
+  value: Array<string>;
+  onChange: (label: string) => void;
   isInline: boolean;
+  readOnly: boolean;
 }
 
 const checkboxHitSlop = { top: 8, right: 12, bottom: 8, left: 12 };
@@ -21,13 +17,16 @@ const CheckboxContainer = styled.View<{ isInline: boolean }>(({ isInline }) => (
   gap: isInline ? 8 : 2,
 }));
 
-const CheckboxTouchable = styled.TouchableOpacity<{ isInline: boolean }>(({ isInline }) => ({
-  alignItems: 'center',
-  flexDirection: 'row',
-  minHeight: isInline ? 36 : 32,
-  paddingVertical: isInline ? 4 : 2,
-  paddingRight: 6,
-}));
+const CheckboxTouchable = styled.TouchableOpacity<{ isInline: boolean; readOnly: boolean }>(
+  ({ isInline, readOnly }) => ({
+    opacity: readOnly ? 0.5 : 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+    minHeight: isInline ? 36 : 32,
+    paddingVertical: isInline ? 4 : 2,
+    paddingRight: 6,
+  })
+);
 
 const CheckboxBox = styled.View<{ checked: boolean }>(({ theme, checked }) => ({
   width: 20,
@@ -56,26 +55,28 @@ const CheckboxLabel = styled.Text(({ theme }) => ({
   color: theme.color.defaultText,
 }));
 
-const CheckboxSelect = ({ data = [], value = [], onChange, isInline }: CheckboxSelectProps) => {
+const CheckboxSelect = ({ labels, value, onChange, isInline, readOnly }: CheckboxSelectProps) => {
   return (
     <CheckboxContainer isInline={isInline}>
-      {data.map((item) => {
-        const checked = value.includes(item.key);
+      {labels.map((label) => {
+        const checked = value.includes(label);
 
         return (
           <CheckboxTouchable
-            key={item.label}
+            key={label}
             isInline={isInline}
+            readOnly={readOnly}
+            disabled={readOnly}
             activeOpacity={0.7}
             accessibilityRole="checkbox"
-            accessibilityState={{ checked }}
+            accessibilityState={{ checked, disabled: readOnly }}
             hitSlop={checkboxHitSlop}
             onPress={() => {
-              onChange(item);
+              onChange(label);
             }}
           >
             <CheckboxBox checked={checked}>{checked ? <CheckboxTick /> : null}</CheckboxBox>
-            <CheckboxLabel>{item.label}</CheckboxLabel>
+            <CheckboxLabel>{label}</CheckboxLabel>
           </CheckboxTouchable>
         );
       })}

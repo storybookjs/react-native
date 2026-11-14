@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { composeStories } from '@storybook/react';
+import { logger } from 'storybook/internal/client-logger';
 import { ThemeProvider, theme } from '@storybook/react-native-theming';
 import { getControlArgTypes } from '@storybook/addon-ondevice-controls/dist/controlArgTypes';
 import PropField from '@storybook/addon-ondevice-controls/dist/PropField';
@@ -8,7 +9,7 @@ import * as CheckStories from './Check.stories';
 const { Basic, Inline, WithLabels } = composeStories(CheckStories);
 
 const renderControl = (
-  story: typeof Basic,
+  story: Pick<typeof Basic, 'argTypes' | 'args'>,
   args: Record<string, unknown> = story.args,
   onChange = jest.fn()
 ) => {
@@ -45,13 +46,13 @@ test('check control shows a checkbox per option with the selected values checked
   expect(screen.getByRole('checkbox', { name: 'Peppers' })).not.toBeChecked();
 });
 
-test('checking an option adds its value in the order of the options', async () => {
+test('checking an option adds its value to the end', async () => {
   const onChange = jest.fn();
   await renderControl(Basic, Basic.args, onChange);
 
   await fireEvent.press(screen.getByRole('checkbox', { name: 'Mushrooms' }));
 
-  expect(onChange).toHaveBeenCalledWith(['Cheese', 'Mushrooms', 'Olives']);
+  expect(onChange).toHaveBeenCalledWith(['Cheese', 'Olives', 'Mushrooms']);
 });
 
 test('unchecking an option removes its value', async () => {
@@ -73,7 +74,7 @@ test('checking several options in a row keeps every change', async () => {
   await fireEvent.press(screen.getByRole('checkbox', { name: 'Peppers' }));
   await fireEvent.press(screen.getByRole('checkbox', { name: 'Cheese' }));
 
-  expect(onChange).toHaveBeenLastCalledWith(['Mushrooms', 'Olives', 'Peppers']);
+  expect(onChange).toHaveBeenLastCalledWith(['Olives', 'Mushrooms', 'Peppers']);
   expect(screen.getByRole('checkbox', { name: 'Cheese' })).not.toBeChecked();
   expect(screen.getByRole('checkbox', { name: 'Peppers' })).toBeChecked();
 });
@@ -120,7 +121,13 @@ test('check control treats a single value as one selection', async () => {
 
   await fireEvent.press(screen.getByRole('checkbox', { name: 'Cheese' }));
 
-  expect(onChange).toHaveBeenCalledWith(['Cheese', 'Olives']);
+  expect(onChange).toHaveBeenCalledWith(['Olives', 'Cheese']);
+});
+
+test('check control does not check options that only partly match a single value', async () => {
+  await renderControl(Basic, { toppings: 'Olive' });
+
+  expect(screen.getByRole('checkbox', { name: 'Olives' })).not.toBeChecked();
 });
 
 test('check control drops values that are not options', async () => {
@@ -129,7 +136,7 @@ test('check control drops values that are not options', async () => {
 
   await fireEvent.press(screen.getByRole('checkbox', { name: 'Cheese' }));
 
-  expect(onChange).toHaveBeenCalledWith(['Cheese', 'Olives']);
+  expect(onChange).toHaveBeenCalledWith(['Olives', 'Cheese']);
 });
 
 test('check control shows labels but changes the option values', async () => {
@@ -146,4 +153,110 @@ test('inline-check uses the check control', async () => {
 
   expect(screen.getAllByRole('checkbox')).toHaveLength(4);
   expect(screen.getByRole('checkbox', { name: 'Mushrooms' })).toBeChecked();
+});
+
+test('check control starts with the selected values in the order of the options', async () => {
+  const onChange = jest.fn();
+  await renderControl(Basic, { toppings: ['Olives', 'Cheese'] }, onChange);
+
+  await fireEvent.press(screen.getByRole('checkbox', { name: 'Peppers' }));
+
+  expect(onChange).toHaveBeenCalledWith(['Cheese', 'Olives', 'Peppers']);
+});
+
+test('options with the same label show one checkbox for the last of them', async () => {
+  const onChange = jest.fn();
+  await renderControl(
+    {
+      argTypes: {
+        toppings: {
+          options: ['cheese', 'extra-cheese', 'olives'],
+          control: { type: 'check', labels: { cheese: 'Cheese', 'extra-cheese': 'Cheese' } },
+        },
+      },
+      args: { toppings: [] },
+    },
+    undefined,
+    onChange
+  );
+
+  expect(screen.getAllByRole('checkbox')).toHaveLength(2);
+
+  await fireEvent.press(screen.getByRole('checkbox', { name: 'Cheese' }));
+
+  expect(onChange).toHaveBeenCalledWith(['extra-cheese']);
+});
+
+test('options that share a value are checked and unchecked by label', async () => {
+  const onChange = jest.fn();
+  await renderControl(
+    {
+      argTypes: {
+        toppings: {
+          options: { Cheese: 'cheese', 'More cheese': 'cheese', Olives: 'olives' },
+          control: { type: 'check' },
+        },
+      },
+      args: { toppings: ['cheese'] },
+    },
+    undefined,
+    onChange
+  );
+
+  expect(screen.getByRole('checkbox', { name: 'Cheese' })).toBeChecked();
+  expect(screen.getByRole('checkbox', { name: 'More cheese' })).toBeChecked();
+
+  await fireEvent.press(screen.getByRole('checkbox', { name: 'Cheese' }));
+
+  expect(onChange).toHaveBeenLastCalledWith(['cheese']);
+  expect(screen.getByRole('checkbox', { name: 'Cheese' })).not.toBeChecked();
+  expect(screen.getByRole('checkbox', { name: 'More cheese' })).toBeChecked();
+
+  await fireEvent.press(screen.getByRole('checkbox', { name: 'Olives' }));
+
+  expect(onChange).toHaveBeenLastCalledWith(['cheese', 'olives']);
+});
+
+test('check control without options shows a dash and warns', async () => {
+  const warn = jest.spyOn(logger, 'warn').mockImplementation(() => {});
+  await renderControl({ argTypes: { toppings: { control: { type: 'check' } } }, args: {} });
+
+  expect(screen.queryAllByRole('checkbox')).toHaveLength(0);
+  screen.getByText('-');
+  expect(warn).toHaveBeenCalledWith('Checkbox with no options: toppings');
+
+  warn.mockRestore();
+});
+
+test('check control ignores options under control', async () => {
+  const warn = jest.spyOn(logger, 'warn').mockImplementation(() => {});
+  await renderControl({
+    argTypes: { toppings: { control: { type: 'check', options: ['Cheese'] } } },
+    args: {},
+  });
+
+  expect(screen.queryAllByRole('checkbox')).toHaveLength(0);
+
+  warn.mockRestore();
+});
+
+test('read-only check control disables every checkbox', async () => {
+  const onChange = jest.fn();
+  await renderControl(
+    {
+      argTypes: { toppings: { ...Basic.argTypes.toppings, table: { readonly: true } } },
+      args: Basic.args,
+    },
+    undefined,
+    onChange
+  );
+
+  for (const checkbox of screen.getAllByRole('checkbox')) {
+    expect(checkbox).toBeDisabled();
+  }
+
+  await fireEvent.press(screen.getByRole('checkbox', { name: 'Mushrooms' }));
+
+  expect(onChange).not.toHaveBeenCalled();
+  expect(screen.getByRole('checkbox', { name: 'Mushrooms' })).not.toBeChecked();
 });
