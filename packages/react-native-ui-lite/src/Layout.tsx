@@ -20,7 +20,14 @@ import {
   useRef,
   useState,
 } from 'react';
-import { Text, TouchableOpacity, useWindowDimensions, View, ViewStyle } from 'react-native';
+import {
+  Platform,
+  Text,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+  ViewStyle,
+} from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
 import type { Args, StoryContext } from 'storybook/internal/csf';
@@ -262,6 +269,10 @@ export const Layout = ({
     channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
   }, []);
 
+  // The story list button's label replaces its text on iOS, so expose the open story as its value
+  // there. Android still reads the text, and would append a value to the label.
+  const storyPath = Platform.OS === 'ios' && story ? `${story.title}/${story.name}` : undefined;
+
   return (
     <View
       style={containerStyle}
@@ -383,6 +394,7 @@ export const Layout = ({
               onPress={() => mobileMenuDrawerRef.current?.setMobileMenuOpen(true)}
               accessibilityRole="button"
               accessibilityLabel="Open story list"
+              accessibilityValue={storyPath ? { text: storyPath } : undefined}
             >
               <MenuIcon color={theme.color.mediumdark} />
               <Text style={navButtonTextStyle} numberOfLines={1}>

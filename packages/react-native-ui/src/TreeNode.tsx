@@ -44,7 +44,6 @@ const BranchNode = styled.TouchableOpacity<BranchNodeProps>(
   ({ depth = 0, isExpandable = false, theme }) => ({
     width: '100%',
     border: 'none',
-    cursor: 'pointer',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
@@ -68,7 +67,6 @@ const BranchNode = styled.TouchableOpacity<BranchNodeProps>(
 
 const LeafNode = styled.TouchableOpacity<LeafNodeProps>(({ depth = 0, selected, theme }) => ({
   alignSelf: 'flex-start',
-  cursor: 'pointer',
   color: 'inherit',
   display: 'flex',
   gap: 6,
@@ -113,7 +111,7 @@ export const GroupNode: FC<BranchNodeProps> = React.memo(function GroupNode({
   }, [theme.base, theme.color.primary, theme.color.ultraviolet]);
 
   return (
-    <BranchNode isExpandable={isExpandable} {...props}>
+    <BranchNode isExpandable={isExpandable} accessibilityRole="button" {...props}>
       <Wrapper>
         {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
         <GroupIcon width={14} height={14} color={color} />
@@ -136,7 +134,7 @@ export const ComponentNode: FC<BranchNodeProps> = React.memo(function ComponentN
   }, [theme.color.secondary]);
 
   return (
-    <BranchNode isExpandable={isExpandable} {...props}>
+    <BranchNode isExpandable={isExpandable} accessibilityRole="button" {...props}>
       <Wrapper>
         {isExpandable && <CollapseIcon isExpanded={isExpanded} />}
         <ComponentIcon width={12} height={12} color={color} />
@@ -155,7 +153,12 @@ export const StoryNode = React.memo(
     }, [props.selected, theme.color.lightest, theme.color.seafoam]);
 
     return (
-      <LeafNode {...props} ref={ref}>
+      <LeafNode
+        {...props}
+        ref={ref}
+        accessibilityRole="button"
+        accessibilityState={{ selected: props.selected }}
+      >
         <Wrapper>
           <StoryIcon width={14} height={14} color={color} />
         </Wrapper>

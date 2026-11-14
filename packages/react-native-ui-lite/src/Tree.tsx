@@ -93,7 +93,7 @@ export const Node = React.memo<NodeProps>(function Node({
         </CollapseButton>
         {isExpanded && (
           <IconButton
-            aria-label={isFullyExpanded ? 'Expand' : 'Collapse'}
+            aria-label={isFullyExpanded ? 'Collapse all' : 'Expand all'}
             data-action="expand-all"
             data-expanded={isFullyExpanded}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
@@ -176,7 +176,6 @@ const CollapseButton = styled.TouchableOpacity(() => ({
   borderRadius: 4,
   gap: 6,
   alignItems: 'center',
-  cursor: 'pointer',
   minHeight: 34,
 }));
 

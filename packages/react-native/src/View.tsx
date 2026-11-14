@@ -33,6 +33,7 @@ import {
 } from './constants';
 import { resolveStoryBackgroundColor } from './backgrounds/utils';
 import { useSetStoryContext, useStoryContext } from './hooks';
+import { SIDEBAR_FILTERS, isShownInSidebar } from './storyTags';
 
 export interface Storage {
   getItem: (key: string) => Promise<string | null> | string | null;
@@ -118,6 +119,16 @@ export class View {
     return Object.keys(this._storyIndex.entries).includes(storyId);
   };
 
+  /**
+   * The story to select when there is no initial or persisted selection: the first story in the
+   * sidebar, so stories hidden with `!dev` aren't opened by default.
+   */
+  _getDefaultStorySpecifier = (): string => {
+    const firstSidebarStory = Object.values(this._storyIndex.entries).find(isShownInSidebar);
+
+    return firstSidebarStory?.id ?? '*';
+  };
+
   _selectInitialStory = async ({
     selectionSpecifier,
     storyIdFromUrl,
@@ -171,13 +182,16 @@ export class View {
 
         const persistedStoryId = value && this._storyIdExists(value) ? value : undefined;
 
-        return { storySpecifier: persistedStoryId ?? '*', viewMode: 'story' };
+        return {
+          storySpecifier: persistedStoryId ?? this._getDefaultStorySpecifier(),
+          viewMode: 'story',
+        };
       } catch (e) {
         console.warn('storybook-log: error reading from async storage', e);
       }
     }
 
-    return { storySpecifier: '*', viewMode: 'story' };
+    return { storySpecifier: this._getDefaultStorySpecifier(), viewMode: 'story' };
   };
 
   _getHost = (params: Partial<Params> = {}) => {
@@ -456,7 +470,7 @@ export class View {
 
         return transformStoryIndexToStoriesHash(self._storyIndex, {
           docsOptions: { docsMode: false, defaultName: '' },
-          filters: {},
+          filters: SIDEBAR_FILTERS,
           allStatuses: {},
           provider: {
             handleAPI: () => ({}),
