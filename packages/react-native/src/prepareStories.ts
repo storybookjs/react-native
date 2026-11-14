@@ -105,9 +105,14 @@ export function prepareStories({
             >((carry, [storyKey, story]) => {
               if (!isExportStory(storyKey, meta)) return carry;
 
-              if (typeof story.play === 'function' && !options?.playFn) {
+              if (
+                typeof story.play === 'function' &&
+                !options?.playFn &&
+                !globalThis.FEATURES?.ondeviceInteractions
+              ) {
                 // play functions are not yet fully supported on native.
-                // There is a new option in main.js to turn them on for future use.
+                // There is a new option in main.js to turn them on for future use,
+                // and the ondeviceInteractions feature turns them on too.
                 carry[storyKey] = { ...story, play: undefined };
               } else {
                 carry[storyKey] = story;

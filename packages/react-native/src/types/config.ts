@@ -4,6 +4,13 @@ import type { ReactNativeOptions } from '../Start';
 export type Features = {
   /** Enable the built-in on-device backgrounds addon panel. */
   ondeviceBackgrounds?: boolean;
+  /**
+   * Experimental. Enable the built-in on-device Interactions panel, which lists the steps and
+   * assertions from a story's play function and can rerun it. Play functions run and get the
+   * story's root element as `canvasElement`. Dispatching events on elements needs a React Native
+   * version with `EventTarget` support on elements, currently the Canary release channel.
+   */
+  ondeviceInteractions?: boolean;
 };
 
 type Addon = string | { name: string; options?: Record<string, any> };

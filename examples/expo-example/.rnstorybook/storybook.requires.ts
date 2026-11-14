@@ -75,6 +75,7 @@ module?.hot?.accept?.();
 globalThis.FEATURES = {
   ...globalThis.FEATURES,
   ondeviceBackgrounds: true,
+  ondeviceInteractions: true,
 };
 
 const options = {
