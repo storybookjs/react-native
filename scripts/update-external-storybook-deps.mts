@@ -14,7 +14,7 @@ interface DependencyLocation {
   location: string;
 }
 
-const IGNORED_PACKAGES = new Set(['@storybook/addon-react-native-server', '@storybook/mcp']);
+const IGNORED_PACKAGES = new Set(['@storybook/addon-react-native-server']);
 
 function getTargetVersionFromArgs(): string | undefined {
   const args = process.argv.slice(2);

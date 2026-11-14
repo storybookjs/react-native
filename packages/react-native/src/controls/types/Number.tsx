@@ -110,7 +110,7 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }: NumberProp
       <Input
         autoCapitalize="none"
         underlineColorAndroid="transparent"
-        value={numStr}
+        value={numStr ?? ''}
         keyboardType="numeric"
         onChangeText={handleNormalChangeText}
         hasError={showError}

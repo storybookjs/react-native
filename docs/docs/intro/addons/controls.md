@@ -16,7 +16,7 @@ The `@storybook/addon-ondevice-controls` package is deprecated. It's now an empt
 
 ## Supported Control Types
 
-The React Native Controls panel supports **13 different control types** optimized for mobile interfaces:
+The React Native Controls panel supports **14 different control types** optimized for mobile interfaces:
 
 ### Text Input Controls
 
@@ -175,6 +175,47 @@ export default {
     features: {
       options: ['feature1', 'feature2', 'feature3'],
       control: { type: 'multi-select' },
+    },
+  },
+};
+```
+
+#### `check`
+
+Checkbox list for choosing any number of options. The value is an array of the checked options: checking an option adds it to the end and unchecking removes it, as on web. Set `table: { readonly: true }` on the argType to show the checkboxes without letting them be changed.
+
+```ts
+export default {
+  component: MyComponent,
+  argTypes: {
+    toppings: {
+      options: ['cheese', 'mushrooms', 'olives'],
+      control: { type: 'check' },
+    },
+
+    // With custom labels
+    extras: {
+      options: ['bacon', 'egg'],
+      control: {
+        type: 'check',
+        labels: { bacon: 'Bacon 🥓', egg: 'Egg 🍳' },
+      },
+    },
+  },
+};
+```
+
+#### `inline-check`
+
+Inline checkbox layout for horizontal display.
+
+```ts
+export default {
+  component: MyComponent,
+  argTypes: {
+    days: {
+      options: ['mon', 'tue', 'wed', 'thu', 'fri'],
+      control: { type: 'inline-check' },
     },
   },
 };
