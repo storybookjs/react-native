@@ -2,7 +2,7 @@ import type { ReactRenderer } from '@storybook/react';
 import { theme, ThemeProvider } from '@storybook/react-native-theming';
 import { LayoutProvider, StorageProvider } from '@storybook/react-native-ui-common';
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
-import { Dimensions, Text } from 'react-native';
+import { Dimensions, Platform, Text } from 'react-native';
 import type { Args, StoryContext } from 'storybook/internal/csf';
 import type { API_IndexHash } from 'storybook/internal/types';
 import { Layout } from './Layout';
@@ -94,12 +94,26 @@ describe('on-device UI accessibility', () => {
       expect(screen.getByRole('button', { name: 'Open addons panel' })).toBeOnTheScreen();
     });
 
-    it('exposes the open story as the story list button value', async () => {
+    it('exposes the open story as the story list button value on iOS', async () => {
       await renderUI();
 
       expect(
         screen.getByRole('button', { name: 'Open story list', value: { text: 'Group 1/Child B1' } })
       ).toBeOnTheScreen();
+    });
+
+    it('sets no story list button value on Android, which appends it to the label', async () => {
+      jest.replaceProperty(Platform, 'OS', 'android');
+
+      try {
+        await renderUI();
+
+        const button = screen.getByRole('button', { name: 'Open story list' });
+
+        expect(button.props.accessibilityValue?.text).toBeUndefined();
+      } finally {
+        jest.restoreAllMocks();
+      }
     });
 
     it('sets no story list button value when no story is open', async () => {

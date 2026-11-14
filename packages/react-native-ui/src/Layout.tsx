@@ -12,7 +12,7 @@ import {
   type SBUI,
 } from '@storybook/react-native-ui-common';
 import { ReactNode, useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Platform, ScrollView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SET_CURRENT_STORY } from 'storybook/internal/core-events';
@@ -236,8 +236,9 @@ export const Layout = ({
     channel.emit(SET_CURRENT_STORY, { storyId: newStoryId });
   }, []);
 
-  // The story list button's label replaces its text on iOS, so expose the open story as its value.
-  const storyPath = story ? `${story.title}/${story.name}` : undefined;
+  // The story list button's label replaces its text on iOS, so expose the open story as its value
+  // there. Android still reads the text, and would append a value to the label.
+  const storyPath = Platform.OS === 'ios' && story ? `${story.title}/${story.name}` : undefined;
 
   return (
     <View style={containerStyle}>
