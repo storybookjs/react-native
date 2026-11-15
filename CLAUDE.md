@@ -53,7 +53,7 @@ pnpm serve      # Serve built documentation
 
 - `@storybook/addon-ondevice-actions` - Log component interactions
 - `@storybook/addon-ondevice-backgrounds` - Change story backgrounds
-- `@storybook/addon-ondevice-controls` - Dynamically edit component props
+- `@storybook/addon-ondevice-controls` - Deprecated no-op stub; Controls are built into `@storybook/react-native` (`src/controls`, on by default)
 - `@storybook/addon-ondevice-notes` - Add markdown documentation to stories
 
 ### Build System & Metro Configuration

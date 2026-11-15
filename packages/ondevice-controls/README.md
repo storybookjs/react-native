@@ -1,33 +1,34 @@
-# Storybook Controls Addon for React Native
+# @storybook/addon-ondevice-controls (deprecated)
 
-Storybook Controls Addon for React Native allows editing a component's arguments dynamically via a graphical UI without needing to code. The Controls Addon replaces the old Knobs Addon.
+**Controls are built into `@storybook/react-native` from v11 and are on by default. You don't need this package.**
 
-## Installation
+This package is now an empty compatibility stub. Its `register` registers nothing, so configs that still list it in `deviceAddons` keep working and get the built-in Controls panel, plus a one-time warning in development asking you to remove it. It no longer depends on `@react-native-community/datetimepicker`, `@react-native-community/slider` or `react-native-modal-datetime-picker`.
 
-Controls has some extra dependencies needed to display the form inputs.
+## Migrating
 
-```sh
-yarn add -D @storybook/addon-ondevice-controls @react-native-community/datetimepicker @react-native-community/slider
-```
+1. Remove it from `deviceAddons` in `.rnstorybook/main.ts`:
 
-## Configuration
+   ```diff
+    const main: StorybookConfig = {
+      deviceAddons: [
+   -    '@storybook/addon-ondevice-controls',
+        '@storybook/addon-ondevice-actions',
+      ],
+    };
+   ```
 
-Then, add following content to `.rnstorybook/main.ts`:
+2. Uninstall it:
 
-```ts
-import type { StorybookConfig } from '@storybook/react-native';
+   ```sh
+   npm uninstall @storybook/addon-ondevice-controls
+   ```
 
-const main: StorybookConfig = {
-  deviceAddons: ['@storybook/addon-ondevice-controls'],
-};
+3. Restart your bundler so `storybook.requires.ts` is regenerated (or run `npx sb-rn-get-stories`).
 
-export default main;
-```
+`@react-native-community/datetimepicker` and `@react-native-community/slider` are now optional. Keep them if you want the native date picker and slider; without them the Controls panel uses JavaScript fallbacks. If nothing else in your app uses `react-native-modal-datetime-picker`, you can uninstall that too.
 
-See the [examples of using the Controls Addon with Component Story Format](../../examples/expo-example/components/ControlExamples). You can also run the [react-native app](../../examples/expo-example) to see it in action.
+To turn the built-in Controls panel off, set `features: { ondeviceControls: false }` in `main.ts`.
 
-The [web Controls Addon documentation](https://storybook.js.org/docs/react/essentials/controls) may also be useful, but the examples there have not been tested with Storybook for React Native.
+If you imported `getControlArgTypes` from `@storybook/addon-ondevice-controls/dist/controlArgTypes`, import it from `@storybook/react-native/controls` instead. The old path still re-exports it for now.
 
-## Migrating from Knobs
-
-See [examples for migrating from Knobs to Controls](https://github.com/storybookjs/storybook/blob/next/code/addons/controls/README.md#how-do-i-migrate-from-addon-knobs) in the web Controls Addon README.
+See the [Controls guide](https://storybookjs.github.io/react-native/docs/intro/configuration/controls) and the [migration guide](https://github.com/storybookjs/react-native/blob/next/MIGRATION.md#controls-are-built-in).

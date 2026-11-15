@@ -29,25 +29,27 @@ export const useArgs = (
     return getControlArgs(story);
   }, [storyId, storyStore]);
 
-  const [args, setArgs] = useState(getStoryControlArgs);
+  // Keyed by story: when the story changes, its args are read during that render. Reading them in
+  // an effect left the first render with the previous story's args, so controls that keep local
+  // state (like the number input) started out empty.
+  const [state, setState] = useState(() => ({ storyId, args: getStoryControlArgs() }));
+  let args = state.args;
+  if (state.storyId !== storyId) {
+    args = getStoryControlArgs();
+    setState({ storyId, args });
+  }
+
   useEffect(() => {
-    // Sync the args up with the initial args of the story, since the story ID
-    // must have changed for this effect to run.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setArgs(getStoryControlArgs());
     const cb = (changed: { storyId: string; args: Args }) => {
       if (changed.storyId === storyId) {
         // The STORY_ARGS_UPDATED payload comes straight from the ArgsStore,
         // which holds unmapped args — no need to re-read the story here.
-        setArgs(changed.args);
+        setState({ storyId, args: changed.args });
       }
     };
     storyStore._channel.on(STORY_ARGS_UPDATED, cb);
     return () => storyStore._channel.off(STORY_ARGS_UPDATED, cb);
-    // Exclude `getStoryControlArgs` from the dependencies; it only varies with
-    // `storyId`.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [storyId]);
+  }, [storyId, storyStore]);
 
   const updateArgs = useCallback(
     (newArgs) => {

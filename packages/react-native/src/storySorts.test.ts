@@ -1,6 +1,9 @@
 import type { Addon_StorySortParameterV7 } from 'storybook/internal/types';
 import { start, updateView } from './Start';
 
+// The built-in Controls addon registers from start() by default; these tests don't need its UI.
+jest.mock('./controls/register', () => ({ registerControlsAddon: jest.fn() }));
+
 jest.mock('storybook/manager-api', () => ({
   addons: {
     loadAddons: jest.fn(),
