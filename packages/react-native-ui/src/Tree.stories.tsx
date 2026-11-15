@@ -69,11 +69,6 @@ export const Dark: Story = {
   parameters: { theme: 'dark' },
 };
 
-export const PreserveTreeDepth: Story = {
-  ...Full,
-  args: { ...Full.args, preserveTreeDepth: true },
-};
-
 export const SingleStoryComponents: Story = {
   args: {
     docsMode: false,

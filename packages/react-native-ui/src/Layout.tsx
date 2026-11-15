@@ -69,7 +69,6 @@ export const FullUI: SBUI = ({
   storyHash,
   story,
   storyBackgroundColor,
-  preserveTreeDepth,
   children,
 }) => {
   return (
@@ -83,7 +82,6 @@ export const FullUI: SBUI = ({
                   storyHash={storyHash}
                   story={story}
                   storyBackgroundColor={storyBackgroundColor}
-                  preserveTreeDepth={preserveTreeDepth}
                 >
                   {children}
                 </Layout>
@@ -101,13 +99,11 @@ export const Layout = ({
   storyHash,
   story,
   storyBackgroundColor,
-  preserveTreeDepth,
   children,
 }: {
   storyHash: API_IndexHash | undefined;
   story?: StoryContext<ReactRenderer, Args>;
   storyBackgroundColor?: string;
-  preserveTreeDepth?: boolean;
   children: ReactNode | ReactNode[];
 }) => {
   const theme = useTheme();
@@ -272,7 +268,6 @@ export const Layout = ({
                 index={storyHash}
                 storyId={story?.id}
                 refId={DEFAULT_REF_ID}
-                preserveTreeDepth={preserveTreeDepth}
               />
             </ScrollView>
           ) : (
@@ -369,7 +364,6 @@ export const Layout = ({
               index={storyHash}
               storyId={story?.id}
               refId={DEFAULT_REF_ID}
-              preserveTreeDepth={preserveTreeDepth}
             />
           </MobileMenuDrawer>
         </SelectedNodeProvider>

@@ -10,7 +10,6 @@ export interface ExplorerProps {
   dataset: CombinedDataset;
   selected: Selection;
   setSelection: (selection: Selection) => void;
-  preserveTreeDepth?: boolean;
 }
 
 export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
@@ -19,7 +18,6 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
   dataset,
   selected,
   setSelection,
-  preserveTreeDepth,
 }) {
   const containerRef = useRef<React.ComponentRef<typeof View>>(null);
 
@@ -33,7 +31,6 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
           isBrowsing={isBrowsing}
           selectedStoryId={selected?.refId === ref.id ? selected.storyId : null}
           setSelection={setSelection}
-          preserveTreeDepth={preserveTreeDepth}
         />
       ))}
     </View>
