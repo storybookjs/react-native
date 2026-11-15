@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 describe('enhanceRepackConfig', () => {
   test('swaps entry when swap data is provided', () => {
     const { enhanceRepackConfig } = require('./enhanceRepackConfig');
@@ -13,13 +15,25 @@ describe('enhanceRepackConfig', () => {
     expect(result.entry).toBe('/project/.rnstorybook/index.tsx');
   });
 
-  test('returns config unchanged when no swap data', () => {
+  test('keeps the entry when no swap data', () => {
     const { enhanceRepackConfig } = require('./enhanceRepackConfig');
     const rspackConfig = { entry: './src/index.js', plugins: [] };
 
     const result = enhanceRepackConfig(rspackConfig);
 
-    expect(result).toBe(rspackConfig);
+    expect(result.entry).toBe('./src/index.js');
+    expect(result.plugins).toEqual([]);
+  });
+
+  test('aliases #.storybook/preview to the config dir', () => {
+    const { enhanceRepackConfig } = require('./enhanceRepackConfig');
+    const rspackConfig = { entry: './src/index.js', plugins: [] };
+
+    const result = enhanceRepackConfig(rspackConfig, { configPath: '/project/.rnstorybook' });
+
+    expect(result.resolve.alias['#.storybook/preview']).toBe(
+      path.join('/project/.rnstorybook', 'preview')
+    );
   });
 
   test('preserves other config properties', () => {

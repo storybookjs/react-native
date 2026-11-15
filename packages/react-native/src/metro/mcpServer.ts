@@ -170,7 +170,7 @@ export function createMcpHandler(configPath: string, wss?: WebSocketServer) {
               description:
                 'Select and display a story on the connected device. ' +
                 'Use the story ID in the format "title--name" (e.g. "button--primary"). ' +
-                'Use the list-all-documentation tool to discover available components and stories.',
+                'Use the docs-list tool with withStoryIds: true to discover available story IDs.',
               schema: valibot.object({ storyId: valibot.string() }),
             },
             async ({ storyId }: { storyId: string }) => {

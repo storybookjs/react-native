@@ -3,6 +3,7 @@ import assert from 'node:assert';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import vm from 'node:vm';
 import { generate } from '@storybook/react-native/scripts/generate';
 
 const require = createRequire(import.meta.url);
@@ -18,6 +19,34 @@ const mockFs = {
     pathMock = filePath;
     fileContentMock = fileContent;
   },
+};
+
+/**
+ * Pull the globalThis.FEATURES statements out of a generated requires file so they can be run on
+ * their own, either before or after @storybook/react-native creates the object. Both the merged
+ * object form and the older per-flag form are matched so this keeps reporting on a generator that
+ * still writes the broken version instead of passing on nothing.
+ */
+const getFeaturesStatements = (content: string) =>
+  [
+    ...(content.match(/globalThis\.FEATURES\.[A-Za-z_$][\w$]* = [^;]+;/g) ?? []),
+    ...(content.match(/globalThis\.FEATURES = \{[\s\S]*?\n\};/g) ?? []),
+  ].join('\n');
+
+const runFeaturesStatements = (
+  statements: string,
+  initialFeatures?: Record<string, unknown>
+): Record<string, unknown> => {
+  const sandbox: { FEATURES?: Record<string, unknown> } = {};
+  const context = vm.createContext(sandbox);
+
+  if (initialFeatures !== undefined) {
+    vm.runInContext(`globalThis.FEATURES = ${JSON.stringify(initialFeatures)}`, context);
+  }
+
+  vm.runInContext(statements, context);
+  // copy out of the vm realm so the result has this realm's Object.prototype
+  return { ...sandbox.FEATURES };
 };
 
 describe('loader', () => {
@@ -259,8 +288,68 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/with-features' });
         mock.reset();
 
-        assert.ok(fileContentMock.includes('globalThis.FEATURES.ondeviceBackgrounds = true;'));
+        assert.ok(
+          fileContentMock.includes(
+            `globalThis.FEATURES = {
+  ...globalThis.FEATURES,
+  ondeviceBackgrounds: true,
+};`
+          )
+        );
         t.assert.snapshot(fileContentMock);
+      });
+
+      it('does not read globalThis.FEATURES before it exists', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-features' });
+        mock.reset();
+
+        // with inlineRequires the generated file runs before @storybook/react-native creates
+        // globalThis.FEATURES, so the statements must not read from a missing object
+        const features = runFeaturesStatements(getFeaturesStatements(fileContentMock));
+
+        assert.deepStrictEqual(features, { ondeviceBackgrounds: true });
+      });
+
+      it('keeps feature flags that were already set', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-features' });
+        mock.reset();
+
+        const features = runFeaturesStatements(getFeaturesStatements(fileContentMock), {
+          measure: false,
+          backgrounds: false,
+        });
+
+        assert.deepStrictEqual(features, {
+          measure: false,
+          backgrounds: false,
+          ondeviceBackgrounds: true,
+        });
+      });
+
+      it('quotes feature keys that are not valid identifiers', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-non-identifier-feature-key' });
+        mock.reset();
+
+        assert.ok(
+          fileContentMock.includes(
+            `globalThis.FEATURES = {
+  ...globalThis.FEATURES,
+  "foo-bar": true,
+  ondeviceBackgrounds: false,
+};`
+          )
+        );
+
+        const statements = getFeaturesStatements(fileContentMock);
+        assert.ok(statements, 'no FEATURES statements were generated');
+
+        assert.deepStrictEqual(runFeaturesStatements(statements), {
+          'foo-bar': true,
+          ondeviceBackgrounds: false,
+        });
       });
     });
 
@@ -270,8 +359,143 @@ describe('loader', () => {
         await generate({ configPath: 'scripts/mocks/all-config-files' });
         mock.reset();
 
-        assert.ok(!fileContentMock.includes('globalThis.FEATURES.'));
+        assert.ok(!fileContentMock.includes('globalThis.FEATURES'));
         t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('when storySorts are provided in main', () => {
+      it('writes storySorts and passes them to start and updateView', async (t) => {
+        const warn = mock.method(console, 'warn', mock.fn());
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-story-sorts' });
+        mock.reset();
+
+        assert.ok(fileContentMock.includes('const storySorts'));
+        assert.ok(fileContentMock.includes('"order": ["Introduction", "Components"]'));
+        assert.ok(fileContentMock.includes('localeCompare'));
+        assert.ok(fileContentMock.includes('    storySorts,'));
+        assert.ok(fileContentMock.includes(', options, storySorts);'));
+        assert.strictEqual(warn.mock.callCount(), 0);
+        t.assert.snapshot(fileContentMock);
+      });
+
+      it('writes storySorts without types in js', async (t) => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/with-story-sorts', useJs: true });
+        mock.reset();
+
+        assert.ok(fileContentMock.includes('const storySorts = ['));
+        t.assert.snapshot(fileContentMock);
+      });
+    });
+
+    describe('storySorts serialization', () => {
+      // Evaluates the `storySorts` the requires file declares, as the device would.
+      const evaluateStorySorts = (fileContent: string) => {
+        const match = fileContent.match(
+          /const storySorts = ([\s\S]*?);\n\nif \(!globalThis\.view\)/
+        );
+        assert.ok(match, 'storySorts declaration not found');
+        return new Function(`return ${match[1]};`)();
+      };
+
+      const story = (title: string, name: string) => ({
+        id: `${title}--${name}`.toLowerCase(),
+        title,
+        name,
+      });
+
+      it('round-trips objects, arrays and comparator functions', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/story-sorts-variants', useJs: true });
+        mock.reset();
+
+        const { default: main } = await import('./mocks/story-sorts-variants/main.js');
+        const storySorts = evaluateStorySorts(fileContentMock);
+
+        assert.strictEqual(storySorts.length, main.storySorts.length);
+        assert.deepStrictEqual(storySorts[0], main.storySorts[0]);
+        assert.deepStrictEqual(storySorts[1], main.storySorts[1]);
+
+        const pairs = [
+          [story('Components/Button', 'Primary'), story('Intro', 'Welcome')],
+          [story('Intro', 'Welcome'), story('Components/Button', 'Primary')],
+          [story('Hooks', 'Basic'), story('Hooks', 'Advanced')],
+        ];
+        for (const index of [2, 3, 4]) {
+          assert.strictEqual(typeof storySorts[index], 'function');
+          for (const [a, b] of pairs) {
+            assert.strictEqual(storySorts[index](a, b), main.storySorts[index](a, b));
+          }
+        }
+      });
+
+      it('types comparator parameters in the ts requires file', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/story-sorts-variants' });
+        mock.reset();
+
+        const declaration = fileContentMock.match(/const storySorts: [\s\S]*?;\n\nif/)?.[0];
+        assert.ok(declaration, 'typed storySorts declaration not found');
+
+        const ts = require('typescript');
+        const fileName = path.resolve(__dirname, 'mocks/story-sorts-variants/storySorts.check.ts');
+        const source = `import { start } from '@storybook/react-native';\n${declaration.replace(/\n\nif$/, '')}\nexport { storySorts };\n`;
+        const host = ts.createCompilerHost({});
+        const readFile = host.readFile;
+        host.readFile = (file: string) => (file === fileName ? source : readFile(file));
+        host.fileExists = (
+          (fileExists) => (file: string) =>
+            file === fileName || fileExists(file)
+        )(host.fileExists);
+        const program = ts.createProgram(
+          [fileName],
+          {
+            strict: true,
+            noEmit: true,
+            skipLibCheck: true,
+            jsx: ts.JsxEmit.ReactNative,
+            module: ts.ModuleKind.ESNext,
+            moduleResolution: ts.ModuleResolutionKind.Bundler,
+            target: ts.ScriptTarget.ESNext,
+          },
+          host
+        );
+        const diagnostics = ts
+          .getPreEmitDiagnostics(program)
+          .filter(
+            (diagnostic: { file?: { fileName: string } }) => diagnostic.file?.fileName === fileName
+          )
+          .map((diagnostic: { messageText: unknown }) =>
+            ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n')
+          );
+
+        assert.deepStrictEqual(diagnostics, []);
+      });
+
+      it('resolves a preset function in main', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/story-sorts-preset', useJs: true });
+        mock.reset();
+
+        assert.deepStrictEqual(evaluateStorySorts(fileContentMock), [
+          { order: ['Intro'] },
+          { method: 'alphabetical' },
+        ]);
+      });
+
+      it('does not declare storySorts when main has none', async () => {
+        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
+        await generate({ configPath: 'scripts/mocks/all-config-files' });
+        mock.reset();
+
+        assert.ok(!fileContentMock.includes('storySorts'));
+        assert.ok(
+          fileContentMock.includes(
+            'updateView(globalThis.view, annotations, normalizedStories, options);'
+          )
+        );
       });
     });
 
@@ -289,55 +513,22 @@ describe('loader', () => {
       });
     });
 
-    describe('when addons are split between addons and deviceAddons', () => {
-      it('writes imports from both addons and deviceAddons', async (t) => {
-        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-        await generate({ configPath: 'scripts/mocks/mixed-addons' });
-        mock.reset();
-
-        assert.strictEqual(
-          pathMock,
-          path.resolve(__dirname, 'mocks/mixed-addons/storybook.requires.ts')
-        );
-        t.assert.snapshot(fileContentMock);
-      });
-
-      it('logs a deprecation warning when addons is non-empty', async () => {
-        const warn = mock.method(console, 'warn', mock.fn());
-        mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-        await generate({ configPath: 'scripts/mocks/mixed-addons' });
-        mock.reset();
-
-        assert.strictEqual(warn.mock.callCount(), 1);
-        const msg = String(warn.mock.calls[0].arguments[0]);
-        assert.ok(msg.includes('deprecated'));
-        assert.ok(msg.includes('deviceAddons'));
-        assert.ok(msg.includes('deprecating-addons-in-rnstorybook-main'));
-      });
-    });
-
-    describe('legacy on-device addons under main.addons', () => {
-      it('logs a deprecation warning', async () => {
-        const warn = mock.method(console, 'warn', mock.fn());
+    describe('when main.addons is set', () => {
+      it('does not import entries from addons', async () => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
         await generate({ configPath: 'scripts/mocks/legacy-ondevice-in-addons' });
         mock.reset();
 
-        assert.strictEqual(warn.mock.callCount(), 1);
-        const msg = String(warn.mock.calls[0].arguments[0]);
-        assert.ok(msg.includes('deprecated'));
-        assert.ok(msg.includes('deviceAddons'));
-        assert.ok(msg.includes('@storybook/addon-ondevice-controls'));
-        assert.ok(msg.includes('deprecating-addons-in-rnstorybook-main'));
+        assert.ok(!fileContentMock.includes('@storybook/addon-ondevice-controls'));
       });
 
-      it('does not warn when on-device addons are only in deviceAddons', async () => {
-        const warn = mock.method(console, 'warn', mock.fn());
+      it('imports deviceAddons and ignores addons when both are set', async () => {
         mock.method(require('fs'), 'writeFileSync', mockFs.writeFileSync);
-        await generate({ configPath: 'scripts/mocks/device-addons' });
+        await generate({ configPath: 'scripts/mocks/mixed-addons' });
         mock.reset();
 
-        assert.strictEqual(warn.mock.callCount(), 0);
+        assert.ok(fileContentMock.includes('@storybook/addon-ondevice-controls/register'));
+        assert.ok(!fileContentMock.includes('@storybook/addon-ondevice-notes'));
       });
     });
   });

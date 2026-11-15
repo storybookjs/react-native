@@ -11,10 +11,10 @@ const meta = {
 This is a button component.
 You use it like this:
 
-\`\`\`tsx    
-<Button 
-      text="Press me!" 
-      onPress={() => console.log('pressed')} 
+\`\`\`tsx
+<Button
+      text="Press me!"
+      onPress={() => console.log('pressed')}
 />
 \`\`\`
 `,

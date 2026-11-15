@@ -1,4 +1,5 @@
 import type { MetroConfig } from 'metro-config';
+import * as path from 'path';
 import { createChannelServer } from './channelServer';
 import { generate } from '../../scripts/generate';
 import { optionalEnvToBoolean } from 'storybook/internal/common';
@@ -197,5 +198,63 @@ describe('withStorybook node built-in resolution', () => {
     expect(result.resolver.resolveRequest(ctx, mod, 'ios')).toEqual({ type: 'empty' });
     expect(result.resolver.resolveRequest(ctx, mod, 'android')).toEqual({ type: 'empty' });
     expect(result.resolver.resolveRequest(ctx, mod, 'web')).not.toEqual({ type: 'empty' });
+  });
+});
+
+describe('withStorybook documented preview alias', () => {
+  const configPath = '/tmp/.rnstorybook';
+  const resolveRequest = jest.fn((_ctx: any, name: string) => ({
+    filePath: `${name}.tsx`,
+    type: 'sourceFile',
+  }));
+
+  const config = {
+    resolver: { resolveRequest },
+    transformer: {},
+  } as unknown as MetroConfig;
+
+  const { withStorybook } = require('./withStorybook');
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    process.env.STORYBOOK_DISABLE_TELEMETRY = 'true';
+  });
+
+  afterEach(() => {
+    delete process.env.STORYBOOK_DISABLE_TELEMETRY;
+  });
+
+  test('rewrites #.storybook/preview to {configPath}/preview when enabled', () => {
+    const result = withStorybook(config, { configPath, enabled: true });
+
+    const resolved = result.resolver.resolveRequest({}, '#.storybook/preview', 'ios');
+
+    expect(resolveRequest).toHaveBeenCalledWith(
+      expect.anything(),
+      path.join(configPath, 'preview'),
+      'ios'
+    );
+    expect(resolved).toEqual({
+      filePath: `${path.join(configPath, 'preview')}.tsx`,
+      type: 'sourceFile',
+    });
+  });
+
+  test('rewrites #.storybook/preview when storybook is disabled', () => {
+    const result = withStorybook(config, { configPath, enabled: false });
+    const ctx = { resolveRequest };
+
+    result.resolver.resolveRequest(ctx, '#.storybook/preview', 'ios');
+
+    expect(resolveRequest).toHaveBeenCalledWith(ctx, path.join(configPath, 'preview'), 'ios');
+  });
+
+  test('does not rewrite relative preview imports', () => {
+    const result = withStorybook(config, { configPath, enabled: true });
+    const relative = '../../.rnstorybook/preview';
+
+    result.resolver.resolveRequest({}, relative, 'ios');
+
+    expect(resolveRequest).toHaveBeenCalledWith(expect.anything(), relative, 'ios');
   });
 });

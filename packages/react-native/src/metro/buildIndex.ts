@@ -1,16 +1,17 @@
 import { normalizeStories, loadMainConfig } from 'storybook/internal/common';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { sync as globSync } from 'glob';
 import path from 'path';
-import { CsfFile, getStorySortParameter, loadCsf } from 'storybook/internal/csf-tools';
+import { CsfFile, loadCsf, readConfig } from 'storybook/internal/csf-tools';
 import { toId } from 'storybook/internal/csf';
 import {
   type StoryIndex,
   type IndexedCSFFile,
   type NormalizedStoriesSpecifier,
 } from 'storybook/internal/types';
-import { sortStoriesV7, userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
-import { getFilePathWithExtension } from '../../scripts/common';
+import { userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
+import { sortIndexEntries } from '../sortStories';
+import { combineStoryTags } from '../storyTags';
 
 const cwd = process.cwd();
 
@@ -31,11 +32,51 @@ function ensureRelativePathHasDot(relativePath: string) {
   return relativePath.startsWith('.') ? relativePath : `./${relativePath}`;
 }
 
+const previewExtensions = ['js', 'mjs', 'cjs', 'jsx', 'ts', 'mts', 'cts', 'tsx'];
+
+/**
+ * Reads the `tags` of the preview file, which apply to every story. Like Storybook for the web, they
+ * have to be a static array of strings to be read without running the preview.
+ */
+async function readPreviewTags(configPath: string): Promise<string[]> {
+  const previewPath = previewExtensions
+    .map((extension) => path.resolve(cwd, configPath, `preview.${extension}`))
+    .find((filePath) => existsSync(filePath));
+
+  if (!previewPath) {
+    return [];
+  }
+
+  try {
+    const preview = await readConfig(previewPath);
+
+    if (preview.inspect(['tags']).kind !== 'value') {
+      return [];
+    }
+
+    const tags = preview.getValue(['tags']);
+
+    if (Array.isArray(tags) && tags.every((tag) => typeof tag === 'string')) {
+      return tags;
+    }
+
+    console.warn(
+      `Unable to read tags from ${previewPath}, they should be a static array of strings like \`tags: ['beta']\``
+    );
+  } catch {
+    // previews that can't be parsed statically don't add tags to the index
+  }
+
+  return [];
+}
+
 export async function buildIndex({ configPath }: { configPath: string }): Promise<StoryIndex> {
   const main = await loadMainConfig({ configDir: configPath, cwd });
   if (!main.stories || !Array.isArray(main.stories)) {
     throw new Error('No stories found');
   }
+
+  const projectTags = await readPreviewTags(configPath);
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
@@ -106,7 +147,7 @@ export async function buildIndex({ configPath }: { configPath: string }): Promis
           name: story.name,
           title: meta.title,
           importPath: `${specifier.directory}/${path.posix.relative(specifier.directory, fileName)}`,
-          tags: ['story'],
+          tags: combineStoryTags({ projectTags, metaTags: meta.tags, storyTags: story.tags }),
         };
       }
     } else {
@@ -115,26 +156,12 @@ export async function buildIndex({ configPath }: { configPath: string }): Promis
   }
 
   try {
-    const previewPath = getFilePathWithExtension({ configPath }, 'preview');
-    const previewSourceCode = readFileSync(previewPath, { encoding: 'utf-8' }).toString();
-    const storySort = getStorySortParameter(previewSourceCode);
-    const sortableStories = Object.values(index.entries);
+    const storySorts =
+      typeof main.storySorts === 'function'
+        ? await main.storySorts([], {} as Parameters<typeof main.storySorts>[1])
+        : main.storySorts;
 
-    sortStoriesV7(
-      sortableStories,
-      storySort,
-      sortableStories.map((entry) => entry.importPath)
-    );
-
-    const sorted = sortableStories.reduce(
-      (acc, item) => {
-        acc[item.id] = item;
-        return acc;
-      },
-      {} as StoryIndex['entries']
-    );
-
-    return { v: 5, entries: sorted };
+    return { v: 5, entries: sortIndexEntries(index.entries, storySorts ?? []) };
   } catch {
     console.warn('Failed to sort stories, using unordered index');
     return index;

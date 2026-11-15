@@ -90,4 +90,32 @@ describe('enhanceMetroConfig', () => {
 
     fs.rmSync(tmpDir, { recursive: true, force: true });
   });
+
+  test('rewrites #.storybook/preview to {configPath}/preview', () => {
+    const { enhanceMetroConfig } = require('./enhanceMetroConfig');
+    const configPath = '/tmp/.rnstorybook';
+
+    const result = enhanceMetroConfig(config, { configPath });
+
+    const mockResolveRequest = jest.fn((_ctx: any, name: string) => ({
+      filePath: `${name}.tsx`,
+      type: 'sourceFile',
+    }));
+
+    const resolverResult = result.resolver.resolveRequest(
+      { resolveRequest: mockResolveRequest },
+      '#.storybook/preview',
+      'ios'
+    );
+
+    expect(mockResolveRequest).toHaveBeenCalledWith(
+      expect.anything(),
+      path.join(configPath, 'preview'),
+      'ios'
+    );
+    expect(resolverResult).toEqual({
+      filePath: `${path.join(configPath, 'preview')}.tsx`,
+      type: 'sourceFile',
+    });
+  });
 });

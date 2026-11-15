@@ -1,4 +1,4 @@
-import { type Args, includeConditionalArg } from 'storybook/internal/csf';
+import { type Args, type InputType, includeConditionalArg } from 'storybook/internal/csf';
 
 export interface ArgType {
   name?: string;
@@ -44,7 +44,7 @@ export function hasEnabledControl(argType: ArgType | undefined): boolean {
 
 function shouldIncludeArg(argType: ArgType, args: Args) {
   try {
-    return includeConditionalArg(argType, args, {});
+    return includeConditionalArg(argType as InputType, args, {});
   } catch {
     return true;
   }

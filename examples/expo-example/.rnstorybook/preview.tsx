@@ -1,9 +1,11 @@
 import { Appearance } from 'react-native';
-import type { Preview } from '@storybook/react-native';
 // import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+import { definePreview } from '@storybook/react-native';
 
-const preview: Preview = {
+export default definePreview({
+  addons: [],
   // decorators: [withBackgrounds],
+
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -12,26 +14,11 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-    options: {
-      storySort: {
-        method: 'alphabetical',
-        includeNames: true,
-        order: ['ControlExamples', ['ControlExample'], 'InteractionExample', 'DeepControls'],
-      },
-    },
     hideFullScreenButton: false,
     noSafeArea: false,
     my_param: 'anything',
     layout: 'padded', // fullscreen, centered, padded
     storybookUIVisibility: 'visible', // visible, hidden
-    // backgrounds: {
-    //   default: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain',
-    //   values: [
-    //     { name: 'plain', value: 'white' },
-    //     { name: 'dark', value: '#333' },
-    //     { name: 'app', value: '#eeeeee' },
-    //   ],
-    // },
     backgrounds: {
       options: {
         // 👇 Default options
@@ -46,6 +33,4 @@ const preview: Preview = {
     // 👇 Set the initial background color
     backgrounds: { value: Appearance.getColorScheme() === 'dark' ? 'dark' : 'plain' },
   },
-};
-
-export default preview;
+});

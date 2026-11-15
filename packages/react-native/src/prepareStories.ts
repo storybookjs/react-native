@@ -1,10 +1,12 @@
-import { sortStoriesV7, userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
+import { userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
 import { isExportStory, storyNameFromExport, toId } from 'storybook/internal/csf';
 import type {
   Addon_StorySortParameterV7,
   NormalizedStoriesSpecifier,
   StoryIndex,
 } from 'storybook/internal/types';
+import { sortIndexEntries } from './sortStories';
+import { PLAY_FN_TAG, combineStoryTags } from './storyTags';
 
 /** Configuration options that are needed at startup, only serialisable values are possible */
 export interface ReactNativeOptions {
@@ -14,14 +16,29 @@ export interface ReactNativeOptions {
   playFn?: boolean;
 }
 
+/**
+ * The tags of a meta or story, followed by `play-fn` when it has a play function, like the tags
+ * Storybook reads from a CSF file. CSF factories keep their annotations on `input`.
+ */
+const getAnnotationTags = (annotations: any): unknown[] => {
+  const input = annotations?._tag ? annotations.input : annotations;
+  const tags = Array.isArray(input?.tags) ? input.tags : [];
+
+  return typeof input?.play === 'function' ? [...tags, PLAY_FN_TAG] : tags;
+};
+
 export function prepareStories({
   storyEntries,
   options,
-  storySort,
+  storySorts = [],
+  projectTags = [],
 }: {
   storyEntries: (NormalizedStoriesSpecifier & { req: any })[];
   options?: ReactNativeOptions;
-  storySort?: Addon_StorySortParameterV7;
+  /** The `storySorts` from main, chained in order. */
+  storySorts?: Addon_StorySortParameterV7[];
+  /** The `tags` from the project annotations, applied to every story before its meta and story tags. */
+  projectTags?: string[];
 }) {
   let index: StoryIndex = {
     v: 5,
@@ -59,13 +76,13 @@ export function prepareStories({
     req.keys().forEach((filename: string) => {
       try {
         const fileExports = req(filename);
-        // TODO: should this be here?
         if (!fileExports.default) return;
         const meta = fileExports.default;
+        const metaTags = getAnnotationTags(meta);
 
         Object.keys(fileExports).forEach((key) => {
           if (key === 'default') return;
-          if (!isExportStory(key, fileExports.default)) return;
+          if (!isExportStory(key, meta)) return;
 
           const exportValue = fileExports[key];
           if (!exportValue) return;
@@ -76,10 +93,14 @@ export function prepareStories({
             const nameFromExport = storyNameFromExport(key);
             const id = toId(title, nameFromExport);
 
-            let name = nameFromExport;
-
-            if (typeof exportValue === 'function') {
-              name = exportValue?.storyName || nameFromExport;
+            // For CSF factories, read the explicit name from input (avoids triggering
+            // composeStory which doesn't have the export name). For plain CSF, fall
+            // back to .name / .storyName / the export-derived name.
+            let name: string;
+            if (exportValue?._tag === 'Story') {
+              name = exportValue.input?.name ?? nameFromExport;
+            } else if (typeof exportValue === 'function') {
+              name = exportValue.storyName || nameFromExport;
             } else {
               name = exportValue?.name || exportValue?.storyName || nameFromExport;
             }
@@ -90,7 +111,11 @@ export function prepareStories({
               name,
               title,
               importPath: `${root}/${filename.substring(2)}`, // FIXME: use normalize function here
-              tags: ['story'],
+              tags: combineStoryTags({
+                projectTags,
+                metaTags,
+                storyTags: getAnnotationTags(exportValue),
+              }),
               subtype: 'story',
             };
 
@@ -98,9 +123,9 @@ export function prepareStories({
             const stories = Object.entries(importedStories).reduce<
               Record<string, Readonly<Record<string, any>>>
             >((carry, [storyKey, story]) => {
-              if (!isExportStory(storyKey, fileExports.default)) return carry;
+              if (!isExportStory(storyKey, meta)) return carry;
 
-              if (story.play && !options?.playFn) {
+              if (typeof story.play === 'function' && !options?.playFn) {
                 // play functions are not yet fully supported on native.
                 // There is a new option in main.js to turn them on for future use.
                 carry[storyKey] = { ...story, play: undefined };
@@ -126,21 +151,7 @@ export function prepareStories({
     });
   });
 
-  const sortableStories = Object.values(index.entries);
-
-  sortStoriesV7(
-    sortableStories,
-    storySort as Addon_StorySortParameterV7,
-    Object.values(index.entries).map((entry) => entry.importPath)
-  );
-
-  const sorted = sortableStories.reduce(
-    (acc, item) => {
-      acc[item.id] = item;
-      return acc;
-    },
-    {} as StoryIndex['entries']
-  );
+  const sorted = sortIndexEntries(index.entries, storySorts);
 
   return { index: { v: 5, entries: sorted }, importMap };
 }

@@ -1,4 +1,5 @@
 import type { MetroConfig } from 'metro-config';
+import * as path from 'path';
 
 jest.mock('./metro/channelServer', () => ({
   createChannelServer: jest.fn(),
@@ -124,6 +125,9 @@ describe('withStorybook (unified)', () => {
     });
 
     expect(mockGenerate).toHaveBeenCalled();
+    expect(result.resolve.alias['#.storybook/preview']).toBe(
+      path.join('/tmp/.rnstorybook', 'preview')
+    );
     // No StorybookPlugin added — config plugins preserved as-is
     expect(result.plugins).toHaveLength(0);
   });

@@ -21,7 +21,7 @@ export const Explorer: FC<ExplorerProps> = React.memo(function Explorer({
   setSelection,
   preserveTreeDepth,
 }) {
-  const containerRef = useRef<View>(null);
+  const containerRef = useRef<React.ComponentRef<typeof View>>(null);
 
   return (
     <View ref={containerRef} id="storybook-explorer-tree">

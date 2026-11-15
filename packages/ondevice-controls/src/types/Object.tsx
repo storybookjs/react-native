@@ -47,15 +47,9 @@ const ObjectType = ({ arg, onChange, isPristine }: ObjectProps) => {
     }
   };
 
-  const extraStyle: ViewStyle = { minHeight: 60 };
-
-  if (failed) {
-    extraStyle.borderWidth = 1;
-
-    extraStyle.borderColor = '#fadddd';
-
-    extraStyle.backgroundColor = '#fff5f5';
-  }
+  const extraStyle: ViewStyle = failed
+    ? { minHeight: 60, borderWidth: 1, borderColor: '#fadddd', backgroundColor: '#fff5f5' }
+    : { minHeight: 60 };
 
   return (
     <Input

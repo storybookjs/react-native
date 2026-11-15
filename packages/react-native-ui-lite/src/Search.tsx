@@ -70,7 +70,6 @@ const ClearIcon = styled.TouchableOpacity(({ theme }) => ({
   right: 0,
   zIndex: 1,
   color: theme.textMutedColor,
-  cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -97,7 +96,7 @@ export const Search = React.memo<{
   onSearchActiveChange,
 }) {
   const theme = useTheme();
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<React.ComponentRef<typeof TextInput>>(null);
   const [inputValue, setInputValue] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
   const [allComponents, showAllComponents] = useState(false);
@@ -257,6 +256,7 @@ export const Search = React.memo<{
             onChangeText={setInputValue}
             onFocus={() => setIsOpen(true)}
             returnKeyType="search"
+            accessibilityLabel="Find components"
           />
 
           {isOpen && (

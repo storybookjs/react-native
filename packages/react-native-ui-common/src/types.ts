@@ -4,7 +4,7 @@ import { Theme } from '@storybook/react-native-theming';
 import { Storage } from './StorageProvider';
 import { ReactElement, ReactNode } from 'react';
 import { PressableProps } from 'react-native';
-import type { State, StoriesHash } from 'storybook/manager-api';
+import type { State, IndexHash } from 'storybook/manager-api';
 import type {
   API_IndexHash,
   StatusesByStoryIdAndTypeId,
@@ -18,7 +18,7 @@ export type HighlightRanges = HighlightRange[];
 
 export type Refs = State['refs'];
 export type RefType = Refs[keyof Refs] & { allStatuses?: StatusesByStoryIdAndTypeId };
-export type Item = StoriesHash[keyof StoriesHash];
+export type Item = IndexHash[keyof IndexHash];
 export type Dataset = Record<string, Item>;
 
 export interface CombinedDataset {

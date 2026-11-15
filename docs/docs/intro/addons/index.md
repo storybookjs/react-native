@@ -32,9 +32,7 @@ export default main;
 ```
 
 :::info[Why `deviceAddons`?]
-On-device addons contain React Native code that can only run on the device. When listed in the regular `addons` array, Storybook Core tries to evaluate them as presets during server-side operations (like `extract` or `build`), which fails because Node.js can't load React Native modules. The `deviceAddons` property ensures they're only loaded at runtime on the device.
-
-For backwards compatibility, on-device addons in the `addons` array still work — they're detected by the "ondevice" substring in their name and handled correctly. However, `deviceAddons` is the recommended approach.
+On-device addons contain React Native code that can only run on the device. Storybook Core evaluates every `addons` entry as a preset during server-side operations (like `extract` or `build`), which fails because Node.js can't load React Native modules. List these packages in `deviceAddons` so they are loaded only at runtime on the device. `.rnstorybook` generation does not read `addons`.
 
 :::
 

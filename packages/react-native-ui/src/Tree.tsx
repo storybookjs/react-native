@@ -2,7 +2,7 @@ import type {
   ComponentEntry,
   GroupEntry,
   State,
-  StoriesHash,
+  IndexHash,
   StoryEntry,
 } from 'storybook/manager-api';
 import { styled } from '@storybook/react-native-theming';
@@ -60,7 +60,7 @@ export const Node = React.memo<NodeProps>(function Node({
   const { setNodeRef } = useSelectedNode();
 
   const setRef = useCallback(
-    (node: View | null) => {
+    (node: React.ComponentRef<typeof View> | null) => {
       if (isSelected && node) {
         setNodeRef(node);
       }
@@ -103,6 +103,7 @@ export const Node = React.memo<NodeProps>(function Node({
             event.preventDefault();
             setExpanded({ ids: [item.id], value: !isExpanded });
           }}
+          accessibilityRole="button"
           aria-expanded={isExpanded}
         >
           <CollapseIcon isExpanded={isExpanded} />
@@ -110,7 +111,7 @@ export const Node = React.memo<NodeProps>(function Node({
         </CollapseButton>
         {isExpanded && (
           <IconButton
-            aria-label={isFullyExpanded ? 'Expand' : 'Collapse'}
+            aria-label={isFullyExpanded ? 'Collapse all' : 'Expand all'}
             data-action="expand-all"
             data-expanded={isFullyExpanded}
             onPress={(event) => {
@@ -190,7 +191,6 @@ const CollapseButton = styled.TouchableOpacity(() => ({
   borderRadius: 4,
   gap: 6,
   alignItems: 'center',
-  cursor: 'pointer',
   height: 28,
 }));
 
@@ -199,7 +199,7 @@ export const Tree = React.memo<{
   isMain: boolean;
   status?: State['status'];
   refId: string;
-  data: StoriesHash;
+  data: IndexHash;
   docsMode: boolean;
   selectedStoryId: string | null;
   onSelectStoryId: (storyId: string) => void;
@@ -215,7 +215,7 @@ export const Tree = React.memo<{
   onSelectStoryId,
   preserveTreeDepth = false,
 }) {
-  const containerRef = useRef<View>(null);
+  const containerRef = useRef<React.ComponentRef<typeof View>>(null);
 
   // Find top-level nodes and group them so we can hoist any orphans and expand any roots.
   const [rootIds, orphanIds, initialExpanded] = useMemo(

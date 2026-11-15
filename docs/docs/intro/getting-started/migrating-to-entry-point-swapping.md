@@ -141,7 +141,7 @@ export default main;
 ```
 
 :::tip[Automigration available]
-If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` automigration handles this step automatically. Any addon with "ondevice" in its name is moved to `deviceAddons`.
+If you're using the Storybook CLI, the `rn-ondevice-addons-to-device-addons` automigration renames the `addons` field to `deviceAddons` when `deviceAddons` is not already set. Version 11 does not read `addons` in `.rnstorybook`.
 
 ```sh
 npx storybook automigrate
@@ -176,6 +176,8 @@ For React Native CLI projects:
   }
 }
 ```
+
+Release builds of Storybook in React Native CLI projects also need `ENTRY_FILE=.rnstorybook/index.tsx`. See [Storybook release builds on React Native CLI](../configuration/metro-configuration.md#storybook-release-builds-on-react-native-cli).
 
 :::note[Windows users]
 On Windows, use `cross-env` to set environment variables:

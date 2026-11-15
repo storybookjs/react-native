@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { type ComponentRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   I18nManager,
   Image,
@@ -31,7 +31,7 @@ export function HoloColorPicker({
   const [pickerSize, setPickerSize] = useState(0);
   const colorRef = useRef(color);
   const pickerSizeRef = useRef(pickerSize);
-  const pickerRef = useRef<View>(null);
+  const pickerRef = useRef<ComponentRef<typeof View>>(null);
   const pickerPageOffsetRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {

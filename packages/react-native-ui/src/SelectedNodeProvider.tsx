@@ -1,11 +1,11 @@
 import { BottomSheetScrollViewMethods } from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheetScrollable/types';
-import type { FC, PropsWithChildren } from 'react';
+import type { ComponentRef, FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useContext, useRef } from 'react';
 import type { View } from 'react-native';
 
 type SelectedNodeContextType = {
-  nodeRef: React.RefObject<View>;
-  setNodeRef: (node: View | null) => void;
+  nodeRef: React.RefObject<ComponentRef<typeof View> | null>;
+  setNodeRef: (node: ComponentRef<typeof View> | null) => void;
   scrollToSelectedNode: () => void;
   scrollRef: React.RefObject<BottomSheetScrollViewMethods>;
 };
@@ -18,9 +18,9 @@ const SelectedNodeContext = createContext<SelectedNodeContextType>({
 });
 
 export const SelectedNodeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const nodeRef = useRef<View | null>(null);
+  const nodeRef = useRef<ComponentRef<typeof View> | null>(null);
 
-  const setNodeRef = useCallback((node: View | null) => {
+  const setNodeRef = useCallback((node: ComponentRef<typeof View> | null) => {
     nodeRef.current = node;
   }, []);
 
