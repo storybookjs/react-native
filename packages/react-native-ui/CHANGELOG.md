@@ -1,5 +1,17 @@
 # @storybook/react-native-ui
 
+## 10.7.2
+
+### Patch Changes
+
+- [#978](https://github.com/storybookjs/react-native/pull/978) [`5d7fe26`](https://github.com/storybookjs/react-native/commit/5d7fe26826952f27f3e58782c1cf816e2f9e1335) Thanks [@dannyhw](https://github.com/dannyhw)! - Update dependencies with security fixes. `@storybook/react-native` now depends on `glob@^14.0.5` (13.x is affected by GHSA-3g3m-2fjr-6pw4), and the `@storybook/react` dependency range now starts at 10.6.7, which peers on `storybook@^10.6.7` and so steers projects past the `storybook` versions fixed in 10.6.2.
+
+- [#976](https://github.com/storybookjs/react-native/pull/976) [`6cf17d5`](https://github.com/storybookjs/react-native/commit/6cf17d545f42ab3406411f6dd9501d01a24af635) Thanks [@dannyhw](https://github.com/dannyhw)! - The on-device UI no longer crashes on launch on React Native 0.87 with react-native-worklets 0.12 ("[Worklets] Trying to convert a cyclic object to a serializable"). The menu backdrop and addons panel `useAnimatedStyle` worklets read `Platform.OS` inside the worklet, so Worklets tried to copy `Platform`, or in the published CommonJS build the whole `react-native` module, to the UI runtime. The platform check now happens outside the worklets, and the backdrop worklet only captures the sheet's animated index.
+
+- Updated dependencies [[`5d7fe26`](https://github.com/storybookjs/react-native/commit/5d7fe26826952f27f3e58782c1cf816e2f9e1335)]:
+  - @storybook/react-native-ui-common@10.7.2
+  - @storybook/react-native-theming@10.7.2
+
 ## 10.7.1
 
 ### Patch Changes

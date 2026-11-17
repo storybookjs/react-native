@@ -1,5 +1,12 @@
 # @storybook/addon-ondevice-actions
 
+## 10.7.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.7.2
+
 ## 10.7.1
 
 ### Patch Changes

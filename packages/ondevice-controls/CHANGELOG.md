@@ -1,5 +1,13 @@
 # @storybook/addon-ondevice-controls
 
+## 10.7.2
+
+### Patch Changes
+
+- Updated dependencies [[`5d7fe26`](https://github.com/storybookjs/react-native/commit/5d7fe26826952f27f3e58782c1cf816e2f9e1335)]:
+  - @storybook/react-native-ui-common@10.7.2
+  - @storybook/react-native-theming@10.7.2
+
 ## 10.7.1
 
 ### Patch Changes
