@@ -1,5 +1,23 @@
 # @storybook/react-native-ui-lite
 
+## 11.0.0-next.2
+
+### Patch Changes
+
+- [#971](https://github.com/storybookjs/react-native/pull/971) [`87b1d83`](https://github.com/storybookjs/react-native/commit/87b1d83fccee5082122e69a72f6076164e6f28d0) Thanks [@dannyhw](https://github.com/dannyhw)! - Update dependencies: `tmcp` 1.20, `@tmcp/adapter-valibot` 0.1.7, `valibot` 1.5, `ws` 8.22 and `glob` 14.0.5 in `@storybook/react-native`, `es-toolkit` 1.53 in `@storybook/react-native-ui-common`, and `@legendapp/list` 3.7.2 in `@storybook/react-native-ui-lite`.
+
+- [#975](https://github.com/storybookjs/react-native/pull/975) [`503529a`](https://github.com/storybookjs/react-native/commit/503529a26f63c43a01d5d9a5ef2a3817f6c04ef7) Thanks [@officialasishkumar](https://github.com/officialasishkumar)! - Label the full on-device UI's controls for screen readers and UI automation tools such as Appium, as the lite UI already does. The sidebar and fullscreen toggles, the story list button, the search field and its clear button, search results, the "clear recently opened" button and a linked brand logo now have accessible names, the story tree's rows are exposed as buttons, and the selected story is marked as selected. The "expand all" button in both UIs is now labelled "Expand all" or "Collapse all" by what pressing it does, instead of the opposite. On iOS, where the story list button's label replaces its visible text, the button also exposes the open story as its accessibility value in both UIs, and the lite UI's search field is now labelled "Find components" like the full UI's.
+
+- [#956](https://github.com/storybookjs/react-native/pull/956) [`cbeb0c2`](https://github.com/storybookjs/react-native/commit/cbeb0c2c9227116775e89bbe14183761e674e75a) Thanks [@officialasishkumar](https://github.com/officialasishkumar)! - The sidebar no longer crashes iPad debug builds when a group is collapsed with a mouse or trackpad. Sidebar rows and search results no longer set `cursor: 'pointer'`, which on iOS 17+ adds a UIKit pointer hover effect that React Native's Fabric renderer trips over when it unmounts the rows below (facebook/react-native#55489). On web the rows still show a pointer cursor, because `TouchableOpacity` already sets one.
+
+- [#958](https://github.com/storybookjs/react-native/pull/958) [`490a3f0`](https://github.com/storybookjs/react-native/commit/490a3f07cf1f27dca3c4d517749b2fff1a7abf1e) Thanks [@dannyhw](https://github.com/dannyhw)! - Require `@legendapp/list` 3.3.5 or later, which fixes a "Cannot update a component while rendering a different component" error when selecting a story from the search results.
+
+- [#958](https://github.com/storybookjs/react-native/pull/958) [`490a3f0`](https://github.com/storybookjs/react-native/commit/490a3f07cf1f27dca3c4d517749b2fff1a7abf1e) Thanks [@dannyhw](https://github.com/dannyhw)! - Fix type errors against React Native 0.88's types, where `View` and `TextInput` refs are `ReactNativeElement`-based instances, `KeyboardEventListener` is no longer exported and style objects are read-only. The sidebar tree nodes now export their prop types (`BranchNodeProps`, `LeafNodeProps`) and ref type (`StoryNodeRef`).
+
+- Updated dependencies [[`87b1d83`](https://github.com/storybookjs/react-native/commit/87b1d83fccee5082122e69a72f6076164e6f28d0)]:
+  - @storybook/react-native-ui-common@11.0.0-next.2
+  - @storybook/react-native-theming@11.0.0-next.2
+
 ## 11.0.0-next.1
 
 ### Patch Changes

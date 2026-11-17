@@ -1,5 +1,27 @@
 # @storybook/react-native-ui
 
+## 11.0.0-next.2
+
+### Patch Changes
+
+- [#975](https://github.com/storybookjs/react-native/pull/975) [`503529a`](https://github.com/storybookjs/react-native/commit/503529a26f63c43a01d5d9a5ef2a3817f6c04ef7) Thanks [@officialasishkumar](https://github.com/officialasishkumar)! - Label the full on-device UI's controls for screen readers and UI automation tools such as Appium, as the lite UI already does. The sidebar and fullscreen toggles, the story list button, the search field and its clear button, search results, the "clear recently opened" button and a linked brand logo now have accessible names, the story tree's rows are exposed as buttons, and the selected story is marked as selected. The "expand all" button in both UIs is now labelled "Expand all" or "Collapse all" by what pressing it does, instead of the opposite. On iOS, where the story list button's label replaces its visible text, the button also exposes the open story as its accessibility value in both UIs, and the lite UI's search field is now labelled "Find components" like the full UI's.
+
+- [#947](https://github.com/storybookjs/react-native/pull/947) [`d96e62f`](https://github.com/storybookjs/react-native/commit/d96e62fe83a3e0abf323cf23d2d6c26fedf15bd8) Thanks [@dannyhw](https://github.com/dannyhw)! - The on-device story list is no longer one opaque element in the iOS accessibility tree. The bottom sheet that holds it, and its handle, background and backdrop, are no longer marked as accessible elements, so VoiceOver and UI automation see the search field and every story row instead of empty "Bottom Sheet" elements. The list is also hidden from accessibility while the sheet is closed, so VoiceOver cannot reach rows rendered off-screen.
+
+- [#956](https://github.com/storybookjs/react-native/pull/956) [`cbeb0c2`](https://github.com/storybookjs/react-native/commit/cbeb0c2c9227116775e89bbe14183761e674e75a) Thanks [@officialasishkumar](https://github.com/officialasishkumar)! - The sidebar no longer crashes iPad debug builds when a group is collapsed with a mouse or trackpad. Sidebar rows and search results no longer set `cursor: 'pointer'`, which on iOS 17+ adds a UIKit pointer hover effect that React Native's Fabric renderer trips over when it unmounts the rows below (facebook/react-native#55489). On web the rows still show a pointer cursor, because `TouchableOpacity` already sets one.
+
+- [#948](https://github.com/storybookjs/react-native/pull/948) [`894a300`](https://github.com/storybookjs/react-native/commit/894a300bb0da4356b1332c2b638a42abf10f4254) Thanks [@dannyhw](https://github.com/dannyhw)! - The addons panel no longer passes `useAnimatedStyle` dependencies on native, where Reanimated 4.6+ ignores them and warns ("Dependencies should only be used on the web").
+
+- [#958](https://github.com/storybookjs/react-native/pull/958) [`490a3f0`](https://github.com/storybookjs/react-native/commit/490a3f07cf1f27dca3c4d517749b2fff1a7abf1e) Thanks [@dannyhw](https://github.com/dannyhw)! - Fix type errors against React Native 0.88's types, where `View` and `TextInput` refs are `ReactNativeElement`-based instances, `KeyboardEventListener` is no longer exported and style objects are read-only. The sidebar tree nodes now export their prop types (`BranchNodeProps`, `LeafNodeProps`) and ref type (`StoryNodeRef`).
+
+- [#928](https://github.com/storybookjs/react-native/pull/928) [`97caee2`](https://github.com/storybookjs/react-native/commit/97caee29205765c7d2df61926b48b2849dac8f12) Thanks [@fireinnti](https://github.com/fireinnti)! - Indent the full UI's sidebar entries one level under their root heading, as the lite UI already does. Components, groups and stories that sit under a root (the uppercase section heading) used to start at the same left edge as the heading; every level below a root now sits 18 points further right, so the nesting is easier to follow. Entries that have no root are unchanged.
+
+- [#967](https://github.com/storybookjs/react-native/pull/967) [`da0e7cf`](https://github.com/storybookjs/react-native/commit/da0e7cf8dd4db6faf6c78c520b2c0b7017b57adc) Thanks [@officialasishkumar](https://github.com/officialasishkumar)! - The on-device UI no longer crashes on launch on React Native 0.87 with react-native-worklets 0.12 ("[Worklets] Trying to convert a cyclic object to a serializable"). The menu backdrop and addons panel `useAnimatedStyle` worklets read `Platform.OS` inside the worklet, so Worklets tried to copy `Platform`, or in the published CommonJS build the whole `react-native` module, to the UI runtime. The platform check now happens outside the worklets, and the backdrop worklet only captures the sheet's animated index.
+
+- Updated dependencies [[`87b1d83`](https://github.com/storybookjs/react-native/commit/87b1d83fccee5082122e69a72f6076164e6f28d0)]:
+  - @storybook/react-native-ui-common@11.0.0-next.2
+  - @storybook/react-native-theming@11.0.0-next.2
+
 ## 11.0.0-next.1
 
 ### Patch Changes

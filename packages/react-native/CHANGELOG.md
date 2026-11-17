@@ -1,5 +1,36 @@
 # @storybook/react-native
 
+## 11.0.0-next.2
+
+### Minor Changes
+
+- [#969](https://github.com/storybookjs/react-native/pull/969) [`8d58643`](https://github.com/storybookjs/react-native/commit/8d586430a9671a3d9c0ea7878e7c770ab9a99929) Thanks [@officialasishkumar](https://github.com/officialasishkumar)! - Stories now get their tags in the story index, combined from the project, meta and story `tags` the same way Storybook does for the web, instead of a fixed `['story']`. Stories without the `dev` tag (for example `tags: ['!dev']`) are hidden from the on-device sidebar and are not opened by default, but can still be selected by id. The index served by the channel server includes the same tags.
+
+### Patch Changes
+
+- [#971](https://github.com/storybookjs/react-native/pull/971) [`87b1d83`](https://github.com/storybookjs/react-native/commit/87b1d83fccee5082122e69a72f6076164e6f28d0) Thanks [@dannyhw](https://github.com/dannyhw)! - Update dependencies: `tmcp` 1.20, `@tmcp/adapter-valibot` 0.1.7, `valibot` 1.5, `ws` 8.22 and `glob` 14.0.5 in `@storybook/react-native`, `es-toolkit` 1.53 in `@storybook/react-native-ui-common`, and `@legendapp/list` 3.7.2 in `@storybook/react-native-ui-lite`.
+
+- [#945](https://github.com/storybookjs/react-native/pull/945) [`ab54070`](https://github.com/storybookjs/react-native/commit/ab5407069996c0394da1267f0c2f74c2faeb7b1b) Thanks [@dannyhw](https://github.com/dannyhw)! - Generated `storybook.requires` no longer crashes on startup when `features` is set in `main`. Feature flags are now merged into `globalThis.FEATURES` instead of written onto it, so the file no longer throws `TypeError: Cannot set property 'ondeviceBackgrounds' of undefined` when Metro's `inlineRequires` evaluates it before Storybook has created that object.
+
+- [#966](https://github.com/storybookjs/react-native/pull/966) [`5e9cd39`](https://github.com/storybookjs/react-native/commit/5e9cd397e3f7cbc16feaa65b95ea2d8c4918ccba) Thanks [@dannyhw](https://github.com/dannyhw)! - Storybook 11.0.0-beta.1 guards its `window.addEventListener` call for landmark navigation itself, so the `setupListeners` workaround is removed and the minimum `storybook` version is now 11.0.0-beta.1.
+
+  `@storybook/mcp` is updated to 11.0.0-beta.1, and the `select-story` MCP tool now points agents to `docs-list` instead of the old `list-all-documentation` tool name.
+
+- [#939](https://github.com/storybookjs/react-native/pull/939) [`6affb3e`](https://github.com/storybookjs/react-native/commit/6affb3e6bd855bf594685e495139ce059166389b) Thanks [@dannyhw](https://github.com/dannyhw)! - Support Storybook 11.0.0-alpha.7, which removed deprecated type aliases such as `StoriesHash` and `StoryContextForLoaders`. The sidebar now throws on story index versions below v3, matching core.
+
+- [#958](https://github.com/storybookjs/react-native/pull/958) [`490a3f0`](https://github.com/storybookjs/react-native/commit/490a3f07cf1f27dca3c4d517749b2fff1a7abf1e) Thanks [@dannyhw](https://github.com/dannyhw)! - Support Storybook 11.0.0-beta.0. Its preview now calls `window.addEventListener` while setting up listeners, which React Native doesn't provide, so `start()` threw `globalWindow.addEventListener is not a function`.
+
+- [#970](https://github.com/storybookjs/react-native/pull/970) [`9e8f511`](https://github.com/storybookjs/react-native/commit/9e8f511f21efae6231a64f8a5a0815523e365170) Thanks [@dannyhw](https://github.com/dannyhw)! - Update `@storybook/react` and `@storybook/mcp` to 11.0.0-beta.2.
+
+- [#974](https://github.com/storybookjs/react-native/pull/974) [`79a2fc1`](https://github.com/storybookjs/react-native/commit/79a2fc144dcb76f4cb0d99c6251a42b61c0a341a) Thanks [@dannyhw](https://github.com/dannyhw)! - Update `@storybook/react` and `@storybook/mcp` to 11.0.0-beta.3.
+
+- [#953](https://github.com/storybookjs/react-native/pull/953) [`50d5180`](https://github.com/storybookjs/react-native/commit/50d5180886c458ca527451d3a993e5b999ea3c05) Thanks [@jeltehomminga](https://github.com/jeltehomminga)! - Allow `react-native-url-polyfill` v4. The dependency range is now `^3.0.0 || ^4.0.0`, so an app that uses v4 no longer gets a second, nested v3 copy for Storybook.
+
+- Updated dependencies [[`87b1d83`](https://github.com/storybookjs/react-native/commit/87b1d83fccee5082122e69a72f6076164e6f28d0), [`503529a`](https://github.com/storybookjs/react-native/commit/503529a26f63c43a01d5d9a5ef2a3817f6c04ef7), [`d96e62f`](https://github.com/storybookjs/react-native/commit/d96e62fe83a3e0abf323cf23d2d6c26fedf15bd8), [`cbeb0c2`](https://github.com/storybookjs/react-native/commit/cbeb0c2c9227116775e89bbe14183761e674e75a), [`894a300`](https://github.com/storybookjs/react-native/commit/894a300bb0da4356b1332c2b638a42abf10f4254), [`490a3f0`](https://github.com/storybookjs/react-native/commit/490a3f07cf1f27dca3c4d517749b2fff1a7abf1e), [`97caee2`](https://github.com/storybookjs/react-native/commit/97caee29205765c7d2df61926b48b2849dac8f12), [`da0e7cf`](https://github.com/storybookjs/react-native/commit/da0e7cf8dd4db6faf6c78c520b2c0b7017b57adc)]:
+  - @storybook/react-native-ui-common@11.0.0-next.2
+  - @storybook/react-native-ui@11.0.0-next.2
+  - @storybook/react-native-theming@11.0.0-next.2
+
 ## 11.0.0-next.1
 
 ### Major Changes

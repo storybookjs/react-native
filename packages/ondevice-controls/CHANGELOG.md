@@ -1,5 +1,21 @@
 # @storybook/addon-ondevice-controls
 
+## 11.0.0-next.2
+
+### Minor Changes
+
+- [#972](https://github.com/storybookjs/react-native/pull/972) [`0cb0a55`](https://github.com/storybookjs/react-native/commit/0cb0a55d984c0212d004a5eed7531b59ce4c3f7d) Thanks [@officialasishkumar](https://github.com/officialasishkumar)! - Add the `check` and `inline-check` control types. Like on web, they show a checkbox for each option and set the arg to an array of the checked values.
+
+### Patch Changes
+
+- [#965](https://github.com/storybookjs/react-native/pull/965) [`519baac`](https://github.com/storybookjs/react-native/commit/519baac3dff371d08b1241696f56e4d6b4edd8b5) Thanks [@Purv-Kabaria](https://github.com/Purv-Kabaria)! - Keep the number control's text input controlled when the arg has no value yet, so React no longer warns about an uncontrolled input becoming controlled on web.
+
+- [#958](https://github.com/storybookjs/react-native/pull/958) [`490a3f0`](https://github.com/storybookjs/react-native/commit/490a3f07cf1f27dca3c4d517749b2fff1a7abf1e) Thanks [@dannyhw](https://github.com/dannyhw)! - Fix type errors against React Native 0.88's types, where `View` and `TextInput` refs are `ReactNativeElement`-based instances, `KeyboardEventListener` is no longer exported and style objects are read-only. The sidebar tree nodes now export their prop types (`BranchNodeProps`, `LeafNodeProps`) and ref type (`StoryNodeRef`).
+
+- Updated dependencies [[`87b1d83`](https://github.com/storybookjs/react-native/commit/87b1d83fccee5082122e69a72f6076164e6f28d0)]:
+  - @storybook/react-native-ui-common@11.0.0-next.2
+  - @storybook/react-native-theming@11.0.0-next.2
+
 ## 11.0.0-next.1
 
 ### Patch Changes

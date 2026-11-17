@@ -1,5 +1,14 @@
 # @storybook/react-native-ui-common
 
+## 11.0.0-next.2
+
+### Patch Changes
+
+- [#971](https://github.com/storybookjs/react-native/pull/971) [`87b1d83`](https://github.com/storybookjs/react-native/commit/87b1d83fccee5082122e69a72f6076164e6f28d0) Thanks [@dannyhw](https://github.com/dannyhw)! - Update dependencies: `tmcp` 1.20, `@tmcp/adapter-valibot` 0.1.7, `valibot` 1.5, `ws` 8.22 and `glob` 14.0.5 in `@storybook/react-native`, `es-toolkit` 1.53 in `@storybook/react-native-ui-common`, and `@legendapp/list` 3.7.2 in `@storybook/react-native-ui-lite`.
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@11.0.0-next.2
+
 ## 11.0.0-next.1
 
 ### Patch Changes
