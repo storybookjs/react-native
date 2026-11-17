@@ -3,6 +3,7 @@ import { start, updateView } from './Start';
 
 jest.mock('storybook/manager-api', () => ({
   addons: {
+    register: jest.fn(),
     loadAddons: jest.fn(),
     setChannel: jest.fn(),
   },
