@@ -37,7 +37,6 @@ const main: StorybookConfig = {
 
   deviceAddons: [
     '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
   ],
@@ -62,7 +61,7 @@ export default main;
   - `titlePrefix`: Optional prefix for story titles
   - `files`: Glob pattern for story files
 - `deviceAddons`: Array of on-device addon packages (`@storybook/addon-ondevice-*` and any other addon bundled with the app). These are loaded only at runtime on the device and are not evaluated as presets by Storybook Core, avoiding errors during server-side operations like `extract`.
-- `features`: Enable new functionality (see [Feature Flags](./feature-flags.md))
+- `features`: Turn built-in functionality on or off (see [Feature Flags](./feature-flags.md))
 - `storySorts`: Array of story sorters, each an object with `method`, `order`, `includeNames` and `locales`, an `order` array, or a comparator function `(a, b) => number`. Each sorter only orders the stories that the sorters before it consider equal. Comparator functions are copied into `storybook.requires` from their source, so they can't use imports or variables from outside their own body. This replaces `parameters.options.storySort` in `preview.tsx`, which Storybook 11 no longer reads.
 
 ## preview.tsx
@@ -71,14 +70,8 @@ The `preview.tsx` file configures the story rendering environment and global par
 
 ```ts
 import { Preview } from '@storybook/react-native';
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
 const preview: Preview = {
-  decorators: [
-    // backgrounds addon decorator
-    withBackgrounds,
-  ],
-
   parameters: {
     // UI Configuration
     hideFullScreenButton: false,
@@ -88,15 +81,19 @@ const preview: Preview = {
 
     // Background Configuration
     backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: 'white' },
-        { name: 'dark', value: '#333' },
-      ],
+      options: {
+        light: { name: 'Light', value: 'white' },
+        dark: { name: 'Dark', value: '#333' },
+      },
     },
 
     // your own parameters
     my_param: 'anything',
+  },
+
+  // Initially selected background
+  initialGlobals: {
+    backgrounds: { value: 'light' },
   },
 };
 
@@ -111,7 +108,7 @@ These parameters can be overwritten per story.
 - `parameters.noSafeArea`: Disable safe area insets
 - `parameters.storybookUIVisibility`: Controls UI visibility (`'visible'` | `'hidden'`)
 - `parameters.layout`: Controls story container layout (`'fullscreen'` | `'centered'` | `'padded'`)
-- `parameters.backgrounds`: Background addon configuration
+- `parameters.backgrounds`: Built-in Backgrounds panel options (see [Backgrounds](./backgrounds.md))
 
 ## index.tsx
 
@@ -229,11 +226,11 @@ Use the `sb-rn-get-stories` command and understand all available CLI options for
 
 ### [Feature Flags](./feature-flags.md)
 
-Opt into new functionality via the `features` config in `main.ts`. Flags let you adopt new APIs at your own pace — they will become the default in the next major version.
+Turn built-in functionality on or off via the `features` config in `main.ts`.
 
 ### [Backgrounds](./backgrounds.md)
 
-The new globals-based backgrounds API with full-screen support, available now behind a feature flag.
+The built-in, globals-based Backgrounds panel with full-screen support, enabled by default.
 
 ### [WebSocket Configuration](./websocket-configuration.md)
 

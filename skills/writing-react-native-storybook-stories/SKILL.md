@@ -189,11 +189,9 @@ const meta = {
 Global decorators go in `.rnstorybook/preview.tsx`:
 
 ```tsx
-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import type { Preview } from '@storybook/react-native';
 
 const preview: Preview = {
-  decorators: [withBackgrounds],
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -202,13 +200,16 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    // Built-in Backgrounds panel, no addon package needed
     backgrounds: {
-      default: 'plain',
-      values: [
-        { name: 'plain', value: 'white' },
-        { name: 'dark', value: '#333' },
-      ],
+      options: {
+        plain: { name: 'Plain', value: 'white' },
+        dark: { name: 'Dark', value: '#333' },
+      },
     },
+  },
+  initialGlobals: {
+    backgrounds: { value: 'plain' },
   },
 };
 
@@ -226,7 +227,6 @@ const main: StorybookConfig = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   deviceAddons: [
     '@storybook/addon-ondevice-controls',
-    '@storybook/addon-ondevice-backgrounds',
     '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
   ],
@@ -288,9 +288,11 @@ setProjectAnnotations(previewAnnotations);
 
 ## Addons Summary
 
-| Addon       | Package                                 | Purpose                    |
-| ----------- | --------------------------------------- | -------------------------- |
-| Controls    | `@storybook/addon-ondevice-controls`    | Edit props interactively   |
-| Actions     | `@storybook/addon-ondevice-actions`     | Log component interactions |
-| Backgrounds | `@storybook/addon-ondevice-backgrounds` | Change story backgrounds   |
-| Notes       | `@storybook/addon-ondevice-notes`       | Add markdown documentation |
+| Addon       | Package                              | Purpose                    |
+| ----------- | ------------------------------------ | -------------------------- |
+| Controls    | `@storybook/addon-ondevice-controls` | Edit props interactively   |
+| Actions     | `@storybook/addon-ondevice-actions`  | Log component interactions |
+| Backgrounds | Built into `@storybook/react-native` | Change story backgrounds   |
+| Notes       | `@storybook/addon-ondevice-notes`    | Add markdown documentation |
+
+Backgrounds are on by default (`features.ondeviceBackgrounds: false` turns them off). Configure them with `parameters.backgrounds.options` and `initialGlobals.backgrounds`, and lock a story with `globals: { backgrounds: { value: 'dark' } }`. `@storybook/addon-ondevice-backgrounds` is deprecated; don't add it to new projects.
