@@ -13,8 +13,6 @@ import { userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
 import { sortIndexEntries } from '../sortStories';
 import { combineStoryTags } from '../storyTags';
 
-const cwd = process.cwd();
-
 const makeTitle = (fileName: string, specifier: NormalizedStoriesSpecifier, userTitle: string) => {
   const title = userOrAutoTitleFromSpecifier(fileName, specifier, userTitle);
 
@@ -38,7 +36,7 @@ const previewExtensions = ['js', 'mjs', 'cjs', 'jsx', 'ts', 'mts', 'cts', 'tsx']
  * Reads the `tags` of the preview file, which apply to every story. Like Storybook for the web, they
  * have to be a static array of strings to be read without running the preview.
  */
-async function readPreviewTags(configPath: string): Promise<string[]> {
+async function readPreviewTags(configPath: string, cwd: string): Promise<string[]> {
   const previewPath = previewExtensions
     .map((extension) => path.resolve(cwd, configPath, `preview.${extension}`))
     .find((filePath) => existsSync(filePath));
@@ -71,12 +69,14 @@ async function readPreviewTags(configPath: string): Promise<string[]> {
 }
 
 export async function buildIndex({ configPath }: { configPath: string }): Promise<StoryIndex> {
+  // Read per call rather than at import time so a CLI can change directory first.
+  const cwd = process.cwd();
   const main = await loadMainConfig({ configDir: configPath, cwd });
   if (!main.stories || !Array.isArray(main.stories)) {
     throw new Error('No stories found');
   }
 
-  const projectTags = await readPreviewTags(configPath);
+  const projectTags = await readPreviewTags(configPath, cwd);
 
   const storiesSpecifiers = normalizeStories(main.stories, {
     configDir: configPath,
@@ -85,7 +85,7 @@ export async function buildIndex({ configPath }: { configPath: string }): Promis
 
   const specifierStoryPaths = storiesSpecifiers.map((specifier) => {
     return globSync(specifier.files, {
-      cwd: path.resolve(process.cwd(), specifier.directory),
+      cwd: path.resolve(cwd, specifier.directory),
       absolute: true,
       // default to always ignore (exclude) anything in node_modules
       ignore: ['**/node_modules'],
