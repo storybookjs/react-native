@@ -14,7 +14,7 @@
     "prebuild": "expo prebuild"
   },
   "dependencies": {
-    "@expo/metro-runtime": "~57.0.15",
+    "@expo/metro-runtime": "~57.0.18",
     "@gorhom/bottom-sheet": "^5.2.8",
     "@react-native-async-storage/async-storage": "2.2.0",
     "@react-native-community/datetimepicker": "9.1.0",
@@ -24,15 +24,15 @@
     "@storybook/addon-ondevice-controls": "^10.7.1",
     "@storybook/addon-ondevice-notes": "^10.7.1",
     "@storybook/addon-react-native-server": "^1.0.1",
-    "@storybook/react": "^10.6.0",
+    "@storybook/react": "^10.6.7",
     "@storybook/react-native": "^10.7.1",
     "@storybook/react-native-ui-lite": "^10.7.1",
-    "@storybook/react-native-web-vite": "^10.6.0",
+    "@storybook/react-native-web-vite": "^10.6.7",
     "babel-plugin-react-compiler": "^1.0.0",
-    "expo": "57.0.20",
-    "expo-modules-core": "57.0.16",
-    "expo-system-ui": "~57.0.3",
-    "expo-updates": "~57.0.21",
+    "expo": "57.0.33",
+    "expo-modules-core": "57.0.26",
+    "expo-system-ui": "~57.0.4",
+    "expo-updates": "~57.0.28",
     "react": "19.2.3",
     "react-compiler-runtime": "^1.0.0",
     "react-dom": "19.2.3",
@@ -43,7 +43,7 @@
     "react-native-svg": "15.15.4",
     "react-native-web": "^0.21.2",
     "react-native-worklets": "0.10.1",
-    "storybook": "^10.6.0",
+    "storybook": "^10.6.7",
     "storybook-addon-deep-controls": "^0.10.0",
     "ws": "^8.21.1"
   },
@@ -56,9 +56,9 @@
     "@types/ws": "^8.18.1",
     "babel-plugin-react-docgen-typescript": "^1.5.1",
     "jest": "^29.7.0",
-    "jest-expo": "~57.0.5",
+    "jest-expo": "~57.0.6",
     "test-renderer": "^0.15.0",
     "typescript": "~6.0.3",
-    "vite": "^8.1.5"
+    "vite": "^8.3.8"
   }
 }

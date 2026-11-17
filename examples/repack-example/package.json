@@ -23,20 +23,20 @@
     "@storybook/addon-ondevice-backgrounds": "^10.7.1",
     "@storybook/addon-ondevice-controls": "^10.7.1",
     "@storybook/addon-ondevice-notes": "^10.7.1",
-    "@storybook/react": "^10.6.0",
+    "@storybook/react": "^10.6.7",
     "@storybook/react-native": "workspace:^",
     "@storybook/react-native-ui-lite": "workspace:^",
     "react": "19.2.3",
     "react-native": "0.86.3",
     "react-native-enriched-markdown": "^1.0.2",
     "react-native-safe-area-context": "5.8.0",
-    "storybook": "^10.6.0"
+    "storybook": "^10.6.7"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.29.7",
     "@babel/runtime": "^7.29.7",
-    "@callstack/repack": "^5.2.5",
+    "@callstack/repack": "^5.4.4",
     "@react-native-community/cli": "^20.2.0",
     "@react-native-community/cli-platform-android": "^20.2.0",
     "@react-native-community/cli-platform-ios": "^20.2.0",

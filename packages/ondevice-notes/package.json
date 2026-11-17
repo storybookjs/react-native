@@ -35,7 +35,7 @@
   "devDependencies": {
     "react-native-enriched-markdown": "^1.0.2",
     "react-native-markdown-display": "^7.0.2",
-    "storybook": "^10.6.0",
+    "storybook": "^10.6.7",
     "tsdown": "^0.22.12",
     "typescript": "~6.0.3"
   },
