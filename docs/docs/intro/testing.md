@@ -22,6 +22,10 @@ Storybook provides testing capabilities for React Native components through port
 
 Portable stories allow you to reuse your Storybook stories in external testing environments like Jest. This enables better shareability and maintenance between writing tests and writing stories.
 
+The `composeStories`, `composeStory` and `setProjectAnnotations` utilities are exported from `@storybook/react-native`. They compose your stories with the same React Native defaults that Storybook uses on device, and unlike the ones exported by `@storybook/react`, they don't depend on `react-dom`.
+
+If you write your stories with [CSF factories](https://storybook.js.org/docs/api/csf/csf-next), you don't need `composeStories`: each story already has a composed `Component`, like `<Primary.Component />`.
+
 ### Setup
 
 Install the required testing dependencies:
@@ -63,7 +67,7 @@ The `composeStories` utility processes all stories from a CSF file and returns t
 ```ts
 // Button.test.tsx
 import { render, screen } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import * as stories from './Button.stories';
 
 // Every story is returned as a composed component
@@ -96,7 +100,7 @@ For testing individual stories, use `composeStory`:
 ```ts
 // Button.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
+import { composeStory } from '@storybook/react-native';
 import meta, { Primary } from './Button.stories';
 
 test('button click handler is called', () => {
@@ -118,7 +122,7 @@ For stories that use global decorators or parameters, set up project annotations
 
 ```ts
 // setup-portable-stories.ts
-import { setProjectAnnotations } from '@storybook/react';
+import { setProjectAnnotations } from '@storybook/react-native';
 import * as previewAnnotations from '../.rnstorybook/preview';
 
 setProjectAnnotations(previewAnnotations);
@@ -140,7 +144,7 @@ const config = {
 ```ts
 // TextInput.test.tsx
 import { render, screen } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import * as TextInputStories from './TextInput.stories';
 
 const { Basic } = composeStories(TextInputStories);

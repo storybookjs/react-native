@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import * as RadioStories from './Radio.stories';
 
 const { Basic, Inline } = composeStories(RadioStories);

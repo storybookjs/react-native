@@ -1,4 +1,4 @@
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import * as Backgrounds from './BackgroundCsf.stories';
 
 const { Basic } = composeStories(Backgrounds);

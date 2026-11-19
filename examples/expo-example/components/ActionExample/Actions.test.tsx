@@ -1,5 +1,5 @@
 import { render, screen, userEvent } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import * as Actions from './Actions.stories';
 
 const { Basic } = composeStories(Actions);
