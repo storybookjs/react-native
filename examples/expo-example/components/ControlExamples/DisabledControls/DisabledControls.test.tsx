@@ -1,4 +1,4 @@
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import { getControlArgTypes } from '@storybook/addon-ondevice-controls/dist/controlArgTypes';
 import * as DisabledControlsStories from './DisabledControls.stories';
 

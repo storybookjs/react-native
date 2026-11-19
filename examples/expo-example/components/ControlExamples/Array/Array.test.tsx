@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import * as ArrayStories from './Array.stories';
 
 // @ts-expect-error

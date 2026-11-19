@@ -251,7 +251,7 @@ Reuse stories in Jest tests:
 
 ```tsx
 import { render, screen } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import * as stories from './Button.stories';
 
 const { Primary, Secondary } = composeStories(stories);
@@ -271,7 +271,7 @@ test('renders with custom props', () => {
 For single stories use `composeStory`:
 
 ```tsx
-import { composeStory } from '@storybook/react';
+import { composeStory } from '@storybook/react-native';
 import meta, { Primary } from './Button.stories';
 
 const PrimaryStory = composeStory(Primary, meta);
@@ -281,7 +281,7 @@ Setup global annotations for tests in a Jest setup file:
 
 ```ts
 // setup-portable-stories.ts
-import { setProjectAnnotations } from '@storybook/react';
+import { setProjectAnnotations } from '@storybook/react-native';
 import * as previewAnnotations from '../.rnstorybook/preview';
 setProjectAnnotations(previewAnnotations);
 ```

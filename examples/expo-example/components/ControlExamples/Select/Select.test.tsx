@@ -1,5 +1,5 @@
 import { screen, render } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import * as SelectStories from './Select.stories';
 
 const { Basic, WithLabels, WithMapping } = composeStories(SelectStories);

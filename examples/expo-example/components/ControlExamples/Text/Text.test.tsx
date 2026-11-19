@@ -1,5 +1,5 @@
 import { screen, render } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import * as TextStories from './Text.stories';
 
 const { Basic } = composeStories(TextStories);

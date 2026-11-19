@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 import { logger } from 'storybook/internal/client-logger';
 import { ThemeProvider, theme } from '@storybook/react-native-theming';
 import { getControlArgTypes } from '@storybook/addon-ondevice-controls/dist/controlArgTypes';
