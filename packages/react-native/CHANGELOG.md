@@ -1,5 +1,14 @@
 # @storybook/react-native
 
+## 10.7.3
+
+### Patch Changes
+
+- Updated dependencies [[`ffa1a6c`](https://github.com/storybookjs/react-native/commit/ffa1a6cd12aa049095ef91ceb444ae39031dec99)]:
+  - @storybook/react-native-ui@10.7.3
+  - @storybook/react-native-ui-common@10.7.3
+  - @storybook/react-native-theming@10.7.3
+
 ## 10.7.2
 
 ### Patch Changes

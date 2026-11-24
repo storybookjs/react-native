@@ -1,5 +1,12 @@
 # @storybook/addon-ondevice-notes
 
+## 10.7.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@10.7.3
+
 ## 10.7.2
 
 ### Patch Changes
