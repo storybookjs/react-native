@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useState } from 'react';
+import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 type CallbackOptions = { id?: string; animated?: boolean };
 
 type SelectedNodeContextType = {
@@ -28,16 +28,13 @@ export const SelectedNodeProvider: FC<PropsWithChildren> = ({ children }) => {
     [scrollCallbackValue]
   );
 
-  return (
-    <SelectedNodeContext.Provider
-      value={{
-        scrollCallback,
-        registerCallback,
-      }}
-    >
-      {children}
-    </SelectedNodeContext.Provider>
+  // Keep the value stable between renders, so its consumers re-render only when it changes.
+  const value = useMemo(
+    () => ({ scrollCallback, registerCallback }),
+    [scrollCallback, registerCallback]
   );
+
+  return <SelectedNodeContext.Provider value={value}>{children}</SelectedNodeContext.Provider>;
 };
 
 export const useSelectedNode = () => useContext(SelectedNodeContext);
