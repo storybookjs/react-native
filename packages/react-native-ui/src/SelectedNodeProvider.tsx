@@ -1,6 +1,6 @@
 import { BottomSheetScrollViewMethods } from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheetScrollable/types';
 import type { ComponentRef, FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useRef } from 'react';
+import { createContext, useCallback, useContext, useMemo, useRef } from 'react';
 import type { View } from 'react-native';
 
 type SelectedNodeContextType = {
@@ -42,18 +42,14 @@ export const SelectedNodeProvider: FC<PropsWithChildren> = ({ children }) => {
     }, 100);
   }, []);
 
-  return (
-    <SelectedNodeContext.Provider
-      value={{
-        nodeRef,
-        setNodeRef,
-        scrollToSelectedNode,
-        scrollRef,
-      }}
-    >
-      {children}
-    </SelectedNodeContext.Provider>
+  // Every member is stable, so the value must be too: a new object each render would re-render
+  // every consumer, which includes every node of the sidebar tree, on each story switch.
+  const value = useMemo(
+    () => ({ nodeRef, setNodeRef, scrollToSelectedNode, scrollRef }),
+    [setNodeRef, scrollToSelectedNode]
   );
+
+  return <SelectedNodeContext.Provider value={value}>{children}</SelectedNodeContext.Provider>;
 };
 
 export const useSelectedNode = () => useContext(SelectedNodeContext);
