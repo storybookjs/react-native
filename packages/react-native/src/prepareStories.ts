@@ -79,10 +79,9 @@ export function prepareStories({
         // Like Storybook's processCSFFile: a CSF factories file needs no default export, its meta
         // comes from its stories. Read the meta's `input`, as only our definePreview exposes
         // title/includeStories/excludeStories on the meta itself.
-        const factoryStory = Object.entries(fileExports).find(
-          ([key, value]) => key !== 'default' && isStory(value)
-        )?.[1] as any;
-        const meta = factoryStory ? factoryStory.meta.input : fileExports.default;
+        const { default: defaultExport, ...namedExports } = fileExports;
+        const factoryStory = Object.values(namedExports).find(isStory);
+        const meta = factoryStory ? factoryStory.meta.input : defaultExport;
         if (!meta) return;
         const metaTags = getAnnotationTags(meta);
 
