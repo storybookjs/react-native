@@ -1,10 +1,8 @@
 import { Appearance } from 'react-native';
-// import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 import { definePreview } from '@storybook/react-native';
 
 export default definePreview({
   addons: [],
-  // decorators: [withBackgrounds],
 
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },

@@ -123,7 +123,10 @@ const meta: Meta<typeof Button> = {
   //👇 Creates specific parameters at the component level
   parameters: {
     backgrounds: {
-      default: 'dark',
+      options: {
+        dark: { name: 'Dark', value: '#333' },
+        light: { name: 'Light', value: '#fff' },
+      },
     },
   },
 };
@@ -131,7 +134,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 ```
 
-This parameter would instruct the backgrounds addon to reconfigure itself whenever a Button story is selected. Most addons are configured via a parameter-based API and can be influenced at a global, component and story level.
+This parameter would instruct the Backgrounds panel to reconfigure itself whenever a Button story is selected. Most addons are configured via a parameter-based API and can be influenced at a global, component and story level.
 
 #### UI-related parameters
 

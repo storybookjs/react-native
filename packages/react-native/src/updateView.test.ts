@@ -3,10 +3,12 @@ import { start, updateView } from './Start';
 
 jest.mock('storybook/manager-api', () => ({
   addons: {
+    // start() registers the built-in Actions and Backgrounds addons
     register: jest.fn(),
     loadAddons: jest.fn(),
     setChannel: jest.fn(),
   },
+  types: { PANEL: 'panel' },
 }));
 
 const basicId = 'example-button--basic';

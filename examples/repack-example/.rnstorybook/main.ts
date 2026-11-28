@@ -16,8 +16,5 @@ export default defineMain({
       order: ['ControlExamples', ['ControlExample'], 'InteractionExample', 'DeepControls'],
     },
   ],
-  features: {
-    ondeviceBackgrounds: true,
-  },
   framework: '@storybook/react-native',
 });

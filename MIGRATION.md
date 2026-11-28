@@ -5,6 +5,7 @@
     - [Update Storybook dependencies to 11.x](#update-storybook-dependencies-to-11x)
     - [On-device addons must be listed in `deviceAddons`](#on-device-addons-must-be-listed-in-deviceaddons)
     - [Move `storySort` to `storySorts` in main](#move-storysort-to-storysorts-in-main)
+    - [Backgrounds are built in and enabled by default](#backgrounds-are-built-in-and-enabled-by-default)
   - [From version 10.3 to 10.4](#from-version-103-to-104)
     - [Update your metro config](#update-your-metro-config)
     - [Simplify your App.tsx (or Expo Router routes)](#simplify-your-apptsx-or-expo-router-routes)
@@ -77,7 +78,6 @@ You need to update all Storybook dependencies to version 11.x. This includes:
     "@storybook/react-native": "^11.0.0",
     "@storybook/react": "^11.0.0",
     "@storybook/addon-ondevice-controls": "^11.0.0",
-    "@storybook/addon-ondevice-backgrounds": "^11.0.0",
     "@storybook/addon-ondevice-notes": "^11.0.0",
     "storybook": "^11.0.0"
   }
@@ -175,6 +175,60 @@ npm uninstall @storybook/addon-ondevice-actions
 If you leave it listed, nothing breaks: you still get a single Actions panel, and a warning is logged once in development. Your stories don't need to change.
 
 To turn the Actions panel off, set `features: { ondeviceActions: false }` in `.rnstorybook/main.ts`.
+
+### Backgrounds are built in and enabled by default
+
+The Backgrounds panel that shipped behind `features.ondeviceBackgrounds` in 10.3 is now on by default. You don't need `@storybook/addon-ondevice-backgrounds` anymore. Stories without `parameters.backgrounds` don't change: no background is applied until you configure options.
+
+To turn the built-in panel off, set the flag to `false`:
+
+```ts
+// .rnstorybook/main.ts
+const main: StorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+  features: {
+    ondeviceBackgrounds: false,
+  },
+};
+```
+
+If you had `ondeviceBackgrounds: true`, you can remove it.
+
+`@storybook/addon-ondevice-backgrounds` is deprecated and kept as a compatibility stub, so existing projects don't break. Its `register` entry registers nothing and logs a warning in development, and `withBackgrounds` renders the story unchanged so backgrounds aren't applied twice. The built-in panel still reads the legacy `values` array and `default` name: values are keyed by `name`, and `default` (or the first value) is applied while no `backgrounds` global is set.
+
+To finish migrating:
+
+1. Remove `'@storybook/addon-ondevice-backgrounds'` from `deviceAddons`.
+2. Remove `withBackgrounds` from your preview `decorators`.
+3. Uninstall the package.
+4. Optionally move from `values`/`default` to `options` and `initialGlobals`:
+
+```diff
+ // .rnstorybook/preview.tsx
+-import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+
+ const preview: Preview = {
+-  decorators: [withBackgrounds],
+   parameters: {
+     backgrounds: {
+-      default: 'plain',
+-      values: [
+-        { name: 'plain', value: 'white' },
+-        { name: 'dark', value: '#333' },
+-      ],
++      options: {
++        plain: { name: 'Plain', value: 'white' },
++        dark: { name: 'Dark', value: '#333' },
++      },
+     },
+   },
++  initialGlobals: {
++    backgrounds: { value: 'plain' },
++  },
+ };
+```
+
+A story-level `default` becomes `globals: { backgrounds: { value: 'dark' } }` on that story. Stories with `parameters.backgrounds.disable: true` now also get no background, matching Storybook web. See the [Backgrounds guide](https://storybookjs.github.io/react-native/docs/intro/configuration/backgrounds).
 
 ## From version 10.3 to 10.4
 

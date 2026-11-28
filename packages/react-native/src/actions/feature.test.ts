@@ -9,6 +9,8 @@ jest.mock('storybook/manager-api', () => ({
 
 const mockRegisterActionsAddon = jest.fn();
 jest.mock('./register', () => ({ registerActionsAddon: mockRegisterActionsAddon }));
+// Backgrounds is on by default too; keep it out of this test.
+jest.mock('../backgrounds/register', () => ({ registerBackgroundsAddon: jest.fn() }));
 
 const startEmpty = () =>
   start({
