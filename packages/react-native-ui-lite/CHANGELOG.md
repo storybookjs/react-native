@@ -1,5 +1,15 @@
 # @storybook/react-native-ui-lite
 
+## 11.0.0-next.3
+
+### Patch Changes
+
+- [#981](https://github.com/storybookjs/react-native/pull/981) [`5999fa5`](https://github.com/storybookjs/react-native/commit/5999fa5158671bfcc38efee0561f3739f366c5a1) Thanks [@dannyhw](https://github.com/dannyhw)! - Stop every story switch from re-rendering the whole sidebar tree. The provider for the selected node now keeps its context value stable between renders, so a switch re-renders only the nodes it changes rather than every node in the tree.
+
+- Updated dependencies []:
+  - @storybook/react-native-ui-common@11.0.0-next.3
+  - @storybook/react-native-theming@11.0.0-next.3
+
 ## 11.0.0-next.2
 
 ### Patch Changes

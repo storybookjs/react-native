@@ -21,6 +21,7 @@
   "changesets": [
     "actions-log-outlives-panel",
     "check-control",
+    "csf-factories-without-default-export",
     "csf-preview-alias",
     "dependency-updates-nov",
     "flat-impalas-press",
@@ -35,12 +36,15 @@
     "react-native-088-types",
     "remove-addeventlistener-workaround",
     "require-device-addons",
+    "selected-node-context-memo",
     "sidebar-root-indentation",
     "story-tags",
     "storybook-11-alpha-7",
     "storybook-11-beta-0",
     "storybook-11-beta-2",
     "storybook-11-beta-3",
+    "storybook-11-rc-0",
+    "storybook-11-rc-1",
     "storybook-11",
     "url-polyfill-v4",
     "worklet-platform-capture"

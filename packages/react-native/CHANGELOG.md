@@ -1,5 +1,20 @@
 # @storybook/react-native
 
+## 11.0.0-next.3
+
+### Patch Changes
+
+- [#988](https://github.com/storybookjs/react-native/pull/988) [`c8f2bad`](https://github.com/storybookjs/react-native/commit/c8f2bad21a08f0f0be07f7bc3a4d0ba7c39611a2) Thanks [@dannyhw](https://github.com/dannyhw)! - Index CSF factories story files that have no default export, the shape Storybook's `csf-factories` codemod produces. The on-device index now reads the meta from a file's factory stories, like Storybook does, instead of skipping every file without `export default meta`, which left the index empty and failed with `EmptyIndexError`. Its title, `includeStories`, `excludeStories` and `tags` are read from the meta's input, so metas from a preview not made with this package's `definePreview` work too. In a CSF factories file only factory stories are indexed.
+
+- [#983](https://github.com/storybookjs/react-native/pull/983) [`29747b4`](https://github.com/storybookjs/react-native/commit/29747b4b317d01915228aebb2e0c0222eb98fb14) Thanks [@dannyhw](https://github.com/dannyhw)! - Update `@storybook/react` and `@storybook/mcp` to 11.0.0-rc.0, and `@tmcp/transport-http` to 0.9.1 to match `@storybook/mcp`.
+
+- [#985](https://github.com/storybookjs/react-native/pull/985) [`a12e43d`](https://github.com/storybookjs/react-native/commit/a12e43d4581405dcdc383adb072492c48e0e6b29) Thanks [@dannyhw](https://github.com/dannyhw)! - Update `@storybook/react` and `@storybook/mcp` to 11.0.0-rc.1.
+
+- Updated dependencies [[`5999fa5`](https://github.com/storybookjs/react-native/commit/5999fa5158671bfcc38efee0561f3739f366c5a1)]:
+  - @storybook/react-native-ui@11.0.0-next.3
+  - @storybook/react-native-ui-common@11.0.0-next.3
+  - @storybook/react-native-theming@11.0.0-next.3
+
 ## 11.0.0-next.2
 
 ### Minor Changes

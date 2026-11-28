@@ -1,5 +1,12 @@
 # @storybook/addon-ondevice-notes
 
+## 11.0.0-next.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @storybook/react-native-theming@11.0.0-next.3
+
 ## 11.0.0-next.2
 
 ### Patch Changes
