@@ -35,12 +35,10 @@
     "prepare": "tsc"
   },
   "devDependencies": {
-    "@storybook/react-native": "^11.0.0-next.4",
     "storybook": "^11.0.0-rc.1",
     "typescript": "~6.0.3"
   },
   "peerDependencies": {
-    "@storybook/react-native": "^11.0.0-next.4",
     "storybook": "^11.0.0-beta.1"
   },
   "publishConfig": {
