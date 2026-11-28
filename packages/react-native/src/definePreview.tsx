@@ -26,6 +26,7 @@ import type { Simplify } from 'type-fest';
 import type { ReactRenderer } from '@storybook/react';
 
 import * as rnEntryPreview from './entry-preview';
+import { render } from './render';
 
 // ---------------------------------------------------------------------------
 // Types — simplified from @storybook/react's ReactPreview/ReactMeta/ReactStory
@@ -92,21 +93,6 @@ export interface RNStory<
 > extends Story<T, TInput> {
   Component: ComponentType<Partial<T['args']>>;
 }
-
-// ---------------------------------------------------------------------------
-// RN render function
-// ---------------------------------------------------------------------------
-const render = (args: any, context: any) => {
-  const { id, component: Component } = context;
-
-  if (!Component) {
-    throw new Error(
-      `Unable to render story ${id} as the component annotation is missing from the default export`
-    );
-  }
-
-  return <Component {...args} />;
-};
 
 // ---------------------------------------------------------------------------
 // definePreview – RN-specific wrapper around base definePreview

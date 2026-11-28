@@ -2,7 +2,9 @@
 
 Portable stories are Storybook stories which can be used in external environments, such as [Jest](https://jestjs.io).
 
-You can make your stories portable by using Storybook's `composeStory` and `composeStories` utilities, which come from the `@storybook/react` package. This way, in your unit tests, you can just select which story you want to render, and all the necessary setup (args, decoratos, etc.) will be already done for you. This is the missing piece that allows for better shareability and maintenance between writing tests and writing Storybook stories.
+You can make your stories portable by using Storybook's `composeStory` and `composeStories` utilities, which come from the `@storybook/react-native` package. This way, in your unit tests, you can just select which story you want to render, and all the necessary setup (args, decoratos, etc.) will be already done for you. This is the missing piece that allows for better shareability and maintenance between writing tests and writing Storybook stories.
+
+These utilities compose your stories with the same React Native defaults that Storybook uses on device, and unlike the ones exported by `@storybook/react`, they don't depend on `react-dom`.
 
 You can find example tests using portable stories in this repository [here](https://github.com/storybookjs/react-native/blob/next/examples/expo-example/components/ActionExample/Actions.test.tsx).
 
@@ -16,7 +18,7 @@ By default, the composed story will render the component with the [args](https:/
 // Button.test.tsx
 import { test, expect } from '@jest/globals';
 import { render, screen } from '@testing-library/react-native';
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-native';
 
 // Import all stories and the component annotations from the stories file
 import * as stories from './Button.stories';
@@ -92,7 +94,7 @@ You can use `composeStory` if you wish to compose a single story for a component
 // Button.test.tsx
 import { jest, test, expect } from '@jest/globals';
 import { render, screen, userEvent } from '@testing-library/react-native';
-import { composeStory } from '@storybook/react';
+import { composeStory } from '@storybook/react-native';
 
 import meta, { Primary } from './Button.stories';
 
@@ -171,7 +173,7 @@ This API should be called once, before the tests run, typically in a [setup file
 
 ```ts
 // setup-portable-stories.ts
-import { setProjectAnnotations } from '@storybook/react';
+import { setProjectAnnotations } from '@storybook/react-native';
 import * as addonAnnotations from 'my-addon/preview';
 import * as previewAnnotations from './.rnstorybook/preview';
 

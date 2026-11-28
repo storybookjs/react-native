@@ -20,6 +20,7 @@ import type {
 } from 'storybook/internal/types';
 import { View } from './View';
 import { prepareStories, type ReactNativeOptions } from './prepareStories';
+import { render } from './render';
 import { getProjectTags } from './storyTags';
 export { prepareStories, type ReactNativeOptions } from './prepareStories';
 
@@ -44,17 +45,7 @@ const getReactNativeProjectAnnotations = (getView: () => View | undefined) =>
     renderToCanvas: (context) => {
       getView()?._setStory(context.storyContext);
     },
-    render: (args, context) => {
-      const { id, component: Component } = context;
-
-      if (!Component) {
-        throw new Error(
-          `Unable to render story ${id} as the component annotation is missing from the default export`
-        );
-      }
-
-      return <Component {...args} />;
-    },
+    render,
   }) satisfies ProjectAnnotations<ReactRenderer>;
 
 /**

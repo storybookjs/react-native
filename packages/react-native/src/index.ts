@@ -1,5 +1,6 @@
 export { darkTheme, theme, type Theme } from '@storybook/react-native-theming';
 export { start, prepareStories, getProjectAnnotations, updateView } from './Start';
+export { composeStories, composeStory, setProjectAnnotations } from './portable-stories';
 export type { View, Storage, InitialSelection, ThemePartial, Params } from './View';
 export {
   RN_STORYBOOK_EVENTS,
