@@ -3,11 +3,10 @@ import { start, updateView } from './Start';
 
 jest.mock('storybook/manager-api', () => ({
   addons: {
+    // start() registers the built-in Actions and Backgrounds addons
     register: jest.fn(),
     loadAddons: jest.fn(),
     setChannel: jest.fn(),
-    // start() registers the built-in Backgrounds addon
-    register: jest.fn(),
   },
   types: { PANEL: 'panel' },
 }));
