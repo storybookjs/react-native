@@ -1,4 +1,3 @@
-import { Platform } from 'react-native';
 import {
   composeConfigs,
   addons as previewAddons,
@@ -7,7 +6,7 @@ import {
   SelectionStore,
 } from 'storybook/internal/preview-api';
 import { addons as managerAddons } from 'storybook/manager-api';
-import './polyfill';
+import './polyfills';
 
 import type { ReactRenderer } from '@storybook/react';
 import { Channel } from 'storybook/internal/channels';
@@ -101,11 +100,6 @@ class ReactNativePreview extends PreviewWithSelection<ReactRenderer> {
 
     await super.teardownRender(render, options);
   }
-}
-
-// Note this is a workaround for setImmediate not being defined
-if (Platform.OS === 'web' && typeof globalThis.setImmediate === 'undefined') {
-  require('setimmediate');
 }
 
 export const getProjectAnnotations =
