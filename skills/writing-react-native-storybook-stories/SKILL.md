@@ -227,7 +227,6 @@ const main: StorybookConfig = {
   deviceAddons: [
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
-    '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
   ],
   framework: '@storybook/react-native',
@@ -291,6 +290,6 @@ setProjectAnnotations(previewAnnotations);
 | Addon       | Package                                 | Purpose                    |
 | ----------- | --------------------------------------- | -------------------------- |
 | Controls    | `@storybook/addon-ondevice-controls`    | Edit props interactively   |
-| Actions     | `@storybook/addon-ondevice-actions`     | Log component interactions |
+| Actions     | Built into `@storybook/react-native`    | Log component interactions |
 | Backgrounds | `@storybook/addon-ondevice-backgrounds` | Change story backgrounds   |
 | Notes       | `@storybook/addon-ondevice-notes`       | Add markdown documentation |

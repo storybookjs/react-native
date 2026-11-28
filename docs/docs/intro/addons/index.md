@@ -6,7 +6,7 @@ The addons made available by us are the following. There are more addons availab
 
 | Addon       | Package                               |
 | ----------- | ------------------------------------- |
-| actions     | @storybook/addon-ondevice-actions     |
+| actions     | built into @storybook/react-native    |
 | backgrounds | @storybook/addon-ondevice-backgrounds |
 | controls    | @storybook/addon-ondevice-controls    |
 | notes       | @storybook/addon-ondevice-notes       |
@@ -23,7 +23,6 @@ const main: StorybookConfig = {
   deviceAddons: [
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-backgrounds',
-    '@storybook/addon-ondevice-actions',
     '@storybook/addon-ondevice-notes',
   ],
 };
@@ -61,9 +60,7 @@ export const WithoutAnyAddonPanels = {
 
 The Actions addon lets you log events and actions inside your stories. It's useful for verifying component interactions and event handling.
 
-```sh
-npm install --save-dev @storybook/addon-ondevice-actions
-```
+The Actions panel is built into `@storybook/react-native` and enabled by default, so there's nothing to install or add to `deviceAddons`. `@storybook/addon-ondevice-actions` is deprecated; see the [Actions guide](../configuration/actions.md) to migrate or to turn the panel off.
 
 Use the `action` argType to log events:
 

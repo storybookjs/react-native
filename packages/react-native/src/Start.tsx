@@ -137,6 +137,12 @@ export function start({
     registerBackgroundsAddon();
   }
 
+  // On by default; set `features.ondeviceActions: false` to disable.
+  if (globalThis.FEATURES?.ondeviceActions !== false) {
+    const { registerActionsAddon } = require('./actions/register');
+    registerActionsAddon();
+  }
+
   const previewView = {
     prepareForStory: () => {
       return createPreviewRoot();
