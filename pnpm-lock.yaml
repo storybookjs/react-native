@@ -649,10 +649,6 @@ importers:
         version: 6.0.3
 
   packages/ondevice-actions:
-    dependencies:
-      '@storybook/react-native':
-        specifier: ^11.0.0-next.4
-        version: link:../react-native
     devDependencies:
       typescript:
         specifier: ~6.0.3
