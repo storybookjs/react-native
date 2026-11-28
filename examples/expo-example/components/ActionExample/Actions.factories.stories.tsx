@@ -21,8 +21,6 @@ You use it like this:
   },
 });
 
-export default meta;
-
 export const Basic = meta.story({
   args: {
     text: 'Press me!',

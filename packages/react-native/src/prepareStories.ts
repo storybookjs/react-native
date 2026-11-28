@@ -1,5 +1,5 @@
 import { userOrAutoTitleFromSpecifier } from 'storybook/internal/preview-api';
-import { isExportStory, storyNameFromExport, toId } from 'storybook/internal/csf';
+import { isExportStory, isStory, storyNameFromExport, toId } from 'storybook/internal/csf';
 import type {
   Addon_StorySortParameterV7,
   NormalizedStoriesSpecifier,
@@ -76,8 +76,13 @@ export function prepareStories({
     req.keys().forEach((filename: string) => {
       try {
         const fileExports = req(filename);
-        if (!fileExports.default) return;
-        const meta = fileExports.default;
+        // Like Storybook's processCSFFile: a CSF factories file needs no default export, its meta
+        // comes from its stories. Read the meta's `input`, as only our definePreview exposes
+        // title/includeStories/excludeStories on the meta itself.
+        const { default: defaultExport, ...namedExports } = fileExports;
+        const factoryStory = Object.values(namedExports).find(isStory);
+        const meta = factoryStory ? factoryStory.meta.input : defaultExport;
+        if (!meta) return;
         const metaTags = getAnnotationTags(meta);
 
         Object.keys(fileExports).forEach((key) => {
@@ -86,6 +91,8 @@ export function prepareStories({
 
           const exportValue = fileExports[key];
           if (!exportValue) return;
+          // in a CSF factories file only factory stories are stories
+          if (factoryStory && !isStory(exportValue)) return;
 
           const title = makeTitle(filename, specifier, meta.title);
 
@@ -125,7 +132,9 @@ export function prepareStories({
             >((carry, [storyKey, story]) => {
               if (!isExportStory(storyKey, meta)) return carry;
 
-              if (typeof story.play === 'function' && !options?.playFn) {
+              // Factory stories are left as they are: Storybook reads their play function from
+              // `input`, and spreading them would read their getters, composing them eagerly.
+              if (typeof story.play === 'function' && !options?.playFn && !isStory(story)) {
                 // play functions are not yet fully supported on native.
                 // There is a new option in main.js to turn them on for future use.
                 carry[storyKey] = { ...story, play: undefined };

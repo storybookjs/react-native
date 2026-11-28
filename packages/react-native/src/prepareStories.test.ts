@@ -1,4 +1,5 @@
 import { definePreview } from './definePreview';
+import { definePreview as definePreviewBase } from 'storybook/internal/csf';
 import { prepareStories } from './prepareStories';
 
 const createStoryEntries = (fileExports: Record<string, unknown>) => {
@@ -225,6 +226,278 @@ describe('prepareStories', () => {
       'manifest',
       'beta',
       'play-fn',
+    ]);
+  });
+});
+
+const createSpecifier = (files: Record<string, Record<string, unknown>>) => {
+  const req = (filename: string) => files[filename];
+  req.keys = () => Object.keys(files);
+
+  return {
+    titlePrefix: '',
+    directory: './src',
+    files: '**/*.stories.?(ts|tsx|js|jsx)',
+    importPathMatcher:
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
+    req,
+  };
+};
+
+describe('prepareStories with CSF factories', () => {
+  const component = () => null;
+
+  test('indexes a CSF factories file without a default export', () => {
+    const preview = definePreview({ addons: [] });
+    const meta = preview.meta({ title: 'Button', tags: ['beta'], component });
+    const Primary = meta.story({ args: { label: 'Primary' } });
+    const Named = meta.story({ name: 'Custom name' });
+
+    const result = prepareStories({
+      storyEntries: createStoryEntries({ Primary, Named }),
+    });
+
+    expect(result.index.entries).toEqual({
+      'button--primary': {
+        type: 'story',
+        subtype: 'story',
+        id: 'button--primary',
+        name: 'Primary',
+        title: 'Button',
+        importPath: './src/Button.stories.tsx',
+        tags: ['dev', 'test', 'manifest', 'beta'],
+      },
+      'button--named': {
+        type: 'story',
+        subtype: 'story',
+        id: 'button--named',
+        name: 'Custom name',
+        title: 'Button',
+        importPath: './src/Button.stories.tsx',
+        tags: ['dev', 'test', 'manifest', 'beta'],
+      },
+    });
+    expect(result.importMap['./src/Button.stories.tsx']).toEqual({ Primary, Named });
+  });
+
+  test('indexes a CSF factories file that still has a default export', () => {
+    const preview = definePreview({ addons: [] });
+    const meta = preview.meta({ title: 'Button', component });
+    const Primary = meta.story({});
+
+    const result = prepareStories({
+      storyEntries: createStoryEntries({ default: meta, Primary }),
+    });
+
+    expect(Object.keys(result.index.entries)).toEqual(['button--primary']);
+    expect(result.index.entries['button--primary'].title).toBe('Button');
+    expect(result.importMap['./src/Button.stories.tsx']).toEqual({ default: meta, Primary });
+  });
+
+  test('applies includeStories and excludeStories of a factory meta without a default export', () => {
+    const preview = definePreview({ addons: [] });
+    const included = preview.meta({ title: 'Included', component, includeStories: /^Basic/ });
+    const excluded = preview.meta({ title: 'Excluded', component, excludeStories: ['Hidden'] });
+
+    const result = prepareStories({
+      storyEntries: [
+        createSpecifier({
+          './Included.stories.tsx': {
+            Basic: included.story({}),
+            BasicTwo: included.story({}),
+            Other: included.story({}),
+          },
+          './Excluded.stories.tsx': {
+            Shown: excluded.story({}),
+            Hidden: excluded.story({}),
+          },
+        }),
+      ],
+    });
+
+    expect(Object.keys(result.index.entries).sort()).toEqual([
+      'excluded--shown',
+      'included--basic',
+      'included--basic-two',
+    ]);
+    expect(Object.keys(result.importMap['./src/Included.stories.tsx'])).toEqual([
+      'Basic',
+      'BasicTwo',
+    ]);
+    expect(Object.keys(result.importMap['./src/Excluded.stories.tsx'])).toEqual(['Shown']);
+  });
+
+  test('reads a factory meta from a preview that is not the React Native definePreview', () => {
+    // e.g. stories shared with a web Storybook: title and include/excludeStories only live on `input`
+    const preview = definePreviewBase({ addons: [] });
+    const meta = preview.meta({ title: 'Web/Button', tags: ['beta'], excludeStories: ['Hidden'] });
+    const Primary = meta.story({ tags: ['new'] });
+    const Secondary = meta.story({});
+    const Hidden = meta.story({});
+
+    const result = prepareStories({
+      storyEntries: createStoryEntries({ Primary, Secondary, Hidden }),
+    });
+
+    expect(result.index.entries).toEqual({
+      'web-button--primary': expect.objectContaining({
+        title: 'Web/Button',
+        name: 'Primary',
+        tags: ['dev', 'test', 'manifest', 'beta', 'new'],
+      }),
+      'web-button--secondary': expect.objectContaining({
+        title: 'Web/Button',
+        name: 'Secondary',
+        tags: ['dev', 'test', 'manifest', 'beta'],
+      }),
+    });
+  });
+
+  test('uses the auto title for a factory meta without a title', () => {
+    const preview = definePreviewBase({ addons: [] });
+    const meta = preview.meta({});
+    const First = meta.story({});
+    const Second = meta.story({});
+
+    const result = prepareStories({
+      storyEntries: createStoryEntries({ First, Second }),
+    });
+
+    expect(Object.keys(result.index.entries)).toEqual(['button--first', 'button--second']);
+    expect(result.index.entries['button--second'].title).toBe('Button');
+  });
+
+  test('ignores named exports that are not factory stories', () => {
+    const preview = definePreview({ addons: [] });
+    const meta = preview.meta({ title: 'Button', component });
+    const Primary = meta.story({});
+
+    const result = prepareStories({
+      storyEntries: createStoryEntries({
+        Primary,
+        sampleData: { label: 'not a story' },
+        helper: () => null,
+      }),
+    });
+
+    expect(Object.keys(result.index.entries)).toEqual(['button--primary']);
+  });
+
+  test('skips a file with neither a default export nor factory stories', () => {
+    const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    const result = prepareStories({
+      storyEntries: createStoryEntries({
+        sampleData: { label: 'not a story' },
+        helper: () => null,
+      }),
+    });
+
+    expect(result.index.entries).toEqual({});
+    expect(result.importMap).toEqual({});
+    expect(consoleError).not.toHaveBeenCalled();
+    consoleError.mockRestore();
+  });
+
+  test('indexes CSF 3 and CSF factories files in the same specifier', () => {
+    const preview = definePreview({ addons: [] });
+    const factoryMeta = preview.meta({ title: 'Factories', tags: ['factory'], component });
+    const FactoryWithoutDefault = factoryMeta.story({ play: async () => {} });
+    const legacyMeta = preview.meta({ title: 'FactoriesWithDefault', component });
+    const FactoryWithDefault = legacyMeta.story({});
+    const csf3Play = () => {};
+
+    const result = prepareStories({
+      storyEntries: [
+        createSpecifier({
+          './Factories.stories.tsx': { FactoryWithoutDefault },
+          './Csf3.stories.tsx': {
+            default: { title: 'Csf3', tags: ['csf3'], excludeStories: ['excluded'] },
+            Basic: { args: { label: 'Basic' }, play: csf3Play },
+            Named: { name: 'Named story' },
+            Fn: Object.assign(() => null, { storyName: 'Function story' }),
+            excluded: { label: 'data' },
+          },
+          './FactoriesWithDefault.stories.tsx': { default: legacyMeta, FactoryWithDefault },
+          './AutoTitle.stories.tsx': { default: {}, Story: {} },
+        }),
+      ],
+    });
+
+    expect(result.index.entries).toEqual({
+      'autotitle--story': {
+        type: 'story',
+        subtype: 'story',
+        id: 'autotitle--story',
+        name: 'Story',
+        title: 'AutoTitle',
+        importPath: './src/AutoTitle.stories.tsx',
+        tags: ['dev', 'test', 'manifest'],
+      },
+      'csf3--basic': {
+        type: 'story',
+        subtype: 'story',
+        id: 'csf3--basic',
+        name: 'Basic',
+        title: 'Csf3',
+        importPath: './src/Csf3.stories.tsx',
+        tags: ['dev', 'test', 'manifest', 'csf3', 'play-fn'],
+      },
+      'csf3--named': {
+        type: 'story',
+        subtype: 'story',
+        id: 'csf3--named',
+        name: 'Named story',
+        title: 'Csf3',
+        importPath: './src/Csf3.stories.tsx',
+        tags: ['dev', 'test', 'manifest', 'csf3'],
+      },
+      'csf3--fn': {
+        type: 'story',
+        subtype: 'story',
+        id: 'csf3--fn',
+        name: 'Function story',
+        title: 'Csf3',
+        importPath: './src/Csf3.stories.tsx',
+        tags: ['dev', 'test', 'manifest', 'csf3'],
+      },
+      'factories--factory-without-default': {
+        type: 'story',
+        subtype: 'story',
+        id: 'factories--factory-without-default',
+        name: 'Factory Without Default',
+        title: 'Factories',
+        importPath: './src/Factories.stories.tsx',
+        tags: ['dev', 'test', 'manifest', 'factory', 'play-fn'],
+      },
+      'factorieswithdefault--factory-with-default': {
+        type: 'story',
+        subtype: 'story',
+        id: 'factorieswithdefault--factory-with-default',
+        name: 'Factory With Default',
+        title: 'FactoriesWithDefault',
+        importPath: './src/FactoriesWithDefault.stories.tsx',
+        tags: ['dev', 'test', 'manifest'],
+      },
+    });
+    // without a storySort, entries keep the file and export order
+    expect(Object.keys(result.index.entries)).toEqual([
+      'factories--factory-without-default',
+      'csf3--basic',
+      'csf3--named',
+      'csf3--fn',
+      'factorieswithdefault--factory-with-default',
+      'autotitle--story',
+    ]);
+    // CSF 3 stories keep the default export and have their play function stripped
+    expect(result.importMap['./src/Csf3.stories.tsx']).toEqual({
+      default: { title: 'Csf3', tags: ['csf3'], excludeStories: ['excluded'] },
+      Basic: { args: { label: 'Basic' }, play: undefined },
+      Named: { name: 'Named story' },
+      Fn: expect.any(Function),
+    });
+    expect(Object.keys(result.importMap['./src/Factories.stories.tsx'])).toEqual([
+      'FactoryWithoutDefault',
     ]);
   });
 });

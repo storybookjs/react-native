@@ -5,8 +5,6 @@ const meta = preview.meta({
   component: Switch,
 });
 
-export default meta;
-
 export const Basic = meta.story({
   args: {
     on: false,
