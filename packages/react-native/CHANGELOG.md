@@ -1,5 +1,16 @@
 # @storybook/react-native
 
+## 11.0.0-next.4
+
+### Patch Changes
+
+- [#989](https://github.com/storybookjs/react-native/pull/989) [`edb58a3`](https://github.com/storybookjs/react-native/commit/edb58a33565ca9355f41507a180abdb4e6a399a4) Thanks [@dannyhw](https://github.com/dannyhw)! - Storybook no longer fails to start with "Property 'FinalizationRegistry' doesn't exist" on React Native versions before 0.88 (for example Expo SDK 57). The generated `storybook.requires` file now imports `@storybook/react-native/polyfills` first, which adds a no-op `FinalizationRegistry` when Hermes has none. Restart Metro after updating so the file is regenerated.
+
+- Updated dependencies []:
+  - @storybook/react-native-ui@11.0.0-next.4
+  - @storybook/react-native-ui-common@11.0.0-next.4
+  - @storybook/react-native-theming@11.0.0-next.4
+
 ## 11.0.0-next.3
 
 ### Patch Changes
