@@ -12,8 +12,6 @@ const meta = preview.meta({
   component: NestedTitleComponent,
 });
 
-export default meta;
-
 export const Basic = meta.story({
   args: {},
 });

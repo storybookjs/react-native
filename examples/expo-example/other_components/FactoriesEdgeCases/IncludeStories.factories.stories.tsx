@@ -13,8 +13,6 @@ const meta = preview.meta({
   includeStories: ['OnlyThisOne'],
 });
 
-export default meta;
-
 export const OnlyThisOne = meta.story({
   args: { label: 'This story should be visible (included)' },
 });
